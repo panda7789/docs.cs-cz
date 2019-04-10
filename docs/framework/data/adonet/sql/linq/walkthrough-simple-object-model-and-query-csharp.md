@@ -2,12 +2,12 @@
 title: 'Návod: Jednoduchý objektový model a dotaz (C#)'
 ms.date: 03/30/2017
 ms.assetid: 419961cc-92d6-45f5-ae8a-d485bdde3a37
-ms.openlocfilehash: c84666bbf509a071e536faad1c3d647ff74d179a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dc56f1e7886a1a1391d94b512ba5c91ca8c9092a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155126"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309456"
 ---
 # <a name="walkthrough-simple-object-model-and-query-c"></a>Návod: Jednoduchý objektový model a dotaz (C#)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář s minimálními složitosti. Vytvořte třídu entity, která modeluje tabulku Customers v ukázkové databázi Northwind. Pak vytvoříte jednoduchý dotaz do seznamu zákazníků, kteří jsou umístěny v Londýně.  
@@ -44,30 +44,30 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>K vytvoření LINQ to SQL řešení  
   
-1.  V sadě Visual Studio **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
+1. V sadě Visual Studio **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
-2.  V **typy projektů** podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#** .  
+2. V **typy projektů** podokně **nový projekt** dialogové okno, klikněte na tlačítko **Visual C#** .  
   
-3.  V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
+3. V **šablony** podokně klikněte na tlačítko **konzolovou aplikaci**.  
   
-4.  V **název** zadejte **LinqConsoleApp**.  
+4. V **název** zadejte **LinqConsoleApp**.  
   
-5.  V **umístění** pole, ověřte, kam chcete uložit soubory projektu.  
+5. V **umístění** pole, ověřte, kam chcete uložit soubory projektu.  
   
-6.  Klikněte na **OK**.  
+6. Klikněte na **OK**.  
   
 ## <a name="adding-linq-references-and-directives"></a>Přidání odkazů LINQ a direktivy  
  Tento návod používá sestavení, která nemusí být nainstalován ve výchozím nastavení ve vašem projektu. Pokud System.Data.Linq není uveden jako odkaz v projektu (rozšířit **odkazy** uzel v **Průzkumníku řešení**), přidat, jak je popsáno v následujících krocích.  
   
 #### <a name="to-add-systemdatalinq"></a>Chcete-li přidat System.Data.Linq  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy**a potom klikněte na tlačítko **přidat odkaz**.  
   
-2.  V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
+2. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET**, klikněte na tlačítko System.Data.Linq sestavení a klikněte na **OK**.  
   
      Sestavení se přidá do projektu.  
   
-3.  Přidejte následující direktivy v horní části **Program.cs**:  
+3. Přidejte následující direktivy v horní části **Program.cs**:  
   
      [!code-csharp[DLinqWalk1CS#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1CS/cs/Program.cs#1)]  
   
@@ -124,11 +124,11 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
 #### <a name="to-execute-the-query"></a>Provedení dotazu  
   
-1.  Zadejte nebo vložte následující kód na konci `Main` – metoda (po description dotazu).  
+1. Zadejte nebo vložte následující kód na konci `Main` – metoda (po description dotazu).  
   
      [!code-csharp[DLinqWalk1ACS#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqWalk1ACS/cs/Program.cs#6)]  
   
-2.  Stisknutím klávesy F5 pro ladění aplikace.  
+2. Stisknutím klávesy F5 pro ladění aplikace.  
   
     > [!NOTE]
     >  Pokud vaše aplikace generuje chyba za běhu, najdete v části řešení potíží [učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).  
@@ -147,7 +147,7 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
   
      `ID=SEVES, City=London`  
   
-3.  Stisknutím klávesy Enter ukončete aplikaci v okně konzoly.  
+3. Stisknutím klávesy Enter ukončete aplikaci v okně konzoly.  
   
 ## <a name="next-steps"></a>Další kroky  
  [Názorný postup: Dotazování napříč vztahy (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md) tématu pokračuje, kde končí tohoto návodu. Dotaz napříč vztahy názorný postup ukazuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] můžete dotazování přes tabulky, podobně jako *spojení* v relační databázi.  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: a205ee04d1b0b68666ca50109001e71288d7f434
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ef25b3fb5657d833bbccf5bace71e049623476c9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517835"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294416"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 
@@ -82,7 +82,7 @@ Následující příklad určuje, zda je vstupní znak malé písmeno, velké p�
 
 [!code-csharp[csrefKeywordsSelection#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsSelection/CS/csrefKeywordsSelection.cs#6)]
 
-Stejně jako příkaz v jiného bloku nebo bloku pak může být libovolný platný příkaz, můžete použít libovolný platný výraz logickou podmínku. Můžete například použít logické operátory [ && ](../operators/conditional-and-operator.md), [ & ](../operators/and-operator.md), [ &#124; &#124; ](../operators/conditional-or-operator.md), [ &#124; ](../operators/or-operator.md) a [!](../operators/logical-negation-operator.md) Chcete-li složených podmínek. Následující kód ukazuje příklady.
+Stejně jako příkaz v jiného bloku nebo bloku pak může být libovolný platný příkaz, můžete použít libovolný platný výraz logickou podmínku. Můžete použít [logické operátory](../operators/boolean-logical-operators.md) například `!`, `&&`, `||`, `&`, `|`, a `^` aby složených podmínek. Následující kód ukazuje příklady.
 
 ```csharp
 // NOT
@@ -138,8 +138,8 @@ if (!(m >= n || m >= p))
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [?: – operátor](../operators/conditional-operator.md)
+- [?: Operátor](../operators/conditional-operator.md)
 - [if-else – příkaz (C++)](/cpp/cpp/if-else-statement-cpp)
-- [switch](switch.md)
+- [– přepínač](switch.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - handling faults [WCF], specifying
 - handling faults [WCF], defining
 ms.assetid: c00c84f1-962d-46a7-b07f-ebc4f80fbfc1
-ms.openlocfilehash: 337d0a60543aa4ebf42bb2ca0c147607a2548301
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 24c05bf41152fba2f54636cd0c15dde6fa71aa2b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59079328"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299322"
 ---
 # <a name="defining-and-specifying-faults"></a>Definice a určení chyb
 Chyb SOAP předání chybová podmínka informací ze služby do klienta a v případě duplexní z klienta ke službě interoperabilní způsobem. Toto téma popisuje, kdy a jak definovat vlastní chyby obsah a určit, které operace vrátit. Další informace o jak služby nebo duplexní klient může odesílat tyto chyby a způsob, jakým aplikace klienta nebo služby zpracovává tyto chyby najdete v tématu [odesílání a příjem chyb](../../../docs/framework/wcf/sending-and-receiving-faults.md). Přehled v aplikacích Windows Communication Foundation (WCF) pro zpracování chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -21,11 +21,11 @@ Chyb SOAP předání chybová podmínka informací ze služby do klienta a v př
 ## <a name="overview"></a>Přehled  
  Deklarovat chyb SOAP jsou ty, ve kterých se má operace <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> , která určuje vlastního typu chybu protokolu SOAP. Nedeklarovaný chyb SOAP jsou ty, které nejsou uvedené ve smlouvě operace. Toto téma vám pomůže identifikovat tyto chybové stavy a vytvoření kontraktu selhání vaší služby, který můžou klienti použít k správně zpracovat tyto chybové stavy při upozorněni prostřednictvím vlastních chyb SOAP. Základní úlohy jsou v pořadí:  
   
-1.  Definujte chybové stavy, které byste se měli seznámit klienta služby.  
+1. Definujte chybové stavy, které byste se měli seznámit klienta služby.  
   
-2.  Definujte vlastní obsah chyb SOAP pro tyto chybové podmínky.  
+2. Definujte vlastní obsah chyb SOAP pro tyto chybové podmínky.  
   
-3.  Označte své operace tak, aby konkrétní chyb SOAP, které generují výjimku jsou zveřejněné klientům v jazyce WSDL.  
+3. Označte své operace tak, aby konkrétní chyb SOAP, které generují výjimku jsou zveřejněné klientům v jazyce WSDL.  
   
 ### <a name="defining-error-conditions-that-clients-should-know-about"></a>Definování chybové stavy, které byste se měli seznámit klientů  
  Chyby protokolu SOAP se veřejně popisuje zprávy, které nesou informaci o selhání pro určitou operaci. Protože tyto toky jsou popsané společně s další operace zprávy v jazyce WSDL, klienti vědět a proto očekávat zpracovávat takové chyby při vyvolání operace. Ale protože služby WCF je zapsána ve spravovaném kódu rozhodování o tom, které chybové podmínky ve spravovaném kódu se převedou na chyby a vrátí klientovi nabízí možnost oddělení chybové stavy a chyby ve své službě od formální chyba konverzace, které máte s klientem.  

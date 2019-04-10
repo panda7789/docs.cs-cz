@@ -10,25 +10,25 @@ helpviewer_keywords:
 - examples [Windows Forms], text boxes
 - RichTextBox control [Windows Forms], linking to Web pages
 ms.assetid: 95089a37-a202-4f7a-94ee-6ee312908851
-ms.openlocfilehash: 1902557e5dbdcee3c1facc18b6f5c3037c266a8e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: faaa48051c80b6dfd330f15f72a38297ff2d1b9f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59148236"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301877"
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení webových odkazů pomocí ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit webové odkazy jako barevný a podtržené. Můžete napsat kód, který se otevře okno prohlížeče zobrazující webu zadané v textu odkazu, po kliknutí na odkaz.  
   
 ### <a name="to-link-to-a-web-page-with-the-richtextbox-control"></a>Odkaz na webovou stránku pomocí ovládacího prvku RichTextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.RichTextBox.Text%2A> nastavte na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/").  
+1. Nastavte <xref:System.Windows.Forms.RichTextBox.Text%2A> nastavte na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/").  
   
-2.  Ujistěte se, <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> je nastavena na `true` (výchozí).  
+2. Ujistěte se, <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> je nastavena na `true` (výchozí).  
   
-3.  Vytvořit novou globální instanci <xref:System.Diagnostics.Process> objektu.  
+3. Vytvořit novou globální instanci <xref:System.Diagnostics.Process> objektu.  
   
-4.  Zápis obslužné rutiny události <xref:System.Windows.Forms.RichTextBox.LinkClicked> událost, která se odešle do prohlížeče požadovaný text.  
+4. Zápis obslužné rutiny události <xref:System.Windows.Forms.RichTextBox.LinkClicked> událost, která se odešle do prohlížeče požadovaný text.  
   
      V následujícím příkladu <xref:System.Windows.Forms.RichTextBox.LinkClicked> události otevírá instanci aplikace Internet Explorer na adrese URL zadané v <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   

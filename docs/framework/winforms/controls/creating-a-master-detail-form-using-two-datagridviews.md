@@ -10,12 +10,12 @@ helpviewer_keywords:
 - master-details lists [Windows Forms], displaying on Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: c5fa29e8-47f7-4691-829b-0e697a691f36
-ms.openlocfilehash: 66807287dcaffae4bd310040312e0f56e8fda5d0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a887dacfcb83b4b6ea4cb2690ab09b0d1b20b4fa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59078873"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295793"
 ---
 # <a name="walkthrough-creating-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView
 Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.DataGridView> je ovládací prvek *záznamů master/detail* formuláře, ve kterém se zobrazí nadřazené a podřízené vztah mezi dvěma tabulkami databáze. Výběr řádků v tabulce hlavní způsobí, že aktualizace pomocí odpovídající data podřízené tabulky.  
@@ -33,14 +33,14 @@ Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.
   
 #### <a name="to-create-a-masterdetail-form"></a>K vytvoření hlavního/podrobného formuláře  
   
-1.  Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje dva <xref:System.Windows.Forms.DataGridView> ovládací prvky a dva <xref:System.Windows.Forms.BindingSource> komponenty. Následující kód obsahuje základní formulář inicializace a `Main` metody. Pokud použijete návrháře aplikace Visual Studio k vytvoření formuláře, můžete použít Návrháře generovaného kódu místo tento kód, ale je potřeba použít názvy uvedené v deklaracích proměnných tady.  
+1. Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje dva <xref:System.Windows.Forms.DataGridView> ovládací prvky a dva <xref:System.Windows.Forms.BindingSource> komponenty. Následující kód obsahuje základní formulář inicializace a `Main` metody. Pokud použijete návrháře aplikace Visual Studio k vytvoření formuláře, můžete použít Návrháře generovaného kódu místo tento kód, ale je potřeba použít názvy uvedené v deklaracích proměnných tady.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#01](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#01)]
      [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#01](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#01)]  
     [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#02](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#02)]
     [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#02](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#02)]  
   
-2.  Implementujte metodu v definici třídy formuláře pro zpracování podrobností o připojení k databázi. V tomto příkladu `GetData` metodu, která naplní <xref:System.Data.DataSet> objekt, přidá <xref:System.Data.DataRelation> objektu do datové sady a vytvoří vazbu <xref:System.Windows.Forms.BindingSource> komponenty. Nezapomeňte nastavit `connectionString` proměnných na hodnotu, která je vhodná pro vaši databázi.  
+2. Implementujte metodu v definici třídy formuláře pro zpracování podrobností o připojení k databázi. V tomto příkladu `GetData` metodu, která naplní <xref:System.Data.DataSet> objekt, přidá <xref:System.Data.DataRelation> objektu do datové sady a vytvoří vazbu <xref:System.Windows.Forms.BindingSource> komponenty. Nezapomeňte nastavit `connectionString` proměnných na hodnotu, která je vhodná pro vaši databázi.  
   
     > [!IMPORTANT]
     >  Ukládání citlivých informací, jako jsou hesla, v rámci připojovací řetězec může ovlivnit zabezpečení aplikace. Bezpečnější způsob, jak řídit přístup k databázi, je ověřování systému Windows (označované také jako integrované zabezpečení). Další informace najdete v tématu [chrání informace o připojení](../../data/adonet/protecting-connection-information.md).  
@@ -48,7 +48,7 @@ Jeden z nejběžnějších scénářů pro použití <xref:System.Windows.Forms.
      [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#20)]
      [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#20)]  
   
-3.  Implementujte obslužnou rutinu pro daný formulář <xref:System.Windows.Forms.Form.Load> událost, která vytvoří vazbu <xref:System.Windows.Forms.DataGridView> ovládacích prvků do <xref:System.Windows.Forms.BindingSource> komponenty a volání `GetData` metody. Následující příklad zahrnuje kód, který změní velikost <xref:System.Windows.Forms.DataGridView> přizpůsobit zobrazených dat sloupce.  
+3. Implementujte obslužnou rutinu pro daný formulář <xref:System.Windows.Forms.Form.Load> událost, která vytvoří vazbu <xref:System.Windows.Forms.DataGridView> ovládacích prvků do <xref:System.Windows.Forms.BindingSource> komponenty a volání `GetData` metody. Následující příklad zahrnuje kód, který změní velikost <xref:System.Windows.Forms.DataGridView> přizpůsobit zobrazených dat sloupce.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMasterDetails#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/CS/masterdetails.cs#10)]
      [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#10)]  

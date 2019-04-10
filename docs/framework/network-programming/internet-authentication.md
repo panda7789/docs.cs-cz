@@ -15,12 +15,12 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: 10d9c976a9294bffd85791b222dfededd0fc9256
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8b17f5a7167eb539e04a19db797bc1b0cc6c5eaa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155919"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295455"
 ---
 # <a name="internet-authentication"></a>Ověřování v internetu
 <xref:System.Net> Třídy podporu různých mechanismů ověřování klienta, včetně standardní Internet metody ověřování basic, digest, negotiate, NTLM a ověřování protokolu Kerberos, jakož i vlastních metod, které můžete vytvořit.  
@@ -33,9 +33,9 @@ ms.locfileid: "59155919"
   
  Když internetových prostředků o ověření, <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType> metoda odešle <xref:System.Net.WebRequest> k **správce AuthenticationManager** spolu s požadavkem na pověření. Pak je požadavek ověřen podle následujícího postupu:  
   
-1.  **Správce AuthenticationManager** volání <xref:System.Net.IAuthenticationModule.Authenticate%2A> metodu na každý registrovaný ověřovací moduly v pořadí, které jste zaregistrovali. **Správce AuthenticationManager** použije první modul, který nevrací **null** provádět v procesu ověřování. Podrobnosti o procesu se liší v závislosti na typu zahrnutých ověřovací modul.  
+1. **Správce AuthenticationManager** volání <xref:System.Net.IAuthenticationModule.Authenticate%2A> metodu na každý registrovaný ověřovací moduly v pořadí, které jste zaregistrovali. **Správce AuthenticationManager** použije první modul, který nevrací **null** provádět v procesu ověřování. Podrobnosti o procesu se liší v závislosti na typu zahrnutých ověřovací modul.  
   
-2.  Po dokončení procesu ověřování ověřovací modul vrátí <xref:System.Net.Authorization> k **WebRequest** , který obsahuje informace potřebné pro přístup k internetového zdroji.  
+2. Po dokončení procesu ověřování ověřovací modul vrátí <xref:System.Net.Authorization> k **WebRequest** , který obsahuje informace potřebné pro přístup k internetového zdroji.  
   
  Některá schémata ověřování můžete ověřovat uživatele bez provedení první požadavek pro prostředek. Aplikace můžete ušetřit čas tím preauthenticating uživatele s prostředkem, čímž se zmenšuje alespoň jednu výměnu zpráv pro server. Nebo, aby bylo možné později se více přizpůsobovat uživateli může provést ověření při spuštění programu. Schémata ověřování, které můžete použít sadu předběžné ověření <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> vlastnost **true**.  
   

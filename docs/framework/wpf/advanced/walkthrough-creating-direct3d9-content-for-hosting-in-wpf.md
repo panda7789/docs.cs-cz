@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF'
+title: 'Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF'
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-ms.openlocfilehash: 8acef4a52c9317618485a7c46c1e22cc2524dd69
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 160395b84ef7ca447d162ceff34752113a1d59a9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379598"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300265"
 ---
-# <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF
+# <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>Návod: Vytvoření obsahu Direct3D9 pro hostování ve WPF
 Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro hostování v aplikaci Windows Presentation Foundation (WPF). Další informace o hostování obsahu Direct3D9 v aplikaci WPF, naleznete v tématu [WPF a systému Direct3D9 vzájemná spolupráce grafického subsystému](wpf-and-direct3d9-interoperation.md).
 
  V tomto podrobném návodu můžete provádět následující úlohy:
@@ -37,29 +37,29 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 
 #### <a name="to-create-the-direct3d9-project"></a>Chcete-li vytvořit projekt Direct3D9
 
-1.  Vytvořte nový projekt Win32 v jazyce C++ s názvem `D3DContent`.
+1. Vytvořte nový projekt Win32 v jazyce C++ s názvem `D3DContent`.
 
      Průvodce aplikací Win32 otevře a zobrazí se úvodní obrazovka.
 
-2.  Klikněte na **Další**.
+2. Klikněte na **Další**.
 
      Obrazovka nastavení aplikace se zobrazí.
 
-3.  V **typ aplikace:** vyberte **DLL** možnost.
+3. V **typ aplikace:** vyberte **DLL** možnost.
 
-4.  Klikněte na tlačítko **Dokončit**.
+4. Klikněte na tlačítko **Dokončit**.
 
      Je generována D3DContent projektu.
 
-5.  V Průzkumníku řešení klikněte pravým tlačítkem na projekt D3DContent a vyberte **vlastnosti**.
+5. V Průzkumníku řešení klikněte pravým tlačítkem na projekt D3DContent a vyberte **vlastnosti**.
 
      **Stránky vlastností D3DContent** zobrazí se dialogové okno.
 
-6.  Vyberte **C/C++** uzlu.
+6. Vyberte **C/C++** uzlu.
 
-7.  V **další adresáře souborů k zahrnutí** zadejte umístění DirectX zahrnují složku. Výchozí umístění pro tuto složku nachází v %ProgramFiles%\Microsoft rozhraní DirectX SDK (*verze*) \Include.
+7. V **další adresáře souborů k zahrnutí** zadejte umístění DirectX zahrnují složku. Výchozí umístění pro tuto složku nachází v %ProgramFiles%\Microsoft rozhraní DirectX SDK (*verze*) \Include.
 
-8.  Dvakrát klikněte **Linkeru** uzel a rozbalte ho.
+8. Dvakrát klikněte **Linkeru** uzel a rozbalte ho.
 
 9. V **další adresáře knihoven** zadejte umístění složky knihovny rozhraní DirectX. Výchozí umístění pro tuto složku nachází v %ProgramFiles%\Microsoft rozhraní DirectX SDK (*verze*) \Lib\x86.
 
@@ -74,7 +74,7 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 
 #### <a name="to-create-the-direct3d9-content"></a>K vytvoření obsahu Direct3D9
 
-1.  Tři třídy jazyka C++ pomocí Průzkumníka řešení, přidejte do projektu s tímto názvem.
+1. Tři třídy jazyka C++ pomocí Průzkumníka řešení, přidejte do projektu s tímto názvem.
 
      `CRenderer` (s virtuální destruktor)
 
@@ -82,31 +82,31 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 
      `CTriangleRenderer`
 
-2.  Otevřete Renderer.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+2. Otevřete Renderer.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#RendererH](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.h#rendererh)]
 
-3.  Otevřete Renderer.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+3. Otevřete Renderer.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#RendererCPP](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderercpp)]
 
-4.  Otevřete RendererManager.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+4. Otevřete RendererManager.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerH](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.h#renderermanagerh)]
 
-5.  Otevřete RendererManager.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+5. Otevřete RendererManager.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#RendererManagerCPP](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanagercpp)]
 
-6.  Otevřete TriangleRenderer.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+6. Otevřete TriangleRenderer.h v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererH](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.h#trianglerendererh)]
 
-7.  Otevřete TriangleRenderer.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+7. Otevřete TriangleRenderer.cpp v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#TriangleRendererCPP](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/trianglerenderer.cpp#trianglerenderercpp)]
 
-8.  Stdafx.h otevřete v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
+8. Stdafx.h otevřete v editoru kódu a automaticky generovaného kódu nahraďte následujícím kódem.
 
      [!code-cpp[System.Windows.Interop.D3DImage#StdafxH](~/samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/stdafx.h#stdafxh)]
 
@@ -142,5 +142,5 @@ Tento návod ukazuje, jak k vytvoření obsahu Direct3D9, který je vhodný pro 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Interop.D3DImage>
-- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
-- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Předpokládaný výkon pro Direct3D9 a interoperabilitu WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
+- [Návod: Hostování obsahu Direct3D9 ve WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

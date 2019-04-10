@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-ms.openlocfilehash: 6ff29a7a204cb8f20f2f67946d5d1ed9c976e7aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: aa76e3d1d30e394f28b5112e45fc72229e9a78fc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694578"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295780"
 ---
 # <a name="-baseaddress-c-compiler-options"></a>-baseaddress (možnosti kompilátoru C#)
 **- Baseaddress** umožní zadat upřednostňované základní adrese, ve kterém se má načíst knihovnu DLL. Další informace o kdy a proč chcete použít tuto možnost najdete v tématu [Larry Osterman Weblogu](https://blogs.msdn.microsoft.com/larryosterman/2004/07/06/why-should-i-even-bother-to-use-dlls-in-my-system/).  
@@ -37,18 +37,18 @@ ms.locfileid: "54694578"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Klikněte na tlačítko **Upřesnit** tlačítko.  
+3. Klikněte na tlačítko **Upřesnit** tlačítko.  
   
-4.  Upravit **základní adresa knihovny DLL** vlastnost.  
+4. Upravit **základní adresa knihovny DLL** vlastnost.  
   
      Programové nastavení tohoto parametru kompilátoru, naleznete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.BaseAddress%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Diagnostics.ProcessModule.BaseAddress%2A?displayProperty=nameWithType>
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

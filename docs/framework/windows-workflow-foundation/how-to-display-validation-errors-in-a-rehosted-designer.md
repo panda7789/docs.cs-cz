@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: zobrazení chyb ověřování na opětovné hostování nástroje návrháře'
+title: 'Postupy: Zobrazení chyb ověřování v návrháři se změněným hostováním'
 ms.date: 03/30/2017
 ms.assetid: 5aa8fb53-8f75-433b-bc06-7c7d33583d5d
-ms.openlocfilehash: 8f70b190042d167741bbadc4e1645756fe5b830d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3d993f55bf130039905f1a6512a7ae104512432
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33512564"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310197"
 ---
-# <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a>Postupy: zobrazení chyb ověřování na opětovné hostování nástroje návrháře
-Toto téma popisuje, jak načíst a publikování chyby ověření v opětovné hostování nástroje [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]. To poskytuje nám postupu potvrďte, že pracovní postup opětovné hostování nástroje Designer je platný.  
+# <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a>Postupy: Zobrazení chyb ověřování v návrháři se změněným hostováním
+Toto téma popisuje, jak načíst a publikovat chyby ověření provádění se změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]. To nám poskytuje s postupem, abyste se ujistili, že pracovního postupu v návrháři se změněným hostováním platný.  
   
- Tento úkol má dvě části. Prvním je poskytnout implementaci <xref:System.Activities.Presentation.Validation.IValidationErrorService>.  Neexistuje jeden kritické metody k implementaci na tomto rozhraní <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> kterého bude předat seznam <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objekty, které obsahují informace o chybách protokolu pro ladění.  Po implementaci rozhraní, můžete načíst informace o chybě tak, že publikování instance této implementace úpravy v kontextu.  
+ Tento úkol má dvě části. První je k dispozici implementace <xref:System.Activities.Presentation.Validation.IValidationErrorService>.  Existuje jedna kritické metody k implementaci tohoto rozhraní <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> který bude předávat seznam <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objekty, které obsahují informace o chybách v protokolu ladění.  Po implementaci rozhraní načíst informace o této chybě a publikujte instance tuto implementaci kontextu úprav.  
   
-### <a name="implement-the-ivalidationerrorservice-interface"></a>Implementace rozhraní IValidationErrorService  
+### <a name="implement-the-ivalidationerrorservice-interface"></a>Implementovat rozhraní IValidationErrorService  
   
-1.  Zde je ukázka kódu pro jednoduché implementace, která bude zapisovat se chyby ověření protokolu pro ladění.  
+1. Tady je ukázka kódu pro jednoduché implementace, která bude zapisovat chyby ověření protokolu pro ladění.  
   
     ```  
     using System.Activities.Presentation.Validation;  
@@ -36,9 +36,9 @@ Toto téma popisuje, jak načíst a publikování chyby ověření v opětovné 
     }  
     ```  
   
-### <a name="publishing-to-the-editing-context"></a>Publikování do úpravy kontextu  
+### <a name="publishing-to-the-editing-context"></a>Publikování do kontextu úprav  
   
-1.  Zde je kód, který bude publikovat toto úpravy v kontextu.  
+1. Tady je kód, který se bude publikovat ji do kontextu úprav.  
   
     ```  
     wd.Context.Services.Publish<IValidationErrorService>(new DebugValidationErrorService());  

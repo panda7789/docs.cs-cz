@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření kanálu toku dat'
+title: 'Návod: Vytvoření kanálu toku dat'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,29 +12,29 @@ helpviewer_keywords:
 ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b74e60daced88050413855070c880cd6c1cebfb1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 870f65fdbf263913134d0528c200d3c2990a498c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47421239"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299004"
 ---
-# <a name="walkthrough-creating-a-dataflow-pipeline"></a>Postupy: Vytvoření kanálu toku dat
+# <a name="walkthrough-creating-a-dataflow-pipeline"></a>Návod: Vytvoření kanálu toku dat
 Přestože lze použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> metody pro příjem zpráv ze zdroje bloky, můžete také připojit blokům zpráv do formuláře *kanálu toku dat*. Kanálu toku dat je řada komponent, nebo *bloků toku dat*, z nichž každý provádí konkrétní úlohu, která přispívá k větší cíl. Každý blok toku dat v kanálu toku dat provádí práci, když přijme zprávu z jiného bloku toku dat. Obdobně to je montážní linky u automobilů výroby. Každý vozidla prochází montážní linky, jedné stanice sestaví rámce, dalším objektem nainstaluje modul a tak dále. Protože montážní linky umožňuje více vozidel pro sestavení ve stejnou dobu, poskytuje lepší propustnost než sestavení kompletní vozidel jeden po druhém.
 
  Tento dokument vysvětluje kanálu toku dat, která stahuje knihu *Iliad Homer* z webu a hledání text tak, aby odpovídaly jednotlivých slov s slova tohoto zpětného první slovo znaků. Vytvoření kanálu toku dat v tomto dokumentu se skládá z následujících kroků:  
   
-1.  Vytvoření bloků toku dat, které se účastní v kanálu.  
+1. Vytvoření bloků toku dat, které se účastní v kanálu.  
   
-2.  Připojení každého bloku toku dat k další blok v kanálu. Každý blok přijímá jako vstup výstup předchozího bloku v kanálu.  
+2. Připojení každého bloku toku dat k další blok v kanálu. Každý blok přijímá jako vstup výstup předchozího bloku v kanálu.  
   
-3.  Pro každý blok toku dat vytvoří se úkol pokračování, který nastaví další blok do dokončeného stavu po dokončení předchozího bloku.  
+3. Pro každý blok toku dat vytvoří se úkol pokračování, který nastaví další blok do dokončeného stavu po dokončení předchozího bloku.  
   
-4.  Odesílání dat na začátku profilace.  
+4. Odesílání dat na začátku profilace.  
   
-5.  Hlavní kanál označte jako dokončený.  
+5. Hlavní kanál označte jako dokončený.  
   
-6.  Vyčkat, než kanál dokončit veškerou práci.  
+6. Vyčkat, než kanál dokončit veškerou práci.  
   
 ## <a name="prerequisites"></a>Požadavky  
  Čtení [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) před zahájením tohoto návodu.  
@@ -55,7 +55,7 @@ Přestože lze použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Rece
  [!code-csharp[TPLDataflow_Palindromes#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_palindromes/cs/dataflowpalindromes.cs#3)]
  [!code-vb[TPLDataflow_Palindromes#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_palindromes/vb/dataflowpalindromes.vb#3)]  
   
-|Člen|Typ|Popis|  
+|Člen|Type|Popis|  
 |------------|----------|-----------------|  
 |`downloadString`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Stáhne textu knihy z webu.|  
 |`createWordList`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Odděluje knihy text do pole slova.|  
@@ -108,7 +108,7 @@ Přestože lze použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Rece
   
  Paralelismus, které můžete dosáhnout použitím kanály toku dat, se nazývá *paralelismu hrubých* vzhledem k tomu, že se obvykle skládá menšího počtu větších úloh. Můžete také použít více *dosáhnout jemně odstupňovaného paralelismu* menší, krátce běžící úlohy v kanálu toku dat. V tomto příkladu `findReversedWords` člen kanál používá [PLINQ](parallel-linq-plinq.md) zpracování více položek v seznamu pracovních paralelně. Použití jemně odstupňovaného paralelismu hrubých kanálu můžete vylepšit celkovou propustnost.  
   
- Zdroj dat do bloku toku můžete také připojit k více cílovými bloky pro vytváření *toku dat sítě*. Přetížené verze <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> přijímá metodu <xref:System.Predicate%601> objekt, který definuje, jestli cílový blok přijímá každé zprávy na základě jeho hodnoty. Většina toku dat typů bloků, které se chovají jako zdroje nabízí zpráv do všech připojených cílovým blokům, v pořadí, ve kterém byli připojeni, dokud jeden bloků přijme tuto zprávu. Když použijete tento mechanismus filtrování, můžete vytvořit systémy bloků toku dat připojených, které budou řídit určitá data prostřednictvím jednu cestu a další data prostřednictvím jinou cestu. Příklad, který používá filtrování vytvoření toku dat sítě, naleznete v tématu [návod: použití toku dat ve formulářové aplikaci Windows](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
+ Zdroj dat do bloku toku můžete také připojit k více cílovými bloky pro vytváření *toku dat sítě*. Přetížené verze <xref:System.Threading.Tasks.Dataflow.DataflowBlock.LinkTo%2A> přijímá metodu <xref:System.Predicate%601> objekt, který definuje, jestli cílový blok přijímá každé zprávy na základě jeho hodnoty. Většina toku dat typů bloků, které se chovají jako zdroje nabízí zpráv do všech připojených cílovým blokům, v pořadí, ve kterém byli připojeni, dokud jeden bloků přijme tuto zprávu. Když použijete tento mechanismus filtrování, můžete vytvořit systémy bloků toku dat připojených, které budou řídit určitá data prostřednictvím jednu cestu a další data prostřednictvím jinou cestu. Příklad, který používá filtrování vytvoření toku dat sítě, naleznete v tématu [názorný postup: Použití toku dat v Windows Forms aplikace](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="see-also"></a>Viz také:
 

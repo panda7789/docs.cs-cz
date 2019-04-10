@@ -8,12 +8,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - custom controls [Windows Forms], inheritance
 ms.assetid: 1e1fc8ea-c615-4cf0-a356-16d6df7444ab
-ms.openlocfilehash: 90008b00c95906ba43364c5a4ae3f85d9fdf0e22
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 788addee7c024577d029626da4aeb86d0ca9076a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59087869"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300525"
 ---
 # <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění ze stávajících ovládacích prvků Windows Forms
 Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytvořit ovládací prvek odvozený z existujícího ovládacího prvku prostřednictvím dědičnosti. Při dědění z existujícího ovládacího prvku, zdědí všechny funkce a vlastností ovládacího prvku visual. Například, pokud vytváříte ovládací prvek, který dědí z <xref:System.Windows.Forms.Button>, by vypadalo nového ovládacího prvku a act stejně jako standardní <xref:System.Windows.Forms.Button> ovládacího prvku. Pak můžete rozšířit nebo upravit funkce nasazovaných nového ovládacího prvku prostřednictvím implementace vlastních metod a vlastností. V některých ovládacích prvků, můžete také změnit vzhled zděděný ovládací prvek tak, že přepíšete její <xref:System.Windows.Forms.Control.OnPaint%2A> metody.  
@@ -23,23 +23,23 @@ Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytv
   
 ### <a name="to-create-an-inherited-control"></a>Chcete-li vytvořit zděděný ovládací prvek  
   
-1.  Vytvořte nový **formulářová aplikace Windows** projektu.  
+1. Vytvořte nový **formulářová aplikace Windows** projektu.  
   
-2.  Z **projektu** nabídce zvolte **přidat novou položku**.  
+2. Z **projektu** nabídce zvolte **přidat novou položku**.  
   
      Zobrazí se dialogové okno **Přidat novou položku**.  
   
-3.  V **přidat novou položku** dialogové okno, klikněte dvakrát na **vlastní ovládací prvek**.  
+3. V **přidat novou položku** dialogové okno, klikněte dvakrát na **vlastní ovládací prvek**.  
   
      Nový vlastní ovládací prvek se přidá do vašeho projektu.  
   
-4.  Pokud používáte Visual Basic, v horní části **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory**. Rozbalte CustomControl1.vb a poté otevřete CustomControl1.Designer.vb v editoru kódu.  
+4. Pokud používáte Visual Basic, v horní části **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory**. Rozbalte CustomControl1.vb a poté otevřete CustomControl1.Designer.vb v editoru kódu.  
   
-5.  Pokud používáte C#, otevřete CustomControl1.cs v editoru kódu.  
+5. Pokud používáte C#, otevřete CustomControl1.cs v editoru kódu.  
   
-6.  Vyhledejte deklaraci třídy, která dědí z <xref:System.Windows.Forms.Control>.  
+6. Vyhledejte deklaraci třídy, která dědí z <xref:System.Windows.Forms.Control>.  
   
-7.  Změňte základní třídu pro ovládací prvek, který se má Zdědit z.  
+7. Změňte základní třídu pro ovládací prvek, který se má Zdědit z.  
   
      Například, pokud chcete dědit z <xref:System.Windows.Forms.Button>, změňte deklaraci třídy na následující:  
   
@@ -52,7 +52,7 @@ Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytv
     public partial class CustomControl1 : System.Windows.Forms.Button  
     ```  
   
-8.  Pokud používáte Visual Basic, uložte a zavřete CustomControl1.Designer.vb. Otevřete CustomControl1.vb v editoru kódu.  
+8. Pokud používáte Visual Basic, uložte a zavřete CustomControl1.Designer.vb. Otevřete CustomControl1.vb v editoru kódu.  
   
 9. Implementujte všechny vlastní metody nebo vlastnosti, které bude obsahovat váš ovládací prvek.  
   

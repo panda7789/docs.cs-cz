@@ -2,12 +2,12 @@
 title: Vlastní sledování
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: ca53d74f31059532118f3b5d96760a25ed72b3d5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7e275af046013dcd76cb61c25ace1d96fd7e4b93
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59161842"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307610"
 ---
 # <a name="custom-tracking"></a>Vlastní sledování
 Tento příklad znázorňuje způsob vytvoření vlastního účastníka sledování a zapisovat obsah data sledování do konzoly. Kromě toho Ukázka předvádí, jak vygenerovat <xref:System.Activities.Tracking.CustomTrackingRecord> objekty vyplní s uživatelem definovaná data. Filtry účastníka sledování pomocí konzoly <xref:System.Activities.Tracking.TrackingRecord> objekty, protože ho vygeneroval pracovního postupu pomocí profilu sledování objekt vytvořený v kódu.
@@ -133,11 +133,11 @@ context.Track(customRecord);
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení CustomTrackingSample.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení CustomTrackingSample.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.
+3. Abyste mohli spustit řešení, stiskněte CTRL + F5.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

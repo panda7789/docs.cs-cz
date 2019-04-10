@@ -8,12 +8,12 @@ helpviewer_keywords:
 - list boxes [Windows Forms], sorting contents
 - ListBox control [Windows Forms], sorting contents
 ms.assetid: c268e387-3d1d-4d86-a940-19f6673c8d06
-ms.openlocfilehash: 4db1c133aabe39232a891183356e9c1b712f5cc8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bd26d396c238bfc53858320b8f4487df84b3436a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59150602"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312576"
 ---
 # <a name="how-to-sort-the-contents-of-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox
 Ovládací prvky Windows Forms řazení, když jsou vázané na data. Seřazená data zobrazíte pomocí zdroje dat, který podporuje řazení a pak je mít zdroj dat seřadit. Zdroje dat, které podporují řazení jsou data zobrazení, data zobrazení správci a seřadit pole.  
@@ -22,7 +22,7 @@ Ovládací prvky Windows Forms řazení, když jsou vázané na data. Seřazená
   
 ### <a name="to-sort-the-list"></a>Řazení seznamu  
   
-1.  Nastavte `Sorted` vlastnost `true`.  
+1. Nastavte `Sorted` vlastnost `true`.  
   
      Toto nastavení přemístí všechny existující položky seznamu v seřazeném pořadí.  
   

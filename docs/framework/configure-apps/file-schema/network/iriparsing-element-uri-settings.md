@@ -2,12 +2,12 @@
 title: <iriParsing> – Element (nastavení Uri)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
-ms.openlocfilehash: 710d82b70eb16e88404d4d8bbf38d2d030693103
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7033f4dcda7d2fe73310ae0d36d9b05c090d13d4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59092497"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299667"
 ---
 # <a name="iriparsing-element-uri-settings"></a>\<iriParsing > – Element (nastavení Uri)
 Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.  
@@ -50,13 +50,13 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
   
  Povolení podpory pro IRI, jsou požadovány následující dvě změny:  
   
-1.  Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0  
+1. Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0  
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2.  Určete, zda má být použita IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
+2. Určete, zda má být použita IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
   
  Povolení analýza IRI (iriParsing, povoleno = `true`) provede normalizaci a znak kontroly podle nejnovějších IRI pravidla v dokumentu RFC 3987. Výchozí hodnota je `false` a proveďte normalizace a znak kontroly podle RFC 2396 a RFC 3986 (pro literály IPv6).  
   

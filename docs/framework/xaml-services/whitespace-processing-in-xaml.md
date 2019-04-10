@@ -7,12 +7,12 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: ca628a366b000b23a2abe38b1c8b7272299bff16
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dadfab948aff73714a2cf253100f89de3b4a2d57
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59102229"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294922"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování prázdných znaků v jazyku XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
@@ -25,15 +25,15 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
 ## <a name="white-space-normalization"></a>Normalizace prázdné znaky  
  Ve výchozím nastavení dojde k následujícím normalizace prázdných při [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesů procesoru [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] souboru:  
   
-1.  Znaky odřádkování mezi východoasijské znaky jsou odebrány. V části "Východoasijské znaky" dále v tomto tématu pro definici tento termín.  
+1. Znaky odřádkování mezi východoasijské znaky jsou odebrány. V části "Východoasijské znaky" dále v tomto tématu pro definici tento termín.  
   
-2.  Všechny prázdné znaky (místo, odřádkování, karta) budou převedeny na mezery.  
+2. Všechny prázdné znaky (místo, odřádkování, karta) budou převedeny na mezery.  
   
-3.  Všechny po sobě následující mezery jsou odstraněna a nahrazuje jednu mezeru.  
+3. Všechny po sobě následující mezery jsou odstraněna a nahrazuje jednu mezeru.  
   
-4.  Místo ihned po počáteční značce se odstraní.  
+4. Místo ihned po počáteční značce se odstraní.  
   
-5.  Odstraní se místo těsně před koncovou značku.  
+5. Odstraní se místo těsně před koncovou značku.  
   
  "Výchozí" odpovídá stavu udávají výchozí hodnota [XML: Space](xml-space-handling-in-xaml.md) atribut.  
   

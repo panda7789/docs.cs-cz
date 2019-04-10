@@ -2,31 +2,31 @@
 title: 'Postupy: Použití monikeru služby u kontraktů WSDL'
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: b8729055c82e3ce1273e8a0cfae53a1f6d3c14e3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2968641538bf0b4d0e136d5784bf69e5e7fcb3a0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59081662"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298081"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>Postupy: Použití monikeru služby u kontraktů WSDL
 Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situace. Na službu, kterou chcete volat nesmí zveřejnit koncový bod MEX a klientský WCF pro spolupráci s COM nelze registrovat knihovnu DLL. V těchto případech můžete vytvořit soubor WSDL, který popisuje službu a předejte ho do monikeru služby WCF. Toto téma popisuje, jak volat získávání WCF spustit ukázku pomocí monikeru WCF WSDL.  
   
 ### <a name="using-the-wsdl-service-moniker"></a>Použití monikeru služby WSDL  
   
-1.  Otevřít a sestavit GettingStarted ukázkové řešení.  
+1. Otevřít a sestavit GettingStarted ukázkové řešení.  
   
-2.  Spusťte aplikaci Internet Explorer a přejděte do `http://localhost/ServiceModelSamples/Service.svc` abyste měli jistotu, služba funguje.  
+2. Spusťte aplikaci Internet Explorer a přejděte do `http://localhost/ServiceModelSamples/Service.svc` abyste měli jistotu, služba funguje.  
   
-3.  V souboru Service.cs přidejte následující atribut ve třídě CalculatorService:  
+3. V souboru Service.cs přidejte následující atribut ve třídě CalculatorService:  
   
      [!code-csharp[S_WSDL_Client#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_wsdl_client/cs/service.cs#0)]  
   
-4.  Přidáte obor názvů vazby ve službě App.config:  
+4. Přidáte obor názvů vazby ve službě App.config:  
 
-5.  Vytvoření souboru WSDL pro aplikace pro čtení. Protože obory názvů byly přidány v krocích 3 a 4, můžete použít Internet Exploreru se dotázat na celý popis WSDL služby tak, že přejdete do `http://localhost/ServiceModelSamples/Service.svc?wsdl`. Potom můžete uložit soubor z aplikace Internet Explorer jako serviceWSDL.xml. Pokud nezadáte obory názvů v krocích 3 a 4, nebudou dokumentu WSDL vrácená z dotazu výše zobrazenou adresu URL dokončení WSDL. Dokument WSDL vrátil bude obsahovat několik příkazy pro import, které importují jiné dokumenty WSDL. Budete muset projít každý příkaz import a sestavit kompletní dokumentu WSDL, kombinování WSDL vrácený službou WSDL importovat.  
+5. Vytvoření souboru WSDL pro aplikace pro čtení. Protože obory názvů byly přidány v krocích 3 a 4, můžete použít Internet Exploreru se dotázat na celý popis WSDL služby tak, že přejdete do `http://localhost/ServiceModelSamples/Service.svc?wsdl`. Potom můžete uložit soubor z aplikace Internet Explorer jako serviceWSDL.xml. Pokud nezadáte obory názvů v krocích 3 a 4, nebudou dokumentu WSDL vrácená z dotazu výše zobrazenou adresu URL dokončení WSDL. Dokument WSDL vrátil bude obsahovat několik příkazy pro import, které importují jiné dokumenty WSDL. Budete muset projít každý příkaz import a sestavit kompletní dokumentu WSDL, kombinování WSDL vrácený službou WSDL importovat.  
   
-6.  Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
+6. Otevřete Visual Basic 6.0 a vytvořte nový soubor standardní .exe. Přidání tlačítka do formuláře a dvakrát klikněte na tlačítko Přidat následující kód do obslužné rutiny kliknutí:  
   
     ```  
     ' Open the WSDL contract file and read it all into the wsdlContract string.  
@@ -52,7 +52,7 @@ Pokud chcete úplně nezávislý klient komunikace s objekty COM, existují situ
     > [!NOTE]
     >  Pokud je moniker je poškozený nebo pokud služba není k dispozici volání `GetObject` vrátí chyba s oznámením "Neplatná syntaxe".  Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
   
-7.  Spuštění aplikace Visual Basic. Zobrazí se okno se zprávou s výsledky volání odečíst (145, 76.54).  
+7. Spuštění aplikace Visual Basic. Zobrazí se okno se zprávou s výsledky volání odečíst (145, 76.54).  
   
 ## <a name="see-also"></a>Viz také:
 

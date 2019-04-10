@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID91
 ms.assetid: 2f03e611-f0ed-465c-99a2-a816e034faa3
-ms.openlocfilehash: 1b24bec6dd7c4b5af10349cf523d9a7e93b385fe
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: b2c0c47b359e218111c1629ea574303a6d663046
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297925"
 ---
 # <a name="object-variable-or-with-block-variable-not-set"></a>Objektová proměnná nebo proměnná bloku With nebyla nastavena.
 Odkazují na neplatný objekt proměnnou.   Této chybě může dojít z několika důvodů:  
@@ -36,7 +36,7 @@ Odkazují na neplatný objekt proměnnou.   Této chybě může dojít z několi
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Nastavte `Option Strict` k `On` na začátek souboru přidejte následující kód:  
+1. Nastavte `Option Strict` k `On` na začátek souboru přidejte následující kód:  
   
 ```vb  
 Option Strict On  
@@ -44,16 +44,16 @@ Option Strict On
 
      When you run the project, a compiler error will appear in the **Error List** for any variable that was specified without a type.  
   
-2.  Pokud nechcete povolit `Option Strict`, vyhledávání v kódu pro všechny proměnné, které byly zadány bez typu (`Dim x` místo `Dim x As String`) a přidejte odpovídající typu k deklaraci.  
+2. Pokud nechcete povolit `Option Strict`, vyhledávání v kódu pro všechny proměnné, které byly zadány bez typu (`Dim x` místo `Dim x As String`) a přidejte odpovídající typu k deklaraci.  
   
-3.  Ujistěte se, že nejsou odkazující na proměnné objektu, která byla nastavena na `Nothing`.  Vyhledávání v kódu pro klíčové slovo `Nothing`a upravte kód tak, aby objekt není nastaven na `Nothing` až poté, co mají odkazovat.  
+3. Ujistěte se, že nejsou odkazující na proměnné objektu, která byla nastavena na `Nothing`.  Vyhledávání v kódu pro klíčové slovo `Nothing`a upravte kód tak, aby objekt není nastaven na `Nothing` až poté, co mají odkazovat.  
   
-4.  Ujistěte se, že jsou všechny proměnné pole dimenzovanými předtím, než k nim přístup. Dimenze můžete přiřadit při prvním vytvoření pole (`Dim x(5) As String` místo `Dim x() As String`), nebo použijte `ReDim` – klíčové slovo k nastavení rozměrů pole před první přístup.  
+4. Ujistěte se, že jsou všechny proměnné pole dimenzovanými předtím, než k nim přístup. Dimenze můžete přiřadit při prvním vytvoření pole (`Dim x(5) As String` místo `Dim x() As String`), nebo použijte `ReDim` – klíčové slovo k nastavení rozměrů pole před první přístup.  
   
-5.  Ujistěte se, že vaše `With` bloku je inicializován pomocí provádí `With` příkaz vstupní bod.  
+5. Ujistěte se, že vaše `With` bloku je inicializován pomocí provádí `With` příkaz vstupní bod.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Deklarace objektové proměnné](../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
-- [Příkaz ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)
-- [Příkaz With...End With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [ReDim – příkaz](../../../visual-basic/language-reference/statements/redim-statement.md)
+- [With...End With – příkaz](../../../visual-basic/language-reference/statements/with-end-with-statement.md)

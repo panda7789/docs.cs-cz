@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - CS3024
 ms.assetid: fef9db31-9a7f-42d5-ad37-3e7faf661f95
-ms.openlocfilehash: e49c131328f132ae6372167818d084df51ef6c78
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7515fdd7bc8f57890e3f1aac6303ed4607cc2249
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511557"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297290"
 ---
 # <a name="compiler-warning-cs3024"></a>CS3024 upozornění kompilátoru
 Typ omezení 'type' není kompatibilní se Specifikací CLS.  
@@ -20,7 +20,7 @@ Typ omezení 'type' není kompatibilní se Specifikací CLS.
   
 ### <a name="to-eliminate-this-warning"></a>Chcete-li odstranit toto upozornění  
   
-1.  Kompatibilní se Specifikací CLS typ použijte pro omezení typu.  
+1. Kompatibilní se Specifikací CLS typ použijte pro omezení typu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad generuje CS3024 v několika umístěních:  

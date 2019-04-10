@@ -11,12 +11,12 @@ helpviewer_keywords:
 - layout [Windows Forms], TableLayoutPanel control
 - TableLayoutPanel control [Windows Forms], about TableLayoutPanel control
 ms.assetid: 337661c8-61cb-44ee-93e0-3662bddec327
-ms.openlocfilehash: 57a57b9f888f2fc46eddba5b97b9e833a7e9f028
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 65daba0ce1a6f1c37fb257c1029396577821aad9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59134014"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295364"
 ---
 # <a name="tablelayoutpanel-control-overview"></a>TableLayoutPanel – přehled ovládacího prvku
 <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek uspořádá její obsah do mřížky. Protože je prováděna rozložení i v době návrhu a běhu, můžete změnit dynamicky se změnami prostředí aplikace. To umožňuje ovládací prvky v panelu proporcionálně velikost, tak můžou reagovat na změny, jako je například změna velikosti nadřazeného ovládacího prvku nebo text délka mění kvůli lokalizace.  
@@ -33,13 +33,13 @@ ms.locfileid: "59134014"
   
  Můžete sloučit buňky v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku tak, že nastavíte `ColumnSpan` nebo `RowSpan` vlastnosti na podřízený ovládací prvek.  
   
-1.  [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control.md)  
+1. [Postupy: Zarovnání a roztažení ovládacího prvku v ovládacím prvku TableLayoutPanel](how-to-align-and-stretch-a-control-in-a-tablelayoutpanel-control.md)  
   
-2.  [Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](how-to-span-rows-and-columns-in-a-tablelayoutpanel-control.md)  
+2. [Postupy: Nastavení rozpětí řádků a sloupců v ovládacím prvku TableLayoutPanel](how-to-span-rows-and-columns-in-a-tablelayoutpanel-control.md)  
   
-3.  [Postupy: Úpravy sloupců a řádků v ovládacím prvku TableLayoutPanel](how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control.md)  
+3. [Postupy: Úpravy sloupců a řádků v ovládacím prvku TableLayoutPanel](how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control.md)  
   
-4.  [Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
+4. [Návod: Uspořádání ovládacích prvků ve Windows Forms s použitím ovládacího prvku TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [WPF]
 ms.assetid: 138c41c4-1759-4bbf-8d77-77031a06a8a0
-ms.openlocfilehash: c092ad49f40257467245a07a6e4b9849822e1835
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 908a38485c879e3f28399bb7dbc8303afd4505da
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59076559"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309495"
 ---
 # <a name="walkthrough-create-a-button-by-using-xaml"></a>Návod: Vytvoření tlačítka pomocí XAML
 Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro použití v aplikaci Windows Presentation Foundation (WPF). Tento návod používá – styly a šablony vytvořit tlačítko vlastní prostředek, umožňující opětovné použití kódu a oddělení logiky tlačítko od deklarace tlačítko. Tento návod byl napsán výhradně v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -26,11 +26,11 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
 #### <a name="to-create-a-new-wpf-project-and-add-buttons-to-the-window"></a>Přidání tlačítek do okna a vytvořte nový projekt WPF  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  **Vytvořte nový projekt WPF:** Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**. Najít **aplikace Windows (WPF)** šablony a názvu projektu "AnimatedButton". Tím se vytvoří kostru pro aplikaci.  
+2. **Vytvořte nový projekt WPF:** Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**. Najít **aplikace Windows (WPF)** šablony a názvu projektu "AnimatedButton". Tím se vytvoří kostru pro aplikaci.  
   
-3.  **Přidáte výchozí základní tlačítka:** Všechny soubory, které potřebujete pro Tento názorný postup jsou k dispozici šablonou. Otevřete soubor Window1.xaml dvojitým kliknutím v Průzkumníku řešení. Ve výchozím nastavení, je <xref:System.Windows.Controls.Grid> prvek Window1.xaml. Odeberte <xref:System.Windows.Controls.Grid> elementu a přidejte několik tlačítek na hodnotu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky zadáním nebo kopírování a vkládání následující zvýrazněný kód do Window1.xaml:  
+3. **Přidáte výchozí základní tlačítka:** Všechny soubory, které potřebujete pro Tento názorný postup jsou k dispozici šablonou. Otevřete soubor Window1.xaml dvojitým kliknutím v Průzkumníku řešení. Ve výchozím nastavení, je <xref:System.Windows.Controls.Grid> prvek Window1.xaml. Odeberte <xref:System.Windows.Controls.Grid> elementu a přidejte několik tlačítek na hodnotu [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky zadáním nebo kopírování a vkládání následující zvýrazněný kód do Window1.xaml:  
   
     ```xaml  
     <Window x:Class="AnimatedButton.Window1"  
@@ -58,7 +58,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
 #### <a name="to-use-styles-to-set-basic-properties-on-the-buttons"></a>Použití stylů můžete nastavit základní vlastnosti tlačítka  
   
-1.  **Definování blok Application.Resources:** Otevření souboru app.xaml a pokud už tam není, přidejte následující zvýrazněný kód:  
+1. **Definování blok Application.Resources:** Otevření souboru app.xaml a pokud už tam není, přidejte následující zvýrazněný kód:  
   
     ```xaml  
     <Application x:Class="AnimatedButton.App"  
@@ -74,7 +74,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Tady můžete definovat prostředek Určuje prostředek oboru. Definování prostředků v `Application.Resources` v souboru app.xaml umožňuje soubor prostředků pro použití v kdekoli v aplikaci. Další informace o definování oboru prostředků najdete v tématu [prostředky XAML](../advanced/xaml-resources.md).  
   
-2.  **Vytvoření stylu a definovat hodnoty základní vlastnosti s ní:** Přidejte následující kód k `Application.Resources` bloku. Tento kód vytvoří <xref:System.Windows.Style> , která se vztahuje na všechna tlačítka v nastavení aplikace <xref:System.Windows.FrameworkElement.Width%2A> tlačítek na hodnotu 90 a <xref:System.Windows.FrameworkElement.Margin%2A> 10:  
+2. **Vytvoření stylu a definovat hodnoty základní vlastnosti s ní:** Přidejte následující kód k `Application.Resources` bloku. Tento kód vytvoří <xref:System.Windows.Style> , která se vztahuje na všechna tlačítka v nastavení aplikace <xref:System.Windows.FrameworkElement.Width%2A> tlačítek na hodnotu 90 a <xref:System.Windows.FrameworkElement.Margin%2A> 10:  
   
     ```xaml  
     <Application.Resources>  
@@ -91,7 +91,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Je mnohem více že můžete provést se styly, včetně celou řadu způsobů, jak doladit, jaké objekty jsou cíleny, zadáte hodnoty komplexní vlastnost a dokonce i pomocí stylů jako vstup pro jiné styly. Další informace najdete v tématu [styly a šablony](styling-and-templating.md).  
   
-3.  **Nastavte hodnotu vlastnosti stylu na prostředek:** Prostředky povolit jednoduchý způsob, jak opětovné použití obecně definovaných objektů a hodnoty. To je užitečné zejména pro definování komplexních hodnot. aby byl kód modulárnější použití prostředků. Přidejte následující zvýrazněný kód do souboru app.xaml.  
+3. **Nastavte hodnotu vlastnosti stylu na prostředek:** Prostředky povolit jednoduchý způsob, jak opětovné použití obecně definovaných objektů a hodnoty. To je užitečné zejména pro definování komplexních hodnot. aby byl kód modulárnější použití prostředků. Přidejte následující zvýrazněný kód do souboru app.xaml.  
   
     ```xaml  
     <Application.Resources>  
@@ -121,7 +121,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
 #### <a name="to-use-the-template-to-define-the-look-of-the-button"></a>Použití šablony k definování vzhledu tlačítka  
   
-1.  **Nastavení šablony:** Vzhledem k tomu, že ovládací prvky jako <xref:System.Windows.Controls.Button> mít <xref:System.Windows.Controls.Control.Template%2A> vlastností, můžete definovat hodnotu vlastnosti šablony, stejně jako jiné hodnoty vlastností jsme nastavili v <xref:System.Windows.Style> pomocí <xref:System.Windows.Setter>. Přidejte následující zvýrazněný kód do vašeho styl tlačítka.  
+1. **Nastavení šablony:** Vzhledem k tomu, že ovládací prvky jako <xref:System.Windows.Controls.Button> mít <xref:System.Windows.Controls.Control.Template%2A> vlastností, můžete definovat hodnotu vlastnosti šablony, stejně jako jiné hodnoty vlastností jsme nastavili v <xref:System.Windows.Style> pomocí <xref:System.Windows.Setter>. Přidejte následující zvýrazněný kód do vašeho styl tlačítka.  
   
     ```xaml
     <Application.Resources>  
@@ -144,7 +144,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
     </Application.Resources>  
     ```  
   
-2.  **Příkaz ALTER prezentace tlačítka:** V tomto okamžiku budete muset definovat šablony. Přidejte následující zvýrazněný kód. Tento kód určuje dvě <xref:System.Windows.Shapes.Rectangle> prvky s zaoblenými hranami, za nímž následuje <xref:System.Windows.Controls.DockPanel>. <xref:System.Windows.Controls.DockPanel> Slouží k hostiteli <xref:System.Windows.Controls.ContentPresenter> tlačítka. A <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah tlačítka. V tomto názorném postupu obsahu je text ("Tlačítko 1", "Tlačítko 2", "Tlačítko 3"). Všechny součásti šablony (obdélníků a <xref:System.Windows.Controls.DockPanel>) jsou rozloženy uvnitř <xref:System.Windows.Controls.Grid>.  
+2. **Příkaz ALTER prezentace tlačítka:** V tomto okamžiku budete muset definovat šablony. Přidejte následující zvýrazněný kód. Tento kód určuje dvě <xref:System.Windows.Shapes.Rectangle> prvky s zaoblenými hranami, za nímž následuje <xref:System.Windows.Controls.DockPanel>. <xref:System.Windows.Controls.DockPanel> Slouží k hostiteli <xref:System.Windows.Controls.ContentPresenter> tlačítka. A <xref:System.Windows.Controls.ContentPresenter> zobrazí obsah tlačítka. V tomto názorném postupu obsahu je text ("Tlačítko 1", "Tlačítko 2", "Tlačítko 3"). Všechny součásti šablony (obdélníků a <xref:System.Windows.Controls.DockPanel>) jsou rozloženy uvnitř <xref:System.Windows.Controls.Grid>.  
   
     ```xaml  
     <Setter.Value>  
@@ -167,7 +167,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      ![](./media/custom-button-animatedbutton-4.gif "custom_button_AnimatedButton_4")  
   
-3.  **Přidejte glasseffect do šablony:** Dále přidáte skla. Nejprve vytvoříte některé prostředky, které vytvoření efektu přechodu skla. Přidat tyto přechodu prostředky kdekoli v rámci `Application.Resources` blok:  
+3. **Přidejte glasseffect do šablony:** Dále přidáte skla. Nejprve vytvoříte některé prostředky, které vytvoření efektu přechodu skla. Přidat tyto přechodu prostředky kdekoli v rámci `Application.Resources` blok:  
   
     ```xaml  
     <Application.Resources>  
@@ -253,7 +253,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
 #### <a name="to-create-button-interactivity"></a>Chcete-li vytvořit tlačítko interaktivitu  
   
-1.  **Přidání aktivačních událostí šablony:** Zvýrazněná značka se přidáte do šablony.  
+1. **Přidání aktivačních událostí šablony:** Zvýrazněná značka se přidáte do šablony.  
   
     ```xaml
     <Setter.Value>  
@@ -318,7 +318,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
     </Setter.Value>  
     ```  
   
-2.  **Přidáte aktivační procedury vlastností:** Přidat zvýrazněné značky `ControlTemplate.Triggers` blok:  
+2. **Přidáte aktivační procedury vlastností:** Přidat zvýrazněné značky `ControlTemplate.Triggers` blok:  
   
     ```xaml
     <ControlTemplate.Triggers>  
@@ -330,7 +330,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci a vidět její účinek spuštění ukazatele myši nad tlačítka.  
   
-3.  **Přidání triggeru fokus:** V dalším kroku přidáme několik podobné metody setter pro zpracování případu, když je fokus na tlačítko (například po na něj uživatel klikne).  
+3. **Přidání triggeru fokus:** V dalším kroku přidáme několik podobné metody setter pro zpracování případu, když je fokus na tlačítko (například po na něj uživatel klikne).  
   
     ```xaml  
     <ControlTemplate.Triggers>  
@@ -361,7 +361,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Stisknutím klávesy F5 spusťte aplikaci a klikněte na jedno z tlačítek. Všimněte si, že zůstane po kliknutí na jeho protože stále má fokus zvýrazněné tlačítko. Pokud klepnete na tlačítko Další, nové tlačítko získá fokus, zatímco poslední z nich se ztratí.  
   
-4.  **Přidání animace k** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** Vedle přidáme některé animace aktivačních událostí. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` bloku.  
+4. **Přidání animace k** <xref:System.Windows.UIElement.MouseEnter> **a** <xref:System.Windows.UIElement.MouseLeave> **:** Vedle přidáme některé animace aktivačních událostí. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` bloku.  
   
     ```xaml
     <!-- Animations that start when mouse enters and leaves button. -->  
@@ -398,7 +398,7 @@ Cílem tohoto návodu je zjistěte, jak vytvořit animovaná tlačítka pro pou�
   
      Druhý aktivační procedura událostí (<xref:System.Windows.UIElement.MouseLeave>) jednoduše zastaví první z nich. Při zastavení <xref:System.Windows.Media.Animation.Storyboard>, animované vlastnosti vrátit na výchozí hodnoty. Proto když uživatel přesune ukazatel mimo tlačítko, na tlačítko se vrátí způsobu, jakým byl před přesunutím ukazatele myši nad tlačítkem. Další informace o animacích naleznete v tématu [přehled animace](../graphics-multimedia/animation-overview.md).  
   
-5.  **Přidání animace k po kliknutí na tlačítko:** Posledním krokem je přidání triggeru pro, když uživatel klikne na tlačítko. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` blok:  
+5. **Přidání animace k po kliknutí na tlačítko:** Posledním krokem je přidání triggeru pro, když uživatel klikne na tlačítko. Přidejte následující kód, kdekoli uvnitř sady `ControlTemplate.Triggers` blok:  
   
     ```xaml
     <!-- Animation fires when button is clicked, causing glass to spin.  -->  

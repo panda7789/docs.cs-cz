@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
-ms.openlocfilehash: ec20068e2cc920048b2d831db75ea2b4deb3f888
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: af56e01c1c8c1e23bb80413ce6f52a5f6d467b4b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59151447"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307250"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Postupy: Přidání instalačních programů do aplikace služby
 Visual Studio se dodáván instalace součásti, které můžete nainstalovat prostředky spojené s aplikací služeb. Součásti instalace registraci jednotlivých služeb v systému, na který se instaluje a umožní správci řízení služeb vědět, jestli existuje služba. Při práci s aplikací služby, můžete vybrat odkaz v okně Vlastnosti na příslušné instalační programy automaticky přidat do projektu.  
@@ -33,29 +33,29 @@ Visual Studio se dodáván instalace součásti, které můžete nainstalovat pr
   
 ### <a name="to-add-installers-to-your-service-application"></a>K přidání instalačních programů do aplikace služby  
   
-1.  V **Průzkumníka řešení**, přístup **návrhu** zobrazení pro službu, pro který chcete přidat jako součást instalace.  
+1. V **Průzkumníka řešení**, přístup **návrhu** zobrazení pro službu, pro který chcete přidat jako součást instalace.  
   
-2.  Klikněte na pozadí návrháře vyberte službu, sama, nikoli některé z jejích komponent.  
+2. Klikněte na pozadí návrháře vyberte službu, sama, nikoli některé z jejích komponent.  
   
-3.  Má Návrhář fokus, klikněte pravým tlačítkem a pak klikněte na tlačítko **přidat instalační program**.  
+3. Má Návrhář fokus, klikněte pravým tlačítkem a pak klikněte na tlačítko **přidat instalační program**.  
   
      Nová třída `ProjectInstaller`a dvě součásti instalace <xref:System.ServiceProcess.ServiceProcessInstaller> a <xref:System.ServiceProcess.ServiceInstaller>, se přidají do vašeho projektu a hodnoty vlastností pro službu se zkopírují do komponenty.  
   
-4.  Klikněte na tlačítko <xref:System.ServiceProcess.ServiceInstaller> komponenty a ověřte, zda hodnota <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na stejnou hodnotu jako <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost na samotnou službu.  
+4. Klikněte na tlačítko <xref:System.ServiceProcess.ServiceInstaller> komponenty a ověřte, zda hodnota <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> je nastavena na stejnou hodnotu jako <xref:System.ServiceProcess.ServiceInstaller.ServiceName%2A> vlastnost na samotnou službu.  
   
-5.  Pokud chcete zjistit, jak bude vaše služba spuštěna, klikněte na tlačítko <xref:System.ServiceProcess.ServiceInstaller> komponenty a nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> k odpovídající hodnotě.  
+5. Pokud chcete zjistit, jak bude vaše služba spuštěna, klikněte na tlačítko <xref:System.ServiceProcess.ServiceInstaller> komponenty a nastavte <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> k odpovídající hodnotě.  
   
-    |Hodnota|Výsledek|  
+    |Value|Výsledek|  
     |-----------|------------|  
     |<xref:System.ServiceProcess.ServiceStartMode.Manual>|Tuto službu musí ručně spustit po instalaci. Další informace najdete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md).|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|Služba se spustí sám o sobě pokaždé, když se počítač se restartuje.|  
     |<xref:System.ServiceProcess.ServiceStartMode.Disabled>|Službu nelze spustit.|  
   
-6.  K určení kontextu zabezpečení, ve kterém se spustí vaše služba, klikněte na tlačítko <xref:System.ServiceProcess.ServiceProcessInstaller> komponenty a nastavte vlastnost odpovídající hodnoty. Další informace najdete v tématu [jak: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md).  
+6. K určení kontextu zabezpečení, ve kterém se spustí vaše služba, klikněte na tlačítko <xref:System.ServiceProcess.ServiceProcessInstaller> komponenty a nastavte vlastnost odpovídající hodnoty. Další informace najdete v tématu [jak: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md).  
   
-7.  Přepište všechny metody, pro které je potřeba provést vlastní zpracování.  
+7. Přepište všechny metody, pro které je potřeba provést vlastní zpracování.  
   
-8.  Proveďte kroky 1 až 7 pro každý další služby ve vašem projektu.  
+8. Proveďte kroky 1 až 7 pro každý další služby ve vašem projektu.  
   
     > [!NOTE]
     >  U každé další služby ve vašem projektu, je nutné přidat další <xref:System.ServiceProcess.ServiceInstaller> komponentu do projektu `ProjectInstaller` třídy. <xref:System.ServiceProcess.ServiceProcessInstaller> Komponenty přidali v kroku 3 funguje se všemi instalační programy jednotlivé služby v projektu.  

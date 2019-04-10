@@ -2,12 +2,12 @@
 title: DEREF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
-ms.openlocfilehash: 57f7c61d8e4de2a63708ef6d4437ca53de854af9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1ba562ba6542e6ab0d62f1f8348434ae4f4c9b13
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59116860"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305179"
 ---
 # <a name="deref-entity-sql"></a>DEREF (Entity SQL)
 Přístupů přes ukazatel referenčními hodnotami a vytváří výsledek, který přístup přes ukazatel.  
@@ -31,9 +31,9 @@ SELECT DEREF ( o.expression ) from Table as o;
 ## <a name="example"></a>Příklad  
  Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazu používá operátor DEREF pokouší dereferencovat referenčními hodnotami a přístupu přes ukazatel výsledku, který vytvoří. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Následující dotaz předejte jako argument k metodě ExecutePrimitiveTypeQuery:  
+2. Následující dotaz předejte jako argument k metodě ExecutePrimitiveTypeQuery:  
   
  [!code-csharp[DP EntityServices Concepts 2#DEREF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#deref)]  
   

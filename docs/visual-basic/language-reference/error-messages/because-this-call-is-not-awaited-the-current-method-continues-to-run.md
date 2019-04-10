@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-ms.openlocfilehash: 5c8767db154c79d9e3b37a22410ac1e4705b7a44
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba0838d562ac0ec0ea531161c437dec5ce66c3f5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609795"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304229"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.
 Protože toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání. Jestli nebude lepší uplatňovat operátor 'Await' na výsledek volání.  
@@ -95,13 +95,13 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
 ## <a name="example"></a>Příklad  
  Následující aplikace Windows Presentation Foundation (WPF) obsahuje metodu z předchozího příkladu. Následující kroky nastavení aplikace.  
   
-1.  Vytvoření aplikace WPF a pojmenujte ho `AsyncWarning`.  
+1. Vytvoření aplikace WPF a pojmenujte ho `AsyncWarning`.  
   
-2.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+2. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.  
   
-3.  Nahraďte kód v **XAML** zobrazení souboru mainwindow.XAML následujícím kódem.  
+3. Nahraďte kód v **XAML** zobrazení souboru mainwindow.XAML následujícím kódem.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -119,7 +119,7 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
   
      Další informace o návrháři XAML, naleznete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Informace o tom, jak vytvořit jednoduché uživatelské rozhraní, najdete v článku "postup vytvoření aplikace WPF" a "pro návrh jednoduchého hlavního okna MainWindow WPF" části [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
-4.  Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
+4. Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
   
     ```vb  
     Class MainWindow   
@@ -199,11 +199,11 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
     ' Exiting the Click event handler.  
     ```  
   
-5.  Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
+5. Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
   
      Kódu na konci se zobrazuje očekávaný výstup.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)
+- [Await – operátor](../../../visual-basic/language-reference/operators/await-operator.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)

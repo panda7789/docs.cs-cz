@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2d7757b50eedb25247b11fced3d4f9567691c380
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 639ebe1552fd3950bd77acd7b5730b0d3bdb150f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59188601"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302618"
 ---
 # <a name="clr-etw-providers"></a>Poskytovatelé CLR ETW
 Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prostředí a zprostředkovatele doběhu.  
@@ -58,7 +58,7 @@ Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prost�
 ## <a name="etw-data-collection-using-runtime-and-rundown-providers"></a>Shromažďování dat trasování událostí pro Windows pomocí modulu Runtime a zprostředkovatele doběhu  
  Následující příklad ukazuje použití zprostředkovatele doběhu modulu CLR způsobem, který umožňuje rozlišení symbolů pro spravované procesy s minimálním dopadem, bez ohledu na to, zda procesy začínají nebo končí uvnitř nebo vně profilovacího okna.  
   
-1.  Zapnutí protokolování událostí ETW pomocí zprostředkovatele modulu CLR runtime:  
+1. Zapnutí protokolování událostí ETW pomocí zprostředkovatele modulu CLR runtime:  
   
     ```  
     xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl      
@@ -66,7 +66,7 @@ Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prost�
   
      Protokol bude uložen do souboru clr1.etl.  
   
-2.  K zastavení profilování, zatímco proces pokračuje v provádění, spustit zprostředkovatele doběhu zachycení `DCEnd` události:  
+2. K zastavení profilování, zatímco proces pokračuje v provádění, spustit zprostředkovatele doběhu zachycení `DCEnd` události:  
   
     ```  
     xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl      
@@ -74,14 +74,14 @@ Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prost�
   
      To umožňuje shromažďování `DCEnd` události spuštění relace doběhu. Budete muset počkat 30 – 60 sekund pro všechny události, které se mají shromažďovat. Protokol bude uložen do souboru clr1.et2.  
   
-3.  Vypnutí všech profilování ETW:  
+3. Vypnutí všech profilování ETW:  
   
     ```  
     xperf -stop clrRundown   
     xperf -stop clr  
     ```  
   
-4.  Je třeba sloučit profily pro vytvoření jednoho souboru protokolu:  
+4. Je třeba sloučit profily pro vytvoření jednoho souboru protokolu:  
   
     ```  
     xperf -merge clr1.etl clr2.etl merged.etl  

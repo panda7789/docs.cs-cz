@@ -6,12 +6,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], binding controls
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
-ms.openlocfilehash: 4e6b85e1d1ca667f4ec189a7b2549667db24f10d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a4f87303954494e8e32d32e68fb3f1244f25680a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59074648"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304555"
 ---
 # <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře
 Po přidání ovládacích prvků do formuláře a určit uživatelského rozhraní pro vaši aplikaci, lze svázat ovládací prvky zdroje dat, tak, aby v době běhu, uživatelé mohou změnit a uložit data související s aplikací.  
@@ -27,9 +27,9 @@ Po přidání ovládacích prvků do formuláře a určit uživatelského rozhra
   
 ### <a name="to-bind-a-control-at-design-time"></a>K vytvoření vazby ovládacího prvku v době návrhu  
   
-1.  Přetáhněte <xref:System.Windows.Forms.TextBox> ovládací prvek do formuláře.  
+1. Přetáhněte <xref:System.Windows.Forms.TextBox> ovládací prvek do formuláře.  
   
-2.  V **vlastnosti** okno:  
+2. V **vlastnosti** okno:  
   
     1.  Rozbalte **(DataBindings)** uzlu.  
   
@@ -39,17 +39,17 @@ Po přidání ovládacích prvků do formuláře a určit uživatelského rozhra
   
          Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, se zobrazí.  
   
-3.  Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
+3. Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
   
-4.  Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
+4. Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
   
-5.  Na **zvolte typ zdroje dat** stránce **databáze**.  
+5. Na **zvolte typ zdroje dat** stránce **databáze**.  
   
-6.  Na **vyberte datové připojení** vyberte datové připojení ze seznamu dostupných připojení. Pokud požadované datové připojení není k dispozici vyberte **nové připojení** k vytvoření nové datové připojení.  
+6. Na **vyberte datové připojení** vyberte datové připojení ze seznamu dostupných připojení. Pokud požadované datové připojení není k dispozici vyberte **nové připojení** k vytvoření nové datové připojení.  
   
-7.  Vyberte **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
+7. Vyberte **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
   
-8.  Vyberte databázové objekty do vaší aplikace. V takovém případě vyberete pole v tabulce, kterou byste uvítali <xref:System.Windows.Forms.TextBox> k zobrazení.  
+8. Vyberte databázové objekty do vaší aplikace. V takovém případě vyberete pole v tabulce, kterou byste uvítali <xref:System.Windows.Forms.TextBox> k zobrazení.  
   
 9. Nahraďte výchozí název datové sady, chcete-li.  
   

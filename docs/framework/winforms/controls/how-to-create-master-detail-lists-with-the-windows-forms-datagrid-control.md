@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 20388c6a-94f9-4d96-be18-8c200491247f
-ms.openlocfilehash: f1acfab747c2309a2860870f8bcec9c0cf3b7bf0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 92b4a7d9513ce0ec9b7c02f57c23fa4267fb26ad
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59094980"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302396"
 ---
 # <a name="how-to-create-masterdetail-lists-with-the-windows-forms-datagrid-control"></a>Postupy: Vytvoření hlavního/podrobného seznamu pomocí ovládacího prvku Windows Forms DataGrid
 > [!NOTE]
@@ -25,17 +25,17 @@ ms.locfileid: "59094980"
   
 ### <a name="to-set-a-masterdetail-relationship-programmatically"></a>Chcete-li nastavit vztah záznamů master/detail prostřednictvím kódu programu  
   
-1.  Vytvořit dvě nové <xref:System.Windows.Forms.DataGrid> ovládací prvky a nastavte jejich vlastnosti.  
+1. Vytvořit dvě nové <xref:System.Windows.Forms.DataGrid> ovládací prvky a nastavte jejich vlastnosti.  
   
-2.  Přidání tabulek do datové sady.  
+2. Přidání tabulek do datové sady.  
   
-3.  Deklarovat proměnnou typu <xref:System.Data.DataRelation> k vyjádření vztahu, kterou chcete vytvořit.  
+3. Deklarovat proměnnou typu <xref:System.Data.DataRelation> k vyjádření vztahu, kterou chcete vytvořit.  
   
-4.  Zadejte název pro relaci a určením tabulky, sloupce a položku, která bude tyto dvě tabulky spojit vytvořit instanci relace.  
+4. Zadejte název pro relaci a určením tabulky, sloupce a položku, která bude tyto dvě tabulky spojit vytvořit instanci relace.  
   
-5.  Přidat vztah k <xref:System.Data.DataSet> objektu <xref:System.Data.DataSet.Relations%2A> kolekce.  
+5. Přidat vztah k <xref:System.Data.DataSet> objektu <xref:System.Data.DataSet.Relations%2A> kolekce.  
   
-6.  Použití <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu <xref:System.Windows.Forms.DataGrid> pro každý z mřížky pro vazbu <xref:System.Data.DataSet>.  
+6. Použití <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metodu <xref:System.Windows.Forms.DataGrid> pro každý z mřížky pro vazbu <xref:System.Data.DataSet>.  
   
      Následující příklad ukazuje, jak nastavit záznamů master/detail relace mezi tabulkami Zákazníci a objednávky v dříve vytvořenou <xref:System.Data.DataSet> (`ds`).  
   

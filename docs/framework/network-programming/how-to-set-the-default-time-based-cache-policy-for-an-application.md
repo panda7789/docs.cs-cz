@@ -9,21 +9,21 @@ helpviewer_keywords:
 - cache [.NET Framework], time-based policies
 - default time-based cache policy
 ms.assetid: 6bfce066-a2e7-4add-a05e-85c12ec9f07f
-ms.openlocfilehash: a50cfd60bb44dc4b4af3ffe8d2fc73f41e645c07
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 99f9905109a4deabe3cfb2e3616913e84f565cb7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098589"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299121"
 ---
 # <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci
 Umožňuje aplikaci mít své mezipaměti chování definované hlavičky posílané s prostředkem v mezipaměti a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 výchozích zásad mezipaměti na základě času [(Internet Engineering Task Force Sdružení IETF)](https://www.ietf.org/) webu. Toto je chování mezipaměti vhodné pro většinu aplikací.  
   
 ### <a name="to-set-the-default-automatic-policy-for-an-application"></a>Chcete-li nastavit automatické výchozí zásady pro aplikace  
   
-1.  Vytvořte objekt výchozí zásady založené na čase.  
+1. Vytvořte objekt výchozí zásady založené na čase.  
   
-2.  Nastavte jako výchozí pro doménu aplikace objektu zásad.  
+2. Nastavte jako výchozí pro doménu aplikace objektu zásad.  
   
 ## <a name="example"></a>Příklad  
  Tyto dva příklady v této části vytvořit identickými zásadami.  

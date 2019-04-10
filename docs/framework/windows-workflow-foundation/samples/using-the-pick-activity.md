@@ -2,12 +2,12 @@
 title: Použití aktivity Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-ms.openlocfilehash: 59f99d2e0a69d796c1ec64093cf73e07b88887c9
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 0b2fbeb9b32406dd913d7e1ee87ac167113d0f28
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848280"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302972"
 ---
 # <a name="using-the-pick-activity"></a>Použití aktivity Pick
 Tato ukázka předvádí, jak používat <xref:System.Activities.Statements.Pick> aktivity.
@@ -24,25 +24,25 @@ Tato ukázka předvádí, jak používat <xref:System.Activities.Statements.Pick
 
  Návrháře návrháři postupu provádění verzi ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
--   Program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
+-   Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
 
--   ReadString.cs: Vlastní aktivitu, která čte vstupu z konzoly.
+-   ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
 
--   Sequence1.XAML: Pracovní postup vytvořený v Návrháři vyberte používá.
+-   Sequence1.XAML: Pracovní postup vytvořený pomocí návrháře, který používá vybrat.
 
  Programové pracovního postupu programové verzi ukázky ukazuje, jak vytvořit pracovní postup v návrháři. Jsou zahrnuty následující soubory:
 
--   Program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
+-   Soubor program.cs: Zahrnuje `Main` funkci, která spustí ukázkového pracovního postupu.
 
--   ReadString.cs: Vlastní aktivitu, která čte vstupu z konzoly.
+-   ReadString.cs: Vlastní aktivita, která čte vstupu z konzoly.
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení Pick.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor řešení Pick.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3.  Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Abyste mohli spustit řešení, stiskněte klávesu F5.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

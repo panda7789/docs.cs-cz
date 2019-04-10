@@ -13,12 +13,12 @@ helpviewer_keywords:
 - managing control states [WPF], VisualStateManager
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
-ms.openlocfilehash: 17b6fd604b5eca54d6323701dafdd38f9f6e7328
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a5d7c06502b66298d530d0180ffaf63862b9fc28
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59131014"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298341"
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
 <a name="introduction"></a>
@@ -94,15 +94,15 @@ Vlastní ovládací prvek NumericUpDown
   
  Následující postupy se zajistí, že ovládací prvek správně reaguje na chybějící <xref:System.Windows.FrameworkElement> objekty:  
   
-1.  Nastavte `x:Name` atribut pro každý <xref:System.Windows.FrameworkElement> , budete muset odkaz v kódu.  
+1. Nastavte `x:Name` atribut pro každý <xref:System.Windows.FrameworkElement> , budete muset odkaz v kódu.  
   
-2.  Definovat privátní vlastnosti pro každý <xref:System.Windows.FrameworkElement> vyžadující interakci s.  
+2. Definovat privátní vlastnosti pro každý <xref:System.Windows.FrameworkElement> vyžadující interakci s.  
   
-3.  Přihlášení a odhlášení ze všech událostí, které váš ovládací prvek zpracovává v <xref:System.Windows.FrameworkElement> vlastnost nastaví přístupový objekt.  
+3. Přihlášení a odhlášení ze všech událostí, které váš ovládací prvek zpracovává v <xref:System.Windows.FrameworkElement> vlastnost nastaví přístupový objekt.  
   
-4.  Nastavte <xref:System.Windows.FrameworkElement> vlastnosti, které jste definovali v kroku 2 v <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> metody. Toto je první, který <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate> je k dispozici pro ovládací prvek. Použití `x:Name` z <xref:System.Windows.FrameworkElement> zobrazíte ho <xref:System.Windows.Controls.ControlTemplate>.  
+4. Nastavte <xref:System.Windows.FrameworkElement> vlastnosti, které jste definovali v kroku 2 v <xref:System.Windows.FrameworkElement.OnApplyTemplate%2A> metody. Toto je první, který <xref:System.Windows.FrameworkElement> v <xref:System.Windows.Controls.ControlTemplate> je k dispozici pro ovládací prvek. Použití `x:Name` z <xref:System.Windows.FrameworkElement> zobrazíte ho <xref:System.Windows.Controls.ControlTemplate>.  
   
-5.  Zkontrolujte, že <xref:System.Windows.FrameworkElement> není `null` před přístupem k jeho členů.  Pokud je `null`, není hlášena chyba.  
+5. Zkontrolujte, že <xref:System.Windows.FrameworkElement> není `null` před přístupem k jeho členů.  Pokud je `null`, není hlášena chyba.  
   
  Následující příklady ukazují jak `NumericUpDown` ovládací prvek komunikuje s <xref:System.Windows.FrameworkElement> objekty v souladu s doporučení v předchozím seznamu.  
   

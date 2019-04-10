@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tooltips [Windows Forms], for controls
 - examples [Windows Forms], tooltips
 ms.assetid: c4b60637-4c0a-44c2-a103-f66dff887936
-ms.openlocfilehash: d2bca517e98a8258d4f510c64593de2ad9646e13
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cc8f8c620516a943d6d70187e19b72f5a2a99888
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59157597"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301331"
 ---
 # <a name="how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time"></a>Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows v době návrhu
 Můžete nastavit <xref:System.Windows.Forms.ToolTip> řetězec v kódu nebo v Návrháři formulářů Windows. Další informace o <xref:System.Windows.Forms.ToolTip> komponenty, naleznete v tématu [ToolTip – přehled komponenty](tooltip-component-overview-windows-forms.md).  
@@ -24,9 +24,9 @@ Můžete nastavit <xref:System.Windows.Forms.ToolTip> řetězec v kódu nebo v N
   
 ### <a name="to-set-a-tooltip-programmatically"></a>Chcete-li nastavit popisek prostřednictvím kódu programu  
   
-1.  Přidejte ovládací prvek, který se zobrazí popisek.  
+1. Přidejte ovládací prvek, který se zobrazí popisek.  
   
-2.  Použití <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> metodu <xref:System.Windows.Forms.ToolTip> komponenty.  
+2. Použití <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> metodu <xref:System.Windows.Forms.ToolTip> komponenty.  
   
     ```vb  
     ' In this example, Button1 is the control to display the ToolTip.  
@@ -45,15 +45,15 @@ Můžete nastavit <xref:System.Windows.Forms.ToolTip> řetězec v kódu nebo v N
   
 ### <a name="to-set-a-tooltip-in-the-designer"></a>Chcete-li nastavit popisek v Návrháři  
   
-1.  Přidat <xref:System.Windows.Forms.ToolTip> komponentu do formuláře.  
+1. Přidat <xref:System.Windows.Forms.ToolTip> komponentu do formuláře.  
   
-2.  Vyberte ovládací prvek, který zobrazí popis tlačítka, nebo ho přidejte do formuláře.  
+2. Vyberte ovládací prvek, který zobrazí popis tlačítka, nebo ho přidejte do formuláře.  
   
-3.  V **vlastnosti** okno, nastaveno **popisu tlačítka ToolTip1** hodnota, která má odpovídající řetězec textu.  
+3. V **vlastnosti** okno, nastaveno **popisu tlačítka ToolTip1** hodnota, která má odpovídající řetězec textu.  
 
 ### <a name="to-remove-a-tooltip-programmatically"></a>Chcete-li odebrat popisek prostřednictvím kódu programu  
   
-1.  Použití <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> metodu <xref:System.Windows.Forms.ToolTip> komponenty.  
+1. Použití <xref:System.Windows.Forms.ToolTip.SetToolTip%2A> metodu <xref:System.Windows.Forms.ToolTip> komponenty.  
   
     ```vb  
     ' In this example, Button1 is the control displaying the ToolTip.  
@@ -72,9 +72,9 @@ Můžete nastavit <xref:System.Windows.Forms.ToolTip> řetězec v kódu nebo v N
   
 ### <a name="to-remove-a-tooltip-in-the-designer"></a>Chcete-li odebrat popisek v Návrháři  
   
-1.  Vyberte ovládací prvek, který se zobrazuje v popisku.  
+1. Vyberte ovládací prvek, který se zobrazuje v popisku.  
   
-2.  V **vlastnosti** okna, odstraníte tím stávající text v **popisu tlačítka ToolTip1**.  
+2. V **vlastnosti** okna, odstraníte tím stávající text v **popisu tlačítka ToolTip1**.  
 
 ## <a name="see-also"></a>Viz také:
 

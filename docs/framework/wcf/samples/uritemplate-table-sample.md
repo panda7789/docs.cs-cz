@@ -2,12 +2,12 @@
 title: Ukázková tabulka UriTemplate
 ms.date: 03/30/2017
 ms.assetid: 5dd1d38f-1989-4c64-820d-821f5a02216a
-ms.openlocfilehash: ebb61f34850b92e2a60a7ff49b0532010119b48d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4543d4676344d10c3e380c3522a7ca5a6a8d6294
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59145584"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293951"
 ---
 # <a name="uritemplate-table-sample"></a>Ukázková tabulka UriTemplate
 <xref:System.UriTemplateTable> Třída poskytuje strukturu jako slovník asociativní tabulky pro práci se sadou `UriTemplate` instancí. Konkrétní Uniform Resource Identifier (identifikátory URI) mohou být efektivně hledána všechny šablony v tabulce, a je možné načíst data přidružená k šabloně odpovídající.  
@@ -22,9 +22,9 @@ ms.locfileid: "59145584"
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

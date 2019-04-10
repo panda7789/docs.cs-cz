@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 545fce07d0fab3dca8116f2cacfc068b62cbbde2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3120ee64d65822d323800a89466c6b707169aaaa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54537540"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307476"
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>Postupy: Přidání úvodní obrazovky do aplikace WPF
 
@@ -20,25 +20,25 @@ Toto téma ukazuje, jak přidat časové období při spuštění nebo *úvodní
 
 ## <a name="to-add-an-existing-image-as-a-splash-screen"></a>Chcete-li přidat existující image jako úvodní obrazovka
 
-1.  Vytvořit nebo vyhledat bitovou kopii, kterou chcete použít pro úvodní obrazovku. Můžete použít libovolný formát obrázku, který je podporovaný službou Windows Imaging Component (WIC). Například můžete pomocí formátu BMP, GIF, JPEG, PNG nebo ve formátu TIFF.
+1. Vytvořit nebo vyhledat bitovou kopii, kterou chcete použít pro úvodní obrazovku. Můžete použít libovolný formát obrázku, který je podporovaný službou Windows Imaging Component (WIC). Například můžete pomocí formátu BMP, GIF, JPEG, PNG nebo ve formátu TIFF.
 
-2.  Přidání souboru obrázku do projektu aplikace WPF.
+2. Přidání souboru obrázku do projektu aplikace WPF.
 
-3.  V **Průzkumníka řešení**, vyberte bitovou kopii.
+3. V **Průzkumníka řešení**, vyberte bitovou kopii.
 
-4.  V okně Vlastnosti klikněte na šipku rozevíracího seznamu pro **akce sestavení** vlastnost.
+4. V okně Vlastnosti klikněte na šipku rozevíracího seznamu pro **akce sestavení** vlastnost.
 
-5.  Vyberte **SplashScreen** z rozevíracího seznamu.
+5. Vyberte **SplashScreen** z rozevíracího seznamu.
 
-6.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+6. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
      Na úvodní obrazovce je zobrazena ve středu obrazovky a pak sníží (zesvětlí) až se zobrazí hlavního okna aplikace.
 
 ## <a name="to-exclude-the-splash-screen-from-build"></a>Na úvodní obrazovce vyloučit ze sestavení
 
-1.  V **Průzkumníka řešení**, vyberte obrázek úvodní obrazovky.
+1. V **Průzkumníka řešení**, vyberte obrázek úvodní obrazovky.
 
-2.  V **vlastnosti** okno, nastaveno **akce sestavení** k **žádný**.
+2. V **vlastnosti** okno, nastaveno **akce sestavení** k **žádný**.
 
 ## <a name="to-remove-the-splash-screen-from-an-application"></a>Chcete-li odebrat úvodní obrazovky z aplikace
 

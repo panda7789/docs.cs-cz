@@ -8,21 +8,21 @@ helpviewer_keywords:
 - deserializing objects
 - objects, deserializing steps
 ms.assetid: 287129c8-035a-4fea-b7b3-4790057ca076
-ms.openlocfilehash: d0b953e4f570f349edeb80fc2316530494905ec0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 53b4a3e3848c1aa92bfa9fbd80bb031125257fc2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583308"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298133"
 ---
 # <a name="how-to-deserialize-an-object"></a>Postupy: Deserializace objektu
 Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt datového proudu nebo souboru. Po formát přenosu je určen, můžete volat <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> nebo <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metod, podle potřeby.  
   
 ### <a name="to-deserialize-an-object"></a>K deserializaci objektu  
   
-1.  Vytvořit <xref:System.Xml.Serialization.XmlSerializer> pomocí typ objektu určeného k deserializaci.  
+1. Vytvořit <xref:System.Xml.Serialization.XmlSerializer> pomocí typ objektu určeného k deserializaci.  
   
-2.  Volání <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu za účelem vytvoření repliky objektu. Při deserializaci, musíte přetypovat vráceného objektu na typ původní, jak je znázorněno v následujícím příkladu, který deserializuje objekt do souboru (Ačkoli může být také deserializovat do datového proudu).  
+2. Volání <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu za účelem vytvoření repliky objektu. Při deserializaci, musíte přetypovat vráceného objektu na typ původní, jak je znázorněno v následujícím příkladu, který deserializuje objekt do souboru (Ačkoli může být také deserializovat do datového proudu).  
   
     ```vb  
     Dim myObject As MySerializableClass  

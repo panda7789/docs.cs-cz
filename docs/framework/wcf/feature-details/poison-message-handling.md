@@ -2,12 +2,12 @@
 title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: 704f1a837b7d70f401eaaf7d23847b08972cff50
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fe748ac40f03ed22cacb254ab464a6caf3d27a8c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59146520"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305023"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximální počet pokusů o doručení do aplikace. Tato situace může nastat, když aplikace na základě fronty nemůže zpracovat zprávu z důvodu chyby. Abyste splnili požadavky na spolehlivost, frontové aplikace přijímá zprávy v rámci transakce. Zrušená transakce, ve kterém byla přijata zpráva ve frontě opustí zprávu ve frontě, tak, aby zprávy se zopakuje za novou transakci. Pokud není opraven problém, která způsobila zrušení, přijímající aplikace můžete uvízne ve smyčce přijímáním a přerušení stejné zprávy, dokud byl překročen maximální počet pokusů o doručení a výsledky nezpracovatelná zpráva byla.  
@@ -66,17 +66,17 @@ A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximáln
   
  Aplikace může vyžadovat, aby nějaký druh automatizované zpracování nezpracovatelných zpráv, který přesouvá nezpracovatelných zpráv ve frontě nezpracovatelných zpráv tak, aby službě můžete získat přístup k zbytek zprávy ve frontě. Jediným případem použití mechanismu obslužná rutina chyb pro naslouchání poison zpráva výjimky je, když <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> nastavená na <xref:System.ServiceModel.ReceiveErrorHandling.Fault>. Ukázková zpráva poison 3.0 služby Řízení front zpráv ukazuje toto chování. Následující část popisuje kroky pro zpracování nezpracovatelných zpráv, včetně osvědčených postupů:  
   
-1.  Zkontrolujte, že počet poškozených nastavení odpovídají požadavkům vaší aplikace. Při práci s nastavením, ujistěte se, znát rozdíly mezi funkce služby Řízení front zpráv na [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+1. Zkontrolujte, že počet poškozených nastavení odpovídají požadavkům vaší aplikace. Při práci s nastavením, ujistěte se, znát rozdíly mezi funkce služby Řízení front zpráv na [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
-2.  V případě potřeby implementovat `IErrorHandler` zpracování chyb poison zprávy. Protože nastavení `ReceiveErrorHandling` k `Fault` vyžaduje ruční mechanismus pro přesun nezpracovatelná zpráva z fronty nebo externí závislé opravena, typickému využití je implementace `IErrorHandler` při `ReceiveErrorHandling` je nastavena na `Fault`, jako je znázorněno v následujícím kódu.  
+2. V případě potřeby implementovat `IErrorHandler` zpracování chyb poison zprávy. Protože nastavení `ReceiveErrorHandling` k `Fault` vyžaduje ruční mechanismus pro přesun nezpracovatelná zpráva z fronty nebo externí závislé opravena, typickému využití je implementace `IErrorHandler` při `ReceiveErrorHandling` je nastavena na `Fault`, jako je znázorněno v následujícím kódu.  
   
      [!code-csharp[S_UE_MSMQ_Poison#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmq_poison/cs/poisonerrorhandler.cs#2)]  
   
-3.  Vytvoření `PoisonBehaviorAttribute` , můžete použít chování služby. Chování nainstaluje `IErrorHandler` na dispečer. Podívejte se na následující příklad kódu.  
+3. Vytvoření `PoisonBehaviorAttribute` , můžete použít chování služby. Chování nainstaluje `IErrorHandler` na dispečer. Podívejte se na následující příklad kódu.  
   
      [!code-csharp[S_UE_MSMQ_Poison#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmq_poison/cs/poisonbehaviorattribute.cs#3)]  
   
-4.  Ujistěte se, že vaše služba je opatřen poznámkou atributu nezpracovatelných chování.  
+4. Ujistěte se, že vaše služba je opatřen poznámkou atributu nezpracovatelných chování.  
 
  Kromě toho pokud `ReceiveErrorHandling` je nastavena na `Fault`, `ServiceHost` chyb při zjištění nezpracovatelných zpráv. Můžete připojit k chybnou událost a vypnutí služby, provést opravné akce a restartovat. Například `LookupId` v <xref:System.ServiceModel.MsmqPoisonMessageException> rozšíří na `IErrorHandler` můžete třeba poznamenat, a když chyby hostitele služby, můžete použít `System.Messaging` přijímat zprávy z fronty pomocí rozhraní API `LookupId` odebrání zprávy z Fronta a zpráva v některé externí úložiště nebo jinou frontu úložiště. Potom můžete restartovat `ServiceHost` obnovit normální zpracování. [Zacházení s Nezpracovatelnými zpracování zpráv v MSMQ 4.0](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md) ukazuje toto chování.  
   

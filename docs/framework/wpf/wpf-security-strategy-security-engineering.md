@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: c840912f755e1d6bf76720ad0178057c50e4cfd9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 27258110a8852c00990d73cd9ca8685c3ead315d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59186143"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300564"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
 Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpečný kód. Je klíčovým prvkem Trustworthy Computing iniciativa zaměřená [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Je technický postup, který se používá ve spojení s standardní technického procesu usnadňuje poskytování zabezpečeného kódu. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] Sestává z deset fází, které kombinují osvědčené postupy s oblast, measurability a další strukturu, včetně:  
@@ -47,11 +47,11 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
   
  Na vysoké úrovni modelování hrozeb zahrnuje následující základní kroky pomocí blízkým úložiště jako příklad:  
   
-1.  **Identifikace prostředků**. Prostředky blízkým úložiště může obsahovat zaměstnanci, bezpečný, pokladny a inventáře.  
+1. **Identifikace prostředků**. Prostředky blízkým úložiště může obsahovat zaměstnanci, bezpečný, pokladny a inventáře.  
   
-2.  **Vytváření výčtu vstupní body**. Vstupní body blízkým úložiště může obsahovat front a dveře back, windows, ukotvit načítání a klimatizace jednotky.  
+2. **Vytváření výčtu vstupní body**. Vstupní body blízkým úložiště může obsahovat front a dveře back, windows, ukotvit načítání a klimatizace jednotky.  
   
-3.  **Prošetření útoků, které prostředky pomocí vstupní body**. Jeden možných útoků může cílit na blízkým úložiště *bezpečné* asset prostřednictvím *klimatizace* vstupní bod; klimatizace jednotky může být unscrewed umožňující bezpečné načíst přes něj a z celkového počtu úložiště.  
+3. **Prošetření útoků, které prostředky pomocí vstupní body**. Jeden možných útoků může cílit na blízkým úložiště *bezpečné* asset prostřednictvím *klimatizace* vstupní bod; klimatizace jednotky může být unscrewed umožňující bezpečné načíst přes něj a z celkového počtu úložiště.  
   
  Modelování hrozeb se použije v rámci [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] a obsahuje následující:  
   

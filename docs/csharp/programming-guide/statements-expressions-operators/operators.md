@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: 7d0ceb0cddc49722d7122e4fde6149fe1ea86208
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.openlocfilehash: 0b2af8c41bc6411d2665d2cf37bd48040fc8d8dc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545465"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307454"
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 
@@ -63,7 +63,7 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |----------------|-----------------|  
 |[+](../../../csharp/language-reference/operators/addition-operator.md)x|Identita|  
 |[-](../../../csharp/language-reference/operators/subtraction-operator.md)x|Negace|  
-|[\!](../../../csharp/language-reference/operators/logical-negation-operator.md)x|Logická negace|  
+|[\!](../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-negation-operator-)x|Logická negace|  
 |[~](../../../csharp/language-reference/operators/bitwise-complement-operator.md)x|Bitová negace.|  
 |[++](../../../csharp/language-reference/operators/arithmetic-operators.md#increment-operator-)x|Preinkrementace|  
 |[--](../../../csharp/language-reference/operators/arithmetic-operators.md#decrement-operator---)x|Predekrementace|  
@@ -91,7 +91,7 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |x [<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|Posun doleva|  
 |x [>>](../../../csharp/language-reference/operators/right-shift-operator.md) y|Posun doprava|  
   
- **Relační operátory a operátory typu**  
+ **Relační operátory a operátory typu**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
@@ -109,19 +109,19 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |x [==](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-) y|Rovno|  
 |x [! =](../../../csharp/language-reference/operators/equality-operators.md#inequality-operator-) y|Nerovná se|  
   
- **Logické, Podmiňovací a nulové operátory**  
+ **Logické, podmiňovací a nulové operátory**  
   
 |Kategorie|Výraz|Popis|  
 |--------------|----------------|-----------------|  
 |Logický operátor AND|x [&](../../../csharp/language-reference/operators/and-operator.md) y|Bitový operátor AND celého čísla, logická hodnota operátoru AND|  
 |Logický operátor XOR|x [^](../../../csharp/language-reference/operators/xor-operator.md) y|Bitové operace XOR celého čísla, logická logický operátor XOR|  
 |Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Celé číslo bitového nebo logické logický operátor OR|  
-|Podmiňovací operátor AND|x [&&](../../../csharp/language-reference/operators/conditional-and-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
-|Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
+|Podmiňovací operátor AND|x [&&](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
+|Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
 |Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  
 |Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|  
   
- **Přiřazení a anonymní operátory**  
+ **Operátory přiřazení a anonymní operátory**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
@@ -177,5 +177,5 @@ a = (b = c);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
 - [Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)

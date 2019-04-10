@@ -2,12 +2,12 @@
 title: Ukázka integrace názvového prostoru SystemWebRouting
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-ms.openlocfilehash: 244a7b7b73217086864b16945bc1521a3383aeac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f4f9772583bbd66d19cc59f453489965aabf74b2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59147807"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302234"
 ---
 # <a name="systemwebrouting-integration-sample"></a>Ukázka integrace názvového prostoru SystemWebRouting
 V této ukázce integration hostování vrstvy s třídami v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> oboru názvů umožňují aplikaci pro použití adresy URL, které neodpovídají přímo fyzické prostředky. Použití směrování webových umožňuje vývojářům vytvářet virtuální adresy pro protokol HTTP, které jsou pak mapována na skutečné služby WCF. To je užitečné, když bez nutnosti fyzického souboru nebo prostředku, musí být hostovaný ve službě WCF, nebo když služby musí přistupovat pomocí adresy URL, které neobsahují soubory, jako jsou HTML nebo .aspx. Tato ukázka předvádí, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, která je namapována na spuštění služby definované v souboru global.asax. 
@@ -32,31 +32,31 @@ Tato ukázka může již být nainstalováno ve vašem počítači. Před pokra�
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
+1. Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
   
-2.  Spuštění řešení a spustit webový server vývoje, stiskněte klávesu F5.  
+2. Spuštění řešení a spustit webový server vývoje, stiskněte klávesu F5.  
   
      Zobrazí se seznam adresářů pro vzorku. Všimněte si, že neexistují žádné soubory s příponou souboru .svc.  
   
-3.  Na panelu Adresa přidat `movies` na adresu URL, takže se načte `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
+3. Na panelu Adresa přidat `movies` na adresu URL, takže se načte `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
   
      Informační kanál videa se zobrazí v prohlížeči.  
   
-4.  Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
+4. Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
   
      Informační kanály kanál se zobrazí v prohlížeči.  
   
-5.  Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
+5. Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
   
      Pokud není ukončený vývojový server, klikněte pravým tlačítkem na ikonu v oznamovací oblasti a vyberte **Zastavit**.  
   
 #### <a name="to-use-this-sample-when-hosted-in-iis"></a>Pro fungování této ukázky, když jsou hostované ve službě IIS  
   
-1.  Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
+1. Pomocí sady Visual Studio, otevřete soubor WebRoutingIntegration.sln.  
   
-2.  Sestavte projekt, stisknutím kombinace kláves CTRL + SHIFT + B.  
+2. Sestavte projekt, stisknutím kombinace kláves CTRL + SHIFT + B.  
   
-3.  Vytvoření webové aplikace ve Správci Internetové informační služby (IIS).  
+3. Vytvoření webové aplikace ve Správci Internetové informační služby (IIS).  
   
     1.  Ve Správci služby IIS klikněte pravým tlačítkem myši **výchozí webový server** a vyberte **přidat aplikaci**.  
   
@@ -66,17 +66,17 @@ Tato ukázka může již být nainstalováno ve vašem počítači. Před pokra�
   
     4.  Stisknutím klávesy **OK**.  
   
-4.  Spuštění aplikace, že pravým tlačítkem myši na webovou aplikaci a vyberete **spravovat aplikaci** a potom **Procházet**.  
+4. Spuštění aplikace, že pravým tlačítkem myši na webovou aplikaci a vyberete **spravovat aplikaci** a potom **Procházet**.  
   
-5.  Na panelu Adresa přidat `movies` na adresu URL, to je čtení `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
+5. Na panelu Adresa přidat `movies` na adresu URL, to je čtení `http://localhost:[port]/movies` a stiskněte klávesu ENTER.  
   
      Informační kanál videa se zobrazí v prohlížeči.  
   
-6.  Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
+6. Na panelu Adresa přidat `channels` na adresu URL, to je čtení `http://localhost:[port]/channels` a stiskněte klávesu ENTER.  
   
      Informační kanály kanál se zobrazí v prohlížeči.  
   
-7.  Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
+7. Zavřete webový prohlížeč, stisknutím klávesy ALT + F4.  
   
  Tento příklad ukazuje, že je schopen sestavování s třídami v hostování vrstvy <xref:System.Web.Routing> obor názvů pro směrování požadavků služby hostované přes protokol HTTP.  
   

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: 9cf5d1c2e08f18c08273d6c7b34446a3827743b3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 887a157494c2992c1ae5868229c442f31fafb276
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59079355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312147"
 ---
 # <a name="walkthrough-styling-wpf-content"></a>Návod: Určení stylu obsahu WPF
 Tento názorný postup ukazují, jak použít používání stylů pro ovládací prvek Windows Presentation Foundation (WPF) hostovaného ve formuláři Windows.
@@ -47,34 +47,34 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
   
 #### <a name="to-create-wpf-control-types"></a>Chcete-li vytvořit typy ovládacích prvků WPF  
   
-1.  Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
+1. Přidat nový WPF <xref:System.Windows.Controls.UserControl> projektu do řešení. Použití výchozího názvu pro typ ovládacího prvku `UserControl1.xaml`. Další informace najdete v tématu [názorný postup: Vytvoření nového obsahu WPF ve Windows Forms v době návrhu](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).  
   
-2.  V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
+2. V návrhovém zobrazení, ujistěte se, že `UserControl1` zaškrtnuto. Další informace najdete v tématu [jak: Vyberte a přesuňte prvků na návrhové ploše](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).  
   
-3.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností `200`.  
+3. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastností `200`.  
   
-4.  Přidat <xref:System.Windows.Controls.Button?displayProperty=nameWithType> ovládací prvek <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **zrušit**.  
+4. Přidat <xref:System.Windows.Controls.Button?displayProperty=nameWithType> ovládací prvek <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **zrušit**.  
   
-5.  Přidejte druhý <xref:System.Windows.Controls.Button?displayProperty=nameWithType> ovládací prvek <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **OK**.  
+5. Přidejte druhý <xref:System.Windows.Controls.Button?displayProperty=nameWithType> ovládací prvek <xref:System.Windows.Controls.UserControl> a nastavte hodnotu <xref:System.Windows.Controls.ContentControl.Content%2A> vlastnost **OK**.  
   
-6.  Sestavte projekt.  
+6. Sestavte projekt.  
   
 ## <a name="applying-a-style-to-a-wpf-control"></a>Použití stylu ovládacího prvku WPF  
  Můžete použít různé pro používání stylů pro ovládací prvek WPF, chcete-li změnit její vzhled a chování.  
   
 #### <a name="to-apply-a-style-to-a-wpf-control"></a>Pokud chcete použít styl ovládacího prvku WPF  
   
-1.  Otevřít `Form1` v Návrháři formulářů Windows.  
+1. Otevřít `Form1` v Návrháři formulářů Windows.  
   
-2.  V **nástrojů**, dvakrát klikněte na panel `UserControl1` k vytvoření instance `UserControl1` ve formuláři.  
+2. V **nástrojů**, dvakrát klikněte na panel `UserControl1` k vytvoření instance `UserControl1` ve formuláři.  
   
      Instance `UserControl1` hostována v novém <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek s názvem `elementHost1`.  
   
-3.  Na panelu inteligentních značek `elementHost1`, klikněte na tlačítko **upravit hostovaný obsah** z rozevíracího seznamu.  
+3. Na panelu inteligentních značek `elementHost1`, klikněte na tlačítko **upravit hostovaný obsah** z rozevíracího seznamu.  
   
      `UserControl1` Otevře [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
   
-4.  V XAML zobrazení, vložte následující XAML po `<UserControl>` počáteční značku.  
+4. V XAML zobrazení, vložte následující XAML po `<UserControl>` počáteční značku.  
   
      Tento XAML vytvoří přechod kontrastní přechodu ohraničení. Po kliknutí na ovládací prvek přechody jsou změněny na generování vzhled při stisknutí tlačítka. Další informace najdete v tématu [styly a šablony](../../wpf/controls/styling-and-templating.md).  
   
@@ -126,7 +126,7 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
 </UserControl.Resources>  
 ```  
   
-1.  Použít `SimpleButton` styl definovaný v předchozím kroku, a na tlačítko Storno vložením následujícího XAML v `<Button>` značky na tlačítko Storno.  
+1. Použít `SimpleButton` styl definovaný v předchozím kroku, a na tlačítko Storno vložením následujícího XAML v `<Button>` značky na tlačítko Storno.  
   
     ```  
     Style="{StaticResource SimpleButton}  
@@ -139,15 +139,15 @@ Tento názorný postup ukazují, jak použít používání stylů pro ovládac�
                 Style="{StaticResource SimpleButton}">Cancel</Button>  
 ```  
   
-1.  Sestavte projekt.  
+1. Sestavte projekt.  
   
-2.  Otevřít `Form1` v Návrháři formulářů Windows.  
+2. Otevřít `Form1` v Návrháři formulářů Windows.  
   
-3.  Nový styl platí pro ovládací prvek tlačítko.  
+3. Nový styl platí pro ovládací prvek tlačítko.  
   
-4.  Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.  
+4. Z **ladění** nabídce vyberte možnost **spustit ladění** ke spuštění aplikace.  
   
-5.  Klikněte na tlačítko OK a zrušit a zobrazit rozdíly.  
+5. Klikněte na tlačítko OK a zrušit a zobrazit rozdíly.  
   
 ## <a name="see-also"></a>Viz také:
 

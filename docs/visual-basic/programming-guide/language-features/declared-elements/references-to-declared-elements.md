@@ -6,12 +6,12 @@ helpviewer_keywords:
 - references [Visual Basic], declared elements
 - qualified names [Visual Basic]
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
-ms.openlocfilehash: 5aea43c2dab4eb44ab40449ee6e970a28fdc4abb
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 0fca02ab2dcb507c1129f18f31a25c7809fc9710
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58821449"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296703"
 ---
 # <a name="references-to-declared-elements-visual-basic"></a>Odkazy na deklarované elementy (Visual Basic)
 Pokud váš kód odkazuje na element deklarovaný, kompilátor jazyka Visual Basic odpovídá názvu v referenci na příslušné prohlášení s tímto názvem. Pokud je teď deklarována více než jeden element se stejným názvem, můžete určit, které z těchto elementů je odkazovat *oprávněným* jeho název.  
@@ -50,7 +50,7 @@ End Module
   
 #### <a name="to-access-a-declared-element-by-qualifying-its-name"></a>Pro přístup k element deklarovaný kvalifikováním názvu  
   
-1.  Určení umístění, ve kterém je definována elementu. To může zahrnovat obor názvů nebo dokonce hierarchie oborů názvů. V rámci oboru názvů nejnižší úrovně elementu musí být součástí modulu, třídy nebo struktury.  
+1. Určení umístění, ve kterém je definována elementu. To může zahrnovat obor názvů nebo dokonce hierarchie oborů názvů. V rámci oboru názvů nejnižší úrovně elementu musí být součástí modulu, třídy nebo struktury.  
   
     ```vb  
     ' Assume the following hierarchy exists outside your code.  
@@ -66,23 +66,23 @@ End Module
     End Namespace  
     ```  
   
-2.  Určení kvalifikace cestu na základě umístění cílového prvku. Začněte s nejvyšší úrovně oboru názvů, přejít k nejnižší úrovni oboru názvů a končit modulu, třídy nebo struktury obsahující cílového prvku. Každý prvek v cestě musí obsahovat element, která ji následuje.  
+2. Určení kvalifikace cestu na základě umístění cílového prvku. Začněte s nejvyšší úrovně oboru názvů, přejít k nejnižší úrovni oboru názvů a končit modulu, třídy nebo struktury obsahující cílového prvku. Každý prvek v cestě musí obsahovat element, která ji následuje.  
   
      `outerSpace` → `innerSpace` → `holdsTotals` → `totals`  
   
-3.  Řetězec kvalifikace Příprava cílového prvku. Umístit tečku (`.`) po každý prvek v cestě. Aplikace musí mít přístup na každý prvek v řetězci vaše kvalifikace.  
+3. Řetězec kvalifikace Příprava cílového prvku. Umístit tečku (`.`) po každý prvek v cestě. Aplikace musí mít přístup na každý prvek v řetězci vaše kvalifikace.  
   
     ```vb  
     outerSpace.innerSpace.holdsTotals.totals.  
     ```  
   
-4.  Zápis výrazu nebo příkazu přiřazení odkazující na cílový element běžným způsobem.  
+4. Zápis výrazu nebo příkazu přiřazení odkazující na cílový element běžným způsobem.  
   
     ```vb  
     grandTotal = 9000  
     ```  
   
-5.  Zadejte před název elementu target řetězcem kvalifikace. Název by měl bezprostředně následuje po období (`.`) modulu, třídy nebo struktury, který obsahuje element, který následuje.  
+5. Zadejte před název elementu target řetězcem kvalifikace. Název by měl bezprostředně následuje po období (`.`) modulu, třídy nebo struktury, který obsahuje element, který následuje.  
   
     ```vb  
     ' Assume the following module is part of your code.  
@@ -93,7 +93,7 @@ End Module
     End Module  
     ```  
   
-6.  Kompilátor používá k nalezení jednoznačnou, kompletní vymazat deklarace, na který může porovnat odkaz na element target řetězec kvalifikace.  
+6. Kompilátor používá k nalezení jednoznačnou, kompletní vymazat deklarace, na který může porovnat odkaz na element target řetězec kvalifikace.  
   
  Budete také muset kvalifikovat název odkazu, pokud má vaše aplikace přístup k více než jeden programový element, který má stejný název. Například <xref:System.Windows.Forms> a <xref:System.Web.UI.WebControls> obory názvů oba obsahují `Label` třídy (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> a <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). Pokud vaše aplikace používá obě nebo pokud jej definuje vlastní `Label` třídy, musí rozlišovat mezi různými `Label` objekty. Alias oboru názvů nebo import zahrňte v deklaraci proměnné. Alias importu v následujícím příkladu.  
   
@@ -199,6 +199,6 @@ Dim xDoc As xD.XmlDocument
 - [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
-- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)
+- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Operátor new](../../../../visual-basic/language-reference/operators/new-operator.md)
 - [Public](../../../../visual-basic/language-reference/modifiers/public.md)

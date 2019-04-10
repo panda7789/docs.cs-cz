@@ -2,12 +2,12 @@
 title: Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 ms.date: 07/20/2015
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 27c14a4cc67d9f7e26f053b417d36c8de4bf594a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 01557bf80f40d4197d29ab05cfb4838f5d993a82
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131518"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295741"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 
@@ -26,15 +26,15 @@ V prvním příkladu **zrušit** tlačítko s jeden úkol stahování. Pokud tla
 
 Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
+2. V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
 
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
 
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **CancelATask** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
+4. V **Průzkumníka řešení**, otevřete místní nabídku **CancelATask** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
 
-5.  Zvolte **F5** spusťte projekt (nebo stiskněte klávesu **Ctrl**+**F5** ke spuštění projektu bez ladění).
+5. Zvolte **F5** spusťte projekt (nebo stiskněte klávesu **Ctrl**+**F5** ke spuštění projektu bez ladění).
 
 > [!TIP]
 > Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.
@@ -46,7 +46,7 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
 
  Pak přidejte následující změny do souboru MainWindow.xaml.cs tohoto projektu.
 
-1.  Deklarovat `CancellationTokenSource` proměnnou, `cts`, která je v oboru pro všechny metody, které k němu přístup.
+1. Deklarovat `CancellationTokenSource` proměnnou, `cts`, která je v oboru pro všechny metody, které k němu přístup.
 
     ```csharp
     public partial class MainWindow : Window
@@ -55,7 +55,7 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
         CancellationTokenSource cts;
     ```
 
-2.  Přidejte následující obslužnou rutinu události pro **zrušit** tlačítko. Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda oznámit `cts` Pokud uživatel požaduje zrušení.
+2. Přidejte následující obslužnou rutinu události pro **zrušit** tlačítko. Obslužná rutina události používá <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda oznámit `cts` Pokud uživatel požaduje zrušení.
 
     ```csharp
     // ***Add an event handler for the Cancel button.
@@ -68,7 +68,7 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
     }
     ```
 
-3.  Proveďte následující změny v obslužné rutiny **Start** tlačítko `startButton_Click`.
+3. Proveďte následující změny v obslužné rutiny **Start** tlačítko `startButton_Click`.
 
     -   Vytvoření instance `CancellationTokenSource`, `cts`.
 
@@ -97,7 +97,7 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
         }
         ```
 
-4.  V `AccessTheWebAsync`, použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení `GetAsync` metoda ve <xref:System.Net.Http.HttpClient> typ pro stažení obsahu webu. Předejte `ct`, <xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync`, jako druhý argument. Token přenáší zprávy, pokud uživatel klikne **zrušit** tlačítko.
+4. V `AccessTheWebAsync`, použijte <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> přetížení `GetAsync` metoda ve <xref:System.Net.Http.HttpClient> typ pro stažení obsahu webu. Předejte `ct`, <xref:System.Threading.CancellationToken> parametr `AccessTheWebAsync`, jako druhý argument. Token přenáší zprávy, pokud uživatel klikne **zrušit** tlačítko.
 
      Následující kód ukazuje změny v `AccessTheWebAsync`.
 
@@ -124,7 +124,7 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
     }
     ```
 
-5.  Pokud nezrušíte program, vytvoří následující výstup.
+5. Pokud nezrušíte program, vytvoří následující výstup.
 
     ```text
     Ready to download.
@@ -146,15 +146,15 @@ Můžete rozšířit předchozí příklad zrušit tak řadu úkolů propojením
 
 Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
+2. V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
 
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
 
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **CancelAListOfTasks** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
+4. V **Průzkumníka řešení**, otevřete místní nabídku **CancelAListOfTasks** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
 
-5.  Zvolte **F5** spusťte projekt.
+5. Zvolte **F5** spusťte projekt.
 
      Zvolte **Ctrl**+**F5** klíče ke spuštění projektu bez ladění.
 
@@ -164,7 +164,7 @@ Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.c
 
 Pokud chcete rozšířit příklad sami krok za krokem, postupujte podle pokynů v oddíle "Stahování příkladu", ale zvolte **CancelATask** jako **spouštěný projekt**. Přidejte následující změny do tohoto projektu. Hvězdičky označují změny v programu.
 
-1.  Přidejte metodu pro vytvoření seznamu webových adres.
+1. Přidejte metodu pro vytvoření seznamu webových adres.
 
     ```csharp
     // ***Add a method that creates a list of web addresses.
@@ -184,14 +184,14 @@ Pokud chcete rozšířit příklad sami krok za krokem, postupujte podle pokynů
     }
     ```
 
-2.  Volání metody `AccessTheWebAsync`.
+2. Volání metody `AccessTheWebAsync`.
 
     ```csharp
     // ***Call SetUpURLList to make a list of web addresses.
     List<string> urlList = SetUpURLList();
     ```
 
-3.  Přidejte následující smyčku v `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.
+3. Přidejte následující smyčku v `AccessTheWebAsync` pro zpracování každé webové adresy v seznamu.
 
     ```csharp
     // ***Add a loop to process the list of web addresses.
@@ -210,7 +210,7 @@ Pokud chcete rozšířit příklad sami krok za krokem, postupujte podle pokynů
     }
     ```
 
-4.  Protože `AccessTheWebAsync` zobrazí délky, metoda nemusí nic vrátit. Odeberte příkaz return a změňte návratový typ metody, která <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
+4. Protože `AccessTheWebAsync` zobrazí délky, metoda nemusí nic vrátit. Odeberte příkaz return a změňte návratový typ metody, která <xref:System.Threading.Tasks.Task> místo <xref:System.Threading.Tasks.Task%601>.
 
     ```csharp
     async Task AccessTheWebAsync(CancellationToken ct)
@@ -222,7 +222,7 @@ Pokud chcete rozšířit příklad sami krok za krokem, postupujte podle pokynů
     await AccessTheWebAsync(cts.Token);
     ```
 
-5.  Pokud nezrušíte program, vytvoří následující výstup.
+5. Pokud nezrušíte program, vytvoří následující výstup.
 
     ```text
     Length of the downloaded string: 35939.

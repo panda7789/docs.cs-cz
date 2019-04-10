@@ -14,23 +14,23 @@ helpviewer_keywords:
 - color palettes [Windows Forms], showing in ColorDialog component
 - colors [Windows Forms], showing palettes
 ms.assetid: ee050f61-dbc8-4436-ba22-51360981ab48
-ms.openlocfilehash: fcaf5da9958cf66fb63bd753dc94cba9c10f62f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 587b2c3a502ec8a1cb2f4f7c0d981baa0f18ead6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59096033"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298016"
 ---
 # <a name="how-to-show-a-color-palette-with-the-colordialog-component"></a>Postupy: Zobrazení palety barev pomocí komponenty ColorDialog
 [ColorDialog](colordialog-component-windows-forms.md) komponenty paletu barev zobrazí a vrátí vlastnost obsahující barvu uživatel vybral.  
   
 ### <a name="to-choose-a-color-using-the-colordialog-component"></a>Vybrat barvu pomocí komponenty ColorDialog  
   
-1.  Zobrazit dialog box pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.  
+1. Zobrazit dialog box pomocí <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metody.  
   
-2.  Použití <xref:System.Windows.Forms.DialogResult> a určí, jak bylo ukončeno dialogových oken.  
+2. Použití <xref:System.Windows.Forms.DialogResult> a určí, jak bylo ukončeno dialogových oken.  
   
-3.  Použití <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost <xref:System.Windows.Forms.ColorDialog> součást pro nastavení vybrané barvy.  
+3. Použití <xref:System.Windows.Forms.ColorDialog.Color%2A> vlastnost <xref:System.Windows.Forms.ColorDialog> součást pro nastavení vybrané barvy.  
   
      V následujícím příkladu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> otevře obslužné rutiny události <xref:System.Windows.Forms.ColorDialog> komponenty. Pokud barvu je zvolená a uživatel klikne na tlačítko **OK**, <xref:System.Windows.Forms.Button> barva pozadí ovládacího prvku nastavená na vybrané barvy. Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacího prvku a <xref:System.Windows.Forms.ColorDialog> komponenty.  
   

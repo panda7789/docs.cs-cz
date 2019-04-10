@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5b9cb36c3ab7096e048905e56136f0de62a65bdc
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 1c9a14c2ea2d7d817aacca1fa25b04ac643f16bf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221092"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296651"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Editor lokalizace prostředků Windows)
 
@@ -106,9 +106,9 @@ Měli byste použít verzi nástroje Winres.exe vydanou s rozhraním .NET Framew
 
 ### <a name="to-localize-a-resx-or-resources-file-associated-with-a-form"></a>Lokalizace souborů .resx nebo .resources spojených s formulářem
 
-1.  Typ `winres` v developer command prompt pro spuštění Winres.exe.
+1. Typ `winres` v developer command prompt pro spuštění Winres.exe.
 
-2.  Výchozí soubor prostředků pro formulář určený k lokalizaci, klikněte na tlačítko **otevřete** příkaz **souboru** nabídky a přejděte na soubor otevřete.
+2. Výchozí soubor prostředků pro formulář určený k lokalizaci, klikněte na tlačítko **otevřete** příkaz **souboru** nabídky a přejděte na soubor otevřete.
 
      -nebo-
 
@@ -129,11 +129,11 @@ Měli byste použít verzi nástroje Winres.exe vydanou s rozhraním .NET Framew
     > [!NOTE]
     > Jestliže je formulář, jehož prostředky upravujete, zděděným formulářem, sestavení obsahující zděděný formulář i sestavení obsahující odvozený formulář musí být zaregistrována v globální mezipaměti sestavení (GAC) nebo musí být umístěna ve stejném adresáři jako nástroj WinRes.exe. Další informace o instalaci komponent rozhraní .NET Framework do GAC naleznete v tématu [Global Assembly Cache](../../../docs/framework/app-domains/gac.md).
 
-3.  Vyberte ovládací prvky ve formuláři a změnit jejich <xref:System.Windows.Forms.Control.Text%2A> a další vlastnosti tak, aby odrážely lokalizovanou jazykovou verzi a jazyk. Přesuňte ovládací prvky nebo změňte jejich velikost tak, aby vyhovovaly lokalizovanému textu.
+3. Vyberte ovládací prvky ve formuláři a změnit jejich <xref:System.Windows.Forms.Control.Text%2A> a další vlastnosti tak, aby odrážely lokalizovanou jazykovou verzi a jazyk. Přesuňte ovládací prvky nebo změňte jejich velikost tak, aby vyhovovaly lokalizovanému textu.
 
-4.  Lokalizovanou verzi souboru .resx nebo .resources uložte, klikněte na tlačítko **Uložit** ikony nebo stejný příkaz na **souboru** nabídky. Nástroj zobrazí **vyberte jazykovou verzi** okna.
+4. Lokalizovanou verzi souboru .resx nebo .resources uložte, klikněte na tlačítko **Uložit** ikony nebo stejný příkaz na **souboru** nabídky. Nástroj zobrazí **vyberte jazykovou verzi** okna.
 
-5.  Vyberte odpovídající režim jazykové verze a soubor a klikněte na **OK**.
+5. Vyberte odpovídající režim jazykové verze a soubor a klikněte na **OK**.
 
    Nástroj uloží soubor pomocí zásady vytváření názvů, který očekává, že čas spuštění pro lokalizované soubory prostředků. Například, pokud lokalizujete `TestApp.resources` do němčiny, nástroj uloží soubor jako `TestApp.de-DE.resources`. Pokud lokalizujete `TestApp.resx` do němčiny, nástroj uloží soubor jako `TestApp.de-DE.resx`. Další informace o vytváření názvů prostředků najdete v tématu [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových používá čas spuštění, najdete v článku <xref:System.Globalization.CultureInfo> třídy.
 
@@ -145,5 +145,5 @@ Měli byste použít verzi nástroje Winres.exe vydanou s rozhraním .NET Framew
 - <xref:System.Resources.ResourceReader>
 - <xref:System.Resources.ResourceWriter>
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)

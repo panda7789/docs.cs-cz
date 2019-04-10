@@ -2,12 +2,12 @@
 title: Ukázka technologie SchemaImporterExtension
 ms.date: 03/30/2017
 ms.assetid: 3f5eb78f-0ef6-433a-b095-3a63b1ce0bc9
-ms.openlocfilehash: 04e2b3f9fb1ea6f9bbb3c1e1886911cbacda7a62
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5027897bcf62e52dae5aab6090c01518a92636dc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54633895"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298497"
 ---
 # <a name="schemaimporterextension-technology-sample"></a>Ukázka technologie SchemaImporterExtension
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/SchemaImporterExtension.zip.exe)  
@@ -16,25 +16,25 @@ ms.locfileid: "54633895"
   
 ### <a name="to-build-the-sample-using-the-command-prompt"></a>K vytvoření vzorku pomocí příkazového řádku  
   
-1.  Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
+1. Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
   
-2.  Typ **msbuild.exe OrderSchemaImporterExtension.sln** na příkazovém řádku.  
+2. Typ **msbuild.exe OrderSchemaImporterExtension.sln** na příkazovém řádku.  
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>K vytvoření vzorku pomocí sady Visual Studio  
   
-1.  Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
+1. Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
   
-2.  Poklepejte na ikonu OrderSchemaImporterExtension.sln k otevření souboru v sadě Visual Studio.  
+2. Poklepejte na ikonu OrderSchemaImporterExtension.sln k otevření souboru v sadě Visual Studio.  
   
-3.  Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
+3. Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
   
  Aplikace bude vytvořen v adresáři \bin nebo \bin\Debug výchozí.  
   
 ### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Přejděte do adresáře, který obsahuje novou spustitelný soubor, pomocí příkazového řádku.  
+1. Přejděte do adresáře, který obsahuje novou spustitelný soubor, pomocí příkazového řádku.  
   
-2.  Typ **[exe name]** na příkazovém řádku.  
+2. Typ **[exe name]** na příkazovém řádku.  
   
 ## <a name="remarks"></a>Poznámky  
  Další informace o vytváření binární ukázky a registraci kroky naleznete v tématu komentáře v souborech zdrojového kódu a build.proj.  

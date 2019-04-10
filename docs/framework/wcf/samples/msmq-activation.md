@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 80ce76d5cee8bb55bebdaeaea065aa41a0264bac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: d83759f321abe7fa7e39202daadd4ceda82d8f23
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59162825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295676"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
@@ -215,9 +215,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jak je vyžadováno pro aktivaci WAS.  
+1. Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jak je vyžadováno pro aktivaci WAS.  
   
-2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
+2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
   
     1.  Z **Start** nabídce zvolte **ovládací panely**.  
   
@@ -229,11 +229,11 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
     5.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
   
-3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustíte klienta spuštěním client.exe z příkazového okna. Tím se vytvoří frontu a odešle zprávu do něj. Nechte klienty k zobrazení výsledku čtení zprávy služby  
+4. Spustíte klienta spuštěním client.exe z příkazového okna. Tím se vytvoří frontu a odešle zprávu do něj. Nechte klienty k zobrazení výsledku čtení zprávy služby  
   
-5.  Aktivační služba MSMQ je ve výchozím nastavení spouští jako síťová služba. Proto musí mít fronty, který se používá k aktivaci aplikace přijímat a náhled oprávnění pro síťovou službu. Jde přidat pomocí konzoly MMC služby Řízení front zpráv:  
+5. Aktivační služba MSMQ je ve výchozím nastavení spouští jako síťová služba. Proto musí mít fronty, který se používá k aktivaci aplikace přijímat a náhled oprávnění pro síťovou službu. Jde přidat pomocí konzoly MMC služby Řízení front zpráv:  
   
     1.  Z **Start** nabídky, klikněte na tlačítko **spustit**, zadejte `Compmgmt.msc` a stiskněte klávesu ENTER.  
   
@@ -245,7 +245,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
     5.  Na **zabezpečení** klikněte na tlačítko **přidat** a poskytnout náhled a přijímat oprávnění pro síťovou službu.  
   
-6.  Konfigurace Windows WAS Process Activation Service () pro podporu aktivace služby MSMQ.  
+6. Konfigurace Windows WAS Process Activation Service () pro podporu aktivace služby MSMQ.  
   
      Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá AddMsmqSiteBinding.cmd nachází v adresáři ukázkové.  
   
@@ -272,9 +272,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
          Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí `http://localhost/servicemodelsamples` a `net.msmq://localhost/servicemodelsamples`.
   
-7.  Pokud jste neudělali dříve, ujistěte se, že je povolená aktivace služby MSMQ. Z **Start** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro vyhledejte **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spouštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **Start** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby adaptér naslouchání Net.Msmq.  
+7. Pokud jste neudělali dříve, ujistěte se, že je povolená aktivace služby MSMQ. Z **Start** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro vyhledejte **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spouštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **Start** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby adaptér naslouchání Net.Msmq.  
   
-8.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Kromě toho změňte kód na straně klienta, který odešle nákupní pořadí tak, aby odrážely název počítače v identifikátoru URI fronty, při odesílání nákupní objednávky. Pomocí následujícího kódu:  
+8. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Kromě toho změňte kód na straně klienta, který odešle nákupní pořadí tak, aby odrážely název počítače v identifikátoru URI fronty, při odesílání nákupní objednávky. Pomocí následujícího kódu:  
   
     ```csharp  
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
@@ -309,7 +309,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině  
   
-1.  Pokud počítač není součástí domény, vypněte tak, že nastavíte úroveň ověření režimu a ochrany na hodnotu none, jak je znázorněno v následující ukázkové konfiguraci zabezpečení přenosu.  
+1. Pokud počítač není součástí domény, vypněte tak, že nastavíte úroveň ověření režimu a ochrany na hodnotu none, jak je znázorněno v následující ukázkové konfiguraci zabezpečení přenosu.  
   
     ```xml  
     <bindings>  
@@ -321,12 +321,12 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     </bindings>  
     ```  
   
-2.  Před spuštěním ukázky, změňte konfiguraci na serveru a klienta.  
+2. Před spuštěním ukázky, změňte konfiguraci na serveru a klienta.  
   
     > [!NOTE]
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení `MsmqAuthenticationMode`, `MsmqProtectionLevel` a `Message` zabezpečení `None`.  
   
-3.  Chcete-li aktivovat počítač připojen k pracovní skupině, musí být spuštěna aktivace služby a pracovní proces s konkrétního uživatelského účtu (musí být stejná pro obě) a fronty musí mít seznamy ACL pro konkrétní uživatelský účet.  
+3. Chcete-li aktivovat počítač připojen k pracovní skupině, musí být spuštěna aktivace služby a pracovní proces s konkrétního uživatelského účtu (musí být stejná pro obě) a fronty musí mít seznamy ACL pro konkrétní uživatelský účet.  
   
      Chcete-li změnit identitu, která poběží pracovní proces v části:  
   
@@ -342,9 +342,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
     2.  Klikněte pravým tlačítkem myši **Net.MsmqListener adaptér**a zvolte **vlastnosti**.  
   
-4.  Změna účtu v **přihlášení** kartu.  
+4. Změna účtu v **přihlášení** kartu.  
   
-5.  V pracovní skupině se musí taky spustit služba používá token pro neomezený. Chcete-li to provést, spusťte následující v příkazovém okně:  
+5. V pracovní skupině se musí taky spustit služba používá token pro neomezený. Chcete-li to provést, spusťte následující v příkazovém okně:  
   
     ```console  
     sc sidtype netmsmqactivator unrestricted  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 8b2ebc108bf3eef60e8877e617acec782da38fa4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f106ce1bca67f8b88df0835496eea0b3297ac946
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59124550"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309677"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>Postupy: Hostování služby WCF v IIS
 Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Communication Foundation (WCF), které je hostované v Internetové informační služby (IIS). Toto téma předpokládá se seznámíte se službou IIS a pochopit, jak vytvářet a spravovat aplikace služby IIS pomocí nástroje pro správu služby IIS. Další informace o službě IIS najdete v části [Internetová informační služba](https://go.microsoft.com/fwlink/?LinkId=132449). Služba WCF, která se spustí v prostředí služby IIS plně využívá funkce služby IIS, jako je například recyklace procesů, nečinnosti vypnutí, monitorování stavu procesu a aktivaci založenou na zprávách. Tato možnost hostování vyžaduje, aby byly správně konfigurovány služby IIS, ale nevyžaduje, že libovolný kód hostování se zapisují jako součást aplikace. Můžete použít hostování IIS pouze s přenos pomocí protokolu HTTP.  
@@ -21,28 +21,28 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
   
 ### <a name="to-create-a-service-hosted-by-iis"></a>Vytvoření služby hostované službou IIS.  
   
-1.  Zkontrolujte, zda je služba IIS na počítači nainstalovaná a spuštěná. Další informace o instalaci a konfiguraci služby IIS najdete v části [instalace a konfigurace služby IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=132128)  
+1. Zkontrolujte, zda je služba IIS na počítači nainstalovaná a spuštěná. Další informace o instalaci a konfiguraci služby IIS najdete v části [instalace a konfigurace služby IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=132128)  
   
-2.  Vytvořte novou složku s názvem "IISHostedCalcService" souborů aplikace, ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] má přístup k obsahu složky a vytvořte novou aplikaci služby IIS, který je fyzicky umístěný v této aplikaci pomocí nástroje pro správu služby IIS adresář. Při vytváření aliasu pro použití aplikací adresáře "IISHostedCalc".  
+2. Vytvořte novou složku s názvem "IISHostedCalcService" souborů aplikace, ujistěte se, že [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] má přístup k obsahu složky a vytvořte novou aplikaci služby IIS, který je fyzicky umístěný v této aplikaci pomocí nástroje pro správu služby IIS adresář. Při vytváření aliasu pro použití aplikací adresáře "IISHostedCalc".  
   
-3.  Vytvořte nový soubor s názvem "service.svc" v adresáři aplikace. Tento soubor upravit přidáním následujícího kódu @ServiceHost elementu.  
+3. Vytvořte nový soubor s názvem "service.svc" v adresáři aplikace. Tento soubor upravit přidáním následujícího kódu @ServiceHost elementu.  
   
     ```  
     <%@ServiceHost language=c# Debug="true" Service="Microsoft.ServiceModel.Samples.CalculatorService"%>  
     ```  
   
-4.  Vytvoření App_Code podadresáře v adresáři aplikace.  
+4. Vytvoření App_Code podadresáře v adresáři aplikace.  
   
-5.  Vytvořte soubor kódu Service.cs v podadresáři App_Code.  
+5. Vytvořte soubor kódu Service.cs v podadresáři App_Code.  
   
-6.  Přidejte následující příkazy using do horní části souboru Service.cs.  
+6. Přidejte následující příkazy using do horní části souboru Service.cs.  
   
     ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
-7.  Přidejte následující deklarace oboru názvů po na pomocí příkazů.  
+7. Přidejte následující deklarace oboru názvů po na pomocí příkazů.  
   
     ```csharp  
     namespace Microsoft.ServiceModel.Samples  
@@ -50,7 +50,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření služby Windows Co
     }  
     ```  
   
-8.  Definování kontraktu služby uvnitř deklarace oboru názvů, jak je znázorněno v následujícím kódu.  
+8. Definování kontraktu služby uvnitř deklarace oboru názvů, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[c_HowTo_HostInIIS#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#11)]
      [!code-vb[c_HowTo_HostInIIS#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#11)]  

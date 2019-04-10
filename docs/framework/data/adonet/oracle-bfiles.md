@@ -2,12 +2,12 @@
 title: Soubory Oracle BFILE
 ms.date: 03/30/2017
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
-ms.openlocfilehash: 07a7f28e08ed43672e94151cd9de88301069e1ec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5bb9f7e67016cf4b1d467935fe302ab4a40edbfa
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59142386"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304464"
 ---
 # <a name="oracle-bfiles"></a>Soubory Oracle BFILE
 Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s Oracle <xref:System.Data.OracleClient.OracleType.BFile> datového typu.  
@@ -26,9 +26,9 @@ Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.Or
   
  Každý NENULOVOU **OracleBFile** objekt je přidružený dvě entity, které definují umístění podkladový fyzický soubor:  
   
-1.  Objekt adresáře Oracle, což je alias databáze pro adresář v systému souborů, a  
+1. Objekt adresáře Oracle, což je alias databáze pro adresář v systému souborů, a  
   
-2.  Název souboru základního fyzického souboru, který je umístěn v adresáři přidružená k objektu adresáře.  
+2. Název souboru základního fyzického souboru, který je umístěn v adresáři přidružená k objektu adresáře.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad jazyka C# ukazuje, jak můžete vytvořit **BFILE** Oracle tabulce a potom ho načíst ve formě **OracleBFile** objektu. Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleBFile** **Seek** a **čtení** metody. Všimněte si, že chcete-li použít tento příklad, musíte nejprve vytvořit adresář s názvem "c:\\\bfiles" a soubor s názvem "MyFile.jpg" na serveru Oracle.  

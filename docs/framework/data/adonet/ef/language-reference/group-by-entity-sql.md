@@ -2,12 +2,12 @@
 title: Seskupit podle (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cf4f4972-4724-4945-ba44-943a08549139
-ms.openlocfilehash: 581a18b75d6028089e96b97dc5adeb2d3986c088
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 574d952e0183eb65c88864f2788eb7d698c9f2ec
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59081915"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302943"
 ---
 # <a name="group-by-entity-sql"></a>Seskupit podle (Entity SQL)
 Určuje skupiny, do které objektů vrácených dotazem ([vyberte](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) výrazu mají být umístěny.  
@@ -62,9 +62,9 @@ GROUP BY 1   -- BAD, a constant is not allowed
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL používá operátor GROUP BY k určení skupin, do kterých jsou objekty vrácených dotazem. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#GROUPBY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#groupby)]  
   

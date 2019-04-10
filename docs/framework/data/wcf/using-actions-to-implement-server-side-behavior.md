@@ -2,12 +2,12 @@
 title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
-ms.openlocfilehash: c21208b53745d0bf30d64ff827c1fb5e78a97cb4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4467d52df5dbb134947111e96782e257eef253e7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59144115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294935"
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
 
@@ -40,11 +40,11 @@ Akcí OData, které poskytují způsob, jak implementovat chování, která fung
 ### <a name="idataserviceinvokable"></a>IDataServiceInvokable  
  Toto rozhraní poskytuje způsob, jak provést akci WCF Data Service. Při implementaci IDataServiceInvokable zodpovídáte za 3 věci:  
   
-1.  Zaznamenání a potenciálně zařazování parametry  
+1. Zaznamenání a potenciálně zařazování parametry  
   
-2.  Odesílání parametry tak, aby kód, který ve skutečnosti implementuje akci při volání Invoke()  
+2. Odesílání parametry tak, aby kód, který ve skutečnosti implementuje akci při volání Invoke()  
   
-3.  Ukládání žádné výsledky z Invoke() tak mohou být načteny pomocí GetResult()  
+3. Ukládání žádné výsledky z Invoke() tak mohou být načteny pomocí GetResult()  
   
  Parametry může být předán jako tokeny. Toto je vzhledem k tomu je možné psát poskytovatele dat služeb pracující s tokeny, které představují prostředky, pokud je to tento případ, budete muset převést (zařazování) tyto tokeny do skutečných prostředků před agresivnějším odesláním do skutečné akce. Po parametru má zařazeno, musí být ve stavu upravit tak, aby všechny změny prostředku, ke kterým dochází při vyvolání akce bude uložený a zapsané na disk.  
   

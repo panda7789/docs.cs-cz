@@ -15,12 +15,12 @@ helpviewer_keywords:
 - layout [Windows Forms], margins and padding
 - Windows Forms, layout
 ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
-ms.openlocfilehash: c07afa1e408c2950ea45f206f43125fc9329ad14
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 230c7cb80ce6b8a29f7334ed0f8d297fd829faf9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59167866"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302462"
 ---
 # <a name="walkthrough-laying-out-windows-forms-controls-with-padding-margins-and-the-autosize-property"></a>Návod: Rozvrhování ovládacích prvků Windows Forms s odsazením, okraji a s vlastností AutoSize
 Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. **Návrháře formulářů Windows** poskytuje celou řadu nástrojů rozložení, jak toho dosáhnout. Jsou tři z vašich nejdůležitějších <xref:System.Windows.Forms.Control.Margin%2A>, <xref:System.Windows.Forms.Control.Padding%2A>, a <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti, které jsou k dispozici u všech ovládacích prvků Windows Forms.  
@@ -60,53 +60,53 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1.  Vytvoření **aplikace Windows** projekt s názvem `LayoutExample`. Další informace najdete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) .  
+1. Vytvoření **aplikace Windows** projekt s názvem `LayoutExample`. Další informace najdete v tématu [jak: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) .  
   
-2.  Vyberte formulář v nástrojích pro **Návrháře formulářů Windows**.  
+2. Vyberte formulář v nástrojích pro **Návrháře formulářů Windows**.  
   
 ## <a name="setting-margins-for-your-controls"></a>Nastavení okrajů pro vaše ovládací prvky  
  Můžete nastavit výchozí vzdálenost mezi pomocí ovládacích prvků <xref:System.Windows.Forms.Control.Margin%2A> vlastnost. Při přesunutí ovládacího prvku blízko k jinému ovládacímu prvku, zobrazí se snapline –, který zobrazuje okraje dvou ovládacích prvků. Ovládací prvek, který se přesouvají také přichycena k vzdálenost určené okraje.  
   
 #### <a name="to-arrange-controls-on-your-form-using-the-margin-property"></a>Chcete-li uspořádat ovládací prvky na formuláři pomocí vlastnosti okraj  
   
-1.  Přetáhněte dva <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** do formuláře.  
+1. Přetáhněte dva <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** do formuláře.  
   
-2.  Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko druhé, dokud jsou téměř zásahu.  
+2. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko druhé, dokud jsou téměř zásahu.  
   
      Sledujte snapline –, který se zobrazí mezi nimi. Toto je součet dvou ovládacích prvků <xref:System.Windows.Forms.Control.Margin%2A> hodnoty. Ovládací prvek, který se přesouvají přichytí k této vzdálenosti. Podrobnosti najdete v tématu [názorný postup: Uspořádání ovládacích prvků ve Windows Forms pomocí zarovnávacích čar](walkthrough-arranging-controls-on-windows-forms-using-snaplines.md).  
   
-3.  Změnit <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacích prvků tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> nastavte na 20.  
+3. Změnit <xref:System.Windows.Forms.Control.Margin%2A> vlastnosti ovládacích prvků tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> nastavte na 20.  
   
-4.  Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko druhé.  
+4. Vyberte jednu z <xref:System.Windows.Forms.Button> ovládací prvky a přesuňte ho blízko druhé.  
   
      Snapline – definování je delší, aby součet hodnot okraj a ovládací prvek přichytí k větší vzdálenosti od jiného ovládacího prvku.  
   
-5.  Změnit <xref:System.Windows.Forms.Control.Margin%2A> vlastností vybraného ovládacího prvku tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.Top%2A> na 5.  
+5. Změnit <xref:System.Windows.Forms.Control.Margin%2A> vlastností vybraného ovládacího prvku tak, že rozbalíte <xref:System.Windows.Forms.Control.Margin%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.Top%2A> na 5.  
   
-6.  Přesunout vybraný ovládací prvek pod ovládací prvek a podívejte se, že je snapline – kratší. Přesunout vybraný ovládací prvek vlevo od jiného ovládacího prvku a podívejte se, že snapline – uchovává hodnotu zjištěnou v kroku 4.  
+6. Přesunout vybraný ovládací prvek pod ovládací prvek a podívejte se, že je snapline – kratší. Přesunout vybraný ovládací prvek vlevo od jiného ovládacího prvku a podívejte se, že snapline – uchovává hodnotu zjištěnou v kroku 4.  
   
-7.  Můžete nastavit všech aspektů <xref:System.Windows.Forms.Control.Margin%2A> vlastnost <xref:System.Windows.Forms.Padding.Left%2A>, <xref:System.Windows.Forms.Padding.Top%2A>, <xref:System.Windows.Forms.Padding.Right%2A>, <xref:System.Windows.Forms.Padding.Bottom%2A>, různé hodnoty, nebo můžete nastavit vše na stejnou hodnotu s <xref:System.Windows.Forms.Padding.All%2A> vlastnost.  
+7. Můžete nastavit všech aspektů <xref:System.Windows.Forms.Control.Margin%2A> vlastnost <xref:System.Windows.Forms.Padding.Left%2A>, <xref:System.Windows.Forms.Padding.Top%2A>, <xref:System.Windows.Forms.Padding.Right%2A>, <xref:System.Windows.Forms.Padding.Bottom%2A>, různé hodnoty, nebo můžete nastavit vše na stejnou hodnotu s <xref:System.Windows.Forms.Padding.All%2A> vlastnost.  
   
 ## <a name="setting-padding-for-your-controls"></a>Nastavení odsazení pro vaše ovládací prvky  
  K dosažení požadované pro vaší aplikaci přesné rozložení ovládacích prvků často obsahovat podřízené ovládací prvky. Pokud chcete zadat blízkosti podřízený ovládací prvek ohraničení okraj nadřazený ovládací prvek, pomocí ovládacího prvku nadřazené <xref:System.Windows.Forms.Control.Padding%2A> vlastnost ve spojení s podřízený ovládací prvek <xref:System.Windows.Forms.Control.Margin%2A> vlastnost. <xref:System.Windows.Forms.Control.Padding%2A> Vlastnost se také používá k řízení blízkosti obsah ovládacího prvku (například <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnosti) do jeho okrajů.  
   
 #### <a name="to-arrange-controls-on-your-form-using-padding"></a>Chcete-li uspořádat ovládací prvky na formuláři pomocí odsazení  
   
-1.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
+1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
   
-2.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
+2. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
   
-3.  Změnit <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> na 5.  
+3. Změnit <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> na 5.  
   
      Ovládací prvek dá rozbalit, aby uvolnil prostor pro nové odsazení.  
   
-4.  Přetáhněte <xref:System.Windows.Forms.GroupBox> ovládacího prvku **nástrojů** do formuláře. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Pozice <xref:System.Windows.Forms.Button> řídit tak, aby byl vyprázdnění se v pravém horním rohu <xref:System.Windows.Forms.GroupBox> ovládacího prvku.  
+4. Přetáhněte <xref:System.Windows.Forms.GroupBox> ovládacího prvku **nástrojů** do formuláře. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Pozice <xref:System.Windows.Forms.Button> řídit tak, aby byl vyprázdnění se v pravém horním rohu <xref:System.Windows.Forms.GroupBox> ovládacího prvku.  
   
      Sledujte zarovnávacích čar, které se zobrazí jako <xref:System.Windows.Forms.Button> ovládací prvek blíží dolní a pravé ohraničení <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Tyto zarovnávacích čar odpovídají <xref:System.Windows.Forms.Control.Margin%2A> vlastnost <xref:System.Windows.Forms.Button>.  
   
-5.  Změnit <xref:System.Windows.Forms.GroupBox> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> nastavte na 20.  
+5. Změnit <xref:System.Windows.Forms.GroupBox> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> nastavte na 20.  
   
-6.  Vyberte <xref:System.Windows.Forms.Button> ovládacích prvků uvnitř <xref:System.Windows.Forms.GroupBox> ovládací prvek a jeho přesun směrem k středu <xref:System.Windows.Forms.GroupBox>.  
+6. Vyberte <xref:System.Windows.Forms.Button> ovládacích prvků uvnitř <xref:System.Windows.Forms.GroupBox> ovládací prvek a jeho přesun směrem k středu <xref:System.Windows.Forms.GroupBox>.  
   
      Zarovnávacích čar budou zobrazovat ve větší vzdálenosti v ohraničení <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Toto je součtem <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Margin%2A> vlastnost a <xref:System.Windows.Forms.GroupBox> ovládacího prvku <xref:System.Windows.Forms.Control.Padding%2A> vlastnost.  
   
@@ -117,29 +117,29 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 #### <a name="to-arrange-controls-on-your-form-using-the-autosize-property"></a>Chcete-li uspořádat ovládací prvky na formuláři pomocí vlastnosti AutoSize  
   
-1.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
+1. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
   
-2.  Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
+2. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
   
-3.  Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost "**toto tlačítko má dlouhý řetězec pro vlastnost Text**."  
+3. Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost "**toto tlačítko má dlouhý řetězec pro vlastnost Text**."  
   
      Při potvrzení změn, <xref:System.Windows.Forms.Button> ovládací prvek mění podle nového textu.  
   
-4.  Přetáhněte další <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
+4. Přetáhněte další <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře.  
   
-5.  Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost "**toto tlačítko má dlouhý řetězec pro vlastnost Text.**"  
+5. Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Text%2A> vlastnost "**toto tlačítko má dlouhý řetězec pro vlastnost Text.**"  
   
      Při potvrzení změn, <xref:System.Windows.Forms.Button> ovládací prvek není velikost sebe sama a text je oříznutý ořezovou pravým okrajem ovládacího prvku.  
   
-6.  Změnit <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> na 5.  
+6. Změnit <xref:System.Windows.Forms.Control.Padding%2A> vlastnost tak, že rozbalíte <xref:System.Windows.Forms.Control.Padding%2A> položku v **vlastnosti** okno a nastavení <xref:System.Windows.Forms.Padding.All%2A> na 5.  
   
      Text v uvnitř ovládacího prvku se ořízne na všechny čtyři strany.  
   
-7.  Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
+7. Změnit <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
   
      <xref:System.Windows.Forms.Button> Ovládací prvek mění zahrnuje celý řetězec. Navíc se přidala výplně kolem textu, což způsobí <xref:System.Windows.Forms.Button> ovládací prvek rozšíření ve všech čtyř směrů.  
   
-8.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře. V pravém horním rohu formuláře, umístěte ho.  
+8. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do formuláře. V pravém horním rohu formuláře, umístěte ho.  
   
 9. Změňte hodnotu <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
   
@@ -154,24 +154,24 @@ Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho
   
 #### <a name="to-use-the-autosizemode-property"></a>Chcete-li použít AutoSizeMode – vlastnost  
   
-1.  Přetáhněte <xref:System.Windows.Forms.Panel> ovládacího prvku **nástrojů** do formuláře.  
+1. Přetáhněte <xref:System.Windows.Forms.Panel> ovládacího prvku **nástrojů** do formuláře.  
   
-2.  Nastavte hodnotu <xref:System.Windows.Forms.Panel> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
+2. Nastavte hodnotu <xref:System.Windows.Forms.Panel> ovládacího prvku <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost `true`.  
   
-3.  Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.Panel> ovládacího prvku.  
+3. Přetáhněte <xref:System.Windows.Forms.Button> ovládacího prvku **nástrojů** do <xref:System.Windows.Forms.Panel> ovládacího prvku.  
   
-4.  Místo <xref:System.Windows.Forms.Button> ovládacího prvku v pravém horním rohu <xref:System.Windows.Forms.Panel> ovládacího prvku.  
+4. Místo <xref:System.Windows.Forms.Button> ovládacího prvku v pravém horním rohu <xref:System.Windows.Forms.Panel> ovládacího prvku.  
   
-5.  Vyberte <xref:System.Windows.Forms.Panel> řídit a získejte pravý dolní úchyt. Změnit velikost <xref:System.Windows.Forms.Panel> ovládací prvek bude větší a menší.  
+5. Vyberte <xref:System.Windows.Forms.Panel> řídit a získejte pravý dolní úchyt. Změnit velikost <xref:System.Windows.Forms.Panel> ovládací prvek bude větší a menší.  
   
     > [!NOTE]
     >  Můžete libovolně změnit velikost <xref:System.Windows.Forms.Panel> ovládacího prvku, ale nemůže velikost je menší než pozice <xref:System.Windows.Forms.Button> pravého dolního rohu ovládacího prvku. Toto chování je určená výchozí hodnota `AutoSizeMode` vlastnost, která je <xref:System.Windows.Forms.AutoSizeMode.GrowOnly>.  
   
-6.  Nastavte hodnotu <xref:System.Windows.Forms.Panel> ovládacího prvku `AutoSizeMode` vlastnost <xref:System.Windows.Forms.AutoSizeMode.GrowAndShrink>.  
+6. Nastavte hodnotu <xref:System.Windows.Forms.Panel> ovládacího prvku `AutoSizeMode` vlastnost <xref:System.Windows.Forms.AutoSizeMode.GrowAndShrink>.  
   
      <xref:System.Windows.Forms.Panel> Samotný ohraničit velikosti ovládacího prvku <xref:System.Windows.Forms.Button> ovládacího prvku. Nelze změnit velikost <xref:System.Windows.Forms.Panel> ovládacího prvku.  
   
-7.  Přetáhněte <xref:System.Windows.Forms.Button> ovládací prvek směrem k horním levém horním rohu <xref:System.Windows.Forms.Panel> ovládacího prvku.  
+7. Přetáhněte <xref:System.Windows.Forms.Button> ovládací prvek směrem k horním levém horním rohu <xref:System.Windows.Forms.Panel> ovládacího prvku.  
   
      <xref:System.Windows.Forms.Panel> Změní velikost ovládacího prvku <xref:System.Windows.Forms.Button> nové pozice ovládacího prvku.  
   

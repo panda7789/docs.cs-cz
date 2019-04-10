@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-ms.openlocfilehash: f11b5a184b72df68e302094dee762ec6876a397c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 9ca9a0ccdac3ac13429928233a0c09d58427ce74
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58829327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295637"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
 A *výchozí vlastnost* je vlastnost třídy nebo struktury, který váš kód může přistupovat bez zadání ho. Při volání metody kódu názvy třídy nebo struktury, ale není vlastnost a kontext umožňuje přístup k vlastnosti, Visual Basic přeloží přístup k dané třídy nebo struktury výchozí vlastnost pokud existuje.  
@@ -26,37 +26,37 @@ A *výchozí vlastnost* je vlastnost třídy nebo struktury, který váš kód m
   
 ### <a name="to-declare-a-default-property"></a>Chcete-li deklarovat výchozí vlastnosti  
   
-1.  Deklarujte vlastnost běžným způsobem. Nezadávejte `Shared` nebo `Private` – klíčové slovo.  
+1. Deklarujte vlastnost běžným způsobem. Nezadávejte `Shared` nebo `Private` – klíčové slovo.  
   
-2.  Zahrnout `Default` – klíčové slovo v deklaraci vlastnosti.  
+2. Zahrnout `Default` – klíčové slovo v deklaraci vlastnosti.  
   
-3.  Zadejte nejméně jeden parametr pro vlastnost. Nelze definovat výchozí vlastnost, která nevyužívá aspoň jeden argument.  
+3. Zadejte nejméně jeden parametr pro vlastnost. Nelze definovat výchozí vlastnost, která nevyužívá aspoň jeden argument.  
   
      [!code-vb[VbVbcnProcedures#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#17)]  
   
 ### <a name="to-call-a-default-property"></a>K volání výchozí vlastnosti  
   
-1.  Deklarujte proměnnou obsahující typ třídy nebo struktury.  
+1. Deklarujte proměnnou obsahující typ třídy nebo struktury.  
   
      [!code-vb[VbVbcnProcedures#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#16)]  
   
-2.  Použijte název proměnné pouze ve výrazu, kde by obvykle zahrnují název vlastnosti.  
+2. Použijte název proměnné pouze ve výrazu, kde by obvykle zahrnují název vlastnosti.  
   
      [!code-vb[VbVbcnProcedures#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#21)]  
   
-3.  Použijte název proměnné se seznamem argumentů v závorkách. Výchozí vlastnost musí přebírat aspoň jeden argument.  
+3. Použijte název proměnné se seznamem argumentů v závorkách. Výchozí vlastnost musí přebírat aspoň jeden argument.  
   
      [!code-vb[VbVbcnProcedures#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#20)]  
   
-4.  Načíst výchozí hodnota vlastnosti, použijte název proměnné, se seznamem argumentů, ve výrazu nebo rovno (`=`) Přihlaste se příkazu přiřazení.  
+4. Načíst výchozí hodnota vlastnosti, použijte název proměnné, se seznamem argumentů, ve výrazu nebo rovno (`=`) Přihlaste se příkazu přiřazení.  
   
      [!code-vb[VbVbcnProcedures#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#15)]  
   
-5.  Pokud chcete nastavit výchozí hodnotu vlastnosti, použijte název proměnné, se seznamem argumentů, na levé straně příkazu přiřazení.  
+5. Pokud chcete nastavit výchozí hodnotu vlastnosti, použijte název proměnné, se seznamem argumentů, na levé straně příkazu přiřazení.  
   
      [!code-vb[VbVbcnProcedures#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#14)]  
   
-6.  Výchozí název vlastnosti spolu s názvem proměnné, můžete zadat vždy, stejně jako by tomu pro přístup k žádné jiné vlastnosti.  
+6. Výchozí název vlastnosti spolu s názvem proměnné, můžete zadat vždy, stejně jako by tomu pro přístup k žádné jiné vlastnosti.  
   
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
@@ -83,13 +83,13 @@ A *výchozí vlastnost* je vlastnost třídy nebo struktury, který váš kód m
   
 ## <a name="see-also"></a>Viz také:
 
-- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury Property](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Default](../../../../visual-basic/language-reference/modifiers/default.md)
+- [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)
+- [Výchozí](../../../../visual-basic/language-reference/modifiers/default.md)
 - [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
+- [Postupy: Volání procedury Property](./how-to-call-a-property-procedure.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
-- [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+- [Postupy: Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

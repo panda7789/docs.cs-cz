@@ -10,29 +10,29 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: e7a05a5fb0b2053e92d9f947f197bdb2dcfa7ce0
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4f81c7377423899c142c4270f325bbd7ed20b877
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58832278"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312238"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
 Když kompilátor jazyka Visual Basic dojde během volání procedury, která je definována v několika přetížené verze, kompilátor musí rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  
   
-1.  **Přístupnost** Eliminuje žádného přetížení s úrovní přístupu, který brání volání volající kód.  
+1. **Usnadnění přístupu.** Eliminuje žádného přetížení s úrovní přístupu, který brání volání volající kód.  
   
-2.  **Počet parametrů.** Eliminuje žádného přetížení, která definuje různý počet parametrů než je zadaný ve volání.  
+2. **Počet parametrů.** Eliminuje žádného přetížení, která definuje různý počet parametrů než je zadaný ve volání.  
   
-3.  **Datové typy parametrů.** Kompilátor dává přednost metody instance prostřednictvím metody rozšíření. Pokud se najde libovolnou metodu instance, který se vyžaduje jenom na rozšiřující převody tak, aby odpovídaly volání procedury, se zahodí všechny metody rozšíření a kompilátor pokračuje pouze kandidáty metodu instance. Pokud se nenajde žádný takový metodu instance, bude pokračovat s instancí a metody rozšíření.  
+3. **Datové typy parametrů.** Kompilátor dává přednost metody instance prostřednictvím metody rozšíření. Pokud se najde libovolnou metodu instance, který se vyžaduje jenom na rozšiřující převody tak, aby odpovídaly volání procedury, se zahodí všechny metody rozšíření a kompilátor pokračuje pouze kandidáty metodu instance. Pokud se nenajde žádný takový metodu instance, bude pokračovat s instancí a metody rozšíření.  
   
      V tomto kroku eliminuje žádného přetížení, pro které datové typy argumentů volání nelze převést na parametr typy definované v přetížení.  
   
-4.  **Zužující převody.** Eliminuje žádného přetížení, která vyžaduje zúžení převodu z: volání typy argumentů pro typy definované parametrů. Je hodnota true Určuje, zda přepnout kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On` nebo `Off`.  
+4. **Zužující převody.** Eliminuje žádného přetížení, která vyžaduje zúžení převodu z: volání typy argumentů pro typy definované parametrů. Je hodnota true Určuje, zda přepnout kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `On` nebo `Off`.  
   
-5.  **Rozšiřující nejnižší.** Kompilátor považuje za zbývající přetížení v párech. Pro každý pár porovná datové typy definované parametry. Pokud se typy v jednom ze všech přetížení rozšířit na odpovídající typy v jiném, kompilátor eliminuje ten. To znamená zachová přetížení, která vyžaduje nejnižší možné rozšíření.  
+5. **Rozšiřující nejnižší.** Kompilátor považuje za zbývající přetížení v párech. Pro každý pár porovná datové typy definované parametry. Pokud se typy v jednom ze všech přetížení rozšířit na odpovídající typy v jiném, kompilátor eliminuje ten. To znamená zachová přetížení, která vyžaduje nejnižší možné rozšíření.  
   
-6.  **Jeden Release Candidate.** Pokračuje v considering přetížení v párech až do pouze jedno přetížení zůstane a přeloží volání tohoto přetížení. Pokud kompilátor nemůže snížit přetížení k jedné Release candidate, dojde k chybě.  
+6. **Jeden Release Candidate.** Pokračuje v considering přetížení v párech až do pouze jedno přetížení zůstane a přeloží volání tohoto přetížení. Pokud kompilátor nemůže snížit přetížení k jedné Release candidate, dojde k chybě.  
   
  Následující obrázek znázorňuje proces, který určuje, které sada přetížené verze volání.  
   
@@ -60,14 +60,14 @@ Když kompilátor jazyka Visual Basic dojde během volání procedury, která je
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nepovinné parametry](./optional-parameters.md)
+- [Volitelné parametry](./optional-parameters.md)
 - [Pole parametrů](./parameter-arrays.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
-- [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
+- [Postupy: Definování více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
 - [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)
 - [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá neurčitý počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
-- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
-- [Rozšiřující metody](./extension-methods.md)
+- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Metody rozšíření](./extension-methods.md)

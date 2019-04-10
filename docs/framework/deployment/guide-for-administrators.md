@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: be053c9f8b431a9e157e53ec2d32fef874cf2d6b
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.openlocfilehash: 41cdc3db069ecf7ea854b76ac45d4b268a357459
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262459"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309508"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -27,11 +27,11 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
  [Proces nasazení](#the_deployment_process)  
  [Nasazení rozhraní .NET Framework](#deploying_in_a_test_environment)  
  [Vytvoření kolekce](#creating_a_collection)  
- [Vytvoření balíčku a programu](#creating_a_package)  
- [Vyberte distribuční bod](#select_dist_point)  
+ [Vytvoření balíčku a programu](#creating_a_package)  
+ [Výběr distribučního bodu](#select_dist_point)  
  [Nasazení balíčku](#deploying_package)  
 [Prostředky](#resources)  
-[Odstraňování potíží](#troubleshooting)  
+[Poradce při potížích](#troubleshooting)  
   
 <a name="the_deployment_process"></a>   
 ## <a name="the-deployment-process"></a>Proces nasazení  
@@ -52,13 +52,13 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 ## <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework  
  System Center 2012 Configuration Manager můžete použít k nasazení tiché instalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], kde uživatelé nespolupracují s instalačním procesem. Postupujte podle těchto kroků:  
   
-1.  [Vytvoření kolekce](#creating_a_collection).  
+1. [Vytvoření kolekce](#creating_a_collection).  
   
-2.  [Vytvoření balíčku a programu pro rozhraní .NET Framework redistributable](#creating_a_package).  
+2. [Vytvoření balíčku a programu pro rozhraní .NET Framework redistributable](#creating_a_package).  
   
-3.  [Vyberte distribuční bod](#select_dist_point).  
+3. [Vyberte distribuční bod](#select_dist_point).  
   
-4.  [Nasazení balíčku](#deploying_package).  
+4. [Nasazení balíčku](#deploying_package).  
   
 <a name="creating_a_collection"></a>   
 ### <a name="create-a-collection"></a>Vytvoření kolekce  
@@ -66,21 +66,21 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  Postup vytvoření kolekce:  
   
-1.  V konzole nástroje Configuration Manager, zvolte **prostředky a Kompatibilita**.  
+1. V konzole nástroje Configuration Manager, zvolte **prostředky a Kompatibilita**.  
   
-2.  V **prostředky a Kompatibilita** pracovního prostoru, zvolte **kolekce zařízení**.  
+2. V **prostředky a Kompatibilita** pracovního prostoru, zvolte **kolekce zařízení**.  
   
-3.  Na **Domů** kartu **vytvořit** skupině, zvolte **vytvořit kolekci zařízení**.  
+3. Na **Domů** kartu **vytvořit** skupině, zvolte **vytvořit kolekci zařízení**.  
   
-4.  Na **Obecné** stránku **Průvodce vytvořením kolekce zařízení**, zadejte název kolekce.  
+4. Na **Obecné** stránku **Průvodce vytvořením kolekce zařízení**, zadejte název kolekce.  
   
-5.  Zvolte **Procházet** určit limitující kolekci.  
+5. Zvolte **Procházet** určit limitující kolekci.  
   
-6.  Na **pravidla členství** zvolte **přidat pravidlo**a klikněte na tlačítko **přímého pravidla** otevřít **vytvořením pravidla přímého členství**. Zvolte **Další**.  
+6. Na **pravidla členství** zvolte **přidat pravidlo**a klikněte na tlačítko **přímého pravidla** otevřít **vytvořením pravidla přímého členství**. Zvolte **Další**.  
   
-7.  Na **hledat prostředky** stránku, **třídy prostředků** klikněte na položku **systémový prostředek**. V **název atributu** klikněte na položku **název**. V **hodnotu** zadejte `%`a klikněte na tlačítko **Další**.  
+7. Na **hledat prostředky** stránku, **třídy prostředků** klikněte na položku **systémový prostředek**. V **název atributu** klikněte na položku **název**. V **hodnotu** zadejte `%`a klikněte na tlačítko **Další**.  
   
-8.  Na **vyberte prostředky** stránce, zaškrtněte políčko pro každý počítač, který chcete nasadit rozhraní .NET Framework. Zvolte **Další**a poté průvodce dokončete.  
+8. Na **vyberte prostředky** stránce, zaškrtněte políčko pro každý počítač, který chcete nasadit rozhraní .NET Framework. Zvolte **Další**a poté průvodce dokončete.  
   
 9. Na **pravidla členství** stránku **Průvodce vytvořením kolekce zařízení**, zvolte **Další**a poté průvodce dokončete.  
   
@@ -90,13 +90,13 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  Postup vytvoření balíčku:  
   
-1.  V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
+1. V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
   
-2.  V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
+2. V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
   
-3.  Na **Domů** kartě **vytvořit** skupině, zvolte **vytvořit balíček**.  
+3. Na **Domů** kartě **vytvořit** skupině, zvolte **vytvořit balíček**.  
   
-4.  Na **balíčku** stránku **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
+4. Na **balíčku** stránku **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
   
     -   Jméno: `.NET Framework 4.5`  
   
@@ -104,11 +104,11 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
     -   Jazyk. `English (US)`  
   
-5.  Zvolte **tento balíček obsahuje zdrojové soubory**a klikněte na tlačítko **Procházet** vyberte místní nebo síťovou složku, která obsahuje instalační soubory rozhraní .NET Framework. Když vyberete složku, zvolte **OK**a klikněte na tlačítko **Další**.  
+5. Zvolte **tento balíček obsahuje zdrojové soubory**a klikněte na tlačítko **Procházet** vyberte místní nebo síťovou složku, která obsahuje instalační soubory rozhraní .NET Framework. Když vyberete složku, zvolte **OK**a klikněte na tlačítko **Další**.  
   
-6.  Na **typ programu** stránku průvodce, zvolte **standardní Program**a klikněte na tlačítko **Další**.  
+6. Na **typ programu** stránku průvodce, zvolte **standardní Program**a klikněte na tlačítko **Další**.  
   
-7.  Na **Program** stránku **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
+7. Na **Program** stránku **Průvodce vytvoření balíčku a programu**, zadejte následující informace:  
   
     1.  **Jméno:** `.NET Framework 4.5`  
   
@@ -118,7 +118,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
     4.  **Program lze spustit:** Zvolte si možnost, která určuje, že program může spustit, bez ohledu na to, zda je přihlášený uživatel.  
   
-8.  Na **požadavky** zvolte **Další** přijmout výchozí hodnoty a pak dokončete průvodce.  
+8. Na **požadavky** zvolte **Další** přijmout výchozí hodnoty a pak dokončete průvodce.  
   
  Následující tabulka popisuje možnosti příkazového řádku zadané v kroku 7.  
   
@@ -136,21 +136,21 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  Pomocí následujícího postupu vyberte distribuční bod pro balíček .NET Framework 4.5, který jste vytvořili v předchozím oddílu:  
   
-1.  V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
+1. V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
   
-2.  V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
+2. V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
   
-3.  Ze seznamu balíčků vyberte balíček **rozhraní .NET Framework 4.5** , kterou jste vytvořili v předchozí části.  
+3. Ze seznamu balíčků vyberte balíček **rozhraní .NET Framework 4.5** , kterou jste vytvořili v předchozí části.  
   
-4.  Na **Domů** kartě **nasazení** skupině, zvolte **distribuovat obsah**.  
+4. Na **Domů** kartě **nasazení** skupině, zvolte **distribuovat obsah**.  
   
-5.  Na **Obecné** karty **Průvodce distribucí obsahu**, zvolte **Další**.  
+5. Na **Obecné** karty **Průvodce distribucí obsahu**, zvolte **Další**.  
   
-6.  Na **cílové umístění obsahu** stránku průvodce, zvolte **přidat**a klikněte na tlačítko **distribuční bod**.  
+6. Na **cílové umístění obsahu** stránku průvodce, zvolte **přidat**a klikněte na tlačítko **distribuční bod**.  
   
-7.  V **přidat distribuční body** dialogového okna, vyberte distribuční body, který bude hostovat balíček a program a klikněte na tlačítko **OK**.  
+7. V **přidat distribuční body** dialogového okna, vyberte distribuční body, který bude hostovat balíček a program a klikněte na tlačítko **OK**.  
   
-8.  Dokončete průvodce.  
+8. Dokončete průvodce.  
   
  Balíček nyní obsahuje všechny informace, které potřebujete pro tiché nasazení rozhraní .NET Framework 4.5. Před nasazením balíčku a programu ověřte, zda byl nainstalován v distribučním bodě; najdete v části "Monitorování obsahu" [monitorovat obsah, který jste distribuovali pomocí nástroje System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed) v knihovně dokumentace nástroje Configuration Manager.  
   
@@ -158,21 +158,21 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
 ### <a name="deploy-the-package"></a>Nasazení balíčku  
  Postup nasazení balíčku a programu .NET Framework 4.5:  
   
-1.  V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
+1. V konzole nástroje Configuration Manager, zvolte **softwarová knihovna**.  
   
-2.  V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
+2. V **softwarová knihovna** pracovního prostoru, rozbalte **správy aplikací**a klikněte na tlačítko **balíčky**.  
   
-3.  Ze seznamu balíčků vyberte balíček, je vytvořena s názvem **rozhraní .NET Framework 4.5**.  
+3. Ze seznamu balíčků vyberte balíček, je vytvořena s názvem **rozhraní .NET Framework 4.5**.  
   
-4.  Na **Domů** kartě **nasazení** skupině, zvolte **nasadit**.  
+4. Na **Domů** kartě **nasazení** skupině, zvolte **nasadit**.  
   
-5.  Na **Obecné** stránku **Průvodce nasazením softwaru**, zvolte **Procházet**a pak vyberte aplikaci, kterou jste vytvořili dříve. Zvolte **Další**.  
+5. Na **Obecné** stránku **Průvodce nasazením softwaru**, zvolte **Procházet**a pak vyberte aplikaci, kterou jste vytvořili dříve. Zvolte **Další**.  
   
-6.  Na **obsahu** stránku průvodce, ověřte, zda se zobrazí bodu, ze kterého chcete software distribuovat a klikněte na tlačítko **Další**.  
+6. Na **obsahu** stránku průvodce, ověřte, zda se zobrazí bodu, ze kterého chcete software distribuovat a klikněte na tlačítko **Další**.  
   
-7.  Na **nastavení nasazení** stránku průvodce, ujistěte se, že **akce** je nastavena na **nainstalovat**, a **účel** je nastavena na **Vyžaduje**. Díky tomuto nastavení bude softwarový balíček nastaven jako povinná instalace na cílových počítačích. Zvolte **Další**.  
+7. Na **nastavení nasazení** stránku průvodce, ujistěte se, že **akce** je nastavena na **nainstalovat**, a **účel** je nastavena na **Vyžaduje**. Díky tomuto nastavení bude softwarový balíček nastaven jako povinná instalace na cílových počítačích. Zvolte **Další**.  
   
-8.  Na **plánování** stránku průvodce, určete, kdy má být nainstalované rozhraní .NET Framework. Můžete zvolit **nový** přiřadit čas instalace nebo dáte pokyn, aby software pro instalaci, když se uživatel přihlásí na nebo vypnutá nebo co nejdříve. Zvolte **Další**.  
+8. Na **plánování** stránku průvodce, určete, kdy má být nainstalované rozhraní .NET Framework. Můžete zvolit **nový** přiřadit čas instalace nebo dáte pokyn, aby software pro instalaci, když se uživatel přihlásí na nebo vypnutá nebo co nejdříve. Zvolte **Další**.  
   
 9. Na **činnost koncového uživatele** stránku průvodce, použijte výchozí hodnoty a vyberte možnost **Další**.  
   
@@ -191,7 +191,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  **Active Directory, DNS, DHCP:**  
   
--   [Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)  
+-   [Služba Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)  
   
 -   [Domain Name System (DNS)](/windows-server/networking/dns/dns-top)  
   
@@ -203,13 +203,13 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 -   [Přehled zabezpečení služby SQL Server 2008 pro správce databáze](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
   
- **System Center 2012 Configuration Manager (bod správy, distribuční bod):**  
+ **Nástroj System Center 2012 Configuration Manager (bod správy, distribuční bod):**  
   
 -   [Správa lokality pro System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)  
   
 -   [Na jednom webu nástroje Configuration Manager plánování a nasazení](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)  
   
- **Klient System Center 2012 Configuration Manager pro počítače s Windows:**  
+ **Klient nástroje System Center 2012 Configuration Manager pro počítače se systémem Windows:**  
   
 -   [Nasazení klientů pro System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391%28v=technet.10%29)  
   

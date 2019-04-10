@@ -2,12 +2,12 @@
 title: USING (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 20f58b8f-6070-4456-b7e8-5ff3d6269273
-ms.openlocfilehash: 6a5b374bc253cb2deb7a9e1de942c32d8e8bbfcf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e14b7857a65898683939647c872c48d0b3fe458a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59168022"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297860"
 ---
 # <a name="using-entity-sql"></a>USING (Entity SQL)
 Určuje obor názvů použít ve výrazu dotazu.  
@@ -28,9 +28,9 @@ USING [ alias = ] namespace
 ## <a name="example"></a>Příklad  
  Následující dotaz Entity SQL používá operátor použití k zadávání oborů názvů použít ve výrazu dotazu. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
+2. Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
 ```  
 using SqlServer; RAND()  

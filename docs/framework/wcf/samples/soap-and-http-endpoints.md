@@ -2,12 +2,12 @@
 title: Koncové body SOAP a HTTP
 ms.date: 03/30/2017
 ms.assetid: e3c8be75-9dda-4afa-89b6-a82cb3b73cf8
-ms.openlocfilehash: be050eecebb050ec41c3d548ea993d9e035e471c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 07f0c5a5a66683cf636595824b2ccaeaf1ab6a63
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523188"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307441"
 ---
 # <a name="soap-and-http-endpoints"></a>Koncové body SOAP a HTTP
 Tento příklad ukazuje, jak implementovat službu vzdáleného volání procedur a zpřístupnit ji ve formátu protokolu SOAP a ve formátu "Plain Old XML" (POX) s využitím modelu webového programování WCF. Zobrazit [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázka podrobné informace o vazbě protokolu HTTP pro službu. Tato ukázka se zaměřuje na informace, které se týkají vystavení stejnou službu SOAP a HTTP pomocí různých vazeb.  
@@ -36,21 +36,21 @@ Tento příklad ukazuje, jak implementovat službu vzdáleného volání procedu
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Otevřete řešení pro Ukázka koncové body HTTP a protokolu SOAP.  
+1. Otevřete řešení pro Ukázka koncové body HTTP a protokolu SOAP.  
   
-2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
+2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-3.  Pokud ho ještě není otevřený, stiskněte kombinaci kláves CTRL + W, S otevřete **Průzkumníka řešení** okna.  
+3. Pokud ho ještě není otevřený, stiskněte kombinaci kláves CTRL + W, S otevřete **Průzkumníka řešení** okna.  
   
-4.  Z **Průzkumníku řešení** okna, klikněte pravým tlačítkem na **služby** projektu a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit nový Instance** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**. Tím se spustí serveru ASP.NET development server, který je hostitelem služby.  
+4. Z **Průzkumníku řešení** okna, klikněte pravým tlačítkem na **služby** projektu a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit nový Instance** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**. Tím se spustí serveru ASP.NET development server, který je hostitelem služby.  
   
-5.  Z okna Průzkumníka řešení, klikněte pravým tlačítkem na projekt klienta a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit novou instanci** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**.  
+5. Z okna Průzkumníka řešení, klikněte pravým tlačítkem na projekt klienta a umístěte kurzor **ladění** možnost místní nabídky tak, aby **spustit novou instanci** se zobrazí místní nabídka. Klikněte na tlačítko **spustit novou instanci**.  
   
-6.  V okně konzoly klienta se zobrazí a poskytuje URI spuštěnou službu a identifikátor URI HTML stránka pro spuštěnou službu nápovědy. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči.  
+6. V okně konzoly klienta se zobrazí a poskytuje URI spuštěnou službu a identifikátor URI HTML stránka pro spuštěnou službu nápovědy. Na stránce nápovědy HTML v libovolném bodě v čase zobrazíte tak, že zadáte identifikátor URI na stránce nápovědy v prohlížeči.  
   
-7.  Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
+7. Při spuštění ukázky klienta zapíše stavu aktuální aktivity.  
   
-8.  Stisknutím libovolné klávesy ukončete konzolovou aplikaci klienta.  
+8. Stisknutím libovolné klávesy ukončete konzolovou aplikaci klienta.  
   
 9. Stiskněte SHIFT + F5 ukončete ladění služby.  
   

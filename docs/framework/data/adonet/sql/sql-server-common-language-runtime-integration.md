@@ -2,12 +2,12 @@
 title: Integrace CLR (Common Language Runtime) na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: c7a324c4-160d-44c2-b593-641af06eca61
-ms.openlocfilehash: d87f2b89583747b80ef103f419bd9bd2e3b1e0da
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fd043aa6c7e5b9246a36146e000e5cba9e090d3e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59089832"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297497"
 ---
 # <a name="sql-server-common-language-runtime-integration"></a>Integrace CLR (Common Language Runtime) na SQL Serveru
 SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jazyk rozhraní .NET Framework pro Microsoft Windows. To znamená, že můžete napsat uložené procedury, aktivační události, uživatelem definovaných typů, uživatelem definované funkce, uživatelem definovaných agregacích a datových proudů funkce vracející tabulku pomocí libovolného jazyka, rozhraní .NET Framework, včetně Microsoft Visual Basic .NET a Microsoft Visual C#. <xref:Microsoft.SqlServer.Server> Obor názvů obsahuje sadu nových aplikačních programovacích rozhraní (API) tak, aby spravovaný kód může spolupracovat s prostředím Microsoft SQL Server.  
@@ -18,7 +18,7 @@ SQL Server 2005 zavedené integraci běžné součásti modulu runtime (CLR) jaz
   
  **SQL Server Books Online**  
   
-1.  [Běžné koncepty programování integrace Language Runtime (CLR)](https://go.microsoft.com/fwlink/?LinkId=115240)  
+1. [Běžné koncepty programování integrace Language Runtime (CLR)](https://go.microsoft.com/fwlink/?LinkId=115240)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod k integraci modulu CLR na SQL Serveru](../../../../../docs/framework/data/adonet/sql/introduction-to-sql-server-clr-integration.md)  

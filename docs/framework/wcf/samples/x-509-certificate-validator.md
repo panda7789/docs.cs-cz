@@ -2,12 +2,12 @@
 title: Validátor certifikátu X.509
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
-ms.openlocfilehash: c1572e874b2575bb777accb15ac5e6182c598253
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 88364aabf5df3a4f41d83613c0c4328b2d5979a0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58838206"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302553"
 ---
 # <a name="x509-certificate-validator"></a>Validátor certifikátu X.509
 Tento příklad ukazuje, jak implementovat vlastní validátor certifikátu X.509. To je užitečné v případech, kdy je vhodné pro požadavky na aplikace žádná z předdefinovaných režimy ověřování certifikátu X.509. Tento příklad ukazuje služba, která má vlastní validátor, který přijímá samostatně vydané certifikáty. Klient používá tento certifikát k ověření ve službě.
@@ -302,40 +302,40 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 
 #### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku
 
-1.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+1. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-2.  Ke spuštění ukázky v jedním - nebo mezi computerconfiguration, použijte následující pokyny.
+2. Ke spuštění ukázky v jedním - nebo mezi computerconfiguration, použijte následující pokyny.
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
 
-1.  Spusťte Setup.bat z instalační složky s ukázkou uvnitř příkazový řádek sady Visual Studio 2012 otevřeného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+1. Spusťte Setup.bat z instalační složky s ukázkou uvnitř příkazový řádek sady Visual Studio 2012 otevřeného s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
 
     > [!IMPORTANT]
     >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory.  
   
-2.  Spusťte Service.exe z service\bin.  
+2. Spusťte Service.exe z service\bin.  
   
-3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+3. Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Vytvoření adresáře na počítači se službou.  
+1. Vytvoření adresáře na počítači se službou.  
   
-2.  Zkopírujte soubory programu služby z \service\bin do virtuálního adresáře na počítači se službou. Také kopírovat soubory Setup.bat, Cleanup.bat, GetComputerName.vbs a ImportClientCert.bat k počítači služby.  
+2. Zkopírujte soubory programu služby z \service\bin do virtuálního adresáře na počítači se službou. Také kopírovat soubory Setup.bat, Cleanup.bat, GetComputerName.vbs a ImportClientCert.bat k počítači služby.  
   
-3.  Vytvoření adresáře na klienta počítačeDalší binárních souborů klienta.  
+3. Vytvoření adresáře na klienta počítačeDalší binárních souborů klienta.  
   
-4.  Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
+4. Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
   
-5.  Na serveru, spusťte `setup.bat service` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se název plně kvalifikované domény exporty computerand certifikát služby do souboru s názvem Service.cer.  
+5. Na serveru, spusťte `setup.bat service` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se název plně kvalifikované domény exporty computerand certifikát služby do souboru s názvem Service.cer.  
   
-6.  Upravit Service.exe.config tak, aby odrážely nový název certifikátu (v `findValue` atribut v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) která je stejná jako plně kvalifikovaný název domény počítače. Také změnit název počítače \<služby > /\<baseAddresses > element z místního hostitele, plně kvalifikovaný název počítače služby.  
+6. Upravit Service.exe.config tak, aby odrážely nový název certifikátu (v `findValue` atribut v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) která je stejná jako plně kvalifikovaný název domény počítače. Také změnit název počítače \<služby > /\<baseAddresses > element z místního hostitele, plně kvalifikovaný název počítače služby.  
   
-7.  Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
+7. Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
   
-8.  Na straně klienta, spouštění `setup.bat client` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `client` argument vytvoří klientský certifikát s názvem client.com a exportuje certifikát klienta do souboru s názvem Client.cer.  
+8. Na straně klienta, spouštění `setup.bat client` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `client` argument vytvoří klientský certifikát s názvem client.com a exportuje certifikát klienta do souboru s názvem Client.cer.  
   
 9. V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby. Proveďte to nahrazením localhost plně kvalifikovaný název domény serveru.  
   
@@ -351,7 +351,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky. Tím serverových a klientských certifikátů z úložiště certifikátů.  
+1. Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky. Tím serverových a klientských certifikátů z úložiště certifikátů.  
   
 > [!NOTE]
 >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.

@@ -2,12 +2,12 @@
 title: Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 964c8fbe04f61ebf7a68e1bf36f9efdaab841e7a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: b445606677fba23ec81e896cce564330cedd6a19
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59105427"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300681"
 ---
 # <a name="etw-tracing"></a>Trasování událostí pro Windows
 Tato ukázka předvádí, jak implementovat začátku do konce (E2E) trasování pomocí Event Tracing for Windows (ETW) a `ETWTraceListener` , který je součástí této ukázky. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a obsahuje trasování událostí pro Windows.  
@@ -80,22 +80,22 @@ Logman stop Wcf
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
     > [!NOTE]
     >  Chcete-li použít příkazy RegisterProvider.bat, SetupETW.bat a CleanupETW.bat, musíte spustit pod účtem místního správce. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo novější, musíte také spustit příkazový řádek se zvýšenými oprávněními. Chcete-li tak učinit, klepněte pravým tlačítkem myši na ikonu příkazového řádku a potom klikněte na **spustit jako správce**.  
   
-3.  Před spuštěním ukázky, spusťte RegisterProvider.bat na klienta a serveru. Tím se nastaví výsledný soubor ETWTracingSampleLog.etl ke generování trasování, které lze číst pomocí prohlížeče trasování služeb. Tento soubor najdete ve složce C:\logs. Pokud tato složka neexistuje, je nutné vytvořit nebo jsou generovány žádné trasování. Potom spusťte SetupETW.bat klientských a serverových počítačů zahájit relaci sledování ETW. SetupETW.bat soubor najdete ve složce CS\Client.  
+3. Před spuštěním ukázky, spusťte RegisterProvider.bat na klienta a serveru. Tím se nastaví výsledný soubor ETWTracingSampleLog.etl ke generování trasování, které lze číst pomocí prohlížeče trasování služeb. Tento soubor najdete ve složce C:\logs. Pokud tato složka neexistuje, je nutné vytvořit nebo jsou generovány žádné trasování. Potom spusťte SetupETW.bat klientských a serverových počítačů zahájit relaci sledování ETW. SetupETW.bat soubor najdete ve složce CS\Client.  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5.  Po dokončení ukázku spusťte CleanupETW.bat k dokončení vytvoření ETWTracingSampleLog.etl souboru.  
+5. Po dokončení ukázku spusťte CleanupETW.bat k dokončení vytvoření ETWTracingSampleLog.etl souboru.  
   
-6.  Otevřete soubor ETWTracingSampleLog.etl z prohlížeče trasování služeb. Zobrazí se výzva k uložení binárního souboru formátovaný jako soubor .svclog.  
+6. Otevřete soubor ETWTracingSampleLog.etl z prohlížeče trasování služeb. Zobrazí se výzva k uložení binárního souboru formátovaný jako soubor .svclog.  
   
-7.  Otevřete soubor nově vytvořený .svclog z prohlížeče trasování služeb k zobrazení trasování ETW a ServiceModel.  
+7. Otevřete soubor nově vytvořený .svclog z prohlížeče trasování služeb k zobrazení trasování ETW a ServiceModel.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

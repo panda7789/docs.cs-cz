@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 66e91190e68d9610dd95d677edb276e117ec6abb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2c3bc1f2142f07aba3df2da6c46117d3907443a5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098570"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304984"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Postupy: Vytvoření vazby k webové službě
 Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové služby.  
@@ -24,13 +24,13 @@ Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové
   
  Než bude volat webovou službu, musíte vytvořit odkaz na něj. Chcete-li vytvořit webový odkaz na službu MTPS pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], postupujte podle následujících kroků:  
   
-1.  Otevřete projekt v [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)].  
+1. Otevřete projekt v [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)].  
   
-2.  Z **projektu** nabídky, klikněte na tlačítko **přidat webový odkaz**.  
+2. Z **projektu** nabídky, klikněte na tlačítko **přidat webový odkaz**.  
   
-3.  V dialogovém okně nastavte **URL** k [ http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl ](https://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
+3. V dialogovém okně nastavte **URL** k [ http://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl ](https://services.msdn.microsoft.com/contentservices/contentservice.asmx?wsdl).  
   
-4.  Stisknutím klávesy **Přejít** a potom **přidat odkaz na**.  
+4. Stisknutím klávesy **Přejít** a potom **přidat odkaz na**.  
   
  V dalším kroku volání metody webové služby a nastavení <xref:System.Windows.FrameworkElement.DataContext%2A> vhodný ovládací prvek nebo v okně pro vrácený objekt. **GetContent** metody MTPS služby používá odkaz na objekt **getContentRequest** objektu. Následující příklad proto nejprve nastaví objekt žádosti:  
   

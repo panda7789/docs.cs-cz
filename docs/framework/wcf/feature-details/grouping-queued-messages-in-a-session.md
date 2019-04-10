@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
-ms.openlocfilehash: 0246f059079b2024dd1bd16ae6afc4950d08e0a9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 37f0874ea99ee928e49a54a3e6a05ea4ef06f84e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59115268"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294662"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
 Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupit sadu souvisejících zpráv pro zpracování jedné přijímající aplikace. Zprávy, které jsou součástí relace musí být součástí stejné transakce. Protože všechny zprávy jsou součástí stejné transakce, pokud se nepodaří zpracovat celou relaci jednu zprávu se vrátí zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a nezpracovatelných fronty. Time to Live (TTL) nastavenou na vazbu s frontou nakonfigurované pro relace se použijí pro relaci jako celek. Pokud jen některé zprávy v relaci odeslány předtím, než hodnota TTL nevyprší, je umístěn celou relaci ve frontě nedoručených zpráv. Podobně když dojde k selhání zprávy v relaci k odeslání do aplikace z fronty aplikace, celá relace nachází ve nezpracovatelných frontu (Pokud je k dispozici).  
@@ -24,49 +24,49 @@ Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje sesku
   
 #### <a name="to-set-up-a-service-contract-to-use-sessions"></a>K nastavení kontraktu služby pro použití relací  
   
-1.  Definování kontraktu služby vyžadující relace. K tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
+1. Definování kontraktu služby vyžadující relace. K tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
   
     ```  
     SessionMode=SessionMode.Required  
     ```  
   
-2.  Označte operace v kontraktu jako jednosměrná, protože tyto metody nic nevrátí. Používá se k tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
+2. Označte operace v kontraktu jako jednosměrná, protože tyto metody nic nevrátí. Používá se k tomu <xref:System.ServiceModel.OperationContractAttribute> atribut a zadáním:  
   
     ```  
     [OperationContract(IsOneWay = true)]  
     ```  
   
-3.  Implementace kontraktu služby a zadejte `InstanceContextMode` z `PerSession`. To vytvoří instanci služby pouze jednou pro každou relaci.  
+3. Implementace kontraktu služby a zadejte `InstanceContextMode` z `PerSession`. To vytvoří instanci služby pouze jednou pro každou relaci.  
   
     ```  
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
     ```  
   
-4.  Každá služba operace vyžaduje transakci. S tuto verzi uveďte <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Tato operace provede transakce nastavte také `TransactionAutoComplete` k `true`.  
+4. Každá služba operace vyžaduje transakci. S tuto verzi uveďte <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. Tato operace provede transakce nastavte také `TransactionAutoComplete` k `true`.  
   
     ```  
     [OperationBehavior(TransactionScopeRequired = true, TransactionAutoComplete = true)]   
     ```  
   
-5.  Konfigurace koncového bodu, který používá poskytovaných systémem `NetMsmqBinding` vazby.  
+5. Konfigurace koncového bodu, který používá poskytovaných systémem `NetMsmqBinding` vazby.  
   
-6.  Vytvoření transakční fronty pomocí <xref:System.Messaging>. Fronty můžete vytvořit také pomocí služby Řízení front zpráv (MSMQ) nebo konzoly MMC. Pokud tak učiníte, vytvoření transakční fronty.  
+6. Vytvoření transakční fronty pomocí <xref:System.Messaging>. Fronty můžete vytvořit také pomocí služby Řízení front zpráv (MSMQ) nebo konzoly MMC. Pokud tak učiníte, vytvoření transakční fronty.  
   
-7.  Vytvoření hostitele služby pro službu pomocí <xref:System.ServiceModel.ServiceHost>.  
+7. Vytvoření hostitele služby pro službu pomocí <xref:System.ServiceModel.ServiceHost>.  
   
-8.  Otevření hostitele služby, aby tato služba k dispozici.  
+8. Otevření hostitele služby, aby tato služba k dispozici.  
   
 9. Zavřete hostitele služby.  
   
 #### <a name="to-set-up-a-client"></a>Nastavení klienta  
   
-1.  Vytvoření oboru transakce k zápisu transakční fronty.  
+1. Vytvoření oboru transakce k zápisu transakční fronty.  
   
-2.  Vytvoření pomocí klienta WCF [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj.  
+2. Vytvoření pomocí klienta WCF [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj.  
   
-3.  Objednávku.  
+3. Objednávku.  
   
-4.  Zavřete klienta WCF.  
+4. Zavřete klienta WCF.  
   
 ## <a name="example"></a>Příklad  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: 5fc96e1ae3624adc197b5b13029498b9aa90c95e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: b13fd85ae01fd0b6f3c963d87a372add930be99d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819499"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302579"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
 <xref:System.Collections.Generic.IEnumerable%601> Rozhraní je implementováno třídy, které může vrátit posloupnost hodnot položek najednou. Výhodou vracející data, která je jedna položka v čase, že nemáte k načtení úplná sada dat do paměti pro práci s ní. Stačí načtení jednu položku z dat pomocí dostatek paměti. Třídy, které implementují `IEnumerable(T)` rozhraní jde použít s `For Each` smyčky nebo dotazů LINQ.  
@@ -29,13 +29,13 @@ ms.locfileid: "58819499"
   
 **Vytvořte projekt vyčíslitelné tříd**
 
-1.  V jazyce Visual Basic na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
+1. V jazyce Visual Basic na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.
 
-1.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `StreamReaderEnumerable`a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.
+1. V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **knihovny tříd** v **šablony** podokně. V **název** zadejte `StreamReaderEnumerable`a potom klikněte na tlačítko **OK**. Zobrazí se nový projekt.
 
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `StreamReaderEnumerable.vb` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `StreamReaderEnumerable`. Tato třída implementuje `IEnumerable(Of String)` rozhraní.
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na soubor Class1.vb a klikněte na tlačítko **přejmenovat**. Přejmenujte soubor na `StreamReaderEnumerable.vb` a stiskněte klávesu ENTER. Přejmenování souboru se také přejmenujte třídu na `StreamReaderEnumerable`. Tato třída implementuje `IEnumerable(Of String)` rozhraní.
 
-1.  Klikněte pravým tlačítkem na projekt StreamReaderEnumerable, přejděte na **přidat**a potom klikněte na tlačítko **nová položka**. Vyberte **třídy** šablony. V **název** zadejte `StreamReaderEnumerator.vb` a klikněte na tlačítko **OK**.
+1. Klikněte pravým tlačítkem na projekt StreamReaderEnumerable, přejděte na **přidat**a potom klikněte na tlačítko **nová položka**. Vyberte **třídy** šablony. V **název** zadejte `StreamReaderEnumerator.vb` a klikněte na tlačítko **OK**.
 
  První třídy v tomto projektu je vyčíslitelná třídy a implementuje `IEnumerable(Of String)` rozhraní. Tato obecná rozhraní implementuje <xref:System.Collections.IEnumerable> rozhraní a zaručuje, že příjemci této třídy můžete přístup k hodnoty zadané jako `String`.  
   
@@ -95,7 +95,7 @@ ms.locfileid: "58819499"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
-- [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+- [For Each...Next – příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)

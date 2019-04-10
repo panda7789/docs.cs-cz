@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ee807ae17e4d53d3f6f3963f5a91df0a2dddd0c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1522d643a69c47eec03770a8f51756dd4250075a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59099869"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309417"
 ---
 # <a name="icordebugregisterset2getregistersavailable-method"></a>ICorDebugRegisterSet2::GetRegistersAvailable – metoda
 Získá pole bajtů, která poskytuje rastrový obrázek do dostupných registrů.  
@@ -46,11 +46,11 @@ HRESULT GetRegistersAvailable (
 ## <a name="remarks"></a>Poznámky  
  Hodnoty cordebugregister – výčet zadejte registrů různých mikroprocesory. Horní pět bitů jednotlivé hodnoty jsou index do `availableRegChunks` pole bajtů. Nižší tři bity každé hodnoty identifikovat bitová pozice v rámci indexované bajtů. Zadaný `CorDebugRegister` hodnota, která určuje konkrétní registru do registru pozice v maska je stanoven následujícím způsobem:  
   
-1.  Rozbalte potřebné pro přístup ke správné bajt v indexu `availableRegChunks` pole:  
+1. Rozbalte potřebné pro přístup ke správné bajt v indexu `availableRegChunks` pole:  
   
      `CorDebugRegister` Hodnota >> 3  
   
-2.  Extrahujte bitové pozice v indexovaných byte, kde bit nula je nejméně významných bitů:  
+2. Extrahujte bitové pozice v indexovaných byte, kde bit nula je nejméně významných bitů:  
   
      `CorDebugRegister` Hodnota & 7  
   

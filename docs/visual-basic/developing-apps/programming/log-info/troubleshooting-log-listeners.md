@@ -6,12 +6,12 @@ helpviewer_keywords:
 - troubleshooting Visual Basic, event logs
 - troubleshooting event logs
 ms.assetid: ac6eb760-3d5d-461e-aedd-40599ee22e49
-ms.openlocfilehash: f1201262fd09145679a9f70cd742294d248fedb3
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 12282df50bc42d2a153a9aa8db01f2654acd91ce
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831693"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299524"
 ---
 # <a name="troubleshooting-log-listeners-visual-basic"></a>Řešení potíží: Součásti naslouchající protokolům (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci.  
@@ -24,15 +24,15 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
 ### <a name="to-determine-the-log-listeners-for-the-log-object-in-code"></a>Chcete-li zjistit součásti naslouchající protokolům pro objekt protokolu v kódu  
   
-1.  Import <xref:System.Diagnostics> oboru názvů na začátku souboru kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+1. Import <xref:System.Diagnostics> oboru názvů na začátku souboru kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
      [!code-vb[VbVbalrMyApplicationLog#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#13)]  
   
-2.  Vytvoření funkce, která vrací řetězec obsahující informace pro všechny moduly pro naslouchání v protokolu.  
+2. Vytvoření funkce, která vrací řetězec obsahující informace pro všechny moduly pro naslouchání v protokolu.  
   
      [!code-vb[VbVbalrMyApplicationLog#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#14)]  
   
-3.  Kolekce naslouchacích procesů trasování v protokolu k předání `GetListeners` fungovat a zobrazit návratovou hodnotu.  
+3. Kolekce naslouchacích procesů trasování v protokolu k předání `GetListeners` fungovat a zobrazit návratovou hodnotu.  
   
      [!code-vb[VbVbalrMyApplicationLog#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#19)]  
   
@@ -41,5 +41,5 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Návod: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)

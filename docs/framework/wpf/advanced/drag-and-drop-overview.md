@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: 4fb80f749e203c5763f0aa56af4cbf066c7ffa37
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2b76c8fd3e2c6961b6ebdddc9b7ff9649f5196f4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59139214"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301396"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
 Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Přetáhněte myší obvykle odkazuje na metodu přenosu dat, která zahrnuje pomocí myši (nebo jiné polohovací zařízení) a vyberte jeden nebo více objektů, tyto objekty přetáhnete přes některé požadovaný cíl v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]a jejich vyřazení.  
@@ -181,11 +181,11 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
  Chcete-li určit, že element je cíl přetažení, nastavíte její <xref:System.Windows.UIElement.AllowDrop%2A> vlastnost `true`. Události cíl přetažení pak bude vyvolána v elementu, aby bylo možné je zpracovat. Během operace přetažení myší dojde k následujícímu pořadí událostí na cíl přetažení:  
   
-1.  <xref:System.Windows.DragDrop.DragEnter>  
+1. <xref:System.Windows.DragDrop.DragEnter>  
   
-2.  <xref:System.Windows.DragDrop.DragOver>  
+2. <xref:System.Windows.DragDrop.DragOver>  
   
-3.  <xref:System.Windows.DragDrop.DragLeave> or <xref:System.Windows.DragDrop.Drop>  
+3. <xref:System.Windows.DragDrop.DragLeave> or <xref:System.Windows.DragDrop.Drop>  
   
  <xref:System.Windows.DragDrop.DragEnter> Události dojde, když data kvůli usnadnění použití vypsány hranici cíl přetažení. Tato událost ve verzi preview účinky operace přetažení myší, můžete obvykle zpracovávat ve v případě potřeby pro vaši aplikaci. Nenastavujte <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.DragDrop.DragEnter> událost, protože se přepíše v <xref:System.Windows.DragDrop.DragOver> událostí.  
   

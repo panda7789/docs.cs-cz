@@ -10,12 +10,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], exposing properties
 - constituent controls
 ms.assetid: 5c1ec98b-aa48-4823-986e-4712551cfdf1
-ms.openlocfilehash: 750caa1f45f870e63a5b7ccbe0c309e6fb0b3178
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 44b96218e674c754a1985f2f22a36707cd1776b6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59106350"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294909"
 ---
 # <a name="how-to-expose-properties-of-constituent-controls"></a>Postupy: Vystavení vlastností základních ovládacích prvků
 Ovládací prvky, které tvoří složeného ovládacího prvku se nazývají *základní ovládací prvky*. Tyto ovládací prvky jsou obvykle deklarována jako soukromá a proto není přístupná vývojářem. Pokud chcete zpřístupnit vlastnosti těchto ovládacích prvků pro budoucí uživatele, musí zveřejnit uživatele. Vlastnost základní ovládacího prvku je zveřejněný prostřednictvím vytváření vlastnost do uživatelského ovládacího prvku a používání `get` a `set` přistupující objekty vlastnosti provést změnu v hodnotě privátní vlastnost základní ovládacího prvku.  
@@ -51,11 +51,11 @@ public Color ButtonColor
   
 ### <a name="to-expose-a-property-of-a-constituent-control"></a>Vystavení vlastností základních ovládacího prvku  
   
-1.  Vytvoření veřejné vlastnosti uživatelského ovládacího prvku.  
+1. Vytvoření veřejné vlastnosti uživatelského ovládacího prvku.  
   
-2.  V `get` část vlastnosti, psaní kódu, který načte hodnotu vlastnosti, kterou chcete zveřejnit.  
+2. V `get` část vlastnosti, psaní kódu, který načte hodnotu vlastnosti, kterou chcete zveřejnit.  
   
-3.  V `set` část vlastnosti, psaní kódu, který se předá hodnotu vlastnosti na vlastnost vystavené základní ovládacího prvku.  
+3. V `set` část vlastnosti, psaní kódu, který se předá hodnotu vlastnosti na vlastnost vystavené základní ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC32098
 ms.assetid: bab05325-dde8-4621-a5f6-368b5b7b2d76
-ms.openlocfilehash: 974d2935e64151109b688f576229fb008b59b229
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: ba7348ae50965ffcf2719b20934451916c8fa95a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819798"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296352"
 ---
 # <a name="type-parameters-cannot-be-used-as-qualifiers"></a>Parametry typů nelze použít jako kvalifikátory.
 Programovací element je kvalifikován s kvalifikací řetězec, který obsahuje parametr typu.  
@@ -34,9 +34,9 @@ End Function
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Odeberte parametr typu z řetězce kvalifikaci, nebo nahraďte určitého typu.  
+1. Odeberte parametr typu z řetězce kvalifikaci, nebo nahraďte určitého typu.  
   
-2.  Pokud budete muset použít konstruovaný typ najít programovací element je kvalifikován, musíte použít další logiku programu.  
+2. Pokud budete muset použít konstruovaný typ najít programovací element je kvalifikován, musíte použít další logiku programu.  
   
 ## <a name="see-also"></a>Viz také:
 

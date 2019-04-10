@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
-ms.openlocfilehash: fd73deb4682ec12b982740f6e9e9c1e38a5688a3
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 18734627e299c696e23bb0ec9bc63ed37fe3e601
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202428"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294974"
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Postupy: Potlačení metody ToString (C# Průvodce programováním v)
 Implicitně dědí všechny třídy nebo struktury v jazyce C# <xref:System.Object> třídy. Proto, získá každý objekt v jazyce C# <xref:System.Object.ToString%2A> metodu, která vrátí řetězcovou reprezentaci tohoto objektu. Například všechny proměnné typu `int` mít `ToString` metodu, která umožňuje k návratu jejich obsah jako řetězec:  
@@ -27,13 +27,13 @@ Implicitně dědí všechny třídy nebo struktury v jazyce C# <xref:System.Obje
   
 ### <a name="to-override-the-tostring-method-in-your-class-or-struct"></a>Přepsání metody ToString ve třídě nebo struktuře  
   
-1.  Deklarace `ToString` pomocí následujících parametrů a návratový typ metody:  
+1. Deklarace `ToString` pomocí následujících parametrů a návratový typ metody:  
   
     ```csharp  
     public override string ToString(){}  
     ```  
   
-2.  Implementujte metodu tak, aby vrátil řetězec.  
+2. Implementujte metodu tak, aby vrátil řetězec.  
   
      Následující příklad vrátí název třídy, kromě dat podle konkrétní instance třídy.  
   
@@ -46,10 +46,10 @@ Implicitně dědí všechny třídy nebo struktury v jazyce C# <xref:System.Obje
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IFormattable>
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
 - [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
 - [Řetězce](../../../csharp/programming-guide/strings/index.md)
-- [string](../../../csharp/language-reference/keywords/string.md)
+- [odkazy řetězců](../../../csharp/language-reference/keywords/string.md)
 - [new](../../../csharp/language-reference/keywords/new.md)
 - [override](../../../csharp/language-reference/keywords/override.md)
 - [virtual](../../../csharp/language-reference/keywords/virtual.md)

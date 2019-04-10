@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-ms.openlocfilehash: 4e4c4891a905a5e4458ad5fc21a512c1dfe6f74e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a9d01b7cebea845ad67d846af5b08f59977b8cd6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59092913"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301851"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] komentáře lokalizace jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, získáte ho od vývojářům poskytuje pravidla a pokyny pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahují dvě sady informace: lokalizovatelnosti atributy a komentáře lokalizace volného tvaru. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které mají být lokalizována. Komentáře volného tvaru jsou veškeré informace, které autor aplikace chce zahrnovat.  
@@ -19,13 +19,13 @@ ms.locfileid: "59092913"
 ## <a name="localization-comments"></a>Komentáře lokalizace  
  Pokud kód aplikace Autoři mají požadavky na konkrétní prvky v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], jako je například omezení na délku textu rodinu písem a velikost písma sdělují Lokalizátoři s komentáři v těchto informací [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] kódu. Proces pro přidávání komentářů ke zdrojovému kódu vypadá takto:  
   
-1.  Vývojář aplikace přidá komentáře lokalizace [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód.  
+1. Vývojář aplikace přidá komentáře lokalizace [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód.  
   
-2.  Během procesu sestavení můžete určit v souboru souborů .proj, jestli se má zanechávat komentáře lokalizace volného tvaru v sestavení, pásků si část poznámky nebo pruhu si všechny komentáře. Komentáře odebrána navýšením kapacity jsou umístěné v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značku, třeba:  
+2. Během procesu sestavení můžete určit v souboru souborů .proj, jestli se má zanechávat komentáře lokalizace volného tvaru v sestavení, pásků si část poznámky nebo pruhu si všechny komentáře. Komentáře odebrána navýšením kapacity jsou umístěné v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značku, třeba:  
   
      `<LocalizationDirectivesToLocFile>` *value* `</LocalizationDirectivesToLocFile>`  
   
-3.  Je možné přiřadit hodnoty jsou:  
+3. Je možné přiřadit hodnoty jsou:  
   
     -   **Žádný** – jak komentářů a atributů zůstávají uvnitř sestavení a vygeneruje se žádný samostatný soubor.  
   
@@ -33,9 +33,9 @@ ms.locfileid: "59092913"
   
     -   **Všechny** – odstraní komentářů a atributů ze sestavení a umístí je do samostatné LocFile.  
   
-4.  Když lokalizovatelné prostředky se extrahují z [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], jsou dodržovány lokalizovatelnosti atributy [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] lokalizace rozhraní API.  
+4. Když lokalizovatelné prostředky se extrahují z [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], jsou dodržovány lokalizovatelnosti atributy [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] lokalizace rozhraní API.  
   
-5.  Soubory komentáře lokalizace, obsahující pouze volného tvaru komentáře, jsou začleněny do proces lokalizace později.  
+5. Soubory komentáře lokalizace, obsahující pouze volného tvaru komentáře, jsou začleněny do proces lokalizace později.  
   
  Následující příklad ukazuje, jak přidat komentáře lokalizace [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] souboru.  
   
@@ -88,7 +88,7 @@ ms.locfileid: "59092913"
   
 |Kategorie|Význam|  
 |--------------|-------------|  
-|Žádný|Cílová hodnota nemá žádné definované kategorie.|  
+|Žádné|Cílová hodnota nemá žádné definované kategorie.|  
 |Dědění|Cílová hodnota dědí z nadřazeného jeho kategorie.|  
 |Ignorovat|Cílová hodnota je ignorována v proces lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. To nebude mít vliv na podřízené uzly.|  
 |NeverLocalize|Aktuální hodnota nemůže být lokalizována. Tato kategorie dědí podřízené objekty daného elementu.|  

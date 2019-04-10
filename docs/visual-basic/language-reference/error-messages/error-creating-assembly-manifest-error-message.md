@@ -1,5 +1,5 @@
 ---
-title: 'Při vytváření manifestu sestavení došlo k chybě: <error message>'
+title: 'Při vytváření manifestu sestavení: <error message>'
 ms.date: 07/20/2015
 f1_keywords:
 - bc30140
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30140
 ms.assetid: 1beb5aa0-7b79-4c85-946b-5c2d0a41d1d2
-ms.openlocfilehash: f9d7867157b65d746809d9b2f50797285d7fcd9c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 0f67b772bab3104c00510954d01b200aadfa9e8a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58831956"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296287"
 ---
 # <a name="error-creating-assembly-manifest-error-message"></a>Chyba při vytváření manifestu sestavení: \<chybová zpráva >
 Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované také jako Alink) ke generování sestavení s manifestem. Linker ohlásilo chybu ve fázi předběžného emisí vytváření sestavení.  
@@ -23,13 +23,13 @@ Kompilátor jazyka Visual Basic volá Assembly Linker (Al.exe, označované tak�
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte v uvozovkách chybovou zprávu a najdete v tématu [Al.exe](../../../framework/tools/al-exe-assembly-linker.md). pro další vysvětlení chyby AL1019 a poradenství  
+1. Zkontrolujte v uvozovkách chybovou zprávu a najdete v tématu [Al.exe](../../../framework/tools/al-exe-assembly-linker.md). pro další vysvětlení chyby AL1019 a poradenství  
   
-2.  Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
+2. Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Podepsání sestavení silným názvem](../../../framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
-- [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
+- [Stránka Podepisování, návrhář projektu (C#)](/visualstudio/ide/reference/signing-page-project-designer)
 - [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)
 - [Kontaktujte nás](/visualstudio/ide/talk-to-us)

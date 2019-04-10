@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d3846e9e00158efbd4828053411b604dafc56e27
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 16ed4d86d64a6d3c569c7fd7ab9e9e3a3943f078
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59091327"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312095"
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné použít trasování událostí systému Windows (ETW). Můžete vytvořit a zobrazit trasování pomocí následujících nástrojů:  
@@ -45,7 +45,7 @@ Provider                                 GUID
   
 #### <a name="to-capture-clr-etw-events-using-logman"></a>Zachycení událostí CLR ETW pomocí nástroje Logman  
   
-1.  V příkazovém řádku zadejte příkaz:  
+1. V příkazovém řádku zadejte příkaz:  
   
      `logman start clrevents -p {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4} 0x1CCBD 0x5 -ets -ct perf`  
   
@@ -61,7 +61,7 @@ Provider                                 GUID
   
     -   `-ct perf` Parametr určuje, že `QueryPerformanceCounter` funkce se použije k zaznamenání časového razítka pro každou jednotlivou událost.  
   
-2.  K ukončení protokolování událostí zadejte:  
+2. K ukončení protokolování událostí zadejte:  
   
      `logman stop clrevents -ets`  
   
@@ -69,13 +69,13 @@ Provider                                 GUID
   
 #### <a name="to-capture-clr-etw-events-using-xperf"></a>Zachycení událostí CLR ETW pomocí nástroje Xperf  
   
-1.  V příkazovém řádku zadejte příkaz:  
+1. V příkazovém řádku zadejte příkaz:  
   
      `xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:5 -f clrevents.etl`  
   
      kde GUID je GUID zprostředkovatele CLR ETW a `0x1CCBD:5` trasuje vše na a nižší než úroveň 5 (podrobné).  
   
-2.  Chcete-li zastavit trasování, zadejte:  
+2. Chcete-li zastavit trasování, zadejte:  
   
      `Xperf -stop clr`  
   

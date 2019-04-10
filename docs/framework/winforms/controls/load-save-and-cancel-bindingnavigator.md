@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], manipulating
 - BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
-ms.openlocfilehash: 52d4fc32836a5d20bd99d8ebfd3119c761376e30
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4d5cc91ca8bf71b2d5893f591652d777041e1a4d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098712"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304776"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Postupy: Přidávání tlačítek Načíst, Uložit a Zrušit do ovládacího prvku Windows Forms BindingNavigator
 <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek se speciálním účelem <xref:System.Windows.Forms.ToolStrip> ovládací prvek, který je určený pro navigaci a manipulaci se ovládací prvky na formuláři, které jsou vázány na data.  
@@ -24,21 +24,21 @@ ms.locfileid: "59098712"
   
 ### <a name="to-add-load-save-and-cancel-buttons-to-the-bindingnavigator-component"></a>Chcete-li přidat zatížení, uložte a stornovací tlačítka na komponentu BindingNavigator  
   
-1.  Přidat <xref:System.Windows.Forms.TextBox> ovládací prvek do formuláře.  
+1. Přidat <xref:System.Windows.Forms.TextBox> ovládací prvek do formuláře.  
   
-2.  Vytvořte mu vazbu k <xref:System.Windows.Forms.BindingSource>, který je svázán se zdrojem dat. V tomto příkladu <xref:System.Windows.Forms.BindingSource> je vázán na databázi.  
+2. Vytvořte mu vazbu k <xref:System.Windows.Forms.BindingSource>, který je svázán se zdrojem dat. V tomto příkladu <xref:System.Windows.Forms.BindingSource> je vázán na databázi.  
   
-3.  Po vygenerování adaptér datová sada a tabulky, přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku na formuláři.  
+3. Po vygenerování adaptér datová sada a tabulky, přetáhněte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku na formuláři.  
   
-4.  Nastavte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost <xref:System.Windows.Forms.BindingSource> ve formuláři, který je vázán k ovládacím prvkům.  
+4. Nastavte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku <xref:System.Windows.Forms.BindingNavigator.BindingSource%2A> vlastnost <xref:System.Windows.Forms.BindingSource> ve formuláři, který je vázán k ovládacím prvkům.  
   
-5.  Vyberte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku.  
+5. Vyberte <xref:System.Windows.Forms.BindingNavigator> ovládacího prvku.  
   
-6.  Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) proto **BindingNavigator úlohy** dialogové okno se zobrazí a vyberte **upravit položky**.  
+6. Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) proto **BindingNavigator úlohy** dialogové okno se zobrazí a vyberte **upravit položky**.  
   
      **Editor kolekce položek** se zobrazí.  
   
-7.  V **Editor kolekce položek**, proveďte následující kroky:  
+7. V **Editor kolekce položek**, proveďte následující kroky:  
   
     1.  Přidat <xref:System.Windows.Forms.ToolStripSeparator> a tři <xref:System.Windows.Forms.ToolStripButton> položky tak, že vyberete příslušný typ <xref:System.Windows.Forms.ToolStripItem> a kliknete **přidat** tlačítko.  
   
@@ -50,7 +50,7 @@ ms.locfileid: "59098712"
   
     5.  Klikněte na tlačítko **OK** zavřete dialogové okno. Tlačítka jsou přidány do <xref:System.Windows.Forms.ToolStrip>.  
   
-8.  Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**.  
+8. Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**.  
   
 9. V editoru kódu vyhledejte řádek kódu, který načte data do tabulky adaptéru. Tento kód se vygeneroval při nastavení datové vazby v kroku 2. Kód by měl vypadat přibližně takto: `TableAdapterName.Fill(DataSetName.TableName)`. Bude většinu pravděpodobně v formuláře <xref:System.Windows.Forms.Form.Load> událostí.  
   

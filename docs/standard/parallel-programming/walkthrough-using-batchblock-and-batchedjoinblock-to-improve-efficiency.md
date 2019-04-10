@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity'
+title: 'Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,23 +11,23 @@ helpviewer_keywords:
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0367b4224b49377d8d17045e044976e1c511a8ed
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 79bbf33ff1b1e843836aa1b93188970b6a1c8ede
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222092"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302973"
 ---
-# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Průvodce: Použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity
+# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
 Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> třídy tak, aby se zobrazí a uložit do vyrovnávací paměti dat z jednoho nebo více zdrojů a poté je šířit data ve vyrovnávací paměti jako jednu kolekci. Tento mechanismus dávkování je užitečný při shromažďování dat z jednoho nebo více zdrojů a následném zpracování více datových prvků v dávce. Zvažte například aplikaci, která používá tok dat pro vkládání záznamů do databáze. Tato operace může být efektivnější, pokud je vloženo více položek současně místo postupně sekvenčně. Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> operací vložení třídy ke zvýšení účinnosti takových databáze. Také popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třídy pro zachycení výsledků i všech výjimek, ke kterým dochází, když program čte z databáze.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="prerequisites"></a>Požadavky  
   
-1.  Přečtěte si části propojit bloky v [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) dokument před zahájením tohoto návodu.  
+1. Přečtěte si části propojit bloky v [toku dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) dokument před zahájením tohoto návodu.  
   
-2.  Ujistěte se, že máte kopii databáze Northwind, Northwind.sdf, dostupný na vašem počítači. Tento soubor je obvykle umístěn ve složce % Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\.  
+2. Ujistěte se, že máte kopii databáze Northwind, Northwind.sdf, dostupný na vašem počítači. Tento soubor je obvykle umístěn ve složce % Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\.  
   
     > [!IMPORTANT]
     >  V některých verzích Windows se nelze připojit k Northwind.sdf Pokud Visual Studio běží v režimu bez oprávnění správce. Pokud chcete připojit k Northwind.sdf, spusťte Visual Studio nebo příkazový řádek vývojáře pro sadu Visual Studio v **spustit jako správce** režimu.  
@@ -52,16 +52,16 @@ Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.Batc
 ## <a name="creating-the-console-application"></a>Vytvoření konzolové aplikace  
   
 <a name="consoleApp"></a>   
-1.  V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **konzolovou aplikaci** projektu. V tomto dokumentu má projekt název `DataflowBatchDatabase`.  
+1. V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **konzolovou aplikaci** projektu. V tomto dokumentu má projekt název `DataflowBatchDatabase`.  
   
-2.  Ve vašem projektu přidejte odkaz na System.Data.SqlServerCe.dll a odkaz na System.Threading.Tasks.Dataflow.dll.  
+2. Ve vašem projektu přidejte odkaz na System.Data.SqlServerCe.dll a odkaz na System.Threading.Tasks.Dataflow.dll.  
   
-3.  Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` (`Imports` v jazyce Visual Basic) příkazy.  
+3. Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` (`Imports` v jazyce Visual Basic) příkazy.  
   
      [!code-csharp[TPLDataflow_BatchDatabase#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#1)]
      [!code-vb[TPLDataflow_BatchDatabase#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#1)]  
   
-4.  Přidejte následující datové členy do `Program` třídy.  
+4. Přidejte následující datové členy do `Program` třídy.  
   
      [!code-csharp[TPLDataflow_BatchDatabase#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_batchdatabase/cs/dataflowbatchdatabase.cs#2)]
      [!code-vb[TPLDataflow_BatchDatabase#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_batchdatabase/vb/dataflowbatchdatabase.vb#2)]  

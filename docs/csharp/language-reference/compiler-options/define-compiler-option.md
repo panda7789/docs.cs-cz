@@ -11,12 +11,12 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 56028bcf3b843a4f6884e2d7cc7d409621adba34
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 46ceca3a84e8ffbe6d07886c1b93d062f3ccd2d1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558816"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305257"
 ---
 # <a name="-define-c-compiler-options"></a>-definovat (možnosti kompilátoru C#)
 **-Definovat** možnost definuje `name` jako symbol ve zdrojovém kódu všechny soubory programu.  
@@ -28,7 +28,7 @@ ms.locfileid: "54558816"
 ```  
   
 ## <a name="arguments"></a>Arguments  
- `name`, `name2`  
+ `name`,  `name2`  
  Název jedné nebo víc symbolů, které chcete definovat.  
   
 ## <a name="remarks"></a>Poznámky  
@@ -51,9 +51,9 @@ ms.locfileid: "54558816"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky.  
+1. Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Na **sestavení** kartu, zadejte symbol, který má být definován v **symboly podmíněné kompilace** pole. Například pokud používáte příklad kódu, který následuje, napsat `xx` do textového pole.  
+2. Na **sestavení** kartu, zadejte symbol, který má být definován v **symboly podmíněné kompilace** pole. Například pokud používáte příklad kódu, který následuje, napsat `xx` do textového pole.  
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A>.  
   
@@ -80,5 +80,5 @@ public class Test
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

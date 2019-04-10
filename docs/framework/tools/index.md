@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 11525c2a98ceee3115fe789dbb106347c0201ecd
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: c35e796333aa3a93b7a66416fe0d93b7b1f3837f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220101"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311952"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
 Nástroje .NET Framework usnadňují vývoj, nasazení a správu aplikací a komponent určených pro rozhraní .NET Framework.  
   
-Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Stáhněte si Visual Studio, najdete v tématu [stahování sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) stránky.
+Většina nástrojů rozhraní .NET Framework popsaná v této části je automaticky nainstalována se sadou Visual Studio. Stáhněte si Visual Studio, najdete v tématu [stahování sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) stránky.
   
  Veškeré nástroje, s výjimkou nástroje Assembly Cache Viewer (Shfusion.dll), lze spustit z příkazového řádku. K nástroji Shfusion.dll je nutné získat přístup z Průzkumníku souborů.  
   
@@ -68,10 +68,10 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  [Lc.exe (kompilátor licencí)](../../../docs/framework/tools/lc-exe-license-compiler.md)  
  Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime). Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
   
- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
+ [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
  Dovoluje vytvářet, upravovat a podepisovat aplikace a manifesty nasazení. Jakožto nástroj příkazového řádku lze nástroj Mage.exe spouštět z dávkových skriptů a jiných aplikací pro systém Windows, včetně aplikací ASP.NET.  
   
- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
+ [MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
  Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows. Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows.  
   
  [MDbg.exe (ladicí program z příkazového řádku .NET Framework)](../../../docs/framework/tools/mdbg-exe.md)  
@@ -132,5 +132,5 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  [WPF – nástroje](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
  Obsahuje nástroje, jako je například nástroj isxps pro kontrolu shody (isXPS.exe) a nástroje pro profilaci výkonu.  
   
- [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
+ [Nástroje služby Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
  Obsahuje nástroje, které usnadňují vytváření, zavádění a správu aplikací služby Windows Communication Foundation (WCF).

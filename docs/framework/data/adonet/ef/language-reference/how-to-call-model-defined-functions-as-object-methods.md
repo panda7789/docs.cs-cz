@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
-ms.openlocfilehash: 2b3e25187d2865a8e754c553f8057c3c8e3cff37
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 933baf39845caa2bc96828738d30f41613f69470
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59151226"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304828"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: Volání modelově definovaných funkcí jako objektových metod
 Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu pro vlastní třídu. A *modelově definovaných funkcí* je funkce, která je definována v konceptuálním modelu. Postupy v tomto tématu popisují, jak volat tyto funkce přímo, bez volání je z LINQ na dotazy na entity. Informace o volání modelově definovaných funkcí v jazyce LINQ dotazy entit najdete v tématu [jak: Volání modelově definovaných funkcí v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  
@@ -21,19 +21,19 @@ Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xr
   
 ### <a name="to-call-a-model-defined-function-as-a-method-on-an-objectcontext-object"></a>Pro volání modelově definovaných funkce jako metoda pro objekt ObjectContext  
   
-1.  Přidání zdrojového souboru částečné třídy odvozené od rozšířit <xref:System.Data.Objects.ObjectContext> třídy automaticky vygenerován pomocí nástroje Entity Framework. Definování zástupné procedury CLR v samostatném zdrojovém souboru zabrání změně ke ztrátě, když se znovu vygeneroval soubor.  
+1. Přidání zdrojového souboru částečné třídy odvozené od rozšířit <xref:System.Data.Objects.ObjectContext> třídy automaticky vygenerován pomocí nástroje Entity Framework. Definování zástupné procedury CLR v samostatném zdrojovém souboru zabrání změně ke ztrátě, když se znovu vygeneroval soubor.  
   
-2.  Přidejte metodu běžné jazyka runtime (CLR) pro vaše <xref:System.Data.Objects.ObjectContext> třídu, která provede následující akce:  
+2. Přidejte metodu běžné jazyka runtime (CLR) pro vaše <xref:System.Data.Objects.ObjectContext> třídu, která provede následující akce:  
   
     -   Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
   
     -   Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> vlastnost.  
   
-3.  Jako člen instance volejte metodu <xref:System.Data.Objects.ObjectContext> třídy.  
+3. Jako člen instance volejte metodu <xref:System.Data.Objects.ObjectContext> třídy.  
   
 ### <a name="to-call-a-model-defined-function-as-static-method-on-a-custom-class"></a>Volat funkci modelu definovány jako statické metody na vlastní třídy  
   
-1.  Přidání třídy do vaší aplikace s statická metoda, která provede následující akce:  
+1. Přidání třídy do vaší aplikace s statická metoda, která provede následující akce:  
   
     -   Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí.  
   
@@ -41,7 +41,7 @@ Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xr
   
     -   Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Linq.IQueryable.Provider%2A> vlastnost.  
   
-2.  Volat metodu jako člen statickou metodu ve vlastní třídy  
+2. Volat metodu jako člen statickou metodu ve vlastní třídy  
   
 ## <a name="example"></a>Příklad  
  **Volání modelově definovaných funkce jako metoda pro objekt ObjectContext**  

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30149
 ms.assetid: 29d1b7f4-dca7-478c-bbe7-c657f342c183
-ms.openlocfilehash: b8bcb16798284a09608ba6942226ef07c6859d4f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 432f089bc77928308820d7456d930fba8dc513f7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58824193"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304906"
 ---
 # <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<methodname > "rozhraní"\<interfacename > "
 Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje postupu definované rozhraní. Musíte implementovat každého člena rozhraní.  
@@ -21,9 +21,9 @@ Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neim
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Procedura se stejným názvem a signaturou, jak jsou definovány v rozhraní deklarujte. Nezapomeňte uvést alespoň `End Function` nebo `End Sub` příkazu.  
+1. Procedura se stejným názvem a signaturou, jak jsou definovány v rozhraní deklarujte. Nezapomeňte uvést alespoň `End Function` nebo `End Sub` příkazu.  
   
-2.  Přidat `Implements` klauzuli na konec objektu `Function` nebo `Sub` příkazu. Příklad:  
+2. Přidat `Implements` klauzuli na konec objektu `Function` nebo `Sub` příkazu. Příklad:  
   
     ```  
     Public Sub DoSomething() Implements IBaseInterface.DoSomething  
@@ -31,5 +31,5 @@ Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neim
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)
+- [Implements – Příkaz](../../../visual-basic/language-reference/statements/implements-statement.md)
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

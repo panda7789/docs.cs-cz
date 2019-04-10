@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
-ms.openlocfilehash: 485680a2984a29037b2836fcba13cf1aa1e2e699
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 86b0d46e0e27b2fd8d1fccb37f4a3c45e95f5f63
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58822749"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295325"
 ---
 # <a name="type1typename-must-implement-membername-for-interface-interfacename"></a>\<Type1 >'\<typename >' musí implementovat '\<membername > "rozhraní"\<interfacename > "
 "\<typename >' musí implementovat '\<membername >" rozhraní "\<interfacename >'. Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.  
@@ -23,19 +23,19 @@ ms.locfileid: "58822749"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Deklarujte člena se stejným názvem a signaturou, jak jsou definovány v rozhraní. Nezapomeňte uvést alespoň `End Function`, `End Sub`, nebo `End Property` příkazu.  
+1. Deklarujte člena se stejným názvem a signaturou, jak jsou definovány v rozhraní. Nezapomeňte uvést alespoň `End Function`, `End Sub`, nebo `End Property` příkazu.  
   
-2.  Přidat `Implements` klauzuli na konec objektu `Function`, `Sub`, `Property`, nebo `Event` příkazu. Příklad:  
+2. Přidat `Implements` klauzuli na konec objektu `Function`, `Sub`, `Property`, nebo `Event` příkazu. Příklad:  
   
     ```  
     Public Event ItHappened() Implements IBaseInterface.ItHappened  
     ```  
   
-3.  Při implementaci vlastnost, ujistěte se, že `ReadOnly` nebo `WriteOnly` se používá stejným způsobem jako v definici rozhraní.  
+3. Při implementaci vlastnost, ujistěte se, že `ReadOnly` nebo `WriteOnly` se používá stejným způsobem jako v definici rozhraní.  
   
-4.  Při implementaci vlastnost, deklarujte `Get` a `Set` postupy, podle potřeby.  
+4. Při implementaci vlastnost, deklarujte `Get` a `Set` postupy, podle potřeby.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)
+- [Implements – Příkaz](../../../visual-basic/language-reference/statements/implements-statement.md)
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

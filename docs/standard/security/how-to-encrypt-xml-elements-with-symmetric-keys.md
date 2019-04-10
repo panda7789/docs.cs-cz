@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cbc06264dd2153818d69c0124e8a263bf4265ebe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2268dc813d6f12b69bee99dd07f8f4431b12a283
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54622829"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295624"
 ---
 # <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Postupy: Šifrování elementů XML pomocí symetrických klíčů
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML můžete uložit nebo přenosu citlivých XML, nemusíme mít starosti se snadno číst data.  Tento postup dešifruje elementu XML použitím algoritmus Advanced Encryption (Standard AES), také označován jako Rijndael.  
@@ -36,42 +36,42 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ### <a name="to-encrypt-an-xml-element-with-a-symmetric-key"></a>K šifrování se symetrickým klíčem XML element  
   
-1.  Vygenerovat symetrický klíč pomocí <xref:System.Security.Cryptography.RijndaelManaged> třídy.  Tento klíč se použije k zašifrování XML element.  
+1. Vygenerovat symetrický klíč pomocí <xref:System.Security.Cryptography.RijndaelManaged> třídy.  Tento klíč se použije k zašifrování XML element.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#2)]
      [!code-vb[HowToEncryptXMLElementSymmetric#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#2)]  
   
-2.  Vytvoření <xref:System.Xml.XmlDocument> objekt načtením souboru XML z disku.  <xref:System.Xml.XmlDocument> Objekt obsahuje element XML k šifrování.  
+2. Vytvoření <xref:System.Xml.XmlDocument> objekt načtením souboru XML z disku.  <xref:System.Xml.XmlDocument> Objekt obsahuje element XML k šifrování.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#3)]
      [!code-vb[HowToEncryptXMLElementSymmetric#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#3)]  
   
-3.  Najít zadaný element v <xref:System.Xml.XmlDocument> objektu a vytvořte nový <xref:System.Xml.XmlElement> objekt reprezentující element, který chcete zašifrovat.  V tomto příkladu `"creditcard"` šifrovaná prvku.  
+3. Najít zadaný element v <xref:System.Xml.XmlDocument> objektu a vytvořte nový <xref:System.Xml.XmlElement> objekt reprezentující element, který chcete zašifrovat.  V tomto příkladu `"creditcard"` šifrovaná prvku.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#4)]
      [!code-vb[HowToEncryptXMLElementSymmetric#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#4)]  
   
-4.  Vytvořit novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> třídy a jeho pomocí šifrovat <xref:System.Xml.XmlElement> pomocí symetrického klíče.  <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A> Metoda vrátí šifrovaný element jako pole šifrovaných bajtů.  
+4. Vytvořit novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> třídy a jeho pomocí šifrovat <xref:System.Xml.XmlElement> pomocí symetrického klíče.  <xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A> Metoda vrátí šifrovaný element jako pole šifrovaných bajtů.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#5)]
      [!code-vb[HowToEncryptXMLElementSymmetric#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#5)]  
   
-5.  Vytvoření <xref:System.Security.Cryptography.Xml.EncryptedData> objektu a jeho naplnění identifikátor URL elementu šifrování XML.  Tento identifikátor URL umožňuje dešifrování strana vědět, že kód XML obsahuje šifrovaný element.  Můžete použít <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> pole k určení identifikátoru adresy URL.  
+5. Vytvoření <xref:System.Security.Cryptography.Xml.EncryptedData> objektu a jeho naplnění identifikátor URL elementu šifrování XML.  Tento identifikátor URL umožňuje dešifrování strana vědět, že kód XML obsahuje šifrovaný element.  Můžete použít <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> pole k určení identifikátoru adresy URL.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#6)]
      [!code-vb[HowToEncryptXMLElementSymmetric#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#6)]  
   
-6.  Vytvoření <xref:System.Security.Cryptography.Xml.EncryptionMethod> , který je inicializován na identifikátor URL kryptografický algoritmus používaný k vygenerování klíče.  Předání <xref:System.Security.Cryptography.Xml.EncryptionMethod> objektu <xref:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod%2A> vlastnost.  
+6. Vytvoření <xref:System.Security.Cryptography.Xml.EncryptionMethod> , který je inicializován na identifikátor URL kryptografický algoritmus používaný k vygenerování klíče.  Předání <xref:System.Security.Cryptography.Xml.EncryptionMethod> objektu <xref:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod%2A> vlastnost.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#7)]
      [!code-vb[HowToEncryptXMLElementSymmetric#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#7)]  
   
-7.  Přidat data šifrovaný element <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
+7. Přidat data šifrovaný element <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#8)]
      [!code-vb[HowToEncryptXMLElementSymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#8)]  
   
-8.  Nahraďte element z původní <xref:System.Xml.XmlDocument> objektu <xref:System.Security.Cryptography.Xml.EncryptedData> elementu.  
+8. Nahraďte element z původní <xref:System.Xml.XmlDocument> objektu <xref:System.Security.Cryptography.Xml.EncryptedData> elementu.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#9)]
      [!code-vb[HowToEncryptXMLElementSymmetric#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#9)]  

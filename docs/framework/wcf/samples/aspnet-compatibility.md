@@ -2,12 +2,12 @@
 title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: 521ab07d2a747927a7b26c38221f59de736990b5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 01381dc579f5ae3eadd2f913a0e09d7d259794a1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59112525"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304210"
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
 Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Communication Foundation (WCF). Služby spuštěné v režimu plně účastnit kanálu aplikace ASP.NET a mohl provádět režim kompatibility ASP.NET používat funkce technologie ASP.NET, jako je soubor nebo adresa URL autorizační, stav relace a <xref:System.Web.HttpContext> třídy. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relace a další funkce technologie ASP.NET. Tento režim vyžaduje, že vazby pomocí přenos pomocí protokolu HTTP a samotné služby musí být hostovaný ve službě IIS.  
@@ -19,13 +19,13 @@ Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Co
   
 Tato ukázka vyžaduje [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] fond aplikací tak, aby bylo možné spustit. Chcete-li vytvořit nový fond aplikací nebo změnit výchozí fond aplikací, postupujte podle těchto kroků.  
 
-1.  Otevřete **Ovládací panely**.  Otevřít **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřít **Správce Internetové informační služby (IIS)** aplet.  
+1. Otevřete **Ovládací panely**.  Otevřít **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřít **Správce Internetové informační služby (IIS)** aplet.  
 
-2.  Ve stromovém zobrazení rozbalte **připojení** podokně. Vyberte **fondy aplikací** uzlu.  
+2. Ve stromovém zobrazení rozbalte **připojení** podokně. Vyberte **fondy aplikací** uzlu.  
 
-3.  Nastavit výchozí fond aplikací používat [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (která může způsobit problémy s kompatibilitou s existující weby), klikněte pravým tlačítkem myši **DefaultAppPool** položky seznamu a vyberte **základní nastavení...** . Nastavit **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější).  
+3. Nastavit výchozí fond aplikací používat [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (která může způsobit problémy s kompatibilitou s existující weby), klikněte pravým tlačítkem myši **DefaultAppPool** položky seznamu a vyberte **základní nastavení...** . Nastavit **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější).  
 
-4.  Chcete-li vytvořit nový fond aplikací, který používá [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (pro zachování kompatibility pro jiné aplikace), klikněte pravým tlačítkem **fondy aplikací** uzel a vyberte možnost **přidat fond aplikací...** . Pojmenujte nový fond aplikací a nastavte **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější). Po spuštění instalace kroky níže, klikněte pravým tlačítkem myši **ServiceModelSamples** aplikaci a vyberte **spravovat aplikaci**, **Upřesnit nastavení...** . Nastavte **fond aplikací** pro nový fond aplikací.  
+4. Chcete-li vytvořit nový fond aplikací, který používá [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] (pro zachování kompatibility pro jiné aplikace), klikněte pravým tlačítkem **fondy aplikací** uzel a vyberte možnost **přidat fond aplikací...** . Pojmenujte nový fond aplikací a nastavte **rozhraní .net Framework verze** rozevírací k **rozhraní .net Framework v4.0.30128** (nebo novější). Po spuštění instalace kroky níže, klikněte pravým tlačítkem myši **ServiceModelSamples** aplikaci a vyberte **spravovat aplikaci**, **Upřesnit nastavení...** . Nastavte **fond aplikací** pro nový fond aplikací.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -119,13 +119,13 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
+3. Po řešení je sestavený Build, spusťte Setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také:
 

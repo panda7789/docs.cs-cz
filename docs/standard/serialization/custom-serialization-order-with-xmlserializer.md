@@ -2,12 +2,12 @@
 title: Vlastní pořadí serializace pomocí třídy XmlSerializer
 ms.date: 03/30/2017
 ms.assetid: 975abd20-2a1d-42db-aed3-e898025ccce7
-ms.openlocfilehash: 159e8e278d7212e5f798f559dc1b51f71f74b127
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f63d460163c33c4253cf565a5755babc1030164f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718946"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295028"
 ---
 # <a name="custom-serialization-order-with-xmlserializer"></a>Vlastní pořadí serializace pomocí třídy XmlSerializer
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
@@ -18,19 +18,19 @@ ms.locfileid: "54718946"
   
 ### <a name="to-build-the-sample-using-the-command-prompt"></a>K vytvoření vzorku pomocí příkazového řádku  
   
-1.  Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
+1. Otevřete okno příkazového řádku a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
   
-2.  Typ **msbuild CustomOrder.sln** na příkazovém řádku.  
+2. Typ **msbuild CustomOrder.sln** na příkazovém řádku.  
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>K vytvoření vzorku pomocí sady Visual Studio  
   
-1.  Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
+1. Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do jednoho podadresáře konkrétní jazyk pro vzorku.  
   
-2.  Poklepejte na ikonu CustomOrder.sln k otevření souboru v sadě Visual Studio.  
+2. Poklepejte na ikonu CustomOrder.sln k otevření souboru v sadě Visual Studio.  
   
-3.  V **sestavení** nabídce vyberte možnost **sestavit řešení**.  
+3. V **sestavení** nabídce vyberte možnost **sestavit řešení**.  
   
-4.  Vzorová aplikace je sestavena v podadresáři \bin nebo \bin\Debug výchozí.  
+4. Vzorová aplikace je sestavena v podadresáři \bin nebo \bin\Debug výchozí.  
   
 ## <a name="see-also"></a>Viz také:
 

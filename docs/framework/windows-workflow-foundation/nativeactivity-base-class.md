@@ -2,12 +2,12 @@
 title: Základní třída NativeActivity
 ms.date: 03/30/2017
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
-ms.openlocfilehash: 40eff2e597763fd492b3051df1a91622e7a60672
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: f718d247e7110b46cdd13038c7c93c1e45612c75
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842032"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296586"
 ---
 # <a name="nativeactivity-base-class"></a>Základní třída NativeActivity
 
@@ -34,28 +34,28 @@ ms.locfileid: "48842032"
 
 ### <a name="to-create-a-custom-activity-that-inherits-from-nativeactivity"></a>Chcete-li vytvořit vlastní aktivitu, která dědí z nativeactivity načte jako
 
-1.  Otevřete Visual Studio 2010.
+1. OpenVisual Studio 2010.
 
-2.  Vyberte **souboru**, **nové**a potom **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **knihovny aktivit** v **šablony** okna. Název nového projektu HelloActivity.
+2. Vyberte **souboru**, **nové**a potom **projektu**. Vyberte **Workflow 4.0** pod **Visual C#** v **typy projektů** okna a vyberte **v2010** uzlu. Vyberte **knihovny aktivit** v **šablony** okna. Název nového projektu HelloActivity.
 
-3.  Klikněte pravým tlačítkem na Activity1.xaml HelloActivity projektu a vyberte **odstranit**.
+3. Klikněte pravým tlačítkem na Activity1.xaml HelloActivity projektu a vyberte **odstranit**.
 
-4.  Klikněte pravým tlačítkem na projekt HelloActivity a vyberte **přidat**a potom **třídy**. Pojmenujte novou třídu HelloActivity.cs.
+4. Klikněte pravým tlačítkem na projekt HelloActivity a vyberte **přidat**a potom **třídy**. Pojmenujte novou třídu HelloActivity.cs.
 
-5.  V souboru HelloActivity.cs, přidejte následující `using` direktivy.
+5. V souboru HelloActivity.cs, přidejte následující `using` direktivy.
 
     ```csharp
     using System.Activities;
     using System.Activities.Statements;
     ```
 
-6.  Ujistěte se, nová třída dědila z <xref:System.Activities.NativeActivity> přidáním základní třídu pro deklaraci třídy.
+6. Ujistěte se, nová třída dědila z <xref:System.Activities.NativeActivity> přidáním základní třídu pro deklaraci třídy.
 
     ```csharp
     class HelloActivity : NativeActivity
     ```
 
-7.  Přidání funkce do třídy tak, že přidáte <xref:System.Activities.NativeActivity.Execute%2A> metody.
+7. Přidání funkce do třídy tak, že přidáte <xref:System.Activities.NativeActivity.Execute%2A> metody.
 
     ```csharp
     protected override void Execute(NativeActivityContext context)
@@ -64,7 +64,7 @@ ms.locfileid: "48842032"
     }
     ```
 
-8.  Přepsat <xref:System.Activities.NativeActivity.CacheMetadata%2A> metoda a volání odpovídající metody Add umožní modulu runtime pracovního postupu vědět o proměnné, argumenty, podřízené položky a delegáti vlastní aktivity. Další informace najdete v článku <xref:System.Activities.NativeActivityMetadata> třídy.
+8. Přepsat <xref:System.Activities.NativeActivity.CacheMetadata%2A> metoda a volání odpovídající metody Add umožní modulu runtime pracovního postupu vědět o proměnné, argumenty, podřízené položky a delegáti vlastní aktivity. Další informace najdete v článku <xref:System.Activities.NativeActivityMetadata> třídy.
 
 9. Použití <xref:System.Activities.NativeActivityContext> objekt naplánování záložku. Zobrazit <xref:System.Activities.WorkflowApplicationIdleEventArgs.Bookmarks%2A> podrobnosti o tom, jak vytvořit, naplánovat a obnovení záložku.
 

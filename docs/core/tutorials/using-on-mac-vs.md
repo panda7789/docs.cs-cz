@@ -4,12 +4,12 @@ description: Toto téma vás provede vytvořením jednoduchou konzolovou aplikac
 author: guardrex
 ms.date: 06/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: ed6c25f424e1b87c1a18a3654f756500af9f78de
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: d99cabf15be63593b272474867359324a5892b04
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788619"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300876"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -28,7 +28,7 @@ Najdete v článku [předpoklady pro .NET Core v počítačích Mac](../../core/
 
 Pokud jste již nainstalovali požadované součásti a sady Visual Studio pro Mac, přeskočte tuto část a přejděte k [vytvoření projektu](#creating-a-project). Postupujte podle těchto kroků nainstalujte požadované součásti a sady Visual Studio pro Mac:
 
-Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.com/vs/visual-studio-mac/). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace zadáte možnost nainstalujte si Xamarin, technologie pro vývoj multiplatformních mobilních aplikací. Instalace Xamarinu a jeho souvisejících součástí je nepovinné pro vývoj v .NET Core. Návod, jak Visual Studio for Mac instalační proces, naleznete v tématu [představení sady Visual Studio pro Mac](https://developer.xamarin.com/guides/cross-platform/visual-studio-mac/). Po dokončení instalace spusťte Visual Studio pro Mac integrovaného vývojového prostředí.
+Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace zadáte možnost nainstalujte si Xamarin, technologie pro vývoj multiplatformních mobilních aplikací. Instalace Xamarinu a jeho souvisejících součástí je nepovinné pro vývoj v .NET Core. Návod, jak Visual Studio for Mac instalační proces, naleznete v tématu [Visual Studio for Mac dokumentaci](/visualstudio/mac/). Po dokončení instalace spusťte Visual Studio pro Mac integrovaného vývojového prostředí.
 
 ## <a name="creating-a-project"></a>Vytvoření projektu
 

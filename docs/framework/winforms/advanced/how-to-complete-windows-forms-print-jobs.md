@@ -9,12 +9,12 @@ helpviewer_keywords:
 - print jobs [Windows Forms], completing in Windows Forms
 - printing [Windows Forms], print jobs
 ms.assetid: 23ec74f7-34c5-4710-82a0-ee2914518548
-ms.openlocfilehash: f8d0f1f067efbae6e2b667328e75996179b91737
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 256b9a3d8842aaa4b032e67ebac9ca6a9e1ef34a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59159819"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293752"
 ---
 # <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Dokončení tiskových úloh v modelu Windows Forms
 Často textových editorů a další aplikace, které se týkají tisku bude poskytovat možnost pro zobrazení zprávy pro uživatele, tisková úloha je dokončena. Tuto funkci můžete zadat do svých formulářů Windows pomocí manipulace <xref:System.Drawing.Printing.PrintDocument.EndPrint> událost <xref:System.Drawing.Printing.PrintDocument> komponenty.  
@@ -23,7 +23,7 @@ ms.locfileid: "59159819"
   
 ### <a name="to-complete-a-print-job"></a>K dokončení tiskové úlohy  
   
-1.  Nastavte <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> vlastnost <xref:System.Drawing.Printing.PrintDocument> komponenty.  
+1. Nastavte <xref:System.Drawing.Printing.PrintDocument.DocumentName%2A> vlastnost <xref:System.Drawing.Printing.PrintDocument> komponenty.  
   
     ```vb  
     PrintDocument1.DocumentName = "MyTextFile"  
@@ -37,7 +37,7 @@ ms.locfileid: "59159819"
     printDocument1->DocumentName = "MyTextFile";  
     ```  
   
-2.  Napište kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.EndPrint> událostí.  
+2. Napište kód pro zpracování <xref:System.Drawing.Printing.PrintDocument.EndPrint> událostí.  
   
      V následujícím příkladu kódu se zobrazí okno se zprávou, označující, že dokument dokončení tisku.  
   

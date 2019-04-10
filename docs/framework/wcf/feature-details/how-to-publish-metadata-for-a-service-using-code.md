@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 51407e6d-4d87-42d5-be7c-9887b8652006
-ms.openlocfilehash: 5c17f5c399335a2c7cbcc6f4474982de591dd453
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 870142724321629d6dbeccd4118b814283901776
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098000"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297964"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-code"></a>Postupy: Publikování metadat služby promocí kódu
 Toto je jedna z dva postupy: témata, které popisují publikování metadat služby Windows Communication Foundation (WCF). Existují dva způsoby, jak určit, jak by měla služba publikování metadat, je používán konfigurační soubor a pomocí kódu. Toto téma ukazuje, jak publikování metadat služby promocí kódu.  
@@ -25,12 +25,12 @@ Toto je jedna z dva postupy: témata, které popisují publikování metadat slu
   
 ### <a name="to-publish-metadata-in-code"></a>Publikování metadat v kódu  
   
-1.  V rámci metody main konzolové aplikace vytvořit instanci <xref:System.ServiceModel.ServiceHost> objekt předáním typ služby a základní adresa.  
+1. V rámci metody main konzolové aplikace vytvořit instanci <xref:System.ServiceModel.ServiceHost> objekt předáním typ služby a základní adresa.  
   
      [!code-csharp[htPublishMetadataCode#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#1)]
      [!code-vb[htPublishMetadataCode#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#1)]  
   
-2.  Vytvořit blok try bezprostředně pod kód v kroku 1, to zachytává všechny výjimky, které získat vyvolána, když je služba spuštěna.  
+2. Vytvořit blok try bezprostředně pod kód v kroku 1, to zachytává všechny výjimky, které získat vyvolána, když je služba spuštěna.  
   
      [!code-csharp[htPublishMetadataCode#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#2)]
      [!code-vb[htPublishMetadataCode#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#2)]  
@@ -38,32 +38,32 @@ Toto je jedna z dva postupy: témata, které popisují publikování metadat slu
      [!code-csharp[htPublishMetadataCode#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#3)]
      [!code-vb[htPublishMetadataCode#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#3)]  
   
-3.  Zkontrolujte, zda již obsahuje tohoto hostitele služby <xref:System.ServiceModel.Description.ServiceMetadataBehavior>, pokud ne, vytvořte nový <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance.  
+3. Zkontrolujte, zda již obsahuje tohoto hostitele služby <xref:System.ServiceModel.Description.ServiceMetadataBehavior>, pokud ne, vytvořte nový <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance.  
   
      [!code-csharp[htPublishMetadataCode#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#4)]
      [!code-vb[htPublishMetadataCode#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#4)]  
   
-4.  Nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true.`  
+4. Nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true.`  
   
      [!code-csharp[htPublishMetadataCode#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#5)]
      [!code-vb[htPublishMetadataCode#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#5)]  
   
-5.  <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Obsahuje <xref:System.ServiceModel.Description.MetadataExporter> vlastnost. <xref:System.ServiceModel.Description.MetadataExporter> Obsahuje <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost. Nastavte hodnotu <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A>. <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> Vlastnost může být také nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>. Pokud je nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> Exportér metadat generuje informace o zásadách s metadaty, která "odpovídá 1.5 WS-Policy. Pokud je nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A> Exportér metadat generuje informace o zásadách, která odpovídá 1.2 WS-Policy.  
+5. <xref:System.ServiceModel.Description.ServiceMetadataBehavior> Obsahuje <xref:System.ServiceModel.Description.MetadataExporter> vlastnost. <xref:System.ServiceModel.Description.MetadataExporter> Obsahuje <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost. Nastavte hodnotu <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A>. <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> Vlastnost může být také nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A>. Pokud je nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> Exportér metadat generuje informace o zásadách s metadaty, která "odpovídá 1.5 WS-Policy. Pokud je nastavena na <xref:System.ServiceModel.Description.PolicyVersion.Policy12%2A> Exportér metadat generuje informace o zásadách, která odpovídá 1.2 WS-Policy.  
   
      [!code-csharp[htPublishMetadataCode#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#6)]
      [!code-vb[htPublishMetadataCode#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#6)]  
   
-6.  Přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance hostitele služby kolekce chování.  
+6. Přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance hostitele služby kolekce chování.  
   
      [!code-csharp[htPublishMetadataCode#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#7)]
      [!code-vb[htPublishMetadataCode#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#7)]  
   
-7.  Přidáte koncový bod výměny metadat k hostiteli služby.  
+7. Přidáte koncový bod výměny metadat k hostiteli služby.  
   
      [!code-csharp[htPublishMetadataCode#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#8)]
      [!code-vb[htPublishMetadataCode#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#8)]  
   
-8.  Přidání koncového bodu aplikace k hostiteli služby.  
+8. Přidání koncového bodu aplikace k hostiteli služby.  
   
      [!code-csharp[htPublishMetadataCode#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/htpublishmetadatacode/cs/program.cs#9)]
      [!code-vb[htPublishMetadataCode#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htpublishmetadatacode/vb/program.vb#9)]  

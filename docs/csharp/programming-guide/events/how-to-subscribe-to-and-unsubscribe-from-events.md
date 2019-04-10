@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 4d06899303110d0b06729f2a02c47b9096bec724
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: d1442e02d651cd283e5ff63d28f3cfe80e99cc7d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981800"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306596"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlaste se k odběru a zrušit její odběr událostí (C# Průvodce programováním v)
 Se přihlásíte k odběru události, která se publikuje jinou třídou, když chcete napsat vlastní kód, který se volá, když se vyvolá tuto událost. Například může přihlásit tlačítko `click` událostí, aby vaše aplikace dělat něco užitečné, když uživatel klikne na tlačítko.  
   
 ### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>Přihlásit k odběru události pomocí rozhraní IDE sady Visual Studio  
   
-1.  Pokud nevidíte **vlastnosti** okno v **návrhu** zobrazení, klikněte pravým tlačítkem na formulář nebo ovládací prvek, pro kterou chcete vytvořit obslužnou rutinu události a vyberte **vlastnosti**.  
+1. Pokud nevidíte **vlastnosti** okno v **návrhu** zobrazení, klikněte pravým tlačítkem na formulář nebo ovládací prvek, pro kterou chcete vytvořit obslužnou rutinu události a vyberte **vlastnosti**.  
   
-2.  Nahoře **vlastnosti** okna, klikněte na tlačítko **události** ikonu.  
+2. Nahoře **vlastnosti** okna, klikněte na tlačítko **události** ikonu.  
   
-3.  Poklikáním na událost, kterou chcete vytvořit, například `Load` událostí.  
+3. Poklikáním na událost, kterou chcete vytvořit, například `Load` událostí.  
   
      Visual C# vytvoří metodu obslužné rutiny události prázdný a přidá ji do vašeho kódu. Případně můžete přidat ručně v kódu **kód** zobrazení. Například následující řádky kódu deklarovat metodu obslužné rutiny události, která bude volána při `Form` třídy vyvolá `Load` událostí.  
   
@@ -37,7 +37,7 @@ Se přihlásíte k odběru události, která se publikuje jinou třídou, když 
   
 ### <a name="to-subscribe-to-events-programmatically"></a>Přihlaste se k odběru událostí prostřednictvím kódu programu  
   
-1.  Definujte metodu obslužné rutiny události, jejíž podpis odpovídá delegáta pro událost. Například, pokud je na základě události <xref:System.EventHandler> typu delegátu, následující kód představuje pahýl metody:  
+1. Definujte metodu obslužné rutiny události, jejíž podpis odpovídá delegáta pro událost. Například, pokud je na základě události <xref:System.EventHandler> typu delegátu, následující kód představuje pahýl metody:  
   
     ```csharp
     void HandleCustomEvent(object sender, CustomEventArgs a)  
@@ -46,7 +46,7 @@ Se přihlásíte k odběru události, která se publikuje jinou třídou, když 
     }  
     ```  
   
-2.  Operátor přiřazení sčítání (`+=`) připojit vaše obslužná rutina události pro událost. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent`. Všimněte si, že třída odběratele musí odkaz na třídu vydavatele k přihlášení k odběru jeho událostí.  
+2. Operátor přiřazení sčítání (`+=`) připojit vaše obslužná rutina události pro událost. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent`. Všimněte si, že třída odběratele musí odkaz na třídu vydavatele k přihlášení k odběru jeho událostí.  
   
     ```csharp
     publisher.RaiseCustomEvent += HandleCustomEvent;  
@@ -103,6 +103,6 @@ Se přihlásíte k odběru události, která se publikuje jinou třídou, když 
 
 - [Události](../../../csharp/programming-guide/events/index.md)
 - [event](../../../csharp/language-reference/keywords/event.md)
-- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)
-- [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)
+- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [-= – operátor (Referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)
 - [+= – operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)

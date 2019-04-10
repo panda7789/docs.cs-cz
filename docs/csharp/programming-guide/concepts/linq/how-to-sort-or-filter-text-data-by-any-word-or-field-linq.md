@@ -2,19 +2,19 @@
 title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: 1b2378a3f9d589640d50ca3cc80d5e82ba386bd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 243ff37e38b2e88b55962980e91a1ab6dcebab3c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54747970"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304867"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)
 Následující příklad ukazuje způsob řazení řádků strukturovaných textu, jako je například textový soubor s oddělovači, podle libovolného pole v řádku. Pole může být určen dynamicky za běhu. Předpokládejme, že pole v scores.csv představují student získal identifikační číslo, za nímž následuje řadu čtyři skóre v testech.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Chcete-li vytvořit soubor, který obsahuje data  
   
-1.  Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
+1. Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
   
 ## <a name="example"></a>Příklad  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
-ms.openlocfilehash: cb4a2bcc6f62fac5d0dde82ab32ed6e04e8a9b7c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 46dbb39a31a1ef256bef0f5b7e1bbc41ce1eca3e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095552"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306986"
 ---
 # <a name="how-to-configure-a-local-issuer"></a>Postupy: Konfigurace místního vystavitele
 Toto téma popisuje, jak nakonfigurovat klienta k využití místního vystavitele pro vydané tokeny.  
@@ -27,14 +27,14 @@ Toto téma popisuje, jak nakonfigurovat klienta k využití místního vystavite
   
 ### <a name="to-configure-the-local-issuer-in-code"></a>Konfigurace místního vystavitele v kódu  
   
-1.  Vytvořte proměnnou typu <xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
+1. Vytvořte proměnnou typu <xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
   
-2.  Nastavte proměnnou na instanci vrácenou z <xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A> vlastnost `ClientCredentials` třídy. Tato instance je vrácený <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost klienta (zděděno z <xref:System.ServiceModel.ClientBase%601>) nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost <xref:System.ServiceModel.ChannelFactory>:  
+2. Nastavte proměnnou na instanci vrácenou z <xref:System.ServiceModel.Description.ClientCredentials.IssuedToken%2A> vlastnost `ClientCredentials` třídy. Tato instance je vrácený <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost klienta (zděděno z <xref:System.ServiceModel.ClientBase%601>) nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost <xref:System.ServiceModel.ChannelFactory>:  
   
      [!code-csharp[c_CreateSTS#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#9)]
      [!code-vb[c_CreateSTS#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#9)]  
   
-3.  Nastavte <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A> vlastností nové instance <xref:System.ServiceModel.EndpointAddress>, adresou místního vystavitele jako argument konstruktoru.  
+3. Nastavte <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerAddress%2A> vlastností nové instance <xref:System.ServiceModel.EndpointAddress>, adresou místního vystavitele jako argument konstruktoru.  
   
      [!code-csharp[c_CreateSTS#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#10)]
      [!code-vb[c_CreateSTS#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#10)]  
@@ -49,27 +49,27 @@ Toto téma popisuje, jak nakonfigurovat klienta k využití místního vystavite
      [!code-csharp[c_CreateSTS#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#12)]
      [!code-vb[c_CreateSTS#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#12)]  
   
-4.  Nastavit vazbu lokálního vystavitele pomocí <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> vlastnost.  
+4. Nastavit vazbu lokálního vystavitele pomocí <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> vlastnost.  
   
      [!code-csharp[c_CreateSTS#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#13)]
      [!code-vb[c_CreateSTS#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#13)]  
   
-5.  Volitelné. Přidání chování konfigurovaný koncový bod pro lokálního vystavitele tak, že přidáte toto chování na kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> vlastnost.  
+5. Volitelné. Přidání chování konfigurovaný koncový bod pro lokálního vystavitele tak, že přidáte toto chování na kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerChannelBehaviors%2A> vlastnost.  
   
      [!code-csharp[c_CreateSTS#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#14)]
      [!code-vb[c_CreateSTS#14](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#14)]  
   
 ### <a name="to-configure-the-local-issuer-in-configuration"></a>Konfigurace místního vystavitele v konfiguraci  
   
-1.  Vytvoření [ \<localIssuer >](../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md) element jako podřízený objekt [ \<třídy issuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) element, který je sám podřízeným prvkem [ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) prvek chování koncového bodu.  
+1. Vytvoření [ \<localIssuer >](../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md) element jako podřízený objekt [ \<třídy issuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md) element, který je sám podřízeným prvkem [ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) prvek chování koncového bodu.  
   
-2.  Nastavte `address` atribut na adresu místního vystavitele, který bude přijímat žádosti o tokeny.  
+2. Nastavte `address` atribut na adresu místního vystavitele, který bude přijímat žádosti o tokeny.  
   
-3.  Nastavte `binding` a `bindingConfiguration` atributy na hodnoty, které odkazují na příslušnou datovou vazbu při komunikaci s koncovým bodem lokálního vystavitele.  
+3. Nastavte `binding` a `bindingConfiguration` atributy na hodnoty, které odkazují na příslušnou datovou vazbu při komunikaci s koncovým bodem lokálního vystavitele.  
   
-4.  Volitelné. Nastavte [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element jako podřízený objekt <`localIssuer`> element a zadejte informace o identitě pro lokálního vystavitele.  
+4. Volitelné. Nastavte [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element jako podřízený objekt <`localIssuer`> element a zadejte informace o identitě pro lokálního vystavitele.  
   
-5.  Volitelné. Nastavte [ \<záhlaví >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) element jako podřízený objekt <`localIssuer`> element a zadejte dodatečné hlavičky, které jsou nutné ke správnému adresování lokálního vystavitele.  
+5. Volitelné. Nastavte [ \<záhlaví >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) element jako podřízený objekt <`localIssuer`> element a zadejte dodatečné hlavičky, které jsou nutné ke správnému adresování lokálního vystavitele.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Všimněte si, že případného vystavitele adresu a vazbu jsou pro danou vazbu lokálního vystavitele se pro koncové body, které tuto vazbu používají. Klienti, kteří očekávají, že vždy používejte lokálního vystavitele zajistil nepoužívají takovou vazbu nebo jejich upravte vazbu tak, aby byla adresa vystavitele ve `null`.  

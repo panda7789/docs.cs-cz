@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0e9e4aaef8e5f9ece88f56350065b2b688ba2a93
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0483f1477ee215537d1081fde791d0742d5aec50
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59101559"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299472"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností
 Reflection emit používá stejné rozhraní API v plné nebo částečné důvěryhodnosti, ale některé funkce vyžadují zvláštní oprávnění v částečně důvěryhodným kódem. Navíc reflexe obsahuje funkci, anonymně hostované dynamické metody, který je určen pro použití s částečnou důvěryhodností a sestaveními transparentní pro zabezpečení.  
@@ -59,12 +59,12 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
   
 ##### <a name="to-create-an-application-domain-with-partial-trust"></a>Vytvoření domény aplikace s částečnou důvěryhodností  
   
-1.  Vytvořte sadu oprávnění pro udělení sestavením v doméně aplikace v izolovaném prostoru. V takovém případě se používá sada oprávnění ze zóny Internet.  
+1. Vytvořte sadu oprávnění pro udělení sestavením v doméně aplikace v izolovaném prostoru. V takovém případě se používá sada oprávnění ze zóny Internet.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#2)]
      [!code-vb[HowToEmitCodeInPartialTrust#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#2)]  
   
-2.  Vytvoření <xref:System.AppDomainSetup> objekt k inicializaci domény aplikace s cestou k aplikaci.  
+2. Vytvoření <xref:System.AppDomainSetup> objekt k inicializaci domény aplikace s cestou k aplikaci.  
   
     > [!IMPORTANT]
     >  Pro zjednodušení tento příklad kódu používá aktuální složku. Chcete-li spustit kód, který skutečně pochází z Internetu, použijte samostatnou složku pro nedůvěryhodný kód, a jak je popsáno v [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  
@@ -72,7 +72,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
      [!code-csharp[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#3)]
      [!code-vb[HowToEmitCodeInPartialTrust#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#3)]  
   
-3.  Vytvořte doménu aplikace, zadejte informace o nastavení domény aplikace a sadě oprávnění pro všechna sestavení, které jsou spuštěny v doméně aplikace.  
+3. Vytvořte doménu aplikace, zadejte informace o nastavení domény aplikace a sadě oprávnění pro všechna sestavení, které jsou spuštěny v doméně aplikace.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#5)]
      [!code-vb[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#5)]  
@@ -89,7 +89,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
   
 ##### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Vytvoření domény aplikace s částečnou důvěryhodností plus RMA  
   
-1.  Vytvořte nový <xref:System.Security.Permissions.ReflectionPermission> objektu <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> (RMA) a použijte <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> metodu pro přidání do sady udělení oprávnění.  
+1. Vytvořte nový <xref:System.Security.Permissions.ReflectionPermission> objektu <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> (RMA) a použijte <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> metodu pro přidání do sady udělení oprávnění.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#7)]
      [!code-vb[HowToEmitCodeInPartialTrust#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#7)]  
@@ -99,7 +99,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
     > [!NOTE]
     >  RMA je funkce anonymně hostovaných dynamických metod. Když běžné dynamické metody přeskočí kontroly viditelnosti JIT, emitovaný kódu vyžaduje úplnou důvěryhodnost.  
   
-2.  Vytvořte doménu aplikace, zadejte informace o nastavení domény aplikace a poskytování nastavit.  
+2. Vytvořte doménu aplikace, zadejte informace o nastavení domény aplikace a poskytování nastavit.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#8)]
      [!code-vb[HowToEmitCodeInPartialTrust#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#8)]  
@@ -110,24 +110,24 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
   
 #### <a name="to-define-and-execute-a-method-in-an-application-domain"></a>K definování a spouštění metody v aplikační doméně  
   
-1.  Definujte třídu, která je odvozena z <xref:System.MarshalByRefObject>. To vám umožní k vytvoření instance třídy v jiných doménách aplikace a provádět volání metody přes hranice aplikační domény. Třída v tomto příkladu má název `Worker`.  
+1. Definujte třídu, která je odvozena z <xref:System.MarshalByRefObject>. To vám umožní k vytvoření instance třídy v jiných doménách aplikace a provádět volání metody přes hranice aplikační domény. Třída v tomto příkladu má název `Worker`.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#10)]
      [!code-vb[HowToEmitCodeInPartialTrust#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#10)]  
   
-2.  Definujte veřejnou metodu, která obsahuje kód, který chcete spustit. V tomto příkladu kód vyzařuje jednoduchou dynamickou metodu, vytvoří delegát k provádění metody a vyvolá delegát.  
+2. Definujte veřejnou metodu, která obsahuje kód, který chcete spustit. V tomto příkladu kód vyzařuje jednoduchou dynamickou metodu, vytvoří delegát k provádění metody a vyvolá delegát.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#11)]
      [!code-vb[HowToEmitCodeInPartialTrust#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#11)]  
   
-3.  V hlavní aplikaci získejte zobrazovaný název vašeho sestavení. Tento název se používá při vytváření instance `Worker` třídy v doméně aplikace v izolovaném prostoru.  
+3. V hlavní aplikaci získejte zobrazovaný název vašeho sestavení. Tento název se používá při vytváření instance `Worker` třídy v doméně aplikace v izolovaném prostoru.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#14](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#14)]
      [!code-vb[HowToEmitCodeInPartialTrust#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#14)]  
   
-4.  V hlavní aplikaci vytvořte doménu aplikace v izolovaném prostoru, podle popisu v [první postup](#Setting_up) v tomto názorném postupu. Nemusíte přidávat žádná oprávnění do `Internet` sadu oprávnění, protože `SimpleEmitDemo` metoda používá pouze veřejné metody.  
+4. V hlavní aplikaci vytvořte doménu aplikace v izolovaném prostoru, podle popisu v [první postup](#Setting_up) v tomto názorném postupu. Nemusíte přidávat žádná oprávnění do `Internet` sadu oprávnění, protože `SimpleEmitDemo` metoda používá pouze veřejné metody.  
   
-5.  V hlavní aplikaci vytvořte instanci `Worker` třídy v doméně aplikace v izolovaném prostoru.  
+5. V hlavní aplikaci vytvořte instanci `Worker` třídy v doméně aplikace v izolovaném prostoru.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#12)]
      [!code-vb[HowToEmitCodeInPartialTrust#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#12)]  
@@ -137,7 +137,7 @@ Reflection emit používá stejné rozhraní API v plné nebo částečné dův�
     > [!NOTE]
     >  Pokud použijete tento kód v sadě Visual Studio, musíte změnit název třídy, aby obsahoval obor názvů. Výchozí obor názvů je název projektu. Například pokud je projekt "PartialTrust", název třídy musí být "PartialTrust.Worker".  
   
-6.  Přidejte kód pro volání `SimpleEmitDemo` metody. Volání je Zařazováno přes hranici aplikační domény a kód je prováděn v izolované aplikační doméně.  
+6. Přidejte kód pro volání `SimpleEmitDemo` metody. Volání je Zařazováno přes hranici aplikační domény a kód je prováděn v izolované aplikační doméně.  
   
      [!code-csharp[HowToEmitCodeInPartialTrust#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#13)]
      [!code-vb[HowToEmitCodeInPartialTrust#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#13)]  

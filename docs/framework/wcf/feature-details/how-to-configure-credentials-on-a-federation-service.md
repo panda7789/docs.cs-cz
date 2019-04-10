@@ -8,52 +8,52 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 43347e3afdf55277ee8969954626d02192a10ec5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 33df685b4d14130ae00d59012706b7637924c9be
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59112564"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295429"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service
 Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se skládá z následujících hlavních kroků:  
   
-1.  Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. Další informace o vytváření příslušnou datovou vazbu najdete v tématu [jak: Vytvoření instance WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
+1. Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. Další informace o vytváření příslušnou datovou vazbu najdete v tématu [jak: Vytvoření instance WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
   
-2.  Konfigurace <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> , která určuje, jak vydané tokeny, které se zobrazí ve službě jsou ověřeni.  
+2. Konfigurace <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> , která určuje, jak vydané tokeny, které se zobrazí ve službě jsou ověřeni.  
   
  Toto téma obsahuje podrobné informace o druhém kroku. Další informace o tom, jak funguje federované služby najdete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
   
 ### <a name="to-set-the-properties-of-issuedtokenservicecredential-in-code"></a>Chcete-li nastavit vlastnosti IssuedTokenServiceCredential v kódu  
   
-1.  Použití <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A> vlastnost <xref:System.ServiceModel.Description.ServiceCredentials> třídy vrátit odkaz na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> instance. Vlastnost přistupuje z <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost <xref:System.ServiceModel.ServiceHostBase> třídy.  
+1. Použití <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A> vlastnost <xref:System.ServiceModel.Description.ServiceCredentials> třídy vrátit odkaz na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> instance. Vlastnost přistupuje z <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> vlastnost <xref:System.ServiceModel.ServiceHostBase> třídy.  
   
-2.  Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> vlastnost `true` Pokud samostatně vydané tokeny [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty jsou k ověření. Výchozí hodnota je `false`.  
+2. Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> vlastnost `true` Pokud samostatně vydané tokeny [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty jsou k ověření. Výchozí hodnota je `false`.  
   
-3.  Naplnění kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost s instancí <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy. Jednotlivé instance představují vystavitele, ze kterého bude služba ověřovat tokeny.  
+3. Naplnění kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost s instancí <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy. Jednotlivé instance představují vystavitele, ze kterého bude služba ověřovat tokeny.  
   
     > [!NOTE]
     >  Na rozdíl od klientů kolekci vrácené poskytovatelem <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> vlastnost kolekce známých certifikátů není kolekci s klíčem. Služba přijímá tokeny, které zadané certifikáty vydávat bez ohledu na adresu klienta, který odeslal zprávu obsahující vydaný token (v souladu s další omezení, které jsou popsány dále v tomto tématu).  
   
-4.  Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> vlastnost na jednu z <xref:System.ServiceModel.Security.X509CertificateValidationMode> hodnot výčtu. To lze provést pouze v kódu. Výchozí hodnota je <xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A>.  
+4. Nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> vlastnost na jednu z <xref:System.ServiceModel.Security.X509CertificateValidationMode> hodnot výčtu. To lze provést pouze v kódu. Výchozí hodnota je <xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A>.  
   
-5.  Pokud <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>, přiřaďte instanci vlastní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídu <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> vlastnost.  
+5. Pokud <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>, přiřaďte instanci vlastní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídu <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CustomCertificateValidator%2A> vlastnost.  
   
-6.  Pokud <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> je nastavena na `ChainTrust` nebo `PeerOrChainTrust`, nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.RevocationMode%2A> vlastnost na odpovídající hodnotu z <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> výčtu. Všimněte si, že režim odvolání se nepoužívá v `PeerTrust` nebo `Custom` režimy ověřování.  
+6. Pokud <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> je nastavena na `ChainTrust` nebo `PeerOrChainTrust`, nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.RevocationMode%2A> vlastnost na odpovídající hodnotu z <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> výčtu. Všimněte si, že režim odvolání se nepoužívá v `PeerTrust` nebo `Custom` režimy ověřování.  
   
-7.  V případě potřeby přiřadit instanci vlastního <xref:System.IdentityModel.Tokens.SamlSerializer> třídu <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.SamlSerializer%2A> vlastnost. Uživatelský serializátor zabezpečení kontrolní výrazy SAML (Markup Language) je potřeba například pro analýzu vlastní kontrolní výrazy SAML.  
+7. V případě potřeby přiřadit instanci vlastního <xref:System.IdentityModel.Tokens.SamlSerializer> třídu <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.SamlSerializer%2A> vlastnost. Uživatelský serializátor zabezpečení kontrolní výrazy SAML (Markup Language) je potřeba například pro analýzu vlastní kontrolní výrazy SAML.  
   
 ### <a name="to-set-the-properties-of-issuedtokenservicecredential-in-configuration"></a>Chcete-li nastavit vlastnosti IssuedTokenServiceCredential v konfiguraci  
   
-1.  Vytvoření `<issuedTokenAuthentication>` jako podřízený element <`serviceCredentials`> element.  
+1. Vytvoření `<issuedTokenAuthentication>` jako podřízený element <`serviceCredentials`> element.  
   
-2.  Nastavte `allowUntrustedRsaIssuers` atribut `<issuedTokenAuthentication>` elementu `true` Pokud vystavený token, jako například ověřování [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty.  
+2. Nastavte `allowUntrustedRsaIssuers` atribut `<issuedTokenAuthentication>` elementu `true` Pokud vystavený token, jako například ověřování [!INCLUDE[infocard](../../../../includes/infocard-md.md)] karty.  
   
-3.  Vytvoření `<knownCertificates>` element jako podřízený objekt `<issuedTokenAuthentication>` elementu.  
+3. Vytvoření `<knownCertificates>` element jako podřízený objekt `<issuedTokenAuthentication>` elementu.  
   
-4.  Vytvoření nula nebo více `<add>` prvků jako podřízených prvků `<knownCertificates>` prvek a určete, jak vyhledat certifikát pomocí `storeLocation`, `storeName`, `x509FindType`, a `findValue` atributy.  
+4. Vytvoření nula nebo více `<add>` prvků jako podřízených prvků `<knownCertificates>` prvek a určete, jak vyhledat certifikát pomocí `storeLocation`, `storeName`, `x509FindType`, a `findValue` atributy.  
   
-5.  V případě potřeby nastavte `samlSerializer` atribut <`issuedTokenAuthentication`> element názvu typu vlastního <xref:System.IdentityModel.Tokens.SamlSerializer> třídy.  
+5. V případě potřeby nastavte `samlSerializer` atribut <`issuedTokenAuthentication`> element názvu typu vlastního <xref:System.IdentityModel.Tokens.SamlSerializer> třídy.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad nastaví vlastnosti <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> v kódu.  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ae227ace44ad379b0020a8a7dbbab190fe7d14e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80dc5f72bac436d4935c1697347d588b1a302f86
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604298"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305335"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Postupy: Zrušení dotazu PLINQ
 Následující příklady ukazují dva způsoby, jak zrušení dotazu PLINQ. První příklad ukazuje, jak zrušit dotaz, který se skládá převážně procházení data. Druhý příklad ukazuje, jak zrušit dotaz, který obsahuje funkci uživatele, který je výpočetně náročná.  
@@ -34,9 +34,9 @@ Následující příklady ukazují dva způsoby, jak zrušení dotazu PLINQ. Prv
   
  Obecné pokyny k zrušení vypadá takto:  
   
-1.  Pokud provádíte uživatelský delegát zrušení by měl PLINQ informovat o externí <xref:System.Threading.CancellationToken> a výjimku <xref:System.OperationCanceledException>(externalCT).  
+1. Pokud provádíte uživatelský delegát zrušení by měl PLINQ informovat o externí <xref:System.Threading.CancellationToken> a výjimku <xref:System.OperationCanceledException>(externalCT).  
   
-2.  Pokud dojde k zrušení a nejsou vyvolány žádné výjimky, pak můžete pracovat <xref:System.OperationCanceledException> spíše než výjimku <xref:System.AggregateException>.  
+2. Pokud dojde k zrušení a nejsou vyvolány žádné výjimky, pak můžete pracovat <xref:System.OperationCanceledException> spíše než výjimku <xref:System.AggregateException>.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak zpracovat zrušení, když máte výpočetně náročné funkce v uživatelském kódu.  

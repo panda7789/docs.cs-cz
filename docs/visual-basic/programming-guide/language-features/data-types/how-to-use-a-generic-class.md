@@ -21,12 +21,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 242dd2a6-86c4-4ce7-83f2-f2661803f752
-ms.openlocfilehash: e7d35a900ef4309963ff9de0ea77a12fd4577f12
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: c7fb4c95b6ef09508df57b3a0c08a651b122e251
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969671"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302387"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>Postupy: Použití obecné třídy (Visual Basic)
 Třída, která přebírá *parametry typu* se volá *obecnou třídu*. Pokud používáte obecnou třídu, můžete vygenerovat *vytvořená třída* z něj zadáním *argument typu* pro každou z těchto parametrů. Pak může deklarovat proměnnou typu vytvořeného třídy, a můžete vytvořit instanci třídy konstruovaný a přiřaďte ho k proměnné.  
@@ -37,9 +37,9 @@ Třída, která přebírá *parametry typu* se volá *obecnou třídu*. Pokud po
   
 ### <a name="to-use-a-class-that-takes-a-type-parameter"></a>Použít třídu, která přebírá parametr typu  
   
-1.  Na začátku zdrojového souboru, patří [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) import <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. To umožňuje odkazovat <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> třídy bez nutnosti k plnému určení ho, aby ho odlišil od jiných tříd fronty jako <xref:System.Collections.Queue?displayProperty=nameWithType>.  
+1. Na začátku zdrojového souboru, patří [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) import <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. To umožňuje odkazovat <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> třídy bez nutnosti k plnému určení ho, aby ho odlišil od jiných tříd fronty jako <xref:System.Collections.Queue?displayProperty=nameWithType>.  
   
-2.  Vytvořte objekt běžným způsobem, ale přidat `(Of type)` bezprostředně za název třídy.  
+2. Vytvořte objekt běžným způsobem, ale přidat `(Of type)` bezprostředně za název třídy.  
   
      Následující příklad používá stejnou třídu (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) vytvořte dva objekty fronty, které obsahují položky z různých datových typů. Přidá položky do konce každou frontu a následně odebere a zobrazí položky z přední části každou frontu.  
   
@@ -50,7 +50,7 @@ Třída, která přebírá *parametry typu* se volá *obecnou třídu*. Pokud po
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)
-- [z](../../../../visual-basic/language-reference/statements/of-clause.md)
-- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
+- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
 - [Iterátory](../../../../visual-basic/programming-guide/concepts/iterators.md)

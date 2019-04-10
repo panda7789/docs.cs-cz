@@ -13,12 +13,12 @@ helpviewer_keywords:
 - NotifyIcon component
 - taskbar [Windows Forms], adding icons
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
-ms.openlocfilehash: 18a78b7ecb5268463607508869e77fa163cbd06f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 52c18b959361079aac6b95dc5d4584bf464a306a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59146442"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304516"
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon
 Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu ikonu v oznamovací oblasti na hlavním panelu Stav. Chcete-li zobrazit více ikony ve stavové oblasti, musí mít více <xref:System.Windows.Forms.NotifyIcon> komponenty na formuláři. Pokud chcete nastavit ikony zobrazené pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete také napsat kód <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužná rutina události tak, že něco se stane, když uživatel dvakrát klikne na ikonu. Například může vytvořit dialogové okno se zobrazí uživateli konfigurovat proces na pozadí, který je reprezentován ikonou.  
@@ -28,11 +28,11 @@ Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu i
   
 ### <a name="to-set-the-icon"></a>Chcete-li nastavit ikonu  
   
-1.  Přiřaďte hodnotu <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![VisualStudioEllipsesButton snímek obrazovky](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost  **Vlastnosti** okna a pak vyberete soubor v **otevřít** dialogové okno, které se zobrazí.  
+1. Přiřaďte hodnotu <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![VisualStudioEllipsesButton snímek obrazovky](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost  **Vlastnosti** okna a pak vyberete soubor v **otevřít** dialogové okno, které se zobrazí.  
   
-2.  Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.  
+2. Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.  
   
-3.  Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnosti k odpovídající řetězec popisku.  
+3. Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnosti k odpovídající řetězec popisku.  
   
      V následujícím příkladu kódu nastavena cesta pro umístění ikony **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění taky umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. V následujícím příkladu vyžaduje formulář s <xref:System.Windows.Forms.NotifyIcon> ovládací prvek již přidán. Také budete potřebovat soubor ikony s názvem `Icon.ico`.  
   

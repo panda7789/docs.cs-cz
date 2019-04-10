@@ -2,19 +2,19 @@
 title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-ms.openlocfilehash: 6a5277e26b74ccf54af0cdc5f671516fcc7badb8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 46c9149a7cb1809bf94162649de0a35110bbc697
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58832200"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294506"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)
 Následující příklad ukazuje způsob řazení řádků strukturovaných textu, jako je například textový soubor s oddělovači, podle libovolného pole v řádku. Pole může být určen dynamicky za běhu. Předpokládejme, že pole v scores.csv představují student získal identifikační číslo, za nímž následuje řadu čtyři skóre v testech.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Chcete-li vytvořit soubor, který obsahuje data  
   
-1.  Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
+1. Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
   
 ## <a name="example"></a>Příklad  
   

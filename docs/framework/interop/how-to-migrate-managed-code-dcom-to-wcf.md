@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4f944ddb86e93f4a97c924bc5323e52214455bda
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 74acea566e4b0e407e86cb67d3f521f18c2d68af
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59165188"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307714"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Postupy: Migrace spravovaného kódu DCOM do WCF
 Windows Communication Foundation (WCF) je volba doporučené a zabezpečené přes distribuované DCOM Component Object Model () pro spravovaný kód volání mezi servery a klienty v distribuovaném prostředí. Tento článek popisuje, jak vám migrace kódu z modelu DCOM do WCF v následujících scénářích.  
@@ -325,9 +325,9 @@ public class SessionBoundFactory : ISessionBoundFactory
 ### <a name="step-3-configure-and-start-the-wcf-services"></a>Krok 3: Konfigurace a spuštění služeb WCF  
  K hostování těchto služeb, je potřeba provést následující položky na server konfigurační soubor (web.config).  
   
-1.  Přidat `<client>` část popisující koncový bod pro objekt s relacemi.  V tomto scénáři server také funguje jako klient a musí být nakonfigurované tak, aby to.  
+1. Přidat `<client>` část popisující koncový bod pro objekt s relacemi.  V tomto scénáři server také funguje jako klient a musí být nakonfigurované tak, aby to.  
   
-2.  V `<services>` části, deklarujte koncových bodů služby pro objekt factory a který neobsahuje relace.  To umožňuje klientovi komunikovat s koncovými body služby, získat <xref:System.ServiceModel.EndpointAddress10> a vytvořte kanál s relacemi.  
+2. V `<services>` části, deklarujte koncových bodů služby pro objekt factory a který neobsahuje relace.  To umožňuje klientovi komunikovat s koncovými body služby, získat <xref:System.ServiceModel.EndpointAddress10> a vytvořte kanál s relacemi.  
   
  Tady je příklad souboru konfigurace s tímto nastavením:  
   
@@ -390,13 +390,13 @@ sessionBoundServiceHost.Open();
   
  K vyvolání služby, přidejte kód do klienta provést následující kroky:  
   
-1.  Vytvoření kanálu pro `ISessionBoundFactory` služby.  
+1. Vytvoření kanálu pro `ISessionBoundFactory` služby.  
   
-2.  Používaná k volání kanálu `ISessionBoundFactory` služby získání <xref:System.ServiceModel.EndpointAddress10> objektu.  
+2. Používaná k volání kanálu `ISessionBoundFactory` služby získání <xref:System.ServiceModel.EndpointAddress10> objektu.  
   
-3.  Použití <xref:System.ServiceModel.EndpointAddress10> k vytvoření kanálu pro získání objektu s relacemi.  
+3. Použití <xref:System.ServiceModel.EndpointAddress10> k vytvoření kanálu pro získání objektu s relacemi.  
   
-4.  Volání `SetCurrentValue` a `GetCurrentValue` metody k předvedení zůstává stejná instance objektu se používá napříč více volání.  
+4. Volání `SetCurrentValue` a `GetCurrentValue` metody k předvedení zůstává stejná instance objektu se používá napříč více volání.  
   
 ```csharp  
 ChannelFactory<ISessionBoundFactory> factory =  

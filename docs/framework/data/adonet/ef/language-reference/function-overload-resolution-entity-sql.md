@@ -2,12 +2,12 @@
 title: Řešení přetížení funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 9c648054-3808-4a69-9d3e-98e6a4f9c5ca
-ms.openlocfilehash: e7e80704da9657dccfbfea548df074a95327cdc1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0248fdd3f3ba6afb5c7edca740d9aad3ca74bd03
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59082032"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302514"
 ---
 # <a name="function-overload-resolution-entity-sql"></a>Řešení přetížení funkce (Entity SQL)
 Toto téma popisuje, jak [!INCLUDE[esql](../../../../../../includes/esql-md.md)] funkce jsou vyřešeny.  
@@ -16,13 +16,13 @@ Toto téma popisuje, jak [!INCLUDE[esql](../../../../../../includes/esql-md.md)]
   
  Pokud je to tento případ, se musí určit funkci, která odkazuje výraz použít následující kritéria. Tato kritéria se použijí v uvedeném pořadí. První kritérium, které se vztahuje pouze na jedné funkce je vyřešení funkce.  
   
-1.  **Číslo parametru**. Funkce má stejný počet parametrů zadaných ve výrazu.  
+1. **Číslo parametru**. Funkce má stejný počet parametrů zadaných ve výrazu.  
   
-2.  **Přesná shoda podle typu**. Typ každého argumentu funkce přesně odpovídá typu parametru nebo je literál s hodnotou null.  
+2. **Přesná shoda podle typu**. Typ každého argumentu funkce přesně odpovídá typu parametru nebo je literál s hodnotou null.  
   
-3.  **Se vyhledala shoda podle podtyp**. Typ každého argumentu funkce přesně odpovídá nebo je podtyp typu parametru nebo argument je literál s hodnotou null. V případě, že několik funkce se liší pouze v čísla převody dílčí typ nejde, funkce s nejmenší počet převody dílčí typ je vyřešení funkce.  
+3. **Se vyhledala shoda podle podtyp**. Typ každého argumentu funkce přesně odpovídá nebo je podtyp typu parametru nebo argument je literál s hodnotou null. V případě, že několik funkce se liší pouze v čísla převody dílčí typ nejde, funkce s nejmenší počet převody dílčí typ je vyřešení funkce.  
   
-4.  **Se vyhledala shoda podle typu nebo podtypu povýšení**. Typ každého argumentu funkce přesně odpovídá, je dílčí typ nebo může být povýšen na typ parametru nebo argument je literál s hodnotou null. Znovu v události, ke které několik funkcí se liší pouze v počtu dílčí typ převody a propagačních akcí, funkcí s nejmenší počet dílčí typ převody a propagační akce je vyřešení funkce.  
+4. **Se vyhledala shoda podle typu nebo podtypu povýšení**. Typ každého argumentu funkce přesně odpovídá, je dílčí typ nebo může být povýšen na typ parametru nebo argument je literál s hodnotou null. Znovu v události, ke které několik funkcí se liší pouze v počtu dílčí typ převody a propagačních akcí, funkcí s nejmenší počet dílčí typ převody a propagační akce je vyřešení funkce.  
   
  Pokud žádná z těchto kritérií výsledkem výběru jedné funkce je nejednoznačný výraz volání funkce.  
   

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
-ms.openlocfilehash: 5608f6543cf3a9d123eda4dd64a83085f1e1317c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2fa84052bcf9ca97b903111fc02e319b25deb384
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095058"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296963"
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: Přiřazení uživatelských informací pro seskupení připojení
 
@@ -18,7 +18,7 @@ ms.locfileid: "59095058"
   
 ### <a name="to-assign-user-information-to-a-group-connection"></a>Informace o uživateli přiřadit skupiny připojení  
   
-1.  Vytvoření názvu skupiny připojení.  
+1. Vytvoření názvu skupiny připojení.  
   
     ```csharp  
     SHA1Managed Sha1 = new SHA1Managed();  
@@ -32,7 +32,7 @@ ms.locfileid: "59095058"
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2.  Vytvořte požadavek na konkrétní adresu URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
+2. Vytvořte požadavek na konkrétní adresu URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
@@ -42,7 +42,7 @@ ms.locfileid: "59095058"
     Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ```  
   
-3.  Nastavit přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** k načtení **WebResponse** objektu.  
+3. Nastavit přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** k načtení **WebResponse** objektu.  
   
     ```csharp  
     myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
@@ -58,7 +58,7 @@ ms.locfileid: "59095058"
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
     ```  
   
-4.  Zavřete datový proud odpovědí po použití WebRespose objektu.  
+4. Zavřete datový proud odpovědí po použití WebRespose objektu.  
   
     ```csharp  
     MyWebResponse.Close();  

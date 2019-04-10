@@ -12,12 +12,12 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: 5c963976dd787b40c3e5c6180538051cfe419540
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 85c1d398c1aabbb73d5ae34186775e2c63666cfb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59143140"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309443"
 ---
 # <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>Postupy: Přidávání ovládacích prvků do kolekce a odebírání ovládacích prvků z kolekce za běhu
 Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a odebírání ovládacích prvků z kontejneru ovládacích prvků ve formulářích (například <xref:System.Windows.Forms.Panel> nebo <xref:System.Windows.Forms.GroupBox> ovládací prvek nebo dokonce i samotný formulář). V době návrhu můžete přetáhnout ovládací prvky přímo na panelu nebo skupiny. V době běhu, udržovat tyto ovládací prvky `Controls` kolekce, která uchovává informace o jaké ovládací prvky jsou umístěny na ně.  
@@ -27,11 +27,11 @@ Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a od
   
 ### <a name="to-add-a-control-to-a-collection-programmatically"></a>Přidání ovládacího prvku do kolekce prostřednictvím kódu programu  
   
-1.  Vytvořte instanci ovládacího prvku na Přidat.  
+1. Vytvořte instanci ovládacího prvku na Přidat.  
   
-2.  Nastavení vlastností nového ovládacího prvku.  
+2. Nastavení vlastností nového ovládacího prvku.  
   
-3.  Přidejte ovládací prvek `Controls` kolekce nadřazeného ovládacího prvku.  
+3. Přidejte ovládací prvek `Controls` kolekce nadřazeného ovládacího prvku.  
   
      Následující příklad kódu ukazuje, jak vytvořit instanci <xref:System.Windows.Forms.Button> ovládacího prvku. Vyžaduje formulář s <xref:System.Windows.Forms.Panel> ovládací prvek a zda vytvořena metoda zpracování událostí na tlačítku pro `NewPanelButton_Click`, již existuje.  
   
@@ -66,11 +66,11 @@ Běžné úlohy při vývoji aplikace se přidání ovládacích prvků pro a od
   
 ### <a name="to-remove-controls-from-a-collection-programmatically"></a>Odebrání ovládacích prvků z kolekce prostřednictvím kódu programu  
   
-1.  Odeberte obslužnou rutinu události z události. V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; ve Vizuálu C#, použijte [-= – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md).  
+1. Odeberte obslužnou rutinu události z události. V jazyce Visual Basic použijte [RemoveHandler – příkaz](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) – klíčové slovo; ve Vizuálu C#, použijte [-= – operátor (C# odkaz)](~/docs/csharp/language-reference/operators/subtraction-assignment-operator.md).  
   
-2.  Použití `Remove` metoda odstranit požadovaný ovládací prvek z panelu `Controls` kolekce.  
+2. Použití `Remove` metoda odstranit požadovaný ovládací prvek z panelu `Controls` kolekce.  
   
-3.  Volání <xref:System.Windows.Forms.Control.Dispose%2A> metoda a uvolnit tak prostředky používané ovládací prvek.  
+3. Volání <xref:System.Windows.Forms.Control.Dispose%2A> metoda a uvolnit tak prostředky používané ovládací prvek.  
   
     ```vb  
     Public Sub RemoveControl()  

@@ -2,12 +2,12 @@
 title: Koncepty zabezpečení používané ve službě WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: c995705e998ceee34ac9a3c2fc2343366f92ca00
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3ef2b9c104fa15de17a769c9ca9354e5cef085bf
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59142217"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295546"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
 Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  
@@ -34,15 +34,15 @@ Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty j
 ## <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu  
  WCF poskytuje několik způsobů, jak řídit přístup ke službě nebo operaci. Mezi nimi jsou  
   
-1.  <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
+1. <xref:System.Security.Permissions.PrincipalPermissionAttribute>  
   
-2.  Zprostředkovatel členství technologie ASP.NET  
+2. Zprostředkovatel členství technologie ASP.NET  
   
-3.  Zprostředkovatele rolí ASP.NET  
+3. Zprostředkovatele rolí ASP.NET  
   
-4.  Správce autorizací  
+4. Správce autorizací  
   
-5.  Modelem identity  
+5. Modelem identity  
   
  Další informace o těchto tématech naleznete v tématu [mechanismy řízení přístupu](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md)  
   

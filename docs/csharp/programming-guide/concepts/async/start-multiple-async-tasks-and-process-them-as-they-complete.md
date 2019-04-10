@@ -2,12 +2,12 @@
 title: Zpracování asynchronních úloh po dokončení
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: ec5729eaa8d63eb18b1ac4dea5820cbf834d001b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 335eb5dce74a7f0a2b8af550250105d460212b6a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152357"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304854"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 
@@ -25,17 +25,17 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
 > [!TIP]
 > Pokud nechcete stáhnout projekt, které můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.
 
-1.  Extrahujte soubory, které jste stáhli ze souboru ZIP a poté spusťte Visual Studio.
+1. Extrahujte soubory, které jste stáhli ze souboru ZIP a poté spusťte Visual Studio.
 
-2.  V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
+2. V panelu nabídky zvolte **souboru** > **otevřít** > **projekt či řešení**.
 
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste stáhli a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste stáhli a potom otevřete soubor řešení (.sln) pro AsyncFineTuningCS.
 
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **ProcessTasksAsTheyFinish** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
+4. V **Průzkumníka řešení**, otevřete místní nabídku **ProcessTasksAsTheyFinish** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
 
-5.  Zvolte **F5** spusťte program (nebo stiskněte klávesu **Ctrl**+**F5** klíče spustit program bez ladění).
+5. Zvolte **F5** spusťte program (nebo stiskněte klávesu **Ctrl**+**F5** klíče spustit program bez ladění).
 
-6.  Projekt několikrát spusťte a tak ověřte, že stažené délky se vždy nezobrazí ve stejném pořadí.
+6. Projekt několikrát spusťte a tak ověřte, že stažené délky se vždy nezobrazí ve stejném pořadí.
 
 ## <a name="create-the-program-yourself"></a>Vytvoření programu
 

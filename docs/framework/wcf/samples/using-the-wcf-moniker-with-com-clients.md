@@ -2,12 +2,12 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 3cb610f85c929c371299bc505646cdf924ecdaea
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 14907dd3df66478e8f84b7735a84dd500855448b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59098127"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59294844"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tato ukázka demonstruje použití monikeru služby Windows Communication Foundation (WCF) k integraci webové služby do založené na modelu COM. vývojových prostředích, jako je například Microsoft Office Visual Basic for Applications (Office VBA) nebo Visual Basic 6.0. Tento příklad se skládá z klienta Windows Script Host (VBS), podpůrné klientské knihovny (DLL) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba je služba kalkulačky a klient modelu COM zavolá matematických operací – přidat, odečítání, násobení a rozdělit – ve službě. Činnost klienta je viditelný v ovládacím prvku windows pole zpráv.  
@@ -184,46 +184,46 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 #### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Z příkazový řádek vývojáře pro sadu Visual Studio, otevřete složku \client\bin, v rámci složky specifické pro jazyk.  
+3. Z příkazový řádek vývojáře pro sadu Visual Studio, otevřete složku \client\bin, v rámci složky specifické pro jazyk.  
   
     > [!NOTE]
     >  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že spustit příkazový řádek s oprávněními správce.  
   
-4.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
+4. Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
-5.  Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` k registraci typů modelu COM. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
+5. Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` k registraci typů modelu COM. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
-6.  Zadejte `gacutil.exe /i client.dll` přidat sestavení do globální mezipaměti sestavení.  
+6. Zadejte `gacutil.exe /i client.dll` přidat sestavení do globální mezipaměti sestavení.  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Test, který můžete přístup ke službě pomocí prohlížeče tak, že zadáte tuto adresu: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi.  
+1. Test, který můžete přístup ke službě pomocí prohlížeče tak, že zadáte tuto adresu: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi.  
   
-2.  Spusťte ComCalcClient.vbs z \client ze složky specifické pro jazyk. Činnost klienta se zobrazí v poli zpráv – windows.  
+2. Spusťte ComCalcClient.vbs z \client ze složky specifické pro jazyk. Činnost klienta se zobrazí v poli zpráv – windows.  
   
-3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+3. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Na počítači se službou vytvořte virtuální adresář s názvem ServiceModelSamples. Setupvroot.bat skript dodaný s ukázkou je možné vytvořit na disku a virtuální adresář.  
+1. Na počítači se službou vytvořte virtuální adresář s názvem ServiceModelSamples. Setupvroot.bat skript dodaný s ukázkou je možné vytvořit na disku a virtuální adresář.  
   
-2.  Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači se službou. Nezapomeňte zahrnout soubory v adresáři \bin.  
+2. Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači se službou. Nezapomeňte zahrnout soubory v adresáři \bin.  
   
-3.  Zkopírujte instalační soubor klienta skriptu ze složky \client v rámci složky specifické pro jazyk do klientského počítače.  
+3. Zkopírujte instalační soubor klienta skriptu ze složky \client v rámci složky specifické pro jazyk do klientského počítače.  
   
-4.  V souboru skriptu změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+4. V souboru skriptu změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
-5.  Zkopírujte soubor WSDL na klientském počítači. V souboru WSDL serviceWsdl.xml, nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+5. Zkopírujte soubor WSDL na klientském počítači. V souboru WSDL serviceWsdl.xml, nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
-6.  Zkopírujte Client.dll knihovny ze složky \client\bin v rámci složky specifické pro jazyk do adresáře na klientském počítači.  
+6. Zkopírujte Client.dll knihovny ze složky \client\bin v rámci složky specifické pro jazyk do adresáře na klientském počítači.  
   
-7.  Z příkazového řádku přejděte do této cílové složky v klientském počítači. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], ujistěte se, že příkazový řádek spustit jako správce.  
+7. Z příkazového řádku přejděte do této cílové složky v klientském počítači. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], ujistěte se, že příkazový řádek spustit jako správce.  
   
-8.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
+8. Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
 9. Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` k registraci typů modelu COM. Zajištění byla nastavena tato cesta ke složce, která obsahuje `regasm.exe` před spuštěním příkazu.  
   

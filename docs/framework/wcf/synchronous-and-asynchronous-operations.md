@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 3db7d6b072c7803d96deb17b33a06af3d55aca12
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 3d7e44a468388f6d9a8f30d7fea29ec465cd8664
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59148951"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297704"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
@@ -49,11 +49,11 @@ Toto téma popisuje implementace a volání operace asynchronní služby.
 ### <a name="implementing-an-asynchronous-service-operation"></a>Implementace operace asynchronní služby  
  Asynchronní operace lze provést pomocí jedné z těchto tří metod:  
   
-1.  Asynchronní vzor založený na úlohách  
+1. Asynchronní vzor založený na úlohách  
   
-2.  Asynchronní vzor založený na událostech  
+2. Asynchronní vzor založený na událostech  
   
-3.  Asynchronní vzor IAsyncResult  
+3. Asynchronní vzor IAsyncResult  
   
 #### <a name="task-based-asynchronous-pattern"></a>Asynchronní vzor založený na úlohách  
  Asynchronní vzor založený na úlohách je preferovaný způsob, jak implementovat asynchronní operace, protože je nejjednodušší a většina přímočaré. Chcete-li tuto metodu použijte, jednoduše implementovat vaše operace služby a určit návratový typ úlohy\<T >, kde T je typ vrácený logické operace. Příklad:  

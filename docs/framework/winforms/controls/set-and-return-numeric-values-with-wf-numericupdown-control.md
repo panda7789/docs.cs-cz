@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Windows Forms controls, NumericUpDown
 - NumericUpDown control [Windows Forms], setting and returning values
 ms.assetid: 5bd8f8cd-4c12-49ea-9cc3-2a647d064689
-ms.openlocfilehash: 281fbbd4459230056fcac2e6c684422c91dc0817
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c73200eb1c373f1d723ba82f2e6be5b625496b59
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59119883"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300499"
 ---
 # <a name="how-to-set-and-return-numeric-values-with-the-windows-forms-numericupdown-control"></a>Postupy: Nastavení a vracení číselných hodnot pomocí ovládacího prvku Windows Forms NumericUpDown
 Číselná hodnota prvku modelu Windows Forms <xref:System.Windows.Forms.NumericUpDown> ovládací prvek je dáno jeho <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastnost. Stejně jako u jakékoli jiné vlastnosti můžete psát podmíněného testy pro hodnotu ovládacího prvku. Jednou <xref:System.Windows.Forms.NumericUpDown.Value%2A> je hodnota nastavena, můžete upravit přímo napsáním kódu k provádění operací na něj nebo můžete volat <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> a <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metody.  
   
 ### <a name="to-set-the-numeric-value"></a>Chcete-li nastavit číselnou hodnotu  
   
-1.  Přiřaďte hodnotu <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastností v kódu nebo v okně Vlastnosti.  
+1. Přiřaďte hodnotu <xref:System.Windows.Forms.NumericUpDown.Value%2A> vlastností v kódu nebo v okně Vlastnosti.  
   
     ```vb  
     NumericUpDown1.Value = 55  
@@ -39,7 +39,7 @@ ms.locfileid: "59119883"
   
      -nebo-  
   
-2.  Volání <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> nebo <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metoda chcete zvýšit nebo snížit hodnotu zadanou v <xref:System.Windows.Forms.NumericUpDown.Increment%2A> vlastnost.  
+2. Volání <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> nebo <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> metoda chcete zvýšit nebo snížit hodnotu zadanou v <xref:System.Windows.Forms.NumericUpDown.Increment%2A> vlastnost.  
   
     ```vb  
     NumericUpDown1.UpButton()  

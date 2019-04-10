@@ -12,19 +12,19 @@ helpviewer_keywords:
 - check boxes [Windows Forms], using to set options
 - CheckBox control [Windows Forms], using to set options
 ms.assetid: 2ac70498-7e3e-4e07-8901-ccabaeb5fd3e
-ms.openlocfilehash: 926e89272e9ebedb0668b26b96b1614e85e637ea
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 881996563acef36a1981ca6236c155b8fc56ef0a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095916"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307301"
 ---
 # <a name="how-to-set-options-with-windows-forms-checkbox-controls"></a>Postupy: Nastavení možností pomocí ovládacích prvků Windows Forms CheckBox
 Windows Forms <xref:System.Windows.Forms.CheckBox> ovládacího prvku se používá k uživatelům True/False nebo možnosti Ano nebo ne. Ovládací prvek zobrazí zaškrtávací políčko, pokud je vybrána.  
   
 ### <a name="to-set-options-with-checkbox-controls"></a>Nastavení možností pomocí ovládacích prvků CheckBox  
   
-1.  Zkoumat hodnoty <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnosti k určení stavu a tuto hodnotu můžete nastavit možnost.  
+1. Zkoumat hodnoty <xref:System.Windows.Forms.CheckBox.Checked%2A> vlastnosti k určení stavu a tuto hodnotu můžete nastavit možnost.  
   
      Ve vzorovém kódu níže, kdy <xref:System.Windows.Forms.CheckBox> ovládacího prvku <xref:System.Windows.Forms.CheckBox.CheckedChanged> událost se vyvolá, formuláře <xref:System.Windows.Forms.Control.AllowDrop%2A> je nastavena na `false` Pokud je zaškrtnuto zaškrtávací políčko. To je užitečné v situacích, ve které chcete omezit interakci s uživatelem.  
   

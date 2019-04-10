@@ -2,12 +2,12 @@
 title: Kanál s dělením dat do bloků
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: fafaef5f9e255adc9d8ff50748c7c82a7888c4cd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a60cae7ad3dcfdaa139b8be974ed2d3996b5211d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59073816"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59302696"
 ---
 # <a name="chunking-channel"></a>Kanál s dělením dat do bloků
 Při odesílání velkých zpráv pomocí služby Windows Communication Foundation (WCF), je často žádoucí omezit množství paměti pro zprávy ve vyrovnávací paměti. Jedním z možných řešení je do datového proudu zprávy (za předpokladu, že hromadných dat je v textu). Ale některé protokoly vyžadují celé zprávy do vyrovnávací paměti. Spolehlivé zasílání zpráv a zabezpečení jsou tyto dva příklady. Další možnou příčinou je zdola nahoru objemné zprávy do menších zprávy označované jako bloky dat, odesílání jednoho bloku tyto bloky dat najednou a znovuvytvoření velkých zpráv na straně příjmu. Zrušení bloků nebo ho může používat vlastní kanál k tomu a samotná aplikace udělat tento bloků. Vytváření bloků kanál příklad ukazuje, jak vlastní protokol nebo vrstvami kanálu lze provést bloků a zrušení bloků libovolně velkých zpráv.  
@@ -203,11 +203,11 @@ as the ChunkingStart message.
   
  Na další úrovni, `ChunkingChannel` spoléhá na několik komponent k implementaci bloků protokolu. Na straně odesílání kanál používá vlastní <xref:System.Xml.XmlDictionaryWriter> volá `ChunkingWriter` , který neodpovídá skutečné bloků. `ChunkingWriter` používá vnitřního kanálu přímo k odesílání bloků. Použití vlastní `XmlDictionaryWriter` , umožníte nám odeslat bloky dat jako rozsáhlý na původní zprávu o průběhu zapisování. To znamená, že jsme neukládaného ve vyrovnávací paměti celý původní zprávy.  
   
- ![Dělením dat do bloků kanál](../../../../docs/framework/wcf/samples/media/chunkingchannel1.gif "ChunkingChannel1")  
+ ![Diagram zobrazující průběh vytváření bloků kanálu odeslat architektury.](./media/chunking-channel/chunking-channel-send.gif)  
   
  Na straně příjmu `ChunkingChannel` přetáhne zprávy z vnitřního kanálu a předá je do vlastní <xref:System.Xml.XmlDictionaryReader> volá `ChunkingReader`, který reconstitutes původní zprávu z příchozí datové dávky. `ChunkingChannel` zabalí to `ChunkingReader` ve vlastním `Message` volaná implementaci `ChunkingMessage` a vrátí tuto zprávu vrstvě nad ní. Tato kombinace `ChunkingReader` a `ChunkingMessage` umožňuje zrušení bloku dat původní text zprávy, jako je čten stranou vrstvu nad namísto toho, aby do vyrovnávací paměti celý původní text zprávy. `ChunkingReader` má fronty, kde vyrovnávacích pamětí příchozí bloky dat až po maximální Konfigurovatelný počet bloků dat ve vyrovnávací paměti. Po dosažení maximální limit čtečky čeká na zprávy z fronty vybíjet ve vrstvě nad ní (to znamená podle jen pro čtení z původní text zprávy) nebo dokud se zobrazí maximální počet je dosaženo časového limitu.  
   
- ![Dělením dat do bloků kanál](../../../../docs/framework/wcf/samples/media/chunkingchannel2.gif "ChunkingChannel2")  
+ ![Diagram zobrazující průběh vytváření bloků kanál přijímat architektury.](./media/chunking-channel/chunking-channel-receive.gif)  
   
 ## <a name="chunking-programming-model"></a>Dělením dat do bloků programovací Model  
  Vývojáři služeb můžete zadat zprávy, které mají být blokové použitím `ChunkingBehavior` atribut do operací v rámci smlouvy. Poskytuje atribut `AppliesTo` vlastnost, která umožňuje vývojářům k určení, jestli dat platí pro vstupní zprávy, výstupní zpráva nebo obojí. Následující příklad ukazuje použití `ChunkingBehavior` atribut:  
@@ -309,19 +309,19 @@ interface ITestService
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
+1. Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5.  Nejprve spustit Service.exe, spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
+5. Nejprve spustit Service.exe, spusťte Client.exe a podívejte se na obě okna konzoly pro výstup.  
   
  Při spuštění ukázky, očekává se následující výstup.  
   

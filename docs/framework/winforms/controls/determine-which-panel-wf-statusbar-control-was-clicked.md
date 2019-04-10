@@ -13,12 +13,12 @@ helpviewer_keywords:
 - PanelClick event [Windows Forms], determining panel clicked
 - Panel control [Windows Forms], determining click
 ms.assetid: d14c6092-04b2-4a07-8ddf-0dd11277ff5f
-ms.openlocfilehash: 7900b010c460fd112acbe0ef35e6945939377e1b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1c28f8eaba5c35f762d6fc57ebbddbbb71769c81
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59116581"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304282"
 ---
 # <a name="how-to-determine-which-panel-in-the-windows-forms-statusbar-control-was-clicked"></a>Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím
 > [!IMPORTANT]
@@ -31,7 +31,7 @@ ms.locfileid: "59116581"
   
 ### <a name="to-determine-which-panel-was-clicked"></a>Chcete-li zjistit panelu označeného kliknutím  
   
-1.  V <xref:System.Windows.Forms.StatusBar.PanelClick> obslužná rutina události, použijte `Select Case` (v jazyce Visual Basic) nebo `switch case` (Visual C# nebo [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) zjistíte, došlo ke kliknutí na panelu tím, že kontroluje indexu v argumentech události kliknutí na panel.  
+1. V <xref:System.Windows.Forms.StatusBar.PanelClick> obslužná rutina události, použijte `Select Case` (v jazyce Visual Basic) nebo `switch case` (Visual C# nebo [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) zjistíte, došlo ke kliknutí na panelu tím, že kontroluje indexu v argumentech události kliknutí na panel.  
   
      Následující příklad kódu vyžaduje přítomnost ve formuláři <xref:System.Windows.Forms.StatusBar> ovládacího prvku, `StatusBar1`a dvě <xref:System.Windows.Forms.StatusBarPanel> objekty, `StatusBarPanel1` a `StatusBarPanel2`.  
   

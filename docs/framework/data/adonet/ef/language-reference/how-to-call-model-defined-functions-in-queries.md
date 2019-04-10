@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c804e4d-f348-4afd-9f63-d3f0f24bc6a9
-ms.openlocfilehash: abab705c7ea83318949cf0d75e491905da7896e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2fe0360a0548bddb0ebba566eca0d121c9ec9160
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59099726"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300616"
 ---
 # <a name="how-to-call-model-defined-functions-in-queries"></a>Postupy: Volání modelově definovaných funkcí v dotazech
 Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním modelu v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  
@@ -19,9 +19,9 @@ Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním
   
 ### <a name="to-call-a-function-defined-in-the-conceptual-model"></a>Pro volání funkce definované v konceptuálním modelu  
   
-1.  Běžnou metodou language runtime (CLR) přidáte do vaší aplikace, který se mapuje na funkce definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu se názvu oboru názvů Koncepční model a název funkce v konceptuálním modelu v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
+1. Běžnou metodou language runtime (CLR) přidáte do vaší aplikace, který se mapuje na funkce definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu se názvu oboru názvů Koncepční model a název funkce v konceptuálním modelu v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
   
-2.  Volání funkce v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu.  
+2. Volání funkce v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak volat funkci, která je definována v konceptuálním modelu v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. V příkladu používá model školy. Informace o School modelu najdete v tématu [vytvoření ukázkové databáze školy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) a [generování školní edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).  

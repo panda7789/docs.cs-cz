@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 87d8ac8384fd491b92b59ea8f014b3a521707825
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6c4432d94372ce10ee9ecdf6e441eda3318a20d7
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59130738"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298965"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (kompilátor licencí)
 License Compiler čte textové soubory, které obsahují licenční informace a vytváří binární soubor, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
@@ -52,19 +52,19 @@ License Compiler čte textové soubory, které obsahují licenční informace a 
   
 ## <a name="example"></a>Příklad  
   
-1.  Pokud používáte licencovaného ovládacího prvku `MyCompany.Samples.LicControl1` součástí `Samples.DLL` v aplikaci s názvem `HostApp.exe` *,* můžete vytvořit `HostAppLic.txt` , který obsahuje následující.  
+1. Pokud používáte licencovaného ovládacího prvku `MyCompany.Samples.LicControl1` součástí `Samples.DLL` v aplikaci s názvem `HostApp.exe` *,* můžete vytvořit `HostAppLic.txt` , který obsahuje následující.  
   
     ```  
     MyCompany.Samples.LicControl1, Samples.DLL  
     ```  
   
-2.  Vytvořte soubor .licenses s názvem `HostApp.exe.licenses` pomocí následujícího příkazu.  
+2. Vytvořte soubor .licenses s názvem `HostApp.exe.licenses` pomocí následujícího příkazu.  
   
     ```  
     lc /target:HostApp.exe /complist:hostapplic.txt /i:Samples.DLL /outdir:c:\bindir  
     ```  
   
-3.  Sestavení `HostApp.exe` včetně souboru .licenses jako prostředku. Pokud vytváříte aplikace C#, měli byste k sestavení aplikace použít následující příkaz.  
+3. Sestavení `HostApp.exe` včetně souboru .licenses jako prostředku. Pokud vytváříte aplikace C#, měli byste k sestavení aplikace použít následující příkaz.  
   
     ```  
     csc /res:HostApp.exe.licenses /out:HostApp.exe *.cs  

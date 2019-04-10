@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 841420e609ece83d77bb82f0493d625231d86ec7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e0533265cc96ebf5601579f7fb25b8cbafae73e2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59170921"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305192"
 ---
 # <a name="assembly-versioning"></a>Správa verzí sestavení
 Všechny verze sestavení, které používají modul common language runtime se provádí na úrovni sestavení. Konkrétní verzi sestavení a verze závislých sestavení jsou zaznamenány v manifestu sestavení. Výchozí zásada verze modulu runtime je, že aplikace spuštěny pouze verze by byly vytvořené a testovány, pokud není přepsán explicitní verze zásad v konfiguračních souborech (konfigurační soubor aplikace, soubor zásad vydavatele a Správce konfigurační soubor počítače).  
@@ -25,13 +25,13 @@ Všechny verze sestavení, které používají modul common language runtime se 
   
  Modul runtime provádí několik kroků pro řešení požadavků sestavení na vazby:  
   
-1.  Ověří původní odkaz na sestavení pro určení verze sestavení, které má být vázána.  
+1. Ověří původní odkaz na sestavení pro určení verze sestavení, které má být vázána.  
   
-2.  Kontroly všech příslušných konfiguračních souborů pro použití zásad správy verzí.  
+2. Kontroly všech příslušných konfiguračních souborů pro použití zásad správy verzí.  
   
-3.  Určuje správné sestavení z původní odkaz na sestavení a všechny přesměrování zadaný v konfiguračních souborech a určuje verze, která by měla být vázána na volajícího sestavení.  
+3. Určuje správné sestavení z původní odkaz na sestavení a všechny přesměrování zadaný v konfiguračních souborech a určuje verze, která by měla být vázána na volajícího sestavení.  
   
-4.  Zkontroluje globální mezipaměti sestavení, základů kódu v konfiguračních souborech a pak kontroluje aplikace adresáře a podadresáře pomocí pravidel zjišťování je vysvětleno v [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+4. Zkontroluje globální mezipaměti sestavení, základů kódu v konfiguračních souborech a pak kontroluje aplikace adresáře a podadresáře pomocí pravidel zjišťování je vysvětleno v [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
  Následující obrázek znázorňuje tyto kroky:  
   

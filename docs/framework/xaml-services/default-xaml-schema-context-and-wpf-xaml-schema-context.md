@@ -2,12 +2,12 @@
 title: Výchozí kontext schématu XAML a kontext WPF schématu XAML
 ms.date: 03/30/2017
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
-ms.openlocfilehash: 1312541321e74668e6527c6c54e712342fbb3a17
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0d6a0aa80d8490c509fa9036f88d4f6863ff040c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59124693"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295598"
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
 Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produkční XAML, který používá určité slovníkové XAML s objektem zápis chování, včetně způsob mapování typu řeší, jak jsou načtené sestavení, jak některé čtečky a zapisovače nastavení jsou interpretovány. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružené výchozí kontext schématu XAML, která je založena na systému typů CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro WPF.  
@@ -46,9 +46,9 @@ Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produ
   
 #### <a name="xaml-reader-input-loose-xaml"></a>Čtečka vstup XAML (volný XAML)  
   
-1.  Kontext schématu XAML prochází <xref:System.AppDomain> aplikace hledání už načíst sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
+1. Kontext schématu XAML prochází <xref:System.AppDomain> aplikace hledání už načíst sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  V opačném případě jednu z následujících postupů na základě CLR <xref:System.Reflection.Assembly> rozhraní API slouží k načtení sestavení:  
+2. V opačném případě jednu z následujících postupů na základě CLR <xref:System.Reflection.Assembly> rozhraní API slouží k načtení sestavení:  
   
     -   Pokud se název kvalifikovaný v mapování, zavolejte <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
@@ -61,9 +61,9 @@ Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produ
   
  Všimněte si, že sestavení se odkazuje prostřednictvím `XamlBuildTask` jsou vždy plně kvalifikovaný.  
   
-1.  Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
+1. Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-2.  Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+2. Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
 #### <a name="baml-presentationbuildtask"></a>BAML (PresentationBuildTask)  
  Existují dva aspekty k načtení sestavení BAML: načítání počáteční sestavení, který obsahuje BAML jako součást a načítání sestavení základní typ pro typy, které odkazuje produkční BAML.  
@@ -71,16 +71,16 @@ Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produ
 ##### <a name="assembly-load-for-initial-markup"></a>Načtení sestavení pro počáteční značky:  
  Odkaz na sestavení pro načtení značky z je vždy neúplné.  
   
-1.  Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
+1. Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+2. Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
 ##### <a name="assembly-references-by-baml-types"></a>Odkazy na sestavení podle typů BAML:  
  Odkazy na sestavení pro typy používané v produkčním prostředí BAML jsou vždy plně kvalifikovaný, jako výstup úkolu sestavení.  
   
-1.  Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
+1. Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  Jednu z následujících postupů v opačném případě se používá k načtení sestavení:  
+2. Jednu z následujících postupů v opačném případě se používá k načtení sestavení:  
   
     -   Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   

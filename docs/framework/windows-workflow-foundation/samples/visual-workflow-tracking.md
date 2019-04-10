@@ -2,12 +2,12 @@
 title: Vizuální sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 0143448f-2044-40a0-8a3d-941f6d12468b
-ms.openlocfilehash: c89a63ac80b4705fff5c7714e7f40646c5b5d26d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 6e87b0ef5a0d6fa97c87c99a63fe0e23c389140c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703579"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296456"
 ---
 # <a name="visual-workflow-tracking"></a>Vizuální sledování pracovního postupu
 Tato ukázka předvádí, jak psát visual pracovního postupu pro sledování aplikací pomocí funkce pro ladění k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].
@@ -19,17 +19,17 @@ Tato ukázka předvádí, jak psát visual pracovního postupu pro sledování a
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Otevřete soubor WorkflowSimulator.sln z adresáře ukázka v sadě Visual Studio 2010.
+1. Otevřete soubor WorkflowSimulator.sln z adresáře ukázka v sadě Visual Studio 2010.
 
-2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.
+2. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.
 
-3.  Stisknutím CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře postupu provádění se změněným hostováním.
+3. Stisknutím CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře postupu provádění se změněným hostováním.
 
-4.  Klikněte na tlačítko **souboru** nabídky a vybereme **spustit pracovní postup...** .
+4. Klikněte na tlačítko **souboru** nabídky a vybereme **spustit pracovní postup...** .
 
-5.  Všimněte si, že aktuálně spouštěné aktivity je zvýrazněn, jak je popsáno výše a sledování záznamů se zobrazí na pravé straně okna aplikace.
+5. Všimněte si, že aktuálně spouštěné aktivity je zvýrazněn, jak je popsáno výše a sledování záznamů se zobrazí na pravé straně okna aplikace.
 
-6.  Po dokončení pracovního postupu, klikněte na možnost žádné záznamy sledování, chcete-li prověřit aktivity, které odpovídá.
+6. Po dokončení pracovního postupu, klikněte na možnost žádné záznamy sledování, chcete-li prověřit aktivity, které odpovídá.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

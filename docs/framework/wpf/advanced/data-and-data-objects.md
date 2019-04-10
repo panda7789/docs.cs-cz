@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataFormats class [WPF]
 - DataObject class [WPF]
 ms.assetid: 5967d557-1867-420f-a524-ae3af78402da
-ms.openlocfilehash: 483491ea7408c1df57f31b4b984116b085ea50ba
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9dc195ece60739cf0c137a2893c9e9150e0d4d3f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367541"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312056"
 ---
 # <a name="data-and-data-objects"></a>Data a datové objekty
 Data, která jsou přenášena jako součást operace přetažení myší se ukládají do datového objektu.  Datový objekt koncepčně, obsahuje jeden nebo více následující páry:  
@@ -87,11 +87,11 @@ Data, která jsou přenášena jako součást operace přetažení myší se ukl
 ### <a name="removing-data-from-a-data-object"></a>Odebrání dat z datového objektu  
  Data nelze odebrat přímo z datového objektu.  Efektivně odebrat data z datového objektu, postupujte podle těchto kroků:  
   
-1.  Vytvořte nový objekt data, která bude obsahovat pouze data, která chcete zachovat.  
+1. Vytvořte nový objekt data, která bude obsahovat pouze data, která chcete zachovat.  
   
-2.  "Kopie" požadovaným datům z původního objektu dat na nový datový objekt.  Ke zkopírování dat, použijte jednu z <xref:System.Windows.DataObject.GetData%2A> metody pro načtení <xref:System.Object> obsahující nezpracovaná data a pak použijte jednu z <xref:System.Windows.DataObject.SetData%2A> metody pro přidání dat na nový datový objekt.  
+2. "Kopie" požadovaným datům z původního objektu dat na nový datový objekt.  Ke zkopírování dat, použijte jednu z <xref:System.Windows.DataObject.GetData%2A> metody pro načtení <xref:System.Object> obsahující nezpracovaná data a pak použijte jednu z <xref:System.Windows.DataObject.SetData%2A> metody pro přidání dat na nový datový objekt.  
   
-3.  Nahraďte novým starý datový objekt.  
+3. Nahraďte novým starý datový objekt.  
   
 > [!NOTE]
 >  <xref:System.Windows.DataObject.SetData%2A> Metody pouze přidat data do datového objektu; nenahrazují data, i v případě, že data a formát dat jsou stejné jako předchozí volání. Volání <xref:System.Windows.DataObject.SetData%2A> dvakrát pro stejné data a data formátu způsobí ve formátu data a data byla vyžadována jeho přítomnost dvakrát za datový objekt.

@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: cce69574-5861-4a30-b730-2e18d915d8ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c587f4248205251824be851c135d93784e86c2f1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f444dd512dc27f1b7cda017e2c2848ac41eb56de
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646630"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305036"
 ---
 # <a name="traversing-xml-schemas"></a>Procházení schémat XML
 Procházení schématu XML pomocí schématu objektu modelu (SOM) rozhraní API poskytuje přístup k elementů, atributů a typy, které jsou uložené v SOM. Procházení XML schéma nahrán SOM je také prvním krokem při úpravách schématu XML pomocí rozhraní API SOM.  
@@ -43,19 +43,19 @@ Procházení schématu XML pomocí schématu objektu modelu (SOM) rozhraní API 
   
  Ukázka prochází schématu zákazníka v následujících krocích.  
   
-1.  Přidá schématu zákazníků na novou <xref:System.Xml.Schema.XmlSchemaSet> objekt a potom jej zkompiluje. Žádné schéma ověření upozornění a chyb zjištěných čtení nebo kompilaci schématu jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
+1. Přidá schématu zákazníků na novou <xref:System.Xml.Schema.XmlSchemaSet> objekt a potom jej zkompiluje. Žádné schéma ověření upozornění a chyb zjištěných čtení nebo kompilaci schématu jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
   
-2.  Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objektu z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Protože kompilaci schématu, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
+2. Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objektu z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Protože kompilaci schématu, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
   
-3.  Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaElement> v <xref:System.Xml.Schema.XmlSchemaObjectTable.Values%2A> kolekce po-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> výpis do konzoly název každého prvku kolekce.  
+3. Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaElement> v <xref:System.Xml.Schema.XmlSchemaObjectTable.Values%2A> kolekce po-schema-kompilace <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> výpis do konzoly název každého prvku kolekce.  
   
-4.  Získá komplexní typ `Customer` pomocí elementu <xref:System.Xml.Schema.XmlSchemaComplexType> třídy.  
+4. Získá komplexní typ `Customer` pomocí elementu <xref:System.Xml.Schema.XmlSchemaComplexType> třídy.  
   
-5.  Pokud komplexní typ obsahuje všechny atributy, získá <xref:System.Collections.IDictionaryEnumerator> jak vytvořit výčet každý <xref:System.Xml.Schema.XmlSchemaAttribute> a svým jménem zapisuje do konzoly.  
+5. Pokud komplexní typ obsahuje všechny atributy, získá <xref:System.Collections.IDictionaryEnumerator> jak vytvořit výčet každý <xref:System.Xml.Schema.XmlSchemaAttribute> a svým jménem zapisuje do konzoly.  
   
-6.  Získá částice sequence komplexní typ použití <xref:System.Xml.Schema.XmlSchemaSequence> třídy.  
+6. Získá částice sequence komplexní typ použití <xref:System.Xml.Schema.XmlSchemaSequence> třídy.  
   
-7.  Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaElement> v <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A?displayProperty=nameWithType> kolekce zápisu názvu jednotlivých podřízených prvků do konzoly.  
+7. Iteruje přes každý <xref:System.Xml.Schema.XmlSchemaElement> v <xref:System.Xml.Schema.XmlSchemaSequence.Items%2A?displayProperty=nameWithType> kolekce zápisu názvu jednotlivých podřízených prvků do konzoly.  
   
  Tady je příklad úplného kódu.  
   

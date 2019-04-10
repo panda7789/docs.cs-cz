@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: b4cb2ae3b2db8cdfab962c61ead387baf1bb7158
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c63b249cf16100f0b18d622fdecd7cd375df83d8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613819"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297756"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>Postupy: Hostování služby WCF ve spravované službě Windows
 
@@ -22,13 +22,13 @@ Kód služby obsahuje implementace služby kontraktu služby, služby Windows t�
 
 ## <a name="construct-the-service-and-provide-the-hosting-code"></a>Vytvoření služby a zadejte kód hostování
 
-1.  Vytvořit novou sadu Visual Studio **konzolovou aplikaci** projekt s názvem **služby**.
+1. Vytvořit novou sadu Visual Studio **konzolovou aplikaci** projekt s názvem **služby**.
 
-2.  Přejmenujte soubor Program.cs Service.cs.
+2. Přejmenujte soubor Program.cs Service.cs.
 
-3.  Změna oboru názvů `Microsoft.ServiceModel.Samples`.
+3. Změna oboru názvů `Microsoft.ServiceModel.Samples`.
 
-4.  Přidejte odkazy na následující sestavení:
+4. Přidejte odkazy na následující sestavení:
 
     - System.ServiceModel.dll
 
@@ -36,22 +36,22 @@ Kód služby obsahuje implementace služby kontraktu služby, služby Windows t�
 
     - System.Configuration.Install.dll
 
-5.  Přidejte následující příkazy using do Service.cs.
+5. Přidejte následující příkazy using do Service.cs.
 
      [!code-csharp[c_HowTo_HostInNTService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#0)]
      [!code-vb[c_HowTo_HostInNTService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#0)]
 
-6.  Definovat `ICalculator` kontraktu služby, jak je znázorněno v následujícím kódu.
+6. Definovat `ICalculator` kontraktu služby, jak je znázorněno v následujícím kódu.
 
      [!code-csharp[c_HowTo_HostInNTService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#1)]
      [!code-vb[c_HowTo_HostInNTService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#1)]
 
-7.  Implementace kontraktu služby ve třídě volá `CalculatorService` jak je znázorněno v následujícím kódu.
+7. Implementace kontraktu služby ve třídě volá `CalculatorService` jak je znázorněno v následujícím kódu.
 
      [!code-csharp[c_HowTo_HostInNTService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#2)]
      [!code-vb[c_HowTo_HostInNTService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#2)]
 
-8.  Vytvořit novou třídu s názvem `CalculatorWindowsService` , která dědí z <xref:System.ServiceProcess.ServiceBase> třídy. Přidat místní proměnnou s názvem `serviceHost` na odkaz <xref:System.ServiceModel.ServiceHost> instance. Definovat `Main` metodu, která volá `ServiceBase.Run(new CalculatorWindowsService)`
+8. Vytvořit novou třídu s názvem `CalculatorWindowsService` , která dědí z <xref:System.ServiceProcess.ServiceBase> třídy. Přidat místní proměnnou s názvem `serviceHost` na odkaz <xref:System.ServiceModel.ServiceHost> instance. Definovat `Main` metodu, která volá `ServiceBase.Run(new CalculatorWindowsService)`
 
      [!code-csharp[c_HowTo_HostInNTService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostinntservice/cs/service.cs#3)]
      [!code-vb[c_HowTo_HostInNTService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostinntservice/vb/service.vb#3)]
@@ -116,13 +116,13 @@ Kód služby obsahuje implementace služby kontraktu služby, služby Windows t�
 
 ## <a name="install-and-run-the-service"></a>Instalace a spuštění služby
 
-1.  Sestavte řešení k vytvoření `Service.exe` spustitelný soubor.
+1. Sestavte řešení k vytvoření `Service.exe` spustitelný soubor.
 
-2.  Otevřete Developer Command Prompt pro sadu Visual Studio a přejděte do adresáře projektu. Typ `installutil bin\service.exe` příkazového řádku pro instalaci služby Windows.
+2. Otevřete Developer Command Prompt pro sadu Visual Studio a přejděte do adresáře projektu. Typ `installutil bin\service.exe` příkazového řádku pro instalaci služby Windows.
 
      Typ `services.msc` příkazového řádku pro přístup k správce řízení služeb (SCM). Služba Windows by se zobrazit v služby jako "WCFWindowsServiceSample". Služby WCF můžete reagovat jen na klienty, pokud je služba Windows spuštěná. Spustit službu, klikněte pravým tlačítkem na ho v SCM a vyberte možnost "Spustit" nebo typ **net start WCFWindowsServiceSample** příkazového řádku.
 
-3.  Pokud provedete změny ve službě, musíte ji zastavit a odinstalujte ho. Zastavte službu, klikněte pravým tlačítkem na službu v SCM a vyberte "Stop", nebo **typ net stop WCFWindowsServiceSample** příkazového řádku. Všimněte si, že pokud zastavíte službu Windows a pak spusťte klienta, <xref:System.ServiceModel.EndpointNotFoundException> dojde k výjimce, když se klient pokusí o přístup ke službě. Chcete-li odinstalovat typ služby Windows **installutil /u bin\service.exe** příkazového řádku.
+3. Pokud provedete změny ve službě, musíte ji zastavit a odinstalujte ho. Zastavte službu, klikněte pravým tlačítkem na službu v SCM a vyberte "Stop", nebo **typ net stop WCFWindowsServiceSample** příkazového řádku. Všimněte si, že pokud zastavíte službu Windows a pak spusťte klienta, <xref:System.ServiceModel.EndpointNotFoundException> dojde k výjimce, když se klient pokusí o přístup ke službě. Chcete-li odinstalovat typ služby Windows **installutil /u bin\service.exe** příkazového řádku.
 
 ## <a name="example"></a>Příklad
 

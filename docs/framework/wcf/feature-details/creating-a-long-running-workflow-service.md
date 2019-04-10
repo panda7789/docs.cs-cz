@@ -2,12 +2,12 @@
 title: Vytvoření dlouhodobé služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: 37d3accae017b6725eab5ebb3d7df6e1bc15a56a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ac0cb83ad428ce98a05fd0626fff835162ad0e41
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59109652"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59301344"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Vytvoření dlouhodobé služby pracovního postupu
 Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. Dlouho běžící pracovní postup služby může spuštění pro dlouhou dobu. V určitém okamžiku může přejít pracovního postupu nečinnosti čekání na určité další informace. V takovém případě pracovního postupu se ukládají do databáze SQL a bude odebrán z paměti. Jakmile je k dispozici další informace o instanci pracovního postupu je načten do paměti a pokračuje v provádění.  V tomto scénáři při implementaci velmi zjednodušený pořadí systému.  Klient odešle zprávu počáteční spouštění pořadí služby pracovního postupu. Vrátí ID objednávky do klienta. V tomto okamžiku Služba pracovního postupu je čekání na další zprávu od klienta a přejde do stavu nečinnosti a se ukládají do databáze SQL serveru.  Když klient odešle na další zprávu pro objednávky položku, služba pracovního postupu je načten do paměti a ukončí zpracování objednávky. Ve vzorovém kódu vrátí řetězec s informacemi o tom, že položka se přidala pořadí. Vzorový kód neměl být reálné aplikaci technologie, ale spíše jednoduchý příklad, který znázorňuje dlouhodobé služby pracovního postupu. Toto téma předpokládá, že víte, jak vytvořit řešení a projekty Visual Studio 2012.
@@ -15,33 +15,33 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 ## <a name="prerequisites"></a>Požadavky
  Musíte mít nainstalovaný pomocí tohoto průvodce použijte následující software:
 
-1.  Microsoft SQL Server 2008
+1. Microsoft SQL Server 2008
 
-2.  Visual Studio 2012
+2. Visual Studio 2012
 
-3.  Microsoft  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]
+3. Microsoft  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]
 
-4.  Jste obeznámeni s WCF a Visual Studio 2012 a vědět, jak vytvořit projekty a řešení.
+4. Jste obeznámeni s WCF a Visual Studio 2012 a vědět, jak vytvořit projekty a řešení.
 
 ### <a name="to-setup-the-sql-database"></a>Nastavení databáze SQL
 
-1.  V pořadí pro instance služby pracovního postupu chcete nastavit jako trvalý, musí mít nainstalovaný Microsoft SQL Server a je nutné nakonfigurovat databázi k ukládání instancí trvalá pracovního postupu. Microsoft SQL Management Studio spusťte kliknutím **Start** tlačítka, výběr **všechny programy**, **Microsoft SQL Server 2008**, a **Microsoft SQL Management Studio**.
+1. V pořadí pro instance služby pracovního postupu chcete nastavit jako trvalý, musí mít nainstalovaný Microsoft SQL Server a je nutné nakonfigurovat databázi k ukládání instancí trvalá pracovního postupu. Microsoft SQL Management Studio spusťte kliknutím **Start** tlačítka, výběr **všechny programy**, **Microsoft SQL Server 2008**, a **Microsoft SQL Management Studio**.
 
-2.  Klikněte na tlačítko **připojit** tlačítko pro přihlášení k instanci systému SQL Server
+2. Klikněte na tlačítko **připojit** tlačítko pro přihlášení k instanci systému SQL Server
 
-3.  Klikněte pravým tlačítkem myši **databází** ve stromovém zobrazení a vyberte **novou databázi...** Chcete-li vytvořit novou databázi s názvem `SQLPersistenceStore`.
+3. Klikněte pravým tlačítkem myši **databází** ve stromovém zobrazení a vyberte **novou databázi...** Chcete-li vytvořit novou databázi s názvem `SQLPersistenceStore`.
 
-4.  Spuštění souboru skriptu SqlWorkflowInstanceStoreSchema.sql nachází v adresáři C:\Windows\Microsoft.NET\Framework\v4.0\SQL\en SQLPersistenceStore databázi nastavit potřebné databázová schémata.
+4. Spuštění souboru skriptu SqlWorkflowInstanceStoreSchema.sql nachází v adresáři C:\Windows\Microsoft.NET\Framework\v4.0\SQL\en SQLPersistenceStore databázi nastavit potřebné databázová schémata.
 
-5.  Spuštění souboru skriptu SqlWorkflowInstanceStoreLogic.sql nachází v adresáři C:\Windows\Microsoft.NET\Framework\v4.0\SQL\en SQLPersistenceStore databázi nastavit logiky potřebné databáze.
+5. Spuštění souboru skriptu SqlWorkflowInstanceStoreLogic.sql nachází v adresáři C:\Windows\Microsoft.NET\Framework\v4.0\SQL\en SQLPersistenceStore databázi nastavit logiky potřebné databáze.
 
 ### <a name="to-create-the-web-hosted-workflow-service"></a>Vytvoření webu hostované služby pracovního postupu
 
-1.  Vytvoření prázdného řešení sady Visual Studio 2012, pojmenujte ho `OrderProcessing`.
+1. Vytvoření prázdného řešení sady Visual Studio 2012, pojmenujte ho `OrderProcessing`.
 
-2.  Přidat nový projekt aplikace služby pracovního postupu WCF s názvem `OrderService` do řešení.
+2. Přidat nový projekt aplikace služby pracovního postupu WCF s názvem `OrderService` do řešení.
 
-3.  V dialogovém okně Vlastnosti projektu, vyberte **webové** kartu.
+3. V dialogovém okně Vlastnosti projektu, vyberte **webové** kartu.
 
     1.  V části **spustit akci** vyberte **konkrétní stránka** a určete `Service1.xamlx`.
 
@@ -56,16 +56,16 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
          Tyto dva kroky konfigurace projektu pracovního postupu služby hostované službou IIS.
 
-4.  Otevřete `Service1.xamlx` Pokud to není již otevřete a odstranit existující **ReceiveRequest** a **SendResponse** aktivity.
+4. Otevřete `Service1.xamlx` Pokud to není již otevřete a odstranit existující **ReceiveRequest** a **SendResponse** aktivity.
 
-5.  Vyberte **sekvenční služba** aktivity a kliknutím **proměnné** propojit a přidejte proměnné je znázorněno na následujícím obrázku. To přidá několik proměnných, které se použijí později ve službě pracovního postupu.
+5. Vyberte **sekvenční služba** aktivity a kliknutím **proměnné** propojit a přidejte proměnné je znázorněno na následujícím obrázku. To přidá několik proměnných, které se použijí později ve službě pracovního postupu.
 
     > [!NOTE]
     >  Pokud rutiny CorrelationHandle není v rozevíracím seznamu Typ proměnné, vyberte **vyhledat typy** z rozevíracího seznamu. Zadejte rutiny CorrelationHandle v **název typu** pole, vyberte rutiny CorrelationHandle ze seznamu a klikněte na tlačítko **OK**.
 
      ![Přidejte proměnné](./media/creating-a-long-running-workflow-service/add-variables-sequential-service-activity.gif "přidejte proměnné do aktivity sekvenční služba.")
 
-6.  Přetáhnout myší **ReceiveAndSendReply** šablona aktivity do **sekvenční služba** aktivity. Tuto sadu aktivity bude přijímat zprávy z klienta a odeslat zpět odpověď.
+6. Přetáhnout myší **ReceiveAndSendReply** šablona aktivity do **sekvenční služba** aktivity. Tuto sadu aktivity bude přijímat zprávy z klienta a odeslat zpět odpověď.
 
     1.  Vyberte **Receive** aktivity a nastavte vlastnosti zvýrazněný na následujícím obrázku.
 
@@ -95,7 +95,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
          ![Přidání inicializátor korelace](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "přidat inicializátor korelace.")
 
-7.  Přetáhnout myší jiného **ReceiveAndSendReply** aktivity na konci pracovního postupu (mimo **pořadí** obsahující první **Receive** a  **Odeslání odpovědi SendReply** aktivit). To se druhá zpráva zaslanou klientem a reagovat na něj.
+7. Přetáhnout myší jiného **ReceiveAndSendReply** aktivity na konci pracovního postupu (mimo **pořadí** obsahující první **Receive** a  **Odeslání odpovědi SendReply** aktivit). To se druhá zpráva zaslanou klientem a reagovat na něj.
 
     1.  Vyberte **pořadí** , která obsahuje nově přidaný **Receive** a **odeslání odpovědi SendReply** aktivit a klikněte na tlačítko **proměnné** tlačítko. Přidejte proměnnou zvýrazněný na následujícím obrázku:
 
@@ -131,7 +131,7 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
              ![Nastavení datové vazby pro aktivitu odeslání odpovědi SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "nastavit vlastnost aktivity SendReplyToAddItem.")
 
-8.  Otevřete soubor web.config a přidat následující prvky \<chování > části Povolit trvalost pracovního postupu.
+8. Otevřete soubor web.config a přidat následující prvky \<chování > části Povolit trvalost pracovního postupu.
 
     ```xml
     <sqlWorkflowInstanceStore connectionString="Data Source=your-machine\SQLExpress;Initial Catalog=SQLPersistenceStore;Integrated Security=True;Asynchronous Processing=True" instanceEncodingOption="None" instanceCompletionAction="DeleteAll" instanceLockedExceptionAction="BasicRetry" hostLockRenewalPeriod="00:00:30" runnableInstancesDetectionPeriod="00:00:02" />
@@ -145,17 +145,17 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
 
 ### <a name="to-create-a-client-application-to-call-the-workflow-service"></a>Chcete-li vytvořit klientskou aplikaci k volání služby pracovního postupu
 
-1.  Přidat nový projekt konzolové aplikace volá `OrderClient` do řešení.
+1. Přidat nový projekt konzolové aplikace volá `OrderClient` do řešení.
 
-2.  Přidat odkazy na následující sestavení, které chcete `OrderClient` projektu
+2. Přidat odkazy na následující sestavení, které chcete `OrderClient` projektu
 
     1.  System.ServiceModel.dll
 
     2.  System.ServiceModel.Activities.dll
 
-3.  Přidání odkazu na službu ve službě pracovního postupu a určete `OrderService` jako obor názvů.
+3. Přidání odkazu na službu ve službě pracovního postupu a určete `OrderService` jako obor názvů.
 
-4.  V `Main()` metoda klientský projekt, přidejte následující kód:
+4. V `Main()` metoda klientský projekt, přidejte následující kód:
 
     ```
     static void Main(string[] args)
@@ -182,17 +182,17 @@ Toto téma popisuje postup vytvoření dlouhodobé služby pracovního postupu. 
     }
     ```
 
-5.  Sestavte řešení a spustit `OrderClient` aplikace. Klient se zobrazí následující text:
+5. Sestavte řešení a spustit `OrderClient` aplikace. Klient se zobrazí následující text:
 
     ```Output
     Sending start messageWorkflow service is idle...Press [ENTER] to send an add item message to reactivate the workflow service...
     ```
 
-6.  Pokud chcete ověřit, že služba pracovního postupu byla trvale uložena, spustit SQL Server Management Studio tak, že přejdete **Start** nabídky, výběr **všechny programy**, **Microsoft SQL Server 2008**, **SQL Server Management Studio**.
+6. Pokud chcete ověřit, že služba pracovního postupu byla trvale uložena, spustit SQL Server Management Studio tak, že přejdete **Start** nabídky, výběr **všechny programy**, **Microsoft SQL Server 2008**, **SQL Server Management Studio**.
 
     1.  V levém podokně rozbalte, **databází**, **SQLPersistenceStore**, **zobrazení** klikněte pravým tlačítkem myši **System.Activities.DurableInstancing.Instances**  a vyberte **vybrat prvních 1000 řádků**. V **výsledky** podokně ověření se zobrazí alespoň jednu instanci. Mohou existovat další instance z předchozího spuštění Pokud během spuštění došlo k výjimce. Kliknutím pravým tlačítkem můžete odstranit existující řádky **System.Activities.DurableInstancing.Instances** a vyberete **upravit 200 horní řádky**, stisknutí **Execute** tlačítko, Výběr všech řádků v podokně výsledků a vyberete **odstranit**.  K ověření instance, zobrazí se v databázi je instance aplikace vytvořena, ověřte zobrazení instancí je prázdná před spuštěním klienta. Jakmile klient je spuštěný spusťte znovu dotaz (vybrat prvních 1000 řádků) a ověřte novou instanci se přidala.
 
-7.  Stiskněte klávesu enter k odeslání zprávy přidat položky do služby pracovního postupu. Klient se zobrazí následující text:
+7. Stiskněte klávesu enter k odeslání zprávy přidat položky do služby pracovního postupu. Klient se zobrazí následující text:
 
     ```Output
     Sending add item messageService returned: Item added to orderPress any key to continue . . .

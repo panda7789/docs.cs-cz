@@ -2,12 +2,12 @@
 title: Publikování služby WCF
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: 04912d94568cf144e874513395e6a6f31375fb7c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 33725c2f393529a7e59ed0b3ae1db01a359fb9a5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441434"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299719"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 
@@ -35,13 +35,13 @@ Službě mohou být publikovány do následujícího umístění, cíl.
 
 Proveďte následující kroky k nasazení implementaci služby:
 
-1.  Otevřete Visual Studio se zvýšenými oprávněními (pravým tlačítkem na spustitelný soubor a zvolte **spustit jako správce** ho otevřete).  Pokud používáte IIS 7.0 nebo novější, ujistěte se, že jste nainstalovali "Kompatibilita metabáze služby IIS a služby IIS6, která konfigurace" součást "Windows zapnout nebo vypnout funkce" pomocí ovládacího panelu.
+1. Otevřete Visual Studio se zvýšenými oprávněními (pravým tlačítkem na spustitelný soubor a zvolte **spustit jako správce** ho otevřete).  Pokud používáte IIS 7.0 nebo novější, ujistěte se, že jste nainstalovali "Kompatibilita metabáze služby IIS a služby IIS6, která konfigurace" součást "Windows zapnout nebo vypnout funkce" pomocí ovládacího panelu.
 
-2.  Otevřete projekt služby, vyberte **sestavení** > **publikovat \<název projektu >** z hlavní nabídky, nebo klikněte pravým tlačítkem na projekt v **Průzkumníka řešení**a klikněte na tlačítko **publikovat**.
+2. Otevřete projekt služby, vyberte **sestavení** > **publikovat \<název projektu >** z hlavní nabídky, nebo klikněte pravým tlačítkem na projekt v **Průzkumníka řešení**a klikněte na tlačítko **publikovat**.
 
-3.  **Publikovat** zobrazí se okno. Klikněte na tlačítko **...** . tlačítko k určení, které byste měli nasadit službu do cílového umístění. Můžete vybrat k nasazení aplikace do místní služby IIS, systém souborů nebo FTP. Pokud nasazení aplikace do místní služby IIS, můžete vybrat svůj web a vytvoření webové aplikace v něm, kliknutím **vytvořit novou webovou aplikaci** ikonu v pravém horním rohu.
+3. **Publikovat** zobrazí se okno. Klikněte na tlačítko **...** . tlačítko k určení, které byste měli nasadit službu do cílového umístění. Můžete vybrat k nasazení aplikace do místní služby IIS, systém souborů nebo FTP. Pokud nasazení aplikace do místní služby IIS, můžete vybrat svůj web a vytvoření webové aplikace v něm, kliknutím **vytvořit novou webovou aplikaci** ikonu v pravém horním rohu.
 
-4.  Po kliknutí na **publikovat** v hlavním okně aplikace Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, svc a sestavení do cílového adresáře. . Název .svc bude "ProjectName.ServiceName.svc". Po publikování úspěšně, můžete najít hotlink v okně Výstup Visual Studia, který vypadá podobně jako "připojení k `http://localhost/WebApplicationFolderName...`". Můžete stisknutím klávesy CTRL a klikněte na odkaz a otevřete stránku prohlížeče v sadě Visual Studio, chcete-li zobrazit strukturu adresářů služby.
+4. Po kliknutí na **publikovat** v hlavním okně aplikace Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, svc a sestavení do cílového adresáře. . Název .svc bude "ProjectName.ServiceName.svc". Po publikování úspěšně, můžete najít hotlink v okně Výstup Visual Studia, který vypadá podobně jako "připojení k `http://localhost/WebApplicationFolderName...`". Můžete stisknutím klávesy CTRL a klikněte na odkaz a otevřete stránku prohlížeče v sadě Visual Studio, chcete-li zobrazit strukturu adresářů služby.
 
      Pokud nelze přejít na web, může, protože adresář prohlížeči není povoleno ve službě IIS. Postupujte podle tipy v části "Věcí můžete zkusit", aby je. Alternativně můžete přímo zadat `http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc` zobrazíte stránku vaší služby.
 
@@ -75,6 +75,6 @@ Pokud budete chtít nasadit aplikaci do místní služby IIS, může dojít k ch
 
 ## <a name="see-also"></a>Viz také:
 
-- [Šablony sady Visual Studio pro WCF](../../../docs/framework/wcf/wcf-vs-templates.md)
+- [Šablony Visual Studia pro WCF](../../../docs/framework/wcf/wcf-vs-templates.md)
 - [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
-- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+- [WCF Test Client (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: dac8613d79e3262e4d1fd6ad1599fd01182e329b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819369"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299186"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Operátor musí být jeden z: +,-, *,\,/, ^, &amp;, Like, Mod a, Or, Xor, Not, \< \<, >>...
 Je možné deklarovat pouze operátor, který opravňuje k přetížení. V následující tabulce jsou uvedeny operátory, které je možné deklarovat.  
@@ -29,14 +29,14 @@ Je možné deklarovat pouze operátor, který opravňuje k přetížení. V nás
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Vyberte operátor ze sady přetížitelné operátory.  
+1. Vyberte operátor ze sady přetížitelné operátory.  
   
-2.  Pokud potřebujete funkce přetížení operátor nelze přetížit přímo, vytvořte `Function` proceduru, která mají příslušné parametry a vrátí odpovídající hodnotu.  
+2. Pokud potřebujete funkce přetížení operátor nelze přetížit přímo, vytvořte `Function` proceduru, která mají příslušné parametry a vrátí odpovídající hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Postupy: Definování operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definování operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF'
+title: 'Návod: Hostování ovládacího prvku Windows Forms ve WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-ms.openlocfilehash: 8ef13ef89072f91c847a05facbcce344dda6ade2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4e9b42738ff661425b05a63f2a5e5790c5cbd84b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374882"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59311913"
 ---
-# <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF
+# <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>Návod: Hostování ovládacího prvku Windows Forms ve WPF
 
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nabízí mnoho ovládacích prvků s bohatou sadou funkcí. Však můžete někdy chtít použít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky ve vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] stránky. Například můžete mít značné investice v existujícím [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, nebo můžete mít [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který poskytuje jedinečné funkce.
 
@@ -30,27 +30,27 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 
 ### <a name="to-host-the-maskedtextbox-control"></a>K hostování ovládacím prvkem MaskedTextBox
 
-1.  Vytvoření projektu aplikace WPF s názvem `HostingWfInWpf`.
+1. Vytvoření projektu aplikace WPF s názvem `HostingWfInWpf`.
 
-2.  Přidáte odkazy na následující sestavení.
+2. Přidáte odkazy na následující sestavení.
 
     -   WindowsFormsIntegration
 
     -   System.Windows.Forms
 
-3.  Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+3. Otevřete soubor MainWindow.xaml v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
 
-4.  Název <xref:System.Windows.Controls.Grid> element `grid1`.
+4. Název <xref:System.Windows.Controls.Grid> element `grid1`.
 
      [!code-xaml[HostingWfInWPF#1](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml#1)]
 
-5.  V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
+5. V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window> elementu.
 
-6.  V okně Vlastnosti klikněte na tlačítko **události** kartu.
+6. V okně Vlastnosti klikněte na tlačítko **události** kartu.
 
-7.  Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
+7. Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
 
-8.  Vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.
+8. Vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.
 
      [!code-csharp[HostingWfInWPF#10](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfInWPF/CSharp/HostingWfInWPF/Window1.xaml.cs#10)]
      [!code-vb[HostingWfInWPF#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfInWPF/VisualBasic/HostingWfInWpf/Window1.xaml.vb#10)]
@@ -66,9 +66,9 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF pomocí XAML](walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)
-- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návod: Hostování ovládacího prvku Windows Forms ve WPF pomocí XAML](walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml.md)
+- [Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
 - [Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF](windows-forms-controls-and-equivalent-wpf-controls.md)
 - [Hostování ovládacího prvku Windows Forms v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=160057)

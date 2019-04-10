@@ -2,12 +2,12 @@
 title: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
-ms.openlocfilehash: 8af97658465aa8f82fe3cd01013282c767eb4ba8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: a9a41c354993e0d362c344d523d6c4c4b6f61f10
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58816925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59309651"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (Visual Basic)
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, můžete spustit více úkolů současně a zpracovat je postupně tak, jak jsou dokončeny namísto zpracování v pořadí, ve kterém se spouští.  
@@ -20,19 +20,19 @@ S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWi
 ## <a name="downloading-the-example"></a>Stažení příkladu  
  Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.  
   
-1.  Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
+1. Dekomprimujte soubor, který jste stáhli a poté spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+2. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-3.  V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
+3. V **otevřít projekt** dialogové okno, otevřete složku, která obsahuje ukázkový kód, který jste dekomprimovali a potom otevřete soubor řešení (.sln) pro AsyncFineTuningVB.  
   
-4.  V **Průzkumníka řešení**, otevřete místní nabídku **ProcessTasksAsTheyFinish** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
+4. V **Průzkumníka řešení**, otevřete místní nabídku **ProcessTasksAsTheyFinish** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.  
   
-5.  Stiskněte klávesu F5 ke spuštění projektu.  
+5. Stiskněte klávesu F5 ke spuštění projektu.  
   
      Stiskněte klávesy Ctrl + F5 ke spuštění projektu bez ladění.  
   
-6.  Projekt několikrát spusťte a tak ověřte, že stažené délky se vždy nezobrazí ve stejném pořadí.  
+6. Projekt několikrát spusťte a tak ověřte, že stažené délky se vždy nezobrazí ve stejném pořadí.  
   
  Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.vb na konci tohoto tématu.  
   

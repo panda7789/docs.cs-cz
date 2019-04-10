@@ -3,12 +3,12 @@ title: Sestavení první služby WCF pracující s deklaracemi
 ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
-ms.openlocfilehash: 82ce5441463989507872750eb025899b8f80adee
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 13a17473388582e5fa72cd8d335b6a05204ea509
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59144457"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306609"
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Sestavení první služby WCF pracující s deklaracemi
 ## <a name="applies-to"></a>Platí pro  
@@ -22,11 +22,11 @@ ms.locfileid: "59144457"
   
  ![Diagram zobrazující komponenty technologie WIF základní deklarace identity používající službu WCF.](./media/building-my-first-claims-aware-wcf-service/windows-identify-foundation-basic-claims-aware-windows-communication-foundation-service.gif)  
   
-1.  Klient služby WCF (někdy označovaný jako agent) odesílá pověření službě STS pomocí technologie WIF a po úspěšném ověření vystaví služba STS agentovi token.  
+1. Klient služby WCF (někdy označovaný jako agent) odesílá pověření službě STS pomocí technologie WIF a po úspěšném ověření vystaví služba STS agentovi token.  
   
-2.  Tento token vystavený službou STS odešle agent službě WCF.  
+2. Tento token vystavený službou STS odešle agent službě WCF.  
   
-3.  Služba WCF pracující s deklaracemi je nakonfigurována tak, aby službu STS a jí vystavené tokeny považovala za důvěryhodné. Služba WCF pracující s deklaracemi token ověří a analyzuje pomocí technologie WIF. Vývojáři používají příslušná rozhraní API technologie WIF a typy, například **ClaimsPrincipal** pro potřeby aplikace, jako je například implementace autorizace.  
+3. Služba WCF pracující s deklaracemi je nakonfigurována tak, aby službu STS a jí vystavené tokeny považovala za důvěryhodné. Služba WCF pracující s deklaracemi token ověří a analyzuje pomocí technologie WIF. Vývojáři používají příslušná rozhraní API technologie WIF a typy, například **ClaimsPrincipal** pro potřeby aplikace, jako je například implementace autorizace.  
   
  Počínaje .NET 4.5, WIF je součástí balíčku rozhraní .NET Framework. V rozhraní .NET, což usnadňuje používání deklarací tříd WIF přímo k dispozici v rozhraní umožňuje mnohem hlubší integraci deklarovaných identit. Technologie WIF 4.5 umožňuje začít vyvíjet webové aplikace pracující s deklaracemi bez nutnosti instalovat další samostatné součásti. Třídy WIF jsou nyní rozloženy mezi několik sestavení. Mezi hlavní sestavení patří System.Security.Claims, System.IdentityModel a System.IdentityModel.Services.  
   

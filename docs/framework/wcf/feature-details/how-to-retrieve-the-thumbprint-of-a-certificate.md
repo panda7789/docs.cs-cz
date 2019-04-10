@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
-ms.openlocfilehash: 751c75a69fb93e1ff0ba30dd3b2cfbcea0b94824
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 51debbbcfec2fd5b82460e1dd1d6ece8e77bfc13
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122561"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307753"
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Postupy: Načtení kryptografického otisku certifikátu
 Při psaní aplikace Windows Communication Foundation (WCF), která používá certifikát X.509 pro ověřování, je často nutné zadat deklarací identity najdete v certifikátu. Například musíte zadat kryptografický otisk deklaraci identity při použití <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> výčtu v <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metody. Vyhledání hodnoty deklarace identity sestává ze dvou kroků. Nejprve otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Za druhé jak je zde popsáno, vyhledejte příslušný certifikát a zkopírujte jeho kryptografický otisk (nebo jiné hodnoty deklarace identity).  
@@ -20,21 +20,21 @@ Při psaní aplikace Windows Communication Foundation (WCF), která používá c
   
 ### <a name="to-retrieve-a-certificates-thumbprint"></a>K načtení kryptografického otisku certifikátu  
   
-1.  Otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).)  
+1. Otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).)  
   
-2.  V **kořenový adresář konzoly** okno levým podokně klikněte na tlačítko **certifikáty (místní počítač)**.  
+2. V **kořenový adresář konzoly** okno levým podokně klikněte na tlačítko **certifikáty (místní počítač)**.  
   
-3.  Klikněte na tlačítko **osobní** složky a rozbalte ho.  
+3. Klikněte na tlačítko **osobní** složky a rozbalte ho.  
   
-4.  Klikněte na tlačítko **certifikáty** složky a rozbalte ho.  
+4. Klikněte na tlačítko **certifikáty** složky a rozbalte ho.  
   
-5.  V seznamu certifikátů, mějte na paměti **zamýšlené účely** záhlaví. Vyhledejte certifikát, který obsahuje seznam **ověření klienta** jako zamýšlený účel.  
+5. V seznamu certifikátů, mějte na paměti **zamýšlené účely** záhlaví. Vyhledejte certifikát, který obsahuje seznam **ověření klienta** jako zamýšlený účel.  
   
-6.  Dvakrát klikněte na certifikát.  
+6. Dvakrát klikněte na certifikát.  
   
-7.  V **certifikát** dialogové okno, klikněte na tlačítko **podrobnosti** kartu.  
+7. V **certifikát** dialogové okno, klikněte na tlačítko **podrobnosti** kartu.  
   
-8.  Projděte si seznam polí a klikněte na tlačítko **kryptografický otisk**.  
+8. Projděte si seznam polí a klikněte na tlačítko **kryptografický otisk**.  
   
 9. Kopírování z pole hexadecimálních znaků. Pokud tato miniatura se používá v kódu pro `X509FindType`, odebrat mezery mezi šestnáctkové číslice. Například kryptografický otisk "a9 09 50 2d d8 2a e4 14 33 e6 f8 38 86 b0 0d 42 77 a3 2a 7b" by měl být zadán jako "a909502dd82ae41433e6f83886b00d4277a32a7b" v kódu.  
   

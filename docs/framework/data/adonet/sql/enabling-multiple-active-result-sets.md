@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 9930b0081ef67ed006e399e3e5b44e88a47933c1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 633aaa4a9540d0895252e56dbeabd97200081fc9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59147547"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59304399"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
 Více sad aktivní výsledků (MARS) je funkce, která funguje se serverem SQL Server, aby bylo možné spouštění více dávek na jedno připojení. Pokud MARS je povolené pro použití se serverem SQL Server, přidá každý objekt příkazu použít relaci připojení.  
@@ -102,11 +102,11 @@ string connectionString = "Data Source=MSSQL1;" +
   
  Existují tři možnosti pro takové situaci:  
   
-1.  Spuštění transakce po vytvoření čtečky tak, že není součástí transakce. Každá aktualizace se pak stane vlastní transakce.  
+1. Spuštění transakce po vytvoření čtečky tak, že není součástí transakce. Každá aktualizace se pak stane vlastní transakce.  
   
-2.  Potvrďte veškerou práci po zavření čtečky. Toto řešení má potenciál pro významné hromadné aktualizace.  
+2. Potvrďte veškerou práci po zavření čtečky. Toto řešení má potenciál pro významné hromadné aktualizace.  
   
-3.  Nepoužívejte MARS; Místo toho použijte samostatného připojení pro každý objekt příkazu, jako byste před MARS.  
+3. Nepoužívejte MARS; Místo toho použijte samostatného připojení pro každý objekt příkazu, jako byste před MARS.  
   
 ### <a name="detecting-mars-support"></a>Zjišťování MARS podpory  
  Aplikace můžete zkontrolovat MARS podpory najdete `SqlConnection.ServerVersion` hodnotu. Hlavní číslo musí být pro SQL Server 2005 9 a 10 pro SQL Server 2008.  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '& operator [C#]'
 - AND operator (&) [C#]
 ms.assetid: afa346d5-90ec-4b1f-a2c8-3881f018741d
-ms.openlocfilehash: a799c0e37d6607e8ff72ab984ff5e540a4e11063
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 67d60709e1c6c76071ecfb7aac74c83dec6f372a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236372"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310041"
 ---
 # <a name="amp-operator-c-reference"></a>&amp; – Operátor (referenční dokumentace jazyka C#)
 
@@ -46,9 +46,9 @@ Pro [bool](../keywords/bool.md) operandy, `&` operátor vypočítá logický ope
 
 [!code-csharp-interactive[bool logical AND](~/samples/snippets/csharp/language-reference/operators/AndOperatorExamples.cs#BooleanOperands)]
 
-[Podmiňovací operátor AND](conditional-and-operator.md) `&&` také vypočítá logické a z operandů, ale je vyhodnocen jako druhý operand pouze v případě, že první operand vyhodnocen jako `true`.
+[Podmiňovací operátor AND](boolean-logical-operators.md#conditional-logical-and-operator-) `&&` také vypočítá logický operátor a jeho operandy, ale nebude vyhodnocení druhého operandu, jestli je první operand vyhodnocen jako `false`.
 
-Pro operandy typu s možnou hodnotou Null bool, chování `&` operátor je konzistentní s logikou s hodnotou tři SQL. Další informace najdete v tématu [bool? typ](../../programming-guide/nullable-types/using-nullable-types.md#the-bool-type) část [použití typů s povolenou hodnotou Null](../../programming-guide/nullable-types/using-nullable-types.md) článku.
+Pro operandy typu s možnou hodnotou Null bool, chování `&` operátor je konzistentní s logikou s hodnotou tři SQL. Další informace najdete v tématu [logické operátory s povolenou hodnotou Null logická](boolean-logical-operators.md#nullable-boolean-logical-operators) část [logické logické operátory](boolean-logical-operators.md) článku.
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
@@ -61,10 +61,10 @@ Další informace najdete v tématu [operátoru address-of](~/_csharplang/spec/u
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
+- [Logická logické operátory](boolean-logical-operators.md)
 - [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [| – operátor](or-operator.md)
+- [| operátor](or-operator.md)
 - [^ – operátor](xor-operator.md)
 - [~ – operátor](bitwise-complement-operator.md)
-- [& & – operátor](conditional-and-operator.md)

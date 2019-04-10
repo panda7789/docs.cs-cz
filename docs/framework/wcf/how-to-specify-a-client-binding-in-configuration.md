@@ -2,12 +2,12 @@
 title: 'Postupy: Určení klientské vazby v konfiguraci'
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 81e9b4b5949d3a89749911a30ad199c4f0da300f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 633bb0feeb0f9354bd6ff8ee6637f123d3e3cbf4
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59091561"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295130"
 ---
 # <a name="how-to-specify-a-client-binding-in-configuration"></a>Postupy: Určení klientské vazby v konfiguraci
 V tomto příkladu se vytvoří konzolovou aplikaci klienta pro použití kalkulačky služby a vazby pro tohoto klienta je deklarativně zadaný v konfiguraci. Klient přistupuje k `CalculatorService`, která implementuje `ICalculator` rozhraní a službě i klientovi použít <xref:System.ServiceModel.BasicHttpBinding> třídy.  
@@ -24,31 +24,31 @@ V tomto příkladu se vytvoří konzolovou aplikaci klienta pro použití kalkul
   
 ### <a name="specifying-a-client-binding-in-configuration"></a>Zadání klientské vazby v konfiguraci  
   
-1.  Pomocí Svcutil.exe lze generovat kód z metadat služby z příkazového řádku.  
+1. Pomocí Svcutil.exe lze generovat kód z metadat služby z příkazového řádku.  
   
     ```  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
     ```  
   
-2.  Klient, který je generován obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí splňovat implementace klienta.  
+2. Klient, který je generován obsahuje `ICalculator` rozhraní, které definuje kontrakt služby, který musí splňovat implementace klienta.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/generatedclient.cs#1)]
      [!code-csharp[C_HowTo_ConfigureClientBinding#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/source.cs#1)]  
   
-3.  Také obsahuje implementaci generovaného klienta `ClientCalculator`.  
+3. Také obsahuje implementaci generovaného klienta `ClientCalculator`.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/generatedclient.cs#2)]
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/source.cs#2)]  
   
-4.  Svcutil.exe také generuje konfiguraci pro klienta, který se používá <xref:System.ServiceModel.BasicHttpBinding> třídy. Když pomocí sady Visual Studio, název tohoto souboru App.config. Všimněte si, že adresa a informace o vazbě nejsou zadané kdekoli uvnitř implementace služby. Kód také, není nutné zapsat, aby načítal příslušné informace z konfiguračního souboru.  
+4. Svcutil.exe také generuje konfiguraci pro klienta, který se používá <xref:System.ServiceModel.BasicHttpBinding> třídy. Když pomocí sady Visual Studio, název tohoto souboru App.config. Všimněte si, že adresa a informace o vazbě nejsou zadané kdekoli uvnitř implementace služby. Kód také, není nutné zapsat, aby načítal příslušné informace z konfiguračního souboru.  
   
      [!code-xml[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]   
             
-5.  Vytvoření instance `ClientCalculator` v aplikaci a potom volání operací služby.  
+5. Vytvoření instance `ClientCalculator` v aplikaci a potom volání operací služby.  
   
      [!code-csharp[C_HowTo_ConfigureClientBinding#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/client.cs#3)]  
   
-6.  Kompilace a spuštění klienta.  
+6. Kompilace a spuštění klienta.  
   
 ## <a name="see-also"></a>Viz také:
 

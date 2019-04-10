@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - WCF Data Services, customizing feeds
 ms.assetid: fd16272e-36f2-415e-850e-8a81f2b17525
-ms.openlocfilehash: 186b921f508b1a4b05e766c4f1a3c9e65de04722
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 38550b3b7d6fd7c6808db174017499ec71685140
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59089286"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299849"
 ---
 # <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a>Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje přizpůsobit Atom serializaci v odpovědi služby data tak, aby vlastnosti entity mohou být namapovány na nepoužívané prvky, které jsou definovány v AtomPub protokolu. Toto téma ukazuje, jak definovat atributů mapování pro typy entity v datovém modelu, který je definován v souboru .edmx s použitím poskytovateli rozhraní Entity Framework. Další informace najdete v tématu [přizpůsobení informačního kanálu](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).  
@@ -19,21 +19,21 @@ ms.locfileid: "59089286"
   
 ### <a name="to-manually-modify-the-northwindedmx-file-to-add-feed-customization-attributes"></a>Jak ručně upravit soubor Northwind.edmx přidat atributy přizpůsobení informačního kanálu  
   
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši `Northwind.edmx` souboru a pak klikněte na **otevřít v programu**.  
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši `Northwind.edmx` souboru a pak klikněte na **otevřít v programu**.  
   
-2.  V **otevřít v programu-Northwind.edmx** dialogu **editoru XML**a potom klikněte na tlačítko **OK**.  
+2. V **otevřít v programu-Northwind.edmx** dialogu **editoru XML**a potom klikněte na tlačítko **OK**.  
   
-3.  Vyhledejte `ConceptualModels` prvku a nahraďte existující `Customers` typ entity s následující element, který obsahuje kanálu přizpůsobení mapování atributů:  
+3. Vyhledejte `ConceptualModels` prvku a nahraďte existující `Customers` typ entity s následující element, který obsahuje kanálu přizpůsobení mapování atributů:  
   
      [!code-xml[Astoria Custom Feeds#EdmFeedCustomers](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedcustomers)]  
   
-4.  Uložte změny a zavřete soubor Northwind.edmx.  
+4. Uložte změny a zavřete soubor Northwind.edmx.  
   
-5.  (Volitelné) Klikněte pravým tlačítkem na soubor Northwind.edmx a potom klikněte na tlačítko **spustit vlastní nástroj**.  
+5. (Volitelné) Klikněte pravým tlačítkem na soubor Northwind.edmx a potom klikněte na tlačítko **spustit vlastní nástroj**.  
   
      To obnoví souboru vrstvy objektu, který může být nutné.  
   
-6.  Znovu zkompilujte projekt.  
+6. Znovu zkompilujte projekt.  
   
 ## <a name="example"></a>Příklad  
  V předchozím příkladu vrátí následující výsledek pro identifikátor URI `http://myservice/Northwind.svc/Customers('ALFKI')`.  

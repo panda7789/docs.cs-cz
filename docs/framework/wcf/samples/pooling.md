@@ -2,12 +2,12 @@
 title: Sdružování
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 63363df6d5af2f9f160b0cec5d209c2fc2cc1e10
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: f4df661ad5d831158da55fe3890805ccc5cd695f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59114306"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307207"
 ---
 # <a name="pooling"></a>Sdružování
 Tato ukázka předvádí, jak rozšířit Windows Communication Foundation (WCF) pro podporu sdružování objektů. Vzorek ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobné `ObjectPoolingAttribute` atribut funkce podnikové služby. Sdružování objektů umožňují výrazné zvýšení výkonu aplikace. Pokud se nepoužívá správně však může mít opačný efekt. Sdružování objektů pomáhá snižovat režijní náklady na opětovné vytvoření často používané objekty, které vyžadují rozsáhlé inicializace. Nicméně pokud volání metody na objektu ve fondu trvá značné množství času k dokončení, sdružování objektů zařadí do fronty dalších žádostí ihned poté, co je dosaženo maximální velikosti fondu. Proto může dojít k selhání obsluhovat požadavky na vytvoření některý objekt vyvoláním výjimka časového limitu.  
@@ -237,11 +237,11 @@ Press <ENTER> to exit.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
 >  Pokud používáte Svcutil.exe k opětovnému vytvoření konfigurace pro tuto ukázku, nezapomeňte změnit název koncového bodu v konfiguraci klienta tak, aby odpovídaly klientský kód.  
