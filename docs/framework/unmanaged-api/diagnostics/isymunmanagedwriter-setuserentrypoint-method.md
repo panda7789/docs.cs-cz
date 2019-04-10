@@ -17,32 +17,33 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3bd3d411ad6fe7f65d1eeb25754794704752009e
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: d14d542a8c1d8adeaf56dc1564e8e10121cd4064
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57488354"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224218"
 ---
-# <a name="isymunmanagedwritersetuserentrypoint-method"></a><span data-ttu-id="8dcc3-102">ISymUnmanagedWriter::SetUserEntryPoint – metoda</span><span class="sxs-lookup"><span data-stu-id="8dcc3-102">ISymUnmanagedWriter::SetUserEntryPoint Method</span></span>
-<span data-ttu-id="8dcc3-103">Určuje metodu definovaný uživatelem, která je vstupním bodem pro tento modul.</span><span class="sxs-lookup"><span data-stu-id="8dcc3-103">Specifies the user-defined method that is the entry point for this module.</span></span> <span data-ttu-id="8dcc3-104">Tento vstupní bod může být například hlavní metoda uživatele místo vygenerovaný kompilátorem zástupné procedury před hlavní.</span><span class="sxs-lookup"><span data-stu-id="8dcc3-104">For example, this entry point could be the user's main method instead of compiler-generated stubs before main.</span></span>  
+# <a name="isymunmanagedwritersetuserentrypoint-method"></a><span data-ttu-id="f229f-102">ISymUnmanagedWriter::SetUserEntryPoint – metoda</span><span class="sxs-lookup"><span data-stu-id="f229f-102">ISymUnmanagedWriter::SetUserEntryPoint Method</span></span>
+<span data-ttu-id="f229f-103">Určuje metodu definovaný uživatelem, která je vstupním bodem pro tento modul.</span><span class="sxs-lookup"><span data-stu-id="f229f-103">Specifies the user-defined method that is the entry point for this module.</span></span> <span data-ttu-id="f229f-104">Tento vstupní bod může být například hlavní metoda uživatele místo vygenerovaný kompilátorem zástupné procedury před hlavní.</span><span class="sxs-lookup"><span data-stu-id="f229f-104">For example, this entry point could be the user's main method instead of compiler-generated stubs before main.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8dcc3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8dcc3-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f229f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f229f-105">Syntax</span></span>  
   
 ```  
 HRESULT SetUserEntryPoint(  
     [in] mdMethodDef entryMethod);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8dcc3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="8dcc3-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f229f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f229f-106">Parameters</span></span>  
  `entryMethod`  
- <span data-ttu-id="8dcc3-107">[in] Bodu tokenu metadat pro metodu, která je vstup uživatele.</span><span class="sxs-lookup"><span data-stu-id="8dcc3-107">[in] The metadata token for the method that is the user entry point.</span></span>  
+ <span data-ttu-id="f229f-107">[in] Bodu tokenu metadat pro metodu, která je vstup uživatele.</span><span class="sxs-lookup"><span data-stu-id="f229f-107">[in] The metadata token for the method that is the user entry point.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="8dcc3-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8dcc3-108">Return Value</span></span>  
- <span data-ttu-id="8dcc3-109">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="8dcc3-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="f229f-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f229f-108">Return Value</span></span>  
+ <span data-ttu-id="f229f-109">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="f229f-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8dcc3-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8dcc3-110">Requirements</span></span>  
- <span data-ttu-id="8dcc3-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="8dcc3-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f229f-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f229f-110">Requirements</span></span>  
+ <span data-ttu-id="f229f-111">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="f229f-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8dcc3-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8dcc3-112">See also</span></span>
-- [<span data-ttu-id="8dcc3-113">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8dcc3-113">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a><span data-ttu-id="f229f-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f229f-112">See also</span></span>
+
+- [<span data-ttu-id="f229f-113">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f229f-113">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

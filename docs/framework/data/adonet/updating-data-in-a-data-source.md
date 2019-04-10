@@ -1,24 +1,24 @@
 ---
-title: Aktualizace dat ve zdroji dat.
+title: Aktualizace dat ve zdroji dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: 088dc9507f073553f8a857bd11ecd016f0d94244
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a12fa587d5df0ed95dd0f15ccfbe2ef886185b9e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54730877"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207474"
 ---
-# <a name="updating-data-in-a-data-source"></a><span data-ttu-id="d3dcb-102">Aktualizace dat ve zdroji dat.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-102">Updating Data in a Data Source</span></span>
-<span data-ttu-id="d3dcb-103">Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-103">SQL statements that modify data (such as INSERT, UPDATE, or DELETE) do not return rows.</span></span> <span data-ttu-id="d3dcb-104">Podobně mnoho uložené procedury provést akci, ale nevracejí řádky.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-104">Similarly, many stored procedures perform an action but do not return rows.</span></span> <span data-ttu-id="d3dcb-105">Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-105">To execute commands that do not return rows, create a **Command** object with the appropriate SQL command and a **Connection**, including any required **Parameters**.</span></span> <span data-ttu-id="d3dcb-106">Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-106">Execute the command with the **ExecuteNonQuery** method of the **Command** object.</span></span>  
+# <a name="updating-data-in-a-data-source"></a><span data-ttu-id="d5c7d-102">Aktualizace dat ve zdroji dat</span><span class="sxs-lookup"><span data-stu-id="d5c7d-102">Updating Data in a Data Source</span></span>
+<span data-ttu-id="d5c7d-103">Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-103">SQL statements that modify data (such as INSERT, UPDATE, or DELETE) do not return rows.</span></span> <span data-ttu-id="d5c7d-104">Podobně mnoho uložené procedury provést akci, ale nevracejí řádky.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-104">Similarly, many stored procedures perform an action but do not return rows.</span></span> <span data-ttu-id="d5c7d-105">Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-105">To execute commands that do not return rows, create a **Command** object with the appropriate SQL command and a **Connection**, including any required **Parameters**.</span></span> <span data-ttu-id="d5c7d-106">Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-106">Execute the command with the **ExecuteNonQuery** method of the **Command** object.</span></span>  
   
- <span data-ttu-id="d3dcb-107">**Metodu ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněny příkazu nebo uložené procedury, která se spustil.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-107">The **ExecuteNonQuery** method returns an integer that represents the number of rows affected by the statement or stored procedure that was executed.</span></span> <span data-ttu-id="d3dcb-108">Pokud více příkazy jsou spouštěny, vrácená hodnota je součtem záznamů ovlivněný všechny příkazy spuštění.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-108">If multiple statements are executed, the value returned is the sum of the records affected by all of the statements executed.</span></span>  
+ <span data-ttu-id="d5c7d-107">**Metodu ExecuteNonQuery** metoda vrátí celé číslo představující počet řádků, které jsou ovlivněny příkazu nebo uložené procedury, která se spustil.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-107">The **ExecuteNonQuery** method returns an integer that represents the number of rows affected by the statement or stored procedure that was executed.</span></span> <span data-ttu-id="d5c7d-108">Pokud více příkazy jsou spouštěny, vrácená hodnota je součtem záznamů ovlivněný všechny příkazy spuštění.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-108">If multiple statements are executed, the value returned is the sum of the records affected by all of the statements executed.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d3dcb-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="d3dcb-109">Example</span></span>  
- <span data-ttu-id="d3dcb-110">Příkaz INSERT k vložení záznamu do databáze pomocí provádí následující příklad kódu **metodu ExecuteNonQuery**.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-110">The following code example executes an INSERT statement to insert a record into a database using **ExecuteNonQuery**.</span></span>  
+## <a name="example"></a><span data-ttu-id="d5c7d-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="d5c7d-109">Example</span></span>  
+ <span data-ttu-id="d5c7d-110">Příkaz INSERT k vložení záznamu do databáze pomocí provádí následující příklad kódu **metodu ExecuteNonQuery**.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-110">The following code example executes an INSERT statement to insert a record into a database using **ExecuteNonQuery**.</span></span>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +42,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- <span data-ttu-id="d3dcb-111">Následující příklad kódu Spustí uloženou proceduru vytvořen ukázkový kód v [provádění operací katalogu](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span><span class="sxs-lookup"><span data-stu-id="d3dcb-111">The following code example executes the stored procedure created by the sample code in [Performing Catalog Operations](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span></span> <span data-ttu-id="d3dcb-112">Žádné řádky jsou vráceny pomocí uložené procedury, takže **metodu ExecuteNonQuery** metoda se používá, ale zobrazí vstupní parametr uložené procedury a vrátí výstupní parametr a návratové hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-112">No rows are returned by the stored procedure, so the **ExecuteNonQuery** method is used, but the stored procedure does receive an input parameter and returns an output parameter and a return value.</span></span>  
+ <span data-ttu-id="d5c7d-111">Následující příklad kódu Spustí uloženou proceduru vytvořen ukázkový kód v [provádění operací katalogu](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span><span class="sxs-lookup"><span data-stu-id="d5c7d-111">The following code example executes the stored procedure created by the sample code in [Performing Catalog Operations](../../../../docs/framework/data/adonet/performing-catalog-operations.md).</span></span> <span data-ttu-id="d5c7d-112">Žádné řádky jsou vráceny pomocí uložené procedury, takže **metodu ExecuteNonQuery** metoda se používá, ale zobrazí vstupní parametr uložené procedury a vrátí výstupní parametr a návratové hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-112">No rows are returned by the stored procedure, so the **ExecuteNonQuery** method is used, but the stored procedure does receive an input parameter and returns an output parameter and a return value.</span></span>  
   
- <span data-ttu-id="d3dcb-113">Pro <xref:System.Data.OleDb.OleDbCommand> objektu, **ReturnValue** parametr musí být přidané do **parametry** kolekce první.</span><span class="sxs-lookup"><span data-stu-id="d3dcb-113">For the <xref:System.Data.OleDb.OleDbCommand> object, the **ReturnValue** parameter must be added to the **Parameters** collection first.</span></span>  
+ <span data-ttu-id="d5c7d-113">Pro <xref:System.Data.OleDb.OleDbCommand> objektu, **ReturnValue** parametr musí být přidané do **parametry** kolekce první.</span><span class="sxs-lookup"><span data-stu-id="d5c7d-113">For the <xref:System.Data.OleDb.OleDbCommand> object, the **ReturnValue** parameter must be added to the **Parameters** collection first.</span></span>  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -91,8 +91,9 @@ Int32 categoryID = (Int32) command.Parameters["@Identity"].Value;
 Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d3dcb-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d3dcb-114">See also</span></span>
-- [<span data-ttu-id="d3dcb-115">Použití příkazů pro změny dat</span><span class="sxs-lookup"><span data-stu-id="d3dcb-115">Using Commands to Modify Data</span></span>](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
-- [<span data-ttu-id="d3dcb-116">Aktualizace zdrojů dat pomocí adaptérů dat</span><span class="sxs-lookup"><span data-stu-id="d3dcb-116">Updating Data Sources with DataAdapters</span></span>](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [<span data-ttu-id="d3dcb-117">Příkazy a parametry</span><span class="sxs-lookup"><span data-stu-id="d3dcb-117">Commands and Parameters</span></span>](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [<span data-ttu-id="d3dcb-118">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="d3dcb-118">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="d5c7d-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d5c7d-114">See also</span></span>
+
+- [<span data-ttu-id="d5c7d-115">Použití příkazů pro změny dat</span><span class="sxs-lookup"><span data-stu-id="d5c7d-115">Using Commands to Modify Data</span></span>](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
+- [<span data-ttu-id="d5c7d-116">Aktualizace zdrojů dat pomocí adaptérů dat</span><span class="sxs-lookup"><span data-stu-id="d5c7d-116">Updating Data Sources with DataAdapters</span></span>](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
+- [<span data-ttu-id="d5c7d-117">Příkazy a parametry</span><span class="sxs-lookup"><span data-stu-id="d5c7d-117">Commands and Parameters</span></span>](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [<span data-ttu-id="d5c7d-118">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="d5c7d-118">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)

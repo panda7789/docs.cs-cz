@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bba8d887bc516149135aae61c4f9bdb9a9e0c9d9
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 66efe5ae1fe2154684d2ac6791895b7fcbe4f7b6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57470533"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59225912"
 ---
-# <a name="isymunmanagedwriterdefineglobalvariable-method"></a><span data-ttu-id="a113b-102">ISymUnmanagedWriter::DefineGlobalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="a113b-102">ISymUnmanagedWriter::DefineGlobalVariable Method</span></span>
-<span data-ttu-id="a113b-103">Definuje jeden globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="a113b-103">Defines a single global variable.</span></span>  
+# <a name="isymunmanagedwriterdefineglobalvariable-method"></a><span data-ttu-id="1c39c-102">ISymUnmanagedWriter::DefineGlobalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="1c39c-102">ISymUnmanagedWriter::DefineGlobalVariable Method</span></span>
+<span data-ttu-id="1c39c-103">Definuje jeden globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="1c39c-103">Defines a single global variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a113b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a113b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1c39c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1c39c-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineGlobalVariable(  
@@ -41,38 +41,39 @@ HRESULT DefineGlobalVariable(
     [in] ULONG32      addr3);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a113b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a113b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1c39c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1c39c-105">Parameters</span></span>  
  `name`  
- <span data-ttu-id="a113b-106">[in] Ukazatel `WCHAR` , který definuje název globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="a113b-106">[in] A pointer to a `WCHAR` that defines the global variable name.</span></span>  
+ <span data-ttu-id="1c39c-106">[in] Ukazatel `WCHAR` , který definuje název globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="1c39c-106">[in] A pointer to a `WCHAR` that defines the global variable name.</span></span>  
   
  `attributes`  
- <span data-ttu-id="a113b-107">[in] Globální proměnné atributy.</span><span class="sxs-lookup"><span data-stu-id="a113b-107">[in] The global variable attributes.</span></span>  
+ <span data-ttu-id="1c39c-107">[in] Globální proměnné atributy.</span><span class="sxs-lookup"><span data-stu-id="1c39c-107">[in] The global variable attributes.</span></span>  
   
  `cSig`  
- <span data-ttu-id="a113b-108">[in] A `ULONG32` , který označuje velikost ve znacích, nástroje `signature` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="a113b-108">[in] A `ULONG32` that indicates the size, in characters, of the `signature` buffer.</span></span>  
+ <span data-ttu-id="1c39c-108">[in] A `ULONG32` , který označuje velikost ve znacích, nástroje `signature` vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="1c39c-108">[in] A `ULONG32` that indicates the size, in characters, of the `signature` buffer.</span></span>  
   
  `signature`  
- <span data-ttu-id="a113b-109">[in] Globální proměnné podpis.</span><span class="sxs-lookup"><span data-stu-id="a113b-109">[in] The global variable signature.</span></span>  
+ <span data-ttu-id="1c39c-109">[in] Globální proměnné podpis.</span><span class="sxs-lookup"><span data-stu-id="1c39c-109">[in] The global variable signature.</span></span>  
   
  `addrKind`  
- <span data-ttu-id="a113b-110">[in] Typ adresy.</span><span class="sxs-lookup"><span data-stu-id="a113b-110">[in] The address type.</span></span>  
+ <span data-ttu-id="1c39c-110">[in] Typ adresy.</span><span class="sxs-lookup"><span data-stu-id="1c39c-110">[in] The address type.</span></span>  
   
  `addr1`  
- <span data-ttu-id="a113b-111">[in] První adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="a113b-111">[in] The first address for the parameter specification.</span></span>  
+ <span data-ttu-id="1c39c-111">[in] První adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="1c39c-111">[in] The first address for the parameter specification.</span></span>  
   
  `addr2`  
- <span data-ttu-id="a113b-112">[in] Druhý adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="a113b-112">[in] The second address for the parameter specification.</span></span>  
+ <span data-ttu-id="1c39c-112">[in] Druhý adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="1c39c-112">[in] The second address for the parameter specification.</span></span>  
   
  `addr3`  
- <span data-ttu-id="a113b-113">[in] Je třetí adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="a113b-113">[in] The third address for the parameter specification.</span></span>  
+ <span data-ttu-id="1c39c-113">[in] Je třetí adresa pro specifikaci parametru.</span><span class="sxs-lookup"><span data-stu-id="1c39c-113">[in] The third address for the parameter specification.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a113b-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a113b-114">Return Value</span></span>  
- <span data-ttu-id="a113b-115">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="a113b-115">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="1c39c-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="1c39c-114">Return Value</span></span>  
+ <span data-ttu-id="1c39c-115">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="1c39c-115">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a113b-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a113b-116">Requirements</span></span>  
- <span data-ttu-id="a113b-117">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="a113b-117">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1c39c-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1c39c-116">Requirements</span></span>  
+ <span data-ttu-id="1c39c-117">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="1c39c-117">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a113b-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a113b-118">See also</span></span>
-- [<span data-ttu-id="a113b-119">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a113b-119">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [<span data-ttu-id="a113b-120">DefineLocalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="a113b-120">DefineLocalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)
-- [<span data-ttu-id="a113b-121">DefineGlobalVariable2 – metoda</span><span class="sxs-lookup"><span data-stu-id="a113b-121">DefineGlobalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)
+## <a name="see-also"></a><span data-ttu-id="1c39c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1c39c-118">See also</span></span>
+
+- [<span data-ttu-id="1c39c-119">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1c39c-119">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="1c39c-120">DefineLocalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="1c39c-120">DefineLocalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-definelocalvariable-method.md)
+- [<span data-ttu-id="1c39c-121">DefineGlobalVariable2 – metoda</span><span class="sxs-lookup"><span data-stu-id="1c39c-121">DefineGlobalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-defineglobalvariable2-method.md)

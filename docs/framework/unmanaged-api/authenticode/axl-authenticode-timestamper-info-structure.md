@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: 89e41a81-0f41-45ad-8f20-a120e4ff24fb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d8060e95f06fd53ca985f84666cc81cfe49394fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3d82ed3299f967457fe967d096a238da6143751a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659654"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219158"
 ---
-# <a name="axlauthenticodetimestamperinfo-structure"></a><span data-ttu-id="4862e-102">Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO</span><span class="sxs-lookup"><span data-stu-id="4862e-102">AXL_AUTHENTICODE_TIMESTAMPER_INFO Structure</span></span>
-<span data-ttu-id="4862e-103">Definuje informace o čase stamper Authenticode.</span><span class="sxs-lookup"><span data-stu-id="4862e-103">Defines the Authenticode time stamper information.</span></span>  
+# <a name="axlauthenticodetimestamperinfo-structure"></a><span data-ttu-id="68da5-102">Struktura AXL_AUTHENTICODE_TIMESTAMPER_INFO</span><span class="sxs-lookup"><span data-stu-id="68da5-102">AXL_AUTHENTICODE_TIMESTAMPER_INFO Structure</span></span>
+<span data-ttu-id="68da5-103">Definuje informace o čase stamper Authenticode.</span><span class="sxs-lookup"><span data-stu-id="68da5-103">Defines the Authenticode time stamper information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4862e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4862e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="68da5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68da5-104">Syntax</span></span>  
   
 ```  
 typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {  
@@ -26,15 +26,16 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
 } AXL_AUTHENTICODE_TIMESTAMPER_INFO, * PAXL_AUTHENTICODE_TIMESTAMPER_INFO;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="4862e-105">Členové</span><span class="sxs-lookup"><span data-stu-id="4862e-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="68da5-105">Členové</span><span class="sxs-lookup"><span data-stu-id="68da5-105">Members</span></span>  
   
-|<span data-ttu-id="4862e-106">Člen</span><span class="sxs-lookup"><span data-stu-id="4862e-106">Member</span></span>|<span data-ttu-id="4862e-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4862e-107">Description</span></span>|  
+|<span data-ttu-id="68da5-106">Člen</span><span class="sxs-lookup"><span data-stu-id="68da5-106">Member</span></span>|<span data-ttu-id="68da5-107">Popis</span><span class="sxs-lookup"><span data-stu-id="68da5-107">Description</span></span>|  
 |------------|-----------------|  
-|`cbSize`|<span data-ttu-id="4862e-108">Velikost struktury.</span><span class="sxs-lookup"><span data-stu-id="4862e-108">The size of this structure.</span></span>|  
-|`dwError`|<span data-ttu-id="4862e-109">Kód chyby</span><span class="sxs-lookup"><span data-stu-id="4862e-109">The error code.</span></span>|  
-|`algHash`|<span data-ttu-id="4862e-110">Hashovací algoritmus.</span><span class="sxs-lookup"><span data-stu-id="4862e-110">The hash algorithm.</span></span>|  
-|`ftTimestamp`|<span data-ttu-id="4862e-111">Doba časového razítka.</span><span class="sxs-lookup"><span data-stu-id="4862e-111">The time of the time stamp.</span></span>|  
-|`pChainContext`|<span data-ttu-id="4862e-112">Čas stamper kontextu řetězu.</span><span class="sxs-lookup"><span data-stu-id="4862e-112">The time stamper’s chain context.</span></span>  <span data-ttu-id="4862e-113">Zobrazit [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) struktury.</span><span class="sxs-lookup"><span data-stu-id="4862e-113">See the [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) structure.</span></span>|  
+|`cbSize`|<span data-ttu-id="68da5-108">Velikost struktury.</span><span class="sxs-lookup"><span data-stu-id="68da5-108">The size of this structure.</span></span>|  
+|`dwError`|<span data-ttu-id="68da5-109">Kód chyby</span><span class="sxs-lookup"><span data-stu-id="68da5-109">The error code.</span></span>|  
+|`algHash`|<span data-ttu-id="68da5-110">Hashovací algoritmus.</span><span class="sxs-lookup"><span data-stu-id="68da5-110">The hash algorithm.</span></span>|  
+|`ftTimestamp`|<span data-ttu-id="68da5-111">Doba časového razítka.</span><span class="sxs-lookup"><span data-stu-id="68da5-111">The time of the time stamp.</span></span>|  
+|`pChainContext`|<span data-ttu-id="68da5-112">Čas stamper kontextu řetězu.</span><span class="sxs-lookup"><span data-stu-id="68da5-112">The time stamper’s chain context.</span></span>  <span data-ttu-id="68da5-113">Zobrazit [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) struktury.</span><span class="sxs-lookup"><span data-stu-id="68da5-113">See the [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) structure.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="4862e-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4862e-114">See also</span></span>
-- [<span data-ttu-id="4862e-115">Authenticode</span><span class="sxs-lookup"><span data-stu-id="4862e-115">Authenticode</span></span>](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+## <a name="see-also"></a><span data-ttu-id="68da5-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="68da5-114">See also</span></span>
+
+- [<span data-ttu-id="68da5-115">Authenticode</span><span class="sxs-lookup"><span data-stu-id="68da5-115">Authenticode</span></span>](../../../../docs/framework/unmanaged-api/authenticode/index.md)

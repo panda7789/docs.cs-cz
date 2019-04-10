@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3442c61fd6aea23dfcb66fe63ece0b90b61f5580
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: cbe5f634a5d0580c7e58b03f318da98a0112fa6b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741740"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59208082"
 ---
-# <a name="itypenamefactoryparsetypename-method"></a><span data-ttu-id="9d06f-102">ITypeNameFactory::ParseTypeName – metoda</span><span class="sxs-lookup"><span data-stu-id="9d06f-102">ITypeNameFactory::ParseTypeName Method</span></span>
-<span data-ttu-id="9d06f-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="9d06f-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="itypenamefactoryparsetypename-method"></a><span data-ttu-id="2aca6-102">ITypeNameFactory::ParseTypeName – metoda</span><span class="sxs-lookup"><span data-stu-id="2aca6-102">ITypeNameFactory::ParseTypeName Method</span></span>
+<span data-ttu-id="2aca6-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="2aca6-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9d06f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9d06f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2aca6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2aca6-104">Syntax</span></span>  
   
 ```  
 HRESULT ParseTypeName (  
@@ -37,14 +37,15 @@ HRESULT ParseTypeName (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="9d06f-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9d06f-105">Requirements</span></span>  
- <span data-ttu-id="9d06f-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9d06f-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2aca6-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2aca6-105">Requirements</span></span>  
+ <span data-ttu-id="2aca6-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2aca6-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9d06f-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9d06f-107">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="2aca6-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="2aca6-107">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="9d06f-108">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9d06f-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="2aca6-108">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2aca6-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="9d06f-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9d06f-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ **<span data-ttu-id="2aca6-109">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="2aca6-109">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="9d06f-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9d06f-110">See also</span></span>
-- [<span data-ttu-id="9d06f-111">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="9d06f-111">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="2aca6-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2aca6-110">See also</span></span>
+
+- [<span data-ttu-id="2aca6-111">Rozhraní hostování</span><span class="sxs-lookup"><span data-stu-id="2aca6-111">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

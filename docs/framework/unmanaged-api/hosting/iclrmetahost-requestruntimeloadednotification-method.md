@@ -17,45 +17,45 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18a2156b87fb4bf72e8de7c32c7e20d2a017c900
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 61fce3e06b5245872f7061716e8d995dd5f5043c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479267"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59224874"
 ---
-# <a name="iclrmetahostrequestruntimeloadednotification-method"></a><span data-ttu-id="7d0b9-102">ICLRMetaHost::RequestRuntimeLoadedNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="7d0b9-102">ICLRMetaHost::RequestRuntimeLoadedNotification Method</span></span>
-<span data-ttu-id="7d0b9-103">Poskytuje funkce zpětného volání, která je zaručeně volán při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyl spuštěn.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-103">Provides a callback function that is guaranteed to be called when a common language runtime (CLR) version is first loaded, but not yet started.</span></span> <span data-ttu-id="7d0b9-104">Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-104">This method supersedes the [LockClrVersion](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) function.</span></span>  
+# <a name="iclrmetahostrequestruntimeloadednotification-method"></a><span data-ttu-id="7b838-102">ICLRMetaHost::RequestRuntimeLoadedNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="7b838-102">ICLRMetaHost::RequestRuntimeLoadedNotification Method</span></span>
+<span data-ttu-id="7b838-103">Poskytuje funkce zpětného volání, která je zaručeně volán při společné jazykové verzi modulu runtime (CLR) je prvním načtení, ale ještě nebyl spuštěn.</span><span class="sxs-lookup"><span data-stu-id="7b838-103">Provides a callback function that is guaranteed to be called when a common language runtime (CLR) version is first loaded, but not yet started.</span></span> <span data-ttu-id="7b838-104">Tato metoda nahrazuje [lockclrversion –](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="7b838-104">This method supersedes the [LockClrVersion](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7d0b9-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7d0b9-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7b838-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7b838-105">Syntax</span></span>  
   
 ```  
 HRESULT RequestRuntimeLoadedNotification (  
     [in] RuntimeLoadedCallbackFnPtr pCallbackFunction);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7d0b9-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7d0b9-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7b838-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7b838-106">Parameters</span></span>  
  `pCallbackFunction`  
- <span data-ttu-id="7d0b9-107">[in] Funkce zpětného volání, která se vyvolá po načtení nového modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-107">[in] The callback function that is invoked when a new runtime has been loaded.</span></span>  
+ <span data-ttu-id="7b838-107">[in] Funkce zpětného volání, která se vyvolá po načtení nového modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7b838-107">[in] The callback function that is invoked when a new runtime has been loaded.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="7d0b9-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7d0b9-108">Return Value</span></span>  
- <span data-ttu-id="7d0b9-109">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-109">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="7b838-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7b838-108">Return Value</span></span>  
+ <span data-ttu-id="7b838-109">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="7b838-109">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="7d0b9-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="7d0b9-110">HRESULT</span></span>|<span data-ttu-id="7d0b9-111">Popis</span><span class="sxs-lookup"><span data-stu-id="7d0b9-111">Description</span></span>|  
+|<span data-ttu-id="7b838-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="7b838-110">HRESULT</span></span>|<span data-ttu-id="7b838-111">Popis</span><span class="sxs-lookup"><span data-stu-id="7b838-111">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="7d0b9-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="7d0b9-112">S_OK</span></span>|<span data-ttu-id="7d0b9-113">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-113">The method completed successfully.</span></span>|  
-|<span data-ttu-id="7d0b9-114">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="7d0b9-114">E_POINTER</span></span>|<span data-ttu-id="7d0b9-115">`pCallbackFunction` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-115">`pCallbackFunction` is null.</span></span>|  
+|<span data-ttu-id="7b838-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="7b838-112">S_OK</span></span>|<span data-ttu-id="7b838-113">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="7b838-113">The method completed successfully.</span></span>|  
+|<span data-ttu-id="7b838-114">E_POINTER</span><span class="sxs-lookup"><span data-stu-id="7b838-114">E_POINTER</span></span>|`pCallbackFunction` <span data-ttu-id="7b838-115">má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="7b838-115">is null.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7d0b9-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7d0b9-116">Remarks</span></span>  
- <span data-ttu-id="7d0b9-117">Zpětné volání pracuje následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-117">The callback works in the following way:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7b838-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7b838-116">Remarks</span></span>  
+ <span data-ttu-id="7b838-117">Zpětné volání pracuje následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="7b838-117">The callback works in the following way:</span></span>  
   
--   <span data-ttu-id="7d0b9-118">Zpětné volání je vyvolat pouze při prvním načtení modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-118">The callback is invoked only when a runtime is loaded for the first time.</span></span>  
+-   <span data-ttu-id="7b838-118">Zpětné volání je vyvolat pouze při prvním načtení modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7b838-118">The callback is invoked only when a runtime is loaded for the first time.</span></span>  
   
--   <span data-ttu-id="7d0b9-119">Zpětné volání není vyvolána vícenásobné načtení stejných modulů runtime.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-119">The callback is not invoked for reentrant loads of the same runtime.</span></span>  
+-   <span data-ttu-id="7b838-119">Zpětné volání není vyvolána vícenásobné načtení stejných modulů runtime.</span><span class="sxs-lookup"><span data-stu-id="7b838-119">The callback is not invoked for reentrant loads of the same runtime.</span></span>  
   
--   <span data-ttu-id="7d0b9-120">Pro načtení modulu runtime bez reentrant serializují volání funkce zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-120">For non-reentrant runtime loads, calls to the callback function are serialized.</span></span>  
+-   <span data-ttu-id="7b838-120">Pro načtení modulu runtime bez reentrant serializují volání funkce zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="7b838-120">For non-reentrant runtime loads, calls to the callback function are serialized.</span></span>  
   
- <span data-ttu-id="7d0b9-121">Funkce zpětného volání obsahuje následující prototyp:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-121">The callback function has the following prototype:</span></span>  
+ <span data-ttu-id="7b838-121">Funkce zpětného volání obsahuje následující prototyp:</span><span class="sxs-lookup"><span data-stu-id="7b838-121">The callback function has the following prototype:</span></span>  
   
 ```  
 typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(  
@@ -64,40 +64,41 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
                      CallbackThreadUnsetFnPtr pfnCallbackThreadUnset);  
 ```  
   
- <span data-ttu-id="7d0b9-122">Prototypy funkcí zpětného volání jsou následující:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-122">The callback function prototypes are as follows:</span></span>  
+ <span data-ttu-id="7b838-122">Prototypy funkcí zpětného volání jsou následující:</span><span class="sxs-lookup"><span data-stu-id="7b838-122">The callback function prototypes are as follows:</span></span>  
   
--   <span data-ttu-id="7d0b9-123">`pfnCallbackThreadSet`:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-123">`pfnCallbackThreadSet`:</span></span>  
+-   `pfnCallbackThreadSet`<span data-ttu-id="7b838-123">:</span><span class="sxs-lookup"><span data-stu-id="7b838-123">:</span></span>  
   
     ```  
     typedef HRESULT (__stdcall *CallbackThreadSetFnPtr)();  
     ```  
   
--   <span data-ttu-id="7d0b9-124">`pfnCallbackThreadUnset`:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-124">`pfnCallbackThreadUnset`:</span></span>  
+-   `pfnCallbackThreadUnset`<span data-ttu-id="7b838-124">:</span><span class="sxs-lookup"><span data-stu-id="7b838-124">:</span></span>  
   
     ```  
     typedef HRESULT (__stdcall *CallbackThreadUnsetFnPtr)();  
     ```  
   
- <span data-ttu-id="7d0b9-125">Pokud si klade za cíl hostitele k načtení nebo způsobí jiný modul runtime načtení vícenásobné způsobem, `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` parametry, které jsou k dispozici při zpětném volání funkce musí použít následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-125">If the host intends to load or cause another runtime to be loaded in a reentrant manner, the `pfnCallbackThreadSet` and `pfnCallbackThreadUnset` parameters that are provided in the callback function must be used in the following way:</span></span>  
+ <span data-ttu-id="7b838-125">Pokud si klade za cíl hostitele k načtení nebo způsobí jiný modul runtime načtení vícenásobné způsobem, `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` parametry, které jsou k dispozici při zpětném volání funkce musí použít následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="7b838-125">If the host intends to load or cause another runtime to be loaded in a reentrant manner, the `pfnCallbackThreadSet` and `pfnCallbackThreadUnset` parameters that are provided in the callback function must be used in the following way:</span></span>  
   
--   <span data-ttu-id="7d0b9-126">`pfnCallbackThreadSet` musí být volána vláknem, které může způsobit, že modul runtime zatížení předtím, než dojde k pokusu o takové zatížení.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-126">`pfnCallbackThreadSet` must be called by the thread that might cause a runtime load before such a load is attempted.</span></span>  
+-   `pfnCallbackThreadSet` <span data-ttu-id="7b838-126">musí být volána vláknem, které může způsobit, že modul runtime zatížení předtím, než dojde k pokusu o takové zatížení.</span><span class="sxs-lookup"><span data-stu-id="7b838-126">must be called by the thread that might cause a runtime load before such a load is attempted.</span></span>  
   
--   <span data-ttu-id="7d0b9-127">`pfnCallbackThreadUnset` musí být volána, když vlákno již způsobí, že modul runtime zatížení (a před návratem z počáteční zpětné volání).</span><span class="sxs-lookup"><span data-stu-id="7d0b9-127">`pfnCallbackThreadUnset` must be called when the thread will no longer cause such a runtime load (and before returning from the initial callback).</span></span>  
+-   `pfnCallbackThreadUnset` <span data-ttu-id="7b838-127">musí být volána, když vlákno již způsobí, že modul runtime zatížení (a před návratem z počáteční zpětné volání).</span><span class="sxs-lookup"><span data-stu-id="7b838-127">must be called when the thread will no longer cause such a runtime load (and before returning from the initial callback).</span></span>  
   
--   <span data-ttu-id="7d0b9-128">`pfnCallbackThreadSet` a `pfnCallbackThreadUnset` jsou mimo reentrant.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-128">`pfnCallbackThreadSet` and `pfnCallbackThreadUnset` are both non-reentrant.</span></span>  
+-   `pfnCallbackThreadSet` <span data-ttu-id="7b838-128">a `pfnCallbackThreadUnset` jsou mimo reentrant.</span><span class="sxs-lookup"><span data-stu-id="7b838-128">and `pfnCallbackThreadUnset` are both non-reentrant.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7d0b9-129">Hostování aplikací nesmějí volat `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo obor `pCallbackFunction` parametru.</span><span class="sxs-lookup"><span data-stu-id="7d0b9-129">Host applications must not call `pfnCallbackThreadSet` and `pfnCallbackThreadUnset` outside the scope of the `pCallbackFunction` parameter.</span></span>  
+>  <span data-ttu-id="7b838-129">Hostování aplikací nesmějí volat `pfnCallbackThreadSet` a `pfnCallbackThreadUnset` mimo obor `pCallbackFunction` parametru.</span><span class="sxs-lookup"><span data-stu-id="7b838-129">Host applications must not call `pfnCallbackThreadSet` and `pfnCallbackThreadUnset` outside the scope of the `pCallbackFunction` parameter.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7d0b9-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7d0b9-130">Requirements</span></span>  
- <span data-ttu-id="7d0b9-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7d0b9-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7b838-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7b838-130">Requirements</span></span>  
+ <span data-ttu-id="7b838-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7b838-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7d0b9-132">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="7d0b9-132">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="7b838-132">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="7b838-132">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="7d0b9-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7d0b9-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="7b838-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7b838-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="7d0b9-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7d0b9-134">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ **<span data-ttu-id="7b838-134">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="7b838-134">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="7d0b9-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d0b9-135">See also</span></span>
-- [<span data-ttu-id="7d0b9-136">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7d0b9-136">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
-- [<span data-ttu-id="7d0b9-137">Hostování</span><span class="sxs-lookup"><span data-stu-id="7d0b9-137">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a><span data-ttu-id="7b838-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7b838-135">See also</span></span>
+
+- [<span data-ttu-id="7b838-136">ICLRMetaHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7b838-136">ICLRMetaHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)
+- [<span data-ttu-id="7b838-137">Hostování</span><span class="sxs-lookup"><span data-stu-id="7b838-137">Hosting</span></span>](../../../../docs/framework/unmanaged-api/hosting/index.md)
