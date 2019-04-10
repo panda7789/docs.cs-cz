@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: 69312ca3512c5407185df11e66d95ce9f5cdddff
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: c91e69e3d9f17f758990b8385f6b8d0a1c03bef6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412289"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344738"
 ---
 # <a name="-target-visual-basic"></a>-target (Visual Basic)
 Určuje formát výstupu kompilátoru.  
@@ -42,11 +42,11 @@ Určuje formát výstupu kompilátoru.
   
 ### <a name="to-set--target-in-the-visual-studio-ide"></a>Chcete-li nastavit – cíl v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
+1. Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.   
   
-2.  Klikněte na tlačítko **aplikace** kartu.  
+2. Klikněte na tlačítko **aplikace** kartu.  
   
-3.  Upravte hodnotu v **typ aplikace** pole.  
+3. Upravte hodnotu v **typ aplikace** pole.  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `in.vb`, vytváření `in.dll`:  
@@ -57,11 +57,11 @@ vbc -target:library in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
 - [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
 - [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)
-- [Sestavení v .NET](../../../standard/assembly/index.md)
+- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -3,12 +3,12 @@ title: Návrh s typy s možnou hodnotou Null odkazů
 description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou Null odkazů. Se dozvíte, jak vyjádřit svůj návrh úmyslem při může mít hodnotu null referenční hodnoty a nechat kompilátor vynucovat, když nemohou být null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 57f738771a6f1d2cebe7af546d06ac7d7289a338
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: fac83d8f61b725a4a2163c9cd42911fe60d12263
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56443265"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427289"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: Migrovat existující kód s typy s možnou hodnotou Null odkazů
 
@@ -24,7 +24,7 @@ V tomto kurzu se dozvíte jak:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač pro spuštění .NET Core, včetně C# 8.0 beta verze kompilátoru. C# 8 beta verze kompilátoru je k dispozici s [Visual Studio 2019 preview 2 a novější](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019+preview), nebo [.NET Core 3.0 ve verzi preview 2](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+Budete muset nastavit počítač pro spuštění .NET Core, včetně C# 8.0 beta verze kompilátoru. C# 8 beta verze kompilátoru je k dispozici s [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), nebo si prohlédnout nejnovější [ve verzi preview rozhraní .NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
 
 Tento kurz předpokládá, že jste obeznámeni s C# a .NET, včetně sady Visual Studio nebo rozhraní příkazového řádku .NET Core.
 
@@ -81,7 +81,7 @@ Tyto dvě vlastnosti způsobit `CS8618`, "neumožňující vlastností není ini
 
 [!code-csharp[StarterCreateNewsItem](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
-Je poměrně děje předchozí blok kódu. Tato aplikace používá [AutoMapper](http://automapper.org/) balíček NuGet pro vytvoření položky zpráv ze `ISyndicationItem`. Jste se seznámili, že položky zprávy scénáře jsou vytvořeny a jsou nastaveny vlastnosti v tomto jeden příkaz. To znamená, že návrh pro `NewsStoryViewModel` označuje, že tyto vlastnosti by měly mít nikdy `null` hodnotu. Tyto vlastnosti by měla být **nemá odkazové typy**. Které bude nejlépe vyjadřují záměr původní návrhu. Ve skutečnosti všechny `NewsStoryViewModel` *je* správně vytvořena instance s jinou hodnotu než null. Díky tomu se následující inicializace platnou opravu kódu:
+Je poměrně děje předchozí blok kódu. Tato aplikace používá [AutoMapper](https://automapper.org/) balíček NuGet pro vytvoření položky zpráv ze `ISyndicationItem`. Jste se seznámili, že položky zprávy scénáře jsou vytvořeny a jsou nastaveny vlastnosti v tomto jeden příkaz. To znamená, že návrh pro `NewsStoryViewModel` označuje, že tyto vlastnosti by měly mít nikdy `null` hodnotu. Tyto vlastnosti by měla být **nemá odkazové typy**. Které bude nejlépe vyjadřují záměr původní návrhu. Ve skutečnosti všechny `NewsStoryViewModel` *je* správně vytvořena instance s jinou hodnotu než null. Díky tomu se následující inicializace platnou opravu kódu:
 
 ```csharp
 public class NewsStoryViewModel

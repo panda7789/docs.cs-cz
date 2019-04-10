@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XAML [WPF], procedural code in lieu of
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: 2fb3f975fedbae1cf898d5ec2f7c0809e0215ecd
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4309b1108b2ea96eb298ff3bb876a0f63b80dc32
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365565"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343587"
 ---
 # <a name="get-started-with-ink-in-wpf"></a>Začínáme s inkoustem v subsystému WPF
 
@@ -22,7 +22,7 @@ Windows Presentation Foundation (WPF) obsahuje funkci rukopisu, se kterou snadno
 
 ## <a name="prerequisites"></a>Požadavky
 
-Chcete-li nejprve použít následující příklady, [instalaci sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Pomáhá také vědět, jak zapsat základní aplikace pro WPF. Začínáme s WPF pomoc najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
+Pokud chcete použít v následujících příkladech, nejprve nainstalujte [sady Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Pomáhá také vědět, jak zapsat základní aplikace pro WPF. Začínáme s WPF pomoc najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
 ## <a name="quick-start"></a>Rychlý Start
 
@@ -110,7 +110,7 @@ Všechny funkce WPF můžete přistupovat z kódu procedury. Postupujte podle t�
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rukopis](digital-ink.md)
+- [Digitální inkoust](digital-ink.md)
 - [Shromáždění rukopisu](collecting-ink.md)
 - [Rozpoznávání textu psaného rukou](handwriting-recognition.md)
-- [Uložení rukopisu](storing-ink.md)
+- [Uložení inkoustu](storing-ink.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e39e9b3cf83be03d9bb3a55e3741915588e755a5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7a60f03d85997d20b54366360f104519c9c75f5e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499574"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343867"
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algoritmů implementace. Tyto algoritmy jsou snadné použití a nejbezpečnější možné výchozí vlastnosti. Kryptografický model rozhraní .NET Framework dědičnost objektů, stream návrhu a konfigurace je také velmi rozšiřitelné.  
@@ -32,15 +32,15 @@ Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algorit
 ## <a name="how-algorithms-are-implemented-in-the-net-framework"></a>Jak se implementují algoritmy v rozhraní .NET Framework  
  Jako příklad různé implementace, které jsou k dispozici pro algoritmus vezměte v úvahu symetrické algoritmy. Základ pro všechny symetrické algoritmy je <xref:System.Security.Cryptography.SymmetricAlgorithm>, která dědí tyto algoritmy:  
   
-1.  <xref:System.Security.Cryptography.Aes>  
+1. <xref:System.Security.Cryptography.Aes>  
   
-2.  <xref:System.Security.Cryptography.DES>  
+2. <xref:System.Security.Cryptography.DES>  
   
-3.  <xref:System.Security.Cryptography.RC2>  
+3. <xref:System.Security.Cryptography.RC2>  
   
-4.  <xref:System.Security.Cryptography.Rijndael>  
+4. <xref:System.Security.Cryptography.Rijndael>  
   
-5.  <xref:System.Security.Cryptography.TripleDES>  
+5. <xref:System.Security.Cryptography.TripleDES>  
   
  <xref:System.Security.Cryptography.Aes> zdědí dvou tříd: <xref:System.Security.Cryptography.AesCryptoServiceProvider> a <xref:System.Security.Cryptography.AesManaged>. <xref:System.Security.Cryptography.AesCryptoServiceProvider> Třída představuje obálku kolem Windows Cryptography API (CAPI) provádění Aes, zatímco <xref:System.Security.Cryptography.AesManaged> třídy je vytvořené zcela v spravovaném kódu. Existuje také třetí typ implementace, Cryptography Next Generation (CNG), také na spravovanou a CAPI implementace. Je například algoritmus CNG <xref:System.Security.Cryptography.ECDiffieHellmanCng>. Algoritmy CNG jsou k dispozici v systému Windows Vista nebo novější.  
   
@@ -89,4 +89,4 @@ Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algorit
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+- [Šifrovací služby](../../../docs/standard/security/cryptographic-services.md)

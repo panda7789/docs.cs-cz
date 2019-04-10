@@ -2,19 +2,19 @@
 title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 28a200b3e531f524e246c3d2fa1961573ec4e014
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7125914e64ac3c7643f7338b1343654794cf45da
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59223183"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59346363"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
 Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes WebSockets.  Protokoly Websocket se nepoužívá, pokud <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> komunikovat přes WebSockets.  
   
 ### <a name="define-the-service"></a>Zadejte službu  
   
-1.  Definování kontraktu zpětného volání  
+1. Definování kontraktu zpětného volání  
   
     ```csharp  
     [ServiceContract]  
@@ -27,7 +27,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
   
      Tato smlouva se provádí klientská aplikace, aby byla povolena pro odesílání zpráv zpět klientovi.  
   
-2.  Definování kontraktu služby a zadejte `IStockQuoteCallback` rozhraní jako smlouvy zpětného volání.  
+2. Definování kontraktu služby a zadejte `IStockQuoteCallback` rozhraní jako smlouvy zpětného volání.  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,7 +38,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
         }  
     ```  
   
-3.  Implementace kontraktu služby.  
+3. Implementace kontraktu služby.  
   
     ```  
     public class StockQuoteService : IStockQuoteService  
@@ -61,7 +61,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
   
      Operace služby `StartSendingQuotes` je implementovaný jako asynchronní volání. Nemůžeme načíst pomocí zpětného volání kanálu `OperationContext` a pokud kanál není otevřený, provedeme asynchronní volání kanálu zpětného volání.  
   
-4.  Konfigurace služby  
+4. Konfigurace služby  
   
     ```xml  
     <configuration>  
@@ -94,7 +94,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
   
 ### <a name="define-the-client"></a>Definování klienta  
   
-1.  Implementace kontraktu zpětného volání.  
+1. Implementace kontraktu zpětného volání.  
   
     ```csharp  
     private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  

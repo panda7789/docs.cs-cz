@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 1416b07818ecaeb75e8389c053344b8a367ea69d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c9ddc1a1060b7d70ee7a6c9050971709a433961a
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59190641"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427198"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 <a name="introduction"></a>
@@ -55,7 +55,7 @@ ms.locfileid: "59190641"
 ### <a name="2-d-shapes"></a>2D obrazce  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používané, vykreslované uživatelem vektoru [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] tvary, třeba obdélníky a symbol tří teček, které ukazuje následující obrázek.  
   
- ![Symbol tří teček a obdélníky](./media/wpfintrofigure4.PNG "WPFIntroFigure4")  
+ ![Diagram znázorňující tři tečky a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)  
   
  Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tvary nejsou jenom tvarů: jsou programovatelný prvky, které implementují mnoho funkcí, které očekáváte od většiny běžných ovládacích prvků, které zahrnují klávesnice a myši. Následující příklad ukazuje, jak zpracovat <xref:System.Windows.UIElement.MouseUp> Událost aktivovaná po kliknutí <xref:System.Windows.Shapes.Ellipse> elementu.  
   
@@ -89,21 +89,21 @@ End Class
   
  Následující obrázek znázorňuje výstup pro předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu.  
   
- ![Okno s textem "kliknutí na tři tečky&#33;"](./media/wpfintrofigure12.png "WPFIntroFigure12")  
+ ![Zprávy pole oznámením o "Jste klikli na tři tečky!"](./media/index/messagebox-text-output.png)  
   
  Další informace najdete v tématu [tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md). Úvodní ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
 ### <a name="2-d-geometries"></a>2D geometrie  
  Když [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] obrazce, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nestačí, můžete použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podpora geometrie a cesty k vytvoření vlastní. Následující obrázek ukazuje, jak můžete pomocí geometrie vytvoření tvarů, jako kreslicího štětce a další Galerie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy.  
   
- ![Různé možnosti použití cesty](./media/wpfintrofigure5.PNG "WPFIntroFigure5")  
+ ![Snímek obrazovky ukazující, jak můžete geometrie pro vytvoření tvarů.](./media/index/use-geometries-create-shapes.png)  
   
  Další informace najdete v tématu [přehled geometrie](geometry-overview.md). Úvodní ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).  
   
 ### <a name="2-d-effects"></a>2D efekty  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] třídy, které vám umožní vytvořit různé účinky. [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] Možnosti vykreslování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrových obrázků, kreseb a videa; a s nimi manipulovat s použitím otočení, škálování a zkosení. Následující obrázek poskytuje příklad mnoho efektů, můžete dosáhnout použitím [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] stopy.  
   
- ![Znázornění různých štětců](./media/wpfintrofigure6.PNG "WPFIntroFigure6")  
+ ![Ilustrace znázorňující různých štětců WPF a Malování prvky.](./media/index/brushes-paint-elements.png)  
   
  Další informace najdete v tématu [přehled štětců WPF](wpf-brushes-overview.md). Úvodní ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973).  
   
@@ -111,7 +111,8 @@ End Class
 ## <a name="3-d-rendering"></a>3D vykreslování  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] možnosti vykreslování, které se integrují s [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafické podpory v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvářet zajímavější rozložení, aby [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], dat a jejich vizualizace. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Umožňuje vykreslit [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] bitové kopie na povrchy [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] tvary, které ukazuje následující obrázek.  
   
- ![Snímek obrazovky ukázkové Visual3D](./media/wpfintrofigure13.png "WPFIntroFigure13")  
+
+ ![Snímek obrazovky zobrazující tvarů 3D s různé textury vzorku.](./media/index/visual-three-dimensional-shape.png)  
   
  Další informace najdete v tématu [přehled 3D grafiky](3-d-graphics-overview.md). Úvodní ukázku najdete v tématu [ukázka 3D pevné](https://go.microsoft.com/fwlink/?LinkID=159964).  
   
@@ -119,7 +120,7 @@ End Class
 ## <a name="animation"></a>Animace  
  Použijte animaci k vytvoření ovládacích prvků a elementů růst, zatřeste, zprovozněte a fade; a vytvářejte zajímavé přechody stránek a další. Protože [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] povoluje pro animaci většinu vlastností, ne jenom můžete animace většinu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] objekty, můžete použít také [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro animaci vlastní objekty, které vytvoříte.  
   
- ![Bitové kopie animovaný datové krychle](./media/wpfintrofigure7.png "WPFIntroFigure7")  
+ ![Snímek obrazovky animovaný datové krychle.](./media/index/animate-custom-objects.png)  
   
  Další informace najdete v tématu [přehled animace](animation-overview.md). Úvodní ukázku najdete v tématu [animace příkladu Galerie](https://go.microsoft.com/fwlink/?LinkID=159969).  
   

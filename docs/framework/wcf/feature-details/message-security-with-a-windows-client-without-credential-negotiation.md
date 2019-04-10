@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-ms.openlocfilehash: 6b4414d56e22646e057e6b1999e15722244deda4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 43bc222bb69aafa3fa3492d79d35fbc492055ead
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59075150"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344829"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí protokolu Kerberos.  
@@ -46,9 +46,9 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 > [!NOTE]
 >  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby (SPN), který je zaregistrován s doménou služby Active Directory. Můžete to provést dvěma způsoby:  
   
-1.  Použití `NetworkService` nebo `LocalSystem` účet ke spuštění služby. Vzhledem k tomu, že tyto účty mají přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje elementu řádné SPN uvnitř koncového bodu služby v metadatech služby (Web Services Description Jazyk, nebo WSDL).  
+1. Použití `NetworkService` nebo `LocalSystem` účet ke spuštění služby. Vzhledem k tomu, že tyto účty mají přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje elementu řádné SPN uvnitř koncového bodu služby v metadatech služby (Web Services Description Jazyk, nebo WSDL).  
   
-2.  Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě potřebujete vytvořit název SPN pro příslušný účet domény. Jeden způsob, jak to je použití nástroje nástroje Setspn.exe. Po vytvoření názvu SPN pro účet služby konfigurace WCF k publikování této hlavní název služby klientům služby prostřednictvím jeho metadat (WSDL). To se provádí nastavením identitě koncového bodu vystavené koncového bodu, buď když k konfigurační soubor aplikace nebo kódu. Následující příklad publikuje identitu prostřednictvím kódu programu.  
+2. Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě potřebujete vytvořit název SPN pro příslušný účet domény. Jeden způsob, jak to je použití nástroje nástroje Setspn.exe. Po vytvoření názvu SPN pro účet služby konfigurace WCF k publikování této hlavní název služby klientům služby prostřednictvím jeho metadat (WSDL). To se provádí nastavením identitě koncového bodu vystavené koncového bodu, buď když k konfigurační soubor aplikace nebo kódu. Následující příklad publikuje identitu prostřednictvím kódu programu.  
   
  Další informace o SPN, protokol Kerberos a Active Directory, naleznete v tématu [Kerberos technické Supplement pro Windows](https://go.microsoft.com/fwlink/?LinkId=88330). Další informace o identitách koncový bod, najdete v části [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
   

@@ -7,23 +7,23 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: ed73b9c15d5d9279b97063077f210d3ac5dc68e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ce2df9d4cea601652ebde2032758137b01faacdc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59227389"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344660"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější verze sestavení zahrnutím souboru zásad vydavatele s upgradovaný sestavení. Soubor zásad vydavatele, který určuje přesměrování sestavení a nastavení základní kód a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele, který je zkompilován sestavení a umístěn v globální mezipaměti sestavení.  
   
  Při vytváření zásad vydavatele jsou tři kroky:  
   
-1.  Vytvořte soubor zásad vydavatele.  
+1. Vytvořte soubor zásad vydavatele.  
   
-2.  Vytvořte sestavení zásad vydavatele.  
+2. Vytvořte sestavení zásad vydavatele.  
   
-3.  Přidáte sestavení zásad vydavatele do globální mezipaměti sestavení.  
+3. Přidáte sestavení zásad vydavatele do globální mezipaměti sestavení.  
   
  Schéma pro zásady vydavatele je popsána v [přesměrování verze sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md). Následující příklad ukazuje vydavatele souboru zásad, který přesměruje jednu verzi `myAssembly` do jiného.  
   
@@ -51,7 +51,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
 #### <a name="to-create-a-publisher-policy-assembly"></a>Chcete-li vytvořit sestavení zásady vydavatele  
   
-1.  Na příkazovém řádku zadejte následující příkaz:  
+1. Na příkazovém řádku zadejte následující příkaz:  
   
      **Al/Link:** *publisherPolicyFile* **/out:** *publisherPolicyAssemblyFile* **/keyfile:**  *keyPairFile* **/Platform:** *processorArchitecture*  
   
@@ -87,7 +87,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
 #### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Přidání sestavení zásad vydavatele do globální mezipaměti sestavení  
   
-1.  Na příkazovém řádku zadejte následující příkaz:  
+1. Na příkazovém řádku zadejte následující příkaz:  
   
      **Gacutil /i***publisherPolicyAssemblyFile*  
   

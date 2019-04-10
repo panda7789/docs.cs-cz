@@ -2,12 +2,12 @@
 title: 'Postupy: Verze služby'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: dc81fcde3c4f731257bf759cbd3f31542483618d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: afc1a690cae020ded3988cfd41f0e926a2e86f1e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59085373"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59346285"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která směruje zprávy na různé verze stejné službě. V tomto příkladu zprávy jsou směrovány na dvě různé verze služby Kalkulačka `roundingCalc` (v1) a `regularCalc` (v2). Obou implementacích podporují stejné operace; ale službu starší `roundingCalc`, zaokrouhlí na nejbližší celočíselnou hodnotu všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete používat novější `regularCalc` služby.  
@@ -37,7 +37,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
   
 ### <a name="implement-service-versioning"></a>Správa verzí služby implementují  
   
-1.  Vytvořte základní konfiguraci směrovací služby tak, že zadáte koncový bod služby, vystavený službou. Následující příklad definuje jedinou službou koncový bod, který se použije pro příjem zpráv. Také definuje koncové body klienta, které se použije k odesílání zpráv `roundingCalc` (v1) a `regularCalc` služby (v2).  
+1. Vytvořte základní konfiguraci směrovací služby tak, že zadáte koncový bod služby, vystavený službou. Následující příklad definuje jedinou službou koncový bod, který se použije pro příjem zpráv. Také definuje koncové body klienta, které se použije k odesílání zpráv `roundingCalc` (v1) a `regularCalc` služby (v2).  
   
     ```xml  
     <services>  
@@ -69,7 +69,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
         </client>  
     ```  
   
-2.  Určit filtry, které slouží ke směrování zpráv do cílové koncové body.  V tomto příkladu se používá filtr XPath rozpoznat hodnotu vlastní hlavičky "CalcVer" určení verze zprávy se mají směrovat do. Filtr XPath slouží také ke zjišťování zpráv, které neobsahují "CalcVer" záhlaví. Následující příklad definuje požadovaný filtry a obor názvů tabulky.  
+2. Určit filtry, které slouží ke směrování zpráv do cílové koncové body.  V tomto příkladu se používá filtr XPath rozpoznat hodnotu vlastní hlavičky "CalcVer" určení verze zprávy se mají směrovat do. Filtr XPath slouží také ke zjišťování zpráv, které neobsahují "CalcVer" záhlaví. Následující příklad definuje požadovaný filtry a obor názvů tabulky.  
   
     ```xml  
     <!-- use the namespace table element to define a prefix for our custom namespace-->  
@@ -96,7 +96,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     > [!NOTE]
     > Předpona oboru názvů S12 na úrovni Standard je definované ve výchozím nastavení v tabulce obor názvů a představuje obor názvů `http://www.w3.org/2003/05/soap-envelope`.
   
-3.  Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta. Pokud zpráva obsahuje hlavičku "CalcVer" s hodnotou 1, pošle se na službu regularCalc. Pokud hlavička obsahuje hodnotu 2, pošle se na službu roundingCalc. Pokud je k dispozici žádná záhlaví, zpráva bude směrován na regularCalc.  
+3. Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta. Pokud zpráva obsahuje hlavičku "CalcVer" s hodnotou 1, pošle se na službu regularCalc. Pokud hlavička obsahuje hodnotu 2, pošle se na službu roundingCalc. Pokud je k dispozici žádná záhlaví, zpráva bude směrován na regularCalc.  
   
      Následující definuje filtr tabulky a přidá filtry definovali dříve.  
   
@@ -117,7 +117,7 @@ messageHeadersElement.Add(MessageHeader.CreateHeader("CalcVer", "http://my.custo
     </filterTables>  
     ```  
   
-4.  Vyhodnocování příchozích zpráv proti filtrů obsažených v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přidružení `filterTable1` s koncovými body služby:  
+4. Vyhodnocování příchozích zpráv proti filtrů obsažených v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování. Následující příklad ukazuje přidružení `filterTable1` s koncovými body služby:  
   
     ```xml  
     <behaviors>  

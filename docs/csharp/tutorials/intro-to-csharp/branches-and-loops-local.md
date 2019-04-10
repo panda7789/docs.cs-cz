@@ -3,12 +3,12 @@ title: Větve a smyčky – Úvod do C# kurz
 description: V tomto kurzu o větvích a smyčkách napíšete C# kódu syntaxi jazyka, který podporuje podmíněné větvení a smyček opakovaně spouštět příkazy.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: ad5891c11c516a7c5e3d46bea9c17c85b4a8536e
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: 4a116ae5294915770dec742c147cf2ba1bf6e284
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427250"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další podmíněnou logiku s příkazy větve a smyčky
 
@@ -88,34 +88,38 @@ Můžete testovat složitější podmínky. Přidejte následující kód do va�
 
 ```csharp
 int c = 4;
-if ((a + b + c > 10) && (a > b))
+if ((a + b + c > 10) && (a == b))
 {
     Console.WriteLine("The answer is greater than 10");
-    Console.WriteLine("And the first number is greater than the second");
+    Console.WriteLine("And the first number is equal to the second");
 }
 else
 {
     Console.WriteLine("The answer is not greater than 10");
-    Console.WriteLine("Or the first number is not greater than the second");
+    Console.WriteLine("Or the first number is not equal to the second");
 }
 ```
+
+`==` Symbol testy pro *rovnosti*. Pomocí `==` odlišuje od přiřazení, které jste viděli v testování rovnosti `a = 5`.
 
 `&&` Představuje "a". Znamená to, že obě podmínky musí mít hodnotu true, má provést větev true.  Tyto příklady také ukazují, že můžete mít více příkazů v každé podmíněné větvi, je v uzavřete `{` a `}`.
 
 Můžete také použít `||` představující "nebo". Přidejte následující kód za co jste napsali zatím:
 
 ```csharp
-if ((a + b + c > 10) || (a > b))
+if ((a + b + c > 10) || (a == b))
 {
     Console.WriteLine("The answer is greater than 10");
-    Console.WriteLine("Or the first number is greater than the second");
+    Console.WriteLine("Or the first number is equal to the second");
 }
 else
 {
     Console.WriteLine("The answer is not greater than 10");
-    Console.WriteLine("And the first number is not greater than the second");
+    Console.WriteLine("And the first number is not equal to the second");
 }
 ```
+
+Upravte hodnoty `a`, `b`, a `c` a přepínat mezi `&&` a `||` prozkoumat. Další vysvětlení, jak budete získat `&&` a `||` operátory fungovat.
 
 Dokončili jste první krok. Předtím, než se pustíte do další části, přejdeme aktuální kód do samostatné metodě. Který usnadňuje začít pracovat s nový příklad. Přejmenovat váš `Main` metodu `ExploreIf` a napsat nový `Main` metodu, která volá `ExploreIf`. Jakmile budete hotovi, váš kód by měl vypadat takto:
 

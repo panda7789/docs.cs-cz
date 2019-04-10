@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 16154ff6b2fcf6c537126b6ced03c45f6746b57a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8edc747c003cd5527df509af83325816671ddfb
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54649398"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59346103"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které může být reprezentována mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v podporované znakové sady s některá z hodnot, který představuje daný znak. Například morseovkou je znak kódování této páry každý znak v latinku pomocí vzoru tečky a spojovníky, které jsou vhodné pro přenos přes telegrafní řádky. Znak kódování dvojice počítačů pro každý znak v podporované znakové sady s číselnou hodnotu, která představuje tento znak. Kódování znaků má dvě různé součásti:  
@@ -215,11 +215,11 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  Kromě toho můžete implementovat vlastní řešení, která používá přizpůsobený použití náhradní lokality, záložní nahrazení nebo záložní výjimky, pomocí následujících kroků:  
   
-1.  Odvodit třídu z <xref:System.Text.EncoderFallback> pro kódování operace a z <xref:System.Text.DecoderFallback> pro dekódování operace.  
+1. Odvodit třídu z <xref:System.Text.EncoderFallback> pro kódování operace a z <xref:System.Text.DecoderFallback> pro dekódování operace.  
   
-2.  Odvodit třídu z <xref:System.Text.EncoderFallbackBuffer> pro kódování operace a z <xref:System.Text.DecoderFallbackBuffer> pro dekódování operace.  
+2. Odvodit třídu z <xref:System.Text.EncoderFallbackBuffer> pro kódování operace a z <xref:System.Text.DecoderFallbackBuffer> pro dekódování operace.  
   
-3.  Pro použití náhradní lokality, pokud výjimka předdefinovaného <xref:System.Text.EncoderFallbackException> a <xref:System.Text.DecoderFallbackException> třídy nevyhovuje vašim potřebám, jako například odvodit třídu z objektu výjimky <xref:System.Exception> nebo <xref:System.ArgumentException>.  
+3. Pro použití náhradní lokality, pokud výjimka předdefinovaného <xref:System.Text.EncoderFallbackException> a <xref:System.Text.DecoderFallbackException> třídy nevyhovuje vašim potřebám, jako například odvodit třídu z objektu výjimky <xref:System.Exception> nebo <xref:System.ArgumentException>.  
   
 ### <a name="deriving-from-encoderfallback-or-decoderfallback"></a>Odvozování z EncoderFallback nebo DecoderFallback  
  Chcete-li implementovat vlastní řešení pro použití náhradní lokality, musíte vytvořit třídu, která dědí z <xref:System.Text.EncoderFallback> pro kódování operace a z <xref:System.Text.DecoderFallback> pro dekódování operace. Instance těchto tříd jsou předány <xref:System.Text.Encoding.GetEncoding%28System.String%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> metoda a slouží jako zprostředkovatel mezi kódování třídy a záložní implementace.  

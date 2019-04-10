@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f32a71ec04d791c83f711beee1086bcba283401c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dcf869d77882810d063532b2cf0c8139be163b7a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54625611"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345401"
 ---
 # <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: Provedení transformace XSLT pomocí sestavení
 Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
@@ -132,7 +132,7 @@ Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestaven�
   
 ### <a name="to-compile-the-style-sheet-with-the-script-enabled"></a>Pro kompilaci šablony stylů se skriptem povolena.  
   
-1.  Spuštěním následujícího příkazu z příkazového řádku vytvoří dvě sestavení s názvem `Transform.dll` a `Transform_Script1.dll` (Toto je výchozí chování. Pokud není uvedeno jinak, název třídy a sestavení výchozím názvem hlavní šablony stylů):  
+1. Spuštěním následujícího příkazu z příkazového řádku vytvoří dvě sestavení s názvem `Transform.dll` a `Transform_Script1.dll` (Toto je výchozí chování. Pokud není uvedeno jinak, název třídy a sestavení výchozím názvem hlavní šablony stylů):  
   
     ```  
     xsltc /settings:script+ Transform.xsl  
@@ -146,15 +146,15 @@ xsltc /settings:script+ /class:Transform Transform.xsl
   
 ### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Chcete-li zahrnout zkompilovaného sestavení jako odkaz při kompilaci kódu.  
   
-1.  Můžete zahrnout sestavení v sadě Visual Studio tak, že přidáte odkaz v Průzkumníku řešení nebo z příkazového řádku.  
+1. Můžete zahrnout sestavení v sadě Visual Studio tak, že přidáte odkaz v Průzkumníku řešení nebo z příkazového řádku.  
   
-2.  Pro příkazový řádek s jazykem C# použijte následující:  
+2. Pro příkazový řádek s jazykem C# použijte následující:  
   
     ```  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
-3.  Pro příkazový řádek s jazykem Visual Basic použijte tento příkaz  
+3. Pro příkazový řádek s jazykem Visual Basic použijte tento příkaz  
   
     ```  
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
@@ -162,7 +162,7 @@ xsltc /settings:script+ /class:Transform Transform.xsl
   
 ### <a name="to-use-the-compiled-assembly-in-your-code"></a>Pro použití ve vašem kódu zkompilovaného sestavení.  
   
-1.  Následující příklad ukazuje, jak provedení transformace XSLT pomocí zkompilované šablony stylů.  
+1. Následující příklad ukazuje, jak provedení transformace XSLT pomocí zkompilované šablony stylů.  
   
  [!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
  [!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  

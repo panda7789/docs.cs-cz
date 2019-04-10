@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: bd89a5fa58507528b2a70efde04ecd2a6f601b39
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3e11cbca004aedd7d4f992abf2f766de4f4f5935
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605601"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344647"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (možnosti kompilátoru C#)
 Určuje název souboru obsahujícího kryptografický klíč.  
@@ -45,15 +45,15 @@ Určuje název souboru obsahujícího kryptografický klíč.
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřít **vlastnosti** stránky pro projekt.  
+1. Otevřít **vlastnosti** stránky pro projekt.  
   
-2.  Klikněte na tlačítko **podepisování** stránku vlastností.  
+2. Klikněte na tlačítko **podepisování** stránku vlastností.  
   
-3.  Upravit **vyberte soubor klíče se silným názvem** vlastnost.  
+3. Upravit **vyberte soubor klíče se silným názvem** vlastnost.  
   
  Programově přístup k této možnosti kompilátoru s <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataContractAttribute class
 - data contracts [WCF], creating for a class or structure
 ms.assetid: bc464889-3070-4a2f-91d2-e788a0f686a7
-ms.openlocfilehash: b46273c468891aa2b18c04adc1ee035c98255ded
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4e5e6b77cdb13c17557f176a37fbb9e7d42ab667
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59220510"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345999"
 ---
 # <a name="how-to-create-a-basic-data-contract-for-a-class-or-structure"></a>Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu
 Toto téma popisuje základní kroky k vytvoření kontraktu dat pomocí třídy nebo struktury. Další informace o kontraktech dat a způsob jejich použití naleznete v tématu [kontraktů dat pomocí](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -23,9 +23,9 @@ Toto téma popisuje základní kroky k vytvoření kontraktu dat pomocí třídy
   
 ### <a name="to-create-a-basic-data-contract-for-a-class-or-structure"></a>Vytvoření základního kontraktu dat pro třídu nebo strukturu  
   
-1.  Deklarujte, že má typ kontraktu dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut třídy. Všimněte si, že všechny veřejné typy, včetně těch bez atributy, jsou serializovatelné. <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat, pokud <xref:System.Runtime.Serialization.DataContractAttribute> atribut chybí. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+1. Deklarujte, že má typ kontraktu dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut třídy. Všimněte si, že všechny veřejné typy, včetně těch bez atributy, jsou serializovatelné. <xref:System.Runtime.Serialization.DataContractSerializer> Odvodí kontraktu dat, pokud <xref:System.Runtime.Serialization.DataContractAttribute> atribut chybí. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
-2.  Definování členů (vlastnosti, pole nebo události), které jsou serializovány použitím <xref:System.Runtime.Serialization.DataMemberAttribute> atribut pro každého člena. Tyto členy, se nazývají datové členy. Standardně jsou všechny veřejné typy serializovatelné. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+2. Definování členů (vlastnosti, pole nebo události), které jsou serializovány použitím <xref:System.Runtime.Serialization.DataMemberAttribute> atribut pro každého člena. Tyto členy, se nazývají datové členy. Standardně jsou všechny veřejné typy serializovatelné. Další informace najdete v tématu [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
     > [!NOTE]
     >  Můžete použít <xref:System.Runtime.Serialization.DataMemberAttribute> atribut k privátním položkám, způsobí data, která mají být vystaveny ostatním uživatelům. Ujistěte se, že člen neobsahuje citlivá data.  

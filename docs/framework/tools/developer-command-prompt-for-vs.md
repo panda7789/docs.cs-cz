@@ -1,5 +1,5 @@
 ---
-title: Developer Command Prompt pro sadu Visual Studio
+title: Developer Command Prompt for Visual Studio
 ms.date: 08/14/2018
 helpviewer_keywords:
 - command prompt, Windows SDK
@@ -12,25 +12,25 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6e648cdadb567919d320ea8a12d30b7be306e67a
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: cc88106a54a00b4b12e5043da7961791a98102c0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221229"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344361"
 ---
-# <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt pro sadu Visual Studio
+# <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt for Visual Studio
 
 Developer Command Prompt pro sadu Visual Studio umožňuje snadno používat nástroje rozhraní .NET Framework. Je příkazový řádek, který automaticky nastavuje určité proměnné prostředí.
 
 > [!div class="button"]
-> [Stáhněte si Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+> [Stažení sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019)
 
 ## <a name="search-for-the-command-prompt-on-your-machine"></a>Hledat příkazový řádek na svém počítači
 
 Můžete mít více příkazových řádků, v závislosti na verzi sady Visual Studio a všech dodatečných sad SDK si nainstalujete. Například 64bitové verze sady Visual Studio poskytují 32bitové a 64bitové verze příkazového řádku. (32bitové a 64bitové verze Většina nástrojů jsou stejné, ale u několika nástrojů měnit konkrétní 32bitové a 64bitové prostředí) Pokud tyto kroky nefungují, můžete zkusit [ručně vyhledat soubory na svém počítači](#manually-locate-the-files-on-your-machine) nebo [spustit z příkazového řádku v sadě Visual Studio](#run-the-command-prompt-from-inside-visual-studio).
 
-### <a name="in-windows-10"></a>V systému Windows 10
+### <a name="in-windows-10"></a>In Windows 10
 
 1. Do vyhledávacího pole na hlavním panelu, začněte psát název nástroje, jako například `dev` nebo `developer command prompt`. Tím se zobrazí seznam nainstalovaných aplikací, které odpovídají vaší vyhledávací vzory. Pokud hledáte různých příkazového řádku, zkuste zadat jinou hledaný termín, jako `prompt`.
 

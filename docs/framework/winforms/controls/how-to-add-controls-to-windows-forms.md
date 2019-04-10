@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 72b5931a79284a93a4e0fdf3cb2cc3b03157f5f7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 04597283a8ff2e21a0f227268671d3605eac6356
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59106480"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343581"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do Windows Forms
 Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu formuláře k definování uživatelského rozhraní (UI). A *ovládací prvek* je součást na formulář pro zobrazení informací ani nebude přijímat uživatelský vstup. Další informace o ovládacích prvcích najdete v tématu [ovládacích prvků Windows Forms](index.md).  
@@ -24,11 +24,11 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ### <a name="to-draw-a-control-on-a-form"></a>K nakreslení ovládacího prvku ve formuláři  
   
-1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
+1. Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
   
-2.  V **nástrojů**, klepněte na ovládací prvek, který chcete přidat do formuláře.  
+2. V **nástrojů**, klepněte na ovládací prvek, který chcete přidat do formuláře.  
   
-3.  Ve formuláři klikněte na požadované levého horního rohu ovládacího prvku, který má být umístěná a přetáhněte ji na požadované místo pravého dolního rohu ovládacího prvku, který má být umístěná.  
+3. Ve formuláři klikněte na požadované levého horního rohu ovládacího prvku, který má být umístěná a přetáhněte ji na požadované místo pravého dolního rohu ovládacího prvku, který má být umístěná.  
   
      Ovládací prvek je přidán do formuláře pomocí zadaného umístění a velikost.  
   
@@ -37,9 +37,9 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ### <a name="to-drag-a-control-to-a-form"></a>Přetáhněte ovládací prvek do formuláře  
   
-1.  Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
+1. Otevřete formulář. Další informace najdete v tématu [jak: Zobrazení formulářů Windows v návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w5yd62ts(v=vs.100)).  
   
-2.  V **nástrojů**, klepněte na ovládací prvek a přetáhněte ji do svého formuláře.  
+2. V **nástrojů**, klepněte na ovládací prvek a přetáhněte ji do svého formuláře.  
   
      Ovládací prvek je přidán do formuláře v zadaném umístění v její výchozí velikost.  
   
@@ -53,7 +53,7 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ### <a name="to-add-a-control-to-a-form-programmatically"></a>Přidání ovládacího prvku na formulář prostřednictvím kódu programu  
   
-1.  V metodě, která zpracovává tlačítka `Click` událostí v rámci třídy formuláře, vložit kód podobný následujícímu se přidat odkaz na řídicí proměnná nastavit u tohoto prvku `Location`a přidejte ovládací prvek.  
+1. V metodě, která zpracovává tlačítka `Click` událostí v rámci třídy formuláře, vložit kód podobný následujícímu se přidat odkaz na řídicí proměnná nastavit u tohoto prvku `Location`a přidejte ovládací prvek.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  

@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 78dff5dca159b3e714a027bd2d2ebe86d2b414dd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 45f6b402ae01b7f762f8ef10dcfb0bc46f949db6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54626001"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59343568"
 ---
 # <a name="including-or-importing-xml-schemas"></a>Zahrnutí nebo import schémat XML
 Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine />` elementy. Tyto prvky schématu odkazují na jiná schémata XML, které lze použít k doplnění struktura schéma, které zahrnuje nebo importuje. <xref:System.Xml.Schema.XmlSchemaImport>, <xref:System.Xml.Schema.XmlSchemaInclude> a <xref:System.Xml.Schema.XmlSchemaRedefine> třídy, mapování na tyto prvky v schématu objektu modelu (SOM) rozhraní API.  
@@ -26,15 +26,15 @@ Schéma XML může obsahovat `<xs:import />`, `<xs:include />`, a `<xs:redefine 
   
  Příklad kódu obsahuje schéma adresy v následujících krocích.  
   
-1.  Přidá do nového schématu zákazníka a schéma adresy <xref:System.Xml.Schema.XmlSchemaSet> objektů a jejich kompiluje. Žádné schéma ověření upozornění a chyb zjištěných pro čtení nebo kompilování schémat jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
+1. Přidá do nového schématu zákazníka a schéma adresy <xref:System.Xml.Schema.XmlSchemaSet> objektů a jejich kompiluje. Žádné schéma ověření upozornění a chyb zjištěných pro čtení nebo kompilování schémat jsou zpracovávány <xref:System.Xml.Schema.ValidationEventHandler> delegovat.  
   
-2.  Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objekty pro zákazníky i adresu schémata z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Vzhledem k tomu, že schémata jsou kompilovány, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
+2. Načte zkompilovaný <xref:System.Xml.Schema.XmlSchema> objekty pro zákazníky i adresu schémata z <xref:System.Xml.Schema.XmlSchemaSet> pomocí provádí iterace <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost. Vzhledem k tomu, že schémata jsou kompilovány, po-Schema-kompilace – informační sadu vlastností (PSCI) jsou přístupné.  
   
-3.  Vytvoří <xref:System.Xml.Schema.XmlSchemaImport> objektu, nastaví <xref:System.Xml.Schema.XmlSchemaImport.Namespace%2A> nastaví vlastnost importované do oboru názvů schématu adresy <xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A> vlastnost importovat <xref:System.Xml.Schema.XmlSchema> objekt schéma adresy a přidává import pro <xref:System.Xml.Schema.XmlSchema.Includes%2A> vlastnost schématu zákazníka.  
+3. Vytvoří <xref:System.Xml.Schema.XmlSchemaImport> objektu, nastaví <xref:System.Xml.Schema.XmlSchemaImport.Namespace%2A> nastaví vlastnost importované do oboru názvů schématu adresy <xref:System.Xml.Schema.XmlSchemaExternal.Schema%2A> vlastnost importovat <xref:System.Xml.Schema.XmlSchema> objekt schéma adresy a přidává import pro <xref:System.Xml.Schema.XmlSchema.Includes%2A> vlastnost schématu zákazníka.  
   
-4.  Znovu zpracuje a zkompiluje upravené <xref:System.Xml.Schema.XmlSchema> objektu pomocí schématu zákazníků <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metody <xref:System.Xml.Schema.XmlSchemaSet> třídy a zapíše jej do konzoly.  
+4. Znovu zpracuje a zkompiluje upravené <xref:System.Xml.Schema.XmlSchema> objektu pomocí schématu zákazníků <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> a <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metody <xref:System.Xml.Schema.XmlSchemaSet> třídy a zapíše jej do konzoly.  
   
-5.  Navíc rekurzivně zapíše všechna schémata importován schématu zákazníka pomocí konzoly <xref:System.Xml.Schema.XmlSchema.Includes%2A> vlastnost schématu zákazníka. <xref:System.Xml.Schema.XmlSchema.Includes%2A> Vlastnost poskytuje přístup ke všem obsahuje, imports nebo předefinování přidá do schématu.  
+5. Navíc rekurzivně zapíše všechna schémata importován schématu zákazníka pomocí konzoly <xref:System.Xml.Schema.XmlSchema.Includes%2A> vlastnost schématu zákazníka. <xref:System.Xml.Schema.XmlSchema.Includes%2A> Vlastnost poskytuje přístup ke všem obsahuje, imports nebo předefinování přidá do schématu.  
   
  Tady je příklad úplného kódu a zákazníka a adresu schémata zapsána do konzoly.  
   

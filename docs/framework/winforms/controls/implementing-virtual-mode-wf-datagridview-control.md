@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 74eb5276-5ab8-4ce0-8005-dae751d85f7c
-ms.openlocfilehash: 7509e2f5035cb05c20af379f9f6a141177d540d4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7f6bf1703a6536f4d22b3a2fbe412579c59d39dd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59127046"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344322"
 ---
 # <a name="walkthrough-implementing-virtual-mode-in-the-windows-forms-datagridview-control"></a>Návod: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView
 Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze nastavit <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> vlastnost `true` a explicitně spravovat ovládacího prvku interakce s jeho data store. To umožňuje optimalizovat výkon ovládacího prvku v této situaci.  
@@ -30,7 +30,7 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
   
 #### <a name="to-implement-virtual-mode"></a>Implementace virtuálního režimu  
   
-1.  Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
+1. Vytvořte třídu, která je odvozena z <xref:System.Windows.Forms.Form> a obsahuje <xref:System.Windows.Forms.DataGridView> ovládacího prvku.  
   
      Následující kód obsahuje některé základní inicializace. Deklaruje několik proměnných, které se použijí v dalších krocích, poskytuje `Main` metoda a poskytuje jednoduchý formulář rozložení v konstruktoru třídy.  
   
@@ -41,13 +41,13 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
     [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#002](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#002)]
     [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#002](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#002)]  
   
-2.  Implementujte obslužnou rutinu pro daný formulář <xref:System.Windows.Forms.Form.Load> událost, která inicializuje <xref:System.Windows.Forms.DataGridView> řídit a naplní úložiště dat pomocí ukázkové hodnoty.  
+2. Implementujte obslužnou rutinu pro daný formulář <xref:System.Windows.Forms.Form.Load> událost, která inicializuje <xref:System.Windows.Forms.DataGridView> řídit a naplní úložiště dat pomocí ukázkové hodnoty.  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#110](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#110)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#110](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#110)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#110)]  
   
-3.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CellValueNeeded> událost, která načte požadované její hodnotu z úložiště dat nebo `Customer` objekt aktuálně v režimu úpravy.  
+3. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CellValueNeeded> událost, která načte požadované její hodnotu z úložiště dat nebo `Customer` objekt aktuálně v režimu úpravy.  
   
      Vždy, když dojde k této události <xref:System.Windows.Forms.DataGridView> ovládací prvek musí Vymalovat buňky.  
   
@@ -55,13 +55,13 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#120)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#120)]  
   
-4.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CellValuePushed> událost, která ukládá hodnotu upravených buňky v `Customer` objekt představující upravený řádku. K této události dojde pokaždé, když se uživatel potvrdí změnu hodnoty buňky.  
+4. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CellValuePushed> událost, která ukládá hodnotu upravených buňky v `Customer` objekt představující upravený řádku. K této události dojde pokaždé, když se uživatel potvrdí změnu hodnoty buňky.  
   
      [!code-cpp[System.Windows.Forms.DataGridView.VirtualMode#130](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CPP/virtualmode.cpp#130)]
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#130](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#130)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#130](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#130)]  
   
-5.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.NewRowNeeded> událost, která vytvoří nový `Customer` objekt představující nově vytvořený řádek.  
+5. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.NewRowNeeded> událost, která vytvoří nový `Customer` objekt představující nově vytvořený řádek.  
   
      Pokaždé, když uživatel zadá řádek pro nové záznamy, dojde k této události.  
   
@@ -69,7 +69,7 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#140](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#140)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#140](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#140)]  
   
-6.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.RowValidated> událost, která se uloží do úložiště dat nové nebo upravené řádky.  
+6. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.RowValidated> událost, která se uloží do úložiště dat nové nebo upravené řádky.  
   
      K této události dojde pokaždé, když uživatel změní na aktuálním řádku.  
   
@@ -77,7 +77,7 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#150](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#150)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#150](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#150)]  
   
-7.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> událost, která označuje, zda <xref:System.Windows.Forms.DataGridView.CancelRowEdit> dojde k události, když uživatel signály řádek reverzi stisknutím klávesy ESC dvakrát v režimu úprav nebo jednou mimo režim úprav.  
+7. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> událost, která označuje, zda <xref:System.Windows.Forms.DataGridView.CancelRowEdit> dojde k události, když uživatel signály řádek reverzi stisknutím klávesy ESC dvakrát v režimu úprav nebo jednou mimo režim úprav.  
   
      Ve výchozím nastavení <xref:System.Windows.Forms.DataGridView.CancelRowEdit> nastane všechny buňky v aktuálním řádku se změnilo, není-li na řádku reverzi <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> je nastavena na `true` v <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> obslužné rutiny události. Tato událost je užitečná při potvrzení oboru je stanovena v době běhu.  
   
@@ -85,7 +85,7 @@ Pokud chcete zobrazit velmi velké množství tabulková data v <xref:System.Win
      [!code-csharp[System.Windows.Forms.DataGridView.VirtualMode#160](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/CS/virtualmode.cs#160)]
      [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#160](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#160)]  
   
-8.  Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CancelRowEdit> událost, která zruší hodnoty `Customer` objekt představující aktuální řádek.  
+8. Implementujte obslužnou rutinu pro <xref:System.Windows.Forms.DataGridView.CancelRowEdit> událost, která zruší hodnoty `Customer` objekt představující aktuální řádek.  
   
      Tato událost nastane, pokud uživatel signály řádek reverzi stisknutím klávesy ESC dvakrát v režimu úprav nebo jednou mimo režim úprav. Tato událost nedojde, pokud byly změněny žádné buňky v aktuálním řádku, nebo pokud hodnota <xref:System.Windows.Forms.QuestionEventArgs.Response%2A?displayProperty=nameWithType> je nastavená vlastnost `false` v <xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded> obslužné rutiny události.  
   

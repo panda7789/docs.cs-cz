@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: ab3f1dd633193dcf88401d097d6835e6894aaa5a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ec34c19da9cd642f5de51166bef0264c2e75c58c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122236"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345518"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [jak: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -191,13 +191,13 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 ### <a name="how-to-configure-an-application-to-use-constrained-delegation"></a>Jak nakonfigurovat aplikaci pro použití omezeného delegování  
  Než budete moci použít omezené delegování, odesílatel, příjemce a řadič domény musí být nakonfigurovaný k tomu. Následující postup obsahuje kroky, které umožňují omezené delegování. Podrobnosti o rozdílech mezi delegování a omezeného delegování, najdete v části [rozšíření protokolu Kerberos serveru Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=100194) , který popisuje omezené diskuse.  
   
-1.  Na řadiči domény, zrušte **účet je citlivý a nelze jej delegovat** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
+1. Na řadiči domény, zrušte **účet je citlivý a nelze jej delegovat** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
   
-2.  Na řadiči domény, vyberte **účet je důvěryhodný pro delegování** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
+2. Na řadiči domény, vyberte **účet je důvěryhodný pro delegování** zaškrtávací políčko pro účet, pod kterým klientská aplikace běží.  
   
-3.  Na řadiči domény, nakonfigurujte střední vrstvy počítače tak, aby je důvěryhodný pro delegování, kliknutím **Důvěřovat počítači pro delegování** možnost.  
+3. Na řadiči domény, nakonfigurujte střední vrstvy počítače tak, aby je důvěryhodný pro delegování, kliknutím **Důvěřovat počítači pro delegování** možnost.  
   
-4.  Na řadiči domény konfigurace střední vrstvy počítače tak, aby, kliknutím **důvěřovat tomuto počítači pro delegování pouze určeným službám** možnost.  
+4. Na řadiči domény konfigurace střední vrstvy počítače tak, aby, kliknutím **důvěřovat tomuto počítači pro delegování pouze určeným službám** možnost.  
   
  Podrobnější pokyny týkající se konfigurace omezeného delegování naleznete v následujících tématech na webu MSDN:  
   

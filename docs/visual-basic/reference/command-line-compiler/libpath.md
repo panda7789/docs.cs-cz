@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: b8e28b821f6536ddb5c7612e8706e024dd79a0bd
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: b7bfcb0f2034145822922126fe61efea8d8ef269
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58833301"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344205"
 ---
 # <a name="-libpath"></a>-libpath
 Určuje umístění odkazovaných sestavení.  
@@ -33,13 +33,13 @@ Určuje umístění odkazovaných sestavení.
   
  Kompilátor vyhledá odkazy na sestavení, které nejsou plně kvalifikovaný v následujícím pořadí:  
   
-1.  Aktuální pracovní adresář. Toto je adresář, ze kterého je vyvolán kompilátor.  
+1. Aktuální pracovní adresář. Toto je adresář, ze kterého je vyvolán kompilátor.  
   
-2.  Common language runtime systémový adresář.  
+2. Common language runtime systémový adresář.  
   
-3.  Adresáře určeného `/libpath`.  
+3. Adresáře určeného `/libpath`.  
   
-4.  Adresáře určené proměnnou prostředí LIB.  
+4. Adresáře určené proměnnou prostředí LIB.  
   
  `-libpath` Možnost je sčítání; zadání více než jednou připojí k jakékoli předchozí hodnoty ho.  
   
@@ -58,6 +58,6 @@ vbc -libpath:c:\;"c:\New Assemblies" -reference:t2.dll t2.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Sestavení v .NET](../../../standard/assembly/index.md)
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Sestavení v rozhraní .NET](../../../standard/assembly/index.md)
+- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

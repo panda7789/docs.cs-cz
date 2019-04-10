@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6d27500332c59f24e121c9c15ac27a36ed93d07
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: fd75bd14b2393d9b316d90070894f214dfa60c88
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465799"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344374"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -43,15 +43,15 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 #### <a name="to-create-the-windows-forms-application"></a>Chcete-li vytvořit Windows Forms aplikace  
   
-1.  V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **formulářová aplikace Windows** projektu. V tomto dokumentu má projekt název `CompositeImages`.  
+1. V sadě Visual Studio, vytvořit Visual C# nebo Visual Basic **formulářová aplikace Windows** projektu. V tomto dokumentu má projekt název `CompositeImages`.  
   
-2.  V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb pro jazyk Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
+2. V návrháři formuláře pro hlavní formulář Form1.cs (Form1.vb pro jazyk Visual Basic), přidejte <xref:System.Windows.Forms.ToolStrip> ovládacího prvku.  
   
-3.  Přidat <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **vybrat složku**.  
+3. Přidat <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text> a <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **vybrat složku**.  
   
-4.  Přidejte druhý <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>, <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **zrušit**a <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> vlastnost `False`.  
+4. Přidejte druhý <xref:System.Windows.Forms.ToolStripButton> ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>, <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost **zrušit**a <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> vlastnost `False`.  
   
-5.  Přidat <xref:System.Windows.Forms.PictureBox> objektu do hlavního formuláře. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
+5. Přidat <xref:System.Windows.Forms.PictureBox> objektu do hlavního formuláře. Nastavte <xref:System.Windows.Forms.Control.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Fill>.  
   
 <a name="network"></a>   
 ## <a name="creating-the-dataflow-network"></a>Vytvoření sítě toku dat  
@@ -59,25 +59,25 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 #### <a name="to-create-the-dataflow-network"></a>Pokud chcete vytvořit síť toku dat  
   
-1.  Do projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
+1. Do projektu přidejte odkaz na System.Threading.Tasks.Dataflow.dll.  
   
-2.  Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` (`Using` v jazyce Visual Basic) příkazy:  
+2. Ujistěte se, že Form1.cs (Form1.vb pro jazyk Visual Basic) obsahuje následující `using` (`Using` v jazyce Visual Basic) příkazy:  
   
      [!code-csharp[TPLDataflow_CompositeImages#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#1)]  
   
-3.  Přidejte následující datové členy do `Form1` třídy:  
+3. Přidejte následující datové členy do `Form1` třídy:  
   
      [!code-csharp[TPLDataflow_CompositeImages#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#2)]  
   
-4.  Přidejte následující metodu `CreateImageProcessingNetwork`, možnosti `Form1` třídy. Tato metoda vytvoří sítě pro zpracování obrazu.  
+4. Přidejte následující metodu `CreateImageProcessingNetwork`, možnosti `Form1` třídy. Tato metoda vytvoří sítě pro zpracování obrazu.  
   
      [!code-csharp[TPLDataflow_CompositeImages#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#3)]  
   
-5.  Implementace `LoadBitmaps` metody.  
+5. Implementace `LoadBitmaps` metody.  
   
      [!code-csharp[TPLDataflow_CompositeImages#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#4)]  
   
-6.  Implementace `CreateCompositeBitmap` metody.  
+6. Implementace `CreateCompositeBitmap` metody.  
   
      [!code-csharp[TPLDataflow_CompositeImages#5](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#5)]  
   
@@ -109,15 +109,15 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
   
 #### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>K připojení sítě toku dat v uživatelském rozhraní  
   
-1.  V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **vybrat složku** tlačítko.  
+1. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **vybrat složku** tlačítko.  
   
-2.  Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **vybrat složku** tlačítko.  
+2. Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **vybrat složku** tlačítko.  
   
      [!code-csharp[TPLDataflow_CompositeImages#6](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#6)]  
   
-3.  V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **zrušit** tlačítko.  
+3. V návrháři formuláře pro hlavní formulář, vytvořit obslužnou rutinu události pro <xref:System.Windows.Forms.ToolStripItem.Click> události **zrušit** tlačítko.  
   
-4.  Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **zrušit** tlačítko.  
+4. Implementace <xref:System.Windows.Forms.ToolStripItem.Click> událost pro **zrušit** tlačítko.  
   
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   

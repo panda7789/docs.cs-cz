@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 409cea924b8a775621c3073e27009d1f556e4f42
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: c8c9fe05049feff6e15c765212b72e35265fd844
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58838570"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345427"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Řetězce formátu vlastní data a času
 
@@ -110,7 +110,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "d" v někol
 [!code-csharp[Formatting.DateAndTime.Custom#1](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#1)]
 [!code-vb[Formatting.DateAndTime.Custom#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#1)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ddSpecifier"></a> Specifikátor vlastního formátu "dd"
 
@@ -121,7 +121,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "dd" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#2](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#2)]
 [!code-vb[Formatting.DateAndTime.Custom#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#2)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="dddSpecifier"></a> Specifikátor vlastního formátu "ddd"
 
@@ -132,7 +132,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "ddd" v ře
 [!code-csharp[Formatting.DateAndTime.Custom#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#3)]
 [!code-vb[Formatting.DateAndTime.Custom#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#3)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ddddSpecifier"></a> Specifikátor vlastního formátu "dddd"
 
@@ -143,7 +143,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "dddd" v ř
 [!code-csharp[Formatting.DateAndTime.Custom#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#4)]
 [!code-vb[Formatting.DateAndTime.Custom#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#4)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="fSpecifier"></a> Specifikátor vlastního formátu "f"
 
@@ -158,7 +158,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "f" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ffSpecifier"></a> Specifikátor vlastního formátu "ff"
 
@@ -169,7 +169,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "ff" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="fffSpecifier"></a> Specifikátor vlastního formátu "fff"
 
@@ -180,7 +180,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "fff" v ře
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ffffSpecifier"></a> Specifikátor vlastního formátu "ffff"
 
@@ -188,7 +188,7 @@ Specifikátor vlastního formátu "ffff" představuje čtyři nejvýznamnější
 
 I když je možné zobrazit desetitisícin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="fffffSpecifier"></a> Specifikátor vlastního formátu "fffff"
 
@@ -196,7 +196,7 @@ Specifikátor vlastního formátu "fffff" představuje pět nejvýznamnějších
 
 I když je možné zobrazit stotisícin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ffffffSpecifier"></a> Specifikátor vlastního formátu "ffffff"
 
@@ -204,7 +204,7 @@ Specifikátor vlastního formátu "ffffff" představuje šest nejvýznamnější
 
 I když je možné zobrazit miliontin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="fffffffSpecifier"></a> Specifikátor vlastního formátu "fffffff"
 
@@ -212,7 +212,7 @@ Specifikátor vlastního formátu "fffffff" představuje sedm nejvýznamnější
 
 I když je možné zobrazit desetimiliontin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="F_Specifier"></a> Specifikátor vlastního formátu "F"
 
@@ -227,7 +227,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "F" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FF_Specifier"></a> Specifikátor vlastního formátu "FF"
 
@@ -238,7 +238,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "FF" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FFF_Specifier"></a> Specifikátor vlastního formátu "FFF"
 
@@ -249,7 +249,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "FFF" v ře
 [!code-csharp[Formatting.DateAndTime.Custom#5](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#5)]
 [!code-vb[Formatting.DateAndTime.Custom#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#5)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FFFF_Specifier"></a> Specifikátor vlastního formátu "FFFF"
 
@@ -257,7 +257,7 @@ Specifikátor vlastního formátu "FFFF" představuje čtyři nejvýznamnější
 
 I když je možné zobrazit desetitisícin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FFFFF_Specifier"></a> Specifikátor vlastního formátu "FFFFF"
 
@@ -265,7 +265,7 @@ Specifikátor vlastního formátu "FFFFF" představuje pět nejvýznamnějších
 
 I když je možné zobrazit stotisícin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FFFFFF_Specifier"></a> Specifikátor vlastního formátu "FFFFFF"
 
@@ -273,7 +273,7 @@ Specifikátor vlastního formátu "FFFFFF" představuje šest nejvýznamnější
 
 I když je možné zobrazit miliontin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="FFFFFFF_Specifier"></a> Specifikátor vlastního formátu "FFFFFFF"
 
@@ -281,7 +281,7 @@ Specifikátor vlastního formátu "FFFFFFF" představuje sedm nejvýznamnější
 
 I když je možné zobrazit desetimiliontin sekundy časové hodnoty, tato hodnota nemusí být smysluplná. Přesnost hodnot data a času závisí na rozlišení systémových hodin. V systémech Windows NT verze 3.5 (a vyšší) a Windows Vista je rozlišení hodin přibližně 10–15 milisekund.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="gSpecifier"></a> Specifikátor vlastního formátu "g" nebo "gg"
 
@@ -294,7 +294,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "g" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#6](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#6)]
 [!code-vb[Formatting.DateAndTime.Custom#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#6)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="hSpecifier"></a> Specifikátor vlastního formátu "h"
 
@@ -307,7 +307,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "h" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#7)]
 [!code-vb[Formatting.DateAndTime.Custom#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#7)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="hhSpecifier"></a> Specifikátor vlastního formátu "hh"
 
@@ -318,7 +318,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "hh" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#8](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Custom#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#8)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="H_Specifier"></a> Specifikátor vlastního formátu "H"
 
@@ -331,7 +331,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "H" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#9](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#9)]
 [!code-vb[Formatting.DateAndTime.Custom#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#9)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="HH_Specifier"></a> Specifikátor vlastního formátu "HH"
 
@@ -342,7 +342,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "HH" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#10](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#10)]
 [!code-vb[Formatting.DateAndTime.Custom#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#10)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="KSpecifier"></a> Specifikátor vlastního formátu "K"
 
@@ -363,7 +363,7 @@ Následující příklad zobrazí řetězec, který je výsledkem použití spec
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#12](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#12)]
 [!code-vb[Formatting.DateAndTime.Custom#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#12)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="mSpecifier"></a> Specifikátor vlastního formátu "m"
 
@@ -376,7 +376,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "m" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#7)]
 [!code-vb[Formatting.DateAndTime.Custom#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#7)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="mmSpecifier"></a> Specifikátor "mm" vlastního formátu
 
@@ -387,7 +387,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "mm" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#8](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Custom#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#8)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="M_Specifier"></a> Specifikátor vlastního formátu "M"
 
@@ -400,7 +400,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "M" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#11](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#11)]
 [!code-vb[Formatting.DateAndTime.Custom#11](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#11)]
 
-[Zpět k tabulce](#table) 
+[Zpět na tabulku](#table) 
 
 ## <a name="MM_Specifier"></a> Specifikátor vlastního formátu "MM"
 
@@ -411,7 +411,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "MM" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#2](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#2)]
 [!code-vb[Formatting.DateAndTime.Custom#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#2)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="MMM_Specifier"></a> Specifikátor vlastního formátu "MMM"
 
@@ -422,7 +422,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "MMM" v ře
 [!code-csharp[Formatting.DateAndTime.Custom#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#3)]
 [!code-vb[Formatting.DateAndTime.Custom#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#3)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="MMMM_Specifier"></a> Specifikátor vlastního formátu "MMMM"
 
@@ -433,7 +433,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "MMMM" v ř
 [!code-csharp[Formatting.DateAndTime.Custom#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#4)]
 [!code-vb[Formatting.DateAndTime.Custom#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#4)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="sSpecifier"></a> Specifikátor vlastního formátu "s"
 
@@ -446,7 +446,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "s" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#7)]
 [!code-vb[Formatting.DateAndTime.Custom#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#7)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ssSpecifier"></a> Specifikátor vlastního formátu "ss"
 
@@ -457,7 +457,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "ss" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#8](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Custom#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#8)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="tSpecifier"></a> Specifikátor vlastního formátu "t"
 
@@ -470,7 +470,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "t" v řet�
 [!code-csharp[Formatting.DateAndTime.Custom#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#7)]
 [!code-vb[Formatting.DateAndTime.Custom#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#7)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ttSpecifier"></a> Specifikátor vlastního formátu "tt"
 
@@ -483,7 +483,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "tt" v řet
 [!code-csharp[Formatting.DateAndTime.Custom#8](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#8)]
 [!code-vb[Formatting.DateAndTime.Custom#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#8)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="ySpecifier"></a> Specifikátor vlastního formátu "y"
 
@@ -496,7 +496,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "y" v řet�
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="yySpecifier"></a> Specifikátor vlastního formátu "yy"
 
@@ -512,7 +512,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "yy" v řet
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="yyySpecifier"></a> Specifikátor vlastního formátu "yyy"
 
@@ -526,7 +526,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "yyy" v ře
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="yyyySpecifier"></a> Specifikátor vlastního formátu "yyyy"
 
@@ -540,7 +540,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "yyyy" v ř
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="yyyyySpecifier"></a> Specifikátor vlastního formátu "yyyyy"
 
@@ -553,7 +553,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "yyyyy" v �
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="zSpecifier"></a> Specifikátor vlastního formátu "z"
 
@@ -570,7 +570,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "z" v řet�
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#14](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#14)]
 [!code-vb[Formatting.DateAndTime.Custom#14](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#14)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="zzSpecifier"></a> Specifikátor vlastního formátu "zz"
 
@@ -585,7 +585,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "zz" v řet
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#14](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#14)]
 [!code-vb[Formatting.DateAndTime.Custom#14](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#14)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="zzzSpecifier"></a> Specifikátor vlastního formátu "zzz"
 
@@ -600,7 +600,7 @@ Následující příklad obsahuje specifikátor vlastního formátu "zzz" ve vla
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#14](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#14)]
 [!code-vb[Formatting.DateAndTime.Custom#14](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#14)]
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="timeSeparator"></a> ":" Vlastního formátu specifikátor
 Specifikátor vlastního formátu ":" představuje oddělovač času, který se používá k rozlišení hodin, minut a sekund. Odpovídající lokalizovaný oddělovač času je načten z <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
@@ -610,7 +610,7 @@ Specifikátor vlastního formátu ":" představuje oddělovač času, který se 
 
 Pokud ":" použijete bez dalšího specifikátoru vlastního formátu specifikátor formátu, je interpretován jako standardní hodnoty data a specifikátor formátu času a vyvolá výjimku <xref:System.FormatException>. Další informace o používání jeden specifikátor formátu najdete v tématu [používání jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers) dále v tomto článku.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="dateSeparator"></a> Specifikátor vlastního formátu "/"
 
@@ -621,7 +621,7 @@ Specifikátor vlastního formátu "/" představuje oddělovač dat, který se po
 
 Pokud specifikátor formátu "/" použijete bez dalšího specifikátoru vlastního formátu, je interpretován jako standardní hodnoty data a specifikátor formátu času a vyvolá výjimku <xref:System.FormatException>. Další informace o používání jeden specifikátor formátu najdete v tématu [používání jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers) dále v tomto článku.
 
-[Zpět k tabulce](#table)
+[Zpět na tabulku](#table)
 
 ## <a name="Literals"></a> Znakové literály
 
@@ -632,7 +632,7 @@ Následující znaky v vlastní datum a čas formátovacím řetězci jsou vyhra
 |F|H|K|M|d|
 |f|G|h|m|s|
 |t|y|z|%|:|
-|/|"|'|\||
+|/|"|'|&#92;||
 
 Všechny ostatní znaky jsou vždy interpretováno jako literální znak a v rámci operace formátování jsou součástí výsledného řetězce beze změny.  Při operaci parsování musí se shodovat znaků ve vstupním řetězci přesně; porovnávání rozlišuje velká a malá písmena.
 

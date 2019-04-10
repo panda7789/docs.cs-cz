@@ -2,12 +2,12 @@
 title: Použití ExpressionTextBox v návrháři vlastní aktivity
 ms.date: 03/30/2017
 ms.assetid: f82e73e7-a256-4a4d-82b7-c0d62f4ab5e7
-ms.openlocfilehash: 7c1ba262046a665b8d63157fe3cdb4b1a41c37bf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c85254f1ae7ba8a269568cf1a14acf367b595e33
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59229378"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344972"
 ---
 # <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Použití ExpressionTextBox v návrháři vlastní aktivity
 Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivita `MultiAssign`, přiřadí dva řetězcové hodnoty dvou proměnných řetězce. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> svázat ovládací prvky <xref:System.Activities.InArgument>svázat s a některé <xref:System.Activities.OutArgument>s.
@@ -23,19 +23,19 @@ Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.V
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
-1.  Pomocí sady Visual Studio 2010, otevřete soubor ExpressionTextBoxSample.sln.
+1. Pomocí sady Visual Studio 2010, otevřete soubor ExpressionTextBoxSample.sln.
 
-2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
 
 #### <a name="to-run-this-sample"></a>Tuto ukázku spustit
 
-1.  Přidáte novou konzolovou aplikaci pracovního postupu do řešení.
+1. Přidáte novou konzolovou aplikaci pracovního postupu do řešení.
 
-2.  Přidejte odkaz na **ExpressionTextBoxSample** projekt z nový projekt konzolové aplikace pracovního postupu.
+2. Přidejte odkaz na **ExpressionTextBoxSample** projekt z nový projekt konzolové aplikace pracovního postupu.
 
-3.  Sestavte řešení.
+3. Sestavte řešení.
 
-4.  Přetáhněte **MultiAssign** aktivity ze sady nástrojů a umístěte ho do pracovního postupu.
+4. Přetáhněte **MultiAssign** aktivity ze sady nástrojů a umístěte ho do pracovního postupu.
 
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

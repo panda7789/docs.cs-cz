@@ -2,19 +2,19 @@
 title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 1249b5555c9ef7074410682ad9b26e5b003aea9c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: b226d981dd0cd61789e88ab06e602dd619f3f6c9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58828991"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344218"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  
   
 ### <a name="to-create-the-source-file"></a>Chcete-li vytvořit zdrojový soubor  
   
-1.  Zkopírujte následující řádky do souboru s názvem scores.csv a uložte ho do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, a následné sloupce představují skóre z čtyři zkoušky.  
+1. Zkopírujte následující řádky do souboru s názvem scores.csv a uložte ho do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, a následné sloupce představují skóre z čtyři zkoušky.  
   
     ```  
     111, 97, 92, 81, 60  

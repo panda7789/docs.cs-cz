@@ -7,12 +7,12 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-ms.openlocfilehash: d736d80a05469dafecbdaf196701c14528ee7d26
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0176ebffe82e60671ea66481b7d659004dc31477
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59230015"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344920"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. Příklady prostředků: štětce a styly. Tento přehled popisuje, jak použít zdroje v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo Zaměnitelně mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](resources-and-code.md).  
@@ -69,11 +69,11 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
   
 #### <a name="static-resource-lookup-behavior"></a>Chování při vyhledávání statický prostředek  
   
-1.  Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
+1. Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
   
-2.  Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
+2. Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
   
-3.  V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+3. V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
   
  Odkazy na statické prostředky z v rámci slovníku prostředků musí odkazovat na prostředek, který již byl definován lexikálně před odkaz na prostředek. Dopředné odkazy nemůže přeložit odkaz statických prostředků. Z tohoto důvodu Pokud používáte odkazy na statické prostředky, je třeba navrhnout strukturu slovníku prostředků tak, aby prostředky, které jsou určené pro použití podle prostředků jsou definovány v nebo na začátku každé slovník příslušných prostředků.  
   
@@ -101,19 +101,19 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
 #### <a name="dynamic-resource-lookup-behavior"></a>Chování při vyhledávání dynamický prostředek  
  Chování při vyhledávání prostředků pro odkaz na dynamický prostředek parallels chování vyhledávání v kódu při volání <xref:System.Windows.FrameworkElement.FindResource%2A> nebo <xref:System.Windows.FrameworkElement.SetResourceReference%2A>.  
   
-1.  Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
+1. Proces vyhledávání vyhledá požadovaný klíč ve slovníku prostředků, které jsou definovány pomocí elementu, který nastaví vlastnost.  
   
     -   Pokud element definuje <xref:System.Windows.FrameworkElement.Style%2A> vlastnost, <xref:System.Windows.Style.Resources%2A> slovníku v rámci <xref:System.Windows.Style> je zaškrtnuté políčko.  
   
     -   Pokud element definuje <xref:System.Windows.Controls.Control.Template%2A> vlastnost, <xref:System.Windows.FrameworkTemplate.Resources%2A> slovníku v rámci <xref:System.Windows.FrameworkTemplate> je zaškrtnuté políčko.  
   
-2.  Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
+2. Logická stromová struktura směrem nahoru, proces vyhledávání následně prochází nadřazeného elementu a jeho slovníku prostředků. Tento postup se opakuje, dokud nebude dosaženo kořenový element.  
   
-3.  V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
+3. V dalším kroku se kontroluje prostředky aplikace. Prostředky aplikace jsou prostředky v rámci slovníku prostředků, který je definován <xref:System.Windows.Application> objekt pro vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
   
-4.  Slovník prostředků motiv se kontroluje u aktuálně aktivní motiv. Pokud, motiv se změní za běhu, hodnota je již znovu.  
+4. Slovník prostředků motiv se kontroluje u aktuálně aktivní motiv. Pokud, motiv se změní za běhu, hodnota je již znovu.  
   
-5.  Systémové prostředky jsou kontrolovány.  
+5. Systémové prostředky jsou kontrolovány.  
   
  Výjimka chování (pokud existuje) se liší:  
   

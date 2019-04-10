@@ -2,12 +2,12 @@
 title: Hledání zjišťování a kritéria hledání
 ms.date: 03/30/2017
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-ms.openlocfilehash: c95f8e1b48c4e58c6d521bd06df4a470999fa375
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 6efbfe34bbe5b15696d247c291f1d88006a53a36
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59095773"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345778"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operace hledání zjišťování inicializuje klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným zprávy WS-Discovery ProbeMatch odpověď. Další informace o zjišťování zpráv, najdete v článku [specifikace WS-Discovery](https://go.microsoft.com/fwlink/?LinkID=122347).  
@@ -40,9 +40,9 @@ Operace hledání zjišťování inicializuje klienta ke zjištění jednu nebo 
   
  Ukončení kritéria patří:  
   
-1.  <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> – Maximální dobu čekání na odpovědi služby v síti. Výchozí doba je 20 sekund.  
+1. <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> – Maximální dobu čekání na odpovědi služby v síti. Výchozí doba je 20 sekund.  
   
-2.  <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> – Maximální počet odpovědí čekání. Pokud <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> odpovědi jsou obdrženy předtím, než <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynutí skončí operace find.  
+2. <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> – Maximální počet odpovědí čekání. Pokud <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> odpovědi jsou obdrženy předtím, než <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> uplynutí skončí operace find.  
   
 ## <a name="findresponse"></a>FindResponse  
  <xref:System.ServiceModel.Discovery.FindResponse> má <xref:System.ServiceModel.Discovery.FindResponse.Endpoints%2A> vlastnost kolekce, která obsahuje veškeré odpovědi odeslané to provede spárováním odpovídajících služby v síti. Pokud příjemce odpovědi žádné služby, kolekce je prázdná. Pokud jeden nebo více služeb odpověděl, každá odpověď je uložené v <xref:System.ServiceModel.Discovery.EndpointDiscoveryMetadata> objektu, který obsahuje adresu, kontrakt a některé další informace o službě.  

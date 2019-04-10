@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: cb5fab92-1c19-499e-ae91-8b7525dd875f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3bde7ebcc73c5e9e2d87074b78d78bb63cd441ad
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
+ms.openlocfilehash: 599432af178031a85dea4155a8fd2923f879a600
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583638"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427354"
 ---
 # <a name="how-to-write-a-simple-parallelforeach-loop"></a>Postupy: Zápis jednoduché smyčky Parallel.ForEach
 
@@ -51,7 +51,7 @@ V sadě Visual Studio jsou jazyka Visual Basic a C# konzole šablony aplikací p
 
 Z příkazového řádku, můžete použít .NET Core a jeho nástrojů rozhraní příkazového řádku (například `dotnet new console` nebo `dotnet new console -lang vb`), nebo můžete vytvořit soubor a pomocí příkazového řádku kompilátoru pro aplikace rozhraní .NET Framework.
 
-Pro projekt .NET Core, musí odkazovat **System.Drawing.Common** balíček NuGet. V sadě Visual Studio pomocí Správce balíčků NuGet nainstalujte balíček. Alternativně můžete přidat odkaz na balíček ve vaší *.* csproj * nebo *.* vbproj * soubor:
+Pro projekt .NET Core, musí odkazovat **System.Drawing.Common** balíček NuGet. V sadě Visual Studio pomocí Správce balíčků NuGet nainstalujte balíček. Alternativně můžete přidat odkaz na balíček ve vaší \*.csproj nebo \*souboru .vbproj:
  
 ```xml
 <ItemGroup>

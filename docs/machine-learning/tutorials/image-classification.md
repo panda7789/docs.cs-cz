@@ -4,12 +4,12 @@ description: Objevte, jak vytvářet třídění ML.NET vlastní image ve Tensor
 ms.date: 04/05/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7d320135d0d414c2cca934ff3d4cad5152a24ee8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 775f26d0e2453a0027f1e54ddc05f51e596ad540
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59232529"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427510"
 ---
 # <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
 
@@ -28,7 +28,7 @@ V tomto kurzu se naučíte:
 > [!NOTE]
 > Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
-Tento kurz a související ukázkové právě používáte **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [dotnet/machinelearning úložiště GitHub](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes)
+Tento kurz a související ukázkové právě používáte **ML.NET verze 0.10**. Další informace najdete v tématu poznámky k verzi v [dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes) úložiště GitHub.
 
 ## <a name="image-classification-sample-overview"></a>Přehled ukázky klasifikace obrázků
 
@@ -38,13 +38,13 @@ Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/
 
 ## <a name="prerequisites"></a>Požadavky
 
-* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
+* [Visual Studio 2017 15.6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované.
 
 * Balíček Nuget Microsoft.ML 0.10.0
 * Balíček Nuget Microsoft.ML.ImageAnalytics 0.10.0
 * Balíček Nuget Microsoft.ML.TensorFlow 0.10.0
 
-* [Adresář, který kurzů aktiv. Soubor ZIP](http://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)
+* [Adresář, který kurzů aktiv. Soubor ZIP](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)
 
 * [Model InceptionV3 strojového učení](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)
 
@@ -136,7 +136,7 @@ Trénovací a testovací bitové kopie jsou umístěny ve složkách prostředky
 
 ### <a name="prepare-your-data"></a>Příprava dat
 
-1. Stáhněte si [souboru zip projektu prostředků adresáře](http://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)a rozbalte ho.
+1. Stáhněte si [souboru zip projektu prostředků adresáře](https://download.microsoft.com/download/0/E/5/0E5E0136-21CE-4C66-AC18-9917DED8A4AD/image-classifier-assets.zip)a rozbalte ho.
 
 2. Kopírovat `assets` adresáře do vašeho *TransferLearningTF* adresáře projektu. Tento adresář a jeho podadresářích obsahovat soubory dat a podporu (s výjimkou vzniku modelu, který budete stáhnout a přidat v dalším kroku) pro tento kurz potřeba.
 
@@ -509,4 +509,4 @@ V tomto kurzu jste se naučili:
 
 Projděte si úložišti GitHub s ukázkami Machine Learning a prozkoumejte ukázkový klasifikace rozšířené image.
 > [!div class="nextstepaction"]
-> [úložiště GitHub DotNet/machinelearning – ukázky](https://github.com/dotnet/machinelearning/)
+> [úložiště GitHub DotNet/machinelearning – ukázky](https://github.com/dotnet/machinelearning-samples/)

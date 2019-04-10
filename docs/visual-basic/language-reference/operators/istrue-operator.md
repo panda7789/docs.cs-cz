@@ -7,12 +7,12 @@ helpviewer_keywords:
 - IsTrue operator [Visual Basic]
 - OrElse operator [Visual Basic]
 ms.assetid: b6cec0f2-61b1-4331-a7f0-4d07ee3179d6
-ms.openlocfilehash: cb8ad8cb4a1ec13611edfcc3de7f4b7eb33fc553
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 6c5ec6d953d174b525dee7ad3034d2d01ae4950f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58829925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344946"
 ---
 # <a name="istrue-operator-visual-basic"></a>IsTrue – operátor (Visual Basic)
 Určuje, zda je výraz `True`.  
@@ -24,15 +24,15 @@ Určuje, zda je výraz `True`.
 ## <a name="compiler-use-of-istrue"></a>Použití kompilátoru IsTrue  
  Po definování třídy nebo struktury, můžete použít proměnnou daného typu v `For`, `If`, `Else If`, nebo `While` příkazu, nebo `When` klauzuli. Pokud to uděláte, kompilátor, vyžaduje operátor převede typ do `Boolean` hodnoty, aby ho mohli otestovat podmínku. Vyhledá vhodný operátor v následujícím pořadí:  
   
-1.  Rozšiřující operátor převodu z třídy nebo struktury `Boolean`.  
+1. Rozšiřující operátor převodu z třídy nebo struktury `Boolean`.  
   
-2.  Rozšiřující operátor převodu z třídy nebo struktury `Boolean?`.  
+2. Rozšiřující operátor převodu z třídy nebo struktury `Boolean?`.  
   
-3.  `IsTrue` Operátor v třídě nebo struktuře.  
+3. `IsTrue` Operátor v třídě nebo struktuře.  
   
-4.  Zužující převody na `Boolean?` , který nevyžaduje převod z `Boolean` k `Boolean?`.  
+4. Zužující převody na `Boolean?` , který nevyžaduje převod z `Boolean` k `Boolean?`.  
   
-5.  Zužující operátor převodu z třídy nebo struktury `Boolean`.  
+5. Zužující operátor převodu z třídy nebo struktury `Boolean`.  
   
  Pokud jste nedefinovali jakýkoli převod na `Boolean` nebo `IsTrue` operátor signály kompilátor chybu.  
   
@@ -46,6 +46,6 @@ Určuje, zda je výraz `True`.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)
+- [IsFalse – operátor](../../../visual-basic/language-reference/operators/isfalse-operator.md)
+- [Postupy: Definování operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [OrElse – operátor](../../../visual-basic/language-reference/operators/orelse-operator.md)

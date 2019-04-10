@@ -6,12 +6,12 @@ title: Dokumentace k rozhraní .NET
 description: Naučte se v rozhraní .NET vytvářet v jazycích C#, Visual Basic a F# nejrůznější aplikace určené pro libovolnou platformu. Procházejte referenční informace k rozhraní API, ukázky kódu, kurzy a další zdroje informací.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
-ms.openlocfilehash: 132cab6f7c196f88fdc02259e55d0fcb5fbbfd10
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 61b3e6f2aae2ad2633f82360b227a876f685fcc1
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/09/2019
-ms.locfileid: "59297263"
+ms.locfileid: "59427484"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -231,8 +231,8 @@ ms.locfileid: "59297263"
                                             </div>
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/machine-learning">Průvodce ML.NET</a></h3>
-                                                <p><a href="/dotnet/machine-learning/index#tutorials">Kurzy</a></p>
-                                                <p><a href="/dotnet/machine-learning/index#resources">Prostředky</a></p>
+                                                <p><a href="/dotnet/machine-learning/tutorials">Kurzy</a></p>
+                                                <p><a href="/dotnet/machine-learning/resources">Prostředky</a></p>
                                                 <p><a href="/dotnet/machine-learning/resources/glossary">Slovníček</a></p>
                                                 <p><a href="/dotnet/api?view=ml-dotnet">Referenční dokumentace k rozhraní ML.NET API</a></p>
                                             </div>

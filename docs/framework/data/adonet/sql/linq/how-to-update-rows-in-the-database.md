@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2b5c90f-6cc3-4128-bfab-1db488d5af26
-ms.openlocfilehash: 84ef85b1e53d97ff468c3360af5e394a0e4ad776
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e40866c5160d6850b39133050d09026f5ffd6cc5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59091190"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344170"
 ---
 # <a name="how-to-update-rows-in-the-database"></a>Postupy: Aktualizace řádků v databázi
 Řádky v databázi můžete aktualizovat změnou hodnoty členů objektů přidružených [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Table%601> kolekce a potom odešlete změny do databáze. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží provedené změny do příslušné SQL `UPDATE` příkazy.  
@@ -24,11 +24,11 @@ ms.locfileid: "59091190"
   
 ### <a name="to-update-a-row-in-the-database"></a>Aktualizujte řádek v databázi  
   
-1.  Dotaz na databázi pro aktualizaci řádku.  
+1. Dotaz na databázi pro aktualizaci řádku.  
   
-2.  Proveďte požadované změny hodnoty členů ve výsledné [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektu.  
+2. Proveďte požadované změny hodnoty členů ve výsledné [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektu.  
   
-3.  Odešlete změny do databáze.  
+3. Odešlete změny do databáze.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu dotazuje databázi pro objednávku #11000 a poté změní hodnoty `ShipName` a `ShipVia` ve výsledné `Order` objektu. Nakonec změny na tyto hodnoty členů se odešlou do databáze jako změny `ShipName` a `ShipVia` sloupce.  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 27c7500a3d33ec17680896f21f0e44d98fee94c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4797f35a3738955f620fad7a93f8695685d21057
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54638467"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59345089"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
 Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazyka C# společnosti Microsoft.  
@@ -28,13 +28,13 @@ Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazy
 ```  
   
 ## <a name="arguments"></a>Arguments  
- **None**  
+ **žádná**  
  Sestavy o vnitřních chybách kompilátoru nebudou shromážděné nebo odeslané společnosti Microsoft.  
   
- **prompt**  
+ **řádek**  
  Zobrazí výzvu k odeslání hlášení, pokud obdržíte chybu kompilátoru. **řádek** výchozí nastavení je při kompilaci aplikace ve vývojovém prostředí.  
   
- **fronty**  
+ **queue**  
  Zařadí do fronty zprávy o chybách. Při přihlášení s přihlašovacími údaji správce, můžete nahlásit všechny chyby od posledního přihlášení. Nezobrazí výzva k odeslání zprávy o chybách více než jednou za tři dny. **fronty** výchozí nastavení je při kompilaci aplikace příkazového řádku.  
   
  **Odeslat**  
@@ -51,16 +51,16 @@ Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazy
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete v projektu **vlastnosti** stránky. Další informace najdete v tématu [stránku sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
+1. Otevřete v projektu **vlastnosti** stránky. Další informace najdete v tématu [stránku sestavení, Návrhář projektu (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp).  
   
-2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
+2. Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Klikněte na tlačítko **Upřesnit** tlačítko.  
+3. Klikněte na tlačítko **Upřesnit** tlačítko.  
   
-4.  Upravit **hlášení vnitřních chyb kompilátoru** vlastnost.  
+4. Upravit **hlášení vnitřních chyb kompilátoru** vlastnost.  
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.ErrorReport%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)

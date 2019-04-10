@@ -5,12 +5,12 @@ author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
 ms.custom: seodec18
-ms.openlocfilehash: b543ab2e200e8169a251db8ddfb1493c5583ed69
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7f4699b5277c5feeac4d9116ac85e096247aa748
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360248"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427445"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Testování osvědčených postupů pomocí .NET Core a .NET Standard
 
@@ -18,7 +18,7 @@ Existuje mnoho výhod zápis testů jednotek; pomáhají s regrese, poskytují d
 
 V této příručce se dozvíte některé osvědčené postupy při psaní testů jednotek se testy odolné a snadno pochopitelná.
 
-Podle [Jan Reese](https://reese.dev) se zvláštními k [Roy Osherove](http://osherove.com/)
+Podle [Jan Reese](https://reese.dev) se zvláštními k [Roy Osherove](https://osherove.com/)
 
 ## <a name="why-unit-test"></a>Proč pro testování částí?
 
@@ -250,17 +250,17 @@ Zvažte následující případ
 ```csharp
 public string ParseLogLine(string input)
 {
-    var sanitizedInput = trimInput(input);
+    var sanitizedInput = TrimInput(input);
     return sanitizedInput;
 }
 
-private string trimInput(string input)
+private string TrimInput(string input)
 {
     return input.Trim();
 }
 ```
 
-Aby vám začali psát test může být první reakci `trimInput` proto, abyste měli jistotu, že metoda funguje podle očekávání. Je však šíři, který `ParseLogLine` manipuluje `sanitizedInput` takovým způsobem, který nepočítáte, testují splnění vykreslování `trimInput` zbytečné. 
+Aby vám začali psát test může být první reakci `TrimInput` proto, abyste měli jistotu, že metoda funguje podle očekávání. Je však šíři, který `ParseLogLine` manipuluje `sanitizedInput` takovým způsobem, který nepočítáte, testují splnění vykreslování `TrimInput` zbytečné. 
 
 Skutečný test by mělo být provedeno proti veřejnou metodu protilehlé `ParseLogLine` protože to je, co vám by nakonec záleží. 
 

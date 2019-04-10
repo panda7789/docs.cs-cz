@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], providing credentials
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
-ms.openlocfilehash: dd9b53b50f76ec80232a5fb8624e2b1701f9760d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1677d44faf6901eb1eda93a9374636b7caa558a0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59140163"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59346025"
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkovatele tokenů zabezpečení a jak integrovat Správce tokenů zabezpečení vlastního zprostředkovatele.  
@@ -26,22 +26,22 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkova
   
 ### <a name="to-create-a-custom-security-token-provider"></a>Chcete-li vytvořit vlastního zprostředkovatele tokenů zabezpečení  
   
-1.  Definovat nové třídy odvozené od <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy.  
+1. Definovat nové třídy odvozené od <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy.  
   
-2.  Implementace <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> metody. Metoda je zodpovědný za vytváření a vrácení instance tokenu zabezpečení. Následující příklad vytvoří třídu s názvem `MySecurityTokenProvider`a přepíše <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> metoda vrátí instanci <xref:System.IdentityModel.Tokens.X509SecurityToken> třídy. Konstruktor třídy vyžaduje instanci <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy.  
+2. Implementace <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> metody. Metoda je zodpovědný za vytváření a vrácení instance tokenu zabezpečení. Následující příklad vytvoří třídu s názvem `MySecurityTokenProvider`a přepíše <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%28System.TimeSpan%29> metoda vrátí instanci <xref:System.IdentityModel.Tokens.X509SecurityToken> třídy. Konstruktor třídy vyžaduje instanci <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> třídy.  
   
      [!code-csharp[c_CustomTokenProvider#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenprovider/cs/source.cs#1)]
      [!code-vb[c_CustomTokenProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenprovider/vb/source.vb#1)]  
   
 ### <a name="to-integrate-a-custom-security-token-provider-with-a-custom-security-token-manager"></a>Správce tokenů zabezpečení vlastní integrovat vlastního zprostředkovatele tokenů zabezpečení  
   
-1.  Definovat nové třídy odvozené od <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy. (Následující příklad je odvozen od <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třída, která je odvozena z <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.)  
+1. Definovat nové třídy odvozené od <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy. (Následující příklad je odvozen od <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> třída, která je odvozena z <xref:System.IdentityModel.Selectors.SecurityTokenManager> třídy.)  
   
-2.  Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metody, pokud se už je přepsaný.  
+2. Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metody, pokud se už je přepsaný.  
   
      <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Metoda je zodpovědný za vrácení instance <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy vhodné <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr předaný metodě rozhraním zabezpečení WCF. Upravte metodu vrátit implementaci poskytovatele tokenu, kterého vlastní bezpečnostní (vytvořený v předchozím postupu) při volání metody s parametrem tokenu zabezpečení. Další informace o správce tokenů zabezpečení, najdete v článku [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
-3.  Přidat vlastní logiku do metody, který umožňuje vrátit vašeho vlastního zprostředkovatele tokenů zabezpečení na základě <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametru. Následující příklad vrátí vlastního zprostředkovatele tokenů zabezpečení, pokud jsou splněny požadavky tokenu. Požadavky zahrnují token zabezpečení X.509 a směr zpráv (že token, který se používá pro výstup zpráv). U všech ostatních případech volá kód základní třídy, chcete-li zachovat shodné chování poskytované systémem další požadavky tokenu zabezpečení.  
+3. Přidat vlastní logiku do metody, který umožňuje vrátit vašeho vlastního zprostředkovatele tokenů zabezpečení na základě <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametru. Následující příklad vrátí vlastního zprostředkovatele tokenů zabezpečení, pokud jsou splněny požadavky tokenu. Požadavky zahrnují token zabezpečení X.509 a směr zpráv (že token, který se používá pro výstup zpráv). U všech ostatních případech volá kód základní třídy, chcete-li zachovat shodné chování poskytované systémem další požadavky tokenu zabezpečení.  
   
  [!code-csharp[c_CustomTokenProvider#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenprovider/cs/source.cs#2)]
  [!code-vb[c_CustomTokenProvider#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenprovider/vb/source.vb#2)]  

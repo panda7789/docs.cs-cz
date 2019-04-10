@@ -3,12 +3,12 @@ title: 'Kurz: Zápis první opravu analyzátoru a kódu'
 description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a oprava kódu pomocí sady SDK kompilátoru .NET (Roslyn API).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 665dac9d36933c35be19cc826b8b4dc614c38ed2
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 7e3d1ac3a1ef692a1b7f1980fd00f95b04a8d047
+ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677166"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59427497"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
 
@@ -254,7 +254,7 @@ Jste kód opravili správně kódu připravená k vyzkoušení.  Stisknutím kl�
 
 ![Může být const upozornění](media/how-to-write-csharp-analyzer-code-fix/make-const-warning.png)
 
-Jsme udělali spoustu průběh. Existují podtržení vlnovkou v rámci deklarace, které mohou být provedeny `const`. Ale bude stále na práci není. To funguje správně, pokud přidáte `const` deklaracích počínaje `i`, pak `j` a nakonec `k`. Ale pokud přidáte `const` modifikátor i jiné pořadí, počínaje `k`, vaše analyzátor vytvoří chyby: `k` nejde použít deklaraci `const`, není-li `i` a `j` jsou již `const`. Máte s nimi dělat další analýzy k zajištění, že zpracovávat různé způsoby proměnné mohou být deklarovány a inicializovány.
+Jsme udělali spoustu průběh. Existují podtržení vlnovkou v rámci deklarace, které mohou být provedeny `const`. Ale bude stále na práci není. To funguje správně, pokud přidáte `const` deklaracích počínaje `i`, pak `j` a nakonec `k`. Ale pokud přidáte `const` modifikátor v jiném pořadí, počínaje `k`, vaše analyzátor vytvoří chyby: `k` nejde použít deklaraci `const`, není-li `i` a `j` jsou již `const`. Máte s nimi dělat další analýzy k zajištění, že zpracovávat různé způsoby proměnné mohou být deklarovány a inicializovány.
 
 ## <a name="build-data-driven-tests"></a>Vytvořit testy řízené daty
 
