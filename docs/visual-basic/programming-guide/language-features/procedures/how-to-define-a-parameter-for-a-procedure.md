@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, procedures
 - procedure parameters [Visual Basic], defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
-ms.openlocfilehash: 01b150d70c07897f8217ed6958e3654aa28fdf51
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 55925b0f007b1be2f5d46ffc0854601f483b2e2d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971790"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333831"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Postupy: Definování parametru pro proceduru (Visual Basic)
 A *parametr* umožňuje volající kód tak, předejte hodnotu k postupu při jeho volání. Stejným způsobem jako deklaraci proměnné, zadáte její název a datový typ deklarujete každý parametr pro proceduru. Zadáte také mechanismus předávání a určuje, zda se jedná o volitelný parametr.  
@@ -22,17 +22,17 @@ A *parametr* umožňuje volající kód tak, předejte hodnotu k postupu při je
   
 ### <a name="to-define-a-procedure-parameter"></a>Chcete-li definovat parametr procedury  
   
-1.  V deklaraci procedury přidejte název parametru do seznamu parametrů podle postupu, oddělení od ostatních parametrů čárkami.  
+1. V deklaraci procedury přidejte název parametru do seznamu parametrů podle postupu, oddělení od ostatních parametrů čárkami.  
   
-2.  Rozhodněte, datový typ parametru.  
+2. Rozhodněte, datový typ parametru.  
   
-3.  Postupujte podle názvu parametru pomocí `As` klauzule k určení datového typu.  
+3. Postupujte podle názvu parametru pomocí `As` klauzule k určení datového typu.  
   
-4.  Rozhodněte, předávání mechanismus, který chcete použít pro parametr. Obvykle můžete předat parametr podle hodnoty, pokud chcete postup nebude moct změnit jeho hodnotu ve volajícím kódu.  
+4. Rozhodněte, předávání mechanismus, který chcete použít pro parametr. Obvykle můžete předat parametr podle hodnoty, pokud chcete postup nebude moct změnit jeho hodnotu ve volajícím kódu.  
   
-5.  Zadejte před název parametru [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) k určení mechanismus předávání. Další informace najdete v tématu [rozdíly mezi předáním argumentu podle hodnoty a podle Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
+5. Zadejte před název parametru [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) k určení mechanismus předávání. Další informace najdete v tématu [rozdíly mezi předáním argumentu podle hodnoty a podle Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
-6.  Pokud se jedná o volitelný parametr, předcházet mechanismus předávání s [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) a postupujte podle pokynů datový typ parametru znaménko rovná se (`=`) a výchozí hodnotu.  
+6. Pokud se jedná o volitelný parametr, předcházet mechanismus předávání s [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) a postupujte podle pokynů datový typ parametru znaménko rovná se (`=`) a výchozí hodnotu.  
   
      Následující příklad definuje obrys `Sub` postup se třemi parametry. První dvě jsou povinné a třetí je volitelné. Deklarace parametru se v seznamu parametrů oddělené čárkami.  
   
@@ -56,9 +56,9 @@ A *parametr* umožňuje volající kód tak, předejte hodnotu k postupu při je
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
-- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
-- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Procedury Function](./function-procedures.md)
+- [Postupy: Předávání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
+- [Předávání argumentů hodnotou nebo referencí](./passing-arguments-by-value-and-by-reference.md)
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

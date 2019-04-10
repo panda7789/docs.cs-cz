@@ -17,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: 2c95b903ae03ea261674885262b24a33efa9e2db
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 76c7b9fa9ef103fc5fc62830932cc724ba50baca
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973740"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333359"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -75,7 +75,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
  Pro každou zvláštní _MethodName_**asynchronní** podpis metody:  
   
-1.  Definujte následující událost ve stejné třídě, jako metodu:  
+1. Definujte následující událost ve stejné třídě, jako metodu:  
   
     ```vb  
     Public Event MethodNameCompleted As MethodNameCompletedEventHandler  
@@ -85,7 +85,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
     public event MethodNameCompletedEventHandler MethodNameCompleted;  
     ```  
   
-2.  Definovat následující delegáta a <xref:System.ComponentModel.AsyncCompletedEventArgs>. Tyto bude mít definici pravděpodobně mimo vlastní třídy, ale stejný obor názvů.  
+2. Definovat následující delegáta a <xref:System.ComponentModel.AsyncCompletedEventArgs>. Tyto bude mít definici pravděpodobně mimo vlastní třídy, ale stejný obor názvů.  
   
     ```vb  
     Public Delegate Sub MethodNameCompletedEventHandler( _  

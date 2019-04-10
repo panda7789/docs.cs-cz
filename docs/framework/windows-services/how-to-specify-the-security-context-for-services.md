@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: 0b011497d04a1da3764b75c4d8c5d7084ff110bb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 68fd5d705cb2f38e00e90c211111ff34d23f3b10
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59154047"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335807"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Postupy: Určení kontextu zabezpečení pro služby
 Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než přihlášeným uživatelem. Volá se spouštějí v kontextu systému výchozí účet služby `LocalSystem`, která jim udělí různá přístupová oprávnění k systémových prostředků, než uživatel. Toto chování k určení jiného uživatelského účtu, pod kterým se vaše služba spouštět můžete změnit.  
@@ -35,14 +35,14 @@ Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než p
   
 ### <a name="to-specify-the-security-context-for-a-service"></a>K určení kontextu zabezpečení pro službu  
   
-1.  Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+1. Po vytvoření vaší služby, přidejte nezbytné instalační programy pro něj. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-2.  V návrháři pro přístup `ProjectInstaller` třídy a klikněte na instalační program služby procesu pro službu pracujete.  
+2. V návrháři pro přístup `ProjectInstaller` třídy a klikněte na instalační program služby procesu pro službu pracujete.  
   
     > [!NOTE]
     >  Pro každou aplikaci služby existují alespoň dvě součásti instalace v `ProjectInstaller` třídy – ten, který nainstaluje procesy pro všechny služby v projektu a jednoho instalačního programu pro každou službu, která obsahuje aplikaci. V této instanci, kterou chcete vybrat <xref:System.ServiceProcess.ServiceProcessInstaller>.  
   
-3.  V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
+3. V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> na odpovídající hodnotu.  
   
 ## <a name="see-also"></a>Viz také:
 

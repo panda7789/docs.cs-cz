@@ -2,12 +2,12 @@
 title: WCF a mezinárodní názvy domén
 ms.date: 03/30/2017
 ms.assetid: c8a3e10a-8bc2-4a78-8d86-a562ba6e65fa
-ms.openlocfilehash: c166f497117314dd8cea3b04b9b1072203374c52
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: c53c22e388ec352b1275018c0b945c9608565084
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59112603"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335378"
 ---
 # <a name="wcf-and-internationalized-domain-names"></a>WCF a mezinárodní názvy domén
 Byla přidána podpora pro služby WCF s mezinárodní názvy domén (IDN). Mezinárodní název domény je název domény, který obsahuje jiné znaky než ASCII. Tato podpora zahrnuje možnost pro hostování služby WCF pomocí názvu IDN a klienta WCF ke komunikaci s webovou službu s názvem IDN.  
@@ -27,11 +27,11 @@ Byla přidána podpora pro služby WCF s mezinárodní názvy domén (IDN). Mezi
   
  \<Idn > prvku obsahuje atribut enabled, které můžete nastavit na jedno z následujících hodnot:  
   
-1.  "None"  
+1. "None"  
   
-2.  "AllExceptIntranet"  
+2. "AllExceptIntranet"  
   
-3.  "Vše"  
+3. "Vše"  
   
  Když je IDN nastavená na hodnotu "None", žádný převod se provádí Uri.Host nebo Uri.DnsSafeHost. Když je IDN nastavená na "Vše", identifikátor uri. Hostitel zůstává kódování Unicode a identifikátor uri. DnsSafeHost je převede na kódování Punycode. Když je IDN nastavená na "AllExceptIntranet", identifikátor uri. DnsSafeHost je převede na kódování Punycode u internetových adres a zůstane Unicode pro adres v podnikové síti. Toto nastavení je důležité pro správný překlad názvů DNS. Všimněte si, že toto nastavení není potřeba nakonfigurovat pro Windows 8 a novější verze.  
   

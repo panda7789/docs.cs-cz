@@ -11,12 +11,12 @@ helpviewer_keywords:
 - StatusBar control [Windows Forms], refreshing panels
 - panels [Windows Forms], refreshing status bar
 ms.assetid: cc2abb06-c082-49f7-a5a3-2fd1bbcb58d1
-ms.openlocfilehash: 61fb68a43132b350b62f073ca8683fada3be52d8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7beae9bb886c7c79d4d97375887bfecb0c2a40c1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59225765"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333311"
 ---
 # <a name="walkthrough-updating-status-bar-information-at-run-time"></a>Návod: Aktualizace informací stavového řádku za běhu
 > [!IMPORTANT]
@@ -28,29 +28,29 @@ ms.locfileid: "59225765"
   
 ### <a name="to-get-the-status-bar-ready-for-updating"></a>Připravit na stavovém řádku pro aktualizaci  
   
-1.  Vytvoření nového formuláře Windows.  
+1. Vytvoření nového formuláře Windows.  
   
-2.  Přidat <xref:System.Windows.Forms.StatusBar> ovládací prvek do formuláře. Podrobnosti najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
+2. Přidat <xref:System.Windows.Forms.StatusBar> ovládací prvek do formuláře. Podrobnosti najdete v tématu [jak: Přidání ovládacích prvků Windows Forms](how-to-add-controls-to-windows-forms.md).  
   
-3.  Přidat stav panelu panelu s vaší <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [jak: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md).  
+3. Přidat stav panelu panelu s vaší <xref:System.Windows.Forms.StatusBar> ovládacího prvku. Podrobnosti najdete v tématu [jak: Přidání panelů do ovládacího prvku StatusBar](how-to-add-panels-to-a-statusbar-control.md).  
   
-4.  Pro <xref:System.Windows.Forms.StatusBar> jste přidali do svého formuláře ovládací prvek nastavit <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `true`.  
+4. Pro <xref:System.Windows.Forms.StatusBar> jste přidali do svého formuláře ovládací prvek nastavit <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `true`.  
   
-5.  Přidání prvku Windows Forms <xref:System.Windows.Forms.Timer> komponentu do formuláře.  
+5. Přidání prvku Windows Forms <xref:System.Windows.Forms.Timer> komponentu do formuláře.  
   
     > [!NOTE]
     >  Windows Forms <xref:System.Windows.Forms.Timer?displayProperty=nameWithType> součásti je určen pro prostředí Windows Forms. Pokud potřebujete časovač, který je vhodný pro prostředí serveru, přečtěte si [Úvod do serverových časovače](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
   
-6.  Nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `true`.  
+6. Nastavte <xref:System.Windows.Forms.Timer.Enabled%2A> vlastnost `true`.  
   
-7.  Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost <xref:System.Windows.Forms.Timer> na 30000.  
+7. Nastavte <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost <xref:System.Windows.Forms.Timer> na 30000.  
   
     > [!NOTE]
     >  <xref:System.Windows.Forms.Timer.Interval%2A> Vlastnost <xref:System.Windows.Forms.Timer> komponenty nastavena na 30 sekund (30 000 milisekund) k zajištění, že v čase, zobrazí se projeví přesnému času.  
   
 ### <a name="to-implement-the-timer-to-update-the-status-bar"></a>K implementaci časovače aktualizace stavového řádku  
   
-1.  Vložte následující kód do obslužné rutiny události <xref:System.Windows.Forms.Timer> součásti na panelu aktualizovat <xref:System.Windows.Forms.StatusBar> ovládacího prvku.  
+1. Vložte následující kód do obslužné rutiny události <xref:System.Windows.Forms.Timer> součásti na panelu aktualizovat <xref:System.Windows.Forms.StatusBar> ovládacího prvku.  
   
     ```vb  
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick  
@@ -79,7 +79,7 @@ ms.locfileid: "59225765"
   
 ### <a name="to-test-the-application"></a>Testování aplikace  
   
-1.  Ladit aplikaci a stiskněte klávesu F5 a spusťte ho. Podrobnosti o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
+1. Ladit aplikaci a stiskněte klávesu F5 a spusťte ho. Podrobnosti o ladění naleznete v tématu [ladění v sadě Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).  
   
     > [!NOTE]
     >  To bude trvat přibližně 30 sekund hodin se zobrazí ve stavovém řádku. Toto je získat nejpřesnější čas je to možné. Naopak, aby hodiny zobrazí dříve, můžete snížit hodnotu <xref:System.Windows.Forms.Timer.Interval%2A> vlastnosti, které jste nastavili v kroku 7 v předchozím postupu.  

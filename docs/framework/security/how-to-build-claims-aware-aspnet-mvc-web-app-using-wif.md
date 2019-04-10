@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Sestavení webové aplikace s deklaracemi identity ASP.NET MVC pomocí WIF'
+title: 'Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF'
 ms.date: 03/30/2017
 ms.assetid: 0efb76bc-9f7b-4afe-be1c-2a57c917010b
 author: BrucePerlerMS
-ms.openlocfilehash: 4a003acbf4e182a0493368b586a3add229d8b526
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 04861b8c3f2673a5cd093be1351928b1da487147
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035997"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335664"
 ---
-# <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Postupy: Sestavení webové aplikace s deklaracemi identity ASP.NET MVC pomocí WIF
+# <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -53,24 +53,24 @@ ms.locfileid: "48035997"
   
 #### <a name="to-create-simple-aspnet-mvc-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET MVC  
   
-1.  Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
+1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okna, klikněte na tlačítko **webové aplikace ASP.NET MVC 3**.  
+2. V **nový projekt** okna, klikněte na tlačítko **webové aplikace ASP.NET MVC 3**.  
   
-3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-4.  V **nového projektu ASP.NET MVC 3** dialogového okna, vyberte **internetovou aplikaci** z dostupných šablon, ověřte **zobrazovací modul** je nastavena na **Razor**a potom klikněte na tlačítko **OK**.  
+4. V **nového projektu ASP.NET MVC 3** dialogového okna, vyberte **internetovou aplikaci** z dostupných šablon, ověřte **zobrazovací modul** je nastavena na **Razor**a potom klikněte na tlačítko **OK**.  
   
-5.  Když se nový projekt otevře, klikněte pravým tlačítkem na **TestApp** projekt **Průzkumníka řešení** a vyberte **vlastnosti** možnost.  
+5. Když se nový projekt otevře, klikněte pravým tlačítkem na **TestApp** projekt **Průzkumníka řešení** a vyberte **vlastnosti** možnost.  
   
-6.  Na stránce Vlastnosti projektu, klikněte na **webové** kartu na levé straně a ujistěte se, že **použití místní webový Server IIS** je vybraná možnost.  
+6. Na stránce Vlastnosti projektu, klikněte na **webové** kartu na levé straně a ujistěte se, že **použití místní webový Server IIS** je vybraná možnost.  
   
 ## <a name="step-2--configure-aspnet-mvc-application-for-claims-based-authentication"></a>Krok 2 – konfigurace aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
  V tomto kroku přidáte položky konfigurace *Web.config* konfiguračního souboru k němu deklaracemi webové aplikace ASP.NET MVC.  
   
 #### <a name="to-configure-aspnet-mvc-application-for-claims-based-authentication"></a>Ke konfiguraci aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
   
-1.  Přidejte následující část definice konfigurace a *Web.config* konfigurační soubor. Tyto zásady určují konfigurační oddíly funkce vyžaduje Windows Identity Foundation. Přidat definici ihned po  **\<konfigurace >** počáteční element:  
+1. Přidejte následující část definice konfigurace a *Web.config* konfigurační soubor. Tyto zásady určují konfigurační oddíly funkce vyžaduje Windows Identity Foundation. Přidat definici ihned po  **\<konfigurace >** počáteční element:  
   
     ```xml  
     <configSections>  
@@ -79,7 +79,7 @@ ms.locfileid: "48035997"
     </configSections>  
     ```  
   
-2.  Přidat  **\<umístění >** element, který umožňuje přístup k federační metadata aplikace:  
+2. Přidat  **\<umístění >** element, který umožňuje přístup k federační metadata aplikace:  
   
     ```xml  
     <location path="FederationMetadata">  
@@ -91,7 +91,7 @@ ms.locfileid: "48035997"
     </location>  
     ```  
   
-3.  Přidejte následující položky konfigurace v rámci  **\<system.web >** prvků, které mají odepřít uživatele, zakažte nativní ověřování a povolení WIF ke správě ověřování.  
+3. Přidejte následující položky konfigurace v rámci  **\<system.web >** prvků, které mají odepřít uživatele, zakažte nativní ověřování a povolení WIF ke správě ověřování.  
   
     ```xml  
     <authorization>  
@@ -100,7 +100,7 @@ ms.locfileid: "48035997"
     <authentication mode="None" />  
     ```  
   
-4.  Přidejte následující technologie Windows Identity Foundation související položky konfigurace a ujistěte se, že adresa URL aplikace ASP.NET a číslo portu odpovídají hodnotám v  **\<audienceUris >** položka, **sféry**  atribut  **\<wsFederation >** elementu a **odpověď** atribut  **\<wsFederation >** elementu. Také zajistěte, aby **vystavitele** hodnota vejde adresu URL svého službu tokenů zabezpečení (STS).  
+4. Přidejte následující technologie Windows Identity Foundation související položky konfigurace a ujistěte se, že adresa URL aplikace ASP.NET a číslo portu odpovídají hodnotám v  **\<audienceUris >** položka, **sféry**  atribut  **\<wsFederation >** elementu a **odpověď** atribut  **\<wsFederation >** elementu. Také zajistěte, aby **vystavitele** hodnota vejde adresu URL svého službu tokenů zabezpečení (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -124,16 +124,16 @@ ms.locfileid: "48035997"
     </system.identityModel.services>  
     ```  
   
-5.  Přidat odkaz <xref:System.IdentityModel> sestavení.  
+5. Přidat odkaz <xref:System.IdentityModel> sestavení.  
   
-6.  Řešení, abyste měli jistotu, že nejsou chyby kompilace.  
+6. Řešení, abyste měli jistotu, že nejsou chyby kompilace.  
   
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení  
  V tomto kroku budete testovat webové aplikace ASP.NET MVC nakonfigurován pro ověřování nezaloženého na deklaracích. Pokud chcete provést základní test bude Přidání jednoduchého kódu, který zobrazí deklarace identity v tokenu vydané Security Token Service (STS).  
   
 #### <a name="to-test-your-aspnet-mvc-application-for-claims-based-authentication"></a>Chcete-li otestovat aplikaci ASP.NET MVC pro ověřování nezaloženého na deklaracích  
   
-1.  V **Průzkumníka řešení**, rozbalte **řadiče** složky a otevřete *HomeController.cs* souboru v editoru. Přidejte následující kód, který **Index** metody:  
+1. V **Průzkumníka řešení**, rozbalte **řadiče** složky a otevřete *HomeController.cs* souboru v editoru. Přidejte následující kód, který **Index** metody:  
   
     ```csharp  
     public ActionResult Index()  
@@ -144,7 +144,7 @@ ms.locfileid: "48035997"
     }  
     ```  
   
-2.  V **Průzkumníka řešení** rozbalte **zobrazení** a potom **Domů** složky a otevřete *Index.cshtml* souboru v editoru. Odstraňte její obsah a přidejte následující kód:  
+2. V **Průzkumníka řešení** rozbalte **zobrazení** a potom **Domů** složky a otevřete *Index.cshtml* souboru v editoru. Odstraňte její obsah a přidejte následující kód:  
   
     ```html  
     @{  
@@ -212,9 +212,9 @@ ms.locfileid: "48035997"
     </table>  
     ```  
   
-3.  Spuštění řešení stisknutím kombinace kláves **F5** klíč.  
+3. Spuštění řešení stisknutím kombinace kláves **F5** klíč.  
   
-4.  Mělo by se zobrazit na stránce zobrazí deklarace identity v tokenu, který byl vydán pro vás služba tokenů zabezpečení.  
+4. Mělo by se zobrazit na stránce zobrazí deklarace identity v tokenu, který byl vydán pro vás služba tokenů zabezpečení.  
   
 ## <a name="related-items"></a>Související položky  
   

@@ -8,19 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 958b58b31193dbf4c03709e4ab7ba38f7f30e0ac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d87da29872582e9c0d47a6c999312ce88252a5cc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54590475"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334169"
 ---
 # <a name="bool-c-reference"></a>bool (Referenční dokumentace jazyka C#)
 
 `bool` – Klíčové slovo je alias pro <xref:System.Boolean?displayProperty=nameWithType>. Se používá k deklaraci proměnné k ukládání logické hodnoty: [true](true-literal.md) a [false](false-literal.md).
 
 > [!NOTE]
-> Pokud požadujete logickou hodnotu, která může také obsahovat hodnotu `null`, použijte `bool?`. Další informace najdete v tématu [bool? typ](../../programming-guide/nullable-types/using-nullable-types.md#the-bool-type) část [použití typů s povolenou hodnotou Null](../../programming-guide/nullable-types/using-nullable-types.md) článku.
+> Použití `bool?` typu, pokud budete potřebovat pro podporu s hodnotou tři logiku, například při práci s databázemi, které podporují tři vracející typ Boolean. Pro `bool?` operandy, předdefinované `&` a `|` operátory podporu logiky s hodnotou tři. Další informace najdete v tématu [logické operátory s povolenou hodnotou Null logická](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) část [logické logické operátory](../operators/boolean-logical-operators.md) článku.
 
 ## <a name="literals"></a>Literály
 
@@ -53,7 +53,7 @@ V tomto příkladu zadejte znak z klávesnice a program kontroluje, jestli vstup
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)
 - [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)

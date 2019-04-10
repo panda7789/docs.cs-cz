@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 83b5498ac6f585a8d2554377748836d88ce592d1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 3d3d52c9b29e743f676951ec8261ada39078fb27
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970880"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335014"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -113,7 +113,7 @@ Další informace najdete v tématu [režim kompatibility rozhraní .NET Framewo
 
 ## <a name="net-standard-libraries-and-visual-studio"></a>Knihovny .NET standard a sady Visual Studio
 
-Aby bylo možné vytvářet knihovny .NET Standard v sadě Visual Studio, ujistěte se, že máte [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) nebo novější verzi Windows, nebo [Visual Studio pro Mac verze 7.1](https://visualstudio.microsoft.com/vs/visual-studio-mac/) nebo novější verzi macOS.
+Aby bylo možné vytvářet knihovny .NET Standard v sadě Visual Studio, ujistěte se, že máte [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) nebo novější verzi Windows, nebo [Visual Studio pro Mac verze 7.1](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nebo novější verzi macOS.
 
 Pokud potřebujete pouze knihoven .NET Standard 2.0 ve svých projektech, můžete provést také, která v sadě Visual Studio 2015. Ale musíte NuGet nainstalovat klienta 3.6 nebo novější. Můžete stáhnout klienta NuGet pro Visual Studio 2015 z [stáhne NuGet](https://www.nuget.org/downloads) stránky.
 

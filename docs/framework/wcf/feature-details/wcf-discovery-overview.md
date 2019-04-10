@@ -2,12 +2,12 @@
 title: Přehled zjišťování WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: 8f89a3b52728f10a0d0e0544f3663c9af13488c9
-ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
+ms.openlocfilehash: cb1eb52e0996a03709a755ff2f148152e2625c58
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084937"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335339"
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Rozhraní API zjišťování poskytují jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby sami a klientům nalezení služeb publikovaných na publikovat. Jakmile proběhne zjistitelné služby, služby má možnost odesílat zprávy oznámení také naslouchat a reagovat na požadavky na zjišťování. Zjistitelné služby může odesílat zprávy Hello oznamujeme jejich doručení na síť a zprávy Bye oznamujeme jejich odeslání ze sítě. K vyhledání služby klienty odeslat `Probe` žádost, která obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda kritériím neodpovídají. Pokud služba odpovídá, odpovídá odesláním `ProbeMatch` zprávy zpět do klienta o informace nezbytné pro kontaktování služby. Klienti mohou také odesílat `Resolve` požadavků, které zajistí, aby hledání mohlo dojít ke změně jejich adresa koncového bodu služby. Odpovídající služby reagovat na `Resolve` odesláním žádosti `ResolveMatch` zpráv zpět klientovi.  
@@ -151,9 +151,9 @@ class Client
 ## <a name="discovery-and-web-hosted-services"></a>Zjišťování a Web hostovaných služeb  
  V pořadí pro služby WCF zjistitelné musí být spuštěn. Služby WCF hostované v IIS nebo WAS se nespustí, dokud služba IIS / WAS přijme zprávu mez pro služby, proto nemohou být zjistitelné ve výchozím nastavení.  Existují dvě možnosti pro vytváření služeb hostovaných webových zjistitelné:  
   
-1.  Použít funkci systému Windows Server AppFabric automatické spuštění  
+1. Použít funkci systému Windows Server AppFabric automatické spuštění  
   
-2.  Komunikovat jménem službě pomocí proxy zjišťování  
+2. Komunikovat jménem službě pomocí proxy zjišťování  
   
  Windows Server AppFabric obsahuje funkci automatického spuštění, které vám umožní službu spustit před přijetím všechny zprávy. Automatické spouštění nastavení IIS / WAS hostované služby je nakonfigurovat zjistitelné. Další informace o najdete v tématu automatického spuštění funkce [funkce systému Windows Server AppFabric automatického spuštění](https://go.microsoft.com/fwlink/?LinkId=205545). Spolu s povolením funkce Automatické spouštění, musíte nakonfigurovat službu pro zjišťování. Další informace najdete v tématu [jak: Programové přidání možností rozpoznání do klienta a služby WCF](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[konfigurace zjišťování v konfiguračním souboru](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
   

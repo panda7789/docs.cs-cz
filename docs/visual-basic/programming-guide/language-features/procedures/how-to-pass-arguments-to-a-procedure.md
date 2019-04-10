@@ -11,12 +11,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
-ms.openlocfilehash: 0bc7c9d09922b7fbef534e6b58389ca343cc1e13
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 012ad8e6229958575030ee820a3b0b79cc50facc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974390"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333903"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Postupy: Předání argumentů proceduře (Visual Basic)
 Při volání procedury, použijte název procedury se seznamem argumentů v závorkách. Zadat argument odpovídající každý povinný parametr postupu definuje, a volitelně můžete zadat argumenty, které mají `Optional` parametry. Pokud nezadáte `Optional` parametr ve volání musí obsahovat čárku k označení příslušné místo v seznamu argumentů, pokud zadáváte libovolné další argumenty.  
@@ -27,15 +27,15 @@ Při volání procedury, použijte název procedury se seznamem argumentů v zá
   
 ### <a name="to-pass-one-or-more-arguments-to-a-procedure"></a>K předání jeden nebo více argumentů proceduře  
   
-1.  V příkazu volání použijte název procedury se závorkami.  
+1. V příkazu volání použijte název procedury se závorkami.  
   
-2.  Uvnitř závorek uveďte seznam argumentů. Argument pro každý požadovaný parametr postupu definuje zahrnout a argumenty oddělujte čárkami.  
+2. Uvnitř závorek uveďte seznam argumentů. Argument pro každý požadovaný parametr postupu definuje zahrnout a argumenty oddělujte čárkami.  
   
-3.  Ujistěte se, že každý argument není platný výraz, který je vyhodnocen jako typ dat lze převést na typ procesu definuje pro odpovídající parametr.  
+3. Ujistěte se, že každý argument není platný výraz, který je vyhodnocen jako typ dat lze převést na typ procesu definuje pro odpovídající parametr.  
   
-4.  Pokud parametr je definován jako [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md), můžete zahrnout do seznamu argumentů, nebo ji vynechte. Pokud ho vynecháte, použije procedura výchozí hodnotu definovanou pro tento parametr.  
+4. Pokud parametr je definován jako [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md), můžete zahrnout do seznamu argumentů, nebo ji vynechte. Pokud ho vynecháte, použije procedura výchozí hodnotu definovanou pro tento parametr.  
   
-5.  Pokud vynecháte argument `Optional` parametrů a je jiný parametr v seznamu parametrů po něm, určíte místo vynechaný argument navíc čárkou v seznamu argumentů.  
+5. Pokud vynecháte argument `Optional` parametrů a je jiný parametr v seznamu parametrů po něm, určíte místo vynechaný argument navíc čárkou v seznamu argumentů.  
   
      Následující příklad volá jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> funkce.  
   
@@ -48,11 +48,11 @@ Při volání procedury, použijte název procedury se seznamem argumentů v zá
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury funkce](./function-procedures.md)
-- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury Function](./function-procedures.md)
+- [Procedury Property](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Postupy: Definování parametru pro proceduru](./how-to-define-a-parameter-for-a-procedure.md)
-- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů hodnotou nebo referencí](./passing-arguments-by-value-and-by-reference.md)
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

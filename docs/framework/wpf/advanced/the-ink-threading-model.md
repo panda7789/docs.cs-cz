@@ -13,12 +13,12 @@ helpviewer_keywords:
 - ink collection plug-in
 - plug-ins [WPF], for ink
 ms.assetid: c85fcad1-cb50-4431-847c-ac4145a35c89
-ms.openlocfilehash: 8089c857d2406f8cfb357ba2efe188ad84605541
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 80e7ef202c46a23069766512cf4e67bb21a49564
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335313"
 ---
 # <a name="the-ink-threading-model"></a>Model vláken inkoustu
 Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární perem na papír.  K tomu shromažďuje pera vstupní data mnohem vyšší rychlostí než myši nemá a vykreslí rukopis jako uživatelské zápisy.  Vlákně uživatelského rozhraní (UI) aplikace není dostatečná pro shromažďování dat pera a vykreslení inkoustu, protože budou blokované.  K řešení, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace používá dvě další vlákna, když uživatel zapíše rukopisu.  
@@ -38,7 +38,7 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
  ![Model vláken při kreslení tah. ](./media/inkthreading-drawingink.png "InkThreading_DrawingInk")  
   
-1.  Akce, ke kterým dochází, když uživatel nakreslí tahu  
+1. Akce, ke kterým dochází, když uživatel nakreslí tahu  
   
     1.  Až uživatel nakreslí tah, vraťte se stylus body na vlákno pera.  Stylus modulů plug-in, včetně <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>přijměte stylus bodů na vlákno pera a mít možnost upravit je před <xref:System.Windows.Controls.InkCanvas> je obdrží.  
   
@@ -46,7 +46,7 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
     3.  <xref:System.Windows.Controls.InkCanvas> Obdrží stylus bodů na vlákně UI.  
   
-2.  Akce, ke kterým dochází, až uživatel skončí tahu  
+2. Akce, ke kterým dochází, až uživatel skončí tahu  
   
     1.  Po dokončení uživatel kreslení tahu <xref:System.Windows.Controls.InkCanvas> vytvoří <xref:System.Windows.Ink.Stroke> objektu a přidá jej do <xref:System.Windows.Controls.InkPresenter>, která staticky vykreslí.  
   
@@ -61,13 +61,13 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
  Na předchozím obrázku toto chování probíhá:  
   
-1.  `StylusPlugin1` změní hodnoty x a y.  
+1. `StylusPlugin1` změní hodnoty x a y.  
   
-2.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> obdrží upravené stylus bodů a vykreslí na dynamické vykreslování vlákna.  
+2. <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> obdrží upravené stylus bodů a vykreslí na dynamické vykreslování vlákna.  
   
-3.  `StylusPlugin2` obdrží upravené stylus bodů a další změní hodnoty x a y.  
+3. `StylusPlugin2` obdrží upravené stylus bodů a další změní hodnoty x a y.  
   
-4.  Aplikace shromažďuje stylus body a až se uživatel dokončí tahu staticky vykreslí stroke.  
+4. Aplikace shromažďuje stylus body a až se uživatel dokončí tahu staticky vykreslí stroke.  
   
  Předpokládejme, že `stylusPlugin1` omezuje body stylus obdélníku a `stylusPlugin2` přeloží stylus odkazuje na pravé straně.  V předchozím scénáři <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> obdrží body stylus s omezeným přístupem, ale ne body přeložené stylus.  Když uživatel nakreslí tahu, tahu se vykreslí v mezích obdélníku, ale tahu nezobrazí k převodu, dokud uživatel zruší pera.  
   
@@ -83,15 +83,15 @@ Jednou z výhod rukopis na Tablet PC je, že se zdá mnohem zápis s regulární
   
  ![Práce s vlákny diagram inkoustu](./media/inkthreading-visualtree.png "InkThreading_VisualTree")  
   
-1.  Uživatel začne stroke.  
+1. Uživatel začne stroke.  
   
     1.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Vytvoří vizuálního stromu.  
   
-2.  Uživatel je kreslení stroke.  
+2. Uživatel je kreslení stroke.  
   
     1.  <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer> Sestavení vizuálního stromu.  
   
-3.  Uživatel končí stroke.  
+3. Uživatel končí stroke.  
   
     1.  <xref:System.Windows.Controls.InkPresenter> Přidá tahu jeho vizuálního stromu.  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: a50fcc3b-8abf-47ec-9029-7f268af4ddb1
-ms.openlocfilehash: a07fde63463d209e0006de9be677636f19fd93a8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8e5c41d6f146e6abef8d7670e6191b587ac86c92
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59147898"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336119"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "59147898"
   
 ### <a name="to-establish-a-default-style-for-the-datagrid-control"></a>Stanovit výchozí styl ovládacího prvku DataGrid  
   
-1.  Podle potřeby nastavte následující vlastnosti:  
+1. Podle potřeby nastavte následující vlastnosti:  
   
     |Vlastnost|Popis|  
     |--------------|-----------------|  
@@ -68,19 +68,19 @@ ms.locfileid: "59147898"
   
 ### <a name="to-set-the-table-and-column-style-of-a-data-table-programmatically"></a>Nastavit styl tabulky a sloupce z tabulky dat prostřednictvím kódu programu  
   
-1.  Vytvořit nový styl tabulky a nastavte jeho vlastnosti.  
+1. Vytvořit nový styl tabulky a nastavte jeho vlastnosti.  
   
-2.  Vytvořit styl sloupce a nastavte jeho vlastnosti.  
+2. Vytvořit styl sloupce a nastavte jeho vlastnosti.  
   
-3.  Styl sloupce přidáte do kolekce stylů sloupců styl tabulky.  
+3. Styl sloupce přidáte do kolekce stylů sloupců styl tabulky.  
   
-4.  Styl tabulky přidáte do kolekce stylů tabulek datové mřížky.  
+4. Styl tabulky přidáte do kolekce stylů tabulek datové mřížky.  
   
-5.  V následujícím příkladu vytvoření instance nového <xref:System.Windows.Forms.DataGridTableStyle> a nastavte jeho <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost.  
+5. V následujícím příkladu vytvoření instance nového <xref:System.Windows.Forms.DataGridTableStyle> a nastavte jeho <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost.  
   
-6.  Vytvořit novou instanci třídy **GridColumnStyle** a nastavte jeho **MappingName** (a některé další vlastnosti rozložení a zobrazení).  
+6. Vytvořit novou instanci třídy **GridColumnStyle** a nastavte jeho **MappingName** (a některé další vlastnosti rozložení a zobrazení).  
   
-7.  Opakujte kroky 2 až 6 pro každý sloupec styl, který chcete vytvořit.  
+7. Opakujte kroky 2 až 6 pro každý sloupec styl, který chcete vytvořit.  
   
      Následující příklad ukazuje, jak <xref:System.Windows.Forms.DataGridTextBoxColumn> je vytvořen, protože je název, který se zobrazí ve sloupci. Kromě toho přidat sloupec styl, který má <xref:System.Windows.Forms.GridColumnStylesCollection> stylu tabulky a přidat styl tabulky, který <xref:System.Windows.Forms.GridTableStylesCollection> datové mřížky.  
   

@@ -20,19 +20,19 @@ helpviewer_keywords:
 - access keys [Windows Forms], Windows Forms
 - ALT key
 ms.assetid: 4faa0991-28ec-4eca-91db-51dc2cd6a7ac
-ms.openlocfilehash: fefd322afb938453ec1ea23e8ff6de9f9ae2a851
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: e6c829553163359301bad2cd896fc43562ee8069
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59141632"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334455"
 ---
 # <a name="how-to-create-access-keys-for-windows-forms-controls"></a>Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms
 *Přístupový klíč* je znak podtržený text nabídky, položka nabídky nebo popisek ovládacích prvcích jako tlačítko. Přístupový klíč uživatel může "klikněte" tlačítko stisknutím klávesy ALT v kombinaci s předdefinovanou přístupový klíč. Například, pokud tlačítko spustí postup tisk formuláře a proto jeho `Text` je nastavena na "Print","Přidání ampersand před písmeno"P"způsobí, že písmeno"P", chcete-li být podtržený text tlačítka v době běhu. Uživatele můžete spustit příkaz přidružený k tlačítku stisknutím kombinace kláves ALT + P. Nemůžete mít přístupový klíč pro ovládací prvek, který nemůže získat fokus.  
   
 ### <a name="to-create-an-access-key-for-a-control"></a>Chcete-li vytvořit přístupový klíč pro ovládací prvek  
   
-1.  Nastavte `Text` vlastnost na řetězec, který obsahuje znak ampersand (&) před písmenem, který bude klávesovou zkratku.  
+1. Nastavte `Text` vlastnost na řetězec, který obsahuje znak ampersand (&) před písmenem, který bude klávesovou zkratku.  
   
     ```vb  
     ' Set the letter "P" as an access key.  

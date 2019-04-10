@@ -12,19 +12,19 @@ helpviewer_keywords:
 - images [Windows Forms], Windows Forms controls
 - examples [Windows Forms], controls
 ms.assetid: 9445af8f-4f62-48b0-a3f6-068058964b9f
-ms.openlocfilehash: 031ddcb3b852e75353fed7420735350e79f23df3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1de835bda5ac906837ac3fbd97b87f68f14d1953
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59085087"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333922"
 ---
 # <a name="how-to-set-the-image-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms
 Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky. Tyto Image může být ikon, které vysvětluje účel ovládacího prvku, jako je například ikonu diskety na tlačítko, které označuje **Uložit** příkazu. Ikony, případně může být obrázky na pozadí vzhledu a chování, které chcete poskytnout ovládací prvek.  
   
 ### <a name="to-set-the-image-displayed-by-a-control"></a>K nastavení obrázku zobrazovaného ovládacím prvkem  
   
-1.  Nastavit u tohoto prvku `Image` nebo `BackgroundImage` vlastnost na objekt typu <xref:System.Drawing.Image>. Obecně platí, můžete se načítá image ze souboru pomocí <xref:System.Drawing.Image.FromFile%2A> metody.  
+1. Nastavit u tohoto prvku `Image` nebo `BackgroundImage` vlastnost na objekt typu <xref:System.Drawing.Image>. Obecně platí, můžete se načítá image ze souboru pomocí <xref:System.Drawing.Image.FromFile%2A> metody.  
   
      V následujícím příkladu kódu nastavena cesta pro umístění image je **obrázky** složky. Tento adresář bude obsahovat většinu počítačů s operačním systémem Windows. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad kódu vyžaduje, abyste už měli formulář s <xref:System.Windows.Forms.PictureBox> přidán ovládací prvek.  
   

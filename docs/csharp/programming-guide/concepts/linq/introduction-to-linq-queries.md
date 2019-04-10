@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: 1f15867c76a3498ac49df0bff6a7953f668b1a6f
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 4432270c8a1a9ad499f833bf8201ed3155bd7ce2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58462887"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333701"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, které jsou vždy práce s objekty. Použijte stejné základní vzorce kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcích .NET a jakémkoli jiném formátu, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
@@ -20,11 +20,11 @@ A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle
 ## <a name="three-parts-of-a-query-operation"></a>Tři části operace dotazu  
  Všechny [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu operace se skládají ze tří různých akcí:  
   
-1.  Získáte zdroje dat.  
+1. Získáte zdroje dat.  
   
-2.  Vytvořte dotaz.  
+2. Vytvořte dotaz.  
   
-3.  Spusťte dotaz.  
+3. Spusťte dotaz.  
   
  Následující příklad ukazuje, jak tyto tři části operace dotazu jsou vyjádřeny ve zdrojovém kódu. V příkladu používá celočíselné pole jako zdroj dat ke zvýšení pohodlí; ale stejné koncepty platí i pro jiné zdroje dat také. V tomto příkladu se odkazuje ve zbývající části tohoto tématu.  
   

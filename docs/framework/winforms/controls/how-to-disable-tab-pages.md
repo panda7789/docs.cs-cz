@@ -9,28 +9,28 @@ helpviewer_keywords:
 - tab pages [Windows Forms], hiding in forms
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
-ms.openlocfilehash: ace713a635b5d9c4b73f85cd3d378c0f1ff3dba1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 21592fdd74c43d40310e0fcbc96af6565a42e08b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59107572"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336067"
 ---
 # <a name="how-to-disable-tab-pages"></a>Postupy: Zakázání karet
 V některých případech budete chtít omezit přístup k datům, která je k dispozici v rámci vaší aplikace Windows Forms. Jedním z příkladů může být, pokud máte data zobrazí na stránkách kartu ovládacího prvku karta; Správce může mít informace na stránce kartu, kterou chcete omezit z hosta nebo uživatelé na nižší úrovni.  
   
 ### <a name="to-disable-tab-pages-programmatically"></a>Chcete-li zákaz stránek karet prostřednictvím kódu programu  
   
-1.  Napište kód pro zpracování ovládacího prvku karta <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> událostí. Toto je událost, která se vyvolá, když uživatel přepíná z jedné karty na další.  
+1. Napište kód pro zpracování ovládacího prvku karta <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> událostí. Toto je událost, která se vyvolá, když uživatel přepíná z jedné karty na další.  
   
-2.  Zkontrolujte přihlašovací údaje. V závislosti na informace uvedené, můžete chtít zkontrolovat uživatelské jméno, které má uživatel s přihlášením nebo jiné formy přihlašovacích údajů předtím, než uživatel zobrazíte na kartě.  
+2. Zkontrolujte přihlašovací údaje. V závislosti na informace uvedené, můžete chtít zkontrolovat uživatelské jméno, které má uživatel s přihlášením nebo jiné formy přihlašovacích údajů předtím, než uživatel zobrazíte na kartě.  
   
-3.  Pokud má uživatel příslušná pověření, zobrazení, ke které došlo ke kliknutí na karty. Pokud uživatel nemá příslušná oprávnění, zobrazí okno se zprávou nebo některé jiné uživatelské rozhraní, což indikuje, že se nemají přístup a vrátit na první kartě.  
+3. Pokud má uživatel příslušná pověření, zobrazení, ke které došlo ke kliknutí na karty. Pokud uživatel nemá příslušná oprávnění, zobrazí okno se zprávou nebo některé jiné uživatelské rozhraní, což indikuje, že se nemají přístup a vrátit na první kartě.  
   
     > [!NOTE]
     >  Při implementaci této funkce ve svých aplikacích v produkčním prostředí, můžete tuto kontrolu můžete provést přihlašovacích údajů během formuláře <xref:System.Windows.Forms.Form.Load> událostí. To vám umožní skrýt kartě předtím, než se zobrazí uživatelské rozhraní, což je mnohem přehlednější přístup k programování. Metoda použitá níže (kontrola přihlašovacích údajů a na kartě při zakázání <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> události) je pro ilustraci.  
   
-4.  Volitelně Pokud máte více než dvě stránky karet, zobrazte stránky karty liší od původní.  
+4. Volitelně Pokud máte více než dvě stránky karet, zobrazte stránky karty liší od původní.  
   
      V následujícím příkladu <xref:System.Windows.Forms.CheckBox> ovládací prvek se používá namísto kontrole přihlašovacích údajů, jako kritéria pro přístup ke kartě se liší podle aplikace. Když <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> událost se vyvolá, pokud je kontrola přihlašovacích údajů má hodnotu true (to znamená, že je zaškrtnuto zaškrtávací políčko) a je vybraná karta `TabPage2` (na kartě s důvěrné informace v tomto příkladu), pak `TabPage2` se zobrazí. V opačném případě `TabPage3` se zobrazí a zobrazí se okno se zprávou pro uživatele, označující, že nemá dostatečná oprávnění. Následující kód předpokládá formulář s <xref:System.Windows.Forms.CheckBox> ovládacího prvku (`CredentialCheck`) a <xref:System.Windows.Forms.TabControl> ovládací prvek s tři stránky karet.  
   

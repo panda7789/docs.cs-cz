@@ -2,12 +2,12 @@
 title: 'Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)'
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: c8f1c9a134af2139f3dd0d76614b1f719b4d453c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3ea41c1fa0fce3a35635e069061f1953c6395406
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547641"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335417"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)
 V asynchronní metodě jsou úlohy spuštěny při jejich vytvoření. [Await](../../../../csharp/language-reference/keywords/await.md) operátor je použít pro úlohu v okamžiku v metodě, kdy zpracování nemůže pokračovat, dokud neskončí úloha. Úloha je často očekávaná ihned, jakmile se vytvoří, jak ukazuje následující příklad.  
@@ -43,7 +43,7 @@ var result = await myTask;
   
 ### <a name="to-set-up-the-project"></a>Vytvoření projektu  
   
-1.  Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Můžete najít podrobné pokyny k těmto krokům uvádí [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Můžete najít podrobné pokyny k těmto krokům uvádí [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
     -   Vytvoření aplikace WPF, která obsahuje textové pole a tlačítko. Pojmenujte tlačítko `startButton`a pojmenujte textového pole `resultsTextBox`.  
   
@@ -53,9 +53,9 @@ var result = await myTask;
   
 ### <a name="to-add-the-code"></a>Přidání kódu  
   
-1.  V okně návrhu, MainWindow.xaml, dvakrát klikněte na tlačítko vytvořit `startButton_Click` obslužné rutině událostí ve MainWindow.xaml.cs.  
+1. V okně návrhu, MainWindow.xaml, dvakrát klikněte na tlačítko vytvořit `startButton_Click` obslužné rutině událostí ve MainWindow.xaml.cs.  
   
-2.  Zkopírujte následující kód a vložte ho do těla `startButton_Click` v MainWindow.xaml.cs.  
+2. Zkopírujte následující kód a vložte ho do těla `startButton_Click` v MainWindow.xaml.cs.  
   
     ```csharp  
     resultsTextBox.Clear();  
@@ -65,7 +65,7 @@ var result = await myTask;
   
      Kód volá asynchronní metodu, `CreateMultipleTasksAsync`, která řídí aplikaci.  
   
-3.  Do projektu přidejte následující metody podpory:  
+3. Do projektu přidejte následující metody podpory:  
   
     -   `ProcessURLAsync` používá <xref:System.Net.Http.HttpClient> metodu pro stažení obsahu webu jako bajtové pole. Podpůrná metoda `ProcessURLAsync` potom zobrazí a vrátí délku pole.  
   
@@ -93,7 +93,7 @@ var result = await myTask;
     }  
     ```  
   
-4.  Nakonec definujte metodu `CreateMultipleTasksAsync`, který provede následující kroky.  
+4. Nakonec definujte metodu `CreateMultipleTasksAsync`, který provede následující kroky.  
   
     -   Deklaruje metodu `HttpClient` objekt, který potřebuje získat přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.  
   
@@ -134,7 +134,7 @@ var result = await myTask;
     }  
     ```  
   
-5.  Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
+5. Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
   
      Spusťte program několikrát a ověřte, že ve stejném pořadí nejsou vždy dokončeny tři úkoly a pořadí, ve kterém jsou dokončeny není nutně pořadí, ve kterém byly vytvořeny a očekávány.  
   

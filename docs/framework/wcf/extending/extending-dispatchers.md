@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - dispatcher extensions [WCF]
 ms.assetid: d0ad15ac-fa12-4f27-80e8-7ac2271e5985
-ms.openlocfilehash: df726d71880d135adb883f834acfa9839641eae3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ac20e24eb9148ed9d403b7a9c2c260009f39d492
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59162721"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335027"
 ---
 # <a name="extending-dispatchers"></a>Rozšíření dispečerů
 Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, překládá na volání metod v kódu aplikace a odesílá výsledky zpět volajícímu. Rozšíření dispečerů umožňují upravit toto zpracování.  Můžete implementovat zpráv nebo parametr kontroly, které zkontrolovat nebo změnit obsah zprávy nebo parametry.  Můžete změnit tak, jak zprávy jsou směrovány na operace nebo poskytuje některé další funkce.  
@@ -76,13 +76,13 @@ Dispečerů zodpovídají za přesun příchozí zprávy z podkladové kanály, 
   
  Existují čtyři hlavní oblasti dispečer rozšiřitelnosti vystavené <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy:  
   
-1.  Komponentů kanálu používat vlastnosti objektů <xref:System.ServiceModel.Dispatcher.DispatchRuntime> i u dispečer přidružené kanálu vrácené <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher%2A> vlastnost přizpůsobit jak dispečer kanálu přijímá a zavře kanály. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers%2A> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers%2A> vlastnosti.  
+1. Komponentů kanálu používat vlastnosti objektů <xref:System.ServiceModel.Dispatcher.DispatchRuntime> i u dispečer přidružené kanálu vrácené <xref:System.ServiceModel.Dispatcher.DispatchRuntime.ChannelDispatcher%2A> vlastnost přizpůsobit jak dispečer kanálu přijímá a zavře kanály. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ChannelInitializers%2A> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers%2A> vlastnosti.  
   
-2.  Zprávy součásti jsou přizpůsobená pro každou zprávu zpracovat. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A>a <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> vlastnosti.  
+2. Zprávy součásti jsou přizpůsobená pro každou zprávu zpracovat. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.DispatchRuntime.MessageInspectors%2A>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A>, <xref:System.ServiceModel.Dispatcher.DispatchRuntime.Operations%2A>a <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> vlastnosti.  
   
-3.  Instance součásti přizpůsobit vytváření, doba platnosti a vyřazení instance daného typu služby. Další informace o životnosti objektu služby, najdete v článku <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastnost. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnosti.  
+3. Instance součásti přizpůsobit vytváření, doba platnosti a vyřazení instance daného typu služby. Další informace o životnosti objektu služby, najdete v článku <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> vlastnost. Tato kategorie zahrnuje <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnosti.  
   
-4.  Součásti související se zabezpečením, můžete použít následující vlastnosti:  
+4. Součásti související se zabezpečením, můžete použít následující vlastnosti:  
   
     -   <xref:System.ServiceModel.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> Určuje, kde události auditu se zapisují.  
   

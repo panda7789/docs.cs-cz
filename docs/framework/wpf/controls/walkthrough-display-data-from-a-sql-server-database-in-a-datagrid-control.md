@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid'
+title: 'Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: 022be17c946529583694afc0fe1c61b832aa03e4
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 274ec2e8ef16190da53061bb197bc3b1a1fadcf8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351318"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336106"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid
 
@@ -29,27 +29,27 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ## <a name="create-entity-classes"></a>Vytvoření tříd entit
 
-1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo C# a pojmenujte ho `DataGridSQLExample`.
+1. Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo C# a pojmenujte ho `DataGridSQLExample`.
 
-2.  V Průzkumníku řešení klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **nová položka**.
+2. V Průzkumníku řešení klikněte pravým tlačítkem na projekt, přejděte na **přidat**a pak vyberte **nová položka**.
 
      Zobrazí se dialogové okno Přidat novou položku.
 
-3.  V podokně nainstalované šablony vyberte **Data** a v seznamu šablon vyberte **datový Model Entity ADO.NET**.
+3. V podokně nainstalované šablony vyberte **Data** a v seznamu šablon vyberte **datový Model Entity ADO.NET**.
 
      ![Šablona položky modelu Entity Data Model ADO.NET](../../wcf/feature-details/./media/ado-net-entity-data-model-item-template.png)
 
-4.  Název souboru `AdventureWorksModel.edmx` a potom klikněte na tlačítko **přidat**.
+4. Název souboru `AdventureWorksModel.edmx` a potom klikněte na tlačítko **přidat**.
 
      Zobrazí se Průvodce modelem Entity Data Model.
 
-5.  Na obrazovce výběr obsahu modelu vyberte **EF designeru z databáze** a potom klikněte na tlačítko **Další**.
+5. Na obrazovce výběr obsahu modelu vyberte **EF designeru z databáze** a potom klikněte na tlačítko **Další**.
 
-6.  V dialogovém okně vyberte datové připojení slouží k navázání připojení k databázi AdventureWorksLT2008. Další informace najdete v tématu [zvolte si Data Connection Dialog Box](https://go.microsoft.com/fwlink/?LinkId=160190).
+6. V dialogovém okně vyberte datové připojení slouží k navázání připojení k databázi AdventureWorksLT2008. Další informace najdete v tématu [zvolte si Data Connection Dialog Box](https://go.microsoft.com/fwlink/?LinkId=160190).
 
     Ujistěte se, zda je název `AdventureWorksLT2008Entities` a že **uložit nastavení připojení v souboru App.Config jako entity** zaškrtávací políčko zaškrtnuto a pak klikněte na **Další**.
 
-7.  Na obrazovce Zvolte vaše databázové objekty, rozbalte uzel tabulky a vyberte **produktu** a **ProductCategory** tabulky.
+7. Na obrazovce Zvolte vaše databázové objekty, rozbalte uzel tabulky a vyberte **produktu** a **ProductCategory** tabulky.
 
      Můžete generovat třídy entity pro všechny tabulky; ale v tomto příkladu pouze načítáte data z těchto dvou tabulkách.
 
@@ -63,19 +63,19 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ## <a name="retrieve-and-present-the-data"></a>Načtení a zobrazení dat
 
-1.  Otevřete soubor MainWindow.xaml.
+1. Otevřete soubor MainWindow.xaml.
 
-2.  Nastavte <xref:System.Windows.FrameworkElement.Width%2A> vlastnost <xref:System.Windows.Window> na 450.
+2. Nastavte <xref:System.Windows.FrameworkElement.Width%2A> vlastnost <xref:System.Windows.Window> na 450.
 
-3.  V editoru XAML, přidejte následující <xref:System.Windows.Controls.DataGrid> označit mezi `<Grid>` a `</Grid>` značky se mají přidat <xref:System.Windows.Controls.DataGrid> s názvem `dataGrid1`.
+3. V editoru XAML, přidejte následující <xref:System.Windows.Controls.DataGrid> označit mezi `<Grid>` a `</Grid>` značky se mají přidat <xref:System.Windows.Controls.DataGrid> s názvem `dataGrid1`.
 
      [!code-xaml[DataGrid_SQL_EF_Walkthrough#3](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#3)]
 
      ![Window with DataGrid](./media/datagrid-sql-ef-step6.png "DataGrid_SQL_EF_Step6")
 
-4.  Vyberte <xref:System.Windows.Window>.
+4. Vyberte <xref:System.Windows.Window>.
 
-5.  Pomocí okna vlastnosti nebo editoru XAML, vytvořit obslužnou rutinu události pro <xref:System.Windows.Window> s názvem `Window_Loaded` pro <xref:System.Windows.FrameworkElement.Loaded> událostí. Další informace najdete v tématu [jak: Vytvořte obslužnou rutinu události jednoduché](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100)).
+5. Pomocí okna vlastnosti nebo editoru XAML, vytvořit obslužnou rutinu události pro <xref:System.Windows.Window> s názvem `Window_Loaded` pro <xref:System.Windows.FrameworkElement.Loaded> událostí. Další informace najdete v tématu [jak: Vytvořte obslužnou rutinu události jednoduché](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100)).
 
      Následuje ukázka XAML souboru mainwindow.XAML.
 
@@ -84,14 +84,14 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
      [!code-xaml[DataGrid_SQL_EF_Walkthrough#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml#1)]
 
-6.  Otevřete soubor kódu na pozadí (soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs) pro <xref:System.Windows.Window>.
+6. Otevřete soubor kódu na pozadí (soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs) pro <xref:System.Windows.Window>.
 
-7.  Přidejte následující kód k načtení jenom konkrétní hodnoty z spojené tabulky a nastavit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Controls.DataGrid> do výsledků dotazu.
+7. Přidejte následující kód k načtení jenom konkrétní hodnoty z spojené tabulky a nastavit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Controls.DataGrid> do výsledků dotazu.
 
      [!code-csharp[DataGrid_SQL_EF_Walkthrough#2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/CS/MainWindow.xaml.cs#2)]
      [!code-vb[DataGrid_SQL_EF_Walkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_SQL_EF_Walkthrough/VB/MainWindow.xaml.vb#2)]
 
-8.  Spustíte v příkladu.
+8. Spustíte v příkladu.
 
      Měli byste vidět <xref:System.Windows.Controls.DataGrid> , která zobrazí data.
 

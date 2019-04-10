@@ -2,27 +2,27 @@
 title: 'Postupy: Zpracování chyb'
 ms.date: 03/30/2017
 ms.assetid: de566e39-9358-44ff-8244-780f6b799966
-ms.openlocfilehash: 7b173997eb53f8cf156ccb14083885a199dc8921
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3752e358230b76d8984fa8e6a2ded43ad0eb2c6c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334988"
 ---
 # <a name="how-to-error-handling"></a>Postupy: Zpracování chyb
-Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá zpracování chyb. V tomto příkladu zprávy jsou směrovány do cílového koncového bodu. Pokud zprávu nelze doručit z důvodu v síti nebo na chybu týkající se komunikace (<xref:System.ServiceModel.CommunicationException>), je nutno zprávu na alternativní koncový bod.  
+Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá zpracování chyb. V tomto příkladu zprávy jsou směrovány do cílového koncového bodu. Pokud zprávu nelze doručit z důvodu sítě nebo selhání týkajícího se komunikace (<xref:System.ServiceModel.CommunicationException>), zpráva se znovu odeslat do alternativní koncový bod.  
   
 > [!NOTE]
->  Simulace selhání sítě, do cílového koncového bodu použité v tomto příkladu obsahuje nesprávnou adresu. Zprávy směrované na tento koncový bod selhání jako žádná služba naslouchá na zadanou adresu.  
+>  K simulaci selhání sítě, cílový koncový bod použitý v tomto příkladu obsahuje nesprávnou adresu. Zprávy směruje do tohoto koncového bodu selže, protože žádná služba naslouchá na zadané adrese.  
   
 > [!NOTE]
->  Při příklad obsažené v tomto tématu se nezabývá explicitně nastavení časového limitu, je nutné provést tyto v úvahu při použití zpracování chyb. Když dojde k chybám, budou existovat další prodlevu došlo předtím, než klient obdrží odpověď. Důvodem je chyba přijme služby směrování, která se pokusí k odeslání zprávy do koncového bodu zálohy. Pokud přidružené hodnoty časového limitu primární a záložní cílové koncové body jsou velké, klient může mít dlouhém zpoždění, protože zpráva převezme několik koncových bodů v záložním seznamu před se úspěšně odeslal.  
+>  Zatímco například obsažené v tomto tématu se nezabývá explicitně nastavení časového limitu, je nutné provést tyto v úvahu při používání zpracování chyb. Pokud k chybám, bude dalšímu zpoždění došlo k předtím, než klient obdrží odpověď. Je to proto, že je chybě u služby směrování, která se pak pokusí odeslat zprávu do záložního koncového bodu. Pokud přidružené hodnoty časového limitu primárního a záložního cílové koncové body jsou velké, klient se může setkat dlouhé zpoždění jako zprávy převezme služby při selhání více koncových bodů v seznamu zálohování před odesláním úspěšně.  
 >   
->  Vzhledem k tomu, že směrovací služby může dojít k maximální zpoždění, která je určena součtem časový limit pro všechny koncové body přidružené k filtru, doporučujeme zvýšit očekávaný časový limit na straně klienta odpovídajícím způsobem.  
+>  Protože směrovací služba setkat se shoduje se součtem hodnotu časového limitu pro všechny koncové body přidružené k filtru Maximální zpoždění, doporučujeme zvýšit očekávané časový limit na straně klienta odpovídajícím způsobem.  
   
 ### <a name="implement-error-handling"></a>Implementace zpracování chyb  
   
-1.  Vytvořte základní konfigurace směrování služby zadáním koncový bod služby, který je zveřejněný prostřednictvím služby. V následujícím příkladu definuje koncového bodu jedné služby, který se používá pro příjem zpráv. Definuje také koncové body klientů, které se používají k odesílání zpráv; deadDestination a realDestination. Koncový bod deadDestination obsahuje adresu, která neodkazuje na spuštěnou službu a slouží k simulaci selhání sítě při odesílání zpráv k tomuto koncovému bodu.  
+1. Vytvořte základní konfiguraci směrovací služby tak, že zadáte koncový bod služby, vystavený službou. Následující příklad definuje jedinou službou koncový bod, který se používá pro příjem zpráv. Také definuje koncové body klienta, které se používají k odesílání zprávy. deadDestination a realDestination. Koncový bod deadDestination obsahuje adresu, která neodkazuje na spuštěnou službu a slouží k simulaci selhání sítě, při odesílání zpráv do tohoto koncového bodu.  
   
     ```xml  
     <services>  
@@ -57,7 +57,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
     </client>  
     ```  
   
-2.  Zadejte filtry slouží ke směrování zpráv do cílového koncových bodů.  V tomto příkladu se používá MatchAll filtru tak, aby odpovídaly všechny zprávy přijaté službou směrování.  
+2. Určit filtry, které slouží ke směrování zpráv do cílové koncové body.  V tomto příkladu je použit filtr MatchAll tak, aby odpovídaly všechny zprávy přijaté službou směrování.  
   
     ```xml  
     <filters>  
@@ -66,9 +66,9 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
     </filters>  
     ```  
   
-3.  Definujte seznam zálohování koncový bod, který obsahuje koncové body, které je odeslána zpráva v případě selhání sítě nebo komunikace při odesílání na cílové primární koncový bod. V následujícím příkladu definuje seznam zálohování, která obsahuje jeden koncový bod; víc koncových bodů však lze zadat v záložním seznamu.  
+3. Definování seznamu záložního koncového bodu, který obsahuje koncové body, které je odeslána zpráva v případě selhání sítě nebo komunikace při odesílání na cílové primární koncový bod. Následující příklad definuje záložní seznam, který obsahuje jeden koncový bod; však lze zadat více koncových bodů v zálohování seznamu.  
   
-     Pokud zálohování seznam obsahuje několik koncových bodů, když síť nebo službu Směrování dojde k chybě komunikace se pokouší odeslat zprávu na první koncový bod v seznamu. Pokud dojde k chybě sítě nebo komunikace při odesílání na tento koncový bod, směrovací služby se pokouší odeslat zprávu na další koncový bod obsažené v seznamu. Služba bude stále poslal do každého koncového bodu v seznamu zálohování koncový bod, dokud se úspěšně odeslal zprávu, vrátí všechny koncové body zálohy v síti nebo chyba týkající se komunikace, nebo je zpráva odeslána a koncový bod vrátí jiný síť, Chyba nesouvisející komunikace.  
+     Pokud záložní seznam obsahuje několik koncových bodů, když síť nebo dojde k chybě komunikace, směrovací služba se pokusí odeslat zprávu na první koncový bod v seznamu. Pokud dojde k chybě sítě nebo komunikace při odesílání na tento koncový bod, směrovací služba se pokusí odeslat zprávu do další koncový bod obsažených v seznamu. Služba pokračuje v odesílání zprávy každý koncový bod v seznamu záložního koncového bodu, dokud je zpráva odeslána úspěšně, všechny koncové body zálohy vrátit sítě nebo chyba týkající se komunikace nebo je zpráva odeslána a koncový bod vrátí síti, Chyba nesouvisející se komunikace.  
   
     ```xml  
     <backupLists>          
@@ -78,7 +78,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
     </backupLists>  
     ```  
   
-4.  Definujte filtr tabulky a který přidruží filtr deadDestination koncový bod a seznamu zálohování koncový bod.  Směrovací služby se nejprve pokusí odeslat zprávu do cílového koncového bodu, přidružené k filtru. Vzhledem k tomu, že deadDestination obsahuje adresu, která neodkazuje na spuštěnou službu, výsledkem je chyba sítě. Směrovací služby pokusí odeslat zprávu do zadaného v backupEndpointlist koncového bodu.  
+4. Definujte tabulku filtru, která filtr přidruží koncový bod deadDestination a seznamu zálohy koncových bodů.  Směrovací služba se nejprve pokusí odeslat zprávu do koncového bodu cílové přidružené k filtru. Vzhledem k tomu, deadDestination obsahuje adresu, která neodkazuje na spuštěnou službu, výsledkem je chyba sítě. Směrovací služba se pak pokusí odeslat zprávu do koncového bodu určeného v backupEndpointlist.  
   
     ```xml  
     <filterTables>  
@@ -92,7 +92,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
           </filterTables>  
     ```  
   
-5.  Pokud chcete vyhodnotit příchozí zprávy s použitím filtru obsažené v tabulce filtru, musíte přidružit tabulku filtru koncové body služby pomocí směrování chování.  Následující příklad ukazuje přiřadit "filterTable1" s koncovými body služby.  
+5. Vyhodnocování příchozích zpráv s použitím filtru obsažené v tabulce filtrů, je třeba přidružit tabulky filtru koncových bodů služby pomocí směrování chování.  Následující příklad ukazuje přiřazování "filterTable1" pomocí koncových bodů služby.  
   
     ```xml  
     <behaviors>  
@@ -106,7 +106,7 @@ Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace smě
     ```  
   
 ## <a name="example"></a>Příklad  
- Toto je úplný seznam všech konfiguračního souboru.  
+ Tady je úplný seznam všech konfiguračního souboru.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

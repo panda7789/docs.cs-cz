@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrDiagnosticInfo_FullOSName
 ms.assetid: f69da02b-eb9a-4284-bb9e-3025517ae6c1
-ms.openlocfilehash: 6a0e24743c861ba92fc284a84fa4ef26e2ee48a8
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: ecbed5b59d36b1984c0b0ae161821ea99d28e090
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58022768"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334637"
 ---
 # <a name="could-not-obtain-full-operation-system-name-due-to-internal-error"></a>Nepovedlo se získat úplný název operačního systému z důvodu vnitřní chyby
 Nepovedlo se získat úplný název operačního systému z důvodu vnitřní chyby. To může být způsobeno WMI neexistují na aktuálním počítači.  
@@ -18,12 +18,12 @@ Nepovedlo se získat úplný název operačního systému z důvodu vnitřní ch
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Přidat `Try...Catch` blok po volání `My.Computer.Info.OSFullName` vlastnost.  
+1. Přidat `Try...Catch` blok po volání `My.Computer.Info.OSFullName` vlastnost.  
   
-2.  Další informace o rozhraní WMI a jak ji nainstalovat, přejděte na, vyhledejte "Windows Management Instrumentation základní".  
+2. Další informace o rozhraní WMI a jak ji nainstalovat, přejděte na, vyhledejte "Windows Management Instrumentation základní".  
   
 ## <a name="see-also"></a>Viz také:
 
 - [My.Computer.Info.OSFullName](xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName)
 - [Zpracování a vyvolání výjimek v rozhraní .NET](../../standard/exceptions/index.md)
-- [Příkaz Try...Catch...Finally](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Try...Catch....Finally – příkaz](../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

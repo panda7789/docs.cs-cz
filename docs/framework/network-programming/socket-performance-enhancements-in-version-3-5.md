@@ -2,12 +2,12 @@
 title: Vylepšení výkonu soketů ve verzi 3.5
 ms.date: 03/30/2017
 ms.assetid: 225aa5f9-c54b-4620-ab64-5cd100cfd54c
-ms.openlocfilehash: 6c638791c9e5dc9e1e1fbd8b6db36c60df5bfcd7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 28f2543d1f8c81efd32ffbb644265fb5709a9bb3
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59171974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333285"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketů ve verzi 3.5
 <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třídy vylepšili jsme ve verzi 3.5 pro použití aplikacemi, které můžete dosáhnout nejvyšší výkon sítě asynchronní vstupně-výstupních operací. Řadu nových tříd se přidaly jako součást sadu rozšíření <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní zpracování, které mohou využívat specializované vysoce výkonné soketu aplikací. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové horké oblastí aplikace (při přijetí velkého objemu dat, třeba).  
@@ -19,17 +19,17 @@ ms.locfileid: "59171974"
   
  Vzor pro provádění asynchronní operace soketu se tato třída se skládá z následujících kroků:  
   
-1.  Přidělit nový <xref:System.Net.Sockets.SocketAsyncEventArgs> kontextu objektu nebo získejte bezplatné předplatné z fondu aplikací.  
+1. Přidělit nový <xref:System.Net.Sockets.SocketAsyncEventArgs> kontextu objektu nebo získejte bezplatné předplatné z fondu aplikací.  
   
-2.  Nastavení vlastností pro daný kontext objekt na operaci o bude provedena (zpětné volání delegáta metoda a dat vyrovnávací paměti, například).  
+2. Nastavení vlastností pro daný kontext objekt na operaci o bude provedena (zpětné volání delegáta metoda a dat vyrovnávací paměti, například).  
   
-3.  Volání metody odpovídající soketu (xxxAsync) k zahájení asynchronní operace.  
+3. Volání metody odpovídající soketu (xxxAsync) k zahájení asynchronní operace.  
   
-4.  Pokud metoda asynchronní soketu (xxxAsync) vrací hodnotu true při zpětném volání, dotaz kontextové vlastnosti stav dokončení.  
+4. Pokud metoda asynchronní soketu (xxxAsync) vrací hodnotu true při zpětném volání, dotaz kontextové vlastnosti stav dokončení.  
   
-5.  Pokud metoda asynchronní soketu (xxxAsync) vrátí false. zpětné volání, operace se dokončila synchronně. Vlastnosti kontextu může být dotázán na výsledek operace.  
+5. Pokud metoda asynchronní soketu (xxxAsync) vrátí false. zpětné volání, operace se dokončila synchronně. Vlastnosti kontextu může být dotázán na výsledek operace.  
   
-6.  Znovu použít kontext pro jiná operace, vložit ho zpátky do fondu nebo zahodit.  
+6. Znovu použít kontext pro jiná operace, vložit ho zpátky do fondu nebo zahodit.  
   
  Životnost nový objekt kontextu operace asynchronního soketu se určuje podle odkazů v kódu aplikace a odkazy na asynchronní vstupně-výstupních operací. Není nutné pro aplikaci pro zachování odkaz na objekt kontextu soketu asynchronní operaci po odeslání jako parametr do jedné z metod soketu asynchronní operace. Bude se dál odkazované až do dokončení zpětného volání vrátí. Je ale výhodné pro aplikaci, aby si ponechají odkaz na objekt kontextu, takže můžete znovu použít pro budoucí soketu asynchronní operaci.  
   

@@ -4,21 +4,21 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID450
 ms.assetid: 61700dd4-ebd0-4088-b439-2cd1ef9fc8f4
-ms.openlocfilehash: 83dfc9138176ba64ceb0317e051b7dcc8f440337
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: 3da7d55bdf58bb11d65bdb064a39ac4c7e9f1a8f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58044031"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334585"
 ---
 # <a name="wrong-number-of-arguments-or-property-assignment-not-valid"></a>Nesprávný počet argumentů nebo přiřazení vlastnosti není platná
 Byla provedena přiřazení, který není platný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte, že počet argumentů, které jste zadali, které odpovídá počtu požadovaného cíle.  
+1. Zkontrolujte, že počet argumentů, které jste zadali, které odpovídá počtu požadovaného cíle.  
   
-2.  Zkontrolujte přiřazení vlastnosti.  
+2. Zkontrolujte přiřazení vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
 

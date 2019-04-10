@@ -2,12 +2,12 @@
 title: Ukázka identity služby
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: fcb967af6d95169817dea3f17ea350cf21494d56
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 72068002572ff82d2f166ffdd79e455cec7a2961
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835636"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336392"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době návrhu klient může načíst identitu pomocí metadat služby a za běhu pak se klient může ověřit identitu služby. Koncept identitu služby je umožnit klient k ověření služby před voláním některé z jeho operace, a tím chrání před neověřená volání klienta. Na zabezpečeném připojení služby také ověří přihlašovací údaje klienta před povolením přístupu, ale nejedná se o fokus této ukázky. Zobrazit ukázky [klienta](../../../../docs/framework/wcf/samples/client.md) , které zobrazí ověřování serveru.
@@ -107,44 +107,44 @@ class CustomIdentityVerifier : IdentityVerifier
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
 
-1.  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nebo [!INCLUDE[wv](../../../../includes/wv-md.md)], importovat soubor certifikátu Identity.pfx ve složce řešení Identity do úložiště LocalMachine/My (osobní) certifikátů pomocí nástroje modulu snap-in konzoly MMC. Tento soubor je chráněn heslem. Během importu, zobrazí se výzva k zadání hesla. Typ `xyz` do pole heslo. Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) tématu. Až to uděláte, spusťte Setup.bat v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce, který zkopíruje tento certifikát do úložiště CurrentUser/důvěryhodné osoby pro použití na klientovi.
+1. Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nebo [!INCLUDE[wv](../../../../includes/wv-md.md)], importovat soubor certifikátu Identity.pfx ve složce řešení Identity do úložiště LocalMachine/My (osobní) certifikátů pomocí nástroje modulu snap-in konzoly MMC. Tento soubor je chráněn heslem. Během importu, zobrazí se výzva k zadání hesla. Typ `xyz` do pole heslo. Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) tématu. Až to uděláte, spusťte Setup.bat v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce, který zkopíruje tento certifikát do úložiště CurrentUser/důvěryhodné osoby pro použití na klientovi.
 
-2.  Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], spusťte Setup.bat ve složce instalace ukázkové uvnitř sady Visual Studio 2012 příkazový řádek s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+2. Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], spusťte Setup.bat ve složce instalace ukázkové uvnitř sady Visual Studio 2012 příkazový řádek s oprávněními správce. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
 
     > [!NOTE]
     >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory. Ujistěte se odebrat certifikáty spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
   
-3.  Spusťte v adresáři \service\bin Service.exe. Ujistěte se, že služba označuje, že je připravená a zobrazí výzva ke stisknutí klávesy \<Enter > ukončení služby.  
+3. Spusťte v adresáři \service\bin Service.exe. Ujistěte se, že služba označuje, že je připravená a zobrazí výzva ke stisknutí klávesy \<Enter > ukončení služby.  
   
-4.  Spusťte Client.exe z adresáře \client\bin nebo stisknutím klávesy F5 v sadě Visual Studio k vytvoření a spuštění. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+4. Spusťte Client.exe z adresáře \client\bin nebo stisknutím klávesy F5 v sadě Visual Studio k vytvoření a spuštění. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-5.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+5. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Před sestavením klientské části Ukázky, nezapomeňte změnit hodnotu pro adresu koncového bodu služby v souboru Client.cs `CallServiceCustomClientIdentity` metody. Potom sestavte ukázku.  
+1. Před sestavením klientské části Ukázky, nezapomeňte změnit hodnotu pro adresu koncového bodu služby v souboru Client.cs `CallServiceCustomClientIdentity` metody. Potom sestavte ukázku.  
   
-2.  Vytvoření adresáře na počítači se službou.  
+2. Vytvoření adresáře na počítači se službou.  
   
-3.  Zkopírujte soubory programu služby z service\bin do adresáře na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
+3. Zkopírujte soubory programu služby z service\bin do adresáře na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-4.  Vytvoření adresáře v klientském počítači pro binární soubory klienta.  
+4. Vytvoření adresáře v klientském počítači pro binární soubory klienta.  
   
-5.  Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
+5. Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
   
-6.  Ve službě, spusťte `setup.bat service` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
+6. Ve službě, spusťte `setup.bat service` otevřeného v příkazovém řádku pro vývojáře pro sadu Visual Studio s oprávněními správce. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
   
-7.  Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
+7. Zkopírujte soubor Service.cer z adresáře služby k adresáři klienta v klientském počítači.  
   
-8.  V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby. Existuje více instancí, které musí být změněny.  
+8. V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby. Existuje více instancí, které musí být změněny.  
   
 9. Na straně klienta spouštění ImportServiceCert.bat v příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
   

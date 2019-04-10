@@ -2,12 +2,12 @@
 title: Export vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
-ms.openlocfilehash: 5107e4d079a51ee94d59aa872c8a4c74f229ea8a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5134b57c59268b139239021bc2b4f6f4538ad27d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59201244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334507"
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekci na paralelní standardizované reprezentaci, který můžou klienti použít k vysvětlení použití služby. Vlastní metadata se skládá z elementů XML, které nelze exportovat vývozci poskytované systémem metadat. Obvykle obsahuje vlastní prvky WSDL pro uživatelem definované chování a prvky vazeb a výrazů zásad o funkce a požadavky vazby a kontrakty.  
@@ -19,9 +19,9 @@ Ve Windows Communication Foundation (WCF), export metadat je proces popisující
   
  Tato část popisuje:  
   
-1.  Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje data generování WSDL, před publikováním schématu WSDL.  
+1. Jak implementovat a používat <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> rozhraní, které zveřejňuje data generování WSDL, před publikováním schématu WSDL.  
   
-2.  Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní, které zpřístupňuje data zásad vám před exportem kontrolní výrazy zásad v datech WSDL.  
+2. Jak implementovat a používat <xref:System.ServiceModel.Description.IPolicyExportExtension?displayProperty=nameWithType> rozhraní, které zpřístupňuje data zásad vám před exportem kontrolní výrazy zásad v datech WSDL.  
   
  Další informace o importu vlastního WSDL a kontrolní výrazy zásad najdete v tématu [import vlastních metadat pro rozšíření WCF](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md).  
   

@@ -2,12 +2,12 @@
 title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: 5cd5a8bd198fe4f2f8cc26a9937029b578eff2e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8e50c39955f9ab72dfa1d52cbc37ab90f1ab0a8a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59216753"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335365"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -24,9 +24,9 @@ Služby Windows (dříve označovaná jako služba systému Windows NT) najdete 
   
 ### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>K hostování WCF v rámci aplikace služby Windows  
   
-1.  Vytvoření aplikace služby Windows. Můžete psát aplikace služby Windows ve spravovaném kódu použitím tříd v <xref:System.ServiceProcess> oboru názvů. Tato aplikace musí obsahovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase>.  
+1. Vytvoření aplikace služby Windows. Můžete psát aplikace služby Windows ve spravovaném kódu použitím tříd v <xref:System.ServiceProcess> oboru názvů. Tato aplikace musí obsahovat jednu třídu, která dědí z <xref:System.ServiceProcess.ServiceBase>.  
   
-2.  Odkaz na životnost aplikace služby Windows životního cyklu služeb WCF. Obvykle je vhodné služby WCF hostované v aplikaci služby Windows aktivuje při spuštění hostitelské služby, zastavil naslouchání pro zprávy, když hostitelská služba je zastavena a vypnout hostitelský proces, když dojde k chybě služby WCF. To lze provést následujícím způsobem:  
+2. Odkaz na životnost aplikace služby Windows životního cyklu služeb WCF. Obvykle je vhodné služby WCF hostované v aplikaci služby Windows aktivuje při spuštění hostitelské služby, zastavil naslouchání pro zprávy, když hostitelská služba je zastavena a vypnout hostitelský proces, když dojde k chybě služby WCF. To lze provést následujícím způsobem:  
   
     -   Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> otevřít jeden nebo víc instancí <xref:System.ServiceModel.ServiceHost>. Jednu aplikaci služby Windows může hostovat více služeb WCF, které spouští a zastavují jako skupinu.  
   

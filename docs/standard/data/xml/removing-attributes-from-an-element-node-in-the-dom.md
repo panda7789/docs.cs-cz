@@ -5,19 +5,19 @@ ms.technology: dotnet-standard
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 65fd6d2baae29c72241350e4568faf09b9c71f39
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 0e38ad777112e5e88fe40c530da6107d0de0e3ac
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48835178"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336132"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Odebrání atributů z uzlu elementu v modelu DOM
 Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kolekce atributu. K tomuto účelu se provádí následující kroky:  
   
-1.  Získat kolekci atributu pomocí elementu `XmlAttributeCollection attrs = elem.Attributes;`.  
+1. Získat kolekci atributu pomocí elementu `XmlAttributeCollection attrs = elem.Attributes;`.  
   
-2.  Odeberte atribut z kolekce atributů pomocí jedné ze tří metod:  
+2. Odeberte atribut z kolekce atributů pomocí jedné ze tří metod:  
   
     -   Použití <xref:System.Xml.XmlAttributeCollection.Remove%2A> odebrat konkrétní atribut.  
   
@@ -41,4 +41,4 @@ Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kole
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

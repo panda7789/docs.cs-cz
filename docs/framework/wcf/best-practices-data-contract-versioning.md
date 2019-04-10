@@ -7,12 +7,12 @@ helpviewer_keywords:
 - best practices [WCF], data contract versioning
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
-ms.openlocfilehash: 9f92e731132eb564b893e3d34ccd322fbcd66ea7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cf3ae6f47f63c545edf3d65804daa049d4541788
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59118999"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334923"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Doporučené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v průběhu času můžete snadno vyvíjejí. Další informace o kontraktech dat, najdete v tématech v [kontraktů dat pomocí](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -50,21 +50,21 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
   
  Některé pokyny musí následovat přesně tak, aby bylo možné odesílat nové verze typu, kde je očekávána starší nebo odeslat staré heslo, kde je očekávána novou. Další pokyny nejsou bezpodmínečně nutné, ale jsou zde uvedeny, protože mohou být ovlivněny budoucnost schématu.  
   
-1.  Nepokoušejte se verzí kontraktů dat podle typu dědičnosti. K vytvoření novější verze, změnit kontraktu dat na existujícím typu nebo vytvořte nový typ nesouvisející.  
+1. Nepokoušejte se verzí kontraktů dat podle typu dědičnosti. K vytvoření novější verze, změnit kontraktu dat na existujícím typu nebo vytvořte nový typ nesouvisející.  
   
-2.  Použití dědičnosti spolu s kontrakty dat je povoleno, za předpokladu, že dědičnosti se nepoužívá jako mechanismus správy verzí a nepoužijí určitá pravidla. Pokud typ je odvozen od určité základní typ, Nedělejte ji odvodit z různých základního typu v budoucí verzi (Pokud se stejná data smlouvy). Existuje jedna výjimka: typ můžete vložit do hierarchie mezi typ kontraktu dat a jeho základní typ, ale pouze v případě, že neobsahuje datové členy pomocí stejné názvy jako ostatní členové všechny možné verze z ostatních typů v hierarchii. Obecně platí pomocí datové členy se stejnými názvy na různých úrovních stejné hierarchii dědičnosti může vést k problémům vážné správy verzí a mělo by se vyhnout.  
+2. Použití dědičnosti spolu s kontrakty dat je povoleno, za předpokladu, že dědičnosti se nepoužívá jako mechanismus správy verzí a nepoužijí určitá pravidla. Pokud typ je odvozen od určité základní typ, Nedělejte ji odvodit z různých základního typu v budoucí verzi (Pokud se stejná data smlouvy). Existuje jedna výjimka: typ můžete vložit do hierarchie mezi typ kontraktu dat a jeho základní typ, ale pouze v případě, že neobsahuje datové členy pomocí stejné názvy jako ostatní členové všechny možné verze z ostatních typů v hierarchii. Obecně platí pomocí datové členy se stejnými názvy na různých úrovních stejné hierarchii dědičnosti může vést k problémům vážné správy verzí a mělo by se vyhnout.  
   
-3.  Od první verze kontraktu dat, vždy implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> umožňující verzemi. Další informace najdete v tématu [kontraktů dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Vydání jeden nebo více verzemi typu bez implementace tohoto rozhraní implementaci v příští verzi typu.  
+3. Od první verze kontraktu dat, vždy implementovat <xref:System.Runtime.Serialization.IExtensibleDataObject> umožňující verzemi. Další informace najdete v tématu [kontraktů dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Vydání jeden nebo více verzemi typu bez implementace tohoto rozhraní implementaci v příští verzi typu.  
   
-4.  V novějších verzích neměňte název kontraktu dat nebo oboru názvů. Pokud změníte název nebo obor názvů tohoto typu základního kontraktu dat, je potřeba zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. Další informace o pojmenování naleznete v tématu [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
+4. V novějších verzích neměňte název kontraktu dat nebo oboru názvů. Pokud změníte název nebo obor názvů tohoto typu základního kontraktu dat, je potřeba zachovat název kontraktu dat a oboru názvů pomocí příslušné mechanismy, jako <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> vlastnost <xref:System.Runtime.Serialization.DataContractAttribute>. Další informace o pojmenování naleznete v tématu [názvy datových kontraktů](../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
-5.  V novějších verzích Neměňte názvy žádné datové členy. Pokud změníte název pole, vlastnost nebo událost základní datový člen, použijte `Name` vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> zachovat existující názvem datového členu.  
+5. V novějších verzích Neměňte názvy žádné datové členy. Pokud změníte název pole, vlastnost nebo událost základní datový člen, použijte `Name` vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> zachovat existující názvem datového členu.  
   
-6.  Neměňte typ pole, vlastnost nebo událost základní datový člen tak, aby výsledná data smlouvy pro tento člen změny dat, v novějších verzích. Uvědomte si, že typy rozhraní jsou ekvivalentní <xref:System.Object> pro účely stanovení smlouvy očekávaná data.  
+6. Neměňte typ pole, vlastnost nebo událost základní datový člen tak, aby výsledná data smlouvy pro tento člen změny dat, v novějších verzích. Uvědomte si, že typy rozhraní jsou ekvivalentní <xref:System.Object> pro účely stanovení smlouvy očekávaná data.  
   
-7.  V novějších verzích, neměňte pořadí existující datové členy úpravou <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
+7. V novějších verzích, neměňte pořadí existující datové členy úpravou <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
   
-8.  V novějších verzích je možné přidat nové datové členy. By měl vždy postupujte podle těchto pravidel:  
+8. V novějších verzích je možné přidat nové datové členy. By měl vždy postupujte podle těchto pravidel:  
   
     1.  <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Vlastnost by měl vždy být ponechány na jeho výchozí hodnotu `false`.  
   

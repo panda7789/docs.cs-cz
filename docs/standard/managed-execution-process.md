@@ -12,29 +12,29 @@ helpviewer_keywords:
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3e6548484f3e41ce67522931f4eafef3acee1fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce088fd10540ce9d390b7411bdcd8e563636a437
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652017"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336145"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  
   
-1.  [Volba kompilátoru](#choosing_a_compiler).  
+1. [Volba kompilátoru](#choosing_a_compiler).  
   
      Chcete-li získat výhody poskytované modulem CLR (Common Language Runtime), je nutné použít jeden nebo více kompilátorů jazyka, které se zaměřují na modul runtime.  
   
-2.  [Kompilace kódu do jazyka MSIL](#compiling_to_msil).  
+2. [Kompilace kódu do jazyka MSIL](#compiling_to_msil).  
   
      Kompilace převádí zdrojový kód do jazyka MSIL (Microsoft Intermediate Language) a generuje požadovaná metadata.  
   
-3.  [Kompilace jazyka MSIL do nativního kódu](#compiling_msil_to_native_code).  
+3. [Kompilace jazyka MSIL do nativního kódu](#compiling_msil_to_native_code).  
   
      V době spuštění přeloží kompilátor JIT (Just-In-Time) jazyk MSIL do nativního kódu. Během této kompilace je nutné, aby kód prošel procesem ověření, který prověří jazyk MSIL a metadata a zjistí, zda kód může být určen jako typově bezpečný.  
   
-4.  [Spouštění kódu](#running_code).  
+4. [Spouštění kódu](#running_code).  
   
      Modul CLR (Common Language Runtime) poskytuje infrastrukturu, která umožňuje uskutečnit spuštění a provést služby, které lze použít během spuštění.  
   
@@ -99,9 +99,9 @@ ms.locfileid: "54652017"
   
  V operačním systému [!INCLUDE[winxp](../../includes/winxp-md.md)] a [!INCLUDE[windowsver](../../includes/windowsver-md.md)] společnosti Microsoft ověřuje zavaděč spravované moduly kontrolou bitu v hlavičce souboru COFF. Nastavený bit označuje spravovaný modul. Pokud zavaděč odhalí spravované moduly, načte soubor mscoree.dll a poté `_CorValidateImage` nebo `_CorImageUnloading` upozorní zavaděč ve chvíli, kdy jsou bitové kopie spravovaného modulu načteny nebo uvolněny. `_CorValidateImage` provede následující akce:  
   
-1.  Zajistí, aby byl kód platným spravovaným kódem.  
+1. Zajistí, aby byl kód platným spravovaným kódem.  
   
-2.  Změní vstupní bod v bitové kopii na vstupní bod v modulu runtime.  
+2. Změní vstupní bod v bitové kopii na vstupní bod v modulu runtime.  
   
  V 64bitovém systému Windows upraví `_CorValidateImage` bitovou kopii uloženou v paměti její transformací z formátu PE32 na formát PE32+.  
   

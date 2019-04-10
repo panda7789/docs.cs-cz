@@ -11,19 +11,19 @@ helpviewer_keywords:
 - receiving data, using WebRequest class
 - Internet, requesting data
 ms.assetid: 368b8d0f-dc5e-4469-a8b8-b2adbf5dd800
-ms.openlocfilehash: 0a2d60a31b1875d948e07615e1613e2b163c15b5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 1d8f501e90f3942bbfd95fc06e9fdd79d8f6430e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59171051"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334208"
 ---
 # <a name="how-to-request-data-by-using-the-webrequest-class"></a>Postupy: Data žádosti pomocí třídy WebRequest
 Následující postup popisuje kroky pro žádost o prostředek, například webovou stránku nebo soubor, ze serveru. Prostředek musí být označeny identifikátorem URI.  
   
 ## <a name="to-request-data-from-a-host-server"></a>Žádost o data z hostitelského serveru  
   
-1.  Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku. Příklad: 
+1. Vytvoření <xref:System.Net.WebRequest> instance voláním <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> s identifikátorem URI prostředku. Příklad: 
   
     ```csharp  
     WebRequest request = WebRequest.Create("http://www.contoso.com/default.html");  
@@ -37,7 +37,7 @@ Následující postup popisuje kroky pro žádost o prostředek, například web
     > Rozhraní .NET Framework poskytuje konkrétní třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy pro identifikátory URI, které začínají *http:*, *https:*, *ftp:* , a *souboru:*.
     Pokud je potřeba sada nebo čtení vlastnosti specifické pro protokol, musíte přetypovat vaše <xref:System.Net.WebRequest> nebo <xref:System.Net.WebResponse> objektu na typ object specifický pro protokol. Další informace najdete v tématu [programování připojitelných protokolů](programming-pluggable-protocols.md). 
   
-2.  Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:  
+2. Nastavte všechny hodnoty vlastností, které potřebujete ve vaší `WebRequest` objektu. Například chcete-li povolit ověřování, nastavte <xref:System.Net.WebRequest.Credentials%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Net.NetworkCredential> třídy:  
   
     ```csharp  
     request.Credentials = CredentialCache.DefaultCredentials;  
@@ -47,7 +47,7 @@ Následující postup popisuje kroky pro žádost o prostředek, například web
     request.Credentials = CredentialCache.DefaultCredentials  
     ```  
   
-3.  Odesílání požadavku na server voláním <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>. Tato metoda vrátí objekt, který obsahuje odpověď serveru. Vrácený <xref:System.Net.WebResponse> typ objektu je určeno schéma identifikátoru URI požadavku. Příklad:
+3. Odesílání požadavku na server voláním <xref:System.Net.WebRequest.GetResponse%2A?displayProperty=nameWithType>. Tato metoda vrátí objekt, který obsahuje odpověď serveru. Vrácený <xref:System.Net.WebResponse> typ objektu je určeno schéma identifikátoru URI požadavku. Příklad:
   
     ```csharp  
     WebResponse response = request.GetResponse();  
@@ -57,7 +57,7 @@ Následující postup popisuje kroky pro žádost o prostředek, například web
     Dim response As WebResponse = request.GetResponse()  
     ```  
   
-4.  Můžete přistupovat k vlastnosti vaší `WebResponse` objektu nebo přetypování na konkrétní instanci číst vlastnosti specifické pro protokol. 
+4. Můžete přistupovat k vlastnosti vaší `WebResponse` objektu nebo přetypování na konkrétní instanci číst vlastnosti specifické pro protokol. 
 
     Například pro přístup k protokolu HTTP specifické vlastnostem <xref:System.Net.HttpWebResponse>, vícesměrového vysílání vaše `WebResponse` objektu `HttpWebResponse` odkaz. Následující příklad kódu ukazuje, jak zobrazit konkrétní HTTP <xref:System.Net.HttpWebResponse.StatusDescription%2A?displayProperty=nameWithType> vlastnost odeslaných odpovědí:
   
@@ -69,7 +69,7 @@ Následující postup popisuje kroky pro žádost o prostředek, například web
     Console.WriteLine(CType(response,HttpWebResponse).StatusDescription)  
     ```  
   
-5.  Chcete-li získat datový proud s daty odpověď odesílanou serverem, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metody. Příklad:  
+5. Chcete-li získat datový proud s daty odpověď odesílanou serverem, zavolejte <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metody. Příklad:  
   
     ```csharp  
     Stream dataStream = response.GetResponseStream();  
@@ -79,7 +79,7 @@ Následující postup popisuje kroky pro žádost o prostředek, například web
     Dim dataStream As Stream = response.GetResponseStream()  
     ```  
   
-6.  Po přečtení dat z objektu odpovědi, buď ji zavřít <xref:System.Net.WebResponse.Close%2A?displayProperty=nameWithType> metody nebo zavřít pomocí datového proudu odpovědi <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metoda. Nezavírejte objektu odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo stát nemůže zpracovat požadavky. Protože `WebResponse.Close` volání metody `Stream.Close` když se toto okno zavře odpověď, není nutné volat `Close` na objekty odpovědi i datový proud, i když to není tak škodlivé. Příklad:
+6. Po přečtení dat z objektu odpovědi, buď ji zavřít <xref:System.Net.WebResponse.Close%2A?displayProperty=nameWithType> metody nebo zavřít pomocí datového proudu odpovědi <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> metoda. Nezavírejte objektu odpovědi nebo datový proud, může vaše aplikace vyčerpala volné připojení k serveru nebo stát nemůže zpracovat požadavky. Protože `WebResponse.Close` volání metody `Stream.Close` když se toto okno zavře odpověď, není nutné volat `Close` na objekty odpovědi i datový proud, i když to není tak škodlivé. Příklad:
   
     ```csharp  
     response.Close();  

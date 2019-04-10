@@ -3,12 +3,12 @@ title: 'Postupy: Povolení zjišťování opakování tokenů'
 ms.date: 03/30/2017
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
 author: BrucePerlerMS
-ms.openlocfilehash: 373177924a0a2e03bd43237510c918694cd5a340
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: a357f153d61b6a8e1e105639bd68647dabdc26f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47236001"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336522"
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Postupy: Povolení zjišťování opakování tokenů
 ## <a name="applies-to"></a>Platí pro  
@@ -18,7 +18,7 @@ ms.locfileid: "47236001"
 -   ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
- Tento návod obsahuje podrobně popisuje postupy pro povolení rozpoznání opětovného přehrání tokenu v aplikaci ASP.NET, která pomocí technologie WIF. Také poskytuje pokyny k otestování aplikace ověřit, zda je povoleno rozpoznání opětovného přehrání tokenu. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
+ Tento návod obsahuje podrobně popisuje postupy pro povolení rozpoznání opětovného přehrání tokenu v aplikaci ASP.NET, která pomocí technologie WIF. Také poskytuje pokyny k otestování aplikace ověřit, zda je povoleno rozpoznání opětovného přehrání tokenu. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Nástroj identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
   
 ## <a name="contents"></a>Obsah  
   
@@ -54,17 +54,17 @@ ms.locfileid: "47236001"
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
-1.  Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
+1. Spusťte sadu Visual Studio a klikněte na tlačítko **souboru**, **nový**a potom **projektu**.  
   
-2.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
+2. V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
-3.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
+3. V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-4.  Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
+4. Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
   
-5.  **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
+5. **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
   
-6.  Přidejte následující  **\<tokenReplayDetection >** elementu *Web.config* bezprostředně následující konfigurační soubor  **\<system.identityModel >** a  **\<identityConfiguration >** prvky, jako jsou zobrazeny:  
+6. Přidejte následující  **\<tokenReplayDetection >** elementu *Web.config* bezprostředně následující konfigurační soubor  **\<system.identityModel >** a  **\<identityConfiguration >** prvky, jako jsou zobrazeny:  
   
     ```xml  
     <system.identityModel>  
@@ -77,8 +77,8 @@ ms.locfileid: "47236001"
   
 #### <a name="to-test-your-wif-enabled-aspnet-application-for-replay-detection"></a>Chcete-li otestovat aplikaci technologie ASP.NET s podporou technologie WIF pro rozpoznání opětovného přehrání  
   
-1.  Spuštění řešení stisknutím kombinace kláves **F5** klíč. Měli byste se výchozí domovskou stránku ASP.NET a automaticky ověřuje se uživatelské jméno *Terry*, což je výchozí uživatel, který je vrácen služba STS pro vývoj.  
+1. Spuštění řešení stisknutím kombinace kláves **F5** klíč. Měli byste se výchozí domovskou stránku ASP.NET a automaticky ověřuje se uživatelské jméno *Terry*, což je výchozí uživatel, který je vrácen služba STS pro vývoj.  
   
-2.  Stiskněte v prohlížeči **zpět** tlačítko. By se měla zobrazit pomocí **chyba serveru v aplikaci '/'** stránky s popisem následující: *ID1062: byl zjištěn opakování pro: Token: "System.IdentityModel.Tokens.samlsecuritytoken tak"* , za nímž následuje *AssertionId* a *vystavitele*.  
+2. Stiskněte v prohlížeči **zpět** tlačítko. Mělo by se zobrazit pomocí **chyba serveru v aplikaci '/'** stránky s popisem následující: *ID1062: Byl zjištěn opakování pro: token: "System.IdentityModel.Tokens.samlsecuritytoken tak"* následovaný *AssertionId* a *vystavitele*.  
   
      Tato chybová stránka se zobrazuje, protože výjimku typu <xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException> byla vyvolána, když byla zjištěna opětovného přehrání tokenu. K této chybě dochází, protože se pokoušíte znovu poslat počáteční požadavek POST převedou token, který byl poprvé. **Zpět** tlačítko nezpůsobí toto chování o následných požadavcích na server.

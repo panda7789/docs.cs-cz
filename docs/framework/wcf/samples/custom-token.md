@@ -2,12 +2,12 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 3632738ce7afaa5f458dfe26eb562cd70c2e2896
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: fbde7d1006cabddafa7e03fdee0e3493416001da
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59201764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334442"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -588,38 +588,38 @@ string GetCallerCreditCardNumber()
 
 #### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku
 
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
 
-1.  Otevřete okno příkazového řádku sady Visual Studio 2012 s oprávněními správce a spusťte Setup.bat z instalační složky s ukázkou. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky. Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.
+1. Otevřete okno příkazového řádku sady Visual Studio 2012 s oprávněními správce a spusťte Setup.bat z instalační složky s ukázkou. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky. Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.
 
 > [!NOTE]
 >  Je potřeba certifikáty odebrat spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
   
-1.  Spusťte Client.exe z client\bin adresáře. Činnost klienta se zobrazí na klientské aplikace konzoly.  
+1. Spusťte Client.exe z client\bin adresáře. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-2.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+2. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computer"></a>Ke spuštění ukázky napříč počítači  
   
-1.  Vytvoření adresáře na počítači se službou pro binární soubory služby.  
+1. Vytvoření adresáře na počítači se službou pro binární soubory služby.  
   
-2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Nezapomeňte zkopírovat CreditCardFile.txt; v opačném případě authenticator platební karty nelze ověřit informace o platební kartě odeslaných z klienta. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
+2. Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Nezapomeňte zkopírovat CreditCardFile.txt; v opačném případě authenticator platební karty nelze ověřit informace o platební kartě odeslaných z klienta. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete si ho pomocí Setup.bat změníte-li vytvořit `%SERVER_NAME%` proměnné pro plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že se soubor Setup.bat musí být spuštěn v příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
+3. Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete si ho pomocí Setup.bat změníte-li vytvořit `%SERVER_NAME%` proměnné pro plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že se soubor Setup.bat musí být spuštěn v příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
   
-4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople na straně klienta. Musíte to provést jenom v případě, že certifikát serveru není vystavený důvěryhodného vystavitele.  
+4. Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople na straně klienta. Musíte to provést jenom v případě, že certifikát serveru není vystavený důvěryhodného vystavitele.  
   
-5.  V souboru EchoServiceHost.cs změňte hodnotu názvu subjektu certifikátu k zadání názvu počítače plně kvalifikovaný, místo localhost.  
+5. V souboru EchoServiceHost.cs změňte hodnotu názvu subjektu certifikátu k zadání názvu počítače plně kvalifikovaný, místo localhost.  
   
-6.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
+6. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-7.  V souboru Client.cs změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
+7. V souboru Client.cs změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
-8.  V souboru Client.cs změňte název subjektu certifikátu X.509 služby tak, aby odpovídala plně kvalifikovaný název vzdáleného hostitele, místo localhost.  
+8. V souboru Client.cs změňte název subjektu certifikátu X.509 služby tak, aby odpovídala plně kvalifikovaný název vzdáleného hostitele, místo localhost.  
   
 9. Na klientském počítači spusťte Client.exe z okna příkazového řádku.  
   
@@ -627,4 +627,4 @@ string GetCallerCreditCardNumber()
   
 #### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+1. Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  

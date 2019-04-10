@@ -9,12 +9,12 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], in DataGridView control
 - combo boxes [Windows Forms], accessing objects in DataGridViewComboBoxCell drop-down lists
 ms.assetid: bcbe794a-d1fa-47f8-b5a3-5f085b32097d
-ms.openlocfilehash: 221774895fa5867ad6ec870f7e293c9366e442f3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 17b7c93effe9338a9e2d6cb207a948a956d9b666
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59080784"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334273"
 ---
 # <a name="how-to-access-objects-in-a-windows-forms-datagridviewcomboboxcell-drop-down-list"></a>Postupy: Přístup k objektům v rozevíracím seznamu Windows Forms DataGridViewComboBoxCell
 Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:System.Windows.Forms.DataGridViewComboBoxColumn> a <xref:System.Windows.Forms.DataGridViewComboBoxCell> typy umožňují přidat libovolné objekty do rozevíracích seznamů. Pomocí této funkce může představovat komplexní státy v rozevíracím seznamu bez nutnosti mít uložené odpovídající objekty v samostatné kolekce.  
@@ -27,17 +27,17 @@ Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:Syste
   
 ### <a name="to-add-business-objects-to-the-drop-down-list"></a>Chcete-li přidat objekty obchodní rozevíracího seznamu  
   
-1.  Vytvořte nový <xref:System.Windows.Forms.DataGridViewComboBoxColumn> a naplnění jeho <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> kolekce. Alternativně můžete nastavit sloupci <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> vlastností do kolekce pro obchodní objekty. V takovém případě ale nemůže přidat "nepřiřazené" do rozevíracího seznamu bez vytvoření odpovídající obchodní objekt v kolekci.  
+1. Vytvořte nový <xref:System.Windows.Forms.DataGridViewComboBoxColumn> a naplnění jeho <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> kolekce. Alternativně můžete nastavit sloupci <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> vlastností do kolekce pro obchodní objekty. V takovém případě ale nemůže přidat "nepřiřazené" do rozevíracího seznamu bez vytvoření odpovídající obchodní objekt v kolekci.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewComboBoxObjectBinding#110](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/CS/form1.cs#110)]
      [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#110)]  
   
-2.  Nastavte <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> vlastnosti. <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> Určuje vlastnost, která obchodního objektu, chcete-li zobrazit v rozevíracím seznamu. <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> Určuje vlastnost, která vrátí odkaz na objekt firmy.  
+2. Nastavte <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> a <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> vlastnosti. <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> Určuje vlastnost, která obchodního objektu, chcete-li zobrazit v rozevíracím seznamu. <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> Určuje vlastnost, která vrátí odkaz na objekt firmy.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewComboBoxObjectBinding#115](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/CS/form1.cs#115)]
      [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#115](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#115)]  
   
-3.  Ujistěte se, že vaše obchodní typ objektu obsahuje vlastnost, která vrátí odkaz na aktuální instanci. Tato vlastnost musí mít název s hodnotou přiřazenou k <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> v předchozím kroku.  
+3. Ujistěte se, že vaše obchodní typ objektu obsahuje vlastnost, která vrátí odkaz na aktuální instanci. Tato vlastnost musí mít název s hodnotou přiřazenou k <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> v předchozím kroku.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewComboBoxObjectBinding#310](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/CS/form1.cs#310)]
      [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#310](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#310)]  
@@ -54,11 +54,11 @@ Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:Syste
   
  Chcete-li zobrazit chování tohoto příkladu, proveďte následující kroky:  
   
-1.  Změna přiřazení v `Assigned To` odvodit sloupec podle výběru různých hodnot z rozevíracích seznamů nebo stisknutím klávesy CTRL + 0 v buňce pole se seznamem.  
+1. Změna přiřazení v `Assigned To` odvodit sloupec podle výběru různých hodnot z rozevíracích seznamů nebo stisknutím klávesy CTRL + 0 v buňce pole se seznamem.  
   
-2.  Klikněte na tlačítko `Generate Report` k zobrazení aktuálního přiřazení. To ukazuje, že změna `Assigned To` sloupce automaticky aktualizuje `tasks` kolekce.  
+2. Klikněte na tlačítko `Generate Report` k zobrazení aktuálního přiřazení. To ukazuje, že změna `Assigned To` sloupce automaticky aktualizuje `tasks` kolekce.  
   
-3.  Klikněte na tlačítko `Request Status` tlačítka zavoláte `RequestStatus` metoda aktuálního `Employee` objekt pro tento řádek. Tento příklad ukazuje, že vybraný objekt se úspěšně načetl.  
+3. Klikněte na tlačítko `Request Status` tlačítka zavoláte `RequestStatus` metoda aktuálního `Employee` objekt pro tento řádek. Tento příklad ukazuje, že vybraný objekt se úspěšně načetl.  
   
  [!code-csharp[System.Windows.Forms.DataGridViewComboBoxObjectBinding#000](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/CS/form1.cs#000)]
  [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#000](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#000)]  

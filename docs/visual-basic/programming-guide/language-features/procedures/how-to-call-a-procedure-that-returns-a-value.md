@@ -7,37 +7,37 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-ms.openlocfilehash: ee80ae48a9b9bfae0afe8f0a2c6e7ebf047d9d36
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 6f45f01489ee84b6addb1f7c7c8dc584332f38dd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58820383"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333883"
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Volání procedury, která vrací hodnotu (Visual Basic)
 A `Function` postup vrací hodnotu volajícímu kódu. Při volání včetně jejího názvu a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu.  
   
 ### <a name="to-call-a-function-procedure-within-an-expression"></a>Pro volání funkce ve výrazu  
   
-1.  Použít `Function` postup pojmenovat stejně jako byste použili proměnné. Můžete použít `Function` volání procedur, kdekoli ve výrazu můžete použít proměnnou nebo konstantu.  
+1. Použít `Function` postup pojmenovat stejně jako byste použili proměnné. Můžete použít `Function` volání procedur, kdekoli ve výrazu můžete použít proměnnou nebo konstantu.  
   
-2.  Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
+2. Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry.  
+3. Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry.  
   
      Alternativně můžete předat jeden nebo více argumentů podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md).  
   
-4.  Hodnota vrácená z procedury podílí na výraz, stejně jako hodnota proměnné nebo by konstanty.  
+4. Hodnota vrácená z procedury podílí na výraz, stejně jako hodnota proměnné nebo by konstanty.  
   
 ### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>Volat funkci proceduru v příkazu přiřazení  
   
-1.  Použití `Function` název procedury po rovnosti (`=`) přihlaste příkazu přiřazení.  
+1. Použití `Function` název procedury po rovnosti (`=`) přihlaste příkazu přiřazení.  
   
-2.  Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
+2. Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry, pokud jsou byly předány podle názvu.  
+3. Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry, pokud jsou byly předány podle názvu.  
   
-4.  Hodnota vrácená z procedury je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
+4. Hodnota vrácená z procedury je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad volá jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> k načtení hodnoty proměnné prostředí operačního systému. První řádek volá `Environ` v rámci výrazu a druhý řádek nazve je v příkazu přiřazení. `Environ` přijímá název proměnné jako její jediný argument. Vrátí hodnotu proměnné volajícímu kódu.  
@@ -46,9 +46,9 @@ A `Function` postup vrací hodnotu volajícímu kódu. Při volání včetně je
   
 ## <a name="see-also"></a>Viz také:
 
-- [Procedury funkce](./function-procedures.md)
+- [Procedury Function](./function-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Postupy: Vytvořit proceduru, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
+- [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Postupy: Vytvoření procedury, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
 - [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)
 - [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)

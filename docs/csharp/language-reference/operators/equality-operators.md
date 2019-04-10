@@ -12,12 +12,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 98b96f5b4c6d6ea70687a97c849e89573c67c37e
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.openlocfilehash: 297285ccb9aba7eae1d70a7d28a62241646a023c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545878"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334156"
 ---
 # <a name="equality-operators-c-reference"></a>Operátory rovnosti (C# odkaz)
 
@@ -68,7 +68,7 @@ Následující příklad ukazuje použití `!=` operátor:
 
 ## <a name="operator-overloadability"></a>Overloadability – operátor
 
-Uživatelem definované typy lze [přetížení](../keywords/operator.md) `==` a `!=` operátory. Pokud typ přetížení mezi dva operátory, musíte také přetížit jiný.
+Uživatelem definovaný typ může [přetížení](../keywords/operator.md) `==` a `!=` operátory. Pokud typ přetížení mezi dva operátory, musíte také přetížit jiný.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -77,7 +77,7 @@ Další informace najdete v tématu [relační a typové zkoušky operátory](~/
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - <xref:System.IEquatable%601?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>

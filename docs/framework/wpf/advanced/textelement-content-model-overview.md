@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TextElement content model [WPF]
 - flow content elements [WPF], TextElement content model
 ms.assetid: d0a7791c-b090-438c-812f-b9d009d83ee9
-ms.openlocfilehash: ecb9441bc63eae41cfbbadf3bf81b0e5392bd0cb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 990642d288481fff8eeef900a86070d54790f151
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59125117"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59336184"
 ---
 # <a name="textelement-content-model-overview"></a>Přehled modelu obsahu TextElement
 Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Documents.TextElement>. <xref:System.Windows.Documents.Paragraph> Třída je typem <xref:System.Windows.Documents.TextElement>. Model obsahu popisuje objekty/prvky mohou být obsaženy v jiné. Tento přehled obsahuje souhrn modelu obsahu použít u objektů odvozené z <xref:System.Windows.Documents.TextElement>. Další informace najdete v tématu [přehled toku dokumentů](flow-document-overview.md).  
@@ -27,7 +27,7 @@ Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Do
   
  Jak je vidět z předchozí diagram, podřízené položky pro element povolená nejsou určeny nutně Určuje, zda je třída odvozena z <xref:System.Windows.Documents.Block> třídy nebo <xref:System.Windows.Documents.Inline> třídy. Například <xref:System.Windows.Documents.Span> ( <xref:System.Windows.Documents.Inline>– odvozené třídy) může mít pouze <xref:System.Windows.Documents.Inline> podřízených elementů, ale <xref:System.Windows.Documents.Figure> (také <xref:System.Windows.Documents.Inline>-odvozené třídy) může mít pouze <xref:System.Windows.Documents.Block> podřízené prvky. Diagram je proto užitečné k rychlému určení toho, který element mohou být obsaženy v jiném. Jako příklad použijeme diagramu a zjistěte, jak vytvořit tok obsahu <xref:System.Windows.Controls.RichTextBox>.  
   
-1.  A <xref:System.Windows.Controls.RichTextBox> musí obsahovat <xref:System.Windows.Documents.FlowDocument> zase obsahující <xref:System.Windows.Documents.Block>-odvozenému objektu. Tady je odpovídající segmentu z předchozího diagramu.  
+1. A <xref:System.Windows.Controls.RichTextBox> musí obsahovat <xref:System.Windows.Documents.FlowDocument> zase obsahující <xref:System.Windows.Documents.Block>-odvozenému objektu. Tady je odpovídající segmentu z předchozího diagramu.  
   
      ![Diagram: Pravidla členství ve skupině RichTextBox](./media/flow-ovw-schemawalkthrough1.png "Flow_Ovw_SchemaWalkThrough1")  
   
@@ -35,7 +35,7 @@ Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Do
   
      [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough1](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough1)]  
   
-2.  Podle diagramu, existuje několik <xref:System.Windows.Documents.Block> elementy lze vybírat včetně <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.Table>, <xref:System.Windows.Documents.List>, a <xref:System.Windows.Documents.BlockUIContainer> (viz bloku odvozené třídy na předchozím obrázku). Řekněme, že chceme, aby <xref:System.Windows.Documents.Table>. Podle předchozí diagram <xref:System.Windows.Documents.Table> obsahuje <xref:System.Windows.Documents.TableRowGroup> obsahující <xref:System.Windows.Documents.TableRow> prvky, které obsahují <xref:System.Windows.Documents.TableCell> prvky, které obsahují <xref:System.Windows.Documents.Block>-odvozenému objektu. Tady je odpovídající segmentu pro <xref:System.Windows.Documents.Table> z předchozího diagramu.  
+2. Podle diagramu, existuje několik <xref:System.Windows.Documents.Block> elementy lze vybírat včetně <xref:System.Windows.Documents.Paragraph>, <xref:System.Windows.Documents.Section>, <xref:System.Windows.Documents.Table>, <xref:System.Windows.Documents.List>, a <xref:System.Windows.Documents.BlockUIContainer> (viz bloku odvozené třídy na předchozím obrázku). Řekněme, že chceme, aby <xref:System.Windows.Documents.Table>. Podle předchozí diagram <xref:System.Windows.Documents.Table> obsahuje <xref:System.Windows.Documents.TableRowGroup> obsahující <xref:System.Windows.Documents.TableRow> prvky, které obsahují <xref:System.Windows.Documents.TableCell> prvky, které obsahují <xref:System.Windows.Documents.Block>-odvozenému objektu. Tady je odpovídající segmentu pro <xref:System.Windows.Documents.Table> z předchozího diagramu.  
   
      ![Diagram: Nadřazené&#47;podřízené schématu pro tabulku](./media/flow-ovw-schemawalkthrough2.png "Flow_Ovw_SchemaWalkThrough2")  
   
@@ -43,7 +43,7 @@ Tento přehled modelu obsahu popisuje podporované obsah <xref:System.Windows.Do
   
      [!code-xaml[FlowOvwSnippets_snip#SchemaWalkThrough2](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowOvwSnippets_snip/CS/MiscSnippets.xaml#schemawalkthrough2)]  
   
-3.  Znovu jeden nebo více <xref:System.Windows.Documents.Block> prvky jsou nutné pod <xref:System.Windows.Documents.TableCell>. Aby byl jednoduchý, Pojďme nějaký text umístíte text do buňky. Můžeme to udělat pomocí <xref:System.Windows.Documents.Paragraph> s <xref:System.Windows.Documents.Run> elementu. Tady je odpovídající segmenty z diagram zobrazující, že <xref:System.Windows.Documents.Paragraph> může trvat <xref:System.Windows.Documents.Inline> elementu a zda <xref:System.Windows.Documents.Run> ( <xref:System.Windows.Documents.Inline> element) jde převzít jenom prostý text.  
+3. Znovu jeden nebo více <xref:System.Windows.Documents.Block> prvky jsou nutné pod <xref:System.Windows.Documents.TableCell>. Aby byl jednoduchý, Pojďme nějaký text umístíte text do buňky. Můžeme to udělat pomocí <xref:System.Windows.Documents.Paragraph> s <xref:System.Windows.Documents.Run> elementu. Tady je odpovídající segmenty z diagram zobrazující, že <xref:System.Windows.Documents.Paragraph> může trvat <xref:System.Windows.Documents.Inline> elementu a zda <xref:System.Windows.Documents.Run> ( <xref:System.Windows.Documents.Inline> element) jde převzít jenom prostý text.  
   
      ![Diagram: Nadřazené&#47;podřízené schéma pro odstavec](./media/flow-ovw-schemawalkthrough3.png "Flow_Ovw_SchemaWalkThrough3")  
   

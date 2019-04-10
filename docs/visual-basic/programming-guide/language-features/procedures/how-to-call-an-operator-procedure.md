@@ -11,12 +11,12 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: 46614ad43e7be72c8396f47ba7f5d02185f62827
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: d68781aa12ab7c1c717031ca252c5f3120649edc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837088"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335482"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Postupy: Volání procedury operátora (Visual Basic)
 Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě operátor převodu, volání [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) převést hodnotu z jednoho datového typu na jiný.  
@@ -27,19 +27,19 @@ Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě
   
 ### <a name="to-call-an-operator-procedure"></a>Volání procedury operátora  
   
-1.  Použijte symbol operátoru ve výrazu běžným způsobem.  
+1. Použijte symbol operátoru ve výrazu běžným způsobem.  
   
-2.  Ujistěte se, že datové typy operandů jsou vhodné pro operátor a ve správném pořadí.  
+2. Ujistěte se, že datové typy operandů jsou vhodné pro operátor a ve správném pořadí.  
   
-3.  Operátor, který přispívá k hodnotu výrazu podle očekávání.  
+3. Operátor, který přispívá k hodnotu výrazu podle očekávání.  
   
 ### <a name="to-call-a-conversion-operator-procedure"></a>Volání procedury operátora převodu  
   
-1.  Použití `CType` uvnitř výrazu.  
+1. Použití `CType` uvnitř výrazu.  
   
-2.  Ujistěte se, že datové typy operandů jsou vhodné pro převod a ve správném pořadí.  
+2. Ujistěte se, že datové typy operandů jsou vhodné pro převod a ve správném pořadí.  
   
-3.  `CType` volání procedury operátora převodu a vrátí převedenou hodnotu.  
+3. `CType` volání procedury operátora převodu a vrátí převedenou hodnotu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří dva <xref:System.TimeSpan> struktury, přidá je dohromady a výsledek je uložen na třetí <xref:System.TimeSpan> struktury. <xref:System.TimeSpan> Struktury definuje procedury operátoru přetížení několik standardních operátorů.  
@@ -56,12 +56,12 @@ Volání procedury operátora pomocí symbol operátoru ve výrazu. V případě
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury operátoru](./operator-procedures.md)
-- [Postupy: Definovat operátor](./how-to-define-an-operator.md)
-- [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)
-- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)
+- [Postupy: Definování operátoru](./how-to-define-an-operator.md)
+- [Postupy: Definování operátoru převodu](./how-to-define-a-conversion-operator.md)
+- [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Rozšíření](../../../../visual-basic/language-reference/modifiers/widening.md)
 - [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)
-- [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
-- [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

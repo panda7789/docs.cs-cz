@@ -2,12 +2,12 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 108293a5f4607afb8c19dce65d53efdaf9e184b1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 92a0bac3cf6ac6b57792419c913ec481ff0ee6c0
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59210461"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333389"
 ---
 # <a name="srmp"></a>SRMP
 Tento příklad znázorňuje způsob provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
@@ -18,21 +18,21 @@ Tento příklad znázorňuje způsob provedení transakčního komunikaci ve fro
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-4.  Před spuštěním ukázky **přidat nebo odebrat součásti Windows**, ujistěte se, že je služba MSMQ nainstalovaná s podporou protokolu HTTP. Podpora protokolu HTTP instalace automaticky nainstaluje Internetové informační služby (IIS) a přidává podporu protokolu ve službě IIS pro službu MSMQ.  
+4. Před spuštěním ukázky **přidat nebo odebrat součásti Windows**, ujistěte se, že je služba MSMQ nainstalovaná s podporou protokolu HTTP. Podpora protokolu HTTP instalace automaticky nainstaluje Internetové informační služby (IIS) a přidává podporu protokolu ve službě IIS pro službu MSMQ.  
   
-5.  Pokud chcete mít jistotu, že protokol HTTP se používá pro komunikaci, můžete povolit služby MSMQ pro spuštění v zesíleném režimu. Tím se zajistí, že žádné zprávy do fronty hostované na počítači můžou přijít pomocí jakékoli přenosu jiným protokolem než HTTP.  
+5. Pokud chcete mít jistotu, že protokol HTTP se používá pro komunikaci, můžete povolit služby MSMQ pro spuštění v zesíleném režimu. Tím se zajistí, že žádné zprávy do fronty hostované na počítači můžou přijít pomocí jakékoli přenosu jiným protokolem než HTTP.  
   
-6.  Po výběru služby MSMQ pro spuštění v zesíleném režimu, daný počítač vyžaduje restartování na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+6. Po výběru služby MSMQ pro spuštění v zesíleném režimu, daný počítač vyžaduje restartování na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
   
-7.  Spuštění služby.  
+7. Spuštění služby.  
   
-8.  Spustíte klienta. Ujistěte se, že změníte adresu koncového bodu tak, aby odkazoval na název počítače nebo IP adresu místo localhost. Klient odešle zprávu a ukončí.  
+8. Spustíte klienta. Ujistěte se, že změníte adresu koncového bodu tak, aby odkazoval na název počítače nebo IP adresu místo localhost. Klient odešle zprávu a ukončí.  
   
 ## <a name="requirements"></a>Požadavky  
  Chcete-li tuto ukázku spustit, musí být nainstalovaná služba IIS ve službě a klientské počítače kromě služby MSMQ.  

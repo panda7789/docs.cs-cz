@@ -11,19 +11,19 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 8d185eb2-79ca-42cd-95a7-d3ff44a5a0f8
-ms.openlocfilehash: d6326bb44d6a84c455c972fcbd191dc957844b74
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 3ad34864e162f8f62fed3754bdbcd39c75f7b3f8
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58830094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334299"
 ---
 # <a name="how-to-read-from-text-files-with-multiple-formats-in-visual-basic"></a>Postupy: Čtení z textových souborů ve více formátech v jazyce Visual Basic
 <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> Objekt poskytuje způsob, jak snadno a efektivně analýza strukturovaných textových souborů, jako jsou protokoly. Můžete zpracovat soubor ve více formátech s použitím `PeekChars` metoda určit formát každý řádek v souboru.  
   
 ### <a name="to-parse-a-text-file-with-multiple-formats"></a>Analyzovat textového souboru ve více formátech  
   
-1.  Přidání textového souboru s názvem testfile.txt do vašeho projektu. Do textového souboru přidejte následující obsah.  
+1. Přidání textového souboru s názvem testfile.txt do vašeho projektu. Do textového souboru přidejte následující obsah.  
   
     ```  
     Err  1001 Cannot access resource.  
@@ -34,19 +34,19 @@ ms.locfileid: "58830094"
     Acc  10/04/2009User2      Standard user.  
     ```  
   
-2.  Definování očekávaný formát a použít, když dojde k chybě. Poslední položka v každé pole je -1, proto poslední pole je předpokládá se, že proměnné šířky. K tomu dojde, když poslední položky v poli je menší než nebo rovna 0.  
+2. Definování očekávaný formát a použít, když dojde k chybě. Poslední položka v každé pole je -1, proto poslední pole je předpokládá se, že proměnné šířky. K tomu dojde, když poslední položky v poli je menší než nebo rovna 0.  
   
      [!code-vb[VbFileIORead#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#4)]  
   
-3.  Vytvořte nový <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> objekt definováním šířku a formátu.  
+3. Vytvořte nový <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> objekt definováním šířku a formátu.  
   
      [!code-vb[VbFileIORead#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#5)]  
   
-4.  Projít řádky testování formát před čtením.  
+4. Projít řádky testování formát před čtením.  
   
      [!code-vb[VbFileIORead#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#6)]  
   
-5.  Chyby zápisu do konzoly.  
+5. Chyby zápisu do konzoly.  
   
      [!code-vb[VbFileIORead#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#7)]  
   
@@ -76,6 +76,6 @@ ms.locfileid: "58830094"
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.EndOfData%2A>
 - <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.TextFieldType%2A>
-- [Postupy: Čtení z textových souborů s oddělovačem čárkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
-- [Postupy: Čtení z souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
+- [Postupy: Čtení z textových souborů s oddělovačem čárkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
+- [Postupy: Čtení z textových souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
 - [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

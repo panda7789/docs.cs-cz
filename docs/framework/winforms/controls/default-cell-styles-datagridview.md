@@ -7,12 +7,12 @@ helpviewer_keywords:
 - data formats
 - data [Windows Forms], setting formats
 ms.assetid: fc6da49f-8942-41da-b49f-b2afc38cc656
-ms.openlocfilehash: 0e5664707d12fd45c73f3585d07660fc732965fb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 8939a182032cfac1beac6c1e5cb3c9de9792114c
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59179891"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333610"
 ---
 # <a name="how-to-set-default-cell-styles-and-data-formats-for-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Nastavení výchozích stylů buňky a datových formátů pro ovládací prvek Windows Forms DataGridView pomocí Návrháře
 <xref:System.Windows.Forms.DataGridView> Řízení umožňuje určení výchozích stylů buňky a datových formátů pro celý ovládací prvek, pro konkrétní sloupce, pro záhlaví řádků a sloupců a pro střídavé řádky k vytvoření účetní knihy efektu buňky. Ve výchozím nastavení nastavený styly sloupců a střídavé řádky se přepíšou výchozí styly nastavit pro celý ovládací prvek. Kromě toho stylů, které jste nastavili v kódu pro jednotlivé řádky a buňky přepsat výchozí styly.  
@@ -28,11 +28,11 @@ ms.locfileid: "59179891"
   
 ### <a name="to-set-default-styles-for-all-cells-in-the-control"></a>Nastavení výchozích stylů pro všechny buňky v ovládacím prvku  
   
-1.  Vyberte <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři.  
+1. Vyberte <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři.  
   
-2.  V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+2. V **vlastnosti** okna, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A>, <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A>, nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
-3.  Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
+3. Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
 > [!NOTE]
 >  Pokud jsou povolené vizuální styly, záhlaví řádků a sloupců (s výjimkou <xref:System.Windows.Forms.DataGridView.TopLeftHeaderCell%2A>) jsou automaticky ve stylu podle aktuálního motivu přepsání <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A> a <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A> hodnot vlastností.  
@@ -41,23 +41,23 @@ ms.locfileid: "59179891"
   
 ### <a name="to-set-default-styles-for-cells-in-individual-columns"></a>Nastavení výchozích stylů buňky v jednotlivých sloupcích  
   
-1.  Klikněte pravým tlačítkem myši <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři a zvolte **upravit sloupce**.  
+1. Klikněte pravým tlačítkem myši <xref:System.Windows.Forms.DataGridView> ovládací prvek v návrháři a zvolte **upravit sloupce**.  
   
-2.  Vyberte sloupec **vybrané sloupce** seznamu.  
+2. Vyberte sloupec **vybrané sloupce** seznamu.  
   
-3.  V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
+3. V **vlastnosti sloupce** mřížky, klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewColumn.DefaultCellStyle%2A> vlastnost. **Sestavení objektu CellStyle** zobrazí se dialogové okno.  
   
-4.  Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
+4. Definování styl nastavením vlastností, pomocí **ve verzi Preview** podokně zkontrolujte zvolené volby.  
   
 ### <a name="to-format-data-in-cells"></a>K formátování dat v buňkách  
   
-1.  Použijte jednu z předchozích postupů k zobrazení **sestavení objektu CellStyle** dialogovém související vlastnost Výchozí styl buňky.  
+1. Použijte jednu z předchozích postupů k zobrazení **sestavení objektu CellStyle** dialogovém související vlastnost Výchozí styl buňky.  
   
-2.  V **Tvůrce CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> Vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
+2. V **Tvůrce CellStyle** dialogového okna klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> Vlastnost. **Formátovací řetězec** zobrazí se dialogové okno.  
   
-3.  Vyberte typ formátu a úpravě podobností o typ (například počet zobrazovaných desetinných míst), pomocí **ukázka** políčka potvrďte zvolené volby.  
+3. Vyberte typ formátu a úpravě podobností o typ (například počet zobrazovaných desetinných míst), pomocí **ukázka** políčka potvrďte zvolené volby.  
   
-4.  Pokud vytváříte vazbu <xref:System.Windows.Forms.DataGridView> ovládacího prvku na zdroj dat, která by mohla obsahovat hodnoty null, vyplňte **hodnotu Null** textového pole. Tato hodnota se zobrazí, když hodnota buňky je roven nulovému odkazu (`Nothing` v jazyce Visual Basic) nebo <xref:System.DBNull.Value?displayProperty=nameWithType>.  
+4. Pokud vytváříte vazbu <xref:System.Windows.Forms.DataGridView> ovládacího prvku na zdroj dat, která by mohla obsahovat hodnoty null, vyplňte **hodnotu Null** textového pole. Tato hodnota se zobrazí, když hodnota buňky je roven nulovému odkazu (`Nothing` v jazyce Visual Basic) nebo <xref:System.DBNull.Value?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

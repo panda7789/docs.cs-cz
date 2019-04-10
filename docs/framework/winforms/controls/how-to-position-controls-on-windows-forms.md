@@ -15,12 +15,12 @@ helpviewer_keywords:
 - snaplines
 - controls [Windows Forms], positioning
 ms.assetid: 4693977e-34a4-4f19-8221-68c3120c2b2b
-ms.openlocfilehash: 22225c97ec082022cb609e47d3cafcdcc052143d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: a0b97073b2f9363a64bfc4a4ede7ffa69e2bce42
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59132792"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334000"
 ---
 # <a name="how-to-position-controls-on-windows-forms"></a>Postupy: Umístění ovládacích prvků ve Windows Forms
 Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat <xref:System.Windows.Forms.Control.Location%2A> vlastnost.  
@@ -37,9 +37,9 @@ Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat 
   
 ### <a name="to-position-a-control-using-the-properties-window"></a>Na pozici ovládacího prvku pomocí okna Vlastnosti  
   
-1.  Klikněte na ovládací prvek, který chcete umístit.  
+1. Klikněte na ovládací prvek, který chcete umístit.  
   
-2.  V **vlastnosti** okno, zadejte hodnoty <xref:System.Windows.Forms.Control.Location%2A> vlastnost oddělené čárkou, pokud chcete umístit ovládací prvek v rámci jeho kontejneru.  
+2. V **vlastnosti** okno, zadejte hodnoty <xref:System.Windows.Forms.Control.Location%2A> vlastnost oddělené čárkou, pokud chcete umístit ovládací prvek v rámci jeho kontejneru.  
   
      První číslo (X) je vzdálenost od levého ohraničení kontejneru; druhé číslo (Y) je vzdálenost mezi horním okrajem oblasti kontejnerů, měřeno v pixelech.  
   
@@ -48,7 +48,7 @@ Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat 
   
 ### <a name="to-position-a-control-programmatically"></a>Pokud chcete umístit ovládací prvek prostřednictvím kódu programu  
   
-1.  Nastavte <xref:System.Windows.Forms.Control.Location%2A> vlastnost ovládacího prvku <xref:System.Drawing.Point>.  
+1. Nastavte <xref:System.Windows.Forms.Control.Location%2A> vlastnost ovládacího prvku <xref:System.Drawing.Point>.  
   
     ```vb  
     Button1.Location = New Point(100, 100)  
@@ -62,7 +62,7 @@ Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat 
     button1->Location = Point(100, 100);  
     ```  
   
-2.  Změnit souřadnici X polohy ovládacího prvku pomocí <xref:System.Windows.Forms.Control.Left%2A> podvlastností.  
+2. Změnit souřadnici X polohy ovládacího prvku pomocí <xref:System.Windows.Forms.Control.Left%2A> podvlastností.  
   
     ```vb  
     Button1.Left = 300  
@@ -78,7 +78,7 @@ Umístit ovládací prvky, použijte Návrhář formulářů Windows nebo zadat 
   
 ### <a name="to-increment-a-controls-location-programmatically"></a>Umístění ovládacího prvku postupně prostřednictvím kódu programu  
   
-1.  Nastavte <xref:System.Windows.Forms.Control.Left%2A> podvlastností postupně souřadnici X ovládacího prvku.  
+1. Nastavte <xref:System.Windows.Forms.Control.Left%2A> podvlastností postupně souřadnici X ovládacího prvku.  
   
     ```vb  
     Button1.Left += 200  

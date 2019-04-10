@@ -10,21 +10,21 @@ helpviewer_keywords:
 - examples [Windows Forms], DateTimePicker control
 - dates [Windows Forms], displaying in DateTimePicker control
 ms.assetid: 39767691-2d2b-46b6-a663-b7901e581a6e
-ms.openlocfilehash: 0c454580c6f3aa1fadb6e98d2ee715da948364b1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 08d5a505229cd434dbf82e8ae4624bb418efd379
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59192989"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335937"
 ---
 # <a name="how-to-display-a-date-in-a-custom-format-with-the-windows-forms-datetimepicker-control"></a>Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker
 Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládacího prvku poskytuje flexibilitu při formátování zobrazení dat a časů v ovládacím prvku. <xref:System.Windows.Forms.DateTimePicker.Format%2A> Vlastnost vám umožní vybrat z předdefinovaných formátů, uvedené v <xref:System.Windows.Forms.DateTimePickerFormat>. Pokud žádná z nich je vhodný pro vaše potřeby, můžete vytvořit vlastní styl formátování pomocí formátu znaky uvedené v <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>.  
   
 ### <a name="to-display-a-custom-format"></a>K zobrazení vlastního formátu  
   
-1.  Nastavte <xref:System.Windows.Forms.DateTimePicker.Format%2A> vlastnost `DateTimePickerFormat.Custom`.  
+1. Nastavte <xref:System.Windows.Forms.DateTimePicker.Format%2A> vlastnost `DateTimePickerFormat.Custom`.  
   
-2.  Nastavte <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> nastavte na řetězec formátu.  
+2. Nastavte <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> nastavte na řetězec formátu.  
   
     ```vb  
     DateTimePicker1.Format = DateTimePickerFormat.Custom  
@@ -46,7 +46,7 @@ Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládacího prvku posk
   
 ### <a name="to-add-text-to-the-formatted-value"></a>Chcete-li přidat text formátovaná hodnota  
   
-1.  Pomocí jednoduchých uvozovek uzavřete libovolný znak, který není znak formátu jako "M" nebo oddělovač, jako je ":". Například řetězec formátu níže zobrazí aktuální datum ve formátu "Dnes je: 05:30:31. března pátek 02, 2012" v jazykové verze Angličtina (Spojené státy).  
+1. Pomocí jednoduchých uvozovek uzavřete libovolný znak, který není znak formátu jako "M" nebo oddělovač, jako je ":". Například řetězec formátu níže zobrazí aktuální datum ve formátu "Dnes je: 05:30:31. března pátek 02, 2012" v jazykové verze Angličtina (Spojené státy).  
   
     ```vb  
     DateTimePicker1.CustomFormat = "'Today is:' hh:mm:ss dddd MMMM dd, yyyy"  

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML'
+title: 'Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - managed HTML DOM [Windows Forms], changing styles on elements
 ms.assetid: 154e8d9f-3e2d-4e8b-a6f3-c85a070e9cc1
-ms.openlocfilehash: a1abfaeab735746edbf089d576dc6f56dc4a6eea
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 804041991199dd2722e3a0f38800bafd8933bbab
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712770"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333662"
 ---
-# <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>Postupy: Změna stylů v elementu v modelu objektu spravovaného dokumentu HTML
+# <a name="how-to-change-styles-on-an-element-in-the-managed-html-document-object-model"></a>Postupy: Změna stylů v elementu v modelu spravovaného objektu dokumentu HTML
 
 Styly ve formátu HTML můžete řídit vzhled dokument a jeho elementy. <xref:System.Windows.Forms.HtmlDocument> a <xref:System.Windows.Forms.HtmlElement> podporují <xref:System.Windows.Forms.HtmlElement.Style%2A> vlastnosti, které přijímají řetězce styl v následujícím formátu:
 
@@ -68,7 +68,7 @@ Následující postup obsahuje kód, který vám umožní snadno pracovat s styl
      [!code-csharp[ManagedDOMStyles#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ManagedDOMStyles/CS/Form1.cs#2)]
      [!code-vb[ManagedDOMStyles#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ManagedDOMStyles/VB/Form1.vb#2)]  
   
-7.  Spusťte projekt. Spustit ukazatel myši nad první `DIV` chcete sledovat účinky kód.  
+7. Spusťte projekt. Spustit ukazatel myši nad první `DIV` chcete sledovat účinky kód.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje celý kód pro `StyleGenerator` třídu, která analyzuje existující hodnotu stylu, podporuje přidání, změně a odebrání styly a vrátí novou hodnotu stylu s požadované změny.  

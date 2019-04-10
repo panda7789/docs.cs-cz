@@ -2,31 +2,31 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 59bcfc376c2fada5f94f462cecbf3d5363def48d
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
+ms.openlocfilehash: 8d72ab5c7d8c461cd2ce4d4003d449ac9fe7e807
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332816"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334663"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Přenos UDP ukázka ukazuje, jak implementovat jednosměrového vysílání UDP a vícesměrového vysílání jako vlastní přenosu Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastní přenos ve službě WCF, pomocí architektura kanálů a osvědčených postupů WCF. Postup vytvoření vlastní přenosu jsou následující:  
   
-1.  Rozhodnout, které z kanálu [zpráv Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) budou podporovat třídu ChannelFactory a ChannelListener. Následně se rozhodnete, zda bude podporovat s relacemi varianty těchto rozhraní.  
+1. Rozhodnout, které z kanálu [zpráv Exchange vzory](#MessageExchangePatterns) (IOutputChannel, IInputChannel, IDuplexChannel, třídu IRequestChannel nebo IReplyChannel) budou podporovat třídu ChannelFactory a ChannelListener. Následně se rozhodnete, zda bude podporovat s relacemi varianty těchto rozhraní.  
   
-2.  Vytvoření postupu kanálu a posluchače, které podporují vaše vzorce výměny zpráv.  
+2. Vytvoření postupu kanálu a posluchače, které podporují vaše vzorce výměny zpráv.  
   
-3.  Ujistěte se, že všechny výjimky pro konkrétní sítě jsou normalizovány na příslušné třídy odvozené z <xref:System.ServiceModel.CommunicationException>.  
+3. Ujistěte se, že všechny výjimky pro konkrétní sítě jsou normalizovány na příslušné třídy odvozené z <xref:System.ServiceModel.CommunicationException>.  
   
-4.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) element, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby](#AddingABindingElement).  
+4. Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) element, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby](#AddingABindingElement).  
   
-5.  Přidání sekce rozšíření elementu vazby vystavit nový element vazby na konfigurační systém.  
+5. Přidání sekce rozšíření elementu vazby vystavit nový element vazby na konfigurační systém.  
   
-6.  Přidejte rozšíření metadat pro komunikaci funkce pro další koncové body.  
+6. Přidejte rozšíření metadat pro komunikaci funkce pro další koncové body.  
   
-7.  Přidáte vazbu, která předem nakonfiguruje sady elementů vazby podle přesně definovaného profilu. Další informace najdete v tématu [přidání standardní vazby](#AddingAStandardBinding).  
+7. Přidáte vazbu, která předem nakonfiguruje sady elementů vazby podle přesně definovaného profilu. Další informace najdete v tématu [přidání standardní vazby](#AddingAStandardBinding).  
   
-8.  Přidáte vazbu oddíl a vazeb konfiguračního prvku vystavit vazby na konfigurační systém. Další informace najdete v tématu [přidání podpory konfigurace](#AddingConfigurationSupport).  
+8. Přidáte vazbu oddíl a vazeb konfiguračního prvku vystavit vazby na konfigurační systém. Další informace najdete v tématu [přidání podpory konfigurace](#AddingConfigurationSupport).  
   
 <a name="MessageExchangePatterns"></a>   
 ## <a name="message-exchange-patterns"></a>Vzorky serveru Exchange zprávu  
@@ -185,9 +185,9 @@ if (soapBinding != null)
   
  Při spuštění Svcutil.exe, existují dvě možnosti pro získání Svcutil.exe k načítání rozšíření importu WSDL:  
   
-1.  Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
+1. Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
   
-2.  Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2. Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
   
  `UdpBindingElementImporter` Typ implementuje `IWsdlImportExtension` rozhraní. `ImportEndpoint` Metoda importuje adresu z portu WSDL.  
   
@@ -247,9 +247,9 @@ AddWSAddressingAssertion(context, encodingBindingElement.MessageVersion.Addressi
   
  Pak můžeme implementovat `IPolicyImporterExtension` z našich registrované třídy (`UdpBindingElementImporter`). V `ImportPolicy()`, jsme v našem oboru názvů, prohlédněte si kontrolní výrazy a zpracovat pro generování přenos a zkontrolujte, zda je vícesměrového vysílání. Také musíte Odebereme kontrolní výrazy, které My se postaráme ze seznamu vazby kontrolní výrazy. Znovu když spustíte Svcutil.exe, existují dvě možnosti pro integraci:  
   
-1.  Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
+1. Bod Svcutil.exe k naší konfiguračního souboru pomocí /SvcutilConfig:\<soubor >.  
   
-2.  Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
+2. Přidáte konfigurační oddíl pro Svcutil.exe.config ve stejném adresáři jako Svcutil.exe.  
   
 <a name="AddingAStandardBinding"></a>   
 ## <a name="adding-a-standard-binding"></a>Přidání standardní vazbu  
@@ -466,11 +466,11 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+2. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-3.  Přečtěte si předchozí část "The UDP testu a klient služby".  
+3. Přečtěte si předchozí část "The UDP testu a klient služby".  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

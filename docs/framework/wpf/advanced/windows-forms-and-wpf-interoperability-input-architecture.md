@@ -13,12 +13,12 @@ helpviewer_keywords:
 - WindowsFormsHost keyboard and messages [WPF]
 - modeless dialog boxes [WPF]
 ms.assetid: 0eb6f137-f088-4c5e-9e37-f96afd28f235
-ms.openlocfilehash: f9fb5a0d2a23d2ad23aa3886ce25edb999b50678
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2df754c0c47ea99c0892e0b9365da5589f2eab76
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59160976"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335716"
 ---
 # <a name="windows-forms-and-wpf-interoperability-input-architecture"></a>Architektura vstupu interoperability Windows Forms a WPF
 Vzájemné spolupráce mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] vyžaduje vstupní zpracování příslušné klávesové obou technologií. Toto téma popisuje, jak implementovat tyto technologie klávesnice a umožňuje hladký vzájemná spolupráce grafického subsystému v hybridních aplikacích zpracování zpráv.  
@@ -57,13 +57,13 @@ Vzájemné spolupráce mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/t
 ### <a name="surrogate-windows-forms-message-loop"></a>Náhradní Windows Forms zpráva smyčky  
  Ve výchozím nastavení <xref:System.Windows.Forms.Application?displayProperty=nameWithType> třída obsahuje primární zpráva smyčky pro [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikací. Během vzájemná spolupráce grafického subsystému [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] zprávu, smyčka nezpracovává zprávy. Proto musí být reprodukovat tuto logiku. Obslužná rutina pro <xref:System.Windows.Interop.ComponentDispatcher.ThreadFilterMessage?displayProperty=nameWithType> události provede následující kroky:  
   
-1.  Filtry zpráv pomocí <xref:System.Windows.Forms.IMessageFilter> rozhraní.  
+1. Filtry zpráv pomocí <xref:System.Windows.Forms.IMessageFilter> rozhraní.  
   
-2.  Volání <xref:System.Windows.Forms.Control.PreProcessMessage%2A?displayProperty=nameWithType> metody.  
+2. Volání <xref:System.Windows.Forms.Control.PreProcessMessage%2A?displayProperty=nameWithType> metody.  
   
-3.  Přeloží a odešle zprávu, pokud se vyžaduje.  
+3. Přeloží a odešle zprávu, pokud se vyžaduje.  
   
-4.  Předá zprávu do hostitelského ovládacího prvku, pokud zprávu zpracovat žádné další ovládací prvky.  
+4. Předá zprávu do hostitelského ovládacího prvku, pokud zprávu zpracovat žádné další ovládací prvky.  
   
 ### <a name="ikeyboardinputsink-implementation"></a>Implementace IKeyboardInputSink  
  Smyčky zpráv náhradní zpracovává správu klávesnice. Proto <xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A?displayProperty=nameWithType> je jediná metoda <xref:System.Windows.Interop.IKeyboardInputSink> člena, který vyžaduje implementaci v <xref:System.Windows.Forms.Integration.WindowsFormsHost> třídy.  
@@ -72,11 +72,11 @@ Vzájemné spolupráce mezi [!INCLUDE[TLA2#tla_winclient](../../../../includes/t
   
  <xref:System.Windows.Forms.Integration.WindowsFormsHost> Provádění <xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A?displayProperty=nameWithType> metoda provede následující kroky:  
   
-1.  Najde první nebo poslední [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který je obsažen <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku a, která může získat fokus. Ovládací prvek Výběr závisí na informace o procházení.  
+1. Najde první nebo poslední [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvek, který je obsažen <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládacího prvku a, která může získat fokus. Ovládací prvek Výběr závisí na informace o procházení.  
   
-2.  Nastaví fokus na ovládací prvek a vrátí `true`.  
+2. Nastaví fokus na ovládací prvek a vrátí `true`.  
   
-3.  Pokud žádný ovládací prvek může získat fokus, vrátí `false`.  
+3. Pokud žádný ovládací prvek může získat fokus, vrátí `false`.  
   
 ### <a name="windowsformshost-registration"></a>WindowsFormsHost Registration  
  Když v okně popisovače <xref:System.Windows.Forms.Integration.WindowsFormsHost> ovládací prvek je vytvořen, <xref:System.Windows.Forms.Integration.WindowsFormsHost> kontrolní volání interní statická metoda, která se registruje jeho přítomnost smyčky zpráv.  

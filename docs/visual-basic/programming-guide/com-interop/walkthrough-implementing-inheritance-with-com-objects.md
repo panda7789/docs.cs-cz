@@ -7,12 +7,12 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-ms.openlocfilehash: ee7258a78ad0a434bfad08eebd596a8b889e2304
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 0b3977e73e3b2aa9e80e2dab08d15035283b8387
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58826168"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59334143"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty COM (Visual Basic)
 Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, včetně těch, které jsou vytvořeny v dřívějších verzích jazyka Visual Basic. Vlastnosti a metody třídy dědí od objektů COM může přepsat nebo přetížené stejně jako vlastnosti a metody jiné základní třídy lze přepsat nebo přetížené. Dědičnost z objektů COM je užitečné, pokud máte existující knihovny tříd, které nechcete, aby se musela kompilovat.  
@@ -23,26 +23,26 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
 ### <a name="to-build-the-com-object-that-is-used-in-this-walkthrough"></a>K vytvoření objektu COM, který se používá v tomto názorném postupu  
   
-1.  V jazyce Visual Basic 6.0 otevřete nový projekt knihovny DLL ActiveX. Projekt s názvem `Project1` se vytvoří. Obsahuje třídu s názvem `Class1`.  
+1. V jazyce Visual Basic 6.0 otevřete nový projekt knihovny DLL ActiveX. Projekt s názvem `Project1` se vytvoří. Obsahuje třídu s názvem `Class1`.  
   
-2.  V **Project Exploreru**, klikněte pravým tlačítkem na **Project1**a potom klikněte na tlačítko **Project1 vlastnosti**. **Vlastnosti projektu** se zobrazí dialogové okno.  
+2. V **Project Exploreru**, klikněte pravým tlačítkem na **Project1**a potom klikněte na tlačítko **Project1 vlastnosti**. **Vlastnosti projektu** se zobrazí dialogové okno.  
   
-3.  Na **Obecné** karty **vlastnosti projektu** dialogové okno pole, změňte název projektu tak, že zadáte `ComObject1` v **název projektu** pole.  
+3. Na **Obecné** karty **vlastnosti projektu** dialogové okno pole, změňte název projektu tak, že zadáte `ComObject1` v **název projektu** pole.  
   
-4.  V **Project Exploreru**, klikněte pravým tlačítkem na `Class1`a potom klikněte na tlačítko **vlastnosti**. **Vlastnosti** se zobrazí okno pro třídu.  
+4. V **Project Exploreru**, klikněte pravým tlačítkem na `Class1`a potom klikněte na tlačítko **vlastnosti**. **Vlastnosti** se zobrazí okno pro třídu.  
   
-5.  Změnit `Name` vlastnost `MathFunctions`.  
+5. Změnit `Name` vlastnost `MathFunctions`.  
   
-6.  V **Project Exploreru**, klikněte pravým tlačítkem na `MathFunctions`a potom klikněte na tlačítko **zobrazit kód**. **Editor kódu** se zobrazí.  
+6. V **Project Exploreru**, klikněte pravým tlačítkem na `MathFunctions`a potom klikněte na tlačítko **zobrazit kód**. **Editor kódu** se zobrazí.  
   
-7.  Přidáte místní proměnnou pro uchování hodnoty vlastnosti:  
+7. Přidáte místní proměnnou pro uchování hodnoty vlastnosti:  
   
     ```  
     ' Local variable to hold property value  
     Private mvarProp1 As Integer  
     ```  
   
-8.  Přidat vlastnost `Let` a vlastnost `Get` procedury vlastnosti:  
+8. Přidat vlastnost `Let` a vlastnost `Get` procedury vlastnosti:  
   
     ```  
     Public Property Let Prop1(ByVal vData As Integer)  
@@ -76,31 +76,31 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
 #### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Objekt modelu COM pomocí jazyka Visual Basic 2005 a novějších verzích  
   
-1.  Otevřete nový projekt aplikace Windows jazyka Visual Basic.  
+1. Otevřete nový projekt aplikace Windows jazyka Visual Basic.  
   
-2.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.  
+2. Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.  
   
      **Přidat odkaz** se zobrazí dialogové okno.  
   
-3.  Na **COM** kartu, dvakrát klikněte na panel `ComObject1` v **název komponenty** seznamu a klikněte na tlačítko **OK**.  
+3. Na **COM** kartu, dvakrát klikněte na panel `ComObject1` v **název komponenty** seznamu a klikněte na tlačítko **OK**.  
   
-4.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**.  
+4. Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**.  
   
      **Přidat novou položku** se zobrazí dialogové okno.  
   
-5.  V **šablony** podokně klikněte na tlačítko **třídy**.  
+5. V **šablony** podokně klikněte na tlačítko **třídy**.  
   
      Výchozí název souboru `Class1.vb`, zobrazí se v **název** pole. Toto pole MathClass.vb a kliknutím na tlačítko Změnit **přidat**. Tím se vytvoří třídu s názvem `MathClass`a zobrazí jeho kód.  
   
-6.  Přidejte následující kód k hornímu okraji `MathClass` dědit ze třídy modelu COM.  
+6. Přidejte následující kód k hornímu okraji `MathClass` dědit ze třídy modelu COM.  
   
      [!code-vb[VbVbalrInterop#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#31)]  
   
-7.  Přetížení veřejnou metodu základní třídy přidáním následujícího kódu `MathClass`:  
+7. Přetížení veřejnou metodu základní třídy přidáním následujícího kódu `MathClass`:  
   
      [!code-vb[VbVbalrInterop#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#32)]  
   
-8.  Zděděné třídy rozšířit přidáním následujícího kódu `MathClass`:  
+8. Zděděné třídy rozšířit přidáním následujícího kódu `MathClass`:  
   
      [!code-vb[VbVbalrInterop#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#33)]  
   
@@ -108,13 +108,13 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
   
 #### <a name="to-test-the-inherited-class"></a>Chcete-li testovat zděděné třídy  
   
-1.  Přidání tlačítka do formuláře při spuštění a pak dvojím kliknutím ho zobrazte jeho kód.  
+1. Přidání tlačítka do formuláře při spuštění a pak dvojím kliknutím ho zobrazte jeho kód.  
   
-2.  Na tlačítku `Click` procedury Obslužná rutina události, přidejte následující kód k vytvoření instance `MathClass` a volání přetížené metody:  
+2. Na tlačítku `Click` procedury Obslužná rutina události, přidejte následující kód k vytvoření instance `MathClass` a volání přetížené metody:  
   
      [!code-vb[VbVbalrInterop#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#34)]  
   
-3.  Stisknutím klávesy F5 spusťte projekt.  
+3. Stisknutím klávesy F5 spusťte projekt.  
   
  Když kliknete na tlačítko na formuláři `AddNumbers` metoda nejdříve volána s `Short` datového typu čísla, a Visual Basic zvolí vhodné metody ze základní třídy. Druhé volání `AddNumbers` směřuje na přetížení metody z `MathClass`. Třetí volání volání `SubtractNumbers` metodu, která rozšiřuje třídu. Nastavte vlastnost v základní třídě a hodnota se zobrazí.  
   
@@ -132,5 +132,5 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
 ## <a name="see-also"></a>Viz také:
 
 - [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)
-- [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)
+- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)
