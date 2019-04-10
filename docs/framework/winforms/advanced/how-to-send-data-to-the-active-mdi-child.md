@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odesílání dat do aktivního podřízeného MDI'
+title: 'Postupy: Odesílání dat do aktivního podřízeného formuláře MDI'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: a89956595ff98e8cda717c90a3f96c95abc8118a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 0ffe87d55f7325f77bd33bdbf5d5fbab9f321f93
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707399"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203324"
 ---
-# <a name="how-to-send-data-to-the-active-mdi-child"></a><span data-ttu-id="1aa41-102">Postupy: Odesílání dat do aktivního podřízeného MDI</span><span class="sxs-lookup"><span data-stu-id="1aa41-102">How to: Send Data to the Active MDI Child</span></span>
-<span data-ttu-id="1aa41-103">Často, v rámci kontextu [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), budete muset odeslat data na aktivní podřízené okno, například když uživatel vloží dat ze schránky do aplikace MDI.</span><span class="sxs-lookup"><span data-stu-id="1aa41-103">Often, within the context of [Multiple-Document Interface (MDI) Applications](multiple-document-interface-mdi-applications.md), you will need to send data to the active child window, such as when the user pastes data from the Clipboard into an MDI application.</span></span>  
+# <a name="how-to-send-data-to-the-active-mdi-child"></a><span data-ttu-id="43dc3-102">Postupy: Odesílání dat do aktivního podřízeného formuláře MDI</span><span class="sxs-lookup"><span data-stu-id="43dc3-102">How to: Send Data to the Active MDI Child</span></span>
+<span data-ttu-id="43dc3-103">Často, v rámci kontextu [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), budete muset odeslat data na aktivní podřízené okno, například když uživatel vloží dat ze schránky do aplikace MDI.</span><span class="sxs-lookup"><span data-stu-id="43dc3-103">Often, within the context of [Multiple-Document Interface (MDI) Applications](multiple-document-interface-mdi-applications.md), you will need to send data to the active child window, such as when the user pastes data from the Clipboard into an MDI application.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="1aa41-104">Informace o ověření, které podřízené okno má fokus a odesílat její obsah do schránky, naleznete v tématu [určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md).</span><span class="sxs-lookup"><span data-stu-id="1aa41-104">For information about verifying which child window has focus and sending its contents to the Clipboard, see [Determining the Active MDI Child](how-to-determine-the-active-mdi-child.md).</span></span>  
+>  <span data-ttu-id="43dc3-104">Informace o ověření, které podřízené okno má fokus a odesílat její obsah do schránky, naleznete v tématu [určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md).</span><span class="sxs-lookup"><span data-stu-id="43dc3-104">For information about verifying which child window has focus and sending its contents to the Clipboard, see [Determining the Active MDI Child](how-to-determine-the-active-mdi-child.md).</span></span>  
   
-### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a><span data-ttu-id="1aa41-105">K odesílání dat na aktivní podřízené okno MDI ze schránky</span><span class="sxs-lookup"><span data-stu-id="1aa41-105">To send data to the active MDI child window from the Clipboard</span></span>  
+### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a><span data-ttu-id="43dc3-105">K odesílání dat na aktivní podřízené okno MDI ze schránky</span><span class="sxs-lookup"><span data-stu-id="43dc3-105">To send data to the active MDI child window from the Clipboard</span></span>  
   
-1.  <span data-ttu-id="1aa41-106">V rámci metody zkopírujte text do schránky k aktivním ovládacím prvkem aktivní podřízený formulář.</span><span class="sxs-lookup"><span data-stu-id="1aa41-106">Within a method, copy the text on the Clipboard to the active control of the active child form.</span></span>  
+1.  <span data-ttu-id="43dc3-106">V rámci metody zkopírujte text do schránky k aktivním ovládacím prvkem aktivní podřízený formulář.</span><span class="sxs-lookup"><span data-stu-id="43dc3-106">Within a method, copy the text on the Clipboard to the active control of the active child form.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="1aa41-107">Tento příklad předpokládá, že je nadřazený formulář MDI (`Form1`), který má jeden nebo více podřízených oken MDI obsahující <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="1aa41-107">This example assumes there is an MDI parent form (`Form1`) that has one or more MDI child windows containing a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="1aa41-108">Další informace najdete v tématu [vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).</span><span class="sxs-lookup"><span data-stu-id="1aa41-108">For more information, see [Creating MDI Parent Forms](how-to-create-mdi-parent-forms.md).</span></span>  
+    >  <span data-ttu-id="43dc3-107">Tento příklad předpokládá, že je nadřazený formulář MDI (`Form1`), který má jeden nebo více podřízených oken MDI obsahující <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="43dc3-107">This example assumes there is an MDI parent form (`Form1`) that has one or more MDI child windows containing a <xref:System.Windows.Forms.RichTextBox> control.</span></span> <span data-ttu-id="43dc3-108">Další informace najdete v tématu [vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md).</span><span class="sxs-lookup"><span data-stu-id="43dc3-108">For more information, see [Creating MDI Parent Forms](how-to-create-mdi-parent-forms.md).</span></span>  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -91,9 +91,10 @@ ms.locfileid: "57707399"
     }  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="1aa41-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1aa41-109">See also</span></span>
-- [<span data-ttu-id="1aa41-110">Aplikace MDI (Multiple-Document Interface)</span><span class="sxs-lookup"><span data-stu-id="1aa41-110">Multiple-Document Interface (MDI) Applications</span></span>](multiple-document-interface-mdi-applications.md)
-- [<span data-ttu-id="1aa41-111">Postupy: Vytváření nadřazených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="1aa41-111">How to: Create MDI Parent Forms</span></span>](how-to-create-mdi-parent-forms.md)
-- [<span data-ttu-id="1aa41-112">Postupy: Vytváření podřízených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="1aa41-112">How to: Create MDI Child Forms</span></span>](how-to-create-mdi-child-forms.md)
-- [<span data-ttu-id="1aa41-113">Postupy: Určení podřízeného prvku aktivního MDI</span><span class="sxs-lookup"><span data-stu-id="1aa41-113">How to: Determine the Active MDI Child</span></span>](how-to-determine-the-active-mdi-child.md)
-- [<span data-ttu-id="1aa41-114">Postupy: Uspořádání podřízených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="1aa41-114">How to: Arrange MDI Child Forms</span></span>](how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a><span data-ttu-id="43dc3-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="43dc3-109">See also</span></span>
+
+- [<span data-ttu-id="43dc3-110">Aplikace MDI (Multiple-Document Interface)</span><span class="sxs-lookup"><span data-stu-id="43dc3-110">Multiple-Document Interface (MDI) Applications</span></span>](multiple-document-interface-mdi-applications.md)
+- [<span data-ttu-id="43dc3-111">Postupy: Vytváření nadřazených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="43dc3-111">How to: Create MDI Parent Forms</span></span>](how-to-create-mdi-parent-forms.md)
+- [<span data-ttu-id="43dc3-112">Postupy: Vytváření podřízených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="43dc3-112">How to: Create MDI Child Forms</span></span>](how-to-create-mdi-child-forms.md)
+- [<span data-ttu-id="43dc3-113">Postupy: Určení aktivního podřízeného formuláře MDI</span><span class="sxs-lookup"><span data-stu-id="43dc3-113">How to: Determine the Active MDI Child</span></span>](how-to-determine-the-active-mdi-child.md)
+- [<span data-ttu-id="43dc3-114">Postupy: Uspořádání podřízených formulářů MDI</span><span class="sxs-lookup"><span data-stu-id="43dc3-114">How to: Arrange MDI Child Forms</span></span>](how-to-arrange-mdi-child-forms.md)

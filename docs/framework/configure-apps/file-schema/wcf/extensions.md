@@ -2,15 +2,15 @@
 title: <extensions>
 ms.date: 03/30/2017
 ms.assetid: bcfe5c44-04ef-4a20-96a5-90bfadf39623
-ms.openlocfilehash: feac4999438a67043899eef98bb8b49644ee30d9
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: bb0df4535560a509d6e3511815196c126a95d0c7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270014"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205248"
 ---
-# <a name="extensions"></a><span data-ttu-id="385c7-101">\<Rozšíření ></span><span class="sxs-lookup"><span data-stu-id="385c7-101">\<extensions></span></span>
-<span data-ttu-id="385c7-102">Tento prvek konfigurace obsahuje kolekci elementů XML, které obsahují vlastní metadata, aby byly publikované a společně s standardní zjistitelné metadata (EPR, ContractTypeName, BindingName, oboru a ListenURI).</span><span class="sxs-lookup"><span data-stu-id="385c7-102">This configuration element contains a collection of XML elements that contain custom metadata to be published along with the standard discoverable metadata (EPR, ContractTypeName, BindingName, Scope and ListenURI).</span></span> <span data-ttu-id="385c7-103">Následuje příklad použití tohoto konfiguračního prvku.</span><span class="sxs-lookup"><span data-stu-id="385c7-103">The following is an example of using this configuration element.</span></span>  
+# <a name="extensions"></a><span data-ttu-id="75f5a-101">\<Rozšíření ></span><span class="sxs-lookup"><span data-stu-id="75f5a-101">\<extensions></span></span>
+<span data-ttu-id="75f5a-102">Tento prvek konfigurace obsahuje kolekci elementů XML, které obsahují vlastní metadata, aby byly publikované a společně s standardní zjistitelné metadata (EPR, ContractTypeName, BindingName, oboru a ListenURI).</span><span class="sxs-lookup"><span data-stu-id="75f5a-102">This configuration element contains a collection of XML elements that contain custom metadata to be published along with the standard discoverable metadata (EPR, ContractTypeName, BindingName, Scope and ListenURI).</span></span> <span data-ttu-id="75f5a-103">Následuje příklad použití tohoto konfiguračního prvku.</span><span class="sxs-lookup"><span data-stu-id="75f5a-103">The following is an example of using this configuration element.</span></span>  
   
 ```xml  
 <services>
@@ -45,5 +45,6 @@ ms.locfileid: "55270014"
 </behaviors>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="385c7-104">Viz také:</span><span class="sxs-lookup"><span data-stu-id="385c7-104">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="75f5a-104">Viz také:</span><span class="sxs-lookup"><span data-stu-id="75f5a-104">See also</span></span>
+
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

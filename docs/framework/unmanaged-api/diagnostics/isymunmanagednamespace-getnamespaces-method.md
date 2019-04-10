@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8284b23f5d36f7b3405bfff706e0ee7f0e32a042
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 3d7ac84971f7d0e97f7ccd26710151d1aeefe729
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57479932"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207211"
 ---
-# <a name="isymunmanagednamespacegetnamespaces-method"></a><span data-ttu-id="c57d2-102">ISymUnmanagedNamespace::GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="c57d2-102">ISymUnmanagedNamespace::GetNamespaces Method</span></span>
-<span data-ttu-id="c57d2-103">Získá podřízené objekty tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c57d2-103">Gets the children of this namespace.</span></span>  
+# <a name="isymunmanagednamespacegetnamespaces-method"></a><span data-ttu-id="7b699-102">ISymUnmanagedNamespace::GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="7b699-102">ISymUnmanagedNamespace::GetNamespaces Method</span></span>
+<span data-ttu-id="7b699-103">Získá podřízené objekty tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7b699-103">Gets the children of this namespace.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c57d2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c57d2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7b699-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7b699-104">Syntax</span></span>  
   
 ```  
 HRESULT GetNamespaces(  
@@ -37,21 +37,22 @@ HRESULT GetNamespaces(
         ISymUnmanagedNamespace* namespaces[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c57d2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c57d2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7b699-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7b699-105">Parameters</span></span>  
  `cNameSpaces`  
- <span data-ttu-id="c57d2-106">[in] A `ULONG32` , který označuje velikost `namespaces` pole.</span><span class="sxs-lookup"><span data-stu-id="c57d2-106">[in] A `ULONG32` that indicates the size of the `namespaces` array.</span></span>  
+ <span data-ttu-id="7b699-106">[in] A `ULONG32` , který označuje velikost `namespaces` pole.</span><span class="sxs-lookup"><span data-stu-id="7b699-106">[in] A `ULONG32` that indicates the size of the `namespaces` array.</span></span>  
   
  `pcNameSpaces`  
- <span data-ttu-id="c57d2-107">[out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat obory názvů.</span><span class="sxs-lookup"><span data-stu-id="c57d2-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the namespaces.</span></span>  
+ <span data-ttu-id="7b699-107">[out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat obory názvů.</span><span class="sxs-lookup"><span data-stu-id="7b699-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the namespaces.</span></span>  
   
  `namespaces`  
- <span data-ttu-id="c57d2-108">[out] Ukazatel do vyrovnávací paměti, která obsahuje obory názvů.</span><span class="sxs-lookup"><span data-stu-id="c57d2-108">[out] A pointer to the buffer that contains the namespaces.</span></span>  
+ <span data-ttu-id="7b699-108">[out] Ukazatel do vyrovnávací paměti, která obsahuje obory názvů.</span><span class="sxs-lookup"><span data-stu-id="7b699-108">[out] A pointer to the buffer that contains the namespaces.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="c57d2-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c57d2-109">Return Value</span></span>  
- <span data-ttu-id="c57d2-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="c57d2-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="7b699-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7b699-109">Return Value</span></span>  
+ <span data-ttu-id="7b699-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="7b699-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c57d2-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c57d2-111">Requirements</span></span>  
- <span data-ttu-id="c57d2-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="c57d2-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7b699-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7b699-111">Requirements</span></span>  
+ <span data-ttu-id="7b699-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="7b699-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c57d2-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c57d2-113">See also</span></span>
-- [<span data-ttu-id="c57d2-114">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c57d2-114">ISymUnmanagedNamespace Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
+## <a name="see-also"></a><span data-ttu-id="7b699-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7b699-113">See also</span></span>
+
+- [<span data-ttu-id="7b699-114">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7b699-114">ISymUnmanagedNamespace Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)
