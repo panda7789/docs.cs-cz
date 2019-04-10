@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-ms.openlocfilehash: 43ad8ae0b12b07e2d0abe3e208f6d1ccdb2ec77d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 17494b00259839be3beb580a516ff017ec3de50e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681167"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228403"
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Postupy: Zveřejnění informačního kanálu ve formátu Atom i RSS
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje informačního kanálu syndikace. Toto téma popisuje, jak vytvořit služby syndikace, který zpřístupňuje kanálem syndikace Atom 1.0 i RSS 2.0. Tato služba poskytuje jeden koncový bod, který může vrátit buď souhrnný formát, který. Pro zjednodušení služby používané v tomto příkladu je nezávislý hostované. V produkčním prostředí by být hostované služby tohoto typu v rámci služby IIS nebo WAS. Další informace o různých WCF možnosti hostování naleznete v tématu [Hosting](../../../../docs/framework/wcf/feature-details/hosting.md).  
@@ -96,5 +96,6 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
  Při kompilaci předchozí kód, odkazovat System.ServiceModel.dll a System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Web.WebGetAttribute>

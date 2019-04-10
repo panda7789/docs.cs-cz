@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4f92d773197c914a74dd7e9c18f5aab5309358ae
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 2ec5224b1ab16c05f6f942f6084f1ab105b71b0f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760828"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59233939"
 ---
 ### <a name="ensure-systemuri-uses-a-consistent-reserved-character-set"></a>Ujistěte se, že System.Uri používá konzistentní vyhrazené znakovou sadu
 
@@ -16,4 +16,3 @@ ms.locfileid: "58760828"
 |Version|4.7.2|
 |Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Uri?displayProperty=nameWithType></li></ul>|
-

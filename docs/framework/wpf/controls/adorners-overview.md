@@ -7,18 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
-ms.openlocfilehash: 94075189d82e5d446b3058b944c789a4288c26ca
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
-ms.translationtype: MT
+ms.openlocfilehash: 88dc2a306108959b5627e502aaa67ef7db341417
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634528"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227688"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
 Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement>, která slouží k poskytování vizuální upozornění na uživatele. Mimo jiné účely je možné přidat funkční zpracovává na prvky nebo poskytují informace o ovládací prvek stavu doplňků pro úpravy.  
-  
-  
-  
+
 <a name="about_Adorners"></a>   
 ## <a name="about-adorners"></a>O doplňcích  
  <xref:System.Windows.Documents.Adorner> Je vlastní <xref:System.Windows.FrameworkElement> , který je vázán <xref:System.Windows.UIElement>. Doplňky pro úpravy se zobrazují v <xref:System.Windows.Documents.AdornerLayer>, což je vykreslovací plochu, který je pořád nad s element nebo kolekci elementů s. Vykreslování doplňku je nezávislý na vykreslování <xref:System.Windows.UIElement> svázané doplněk pro úpravy. Pro úpravy je obvykle umístěn vzhledem k elementu, ke kterému je vázán, pomocí standardní počátek souřadnic 2D nachází v levém horním rohu elementu s.  
@@ -102,8 +100,9 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
  [!code-vb[Adorners_SimpleCircleAdorner#_AdornChildren](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_adornchildren)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.AdornerHitTestResult>
-- [Přehled objektů Shape a základního kreslení ve WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Malování pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
-- [Přehled nakreslených objektů](../graphics-multimedia/drawing-objects-overview.md)
-- [Témata s postupy](adorners-how-to-topics.md)
+- [Tvary a základní kresby v přehledu WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled vykreslovaných objektů](../graphics-multimedia/drawing-objects-overview.md)
+- [– postupy](adorners-how-to-topics.md)

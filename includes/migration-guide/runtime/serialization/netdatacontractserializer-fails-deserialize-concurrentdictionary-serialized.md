@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 380f662349a8dcd04e5bf445e1479d0a32d5861f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235299"
+---
 ### <a name="netdatacontractserializer-fails-to-deserialize-a-concurrentdictionary-serialized-with-a-different-net-version"></a>NetDataContractSerializer se nepodařilo deserializovat ConcurrentDictionary serializovat s příznakem jinou verzi rozhraní .NET
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Existuje několik možných řešeních tohoto problému:<ul><li>Upgrade serializaci počítač k používání rozhraní .NET Framework 4.5.1, také.</li><li>Použití <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=name> místo <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name> jako to neočekává přesně stejné typy CLR serializaci a deserializaci skončí.</li><li>Použití <xref:System.Collections.Generic.Dictionary%602?displayProperty=name> místo <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=name> od neproběhne této konkrétní 4.5 –&gt;4.5.1 přerušit.</li></ul>|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Runtime.Serialization.NetDataContractSerializer.Deserialize(System.IO.Stream)?displayProperty=nameWithType></li></ul>|
-

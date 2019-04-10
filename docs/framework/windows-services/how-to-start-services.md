@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Spuštění služeb'
+title: 'Postupy: Spuštění služby'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 979b9ea58f69f83829c364966a9edeb9e0644309
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: fbca3cfd241ded6f83df6ba2206601a7417322ac
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54494359"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230119"
 ---
-# <a name="how-to-start-services"></a>Postupy: Spuštění služeb
+# <a name="how-to-start-services"></a>Postupy: Spuštění služby
 Po dokončení instalace služby musí být spuštěna. Od volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu na třídu služby. Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečnou práci, služba bude provádět. Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.  
   
  Služby můžete nastavit spustit automaticky nebo ručně. Služba, která se spustí automaticky spustí se při restartování nebo počítače, na kterém je nainstalovaný se nejprve zapnuté. Uživatel musí spustit služba, která se spouští ručně.  
@@ -78,6 +78,7 @@ Po dokončení instalace služby musí být spuštěna. Od volání <xref:System
 2.  Volání <xref:System.ServiceProcess.ServiceController.Start%2A> metoda ke spuštění služby.  
   
 ## <a name="see-also"></a>Viz také:
-- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+
+- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

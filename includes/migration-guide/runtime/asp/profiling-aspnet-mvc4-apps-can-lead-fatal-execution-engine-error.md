@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 439a4976482639cd2e4e17315ec1a53ca54aa477
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235271"
+---
 ### <a name="profiling-aspnet-mvc4-apps-can-lead-to-fatal-execution-engine-error"></a>Profilace aplikací ASP.Net MVC4 může vést k závažné chybě
 
 |   |   |
@@ -6,5 +14,4 @@
 |Doporučení|Tento problém je vyřešen v rozhraní .NET Framework 4.5.2. Alternativně může profiler vyhnout tomuto problému zadáním <code>COR_PRF_DISABLE_ALL_NGEN_IMAGES</code> v jeho masky události.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
-
+|Type|Modul runtime|

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9500907c6a1ba5b27008dcad4c9b47aef9092106
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 921baed7381fad363cc832c6b6af69068c2c8f43
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760612"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59236010"
 ---
 ### <a name="ribbongroup-background-is-set-to-transparent-in-localized-builds"></a>Pozadí RibbonGroup je nastavena na transparentní v lokalizovaných buildech
 
@@ -15,4 +15,3 @@ ms.locfileid: "58760612"
 |Rozsah|Edge|
 |Version|4.6.2|
 |Type|Modul runtime|
-

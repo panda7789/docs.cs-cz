@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0ddd554aa114395085a9f8ff41a99ca9a6096a51
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: ee9bba91a2c4e11bd005fedb8adf0c2e7c7b0d3e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761028"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234408"
 ---
 ### <a name="certificate-eku-oid-validation"></a>OID rozšířeného použití klíče ověření certifikátu
 
@@ -16,4 +16,3 @@ ms.locfileid: "58761028"
 |Version|4.6|
 |Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Net.Security.SslStream?displayProperty=nameWithType></li><li><xref:System.Net.ServicePointManager?displayProperty=nameWithType></li><li><xref:System.Net.Http.HttpClient?displayProperty=nameWithType></li><li><xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType></li><li><xref:System.Net.HttpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.FtpWebRequest?displayProperty=nameWithType></li></ul>|
-

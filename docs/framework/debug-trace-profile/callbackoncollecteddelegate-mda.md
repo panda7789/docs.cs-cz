@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31aa9f18729bf5d85e28d484f5fd1f5aac762470
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 459465064fe9db9f2f0aebb4153a3caea173af4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54593534"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59223638"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
 `callbackOnCollectedDelegate` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud delegát je zařazen ze spravovaného do nespravovaného kódu jako ukazatel na funkci a zpětné volání je umístěn na tento ukazatel na funkci delegáta byla uvolněna z paměti.  
@@ -38,7 +38,7 @@ ms.locfileid: "54593534"
   
  Pravděpodobnost selhání závisí na čas mezi zařazování delegáta a zpětné volání na ukazatel funkce, jakož i frekvence uvolnění paměti. Selhání je sporadické, pokud je krátký čas mezi zařazování delegáta a následné zpětného volání. To je obvykle tento případ, pokud nespravované metoda přijímá ukazatel na funkci nelze uložit ukazatel na funkci pro pozdější použití, ale místo toho zavolá zpět na ukazatel funkce okamžitě na dokončení jeho operace před vrácením. Podobně další kolekce dojít, když je systém v případě velkého zatížení, což zvyšuje pravděpodobnost, že uvolňování paměti dojde před zpětného volání.  
   
-## <a name="resolution"></a>Rozlišení  
+## <a name="resolution"></a>Řešení  
  Jakmile si byl zařazen delegáta jako ukazatel nespravovanou funkci, systému uvolňování paměti nelze sledovat svého životního cyklu. Místo toho kód uchovává odkaz na delegáta po dobu životnosti ukazatel nespravované funkci. Ale předtím, než budete moct provést, nejprve musíte určit, které delegát byl shromážděn. Když MDA aktivováno, obsahuje název typu delegáta. Použijte tento název hledání kódu pro platformu vyvolání nebo COM podpisy, které předat tento delegát navýšení kapacity na nespravovaný kód. Problematické delegáta se předává jednu z těchto místa volání. Můžete také povolit `gcUnmanagedToManaged` MDA vynutit uvolnění před každé zpětné volání do modulu runtime. Tato akce odebere nejistoty zavedené kolekce paměti zajištěním uvolnění vždy předchází zpětnému volání. Jakmile budete vědět, jaké delegáta byl shromážděn, změňte kód pro odkaz na tohoto delegáta na straně spravované pro dobu života ukazatele zařazené nespravované funkci.  
   
 ## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
@@ -112,6 +112,7 @@ public class Entry
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
 - [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

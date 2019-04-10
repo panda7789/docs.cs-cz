@@ -1,15 +1,15 @@
 ---
-title: <Thread_UseAllCpuGroups> Element
+title: Element <Thread_UseAllCpuGroups>
 ms.date: 03/30/2017
 ms.assetid: d30fe7c5-8469-46e2-b804-e3eec7b24256
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95411f5adde07c0d00124b2793b495c7ed8f49ef
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 236953cc1a430a1dd2a2fbb633c7ef06e6ba200f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55288935"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230834"
 ---
 # <a name="threaduseallcpugroups-element"></a>\<Thread_UseAllCpuGroups > – Element
 Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.  
@@ -36,7 +36,7 @@ Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime neprovádí distribuci spravovaných vláken ve více skupinách procesoru. Toto nastavení je výchozí.|  
 |`true`|Modul runtime provádí distribuci spravovaných vláken ve více skupinách procesoru, pokud má počítač více skupin procesorů a [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) prvek povolený.|  
@@ -68,6 +68,7 @@ Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [\<GCCpuGroup> Element](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)

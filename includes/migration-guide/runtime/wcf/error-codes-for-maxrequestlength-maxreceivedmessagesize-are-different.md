@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c9d6111edcfeec6852f23cc0768833de32e61022
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235279"
+---
 ### <a name="error-codes-for-maxrequestlength-or-maxreceivedmessagesize-are-different"></a>Kódy chyb pro maxRequestLength nebo maxReceivedMessageSize se liší
 
 |   |   |
@@ -6,5 +14,4 @@
 |Doporučení|Tato změna usnadňuje ladění v případech, kde délka zprávy překročí limity povolené rozhraním ASP.NET nebo WCF. Je třeba upravit jakýkoli kód, který provádí zpracování založené na stavovém kódu HTTP 400.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
-
+|Type|Modul runtime|

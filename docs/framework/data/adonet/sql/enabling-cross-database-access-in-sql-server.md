@@ -1,15 +1,15 @@
 ---
-title: Povolení přístupu mezi databázemi na SQL serveru
+title: Povolení přístupu mezi databázemi na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-ms.openlocfilehash: 5b98d06e3f8ff8e34530be8e9ffbf13a788f3147
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 70b4b7b55311bfc5dba1b537a603e0d15d7f3d9b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093850"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59229664"
 ---
-# <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databázemi na SQL serveru
+# <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databázemi na SQL Serveru
 Vlastnictví mezidatabázové řetězení nastane, pokud postup v jedné databázi závisí na objektech v jiné databázi. Řetěz vlastnictví mezi databázemi funguje stejným způsobem jako v rámci jedné databáze řetězení vlastnictví, s tím rozdílem, že řetěz nepřerušený vlastnictví vyžaduje, aby všichni vlastníci objektu jsou namapovány na stejný přihlašovací účet. Pokud zdrojový objekt v databázi zdrojové a cílové objektů v cílové databáze jsou vlastněny stejný přihlašovací účet, nekontroluje systém SQL Server oprávnění u cílové objektů.  
   
 ## <a name="off-by-default"></a>Ve výchozím nastavení vypnuté  
@@ -51,6 +51,7 @@ ALTER DATABASE Database2 SET DB_CHAINING ON;
 |[Rozšíření databáze zosobnění s použitím EXECUTE AS](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188304(v=sql.105)) a [různé možnost řetězení vlastnictví DB](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option).|Články popisují, jak nakonfigurovat vlastnictví mezidatabázové řetězení pro instanci systému SQL Server.|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
 - [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)

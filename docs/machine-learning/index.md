@@ -1,14 +1,14 @@
 ---
 title: Průvodce ML.NET obsahem
 description: Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.
-ms.date: 01/18/2019
+ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: fe9129fd6975ba9176ccce025b06f03734803155
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: de681daea5a29a121d350271ced4ccc2c0b1b533
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920763"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231328"
 ---
 # <a name="mlnet-content-guide"></a>Průvodce ML.NET obsahem
 
@@ -33,7 +33,11 @@ Základní informace najdete v tématu [základní koncepty k tréninku modelu v
 
 [Předvídání cen pomocí regresní model](./tutorials/taxi-fare.md) se dozvíte, jak vytvořit prediktivní aplikaci, která používá mnoho faktorů, z historických dat. Chcete-li zjistit odpověď.
 
-[Klasifikace iris květin funkcemi](./tutorials/iris-clustering.md) se dozvíte, jak analyzovat datové sady iris pomocí model clusteringu. 
+[Klasifikace iris květin funkcemi](./tutorials/iris-clustering.md) se dozvíte, jak analyzovat datové sady iris pomocí model clusteringu.
+
+[Vytvoření doporučené video s ML.NET](./tutorials/movie-recommmendation.md) se dozvíte, jak vytvořit aplikaci doporučení pro doporučování filmů pro uživatele na základě jejich historie.
+
+[Sestavení klasifikátoru vlastní image ML.NET s TensorFlow](./tutorials/image-classification.md): ukazuje, jak přeučování existující model Tensorflow k vytvoření vlastní image třídění pomocí ML.NET.
 
 ## <a name="how-to-guide"></a>Průvodce postupy
 
@@ -46,7 +50,6 @@ Základní informace najdete v tématu [základní koncepty k tréninku modelu v
 [Služby Machine learning úlohy](./resources/tasks.md) popisuje úlohy, jako je například klasifikace a detekce anomálií. 
 
 [Transformace dat](./resources/transforms.md) popisuje možnosti přípravy dat v ML.NET.
-
 
 ## <a name="api-reference"></a>referenční dokumentace k rozhraní API
 

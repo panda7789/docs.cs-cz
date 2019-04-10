@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8049bf01bc10c5913fa11b25e49afd1b1317eecc
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 09e3f0e168e0dcbe79d8ee7216f2671c67bfb87e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761313"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234159"
 ---
 ### <a name="wpf-spell-checking-fails-in-unexpected-ways"></a>Kontrola pravopisu WPF selže neočekávaným způsobem
 
@@ -15,4 +15,3 @@ ms.locfileid: "58761313"
 |Rozsah|Edge|
 |Version|4.6.1|
 |Type|Modul runtime|
-

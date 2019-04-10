@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 9084c135769f595491d645e49d24cf507f5f6070
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235312"
+---
 ### <a name="eventlistener-truncates-strings-with-embedded-nulls"></a>Naslouchacího procesu událostí zkrátí řetězce s vložené znaky Null
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|<xref:System.Diagnostics.Tracing.EventSource?displayProperty=name> data se musí aktualizovat, pokud je to možné, používat vložené znaky null.|
 |Rozsah|Edge|
 |Version|4.5.1|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Diagnostics.Tracing.EventListener.%23ctor?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords)?displayProperty=nameWithType></li><li><xref:System.Diagnostics.Tracing.EventListener.EnableEvents(System.Diagnostics.Tracing.EventSource,System.Diagnostics.Tracing.EventLevel,System.Diagnostics.Tracing.EventKeywords,System.Collections.Generic.IDictionary{System.String,System.String})?displayProperty=nameWithType></li></ul>|
-

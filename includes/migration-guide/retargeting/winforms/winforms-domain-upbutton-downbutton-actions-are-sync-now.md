@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7344fddbc61d47d4ca735808f0b92f63e33e15a3
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: e73fe48467ede501bae0ddd9362d9d55b3ca998b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760812"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59233986"
 ---
 ### <a name="winforms-domain-upbutton-and-downbutton-actions-are-in-sync-now"></a>Formuláře Windows pro domény upbutton a downbutton akce jsou teď synchronizovaný
 
@@ -16,4 +16,3 @@ ms.locfileid: "58760812"
 |Version|4.7.2|
 |Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Forms.DomainUpDown.UpButton?displayProperty=nameWithType></li><li><xref:System.Windows.Forms.DomainUpDown.DownButton?displayProperty=nameWithType></li></ul>|
-

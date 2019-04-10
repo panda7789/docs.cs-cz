@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 01c0689bbfb102f8f4d9455f9d258e8ea5515d9e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234957"
+---
 ### <a name="incorrect-implementation-of-memberdescriptorequals"></a>Nesprávná implementace MemberDescriptor.Equals
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Pokud je aplikace závislá na <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=nameWithType> někdy vrací <code>false</code> při popisovače jsou ekvivalentní a se zaměřujete na rozhraní .NET Framework 4.6.2 nebo novější, máte několik možností:<ol><li>Provádět změny kódu k porovnání <xref:System.ComponentModel.MemberDescriptor.Category> a <xref:System.ComponentModel.MemberDescriptor.Description> pole ručně kromě volání <xref:System.ComponentModel.MemberDescriptor.Equals%2A?displayProperty=nameWithType> metody.</li><li>Vyjádřit výslovný nesouhlas této změny do souboru app.config přidejte následující hodnotu:</li></ol><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Pokud vaše aplikace cílí na .NET Framework 4.6.1 nebo starší a běží na rozhraní .NET Framework 4.6.2 nebo novější a chcete, aby tato změna povolené, přepínač kompatibility lze nastavit na <code>false</code> do souboru app.config přidejte následující hodnotu:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.MemberDescriptorEqualsReturnsFalseIfEquivalent=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Edge|
 |Version|4.6.2|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.ComponentModel.MemberDescriptor.Equals(System.Object)?displayProperty=nameWithType></li></ul>|
-

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ed0dde302e30ae0cf3c7a8d0985f2314d91cab66
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 897bb0b0650c633b87a792516c62566f491ec3fd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760834"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59233980"
 ---
 ### <a name="deflatestream-uses-native-apis-for-decompression"></a>DeflateStream využívá nativní rozhraní API pro dekompresi
 
@@ -16,4 +16,3 @@ ms.locfileid: "58760834"
 |Version|4.7.2|
 |Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.IO.Compression.DeflateStream?displayProperty=nameWithType></li><li><xref:System.IO.Compression.GZipStream?displayProperty=nameWithType></li></ul>|
-

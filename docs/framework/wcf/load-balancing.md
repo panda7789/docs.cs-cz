@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
-ms.openlocfilehash: 2a0644ea17db2923f5729feda40f3b2bff364231
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a43546b9cbb95cd16c1d94372e786acd103ea0bb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660746"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228629"
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
 Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je podle jejich nasazení do farmy s vyrovnáváním zatížení serveru. Aplikace WCF mohou být vyrovnávání zatížení pomocí standardní zátěže postupů, včetně nástroje pro vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows, stejně jako hardwarové zařízení Vyrovnávání zatížení.  
@@ -92,4 +92,5 @@ Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundat
  Pro nejlepší výkon ve scénářích s vyrovnáváním zatížení, zvažte použití <xref:System.ServiceModel.NetTcpSecurity> (buď <xref:System.ServiceModel.SecurityMode.Transport> nebo <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>).  
   
 ## <a name="see-also"></a>Viz také:
-- [Osvědčené postupy hostování Internetové informační služby](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+
+- [Doporučené postupy hostování Internetové informační služby](../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)

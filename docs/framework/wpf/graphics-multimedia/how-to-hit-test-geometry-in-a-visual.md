@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Spuštění geometrie testu ve vizuálním objektu'
+title: 'Postupy: Ověření pozice objektu Geometry ve vizuálním objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - visual objects [WPF], hit tests on
 - Geometry objects [WPF], visual objects comprising
 ms.assetid: 8bf2643f-d7f9-4cb4-9ea6-5b893c23200d
-ms.openlocfilehash: e51dd73a65666ffee5958325079e8f06f13ac61b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 87b626e575d889447ef061d1ed62ef28efe5dfeb
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363797"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227337"
 ---
-# <a name="how-to-hit-test-geometry-in-a-visual"></a>Postupy: Spuštění geometrie testu ve vizuálním objektu
+# <a name="how-to-hit-test-geometry-in-a-visual"></a>Postupy: Ověření pozice objektu Geometry ve vizuálním objektu
 Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekt, který se skládá z jedné nebo více <xref:System.Windows.Media.Geometry> objekty.  
   
 ## <a name="example"></a>Příklad  
@@ -36,5 +36,6 @@ Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekt, 
 >  Tato ukázka není vezměte v úvahu všechny transformace nebo oříznutí, který může použít pro geometrii. Kromě toho tato ukázka nebude fungovat u upravený ovládací prvek, protože nemá žádné kreslení přímo s ním spojená.  
   
 ## <a name="see-also"></a>Viz také:
-- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+
+- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
 - [Ověřování pozice pomocí objektu Geometry jako parametru](how-to-hit-test-using-geometry-as-a-parameter.md)

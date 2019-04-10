@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c008809606372c84b05a2facd1cac1293382aed4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234941"
+---
 ### <a name="aescryptoserviceprovider-decryptor-provides-a-reusable-transform"></a>Opakovaně použitelné transformace poskytuje AesCryptoServiceProvider modul pro dešifrování.
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Dopad této změny by mělo minimální, protože se jedná o očekávané chování. Aplikace, které závisí na předchozím chování můžete vyjádřit výslovný nesouhlas pomocí přidáním následujícího nastavení konfigurace <code>&lt;runtime&gt;</code> oddílu konfiguračního souboru aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Kromě toho aplikace, které cílí předchozí verzi rozhraní .NET Framework, ale jsou spuštěny na verzi rozhraní .NET Framework počínaje .NET Framework 4.6.2 můžete přejít k to tak, že přidáte následující konfigurační nastavení <code>&lt;runtime&gt;</code> část konfigurační soubor aplikace:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Security.Cryptography.AesCryptoServiceProvider.DontCorrectlyResetDecryptor=false&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Změna cílení|
+|Type|Změna cílení|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.AesCryptoServiceProvider.CreateDecryptor?displayProperty=nameWithType></li></ul>|
-

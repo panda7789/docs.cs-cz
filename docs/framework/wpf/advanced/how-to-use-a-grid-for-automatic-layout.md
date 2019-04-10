@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Automatické rozložení použitím mřížky'
+title: 'Postupy: Automatické rozložení pomocí mřížky'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - grids [WPF], automatic layout
 - automatic layout [WPF], grid use
 ms.assetid: ab9de407-e0c1-4047-bdf0-24951bf73879
-ms.openlocfilehash: 5fa023002ac66a65e3c179434841c975287d170c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 590ad7292fea572b20ccaa09ce2886724e004a6a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357479"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227115"
 ---
-# <a name="how-to-use-a-grid-for-automatic-layout"></a>Postupy: Automatické rozložení použitím mřížky
+# <a name="how-to-use-a-grid-for-automatic-layout"></a>Postupy: Automatické rozložení pomocí mřížky
 Tento příklad popisuje, jak pomocí mřížky automatické rozložení přístupu k vytvoření lokalizovatelné aplikace.  
   
  Lokalizace [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] může být časově náročný proces. Lokalizátoři často potřeba změnit velikost a umístění prvků kromě překlad textu. V minulosti každý jazyk, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byla upravena pro požadované úpravy. Nyní s funkcemi [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] můžete navrhnout prvky, které tak snížit potřeba úpravy. Přístup k vytváření aplikací, které se dají snadno změně velikosti a přemístěných se nazývá `auto layout`.  
@@ -30,5 +30,6 @@ Tento příklad popisuje, jak pomocí mřížky automatické rozložení příst
 Mřížka  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled automatického rozložení](use-automatic-layout-overview.md)
 - [Vytvoření tlačítka pomocí automatického rozložení](how-to-use-automatic-layout-to-create-a-button.md)

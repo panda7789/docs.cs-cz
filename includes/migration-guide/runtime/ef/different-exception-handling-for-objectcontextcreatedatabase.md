@@ -1,11 +1,18 @@
+---
+ms.openlocfilehash: 33ad1c044001e0a8d09708cc7a1f06e05cb307de
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235255"
+---
 ### <a name="different-exception-handling-for-objectcontextcreatedatabase-and-dbproviderservicescreatedatabase-methods"></a>Zpracování metody ObjectContext.CreateDatabase a DbProviderServices.CreateDatabase různých výjimek
 
 |   |   |
 |---|---|
 |Podrobnosti|Počínaje .NET Framework 4.5, pokud se vytváření databáze nezdaří, <code>CreateDatabase</code> metody se pokusí zrušit prázdnou databázi. Pokud operace proběhne úspěšně, původní <xref:System.Data.SqlClient.SqlException?displayProperty=name> se rozšíří (místo <xref:System.InvalidOperationException?displayProperty=name> , která byla vždy vyvolána v rozhraní .NET Framework 4.0)|
-|Návrh|Při zachytávání <xref:System.InvalidOperationException?displayProperty=name> při provádění <xref:System.Data.Objects.ObjectContext.CreateDatabase> nebo <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)>, SQLExceptions by měl nyní také být zachycena.|
+|Doporučení|Při zachytávání <xref:System.InvalidOperationException?displayProperty=name> při provádění <xref:System.Data.Objects.ObjectContext.CreateDatabase> nebo <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)>, SQLExceptions by měl nyní také být zachycena.|
 |Rozsah|Vedlejší|
 |Version|4.5|
-|Typ|Modul runtime|
-|Ovlivněné rozhraní API|<ul><li><xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType></li></ul>|
-
+|Type|Modul runtime|
+|Ovlivněná rozhraní API|<ul><li><xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType></li></ul>|

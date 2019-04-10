@@ -2,12 +2,12 @@
 title: Hostování ve spravované aplikaci
 ms.date: 03/30/2017
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
-ms.openlocfilehash: 0210f608be8ef7ff8b2af4b0cc36b308cd3ddbe8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 415a6fef511d7d7397a38882801e5848e2998a11
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617236"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218794"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
 Služby Windows Communication Foundation (WCF) je možné hostovat v libovolném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace. Služba s vlastním hostováním je flexibilní možnost hostování, protože vyžaduje minimálně infrastrukturu pro nasazení. Je však také nejméně robustní možnost hostování, protože spravovaných aplikací se neposkytuje pokročilé hostování a funkcím pro správu Další možnosti hostování ve službě WCF, jako jsou služby Internet Information Services (IIS) a Windows.  
@@ -25,5 +25,6 @@ Služby Windows Communication Foundation (WCF) je možné hostovat v libovolném
  Další běžné scénáře, které s vlastním hostováním umožňuje jsou plně funkčního klienta aplikace, například algoritmů založených na Windows Presentation Foundation (WPF) nebo Windows Forms (WinForms). Tato možnost hostování také usnadňuje aplikacemi rich client, jako například [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] a WinForms aplikace komunikovat s vnějším světem. Například klient spolupráci peer-to-peer, která používá [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pro jeho uživatelské rozhraní a také hostuje službu WCF, která umožňuje dalším klientům připojit se k němu a sdílení informací.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
 - [Kurz Začínáme](../../../../docs/framework/wcf/getting-started-tutorial.md)

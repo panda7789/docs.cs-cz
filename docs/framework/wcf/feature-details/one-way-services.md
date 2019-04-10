@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: ad285b5a0fa37867b1b80b3d7293a976fbd12c61
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 011bca07890e706b86f2a0b1dbf11acf77058548
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527793"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231276"
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavek odpověď. Ve vzoru požadavek odpověď, klient počká pro zprávy s odpovědí, i v případě, že v kódu, jako je reprezentována operace služby `void` metody. S jednosměrnou operaci se přenášejí pouze jednu zprávu. Příjemce neodešle zprávy s odpovědí, ani nemá odesílatel očekávat jeden.  
@@ -55,4 +55,5 @@ public interface IOneWayCalculator
  Doporučujeme, místo toho prozkoumat různé ovládací prvky ve službě i klientovi a poté otestujte vaše aplikace scénáře k určení optimální konfiguraci na obou stranách. Například pokud použití relací blokuje zpracování zpráv pro vaši službu, můžete nastavit <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> vlastnost <xref:System.ServiceModel.InstanceContextMode.PerCall> tak, aby každou zprávu zpracovává instanci a jiné služby a nastavit <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> k <xref:System.ServiceModel.ConcurrencyMode.Multiple> Pokud chcete povolit více než jedno vlákno k odeslání zprávy v čase. Další možností je zvýšit čtení kvóty vazby klienta a služby.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Jednosměrný](../../../../docs/framework/wcf/samples/one-way.md)

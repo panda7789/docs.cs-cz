@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 0887379fb23e9e66c6cc55a3774545162634c3f0
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59236691"
+---
 ### <a name="scrolling-a-wpf-treeview-or-grouped-listbox-in-a-virtualizingstackpanel-can-cause-a-hang"></a>Posouvání prvku WPF TreeView nebo seskupené ListBox v VirtualizingStackPanel může způsobit zablokování
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Upgradem na rozhraní .NET Framework 4.5.1 se lze vyvarovat této chyby. Okraje Alternativně je možné odebrat ze zobrazení kolekce (jako je <xref:System.Windows.Controls.TreeView?displayProperty=name>s) v rámci zásobníku virtualizované panelů, je-li všechny obsažené položky mají stejnou velikost.|
 |Rozsah|Hlavní|
 |Version|4.5|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.VirtualizingStackPanel.SetIsVirtualizing(System.Windows.DependencyObject,System.Boolean)?displayProperty=nameWithType></li></ul>|
-

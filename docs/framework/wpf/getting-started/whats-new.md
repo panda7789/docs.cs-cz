@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], what's new
 - WPF [WPF], what's new
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
-ms.openlocfilehash: 92f69d0f9ad962dff231308ed3f5d59a0d406792
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 5e9194dc4dc8ef3246870dc1fd71fa53d3ad143f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368165"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227480"
 ---
 # <a name="whats-new-in-wpf-version-45"></a>Novinky ve verzi 4.5 grafického subsystému WPF
 <a name="introduction"></a> Toto téma obsahuje informace o nových a vylepšených funkcích [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] verze 4.5.  
@@ -126,4 +126,5 @@ ms.locfileid: "57368165"
  WPF 4.5 podporuje – rozšíření značek pro události.  Zatímco WPF nedefinuje rozšíření značek, který má být použit pro události, budou moct vytvořit rozšíření značek, který lze použít s událostmi třetím stranám.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Novinky v rozhraní .NET Framework](../../whats-new/index.md)

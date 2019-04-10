@@ -7,12 +7,12 @@ helpviewer_keywords:
 - animation [WPF], key-frame
 - key frames [WPF], how-to topics
 ms.assetid: a5f9ab1a-d14c-4816-8540-3c5b8c8143d5
-ms.openlocfilehash: 5ee0f8a6cd40e6293062b62b8bc81bd4c54903c0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6b4f5de92f19223a6692236fb3496a1dbbddef5c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361431"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59226427"
 ---
 # <a name="key-frame-animation-how-to-topics"></a>Postupy: Témata animace klíčových snímků
 Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovládacího prvku interpolace animace pomocí klíčových snímků animace.  
@@ -38,6 +38,7 @@ Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovl�
  <xref:System.Windows.Media.Animation.KeyTime>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Grafika a multimédia](index.md)
 - [Přehled animace](animation-overview.md)
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)

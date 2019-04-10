@@ -9,12 +9,12 @@ helpviewer_keywords:
 - transformations [Windows Forms], global
 - transformations [Windows Forms], local
 ms.assetid: b601d66d-d572-4f11-9d2e-92f0dc8893f3
-ms.openlocfilehash: 07ef61e3a41448f051fb9b7da2cfd91d7cbf26b5
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: e4ed103e781cc2e59d62c11f3233357c77b81cb9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711847"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213750"
 ---
 # <a name="global-and-local-transformations"></a>Globální a místní transformace
 Globální transformace je transformace, která se vztahuje na všechny položky vykreslené danou <xref:System.Drawing.Graphics> objektu. Naproti tomu místní transformace je transformace, která se vztahují k určité položce chcete kreslit.  
@@ -61,5 +61,6 @@ Globální transformace je transformace, která se vztahuje na všechny položky
  ![Transformations](./media/aboutgdip05-art16.gif "AboutGdip05_art16")  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Systém souřadnic a transformace](coordinate-systems-and-transformations.md)
 - [Použití transformací ve spravovaném GDI+](using-transformations-in-managed-gdi.md)

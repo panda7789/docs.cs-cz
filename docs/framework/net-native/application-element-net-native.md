@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 366878fbfbfbe3e3951095c9ad82c1260638a0cb
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 5b858b9daad22cdda6df30be7b28cdecfd275b8f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270807"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228299"
 ---
 # <a name="application-element-net-native"></a>\<Aplikace > – Element (.NET Native)
 Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je k dispozici pro účely reflexe v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  
@@ -52,7 +52,7 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Nastavení pro tuto zásadu použít typy v aplikaci. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -61,12 +61,12 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
-|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
+|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady na Konstruovaný obecný typ. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může použít k definování zásad pro `List<String>` typu.|  
-|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady na metoda u určitého typu.|  
+|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady na metoda u určitého typu.|  
 |[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady na konstruovanou obecnou metodu.|  
-|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady na vlastnost určitého typu.|  
+|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady na vlastnost určitého typu.|  
 |[\<pole >](../../../docs/framework/net-native/field-element-net-native.md)|Použije zásady na pole určitého typu.|  
 |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady na událost u určitého typu.|  
   
@@ -86,6 +86,7 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
 -   Jako element, který nastaví zásadu platnou v celé aplikaci pro reflexi, serializace a zprostředkovatele komunikace s objekty. Atributy `<Application>` element definovat celou aplikaci zásady, které mohou být přepsána podřízené prvky definované `<Application>` nebo [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementu.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<Knihovna > – Element](../../../docs/framework/net-native/library-element-net-native.md)
 - [\<Direktivy > – Element](../../../docs/framework/net-native/directives-element-net-native.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)

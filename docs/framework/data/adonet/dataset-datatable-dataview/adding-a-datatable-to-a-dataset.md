@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 556d29a3-8fc9-4e38-b3ee-c188f7e7b155
-ms.openlocfilehash: 16b60b2973524c8e600f5efebb3f2b291377ffcc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 392855e3db2ea10c90784a6f9003805b79db74a6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732710"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230574"
 ---
 # <a name="adding-a-datatable-to-a-dataset"></a>Přidání datové tabulky do datové sady
 ADO.NET vám umožní vytvořit <xref:System.Data.DataTable> objekty a přidat do existujícího <xref:System.Data.DataSet>. Informace o omezení pro můžete nastavit <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.PrimaryKey%2A> a <xref:System.Data.DataColumn.Unique%2A> vlastnosti.  
@@ -33,5 +33,6 @@ ADO.NET vám umožní vytvořit <xref:System.Data.DataTable> objekty a přidat d
  Ve verzích ADO.NET nižší než 2.0 dvě tabulky nesmí být stejný název, i kdyby šlo v různých oborech názvů. Toto omezení se odebral ve verzi 2.0 rozhraní ADO.NET. A <xref:System.Data.DataSet> může obsahovat dvou tabulek, které mají stejné <xref:System.Data.DataTable.TableName%2A> hodnotu vlastnosti, ale jiné <xref:System.Data.DataTable.Namespace%2A> hodnot vlastností.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

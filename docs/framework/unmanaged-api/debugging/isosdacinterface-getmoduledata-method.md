@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: ed151f998ed7d28ba7ae170839ce2fa3a1ee6135
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 128af261c429228c97d952f1f8d382f46306f711
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57490447"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59229313"
 ---
 # <a name="isosdacinterfacegetmoduledata-method"></a>ISOSDacInterface::GetModuleData – metoda
 
@@ -45,7 +45,6 @@ HRESULT GetModuleData(
 `data`\
 [out] [DacpModuleData struktura](dacpmoduledata-structure.md) k ukládání informací načteného modulu.
 
-
 ## <a name="remarks"></a>Poznámky
 
 Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 13 pozice tabulce virtuální metody.
@@ -53,11 +52,11 @@ Zadaná metoda je součástí `ISOSDacInterface` rozhraní a odpovídá 13 pozic
 ## <a name="requirements"></a>Požadavky
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná  
-**Knihovna:** Žádná  
+**Záhlaví:** Žádné  
+**Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Ladění](index.md)
-- [ISOSDacInterface rozhraní](isosdacinterface-interface.md)
+- [ISOSDacInterface – rozhraní](isosdacinterface-interface.md)

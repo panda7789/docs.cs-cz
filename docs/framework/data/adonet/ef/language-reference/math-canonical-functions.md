@@ -2,12 +2,12 @@
 title: Matematické kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-ms.openlocfilehash: 3e8122806e31fc72b3d390e5e8671fada7f3a47d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f575785bb198251ef50ba3563e736946253c9526
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54492700"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228767"
 ---
 # <a name="math-canonical-functions"></a>Matematické kanonické funkce
 
@@ -17,7 +17,7 @@ Entita SQL obsahuje následující matematické kanonické funkce:
 
 Vrátí absolutní hodnotu `value`.
 
-**Argumenty**
+**Arguments**
 
 `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, A `Decimal`.
 
@@ -33,7 +33,7 @@ Typ `value`.
 
 Vrátí nejmenší celé číslo, které není menší než `value`.
 
-**Argumenty**
+**Arguments**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -50,7 +50,7 @@ Typ `value`.
 
 Vrátí největší celé číslo, které není větší než `value`.
 
-**Argumenty**
+**Arguments**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -67,7 +67,7 @@ Typ `value`.
 
 Vrátí výsledek zadaného `value` do zadaného `exponent`.
 
-**Argumenty**
+**Arguments**
 
 |  |  |
 |--|--|
@@ -86,7 +86,7 @@ Typ `value`.
 
 Vrátí celočíselnou část `value`, zaokrouhlený na nejbližší celé číslo.
 
-**Argumenty**
+**Arguments**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -102,12 +102,12 @@ Typ `value`.
 
 Vrátí `value`, zaokrouhleno na nejbližší zadaný `digits`.
 
-**Argumenty**
+**Arguments**
 
 |  |  |
 |--|--|
-|`value`|`Double` nebo `Decimal`.|
-|`digits`|`Int16` nebo `Int32`.|
+|`value`|`Double` or `Decimal`.|
+|`digits`|`Int16` or `Int32`.|
 
 **Návratová hodnota**
 
@@ -121,12 +121,12 @@ Typ `value`.
 
 Vrátí `value`, došlo ke zkrácení na nejbližší zadaný `digits`.
 
-**Argumenty**
+**Arguments**
 
 |  |  |
 |--|--|
-|`value`|`Double` nebo `Decimal`.|
-|`digits`|`Int16` nebo `Int32`.|
+|`value`|`Double` or `Decimal`.|
+|`digits`|`Int16` or `Int32`.|
 
 **Návratová hodnota**
 
@@ -141,4 +141,5 @@ Typ `value`.
  Ekvivalentní funkce je k dispozici ve zprostředkovateli spravovaného klienta Microsoft SQL. Další informace najdete v tématu [SqlClient pro funkce Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - animation [WPF], ArcSegment size
 - ArcSegment [WPF], animating size
 ms.assetid: f93a1065-b00a-4d7e-9d4b-37023f98186a
-ms.openlocfilehash: c97b528a581703a717743af8a3c9da651b2eaf2f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: de36010e44c2f926b5839f4ec120f90c288f7501
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367424"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227766"
 ---
 # <a name="how-to-animate-the-size-of-an-arcsegment"></a>Postupy: Animace velikosti ArcSegment
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.ArcSegment.Size%2A> vlastnost <xref:System.Windows.Media.ArcSegment>.  
@@ -28,9 +28,10 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.ArcSegment.Size
  Další geometrie a ukázky animace, najdete v článku [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.ArcSegment.Size%2A>
 - <xref:System.Windows.Media.ArcSegment>
 - [Přehled animace](animation-overview.md)
 - [Přehled geometrie](geometry-overview.md)
-- [Postupy: geometrie](geometries-how-to-topics.md)
-- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
+- [Postupy: Geometrie](geometries-how-to-topics.md)
+- [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)

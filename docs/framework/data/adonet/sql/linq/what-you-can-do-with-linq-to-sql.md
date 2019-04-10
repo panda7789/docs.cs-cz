@@ -1,18 +1,18 @@
 ---
-title: Co můžete dělat pomocí LINQ to SQL
+title: Možnosti použití LINQ to SQL
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: 1c589ddbc7276ca13fc82513effd3bcae3cd61fd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: efb7b86c3add99e596e6798c8267c09689899d56
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718738"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231575"
 ---
-# <a name="what-you-can-do-with-linq-to-sql"></a>Co můžete dělat pomocí LINQ to SQL
+# <a name="what-you-can-do-with-linq-to-sql"></a>Možnosti použití LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje všechny klíčové funkce, které očekáváte jako vývojář SQL. Můžete dotazovat na informace a vložit, aktualizovat a odstranit informace z tabulky.  
   
 ## <a name="selecting"></a>Výběr  
@@ -51,6 +51,7 @@ ms.locfileid: "54718738"
  [!code-vb[DLinqGettingStarted#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqGettingStarted/vb/Module1.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)
 - [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
 - [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

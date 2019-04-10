@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: fa09831ac47a59535ff73c8c8680c2642c3248c9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235270"
+---
 ### <a name="sqlbulkcopy-uses-destination-column-encoding-for-strings"></a>Používá SqlBulkCopy. cílový sloupec kódování pro řetězce
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Očekávat, že <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=name> se už poškodit data kvůli kódování rozdíly. Pokud se blíží limitu velikosti cílový sloupec řetězce se kopírují, může být potřeba buď předem kódování dat (které se mají zkopírovat ke kontrole, že se data vejdou do cílového sloupce) nebo zachytit <xref:System.Data.SqlClient.SqlException?displayProperty=name>s.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlBulkCopy.%23ctor(System.Data.SqlClient.SqlConnection)?displayProperty=nameWithType></li></ul>|
-

@@ -7,12 +7,12 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: f93ef787c74a4581d45c24c5a704cc5fb044bd46
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: a1908339460191fcb81d03d45c56dd57b2cf4c4e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409962"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228390"
 ---
 # <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Kurz: Definování kontraktu služby Windows Communication Foundation
 
@@ -28,7 +28,6 @@ V tomto kurzu se naučíte:
 > [!div class="checklist"]
 > - Vytvoření **knihovny služby WCF** projektu.
 > - Definujte rozhraní kontraktu služby.
-
 
 ## <a name="create-a-wcf-service-library-project-and-define-a-service-contract-interface"></a>Vytvořte projekt knihovny služby WCF a definování rozhraní kontraktu služby
 
@@ -54,7 +53,6 @@ V tomto kurzu se naučíte:
 
       > [!NOTE]
       > Pokud jste nainstalovali aplikaci Visual Studio pomocí nastavení prostředí pro vývojáře jazyka Visual Basic, může být skrytá řešení. Pokud je to tento případ, vyberte **možnosti** z **nástroje** nabídce pak vyberte **projekty a řešení** > **Obecné** v **možnosti** okna. Vyberte **vždy zobrazit řešení**. Kromě toho ověřte, že **uložit nové projekty při vytvoření** zaškrtnuto.
-
 
 3. Z **Průzkumníka řešení**, otevřete **IService1.cs** nebo **IService1.vb** souboru a jeho kódu nahraďte následujícím kódem:
 

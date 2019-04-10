@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView'
+title: 'Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - error handling [Windows Forms], data entry
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 30a68b85-d3af-4946-83c1-1e2d010d0511
-ms.openlocfilehash: a8eb4584060924684eacc99d46b88408451f1c82
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: dfd0753895a937ccef9a8bc14b2f692219eb7f06
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708233"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230470"
 ---
-# <a name="walkthrough-handling-errors-that-occur-during-data-entry-in-the-windows-forms-datagridview-control"></a>Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView
+# <a name="walkthrough-handling-errors-that-occur-during-data-entry-in-the-windows-forms-datagridview-control"></a>Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView
 Zpracování chyb z podkladové úložiště dat je požadované funkce pro zadávání dat aplikace. Windows Forms <xref:System.Windows.Forms.DataGridView> ovládací prvek umožňuje jednoduše zveřejněním <xref:System.Windows.Forms.DataGridView.DataError> událost, která se vyvolá, když zjistí úložiště dat porušení omezení nebo porušený obchodní pravidlo.  
   
  V tomto podrobném návodu, načte řádky z `Customers` tabulky v ukázkové databázi Northwind a jejich zobrazení <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Pokud duplicitní `CustomerID` zjištěna hodnota nový řádek nebo upravených existující řádek, <xref:System.Windows.Forms.DataGridView.DataError> dojde k události, která bude zpracována zobrazením <xref:System.Windows.Forms.MessageBox> , která popisuje výjimku.  
@@ -89,6 +89,7 @@ Zpracování chyb z podkladové úložiště dat je požadované funkce pro zad�
 -   Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
 - [Zadávání dat v ovládacím prvku Windows Forms DataGridView](data-entry-in-the-windows-forms-datagridview-control.md)

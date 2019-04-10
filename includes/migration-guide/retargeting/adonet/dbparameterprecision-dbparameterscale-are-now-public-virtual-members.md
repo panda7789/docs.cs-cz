@@ -1,11 +1,18 @@
+---
+ms.openlocfilehash: 1721d32f8cdc9b6ea4b4732e38afa56a8a532600
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234652"
+---
 ### <a name="dbparameterprecision-and-dbparameterscale-are-now-public-virtual-members"></a>DbParameter.Precision a DbParameter.Scale jsou teď virtuální veřejné členy
 
 |   |   |
 |---|---|
 |Podrobnosti|<xref:System.Data.Common.DbParameter.Precision> a <xref:System.Data.Common.DbParameter.Scale> jsou implementovány jako virtuální veřejné vlastnosti. Nahrazují odpovídající implementace explicitního rozhraní <xref:System.Data.Common.DbParameter.System%23Data%23IDbDataParameter%23Precision> a <xref:System.Data.Common.DbParameter.System%23Data%23IDbDataParameter%23Scale>.|
-|Návrh|Při opětovné sestavování databáze poskytovatele ADO.NET, bude vyžadovat tyto rozdíly – klíčové slovo 'override' má použít u vlastnosti hodnot Precision a Scale. To je jenom nutné, když znovu sestavení součástí; existující binární soubory budou nadále fungovat.|
+|Doporučení|Při opětovné sestavování databáze poskytovatele ADO.NET, bude vyžadovat tyto rozdíly – klíčové slovo 'override' má použít u vlastnosti hodnot Precision a Scale. To je jenom nutné, když znovu sestavení součástí; existující binární soubory budou nadále fungovat.|
 |Rozsah|Vedlejší|
 |Version|4.5.1|
-|Typ|Mění se cílení|
-|Ovlivněné rozhraní API|<ul><li><xref:System.Data.Common.DbParameter.Precision?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbParameter.Scale?displayProperty=nameWithType></li></ul>|
-
+|Type|Změna cílení|
+|Ovlivněná rozhraní API|<ul><li><xref:System.Data.Common.DbParameter.Precision?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbParameter.Scale?displayProperty=nameWithType></li></ul>|

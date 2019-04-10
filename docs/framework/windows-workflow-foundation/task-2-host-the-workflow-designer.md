@@ -1,15 +1,15 @@
 ---
-title: 'Úloha 2: Hostování návrháře postupu provádění'
+title: 'Úkol 2: Hostování Návrháře postupu provádění'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: e02134408b38e5c9aee9c59d86b1dfce032653d1
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 4129d53f73c590535dcbee576cea91e7ad3ff37f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708636"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59218703"
 ---
-# <a name="task-2-host-the-workflow-designer"></a>Úloha 2: Hostování návrháře postupu provádění
+# <a name="task-2-host-the-workflow-designer"></a>Úkol 2: Hostování Návrháře postupu provádění
 Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] v aplikaci Windows Presentation Foundation (WPF).  
   
  Postup konfiguruje **mřížky** ovládací prvek, který obsahuje Návrhář, prostřednictvím kódu programu vytvoří instanci <xref:System.Activities.Presentation.WorkflowDesigner> , který obsahuje výchozí <xref:System.Activities.Statements.Sequence> aktivity, zaregistruje metadata návrháře k poskytování Podpora návrhářů pro všechny vestavěné aktivity a hostitele [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] aplikace.  
@@ -122,6 +122,7 @@ Toto téma popisuje postup, pro který je hostitelem instance [!INCLUDE[wfd1](..
 10. Zobrazit [úloha 3: Vytvořit panel nástrojů a podokna PropertyGrid](task-3-create-the-toolbox-and-propertygrid-panes.md) Další informace o přidání **nástrojů** a **PropertyGrid** podporují do návrháře postupu provádění se změněným hostováním.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
-- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
-- [Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna](task-3-create-the-toolbox-and-propertygrid-panes.md)
+- [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností](task-3-create-the-toolbox-and-propertygrid-panes.md)

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: dbe96abebdc61fae469f7727673e6fcb93cbc739
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59236627"
+---
 ### <a name="no-longer-able-to-set-enableviewstatemac-to-false"></a>Už nebude moct EnableViewStateMac nastavena na hodnotu false
 
 |   |   |
@@ -6,5 +14,4 @@
 |Doporučení|EnableViewStateMac musí být předpokládá, že na hodnotu true, a všechny případné chyby MAC musí být vyřešeny (jak je vysvětleno v [tyto pokyny](https://support.microsoft.com/kb/2915218), která obsahuje řešení více rozlišení v závislosti na tom, jaké jsou specifikace co je příčinou chyb MAC).|
 |Rozsah|Hlavní|
 |Version|4.5.2|
-|Typ|Modul runtime|
-
+|Type|Modul runtime|

@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2dd97fcce13ed1ac7baf4cd02f5881d31d7a9c4b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235258"
+---
 ### <a name="xslt-forward-compat-now-works"></a>Dopředné kompatibility XSLT teď funguje.
 
 |   |   |
@@ -6,6 +14,5 @@
 |Doporučení|Většina aplikací by to neovlivní, ale data budou seřazeny jinak než v některých případech teď, když je dodržena XSL: sort. Pokud <code>xsl:sort</code> je používán 1.1 šablony stylů, potvrďte, že aplikace nebyla v závislosti na pořadí seřazená data. Pokud aplikace závisí na 4.0 chování řazení, odeberte <code>xsl:sort</code> ze šablony stylů.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Xml.Xsl.XslCompiledTransform?displayProperty=nameWithType></li></ul>|
-

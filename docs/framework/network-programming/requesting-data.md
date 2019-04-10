@@ -1,5 +1,5 @@
 ---
-title: Požadavek na Data
+title: Žádosti o data
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-ms.openlocfilehash: 8e469e5480bbec8a04dbf280d4698acd5b328d72
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4e93b9395e92ff4c1c153f53e0f40ff18c12416a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678483"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228507"
 ---
-# <a name="requesting-data"></a>Požadavek na Data
+# <a name="requesting-data"></a>Žádosti o data
 Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internet vyžaduje metodu efektivní a snadno použitelné pro načítání dat ze všech typů prostředků. Připojitelných protokolů umožňují vyvíjet aplikace, které používají jednotné rozhraní pro načtení dat z více protokolů sítě Internet.  
   
 ## <a name="uploading-and-downloading-data-from-an-internet-server"></a>Nahrávání a stahování dat z internetového serveru  
@@ -53,6 +53,7 @@ sr = New StreamReader(resp.GetResponseStream(), Encoding.ASCII)
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Postupy: Vyžádání webové stránky a načtení výsledků jako Stream](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)
-- [Postupy: Načíst WebResponse specifické pro protokol, který odpovídá položce WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)
+- [Postupy: Vyžádání webové stránky a načtení výsledků jako streamu](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)
+- [Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)

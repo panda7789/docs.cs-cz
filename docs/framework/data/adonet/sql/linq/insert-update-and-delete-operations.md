@@ -1,18 +1,18 @@
 ---
-title: INSERT, Update a operace odstranění
+title: Operace vložení, aktualizace a odstranění
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 26a43a4f-83c9-4732-806d-bb23aad0ff6b
-ms.openlocfilehash: 7dd2eb64a9320d88c7bc3b5feb6578d70f5910b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6a25ea5fe80da1fed16f44fd3243ebea4d64069f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503661"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230669"
 ---
-# <a name="insert-update-and-delete-operations"></a>INSERT, Update a operace odstranění
+# <a name="insert-update-and-delete-operations"></a>Operace vložení, aktualizace a odstranění
 Provedete `Insert`, `Update`, a `Delete` operace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přidáním, změně a odebrání objekty v objektovém modelu. Ve výchozím nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] přeloží své akce pro SQL a odeslání změn do databáze.  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nabízí maximální flexibilitu při manipulaci a při zachování změn, které jste provedli objekty. Jakmile objekty entity jsou k dispozici (buď načítat pomocí dotazu nebo tak, že je nový vytváří), můžete změnit jejich jako typický objekty ve vaší aplikaci. To znamená můžete změnit jejich hodnoty, můžete je přidat do kolekce a můžete ho odebrat z kolekce. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sleduje změny a je připravený k přenosu zpět do databáze při volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
@@ -33,5 +33,6 @@ Provedete `Insert`, `Update`, a `Delete` operace v [!INCLUDE[vbtecdlinq](../../.
 >  Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vývoji uložené procedury pro tento účel.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
 - [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)

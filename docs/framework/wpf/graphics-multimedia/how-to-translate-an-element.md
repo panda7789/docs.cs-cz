@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - graphics [WPF], translations
 ms.assetid: 461c8273-15df-42f6-8672-89ba22887cc0
-ms.openlocfilehash: 6ff606e495eb37e0e74150bb5ad20f11744b74ec
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 9c1b873a89820e85efb99789f483c4832fb23cf7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354905"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231185"
 ---
 # <a name="how-to-translate-an-element"></a>Postupy: Překlad elementu
 Tento příklad ukazuje způsob převodu (přesunout) elementu s použitím <xref:System.Windows.Media.TranslateTransform>.  
@@ -26,4 +26,5 @@ Tento příklad ukazuje způsob převodu (přesunout) elementu s použitím <xre
  Úplnou ukázku najdete v tématu [2D transformace ukázka](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled transformace](transforms-overview.md)

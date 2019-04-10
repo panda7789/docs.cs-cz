@@ -1,5 +1,5 @@
 ---
-title: Přístup k Internetu prostřednictvím proxy serveru
+title: Přístup k internetu přes proxy server
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - Internet, proxy instances
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
-ms.openlocfilehash: 0f58759b02fb650c090267e13ec5de65c2c63d19
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 14e5a7f47c1c1f2cbaf0457be34019454ff041f4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704456"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230561"
 ---
-# <a name="accessing-the-internet-through-a-proxy"></a>Přístup k Internetu prostřednictvím proxy serveru
+# <a name="accessing-the-internet-through-a-proxy"></a>Přístup k internetu přes proxy server
 Pokud váš web používá k zajištění přístupu k Internetu proxy server, musíte nakonfigurovat instanci proxy umožňují aplikaci komunikovat se serverem proxy webových.  
   
  Tento oddíl obsahuje následující témata:  
@@ -28,10 +28,11 @@ Pokud váš web používá k zajištění přístupu k Internetu proxy server, m
   
 -   [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
   
--   [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+-   [Postupy: Povolení žádosti WebRequest, aby se používal proxy server pro komunikaci s internetem](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
--   [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+-   [Postupy: Přepsání globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)
 - [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)

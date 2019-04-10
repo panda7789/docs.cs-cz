@@ -20,12 +20,12 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
-ms.openlocfilehash: 3fefbe9696ba7618dc811c6ac8f600bb6322dad5
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.openlocfilehash: b4621da21200e6c9e2b174a0e2ba508a4f6bab92
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58048058"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228195"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro zvláštní znaky. Toto téma popisuje některé specifické znakové entity a obecné informace pro další koncepty XML v XAML.  
@@ -46,7 +46,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
   
 |Znak|Entity|Poznámky|  
 |---------------|------------|-----------|  
-|& (ampersand)|\&amp;|Musíte použít u hodnot atributů a obsahu elementu.|  
+|& (znak)|\&amp;|Musíte použít u hodnot atributů a obsahu elementu.|  
 |> (větší-než znak)|\&gt;|Musí být použito pro hodnotu atributu, ale > je přijatelné za obsah elementu co nejdelší < nepředchází ho.|  
 |< (méně – než znak)|\&lt;|Musí být použito pro hodnotu atributu, ale \< je přijatelné za obsah elementu co nejdelší > ho neřídí.|  
 |"(dvojité uvozovky)|\&quot;|Musí být použito pro hodnotu atributu, ale dvojité uvozovky (") je přijatelná obsahu elementu. Všimněte si, že mohou být uzavřeny hodnoty atributů jednoduché uvozovky (') nebo dvojité uvozovky ("); libovolný znak jako první se objeví definuje skříň hodnotu atributu a alternativní nabídky je pak možné jako literál v rámci hodnoty.|  
@@ -63,7 +63,8 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
  XAML zpracovává pokyny pro zpracování XML podle specifikace XML, které stavu pokynů musí předává. XAML zpracování v rozhraní .NET Framework XAML Services nepoužívá žádné instrukce ke zpracování. Další stávajících architektur, které používají XAML nevyužívají pokyny pro zpracování z XAML.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)
 - [XamlName – gramatika](xamlname-grammar.md)
-- [Zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md)
+- [Zpracování prázdných znaků v jazyku XAML](whitespace-processing-in-xaml.md)

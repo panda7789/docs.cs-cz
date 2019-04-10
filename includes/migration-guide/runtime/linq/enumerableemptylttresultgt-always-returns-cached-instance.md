@@ -1,4 +1,12 @@
-### <a name="enumerableemptylttresultgt-always-returns-cached-instance"></a>Enumerable.Empty&lt;TResult&gt; vždy vrátí v mezipaměti instance
+---
+ms.openlocfilehash: c9efbefc2bce9e21f328680795e72b62bfcd5cbd
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59235262"
+---
+### <a name="enumerableemptytresult-always-returns-cached-instance"></a>Enumerable.Empty\<TResult > vždy vrátí v mezipaměti instance
 
 |   |   |
 |---|---|
@@ -6,6 +14,5 @@
 |Doporučení|Protože předchozí chování je Nedeterministický, kód je nepravděpodobné, že by na něm závisí. Ale v případě nepravděpodobné, že se porovnávají prázdný výčty a má být v některých případech nerovnost, by měl být vytvořen explicitní prázdná pole (<code>new T[0]</code>) namísto použití <xref:System.Linq.Enumerable.Empty%60%601>.|
 |Rozsah|Edge|
 |Version|4.5|
-|Typ|Modul runtime|
+|Type|Modul runtime|
 |Ovlivněná rozhraní API|<ul><li><xref:System.Linq.Enumerable.Empty%60%601?displayProperty=nameWithType></li></ul>|
-

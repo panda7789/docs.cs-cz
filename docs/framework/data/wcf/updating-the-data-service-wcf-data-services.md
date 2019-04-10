@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: ddc9e3ec1a07e52e366ff5c17d4dd2ce3a3192a0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5b8fa13bf5db7f3c3df97febe4bb6f9ee4c184a4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569164"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231289"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, knihovně přeloží položek v informačním kanálu do instancí tříd klientské datové služby. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entity, které sestavy pomocí metod na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožnění spolupráce klienta služby pro sledování přidané a odstraněné entit a také změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny odesílají zpět do datové služby jako operace založené na protokolu REST při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metody.  
@@ -94,6 +94,7 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
  Změny jsou sledovány v <xref:System.Data.Services.Client.DataServiceContext> instance však nebyla odeslána na server okamžitě. Po dokončení se požadované změny pro zadané aktivita volat <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> odeslat všechny provedené změny do datové služby. Další informace najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md). Můžete také uložit změny asynchronně pomocí <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> a <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A> metody. Další informace najdete v tématu [asynchronních operací](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
 - [Asynchronní operace](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)

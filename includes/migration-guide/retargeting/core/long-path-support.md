@@ -1,4 +1,12 @@
-### <a name="long-path-support"></a>Podpora dlouhé cesty
+---
+ms.openlocfilehash: 506218195417548880a9d8d10508a570a7769682
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59234942"
+---
+### <a name="long-path-support"></a>Podpora dlouhých cest
 
 |   |   |
 |---|---|
@@ -6,5 +14,4 @@
 |Doporučení|Pro aplikace, které cílí .NET Framework 4.6.2, můžete zrušit podporu dlouhé cesty Pokud není žádoucí, přidáním následujícího <code>&lt;runtime&gt;</code> část vaší <code>app.config</code> souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.BlockLongPaths=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>Pro aplikace, které cílí dřívějších verzích rozhraní .NET Framework ale spustit v rozhraní .NET Framework 4.6.2 nebo novější, můžete přejít na dlouhé cestě podporu přidáním následujícího kódu do <code>&lt;runtime&gt;</code> část vaší <code>app.config</code> souboru:<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.IO.BlockLongPaths=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
-|Typ|Změna cílení|
-
+|Type|Změna cílení|

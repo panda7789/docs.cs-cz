@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2e870b8d7b8ed986863632f947223946a6604f89
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 63101fb127c84de21d165994bba85a2753e97344
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58761450"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59236590"
 ---
 ### <a name="resizing-a-grid-can-hang"></a>Změna velikosti mřížky může přestat reagovat
 
@@ -15,4 +15,3 @@ ms.locfileid: "58761450"
 |Rozsah|Edge|
 |Version|4.7|
 |Type|Modul runtime|
-

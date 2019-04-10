@@ -5,12 +5,12 @@ helpviewer_keywords:
 - MenuStrip [Windows Forms], merging
 - merging [Windows Forms], general concepts
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
-ms.openlocfilehash: 292c299bd15cd62eabd9a13db1abab1ed07fe57e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: dbe1c0325499e7b925d504fc80f9034f9e387475
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722345"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59231562"
 ---
 # <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a>Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip
 Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položky nabídky nebo celý nabídek z podřízeného formuláře do nabídky nadřazeného formuláře.  
@@ -54,6 +54,7 @@ Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položk
  Můžete aktivovat pomocí aktivace automatického sloučení <xref:System.Windows.Forms.MenuStrip> ve zdroji MDI. Po aktivaci, zdroj <xref:System.Windows.Forms.MenuStrip> se sloučí do cílové MDI. Po aktivaci nového formuláře, sloučení je vrátit zpět na poslední formulář a aktivovat na nový formulář. Toto chování můžete ovládat nastavením <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> vlastnosti podle potřeby v každém <xref:System.Windows.Forms.ToolStripItem>a tím, že nastavíte <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> vlastnost na každém <xref:System.Windows.Forms.MenuStrip>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.ToolStripManager>
 - <xref:System.Windows.Forms.MenuStrip>
 - [Ovládací prvek MenuStrip](menustrip-control-windows-forms.md)

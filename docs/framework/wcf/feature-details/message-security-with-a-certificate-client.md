@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 8c8a9dc17af5809ce1e3b97304535361c2cc5e58
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 1393879c58609c501da5b2d413073328bee6d05d
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465708"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227702"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
@@ -18,8 +18,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
  ![Snímek obrazovky zobrazující klienta pomocí certifikátu.](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
   
  Ukázková aplikace, najdete v části [certifikát zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-certificate.md).  
-  
-  
+
 |Vlastnost|Popis|  
 |--------------------|-----------------|  
 |Režim zabezpečení|Zpráva|  
@@ -145,6 +144,7 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
 - [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

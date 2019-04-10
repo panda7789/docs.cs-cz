@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Nastavení oznámení pro aktualizace připojení'
+title: 'Postupy: Nastavení oznámení pro aktualizace vazeb'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - notifications [WPF], binding updates
 - data binding [WPF], notification of binding updates
 - binding [WPF], updates [WPF], notifications of
 ms.assetid: 5673073e-dbe1-49da-980a-484a88f9595a
-ms.openlocfilehash: 0a28e6fc31601e881cf972f586f75ba0b1526b45
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 4185198312ed98f9aaa1388626600d9f21abae55
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357960"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59213959"
 ---
-# <a name="how-to-set-up-notification-of-binding-updates"></a>Postupy: Nastavení oznámení pro aktualizace připojení
+# <a name="how-to-set-up-notification-of-binding-updates"></a>Postupy: Nastavení oznámení pro aktualizace vazeb
 Tento příklad ukazuje, jak nastavit upozornění, až se aktualizovala cíl vazby (cíl) nebo vlastnost source (zdroj) vazby vazby.  
   
 ## <a name="example"></a>Příklad  
@@ -33,5 +33,6 @@ Tento příklad ukazuje, jak nastavit upozornění, až se aktualizovala cíl va
  Parametry události je možné zjistit podrobné informace o vlastnosti, která se změnila (jako je například typ nebo konkrétní elementu, jestliže stejnou obslužnou rutinu je připojen k více než jeden prvek), což může být užitečné, pokud více vázané vlastnosti na jeden element.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled datových vazeb](data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [– postupy](data-binding-how-to-topics.md)

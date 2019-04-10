@@ -1,5 +1,5 @@
 ---
-title: Element <providerOption>
+title: <providerOption> Prvek
 ms.date: 03/30/2017
 f1_keywords:
 - provideroption
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: bb29ba8721c3aa13fad4410208b1276bdfa761c1
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.openlocfilehash: 9c69ea7bf95b311a796ec29d90410a77b748c3c6
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55675267"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59229781"
 ---
 # <a name="provideroption-element"></a>\<provideroption – > – Element
 Určuje atributy verze kompilátoru poskytovatele jazyka.  
@@ -90,6 +90,7 @@ Určuje atributy verze kompilátoru poskytovatele jazyka.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

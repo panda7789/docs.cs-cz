@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: a68a291b1974e86c9a4f16f9d90a879649076533
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 45f4185df1c55ff40fce3e33fe5e0e497fa54654
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595133"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228252"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení, rozhraní zprostředkovatele podpory zabezpečení (SSPI) zpracovává procesy zabezpečení. Když dojde k chybě zabezpečení ve vrstvě rozhraní SSPI, zobrazují se ve Windows Communication Foundation (WCF). Toto téma obsahuje rozhraní framework a sadu otázky, které vám umožní diagnostikovat chyby.  
@@ -145,6 +145,7 @@ Pokud používáte ověřování Windows jako vhodný mechanismus zabezpečení,
  Pokud nasazení na jiném vývoj vaší aplikace na jednom počítači a použít různé typy účtu k ověření na každém počítači, můžete se setkat různé chování. Předpokládejme například, že při vývoji vaší aplikace na Windows XP Pro počítač používá `SSPI Negotiated` režim ověřování. Pokud používáte místní uživatelský účet k ověření, se používá protokol NTLM. Jakmile je aplikace, můžete nasadit službu pro počítače s Windows serverem 2003 tam, kde běží pod účtem domény. V tomto okamžiku klienta nebude možné ověření služby, protože se používá, pomocí protokolů Kerberos a řadičem domény.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>
 - <xref:System.ServiceModel.Security.WindowsClientCredential>

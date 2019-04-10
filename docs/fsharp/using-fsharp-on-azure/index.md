@@ -3,12 +3,12 @@ title: Použití jazyka F# v Azure
 description: Příručka k používání služeb Azure sF#
 author: sylvanc
 ms.date: 09/22/2016
-ms.openlocfilehash: 8243c021b8bc3ea9b067b278a5d9c6e3619232b7
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 92b453b680a5f8c55f35458e9020f15444e90035
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371036"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211735"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
@@ -24,7 +24,6 @@ V následujících částech najdete prostředky, jak používat škálu služeb
 Azure podporuje širokou škálu konfigurací virtuálních počítačů (VM) naleznete v tématu [virtuální počítače Azure s Linuxem a](https://azure.microsoft.com/services/virtual-machines/).
 
 K instalaci F# na virtuálním počítači pro spuštění, kompilace a/nebo skriptování viz [použití F# v Linuxu](https://fsharp.org/use/linux) a [použití F# na Windows](https://fsharp.org/use/windows).
-
 
 ## <a name="using-azure-functions-with-f"></a>Pomocí Azure Functions s F\#
 
@@ -42,10 +41,10 @@ Další materiály týkající se používání Azure Functions a F#:
 
 Azure Storage je základní vrstvě služby úložiště pro moderní aplikace, které spoléhají na odolnost, dostupnost a škálovatelnost podle potřeb zákazníků. F#programy můžou pracovat přímo s služby Azure storage, pomocí technik popsaných v následujících článcích.
 
-* [Začínáme s Azure Blob Storage s využitím F#](blob-storage.md)
-* [Začínáme s Azure File Storage s využitím F#](file-storage.md)
-* [Začínáme s Azure Queue Storage s využitím F#](queue-storage.md)
-* [Začínáme s Azure Table Storage s využitím F#](table-storage.md)
+* [Začínáme s využitím úložiště objektů Blob v AzureF#](blob-storage.md)
+* [Začínáme s Azure File storage pomocíF#](file-storage.md)
+* [Začínáme s Azure Queue storage pomocíF#](queue-storage.md)
+* [Začínáme s Azure Table storage pomocíF#](table-storage.md)
 
 Úložiště Azure je také možné ve spojení s využitím Azure Functions prostřednictvím deklarativních místo explicitního volání rozhraní API. Zobrazit [aktivační události Azure Functions a vazby pro službu Azure Storage](/azure/azure-functions/functions-bindings-storage) obsahující F# příklady.
 
@@ -89,7 +88,6 @@ Azure Notification Hubs je možné s F# dvěma způsoby:
 
 1. Prostřednictvím vytváření sad F# Azure Functions, která odeslat výsledky do centra oznámení. Zobrazit [funkce Azure Functions výstup aktivační události pro Notification Hubs](/azure/azure-functions/functions-bindings-notification-hubs), nebo
 2. S použitím [sady .NET SDK pro Azure](https://blogs.msdn.microsoft.com/azuremobile/2014/04/08/push-notifications-using-notification-hub-and-net-backend/). Všimněte si, že tyto příklady jsou v jazyce C#.
-
 
 ## <a name="implementing-webhooks-on-azure-with-f"></a>Implementace Webhooky v Azure s využitím F\#
 
