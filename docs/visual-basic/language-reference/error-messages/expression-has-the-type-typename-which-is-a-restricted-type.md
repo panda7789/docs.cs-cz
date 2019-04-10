@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC31393
 ms.assetid: 2963cf3f-c527-4aa7-b67c-ee80b6d23186
-ms.openlocfilehash: 6d2edadc323994f7f25394321fb1aff18f7154c5
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 017a2458562068727674bd3fd9cda8c33d989e8b
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58824270"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314617"
 ---
 # <a name="expression-has-the-type-typename-which-is-a-restricted-type-and-cannot-be-used-to-access-members-inherited-from-object-or-valuetype"></a>Výraz má typ "\<typename >' který je omezený typ a nelze použít pro přístup ke členům zděděným z 'Object' nebo 'ValueType'
 Výraz je vyhodnocen jako typ, který nemůže být pevně určený modulem common language runtime (CLR), ale zpřístupňuje člen, který vyžaduje přetypování pomocí boxingu.  
@@ -25,11 +25,11 @@ Výraz je vyhodnocen jako typ, který nemůže být pevně určený modulem comm
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Vyhledejte výraz, který se vyhodnotí zmiňovanou typu.  
+1. Vyhledejte výraz, který se vyhodnotí zmiňovanou typu.  
   
-2.  Vyhledejte část, které se pokusí o volání metody zděděné z <xref:System.Object> nebo <xref:System.ValueType>.  
+2. Vyhledejte část, které se pokusí o volání metody zděděné z <xref:System.Object> nebo <xref:System.ValueType>.  
   
-3.  Přepište příkaz tak, aby se zabránilo volání metody.  
+3. Přepište příkaz tak, aby se zabránilo volání metody.  
   
 ## <a name="see-also"></a>Viz také:
 

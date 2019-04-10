@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09a24d33a4516a2d4bbf5add8596ee49e2a62beb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5cbda9c160b99bf5648c670a67d39b245f031645
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59154879"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319869"
 ---
 # <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro identifikaci sestavení. Je digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat předávaných od příkazce (podepisující) příjemci (ověřovatel). Tento podpis slouží jako jedinečná identita pro sestavení a zajistí, že odkazy na sestavení nejsou nejednoznačné. Sestavení je podepsáno jako součást procesu sestavení a poté ověřeno, pokud je načten.  
@@ -41,25 +41,25 @@ Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro id
 ### <a name="signing-with-sha-2-without-key-migration"></a>Přihlášení pomocí SHA-2 bez migrace klíče  
  Spusťte následující příkazy z okna příkazového řádku a podepište tak sestavení bez přenášeného podpisu se silným názvem:  
   
-1.  Generovat nový klíč identity (v případě potřeby).  
+1. Generovat nový klíč identity (v případě potřeby).  
   
     ```  
     sn -k IdentityKey.snk  
     ```  
   
-2.  Extrahujte veřejný klíč identity a určí, že algoritmus SHA-2 má být použit při přihlašování k tomuto klíči.  
+2. Extrahujte veřejný klíč identity a určí, že algoritmus SHA-2 má být použit při přihlašování k tomuto klíči.  
   
     ```  
     sn -p IdentityKey.snk IdentityPubKey.snk sha256  
     ```  
   
-3.  Vytvoří zpožděný podpis sestavení se souborem identity veřejného klíče.  
+3. Vytvoří zpožděný podpis sestavení se souborem identity veřejného klíče.  
   
     ```  
     csc MyAssembly.cs /keyfile:IdentityPubKey.snk /delaySign+  
     ```  
   
-4.  Znovu podepište sestavení pomocí dvojice klíčů plnou identitou.  
+4. Znovu podepište sestavení pomocí dvojice klíčů plnou identitou.  
   
     ```  
     sn -Ra MyAssembly.exe IdentityKey.snk  
@@ -68,26 +68,26 @@ Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro id
 ### <a name="signing-with-sha-2-with-key-migration"></a>Přihlášení pomocí SHA-2 s migrací klíče  
  Spusťte následující příkazy z okna příkazového řádku a podepište tak sestavení s podpisem migrované silného názvu.  
   
-1.  Generování identitu a dvojici podpisových klíčů (v případě potřeby).  
+1. Generování identitu a dvojici podpisových klíčů (v případě potřeby).  
   
     ```  
     sn -k IdentityKey.snk  
     sn -k SignatureKey.snk  
     ```  
   
-2.  Extrahujte veřejný podpisový klíč a určí, že algoritmus SHA-2 má být použit při přihlašování k tomuto klíči.  
+2. Extrahujte veřejný podpisový klíč a určí, že algoritmus SHA-2 má být použit při přihlašování k tomuto klíči.  
   
     ```  
     sn -p SignatureKey.snk SignaturePubKey.snk sha256  
     ```  
   
-3.  Extrahujte veřejný klíč identity, která určuje algoritmus hash, který generuje podpis čítače.  
+3. Extrahujte veřejný klíč identity, která určuje algoritmus hash, který generuje podpis čítače.  
   
     ```  
     sn -p IdentityKey.snk IdentityPubKey.snk  
     ```  
   
-4.  Parametry pro generování <xref:System.Reflection.AssemblySignatureKeyAttribute> atributu a připojení atributu k sestavení.  
+4. Parametry pro generování <xref:System.Reflection.AssemblySignatureKeyAttribute> atributu a připojení atributu k sestavení.  
   
     ```  
     sn -a IdentityPubKey.snk IdentityKey.snk SignaturePubKey.snk  
@@ -121,13 +121,13 @@ Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro id
     )]
     ```
   
-5.  Vytvoří zpožděný podpis sestavení s veřejným klíčem identity.  
+5. Vytvoří zpožděný podpis sestavení s veřejným klíčem identity.  
   
     ```  
     csc MyAssembly.cs /keyfile:IdentityPubKey.snk /delaySign+  
     ```  
   
-6.  Plně podepište sestavení pomocí dvojice podpisových klíčů.  
+6. Plně podepište sestavení pomocí dvojice podpisových klíčů.  
   
     ```  
     sn -Ra MyAssembly.exe SignatureKey.snk  

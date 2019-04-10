@@ -2,12 +2,12 @@
 title: 'Postupy: Použití monikeru služby u kontraktů Metadata Exchange'
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: e1d6c6516294d7df7f8c89a3aaddcf2ac3ba0e2a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 367cbd4a2bfbde3d4ab0a74eeeaf5d5f5662ec27
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59082695"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319830"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: Použití monikeru služby u kontraktů Metadata Exchange
 Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možnost volat tyto služby ze skriptu nebo aplikace v jazyce Visual Basic 6.0. Jednu metodu bude generovat sestavení klienta WCF, zaregistrovat sestavení s modelem COM, instalaci sestavení v GAC a pak odkazování na typy modelu COM z kódu jazyka Visual Basic. Pokud distribuujete aplikaci, budete muset distribuovat na klienta WCF sestavení. Uživatel pak muset zaregistrovat sestavení klienta WCF s modelem COM a jeho následné uložení do mezipaměti GAC. Komunikace s objekty COM WCF také umožňuje provádět stejné volání služby bez nutnosti spoléhat se na sestavení klienta WCF. Monikeru služby WCF umožňuje volat libovolnou službu WCF z jakéhokoli jazyka kompatibilního s modelu COM (Visual Basic, VBScript, Visual Basic for Applications (VBA) a tak dále) tak, že zadáte identifikátor URI, který používá monikeru služby k extrakci typů exchange (Mex) koncových bodů metadat informace o službě. Toto téma popisuje, jak volat získávání WCF spuštění ukázky použití monikeru služby WCF, který určuje koncový bod Mex.  
@@ -17,9 +17,9 @@ Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možno
   
 ### <a name="using-the-service-moniker-with-a-mex-address"></a>Použití monikeru služby u adresa MEX.  
   
-1.  Ukázka Začínáme vytvářet a používat prohlížeč Internet Explorer a přejděte na její adresu URL (http://localhost/ServiceModelSamples/Service.svc) zajistit, služba funguje.  
+1. Ukázka Začínáme vytvářet a používat prohlížeč Internet Explorer a přejděte na její adresu URL (http://localhost/ServiceModelSamples/Service.svc) zajistit, služba funguje.  
   
-2.  Vytvořte skript jazyka Visual Basic nebo Visual Basic aplikací, který obsahuje následující kód:  
+2. Vytvořte skript jazyka Visual Basic nebo Visual Basic aplikací, který obsahuje následující kód:  
   
     ```  
     monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
@@ -31,7 +31,7 @@ Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možno
     MsgBox calc.Add(3, 4)  
     ```  
   
-3.  Spuštění aplikace Visual Basic nebo skriptu.  
+3. Spuštění aplikace Visual Basic nebo skriptu.  
   
     > [!NOTE]
     >  Na službu, kterou voláte musí vystavit koncový bod Mex pro moniker bude moct číst metadata ze služby. Další informace najdete v tématu [jak: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  

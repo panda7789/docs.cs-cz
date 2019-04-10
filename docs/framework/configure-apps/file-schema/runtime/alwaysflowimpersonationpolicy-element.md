@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: ee622801-9e46-470b-85ab-88c4b1dd2ee1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ce1928254699f4de41e92087c76be9bc3c249523
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ec411039363cfb118fee06dff88daf50bbc97a86
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59108040"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314773"
 ---
 # <a name="alwaysflowimpersonationpolicy-element"></a>\<alwaysFlowImpersonationPolicy> Element
 Určuje, že identita Windows vždy toky přes asynchronní body, bez ohledu na to, jak se provádí zosobnění.  
@@ -42,7 +42,7 @@ Určuje, že identita Windows vždy toky přes asynchronní body, bez ohledu na 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Windows identity není téct přes asynchronní body, pokud se pomocí provádí zosobnění spravovaného metody, například <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>. Toto nastavení je výchozí.|  
 |`true`|Identita Windows vždy toky přes asynchronní body, bez ohledu na to, jak se provádí zosobnění.|  
@@ -62,11 +62,11 @@ Určuje, že identita Windows vždy toky přes asynchronní body, bez ohledu na 
   
  Je-li změnit toto výchozí chování dvěma dalšími způsoby:  
   
-1.  Ve spravovaném kódu na základě vlákno.  
+1. Ve spravovaném kódu na základě vlákno.  
   
      Tok na základě vlákna můžete potlačit pomocí úpravy <xref:System.Threading.ExecutionContext> a <xref:System.Security.SecurityContext> nastavení pomocí <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType>, nebo <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> metody.  
   
-2.  Ve volání nespravovaných hostitelských rozhraní načíst modul CLR (CLR).  
+2. Ve volání nespravovaných hostitelských rozhraní načíst modul CLR (CLR).  
   
      Pokud nespravovaných hostitelských rozhraní (místo jednoduchých spustitelný soubor spravovaný) slouží k načtení modulu CLR, můžete zadat speciální příznak ve volání [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) funkce. Chcete-li povolit režim kompatibility pro celý proces, nastavte `flags` parametr pro [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) k `STARTUP_ALWAYSFLOW_IMPERSONATION`.  
   

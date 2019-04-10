@@ -5,12 +5,12 @@ helpviewer_keywords:
 - metadata [WPF], framework properties
 - framework property metadata [WPF]
 ms.assetid: 9962f380-b885-4b61-a62e-457397083fea
-ms.openlocfilehash: b6bacf6f0c27b123d36f17510d84e5ef5e2cf122
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 2a20e5a2bdbcbb36f6f06bbbadb2a46743ca5eba
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59108703"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314695"
 ---
 # <a name="framework-property-metadata"></a>Metadata vlastnosti rozhraní .NET Framework
 Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považuje za na rozhraní WPF v úrovni elementů objektu [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] architektury. Obecně znamená označení úrovni rozhraní WPF této funkce, jako je vykreslování, datové vazby, a vlastnost systému upřesnění jsou zpracovávány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] a spustitelné soubory. Metadata vlastnosti architektury je dotazován tyto systémy určit vlastnosti specifické pro funkce vlastností konkrétní elementu.  
@@ -48,9 +48,9 @@ Možnosti metadata vlastnosti architektury jsou hlášeny pro vlastnosti považu
   
  Pokud vytváříte <xref:System.Windows.FrameworkPropertyMetadata> instance, existují dva způsoby, jak naplnit těchto metadat se hodnoty konkrétní vlastnosti, které komunikují charakteristiky vlastnost framework:  
   
-1.  Použití <xref:System.Windows.FrameworkPropertyMetadata> podpis konstruktoru, který umožňuje `flags` parametru. Tento parametr by měl být vyplněny všechna požadovaná kombinované hodnoty <xref:System.Windows.FrameworkPropertyMetadataOptions> výčet příznaků.  
+1. Použití <xref:System.Windows.FrameworkPropertyMetadata> podpis konstruktoru, který umožňuje `flags` parametru. Tento parametr by měl být vyplněny všechna požadovaná kombinované hodnoty <xref:System.Windows.FrameworkPropertyMetadataOptions> výčet příznaků.  
   
-2.  Použijte jednu z podpisy bez `flags` parametr a nastavte vlastnost typu Boolean vyvářet <xref:System.Windows.FrameworkPropertyMetadata> k `true` pro každé požadované charakteristické změnit. Pokud to uděláte, musíte nastavit tyto vlastnosti předtím, než jsou vytvořeny všechny prvky s touto vlastností závislostí; čtení a zápis, aby bylo možné povolit toto chování vyhnout jsou logické vlastnosti `flags` parametr a stále vyplnit metadata, ale metadata musí být efektivně zapečetěné před použitím vlastnosti. Díky tomu se pokus o nastavení vlastnosti po metadata požadovala bude neplatná operace.  
+2. Použijte jednu z podpisy bez `flags` parametr a nastavte vlastnost typu Boolean vyvářet <xref:System.Windows.FrameworkPropertyMetadata> k `true` pro každé požadované charakteristické změnit. Pokud to uděláte, musíte nastavit tyto vlastnosti předtím, než jsou vytvořeny všechny prvky s touto vlastností závislostí; čtení a zápis, aby bylo možné povolit toto chování vyhnout jsou logické vlastnosti `flags` parametr a stále vyplnit metadata, ale metadata musí být efektivně zapečetěné před použitím vlastnosti. Díky tomu se pokus o nastavení vlastnosti po metadata požadovala bude neplatná operace.  
   
 <a name="Framework_Property_Metadata_Merge_Behavior"></a>   
 ## <a name="framework-property-metadata-merge-behavior"></a>Chování sloučení Metadata vlastností rozhraní Framework  

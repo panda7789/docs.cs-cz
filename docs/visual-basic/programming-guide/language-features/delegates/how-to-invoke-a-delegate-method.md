@@ -2,25 +2,25 @@
 title: 'Postupy: Volání metody delegáta (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: 42d56fca7e1d33c071db2e7e38935aa00caa5b7d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ac3e32010e7c20ba76e39915d694b11ab3a65d40
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676208"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59319609"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
 Tento příklad ukazuje, jak přidružit metodu delegáta a poté vyvolat tuto metodu prostřednictvím delegáta.  
   
 ### <a name="create-the-delegate-and-matching-procedures"></a>Vytvoření delegáta a odpovídající procedur  
   
-1.  Vytvoření delegáta s názvem `MySubDelegate`.  
+1. Vytvoření delegáta s názvem `MySubDelegate`.  
   
     ```  
     Delegate Sub MySubDelegate(ByVal x As Integer)  
     ```  
   
-2.  Deklarujte třídu, která obsahuje metodu s stejný podpis jako delegát.  
+2. Deklarujte třídu, která obsahuje metodu s stejný podpis jako delegát.  
   
     ```  
     Class class1  
@@ -30,7 +30,7 @@ Tento příklad ukazuje, jak přidružit metodu delegáta a poté vyvolat tuto m
     End Class  
     ```  
   
-3.  Definujte metodu, která vytvoří instanci delegáta a vyvolá metodu spojenou s delegátem voláním předdefinované `Invoke` metody.  
+3. Definujte metodu, která vytvoří instanci delegáta a vyvolá metodu spojenou s delegátem voláním předdefinované `Invoke` metody.  
   
     ```  
     Protected Sub DelegateTest()  
@@ -44,7 +44,7 @@ Tento příklad ukazuje, jak přidružit metodu delegáta a poté vyvolat tuto m
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegate – příkaz](../../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
 - [Vícevláknové aplikace](../../../../standard/threading/using-threads-and-threading.md)

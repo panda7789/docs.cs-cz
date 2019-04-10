@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b90c8fc25b0d33d084fbfd4979088e568c0618df
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2559ae686820b1972e457b013565aeb28842392e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698388"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314452"
 ---
 # <a name="how-to-use-data-protection"></a>Postupy: Použití ochrany dat
 Rozhraní .NET Framework poskytuje přístup k data protection API (DPAPI), který umožňuje šifrování dat s využitím informací z aktuálního uživatelského účtu nebo počítači.  Pokud použijete rozhraní DPAPI, zmírnění náročný problém explicitně vygenerováním a uložením kryptografický klíč.  
@@ -34,25 +34,25 @@ Rozhraní .NET Framework poskytuje přístup k data protection API (DPAPI), kter
   
 ### <a name="to-encrypt-in-memory-data-using-data-protection"></a>K šifrování dat v paměti s použitím ochrany dat  
   
-1.  Zavolejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Protect%2A> metoda při předávání pole bajtů, které mají šifrovat, entropie a ochranu rozsahu paměti.  
+1. Zavolejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Protect%2A> metoda při předávání pole bajtů, které mají šifrovat, entropie a ochranu rozsahu paměti.  
   
 ### <a name="to-decrypt-in-memory-data-using-data-protection"></a>K dešifrování dat v paměti s použitím ochrany dat  
   
-1.  Zavolejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Unprotect%2A> metoda při předávání pole bajtů k dešifrování a ochranu rozsahu paměti.  
+1. Zavolejte statickou <xref:System.Security.Cryptography.ProtectedMemory.Unprotect%2A> metoda při předávání pole bajtů k dešifrování a ochranu rozsahu paměti.  
   
 ### <a name="to-encrypt-data-to-a-file-or-stream-using-data-protection"></a>Šifrování dat do souboru nebo datového proudu s použitím ochrany dat  
   
-1.  Vytvořte náhodný entropie.  
+1. Vytvořte náhodný entropie.  
   
-2.  Zavolejte statickou <xref:System.Security.Cryptography.ProtectedData.Protect%2A> metoda při předávání pole bajtů, které mají šifrovat, entropie a rozsah dat ochrany.  
+2. Zavolejte statickou <xref:System.Security.Cryptography.ProtectedData.Protect%2A> metoda při předávání pole bajtů, které mají šifrovat, entropie a rozsah dat ochrany.  
   
-3.  Šifrovaná data zapište do souboru nebo datového proudu.  
+3. Šifrovaná data zapište do souboru nebo datového proudu.  
   
 ### <a name="to-decrypt-data-from-a-file-or-stream-using-data-protection"></a>Dešifrování dat ze souboru nebo datového proudu s použitím ochrany dat  
   
-1.  Přečtěte si šifrovaná data ze souboru nebo datového proudu.  
+1. Přečtěte si šifrovaná data ze souboru nebo datového proudu.  
   
-2.  Zavolejte statickou <xref:System.Security.Cryptography.ProtectedData.Unprotect%2A> metoda při předávání pole bajtů k dešifrování a rozsahu dat ochrany.  
+2. Zavolejte statickou <xref:System.Security.Cryptography.ProtectedData.Unprotect%2A> metoda při předávání pole bajtů k dešifrování a rozsahu dat ochrany.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje dvě formy šifrování a dešifrování.  Příklad kódu nejprve šifruje a poté dešifruje v paměti pole bajtů.  V dalším kroku příklad kódu šifruje kopii bajtové pole, uloží ho do souboru, načte data zpět ze souboru a pak dešifruje data.  V příkladu se zobrazí původní data, šifrovaná data a dešifrovaná data.  

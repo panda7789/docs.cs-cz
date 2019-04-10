@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zobrazení milisekund v hodnotách data a času'
+title: 'Postupy: Zobrazení milisekund v hodnotách data a času'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,21 +14,21 @@ helpviewer_keywords:
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3678c687817c4c93508d95c3d4b7453eadee32e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3950b7a8cf107fc06240f56e5f95eca4e6882251
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59314929"
 ---
-# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Postupy: Zobrazení milisekund v hodnotách data a času
+# <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Postupy: Zobrazení milisekund v hodnotách data a času
 Výchozí metody pro formátování hodnot data a času, jako například <xref:System.DateTime.ToString?displayProperty=nameWithType>, zahrnují hodiny, minuty a sekundy příslušné časové hodnoty, ale neobsahují komponentu milisekund. Toto téma popisuje způsob začlenění komponenty milisekund do příslušné hodnoty data a času ve formátovaných řetězcích data a času.  
   
 ### <a name="to-display-the-millisecond-component-of-a-datetime-value"></a>Zobrazení komponenty milisekund hodnoty DateTime  
   
-1.  Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%28System.String%29?displayProperty=nameWithType>.  
+1. Při práci s řetězcovou reprezentací data je třeba ji převést na hodnotu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> pomocí statické metody <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.Parse%28System.String%29?displayProperty=nameWithType>.  
   
-2.  Chcete-li extrahovat řetězcovou reprezentaci komponenty milisekund, zavolejte metodu hodnot data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%2A> a předejte vzor vlastního formátu `fff` nebo `FFF` buď samostatně, nebo s dalšími specifikátory vlastního formátu jako parametr `format`.  
+2. Chcete-li extrahovat řetězcovou reprezentaci komponenty milisekund, zavolejte metodu hodnot data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%2A> a předejte vzor vlastního formátu `fff` nebo `FFF` buď samostatně, nebo s dalšími specifikátory vlastního formátu jako parametr `format`.  
   
 ## <a name="example"></a>Příklad  
  Příklad zobrazí komponentu milisekund hodnot <xref:System.DateTime> a <xref:System.DateTimeOffset> do konzoly samostatně i jako součást delšího řetězce data a času.  
