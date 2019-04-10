@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: zobrazení chyb ověřování na opětovné hostování nástroje návrháře'
+title: 'Postupy: Zobrazení chyb ověřování v návrháři se změněným hostováním'
 ms.date: 03/30/2017
 ms.assetid: 5aa8fb53-8f75-433b-bc06-7c7d33583d5d
-ms.openlocfilehash: 8f70b190042d167741bbadc4e1645756fe5b830d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3d993f55bf130039905f1a6512a7ae104512432
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33512564"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310197"
 ---
-# <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a><span data-ttu-id="39ff2-102">Postupy: zobrazení chyb ověřování na opětovné hostování nástroje návrháře</span><span class="sxs-lookup"><span data-stu-id="39ff2-102">How to: Display Validation Errors in a Rehosted Designer</span></span>
-<span data-ttu-id="39ff2-103">Toto téma popisuje, jak načíst a publikování chyby ověření v opětovné hostování nástroje [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="39ff2-103">This topic describes how to retrieve and publish validation errors in a rehosted [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].</span></span> <span data-ttu-id="39ff2-104">To poskytuje nám postupu potvrďte, že pracovní postup opětovné hostování nástroje Designer je platný.</span><span class="sxs-lookup"><span data-stu-id="39ff2-104">This provides us with a procedure to confirm that a workflow in a rehosted designer is valid.</span></span>  
+# <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a><span data-ttu-id="610dc-102">Postupy: Zobrazení chyb ověřování v návrháři se změněným hostováním</span><span class="sxs-lookup"><span data-stu-id="610dc-102">How to: Display Validation Errors in a Rehosted Designer</span></span>
+<span data-ttu-id="610dc-103">Toto téma popisuje, jak načíst a publikovat chyby ověření provádění se změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="610dc-103">This topic describes how to retrieve and publish validation errors in a rehosted [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].</span></span> <span data-ttu-id="610dc-104">To nám poskytuje s postupem, abyste se ujistili, že pracovního postupu v návrháři se změněným hostováním platný.</span><span class="sxs-lookup"><span data-stu-id="610dc-104">This provides us with a procedure to confirm that a workflow in a rehosted designer is valid.</span></span>  
   
- <span data-ttu-id="39ff2-105">Tento úkol má dvě části.</span><span class="sxs-lookup"><span data-stu-id="39ff2-105">This task has two parts.</span></span> <span data-ttu-id="39ff2-106">Prvním je poskytnout implementaci <xref:System.Activities.Presentation.Validation.IValidationErrorService>.</span><span class="sxs-lookup"><span data-stu-id="39ff2-106">The first is to provide an implementation <xref:System.Activities.Presentation.Validation.IValidationErrorService>.</span></span>  <span data-ttu-id="39ff2-107">Neexistuje jeden kritické metody k implementaci na tomto rozhraní <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> kterého bude předat seznam <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objekty, které obsahují informace o chybách protokolu pro ladění.</span><span class="sxs-lookup"><span data-stu-id="39ff2-107">There is one critical method to implement on this interface, <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> which will pass you a list of <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objects containing information about the errors to the debug log.</span></span>  <span data-ttu-id="39ff2-108">Po implementaci rozhraní, můžete načíst informace o chybě tak, že publikování instance této implementace úpravy v kontextu.</span><span class="sxs-lookup"><span data-stu-id="39ff2-108">After implementing the interface, you retrieve the error information by publishing an instance of that implementation to the editing context.</span></span>  
+ <span data-ttu-id="610dc-105">Tento úkol má dvě části.</span><span class="sxs-lookup"><span data-stu-id="610dc-105">This task has two parts.</span></span> <span data-ttu-id="610dc-106">První je k dispozici implementace <xref:System.Activities.Presentation.Validation.IValidationErrorService>.</span><span class="sxs-lookup"><span data-stu-id="610dc-106">The first is to provide an implementation <xref:System.Activities.Presentation.Validation.IValidationErrorService>.</span></span>  <span data-ttu-id="610dc-107">Existuje jedna kritické metody k implementaci tohoto rozhraní <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> který bude předávat seznam <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objekty, které obsahují informace o chybách v protokolu ladění.</span><span class="sxs-lookup"><span data-stu-id="610dc-107">There is one critical method to implement on this interface, <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A> which will pass you a list of <xref:System.Activities.Presentation.Validation.ValidationErrorInfo> objects containing information about the errors to the debug log.</span></span>  <span data-ttu-id="610dc-108">Po implementaci rozhraní načíst informace o této chybě a publikujte instance tuto implementaci kontextu úprav.</span><span class="sxs-lookup"><span data-stu-id="610dc-108">After implementing the interface, you retrieve the error information by publishing an instance of that implementation to the editing context.</span></span>  
   
-### <a name="implement-the-ivalidationerrorservice-interface"></a><span data-ttu-id="39ff2-109">Implementace rozhraní IValidationErrorService</span><span class="sxs-lookup"><span data-stu-id="39ff2-109">Implement the IValidationErrorService Interface</span></span>  
+### <a name="implement-the-ivalidationerrorservice-interface"></a><span data-ttu-id="610dc-109">Implementovat rozhraní IValidationErrorService</span><span class="sxs-lookup"><span data-stu-id="610dc-109">Implement the IValidationErrorService Interface</span></span>  
   
-1.  <span data-ttu-id="39ff2-110">Zde je ukázka kódu pro jednoduché implementace, která bude zapisovat se chyby ověření protokolu pro ladění.</span><span class="sxs-lookup"><span data-stu-id="39ff2-110">Here is a code sample for a simple implementation that will write out the validation errors to the debug log.</span></span>  
+1. <span data-ttu-id="610dc-110">Tady je ukázka kódu pro jednoduché implementace, která bude zapisovat chyby ověření protokolu pro ladění.</span><span class="sxs-lookup"><span data-stu-id="610dc-110">Here is a code sample for a simple implementation that will write out the validation errors to the debug log.</span></span>  
   
     ```  
     using System.Activities.Presentation.Validation;  
@@ -36,9 +36,9 @@ ms.locfileid: "33512564"
     }  
     ```  
   
-### <a name="publishing-to-the-editing-context"></a><span data-ttu-id="39ff2-111">Publikování do úpravy kontextu</span><span class="sxs-lookup"><span data-stu-id="39ff2-111">Publishing to the Editing Context</span></span>  
+### <a name="publishing-to-the-editing-context"></a><span data-ttu-id="610dc-111">Publikování do kontextu úprav</span><span class="sxs-lookup"><span data-stu-id="610dc-111">Publishing to the Editing Context</span></span>  
   
-1.  <span data-ttu-id="39ff2-112">Zde je kód, který bude publikovat toto úpravy v kontextu.</span><span class="sxs-lookup"><span data-stu-id="39ff2-112">Here is the code that will publish this to the editing context.</span></span>  
+1. <span data-ttu-id="610dc-112">Tady je kód, který se bude publikovat ji do kontextu úprav.</span><span class="sxs-lookup"><span data-stu-id="610dc-112">Here is the code that will publish this to the editing context.</span></span>  
   
     ```  
     wd.Context.Services.Publish<IValidationErrorService>(new DebugValidationErrorService());  
