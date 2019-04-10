@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Příjem událostí v aplikaci Web Forms'
+title: 'Postupy: Zpracování událostí v aplikaci Web Forms'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,25 +14,25 @@ helpviewer_keywords:
 ms.assetid: 73bf8638-c4ec-4069-b0bb-a1dc79b92e32
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c03ab0e1d493d9669f1e3821393d41d1c1b89867
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: dc1dee9377200e4c9fd575b8dcd00982db45f249
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44227542"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317808"
 ---
-# <a name="how-to-consume-events-in-a-web-forms-application"></a><span data-ttu-id="01f5d-102">Postupy: Příjem událostí v aplikaci Web Forms</span><span class="sxs-lookup"><span data-stu-id="01f5d-102">How to: Consume Events in a Web Forms Application</span></span>
-<span data-ttu-id="01f5d-103">Běžný scénář v aplikace webových formulářů ASP.NET má naplnit webovou stránku s ovládacími prvky a pak provést konkrétní akce, podle kterého ovládacího prvku uživatel klikne.</span><span class="sxs-lookup"><span data-stu-id="01f5d-103">A common scenario in ASP.NET Web Forms applications is to populate a webpage with controls, and then perform a specific action based on which control the user clicks.</span></span> <span data-ttu-id="01f5d-104">Například <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> ovládací prvek vyvolá událost, když uživatel klikne na webové stránce.</span><span class="sxs-lookup"><span data-stu-id="01f5d-104">For example, a <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> control raises an event when the user clicks it in the webpage.</span></span> <span data-ttu-id="01f5d-105">Díky zpracování události, vaše aplikace může provádět příslušné aplikace logiky pro dané kliknutí na tlačítko.</span><span class="sxs-lookup"><span data-stu-id="01f5d-105">By handling the event, your application can perform the appropriate application logic for that button click.</span></span>  
+# <a name="how-to-consume-events-in-a-web-forms-application"></a><span data-ttu-id="d4be8-102">Postupy: Zpracování událostí v aplikaci Web Forms</span><span class="sxs-lookup"><span data-stu-id="d4be8-102">How to: Consume Events in a Web Forms Application</span></span>
+<span data-ttu-id="d4be8-103">Běžný scénář v aplikace webových formulářů ASP.NET má naplnit webovou stránku s ovládacími prvky a pak provést konkrétní akce, podle kterého ovládacího prvku uživatel klikne.</span><span class="sxs-lookup"><span data-stu-id="d4be8-103">A common scenario in ASP.NET Web Forms applications is to populate a webpage with controls, and then perform a specific action based on which control the user clicks.</span></span> <span data-ttu-id="d4be8-104">Například <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> ovládací prvek vyvolá událost, když uživatel klikne na webové stránce.</span><span class="sxs-lookup"><span data-stu-id="d4be8-104">For example, a <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType> control raises an event when the user clicks it in the webpage.</span></span> <span data-ttu-id="d4be8-105">Díky zpracování události, vaše aplikace může provádět příslušné aplikace logiky pro dané kliknutí na tlačítko.</span><span class="sxs-lookup"><span data-stu-id="d4be8-105">By handling the event, your application can perform the appropriate application logic for that button click.</span></span>  
   
-### <a name="to-handle-a-button-click-event-on-a-webpage"></a><span data-ttu-id="01f5d-106">Zpracování události kliknutí na tlačítko na webové stránce</span><span class="sxs-lookup"><span data-stu-id="01f5d-106">To handle a button click event on a webpage</span></span>  
+### <a name="to-handle-a-button-click-event-on-a-webpage"></a><span data-ttu-id="d4be8-106">Zpracování události kliknutí na tlačítko na webové stránce</span><span class="sxs-lookup"><span data-stu-id="d4be8-106">To handle a button click event on a webpage</span></span>  
   
-1.  <span data-ttu-id="01f5d-107">Vytvoření stránky s webovými formuláři ASP.NET (webová stránka), který má <xref:System.Web.UI.WebControls.Button> ovládacím prvkem `OnClick` hodnotu nastavte na název metody, která budou definovat v dalším kroku.</span><span class="sxs-lookup"><span data-stu-id="01f5d-107">Create a ASP.NET Web Forms page (webpage) that has a <xref:System.Web.UI.WebControls.Button> control with the `OnClick` value set to the name of method that you will define in the next step.</span></span>  
+1. <span data-ttu-id="d4be8-107">Vytvoření stránky s webovými formuláři ASP.NET (webová stránka), který má <xref:System.Web.UI.WebControls.Button> ovládacím prvkem `OnClick` hodnotu nastavte na název metody, která budou definovat v dalším kroku.</span><span class="sxs-lookup"><span data-stu-id="d4be8-107">Create a ASP.NET Web Forms page (webpage) that has a <xref:System.Web.UI.WebControls.Button> control with the `OnClick` value set to the name of method that you will define in the next step.</span></span>  
   
     ```xml  
     <asp:Button ID="Button1" runat="server" Text="Click Me" OnClick="Button1_Click" />  
     ```  
   
-2.  <span data-ttu-id="01f5d-108">Definování obslužné rutiny události, která odpovídá <xref:System.Web.UI.WebControls.Button.Click> signatura delegáta události a, který má název definovaný pro `OnClick` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="01f5d-108">Define an event handler that matches the <xref:System.Web.UI.WebControls.Button.Click> event delegate signature and that has the name you defined for the `OnClick` value.</span></span>  
+2. <span data-ttu-id="d4be8-108">Definování obslužné rutiny události, která odpovídá <xref:System.Web.UI.WebControls.Button.Click> signatura delegáta události a, který má název definovaný pro `OnClick` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="d4be8-108">Define an event handler that matches the <xref:System.Web.UI.WebControls.Button.Click> event delegate signature and that has the name you defined for the `OnClick` value.</span></span>  
   
     ```csharp  
     protected void Button1_Click(object sender, EventArgs e)  
@@ -47,10 +47,10 @@ ms.locfileid: "44227542"
     End Sub  
     ```  
   
-     <span data-ttu-id="01f5d-109"><xref:System.Web.UI.WebControls.Button.Click> Událost používá <xref:System.EventHandler> třídy pro typ delegáta a <xref:System.EventArgs> třídu pro data události.</span><span class="sxs-lookup"><span data-stu-id="01f5d-109">The <xref:System.Web.UI.WebControls.Button.Click> event uses the <xref:System.EventHandler> class for the delegate type and the <xref:System.EventArgs> class for the event data.</span></span> <span data-ttu-id="01f5d-110">Rámec stránky ASP.NET automaticky generuje kód, který vytvoří instanci <xref:System.EventHandler> a přidá tuto instanci delegáta k <xref:System.Web.UI.WebControls.Button.Click> událost <xref:System.Web.UI.WebControls.Button> instance.</span><span class="sxs-lookup"><span data-stu-id="01f5d-110">The ASP.NET page framework automatically generates code that creates an instance of <xref:System.EventHandler> and adds this delegate instance to the <xref:System.Web.UI.WebControls.Button.Click> event of the <xref:System.Web.UI.WebControls.Button> instance.</span></span>  
+     <span data-ttu-id="d4be8-109"><xref:System.Web.UI.WebControls.Button.Click> Událost používá <xref:System.EventHandler> třídy pro typ delegáta a <xref:System.EventArgs> třídu pro data události.</span><span class="sxs-lookup"><span data-stu-id="d4be8-109">The <xref:System.Web.UI.WebControls.Button.Click> event uses the <xref:System.EventHandler> class for the delegate type and the <xref:System.EventArgs> class for the event data.</span></span> <span data-ttu-id="d4be8-110">Rámec stránky ASP.NET automaticky generuje kód, který vytvoří instanci <xref:System.EventHandler> a přidá tuto instanci delegáta k <xref:System.Web.UI.WebControls.Button.Click> událost <xref:System.Web.UI.WebControls.Button> instance.</span><span class="sxs-lookup"><span data-stu-id="d4be8-110">The ASP.NET page framework automatically generates code that creates an instance of <xref:System.EventHandler> and adds this delegate instance to the <xref:System.Web.UI.WebControls.Button.Click> event of the <xref:System.Web.UI.WebControls.Button> instance.</span></span>  
   
-3.  <span data-ttu-id="01f5d-111">V případě obslužné metody, která jste definovali v kroku 2, přidejte kód k provedení nějaké akce, které jsou potřeba při výskytu události.</span><span class="sxs-lookup"><span data-stu-id="01f5d-111">In the event handler method that you defined in step 2, add code to perform any actions that are required when the event occurs.</span></span>  
+3. <span data-ttu-id="d4be8-111">V případě obslužné metody, která jste definovali v kroku 2, přidejte kód k provedení nějaké akce, které jsou potřeba při výskytu události.</span><span class="sxs-lookup"><span data-stu-id="d4be8-111">In the event handler method that you defined in step 2, add code to perform any actions that are required when the event occurs.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="01f5d-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="01f5d-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d4be8-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d4be8-112">See also</span></span>
 
-- [<span data-ttu-id="01f5d-113">Události</span><span class="sxs-lookup"><span data-stu-id="01f5d-113">Events</span></span>](../../../docs/standard/events/index.md)
+- [<span data-ttu-id="d4be8-113">Události</span><span class="sxs-lookup"><span data-stu-id="d4be8-113">Events</span></span>](../../../docs/standard/events/index.md)

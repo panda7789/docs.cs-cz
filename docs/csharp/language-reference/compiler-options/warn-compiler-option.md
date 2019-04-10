@@ -12,59 +12,59 @@ helpviewer_keywords:
 - w compiler option [C#]
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
-ms.openlocfilehash: 5a4ecd1fbe5bb79a67d9df07d8f1a93830b03880
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 17dd992edbec5ce444b53ed42b2b486282618672
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499866"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59315800"
 ---
-# <a name="-warn-c-compiler-options"></a><span data-ttu-id="41f73-102">-warn (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="41f73-102">-warn (C# Compiler Options)</span></span>
-<span data-ttu-id="41f73-103">**-Warn** určuje úroveň upozornění kompilátoru k zobrazení.</span><span class="sxs-lookup"><span data-stu-id="41f73-103">The **-warn** option specifies the warning level for the compiler to display.</span></span>  
+# <a name="-warn-c-compiler-options"></a><span data-ttu-id="426ac-102">-warn (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="426ac-102">-warn (C# Compiler Options)</span></span>
+<span data-ttu-id="426ac-103">**-Warn** určuje úroveň upozornění kompilátoru k zobrazení.</span><span class="sxs-lookup"><span data-stu-id="426ac-103">The **-warn** option specifies the warning level for the compiler to display.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="41f73-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="41f73-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="426ac-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="426ac-104">Syntax</span></span>  
   
 ```console  
 -warn:option  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="41f73-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="41f73-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="426ac-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="426ac-105">Arguments</span></span>  
  `option`  
- <span data-ttu-id="41f73-106">Úroveň pro upozornění, které má být zobrazen pro kompilace: Nižší číslice zobrazit pouze vysokou závažností upozornění; vyšší čísla popisují další varování.</span><span class="sxs-lookup"><span data-stu-id="41f73-106">The warning level you want displayed for the compilation: Lower numbers show only high severity warnings; higher numbers show more warnings.</span></span> <span data-ttu-id="41f73-107">Platné hodnoty jsou 0-4:</span><span class="sxs-lookup"><span data-stu-id="41f73-107">Valid values are 0-4:</span></span>  
+ <span data-ttu-id="426ac-106">Úroveň pro upozornění, které má být zobrazen pro kompilace: Nižší číslice zobrazit pouze vysokou závažností upozornění; vyšší čísla popisují další varování.</span><span class="sxs-lookup"><span data-stu-id="426ac-106">The warning level you want displayed for the compilation: Lower numbers show only high severity warnings; higher numbers show more warnings.</span></span> <span data-ttu-id="426ac-107">Platné hodnoty jsou 0-4:</span><span class="sxs-lookup"><span data-stu-id="426ac-107">Valid values are 0-4:</span></span>  
   
-|<span data-ttu-id="41f73-108">Úroveň upozornění</span><span class="sxs-lookup"><span data-stu-id="41f73-108">Warning level</span></span>|<span data-ttu-id="41f73-109">Význam</span><span class="sxs-lookup"><span data-stu-id="41f73-109">Meaning</span></span>|  
+|<span data-ttu-id="426ac-108">Úroveň upozornění</span><span class="sxs-lookup"><span data-stu-id="426ac-108">Warning level</span></span>|<span data-ttu-id="426ac-109">Význam</span><span class="sxs-lookup"><span data-stu-id="426ac-109">Meaning</span></span>|  
 |-------------------|-------------|  
-|<span data-ttu-id="41f73-110">0</span><span class="sxs-lookup"><span data-stu-id="41f73-110">0</span></span>|<span data-ttu-id="41f73-111">Vypne emise všechny zprávy upozornění.</span><span class="sxs-lookup"><span data-stu-id="41f73-111">Turns off emission of all warning messages.</span></span>|  
-|<span data-ttu-id="41f73-112">1</span><span class="sxs-lookup"><span data-stu-id="41f73-112">1</span></span>|<span data-ttu-id="41f73-113">Zobrazuje závažná upozornění.</span><span class="sxs-lookup"><span data-stu-id="41f73-113">Displays severe warning messages.</span></span>|  
-|<span data-ttu-id="41f73-114">2</span><span class="sxs-lookup"><span data-stu-id="41f73-114">2</span></span>|<span data-ttu-id="41f73-115">Zobrazí upozornění úrovně 1 a některé, méně závažných upozornění, jako jsou třeba upozornění o skrývání členů třídy.</span><span class="sxs-lookup"><span data-stu-id="41f73-115">Displays level 1 warnings plus certain, less-severe warnings, such as warnings about hiding class members.</span></span>|  
-|<span data-ttu-id="41f73-116">3</span><span class="sxs-lookup"><span data-stu-id="41f73-116">3</span></span>|<span data-ttu-id="41f73-117">Zobrazí upozornění úrovně 2 a některé, méně závažných upozornění, jako jsou třeba upozornění, která se vždycky vyhodnotí výrazy `true` nebo `false`.</span><span class="sxs-lookup"><span data-stu-id="41f73-117">Displays level 2 warnings plus certain, less-severe warnings, such as warnings about expressions that always evaluate to `true` or `false`.</span></span>|  
-|<span data-ttu-id="41f73-118">4 (výchozí)</span><span class="sxs-lookup"><span data-stu-id="41f73-118">4 (the default)</span></span>|<span data-ttu-id="41f73-119">Zobrazí všechna upozornění úrovně 3 a informační upozornění.</span><span class="sxs-lookup"><span data-stu-id="41f73-119">Displays all level 3 warnings plus informational warnings.</span></span>|  
+|<span data-ttu-id="426ac-110">0</span><span class="sxs-lookup"><span data-stu-id="426ac-110">0</span></span>|<span data-ttu-id="426ac-111">Vypne emise všechny zprávy upozornění.</span><span class="sxs-lookup"><span data-stu-id="426ac-111">Turns off emission of all warning messages.</span></span>|  
+|<span data-ttu-id="426ac-112">1</span><span class="sxs-lookup"><span data-stu-id="426ac-112">1</span></span>|<span data-ttu-id="426ac-113">Zobrazuje závažná upozornění.</span><span class="sxs-lookup"><span data-stu-id="426ac-113">Displays severe warning messages.</span></span>|  
+|<span data-ttu-id="426ac-114">2</span><span class="sxs-lookup"><span data-stu-id="426ac-114">2</span></span>|<span data-ttu-id="426ac-115">Zobrazí upozornění úrovně 1 a některé, méně závažných upozornění, jako jsou třeba upozornění o skrývání členů třídy.</span><span class="sxs-lookup"><span data-stu-id="426ac-115">Displays level 1 warnings plus certain, less-severe warnings, such as warnings about hiding class members.</span></span>|  
+|<span data-ttu-id="426ac-116">3</span><span class="sxs-lookup"><span data-stu-id="426ac-116">3</span></span>|<span data-ttu-id="426ac-117">Zobrazí upozornění úrovně 2 a některé, méně závažných upozornění, jako jsou třeba upozornění, která se vždycky vyhodnotí výrazy `true` nebo `false`.</span><span class="sxs-lookup"><span data-stu-id="426ac-117">Displays level 2 warnings plus certain, less-severe warnings, such as warnings about expressions that always evaluate to `true` or `false`.</span></span>|  
+|<span data-ttu-id="426ac-118">4 (výchozí)</span><span class="sxs-lookup"><span data-stu-id="426ac-118">4 (the default)</span></span>|<span data-ttu-id="426ac-119">Zobrazí všechna upozornění úrovně 3 a informační upozornění.</span><span class="sxs-lookup"><span data-stu-id="426ac-119">Displays all level 3 warnings plus informational warnings.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="41f73-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="41f73-120">Remarks</span></span>  
- <span data-ttu-id="41f73-121">Pokud chcete získat informace o chybě nebo upozornění, můžete vyhledat kód chyby v indexu nápovědy.</span><span class="sxs-lookup"><span data-stu-id="41f73-121">To get information about an error or warning, you can look up the error code in the Help Index.</span></span> <span data-ttu-id="41f73-122">Další způsoby, jak získat informace o chybě nebo upozornění, najdete v části [chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md).</span><span class="sxs-lookup"><span data-stu-id="41f73-122">For other ways to get information about an error or warning, see [C# Compiler Errors](../../../csharp/language-reference/compiler-messages/index.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="426ac-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="426ac-120">Remarks</span></span>  
+ <span data-ttu-id="426ac-121">Pokud chcete získat informace o chybě nebo upozornění, můžete vyhledat kód chyby v indexu nápovědy.</span><span class="sxs-lookup"><span data-stu-id="426ac-121">To get information about an error or warning, you can look up the error code in the Help Index.</span></span> <span data-ttu-id="426ac-122">Další způsoby, jak získat informace o chybě nebo upozornění, najdete v části [chyby kompilátoru jazyka C#](../../../csharp/language-reference/compiler-messages/index.md).</span><span class="sxs-lookup"><span data-stu-id="426ac-122">For other ways to get information about an error or warning, see [C# Compiler Errors](../../../csharp/language-reference/compiler-messages/index.md).</span></span>  
   
- <span data-ttu-id="41f73-123">Použití [- warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) považovat všechna upozornění jako chyby.</span><span class="sxs-lookup"><span data-stu-id="41f73-123">Use [-warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) to treat all warnings as errors.</span></span> <span data-ttu-id="41f73-124">Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat určitá upozornění.</span><span class="sxs-lookup"><span data-stu-id="41f73-124">Use [-nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) to disable certain warnings.</span></span>  
+ <span data-ttu-id="426ac-123">Použití [- warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) považovat všechna upozornění jako chyby.</span><span class="sxs-lookup"><span data-stu-id="426ac-123">Use [-warnaserror](../../../csharp/language-reference/compiler-options/warnaserror-compiler-option.md) to treat all warnings as errors.</span></span> <span data-ttu-id="426ac-124">Použití [- nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) zakázat určitá upozornění.</span><span class="sxs-lookup"><span data-stu-id="426ac-124">Use [-nowarn](../../../csharp/language-reference/compiler-options/nowarn-compiler-option.md) to disable certain warnings.</span></span>  
   
- <span data-ttu-id="41f73-125">**-w** je zkratka pro **-warn**.</span><span class="sxs-lookup"><span data-stu-id="41f73-125">**-w** is the short form of **-warn**.</span></span>  
+ <span data-ttu-id="426ac-125">**-w** je zkratka pro **-warn**.</span><span class="sxs-lookup"><span data-stu-id="426ac-125">**-w** is the short form of **-warn**.</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="41f73-126">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="41f73-126">To set this compiler option in the Visual Studio development environment</span></span>  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="426ac-126">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="426ac-126">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  <span data-ttu-id="41f73-127">Otevřete v projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="41f73-127">Open the project's **Properties** page.</span></span>  
+1. <span data-ttu-id="426ac-127">Otevřete v projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="426ac-127">Open the project's **Properties** page.</span></span>  
   
-2.  <span data-ttu-id="41f73-128">Klikněte na tlačítko **sestavení** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="41f73-128">Click the **Build** property page.</span></span>  
+2. <span data-ttu-id="426ac-128">Klikněte na tlačítko **sestavení** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="426ac-128">Click the **Build** property page.</span></span>  
   
-3.  <span data-ttu-id="41f73-129">Upravit **úroveň pro upozornění** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="41f73-129">Modify the **Warning Level** property.</span></span>  
+3. <span data-ttu-id="426ac-129">Upravit **úroveň pro upozornění** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="426ac-129">Modify the **Warning Level** property.</span></span>  
   
- <span data-ttu-id="41f73-130">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.</span><span class="sxs-lookup"><span data-stu-id="41f73-130">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.</span></span>  
+ <span data-ttu-id="426ac-130">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.</span><span class="sxs-lookup"><span data-stu-id="426ac-130">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.CSharpProjectConfigurationProperties3.WarningLevel%2A>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="41f73-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="41f73-131">Example</span></span>  
- <span data-ttu-id="41f73-132">Kompilace `in.cs` kompilátor zobrazí pouze upozornění úrovně 1:</span><span class="sxs-lookup"><span data-stu-id="41f73-132">Compile `in.cs` and have the compiler only display level 1 warnings:</span></span>  
+## <a name="example"></a><span data-ttu-id="426ac-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="426ac-131">Example</span></span>  
+ <span data-ttu-id="426ac-132">Kompilace `in.cs` kompilátor zobrazí pouze upozornění úrovně 1:</span><span class="sxs-lookup"><span data-stu-id="426ac-132">Compile `in.cs` and have the compiler only display level 1 warnings:</span></span>  
   
 ```console  
 csc -warn:1 in.cs  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="41f73-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="41f73-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="426ac-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="426ac-133">See also</span></span>
 
-- [<span data-ttu-id="41f73-134">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="41f73-134">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
-- [<span data-ttu-id="41f73-135">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="41f73-135">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="426ac-134">Možnosti kompilátoru C#</span><span class="sxs-lookup"><span data-stu-id="426ac-134">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
+- [<span data-ttu-id="426ac-135">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="426ac-135">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)

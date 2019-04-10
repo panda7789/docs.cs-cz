@@ -9,21 +9,21 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - toolbars [Windows Forms], aligning items
 ms.assetid: cd483466-0f49-43df-addf-e2b5fcd64027
-ms.openlocfilehash: 2e569f7254c2436a7c05eeeb139bf75bf61f900e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bed943466348447e30947c170e27027f324342c6
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59213308"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323171"
 ---
-# <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a><span data-ttu-id="0e0ee-102">Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="0e0ee-102">How to: Change the Spacing and Alignment of ToolStrip Items in Windows Forms</span></span>
-<span data-ttu-id="0e0ee-103"><xref:System.Windows.Forms.ToolStrip> Ovládací prvek plně podporuje rozložení funkce jako je například změna velikosti, mezery mezi <xref:System.Windows.Forms.ToolStripItem> řídí relativně vůči sobě navzájem, uspořádání ovládacích prvků na <xref:System.Windows.Forms.ToolStrip>a mezery ovládacích prvků vzhledem k <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-103">The <xref:System.Windows.Forms.ToolStrip> control fully supports layout features such as sizing, the spacing of <xref:System.Windows.Forms.ToolStripItem> controls relative to each other, the arrangement of controls on the <xref:System.Windows.Forms.ToolStrip>, and the spacing of controls relative to the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
+# <a name="how-to-change-the-spacing-and-alignment-of-toolstrip-items-in-windows-forms"></a><span data-ttu-id="2a461-102">Postupy: Změna mezer a zarovnání položek ToolStrip ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="2a461-102">How to: Change the Spacing and Alignment of ToolStrip Items in Windows Forms</span></span>
+<span data-ttu-id="2a461-103"><xref:System.Windows.Forms.ToolStrip> Ovládací prvek plně podporuje rozložení funkce jako je například změna velikosti, mezery mezi <xref:System.Windows.Forms.ToolStripItem> řídí relativně vůči sobě navzájem, uspořádání ovládacích prvků na <xref:System.Windows.Forms.ToolStrip>a mezery ovládacích prvků vzhledem k <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="2a461-103">The <xref:System.Windows.Forms.ToolStrip> control fully supports layout features such as sizing, the spacing of <xref:System.Windows.Forms.ToolStripItem> controls relative to each other, the arrangement of controls on the <xref:System.Windows.Forms.ToolStrip>, and the spacing of controls relative to the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
- <span data-ttu-id="0e0ee-104">Protože výchozí hodnotu <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `true`, ovládací prvky se velikost automaticky, pokud nenastavíte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false`.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-104">Because the default value of the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property is `true`, controls are sized automatically unless you set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false`.</span></span>  
+ <span data-ttu-id="2a461-104">Protože výchozí hodnotu <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `true`, ovládací prvky se velikost automaticky, pokud nenastavíte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false`.</span><span class="sxs-lookup"><span data-stu-id="2a461-104">Because the default value of the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property is `true`, controls are sized automatically unless you set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false`.</span></span>  
   
-### <a name="to-manually-size-a-toolstripitem"></a><span data-ttu-id="0e0ee-105">Chcete-li ručně změnit velikost prvku ToolStripItem</span><span class="sxs-lookup"><span data-stu-id="0e0ee-105">To manually size a ToolStripItem</span></span>  
+### <a name="to-manually-size-a-toolstripitem"></a><span data-ttu-id="2a461-105">Chcete-li ručně změnit velikost prvku ToolStripItem</span><span class="sxs-lookup"><span data-stu-id="2a461-105">To manually size a ToolStripItem</span></span>  
   
-1.  <span data-ttu-id="0e0ee-106">Nastavte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false` pro přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-106">Set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false` for the associated control.</span></span>  
+1. <span data-ttu-id="2a461-106">Nastavte <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> vlastnost `false` pro přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="2a461-106">Set the <xref:System.Windows.Forms.ToolStripItem.AutoSize%2A> property to `false` for the associated control.</span></span>  
   
     ```vb  
     ToolStripButton1.AutoSize = False  
@@ -33,13 +33,13 @@ ms.locfileid: "59213308"
     toolStripButton1.AutoSize = false;  
     ```  
   
-2.  <span data-ttu-id="0e0ee-107">Nastavte <xref:System.Windows.Forms.ToolStripItem.Size%2A> vlastnost tak, jak chcete, aby pro přidružený <xref:System.Windows.Forms.ToolStripItem>.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-107">Set the <xref:System.Windows.Forms.ToolStripItem.Size%2A> property the way you want for the associated <xref:System.Windows.Forms.ToolStripItem>.</span></span>  
+2. <span data-ttu-id="2a461-107">Nastavte <xref:System.Windows.Forms.ToolStripItem.Size%2A> vlastnost tak, jak chcete, aby pro přidružený <xref:System.Windows.Forms.ToolStripItem>.</span><span class="sxs-lookup"><span data-stu-id="2a461-107">Set the <xref:System.Windows.Forms.ToolStripItem.Size%2A> property the way you want for the associated <xref:System.Windows.Forms.ToolStripItem>.</span></span>  
   
-### <a name="to-set-the-spacing-of-a-toolstripitem"></a><span data-ttu-id="0e0ee-108">Nastavit mezery mezi ovládacího prvku ToolStripItem</span><span class="sxs-lookup"><span data-stu-id="0e0ee-108">To set the spacing of a ToolStripItem</span></span>  
+### <a name="to-set-the-spacing-of-a-toolstripitem"></a><span data-ttu-id="2a461-108">Nastavit mezery mezi ovládacího prvku ToolStripItem</span><span class="sxs-lookup"><span data-stu-id="2a461-108">To set the spacing of a ToolStripItem</span></span>  
   
-1.  <span data-ttu-id="0e0ee-109">Vložit do požadované hodnoty v pixelech <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-109">Insert the desired values, in pixels, into the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property of the associated control.</span></span>  
+1. <span data-ttu-id="2a461-109">Vložit do požadované hodnoty v pixelech <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="2a461-109">Insert the desired values, in pixels, into the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property of the associated control.</span></span>  
   
-     <span data-ttu-id="0e0ee-110">Hodnoty <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost určovat mezery mezi položkou a sousední položky v tomto pořadí: Vlevo, nahoře, vpravo a dole.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-110">The values of the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property specify the spacing between the item and adjacent items in this order: Left, Top, Right, and Bottom.</span></span>  
+     <span data-ttu-id="2a461-110">Hodnoty <xref:System.Windows.Forms.ToolStripItem.Margin%2A> vlastnost určovat mezery mezi položkou a sousední položky v tomto pořadí: Vlevo, nahoře, vpravo a dole.</span><span class="sxs-lookup"><span data-stu-id="2a461-110">The values of the <xref:System.Windows.Forms.ToolStripItem.Margin%2A> property specify the spacing between the item and adjacent items in this order: Left, Top, Right, and Bottom.</span></span>  
   
     ```vb  
     ToolStripTextBox1.Margin = New System.Windows.Forms.Padding _  
@@ -51,9 +51,9 @@ ms.locfileid: "59213308"
         (3, 0, 3, 0);  
     ```  
   
-### <a name="to-align-a-toolstripitem-to-the-right-side-of-the-toolstrip"></a><span data-ttu-id="0e0ee-111">Chcete-li zarovnat ToolStripItem na pravé straně ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="0e0ee-111">To align a ToolStripItem to the right side of the ToolStrip</span></span>  
+### <a name="to-align-a-toolstripitem-to-the-right-side-of-the-toolstrip"></a><span data-ttu-id="2a461-111">Chcete-li zarovnat ToolStripItem na pravé straně ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="2a461-111">To align a ToolStripItem to the right side of the ToolStrip</span></span>  
   
-1.  <span data-ttu-id="0e0ee-112">Nastavte <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemAlignment.Right> pro přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-112">Set the <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> property to <xref:System.Windows.Forms.ToolStripItemAlignment.Right> for the associated control.</span></span> <span data-ttu-id="0e0ee-113">Ve výchozím nastavení <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> je nastavena na <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, který odpovídá ovládacích prvků na levé straně <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-113">By default, <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> is set to <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, which aligns controls to the left side of the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
+1. <span data-ttu-id="2a461-112">Nastavte <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> vlastnost <xref:System.Windows.Forms.ToolStripItemAlignment.Right> pro přidružený ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="2a461-112">Set the <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> property to <xref:System.Windows.Forms.ToolStripItemAlignment.Right> for the associated control.</span></span> <span data-ttu-id="2a461-113">Ve výchozím nastavení <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> je nastavena na <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, který odpovídá ovládacích prvků na levé straně <xref:System.Windows.Forms.ToolStrip>.</span><span class="sxs-lookup"><span data-stu-id="2a461-113">By default, <xref:System.Windows.Forms.ToolStripItem.Alignment%2A> is set to <xref:System.Windows.Forms.ToolStripItemAlignment.Left>, which aligns controls to the left side of the <xref:System.Windows.Forms.ToolStrip>.</span></span>  
   
     ```vb  
     ToolStripSplitButton1.Alignment = _  
@@ -65,9 +65,9 @@ ms.locfileid: "59213308"
         System.Windows.Forms.ToolStripItemAlignment.Right;  
     ```  
   
-### <a name="to-arrange-toolstrip-items-on-the-toolstrip"></a><span data-ttu-id="0e0ee-114">Chcete-li uspořádat ovládací prvek ToolStrip položek na ovládacím prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="0e0ee-114">To arrange ToolStrip items on the ToolStrip</span></span>  
+### <a name="to-arrange-toolstrip-items-on-the-toolstrip"></a><span data-ttu-id="2a461-114">Chcete-li uspořádat ovládací prvek ToolStrip položek na ovládacím prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="2a461-114">To arrange ToolStrip items on the ToolStrip</span></span>  
   
--   <span data-ttu-id="0e0ee-115">Nastavte <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> vlastnost na hodnotu <xref:System.Windows.Forms.ToolStripLayoutStyle> , který chcete.</span><span class="sxs-lookup"><span data-stu-id="0e0ee-115">Set the <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> property to the value of <xref:System.Windows.Forms.ToolStripLayoutStyle> that you want.</span></span>  
+-   <span data-ttu-id="2a461-115">Nastavte <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> vlastnost na hodnotu <xref:System.Windows.Forms.ToolStripLayoutStyle> , který chcete.</span><span class="sxs-lookup"><span data-stu-id="2a461-115">Set the <xref:System.Windows.Forms.ToolStrip.LayoutStyle%2A> property to the value of <xref:System.Windows.Forms.ToolStripLayoutStyle> that you want.</span></span>  
   
     ```vb  
     ToolStripDropDown1.LayoutStyle = _  
@@ -79,7 +79,7 @@ ms.locfileid: "59213308"
         System.Windows.Forms.ToolStripLayoutStyle.Flow;  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="0e0ee-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e0ee-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2a461-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2a461-116">See also</span></span>
 
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.Control.Layout>
@@ -88,6 +88,6 @@ ms.locfileid: "59213308"
 - <xref:System.Windows.Forms.ToolStripItem.TextImageRelation%2A>
 - <xref:System.Windows.Forms.ToolStripItem.Placement%2A>
 - <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>
-- [<span data-ttu-id="0e0ee-117">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="0e0ee-117">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
-- [<span data-ttu-id="0e0ee-118">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="0e0ee-118">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
-- [<span data-ttu-id="0e0ee-119">Souhrn technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="0e0ee-119">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)
+- [<span data-ttu-id="2a461-117">Přehled ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="2a461-117">ToolStrip Control Overview</span></span>](toolstrip-control-overview-windows-forms.md)
+- [<span data-ttu-id="2a461-118">Architektura ovládacího prvku ToolStrip</span><span class="sxs-lookup"><span data-stu-id="2a461-118">ToolStrip Control Architecture</span></span>](toolstrip-control-architecture.md)
+- [<span data-ttu-id="2a461-119">Souhrn technologie ToolStrip</span><span class="sxs-lookup"><span data-stu-id="2a461-119">ToolStrip Technology Summary</span></span>](toolstrip-technology-summary.md)

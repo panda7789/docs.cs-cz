@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: ef20f74055a07071ef9634973c6852ac58c3143c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 8459ee7fec6d761161a721c88ccdc88e513fc95f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58824704"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324380"
 ---
-# <a name="constructor-name-cannot-call-itself"></a><span data-ttu-id="d86fa-102">Konstruktor '\<name >' nemůže volat sám sebe</span><span class="sxs-lookup"><span data-stu-id="d86fa-102">Constructor '\<name>' cannot call itself</span></span>
-<span data-ttu-id="d86fa-103">A `Sub New` postupu ve třídě nebo struktuře zavolá sama sebe.</span><span class="sxs-lookup"><span data-stu-id="d86fa-103">A `Sub New` procedure in a class or structure calls itself.</span></span>  
+# <a name="constructor-name-cannot-call-itself"></a><span data-ttu-id="153a0-102">Konstruktor '\<name >' nemůže volat sám sebe</span><span class="sxs-lookup"><span data-stu-id="153a0-102">Constructor '\<name>' cannot call itself</span></span>
+<span data-ttu-id="153a0-103">A `Sub New` postupu ve třídě nebo struktuře zavolá sama sebe.</span><span class="sxs-lookup"><span data-stu-id="153a0-103">A `Sub New` procedure in a class or structure calls itself.</span></span>  
   
- <span data-ttu-id="d86fa-104">Konstruktor slouží k inicializaci instance třídy nebo struktury při prvním vytvoření.</span><span class="sxs-lookup"><span data-stu-id="d86fa-104">The purpose of a constructor is to initialize an instance of a class or structure when it is first created.</span></span> <span data-ttu-id="d86fa-105">Třídy nebo struktury může mít několik konstruktorů, pokud mají všechny seznamy různých parametrů.</span><span class="sxs-lookup"><span data-stu-id="d86fa-105">A class or structure can have several constructors, provided they all have different parameter lists.</span></span> <span data-ttu-id="d86fa-106">Konstruktor je povolený pro volání jiného konstruktoru k provádění svých funkcí, kromě svou vlastní.</span><span class="sxs-lookup"><span data-stu-id="d86fa-106">A constructor is permitted to call another constructor to perform its functionality in addition to its own.</span></span> <span data-ttu-id="d86fa-107">Ale je pro konstruktor k volat sám sebe a ve skutečnosti by způsobil nekonečnou rekurzi Pokud povolena.</span><span class="sxs-lookup"><span data-stu-id="d86fa-107">But it is meaningless for a constructor to call itself, and in fact it would result in infinite recursion if permitted.</span></span>  
+ <span data-ttu-id="153a0-104">Konstruktor slouží k inicializaci instance třídy nebo struktury při prvním vytvoření.</span><span class="sxs-lookup"><span data-stu-id="153a0-104">The purpose of a constructor is to initialize an instance of a class or structure when it is first created.</span></span> <span data-ttu-id="153a0-105">Třídy nebo struktury může mít několik konstruktorů, pokud mají všechny seznamy různých parametrů.</span><span class="sxs-lookup"><span data-stu-id="153a0-105">A class or structure can have several constructors, provided they all have different parameter lists.</span></span> <span data-ttu-id="153a0-106">Konstruktor je povolený pro volání jiného konstruktoru k provádění svých funkcí, kromě svou vlastní.</span><span class="sxs-lookup"><span data-stu-id="153a0-106">A constructor is permitted to call another constructor to perform its functionality in addition to its own.</span></span> <span data-ttu-id="153a0-107">Ale je pro konstruktor k volat sám sebe a ve skutečnosti by způsobil nekonečnou rekurzi Pokud povolena.</span><span class="sxs-lookup"><span data-stu-id="153a0-107">But it is meaningless for a constructor to call itself, and in fact it would result in infinite recursion if permitted.</span></span>  
   
- <span data-ttu-id="d86fa-108">**ID chyby:** BC30298</span><span class="sxs-lookup"><span data-stu-id="d86fa-108">**Error ID:** BC30298</span></span>  
+ <span data-ttu-id="153a0-108">**ID chyby:** BC30298</span><span class="sxs-lookup"><span data-stu-id="153a0-108">**Error ID:** BC30298</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="d86fa-109">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="d86fa-109">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="153a0-109">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="153a0-109">To correct this error</span></span>  
   
-1.  <span data-ttu-id="d86fa-110">Zkontrolujte seznam parametrů volání konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="d86fa-110">Check the parameter list of the constructor being called.</span></span> <span data-ttu-id="d86fa-111">Musí být odlišný od u konstruktoru uskutečněním hovoru.</span><span class="sxs-lookup"><span data-stu-id="d86fa-111">It should be different from that of the constructor making the call.</span></span>  
+1. <span data-ttu-id="153a0-110">Zkontrolujte seznam parametrů volání konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="153a0-110">Check the parameter list of the constructor being called.</span></span> <span data-ttu-id="153a0-111">Musí být odlišný od u konstruktoru uskutečněním hovoru.</span><span class="sxs-lookup"><span data-stu-id="153a0-111">It should be different from that of the constructor making the call.</span></span>  
   
-2.  <span data-ttu-id="d86fa-112">Pokud je nemáte v úmyslu volání jiný konstruktor, odeberte `Sub New` zcela volání.</span><span class="sxs-lookup"><span data-stu-id="d86fa-112">If you do not intend to call a different constructor, remove the `Sub New` call entirely.</span></span>  
+2. <span data-ttu-id="153a0-112">Pokud je nemáte v úmyslu volání jiný konstruktor, odeberte `Sub New` zcela volání.</span><span class="sxs-lookup"><span data-stu-id="153a0-112">If you do not intend to call a different constructor, remove the `Sub New` call entirely.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d86fa-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d86fa-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="153a0-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="153a0-113">See also</span></span>
 
-- [<span data-ttu-id="d86fa-114">Doba života objektu: Způsob vytváření a zničení objektů</span><span class="sxs-lookup"><span data-stu-id="d86fa-114">Object Lifetime: How Objects Are Created and Destroyed</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [<span data-ttu-id="153a0-114">Doba života objektu: Vytváření a zničení objektů</span><span class="sxs-lookup"><span data-stu-id="153a0-114">Object Lifetime: How Objects Are Created and Destroyed</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

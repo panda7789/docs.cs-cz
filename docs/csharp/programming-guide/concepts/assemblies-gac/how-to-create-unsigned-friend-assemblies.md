@@ -2,21 +2,21 @@
 title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 5b376266581def9bdd4315ccbee04b71b7c8bc08
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365058"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59318231"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="ba511-102">Postupy: Vytváření nepodepsaných přátelských sestavení (C#)</span><span class="sxs-lookup"><span data-stu-id="ba511-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
-<span data-ttu-id="ba511-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="ba511-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
+# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="c09ef-102">Postupy: Vytváření nepodepsaných přátelských sestavení (C#)</span><span class="sxs-lookup"><span data-stu-id="c09ef-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
+<span data-ttu-id="c09ef-103">Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.</span><span class="sxs-lookup"><span data-stu-id="c09ef-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="ba511-104">Chcete-li vytvořit sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="ba511-104">To create an assembly and a friend assembly</span></span>  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="c09ef-104">Chcete-li vytvořit sestavení a sestavení typu friend</span><span class="sxs-lookup"><span data-stu-id="c09ef-104">To create an assembly and a friend assembly</span></span>  
   
-1.  <span data-ttu-id="ba511-105">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="ba511-105">Open a command prompt.</span></span>  
+1. <span data-ttu-id="c09ef-105">Otevřete příkazový řádek.</span><span class="sxs-lookup"><span data-stu-id="c09ef-105">Open a command prompt.</span></span>  
   
-2.  <span data-ttu-id="ba511-106">Vytvořte soubor jazyka C# s názvem `friend_unsigned_A.` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="ba511-106">Create a C# file named `friend_unsigned_A.` that contains the following code.</span></span> <span data-ttu-id="ba511-107">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_unsigned_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="ba511-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_unsigned_B as a friend assembly.</span></span>  
+2. <span data-ttu-id="c09ef-106">Vytvořte soubor jazyka C# s názvem `friend_unsigned_A.` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="c09ef-106">Create a C# file named `friend_unsigned_A.` that contains the following code.</span></span> <span data-ttu-id="c09ef-107">Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_unsigned_B jako sestavení typu friend.</span><span class="sxs-lookup"><span data-stu-id="c09ef-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_unsigned_B as a friend assembly.</span></span>  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -46,13 +46,13 @@ ms.locfileid: "57365058"
     }  
     ```  
   
-3.  <span data-ttu-id="ba511-108">Kompilace a podepsání friend_unsigned_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="ba511-108">Compile and sign friend_unsigned_A by using the following command.</span></span>  
+3. <span data-ttu-id="c09ef-108">Kompilace a podepsání friend_unsigned_A pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="c09ef-108">Compile and sign friend_unsigned_A by using the following command.</span></span>  
   
     ```csharp  
     csc /target:library friend_unsigned_A.cs  
     ```  
   
-4.  <span data-ttu-id="ba511-109">Vytvořte soubor jazyka C# s názvem `friend_unsigned_B` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="ba511-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="ba511-110">Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="ba511-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
+4. <span data-ttu-id="c09ef-109">Vytvořte soubor jazyka C# s názvem `friend_unsigned_B` , který obsahuje následující kód.</span><span class="sxs-lookup"><span data-stu-id="c09ef-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="c09ef-110">Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="c09ef-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
   
     ```csharp  
     // friend_unsigned_B.cs  
@@ -75,25 +75,25 @@ ms.locfileid: "57365058"
     }  
     ```  
   
-5.  <span data-ttu-id="ba511-111">Zkompilujte friend_unsigned_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="ba511-111">Compile friend_unsigned_B by using the following command.</span></span>  
+5. <span data-ttu-id="c09ef-111">Zkompilujte friend_unsigned_B pomocí následujícího příkazu.</span><span class="sxs-lookup"><span data-stu-id="c09ef-111">Compile friend_unsigned_B by using the following command.</span></span>  
   
     ```csharp  
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     <span data-ttu-id="ba511-112">Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="ba511-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="ba511-113">Musíte explicitně zadat název výstupního sestavení (.exe nebo .dll) s použitím `/out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="ba511-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="ba511-114">Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="ba511-114">For more information, see [/out (C# Compiler Options)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span></span>  
+     <span data-ttu-id="c09ef-112">Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut.</span><span class="sxs-lookup"><span data-stu-id="c09ef-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="c09ef-113">Musíte explicitně zadat název výstupního sestavení (.exe nebo .dll) s použitím `/out` – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="c09ef-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="c09ef-114">Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="c09ef-114">For more information, see [/out (C# Compiler Options)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span></span>  
   
-6.  <span data-ttu-id="ba511-115">Spusťte soubor friend_unsigned_B.exe.</span><span class="sxs-lookup"><span data-stu-id="ba511-115">Run the friend_unsigned_B.exe file.</span></span>  
+6. <span data-ttu-id="c09ef-115">Spusťte soubor friend_unsigned_B.exe.</span><span class="sxs-lookup"><span data-stu-id="c09ef-115">Run the friend_unsigned_B.exe file.</span></span>  
   
-     <span data-ttu-id="ba511-116">Program vytiskne dva řetězce: "Class1.Test" a "Class2.Test".</span><span class="sxs-lookup"><span data-stu-id="ba511-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
+     <span data-ttu-id="c09ef-116">Program vytiskne dva řetězce: "Class1.Test" a "Class2.Test".</span><span class="sxs-lookup"><span data-stu-id="c09ef-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="ba511-117">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="ba511-117">.NET Framework Security</span></span>  
- <span data-ttu-id="ba511-118">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="ba511-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="ba511-119">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `internal` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="ba511-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="c09ef-117">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="c09ef-117">.NET Framework Security</span></span>  
+ <span data-ttu-id="c09ef-118">Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy.</span><span class="sxs-lookup"><span data-stu-id="c09ef-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="c09ef-119">Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `internal` typy a členy.</span><span class="sxs-lookup"><span data-stu-id="c09ef-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ba511-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ba511-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c09ef-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c09ef-120">See also</span></span>
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [<span data-ttu-id="ba511-121">Sestavení v .NET</span><span class="sxs-lookup"><span data-stu-id="ba511-121">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
-- [<span data-ttu-id="ba511-122">Přátelská sestavení</span><span class="sxs-lookup"><span data-stu-id="ba511-122">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
-- [<span data-ttu-id="ba511-123">Postupy: Vytváření podepsaných přátelských sestavení (C#)</span><span class="sxs-lookup"><span data-stu-id="ba511-123">How to: Create Signed Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [<span data-ttu-id="ba511-124">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="ba511-124">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="c09ef-121">Sestavení v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="c09ef-121">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
+- [<span data-ttu-id="c09ef-122">Přátelská sestavení</span><span class="sxs-lookup"><span data-stu-id="c09ef-122">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
+- [<span data-ttu-id="c09ef-123">Postupy: Vytváření podepsaných přátelských sestavení (C#)</span><span class="sxs-lookup"><span data-stu-id="c09ef-123">How to: Create Signed Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
+- [<span data-ttu-id="c09ef-124">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="c09ef-124">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)

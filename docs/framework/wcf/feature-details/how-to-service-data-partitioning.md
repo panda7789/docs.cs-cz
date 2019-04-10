@@ -2,26 +2,26 @@
 title: 'Postupy: Vytvoření oddílů dat služby'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: c5cfd56943c97b70ef12276f1bae47fa870366a8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 17cb80bf253491eb563d6fd45b5997e452f542e1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59150095"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300382"
 ---
-# <a name="how-to-service-data-partitioning"></a><span data-ttu-id="4bed2-102">Postupy: Vytvoření oddílů dat služby</span><span class="sxs-lookup"><span data-stu-id="4bed2-102">How To: Service Data Partitioning</span></span>
-<span data-ttu-id="4bed2-103">Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika instancí stejné cílové služby.</span><span class="sxs-lookup"><span data-stu-id="4bed2-103">This topic outlines the basic steps required to partition messages across multiple instances of the same destination service.</span></span> <span data-ttu-id="4bed2-104">Dělení dat služby se obvykle používá, když budete chtít škálování služby, aby bylo možné poskytovat lepší kvalitu služby, nebo pokud potřebujete zpracovávat požadavky různých zákazníků určitým způsobem.</span><span class="sxs-lookup"><span data-stu-id="4bed2-104">Service data partitioning is typically used when you need to scale a service in order to provide better quality of service, or when you need to handle requests from different customers in a specific way.</span></span> <span data-ttu-id="4bed2-105">Zprávy z vysoké hodnoty nebo zákazníky za "Zlatá" může například potřeba zpracovat s vyšší prioritou než zpráv od standardní zákazníka.</span><span class="sxs-lookup"><span data-stu-id="4bed2-105">For example, messages from high value or "Gold" customers may need to be processed at a higher priority than messages from a standard customer.</span></span>  
+# <a name="how-to-service-data-partitioning"></a><span data-ttu-id="e97b0-102">Postupy: Vytvoření oddílů dat služby</span><span class="sxs-lookup"><span data-stu-id="e97b0-102">How To: Service Data Partitioning</span></span>
+<span data-ttu-id="e97b0-103">Toto téma popisuje základní kroky potřebné k oddílu zprávy do několika instancí stejné cílové služby.</span><span class="sxs-lookup"><span data-stu-id="e97b0-103">This topic outlines the basic steps required to partition messages across multiple instances of the same destination service.</span></span> <span data-ttu-id="e97b0-104">Dělení dat služby se obvykle používá, když budete chtít škálování služby, aby bylo možné poskytovat lepší kvalitu služby, nebo pokud potřebujete zpracovávat požadavky různých zákazníků určitým způsobem.</span><span class="sxs-lookup"><span data-stu-id="e97b0-104">Service data partitioning is typically used when you need to scale a service in order to provide better quality of service, or when you need to handle requests from different customers in a specific way.</span></span> <span data-ttu-id="e97b0-105">Zprávy z vysoké hodnoty nebo zákazníky za "Zlatá" může například potřeba zpracovat s vyšší prioritou než zpráv od standardní zákazníka.</span><span class="sxs-lookup"><span data-stu-id="e97b0-105">For example, messages from high value or "Gold" customers may need to be processed at a higher priority than messages from a standard customer.</span></span>  
   
- <span data-ttu-id="4bed2-106">V tomto příkladu zprávy jsou směrovány na jednu ze dvou instancí služby regularCalc.</span><span class="sxs-lookup"><span data-stu-id="4bed2-106">In this example, messages are routed to one of two instances of the regularCalc service.</span></span> <span data-ttu-id="4bed2-107">Obě instance služby jsou identické; ale reprezentované zprávami procesy calculator1 koncový bod služby obdrželi od zákazníků vysoké hodnoty, koncový bod Kalkulačka 2 procesy zpráv od ostatních zákazníků</span><span class="sxs-lookup"><span data-stu-id="4bed2-107">Both instances of the service are identical; however the service represented by the calculator1 endpoint processes messages received from high value customers, the calculator 2 endpoint processes messages from other customers</span></span>  
+ <span data-ttu-id="e97b0-106">V tomto příkladu zprávy jsou směrovány na jednu ze dvou instancí služby regularCalc.</span><span class="sxs-lookup"><span data-stu-id="e97b0-106">In this example, messages are routed to one of two instances of the regularCalc service.</span></span> <span data-ttu-id="e97b0-107">Obě instance služby jsou identické; ale reprezentované zprávami procesy calculator1 koncový bod služby obdrželi od zákazníků vysoké hodnoty, koncový bod Kalkulačka 2 procesy zpráv od ostatních zákazníků</span><span class="sxs-lookup"><span data-stu-id="e97b0-107">Both instances of the service are identical; however the service represented by the calculator1 endpoint processes messages received from high value customers, the calculator 2 endpoint processes messages from other customers</span></span>  
   
- <span data-ttu-id="4bed2-108">Z klienta byla odeslána zpráva nemá jedinečných dat, který můžete použít k identifikaci které se mají směrovat zprávy k instanci služby.</span><span class="sxs-lookup"><span data-stu-id="4bed2-108">The message sent from the client does not have any unique data that can be used to identify which service instance the message should be routed to.</span></span> <span data-ttu-id="4bed2-109">Povolit každá klient data trasy pro konkrétní cílové služby Implementujeme dva koncové body služby, které se použijí pro příjem zpráv.</span><span class="sxs-lookup"><span data-stu-id="4bed2-109">To allow each client to route data to a specific destination service we will implement two service endpoints that will be used to receive messages.</span></span>  
+ <span data-ttu-id="e97b0-108">Z klienta byla odeslána zpráva nemá jedinečných dat, který můžete použít k identifikaci které se mají směrovat zprávy k instanci služby.</span><span class="sxs-lookup"><span data-stu-id="e97b0-108">The message sent from the client does not have any unique data that can be used to identify which service instance the message should be routed to.</span></span> <span data-ttu-id="e97b0-109">Povolit každá klient data trasy pro konkrétní cílové služby Implementujeme dva koncové body služby, které se použijí pro příjem zpráv.</span><span class="sxs-lookup"><span data-stu-id="e97b0-109">To allow each client to route data to a specific destination service we will implement two service endpoints that will be used to receive messages.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="4bed2-110">Přestože tento příklad používá konkrétní koncové body k dělení dat, to může také provést pomocí informací obsažených v rámci vlastní zprávě například Hlavička nebo text data.</span><span class="sxs-lookup"><span data-stu-id="4bed2-110">While this example uses specific endpoints to partition data, this could also be accomplished using information contained within the message itself such as header or body data.</span></span>  
+>  <span data-ttu-id="e97b0-110">Přestože tento příklad používá konkrétní koncové body k dělení dat, to může také provést pomocí informací obsažených v rámci vlastní zprávě například Hlavička nebo text data.</span><span class="sxs-lookup"><span data-stu-id="e97b0-110">While this example uses specific endpoints to partition data, this could also be accomplished using information contained within the message itself such as header or body data.</span></span>  
   
-### <a name="implement-service-data-partitioning"></a><span data-ttu-id="4bed2-111">Dělení dat implementace služby</span><span class="sxs-lookup"><span data-stu-id="4bed2-111">Implement Service Data Partitioning</span></span>  
+### <a name="implement-service-data-partitioning"></a><span data-ttu-id="e97b0-111">Dělení dat implementace služby</span><span class="sxs-lookup"><span data-stu-id="e97b0-111">Implement Service Data Partitioning</span></span>  
   
-1.  <span data-ttu-id="4bed2-112">Vytvoření základní konfigurace služby směrování zadat koncové body služby určeného službou.</span><span class="sxs-lookup"><span data-stu-id="4bed2-112">Create the basic Routing Service configuration by specifying the service endpoints exposed by the service.</span></span> <span data-ttu-id="4bed2-113">Následující příklad definuje dva koncové body, které se budou používat pro příjem zpráv.</span><span class="sxs-lookup"><span data-stu-id="4bed2-113">The following example defines two endpoints, which will be used to receive messages.</span></span> <span data-ttu-id="4bed2-114">Také definuje koncové body klienta, které se používají k odesílání zpráv do instance služby regularCalc.</span><span class="sxs-lookup"><span data-stu-id="4bed2-114">It also defines the client endpoints, which are used to send messages to the regularCalc service instances.</span></span>  
+1. <span data-ttu-id="e97b0-112">Vytvoření základní konfigurace služby směrování zadat koncové body služby určeného službou.</span><span class="sxs-lookup"><span data-stu-id="e97b0-112">Create the basic Routing Service configuration by specifying the service endpoints exposed by the service.</span></span> <span data-ttu-id="e97b0-113">Následující příklad definuje dva koncové body, které se budou používat pro příjem zpráv.</span><span class="sxs-lookup"><span data-stu-id="e97b0-113">The following example defines two endpoints, which will be used to receive messages.</span></span> <span data-ttu-id="e97b0-114">Také definuje koncové body klienta, které se používají k odesílání zpráv do instance služby regularCalc.</span><span class="sxs-lookup"><span data-stu-id="e97b0-114">It also defines the client endpoints, which are used to send messages to the regularCalc service instances.</span></span>  
   
     ```xml  
     <services>  
@@ -58,7 +58,7 @@ ms.locfileid: "59150095"
      </client>  
     ```  
   
-2.  <span data-ttu-id="4bed2-115">Určit filtry, které slouží ke směrování zpráv do cílové koncové body.</span><span class="sxs-lookup"><span data-stu-id="4bed2-115">Define the filters used to route messages to the destination endpoints.</span></span>  <span data-ttu-id="4bed2-116">V tomto příkladu Název_koncového_bodu filtr slouží k určení, které koncový bod služby zobrazila zpráva.</span><span class="sxs-lookup"><span data-stu-id="4bed2-116">For this example, the EndpointName filter is used to determine which service endpoint received the message.</span></span> <span data-ttu-id="4bed2-117">Následující příklad definuje oddíl nezbytné směrování a filtry.</span><span class="sxs-lookup"><span data-stu-id="4bed2-117">The following example defines the necessary routing section and filters.</span></span>  
+2. <span data-ttu-id="e97b0-115">Určit filtry, které slouží ke směrování zpráv do cílové koncové body.</span><span class="sxs-lookup"><span data-stu-id="e97b0-115">Define the filters used to route messages to the destination endpoints.</span></span>  <span data-ttu-id="e97b0-116">V tomto příkladu Název_koncového_bodu filtr slouží k určení, které koncový bod služby zobrazila zpráva.</span><span class="sxs-lookup"><span data-stu-id="e97b0-116">For this example, the EndpointName filter is used to determine which service endpoint received the message.</span></span> <span data-ttu-id="e97b0-117">Následující příklad definuje oddíl nezbytné směrování a filtry.</span><span class="sxs-lookup"><span data-stu-id="e97b0-117">The following example defines the necessary routing section and filters.</span></span>  
   
     ```xml  
     <filters>  
@@ -71,9 +71,9 @@ ms.locfileid: "59150095"
     </filters>  
     ```  
   
-3.  <span data-ttu-id="4bed2-118">Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta.</span><span class="sxs-lookup"><span data-stu-id="4bed2-118">Define the filter table, which associates each filter with a client endpoint.</span></span> <span data-ttu-id="4bed2-119">V tomto příkladu budou směrovat zprávy na základě konkrétní koncového bodu, který byl přijat přes.</span><span class="sxs-lookup"><span data-stu-id="4bed2-119">In this example, the message will be routed based on the specific endpoint it was received over.</span></span> <span data-ttu-id="4bed2-120">Vzhledem k tomu, že zpráva odpovídá pouze jeden z filtrů dva možné, není nutné pro řídit pořadí, ve které filtry jsou vyhodnocovány pomocí Priorita filtru.</span><span class="sxs-lookup"><span data-stu-id="4bed2-120">Since the message can only match one of the two possible filters, there is no need for using filter priority to control to the order in which filters are evaluated.</span></span>  
+3. <span data-ttu-id="e97b0-118">Definujte filtr tabulky, který každý filtr přidruží koncový bod klienta.</span><span class="sxs-lookup"><span data-stu-id="e97b0-118">Define the filter table, which associates each filter with a client endpoint.</span></span> <span data-ttu-id="e97b0-119">V tomto příkladu budou směrovat zprávy na základě konkrétní koncového bodu, který byl přijat přes.</span><span class="sxs-lookup"><span data-stu-id="e97b0-119">In this example, the message will be routed based on the specific endpoint it was received over.</span></span> <span data-ttu-id="e97b0-120">Vzhledem k tomu, že zpráva odpovídá pouze jeden z filtrů dva možné, není nutné pro řídit pořadí, ve které filtry jsou vyhodnocovány pomocí Priorita filtru.</span><span class="sxs-lookup"><span data-stu-id="e97b0-120">Since the message can only match one of the two possible filters, there is no need for using filter priority to control to the order in which filters are evaluated.</span></span>  
   
-     <span data-ttu-id="4bed2-121">Následující definuje filtr tabulky a přidá filtry definovali dříve.</span><span class="sxs-lookup"><span data-stu-id="4bed2-121">The following defines the filter table and adds the filters defined earlier.</span></span>  
+     <span data-ttu-id="e97b0-121">Následující definuje filtr tabulky a přidá filtry definovali dříve.</span><span class="sxs-lookup"><span data-stu-id="e97b0-121">The following defines the filter table and adds the filters defined earlier.</span></span>  
   
     ```xml  
     <filterTables>  
@@ -85,7 +85,7 @@ ms.locfileid: "59150095"
     </filterTables>  
     ```  
   
-4.  <span data-ttu-id="4bed2-122">Vyhodnocování příchozích zpráv proti filtry, které jsou obsaženy v tabulce, musíte přidružit tabulky filtru koncových bodů služby pomocí směrování chování.</span><span class="sxs-lookup"><span data-stu-id="4bed2-122">To evaluate incoming messages against the filters contained in the table, you must associate the filter table with the service endpoints by using the routing behavior.</span></span> <span data-ttu-id="4bed2-123">Následující příklad ukazuje přiřazování "filterTable1" s koncovými body služby:</span><span class="sxs-lookup"><span data-stu-id="4bed2-123">The following example demonstrates associating "filterTable1" with the service endpoints:</span></span>  
+4. <span data-ttu-id="e97b0-122">Vyhodnocování příchozích zpráv proti filtry, které jsou obsaženy v tabulce, musíte přidružit tabulky filtru koncových bodů služby pomocí směrování chování.</span><span class="sxs-lookup"><span data-stu-id="e97b0-122">To evaluate incoming messages against the filters contained in the table, you must associate the filter table with the service endpoints by using the routing behavior.</span></span> <span data-ttu-id="e97b0-123">Následující příklad ukazuje přiřazování "filterTable1" s koncovými body služby:</span><span class="sxs-lookup"><span data-stu-id="e97b0-123">The following example demonstrates associating "filterTable1" with the service endpoints:</span></span>  
   
     ```xml  
     <behaviors>  
@@ -98,8 +98,8 @@ ms.locfileid: "59150095"
     </behaviors>  
     ```  
   
-## <a name="example"></a><span data-ttu-id="4bed2-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="4bed2-124">Example</span></span>  
- <span data-ttu-id="4bed2-125">Tady je úplný seznam všech konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="4bed2-125">The following is a complete listing of the configuration file.</span></span>  
+## <a name="example"></a><span data-ttu-id="e97b0-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="e97b0-124">Example</span></span>  
+ <span data-ttu-id="e97b0-125">Tady je úplný seznam všech konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="e97b0-125">The following is a complete listing of the configuration file.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -173,6 +173,6 @@ ms.locfileid: "59150095"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4bed2-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4bed2-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e97b0-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e97b0-126">See also</span></span>
 
-- [<span data-ttu-id="4bed2-127">Směrovací služby</span><span class="sxs-lookup"><span data-stu-id="4bed2-127">Routing Services</span></span>](../../../../docs/framework/wcf/samples/routing-services.md)
+- [<span data-ttu-id="e97b0-127">Směrovací služby</span><span class="sxs-lookup"><span data-stu-id="e97b0-127">Routing Services</span></span>](../../../../docs/framework/wcf/samples/routing-services.md)
