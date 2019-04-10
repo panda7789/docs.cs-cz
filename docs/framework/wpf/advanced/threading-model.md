@@ -18,20 +18,18 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: a1417c5ee6fe774214c10b0164eb84dbfb2ed2bb
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 0bcb0e7369345aaae39d99a005a07304aaad7043
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125678"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59200347"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  
   
  Bez ohledu na to jak dobře navržený, ale ne [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] někdy framework budou moci poskytnout řešení s jedním vláknem pro každý druh problému. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahuje zavřít, ale stále existují situace, kdy více vláken zvýšit [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] výkonu rychlost odezvy nebo aplikace. Tento dokument po diskuze o některých materiálu na pozadí, zkoumá některé z těchto situací a poté dojde k závěru představíme některé podrobnosti nižší úrovně.  
-  
 
-  
 > [!NOTE]
 >  Toto téma popisuje práce s vlákny pomocí <xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A> metody pro asynchronní volání. Můžete také provádět asynchronní volání voláním <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A> metodu, která trvat <xref:System.Action> nebo <xref:System.Func%601> jako parametr.  <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A> Metoda vrátí hodnotu <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, který má <xref:System.Windows.Threading.DispatcherOperation.Task%2A> vlastnost. Můžete použít `await` – klíčové slovo se buď <xref:System.Windows.Threading.DispatcherOperation> nebo přidružené <xref:System.Threading.Tasks.Task>. Pokud budete muset počkat synchronně <xref:System.Threading.Tasks.Task> , který je vrácen <xref:System.Windows.Threading.DispatcherOperation> nebo <xref:System.Windows.Threading.DispatcherOperation%601>, volání <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> – metoda rozšíření.  Volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> povede k zablokování. Další informace o používání <xref:System.Threading.Tasks.Task> k provádění asynchronních operací, najdete v článku funkční paralelismus.  <xref:System.Windows.Threading.Dispatcher.Invoke%2A> Metoda má také přetížení, která přijímají <xref:System.Action> nebo <xref:System.Func%601> jako parametr.  Můžete použít <xref:System.Windows.Threading.Dispatcher.Invoke%2A> předáním delegátu, volá metodu provádět synchronní <xref:System.Action> nebo <xref:System.Func%601>.  
   
@@ -99,7 +97,7 @@ ms.locfileid: "58125678"
  [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
  [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
   
- Tato metoda ověří, zda je nejbližší liché číslo prime. Pokud je primární, metoda přímo aktualizuje `bigPrime` <xref:System.Windows.Controls.TextBlock> tak, aby odrážely jeho zjišťování. Můžeme to udělat, protože dochází k výpočtu ve stejném vláknu, která byla použita k vytvoření komponenty. Zvolili jsme použít pro výpočet samostatném vlákně, měli jsme pro složitější mechanismus synchronizace a provádění aktualizací v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Ukážeme si tuto situaci dále.  
+ Tato metoda ověří, zda je nejbližší liché číslo prime. Pokud je primární, metoda přímo aktualizuje `bigPrime`<xref:System.Windows.Controls.TextBlock> tak, aby odrážely jeho zjišťování. Můžeme to udělat, protože dochází k výpočtu ve stejném vláknu, která byla použita k vytvoření komponenty. Zvolili jsme použít pro výpočet samostatném vlákně, měli jsme pro složitější mechanismus synchronizace a provádění aktualizací v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Ukážeme si tuto situaci dále.  
   
  Úplný zdrojový kód pro tuto ukázku, najdete v článku [jedno vláknové objekty aplikace s ukázkou dlouhotrvající výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)  
   
@@ -145,7 +143,7 @@ ms.locfileid: "58125678"
   
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Průzkumník funguje tímto způsobem. Každé nové okno Průzkumníka patří k původní procesu, ale je vytvořené v rámci ovládacího prvku nezávislé vlákna.  
   
- Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Frame> ovládacího prvku, zobrazíme webové stránky. Můžeme snadno vytvořit jednoduchý [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nahradit. Začneme s důležitou funkcí: možnost otevřete nové okno Průzkumníka. Když uživatel klepne "nové okno" tlačítko, můžeme spustit kopii naše okna v samostatném vlákně. Tímto způsobem, dlouhotrvající nebo blokující operace v jednom ovládacím prvku windows nebudou uzamčení všech ostatních oken.  
+ Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Frame> ovládacího prvku, zobrazíme webové stránky. Můžeme snadno vytvořit jednoduchý [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nahradit. Začneme s důležitou funkcí: možnost otevřete nové okno Průzkumníka. Když uživatel klepne "nové okno" tlačítko, můžeme spustit kopii naše okna v samostatném vlákně. Tímto způsobem, dlouhotrvající nebo blokující operace v jednom ovládacím prvku windows nebudou uzamčení všech ostatních oken.  
   
  Model webového prohlížeče ve skutečnosti má svůj vlastní složité vláken model. Zvolili jsme ji vzhledem k tomu, že by mělo být známé většina čtenářů.  
   
@@ -218,4 +216,5 @@ ms.locfileid: "58125678"
  Úloha pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vyhnout se neočekávaným opětovný vstup bez opětovného zavedení nevracení paměti, což je důvod, proč nedošlo k blokování opětovný vstup všude, kde.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Aplikace s jedním vláknem s ukázkou dlouhotrvající výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)

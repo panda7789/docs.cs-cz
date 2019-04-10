@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7b6803f6-d6f9-4cc2-9f1b-6f4c920475d5
-ms.openlocfilehash: c31a954d659b3f686f8b9780276a4719064e60cc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 0aa5429d771aeda0b392b89ec4cc1a07de30973f
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59128710"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59298536"
 ---
 # <a name="how-to-create-a-service-with-a-contract-interface"></a>Postupy: Vytvoření služby pomocí rozhraní kontraktu
 Pomocí rozhraní je upřednostňovaný způsob vytvoření kontraktu Windows Communication Foundation (WCF). Tento kontrakt určuje kolekci a struktura zpráv, které jsou nutné pro přístup k operace nabídky služeb. Toto rozhraní definuje vstupní a výstupní typy použitím <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní a <xref:System.ServiceModel.OperationContractAttribute> třídy pro metody, které chcete zveřejnit.  
@@ -19,13 +19,13 @@ Pomocí rozhraní je upřednostňovaný způsob vytvoření kontraktu Windows Co
   
 ### <a name="creating-a-wcf-contract-with-an-interface"></a>Vytvoření pomocí rozhraní kontraktu WCF  
   
-1.  Vytvoření nového rozhraní pomocí jazyka Visual Basic C#, nebo jakéhokoli jiného common language runtime jazyka.  
+1. Vytvoření nového rozhraní pomocí jazyka Visual Basic C#, nebo jakéhokoli jiného common language runtime jazyka.  
   
-2.  Použít <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní.  
+2. Použít <xref:System.ServiceModel.ServiceContractAttribute> třídy rozhraní.  
   
-3.  Definujte metody v rozhraní.  
+3. Definujte metody v rozhraní.  
   
-4.  Použít <xref:System.ServiceModel.OperationContractAttribute> třídy pro každou metodu, která musí být v rámci veřejného kontraktu WCF vystavené.  
+4. Použít <xref:System.ServiceModel.OperationContractAttribute> třídy pro každou metodu, která musí být v rámci veřejného kontraktu WCF vystavené.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje rozhraní, které definuje kontrakt služby.  

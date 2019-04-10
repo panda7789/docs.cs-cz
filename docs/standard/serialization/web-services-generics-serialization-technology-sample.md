@@ -1,30 +1,30 @@
 ---
-title: Ukázka technologie serializace obecných typů služby webového
+title: Ukázka technologie serializace obecných typů ve webových službách
 ms.date: 03/30/2017
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
-ms.openlocfilehash: 59224df97d54ac089293068bbb5dfa3fe26a8d8c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6549dc1c3d428a5fb74fe0212549ef3f3f6510d1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971868"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299654"
 ---
-# <a name="web-services-generics-serialization-technology-sample"></a>Ukázka technologie serializace obecných typů služby webového
+# <a name="web-services-generics-serialization-technology-sample"></a>Ukázka technologie serializace obecných typů ve webových službách
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
   
  Tento příklad ukazuje, jak používat a řídit serializace obecných typů v webové služby ASP.NET.  
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>K vytvoření vzorku pomocí sady Visual Studio  
   
-1.  Otevřít Visual Studio a vyberte **nový web** z **souboru** nabídky.  
+1. Otevřít Visual Studio a vyberte **nový web** z **souboru** nabídky.  
   
-2.  V **nový web** dialogového okna, vyberte v levém podokně požadovanou programovací jazyk a potom v pravém podokně vyberte **webová služba ASP.NET**.  
+2. V **nový web** dialogového okna, vyberte v levém podokně požadovanou programovací jazyk a potom v pravém podokně vyberte **webová služba ASP.NET**.  
   
-3.  Klikněte na tlačítko **Procházet** a přejděte do podadresáře \CS\GenericsService.  
+3. Klikněte na tlačítko **Procházet** a přejděte do podadresáře \CS\GenericsService.  
   
-4.  Vyberte Service.asmx k otevření souboru v sadě Visual Studio.  
+4. Vyberte Service.asmx k otevření souboru v sadě Visual Studio.  
   
-5.  Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
+5. Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
   
 > [!NOTE]
 >  Prvních pět kroků v tomto seznamu jsou volitelné. Modul runtime rozhraní .NET Framework, bude automaticky generovat webové služby první čas, kdy je požadována služba.  
@@ -32,33 +32,33 @@ ms.locfileid: "56971868"
 > [!NOTE]
 >  Následující kroky jsou nutné k vytvoření vzorku.  
   
-1.  Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do podadresáře \CS.  
+1. Otevřít [!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] a přejděte do podadresáře \CS.  
   
-2.  Klikněte pravým tlačítkem na ikonu podadresáři GenericsService a vyberte **sdílení a zabezpečení**.  
+2. Klikněte pravým tlačítkem na ikonu podadresáři GenericsService a vyberte **sdílení a zabezpečení**.  
   
-3.  V **sdílení na webu** kartu, vyberte možnost **sdílet tuto složku**.  
+3. V **sdílení na webu** kartu, vyberte možnost **sdílet tuto složku**.  
   
 > [!IMPORTANT]
 >  Poznamenejte si název virtuálního adresáře, který je uveden v **aliasy** podokno, protože je budete potřebovat ke spuštění ukázky.  
   
 ### <a name="to-build-the-sample-using-internet-information-services"></a>K vytvoření vzorku pomocí Internetové informační služby  
   
-1.  Otevřít **Internetová informační služba** správy modulu snap-in a rozbalení **weby**.  
+1. Otevřít **Internetová informační služba** správy modulu snap-in a rozbalení **weby**.  
   
-2.  Klepněte na položku **výchozí webový server**vyberte **nový**a pak vyberte **virtuální adresář?** vytvořit **Průvodce vytvořením virtuálního adresáře**.  
+2. Klepněte na položku **výchozí webový server**vyberte **nový**a pak vyberte **virtuální adresář?** vytvořit **Průvodce vytvořením virtuálního adresáře**.  
   
-3.  Klikněte na tlačítko **Další**, zadejte veřejné alias pro virtuální adresář a klikněte na tlačítko **Další**.  
+3. Klikněte na tlačítko **Další**, zadejte veřejné alias pro virtuální adresář a klikněte na tlačítko **Další**.  
   
-4.  Zadejte cestu k adresáři, kam jste uložili vzorku (obvykle podadresář \CS\GenericsService) a klikněte na tlačítko **Další**. Klikněte na tlačítko **Další** dokončete průvodce.  
+4. Zadejte cestu k adresáři, kam jste uložili vzorku (obvykle podadresář \CS\GenericsService) a klikněte na tlačítko **Další**. Klikněte na tlačítko **Další** dokončete průvodce.  
   
 > [!IMPORTANT]
 >  Poznamenejte si název virtuálního adresáře, který je uveden v **Alias** podokno, protože je budete potřebovat ke spuštění ukázky.  
   
 ### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
-1.  Otevřete okno prohlížeče a vyberte jeho adresa.  
+1. Otevřete okno prohlížeče a vyberte jeho adresa.  
   
-2.  Typ `http://localhost/[virtual directory]/Service.asmx`, kde `[virtual directory]` představuje virtuální adresář, který jste vytvořili při sestavení vzorku.  
+2. Typ `http://localhost/[virtual directory]/Service.asmx`, kde `[virtual directory]` představuje virtuální adresář, který jste vytvořili při sestavení vzorku.  
   
 ## <a name="remarks"></a>Poznámky  
  Ukázka zobrazí výchozí stránka technologie ASP.NET, která obsahuje odkazy na definice webové služby. Můžete přizpůsobit zobrazení kromě Změna zdrojového kódu webové služby. Další informace najdete v tématu [klienty vytváření XML webové služby](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w3h45ebk(v=vs.100)).  

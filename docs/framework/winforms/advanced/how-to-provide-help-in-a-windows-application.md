@@ -8,12 +8,12 @@ helpviewer_keywords:
 - HelpProvider component [Windows Forms]
 - forms [Windows Forms], providing Help
 ms.assetid: 7c4e5cec-2bd2-4f0b-8d75-c2b88929bd61
-ms.openlocfilehash: 5cda0517e8653e89aabde3a9c0459a2dbae61616
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: cbecb82acb22915af96fa26f08e441b4f6686c4a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59129477"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312710"
 ---
 # <a name="how-to-provide-help-in-a-windows-application"></a>Postupy: Poskytnutí nápovědy v aplikaci Windows
 Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení témata nápovědy v souboru nápovědy k určité ovládací prvky v modelu Windows Forms. Soubor nápovědy může být ve formátu HTML nebo HTMLHelp 1.x nebo větší formátu.  
@@ -23,17 +23,17 @@ Lze použít <xref:System.Windows.Forms.HelpProvider> součásti pro připojení
   
 ### <a name="to-provide-help"></a>Získání nápovědy  
   
-1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře.  
+1. Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.HelpProvider> komponentu do formuláře.  
   
      Komponenta se bude nacházet na hlavním panelu v dolní části Návrháře formulářů Windows.  
   
-2.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost v souboru nápovědy chm, .col nebo htm.  
+2. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> vlastnost v souboru nápovědy chm, .col nebo htm.  
   
-3.  Vyberte jiný ovládací prvek na formuláři máte a v **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.  
+3. Vyberte jiný ovládací prvek na formuláři máte a v **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> vlastnost.  
   
      Jedná se o řetězec, který předává <xref:System.Windows.Forms.HelpProvider> komponentu do souboru nápovědy k výzvě příslušné téma nápovědy.  
   
-4.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.  
+4. V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> vlastnost na hodnotu <xref:System.Windows.Forms.HelpNavigator> výčtu.  
   
      Určuje, jakým způsobem **HelpKeyword** vlastnost předána do systému nápovědy. V následující tabulce jsou uvedeny možné nastavení a jejich popisy.  
   

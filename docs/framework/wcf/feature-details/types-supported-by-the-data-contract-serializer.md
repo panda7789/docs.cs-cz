@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - serialization [WCF], supported types
 ms.assetid: 7381b200-437a-4506-9556-d77bf1bc3f34
-ms.openlocfilehash: e61d257f9503d95764a5d1f6374d6e2a216fceaa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9c532858ba3b93d427e5c0455f953db2499ebd6a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54523399"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59072542"
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>Typy podporované serializátorem kontraktu dat
 Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serialization.DataContractSerializer> jako výchozí web serializace převést data na XML a převést zpět na data XML. <xref:System.Runtime.Serialization.DataContractSerializer> Slouží k serializaci *kontraktu dat* typy. Ale podporuje mnoho jiných typů, které si lze představit jako kontrakt implicitní data. Následuje úplný seznam typů, které lze serializovat:  
@@ -31,7 +31,7 @@ Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serializa
   
 -   Typy označené <xref:System.SerializableAttribute> atribut. Mnoho typů součástí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] základní třídy knihovny spadají do této kategorie. <xref:System.Runtime.Serialization.DataContractSerializer> Plně podporuje tento serializace programovací model, který se používá ve vzdálené komunikace rozhraní .NET Framework, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>, včetně podpory pro <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
   
--   Typy, které představují nezpracovaná XML nebo typy, které představují [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] relační data. <xref:System.Xml.XmlElement> a pole <xref:System.Xml.XmlNode> typy jsou podporované jako způsob reprezentace XML přímo. Kromě toho typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní jsou podporované. zahrnuje to související <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataTable> Typ a <xref:System.Data.DataSet> typu (stejně jako jeho typu odvozené třídy) implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní a proto se vejde do této kategorie. Další informace najdete v tématu [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).  
+-   Typy, které představují nezpracovaná XML nebo typy, které představují [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] relační data. <xref:System.Xml.XmlElement> a pole <xref:System.Xml.XmlNode> typy jsou podporované jako způsob reprezentace XML přímo. Kromě toho typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní jsou podporované. zahrnuje to související <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy. [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]<xref:System.Data.DataTable> Typ a <xref:System.Data.DataSet> typu (stejně jako jeho typu odvozené třídy) implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní a proto se vejde do této kategorie. Další informace najdete v tématu [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md).  
   
 ## <a name="limitations-of-using-certain-types-in-partial-trust-mode"></a>Omezení používání určitých typů v částečné důvěryhodnosti režimu  
  Následuje seznam omezení při použití určitých typů ve scénářích s částečnou důvěryhodností režimu:  
@@ -68,6 +68,7 @@ Windows Communication Foundation (WCF) používá <xref:System.Runtime.Serializa
 -   <xref:System.DBNull> Typ je zpracováván zvláštním způsobem. Jde o typ singleton, a po deserializace deserializátor respektuje jednoznačné omezení a všechny body `DBNull` odkazy na instanci typu singleton. Protože `DBNull` je serializovatelný typ., se vyžaduje <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> oprávnění.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md)
 - [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 - [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)

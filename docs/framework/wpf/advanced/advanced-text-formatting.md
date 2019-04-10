@@ -9,23 +9,21 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-ms.openlocfilehash: 7d2408104ee3cf206734c5a1904129c3b71f7229
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: fa707ed9c409a2e6933629a658bfe650b43f3233
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368230"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59085724"
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
-Windows Presentation Foundation (WPF) poskytuje robustní sadu [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Controls.TextBlock>zadejte nejběžnější a obecné použití prvků pro textové prezentaci. Kreslení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, prostředkem pro zahrnutí do kreslení formátovaného textu. Nanejvýš pokročilé úrovni členství, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování k řízení všech aspektů text prezentací, jako jsou Správa úložiště text, správa formátování textových spuštění a správa vložený objekt rozšiřitelné textu.  
+Windows Presentation Foundation (WPF) poskytuje robustní sadu [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] pro včetně textu ve vaší aplikaci. Rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)][!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Controls.TextBlock>zadejte nejběžnější a obecné použití prvků pro textové prezentaci. Kreslení [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], jako například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, prostředkem pro zahrnutí do kreslení formátovaného textu. Nanejvýš pokročilé úrovni členství, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje formátování k řízení všech aspektů text prezentací, jako jsou Správa úložiště text, správa formátování textových spuštění a správa vložený objekt rozšiřitelné textu.  
   
  Toto téma obsahuje úvod do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu. Zaměřuje se na implementace klienta a použití [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu.  
   
 > [!NOTE]
 >  Všechny příklady kódu v tomto dokumentu najdete v [Advanced ukázka formátování textu](https://go.microsoft.com/fwlink/?LinkID=159965).  
-  
 
-  
 <a name="prereq"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  Toto téma předpokládá, že máte zkušenosti s vyšší úrovní [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] použit pro textové prezentaci. Většina uživatelských scénářích nebude vyžadovat formátování textu pokročilé [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] popsané v tomto tématu. Úvod do různých text [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)], naleznete v tématu [dokumenty v platformě WPF](documents-in-wpf.md).  
@@ -42,8 +40,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu [!INCLUDE[TLA#tla
   
  Na rozdíl od tradičních text [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)], <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje přes sadu metod zpětného volání klienta rozložení textu. Vyžaduje od klienta tyto metody v implementaci <xref:System.Windows.Media.TextFormatting.TextSource> třídy. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
- ![Diagram klienta rozložení textu a objektu TextFormatter](./media/textformatter01.png "TextFormatter01")  
-Interakce mezi aplikací a objektu TextFormatter  
+ ![Diagram klienta rozložení textu a objektu TextFormatter](./media/advanced-text-formatting/text-layout-textformatter-interaction.png)  
   
  Formátování textu slouží k načtení řádky formátovaný text z textového úložiště, což je implementace <xref:System.Windows.Media.TextFormatting.TextSource>. To vytvořením první instance formátování textu pomocí provádí <xref:System.Windows.Media.TextFormatting.TextFormatter.Create%2A> metody. Tato metoda vytvoří instanci formátovacího modulu text a nastaví řádku maximální výšku a šířku. Jakmile je vytvořena instance formátování textu, proces vytváření řádek se spustí volání <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A> metody. <xref:System.Windows.Media.TextFormatting.TextFormatter> zavolá zpět do zdroje textu k načtení textu a formátování parametry pro spuštění textu, které tvoří řádku.  
   
@@ -95,5 +92,6 @@ Interakce mezi aplikací a objektu TextFormatter
  <xref:System.Windows.Media.TextFormatting.TextRun> objekty jsou formátovány pomocí vlastnosti poskytované třídou úložiště text. Tyto vlastnosti se dělí na dva typy <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties>. <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> zpracovat odstavec včetně vlastnosti, jako <xref:System.Windows.TextAlignment> a <xref:System.Windows.FlowDirection>. <xref:System.Windows.Media.TextFormatting.TextRunProperties> jsou vlastnosti, které mohou být různé pro každý text spouštět v rámci odstavce, jako jsou štětce popředí <xref:System.Windows.Media.Typeface>a velikost písma. K implementaci vlastních odstavec a spustit typy vlastností vlastního textu, musí aplikace vytvořit třídy, které jsou odvozeny z <xref:System.Windows.Media.TextFormatting.TextParagraphProperties> a <xref:System.Windows.Media.TextFormatting.TextRunProperties> v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

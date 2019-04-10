@@ -6,19 +6,19 @@ helpviewer_keywords:
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: ee5c7cbea09c6183b48fe1b0acd051d65bdd1875
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: e696ccb7327197c2f3a2468d30085dc6d390e034
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58819031"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59312709"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Postupy: Zápis informací o události do textového souboru (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje způsob použití `My.Application.Log.WriteEntry` metoda ukládá do protokolu trasování údaje do souboru protokolu.  
   
 ### <a name="to-add-and-configure-the-file-log-listener"></a>Přidání a konfigurace naslouchacího procesu protokolu souborů  
   
-1.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
+1. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení** a zvolte **otevřít**.  
   
      \- nebo –  
   
@@ -30,19 +30,19 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
     3.  Klikněte na **Přidat**.  
   
-2.  Vyhledejte `<listeners>` oddílu v konfiguračním souboru aplikace.  
+2. Vyhledejte `<listeners>` oddílu v konfiguračním souboru aplikace.  
   
      Vás bude \<naslouchacích procesů > v tématu \<zdroj > část s atributem name "DefaultSource", která je vnořená v rámci \<system.diagnostics > oddíl, což je vnořený nejvyšší úrovně \<konfigurace > oddílu.  
   
-3.  Přidejte tento element, který `<listeners>` části:  
+3. Přidejte tento element, který `<listeners>` části:  
   
     ```xml  
     <add name="FileLogListener" />  
     ```  
   
-4.  Vyhledejte `<sharedListeners>` tématu `<system.diagnostics>` části, v nejvyšší úrovni `<configuration>` oddílu.  
+4. Vyhledejte `<sharedListeners>` tématu `<system.diagnostics>` části, v nejvyšší úrovni `<configuration>` oddílu.  
   
-5.  Přidejte tento element, který `<sharedListeners>` části:  
+5. Přidejte tento element, který `<sharedListeners>` části:  
   
     ```xml  
     <add name="FileLogListener"   
@@ -70,5 +70,5 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Postupy: Výjimky protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)

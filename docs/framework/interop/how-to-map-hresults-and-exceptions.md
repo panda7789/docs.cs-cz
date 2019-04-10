@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 609f7f6e5460bf315b87725405496e95abbfdd95
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 60173739842835a705a72da4e7ab442cacfc08d2
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59102762"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59306544"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
 Metody modelu COM zprávy o chybách tak, že vrací výsledky HRESULT; metod rozhraní .NET dejte nám o nich vyvoláním výjimky. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework se mapuje na HRESULT.  
@@ -31,7 +31,7 @@ Metody modelu COM zprávy o chybách tak, že vrací výsledky HRESULT; metod ro
   
 ### <a name="to-create-a-new-exception-class-and-map-it-to-an-hresult"></a>Chcete-li vytvořit novou třídu výjimky a jejich mapování na HRESULT  
   
-1.  Pomocí následujícího kódu vytvořte novou třídu výjimek s názvem `NoAccessException` a jejich mapování na HRESULT `E_ACCESSDENIED`.  
+1. Pomocí následujícího kódu vytvořte novou třídu výjimek s názvem `NoAccessException` a jejich mapování na HRESULT `E_ACCESSDENIED`.  
   
     ```cpp  
     Class NoAccessException : public ApplicationException  

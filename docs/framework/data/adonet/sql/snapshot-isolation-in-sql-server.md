@@ -1,18 +1,18 @@
 ---
-title: Izolace snímků na SQL serveru
+title: Izolace snímků na SQL Serveru
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 873ec2cfdf7e4b0c743a3bcf607abe8500ec4d3f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c06ecd8626b148c4f2143efdfa1e143d6ab3d6bc
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643049"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59215934"
 ---
-# <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL serveru
+# <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL Serveru
 Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním transakcí.  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>Principy izolaci snímku a správy verzí řádku  
@@ -142,6 +142,7 @@ SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)
  Pokud vaše aplikace obsahuje mnoho konflikty, izolaci snímku nemusí být nejlepší volbou. Pomocné parametry by měla sloužit pouze při opravdu potřebujete. Aplikace by neměl být navržený tak, aby neustále spoléhá na pomocné parametry zámku pro jeho operace.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
 - [Průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

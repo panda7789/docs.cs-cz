@@ -17,12 +17,12 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: f9fd936c15454a81058d42825800a388c5c90a40
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 075f70e3ef053507dfe3d408246d179bb57c5891
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379195"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59211918"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 [!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] aplikace jsou často závislé na souborech, které obsahují data – spustitelný soubor, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuku. Windows Presentation Foundation (WPF) nabízí zvláštní podporu pro konfiguraci, identifikaci a použití těchto typů datových souborů, které se nazývají datových souborů aplikací. Tato podpora zásadní kolem konkrétní sadu typů souborů dat aplikace, včetně:  
@@ -38,8 +38,7 @@ ms.locfileid: "57379195"
  Chcete-li datové soubory aplikace, používá Windows Presentation Foundation (WPF) této sady [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schématu, která je popsána v části [identifikátory Pack URI v subsystému WPF](pack-uris-in-wpf.md)).  
   
  Toto téma popisuje, jak nakonfigurovat a používat datové soubory aplikace.  
-  
-  
+
 <a name="Resource_Files"></a>   
 ## <a name="resource-files"></a>Zdrojové soubory  
  Pokud datový soubor aplikace musí být vždy k dispozici pro aplikace, je jediný způsob, jak zajistit dostupnost zkompilovat do sestavení hlavní spustitelný soubor aplikace nebo jeden z jejích odkazovaných sestavení. Tento typ souboru aplikace, data se označuje jako *soubor prostředků*.  
@@ -124,7 +123,7 @@ ms.locfileid: "57379195"
  Když vaše aplikace vyžaduje určitou sadu datových souborů aplikací, které chcete aktualizovat bez nutnosti rekompilace sestavení, která využívá, je možné, měli byste použít soubory obsahu.  
   
 ### <a name="configuring-content-files"></a>Konfigurace souborů obsahu  
- Přidání obsahu souboru do projektu, musí být zahrnut jako soubor dat aplikace `Content` položky. Navíc vzhledem k tomu, že soubor s obsahem není zkompilován přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` prvek metadat k určení, že obsahu soubor je zkopírován do umístění, která je relativní vzhledem k sestavení. Pokud chcete prostředek, který má být zkopírován do výstupní složka sestavení pokaždé, když je sestaven projekt, můžete nastavit `CopyToOutputDirectory` metadat element s `Always` hodnotu. V opačném případě můžete zajistit, pouze nejnovější verzi prostředku je zkopírována do výstupní složka sestavení s použitím `PreserveNewest` hodnotu.  
+ Přidání obsahu souboru do projektu, musí být zahrnut jako soubor dat aplikace `Content` položky. Navíc vzhledem k tomu, že soubor s obsahem není zkompilován přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`CopyToOutputDirectory` prvek metadat k určení, že obsahu soubor je zkopírován do umístění, která je relativní vzhledem k sestavení. Pokud chcete prostředek, který má být zkopírován do výstupní složka sestavení pokaždé, když je sestaven projekt, můžete nastavit `CopyToOutputDirectory` metadat element s `Always` hodnotu. V opačném případě můžete zajistit, pouze nejnovější verzi prostředku je zkopírována do výstupní složka sestavení s použitím `PreserveNewest` hodnotu.  
   
  Následující uvádí soubor, který je nakonfigurovaný jako soubor obsahu, který se zkopíruje do sestavení výstupní složky pouze v případě, že nová verze prostředku se přidá do projektu.  
   
@@ -198,7 +197,7 @@ ms.locfileid: "57379195"
 ### <a name="configuring-site-of-origin-files"></a>Konfigurace serveru původu souborů  
  Pokud váš web původu soubory jsou neexistující nebo neznámé v době kompilace, budete muset použít tradiční nasazení mechanismy pro zajištění požadované soubory jsou k dispozici v době běhu, včetně použití buď `XCopy` program v příkazovém řádku nebo [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- Pokud víte, v době kompilace soubory, které by má být umístěn v lokalitě původu, ale přesto chcete vyhnout explicitní závislosti, můžete přidat tyto soubory [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` atribut k určení, že lokality zdrojový soubor je zkopírován do umístění, která je relativní vzhledem k sestavení, zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
+ Pokud víte, v době kompilace soubory, které by má být umístěn v lokalitě původu, ale přesto chcete vyhnout explicitní závislosti, můžete přidat tyto soubory [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`CopyToOutputDirectory` atribut k určení, že lokality zdrojový soubor je zkopírován do umístění, která je relativní vzhledem k sestavení, zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -239,4 +238,5 @@ ms.locfileid: "57379195"
  Po změně sestavení typu datového souboru aplikace, budete muset znovu vytvořit celé aplikace, ujistěte se, že tyto změny se použijí. Pokud vytváříte pouze aplikace, nepoužijí se změny.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)

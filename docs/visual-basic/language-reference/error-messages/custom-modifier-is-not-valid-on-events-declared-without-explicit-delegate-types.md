@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC31122
 ms.assetid: 6911f0d1-641a-473b-906d-8ee5681194be
-ms.openlocfilehash: 0fc645671eb899faff0dbb5c6d745ba23faf4557
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 169cb49cc5abc76b7c52785392d0083b81a99450
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58827221"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300941"
 ---
 # <a name="custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>Modifikátor 'Custom' není platný pro události deklarované bez explicitních typů delegátů.
 Na rozdíl od jiných vlastních událostí `Custom Event` deklarace vyžaduje `As` klauzule podle název události, které explicitně určuje typ delegáta pro událost.  
@@ -23,13 +23,13 @@ Na rozdíl od jiných vlastních událostí `Custom Event` deklarace vyžaduje `
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Definujte delegáta se stejným seznamem parametrů jako vlastní událost.  
+1. Definujte delegáta se stejným seznamem parametrů jako vlastní událost.  
   
      Například pokud `Custom Event` byl definovaný souborem `Custom Event Test(ByVal sender As Object, ByVal i As Integer)`, pak odpovídající delegáta by byl následující.  
   
      [!code-vb[VbVbalrEventError#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#18)]  
   
-2.  Nahraďte parametr seznam vlastních událostí pomocí `As` klauzule určující typ delegáta.  
+2. Nahraďte parametr seznam vlastních událostí pomocí `As` klauzule určující typ delegáta.  
   
      Pokračujte v tomto příkladu `Custom Event` deklarace by být přepsán následujícím způsobem.  
   
@@ -42,6 +42,6 @@ Na rozdíl od jiných vlastních událostí `Custom Event` deklarace vyžaduje `
   
 ## <a name="see-also"></a>Viz také:
 
-- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
-- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)
+- [Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md)
 - [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

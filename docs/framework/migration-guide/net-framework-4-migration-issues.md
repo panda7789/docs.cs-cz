@@ -1,5 +1,5 @@
 ---
-title: Problémy s migrací rozhraní .NET framework 4
+title: Problémy s migrací rozhraní .NET Framework 4
 ms.date: 05/02/2017
 helpviewer_keywords:
 - .NET Framework 4, migration
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d861aa59b31871d20d21d88d9587239f76ae386d
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 368d5f7fa2eec8f3526a10b4777a862e8334617c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203636"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59210227"
 ---
-# <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET framework 4
+# <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET Framework 4
 
 Toto téma popisuje problémy s migrací mezi verzi rozhraní .NET Framework 3.5 Service Pack 1 a rozhraní .NET Framework verze 4, včetně oprav, změny standardy dodržování předpisů a zabezpečení a změn na základě názorů zákazníků. Většina těchto změn nevyžaduje žádné programové změny v aplikacích. Pro ty, které mohou vyžadovat změny naleznete v tématu Doporučené změny sloupec v tabulce.
 
@@ -86,7 +86,6 @@ Namespace: <xref:System>; sestavení: mscorlib (v knihovně mscorlib.dll)
 | **Letní** | Aby byla konzistentní se systémové hodiny, čas vlastnosti (například <xref:System.TimeZoneInfo.Local> a <xref:System.DateTime.Now>) místo jiných dat rozhraní .NET Framework teď používat operační systém pravidla pro letní čas operace. | Žádné |
 | **Formátování řetězců** | Pro podporu formátování zohledňující jazykovou verzi <xref:System.TimeSpan> struktura zahrnuje nové přetížení `ToString`, `Parse`, a `TryParse` kromě nových metod `ParseExact` a `TryParseExact` metody. | Žádné |
 
-
 ### <a name="globalization"></a>Globalizace
 
 Seznam nových neutrální a specifické jazykové verze, najdete v části [co je nového v globalizace a lokalizace](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd997383%28v=vs.100%29).
@@ -119,7 +118,7 @@ Namespace: <xref:System.Reflection>; sestavení: mscorlib (v knihovně mscorlib.
 | **Algoritmy hash sestavení** | <xref:System.Reflection.AssemblyName.HashAlgorithm> Vlastnosti nyní vrátí <xref:System.Configuration.Assemblies.AssemblyHashAlgorithm>, protože modul runtime neví hashovacího algoritmu sestavení odkazované sestavení není načteno. (To se vztahuje na použití vlastnosti v odkazovaném sestavení vrácený rutinou <xref:System.Reflection.Assembly.GetReferencedAssemblies%2A> metoda.) | Žádné |
 | **Načítání sestavení** | Aby se zabránilo nadbytečné načítání sestavení a uložíte virtuální adresní prostor, CLR se teď načte sestavení pomocí pouze Win32 `MapViewOfFile` funkce. Volá už také `LoadLibrary` funkce.<br><br>Tato změna ovlivní diagnostiky aplikace následujícími způsoby:<br><br>* A <xref:System.Diagnostics.ProcessModuleCollection> již nemusí obsahovat všechny moduly, které z knihovny tříd (soubor .dll), získaný z volání `Process.GetCurrentProcess().Modules`.<br>* Win32 – aplikace, které používají `EnumProcessModules` funkce se nezobrazí všechny spravované moduly, které jsou uvedené. | Žádné |
 | **Deklarující typ** | <xref:System.Type.DeclaringType> Vlastnost nyní správně vrací hodnotu null typu nemá deklarujícího typu. | Žádné |
-| **Delegáti** | Nyní vyvolá delegáta <xref:System.ArgumentNullException> místo <xref:System.NullReferenceException> při hodnotu null je předán konstruktoru delegáta. | Ujistěte se, že jakékoli zpracování výjimky zachytí <xref:System.ArgumentNullException>. |
+| **Delegáty** | Nyní vyvolá delegáta <xref:System.ArgumentNullException> místo <xref:System.NullReferenceException> při hodnotu null je předán konstruktoru delegáta. | Ujistěte se, že jakékoli zpracování výjimky zachytí <xref:System.ArgumentNullException>. |
 | **Změna umístění mezipaměti globálního sestavení** | Pro sestavení rozhraní .NET Framework 4 byl přesunut do globální mezipaměti sestavení v adresáři Windows (% WINDIR %) do podadresáře Microsoft.Net (*% WINDIR %\\Microsoft.Net*). Sestavení ze starší verze, zůstanou v adresáři starší.<br><br>Nespravovanou [ASM_CACHE_FLAGS](../unmanaged-api/fusion/asm-cache-flags-enumeration.md) výčet obsahuje nové `ASM_CACHE_ROOT_EX` příznak. Tento příznak získá umístění mezipaměti pro sestavení rozhraní .NET Framework 4, které je možné získat [GetCachePath](../unmanaged-api/fusion/getcachepath-function.md) funkce. | Žádné, za předpokladu, že aplikace nepoužívejte explicitní cesty k sestavením, která není doporučený postup. |
 | **Nástroj globální mezipaměti sestavení** | [Gacutil.exe (Global Assembly Cache Tool)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ex0ss12c%28v=vs.100%29) už podporuje modul plug-in prohlížeče prostředí. | Žádné |
 
@@ -330,4 +329,4 @@ Obory názvů: <xref:System.Xml.Linq>; <xref:System.Xml.Schema>, <xref:System.Xm
 
 ### <a name="other-resources"></a>Další zdroje
 
-- [Co je zastaralé v knihovně tříd rozhraní .NET Framework](../whats-new/whats-obsolete.md)
+- [Zastaralé položky v knihovně tříd rozhraní .NET Framework](../whats-new/whats-obsolete.md)

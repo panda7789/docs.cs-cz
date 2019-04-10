@@ -2,12 +2,12 @@
 title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 41e266ba5b54bfb37313f9588515f7ae9cc6f79d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 69242ec745f2a5b945ae64eb558070dbf0d39c10
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59153072"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59299615"
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Foundation (WCF).  
@@ -30,13 +30,13 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
 ## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>Rozhraní WMI služby poškození blokuje instalaci zprostředkovatele služby Windows Communication Foundation WMI během instalace balíčku rozhraní .NET Framework 3.0  
  Poškození služby WMI může blokovat instalace zprostředkovatele služby Windows Communication Foundation WMI. Při instalaci Windows Communication Foundation nelze registrovat soubor MOF WCF pomocí mofcomp.exe komponenty instalačního programu. Následuje seznam příznaky:  
   
-1.  Úspěšného dokončení instalace rozhraní .NET framework 3.0, ale není zaregistrovaný zprostředkovatel rozhraní WMI WCF.  
+1. Úspěšného dokončení instalace rozhraní .NET framework 3.0, ale není zaregistrovaný zprostředkovatel rozhraní WMI WCF.  
   
-2.  Událost chyby se objeví v protokolu událostí aplikace, která odkazuje na problémy s registrací zprostředkovatele rozhraní WMI na WCF nebo systémem mofcomp.exe.  
+2. Událost chyby se objeví v protokolu událostí aplikace, která odkazuje na problémy s registrací zprostředkovatele rozhraní WMI na WCF nebo systémem mofcomp.exe.  
   
-3.  Soubor protokolu s názvem dd_wcf_retCA * v adresáři % temp % uživatele obsahuje odkazy na selhání se zaregistrovat poskytovatele služby WMI WCF.  
+3. Soubor protokolu s názvem dd_wcf_retCA * v adresáři % temp % uživatele obsahuje odkazy na selhání se zaregistrovat poskytovatele služby WMI WCF.  
   
-4.  Například následující výjimku mohou být uvedeny v souboru protokolu událostí nebo nastavení protokolu trasování:  
+4. Například následující výjimku mohou být uvedeny v souboru protokolu událostí nebo nastavení protokolu trasování:  
   
      ServiceModelReg [11:09:59:046]: System.ApplicationException: Neočekávaný výsledek 3 provádění E:\WINDOWS\system32\wbem\mofcomp.exe s "Foundation\ServiceModel.mof E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows komunikaci"  
   
@@ -52,7 +52,7 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
   
  Následující kroky musí následovat problém, jak je popsáno výše.  
   
-1.  Spustit [diagnostická utilita WMI, verze 2.0](https://go.microsoft.com/fwlink/?LinkId=94685) opravte službu WMI. Další informace o použití tohoto nástroje najdete v tématu [diagnostická utilita WMI](https://go.microsoft.com/fwlink/?LinkId=94686) tématu.  
+1. Spustit [diagnostická utilita WMI, verze 2.0](https://go.microsoft.com/fwlink/?LinkId=94685) opravte službu WMI. Další informace o použití tohoto nástroje najdete v tématu [diagnostická utilita WMI](https://go.microsoft.com/fwlink/?LinkId=94686) tématu.  
   
  Opravte instalaci rozhraní .NET Framework 3.0 pomocí **přidat nebo odebrat programy** aplet umístěný v **ovládací panely**, nebo odinstalování a nová instalace rozhraní .NET Framework 3.0.  
   

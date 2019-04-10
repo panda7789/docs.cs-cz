@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-ms.openlocfilehash: 2f48f9486c5d29fc0b70e4487a12a1c499235cba
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: efea92fa5176641ac64265dfffd44a088115bb61
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54732645"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59305933"
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření klientské aplikace rozhraní .NET Framework (WCF Data Services – rychlý start)
 
@@ -21,38 +21,38 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 ## <a name="to-create-the-client-application-by-using-visual-studio"></a>Vytvoření klientské aplikace pomocí sady Visual Studio
 
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **nový projekt**.
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **nový projekt**.
 
-2.  V levém podokně vyberte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Windows Desktop**a pak vyberte  **Aplikace WPF** šablony.
+2. V levém podokně vyberte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Windows Desktop**a pak vyberte  **Aplikace WPF** šablony.
 
-3.  Zadejte `NorthwindClient` pro název projektu a pak klikněte na tlačítko **OK**.
+3. Zadejte `NorthwindClient` pro název projektu a pak klikněte na tlačítko **OK**.
 
-4.  Otevřete soubor MainWindow.xaml a nahraďte kód XAML následujícím kódem:
+4. Otevřete soubor MainWindow.xaml a nahraďte kód XAML následujícím kódem:
 
      [!code-xaml[Astoria Quickstart Client#Window1Xaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml#window1xaml)]
 
 ## <a name="to-add-a-data-service-reference-to-the-project"></a>Chcete-li přidat odkaz na službu do projektu
 
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt NorthwindClient, klikněte na tlačítko **přidat** > **odkaz na službu**a potom klikněte na tlačítko **zjišťování** .
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt NorthwindClient, klikněte na tlačítko **přidat** > **odkaz na službu**a potom klikněte na tlačítko **zjišťování** .
 
      Zobrazí se datová služba Northwind, kterou jste vytvořili v prvním úkolem.
 
-2.  V **Namespace** textového pole, typ `Northwind`a potom klikněte na tlačítko **OK**.
+2. V **Namespace** textového pole, typ `Northwind`a potom klikněte na tlačítko **OK**.
 
      To přidá nový soubor kódu do projektu, který obsahuje data třídy, které se používají pro přístup k interakci s prostředky služby dat jako objektů. Datové třídy jsou vytvořené v oboru názvů `NorthwindClient.Northwind`.
 
 ## <a name="to-access-data-service-data-in-the-wpf-application"></a>Pro přístup k datům služby dat v aplikaci WPF
 
-1.  V **Průzkumníka řešení** pod **NorthwindClient**, klikněte pravým tlačítkem na projekt a klikněte na tlačítko **přidat odkaz**.
+1. V **Průzkumníka řešení** pod **NorthwindClient**, klikněte pravým tlačítkem na projekt a klikněte na tlačítko **přidat odkaz**.
 
-2.  V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET** kartu, vyberte knihovně System.Data.Services.Client.dll sestavení a pak klikněte na tlačítko **OK**.
+2. V **přidat odkaz** dialogové okno, klikněte na tlačítko **.NET** kartu, vyberte knihovně System.Data.Services.Client.dll sestavení a pak klikněte na tlačítko **OK**.
 
 3. V **Průzkumníka řešení** pod **NorthwindClient**, otevřete stránku kódem pro souboru MainWindow.xaml a přidejte následující `using` – příkaz (`Imports` v jazyce Visual Basic).
 
      [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#using)]
      [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#using)]
 
-3.  Vložte následující kód, který se dotazuje služby data a vytvoří výsledek, který má vazbu <xref:System.Data.Services.Client.DataServiceCollection%601> do `MainWindow` třídy:
+3. Vložte následující kód, který se dotazuje služby data a vytvoří výsledek, který má vazbu <xref:System.Data.Services.Client.DataServiceCollection%601> do `MainWindow` třídy:
 
     > [!NOTE]
     > Je třeba nahradit název hostitele `localhost:12345` serveru a port, který je hostitelem vaší instance datová služba Northwind.
@@ -60,20 +60,20 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
      [!code-csharp[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#querycode)]
      [!code-vb[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#querycode)]
 
-4.  Vložte následující kód, který ukládá změny do `MainWindow` třídy:
+4. Vložte následující kód, který ukládá změny do `MainWindow` třídy:
 
      [!code-csharp[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#savechanges)]
      [!code-vb[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#savechanges)]
 
 ## <a name="to-build-and-run-the-northwindclient-application"></a>Sestavte a spusťte aplikaci NorthwindClient
 
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt NorthwindClient a vyberte **nastavit jako spouštěný projekt**.
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt NorthwindClient a vyberte **nastavit jako spouštěný projekt**.
 
-2.  Stisknutím klávesy **F5** ke spuštění aplikace.
+2. Stisknutím klávesy **F5** ke spuštění aplikace.
 
      Tím se sestaví řešení a spustí klientské aplikace. Data se požadované služby a zobrazovat v konzole.
 
-3.  Úprava hodnoty v **množství** sloupců datové mřížce a potom klikněte na **Uložit**.
+3. Úprava hodnoty v **množství** sloupců datové mřížce a potom klikněte na **Uložit**.
 
      Změny se uloží do datové služby.
 

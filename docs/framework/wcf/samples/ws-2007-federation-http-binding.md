@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 07becd0fc5cbbd9a8b90de2d20654a63b62e3085
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 550a88552658864e3eedb70463e676ad6f9a2511
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59153397"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59324939"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>, standardní vazbu, že můžete použít k sestavení federovaných scénářích podporu verzi 1.3 specifikaci WS-Trust.  
@@ -110,15 +110,15 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte soubor Setup.bat vytvořit požadované certifikáty.  
+2. Otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte soubor Setup.bat vytvořit požadované certifikáty.  
   
  Tento dávkový soubor používá Certmgr.exe a Makecert.exe, které jsou distribuovány v sadě Windows SDK. Však musíte spustit Setup.bat z v rámci příkazový řádek sady Visual Studio umožňuje skript, který chcete najít těchto nástrojů.  
   
-1.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], je nutné spustit Service.exe, Client.exe, a SecurityTokenService.exe s se zvýšenými oprávněními (pravým tlačítkem myši na soubory a pak klikněte na tlačítko **spustit jako správce**).  
+2. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], je nutné spustit Service.exe, Client.exe, a SecurityTokenService.exe s se zvýšenými oprávněními (pravým tlačítkem myši na soubory a pak klikněte na tlačítko **spustit jako správce**).  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

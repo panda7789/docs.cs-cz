@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - allowing metadata requests while authorizing [WCF]
 ms.assetid: 90cec34f-b619-452b-a056-8b1c0de49d05
-ms.openlocfilehash: 4d549bb953ecdcbddd0ea4730a766538b2205d0f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: bea4f7e90df29678697fe6708bdc6a73145522db
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59082669"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59317698"
 ---
 # <a name="how-to-allow-metadata-requests-while-authorizing"></a>Postupy: Povolení požadavků na metadata při autorizaci
 Během autorizace může být potřeba povolit požadavek na metadata ke zpracování. Následující téma vás provede kroky k ověření žádosti.  
@@ -21,13 +21,13 @@ Během autorizace může být potřeba povolit požadavek na metadata ke zpracov
   
 ### <a name="to-allow-metadata-requests-during-authorization"></a>K povolení požadavků na metadata při autorizaci  
   
-1.  Vytvoření rozšíření <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
+1. Vytvoření rozšíření <xref:System.ServiceModel.ServiceAuthorizationManager> třídy.  
   
-2.  Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metody. Metoda vrátí `true` nebo `false` v závislosti na tom, zda je povoleno ověření. Informace o aktuálním postupu najdete v <xref:System.ServiceModel.OperationContext> jako parametr předán metodě.  
+2. Přepsat <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metody. Metoda vrátí `true` nebo `false` v závislosti na tom, zda je povoleno ověření. Informace o aktuálním postupu najdete v <xref:System.ServiceModel.OperationContext> jako parametr předán metodě.  
   
-3.  V přepsání zkontrolujte název smlouvy, obor názvů a akce, jak je znázorněno v následujícím příkladu. Pokud podmínky jsou platné, bude vrácen `true.`  
+3. V přepsání zkontrolujte název smlouvy, obor názvů a akce, jak je znázorněno v následujícím příkladu. Pokud podmínky jsou platné, bude vrácen `true.`  
   
-4.  Můžete použít třídu bodu rozšiřitelnosti. Další informace najdete v tématu [jak: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md).  
+4. Můžete použít třídu bodu rozšiřitelnosti. Další informace najdete v tématu [jak: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje přepsání <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metody.  

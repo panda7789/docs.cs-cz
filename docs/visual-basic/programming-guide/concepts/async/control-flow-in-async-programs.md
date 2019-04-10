@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 57c83021551ab386f62c8d22b90db8da8054df7f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: ed993943bcf7341f900c575744a1faa53a4a8a2e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837426"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300928"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Tok řízení v asynchronních programech (Visual Basic)
 Můžete napsat a snadněji udržovat asynchronní programy pomocí `Async` a `Await` klíčová slova. Ale výsledků možná vás překvapí Pokud nevíte, jak program pracuje. Toto téma sleduje tok řízení prostřednictvím jednoduchého asynchronního programu k zobrazení, když se ovládací prvek přesune z jedné metody na jinou a jaké informace jsou pokaždé přeneseny.  
@@ -100,34 +100,34 @@ Length of the downloaded string: 33946.
 ### <a name="download-the-program"></a>Stažení programu  
  Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: Řízení toku v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.  
   
-1.  Rozbalte stažený soubor a poté spusťte Visual Studio.  
+1. Rozbalte stažený soubor a poté spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
+2. V panelu nabídky zvolte **souboru**, **otevřít**, **projekt či řešení**.  
   
-3.  Přejděte do složky obsahující dekomprimovaný ukázkový kód, otevřete soubor řešení (.sln) a pak zvolte klávesu F5 sestavte a spusťte projekt.  
+3. Přejděte do složky obsahující dekomprimovaný ukázkový kód, otevřete soubor řešení (.sln) a pak zvolte klávesu F5 sestavte a spusťte projekt.  
   
 ### <a name="build-the-program-yourself"></a>Vytvoření programu vlastními silami  
  Následující projekt Windows Presentation Foundation (WPF) obsahuje příklad kódu pro toto téma.  
   
  Spusťte projekt, proveďte následující kroky:  
   
-1.  Spusťte Visual Studio.  
+1. Spusťte Visual Studio.  
   
-2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
+2. V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
      **Nový projekt** zobrazí se dialogové okno.  
   
-3.  V **nainstalované šablony** podokně zvolte **jazyka Visual Basic**a klikněte na tlačítko **aplikace WPF** ze seznamu typů projektů.  
+3. V **nainstalované šablony** podokně zvolte **jazyka Visual Basic**a klikněte na tlačítko **aplikace WPF** ze seznamu typů projektů.  
   
-4.  Zadejte `AsyncTracer` jako název projektu a klikněte na tlačítko **OK** tlačítko.  
+4. Zadejte `AsyncTracer` jako název projektu a klikněte na tlačítko **OK** tlačítko.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-5.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
+5. V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
      Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.  
   
-6.  V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
+6. V **XAML** zobrazení souboru mainwindow.XAML, nahraďte kód následujícím kódem.  
   
     ```vb  
     <Window  
@@ -145,9 +145,9 @@ Length of the downloaded string: 33946.
   
      Jednoduché okno obsahující textové pole a tlačítko se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.  
   
-7.  Přidat odkaz pro <xref:System.Net.Http>.  
+7. Přidat odkaz pro <xref:System.Net.Http>.  
   
-8.  V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
+8. V **Průzkumníka řešení**, otevřete místní nabídku pro soubor MainWindow.xaml.vb a klikněte na tlačítko **zobrazit kód**.  
   
 9. V souboru MainWindow.xaml.vb nahraďte kód následujícím kódem.  
   

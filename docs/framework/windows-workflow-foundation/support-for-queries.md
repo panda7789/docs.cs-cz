@@ -2,12 +2,12 @@
 title: Podpora pro dotazy
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
-ms.openlocfilehash: 2314a111cb4c4b82cacd91b7638ef0c8eaba5c3c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 30695fcd791a0d69c31a897068d69838c80c3957
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711998"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59307948"
 ---
 # <a name="support-for-queries"></a>Podpora pro dotazy
 Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastnosti v úložišti. Uživatelé mohou odesílat dotazy na instance založené na těchto vlastností. Následující seznam obsahuje některé z těchto dobře známé vlastnosti:  
@@ -39,21 +39,21 @@ Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastno
 ### <a name="the-instances-view"></a>Zobrazení instancí  
  Zobrazení instance obsahuje následující pole:  
   
-1.  **ID**  
+1. **ID**  
   
-2.  **PendingTimer**  
+2. **PendingTimer**  
   
-3.  **CreationTime**  
+3. **CreationTime**  
   
-4.  **LastUpdatedTime**  
+4. **LastUpdatedTime**  
   
-5.  **ServiceDeploymentId**  
+5. **ServiceDeploymentId**  
   
-6.  **SuspensionExceptionName**  
+6. **SuspensionExceptionName**  
   
-7.  **SuspensionReason**  
+7. **SuspensionReason**  
   
-8.  **ActiveBookmarks**  
+8. **ActiveBookmarks**  
   
 9. **CurrentMachine**  
   
@@ -80,23 +80,23 @@ Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastno
 ### <a name="the-servicedeployments-view"></a>Zobrazení ServiceDeployments  
  Zobrazení ServiceDeployments obsahuje následující pole:  
   
-1.  **Název webu**  
+1. **SiteName**  
   
-2.  **RelativeServicePath**  
+2. **RelativeServicePath**  
   
-3.  **RelativeApplicationPath**  
+3. **RelativeApplicationPath**  
   
-4.  **ServiceName**  
+4. **ServiceName**  
   
-5.  **ServiceNamespace**  
+5. **ServiceNamespace**  
   
 ### <a name="the-instancepromotedproperties-view"></a>Zobrazení InstancePromotedProperties  
  Zobrazení InstancePromotedProperties obsahuje následující pole. Podrobnosti o propagované vlastnosti, najdete v článku [Store rozšíření](store-extensibility.md) tématu.  
   
-1.  **InstanceId**  
+1. **InstanceId**  
   
-2.  **EncodingOption**  
+2. **EncodingOption**  
   
-3.  **PromotionName**  
+3. **PromotionName**  
   
-4.  **Hodnota #** (rozsah pole z **hodnota1** k **Value64**).
+4. **Hodnota #** (rozsah pole z **hodnota1** k **Value64**).

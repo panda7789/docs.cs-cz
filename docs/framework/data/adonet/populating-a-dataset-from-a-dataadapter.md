@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
-ms.openlocfilehash: 0756eb0917e812101006f000db07f55f39afda57
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ecfd2c3a31b42b380c593aef0bbc23775874cc7a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54597122"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59076819"
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z adaptéru dat
-[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  
+[!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]<xref:System.Data.DataSet> Rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  
   
  `SelectCommand` Vlastnost `DataAdapter` je `Command` objekt, který načítá data z datového zdroje. `InsertCommand`, `UpdateCommand`, A `DeleteCommand` vlastnosti `DataAdapter` jsou `Command` objekty, které spravují aktualizace dat ve zdroji dat podle změny provedené v datech v `DataSet`. Tyto vlastnosti se budeme věnovat jednotlivě podrobněji v [aktualizace zdroje dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
   
@@ -182,6 +182,7 @@ adapter.Fill(customers, "Customers");
 |ANATR|10625|1|  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
 - [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
 - [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)
