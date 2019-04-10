@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: 839b765c-3e41-44ce-bf1b-dc10453db18e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a55ff59d698a1ced689e23d9908ce6e273d8a9c1
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 0e7df65c28fad6fa79ec7a18d8511955330b2817
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57494542"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59227740"
 ---
-# <a name="strongnamesignaturegeneration-function"></a><span data-ttu-id="b5371-102">StrongNameSignatureGeneration – funkce</span><span class="sxs-lookup"><span data-stu-id="b5371-102">StrongNameSignatureGeneration Function</span></span>
-<span data-ttu-id="b5371-103">Podpis silného názvu generuje pro zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="b5371-103">Generates a strong name signature for the specified assembly.</span></span>  
+# <a name="strongnamesignaturegeneration-function"></a><span data-ttu-id="b620b-102">StrongNameSignatureGeneration – funkce</span><span class="sxs-lookup"><span data-stu-id="b620b-102">StrongNameSignatureGeneration Function</span></span>
+<span data-ttu-id="b620b-103">Podpis silného názvu generuje pro zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="b620b-103">Generates a strong name signature for the specified assembly.</span></span>  
   
- <span data-ttu-id="b5371-104">Tato funkce je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b5371-104">This function has been deprecated.</span></span> <span data-ttu-id="b5371-105">Použití [iclrstrongname::strongnamesignaturegeneration –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="b5371-105">Use the [ICLRStrongName::StrongNameSignatureGeneration](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md) method instead.</span></span>  
+ <span data-ttu-id="b620b-104">Tato funkce je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="b620b-104">This function has been deprecated.</span></span> <span data-ttu-id="b620b-105">Použití [iclrstrongname::strongnamesignaturegeneration –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="b620b-105">Use the [ICLRStrongName::StrongNameSignatureGeneration](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5371-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5371-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b620b-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b620b-106">Syntax</span></span>  
   
 ```  
 BOOLEAN StrongNameSignatureGeneration (   
@@ -40,53 +40,54 @@ BOOLEAN StrongNameSignatureGeneration (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b5371-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5371-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b620b-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="b620b-107">Parameters</span></span>  
  `wszFilePath`  
- <span data-ttu-id="b5371-108">[in] Cesta k souboru, který obsahuje manifest sestavení, pro který se vygeneruje podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="b5371-108">[in] The path to the file that contains the manifest of the assembly for which the strong name signature will be generated.</span></span>  
+ <span data-ttu-id="b620b-108">[in] Cesta k souboru, který obsahuje manifest sestavení, pro který se vygeneruje podpis silného názvu.</span><span class="sxs-lookup"><span data-stu-id="b620b-108">[in] The path to the file that contains the manifest of the assembly for which the strong name signature will be generated.</span></span>  
   
  `wszKeyContainer`  
- <span data-ttu-id="b5371-109">[in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="b5371-109">[in] The name of the key container that contains the public/private key pair.</span></span>  
+ <span data-ttu-id="b620b-109">[in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="b620b-109">[in] The name of the key container that contains the public/private key pair.</span></span>  
   
- <span data-ttu-id="b5371-110">Pokud `pbKeyBlob` má hodnotu null, `wszKeyContainer` musíte zadat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP).</span><span class="sxs-lookup"><span data-stu-id="b5371-110">If `pbKeyBlob` is null, `wszKeyContainer` must specify a valid container within the cryptographic service provider (CSP).</span></span> <span data-ttu-id="b5371-111">V takovém případě uložený v kontejneru pár klíčů se používá k podepsání souboru.</span><span class="sxs-lookup"><span data-stu-id="b5371-111">In this case, the key pair stored in the container is used to sign the file.</span></span>  
+ <span data-ttu-id="b620b-110">Pokud `pbKeyBlob` má hodnotu null, `wszKeyContainer` musíte zadat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP).</span><span class="sxs-lookup"><span data-stu-id="b620b-110">If `pbKeyBlob` is null, `wszKeyContainer` must specify a valid container within the cryptographic service provider (CSP).</span></span> <span data-ttu-id="b620b-111">V takovém případě uložený v kontejneru pár klíčů se používá k podepsání souboru.</span><span class="sxs-lookup"><span data-stu-id="b620b-111">In this case, the key pair stored in the container is used to sign the file.</span></span>  
   
- <span data-ttu-id="b5371-112">Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="b5371-112">If `pbKeyBlob` is not null, the key pair is assumed to be contained in the key binary large object (BLOB).</span></span>  
+ <span data-ttu-id="b620b-112">Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).</span><span class="sxs-lookup"><span data-stu-id="b620b-112">If `pbKeyBlob` is not null, the key pair is assumed to be contained in the key binary large object (BLOB).</span></span>  
   
- <span data-ttu-id="b5371-113">Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů.</span><span class="sxs-lookup"><span data-stu-id="b5371-113">The keys must be 1024-bit Rivest-Shamir-Adleman (RSA) signing keys.</span></span> <span data-ttu-id="b5371-114">Jiné typy klíčů jsou v tuto chvíli nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="b5371-114">No other types of keys are supported at this time.</span></span>  
+ <span data-ttu-id="b620b-113">Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů.</span><span class="sxs-lookup"><span data-stu-id="b620b-113">The keys must be 1024-bit Rivest-Shamir-Adleman (RSA) signing keys.</span></span> <span data-ttu-id="b620b-114">Jiné typy klíčů jsou v tuto chvíli nepodporuje.</span><span class="sxs-lookup"><span data-stu-id="b620b-114">No other types of keys are supported at this time.</span></span>  
   
  `pbKeyBlob`  
- <span data-ttu-id="b5371-115">[in] Ukazatel na pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="b5371-115">[in] A pointer to the public/private key pair.</span></span> <span data-ttu-id="b5371-116">Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce.</span><span class="sxs-lookup"><span data-stu-id="b5371-116">This pair is in the format created by the Win32 `CryptExportKey` function.</span></span> <span data-ttu-id="b5371-117">Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `wszKeyContainer` se předpokládá, že obsahuje pár klíčů.</span><span class="sxs-lookup"><span data-stu-id="b5371-117">If `pbKeyBlob` is null, the key container specified by `wszKeyContainer` is assumed to contain the key pair.</span></span>  
+ <span data-ttu-id="b620b-115">[in] Ukazatel na pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="b620b-115">[in] A pointer to the public/private key pair.</span></span> <span data-ttu-id="b620b-116">Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce.</span><span class="sxs-lookup"><span data-stu-id="b620b-116">This pair is in the format created by the Win32 `CryptExportKey` function.</span></span> <span data-ttu-id="b620b-117">Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `wszKeyContainer` se předpokládá, že obsahuje pár klíčů.</span><span class="sxs-lookup"><span data-stu-id="b620b-117">If `pbKeyBlob` is null, the key container specified by `wszKeyContainer` is assumed to contain the key pair.</span></span>  
   
  `cbKeyBlob`  
- <span data-ttu-id="b5371-118">[in] Velikost v bajtech, z `pbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="b5371-118">[in] The size, in bytes, of `pbKeyBlob`.</span></span>  
+ <span data-ttu-id="b620b-118">[in] Velikost v bajtech, z `pbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="b620b-118">[in] The size, in bytes, of `pbKeyBlob`.</span></span>  
   
  `ppbSignatureBlob`  
- <span data-ttu-id="b5371-119">[out] Ukazatel na umístění, do kterého modul common language runtime vrací podpis.</span><span class="sxs-lookup"><span data-stu-id="b5371-119">[out] A pointer to the location to which the common language runtime returns the signature.</span></span> <span data-ttu-id="b5371-120">Pokud `ppbSignatureBlob` je null, podpis modul runtime ukládá do souboru určeného `wszFilePath`.</span><span class="sxs-lookup"><span data-stu-id="b5371-120">If `ppbSignatureBlob` is null, the runtime stores the signature in the file specified by `wszFilePath`.</span></span>  
+ <span data-ttu-id="b620b-119">[out] Ukazatel na umístění, do kterého modul common language runtime vrací podpis.</span><span class="sxs-lookup"><span data-stu-id="b620b-119">[out] A pointer to the location to which the common language runtime returns the signature.</span></span> <span data-ttu-id="b620b-120">Pokud `ppbSignatureBlob` je null, podpis modul runtime ukládá do souboru určeného `wszFilePath`.</span><span class="sxs-lookup"><span data-stu-id="b620b-120">If `ppbSignatureBlob` is null, the runtime stores the signature in the file specified by `wszFilePath`.</span></span>  
   
- <span data-ttu-id="b5371-121">Pokud `ppbSignatureBlob` je nenulová, modul common language runtime přiděluje místo ke signatura vrácení.</span><span class="sxs-lookup"><span data-stu-id="b5371-121">If `ppbSignatureBlob` is not null, the common language runtime allocates space in which to return the signature.</span></span> <span data-ttu-id="b5371-122">Volající musí uvolnit prostor pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="b5371-122">The caller must free this space using the [StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) function.</span></span>  
+ <span data-ttu-id="b620b-121">Pokud `ppbSignatureBlob` je nenulová, modul common language runtime přiděluje místo ke signatura vrácení.</span><span class="sxs-lookup"><span data-stu-id="b620b-121">If `ppbSignatureBlob` is not null, the common language runtime allocates space in which to return the signature.</span></span> <span data-ttu-id="b620b-122">Volající musí uvolnit prostor pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.</span><span class="sxs-lookup"><span data-stu-id="b620b-122">The caller must free this space using the [StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) function.</span></span>  
   
  `pcbSignatureBlob`  
- <span data-ttu-id="b5371-123">[out] Velikost v bajtech, vrácený podpis.</span><span class="sxs-lookup"><span data-stu-id="b5371-123">[out] The size, in bytes, of the returned signature.</span></span>  
+ <span data-ttu-id="b620b-123">[out] Velikost v bajtech, vrácený podpis.</span><span class="sxs-lookup"><span data-stu-id="b620b-123">[out] The size, in bytes, of the returned signature.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b5371-124">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b5371-124">Return Value</span></span>  
- <span data-ttu-id="b5371-125">`true` Při úspěšném dokončení; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="b5371-125">`true` on successful completion; otherwise, `false`.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="b620b-124">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b620b-124">Return Value</span></span>  
+ `true` <span data-ttu-id="b620b-125">Při úspěšném dokončení; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="b620b-125">on successful completion; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b5371-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b5371-126">Remarks</span></span>  
- <span data-ttu-id="b5371-127">Zadejte hodnotu null pro `wszFilePath` vypočítat velikost podpisu bez vytvoření podpisu.</span><span class="sxs-lookup"><span data-stu-id="b5371-127">Specify null for `wszFilePath` to calculate the size of the signature without creating the signature.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b620b-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b620b-126">Remarks</span></span>  
+ <span data-ttu-id="b620b-127">Zadejte hodnotu null pro `wszFilePath` vypočítat velikost podpisu bez vytvoření podpisu.</span><span class="sxs-lookup"><span data-stu-id="b620b-127">Specify null for `wszFilePath` to calculate the size of the signature without creating the signature.</span></span>  
   
- <span data-ttu-id="b5371-128">Podpis může být buď přímo v souboru uložit nebo vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="b5371-128">The signature can be stored either directly in the file, or returned to the caller.</span></span>  
+ <span data-ttu-id="b620b-128">Podpis může být buď přímo v souboru uložit nebo vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="b620b-128">The signature can be stored either directly in the file, or returned to the caller.</span></span>  
   
- <span data-ttu-id="b5371-129">Pokud `StrongNameSignatureGeneration` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.</span><span class="sxs-lookup"><span data-stu-id="b5371-129">If the `StrongNameSignatureGeneration` function does not complete successfully, call the [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) function to retrieve the last generated error.</span></span>  
+ <span data-ttu-id="b620b-129">Pokud `StrongNameSignatureGeneration` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.</span><span class="sxs-lookup"><span data-stu-id="b620b-129">If the `StrongNameSignatureGeneration` function does not complete successfully, call the [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) function to retrieve the last generated error.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b5371-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5371-130">Requirements</span></span>  
- <span data-ttu-id="b5371-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5371-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b620b-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b620b-130">Requirements</span></span>  
+ <span data-ttu-id="b620b-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b620b-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b5371-132">**Záhlaví:** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="b5371-132">**Header:** StrongName.h</span></span>  
+ <span data-ttu-id="b620b-132">**Záhlaví:** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="b620b-132">**Header:** StrongName.h</span></span>  
   
- <span data-ttu-id="b5371-133">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b5371-133">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b620b-133">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b620b-133">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="b5371-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b5371-134">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ **<span data-ttu-id="b620b-134">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="b620b-134">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="b5371-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5371-135">See also</span></span>
-- [<span data-ttu-id="b5371-136">StrongNameSignatureGeneration – metoda</span><span class="sxs-lookup"><span data-stu-id="b5371-136">StrongNameSignatureGeneration Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)
-- [<span data-ttu-id="b5371-137">StrongNameSignatureGenerationEx – metoda</span><span class="sxs-lookup"><span data-stu-id="b5371-137">StrongNameSignatureGenerationEx Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
-- [<span data-ttu-id="b5371-138">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5371-138">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="b620b-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b620b-135">See also</span></span>
+
+- [<span data-ttu-id="b620b-136">StrongNameSignatureGeneration – metoda</span><span class="sxs-lookup"><span data-stu-id="b620b-136">StrongNameSignatureGeneration Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)
+- [<span data-ttu-id="b620b-137">StrongNameSignatureGenerationEx – metoda</span><span class="sxs-lookup"><span data-stu-id="b620b-137">StrongNameSignatureGenerationEx Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
+- [<span data-ttu-id="b620b-138">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b620b-138">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

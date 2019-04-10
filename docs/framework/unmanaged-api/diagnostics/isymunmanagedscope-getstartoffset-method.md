@@ -17,33 +17,34 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 189e72e513a06bfa545007fc9a8612a61314a520
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: faab55199a3b921ea8b995e2a0f9823fb4da9cc7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492658"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230587"
 ---
-# <a name="isymunmanagedscopegetstartoffset-method"></a><span data-ttu-id="da7a9-102">ISymUnmanagedScope::GetStartOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="da7a9-102">ISymUnmanagedScope::GetStartOffset Method</span></span>
-<span data-ttu-id="da7a9-103">Získá počáteční odsazení pro tento obor.</span><span class="sxs-lookup"><span data-stu-id="da7a9-103">Gets the start offset for this scope.</span></span>  
+# <a name="isymunmanagedscopegetstartoffset-method"></a><span data-ttu-id="2d0b2-102">ISymUnmanagedScope::GetStartOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="2d0b2-102">ISymUnmanagedScope::GetStartOffset Method</span></span>
+<span data-ttu-id="2d0b2-103">Získá počáteční odsazení pro tento obor.</span><span class="sxs-lookup"><span data-stu-id="2d0b2-103">Gets the start offset for this scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="da7a9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da7a9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2d0b2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2d0b2-104">Syntax</span></span>  
   
 ```  
 HRESULT GetStartOffset(  
     [out, retval] ULONG32* pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="da7a9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="da7a9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2d0b2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2d0b2-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="da7a9-106">[out] Ukazatel `ULONG32` , která obsahuje počáteční posun.</span><span class="sxs-lookup"><span data-stu-id="da7a9-106">[out] A pointer to a `ULONG32` that contains the starting offset.</span></span>  
+ <span data-ttu-id="2d0b2-106">[out] Ukazatel `ULONG32` , která obsahuje počáteční posun.</span><span class="sxs-lookup"><span data-stu-id="2d0b2-106">[out] A pointer to a `ULONG32` that contains the starting offset.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="da7a9-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="da7a9-107">Return Value</span></span>  
- <span data-ttu-id="da7a9-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="da7a9-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="2d0b2-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2d0b2-107">Return Value</span></span>  
+ <span data-ttu-id="2d0b2-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="2d0b2-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="da7a9-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="da7a9-109">Requirements</span></span>  
- <span data-ttu-id="da7a9-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="da7a9-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2d0b2-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2d0b2-109">Requirements</span></span>  
+ <span data-ttu-id="2d0b2-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2d0b2-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="da7a9-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da7a9-111">See also</span></span>
-- [<span data-ttu-id="da7a9-112">ISymUnmanagedScope – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da7a9-112">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
-- [<span data-ttu-id="da7a9-113">GetEndOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="da7a9-113">GetEndOffset Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getendoffset-method.md)
+## <a name="see-also"></a><span data-ttu-id="2d0b2-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d0b2-111">See also</span></span>
+
+- [<span data-ttu-id="2d0b2-112">ISymUnmanagedScope – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2d0b2-112">ISymUnmanagedScope Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+- [<span data-ttu-id="2d0b2-113">GetEndOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="2d0b2-113">GetEndOffset Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getendoffset-method.md)

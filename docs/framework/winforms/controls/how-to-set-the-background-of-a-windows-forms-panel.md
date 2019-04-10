@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Panel control [Windows Forms], background
 - colors [Windows Forms], Windows Forms Panel controls
 ms.assetid: 096cbd8d-45cc-47b8-b1ef-a27f60ea8be0
-ms.openlocfilehash: b0cf7666e6d969b3d02d13e86eb45904307d3ce3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 289a91481c832a36b4b77d56ba6b18921ef02d5b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722682"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59228002"
 ---
-# <a name="how-to-set-the-background-of-a-windows-forms-panel"></a><span data-ttu-id="22602-102">Postupy: Nastavení pozadí panelu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="22602-102">How to: Set the Background of a Windows Forms Panel</span></span>
-<span data-ttu-id="22602-103">Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvek mohl zobrazit barvu pozadí a obrázek na pozadí.</span><span class="sxs-lookup"><span data-stu-id="22602-103">A Windows Forms <xref:System.Windows.Forms.Panel> control can display both a background color and a background image.</span></span> <span data-ttu-id="22602-104"><xref:System.Windows.Forms.Control.BackColor%2A> Vlastnost nastaví barvu pozadí pro obsažené ovládací prvky, například s popisky a přepínače.</span><span class="sxs-lookup"><span data-stu-id="22602-104">The <xref:System.Windows.Forms.Control.BackColor%2A> property sets the background color for the contained controls, such as labels and radio buttons.</span></span> <span data-ttu-id="22602-105">Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> vlastnost není nastavená, <xref:System.Windows.Forms.Control.BackColor%2A> výběr vyplní celý panelu.</span><span class="sxs-lookup"><span data-stu-id="22602-105">If the <xref:System.Windows.Forms.Control.BackgroundImage%2A> property is not set, the <xref:System.Windows.Forms.Control.BackColor%2A> selection will fill the entire panel.</span></span> <span data-ttu-id="22602-106">Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> je hodnota nastavena, zobrazí se na obrázku za obsažené ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="22602-106">If the <xref:System.Windows.Forms.Control.BackgroundImage%2A> property is set, the image will be displayed behind the contained controls.</span></span>  
+# <a name="how-to-set-the-background-of-a-windows-forms-panel"></a><span data-ttu-id="d517a-102">Postupy: Nastavení pozadí panelu Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d517a-102">How to: Set the Background of a Windows Forms Panel</span></span>
+<span data-ttu-id="d517a-103">Windows Forms <xref:System.Windows.Forms.Panel> ovládací prvek mohl zobrazit barvu pozadí a obrázek na pozadí.</span><span class="sxs-lookup"><span data-stu-id="d517a-103">A Windows Forms <xref:System.Windows.Forms.Panel> control can display both a background color and a background image.</span></span> <span data-ttu-id="d517a-104"><xref:System.Windows.Forms.Control.BackColor%2A> Vlastnost nastaví barvu pozadí pro obsažené ovládací prvky, například s popisky a přepínače.</span><span class="sxs-lookup"><span data-stu-id="d517a-104">The <xref:System.Windows.Forms.Control.BackColor%2A> property sets the background color for the contained controls, such as labels and radio buttons.</span></span> <span data-ttu-id="d517a-105">Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> vlastnost není nastavená, <xref:System.Windows.Forms.Control.BackColor%2A> výběr vyplní celý panelu.</span><span class="sxs-lookup"><span data-stu-id="d517a-105">If the <xref:System.Windows.Forms.Control.BackgroundImage%2A> property is not set, the <xref:System.Windows.Forms.Control.BackColor%2A> selection will fill the entire panel.</span></span> <span data-ttu-id="d517a-106">Pokud <xref:System.Windows.Forms.Control.BackgroundImage%2A> je hodnota nastavena, zobrazí se na obrázku za obsažené ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="d517a-106">If the <xref:System.Windows.Forms.Control.BackgroundImage%2A> property is set, the image will be displayed behind the contained controls.</span></span>  
   
-### <a name="to-set-the-background-programmatically"></a><span data-ttu-id="22602-107">Programové nastavení na pozadí</span><span class="sxs-lookup"><span data-stu-id="22602-107">To set the background programmatically</span></span>  
+### <a name="to-set-the-background-programmatically"></a><span data-ttu-id="d517a-107">Programové nastavení na pozadí</span><span class="sxs-lookup"><span data-stu-id="d517a-107">To set the background programmatically</span></span>  
   
-1.  <span data-ttu-id="22602-108">Nastavení panelu <xref:System.Windows.Forms.Control.BackColor%2A> vlastnost na hodnotu typu <xref:System.Drawing.Color?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="22602-108">Set the panel's <xref:System.Windows.Forms.Control.BackColor%2A> property to a value of type <xref:System.Drawing.Color?displayProperty=nameWithType>.</span></span>  
+1.  <span data-ttu-id="d517a-108">Nastavení panelu <xref:System.Windows.Forms.Control.BackColor%2A> vlastnost na hodnotu typu <xref:System.Drawing.Color?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="d517a-108">Set the panel's <xref:System.Windows.Forms.Control.BackColor%2A> property to a value of type <xref:System.Drawing.Color?displayProperty=nameWithType>.</span></span>  
   
     ```vb  
     Panel1.BackColor = Color.AliceBlue  
@@ -37,7 +37,7 @@ ms.locfileid: "57722682"
     panel1->BackColor = Color::AliceBlue;  
     ```  
   
-2.  <span data-ttu-id="22602-109">Nastavení panelu <xref:System.Windows.Forms.Control.BackgroundImage%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="22602-109">Set the panel's <xref:System.Windows.Forms.Control.BackgroundImage%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image?displayProperty=nameWithType> class.</span></span>  
+2.  <span data-ttu-id="d517a-109">Nastavení panelu <xref:System.Windows.Forms.Control.BackgroundImage%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="d517a-109">Set the panel's <xref:System.Windows.Forms.Control.BackgroundImage%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image?displayProperty=nameWithType> class.</span></span>  
   
     ```vb  
     ' You should replace the bolded image   
@@ -67,8 +67,9 @@ ms.locfileid: "57722682"
        "\\Image.gif"));  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="22602-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="22602-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d517a-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d517a-110">See also</span></span>
+
 - <xref:System.Windows.Forms.Control.BackColor%2A>
 - <xref:System.Windows.Forms.Control.BackgroundImage%2A>
-- [<span data-ttu-id="22602-111">Ovládací prvek Panel</span><span class="sxs-lookup"><span data-stu-id="22602-111">Panel Control</span></span>](panel-control-windows-forms.md)
-- [<span data-ttu-id="22602-112">Přehled ovládacího prvku Panel</span><span class="sxs-lookup"><span data-stu-id="22602-112">Panel Control Overview</span></span>](panel-control-overview-windows-forms.md)
+- [<span data-ttu-id="d517a-111">Ovládací prvek Panel</span><span class="sxs-lookup"><span data-stu-id="d517a-111">Panel Control</span></span>](panel-control-windows-forms.md)
+- [<span data-ttu-id="d517a-112">Přehled ovládacího prvku Panel</span><span class="sxs-lookup"><span data-stu-id="d517a-112">Panel Control Overview</span></span>](panel-control-overview-windows-forms.md)
