@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ab94bf7c55d4c19a4f3672ed86808575b8a2239
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d8f830ca7e273b65dc9ec77566a02df6c32cd464
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54536909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202388"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind – výčet
 Obsahuje hodnoty, které popisují soubor (PE portable executable) vrácená z volání [imetadataimport2::getpekind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
@@ -63,4 +63,5 @@ typedef enum CorPEKind {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+
+- [Výčty metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

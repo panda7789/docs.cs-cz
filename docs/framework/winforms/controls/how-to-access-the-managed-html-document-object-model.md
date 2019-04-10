@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup k modelu objektu spravovaného dokumentu HTML'
+title: 'Postupy: Přístup k modelu spravovaného objektu dokumentu HTML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - HTML DOM [Windows Forms], accessing
 - managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
-ms.openlocfilehash: f2e2593b161a0dc072f0ecaa872bfa9ab83ac24c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 591d1f4d0b1ebe63b06a30cd01e18addc580d393
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715942"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205014"
 ---
-# <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu objektu spravovaného dokumentu HTML
+# <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu spravovaného objektu dokumentu HTML
 Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů aplikací:  
   
 -   Aplikace Windows Forms (.exe), která hostované spravovanou <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tyto dvě technologie se navzájem doplňují, se <xref:System.Windows.Forms.WebBrowser> ovládací prvek zobrazující stránku uživateli a modelu DOM jazyka HTML představující logické struktury dokumentu.  
@@ -46,4 +46,5 @@ Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů ap
 1.  Vaše aplikace nebo <xref:System.Windows.Forms.UserControl> vyžaduje úplný vztah důvěryhodnosti pro přístup ke spravované HTML DOM Pokud nasazujete aplikaci Windows Forms pomocí [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], můžete požádat o zvýšení úrovně oprávnění nebo Trusted Application Deployment úplný vztah důvěryhodnosti, viz [zabezpečení aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications) podrobnosti.  
   
 ## <a name="see-also"></a>Viz také:
-- [Použití spravovaného modelu DOM (Document Object Model) HTML](using-the-managed-html-document-object-model.md)
+
+- [Použití modelu spravovaného objektu dokumentu HTML](using-the-managed-html-document-object-model.md)

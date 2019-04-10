@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aa8589b3f27ba97d32e77dbfecb190edc69dbc18
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 75bd7da67cbac958f0b34c8295454a719962c7ed
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677328"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201725"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction – výčet
 Popisuje akce zásad hostitele můžete nastavit pro operace popsal [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) a selhání popsal [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
@@ -71,7 +71,8 @@ typedef enum {
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
 - [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
 - [IHostPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-interface.md)
-- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

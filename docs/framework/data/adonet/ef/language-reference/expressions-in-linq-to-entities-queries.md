@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d70b502f-6a15-4120-b4fe-500b173ad9cc
-ms.openlocfilehash: 6ec61a295f50fa64c484902ed811a627a22ee1c7
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 234b3059f9109c23b8ecae4da37e15f7f094fbd1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828043"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203233"
 ---
 # <a name="expressions-in-linq-to-entities-queries"></a>Výrazy v dotazech LINQ to Entities
 Výraz je fragment kódu, který lze vyhodnotit na jednu hodnotu, objekt, metodu nebo obor názvů. Hodnota literálu, volání metody, operátor a jeho operandy nebo jednoduchý název může obsahovat výrazy. Název proměnné, člen typu, parametr metody, obor názvů nebo typ může být jednoduché názvy. Výrazy můžete použít operátory, které pak použít jako parametry nebo volání metody, jejíž parametry jsou zase další volání metody jiných výrazech. Proto výrazy v rozsahu jednoduché až velmi složité.  
@@ -37,4 +37,5 @@ Výraz je fragment kódu, který lze vyhodnotit na jednu hodnotu, objekt, metodu
  [Relace, navigačních vlastností a cizí klíče](/ef/ef6/fundamentals/relationships)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)

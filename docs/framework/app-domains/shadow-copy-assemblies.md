@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ebec8c880f5b40ed3294585b9be0e83972ac12a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f1f9a88a347650474c7a63b41984e3346e0ce205
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741702"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204559"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
@@ -78,6 +78,7 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
  <xref:System.AppDomain> Třída má několik metod, jako například <xref:System.AppDomain.SetShadowCopyFiles%2A> a <xref:System.AppDomain.ClearShadowCopyPath%2A>, který lze použít k řízení stínové kopírování sestavení na doménu aplikace, ale ty jsou označené za zastaralé v rozhraní .NET Framework verze 2.0. Doporučeným způsobem, jak nakonfigurovat doménu aplikace pro stínové kopírování sestavení, je použít vlastnosti <xref:System.AppDomainSetup> třídy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>

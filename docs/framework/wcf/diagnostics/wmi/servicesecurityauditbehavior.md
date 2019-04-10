@@ -2,12 +2,12 @@
 title: ServiceSecurityAuditBehavior
 ms.date: 03/30/2017
 ms.assetid: 2c5809e7-5364-44ce-bc71-848be4672e2a
-ms.openlocfilehash: dc48b8742c60714720be3cf4b22ba672f73c720a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 30679e1f67c6943bf674a6bbd8bf12be090765a8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54570223"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203506"
 ---
 # <a name="servicesecurityauditbehavior"></a>ServiceSecurityAuditBehavior
 ServiceSecurityAuditBehavior  
@@ -65,4 +65,5 @@ class ServiceSecurityAuditBehavior : Behavior
 |Obor názvů|Definované v root\ServiceModel|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>

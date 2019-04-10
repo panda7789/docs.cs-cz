@@ -1,18 +1,18 @@
 ---
-title: SQL Server Connection Pooling (ADO.NET)
+title: Sdružování připojení SQL Serveru (ADO.NET)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 640e8976b95b5228f1caa967c053ffd95d2553ac
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 566a7905ac2eda17046595bcccc868e44f6a1e9f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651601"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203935"
 ---
-# <a name="sql-server-connection-pooling-adonet"></a>SQL Server Connection Pooling (ADO.NET)
+# <a name="sql-server-connection-pooling-adonet"></a>Sdružování připojení SQL Serveru (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
   
  V praxi používat většinu aplikací pouze jednu nebo několik různých konfigurací pro připojení. To znamená, že při spuštění aplikace, mnoho stejné připojení bude možné opakovaně otevřel a uzavřel. Chcete-li minimalizovat náklady na otevření připojení, [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] používá optimalizaci techniky označované jako *sdružování připojení*.  
@@ -130,6 +130,7 @@ using (SqlConnection connection = new SqlConnection(
  Doporučujeme vám, že využijete mechanismy zabezpečení, které můžete použít namísto aplikační role. Další informace najdete v tématu [vytváření rolí aplikací v systému SQL Server](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
 - [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)
 - [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)

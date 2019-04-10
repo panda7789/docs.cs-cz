@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3254b449c06ad54bca438905ec1c413338f87e69
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: abe967195694dd61b4af18fb4eebbc3caad2ef4f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737004"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205859"
 ---
 # <a name="iclrstrongname-interface"></a>ICLRStrongName – rozhraní
 Poskytuje základní globální statické funkce pro podepisování sestavení se silnými názvy. Všechny `ICLRStrongName` metody vrací standardní COM HRESULT.  
@@ -69,5 +69,6 @@ Poskytuje základní globální statické funkce pro podepisování sestavení s
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+
+- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

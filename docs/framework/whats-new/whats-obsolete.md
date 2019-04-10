@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 416192d431234b2ce7d6e53f21803f88371a6805
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.openlocfilehash: 5f59c6ea6f39ecba49bd8aa18ee3abab750891c7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58018743"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203714"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Zastaralé položky v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá nové typy a členy typů, které přinášejí nové funkce. Existující typy a členové také v průběhu času měnit. Například některé typy se stanou méně důležité technologie, které podporují je nahrazena novou technologii a některé metody jsou nahrazena novější metody, které jsou vhodnější nebo více plně funkční.  
@@ -56,7 +56,7 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
   
  V následující tabulce jsou uvedeny řetězcové hodnoty, které můžete přiřadit `version` atribut pro cílení na konkrétní verzi rozhraní .NET Framework.  
   
-|Verze rozhraní .NET Framework|`version` řetězec|
+|Verze rozhraní .NET Framework|`version` odkazy řetězců|
 |-|-|  
 |4.7 (včetně 4.7.1 a 4.7.2)|V4.0|  
 |4.6 (včetně 4.6.1 a 4.6.2)|V4.0|  
@@ -82,4 +82,5 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
  [Seznam zastaralých rozhraní .NET framework 2.0](https://go.microsoft.com/fwlink/?LinkID=125264)  
   
 ## <a name="see-also"></a>Viz také:
+
 - [\<supportedRuntime > – Element](../configure-apps/file-schema/startup/supportedruntime-element.md)

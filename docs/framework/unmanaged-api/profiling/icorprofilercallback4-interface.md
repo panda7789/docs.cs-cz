@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a96aadcec6cb3c4f4680499585bf1c950bc5ddd4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3eb1f46900199db65be5d14c56bfc0b6f55bf269
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525307"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205131"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4 – rozhraní
 Poskytuje metody zpětného volání, které modul CLR (CLR) používá ke sdělování informací profileru.  
@@ -49,6 +49,7 @@ Poskytuje metody zpětného volání, které modul CLR (CLR) používá ke sděl
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
 - [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
 - [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

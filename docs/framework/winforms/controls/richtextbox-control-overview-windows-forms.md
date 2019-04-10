@@ -7,12 +7,12 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], about RichTextBox control
 - text boxes [Windows Forms], about text boxes
 ms.assetid: 95081194-3dd4-4b84-9545-dd373e491eca
-ms.openlocfilehash: ded2c9bb0e5b3320de700ce6126710314ed9e4f2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: 0827c1919597e9eb85bfa41721676008b76564d9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57720238"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201595"
 ---
 # <a name="richtextbox-control-overview-windows-forms"></a>RichTextBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek se používá pro zobrazení, zadávání a manipulace s formátování textu. <xref:System.Windows.Forms.RichTextBox> Ovládací prvek provádí všechno, co <xref:System.Windows.Forms.TextBox> ovládací prvek provádí, ale můžete také zobrazit písma, barvy a odkazy; načítání textu a vložené obrázky ze souboru a najít zadané znaky. <xref:System.Windows.Forms.RichTextBox> Ovládací prvek se obvykle používá k poskytování manipulaci s textem a zobrazení funkce podobné aplikace zpracování textu, jako je Microsoft Word. Podobně jako <xref:System.Windows.Forms.TextBox> ovládací prvek, <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit posuvník; ale na rozdíl od <xref:System.Windows.Forms.TextBox> ovládací prvek, jeho výchozí nastavení je pro zobrazení vodorovný a svislý posuvník podle potřeby a má nastavení další posuvník.  
@@ -25,6 +25,7 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek se použ�
  Lze vrátit zpět a znovu většinu operací úpravy v <xref:System.Windows.Forms.RichTextBox> ovládacího prvku pomocí volání <xref:System.Windows.Forms.TextBoxBase.Undo%2A> a <xref:System.Windows.Forms.RichTextBox.Redo%2A> metody. <xref:System.Windows.Forms.RichTextBox.CanRedo%2A> Metoda vám umožní určit, jestli můžete znovu použít poslední operace zrušila uživatele do ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.RichTextBox>
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)
 - [Přehled ovládacího prvku TextBox](textbox-control-overview-windows-forms.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4709d1b8126436d4400c788891960100915cd1bc
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: d6575acfb1f75cbc8e3d59ddca5fea0953274cf2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971433"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206457"
 ---
 # <a name="icordebugreferencevalue-interface"></a>ICorDebugReferenceValue – rozhraní
 Poskytuje metody, které spravují hodnotu, která je odkaz na objekt. (To znamená, že toto rozhraní poskytuje metody, které spravují ukazatel.) Toto rozhraní implementuje "ICorDebugValue".  
@@ -55,5 +55,4 @@ Poskytuje metody, které spravují hodnotu, která je odkaz na objekt. (To zname
   
 ## <a name="see-also"></a>Viz také:
 
-
-- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -1,5 +1,5 @@
 ---
-title: <servicePointManager> – element (nastavení sítě)
+title: <servicePointManager> – Element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: 3a18f9eb3d38ef272b7a4df58d8588b622662184
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 407ed85de109a671030eccff8ddd92af91628014
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55277547"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202206"
 ---
 # <a name="servicepointmanager-element-network-settings"></a>\<Třída servicePointManager > – Element (nastavení sítě)
 Nakonfiguruje připojení k síťovým prostředkům.  
@@ -57,7 +57,7 @@ Nakonfiguruje připojení k síťovým prostředkům.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Element**|**Popis**|  
+|**Prvek**|**Popis**|  
 |-----------------|---------------------|  
 |[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
@@ -67,6 +67,7 @@ Nakonfiguruje připojení k síťovým prostředkům.
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

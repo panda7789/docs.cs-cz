@@ -2,12 +2,12 @@
 title: Podpora klienta SqlClient pro LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 102dbdcc79234525a45e9059092ccaad63fa3353
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 416945964af7fda5ed5aaab2f5aae1bbc8928556
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54527611"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204754"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Podpora klienta SqlClient pro LocalDB
 SQL Server s kódovým názvem Denali počínaje, bude k dispozici Odlehčená verze systému SQL Server LocalDB, volá. Toto téma popisuje, jak se připojit k databázi LocalDB.  
@@ -59,5 +59,6 @@ SQL Server s kódovým názvem Denali počínaje, bude k dispozici Odlehčená v
 -   Použití `AttachDBFilename` klíčové slovo připojovacího řetězce k určení. Soubor MDF.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

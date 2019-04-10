@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: fd2b639f98dbb381cf4bea70cc790fd99ebf185f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0f750f2d23430691016fc2cf1e5e9d44d80da2a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708347"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204078"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření datové tabulky z dotazu (LINQ to DataSet)
 Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. Když prováděly operace s daty, nové <xref:System.Data.DataTable> se sloučí zpět do zdroje <xref:System.Data.DataTable>.  
@@ -75,6 +75,7 @@ Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Dat
  [!code-vb[DP Custom CopyToDataTable Examples#LoadScalarSequence](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loadscalarsequence)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
 - [Obecné pole a metody SetField](../../../../docs/framework/data/adonet/generic-field-and-setfield-methods-linq-to-dataset.md)
 - [Příklady LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)

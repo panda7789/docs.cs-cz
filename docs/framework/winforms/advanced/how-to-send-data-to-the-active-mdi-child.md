@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odesílání dat do aktivního podřízeného MDI'
+title: 'Postupy: Odesílání dat do aktivního podřízeného formuláře MDI'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: a89956595ff98e8cda717c90a3f96c95abc8118a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: 0ffe87d55f7325f77bd33bdbf5d5fbab9f321f93
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707399"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203324"
 ---
-# <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného MDI
+# <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného formuláře MDI
 Často, v rámci kontextu [aplikace rozhraní více dokumentů (MDI)](multiple-document-interface-mdi-applications.md), budete muset odeslat data na aktivní podřízené okno, například když uživatel vloží dat ze schránky do aplikace MDI.  
   
 > [!NOTE]
@@ -92,8 +92,9 @@ ms.locfileid: "57707399"
     ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Určení aktivního podřízeného formuláře MDI](how-to-determine-the-active-mdi-child.md)
 - [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

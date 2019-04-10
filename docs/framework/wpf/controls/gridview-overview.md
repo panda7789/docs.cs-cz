@@ -6,18 +6,16 @@ helpviewer_keywords:
 - ListView controls [WPF], GridView view mode
 - controls [WPF], ListView
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
-ms.openlocfilehash: 9457430ab61681ad154aba98d72850f19d30280d
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: d2f55db90fb130416ee4dcb15d440b6d367c0b06
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185438"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201296"
 ---
 # <a name="gridview-overview"></a>GridView – přehled
 <xref:System.Windows.Controls.GridView> režim zobrazení je jeden z režimů zobrazení pro <xref:System.Windows.Controls.ListView> ovládacího prvku. <xref:System.Windows.Controls.GridView> Třída a její podpůrnou třídy povolit vy a vaši uživatelé zobrazit položky kolekce tabulku, která se obvykle používá jako záhlaví sloupců interaktivní tlačítka. Toto téma představuje <xref:System.Windows.Controls.GridView> třídy a popisuje jejich použití.  
-  
-  
-  
+
 <a name="DefiningaListViewthatusesGridViewView"></a>   
 ## <a name="what-is-a-gridview-view"></a>Co je zobrazení GridView?  
  <xref:System.Windows.Controls.GridView> Zobrazení režimu zobrazí seznam datových položek vazby datová pole pro sloupce a záhlaví sloupce a identifikovat oblasti zobrazení. Výchozí hodnota <xref:System.Windows.Controls.GridView> styl implementuje tlačítka jako záhlaví sloupců. Pomocí tlačítka pro záhlaví sloupců, můžete implementovat důležité uživatelské interakce možnosti; Například můžete uživatele klikněte na záhlaví sloupce seřadíte <xref:System.Windows.Controls.GridView> dat podle obsah v určitém sloupci.  
@@ -125,6 +123,7 @@ ms.locfileid: "58185438"
 -   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.ListViewItem>
 - <xref:System.Windows.Controls.GridViewColumn>
@@ -134,4 +133,4 @@ ms.locfileid: "58185438"
 - <xref:System.Windows.Controls.ViewBase>
 - [ListView – přehled](listview-overview.md)
 - [Řazení sloupce GridView při kliknutí na záhlaví](how-to-sort-a-gridview-column-when-a-header-is-clicked.md)
-- [Témata s postupy](listview-how-to-topics.md)
+- [– postupy](listview-how-to-topics.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8a5e44541a18f10588e899f59a166406c149691f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e5732cc08512df25a14cc8ea9dcaa03c56207dde
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650046"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202031"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4 – rozhraní
 Isymunmanagedwriter4 – rozhraní.  
@@ -31,5 +31,6 @@ Isymunmanagedwriter4 – rozhraní.
  **Záhlaví:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+
+- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
 - [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)

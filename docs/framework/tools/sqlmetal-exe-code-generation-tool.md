@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: c9631ed7ecc854fe6f355eb4bbc2bfb5097ea770
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 80e0bcd341f9059fc6787756f8e743aedc5dc43e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540621"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206418"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
 Nástroj příkazového řádku SqlMetal generuje kód a mapování pro [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
@@ -76,7 +76,7 @@ sqlmetal [options] [<input file>]
 |**/ NAMESPACE:**  *\<name >*|Určuje obor názvů generovaného kódu. Výchozí hodnota: Žádný obor názvů.|  
 |**/ Context:**  *\<typ >*|Určuje název třídy datového kontextu. Výchozí hodnota: Odvozený od názvu databáze.|  
 |**/entitybase:**  *\<typ >*|Určuje základní třídu z tříd entit v generovaném kódu. Výchozí hodnota: Entity nemají žádnou základní třídu.|  
-|**/pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglickou verzi.|  
+|**/ pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglickou verzi.|  
 |**/Serialization:**  *\<možnost >*|Generuje serializovatelné třídy.<br /><br /> Platný  *\<možnost >*: Žádný, jednosměrný. Výchozí hodnota: Žádné<br /><br /> Další informace najdete v tématu [serializace](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
   
  **Vstupní soubor**  
@@ -111,19 +111,19 @@ sqlmetal [options] [<input file>]
 ## <a name="examples"></a>Příklady  
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL:  
   
- **SqlMetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
+ **sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
   
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL ze souboru .mdf pomocí SQL Server Express:  
   
- **SqlMetal /dbml:mymeta.dbml mydbfile.mdf**  
+ **sqlmetal /dbml:mymeta.dbml mydbfile.mdf**  
   
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL z SQL Server Express:  
   
- **SqlMetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**  
+ **sqlmetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**  
   
  Vygenerování zdrojového kódu ze souboru metadat .dbml:  
   
- **SqlMetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**  
+ **sqlmetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**  
   
  Vygenerování zdrojového kódu přímo z metadat SQL:  
   
@@ -133,6 +133,7 @@ sqlmetal [options] [<input file>]
 >  Při použití **/ pluralize** možnost s ukázkovou databází Northwind, pamatujte na následující chování. Když SqlMetal vytváří názvy řádků pro tabulky, názvy tabulek jsou v jednotném čísle. Který je <xref:System.Data.Linq.DataContext> vlastnosti pro tabulky, názvy tabulek jsou v množném čísle. Tabulky v ukázkové databázi Northwind jsou shodou okolností již v množném čísle. Proto neuvidíte, jak tato část funguje. Přestože jsou názvy tabulek databáze zpravidla zapisovány v jednotném čísle, v rozhraní .NET je rovněž obvyklé pojmenovávání kolekcí v množném čísle.  
   
 ## <a name="see-also"></a>Viz také:
-- [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+
+- [Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
 - [Generování kódu v LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
 - [Externí mapování](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)

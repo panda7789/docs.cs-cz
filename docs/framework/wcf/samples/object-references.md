@@ -2,12 +2,12 @@
 title: Odkazy na objekty
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
-ms.openlocfilehash: 4965ddab23f0f6c64edd3d71e97ba3293d2f69ce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 393a6cb446d8216659c2b2f63b21754c37291ca7
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577630"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202999"
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka používá simulované *sociálních sítí*. Sociální síť se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých každý typu friend je instance `Person` třídy s vlastním seznamu přátel. Tím se vytvoří graf objektů. Služba zpřístupňuje operace v těchto sociálních sítích.  
@@ -114,5 +114,6 @@ public List<Person> GetCommonFriends(List<Person> people)
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\ObjectReferences`  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A>
 - [Interoperabilní odkazy na objekty](../../../../docs/framework/wcf/feature-details/interoperable-object-references.md)

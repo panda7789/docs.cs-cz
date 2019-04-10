@@ -1,15 +1,15 @@
 ---
-title: Přizpůsobení oprávnění se zosobněním na SQL serveru
+title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: 182eadecbd5330f06fc1cd45d2c768b570f12bf5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 9c3e84e8a432a54cdcd2cbe4e01dada870cd1366
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596966"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202791"
 ---
-# <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL serveru
+# <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
 Mnoho aplikací používá pro přístup k datům, spoléhat na řetězení vlastnictví můžete omezit přístup k základní tabulky uložené procedury. Můžete udělit oprávnění spouštět na uložené procedury, odvolání nebo odepřením oprávnění u základní tabulky. SQL Server oprávnění volající nekontroluje, pokud uložené procedury a tabulky mají stejné vlastníka. Ale řetězení vlastnictví nefunguje Pokud objekty mají různé vlastníci nebo v případě dynamické SQL.  
   
  Můžete použít EXECUTE AS klauzule v uložené proceduře když volající nemá oprávnění u objektů odkazovaná databáze. Účinek EXECUTE AS klauzule je, že kontextu spuštění přepnutí na uživatele proxy serveru. Veškerý kód, stejně jako všechna volání vnořených uložených procedur a aktivačních událostí, spustí v kontextu zabezpečení uživatele proxy serveru. Kontext spuštění se vrátí zpět na původní volajícího až po provádění procedury nebo při vydání příkazu obnovit.  
@@ -66,6 +66,7 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 -   VLASTNÍ. Spuštění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jedná se o ekvivalent spuštění jako určitý uživatel, pokud zadaný uživatel je osoba, vytvoření či změna postup.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
 - [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
 - [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)

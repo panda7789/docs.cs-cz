@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout pomocí návrháře'
+title: 'Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout pomocí Návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - buttons [Windows Forms], default on Windows Forms
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - Button control [Windows Forms], designating as default
 - Windows Forms controls, default button on form
 ms.assetid: a1da0590-755f-49f2-aca7-609fac6351bf
-ms.openlocfilehash: 61f0c99560d008cc10c94403ac936e5b97267d3a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: ae7efdce1384b0089b41da155981d1aebbaa55a9
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707648"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201504"
 ---
-# <a name="how-to-designate-a-windows-forms-button-as-the-accept-button-using-the-designer"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout pomocí návrháře
+# <a name="how-to-designate-a-windows-forms-button-as-the-accept-button-using-the-designer"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout pomocí Návrháře
 Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovládacího prvku tlačítko Přijmout, označované také jako výchozího tlačítka. Pokaždé, když uživatel stiskne klávesu ENTER, výchozí je stisknuto tlačítko bez ohledu na to, který má jiný ovládací prvek ve formuláři fokus. Výjimky jsou při ovládací prvek fokus je jiný tlačítko – v takovém případě bude kliknutí na tlačítko s fokusem – nebo víceřádkovém textovém poli, nebo vlastní ovládací prvek, který zachycuje klávesu ENTER.  
   
 > [!NOTE]
@@ -27,9 +27,10 @@ Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovlá
 2.  V **vlastnosti** okno, nastavte formuláře <xref:System.Windows.Forms.Form.AcceptButton%2A> vlastnost <xref:System.Windows.Forms.Button> název ovládacího prvku.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Forms.Form.AcceptButton%2A>
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
-- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Storno pomocí návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit pomocí Návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

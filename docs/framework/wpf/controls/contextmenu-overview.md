@@ -8,18 +8,16 @@ helpviewer_keywords:
 - controls [WPF], ContextMenu
 - ContextMenu controls [WPF], about ContextMenu controls
 ms.assetid: 16909c42-799a-4561-91e0-7d69dcfeea91
-ms.openlocfilehash: 4d3677021e38c10d38c0e5ed5e5de1824397db50
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 1818718d3ca9e8f56da99d6e504b41b217bfd980
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357362"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203545"
 ---
 # <a name="contextmenu-overview"></a>ContextMenu – přehled
 <xref:System.Windows.Controls.ContextMenu> Třída reprezentuje element, který zpřístupňuje funkce s použitím kontextu konkrétní <xref:System.Windows.Controls.Menu>. Obvykle uživatel poskytuje <xref:System.Windows.Controls.ContextMenu> v [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] kliknutím pravým tlačítkem myši na tlačítko myši. Toto téma představuje <xref:System.Windows.Controls.ContextMenu> elementu a poskytuje příklady toho, jak ho použijte ve [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a kódu.  
-  
-  
-  
+
 <a name="contextmenu_control"></a>   
 ## <a name="contextmenu-control"></a>ContextMenu – ovládací prvek  
  A <xref:System.Windows.Controls.ContextMenu> je připojen určitý ovládací prvek. <xref:System.Windows.Controls.ContextMenu> Element umožňuje být uživateli seznam položek, které určují příkazy nebo možnosti, které jsou spojeny s konkrétní ovládací prvek, například <xref:System.Windows.Controls.Button>. Uživatelé klikněte pravým tlačítkem na ovládací prvek zobrazí nabídku. Obvykle kliknutí <xref:System.Windows.Controls.MenuItem> , otevře se podnabídka nebo způsobí, že aplikace k provedení příkazu.  
@@ -63,6 +61,7 @@ ms.locfileid: "57357362"
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.ContextMenu>
 - <xref:System.Windows.Style>
 - <xref:System.Windows.Controls.Menu>

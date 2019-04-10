@@ -1,13 +1,13 @@
 ---
-title: <security> z <netMsmqBinding>
+title: <security> of <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
-ms.openlocfilehash: bb509bb0c4f7192aefbb51a98042f3f359969321
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: acb4d04663d841a9b494153caa180855959c145e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272614"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206509"
 ---
 # <a name="security-of-netmsmqbinding"></a>\<zabezpečení > z \<netMsmqBinding >
 Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povolen přenos nebo SOAP zabezpečení, a pokud ano, jaké úrovně režimu a ochranu ověřování se používají.  
@@ -44,8 +44,8 @@ Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povole
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-netmsmqbinding.md)|Definuje nastavení zabezpečení zpráv SOAP. Tento prvek je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netmsmqbinding.md)|Definuje nastavení zabezpečení přenosu služby MSMQ. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-netmsmqbinding.md)|Definuje nastavení zabezpečení zpráv SOAP. Tento prvek je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement>.|  
+|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netmsmqbinding.md)|Definuje nastavení zabezpečení přenosu služby MSMQ. Tento prvek je typu <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,6 +54,7 @@ Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povole
 |vazba|Prvek vazby [ \<netMsmqBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement>
 - <xref:System.ServiceModel.NetMsmqBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetMsmqBindingElement.Security%2A>

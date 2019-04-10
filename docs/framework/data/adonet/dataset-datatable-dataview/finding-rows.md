@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
-ms.openlocfilehash: e5a48c5caf9239e0e7b7f2e7a3ad8ab5df168ba1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 72af4b049153ce647cc1ceb2d40c3b17cc7ed988
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684187"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206548"
 ---
 # <a name="finding-rows"></a>Hledání řádků
 Můžete hledat pomocí řádků podle jejich hodnoty klíče řazení <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>. Rozlišování velikosti písmen vyhledávání hodnoty v **najít** a **FindRows** metody je určeno **CaseSensitive** vlastnost základního <xref:System.Data.DataTable>. Hledání hodnoty musí odpovídat existující hodnoty klíče řazení v plné výši k vrácení výsledku.  
@@ -94,6 +94,7 @@ else
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
 - [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)

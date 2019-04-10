@@ -2,12 +2,12 @@
 title: 'Postupy: Import metadat do koncových bodů služeb'
 ms.date: 03/30/2017
 ms.assetid: b69dbe20-92a1-4911-89d8-ffbc3dad4663
-ms.openlocfilehash: 5a6375f0a0b0f657401a1ac2254be942d4e618aa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 05106295448c4682f07dd17295574ecdc39bf903
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54548674"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59126864"
 ---
 # <a name="how-to-import-metadata-into-service-endpoints"></a>Postupy: Import metadat do koncových bodů služeb
 Toto téma vysvětluje, jak importovat metadata do kolekce koncových bodů služby a použití služby definované v [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V tomto tématu ukazují, jak vytvořit klientskou aplikaci, která importuje metadata ze služby a volání `Add` metodu na službu.  
@@ -38,5 +38,6 @@ Toto téma vysvětluje, jak importovat metadata do kolekce koncových bodů slu�
      [!code-csharp[UE_ImportMetadata#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/ue_importmetadata/cs/client.cs#4)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
 - [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md)

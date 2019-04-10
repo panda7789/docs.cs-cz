@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e3a4a2208f669dc4fc0589f08b32aeb2c5e4423
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8c238f0aebd7c81443eb55fe0ee84844f0c9aee8
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509302"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59207510"
 ---
 # <a name="security-considerations-for-reflection"></a>Důležité informace o zabezpečení pro reflexi
 Reflexe umožňuje získat informace o typech a členech a chcete získat přístup ke členům (to znamená pro volání metody a konstruktory, k získání a nastavení vlastností hodnoty, přidávat a odebírat obslužné rutiny událostí a tak dále). Použití reflexe získat informace o typech a členech není omezeno. Veškerý kód, můžete použít reflexe provádět následující úlohy:  
@@ -105,6 +105,7 @@ Reflexe umožňuje získat informace o typech a členech a chcete získat přís
 -   Počínaje [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], pomocí operace reflection k získání informací o neveřejným typům a členům nevyžaduje žádná oprávnění. V dřívějších verzích <xref:System.Security.Permissions.ReflectionPermission> s <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> příznak je povinný.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Security.Permissions.ReflectionPermissionFlag>
 - <xref:System.Security.Permissions.ReflectionPermission>
 - <xref:System.Security.Permissions.SecurityPermission>

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8086a512d117767127260bcf779fc11555cd67dd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: a2871d273e0bbb09ff5bf440ea943cdac3f8e061
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54632826"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201946"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM
 CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Tento proces zahrnuje vytvoření grafu CodeDOM, který obsahuje komentáře dokumentace XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstup dokumentaci XML.  
@@ -80,6 +80,7 @@ CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Tento 
 -   Tento příklad kódu vyžaduje `FullTrust` oprávnění nastaveno na hodnotu úspěšně vykonat.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Dokumentace kódu s XML](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
 - [Dokumentační komentáře XML](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)
-- [Dokumentace XML](/cpp/ide/xml-documentation-visual-cpp)
+- [dokumentace XML](/cpp/ide/xml-documentation-visual-cpp)

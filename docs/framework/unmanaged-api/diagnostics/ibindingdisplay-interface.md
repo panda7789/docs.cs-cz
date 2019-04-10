@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e5f36e10fffebe89b805cee3cb57e88afd4df35
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: af0b38e955ac10592dc5cd0d0e18b0cff08834af
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54745292"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201998"
 ---
 # <a name="ibindingdisplay-interface"></a>IBindingDisplay – rozhraní
 Poskytuje metody, které zobrazení aktuální vazby informací o spuštěné aplikaci.  
@@ -43,4 +43,5 @@ Poskytuje metody, které zobrazení aktuální vazby informací o spuštěné ap
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
-- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+
+- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

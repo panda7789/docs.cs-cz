@@ -28,20 +28,19 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: ab9b36857e2508190a212844f3c6b53d777c0552
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.openlocfilehash: c3bd76c893c2055f94e321e9c888848d344efa15
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466215"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59166930"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (WPF) prostřednictvím systému windows. Primárním účelem okna je jako hostitele obsahu, která data vizualizuje a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují jejich vlastní okna s použitím <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývají základní informace o vytváření a správa systému windows v samostatné aplikace.  
   
 > [!NOTE]
 >  Hostované v prohlížeči [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací, včetně [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a dojde ke ztrátě [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] neposkytují stránek, vlastní systému windows. Místo toho jsou hostované v systému windows poskytuje [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]. Zobrazit [přehled aplikací prohlížeče WPF XAML](wpf-xaml-browser-applications-overview.md).  
-  
-  
+
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Třídy oken  
  Následující obrázek znázorňuje základní části okna:  
@@ -109,9 +108,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ## <a name="configuring-a-window-definition-for-msbuild"></a>Konfigurace definice okna pro MSBuild  
  Jak implementovat okno určuje, jak je nakonfigurována pro [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]. Pro okno, které je definováno pomocí obou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu:  
   
--   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory kódu nejsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky.  
+-   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory kódu nejsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Page` položky.  
   
--   Soubory kódu na pozadí jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Compile` položky.  
+-   Soubory kódu na pozadí jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Compile` položky.  
   
  To je ukázáno v následujícím [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] souboru projektu.  
   
@@ -130,8 +129,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 <a name="WindowLifetime"></a>   
 ## <a name="window-lifetime"></a>Doba života okna  
  S všechny třídy, má okno s dobou života, která začíná, když je vytvořena první instance, po jejímž uplynutí ho je otevřen, aktivovat a deaktivovat a nakonec zavřít.  
-  
-  
+
 <a name="Opening_a_Window"></a>   
 ### <a name="opening-a-window"></a>Otevřete okno  
  Otevřete okno, nejprve vytvořte její instanci, která je znázorněn v následujícím příkladu.  
@@ -258,9 +256,8 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
  [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
- 
-  
- <xref:System.Windows.Window.Closing> Je předána obslužné rutiny události <xref:System.ComponentModel.CancelEventArgs>, která implementuje `Boolean` <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která nastavíte na `true` zabránit okno zavřít.  
+
+ <xref:System.Windows.Window.Closing> Je předána obslužné rutiny události <xref:System.ComponentModel.CancelEventArgs>, která implementuje `Boolean`<xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která nastavíte na `true` zabránit okno zavřít.  
   
  Pokud <xref:System.Windows.Window.Closing> není zpracována, nebo je zpracována, ale není zrušena, okno se zavře. Těsně před plánovaným začátkem skutečně okno zavře, <xref:System.Windows.Window.Closed> je vyvolána. V tuto chvíli nelze zabránit okno zabrání v uzavření.  
   
@@ -401,8 +398,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
  Změna vzhledu klientské oblasti okna tak, že přidáte specifické pro okno obsah, jako jsou tlačítka a popisky, textová pole. Ke konfiguraci neklientská oblast <xref:System.Windows.Window> poskytuje několik vlastností, které zahrnují <xref:System.Windows.Window.Icon%2A> nastavit ikonu okna a <xref:System.Windows.Window.Title%2A> nastavit její název.  
   
  Můžete také změnit vzhled a chování ohraničení neklientská oblast nakonfigurováním režim změny velikosti okna, styl okna, a určuje, zda je zobrazen jako tlačítko na panelu úkolů klasické pracovní plochy.  
-  
-  
+
 <a name="Resize_Mode"></a>   
 ### <a name="resize-mode"></a>Změna velikosti režimu  
  V závislosti na tom <xref:System.Windows.Window.WindowStyle%2A> vlastností, můžete řídit jak (a zda) uživatelé mohou změnit výšku okna. Volba Styl okna ovlivňuje, jestli uživatel může změnit velikost okna přetažením ohraničení pomocí myši, zda **minimalizovat**, **Maximalizovat**, a **změnit velikost** tlačítka zobrazí v neklientské oblasti, a pokud se zobrazí, zda jsou povoleny.  
@@ -484,6 +480,7 @@ Výchozí vzhled okna obsahuje tlačítko na hlavním panelu, podobný jako na n
  Dialogová okna jsou windows, které se často používají k získání informací od uživatele k dokončení funkce. Například, pokud uživatel požaduje pro otevření souboru, **otevřít soubor** aplikací a získání názvu souboru od uživatele je obvykle zobrazí dialogové okno. Další informace najdete v tématu [přehled dialogových oken](dialog-boxes-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Window>
 - <xref:System.Windows.MessageBox>
 - <xref:System.Windows.Navigation.NavigationWindow>

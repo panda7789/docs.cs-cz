@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Přehrání média použitím VideoDrawing'
+title: 'Postupy: Přehrání média pomocí VideoDrawing'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - playback of media [WPF]
 - classes [WPF], MediaPlayer
 ms.assetid: 165d47ed-22ce-4ded-aa6a-aa9b7467de87
-ms.openlocfilehash: 2397662c79af208f2528f6eedcd5995cfac9526c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 186c9ae8167dafd09f029418c1d23f81f7a9e906
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363095"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203610"
 ---
-# <a name="how-to-play-media-using-a-videodrawing"></a>Postupy: Přehrání média použitím VideoDrawing
+# <a name="how-to-play-media-using-a-videodrawing"></a>Postupy: Přehrání média pomocí VideoDrawing
 Chcete-li přehrát zvuk nebo video soubor, je použít <xref:System.Windows.Media.VideoDrawing> a <xref:System.Windows.Media.MediaPlayer>. Existují dva způsoby, jak načíst a přehrávání médií. První je použití <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing> sami a druhý je způsob, jak vytvořit vlastní <xref:System.Windows.Media.MediaTimeline> pro použití s <xref:System.Windows.Media.MediaPlayer> a <xref:System.Windows.Media.VideoDrawing>.  
   
 > [!NOTE]
@@ -33,5 +33,6 @@ Chcete-li přehrát zvuk nebo video soubor, je použít <xref:System.Windows.Med
  Všimněte si, že při použití <xref:System.Windows.Media.MediaTimeline>, je použít interaktivní <xref:System.Windows.Media.Animation.ClockController> vrácená z <xref:System.Windows.Media.Animation.Clock.Controller%2A> vlastnost <xref:System.Windows.Media.MediaClock> ovládací prvek přehrávání médií místo metody interaktivní <xref:System.Windows.Media.MediaPlayer>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.VideoDrawing>
-- [Přehled nakreslených objektů](drawing-objects-overview.md)
+- [Přehled vykreslovaných objektů](drawing-objects-overview.md)

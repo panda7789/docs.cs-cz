@@ -14,12 +14,12 @@ helpviewer_keywords:
 - performance troubleshooting [WPF], animation
 - animations [WPF], use of system resources
 ms.assetid: e467796b-d5d4-45a6-a108-8c5d7ff69a0f
-ms.openlocfilehash: e8b2a6b5386ec33ad8aa5281d808bb7089149764
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 1337dac083ad9d52a4cfd99bddee80baebf474de
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362432"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202141"
 ---
 # <a name="animation-tips-and-tricks"></a>Tipy a triky animace
 Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], existuje několik tipů a triků, které můžete provést vašich animacích líp fungovat a uložit frustrace.  
@@ -75,10 +75,10 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
 2.  Druhý scénář se projeví a animuje od aktuální pozice, který je nyní 0 na 500.  
   
- **Ale to je, není co se stane.** Místo toho obdélník nepřejde; zpět pokračuje v přesuňte do pravé. Důvodem je skutečnost, že druhé animace používá aktuální hodnotu prvního animace jako svou výchozí hodnotu a animuje z této hodnoty na 500. Když druhé animace nahradí první, protože <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace> <xref:System.Windows.Media.Animation.HandoffBehavior> se používá, <xref:System.Windows.Media.Animation.FillBehavior> prvního animace není důležitá.  
+ **Ale to je, není co se stane.** Místo toho obdélník nepřejde; zpět pokračuje v přesuňte do pravé. Důvodem je skutečnost, že druhé animace používá aktuální hodnotu prvního animace jako svou výchozí hodnotu a animuje z této hodnoty na 500. Když druhé animace nahradí první, protože <xref:System.Windows.Media.Animation.HandoffBehavior.SnapshotAndReplace><xref:System.Windows.Media.Animation.HandoffBehavior> se používá, <xref:System.Windows.Media.Animation.FillBehavior> prvního animace není důležitá.  
   
 #### <a name="fillbehavior-and-the-completed-event"></a>FillBehavior a dokončené události  
- Další příklady ukazují jiný scénář, ve kterém <xref:System.Windows.Media.Animation.FillBehavior.Stop> <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> zdá se, že nemají žádný vliv. Znovu, v příkladu se používá ve scénáři pro animaci <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> od 0 do 350. Ale tentokrát v příkladu zaregistruje <xref:System.Windows.Media.Animation.Timeline.Completed> událostí.  
+ Další příklady ukazují jiný scénář, ve kterém <xref:System.Windows.Media.Animation.FillBehavior.Stop><xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> zdá se, že nemají žádný vliv. Znovu, v příkladu se používá ve scénáři pro animaci <xref:System.Windows.Media.TranslateTransform.X%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> od 0 do 350. Ale tentokrát v příkladu zaregistruje <xref:System.Windows.Media.Animation.Timeline.Completed> událostí.  
   
  [!code-xaml[AnimationTipsAndTricksSample_snip#FillBehaviorTipStoryboardCButton](~/samples/snippets/csharp/VS_Snippets_Wpf/AnimationTipsAndTricksSample_snip/CSharp/FillBehaviorTip.xaml#fillbehaviortipstoryboardcbutton)]  
   
@@ -116,7 +116,7 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
  Další informace o různých způsobech animace vlastností najdete v tématu [přehled způsobů animace vlastností](property-animation-techniques-overview.md).  
   
 ### <a name="using-the-compose-handoffbehavior-consumes-system-resources"></a>Použití Compose HandoffBehavior využívá systémové prostředky  
- Při použití <xref:System.Windows.Media.Animation.Storyboard>, <xref:System.Windows.Media.Animation.AnimationTimeline>, nebo <xref:System.Windows.Media.Animation.AnimationClock> k vlastnosti pomocí <xref:System.Windows.Media.Animation.HandoffBehavior.Compose> <xref:System.Windows.Media.Animation.HandoffBehavior>, jakékoli <xref:System.Windows.Media.Animation.Clock> objekty dříve přidružené k této vlastnosti budou dál spotřebovávat systémové prostředky, nebudou časování systému Tyto hodiny automaticky odeberte.  
+ Při použití <xref:System.Windows.Media.Animation.Storyboard>, <xref:System.Windows.Media.Animation.AnimationTimeline>, nebo <xref:System.Windows.Media.Animation.AnimationClock> k vlastnosti pomocí <xref:System.Windows.Media.Animation.HandoffBehavior.Compose><xref:System.Windows.Media.Animation.HandoffBehavior>, jakékoli <xref:System.Windows.Media.Animation.Clock> objekty dříve přidružené k této vlastnosti budou dál spotřebovávat systémové prostředky; časování systému neodebere tyto hodiny automaticky.  
   
  Aby se zabránilo problémům s výkonem při použití velký počet hodin používání <xref:System.Windows.Media.Animation.HandoffBehavior.Compose>, byste měli odebrat vytváření hodiny z animací vlastností po jejich dokončení. Existuje několik způsobů, jak odebrat hodin.  
   
@@ -129,4 +129,5 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
  Další informace o objekty clock, naleznete v tématu [animace a časování přehledu systému](animation-and-timing-system-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled animace](animation-overview.md)

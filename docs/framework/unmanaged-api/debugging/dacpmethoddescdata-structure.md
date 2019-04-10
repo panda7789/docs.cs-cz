@@ -1,5 +1,5 @@
 ---
-title: Struktura DacpMethodDescData
+title: DacpMethodDescData – struktura
 ms.date: 02/01/2019
 api.name:
 - DacpMethodDescData Structure
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: e9037fc035693e079e2471ad37263108656b8c01
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.openlocfilehash: 567dc3942f79b6bfd29338b9103083aa64e66451
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55828527"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203194"
 ---
-# <a name="dacpmethoddescdata-structure"></a>Struktura DacpMethodDescData
+# <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData – struktura
 
 Definuje přenos vyrovnávací paměť pro informace o modulu runtime metody.
 
@@ -73,18 +73,18 @@ struct DacpMethodDescData
 | `rejitDataRequested`         | Informace o Rejit pro požadovanou nativní adresu.                                             |
 | `cJittedRejitVersions`       | Počet pokusů, které metoda byla rejitted prostřednictvím instrumentace.                           |
 
-
 ## <a name="remarks"></a>Poznámky
 
 Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví nebo soubory knihoven. Pro použití je třeba definujte strukturu jak je uvedeno výše.
 
 ## <a name="requirements"></a>Požadavky
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná  
-**Knihovna:** Žádná  
+**Záhlaví:** Žádné  
+**Knihovna:** Žádné  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:
+
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
 - [Běžné typy dat](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)

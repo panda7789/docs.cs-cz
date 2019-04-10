@@ -2,12 +2,12 @@
 title: Princip ověřování HTTP
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-ms.openlocfilehash: 77fbed8cae070285925bcdc13c76fe28c3cb13cb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 430b0ddb98514b605178124f331e5152605a2b89
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54525791"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206392"
 ---
 # <a name="understanding-http-authentication"></a>Princip ověřování HTTP
 Ověřování je proces určit, jestli je klient oprávnění pro přístup k prostředku. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístup k zabezpečené prostředku.  
@@ -36,6 +36,7 @@ Ověřování je proces určit, jestli je klient oprávnění pro přístup k pr
 -   Server nesmí prezentovat (hlavičky WWW-ověřování) žádné schéma, které není připraveno přijmout nebo který nezabezpečuje adekvátní chráněnému prostředku. Klienti jsou zdarma si vybrat mezi všechny ověřovací schémata prezentuje serveru. Některé klienty výchozí schéma slabé ověřování nebo první schéma ověřování v seznamu na serveru.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)
 - [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)
 - [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

@@ -1,13 +1,13 @@
 ---
-title: <security> z <netNamedPipeBinding>
+title: <security> of <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: bb3cb022-637e-49fd-92e8-6766038affa7
-ms.openlocfilehash: ee2c4161f70c01dc09ac36bbcf6a234f822682d0
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: fa31dda3274c9768694bdf5232f31554899e1d82
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55265298"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203389"
 ---
 # <a name="security-of-netnamedpipebinding"></a>\<security> of \<netNamedPipeBinding>
 Definuje nastavení zabezpečení pro vazbu.  
@@ -52,12 +52,13 @@ Definuje nastavení zabezpečení pro vazbu.
 |vazba|Prvek vazby [ \<netNamedPipeBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.NetNamedPipeSecurity>
 - <xref:System.ServiceModel.NetNamedPipeBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.NetNamedPipeSecurityElement>
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Výběr typu pověření](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

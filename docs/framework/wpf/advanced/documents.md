@@ -6,26 +6,27 @@ f1_keywords:
 helpviewer_keywords:
 - documents [WPF], features for
 ms.assetid: 7bf37ccb-5d09-4eae-9661-929582aeb259
-ms.openlocfilehash: 6dba276e88f4c3dd475e3d79de43a9fca7a35206
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 4dbe2e8257bfc92f354d032d7bb6e2ba7a693075
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54546972"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206938"
 ---
 # <a name="documents"></a>Dokumenty
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje všestranné sadu součásti, které umožní vývojářům vytvářet aplikace s dokumentu pokročilé funkce a vylepšení čtení prostředí. Kromě poznat široké možnosti a kvality [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje zjednodušenou správu služby pro balení dokumentů, zabezpečení a úložiště.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Dokumenty v platformě WPF](documents-in-wpf.md)  
- [Serializace a úložiště dokumentů](document-serialization-and-storage.md)  
+ [Serializace a úložiště dokumentu](document-serialization-and-storage.md)  
  [Poznámky](annotations.md)  
  [Obsah toku](flow-content.md)  
  [Typografie](typography.md)  
- [Tisk a správa systému tisku](printing-and-print-system-management.md)  
+ [Tisk a systémová správa tisku](printing-and-print-system-management.md)  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.DocumentViewer>
 - <xref:System.Windows.Documents.FlowDocument>
 - <xref:System.Windows.Xps>
-- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))
+- [isXPS.exe (nástroj isXPS pro kontrolu shody)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))

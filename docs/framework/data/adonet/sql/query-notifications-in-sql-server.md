@@ -1,15 +1,15 @@
 ---
-title: Oznámení dotazů v SQL serveru
+title: Oznámení pro dotazy na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 166471658ccd1ef48db2ac1647f74ea696f3263d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.openlocfilehash: 2a564ba1e06741523b9b3a005be86b13339889ec
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092290"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203675"
 ---
-# <a name="query-notifications-in-sql-server"></a>Oznámení dotazů v SQL serveru
+# <a name="query-notifications-in-sql-server"></a>Oznámení pro dotazy na SQL Serveru
 Oznámení dotazů založené na řešení infrastruktury služby Service Broker, povolit aplikace, která vás upozorní, když se data změnila. Tato funkce je zvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze, jako je například v případě webové aplikace a nutné upozornit, když je změněna zdrojová data.  
   
  Oznámení dotazů pomocí ADO.NET můžete implementovat třemi způsoby:  
@@ -62,5 +62,6 @@ Oznámení dotazů založené na řešení infrastruktury služby Service Broker
  Popisuje <xref:System.Web.Caching.SqlCacheDependency> třídy a všechny její členy.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

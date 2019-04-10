@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 19ff49cfa465cce479a4fd5264c565cbb305c84f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.openlocfilehash: 6d246c56af191189fa775be3248d3099d2aa2544
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58823464"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203688"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
@@ -65,13 +65,13 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
   
 -   Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
   
-    |Objekt|Vlastnost|Hodnota|  
+    |Objekt|Vlastnost|Value|  
     |------------|--------------|-----------|  
     |Form1|AccessibleDescription|Formulář objednávky|  
     ||AccessibleName|Formulář objednávky|  
     ||Velikost písma|10|  
     ||Text|Formulář objednávky pizza|  
-    |PictureBox|Název|logo|  
+    |PictureBox|Name|logo|  
     ||AccessibleDescription|Řez pizza|  
     ||AccessibleName|Logo společnosti|  
     ||Image|Žádné ikona nebo rastrový obrázek|  
@@ -105,7 +105,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||TabIndex|0|  
     ||AccessibleDescription|Malé pizza|  
     ||AccessibleName|Malé pizza|  
-    |RadioButton|Název|largePizza|  
+    |RadioButton|Name|largePizza|  
     ||Text|& velké 10,00 USD|  
     ||TabIndex|1|  
     ||AccessibleDescription|Velké pizza|  
@@ -116,7 +116,7 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||AccessibleDescription|Popisek toppings|  
     ||AccessibleName|Popisek toppings|  
     ||Usemnemonic –|Pravda|  
-    |CheckedListBox|Název|toppings|  
+    |CheckedListBox|Name|toppings|  
     ||TabIndex|6|  
     ||AccessibleDescription|K dispozici toppings|  
     ||AccessibleName|K dispozici toppings|  
@@ -126,22 +126,21 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||TabIndex|7|  
     ||AccessibleDescription|Celkový počet pořadí|  
     ||AccessibleName|Celkový počet pořadí|  
-    |Tlačítko|Název|Zrušit|  
+    |Tlačítko|Name|Zrušit|  
     ||Text|& Zrušit|  
     ||TabIndex|8|  
     ||AccessibleDescription|Zrušit pořadí|  
     ||AccessibleName|Zrušit objednávku|  
-    |MainMenu|Název|theMainMenu|  
+    |MainMenu|Name|theMainMenu|  
     |Položku nabídky|Name|fileCommands|  
     ||Text|& soubor|  
-    |Položku nabídky|Název|exitApp|  
+    |Položku nabídky|Name|exitApp|  
     ||Text|U & končit|
     
       Formulář bude vypadat podobně jako na následujícím obrázku:
     
       ![Formulář objednávky pizza s názvem textového pole a velikost a toppings výběru.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)  
 
-  
 ## <a name="supporting-high-contrast-mode"></a>Podporující režim s vysokým kontrastem  
  Vysoký kontrast je nastavení systému Windows, který zlepšuje čitelnost pomocí kontrastní barvy a velikosti písem, které jsou užitečné pro uživatele se zrakovým postižením. <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> Vlastnost je k dispozici k určení, zda je nastaven režim s vysokým kontrastem.  
   

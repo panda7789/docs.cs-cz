@@ -1,15 +1,15 @@
 ---
-title: Analýza LINQ to SQL zdrojového kódu
+title: Analýza zdrojového kódu LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: cba3eef8-e108-4478-b588-ad59580e133e
-ms.openlocfilehash: 4b1d2d2c54ae99a65f60c96b6330e3f94db6beb5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1110e64d16a6c2790939cc695ecd67e37ec109e4
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54696851"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203285"
 ---
-# <a name="analyzing-linq-to-sql-source-code"></a>Analýza LINQ to SQL zdrojového kódu
+# <a name="analyzing-linq-to-sql-source-code"></a>Analýza zdrojového kódu LINQ to SQL
 Pomocí následujících kroků můžete vytvářet [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] zdrojový kód z ukázkové databáze Northwind. Můžete porovnat jsou mapovány prvky modelu objektu s prvky databáze pro lepší naleznete v tématu jak různé položky.  
   
 > [!NOTE]
@@ -24,5 +24,6 @@ Pomocí následujících kroků můžete vytvářet [!INCLUDE[vbtecdlinq](../../
     -   `sqlmetal /code:northwind.cs /language:csharp "c:\northwnd.mdf" /sprocs /functions /pluralize`  
   
 ## <a name="see-also"></a>Viz také:
-- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+
+- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
 - [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - drawing [Windows Forms], cardinal splines
 - graphics [Windows Forms], cardinal splines
 ms.assetid: a4a41e80-4461-4b47-b6bd-2c5e68881994
-ms.openlocfilehash: 0f5c7a8555130e884b641648d1ffc9865f44dc1e
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 2f03177bf97936a2ca9558972d4d82fa3e07463c
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464694"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204949"
 ---
 # <a name="how-to-draw-cardinal-splines"></a>Postupy: Kreslení základních křivek
 Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení křivky mohutnosti, vytvořit <xref:System.Drawing.Graphics> objektu a předat adresu pole odkazuje na <xref:System.Drawing.Graphics.DrawCurve%2A> metoda.  
@@ -50,5 +50,6 @@ Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení 
  Předchozí příklady jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
 - [Sestavování a kreslení křivek](constructing-and-drawing-curves.md)

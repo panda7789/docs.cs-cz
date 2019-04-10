@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Výběr mezi StackPanel a DockPanel'
+title: 'Postupy: Výběr mezi elementy StackPanel a DockPanel'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - StackPanel control [WPF], DockPanel control compared to
 - controls [WPF], StackPanel
 ms.assetid: f9239086-451f-42e6-81f7-ef89ef349742
-ms.openlocfilehash: 13353212589f99c9ad735761af60ab3eff6c9ad8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 8338421dfb1bea856c15edf9d324cec955584f9f
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357583"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59206964"
 ---
-# <a name="how-to-choose-between-stackpanel-and-dockpanel"></a>Postupy: Výběr mezi StackPanel a DockPanel
+# <a name="how-to-choose-between-stackpanel-and-dockpanel"></a>Postupy: Výběr mezi elementy StackPanel a DockPanel
 Tento příklad ukazuje, jak si vybrat mezi pomocí <xref:System.Windows.Controls.StackPanel> nebo <xref:System.Windows.Controls.DockPanel> při zásobníku obsah <xref:System.Windows.Controls.Panel>.  
   
 ## <a name="example"></a>Příklad  
@@ -32,6 +32,7 @@ Tento příklad ukazuje, jak si vybrat mezi pomocí <xref:System.Windows.Control
  [!code-xaml[StackPanelOvw4#1](~/samples/snippets/xaml/VS_Snippets_Wpf/StackPanelOvw4/XAML/default.xaml#1)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.StackPanel>
 - <xref:System.Windows.Controls.DockPanel>
-- [Přehled panelu](panels-overview.md)
+- [Přehled panelů](panels-overview.md)

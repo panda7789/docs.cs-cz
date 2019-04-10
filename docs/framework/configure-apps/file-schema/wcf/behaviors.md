@@ -2,12 +2,12 @@
 title: <behaviors>
 ms.date: 03/30/2017
 ms.assetid: 0e5da4e6-1aa5-466c-924e-f10efee57f0b
-ms.openlocfilehash: b9d30d7e1c9d211cd57982a0f03fe855a6b53c12
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 108c349a44ed3ac902652f86241c1e96a622549b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55257915"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204234"
 ---
 # <a name="behaviors"></a>\<chování >
 Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.  Každou kolekci definuje chování elementů používané koncové body a služby. Každý prvek chování je identifikován jeho jedinečné `name` atributu. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
@@ -29,7 +29,7 @@ Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádná  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -48,13 +48,14 @@ Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.
  Můžete použít `<remove>` prvek, který chcete odebrat konkrétní chování z kolekce. Uděláte to tak, stačí zadat název chování pro odebrání v `name` atribut `<remove>` elementu.  Můžete také použít `<clear>` element – pomáhat zajistit, že kolekce chování začne tím, že zrušíte všechny obsah kolekce prázdný.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.BehaviorsSection>
 - <xref:System.ServiceModel.Configuration.EndpointBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.EndpointBehaviorElement>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>
-- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
-- [Konfigurace chování klienta](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
-- [Nastavení chování klienta za běhu](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [Konfigurace a rozšíření modulu runtime s chováním](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace chování klientů](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Nastavení běhového chování klienta](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
 - [Určování chování služby za běhu](../../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)

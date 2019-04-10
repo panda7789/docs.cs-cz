@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Enter key [WPF], detecting
 - keys [WPF], Enter
 ms.assetid: a66f39d2-ef4a-43a5-b454-a4ea0fe88655
-ms.openlocfilehash: 1796127d33087a3fd4504d03f175f8afe5323630
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: a99da5804bbc31897198b9b6d9e21da9f17dfe26
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351859"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204611"
 ---
 # <a name="how-to-detect-when-the-enter-key-pressed"></a>Postupy: Rozpoznat, kdy stisknuté klávesy Enter
 Tento příklad ukazuje, jak zjistit, kdy <xref:System.Windows.Input.Key.Enter> stisknutí klávesy na klávesnici.  
@@ -33,5 +33,6 @@ Tento příklad ukazuje, jak zjistit, kdy <xref:System.Windows.Input.Key.Enter> 
  [!code-vb[keydown#KeyDownSample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyDown/VisualBasic/Window1.xaml.vb#keydownsample)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Přehled vstupu](input-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)

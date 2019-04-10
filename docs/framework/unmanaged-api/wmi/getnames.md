@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0065b2cbbd17c5bb3dca6773951cdb8729e59fa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f664edf29e5d2f9ec4e523aa7f7b204cf999e01b
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583558"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59202648"
 ---
 # <a name="getnames-function"></a>Funkce GetNames
 Načte podmnožinu nebo všechny názvy vlastností objektu. 
@@ -80,7 +80,6 @@ Pojmenované vrátil řízeno pomocí kombinace příznaků a parametry. Funkce 
 
 Příznak hodnoty v `lFlags` jsou bitová pole
 
-
 Příznaky, které mohou být předány jako `lEnumFlags` argument jsou bitová pole, které jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.  Můžete kombinovat jeden příznak z každé skupiny s všechny příznaky z jiné skupiny. Ale příznaky ze stejné skupiny se vzájemně vylučují. 
 
 | Příznaky skupiny 1 |Hodnota  |Popis  |
@@ -95,7 +94,7 @@ Příznaky, které mohou být předány jako `lEnumFlags` argument jsou bitová 
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Vrátíte pouze názvy vlastností, které definují klíče. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Vrácení pouze názvy vlastností, které jsou odkazy na objekty. |
 
-| Příznaky skupiny 3 |Hodnota  |Popis  |
+| Příznaky skupiny 3 |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy vlastností, které patří k nejvíce odvozené třídy. Vyloučíte vlastnosti od nadřazených tříd. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Vrátíte pouze názvy vlastností, které patří do nadřazené třídy. |
@@ -112,4 +111,5 @@ Funkce vždy přidělí novou `SAFEARRAY` vrátí-li `WBEM_S_NO_ERROR`, a `pstrN
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a347919617e495ace19ca12eebc9b9a77f613ff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 1f45259623d4a481e635ac1b54ecb9a17497ab5e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684370"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204091"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Postupy: Přidání příkazů trasování do kódu aplikace
 Nejčastěji používá pro trasování metody jsou metody pro zápis výstupu do naslouchacích procesů: **Zápis**, **writeif –**, **WriteLine**, **writelineif –**, **vyhodnocení**, a **selhání**. Tyto metody je možné rozdělit do dvou kategorií: **Zápis**, **WriteLine**, a **selhání** všechny bezpodmínečně, vygeneruje výstup vzhledem k tomu **writeif –**, **writelineif –** a  **Assert –** testu je logická podmínka a zapisovat nebo Nezapisovat závislosti na hodnotě podmínky. **Writeif –** a **writelineif –** vygeneruje výstup, pokud je podmínka `true`, a **Assert** generuje výstup, pokud je podmínka `false`.  
@@ -85,6 +85,7 @@ Nejčastěji používá pro trasování metody jsou metody pro zápis výstupu d
     >  Můžete použít **Assert** pomocí trasování a ladění. Zásobník volání pro všechny posluchače v tomto příkladu je výstupem **naslouchacích procesů** kolekce. Další informace najdete v tématu [kontrolní výrazy ve spravovaného kódu](/visualstudio/debugger/assertions-in-managed-code) a <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Debug.WriteLineIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
@@ -92,4 +93,4 @@ Nejčastěji používá pro trasování metody jsou metody pro zápis výstupu d
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
 - [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
-- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)

@@ -12,17 +12,16 @@ helpviewer_keywords:
 - brushes [WPF], painting with images
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
-ms.openlocfilehash: bb66c34a847f78f7921ae925d0c3d0640c11aeec
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 826c5a0656a9a7e7cff0e96fc6755c5c9c717993
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361317"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204195"
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
 Toto téma popisuje způsob použití <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, a <xref:System.Windows.Media.VisualBrush> objekty k vykreslení oblasti obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>.  
-    
-  
+
 <a name="prereqs"></a>   
 ## <a name="prerequisites"></a>Požadavky  
  V tomto tématu informace o tom, měli byste se seznámit s různými typy štětce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje a jejich základní funkce. Úvodní informace najdete v tématu [přehled štětců WPF](wpf-brushes-overview.md).  
@@ -135,6 +134,7 @@ Součástí TileBrush s víc dlaždic
  Další informace o funkcích dělení do bloků <xref:System.Windows.Media.TileBrush> objekty, najdete [TileBrush – přehled](tilebrush-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Media.ImageBrush>
 - <xref:System.Windows.Media.DrawingBrush>
 - <xref:System.Windows.Media.VisualBrush>
@@ -142,8 +142,8 @@ Součástí TileBrush s víc dlaždic
 - [TileBrush – přehled](tilebrush-overview.md)
 - [Přehled štětců WPF](wpf-brushes-overview.md)
 - [Přehled obrázků](imaging-overview.md)
-- [Přehled nakreslených objektů](drawing-objects-overview.md)
-- [Přehled masek neprůhlednosti](opacity-masks-overview.md)
+- [Přehled vykreslovaných objektů](drawing-objects-overview.md)
+- [Přehled masek krytí](opacity-masks-overview.md)
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

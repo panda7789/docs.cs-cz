@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: eac8c932e9f661933f943a507485a170dc6b6132
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: b603e81a342652a6639f54a78fb998cda5fdc35a
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713056"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203623"
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
@@ -48,13 +48,14 @@ Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace 
  Můžete také použít <xref:System.Windows.Forms.Binding> třídy prostřednictvím kódu programu vytvořit vazbu nastavení s vlastnostmi formuláře a ovládací prvky.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.SettingsProvider>
 - <xref:System.Configuration.LocalFileSettingsProvider>
 - <xref:System.Configuration.IPersistComponentSettings>
 - [Postupy: Ověření nastavení aplikace](how-to-validate-application-settings.md)
 - [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)
-- [Postupy: Čtení uživatelských nastavení při běhu pomocíC#](how-to-read-settings-at-run-time-with-csharp.md)
+- [Postupy: Čtení uživatelských nastavení při běhu pomocí C#](how-to-read-settings-at-run-time-with-csharp.md)
 - [Použití nastavení aplikace a uživatelských nastavení](using-application-settings-and-user-settings.md)
 - [Architektura nastavení aplikace](application-settings-architecture.md)
 - [Nastavení aplikace pro vlastní ovládací prvky](application-settings-for-custom-controls.md)

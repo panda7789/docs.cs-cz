@@ -5,12 +5,12 @@ helpviewer_keywords:
 - TreeView control [WPF], creating
 - Control class [WPF], TreeView [WPF], creating
 ms.assetid: 1defbb78-b8e7-4c0e-b650-576453ac828d
-ms.openlocfilehash: 9b19443c80818809122b0bbfc7c7dae7b4b40da5
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 7edb4933ebcc0f0d2cb02754238c2342ee9dd4a2
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368909"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205144"
 ---
 # <a name="how-to-create-simple-or-complex-treeviews"></a>Postupy: Vytvoření jednoduchého nebo složitého zobrazení TreeViews
 Tento příklad ukazuje, jak vytvořit jednoduché nebo složité <xref:System.Windows.Controls.TreeView> ovládacích prvků.  
@@ -41,7 +41,8 @@ Tento příklad ukazuje, jak vytvořit jednoduché nebo složité <xref:System.W
  [!code-xaml[TreeViewSimple#9](~/samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#9)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Windows.Controls.TreeView>
 - <xref:System.Windows.Controls.TreeViewItem>
 - [TreeView – přehled](treeview-overview.md)
-- [Témata s postupy](treeview-how-to-topics.md)
+- [– postupy](treeview-how-to-topics.md)

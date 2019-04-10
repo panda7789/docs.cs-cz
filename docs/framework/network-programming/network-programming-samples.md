@@ -2,12 +2,12 @@
 title: Ukázky programování sítě
 ms.date: 03/30/2017
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
-ms.openlocfilehash: b74de4b9b7ef6a505b0f6f986ffe5152b60e7956
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.openlocfilehash: 6d66a5ce0835a52dd1b8c331d94bc58ce17622c1
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220293"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59204546"
 ---
 # <a name="network-programming-samples"></a>Ukázky programování sítě
 Tato část obsahuje popisy a odkazy na ke stažení síťové programování ukázky, které používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a souvisejících oborech názvů. 
@@ -51,13 +51,13 @@ Tato část obsahuje popisy a odkazy na ke stažení síťové programování uk
   
  [Ukázka technologie Průzkumníka serveru FTP](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms233623(v=vs.85))  
  Ukazuje, jak zobrazit obsah serveru FTP.  
-  
-  
+
 ## <a name="reference"></a>Odkaz  
  <xref:System.Net>  
   
  <xref:System.Net.NetworkInformation>  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
-- [Postupy: Témata programování vizuální vrstvy](../../../docs/framework/network-programming/network-programming-how-to-topics.md)
+- [Témata s postupy: Programování vizuální vrstvy](../../../docs/framework/network-programming/network-programming-how-to-topics.md)

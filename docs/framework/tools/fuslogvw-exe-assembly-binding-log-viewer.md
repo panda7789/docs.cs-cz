@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57f62f6d03a95860e06e0a457884dd30d186643a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 0219699a7369b3c1fe3fd92caa68a80eef235c2e
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574154"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59203337"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime nepodařilo najít sestavení obvykle zobrazí jako <xref:System.TypeLoadException> ve vaší aplikaci.  
@@ -229,6 +229,7 @@ Discarding native image.
     >  Toto pole je povoleno pouze v systému Windows 8 nebo novějším.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.TypeLoadException>
 - [Nástroje](../../../docs/framework/tools/index.md)
 - [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)

@@ -2,12 +2,12 @@
 title: <certificate> pro <identity>
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: 804600e4eb1612cd8654fc58ec3df28596c1e84d
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 76bdcb40d5016d7fcbff6c0d9769819f710065fe
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55265035"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59205833"
 ---
 # <a name="certificate-for-identity"></a>\<certifikát > pro \<identity >
 Určuje certifikát X.509 sloužící k ověření serveru do klienta.  
@@ -51,6 +51,7 @@ Určuje certifikát X.509 sloužící k ověření serveru do klienta.
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>

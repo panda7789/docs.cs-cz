@@ -8,12 +8,12 @@ helpviewer_keywords:
 - pasting Clipboard data
 - Clipboard [Windows Forms], retrieving data
 ms.assetid: 99612537-2c8a-449f-aab5-2b3b28d656e7
-ms.openlocfilehash: 0ed79197190e9f646b5f94ff56e62b19fe4f366a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.openlocfilehash: aca110339c94afd5442aed5a2481964b456154f3
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723852"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59201608"
 ---
 # <a name="how-to-retrieve-data-from-the-clipboard"></a>Postupy: Načtení dat ze schránky
 <xref:System.Windows.Forms.Clipboard> Třída poskytuje metody, které vám umožní pracovat s funkcí schránky operačního systému Windows. Mnoho aplikací používá schránky jako dočasné úložiště pro data. Například textové procesory použít schránky během operací vyjmutí a vložení. Schránka je také užitečné pro přenos informací z jedné aplikace do jiného.  
@@ -57,5 +57,6 @@ ms.locfileid: "57723852"
     [!code-vb[System.Windows.Forms.Clipboard#100](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#100)]  
   
 ## <a name="see-also"></a>Viz také:
+
 - [Operace přetažení a podpora schránky](drag-and-drop-operations-and-clipboard-support.md)
-- [Postupy: Přidání dat do schránky.](how-to-add-data-to-the-clipboard.md)
+- [Postupy: Přidání dat do schránky](how-to-add-data-to-the-clipboard.md)
