@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: e07fd6598d6b2d1bbd52e5e6735264821b8986bf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 7b284a8f085ab7e93651c829ac16e47fb63a8b51
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59180242"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59297777"
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Spotřebování datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen v odpojeném návrhu v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete nastavit jako vstup nebo výstup z webové služby XML bez jakékoli další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML do klienta a zpět. **Datovou sadu** je implicitně převeden na datový proud XML ve formátu formát DiffGram, posílaných prostřednictvím sítě a pak znovu vytvořena z datový proud XML jako **datovou sadu** na přijímající straně. To poskytuje velmi jednoduché a flexibilní metodu pro předávání a vracení relačních dat pomocí webové služby XML. Další informace o formátu formát DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -22,7 +22,7 @@ ms.locfileid: "59180242"
   
 ### <a name="to-create-an-xml-web-service-that-returns-and-consumes-a-dataset"></a>Vytvoření webové služby XML, který vrací a používá datovou sadu  
   
-1.  Vytvoření webové služby XML.  
+1. Vytvoření webové služby XML.  
   
      V tomto příkladu se vytvoří webové služby XML, který vrátí seznam zákazníků z dat, v tomto případě **Northwind** databáze a přijímá **datovou sadu** se aktualizace dat, které webové služby XML Přeloží zpět na původní zdroj dat.  
   
@@ -159,7 +159,7 @@ ms.locfileid: "59180242"
   
      V rámci typického scénáře **UpdateCustomers** metody by byla zapsána na skutečné porušení optimistického řízení souběžnosti. Pro zjednodušení příkladu nezahrnuje to. Další informace o optimistického řízení souběžnosti, naleznete v tématu [optimistického řízení souběžnosti](../../../../../docs/framework/data/adonet/optimistic-concurrency.md).  
   
-2.  Vytvořte proxy XML webové služby.  
+2. Vytvořte proxy XML webové služby.  
   
      Aby bylo možné využívat metody vystavené, vyžadují klienti XML webové služby serveru proxy protokolu SOAP. Můžete použít Visual Studio vygenerovat tento proxy server za vás. Nastavením webový odkaz na existující webové služby z Visual Studia vyvolá transparentně všechny chování, které jsou popsané v tomto kroku. Pokud chcete vytvořit třídu proxy, sami, pokračujte v této diskuse. Ve většině případů ale pomocí sady Visual Studio k vytvoření třídy proxy pro klientské aplikace je dostačující.  
   
@@ -187,7 +187,7 @@ ms.locfileid: "59180242"
     csc -t:library -out:sample.dll sample.cs -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
-3.  Vytvoření klienta XML webové služby.  
+3. Vytvoření klienta XML webové služby.  
   
      Pokud chcete vygenerovat třídu proxy webové služby za vás sada Visual Studio, jednoduše vytvořte klientský projekt a v okně Průzkumníka řešení, klikněte pravým tlačítkem na projekt, klikněte na tlačítko **přidat webový odkaz**a vyberte webové služby z seznam dostupných webových služeb (to může vyžadovat zadání adresy koncového bodu webové služby, pokud webová služba není k dispozici v aktuálním řešení, nebo v aktuálním počítači.) Pokud budete moct vytvořit proxy XML webové služby sami (jak je popsáno v předchozím kroku), můžete importovat do kódu klienta a využívají metody XML webové služby. Následující ukázkový kód importuje knihovna proxy serveru, volání **GetCustomers** zobrazíte seznam zákazníků, přidá nového zákazníka a poté vrátí **datovou sadu** s aktualizacemi **UpdateCustomers** .  
   

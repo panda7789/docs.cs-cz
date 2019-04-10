@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a42a568e7c3f3a1a5c84d2ceae49c262f77d275d
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: d96e223b85178c7f2784a523e5609057d1432488
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442487"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59310535"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Osvědčené postupy pro vývoj globalizovaných aplikací
 
@@ -71,7 +71,7 @@ Tato část popisuje doporučené postupy při vývoji aplikací nasadit kdekoli
 
 8. Použití <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třída pro načítání prostředků podle jazykové verze.
 
-9. Použití [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) vytváření formulářů Windows dialogových tak mohly být lokalizovány pomocí [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md). Nevytvářejte ručně kód dialogových oken modelu Windows Forms.
+9. Použití [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) vytváření formulářů Windows dialogových tak mohly být lokalizovány pomocí [Windows Forms Resource Editor (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md). Nevytvářejte ručně kód dialogových oken modelu Windows Forms.
 
 10. Zajistěte profesionální lokalizaci (překlad).
 
@@ -104,4 +104,4 @@ Tato část popisuje doporučené postupy při vývoji aplikací nasadit kdekoli
 ## <a name="see-also"></a>Viz také:
 
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)

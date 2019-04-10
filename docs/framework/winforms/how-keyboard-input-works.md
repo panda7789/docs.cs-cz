@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keyboards [Windows Forms], keyboard input
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
-ms.openlocfilehash: 4335798395a3b73dbcb2546a6fadac3d8efedb64
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ddc2f3338b231ab3ae59e65bc82c00bb8f663540
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59204741"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59342166"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
 Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice v reakci na Windows zprávy. Většina aplikací Windows Forms zpracovávat vstup z klávesnice výhradně ve zpracování událostí klávesnice. Ale budete muset porozumět fungování zprávy týkající se klávesnice, abyste mohli implementovat pokročilejší scénáře vstup z klávesnice, jako je například zachycení klíče, než dosáhnou ovládacího prvku. Toto téma popisuje typy klíče dat, formulářů Windows rozpoznává a poskytuje přehled o tom, jak se směrují zprávy týkající se klávesnice. Informace o události klávesnice, naleznete v tématu [použití událostí klávesnice](using-keyboard-events.md).  
@@ -22,13 +22,13 @@ Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice
 ## <a name="order-of-keyboard-events"></a>Řazení událostí klávesnice  
  Jak je uvedeno dříve, existují 3 související události, které se může vyskytnout u ovládacího prvku pomocí klávesnice. Následující sekvence zobrazuje obecné pořadí událostí:  
   
-1.  Uživatel nabízených oznámení "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyDown> dojde k události.  
+1. Uživatel nabízených oznámení "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyDown> dojde k události.  
   
-2.  Uživatel obsahuje "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyPress> dojde k události.  
+2. Uživatel obsahuje "a" klíč, předzpracovaná klíč odeslána a <xref:System.Windows.Forms.Control.KeyPress> dojde k události.  
   
      Jako uživatel obsahuje klíč, dojde k této události více než jednou.  
   
-3.  Odeslat uživatele verze je Předzpracovaný "a" klíč klíč, a <xref:System.Windows.Forms.Control.KeyUp> dojde k události.  
+3. Odeslat uživatele verze je Předzpracovaný "a" klíč klíč, a <xref:System.Windows.Forms.Control.KeyUp> dojde k události.  
   
 ## <a name="preprocessing-keys"></a>Předzpracování klíče  
  Stejně jako ostatní zprávy se zpracovávají zprávy týkající se klávesnice v <xref:System.Windows.Forms.Control.WndProc%2A> metody formuláře nebo ovládacího prvku. Nicméně před klávesnice zpracování zpráv, <xref:System.Windows.Forms.Control.PreProcessMessage%2A> metoda volá jeden nebo více metod, které může být potlačena za účelem zpracování speciální znak a fyzické klíče. Můžete přepsat tyto metody pro detekci a filtrování určité klíče předtím, než zprávy zpracuje ovládacím prvkem. Následující tabulka uvádí akce, která se provádí a související metody, ke které dochází, v pořadí, metoda vyvolá.  

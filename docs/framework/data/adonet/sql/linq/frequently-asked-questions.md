@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 20c5ee3667bf57328a3b6dda6e55dce4ddbbec72
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 16c06ddade79c2b3a48401f5620431e46e18f5ef
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59223976"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59323242"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -156,11 +156,11 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
  A. Proveďte následující kroky pro tento scénář rozšířené:  
   
-1.  V souboru DBML, upravte vlastnost tak, že změníte <xref:System.Data.Linq.ITable.IsReadOnly%2A> příznak `True`.  
+1. V souboru DBML, upravte vlastnost tak, že změníte <xref:System.Data.Linq.ITable.IsReadOnly%2A> příznak `True`.  
   
-2.  Přidejte částečnou třídu. Vytvořte konstruktor s parametry pro členy jen pro čtení.  
+2. Přidejte částečnou třídu. Vytvořte konstruktor s parametry pro členy jen pro čtení.  
   
-3.  Zkontrolujte výchozí <xref:System.Data.Linq.Mapping.UpdateCheck> hodnotu (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) pro určení, která je správnou hodnotu pro vaši aplikaci.  
+3. Zkontrolujte výchozí <xref:System.Data.Linq.Mapping.UpdateCheck> hodnotu (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) pro určení, která je správnou hodnotu pro vaši aplikaci.  
   
     > [!CAUTION]
     >  Pokud používáte [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] v sadě Visual Studio, se můžou přepsat vaše změny.  

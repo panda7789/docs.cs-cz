@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 9cecca0905baa4c0769359caf1fe1b477bf4d6bd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5495d8198d30f4462fa9772f7d663664c82c6dee
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518922"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296339"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server připojení k síti často nemají přímý a otevřít cestu pro komunikaci. Pakety jsou filtrované, směrovat, analyzovat a transformovat na počítačích koncový bod a zprostředkující počítače v síti. Síť překlady adres (NAT) a brány firewall jsou běžné příklady zprostředkující aplikace, které se mohou účastnit síťové komunikace.  
@@ -37,11 +37,11 @@ Klient a server připojení k síti často nemají přímý a otevřít cestu pr
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Výběr vzoru výměny zpráv a přenosu  
  Výběr přenosu a MEP je třech krocích:  
   
-1.  Analýza adresovatelnosti počítače koncový bod. Enterprise serverů často mají přímé adresovatelnosti koncoví uživatelé běžně mají jejich adresovatelnosti blokovaná zařízení NAT. Pokud jsou oba koncové body za službou NAT, například ve scénářích peer-to-peer mezi koncovým uživatelům, musíte technologie, jako je poskytnout adresovatelnosti Teredo.  
+1. Analýza adresovatelnosti počítače koncový bod. Enterprise serverů často mají přímé adresovatelnosti koncoví uživatelé běžně mají jejich adresovatelnosti blokovaná zařízení NAT. Pokud jsou oba koncové body za službou NAT, například ve scénářích peer-to-peer mezi koncovým uživatelům, musíte technologie, jako je poskytnout adresovatelnosti Teredo.  
   
-2.  Analyzujte protokol a port omezení počítače koncový bod. Enterprise serverů jsou obvykle firewall silné tento blok mnoho portů. Ale port 80 je často otevřete tak, aby povolovala přenosy pomocí protokolu HTTP a port 443 je otevřený tak, aby povolovala přenosy HTTPS. Koncoví uživatelé jsou méně pravděpodobné, že mají omezení portu, ale mohou být za bránou firewall, která povoluje jenom odchozí připojení. Některé brány firewall povolit správu pomocí aplikace pro koncový bod a selektivně otevřené připojení.  
+2. Analyzujte protokol a port omezení počítače koncový bod. Enterprise serverů jsou obvykle firewall silné tento blok mnoho portů. Ale port 80 je často otevřete tak, aby povolovala přenosy pomocí protokolu HTTP a port 443 je otevřený tak, aby povolovala přenosy HTTPS. Koncoví uživatelé jsou méně pravděpodobné, že mají omezení portu, ale mohou být za bránou firewall, která povoluje jenom odchozí připojení. Některé brány firewall povolit správu pomocí aplikace pro koncový bod a selektivně otevřené připojení.  
   
-3.  Výpočetní přenosy a MEPs, které umožňují omezení adresovatelnosti a portu sítě.  
+3. Výpočetní přenosy a MEPs, které umožňují omezení adresovatelnosti a portu sítě.  
   
  Běžné topologie pro aplikace typu klient server je, aby klienti, kteří jsou za službou NAT bez Teredo se jako pouze odchozí brána firewall a server, který je přímo adresovatelnými silné firewall. V tomto scénáři, přenosu protokolu TCP s duplexní MEP a přenos pomocí protokolu HTTP s požadavek odpověď MEP fungovat dobře. Běžné topologie peer-to-peer aplikací se oba koncové body za zařízeními NAT nebo branami firewall. V tomto scénáři a ve scénářích, kde Neznámý topologii sítě zvažte tato doporučení:  
   

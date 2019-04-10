@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 362d241d1da01ea935ab3bb3dcdfcba30cb8c67e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 6f6968713fdb1c0ec0ee9f9da3b199a649938de5
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975144"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295871"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v vyhrazené dotazovací jazyk. V průběhu času různé jazyky byly vyvinuty pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Díky tomu je nezbytné pro vývojáře aplikací získat nový dotazovací jazyk pro každý typ zdroje dat nebo formát dat, která je podporována.  
@@ -21,11 +21,11 @@ A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjád�
 ## <a name="three-stages-of-a-query-operation"></a>Tři fáze operace dotazu  
  [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operace dotazování se skládá ze tří akcí:  
   
-1.  Získání datového zdroje nebo zdrojů.  
+1. Získání datového zdroje nebo zdrojů.  
   
-2.  Vytvořte dotaz.  
+2. Vytvořte dotaz.  
   
-3.  Spusťte dotaz.  
+3. Spusťte dotaz.  
   
  V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], provádění dotazu se liší od vytvoření dotazu. Není načíst žádná data pouhým vytvořením dotazu. Tento bod je podrobněji popsány dále v tomto tématu.  
   
@@ -123,6 +123,6 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
 - [Začínáme s dotazy LINQ v jazyce Visual Basic](getting-started-with-linq.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Přehled standardních operátorů dotazu (Visual Basic)](standard-query-operators-overview.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby'
 ms.date: 03/30/2017
 ms.assetid: 95d0aed3-16a2-4398-89bb-39418eeb7355
-ms.openlocfilehash: cb1cb03a078eeb273c69cc3c49b3ef2173c0a49c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5b905b6943127d483e001749c263242550ab28ea
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59084907"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329385"
 ---
 # <a name="how-to-use-svcutilexe-to-export-metadata-from-compiled-service-code"></a>Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby
 Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, můžete exportovat svcutil.exe následujícím způsobem:  
@@ -23,9 +23,9 @@ Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, mů�
   
 ### <a name="to-export-metadata-for-compiled-service-contracts"></a>Pro export metadat pro kompilaci kontrakty služeb  
   
-1.  Kompilace vaší implementace kontraktu služby do jednoho nebo více tříd libraries.1  
+1. Kompilace vaší implementace kontraktu služby do jednoho nebo více tříd libraries.1  
   
-2.  Spusťte Svcutil.exe v kompilovaných sestavení.  
+2. Spusťte Svcutil.exe v kompilovaných sestavení.  
   
     > [!NOTE]
     >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  
@@ -36,9 +36,9 @@ Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, mů�
   
 ### <a name="to-export-metadata-for-a-compiled-service"></a>Pro export metadat pro kompilované služby  
   
-1.  Zkompilujte vaše implementace služby do spustitelného sestavení.  
+1. Zkompilujte vaše implementace služby do spustitelného sestavení.  
   
-2.  Vytvoření konfiguračního souboru pro spustitelný soubor vaší služby a přidejte konfigurace služby.  
+2. Vytvoření konfiguračního souboru pro spustitelný soubor vaší služby a přidejte konfigurace služby.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -53,7 +53,7 @@ Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, mů�
     </configuration>  
     ```  
   
-3.  Spustili spustitelný soubor zkompilovaný služby pomocí Svcutil.exe `/serviceName` přepínač k určení názvu konfigurace služby.  
+3. Spustili spustitelný soubor zkompilovaný služby pomocí Svcutil.exe `/serviceName` přepínač k určení názvu konfigurace služby.  
   
     > [!NOTE]
     >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  
@@ -64,9 +64,9 @@ Metadata pro služby, kontrakty a datové typy v kompilovaných sestavení, mů�
   
 ### <a name="to-export-metadata-for-compiled-data-contracts"></a>Pro export metadat pro kompilaci kontraktů dat  
   
-1.  Zkompilujte vaší implementace kontraktu dat do jednoho nebo více knihoven tříd.  
+1. Zkompilujte vaší implementace kontraktu dat do jednoho nebo více knihoven tříd.  
   
-2.  Spustit v kompilovaných sestavení pomocí Svcutil.exe `/dataContract` přepínač pro určení této pouze metadata kontraktů dat by měl být vygenerován.  
+2. Spustit v kompilovaných sestavení pomocí Svcutil.exe `/dataContract` přepínač pro určení této pouze metadata kontraktů dat by měl být vygenerován.  
   
     > [!NOTE]
     >  Možná budete muset použít `/reference` přepínač tak, aby zadejte cestu k souboru pro všechna závislá sestavení.  

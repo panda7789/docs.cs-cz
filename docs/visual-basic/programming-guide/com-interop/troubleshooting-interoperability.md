@@ -16,12 +16,12 @@ helpviewer_keywords:
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-ms.openlocfilehash: 197361020ad8c6a88a5fc8617b8e24f420799e14
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 147c61badd680277480226b809df97d46b636c7d
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377218"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59341189"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], mohou nastat jeden nebo více z těchto běžných problémů.  
@@ -42,9 +42,9 @@ Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/in
   
  Přejmenování může způsobit dva problémy pro spotřebitele objektu COM.  
   
-1.  Klienti nemusí očekávat, že názvy vytvořena metoda.  
+1. Klienti nemusí očekávat, že názvy vytvořena metoda.  
   
-2.  Vytvořena metoda názvy ve třídě vystavena jako objekt modelu COM lze změnit nová přetížení se přidají do třídy nebo její základní třídě. To může způsobit problémy se správou verzí.  
+2. Vytvořena metoda názvy ve třídě vystavena jako objekt modelu COM lze změnit nová přetížení se přidají do třídy nebo její základní třídě. To může způsobit problémy se správou verzí.  
   
  K řešení problémů, obě, zadejte jednotlivé metody jedinečný název, namísto použití přetížení, při vývoji objekty, které se zveřejní jako objekty modelu COM.  
   
@@ -132,6 +132,6 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
-- [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Návod: Implementace dědičnosti s objekty COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)
 - [Globální mezipaměť sestavení](../../../framework/app-domains/gac.md)

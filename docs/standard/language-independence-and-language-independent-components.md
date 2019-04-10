@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b40e12c7cb077d6ef128d4ee1aada6086cb9c1d
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: b64b0dd843f408f9a6d064aff935f8d18b3dbddd
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313369"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
-Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které se zaměřují rozhraní .NET Framework, například C#, C + +/ CLI, Eiffel, F#, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL a Windows Powershellu. Typy a členům knihoven třídy vyvinutým pro rozhraní .NET Framework, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace rozhraní .NET Framework bez ohledu na jazyk.  
+Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývojář můžete vyvíjet v některém z mnoha jazyků, které se zaměřují rozhraní .NET Framework, například C#, C++vyhodnocovací, Eiffel, F#, IronPython, IronRuby, PowerBuilder, Visual Basic, Visual COBOL a Windows Powershellu. Typy a členům knihoven třídy vyvinutým pro rozhraní .NET Framework, aniž byste museli znát jazyk, ve kterém byly původně vytvořeny a to bez nutnosti dodržovat všechny původní jazykové konvence mají přístup. Pokud jste vývojářem komponenty, přístupné příslušné součásti žádné aplikace rozhraní .NET Framework bez ohledu na jazyk.  
   
 > [!NOTE]
 >  První část Tento článek se zabývá tvorbou jazykově nezávislé komponenty – tedy součástí, které mohou být spotřebovány aplikacemi, které jsou napsané v libovolném jazyce. Můžete také vytvořit jednu součást nebo aplikaci ze zdrojového kódu napsaného v několika jazycích; Zobrazit [vzájemná](#CrossLang) v druhé části tohoto článku.  
@@ -60,7 +60,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
   
     -   [Události](#events)  
   
-    -   [Overloads](#overloads)  
+    -   [Přetížení](#overloads)  
   
     -   [Výjimky](#exceptions)  
   
@@ -137,8 +137,8 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
 |Zásady vytváření názvů|[Zásady vytváření názvů](#naming)|Sestavení musí dodržovat přílohu 7 technické zprávy 15 sady Unicode Standard3.0 řídící sadu znaků povolených pro spuštění a být součástí identifikátory, které jsou k dispozici online na <https://www.unicode.org/unicode/reports/tr15/tr15-18.html>. Identifikátory musí být v kanonickém formátu definovaném v normalizačním formuláři Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné v případě mapování jejich malých písmen (podle specifikací Unicode národním prostředí, 1: 1 malé písmeno mapování) jsou totožné. To znamená, že dva identifikátory, aby bylo považováno za jiné v rámci specifikace CLS se liší se ve více než jednoduchém případě. Za účelem přepsání zděděné definice však rozhraní příkazového řádku vyžaduje, přesného kódování v původní deklaraci použít.|4|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Všechny názvy zavedené v oboru kompatibilní se Specifikací CLS musí být odlišné bez ohledu na typ, s výjimkou případů, kdy jsou názvy shodné a jsou vyřešeny prostřednictvím přetížení. To znamená, že při CTS umožňuje, aby jeden typ používal stejný název pro metodu a pole, CLS to neumožňuje.|5|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Pole a vnořené typy musí být různé podle porovnání identifikátoru, i když CTS umožňuje odlišit různé podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátoru) se musí lišit více než jen návratovým typem, mimo specifikaci v pravidla 39 CLS.|6|  
-|Přetížení|[Overloads](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
-|Přetížení|[Overloads](#overloads)|Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu.|38|  
+|Přetížení|[Přetížení](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
+|Přetížení|[Přetížení](#overloads)|Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu.|38|  
 |Přetížení|--|Pokud mají dvě nebo více kompatibilní se Specifikací CLS metod deklarovaných v typu stejný název a pro konkrétní sadu vytváření instancí typů mají stejný parametr a návratové typy, musí být sémanticky rovnocenné v těchto instancí typů všechny tyto metody.|48|  
 |Typy|[Typ a signatury členů typu](#Types)|<xref:System.Object?displayProperty=nameWithType> je kompatibilní se Specifikací CLS. Jiná třída odpovídající specifikaci CLS musí dědit z třídy odpovídající specifikaci CLS.|23|  
 |Vlastnosti|[Vlastnosti](#properties)|Metody, které implementují metody getter a setter vlastnosti musí být označeny `SpecialName` v metadatech.|24|  
@@ -188,7 +188,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
 |Nevyhovující typ|Popis|Alternativy CLS|  
 |-------------------------|-----------------|--------------------------------|  
 |<xref:System.SByte>|8bitové celé číslo se znaménkem datový typ|<xref:System.Int16>|  
-|<xref:System.TypedReference>|Ukazatel na objekt a jeho typ runtime|Žádná|  
+|<xref:System.TypedReference>|Ukazatel na objekt a jeho typ runtime|Žádný|  
 |<xref:System.UInt16>|16bitové celé číslo bez znaménka|<xref:System.Int32>|  
 |<xref:System.UInt32>|32bitové celé číslo bez znaménka|<xref:System.Int64>|  
 |<xref:System.UInt64>|64bitové celé číslo bez znaménka|<xref:System.Int64> (může přetéci), <xref:System.Numerics.BigInteger>, nebo <xref:System.Double>|  
@@ -517,13 +517,13 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
   
  Vytváření komponent odpovídajících specifikaci CLS:  
   
-1.  Použití <xref:System.CLSCompliantAttribute> označit sestavení jako kompatibilní se Specifikací CLS.  
+1. Použití <xref:System.CLSCompliantAttribute> označit sestavení jako kompatibilní se Specifikací CLS.  
   
-2.  Označte všechny veřejně vystavené typy v sestavení, které nejsou kompatibilní se Specifikací CLS jako nevyhovující.  
+2. Označte všechny veřejně vystavené typy v sestavení, které nejsou kompatibilní se Specifikací CLS jako nevyhovující.  
   
-3.  Označte všechny veřejně vystavené členy v typech odpovídajících specifikaci CLS jako nevyhovující.  
+3. Označte všechny veřejně vystavené členy v typech odpovídajících specifikaci CLS jako nevyhovující.  
   
-4.  Poskytnout alternativu odpovídající specifikaci CLS pro členy mimo-kompatibilní se Specifikací CLS.  
+4. Poskytnout alternativu odpovídající specifikaci CLS pro členy mimo-kompatibilní se Specifikací CLS.  
   
  Pokud jste úspěšně označili nekompatibilní typy a členy, kompilátor by neměl generovat upozornění na nekompatibilitu. Však vhodné určit členy, které nejsou kompatibilní se Specifikací CLS a seznam jejich alternativ kompatibilní se Specifikací CLS v dokumentaci k produktu.  
   

@@ -2,12 +2,12 @@
 title: Zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: da2ae3db0ff0432a49fcbf6de674bfb730be1286
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 34f4f11176b3827ec3e4622944ffe02be5207df9
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59136432"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59300278"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 ## <a name="error-handling-in-windows-communication-foundation"></a>Zpracování chyb v Windows Communication Foundation  
@@ -34,15 +34,15 @@ ms.locfileid: "59136432"
   
  S IErrorHandler můžete explicitně řídit chování aplikace, když dojde k výjimce. Můžete:  
   
-1.  Rozhodněte, jestli se mají odeslat klientovi chybu  
+1. Rozhodněte, jestli se mají odeslat klientovi chybu  
   
-2.  Nahraďte výjimku chybu  
+2. Nahraďte výjimku chybu  
   
-3.  Nahraďte jinou chybu selhání  
+3. Nahraďte jinou chybu selhání  
   
-4.  Provádět protokolování nebo trasování  
+4. Provádět protokolování nebo trasování  
   
-5.  Provést jiné vlastní aktivity  
+5. Provést jiné vlastní aktivity  
   
  Obslužné rutiny vlastních chyb jeden můžete nainstalovat tak, že přidáte na vlastnost ErrorHandlers dispečerů kanálu pro vaši službu.  Je možné mít víc než jedna obslužná rutina chyb a jsou volány v pořadí, ve kterém jsou přidané do této kolekce.  
   

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6c5ad891-66a0-4e7a-adcf-f41863ba6d8d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1e5ca80de113785904562ff1cef953de8a5a9460
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: c7ff34285220fd1e3c17503a8387104e91ec08b1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442136"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59313655"
 ---
 # <a name="create-resource-files-for-net-apps"></a>Vytvořit soubor prostředků pro aplikace .NET
 
@@ -31,7 +31,7 @@ Prostředky, jako jsou řetězce, obrázky nebo dat objektů, můžete zahrnout 
 
 - Vytvořte soubor binární prostředek (.resources) prostřednictvím kódu programu. Poté můžete vložit soubor spustitelný soubor aplikace nebo do knihovny aplikace pomocí kompilátoru jazyka nebo můžete vložit ho do satelitního sestavení s použitím [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Další informace najdete v tématu [prostředky v souborech .resources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#ResourcesFiles) oddílu.
 
-- Použití [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) k vytvoření souboru prostředků a zahrnout do projektu. Visual Studio poskytuje editor prostředků, která umožňuje přidávat, odstraňovat a upravovat prostředky. V době kompilace je soubor prostředků automaticky převést na binární soubor .resources a součástí aplikace sestavení nebo satelitního sestavení. Další informace najdete v tématu [soubory prostředků v sadě Visual Studio](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#VSResFiles) oddílu.
+- Použití [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) k vytvoření souboru prostředků a zahrnout do projektu. Visual Studio poskytuje editor prostředků, která umožňuje přidávat, odstraňovat a upravovat prostředky. V době kompilace je soubor prostředků automaticky převést na binární soubor .resources a součástí aplikace sestavení nebo satelitního sestavení. Další informace najdete v tématu [soubory prostředků v sadě Visual Studio](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#VSResFiles) oddílu.
 
 <a name="TextFiles"></a>
 ## <a name="resources-in-text-files"></a>Prostředky v textových souborech
@@ -172,7 +172,7 @@ csc greeting.cs -resource:GreetingResources.resources
 ```
 
 > [!IMPORTANT]
-> Vzhledem k tomu, že musí obsahovat soubory .resx ve správném formátu XML v předdefinovanému formátu, nedoporučujeme práce se soubory .resx ručně, zejména pokud soubory .resx obsahují prostředky než řetězce. Místo toho [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) nabízí transparentní rozhraní pro vytváření a manipulaci se soubory .resx. Další informace najdete v tématu [soubory prostředků v sadě Visual Studio](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#VSResFiles) oddílu. Můžete také vytvořit a pracovat se soubory .resx programově. Další informace najdete v tématu [práce s programové soubory .resx](../../../docs/framework/resources/working-with-resx-files-programmatically.md).
+> Vzhledem k tomu, že musí obsahovat soubory .resx ve správném formátu XML v předdefinovanému formátu, nedoporučujeme práce se soubory .resx ručně, zejména pokud soubory .resx obsahují prostředky než řetězce. Místo toho [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nabízí transparentní rozhraní pro vytváření a manipulaci se soubory .resx. Další informace najdete v tématu [soubory prostředků v sadě Visual Studio](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#VSResFiles) oddílu. Můžete také vytvořit a pracovat se soubory .resx programově. Další informace najdete v tématu [práce s programové soubory .resx](../../../docs/framework/resources/working-with-resx-files-programmatically.md).
 
 <a name="ResourcesFiles"></a>
 ## <a name="resources-in-resources-files"></a>Prostředky v souborech .resources
@@ -198,7 +198,7 @@ Můžete použít <xref:System.Resources.ResourceWriter?displayProperty=nameWith
 <a name="VSResFiles"></a>
 ## <a name="resource-files-in-visual-studio"></a>Soubory prostředků v sadě Visual Studio
 
-Když přidáte soubor prostředků pro váš [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) projektu, Visual Studio vytvoří soubor .resx v adresáři projektu. Visual Studio poskytuje editory prostředků, které vám umožní přidat řetězce, obrázky a binární objekty. Protože editorech jsou určeny ke zpracování jenom statická data, nelze je použít k ukládání programové objekty; musíte zápis dat objektů do buď soubor .resx nebo .resources souboru prostřednictvím kódu programu. Další informace najdete v tématu [práce s programové soubory .resx](../../../docs/framework/resources/working-with-resx-files-programmatically.md) a [prostředky v souborech .resources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#ResourcesFiles) oddílu.
+Když přidáte soubor prostředků pro váš [sady Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) projektu, Visual Studio vytvoří soubor .resx v adresáři projektu. Visual Studio poskytuje editory prostředků, které vám umožní přidat řetězce, obrázky a binární objekty. Protože editorech jsou určeny ke zpracování jenom statická data, nelze je použít k ukládání programové objekty; musíte zápis dat objektů do buď soubor .resx nebo .resources souboru prostřednictvím kódu programu. Další informace najdete v tématu [práce s programové soubory .resx](../../../docs/framework/resources/working-with-resx-files-programmatically.md) a [prostředky v souborech .resources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md#ResourcesFiles) oddílu.
 
 Pokud přidáváte lokalizované prostředky, jim názvem kořenového souboru, hlavního souboru prostředku. Můžete také určit svoje jazykové verze v názvu souboru. Například pokud přidáte soubor prostředků pojmenovaný Resources.resx, můžete také vytvořit soubory prostředků s názvem názvy Resources.en US.resx a Resources.fr-FR.resx blokovat lokalizované prostředky pro angličtinu (Spojené státy) a Francouzština (Francie) jazykové verze, v uvedeném pořadí. Můžete také určit výchozí jazykovou verzi vaší aplikace. Toto je jazykovou verzi, jehož prostředky se použijí, pokud lze nalézt žádné lokalizované prostředky pro konkrétní jazykovou verzi. Pokud chcete zadat výchozí jazykovou verzi v Průzkumníku řešení v sadě Visual Studio, klikněte pravým tlačítkem na název projektu, přejděte na aplikace, klikněte na tlačítko **informace o sestavení**a vyberte příslušnou jazykovou verzi v **neutrální jazyk** seznamu.
 
@@ -207,5 +207,5 @@ V době kompilace, Visual Studio nejprve převádí soubory .resx v projektu na 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Resources>
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
 - [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

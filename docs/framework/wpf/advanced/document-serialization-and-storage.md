@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: 519d3aa218fca734a9159503b4107bdbcfc31652
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: dbc78db0a3b6763af5270840fc56af648c7c6efc
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59215947"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59295897"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  
@@ -65,11 +65,11 @@ Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobr
 ### <a name="creating-a-plug-in-serializer"></a>Vytvoření modulu Plug-in serializátoru  
  Modul plug-in serializátory a propojené serializátory použít stejné vystavené veřejné metody a události a podobně může být navržené pro provozování synchronně nebo asynchronně.  Existují tři základní kroky, které jsou obvykle používá k vytvoření modulu plug-in serializátoru:  
   
-1.  Implementace a ladění serializátoru, který je první jako propojené serializátor.  Zpočátku vytvoření serializátoru, který je zkompilovány a propojeny přímo v aplikaci test poskytuje úplný přístup ke zarážky a další užitečné ladění služby pro účely testování.  
+1. Implementace a ladění serializátoru, který je první jako propojené serializátor.  Zpočátku vytvoření serializátoru, který je zkompilovány a propojeny přímo v aplikaci test poskytuje úplný přístup ke zarážky a další užitečné ladění služby pro účely testování.  
   
-2.  Poté, co byl plně testovaný serializátoru, <xref:System.Windows.Documents.Serialization.ISerializerFactory> rozhraní se přidá k vytvoření modulu plug-in.  <xref:System.Windows.Documents.Serialization.ISerializerFactory> Rozhraní umožňuje úplný přístup ke všem objektům rozhraní .NET Framework, která obsahuje logický strom, nepoužívejte <xref:System.Windows.UIElement> objekty, <xref:System.Windows.Documents.IDocumentPaginatorSource>, a <xref:System.Windows.Media.Visual> elementy.  Kromě toho <xref:System.Windows.Documents.Serialization.ISerializerFactory> poskytuje stejné synchronní a asynchronní metody a události používané propojené serializátory.  Protože velkých dokumentů může trvat dobu výstup, asynchronních operací se doporučuje udržovat responzivní uživatelské interakce a nabídky možnost "Storno", pokud dojde k nějakému problému s úložištěm dat.  
+2. Poté, co byl plně testovaný serializátoru, <xref:System.Windows.Documents.Serialization.ISerializerFactory> rozhraní se přidá k vytvoření modulu plug-in.  <xref:System.Windows.Documents.Serialization.ISerializerFactory> Rozhraní umožňuje úplný přístup ke všem objektům rozhraní .NET Framework, která obsahuje logický strom, nepoužívejte <xref:System.Windows.UIElement> objekty, <xref:System.Windows.Documents.IDocumentPaginatorSource>, a <xref:System.Windows.Media.Visual> elementy.  Kromě toho <xref:System.Windows.Documents.Serialization.ISerializerFactory> poskytuje stejné synchronní a asynchronní metody a události používané propojené serializátory.  Protože velkých dokumentů může trvat dobu výstup, asynchronních operací se doporučuje udržovat responzivní uživatelské interakce a nabídky možnost "Storno", pokud dojde k nějakému problému s úložištěm dat.  
   
-3.  Po vytvoření modulu plug-in serializátor instalačního skriptu je implementován pro distribuci a instalaci (a odinstalaci) modulu plug-in (viz výše, "[instalace modulu Plug-in Serializátory](#InstallingPluginSerializers)").  
+3. Po vytvoření modulu plug-in serializátor instalačního skriptu je implementován pro distribuci a instalaci (a odinstalaci) modulu plug-in (viz výše, "[instalace modulu Plug-in Serializátory](#InstallingPluginSerializers)").  
   
 ## <a name="see-also"></a>Viz také:
 
