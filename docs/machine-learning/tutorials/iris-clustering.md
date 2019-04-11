@@ -3,22 +3,22 @@ title: Cluster květin iris pomocí clusteringu learner - ML.NET
 description: Zjistěte, jak použít ve scénáři clusteringu ML.NET
 author: pkulikov
 ms.author: johalex
-ms.date: 03/18/2019
+ms.date: 04/08/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c5c6a59453a36369cc6dd081a1d6a6b90589c0dc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 86eba0c7a3eaeed008d41ff950bf2fd7e0e5fb57
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59309352"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481337"
 ---
 # <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
 
 > [!NOTE]
 > Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
-Tento kurz a související ukázkové právě používáte **ML.NET verze 0,11**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
+Tento kurz a související ukázkové právě používáte **ML.NET 1.0 RC (Release Candidate) (verze `1.0.0-preview`)**. Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).
 
 Tento kurz ukazuje, jak použít ML.NET k sestavení [clusteringový model](../resources/tasks.md#clustering) pro [datovou sadu iris](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
@@ -127,16 +127,16 @@ V `Main` metoda, nahraďte `Console.WriteLine("Hello World!");` řádek s násle
 
 Přidejte následující kód, který `Main` metoda nastavit způsob, jak načíst data:
 
-[!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#SetupTextLoader)]
+[!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateDataView)]
 
-Načtěte data s využitím Obecné `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTextFile metoda](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29). Vrátí <xref:Microsoft.Data.DataView.IDataView> které odvodí schéma datové sady z `IrisData` datový model typu, používá hlavičku datové sady a oddělit je čárkami.
+Obecné [ `MLContext.Data.LoadFromTextFile` – metoda rozšíření](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) odvodí schéma datové sady z poskytnutého `IrisData` typ a vrátí <xref:Microsoft.ML.IDataView> které lze použít jako vstup pro transformátory.
 
 ## <a name="create-a-learning-pipeline"></a>Vytvoření kanálu učení
 
 Pro účely tohoto kurzu kanál učení clusteringu úkolu se skládá z následujících dvou kroků:
 
 - zřetězit načíst sloupce do jednoho **funkce** sloupec, který používá clustering trainer;
-- použít <xref:Microsoft.ML.Trainers.KMeansPlusPlusTrainer> trainer k natrénování modelu s použitím s kB – znamená, že ++ clustering algoritmus.
+- použít <xref:Microsoft.ML.Trainers.KMeansTrainer> trainer k natrénování modelu s použitím s kB – znamená, že ++ clustering algoritmus.
 
 Přidejte následující kód, který `Main` metody:
 

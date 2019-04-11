@@ -4,12 +4,12 @@ description: Zjistěte, jak fungují atributy v jazyce C#.
 author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: e744f3585fe7be02fb8bdd25f559a12a88b61730
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 3141c1bf7ddcf3fd3426290428f9eeeb54b3c872
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975599"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481228"
 ---
 # <a name="using-attributes-in-c"></a>Použití atributů v jazyce C\#
 
@@ -147,4 +147,4 @@ Ve výše uvedeném kódu, nemusíte mít literál `"Name"` řetězec. To pomáh
 
 ## <a name="summary"></a>Souhrn
 
-Atributy deklarativního power přenést do jazyka C#. Ale jsou formou kódem jako metadata a doby něco neuděláte samy o sobě.
+Atributy přenést deklarativní schopnost C#, ale jejich metadata formu kódu a doby něco neuděláte samy o sobě.

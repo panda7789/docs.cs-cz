@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 03/20/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 518a2228bb23569689d56577f83b066a5d518be8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 81dbcd5e0fd15048a0fc59bfeeef64bedbfeb769
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59186924"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481129"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace .NET Core aplikace
 
@@ -59,13 +59,13 @@ Klienta Dockeru se dá nainstalovat ve:
 
 * Linuxové distribuce
 
-   * [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
+  * [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
 
-   * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+  * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
 
-   * [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
+  * [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
 
-   * [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+  * [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 * [macOS](https://docs.docker.com/docker-for-mac/install/)
 

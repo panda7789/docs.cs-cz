@@ -3,12 +3,12 @@ title: C#Výrazy – připravuje C# jazyka
 description: výrazy, operandy a operátory jsou stavební bloky C# jazyka
 ms.date: 11/06/2016
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 7a7f65eb7ba3da3f9630bbcb92d8578d60d2095d
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 4ffe947a4cb8c36a5925a4b3846486e44a9d8ec4
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846594"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480752"
 ---
 # <a name="expressions"></a>Výrazy
 
@@ -28,68 +28,68 @@ Většina operátory mohou být *přetížené*. Přetížení operátoru umož�
 Shrnuje následující C#pro operátory, výpis operátor kategorií v pořadí podle priority od nejvyšší k nejnižší. Operátory ve stejné kategorii mají stejnou prioritu. V rámci každé kategorie je seznamem výrazů v dané kategorii spolu s popis tohoto typu výrazu.
 
 * Primární
-    - `x.m`: Přístup ke členům
-    - `x(...)`: Vyvolání metod a delegátů
-    - `x[...]`: Přístup k poli a indexeru
-    - `x++`: Postinkrementace
-    - `x--`: Postdekrementace
-    - `new T(...)`: Vytvoření objektu a delegátu
-    - `new T(...){...}`: Vytvoření objektu s inicializátorem
-    - `new {...}`:  Inicializátor anonymních objektů
-    - `new T[...]`: Vytvoření pole
-    - `typeof(T)`: Získat <xref:System.Type> objekt pro `T`
-    - `checked(x)`: Vyhodnocení výrazu ve zkontrolovaném kontextu
-    - `unchecked(x)`: Vyhodnocení výrazu v nezkontrolovaném kontextu
-    - `default(T)`: Získat výchozí hodnotu typu `T`
-    - `delegate {...}`: Anonymní funkce (anonymní metoda)
+  - `x.m`: Přístup ke členům
+  - `x(...)`: Vyvolání metod a delegátů
+  - `x[...]`: Přístup k poli a indexeru
+  - `x++`: Postinkrementace
+  - `x--`: Postdekrementace
+  - `new T(...)`: Vytvoření objektu a delegátu
+  - `new T(...){...}`: Vytvoření objektu s inicializátorem
+  - `new {...}`:  Inicializátor anonymních objektů
+  - `new T[...]`: Vytvoření pole
+  - `typeof(T)`: Získat <xref:System.Type> objekt pro `T`
+  - `checked(x)`: Vyhodnocení výrazu ve zkontrolovaném kontextu
+  - `unchecked(x)`: Vyhodnocení výrazu v nezkontrolovaném kontextu
+  - `default(T)`: Získat výchozí hodnotu typu `T`
+  - `delegate {...}`: Anonymní funkce (anonymní metoda)
 * Unární
-    - `+x`: Identita
-    - `-x`: Negace
-    - `!x`: Logická negace
-    - `~x`: Bitová negace.
-    - `++x`: Preinkrementace
-    - `--x`: Predekrementace
-    - `(T)x`: Explicitně převést `x` na typ `T`
-    - `await x`: Asynchronně počkejte `x` k dokončení
+  - `+x`: Identita
+  - `-x`: Negace
+  - `!x`: Logická negace
+  - `~x`: Bitová negace.
+  - `++x`: Preinkrementace
+  - `--x`: Predekrementace
+  - `(T)x`: Explicitně převést `x` na typ `T`
+  - `await x`: Asynchronně počkejte `x` k dokončení
 * Násobení
-    - `x * y`: Násobení
-    - `x / y`: Dělení
-    - `x % y`: Zbytek
+  - `x * y`: Násobení
+  - `x / y`: Dělení
+  - `x % y`: Zbytek
 * Additive
-    - `x + y`: Sčítání, řetězení řetězců, kombinování delegátů
-    - `x – y`: Odčítání, odebrání delegátů
+  - `x + y`: Sčítání, řetězení řetězců, kombinování delegátů
+  - `x – y`: Odčítání, odebrání delegátů
 * SHIFT
-    - `x << y`: Posun doleva
-    - `x >> y`: Posun doprava
+  - `x << y`: Posun doleva
+  - `x >> y`: Posun doprava
 * Relační a typové zkoušky
-    - `x < y`: Menší než
-    - `x > y`: Větší než
-    - `x <= y`: Menší nebo rovno
-    - `x >= y`: Větší nebo rovno
-    - `x is T`: Vrátí `true` Pokud `x` je `T`, `false` jinak
-    - `x as T`: Vrátí `x` zadán jako `T`, nebo `null` Pokud `x` není `T`
+  - `x < y`: Menší než
+  - `x > y`: Větší než
+  - `x <= y`: Menší nebo rovno
+  - `x >= y`: Větší nebo rovno
+  - `x is T`: Vrátí `true` Pokud `x` je `T`, `false` jinak
+  - `x as T`: Vrátí `x` zadán jako `T`, nebo `null` Pokud `x` není `T`
 * Rovnost
-    - `x == y`: Rovno
-    - `x != y`: Nerovná se
+  - `x == y`: Rovno
+  - `x != y`: Nerovná se
 * Logický operátor AND
-    - `x & y`: Celočíselné bitové a logických logický operátor AND
+  - `x & y`: Celočíselné bitové a logických logický operátor AND
 * Logický operátor XOR
-    - `x ^ y`: Bitový operátor XOR celého čísla, logická hodnota operátoru XOR
+  - `x ^ y`: Bitový operátor XOR celého čísla, logická hodnota operátoru XOR
 * Logický operátor OR
-    - `x | y`: Bitový operátor OR celého čísla, logická hodnota operátoru OR
+  - `x | y`: Bitový operátor OR celého čísla, logická hodnota operátoru OR
 * Podmiňovací operátor AND
-    - `x && y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `false`
+  - `x && y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `false`
 * Podmiňovací operátor OR
-    - `x || y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `true`
+  - `x || y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `true`
 * Nulové sloučení
-    - `x ?? y`: Vyhodnotí jako `y` Pokud `x` má hodnotu null, `x` jinak
+  - `x ?? y`: Vyhodnotí jako `y` Pokud `x` má hodnotu null, `x` jinak
 * Podmiňovací operátor
-    - `x ? y : z`: Vyhodnotí `y` Pokud `x` je `true`, `z` Pokud `x` je `false`
+  - `x ? y : z`: Vyhodnotí `y` Pokud `x` je `true`, `z` Pokud `x` je `false`
 * Přiřazení nebo anonymní funkce
-    - `x = y`: Přiřazení
-    - `x op= y`: Složené přiřazení. podporované operátory jsou
-        - `*=`   `/=`   `%=`   `+=`   `-=`   `<<=`   `>>=`   `&=`  `^=`  `|=`
-    - `(T x) => y`: Anonymní funkce (výraz lambda)
+  - `x = y`: Přiřazení
+  - `x op= y`: Složené přiřazení. podporované operátory jsou
+    - `*=`   `/=`   `%=`   `+=`   `-=`   `<<=`   `>>=`   `&=`  `^=`  `|=`
+  - `(T x) => y`: Anonymní funkce (výraz lambda)
 
 > [!div class="step-by-step"]
 > [Předchozí](types-and-variables.md)

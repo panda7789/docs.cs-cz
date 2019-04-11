@@ -4,12 +4,12 @@ description: Zjistěte, jak hostitele modulu runtime .NET Core z nativního kód
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 27717cd68d2ef7c19289a9e06f99bb8767f2f582
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.openlocfilehash: 53cdc13d5a356a2975182c58374a0e9c6639ec17
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654052"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481142"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -68,8 +68,10 @@ Před zahájením modul runtime, je nezbytné pro přípravu některé vlastnost
 
 Společné vlastnosti patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělených pomocí ';' na Windows a ":" v Linuxu) která modul runtime bude možné vyřešit ve výchozím nastavení. Někteří hostitelé mají pevně zakódované manifest sestavení, které můžete načíst seznam. Ostatní zařadí všechny knihovny v určitých umístěních (vedle *coreclr.dll*, například) v tomto seznamu.
-* `APP_PATHS` Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
+* `TRUSTED_PLATFORM_ASSEMBLIES`
+  Toto je seznam cest sestavení (oddělených pomocí ';' na Windows a ":" v Linuxu) která modul runtime bude možné vyřešit ve výchozím nastavení. Někteří hostitelé mají pevně zakódované manifest sestavení, které můžete načíst seznam. Ostatní zařadí všechny knihovny v určitých umístěních (vedle *coreclr.dll*, například) v tomto seznamu.
+* `APP_PATHS`
+  Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
 *  `APP_NI_PATHS` Tento seznam je podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
 *  `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč testu při hledání nativních knihoven volání prostřednictvím p/invoke.
 *  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
@@ -114,7 +116,7 @@ Nakonec po dokončení spuštění spravovaného kódu hostitele modulu runtime 
 
 [!code-cpp[CoreClrHost#6](~/samples/core/hosting/HostWithCoreClrHost/src/SampleHost.cpp#6)]
 
-Mějte na paměti pomocí knihovny CoreCLR uvolnit `FreeLibrary` (ve Windows) nebo `dlclose` (v systému Linux/Mac).
+CoreCLR nepodporuje opětovnou inicializaci nebo uvolnění. Nevolejte `coreclr_initialize` znovu nebo uvolnit knihovnu CoreCLR.
 
 ## <a name="create-a-host-using-mscoreeh"></a>Vytvoření hostitele pomocí Mscoree.h
 
@@ -164,8 +166,10 @@ Jakmile se rozhodnete, které doména AppDomain příznaky pro použití, musí 
 
 Společná nastavení domény aplikace patří:
 
-* `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělené `;` na Windows a `:` v systému Linux/Mac) který AppDomain by měl upřednostňovat načítání a poskytují úplný vztah důvěryhodnosti (i v částečně důvěryhodné domény). Tento seznam slouží k obsahovat sestavení "Rozhraní" a další důvěryhodné moduly, podobně jako v GAC ve scénářích rozhraní .NET Framework. Někteří hostitelé zařadí všechny knihovny vedle *coreclr.dll* v tomto seznamu další ho mají pevně zakódované manifesty seznamem důvěryhodných sestavení pro svoje účely.
-* `APP_PATHS` Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
+* `TRUSTED_PLATFORM_ASSEMBLIES`
+  Toto je seznam cest sestavení (oddělené `;` na Windows a `:` v systému Linux/Mac) který AppDomain by měl upřednostňovat načítání a poskytují úplný vztah důvěryhodnosti (i v částečně důvěryhodné domény). Tento seznam slouží k obsahovat sestavení "Rozhraní" a další důvěryhodné moduly, podobně jako v GAC ve scénářích rozhraní .NET Framework. Někteří hostitelé zařadí všechny knihovny vedle *coreclr.dll* v tomto seznamu další ho mají pevně zakódované manifesty seznamem důvěryhodných sestavení pro svoje účely.
+* `APP_PATHS`
+  Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
 *  `APP_NI_PATHS` Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
 *  `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cesty, které by měl zavaděč testu při hledání nativních knihoven DLL volání prostřednictvím p/invoke.
 *  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
@@ -202,6 +206,8 @@ hr = runtimeHost->CreateDelegate(
 Nakonec se hostitele by měl vyčištění po samotné uvolňování objektů třídy AppDomains, zastavení modulu runtime a uvolněním `ICLRRuntimeHost4` odkaz.
 
 [!code-cpp[NetCoreHost#9](~/samples/core/hosting/HostWithMscoree/host.cpp#9)]
+
+CoreCLR nepodporuje uvolnění. Uvolnit knihovnu CoreCLR.
 
 ## <a name="conclusion"></a>Závěr
 Jakmile hostitele je sestavená, ho můžete otestovat spuštěním z příkazového řádku a předávání argumentů hostitele očekává, že (jako je spuštění pro hostitele příklad mscoree spravované aplikace). Při zadávání aplikaci .NET Core pro hostitele ke spuštění, nezapomeňte použít soubor .dll, který je vytvořen `dotnet build`. Spustitelné soubory (soubory .exe) vytvářených `dotnet publish` pro samostatné aplikace jsou ve skutečnosti výchozí hostitel .NET Core (tak, aby aplikaci můžete spustit přímo z příkazového řádku v hlavní linii scénáře); uživatelský kód je zkompilován do knihovny dll se stejným názvem.

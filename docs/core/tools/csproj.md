@@ -2,12 +2,12 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 ms.date: 09/22/2017
-ms.openlocfilehash: f6b57164086efa357c70f55a9b9ac16b680c8f46
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 49a7198dc593708abaa83e65af463ea0a7571a55
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59085789"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481311"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -35,11 +35,12 @@ Protože `Microsoft.NETCore.App` nebo `NetStandard.Library` metabalíčky jsou i
 
 * Při cílení na .NET Core nebo .NET Standard, nikdy nemůžete mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NetStandard.Library` metabalíčky prostřednictvím `<PackageReference>` položky v souboru projektu.
 * Pokud potřebujete konkrétní verzi modulu runtime při cílení na .NET Core, měli byste použít `<RuntimeFrameworkVersion>` vlastnost v projektu (například `1.0.4`) namísto odkazování Microsoft.aspnetcore.all.
-    * K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete oprav konkrétní verze 1.0.0 LTS běhu.
+  * K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete oprav konkrétní verze 1.0.0 LTS běhu.
 * Pokud potřebujete konkrétní verzi `NetStandard.Library` Microsoft.aspnetcore.all při cílení na .NET Standard, můžete použít `<NetStandardImplicitPackageVersion>` vlastnost a nastavte verzi budete potřebovat.
 * Není explicitně přidat nebo aktualizovat odkazy na buď `Microsoft.NETCore.App` nebo `NetStandard.Library` Microsoft.aspnetcore.all v projektech .NET Framework. Pokud všechny verze `NetStandard.Library` je potřeba při použití balíčku NuGet pro .NET Standard na základě, NuGet automaticky instaluje tuto verzi.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Obsahuje výchozí kompilace v projektech .NET Core
+
 S přechodem na *csproj* formátu v nejnovější verze sady SDK, přešli jsme výchozí zahrnuje a nezahrnuje pro položky kompilace a vložené prostředky, které vlastnosti soubory sady SDK. To znamená, že už nemusíte určit tyto položky v souboru projektu.
 
 Hlavním důvodem pro to je přehlednost v souboru projektu. Výchozí hodnoty, které jsou k dispozici v sadě SDK by měly pokrývat nejběžnější případy použití, takže není nutné opakovat v každém projektu, který vytvoříte. To vede k menší soubory projektu, které jsou mnohem snazší porozumět, stejně jako upravit ručně, v případě potřeby.
@@ -100,6 +101,7 @@ Pokud projekt obsahuje více cílových platforem, by měl výsledky příkazu, 
 ## <a name="additions"></a>Přidání
 
 ### <a name="sdk-attribute"></a>Atribut SDK
+
 Kořen `<Project>` elementu *.csproj* soubor obsahuje nový atribut volá `Sdk`. `Sdk` Určuje, které sada SDK se používá v projektu. Sady SDK, jako [rozvržení dokumentu](cli-msbuild-architecture.md) popisuje, je sada MSBuild [úlohy](/visualstudio/msbuild/msbuild-tasks) a [cíle](/visualstudio/msbuild/msbuild-targets) , které můžete vytvářet kód .NET Core. Dodáváme tři hlavní sady SDK s nástroji .NET Core:
 
 1. .NET Core SDK s ID `Microsoft.NET.Sdk`

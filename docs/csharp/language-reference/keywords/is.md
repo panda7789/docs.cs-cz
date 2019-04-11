@@ -1,19 +1,19 @@
 ---
 title: je - C# odkaz
 ms.custom: seodec18
-ms.date: 02/17/2017
+ms.date: 04/09/2019
 f1_keywords:
 - is_CSharpKeyword
 - is
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: a391449afd53b28ae4293865314275782d6e9505
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 83cb308a14a6db99f65b30eded20442d675cbd57
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977048"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480830"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 
@@ -47,11 +47,11 @@ Následující příklad ukazuje, že `is` výraz vyhodnocen jako `true` pro ka�
 
 [!code-csharp[is#3](../../../../samples/snippets/csharp/language-reference/keywords/is/is3.cs#3)]
 
-`is` – Klíčové slovo vygeneruje upozornění kompilace, pokud je známo, že výraz vždy být buď `true` nebo `false`. Uvažuje pouze převody odkazů, převodu zabalení a rozbalení převody; nepovažuje uživatelem definované převody nebo převody definované typem [implicitní](implicit.md) a [explicitní](explicit.md) operátory. Následující příklad generuje upozornění, protože výsledkem převodu je známá v době kompilace. Všimněte si, že `is` výraz pro převod z `int` k `long` a `double` vrátí hodnotu false, protože tyto převody jsou zpracovávány [implicitní](implicit.md) operátor.
+`is` – Klíčové slovo vygeneruje upozornění kompilace, pokud je známo, že výraz vždy být buď `true` nebo `false`. Uvažuje pouze převody odkazů, převodu zabalení a rozbalení převody; nepovažuje uživatelem definované převody nebo převody definované typem [implicitní](implicit.md) a [explicitní](explicit.md) operátory. Následující příklad generuje upozornění, protože výsledkem převodu je známá v době kompilace. `is` Výraz pro převod z `int` k `long` a `double` vrátí hodnotu false, protože tyto převody jsou zpracovávány [implicitní](implicit.md) operátor.
 
 [!code-csharp[is#2](../../../../samples/snippets/csharp/language-reference/keywords/is/is2.cs#2)]
 
-`expr` může být libovolný výraz, který vrací hodnotu, s výjimkou anonymní metody a výrazy lambda. Následující příklad používá `is` vyhodnotit vrácenou hodnotu volání metody.   
+`expr` nemůže být anonymní metody nebo lambda výrazu. Může být libovolný výraz, který vrací hodnotu. Následující příklad používá `is` vyhodnotit vrácenou hodnotu volání metody.   
 [!code-csharp[is#4](../../../../samples/snippets/csharp/language-reference/keywords/is/is4.cs#4)]
 
 Od verze C# 7.0, můžete použít porovnávání vzorů s [vzor typu](#type) zapsat stručnější kód, který používá `is` příkazu.
@@ -66,7 +66,7 @@ Od verze C# 7.0, `is` a [přepnout](../../../csharp/language-reference/keywords/
 
 - [vzor var](#var), shoda, který je vždy úspěšné a přiřazuje hodnotu výrazu nové místní proměnné. 
 
-### <a name="type" /> Vzorek typu </a>
+### <a name="a-nametype-type-pattern"></a><a name="type" />Vzorek typu
 
 Při použití typu modelu k provádění porovnávání vzorů, `is` testuje výraz lze převést na zadaný typ a pokud jej lze přetypování pro proměnnou daného typu. Je jednoduché rozšíření `is` příkaz, který umožňuje stručný typ vyhodnocení a převodu. Obecný tvar `is` vzor typu je:
 
@@ -85,6 +85,8 @@ kde *expr* je výraz, který se vyhodnotí na instanci typu, *typ* je název typ
 - *výraz* má typ za kompilace, která je základní třídou *typ*, a *expr* má typ modulu runtime, který je *typ* nebo odvozený od *typ*. *Typu v době kompilace* proměnné je typ proměnné definované v jeho deklaraci. *Typu prostředí runtime* proměnné je typ instance, který je přiřazen k této proměnné.
 
 - *výraz* je instance typu, který implementuje *typ* rozhraní.
+
+Počínaje C# 7.1, *expr* může mít za kompilace typu definované v parametru obecného typu a jeho omezení. 
 
 Pokud *expr* je `true` a `is` se používá s `if` příkazu *název_proměnné* přiřazena a místním rozsahem v rámci `if` pouze příkaz.
 
@@ -106,7 +108,7 @@ Ekvivalentní kód bez porovnávání vzorů vyžaduje samostatné přiřazení,
 
 ### <a name="a-nameconstant--constant-pattern"></a><a name="constant" /> Konstantní vzorek
 
-Při provádění porovnávání vzorů s konstantní vzorek `is` testuje, zda výraz rovná zadané – konstanta. V jazyce C# 6 a starší verze, je podporován konstantní vzorek [přepnout](switch.md) příkazu. Od verze C# 7.0, je podporována `is` také příkaz. Syntaxe je:
+Při provádění porovnávání vzorů s konstantní vzorek `is` testuje, zda výraz rovná zadané – konstanta. V jazyce C# 6 a starší verze, je podporován konstantní vzorek [přepnout](switch.md) příkazu. Počínaje C# 7.0, je podporována `is` také příkaz. Syntaxe je:
 
 ```csharp
    expr is constant
@@ -142,17 +144,15 @@ Následující příklad ukazuje porovnání `null` ověří:
  
 ### <a name="var" /> vzor var </a>
 
-Porovnávání se vzorem var vždy úspěšná. Syntaxe je
+Porovnávání se vzorem var vždy úspěšná pro výrazy nenulové; Pokud *expr* je `null`, `is` výraz je `false`. Hodnota jiná než null z *expr* se vždycky přiřazuje lokální proměnná stejný typ jako typ času runtime *expr*.  Syntaxe je:
 
 ```csharp 
    expr is var varname
 ```
 
-Pokud hodnota *expr* se vždycky přiřazuje na místní proměnnou s názvem *název_proměnné*. *název_proměnné* je statická proměnná stejného typu jako *expr*. Následující příklad používá vzor var výrazu přiřazení k proměnné s názvem `obj`. Potom zobrazí hodnotu a typ `obj`.
+Následující příklad používá vzor var výrazu přiřazení k proměnné s názvem `obj`. Potom zobrazí hodnotu a typ `obj`.
 
 [!code-csharp[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
-
-Všimněte si, že pokud *expr* je `null`, `is` výrazu stále platí a přiřadí `null` k *název_proměnné*. 
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
   

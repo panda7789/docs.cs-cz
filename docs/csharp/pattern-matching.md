@@ -1,28 +1,28 @@
 ---
 title: Porovnávání vzorů – průvodce v C#
 description: Další informace o vzoru porovnávání výrazů v jazyce C#
-ms.date: 01/24/2017
+ms.date: 04/10/2019
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 3bd5144d2ecb65c762dfa81e205982b99d901022
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 5ace3c4552184b848b90dee3516d549ca8fd5806
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59191598"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481363"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
-Vzory testování, že hodnota patří k určitým *tvar*a můžete *extrahovat* informace z hodnotu, pokud má odpovídající obrazce. Porovnávání vzorů poskytuje stručnější syntaxi pro algoritmy, které už máte ještě dnes. Jste již vytvořili porovnávání vzorů pomocí syntaxe pro stávající algoritmy. Při psaní `if` nebo `switch` příkazy, které testují hodnoty. Když tyto příkazy odpovídají, potom extrahovat a používat informace z této hodnoty. Nové prvky syntaxe jsou rozšíření pro příkazy, které jste už obeznámení s: `is` a `switch`. Tyto nové přípony kombinovat testování hodnotu a extrakci těchto informací.
+Vzory testování, že hodnota patří k určitým *tvar*a můžete *extrahovat* informace z hodnotu, pokud má odpovídající obrazce. Porovnávání vzorů poskytuje stručnější syntaxi pro algoritmy, které už máte ještě dnes. Jste již vytvořili porovnávání vzorů pomocí syntaxe pro stávající algoritmy. Při psaní `if` nebo `switch` příkazy, které testují hodnoty. Když tyto příkazy odpovídají, potom extrahovat a používat informace z této hodnoty. Nové prvky syntaxe jsou rozšíření pro příkazy, které jste již obeznámeni s: `is` a `switch`. Tyto nové přípony kombinovat testování hodnotu a extrakci těchto informací.
 
-V tomto tématu se podíváme na novou syntaxi až vám ukážeme, jak umožňuje čitelný a stručné kódu. Porovnávání vzorů umožňuje idiomy kde data a kód jsou oddělené, na rozdíl od objektově orientované vzory, kde data a metody, které s nimi manipulovat jsou úzce svázány.
+V tomto článku se podíváme na novou syntaxi až vám ukážeme, jak umožňuje čitelný a stručné kódu. Porovnávání vzorů umožňuje idiomy kde data a kód jsou oddělené, na rozdíl od objektově orientované vzory, kde data a metody, které s nimi manipulovat jsou úzce svázány.
 
-Pro ilustraci, tyto nové idiomy, budeme pracovat s struktury, které představují geometrické tvary pomocí porovnávání vzorů příkazy. Máte pravděpodobně zkušenosti s vytvářením hierarchií tříd a vytváření [virtuální metody a přepsané metody](methods.md#inherited) k přizpůsobení chování objektu na základě modulu runtime typu objektu.
+Pro ilustraci, tyto nové idiomy, budeme pracovat s struktury, které představují geometrické tvary pomocí porovnávání vzorů příkazy. Už pravděpodobně znáte vytváření hierarchií tříd a vytváření [virtuální metody a přepsané metody](methods.md#inherited) k přizpůsobení chování objektu na základě modulu runtime typu objektu.
 
 Tyto metody nejsou pro data, která neodpovídá struktuře hierarchie tříd je to možné. Pokud data a metody jsou oddělené, je potřeba další nástroje. Nové *porovnávání vzorů* konstrukce povolit přehlednější syntaxe sloužící ke zkoumání dat a manipulaci s řízení toku na základě těchto dat všechny podmínky. Již píšete `if` příkazy a `switch` , které testují hodnota proměnné. Při psaní `is` příkazy, které typ proměnné testu. *Porovnávání vzorů* přidává nové funkce pro tyto příkazy.
 
-V tomto tématu budete vytvářet metodu, která vypočítá oblasti jiné geometrické tvary. Ale můžete udělat bez nutnosti uchýlit se k objektově orientované techniky a vytvoření hierarchie tříd u různých tvarů.
+V tomto článku budete vytvářet metodu, která vypočítá oblasti jiné geometrické tvary. Ale můžete udělat bez nutnosti uchýlit se k objektově orientované techniky a vytvoření hierarchie tříd u různých tvarů.
 Budete používat *porovnávání vzorů* místo.
-Při procházení této ukázce, kontrast tohoto kódu s jakým způsobem bude strukturovaná jako hierarchii objektů. Když data musíte dotazování a manipulaci s není hierarchie tříd, porovnávání vzorů umožňuje velmi elegantní návrhy.
+Při procházení této ukázce, kontrast tohoto kódu s jakým způsobem bude strukturovaná jako hierarchii objektů. Když data musíte dotazování a manipulaci s není hierarchie tříd, porovnávání vzorů umožňuje elegantní návrhy.
 
 Namísto počínaje definici abstraktní tvar a přidávání odlišném tvaru konkrétních tříd, začneme místo toho jednoduchou datovou pouze definice pro každý geometrické tvary:
 
@@ -46,7 +46,7 @@ V této verzi aktualizované `is` výraz testuje proměnné i přiřadí ji nov�
 
 Jazyk pravidel pro vzor odpovídající výrazy snáze vyhnete zneužití výsledky odpovídající výraz. V příkladu výše, proměnné `s`, `c`, a `r` pouze v určitém rozsahu a jednoznačně přiřazena při výrazy porovnání odpovídající vzoru `true` výsledky. Pokud se pokusíte použít buď proměnnou na jiné místo, vygeneruje kód chyby kompilátoru.
 
-Podívejme se na obě tato pravidla podrobně, počínaje oboru. Proměnná `c` je v oboru pouze v `else` větev první `if` příkazu. Proměnná `s` je v oboru v metodě `ComputeAreaModernIs`. Důvodem je, že každá větev `if` příkaz vytváří samostatný obor pro proměnné. Ale `if` příkaz sama tak není. To znamená, že proměnné deklarované v `if` jsou ve stejném oboru jako `if` – příkaz (metody v tomto případě.) Toto chování není specifická pro porovnávání vzorů, ale je definované chování proměnné obory a `if` a `else` příkazy.
+Podívejme se na obě tato pravidla podrobně, počínaje oboru. Proměnná `c` je v oboru pouze v `else` větev první `if` příkazu. Proměnná `s` je v oboru v metodě `ComputeAreaModernIs`. Důvodem je, že každá větev `if` příkaz vytváří samostatný obor pro proměnné. Ale `if` nepodporuje příkaz samotný. To znamená, že proměnné deklarované v `if` jsou ve stejném oboru jako `if` – příkaz (metody v tomto případě.) Toto chování se neomezuje jen na porovnávání vzorů, ale je definované chování proměnné obory a `if` a `else` příkazy.
 
 Proměnné `c` a `s` jsou přiřazeny při funkcím `if` tvrzení jsou pravdivá kvůli jednoznačně přiřazené při true mechanismus.
 
@@ -54,7 +54,7 @@ Proměnné `c` a `s` jsou přiřazeny při funkcím `if` tvrzení jsou pravdivá
 > Ukázky v tomto tématu použijte doporučenou konstrukce, kde je porovnávání `is` výraz jednoznačně přiřadí proměnné shody v `true` větev `if` příkazu.
 > Logika může obrátit vyslovením `if (!(shape is Square s))` a proměnná `s` by být přiřazen pouze v `false` větve. Když je platný C#, se nedoporučuje, protože je pro postupujte podle logiky více matoucí.
 
-Tato pravidla znamená, že jste nepravděpodobné, že omylem přístupu výsledek výrazu shoda vzoru v případě, že tento vzor nebyla splněna.
+Tato pravidla znamená, že jste nepravděpodobné, že omylem přístupu výsledek výrazu shoda vzoru v případě, že nebyla splněna tento vzor.
 
 ## <a name="using-pattern-matching-switch-statements"></a>Použití porovnávání vzorů `switch` příkazy
 
@@ -80,7 +80,7 @@ Jakýkoli typ, jako například `object` v tomto příkladu může být použit.
 
 Když omezeno na konstantní hodnoty, ne více než jedna `case` popisek může odpovídat hodnotě `switch` výraz. Kombinovat s pravidlem, které každý `switch` části nesmí být předáno do další části a ho a potom, `switch` oddíly může být změnit jejich uspořádání v libovolném pořadí bez ovlivnění chování.
 Nyní, s více zobecnit `switch` výrazy, záleží na pořadí jednotlivých oddílů. `switch` Výrazy jsou vyhodnocovány v pořadí textové. Vykonávání se přenese na první `switch` popisek, který odpovídá `switch` výrazu.  
-Všimněte si, že `default` případu se spustí pouze pokud žádné popisky případů odpovídají. `default` Případu se vyhodnocují jako poslední, bez ohledu na jeho textové pořadí. Pokud není žádné `default` případ a žádný z nich `case` příkazy shodují, provádění pokračuje na příkazu za `switch` příkaz. Žádná z `case` popisky kód je spuštěn.
+`default` Případu se spustí pouze pokud žádné popisky případů odpovídají. `default` Případu se vyhodnocují jako poslední, bez ohledu na jeho textové pořadí. Pokud není žádné `default` případ a žádný z nich `case` příkazy shodují, provádění pokračuje na příkazu za `switch` příkaz. Žádná z `case` popisky kód je spuštěn.
 
 ## <a name="when-clauses-in-case-expressions"></a>`when` Klauzule v `case` výrazy
 
@@ -93,7 +93,7 @@ Tato změna ukazuje několik důležitých bodů o nové syntaxe. Nejprve je pot
 V tomto příkladu zavádí dvě různé proměnné ve dvou `case` popisky pro první `switch` bloku. Všimněte si, že příkazy v tomto `switch` bloku nepoužívejte buď proměnné `c` (pro kruhu) nebo `s` (pro druhou mocninu).
 Ani jeden z těchto proměnných je jednoznačně přiřazena v tomto `switch` bloku.
 Pokud některý z těchto případů shodují, se přiřadí jasně jedna z proměnných.
-Je však možné předat *který* byla přiřazena v době kompilace, protože obou případech může odpovídat za běhu. Z tohoto důvodu většinou při použití více `case` popisky pro stejný blok, nezpůsobí novou proměnnou `case` příkazu, nebo bude používat pouze proměnné v `when` klauzule.
+Je však možné předat *který* byla přiřazena v době kompilace, protože obou případech může odpovídat za běhu. Z tohoto důvodu většinou při použití více `case` popisky pro stejný blok, nezpůsobí novou proměnnou `case` příkazu, nebo budete používat pouze proměnné v `when` klauzule.
 
 Přidání tvarů s 0 oblastí přidáme několik dalších typů obrazce: obdélníku a trojúhelník:
 
@@ -101,11 +101,11 @@ Přidání tvarů s 0 oblastí přidáme několik dalších typů obrazce: obdé
 
  Tato sada změn přidá `case` popisků degenerovanou případech popisky a bloky pro každé nové obrazce. 
 
-Nakonec můžete přidat `null` případu k zajištění, argument je `null`:
+Nakonec můžete přidat `null` případ zajistit argument není `null`:
 
 [!code-csharp[NullCase](../../samples/csharp/PatternMatching/GeometricUtilities.cs#10_NullCase "Add null case")]
 
-Zvláštní chování `null` vzor je zajímavé protože konstanty `null` ve vzoru nemá typ, ale je možné převést na kterýkoli typ odkazu nebo typ připouštějící hodnotu Null. Místo převést `null` na libovolný typ, který definuje jazyk `null` hodnoty nebudou odpovídat libovolný typ vzor, bez ohledu na kompilaci typu proměnné. Díky tomuto chování nové `switch` na základě typu vzor konzistentní s `is` – příkaz: `is` příkazy vždy vrátit `false` Pokud je hodnotou kontroluje `null`. Je také jednodušší: Po zaškrtnutí typ nepotřebujete další kontrolu hodnot null. Uvidíte, že ze skutečnosti, že neexistují žádné null zkontroluje v žádném případě bloků výše uvedené ukázky: nejsou potřebné, protože odpovídající vzoru typ záruky nenulová hodnota.
+Zvláštní chování `null` vzor je zajímavé protože konstanty `null` ve vzoru nemá typ, ale je možné převést na kterýkoli typ odkazu nebo typ připouštějící hodnotu Null. Místo převést `null` na libovolný typ, který definuje jazyk `null` hodnoty nebudou odpovídat libovolný typ vzor, bez ohledu na kompilaci typu proměnné. Díky tomuto chování nové `switch` na základě typu vzor konzistentní s `is` – příkaz: `is` příkazy vždy vrátit `false` Pokud je hodnotou kontroluje `null`. Je také jednodušší: až si projdete typ, není nutné další kontrolu hodnot null. Uvidíte, že ze skutečnosti, že neexistují žádné null zkontroluje v žádném případě bloků výše uvedené ukázky: nejsou potřebné, protože odpovídající vzoru typ záruky nenulová hodnota.
 
 ## <a name="var-declarations-in-case-expressions"></a>`var` deklarace v `case` výrazy
 
@@ -125,7 +125,7 @@ Třetí pravidlo představuje používá kde `var` případě může být užite
 
 [!code-csharp[VarCaseExpression](../../samples/csharp/PatternMatching/Program.cs#VarCaseExpression "use a var case expression to filter white space")]
 
-`var` Malá a velká shody `null`, prázdný řetězec nebo libovolný řetězec, který obsahuje pouze prázdné znaky. Všimněte si, že předchozí kód používá `?.` operátor Ujistěte se, že se nevyvolá omylem <xref:System.NullReferenceException>. `default` Případ zpracovává libovolné řetězcové hodnoty, které nebudou srozumitelné pro tento příkaz analyzátor.
+`var` Malá a velká shody `null`, prázdný řetězec nebo libovolný řetězec, který obsahuje pouze prázdné znaky. Všimněte si, že předchozí kód používá `?.` operátor Ujistěte se, že nevyvolá omylem <xref:System.NullReferenceException>. `default` Případ zpracovává libovolné řetězcové hodnoty, které nebudou srozumitelné pro tento příkaz analyzátor.
 
 Toto je jeden příklad, kde můžete chtít zvážit `var` malá a velká výraz, který se liší od `default` výrazu.
 

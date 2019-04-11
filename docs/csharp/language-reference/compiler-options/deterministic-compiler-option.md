@@ -9,16 +9,16 @@ helpviewer_keywords:
 - /deterministic compiler option [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 819e0c44d933b491091c05d1c28b30827ead85ff
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7c6d0c7128becb154955664cfdcf96d020de9369
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54499843"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480661"
 ---
-# <a name="-deterministic"></a>-deterministické
+# <a name="-deterministic"></a>-deterministic
 
-Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů. 
+Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,24 +37,24 @@ Kompilátor bere v úvahu následující vstupy pro účely determinismus:
 - Přesné verze kompilátoru použít a jeho odkazované sestavení.
 - Aktuální cesta k adresáři.
 - Binární obsah všech souborů explicitně předány kompilátoru přímo nebo nepřímo, včetně:
-    - Zdrojové soubory
-    - Odkazovaná sestavení
-    - Odkazované moduly
-    - Prostředky
-    - Soubor klíče se silným názvem
-    - @ soubory odpovědí
-    - Analyzátory
-    - Sady pravidel
-    - Další soubory, které mohou být využívána analyzátory
+  - Zdrojové soubory
+  - Odkazovaná sestavení
+  - Odkazované moduly
+  - Prostředky
+  - Soubor klíče se silným názvem
+  - @ soubory odpovědí
+  - Analyzátory
+  - Sady pravidel
+  - Další soubory, které mohou být využívána analyzátory
 - Aktuální jazykové verze (pro jazyk, v které diagnostiky a výjimky se budou vytvářet zprávy).
 - Výchozí kódování (nebo aktuální znakové stránce) Pokud kódování není zadán.
 - Existence, neexistence a obsah souborů na vyhledávací cesty kompilátoru (například tím, že zadaný `/lib` nebo `/recurse`).
 - Platforma CLR, na kterém je spuštěna kompilátor.
 - Hodnota `%LIBPATH%`, což může ovlivnit načítání analyzátoru závislostí.
 
-Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje. Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru. 
+Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje. Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

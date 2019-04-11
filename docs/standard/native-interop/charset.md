@@ -4,12 +4,12 @@ description: Zjistěte, jak různé hodnoty CharSet můžete změnit, jak .NET z
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 0b9ea8498b56e6d14770cf57e7e82b9992b1ee50
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: f436bbbf435df07d242f9bf295b0264c4cfd5b3b
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59299866"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480843"
 ---
 # <a name="charsets-and-marshalling"></a>Znakových sad a zařazování
 
@@ -17,10 +17,10 @@ Způsob, jakým `char` hodnoty, `string` objekty, a `System.Text.StringBuilder` 
 
 V následující tabulce jsou uvedeny mapování mezi každou charset a jak znak nebo řetězec představuje při zařazeno pomocí tohoto znaková sada:
 
-| CharSet | Windows            | Unix                                   | Mono v systému Unix        |
-|---------|--------------------|----------------------------------------|---------------------|
-| Ansi    | `char` (ANSI)      | `char` (ANSI on macOS, UTF-8 on Linux) | `char` (UTF-8)      |
-| Kódování Unicode | `wchar_t` (UTF-16) | `char16_t` (UTF-16)                    | `char16_t` (UTF-16) |
-| Auto    | `wchar_t` (UTF-16) | `char16_t` (UTF-16)                    | `char` (UTF-8)      |
+| CharSet | Windows            | UNIX na .NET Core 2.2 a starší | Mono a Unix v .NET Core 3.0 a novějších |
+|---------|--------------------|-----------------------------|------------------------------------------|
+| Ansi    | `char` (ANSI)      | `char` (UTF-8)              | `char` (UTF-8)                           |
+| Kódování Unicode | `wchar_t` (UTF-16) | `char16_t` (UTF-16)         | `char16_t` (UTF-16)                      |
+| Auto    | `wchar_t` (UTF-16) | `char16_t` (UTF-16)         | `char` (UTF-8)                           |
 
 Ujistěte se, že budete vědět, jaké reprezentace nativní reprezentace očekává, že při výběru vaší znaková sada.

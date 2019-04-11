@@ -3,12 +3,12 @@ title: Seznámení s Dockerem
 description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 725d8301a27f1109c85a89945f0fb8403e255ab4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: acf1307c241d9462278bc0fce5cf59fdde0750a3
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58817252"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480726"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -57,6 +57,9 @@ Různé služby Azure podporují kontejnery. Vytvoření image Dockeru pro vaši
 
 * [Azure App Service](https://azure.microsoft.com/services/app-service/containers/)\
 Nasazení webové aplikace nebo API s využitím kontejnerů Linuxu v prostředí PaaS.
+
+* [Azure Container Instances](https://azure.microsoft.com/services/container-instances/)\
+Hostitel kontejneru v cloudu bez jakékoli vyšší úrovně služeb správy.
 
 * [Služba Azure Batch](https://azure.microsoft.com/services/batch/)\
 Spouštění opakujících se výpočetních úloh pomocí kontejnerů.

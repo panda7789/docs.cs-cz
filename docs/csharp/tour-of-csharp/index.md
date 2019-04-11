@@ -3,12 +3,12 @@ title: Prohlídku C# - C# Průvodce
 description: Teprve se C#? Naučte se základy jazyka.
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: d1373b65d6cb821871c68574662360c1431d79cd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: c3a117d660c02702e900b827c2eed9c6b56b5606
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59152058"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59481090"
 ---
 # <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka
 
@@ -52,27 +52,27 @@ Výstup programu je vytvořen `WriteLine` metodu `Console` třídy v `System` ob
 Další informace o mnohem víc C#.  V následujících tématech přehledu elementů C# jazyka. Tyto přehledy zadání základních informací o všechny prvky jazyka, který se vám poskytnou informace potřebné k Ponořte se hlouběji do prvků C# jazyka:
 
 * [Struktura programu](program-structure.md)
-    - Informace o klíčových konceptech organizace v C# jazyka: ***programy***, ***obory názvů***, ***typy***, ***členy***a ***sestavení***.
+  - Informace o klíčových konceptech organizace v C# jazyka: ***programy***, ***obory názvů***, ***typy***, ***členy***a ***sestavení***.
 * [Typy a proměnné](types-and-variables.md)
-    - Další informace o ***typů hodnot***, ***referenční typy***, a ***proměnné*** v C# jazyka.
+  - Další informace o ***typů hodnot***, ***referenční typy***, a ***proměnné*** v C# jazyka.
 * [Výrazy](expressions.md)
-    - ***Výrazy*** se vytvářejí na základě ***operandy*** a ***operátory***. Výrazy výsledkem hodnota.
+  - ***Výrazy*** se vytvářejí na základě ***operandy*** a ***operátory***. Výrazy výsledkem hodnota.
 * [Příkazy](statements.md)
-    - Použijete ***příkazy*** vyjádřit akce programu.
+  - Použijete ***příkazy*** vyjádřit akce programu.
 * [Třídy a objekty](classes-and-objects.md)
-    - ***Třídy*** jsou nejvíce základní typy jazyka C#. ***Objekty*** jsou instancemi třídy. Třídy jsou sestaveny na základě ***členy***, které jsou také uvedené v tomto tématu.
+  - ***Třídy*** jsou nejvíce základní typy jazyka C#. ***Objekty*** jsou instancemi třídy. Třídy jsou sestaveny na základě ***členy***, které jsou také uvedené v tomto tématu.
 * [Struktury](structs.md)
-    - ***Struktury*** jsou datové struktury, které na rozdíl od tříd, jsou typy hodnot.
+  - ***Struktury*** jsou datové struktury, které na rozdíl od tříd, jsou typy hodnot.
 * [Pole](arrays.md)
-    - ***Pole*** je datová struktura, která obsahuje několik proměnných, které jsou přístupné prostřednictvím vypočítané indexy.
+  - ***Pole*** je datová struktura, která obsahuje několik proměnných, které jsou přístupné prostřednictvím vypočítané indexy.
 * [Rozhraní](interfaces.md)
-    - ***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
+  - ***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
 * [Výčty](enums.md)
-    - ***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant.
+  - ***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant.
 * [Delegáty](delegates.md)
-    - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
+  - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 * [Atributy](attributes.md)
-     * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.
+  * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.
 
 > [!div class="step-by-step"]
 > [Next](program-structure.md)

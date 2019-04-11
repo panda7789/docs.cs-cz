@@ -1,37 +1,39 @@
 ---
 title: Co je nového v C# 7.1
 description: Přehled nových funkcí v C# 7.1.
-ms.date: 08/16/2017
-ms.openlocfilehash: 565db102284424f9d8f6fa04ec9c74b52c9da0e6
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 04/09/2019
+ms.openlocfilehash: c79c8576f9cbbd921ebf30bd84ee5a817d6dc6e7
+ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728651"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59480960"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
 
-C# 7.1 je první bod release to jazyka C#. Označuje vyšší verzi cadence pro jazyk. Můžete vytvořit nové funkce dříve, v ideálním případě při každé nové funkce je připraven. C# 7.1 přidá možnost konfigurace kompilátoru tak, aby odpovídaly zadaná verze jazyka. Která umožňuje oddělit rozhodnutí pro upgrade nástroje z rozhodnutí o upgrade jazykové verze.
+C#7.1 je první verzi bodu C# jazyka. Označí zvýšená četnost pro jazyk. Můžete použít nové funkce dřív, ideálně při každé nové funkce je připravený. C#7.1 přidává možnost nakonfigurovat tak, aby odpovídaly zadaná verze jazyka kompilátoru. Která umožňuje oddělit rozhodnutí o upgradu nástroje z rozhodnutí o upgradu jazykové verze.
 
-C# 7.1 přidá [výběr verze jazyka](../language-reference/configure-language-version.md) konfigurační prvek, tři nové jazykové funkce a nové chování kompilátoru.
+C#7.1 přidává [výběr verze jazyka](../language-reference/configure-language-version.md) prvek konfigurace, tři nové funkce jazyků a nové chování kompilátoru.
 
-Mezi nové jazykové funkce v této verzi jsou:
+Nové funkce jazyků v této verzi jsou:
 
-* [`async` `Main` – Metoda](#async-main)
-  - Vstupní bod pro aplikace může mít `async` modifikátor.
+* [`async` `Main` – metoda](#async-main)
+  - Vstupní bod pro aplikaci může mít `async` modifikátor.
 * [`default` literálové výrazy](#default-literal-expressions)
-  - Výchozí literálu výrazy můžete použít ve výrazech hodnot výchozí při lze odvodit typ cíle.
-* [Názvy elementů odvozené řazené kolekce členů](#inferred-tuple-element-names)
+  - Když jde odvodit typ cíle, můžete použít výchozí literál výrazy v výrazy s výchozími hodnotami.
+* [Názvy elementů řazené kolekce členů odvozeného](#inferred-tuple-element-names)
   - Názvy elementů řazené kolekce členů lze odvodit z inicializace řazené kolekce členů v mnoha případech.
+* [Porovnávání vzorů v parametrech obecného typu](#pattern-matching-on-generic-type-parameters)
+  - Vzor odpovídající výrazy můžete použít pro proměnné jehož typ je parametr obecného typu.
 
-Nakonec kompilátor má dvě možnosti `/refout` a `/refonly` tuto kontrolu [odkazovat vytváření sestavení](#reference-assembly-generation).
+A konečně, má kompilátor dvě možnosti `/refout` a `/refonly` ovládacího prvku [odkazovat na generování sestavení](#reference-assembly-generation).
 
-Chcete-li použít nejnovější funkce ve verzi bod, je potřeba [konfigurace jazyková verze kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi.
+Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi.
 
-## <a name="async-main"></a>Asynchronní hlavní
+## <a name="async-main"></a>Asynchronní funkce main
 
-*Asynchronní hlavní* metoda umožňuje používat `await` ve vaší `Main` metoda.
-Dříve museli byste zápisu:
+*Asynchronní funkce main* metoda vám umožňuje používat `await` ve vaší `Main` metoda.
+Dříve byste museli napsat:
 
 ```csharp
 static int Main()
@@ -40,7 +42,7 @@ static int Main()
 }
 ```
 
-Teď můžete napsat:
+Teď můžete psát:
 
 ```csharp
 static async Task<int> Main()
@@ -51,7 +53,7 @@ static async Task<int> Main()
 }
 ```
 
-Pokud není váš program vrátí ukončovací kód, můžou deklarovat `Main` metodu, která vrátí <xref:System.Threading.Tasks.Task>:
+Pokud váš program nevrací ukončovací kód, lze deklarovat `Main` metodu, která vrací <xref:System.Threading.Tasks.Task>:
 
 ```csharp
 static async Task Main()
@@ -60,30 +62,30 @@ static async Task Main()
 }
 ```
 
-Si můžete přečíst více o podrobnostech v [asynchronní hlavní](../programming-guide/main-and-command-args/index.md) tématu v Průvodci programování.
+Další informace o podrobnosti v [asynchronní funkce main](../programming-guide/main-and-command-args/index.md) článek v průvodce programováním.
 
-## <a name="default-literal-expressions"></a>Výchozí literálu výrazy
+## <a name="default-literal-expressions"></a>Výchozí literál výrazy
 
-Výchozí literálu výrazy jsou vylepšení výrazy výchozí hodnotu.
-Tyto výrazy inicializovat proměnné na výchozí hodnotu. Pokud jste dříve by zápisu:
+Jsou výchozí literál výrazy neboli podmínky vylepšují výrazy s výchozími hodnotami.
+Tyto výrazy inicializovat proměnnou na výchozí hodnotu. Dříve by píšete:
 
 ```csharp
 Func<string, bool> whereClause = default(Func<string, bool>);
 ```
 
-Nyní můžete vynechat typ na pravé straně inicializace:
+Nyní můžete vynechat typu inicializace na pravé straně:
 
 ```csharp
 Func<string, bool> whereClause = default;
 ```
 
-Další informace o toto vylepšení v tématu Průvodce programováním v C# na [výchozí hodnotu výrazy](../programming-guide/statements-expressions-operators/default-value-expressions.md).
+Další informace o toto vylepšení v C# Průvodce programováním pro službu článek věnovaný tomu [výchozí hodnotu výrazy](../programming-guide/statements-expressions-operators/default-value-expressions.md).
 
-Toto vylepšení také změní některé analýzy pravidel pro [default – klíčové slovo](../language-reference/keywords/default.md).
+Toto vylepšení se také změní některé z pravidla analýzy pro [default – klíčové slovo](../language-reference/keywords/default.md).
 
-## <a name="inferred-tuple-element-names"></a>Názvy elementů odvozené řazené kolekce členů
+## <a name="inferred-tuple-element-names"></a>Názvy elementů řazené kolekce členů odvozeného
 
-Tato funkce je malý vylepšení pro funkci řazených kolekcí členů byla zavedená v C# 7.0. Kolikrát při inicializaci řazené kolekce členů proměnných, které slouží pro pravé straně přiřazení jsou stejné jako názvy, které chcete pro elementy řazené kolekce členů:
+Tato funkce je malá vylepšení pro řazené kolekce členů funkce představená v C# 7.0. V mnoha případech při inicializaci řazené kolekce členů proměnných, které slouží k pravému okraji přiřazení jsou stejné jako názvy, které chcete pro elementů řazené kolekce členů:
 
 ```csharp
 int count = 5;
@@ -91,7 +93,7 @@ string label = "Colors used in the map";
 var pair = (count: count, label: label);
 ```
 
-Názvy elementů řazené kolekce členů lze odvodit z proměnných, které slouží k chybě při inicializaci řazené kolekce členů v C# 7.1:
+Názvy elementů řazené kolekce členů lze odvodit z proměnných, které slouží k inicializaci řazené kolekce členů v C# 7.1:
 
 ```csharp
 int count = 5;
@@ -99,9 +101,13 @@ string label = "Colors used in the map";
 var pair = (count, label); // element names are "count" and "label"
 ```
 
-Další informace o této funkci v [řazených kolekcí členů](../tuples.md) tématu.
+Další informace o tuto funkci [řazených kolekcí členů](../tuples.md) článku.
 
-## <a name="reference-assembly-generation"></a>Vytváření odkaz na sestavení
+## <a name="pattern-matching-on-generic-type-parameters"></a>Porovnávání vzorů v parametrech obecného typu
 
-Existují dvě nové možnosti kompilátoru, která generují *pouze odkaz na sestavení*: [/refout](../language-reference/compiler-options/refout-compiler-option.md) a [/refonly](../language-reference/compiler-options/refonly-compiler-option.md).
-Propojené témata popisují tyto možnosti a odkaz na sestavení podrobněji.
+Počínaje C# 7.1, výraz vzoru `is` a `switch` vzor typu může mít typ parametru obecného typu. To může být zvláště užitečná při kontrole typy, které může být buď `struct` nebo `class` typy a chcete, aby se zabránilo zabalení.
+
+## <a name="reference-assembly-generation"></a>Generování sestavení odkazu
+
+Existují dvě nové možnosti kompilátoru, které generují *pouze odkaz na sestavení*: [refout](../language-reference/compiler-options/refout-compiler-option.md) a [/refonly](../language-reference/compiler-options/refonly-compiler-option.md).
+Propojené články popisují tyto možnosti a referenční sestavení podrobněji.
