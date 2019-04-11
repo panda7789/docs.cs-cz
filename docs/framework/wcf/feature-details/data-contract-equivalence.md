@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], equivalence
 ms.assetid: f06f3c7e-c235-4ec1-b200-68142edf1ed1
-ms.openlocfilehash: ca74650428c4536cd21694a49b74370b07c77667
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: a526a58ef801e91775756e6a84a94a066d32d284
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708932"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59214933"
 ---
 # <a name="data-contract-equivalence"></a>Ekvivalence kontraktů dat
 Klient úspěšně odeslat data určitého typu na službu nebo služby k úspěšnému odeslání dat klientovi odeslané typ nutně nemusí existovat na přijímající straně. Jediným požadavkem je, že jako ekvivalentní, kontrakty dat obou typů. (V některých případech striktní ekvivalence se nevyžaduje, jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md).)  
@@ -61,8 +61,9 @@ Klient úspěšně odeslat data určitého typu na službu nebo služby k úspě
  Při předávání parametrů a vrácených hodnot mezi aplikacemi, pokud očekávaný typ je rozhraní, je ekvivalentní k očekávaný typ je typ <xref:System.Object>. Vzhledem k tomu, že každý typ, takže v konečném důsledku je odvozena z <xref:System.Object>, každý kontraktu dat takže v konečném důsledku je odvozena z kontraktu dat pro <xref:System.Object>. Proto je možné předat libovolný typ kontraktu dat při očekávání rozhraní. Je potřeba provést další kroky úspěšně práci s rozhraními; Další informace najdete v tématu [známé typy kontraktů dat.](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - [Pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md)
 - [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [Názvy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
+- [Názvy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)

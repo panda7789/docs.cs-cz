@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: a36cdf9f8cce935c8310e2ce9ffc79f67d077fe6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 4e005ea96df45da8326386f8b43aa5640ce810b1
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59225141"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59344348"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] slouží k identifikaci a načíst soubory mnoha způsoby, včetně následujících:  
@@ -234,15 +234,15 @@ Ve Windows Presentation Foundation (WPF), [!INCLUDE[TLA#tla_uri#plural](../../..
   
  Aby bylo možné určit typ souboru, který sadu [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] řeší [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] pro soubory prostředků v místní sestavení a soubory obsahu pomocí heuristiky následující:  
   
-1.  Metadata sestavení testu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut, který odpovídá této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
+1. Metadata sestavení testu <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut, který odpovídá této sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)].  
   
-2.  Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nenajde, cesta balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor s obsahem.  
+2. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nenajde, cesta balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor s obsahem.  
   
-3.  Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nebyl nalezen, testovat soubory sady prostředků, které jsou kompilovány do místní sestavení.  
+3. Pokud <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> atribut nebyl nalezen, testovat soubory sady prostředků, které jsou kompilovány do místní sestavení.  
   
-4.  Pokud soubor prostředků, která odpovídá cestu sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je najít cestu balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor prostředků.  
+4. Pokud soubor prostředků, která odpovídá cestu sady [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] je najít cestu balíčku [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] odkazuje na soubor prostředků.  
   
-5.  Pokud se prostředek nenajde, interně vytvořené <xref:System.Uri> je neplatný.  
+5. Pokud se prostředek nenajde, interně vytvořené <xref:System.Uri> je neplatný.  
   
  [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] řešení se nedá použít pro [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)] , které odkazují na následující:  
   

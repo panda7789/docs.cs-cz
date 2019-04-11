@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: 116a847d4f7b0591e823416cf5744e68d689c6ee
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 01530d4ae9779934948bbaff60fbbd392de6e701
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59329294"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 
@@ -44,11 +44,11 @@ Prvním krokem je vytvoření [!INCLUDE[TLA#tla_winforms](../../../../includes/t
 
 ### <a name="to-create-the-host-project"></a>Chcete-li vytvořit projekt hostitele
 
-1.  Vytvoření **aplikace WPF** projekt s názvem `LocalizingWpfInWf`.  (**Souboru** > **nové** > **projektu** > **Visual C#** nebo **jazyka Visual Basic**   >  **Klasický desktopový** > **aplikace WPF**).
+1. Vytvoření **aplikace WPF** projekt s názvem `LocalizingWpfInWf`.  (**Souboru** > **nové** > **projektu** > **Visual C#** nebo **jazyka Visual Basic**   >  **Klasický desktopový** > **aplikace WPF**).
 
-2.  Přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> prvek s názvem `SimpleControl` do projektu.
+2. Přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.UserControl> prvek s názvem `SimpleControl` do projektu.
 
-3.  Použití <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek umístit `SimpleControl` prvek na formuláři. Další informace najdete v tématu [názorný postup: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).
+3. Použití <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek umístit `SimpleControl` prvek na formuláři. Další informace najdete v tématu [názorný postup: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).
 
 ## <a name="adding-localizable-content"></a>Přidání lokalizovatelné obsahu
 
@@ -56,17 +56,17 @@ V dalším kroku přidáte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlas
 
 ### <a name="to-add-localizable-content"></a>Chcete-li přidat lokalizovatelné obsahu
 
-1.  V **Průzkumníka řešení**, dvakrát klikněte na panel **SimpleControl.xaml** a otevřete tak [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+1. V **Průzkumníka řešení**, dvakrát klikněte na panel **SimpleControl.xaml** a otevřete tak [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
 
-2.  Nastavení obsahu prvku <xref:System.Windows.Controls.Button> řídit pomocí následujícího kódu.
+2. Nastavení obsahu prvku <xref:System.Windows.Controls.Button> řídit pomocí následujícího kódu.
 
      [!code-xaml[LocalizingWpfInWf#10](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/SimpleControl0.xaml#10)]
 
-3.  V **Průzkumníka řešení**, dvakrát klikněte na panel **Form1** ho otevřete v Návrháři formulářů Windows.
+3. V **Průzkumníka řešení**, dvakrát klikněte na panel **Form1** ho otevřete v Návrháři formulářů Windows.
 
-4.  Otevřít **nástrojů** a dvakrát klikněte na panel **popisek** přidání ovládacího prvku popisek do formuláře. Nastavte hodnotu jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost `"Hello"`.
+4. Otevřít **nástrojů** a dvakrát klikněte na panel **popisek** přidání ovládacího prvku popisek do formuláře. Nastavte hodnotu jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost `"Hello"`.
 
-5.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
+5. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
      Oba `SimpleControl` elementu a ovládací prvek popisku se zobrazí text **"Hello"**.
 
@@ -76,25 +76,25 @@ Návrhář formulářů Windows poskytuje nastavení pro povolení lokalizace v 
 
 ### <a name="to-enable-localization"></a>Chcete-li povolit lokalizaci
 
-1.  V **Průzkumníka řešení**, dvakrát klikněte na panel **Form1.cs** ho otevřete v Návrháři formulářů Windows.
+1. V **Průzkumníka řešení**, dvakrát klikněte na panel **Form1.cs** ho otevřete v Návrháři formulářů Windows.
 
-2.  V **vlastnosti** okno, nastavte hodnotu vlastnosti formuláře **Localizable** vlastnost `true`.
+2. V **vlastnosti** okno, nastavte hodnotu vlastnosti formuláře **Localizable** vlastnost `true`.
 
-3.  V **vlastnosti** okno, nastavte hodnotu **jazyk** vlastnost **Španělština (Španělsko)**.
+3. V **vlastnosti** okno, nastavte hodnotu **jazyk** vlastnost **Španělština (Španělsko)**.
 
-4.  V Návrháři formulářů Windows vyberte ovládací prvek popisku.
+4. V Návrháři formulářů Windows vyberte ovládací prvek popisku.
 
-5.  V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost `"Hola"`.
+5. V **vlastnosti** okno, nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost `"Hola"`.
 
      Do projektu se přidá nový soubor prostředků s názvem Form1.es ES.resx.
 
-6.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.cs** a klikněte na tlačítko **zobrazit kód** ho otevřete v editoru kódu.
+6. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1.cs** a klikněte na tlačítko **zobrazit kód** ho otevřete v editoru kódu.
 
-7.  Zkopírujte následující kód do `Form1` konstruktoru, předchozí volání `InitializeComponent`.
+7. Zkopírujte následující kód do `Form1` konstruktoru, předchozí volání `InitializeComponent`.
 
      [!code-csharp[LocalizingWpfInWf#2](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/Form1.cs#2)]
 
-8.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **LocalizingWpfInWf** a klikněte na tlačítko **uvolnit projekt**.
+8. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **LocalizingWpfInWf** a klikněte na tlačítko **uvolnit projekt**.
 
      Název projektu je označené jako **(není k dispozici)**.
 
@@ -118,19 +118,19 @@ Můžete namapovat lokalizovatelné obsah sestavení prostředků s použitím i
 
 ### <a name="to-assign-resource-identifiers"></a>K přiřazení identifikátory prostředků
 
-1.  Z nabídky Start otevřete Developer Command Prompt pro sadu Visual Studio.
+1. Z nabídky Start otevřete Developer Command Prompt pro sadu Visual Studio.
 
-2.  Použijte následující příkaz k přiřazení identifikátory prostředků lokalizovatelných obsah.
+2. Použijte následující příkaz k přiřazení identifikátory prostředků lokalizovatelných obsah.
 
     ```
     msbuild -t:updateuid LocalizingWpfInWf.csproj
     ```
 
-3.  V **Průzkumníka řešení**, dvakrát klikněte na panel **SimpleControl.xaml** ho otevřete v editoru kódu. Uvidíte, že `msbuild` příkaz má přidat `Uid` atribut na všechny prvky. To usnadňuje lokalizaci prostřednictvím přiřazení identifikátory prostředků.
+3. V **Průzkumníka řešení**, dvakrát klikněte na panel **SimpleControl.xaml** ho otevřete v editoru kódu. Uvidíte, že `msbuild` příkaz má přidat `Uid` atribut na všechny prvky. To usnadňuje lokalizaci prostřednictvím přiřazení identifikátory prostředků.
 
      [!code-xaml[LocalizingWpfInWf#20](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizingWpfInWf/CSharp/SimpleControl.xaml#20)]
 
-4.  Stisknutím klávesy **F6** k sestavení řešení.
+4. Stisknutím klávesy **F6** k sestavení řešení.
 
 ## <a name="using-locbaml-to-produce-a-satellite-assembly"></a>Pomocí locbaml – Chcete-li vytvořit satelitní sestavení
 
@@ -138,19 +138,19 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 
 ### <a name="to-produce-a-satellite-assembly"></a>Chcete-li vytvořit satelitní sestavení
 
-1.  Zkopírujte do složky vašeho projektu obj\Debug LocBaml.exe. Další informace najdete v tématu [lokalizace aplikace](how-to-localize-an-application.md).
+1. Zkopírujte do složky vašeho projektu obj\Debug LocBaml.exe. Další informace najdete v tématu [lokalizace aplikace](how-to-localize-an-application.md).
 
-2.  V okně příkazového řádku použijte následující příkaz k extrakci zdrojové řetězce do dočasného souboru.
+2. V okně příkazového řádku použijte následující příkaz k extrakci zdrojové řetězce do dočasného souboru.
 
     ```
     LocBaml /parse LocalizingWpfInWf.g.en-US.resources /out:temp.csv
     ```
 
-3.  Otevřete soubor temp.csv pomocí sady Visual Studio nebo jiného textového editoru. Nahraďte řetězec `"Hello"` spolu s překladem Španělština `"Hola"`.
+3. Otevřete soubor temp.csv pomocí sady Visual Studio nebo jiného textového editoru. Nahraďte řetězec `"Hello"` spolu s překladem Španělština `"Hola"`.
 
-4.  Uložte soubor temp.csv.
+4. Uložte soubor temp.csv.
 
-5.  Použijte následující příkaz k vygenerování lokalizované soubory prostředků.
+5. Použijte následující příkaz k vygenerování lokalizované soubory prostředků.
 
     ```
     LocBaml /generate /trans:temp.csv LocalizingWpfInWf.g.en-US.resources /out:. /cul:es-ES
@@ -158,7 +158,7 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 
      Soubor LocalizingWpfInWf.g.es ES.resources se vytvoří ve složce obj\Debug.
 
-6.  Použijte následující příkaz k vytvoření lokalizované satelitní sestavení.
+6. Použijte následující příkaz k vytvoření lokalizované satelitní sestavení.
 
     ```
     Al.exe /out:LocalizingWpfInWf.resources.dll /culture:es-ES /embed:LocalizingWpfInWf.Form1.es-ES.resources /embed:LocalizingWpfInWf.g.es-ES.resources
@@ -166,9 +166,9 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 
      Soubor LocalizingWpfInWf.resources.dll se vytvoří ve složce obj\Debug.
 
-7.  Zkopírujte soubor LocalizingWpfInWf.resources.dll do složky projektu bin\Debug\es-ES. Nahraďte existující soubor.
+7. Zkopírujte soubor LocalizingWpfInWf.resources.dll do složky projektu bin\Debug\es-ES. Nahraďte existující soubor.
 
-8.  Spusťte LocalizingWpfInWf.exe, který je umístěn ve složce bin\Debug vašeho projektu. Znovu sestavit aplikaci nebo do satelitního sestavení se přepíšou.
+8. Spusťte LocalizingWpfInWf.exe, který je umístěn ve složce bin\Debug vašeho projektu. Znovu sestavit aplikaci nebo do satelitního sestavení se přepíšou.
 
      Aplikace se zobrazí lokalizované řetězce místo anglické řetězce.
 
@@ -178,4 +178,4 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Lokalizace aplikace](how-to-localize-an-application.md)
 - [Návod: Lokalizace formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))
-- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)

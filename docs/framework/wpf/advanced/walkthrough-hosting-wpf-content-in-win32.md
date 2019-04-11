@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 3396604d94b2b0fb3f4a178d3bb3a25b00ef91ac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: ad31d5f58ae3d22ce8760a396b1f9696912dc475
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166644"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296105"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF ve Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo přepsání původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
@@ -33,13 +33,13 @@ ms.locfileid: "59166644"
   
  Klíčem k hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] je okno <xref:System.Windows.Interop.HwndSource> třídy. Zabalí tuto třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna, což umožňuje začlenit do vaší [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] jako podřízeného okna. Tento přístup spojuje [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v jedné aplikaci.  
   
-1.  Implementovat vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah jako spravovanou třídu.  
+1. Implementovat vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah jako spravovanou třídu.  
   
-2.  Implementace [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace s [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)]. Pokud jste začínající existující aplikaci a nespravovaných [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] kódu, můžete obvykle ji povolit pro volání spravovaného kódu tak, že změníte nastavení projektu chcete zahrnout `/clr` příznaku kompilátoru.  
+2. Implementace [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace s [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)]. Pokud jste začínající existující aplikaci a nespravovaných [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] kódu, můžete obvykle ji povolit pro volání spravovaného kódu tak, že změníte nastavení projektu chcete zahrnout `/clr` příznaku kompilátoru.  
   
-3.  Nastavte model vláken na jednovláknový apartment (STA).  
+3. Nastavte model vláken na jednovláknový apartment (STA).  
   
-4.  Zpracování [WM_CREATE](/windows/desktop/winmsg/wm-create)oznámení v proceduru okna a proveďte následující akce:  
+4. Zpracování [WM_CREATE](/windows/desktop/winmsg/wm-create)oznámení v proceduru okna a proveďte následující akce:  
   
     1.  Vytvořte nový <xref:System.Windows.Interop.HwndSource> objekt s nadřazené okno jako jeho `parent` parametru.  
   
@@ -49,13 +49,13 @@ ms.locfileid: "59166644"
   
     4.  Získejte HWND pro obsah. <xref:System.Windows.Interop.HwndSource.Handle%2A> Vlastnost <xref:System.Windows.Interop.HwndSource> objekt obsahuje popisovač okna (HWND). HWND, který vám pomůže v nespravované součástí vaší aplikace získáte přetypování `Handle.ToPointer()` k popisovačem HWND.  
   
-5.  Implementace spravované třídy, která obsahuje statické pole k uložení odkazu na vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Tato třída umožňuje získat odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu z vašeho [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu.  
+5. Implementace spravované třídy, která obsahuje statické pole k uložení odkazu na vaši [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Tato třída umožňuje získat odkaz na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu z vašeho [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] kódu.  
   
-6.  Přiřazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu pro statické pole.  
+6. Přiřazení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu pro statické pole.  
   
-7.  Příjem oznámení z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu připojením obslužnou rutinu na jeden nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události.  
+7. Příjem oznámení z [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu připojením obslužnou rutinu na jeden nebo více [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] události.  
   
-8.  Komunikovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu pomocí odkazu, která je uložená ve statickém poli. Chcete-li nastavit vlastnosti a tak dále.  
+8. Komunikovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu pomocí odkazu, která je uložená ve statickém poli. Chcete-li nastavit vlastnosti a tak dále.  
   
 > [!NOTE]
 >  Můžete také použít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] implementovat vaše [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah. Ale budete muset zkompilovat jej samostatně jako [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)] a odkázat [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] z vaší [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace. Zbytek postupu je podobný tomu uvedených výše.
@@ -77,13 +77,13 @@ ms.locfileid: "59166644"
 ### <a name="the-basic-application"></a>Základní aplikace
  Výchozí bod pro hostitelskou aplikaci došlo k vytvoření šablony sady Visual Studio 2005.
 
-1.  Otevřete Visual Studio 2005 a vyberte **nový projekt** z **souboru** nabídky.
+1. Otevřete Visual Studio 2005 a vyberte **nový projekt** z **souboru** nabídky.
 
-2.  Vyberte **Win32** ze seznamu [!INCLUDE[TLA2#tla_visualcpp](../../../../includes/tla2sharptla-visualcpp-md.md)] typů projektů. Pokud není výchozí jazyk [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)], najdete tyto typy projektů v rámci **jiné jazyky**.
+2. Vyberte **Win32** ze seznamu [!INCLUDE[TLA2#tla_visualcpp](../../../../includes/tla2sharptla-visualcpp-md.md)] typů projektů. Pokud není výchozí jazyk [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)], najdete tyto typy projektů v rámci **jiné jazyky**.
 
-3.  Vyberte **projekt Win32** šablony, přiřaďte název projektu a klikněte na tlačítko **OK** ke spuštění **Průvodce aplikací Win32**.
+3. Vyberte **projekt Win32** šablony, přiřaďte název projektu a klikněte na tlačítko **OK** ke spuštění **Průvodce aplikací Win32**.
 
-4.  Přijměte výchozí nastavení průvodce a klikněte na tlačítko **Dokončit** ke spuštění projektu.
+4. Přijměte výchozí nastavení průvodce a klikněte na tlačítko **Dokončit** ke spuštění projektu.
 
  Šablona vytvoří základní [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] aplikace, včetně:
 
@@ -97,13 +97,13 @@ ms.locfileid: "59166644"
 
  První je ke kompilaci projektu jako spravovaný kód. Ve výchozím nastavení se projekt zkompiluje jako nespravovaný kód. Ale protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je implementovaná ve spravovaném kódu, musí být projekt kompilován odpovídajícím způsobem.
 
-1.  Klikněte pravým tlačítkem na název projektu v **Průzkumníka řešení** a vyberte **vlastnosti** z místní nabídky ke spuštění **stránky vlastností** dialogové okno.
+1. Klikněte pravým tlačítkem na název projektu v **Průzkumníka řešení** a vyberte **vlastnosti** z místní nabídky ke spuštění **stránky vlastností** dialogové okno.
 
-2.  Vyberte **vlastnosti konfigurace** ve stromovém zobrazení v levém podokně.
+2. Vyberte **vlastnosti konfigurace** ve stromovém zobrazení v levém podokně.
 
-3.  Vyberte **Common Language Runtime** podporu **výchozí nastavení projektu** seznam v pravém podokně.
+3. Vyberte **Common Language Runtime** podporu **výchozí nastavení projektu** seznam v pravém podokně.
 
-4.  Vyberte **Common Language Runtime Support (/ clr)** z rozevíracího seznamu.
+4. Vyberte **Common Language Runtime Support (/ clr)** z rozevíracího seznamu.
 
 > [!NOTE]
 >  Tento příznak kompilátoru umožňuje používat spravovaný kód ve vaší aplikaci, ale nespravovaný kód bude stále kompilovat jako předtím.

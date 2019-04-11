@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: c3bd76c893c2055f94e321e9c888848d344efa15
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 5acebf0f88f3147bf274818f11697b480146701a
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166930"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59296118"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
 Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (WPF) prostřednictvím systému windows. Primárním účelem okna je jako hostitele obsahu, která data vizualizuje a umožňuje uživatelům interakci s daty. Samostatné [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace poskytují jejich vlastní okna s použitím <xref:System.Windows.Window> třídy. Toto téma představuje <xref:System.Windows.Window> před pokrývají základní informace o vytváření a správa systému windows v samostatné aplikace.  
@@ -348,23 +348,23 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
   
  **Pro vlastnosti Height:**  
   
-1.  <xref:System.Windows.FrameworkElement.MinHeight%2A?displayProperty=nameWithType>
+1. <xref:System.Windows.FrameworkElement.MinHeight%2A?displayProperty=nameWithType>
   
-2.  <xref:System.Windows.FrameworkElement.MaxHeight%2A?displayProperty=nameWithType>
+2. <xref:System.Windows.FrameworkElement.MaxHeight%2A?displayProperty=nameWithType>
   
-3.  <xref:System.Windows.SizeToContent.Height?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
+3. <xref:System.Windows.SizeToContent.Height?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
   
-4.  <xref:System.Windows.FrameworkElement.Height%2A?displayProperty=nameWithType>  
+4. <xref:System.Windows.FrameworkElement.Height%2A?displayProperty=nameWithType>  
   
  **Pro vlastnosti Šířka:**  
   
-1.  <xref:System.Windows.FrameworkElement.MinWidth%2A?displayProperty=nameWithType>
+1. <xref:System.Windows.FrameworkElement.MinWidth%2A?displayProperty=nameWithType>
   
-2.  <xref:System.Windows.FrameworkElement.MaxWidth%2A?displayProperty=nameWithType>
+2. <xref:System.Windows.FrameworkElement.MaxWidth%2A?displayProperty=nameWithType>
   
-3.  <xref:System.Windows.SizeToContent.Width?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
+3. <xref:System.Windows.SizeToContent.Width?displayProperty=nameWithType>/<xref:System.Windows.SizeToContent.WidthAndHeight?displayProperty=nameWithType>
   
-4.  <xref:System.Windows.FrameworkElement.Width%2A?displayProperty=nameWithType>  
+4. <xref:System.Windows.FrameworkElement.Width%2A?displayProperty=nameWithType>  
   
  Pořadí priorit můžete také určit velikost okna, když se maximalizuje, který se spravuje pomocí <xref:System.Windows.Window.WindowState%2A> vlastnost.  
   

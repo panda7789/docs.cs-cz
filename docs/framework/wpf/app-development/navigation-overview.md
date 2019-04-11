@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: feccd6978d0a3cf8db60bbd505826433c93e3276
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 826cfc0ea7f681e1f7cbe858008c24a4941f0e11
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59227194"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59335079"
 ---
 # <a name="navigation-overview"></a>Přehled navigace
 Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, který je možné do dvou typů aplikací: samostatné aplikace a [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]. K balíčku obsahu pro navigaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje <xref:System.Windows.Controls.Page> třídy. Můžete přejít z jednoho <xref:System.Windows.Controls.Page> do jiného deklarativně pomocí <xref:System.Windows.Documents.Hyperlink>, nebo prostřednictvím kódu programu, s použitím <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] používá deník pamatovat stránky, které přešli z a chcete přejít zpátky k sobě.  
@@ -353,13 +353,13 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Ve výchozím nastavení text pro každou <xref:System.Windows.Controls.Page> , který se zobrazí **poslední stránky** seznam [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] je [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro <xref:System.Windows.Controls.Page>. V mnoha případech to není zejména srozumitelné pro uživatele. Naštěstí můžete změnit text pomocí jedné následující možnosti:  
   
-1.  Připojený `JournalEntry.Name` hodnotu atributu.  
+1. Připojený `JournalEntry.Name` hodnotu atributu.  
   
-2.  `Page.Title` Hodnotu atributu.  
+2. `Page.Title` Hodnotu atributu.  
   
-3.  `Page.WindowTitle` Hodnotu atributu a [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro aktuální <xref:System.Windows.Controls.Page>.  
+3. `Page.WindowTitle` Hodnotu atributu a [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pro aktuální <xref:System.Windows.Controls.Page>.  
   
-4.  [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] Pro aktuální <xref:System.Windows.Controls.Page>. (Výchozí)  
+4. [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] Pro aktuální <xref:System.Windows.Controls.Page>. (Výchozí)  
   
  Pořadí, ve kterém jsou uvedeny možnosti odpovídá pořadí priorit pro hledání textu. Například pokud `JournalEntry.Name` je nastavena hodnoty jsou ignorovány.  
   
@@ -429,19 +429,19 @@ Windows Presentation Foundation (WPF) podporuje stylu prohlížeče navigace, kt
   
  Naštěstí deníku poskytuje podporu pro zapamatování dat napříč <xref:System.Windows.Controls.Page> navigaci, včetně dat ovládacího prvku. Konkrétně položka deníku pro každou <xref:System.Windows.Controls.Page> funguje jako kontejner pro přidružený dočasný <xref:System.Windows.Controls.Page> stavu. Následující kroky popisují, jak se používá tato podpora při <xref:System.Windows.Controls.Page> přešel z:  
   
-1.  Záznam pro aktuální <xref:System.Windows.Controls.Page> se přidá do deníku.  
+1. Záznam pro aktuální <xref:System.Windows.Controls.Page> se přidá do deníku.  
   
-2.  Stav <xref:System.Windows.Controls.Page> se uloží spolu s položka deníku pro tuto stránku, která se přidá do pozadí zásobníku.  
+2. Stav <xref:System.Windows.Controls.Page> se uloží spolu s položka deníku pro tuto stránku, která se přidá do pozadí zásobníku.  
   
-3.  Nové <xref:System.Windows.Controls.Page> se přejde poté.  
+3. Nové <xref:System.Windows.Controls.Page> se přejde poté.  
   
  Pokud na stránce <xref:System.Windows.Controls.Page> je přejde zpět do deníku, pomocí následujících kroků provést:  
   
-1.  <xref:System.Windows.Controls.Page> (Položka hlavní deníku back zásobníku) je vytvořena instance.  
+1. <xref:System.Windows.Controls.Page> (Položka hlavní deníku back zásobníku) je vytvořena instance.  
   
-2.  <xref:System.Windows.Controls.Page> Se aktualizují pomocí stavu, která byla uložená s položka deníku pro <xref:System.Windows.Controls.Page>.  
+2. <xref:System.Windows.Controls.Page> Se aktualizují pomocí stavu, která byla uložená s položka deníku pro <xref:System.Windows.Controls.Page>.  
   
-3.  <xref:System.Windows.Controls.Page> Přejde zpět.  
+3. <xref:System.Windows.Controls.Page> Přejde zpět.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] automaticky použije tato podpora při následující ovládací prvky se používají na <xref:System.Windows.Controls.Page>:  
   
