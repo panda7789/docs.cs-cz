@@ -15,12 +15,12 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 62309bb9965d1aa538e211dc66c44876671e0242
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 671e37c7d6dc40046d6d717d7785b03b6b545c7e
+ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59134976"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59333675"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
 Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele a stav tlačítka myši. Toto téma obsahuje podrobné informace o tom, jak získat tyto informace z událostí myši a vysvětluje, pořadí, ve které kliknutí myší jsou vyvolány události v ovládacích prvcích Windows Forms. Seznam a popis všech událostí myši najdete v tématu [jak funguje myši vstup ve Windows Forms](how-mouse-input-works-in-windows-forms.md).  Viz také [Přehled obslužných rutin událostí (Windows Forms)](event-handlers-overview-windows-forms.md) a [Přehled událostí (Windows Forms)](events-overview-windows-forms.md).  
@@ -36,31 +36,31 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
 ## <a name="standard-click-event-behavior"></a>Standardní chování události klikněte na tlačítko.  
  Pokud chcete zpracovávat události ve správném pořadí kliknutí myší, je potřeba vědět pořadí, ve které kliknutím jsou vyvolány události v ovládacích prvcích Windows Forms. Po stisknutí tlačítka myši a vydány (bez ohledu na které tlačítko myši), v následujícím seznamu pro jednotlivé ovládací prvky, klikněte na všechny formuláře Windows, které vyvolávají události ve stejném pořadí. Následující seznam zobrazuje pořadí událostí vyvolaných pro klikněte na jediné tlačítko myši:  
   
-1.  <xref:System.Windows.Forms.Control.MouseDown> události.  
+1. <xref:System.Windows.Forms.Control.MouseDown> události.  
   
-2.  <xref:System.Windows.Forms.Control.Click> události.  
+2. <xref:System.Windows.Forms.Control.Click> události.  
   
-3.  <xref:System.Windows.Forms.Control.MouseClick> události.  
+3. <xref:System.Windows.Forms.Control.MouseClick> události.  
   
-4.  <xref:System.Windows.Forms.Control.MouseUp> události.  
+4. <xref:System.Windows.Forms.Control.MouseUp> události.  
   
  Toto je pořadí událostí vyvolaných pro tlačítko myši dvojité kliknutí:  
   
-1.  <xref:System.Windows.Forms.Control.MouseDown> události.  
+1. <xref:System.Windows.Forms.Control.MouseDown> události.  
   
-2.  <xref:System.Windows.Forms.Control.Click> události.  
+2. <xref:System.Windows.Forms.Control.Click> události.  
   
-3.  <xref:System.Windows.Forms.Control.MouseClick> události.  
+3. <xref:System.Windows.Forms.Control.MouseClick> události.  
   
-4.  <xref:System.Windows.Forms.Control.MouseUp> události.  
+4. <xref:System.Windows.Forms.Control.MouseUp> události.  
   
-5.  <xref:System.Windows.Forms.Control.MouseDown> události.  
+5. <xref:System.Windows.Forms.Control.MouseDown> události.  
   
-6.  <xref:System.Windows.Forms.Control.DoubleClick> události. (To se může lišit v závislosti na tom, zda má ovládací prvek dotyčný <xref:System.Windows.Forms.ControlStyles.StandardDoubleClick> na sadu bitů stylu `true`. Další informace o tom, jak nastavit <xref:System.Windows.Forms.ControlStyles> bit, najdete v článku <xref:System.Windows.Forms.Control.SetStyle%2A> metoda.)  
+6. <xref:System.Windows.Forms.Control.DoubleClick> události. (To se může lišit v závislosti na tom, zda má ovládací prvek dotyčný <xref:System.Windows.Forms.ControlStyles.StandardDoubleClick> na sadu bitů stylu `true`. Další informace o tom, jak nastavit <xref:System.Windows.Forms.ControlStyles> bit, najdete v článku <xref:System.Windows.Forms.Control.SetStyle%2A> metoda.)  
   
-7.  <xref:System.Windows.Forms.Control.MouseDoubleClick> události.  
+7. <xref:System.Windows.Forms.Control.MouseDoubleClick> události.  
   
-8.  <xref:System.Windows.Forms.Control.MouseUp> události.  
+8. <xref:System.Windows.Forms.Control.MouseUp> události.  
   
  Příklad kódu, který ukazuje pořadí myši klikněte na události, najdete v článku [jak: Zpracování uživatelského vstupu událostí ve Windows Forms ovládací prvky](how-to-handle-user-input-events-in-windows-forms-controls.md).  
   
@@ -122,21 +122,21 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
 ### <a name="painting-behavior-of-toggle-controls"></a>Malování chování ovládacích prvků přepínání  
  Přepnout ovládací prvky, jako je například ovládací prvky odvozený od <xref:System.Windows.Forms.ButtonBase> třídy, mají následující zvláštní Malování chování v kombinaci s myši klikněte na tlačítko události:  
   
-1.  Uživatel stiskne tlačítko myši.  
+1. Uživatel stiskne tlačítko myši.  
   
-2.  Při stisknutí stavu Vymaluje ovládací prvek.  
+2. Při stisknutí stavu Vymaluje ovládací prvek.  
   
-3.  <xref:System.Windows.Forms.Control.MouseDown> Událost se vyvolá.  
+3. <xref:System.Windows.Forms.Control.MouseDown> Událost se vyvolá.  
   
-4.  Uživatel uvolní tlačítko myši.  
+4. Uživatel uvolní tlačítko myši.  
   
-5.  Vymaluje ovládací prvek v vyvolanou stavu.  
+5. Vymaluje ovládací prvek v vyvolanou stavu.  
   
-6.  <xref:System.Windows.Forms.Control.Click> Událost se vyvolá.  
+6. <xref:System.Windows.Forms.Control.Click> Událost se vyvolá.  
   
-7.  <xref:System.Windows.Forms.Control.MouseClick> Událost se vyvolá.  
+7. <xref:System.Windows.Forms.Control.MouseClick> Událost se vyvolá.  
   
-8.  <xref:System.Windows.Forms.Control.MouseUp> Událost se vyvolá.  
+8. <xref:System.Windows.Forms.Control.MouseUp> Událost se vyvolá.  
   
     > [!NOTE]
     >  Pokud se uživatel přesune ukazatel myši mimo ovládací prvek přepínací tlačítko, zatímco je stisknuto levé tlačítko myši (jako je například hýbání myší <xref:System.Windows.Forms.Button> ovládací prvek je stisknutí), bude malovat vyvolanou ovládacím prvku přepínací tlačítko stavu a pouze <xref:System.Windows.Forms.Control.MouseUp> dojde k události. <xref:System.Windows.Forms.Control.Click> Nebo <xref:System.Windows.Forms.Control.MouseClick> nebude v této situaci dojde k událostem.  

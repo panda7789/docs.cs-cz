@@ -2,12 +2,12 @@
 title: <parameter>
 ms.date: 03/30/2017
 ms.assetid: 0fb41e2d-64f7-44ab-993e-05892eac6d82
-ms.openlocfilehash: 8b14dc1908ef3a06549154f70efb2d4e5cb10076
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 22ef3c3c6d23d6c68c27d6b5d1ed35b7c9910d48
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289423"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59230795"
 ---
 # <a name="parameter"></a>\<Parametr >
 Určuje obecný parametr, je-li deklarovaný typ obecného typu.  
@@ -34,7 +34,7 @@ Určuje obecný parametr, je-li deklarovaný typ obecného typu.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |index|Když je deklarovaný typ obecného typu, určuje obecný parametr, který vrací známý typ.|  
-|– typ|Řetězec, který popisuje známý typ používaný k serializaci a deserializaci.|  
+| – typ|Řetězec, který popisuje známý typ používaný k serializaci a deserializaci.|  
   
 ## <a name="index-attribute"></a>Atribut indexu  
   
@@ -60,6 +60,7 @@ Určuje obecný parametr, je-li deklarovaný typ obecného typu.
  Tento prvek konfigurace nemůže mít oba atributy ve stejnou dobu. Pokud jsou oba atributy nastavené, <xref:System.Configuration.ConfigurationErrorsException> vyvolá.  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
 - [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)

@@ -1,13 +1,13 @@
 ---
-title: <add> z <services>
+title: <add> of <services>
 ms.date: 03/30/2017
 ms.assetid: 6bdc4590-aa9c-4ec8-9345-879d780cd141
-ms.openlocfilehash: 4e1a9c67fa82262ab49be196b2e4fd31a69e688f
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: c07b3377db4f5b434fd021b09de510c1d43ec832
+ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55264528"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59219184"
 ---
 # <a name="add-of-services"></a>\<Přidat > z \<služby >
 Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> pro hostování služby Windows Communication Foundation (WCF) založené na pracovních postupech. Tento prvek je typu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
@@ -36,7 +36,7 @@ Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> p
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Řetězec určující název typu kvalifikovaného pro sestavení služby mají být inicializovány. Zadaná služba musí dodržovat určitá pravidla o podpisech jejich konstruktory. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
+| – typ|Řetězec určující název typu kvalifikovaného pro sestavení služby mají být inicializovány. Zadaná služba musí dodržovat určitá pravidla o podpisech jejich konstruktory. Další informace naleznete v tématu <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -67,6 +67,7 @@ Určuje nastavení pro instanci <xref:System.Workflow.Runtime.WorkflowRuntime> p
 ```  
   
 ## <a name="see-also"></a>Viz také:
+
 - <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>
 - <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>
 - <xref:System.Workflow.Runtime.WorkflowRuntime>
