@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-ms.openlocfilehash: 3c97e943d5516f879dda973bc008800032df5eb5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: ca2ed1fcf113e06535c8900e5836eb64f9b23958
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59134845"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59518133"
 ---
 # <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Postupy: Zadejte přihlašovací údaje klienta datové služby žádosti (WCF Data Services)
 Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje při odesílání požadavku do [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby. Však můžete určit, že přihlašovací údaje se odešlou k ověření požadavků ve službě data zadáním <xref:System.Net.NetworkCredential> pro <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md). V příkladu v tomto tématu ukazuje, jak explicitně zadat přihlašovací údaje, které jsou používány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta při vyžádání dat z datové služby.  
@@ -22,24 +22,24 @@ Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje
 ## <a name="example"></a>Příklad  
  V následujícím příkladu je na stránce použití modelu code-behind pro Extensible Application Markup Language (XAML) soubor, který je hlavní stránky aplikace Windows Presentation Framework. Tento příklad zobrazuje `LoginWindow` instance shromažďovat ověřování přihlašovacích údajů od uživatele a pak pomocí těchto přihlašovacích údajů při požadavku na datovou službu.  
   
- [!code-csharp[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentials.xaml.cs#clientcredentials)]  
- [!code-vb[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/clientcredentials.xaml.vb#clientcredentials)]
+ [!code-csharp[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentials.xaml.cs#clientcredentials)]  
+ [!code-vb[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/clientcredentials.xaml.vb#clientcredentials)]
   
 ## <a name="example"></a>Příklad  
  Následující XAML definuje hlavní stránky aplikace WPF.  
   
- [!code-xaml[Astoria Northwind Client#ClientCredentialsXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentials.xaml#clientcredentialsxaml)]  
+ [!code-xaml[Astoria Northwind Client#ClientCredentialsXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentials.xaml#clientcredentialsxaml)]  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu je na stránce použití modelu code-behind okna, která se používá ke shromažďování ověřovacích údajů od uživatele před provedením požadavku datové služby.  
   
- [!code-csharp[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentialslogin.xaml.cs#clientcredentialslogin)]  
- [!code-vb[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/clientcredentialslogin.xaml.vb#clientcredentialslogin)]
+ [!code-csharp[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentialslogin.xaml.cs#clientcredentialslogin)]  
+ [!code-vb[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/clientcredentialslogin.xaml.vb#clientcredentialslogin)]
   
 ## <a name="example"></a>Příklad  
  Následující XAML definuje přihlášení aplikaci WPF.  
   
- [!code-xaml[Astoria Northwind Client#ClientCredentialsLoginXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/clientcredentialslogin.xaml#clientcredentialsloginxaml)]  
+ [!code-xaml[Astoria Northwind Client#ClientCredentialsLoginXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentialslogin.xaml#clientcredentialsloginxaml)]  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  V příkladu v tomto tématu platí následující aspekty zabezpečení:  

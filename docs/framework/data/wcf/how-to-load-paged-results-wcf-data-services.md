@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: bb786ea4-f3ef-4ad3-9a41-3a0b7feb6a1f
-ms.openlocfilehash: 6042f4a89c390ade8b282f09808c698a107fdf24
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 0be7dcbefb23d2f2b283ac498f3b0ea43278f2d4
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59212008"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517249"
 ---
 # <a name="how-to-load-paged-results-wcf-data-services"></a>Postupy: Načtení stránkovaných výsledků (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje datové služby a omezit počet entit, které jsou vráceny v odpověď o jedné informačního kanálu. Pokud k tomu dojde, poslední položku v informačním kanálu obsahuje odkaz na další stránku data. Identifikátor URI další stránky dat se získá voláním <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> metodu <xref:System.Data.Services.Client.QueryOperationResponse%601>, která je vrácena, pokud <xref:System.Data.Services.Client.DataServiceQuery%601> provádí. Identifikátor URI reprezentovaný tímto objektem se pak použije k načtení další stránky výsledků. Další informace najdete v tématu [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).  
@@ -23,14 +23,14 @@ ms.locfileid: "59212008"
 ## <a name="example"></a>Příklad  
  Tento příklad používá `do…while` smyčce načtení `Customers` entit na základě stránkové výsledky z datové služby.  
   
- [!code-csharp[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspaged)]
- [!code-vb[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspaged)]  
+ [!code-csharp[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getcustomerspaged)]
+ [!code-vb[Astoria Northwind Client#GetCustomersPaged](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getcustomerspaged)]  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu vrátí související `Orders` entity s každým `Customers` entity a použije `do…while` smyčce načtení `Customers` stránky entity a vnořený `while` smyčce načtení stránky související `Orders` entity z datové služby .  
   
- [!code-csharp[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getcustomerspagednested)]
- [!code-vb[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getcustomerspagednested)]  
+ [!code-csharp[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getcustomerspagednested)]
+ [!code-vb[Astoria Northwind Client#GetCustomersPagedNested](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getcustomerspagednested)]  
   
 ## <a name="see-also"></a>Viz také:
 

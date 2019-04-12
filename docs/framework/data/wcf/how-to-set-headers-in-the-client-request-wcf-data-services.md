@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 3d55168d-5901-4f48-8117-6c93da3ab5ae
-ms.openlocfilehash: 0d821ca499e0b0e9151a724de5149f35bb815861
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: bbf306b31dd2bc9cfcfb877351205970fc63706f
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59143257"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517886"
 ---
 # <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a>Postupy: Nastavit hlavičky v požadavku klienta (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro přístup ke službě data, která podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], klientské knihovny automaticky nastaví povinné hlavičky HTTP v žádosti o zprávy odeslané do datové služby. Klientská knihovna však nezná nastavit hlavičky zpráv, které jsou nutné v některých případech, například když datová služba vyžaduje ověřování nezaloženého na deklaracích nebo soubory cookie. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication). V těchto případech je nutné ručně nastavit hlavičky zpráv ve zprávě požadavku před jejím odesláním. V příkladu v tomto tématu ukazuje, jak zpracovat <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> události a přidejte novou hlavičku zprávy s požadavkem, před odesláním do datové služby.  
@@ -25,14 +25,14 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
 > [!NOTE]
 >  Když datové služby je potřeba ručně nastavte záhlaví zprávy pro každý požadavek, vezměte v úvahu registruje se obslužná rutina pro <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> události tak, že přepíšete `OnContextCreated` služby částečné metody v kontejneru entity, která představuje data, která v Tento případ je `NorthwindEntities`.  
   
-[!code-csharp[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#registerheadersquery)]   
-[!code-vb[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#registerheadersquery)]
+[!code-csharp[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#registerheadersquery)]   
+[!code-vb[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#registerheadersquery)]
   
 ## <a name="example"></a>Příklad  
  Následující metoda obslužné rutiny <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> událostí a přidá hlavičku ověřování k této žádosti.  
   
- [!code-csharp[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#onsendingrequest)]  
- [!code-vb[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#onsendingrequest)]  
+ [!code-csharp[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#onsendingrequest)]  
+ [!code-vb[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#onsendingrequest)]  
   
 ## <a name="see-also"></a>Viz také:
 

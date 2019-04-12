@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 3283ec1661138a636914d6b1ca5e7adb5d5d52d3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: abae49e709fa2e77d641d991dd6e09cf82216732
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59175978"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517288"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování v datové službě (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje spouštění dotazů na datovou službu pomocí známých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] programovací modely, včetně použití jazyka integrované dotazu (LINQ). Knihovna klienta přeloží dotaz, který je definován v klientovi jako jedna instance <xref:System.Data.Services.Client.DataServiceQuery%601> třídy do zprávy požadavku HTTP GET. Knihovny přijímá zprávy s odpovědí a přeloží ho do instancí tříd klientské datové služby. Tyto třídy jsou sledovány objektem <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří.  
@@ -38,8 +38,8 @@ ms.locfileid: "59175978"
   
  Následující dotaz, pokud je spuštěn, vrátí všechny `Customers` entity v datová služba Northwind:  
   
- [!code-csharp[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomersspecific)]  
- [!code-vb[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomersspecific)]  
+ [!code-csharp[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomersspecific)]  
+ [!code-vb[Astoria Northwind Client#GetAllCustomersSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomersspecific)]  
   
  Další informace najdete v tématu [jak: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md).  
   
@@ -48,8 +48,8 @@ ms.locfileid: "59175978"
 ## <a name="linq-queries"></a>Dotazy LINQ  
  Protože <xref:System.Data.Services.Client.DataServiceQuery%601> implementuje třída <xref:System.Linq.IQueryable%601> rozhraní určené LINQ, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny je možné transformovat LINQ dotazů na data sady entit na identifikátor URI, který představuje výraz dotazu, který je porovnán s datové služby prostředek. V následujícím příkladu je dotaz LINQ, který je ekvivalentem předchozího <xref:System.Data.Services.Client.DataServiceQuery%601> , která vrací `Orders` , která mají svou cenu freight více než 30 USD a objednávek výsledky podle freight náklady:  
   
- [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionslinqspecific)]  
- [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionslinqspecific)]  
+ [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]  
+ [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]  
   
  Tento dotaz LINQ, je přeložen do následujícího dotazu identifikátoru URI, který se provede na základě Northwind [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) datové služby:  
   
@@ -65,13 +65,13 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 ## <a name="adding-query-options"></a>Přidání možnosti dotazu  
  Data služby dotazy dotazu se na možnosti podpory, který [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]s poskytuje. Volání <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda pro přidání možností dotazu <xref:System.Data.Services.Client.DataServiceQuery%601> instance. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> vrátí nový <xref:System.Data.Services.Client.DataServiceQuery%601> instanci, která je ekvivalentní k původní dotaz ale s nový dotaz sada možností. Následující dotaz, při spuštění vrátí `Orders` , které jsou filtrovány podle `Freight` hodnotu a seřazené podle `OrderID`sestupně:  
   
- [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addqueryoptionsspecific)]  
- [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addqueryoptionsspecific)]  
+ [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]  
+ [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]  
   
  Můžete použít `$orderby` možnost pořadí dotazování a filtrování dotazu podle jedné vlastnosti, jako v následujícím příkladu, který filtruje a řadí vráceného `Orders` objekty podle hodnoty `Freight` vlastnost:  
   
- [!code-csharp[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#orderwithfilter)]
- [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#orderwithfilter)]  
+ [!code-csharp[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#orderwithfilter)]
+ [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#orderwithfilter)]  
   
  Můžete volat <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda postupně k vytvoření složitých dotazů výrazy. Další informace najdete v tématu [jak: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md).  
   
@@ -84,16 +84,16 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 ## <a name="client-versus-server-execution"></a>Klient a spuštění serveru  
  Klient provede dotaz ve dvou částech. Kdykoli je to možné, výrazy v dotazu se nejdřív vyhodnotit na straně klienta, a pak vygeneruje a odešle do služby data pro vyhodnocení s daty ve službě dotazů založených na identifikátor URI. Vezměte v úvahu následující dotaz LINQ:  
   
- [!code-csharp[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#linqqueryclientevalspecific)]  
- [!code-vb[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#linqqueryclientevalspecific)]  
+ [!code-csharp[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#linqqueryclientevalspecific)]  
+ [!code-vb[Astoria Northwind Client#LinqQueryClientEvalSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#linqqueryclientevalspecific)]  
   
  V tomto příkladu výraz `(basePrice – (basePrice * discount))` vyhodnotit na straně klienta. Z toho důvodu samotný dotaz URI `http://localhost:12345/northwind.svc/Products()?$filter=(UnitPrice gt 90.00M) and substringof('bike',ProductName)` , který se odešle k datům služby obsahuje již vypočtenou hodnotu decimal `90` v klauzuli filtru. Ostatní části výrazu filtrování, včetně podřetězec výraz jsou vyhodnoceny datovou službou. Výrazy, které se vyhodnocují na straně klienta podle běžné language runtime (CLR) sémantiku, zatímco odeslána do služby data výrazy se spoléhají na implementaci služby data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokolu. Jste měli také něco vědět o scénářích, kde může toto samostatné vyhodnocení vést k neočekávaným výsledkům, například když klient a služba provádět v různých časových pásmech podle času hodnocení.  
   
 ## <a name="query-responses"></a>Odpovědi na dotazy  
  Při spuštění <xref:System.Data.Services.Client.DataServiceQuery%601> vrátí <xref:System.Collections.Generic.IEnumerable%601> typu požadovaná entita. Tento výsledek dotazu může být převeden <xref:System.Data.Services.Client.QueryOperationResponse%601> objektů, jako v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getresponsespecific)]
- [!code-vb[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getresponsespecific)]  
+ [!code-csharp[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getresponsespecific)]
+ [!code-vb[Astoria Northwind Client#GetResponseSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getresponsespecific)]  
   
  Instance typu entity, které představují entit ve službě data jsou vytvořeny na straně klienta pomocí procesu nazývaného materializace objektů. Další informace najdete v tématu [Materializace objektů](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md). <xref:System.Data.Services.Client.QueryOperationResponse%601> Objekt implementuje <xref:System.Collections.Generic.IEnumerable%601> a zajistit tak přístup k výsledkům dotazu.  
   
@@ -130,17 +130,17 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  [Aspekty LINQ](../../../../docs/framework/data/wcf/linq-considerations-wcf-data-services.md)  
   
- [Postupy: Provádění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
+ [Postupy: Spuštění dotazů v datové službě](../../../../docs/framework/data/wcf/how-to-execute-data-service-queries-wcf-data-services.md)  
   
  [Postupy: Přidání možností do dotazu v datové službě](../../../../docs/framework/data/wcf/how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)  
   
  [Postupy: Určení počtu entit vrácených dotazem](../../../../docs/framework/data/wcf/number-of-entities-returned-by-a-query-wcf.md)  
   
- [Postupy: Zadání přihlašovacích údajů klienta v požadavku na datovou službu](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)  
+ [Postupy: Zadejte požádat o přihlašovací údaje klienta datové služby](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md)  
   
- [Postupy: Nastavení hlaviček v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
+ [Postupy: Nastavit hlavičky v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md)  
   
- [Postupy: Výsledky dotazů na projekt](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
+ [Postupy: Výsledky dotazu projektu](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)  
   
 ## <a name="see-also"></a>Viz také:
 

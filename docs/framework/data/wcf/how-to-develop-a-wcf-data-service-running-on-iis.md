@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vývoj datové služby WCF ve službě IIS'
+title: 'Postupy: Vývoj datové služby WCF ve službě IIS'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: af81e65dfd4661d62d7aa4a3e6075be312765cb7
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 78e8c3cacd89f88cbfa062cb30e5b3474c2614ca
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47201063"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517828"
 ---
-# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj datové služby WCF ve službě IIS
+# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: Vývoj datové služby WCF ve službě IIS
 
 Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové služby, který je založen na ukázkové databáze Northwind, která je hostována ve webové aplikaci ASP.NET, na kterém běží v Internetové informační služby (IIS). Příklad toho, jak vytvořit stejný datová služba Northwind jako webovou aplikaci ASP.NET, která běží na serveru ASP.NET Development Server, najdete v článku [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).
 
@@ -25,19 +25,19 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
  Toto téma ukazuje, jak vytvořit datové služby pomocí zprostředkovatele Entity Framework. Ostatní zprostředkovatelé dat služby jsou k dispozici. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).
 
- Po vytvoření služby, je nutné explicitně zadat přístup k prostředkům datové služby. Další informace najdete v tématu [postupy: povolení přístup k datové službě](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).
+ Po vytvoření služby, je nutné explicitně zadat přístup k prostředkům datové služby. Další informace najdete v tématu [jak: Povolení přístupu k datové službě](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).
 
 ## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a>Vytvoření webové aplikace ASP.NET, která běží ve službě IIS
 
 1. V sadě Visual Studio na **souboru** nabídce vyberte možnost **nový** > **projektu**.
 
-2. V **nový projekt** dialogové okno, vyberte **nainstalováno** > [**Visual C#** nebo **jazyka Visual Basic**] > **webové** kategorie.
+2. V **nový projekt** dialogové okno, vyberte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Web**  kategorie.
 
 3. Vyberte **webová aplikace ASP.NET** šablony.
 
 1. Zadejte `NorthwindService` jako název projektu.
 
-5. Klikněte na tlačítko **OK**.
+5. Klikněte na **OK**.
 
 6. Na **projektu** nabídce vyberte možnost **NorthwindService vlastnosti**.
 
@@ -132,7 +132,7 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 5. Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na tlačítko **Další**:
 
-    -   Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení k databázím SQL Server](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
+    -   Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [jak: Vytvoření připojení k databázím serveru SQL](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
 
          \- nebo –
 
@@ -159,8 +159,8 @@ Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové 
 
 4. V kódu pro datovou službu, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje datové služby s typem, který je kontejner entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:
 
-     [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#servicedefinition)]
-     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]
+     [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
+     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
 ## <a name="see-also"></a>Viz také:
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: c2e51133850a59de2b68164870f909ef50d47b69
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 615443bee67d7ca69d25193404055b7299a58507
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59298874"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517587"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.  
@@ -46,7 +46,7 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
  **Zprostředkovatel Entity Framework**  
  Označuje, že entita položkou odkazu na média, přidejte `HasStream` atributu na definici typu entity v konceptuálním modelu, jako v následujícím příkladu:  
   
- [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria photo streaming service/xml/photodata.edmx#hasstream)]  
+ [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]  
   
  Musíte taky přidat obor názvů `xmlns:m=http://schemas.microsoft.com/ado/2007/08/dataservices/metadata` k entitě nebo do kořenového adresáře souboru .edmx nebo .csdl, který definuje datový model.  
   
@@ -74,8 +74,8 @@ Datové služby může vystavit data binárního rozsáhlého objektu. Tento bin
 ## <a name="creating-the-streaming-data-service"></a>Vytvoření datových proudů datové služby  
  K poskytování [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] modulu runtime s přístupem k <xref:System.Data.Services.Providers.IDataServiceStreamProvider> implementace, datové služby, kterou vytvoříte musí implementovat taky <xref:System.IServiceProvider> rozhraní. Následující příklad ukazuje, jak implementovat <xref:System.IServiceProvider.GetService%2A> metoda vrátí instanci `PhotoServiceStreamProvider` třídu, která implementuje <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.  
   
- [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria photo streaming service/cs/photodata.svc.cs#photoservicestreamingprovider)]
- [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria photo streaming service/vb/photodata.svc.vb#photoservicestreamingprovider)]  
+ [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
+ [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]  
   
  Obecné informace o tom, jak vytvořit datovou službu, naleznete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md).  
   

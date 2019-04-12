@@ -1,6 +1,6 @@
 ---
 title: 'Kurz: Vytvoření aplikace služby Windows'
-ms.date: 03/14/2019
+ms.date: 03/27/2019
 dev_langs:
 - csharp
 - vb
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 7952256d1b225fe22cd189833a046590cdf0a9f2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 35ef113acffbebdcd4cb585970e575f17959f75b
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59200672"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59518029"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Kurz: Vytvoření aplikace služby Windows
 
@@ -73,21 +73,7 @@ V této části přidáte do služby Windows vlastního protokolu událostí. <x
 
 4. Definování vlastního protokolu událostí. Pro C#, upravte existující `MyNewService()` konstruktor; v jazyce Visual Basic přidejte `New()` konstruktor:
 
-   ```csharp
-   public MyNewService()
-   {
-        InitializeComponent();
-
-        eventLog1 = new EventLog();
-        if (!EventLog.SourceExists("MySource"))
-        {
-            EventLog.CreateEventSource("MySource", "MyNewLog");
-        }
-        eventLog1.Source = "MySource";
-        eventLog1.Log = "MyNewLog";
-    }
-   ```
-
+   [!code-csharp[VbRadconService#2](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#2)]
    [!code-vb[VbRadconService#2](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#2)]
 
 5. Přidat `using` příkazu **MyNewService.cs** (pokud ještě neexistuje), nebo `Imports` příkaz **MyNewService.vb**, pro <xref:System.Diagnostics?displayProperty=nameWithType> obor názvů:
@@ -182,10 +168,7 @@ Místo spouštění veškerou práci na hlavním vlákně, můžete spouštět �
 
 Vložit řádek kódu <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metodu, která přidá položku do protokolu událostí po zastavení služby:
 
-```csharp
-eventLog1.WriteEntry("In OnStop.");
-```
-
+[!code-csharp[VbRadconService#2](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#4)]
 [!code-vb[VbRadconService#4](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#4)]
 
 ### <a name="define-other-actions-for-the-service"></a>Definování dalších akcí služby
@@ -265,6 +248,9 @@ Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implement
     End Structure
     ```
 
+    > [!NOTE]
+    > Správce řízení služeb používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](/windows/desktop/api/winsvc/ns-winsvc-_service_status) k určení doby čekání na službu Windows ke spuštění nebo vypnutí. Pokud vaše `OnStart` a `OnStop` metody se spustí, long, vaše služba může požádat o víc času voláním `SetServiceStatus` znovu se zvýšena `dwCheckPoint` hodnotu.
+
 3. V `MyNewService` třídy, deklarujte [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) funkce s použitím [vyvolání platformy](../interop/consuming-unmanaged-dll-functions.md):
 
     ```csharp
@@ -336,9 +322,6 @@ Nastavení stavu SERVICE_START_PENDING a SERVICE_STOP_PENDING můžete implement
     SetServiceStatus(Me.ServiceHandle, serviceStatus)    
     ```
 
-> [!NOTE]
-> Správce řízení služeb používá `dwWaitHint` a `dwCheckpoint` členy [SERVICE_STATUS struktura](/windows/desktop/api/winsvc/ns-winsvc-_service_status) k určení doby čekání na službu Windows ke spuštění nebo vypnutí. Pokud vaše `OnStart` a `OnStop` metody se spustí, long, vaše služba může požádat o víc času voláním `SetServiceStatus` znovu se zvýšena `dwCheckPoint` hodnotu.
-
 ## <a name="add-installers-to-the-service"></a>Přidání instalačních programů do služby
 
 Před spuštěním služby Windows musíte nainstalovat, které je zaregistruje ho s správce řízení služeb. Přidání instalačních programů do projektu pro zpracování podrobnosti registrace.
@@ -391,24 +374,8 @@ Každá služba Windows má záznam v registru pod **HKEY_LOCAL_MACHINE\SYSTEM\C
 
 1. Vyberte **Program.cs**, nebo **MyNewService.Designer.vb**, klikněte na tlačítko **zobrazit kód** z místní nabídky. V `Main` metodu, změňte kód pro přidání vstupního parametru a předejte jej do konstruktoru služby:
 
-   ```csharp
-   static void Main(string[] args)
-   {
-       ServiceBase[] ServicesToRun;
-       ServicesToRun = new ServiceBase[]
-       {
-           new MyNewService(args)
-       };
-       ServiceBase.Run(ServicesToRun);
-   }
-   ```
-
-   ```vb
-   Shared Sub Main(ByVal cmdArgs() As String)
-       Dim ServicesToRun() As System.ServiceProcess.ServiceBase = New System.ServiceProcess.ServiceBase() {New MyNewService(cmdArgs)}
-       System.ServiceProcess.ServiceBase.Run(ServicesToRun)
-   End Sub
-   ```
+   [!code-csharp[VbRadconService](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/Program-add-parameter.cs?highlight=1,6)]
+   [!code-vb[VbRadconService](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.Designer-add-parameter.vb?highlight=1-2)]
 
 2. V **MyNewService.cs**, nebo **MyNewService.vb**, změnit `MyNewService` konstruktor zpracovat vstupní parametr následujícím způsobem:
 
@@ -582,4 +549,4 @@ Teď, když jste vytvořili službu, můžete:
 - [Aplikace služby Windows](index.md)
 - [Úvod do aplikace služby Windows](introduction-to-windows-service-applications.md)
 - [Postupy: Ladění aplikace služby Windows](how-to-debug-windows-service-applications.md)
-- [Services (Windows)](/windows/desktop/Services/services)
+- [Služby (Windows)](/windows/desktop/Services/services)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: 8e6b0d9c9b5d2b473aebc00063bd0a343b8708c6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: fb2a7c8e1cf3fbae4c6417dab492343ead991204
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59226661"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517873"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vazba dat k ovládacím prvkům (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat ovládací prvky, jako `ComboBox` a `ListView` ovládacích prvků do instance <xref:System.Data.Services.Client.DataServiceCollection%601> třídy. Tuto kolekci, která dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, obsahuje data z [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato třída reprezentuje kolekci dynamická data, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky. Při použití instance <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny pro zpracování těchto událostí k zajištění, že objekty sledován pomocí funkce <xref:System.Data.Services.Client.DataServiceContext> zůstane synchronizovaná s daty v elementu vazby uživatelského rozhraní.  
@@ -29,21 +29,21 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
   
  Následující příklad ukazuje, jak vytvořit instanci <xref:System.Data.Services.Client.DataServiceCollection%601> podle zadaného <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> , který vrátí všechny zákazníky s související objednávky:  
   
- [!code-csharp[Astoria Northwind Client#CustomersOrders2Binding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorders2.cs#customersorders2binding)]
- [!code-vb[Astoria Northwind Client#CustomersOrders2Binding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorders2.vb#customersorders2binding)]  
+ [!code-csharp[Astoria Northwind Client#CustomersOrders2Binding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorders2.cs#customersorders2binding)]
+ [!code-vb[Astoria Northwind Client#CustomersOrders2Binding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorders2.vb#customersorders2binding)]  
   
 ## <a name="binding-data-to-windows-presentation-foundation-elements"></a>Vytvoření vazby dat na elementy Windows Presentation Foundation  
  Protože <xref:System.Data.Services.Client.DataServiceCollection%601> třída dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, lze svázat objekty elementu, nebo ovládací prvek v aplikaci Windows Presentation Foundation (WPF) stejně jako při použití <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy pro vazbu. Další informace najdete v tématu [datové vazby (Windows Presentation Foundation)](../../../../docs/framework/wpf/data/data-binding-wpf.md). Data služby data svázat ovládací prvky WPF jedním ze způsobů je nastavit `DataContext` vlastnost elementu, který chcete instanci <xref:System.Data.Services.Client.DataServiceCollection%601> třídu, která obsahuje výsledek dotazu. V tomto případě použijete <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost pro nastavení zdrojového objektu ovládacího prvku. Použití <xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A> vlastnosti a určit, které vlastnosti objektu vázaného k zobrazení. Pokud na související objekt, který je vrácen navigační vlastnost vazby prvku zahrnout vazby definované pro cestu <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost. Tato cesta je relativní vzhledem k nastavením kořenového objektu <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnosti nadřazeného ovládacího prvku. Následující příklad nastaví <xref:System.Windows.FrameworkElement.DataContext%2A> vlastnost <xref:System.Windows.Controls.StackPanel> prvek, který chcete vytvořit vazbu na nadřazený ovládací prvek <xref:System.Data.Services.Client.DataServiceCollection%601> objektů zákazníka:  
   
- [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderscustom.xaml.cs#masterdetailbinding)]
- [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf.xaml.cs#masterdetailbinding)]
- [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml.vb#masterdetailbinding)]
- [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml.vb#masterdetailbinding)]
- [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom2.xaml.vb#masterdetailbinding)]  
+ [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderscustom.xaml.cs#masterdetailbinding)]
+ [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf.xaml.cs#masterdetailbinding)]
+ [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderscustom.xaml.vb#masterdetailbinding)]
+ [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf.xaml.vb#masterdetailbinding)]
+ [!code-vb[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderscustom2.xaml.vb#masterdetailbinding)]  
   
  Následující příklad ukazuje definici XAML vazby podřízené <xref:System.Windows.Controls.DataGrid> a <xref:System.Windows.Controls.ComboBox> ovládací prvky:  
   
- [!code-xaml[Astoria Northwind Client#MasterDetailXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#masterdetailxaml)]  
+ [!code-xaml[Astoria Northwind Client#MasterDetailXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf.xaml#masterdetailxaml)]  
   
  Další informace najdete v tématu [jak: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md).  
   
@@ -57,16 +57,16 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
   
  Následující příklad vytvoří vazbu <xref:System.Data.Services.Client.DataServiceCollection%601> k <xref:System.Windows.Forms.ComboBox> ovládacího prvku:  
   
- [!code-csharp[Astoria Northwind Client#CustomersOrdersDataBindingSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorders.cs#customersordersdatabindingspecific)]
- [!code-vb[Astoria Northwind Client#CustomersOrdersDataBindingSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorders.vb#customersordersdatabindingspecific)]  
+ [!code-csharp[Astoria Northwind Client#CustomersOrdersDataBindingSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorders.cs#customersordersdatabindingspecific)]
+ [!code-vb[Astoria Northwind Client#CustomersOrdersDataBindingSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorders.vb#customersordersdatabindingspecific)]  
   
  Při použití **přidat odkaz na službu** dialogovém okně můžete generovat tříd klientské datové služby, projekt je vytvořen zdroj dat také to znamená podle generované <xref:System.Data.Services.Client.DataServiceContext>. S tímto zdrojem dat, můžete vytvořit prvky uživatelského rozhraní nebo ovládací prvky, které zobrazují data z datové služby jednoduše přetažením položek z **zdroje dat** okna do návrháře. Prvky uživatelského rozhraní aplikace, které jsou vázány na zdroj dat se stanou tyto položky. Další informace najdete v tématu [jak: Vytvoření vazby dat pomocí zdroje dat projektu](../../../../docs/framework/data/wcf/how-to-bind-data-using-a-project-data-source-wcf-data-services.md).  
   
 ## <a name="binding-paged-data"></a>Vazba stránkovány dat  
  Datovou službu lze nastavit a omezit tak množství načtená data, která je vrácena ve zprávě jednu odpověď. Další informace najdete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md). Když datové služby je stránkování dat odpovědi, každou odpověď obsahuje odkaz, který se používá k vrácení další stránky výsledků. Další informace najdete v tématu [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md). V takovém případě musí explicitně načíst stránky voláním <xref:System.Data.Services.Client.DataServiceCollection%601.Load%2A> metodu na <xref:System.Data.Services.Client.DataServiceCollection%601> předáním získané z identifikátoru URI <xref:System.Data.Services.Client.DataServiceQueryContinuation.NextLinkUri%2A> vlastnosti, jako v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#BindPagedDataSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderswpf3.xaml.cs#bindpageddataspecific)]
- [!code-vb[Astoria Northwind Client#BindPagedDataSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf3.xaml.vb#bindpageddataspecific)]  
+ [!code-csharp[Astoria Northwind Client#BindPagedDataSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf3.xaml.cs#bindpageddataspecific)]
+ [!code-vb[Astoria Northwind Client#BindPagedDataSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderswpf3.xaml.vb#bindpageddataspecific)]  
   
  Podobným způsobem jsou načteny související objekty. Další informace najdete v tématu [jak: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md).  
   
@@ -90,9 +90,9 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
   
  V následujícím příkladu <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove> akce upravit tak, aby volání <xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A> a <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> metoda odebrání `Orders_Details` entity, které patří odstraněné `Orders` entity. Tato vlastní akce je provést, protože závislé entit nejsou automaticky odstraněny při nadřazená entita se odstraní.  
   
- [!code-csharp[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/customerorderscustom.xaml.cs#customersordersdeleterelated)]
- [!code-vb[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml.vb#customersordersdeleterelated)]
- [!code-vb[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom2.xaml.vb#customersordersdeleterelated)]  
+ [!code-csharp[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderscustom.xaml.cs#customersordersdeleterelated)]
+ [!code-vb[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderscustom.xaml.vb#customersordersdeleterelated)]
+ [!code-vb[Astoria Northwind Client#CustomersOrdersDeleteRelated](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/customerorderscustom2.xaml.vb#customersordersdeleterelated)]  
   
  Další informace najdete v tématu [jak: Přizpůsobení chování datových vazeb](../../../../docs/framework/data/wcf/how-to-customize-data-binding-behaviors-wcf-data-services.md).  
   

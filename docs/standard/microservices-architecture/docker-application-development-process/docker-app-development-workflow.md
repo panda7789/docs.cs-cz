@@ -4,12 +4,12 @@ description: Zjistěte podrobnosti pracovního postupu pro vývoj aplikací zalo
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 6a4d8a6fea56c01d23d3cdb98ae9e12619e99ff5
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 97b8c40f0926edaf9ab743ac45ba498c96257622
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59328228"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517977"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -561,7 +561,7 @@ RUN powershell add-windowsfeature web-asp-net45
 
 ### <a name="additional-resources"></a>Další zdroje
 
-- **ASPNET dockeru/Dockerfile.** Příklady příkazů Powershellu spouštět z soubory dockerfile začlenit funkce Windows. \
+- **aspnet-docker/Dockerfile.** Příklady příkazů Powershellu spouštět z soubory dockerfile začlenit funkce Windows. \
   [https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile](https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile)
 
 >[!div class="step-by-step"]

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-ms.openlocfilehash: b63c6d8f3a5a949299a925a321ca8f01c67b1d8f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: c5514bf32bfe03a65d7d171a500dd5d4cfde35ff
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59211969"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517405"
 ---
 # <a name="service-operations-wcf-data-services"></a>Operace služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] slouží k definování operace služby ve službě data ke zveřejnění metody na serveru. Operace služby jako ostatní prostředky služby data jsou vyřešeny identifikátorů URI. Operace služby umožňují vám umožní vystavit obchodní logiku v datové služby, jako například do implementace logiky ověření na základě rolí zabezpečení, nebo k vystavení specializovaných možnostmi dotazování. Operace služeb se přidá k třídě datové služby, která je odvozena z metody <xref:System.Data.Services.DataService%601>. Stejně jako všechny ostatní prostředkům datové služby můžete zadat parametry pro metodu operaci služby. Například následující operace identifikátor URI služby (na základě [rychlý Start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) datové služby) předá hodnotu `London` k `city` parametr:  
@@ -24,8 +24,8 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
   
  Definice pro tuto operaci služby vypadá takto:  
   
- [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
- [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
+ [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationdef)]
+ [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
  Můžete použít <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> z <xref:System.Data.Services.DataService%601> přímý přístup k zdroji dat, která používá datové služby. Další informace najdete v tématu [jak: Definování operace služby](../../../../docs/framework/data/wcf/how-to-define-a-service-operation-wcf-data-services.md).  
   
@@ -90,8 +90,8 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order
 ## <a name="service-operations-access-control"></a>Řízení přístupu ke službě Operations  
  Řídí viditelnost celé služby operací služby <xref:System.Data.Services.IDataServiceConfiguration.SetServiceOperationAccessRule%2A> metodu na <xref:System.Data.Services.IDataServiceConfiguration> třídy v podstatě stejným způsobem, že sada entit viditelnosti je řízen pomocí <xref:System.Data.Services.IDataServiceConfiguration.SetEntitySetAccessRule%2A> metoda. Například následující řádek kódu v definici datové služby umožňuje přístup k `CustomersByCity` operace služby.  
   
- [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
- [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
+ [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationconfig)]
+ [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationconfig)]  
   
 > [!NOTE]
 >  Operace služby má návratový typ, který je skrytý tak, že omezíte přístup k podkladové sady entit, operace služby nebudou mít k dispozici klientské aplikace.  
@@ -101,8 +101,8 @@ http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order
 ## <a name="raising-exceptions"></a>Vyvolání výjimek  
  Doporučujeme použít <xref:System.Data.Services.DataServiceException> třídy pokaždé, když se vyvolat výjimku za běhu služba data. Totiž ví, modul runtime služby data jak správně mapy – vlastnosti tohoto objektu výjimky pro zprávy s odpovědí HTTP. Při vyvolávání <xref:System.Data.Services.DataServiceException> v operaci služby, je obalen výjimky vrácené <xref:System.Reflection.TargetInvocationException>. Vrátit základní <xref:System.Data.Services.DataServiceException> bez nadřazený <xref:System.Reflection.TargetInvocationException>, je nutné přepsat <xref:System.Data.Services.DataService%601.HandleException%2A> metoda ve <xref:System.Data.Services.DataService%601>, extrahovat <xref:System.Data.Services.DataServiceException> z <xref:System.Reflection.TargetInvocationException>a vraťte jej jako chyba nejvyšší úrovně, jako v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#handleexceptions)]
- [!code-vb[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#handleexceptions)]  
+ [!code-csharp[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#handleexceptions)]
+ [!code-vb[Astoria Northwind Service#HandleExceptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#handleexceptions)]  
   
 ## <a name="see-also"></a>Viz také:
 

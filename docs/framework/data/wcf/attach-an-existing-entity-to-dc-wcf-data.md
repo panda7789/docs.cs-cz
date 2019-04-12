@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, changing data
 ms.assetid: e3f2d71d-434c-4e98-91c3-95adae4702b6
-ms.openlocfilehash: 6fa8e9d66fa89eb058aafd1e74164097b7f5c3a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 511a9bc5352e208697460364e463330fc0ef611a
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59157849"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517470"
 ---
 # <a name="how-to-attach-an-existing-entity-to-the-dataservicecontext-wcf-data-services"></a>Postupy: Přiřazení existující Entity k prvku DataServiceContext (WCF Data Services)
 Pokud entita již existuje ve službě data [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje připojit objekt, který entitu představuje přímo na <xref:System.Data.Services.Client.DataServiceContext> bez předchozího provedení dotazu. Další informace najdete v tématu [aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
@@ -22,8 +22,8 @@ Pokud entita již existuje ve službě data [!INCLUDE[ssAstoria](../../../../inc
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit existující `Customer` objekt, který obsahuje změny, které bude uložena do datové služby. Objekt je připojen ke kontextu a <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> metoda je volána k označení připojeného objektu jako <xref:System.Data.Services.Client.EntityStates.Modified> před <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metoda je volána.  
   
- [!code-csharp[Astoria Northwind Client#AttachObject](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#attachobject)]
- [!code-vb[Astoria Northwind Client#AttachObject](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#attachobject)]  
+ [!code-csharp[Astoria Northwind Client#AttachObject](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#attachobject)]
+ [!code-vb[Astoria Northwind Client#AttachObject](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#attachobject)]  
   
 ## <a name="see-also"></a>Viz také:
 

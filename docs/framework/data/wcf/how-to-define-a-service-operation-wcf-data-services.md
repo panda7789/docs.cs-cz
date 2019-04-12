@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Service Operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
-ms.openlocfilehash: 88e9b20f3ecefbd39789dfbc942af3938a9a2117
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: fc738f7e81c02e44075ce5ed151ed42452650c94
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59326395"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59518120"
 ---
 # <a name="how-to-define-a-service-operation-wcf-data-services"></a>Postupy: Definování operace služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zveřejněte metody, které jsou definovány na serveru jako servisní operace. Operace služby umožňují datové služby a zajistit tak přístup prostřednictvím identifikátoru URI metodě, která je definována na serveru. K definování operace služby, použít [`WebGet]` nebo `[WebInvoke]` atribut do metody. Pro podporu operátorů dotazu, musí vrátit operace služby <xref:System.Linq.IQueryable%601> instance. Operace služby může přístup k podkladovému zdroji dat prostřednictvím <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> vlastnost <xref:System.Data.Services.DataService%601>. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
@@ -26,13 +26,13 @@ ms.locfileid: "59326395"
   
 2. V `Northwind` tříd, definice služby operace metodu s názvem `GetOrdersByCity` následujícím způsobem:  
   
-     [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
-     [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
+     [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationdef)]
+     [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
 3. V `InitializeService` metodu `Northwind` třídy, přidejte následující kód k umožnění přístupu k operace služby:  
   
-     [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
-     [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
+     [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationconfig)]
+     [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationconfig)]  
   
 ### <a name="to-query-the-getordersbycity-service-operation"></a>K dotazování GetOrdersByCity operace služby  
   
@@ -50,8 +50,8 @@ ms.locfileid: "59326395"
 > [!NOTE]
 >  Operátory dotazu jsou podporované na tomto koncovém bodu služby operaci, protože metoda vrátí <xref:System.Linq.IQueryable%601> instance.  
   
- [!code-csharp[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperation)]
- [!code-vb[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperation)]  
+ [!code-csharp[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperation)]
+ [!code-vb[Astoria Northwind Service#ServiceOperation](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperation)]  
   
 ## <a name="see-also"></a>Viz také:
 

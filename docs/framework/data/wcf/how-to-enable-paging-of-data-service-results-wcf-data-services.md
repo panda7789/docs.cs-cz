@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - paging output [WCF Data Services]
 ms.assetid: 9a316cbd-9612-4482-a541-a10bc78b2635
-ms.openlocfilehash: 77dbeba89b352fa470ab0523a830db9175a1a21a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: edc150d118153849dd84eb40f1443d842c7d346d
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122899"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517817"
 ---
 # <a name="how-to-enable-paging-of-data-service-results-wcf-data-services"></a>Postupy: Povolit stránkování výsledků datové služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje omezit počet entit vrácených dotazem dat služby. Stránky omezení jsou definovány v metodě, která je volána, když služba je inicializována a je možné nastavit zvlášť pro každou sadu entit.  
@@ -25,8 +25,8 @@ ms.locfileid: "59122899"
   
 -   V kódu pro datovou službu, nahraďte zástupný symbol kód v `InitializeService` funkce následujícím kódem:  
   
-     [!code-csharp[Astoria Northwind Service#DataServiceConfigPaging](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind.svc.cs#dataserviceconfigpaging)]
-     [!code-vb[Astoria Northwind Service#DataServiceConfigPaging](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind.svc.vb#dataserviceconfigpaging)]  
+     [!code-csharp[Astoria Northwind Service#DataServiceConfigPaging](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind.svc.cs#dataserviceconfigpaging)]
+     [!code-vb[Astoria Northwind Service#DataServiceConfigPaging](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind.svc.vb#dataserviceconfigpaging)]  
   
 ## <a name="see-also"></a>Viz také:
 

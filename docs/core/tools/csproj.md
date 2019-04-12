@@ -1,13 +1,13 @@
 ---
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
-ms.date: 09/22/2017
-ms.openlocfilehash: 49a7198dc593708abaa83e65af463ea0a7571a55
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
+ms.date: 04/08/2019
+ms.openlocfilehash: f72ea279079b4cdb3a06a2ba64925e2a335e1ed2
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59481311"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517327"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -15,7 +15,7 @@ Tento dokument popisuje změny, které byly přidány do souborů projektu jako 
 
 ## <a name="implicit-package-references"></a>Odkazy na implicitní balíček
 
-Metabalíčky jsou implicitně odkazovat podle cílové architekturu podle `<TargetFramework>` nebo `<TargetFrameworks>` vlastnost souboru projektu. `<TargetFrameworks>` se ignoruje, pokud `<TargetFramework>` je zadaný, nezávisle na pořadí.
+Metabalíčky jsou implicitně odkazovat podle cílové architekturu podle `<TargetFramework>` nebo `<TargetFrameworks>` vlastnost souboru projektu. `<TargetFrameworks>` se ignoruje, pokud `<TargetFramework>` je zadaný, nezávisle na pořadí. Další informace najdete v tématu [balíčky, metabalíčky a architektury](../packages.md). 
 
 ```xml
  <PropertyGroup>
@@ -31,13 +31,36 @@ Metabalíčky jsou implicitně odkazovat podle cílové architekturu podle `<Tar
 
 ### <a name="recommendations"></a>Doporučení
 
-Protože `Microsoft.NETCore.App` nebo `NetStandard.Library` metabalíčky jsou implicitně odkazovat, naše doporučené osvědčené postupy jsou následující:
+Protože `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky jsou implicitně odkazovat, naše doporučené osvědčené postupy jsou následující:
 
-* Při cílení na .NET Core nebo .NET Standard, nikdy nemůžete mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NetStandard.Library` metabalíčky prostřednictvím `<PackageReference>` položky v souboru projektu.
+* Při cílení na .NET Core nebo .NET Standard, nikdy nemůžete mít explicitní odkaz na `Microsoft.NETCore.App` nebo `NETStandard.Library` metabalíčky prostřednictvím `<PackageReference>` položky v souboru projektu.
 * Pokud potřebujete konkrétní verzi modulu runtime při cílení na .NET Core, měli byste použít `<RuntimeFrameworkVersion>` vlastnost v projektu (například `1.0.4`) namísto odkazování Microsoft.aspnetcore.all.
   * K tomu může dojít, pokud používáte [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) a potřebujete oprav konkrétní verze 1.0.0 LTS běhu.
-* Pokud potřebujete konkrétní verzi `NetStandard.Library` Microsoft.aspnetcore.all při cílení na .NET Standard, můžete použít `<NetStandardImplicitPackageVersion>` vlastnost a nastavte verzi budete potřebovat.
-* Není explicitně přidat nebo aktualizovat odkazy na buď `Microsoft.NETCore.App` nebo `NetStandard.Library` Microsoft.aspnetcore.all v projektech .NET Framework. Pokud všechny verze `NetStandard.Library` je potřeba při použití balíčku NuGet pro .NET Standard na základě, NuGet automaticky instaluje tuto verzi.
+* Pokud potřebujete konkrétní verzi `NETStandard.Library` Microsoft.aspnetcore.all při cílení na .NET Standard, můžete použít `<NetStandardImplicitPackageVersion>` vlastnost a nastavte verzi budete potřebovat.
+* Není explicitně přidat nebo aktualizovat odkazy na buď `Microsoft.NETCore.App` nebo `NETStandard.Library` Microsoft.aspnetcore.all v projektech .NET Framework. Pokud všechny verze `NETStandard.Library` je potřeba při použití balíčku NuGet pro .NET Standard na základě, NuGet automaticky instaluje tuto verzi.
+
+## <a name="implicit-version-for-some-package-references"></a>Implicitní verze pro některé odkazy na balíček
+
+Většina použití [ `<PackageReference>` ](#packagereference) vyžadují nastavení `Version` atribut k určení verze balíčku NuGet, který se má použít. Pokud používáte .NET Core 2.1 nebo 2.2 a odkazující [Microsoft.AspNetCore.App](/aspnet/core/fundamentals/metapackage-app) nebo [metabalíček](/aspnet/core/fundamentals/metapackage), ale atribut je zbytečné. .NET Core SDK můžete automaticky vybrat verzi tyto balíčky, které by měla sloužit.
+
+### <a name="recommendation"></a>Doporučení
+
+Při odkazování `Microsoft.AspNetCore.App` nebo `Microsoft.AspNetCore.All` balíčky, nezadávejte jejich verze. Pokud není zadána verze, sada SDK může vytvořit upozornění NETSDK1071. Chcete-li opravit toto upozornění odeberte verzi balíčku jako v následujícím příkladu:
+
+```xml
+<ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.App" />
+</ItemGroup>
+```
+
+> Známý problém: .NET Core 2.1 SDK podporuje tuto syntaxi jen v případě, že projekt používá také Microsoft.NET.Sdk.Web. Tím je vyřešeno v .NET Core 2.2 SDK.
+
+Tyto odkazy do ASP.NET Core metabalíčky mají mírně odlišné chování než nejvíce normální balíčky NuGet. [Nasazení závisí na architektuře](../deploying/index.md#framework-dependent-deployments-fdd) aplikací, které automaticky používají tyto metabalíčky využít sdílené architektuře ASP.NET Core. Při použití metabalíčky, **žádné** nasazení se aplikace používají prostředky z balíčků odkazovaných ASP.NET Core NuGet – sdílené architektuře ASP.NET Core obsahuje tyto prostředky. Prostředky v rámci sdílené jsou optimalizované pro cílovou platformu pro zlepšení času spuštění aplikace. Další informace o sdílené architektuře, najdete v části [vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md).
+
+Pokud verze *je* zadán, je považován za *minimální* sdílené architektuře ASP.NET Core pro nasazení závisí na architektuře a jako verzi *přesné* verze pro samostatná nasazení. To může mít následující důsledky:
+
+* Pokud verze modulu ASP.NET Core nainstalována na serveru je nižší než verze zadaná v PackageReference, proces .NET Core se nespustí. Aktualizace Microsoft.aspnetcore.all jsou dostupné na NuGet.org, často předtím, než byly provedeny aktualizace k dispozici v hostitelských prostředích, jako je Azure. Aktualizace verze na PackageReference pro ASP.NET Core může způsobit selhání nasazené aplikace.
+* Pokud je aplikace nasazená jako [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd), aplikace nemusí obsahovat nejnovější aktualizace zabezpečení pro .NET Core. Pokud není zadána verze, sady SDK do samostatná nasazení automaticky zahrnout nejnovější verzi aplikace ASP.NET Core.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Obsahuje výchozí kompilace v projektech .NET Core
 

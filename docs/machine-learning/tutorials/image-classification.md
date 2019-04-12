@@ -4,12 +4,12 @@ description: Objevte, jak vytvářet třídění ML.NET vlastní image ve Tensor
 ms.date: 04/05/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 775f26d0e2453a0027f1e54ddc05f51e596ad540
-ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
+ms.openlocfilehash: 9b9ac1f1f15b4003a19a3d30d6cadf3e86946376
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59427510"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517964"
 ---
 # <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow
 
@@ -104,6 +104,7 @@ Používá vaše vrstvy [algoritmu logistické regrese multinomial](https://en.w
 
 Existují dva zdroje dat: `.tsv` souborů a souborů obrázků.  `tags.tsv` Soubor obsahuje dva sloupce: první z nich je definován jako `ImagePath` a druhý je `Label` odpovídající do bitové kopie. Následující příklad souboru nemá řádek záhlaví a vypadá takto:
 
+<!-- markdownlint-disable MD010 -->
 ```tsv
 broccoli.jpg    food
 pizza.jpg   food
@@ -114,6 +115,7 @@ teddy4.jpg  toy
 toaster.jpg appliance
 toaster2.png    appliance
 ```
+<!-- markdownlint-enable MD010 -->
 
 Trénovací a testovací bitové kopie jsou umístěny ve složkách prostředky, které budete stáhnout jako soubor zip. Tyto Image patří do Commons o Wikimedia.
 > *[Commons o Wikimedia](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208), úložiště volných médií.* Načtená 10:48, 17. října 2018 od:  

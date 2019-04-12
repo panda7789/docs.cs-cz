@@ -10,12 +10,12 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: a05b2ce89d17b8de61ba78f925370aa22f463655
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 2e4c40d6c71a254d5f40ea42788608e10c5872a7
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365149"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517171"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
 
@@ -52,8 +52,8 @@ Pokud jeden nebo více vlastností typu entity definované ve službě data nejs
 
 Následující příklad používá anonymní dotaz LINQ, který projekty vlastností souvisejících s adresou `Customers` typ do nového `CustomerAddress` typ, který je definován na straně klienta a atributy retrievable a searchable typ entity:
 
-[!code-csharp[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#selectcustomeraddressspecific)]
-[!code-vb[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#selectcustomeraddressspecific)]
+[!code-csharp[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#selectcustomeraddressspecific)]
+[!code-vb[Astoria Northwind Client#SelectCustomerAddressSpecific](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#selectcustomeraddressspecific)]
 
 V tomto příkladu vzor inicializátoru objektu umožňuje vytvořit novou instanci třídy `CustomerAddress` typ namísto volání konstruktoru. Konstruktory nejsou podporovány při projekci na typy entit, ale je možné použít při projekci na jiné entity a anonymní typy. Protože `CustomerAddress` je typ entity, změny můžou provedené a odesílaných zpět do datové služby.
 
@@ -67,8 +67,8 @@ Následující část popisuje chování při projekci výsledků do entity a no
 
 - Příklad:
 
-   [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithinitializer)]
-   [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithinitializer)]
+   [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithinitializer)]
+   [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithinitializer)]
 
 - Typ entity: Podporováno
 
@@ -78,8 +78,8 @@ Následující část popisuje chování při projekci výsledků do entity a no
 
 - Příklad:
 
-   [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithconstructor)]
-   [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithconstructor)]
+   [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithconstructor)]
+   [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithconstructor)]
 
 - Typ entity: A <xref:System.NotSupportedException> je vyvolána.
 
@@ -89,8 +89,8 @@ Následující část popisuje chování při projekci výsledků do entity a no
 
 - Příklad:
 
-   [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#projectwithtransform)]
-   [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#projectwithtransform)]
+   [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithtransform)]
+   [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithtransform)]
 
 - Typ entity: Tato transformace není podporována pro typy entit, protože to může vést k záměně a potenciálně přepisovat data ve zdroji dat, který patří do jiné entity. A <xref:System.NotSupportedException> je vyvolána.
 

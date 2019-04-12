@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e96f86e516e7b741aa9fbf67efd1683d0845101
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: a785401f0477131e6ebf0e9c04ce6d0b0b4d4f5c
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57488510"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517535"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -69,7 +69,7 @@ Následující možnosti jsou platné pro *.exe*, *.dll*, a *.winmd* soubory pro
 |**/classlist**|Zahrne seznam tříd definovaných v modulu.|
 |**/ vpřed**|Použije dopřednou deklaraci tříd.|
 |**/headers**|Zahrne do výstupu informace z hlavičky souboru.|
-|**/item:** `class`[**::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: (`sig`.|
+|**/item:** `class`[**::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: `(sig`.|
 |**/noil**|Potlačí výstup kódu sestavení jazyka IL.|
 |**Toto**|Vloží statistiky o bitové kopii.|
 |**/typelist**|Vytvoří úplný seznam typů pro zachování řazení typů při přenosu.|

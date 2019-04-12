@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-ms.openlocfilehash: efea92fa5176641ac64265dfffd44a088115bb61
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: dfc08d4623f124a41412907f5a118e8d9ee7833d
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59305933"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517769"
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření klientské aplikace rozhraní .NET Framework (WCF Data Services – rychlý start)
 
@@ -29,7 +29,7 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 4. Otevřete soubor MainWindow.xaml a nahraďte kód XAML následujícím kódem:
 
-     [!code-xaml[Astoria Quickstart Client#Window1Xaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml#window1xaml)]
+     [!code-xaml[Astoria Quickstart Client#Window1Xaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml#window1xaml)]
 
 ## <a name="to-add-a-data-service-reference-to-the-project"></a>Chcete-li přidat odkaz na službu do projektu
 
@@ -49,21 +49,21 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 3. V **Průzkumníka řešení** pod **NorthwindClient**, otevřete stránku kódem pro souboru MainWindow.xaml a přidejte následující `using` – příkaz (`Imports` v jazyce Visual Basic).
 
-     [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#using)]
-     [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#using)]
+     [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_client/cs/window1.xaml.cs#using)]
+     [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml.vb#using)]
 
 3. Vložte následující kód, který se dotazuje služby data a vytvoří výsledek, který má vazbu <xref:System.Data.Services.Client.DataServiceCollection%601> do `MainWindow` třídy:
 
     > [!NOTE]
     > Je třeba nahradit název hostitele `localhost:12345` serveru a port, který je hostitelem vaší instance datová služba Northwind.
 
-     [!code-csharp[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#querycode)]
-     [!code-vb[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#querycode)]
+     [!code-csharp[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_client/cs/window1.xaml.cs#querycode)]
+     [!code-vb[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml.vb#querycode)]
 
 4. Vložte následující kód, který ukládá změny do `MainWindow` třídy:
 
-     [!code-csharp[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart client/cs/window1.xaml.cs#savechanges)]
-     [!code-vb[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart client/vb/window1.xaml.vb#savechanges)]
+     [!code-csharp[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_client/cs/window1.xaml.cs#savechanges)]
+     [!code-vb[Astoria Quickstart Client#SaveChanges](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml.vb#savechanges)]
 
 ## <a name="to-build-and-run-the-northwindclient-application"></a>Sestavte a spusťte aplikaci NorthwindClient
 

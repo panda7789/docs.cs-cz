@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: 82a773623c1941320aa155dd5bd937d318c1238a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: de85a3aca629582e79712b71ae2e3413b919ab28
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59170323"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517236"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binárními daty (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst a aktualizovat binární data ze [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v jednom z následujících způsobů:  
@@ -30,7 +30,7 @@ ms.locfileid: "59170323"
 ## <a name="entity-metadata"></a>Metadata entit  
  Entita, která má související datový proud prostředků je podle metadat datové služby pomocí `HasStream` atribut použitý pro typ entity, která je položka s odkazem na médium. V následujícím příkladu `PhotoInfo` entita je položku media link entry, která má související zdroje média, indikován `HasStream` atribut.  
   
- [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria photo streaming service/xml/photodata.edmx#hasstream)]  
+ [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]  
   
  Zbývající příklady v tomto tématu ukazují, jak získávat přístup a měnit datový proud prostředků média. Úplný příklad toho, jak využívat datový proud prostředku média v klientské aplikaci rozhraní .NET Framework pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, najdete v příspěvku [přístup k Stream zdroj média z klienta](https://go.microsoft.com/fwlink/?LinkID=201637).  
   
@@ -43,14 +43,14 @@ ms.locfileid: "59170323"
 ### <a name="getting-the-uri-of-the-binary-stream"></a>Získání identifikátoru URI binární Stream  
  Při načítání určitých typů prostředků média, jako jsou obrázky a další soubory médií, často je jednodušší použít identifikátor URI prostředku médií ve vaší aplikaci než zpracování samotný datový proud binárních dat. Chcete-li získat identifikátor URI přidružený k položku dávající media link entry datový proud prostředku, musí volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metodu na <xref:System.Data.Services.Client.DataServiceContext> instanci, která se sleduje subjekt. Následující příklad ukazuje, jak volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStreamUri%2A> metodu k získání identifikátoru URI datový proud prostředku média, který se používá k vytvoření nové bitové kopie na straně klienta:  
   
- [!code-csharp[Astoria Photo Streaming Client#GetReadStreamUri](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria photo streaming client/cs/photowindow.xaml.cs#getreadstreamuri)]
- [!code-vb[Astoria Photo Streaming Client#GetReadStreamUri](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria photo streaming client/vb/photowindow.xaml.vb#getreadstreamuri)]  
+ [!code-csharp[Astoria Photo Streaming Client#GetReadStreamUri](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_client/cs/photowindow.xaml.cs#getreadstreamuri)]
+ [!code-vb[Astoria Photo Streaming Client#GetReadStreamUri](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_client/vb/photowindow.xaml.vb#getreadstreamuri)]  
   
 ### <a name="downloading-the-binary-resource-stream"></a>Stažení binárního prostředku Stream  
  Při načítání datového proudu binární prostředek, je nutné volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> instanci, která se ke sledování položka media link entry. Tato metoda odešle požadavek do služby data, která vrací <xref:System.Data.Services.Client.DataServiceStreamResponse> objektu, který obsahuje odkaz na datový proud, který obsahuje prostředek. Tuto metodu použijte, pokud vaše aplikace vyžaduje binární prostředek jako <xref:System.IO.Stream>. Následující příklad ukazuje, jak volat <xref:System.Data.Services.Client.DataServiceContext.GetReadStream%2A> metodu pro načtení datový proud, který se používá k vytvoření nové bitové kopie na straně klienta:  
   
- [!code-csharp[Astoria Streaming Client#GetReadStreamClient](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria streaming client/cs/customerphotowindow.xaml.cs#getreadstreamclient)]
- [!code-vb[Astoria Streaming Client#GetReadStreamClient](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria streaming client/vb/customerphotowindow.xaml.vb#getreadstreamclient)]  
+ [!code-csharp[Astoria Streaming Client#GetReadStreamClient](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_streaming_client/cs/customerphotowindow.xaml.cs#getreadstreamclient)]
+ [!code-vb[Astoria Streaming Client#GetReadStreamClient](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_streaming_client/vb/customerphotowindow.xaml.vb#getreadstreamclient)]  
   
 > [!NOTE]
 >  Datová služba není nastavena hlavička Content-Length ve zprávě s odpovědí, který obsahuje binární datový proud. Tato hodnota nemusí odrážet skutečné délce binární datový proud.  
@@ -58,8 +58,8 @@ ms.locfileid: "59170323"
 ### <a name="uploading-a-media-resource-as-a-stream"></a>Nahrávání mediálního prostředku jako Stream  
  Chcete-li vložit nebo aktualizovat prostředek médií, zavolejte <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> instanci, která se sleduje subjekt. Tato metoda odešle požadavek do služby data, která obsahuje mediální zdroj číst ze zadaného datového proudu. Následující příklad ukazuje, jak volat <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> metodu pro odeslání image do datové služby:  
   
- [!code-csharp[Astoria Photo Streaming Client#SetSaveStream](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria photo streaming client/cs/photodetailswindow.xaml.cs#setsavestream)]
- [!code-vb[Astoria Photo Streaming Client#SetSaveStream](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria photo streaming client/vb/photodetailswindow.xaml.vb#setsavestream)]  
+ [!code-csharp[Astoria Photo Streaming Client#SetSaveStream](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_client/cs/photodetailswindow.xaml.cs#setsavestream)]
+ [!code-vb[Astoria Photo Streaming Client#SetSaveStream](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_client/vb/photodetailswindow.xaml.vb#setsavestream)]  
   
  V tomto příkladu <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> metoda je volána zadáním hodnotu `true` pro `closeStream` parametru. To zaručuje, že <xref:System.Data.Services.Client.DataServiceContext> zavře datový proud po binární data se odešlou do služby data.  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: dc2fc5de591429d76210b1dacf69485bb3b11b2c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 51da86d6c0f565d1baa58452a661ccbaa321538c
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59189076"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517314"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entit a vztahů do formátu XML, které mohou být součástí těla zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Definuje výchozí vlastnost entity mapování mezi elementy Atom a data, která je obsažená v entitách. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
@@ -33,11 +33,11 @@ ms.locfileid: "59189076"
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework  
  Datový model se používá [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] zprostředkovatele je vyjádřena jako kód XML v souboru .edmx. V takovém případě atributy, které definují vlastní informační kanály jsou přidány do `EntityType` a `Property` prvky, které představují typy entit a vlastnosti v datovém modelu. Tyto atributy přizpůsobení informačního kanálu nejsou definovány v [ \[MC CSDL\]: Konceptuální schéma formátu definičních souborů](https://go.microsoft.com/fwlink/?LinkId=159072), což je formát, který [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatel použije k definování datového modelu. Proto je třeba deklarovat informačního kanálu přizpůsobení atributů v oboru názvů konkrétní schématu, která je definována jako `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Následující fragment XML ukazuje informačního kanálu přizpůsobení atributy použité na `Property` prvky `Products` typ entity, které definují `ProductName`, `ReorderLevel`, a `UnitsInStock` vlastnosti.  
   
- [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedattributes)]  
+ [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedattributes)]  
   
  Tyto atributy vytvořit následující vlastní datový kanál pro `Products` sady entit. V přizpůsobené datového kanálu `ProductName` hodnota vlastnosti se zobrazí v obou v `author` elementu a stejně jako `ProductName` element vlastnosti a `UnitsInStock` vlastnost se zobrazí v prvku vlastní má svůj vlastní jedinečný obor názvů a s `ReorderLevel` vlastnosti jako datový typ atributu:  
   
- [!code-xml[Astoria Custom Feeds#EdmFeedResultProduct](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/edmfeedresult.xml#edmfeedresultproduct)]  
+ [!code-xml[Astoria Custom Feeds#EdmFeedResultProduct](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/edmfeedresult.xml#edmfeedresultproduct)]  
   
  Další informace najdete v tématu [jak: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md).  
   
@@ -65,12 +65,12 @@ ms.locfileid: "59189076"
 > [!NOTE]
 >  Datový model v tomto příkladu je definována v tématu [jak: Vytvoření datové služby pomocí zprostředkovatel reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md).  
   
- [!code-csharp[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria custom feeds/cs/orderitems.svc.cs#customorderfeed)]
- [!code-vb[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria custom feeds/vb/orderitems.svc.vb#customorderfeed)]  
+ [!code-csharp[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_custom_feeds/cs/orderitems.svc.cs#customorderfeed)]
+ [!code-vb[Astoria Custom Feeds#CustomOrderFeed](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_custom_feeds/vb/orderitems.svc.vb#customorderfeed)]  
   
  Tyto atributy vytvořit následující vlastní datový kanál pro `Orders` sady entit. V tomto přizpůsobit informační kanál, `OrderId` hodnota vlastnosti se zobrazí pouze v `title` elementu `entry` a `Customer` hodnota vlastnosti se zobrazí v `author` elementu a stejně jako `Customer` property – element:  
   
- [!code-xml[Astoria Custom Feeds#IQueryableFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/iqueryablefeedresult.xml#iqueryablefeedresult)]  
+ [!code-xml[Astoria Custom Feeds#IQueryableFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/iqueryablefeedresult.xml#iqueryablefeedresult)]  
   
  Další informace najdete v tématu [jak: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele reflexe](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md).  
   

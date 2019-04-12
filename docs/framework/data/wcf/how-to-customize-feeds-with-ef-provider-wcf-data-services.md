@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - WCF Data Services, customizing feeds
 ms.assetid: fd16272e-36f2-415e-850e-8a81f2b17525
-ms.openlocfilehash: 38550b3b7d6fd7c6808db174017499ec71685140
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 9770527f41b4981e63d65f27c409b2ce5583d2cc
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59299849"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517210"
 ---
 # <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a>Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje přizpůsobit Atom serializaci v odpovědi služby data tak, aby vlastnosti entity mohou být namapovány na nepoužívané prvky, které jsou definovány v AtomPub protokolu. Toto téma ukazuje, jak definovat atributů mapování pro typy entity v datovém modelu, který je definován v souboru .edmx s použitím poskytovateli rozhraní Entity Framework. Další informace najdete v tématu [přizpůsobení informačního kanálu](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).  
@@ -25,7 +25,7 @@ ms.locfileid: "59299849"
   
 3. Vyhledejte `ConceptualModels` prvku a nahraďte existující `Customers` typ entity s následující element, který obsahuje kanálu přizpůsobení mapování atributů:  
   
-     [!code-xml[Astoria Custom Feeds#EdmFeedCustomers](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/northwind.csdl#edmfeedcustomers)]  
+     [!code-xml[Astoria Custom Feeds#EdmFeedCustomers](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedcustomers)]  
   
 4. Uložte změny a zavřete soubor Northwind.edmx.  
   
@@ -38,7 +38,7 @@ ms.locfileid: "59299849"
 ## <a name="example"></a>Příklad  
  V předchozím příkladu vrátí následující výsledek pro identifikátor URI `http://myservice/Northwind.svc/Customers('ALFKI')`.  
   
- [!code-xml[Astoria Custom Feeds#EdmFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria custom feeds/xml/edmfeedresult.xml#edmfeedresult)]  
+ [!code-xml[Astoria Custom Feeds#EdmFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/edmfeedresult.xml#edmfeedresult)]  
   
 ## <a name="see-also"></a>Viz také:
 

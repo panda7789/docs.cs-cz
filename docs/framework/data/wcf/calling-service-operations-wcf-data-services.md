@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: 5ef00861624531e68ad5b8a3b080810040ae3ff6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: aaee236487fedcb0c5d8ad113391bd628b11bb41
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59109470"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517951"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Operace volání služeb (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operace služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat tyto operace jako metody na datovou službu. Stejně jako ostatní prostředkům datové služby se tak vyřeší tyto operace služby pomocí identifikátorů URI. Operace služby může vrátit kolekce typů entit, instance typu jednu entitu a primitivní typy, jako je například celé číslo a řetězec. Operace služby mohou také vrátit `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
@@ -57,8 +57,8 @@ ms.locfileid: "59109470"
 ### <a name="calling-executet-to-return-a-collection-of-entities"></a>Spustit volání\<T > k vrácení kolekce entit  
  Následující příklad volá operace služby s názvem GetOrdersByCity, která přebírá parametr řetězce `city` a vrátí <xref:System.Linq.IQueryable%601>:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationiqueryable)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationiqueryable)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationiqueryable)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationiqueryable)]  
   
  V tomto příkladu vrácení operace služby kolekce `Order` objekty se související `Order_Detail` objekty.  
   
@@ -66,8 +66,8 @@ ms.locfileid: "59109470"
 ### <a name="using-createqueryt-to-return-a-collection-of-entities"></a>Pomocí CreateQuery\<T > k vrácení kolekce entit  
  V následujícím příkladu <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> se vraťte <xref:System.Data.Services.Client.DataServiceQuery%601> , který slouží k volání stejné operace GetOrdersByCity služby:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationcreatequery)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationcreatequery)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationcreatequery)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationcreatequery)]  
   
  V tomto příkladu <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metoda se používá k přidání parametru do dotazu a <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> metoda se používá k zahrnují souvisejícími Order_Details objekty ve výsledcích.  
   
@@ -75,8 +75,8 @@ ms.locfileid: "59109470"
 ### <a name="calling-executet-to-return-a-single-entity"></a>Spustit volání\<T > k vrácení jedné Entity  
  V následujícím příkladu volání operace služby s názvem GetNewestOrder, který vrátí pouze jednu entitu pořadí:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationsingleentity)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationsingleentity)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleentity)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationsingleentity)]  
   
  V tomto příkladu <xref:System.Linq.Enumerable.FirstOrDefault%2A> metody slouží k vyžádání jenom jedné entitě objednávka na spuštění.  
   
@@ -84,14 +84,14 @@ ms.locfileid: "59109470"
 ### <a name="calling-executet-to-return-a-collection-of-primitive-values"></a>Spustit volání\<T > k vrácení kolekce primitivních hodnot  
  V následujícím příkladu volání operace služby, která vrací kolekci hodnot řetězce:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationEnumString](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationenumstring)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationEnumString](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationenumstring)]  
   
 <a name="ExecutePrimitiveValue"></a>   
 ### <a name="calling-executet-to-return-a-single-primitive-value"></a>Spustit volání\<T > k vrácení jednoho primitivní hodnoty  
  V následujícím příkladu volání operace služby, který vrací jedinou hodnotu řetězce:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationsingleint)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationsingleint)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleint)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationsingleint)]  
   
  Znovu v tomto příkladu <xref:System.Linq.Enumerable.FirstOrDefault%2A> metody slouží k vyžádání pouze jednu celočíselnou hodnotu na spuštění.  
   
@@ -99,8 +99,8 @@ ms.locfileid: "59109470"
 ### <a name="calling-a-service-operation-that-returns-no-data"></a>Volání operace služby, která nevrátí žádná Data  
  V následujícím příkladu volání operace služby, která nevrátí žádná data:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationvoid)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationvoid)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationvoid)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationvoid)]  
   
  Protože data nejsou nevrátí, není přiřazena hodnota provádění. Jediné, co zjistí, která žádost proběhla úspěšně. je to, že žádné <xref:System.Data.Services.Client.DataServiceQueryException> je vyvolána.  
   
@@ -108,21 +108,21 @@ ms.locfileid: "59109470"
 ### <a name="calling-a-service-operation-asynchronously"></a>Asynchronní volání operací služby  
  Operace služby v následujícím příkladu asynchronně volá pomocí volání <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> a <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A>:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationasync)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationasync)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationasync)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationasync)]  
   
- [!code-csharp[Astoria Northwind Client#OnAsyncExecutionComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#onasyncexecutioncomplete)]
- [!code-vb[Astoria Northwind Client#OnAsyncExecutionComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#onasyncexecutioncomplete)]  
+ [!code-csharp[Astoria Northwind Client#OnAsyncExecutionComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#onasyncexecutioncomplete)]
+ [!code-vb[Astoria Northwind Client#OnAsyncExecutionComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#onasyncexecutioncomplete)]  
   
  Vzhledem k tomu, že nebudou vrácena žádná data, není přiřazená hodnota vrácená provádění. Jediné, co zjistí, která žádost proběhla úspěšně. je to, že žádné <xref:System.Data.Services.Client.DataServiceQueryException> je vyvolána.  
   
  Následující příklad asynchronně volá stejné operace služby s použitím <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>:  
   
- [!code-csharp[Astoria Northwind Client#CallServiceOperationQueryAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#callserviceoperationqueryasync)]
- [!code-vb[Astoria Northwind Client#CallServiceOperationQueryAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#callserviceoperationqueryasync)]  
+ [!code-csharp[Astoria Northwind Client#CallServiceOperationQueryAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationqueryasync)]
+ [!code-vb[Astoria Northwind Client#CallServiceOperationQueryAsync](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#callserviceoperationqueryasync)]  
   
- [!code-csharp[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#onasyncqueryexecutioncomplete)]
- [!code-vb[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#onasyncqueryexecutioncomplete)]  
+ [!code-csharp[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#onasyncqueryexecutioncomplete)]
+ [!code-vb[Astoria Northwind Client#OnAsyncQueryExecutionComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#onasyncqueryexecutioncomplete)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,12 +4,12 @@ description: Zjistěte, jak volat nativní funkce prostřednictvím P/Invoke v r
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 9602b9c8649b97a8be1c26a202a0a910a1547877
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 1a5f2f9d13429f84d5b5bb58d36f015004fb746b
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59149692"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517860"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -24,7 +24,7 @@ public class Program {
 
     // Import user32.dll (containing the function we need) and define
     // the method corresponding to the native function.
-    [DllImport("user32.dll")]
+    [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
 
     public static void Main(string[] args) {
@@ -37,7 +37,7 @@ public class Program {
 V předchozím příkladu je jednoduché, ale je předvést, co je potřeba k volání nespravovaných funkcí ze spravovaného kódu. Projděme si příklad:
 
 *   Řádek #1 ukazuje na pomocí příkazu pro `System.Runtime.InteropServices` obor názvů, který obsahuje všechny položky, které jsou potřeba.
-*   Představuje řádek #7 `DllImport` atribut. Tento atribut je zásadní, protože říká modul runtime, že by se měly načíst nespravovaná knihovna DLL. Předaný řetězec je knihovna DLL je náš cíl funkce v.
+*   Představuje řádek #7 `DllImport` atribut. Tento atribut je zásadní, protože říká modul runtime, že by se měly načíst nespravovaná knihovna DLL. Předaný řetězec je knihovna DLL je náš cíl funkce v. Kromě toho určuje, které [znaková sada](./charset.md) pro zařazování řetězce. A konečně, určuje, že tato funkce volá [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) a modul runtime sbíral tento chybový kód tak, že uživatel může načíst ho přes <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
 *   Řádek #8 je jádrem pracovní P/Invoke. Definuje spravované metody, která má **přesně stejnou signaturu** jako nespravovaný. Deklarace má nové klíčové slovo, můžete si všimnete, `extern`, který dává pokyn modulu runtime to je externí metoda a že při vyvolání jeho, modul runtime měl nacházet v knihovny DLL určené v `DllImport` atribut.
 
 Zbývající část v příkladu je právě volání metody, stejně jako jiné spravované metody.

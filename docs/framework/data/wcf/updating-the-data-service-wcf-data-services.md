@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: 5b8fa13bf5db7f3c3df97febe4bb6f9ee4c184a4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 42980aa4691d8ecb9868336ecb270c9ad937b5a3
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59231289"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517106"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, knihovně přeloží položek v informačním kanálu do instancí tříd klientské datové služby. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entity, které sestavy pomocí metod na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožnění spolupráce klienta služby pro sledování přidané a odstraněné entit a také změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny odesílají zpět do datové služby jako operace založené na protokolu REST při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metody.  
@@ -24,33 +24,33 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
 ## <a name="adding-modifying-and-changing-entities"></a>Přidáním, úpravou a změnou entity  
  Při použití **přidat odkaz na službu** dialogového okna v sadě Visual Studio se přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál, výsledný tříd klientské datové služby každý mají statickou *vytvořit* metodu, která má jednu parametr pro každou vlastnost neumožňující entity. Tuto metodu můžete použít k vytvoření instance entity typu třídy, jako v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#createnewproduct)]
- [!code-vb[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#createnewproduct)]  
+ [!code-csharp[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#createnewproduct)]
+ [!code-vb[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#createnewproduct)]  
   
  Chcete-li přidat instanci entity, zavolejte odpovídající *AddTo* metodu na <xref:System.Data.Services.Client.DataServiceContext> třídy generované **přidat odkaz na službu** dialogové okno, jako v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addproductspecific)]
- [!code-vb[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addproductspecific)]  
+ [!code-csharp[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addproductspecific)]
+ [!code-vb[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addproductspecific)]  
   
  Tento postup přidá objekt do kontextu a do sady entit správné. Můžete také volat <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A>, ale místo toho je nutné zadat název sady entit. Pokud Přidání entity obsahuje jeden nebo více relace s jinými entitami, můžete použít <xref:System.Data.Services.Client.DataServiceContext.AddRelatedObject%2A> metoda nebo použijte jednu z výše uvedených metod a také explicitně definovat tyto odkazy. Tyto operace jsou popsány dále v tomto tématu.  
   
  Pokud chcete upravit existující instanci entity, první dotaz pro danou entitu, proveďte požadované změny do jeho vlastnosti a poté zavolejte <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> metodu na <xref:System.Data.Services.Client.DataServiceContext> a informuje klientské knihovny potřebné k odeslání aktualizace pro tento objekt, jak je znázorněno v v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#ModifyCustomerSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#modifycustomerspecific)]
- [!code-vb[Astoria Northwind Client#ModifyCustomerSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#modifycustomerspecific)]  
+ [!code-csharp[Astoria Northwind Client#ModifyCustomerSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#modifycustomerspecific)]
+ [!code-vb[Astoria Northwind Client#ModifyCustomerSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#modifycustomerspecific)]  
   
  Chcete-li odstranit instanci entity, zavolejte <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> metodu <xref:System.Data.Services.Client.DataServiceContext>, jak je znázorněno v následujícím příkladu:  
   
- [!code-csharp[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#deleteproductspecific)]
- [!code-vb[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#deleteproductspecific)]  
+ [!code-csharp[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#deleteproductspecific)]
+ [!code-vb[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#deleteproductspecific)]  
   
  Další informace najdete v tématu [jak: Přidání, úpravy a odstranění entit](../../../../docs/framework/data/wcf/how-to-add-modify-and-delete-entities-wcf-data-services.md).  
   
 ## <a name="attaching-entities"></a>Připojení entit  
  Klientská knihovna umožňuje ukládat aktualizace, které jste provedli s entitou bez první spuštění dotazu načtěte entitu do <xref:System.Data.Services.Client.DataServiceContext>. Použití <xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A> metoda připojit existující objekt na konkrétní entitu, nastavte <xref:System.Data.Services.Client.DataServiceContext>. Můžete upravit objekt a uložte změny do datové služby. V následujícím příkladu je připojen objekt zákazníka, který byl změněn na kontext a poté <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> je volána k označení připojeného objektu jako <xref:System.Data.Services.Client.EntityStates.Modified> před <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> se volá:  
   
- [!code-csharp[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#attachobjectspecific)]
- [!code-vb[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#attachobjectspecific)]  
+ [!code-csharp[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#attachobjectspecific)]
+ [!code-vb[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#attachobjectspecific)]  
   
  Při připojování objekty, platí následující aspekty:  
   
@@ -80,13 +80,13 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
   
  Následující příklad ukazuje způsob použití <xref:System.Data.Services.Client.DataServiceContext.AddRelatedObject%2A> způsob, jak přidat nové `Order_Detail` , která má vztah k existujícímu `Orders` entity. Protože nová `Order_Details` objekt je nyní sledován pomocí funkce <xref:System.Data.Services.Client.DataServiceContext>, vztah tvoření přidaného `Order_Details` objekt ke stávající `Products` voláním je definován entity <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> – metoda:  
   
- [!code-csharp[Astoria Northwind Client#AddOrderDetailToOrderSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#addorderdetailtoorderspecific)]
- [!code-vb[Astoria Northwind Client#AddOrderDetailToOrderSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#addorderdetailtoorderspecific)]  
+ [!code-csharp[Astoria Northwind Client#AddOrderDetailToOrderSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addorderdetailtoorderspecific)]
+ [!code-vb[Astoria Northwind Client#AddOrderDetailToOrderSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addorderdetailtoorderspecific)]  
   
  Zatímco <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> metoda definuje odkazů, které musí vytvořit ve službě data, aby tyto odkazy se projeví v objektech, které jsou v kontextu, musíte taky nastavit vlastnosti navigace na samotných objektech. V předchozím příkladu měli byste nastavit navigační vlastnosti následujícím způsobem:  
   
- [!code-csharp[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#setnavprops)]
- [!code-vb[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#setnavprops)]  
+ [!code-csharp[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#setnavprops)]
+ [!code-vb[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#setnavprops)]  
   
  Další informace najdete v tématu [jak: Definování vztahů mezi entitami](../../../../docs/framework/data/wcf/how-to-define-entity-relationships-wcf-data-services.md).  
   

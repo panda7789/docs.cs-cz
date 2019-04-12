@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 62997821-e0c6-4c4d-9fb7-1273fb5e5d18
-ms.openlocfilehash: b68595285eb5ec06be86c771733f7bb9036c9f21
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: c8df3d57e5a6ff1f0021381db189025719808641
+ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59154970"
+ms.lasthandoff: 04/12/2019
+ms.locfileid: "59517444"
 ---
 # <a name="how-to-execute-data-service-queries-wcf-data-services"></a>Postupy: Provádění dotazů v datové služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje dotazování dat služby z klienta na základě rozhraní .NET Framework aplikace s použitím tříd generované klientské datové služby. Provádění dotazů pomocí jedné z těchto metod:  
@@ -32,20 +32,20 @@ ms.locfileid: "59154970"
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak definovat a spusťte dotaz LINQ, který vrátí všechny `Customers` proti datová služba Northwind.  
   
- [!code-csharp[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomerslinq)]
- [!code-vb[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomerslinq)]  
+ [!code-csharp[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomerslinq)]
+ [!code-vb[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomerslinq)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak použít kontext, který `Add Data Service Reference` Nástroj generuje implicitně spustit dotaz, který vrátí všechny `Customers` proti datová služba Northwind. Identifikátor URI požadované `Customers` sady entit je automaticky určeno kontextu. Dotaz provádí implicitně, když dojde k výčtu.  
   
- [!code-csharp[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomers)]
- [!code-vb[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomers)]  
+ [!code-csharp[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomers)]
+ [!code-vb[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomers)]  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje způsob použití <xref:System.Data.Services.Client.DataServiceContext> explicitně spustit dotaz, který vrátí všechny `Customers` proti datová služba Northwind.  
   
- [!code-csharp[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#getallcustomersexplicit)]
- [!code-vb[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#getallcustomersexplicit)]  
+ [!code-csharp[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomersexplicit)]
+ [!code-vb[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomersexplicit)]  
   
 ## <a name="see-also"></a>Viz také:
 
