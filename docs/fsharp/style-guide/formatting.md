@@ -2,12 +2,12 @@
 title: F#pravidla formátování kódu
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 02/08/2019
-ms.openlocfilehash: 7cbd8e4dd1f58cd974a8a12fc8a8c9ee92c546b4
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: 0a72f96119181650837657afea6ca9d555ce9e5a
+ms.sourcegitcommit: 8080271c246b57f4fb68c28369634bff46843424
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093616"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59553859"
 ---
 # <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
 
@@ -74,7 +74,7 @@ let ( !> ) x f = f x
 let (!>) x f = f x
 ```
 
-Pro všechny vlastní operátor, který začíná `*`, budete muset přidat mezery na začátku definice, aby se zabránilo nejednoznačnosti kompilátoru. Z toho důvodu se doporučuje, jednoduše uzavřete definice všechny operátory s jeden prázdný znak.
+Pro všechny vlastní operátor, který začíná `*` a, který má více než jeden znak, budete muset přidat mezery na začátku definice, aby se zabránilo nejednoznačnosti kompilátoru. Z tohoto důvodu doporučujeme jednoduše uzavřete definice všechny operátory s jeden prázdný znak.
 
 ### <a name="surround-function-parameter-arrows-with-white-space"></a>Funkce šipky parametr prázdnými znaky před a za
 

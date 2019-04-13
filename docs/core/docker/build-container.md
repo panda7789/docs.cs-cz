@@ -4,12 +4,12 @@ description: V tomto kurzu se dozvíte, jak kontejnerizovat aplikace .NET Core s
 ms.date: 04/10/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: b6aacb48d97c6403e2eefe45c2f477cdf64f941e
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
+ms.openlocfilehash: fcbac0e0d17d2481d42e715a7f2790586e31d085
+ms.sourcegitcommit: 8080271c246b57f4fb68c28369634bff46843424
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59518169"
+ms.lasthandoff: 04/13/2019
+ms.locfileid: "59553833"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace .NET Core aplikace
 
@@ -41,11 +41,11 @@ Pokud máte nainstalovaný .NET Core, použijte `dotnet --info` příkaz k urče
 Pokud používáte sadu SDK, která je novější, jako je 3.0, ujistěte se, že, že vaše aplikace bude muset používat sady SDK 2.2. Vytvořte soubor s názvem `global.json` v pracovním adresáři a vložte následující kód json:
 
 ```json
-{                                             
-  "sdk": {                                    
-    "version": "2.2.100"                      
-  }                                           
-}                                             
+{
+  "sdk": {
+    "version": "2.2.100"
+  }
+}
 ```
 
 Soubor uložte. Vynutí přítomnost souboru .NET Core na použití pro všechny verze 2.2 `dotnet` příkaz volat z tohoto adresáře a nižší.
@@ -176,7 +176,6 @@ myimage                                 latest              d51bb4452469        
 
 Všimněte si, že dvě bitové kopie sdílet stejný **ID bitové kopie** hodnotu. Hodnota je mezi obě bitové kopie, protože jediný příkaz v *soubor Dockerfile* byla na základní novou imagí v existující imagi. Přidejme dva příkazy, které *soubor Dockerfile*. Každý příkaz vytvoří novou image vrstvu s poslední příkaz představující obrázek **myimage** úložiště bude odkazovat na.
 
-
 ```dockerfile
 COPY app/bin/Release/netcoreapp2.2/publish/ app/
 
@@ -256,7 +255,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 ### <a name="connect-to-a-container"></a>Připojte se ke kontejneru
 
-Po spuštění kontejneru můžete připojit k němu chcete zobrazit výstup. Použití `docker start` a `docker attach` příkazů spusťte kontejner a náhled výstupního datového proudu. V tomto příkladu <kbd>CTRL + C</kbd> příkaz slouží k oddělení spuštěný kontejner. Ve skutečnosti to může ukončit proces v kontejneru se kontejner zastaví. `--sig-proxy=false` Parametr zajišťuje, že <kbd>CTRL + C</kbd> nezpůsobí ukončení procesu v kontejneru. 
+Po spuštění kontejneru můžete připojit k němu chcete zobrazit výstup. Použití `docker start` a `docker attach` příkazů spusťte kontejner a náhled výstupního datového proudu. V tomto příkladu <kbd>CTRL + C</kbd> příkaz slouží k oddělení spuštěný kontejner. Ve skutečnosti to může ukončit proces v kontejneru se kontejner zastaví. `--sig-proxy=false` Parametr zajišťuje, že <kbd>CTRL + C</kbd> nezpůsobí ukončení procesu v kontejneru.
 
 Chcete-li ověřit, že je stále spuštěna a počítání znovu připojte po odpojení z kontejneru.
 
@@ -322,8 +321,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ### <a name="change-the-entrypoint"></a>Změnit vstupní bod
 
-`docker run` Příkaz také umožňuje upravovat `ENTRYPOINT` příkaz *soubor Dockerfile* a spusťte něco jiného, ale pouze pro tento kontejner. Například použijte následující příkaz pro spuštění `bash` nebo `cmd.exe`. Podle potřeby upravte příkaz. 
-
+`docker run` Příkaz také umožňuje upravovat `ENTRYPOINT` příkaz *soubor Dockerfile* a spusťte něco jiného, ale pouze pro tento kontejner. Například použijte následující příkaz pro spuštění `bash` nebo `cmd.exe`. Podle potřeby upravte příkaz.
 
 #### <a name="windows"></a>Windows
 V tomto příkladu `ENTRYPOINT` se změní na `cmd.exe`. <kbd>CTRL + C</kbd> stisknutí ukončit proces a zastavení kontejneru.
