@@ -4,14 +4,14 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 1c943ac93e629da069b594291cd55a952e18742c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 353e50de65f21930ebe0bef9e239e1e333403676
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464395"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612040"
 ---
-# <a name="domain-events-design-and-implementation"></a>Domény události: návrh a implementace
+# <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
 Používejte události domény o explicitní implementaci vedlejší účinky změn v rámci vaší domény. Jiná slova, a pomocí terminologie DDD používejte události domény o explicitní implementaci vedlejší účinky napříč více agregací. Volitelně můžete pro lepší škálovatelnost a menší dopad na zámků databáze pomocí konečné konzistenci mezi agregací ve stejné doméně.
 
@@ -347,37 +347,37 @@ Jak jsme uvedli, používejte události domény o explicitní implementaci vedle
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Grega Younga:. Co je událost domény?** \
-  [http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
+  <http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/>
 
 - **Jan Stenberg. Události domény a konečné konzistence** \
-  [https://www.infoq.com/news/2015/09/domain-events-consistency](https://www.infoq.com/news/2015/09/domain-events-consistency)
+  <https://www.infoq.com/news/2015/09/domain-events-consistency>
 
 - **Jimmy Bogard. Lepší události modelu domény** \
-  [https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
+  <https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/>
 
 - **Vaughn Vernon. Efektivní návrh agregace část II: Provádění agregací spolupracují** \
   [https://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
 - **Jimmy Bogard. Posílení vaší domény: Domain Events** \
-  [https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)
+  <https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/>
 
 - **ADAM Truong. Příklad události modelu domény** \
-  [https://www.tonytruong.net/domain-events-pattern-example/](https://www.tonytruong.net/domain-events-pattern-example/)
+  <https://www.tonytruong.net/domain-events-pattern-example/>
 
 - **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů** \
-  [http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
+  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 - **Udi Dahan. Události domény – trvat 2** \
-  [http://udidahan.com/2008/08/25/domain-events-take-2/](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
+  <http://udidahan.com/2008/08/25/domain-events-take-2/>
 
 - **Udi Dahan. Události domény – Salvation** \
-  [http://udidahan.com/2009/06/14/domain-events-salvation/](http://udidahan.com/2009/06/14/domain-events-salvation/)
+  <http://udidahan.com/2009/06/14/domain-events-salvation/>
 
 - **Jan Kronquist. Není publikovat události domény, vraťte je!** \
-  [https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
+  <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>
 
 - **De la Torre Cesarovi. Domain Events vs. Integrace událostí v architektur mikroslužeb a DDD** \
-  [https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
+  <https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
 
 >[!div class="step-by-step"]
 >[Předchozí](client-side-validation.md)

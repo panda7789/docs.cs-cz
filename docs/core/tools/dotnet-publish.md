@@ -2,41 +2,47 @@
 title: DotNet příkazu pro publikování
 description: Dotnet publikovat příkaz publikuje do adresáře projektu .NET Core.
 ms.date: 05/29/2018
-ms.openlocfilehash: 40ce31073ee3f6f94e110f3a4e1eeda0c7b2e48d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 24490bd0fbfca65692d7025b5ed2aea659c35473
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559298"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611546"
 ---
 # <a name="dotnet-publish"></a>publikování DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet publish` – Balíčky aplikace a jeho závislosti do složky pro nasazení do hostujícího systému.
 
 ## <a name="synopsis"></a>Souhrn
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
+
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
+
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
     [--version-suffix]
 dotnet publish [-h|--help]
 ```
+
 ---
 
 ## <a name="description"></a>Popis

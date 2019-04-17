@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 7776edd91f73aa6ca74b82ae4d144635bb6c36a4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: cd54861600127191b852e0a966baae6e0fe7914e
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147473"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613873"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
@@ -69,31 +69,31 @@ Obrázek 4 – 11 znázorňuje vztahy mezi různými hostitelích kontejnerů a 
 
 -   **Přehled monitorování v Microsoft Azure**
 
-[https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview)
+<https://docs.microsoft.com/azure/azure-monitor/overview>
 
 -   **Co je Application Insights?**
 
-[https://docs.microsoft.com/azure/application-insights/app-insights-overview](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
+<https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview>
 
 -   **Co je služba Log Analytics?**
 
-[https://docs.microsoft.com/azure/log-analytics/log-analytics-overview](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview)
+<https://docs.microsoft.com/azure/log-analytics/log-analytics-overview>
 
--   **Řešení pro monitorování kontejnerů ve službě Log Analytics**
+-   **Řešení pro monitorování kontejnerů ve službě Azure Monitor**
 
-[https://docs.microsoft.com/azure/log-analytics/log-analytics-containers](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers)
+<https://docs.microsoft.com/azure/azure-monitor/insights/containers>
 
 -   **Přehled služby Azure Monitor**
 
-[https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
+<https://docs.microsoft.com/azure/azure-monitor/overview>
 
 -   **Co je Operations Management Suite (OMS)?**
 
-[https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview)
+<https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview>
 
 -   **Monitorování kontejnerů Windows serveru v Service Fabric pomocí OMS**
 
-[https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver)
+<https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver>
 
 >[!div class="step-by-step"]
 >[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)

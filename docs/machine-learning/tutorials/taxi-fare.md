@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 03/20/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 79b8abd0fb01062900b2ae4e14c02d8844bb6ef9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 49770672ebcff98d8779a888372b5c9f40a55b1d
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59295975"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611806"
 ---
 # <a name="tutorial-predict-prices-using-a-regression-learner-with-mlnet"></a>Kurz: Předvídání cen pomocí learner regrese ML.NET
 
@@ -148,7 +148,7 @@ Jsme prochází dva parametry do `Train` metoda; `MLContext` kontextu (`mlContex
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat.
 
-Načtení dat pomocí `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTextFile metoda](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29). Vrátí <xref:Microsoft.Data.DataView.IDataView>. 
+Načtení dat pomocí `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTextFile metoda](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29). Vrátí <xref:Microsoft.Data.DataView.IDataView>.
 
 Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
@@ -231,6 +231,7 @@ private static void Evaluate(MLContext mlContext, ITransformer model)
 
 }
 ```
+
 `Evaluate` Metoda spustí následující úlohy:
 
 * Načte datovou sadu testů.
@@ -302,12 +303,12 @@ Protože chceme, aby načíst model ze souboru zip jsme předtím uložili, a My
 Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako další řádek `TestSinglePrediction` metody:
 
 [!code-csharp[MakePredictionEngine](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
-  
+
 Tento kurz používá jeden test latence v rámci této třídy. Později můžete přidat další scénáře můžete experimentovat s modelem. Přidat cestu k otestování předpovědi trénovaného modelu nákladů `TestSinglePrediction` metodu tak, že vytvoříte instanci `TaxiTrip`:
 
 [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#23 "Create test data for single prediction")]
 
- Který můžeme použít k predikci tarif založené na jednu instanci data o jízdách taxislužby. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.PredictionEngine%602.Predict%2A> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
+Který můžeme použít k predikci tarif založené na jednu instanci data o jízdách taxislužby. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.PredictionEngine%602.Predict%2A> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
 
 [!code-csharp[Predict](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#24 "Create a prediction of taxi fare")]
 
@@ -322,6 +323,7 @@ Blahopřejeme! Právě jste úspěšně sestaven modelu strojového učení pro 
 ## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
+
 > [!div class="checklist"]
 > * Pochopení problému
 > * Vyberte úlohu odpovídající machine learning
@@ -334,5 +336,6 @@ V tomto kurzu jste se naučili:
 > * Použít model pro předpovědi
 
 Přejděte k dalšímu kurzu, kde Další informace.
+
 > [!div class="nextstepaction"]
-> [Clustering Iris](iris-clustering.md)
+> [Iris clustering](iris-clustering.md)

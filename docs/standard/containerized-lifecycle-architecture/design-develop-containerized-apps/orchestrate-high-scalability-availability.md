@@ -4,12 +4,12 @@ description: Skutečné produkční aplikace muset nasazují a spravují s orche
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 834e0b91a596f489c10e4eb11b0de2b5eaeb9f1c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 148eab941644667c803c5613b8815f50263fc0fb
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466397"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613694"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -115,15 +115,15 @@ Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prost
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Začínáme s Azure Kubernetes Service (AKS)** \
-  [https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)
+  <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>
 
 - **Azure Dev mezery** \
-  [https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces)
+  <https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces>
 
 - **Kubernetes.** Oficiální web. \
-  [https://kubernetes.io/](https://kubernetes.io/)
+  <https://kubernetes.io/>
 
-## <a name="using-azure-service-fabric"></a>Pomocí Azure Service Fabric
+## <a name="using-azure-service-fabric"></a>Použití platformy Azure Service Fabric
 
 Azure Service Fabric nástroji od Microsoftu pro přechod z současném dodávání produktů "pole", které byly obvykle monolitické ve stylu, k zajištění služeb. Prostředí pro sestavování a provoz velkých služeb ve velkém měřítku, jako je například Azure SQL Database, Azure Cosmos DB, Azure Service Bus nebo back-endu asistentky Cortana ve tvaru Service Fabric. Platforma se v čase, jako další a další služby přijal. Co je důležité Service Fabric museli spouštět pouze v Azure, ale také v samostatných nasazeních systému Windows Server.
 

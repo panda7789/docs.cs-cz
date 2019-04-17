@@ -1,17 +1,17 @@
 ---
-title: Architektura Mikroslužeb
+title: Architektura mikroslužeb
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | 30.000 nohou zobrazení architektury Mikroslužeb.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 6a3262c65fb221f3b9e058a581b5dc6bfed92076
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 10d00ddc6255e6897bed3e826becff9aa8397e4e
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465188"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611900"
 ---
-# <a name="microservices-architecture"></a>Architektura Mikroslužeb
+# <a name="microservices-architecture"></a>Architektura mikroslužeb
 
 Jak již název napovídá, architekturu mikroslužeb je takový přístup k sestavení aplikace serveru jako sada malých služeb. To znamená, že architektura mikroslužeb je především orientované do back endu, přestože tento přístup se také používá pro front-endu. Každá služba běží ve vlastním procesu a komunikuje s dalšími procesy pomocí protokolů, jako je například HTTP/HTTPS, protokoly Websocket, nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Každá mikroslužba implementuje konkrétní začátku do konce domény nebo obchodní funkci v rámci určité hranici kontextu a každý musí vyvinout samostatně a možno nasadit nezávisle na sobě. Nakonec každá mikroslužba by měl vlastní jeho související domény datový model a logiku domény (suverenitu a správu decentralizované dat) a můžou vycházet různé technologie úložišť dat (SQL, NoSQL) a různé programovací jazyky.
 
@@ -46,19 +46,19 @@ Z nich jsou pouze první tři zahrnutých nebo zavedené v této příručce. Po
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Mark Russinovich. Mikroslužby: Revoluci aplikací založené na cloudu** \
-  [https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
+  <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
 - **Martina Fowlera. Mikroslužby** \
-  [https://www.martinfowler.com/articles/microservices.html](https://www.martinfowler.com/articles/microservices.html)
+  <https://www.martinfowler.com/articles/microservices.html>
 
 - **Martina Fowlera. Požadavky na Mikroslužbách** \
-  [https://martinfowler.com/bliki/MicroservicePrerequisites.html](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+  <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
 - **Jimmy Nilsson. Spojí Cloud computingu** \
-  [https://www.infoq.com/articles/CCC-Jimmy-Nilsson](https://www.infoq.com/articles/CCC-Jimmy-Nilsson)
+  <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
 - **De la Torre Cesarovi. Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha) \
-  [https://aka.ms/dockerlifecycleebook](https://aka.ms/dockerlifecycleebook)
+  <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]
 >[Předchozí](service-oriented-architecture.md)

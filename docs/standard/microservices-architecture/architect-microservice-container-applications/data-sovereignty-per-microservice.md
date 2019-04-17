@@ -4,12 +4,12 @@ description: Svrchovanost dat v jednotlivých mikroslužeb je jedním z nastaven
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 8db5e4ae8e0da63493a09c76614d898358bdea98
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 1b0b1fbb72f759eb337c0c1a9c465cc4088d8eff
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464032"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611234"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Svrchovanost dat v jednotlivých mikroslužbách
 
@@ -50,16 +50,16 @@ DDD těží z mikroslužeb tím, že získáme skutečné hranice ve formě dist
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Chris Richardson. Vzor: Databáze na službu** \
-  [https://microservices.io/patterns/data/database-per-service.html](https://microservices.io/patterns/data/database-per-service.html)
+  <https://microservices.io/patterns/data/database-per-service.html>
 
 - **Martina Fowlera. BoundedContext** \
-  [https://martinfowler.com/bliki/BoundedContext.html](https://martinfowler.com/bliki/BoundedContext.html)
+  <https://martinfowler.com/bliki/BoundedContext.html>
 
 - **Martina Fowlera. PolyglotPersistence** \
-  [https://martinfowler.com/bliki/PolyglotPersistence.html](https://martinfowler.com/bliki/PolyglotPersistence.html)
+  <https://martinfowler.com/bliki/PolyglotPersistence.html>
 
 - **Alberto Brandolini. Návrh s použitím kontextu mapování na základě strategické domény** \
-  [https://www.infoq.com/articles/ddd-contextmapping](https://www.infoq.com/articles/ddd-contextmapping)
+  <https://www.infoq.com/articles/ddd-contextmapping>
 
 >[!div class="step-by-step"]
 >[Předchozí](microservices-architecture.md)

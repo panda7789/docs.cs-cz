@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a ko
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 8cadfc99a4c3d32e24d4a44e8cf4ce17a2ba7a07
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 600c47b6b0ccaf704c8e7b638c759e990acaaacf
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677549"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611416"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do azure
 
@@ -108,23 +108,23 @@ Zjistěte, jak migrovat databáze s využitím Azure Database Migration Service,
 
 - **Volba cloudového řešení systému SQL Server: Azure SQL Database (PaaS) nebo SQL Server na virtuálním počítači Azure (IaaS)**
 
-    [https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)
+    <https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas>
 
 - **Na cloud rychleji s využitím Azure SQL DB mi a Database Migration Service**
 
-    [https://channel9.msdn.com/Events/Build/2017/P4008](https://channel9.msdn.com/Events/Build/2017/P4008)
+    <https://channel9.msdn.com/Events/Build/2017/P4008>
 
 - **Migrace databáze SQL serveru do služby SQL Database v cloudu**
 
-    [https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate)
+    <https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate>
 
 - **Azure SQL Database**
 
-    [https://azure.microsoft.com/services/sql-database/?v=16.50](https://azure.microsoft.com/services/sql-database/?v=16.50)
+    <https://azure.microsoft.com/services/sql-database/?v=16.50>
 
 - **SQL Server na virtuálních počítačích**
 
-    [https://azure.microsoft.com/services/virtual-machines/sql-server/](https://azure.microsoft.com/services/virtual-machines/sql-server/)
+    <https://azure.microsoft.com/services/virtual-machines/sql-server/>
 
 > [!div class="step-by-step"]
 > [Předchozí](lift-and-shift-existing-apps-azure-iaas.md)

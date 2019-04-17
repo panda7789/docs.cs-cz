@@ -1,15 +1,15 @@
 ---
-title: Návrh aplikační vrstvy mikroslužby a webové rozhraní API
+title: Návrh aplikační vrstvy a webového rozhraní API mikroslužby
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Stručný zmínka SOLID principů návrhu aplikační vrstvu.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 4a6a7faac6d0419d88e613ca23d9862475659918
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 9177ac9a79afaea01f0ec21b0a64bad5a94e9966
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464200"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612235"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužby a webové rozhraní API
 
@@ -38,13 +38,13 @@ By to obnášelo jiného průvodce k podrobně zahrnovat PLNÝ. Proto tato pří
 #### <a name="additional-resources"></a>Další zdroje
 
 - **PLNÁ: Základní OOP zásady** \
-  [https://deviq.com/solid/](https://deviq.com/solid/)
+  <https://deviq.com/solid/>
 
 - **Inverze – kontejnery ovládacích prvků a vzor injektáž závislostí** \
-  [https://martinfowler.com/articles/injection.html](https://martinfowler.com/articles/injection.html)
+  <https://martinfowler.com/articles/injection.html>
 
 - **Steve Smith. Je nový spojovací** \
-  [https://ardalis.com/new-is-glue](https://ardalis.com/new-is-glue)
+  <https://ardalis.com/new-is-glue>
 
 > [!div class="step-by-step"]
 > [Předchozí](nosql-database-persistence-infrastructure.md)

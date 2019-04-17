@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 07ed5ba4650eea72f29d254accaaaea5208b1129
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 851068b511106157a759a0600c404b4d1154e5ee
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465942"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613627"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
@@ -314,31 +314,31 @@ services:
 #### <a name="additional-resources"></a>Další zdroje
 
 - **Modelování dat dokumentů databází NoSQL** \
-  [https://docs.microsoft.com/azure/cosmos-db/modeling-data](https://docs.microsoft.com/azure/cosmos-db/modeling-data)
+  <https://docs.microsoft.com/azure/cosmos-db/modeling-data>
 
 - **Vaughn Vernon. Ideální řízeného doménou návrhu agregace Store?** \
   <https://kalele.io/blog-posts/the-ideal-domain-driven-design-aggregate-store/>
 
 - **Úvod do služby Azure Cosmos DB: Rozhraní API pro MongoDB**  \
-  [https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
+  <https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction>
 
 - **Azure Cosmos DB: Vytvoření webové aplikace MongoDB API s využitím .NET a webu Azure portal**  \
   [https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet )
 
 - **Pro místní vývoj a testování používat emulátor služby Azure Cosmos DB**  \
-  [https://docs.microsoft.com/azure/cosmos-db/local-emulator](https://docs.microsoft.com/azure/cosmos-db/local-emulator)
+  <https://docs.microsoft.com/azure/cosmos-db/local-emulator>
 
 - **Připojení aplikace MongoDB ke službě Azure Cosmos DB**  \
-  [https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account)
+  <https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account>
 
 - **Image Dockeru emulátor Cosmos DB (kontejner Windows)**  \
-  [https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
+  <https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/>
 
 - **Image Dockeru MongoDB (Linux a Windows Container)**  \
-  [https://hub.docker.com/r/_/mongo/](https://hub.docker.com/r/_/mongo/)
+  <https://hub.docker.com/\_/mongo/>
 
 - **Použití MongoChef (Studio 3T) s Azure Cosmos DB: Rozhraní API pro účet MongoDB**  \
-  [https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef](https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef)
+  <https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef>
 
 >[!div class="step-by-step"]
 >[Předchozí](infrastructure-persistence-layer-implemenation-entity-framework-core.md)

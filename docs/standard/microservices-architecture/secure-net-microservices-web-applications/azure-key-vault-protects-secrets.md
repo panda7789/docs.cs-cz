@@ -1,15 +1,15 @@
 ---
-title: Pomocí služby Azure Key Vault k ochraně tajných kódů při produkci
+title: Ochrana tajných kódů při produkci pomocí Azure Key Vault
 description: Zabezpečení v rozhraní .NET Mikroslužeb a webových aplikací – Azure Key Vault je vynikající způsob, jak zpracovat tajných klíčů aplikací, které jsou zcela řídí ji správci. Správci můžou i přiřazení a odvolávat hodnoty vývoj bez vývojáře s jejich zpracování.
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 99049dca3d127f82ba5312c94d5246940bb71ba8
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 6addede70ddee3168d4612aab80b0edd28e804c6
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466124"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613769"
 ---
 # <a name="use-azure-key-vault-to-protect-secrets-at-production-time"></a>Použití Azure Key Vault k ochraně tajných kódů při produkci
 
@@ -50,7 +50,7 @@ Tajné kódy uložené jako proměnné prostředí nebo neukládá nástroj tajn
   [https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings](/aspnet/core/security/data-protection/configuration/default-settings)
 
 - **Microsoft.Extensions.Configuration.KeyPerFile** úložiště GitHub. \
-  [https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile](https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile)
+  <https://github.com/aspnet/Configuration/tree/master/src/Config.KeyPerFile>
 
 >[!div class="step-by-step"]
 >[Předchozí](developer-app-secrets-storage.md)

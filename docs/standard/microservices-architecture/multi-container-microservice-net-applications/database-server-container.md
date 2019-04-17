@@ -1,17 +1,17 @@
 ---
-title: Použití databázového serveru běžícího jako kontejner
+title: Použití databázového serveru, který se používá jako kontejner
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Použití databázového serveru běžícího jako kontejner? pouze pro vývoj! Zjistěte, proč.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 2adc58339012095c9dc58d633a9b3815cf7aba3f
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: c993f962d84ca3fc859ab704489300192536ee74
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463342"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611273"
 ---
-# <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru běžícího jako kontejner
+# <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru, který se používá jako kontejner
 
 Pravidelné samostatných serverů v místních clusterech nebo na služby modelu PaaS v cloudu jako Azure SQL DB může mít vaše databáze (SQL Server, PostgreSQL, MySQL atd.). Ale pro vývojová a testovací prostředí s databází systémem jako kontejnery je vhodné, protože nemáte žádné externí závislosti, jednoduše `docker-compose up` příkaz spustí celou aplikaci. Tyto databáze jako kontejnery je také skvěle hodí pro integrační testy, protože databáze je spuštěn v kontejneru a je vždy naplněný stejná vzorová data, tak testů může být předvídatelnější.
 
@@ -48,10 +48,10 @@ S SQL serveru běžícího jako kontejner není právě užitečná pro ukázku 
 #### <a name="additional-resources"></a>Další zdroje
 
 - **Spuštění image SQL serveru Docker v Linuxu, Mac nebo Windows** \
-    [https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
+    [https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker](/sql/linux/sql-server-linux-setup-docker)
 
 - **Připojení a dotazování SQL serveru v Linuxu pomocí sqlcmd** \
-    [https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
+    [https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd](/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
 
 ### <a name="seeding-with-test-data-on-web-application-startup"></a>Předvyplnění daty testu při spuštění webové aplikace
 
@@ -165,7 +165,7 @@ Při spuštění Redis v produkčním prostředí, je však lepší vyhledejte �
 
 Redis poskytuje image Dockeru s využitím Redis. Tento image je k dispozici z Docker Hubu na této adrese URL:
 
-[https://hub.docker.com/_/redis/](https://hub.docker.com/_/redis/)
+<https://hub.docker.com/\_/redis/>
 
 Kontejner Dockeru Redis můžete spustit přímo spuštěním následujícího příkazu rozhraní příkazového řádku Dockeru v příkazovém řádku:
 

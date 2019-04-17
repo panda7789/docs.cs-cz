@@ -1,15 +1,15 @@
 ---
-title: Implementace brány rozhraní API s Ocelot
+title: Implementace bran rozhraní API s Ocelotem
 description: Zjistěte, jak implementovat brány rozhraní API s Ocelot a použití Ocelot v prostředí založené na kontejnerech.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: b7ef0e7a172337f32f625bd65261b6577decd223
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 5d4f2a3b2551f8da83359b26578d45559721f7df
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464538"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613717"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace brány rozhraní API s Ocelot
 
@@ -85,6 +85,7 @@ public async Task<IActionResult> GetItemById(int id)
     return NotFound();
 }
 ```
+
 Požadavek protokolu HTTP bude uplatněna, který druh C# kód přístup k databázi mikroslužby a další požadované akce.
 
 Týkající se adresy URL mikroslužeb při kontejnery se nasazují do vašeho místního vývojového počítače (místního hostitele Dockeru), jednotlivých mikroslužeb kontejner má vždy interní port (obvykle port 80) zadaný v jeho souboru dockerfile, stejně jako v následujícím souboru dockerfile:
@@ -564,16 +565,16 @@ V souborech zdrojového kódu aplikaci eShopOnContainers, původní soubory "con
 Existují další důležité funkce pro výzkum a použít, při použití brány rozhraní API Ocelot popsané v následujících odkazů.
 
 - **Zjišťování služby na straně klienta Ocelot integrování konzul nebo Eureka** \
-  [https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html](https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
+  <https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html>
 
 - **Ukládání do mezipaměti na úrovni rozhraní API brány** \
-  [https://ocelot.readthedocs.io/en/latest/features/caching.html](https://ocelot.readthedocs.io/en/latest/features/caching.html)
+  <https://ocelot.readthedocs.io/en/latest/features/caching.html>
 
 - **Protokolování na úrovni rozhraní API brány** \
-  [https://ocelot.readthedocs.io/en/latest/features/logging.html](https://ocelot.readthedocs.io/en/latest/features/logging.html)
+  <https://ocelot.readthedocs.io/en/latest/features/logging.html>
 
 - **Kvalita služby (opakovaných pokusů a jističe) na úrovni rozhraní API brány** \
-  [https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html](https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html)
+  <https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html>
 
 - **Omezení četnosti** \
   [https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html](https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html )

@@ -1,17 +1,17 @@
 ---
-title: Kontraktů a kontraktů mikroslužeb vytváření, vývoj a správa verzí rozhraní API
+title: Vytváření, vývoj a správa verzí rozhraní API a kontraktů mikroslužeb
 description: Vytváření mikroslužeb rozhraní API a kontraktů zvažujete vývoj a správu verzí, protože změní.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 6580418ea04d64650cefe2f4c91f03e3f40a058f
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: f42de3895f7f9affe09891fd89621fbb414313e9
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466046"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612105"
 ---
-# <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Kontraktů a kontraktů mikroslužeb vytváření, vývoj a správa verzí rozhraní API
+# <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Vytváření, vývoj a správa verzí rozhraní API a kontraktů mikroslužeb
 
 Mikroslužba rozhraní API je kontrakt mezi službou a klienty. Budete moct vyvíjet mikroslužby nezávisle na sobě jenom v případě, že nedojde k narušení jeho kontrakt rozhraní API, který je důvod, proč je proto důležité kontrakt. Pokud změníte kontrakt, bude to mít vliv klientských aplikací nebo brány rozhraní API.
 
@@ -28,13 +28,13 @@ Nakonec, pokud používáte s architekturou REST [Hypermédia](https://www.infoq
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Scott Hanselman. Správa verzí RESTful webového rozhraní API ASP.NET Core snadné** \
-  [https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
+  <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
 - **Správa verzí RESTful webového rozhraní API** \
-  [https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+  <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
 - **Roy Fielding. Správa verzí, Hypermédia a REST** \
-  [https://www.infoq.com/articles/roy-fielding-on-versioning](https://www.infoq.com/articles/roy-fielding-on-versioning)
+  <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 >[!div class="step-by-step"]
 >[Předchozí](asynchronous-message-based-communication.md)

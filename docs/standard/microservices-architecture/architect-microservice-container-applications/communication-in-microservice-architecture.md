@@ -4,12 +4,12 @@ description: Prozkoumejte různé způsoby komunikace mezi mikroslužbami vysvě
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 4b57607897e42ff68ff7566120bc3c932040a2a6
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 364bd4eb82907fcf0fbcc850eca839f676a2dbf8
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466189"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613236"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Komunikace v architektuře mikroslužeb
 
@@ -90,10 +90,10 @@ Při použití jako jazyk definice rozhraní HTTP REST služby je další hodnot
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Martina Fowlera. Model vyspělosti Richardson** popis modelu REST. \
-  [https://martinfowler.com/articles/richardsonMaturityModel.html](https://martinfowler.com/articles/richardsonMaturityModel.html)
+  <https://martinfowler.com/articles/richardsonMaturityModel.html>
 
 - **Swagger** oficiální web. \
-  [https://swagger.io/](https://swagger.io/)
+  <https://swagger.io/>
 
 ### <a name="push-and-real-time-communication-based-on-http"></a>Nabízená oznámení a komunikaci v reálném čase, které jsou založené na protokolu HTTP
 

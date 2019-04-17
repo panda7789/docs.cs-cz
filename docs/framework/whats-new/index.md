@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22f6c6827b2574ba887839f749df8fc7ae6605ea
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: d67626a72e04cd1163e749339d8d5fac22959a3a
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59328631"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613756"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -23,7 +23,7 @@ Tento článek shrnuje hlavní nové funkce a vylepšení v následujících ver
 
 - [.NET Framework 4.7.2](#v472)
 - [.NET Framework 4.7.1](#v471)
-- [Rozhraní .NET framework 4.7](#v47)
+- [.NET Framework 4.7](#v47)
 - [.NET Framework 4.6.2](#v462)
 - [.NET Framework 4.6.1](#v461)
 - [.NET 2015 a .NET Framework 4.6](#v46)
@@ -60,7 +60,7 @@ Rozhraní .NET Framework 4.7.2 obsahuje nové funkce v následujících oblastec
 
 - [Jádro](#core-472)
 - [ASP.NET](#asp-net472)
-- [Síťové služby](#net472)
+- [Sítě](#net472)
 - [SQL](#sql472)
 - [WPF](#wpf472)
 - [ClickOnce](#clickonce)
@@ -93,7 +93,9 @@ Using rsa = RSA.Create()
    ' Other code to execute using the rsa instance.
 End Using
 ```
+
 s kódem takto:
+
 ```csharp
 // Starting with .NET Framework 4.7.2
 using (RSA rsa = RSA.Create(rsaParameters))
@@ -101,6 +103,7 @@ using (RSA rsa = RSA.Create(rsaParameters))
    // Other code to execute using the rsa instance.
 }
 ```
+
 ```vb
 ' Starting with .NET Framework 4.7.2
 Using rsa = RSA.Create(rsaParameters)
@@ -266,6 +269,7 @@ c.SameSite = SameSiteMode.Lax;
 Dim c As New HttpCookie("secureCookie", "same origin")
 c.SameSite = SameSiteMode.Lax
 ```
+
 SameSite soubory cookie na úrovni aplikace můžete taky nakonfigurovat úpravou souboru web.config:
 
 ```xml
@@ -273,6 +277,7 @@ SameSite soubory cookie na úrovni aplikace můžete taky nakonfigurovat úpravo
    <httpCookies sameSite="Strict" />
 </system.web>
 ```
+
 Můžete přidat SameSite pro <xref:System.Web.Security.FormsAuthentication> a <xref:System.Web.SessionState> soubory cookie úpravou souboru webové konfigurace:
 
 ```xml
@@ -434,7 +439,7 @@ Rozhraní .NET Framework 4.7.1 obsahuje nové funkce v následujících oblastec
 
 - [Jádro](#core471)
 - [Common language runtime (CLR)](#clr)
-- [Síťové služby](#net471)
+- [Sítě](#net471)
 - [ASP.NET](#asp-net471)
 
 Kromě toho je hlavní fokus v rozhraní .NET Framework 4.7.1 vylepšené přístupnosti, které umožňuje aplikaci poskytovat vhodné prostředí pro uživatele technologie pro usnadnění. Informace o vylepšení přístupnosti v rozhraní .NET Framework 4.7.1 najdete v tématu [co je nového v usnadnění přístupu v rozhraní .NET Framework](whats-new-in-accessibility.md).
@@ -516,7 +521,7 @@ V rozhraní .NET Framework 4.7 a dřívějších verzích technologie ASP.NET po
 Rozhraní .NET Framework 4.7 obsahuje nové funkce v následujících oblastech:
 
 - [Jádro](#Core47)
-- [Síťové služby](#net47)
+- [Sítě](#net47)
 - [ASP.NET](#ASP-NET47)
 - [Windows Communication Foundation (WCF)](#wcf47)
 - [Windows Forms](#wf47)
@@ -1036,8 +1041,7 @@ V [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], vylepšili jsme Window
 
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], WF podporuje výrazy jazyka C# v obou Návrhář Visual Studio a v pracovních postupech kódu. Návrháři pracovních postupů Re-hosted je klíčovou funkcí služby pracovního postupu, který umožňuje pro návrháře postupu provádění v aplikaci mimo sadu Visual Studio (například v WPF).  Windows Workflow Foundation umožňuje podporu v Návrháři pracovních postupů Re-hosted výrazy jazyka C# a technologii IntelliSense. Další informace najdete v tématu [blogu Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
 
-`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio`
-Ve verzích rozhraní .NET Framework starších než [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio nefunguje technologie IntelliSense Návrháře pracovního postupu. Při sestavení projektu je úspěšné, typy pracovních postupů nebyly nalezeny v návrháři, a upozornění z technologie IntelliSense pro chybějící typy pracovních postupů ve **seznam chyb** okna. [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] Řeší tento problém a zpřístupňuje technologii IntelliSense.
+`Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` Ve verzích rozhraní .NET Framework starších než [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio nefunguje technologie IntelliSense Návrháře pracovního postupu. Při sestavení projektu je úspěšné, typy pracovních postupů nebyly nalezeny v návrháři, a upozornění z technologie IntelliSense pro chybějící typy pracovních postupů ve **seznam chyb** okna. [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] Řeší tento problém a zpřístupňuje technologii IntelliSense.
 
 **Spustit pracovní postup aplikace V1 sledování pracovního postupu na chvíli v režimu FIPS**
 
@@ -1147,7 +1151,7 @@ SqlClient teď automaticky poskytuje rychlejší připojení do dostupnosti skup
 
 Windows Presentation Foundation obsahuje několik vylepšení a změny.
 
-**Vyšší výkon**
+**Vylepšení výkonu**
 
 Zpoždění při aktivaci touch událostí chyba byla opravena v [!INCLUDE[net_v461](../../../includes/net-v461-md.md)]. Kromě toho, že zadáte <xref:System.Windows.Controls.RichTextBox> ovládací prvek již blokuje rendrovacím vlákně během rychlý vstup.
 
@@ -1528,7 +1532,7 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
      Výchozí hodnota je `false`.
 
-- **Síťové služby**
+- **Sítě**
 
     - **Opětovné použití soketů**
 
@@ -1609,12 +1613,12 @@ Představuje .NET 2015 [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a .N
 
     - Nahraďte <xref:System.Transactions.IPromotableSinglePhaseNotification> s <xref:System.Transactions.ISinglePhaseNotification>, což je trvalý zařazení, která podporuje jedna fáze potvrzení.
 
-     To lze provést v rámci stejné aplikační doméně a nevyžaduje žádné další nespravovaného kódu pro interakci s MSDTC k provedení povýšení. Novou metodu lze volat pouze v případě, že je počet volání z <xref:System.Transactions?displayProperty=nameWithType> k <xref:System.Transactions.IPromotableSinglePhaseNotification>`Promote` metodu, která je implementována pomocí zařazení možné zařazení.
+     To lze provést v rámci stejné aplikační doméně a nevyžaduje žádné další nespravovaného kódu pro interakci s MSDTC k provedení povýšení. Novou metodu lze volat pouze v případě, že je počet volání z <xref:System.Transactions?displayProperty=nameWithType> k <xref:System.Transactions.IPromotableSinglePhaseNotification> `Promote` metodu, která je implementována pomocí zařazení možné zařazení.
 
 - **Vylepšení profilování.** Následující nové nespravované profilování rozhraní API poskytuje robustnější profilování:
 
-    - [Struktura COR_PRF_ASSEMBLY_REFERENCE_INFO](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
-    - [Výčet COR_PRF_HIGH_MONITOR](../unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
+    - [COR_PRF_ASSEMBLY_REFERENCE_INFO – struktura](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
+    - [COR_PRF_HIGH_MONITOR – výčet](../unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
     - [GetAssemblyReferences – metoda](../unmanaged-api/profiling/icorprofilercallback6-getassemblyreferences-method.md)
     - [GetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md)
     - [SetEventMask2 – metoda](../unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
@@ -1939,6 +1943,6 @@ Knihovny přenosných tříd projektu v sadě Visual Studio 2012 (a novějších
 
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v usnadnění přístupu v rozhraní .NET Framework](whats-new-in-accessibility.md)
-- [Novinky v sadě Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
+- [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)
 - [ASP.NET](/aspnet)
 - [Co je nového v jazyce Visual C++](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

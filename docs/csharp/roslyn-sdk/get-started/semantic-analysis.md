@@ -3,12 +3,12 @@ title: Začínáme s sémantická analýza
 description: Tento kurz obsahuje přehled práce s sémantické analýzy pomocí sady .NET SDK kompilátoru.
 ms.date: 02/06/2018
 ms.custom: mvc
-ms.openlocfilehash: dac733cba1d60a1bd24f5308717f4933cd620319
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.openlocfilehash: 188104c3430b4ca32578cd35d3e161a6eb0e0e1a
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760050"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611741"
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantická analýza
 
@@ -56,7 +56,7 @@ V dalším kroku sestavení <xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilatio
 
 [!code-csharp[Create the compilation](../../../../samples/csharp/roslyn-sdk/SemanticQuickStart/Program.cs#3 "Create the compilation for the semantic model")]
 
-<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> Metoda přidá odkazy na sestavení. <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile%2A?displayProperty=nameWithType> Metoda načte sestavení jako odkaz. 
+<xref:Microsoft.CodeAnalysis.CSharp.CSharpCompilation.AddReferences%2A?displayProperty=nameWithType> Metoda přidá odkazy na sestavení. <xref:Microsoft.CodeAnalysis.MetadataReference.CreateFromFile%2A?displayProperty=nameWithType> Metoda načte sestavení jako odkaz.
 
 ## <a name="querying-the-semantic-model"></a>Dotazování sémantického modelu
 
@@ -159,4 +159,5 @@ Intern
 IsInterned
 Press any key to continue . . .
 ```
+
 Rozhraní API pro sémantické jste použili k vyhledání a zobrazení informací o symbolech, které jsou součástí tohoto programu.

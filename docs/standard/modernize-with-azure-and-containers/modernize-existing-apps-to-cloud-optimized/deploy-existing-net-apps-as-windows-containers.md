@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/29/2018
-ms.openlocfilehash: 9d84924317e7c6e3dd4386f851ee902e2b5a7caf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: ad0da9f7f0412c14b5362e3f631a7aa4af1f8260
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59216662"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611247"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -125,15 +125,15 @@ Spouštění kontejneru na Windows s nebo bez izolace Hyper-V je za běhu rozhod
 
 -   **Dokumentace ke službě kontejnery Windows**
 
-    [https://docs.microsoft.com/virtualization/windowscontainers/](https://docs.microsoft.com/virtualization/windowscontainers/)
+    <https://docs.microsoft.com/virtualization/windowscontainers/>
 
 -   **Základy kontejnery Windows**
 
-    [https://docs.microsoft.com/virtualization/windowscontainers/about/](https://docs.microsoft.com/virtualization/windowscontainers/about/)
+    <https://docs.microsoft.com/virtualization/windowscontainers/about/>
 
 -   **Infografika: Microsoft a kontejnery**
 
-    [https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf](https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf)
+    <https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf>
 
 ## <a name="the-container-ecosystem-in-azure"></a>Ekosystém kontejneru v Azure
 
@@ -156,7 +156,7 @@ Produkty v podpůrných kontejnery služby Azure, které jsou ve stejnou dobu v�
 -   **Azure App Service**
 -   **Azure Kubernetes Service (AKS a ACS)**
 -   **Azure Service Fabric** 
--   **Služba Azure Batch** 
+-   **Azure Batch** 
 
 Azure Container Registry je vysoce škálovatelná kontejneru registru hostované v Azure, které můžete použít ze všech předchozích produktů při registrací a nasazením vlastního kontejneru obrázků.
 

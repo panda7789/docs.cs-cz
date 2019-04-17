@@ -1,15 +1,15 @@
 ---
-title: Implementace opakování volání HTTP pomocí exponenciálního omezení rychlosti pomocí knihovny Polly
+title: Implementace opakovaných volání HTTP s exponenciálním zpomalováním s knihovnou Polly
 description: Zjistěte, jak pro zpracování chyb HTTP pomocí knihovny Polly a HttpClientFactory.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 07333b84896c223f076e9c36cc90ab7ea7ac37c7
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: d031ca9b7c46f02cd9e22ae91fb20f281ebb47a2
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465721"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612054"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakování volání HTTP pomocí exponenciálního omezení rychlosti zásadám HttpClientFactory a Polly
 
@@ -75,13 +75,13 @@ Policy
   [https://docs.microsoft.com/azure/architecture/patterns/retry](/azure/architecture/patterns/retry)
 
 - **Polly a HttpClientFactory**\
-  [https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)
+  <https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory>
 
 - **Polly (.NET odolnosti a zpracování chyb přechodná knihovny)**\
-  [https://github.com/App-vNext/Polly](https://github.com/App-vNext/Polly)
+  <https://github.com/App-vNext/Polly>
 
 - **Marc Brooker. Zpoždění: Provedení akce lépe s náhodnost**\
-  [https://brooker.co.za/blog/2015/03/21/backoff.html](https://brooker.co.za/blog/2015/03/21/backoff.html)
+  <https://brooker.co.za/blog/2015/03/21/backoff.html>
 
 >[!div class="step-by-step"]
 >[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)

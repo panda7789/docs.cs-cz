@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb je pouze pro back-endu. Podívejte se na 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: b481a76052efdd1ce0da406732230d41701ac354
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 8a2cdf2569f4333dc3ba71b3492d21197ff006ad
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464837"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612417"
 ---
 # <a name="creating-composite-ui-based-on-microservices"></a>Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách
 
@@ -42,19 +42,19 @@ Ale doporučujeme vám použít následující odkazy na další informace o slo
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Složeného uživatelského rozhraní pomocí technologie ASP.NET (zejména na seminář)** \
-  [https://github.com/Particular/Workshop/tree/master/demos/asp-net-core](https://github.com/Particular/Workshop/tree/master/demos/asp-net-core)
+  <https://github.com/Particular/Workshop/tree/master/demos/asp-net-core>
 
 - **Ruben Oostinga. Monolitické front-endu v architektuře Mikroslužeb** \
-  [https://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/](https://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/)
+  <https://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/>
 
 - **Mauro Servienti. Tajný kód lépe kompozici uživatelského rozhraní** \
-  [https://particular.net/blog/secret-of-better-ui-composition](https://particular.net/blog/secret-of-better-ui-composition)
+  <https://particular.net/blog/secret-of-better-ui-composition>
 
 - **Viktor Farcic. Včetně Front-End webové součásti do Mikroslužeb** \
-  [https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
+  <https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/>
 
 - **Správa front-endu v architektuře Mikroslužeb** \
-  [https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html](https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
+  <https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html>
 
 >[!div class="step-by-step"]
 >[Předchozí](microservices-addressability-service-registry.md)

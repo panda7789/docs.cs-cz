@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 03/08/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: efa217440ae636422bc8d2bd429f0396d7d28057
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: bdc49f42e520f11ef63de873f0d30d11ba4b2366
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59311094"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612274"
 ---
 # <a name="tutorial-create-a-movie-recommender-with-mlnet"></a>Kurz: Vytvoření doporučené video s ML.NET
 
@@ -161,7 +161,7 @@ public static (IDataView training, IDataView test) LoadData(MLContext mlContext)
 > [!NOTE]
 > Tato metoda vám poskytne chybu dokud nepřidáte příkaz return v následujících krocích.
 
-Inicializace proměnných cesty dat, načtení dat ze souborů CSV a vrátit `Train` a `Test` data jako `IDataView` objekty přidáním následujícího kódu jako další řádek kódu v `LoadData()`:
+Inicializace proměnných cesty dat, načtení dat z \*souborů .csv s daty a vraťte se `Train` a `Test` data jako `IDataView` objekty přidáním následujícího kódu jako další řádek kódu v `LoadData()`:
 
 [!code-csharp[LoadData](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#LoadData "Load data from data paths")]
 
@@ -202,7 +202,7 @@ public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView tra
 > Tato metoda vám poskytne chybu dokud nepřidáte příkaz return v následujících krocích.
 
 Definování transformací dat přidáním následujícího kódu `BuildAndTrainModel()`:
-   
+
 [!code-csharp[DataTransformations](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#DataTransformations "Define data transformations")]
 
 Protože `userId` a `movieId` představují uživatelů a názvy filmů, nikoli skutečné hodnoty, je použít [MapValueToKey()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) metody pro transformaci každého `userId` a každý `movieId` na číselný typ klíče `Feature`sloupec (formát, který přijal algoritmy doporučení) a přidejte je jako nové sloupce datové sady:
@@ -217,7 +217,7 @@ Zvolte algoritmu strojového učení a přidejte je do definice transformace dat
 
 [!code-csharp[AddAlgorithm](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#AddAlgorithm "Add the training algorithm with options")]
 
-[MatrixFactorizationTrainer](xref:Microsoft.ML.RecommendationCatalog.RecommendationTrainers.MatrixFactorization%28Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options%29) je vaše doporučení cvičení algoritmu.  [Matice Factorization](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems)) je běžný postup k doporučení, když máte data na tom, jak uživatelé ohodnoceni produkty v minulosti se stává třeba u datových sad v tomto kurzu. Existují jiné algoritmy doporučení, když máte k dispozici různé data (naleznete v tématu [jiné algoritmy doporučení](#other-recommendation-algorithms) následující další části). 
+[MatrixFactorizationTrainer](xref:Microsoft.ML.RecommendationCatalog.RecommendationTrainers.MatrixFactorization%28Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options%29) je vaše doporučení cvičení algoritmu.  [Matice Factorization](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems)) je běžný postup k doporučení, když máte data na tom, jak uživatelé ohodnoceni produkty v minulosti se stává třeba u datových sad v tomto kurzu. Existují jiné algoritmy doporučení, když máte k dispozici různé data (naleznete v tématu [jiné algoritmy doporučení](#other-recommendation-algorithms) následující další části).
 
 V takovém případě `Matrix Factorization` algoritmus používá metodu nazvanou "filtrování založeného na spolupráci", což předpokládá, že pokud uživatel 1 má stejný stanovisko jako 2 uživatele na určité problém, pak 1 uživatel má větší pravděpodobnost cítit, že stejným způsobem jako 2 uživatele o jiný problém.
 
@@ -242,7 +242,7 @@ Přidejte následující položky jako další řádek kódu `Main()` metodu chc
 
 ## <a name="evaluate-your-model"></a>Vyhodnocení modelu
 
-Jakmile máte Trénink modelu, slouží k vyhodnocení, jaký je výkon modelu testovací data. 
+Jakmile máte Trénink modelu, slouží k vyhodnocení, jaký je výkon modelu testovací data.
 
 Vytvořte `EvaluateModel()` metoda, hned za `BuildAndTrainModel()` metodu, pomocí následujícího kódu:
 
@@ -253,8 +253,7 @@ public static void EvaluateModel(MLContext mlContext, IDataView testDataView, IT
 }
 ```
 
-Transformace `Test` data přidáním následujícího kódu do `EvaluateModel()`:
-[!code-csharp[Transform](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#Transform "Transform the test data")]
+Transformace `Test` data přidáním následujícího kódu do `EvaluateModel()`: [!code-csharp[Transform](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#Transform "Transform the test data")]
 
 [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) metoda vytváří předpovědi pro více poskytuje vstupní řádky z datové sady testů.
 
@@ -315,6 +314,7 @@ Vytváření modelů po úspěšné je iterativní proces. Tento model má niž�
 Nyní můžete trénovaného modelu k vytvoření predikcí nová data.
 
 Vytvořte `UseModelForSinglePrediction()` metoda, hned za `EvaluateModel()` metodu, pomocí následujícího kódu:
+
 ```csharp
 public static void UseModelForSinglePrediction(MLContext mlContext, ITransformer model)
 {
@@ -427,9 +427,9 @@ Přidání další trénovací data, která má dostatek ukázky pro každého u
 
 ### <a name="features"></a>Funkce
 
-V tomto kurzu použijete pouze tři `Features` (`user id`, `movie id`, a `rating`), které jsou k dispozici v objektu DataSet. 
+V tomto kurzu použijete pouze tři `Features` (`user id`, `movie id`, a `rating`), které jsou k dispozici v objektu DataSet.
 
-Přestože se jedná o dobrý začátek, ve skutečnosti můžete chtít přidat další atributy nebo `Features` (například věk, pohlaví, geografické umístění atd.) je zahrnuta v datové sadě. Přidání více odpovídajících `Features` může pomoct zlepšit výkon modelu doporučení. 
+Přestože se jedná o dobrý začátek, ve skutečnosti můžete chtít přidat další atributy nebo `Features` (například věk, pohlaví, geografické umístění atd.) je zahrnuta v datové sadě. Přidání více odpovídajících `Features` může pomoct zlepšit výkon modelu doporučení.
 
 Pokud si nejste jisti, o tom, které `Features` může být nejdůležitějších pro úkol machine learning, můžete také využít z funkce příspěvek výpočtu (FCC) a [funkce permutaci význam](../how-to-guides/determine-global-feature-importance-in-model.md), poskytující ML.NET vyhledat největší vliv `Features`.
 
@@ -445,7 +445,7 @@ Například v tomto kurzu algoritmus možnosti jsou:
 var options = new MatrixFactorizationTrainer.Options
 {
     MatrixColumnIndexColumnName = "userIdEncoded",
-    MatrixRowIndexColumnName = "movieIdEncoded", 
+    MatrixRowIndexColumnName = "movieIdEncoded",
     LabelColumnName = "Label",
     NumberOfIterations = 20,
     ApproximationRank = 100
@@ -482,4 +482,4 @@ V tomto kurzu jste se naučili:
 
 Přejděte k dalšímu kurzu, kde Další informace
 > [!div class="nextstepaction"]
-> [Analýza mínění](sentiment-analysis.md)
+> [Analýza subjektivního hodnocení](sentiment-analysis.md)

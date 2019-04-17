@@ -7,12 +7,12 @@ ms.date: 08/07/2017
 dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 8b9d87922b543f97d4b36a37759d661298318e1e
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: faa801d8ded90b1a0f68eac1824e60ee6ba468a4
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846282"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612677"
 ---
 # <a name="build-a-visual-basic-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Vytvořit aplikaci Hello World jazyka Visual Basic pomocí .NET Core SDK v sadě Visual Studio 2017
 
@@ -31,7 +31,7 @@ Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte
 1. Spusťte Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **jazyka Visual Basic** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textové pole, zadejte "Hello World". Vyberte tlačítko **OK**.
 
    ![Dialogové okno nového projektu s vybraná aplikace konzoly](./media/vb-with-visual-studio/visual-studio-new-project.png)
-   
+
 1. Visual Studio používá šablony k vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu, `Main`, která přijímá <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace metodu, která je automaticky volána modulem runtime při spuštění aplikace. Jsou k dispozici v jakékoli argumenty příkazového řádku při spuštění aplikace *args* pole.
 
    ![Visual Studio a nový projekt Hello World](./media/vb-with-visual-studio/visual-studio-main-window.png)
@@ -44,6 +44,7 @@ Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte
    Console.Write("Press any key to continue...")
    Console.ReadKey(true)
    ```
+
    Tento kód zobrazí výzvu k stisknutím libovolné klávesy a potom program pozastaví, dokud se stiskne klávesa.
 
 1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Tento program zkompiluje do intermediate language (IL), která se převádí do binárního kódu, kompilátor just-in-time (JIT).

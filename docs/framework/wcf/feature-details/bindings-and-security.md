@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: bdefc543e90db708ae6c8be29b69381d66235154
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 5e3a8bc58d0828f50feb7752eb438d41695460fa
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59122145"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611901"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -39,7 +39,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 -   Webové aplikace služby vylepšení (Najít).  
   
--   Basic Profile jak jsou definovány v Interoperability webové služby (WS-I) specifikace ([https://go.microsoft.com/fwlink/?LinkId=38955](https://go.microsoft.com/fwlink/?LinkId=38955)).  
+-   Basic Profile jak jsou definovány v Interoperability webové služby (WS-I) specifikace (<https://go.microsoft.com/fwlink/?LinkId=38955>).  
   
 -   Profil základní zabezpečení, jak jsou definovány v WS-I.  
   
@@ -205,8 +205,8 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 |Type|Popis|  
 |----------|-----------------|  
 |Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
-|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
-|ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na [ https://go.microsoft.com/fwlink/?LinkId=84023 ](https://go.microsoft.com/fwlink/?LinkId=84023).|  
+|Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na <https://go.microsoft.com/fwlink/?LinkId=84023>.|  
+|ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na <https://go.microsoft.com/fwlink/?LinkId=84023>.|  
 |NTLM|NT LAN Manager (NTLM) authentication.|  
 |Windows|Ověřování Windows.|  
 |Certifikát|Ověřování provádí pomocí certifikátu.|  
@@ -227,7 +227,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
 
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Výběr typu přihlašovacích údajů](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
 - [Chování zabezpečení](../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

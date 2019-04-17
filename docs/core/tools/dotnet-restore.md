@@ -2,35 +2,39 @@
 title: příkaz DotNet restore
 description: Zjistěte, jak obnovit závislostí a specifické pro projekt nástroje pomocí příkazu dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 6f54671fcd1c17d2466d5a38027e02da5e7494e9
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 3ddb9f679cfcab972483a4cb53ffe2b075867614
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170779"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613967"
 ---
 # <a name="dotnet-restore"></a>DotNet restore
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet restore` -Obnoví závislostí a nástrojů projektu.
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity] [--interactive]
 dotnet restore [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
+
 ---
 
 ## <a name="description"></a>Popis
@@ -71,7 +75,7 @@ Volitelná cesta k souboru projektu, chcete-li obnovit.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 `--configfile <FILE>`
 
@@ -121,7 +125,7 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 Povoluje příkazu zastavit a počkat na vstup uživatele nebo akci (třeba k dokončení ověřování). Od .NET Core 2.1.400.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--configfile <FILE>`
 

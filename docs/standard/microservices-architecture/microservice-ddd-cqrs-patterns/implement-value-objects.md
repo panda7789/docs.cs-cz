@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: c17bc036517b5437c5ca20abf8a8e3a37ccb6d2c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 64ffd600468124439986b0d1949dc048ef245c78
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463914"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611377"
 ---
 # <a name="implement-value-objects"></a>Implementace objektů hodnot
 
@@ -310,25 +310,25 @@ public class Address
 ## <a name="additional-resources"></a>Další zdroje
 
 - **Martina Fowlera. Vzor ValueObject** \
-  [https://martinfowler.com/bliki/ValueObject.html](https://martinfowler.com/bliki/ValueObject.html)
+  <https://martinfowler.com/bliki/ValueObject.html>
 
 - **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru.** (Kniha; obsahuje diskusi hodnotu objektů) \
-  [https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+  <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 - **Vaughn Vernon. Implementace návrhu řízeného doménou.** (Kniha; obsahuje diskusi hodnotu objektů) \
-  [https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/)
+  <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
 - **Stínové vlastnosti** \
-  [https://docs.microsoft.com/ef/core/modeling/shadow-properties](https://docs.microsoft.com/ef/core/modeling/shadow-properties)
+  [https://docs.microsoft.com/ef/core/modeling/shadow-properties](/ef/core/modeling/shadow-properties)
 
 - **Komplexní typy nebo hodnoty objekty**. Diskuze v úložišti Githubu EF Core (stiskněte klávesu tab problémy) \
-  [https://github.com/aspnet/EntityFramework/issues/246](https://github.com/aspnet/EntityFramework/issues/246)
+  <https://github.com/aspnet/EntityFramework/issues/246>
 
 - **ValueObject.cs.** Základní třída objektu hodnotu v eShopOnContainers.* * \
-  [https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs)
+  <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/SeedWork/ValueObject.cs>
 
 - **Třída adresy** Ukázka hodnotová třída objektu v aplikaci eShopOnContainers. \
-  [https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs)
+  <https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Address.cs>
 
 > [!div class="step-by-step"]
 > [Předchozí](seedwork-domain-model-base-classes-interfaces.md)

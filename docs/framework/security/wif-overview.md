@@ -3,15 +3,15 @@ title: Přehled Windows Identity Foundation 4.5
 ms.date: 03/30/2017
 ms.assetid: 5f723345-7270-49e2-b638-b3a34bd40517
 author: BrucePerlerMS
-ms.openlocfilehash: 41829bee3df3e47c0ccd712ecc9a314e5971aba0
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 6165dbf32b777a8d82e756f84ed2415d6ed3d774
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838982"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613028"
 ---
 # <a name="windows-identity-foundation-45-overview"></a>Přehled Windows Identity Foundation 4.5
-Windows Identity Foundation 4.5 je sada tříd rozhraní .NET Framework pro implementaci deklarovaných identit v aplikacích. Usnadňuje využívání výhod aplikací a služeb pracujících s deklaracemi. Technologii WIF 4.5 lze používat v jakékoli webové aplikaci nebo webové službě, která používá rozhraní .NET Framework 4.5 nebo novější. Technologie WIF tvoří pouze jednu část softwarové produktové řady Federated Identity společnosti Microsoft, která implementuje sdílenou vizi odvětví založenou na otevřených standardech. Federovaných identit skládá ze tří součástí: [Active Directory® Federation Services](https://go.microsoft.com/fwlink/?LinkID=247516) (AD FS) 2.0, [Windows Azure Access Control Services](https://go.microsoft.com/fwlink/?LinkID=247517) (ACS) a technologie WIF. Společně tyto tři komponenty tvoří jádro nové platformy společnosti Microsoft pro deklarované cloudové identity a řízení přístupu.  
+Windows Identity Foundation 4.5 je sada tříd rozhraní .NET Framework pro implementaci deklarovaných identit v aplikacích. Usnadňuje využívání výhod aplikací a služeb pracujících s deklaracemi. Technologii WIF 4.5 lze používat v jakékoli webové aplikaci nebo webové službě, která používá rozhraní .NET Framework 4.5 nebo novější. Technologie WIF tvoří pouze jednu část softwarové produktové řady Federated Identity společnosti Microsoft, která implementuje sdílenou vizi odvětví založenou na otevřených standardech. Federované Identity se skládá ze tří součástí: [Aktivní Directory® Federation Services](https://go.microsoft.com/fwlink/?LinkID=247516) (AD FS) 2.0, [Windows Azure Access Control Services](https://go.microsoft.com/fwlink/?LinkID=247517) (ACS) a technologie WIF. Společně tyto tři komponenty tvoří jádro nové platformy společnosti Microsoft pro deklarované cloudové identity a řízení přístupu.  
   
  Další informace o technologii WIF naleznete v tématu [webu Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=149009) v Centru zabezpečení pro vývojáře na webu MSDN. Úvod do vytváření aplikací pomocí technologie WIF, najdete v článku [programování technologie Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=210158) autorem je Vittorio Bertocci (vydáno nakladatelstvím Microsoft Press).  
   
@@ -28,7 +28,7 @@ Windows Identity Foundation 4.5 je sada tříd rozhraní .NET Framework pro impl
   
      Rozhraní kromě toho také poskytuje podporu pro vytváření služeb tokenů zabezpečení, které podporují protokol WS-Federation a umožňují tak používání klientů ve webových prohlížečích. Takové služby STS jsou označovány také jako pasivní služby STS.  
   
--   Nový nástroj Identity and Access Tool for Visual Studio 11, který umožňuje zabezpečit aplikaci pomocí deklarovaných identit a akceptovat uživatele od různých poskytovatelů identit. Tento nástroj technologie WIF si můžete stáhnout z následující adresy URL: [ https://go.microsoft.com/fwlink/?LinkID=245849 ](https://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
+-   Nový nástroj Identity and Access Tool for Visual Studio 11, který umožňuje zabezpečit aplikaci pomocí deklarovaných identit a akceptovat uživatele od různých poskytovatelů identit. Tento nástroj technologie WIF si můžete stáhnout z následující adresy URL: <https://go.microsoft.com/fwlink/?LinkID=245849> nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření. Další informace najdete v tématu [Identity and Access Tool for Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
   
  Technologie WIF podporuje následující hlavní scénáře:  
   

@@ -2,12 +2,12 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: f72ea279079b4cdb3a06a2ba64925e2a335e1ed2
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
+ms.openlocfilehash: 89f0bbab1f9887295a68ffc6434340f1c6f10d5d
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59517327"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611091"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -325,8 +325,10 @@ Středníkem oddělený seznam značek, který určuje balíček.
 Určuje výstupní cesta, ve kterém se zahodí komprimovaný balíček. Výchozí hodnota je `$(OutputPath)`.
 
 ### <a name="includesymbols"></a>IncludeSymbols
+Tato logická hodnota označuje, zda by měl balíček tehdy, když je zabalit projekt vytvořit balíček dalších symbolů. Formát balíčku symbolů se řídí `SymbolPackageFormat` vlastnost.
 
-Tato logická hodnota označuje, zda by měl balíček tehdy, když je zabalit projekt vytvořit balíček dalších symbolů. Tento balíček bude mít *. symbols.nupkg* rozšíření a bude kopírovat soubory PDB spolu s knihovny DLL a ostatních výstupních souborů.
+### <a name="symbolpackageformat"></a>SymbolPackageFormat
+Určuje formát balíček symbolů. Pokud "symbols.nupkg" symboly starší verze balíčku se vytvoří s *. symbols.nupkg* rozšíření, který obsahuje soubory PDB, knihovny DLL a ostatních výstupních souborů. Pokud "snupkg" balíček symbolů snupkg bude vytvořen obsahující souborům portable pdb. Výchozí hodnota je "symbols.nupkg".
 
 ### <a name="includesource"></a>IncludeSource
 

@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a ko
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 2b987d43f476f261bfdbd1b2af6ca7f792178cf8
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 0f9ff19c8e346560960a09d3b7c52976c478f2f3
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55266621"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612872"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Zvedněte a shift existujících aplikací .NET do Azure IaaS (infrastruktura připravených pro Cloud)
 
@@ -85,27 +85,27 @@ Obrázek 2 – 3 ukazuje spuštění několika migrací virtuálních počítač
 
 - **Azure Migrate datový list**
 
-    [https://aka.ms/azuremigration\_datasheet](https://aka.ms/azuremigration\_datasheet)
+    <https://aka.ms/azuremigration\_datasheet>
 
 - **Azure Migrate**
 
-    [https://aka.ms/azuremigrate](https://aka.ms/azuremigrate)
+    <https://aka.ms/azuremigrate>
 
 - **Migrační Centrum Azure**
 
-    [https://azure.microsoft.com/migration/](https://azure.microsoft.com/migration/)
+    <https://azure.microsoft.com/migration/>
 
 - **Migrace do Azure pomocí Site Recovery**
 
-    [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure)
+    <https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-to-azure>
 
 - **Přehled služby Azure Site Recovery**
 
-    [https://docs.microsoft.com/azure/site-recovery/site-recovery-overview](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)
+    <https://docs.microsoft.com/azure/site-recovery/site-recovery-overview>
 
 - **Migrace virtuálních počítačů v AWS do virtuálních počítačů Azure**
 
-    [https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure](https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure)
+    <https://docs.microsoft.com/azure/site-recovery/site-recovery-migrate-aws-to-azure>
 
 >[!div class="step-by-step"]
 >[Předchozí](index.md)

@@ -2,18 +2,18 @@
 title: Pozastavení a obnovení pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 11f38339-79c7-4295-b610-24a7223bbf6d
-ms.openlocfilehash: 99455f117e5e8591750565452c3c40b74bf45ba1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa0431b18f6d0e4b96d7494ec2e65acd355992c7
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33513481"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612599"
 ---
 # <a name="pausing-and-resuming-a-workflow"></a>Pozastavení a obnovení pracovního postupu
-Pracovní postupy budou pozastavení a obnovení v reakci na záložky a blokování aktivity, jako <xref:System.Activities.Statements.Delay>, ale pracovní postup může také být explicitně pozastavena, odpojeno a obnovit pomocí trvalosti.  
+Pracovní postupy budou pozastavení a obnovení v reakci na záložek a blokující aktivity, jako <xref:System.Activities.Statements.Delay>, ale pracovního postupu je také možné explicitně pozastaveno, byla uvolněna a obnovit pomocí trvalosti.  
   
 ## <a name="pausing-a-workflow"></a>Pozastavení pracovního postupu  
- Chcete-li pozastavení pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Unload%2A>.  Tato metoda požadavky pracovního postupu zachovat a uvolnit a vyvolá výjimku <xref:System.TimeoutException> Pokud pracovní postup neuvolní 30 sekund.  
+ Chcete-li pozastavit pracovní postup, použijte <xref:System.Activities.WorkflowApplication.Unload%2A>.  Tato metoda požádá pracovního postupu zachovat a uvolnit a vyvolá výjimku <xref:System.TimeoutException> Pokud pracovní postup neuvolní za 30 sekund.  
   
 ```csharp  
 try  
@@ -28,7 +28,7 @@ catch (TimeoutException e)
 ```  
   
 ## <a name="resuming-a-workflow"></a>Obnovení pracovního postupu  
- Chcete-li obnovit dříve pozastaveno, odpojen pracovního postupu, použijte <xref:System.Activities.WorkflowApplication.Load%2A>. Tato metoda načte pracovního postupu z úložiště trvalosti do paměti.  
+ Dříve pozastavené a uvolnit pracovní postup obnovit, použijte <xref:System.Activities.WorkflowApplication.Load%2A>. Tato metoda načte pracovní postup z trvalého úložiště do paměti.  
   
 ```csharp  
 WorkflowApplication application = new WorkflowApplication(activity);  
@@ -70,7 +70,7 @@ static void LoadAndCompleteInstance(Guid id)
     Console.WriteLine("Press <enter> to load the persisted workflow");  
     Console.ReadLine();  
     AutoResetEvent waitHandler = new AutoResetEvent(false);  
-    WorkflowApplication wfApp = new WorkflowApplication(new Workflow1());  
+    WorkflowApplication wfApp = new WorkflowApplication(GetDelayedWF());  
     wfApp.InstanceStore =  
         new SqlWorkflowInstanceStore(ConfigurationManager.AppSettings["SqlWF4PersistenceConnectionString"].ToString());  
     wfApp.Completed = (workflowApplicationCompletedEventArgs) => {  

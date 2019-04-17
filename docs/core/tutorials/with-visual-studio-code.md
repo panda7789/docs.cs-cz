@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvářet a ladit vaši první aplikaci .NET Core v
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: d91427197662d61c1c3ffc242de9b1128b81b9c6
-ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
+ms.openlocfilehash: d23f095454a24d67c2b9fb7a0f090fb08ff9e8bb
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2019
-ms.locfileid: "58890550"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613444"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s C# a Visual Studio Code
 
@@ -93,6 +93,7 @@ Můžete také zhlédnout krátké Výukové video o další pomoc instalační 
 1. Vyberte a přidejte nové třídy, klikněte pravým tlačítkem v Průzkumníku VSCode **nový soubor**. To přidá nový soubor do složky, otevřeného ve VSCode.
 2. Název souboru `MyClass.cs`. Musíte ji uložit `.cs` rozšíření na straně, chcete-li rozpoznán jako soubor csharp.
 3. Přidejte kód uvedený níže pro vytvoření vaší první třídy. Ujistěte se, že obsahují správný obor názvů, takže můžete na něj mohli odkazovat z vaší `Program.cs` souboru.
+
 ``` csharp
 using System;
 
@@ -127,6 +128,7 @@ namespace HelloWorld
 ```
 
 5. Uložte změny a spusťte program znovu. S připojený řetězec by se zobrazit nová zpráva.
+
 ```console
 > dotnet run
 Hello World! Happy coding!

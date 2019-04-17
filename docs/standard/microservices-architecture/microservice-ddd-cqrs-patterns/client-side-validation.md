@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 4c039356e94f843c75430ff61d5fe68906c5c0ed
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: ddf53456f9356817d28cd0bfa75df3296fb5d722
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58633826"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612612"
 ---
 # <a name="client-side-validation-validation-in-the-presentation-layers"></a>Ověřování na straně klienta (ověřování v prezentačních vrstvách)
 
@@ -33,23 +33,23 @@ Implementace ověřování na straně klienta, závisí na druhu klientskou apli
   [https://developer.xamarin.com/recipes/ios/standard\_controls/text\_field/validate\_input/](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/validate_input/)
 
 - **Zpětné volání pro ověření** \
-  [https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/](https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/)
+  <https://developer.xamarin.com/samples/xamarin-forms/XAML/ValidationCallback/>
 
 ### <a name="validation-in-aspnet-core-apps"></a>Ověření v aplikacích ASP.NET Core
 
 - **Rick Anderson. Přidání ověřování** \
-  [https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
+  <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
 ### <a name="validation-in-spa-web-apps-angular-2-typescript-javascript"></a>Ověřování do aplikace SPA webové aplikace (Angular 2, TypeScript, JavaScript)
 
 - **Ado Kukic. Ověřování angular 2 formuláře** \
-  [https://scotch.io/tutorials/angular-2-form-validation](https://scotch.io/tutorials/angular-2-form-validation)
+  <https://scotch.io/tutorials/angular-2-form-validation>
 
 - **Ověření formuláře** \
-  [https://angular.io/docs/ts/latest/cookbook/form-validation.html](https://angular.io/docs/ts/latest/cookbook/form-validation.html)
+  <https://angular.io/guide/form-validation>
 
 - **Ověření.** Dokumentace k podrobným. \
-  [https://breeze.github.io/doc-js/validation.html](https://breeze.github.io/doc-js/validation.html)
+  <https://breeze.github.io/doc-js/validation.html>
 
 Stručně řečeno jedná se ty nejdůležitější koncepty související s ověření:
 

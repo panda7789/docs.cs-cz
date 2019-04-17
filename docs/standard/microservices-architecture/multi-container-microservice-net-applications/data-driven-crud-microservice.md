@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 5c16b38d7720fb739aa0711d4511afacd7b92c7a
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 21a06036609ec4c84b496d58423a111ee658f3aa
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465305"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612261"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -213,10 +213,10 @@ public void ConfigureServices(IServiceCollection services)
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Dotazování na Data** \
-  [https://docs.microsoft.com/ef/core/querying/index](https://docs.microsoft.com/ef/core/querying/index)
+  [https://docs.microsoft.com/ef/core/querying/index](/ef/core/querying/index)
 
 - **Ukládání dat** \
-  [https://docs.microsoft.com/ef/core/saving/index](https://docs.microsoft.com/ef/core/saving/index)
+  [https://docs.microsoft.com/ef/core/saving/index](/ef/core/saving/index)
 
 ## <a name="the-db-connection-string-and-environment-variables-used-by-docker-containers"></a>DB připojovací řetězec a prostředí proměnné využívaných kontejnery Dockeru
 
@@ -297,13 +297,13 @@ Tento mechanismus správy verzí je jednoduché a závisí na směrování poža
 ### <a name="additional-resources"></a>Další zdroje
 
 - **Scott Hanselman. Správa verzí RESTful webového rozhraní API ASP.NET Core snadné** \
-  [https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
+  <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
 - **Správa verzí RESTful webového rozhraní API** \
-  [https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+  <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
 - **Roy Fielding. Správa verzí, Hypermédia a REST** \
-  [https://www.infoq.com/articles/roy-fielding-on-versioning](https://www.infoq.com/articles/roy-fielding-on-versioning)
+  <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 ## <a name="generating-swagger-description-metadata-from-your-aspnet-core-web-api"></a>Generování metadat Swagger popis z webové rozhraní API ASP.NET Core
 
@@ -313,7 +313,7 @@ Srdce Swaggeru je specifikace Swaggeru, což je popis metadat rozhraní API v so
 
 Specifikace je základem z specifikaci OpenAPI (OAS) a je vyvinuta v komunitě open transparentní a spolupráci ke standardizaci způsob, jakým jsou definovány rozhraní RESTful.
 
-Specifikace definuje strukturu pro jak může služba zjistit a jak své možnosti srozumitelný. Další informace, včetně editoru webu a příklady specifikace Swagger ze společnosti, jako Spotify, Uber, Slack a Microsoft, naleznete v tématu Swagger lokality ([https://swagger.io](https://swagger.io)).
+Specifikace definuje strukturu pro jak může služba zjistit a jak své možnosti srozumitelný. Další informace, včetně editoru webu a příklady specifikace Swagger ze společnosti, jako Spotify, Uber, Slack a Microsoft, naleznete v tématu Swagger lokality (<https://swagger.io>).
 
 ### <a name="why-use-swagger"></a>Proč používat Swagger?
 
@@ -423,13 +423,13 @@ Je to jednoduché. A protože není automaticky vygenerován, Swagger metadata s
 ### <a name="additional-resources"></a>Další zdroje
 
 - **ASP.NET Web API stránky nápovědy k využívající Swagger** \
-  [https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)
+  [https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger)
 
 - **Začínáme s Swashbuckle a ASP.NET Core** \
-  [https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-swashbuckle?tabs=visual-studio](https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-swashbuckle?tabs=visual-studio)
+  [https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-swashbuckle](/aspnet/core/tutorials/getting-started-with-swashbuckle)
 
 - **Začínáme se službou NSwag a ASP.NET Core** \
-  [https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-nswag?tabs=visual-studio](https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-nswag?tabs=visual-studio)
+  [https://docs.microsoft.com/aspnet/core/tutorials/getting-started-with-nswag](/aspnet/core/tutorials/getting-started-with-nswag)
 
 > [!div class="step-by-step"]
 > [Předchozí](microservice-application-design.md)

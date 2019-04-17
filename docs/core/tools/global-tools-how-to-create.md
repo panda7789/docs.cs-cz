@@ -4,12 +4,12 @@ description: Popisuje, jak vytvořit globální nástroj. Nástroj globální je
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: a54cb0a8c32da6a89ab1c3b7757df10fd9adf5cf
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 3d0a64d0473f51d73892cd40633e2982c1130469
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677861"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612664"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
 
@@ -162,7 +162,7 @@ Dále vytvořte balíček NuGet pro vaši aplikaci.
 dotnet pack
 ```
 
-`botsay.1.0.0.nupkg` Vytvoří soubor ve složce identifikován `<PackageOutputPath>` hodnotu XML z `botsay.csproj` soubor, který v tomto příkladu je `./nupkg` složky. To usnadňuje instalaci a testování. Pokud chcete uvolnit nástroj veřejně, nahrajte ho do [ https://www.nuget.org ](https://www.nuget.org). Až nástroj je k dispozici na webu NuGet, vývojáři můžete provést instalaci celou uživatele pomocí nástroje `--global` možnost [instalace nástrojů dotnet](dotnet-tool-install.md) příkazu.
+`botsay.1.0.0.nupkg` Vytvoří soubor ve složce identifikován `<PackageOutputPath>` hodnotu XML z `botsay.csproj` soubor, který v tomto příkladu je `./nupkg` složky. To usnadňuje instalaci a testování. Pokud chcete uvolnit nástroj veřejně, nahrajte ho do <https://www.nuget.org>. Až nástroj je k dispozici na webu NuGet, vývojáři můžete provést instalaci celou uživatele pomocí nástroje `--global` možnost [instalace nástrojů dotnet](dotnet-tool-install.md) příkazu.
 
 Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku:
 

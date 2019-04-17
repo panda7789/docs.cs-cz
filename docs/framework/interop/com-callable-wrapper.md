@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6d205cc9b13a43cd3b519c2a262f3db767ace7b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 942ba933126da291e072270318a5657953ddcdb8
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59309482"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613249"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 
@@ -182,7 +182,7 @@ Chcete-li získat identifikátor DispId člena rozhraní v době běhu, můžete
 
 Duální rozhraní povolit časná a pozdní vazby pro členy rozhraní modelu COM klienty. V době návrhu a během testování může být užitečné nastavit na duální rozhraní třídy. Pro spravovanou třídu (a její základní třídy), která nebude nikdy změněn, tato možnost je také přijatelné. Ve všech ostatních případech nenastavujte na duální rozhraní třídy.
 
-Automaticky generované duální rozhraní může být vhodné ve výjimečných případech; ale častěji vytvoří související verze složitost. Například klienti modelu COM pomocí rozhraní třídy odvozené třídy může snadno překročit se změnami na základní třídu. Při jiného výrobce poskytuje základní třídu, je rozložení rozhraní třídy mimo ovládací prvek. Na rozdíl od rozhraní určené pouze pro odesílání, další duální rozhraní (**ClassInterfaceType.AutoDual**) obsahuje popis rozhraní třídy v exportované knihovny typů. Tento popis podporuje klienty s pozdní vazbou do mezipaměti hodnoty dispID v době běhu.
+Automaticky generované duální rozhraní může být vhodné ve výjimečných případech; ale častěji vytvoří související verze složitost. Například klienti modelu COM pomocí rozhraní třídy odvozené třídy může snadno překročit se změnami na základní třídu. Při jiného výrobce poskytuje základní třídu, je rozložení rozhraní třídy mimo ovládací prvek. Na rozdíl od rozhraní určené pouze pro odesílání, další duální rozhraní (**ClassInterfaceType.AutoDual**) obsahuje popis rozhraní třídy v exportované knihovny typů. Tento popis podporuje klienty s pozdní vazbou do mezipaměti hodnoty dispID v době kompilace.
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Ujistěte se, že jsou všechna oznámení událostí modelu COM s pozdní vazbou.
 
@@ -197,7 +197,7 @@ Pokud vaše aplikace vyžaduje volání časné vazby na metody rozhraní událo
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
-- [Obálky COM](com-wrappers.md)
+- [COM – obálky](com-wrappers.md)
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
 - [Kvalifikace typů .NET pro spolupráci](qualifying-net-types-for-interoperation.md)
 - [Obálka volatelná za běhu](runtime-callable-wrapper.md)

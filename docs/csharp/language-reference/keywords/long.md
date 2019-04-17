@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-ms.openlocfilehash: a3c2dc725d5747c638acba9311ae78272cf63de0
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 997ce7399dc9742076932b213811abd1f847e60b
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186010"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613288"
 ---
 # <a name="long-c-reference"></a>long (Referenční dokumentace jazyka C#)
 
 `long` označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.
 
-|Typ|Rozsah|Velikost|Typ formátu .NET|
+|Type|Rozsah|Velikost|Typ formátu .NET|
 |----------|-----------|----------|-------------------------|
 |`long`|-9,223,372,036,854,775,808 k 9,223,372,036,854,775,807|64bitové celé číslo se znaménkem|<xref:System.Int64?displayProperty=nameWithType>|
 
@@ -66,6 +66,7 @@ public static void SampleMethod(long l) {}
 SampleMethod(5);    // Calls the method with the int parameter
 SampleMethod(5L);   // Calls the method with the long parameter
 ```
+
 Pokud celočíselného literálu bez přípony, jeho typ je první z těchto typů, ve kterých může být reprezentována jeho hodnotu:
 
 1. [int](int.md)

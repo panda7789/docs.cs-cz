@@ -8,56 +8,44 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 7a676981a090d0ac02c1a1af4b0824d914d1e8fc
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.openlocfilehash: 5b1547f596a0ff1c52a402f90457dced6ef604a0
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58814013"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611793"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
 Toto téma obsahuje seznam názvů klíčovou funkcí pro každou verzi jazyka Visual Basic s podrobný popis nové a vylepšené funkce v nejnovějších verzích tohoto jazyka.
-  
+
 ## <a name="current-version"></a>Aktuální verze
 
-Visual Basic 15,8 / Visual Studio 2017 verze 15.8  
-Nové funkce, najdete v části [15.8 jazyka Visual Basic](#visual-basic-158)
+Visual Basic 15,8 / Visual Studio 2017 verze 15.8 pro nové funkce, najdete v článku [15.8 jazyka Visual Basic](#visual-basic-158)
 
 ## <a name="previous-versions"></a>Předchozí verze
 
-Visual Basic verzi 15.5 / Visual Studio 2017 verze 15.5  
-Nové funkce, najdete v části [15.5 jazyka Visual Basic](#visual-basic-155)
+Visual Basic verzi 15.5 / Visual Studio 2017 verze 15.5 pro nové funkce, najdete v článku [15.5 jazyka Visual Basic](#visual-basic-155)
 
-Visual Basic 15.3 / Visual Studio 2017 verze 15.3  
-Nové funkce, najdete v části [15.3 jazyka Visual Basic](#visual-basic-153)
+Visual Basic 15.3 / Visual Studio 2017 verze 15.3 pro nové funkce, najdete v článku [15.3 jazyka Visual Basic](#visual-basic-153)
 
-Visual Basic 2017 / Visual Studio 2017  
-Nové funkce, najdete v části [2017 jazyka Visual Basic](#visual-basic-2017)
+Visual Basic 2017 / Visual Studio 2017 pro nové funkce, najdete v článku [2017 jazyka Visual Basic](#visual-basic-2017)
 
-Visual Basic / Visual Studio 2015   
-Nové funkce, najdete v části [14 jazyka Visual Basic](#visual-basic-14)
+Visual Basic / 2015 Visual Studio pro nové funkce, viz [14 jazyka Visual Basic](#visual-basic-14)
 
-Visual Basic / Visual Studio 2013  
-Náhledy technologie .NET Compiler Platform ("Roslyn")
+Visual Basic nebo Visual Studio 2013 Technology Preview platformy kompilátoru .NET ("Roslyn")
 
-Visual Basic / Visual Studio 2012   
-`Async` a `await` klíčová slova, iterátory, atributy informace o volajícím
+Visual Basic nebo Visual Studio 2012 `Async` a `await` klíčová slova, iterátory, atributy informace o volajícím
 
-Visual Basic, Visual Studio 2010   
-Automaticky implementované vlastnosti inicializátory kolekce, implicitní pokračování řádku, odchylka dynamické, obecný co/opravné položky ke globální obor názvů přístup,
+Visual Basic, Visual Studio 2010 automaticky implementované vlastnosti inicializátory kolekce, implicitní pokračování řádku, odchylka dynamické, obecný co/opravné položky ke globální obor názvů přístup,
 
-Visual Basic / Visual Studio 2008   
-Language Integrated Query (LINQ), literály XML, odvození místního typu objektu inicializátory, anonymní typy, metody rozšíření, místní `var` odvození, výrazů lambda, typu `if` operátor, částečné metody, typy s možnou hodnotou Null  
+Visual Basic nebo Visual Studio 2008 Language Integrated Query (LINQ), literály XML, odvození místního typu objektu inicializátory, anonymní typy, metody rozšíření, místní `var` odvození, výrazů lambda, typu `if` částečné – operátor metody, typy s možnou hodnotou Null
 
-Visual Basic / Visual Studio 2005   
-`My` Typy typu a pomocné rutiny (přístup k aplikaci, počítače, systém souborů, sítě)
+Visual Basic nebo Visual Studio 2005 na `My` typy typu a pomocné rutiny (přístup k aplikaci, počítače, systém souborů, sítě)
 
-Visual Basic / Visual Studio .NET 2003   
-Bitové posunutí – operátory, deklarace proměnné smyčky
+Visual Basic nebo Visual Studio .NET 2003 bitové posunutí – operátory, smyčky deklarace proměnné
 
-Visual Basic / Visual Studio .NET 2002   
-První verze jazyka Visual Basic .NET
+Visual Basic nebo Visual Studio .NET 2002 v první verzi jazyka Visual Basic .NET
 
 ## <a name="visual-basic-158"></a>Visual Basic 15.8
 
@@ -80,7 +68,7 @@ Tyto optimalizace umožňuje kód ke spuštění rychleji – až dvakrát jako 
 
 ```vb
 Dim s As Single = 173.7619
-Dim d As Double = s 
+Dim d As Double = s
 
 Dim i1 As Integer = CInt(Fix(s))               ' Result: 173
 Dim b1 As Byte = CByte(Int(d))                 ' Result: 173
@@ -114,7 +102,8 @@ Visual Basic 2017, přidali jsme podporu pro znak podtržítka (`_`) jako odděl
 
 ```vb
 Dim number As Integer = &H_C305_F860
-``` 
+```
+
 Pokud chcete použít jako oddělovač úvodní znak podtržítka, je nutné přidat následující prvek do projektu jazyka Visual Basic (\*.vbproj) souboru:
 
 ```xml
@@ -131,7 +120,7 @@ Když přiřadíte hodnotu elementů řazené kolekce členů z proměnných, Vi
 
 [!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
-**Další přepínače kompilátoru**  
+**Další přepínače kompilátoru**
 
 Teď podporuje příkazového řádku kompilátoru jazyka Visual Basic [ **- refout** ](../reference/command-line-compiler/refout-compiler-option.md) a [ **- refout** ](../reference/command-line-compiler/refonly-compiler-option.md) možnosti řízení výstup kompilátoru referenční sestavení. **-refout** definuje výstupní adresář referenční sestavení a **- refout** Určuje, že má být výstupem kompilace pouze odkaz na sestavení.
 
@@ -144,14 +133,14 @@ Teď podporuje příkazového řádku kompilátoru jazyka Visual Basic [ **- ref
 - Definice vlastního typu ( `Class` nebo `Structure`). Toto je těžký řešení.
 
 - Definovat jeden nebo více `ByRef` parametry, než návratová hodnota z metody.
- 
+
 Podpora jazyka Visual Basic pro řazených kolekcí členů umožňuje rychle definovat řazené kolekce členů, Volitelně můžete přiřadit hodnoty sémantického názvy a rychle načíst jeho hodnoty. V následujícím příkladu zabalí volání <xref:System.Int32.TryParse%2A> metodu a vrátí řazené kolekce členů.
 
 [!code-vb[Tuple](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#2)]
 
 Potom můžete volat metodu a zpracovat vrácené řazené kolekce členů s kódem, jako je následující.
 
-[!code-vb[ReturnTuple](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#3)] 
+[!code-vb[ReturnTuple](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#3)]
 
 **Binární literály a oddělovače číslic:**
 
@@ -185,73 +174,89 @@ Další informace najdete v tématu [referenční vrátit hodnoty](../programmin
 
 ## <a name="visual-basic-14"></a>Visual Basic 14
 
-[Nameof](../../csharp/language-reference/keywords/nameof.md)  
- Bez pevného kódování řetězec můžete získat název nekvalifikované řetězce na typ nebo člena pro použití v chybové zprávě.  Díky tomu váš kód zůstane správné refaktoringu.  Tato funkce je také užitečné pro zapojování model-view-controller MVC odkazy a vyvolává události změněné vlastnosti.  
-  
-[Interpolace řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
- Výrazy interpolace řetězců můžete použít k vytvoření řetězce.  Interpolovaný řetězcový výraz vypadá jako řetězec šablony, který obsahuje výrazy.  Interpolované řetězce je lze snáze pochopit s ohledem na argumenty než [složené formátování](../../standard/base-types/composite-format.md).  
-  
-[Přístup ke členu podmíněných Null a indexování](../language-reference/operators/null-conditional-operators.md)  
-Můžete testovat null velmi malé syntaktické způsobem před provedením přístup ke členu (`?.`) nebo indexu (`?[]`) operace.  Tyto operátory usnadňuje psaní méně kód pro zpracování null kontrol, zejména pro sestupné řazení do datové struktury.  Pokud levý operand nebo objekt odkaz má hodnotu null, operace vrátí hodnotu null.  
-  
-[Literály víceřádkových řetězců](../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- Řetězcové literály můžou obsahovat sekvence znaku nového řádku.  Je již nutné starý obejít použití `<xml><![CDATA[...text with newlines...]]></xml>.Value`  
-  
-**Komentáře**  
-Vložit poznámky po řádku implicitní pokračování, uvnitř inicializátoru výrazy a podmínky výrazu LINQ.  
-  
-**Inteligentnější řešení plně kvalifikovaný název**  
- Zadaný kód například `Threading.Thread.Sleep(1000)`, používá k vyhledání oboru názvů jazyka Visual Basic "Dělení na vlákna", zjistit bylo nejednoznačné mezi System.Threading a System.Windows.Threading a potom nahlásit chybu.  Visual Basic nyní brány v úvahu oba obory názvů možné dohromady.  Pokud můžete zobrazit seznam dokončení, editoru sady Visual Studio obsahuje členy z obou typů v seznamu dokončení.  
-  
- **Literály data začínající rokem**  
- Date – literály může mít ve formátu rrrr mm-dd, `#2015-03-17 16:10 PM#`.  
-  
- **Vlastnosti rozhraní jen pro čtení**  
- Můžete implementovat rozhraní vlastnosti jen pro čtení pomocí vlastnosti readwrite.  Rozhraní zaručuje minimální funkční požadavky a nezastaví implementující třída z povolení vlastnost, která má být nastavena.  
-  
- [TypeOf \<expr > IsNot \<typ >](../../visual-basic/language-reference/operators/typeof-operator.md)  
- Pro další čitelnost kódu, můžete nyní použít `TypeOf` s `IsNot`.  
-  
- [Upozornění #Disable \<ID > a upozornění #Enable \<ID >](../../visual-basic/language-reference/directives/index.md)  
- Můžete zakázat a povolit specifická upozornění pro oblasti v rámci zdrojového souboru.  
-  
- **Vylepšení komentářů k dokumentu XML**  
- Při zápisu komentáře, získáte inteligentní editor a podpora pro ověřování názvů parametrů, správné zpracování sestavení `crefs` (obecné typy, operátory, atd.), barevné zvýrazňování a refaktoringu.  
-  
- [Částečné definice modulu a interface](../../visual-basic/language-reference/modifiers/partial.md)  
- Kromě tříd a struktur můžete deklarovat dílčí moduly a rozhraní.  
-  
- [#Region direktivy uvnitř těla metod](../../visual-basic/language-reference/directives/region-directive.md)  
- Můžete vložit #Region... #End Region oddělovače kdekoli v souboru, do funkcí a dokonce pokrývá funkce těla.  
-  
- [Přepsání definice jsou implicitně přetížení](../../visual-basic/language-reference/modifiers/overrides.md)  
- Pokud chcete přidat `Overrides` modifikátor s definicí, kompilátor implicitně přidá `Overloads` tak, aby méně kódu můžete zadat v běžných případů.  
-  
- **CObj v argumentech atributů povolena**  
- Kompilátor slouží k pojmenování chybu, CObj(...) nebyl konstantu při použití v atributu konstrukce.  
-  
- **Deklarace a používání nejednoznačný metody v různá rozhraní**  
- Dříve vrátil následující kód chyby, které zabránily deklarace `IMock` nebo z volání `GetDetails` (pokud tyto by byl deklarován v jazyce C#):  
-  
-```vb  
-Interface ICustomer  
-  Sub GetDetails(x As Integer)  
-End Interface  
-  
-Interface ITime  
-  Sub GetDetails(x As String)  
-End Interface  
-  
-Interface IMock : Inherits ICustomer, ITime  
-  Overloads Sub GetDetails(x As Char)  
-End Interface  
-  
-Interface IMock2 : Inherits ICustomer, ITime  
-End Interface  
-```  
-  
- Nyní kompilátor použije normální přetížení rozlišení pravidla k výběru nejvhodnější `GetDetails` volat, a je možné deklarovat vztahy rozhraní v jazyce Visual Basic podobné těm je znázorněno v ukázce.  
-  
+[Nameof](../../csharp/language-reference/keywords/nameof.md)
+
+Bez pevného kódování řetězec můžete získat název nekvalifikované řetězce na typ nebo člena pro použití v chybové zprávě.  Díky tomu váš kód zůstane správné refaktoringu.  Tato funkce je také užitečné pro zapojování model-view-controller MVC odkazy a vyvolává události změněné vlastnosti.
+
+[Interpolace řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
+
+Výrazy interpolace řetězců můžete použít k vytvoření řetězce.  Interpolovaný řetězcový výraz vypadá jako řetězec šablony, který obsahuje výrazy.  Interpolované řetězce je lze snáze pochopit s ohledem na argumenty než [složené formátování](../../standard/base-types/composite-format.md).
+
+[Přístup ke členu podmíněných Null a indexování](../language-reference/operators/null-conditional-operators.md)
+
+Můžete testovat null velmi malé syntaktické způsobem před provedením přístup ke členu (`?.`) nebo indexu (`?[]`) operace.  Tyto operátory usnadňuje psaní méně kód pro zpracování null kontrol, zejména pro sestupné řazení do datové struktury.  Pokud levý operand nebo objekt odkaz má hodnotu null, operace vrátí hodnotu null.
+
+[Literály víceřádkových řetězců](../../visual-basic/programming-guide/language-features/strings/string-basics.md)
+
+Řetězcové literály můžou obsahovat sekvence znaku nového řádku.  Je již nutné starý obejít použití `<xml><![CDATA[...text with newlines...]]></xml>.Value`
+
+**Komentáře**
+
+Vložit poznámky po řádku implicitní pokračování, uvnitř inicializátoru výrazy a podmínky výrazu LINQ.
+
+**Inteligentnější řešení plně kvalifikovaný název**
+
+Zadaný kód například `Threading.Thread.Sleep(1000)`, používá k vyhledání oboru názvů jazyka Visual Basic "Dělení na vlákna", zjistit bylo nejednoznačné mezi System.Threading a System.Windows.Threading a potom nahlásit chybu.  Visual Basic nyní brány v úvahu oba obory názvů možné dohromady.  Pokud můžete zobrazit seznam dokončení, editoru sady Visual Studio obsahuje členy z obou typů v seznamu dokončení.
+
+**Literály data začínající rokem**
+
+Date – literály může mít ve formátu rrrr mm-dd, `#2015-03-17 16:10 PM#`.
+
+**Vlastnosti rozhraní jen pro čtení**
+
+Můžete implementovat rozhraní vlastnosti jen pro čtení pomocí vlastnosti readwrite.  Rozhraní zaručuje minimální funkční požadavky a nezastaví implementující třída z povolení vlastnost, která má být nastavena.
+
+[TypeOf \<expr > IsNot \<typ >](../../visual-basic/language-reference/operators/typeof-operator.md)
+
+Pro další čitelnost kódu, můžete nyní použít `TypeOf` s `IsNot`.
+
+[Upozornění #Disable \<ID > a upozornění #Enable \<ID >](../../visual-basic/language-reference/directives/index.md)
+
+Můžete zakázat a povolit specifická upozornění pro oblasti v rámci zdrojového souboru.
+
+**Vylepšení komentářů k dokumentu XML**
+
+Při zápisu komentáře, získáte inteligentní editor a podpora pro ověřování názvů parametrů, správné zpracování sestavení `crefs` (obecné typy, operátory, atd.), barevné zvýrazňování a refaktoringu.
+
+[Částečné definice modulu a interface](../../visual-basic/language-reference/modifiers/partial.md)
+
+Kromě tříd a struktur můžete deklarovat dílčí moduly a rozhraní.
+
+[#Region direktivy uvnitř těla metod](../../visual-basic/language-reference/directives/region-directive.md)
+
+Můžete vložit #Region... #End Region oddělovače kdekoli v souboru, do funkcí a dokonce pokrývá funkce těla.
+
+[Přepsání definice jsou implicitně přetížení](../../visual-basic/language-reference/modifiers/overrides.md)
+
+Pokud chcete přidat `Overrides` modifikátor s definicí, kompilátor implicitně přidá `Overloads` tak, aby méně kódu můžete zadat v běžných případů.
+
+**CObj v argumentech atributů povolena**
+
+Kompilátor slouží k pojmenování chybu, CObj(...) nebyl konstantu při použití v atributu konstrukce.
+
+**Deklarace a používání nejednoznačný metody v různá rozhraní**
+
+Dříve vrátil následující kód chyby, které zabránily deklarace `IMock` nebo z volání `GetDetails` (pokud tyto by byl deklarován v jazyce C#):
+
+```vb
+Interface ICustomer
+  Sub GetDetails(x As Integer)
+End Interface
+
+Interface ITime
+  Sub GetDetails(x As String)
+End Interface
+
+Interface IMock : Inherits ICustomer, ITime
+  Overloads Sub GetDetails(x As Char)
+End Interface
+
+Interface IMock2 : Inherits ICustomer, ITime
+End Interface
+```
+
+Nyní kompilátor použije normální přetížení rozlišení pravidla k výběru nejvhodnější `GetDetails` volat, a je možné deklarovat vztahy rozhraní v jazyce Visual Basic podobné těm je znázorněno v ukázce.
+
 ## <a name="see-also"></a>Viz také:
 
 - [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-in-visual-studio)

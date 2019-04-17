@@ -4,12 +4,12 @@ description: Zjistěte, jak využít stávající aplikace konzoly rozhraní .NE
 author: spboyer
 ms.date: 09/28/2016
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: 481f62b21e223a13e06fe0cb68e4276968992aca
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: da3c814e2ae3ae646072deaf7aa932272160ce49
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58633839"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611494"
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Spuštění konzolové aplikace v kontejnerech Windows
 
@@ -25,16 +25,18 @@ Kromě odpověď `Environment.MachineName` se přidal do odpovědi zobrazíte ro
 
 Musíte znát některé Docker podmínky před zahájením práce ohledně přesunu aplikace do kontejneru.
 
+> [!NOTE]
 > A *image Dockeru* je jen pro čtení šablona definující prostředí pro spuštěný kontejner, včetně operačního systému (OS), součásti systému a aplikací.
 
-Důležitou součástí Image Dockeru je, že Image se skládají ze základní image. Každý nový obrázek přidá malé sadě funkcí do existující image. 
+Důležitou součástí Image Dockeru je, že Image se skládají ze základní image. Každý nový obrázek přidá malé sadě funkcí do existující image.
 
-> A *kontejneru Dockeru* je spuštěna instance bitovou kopii. 
+> [!NOTE]
+> A *kontejneru Dockeru* je spuštěna instance bitovou kopii.
 
 Škálování aplikace spuštěním stejnou bitovou kopii v spousta kontejnerů.
 Koncepčně je podobná spuštění stejné aplikace v několika hostitelích.
 
-Další informace o architektuře Dockeru najdete [přehled Dockeru](https://docs.docker.com/engine/understanding-docker/) na web Dockeru. 
+Další informace o architektuře Dockeru najdete [přehled Dockeru](https://docs.docker.com/engine/understanding-docker/) na web Dockeru.
 
 Přesun vaší konzolové aplikace je otázkou pár kroků.
 
@@ -43,6 +45,7 @@ Přesun vaší konzolové aplikace je otázkou pár kroků.
 1. [Proces sestavení a spuštění kontejneru Dockeru](#creating-the-image)
 
 ## <a name="prerequisites"></a>Požadavky
+
 Kontejnery Windows se podporují na [Windows 10 Anniversary Update](https://www.microsoft.com/en-us/software-download/windows10/) nebo [Windows serveru 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server).
 
 > [!NOTE]
@@ -53,13 +56,14 @@ Musíte mít Docker pro Windows, kontejnery Windows verze 1.12 Beta 26 nebo vyš
 ![Snímek obrazovky možností nabídky kontejneru Windows.](./media/console/windows-container-option.png)
 
 ## <a name="building-the-application"></a>Sestavení aplikace
+
 Obvykle se distribuují konzolové aplikace pomocí instalačního programu, FTP nebo sdílené složky nasazení. Při nasazování do kontejneru, třeba prostředky zkompilovat a připravené k umístění, ke kterému se dá použít při vytvoření image Dockeru.
 
 Tady je ukázková aplikace: [ConsoleRandomAnswerGenerator](https://github.com/dotnet/samples/tree/master/framework/docker/ConsoleRandomAnswerGenerator)
 
 V *build.ps1*<sup>[[zdroj]](https://github.com/dotnet/samples/blob/master/framework/docker/ConsoleRandomAnswerGenerator/ConsoleRandomAnswerGenerator/build.ps1)</sup>, tento skript využívá [MSBuild](/visualstudio/msbuild/msbuild) pro kompilaci aplikace k dokončení úlohy vytváření prostředků. Existuje několik parametrů předávaným do MSBuild pro dokončení potřebné prostředky. Název souboru projektu nebo řešení ke kompilaci, umístění výstupu a nakonec požadované konfigurace (vydání nebo ladícího).
 
-Při volání funkce `Invoke-MSBuild` `OutputPath` je nastavena na **publikovat** a `Configuration` nastavena na **vydání**. 
+Při volání funkce `Invoke-MSBuild` `OutputPath` je nastavena na **publikovat** a `Configuration` nastavena na **vydání**.
 
 ```powershell
 function Invoke-MSBuild ([string]$MSBuildPath, [string]$MSBuildParameters) {
@@ -72,14 +76,16 @@ Invoke-MSBuild -MSBuildPath "MSBuild.exe" -MSBuildParameters ".\ConsoleRandomAns
 ## <a name="creating-the-dockerfile"></a>Vytvoření souboru Dockerfile
 Základní image používá pro konzolu aplikace rozhraní .NET Framework je `microsoft/windowsservercore`, která je veřejně dostupná na [Docker Hubu](https://hub.docker.com/r/microsoft/windowsservercore/). Základní image obsahuje minimální instalaci Windows serveru 2016, rozhraní .NET Framework 4.6.2 a slouží jako základní image operačního systému pro kontejnery Windows.
 
-```
+```Dockerfile
 FROM microsoft/windowsservercore
 ADD publish/ /
 ENTRYPOINT ConsoleRandomAnswerGenerator.exe
 ```
-Určuje první řádek v souboru Dockerfile pomocí základní image [ `FROM` ](https://docs.docker.com/engine/reference/builder/#/from) instrukce. Dále [ `ADD` ](https://docs.docker.com/engine/reference/builder/#/add) v souboru zkopíruje prostředky aplikace z **publikovat** složka ke kořenové složce kontejneru a poslední; nastavení [ `ENTRYPOINT` ](https://docs.docker.com/engine/reference/builder/#/entrypoint) stavů bitové kopie, že je příkaz nebo aplikaci, která se spustí při spuštění kontejneru. 
+
+Určuje první řádek v souboru Dockerfile pomocí základní image [ `FROM` ](https://docs.docker.com/engine/reference/builder/#/from) instrukce. Dále [ `ADD` ](https://docs.docker.com/engine/reference/builder/#/add) v souboru zkopíruje prostředky aplikace z **publikovat** složka ke kořenové složce kontejneru a poslední; nastavení [ `ENTRYPOINT` ](https://docs.docker.com/engine/reference/builder/#/entrypoint) stavů bitové kopie, že je příkaz nebo aplikaci, která se spustí při spuštění kontejneru.
 
 ## <a name="creating-the-image"></a>Vytváření bitové kopie
+
 Pokud chcete vytvořit image Dockeru, následující kód je přidán do *build.ps1* skriptu. Při spuštění skriptu `console-random-answer-generator` image se vytvoří pomocí prostředky z MSBuild definované v [vytváření aplikace](#building-the-application) oddílu.
 
 ```powershell
@@ -103,6 +109,7 @@ console-random-answer-generator   latest              8f7c807db1b5        8 seco
 ```
 
 ## <a name="running-the-container"></a>Spuštění kontejneru
+
 Kontejner můžete spustit z příkazového řádku pomocí příkazu Docker.
 
 ```
@@ -118,8 +125,8 @@ The answer to your question: 'Are you a square container?' is Concentrate and as
 Pokud spustíte `docker ps -a` příkazu v Powershellu, uvidíte, že kontejner stále existuje.
 
 ```
-CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS                          
-70c3d48f4343        console-random-answer-generator   "cmd /S /C ConsoleRan"   2 minutes ago       Exited (0) About a minute ago      
+CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS
+70c3d48f4343        console-random-answer-generator   "cmd /S /C ConsoleRan"   2 minutes ago       Exited (0) About a minute ago
 ```
 
 Sloupec stavu zobrazí v "přibližně před minutou", aplikace byl dokončen a může být vypnut. Pokud jste příkaz spustili stovek časy, by existovat sto levé statické kontejnery s žádnou činnost. Ve scénáři začátek ideální operace byla pro práci a vypnutí nebo vyčistit. K provedení tohoto postupu přidání `--rm` umožňuje `docker run` příkaz odstraní kontejner poté, co `Exited` obdrží se signál.
@@ -131,6 +138,7 @@ docker run --rm console-random-answer-generator "Are you a square container?"
 Spuštění příkazu s touto možností a podívat se na výstup `docker ps -a` příkazu, Všimněte si, že id kontejneru ( `Environment.MachineName`) není v seznamu.
 
 ### <a name="running-the-container-using-powershell"></a>Spuštění kontejneru pomocí Powershellu
+
 V ukázkových souborů projektu k dispozici je také *run.ps1* což je příklad toho, jak pomocí prostředí PowerShell a spusťte aplikaci přijímá argumenty.
 
 Pokud chcete spustit, otevřete PowerShell a pomocí následujícího příkazu:
@@ -140,4 +148,5 @@ Pokud chcete spustit, otevřete PowerShell a pomocí následujícího příkazu:
 ```
 
 ## <a name="summary"></a>Souhrn
+
 Pouhým přidáním souboru Dockerfile a publikování aplikace, můžete kontejnerizace aplikace konzoly rozhraní .NET Framework a nyní využít přitom žádné spuštěných víc instancí, spuštění a zastavení a další funkce Windows serveru 2016 změny kódu aplikace vůbec.

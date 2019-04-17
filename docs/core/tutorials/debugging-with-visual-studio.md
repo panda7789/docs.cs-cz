@@ -3,12 +3,12 @@ title: Ladění aplikace Hello World .NET Core pomocí sady Visual Studio 2017
 description: Zjistěte, jak ladit aplikaci Hello World v jazyce C# nebo Visual Basic pomocí sady Visual Studio 2017.
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 268a0d47b63b8d6baa25305296395d7d8a86729e
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 9b2375443c9947a32fcccea062642103601d5010
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463420"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59610714"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Ladit vaše C# nebo Visual Basic .NET Core aplikace Hello World pomocí sady Visual Studio 2017
 
@@ -154,6 +154,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
    ```vb
    ? String.IsNullOrEmpty(name)
    ```
+
   ![Příkazové podokno vrací hodnotu true, po příkazu je provedeno – Visual Basic](./media/debugging-with-visual-studio/vb-immediate-window-output.png)
 
 1. Vyberte **pokračovat** tlačítko na panelu nástrojů můžete pokračovat v provádění programu.

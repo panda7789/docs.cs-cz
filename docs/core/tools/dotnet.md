@@ -2,38 +2,44 @@
 title: příkaz DotNet
 description: Další informace o příkazu dotnet (obecný ovladač pro nástroje .NET Core CLI) a jeho použití.
 ms.date: 06/04/2018
-ms.openlocfilehash: 107a529952cce62dac840874fa5d6d8986376adf
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 5278adf44d12e428cdeacf1d475377ce9155c314
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185633"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613002"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet` – Nástroj pro správu zdrojového kódu .NET a binární soubory.
 
 ## <a name="synopsis"></a>Souhrn
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
+
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
     [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
+
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
 ```
 dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [-v|--verbosity] [--version]
 ```
+
 ---
 
 ## <a name="description"></a>Popis
@@ -165,7 +171,7 @@ Vytiskne na verzi .NET Core SDK používá.
 
 ---
 
-## <a name="dotnet-commands"></a>příkazy DotNet
+## <a name="dotnet-commands"></a>Příkazy dotnet
 
 ### <a name="general"></a>Obecné
 

@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 03/07/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 202edc5127388df2397053d5703d33a39046374f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: e88a85b96c1e5d33d748332991cb9480222a9c66
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59303112"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612092"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -33,7 +33,7 @@ V tomto kurzu se naučíte:
 
 ## <a name="sentiment-analysis-sample-overview"></a>Přehled ukázky analýzy mínění
 
-Vzorek je konzolová aplikace, které používá ML.NET pro trénování modelu, která klasifikuje a predikuje mínění jako kladné nebo záporné. Tato datová sada Yelp mínění je z University of California, Irvine (UCI), který je rozdělený do datové sady pro trénování a datové sady testů. Ukázka vyhodnotí model s testovací datové analýzy kvality. 
+Vzorek je konzolová aplikace, které používá ML.NET pro trénování modelu, která klasifikuje a predikuje mínění jako kladné nebo záporné. Tato datová sada Yelp mínění je z University of California, Irvine (UCI), který je rozdělený do datové sady pro trénování a datové sady testů. Ukázka vyhodnotí model s testovací datové analýzy kvality.
 
 Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) úložiště.
 
@@ -53,7 +53,7 @@ Fáze pracovního postupu jsou následující:
 2. **Příprava dat**
    * **Načtení dat**
    * **Extrakce funkce (transformovat data)**
-3. **Sestavení a trénování** 
+3. **Sestavení a trénování**
    * **Trénování modelu**
    * **Vyhodnocení modelu**
 4. **Nasazení modelu**
@@ -96,7 +96,7 @@ Algoritmy klasifikace jsou často jedním z následujících typů:
 * Binární soubor: buď A a B.
 * Multiclass: více kategorií, které lze předpovídat pomocí jednoho modelu.
 
-Protože webu komentáře zapotřebí klasifikováno jako kladné nebo záporné, použít binární klasifikační algoritmus. 
+Protože webu komentáře zapotřebí klasifikováno jako kladné nebo záporné, použít binární klasifikační algoritmus.
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -178,21 +178,22 @@ public static TrainCatalogBase.TrainTestData LoadData(MLContext mlContext)
 
 }
 ```
+
 ## <a name="load-the-data"></a>Načtení dat
 
-Od dříve vytvořeného `SentimentData` typ modelu dat odpovídá schématu datové sady, můžete kombinovat inicializace, mapování a datovou sadu na jeden řádek kódu pomocí načítání `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTextFile metoda](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29). Vrátí <xref:Microsoft.Data.DataView.IDataView>. 
+Od dříve vytvořeného `SentimentData` typ modelu dat odpovídá schématu datové sady, můžete kombinovat inicializace, mapování a datovou sadu na jeden řádek kódu pomocí načítání `MLContext.Data.LoadFromTextFile` obálky pro [LoadFromTextFile metoda](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29). Vrátí <xref:Microsoft.Data.DataView.IDataView>.
 
- Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
+Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
 Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s komentáři a odpovídající toxické nebo jiných toxické mínění. Slouží k vytvoření modelu a jeho trénování.
 
- Přidejte následující kód jako první řádek `LoadData` metody:
+Přidejte následující kód jako první řádek `LoadData` metody:
 
 [!code-csharp[LoadData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#LoadData "loading dataset")]
 
 ### <a name="split-the-dataset-for-model-training-and-testing"></a>Rozdělení datové sady pro trénování a testování modelu
 
-Dále je třeba trénovací datové sady pro trénování modelu a datové sady testů k vyhodnocení modelu. Použití `MLContext.BinaryClassification.TrainTestSplit` která zabalí <xref:Microsoft.ML.StaticPipe.TrainingStaticExtensions.TrainTestSplit%2A> rozdělit načíst datovou sadu na trénování a testování datových sad a vrátit je uvnitř <xref:Microsoft.ML.TrainCatalogBase.TrainTestData>. Část dat můžete zadat nastavení testu s `testFraction`parametru. Výchozí hodnota je 10 %, ale v tomto případě použijte 20 % používat další data pro vyhodnocení.  
+Dále je třeba trénovací datové sady pro trénování modelu a datové sady testů k vyhodnocení modelu. Použití `MLContext.BinaryClassification.TrainTestSplit` která zabalí <xref:Microsoft.ML.StaticPipe.TrainingStaticExtensions.TrainTestSplit%2A> rozdělit načíst datovou sadu na trénování a testování datových sad a vrátit je uvnitř <xref:Microsoft.ML.TrainCatalogBase.TrainTestData>. Část dat můžete zadat nastavení testu s `testFraction`parametru. Výchozí hodnota je 10 %, ale v tomto případě použijte 20 % používat další data pro vyhodnocení.
 
 Načtená data rozdělením potřebné datové sady, přidejte následující kód jako další řádek `LoadData` metody:
 
@@ -224,7 +225,7 @@ public static ITransformer BuildAndTrainModel(MLContext mlContext, IDataView spl
 }
 ```
 
-Všimněte si, že dva parametry jsou předány do metody trénování; `MLContext` kontextu (`mlContext`) a `IDataView`pro trénovací datové sady (`splitTrainSet`). 
+Všimněte si, že dva parametry jsou předány do metody trénování; `MLContext` kontextu (`mlContext`) a `IDataView`pro trénovací datové sady (`splitTrainSet`).
 
 ## <a name="extract-and-transform-the-data"></a>Extrahovat a transformaci dat
 
@@ -353,7 +354,7 @@ Přidejte volání do nové metody z `Main` metody, v rámci `Evaluate` volání
 Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek `Predict` metody:
 
 [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
-  
+
 Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict` metodu tak, že vytvoříte instanci `SentimentData`:
 
 [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
@@ -450,7 +451,7 @@ Press any key to continue . . .
 
 ```
 
-Blahopřejeme! Teď jste úspěšně sestaven model strojového učení pro klasifikaci a předvídat zprávy mínění. 
+Blahopřejeme! Teď jste úspěšně sestaven model strojového učení pro klasifikaci a předvídat zprávy mínění.
 
 Vytváření modelů po úspěšné je iterativní proces. Tento model má nižší počáteční kvalita jako kurz používá malé datové sady poskytují rychlý model školení. Pokud si nejste spokojeni s kvalitou modelu, můžete ho vylepšit tím, že poskytuje větší cvičných datových sad nebo výběrem jiné školení algoritmy s jinou hyperparametry pro jednotlivé algoritmy.
 
@@ -459,6 +460,7 @@ Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/
 ## <a name="next-steps"></a>Další kroky
 
 V tomto kurzu jste se naučili:
+
 > [!div class="checklist"]
 > * Pochopení problému
 > * Vyberte algoritmus učení příslušný počítač
@@ -470,5 +472,6 @@ V tomto kurzu jste se naučili:
 > * Nasazení a predikce v načíst model
 
 Přejděte k dalšímu kurzu, kde Další informace
+
 > [!div class="nextstepaction"]
 > [Klasifikace problému](github-issue-classification.md)

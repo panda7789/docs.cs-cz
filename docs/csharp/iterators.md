@@ -3,16 +3,16 @@ title: Iterátory
 description: Zjistěte, jak použít integrovaný C# iterátory a jak vytvořit vlastní vlastní iterátory.
 ms.date: 06/20/2016
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: f1be4e9a8b67f0e71615c730af4316253224b888
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: e816af698a39a4b44aefa92017efdbc9e3c8cc1d
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59155217"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613431"
 ---
 # <a name="iterators"></a>Iterátory
 
-Téměř každá program, který napíšete bude mít některé nutnost opakování v kolekci. Budete psát kód, který ověřuje, zda každá položka v kolekci. 
+Téměř každá program, který napíšete bude mít některé nutnost opakování v kolekci. Budete psát kód, který ověřuje, zda každá položka v kolekci.
 
 Také vytvoříte metody iterátoru, které jsou metody, které vytvoří iterátor pro elementy třídy. Ty je možné použít pro:
 
@@ -28,7 +28,7 @@ V tomto kurzu má několik kroků. Po provedení každého kroku můžete spusti
 ## <a name="iterating-with-foreach"></a>Iterace pomocí příkazu foreach
 
 Vytvoření výčtu kolekce je jednoduchý: `foreach` – Klíčové slovo vytvoří výčet kolekce, provádění vloženým příkazem jednou pro každý prvek v kolekci:
- 
+
 ```csharp
 foreach (var item in collection)
 {
@@ -42,7 +42,7 @@ Obě tato rozhraní mají také jejich obecné protějšky: `IEnumerable` a `IEn
 
 ## <a name="enumeration-sources-with-iterator-methods"></a>Výčet zdrojů s iterátory
 
-Další skvělou funkcí služby C# jazyka vám umožní sestavovat metody, které vytvoří zdroj pro výčet. Tyto jsou označovány jako *iterátory*. Metodu iterátoru definuje, jak generovat objekty v posloupnosti na požádání. Můžete použít `yield return` kontextová klíčová slova, chcete-li definovat metodu iterátoru. 
+Další skvělou funkcí služby C# jazyka vám umožní sestavovat metody, které vytvoří zdroj pro výčet. Tyto jsou označovány jako *iterátory*. Metodu iterátoru definuje, jak generovat objekty v posloupnosti na požádání. Můžete použít `yield return` kontextová klíčová slova, chcete-li definovat metodu iterátoru.
 
 Můžete napsat tuto metodu za účelem vytvoření sekvence celých čísel od 0 do 9:
 
@@ -82,9 +82,9 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-    
+
     index = 100;
     while (index++ < 110)
         yield return index;
@@ -113,12 +113,12 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-   
-    // generates a compile time error: 
+
+    // generates a compile time error:
     var items = new int[] {100, 101, 102, 103, 104, 105, 106, 107, 108, 109 };
-    return items;  
+    return items;
 }
 ```
 
@@ -132,15 +132,15 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-   
+
     var items = new int[] {100, 101, 102, 103, 104, 105, 106, 107, 108, 109 };
     foreach (var item in items)
         yield return item;
 }
 ```
- 
+
 V některých případech je správná odpověď metody iterátoru rozdělit na dvě různé metody. Ten, který používá `return`a druhý, který používá `yield return`. Představte si situaci, kde můžete chtít vrátit prázdnou kolekci nebo prvních 5 lichých čísel podle logický argument. Který může zapsat jako tyto dvě metody:
 
 ```csharp
@@ -160,12 +160,12 @@ private IEnumerable<int> IteratorMethod()
             yield return index;
 }
 ```
- 
+
 Podívejte se na metod uvedených výše. První způsob využívá standardní `return` příkaz vrátit prázdnou kolekci nebo vytvořené pomocí druhé metody iterátoru. Druhá metoda používá `yield return` příkaz pro vytvoření požadovaného pořadí.
 
 ## <a name="deeper-dive-into-foreach"></a>Prozkoumejte podrobněji `foreach`
 
-`foreach` Příkaz rozšíří na standardní idiom, který používá `IEnumerable<T>` a `IEnumerator<T>` rozhraní k iteraci v rámci všech prvků kolekce. Také minimalizuje chyb, které vývojář podá tím, že není správně spravuje prostředky. 
+`foreach` Příkaz rozšíří na standardní idiom, který používá `IEnumerable<T>` a `IEnumerator<T>` rozhraní k iteraci v rámci všech prvků kolekce. Také minimalizuje chyb, které vývojář podá tím, že není správně spravuje prostředky.
 
 Kompilátor překládá `foreach` smyčky do něco podobného pro tento konstruktor je znázorněno v prvním příkladu:
 
@@ -198,14 +198,14 @@ Přesný kód generovaný kompilátorem je o něco složitější a zpracovává
 ```csharp
 {
     var enumerator = collection.GetEnumerator();
-    try 
+    try
     {
         while (enumerator.MoveNext())
         {
             var item = enumerator.Current;
             Console.WriteLine(item.ToString());
         }
-    } finally 
+    } finally
     {
         // dispose of enumerator.
     }
@@ -215,26 +215,27 @@ Přesný kód generovaný kompilátorem je o něco složitější a zpracovává
 Způsob, ve kterém je enumerátor odstraněny závisí na vlastnosti typu `enumerator`. V tomto obecném případě `finally` klauzule rozšíří na:
 
 ```csharp
-finally 
+finally
 {
    (enumerator as IDisposable)?.Dispose();
-} 
+}
 ```
 
 Nicméně pokud typu `enumerator` je zapečetěný typ a neexistuje žádný implicitní převod z typu `enumerator` k `IDisposable`, `finally` klauzule rozšíří na prázdný blok:
+
 ```csharp
-finally 
+finally
 {
-} 
+}
 ```
 
 Pokud je implicitní převod z typu `enumerator` k `IDisposable`, a `enumerator` je typ hodnoty Null, `finally` klauzule rozšíří na:
 
 ```csharp
-finally 
+finally
 {
    ((IDisposable)enumerator).Dispose();
-} 
+}
 ```
 
-Naštěstí nemusíte pamatovat si tyto podrobnosti. `foreach` Příkaz zpracuje za vás tyto drobné rozdíly. Bude kompilátor generovat správný kód pro některý z těchto konstruktorů. 
+Naštěstí nemusíte pamatovat si tyto podrobnosti. `foreach` Příkaz zpracuje za vás tyto drobné rozdíly. Bude kompilátor generovat správný kód pro některý z těchto konstruktorů.

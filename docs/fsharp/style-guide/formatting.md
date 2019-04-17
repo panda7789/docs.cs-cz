@@ -2,12 +2,12 @@
 title: F#pravidla formátování kódu
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 02/08/2019
-ms.openlocfilehash: 0a72f96119181650837657afea6ca9d555ce9e5a
-ms.sourcegitcommit: 8080271c246b57f4fb68c28369634bff46843424
+ms.openlocfilehash: 259d4bb2147d1fc8bc5d35d7ff2e3c34ec2185d0
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59553859"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613821"
 ---
 # <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
 
@@ -285,6 +285,7 @@ let update model msg =
     | 1 -> model + 1, []
     | _ -> model, [ msg ]
 ```
+
 Stručně řečeno, dáváte přednost instancí řazené kolekce členů v závorkách, ale při použití řazených kolekcí členů pro porovnávání vzorů nebo návratovou hodnotu, považuje se můžete vyhnout závorky.
 
 ## <a name="formatting-discriminated-union-declarations"></a>Formátování rozlišované deklarace sjednocení
@@ -344,10 +345,10 @@ type PostalAddress =
     City: string
     Zip: string }
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
-    
+
 // Unusual in F#
 type PostalAddress =
-    { 
+    {
         Address: string
         City: string
         Zip: string
@@ -359,13 +360,13 @@ Uvedení na nový řádek a pravou token na nový řádek levou token je vhodně
 ```fsharp
 // Declaring additional members on PostalAddress
 type PostalAddress =
-    { 
+    {
         Address: string
         City: string
         Zip: string
     } with
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
-    
+
 type MyRecord =
     {
         SomeField: int
@@ -407,7 +408,7 @@ let rainbow =
         Boss8 = "Jeffrey"
         Lackeys = ["Zippy"; "George"; "Bungle"]
     }
-    
+
 type MyRecord =
     {
         SomeField: int
@@ -445,12 +446,12 @@ let rainbow2 =
 
 A jako s pokyny k záznamu, můžete chtít vyhradit samostatné řádky pro složené závorky a odsazovat jeden obor vpravo s výrazem. Všimněte si, že v některých případech speciální, jako je například obtékání hodnotu s volitelným bez závorek, budete muset zachovat složenou závorku na jednom řádku:
 
-```fsharp    
+```fsharp
 type S = { F1: int; F2: string }
 type State = { F:  S option }
 
 let state = { F = Some { F1 = 1; F2 = "Hello" } }
-let newState = 
+let newState =
     {
         state with
             F = Some {

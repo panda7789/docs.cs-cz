@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 1b12e614c59785a066ad34e5320a205961f7dd49
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59610805"
+---
 # <a name="contributing"></a>Přispívání
 
 Děkujeme vám za váš zájem o přispívání do dokumentace k .NET.
@@ -24,7 +32,7 @@ Tady jsou sledovány problémy a úkoly pro všechna tato úložiště.
 
 Potřebujete základní znalosti o [Git a webu GitHub.com](https://guides.github.com/activities/hello-world/).
 
-**Krok 1:** Přeskočte tento krok pro malé změny. Pokud vás zajímá vytváření nového obsahu nebo důkladně pozměňovacího existující obsah, otevřete [problém](https://github.com/dotnet/docs/issues) popisující, co chcete udělat.
+**Krok 1:** Přeskočte tento krok pro malé změny (například, pokud oprava překlep nebo okamžitě otevřít žádost o přijetí změn k vyřešení problému, který najdete v dokumentaci). Pokud vás zajímá vytváření nového obsahu nebo důkladně pozměňovacího existující obsah, otevřete [problém](https://github.com/dotnet/docs/issues) popisující, co chcete udělat.
 Obsah uvnitř **dokumentace** složky je uspořádaný do oddílů, které se projeví v tabulce obsah (TOC). Definujte, kde budou umístěny na téma v obsahu. Získáte zpětnou vazbu na váš návrh.
 
 -nebo-

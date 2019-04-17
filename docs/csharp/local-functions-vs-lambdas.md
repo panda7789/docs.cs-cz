@@ -3,12 +3,12 @@ title: Lokální funkce vs. výrazy lambda
 description: Zjistěte, proč lokální funkce může být vhodnější než výrazů lambda.
 ms.date: 06/27/2016
 ms.assetid: 368d1752-3659-489a-97b4-f15d87e49ae3
-ms.openlocfilehash: 17ad1e8782adbf9e0f892d72849e58ef9c5ddce1
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 7577950314f8c57fba635db8b2bcd69e8d427dc3
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125769"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611442"
 ---
 # <a name="local-functions-compared-to-lambda-expressions"></a>Lokální funkce ve srovnání s výrazy lambda
 
@@ -59,7 +59,7 @@ Lokální funkce nejsou tato dodatečná režie spojené. V předchozím příkl
 > [!NOTE]
 > Lokální funkce ekvivalent tato metoda také používá třídu pro uzavření. Zda uzávěru lokální funkce je implementovaná jako `class` nebo `struct` je podrobnost implementace. Použít lokální funkci `struct` že výraz lambda bude vždy používat `class`.
 
-[!code-csharp[TaskLocalFunctionExample](../../samples/snippets/csharp/new-in-7/AsyncWork.cs#29_TaskExample "Task returning method with local function")]
+[!code-csharp[TaskLocalFunctionExample](../../samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 Jednou z výhod konečné není ukázáno v tomto příkladu je, že je lokální funkce implementovat jako iterátory, přičemž pomocí `yield return` syntaxi pro vytvoření sekvenci hodnot. `yield return` Nejsou povoleny ve výrazech lambda.
 

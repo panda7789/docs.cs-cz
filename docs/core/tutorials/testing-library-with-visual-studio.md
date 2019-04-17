@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: c099bde5a90e7e95eb5d9da6aacf763054a865ae
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 352599d60a42a034b3d6647b1fe8f1cbf2f4572d
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201323"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612001"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Test knihovny .NET Standard s .NET Core v sadě Visual Studio 2017
 
@@ -150,11 +150,13 @@ Vašeho testovacího běhu došlo k chybám, žádné, ale mírně změnit tak, 
    string[] words = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
                       "1234", ".", ";", " " };
    ```
+
    ```vb
    Dim words() As String = { "alphabet", "Error", "zebra", "abc", "αυτοκινητοβιομηχανία", "государство",
                       "1234", ".", ";", " " }
 
    ```
+
 1. Spuštění testu tak, že vyberete **testování** > **spustit** > **všechny testy** z řádku nabídek. **Průzkumník testů** okno označuje, že dva testy úspěšné a jeden se nezdařilo.
 
    ![Okno Průzkumníka testu se selhání testů](./media/testing-library-with-visual-studio/failed-test-window.png)

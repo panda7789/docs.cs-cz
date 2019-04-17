@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislosti .NET Core pro vývo
 author: thraka
 ms.author: adegeo
 ms.date: 12/14/2018
-ms.openlocfilehash: 29256259c66b909ad65691230bd652f38583184e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 0bd3287535ba2c398f6577890d1d39f42a806364
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59084894"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59612222"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Požadavky pro .NET Core v Linuxu
 
@@ -23,7 +23,7 @@ Tento článek popisuje závislosti, které potřebujete pro vývoj aplikací .N
 
 ## <a name="supported-linux-versions"></a>Podporované verze Linuxu
 
-# [<a name="net-core-2x"></a>.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 .NET core 2.x považuje Linux jako jeden operační systém. Existuje jedno sestavení Linux (za architektura procesoru) podporované distribuce systému Linux. 
 
@@ -44,7 +44,7 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 
 Zobrazit [podporované verze operačního systému .NET Core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) a [podporované verze operačního systému .NET Core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) úplný seznam .NET Core 2.1 a .NET Core 2.2 podporované operační systémy, distribuce a verze, z celkového počtu Podpora verze operačního systému a propojení zásad životního cyklu.
 
-# [<a name="net-core-1x"></a>.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení rozhraní .NET Core 1.1](https://www.microsoft.com/net/download/dotnet-core/1.1) nebo [.NET Core 1.0 stáhne](https://www.microsoft.com/net/download/dotnet-core/1.0).
 
@@ -61,7 +61,7 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 
 Zobrazit [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy, z verze podporu operačního systému a propojení zásad životního cyklu.
 
-# [<a name="net-core-30-preview-1"></a>.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
+# <a name="net-core-30-preview-1tabnetcore30"></a>[.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
 
 .NET core 3.0 ve verzi Preview 1 považuje za jeden operační systém Linux. Existuje jedno sestavení Linux (za architektura procesoru) podporované distribuce systému Linux. 
 
@@ -144,7 +144,7 @@ V Linuxu existují dvě možnosti balíček instalačního programu:
 
 ### <a name="scripting-installs-with-the-net-core-installer-script"></a>Skriptování nainstaluje s skript instalačního programu .NET Core
 
-[Dotnet instalačních skriptů](./tools/dotnet-install-script.md) umožňují provést instalaci bez oprávnění správce. Sada nástrojů rozhraní příkazového řádku a sdílený modul runtime. Můžete stáhnout skript z [ https://dot.net/v1/dotnet-install.sh ](https://dot.net/v1/dotnet-install.sh).
+[Dotnet instalačních skriptů](./tools/dotnet-install-script.md) umožňují provést instalaci bez oprávnění správce. Sada nástrojů rozhraní příkazového řádku a sdílený modul runtime. Můžete stáhnout skript z <https://dot.net/v1/dotnet-install.sh>.
 
 Výchozí hodnoty skriptu k instalaci nejnovější verze "L", která je aktuálně .NET Core 1.1. Pokud chcete nainstalovat rozhraní .NET Core 2.1, spusťte skript s přepínačem následující:
 

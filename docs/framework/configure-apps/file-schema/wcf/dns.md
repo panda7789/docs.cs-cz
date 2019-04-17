@@ -2,12 +2,12 @@
 title: <dns>
 ms.date: 03/30/2017
 ms.assetid: 81819dae-4825-43b7-bccd-f16d2d3d2f06
-ms.openlocfilehash: ce12d0a82c8a443994559ed772496897f359b4e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 26b45b17ecd7bbd3fffb5d03553834ec22eedc62
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59166670"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611169"
 ---
 # <a name="dns"></a>\<dns>
 Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim ověřování certifikátu, pokud certifikát serveru obsahuje DNS se stejnou hodnotou. Platí také pro režim ověřování systému Windows Pokud hlavní název služby má stejnou hodnotu.  
@@ -30,7 +30,7 @@ Určuje očekávanou identitu serveru. Tato identita je platný pro X509 režim 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|DNS certifikátu. DNS je standardní protokol slouží k vyhledání počítačů v síti na základě IP adresy. Uživatelé zapamatujete zobrazované názvy, například [ https://go.microsoft.com/fwlink/?prd=10929 ](https://go.microsoft.com/fwlink/?prd=10929) nebo [ https://go.microsoft.com/fwlink/?LinkID=96165 ](https://go.microsoft.com/fwlink/?LinkID=96165), jednodušší než adres na základě čísla, jako je například 207.46.131.137.|  
+|value|DNS certifikátu. DNS je standardní protokol slouží k vyhledání počítačů v síti na základě IP adresy. Uživatelé zapamatujete zobrazované názvy, například <https://go.microsoft.com/fwlink/?prd=10929> nebo [ https://go.microsoft.com/fwlink/?LinkID=96165 ](https://go.microsoft.com/fwlink/?LinkID=96165), jednodušší než adres na základě čísla, jako je například 207.46.131.137.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

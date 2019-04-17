@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9edc54b5b7d86f0ecb58a6910cde82d088b2c663
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 19f1d3d1d94db885938a5da3f3b66c8e554205b5
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357856"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611390"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Zabalení a nasazení prostředků v aplikacích .NET
 
@@ -226,6 +226,7 @@ Pokud spustit příklad ze systému, jejíž jazyk nic jiného než ruština zob
 ```
 Bon jour!
 ```
+
 ## <a name="suggested-packaging-alternative"></a>Navrhovaná alternativní balení
 
 Vytvoření sady prostředků pro každou subkulturu, kterou podporuje vaše aplikace může zabránit omezení času a rozpočtu. Místo toho můžete vytvořit jeden satelitní sestavení pro nadřazenou jazykovou verzi, že všechny související subkultury můžete použít. Například může poskytovat jednotné anglické satelitní sestavení (cs), která jsou načítána uživatelů, kteří požadují anglické prostředky specifické pro oblast a jedno německé satelitní sestavení (de) pro uživatele, kteří žádají o německý prostředky specifické pro oblast. Například požadavky pro němčinu jako používaný v Německu (de-DE), Rakousko (de-AT) a Švýcarska (de-CH) by vrátit zpět k německé satelitní sestavení (de). Výchozí prostředky jsou poslední použití náhradní lokality a proto musí být prostředky, které bude vyžádána většinou uživatelé vaší aplikace, takže pečlivě tyto prostředky. Tento přístup nasazuje prostředky, které jsou méně jazykově specifické, ale může výrazně snížit náklady na lokalizaci vaší aplikace.

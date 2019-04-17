@@ -16,21 +16,22 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8786892d591a98ddcd7f51eddf86fdbcf50f2197
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: ff9ea8cdc8aea66b1dd1f54c8be881882f6e27f7
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59214868"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611533"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
+
 Připojení přes DCOM k oboru názvů WMI vytvoří v zadaném počítači.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT ConnectServerWmi (
    [in] BSTR               strNetworkResource,
    [in] BSTR               strUser,
@@ -40,10 +41,11 @@ HRESULT ConnectServerWmi (
    [in] BSTR               strAuthority,
    [in] IWbemContext*      pCtx,
    [out] IWbemServices**   ppNamespace,
-   [in] DWORD              impLevel, 
+   [in] DWORD              impLevel,
    [in] DWORD              authLevel
 );
 ```
+
 ## <a name="parameters"></a>Parametry
 
 `strNetworkResource`\
@@ -56,8 +58,8 @@ HRESULT ConnectServerWmi (
 [in] Ukazatel na platný `BSTR` obsahující heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo nulové délky.
 
 `strLocale`\
-[in] Ukazatel na platný `BSTR` určující správné národní prostředí pro načítání informací. Identifikátory národního prostředí Microsoft formát řetězce je "MS\_*xxx*", kde *xxx* je řetězce v šestnáctkovém formátu, který určuje identifikátor národního prostředí (LCID). Pokud je zadán neplatný národní prostředí, vrátí metoda `WBEM_E_INVALID_PARAMETER` s výjimkou Windows 7, které místo toho používají výchozí národní prostředí serveru. Pokud se používá null1 aktuálního národního prostředí. 
- 
+[in] Ukazatel na platný `BSTR` určující správné národní prostředí pro načítání informací. Identifikátory národního prostředí Microsoft formát řetězce je "MS\_*xxx*", kde *xxx* je řetězce v šestnáctkovém formátu, který určuje identifikátor národního prostředí (LCID). Pokud je zadán neplatný národní prostředí, vrátí metoda `WBEM_E_INVALID_PARAMETER` s výjimkou Windows 7, které místo toho používají výchozí národní prostředí serveru. Pokud se používá null1 aktuálního národního prostředí.
+
 `lSecurityFlags`\
 [in] Příznaky, které mají být předány `ConnectServerWmi` metody. Hodnotu nula (0) pro tento parametr je výsledkem volání `ConnectServerWmi` vrací pouze po navázání připojení k serveru. To může způsobit aplikace neodpovídá po neomezenou dobu Pokud na serveru se přeruší. Platné hodnoty jsou:
 
@@ -69,14 +71,14 @@ HRESULT ConnectServerWmi (
 `strAuthority`\
 [in] Název domény uživatele. Může mít následující hodnoty:
 
-| Value | Popis |
+| Hodnota | Popis |
 |---------|---------|
 | Prázdné | Bude použito ověřování NTLM a používá NTLM domény aktuálního uživatele. Pokud `strUser` Určuje doménu (doporučené umístění), nesmí být zadané tady. Funkce vrátí `WBEM_E_INVALID_PARAMETER` při zadání domény v obou parametrech. |
 | Pomocí protokolu Kerberos:*hlavní název* | Používáno ověřování protokolem Kerberos a tento parametr obsahuje hlavní název Kerberos. |
 | NTLMDOMAIN:*název domény* | Ověřování NT LAN Manager se používá, a tento parametr obsahuje název domény NTLM. |
 
 `pCtx`\
-[in] Tento parametr je obvykle `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) podle jednoho nebo více dynamických tříd zprostředkovatelů je požadován objekt. 
+[in] Tento parametr je obvykle `null`. V opačném případě je ukazatel [IWbemContext](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemcontext) podle jednoho nebo více dynamických tříd zprostředkovatelů je požadován objekt.
 
 `ppNamespace`\
 [out] Po návratu funkce přijímá ukazatel [Služby IWbem](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) objekt vázán na určený obor názvů. Je nastaven tak, aby odkazoval na `null` když dojde k chybě.

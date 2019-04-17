@@ -3,15 +3,15 @@ title: Nástroj Identita a přístup pro Visual Studio 2012
 ms.date: 03/30/2017
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
 author: BrucePerlerMS
-ms.openlocfilehash: 9216298889637780e79d1bfc7ac060458c745968
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 65d771b87cd3198848ffac387446abb17df18250
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59170115"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611585"
 ---
 # <a name="identity-and-access-tool-for-visual-studio-2012"></a>Nástroj Identita a přístup pro Visual Studio 2012
-Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj si můžete stáhnout z následující adresy URL: [ https://go.microsoft.com/fwlink/?LinkID=245849 ](https://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření.  
+Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj si můžete stáhnout z následující adresy URL: <https://go.microsoft.com/fwlink/?LinkID=245849> nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření.  
   
  Nástroj Identity and Access Tool for Visual Studio 11 přináší výrazně jednodušší možnosti vývoje díky následujícím hlavním funkcím:  
   
@@ -29,4 +29,4 @@ Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11
   
 ## <a name="see-also"></a>Viz také:
 
-- [Funkce WIF](../../../docs/framework/security/wif-features.md)
+- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)

@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/31/2018
-ms.openlocfilehash: e9a69c61df574ea391622ebb709c14948c71014d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 086be4649f4e7e27ff98df6f26d08856683865c8
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59341722"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611780"
 ---
 # <a name="whats-new-in-net-core-30-preview-2"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 2)
 
@@ -63,7 +63,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 {
     await foreach (var result in GetResultsAsync())
     {
-        if (result > 20) yield return result; 
+        if (result > 20) yield return result;
     }
 }
 ```
@@ -166,20 +166,20 @@ Během `dotnet build` nebo `dotnet publish`, spustitelný soubor je vytvořen, z
 
 ## <a name="build-copies-dependencies"></a>Vytvoření kopie závislosti
 
-`dotnet build` Nyní zkopíruje závislostí NuGet pro vaši aplikaci z mezipaměti NuGet k výstupní složce sestavení. Dříve byly závislosti pouze zkopírovány jako součást `dotnet publish`. 
+`dotnet build` Nyní zkopíruje závislostí NuGet pro vaši aplikaci z mezipaměti NuGet k výstupní složce sestavení. Dříve byly závislosti pouze zkopírovány jako součást `dotnet publish`.
 
 Existují některé operace, jako je stránka propojení a razor publikování, který se stále vyžadují publikování.
 
 ## <a name="local-dotnet-tools"></a>Nástroje pro místní dotnet
 
->[!WARNING]
->Došlo ke změně v .NET Core místní nástroje .NET Core 3.0 ve verzi Preview 1 až .NET Core 3.0 ve verzi Preview 2.  Pokud jste si vyzkoušeli místní nástroje ve verzi Preview 1 spuštěním příkazu jako `dotnet tool restore` nebo `dotnet tool install`, musíte odstranit složky mezipaměti místního nástroje před místní nástroje bude správně fungovat ve verzi Preview 2. Tato složka nachází tady:
+> [!WARNING]
+> Došlo ke změně v .NET Core místní nástroje .NET Core 3.0 ve verzi Preview 1 až .NET Core 3.0 ve verzi Preview 2.  Pokud jste si vyzkoušeli místní nástroje ve verzi Preview 1 spuštěním příkazu jako `dotnet tool restore` nebo `dotnet tool install`, musíte odstranit složky mezipaměti místního nástroje před místní nástroje bude správně fungovat ve verzi Preview 2. Tato složka nachází tady:
 >
->Na počítači mac, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
+> Na počítači mac, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
->Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
+> Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
 >
->Pokud tato složka neodstraníte, dojde k chybě.
+> Pokud tato složka neodstraníte, dojde k chybě.
 
 I když .NET Core 2.1 podporuje globální nástroje, .NET Core 3.0 teď má místní nástroje. Místní nástroje se podobají globální nástroje, ale jsou spojeny s konkrétní umístění na disku. Díky tomu jednotlivých projektů a nástrojů na úložiště. Libovolný nástroj nainstalovaný místně není k dispozici globálně. Nástroje se distribuují jako balíčky NuGet.
 
@@ -309,10 +309,12 @@ Podělte se prosím o svůj názor na [dotnet/winforms](https://github.com/dotne
 
 [Projekt Windows Application Packaging](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), k dispozici v aplikaci Visual Studio 2019, vám umožní vytvořit MSIX balíčky s [samostatná](../deploying/index.md#self-contained-deployments-scd) aplikace .NET Core.
 
->Poznámka: Soubor projektu .NET Core, musíte zadat podporované moduly Runtime v `<RuntimeIdentifiers>` vlastnost:
-```xml
-<RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
-```
+> [!NOTE]
+> Soubor projektu .NET Core, musíte zadat podporované moduly Runtime v `<RuntimeIdentifiers>` vlastnost:
+>
+> ```xml
+> <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+> ```
 
 ## <a name="fast-built-in-json-support"></a>Rychlé integrovanou podporou JSON
 
@@ -421,7 +423,7 @@ static int WriteJson(IBufferWriter<byte> output, long[] extraData)
 }
 ```
 
-`Utf8JsonWriter` Přijímá `IBufferWriter<byte>` jako umístění výstupu synchronně zapisovat json data a abyste jako volající musí poskytnout konkrétní implementaci. Platformu současnosti nezahrnuje implementace tohoto rozhraní. Příklad `IBufferWriter<byte>`, naleznete v tématu [https://gist.github.com/ahsonkhan/c76a1cc4dc7107537c3fdc0079a68b35](https://gist.github.com/ahsonkhan/c76a1cc4dc7107537c3fdc0079a68b35)
+`Utf8JsonWriter` Přijímá `IBufferWriter<byte>` jako umístění výstupu synchronně zapisovat json data a abyste jako volající musí poskytnout konkrétní implementaci. Platformu současnosti nezahrnuje implementace tohoto rozhraní. Příklad `IBufferWriter<byte>`, naleznete v tématu <https://gist.github.com/ahsonkhan/c76a1cc4dc7107537c3fdc0079a68b35>.
 
 ### <a name="jsondocument"></a>JsonDocument
 
@@ -466,7 +468,7 @@ Unloadability sestavení je nová funkce `AssemblyLoadContext`. Tato nová funkc
 
 Tato nová funkce je možné pro podobné scénáře:
 
-* Modul plug-in scénáře, ve kterém jsou vyžadována dynamických modulů plug-in, načítání a uvolňování. 
+* Modul plug-in scénáře, ve kterém jsou vyžadována dynamických modulů plug-in, načítání a uvolňování.
 * Dynamická kompilace, spouštění a pak vyprazdňování kódu. Užitečné pro webové servery, skriptovací moduly atd.
 * Načítání sestavení pro introspekce (např. ReflectionOnlyLoad), i když [MetadataLoadContext](#type-metadataloadcontext) (všeobecně dostupné ve verzi Preview 1) bude vhodnější použít v mnoha případech.
 
@@ -484,7 +486,7 @@ Vidíte příklad použití modelu COM s [zdrojový kód ukázkové aplikace Exc
 
 ## <a name="type-sequencereader"></a>Zadejte: SequenceReader
 
-V rozhraní .NET Core 3.0 `System.Buffers.SequenceReader` se přidala, který může sloužit jako čtečku `ReadOnlySequence<T>`. To umožňuje snadné, vysoký výkon s nízkou přidělení parsování `System.IO.Pipelines` data, která lze napříč více vyrovnávacích pamětí zálohování. 
+V rozhraní .NET Core 3.0 `System.Buffers.SequenceReader` se přidala, který může sloužit jako čtečku `ReadOnlySequence<T>`. To umožňuje snadné, vysoký výkon s nízkou přidělení parsování `System.IO.Pipelines` data, která lze napříč více vyrovnávacích pamětí zálohování.
 
 Následující příklad přeruší vstup `Sequence` do platné `CR/LF` oddělených řádky:
 
@@ -663,7 +665,7 @@ namespace rsakeyprint
             {
                 byte[] keyBytes = File.ReadAllBytes(args[0]);
                 rsa.ImportRSAPrivateKey(keyBytes, out int bytesRead);
- 
+
                 Console.WriteLine($"Read {bytesRead} bytes, {keyBytes.Length-bytesRead} extra byte(s) in file.");
                 RSAParameters rsaParameters = rsa.ExportParameters(true);
                 Console.WriteLine(BitConverter.ToString(rsaParameters.D));
@@ -709,7 +711,7 @@ Dříve, .NET Core, které jsou podporovány pouze při použití `SerialPort` t
 
 ## <a name="more-bcl-improvements"></a>Další vylepšení BCL
 
-`Span<T>`, `Memory<T>`, A souvisejících typů, které byly zavedeny v .NET Core 2.1, byly optimalizovány odstraněním v .NET Core 3.0. Běžné operace, jako span konstrukce, dělení, analýzy a formátování nyní líp fungovat. 
+`Span<T>`, `Memory<T>`, A souvisejících typů, které byly zavedeny v .NET Core 2.1, byly optimalizovány odstraněním v .NET Core 3.0. Běžné operace, jako span konstrukce, dělení, analýzy a formátování nyní líp fungovat.
 
 Kromě toho, jako jsou typy `String` viděli v rámci titulní vylepšení je zefektivňují při použití jako klíče s `Dictionary<TKey, TValue>` i další kolekce. Abyste využili výhod těchto vylepšení nevyžaduje žádné změny kódu.
 
@@ -751,7 +753,7 @@ Po dokončení konfigurace Snap ve vašem systému, spusťte následující př�
 ```console
 sudo snap install dotnet-sdk --beta --classic
 ```
- 
+
 Když .NET Core v nainstalovaných pomocí modulu Snap balíčku, výchozí příkaz .NET Core je `dotnet-sdk.dotnet`, na rozdíl od jenom `dotnet`. Výhodou namespaced příkaz je, že to nebude v konfliktu s globálně nainstalovanou verzi .NET Core, které máte uzavřeny. Tento příkaz lze použít alias na `dotnet` pomocí:
 
 ```console

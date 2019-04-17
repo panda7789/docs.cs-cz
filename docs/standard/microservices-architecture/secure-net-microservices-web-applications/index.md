@@ -4,12 +4,12 @@ description: Zabezpečení v rozhraní .NET Mikroslužeb a webových aplikací �
 author: mjrousos
 ms.author: wiwagn
 ms.date: 10/19/2018
-ms.openlocfilehash: 3e2598f58bf2fb34a7ad7c107066d34e0e7c3408
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 0894465858e3503e2eddb5299b404f7ba95fdd6a
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464811"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611559"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Zabezpečení Mikroslužby .NET a webové aplikace
 
@@ -289,13 +289,13 @@ Middlewaru ověřování nosiče JWT může také podporovat pokročilejší sc�
   [https://docs.microsoft.com/aspnet/core/security/authentication/social/](/aspnet/core/security/authentication/social/)
 
 - **Michell Anicas. Úvod do OAuth 2** \
-  [https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+  <https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2>
 
 - **AspNet.Security.OAuth.Providers** (úložiště GitHub pro poskytovatelů OAuth technologie ASP.NET) \
-  [https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
+  <https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src>
 
 - **Danny Strockis. Integrace Azure AD do webové aplikace ASP.NET Core** \
-  [https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+  <https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/>
 
 - **IdentityServer4. Oficiální dokumentaci** \
   <https://identityserver4.readthedocs.io/en/latest/>

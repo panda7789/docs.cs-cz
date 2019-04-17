@@ -3,35 +3,39 @@ title: příkaz DotNet nuget nabízených oznámení
 description: Příkaz dotnet nuget nabízených odešle balíček na server a publikuje ji.
 author: karann-msft
 ms.date: 12/04/2018
-ms.openlocfilehash: 4f0d127d8b9f37b1c381d8981f54035a2fc3b0e5
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 9f38fb29ef5b802a5b7091dd1e9659c653cf04d0
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169349"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59610766"
 ---
 # <a name="dotnet-nuget-push"></a>DotNet nuget push
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Název
+## <a name="name"></a>Name
 
 `dotnet nuget push` -Odešle balíček na server a publikuje ji.
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+
 ```
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
     [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+
 ```
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
     [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
+
 ---
 
 ## <a name="description"></a>Popis
@@ -46,7 +50,7 @@ dotnet nuget push [-h|--help]
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-d|--disable-buffering`**
 
@@ -92,7 +96,7 @@ Vytiskne krátký nápovědy pro příkaz.
 
   Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 * **`-d|--disable-buffering`**
 

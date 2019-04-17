@@ -3,12 +3,12 @@ title: interní - chráněné C# odkaz
 ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: 09685e38e879de787b0f6bab8c189a8815433904
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 090baae7fe0e49289059e060d5dcba7b037ae47a
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238647"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613301"
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# Reference)
 
@@ -55,6 +55,7 @@ class DerivedClass : BaseClass
     }
 }
 ```
+
 Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`.
 První soubor obsahuje veřejnou základní třídu, `BaseClass`a jiné třídy `TestAccess`. `BaseClass` vlastní chráněný interní člen `myValue`, který přistupuje `TestAccess` typu.
 V souboru druhý pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě při přístupu do tohoto člena prostřednictvím instance třídy odvozená `DerivedClass` proběhne úspěšně.

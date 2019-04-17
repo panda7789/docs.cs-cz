@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: 3efe8b8716a264848d07ecc37d4e11d07a8ba0a0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 5c2ff8ac3b424a2541ba7604b5952b2a3ed0a21a
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59172494"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59611052"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
-Následující obrázek znázorňuje klienta a služby Windows Communication Foundation (WCF). Server potřebuje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Dále webová služba již má implementace protokolu SSL, který lze použít. Další informace o povolení základního ověřování v Internetové informační služby (IIS) najdete v tématu [ https://go.microsoft.com/fwlink/?LinkId=83822 ](https://go.microsoft.com/fwlink/?LinkId=83822).  
+Následující obrázek znázorňuje klienta a služby Windows Communication Foundation (WCF). Server potřebuje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Dále webová služba již má implementace protokolu SSL, který lze použít. Další informace o povolení základního ověřování v Internetové informační služby (IIS) najdete v tématu <https://go.microsoft.com/fwlink/?LinkId=83822>.  
   
  ![Snímek obrazovky, který ukazuje zabezpečení přenosu pomocí základního ověřování.](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
   

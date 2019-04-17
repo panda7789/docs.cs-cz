@@ -2,12 +2,12 @@
 title: Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: b445606677fba23ec81e896cce564330cedd6a19
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: a5c2f173978f514aa4627caa476a595d8d45d4f9
+ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59300681"
+ms.lasthandoff: 04/16/2019
+ms.locfileid: "59613743"
 ---
 # <a name="etw-tracing"></a>Trasování událostí pro Windows
 Tato ukázka předvádí, jak implementovat začátku do konce (E2E) trasování pomocí Event Tracing for Windows (ETW) a `ETWTraceListener` , který je součástí této ukázky. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a obsahuje trasování událostí pro Windows.  
@@ -50,7 +50,7 @@ Tato ukázka předvádí, jak implementovat začátku do konce (E2E) trasování
  Před použitím tohoto modulu pro naslouchání, musí se spustit relaci trasování ETW. Tato relace můžete spustit pomocí Logman.exe nebo Tracelog.exe. SetupETW.bat souboru je zahrnuta v této ukázce tak, že můžete nastavit relaci sledování ETW spolu se souborem CleanupETW.bat pro zavření relace a dokončení souboru protokolu.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu. Další informace o těchto nástrojích najdete v tématu [https://go.microsoft.com/fwlink/?LinkId=56580](https://go.microsoft.com/fwlink/?LinkId=56580)  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu. Další informace o těchto nástrojích najdete v tématu <https://go.microsoft.com/fwlink/?LinkId=56580>  
   
  Při použití ETWTraceListener přihlášeni trasování .etl binární soubory. S ServiceModel trasování zapnuté, všechna trasování vygenerovaný objeví ve stejném souboru. Použití [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) pro zobrazení ETL a .svclog souborů protokolů. V prohlížeči vytvoří pohledu začátku do konce systému, který umožňuje trasování zprávy z jeho zdroje do cíle a bod spotřeby.  
   
