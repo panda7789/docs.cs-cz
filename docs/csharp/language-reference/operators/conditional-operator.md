@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: c03fa202b413c98230ba70ca7a0b709d7865cb91
-ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
+ms.openlocfilehash: 82ada5e4d1f56ea93bbd7f41b04cda9f98d678c9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59427380"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672391"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 
@@ -42,6 +42,12 @@ je vyhodnocen jako
 ```csharp
 a ? b : (c ? d : e)
 ```
+
+Po ruce mnemotechnická, která vám pomůže si zapamatovat, jak tento operátor vyhodnocuje je s dotazem: 
+```
+is this condition true ? yes : no
+```
+s? část operátor, který funguje jako otazník pro předchozí prohlášení a následný funguje jako logické odpověď na tuto otázku.
 
 Následující příklad ukazuje použití podmíněný operátor:
 
@@ -84,9 +90,9 @@ Další informace najdete v tématu [Podmiňovací operátor](~/_csharplang/spec
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - [if-else – příkaz](../keywords/if-else.md)
-- [?. a ?[] – operátory](null-conditional-operators.md)
-- [?? Operátor](null-coalescing-operator.md)
-- [REF – klíčové slovo](../keywords/ref.md)
+- [Operátory ?. a ?[]](null-conditional-operators.md)
+- [?? – operátor](null-coalescing-operator.md)
+- [ref keyword](../keywords/ref.md)

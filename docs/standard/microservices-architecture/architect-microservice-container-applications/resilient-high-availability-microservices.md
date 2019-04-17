@@ -4,12 +4,12 @@ description: Mikroslužeb mají být navržena k odolat přechodných síťovýc
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: c1881392532231bc83227776a647f4dde0a196ad
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: a63b0c67e00ec91c5a91e1c6b84d1a38ab50e394
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59614035"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672352"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 
@@ -42,7 +42,7 @@ Protokoly poskytují informace o tom, jak aplikace nebo služba běží, včetn�
 
 V monolitické aplikace založené na serveru můžete jednoduše zapisují protokoly do souboru na disku (soubor protokolu) a analyzujte je pomocí libovolného nástroje. Od spuštění aplikace je omezen na pevnou server nebo virtuální počítač, obvykle není příliš složitý pro analýzu toku událostí. V distribuované aplikaci, ve kterých se spouští více služeb napříč mnoha uzly v clusteru služby orchestrator, nebudou moct porovnat distribuované události je však výzvu.
 
-Aplikací založených na mikroslužbách by měl není pokusí uložit výstupního datového proudu událostí nebo logfiles sám o sobě a dokonce ani spravovat směrování událostí na centrální místo. Měla by být transparentní, což znamená, že každý proces by měl stačí napsat jeho datového proudu událostí na standardní výstup, který pod nebudou shromažďovat infrastruktura prostředí provádění, kde je spuštěná. Je například tyto směrovače datového proudu událostí [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow), který shromažďuje streamů událostí z různých zdrojů a publikuje ji do výstupního systémy. Může jít o jednoduché standardního výstupu pro prostředí pro vývoj nebo cloudových systémů, jako je [Application Insights](https://azure.microsoft.com/services/application-insights/), [OMS](https://github.com/Azure/diagnostics-eventflow#oms-operations-management-suite) (pro místní aplikace), a [Azure Diagnostics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics). Existují také dobré protokolu třetích stran analýzy platformy a nástroje, které můžete vyhledat, výstrahy, sestavy, a monitorování protokolů, a to i v reálném čase, jako jsou [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
+Aplikací založených na mikroslužbách by měl není pokusí uložit výstupního datového proudu událostí nebo logfiles sám o sobě a dokonce ani spravovat směrování událostí na centrální místo. Měla by být transparentní, což znamená, že každý proces by měl stačí napsat jeho datového proudu událostí na standardní výstup, který pod nebudou shromažďovat infrastruktura prostředí provádění, kde je spuštěná. Je například tyto směrovače datového proudu událostí [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow), který shromažďuje streamů událostí z různých zdrojů a publikuje ji do výstupního systémy. Může jít o jednoduché standardního výstupu pro prostředí pro vývoj nebo cloudových systémů, jako je [Azure Monitor](https://azure.microsoft.com/services/monitor//) a [Azure Diagnostics](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-overview). Existují také dobré protokolu třetích stran analýzy platformy a nástroje, které můžete vyhledat, výstrahy, sestavy, a monitorování protokolů, a to i v reálném čase, jako jsou [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA).
 
 ### <a name="orchestrators-managing-health-and-diagnostics-information"></a>Orchestrátorů, správu stavu a diagnostické informace
 
@@ -67,8 +67,8 @@ Různé orchestrátory může zní podobně, ale diagnostiky a kontroly stavu na
 - **Co je Azure Diagnostics** \
   <https://docs.microsoft.com/azure/azure-diagnostics>
 
-- **Připojení počítačů s Windows ke službě Log Analytics v Azure** \
-  <https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents>
+- **Připojení počítačů s Windows ke službě Azure Monitor** \
+  <https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows>
 
 - **Protokolování co Mean: Použití sémantického protokolování Application Block** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/dn440729(v=pandp.60)>

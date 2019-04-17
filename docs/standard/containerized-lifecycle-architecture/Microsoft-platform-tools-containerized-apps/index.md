@@ -1,15 +1,15 @@
 ---
-title: Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
+title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Seznamte se nabídky společnosti Microsoft pro podporu životního cyklu aplikace Dockeru.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: 811ebd46c97b53176bf8bb9e47a366575e273efb
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 8536703a520434c0e393c5f46005c2ac02d5d849
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57680189"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672261"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
 
@@ -17,7 +17,7 @@ ms.locfileid: "57680189"
 
 Obrázek 3-1 zobrazuje hlavní pilíře v životním cyklu aplikace Dockeru klasifikuje typu práce od několika týmů (vývoj aplikací, infrastruktury procesy DevOps a správy IT a operace). Obvykle v podnikové síti, profily "osoba" zodpovídá za každou oblast, kterou se liší. Proto jsou své dovednosti.
 
-![Nástroje sady Microsoft. Pro vývoj a návrh úlohy: Modul docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Úlohy sestavení/testovací/příjemce: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Spuštění/monitorování a Správa úloh: Application Insights, Azure Portal Azure Kubernetes Services, Service Fabric, jiné orchestrátory.](./media/image1.png)
+![Nástroje sady Microsoft. Pro vývoj a návrh úlohy: Modul docker pro Windows, VS a VS Code, .NET Core, Azure Kubernetes Service. Úlohy sestavení/testovací/příjemce: Azure DevOps, Team Foundation Server, Docker CLI, Azure Kubernetes Service. Spuštění/monitorování a Správa úloh: Azure Monitor, Azure Portal Azure Kubernetes Services, Service Fabric, jiné orchestrátory.](./media/image1.png)
 
 **Obrázek 3-1.** Hlavní pilíře v životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 
@@ -51,7 +51,7 @@ Microsoft platformu a nástroje pro kontejnerizované aplikace Dockeru, jak je d
 
   - **Open source nástroje** protože AKS zpřístupňuje standardní koncové body rozhraní API pro orchestrační modul, nejoblíbenější opensourcové nástroje jsou kompatibilní s AKS a ve většině případů fungují bez pole, včetně vizualizátorů, sledování, nástroje příkazového řádku a taky budoucích nástrojů, jakmile budou k dispozici.
 
-  - **Application Insights** soution je Azure ke sledování všech možných úhlů evironment vašeho produkčního prostředí. Nastavením jenom její SDK do vaší služby tak, aby data systémem generovaných protokolů můžete získat z aplikace můžete monitorovat aplikace v produkčním prostředí Docker.
+  - **Azure Monitor** řešení je Azure ke sledování všech možných úhlů vašeho produkčního prostředí. Nastavením jenom její SDK do vaší služby tak, aby data systémem generovaných protokolů můžete získat z aplikace můžete monitorovat aplikace v produkčním prostředí Docker.
 
 Proto Microsoft nabízí kompletní foundation začátku do konce kontejnerizovaných Docker životního cyklu aplikace. Je však *kolekce produktů a technologií, které můžete volitelně vybrat a integrace s existujícím nástroje a procesy*. Flexibilitu v rámci široké přístupu spolu s sílu do hloubky možnosti umístění Microsoft strong polohy pro vývoj kontejnerizovaných aplikací Dockeru.
 

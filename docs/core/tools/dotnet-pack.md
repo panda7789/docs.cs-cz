@@ -2,12 +2,12 @@
 title: příkaz DotNet pack
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 12/04/2018
-ms.openlocfilehash: 6ee987576e29d366bd6821d2757965454411adea
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: 8faa99bf35d9802b16f951082b20644d45a939c7
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611962"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672123"
 ---
 # <a name="dotnet-pack"></a>balíčku DotNet
 
@@ -213,5 +213,5 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces 
 * Pack projekt pomocí [soubor souboru .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec):
 
   ```console
-  dotnet pack  ~/projects/app1/project.csproj /p:NuspecFile=~/projects/app1/project.nuspec /p:NuspecBasePath=~/projects/app1/nuget
+  dotnet pack ~/projects/app1/project.csproj /p:NuspecFile=~/projects/app1/project.nuspec /p:NuspecBasePath=~/projects/app1/nuget
   ```

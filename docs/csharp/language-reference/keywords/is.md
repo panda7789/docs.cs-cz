@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 83cb308a14a6db99f65b30eded20442d675cbd57
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
+ms.openlocfilehash: 9fb57caeafde9db5759300d938a85f4abf4d05f3
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59480830"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672456"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#)
 
@@ -144,7 +144,7 @@ Následující příklad ukazuje porovnání `null` ověří:
  
 ### <a name="var" /> vzor var </a>
 
-Porovnávání se vzorem var vždy úspěšná pro výrazy nenulové; Pokud *expr* je `null`, `is` výraz je `false`. Hodnota jiná než null z *expr* se vždycky přiřazuje lokální proměnná stejný typ jako typ času runtime *expr*.  Syntaxe je:
+`var` Vzor je pokrývající vše pro libovolným typem nebo hodnotou. Hodnota *expr* se vždycky přiřazuje lokální proměnná stejný typ jako typ času kompilace *expr*. Výsledkem `is` výraz je vždycky `true`. Syntaxe je:
 
 ```csharp 
    expr is var varname

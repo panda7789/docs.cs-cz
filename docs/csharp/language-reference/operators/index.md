@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 877992227df417badf7322be7f9be79bf7256e69
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 4958f3e28b80fca2086d45827df1ced8fc26bd8e
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59308650"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672287"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 
@@ -159,6 +159,14 @@ Tento operátor má vyšší prioritu než v další části a nižší prioritu
 
 [x &#124; y](or-operator.md) – logické a bitové operace OR. Obecně můžete s celočíselnými typy a `enum` typy.
 
+## <a name="true-operator"></a>True – – operátor
+
+[True](../keywords/true-false-operators.md) operátor vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand. 
+
+## <a name="false-operator"></a>false – – operátor
+
+[False](../keywords/true-false-operators.md) operátor vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false. 
+
 ## <a name="conditional-and-operator"></a>Podmiňovací operátor AND
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
@@ -214,7 +222,7 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [C#](../../index.md)
 - [Přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
 - [Klíčová slova jazyka C#](../keywords/index.md)

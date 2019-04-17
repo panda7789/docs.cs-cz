@@ -3,12 +3,12 @@ title: C#Typy a proměnné – připravuje C# jazyka
 description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 552066ff8d17d49dc5cc0bbb60b05c9c3e5f8eda
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
+ms.openlocfilehash: ae44dd273a2460e5718adc7324fae324e3de5bba
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59481077"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672365"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
@@ -18,31 +18,42 @@ C#pro typy hodnot se dále dělí do *jednoduché typy*, *typy výčtu*, *typy s
 
 Následující text uvádí přehled C#na systém typů.
 
-* Typy hodnot
-  - Jednoduché typy
+* [Typy hodnot][ValueTypes]
+  - [Jednoduché typy][SimpleTypes]
     * Podepsané celé číslo: `sbyte`, `short`, `int`, `long`
     * Celočíselný typ bez znaménka: `byte`, `ushort`, `uint`, `ulong`
     * Znaky Unicode: `char`
     * S plovoucí desetinnou čárkou IEEE: `float`, `double`
     * Desetinná přesnost vysoce: `decimal`
     * Logická hodnota: `bool`
-  - Výčtové typy
+  - [Výčtové typy][EnumTypes]
     * Uživatelem definované typy formuláře `enum E {...}`
-  - Typy struktury
+  - [Typy struktury][StructTypes]
     * Uživatelem definované typy formuláře `struct S {...}`
-  - Typy s možnou hodnotou Null
+  - [Typy s možnou hodnotou Null][NullableTypes]
     * Rozšíření všechny ostatní typy hodnot s `null` hodnota
-* Odkazové typy
-  - Typy tříd
+* [Odkazové typy][ReferenceTypes]
+  - [Typy tříd][ClassTypes]
     * Ultimate základní třídy pro všechny ostatní typy: `object`
     * Řetězce Unicode: `string`
     * Uživatelem definované typy formuláře `class C {...}`
-  - Typy rozhraní
+  - [Typy rozhraní][InterfaceTypes]
     * Uživatelem definované typy formuláře `interface I {...}`
-  - Typy polí
+  - [Typy polí][ArrayTypes]
     * Jeden – a s multidimenzionálním, například `int[]` a `int[,]`
-  - Typy delegátů
+  - [Typy delegátů][DelegateTypes]
     * Uživatelem definované typy formuláře `delegate int D(...)`
+
+[ValueTypes]: ../language-reference/keywords/value-types-table.md
+[SimpleTypes]: ../language-reference/keywords/value-types.md#simple-types
+[EnumTypes]: ../language-reference/keywords/enum.md
+[StructTypes]: ../language-reference/keywords/struct.md
+[NullableTypes]: ../programming-guide/nullable-types/index.md
+[ReferenceTypes]: ../language-reference/keywords/reference-types.md
+[ClassTypes]: ../language-reference/keywords/class.md
+[InterfaceTypes]: ../language-reference/keywords/interface.md
+[DelegateTypes]: ../language-reference/keywords/delegate.md
+[ArrayTypes]: ../programming-guide/arrays/index.md
 
 Osm integrální typy poskytují podporu pro hodnoty 8bitové, 16 bitů, 32bitová verze a 64bitová verze v podobě nebo bez znaménka.
 
@@ -66,7 +77,7 @@ To shrnuje C#pro číselné typy.
   - `ushort` : 16 bitů, rozsahu od 0 do 65 535
   - `uint`   : 32 bitů, rozsahu od 0 do 4 294 967 295
   - `ulong`  : 64 bitů, rozsahu od 0 do 18,446,744,073,709,551,615
-* Číslo s plovoucí desetinnou čárkou
+* Plovoucí desetinná čárka
   - `float`  : 32 bity v rozsahu od 1,5 × 10<sup>-45</sup> 3.4 × 10<sup>38</sup>, 7 číslicemi přesnosti
   - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>-324</sup> 1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
 * Desetinné číslo

@@ -4,12 +4,12 @@ description: Seznámení s klíčové body pro správu založených na kontejner
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
-ms.openlocfilehash: f3cf9bc281e94f342cecb1083d886daba03c019d
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 3f8c51b95f52a655de470ac237c51dd4ee9c13eb
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836614"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672097"
 ---
 # <a name="manage-production-docker-environments"></a>Správa produkčních prostředí Dockeru
 
@@ -30,7 +30,7 @@ Tabulka 6-1 jsou uvedeny běžné nástroje pro správu týkající se jejich or
 | [Azure Monitor for Containers](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview) | Azure vyhrazené nástroje pro správu Kubernetes | Služby Azure Kubernetes (AKS) |
 | [Webové uživatelské rozhraní Kubernetes (řídicí panel)](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) | Nástroj pro správu Kubernetes, můžete monitorovat a spravovat místní cluster Kubernetes | Azure Kubernetes Service (AKS)<br/>Místní Kubernetes |
 | [Portál Azure portal pro Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)<br/>[Azure Service Fabric Exploreru](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) | Verze online a klasické pracovní plochy pro správu clusterů Service Fabric v Azure, v místním prostředí, místním vývojovém i v jiných cloudech | Azure Service Fabric |
-| [(Log Analytics) pro monitorování kontejnerů](https://docs.microsoft.com/azure/azure-monitor/insights/containers) | Obecné kontejneru Správa y řešení pro monitorování. Můžete spravovat clustery Kubernetes pomocí [monitorování Azure pro kontejnery](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview). | Azure Service Fabric<br/>Azure Kubernetes Service (AKS)<br/>Mesosphere DC/OS a další. |
+| [(Monitorování Azure) pro monitorování kontejnerů](https://docs.microsoft.com/azure/azure-monitor/insights/containers) | Obecné kontejneru Správa y řešení pro monitorování. Můžete spravovat clustery Kubernetes pomocí [monitorování Azure pro kontejnery](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview). | Azure Service Fabric<br/>Azure Kubernetes Service (AKS)<br/>Mesosphere DC/OS a další. |
 
 ## <a name="azure-service-fabric"></a>Azure Service Fabric
 

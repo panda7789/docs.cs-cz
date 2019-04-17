@@ -4,12 +4,12 @@ description: Prozkoumejte jedním ze způsobů implementace monitorování stavu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
-ms.openlocfilehash: 1ea4798c0d5bd2513867e5c59354c4e3d88612d9
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: deebcf6771d24be34050dd7fdfb807a681ebce1f
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611468"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59672201"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
@@ -269,23 +269,20 @@ Všimněte si, že Azure Service Fabric nabízí svůj vlastní [monitorování 
 
 Poslední část monitorování je vizualizace datového proudu událostí, vytváření sestav o výkonu služby a upozorní při zjištění problému. Můžete použít různá řešení pro tento aspekt monitorování.
 
-Můžete použít jednoduchý vlastní aplikace zobrazuje stav služeb, jako je vlastní stránka při s vysvětlením, [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Nebo můžete použít rozšířené nástroje, jako je Azure Application Insights budou generovány výstrahy založené na události datového proudu.
+Můžete použít jednoduchý vlastní aplikace zobrazuje stav služeb, jako je vlastní stránka při s vysvětlením, [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Nebo můžete použít rozšířené nástroje, jako je [Azure Monitor](https://azure.microsoft.com/services/monitor/) budou generovány výstrahy založené na události datového proudu.
 
 Nakonec pokud uložená všechny streamy událostí, můžete použít Microsoft Power BI nebo jiné řešení, jako je Kibana nebo Splunk k vizualizaci dat.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **HealthChecks a HealthChecks uživatelského rozhraní pro ASP.NET Core**
-    [https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks )
+- **HealthChecks a HealthChecks uživatelského rozhraní pro ASP.NET Core** \
+  <https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks>
 
--   **Úvod do monitorování stavu Service Fabric**
-    [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
+- **Úvod do monitorování stavu Service Fabric** \
+  [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
--   **Azure Application Insights**
-    <https://azure.microsoft.com/services/application-insights/>
-
--   **Microsoft Operations Management Suite**
-    <https://www.microsoft.com/en-us/cloud-platform/operations-management-suite>
+- **Azure Monitor**
+  <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]
 >[Předchozí](implement-circuit-breaker-pattern.md)
