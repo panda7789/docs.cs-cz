@@ -12,43 +12,43 @@ helpviewer_keywords:
 - examples [Visual Basic], registry
 ms.assetid: ab9aca0e-42b0-4ff7-8ff9-845a4bfdf9f2
 ms.openlocfilehash: fdb61fee8a790000c53b6c9a0188999bc0cb09ae
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58840317"
 ---
-# <a name="how-to-delete-a-registry-key-in-visual-basic"></a><span data-ttu-id="8c0b8-102">Postupy: Odstranění klíče z registru v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="8c0b8-102">How to: Delete a Registry Key in Visual Basic</span></span>
-<span data-ttu-id="8c0b8-103"><xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> metody slouží k odstranění klíče registru.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-103">The <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> and <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> methods can be used to delete registry keys.</span></span>  
+# <a name="how-to-delete-a-registry-key-in-visual-basic"></a><span data-ttu-id="e2445-102">Postupy: Odstranění klíče z registru v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e2445-102">How to: Delete a Registry Key in Visual Basic</span></span>
+<span data-ttu-id="e2445-103"><xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> a <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> metody slouží k odstranění klíče registru.</span><span class="sxs-lookup"><span data-stu-id="e2445-103">The <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%29> and <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%28System.String%2CSystem.Boolean%29> methods can be used to delete registry keys.</span></span>  
   
-## <a name="procedure"></a><span data-ttu-id="8c0b8-104">Postup</span><span class="sxs-lookup"><span data-stu-id="8c0b8-104">Procedure</span></span>  
+## <a name="procedure"></a><span data-ttu-id="e2445-104">Postup</span><span class="sxs-lookup"><span data-stu-id="e2445-104">Procedure</span></span>  
   
-#### <a name="to-delete-a-registry-key"></a><span data-ttu-id="8c0b8-105">Odstranit klíč registru</span><span class="sxs-lookup"><span data-stu-id="8c0b8-105">To delete a registry key</span></span>  
+#### <a name="to-delete-a-registry-key"></a><span data-ttu-id="e2445-105">Odstranit klíč registru</span><span class="sxs-lookup"><span data-stu-id="e2445-105">To delete a registry key</span></span>  
   
--   <span data-ttu-id="8c0b8-106">Použití `DeleteSubKey` metodu k odstranění klíče z registru.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-106">Use the `DeleteSubKey` method to delete a registry key.</span></span> <span data-ttu-id="8c0b8-107">Tento příklad odstraní klíč softwaru/TestApp v CurrentUser hive.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-107">This example deletes the key Software/TestApp in the CurrentUser hive.</span></span> <span data-ttu-id="8c0b8-108">Můžete změnit v kódu na odpovídající řetězec nebo vycházet z uživatelem zadané informace.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-108">You can change this in the code to the appropriate string, or have it rely on user-supplied information.</span></span>  
+-   <span data-ttu-id="e2445-106">Použití `DeleteSubKey` metodu k odstranění klíče z registru.</span><span class="sxs-lookup"><span data-stu-id="e2445-106">Use the `DeleteSubKey` method to delete a registry key.</span></span> <span data-ttu-id="e2445-107">Tento příklad odstraní klíč softwaru/TestApp v CurrentUser hive.</span><span class="sxs-lookup"><span data-stu-id="e2445-107">This example deletes the key Software/TestApp in the CurrentUser hive.</span></span> <span data-ttu-id="e2445-108">Můžete změnit v kódu na odpovídající řetězec nebo vycházet z uživatelem zadané informace.</span><span class="sxs-lookup"><span data-stu-id="e2445-108">You can change this in the code to the appropriate string, or have it rely on user-supplied information.</span></span>  
   
      [!code-vb[VbResourceTasks#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#19)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="8c0b8-109">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="8c0b8-109">Robust Programming</span></span>  
- <span data-ttu-id="8c0b8-110">`DeleteSubKey` Metoda vrátí prázdný řetězec, pokud je dvojice klíč/hodnota neexistuje.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-110">The `DeleteSubKey` method returns an empty string if the key/value pair does not exist.</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="e2445-109">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="e2445-109">Robust Programming</span></span>  
+ <span data-ttu-id="e2445-110">`DeleteSubKey` Metoda vrátí prázdný řetězec, pokud je dvojice klíč/hodnota neexistuje.</span><span class="sxs-lookup"><span data-stu-id="e2445-110">The `DeleteSubKey` method returns an empty string if the key/value pair does not exist.</span></span>  
   
- <span data-ttu-id="8c0b8-111">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="8c0b8-111">The following conditions may cause an exception:</span></span>  
+ <span data-ttu-id="e2445-111">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="e2445-111">The following conditions may cause an exception:</span></span>  
   
--   <span data-ttu-id="8c0b8-112">Název klíče je `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="8c0b8-112">The name of the key is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
+-   <span data-ttu-id="e2445-112">Název klíče je `Nothing` (<xref:System.ArgumentNullException>).</span><span class="sxs-lookup"><span data-stu-id="e2445-112">The name of the key is `Nothing` (<xref:System.ArgumentNullException>).</span></span>  
   
--   <span data-ttu-id="8c0b8-113">Uživatel nemá oprávnění k odstranění klíče registru (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="8c0b8-113">The user does not have permissions to delete registry keys (<xref:System.Security.SecurityException>).</span></span>  
+-   <span data-ttu-id="e2445-113">Uživatel nemá oprávnění k odstranění klíče registru (<xref:System.Security.SecurityException>).</span><span class="sxs-lookup"><span data-stu-id="e2445-113">The user does not have permissions to delete registry keys (<xref:System.Security.SecurityException>).</span></span>  
   
--   <span data-ttu-id="8c0b8-114">Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="8c0b8-114">The key name exceeds the 255-character limit (<xref:System.ArgumentException>).</span></span>  
+-   <span data-ttu-id="e2445-114">Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).</span><span class="sxs-lookup"><span data-stu-id="e2445-114">The key name exceeds the 255-character limit (<xref:System.ArgumentException>).</span></span>  
   
--   <span data-ttu-id="8c0b8-115">Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="8c0b8-115">The registry key is read-only (<xref:System.UnauthorizedAccessException>).</span></span>  
+-   <span data-ttu-id="e2445-115">Klíč registru je jen pro čtení (<xref:System.UnauthorizedAccessException>).</span><span class="sxs-lookup"><span data-stu-id="e2445-115">The registry key is read-only (<xref:System.UnauthorizedAccessException>).</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="8c0b8-116">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="8c0b8-116">.NET Framework Security</span></span>  
- <span data-ttu-id="8c0b8-117">Volání registru selhat, pokud nejsou udělena buď dostatečná oprávnění za běhu (<xref:System.Security.Permissions.RegistryPermission>) nebo pokud uživatel nemá správný přístup (jako seznamy ACL) pro vytvoření nebo zápis do nastavení.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-117">Registry calls fail if either sufficient run-time permissions are not granted (<xref:System.Security.Permissions.RegistryPermission>) or if the user does not have the correct access (as determined by the ACLs) for creating or writing to settings.</span></span> <span data-ttu-id="8c0b8-118">Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému.</span><span class="sxs-lookup"><span data-stu-id="8c0b8-118">For example, a local application that has the code access security permission might not have operating system permission.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="e2445-116">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="e2445-116">.NET Framework Security</span></span>  
+ <span data-ttu-id="e2445-117">Volání registru selhat, pokud nejsou udělena buď dostatečná oprávnění za běhu (<xref:System.Security.Permissions.RegistryPermission>) nebo pokud uživatel nemá správný přístup (jako seznamy ACL) pro vytvoření nebo zápis do nastavení.</span><span class="sxs-lookup"><span data-stu-id="e2445-117">Registry calls fail if either sufficient run-time permissions are not granted (<xref:System.Security.Permissions.RegistryPermission>) or if the user does not have the correct access (as determined by the ACLs) for creating or writing to settings.</span></span> <span data-ttu-id="e2445-118">Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému.</span><span class="sxs-lookup"><span data-stu-id="e2445-118">For example, a local application that has the code access security permission might not have operating system permission.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8c0b8-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8c0b8-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e2445-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e2445-119">See also</span></span>
 
 - <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey.DeleteSubKey%2A>
 - <xref:Microsoft.Win32.RegistryKey>
-- [<span data-ttu-id="8c0b8-120">Zabezpečení a registr</span><span class="sxs-lookup"><span data-stu-id="8c0b8-120">Security and the Registry</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
-- [<span data-ttu-id="8c0b8-121">Čtení z registru a zápis do něj</span><span class="sxs-lookup"><span data-stu-id="8c0b8-121">Reading from and Writing to the Registry</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [<span data-ttu-id="e2445-120">Zabezpečení a registr</span><span class="sxs-lookup"><span data-stu-id="e2445-120">Security and the Registry</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+- [<span data-ttu-id="e2445-121">Čtení z registru a zápis do něj</span><span class="sxs-lookup"><span data-stu-id="e2445-121">Reading from and Writing to the Registry</span></span>](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
