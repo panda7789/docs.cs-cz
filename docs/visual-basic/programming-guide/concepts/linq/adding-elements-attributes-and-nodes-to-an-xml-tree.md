@@ -3,36 +3,36 @@ title: Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
 ms.openlocfilehash: 35d3bdb27342dd7a871778ad4749db4d6849bd60
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814311"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a><span data-ttu-id="25f02-102">Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="25f02-102">Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic)</span></span>
-<span data-ttu-id="25f02-103">Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat do existující stromu XML.</span><span class="sxs-lookup"><span data-stu-id="25f02-103">You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.</span></span>  
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a><span data-ttu-id="963eb-102">Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="963eb-102">Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic)</span></span>
+<span data-ttu-id="963eb-103">Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat do existující stromu XML.</span><span class="sxs-lookup"><span data-stu-id="963eb-103">You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.</span></span>  
   
-## <a name="methods-for-adding-content"></a><span data-ttu-id="25f02-104">Metody pro přidávání obsahu</span><span class="sxs-lookup"><span data-stu-id="25f02-104">Methods for Adding Content</span></span>  
- <span data-ttu-id="25f02-105">Podřízený obsah k přidání následujících metod <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:</span><span class="sxs-lookup"><span data-stu-id="25f02-105">The following methods add child content to an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XDocument>:</span></span>  
+## <a name="methods-for-adding-content"></a><span data-ttu-id="963eb-104">Metody pro přidávání obsahu</span><span class="sxs-lookup"><span data-stu-id="963eb-104">Methods for Adding Content</span></span>  
+ <span data-ttu-id="963eb-105">Podřízený obsah k přidání následujících metod <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:</span><span class="sxs-lookup"><span data-stu-id="963eb-105">The following methods add child content to an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XDocument>:</span></span>  
   
-|<span data-ttu-id="25f02-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="25f02-106">Method</span></span>|<span data-ttu-id="25f02-107">Popis</span><span class="sxs-lookup"><span data-stu-id="25f02-107">Description</span></span>|  
+|<span data-ttu-id="963eb-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="963eb-106">Method</span></span>|<span data-ttu-id="963eb-107">Popis</span><span class="sxs-lookup"><span data-stu-id="963eb-107">Description</span></span>|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|<span data-ttu-id="25f02-108">Přidá obsah na konci podřízený obsah <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="25f02-108">Adds content at the end of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|<span data-ttu-id="25f02-109">Přidá obsah na začátku podřízený obsah <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="25f02-109">Adds content at the beginning of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|<span data-ttu-id="963eb-108">Přidá obsah na konci podřízený obsah <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="963eb-108">Adds content at the end of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|<span data-ttu-id="963eb-109">Přidá obsah na začátku podřízený obsah <xref:System.Xml.Linq.XContainer>.</span><span class="sxs-lookup"><span data-stu-id="963eb-109">Adds content at the beginning of the child content of the <xref:System.Xml.Linq.XContainer>.</span></span>|  
   
- <span data-ttu-id="25f02-110">Následující metody přidat jako uzly na stejné úrovni obsah <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="25f02-110">The following methods add content as sibling nodes of an <xref:System.Xml.Linq.XNode>.</span></span> <span data-ttu-id="25f02-111">Nejběžnější uzel, do které přidáte na stejné úrovni obsah je <xref:System.Xml.Linq.XElement>, i když přidáte na stejné úrovni platný obsah na jiné typy uzlů, jako <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment>.</span><span class="sxs-lookup"><span data-stu-id="25f02-111">The most common node to which you add sibling content is <xref:System.Xml.Linq.XElement>, although you can add valid sibling content to other types of nodes such as <xref:System.Xml.Linq.XText> or <xref:System.Xml.Linq.XComment>.</span></span>  
+ <span data-ttu-id="963eb-110">Následující metody přidat jako uzly na stejné úrovni obsah <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="963eb-110">The following methods add content as sibling nodes of an <xref:System.Xml.Linq.XNode>.</span></span> <span data-ttu-id="963eb-111">Nejběžnější uzel, do které přidáte na stejné úrovni obsah je <xref:System.Xml.Linq.XElement>, i když přidáte na stejné úrovni platný obsah na jiné typy uzlů, jako <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment>.</span><span class="sxs-lookup"><span data-stu-id="963eb-111">The most common node to which you add sibling content is <xref:System.Xml.Linq.XElement>, although you can add valid sibling content to other types of nodes such as <xref:System.Xml.Linq.XText> or <xref:System.Xml.Linq.XComment>.</span></span>  
   
-|<span data-ttu-id="25f02-112">Metoda</span><span class="sxs-lookup"><span data-stu-id="25f02-112">Method</span></span>|<span data-ttu-id="25f02-113">Popis</span><span class="sxs-lookup"><span data-stu-id="25f02-113">Description</span></span>|  
+|<span data-ttu-id="963eb-112">Metoda</span><span class="sxs-lookup"><span data-stu-id="963eb-112">Method</span></span>|<span data-ttu-id="963eb-113">Popis</span><span class="sxs-lookup"><span data-stu-id="963eb-113">Description</span></span>|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|<span data-ttu-id="25f02-114">Přidá obsah po <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="25f02-114">Adds content after the <xref:System.Xml.Linq.XNode>.</span></span>|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|<span data-ttu-id="25f02-115">Přidá obsah před <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="25f02-115">Adds content before the <xref:System.Xml.Linq.XNode>.</span></span>|  
+|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|<span data-ttu-id="963eb-114">Přidá obsah po <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="963eb-114">Adds content after the <xref:System.Xml.Linq.XNode>.</span></span>|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|<span data-ttu-id="963eb-115">Přidá obsah před <xref:System.Xml.Linq.XNode>.</span><span class="sxs-lookup"><span data-stu-id="963eb-115">Adds content before the <xref:System.Xml.Linq.XNode>.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="25f02-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="25f02-116">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="963eb-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="963eb-116">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="25f02-117">Popis</span><span class="sxs-lookup"><span data-stu-id="25f02-117">Description</span></span>  
- <span data-ttu-id="25f02-118">Následující příklad vytvoří dvě stromů XML a pak jednu z stromy upraví.</span><span class="sxs-lookup"><span data-stu-id="25f02-118">The following example creates two XML trees, and then modifies one of the trees.</span></span>  
+### <a name="description"></a><span data-ttu-id="963eb-117">Popis</span><span class="sxs-lookup"><span data-stu-id="963eb-117">Description</span></span>  
+ <span data-ttu-id="963eb-118">Následující příklad vytvoří dvě stromů XML a pak jednu z stromy upraví.</span><span class="sxs-lookup"><span data-stu-id="963eb-118">The following example creates two XML trees, and then modifies one of the trees.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="25f02-119">Kód</span><span class="sxs-lookup"><span data-stu-id="25f02-119">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="963eb-119">Kód</span><span class="sxs-lookup"><span data-stu-id="963eb-119">Code</span></span>  
   
 ```vb  
 Dim srcTree As XElement = _  
@@ -64,8 +64,8 @@ xmlTree.Add(srcTree.Element("Child9"))
 Console.WriteLine(xmlTree)  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="25f02-120">Komentáře</span><span class="sxs-lookup"><span data-stu-id="25f02-120">Comments</span></span>  
- <span data-ttu-id="25f02-121">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="25f02-121">This code produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="963eb-120">Komentáře</span><span class="sxs-lookup"><span data-stu-id="963eb-120">Comments</span></span>  
+ <span data-ttu-id="963eb-121">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="963eb-121">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -80,6 +80,6 @@ Console.WriteLine(xmlTree)
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="25f02-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="25f02-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="963eb-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="963eb-122">See also</span></span>
 
-- [<span data-ttu-id="25f02-123">Změna stromů XML (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="25f02-123">Modifying XML Trees (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [<span data-ttu-id="963eb-123">Změna stromů XML (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="963eb-123">Modifying XML Trees (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
