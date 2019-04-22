@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 14b8930044381d1d86ec7984d36a5c3588eebd81
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59233946"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59774012"
 ---
 ### <a name="the-default-hash-algorithm-for-wpfs-markup-compiler-is-now-sha256"></a>Výchozí algoritmus hash pro kompilátor značek pro WPF je nyní SHA256
 

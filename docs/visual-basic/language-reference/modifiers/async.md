@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Async keyword [Visual Basic]
 ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
 ms.openlocfilehash: ad6d671a45cee7d534347d23963bb5035ecc8dac
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58834583"
 ---
 # <a name="async-visual-basic"></a>Async (Visual Basic)

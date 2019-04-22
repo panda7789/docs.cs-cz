@@ -6,10 +6,10 @@ helpviewer_keywords:
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
 ms.openlocfilehash: 4a77060661cb0d71b0209cbcdeba23ffc2c6e5c7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59088563"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
@@ -23,7 +23,7 @@ ms.locfileid: "59088563"
   
 -   [Použití modelu Code-behind, obslužná rutina události a požadavky na částečné třídy v subsystému WPF](#Code_behind__Event_Handler__and_Partial_Class)  
   
--   [x: Code](#x_Code)  
+-   [x:Code](#x_Code)  
   
 -   [Omezení vloženého kódu](#Inline_Code_Limitations)  
   

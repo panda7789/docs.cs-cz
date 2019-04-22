@@ -3,10 +3,10 @@ title: <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
 ms.openlocfilehash: 71b8255b9feda9854b0257528dcad85f6cf08d6b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086023"
 ---
 # <a name="webhttpbinding"></a>\<webHttpBinding>
@@ -77,13 +77,13 @@ Definuje prvek vazby, který se používá ke konfiguraci koncových bodů pro W
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv POX, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WebHttpSecurityElement>.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.WebHttpSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Model programování webových služeb WCF umožňuje vývojářům vystavovat webových služeb WCF pomocí požadavku HTTP, které používají "plain old XML" namísto založený na protokolu SOAP zasílání zpráv pro zasílání zpráv styl (POX). Pro klienty komunikovat se službou pomocí protokolu HTTP požadavků, musí mít nakonfigurovanou koncový bod služby [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) , který má \<WebHttpBehavior > k němu připojená.  
@@ -94,7 +94,7 @@ Definuje prvek vazby, který se používá ke konfiguraci koncových bodů pro W
 
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Configuration.WebHttpBindingElement>
-- [Model programování webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

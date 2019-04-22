@@ -18,10 +18,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c30115a23f7f73662c9b3f4f4a09d45478ad687
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59187288"
 ---
 # <a name="icordebuginternalframe2getframeaddress-method"></a>ICorDebugInternalFrame2::GetFrameAddress – metoda
@@ -44,7 +44,7 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 |-------------|-----------------|  
 |S_OK|Adresu vnitřní rámec byla úspěšně vrácena.|  
 |E_FAIL|Adresu vnitřní rámec nebylo možné vrátit.|  
-|E_INVALIDARG|`pAddress` is `null`.|  
+|E_INVALIDARG|`pAddress` je `null`.|  
   
 ## <a name="remarks"></a>Poznámky  
  Hodnota vrácená v `pAddress` slouží k určení umístění vnitřní rámec vzhledem k jiné rámce v zásobníku. I v počítačích pro platformu IA-64 vnitřní rámec může fungovat pouze do zásobníku a neexistuje žádný odpovídající ukazatel záložního úložiště.  
@@ -61,5 +61,5 @@ HRESULT GetFrameAddress([out] CORDB_ADDRESS *pAddress);
 ## <a name="see-also"></a>Viz také:
 
 - [ICorDebugInternalFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

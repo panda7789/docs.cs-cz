@@ -5,10 +5,10 @@ ms.date: 04/05/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: 9b9ac1f1f15b4003a19a3d30d6cadf3e86946376
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59517964"
 ---
 # <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Kurz: Sestavení klasifikátoru vlastní image ML.NET s TensorFlow

@@ -3,10 +3,10 @@ title: 'Postupy: Načtení odstavců z dokumentu Office Open XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
 ms.openlocfilehash: 325f0d981c4988379938385fbfff5d36d0f5bff8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58828573"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>Postupy: Načtení odstavců z dokumentu Office Open XML (Visual Basic)

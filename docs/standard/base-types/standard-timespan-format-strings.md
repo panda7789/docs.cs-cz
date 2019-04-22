@@ -20,10 +20,10 @@ ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1bf7424c8aa2ae816340f6fa641e5c79a56ae0dc
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58834124"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
@@ -41,7 +41,7 @@ ms.locfileid: "58834124"
   
 <a name="top"></a> Následující tabulka uvádí specifikátory formátu interval (běžný čas).  
   
-|Specifikátor formátu|Název|Popis|Příklady|  
+|Specifikátor formátu|Name|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
 |"c"|Konstantní (neutrální) formát|Tento specifikátor není zohledňující jazykovou verzi. Má podobu `[-][d'.']hh':'mm':'ss['.'fffffff]`.<br /><br /> (Řetězce formátu "T" a "t" vytvářejí stejné výsledky.)<br /><br /> Další informace: [Specifikátor konstanty ("c") formátu](#Constant).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|Obecném krátkém formátu|Tento specifikátor výstupem jenom to, co je potřeba. Jazykové a má podobu `[-][d':']h':'mm':'ss[.FFFFFFF]`.<br /><br /> Další informace: [Specifikátor formátu Obecný krátký ("g")](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50,5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50,599 (fr-FR)|  

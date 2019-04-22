@@ -13,10 +13,10 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
 ms.openlocfilehash: b127c50f3319d4fe7c4890fc3bffb295baa37466
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58840169"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod – operátor (Visual Basic)

@@ -19,10 +19,10 @@ helpviewer_keywords:
 - names [Visual Basic], shadowing
 ms.assetid: 54bb4c25-12c4-4181-b4a0-93546053964e
 ms.openlocfilehash: 9ad992a53618fa2f410e0b0fb23886c30136384f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58839389"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic

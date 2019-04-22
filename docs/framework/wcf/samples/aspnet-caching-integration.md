@@ -3,11 +3,11 @@ title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
 ms.openlocfilehash: 8ed546459479e9986d6bbecf6eaca350d2d73c98
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59309469"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59770019"
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
 Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programovací model webových služeb HTTP WCF. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  

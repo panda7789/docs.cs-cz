@@ -12,10 +12,10 @@ helpviewer_keywords:
 - If Operator [Visual Basic]
 ms.assetid: dd56c9df-7cd4-442c-9ba6-20c70ee44c8f
 ms.openlocfilehash: 9ab01755d75c91ce87acf83e7f406b26c466aef6
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58834631"
 ---
 # <a name="if-operator-visual-basic"></a>If – operátor (Visual Basic)

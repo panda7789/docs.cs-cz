@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fba17a2ffad9220acdbc79726efe0d3d4184978a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59188549"
 ---
 # <a name="iassemblycacheitem-interface"></a>IAssemblyCacheItem – rozhraní
@@ -43,6 +43,6 @@ Představuje jedno sestavení v globální mezipaměti sestavení.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
 - [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
 - [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

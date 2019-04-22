@@ -5,10 +5,10 @@ helpviewer_keywords:
 - strings [Visual Basic], indexing
 ms.assetid: 0ed39f35-d68e-421d-ae14-460a5c0373b8
 ms.openlocfilehash: a6ceb10d4a3cb9463551d8c85375ddbbb607ffdc
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58830328"
 ---
 # <a name="zero-based-vs-one-based-string-access-in-visual-basic"></a>Přístup k řetězci se základem 0 vs. Přístup k řetězci základem 1 v jazyce Visual Basic

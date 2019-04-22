@@ -11,10 +11,10 @@ helpviewer_keywords:
 - data templates [WPF]
 ms.assetid: 0f4d9f8c-0230-4013-bd7b-e8e7fed01b4a
 ms.openlocfilehash: 98fff9ba84f386e93549fa94fe84f7b2b0fff5fd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59097548"
 ---
 # <a name="data-templating-overview"></a>Přehled datových šablon
@@ -199,4 +199,4 @@ Tím končí naše diskuse tohoto příkladu. Úplnou ukázku najdete v tématu 
 - [Hledání elementů generovaných šablonou DataTemplate](how-to-find-datatemplate-generated-elements.md)
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [GridView Styly záhlaví sloupců a přehled šablon](../controls/gridview-column-header-styles-and-templates-overview.md)
+- [Přehled stylů záhlaví sloupců a šablon GridView](../controls/gridview-column-header-styles-and-templates-overview.md)

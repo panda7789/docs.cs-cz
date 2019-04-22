@@ -5,10 +5,10 @@ helpviewer_keywords:
 - My.Computer.Mouse object
 ms.assetid: da473357-2120-47dd-bd42-c63d695157eb
 ms.openlocfilehash: bcf37eee9d3d05d11ff495aeb3ff0f737929bdde
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58836568"
 ---
 # <a name="mycomputermouse-object"></a>My.Computer.Mouse – objekt

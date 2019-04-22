@@ -8,17 +8,17 @@ helpviewer_keywords:
 - Image control [WPF]
 ms.assetid: 5707e860-ee4a-4c9f-b123-80c64996af19
 ms.openlocfilehash: 4da98f5caa0cbf4714d16f66a18c67844bf5c201
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184857"
 ---
 # <a name="image"></a>Image
 <xref:System.Windows.Controls.Image> Element slouží k zobrazení bitmapové obrázky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [– postupy](image-how-to-topics.md)  
+ [Témata s postupy](image-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.Image>  
@@ -30,4 +30,4 @@ ms.locfileid: "59184857"
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled obrázků](../graphics-multimedia/imaging-overview.md)
-- [– postupy](../graphics-multimedia/imaging-how-to-topics.md)
+- [Témata s postupy](../graphics-multimedia/imaging-how-to-topics.md)

@@ -3,10 +3,10 @@ title: <policyImporter>
 ms.date: 03/30/2017
 ms.assetid: b0d03456-546f-44bb-ab12-1b2ce7f98fca
 ms.openlocfilehash: 81f38d2a163163ca7255ca546bbddbbb58fa3a1b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59094174"
 ---
 # <a name="policyimporter"></a>\<policyImporter>
@@ -38,7 +38,7 @@ Určuje programu pro import zásady, které řídí import kontrolních výrazů
 |`type`|Typ tohoto prvku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

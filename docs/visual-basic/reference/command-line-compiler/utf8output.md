@@ -7,10 +7,10 @@ helpviewer_keywords:
 - /utf8output compiler option [Visual Basic]
 ms.assetid: 8ab36b1e-027a-49ac-85b4-f48997d9e4d6
 ms.openlocfilehash: 75369c3bcb19afbf98bfb80bc3e439f996d2a9d0
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58833627"
 ---
 # <a name="-utf8output-visual-basic"></a>-utf8output (Visual Basic)

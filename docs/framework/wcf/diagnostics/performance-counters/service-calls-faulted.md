@@ -3,10 +3,10 @@ title: 'Služba: Počet volání s chybou'
 ms.date: 03/30/2017
 ms.assetid: 6da7f100-3f61-4b3c-9409-fe1360829b8a
 ms.openlocfilehash: 233033eb32654b96efa6ddaa21991047d66873cb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090677"
 ---
 # <a name="service-calls-faulted"></a>Služba: Počet volání s chybou

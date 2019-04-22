@@ -14,10 +14,10 @@ helpviewer_keywords:
 - Get statement [Visual Basic], property procedures
 ms.assetid: 46a98379-e1a2-45dd-a48c-b51213f5ab07
 ms.openlocfilehash: 47e93ee17f160ce5cd701fd0a12ec16b3997ce9b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58828340"
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)

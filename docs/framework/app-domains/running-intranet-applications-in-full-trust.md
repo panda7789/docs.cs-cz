@@ -9,10 +9,10 @@ ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e8731e90a66c20f06e8afcd7458349cbc0b93484
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59084099"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Spouštění internetových aplikací v režimu plné důvěryhodnosti

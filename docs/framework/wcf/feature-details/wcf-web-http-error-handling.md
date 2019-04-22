@@ -3,10 +3,10 @@ title: Zpracování chyb HTTP programování webové služby WCF
 ms.date: 03/30/2017
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
 ms.openlocfilehash: 834c642e36e1551081dbe1f14529ed7596df1360
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59152695"
 ---
 # <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF
@@ -51,8 +51,8 @@ Public string Operation2()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [Formátování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)
 - [Definice a určení chyb](../../../../docs/framework/wcf/defining-and-specifying-faults.md)
 - [Zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)
-- [Chyby odesílání a přijímání](../../../../docs/framework/wcf/sending-and-receiving-faults.md)
+- [Chyby při odesílání a příjmu](../../../../docs/framework/wcf/sending-and-receiving-faults.md)

@@ -15,10 +15,10 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
 ms.openlocfilehash: ce9146791935a488108d110134e9273507b0da6f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58825531"
 ---
 # <a name="boolean-expressions-visual-basic"></a>Výrazy logických hodnot (Visual Basic)

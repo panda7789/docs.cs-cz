@@ -8,10 +8,10 @@ helpviewer_keywords:
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
 ms.openlocfilehash: db39759a804905450e7f8913f45e8ddab39d8416
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58823529"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface – příkaz (Visual Basic)

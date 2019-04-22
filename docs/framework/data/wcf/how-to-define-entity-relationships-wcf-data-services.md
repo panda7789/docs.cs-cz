@@ -8,10 +8,10 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 ms.assetid: cc255524-1534-4fae-b83c-250933d5a72b
 ms.openlocfilehash: 3bd2293f02e77ab2db5c3ba245596021e08b04c8
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59517818"
 ---
 # <a name="how-to-define-entity-relationships-wcf-data-services"></a>Postupy: Definování vztahů mezi entitami (WCF Data Services)

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
 ms.openlocfilehash: 94f1284e864bc63c321e004ac4a20843b191711d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59136952"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
@@ -108,7 +108,7 @@ Windows Communication Foundation (WCF) je protokol SOAP založenou na zprávách
 - [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
 - [Federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
 - [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
-- [Informace o zabezpečení a doporučené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
+- [Informace o zabezpečení a osvědčené postupy](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
 - [Konfigurace služeb pomocí konfiguračních souborů](../../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
 - [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
 - [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)

@@ -18,10 +18,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3090887d3c670b2784b7b40c7d63832715596c3b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59141515"
 ---
 # <a name="getidentityauthority-function"></a>GetIdentityAuthority – funkce
@@ -49,4 +49,4 @@ HRESULT GetIdentityAuthority (
 ## <a name="see-also"></a>Viz také:
 
 - [IIdentityAuthority – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iidentityauthority-interface.md)
-- [Fúze globálních statických funkcí](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
