@@ -6,10 +6,10 @@ helpviewer_keywords:
 - folders, finding
 ms.assetid: c9265fd1-7483-4150-8b7f-ff642caa939d
 ms.openlocfilehash: 705fa6e40d0e6d18826966e3f10cfd31d9e7a6ff
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58823399"
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>Postupy: Hledání podadresářů pomocí specifického vzoru v jazyce Visual Basic

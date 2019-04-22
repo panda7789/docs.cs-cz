@@ -6,10 +6,10 @@ helpviewer_keywords:
 - declaring object variables [Visual Basic]
 ms.assetid: 2fa77dde-1fb2-439a-80d4-3e9787649fad
 ms.openlocfilehash: fb6411efc190dce335422369a8d2bbff564b9523
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819668"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Postupy: Deklarace objektové proměnné a přiřazení objektu k v jazyce Visual Basic

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - Visual Basic application model
 ms.assetid: 17538984-84fe-43c9-82c8-724c9529fe8b
 ms.openlocfilehash: 02cc71dbda47d078284d9a2ec07538dfa063ac75
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819759"
 ---
 # <a name="overview-of-the-visual-basic-application-model"></a>Přehled aplikačního modelu jazyka Visual Basic

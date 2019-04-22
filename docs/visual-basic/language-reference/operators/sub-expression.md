@@ -7,10 +7,10 @@ helpviewer_keywords:
 - subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
 ms.openlocfilehash: 5b26a091dc8eb7415702c3c2853a569324def7d5
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58824608"
 ---
 # <a name="sub-expression-visual-basic"></a>Sub – výraz (Visual Basic)

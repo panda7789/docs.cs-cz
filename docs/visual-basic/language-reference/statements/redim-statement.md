@@ -27,10 +27,10 @@ helpviewer_keywords:
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
 ms.openlocfilehash: 8f5f3172eaa6b43d9b07aefa0036708b26087777
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58824114"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim – příkaz (Visual Basic)

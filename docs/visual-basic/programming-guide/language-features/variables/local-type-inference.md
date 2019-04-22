@@ -13,10 +13,10 @@ helpviewer_keywords:
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
 ms.openlocfilehash: e6214938262b987a1bae4a9ca1d5c945f8b7fe6e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58826818"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)

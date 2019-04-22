@@ -10,10 +10,10 @@ helpviewer_keywords:
 - examples [Visual Basic], logging application information
 ms.assetid: 8bf4f047-22d6-48d6-aec5-93b98ad5b8e8
 ms.openlocfilehash: 3202bdb2c4274e6d3127537b7cae661ba6e63a35
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819993"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
@@ -41,4 +41,4 @@ Tento oddíl obsahuje témata, které vás provedou k protokolování informací
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+- [Odstraňování potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

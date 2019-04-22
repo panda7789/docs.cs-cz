@@ -29,10 +29,10 @@ helpviewer_keywords:
 - Handles keyword [Visual Basic], Function statements
 ms.assetid: a4497077-0f46-4ede-a27f-9e8670df52b9
 ms.openlocfilehash: dffe67d1c31b0fe7c037839ba0588793a461f276
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58818459"
 ---
 # <a name="function-statement-visual-basic"></a>Function – příkaz (Visual Basic)

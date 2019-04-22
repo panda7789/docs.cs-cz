@@ -21,10 +21,10 @@ helpviewer_keywords:
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
 ms.openlocfilehash: 3ff3d67f38f510b798da3e470de066cff1e98f29
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58826038"
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop – příkaz (Visual Basic)

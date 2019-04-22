@@ -24,10 +24,10 @@ helpviewer_keywords:
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
 ms.openlocfilehash: 5d47d57b75005d5c13dbf8633981dfb2d57d3e90
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58826324"
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next – příkaz (Visual Basic)

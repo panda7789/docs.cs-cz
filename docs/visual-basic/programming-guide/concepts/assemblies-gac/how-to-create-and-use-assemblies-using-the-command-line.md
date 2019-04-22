@@ -3,10 +3,10 @@ title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového ř�
 ms.date: 03/14/2018
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
 ms.openlocfilehash: eecd644a7b91492f0a78cf969cfa71ae927609ab
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819395"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)

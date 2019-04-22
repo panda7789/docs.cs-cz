@@ -9,10 +9,10 @@ helpviewer_keywords:
 - string conversion [Visual Basic], arrays
 ms.assetid: 1b54b686-ab29-413b-adce-6bd5422376eb
 ms.openlocfilehash: 921d7ad62545d3a29870aee6c6b354fdadeb0500
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58823308"
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>Postupy: Převod řetězce na pole znaků v jazyce Visual Basic

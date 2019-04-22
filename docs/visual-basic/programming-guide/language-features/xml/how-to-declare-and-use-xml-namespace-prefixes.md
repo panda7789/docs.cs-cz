@@ -6,10 +6,10 @@ helpviewer_keywords:
 - XML namespace prefixes [Visual Basic]
 ms.assetid: 4292e1d9-eb8f-49d6-a3aa-f05a5fbe24d1
 ms.openlocfilehash: 244329058624bebb03440961c1dda4a50b4efb8b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58818656"
 ---
 # <a name="how-to-declare-and-use-xml-namespace-prefixes-visual-basic"></a>Postupy: Deklarace a používání předpon Namespace XML (Visual Basic)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - strings [Visual Basic], concatenating
 ms.assetid: fefc3d00-cbf1-475c-8c5e-6fb213b3f85a
 ms.openlocfilehash: dd85363447e9b405241d608550d9484b4760a739
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58817276"
 ---
 # <a name="amp-operator-visual-basic"></a>&amp; – Operátor (Visual Basic)

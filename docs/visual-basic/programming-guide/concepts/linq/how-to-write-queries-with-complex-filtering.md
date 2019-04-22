@@ -3,10 +3,10 @@ title: 'Postupy: Vytváření dotazů s komplexním filtrováním (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: bf286ffc-7990-4b00-a4eb-ee3d70129950
 ms.openlocfilehash: ac58394619b83e2b862e87926f0b6a722fdc3c7e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58820908"
 ---
 # <a name="how-to-write-queries-with-complex-filtering-visual-basic"></a>Postupy: Vytváření dotazů s komplexním filtrováním (Visual Basic)

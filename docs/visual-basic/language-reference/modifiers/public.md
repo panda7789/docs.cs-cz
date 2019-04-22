@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Public access modifier
 ms.assetid: 284c9e1b-ed23-499b-9bc9-ad87c11485a5
 ms.openlocfilehash: 0c85564503f3c83e436044cd92ee3014945f1ef3
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58818381"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)

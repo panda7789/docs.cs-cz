@@ -3,10 +3,10 @@ title: Přehled LINQ to XML třídy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f11b62b5-d522-4c23-92ae-23186dc16447
 ms.openlocfilehash: bd6990c387da3c687335561d1e13b7ec62fb5b84
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58822827"
 ---
 # <a name="linq-to-xml-classes-overview-visual-basic"></a>Přehled LINQ to XML třídy (Visual Basic)

@@ -3,10 +3,10 @@ title: 'Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
 ms.openlocfilehash: def00fcd356472825ebc4b9f5c306cf3547991e1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58820760"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)

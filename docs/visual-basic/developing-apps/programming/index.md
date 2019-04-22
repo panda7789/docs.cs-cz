@@ -6,10 +6,10 @@ helpviewer_keywords:
 - programming
 ms.assetid: bc45a3de-ea36-46e6-a106-309a413d7804
 ms.openlocfilehash: 09bc9254c880d58ffed22971d3ff96ba341fdf83
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819057"
 ---
 # <a name="programming-in-visual-basic"></a>Programování v jazyce Visual Basic

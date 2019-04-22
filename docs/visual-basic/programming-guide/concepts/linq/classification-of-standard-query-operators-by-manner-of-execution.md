@@ -3,10 +3,10 @@ title: Klasifikace standardních operátorů dotazu podle metody provedení (Vis
 ms.date: 07/20/2015
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
 ms.openlocfilehash: 6331ad0994e121d2d7007c9999f3a684b83efe6d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58823217"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Klasifikace standardních operátorů dotazu podle metody provedení (Visual Basic)

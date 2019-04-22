@@ -3,10 +3,10 @@ title: Iterátory (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
 ms.openlocfilehash: 313ce0c79a71af1b602ecd4ccc9bd0ebceb5696e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58820829"
 ---
 # <a name="iterators-visual-basic"></a>Iterátory (Visual Basic)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
 ms.openlocfilehash: 7a8730834c5241ddb1271d689cdda8942741f15f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58824920"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic

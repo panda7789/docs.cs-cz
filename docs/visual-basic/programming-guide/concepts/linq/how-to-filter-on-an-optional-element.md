@@ -3,10 +3,10 @@ title: 'Postupy: Filtrování volitelného elementu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
 ms.openlocfilehash: f2a1c7d4091af80e79a6758bcede8f4ccc753f03
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58820657"
 ---
 # <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postupy: Filtrování volitelného elementu (Visual Basic)

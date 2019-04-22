@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC36556
 ms.assetid: e3ba1f33-3a71-4f03-9b04-ed5ec17de17c
 ms.openlocfilehash: b798f296b62b51de34a7ec5ce5a8b608273f5748
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819226"
 ---
 # <a name="anonymous-type-member-name-can-be-inferred-only-from-a-simple-or-qualified-name-with-no-arguments"></a>Název člena anonymního typu lze odvodit pouze z jednoduchého nebo kvalifikovaného názvu bez argumentů.

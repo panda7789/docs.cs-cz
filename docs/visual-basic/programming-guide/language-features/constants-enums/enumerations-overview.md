@@ -6,10 +6,10 @@ helpviewer_keywords:
 - enumerations [Visual Basic], about enumerations
 ms.assetid: b42a38ee-5e77-4f99-a037-e3a127ead89c
 ms.openlocfilehash: 1c3465a3b2d12b110096ceedf2602d6560b82f4d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58821839"
 ---
 # <a name="enumerations-overview-visual-basic"></a>Přehled výčtů (Visual Basic)

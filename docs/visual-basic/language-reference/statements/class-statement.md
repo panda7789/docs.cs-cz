@@ -14,10 +14,10 @@ helpviewer_keywords:
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
 ms.openlocfilehash: 68401571645d77a41b827c13b3cfc3674076e218
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58824569"
 ---
 # <a name="class-statement-visual-basic"></a>Class – příkaz (Visual Basic)

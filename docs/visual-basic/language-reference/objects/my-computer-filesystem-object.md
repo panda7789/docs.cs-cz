@@ -13,10 +13,10 @@ helpviewer_keywords:
 - FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
 ms.openlocfilehash: 5ebdf2ac42ddd4e6e201559d9fc6711b19cbdd60
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58827585"
 ---
 # <a name="mycomputerfilesystem-object"></a>My.Computer.FileSystem – objekt

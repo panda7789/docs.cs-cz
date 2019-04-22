@@ -10,10 +10,10 @@ helpviewer_keywords:
 - XML Value property [Visual Basic]
 ms.assetid: 7ddd057a-a195-4e9b-ad8b-2ee0e615a20f
 ms.openlocfilehash: 1c7aa1cc32bc1c5ef637f7a606db7e695f1dfaee
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58821946"
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)

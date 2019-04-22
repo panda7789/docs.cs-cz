@@ -11,10 +11,10 @@ helpviewer_keywords:
 - Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
 ms.openlocfilehash: 88e13fcd03c6a10cf1450cec90f9ca60aedc3eb1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819161"
 ---
 # <a name="protected-visual-basic"></a>Protected (Visual Basic)

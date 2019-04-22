@@ -3,10 +3,10 @@ title: 'Ukázkový soubor XML: Konfigurace testu v Namespace3'
 ms.date: 07/20/2015
 ms.assetid: aff02614-30ee-45e1-bc0f-d64b193d20b8
 ms.openlocfilehash: aef70e1ff7a7d61a1730588cc9e2ad26e6b67007
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58821311"
 ---
 # <a name="sample-xml-file-test-configuration-in-a-namespace"></a>Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru

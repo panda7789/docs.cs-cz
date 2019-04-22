@@ -12,10 +12,10 @@ helpviewer_keywords:
 - queries [Visual Basic], Group Join
 ms.assetid: 37dbf79c-7b5c-421b-bbb7-dadfd2b92a1c
 ms.openlocfilehash: 3da4ca2db299a65b2c0f1fa259bbaabe4f53aa33
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58821948"
 ---
 # <a name="group-join-clause-visual-basic"></a>Group Join – klauzule (Visual Basic)

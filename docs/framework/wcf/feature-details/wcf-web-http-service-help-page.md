@@ -3,10 +3,10 @@ title: Stránka nápovědy webové služby HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
 ms.openlocfilehash: 60fd909d6e7d3ba0e0c0254024ef7eb40263b59e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58826831"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF

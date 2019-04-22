@@ -18,10 +18,10 @@ helpviewer_keywords:
 - data type arguments
 ms.assetid: 0db8f65c-65af-4089-ab7f-6fcfecb60444
 ms.openlocfilehash: 880570c714292b0c11eef4e2cd4c4b410bb075f1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58823438"
 ---
 # <a name="of-clause-visual-basic"></a>Of – klauzule (Visual Basic)

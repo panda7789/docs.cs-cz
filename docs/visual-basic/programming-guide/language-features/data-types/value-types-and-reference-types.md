@@ -11,10 +11,10 @@ helpviewer_keywords:
 - data types [Visual Basic], reference types
 ms.assetid: fc82ce15-5a40-4c5c-a1e1-a556830e7391
 ms.openlocfilehash: 4e0831a045da5eb5798d10aeb977981ecae20040
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819528"
 ---
 # <a name="value-types-and-reference-types"></a>Typy hodnot a typy odkazu

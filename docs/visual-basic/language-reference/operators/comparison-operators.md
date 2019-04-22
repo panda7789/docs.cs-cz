@@ -31,10 +31,10 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], Visual Basic
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
 ms.openlocfilehash: 9014cac5e2f3933b27411dfe5681fc16f4cdde30
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58821033"
 ---
 # <a name="comparison-operators-visual-basic"></a>Operátory porovnání (Visual Basic)

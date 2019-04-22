@@ -13,10 +13,10 @@ helpviewer_keywords:
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
 ms.openlocfilehash: 4aed16ce9eb59da54156a0cd5f1594819788521b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58818914"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic

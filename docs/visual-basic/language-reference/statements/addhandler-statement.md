@@ -9,10 +9,10 @@ helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
 ms.openlocfilehash: 1e8d8f512f163d82f074a5ad53fbb38a10904dfa
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58827078"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz

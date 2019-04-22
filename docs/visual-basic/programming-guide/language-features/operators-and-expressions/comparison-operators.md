@@ -16,10 +16,10 @@ helpviewer_keywords:
 - operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
 ms.openlocfilehash: d08974a929a723d4037300f9d72ae03c072d47fa
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58826155"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Operátory porovnání v jazyce Visual Basic

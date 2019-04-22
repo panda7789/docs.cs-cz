@@ -9,10 +9,10 @@ helpviewer_keywords:
 - processing instruction literal [Visual Basic]
 ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
 ms.openlocfilehash: 3fbb16a4d47801b671d37566573215d3a57afff1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58820149"
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>Literál instrukcí pro zpracování XML (Visual Basic)

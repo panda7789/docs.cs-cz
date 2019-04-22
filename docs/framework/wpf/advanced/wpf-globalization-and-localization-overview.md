@@ -6,10 +6,10 @@ helpviewer_keywords:
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
 ms.openlocfilehash: c97ae4f277395a75fb7522ffb74061001c10e07d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819577"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
@@ -178,7 +178,7 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Pomocí oblíbeného editoru sdíleného svazku clusteru, který podporuje kódování Unicode pro úpravy tohoto souboru. Vyfiltrovat všechny položky s lokalizace kategorii "None". Zobrazí se následující položky:  
   
-|Klíč prostředku|Lokalizace kategorie|Hodnota|  
+|Klíč prostředku|Lokalizace kategorie|Value|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Zrušit|  
@@ -190,7 +190,7 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Lokalizace aplikace na němčinu by vyžadovaly následující převody:  
   
-|Klíč prostředku|Lokalizace kategorie|Hodnota|  
+|Klíč prostředku|Lokalizace kategorie|Value|  
 |-|-|-| 
 |Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|  
 |Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Abbrechen|  
@@ -265,7 +265,7 @@ Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení 
   
  Tento komentář se sváže s obsahem vaší TextBlock_1 a v případě locbaml – nástroj (viz [lokalizace aplikace](how-to-localize-an-application.md)), lze je zobrazit v 6 sloupec řádku TextBlock_1 ve výstupním souboru CSV:  
   
-|Klíč prostředku|Kategorie|Čtení|Upravitelné|Komentář|Hodnota|  
+|Klíč prostředku|Kategorie|Čtení|Upravitelné|Komentář|Value|  
 |-|-|-|-|-|-|  
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|HODNOTA TRUE|HODNOTA TRUE|Tento znak se používá jako dekorativní pravidlo.|&#124;|  
   

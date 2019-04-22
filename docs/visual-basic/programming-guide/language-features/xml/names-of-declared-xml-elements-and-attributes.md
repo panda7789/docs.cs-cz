@@ -9,10 +9,10 @@ helpviewer_keywords:
 - XML literals [Visual Basic], element names
 ms.assetid: cc110118-b6cf-4ff9-a4e4-6233c90c9fbf
 ms.openlocfilehash: 2221f2677183cf360fa82a4d73a679a8b68927d1
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58819681"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>Názvy deklarovaných XML elementů a atributů (Visual Basic)

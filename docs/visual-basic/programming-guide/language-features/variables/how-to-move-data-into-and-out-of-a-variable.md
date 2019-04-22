@@ -6,10 +6,10 @@ helpviewer_keywords:
 - variables [Visual Basic], storing data
 ms.assetid: 93744f46-bf78-4fa0-9640-1de01bc38d9a
 ms.openlocfilehash: 30d1c0ab91724ac556e59b272782513ee8b8067b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58818529"
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>Postupy: Přesun dat do a z proměnné (Visual Basic)
