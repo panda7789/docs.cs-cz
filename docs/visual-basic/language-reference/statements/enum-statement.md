@@ -12,10 +12,10 @@ helpviewer_keywords:
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
 ms.openlocfilehash: fa97a374d4570e014222bf44844271b3394453da
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58830068"
 ---
 # <a name="enum-statement-visual-basic"></a>Enum – příkaz (Visual Basic)

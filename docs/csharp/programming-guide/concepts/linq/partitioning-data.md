@@ -3,10 +3,10 @@ title: Dělení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
 ms.openlocfilehash: b857c8c6e6b56a7263e6725a747e98ccfe4ff4fc
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58832460"
 ---
 # <a name="partitioning-data-c"></a>Dělení dat (C#)

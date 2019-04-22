@@ -6,10 +6,10 @@ helpviewer_keywords:
 - My.Computer.Registry object
 ms.assetid: afd9edf9-ef9b-438b-a390-d71a02dc8203
 ms.openlocfilehash: d388d349755e0847b9b1374c043c3de45e0de800
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58840871"
 ---
 # <a name="mycomputerregistry-object"></a>My.Computer.Registry – objekt

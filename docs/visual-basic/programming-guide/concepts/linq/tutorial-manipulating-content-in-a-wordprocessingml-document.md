@@ -3,10 +3,10 @@ title: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: f8028ba8-2dd1-4425-930c-8cc23176ebbc
 ms.openlocfilehash: 7b0a400a19dbe863490e5b2e34ec367e61a413a2
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58834956"
 ---
 # <a name="tutorial-manipulating-content-in-a-wordprocessingml-document-visual-basic"></a>Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)

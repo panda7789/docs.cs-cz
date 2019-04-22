@@ -6,10 +6,10 @@ helpviewer_keywords:
 - remarks XML tag
 ms.assetid: c6241773-a7ed-41c9-9a8b-9722a0c606a9
 ms.openlocfilehash: c5c088472ae09a416953d9c0829cad1cb48646b8
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58833487"
 ---
 # <a name="remarks-visual-basic"></a>\<REMARKS > (Visual Basic)

@@ -4,10 +4,10 @@ description: Přečtěte si C# v prohlížeči a můžete začít s vývojovým 
 ms.date: 01/30/2018
 ms.custom: mvc
 ms.openlocfilehash: 784461a707f0c40fd559b5652358bc8ec2ba9279
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920513"
 ---
 # <a name="introduction-to-c"></a>Úvod do jazyka C\#
@@ -18,29 +18,29 @@ První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se
 
 Úvodní kurzy následující lekci Hello World jsou k dispozici prostřednictvím prostředí online prohlížeče nebo [ve vlastním místním vývojovém prostředí](local-environment.md). Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Je odkazů, které vám pomůžou nastavit prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
 
-## [<a name="hello-world"></a>Ahoj světe](hello-world.yml)
+## <a name="hello-worldhello-worldyml"></a>[Hello World](hello-world.yml)
 
 V [Hello world](hello-world.yml) kurzu vytvoříte nejzákladnější C# programu. Prozkoumáte `string` typu a postupu při práci s textem.
 
-## [<a name="numbers-in-c"></a>Čísla v C#](numbers-in-csharp.yml)
+## <a name="numbers-in-cnumbers-in-csharpyml"></a>[Čísla v jazyce C#](numbers-in-csharp.yml)
 
 V [čísla ve C# ](numbers-in-csharp.yml) kurzu se dozvíte, jak počítače ukládána čísla a jak provádět výpočty s rozdílné číselné typy. Dozvíte se základy zaokrouhlení a provádění matematických výpočtů pomocí C#. Tento kurz je také k dispozici [spouštět místně na svém počítači](numbers-in-csharp-local.md).
 
 V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) lekce.
 
-## [<a name="branches-and-loops"></a>Větve a smyčky](branches-and-loops.yml)
+## <a name="branches-and-loopsbranches-and-loopsyml"></a>[Větve a smyčky](branches-and-loops.yml)
 
 [Větve a smyčky](branches-and-loops.yml) kurzu se naučíte se základy výběru různé cesty spuštění kódu na základě hodnot, které jsou uložené v proměnné. Se dozvíte základní informace o toku řízení, která je základem jak programy rozhodování a zvolte různé akce. Tento kurz je také k dispozici [spouštět místně na svém počítači](branches-and-loops-local.md).
 
 V tomto kurzu se předpokládá, že jste dokončili [Hello world](hello-world.yml) a [čísla ve C# ](numbers-in-csharp.yml) lekce.
 
-## [<a name="list-collection"></a>Kolekce seznamu](list-collection.yml)
+## <a name="list-collectionlist-collectionyml"></a>[Kolekce seznamu](list-collection.yml)
 
 [Seznamu kolekce](list-collection.yml) lekce will vám typu kolekce, která ukládá data sekvencí. Budete se dozvíte, jak přidávat a odebírat položky, vyhledejte položky a řazení seznamu. Prozkoumáte různé druhy seznamů. Tento kurz je také k dispozici [spouštět místně na svém počítači](arrays-and-collections.md).
 
 Tento kurz předpokládá, že dokončení lekce uvedené výše.
 
-## [<a name="introduction-to-classes"></a>Úvod do tříd](introduction-to-classes.md)
+## <a name="introduction-to-classesintroduction-to-classesmd"></a>[Úvod do tříd](introduction-to-classes.md)
 
 V tomto posledním kurzu je pouze možné spustit na počítači, pomocí vlastní místní vývojové prostředí a .NET Core.
 Budete moct sestavit konzolovou aplikaci a zobrazit základní funkce objektově orientované, které jsou součástí C# jazyka.

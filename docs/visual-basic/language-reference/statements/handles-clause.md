@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Handles keyword [Visual Basic]
 ms.assetid: 1b051c0e-f499-42f6-acb5-6f4f27824b40
 ms.openlocfilehash: 50a449ea8a5131c878cf703f44695cd2e2304444
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58842574"
 ---
 # <a name="handles-clause-visual-basic"></a>Handles – Klauzule (Visual Basic)

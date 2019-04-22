@@ -30,10 +30,10 @@ helpviewer_keywords:
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
 ms.openlocfilehash: cab1cc07d23a44e57bdb0962a323b014308cb1e5
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58836555"
 ---
 # <a name="dim-statement-visual-basic"></a>Dim – příkaz (Visual Basic)

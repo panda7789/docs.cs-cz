@@ -3,10 +3,10 @@ title: 'Postupy: Transformace tvaru stromu XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84b60854-48b2-452c-87f2-77d53e1d653a
 ms.openlocfilehash: 067bf56b8dff994080ba78147d992b97a56867cb
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58833656"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a>Postupy: Transformace tvaru stromu XML (Visual Basic)

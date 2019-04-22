@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
 ms.openlocfilehash: d9d50433e3bc24df7cda137a145ab3f0f0302a1f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58841976"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)

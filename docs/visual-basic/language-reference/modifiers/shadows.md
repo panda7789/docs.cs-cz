@@ -12,10 +12,10 @@ helpviewer_keywords:
 - names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
 ms.openlocfilehash: c314db90a1a0f89613e20897387bdec8ec534837
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58834137"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)

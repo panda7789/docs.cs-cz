@@ -9,10 +9,10 @@ helpviewer_keywords:
 - XML literals [Visual Basic], element
 ms.assetid: 95039642-7893-48b7-b23f-45a6c55d8f67
 ms.openlocfilehash: 7bd47d2461ba86dfbd1d5ff5993382914116f9ba
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58842249"
 ---
 # <a name="xml-element-literal-visual-basic"></a>Literál XML elementu (Visual Basic)

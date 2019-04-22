@@ -6,10 +6,10 @@ ms.author: mairaw
 ms.date: 04/02/2019
 ms.custom: updateeachrelease
 ms.openlocfilehash: 5084aaa745d714184ae644ef8e9fe140c522a70d
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920536"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
@@ -22,8 +22,8 @@ Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomoc�
 
 Novinky o .NET najdete v těchto blozích:
 
-- [.NET Blog](https://devblogs.microsoft.com/dotnet/)
-- [ASP.NET Blog](https://devblogs.microsoft.com/aspnet/)
+- [Blog k .NET](https://devblogs.microsoft.com/dotnet/)
+- [Blog technologie ASP.NET](https://devblogs.microsoft.com/aspnet/)
 - [Blog Visual Studio](https://devblogs.microsoft.com/visualstudio/)
 - [Tým jazyka Visual Basic](https://devblogs.microsoft.com/vbteam/)
 
@@ -49,7 +49,7 @@ Tato dokumentace popisuje škálu .NET napříč platformami a jazyky. Můžete 
 - [Průvodce rozhraním .NET Framework](framework/index.md)
 - [Průvodce jazykem C#](csharp/index.md)
 - [Průvodce jazykem F#](fsharp/index.md)
-- [Průvodce Visual Basicem](visual-basic/index.md)
+- [Průvodce jazykem Visual Basic](visual-basic/index.md)
 - [Průvodce ML.NET](machine-learning/index.md)
 
 Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
@@ -61,7 +61,7 @@ Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Mů
 - [.NET Core Home](https://github.com/dotnet/core)
 - [Knihovny pro .NET](https://github.com/dotnet/corefx)
 - [.NET Core Runtime](https://github.com/dotnet/coreclr)
-- [.NET Core CLI](https://github.com/dotnet/cli)
+- [Rozhraní příkazového řádku .NET Core](https://github.com/dotnet/cli)
 - [Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje](https://github.com/dotnet/roslyn)
 - [F#Kompilátor a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
 - [Windows Forms](https://github.com/dotnet/winforms)

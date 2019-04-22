@@ -11,10 +11,10 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
 ms.openlocfilehash: 46f59403feced4baafef4662065cb7daedbeaa7b
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58837075"
 ---
 # <a name="visual-basic-naming-conventions"></a>Zásady vytváření názvů jazyka Visual Basic

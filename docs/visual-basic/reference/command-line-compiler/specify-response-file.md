@@ -5,10 +5,10 @@ helpviewer_keywords:
 - '@ (Specify Response File) compiler option [Visual Basic]'
 ms.assetid: a6847eaa-e5f9-4303-9421-45b55484b9ca
 ms.openlocfilehash: 6b993a6399eec4e203821109db153aadf246cbac
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58838115"
 ---
 # <a name="-specify-response-file-visual-basic"></a>@ (Určení souboru odezvy) (Visual Basic)

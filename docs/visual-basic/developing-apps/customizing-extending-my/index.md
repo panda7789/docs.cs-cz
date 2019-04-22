@@ -7,17 +7,17 @@ helpviewer_keywords:
 - My namespace [Visual Basic], extending
 ms.assetid: 06ca80b9-1192-4eb5-8537-8ef5edfb9be0
 ms.openlocfilehash: d7fca92f541ffeca7a6e8267260d3b665271e90a
-ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58890394"
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic
 Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. To usnadňuje vyhledání a používání vašich objektů jinými vývojáři.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Rozšíření oboru názvů My v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
+ [Rozšíření My Namespace v jazyce Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)  
  Popisuje, jak přidat vlastní členy a hodnoty `My` oboru názvů v jazyce Visual Basic.  
   
  [Balení a nasazení vlastních rozšíření oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)  
@@ -47,4 +47,4 @@ Můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty. T
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vývoj aplikací pomocí jazyka Visual Basic](../../../visual-basic/developing-apps/index.md)
+- [Vývoj aplikací v jazyce Visual Basic](../../../visual-basic/developing-apps/index.md)

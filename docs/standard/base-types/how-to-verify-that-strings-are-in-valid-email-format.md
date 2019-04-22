@@ -21,10 +21,10 @@ ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 78210f9f007060551130812fcb5a9cd5b4728adc
-ms.sourcegitcommit: 5c2176883dc3107445702724a7caa7ac2f6cb0d3
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58890498"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
@@ -105,4 +105,4 @@ vbc /t:library RegexUtilities.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [.NET Framework – regulární výrazy](../../../docs/standard/base-types/regular-expressions.md)
+- [Regulárních výrazech .NET Frameworku](../../../docs/standard/base-types/regular-expressions.md)

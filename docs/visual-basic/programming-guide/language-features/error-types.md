@@ -11,10 +11,10 @@ helpviewer_keywords:
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
 ms.openlocfilehash: 07db963ac3cf9d1c0d17c420480189d362cdaf2c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58831563"
 ---
 # <a name="error-types-visual-basic"></a>Typy chyb (Visual Basic)

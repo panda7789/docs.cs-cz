@@ -10,10 +10,10 @@ helpviewer_keywords:
 - namespaces [Visual Basic], importing
 ms.assetid: 1f4d50a6-08c7-4c2e-8206-ccae35fcd1b4
 ms.openlocfilehash: 97d08113a37477add9d770b0a680c303fe7e3040
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58841404"
 ---
 # <a name="imports-statement-xml-namespace"></a>Imports – Příkaz (obor názvů XML)
