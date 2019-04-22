@@ -8,18 +8,18 @@ helpviewer_keywords:
 - BulletDecorator control [WPF]
 ms.assetid: 1756cabf-59b4-47a7-883d-1bdf2e5abe00
 ms.openlocfilehash: d5839a75434f71ff6dd91b86474aeab2e8b0ad64
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58824985"
 ---
-# <a name="bulletdecorator"></a><span data-ttu-id="6154f-102">BulletDecorator</span><span class="sxs-lookup"><span data-stu-id="6154f-102">BulletDecorator</span></span>
-<span data-ttu-id="6154f-103"><xref:System.Windows.Controls.Primitives.BulletDecorator> má dvě vlastnosti obsahu: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> a <xref:System.Windows.Controls.Decorator.Child%2A>.</span><span class="sxs-lookup"><span data-stu-id="6154f-103"><xref:System.Windows.Controls.Primitives.BulletDecorator> has two content properties: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> and <xref:System.Windows.Controls.Decorator.Child%2A>.</span></span> <span data-ttu-id="6154f-104"><xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> Definuje vlastnost <xref:System.Windows.UIElement> používat jako odrážka.</span><span class="sxs-lookup"><span data-stu-id="6154f-104">The <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> property defines the <xref:System.Windows.UIElement> to use as a bullet.</span></span> <span data-ttu-id="6154f-105"><xref:System.Windows.Controls.Decorator.Child%2A> Definuje vlastnost <xref:System.Windows.UIElement> , který vizuálně zarovnal odrážky.</span><span class="sxs-lookup"><span data-stu-id="6154f-105">The <xref:System.Windows.Controls.Decorator.Child%2A> property defines a <xref:System.Windows.UIElement> that visually aligns with the bullet.</span></span>  
+# <a name="bulletdecorator"></a><span data-ttu-id="16d46-102">BulletDecorator</span><span class="sxs-lookup"><span data-stu-id="16d46-102">BulletDecorator</span></span>
+<span data-ttu-id="16d46-103"><xref:System.Windows.Controls.Primitives.BulletDecorator> má dvě vlastnosti obsahu: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> a <xref:System.Windows.Controls.Decorator.Child%2A>.</span><span class="sxs-lookup"><span data-stu-id="16d46-103"><xref:System.Windows.Controls.Primitives.BulletDecorator> has two content properties: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> and <xref:System.Windows.Controls.Decorator.Child%2A>.</span></span> <span data-ttu-id="16d46-104"><xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> Definuje vlastnost <xref:System.Windows.UIElement> používat jako odrážka.</span><span class="sxs-lookup"><span data-stu-id="16d46-104">The <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> property defines the <xref:System.Windows.UIElement> to use as a bullet.</span></span> <span data-ttu-id="16d46-105"><xref:System.Windows.Controls.Decorator.Child%2A> Definuje vlastnost <xref:System.Windows.UIElement> , který vizuálně zarovnal odrážky.</span><span class="sxs-lookup"><span data-stu-id="16d46-105">The <xref:System.Windows.Controls.Decorator.Child%2A> property defines a <xref:System.Windows.UIElement> that visually aligns with the bullet.</span></span>  
   
- <span data-ttu-id="6154f-106">Následující ilustrace ukazuje příklady ovládacích prvků, které používají <xref:System.Windows.Controls.Primitives.BulletDecorator>.</span><span class="sxs-lookup"><span data-stu-id="6154f-106">The following illustration shows examples of controls that use a <xref:System.Windows.Controls.Primitives.BulletDecorator>.</span></span>  
+ <span data-ttu-id="16d46-106">Následující ilustrace ukazuje příklady ovládacích prvků, které používají <xref:System.Windows.Controls.Primitives.BulletDecorator>.</span><span class="sxs-lookup"><span data-stu-id="16d46-106">The following illustration shows examples of controls that use a <xref:System.Windows.Controls.Primitives.BulletDecorator>.</span></span>  
   
  ![Příklad zaškrtávacího políčka, prvku RadioButton a odrážek dekoratér textového pole.](./media/bulletdecorator/three-bullet-decorators.png)  
   
-## <a name="reference"></a><span data-ttu-id="6154f-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="6154f-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="16d46-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="16d46-108">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.BulletDecorator>
