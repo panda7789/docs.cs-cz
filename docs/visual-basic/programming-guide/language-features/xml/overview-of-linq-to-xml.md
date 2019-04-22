@@ -6,10 +6,10 @@ helpviewer_keywords:
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
 ms.openlocfilehash: 91f622b9eecdd1aec8b9361493095e92a851988e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58816171"
 ---
 # <a name="overview-of-linq-to-xml-in-visual-basic"></a>Přehled technologie LINQ to XML v jazyce Visual Basic

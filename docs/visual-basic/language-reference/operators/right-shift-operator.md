@@ -11,10 +11,10 @@ helpviewer_keywords:
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
 ms.openlocfilehash: 8803dc2e25edde756958a243d429dd30c5c78bcf
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58816964"
 ---
 # <a name="-operator-visual-basic"></a>>> – Operátor (Visual Basic)

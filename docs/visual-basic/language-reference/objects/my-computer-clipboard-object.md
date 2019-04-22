@@ -6,10 +6,10 @@ helpviewer_keywords:
 - My.Computer.Clipboard object
 ms.assetid: 05d4ede9-1f9a-4495-87f0-77350b8d2e5d
 ms.openlocfilehash: 3e606b5b496274b48b7d1f3ff768bb2bec5216fe
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814247"
 ---
 # <a name="mycomputerclipboard-object"></a>My.Computer.Clipboard – objekt

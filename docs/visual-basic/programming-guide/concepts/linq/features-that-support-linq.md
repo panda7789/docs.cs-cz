@@ -6,10 +6,10 @@ helpviewer_keywords:
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
 ms.openlocfilehash: 155d5c36483accc12d066a5530fea20a563e1498
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814494"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ

@@ -14,10 +14,10 @@ helpviewer_keywords:
 - operators [Visual Basic], short-circuiting logical
 ms.assetid: d181afe5-fafa-460f-a13b-81203f6f4587
 ms.openlocfilehash: 88c05b54402733fadb686e3c6f883b2d2d56990c
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58815066"
 ---
 # <a name="common-tasks-performed-with-visual-basic-operators"></a>Běžné úlohy prováděné s operátory jazyka Visual Basic

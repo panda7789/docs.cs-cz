@@ -10,10 +10,10 @@ helpviewer_keywords:
 - document literal [Visual Basic]
 ms.assetid: f7bbee56-0911-41de-b907-96f20450137b
 ms.openlocfilehash: f58c1365e145166dfe122d455854d44526300a1e
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814624"
 ---
 # <a name="xml-document-literal-visual-basic"></a>Literál dokumentu XML (Visual Basic)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 ms.assetid: a1e22d0e-8380-4761-9da1-84fb51c34821
 ms.openlocfilehash: d9d3fa021654d3be1b9d304beb83caa737660264
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58813987"
 ---
 # <a name="-operator-visual-basic"></a>/= – operátor [Visual Basic]

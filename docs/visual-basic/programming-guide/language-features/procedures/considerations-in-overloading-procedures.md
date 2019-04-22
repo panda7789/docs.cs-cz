@@ -26,10 +26,10 @@ helpviewer_keywords:
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
 ms.openlocfilehash: f14cc28960af28530bda9a78c1309dea10c18b8f
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58815588"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)

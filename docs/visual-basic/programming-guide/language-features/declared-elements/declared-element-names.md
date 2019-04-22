@@ -24,10 +24,10 @@ helpviewer_keywords:
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 ms.openlocfilehash: 5b1f8ccc402f7f5928a33f434664b0f28d108e6d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814065"
 ---
 # <a name="declared-element-names-visual-basic"></a>Deklarované názvy elementu (Visual Basic)

@@ -17,10 +17,10 @@ helpviewer_keywords:
 - properties [Visual Basic], overriding
 ms.assetid: 612581e7-8a4c-4a5d-beff-3402fffa6f35
 ms.openlocfilehash: 91a1cedc66fd66e336b6e7976ad87ad638cb43c3
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58816875"
 ---
 # <a name="overridable-visual-basic"></a>Overridable (Visual Basic)

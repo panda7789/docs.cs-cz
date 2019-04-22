@@ -3,10 +3,10 @@ title: Odebrání elementů, atributů a uzlů ze stromu XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5cf21919-4360-4b49-b29d-58ea3164ac72
 ms.openlocfilehash: 85a7a3b4047e269c562177cfa045b952472aaac2
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814910"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-visual-basic"></a>Odebrání elementů, atributů a uzlů ze stromu XML (Visual Basic)

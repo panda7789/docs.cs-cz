@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Take clause [Visual Basic]
 ms.assetid: 77bf87b2-1476-4456-957f-fee922fbad8c
 ms.openlocfilehash: cb109eaf43fee19b77ac690492b85919c9d78301
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58816951"
 ---
 # <a name="take-clause-visual-basic"></a>Take – klauzule (Visual Basic)

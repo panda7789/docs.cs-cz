@@ -3,10 +3,10 @@ title: Hledání textu v dokumentech aplikace Word (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
 ms.openlocfilehash: f8414662e2013b152e471d6c4c003e602c0d277d
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814364"
 ---
 # <a name="finding-text-in-word-documents-visual-basic"></a>Hledání textu v dokumentech aplikace Word (Visual Basic)

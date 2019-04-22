@@ -22,10 +22,10 @@ helpviewer_keywords:
 - Case statement [Visual Basic], Select...Case
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
 ms.openlocfilehash: f99db4f1dc224e5f75ee67ba94c3745f28438724
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814611"
 ---
 # <a name="selectcase-statement-visual-basic"></a>Select...Case – příkaz (Visual Basic)

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
 ms.openlocfilehash: de4f67fc5b60de48383a8ca886cff02b03830318
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58814168"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
