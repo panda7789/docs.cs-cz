@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6fdd50f0de014aa68b14303e9e22924b0790fa55
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59085113"
 ---
-# <a name="imetadatafiltermarktoken-method"></a><span data-ttu-id="f43f2-102">IMetaDataFilter::MarkToken – metoda</span><span class="sxs-lookup"><span data-stu-id="f43f2-102">IMetaDataFilter::MarkToken Method</span></span>
-<span data-ttu-id="f43f2-103">Nastaví hodnotu označující, že token Zadaná metadata byla zpracována.</span><span class="sxs-lookup"><span data-stu-id="f43f2-103">Sets a value indicating that the specified metadata token has been processed.</span></span>  
+# <a name="imetadatafiltermarktoken-method"></a><span data-ttu-id="b9563-102">IMetaDataFilter::MarkToken – metoda</span><span class="sxs-lookup"><span data-stu-id="b9563-102">IMetaDataFilter::MarkToken Method</span></span>
+<span data-ttu-id="b9563-103">Nastaví hodnotu označující, že token Zadaná metadata byla zpracována.</span><span class="sxs-lookup"><span data-stu-id="b9563-103">Sets a value indicating that the specified metadata token has been processed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f43f2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f43f2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b9563-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b9563-104">Syntax</span></span>  
   
 ```  
 HRESULT MarkToken (  
@@ -35,19 +35,19 @@ HRESULT MarkToken (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f43f2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f43f2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b9563-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b9563-105">Parameters</span></span>  
  `tk`  
- <span data-ttu-id="f43f2-106">[in] Token, který chcete označit jako zpracování.</span><span class="sxs-lookup"><span data-stu-id="f43f2-106">[in] The token to mark as processed.</span></span>  
+ <span data-ttu-id="b9563-106">[in] Token, který chcete označit jako zpracování.</span><span class="sxs-lookup"><span data-stu-id="b9563-106">[in] The token to mark as processed.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f43f2-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f43f2-107">Requirements</span></span>  
- <span data-ttu-id="f43f2-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f43f2-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b9563-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b9563-107">Requirements</span></span>  
+ <span data-ttu-id="b9563-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b9563-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f43f2-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f43f2-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b9563-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b9563-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f43f2-110">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f43f2-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b9563-110">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b9563-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="f43f2-111">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f43f2-111">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="b9563-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b9563-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f43f2-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f43f2-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b9563-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b9563-112">See also</span></span>
 
-- [<span data-ttu-id="f43f2-113">IMetaDataFilter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f43f2-113">IMetaDataFilter Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)
+- [<span data-ttu-id="b9563-113">IMetaDataFilter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b9563-113">IMetaDataFilter Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)

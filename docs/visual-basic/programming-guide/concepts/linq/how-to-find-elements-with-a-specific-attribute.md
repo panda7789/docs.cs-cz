@@ -3,21 +3,21 @@ title: 'Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ 
 ms.date: 07/20/2015
 ms.assetid: 4bb38d2c-bc7c-4196-8909-aaf41fb86b28
 ms.openlocfilehash: 17c5e9abf607df7311ff2552b7e9c54cbf30fd59
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58825336"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="e4de0-102">Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4de0-102">How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="e4de0-103">Někdy budete chtít najít všechny elementy, které mají určitý atribut.</span><span class="sxs-lookup"><span data-stu-id="e4de0-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="e4de0-104">Nejste obavy o obsah atributu.</span><span class="sxs-lookup"><span data-stu-id="e4de0-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="e4de0-105">Místo toho chcete vybrat na základě existence atributu.</span><span class="sxs-lookup"><span data-stu-id="e4de0-105">Instead, you want to select based on the existence of the attribute.</span></span>  
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="aff11-102">Postupy: Vyhledání elementů s konkrétním atributem (XPath – LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aff11-102">How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="aff11-103">Někdy budete chtít najít všechny elementy, které mají určitý atribut.</span><span class="sxs-lookup"><span data-stu-id="aff11-103">Sometimes you want to find all elements that have a specific attribute.</span></span> <span data-ttu-id="aff11-104">Nejste obavy o obsah atributu.</span><span class="sxs-lookup"><span data-stu-id="aff11-104">You are not concerned about the contents of the attribute.</span></span> <span data-ttu-id="aff11-105">Místo toho chcete vybrat na základě existence atributu.</span><span class="sxs-lookup"><span data-stu-id="aff11-105">Instead, you want to select based on the existence of the attribute.</span></span>  
   
- <span data-ttu-id="e4de0-106">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="e4de0-106">The XPath expression is:</span></span>  
+ <span data-ttu-id="aff11-106">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="aff11-106">The XPath expression is:</span></span>  
   
  `./*[@Select]`  
   
-## <a name="example"></a><span data-ttu-id="e4de0-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="e4de0-107">Example</span></span>  
- <span data-ttu-id="e4de0-108">Následující kód vybere pouze prvky, které mají `Select` atribut.</span><span class="sxs-lookup"><span data-stu-id="e4de0-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
+## <a name="example"></a><span data-ttu-id="aff11-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="aff11-107">Example</span></span>  
+ <span data-ttu-id="aff11-108">Následující kód vybere pouze prvky, které mají `Select` atribut.</span><span class="sxs-lookup"><span data-stu-id="aff11-108">The following code selects just the elements that have the `Select` attribute.</span></span>  
   
 ```vb  
 Dim doc As XElement = _   
@@ -51,7 +51,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- <span data-ttu-id="e4de0-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="e4de0-109">This example produces the following output:</span></span>  
+ <span data-ttu-id="aff11-109">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="aff11-109">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -59,6 +59,6 @@ Results are identical
 <Child4 Select="true">4</Child4>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e4de0-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e4de0-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aff11-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aff11-110">See also</span></span>
 
-- [<span data-ttu-id="e4de0-111">LINQ to XML pro uživatele jazyka XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4de0-111">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="aff11-111">LINQ to XML pro uživatele jazyka XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="aff11-111">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

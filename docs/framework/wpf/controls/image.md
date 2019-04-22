@@ -8,26 +8,26 @@ helpviewer_keywords:
 - Image control [WPF]
 ms.assetid: 5707e860-ee4a-4c9f-b123-80c64996af19
 ms.openlocfilehash: 4da98f5caa0cbf4714d16f66a18c67844bf5c201
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184857"
 ---
-# <a name="image"></a><span data-ttu-id="b8140-102">Image</span><span class="sxs-lookup"><span data-stu-id="b8140-102">Image</span></span>
-<span data-ttu-id="b8140-103"><xref:System.Windows.Controls.Image> Element slouží k zobrazení bitmapové obrázky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="b8140-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="image"></a><span data-ttu-id="2d8b2-102">Image</span><span class="sxs-lookup"><span data-stu-id="2d8b2-102">Image</span></span>
+<span data-ttu-id="2d8b2-103"><xref:System.Windows.Controls.Image> Element slouží k zobrazení bitmapové obrázky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="2d8b2-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="b8140-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b8140-104">In This Section</span></span>  
- [<span data-ttu-id="b8140-105">– postupy</span><span class="sxs-lookup"><span data-stu-id="b8140-105">How-to Topics</span></span>](image-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="2d8b2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2d8b2-104">In This Section</span></span>  
+ [<span data-ttu-id="2d8b2-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="2d8b2-105">How-to Topics</span></span>](image-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="b8140-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b8140-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="2d8b2-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2d8b2-106">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="b8140-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b8140-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2d8b2-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d8b2-107">See also</span></span>
 
-- [<span data-ttu-id="b8140-108">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="b8140-108">Imaging Overview</span></span>](../graphics-multimedia/imaging-overview.md)
-- [<span data-ttu-id="b8140-109">– postupy</span><span class="sxs-lookup"><span data-stu-id="b8140-109">How-to Topics</span></span>](../graphics-multimedia/imaging-how-to-topics.md)
+- [<span data-ttu-id="2d8b2-108">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="2d8b2-108">Imaging Overview</span></span>](../graphics-multimedia/imaging-overview.md)
+- [<span data-ttu-id="2d8b2-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="2d8b2-109">How-to Topics</span></span>](../graphics-multimedia/imaging-how-to-topics.md)
