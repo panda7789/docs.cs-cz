@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 60183291fda551e328ee1def03c02240314a71e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59178266"
 ---
-# <a name="icorprofilercallbackjitinlining-method"></a><span data-ttu-id="fd4d2-102">ICorProfilerCallback::JITInlining – metoda</span><span class="sxs-lookup"><span data-stu-id="fd4d2-102">ICorProfilerCallback::JITInlining Method</span></span>
-<span data-ttu-id="fd4d2-103">Oznámí profileru, že kompilátor just-in-time (JIT) Chystáte se vložit funkci v jiné funkci.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-103">Notifies the profiler that the just-in-time (JIT) compiler is about to insert a function in line with another function.</span></span>  
+# <a name="icorprofilercallbackjitinlining-method"></a><span data-ttu-id="97f41-102">ICorProfilerCallback::JITInlining – metoda</span><span class="sxs-lookup"><span data-stu-id="97f41-102">ICorProfilerCallback::JITInlining Method</span></span>
+<span data-ttu-id="97f41-103">Oznámí profileru, že kompilátor just-in-time (JIT) Chystáte se vložit funkci v jiné funkci.</span><span class="sxs-lookup"><span data-stu-id="97f41-103">Notifies the profiler that the just-in-time (JIT) compiler is about to insert a function in line with another function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fd4d2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fd4d2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="97f41-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="97f41-104">Syntax</span></span>  
   
 ```  
 HRESULT JITInlining(  
@@ -36,30 +36,30 @@ HRESULT JITInlining(
     [out] BOOL      *pfShouldInline);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="fd4d2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fd4d2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="97f41-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="97f41-105">Parameters</span></span>  
  `callerId`  
- <span data-ttu-id="fd4d2-106">[in] ID funkce, do kterého `calleeId` vloží funkce.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-106">[in] The ID of the function into which the `calleeId` function will be inserted.</span></span>  
+ <span data-ttu-id="97f41-106">[in] ID funkce, do kterého `calleeId` vloží funkce.</span><span class="sxs-lookup"><span data-stu-id="97f41-106">[in] The ID of the function into which the `calleeId` function will be inserted.</span></span>  
   
  `calleeId`  
- <span data-ttu-id="fd4d2-107">[in] ID funkce má být vložen.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-107">[in] The ID of the function to be inserted.</span></span>  
+ <span data-ttu-id="97f41-107">[in] ID funkce má být vložen.</span><span class="sxs-lookup"><span data-stu-id="97f41-107">[in] The ID of the function to be inserted.</span></span>  
   
  `pfShouldInline`  
- <span data-ttu-id="fd4d2-108">[out] `true` vkládání dojde k; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-108">[out] `true` to allow the insertion to occur; otherwise, `false`.</span></span>  
+ <span data-ttu-id="97f41-108">[out] `true` vkládání dojde k; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="97f41-108">[out] `true` to allow the insertion to occur; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fd4d2-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fd4d2-109">Remarks</span></span>  
- <span data-ttu-id="fd4d2-110">Profiler může nastavit `pfShouldInline` k `false` zabránit `calleeId` funkce nebude vložen do `callerId` funkce.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-110">The profiler can set `pfShouldInline` to `false` to prevent the `calleeId` function from being inserted into the `callerId` function.</span></span> <span data-ttu-id="fd4d2-111">Navíc můžete profiler globálně zakázat vložení vložené pomocí COR_PRF_DISABLE_INLINING hodnotu [cor_prf_monitor –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-111">Also, the profiler can globally disable inline insertion by using the COR_PRF_DISABLE_INLINING value of the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="97f41-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="97f41-109">Remarks</span></span>  
+ <span data-ttu-id="97f41-110">Profiler může nastavit `pfShouldInline` k `false` zabránit `calleeId` funkce nebude vložen do `callerId` funkce.</span><span class="sxs-lookup"><span data-stu-id="97f41-110">The profiler can set `pfShouldInline` to `false` to prevent the `calleeId` function from being inserted into the `callerId` function.</span></span> <span data-ttu-id="97f41-111">Navíc můžete profiler globálně zakázat vložení vložené pomocí COR_PRF_DISABLE_INLINING hodnotu [cor_prf_monitor –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu.</span><span class="sxs-lookup"><span data-stu-id="97f41-111">Also, the profiler can globally disable inline insertion by using the COR_PRF_DISABLE_INLINING value of the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration.</span></span>  
   
- <span data-ttu-id="fd4d2-112">Vložené funkce vloženy nevyvolávejte události pro zadání nebo byste museli opustit.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-112">Functions inserted inline do not raise events for entering or leaving.</span></span> <span data-ttu-id="fd4d2-113">Proto musíte nastavit profiler `pfShouldInline` k `false` cílem vytvořit přesný graf volání.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-113">Therefore, the profiler must set `pfShouldInline` to `false` in order to produce an accurate callgraph.</span></span> <span data-ttu-id="fd4d2-114">Nastavení `pfShouldInline` k `false` ovlivní výkon, protože vložený vkládání obvykle zvyšuje rychlost a snižuje počet samostatných události kompilace JIT pro vložené metody.</span><span class="sxs-lookup"><span data-stu-id="fd4d2-114">Setting `pfShouldInline` to `false` will affect performance, because inline insertion typically increases speed and reduces the number of separate JIT compilation events for the inserted method.</span></span>  
+ <span data-ttu-id="97f41-112">Vložené funkce vloženy nevyvolávejte události pro zadání nebo byste museli opustit.</span><span class="sxs-lookup"><span data-stu-id="97f41-112">Functions inserted inline do not raise events for entering or leaving.</span></span> <span data-ttu-id="97f41-113">Proto musíte nastavit profiler `pfShouldInline` k `false` cílem vytvořit přesný graf volání.</span><span class="sxs-lookup"><span data-stu-id="97f41-113">Therefore, the profiler must set `pfShouldInline` to `false` in order to produce an accurate callgraph.</span></span> <span data-ttu-id="97f41-114">Nastavení `pfShouldInline` k `false` ovlivní výkon, protože vložený vkládání obvykle zvyšuje rychlost a snižuje počet samostatných události kompilace JIT pro vložené metody.</span><span class="sxs-lookup"><span data-stu-id="97f41-114">Setting `pfShouldInline` to `false` will affect performance, because inline insertion typically increases speed and reduces the number of separate JIT compilation events for the inserted method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fd4d2-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fd4d2-115">Requirements</span></span>  
- <span data-ttu-id="fd4d2-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fd4d2-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="97f41-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="97f41-115">Requirements</span></span>  
+ <span data-ttu-id="97f41-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="97f41-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fd4d2-117">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="fd4d2-117">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="97f41-117">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="97f41-117">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="fd4d2-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="fd4d2-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="97f41-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="97f41-118">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="fd4d2-119">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="fd4d2-119">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="97f41-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="97f41-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fd4d2-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fd4d2-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="97f41-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="97f41-120">See also</span></span>
 
-- [<span data-ttu-id="fd4d2-121">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fd4d2-121">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="97f41-121">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="97f41-121">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

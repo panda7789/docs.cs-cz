@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7e1498ec3ce1e5258546cec8d8f8172739af6d9d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59179761"
 ---
-# <a name="icorprofilerinfo2getfunctionfromtokenandtypeargs-method"></a><span data-ttu-id="f1a15-102">ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs – metoda</span><span class="sxs-lookup"><span data-stu-id="f1a15-102">ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method</span></span>
-<span data-ttu-id="f1a15-103">Získá `FunctionID` funkce s použitím Zadaná metadata token, který obsahuje třídy, a `ClassID` hodnot ve všech argumentů typu.</span><span class="sxs-lookup"><span data-stu-id="f1a15-103">Gets the `FunctionID` of a function by using the specified metadata token, containing class, and `ClassID` values of any type arguments.</span></span>  
+# <a name="icorprofilerinfo2getfunctionfromtokenandtypeargs-method"></a><span data-ttu-id="8f379-102">ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs – metoda</span><span class="sxs-lookup"><span data-stu-id="8f379-102">ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method</span></span>
+<span data-ttu-id="8f379-103">Získá `FunctionID` funkce s použitím Zadaná metadata token, který obsahuje třídy, a `ClassID` hodnot ve všech argumentů typu.</span><span class="sxs-lookup"><span data-stu-id="8f379-103">Gets the `FunctionID` of a function by using the specified metadata token, containing class, and `ClassID` values of any type arguments.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f1a15-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f1a15-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8f379-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8f379-104">Syntax</span></span>  
   
 ```  
 HRESULT GetFunctionFromTokenAndTypeArgs(  
@@ -39,42 +39,42 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
     [out] FunctionID* pFunctionID);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f1a15-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f1a15-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="8f379-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8f379-105">Parameters</span></span>  
  `moduleID`  
- <span data-ttu-id="f1a15-106">[in] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="f1a15-106">[in] The ID of the module in which the function resides.</span></span>  
+ <span data-ttu-id="8f379-106">[in] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="8f379-106">[in] The ID of the module in which the function resides.</span></span>  
   
  `funcDef`  
- <span data-ttu-id="f1a15-107">[in] `mdMethodDef` Token metadat, který odkazuje na funkci.</span><span class="sxs-lookup"><span data-stu-id="f1a15-107">[in] An `mdMethodDef` metadata token that references the function.</span></span>  
+ <span data-ttu-id="8f379-107">[in] `mdMethodDef` Token metadat, který odkazuje na funkci.</span><span class="sxs-lookup"><span data-stu-id="8f379-107">[in] An `mdMethodDef` metadata token that references the function.</span></span>  
   
  `classId`  
- <span data-ttu-id="f1a15-108">[in] ID funkce obsahující třídy.</span><span class="sxs-lookup"><span data-stu-id="f1a15-108">[in] The ID of the function's containing class.</span></span>  
+ <span data-ttu-id="8f379-108">[in] ID funkce obsahující třídy.</span><span class="sxs-lookup"><span data-stu-id="8f379-108">[in] The ID of the function's containing class.</span></span>  
   
  `cTypeArgs`  
- <span data-ttu-id="f1a15-109">[in] Počet parametrů typu pro danou funkci.</span><span class="sxs-lookup"><span data-stu-id="f1a15-109">[in] The number of type parameters for the given function.</span></span> <span data-ttu-id="f1a15-110">Tato hodnota musí být nula pro funkce, který není obecný.</span><span class="sxs-lookup"><span data-stu-id="f1a15-110">This value must be zero for non-generic functions.</span></span>  
+ <span data-ttu-id="8f379-109">[in] Počet parametrů typu pro danou funkci.</span><span class="sxs-lookup"><span data-stu-id="8f379-109">[in] The number of type parameters for the given function.</span></span> <span data-ttu-id="8f379-110">Tato hodnota musí být nula pro funkce, který není obecný.</span><span class="sxs-lookup"><span data-stu-id="8f379-110">This value must be zero for non-generic functions.</span></span>  
   
  `typeArgs`  
- <span data-ttu-id="f1a15-111">[in] Pole `ClassID` hodnot, z nichž každý je argument funkce.</span><span class="sxs-lookup"><span data-stu-id="f1a15-111">[in] An array of `ClassID` values, each of which is an argument of the function.</span></span> <span data-ttu-id="f1a15-112">Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="f1a15-112">The value of `typeArgs` can be NULL if `cTypeArgs` is set to zero.</span></span>  
+ <span data-ttu-id="8f379-111">[in] Pole `ClassID` hodnot, z nichž každý je argument funkce.</span><span class="sxs-lookup"><span data-stu-id="8f379-111">[in] An array of `ClassID` values, each of which is an argument of the function.</span></span> <span data-ttu-id="8f379-112">Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastavena na hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="8f379-112">The value of `typeArgs` can be NULL if `cTypeArgs` is set to zero.</span></span>  
   
  `pFunctionID`  
- <span data-ttu-id="f1a15-113">[out] Ukazatel `FunctionID` zadané funkce.</span><span class="sxs-lookup"><span data-stu-id="f1a15-113">[out] A pointer to the `FunctionID` of the specified function.</span></span>  
+ <span data-ttu-id="8f379-113">[out] Ukazatel `FunctionID` zadané funkce.</span><span class="sxs-lookup"><span data-stu-id="8f379-113">[out] A pointer to the `FunctionID` of the specified function.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f1a15-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f1a15-114">Remarks</span></span>  
- <span data-ttu-id="f1a15-115">Volání `GetFunctionFromTokenAndTypeArgs` metodou `mdMethodRef` metadat místo `mdMethodDef` tokenu metadat může mít nepředvídatelné výsledky.</span><span class="sxs-lookup"><span data-stu-id="f1a15-115">Calling the `GetFunctionFromTokenAndTypeArgs` method with an `mdMethodRef` metadata instead of an `mdMethodDef` metadata token can have unpredictable results.</span></span> <span data-ttu-id="f1a15-116">Volající musí se překládat `mdMethodRef` do `mdMethodDef` při předávání ho.</span><span class="sxs-lookup"><span data-stu-id="f1a15-116">Callers should resolve the `mdMethodRef` to an `mdMethodDef` when passing it.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="8f379-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8f379-114">Remarks</span></span>  
+ <span data-ttu-id="8f379-115">Volání `GetFunctionFromTokenAndTypeArgs` metodou `mdMethodRef` metadat místo `mdMethodDef` tokenu metadat může mít nepředvídatelné výsledky.</span><span class="sxs-lookup"><span data-stu-id="8f379-115">Calling the `GetFunctionFromTokenAndTypeArgs` method with an `mdMethodRef` metadata instead of an `mdMethodDef` metadata token can have unpredictable results.</span></span> <span data-ttu-id="8f379-116">Volající musí se překládat `mdMethodRef` do `mdMethodDef` při předávání ho.</span><span class="sxs-lookup"><span data-stu-id="8f379-116">Callers should resolve the `mdMethodRef` to an `mdMethodDef` when passing it.</span></span>  
   
- <span data-ttu-id="f1a15-117">Pokud funkce dosud není načtený, volání `GetFunctionFromTokenAndTypeArgs` způsobí, že načítání pravděpodobnější, což je nebezpečné operace v mnoha kontextech.</span><span class="sxs-lookup"><span data-stu-id="f1a15-117">If the function is not already loaded, calling `GetFunctionFromTokenAndTypeArgs` will cause loading to occur, which is a dangerous operation in many contexts.</span></span> <span data-ttu-id="f1a15-118">Například volání této metody při načítání modulů nebo typy může vést k nekonečné smyčce jak modul runtime pokusí se načíst cyklicky věci.</span><span class="sxs-lookup"><span data-stu-id="f1a15-118">For example, calling this method during loading of modules or types could lead to an infinite loop as the runtime attempts to circularly load things.</span></span>  
+ <span data-ttu-id="8f379-117">Pokud funkce dosud není načtený, volání `GetFunctionFromTokenAndTypeArgs` způsobí, že načítání pravděpodobnější, což je nebezpečné operace v mnoha kontextech.</span><span class="sxs-lookup"><span data-stu-id="8f379-117">If the function is not already loaded, calling `GetFunctionFromTokenAndTypeArgs` will cause loading to occur, which is a dangerous operation in many contexts.</span></span> <span data-ttu-id="8f379-118">Například volání této metody při načítání modulů nebo typy může vést k nekonečné smyčce jak modul runtime pokusí se načíst cyklicky věci.</span><span class="sxs-lookup"><span data-stu-id="8f379-118">For example, calling this method during loading of modules or types could lead to an infinite loop as the runtime attempts to circularly load things.</span></span>  
   
- <span data-ttu-id="f1a15-119">Obecně platí, využívání `GetFunctionFromTokenAndTypeArgs` se nedoporučuje.</span><span class="sxs-lookup"><span data-stu-id="f1a15-119">In general, use of `GetFunctionFromTokenAndTypeArgs` is discouraged.</span></span> <span data-ttu-id="f1a15-120">Pokud profilery zajímají události pro určitou funkci, měli uložit `ModuleID` a `mdMethodDef` této funkce a použití [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) ke kontrole, jestli daný `FunctionID` je který požadované funkce.</span><span class="sxs-lookup"><span data-stu-id="f1a15-120">If profilers are interested in events for a particular function, they should store the `ModuleID` and `mdMethodDef` of that function, and use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) to check whether a given `FunctionID` is that of the desired function.</span></span>  
+ <span data-ttu-id="8f379-119">Obecně platí, využívání `GetFunctionFromTokenAndTypeArgs` se nedoporučuje.</span><span class="sxs-lookup"><span data-stu-id="8f379-119">In general, use of `GetFunctionFromTokenAndTypeArgs` is discouraged.</span></span> <span data-ttu-id="8f379-120">Pokud profilery zajímají události pro určitou funkci, měli uložit `ModuleID` a `mdMethodDef` této funkce a použití [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) ke kontrole, jestli daný `FunctionID` je který požadované funkce.</span><span class="sxs-lookup"><span data-stu-id="8f379-120">If profilers are interested in events for a particular function, they should store the `ModuleID` and `mdMethodDef` of that function, and use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) to check whether a given `FunctionID` is that of the desired function.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f1a15-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f1a15-121">Requirements</span></span>  
- <span data-ttu-id="f1a15-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f1a15-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8f379-121">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8f379-121">Requirements</span></span>  
+ <span data-ttu-id="8f379-122">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8f379-122">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f1a15-123">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="f1a15-123">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="8f379-123">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="8f379-123">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="f1a15-124">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f1a15-124">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="8f379-124">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="8f379-124">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="f1a15-125">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f1a15-125">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="8f379-125">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8f379-125">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f1a15-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f1a15-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8f379-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8f379-126">See also</span></span>
 
-- [<span data-ttu-id="f1a15-127">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f1a15-127">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="f1a15-128">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f1a15-128">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [<span data-ttu-id="8f379-127">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f379-127">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="8f379-128">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8f379-128">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

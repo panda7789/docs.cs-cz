@@ -19,31 +19,31 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 84ec75fb2a994543ba9ead84c41abc304c420053
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59182972"
 ---
-# <a name="cleardownloadcache-function"></a><span data-ttu-id="7bcec-102">ClearDownloadCache – funkce</span><span class="sxs-lookup"><span data-stu-id="7bcec-102">ClearDownloadCache Function</span></span>
-<span data-ttu-id="7bcec-103">Vymaže globální mezipaměti sestavení stažené sestavení.</span><span class="sxs-lookup"><span data-stu-id="7bcec-103">Clears the global assembly cache of downloaded assemblies.</span></span>  
+# <a name="cleardownloadcache-function"></a><span data-ttu-id="323c4-102">ClearDownloadCache – funkce</span><span class="sxs-lookup"><span data-stu-id="323c4-102">ClearDownloadCache Function</span></span>
+<span data-ttu-id="323c4-103">Vymaže globální mezipaměti sestavení stažené sestavení.</span><span class="sxs-lookup"><span data-stu-id="323c4-103">Clears the global assembly cache of downloaded assemblies.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7bcec-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bcec-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="323c4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="323c4-104">Syntax</span></span>  
   
 ```  
 HRESULT ClearDownloadCache ();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="7bcec-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7bcec-105">Requirements</span></span>  
- <span data-ttu-id="7bcec-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7bcec-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="323c4-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="323c4-105">Requirements</span></span>  
+ <span data-ttu-id="323c4-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="323c4-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7bcec-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="7bcec-107">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="323c4-107">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="323c4-107">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="7bcec-108">**Knihovna:** Soubor Fusion.dll a knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="7bcec-108">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="7bcec-109">Ujistěte se, že můžete cílit na správnou verzi rozhraní .NET Framework pomocí soubor Fusion.dll namísto knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="7bcec-109">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
+ <span data-ttu-id="323c4-108">**Knihovna:** Soubor Fusion.dll a knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="323c4-108">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="323c4-109">Ujistěte se, že můžete cílit na správnou verzi rozhraní .NET Framework pomocí soubor Fusion.dll namísto knihovny Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="323c4-109">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
   
- **<span data-ttu-id="7bcec-110">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="7bcec-110">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="323c4-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="323c4-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7bcec-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7bcec-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="323c4-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="323c4-111">See also</span></span>
 
-- [<span data-ttu-id="7bcec-112">Fúze globálních statických funkcí</span><span class="sxs-lookup"><span data-stu-id="7bcec-112">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
-- [<span data-ttu-id="7bcec-113">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="7bcec-113">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)
+- [<span data-ttu-id="323c4-112">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="323c4-112">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="323c4-113">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="323c4-113">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)

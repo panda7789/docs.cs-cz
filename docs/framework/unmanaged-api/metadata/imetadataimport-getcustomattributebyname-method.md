@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 61029074347d554faaefe790c1e408e860e34690
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183024"
 ---
-# <a name="imetadataimportgetcustomattributebyname-method"></a><span data-ttu-id="9a7a2-102">IMetaDataImport::GetCustomAttributeByName – metoda</span><span class="sxs-lookup"><span data-stu-id="9a7a2-102">IMetaDataImport::GetCustomAttributeByName Method</span></span>
-<span data-ttu-id="9a7a2-103">Získá vlastní atribut zadaný název a vlastníka.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-103">Gets the custom attribute, given its name and owner.</span></span>  
+# <a name="imetadataimportgetcustomattributebyname-method"></a><span data-ttu-id="85f08-102">IMetaDataImport::GetCustomAttributeByName – metoda</span><span class="sxs-lookup"><span data-stu-id="85f08-102">IMetaDataImport::GetCustomAttributeByName Method</span></span>
+<span data-ttu-id="85f08-103">Získá vlastní atribut zadaný název a vlastníka.</span><span class="sxs-lookup"><span data-stu-id="85f08-103">Gets the custom attribute, given its name and owner.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9a7a2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9a7a2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="85f08-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85f08-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCustomAttributeByName (  
@@ -38,32 +38,32 @@ HRESULT GetCustomAttributeByName (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9a7a2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9a7a2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="85f08-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="85f08-105">Parameters</span></span>  
  `tkObj`  
- <span data-ttu-id="9a7a2-106">[in] Token metadat představující objekt, který je vlastníkem vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-106">[in] A metadata token representing the object that owns the custom attribute.</span></span>  
+ <span data-ttu-id="85f08-106">[in] Token metadat představující objekt, který je vlastníkem vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="85f08-106">[in] A metadata token representing the object that owns the custom attribute.</span></span>  
   
  `szName`  
- <span data-ttu-id="9a7a2-107">[in] Název vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-107">[in] The name of the custom attribute.</span></span>  
+ <span data-ttu-id="85f08-107">[in] Název vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="85f08-107">[in] The name of the custom attribute.</span></span>  
   
  `ppData`  
- <span data-ttu-id="9a7a2-108">[out] Ukazatel na pole dat, která je hodnota vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-108">[out] A pointer to an array of data that is the value of the custom attribute.</span></span>  
+ <span data-ttu-id="85f08-108">[out] Ukazatel na pole dat, která je hodnota vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="85f08-108">[out] A pointer to an array of data that is the value of the custom attribute.</span></span>  
   
  `pcbData`  
- <span data-ttu-id="9a7a2-109">[out] Velikost v bajtech dat vrácených v \*`ppData`.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-109">[out] The size in bytes of the data returned in \*`ppData`.</span></span>  
+ <span data-ttu-id="85f08-109">[out] Velikost v bajtech dat vrácených v \*`ppData`.</span><span class="sxs-lookup"><span data-stu-id="85f08-109">[out] The size in bytes of the data returned in \*`ppData`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="9a7a2-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9a7a2-110">Remarks</span></span>  
- <span data-ttu-id="9a7a2-111">Je možné definovat více vlastních atributů pro téhož vlastníka; může probíhat dokonce se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-111">It is legal to define multiple custom attributes for the same owner; they may even have the same name.</span></span> <span data-ttu-id="9a7a2-112">Ale `GetCustomAttributeByName` vrátí pouze jednu instanci.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-112">However, `GetCustomAttributeByName` returns only one instance.</span></span> <span data-ttu-id="9a7a2-113">(`GetCustomAttributeByName` vrátí první instance, který nalezne.) Chcete-li vyhledat všechny instance vlastního atributu, zavolejte [imetadataimport::enumcustomattributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="9a7a2-113">(`GetCustomAttributeByName` returns the first instance that it encounters.) To find all instances of a custom attribute, call the [IMetaDataImport::EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="85f08-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="85f08-110">Remarks</span></span>  
+ <span data-ttu-id="85f08-111">Je možné definovat více vlastních atributů pro téhož vlastníka; může probíhat dokonce se stejným názvem.</span><span class="sxs-lookup"><span data-stu-id="85f08-111">It is legal to define multiple custom attributes for the same owner; they may even have the same name.</span></span> <span data-ttu-id="85f08-112">Ale `GetCustomAttributeByName` vrátí pouze jednu instanci.</span><span class="sxs-lookup"><span data-stu-id="85f08-112">However, `GetCustomAttributeByName` returns only one instance.</span></span> <span data-ttu-id="85f08-113">(`GetCustomAttributeByName` vrátí první instance, který nalezne.) Chcete-li vyhledat všechny instance vlastního atributu, zavolejte [imetadataimport::enumcustomattributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="85f08-113">(`GetCustomAttributeByName` returns the first instance that it encounters.) To find all instances of a custom attribute, call the [IMetaDataImport::EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9a7a2-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9a7a2-114">Requirements</span></span>  
- <span data-ttu-id="9a7a2-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9a7a2-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="85f08-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="85f08-114">Requirements</span></span>  
+ <span data-ttu-id="85f08-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="85f08-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9a7a2-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9a7a2-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="85f08-116">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="85f08-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="9a7a2-117">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9a7a2-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="85f08-117">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="85f08-117">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="9a7a2-118">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="9a7a2-118">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="85f08-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="85f08-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a7a2-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a7a2-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85f08-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="85f08-119">See also</span></span>
 
-- [<span data-ttu-id="9a7a2-120">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a7a2-120">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="9a7a2-121">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a7a2-121">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="85f08-120">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="85f08-120">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="85f08-121">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="85f08-121">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
