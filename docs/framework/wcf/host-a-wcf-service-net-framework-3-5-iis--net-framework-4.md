@@ -3,11 +3,11 @@ title: 'Postupy: Hostování služby WCF napsané pomocí .NET Framework 3.5 v I
 ms.date: 03/30/2017
 ms.assetid: 9aabc785-068d-4d32-8841-3ef39308d8d6
 ms.openlocfilehash: d4f0cb584f7759a6fe52a4bec4306a7d714d3906
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59331530"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59976921"
 ---
 # <a name="how-to-host-a-wcf-service-written-with-net-framework-35-in-iis-running-under-net-framework-4"></a>Postupy: Hostování služby WCF napsané pomocí .NET Framework 3.5 v IIS a běžící pod .NET Framework 4
 Při hostování služby Windows Communication Foundation (WCF) napsané pomocí [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] na počítač se systémem [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], může se zobrazit <xref:System.ServiceModel.ProtocolException> s následujícím textem.  

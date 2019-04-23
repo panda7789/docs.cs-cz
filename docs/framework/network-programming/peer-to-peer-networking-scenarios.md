@@ -3,11 +3,11 @@ title: Scénáře pro sítě peer-to-peer
 ms.date: 03/30/2017
 ms.assetid: d23b1a64-2e08-4014-882a-c1dd766bdcc2
 ms.openlocfilehash: c38f144fccd9376a09f50a735a692a0e7b9d22e1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59216831"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975998"
 ---
 # <a name="peer-to-peer-networking-scenarios"></a>Scénáře pro sítě peer-to-peer
 Sítě peer-to-peer umožňuje nebo rozšiřuje následující scénáře:  

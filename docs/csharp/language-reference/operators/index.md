@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 4958f3e28b80fca2086d45827df1ced8fc26bd8e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: f4267caeb6301950b9f6a8b9545a47b9f48e7920
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672287"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59977376"
 ---
 # <a name="c-operators"></a>Operátory jazyka C#
 
@@ -77,7 +77,7 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [\!x](boolean-logical-operators.md#logical-negation-operator-) – Logická negace.
 
-[~ x](bitwise-complement-operator.md) – bitového doplňku.
+[~ x](bitwise-and-shift-operators.md#bitwise-complement-operator-) – bitového doplňku.
 
 [++ x](arithmetic-operators.md#increment-operator-) – předponového. Vrátí hodnotu x po aktualizaci umístění úložiště s hodnotou x, která je větší (obvykle přidá na celé číslo 1).
 
@@ -90,6 +90,10 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 [& x](and-operator.md) – adresu.
 
 [* x](multiplication-operator.md) – přesměrování.
+
+[True – – operátor](../keywords/true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand.
+
+[false – – operátor](../keywords/true-false-operators.md) – vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false.
 
 ## <a name="multiplicative-operators"></a>Operátory násobení
 
@@ -113,9 +117,9 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 Tyto operátory mají vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x <\< y](left-shift-operator.md) – posunutí bitů doleva a vyplnit nula na pravé straně.
+[x <\< y](bitwise-and-shift-operators.md#left-shift-operator-) – posunutí bitů doleva a vyplnit nula na pravé straně.
 
-[x >> y](right-shift-operator.md) – posunutí bitů doprava. Pokud levý operand `int` nebo `long`, pak levé bity jsou vyplněny na bit znaménka. Pokud levý operand `uint` nebo `ulong`, pak levé bity jsou vyplněny hodnotou nula.
+[x >> y](bitwise-and-shift-operators.md#right-shift-operator-) – posunutí bitů doprava. Pokud levý operand `int` nebo `long`, pak levé bity jsou vyplněny na bit znaménka. Pokud levý operand `uint` nebo `ulong`, pak levé bity jsou vyplněny hodnotou nula.
 
 ## <a name="relational-and-type-testing-operators"></a>Operátory relační a typové zkoušky
 
@@ -145,27 +149,19 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x & y](and-operator.md) – logický operátor or bitový AND. Obecně můžete s celočíselnými typy a `enum` typy.
+`x & y` – [logický operátor AND](boolean-logical-operators.md#logical-and-operator-) pro `bool` operandy nebo [bitové logické AND](bitwise-and-shift-operators.md#logical-and-operator-) pro operandy integrální typy.
 
 ## <a name="logical-xor-operator"></a>Logický operátor XOR
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x ^ y](xor-operator.md) – logické a bitové operace XOR. Obecně můžete s celočíselnými typy a `enum` typy.
+`x ^ y` – [logické XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) pro `bool` operandy nebo [bitové logické XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) pro operandy integrální typy.
 
 ## <a name="logical-or-operator"></a>Logický operátor OR
 
 Tento operátor má vyšší prioritu než v další části a nižší prioritu než předchozí části.
 
-[x &#124; y](or-operator.md) – logické a bitové operace OR. Obecně můžete s celočíselnými typy a `enum` typy.
-
-## <a name="true-operator"></a>True – – operátor
-
-[True](../keywords/true-false-operators.md) operátor vrátí [bool](../keywords/bool.md) hodnotu `true` označuje jednoznačně true operand. 
-
-## <a name="false-operator"></a>false – – operátor
-
-[False](../keywords/true-false-operators.md) operátor vrátí [bool](../keywords/bool.md) hodnotu `true` k označení, že operand je jednoznačně false. 
+`x | y` – [logický operátor OR](boolean-logical-operators.md#logical-or-operator-) pro `bool` operandy nebo [bitové logické OR](bitwise-and-shift-operators.md#logical-or-operator-) pro operandy integrální typy.
 
 ## <a name="conditional-and-operator"></a>Podmiňovací operátor AND
 
@@ -199,23 +195,23 @@ Tyto operátory mají vyšší prioritu než v další části a nižší priori
 
 [x += y](addition-assignment-operator.md) – přírůstku. Přidat hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí `event`, pak `y` musí být odpovídající funkce, která C# přidá jako obslužné rutiny události.
 
-[x-= y](subtraction-assignment-operator.md) – sníží. Odečte hodnotu `y` od hodnoty `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí `event`, pak `y` musí být odpovídající funkce, která C# odebere jako obslužné rutiny události
+[x-= y](subtraction-assignment-operator.md) – sníží. Odečte hodnotu `y` od hodnoty `x`, uloží výsledek v `x`a vrátí novou hodnotu. Pokud `x` označí `event`, pak `y` musí být odpovídající funkce, které C# odebere jako obslužné rutiny události.
 
-[x * = y](multiplication-assignment-operator.md) – přiřazení násobení. Vynásobí hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x * = y](arithmetic-operators.md#compound-assignment) – přiřazení násobení. Vynásobí hodnotu `y` hodnotě `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
 [x / = y](arithmetic-operators.md#compound-assignment) – přiřazení dělení. Vydělí hodnotu `x` hodnotou `y`, uloží výsledek v `x`a vrátí novou hodnotu.
 
 [x % = y](arithmetic-operators.md#compound-assignment) – remainder přiřazení. Vydělí hodnotu `x` hodnotou `y`, uložení zbytku v `x`a vrátí novou hodnotu.
 
-[x & = y](and-assignment-operator.md) – a přiřazení. A hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x & = y](boolean-logical-operators.md#compound-assignment) – a přiřazení. A hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x &#124;= y](or-assignment-operator.md) – přiřazení OR. NEBO hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x &#124;= y](boolean-logical-operators.md#compound-assignment) – přiřazení OR. NEBO hodnota `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x ^ = y](xor-assignment-operator.md) – XOR přiřazení. XOR hodnotu z `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
+[x ^ = y](boolean-logical-operators.md#compound-assignment) – XOR přiřazení. XOR hodnotu z `y` s hodnotou `x`, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x << = y](left-shift-assignment-operator.md) – přiřazení posunutí doleva. Posune hodnotu `x` vlevo po `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
+[x << = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doleva. Posune hodnotu `x` vlevo po `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
 
-[x >> = y](right-shift-assignment-operator.md) – přiřazení posunutí doprava. Posune hodnotu `x` právo `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
+[x >> = y](bitwise-and-shift-operators.md#compound-assignment) – přiřazení posunutí doprava. Posune hodnotu `x` právo `y` místech, uloží výsledek v `x`a vrátí novou hodnotu.
 
 [=>](lambda-operator.md) – deklaraci lambda.
 

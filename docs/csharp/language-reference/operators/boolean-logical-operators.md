@@ -32,12 +32,12 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: de621b26334bbc9679ba7e48a9d5a0cbaec67eab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 1a53f2862727318112eae8e9723cabb794fb4f37
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427315"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59977935"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>Logická logické operátory (C# odkaz)
 
@@ -47,7 +47,7 @@ Následující operátory provádí logické operace s [bool](../keywords/bool.m
 - Binární [ `&` (logický operátor a)](#logical-and-operator-), [ `|` (logický operátor nebo)](#logical-or-operator-), a [ `^` (logické XOR)](#logical-exclusive-or-operator-) operátory. Tyto operátory jsou vždy vyhodnoceny oba operandy.
 - Binární [ `&&` (logický operátor podmíněného AND)](#conditional-logical-and-operator-) a [ `||` (logický operátor podmíněného OR)](#conditional-logical-or-operator-) operátory. Tyto operátory vyhodnocení druhého operandu, pouze pokud je nutné.
 
-Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`, a `^` operátory provádějí operace bitový logický.
+Pro operandy [integrální](../keywords/integral-types-table.md) typy, `&`, `|`, a `^` operátory provádějí operace bitový logický. Další informace najdete v tématu [operátory bitové a shift](bitwise-and-shift-operators.md).
 
 ## <a name="logical-negation-operator-"></a>Logický operátor negace!
 
@@ -67,7 +67,7 @@ V následujícím příkladu, druhý operand `&` operátor je volání metody, k
 
 [Podmíněné logického operátoru AND](#conditional-logical-and-operator-) `&&` také vypočítá logický operátor a jeho operandy, ale nebude vyhodnocení druhého operandu, jestli je první operand vyhodnocen jako `false`.
 
-Pro operandy integrální typy `&` operátor výpočetní [bitové logické AND](and-operator.md#integer-logical-bitwise-and-operator) z operandů. Unární `&` operátor je [operátoru address-of](and-operator.md#unary-address-of-operator).
+Pro operandy integrální typy `&` operátor výpočetní prostředí [bitové logické AND](bitwise-and-shift-operators.md#logical-and-operator-) z operandů. Unární `&` operátor je [operátoru address-of](and-operator.md#unary-address-of-operator).
 
 ## <a name="logical-exclusive-or-operator-"></a>Logický exkluzivní operátor OR ^
 
@@ -75,7 +75,7 @@ Pro operandy integrální typy `&` operátor výpočetní [bitové logické AND]
 
 [!code-csharp-interactive[logical exclusive OR](~/samples/snippets/csharp/language-reference/operators/LogicalOperators.cs#Xor)]
 
-Pro operandy integrální typy `^` operátor výpočetní [logický bitový exkluzivní operátor OR](xor-operator.md) z operandů.
+Pro operandy integrální typy `^` operátor výpočetní prostředí [logický bitový exkluzivní operátor OR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) z operandů.
 
 ## <a name="logical-or-operator-"></a>Logický operátor OR |
 
@@ -89,7 +89,7 @@ V následujícím příkladu, druhý operand `|` operátor je volání metody, k
 
 [Podmíněné logického operátoru OR](#conditional-logical-or-operator-) `||` také vypočítá logický operátor OR jeho operandy, ale nebude vyhodnocení druhého operandu, jestli je první operand vyhodnocen jako `true`.
 
-Pro operandy integrální typy `|` operátor výpočetní [bitové logické OR](or-operator.md) z operandů.
+Pro operandy integrální typy `|` operátor výpočetní prostředí [bitové logické OR](bitwise-and-shift-operators.md#logical-or-operator-) z operandů.
 
 ## <a name="conditional-logical-and-operator-ampamp"></a>Podmíněné logického operátoru AND &amp;&amp;
 
@@ -187,9 +187,11 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 - [Logický operátor negace](~/_csharplang/spec/expressions.md#logical-negation-operator)
 - [Logické operátory](~/_csharplang/spec/expressions.md#logical-operators)
 - [Podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators)
+- [Složené přiřazení](~/_csharplang/spec/expressions.md#compound-assignment)
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
+- [Bitový operátor a operátory posunutí](bitwise-and-shift-operators.md)

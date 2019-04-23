@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: f95d5e0b1656126d974ed713480bbb98c517710b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234162"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60118478"
 ---
 ### <a name="calling-attributegetcustomattributes-on-an-indexer-property-no-longer-throws-ambiguousmatchexception-if-the-ambiguity-can-be-resolved-by-indexs-type"></a>Volání Attribute.GetCustomAttributes u vlastnosti indexeru už vyvolá ambiguousmatchexception – Pokud nejednoznačnost můžete vyřešit typ indexu.
 

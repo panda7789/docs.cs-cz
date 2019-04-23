@@ -3,11 +3,11 @@ title: WSStreamedHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
 ms.openlocfilehash: de0c5683b081ecebf2168ffb5d6a2768fdd0a1fe
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59313980"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975985"
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
 Vzorek ukazuje, jak vytvořit vazbu, která je navržena pro podporu streamování scénáře, když se používá přenos pomocí protokolu HTTP.  

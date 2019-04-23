@@ -9,19 +9,21 @@ helpviewer_keywords:
 - gradients [Windows Forms], creating path
 - graphics paths [Windows Forms], creating gradient
 ms.assetid: 1948e834-e104-481c-b71d-d8aa9e4d106e
-ms.openlocfilehash: 31a8c68f382f81da2acac363bba6c8822e535770
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: a04465c31b160f97568ed88c434e7e3a5126ebb6
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186092"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975751"
 ---
 # <a name="how-to-create-a-path-gradient"></a>Postupy: Vytvoření přechodu cesty
 <xref:System.Drawing.Drawing2D.PathGradientBrush> Třída umožňuje přizpůsobit způsob vyplnění obrazce pomocí postupně Změna barev. Například můžete určit jednu barvu pro System center cesty a jinou barvu dané hranice lze cesty. Můžete také zadat samostatnou barvy pro každý z několika bodů podél hranici cesty.  
   
 > [!NOTE]
->  V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], cestu je posloupnost čar a křivek udržuje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Další informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] cesty, naleznete v tématu [cesty grafiky v GDI +](graphics-paths-in-gdi.md) a [Constructing a kreslení cest](constructing-and-drawing-paths.md).  
-  
+>  Cesty v GDI + je posloupnost čar a křivek udržuje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Další informace o rozhraní GDI + cesty, naleznete v tématu [cesty grafiky v GDI +](graphics-paths-in-gdi.md) a [Constructing a kreslení cest](constructing-and-drawing-paths.md).  
+
+V příkladech v tomto článku jsou metody, které se volají z ovládacího prvku <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+
 ### <a name="to-fill-an-ellipse-with-a-path-gradient"></a>Chcete-li vyplnit elipsu přechodu cesty  
   
 -   Následující příklad zkopíruje elipsu s štětce přechodu cesty. Barva center je nastavena na modrou a hranice barva je nastavena na akvamarínovou. Následující obrázek znázorňuje vyplněnou elipsu.  
@@ -30,7 +32,7 @@ ms.locfileid: "59186092"
   
      Ve výchozím nastavení nerozšiřuje štětce přechodu cesty mimo hranice cesty. Pokud používáte štětce přechodu cesty tak, aby vyplnil obrázek, která se rozpíná za hranice cesty, nebude vyplnění oblasti obrazovky mimo cestu.  
   
-     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A> volání v následující kód, který `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`:  
+     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A?displayProperty=nameWithType> volání v následující kód, který `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`:  
   
      ![Cesta přechodu rozšířenou nad rámec hranic cesty.](./media/how-to-create-a-path-gradient/gradient-path-extended-beyond-boundary.png)  
   

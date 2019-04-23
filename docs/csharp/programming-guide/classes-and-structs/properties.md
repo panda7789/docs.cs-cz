@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: 473109100c14f26d0e31b9f57513997044c5b2f6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 260c9e362281ba7996dc834ab47d7beb2755b636
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676819"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59977090"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -54,7 +54,7 @@ Následující příklad ukazuje tento model. V tomto příkladu `TimePeriod` t�
 
 V některých případech vlastnost `get` a `set` přistupující objekty pouze přiřadit hodnotu nebo načíst hodnotu z pole zálohování bez jakékoli další logiky. Pomocí automaticky implementovaných vlastností můžete zjednodušit kód přitom má kompilátor jazyka C# transparentně poskytují pole zálohování za vás. 
 
-Pokud je vlastnost i `get` a `set` přístupový objekt, musí být automaticky implementované. Můžete definovat automaticky implementovanou vlastnost s použitím `get` a `set` klíčových slov bez zadání žádnou implementaci. V následujícím příkladu se opakuje předchozímu, s výjimkou, že `Name` a `Price` jsou automaticky implementované vlastnosti. Všimněte si, že v příkladu také odebere Parametrizovaný konstruktor, tak, aby `SaleItem` objekty se teď inicializují pomocí volání výchozího konstruktoru a [objektu inicializátoru](object-and-collection-initializers.md).
+Pokud je vlastnost i `get` a `set` přístupový objekt, musí být automaticky implementované. Můžete definovat automaticky implementovanou vlastnost s použitím `get` a `set` klíčových slov bez zadání žádnou implementaci. V následujícím příkladu se opakuje předchozímu, s výjimkou, že `Name` a `Price` jsou automaticky implementované vlastnosti. Všimněte si, že v příkladu také odebere Parametrizovaný konstruktor, tak, aby `SaleItem` objekty se teď inicializují voláním konstruktoru bez parametrů a [objektu inicializátoru](object-and-collection-initializers.md).
 
   [!code-csharp[Properties#4](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-4.cs)]  
 

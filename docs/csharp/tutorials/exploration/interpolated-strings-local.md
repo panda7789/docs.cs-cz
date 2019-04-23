@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 10/23/2018
 ms.openlocfilehash: 97773659ea7dd00c291aa6a96401cac531adfdc8
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921450"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975920"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Interpolace řetězců umožňuje vytvářet formátované řetězce
 

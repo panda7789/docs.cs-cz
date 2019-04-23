@@ -15,11 +15,11 @@ ms.assetid: 9818b660-52f5-423d-a9af-e75163aa7068
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8dc05d27b0316c82c5314a766fcad929dc5f3698
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59331049"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59976739"
 ---
 # <a name="how-to-load-assemblies-into-the-reflection-only-context"></a>Postupy: Načtení sestavení do kontextu pouze pro reflexi
 Kontext načítání pouze pro reflexi umožňuje zkoumat sestavení zkompilován pro jiné platformy nebo u jiných verzí rozhraní .NET Framework. Jenom se dají prozkoumat kód načtený do tohoto kontextu; nelze provést. To znamená, že nelze vytvořit objekty, protože konstruktory nemůže být proveden. Protože kód nelze provést, nejsou automaticky nahrány závislosti. Pokud je potřeba je prozkoumat, je nutné načíst je sami.  

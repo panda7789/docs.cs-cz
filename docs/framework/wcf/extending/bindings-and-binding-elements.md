@@ -5,11 +5,11 @@ helpviewer_keywords:
 - binding elements [WCF]
 ms.assetid: 765ff77b-7682-4ea3-90eb-e4d751e37379
 ms.openlocfilehash: 33ebb07e350dbbbdd324b442f52dfb6287322bd8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59073842"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59976765"
 ---
 # <a name="bindings-and-binding-elements"></a>Vazby a prvky vazeb
 Vazby jsou kolekce elementů speciální konfigurace, volá *elementů vazby*, které jsou vyhodnocovány pomocí modulu runtime služby vždy, když klient nebo se vytváří koncový bod služby. Typ a pořadí elementů vazby v rámci vazbu určuje výběr a pořadí těchto kanálů protokol a přenosu v zásobníku koncového bodu kanálu.  

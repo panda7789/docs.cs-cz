@@ -5,11 +5,11 @@ author: mlacouture
 ms.date: 04/19/2018
 ms.custom: mvc, seodec18
 ms.openlocfilehash: 3452a6a598e255dd9a32629d8ef0589b88f9c00f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59197071"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59976362"
 ---
 # <a name="use-the-wcf-web-service-reference-provider-tool"></a>Použijte nástroj WCF Web Service odkaz na poskytovatele
 
