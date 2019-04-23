@@ -3,10 +3,10 @@ title: <services>
 ms.date: 03/30/2017
 ms.assetid: 80d76ba9-2058-48ad-9b91-5e4be7e5c113
 ms.openlocfilehash: 2db168d48e3959a7d80a10ca27134f58e3fcb2de
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59168074"
 ---
 # <a name="services"></a>\<services>
@@ -35,7 +35,7 @@ Služby jsou definovány v `services` oddílu konfiguračního souboru. Každá 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Definování kontraktu služby, chování a koncové body konkrétní služby.|  
+|[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Definování kontraktu služby, chování a koncové body konkrétní služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

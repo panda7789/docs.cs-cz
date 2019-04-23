@@ -9,10 +9,10 @@ helpviewer_keywords:
 - controls [Windows Forms], synchronizing with data source
 ms.assetid: c2f0ecc6-11e6-4c2c-a1ca-0759630c451e
 ms.openlocfilehash: 8f7e59720420a845fa195b8c0fb078a8699a9bc3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170336"
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
@@ -43,6 +43,6 @@ ms.locfileid: "59170336"
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Sdílení vázaných dat mezi formuláři pomocí komponenty BindingSource](./controls/how-to-share-bound-data-across-forms-using-the-bindingsource-component.md)
-- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Rozhraní související s datovou vazbou](interfaces-related-to-data-binding.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

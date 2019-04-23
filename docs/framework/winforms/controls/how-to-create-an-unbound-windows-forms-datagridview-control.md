@@ -10,10 +10,10 @@ helpviewer_keywords:
 - data [Windows Forms], unbound
 ms.assetid: b5d4b47d-9a28-4d88-9dba-0a3c90fba71d
 ms.openlocfilehash: 9bfffac3d6970aceea3842df95f4bcae970b42e7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59167905"
 ---
 # <a name="how-to-create-an-unbound-windows-forms-datagridview-control"></a>Postupy: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView
@@ -35,6 +35,6 @@ Následující příklad kódu ukazuje, jak naplnit <xref:System.Windows.Forms.D
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.DataGridView>
-- [Návod: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)
+- [Návod: Vytvoření nevázaného Windows Forms DataGridView – ovládací prvek](walkthrough-creating-an-unbound-windows-forms-datagridview-control.md)
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
 - [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)

@@ -3,10 +3,10 @@ title: <msmqIntegration>
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
 ms.openlocfilehash: 850d117ca17b5929c219c3b7d6453cf76136bad3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59165214"
 ---
 # <a name="msmqintegration"></a>\<msmqIntegration>
@@ -88,6 +88,6 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
 - [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

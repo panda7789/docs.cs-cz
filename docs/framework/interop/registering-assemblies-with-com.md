@@ -10,10 +10,10 @@ ms.assetid: 87925795-a3ae-4833-b138-125413478551
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 834652318d4cb1cbcebe27a922d210ef87026ed5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59169023"
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
@@ -46,6 +46,6 @@ Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestav
 ## <a name="see-also"></a>Viz také:
 
 - [Vystavení komponent architektury .NET Framework pro COM](exposing-dotnet-components-to-com.md)
-- [Postupy: Odkazování na typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
+- [Postupy: Referenční typy .NET z modelu COM](how-to-reference-net-types-from-com.md)
 - [Volání objektu .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [Nasazení aplikace pro přístup COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [Nasazení aplikace pro přístup k modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

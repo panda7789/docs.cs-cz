@@ -5,10 +5,10 @@ helpviewer_keywords:
 - WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
 ms.openlocfilehash: 8a8265873e4287e1455659aa4d9fae7e1d570a00
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59165465"
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
@@ -28,4 +28,4 @@ WS-AtomicTransaction (WS-AT) je protokol interoperabilní transakce. Umožňuje 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Konfigurace podpory protokolu WS-AT (WS-Atomic Transactions)](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+- [Konfigurace podpory protokolu WS-AtomicTransaction](../../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

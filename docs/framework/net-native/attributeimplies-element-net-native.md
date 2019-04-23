@@ -5,10 +5,10 @@ ms.assetid: 82db7193-a860-418b-84fc-fff2fdf2e025
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d59f1f48be19a21ccc7ee5bb73cebfffc387fec2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59165058"
 ---
 # <a name="attributeimplies-element-net-native"></a>\<AttributeImplies > – Element (.NET Native)
@@ -60,7 +60,7 @@ Definuje zásady pro prvky kódu, nadřazený atribut se používá k.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<AttributeImplies>` Elementu je použita, pokud jeho nadřazený typ je atribut (to znamená, že třída odvozená z <xref:System.Attribute?displayProperty=nameWithType>). Pokud je atribut použit na konkrétní aplikaci prvku, zásady definované `<AttributeImplies>` element platí pro tento prvek programu.  

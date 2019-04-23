@@ -1,12 +1,12 @@
 ---
-title: <message> of <ws2007HttpBinding>
+title: <message> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
 ms.openlocfilehash: bf0ed2de73505d5634d6c7d26881f9800a0bf1f2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59166735"
 ---
 # <a name="message-of-ws2007httpbinding"></a>\<Zpráva > z \<ws2007HttpBinding >
@@ -73,7 +73,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`None`|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |`Certificate`|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud `message` režimu zabezpečení se používá a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být poskytnut certifikát služby.|  
@@ -88,7 +88,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md).|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md).|  
   
 ## <a name="see-also"></a>Viz také:
 

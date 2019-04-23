@@ -8,10 +8,10 @@ helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
 ms.openlocfilehash: f0305807e76ca27e1979aa23bf0797c505fee566
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59166124"
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
@@ -59,5 +59,5 @@ V následujících částech jsou osvědčené postupy, které je třeba zváži
 ## <a name="see-also"></a>Viz také:
 
 - [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [Důležité informace o zabezpečení pro data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)
-- [Informace o zabezpečení pro metadata](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)
+- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)

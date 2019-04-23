@@ -1,12 +1,12 @@
 ---
-title: <security> of <ws2007HttpBinding>
+title: <security> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: fdda0ff7-b462-4e26-af52-e87ddab71945
 ms.openlocfilehash: bac8b9c4af812e924296008fa81227d181b30c0d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170843"
 ---
 # <a name="security-of-ws2007httpbinding"></a>\<zabezpečení > z \<ws2007HttpBinding >
@@ -48,7 +48,7 @@ Představuje nastavení zabezpečení použité s [ \<ws2007HttpBinding >](../..
   
 ## <a name="mode-attribute"></a>režim atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`None`|Zabezpečení je zakázaná.|  
 |`Transport`|Zabezpečení je k dispozici pomocí protokolu HTTPS. Služba musí být nakonfigurovaný s certifikáty vrstvy SSL (Secure Sockets). Zprávu je zcela zabezpečené pomocí protokolu HTTPS a služba je ověřený pomocí klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentials` atribut [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md) elementu.|  
@@ -59,8 +59,8 @@ Představuje nastavení zabezpečení použité s [ \<ws2007HttpBinding >](../..
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení přenosu. Tento element odpovídá <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> typu. Tato nastavení se použijí jenom v případě, režim je nastaven na Transport.|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento element odpovídá <xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> typu. Tato nastavení se nepoužijí, když režim je nastaven na Transport.|  
+|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení přenosu. Tento element odpovídá <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> typu. Tato nastavení se použijí jenom v případě, režim je nastaven na Transport.|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento element odpovídá <xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> typu. Tato nastavení se nepoužijí, když režim je nastaven na Transport.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

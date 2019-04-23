@@ -16,10 +16,10 @@ helpviewer_keywords:
 - forms [Windows Forms], drawing ellipses
 ms.assetid: 781db806-950d-4c5b-b022-493f7fd0c4a8
 ms.openlocfilehash: 2e7be3f2c4c710bb24568dd2e70f6f5cc4706c63
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170998"
 ---
 # <a name="how-to-draw-a-filled-ellipse-on-a-windows-form"></a>Postupy: Kreslení vyplněné elipsy na formuláři Windows
@@ -38,7 +38,7 @@ V tomto příkladu kreslení plné elipsy ve formuláři.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
 - [Alfa míchání čar a výplní](alpha-blending-lines-and-fills.md)
 - [Použití štětce k vyplnění obrazců](using-a-brush-to-fill-shapes.md)

@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
 ms.openlocfilehash: 254f486fa19d8af30759d9a9fd6642a1a40e82a2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59165175"
 ---
 # <a name="datatable-constraints"></a>Omezení datových tabulek
@@ -24,7 +24,7 @@ Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTabl
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Kaskádové**|Odstranit nebo aktualizovat související řádky.|  
+|**Cascade**|Odstranit nebo aktualizovat související řádky.|  
 |**SetNull**|Nastavení hodnot v související řádky **DBNull**.|  
 |**SetDefault**|Nastavení hodnot v související řádky na výchozí hodnotu.|  
 |**Žádné**|Neprovádět žádnou akci na související řádky. Toto nastavení je výchozí.|  
@@ -60,8 +60,8 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Kaskádové**|Přijmout nebo odmítnout změny podřízených řádků.|  
-|**Žádný**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
+|**Cascade**|Přijmout nebo odmítnout změny podřízených řádků.|  
+|**Žádné**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.ForeignKeyConstraint>, nastaví některé jeho vlastnosti, včetně <xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>a přidá jej do <xref:System.Data.ConstraintCollection> z <xref:System.Data.DataTable> objektu.  

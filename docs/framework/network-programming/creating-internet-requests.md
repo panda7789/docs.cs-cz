@@ -11,10 +11,10 @@ helpviewer_keywords:
 - data requests, creating requests
 ms.assetid: faab683e-3f1e-4eee-b5e9-59f7245033d5
 ms.openlocfilehash: 2a4915796310e4f6899d833f20bc5260e0ee032b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59171027"
 ---
 # <a name="creating-internet-requests"></a>Vytváření internetových žádostí
@@ -29,5 +29,5 @@ Vytvoření aplikace <xref:System.Net.WebRequest> instance prostřednictvím <xr
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
 - [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)

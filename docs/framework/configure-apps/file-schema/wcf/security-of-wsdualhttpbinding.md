@@ -1,12 +1,12 @@
 ---
-title: <security> of <wsDualHttpBinding>
+title: <security> z <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
 ms.openlocfilehash: c6f9e34724ccc3a0d05da3e1886b4f0bcbaae064
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59171506"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<zabezpečení > z \<wsDualHttpBinding >
@@ -41,14 +41,14 @@ Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/fr
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zabezpečení je zakázaná.|  
+|Žádný|Zabezpečení je zakázaná.|  
 |Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
 ms.openlocfilehash: 5f72d6c3273cfda4276383cfe72f90196e5d4340
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59169751"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey – rozšíření značek
@@ -78,6 +78,6 @@ Definuje a klíče pro prostředky, které jsou načteny z externího sestavení
 
 - <xref:System.Windows.ComponentResourceKey>
 - <xref:System.Windows.Controls.ControlTemplate>
-- [Přehled řízeného vytváření](../controls/control-authoring-overview.md)
+- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)

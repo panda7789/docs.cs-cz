@@ -12,10 +12,10 @@ helpviewer_keywords:
 - shortcut menus [Windows Forms], event handling
 ms.assetid: b661b3dd-7815-4cc2-a1aa-a9a391ab3427
 ms.openlocfilehash: 3001480959ef90cb31048cbcf70aeff1632979fb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170710"
 ---
 # <a name="how-to-handle-the-contextmenustrip-opening-event"></a>Postupy: Zpracování události otevření ContextMenuStrip
@@ -34,4 +34,4 @@ Můžete přizpůsobit chování vašeho <xref:System.Windows.Forms.ContextMenuS
 - <xref:System.Windows.Forms.ContextMenuStrip>
 - <xref:System.ComponentModel.CancelEventArgs.Cancel%2A>
 - <xref:System.Windows.Forms.ToolStripDropDown>
-- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)

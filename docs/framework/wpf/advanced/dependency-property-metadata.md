@@ -8,10 +8,10 @@ helpviewer_keywords:
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
 ms.openlocfilehash: 98f8c6611340c89409697918ff8a16eaabe3c7a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170362"
 ---
 # <a name="dependency-property-metadata"></a>Metadata vlastností závislosti
@@ -96,4 +96,4 @@ ms.locfileid: "59170362"
 - <xref:System.Windows.DependencyProperty>
 - <xref:System.Windows.DependencyProperty.GetMetadata%2A>
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
-- [Metadata vlastnosti rozhraní .NET Framework](framework-property-metadata.md)
+- [Metadata vlastnosti architektury](framework-property-metadata.md)

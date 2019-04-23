@@ -3,10 +3,10 @@ title: SQL Server a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
 ms.openlocfilehash: f30d9d715a2d94deee788f92cfc8eed0cba706de
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59172767"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server a ADO.NET
@@ -33,7 +33,7 @@ Tato část popisuje funkce a chování, které jsou specifické pro zprostředk
  [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  Popisuje funkce serveru SQL Server, které jsou užitečné pro vývojáře aplikací ADO.NET.  
   
- [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
  Popisuje základní stavební bloky, procesy a postupy určené pro vytvoření LINQ na SQL aplikace.  
   
  Kompletní dokumentaci databázového stroje SQL serveru najdete v tématu knihy Online SQL Server pro verzi SQL serveru, který používáte.  

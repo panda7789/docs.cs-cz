@@ -3,10 +3,10 @@ title: Interaktivní referenční dokumentace F# (fsi.exe)
 description: Zjistěte, jak F# Interactive (fsi.exe) se používá ke spouštění F# kódu interaktivní konzoly nebo k provádění F# skripty.
 ms.date: 05/16/2016
 ms.openlocfilehash: 9ec780ca51eaa5ae0aa791eb509d8ad0865dc26f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59172260"
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s F\#
@@ -97,5 +97,5 @@ test
 
 |Název|Popis|
 |-----|-----------|
-|[Interaktivní možnosti F#](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi příkazového řádku a možnosti F# Interactive, fsi.exe.|
-|[Interaktivní referenční dokumentace knihovny F#](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|
+|[Možnosti F# Interactive](../../language-reference/fsharp-interactive-options.md)|Popisuje syntaxi příkazového řádku a možnosti F# Interactive, fsi.exe.|
+|[F#Interaktivní referenční dokumentace knihovny](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Popisuje funkce knihovny, které jsou k dispozici při spuštění kódu v jazyce F# Interactive.|

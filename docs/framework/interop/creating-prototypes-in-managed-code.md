@@ -20,10 +20,10 @@ ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e642f6507016dd1d62b4889f8a8dbcf0470a2202
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59168165"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
@@ -111,7 +111,7 @@ extern "C" int MessageBox(
 ### <a name="platform-invoke-examples"></a>Příklady vyvolání platformy  
  Nespravovaného vzorků v této části ilustrují použití `RegistryPermission` atribut modifikátory procházení zásobníku.  
   
- V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction>`Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
+ V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction> `Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
   
 ```  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -238,7 +238,7 @@ interface IDemandStubsItf
 
 - [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
 - [Určení vstupního bodu](specifying-an-entry-point.md)
-- [Určení sady znaků](specifying-a-character-set.md)
+- [Určení znakové sady](specifying-a-character-set.md)
 - [Příklady vyvolání platformy](platform-invoke-examples.md)
 - [Důležité informace o zabezpečení vyvolání platformy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)

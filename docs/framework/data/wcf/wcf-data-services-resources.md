@@ -5,10 +5,10 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
 ms.openlocfilehash: d3562122ab578f5f622d439c17d86cdb64a1e573
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59172117"
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
@@ -23,7 +23,7 @@ ms.locfileid: "59172117"
  [Scénáře aplikací](../../../../docs/framework/data/wcf/application-scenarios-wcf-data-services.md)  
  Poskytuje přístup založený na úlohách vytvoření [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikace přistupující k [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály.  
   
- [.NET – Glosář](../../../standard/glossary.md)  
+ [Slovníček k technologii .NET](../../../standard/glossary.md)  
  Zahrnuje termínů používaných v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dokumentaci.  
   
 ## <a name="external-resources"></a>Externí zdroje  
@@ -38,7 +38,7 @@ ms.locfileid: "59172117"
  [OData webové stránky](https://go.microsoft.com/fwlink/?LinkID=184554)  
  Primární zdroj informací o [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)].  
   
- [Sada SDK OData](https://go.microsoft.com/fwlink/?LinkID=185248)  
+ [OData SDK](https://go.microsoft.com/fwlink/?LinkID=185248)  
  Obsahuje ukázky služby, ukázky a programovací knihovny, které umožňují pracovat s [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály.  
   
  [OData Blog](https://go.microsoft.com/fwlink/?LinkId=185868)  

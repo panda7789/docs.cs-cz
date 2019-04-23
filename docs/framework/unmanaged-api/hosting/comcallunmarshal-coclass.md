@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2f17a88a90905006432ae8c5dc040277124c947b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59166878"
 ---
 # <a name="comcallunmarshal-coclass"></a>ComCallUnmarshal – třída typu coclass
@@ -51,4 +51,4 @@ coclass ComCallUnmarshal {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Třídy typu coclass hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)
+- [Třídy typu coclass pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)
