@@ -6,10 +6,10 @@ ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
 ms.openlocfilehash: aebfaa85338e014ca47256b85a1bd6529ad803bb
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59327162"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postupy: Port desktopové aplikace Windows Forms až po .NET Core

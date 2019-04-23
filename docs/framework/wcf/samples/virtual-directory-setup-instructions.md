@@ -3,10 +3,10 @@ title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
 ms.openlocfilehash: fdff88026a49989870ee5c47f9a38a65ecad3c80
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59325342"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
@@ -59,7 +59,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 7. Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Číst**  
+    -   **Read**  
   
     -   **Spouštění skriptů (například ASP)**  
   
@@ -84,7 +84,7 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 2. Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Číst**  
+    -   **Read**  
   
     -   **Navštíví protokolu**  
   
@@ -192,4 +192,4 @@ Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžn
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k hostování služby IIS](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

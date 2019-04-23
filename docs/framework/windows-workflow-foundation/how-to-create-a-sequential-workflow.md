@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 5280e816-ae17-48c4-8de0-a1e6895dd8f0
 ms.openlocfilehash: c8a16dc0269fbd768a73e99f15f53e38c207a8d4
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59326837"
 ---
 # <a name="how-to-create-a-sequential-workflow"></a>Postupy: Vytvoření sekvenčního pracovního postupu
@@ -161,7 +161,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
 
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
-- [Programování ve Windows Workflow Foundation](programming.md)
+- [Programování Windows Workflow Foundation](programming.md)
 - [Návrh pracovních postupů](designing-workflows.md)
 - [Kurz Začínáme](getting-started-tutorial.md)
 - [Postupy: Vytvoření aktivity](how-to-create-an-activity.md)

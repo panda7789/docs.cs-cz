@@ -3,10 +3,10 @@ title: 'Postupy: Vytvoření kontraktu požadavku a odpovědi'
 ms.date: 03/30/2017
 ms.assetid: 801d90da-3d45-4284-9c9f-56c8aadb4060
 ms.openlocfilehash: 7a446db49dcc6a12b900292f1b19c9973835f2c1
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59327474"
 ---
 # <a name="how-to-create-a-request-reply-contract"></a>Postupy: Vytvoření kontraktu požadavku a odpovědi
@@ -45,7 +45,7 @@ public interface ICalculator
   
 -   Další informace o tom, jak určit operace kontrakty, najdete v článku <xref:System.ServiceModel.OperationContractAttribute> třídy a <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> vlastnost.  
   
--   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributy způsobí, že se automatické generování definice kontraktu služby ve webové služby WSDL (Description Language) dokumentu po nasazení služby. Dokument se stáhne přidáním `?wsdl` na HTTP základní adresa pro službu. Například `http://microsoft/CalculatorService?wsdl`  
+-   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributy způsobí, že se automatické generování definice kontraktu služby ve webové služby WSDL (Description Language) dokumentu po nasazení služby. Dokument se stáhne přidáním `?wsdl` na HTTP základní adresa pro službu. Třeba `http://microsoft/CalculatorService?wsdl`.  
   
 ## <a name="see-also"></a>Viz také:
 

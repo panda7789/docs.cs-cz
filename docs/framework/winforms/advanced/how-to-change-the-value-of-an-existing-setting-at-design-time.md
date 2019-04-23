@@ -6,10 +6,10 @@ helpviewer_keywords:
 - application settings [Windows Forms], changing
 ms.assetid: 5da91272-ad7e-49e7-9d1f-eb64439a1e4d
 ms.openlocfilehash: 6421171072f72764927b1a449c0257a29e8e82d6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59326551"
 ---
 # <a name="how-to-change-the-value-of-an-existing-setting-at-design-time"></a>Postupy: Změna hodnoty existujícího nastavení při návrhu
@@ -34,5 +34,5 @@ Visual Studio můžete použít k úpravě hodnoty existujícího nastavení ve 
 ## <a name="see-also"></a>Viz také:
 
 - [Použití nastavení aplikace a uživatelských nastavení](using-application-settings-and-user-settings.md)
-- [Postupy: Vytvoření nového nastavení při návrhu](how-to-create-a-new-setting-at-design-time.md)
+- [Postupy: Vytvořit nové nastavení v době návrhu](how-to-create-a-new-setting-at-design-time.md)
 - [Přehled nastavení aplikace](application-settings-overview.md)

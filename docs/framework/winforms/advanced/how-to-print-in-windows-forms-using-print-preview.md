@@ -10,10 +10,10 @@ helpviewer_keywords:
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
 ms.openlocfilehash: db9269978f3a77920778ab120a6ace11d6dd111c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59325758"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>Postupy: Tisk v modelu Windows Forms pomocí náhledu tisku
@@ -66,6 +66,6 @@ Je velmi běžné ve Windows Forms programování nabízí náhled tisku kromě 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Tisk vícestránkového textového souboru v modelu Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
-- [Podpora tisku ve Windows Forms](windows-forms-print-support.md)
-- [Bezpečnější tisk ve Windows Forms](../more-secure-printing-in-windows-forms.md)
+- [Postupy: Tisk vícestránkového textového souboru ve Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [Podpora tisku v modelu Windows Forms](windows-forms-print-support.md)
+- [Zabezpečenější tisk ve Windows Forms](../more-secure-printing-in-windows-forms.md)

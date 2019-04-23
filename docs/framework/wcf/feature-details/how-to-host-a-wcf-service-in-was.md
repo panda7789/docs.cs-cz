@@ -3,10 +3,10 @@ title: 'Postupy: Hostování služby WCF ve WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
 ms.openlocfilehash: 157c18d1640ccf1a61f871e5e3e9fef70b6a7e79
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59326499"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Postupy: Hostování služby WCF ve WAS
@@ -100,5 +100,5 @@ Toto téma ukazuje základní kroky potřebné k vytvoření služby Aktivace pr
   
 ## <a name="see-also"></a>Viz také:
 
-- [Aktivace protokolem TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [Aktivace protokolu TCP](../../../../docs/framework/wcf/samples/tcp-activation.md)
 - [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

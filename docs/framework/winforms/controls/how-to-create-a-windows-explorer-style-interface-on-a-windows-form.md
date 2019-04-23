@@ -7,10 +7,10 @@ helpviewer_keywords:
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
 ms.openlocfilehash: dd70feaba29e29748ac56729632fa359582a6914
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59327370"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms
@@ -52,7 +52,7 @@ Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z dů
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.SplitContainer>
-- [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
-- [Postupy: Definování chování změny velikosti a polohování v rozděleném okně](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
+- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
+- [Postupy: Definování změny velikosti a polohování v rozděleném okně chování](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
 - [Postupy: Vodorovné rozdělení okna](how-to-split-a-window-horizontally.md)
 - [Ovládací prvek SplitContainer](splitcontainer-control-windows-forms.md)
