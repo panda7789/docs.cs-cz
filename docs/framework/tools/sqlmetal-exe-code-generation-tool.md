@@ -10,10 +10,10 @@ helpviewer_keywords:
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
 ms.openlocfilehash: 80e0bcd341f9059fc6787756f8e743aedc5dc43e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59206418"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
@@ -76,7 +76,7 @@ sqlmetal [options] [<input file>]
 |**/ NAMESPACE:**  *\<name >*|Určuje obor názvů generovaného kódu. Výchozí hodnota: Žádný obor názvů.|  
 |**/ Context:**  *\<typ >*|Určuje název třídy datového kontextu. Výchozí hodnota: Odvozený od názvu databáze.|  
 |**/entitybase:**  *\<typ >*|Určuje základní třídu z tříd entit v generovaném kódu. Výchozí hodnota: Entity nemají žádnou základní třídu.|  
-|**/ pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglickou verzi.|  
+|**/pluralize**|Automaticky převádí názvy tříd a členů do množného nebo jednotného čísla.<br /><br /> Tato možnost je dostupná jenom v USA. Anglickou verzi.|  
 |**/Serialization:**  *\<možnost >*|Generuje serializovatelné třídy.<br /><br /> Platný  *\<možnost >*: Žádný, jednosměrný. Výchozí hodnota: Žádné<br /><br /> Další informace najdete v tématu [serializace](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
   
  **Vstupní soubor**  
@@ -111,19 +111,19 @@ sqlmetal [options] [<input file>]
 ## <a name="examples"></a>Příklady  
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL:  
   
- **sqlmetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
+ **SqlMetal /server:myserver /database:northwind /dbml:mymeta.dbml**  
   
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL ze souboru .mdf pomocí SQL Server Express:  
   
- **sqlmetal /dbml:mymeta.dbml mydbfile.mdf**  
+ **SqlMetal /dbml:mymeta.dbml mydbfile.mdf**  
   
  Vygenerování souboru .dbml obsahujícího extrahovaná metadata SQL z SQL Server Express:  
   
- **sqlmetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**  
+ **SqlMetal /server:.\sqlexpress /dbml:mymeta.dbml /database:northwind**  
   
  Vygenerování zdrojového kódu ze souboru metadat .dbml:  
   
- **sqlmetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**  
+ **SqlMetal /namespace:nwind /code:nwind.cs /language:csharp mymetal.dbml**  
   
  Vygenerování zdrojového kódu přímo z metadat SQL:  
   
@@ -134,6 +134,6 @@ sqlmetal [options] [<input file>]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
 - [Generování kódu v LINQ to SQL](../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
 - [Externí mapování](../../../docs/framework/data/adonet/sql/linq/external-mapping.md)

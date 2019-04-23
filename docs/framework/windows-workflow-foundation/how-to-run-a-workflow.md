@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
 ms.openlocfilehash: 06ac34f5ba5d95bd9f000a35036cf288d3c8f7f7
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59319921"
 ---
 # <a name="how-to-run-a-workflow"></a>Postupy: Spuštění pracovního postupu
@@ -163,9 +163,9 @@ Toto téma je pokračováním kurzu Windows Workflow Foundation Getting Started 
 
 - <xref:System.Activities.WorkflowApplication>
 - <xref:System.Activities.Bookmark>
-- [Programování ve Windows Workflow Foundation](programming.md)
+- [Programování Windows Workflow Foundation](programming.md)
 - [Kurz Začínáme](getting-started-tutorial.md)
 - [Postupy: Vytvoření pracovního postupu](how-to-create-a-workflow.md)
-- [Postupy: Vytvoření a spuštění dlouhotrvajícího pracovního postupu](how-to-create-and-run-a-long-running-workflow.md)
+- [Postupy: Vytvoření a spuštění dlouhodobého spuštění pracovního postupu](how-to-create-and-run-a-long-running-workflow.md)
 - [Čekání na zadání v pracovním postupu](waiting-for-input-in-a-workflow.md)
 - [Hostování pracovních postupů](hosting-workflows.md)

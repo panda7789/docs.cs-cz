@@ -8,10 +8,10 @@ helpviewer_keywords:
 - ToolTip component [Windows Forms], about ToolTip component
 ms.assetid: 3fbc6f08-c882-4acd-a960-a08efe3c7e6e
 ms.openlocfilehash: 3fbe883501d1ce36ca25ea07631f98042f451e07
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197305"
 ---
 # <a name="tooltip-component-overview-windows-forms"></a>ToolTip – přehled komponenty (Windows Forms)
@@ -25,5 +25,5 @@ Windows Forms <xref:System.Windows.Forms.ToolTip> komponenty zobrazí text, kdy�
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ToolTip>
-- [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)
+- [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows Forms v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)
 - [Postupy: Změna zpoždění komponenty Windows Forms ToolTip](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)

@@ -7,10 +7,10 @@ helpviewer_keywords:
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
 ms.openlocfilehash: f9b507c874dfe0ab3feca19e7fcf79df5af93e10
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197682"
 ---
 # <a name="trees-in-wpf"></a>Stromy v subsystému WPF
@@ -89,5 +89,5 @@ V mnoha technologií prvky a součásti jsou uspořádány do stromové struktur
 - [Přehled vstupu](input-overview.md)
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [Inicializace elementů objektu, které nejsou obsaženy ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
+- [Inicializace elementů objektu, které nejsou ve stromu objektů](initialization-for-object-elements-not-in-an-object-tree.md)
 - [Architektura WPF](wpf-architecture.md)

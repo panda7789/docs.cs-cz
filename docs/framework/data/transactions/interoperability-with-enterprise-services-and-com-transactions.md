@@ -3,10 +3,10 @@ title: Interoperabilita se službami Enterprise Services a transakcemi modelu CO
 ms.date: 03/30/2017
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
 ms.openlocfilehash: 8b86a032e7cbc27332864c9cc96009f12b72c53d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59301903"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Interoperabilita se službami Enterprise Services a transakcemi modelu COM+

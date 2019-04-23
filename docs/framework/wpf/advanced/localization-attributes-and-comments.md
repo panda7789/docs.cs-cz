@@ -6,10 +6,10 @@ helpviewer_keywords:
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
 ms.openlocfilehash: a9d01b7cebea845ad67d846af5b08f59977b8cd6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59301851"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
@@ -23,7 +23,7 @@ ms.locfileid: "59301851"
   
 2. Během procesu sestavení můžete určit v souboru souborů .proj, jestli se má zanechávat komentáře lokalizace volného tvaru v sestavení, pásků si část poznámky nebo pruhu si všechny komentáře. Komentáře odebrána navýšením kapacity jsou umístěné v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značku, třeba:  
   
-     `<LocalizationDirectivesToLocFile>` *value* `</LocalizationDirectivesToLocFile>`  
+     `<LocalizationDirectivesToLocFile>` *Hodnota* `</LocalizationDirectivesToLocFile>`  
   
 3. Je možné přiřadit hodnoty jsou:  
   
@@ -88,7 +88,7 @@ ms.locfileid: "59301851"
   
 |Kategorie|Význam|  
 |--------------|-------------|  
-|Žádné|Cílová hodnota nemá žádné definované kategorie.|  
+|Žádný|Cílová hodnota nemá žádné definované kategorie.|  
 |Dědění|Cílová hodnota dědí z nadřazeného jeho kategorie.|  
 |Ignorovat|Cílová hodnota je ignorována v proces lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. To nebude mít vliv na podřízené uzly.|  
 |NeverLocalize|Aktuální hodnota nemůže být lokalizována. Tato kategorie dědí podřízené objekty daného elementu.|  
@@ -101,5 +101,5 @@ ms.locfileid: "59301851"
 
 - [Globalizace pro WPF](globalization-for-wpf.md)
 - [Vytvoření tlačítka pomocí automatického rozložení](how-to-use-automatic-layout-to-create-a-button.md)
-- [Automatické rozložení pomocí mřížky](how-to-use-a-grid-for-automatic-layout.md)
+- [Automatické rozložení použitím mřížky](how-to-use-a-grid-for-automatic-layout.md)
 - [Lokalizace aplikace](how-to-localize-an-application.md)

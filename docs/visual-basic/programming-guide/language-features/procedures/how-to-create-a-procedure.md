@@ -9,10 +9,10 @@ helpviewer_keywords:
 - procedures [Visual Basic], about procedures
 ms.assetid: 4f779247-0b50-47e8-9e5c-ab5cf39ac0d2
 ms.openlocfilehash: 56099d334a03e85b816cf48983cbbead0784ef5b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59320389"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvořit procedury (Visual Basic)
@@ -57,8 +57,8 @@ Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) 
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury Function](./function-procedures.md)
-- [Procedury Property](./property-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Rekurzivní procedury](./recursive-procedures.md)

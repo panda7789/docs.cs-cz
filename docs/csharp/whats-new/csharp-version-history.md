@@ -4,10 +4,10 @@ description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula o
 author: erikdietrich
 ms.date: 09/20/2017
 ms.openlocfilehash: 727f0064ac1de46eb670a366af38cf561e1a1533
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303359"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
@@ -41,7 +41,7 @@ Hlavní funkce C# 1.0 zahrnuté:
 - [Rozhraní](../programming-guide/interfaces/index.md)
 - [Události](../events-overview.md)
 - [Vlastnosti](../properties.md)
-- [Delegáty](../delegates-overview.md)
+- [Delegáti](../delegates-overview.md)
 - [Výrazy](../programming-guide/statements-expressions-operators/expressions.md)
 - [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
 - [Atributy](../programming-guide/concepts/attributes/index.md)
@@ -58,7 +58,7 @@ Teď začít získat zajímavé věci. Pojďme se podívat na některé hlavní 
 - [Obecné typy](../programming-guide/generics/index.md)
 - [Částečné typy](../programming-guide/classes-and-structs/partial-classes-and-methods.md#partial-classes)
 - [Anonymní metody](../programming-guide/statements-expressions-operators/anonymous-methods.md)
-- [Typy s povolenou hodnotou Null](../programming-guide/nullable-types/index.md)
+- [Typy s možnou hodnotou Null](../programming-guide/nullable-types/index.md)
 - [Iterátory](../programming-guide/concepts/iterators.md)
 - [Kovariance a kontravariance](../programming-guide/concepts/covariance-contravariance/index.md)
 

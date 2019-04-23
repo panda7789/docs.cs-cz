@@ -3,12 +3,12 @@ title: Vzor události aktualizované rozhraní .NET Core
 description: Zjistěte, jak vzor události .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování bezpečné událostí s asynchronní odběrateli.
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: 3cab80a0f4fcd3343fdeff265135f1503c036514
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
+ms.openlocfilehash: 5c7b9b4cb9bc22a73b865c45e225ce5c382380b1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188479"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975491"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Vzor události aktualizované rozhraní .NET Core
 
@@ -25,7 +25,7 @@ Můžete také změnit `SearchDirectoryArgs` na strukturu, pokud jste provedli j
 
 [!code-csharp[SearchDir](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Define search directory event")]
 
-Další změnou je volání výchozího konstruktoru před zadáním konstruktor, který inicializuje všechna pole. Bez tohoto přidání pravidel C# zasílat zprávy, že vlastnosti přistupuje předtím, než jí byla přiřazena.
+Další změnou je volat konstruktor bez parametrů před zadáním konstruktor, který inicializuje všechna pole. Bez tohoto přidání pravidel C# zasílat zprávy, že vlastnosti přistupuje předtím, než jí byla přiřazena.
 
 Byste neměli měnit `FileFoundArgs` ze třídy (odkaz) na strukturu (typ hodnoty). Důvodem je, protokol pro zpracování zrušení vyžaduje, aby událost argumenty jsou předány podle odkazu. Pokud jste provedli stejnou změnu, třída hledání souborů může nikdy sledovat všechny změny provedené ve všech odběratelů událostí. Novou kopii struktura se použije pro každý předplatitel, a tuto kopii by kopii jiný než ten, který viděli vyhledávací objektem file.
 
@@ -37,7 +37,7 @@ Po každém podobnou logiku základů kódu vytvořen nyní nemusí všechny př
 
 ## <a name="events-with-async-subscribers"></a>Události Async předplatitele
 
-Máte jeden poslední vzorek Další: jak správně psát odběratelů událostí, které volají asynchronní kód. Na výzvu je popsaný v článku na [async a operátoru await](async.md). Asynchronní metody může mít návratový typ void, ale je důrazně nedoporučuje. Po události odběratele kód volá asynchronní metodu, budete mít žádná volba ale k vytvoření `async void` metody. To vyžaduje podpisu obsluhy události.
+Máte jeden poslední vzorek se dozvíte: Jak správně psát odběratelů událostí, které volají asynchronní kód. Na výzvu je popsaný v článku na [async a operátoru await](async.md). Asynchronní metody může mít návratový typ void, ale je důrazně nedoporučuje. Po události odběratele kód volá asynchronní metodu, budete mít žádná volba ale k vytvoření `async void` metody. To vyžaduje podpisu obsluhy události.
 
 Je potřeba sloučit tyto dosáhnout doprovodné materiály. Nějakým způsobem, je nutné vytvořit bezpečný `async void` metody. Základní informace, které potřebujete k implementaci vzoru jsou níže:
 

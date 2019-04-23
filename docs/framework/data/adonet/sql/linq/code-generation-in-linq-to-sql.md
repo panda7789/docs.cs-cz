@@ -3,10 +3,10 @@ title: Generování kódu v LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
 ms.openlocfilehash: 6565655cdb3222a8c9fa7e7759bac09d57ee269b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59321585"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Generování kódu v LINQ to SQL
@@ -275,4 +275,4 @@ elementFormDefault="qualified" >
 - [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
 - [Postupy: Generování objektového modelu jako externího souboru](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
-- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

@@ -3,10 +3,10 @@ title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
 ms.openlocfilehash: a6f267232085a46d481199eac83e464f5f774273
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59199580"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
@@ -20,7 +20,7 @@ Model programování webových služeb HTTP Windows Communication Foundation (WC
   
  Model programování webových služeb HTTP WCF rozšiřuje dosah WCF Web – vizuální styl scénáře, které obsahují webové služby HTTP, služby AJAX a JSON a informační kanály syndikace (ATOM nebo RSS). Další informace o službách AJAX a JSON najdete v tématu [integrace jazyka AJAX a podpora formátu JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md). Další informace o syndikace najdete v tématu [syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md).  
   
- Neexistují žádná další omezení na typy dat, může být vrácen z webových služeb HTTP služby. Žádné serializovatelný typ. může být vrácen z operace HTTP webové služby. Vzhledem k tomu může být operace služby webových služeb HTTP vyvolejte z webového prohlížeče, které existuje omezení na jaká data typy můžou být specifikované v adrese URL. Další informace o typech podporovaných ve výchozím nastavení najdete v článku **UriTemplate parametrů řetězce dotazu a adresy URL** níže v části. Výchozí chování lze změnit tím, že poskytuje vlastní T:System.ServiceModel.Dispatcher.QueryStringConverter implementace, která určuje, jak převést parametry zadané v adrese URL na typ skutečného parametru. Další informace naleznete v tématu <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
+ Neexistují žádná další omezení na typy dat, může být vrácen z webových služeb HTTP služby. Žádné serializovatelný typ. může být vrácen z operace HTTP webové služby. Vzhledem k tomu může být operace služby webových služeb HTTP vyvolejte z webového prohlížeče, které existuje omezení na jaká data typy můžou být specifikované v adrese URL. Další informace o typech podporovaných ve výchozím nastavení najdete v článku **UriTemplate parametrů řetězce dotazu a adresy URL** níže v části. Výchozí chování lze změnit tím, že poskytuje vlastní T:System.ServiceModel.Dispatcher.QueryStringConverter implementace, která určuje, jak převést parametry zadané v adrese URL na typ skutečného parametru. Další informace najdete v tématu <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
 >  Služby, které jsou napsané pomocí programovacího modelu WCF WEB HTTP nepoužívejte zprávy protokolu SOAP. Vzhledem k tomu, že není použit protokol SOAP, nelze použít funkcích zabezpečení poskytovaných WCF. Můžete ale použít zabezpečení na základě přenosu hostováním vaši službu pomocí protokolu HTTPS. Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
@@ -146,5 +146,5 @@ interface ICustomer
 ## <a name="see-also"></a>Viz také:
 
 - [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)
-- [Programovací objektový model WCF Web HTTP](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
-- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

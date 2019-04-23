@@ -7,10 +7,10 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 ms.assetid: 5699b244-e37c-4d20-bc35-7441e55c1e3a
 ms.openlocfilehash: 732267b431c5058fa7039f0fb132e6161c37d4a6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303125"
 ---
 # <a name="how-to-add-or-remove-imagelist-images-with-the-designer"></a>Postupy: Přidávání a odebírání obrázků ImageList pomocí Návrháře
@@ -40,5 +40,5 @@ Můžete přidat Image do <xref:System.Windows.Forms.ImageList> součástí něk
 ## <a name="see-also"></a>Viz také:
 
 - [Obrázky, rastrové obrázky a metasoubory](../advanced/images-bitmaps-and-metafiles.md)
-- [Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)
+- [Návod: Provádění obecných úloh pomocí inteligentních značek na Windows Forms ovládací prvky](performing-common-tasks-using-smart-tags-on-wf-controls.md)
 - [Komponenta ImageList](imagelist-component-windows-forms.md)

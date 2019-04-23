@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 04/02/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 5084aaa745d714184ae644ef8e9fe140c522a70d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4d4edc146efa12fc29c2c7e65727bf5a5b664eb8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58920536"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59974718"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -50,7 +50,7 @@ Tato dokumentace popisuje škálu .NET napříč platformami a jazyky. Můžete 
 - [Průvodce jazykem C#](csharp/index.md)
 - [Průvodce jazykem F#](fsharp/index.md)
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
-- [Průvodce ML.NET](machine-learning/index.md)
+- [Průvodce ML.NET](machine-learning/index.yml)
 
 Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 

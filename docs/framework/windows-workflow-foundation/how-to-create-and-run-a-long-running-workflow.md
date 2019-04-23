@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
 ms.openlocfilehash: 7940d1d8869d3b82c1aa19cb038a68b8724345dd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59320044"
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: Vytvoření a spuštění dlouhotrvajícího pracovního postupu
@@ -92,7 +92,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
 4. Přidejte následující ovládací prvky do formuláře v pořadí zadaný a nakonfigurujte vlastnosti, podle pokynů.  
   
-    |Control|Vlastnost: Hodnota|  
+    |Control|Vlastnost: Value|  
     |-------------|---------------------|  
     |**Tlačítko**|Jméno: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: Novou hru|  
     |**Popisek**|Umístění: 94, 18<br /><br /> Text: Číslo od 1 do pokusu|  
@@ -105,7 +105,7 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
     > [!NOTE]
     >  Při přidávání následující ovládací prvky, vytvořte z nich skupině.  
   
-    |Control|Vlastnost: Value|  
+    |Control|Vlastnost: Hodnota|  
     |-------------|---------------------|  
     |**Popisek**|Umístění: 7, 20<br /><br /> Text: Id Instance pracovního postupu|  
     |**ComboBox**|Jméno: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|  

@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 83e7d278b38e17dac668b32687a368211399d437
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: fbb685abcc5c2e79a64501385edf8f6c2041861d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652069"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59974893"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -33,7 +33,7 @@ V jazyce C# je povolena pouze jedna dědičnost. Jinými slovy třída může d�
 
 |Dědičnost|Příklad|
 |-----------------|-------------|
-|Žádná|`class ClassA { }`|
+|Žádné|`class ClassA { }`|
 |Single|`class DerivedClass: BaseClass { }`|
 |NONE, implementuje dvě rozhraní|`class ImplClass: IFace1, IFace2 { }`|
 |Jediné, jedno rozhraní implementuje|`class ImplDerivedClass: BaseClass, IFace1 { }`|
@@ -94,7 +94,7 @@ Přístup k soukromým členům `Child` z `Main` pouze by bylo možné Pokud `Ma
 
 Typy deklarované uvnitř třídy bez výchozí modifikátor přístupu `private`, takže datových členů v tomto příkladu bude stále `private` Pokud klíčové slovo byly odebrány.
 
-A konečně, Všimněte si, že pro objekt vytvořený pomocí výchozího konstruktoru (`child3`), `age` pole byla inicializována na nulovou hodnotu ve výchozím nastavení.
+A konečně, Všimněte si, že pro objekt vytvořený pomocí konstruktoru bez parametrů (`child3`), `age` pole byla inicializována na nulovou hodnotu ve výchozím nastavení.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

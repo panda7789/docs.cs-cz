@@ -17,10 +17,10 @@ helpviewer_keywords:
 - current child position
 ms.assetid: c5fa2562-43a4-46fa-a604-52d8526a87bd
 ms.openlocfilehash: 891a9a4d092de35ceff2f5ceb6dbde77cf2ca2ce
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303138"
 ---
 # <a name="how-to-ensure-the-selected-row-in-a-child-table-remains-at-the-correct-position"></a>Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici
@@ -85,6 +85,6 @@ ms.locfileid: "59303138"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](multiple-controls-bound-to-data-source-synchronized.md)
-- [BindingSource – komponenta](./controls/bindingsource-component.md)
-- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)
+- [Postupy: Zajištění více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných](multiple-controls-bound-to-data-source-synchronized.md)
+- [Komponenta BindingSource](./controls/bindingsource-component.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)

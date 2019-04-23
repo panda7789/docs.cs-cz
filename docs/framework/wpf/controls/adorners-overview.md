@@ -8,10 +8,10 @@ helpviewer_keywords:
 - adorners [WPF], about adorners
 ms.assetid: 33d4c5c2-2daf-4e45-ba9a-5b673e2b8280
 ms.openlocfilehash: 6b710df45379ccce4daf340b4dbe2701d3c96604
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59320467"
 ---
 # <a name="adorners-overview"></a>Přehled doplňků
@@ -102,7 +102,7 @@ Doplňky pro úpravy jsou zvláštní druh <xref:System.Windows.FrameworkElement
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Media.AdornerHitTestResult>
-- [Tvary a základní kresby v přehledu WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
-- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
-- [Přehled vykreslovaných objektů](../graphics-multimedia/drawing-objects-overview.md)
-- [– postupy](adorners-how-to-topics.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](../graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled nakreslených objektů](../graphics-multimedia/drawing-objects-overview.md)
+- [Témata s postupy](adorners-how-to-topics.md)

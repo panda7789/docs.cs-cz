@@ -14,23 +14,23 @@ helpviewer_keywords:
 - DrawingGroup objects [WPF]
 ms.assetid: 6ab1fe6b-3eed-4432-a248-b487e7234e5b
 ms.openlocfilehash: 975fafebe255d5ff4848fde2c0b0ff08b68d4f7b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59206405"
 ---
 # <a name="drawings"></a>Kreslení
 <xref:System.Windows.Media.Drawing> objekty se používají k efektivnímu kreslení tvarů, Image nebo text. Kreslení se používají, když se Malování <xref:System.Windows.Media.DrawingBrush> nebo programování s <xref:System.Windows.Media.Visual> objekty.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled vykreslovaných objektů](drawing-objects-overview.md)  
-  [– postupy](drawings-how-to-topics.md)  
+ [Přehled nakreslených objektů](drawing-objects-overview.md)  
+  [Témata s postupy](drawings-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Media.Drawing>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)
-- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Grafika a multimédia](index.md)

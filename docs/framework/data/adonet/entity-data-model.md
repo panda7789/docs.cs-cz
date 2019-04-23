@@ -3,10 +3,10 @@ title: Entity Data Model
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
 ms.openlocfilehash: 8e96890d97f652295a3fdb67c48ec37710280eec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197916"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
@@ -21,11 +21,11 @@ Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez oh
   
  [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
   
- [Model EDM (Entity Data Model) Jmenné prostory](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
+ [Model Entity Data Model: Namespaces](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md)  
   
- [Model EDM (Entity Data Model) Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)  
+ [Model Entity Data Model: Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md)  
   
- [Model EDM (Entity Data Model) Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
+ [Model Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md)  
   
  [association end](../../../../docs/framework/data/adonet/association-end.md)  
   
@@ -47,7 +47,7 @@ Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez oh
   
  [entity type](../../../../docs/framework/data/adonet/entity-type.md)  
   
- [omezující vlastnost](../../../../docs/framework/data/adonet/facet.md)  
+ [facet](../../../../docs/framework/data/adonet/facet.md)  
   
  [foreign key property](../../../../docs/framework/data/adonet/foreign-key-property.md)  
   
@@ -63,6 +63,6 @@ Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez oh
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroje modelu Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
 - [Přehled souboru EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Specifikace CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)

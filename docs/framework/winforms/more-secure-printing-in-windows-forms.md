@@ -8,10 +8,10 @@ helpviewer_keywords:
 - security [Windows Forms], printing
 ms.assetid: 48fd36ac-872f-4de0-902a-e52969cd4367
 ms.openlocfilehash: 5ee170980ed02d90606c774e2a7055f047292e33
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197357"
 ---
 # <a name="more-secure-printing-in-windows-forms"></a>Bezpečnější tisk ve Windows Forms
@@ -28,7 +28,7 @@ Aplikace Windows Forms často přinášejí tisk schopnosti. [!INCLUDE[dnprdnsho
   
 ## <a name="see-also"></a>Viz také:
 
-- [Více zabezpečený přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
+- [Zabezpečenější přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
 - [Dodatečné informace o zabezpečení ve Windows Forms](additional-security-considerations-in-windows-forms.md)
 - [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)
 - [Windows Forms – zabezpečení](windows-forms-security.md)

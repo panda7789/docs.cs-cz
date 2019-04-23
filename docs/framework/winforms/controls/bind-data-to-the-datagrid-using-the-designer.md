@@ -7,10 +7,10 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
 ms.openlocfilehash: 59a025535e850cf3c773a2a078511d41058bb24c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59321845"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku Windows Forms DataGridView pomocí Návrháře
@@ -51,13 +51,13 @@ Návrhář slouží k připojení <xref:System.Windows.Forms.DataGridView> ovlá
 - <xref:System.Windows.Forms.DataGridView.DataMember%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>
 - [Postupy: Připojení k datům v databázi](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fxk9yw1t(v=vs.120))
-- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
-- [Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](change-the-order-of-columns-in-the-datagrid-using-the-designer.md)
-- [Postupy: Změna typu sloupce Windows Forms DataGridView pomocí Návrháře](change-the-type-of-a-wf-datagridview-column-using-the-designer.md)
-- [Postupy: Zablokování sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](freeze-columns-in-the-datagrid-using-the-designer.md)
-- [Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](hide-columns-in-the-datagrid-using-the-designer.md)
-- [Postupy: Převedení sloupců do režimu jen pro čtení v ovládacím prvku Windows Forms DataGridView pomocí Návrháře](make-columns-read-only-in-the-datagrid-using-the-designer.md)
+- [Postupy: Přidávání a odebírání sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře](change-the-order-of-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Změna typu sloupce Windows Forms DataGridView pomocí návrháře](change-the-type-of-a-wf-datagridview-column-using-the-designer.md)
+- [Postupy: Ukotvit sloupce v ovládacím prvku Windows Forms DataGridView pomocí návrháře](freeze-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView pomocí návrháře](hide-columns-in-the-datagrid-using-the-designer.md)
+- [Postupy: Nastavení sloupců jen pro čtení v ovládacím prvku Windows Forms DataGridView pomocí návrháře](make-columns-read-only-in-the-datagrid-using-the-designer.md)
 - [Postupy: Vytvoření projektu aplikace Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
-- [Okno Zdroje dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/6ckyxa83(v=vs.120))
+- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Okno zdroje dat](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/6ckyxa83(v=vs.120))
 - [Postupy: Zobrazení souvisejících dat ve formulářové aplikaci Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))

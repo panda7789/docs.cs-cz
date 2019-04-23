@@ -7,10 +7,10 @@ helpviewer_keywords:
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
 ms.openlocfilehash: 96a0a5feaf14a7f040402681e90fba8f9766324b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59199034"
 ---
 # <a name="sample-opentype-font-pack"></a>Ukázková sada písem OpenType
@@ -20,7 +20,7 @@ Toto téma obsahuje přehled ukázky [!INCLUDE[TLA#tla_opentype](../../../../inc
 ## <a name="fonts-in-the-opentype-font-pack"></a>V této sady sada písem OpenType je víc písem  
  [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Poskytuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít při vytváření [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace. Ukázka písma jsou dodávané v rámci licence od horní dotah Corporation. Těchto písmo implementovat pouze podmnožinu celkového funkce definované [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] formátu. Následující tabulka uvádí názvy vzorku [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma.  
   
-|**Name**|**Soubor**|  
+|**Název**|**File**|  
 |--------------|--------------|  
 |Kootenay|Kooten.ttf|  
 |Lindsey|Linds.ttf|  

@@ -5,10 +5,10 @@ author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 ms.openlocfilehash: 6702d469abf317b3b1f545ce79b980e8581ab5f1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59196655"
 ---
 # <a name="native-interoperability-best-practices"></a>Osvědčené postupy nativní interoperabilita
@@ -103,7 +103,7 @@ Přenositelné typy jsou typy, které mají stejnou reprezentaci úrovni bitů v
 
 **NĚKDY blittable:**
 
-- `char`,  `string`
+- `char`, `string`
 
 Když přenositelné typy jsou předány podle odkazu, se jednoduše připnout podle marshaller namísto kopírování do zprostředkující vyrovnávací paměti. (Třídy jsou ze své podstaty předány podle odkazu, struktur jsou předány podle odkazu při použití s `ref` nebo `out`.)
 
@@ -204,7 +204,7 @@ Windows `PVOID` tedy C `void*` můžete zařadit jako buď `IntPtr` nebo `UIntPt
 
 [Datové typy Windows](/windows/desktop/WinProg/windows-data-types)
 
-[Rozsahy datového typu](/cpp/cpp/data-type-ranges)
+[Rozsahy datových typů](/cpp/cpp/data-type-ranges)
 
 ## <a name="structs"></a>Struktury
 

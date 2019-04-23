@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
 ms.openlocfilehash: 481774e9127531bb38df0cc71ac8e7eab76da695
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59321897"
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource
@@ -94,6 +94,6 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.BindingSource>
-- [BindingSource – komponenta](bindingsource-component.md)
+- [Komponenta BindingSource](bindingsource-component.md)
 - [Ovládací prvek ComboBox](combobox-control-windows-forms.md)
 - [Vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

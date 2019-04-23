@@ -25,10 +25,10 @@ helpviewer_keywords:
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
 ms.openlocfilehash: 9553a66538297db9c2fa134e018f35ab9e2ddf37
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59320012"
 ---
 # <a name="input-overview"></a>Přehled vstupu
@@ -110,7 +110,7 @@ ms.locfileid: "59320012"
  [!code-vb[InputOvw#Input_OvwMouseExampleLeaveHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleleavehandler)]
 
 <a name="text_input"></a>
-## <a name="text-input"></a>Textové zadání
+## <a name="text-input"></a>Zadávání textu
  <xref:System.Windows.ContentElement.TextInput> Událostí umožňuje naslouchat vstupní text způsobem nezávislým na zařízení. Klávesnice je hlavním prostředkem rukopisného textu vstupu, ale řeči, a ostatní vstupní zařízení můžete vygenerovat textový vstup také.
 
  Vstup z klávesnice [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poprvé odešle odpovídající <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> události. Pokud nejsou zpracovány tyto události a klíčem je textový místo (ovládací prvek klíč jako je směrové šipky) nebo funkční klávesy, o <xref:System.Windows.ContentElement.TextInput> událost se vyvolá.  Není vždy jednoduché mapování 1: 1 mezi <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> a <xref:System.Windows.ContentElement.TextInput> události protože více stisknutí kláves můžete generovat jeden znak z textové zadání a jeden stisknutí kláves můžete generovat více znak řetězce.  To platí zejména pro jazyků, které používají, jako je čínštiny, japonštiny a korejštiny [!INCLUDE[TLA#tla_ime#plural](../../../../includes/tlasharptla-imesharpplural-md.md)] generovat tisíce možných znaků v jejich odpovídající písmena abecedy.
@@ -287,9 +287,9 @@ ms.locfileid: "59320012"
 
 |Událost, která se nazývá zrušit v|Události myši, ke kterým dochází pro vstup, který již došlo k chybě|
 |----------------------------------------|-----------------------------------------------------------------|
-|<xref:System.Windows.UIElement.ManipulationStarting> and <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|
+|<xref:System.Windows.UIElement.ManipulationStarting> a <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|
 |<xref:System.Windows.UIElement.ManipulationDelta>|Pohybu myší dolů a události pohybu myši.|
-|<xref:System.Windows.UIElement.ManipulationInertiaStarting> and <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|
+|<xref:System.Windows.UIElement.ManipulationInertiaStarting> a <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|
 
  Všimněte si, že pokud zavoláte <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> při manipulaci s je v nečinnosti, metoda vrátí `false` a vstup nevyvolává události myši.
 

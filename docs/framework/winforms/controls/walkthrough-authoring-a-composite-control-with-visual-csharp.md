@@ -9,10 +9,10 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
 ms.openlocfilehash: 67fecb95ea373e88e5428251151cc30bfeb580a6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59321029"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual C\#
@@ -54,7 +54,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Změňte na|  
     |--------------|---------------|  
-    |**Name**|`lblDisplay`|  
+    |**Název**|`lblDisplay`|  
     |**Text**|`(blank space)`|  
     |**TextAlign**|`MiddleCenter`|  
     |**Font.Size**|`14`|  
@@ -247,8 +247,8 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
-    |**Name**|`lblAlarm`|  
-    |**Text**|**Upozornění!**|  
+    |**Název**|`lblAlarm`|  
+    |**Text**|**Alarm!**|  
     |**TextAlign**|`MiddleCenter`|  
     |**Viditelné**|`false`|  
   
@@ -319,7 +319,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
     |Vlastnost|Hodnota|  
     |--------------|-----------|  
-    |**Name**|`btnAlarmOff`|  
+    |**Název**|`btnAlarmOff`|  
     |**Text**|**Zakázat upozornění**|  
   
 3. V Návrháři dvakrát klikněte na panel **btnAlarmOff**.  
@@ -365,11 +365,11 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 9. Následujícím způsobem nastavte vlastnosti těchto ovládacích prvků.  
   
-    |Control|Vlastnost|Hodnota|  
+    |Control|Vlastnost|Value|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
-    ||**Name**|`lblTest`|  
-    |`dateTimePicker1`|**Name**|`dtpTest`|  
+    ||**Název**|`lblTest`|  
+    |`dateTimePicker1`|**Název**|`dtpTest`|  
     ||**Formát**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 10. V Návrháři dvakrát klikněte na panel **dtpTest**.  
@@ -407,5 +407,5 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
 ## <a name="see-also"></a>Viz také:
 
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

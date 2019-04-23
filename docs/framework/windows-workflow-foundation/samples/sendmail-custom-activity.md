@@ -3,10 +3,10 @@ title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
 ms.openlocfilehash: 89252098402deee991ea01b8e76082a5f4b8c389
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59321858"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
@@ -14,7 +14,7 @@ Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z 
   
  Následující tabulka obsahuje podrobnosti o argumenty `SendMail` aktivity.  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |-|-|-|  
 |Hostitel|String|Adresa hostitele serveru SMTP.|  
 |Port|String|Port služby SMTP na hostiteli.|  

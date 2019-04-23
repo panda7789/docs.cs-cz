@@ -9,10 +9,10 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
 ms.openlocfilehash: d5924ff9336bc6e93022caf1b85d5fd98f7a617d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197383"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
@@ -56,7 +56,7 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
   
 |Funkce|Úroveň 1|Úroveň 2|  
 |-------------|------------|------------|  
-|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] verze|Musí být větší než nebo rovna hodnotě 9.0.|Musí být větší než nebo rovna hodnotě 9.0.|  
+|[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Verze|Musí být větší než nebo rovna hodnotě 9.0.|Musí být větší než nebo rovna hodnotě 9.0.|  
 |Video paměti RAM|Musí být větší než nebo rovno 60MB.|Musí být větší než nebo roven 120MB.|  
 |Pixel shader|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|  
 |Vertex shaderu|Žádný požadavek.|Úroveň verze musí být větší než nebo rovna hodnotě 2.0.|  

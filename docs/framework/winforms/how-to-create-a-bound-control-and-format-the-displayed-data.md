@@ -7,10 +7,10 @@ helpviewer_keywords:
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
 ms.openlocfilehash: f7f1ed2fbca4ab8892cb6c439ae8841fa8828bf0
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59302540"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat
@@ -56,6 +56,6 @@ Pomocí Windows Forms – datová vazba, lze formátovat data zobrazená v ovlá
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms](how-to-create-a-simple-bound-control-on-a-windows-form.md)
+- [Postupy: Vytvoření jednoduše vázaného ovládacího prvku ve formuláři Windows](how-to-create-a-simple-bound-control-on-a-windows-form.md)
 - [Ověřování uživatelského vstupu ve Windows Forms](user-input-validation-in-windows-forms.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

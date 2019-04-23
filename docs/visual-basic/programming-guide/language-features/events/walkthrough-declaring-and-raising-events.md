@@ -10,10 +10,10 @@ helpviewer_keywords:
 - raising events [Visual Basic], walkthroughs
 ms.assetid: 8ffb3be8-097d-4d3c-b71e-04555ebda2a2
 ms.openlocfilehash: cab6c90947eae8abeb9387535eadb2f89e71454a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59320688"
 ---
 # <a name="walkthrough-declaring-and-raising-events-visual-basic"></a>Návod: Deklarace a vyvolávání událostí (Visual Basic)
@@ -38,7 +38,7 @@ Tento návod ukazuje, jak deklarovat a vyvolávání událostí pro třídu s n�
     |------------|--------------|-------------|  
     |`Button1`|`Text`|Spouštěcí úkol|  
     |`Button2`|`Text`|Zrušit|  
-    |`Label`|`(Name)`,  `Text`|lblPercentDone, 0|  
+    |`Label`|`(Name)`, `Text`|lblPercentDone, 0|  
   
 4. Na **projektu** nabídce zvolte **přidat třídu** přidat třídu s názvem `Widget.vb` do projektu.  
   

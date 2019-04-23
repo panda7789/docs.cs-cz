@@ -8,11 +8,11 @@ helpviewer_keywords:
 - menus [Windows Forms], creating
 ms.assetid: f45516e5-bf01-4468-b851-d45f4c33c055
 ms.openlocfilehash: 7cd761697a09205294727043efc6cf73816803ce
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59144349"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975595"
 ---
 # <a name="menustrip-control-overview-windows-forms"></a>MenuStrip – přehled ovládacího prvku (Windows Forms)
 Nabídky poskytují funkcionalitu uživatele tím, že se příkazy, které jsou seskupeny podle společnými tématy.  

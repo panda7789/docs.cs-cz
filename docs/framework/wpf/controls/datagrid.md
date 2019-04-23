@@ -11,10 +11,10 @@ helpviewer_keywords:
 - DataGrid columns [WPF], using
 ms.assetid: bf89ea63-79b6-422b-bc9f-0485ad803216
 ms.openlocfilehash: dda712d58a4ff956de074ecd416402ba0aece5f4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59197149"
 ---
 # <a name="datagrid"></a>DataGrid
@@ -49,7 +49,7 @@ ms.locfileid: "59197149"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Zobrazení dat z databáze SQL Serveru v ovládacím prvku DataGrid](walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
+|[Návod: Zobrazení dat z databáze systému SQL Server v ovládacím prvku DataGrid](walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Popisuje, jak vytvořit nový projekt WPF, přidejte Entity Framework Element, nastavit zdroje a zobrazení dat v <xref:System.Windows.Controls.DataGrid>.|  
 |[Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid](how-to-add-row-details-to-a-datagrid-control.md)|Popisuje, jak vytvořit řádek podrobnosti <xref:System.Windows.Controls.DataGrid>.|  
 |[Postupy: Implementace ověření pomocí ovládacího prvku DataGrid](how-to-implement-validation-with-the-datagrid-control.md)|Popisuje, jak ověřte hodnoty v <xref:System.Windows.Controls.DataGrid> buňky a řádky a ověření zobrazení zpětné vazby.|  
 |[Výchozí chování klávesnice a myši v ovládacím prvku DataGrid](default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Popisuje, jak pracovat <xref:System.Windows.Controls.DataGrid> ovládacího prvku pomocí klávesnice a myši.|  

@@ -3,11 +3,11 @@ title: Mezipaměti PNRP
 ms.date: 03/30/2017
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
 ms.openlocfilehash: 9cd1901e716cab9f1b47825a5d3ecdb071a58440
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59182478"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59975270"
 ---
 # <a name="pnrp-caches"></a>Mezipaměti PNRP
 Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce koncových bodů algorithmically vybrané sdílené udržuje na partnerský uzel.  
