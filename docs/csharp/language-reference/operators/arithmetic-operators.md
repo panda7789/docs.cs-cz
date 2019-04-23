@@ -27,19 +27,19 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: a6d98abd446bfa1a5c214da31bc877ecb337e8f8
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.openlocfilehash: dc817fdb9684f794efc6599444e80be1ef7f9654
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59301123"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978039"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 
 Následující operátory provádění aritmetických operací s číselnými typy:
 
-- Unární [ `++` (přírůstek)](#increment-operator-), [ `--` (snížení)](#decrement-operator---), [ `+` (plus)](#unary-plus-and-minus-operators), a [ `-` (minus)](#unary-plus-and-minus-operators) operátory.
-- Binární [ `*` (násobení)](#multiplication-operator-), [ `/` (dělení)](#division-operator-), [ `%` (zbytek)](#remainder-operator-), [ `+` () Přidání)](#addition-operator-), a [ `-` (odčítání)](#subtraction-operator--) operátory.
+- Unární [ `++` (přírůstek)](#increment-operator-), [ `--` (snížení)](#decrement-operator---), [ `+` (plus)](#unary-plus-and-minus-operators), a [ `-` (minus)](#unary-plus-and-minus-operators) operátory
+- Binární [ `*` (násobení)](#multiplication-operator-), [ `/` (dělení)](#division-operator-), [ `%` (zbytek)](#remainder-operator-), [ `+` () Přidání)](#addition-operator-), a [ `-` (odčítání)](#subtraction-operator--) operátory
 
 Tyto operátory podporují všechny [integrální](../keywords/integral-types-table.md) a [s plovoucí desetinnou čárkou](../keywords/floating-point-types-table.md) číselné typy.
 
@@ -167,10 +167,10 @@ Můžete také použít `-` operátor pro odebrání delegátů. Další informa
 
 V následujícím seznamu objednávek od nejvyšší priority k nejnižší aritmetické operátory:
 
-- Zvýšení příponového operátora `x++` a dekrementace `x--` operátory.
-- Předponového `++x` a dekrementace `--x` a unární `+` a `-` operátory.
-- Multiplikativní `*`, `/`, a `%` operátory.
-- Additive `+` a `-` operátory.
+- Zvýšení příponového operátora `x++` a dekrementace `x--` operátory
+- Předponového `++x` a dekrementace `--x` a unární `+` a `-` operátory
+- Multiplikativní `*`, `/`, a `%` operátory
+- Additive `+` a `-` operátory
 
 Binární aritmetické operátory jsou asociativní zprava doleva. To znamená, že operátory se stejnou úrovní priority jsou vyhodnoceny zleva doprava.
 
@@ -199,6 +199,10 @@ s tím rozdílem, že `x` se jenom vyhodnotí jednou.
 Následující příklad ukazuje použití aritmetické operátory složeného přiřazení:
 
 [!code-csharp-interactive[compound assignment](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#CompoundAssignment)]
+
+Z důvodu [číselné propagace](~/_csharplang/spec/expressions.md#numeric-promotions), výsledek `op` operace může být implicitně převést na typ `T` z `x`. V takovém případě pokud `op` je předdefinovaný operátor a výsledek operace je výslovně převeditelný na typ `T` z `x`, výraz složeného přiřazení formuláře `x op= y` je ekvivalentní `x = (T)(x op y)`, s výjimkou který `x` se jenom vyhodnotí jednou. Následující příklad ukazuje toto chování:
+
+[!code-csharp-interactive[compound assignment with cast](~/samples/snippets/csharp/language-reference/operators/ArithmeticOperators.cs#CompoundAssignmentWithCast)]
 
 Můžete také použít `+=` a `-=` operátorů sloužící k přihlášení a odhlášení [události](../keywords/event.md). Další informace najdete v tématu [postupy: přihlášení k odběru a zrušit její odběr události](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
@@ -247,7 +251,7 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 
 - [Příponové operátory Inkrementace a dekrementace operátory](~/_csharplang/spec/expressions.md#postfix-increment-and-decrement-operators)
 - [Předpona Inkrementace a dekrementace operátory](~/_csharplang/spec/expressions.md#prefix-increment-and-decrement-operators)
-- [Jednočlenný operátor plus](~/_csharplang/spec/expressions.md#unary-plus-operator)
+- [Unárního operátoru plus](~/_csharplang/spec/expressions.md#unary-plus-operator)
 - [Unární operátor minus](~/_csharplang/spec/expressions.md#unary-minus-operator)
 - [Operátor násobení](~/_csharplang/spec/expressions.md#multiplication-operator)
 - [Operátor dělení](~/_csharplang/spec/expressions.md#division-operator)
@@ -256,11 +260,12 @@ Další informace najdete v následující částech [ C# specifikace jazyka](~/
 - [Operátor odčítání](~/_csharplang/spec/expressions.md#subtraction-operator)
 - [Složené přiřazení](~/_csharplang/spec/expressions.md#compound-assignment)
 - [Operátory zaškrtnuto a nezaškrtnuto](~/_csharplang/spec/expressions.md#the-checked-and-unchecked-operators)
+- [Číselné propagačních akcí](~/_csharplang/spec/expressions.md#numeric-promotions)
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - <xref:System.Math?displayProperty=nameWithType>
 - <xref:System.MathF?displayProperty=nameWithType>

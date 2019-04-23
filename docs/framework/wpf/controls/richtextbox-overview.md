@@ -9,10 +9,10 @@ helpviewer_keywords:
 - RichTextBox control [WPF], about RichTextBox control
 ms.assetid: c94548b2-c1e9-4b62-b10c-dd8740eb23d8
 ms.openlocfilehash: 9aa0d33b3cb2c15ba9c1cb7e7d7be9a3125f66d3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59162708"
 ---
 # <a name="richtextbox-overview"></a>RichTextBox – přehled
@@ -95,5 +95,5 @@ ms.locfileid: "59162708"
   
 ## <a name="see-also"></a>Viz také:
 
-- [– postupy](richtextbox-how-to-topics.md)
+- [Témata s postupy](richtextbox-how-to-topics.md)
 - [TextBox – přehled](textbox-overview.md)

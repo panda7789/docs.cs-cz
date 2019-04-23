@@ -5,10 +5,10 @@ helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: a0160b1b-3d9c-4cc8-8391-cb0986a60a41
 ms.openlocfilehash: 7a870eb0c85fa6ed208341a3ac10dce8bb0724bc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59164421"
 ---
 # <a name="data-services-providers-wcf-data-services"></a>Data Services – zprostředkovatelé (WCF Data Services)

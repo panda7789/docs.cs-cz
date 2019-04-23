@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Grid control [WPF], RowDefinitionCollection class
 ms.assetid: bfc7160a-45f2-4e17-9961-df414dfb13c5
 ms.openlocfilehash: f316cced076223edba1d39c9cfb21b9a504b9eee
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59147729"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978273"
 ---
 # <a name="how-to-manipulate-columns-and-rows-by-using-columndefinitionscollections-and-rowdefinitionscollections"></a>Postupy: Práce se sloupci a řádky pomocí objektů ColumnDefinitionsCollections a RowDefinitionsCollections
 Tento příklad ukazuje způsob použití metody v <xref:System.Windows.Controls.ColumnDefinitionCollection> a <xref:System.Windows.Controls.RowDefinitionCollection> třídy, které provádějí akce, jako je přidání, mazání nebo počítání obsah řádků nebo sloupců. Například můžete <xref:System.Windows.Controls.ColumnDefinitionCollection.Add%2A>, <xref:System.Windows.Controls.ColumnDefinitionCollection.Clear%2A>, nebo <xref:System.Windows.Controls.ColumnDefinitionCollection.Count%2A> položky, které jsou součástí <xref:System.Windows.Controls.ColumnDefinition> nebo <xref:System.Windows.Controls.RowDefinition>.  

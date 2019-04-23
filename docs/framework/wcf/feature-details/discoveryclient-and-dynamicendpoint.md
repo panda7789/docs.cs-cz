@@ -3,10 +3,10 @@ title: Objekty DiscoveryClient a DynamicEndpoint
 ms.date: 03/30/2017
 ms.assetid: 7cd418f0-0eab-48d1-a493-7eb907867ec3
 ms.openlocfilehash: 1f3e9a25e82c4515ee649736ed162ab858aa6ff7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59205027"
 ---
 # <a name="discoveryclient-and-dynamicendpoint"></a>Objekty DiscoveryClient a DynamicEndpoint
@@ -108,4 +108,4 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);
 ## <a name="see-also"></a>Viz také:
 
 - [Zjišťování pomocí oborů](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)
-- [Základní](../../../../docs/framework/wcf/samples/basic-sample.md)
+- [Základy](../../../../docs/framework/wcf/samples/basic-sample.md)

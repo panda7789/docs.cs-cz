@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: e538d288-2070-40ca-9da6-4fbc68cd6ad0
 ms.openlocfilehash: aedf89f1e570b34d31050fabb91842cefe351488
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59162839"
 ---
 # <a name="how-to-query-for-information"></a>Postupy: Dotaz na informace
@@ -29,4 +29,4 @@ Dotazy v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pou
 
 - [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
 - [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
-- [Dotazy do databáze](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Dotazování na databázi](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)

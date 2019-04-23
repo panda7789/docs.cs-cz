@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
 ms.openlocfilehash: a723679fe18352e115df78af72975097dc28b617
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59162852"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Vytváření výčtu instancí SQL Serveru (ADO.NET)
@@ -48,7 +48,7 @@ System.Data.DataTable dataTable = instance.GetDataSources();
 |**ServerName**|Název serveru.|  
 |**InstanceName**|Název instance serveru. Prázdné, pokud je server spuštěn jako výchozí instanci.|  
 |**IsClustered**|Určuje, zda je server součástí clusteru.|  
-|**Version**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-   10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-   11.0.xx (SQL Server 2012)|  
+|**Verze**|Verze serveru. Příklad:<br /><br /> -9.00.x ([!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)])<br />-   10.0.xx ([!INCLUDE[ssKatmai](../../../../../includes/sskatmai-md.md)])<br />-10.50.x ([!INCLUDE[ssKilimanjaro](../../../../../includes/sskilimanjaro-md.md)])<br />-   11.0.xx (SQL Server 2012)|  
   
 ## <a name="enumeration-limitations"></a>Výčet omezení  
  Všechny dostupné servery může nebo nemusí být uvedená. Seznam se může lišit v závislosti na faktorech, třeba vypršení časových limitů a síťové přenosy. To může způsobit seznamem, aby se na dvě po sobě jdoucích volání lišit. Zobrazí se pouze servery ve stejné síti. Pakety všesměrového vysílání obvykle nebudete procházet směrovače, proto nemusíte vidět serveru uvedené, ale bude stabilní napříč volání.  

@@ -5,10 +5,10 @@ ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e1d14e4ad45a4d5805187b993f2fc622a16dac09
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59163134"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migrace aplikace pro Windows Store do .NET Native
@@ -99,7 +99,7 @@ ms.locfileid: "59163134"
   
 -   [HttpClient](#HttpClient)  
   
--   [Zprostředkovatel komunikace s objekty](#Interop)  
+-   [Interop](#Interop)  
   
 -   [Nepodporované rozhraní API](#APIs)  
   
@@ -129,7 +129,7 @@ ms.locfileid: "59163134"
   
      [!code-csharp[ProjectN#9](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat2.cs#9)]  
   
- **Ukazatelé**  
+ **Ukazatele**  
   
 -   Pole ukazatelů nejsou podporovány.  
   
@@ -143,7 +143,7 @@ ms.locfileid: "59163134"
   
  Používání lokalizované prostředky <xref:System.Diagnostics.Tracing.EventSource> třída není podporována. <xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A?displayProperty=nameWithType> Vlastnost nedefinuje lokalizované prostředky.  
   
- **Delegáty**  
+ **Delegáti**  
   
  `Delegate.BeginInvoke` a `Delegate.EndInvoke` nejsou podporovány.  
   
@@ -153,7 +153,7 @@ ms.locfileid: "59163134"
   
 -   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> Metoda správně Parsuje řetězce, které obsahují krátký kalendářní data v .NET Native. Ale se nebude udržovat kompatibilitu s změny v datum a čas analýzy je popsáno v článcích znalostní báze Microsoft Knowledge Base [KB2803771](https://support.microsoft.com/kb/2803771) a [KB2803755](https://support.microsoft.com/kb/2803755).  
   
--   <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType> `("E")` is correpoloměr zaoblení správně v .NET Native. V některých verzích CLR je výsledný řetězec zkrácen místo zaokrouhleno.  
+-   <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType> `("E")` poloměr zaoblení správně v .NET Native. V některých verzích CLR je výsledný řetězec zkrácen místo zaokrouhleno.  
   
 <a name="HttpClient"></a>   
 ### <a name="httpclient-differences"></a>Rozdíly HttpClient  
@@ -634,7 +634,7 @@ Další nepodporované funkce spolupráce zahrnují:
   
  Použít x86 sestavení nástroje, které se používají ve výchozím nastavení sada Visual Studio. Nedoporučujeme ale používat nástroje AMD64 MSBuild, které jsou součástí C:\Program Files (x86)\MSBuild\12.0\bin\amd64; To může způsobit problémy sestavení.  
   
- **Profilovací programy**  
+ **Profilers**  
   
 -   Profiler procesoru Visual Studio a Profiler paměti XAML nezobrazují pouze můj kód správně.  
   

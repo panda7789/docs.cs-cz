@@ -10,26 +10,26 @@ helpviewer_keywords:
 - WCF, COM+ integration
 ms.assetid: 98bf7dc4-d49a-4129-a59b-db7a7ec8c241
 ms.openlocfilehash: cd72265fe8e49c7def91ebbf05ad84618dd71d19
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59162500"
 ---
 # <a name="integrating-with-com-applications"></a>Integrace s aplikacemi modelu COM+
 Windows Communication Foundation (WCF) poskytuje bohaté prostředí pro vytváření distribuované aplikace. Pokud máte značné investice do aplikací založených na komponentách logiky hostované v modelu COM +, můžou využít WCF k rozšíření existující logic namísto nutnosti jeho přepsání. Témata v této části popisují způsob použití modelu COM + s použitím technologie WCF.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Integrace s aplikacemi modelu COM+ – přehled](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
+ [Přehled integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
  Poskytuje přehled kdy a jak integrovat komponenty modelu COM +.  
   
- [Postupy: Použití nástroje pro konfiguraci modelu služby COM+](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
+ [Postupy: Použijte nástroj pro konfiguraci modelu služby COM +](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
  Vysvětluje, jak pomocí nástroje příkazového řádku modelu COM + Service Model Configuration (ComSvcConfig.exe) ke konfiguraci rozhraní aplikací, které mají být vystavený jako služba WCF.  
   
- [Postupy: Konfigurace nastavení služby modelu COM+](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
+ [Postupy: Konfigurace nastavení služby modelu COM +](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
  Vysvětluje, jak nakonfigurovat objekt modelu COM + jako služba WCF.  
   
- [Postupy: Nasazení aplikace integrací COM+](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
+ [Postupy: Nasazení aplikace integrací COM +.](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
  Vysvětluje, jak přesunout aplikace integrací COM +.  
   
 ## <a name="reference"></a>Odkaz  

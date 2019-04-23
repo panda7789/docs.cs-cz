@@ -7,10 +7,10 @@ helpviewer_keywords:
 - GridView controls [WPF], grouping items
 ms.assetid: eebef25b-ddc6-424e-a66d-ea228d1bf33d
 ms.openlocfilehash: b3dd6891976a942b299c87fca25e430e9ee59a51
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59177668"
 ---
 # <a name="how-to-group-items-in-a-listview-that-implements-a-gridview"></a>Postupy: Seskupení položek v objektu ListView s implementací GridView
@@ -30,6 +30,6 @@ Tento příklad ukazuje, jak zobrazit skupiny položek v <xref:System.Windows.Co
 
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
-- [– postupy](listview-how-to-topics.md)
+- [Témata s postupy](listview-how-to-topics.md)
 - [ListView – přehled](listview-overview.md)
 - [GridView – přehled](gridview-overview.md)

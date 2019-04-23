@@ -1,7 +1,7 @@
 ---
 title: Element <AppContextSwitchOverrides>
 ms.custom: updateeachrelease
-ms.date: 03/07/2019
+ms.date: 04/18/2019
 helpviewer_keywords:
 - AppContextSwitchOverrides
 - compatibility switches
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1bc4cd94d3acd37244e1d5b882612e4b1da91b90
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: e887747a3f036d10e5e5fec6c0cadaf9f34050df
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59136458"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978247"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -98,6 +98,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|Ovládací prvky, zda hodnota [CspParameters.ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle) vlastnost je [IntPtr](xref:System.IntPtr) , že zpracování představuje umístění okna v paměti, nebo zda je popisovač okna (popisovačem HWND). Další informace najdete v tématu [omezení rizik: CspParameters.ParentWindowHandle očekává, že popisovačem HWND](../../../migration-guide/retargeting/4.6.2-4.7.md#cspparametersparentwindowhandle-now-expects-hwnd-value). |Rozhraní .NET framework 4.7|   
 |`Switch.System.Security.Cryptography.Pkcs.`<br/>`UseInsecureHashAlgorithms`|Určuje, zda je výchozí nastavení pro některé operace SignedCMS SHA1 nebo SHA256.<br>Společnost Microsoft doporučuje způsobeny problémy kolizí se SHA1, SHA256.|.NET Framework 4.7.1|
 |`Switch.System.Security.Cryptography.Xml.`<br/>`UseInsecureHashAlgorithms`|Určuje, zda je výchozí nastavení pro některé operace SignedXML SHA1 nebo SHA256.<br>Společnost Microsoft doporučuje způsobeny problémy kolizí se SHA1, SHA256.|.NET Framework 4.7.1|
+|`Switch.System.Security.Cryptography.`<br/>`UseLegacyFipsThrow`|Určuje, zda použijte spravované kryptografie třídy v režimu FIPS vyvolá výjimku <xref:System.Security.Cryptography.CryptographicException> (`true`) nebo závisí na implementaci systémových knihoven (`false`).|.NET Framework 4.8|
 |`Switch.System.ServiceModel.`<br/>`AllowUnsignedToHeader`|Určuje, zda `TransportWithMessageCredential` umožňuje režim zabezpečení zpráv pomocí bez znaménka "na" záhlaví. To je přepínač opt-in. Další informace najdete v tématu [změny v modulu Runtime v rozhraní .NET Framework 4.6.1](../../../migration-guide/runtime/4.5.2-4.6.1.md#windows-communication-foundation-wcf).|.NET Framework 4.6.1| 
 |`Switch.System.ServiceModel.`<br/>`DisableAddressHeaderCollectionValidation`>|Ovládací prvky, zda <xref:System.ServiceModel.Channels.AddressHeaderCollection.%23ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.AddressHeader})> vyvolá konstruktor <xref:System.ArgumentException> Pokud jeden z elementů je `null`.|.NET Framework 4.7.1| 
 |`Switch.System.ServiceModel.`<br />`DisableCngCertificates`|Určuje, že zda pokus o použití X509 certifikáty pomocí zprostředkovatele úložiště klíčů CSG vyvolá výjimku. Další informace najdete v tématu [zabezpečení přenosu WCF podporuje certifikáty na Uložit pomocí CNG](../../../migration-guide/retargeting/4.6.1-4.6.2.md#wcf-transport-security-supports-certificates-stored-using-cng).|.NET Framework 4.6.1|
@@ -109,6 +110,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
 |`Switch.System.ServiceModel.`<br/>`UseSha1InPipeConnectionGetHashAlgorithm`|Určuje, zda WCF používá ke generování náhodných názvů u pojmenovaných kanálů SHA1 nebo hodnotu hash SHA256.<br>Společnost Microsoft doporučuje způsobeny problémy kolizí se SHA1, SHA256.|.NET Framework 4.7.1|
 |`Switch.System.ServiceModel.Internals`<br/>`IncludeNullExceptionMessageInETWTrace`|Určuje, zda má být vyvolána [NullReferenceException](xref:System.NullReferenceException) při zpráva výjimky je null.|Rozhraní .NET framework 4.7|  
 |`Switch.System.ServiceProcess.`<br/>`DontThrowExceptionsOnStart`|Určuje, zda výjimky vyvolané při spuštění služby se rozšíří do volajícího <xref:System.ServiceProcess.ServiceBase.Run%2A?displayProperty=nameWithType> metody.|.NET Framework 4.7.1|
+|`Switch.System.Threading.UseNetCoreTimer`|Ovládací prvky, zda <xref:System.Threading.Timer> vylepšení výkonu pro zajištění vysoce škálovatelné prostředí výhod instancí. Pokud `true`, vylepšení výkonu jsou povolené; Pokud `false` (výchozí hodnota), jsou zakázané.|.NET Framework 4.8|
 |`Switch.System.Uri.`<br/>`DontEnableStrictRFC3986ReservedCharacterSets`|Určuje, zda některých procentuálně zakódovaný, které byly někdy dekódovat nyní konzistentně vlevo kódování znaků. Pokud `true`, jsou dekódovaný; v opačném případě `false`.|.NET Framework 4.7.2|
 |`Switch.System.Uri.`<br/>`DontKeepUnicodeBidiFormattingCharacters`|Určuje zpracování obousměrné znaky Unicode v identifikátorech URI. `true` pro odstranění z identifikátorů URI; `false` zachovat a procent kódovat.|.NET Framework 4.7.2|
 |`Switch.System.Windows.Controls.Grid.`<br/>`StarDefinitionsCanExceedAvailableSpace` |Určuje, zda Windows Presentation Foundation použije původní algoritmus (`true`) nebo nový algoritmus (`false`) v přidělování prostoru pro \*– sloupce. Další informace najdete v tématu [omezení rizik: Ovládací prvek mřížky přidělování místa na hvězdičku sloupce](../../../migration-guide/retargeting/4.6.2-4.7.md#wpf-grid-allocation-of-space-to-star-columns). |Rozhraní .NET framework 4.7 |

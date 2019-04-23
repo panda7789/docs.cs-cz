@@ -11,10 +11,10 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
 ms.openlocfilehash: 162414dbd4b0f5e15eceaf73c87c122701fefc4e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59177408"
 ---
 # <a name="dialog-boxes-overview"></a>Přehled dialogových oken
@@ -45,7 +45,7 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxconfigurecodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxConfigureCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxconfigurecodebehind)]  
   
- Chcete-li zobrazit okno se zprávou, zavolejte `static`<xref:System.Windows.MessageBox.Show%2A> způsob, jak je ukázáno v následujícím kódu.  
+ Chcete-li zobrazit okno se zprávou, zavolejte `static` <xref:System.Windows.MessageBox.Show%2A> způsob, jak je ukázáno v následujícím kódu.  
   
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowcodebehind)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowcodebehind)]  
@@ -344,6 +344,6 @@ Samostatné aplikace mají obvykle hlavní okno, že oba zobrazuje hlavní data 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled překryvných objektů](../controls/popup-overview.md)
+- [Přehled prvku Popup](../controls/popup-overview.md)
 - [Dialogové okno pole vzorku](https://go.microsoft.com/fwlink/?LinkID=159984)
 - [Ukázka ovládacího prvku ColorPicker vlastní](https://go.microsoft.com/fwlink/?LinkID=159977)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: 44ae8acd1278d8a6163ac1c5bc6e0a0e030c02fa
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: 6c713072e120f2b5a6740add296c957d499c93c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54676962"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978650"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Inicializátory objektu a kolekce (Průvodce programováním v C#)
 
@@ -19,7 +19,7 @@ C#Umožňuje vytvořit instanci objektu nebo kolekci a provést přiřazení čl
 
 ## <a name="object-initializers"></a>Inicializátory objektů
 
-Inicializátory objektů umožňují přiřadit hodnoty k jakýmkoli přístupným polím nebo vlastnostem objektu při vytváření, bez nutnosti vyvolání konstruktoru následovaného řádky příkazů přiřazení. Syntaxe inicializátoru objektu umožňuje zadat argumenty pro konstruktor, nebo tyto argumenty (a syntaxi se závorkami) vynechat.  Následující příklad ukazuje, jak použít inicializátor objektu s pojmenovaným typem `Cat` a vyvolání výchozího konstruktoru. Všimněte si použití automaticky implementované vlastnosti v `Cat` třídy. Další informace najdete v tématu [implemented Properties](auto-implemented-properties.md).  
+Inicializátory objektů umožňují přiřadit hodnoty k jakýmkoli přístupným polím nebo vlastnostem objektu při vytváření, bez nutnosti vyvolání konstruktoru následovaného řádky příkazů přiřazení. Syntaxe inicializátoru objektu umožňuje zadat argumenty pro konstruktor, nebo tyto argumenty (a syntaxi se závorkami) vynechat.  Následující příklad ukazuje, jak použít inicializátor objektu s pojmenovaným typem `Cat` a o tom, která se má vyvolat konstruktor bez parametrů. Všimněte si použití automaticky implementované vlastnosti v `Cat` třídy. Další informace najdete v tématu [implemented Properties](auto-implemented-properties.md).  
   
 [!code-csharp[ObjectInitializer1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#CatDeclaration)]  
 [!code-csharp[ObjectInitializer1a](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#ObjectPropertyInitialization)]  

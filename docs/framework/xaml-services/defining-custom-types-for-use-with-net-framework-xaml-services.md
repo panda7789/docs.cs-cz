@@ -5,10 +5,10 @@ helpviewer_keywords:
 - defining custom types [XAML Services]
 ms.assetid: c2667cbd-2f46-4a7f-9dfc-53696e35e8e4
 ms.openlocfilehash: be9c0e26574a15279ce89af2c7862abaa8713360
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59164434"
 ---
 # <a name="defining-custom-types-for-use-with-net-framework-xaml-services"></a>Definování vlastních typů pro práci s technologií .NET Framework XAML Services
@@ -70,7 +70,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 #### <a name="the-getpropertyname-accessor"></a>Přístupový objekt GetPropertyName  
  Podpis pro `Get` *PropertyName* přístupový objekt musí být:  
   
- `public static object Get` *Vlastnost PropertyName* `(object`  `target` `)`  
+ `public static object Get` *PropertyName* `(object`  `target` `)`  
   
 -   `target` Objektu lze zadat jako konkrétnější typ ve vaší implementaci. Může být využit k určení oboru využití připojitelný člen; použití mimo určený rozsah vyvolají výjimky neplatné přetypování, které jsou pak prezentované podle Chyba analýzy XAML. Název parametru `target` není povinné, ale má název `target` konvencí ve většině implementací.  
   
@@ -81,7 +81,7 @@ Při definování vlastních typů, které jsou pro obchodní objekty nebo jsou 
 #### <a name="the-setpropertyname-accessor"></a>Přístupový objekt SetPropertyName  
  Podpis pro sadu*PropertyName* přístupový objekt musí být:  
   
- `public static void Set` *Vlastnost PropertyName* `(object`  `target` `, object`  `value` `)`  
+ `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
 -   `target` Objektu lze zadat jako konkrétnější typ v implementaci, se stejnými logiky a důsledky, jak je popsáno v předchozí části.  
   

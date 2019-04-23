@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
-ms.openlocfilehash: f07053c9fba194138467bbf8664e2f5fe1f667ea
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.openlocfilehash: 66964497159c5c03a9070090ee60b43fa7d31abf
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352814"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978923"
 ---
 # <a name="data-binding"></a>Datová vazba
 
@@ -42,9 +42,9 @@ Kolekce generace jsou implementovány pomocí obecného <xref:System.Data.Linq.T
 
 - Zdroj dat je <xref:System.Linq.IQueryable%601>. Existují dva scénáře:
 
-    - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] najde základní <xref:System.Data.Linq.Table%601> z <xref:System.Linq.IQueryable%601>edition umožňuje zdroji a situace je stejný jako v prvním odrážce.
+  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] najde základní <xref:System.Data.Linq.Table%601> z <xref:System.Linq.IQueryable%601>edition umožňuje zdroji a situace je stejný jako v prvním odrážce.
 
-    - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nelze najít základní <xref:System.Data.Linq.Table%601>, zdroj neumožňuje edition (například `groupby`). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Umožňuje dotazu k vyplnění obecný `SortableBindingList`, což je jednoduchý <xref:System.ComponentModel.BindingList%601> , který implementuje funkci řazení pro T entity pro danou vlastnost.
+  - Pokud [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nelze najít základní <xref:System.Data.Linq.Table%601>, zdroj neumožňuje edition (například `groupby`). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Umožňuje dotazu k vyplnění obecný `SortableBindingList`, což je jednoduchý <xref:System.ComponentModel.BindingList%601> , který implementuje funkci řazení pro T entity pro danou vlastnost.
 
 ## <a name="specialized-collections"></a>Specializované kolekce
 

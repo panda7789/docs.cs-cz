@@ -7,19 +7,19 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: e88cc9b36f64a559105620359f4c163978cf9d8c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.openlocfilehash: becc3fc8a75cd4d2d5e0c1db2858b15b8b61ae20
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692256"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59978572"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 Pokaždé, když se [třídy](../../../csharp/language-reference/keywords/class.md) nebo [– struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá konstruktoru. Třídy nebo struktury může mít více konstruktorů, které přijímají různé argumenty. Konstruktory povolit programátorovi, aby nastavení výchozích hodnot, omezení vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady najdete v tématu [pomocí konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md) a [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
 
-## <a name="default-constructors"></a>Výchozí konstruktory
+## <a name="parameterless-constructors"></a>Konstruktory bez parametrů.
   
-Pokud nezadáte konstruktor pro třídu, C# vytvoří ve výchozím nastavení vytvoří instanci objektu, který nastaví proměnné členů na výchozí hodnoty, jak je uvedeno v [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Pokud nezadáte konstruktor pro vaše struktura, C# spoléhá na *implicitní výchozí konstruktor* automaticky inicializovat každé pole typu hodnota na výchozí hodnotu, jak je uvedeno v [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Další informace a příklady najdete v tématu [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+Pokud nezadáte konstruktor pro třídu, C# vytvoří ve výchozím nastavení vytvoří instanci objektu, který nastaví proměnné členů na výchozí hodnoty, jak je uvedeno v [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Pokud nezadáte konstruktor pro struktury, C# spoléhá na *implicitní konstruktor bez parametrů* automaticky inicializovat každé pole typu hodnota na výchozí hodnotu, jak je uvedeno v [výchozí hodnoty Tabulka](../../../csharp/language-reference/keywords/default-values-table.md). Další informace a příklady najdete v tématu [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
 
 ## <a name="constructor-syntax"></a>Syntaxe konstruktoru
 
