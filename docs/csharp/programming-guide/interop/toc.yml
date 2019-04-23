@@ -1,22 +1,15 @@
-items:
 - name: Interoperabilita
   href: index.md
   items:
-  - name: Přehled interoperability
-    href: interoperability-overview.md
-  - name: 'Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#'
-    href: how-to-access-office-onterop-objects.md
-  - name: 'Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM'
-    href: how-to-use-indexed-properties-in-com-interop-rogramming.md
-  - name: 'Postupy: Použití vyvolání platformy pro přehrání souboru wave'
-    href: how-to-use-platform-invoke-to-play-a-wave-file.md
-  - name: 'Návod: Programování pro Office (C# a Visual Basic)'
-    href: walkthrough-office-programming.md
-  - name: Ukázka třídy COM
-    href: example-com-class.md
-ms.openlocfilehash: 73e8696b89fa8ce212bc517f884f0ac615de09fc
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471245"
+    - name: Přehled interoperability
+      href: interoperability-overview.md
+    - name: "Postupy: Přístup k\_objektům Interop sady Office pomocí funkcí Visual C#"
+      href: how-to-access-office-onterop-objects.md
+    - name: 'Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM'
+      href: how-to-use-indexed-properties-in-com-interop-rogramming.md
+    - name: 'Postupy: Použití vyvolání platformy pro přehrání souboru wave'
+      href: how-to-use-platform-invoke-to-play-a-wave-file.md
+    - name: "Návod: Programování pro Office (C# a\_Visual Basic)"
+      href: walkthrough-office-programming.md
+    - name: Ukázka třídy COM
+      href: example-com-class.md

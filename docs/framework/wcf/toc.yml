@@ -1,256 +1,249 @@
-items:
-- name: Aplikace orientované na služby s použitím technologie WCF
+- name: "Aplikace orientované na služby s\_použitím technologie WCF"
   href: index.md
   items:
-  - name: Co je nového ve WCF 4.5
-    href: whats-new.md
-  - name: Funkce zjednodušení WCF
-    href: wcf-simplification-features.md
-  - name: Průvodce dokumentací
-    href: guide-to-the-documentation.md
-  - name: Koncepční přehled
-    href: conceptual-overview.md
-    items:
-    - name: Co je to Windows Communication Foundation
-      href: whats-wcf.md
-    - name: Základní koncepty služby Windows Communication Foundation
-      href: fundamental-concepts.md
-    - name: Architektura Windows Communication Foundation
-      href: architecture.md
-    - name: WCF a profil klienta .NET Framework
-      href: wcf-and-net-framework-client-profile.md
-  - name: Kurz Začínáme
-    href: getting-started-tutorial.md
-    items:
-    - name: Definování kontraktu služby
-      href: how-to-define-a-wcf-service-contract.md
-    - name: Implementace kontraktu služby
-      href: how-to-implement-a-wcf-contract.md
-    - name: Hostování a spuštění základní služby
-      href: how-to-host-and-run-a-basic-wcf-service.md
-    - name: Vytvoření klienta
-      href: how-to-create-a-wcf-client.md
-    - name: Používání klienta
-      href: how-to-use-a-wcf-client.md
-    - name: Řešení potíží s kurzem Začínáme
-      href: troubleshooting-the-getting-started-tutorial.md
-  - name: Základní programování WCF
-    href: basic-wcf-programming.md
-    items:
-    - name: Základní programovací životní cyklus
-      href: basic-programming-lifecycle.md
-    - name: Navrhování a implementace služeb
-      href: designing-and-implementing-services.md
+    - name: Co je nového ve WCF 4.5
+      href: whats-new.md
+    - name: Funkce zjednodušení WCF
+      href: wcf-simplification-features.md
+    - name: Průvodce dokumentací
+      href: guide-to-the-documentation.md
+    - name: Koncepční přehled
+      href: conceptual-overview.md
       items:
-      - name: Navrhování kontraktů služby
-        href: designing-service-contracts.md
-        items:
-        - name: Určování a zpracování chyb v kontraktech a službách
-          href: specifying-and-handling-faults-in-contracts-and-services.md
+        - name: Co je to Windows Communication Foundation
+          href: whats-wcf.md
+        - name: Základní koncepty služby Windows Communication Foundation
+          href: fundamental-concepts.md
+        - name: Architektura Windows Communication Foundation
+          href: architecture.md
+        - name: WCF a profil klienta .NET Framework
+          href: wcf-and-net-framework-client-profile.md
+    - name: Kurz Začínáme
+      href: getting-started-tutorial.md
+      items:
+        - name: Definování kontraktu služby
+          href: how-to-define-a-wcf-service-contract.md
+        - name: Implementace kontraktu služby
+          href: how-to-implement-a-wcf-contract.md
+        - name: Hostování a spuštění základní služby
+          href: how-to-host-and-run-a-basic-wcf-service.md
+        - name: Vytvoření klienta
+          href: how-to-create-a-wcf-client.md
+        - name: Používání klienta
+          href: how-to-use-a-wcf-client.md
+        - name: Řešení potíží s kurzem Začínáme
+          href: troubleshooting-the-getting-started-tutorial.md
+    - name: Základní programování WCF
+      href: basic-wcf-programming.md
+      items:
+        - name: Základní programovací životní cyklus
+          href: basic-programming-lifecycle.md
+        - name: Navrhování a implementace služeb
+          href: designing-and-implementing-services.md
           items:
-          - name: Definice a určení chyb
-            href: defining-and-specifying-faults.md
-            items:
-            - name: 'Postupy: Deklarace chyb v kontraktech služeb'
-              href: how-to-declare-faults-in-service-contracts.md
-          - name: Chyby odesílání a přijímání
-            href: sending-and-receiving-faults.md
-        - name: Použití relací
-          href: using-sessions.md
-        - name: Synchronní a asynchronní operace
-          href: synchronous-and-asynchronous-operations.md
+            - name: Navrhování kontraktů služby
+              href: designing-service-contracts.md
+              items:
+                - name: Určování a zpracování chyb v kontraktech a službách
+                  href: specifying-and-handling-faults-in-contracts-and-services.md
+                  items:
+                    - name: Definice a určení chyb
+                      href: defining-and-specifying-faults.md
+                      items:
+                        - name: 'Postupy: Deklarace chyb v kontraktech služeb'
+                          href: how-to-declare-faults-in-service-contracts.md
+                    - name: Chyby odesílání a přijímání
+                      href: sending-and-receiving-faults.md
+                - name: Použití relací
+                  href: using-sessions.md
+                - name: Synchronní a asynchronní operace
+                  href: synchronous-and-asynchronous-operations.md
+                  items:
+                    - name: 'Postupy: Implementace asynchronní operace služby'
+                      href: how-to-implement-an-asynchronous-service-operation.md
+                - name: Spolehlivé služby
+                  href: reliable-services.md
+                - name: Služby a transakce
+                  href: services-and-transactions.md
+            - name: Implementace kontraktů služeb
+              href: implementing-service-contracts.md
+              items:
+                - name: Určování chování služby za běhu
+                  href: specifying-service-run-time-behavior.md
+        - name: Konfigurace služeb
+          href: configuring-services.md
           items:
-          - name: 'Postupy: Implementace asynchronní operace služby'
-            href: how-to-implement-an-asynchronous-service-operation.md
-        - name: Spolehlivé služby
-          href: reliable-services.md
-        - name: Služby a transakce
-          href: services-and-transactions.md
-      - name: Implementace kontraktů služeb
-        href: implementing-service-contracts.md
-        items:
-        - name: Určování chování služby za běhu
-          href: specifying-service-run-time-behavior.md
-    - name: Konfigurace služeb
-      href: configuring-services.md
-      items:
-      - name: Zjednodušená konfigurace
-        href: simplified-configuration.md
-      - name: Konfigurace služeb pomocí konfiguračních souborů
-        href: configuring-services-using-configuration-files.md
-      - name: Konfigurace služeb WCF v kódu
-        href: configuring-wcf-services-in-code.md
-      - name: Vazby
-        href: bindings.md
-        items:
-        - name: Přehled vazeb WCF
-          href: bindings-overview.md
-        - name: Vazby poskytované systémem
-          href: system-provided-bindings.md
-        - name: Používání vazeb ke konfiguraci služeb a klientů
-          href: using-bindings-to-configure-services-and-clients.md
+            - name: Zjednodušená konfigurace
+              href: simplified-configuration.md
+            - name: Konfigurace služeb pomocí konfiguračních souborů
+              href: configuring-services-using-configuration-files.md
+            - name: Konfigurace služeb WCF v kódu
+              href: configuring-wcf-services-in-code.md
+            - name: Vazby
+              href: bindings.md
+              items:
+                - name: Přehled vazeb WCF
+                  href: bindings-overview.md
+                - name: Vazby poskytované systémem
+                  href: system-provided-bindings.md
+                - name: Používání vazeb ke konfiguraci služeb a klientů
+                  href: using-bindings-to-configure-services-and-clients.md
+                  items:
+                    - name: 'Postupy: Určení klientské vazby v kódu'
+                      href: how-to-specify-a-client-binding-in-code.md
+                    - name: 'Postupy: Určení klientské vazby v konfiguraci'
+                      href: how-to-specify-a-client-binding-in-configuration.md
+                    - name: 'Postupy: Určení vazby služby v kódu'
+                      href: how-to-specify-a-service-binding-in-code.md
+                    - name: 'Postupy: Určení vazby služby v konfiguraci'
+                      href: how-to-specify-a-service-binding-in-configuration.md
+                - name: Konfigurace vazeb pro služby
+                  href: configuring-bindings-for-wcf-services.md
+            - name: Koncové body
+              href: endpoints.md
+              items:
+                - name: Přehled vytváření koncových bodů
+                  href: endpoint-creation-overview.md
+                - name: Zadání adresy koncového bodu
+                  href: specifying-an-endpoint-address.md
+                - name: Publikování kocových bodů metadat
+                  href: publishing-metadata-endpoints.md
+            - name: Zabezpečení služeb
+              href: securing-services.md
+              items:
+                - name: 'Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows'
+                  href: how-to-secure-a-service-with-windows-credentials.md
+                - name: 'Postupy: Nastavení režimu zabezpečení'
+                  href: how-to-set-the-security-mode.md
+                - name: 'Postupy: Určení typu přihlašovacích údajů klienta'
+                  href: how-to-specify-the-client-credential-type.md
+                - name: 'Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute'
+                  href: how-to-restrict-access-with-the-principalpermissionattribute-class.md
+                - name: 'Postupy: Zosobnění klienta ve službě'
+                  href: how-to-impersonate-a-client-on-a-service.md
+                - name: 'Postupy: Prozkoumání kontextu zabezpečení'
+                  href: how-to-examine-the-security-context.md
+                - name: Princip úrovně ochrany
+                  href: understanding-protection-level.md
+                - name: 'Postupy: Nastavení vlastnosti ProtectionLevel'
+                  href: how-to-set-the-protectionlevel-property.md
+            - name: Vytváření interoperabilních služeb WS-I Basic Profile 1.1
+              href: creating-ws-i-basic-profile-1-1-interoperable-services.md
+        - name: Služby hostování
+          href: hosting-services.md
           items:
-          - name: 'Postupy: Určení klientské vazby v kódu'
-            href: how-to-specify-a-client-binding-in-code.md
-          - name: 'Postupy: Určení klientské vazby v konfiguraci'
-            href: how-to-specify-a-client-binding-in-configuration.md
-          - name: 'Postupy: Určení vazby služby v kódu'
-            href: how-to-specify-a-service-binding-in-code.md
-          - name: 'Postupy: Určení vazby služby v konfiguraci'
-            href: how-to-specify-a-service-binding-in-configuration.md
-        - name: Konfigurace vazeb pro služby
-          href: configuring-bindings-for-wcf-services.md
-      - name: Koncové body
-        href: endpoints.md
-        items:
-        - name: Přehled vytváření koncových bodů
-          href: endpoint-creation-overview.md
-        - name: Určení adresy koncového bodu
-          href: specifying-an-endpoint-address.md
-        - name: Publikování koncových bodů metadat
-          href: publishing-metadata-endpoints.md
-      - name: Zabezpečení služeb
-        href: securing-services.md
-        items:
-        - name: 'Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows'
-          href: how-to-secure-a-service-with-windows-credentials.md
-        - name: 'Postupy: Nastavení režimu zabezpečení'
-          href: how-to-set-the-security-mode.md
-        - name: 'Postupy: Určení typu přihlašovacích údajů klienta'
-          href: how-to-specify-the-client-credential-type.md
-        - name: 'Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute'
-          href: how-to-restrict-access-with-the-principalpermissionattribute-class.md
-        - name: 'Postupy: Zosobnění klienta ve službě'
-          href: how-to-impersonate-a-client-on-a-service.md
-        - name: 'Postupy: Prozkoumání kontextu zabezpečení'
-          href: how-to-examine-the-security-context.md
-        - name: Princip úrovně ochrany
-          href: understanding-protection-level.md
-        - name: 'Postupy: Nastavení vlastnosti ProtectionLevel'
-          href: how-to-set-the-protectionlevel-property.md
-      - name: Vytváření interoperabilních služeb WS-I Basic Profile 1.1
-        href: creating-ws-i-basic-profile-1-1-interoperable-services.md
-    - name: Služby hostování
-      href: hosting-services.md
+            - name: 'Postupy: Hostování služby WCF ve spravované aplikaci'
+              href: how-to-host-a-wcf-service-in-a-managed-application.md
+            - name: 'Postupy: Hostování služby WCF napsané pomocí .NET Framework 3.5 v IIS a běžící pod .NET Framework 4'
+              href: host-a-wcf-service-net-framework-3-5-iis--net-framework-4.md
+        - name: Sestavování klientů
+          href: building-clients.md
+          items:
+            - name: Klienti WCF – přehled
+              href: wcf-client-overview.md
+            - name: Přístup ke službám pomocí klienta WCF
+              href: accessing-services-using-a-wcf-client.md
+              items:
+                - name: Přidání odkazu služby v přenosném dílčím projektu
+                  href: add-service-reference-in-a-portable-subset-project.md
+                - name: Nastavení běhového chování klienta
+                  href: specifying-client-run-time-behavior.md
+                - name: Konfigurace chování klientů
+                  href: configuring-client-behaviors.md
+            - name: Zabezpečení klientů
+              href: securing-clients.md
+              items:
+                - name: 'Postupy: Určení hodnot přihlašovacích údajů klienta'
+                  href: how-to-specify-client-credential-values.md
+        - name: Úvod do rozšíření
+          href: introduction-to-extensibility.md
+        - name: Řešení potíží s WCF – úvodní příručka
+          href: wcf-troubleshooting-quickstart.md
+        - name: Zpracování chyb WCF
+          href: wcf-error-handling.md
+        - name: WCF a ASP.NET Web API
+          href: wcf-and-aspnet-web-api.md
+    - name: Podrobnosti o funkcích WCF
+      href: feature-details/
+    - name: Rozšíření WCF
+      href: extending/
+    - name: Směrnice a doporučené postupy
+      href: guidelines-and-best-practices.md
       items:
-      - name: 'Postupy: Hostování služby WCF ve spravované aplikaci'
-        href: how-to-host-a-wcf-service-in-a-managed-application.md
-      - name: 'Postupy: Hostování služby WCF napsané pomocí .NET Framework 3.5 v IIS a běžící pod .NET Framework 4'
-        href: host-a-wcf-service-net-framework-3-5-iis--net-framework-4.md
-    - name: Sestavování klientů
-      href: building-clients.md
+        - name: 'Doporučené postupy: Správa verzí kontraktů dat'
+          href: best-practices-data-contract-versioning.md
+        - name: 'Doporučené postupy: Prostředníci'
+          href: best-practices-intermediaries.md
+        - name: Verze služby
+          href: service-versioning.md
+        - name: Vyrovnávání zatížení
+          href: load-balancing.md
+        - name: Řízení spotřeby prostředků a zlepšení výkonu
+          href: controlling-resource-consumption-and-improving-performance.md
+        - name: Nasazení aplikací služby WCF technologií ClickOnce
+          href: deploying-wcf-applications-with-clickonce.md
+    - name: Správa a diagnostika
+      href: diagnostics/
+    - name: Požadavky na systém
+      href: wcf-system-requirements.md
+    - name: Prostředky operačního systému požadované službou WCF
+      href: operating-system-resources-required-by-wcf.md
+    - name: Odstraňování potíží s instalací
+      href: troubleshooting-setup-issues.md
+    - name: Migrace z .NET Remoting do WCF
+      href: migrating-from-net-remoting-to-wcf.md
+    - name: Používání vývojářských nástrojů WCF
+      href: using-the-wcf-development-tools.md
       items:
-      - name: Klienti WCF – přehled
-        href: wcf-client-overview.md
-      - name: Přístup ke službám pomocí klienta WCF
-        href: accessing-services-using-a-wcf-client.md
-        items:
-        - name: Přidání odkazu služby v přenosném dílčím projektu
-          href: add-service-reference-in-a-portable-subset-project.md
-        - name: Nastavení běhového chování klienta
-          href: specifying-client-run-time-behavior.md
-        - name: Konfigurace chování klientů
-          href: configuring-client-behaviors.md
-      - name: Zabezpečení klientů
-        href: securing-clients.md
-        items:
-        - name: 'Postupy: Určení hodnot přihlašovacích údajů klienta'
-          href: how-to-specify-client-credential-values.md
-    - name: Úvod do rozšíření
-      href: introduction-to-extensibility.md
-    - name: Řešení potíží s WCF – úvodní příručka
-      href: wcf-troubleshooting-quickstart.md
-    - name: Zpracování chyb WCF
-      href: wcf-error-handling.md
-    - name: WCF a ASP.NET Web API
-      href: wcf-and-aspnet-web-api.md
-  - name: Podrobnosti o funkcích WCF
-    href: feature-details/
-  - name: Rozšíření WCF
-    href: extending/
-  - name: Směrnice a doporučené postupy
-    href: guidelines-and-best-practices.md
-    items:
-    - name: 'Doporučené postupy: Správa verzí kontraktů dat'
-      href: best-practices-data-contract-versioning.md
-    - name: 'Doporučené postupy: Prostředníci'
-      href: best-practices-intermediaries.md
-    - name: Verze služby
-      href: service-versioning.md
-    - name: Vyrovnávání zatížení
-      href: load-balancing.md
-    - name: Řízení spotřeby prostředků a zlepšení výkonu
-      href: controlling-resource-consumption-and-improving-performance.md
-    - name: Nasazení aplikací služby WCF technologií ClickOnce
-      href: deploying-wcf-applications-with-clickonce.md
-  - name: Správa a diagnostika
-    href: diagnostics/
-  - name: Požadavky na systém
-    href: wcf-system-requirements.md
-  - name: Prostředky operačního systému požadované službou WCF
-    href: operating-system-resources-required-by-wcf.md
-  - name: Odstraňování potíží s instalací
-    href: troubleshooting-setup-issues.md
-  - name: Migrace z .NET Remoting do WCF
-    href: migrating-from-net-remoting-to-wcf.md
-  - name: Používání vývojářských nástrojů WCF
-    href: using-the-wcf-development-tools.md
-    items:
-    - name: Hostitel služby WCF (WcfSvcHost.exe)
-      href: wcf-service-host-wcfsvchost-exe.md
-    - name: WCF Test Client (WcfTestClient.exe)
-      href: wcf-test-client-wcftestclient-exe.md
-    - name: Šablony Visual Studia pro WCF
-      href: wcf-vs-templates.md
-    - name: Publikování služby WCF
-      href: wcf-service-publishing.md
-    - name: Přejmenování služby WCF
-      href: renaming-a-wcf-service.md
-    - name: Nasazení projektu knihovny WCF
-      href: deploying-a-wcf-library-project.md
-    - name: Ovládání automatického spouštění hostitele služeb WCF
-      href: controlling-auto-launching-of-wcf-service-host.md
-    - name: Generování tříd datových typů z XML
-      href: generating-data-type-classes-from-xml.md
-  - name: Nástroje služby Windows Communication Foundation
-    href: tools.md
-    items:
-    - name: Nástroj ServiceModel Metadata Utility (Svcutil.exe)
-      href: servicemodel-metadata-utility-tool-svcutil-exe.md
-    - name: Nástroj pro hledání soukromého klíče (FindPrivateKey.exe)
-      href: find-private-key-tool-findprivatekey-exe.md
-    - name: Nástroj ServiceModel Registration (ServiceModelReg.exe)
-      href: servicemodelreg-exe.md
-    - name: Prohlížeč trasování služeb (SvcTraceViewer.exe)
-      href: service-trace-viewer-tool-svctraceviewer-exe.md
-    - name: Nástroj Configuration Editor (SvcConfigEditor.exe)
-      href: configuration-editor-tool-svcconfigeditor-exe.md
-    - name: Nástroj COM+ Service Model Configuration (ComSvcConfig.exe)
-      href: com-service-model-configuration-tool-comsvcconfig-exe.md
-    - name: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
-      href: ws-atomictransaction-configuration-utility-wsatconfig-exe.md
+        - name: Hostitel služby WCF (WcfSvcHost.exe)
+          href: wcf-service-host-wcfsvchost-exe.md
+        - name: WCF Test Client (WcfTestClient.exe)
+          href: wcf-test-client-wcftestclient-exe.md
+        - name: Šablony Visual Studia pro WCF
+          href: wcf-vs-templates.md
+        - name: Publikování služby WCF
+          href: wcf-service-publishing.md
+        - name: Přejmenování služby WCF
+          href: renaming-a-wcf-service.md
+        - name: Nasazení projektu knihovny WCF
+          href: deploying-a-wcf-library-project.md
+        - name: Ovládání automatického spouštění hostitele služeb WCF
+          href: controlling-auto-launching-of-wcf-service-host.md
+        - name: Generování tříd datových typů z XML
+          href: generating-data-type-classes-from-xml.md
+    - name: Nástroje služby Windows Communication Foundation
+      href: tools.md
       items:
-      - name: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
-        href: interpreting-error-codes-returned-by-wsatconfig-exe.md
-    - name: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
-      href: ws-atomictransaction-configuration-mmc-snap-in.md
-    - name: Nástroj WorkFlow Service Registration (WFServicesReg.exe)
-      href: workflow-service-registration-tool-wfservicesreg-exe.md
-    - name: Nástroj Contract-First
-      href: contract-first-tool.md
-  - name: Ukázky Windows Communication Foundation
-    href: samples/
-  - name: Glosář Windows Communication Foundation
-    href: glossary.md
-  - name: Obecné referenční informace
-    href: general-reference.md
-  - name: Názory a komunita
-    href: feedback-and-community.md
-  - name: Informace o ochraně osobních údajů
-    href: privacy-information.md
-ms.openlocfilehash: 4bd93b468fb7f077fc070053745d8ac6b2abb810
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471509"
+        - name: Nástroj ServiceModel Metadata Utility (Svcutil.exe)
+          href: servicemodel-metadata-utility-tool-svcutil-exe.md
+        - name: Nástroj pro hledání soukromého klíče (FindPrivateKey.exe)
+          href: find-private-key-tool-findprivatekey-exe.md
+        - name: Nástroj ServiceModel Registration (ServiceModelReg.exe)
+          href: servicemodelreg-exe.md
+        - name: Prohlížeč trasování služeb (SvcTraceViewer.exe)
+          href: service-trace-viewer-tool-svctraceviewer-exe.md
+        - name: Nástroj Configuration Editor (SvcConfigEditor.exe)
+          href: configuration-editor-tool-svcconfigeditor-exe.md
+        - name: Nástroj COM+ Service Model Configuration (ComSvcConfig.exe)
+          href: com-service-model-configuration-tool-comsvcconfig-exe.md
+        - name: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
+          href: ws-atomictransaction-configuration-utility-wsatconfig-exe.md
+          items:
+            - name: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
+              href: interpreting-error-codes-returned-by-wsatconfig-exe.md
+        - name: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
+          href: ws-atomictransaction-configuration-mmc-snap-in.md
+        - name: Nástroj WorkFlow Service Registration (WFServicesReg.exe)
+          href: workflow-service-registration-tool-wfservicesreg-exe.md
+        - name: Nástroj Contract-First
+          href: contract-first-tool.md
+    - name: Ukázky Windows Communication Foundation
+      href: samples/
+    - name: Glosář Windows Communication Foundation
+      href: glossary.md
+    - name: Obecné referenční informace
+      href: general-reference.md
+    - name: Názory a komunita
+      href: feedback-and-community.md
+    - name: Informace o ochraně osobních údajů
+      href: privacy-information.md

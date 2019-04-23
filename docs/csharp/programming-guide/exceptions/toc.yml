@@ -1,24 +1,17 @@
-items:
 - name: Výjimky a jejich zpracování
   href: index.md
   items:
-  - name: Použití výjimek
-    href: using-exceptions.md
-  - name: Zpracování výjimek
-    href: exception-handling.md
-  - name: Vytváření a vyvolávání výjimek
-    href: creating-and-throwing-exceptions.md
-  - name: Výjimky generované kompilátorem
-    href: compiler-generated-exceptions.md
-  - name: 'Postupy: Zpracování výjimky pomocí příkazu try-catch'
-    href: how-to-handle-an-exception-using-try-catch.md
-  - name: 'Postupy: Spuštění kódu čištění pomocí příkazu finally'
-    href: how-to-execute-cleanup-code-using-finally.md
-  - name: 'Postupy: Zachycení výjimky nekompatibilní se specifikací CLS'
-    href: how-to-catch-a-non-cls-exception.md
-ms.openlocfilehash: 391605df4d623451a4a1c830a48322c7a14eef7c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471114"
+    - name: Použití výjimek
+      href: using-exceptions.md
+    - name: Zpracování výjimek
+      href: exception-handling.md
+    - name: Vytváření a vyvolávání výjimek
+      href: creating-and-throwing-exceptions.md
+    - name: Výjimky generované kompilátorem
+      href: compiler-generated-exceptions.md
+    - name: 'Postupy: Zpracování výjimky pomocí příkazu try-catch'
+      href: how-to-handle-an-exception-using-try-catch.md
+    - name: 'Postupy: Spuštění kódu čištění pomocí příkazu finally'
+      href: how-to-execute-cleanup-code-using-finally.md
+    - name: 'Postupy: Zachycení výjimky nekompatibilní se specifikací CLS'
+      href: how-to-catch-a-non-cls-exception.md

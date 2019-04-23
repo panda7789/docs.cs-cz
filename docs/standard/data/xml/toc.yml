@@ -1,288 +1,281 @@
-items:
 - name: Dokumenty a data XML
   href: index.md
   items:
-  - name: Možnosti zpracování XML
-    href: xml-processing-options.md
-  - name: Zpracování dat XML v paměti
-    href: processing-xml-data-in-memory.md
-    items:
-    - name: Zpracování dat XML pomocí modelu DOM
-      href: process-xml-data-using-the-dom-model.md
+    - name: Možnosti zpracování XML
+      href: xml-processing-options.md
+    - name: Zpracování dat XML v paměti
+      href: processing-xml-data-in-memory.md
       items:
-      - name: model DOM (Document Object Model) dokumentu XML
-        href: xml-document-object-model-dom.md
-      - name: Typy uzlů XML
-        href: types-of-xml-nodes.md
-      - name: Hierarchie modelu DOM (Document Object Model) dokumentu XML
-        href: xml-document-object-model-dom-hierarchy.md
-      - name: Mapování hierarchie objektů na data XML
-        href: mapping-the-object-hierarchy-to-xml-data.md
-      - name: Vytváření dokumentů XML
-        href: xml-document-creation.md
-      - name: Načtení dokumentu XML do modelu DOM
-        href: reading-an-xml-document-into-the-dom.md
-        items:
-        - name: Direktivy šablon stylů vložené v dokumentu
-          href: style-sheet-directives-embedded-in-a-document.md
-        - name: Načtení dat z čtečky
-          href: load-data-from-a-reader.md
-        - name: Zpracování mezer a významných mezer při načítání modelu DOM
-          href: white-space-and-significant-white-space-handling-when-loading-the-dom.md
-        - name: Přístup k atributům v modelu DOM
-          href: accessing-attributes-in-the-dom.md
-        - name: Načtení deklarací entit a odkazů na entity do modelu DOM
-          href: reading-entity-declarations-and-entity-references-into-the-dom.md
-        - name: Odkazy na entity jsou zachované
-          href: entity-references-are-preserved.md
-        - name: Odkazy na entity jsou rozšířené a nezachované
-          href: entity-references-are-expanded-and-not-preserved.md
-      - name: Vkládání uzlů do dokumentu XML
-        href: inserting-nodes-into-an-xml-document.md
-        items:
-        - name: Vytváření nových uzlů v modelu DOM
-          href: create-new-nodes-in-the-dom.md
+        - name: Zpracování dat XML pomocí modelu DOM
+          href: process-xml-data-using-the-dom-model.md
           items:
-          - name: Vytváření nových atributů pro elementy v modelu DOM
-            href: creating-new-attributes-for-elements-in-the-dom.md
-          - name: Ověření názvu atributu a elementu XML při vytváření nových uzlů
-            href: xml-element-and-attribute-name-verification-when-creating-new-nodes.md
-          - name: Vytváření nových odkazů na entity
-            href: creating-new-entity-references.md
-          - name: Vliv oboru názvů na rozšíření odkazu na entitu pro nové uzly, který obsahují elementy a atributy
-            href: namespace-affect-on-entity-ref-expansion-for-new-nodes.md
-        - name: Kopírování existujících uzlů
-          href: copy-existing-nodes.md
-        - name: Kopírování existujících uzlů z jednoho dokumentu do jiného
-          href: copying-existing-nodes-from-one-document-to-another.md
-        - name: Kopírování fragmentů dokumentu
-          href: copying-document-fragments.md
-      - name: Odebrání uzlů, obsahu a hodnot z dokumentu XML
-        href: removing-nodes-content-and-values-from-an-xml-document.md
-        items:
-        - name: Odebrání uzlů z modelu DOM
-          href: removing-nodes-from-the-dom.md
-        - name: Odebrání atributů z uzlu elementu v modelu DOM
-          href: removing-attributes-from-an-element-node-in-the-dom.md
-        - name: Odebrání obsahu uzlu v modelu DOM
-          href: removing-node-content-in-the-dom.md
-      - name: Úprava uzlů, obsahu a hodnot v dokumentu XML
-        href: modifying-nodes-content-and-values-in-an-xml-document.md
-      - name: Ověřování dokumentu XML v modelu DOM
-        href: validating-an-xml-document-in-the-dom.md
-      - name: Ukládání a zápis dokumentu
-        href: saving-and-writing-a-document.md
-      - name: Výběr uzlů pomocí navigace XPath
-        href: select-nodes-using-xpath-navigation.md
-      - name: Překlad externích prostředků
-        href: resolving-external-resources.md
-      - name: Porovnání objektů pomocí XmlNameTable
-        href: object-comparison-using-xmlnametable.md
-      - name: Kolekce uzlů v NamedNodeMaps a NodeLists
-        href: node-collections-in-namednodemaps-and-nodelists.md
-        items:
-        - name: Načtení uzlů bez stanoveného pořadí podle názvu nebo indexu
-          href: unordered-node-retrieval-by-name-or-index.md
-        - name: Načtení seřazených uzlů podle indexu
-          href: ordered-node-retrieval-by-index.md
-      - name: Dynamické aktualizace pro NodeLists a NamedNodeMaps
-        href: dynamic-updates-to-nodelists-and-namednodemaps.md
-      - name: Podpora oboru názvů v modelu DOM
-        href: namespace-support-in-the-dom.md
-        items:
-        - name: Obory názvů a specifikace DTD v modelu DOM
-          href: namespaces-and-dtds-in-the-dom.md
-        - name: Změna deklarací oboru názvů v dokumentu XML
-          href: changing-namespace-declarations-in-an-xml-document.md
-        - name: Změna vlastností předpony oboru názvů
-          href: changing-namespace-prefix-properties.md
-      - name: Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
-        href: event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md
-      - name: Rozšíření modelu DOM
-        href: extending-the-dom.md
-    - name: Zpracování dat XML pomocí modelu dat XPath
-      href: process-xml-data-using-the-xpath-data-model.md
+            - name: model DOM (Document Object Model) dokumentu XML
+              href: xml-document-object-model-dom.md
+            - name: Typy uzlů XML
+              href: types-of-xml-nodes.md
+            - name: Hierarchie modelu DOM (Document Object Model) dokumentu XML
+              href: xml-document-object-model-dom-hierarchy.md
+            - name: Mapování hierarchie objektů na data XML
+              href: mapping-the-object-hierarchy-to-xml-data.md
+            - name: Vytváření dokumentů XML
+              href: xml-document-creation.md
+            - name: Načtení dokumentu XML do modelu DOM
+              href: reading-an-xml-document-into-the-dom.md
+              items:
+                - name: Direktivy šablon stylů vložené v dokumentu
+                  href: style-sheet-directives-embedded-in-a-document.md
+                - name: Načtení dat z čtečky
+                  href: load-data-from-a-reader.md
+                - name: Zpracování mezer a významných mezer při načítání modelu DOM
+                  href: white-space-and-significant-white-space-handling-when-loading-the-dom.md
+                - name: Přístup k atributům v modelu DOM
+                  href: accessing-attributes-in-the-dom.md
+                - name: Načtení deklarací entit a odkazů na entity do modelu DOM
+                  href: reading-entity-declarations-and-entity-references-into-the-dom.md
+                - name: Odkazy na entity jsou zachované
+                  href: entity-references-are-preserved.md
+                - name: Odkazy na entity jsou rozšířené a nezachované
+                  href: entity-references-are-expanded-and-not-preserved.md
+            - name: Vkládání uzlů do dokumentu XML
+              href: inserting-nodes-into-an-xml-document.md
+              items:
+                - name: Vytváření nových uzlů v modelu DOM
+                  href: create-new-nodes-in-the-dom.md
+                  items:
+                    - name: Vytváření nových atributů pro elementy v modelu DOM
+                      href: creating-new-attributes-for-elements-in-the-dom.md
+                    - name: Ověření názvu atributu a elementu XML při vytváření nových uzlů
+                      href: xml-element-and-attribute-name-verification-when-creating-new-nodes.md
+                    - name: Vytváření nových odkazů na entity
+                      href: creating-new-entity-references.md
+                    - name: 'Vliv oboru názvů na rozšíření odkazu na entitu pro nové uzly, který obsahují elementy a atributy'
+                      href: namespace-affect-on-entity-ref-expansion-for-new-nodes.md
+                - name: Kopírování existujících uzlů
+                  href: copy-existing-nodes.md
+                - name: Kopírování existujících uzlů z jednoho dokumentu do jiného
+                  href: copying-existing-nodes-from-one-document-to-another.md
+                - name: Kopírování fragmentů dokumentu
+                  href: copying-document-fragments.md
+            - name: 'Odebrání uzlů, obsahu a hodnot z dokumentu XML'
+              href: removing-nodes-content-and-values-from-an-xml-document.md
+              items:
+                - name: Odebrání uzlů z modelu DOM
+                  href: removing-nodes-from-the-dom.md
+                - name: Odebrání atributů z uzlu elementu v modelu DOM
+                  href: removing-attributes-from-an-element-node-in-the-dom.md
+                - name: Odebrání obsahu uzlu v modelu DOM
+                  href: removing-node-content-in-the-dom.md
+            - name: 'Úprava uzlů, obsahu a hodnot v dokumentu XML'
+              href: modifying-nodes-content-and-values-in-an-xml-document.md
+            - name: Ověřování dokumentu XML v modelu DOM
+              href: validating-an-xml-document-in-the-dom.md
+            - name: Ukládání a zápis dokumentu
+              href: saving-and-writing-a-document.md
+            - name: Výběr uzlů pomocí navigace XPath
+              href: select-nodes-using-xpath-navigation.md
+            - name: Překlad externích prostředků
+              href: resolving-external-resources.md
+            - name: Porovnání objektů pomocí XmlNameTable
+              href: object-comparison-using-xmlnametable.md
+            - name: Kolekce uzlů v NamedNodeMaps a NodeLists
+              href: node-collections-in-namednodemaps-and-nodelists.md
+              items:
+                - name: Načtení uzlů bez stanoveného pořadí podle názvu nebo indexu
+                  href: unordered-node-retrieval-by-name-or-index.md
+                - name: Načtení seřazených uzlů podle indexu
+                  href: ordered-node-retrieval-by-index.md
+            - name: Dynamické aktualizace pro NodeLists a NamedNodeMaps
+              href: dynamic-updates-to-nodelists-and-namednodemaps.md
+            - name: Podpora oboru názvů v modelu DOM
+              href: namespace-support-in-the-dom.md
+              items:
+                - name: Obory názvů a specifikace DTD v modelu DOM
+                  href: namespaces-and-dtds-in-the-dom.md
+                - name: Změna deklarací oboru názvů v dokumentu XML
+                  href: changing-namespace-declarations-in-an-xml-document.md
+                - name: Změna vlastností předpony oboru názvů
+                  href: changing-namespace-prefix-properties.md
+            - name: Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
+              href: event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md
+            - name: Rozšíření modelu DOM
+              href: extending-the-dom.md
+        - name: Zpracování dat XML pomocí modelu dat XPath
+          href: process-xml-data-using-the-xpath-data-model.md
+          items:
+            - name: Načítání dat XML pomocí XPathDocument a XmlDocument
+              href: reading-xml-data-using-xpathdocument-and-xmldocument.md
+            - name: 'Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator'
+              href: selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md
+              items:
+                - name: Výběr dat XML pomocí XPathNavigator
+                  href: select-xml-data-using-xpathnavigator.md
+                - name: Vyhodnocení výrazů XPath pomocí XPathNavigator
+                  href: evaluate-xpath-expressions-using-xpathnavigator.md
+                - name: Párování uzlů pomocí XPathNavigator
+                  href: matching-nodes-using-xpathnavigator.md
+                - name: Rozpoznané typy uzlů s dotazy XPath
+                  href: node-types-recognized-with-xpath-queries.md
+                - name: Dotazy a obory názvů XPath
+                  href: xpath-queries-and-namespaces.md
+                - name: Zkompilované výrazy XPath
+                  href: compiled-xpath-expressions.md
+                - name: Navigace oboru názvů XPath
+                  href: xpath-namespace-navigation.md
+            - name: Přístup k datům XML pomocí XPathNavigator
+              href: accessing-xml-data-using-xpathnavigator.md
+              items:
+                - name: Navigace v sadě uzlů pomocí XPathNavigator
+                  href: node-set-navigation-using-xpathnavigator.md
+                - name: Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator
+                  href: attribute-and-namespace-node-navigation-using-xpathnavigator.md
+                - name: Extrahování dat XML pomocí XPathNavigator
+                  href: extract-xml-data-using-xpathnavigator.md
+                - name: Přístup k datům XML silného typu pomocí XPathNavigator
+                  href: accessing-strongly-typed-xml-data-using-xpathnavigator.md
+                - name: Uživatelem definované funkce a proměnné
+                  href: user-defined-functions-and-variables.md
+            - name: Úpravy dat XML pomocí XPathNavigator
+              href: editing-xml-data-using-xpathnavigator.md
+              items:
+                - name: Vložení dat XML pomocí XPathNavigator
+                  href: insert-xml-data-using-xpathnavigator.md
+                - name: Změna dat XML pomocí XPathNavigator
+                  href: modify-xml-data-using-xpathnavigator.md
+                - name: Odebrání dat XML pomocí XPathNavigator
+                  href: remove-xml-data-using-xpathnavigator.md
+            - name: Ověření schématu pomocí XPathNavigator
+              href: schema-validation-using-xpathnavigator.md
+        - name: Zpracování dat XML pomocí LINQ to XML
+          href: process-xml-data-using-linq-to-xml.md
+    - name: Transformace XSLT
+      href: xslt-transformations.md
       items:
-      - name: Načítání dat XML pomocí XPathDocument a XmlDocument
-        href: reading-xml-data-using-xpathdocument-and-xmldocument.md
-      - name: Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator
-        href: selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md
-        items:
-        - name: Výběr dat XML pomocí XPathNavigator
-          href: select-xml-data-using-xpathnavigator.md
-        - name: Vyhodnocení výrazů XPath pomocí XPathNavigator
-          href: evaluate-xpath-expressions-using-xpathnavigator.md
-        - name: Párování uzlů pomocí XPathNavigator
-          href: matching-nodes-using-xpathnavigator.md
-        - name: Rozpoznané typy uzlů s dotazy XPath
-          href: node-types-recognized-with-xpath-queries.md
-        - name: Dotazy a obory názvů XPath
-          href: xpath-queries-and-namespaces.md
-        - name: Zkompilované výrazy XPath
-          href: compiled-xpath-expressions.md
-        - name: Navigace oboru názvů XPath
-          href: xpath-namespace-navigation.md
-      - name: Přístup k datům XML pomocí XPathNavigator
-        href: accessing-xml-data-using-xpathnavigator.md
-        items:
-        - name: Navigace v sadě uzlů pomocí XPathNavigator
-          href: node-set-navigation-using-xpathnavigator.md
-        - name: Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator
-          href: attribute-and-namespace-node-navigation-using-xpathnavigator.md
-        - name: Extrahování dat XML pomocí XPathNavigator
-          href: extract-xml-data-using-xpathnavigator.md
-        - name: Přístup k datům XML silného typu pomocí XPathNavigator
-          href: accessing-strongly-typed-xml-data-using-xpathnavigator.md
-        - name: Uživatelem definované funkce a proměnné
-          href: user-defined-functions-and-variables.md
-      - name: Úpravy dat XML pomocí XPathNavigator
-        href: editing-xml-data-using-xpathnavigator.md
-        items:
-        - name: Vložení dat XML pomocí XPathNavigator
-          href: insert-xml-data-using-xpathnavigator.md
-        - name: Změna dat XML pomocí XPathNavigator
-          href: modify-xml-data-using-xpathnavigator.md
-        - name: Odebrání dat XML pomocí XPathNavigator
-          href: remove-xml-data-using-xpathnavigator.md
-      - name: Ověření schématu pomocí XPathNavigator
-        href: schema-validation-using-xpathnavigator.md
-    - name: Zpracování dat XML pomocí LINQ to XML
-      href: process-xml-data-using-linq-to-xml.md
-  - name: Transformace XSLT
-    href: xslt-transformations.md
-    items:
-    - name: Používání třídy XslCompiledTransform
-      href: using-the-xslcompiledtransform-class.md
+        - name: Používání třídy XslCompiledTransform
+          href: using-the-xslcompiledtransform-class.md
+          items:
+            - name: Vstupy do třídy XslCompiledTransform
+              href: inputs-to-the-xslcompiledtransform-class.md
+            - name: Možnosti výstupu na třídě XslCompiledTransform
+              href: output-options-on-the-xslcompiledtransform-class.md
+            - name: Překlad externích prostředků během zpracování XSLT
+              href: resolving-external-resources-during-xslt-processing.md
+            - name: Rozšíření šablon stylů XSLT
+              href: extending-xslt-style-sheets.md
+              items:
+                - name: Objekty rozšíření XSLT
+                  href: xslt-extension-objects.md
+                - name: Parametry XSLT
+                  href: xslt-parameters.md
+                - name: 'Bloky skriptu používající element msxsl:script'
+                  href: script-blocks-using-msxsl-script.md
+            - name: Chyby XSLT s možností zotavení
+              href: recoverable-xslt-errors.md
+            - name: 'Postupy: Transformace fragmentu uzlu'
+              href: how-to-transform-a-node-fragment.md
+        - name: Migrace z třídy XslTransform
+          href: migrating-from-the-xsltransform-class.md
+          items:
+            - name: 'Postupy: Migrace kódu XslTransform'
+              href: how-to-migrate-your-xsltransform-code.md
+        - name: Aspekty zabezpečení XSLT
+          href: xslt-security-considerations.md
+        - name: Kompilátor XSLT (xsltc.exe)
+          href: xslt-compiler-xsltc-exe.md
+          items:
+            - name: 'Postupy: Provedení transformace XSLT pomocí sestavení'
+              href: how-to-perform-an-xslt-transformation-by-using-an-assembly.md
+        - name: Transformace XSLT s třídou XslTransform
+          href: xslt-transformations-with-the-xsltransform-class.md
+          items:
+            - name: Implementace volitelného chování ve třídě XslTransform
+              href: implementation-of-discretionary-behaviors-in-the-xsltransform-class.md
+            - name: Třída XslTransform implementuje procesor XSLT
+              href: xsltransform-class-implements-the-xslt-processor.md
+              items:
+                - name: Výstupy z XslTransform
+                  href: outputs-from-an-xsltransform.md
+                - name: Transformace XSLT v různých úložištích
+                  href: xslt-transformations-over-different-stores.md
+                - name: Překlad externích šablon stylů a dokumentů XSLT
+                  href: resolving-external-xslt-style-sheets-and-documents.md
+                - name: XsltArgumentList pro parametry šablon stylů a objektů rozšíření
+                  href: xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md
+                - name: 'Skriptování šablon stylů XSLT pomocí <msxsl:script >'
+                  href: xslt-stylesheet-scripting-using-msxsl-script.md
+                - name: 'Podpora pro funkci msxsl:node-set()'
+                  href: support-for-the-msxsl-node-set-function.md
+                - name: Sady uzlů v transformacích
+                  href: node-sets-in-transformations.md
+                - name: Fragment stromu výsledků v transformacích
+                  href: result-tree-fragment-in-transformations.md
+            - name: XPathNavigator v transformacích
+              href: xpathnavigator-in-transformations.md
+            - name: XPathNodeIterator v transformacích
+              href: xpathnodeiterator-in-transformations.md
+            - name: Vstup XPathDocument do XslTransform
+              href: xpathdocument-input-to-xsltransform.md
+            - name: Vstup XmlDataDocument do XslTransform
+              href: xmldatadocument-input-to-xsltransform.md
+            - name: Vstup XmlDocument do XslTransform
+              href: xmldocument-input-to-xsltransform.md
+    - name: Práce se schématy XML
+      href: working-with-xml-schemas.md
       items:
-      - name: Vstupy do třídy XslCompiledTransform
-        href: inputs-to-the-xslcompiledtransform-class.md
-      - name: Možnosti výstupu na třídě XslCompiledTransform
-        href: output-options-on-the-xslcompiledtransform-class.md
-      - name: Překlad externích prostředků během zpracování XSLT
-        href: resolving-external-resources-during-xslt-processing.md
-      - name: Rozšíření šablon stylů XSLT
-        href: extending-xslt-style-sheets.md
-        items:
-        - name: Objekty rozšíření XSLT
-          href: xslt-extension-objects.md
-        - name: Parametry XSLT
-          href: xslt-parameters.md
-        - name: Bloky skriptu používající element msxsl:script
-          href: script-blocks-using-msxsl-script.md
-      - name: Chyby XSLT s možností zotavení
-        href: recoverable-xslt-errors.md
-      - name: 'Postupy: Transformace fragmentu uzlu'
-        href: how-to-transform-a-node-fragment.md
-    - name: Migrace z třídy XslTransform
-      href: migrating-from-the-xsltransform-class.md
+        - name: Model objektu schématu (SOM) XML
+          href: xml-schema-object-model-som.md
+          items:
+            - name: Přehled Modelu objektu schématu XML
+              href: xml-schema-object-model-overview.md
+            - name: Čtení ze schémat XML a zápis do nich
+              href: reading-and-writing-xml-schemas.md
+            - name: Sestavování schémat XML
+              href: building-xml-schemas.md
+            - name: Procházení schémat XML
+              href: traversing-xml-schemas.md
+            - name: Úpravy schémat XML
+              href: editing-xml-schemas.md
+            - name: Zahrnutí nebo import schémat XML
+              href: including-or-importing-xml-schemas.md
+        - name: XmlSchemaSet pro kompilaci schématu
+          href: xmlschemaset-for-schema-compilation.md
+          items:
+            - name: Informační sada po kompilaci schématu
+              href: post-schema-compilation-infoset.md
+            - name: Ověření schématu XML (XSD) s třídou XmlSchemaSet
+              href: xml-schema-xsd-validation-with-xmlschemaset.md
+            - name: Kompilace schématu XmlSchemaCollection
+              href: xmlschemacollection-schema-compilation.md
+              items:
+                - name: Ověření XDR s třídou XmlSchemaCollection
+                  href: xdr-validation-with-xmlschemacollection.md
+                - name: Ověření schématu XML (XSD) s třídou XmlSchemaCollection
+                  href: xml-schema-xsd-validation-with-xmlschemacollection.md
+        - name: Přímé ověření XmlSchemaValidator
+          href: xmlschemavalidator-push-based-validation.md
+        - name: Odvození schématu XML
+          href: inferring-an-xml-schema.md
+          items:
+            - name: Odvození schémat z dokumentů XML
+              href: inferring-schemas-from-xml-documents.md
+            - name: Pravidla pro odvození typů a struktury uzlů schémat
+              href: rules-for-inferring-schema-node-types-and-structure.md
+            - name: Pravidla pro odvození jednoduchých typů
+              href: rules-for-inferring-simple-types.md
+    - name: Integrace XML s relačními daty a ADO.NET
+      href: xml-integration-with-relational-data-and-adonet.md
+    - name: Správa oborů názvů v dokumentu XML
+      href: managing-namespaces-in-an-xml-document.md
+    - name: Podpora typu v třídách System.Xml
+      href: type-support-in-the-system-xml-classes.md
       items:
-      - name: 'Postupy: Migrace kódu XslTransform'
-        href: how-to-migrate-your-xsltransform-code.md
-    - name: Aspekty zabezpečení XSLT
-      href: xslt-security-considerations.md
-    - name: Kompilátor XSLT (xsltc.exe)
-      href: xslt-compiler-xsltc-exe.md
-      items:
-      - name: 'Postupy: Provedení transformace XSLT pomocí sestavení'
-        href: how-to-perform-an-xslt-transformation-by-using-an-assembly.md
-    - name: Transformace XSLT s třídou XslTransform
-      href: xslt-transformations-with-the-xsltransform-class.md
-      items:
-      - name: Implementace volitelného chování ve třídě XslTransform
-        href: implementation-of-discretionary-behaviors-in-the-xsltransform-class.md
-      - name: Třída XslTransform implementuje procesor XSLT
-        href: xsltransform-class-implements-the-xslt-processor.md
-        items:
-        - name: Výstupy z XslTransform
-          href: outputs-from-an-xsltransform.md
-        - name: Transformace XSLT v různých úložištích
-          href: xslt-transformations-over-different-stores.md
-        - name: Překlad externích šablon stylů a dokumentů XSLT
-          href: resolving-external-xslt-style-sheets-and-documents.md
-        - name: XsltArgumentList pro parametry šablon stylů a objektů rozšíření
-          href: xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md
-        - name: Skriptování šablon stylů XSLT pomocí <msxsl:script >
-          href: xslt-stylesheet-scripting-using-msxsl-script.md
-        - name: Podpora pro funkci msxsl:node-set()
-          href: support-for-the-msxsl-node-set-function.md
-        - name: Sady uzlů v transformacích
-          href: node-sets-in-transformations.md
-        - name: Fragment stromu výsledků v transformacích
-          href: result-tree-fragment-in-transformations.md
-      - name: XPathNavigator v transformacích
-        href: xpathnavigator-in-transformations.md
-      - name: XPathNodeIterator v transformacích
-        href: xpathnodeiterator-in-transformations.md
-      - name: Vstup XPathDocument do XslTransform
-        href: xpathdocument-input-to-xsltransform.md
-      - name: Vstup XmlDataDocument do XslTransform
-        href: xmldatadocument-input-to-xsltransform.md
-      - name: Vstup XmlDocument do XslTransform
-        href: xmldocument-input-to-xsltransform.md
-  - name: Práce se schématy XML
-    href: working-with-xml-schemas.md
-    items:
-    - name: Model objektu schématu (SOM) XML
-      href: xml-schema-object-model-som.md
-      items:
-      - name: Přehled Modelu objektu schématu XML
-        href: xml-schema-object-model-overview.md
-      - name: Čtení ze schémat XML a zápis do nich
-        href: reading-and-writing-xml-schemas.md
-      - name: Sestavování schémat XML
-        href: building-xml-schemas.md
-      - name: Procházení schémat XML
-        href: traversing-xml-schemas.md
-      - name: Úpravy schémat XML
-        href: editing-xml-schemas.md
-      - name: Zahrnutí nebo import schémat XML
-        href: including-or-importing-xml-schemas.md
-    - name: XmlSchemaSet pro kompilaci schématu
-      href: xmlschemaset-for-schema-compilation.md
-      items:
-      - name: Informační sada po kompilaci schématu
-        href: post-schema-compilation-infoset.md
-      - name: Ověření schématu XML (XSD) s třídou XmlSchemaSet
-        href: xml-schema-xsd-validation-with-xmlschemaset.md
-      - name: Kompilace schématu XmlSchemaCollection
-        href: xmlschemacollection-schema-compilation.md
-        items:
-        - name: Ověření XDR s třídou XmlSchemaCollection
-          href: xdr-validation-with-xmlschemacollection.md
-        - name: Ověření schématu XML (XSD) s třídou XmlSchemaCollection
-          href: xml-schema-xsd-validation-with-xmlschemacollection.md
-    - name: Přímé ověření XmlSchemaValidator
-      href: xmlschemavalidator-push-based-validation.md
-    - name: Odvození schématu XML
-      href: inferring-an-xml-schema.md
-      items:
-      - name: Odvození schémat z dokumentů XML
-        href: inferring-schemas-from-xml-documents.md
-      - name: Pravidla pro odvození typů a struktury uzlů schémat
-        href: rules-for-inferring-schema-node-types-and-structure.md
-      - name: Pravidla pro odvození jednoduchých typů
-        href: rules-for-inferring-simple-types.md
-  - name: Integrace XML s relačními daty a ADO.NET
-    href: xml-integration-with-relational-data-and-adonet.md
-  - name: Správa oborů názvů v dokumentu XML
-    href: managing-namespaces-in-an-xml-document.md
-  - name: Podpora typu v třídách System.Xml
-    href: type-support-in-the-system-xml-classes.md
-    items:
-    - name: Mapování datových typů XML na typy CLR
-      href: mapping-xml-data-types-to-clr-types.md
-    - name: Poznámky k implementaci podpory typů XML
-      href: xml-type-support-implementation-notes.md
-    - name: Převod datových typů XML
-      href: conversion-of-xml-data-types.md
-      items:
-      - name: Převádění řetězců na datové typy rozhraní .NET Framework
-        href: converting-strings-to-dotnet-data-types.md
-      - name: Převádění typů rozhraní .NET Framework na řetězce
-        href: converting-dotnet-types-to-strings.md
-ms.openlocfilehash: da588944eecde3fd6e05e765797648c3c48ff46d
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471529"
+        - name: Mapování datových typů XML na typy CLR
+          href: mapping-xml-data-types-to-clr-types.md
+        - name: Poznámky k implementaci podpory typů XML
+          href: xml-type-support-implementation-notes.md
+        - name: Převod datových typů XML
+          href: conversion-of-xml-data-types.md
+          items:
+            - name: Převádění řetězců na datové typy rozhraní .NET Framework
+              href: converting-strings-to-dotnet-data-types.md
+            - name: Převádění typů rozhraní .NET Framework na řetězce
+              href: converting-dotnet-types-to-strings.md

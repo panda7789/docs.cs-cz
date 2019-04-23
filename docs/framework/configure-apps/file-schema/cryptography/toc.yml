@@ -1,26 +1,19 @@
-items:
 - name: Schéma nastavení šifrování
   href: index.md
   items:
-  - name: Element <cryptoClasses>
-    href: cryptoclasses-element.md
-  - name: Element <cryptoClass>
-    href: cryptoclass-element.md
-  - name: Element <cryptographySettings>
-    href: cryptographysettings-element.md
-  - name: Element <cryptoNameMapping>
-    href: cryptonamemapping-element.md
-  - name: <mscorlib> – element pro nastavení šifrování
-    href: mscorlib-element-for-cryptography-settings.md
-  - name: Element <nameEntry>
-    href: nameentry-element.md
-  - name: Element <oidEntry>
-    href: oidentry-element.md
-  - name: Element <oidMap>
-    href: oidmap-element.md
-ms.openlocfilehash: 71237984ce59000cbef102480f7610f5a7b1bc43
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471551"
+    - name: Element <cryptoClasses>
+      href: cryptoclasses-element.md
+    - name: Element <cryptoClass>
+      href: cryptoclass-element.md
+    - name: Element <cryptographySettings>
+      href: cryptographysettings-element.md
+    - name: Element <cryptoNameMapping>
+      href: cryptonamemapping-element.md
+    - name: <mscorlib> – element pro nastavení šifrování
+      href: mscorlib-element-for-cryptography-settings.md
+    - name: Element <nameEntry>
+      href: nameentry-element.md
+    - name: Element <oidEntry>
+      href: oidentry-element.md
+    - name: Element <oidMap>
+      href: oidmap-element.md

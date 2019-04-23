@@ -1,235 +1,228 @@
-items:
 - name: Síťové programování v rozhraní .NET Framework
   href: index.md
   items:
-  - name: 'Témata s postupy: Programování vizuální vrstvy'
-    href: network-programming-how-to-topics.md
-  - name: Úvod k připojitelným protokolům
-    href: introducing-pluggable-protocols.md
-  - name: Žádosti o data
-    href: requesting-data.md
-    items:
-    - name: Vytváření internetových žádostí
-      href: creating-internet-requests.md
-    - name: 'Postupy: Vyžádání webové stránky a načtení výsledků jako streamu'
-      href: how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md
-    - name: 'Postupy: Vyžádání dat pomocí třídy WebRequest'
-      href: how-to-request-data-using-the-webrequest-class.md
-    - name: 'Postupy: Odeslání dat pomocí třídy WebRequest'
-      href: how-to-send-data-using-the-webrequest-class.md
-    - name: 'Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest'
-      href: how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md
-    - name: Použití streamů v síti
-      href: using-streams-on-the-network.md
-    - name: Vytváření asynchronních žádostí
-      href: making-asynchronous-requests.md
-    - name: Zpracování chyb
-      href: handling-errors.md
-  - name: Programování připojitelných protokolů
-    href: programming-pluggable-protocols.md
-    items:
-    - name: 'Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest'
-      href: how-to-register-a-custom-protocol-using-webrequest.md
-    - name: 'Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol'
-      href: how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md
-    - name: Odvození ze žádosti WebRequest
-      href: deriving-from-webrequest.md
-    - name: Odvození z odpovědi WebResponse
-      href: deriving-from-webresponse.md
-  - name: Použití aplikačních protokolů
-    href: using-application-protocols.md
-    items:
-    - name: HTTP
-      href: http.md
+    - name: 'Témata s postupy: Programování vizuální vrstvy'
+      href: network-programming-how-to-topics.md
+    - name: Úvod k připojitelným protokolům
+      href: introducing-pluggable-protocols.md
+    - name: Žádosti o data
+      href: requesting-data.md
       items:
-      - name: HttpListener
-        href: httplistener.md
-    - name: 'Postupy: Přístup k vlastnostem specifickým pro HTTP'
-      href: how-to-access-http-specific-properties.md
-    - name: Správa připojení
-      href: managing-connections.md
+        - name: Vytváření internetových žádostí
+          href: creating-internet-requests.md
+        - name: 'Postupy: Vyžádání webové stránky a načtení výsledků jako streamu'
+          href: how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md
+        - name: 'Postupy: Vyžádání dat pomocí třídy WebRequest'
+          href: how-to-request-data-using-the-webrequest-class.md
+        - name: 'Postupy: Odeslání dat pomocí třídy WebRequest'
+          href: how-to-send-data-using-the-webrequest-class.md
+        - name: 'Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest'
+          href: how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md
+        - name: Použití streamů v síti
+          href: using-streams-on-the-network.md
+        - name: Vytváření asynchronních žádostí
+          href: making-asynchronous-requests.md
+        - name: Zpracování chyb
+          href: handling-errors.md
+    - name: Programování připojitelných protokolů
+      href: programming-pluggable-protocols.md
       items:
-      - name: Seskupení připojení
-        href: connection-grouping.md
-      - name: 'Postupy: Přiřazení uživatelských informací pro seskupení připojení'
-        href: how-to-assign-user-information-to-group-connections.md
-    - name: TCP-UDP
-      href: tcp-udp.md
+        - name: 'Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest'
+          href: how-to-register-a-custom-protocol-using-webrequest.md
+        - name: 'Postupy: Zadání žádosti WebRequest pro přístup k vlastnostem specifickým pro protokol'
+          href: how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md
+        - name: Odvození ze žádosti WebRequest
+          href: deriving-from-webrequest.md
+        - name: Odvození z odpovědi WebResponse
+          href: deriving-from-webresponse.md
+    - name: Použití aplikačních protokolů
+      href: using-application-protocols.md
       items:
-      - name: Použití služeb TCP
-        href: using-tcp-services.md
-      - name: Použití služeb UDP
-        href: using-udp-services.md
-    - name: Sokety
-      href: sockets.md
+        - name: HTTP
+          href: http.md
+          items:
+            - name: HttpListener
+              href: httplistener.md
+        - name: 'Postupy: Přístup k vlastnostem specifickým pro HTTP'
+          href: how-to-access-http-specific-properties.md
+        - name: Správa připojení
+          href: managing-connections.md
+          items:
+            - name: Seskupení připojení
+              href: connection-grouping.md
+            - name: 'Postupy: Přiřazení uživatelských informací pro seskupení připojení'
+              href: how-to-assign-user-information-to-group-connections.md
+        - name: TCP-UDP
+          href: tcp-udp.md
+          items:
+            - name: Použití služeb TCP
+              href: using-tcp-services.md
+            - name: Použití služeb UDP
+              href: using-udp-services.md
+        - name: Sokety
+          href: sockets.md
+          items:
+            - name: 'Postupy: Vytvoření soketu'
+              href: how-to-create-a-socket.md
+            - name: Použití klientských soketů
+              href: using-client-sockets.md
+              items:
+                - name: Použití synchronního klientského soketu
+                  href: using-a-synchronous-client-socket.md
+                - name: Použití asynchronního klientského soketu
+                  href: using-an-asynchronous-client-socket.md
+            - name: Naslouchání pomocí soketů
+              href: listening-with-sockets.md
+              items:
+                - name: Použití synchronního serverového soketu
+                  href: using-a-synchronous-server-socket.md
+                - name: Použití asynchronního serverového soketu
+                  href: using-an-asynchronous-server-socket.md
+            - name: Příklady kódu soketu
+              href: socket-code-examples.md
+              items:
+                - name: Příklad synchronního klientského soketu
+                  href: synchronous-client-socket-example.md
+                - name: Příklad synchronního serverového soketu
+                  href: synchronous-server-socket-example.md
+                - name: Příklad asynchronního klientského soketu
+                  href: asynchronous-client-socket-example.md
+                - name: Příklad asynchronního serverového soketu
+                  href: asynchronous-server-socket-example.md
+        - name: FTP
+          href: ftp.md
+          items:
+            - name: 'Postupy: Stahování souborů přes FTP'
+              href: how-to-download-files-with-ftp.md
+            - name: 'Postupy: Nahrávání souborů přes FTP'
+              href: how-to-upload-files-with-ftp.md
+            - name: 'Postupy: Výpis obsahu adresářů přes FTP'
+              href: how-to-list-directory-contents-with-ftp.md
+        - name: Principy problémů a výjimek WebRequest
+          href: understanding-webrequest-problems-and-exceptions.md
+    - name: Protokol IP (Internet Protocol) verze 6
+      href: internet-protocol-version-6.md
       items:
-      - name: 'Postupy: Vytvoření soketu'
-        href: how-to-create-a-socket.md
-      - name: Použití klientských soketů
-        href: using-client-sockets.md
-        items:
-        - name: Použití synchronního klientského soketu
-          href: using-a-synchronous-client-socket.md
-        - name: Použití asynchronního klientského soketu
-          href: using-an-asynchronous-client-socket.md
-      - name: Naslouchání pomocí soketů
-        href: listening-with-sockets.md
-        items:
-        - name: Použití synchronního serverového soketu
-          href: using-a-synchronous-server-socket.md
-        - name: Použití asynchronního serverového soketu
-          href: using-an-asynchronous-server-socket.md
-      - name: Příklady kódu soketu
-        href: socket-code-examples.md
-        items:
-        - name: Příklad synchronního klientského soketu
-          href: synchronous-client-socket-example.md
-        - name: Příklad synchronního serverového soketu
-          href: synchronous-server-socket-example.md
-        - name: Příklad asynchronního klientského soketu
-          href: asynchronous-client-socket-example.md
-        - name: Příklad asynchronního serverového soketu
-          href: asynchronous-server-socket-example.md
-    - name: FTP
-      href: ftp.md
+        - name: Adresování IPv6
+          href: ipv6-addressing.md
+        - name: Směrování IPv6
+          href: ipv6-routing.md
+        - name: Automatická konfigurace protokolu IPv6
+          href: ipv6-auto-configuration.md
+        - name: Povolení a zákaz IPv6
+          href: enabling-and-disabling-ipv6.md
+        - name: 'Postupy: Úpravy konfiguračního souboru počítače na povolení podpory IPv6'
+          href: how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md
+    - name: Konfigurace internetových aplikací
+      href: configuring-internet-applications.md
+    - name: Trasování sítě v rozhraní .NET Framework
+      href: network-tracing.md
       items:
-      - name: 'Postupy: Stahování souborů přes FTP'
-        href: how-to-download-files-with-ftp.md
-      - name: 'Postupy: Nahrávání souborů přes FTP'
-        href: how-to-upload-files-with-ftp.md
-      - name: 'Postupy: Výpis obsahu adresářů přes FTP'
-        href: how-to-list-directory-contents-with-ftp.md
-    - name: Principy problémů a výjimek WebRequest
-      href: understanding-webrequest-problems-and-exceptions.md
-  - name: Protokol IP (Internet Protocol) verze 6
-    href: internet-protocol-version-6.md
-    items:
-    - name: Adresování IPv6
-      href: ipv6-addressing.md
-    - name: Směrování IPv6
-      href: ipv6-routing.md
-    - name: Automatická konfigurace protokolu IPv6
-      href: ipv6-auto-configuration.md
-    - name: Povolení a zákaz IPv6
-      href: enabling-and-disabling-ipv6.md
-    - name: 'Postupy: Úpravy konfiguračního souboru počítače na povolení podpory IPv6'
-      href: how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md
-  - name: Konfigurace internetových aplikací
-    href: configuring-internet-applications.md
-  - name: Trasování sítě v rozhraní .NET Framework
-    href: network-tracing.md
-    items:
-    - name: Interpretace trasování sítě
-      href: interpreting-network-tracing.md
-    - name: Povolení trasování sítě
-      href: enabling-network-tracing.md
-    - name: 'Postupy: Konfigurace trasování sítě'
-      href: how-to-configure-network-tracing.md
-  - name: Správa mezipaměti pro síťové aplikace
-    href: cache-management-for-network-applications.md
-    items:
-    - name: Zásady mezipaměti
-      href: cache-policy.md
-    - name: Zásady mezipaměti na základě umístění
-      href: location-based-cache-policies.md
-    - name: Zásady mezipaměti na základě času
-      href: time-based-cache-policies.md
+        - name: Interpretace trasování sítě
+          href: interpreting-network-tracing.md
+        - name: Povolení trasování sítě
+          href: enabling-network-tracing.md
+        - name: 'Postupy: Konfigurace trasování sítě'
+          href: how-to-configure-network-tracing.md
+    - name: Správa mezipaměti pro síťové aplikace
+      href: cache-management-for-network-applications.md
       items:
-      - name: Interakce zásad mezipaměti – maximální stáří a maximální neaktuálnost
-        href: cache-policy-interaction-maximum-age-and-maximum-staleness.md
-      - name: Interakce zásad mezipaměti – minimální stáří a minimální novost
-        href: cache-policy-interaction-maximum-age-and-minimum-freshness.md
-    - name: Konfigurace ukládání do mezipaměti v síťových aplikacích
-      href: configuring-caching-in-network-applications.md
+        - name: Zásady mezipaměti
+          href: cache-policy.md
+        - name: Zásady mezipaměti na základě umístění
+          href: location-based-cache-policies.md
+        - name: Zásady mezipaměti na základě času
+          href: time-based-cache-policies.md
+          items:
+            - name: Interakce zásad mezipaměti – maximální stáří a maximální neaktuálnost
+              href: cache-policy-interaction-maximum-age-and-maximum-staleness.md
+            - name: Interakce zásad mezipaměti – minimální stáří a minimální novost
+              href: cache-policy-interaction-maximum-age-and-minimum-freshness.md
+        - name: Konfigurace ukládání do mezipaměti v síťových aplikacích
+          href: configuring-caching-in-network-applications.md
+          items:
+            - name: 'Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci'
+              href: how-to-set-a-location-based-cache-policy-for-an-application.md
+            - name: 'Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci'
+              href: how-to-set-the-default-time-based-cache-policy-for-an-application.md
+            - name: 'Postupy: Přizpůsobení zásad mezipaměti na základě času'
+              href: how-to-customize-a-time-based-cache-policy.md
+            - name: 'Postupy: Nastavení zásad mezipaměti pro žádost'
+              href: how-to-set-cache-policy-for-a-request.md
+    - name: Zabezpečení v síťovém programování
+      href: security-in-network-programming.md
       items:
-      - name: 'Postupy: Nastavení zásad mezipaměti na základě umístění pro aplikaci'
-        href: how-to-set-a-location-based-cache-policy-for-an-application.md
-      - name: 'Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci'
-        href: how-to-set-the-default-time-based-cache-policy-for-an-application.md
-      - name: 'Postupy: Přizpůsobení zásad mezipaměti na základě času'
-        href: how-to-customize-a-time-based-cache-policy.md
-      - name: 'Postupy: Nastavení zásad mezipaměti pro žádost'
-        href: how-to-set-cache-policy-for-a-request.md
-  - name: Zabezpečení v síťovém programování
-    href: security-in-network-programming.md
-    items:
-    - name: Osvědčené postupy k používání protokolu TLS (Transport Layer Security)
-      href: tls.md
-    - name: Použití protokolu SSL (Secure Sockets Layer)
-      href: using-secure-sockets-layer.md
+        - name: Osvědčené postupy k používání protokolu TLS (Transport Layer Security)
+          href: tls.md
+        - name: Použití protokolu SSL (Secure Sockets Layer)
+          href: using-secure-sockets-layer.md
+          items:
+            - name: Výběr a ověření certifikátu
+              href: certificate-selection-and-validation.md
+        - name: Ověřování v internetu
+          href: internet-authentication.md
+          items:
+            - name: Základní ověřování a ověřování hodnotou hash
+              href: basic-and-digest-authentication.md
+            - name: Ověřování NTLM a Kerberos
+              href: ntlm-and-kerberos-authentication.md
+        - name: Oprávnění pro web a sokety
+          href: web-and-socket-permissions.md
+    - name: Osvědčené postupy pro třídy System.Net
+      href: best-practices-for-system-net-classes.md
+    - name: Přístup k internetu přes proxy server
+      href: accessing-the-internet-through-a-proxy.md
       items:
-      - name: Výběr a ověření certifikátu
-        href: certificate-selection-and-validation.md
-    - name: Ověřování v internetu
-      href: internet-authentication.md
+        - name: Konfigurace proxy serveru
+          href: proxy-configuration.md
+        - name: Automatické rozpoznávání proxy serveru
+          href: automatic-proxy-detection.md
+        - name: 'Postupy: Povolení žádosti WebRequest, aby se používal proxy server pro komunikaci s internetem'
+          href: how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md
+        - name: 'Postupy: Přepsání globálního výběru proxy serveru'
+          href: how-to-override-a-global-proxy-selection.md
+    - name: Informace o síti
+      href: networkinformation.md
       items:
-      - name: Základní ověřování a ověřování hodnotou hash
-        href: basic-and-digest-authentication.md
-      - name: Ověřování NTLM a Kerberos
-        href: ntlm-and-kerberos-authentication.md
-    - name: Oprávnění pro web a sokety
-      href: web-and-socket-permissions.md
-  - name: Osvědčené postupy pro třídy System.Net
-    href: best-practices-for-system-net-classes.md
-  - name: Přístup k internetu přes proxy server
-    href: accessing-the-internet-through-a-proxy.md
-    items:
-    - name: Konfigurace proxy serveru
-      href: proxy-configuration.md
-    - name: Automatické rozpoznávání proxy serveru
-      href: automatic-proxy-detection.md
-    - name: 'Postupy: Povolení žádosti WebRequest, aby se používal proxy server pro komunikaci s internetem'
-      href: how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md
-    - name: 'Postupy: Přepsání globálního výběru proxy serveru'
-      href: how-to-override-a-global-proxy-selection.md
-  - name: Informace o síti
-    href: networkinformation.md
-    items:
-    - name: 'Postupy: Zjištění dostupnosti sítě a vyřešení změn'
-      href: how-to-detect-network-availability-and-address-changes.md
-    - name: 'Postupy: Získání informace o rozhraní a protokolu'
-      href: how-to-get-interface-and-protocol-information.md
-    - name: 'Postupy: Příkaz Ping na hostitele'
-      href: how-to-ping-a-host.md
-  - name: Změny v oboru názvů System.Uri ve verzi 2.0
-    href: changes-to-the-system-uri-namespace-in-version-2-0.md
-  - name: Podpora mezinárodních identifikátorů prostředků v System.Uri
-    href: international-resource-identifier-support-in-system-uri.md
-  - name: Vylepšení výkonu soketů ve verzi 3.5
-    href: socket-performance-enhancements-in-version-3-5.md
-  - name: Protokol PNRP (Peer Name Resolution Protocol)
-    href: peer-name-resolution-protocol.md
-    items:
-    - name: Názvy partnerských uzlů a ID PNRP
-      href: peer-names-and-pnrp-ids.md
-    - name: Publikování a řešení názvů partnerských uzlů
-      href: peer-name-publication-and-resolution.md
-    - name: Cloudy PNRP
-      href: pnrp-clouds.md
-    - name: Mezipaměti PNRP
-      href: pnrp-caches.md
-    - name: PNRP ve vývoji aplikací
-      href: pnrp-in-application-development.md
-  - name: Spolupráce peer-to-peer
-    href: peer-to-peer-collaboration.md
-    items:
-    - name: Obor názvů System.Net.PeerToPeer.Collaboration
-      href: about-the-system-net-peertopeer-collaboration-namespace.md
-    - name: Scénáře pro sítě peer-to-peer
-      href: peer-to-peer-networking-scenarios.md
-  - name: Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1
-    href: changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md
-  - name: Integrované ověřování systému Windows s rozšířenou ochranou
-    href: integrated-windows-authentication-with-extended-protection.md
-  - name: Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo
-    href: nat-traversal-using-ipv6-and-teredo.md
-  - name: Izolace sítě pro aplikace z obchodu Microsoft Store
-    href: network-isolation-for-windows-store-apps.md
-  - name: Ukázky programování sítě
-    href: network-programming-samples.md
-ms.openlocfilehash: 9f44403f015f28fe92aed3309584abc51156db3a
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471097"
+        - name: 'Postupy: Zjištění dostupnosti sítě a vyřešení změn'
+          href: how-to-detect-network-availability-and-address-changes.md
+        - name: 'Postupy: Získání informace o rozhraní a protokolu'
+          href: how-to-get-interface-and-protocol-information.md
+        - name: 'Postupy: Příkaz Ping na hostitele'
+          href: how-to-ping-a-host.md
+    - name: Změny v oboru názvů System.Uri ve verzi 2.0
+      href: changes-to-the-system-uri-namespace-in-version-2-0.md
+    - name: Podpora mezinárodních identifikátorů prostředků v System.Uri
+      href: international-resource-identifier-support-in-system-uri.md
+    - name: Vylepšení výkonu soketů ve verzi 3.5
+      href: socket-performance-enhancements-in-version-3-5.md
+    - name: Protokol PNRP (Peer Name Resolution Protocol)
+      href: peer-name-resolution-protocol.md
+      items:
+        - name: Názvy partnerských uzlů a ID PNRP
+          href: peer-names-and-pnrp-ids.md
+        - name: Publikování a řešení názvů partnerských uzlů
+          href: peer-name-publication-and-resolution.md
+        - name: Cloudy PNRP
+          href: pnrp-clouds.md
+        - name: Mezipaměti PNRP
+          href: pnrp-caches.md
+        - name: PNRP ve vývoji aplikací
+          href: pnrp-in-application-development.md
+    - name: Spolupráce peer-to-peer
+      href: peer-to-peer-collaboration.md
+      items:
+        - name: Obor názvů System.Net.PeerToPeer.Collaboration
+          href: about-the-system-net-peertopeer-collaboration-namespace.md
+        - name: Scénáře pro sítě peer-to-peer
+          href: peer-to-peer-networking-scenarios.md
+    - name: Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1
+      href: changes-to-ntlm-authentication-for-httpwebrequest-in-version-3-5-sp1.md
+    - name: Integrované ověřování systému Windows s rozšířenou ochranou
+      href: integrated-windows-authentication-with-extended-protection.md
+    - name: Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo
+      href: nat-traversal-using-ipv6-and-teredo.md
+    - name: Izolace sítě pro aplikace z obchodu Microsoft Store
+      href: network-isolation-for-windows-store-apps.md
+    - name: Ukázky programování sítě
+      href: network-programming-samples.md

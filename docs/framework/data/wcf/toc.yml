@@ -1,171 +1,164 @@
-items:
 - name: WCF Data Services 4.5
   href: index.md
   items:
-  - name: Přehled
-    href: wcf-data-services-overview.md
-  - name: Začínáme
-    href: getting-started-with-wcf-data-services.md
-    items:
-    - name: Vystavení dat jako služby
-      href: exposing-your-data-as-a-service-wcf-data-services.md
-    - name: Přístup k prostředkům datové služby
-      href: accessing-data-service-resources-wcf-data-services.md
-    - name: Použití datové služby v klientské aplikaci
-      href: using-a-data-service-in-a-client-application-wcf-data-services.md
-    - name: Rychlý start
-      href: quickstart-wcf-data-services.md
+    - name: Přehled
+      href: wcf-data-services-overview.md
+    - name: Začínáme
+      href: getting-started-with-wcf-data-services.md
       items:
-      - name: Vytvoření datové služby
-        href: creating-the-data-service.md
-      - name: Přístup ke službě z webového prohlížeče
-        href: accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md
-      - name: Vytvoření klientské aplikace .NET Framework
-        href: creating-the-dotnet-client-application-wcf-data-services-quickstart.md
-    - name: Scénáře aplikací
-      href: application-scenarios-wcf-data-services.md
-    - name: Prostředky
-      href: wcf-data-services-resources.md
-  - name: Definování datových služeb WCF Data Services
-    href: defining-wcf-data-services.md
-    items:
-    - name: Konfigurace datové služby
-      href: configuring-the-data-service-wcf-data-services.md
+        - name: Vystavení dat jako služby
+          href: exposing-your-data-as-a-service-wcf-data-services.md
+        - name: Přístup k prostředkům datové služby
+          href: accessing-data-service-resources-wcf-data-services.md
+        - name: Použití datové služby v klientské aplikaci
+          href: using-a-data-service-in-a-client-application-wcf-data-services.md
+        - name: Rychlý start
+          href: quickstart-wcf-data-services.md
+          items:
+            - name: Vytvoření datové služby
+              href: creating-the-data-service.md
+            - name: Přístup ke službě z webového prohlížeče
+              href: accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md
+            - name: Vytvoření klientské aplikace .NET Framework
+              href: creating-the-dotnet-client-application-wcf-data-services-quickstart.md
+        - name: Scénáře aplikací
+          href: application-scenarios-wcf-data-services.md
+        - name: Prostředky
+          href: wcf-data-services-resources.md
+    - name: Definování datových služeb WCF Data Services
+      href: defining-wcf-data-services.md
       items:
-      - name: 'Postupy: Vývoj datové služby WCF ve službě IIS'
-        href: how-to-develop-a-wcf-data-service-running-on-iis.md
-      - name: 'Postupy: Povolení přístupu k datové službě'
-        href: how-to-enable-access-to-the-data-service-wcf-data-services.md
-      - name: 'Postupy: Povolení stránkování výsledků datové služby'
-        href: how-to-enable-paging-of-data-service-results-wcf-data-services.md
-    - name: Zprostředkovatelé datových služeb
-      href: data-services-providers-wcf-data-services.md
+        - name: Konfigurace datové služby
+          href: configuring-the-data-service-wcf-data-services.md
+          items:
+            - name: 'Postupy: Vývoj datové služby WCF ve službě IIS'
+              href: how-to-develop-a-wcf-data-service-running-on-iis.md
+            - name: 'Postupy: Povolení přístupu k datové službě'
+              href: how-to-enable-access-to-the-data-service-wcf-data-services.md
+            - name: 'Postupy: Povolení stránkování výsledků datové služby'
+              href: how-to-enable-paging-of-data-service-results-wcf-data-services.md
+        - name: Zprostředkovatelé datových služeb
+          href: data-services-providers-wcf-data-services.md
+          items:
+            - name: Zprostředkovatel Entity Framework
+              href: entity-framework-provider-wcf-data-services.md
+              items:
+                - name: 'Postupy: Vytvoření datové služby pomocí zdroje dat ADO.NET Entity Framework'
+                  href: create-a-data-service-using-an-adonet-ef-data-wcf.md
+            - name: Zprostředkovatel reflexe
+              href: reflection-provider-wcf-data-services.md
+              items:
+                - name: 'Postupy: Vytvoření datové služby pomocí zprostředkovatele reflexe'
+                  href: create-a-data-service-using-rp-wcf-data-services.md
+                - name: 'Postupy: Vytvoření datové služby pomocí zdroje dat LINQ to SQL'
+                  href: create-a-data-service-using-linq-to-sql-wcf.md
+            - name: Vlastní zprostředkovatelé datových služeb
+              href: custom-data-service-providers-wcf-data-services.md
+            - name: Zprostředkovatel streamování
+              href: streaming-provider-wcf-data-services.md
+        - name: Operace služby
+          href: service-operations-wcf-data-services.md
+          items:
+            - name: 'Postupy: Definování operace služby'
+              href: how-to-define-a-service-operation-wcf-data-services.md
+        - name: Přizpůsobení informačního kanálu
+          href: feed-customization-wcf-data-services.md
+          items:
+            - name: 'Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework'
+              href: how-to-customize-feeds-with-ef-provider-wcf-data-services.md
+            - name: 'Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele reflexe'
+              href: how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md
+        - name: Zachycovače
+          href: interceptors-wcf-data-services.md
+          items:
+            - name: 'Postupy: Zachycování zpráv datové služby'
+              href: how-to-intercept-data-service-messages-wcf-data-services.md
+        - name: Vývoj a nasazení služeb WCF Data Services
+          href: developing-and-deploying-wcf-data-services.md
+        - name: Zabezpečení datových služeb WCF Data Services
+          href: securing-wcf-data-services.md
+        - name: Hostování datové služby
+          href: hosting-the-data-service-wcf-data-services.md
+        - name: Správa verzí datové služby
+          href: data-service-versioning-wcf-data-services.md
+        - name: Podrobnosti implementace protokolu služeb WCF Data Services
+          href: wcf-data-services-protocol-implementation-details.md
+        - name: Použití akcí k implementaci chování na straně serveru
+          href: using-actions-to-implement-server-side-behavior.md
+    - name: Klientská knihovna pro WCF Data Services
+      href: wcf-data-services-client-library.md
       items:
-      - name: Zprostředkovatel Entity Framework
-        href: entity-framework-provider-wcf-data-services.md
-        items:
-        - name: 'Postupy: Vytvoření datové služby pomocí zdroje dat ADO.NET Entity Framework'
-          href: create-a-data-service-using-an-adonet-ef-data-wcf.md
-      - name: Zprostředkovatel reflexe
-        href: reflection-provider-wcf-data-services.md
-        items:
-        - name: 'Postupy: Vytvoření datové služby pomocí zprostředkovatele reflexe'
-          href: create-a-data-service-using-rp-wcf-data-services.md
-        - name: 'Postupy: Vytvoření datové služby pomocí zdroje dat LINQ to SQL'
-          href: create-a-data-service-using-linq-to-sql-wcf.md
-      - name: Vlastní zprostředkovatelé datových služeb
-        href: custom-data-service-providers-wcf-data-services.md
-      - name: Zprostředkovatel streamování
-        href: streaming-provider-wcf-data-services.md
-    - name: Operace služby
-      href: service-operations-wcf-data-services.md
-      items:
-      - name: 'Postupy: Definování operace služby'
-        href: how-to-define-a-service-operation-wcf-data-services.md
-    - name: Přizpůsobení informačního kanálu
-      href: feed-customization-wcf-data-services.md
-      items:
-      - name: 'Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele Entity Framework'
-        href: how-to-customize-feeds-with-ef-provider-wcf-data-services.md
-      - name: 'Postupy: Přizpůsobení informačních kanálů prostřednictvím zprostředkovatele reflexe'
-        href: how-to-customize-feeds-with-the-reflection-provider-wcf-data-services.md
-    - name: Zachycovače
-      href: interceptors-wcf-data-services.md
-      items:
-      - name: 'Postupy: Zachycování zpráv datové služby'
-        href: how-to-intercept-data-service-messages-wcf-data-services.md
-    - name: Vývoj a nasazení služeb WCF Data Services
-      href: developing-and-deploying-wcf-data-services.md
-    - name: Zabezpečení datových služeb WCF Data Services
-      href: securing-wcf-data-services.md
-    - name: Hostování datové služby
-      href: hosting-the-data-service-wcf-data-services.md
-    - name: Správa verzí datové služby
-      href: data-service-versioning-wcf-data-services.md
-    - name: Podrobnosti implementace protokolu služeb WCF Data Services
-      href: wcf-data-services-protocol-implementation-details.md
-    - name: Použití akcí k implementaci chování na straně serveru
-      href: using-actions-to-implement-server-side-behavior.md
-  - name: Klientská knihovna pro WCF Data Services
-    href: wcf-data-services-client-library.md
-    items:
-    - name: Generování klientské knihovny datové služby
-      href: generating-the-data-service-client-library-wcf-data-services.md
-      items:
-      - name: Nástroj klienta WCF Data Services (DataSvcUtil.exe)
-        href: wcf-data-service-client-utility-datasvcutil-exe.md
-      - name: 'Postupy: Přidání odkazu na datovou službu'
-        href: how-to-add-a-data-service-reference-wcf-data-services.md
-      - name: 'Postupy: Ruční generování tříd klientské datové služby'
-        href: how-to-manually-generate-client-data-service-classes-wcf-data-services.md
-    - name: Dotazování v datové službě
-      href: querying-the-data-service-wcf-data-services.md
-      items:
-      - name: Projekce dotazů
-        href: query-projections-wcf-data-services.md
-        items:
-        - name: 'Postupy: Výsledky dotazů na projekt'
-          href: how-to-project-query-results-wcf-data-services.md
-      - name: Aspekty LINQ
-        href: linq-considerations-wcf-data-services.md
-      - name: Materializace objektů
-        href: object-materialization-wcf-data-services.md
-      - name: 'Postupy: Provádění dotazů v datové službě'
-        href: how-to-execute-data-service-queries-wcf-data-services.md
-      - name: 'Postupy: Přidání možností do dotazu v datové službě'
-        href: how-to-add-query-options-to-a-data-service-query-wcf-data-services.md
-      - name: 'Postupy: Určení počtu entit vrácených dotazem'
-        href: number-of-entities-returned-by-a-query-wcf.md
-      - name: 'Postupy: Zadání přihlašovacích údajů klienta v požadavku na datovou službu'
-        href: specify-client-creds-for-a-data-service-request-wcf.md
-      - name: 'Postupy: Nastavení hlaviček v požadavku klienta'
-        href: how-to-set-headers-in-the-client-request-wcf-data-services.md
-    - name: Načtení odloženého obsahu
-      href: loading-deferred-content-wcf-data-services.md
-      items:
-      - name: 'Postupy: Načtení souvisejících entit'
-        href: how-to-load-related-entities-wcf-data-services.md
-      - name: 'Postupy: Načtení stránkovaných výsledků'
-        href: how-to-load-paged-results-wcf-data-services.md
-    - name: Aktualizace datové služby
-      href: updating-the-data-service-wcf-data-services.md
-      items:
-      - name: 'Postupy: Přidání, úpravy a odstranění entit'
-        href: how-to-add-modify-and-delete-entities-wcf-data-services.md
-      - name: 'Postupy: Definování relací mezi entitami'
-        href: how-to-define-entity-relationships-wcf-data-services.md
-      - name: 'Postupy: Přiřazení existující entity k prvku DataServiceContext'
-        href: attach-an-existing-entity-to-dc-wcf-data.md
-    - name: Asynchronní operace
-      href: asynchronous-operations-wcf-data-services.md
-      items:
-      - name: 'Postupy: Provádění asynchronních dotazů v datové službě'
-        href: how-to-execute-asynchronous-data-service-queries-wcf-data-services.md
-      - name: 'Postupy: Vytvoření asynchronní aplikace Windows Presentation Framework'
-        href: create-an-asynchronous-wpf-application-wcf-data-services.md
-    - name: Operace dávkování
-      href: batching-operations-wcf-data-services.md
-      items:
-      - name: 'Postupy: Provádění dotazů v dávce'
-        href: how-to-execute-queries-in-a-batch-wcf-data-services.md
-    - name: Vazba dat k ovládacím prvkům
-      href: binding-data-to-controls-wcf-data-services.md
-      items:
-      - name: 'Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation'
-        href: bind-data-to-wpf-elements-wcf-data-services.md
-      - name: 'Postupy: Vytvoření vazby dat pomocí zdroje dat projektu'
-        href: how-to-bind-data-using-a-project-data-source-wcf-data-services.md
-      - name: 'Postupy: Přizpůsobení chování datových vazeb'
-        href: how-to-customize-data-binding-behaviors-wcf-data-services.md
-    - name: Operace volání služeb
-      href: calling-service-operations-wcf-data-services.md
-    - name: Správa kontextu datové služby
-      href: managing-the-data-service-context-wcf-data-services.md
-    - name: Práce s binárními daty
-      href: working-with-binary-data-wcf-data-services.md
-ms.openlocfilehash: e38823c7d5b9d6b9ed5f126bab7b1677f9290904
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471522"
+        - name: Generování klientské knihovny datové služby
+          href: generating-the-data-service-client-library-wcf-data-services.md
+          items:
+            - name: Nástroj klienta WCF Data Services (DataSvcUtil.exe)
+              href: wcf-data-service-client-utility-datasvcutil-exe.md
+            - name: 'Postupy: Přidání odkazu na datovou službu'
+              href: how-to-add-a-data-service-reference-wcf-data-services.md
+            - name: 'Postupy: Ruční generování tříd klientské datové služby'
+              href: how-to-manually-generate-client-data-service-classes-wcf-data-services.md
+        - name: Dotazování v datové službě
+          href: querying-the-data-service-wcf-data-services.md
+          items:
+            - name: Projekce dotazů
+              href: query-projections-wcf-data-services.md
+              items:
+                - name: 'Postupy: Výsledky dotazů na projekt'
+                  href: how-to-project-query-results-wcf-data-services.md
+            - name: Aspekty LINQ
+              href: linq-considerations-wcf-data-services.md
+            - name: Materializace objektů
+              href: object-materialization-wcf-data-services.md
+            - name: 'Postupy: Provádění dotazů v datové službě'
+              href: how-to-execute-data-service-queries-wcf-data-services.md
+            - name: 'Postupy: Přidání možností do dotazu v datové službě'
+              href: how-to-add-query-options-to-a-data-service-query-wcf-data-services.md
+            - name: 'Postupy: Určení počtu entit vrácených dotazem'
+              href: number-of-entities-returned-by-a-query-wcf.md
+            - name: 'Postupy: Zadání přihlašovacích údajů klienta v požadavku na datovou službu'
+              href: specify-client-creds-for-a-data-service-request-wcf.md
+            - name: 'Postupy: Nastavení hlaviček v požadavku klienta'
+              href: how-to-set-headers-in-the-client-request-wcf-data-services.md
+        - name: Načtení odloženého obsahu
+          href: loading-deferred-content-wcf-data-services.md
+          items:
+            - name: 'Postupy: Načtení souvisejících entit'
+              href: how-to-load-related-entities-wcf-data-services.md
+            - name: 'Postupy: Načtení stránkovaných výsledků'
+              href: how-to-load-paged-results-wcf-data-services.md
+        - name: Aktualizace datové služby
+          href: updating-the-data-service-wcf-data-services.md
+          items:
+            - name: 'Postupy: Přidání, úpravy a odstranění entit'
+              href: how-to-add-modify-and-delete-entities-wcf-data-services.md
+            - name: 'Postupy: Definování relací mezi entitami'
+              href: how-to-define-entity-relationships-wcf-data-services.md
+            - name: 'Postupy: Přiřazení existující entity k prvku DataServiceContext'
+              href: attach-an-existing-entity-to-dc-wcf-data.md
+        - name: Asynchronní operace
+          href: asynchronous-operations-wcf-data-services.md
+          items:
+            - name: 'Postupy: Provádění asynchronních dotazů v datové službě'
+              href: how-to-execute-asynchronous-data-service-queries-wcf-data-services.md
+            - name: 'Postupy: Vytvoření asynchronní aplikace Windows Presentation Framework'
+              href: create-an-asynchronous-wpf-application-wcf-data-services.md
+        - name: Operace dávkování
+          href: batching-operations-wcf-data-services.md
+          items:
+            - name: 'Postupy: Provádění dotazů v dávce'
+              href: how-to-execute-queries-in-a-batch-wcf-data-services.md
+        - name: "Vazba dat k\_ovládacím prvkům"
+          href: binding-data-to-controls-wcf-data-services.md
+          items:
+            - name: 'Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation'
+              href: bind-data-to-wpf-elements-wcf-data-services.md
+            - name: 'Postupy: Vytvoření vazby dat pomocí zdroje dat projektu'
+              href: how-to-bind-data-using-a-project-data-source-wcf-data-services.md
+            - name: 'Postupy: Přizpůsobení chování datových vazeb'
+              href: how-to-customize-data-binding-behaviors-wcf-data-services.md
+        - name: Operace volání služeb
+          href: calling-service-operations-wcf-data-services.md
+        - name: Správa kontextu datové služby
+          href: managing-the-data-service-context-wcf-data-services.md
+        - name: Práce s binárními daty
+          href: working-with-binary-data-wcf-data-services.md

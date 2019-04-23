@@ -1,25 +1,18 @@
-items:
 - name: Události
   href: index.md
   items:
-  - name: 'Postupy: Vyvolání a zpracování událostí'
-    href: how-to-raise-and-consume-events.md
-  - name: 'Postupy: Zpracování více událostí pomocí vlastností událostí'
-    href: how-to-handle-multiple-events-using-event-properties.md
-  - name: 'Postupy: Zpracování událostí v aplikaci Web Forms'
-    href: how-to-consume-events-in-a-web-forms-application.md
-  - name: Návrhový vzor Pozorovatel
-    href: observer-design-pattern.md
-    items:
-    - name: Doporučené postupy pro návrhový vzor Pozorovatel
-      href: observer-design-pattern-best-practices.md
-    - name: 'Postupy: Implementace poskytovatele'
-      href: how-to-implement-a-provider.md
-    - name: 'Postupy: Implementace pozorovatele'
-      href: how-to-implement-an-observer.md
-ms.openlocfilehash: 683b3ce9ecf53166bed8101c2ebcd0d4a43024b9
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471103"
+    - name: 'Postupy: Vyvolání a zpracování událostí'
+      href: how-to-raise-and-consume-events.md
+    - name: 'Postupy: Zpracování více událostí pomocí vlastností událostí'
+      href: how-to-handle-multiple-events-using-event-properties.md
+    - name: 'Postupy: Zpracování událostí v aplikaci Web Forms'
+      href: how-to-consume-events-in-a-web-forms-application.md
+    - name: Návrhový vzor Pozorovatel
+      href: observer-design-pattern.md
+      items:
+        - name: Doporučené postupy pro návrhový vzor Pozorovatel
+          href: observer-design-pattern-best-practices.md
+        - name: 'Postupy: Implementace poskytovatele'
+          href: how-to-implement-a-provider.md
+        - name: 'Postupy: Implementace pozorovatele'
+          href: how-to-implement-an-observer.md

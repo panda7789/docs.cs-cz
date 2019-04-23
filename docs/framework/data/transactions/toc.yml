@@ -1,45 +1,38 @@
-items:
 - name: Zpracování transakcí
   href: index.md
   items:
-  - name: Principy transakcí
-    href: transaction-fundamentals.md
-  - name: Funkce poskytované přes System.Transactions
-    href: features-provided-by-system-transactions.md
-    items:
-    - name: Zápis transakční aplikace
-      href: writing-a-transactional-application.md
+    - name: Principy transakcí
+      href: transaction-fundamentals.md
+    - name: Funkce poskytované přes System.Transactions
+      href: features-provided-by-system-transactions.md
       items:
-      - name: Implementace implicitní transakce s využitím oboru transakcí
-        href: implementing-an-implicit-transaction-using-transaction-scope.md
-      - name: Implementace explicitní transakce přes CommittableTransaction
-        href: implementing-an-explicit-transaction-using-committabletransaction.md
-      - name: Správa souběžnosti s DependentTransaction
-        href: managing-concurrency-with-dependenttransaction.md
-      - name: Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
-        href: interoperability-with-enterprise-services-and-com-transactions.md
-      - name: Eskalace správy transakcí
-        href: transaction-management-escalation.md
-      - name: Diagnostická trasování
-        href: diagnostic-traces.md
-      - name: Použití System.Transactions v ASP.NET
-        href: using-system-transactions-in-aspnet.md
-    - name: Implementace správce prostředků
-      href: implementing-a-resource-manager.md
-      items:
-      - name: Uvedení prostředků jako účastníků v transakci
-        href: enlisting-resources-as-participants-in-a-transaction.md
-      - name: Potvrzení transakce v jedné fázi a více fázích
-        href: committing-a-transaction-in-single-phase-and-multi-phase.md
-      - name: Provedení obnovení
-        href: performing-recovery.md
-      - name: Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
-        href: security-trust-levels-in-accessing-resources.md
-      - name: Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
-        href: optimization-spc-and-promotable-spn.md
-ms.openlocfilehash: 9ebce82b22c684bc2cee3892cb53803eef725dee
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471230"
+        - name: Zápis transakční aplikace
+          href: writing-a-transactional-application.md
+          items:
+            - name: Implementace implicitní transakce s využitím oboru transakcí
+              href: implementing-an-implicit-transaction-using-transaction-scope.md
+            - name: Implementace explicitní transakce přes CommittableTransaction
+              href: implementing-an-explicit-transaction-using-committabletransaction.md
+            - name: Správa souběžnosti s DependentTransaction
+              href: managing-concurrency-with-dependenttransaction.md
+            - name: Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
+              href: interoperability-with-enterprise-services-and-com-transactions.md
+            - name: Eskalace správy transakcí
+              href: transaction-management-escalation.md
+            - name: Diagnostická trasování
+              href: diagnostic-traces.md
+            - name: Použití System.Transactions v ASP.NET
+              href: using-system-transactions-in-aspnet.md
+        - name: Implementace správce prostředků
+          href: implementing-a-resource-manager.md
+          items:
+            - name: Uvedení prostředků jako účastníků v transakci
+              href: enlisting-resources-as-participants-in-a-transaction.md
+            - name: Potvrzení transakce v jedné fázi a více fázích
+              href: committing-a-transaction-in-single-phase-and-multi-phase.md
+            - name: Provedení obnovení
+              href: performing-recovery.md
+            - name: Úrovně důvěryhodnosti zabezpečení v přístupu k prostředkům
+              href: security-trust-levels-in-accessing-resources.md
+            - name: Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
+              href: optimization-spc-and-promotable-spn.md

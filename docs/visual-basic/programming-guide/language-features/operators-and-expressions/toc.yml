@@ -1,32 +1,25 @@
-items:
 - name: Operátory a výrazy
   href: index.md
   items:
-  - name: Běžné úlohy prováděné s operátory
-    href: common-tasks-performed-with-visual-basic-operators.md
-  - name: Aritmetické operátory
-    href: arithmetic-operators.md
-  - name: Operátory porovnání
-    href: comparison-operators.md
-  - name: 'Postupy: Test, jestli jsou dva objekty stejné'
-    href: how-to-test-whether-two-objects-are-the-same.md
-  - name: 'Postupy: Porovnání řetězce se vzorem'
-    href: how-to-match-a-string-against-a-pattern.md
-  - name: Operátory zřetězení
-    href: concatenation-operators.md
-  - name: Logické a bitové operátory
-    href: logical-and-bitwise-operators.md
-  - name: Účinná kombinace operátorů
-    href: efficient-combination-of-operators.md
-  - name: 'Postupy: Výpočet numerických hodnot'
-    href: how-to-calculate-numeric-values.md
-  - name: Porovnání hodnot
-    href: value-comparisons.md
-  - name: Logické výrazy
-    href: boolean-expressions.md
-ms.openlocfilehash: b16598c335031cf099e0549d491adfc204fc6d35
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471223"
+    - name: Běžné úlohy prováděné s operátory
+      href: common-tasks-performed-with-visual-basic-operators.md
+    - name: Aritmetické operátory
+      href: arithmetic-operators.md
+    - name: Operátory porovnání
+      href: comparison-operators.md
+    - name: 'Postupy: Test, jestli jsou dva objekty stejné'
+      href: how-to-test-whether-two-objects-are-the-same.md
+    - name: 'Postupy: Porovnání řetězce se vzorem'
+      href: how-to-match-a-string-against-a-pattern.md
+    - name: Operátory zřetězení
+      href: concatenation-operators.md
+    - name: Logické a bitové operátory
+      href: logical-and-bitwise-operators.md
+    - name: Účinná kombinace operátorů
+      href: efficient-combination-of-operators.md
+    - name: 'Postupy: Výpočet numerických hodnot'
+      href: how-to-calculate-numeric-values.md
+    - name: Porovnání hodnot
+      href: value-comparisons.md
+    - name: Logické výrazy
+      href: boolean-expressions.md

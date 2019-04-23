@@ -1,40 +1,33 @@
-items:
 - name: Specifikace jazyka Visual Basic
   href: index.md
   items:
-  - name: Úvod
-    href: ../../../../_vblang/spec/introduction.md
-  - name: Gramatika slov
-    href: ../../../../_vblang/spec/lexical-grammar.md
-  - name: Direktivy předběžného zpracování
-    href: ../../../../_vblang/spec/preprocessing-directives.md
-  - name: Obecné koncepty
-    href: ../../../../_vblang/spec/general-concepts.md
-  - name: Atributy
-    href: ../../../../_vblang/spec/attributes.md
-  - name: Zdrojové soubory a obory názvů
-    href: ../../../../_vblang/spec/source-files-and-namespaces.md
-  - name: Typy
-    href: ../../../../_vblang/spec/types.md
-  - name: Převody
-    href: ../../../../_vblang/spec/conversions.md
-  - name: Členy typu
-    href: ../../../../_vblang/spec/type-members.md
-  - name: Příkazy
-    href: ../../../../_vblang/spec/statements.md
-  - name: Výrazy
-    href: ../../../../_vblang/spec/expressions.md
-  - name: Komentáře dokumentace
-    href: ../../../../_vblang/spec/documentation-comments.md
-  - name: Gramatika
-    items:
-    - name: vb.html
-      href: https://ljw1004.github.io/vbspec/vb.html
-    - name: vb.g4 – formát ANTLR
-      href: https://ljw1004.github.io/vbspec/vb.g4?raw=true
-ms.openlocfilehash: 03281728455fee8303e6e1c4750779a0695130de
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471189"
+    - name: Úvod
+      href: ../../../../_vblang/spec/introduction.md
+    - name: Gramatika slov
+      href: ../../../../_vblang/spec/lexical-grammar.md
+    - name: Direktivy předběžného zpracování
+      href: ../../../../_vblang/spec/preprocessing-directives.md
+    - name: Obecné koncepty
+      href: ../../../../_vblang/spec/general-concepts.md
+    - name: Atributy
+      href: ../../../../_vblang/spec/attributes.md
+    - name: Zdrojové soubory a obory názvů
+      href: ../../../../_vblang/spec/source-files-and-namespaces.md
+    - name: Typy
+      href: ../../../../_vblang/spec/types.md
+    - name: Převody
+      href: ../../../../_vblang/spec/conversions.md
+    - name: Členy typu
+      href: ../../../../_vblang/spec/type-members.md
+    - name: Příkazy
+      href: ../../../../_vblang/spec/statements.md
+    - name: Výrazy
+      href: ../../../../_vblang/spec/expressions.md
+    - name: Komentáře dokumentace
+      href: ../../../../_vblang/spec/documentation-comments.md
+    - name: Gramatika
+      items:
+        - name: vb.html
+          href: 'https://ljw1004.github.io/vbspec/vb.html'
+        - name: vb.g4 – formát ANTLR
+          href: 'https://ljw1004.github.io/vbspec/vb.g4?raw=true'

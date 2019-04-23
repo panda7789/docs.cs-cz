@@ -1,87 +1,80 @@
-items:
 - name: Kompilování aplikací pomocí .NET Native
   href: index.md
   items:
-  - name: .NET Native a kompilace
-    href: net-native-and-compilation.md
-  - name: Začínáme
-    href: getting-started-with-net-native.md
-    items:
-    - name: 'Příklad: Řešení potíží s dynamickým programováním'
-      href: example-troubleshooting-dynamic-programming.md
-    - name: 'Příklad: Zpracování výjimek při vázání dat'
-      href: example-handling-exceptions-when-binding-data.md
-    - name: Výjimky za běhu v nativních aplikací .NET
-      href: runtime-exceptions-in-net-native-apps.md
-  - name: Měření zlepšení spuštění pomocí .NET Native
-    href: measuring-startup-improvement-with-net-native.md
-  - name: Reflexe a .NET Native
-    href: reflection-and-net-native.md
-    items:
-    - name: Rozhraní API, která závisí na reflexi
-      href: apis-that-rely-on-reflection.md
-    - name: Informace o rozhraní API reflexe
-      href: net-native-reflection-api-reference.md
+    - name: .NET Native a kompilace
+      href: net-native-and-compilation.md
+    - name: Začínáme
+      href: getting-started-with-net-native.md
       items:
-      - name: Třída MissingInteropDataException
-        href: missinginteropdataexception-class-net-native.md
-      - name: Třída MissingMetadataException
-        href: missingmetadataexception-class-net-native.md
-      - name: Třída MissingRuntimeArtifactException
-        href: missingruntimeartifactexception-class-net-native.md
-    - name: Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
-      href: runtime-directives-rd-xml-configuration-file-reference.md
+        - name: 'Příklad: Řešení potíží s dynamickým programováním'
+          href: example-troubleshooting-dynamic-programming.md
+        - name: 'Příklad: Zpracování výjimek při vázání dat'
+          href: example-handling-exceptions-when-binding-data.md
+        - name: Výjimky za běhu v nativních aplikací .NET
+          href: runtime-exceptions-in-net-native-apps.md
+    - name: Měření zlepšení spuštění pomocí .NET Native
+      href: measuring-startup-improvement-with-net-native.md
+    - name: Reflexe a .NET Native
+      href: reflection-and-net-native.md
       items:
-      - name: Elementy direktivy modulu runtime
-        href: runtime-directive-elements.md
-        items:
-        - name: Element <Application>
-          href: application-element-net-native.md
-        - name: Element <Assembly>
-          href: assembly-element-net-native.md
-        - name: Element <AttributeImplies>
-          href: attributeimplies-element-net-native.md
-        - name: Element <Directives>
-          href: directives-element-net-native.md
-        - name: Element <Event>
-          href: event-element-net-native.md
-        - name: Element <Field>
-          href: field-element-net-native.md
-        - name: Element <GenericParameter>
-          href: genericparameter-element-net-native.md
-        - name: Element <ImpliesType>
-          href: impliestype-element-net-native.md
-        - name: Element <Library>
-          href: library-element-net-native.md
-        - name: Element <Method>
-          href: method-element-net-native.md
-        - name: Element <MethodInstantiation>
-          href: methodinstantiation-element-net-native.md
-        - name: Element <Namespace>
-          href: namespace-element-net-native.md
-        - name: Element <Parameter>
-          href: parameter-element-net-native.md
-        - name: Element <Property>
-          href: property-element-net-native.md
-        - name: Element <Subtypes>
-          href: subtypes-element-net-native.md
-        - name: Element <Type>
-          href: type-element-net-native.md
-        - name: Element <TypeInstantiation>
-          href: typeinstantiation-element-net-native.md
-        - name: Element <TypeParameter>
-          href: typeparameter-element-net-native.md
-      - name: Nastavení zásad direktivy modulu runtime
-        href: runtime-directive-policy-settings.md
-  - name: Serializace a metadata
-    href: serialization-and-metadata.md
-  - name: Migrace aplikace pro Windows Store do .NET Native
-    href: migrating-your-windows-store-app-to-net-native.md
-  - name: Obecné řešení potíží s .NET Native
-    href: net-native-general-troubleshooting.md
-ms.openlocfilehash: 85d8306c93d50cc595fcd3bcbf9ee404a84e7ab2
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471240"
+        - name: 'Rozhraní API, která závisí na reflexi'
+          href: apis-that-rely-on-reflection.md
+        - name: Informace o rozhraní API reflexe
+          href: net-native-reflection-api-reference.md
+          items:
+            - name: Třída MissingInteropDataException
+              href: missinginteropdataexception-class-net-native.md
+            - name: Třída MissingMetadataException
+              href: missingmetadataexception-class-net-native.md
+            - name: Třída MissingRuntimeArtifactException
+              href: missingruntimeartifactexception-class-net-native.md
+        - name: Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)
+          href: runtime-directives-rd-xml-configuration-file-reference.md
+          items:
+            - name: Elementy direktivy modulu runtime
+              href: runtime-directive-elements.md
+              items:
+                - name: Element <Application>
+                  href: application-element-net-native.md
+                - name: Element <Assembly>
+                  href: assembly-element-net-native.md
+                - name: Element <AttributeImplies>
+                  href: attributeimplies-element-net-native.md
+                - name: Element <Directives>
+                  href: directives-element-net-native.md
+                - name: Element <Event>
+                  href: event-element-net-native.md
+                - name: Element <Field>
+                  href: field-element-net-native.md
+                - name: Element <GenericParameter>
+                  href: genericparameter-element-net-native.md
+                - name: Element <ImpliesType>
+                  href: impliestype-element-net-native.md
+                - name: Element <Library>
+                  href: library-element-net-native.md
+                - name: Element <Method>
+                  href: method-element-net-native.md
+                - name: Element <MethodInstantiation>
+                  href: methodinstantiation-element-net-native.md
+                - name: Element <Namespace>
+                  href: namespace-element-net-native.md
+                - name: Element <Parameter>
+                  href: parameter-element-net-native.md
+                - name: Element <Property>
+                  href: property-element-net-native.md
+                - name: Element <Subtypes>
+                  href: subtypes-element-net-native.md
+                - name: Element <Type>
+                  href: type-element-net-native.md
+                - name: Element <TypeInstantiation>
+                  href: typeinstantiation-element-net-native.md
+                - name: Element <TypeParameter>
+                  href: typeparameter-element-net-native.md
+            - name: Nastavení zásad direktivy modulu runtime
+              href: runtime-directive-policy-settings.md
+    - name: Serializace a metadata
+      href: serialization-and-metadata.md
+    - name: Migrace aplikace pro Windows Store do .NET Native
+      href: migrating-your-windows-store-app-to-net-native.md
+    - name: Obecné řešení potíží s .NET Native
+      href: net-native-general-troubleshooting.md

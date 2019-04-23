@@ -1,145 +1,138 @@
-items:
 - name: Windows Forms
   href: index.md
   items:
-  - name: Začínáme s Windows Forms
-    href: getting-started-with-windows-forms.md
-  - name: Přehled produktu Windows Forms
-    href: windows-forms-overview.md
-  - name: Vytvoření nového formuláře Windows Form
-    href: creating-a-new-windows-form.md
-    items:
-    - name: 'Postupy: Vytvoření aplikace Windows Forms z příkazového řádku'
-      href: how-to-create-a-windows-forms-application-from-the-command-line.md
-    - name: Windows Forms – souřadnice
-      href: windows-forms-coordinates.md
-  - name: Vytváření obslužných rutin událostí ve Windows Forms
-    href: creating-event-handlers-in-windows-forms.md
-    items:
-    - name: Přehled událostí
-      href: events-overview-windows-forms.md
-    - name: Přehled obslužných rutin událostí
-      href: event-handlers-overview-windows-forms.md
-    - name: 'Postupy: Vytváření obslužných rutin událostí v době běhu pro Windows Forms'
-      href: how-to-create-event-handlers-at-run-time-for-windows-forms.md
-    - name: 'Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms'
-      href: how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md
-    - name: Řazení událostí ve Windows Forms
-      href: order-of-events-in-windows-forms.md
-  - name: Úprava velikosti a měřítka Windows Forms
-    href: adjusting-the-size-and-scale-of-windows-forms.md
-    items:
-    - name: 'Postupy: Změna velikosti Windows Forms'
-      href: how-to-resize-windows-forms.md
-    - name: Automatická změna měřítka ve Windows Forms
-      href: automatic-scaling-in-windows-forms.md
+    - name: "Začínáme s\_Windows Forms"
+      href: getting-started-with-windows-forms.md
+    - name: Přehled produktu Windows Forms
+      href: windows-forms-overview.md
+    - name: Vytvoření nového formuláře Windows Form
+      href: creating-a-new-windows-form.md
       items:
-      - name: 'Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms'
-        href: how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md
-      - name: Zakázání sledování DPI v sadě Visual Studio
-        href: disable-dpi-awareness-visual-studio.md
-    - name: Podpora vysokého nastavení DPI ve Windows Forms
-      href: high-dpi-support-in-windows-forms.md
-  - name: 'Změna vzhledu Windows Forms '
-    href: changing-the-appearance-of-windows-forms.md
-    items:
-    - name: 'Postupy: Změna ohraničení Windows Forms'
-      href: how-to-change-the-borders-of-windows-forms.md
-  - name: Ovládací prvky Windows Forms
-    href: ./controls/
-  - name: Uživatelský vstup ve Windows Forms
-    href: user-input-in-windows-forms.md
-    items:
-    - name: Uživatelský vstup v aplikaci Windows Forms
-      href: user-input-in-a-windows-forms-application.md
-    - name: Vstup z klávesnice ve formulářové aplikaci Windows
-      href: keyboard-input-in-a-windows-forms-application.md
+        - name: 'Postupy: Vytvoření aplikace Windows Forms z příkazového řádku'
+          href: how-to-create-a-windows-forms-application-from-the-command-line.md
+        - name: Windows Forms – souřadnice
+          href: windows-forms-coordinates.md
+    - name: Vytváření obslužných rutin událostí ve Windows Forms
+      href: creating-event-handlers-in-windows-forms.md
       items:
-      - name: Jak funguje vstup z klávesnice
-        href: how-keyboard-input-works.md
-      - name: Použití událostí klávesnice
-        href: using-keyboard-events.md
-      - name: 'Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku'
-        href: how-to-modify-keyboard-input-to-a-standard-control.md
-      - name: 'Postupy: Určení modifikační klávesy, která byla stisknuta'
-        href: how-to-determine-which-modifier-key-was-pressed.md
-      - name: 'Postupy: Obsluha vstupu klávesnice na úrovni formuláře'
-        href: how-to-handle-keyboard-input-at-the-form-level.md
-    - name: Vstup z myši v aplikaci Windows Forms
-      href: mouse-input-in-a-windows-forms-application.md
+        - name: Přehled událostí
+          href: events-overview-windows-forms.md
+        - name: Přehled obslužných rutin událostí
+          href: event-handlers-overview-windows-forms.md
+        - name: 'Postupy: Vytváření obslužných rutin událostí v době běhu pro Windows Forms'
+          href: how-to-create-event-handlers-at-run-time-for-windows-forms.md
+        - name: 'Postupy: Připojení více událostí k jedné obslužné rutině událostí ve Windows Forms'
+          href: how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms.md
+        - name: Řazení událostí ve Windows Forms
+          href: order-of-events-in-windows-forms.md
+    - name: Úprava velikosti a měřítka Windows Forms
+      href: adjusting-the-size-and-scale-of-windows-forms.md
       items:
-      - name: Jak funguje vstup myši ve Windows Forms
-        href: how-mouse-input-works-in-windows-forms.md
-      - name: Události myši ve Windows Forms
-        href: mouse-events-in-windows-forms.md
-      - name: 'Postupy: Rozlišení mezi kliknutím a poklikáním'
-        href: how-to-distinguish-between-clicks-and-double-clicks.md
-      - name: Ukazatele myši ve Windows Forms
-        href: mouse-pointers-in-windows-forms.md
-      - name: Zachycení myši ve Windows Forms
-        href: mouse-capture-in-windows-forms.md
-      - name: 'Přetažení funkce ve Windows Forms '
-        href: drag-and-drop-functionality-in-windows-forms.md
-    - name: 'Postupy: Simulace událostí myši a klávesnice v kódu'
-      href: how-to-simulate-mouse-and-keyboard-events-in-code.md
-    - name: 'Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms'
-      href: how-to-handle-user-input-events-in-windows-forms-controls.md
-    - name: Ověřování uživatelského vstupu ve Windows Forms
-      href: user-input-validation-in-windows-forms.md
-  - name: Dialogová okna ve Windows Forms
-    href: dialog-boxes-in-windows-forms.md
-    items:
-    - name: 'Postupy: Zobrazování dialogových oken pro Windows Forms'
-      href: how-to-display-dialog-boxes-for-windows-forms.md
-  - name: Windows Forms – datová vazba
-    href: windows-forms-data-binding.md
-    items:
-    - name: Datové vazby a rozhraní Windows Forms
-      href: data-binding-and-windows-forms.md
-    - name: Zdroje dat podporované rozhraním Windows Forms
-      href: data-sources-supported-by-windows-forms.md
-    - name: Rozhraní související s datovou vazbou
-      href: interfaces-related-to-data-binding.md
-    - name: Oznámení změn v datové vazbě rozhraní Windows Forms
-      href: change-notification-in-windows-forms-data-binding.md
-    - name: 'Postupy: Použití vzoru PropertyNameChanged'
-      href: how-to-apply-the-propertynamechanged-pattern.md
-    - name: 'Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat'
-      href: how-to-create-a-bound-control-and-format-the-displayed-data.md
-    - name: 'Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms'
-      href: how-to-create-a-simple-bound-control-on-a-windows-form.md
-    - name: 'Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
-      href: multiple-controls-bound-to-data-source-synchronized.md
-    - name: 'Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici'
-      href: ensure-the-selected-row-in-a-child-table-correct.md
-    - name: 'Postupy: Implementace rozhraní IListSource'
-      href: how-to-implement-the-ilistsource-interface.md
-    - name: 'Postupy: Implementace rozhraní INotifyPropertyChanged'
-      href: how-to-implement-the-inotifypropertychanged-interface.md
-    - name: 'Postupy: Implementace rozhraní ITypedList'
-      href: how-to-implement-the-itypedlist-interface.md
-    - name: 'Postupy: Procházení dat v rozhraní Windows Forms'
-      href: how-to-navigate-data-in-windows-forms.md
-  - name: Windows Forms – zabezpečení
-    href: windows-forms-security.md
-    items:
-    - name: Přehled zabezpečení ve Windows Forms
-      href: security-in-windows-forms-overview.md
-    - name: Více zabezpečený přístup k souborům a datům ve Windows Forms
-      href: more-secure-file-and-data-access-in-windows-forms.md
-    - name: Bezpečnější tisk ve Windows Forms
-      href: more-secure-printing-in-windows-forms.md
-    - name: Dodatečné informace o zabezpečení ve Windows Forms
-      href: additional-security-considerations-in-windows-forms.md
-  - name: ClickOnce – nasazení pro Windows Forms
-    href: clickonce-deployment-for-windows-forms.md
-  - name: 'Postupy: Přístup ke kolekcím s klíči ve Windows Forms'
-    href: how-to-access-keyed-collections-in-windows-forms.md
-  - name: Rozšiřování formulářových aplikací Windows
-    href: ./advanced/
-ms.openlocfilehash: 4c2f21406d7017943542ff00aa7be95b8e3d5d69
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471099"
+        - name: 'Postupy: Změna velikosti Windows Forms'
+          href: how-to-resize-windows-forms.md
+        - name: Automatická změna měřítka ve Windows Forms
+          href: automatic-scaling-in-windows-forms.md
+          items:
+            - name: 'Postupy: Odpověď na změny schématu písem v aplikaci Windows Forms'
+              href: how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md
+            - name: Zakázání sledování DPI v sadě Visual Studio
+              href: disable-dpi-awareness-visual-studio.md
+        - name: Podpora vysokého nastavení DPI ve Windows Forms
+          href: high-dpi-support-in-windows-forms.md
+    - name: 'Změna vzhledu Windows Forms '
+      href: changing-the-appearance-of-windows-forms.md
+      items:
+        - name: 'Postupy: Změna ohraničení Windows Forms'
+          href: how-to-change-the-borders-of-windows-forms.md
+    - name: Ovládací prvky Windows Forms
+      href: ./controls/
+    - name: Uživatelský vstup ve Windows Forms
+      href: user-input-in-windows-forms.md
+      items:
+        - name: Uživatelský vstup v aplikaci Windows Forms
+          href: user-input-in-a-windows-forms-application.md
+        - name: Vstup z klávesnice ve formulářové aplikaci Windows
+          href: keyboard-input-in-a-windows-forms-application.md
+          items:
+            - name: Jak funguje vstup z klávesnice
+              href: how-keyboard-input-works.md
+            - name: Použití událostí klávesnice
+              href: using-keyboard-events.md
+            - name: 'Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku'
+              href: how-to-modify-keyboard-input-to-a-standard-control.md
+            - name: 'Postupy: Určení modifikační klávesy, která byla stisknuta'
+              href: how-to-determine-which-modifier-key-was-pressed.md
+            - name: 'Postupy: Obsluha vstupu klávesnice na úrovni formuláře'
+              href: how-to-handle-keyboard-input-at-the-form-level.md
+        - name: Vstup z myši v aplikaci Windows Forms
+          href: mouse-input-in-a-windows-forms-application.md
+          items:
+            - name: Jak funguje vstup myši ve Windows Forms
+              href: how-mouse-input-works-in-windows-forms.md
+            - name: Události myši ve Windows Forms
+              href: mouse-events-in-windows-forms.md
+            - name: 'Postupy: Rozlišení mezi kliknutím a poklikáním'
+              href: how-to-distinguish-between-clicks-and-double-clicks.md
+            - name: Ukazatele myši ve Windows Forms
+              href: mouse-pointers-in-windows-forms.md
+            - name: Zachycení myši ve Windows Forms
+              href: mouse-capture-in-windows-forms.md
+            - name: 'Přetažení funkce ve Windows Forms '
+              href: drag-and-drop-functionality-in-windows-forms.md
+        - name: 'Postupy: Simulace událostí myši a klávesnice v kódu'
+          href: how-to-simulate-mouse-and-keyboard-events-in-code.md
+        - name: 'Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms'
+          href: how-to-handle-user-input-events-in-windows-forms-controls.md
+        - name: Ověřování uživatelského vstupu ve Windows Forms
+          href: user-input-validation-in-windows-forms.md
+    - name: Dialogová okna ve Windows Forms
+      href: dialog-boxes-in-windows-forms.md
+      items:
+        - name: 'Postupy: Zobrazování dialogových oken pro Windows Forms'
+          href: how-to-display-dialog-boxes-for-windows-forms.md
+    - name: Windows Forms – datová vazba
+      href: windows-forms-data-binding.md
+      items:
+        - name: Datové vazby a rozhraní Windows Forms
+          href: data-binding-and-windows-forms.md
+        - name: Zdroje dat podporované rozhraním Windows Forms
+          href: data-sources-supported-by-windows-forms.md
+        - name: Rozhraní související s datovou vazbou
+          href: interfaces-related-to-data-binding.md
+        - name: Oznámení změn v datové vazbě rozhraní Windows Forms
+          href: change-notification-in-windows-forms-data-binding.md
+        - name: 'Postupy: Použití vzoru PropertyNameChanged'
+          href: how-to-apply-the-propertynamechanged-pattern.md
+        - name: 'Postupy: Vytvoření připojeného ovládacího prvku a formátování zobrazených dat'
+          href: how-to-create-a-bound-control-and-format-the-displayed-data.md
+        - name: 'Postupy: Vytvoření jednoduše vázaného ovládacího prvku na formuláři Windows Forms'
+          href: how-to-create-a-simple-bound-control-on-a-windows-form.md
+        - name: 'Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných'
+          href: multiple-controls-bound-to-data-source-synchronized.md
+        - name: 'Postupy: Zajištění, aby vybraný řádek v podřízené tabulce zůstal ve správné pozici'
+          href: ensure-the-selected-row-in-a-child-table-correct.md
+        - name: 'Postupy: Implementace rozhraní IListSource'
+          href: how-to-implement-the-ilistsource-interface.md
+        - name: 'Postupy: Implementace rozhraní INotifyPropertyChanged'
+          href: how-to-implement-the-inotifypropertychanged-interface.md
+        - name: 'Postupy: Implementace rozhraní ITypedList'
+          href: how-to-implement-the-itypedlist-interface.md
+        - name: 'Postupy: Procházení dat v rozhraní Windows Forms'
+          href: how-to-navigate-data-in-windows-forms.md
+    - name: Windows Forms – zabezpečení
+      href: windows-forms-security.md
+      items:
+        - name: Přehled zabezpečení ve Windows Forms
+          href: security-in-windows-forms-overview.md
+        - name: Více zabezpečený přístup k souborům a datům ve Windows Forms
+          href: more-secure-file-and-data-access-in-windows-forms.md
+        - name: Bezpečnější tisk ve Windows Forms
+          href: more-secure-printing-in-windows-forms.md
+        - name: Dodatečné informace o zabezpečení ve Windows Forms
+          href: additional-security-considerations-in-windows-forms.md
+    - name: ClickOnce – nasazení pro Windows Forms
+      href: clickonce-deployment-for-windows-forms.md
+    - name: 'Postupy: Přístup ke kolekcím s klíči ve Windows Forms'
+      href: how-to-access-keyed-collections-in-windows-forms.md
+    - name: Rozšiřování formulářových aplikací Windows
+      href: ./advanced/

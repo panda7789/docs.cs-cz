@@ -1,32 +1,25 @@
-items:
-- name: Prohlídka jazyka C#
+- name: 'Prohlídka jazyka C#'
   href: index.md
   items:
-  - name: Struktura programu
-    href: program-structure.md
-  - name: Typy a proměnné
-    href: types-and-variables.md
-  - name: Výrazy
-    href: expressions.md
-  - name: Příkazy
-    href: statements.md
-  - name: Třídy a objekty
-    href: classes-and-objects.md
-  - name: Struktury
-    href: structs.md
-  - name: Pole
-    href: arrays.md
-  - name: Rozhraní
-    href: interfaces.md
-  - name: Výčty
-    href: enums.md
-  - name: Delegáty
-    href: delegates.md
-  - name: Atributy
-    href: attributes.md
-ms.openlocfilehash: 9f1265c48bea8f76bd352eb95605187b1385cae5
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471182"
+    - name: Struktura programu
+      href: program-structure.md
+    - name: Typy a proměnné
+      href: types-and-variables.md
+    - name: Výrazy
+      href: expressions.md
+    - name: Příkazy
+      href: statements.md
+    - name: Třídy a objekty
+      href: classes-and-objects.md
+    - name: Struktury
+      href: structs.md
+    - name: Pole
+      href: arrays.md
+    - name: Rozhraní
+      href: interfaces.md
+    - name: Výčty
+      href: enums.md
+    - name: Delegáty
+      href: delegates.md
+    - name: Atributy
+      href: attributes.md

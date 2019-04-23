@@ -1,71 +1,64 @@
-items:
 - name: Výkon
   href: index.md
   items:
-  - name: Psaní velkých a pohotově reagujících aplikací .NET Framework
-    href: writing-large-responsive-apps.md
-  - name: Ukládání do vyrovnávací paměti v aplikacích .NET Framework
-    href: caching-in-net-framework-applications.md
-  - name: Opožděná inicializace
-    href: lazy-initialization.md
-    items:
-    - name: 'Postupy: Provádění opožděné inicializace objektů'
-      href: how-to-perform-lazy-initialization-of-objects.md
-  - name: Události Trasování událostí pro Windows v rozhraní .NET Framework
-    href: etw-events.md
-    items:
-    - name: Události Trasování událostí pro Windows v knihovně Task Parallel Library a PLINQ
-      href: etw-events-in-task-parallel-library-and-plinq.md
-    - name: Události Trasování událostí pro Windows v CLR (Common Language Runtime)
-      href: etw-events-in-the-common-language-runtime.md
+    - name: Psaní velkých a pohotově reagujících aplikací .NET Framework
+      href: writing-large-responsive-apps.md
+    - name: Ukládání do vyrovnávací paměti v aplikacích .NET Framework
+      href: caching-in-net-framework-applications.md
+    - name: Opožděná inicializace
+      href: lazy-initialization.md
       items:
-      - name: Řízení přihlašování rozhraní .NET Framework
-        href: controlling-logging.md
-      - name: Poskytovatelé CLR ETW
-        href: clr-etw-providers.md
-      - name: Klíčová slova a úrovně ETW CLR
-        href: clr-etw-keywords-and-levels.md
-      - name: Události ETW CLR
-        href: clr-etw-events.md
-        items:
-        - name: Události běhových informací
-          href: runtime-information-etw-events.md
-        - name: Událost výjimky Thrown_V1
-          href: exception-thrown-v1-etw-event.md
-        - name: Kolizní události
-          href: contention-etw-events.md
-        - name: Události fondu vláken
-          href: thread-pool-etw-events.md
-        - name: Události zavaděče
-          href: loader-etw-events.md
-        - name: Události metod
-          href: method-etw-events.md
-        - name: Události uvolňování paměti
-          href: garbage-collection-etw-events.md
-        - name: Události trasování JIT
-          href: jit-tracing-etw-events.md
-        - name: Události interoperability
-          href: interop-etw-events.md
-        - name: Události ARM
-          href: application-domain-resource-monitoring-arm-etw-events.md
-        - name: Události zabezpečení
-          href: security-etw-events.md
-        - name: Událost zásobníku
-          href: stack-etw-event.md
-  - name: Spolehlivost
-    href: reliability.md
-    items:
-    - name: Programování serveru SQL Server a atributy ochrany hostitele
-      href: sql-server-programming-and-host-protection-attributes.md
-    - name: Spolehlivost – doporučené postupy
-      href: reliability-best-practices.md
-    - name: Oblasti omezeného provádění
-      href: constrained-execution-regions.md
-  - name: Tipy pro zvýšení výkonu
-    href: performance-tips.md
-ms.openlocfilehash: 9030bc17ebfe2cda3b6b1ebb15196a24ac992715
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471300"
+        - name: 'Postupy: Provádění opožděné inicializace objektů'
+          href: how-to-perform-lazy-initialization-of-objects.md
+    - name: Události Trasování událostí pro Windows v rozhraní .NET Framework
+      href: etw-events.md
+      items:
+        - name: Události Trasování událostí pro Windows v knihovně Task Parallel Library a PLINQ
+          href: etw-events-in-task-parallel-library-and-plinq.md
+        - name: Události Trasování událostí pro Windows v CLR (Common Language Runtime)
+          href: etw-events-in-the-common-language-runtime.md
+          items:
+            - name: Řízení přihlašování rozhraní .NET Framework
+              href: controlling-logging.md
+            - name: Poskytovatelé CLR ETW
+              href: clr-etw-providers.md
+            - name: Klíčová slova a úrovně ETW CLR
+              href: clr-etw-keywords-and-levels.md
+            - name: Události ETW CLR
+              href: clr-etw-events.md
+              items:
+                - name: Události běhových informací
+                  href: runtime-information-etw-events.md
+                - name: Událost výjimky Thrown_V1
+                  href: exception-thrown-v1-etw-event.md
+                - name: Kolizní události
+                  href: contention-etw-events.md
+                - name: Události fondu vláken
+                  href: thread-pool-etw-events.md
+                - name: Události zavaděče
+                  href: loader-etw-events.md
+                - name: Události metod
+                  href: method-etw-events.md
+                - name: Události uvolňování paměti
+                  href: garbage-collection-etw-events.md
+                - name: Události trasování JIT
+                  href: jit-tracing-etw-events.md
+                - name: Události interoperability
+                  href: interop-etw-events.md
+                - name: Události ARM
+                  href: application-domain-resource-monitoring-arm-etw-events.md
+                - name: Události zabezpečení
+                  href: security-etw-events.md
+                - name: Událost zásobníku
+                  href: stack-etw-event.md
+    - name: Spolehlivost
+      href: reliability.md
+      items:
+        - name: Programování serveru SQL Server a atributy ochrany hostitele
+          href: sql-server-programming-and-host-protection-attributes.md
+        - name: Spolehlivost – doporučené postupy
+          href: reliability-best-practices.md
+        - name: Oblasti omezeného provádění
+          href: constrained-execution-regions.md
+    - name: Tipy pro zvýšení výkonu
+      href: performance-tips.md

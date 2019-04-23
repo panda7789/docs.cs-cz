@@ -1,1659 +1,1652 @@
-items:
 - name: Ladění
   href: index.md
   items:
-  - name: Ladění tříd typu coclass
-    href: debugging-coclasses.md
-    items:
-    - name: CorpubPublish – třída typu coclass
-      href: corpubpublish-coclass.md
-  - name: Debugging – rozhraní
-    href: debugging-interfaces.md
-    items:
-    - name: ICLRDataEnumMemoryRegions – rozhraní
-      href: iclrdataenummemoryregions-interface.md
-      items:
-      - name: EnumMemoryRegions – metoda
-        href: iclrdataenummemoryregions-enummemoryregions-method.md
-    - name: ICLRDataEnumMemoryRegionsCallback – rozhraní
-      href: iclrdataenummemoryregionscallback-interface.md
-      items:
-      - name: EnumMemoryRegion – metoda
-        href: iclrdataenummemoryregionscallback-enummemoryregion-method.md
-    - name: ICLRDataTarget – rozhraní
-      href: iclrdatatarget-interface.md
-      items:
-      - name: GetCurrentThreadID – metoda
-        href: iclrdatatarget-getcurrentthreadid-method.md
-      - name: GetImageBase – metoda
-        href: iclrdatatarget-getimagebase-method.md
-      - name: GetMachineType – metoda
-        href: iclrdatatarget-getmachinetype-method.md
-      - name: GetPointerSize – metoda
-        href: iclrdatatarget-getpointersize-method.md
-      - name: GetThreadContext – metoda
-        href: iclrdatatarget-getthreadcontext-method.md
-      - name: GetTLSValue – metoda
-        href: iclrdatatarget-gettlsvalue-method.md
-      - name: ReadVirtual – metoda
-        href: iclrdatatarget-readvirtual-method.md
-      - name: Request – metoda
-        href: iclrdatatarget-request-method.md
-      - name: SetThreadContext – metoda
-        href: iclrdatatarget-setthreadcontext-method.md
-      - name: SetTLSValue – metoda
-        href: iclrdatatarget-settlsvalue-method.md
-      - name: WriteVirtual – metoda
-        href: iclrdatatarget-writevirtual-method.md
-    - name: ICLRDataTarget2 – rozhraní
-      href: iclrdatatarget2-interface.md
-      items:
-      - name: AllocVirtual – metoda
-        href: iclrdatatarget2-allocvirtual-method.md
-      - name: FreeVirtual – metoda
-        href: iclrdatatarget2-freevirtual-method.md
-    - name: ICLRDataTarget3 – rozhraní
-      href: iclrdatatarget3-interface.md
-      items:
-      - name: GetExceptionRecord – metoda
-        href: iclrdatatarget3-getexceptionrecord-method.md
-      - name: GetExceptionContextRecord – metoda
-        href: iclrdatatarget3-getexceptioncontextrecord-method.md
-      - name: GetExceptionThreadID – metoda
-        href: iclrdatatarget3-getexceptionthreadid-method.md
-    - name: ICLRDebugging – rozhraní
-      href: iclrdebugging-interface.md
-      items:
-      - name: OpenVirtualProcess – metoda
-        href: iclrdebugging-openvirtualprocess-method.md
-      - name: CanUnloadNow – metoda
-        href: iclrdebugging-canunloadnow-method.md
-    - name: ICLRDebuggingLibraryProvider – rozhraní
-      href: iclrdebugginglibraryprovider-interface.md
-      items:
-      - name: ProvideLibrary – metoda
-        href: iclrdebugginglibraryprovider-providelibrary-method.md
-    - name: ICLRMetadataLocator – rozhraní
-      href: iclrmetadatalocator-interface.md
-      items:
-      - name: GetMetaData – metoda
-        href: iclrmetadatalocator-getmetadata-method.md
-    - name: ICorDebug – rozhraní
-      href: icordebug-interface.md
-      items:
-      - name: CanLaunchOrAttach – metoda
-        href: icordebug-canlaunchorattach-method.md
-      - name: CreateProcess – metoda
-        href: icordebug-createprocess-method.md
-      - name: DebugActiveProcess – metoda
-        href: icordebug-debugactiveprocess-method.md
-      - name: EnumerateProcesses – metoda
-        href: icordebug-enumerateprocesses-method.md
-      - name: GetProcess – metoda
-        href: icordebug-getprocess-method.md
-      - name: Initialize – metoda
-        href: icordebug-initialize-method.md
-      - name: SetManagedHandler – metoda
-        href: icordebug-setmanagedhandler-method.md
-      - name: SetUnmanagedHandler – metoda
-        href: icordebug-setunmanagedhandler-method.md
-      - name: Terminate – metoda
-        href: icordebug-terminate-method.md
-    - name: ICorDebugAppDomain – rozhraní
-      href: icordebugappdomain-interface.md
-      items:
-      - name: Attach – metoda
-        href: icordebugappdomain-attach-method.md
-      - name: EnumerateAssemblies – metoda
-        href: icordebugappdomain-enumerateassemblies-method.md
-      - name: EnumerateBreakpoints – metoda
-        href: icordebugappdomain-enumeratebreakpoints-method.md
-      - name: EnumerateSteppers – metoda
-        href: icordebugappdomain-enumeratesteppers-method.md
-      - name: GetID – metoda
-        href: icordebugappdomain-getid-method.md
-      - name: GetModuleFromMetaDataInterface – metoda
-        href: icordebugappdomain-getmodulefrommetadatainterface-method.md
-      - name: GetName – metoda
-        href: icordebugappdomain-getname-method.md
-      - name: GetObject – metoda
-        href: icordebugappdomain-getobject-method.md
-      - name: GetProcess – metoda
-        href: icordebugappdomain-getprocess-method.md
-      - name: IsAttached – metoda
-        href: icordebugappdomain-isattached-method.md
-    - name: ICorDebugAppDomain2 – rozhraní
-      href: icordebugappdomain2-interface.md
-      items:
-      - name: GetArrayOrPointerType – metoda
-        href: icordebugappdomain2-getarrayorpointertype-method.md
-      - name: GetFunctionPointerType
-        href: icordebugappdomain2-getfunctionpointertype-method.md
-    - name: ICorDebugAppDomain3 – rozhraní
-      href: icordebugappdomain3-interface.md
-      items:
-      - name: GetCachedWinRTTypes – metoda
-        href: icordebugappdomain3-getcachedwinrttypes-method.md
-      - name: GetCachedWinRTTypesForIIDs – metoda
-        href: icordebugappdomain3-getcachedwinrttypesforiids-method.md
-    - name: Rozhraní ICorDebugAppDomain4
-      href: icordebugappdomain4-interface.md
-      items:
-      - name: GetObjectForCCW – metoda
-        href: icordebugappdomain4-getobjectforccw-method.md
-    - name: ICorDebugAppDomainEnum – rozhraní
-      href: icordebugappdomainenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugappdomainenum-next-method.md
-    - name: ICorDebugArrayValue – rozhraní
-      href: icordebugarrayvalue-interface.md
-      items:
-      - name: GetBaseIndicies – metoda
-        href: icordebugarrayvalue-getbaseindicies-method.md
-      - name: GetCount – metoda
-        href: icordebugarrayvalue-getcount-method.md
-      - name: GetDimensions – metoda
-        href: icordebugarrayvalue-getdimensions-method.md
-      - name: GetElement – metoda
-        href: icordebugarrayvalue-getelement-method.md
-      - name: GetElementAtPosition – metoda
-        href: icordebugarrayvalue-getelementatposition-method.md
-      - name: GetElementType – metoda
-        href: icordebugarrayvalue-getelementtype-method.md
-      - name: GetRank – metoda
-        href: icordebugarrayvalue-getrank-method.md
-      - name: HasBaseIndicies – metoda
-        href: icordebugarrayvalue-hasbaseindicies-method.md
-    - name: ICorDebugAssembly – rozhraní
-      href: icordebugassembly-interface.md
-      items:
-      - name: EnumerateModules – metoda
-        href: icordebugassembly-enumeratemodules-method.md
-      - name: GetAppDomain – metoda
-        href: icordebugassembly-getappdomain-method.md
-      - name: GetCodeBase – metoda
-        href: icordebugassembly-getcodebase-method.md
-      - name: GetName – metoda
-        href: icordebugassembly-getname-method.md
-      - name: GetProcess – metoda
-        href: icordebugassembly-getprocess-method.md
-    - name: ICorDebugAssembly2 – rozhraní
-      href: icordebugassembly2-interface.md
-      items:
-      - name: IsFullyTrusted – metoda
-        href: icordebugassembly2-isfullytrusted-method.md
-    - name: Rozhraní ICorDebugAssembly3
-      href: icordebugassembly3-interface.md
-      items:
-      - name: EnumerateContainedAssemblies – metoda
-        href: icordebugassembly3-enumeratecontainedassemblies-method.md
-      - name: GetContainerAssembly – metoda
-        href: icordebugassembly3-getcontainerassembly-method.md
-    - name: ICorDebugAssemblyEnum – rozhraní
-      href: icordebugassemblyenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugassemblyenum-next-method.md
-    - name: ICorDebugBlockingObjectEnum – rozhraní
-      href: icordebugblockingobjectenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugblockingobjectenum-next-method.md
-    - name: ICorDebugBoxValue – rozhraní
-      href: icordebugboxvalue-interface.md
-      items:
-      - name: GetObject – metoda
-        href: icordebugboxvalue-getobject-method.md
-    - name: ICorDebugBreakpoint – rozhraní
-      href: icordebugbreakpoint-interface.md
-      items:
-      - name: Activate – metoda
-        href: icordebugbreakpoint-activate-method.md
-      - name: IsActive – metoda
-        href: icordebugbreakpoint-isactive-method.md
-    - name: ICorDebugBreakpointEnum – rozhraní
-      href: icordebugbreakpointenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugbreakpointenum-next-method.md
-    - name: ICorDebugChain – rozhraní
-      href: icordebugchain-interface.md
-      items:
-      - name: EnumerateFrames – metoda
-        href: icordebugchain-enumerateframes-method.md
-      - name: GetActiveFrame – metoda
-        href: icordebugchain-getactiveframe-method.md
-      - name: GetCallee – metoda
-        href: icordebugchain-getcallee-method.md
-      - name: GetCaller – metoda
-        href: icordebugchain-getcaller-method.md
-      - name: GetContext – metoda
-        href: icordebugchain-getcontext-method.md
-      - name: GetNext – metoda
-        href: icordebugchain-getnext-method.md
-      - name: GetPrevious – metoda
-        href: icordebugchain-getprevious-method.md
-      - name: GetReason – metoda
-        href: icordebugchain-getreason-method.md
-      - name: GetRegisterSet – metoda
-        href: icordebugchain-getregisterset-method.md
-      - name: GetStackRange – metoda
-        href: icordebugchain-getstackrange-method.md
-      - name: GetThread – metoda
-        href: icordebugchain-getthread-method.md
-      - name: IsManaged – metoda
-        href: icordebugchain-ismanaged-method.md
-    - name: ICorDebugChainEnum – rozhraní
-      href: icordebugchainenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugchainenum-next-method.md
-    - name: ICorDebugClass – rozhraní
-      href: icordebugclass-interface.md
-      items:
-      - name: GetModule – metoda
-        href: icordebugclass-getmodule-method.md
-      - name: GetStaticFieldValue – metoda
-        href: icordebugclass-getstaticfieldvalue-method.md
-      - name: GetToken – metoda
-        href: icordebugclass-gettoken-method.md
-    - name: ICorDebugClass2 – rozhraní
-      href: icordebugclass2-interface.md
-      items:
-      - name: GetParameterizedType – metoda
-        href: icordebugclass2-getparameterizedtype-method.md
-      - name: SetJMCStatus – metoda
-        href: icordebugclass2-setjmcstatus-method.md
-    - name: ICorDebugCode – rozhraní
-      href: icordebugcode-interface1.md
-      items:
-      - name: CreateBreakpoint – metoda
-        href: icordebugcode-createbreakpoint-method.md
-      - name: GetAddress – metoda
-        href: icordebugcode-getaddress-method.md
-      - name: GetCode – metoda
-        href: icordebugcode-getcode-method.md
-      - name: GetEnCRemapSequencePoints – metoda
-        href: icordebugcode-getencremapsequencepoints-method.md
-      - name: GetFunction – metoda
-        href: icordebugcode-getfunction-method.md
-      - name: GetILToNativeMapping – metoda
-        href: icordebugcode-getiltonativemapping-method.md
-      - name: GetSize – metoda
-        href: icordebugcode-getsize-method.md
-      - name: GetVersionNumber – metoda
-        href: icordebugcode-getversionnumber-method.md
-      - name: IsIL – metoda
-        href: icordebugcode-isil-method.md
-    - name: ICorDebugCode2 – rozhraní
-      href: icordebugcode2-interface.md
-      items:
-      - name: GetCodeChunks – metoda
-        href: icordebugcode2-getcodechunks-method.md
-      - name: GetCompilerFlags – metoda
-        href: icordebugcode2-getcompilerflags-method.md
-    - name: ICorDebugCode3 – rozhraní
-      href: icordebugcode3-interface.md
-      items:
-      - name: GetReturnValueLiveOffset – metoda
-        href: icordebugcode3-getreturnvalueliveoffset-method.md
-    - name: ICorDebugCode4 – rozhraní
-      href: icordebugcode4-interface.md
-      items:
-      - name: EnumerateVariableHomes – metoda
-        href: icordebugcode4-enumeratevariablehomes-method.md
-    - name: ICorDebugCodeEnum – rozhraní
-      href: icordebugcodeenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugcodeenum-next-method.md
-    - name: ICorDebugComObjectValue – rozhraní
-      href: icordebugcomobjectvalue-interface.md
-      items:
-      - name: GetCachedInterfacePointers – metoda
-        href: icordebugcomobjectvalue-getcachedinterfacepointers-method.md
-      - name: GetCachedInterfaceTypes – metoda
-        href: icordebugcomobjectvalue-getcachedinterfacetypes-method.md
-    - name: ICorDebugContext – rozhraní
-      href: icordebugcontext-interface.md
-    - name: ICorDebugController – rozhraní
-      href: icordebugcontroller-interface.md
-      items:
-      - name: CanCommitChanges – metoda
-        href: icordebugcontroller-cancommitchanges-method.md
-      - name: CommitChanges – metoda
-        href: icordebugcontroller-commitchanges-method.md
-      - name: Continue – metoda
-        href: icordebugcontroller-continue-method.md
-      - name: Detach – metoda
-        href: icordebugcontroller-detach-method.md
-      - name: EnumerateThreads – metoda
-        href: icordebugcontroller-enumeratethreads-method.md
-      - name: HasQueuedCallbacks – metoda
-        href: icordebugcontroller-hasqueuedcallbacks-method.md
-      - name: IsRunning – metoda
-        href: icordebugcontroller-isrunning-method.md
-      - name: SetAllThreadsDebugState – metoda
-        href: icordebugcontroller-setallthreadsdebugstate-method.md
-      - name: Stop – metoda
-        href: icordebugcontroller-stop-method.md
-      - name: Terminate – metoda
-        href: icordebugcontroller-terminate-method.md
-    - name: ICorDebugDataTarget – rozhraní
-      href: icordebugdatatarget-interface.md
-      items:
-      - name: GetPlatform – metoda
-        href: icordebugdatatarget-getplatform-method.md
-      - name: ReadVirtual – metoda
-        href: icordebugdatatarget-readvirtual-method.md
-      - name: GetThreadContext – metoda
-        href: icordebugdatatarget-getthreadcontext-method.md
-    - name: Rozhraní ICorDebugDataTarget2
-      href: icordebugdatatarget2-interface.md
-      items:
-      - name: CreateVirtualUnwinder – metoda
-        href: icordebugdatatarget2-createvirtualunwinder-method.md
-      - name: EnumerateThreadIDs – metoda
-        href: icordebugdatatarget2-enumeratethreadids-method.md
-      - name: GetImageFromPointer – metoda
-        href: icordebugdatatarget2-getimagefrompointer-method.md
-      - name: GetImageLocation – metoda
-        href: icordebugdatatarget2-getimagelocation-method.md
-      - name: GetSymbolProviderForImage – metoda
-        href: icordebugdatatarget2-getsymbolproviderforimage-method.md
-    - name: Rozhraní ICorDebugDataTarget3
-      href: icordebugdatatarget3-interface.md
-      items:
-      - name: GetLoadedModules – metoda
-        href: icordebugdatatarget3-getloadedmodules-method.md
-    - name: Rozhraní ICorDebugDebugEvent
-      href: icordebugdebugevent-interface.md
-      items:
-      - name: GetEventKind – metoda
-        href: icordebugdebugevent-geteventkind-method.md
-      - name: GetThread – metoda
-        href: icordebugdebugevent-getthread-method.md
-    - name: ICorDebugEditAndContinueErrorInfo – rozhraní
-      href: icordebugeditandcontinueerrorinfo-interface.md
-      items:
-      - name: GetErrorCode – metoda
-        href: icordebugeditandcontinueerrorinfo-geterrorcode-method.md
-      - name: GetModule – metoda
-        href: icordebugeditandcontinueerrorinfo-getmodule-method.md
-      - name: GetString – metoda
-        href: icordebugeditandcontinueerrorinfo-getstring-method.md
-      - name: GetToken – metoda
-        href: icordebugeditandcontinueerrorinfo-gettoken-method.md
-    - name: ICorDebugEditAndContinueSnapshot – rozhraní
-      href: icordebugeditandcontinuesnapshot-interface.md
-      items:
-      - name: CopyMetaData – metoda
-        href: icordebugeditandcontinuesnapshot-copymetadata-method.md
-      - name: GetMvid – metoda
-        href: icordebugeditandcontinuesnapshot-getmvid-method.md
-      - name: GetRoDataRVA – metoda
-        href: icordebugeditandcontinuesnapshot-getrodatarva-method.md
-      - name: GetRwDataRVA – metoda
-        href: icordebugeditandcontinuesnapshot-getrwdatarva-method.md
-      - name: SetILMap – metoda
-        href: icordebugeditandcontinuesnapshot-setilmap-method.md
-      - name: SetPEBytes – metoda
-        href: icordebugeditandcontinuesnapshot-setpebytes-method.md
-      - name: SetPESymbolBytes – metoda
-        href: icordebugeditandcontinuesnapshot-setpesymbolbytes-method.md
-    - name: ICorDebugEnum – rozhraní
-      href: icordebugenum-interface1.md
-      items:
-      - name: Clone – metoda
-        href: icordebugenum-clone-method.md
-      - name: GetCount – metoda
-        href: icordebugenum-getcount-method.md
-      - name: Reset – metoda
-        href: icordebugenum-reset-method.md
-      - name: Skip – metoda
-        href: icordebugenum-skip-method.md
-    - name: ICorDebugErrorInfoEnum – rozhraní
-      href: icordebugerrorinfoenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugerrorinfoenum-next-method.md
-    - name: ICorDebugEval – rozhraní
-      href: icordebugeval-interface.md
-      items:
-      - name: Abort – metoda
-        href: icordebugeval-abort-method.md
-      - name: CallFunction – metoda
-        href: icordebugeval-callfunction-method.md
-      - name: CreateValue – metoda
-        href: icordebugeval-createvalue-method.md
-      - name: GetResult – metoda
-        href: icordebugeval-getresult-method.md
-      - name: GetThread – metoda
-        href: icordebugeval-getthread-method.md
-      - name: IsActive – metoda
-        href: icordebugeval-isactive-method.md
-      - name: NewArray – metoda
-        href: icordebugeval-newarray-method.md
-      - name: NewObject – metoda
-        href: icordebugeval-newobject-method.md
-      - name: NewObjectNoConstructor – metoda
-        href: icordebugeval-newobjectnoconstructor-method.md
-      - name: NewString – metoda
-        href: icordebugeval-newstring-method.md
-    - name: ICorDebugEval2 – rozhraní
-      href: icordebugeval2-interface.md
-      items:
-      - name: CallParameterizedFunction – metoda
-        href: icordebugeval2-callparameterizedfunction-method.md
-      - name: CreateValueForType – metoda
-        href: icordebugeval2-createvaluefortype-method.md
-      - name: NewParameterizedArray – metoda
-        href: icordebugeval2-newparameterizedarray-method.md
-      - name: NewParameterizedObject – metoda
-        href: icordebugeval2-newparameterizedobject-method.md
-      - name: NewParameterizedObjectNoConstructor – metoda
-        href: icordebugeval2-newparameterizedobjectnoconstructor-method.md
-      - name: NewStringWithLength – metoda
-        href: icordebugeval2-newstringwithlength-method.md
-      - name: RudeAbort – metoda
-        href: icordebugeval2-rudeabort-method.md
-    - name: Rozhraní ICorDebugExceptionDebugEvent
-      href: icordebugexceptiondebugevent-interface.md
-      items:
-      - name: GetFlags – metoda
-        href: icordebugexceptiondebugevent-getflags-method.md
-      - name: GetNativeIP – metoda
-        href: icordebugexceptiondebugevent-getnativeip-method.md
-      - name: GetStackPointer – metoda
-        href: icordebugexceptiondebugevent-getstackpointer-method.md
-    - name: ICorDebugExceptionObjectCallStackEnum::Next – rozhraní
-      href: icordebugexceptionobjectcallstackenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugexceptionobjectcallstackenum-next-method.md
-    - name: ICorDebugExceptionObjectValue – rozhraní
-      href: icordebugexceptionobjectvalue-interface.md
-      items:
-      - name: EnumerateExceptionCallStack – metoda
-        href: icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md
-    - name: ICorDebugFrame – rozhraní
-      href: icordebugframe-interface.md
-      items:
-      - name: CreateStepper – metoda
-        href: icordebugframe-createstepper-method.md
-      - name: GetCallee – metoda
-        href: icordebugframe-getcallee-method.md
-      - name: GetCaller – metoda
-        href: icordebugframe-getcaller-method.md
-      - name: GetChain – metoda
-        href: icordebugframe-getchain-method.md
-      - name: GetCode – metoda
-        href: icordebugframe-getcode-method.md
-      - name: GetFunction – metoda
-        href: icordebugframe-getfunction-method.md
-      - name: GetFunctionToken – metoda
-        href: icordebugframe-getfunctiontoken-method.md
-      - name: GetStackRange – metoda
-        href: icordebugframe-getstackrange-method.md
-    - name: ICorDebugFrameEnum – rozhraní
-      href: icordebugframeenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugframeenum-next-method.md
-    - name: ICorDebugFunction – rozhraní
-      href: icordebugfunction-interface1.md
-      items:
-      - name: CreateBreakpoint – metoda
-        href: icordebugfunction-createbreakpoint-method.md
-      - name: GetClass – metoda
-        href: icordebugfunction-getclass-method.md
-      - name: GetCurrentVersionNumber – metoda
-        href: icordebugfunction-getcurrentversionnumber-method.md
-      - name: GetILCode – metoda
-        href: icordebugfunction-getilcode-method.md
-      - name: GetLocalVarSigToken – metoda
-        href: icordebugfunction-getlocalvarsigtoken-method.md
-      - name: GetModule – metoda
-        href: icordebugfunction-getmodule-method.md
-      - name: GetNativeCode – metoda
-        href: icordebugfunction-getnativecode-method.md
-      - name: GetToken – metoda
-        href: icordebugfunction-gettoken-method.md
-    - name: ICorDebugFunction2 – rozhraní
-      href: icordebugfunction2-interface.md
-      items:
-      - name: EnumerateNativeCode – metoda
-        href: icordebugfunction2-enumeratenativecode-method.md
-      - name: GetJMCStatus – metoda
-        href: icordebugfunction2-getjmcstatus-method.md
-      - name: GetVersionNumber – metoda
-        href: icordebugfunction2-getversionnumber-method.md
-      - name: SetJMCStatus – metoda
-        href: icordebugfunction2-setjmcstatus-method.md
-    - name: Rozhraní ICorDebugFunction3
-      href: icordebugfunction3-interface.md
-      items:
-      - name: GetActiveReJitRequestILCode – metoda
-        href: icordebugfunction3-getactiverejitrequestilcode-method.md
-    - name: ICorDebugFunctionBreakpoint – rozhraní
-      href: icordebugfunctionbreakpoint-interface.md
-      items:
-      - name: GetFunction – metoda
-        href: icordebugfunctionbreakpoint-getfunction-method.md
-      - name: GetOffset – metoda
-        href: icordebugfunctionbreakpoint-getoffset-method.md
-    - name: ICorDebugGCReferenceEnum – rozhraní
-      href: icordebuggcreferenceenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebuggcreferenceenum-next-method.md
-    - name: ICorDebugGenericValue – rozhraní
-      href: icordebuggenericvalue-interface.md
-      items:
-      - name: GetValue – metoda
-        href: icordebuggenericvalue-getvalue-method.md
-      - name: SetValue – metoda
-        href: icordebuggenericvalue-setvalue-method.md
-    - name: ICorDebugGuidToTypeEnum – rozhraní
-      href: icordebugguidtotypeenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugguidtotypeenum-next-method.md
-    - name: ICorDebugHandleValue – rozhraní
-      href: icordebughandlevalue-interface.md
-      items:
-      - name: Dispose – metoda
-        href: icordebughandlevalue-dispose-method.md
-      - name: GetHandleType – metoda
-        href: icordebughandlevalue-gethandletype-method.md
-    - name: ICorDebugHeapEnum – rozhraní
-      href: icordebugheapenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugheapenum-next-method.md
-    - name: ICorDebugHeapSegmentEnum – rozhraní
-      href: icordebugheapsegmentenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugheapsegmentenum-next-method.md
-    - name: ICorDebugHeapValue – rozhraní
-      href: icordebugheapvalue-interface.md
-      items:
-      - name: CreateRelocBreakpoint – metoda
-        href: icordebugheapvalue-createrelocbreakpoint-method.md
-      - name: IsValid – metoda
-        href: icordebugheapvalue-isvalid-method.md
-    - name: ICorDebugHeapValue2 – rozhraní
-      href: icordebugheapvalue2-interface1.md
-      items:
-      - name: CreateHandle – metoda
-        href: icordebugheapvalue2-createhandle-method.md
-    - name: ICorDebugHeapValue3 – rozhraní
-      href: icordebugheapvalue3-interface.md
-      items:
-      - name: GetThreadOwningMonitorLock – metoda
-        href: icordebugheapvalue3-getthreadowningmonitorlock-method.md
-      - name: GetMonitorEventWaitList – metoda
-        href: icordebugheapvalue3-getmonitoreventwaitlist-method.md
-    - name: Rozhraní ICorDebugILCode
-      href: icordebugilcode-interface.md
-      items:
-      - name: GetEHClauses – metoda
-        href: icordebugilcode-getehclauses-method.md
-    - name: Rozhraní ICorDebugILCode2
-      href: icordebugilcode2-interface.md
-      items:
-      - name: GetInstrumentedILMap – metoda
-        href: icordebugilcode2-getinstrumentedilmap-method.md
-      - name: GetLocalVarSigToken – metoda
-        href: icordebugilcode2-getlocalvarsigtoken-method.md
-    - name: ICorDebugILFrame – rozhraní
-      href: icordebugilframe-interface.md
-      items:
-      - name: CanSetIP – metoda
-        href: icordebugilframe-cansetip-method.md
-      - name: EnumerateArguments – metoda
-        href: icordebugilframe-enumeratearguments-method.md
-      - name: EnumerateLocalVariables – metoda
-        href: icordebugilframe-enumeratelocalvariables-method.md
-      - name: GetArgument – metoda
-        href: icordebugilframe-getargument-method.md
-      - name: GetIP – metoda
-        href: icordebugilframe-getip-method.md
-      - name: GetLocalVariable – metoda
-        href: icordebugilframe-getlocalvariable-method.md
-      - name: GetStackDepth – metoda
-        href: icordebugilframe-getstackdepth-method.md
-      - name: GetStackValue – metoda
-        href: icordebugilframe-getstackvalue-method.md
-      - name: SetIP – metoda
-        href: icordebugilframe-setip-method.md
-    - name: ICorDebugILFrame2 – rozhraní
-      href: icordebugilframe2-interface.md
-      items:
-      - name: EnumerateTypeParameters – metoda
-        href: icordebugilframe2-enumeratetypeparameters-method.md
-      - name: RemapFunction – metoda
-        href: icordebugilframe2-remapfunction-method.md
-    - name: ICorDebugILFrame3 – rozhraní
-      href: icordebugilframe3-interface.md
-      items:
-      - name: GetReturnValueForILOffset – metoda
-        href: icordebugilframe3-getreturnvalueforiloffset-method.md
-    - name: Rozhraní ICorDebugILFrame4
-      href: icordebugilframe4-interface.md
-      items:
-      - name: EnumerateLocalVariablesEx – metoda
-        href: icordebugilframe4-enumeratelocalvariablesex-method.md
-      - name: GetCodeEx – metoda
-        href: icordebugilframe4-getcodeex-method.md
-      - name: GetLocalVariableEx – metoda
-        href: icordebugilframe4-getlocalvariableex-method.md
-    - name: ICorDebugInstanceFieldSymbol – rozhraní
-      href: icordebuginstancefieldsymbol-interface.md
-      items:
-      - name: GetName – metoda
-        href: icordebuginstancefieldsymbol-getname-method.md
-      - name: GetOffset – metoda
-        href: icordebuginstancefieldsymbol-getoffset-method.md
-      - name: GetSize – metoda
-        href: icordebuginstancefieldsymbol-getsize-method.md
-    - name: ICorDebugInternalFrame – rozhraní
-      href: icordebuginternalframe-interface.md
-      items:
-      - name: GetFrameType – metoda
-        href: icordebuginternalframe-getframetype-method.md
-    - name: ICorDebugInternalFrame2 – rozhraní
-      href: icordebuginternalframe2-interface.md
-      items:
-      - name: GetFrameAddress – metoda
-        href: icordebuginternalframe2-getframeaddress-method.md
-      - name: IsCloserToLeaf – metoda
-        href: icordebuginternalframe2-isclosertoleaf-method.md
-    - name: Rozhraní ICorDebugLoadedModule
-      href: icordebugloadedmodule-interface.md
-      items:
-      - name: GetBaseAddress – metoda
-        href: icordebugloadedmodule-getbaseaddress-method.md
-      - name: GetName – metoda
-        href: icordebugloadedmodule-getname-method.md
-      - name: GetSize – metoda
-        href: icordebugloadedmodule-getsize-method.md
-    - name: ICorDebugManagedCallback – rozhraní
-      href: icordebugmanagedcallback-interface.md
-      items:
-      - name: Break – metoda
-        href: icordebugmanagedcallback-break-method.md
-      - name: Breakpoint – metoda
-        href: icordebugmanagedcallback-breakpoint-method.md
-      - name: BreakpointSetError – metoda
-        href: icordebugmanagedcallback-breakpointseterror-method.md
-      - name: ControlCTrap – metoda
-        href: icordebugmanagedcallback-controlctrap-method.md
-      - name: CreateAppDomain – metoda
-        href: icordebugmanagedcallback-createappdomain-method.md
-      - name: CreateProcess – metoda
-        href: icordebugmanagedcallback-createprocess-method.md
-      - name: CreateThread – metoda
-        href: icordebugmanagedcallback-createthread-method.md
-      - name: DebuggerError – metoda
-        href: icordebugmanagedcallback-debuggererror-method.md
-      - name: EditAndContinueRemap – metoda
-        href: icordebugmanagedcallback-editandcontinueremap-method.md
-      - name: EvalComplete – metoda
-        href: icordebugmanagedcallback-evalcomplete-method.md
-      - name: EvalException – metoda
-        href: icordebugmanagedcallback-evalexception-method.md
-      - name: Exception – metoda
-        href: icordebugmanagedcallback-exception-method.md
-      - name: ExitAppDomain – metoda
-        href: icordebugmanagedcallback-exitappdomain-method.md
-      - name: ExitProcess – metoda
-        href: icordebugmanagedcallback-exitprocess-method.md
-      - name: ExitThread – metoda
-        href: icordebugmanagedcallback-exitthread-method.md
-      - name: LoadAssembly – metoda
-        href: icordebugmanagedcallback-loadassembly-method.md
-      - name: LoadClass – metoda
-        href: icordebugmanagedcallback-loadclass-method.md
-      - name: LoadModule – metoda
-        href: icordebugmanagedcallback-loadmodule-method.md
-      - name: LogMessage – metoda
-        href: icordebugmanagedcallback-logmessage-method.md
-      - name: LogSwitch – metoda
-        href: icordebugmanagedcallback-logswitch-method.md
-      - name: NameChange – metoda
-        href: icordebugmanagedcallback-namechange-method.md
-      - name: StepComplete – metoda
-        href: icordebugmanagedcallback-stepcomplete-method.md
-      - name: UnloadAssembly – metoda
-        href: icordebugmanagedcallback-unloadassembly-method.md
-      - name: UnloadClass – metoda
-        href: icordebugmanagedcallback-unloadclass-method.md
-      - name: UnloadModule – metoda
-        href: icordebugmanagedcallback-unloadmodule-method.md
-      - name: UpdateModuleSymbols – metoda
-        href: icordebugmanagedcallback-updatemodulesymbols-method.md
-    - name: ICorDebugManagedCallback2 – rozhraní
-      href: icordebugmanagedcallback2-interface.md
-      items:
-      - name: ChangeConnection – metoda
-        href: icordebugmanagedcallback2-changeconnection-method.md
-      - name: CreateConnection – metoda
-        href: icordebugmanagedcallback2-createconnection-method.md
-      - name: DestroyConnection – metoda
-        href: icordebugmanagedcallback2-destroyconnection-method.md
-      - name: Exception – metoda
-        href: icordebugmanagedcallback2-exception-method.md
-      - name: ExceptionUnwind – metoda
-        href: icordebugmanagedcallback2-exceptionunwind-method.md
-      - name: FunctionRemapComplete – metoda
-        href: icordebugmanagedcallback2-functionremapcomplete-method.md
-      - name: FunctionRemapOpportunity – metoda
-        href: icordebugmanagedcallback2-functionremapopportunity-method.md
-      - name: MDANotification – metoda
-        href: icordebugmanagedcallback2-mdanotification-method.md
-    - name: ICorDebugManagedCallback3 – rozhraní
-      href: icordebugmanagedcallback3-interface.md
-      items:
-      - name: CustomNotification – metoda
-        href: icordebugmanagedcallback3-customnotification-method.md
-    - name: ICorDebugMDA – rozhraní
-      href: icordebugmda-interface.md
-      items:
-      - name: GetDescription – metoda
-        href: icordebugmda-getdescription-method.md
-      - name: GetFlags – metoda
-        href: icordebugmda-getflags-method.md
-      - name: GetName – metoda
-        href: icordebugmda-getname-method.md
-      - name: GetOSThreadId – metoda
-        href: icordebugmda-getosthreadid-method.md
-      - name: GetXML – metoda
-        href: icordebugmda-getxml-method.md
-    - name: ICorDebugMemoryBuffer – rozhraní
-      href: icordebugmemorybuffer-interface.md
-      items:
-      - name: GetSize – metoda
-        href: icordebugmemorybuffer-getsize-method.md
-      - name: GetStartAddress – metoda
-        href: icordebugmemorybuffer-getstartaddress-method.md
-    - name: ICorDebugMergedAssemblyRecord – rozhraní
-      href: icordebugmergedassemblyrecord-interface.md
-      items:
-      - name: GetCulture – metoda
-        href: icordebugmergedassemblyrecord-getculture-method.md
-      - name: GetIndex – metoda
-        href: icordebugmergedassemblyrecord-getindex-method.md
-      - name: GetPublicKey – metoda
-        href: icordebugmergedassemblyrecord-getpublickey-method.md
-      - name: GetPublicKeyToken – metoda
-        href: icordebugmergedassemblyrecord-getpublickeytoken-method.md
-      - name: GetSimpleName – metoda
-        href: icordebugmergedassemblyrecord-getsimplename-method.md
-      - name: GetVersion – metoda
-        href: icordebugmergedassemblyrecord-getversion-method.md
-    - name: ICorDebugMetaDataLocator – rozhraní
-      href: icordebugmetadatalocator-interface.md
-      items:
-      - name: GetMetaData – metoda
-        href: icordebugmetadatalocator-getmetadata-method.md
-    - name: ICorDebugModule – rozhraní
-      href: icordebugmodule-interface.md
-      items:
-      - name: CreateBreakpoint – metoda
-        href: icordebugmodule-createbreakpoint-method.md
-      - name: EnableClassLoadCallbacks – metoda
-        href: icordebugmodule-enableclassloadcallbacks-method.md
-      - name: EnableJITDebugging – metoda
-        href: icordebugmodule-enablejitdebugging-method.md
-      - name: GetAssembly – metoda
-        href: icordebugmodule-getassembly-method.md
-      - name: GetBaseAddress – metoda
-        href: icordebugmodule-getbaseaddress-method.md
-      - name: GetClassFromToken – metoda
-        href: icordebugmodule-getclassfromtoken-method.md
-      - name: GetEditAndContinueSnapshot – metoda
-        href: icordebugmodule-geteditandcontinuesnapshot-method.md
-      - name: GetFunctionFromRVA – metoda
-        href: icordebugmodule-getfunctionfromrva-method.md
-      - name: GetFunctionFromToken – metoda
-        href: icordebugmodule-getfunctionfromtoken-method.md
-      - name: GetGlobalVariableValue – metoda
-        href: icordebugmodule-getglobalvariablevalue-method.md
-      - name: GetMetaDataInterface – metoda
-        href: icordebugmodule-getmetadatainterface-method.md
-      - name: GetName – metoda
-        href: icordebugmodule-getname-method.md
-      - name: GetProcess – metoda
-        href: icordebugmodule-getprocess-method.md
-      - name: GetSize – metoda
-        href: icordebugmodule-getsize-method.md
-      - name: GetToken – metoda
-        href: icordebugmodule-gettoken-method.md
-      - name: IsDynamic – metoda
-        href: icordebugmodule-isdynamic-method.md
-      - name: IsInMemory – metoda
-        href: icordebugmodule-isinmemory-method.md
-    - name: ICorDebugModule2 – rozhraní
-      href: icordebugmodule2-interface.md
-      items:
-      - name: ApplyChanges – metoda
-        href: icordebugmodule2-applychanges-method.md
-      - name: GetJITCompilerFlags – metoda
-        href: icordebugmodule2-getjitcompilerflags-method.md
-      - name: ResolveAssembly – metoda
-        href: icordebugmodule2-resolveassembly-method.md
-      - name: SetJITCompilerFlags – metoda
-        href: icordebugmodule2-setjitcompilerflags-method.md
-      - name: SetJMCStatus – metoda
-        href: icordebugmodule2-setjmcstatus-method.md
-    - name: ICorDebugModule3 – rozhraní
-      href: icordebugmodule3-interface.md
-      items:
-      - name: ICorDebugModule3::CreateReaderForInMemorySymbols – metoda
-        href: icordebugmodule3-createreaderforinmemorysymbols-method.md
-    - name: ICorDebugModuleBreakpoint – rozhraní
-      href: icordebugmodulebreakpoint-interface.md
-      items:
-      - name: GetModule – metoda
-        href: icordebugmodulebreakpoint-getmodule-method.md
-    - name: ICorDebugModuleDebugEvent – rozhraní
-      href: icordebugmoduledebugevent-interface.md
-      items:
-      - name: GetModule – metoda
-        href: icordebugmoduledebugevent-getmodule-method.md
-    - name: ICorDebugModuleEnum – rozhraní
-      href: icordebugmoduleenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugmoduleenum-next-method.md
-    - name: ICorDebugMutableDataTarget – rozhraní
-      href: icordebugmutabledatatarget-interface.md
-      items:
-      - name: ContinueStatusChanged – metoda
-        href: icordebugmutabledatatarget-continuestatuschanged-method.md
-      - name: SetThreadContext – metoda
-        href: icordebugmutabledatatarget-setthreadcontext-method.md
-      - name: WriteVirtual – metoda
-        href: icordebugmutabledatatarget-writevirtual-method.md
-    - name: ICorDebugNativeFrame – rozhraní
-      href: icordebugnativeframe-interface.md
-      items:
-      - name: CanSetIP – metoda
-        href: icordebugnativeframe-cansetip-method.md
-      - name: GetIP – metoda
-        href: icordebugnativeframe-getip-method.md
-      - name: GetLocalDoubleRegisterValue – metoda
-        href: icordebugnativeframe-getlocaldoubleregistervalue-method.md
-      - name: GetLocalMemoryRegisterValue – metoda
-        href: icordebugnativeframe-getlocalmemoryregistervalue-method.md
-      - name: GetLocalMemoryValue – metoda
-        href: icordebugnativeframe-getlocalmemoryvalue-method.md
-      - name: GetLocalRegisterMemoryValue – metoda
-        href: icordebugnativeframe-getlocalregistermemoryvalue-method.md
-      - name: GetLocalRegisterValue – metoda
-        href: icordebugnativeframe-getlocalregistervalue-method.md
-      - name: GetRegisterSet – metoda
-        href: icordebugnativeframe-getregisterset-method.md
-      - name: SetIP – metoda
-        href: icordebugnativeframe-setip-method.md
-    - name: ICorDebugNativeFrame2 – rozhraní
-      href: icordebugnativeframe2-interface.md
-      items:
-      - name: IsChild – metoda
-        href: icordebugnativeframe2-ischild-method.md
-      - name: IsMatchingParentFrame – metoda
-        href: icordebugnativeframe2-ismatchingparentframe-method.md
-      - name: GetStackParameterSize – metoda
-        href: icordebugnativeframe2-getstackparametersize-method.md
-    - name: ICorDebugObjectEnum – rozhraní
-      href: icordebugobjectenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugobjectenum-next-method.md
-    - name: ICorDebugObjectValue – rozhraní
-      href: icordebugobjectvalue-interface.md
-      items:
-      - name: GetClass – metoda
-        href: icordebugobjectvalue-getclass-method.md
-      - name: GetContext – metoda
-        href: icordebugobjectvalue-getcontext-method.md
-      - name: GetFieldValue – metoda
-        href: icordebugobjectvalue-getfieldvalue-method.md
-      - name: GetManagedCopy – metoda
-        href: icordebugobjectvalue-getmanagedcopy-method.md
-      - name: GetVirtualMethod – metoda
-        href: icordebugobjectvalue-getvirtualmethod-method.md
-      - name: IsValueClass – metoda
-        href: icordebugobjectvalue-isvalueclass-method.md
-      - name: SetFromManagedCopy – metoda
-        href: icordebugobjectvalue-setfrommanagedcopy-method.md
-    - name: ICorDebugObjectValue2 – rozhraní
-      href: icordebugobjectvalue2-interface.md
-      items:
-      - name: GetVirtualMethodAndType – metoda
-        href: icordebugobjectvalue2-getvirtualmethodandtype-method.md
-    - name: ICorDebugProcess – rozhraní
-      href: icordebugprocess-interface.md
-      items:
-      - name: ClearCurrentException – metoda
-        href: icordebugprocess-clearcurrentexception-method.md
-      - name: EnableLogMessages – metoda
-        href: icordebugprocess-enablelogmessages-method.md
-      - name: EnumerateAppDomains – metoda
-        href: icordebugprocess-enumerateappdomains-method.md
-      - name: EnumerateObjects – metoda
-        href: icordebugprocess-enumerateobjects-method.md
-      - name: GetHandle – metoda
-        href: icordebugprocess-gethandle-method.md
-      - name: GetHelperThreadID – metoda
-        href: icordebugprocess-gethelperthreadid-method.md
-      - name: GetID – metoda
-        href: icordebugprocess-getid-method.md
-      - name: GetObject – metoda
-        href: icordebugprocess-getobject-method.md
-      - name: GetThread – metoda
-        href: icordebugprocess-getthread-method.md
-      - name: GetThreadContext – metoda
-        href: icordebugprocess-getthreadcontext-method.md
-      - name: IsOSSuspended – metoda
-        href: icordebugprocess-isossuspended-method.md
-      - name: IsTransitionStub – metoda
-        href: icordebugprocess-istransitionstub-method.md
-      - name: ModifyLogSwitch – metoda
-        href: icordebugprocess-modifylogswitch-method.md
-      - name: ReadMemory – metoda
-        href: icordebugprocess-readmemory-method.md
-      - name: SetThreadContext – metoda
-        href: icordebugprocess-setthreadcontext-method.md
-      - name: ThreadForFiberCookie – metoda
-        href: icordebugprocess-threadforfibercookie-method.md
-      - name: WriteMemory – metoda
-        href: icordebugprocess-writememory-method.md
-    - name: ICorDebugProcess2 – rozhraní
-      href: icordebugprocess2-interface1.md
-      items:
-      - name: ClearUnmanagedBreakpoint – metoda
-        href: icordebugprocess2-clearunmanagedbreakpoint-method.md
-      - name: GetDesiredNGENCompilerFlags – metoda
-        href: icordebugprocess2-getdesiredngencompilerflags-method.md
-      - name: GetReferenceValueFromGCHandle – metoda
-        href: icordebugprocess2-getreferencevaluefromgchandle-method.md
-      - name: GetThreadForTaskID – metoda
-        href: icordebugprocess2-getthreadfortaskid-method.md
-      - name: GetVersion – metoda
-        href: icordebugprocess2-getversion-method.md
-      - name: SetDesiredNGENCompilerFlags – metoda
-        href: icordebugprocess2-setdesiredngencompilerflags-method.md
-      - name: SetUnmanagedBreakpoint – metoda
-        href: icordebugprocess2-setunmanagedbreakpoint-method.md
-    - name: ICorDebugProcess3 – rozhraní
-      href: icordebugprocess3-interface.md
-      items:
-      - name: SetEnableCustomNotification – metoda
-        href: icordebugprocess3-setenablecustomnotification-method.md
-    - name: ICorDebugProcess4 – rozhraní
-      href: icordebugprocess4-interface.md
-      items:
-      - name: ProcessStateChanged – metoda
-        href: icordebugprocess4-processstatechanged-method.md
-    - name: ICorDebugProcess5 – rozhraní
-      href: icordebugprocess5-interface.md
-      items:
-      - name: EnableNGenPolicy – metoda
-        href: icordebugprocess5-enablengenpolicy-method.md
-      - name: EnumerateGCReferences – metoda
-        href: icordebugprocess5-enumerategcreferences-method.md
-      - name: EnumerateHandles – metoda
-        href: icordebugprocess5-enumeratehandles-method.md
-      - name: EnumerateHeap – metoda
-        href: icordebugprocess5-enumerateheap-method.md
-      - name: EnumerateHeapRegions – metoda
-        href: icordebugprocess5-enumerateheapregions-method.md
-      - name: GetArrayLayout – metoda
-        href: icordebugprocess5-getarraylayout-method.md
-      - name: GetGCHeapInformation – metoda
-        href: icordebugprocess5-getgcheapinformation-method.md
-      - name: GetObject – metoda
-        href: icordebugprocess5-getobject-method.md
-      - name: GetTypeFields – metoda
-        href: icordebugprocess5-gettypefields-method.md
-      - name: GetTypeForTypeID – metoda
-        href: icordebugprocess5-gettypefortypeid-method.md
-      - name: GetTypeID – metoda
-        href: icordebugprocess5-gettypeid-method.md
-      - name: GetTypeLayout – metoda
-        href: icordebugprocess5-gettypelayout-method.md
-    - name: Rozhraní ICorDebugProcess6
-      href: icordebugprocess6-interface.md
-      items:
-      - name: DecodeEvent – metoda
-        href: icordebugprocess6-decodeevent-method.md
-      - name: EnableVirtualModuleSplitting – metoda
-        href: icordebugprocess6-enablevirtualmodulesplitting-method.md
-      - name: GetCode – metoda
-        href: icordebugprocess6-getcode-method.md
-      - name: GetExportStepInfo – metoda
-        href: icordebugprocess6-getexportstepinfo-method.md
-      - name: MarkDebuggerAttached – metoda
-        href: icordebugprocess6-markdebuggerattached-method.md
-      - name: ProcessStateChanged – metoda
-        href: icordebugprocess6-processstatechanged-method.md
-    - name: Rozhraní ICorDebugProcess7
-      href: icordebugprocess7-interface.md
-      items:
-      - name: SetWriteableMetadataUpdateMode – metoda
-        href: icordebugprocess7-setwriteablemetadataupdatemode-method.md
-    - name: Rozhraní ICorDebugProcess8
-      href: icordebugprocess8-interface.md
-      items:
-      - name: EnableExceptionCallbacksOutsideOfMyCode – metoda
-        href: icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md
-    - name: ICorDebugProcessEnum – rozhraní
-      href: icordebugprocessenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugprocessenum-next-method.md
-    - name: ICorDebugReferenceValue – rozhraní
-      href: icordebugreferencevalue-interface.md
-      items:
-      - name: Dereference – metoda
-        href: icordebugreferencevalue-dereference-method.md
-      - name: DereferenceStrong – metoda
-        href: icordebugreferencevalue-dereferencestrong-method.md
-      - name: GetValue – metoda
-        href: icordebugreferencevalue-getvalue-method.md
-      - name: IsNull – metoda
-        href: icordebugreferencevalue-isnull-method.md
-      - name: SetValue – metoda
-        href: icordebugreferencevalue-setvalue-method.md
-    - name: ICorDebugRegisterSet – rozhraní
-      href: icordebugregisterset-interface.md
-      items:
-      - name: GetRegisters – metoda
-        href: icordebugregisterset-getregisters-method.md
-      - name: GetRegistersAvailable – metoda
-        href: icordebugregisterset-getregistersavailable-method.md
-      - name: GetThreadContext – metoda
-        href: icordebugregisterset-getthreadcontext-method.md
-      - name: SetRegisters – metoda
-        href: icordebugregisterset-setregisters-method.md
-      - name: SetThreadContext – metoda
-        href: icordebugregisterset-setthreadcontext-method.md
-    - name: ICorDebugRegisterSet2 – rozhraní
-      href: icordebugregisterset2-interface.md
-      items:
-      - name: GetRegisters – metoda
-        href: icordebugregisterset2-getregisters-method.md
-      - name: GetRegistersAvailable – metoda
-        href: icordebugregisterset2-getregistersavailable-method.md
-      - name: SetRegisters – metoda
-        href: icordebugregisterset2-setregisters-method.md
-    - name: ICorDebugRemote – rozhraní
-      href: icordebugremote-interface.md
-      items:
-      - name: ICorDebugRemote::CreateProcessEx – metoda
-        href: icordebugremote-createprocessex-method.md
-      - name: ICorDebugRemote::DebugActiveProcessEx – metoda
-        href: icordebugremote-debugactiveprocessex-method.md
-    - name: ICorDebugRemoteTarget – rozhraní
-      href: icordebugremotetarget-interface.md
-      items:
-      - name: ICorDebugRemoteTarget::GetHostName – metoda
-        href: icordebugremotetarget-gethostname-method.md
-    - name: ICorDebugRuntimeUnwindableFrame – rozhraní
-      href: icordebugruntimeunwindableframe-interface.md
-    - name: ICorDebugStackWalk – rozhraní
-      href: icordebugstackwalk-interface.md
-      items:
-      - name: GetContext – metoda
-        href: icordebugstackwalk-getcontext-method.md
-      - name: SetContext – metoda
-        href: icordebugstackwalk-setcontext-method.md
-      - name: Next – metoda
-        href: icordebugstackwalk-next-method.md
-      - name: GetFrame – metoda
-        href: icordebugstackwalk-getframe-method.md
-    - name: ICorDebugStaticFieldSymbol – rozhraní
-      href: icordebugstaticfieldsymbol-interface.md
-      items:
-      - name: GetAddress – metoda
-        href: icordebugstaticfieldsymbol-getaddress-method.md
-      - name: GetName – metoda
-        href: icordebugstaticfieldsymbol-getname-method.md
-      - name: GetSize – metoda
-        href: icordebugstaticfieldsymbol-getsize-method.md
-    - name: ICorDebugStepper – rozhraní
-      href: icordebugstepper-interface.md
-      items:
-      - name: Deactivate – metoda
-        href: icordebugstepper-deactivate-method.md
-      - name: IsActive – metoda
-        href: icordebugstepper-isactive-method.md
-      - name: SetInterceptMask – metoda
-        href: icordebugstepper-setinterceptmask-method.md
-      - name: SetRangeIL – metoda
-        href: icordebugstepper-setrangeil-method.md
-      - name: SetUnmappedStopMask – metoda
-        href: icordebugstepper-setunmappedstopmask-method.md
-      - name: Step – metoda
-        href: icordebugstepper-step-method.md
-      - name: StepOut – metoda
-        href: icordebugstepper-stepout-method.md
-      - name: StepRange – metoda
-        href: icordebugstepper-steprange-method.md
-    - name: ICorDebugStepper2 – rozhraní
-      href: icordebugstepper2-interface1.md
-      items:
-      - name: SetJMC – metoda
-        href: icordebugstepper2-setjmc-method.md
-    - name: ICorDebugStepperEnum – rozhraní
-      href: icordebugstepperenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugstepperenum-next-method.md
-    - name: ICorDebugStringValue – rozhraní
-      href: icordebugstringvalue-interface.md
-      items:
-      - name: GetLength – metoda
-        href: icordebugstringvalue-getlength-method.md
-      - name: GetString – metoda
-        href: icordebugstringvalue-getstring-method.md
-    - name: ICorDebugSymbolProvider – rozhraní
-      href: icordebugsymbolprovider-interface.md
-      items:
-      - name: GetAssemblyImageBytes – metoda
-        href: icordebugsymbolprovider-getassemblyimagebytes-method.md
-      - name: GetAssemblyImageMetadata – metoda
-        href: icordebugsymbolprovider-getassemblyimagemetadata-method.md
-      - name: GetCodeRange – metoda
-        href: icordebugsymbolprovider-getcoderange-method.md
-      - name: GetInstanceFieldSymbols – metoda
-        href: icordebugsymbolprovider-getinstancefieldsymbols-method.md
-      - name: GetMergedAssemblyRecords – metoda
-        href: icordebugsymbolprovider-getmergedassemblyrecords-method.md
-      - name: GetMethodLocalSymbols – metoda
-        href: icordebugsymbolprovider-getmethodlocalsymbols-method.md
-      - name: GetMethodParameterSymbols – metoda
-        href: icordebugsymbolprovider-getmethodparametersymbols-method.md
-      - name: GetMethodProps – metoda
-        href: icordebugsymbolprovider-getmethodprops-method.md
-      - name: GetObjectSize – metoda
-        href: icordebugsymbolprovider-getobjectsize-method.md
-      - name: GetStaticFieldSymbols – metoda
-        href: icordebugsymbolprovider-getstaticfieldsymbols-method.md
-      - name: GetTypeProps – metoda
-        href: icordebugsymbolprovider-gettypeprops-method.md
-    - name: ICorDebugSymbolProvider2 – rozhraní
-      href: icordebugsymbolprovider2-interface.md
-      items:
-      - name: GetFrameProps – metoda
-        href: icordebugsymbolprovider2-getframeprops-method.md
-      - name: GetGenericDictionaryInfo – metoda
-        href: icordebugsymbolprovider2-getgenericdictionaryinfo-method.md
-    - name: ICorDebugThread – rozhraní
-      href: icordebugthread-interface.md
-      items:
-      - name: ClearCurrentException – metoda
-        href: icordebugthread-clearcurrentexception-method.md
-      - name: CreateEval – metoda
-        href: icordebugthread-createeval-method.md
-      - name: CreateStepper – metoda
-        href: icordebugthread-createstepper-method.md
-      - name: EnumerateChains – metoda
-        href: icordebugthread-enumeratechains-method.md
-      - name: GetActiveChain – metoda
-        href: icordebugthread-getactivechain-method.md
-      - name: GetActiveFrame – metoda
-        href: icordebugthread-getactiveframe-method.md
-      - name: GetAppDomain – metoda
-        href: icordebugthread-getappdomain-method.md
-      - name: GetCurrentException – metoda
-        href: icordebugthread-getcurrentexception-method.md
-      - name: GetDebugState – metoda
-        href: icordebugthread-getdebugstate-method.md
-      - name: GetHandle – metoda
-        href: icordebugthread-gethandle-method.md
-      - name: GetID – metoda
-        href: icordebugthread-getid-method.md
-      - name: GetObject – metoda
-        href: icordebugthread-getobject-method.md
-      - name: GetProcess – metoda
-        href: icordebugthread-getprocess-method.md
-      - name: GetRegisterSet – metoda
-        href: icordebugthread-getregisterset-method.md
-      - name: GetUserState – metoda
-        href: icordebugthread-getuserstate-method.md
-      - name: SetDebugState – metoda
-        href: icordebugthread-setdebugstate-method.md
-    - name: ICorDebugThread2 – rozhraní
-      href: icordebugthread2-interface.md
-      items:
-      - name: GetActiveFunctions – metoda
-        href: icordebugthread2-getactivefunctions-method.md
-      - name: GetConnectionID – metoda
-        href: icordebugthread2-getconnectionid-method.md
-      - name: GetTaskID – metoda
-        href: icordebugthread2-gettaskid-method.md
-      - name: GetVolatileOSThreadID – metoda
-        href: icordebugthread2-getvolatileosthreadid-method.md
-      - name: InterceptCurrentException – metoda
-        href: icordebugthread2-interceptcurrentexception-method.md
-    - name: ICorDebugThread3 – rozhraní
-      href: icordebugthread3-interface.md
-      items:
-      - name: CreateStackWalk – metoda
-        href: icordebugthread3-createstackwalk-method.md
-      - name: GetActiveInternalFrames – metoda
-        href: icordebugthread3-getactiveinternalframes-method.md
-    - name: ICorDebugThread4 – rozhraní
-      href: icordebugthread4-interface.md
-      items:
-      - name: GetBlockingObjects – metoda
-        href: icordebugthread4-getblockingobjects-method.md
-      - name: HadUnhandledException – metoda
-        href: icordebugthread4-hadunhandledexception-method.md
-      - name: GetCurrentCustomDebuggerNotification – metoda
-        href: icordebugthread4-getcurrentcustomdebuggernotification-method.md
-    - name: ICorDebugThreadEnum – rozhraní
-      href: icordebugthreadenum-interface1.md
-      items:
-      - name: Next – metoda
-        href: icordebugthreadenum-next-method.md
-    - name: ICorDebugType – rozhraní
-      href: icordebugtype-interface.md
-      items:
-      - name: EnumerateTypeParameters – metoda
-        href: icordebugtype-enumeratetypeparameters-method.md
-      - name: GetBase – metoda
-        href: icordebugtype-getbase-method.md
-      - name: GetClass – metoda
-        href: icordebugtype-getclass-method.md
-      - name: GetFirstTypeParameter – metoda
-        href: icordebugtype-getfirsttypeparameter-method.md
-      - name: GetRank – metoda
-        href: icordebugtype-getrank-method.md
-      - name: GetStaticFieldValue – metoda
-        href: icordebugtype-getstaticfieldvalue-method.md
-      - name: GetType – metoda
-        href: icordebugtype-gettype-method.md
-    - name: ICorDebugType2 – rozhraní
-      href: icordebugtype2-interface.md
-      items:
-      - name: GetTypeID – metoda
-        href: icordebugtype2-gettypeid-method.md
-    - name: ICorDebugTypeEnum – rozhraní
-      href: icordebugtypeenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugtypeenum-next-method.md
-    - name: ICorDebugUnmanagedCallback – rozhraní
-      href: icordebugunmanagedcallback-interface.md
-      items:
-      - name: DebugEvent – metoda
-        href: icordebugunmanagedcallback-debugevent-method.md
-    - name: ICorDebugValue – rozhraní
-      href: icordebugvalue-interface.md
-      items:
-      - name: CreateBreakpoint – metoda
-        href: icordebugvalue-createbreakpoint-method.md
-      - name: GetAddress – metoda
-        href: icordebugvalue-getaddress-method.md
-      - name: GetSize – metoda
-        href: icordebugvalue-getsize-method.md
-      - name: GetType – metoda
-        href: icordebugvalue-gettype-method.md
-    - name: ICorDebugValue2 – rozhraní
-      href: icordebugvalue2-interface.md
-      items:
-      - name: GetExactType – metoda
-        href: icordebugvalue2-getexacttype-method.md
-    - name: ICorDebugValue3 – rozhraní
-      href: icordebugvalue3-interface.md
-      items:
-      - name: GetSize64 – metoda
-        href: icordebugvalue3-getsize64-method.md
-    - name: ICorDebugValueBreakpoint – rozhraní
-      href: icordebugvaluebreakpoint-interface.md
-      items:
-      - name: GetValue – metoda
-        href: icordebugvaluebreakpoint-getvalue-method.md
-    - name: ICorDebugValueEnum – rozhraní
-      href: icordebugvalueenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugvalueenum-next-method.md
-    - name: ICorDebugVariableHome – rozhraní
-      href: icordebugvariablehome-interface.md
-      items:
-      - name: GetArgumentIndex – metoda
-        href: icordebugvariablehome-getargumentindex-method.md
-      - name: GetCode – metoda
-        href: icordebugvariablehome-getcode-method.md
-      - name: GetLiveRange – metoda
-        href: icordebugvariablehome-getliverange-method.md
-      - name: GetLocationType – metoda
-        href: icordebugvariablehome-getlocationtype-method.md
-      - name: GetOffset – metoda
-        href: icordebugvariablehome-getoffset-method.md
-      - name: GetRegister – metoda
-        href: icordebugvariablehome-getregister-method.md
-      - name: GetSlotIndex – metoda
-        href: icordebugvariablehome-getslotindex-method.md
-    - name: ICorDebugVariableHomeEnum – rozhraní
-      href: icordebugvariablehomeenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icordebugvariablehomeenum-next-method.md
-    - name: ICorDebugVariableSymbol – rozhraní
-      href: icordebugvariablesymbol-interface.md
-      items:
-      - name: GetName – metoda
-        href: icordebugvariablesymbol-getname-method.md
-      - name: GetSize – metoda
-        href: icordebugvariablesymbol-getsize-method.md
-      - name: GetSlotIndex – metoda
-        href: icordebugvariablesymbol-getslotindex-method.md
-      - name: GetValue – metoda
-        href: icordebugvariablesymbol-getvalue-method.md
-      - name: SetValue – metoda
-        href: icordebugvariablesymbol-setvalue-method.md
-    - name: Rozhraní ICorDebugVirtualUnwinder
-      href: icordebugvirtualunwinder-interface.md
-      items:
-      - name: GetContext – metoda
-        href: icordebugvirtualunwinder-getcontext-method.md
-      - name: Next – metoda
-        href: icordebugvirtualunwinder-next-method.md
-    - name: ICorPublish – rozhraní
-      href: icorpublish-interface.md
-      items:
-      - name: EnumProcesses – metoda
-        href: icorpublish-enumprocesses-method.md
-      - name: GetProcess – metoda
-        href: icorpublish-getprocess-method.md
-    - name: ICorPublishAppDomain – rozhraní
-      href: icorpublishappdomain-interface.md
-      items:
-      - name: GetID – metoda
-        href: icorpublishappdomain-getid-method.md
-      - name: GetName – metoda
-        href: icorpublishappdomain-getname-method.md
-    - name: ICorPublishAppDomainEnum – rozhraní
-      href: icorpublishappdomainenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icorpublishappdomainenum-next-method.md
-    - name: ICorPublishEnum – rozhraní
-      href: icorpublishenum-interface.md
-      items:
-      - name: Clone – metoda
-        href: icorpublishenum-clone-method.md
-      - name: GetCount – metoda
-        href: icorpublishenum-getcount-method.md
-      - name: Reset – metoda
-        href: icorpublishenum-reset-method.md
-      - name: Skip – metoda
-        href: icorpublishenum-skip-method.md
-    - name: ICorPublishProcess – rozhraní
-      href: icorpublishprocess-interface.md
-      items:
-      - name: EnumAppDomains – metoda
-        href: icorpublishprocess-enumappdomains-method.md
-      - name: GetDisplayName – metoda
-        href: icorpublishprocess-getdisplayname-method.md
-      - name: GetProcessID – metoda
-        href: icorpublishprocess-getprocessid-method.md
-      - name: IsManaged – metoda
-        href: icorpublishprocess-ismanaged-method.md
-    - name: ICorPublishProcessEnum – rozhraní
-      href: icorpublishprocessenum-interface.md
-      items:
-      - name: Next – metoda
-        href: icorpublishprocessenum-next-method.md
-    - name: ISOSDacInterface – rozhraní
-      href: isosdacinterface-interface.md
-      items:
-      - name: GetMethodDescData
-        href: isosdacinterface-getmethoddescdata-method.md
-      - name: GetMethodDescPtrFromIP
-        href: isosdacinterface-getmethoddescptrfromip-method.md
-      - name: GetModuleData
-        href: isosdacinterface-getmoduledata-method.md
-    - name: IXCLRDataMethodDefinition – rozhraní
-      href: ixclrdatamethoddefinition-interface.md
-      items:
-      - name: StartEnumInstances
-        href: ixclrdatamethoddefinition-startenuminstances-method.md
-      - name: EnumInstance
-        href: ixclrdatamethoddefinition-enuminstance-method.md
-      - name: EndEnumInstances
-        href: ixclrdatamethoddefinition-endenuminstances-method.md
-    - name: IXCLRDataMethodInstance – rozhraní
-      href: ixclrdatamethodinstance-interface.md
-      items:
-      - name: GetILAddressMap
-        href: ixclrdatamethodinstance-getiladdressmap-method.md
-      - name: GetRepresentativeEntryAddress
-        href: ixclrdatamethodinstance-getrepresentativeentryaddress-method.md
-    - name: IXCLRDataModule – rozhraní
-      href: ixclrdatamodule-interface.md
-      items:
-      - name: GetMethodDefinitionByToken
-        href: ixclrdatamodule-getmethoddefinitionbytoken-method.md
-      - name: Request
-        href: ixclrdatamodule-request-method.md
-      - name: GetVersionId
-        href: ixclrdatamodule-getversionid-method.md
-    - name: IXCLRDataProcess – rozhraní
-      href: ixclrdataprocess-interface.md
-      items:
-      - name: GetAppDomainByUniqueId
-        href: ixclrdataprocess-getappdomainbyuniqueid-method.md
-      - name: StartEnumModules
-        href: ixclrdataprocess-startenummodules-method.md
-      - name: EnumModule
-        href: ixclrdataprocess-enummodule-method.md
-      - name: EndEnumModules
-        href: ixclrdataprocess-endenummodules-method.md
-      - name: StartEnumMethodInstancesByAddress
-        href: ixclrdataprocess-startenummethodinstancesbyaddress-method.md
-      - name: EnumMethodInstanceByAddress
-        href: ixclrdataprocess-enummethodinstancebyaddress-method.md
-      - name: EndEnumMethodInstancesByAddress
-        href: ixclrdataprocess-endenummethodinstancesbyaddress-method.md
-  - name: Globální statické funkce ladění
-    href: debugging-global-static-functions.md
-    items:
-    - name: _EFN_GetManagedExcepStack – funkce
-      href: efn-getmanagedexcepstack-function.md
-    - name: _EFN_GetManagedObjectFieldInfo – funkce
-      href: efn-getmanagedobjectfieldinfo-function.md
-    - name: _EFN_GetManagedObjectName – funkce
-      href: efn-getmanagedobjectname-function.md
-    - name: _EFN_StackTrace – funkce
-      href: efn-stacktrace-function.md
-    - name: CLRDataCreateInstance – funkce
-      href: clrdatacreateinstance-function.md
-    - name: PFN_CLRDataCreateInstance – ukazatel na funkci
-      href: pfn-clrdatacreateinstance-function-pointer.md
-  - name: Ladění výčtů
-    href: debugging-enumerations.md
-    items:
-    - name: CLR_DEBUGGING_PROCESS_FLAGS – výčet
-      href: clr-debugging-process-flags-enumeration.md
-    - name: CLRDataEnumMemoryFlags – výčet
-      href: clrdataenummemoryflags-enumeration.md
-    - name: ClrDataSourceType – výčet
-      href: clrdatasourcetype-enumeration.md
-    - name: COR_PUB_ENUMPROCESS – výčet
-      href: cor-pub-enumprocess-enumeration.md
-    - name: CorDebugBlockingReason – výčet
-      href: cordebugblockingreason-enumeration.md
-    - name: CorDebugChainReason – výčet
-      href: cordebugchainreason-enumeration.md
-    - name: Výčet CorDebugCodeInvokeKind
-      href: cordebugcodeinvokekind-enumeration.md
-    - name: Výčet CorDebugCodeInvokePurpose
-      href: cordebugcodeinvokepurpose-enumeration.md
-    - name: CorDebugCreateProcessFlags – výčet
-      href: cordebugcreateprocessflags-enumeration.md
-    - name: Výčet CorDebugDebugEventKind
-      href: cordebugdebugeventkind-enumeration.md
-    - name: Výčet CorDebugDecodeEventFlagsWindows
-      href: cordebugdecodeeventflagswindows-enumeration.md
-    - name: CorDebugExceptionCallbackType – výčet
-      href: cordebugexceptioncallbacktype-enumeration.md
-    - name: CorDebugExceptionFlags – výčet
-      href: cordebugexceptionflags-enumeration.md
-    - name: CorDebugExceptionUnwindCallbackType – výčet
-      href: cordebugexceptionunwindcallbacktype-enumeration.md
-    - name: CorDebugGCType – výčet
-      href: cordebuggctype-enumeration.md
-    - name: CorDebugGenerationTypes – výčet
-      href: cordebuggenerationtypes-enumeration.md
-    - name: CorDebugHandleType – výčet
-      href: cordebughandletype-enumeration.md
-    - name: CorDebugIlToNativeMappingTypes – výčet
-      href: cordebugiltonativemappingtypes-enumeration.md
-    - name: CorDebugIntercept – výčet
-      href: cordebugintercept-enumeration.md
-    - name: CorDebugInterfaceVersion – výčet
-      href: cordebuginterfaceversion-enumeration.md
-    - name: CorDebugInternalFrameType – výčet
-      href: cordebuginternalframetype-enumeration.md
-    - name: CorDebugJITCompilerFlags – výčet
-      href: cordebugjitcompilerflags-enumeration.md
-    - name: CorDebugJITCompilerFlagsDeprecated – výčet
-      href: cordebugjitcompilerflagsdeprecated-enumeration.md
-    - name: CorDebugMappingResult – výčet
-      href: cordebugmappingresult-enumeration.md
-    - name: CorDebugMDAFlags – výčet
-      href: cordebugmdaflags-enumeration.md
-    - name: CorDebugNGenPolicy – výčet
-      href: cordebugngenpolicy-enumeration.md
-    - name: Výčet CorDebugPlatform
-      href: cordebugplatform-enumeration.md
-    - name: Výčet CorDebugRecordFormat
-      href: cordebugrecordformat-enumeration.md
-    - name: CorDebugRegister – výčet
-      href: cordebugregister-enumeration.md
-    - name: CorDebugSetContextFlag – výčet
-      href: cordebugsetcontextflag-enumeration.md
-    - name: Výčet CorDebugStateChange
-      href: cordebugstatechange-enumeration.md
-    - name: CorDebugStepReason – výčet
-      href: cordebugstepreason-enumeration.md
-    - name: CorDebugThreadState – výčet
-      href: cordebugthreadstate-enumeration.md
-    - name: CorDebugUnmappedStop – výčet
-      href: cordebugunmappedstop-enumeration.md
-    - name: CorDebugUserState – výčet
-      href: cordebuguserstate-enumeration.md
-    - name: CorGCReferenceType – výčet
-      href: corgcreferencetype-enumeration.md
-    - name: Výčet ILCodeKind
-      href: ilcodekind-enumeration.md
-    - name: LoggingLevelEnum – výčet
-      href: logginglevelenum-enumeration.md
-    - name: LogSwitchCallReason – výčet
-      href: logswitchcallreason-enumeration.md
-    - name: VariableLocationType – výčet
-      href: variablelocationtype-enumeration.md
-    - name: Výčet WriteableMetadataUpdateMode
-      href: writeablemetadataupdatemode-enumeration.md
-  - name: Struktury pro ladění
-    href: debugging-structures.md
-    items:
-    - name: CLRDATA_ADDRESS_RANGE – struktura
-      href: clrdata-address-range-structure.md
-    - name: CLRDATA_IL_ADDRESS_MAP – struktura
-      href: clrdata-il-address-map-structure.md
-    - name: CLR_DEBUGGING_VERSION – struktura
-      href: clr-debugging-version-structure.md
-    - name: CodeChunkInfo – struktura
-      href: codechunkinfo-structure.md
-    - name: COR_ACTIVE_FUNCTION – struktura
-      href: cor-active-function-structure.md
-    - name: COR_ARRAY_LAYOUT – struktura
-      href: cor-array-layout-structure.md
-    - name: COR_DEBUG_IL_TO_NATIVE_MAP – struktura
-      href: cor-debug-il-to-native-map-structure.md
-    - name: COR_DEBUG_STEP_RANGE – struktura
-      href: cor-debug-step-range-structure.md
-    - name: COR_FIELD – struktura
-      href: cor-field-structure.md
-    - name: COR_GC_REFERENCE – struktura
-      href: cor-gc-reference-structure.md
-    - name: COR_HEAPINFO – struktura
-      href: cor-heapinfo-structure.md
-    - name: COR_HEAPOBJECT – struktura
-      href: cor-heapobject-structure.md
-    - name: COR_IL_MAP – struktura
-      href: cor-il-map-structure.md
-    - name: COR_SEGMENT – struktura
-      href: cor-segment-structure.md
-    - name: COR_TYPEID – struktura
-      href: cor-typeid-structure.md
-    - name: COR_TYPE_LAYOUT – struktura
-      href: cor-type-layout-structure.md
-    - name: COR_VERSION – struktura
-      href: cor-version-structure.md
-    - name: CorDebugBlockingObject – struktura
-      href: cordebugblockingobject-structure.md
-    - name: Struktura CorDebugEHClause
-      href: cordebugehclause-structure.md
-    - name: CorDebugExceptionObjectStackFrame – struktura
-      href: cordebugexceptionobjectstackframe-structure.md
-    - name: CorDebugGuidToTypeMapping – struktura
-      href: cordebugguidtotypemapping-structure.md
-    - name: DacpMethodDescData – struktura
-      href: dacpmethoddescdata-structure.md
-    - name: DacpModuleData – struktura
-      href: dacpmoduledata-structure.md
-    - name: DacpReJitData – struktura
-      href: dacprejitdata-structure.md
-    - name: StackTrace_SimpleContext – struktura
-      href: stacktrace-simplecontext-structure.md
-  - name: Ladění aplikací Silverlight
-    href: silverlight-debugging.md
-    items:
-    - name: CloseCLREnumeration – funkce
-      href: closeclrenumeration-function.md
-    - name: CreateCoreClrDebugTarget – funkce
-      href: createcoreclrdebugtarget-function.md
-    - name: CreateCordbObject – funkce
-      href: createcordbobject-function.md
-    - name: CreateVersionStringFromModule – funkce
-      href: createversionstringfrommodule-function.md
-    - name: CreateDebuggingInterfaceFromVersion – funkce
-      href: createdebugginginterfacefromversion-function-for-silverlight.md
-    - name: CoreClrDebugProcInfo – struktura
-      href: coreclrdebugprocinfo-structure.md
-    - name: CoreClrDebugRuntimeInfo – struktura
-      href: coreclrdebugruntimeinfo-structure.md
-    - name: EnumerateCLRs – funkce
-      href: enumerateclrs-function.md
-    - name: GetStartupNotificationEvent – funkce
-      href: getstartupnotificationevent-function.md
-    - name: ICoreClrDebugTarget – rozhraní
-      href: icoreclrdebugtarget-interface.md
-      items:
-      - name: ICoreClrDebugTarget::EnumProcesses – metoda
-        href: icoreclrdebugtarget-enumprocesses-method.md
-      - name: ICoreClrDebugTarget::EnumRuntimes – metoda
-        href: icoreclrdebugtarget-enumruntimes-method.md
-      - name: ICoreClrDebugTarget::FreeMemory – metoda
-        href: icoreclrdebugtarget-freememory-method.md
-    - name: InitDbgTransportManager – funkce
-      href: initdbgtransportmanager-function.md
-    - name: ShutdownDbgTransportManager – funkce
-      href: shutdowndbgtransportmanager-function.md
-ms.openlocfilehash: ce615739742902be9ce45754b9c263a5b1538b74
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471564"
+    - name: Ladění tříd typu coclass
+      href: debugging-coclasses.md
+      items:
+        - name: CorpubPublish – třída typu coclass
+          href: corpubpublish-coclass.md
+    - name: Debugging – rozhraní
+      href: debugging-interfaces.md
+      items:
+        - name: ICLRDataEnumMemoryRegions – rozhraní
+          href: iclrdataenummemoryregions-interface.md
+          items:
+            - name: EnumMemoryRegions – metoda
+              href: iclrdataenummemoryregions-enummemoryregions-method.md
+        - name: ICLRDataEnumMemoryRegionsCallback – rozhraní
+          href: iclrdataenummemoryregionscallback-interface.md
+          items:
+            - name: EnumMemoryRegion – metoda
+              href: iclrdataenummemoryregionscallback-enummemoryregion-method.md
+        - name: ICLRDataTarget – rozhraní
+          href: iclrdatatarget-interface.md
+          items:
+            - name: GetCurrentThreadID – metoda
+              href: iclrdatatarget-getcurrentthreadid-method.md
+            - name: GetImageBase – metoda
+              href: iclrdatatarget-getimagebase-method.md
+            - name: GetMachineType – metoda
+              href: iclrdatatarget-getmachinetype-method.md
+            - name: GetPointerSize – metoda
+              href: iclrdatatarget-getpointersize-method.md
+            - name: GetThreadContext – metoda
+              href: iclrdatatarget-getthreadcontext-method.md
+            - name: GetTLSValue – metoda
+              href: iclrdatatarget-gettlsvalue-method.md
+            - name: ReadVirtual – metoda
+              href: iclrdatatarget-readvirtual-method.md
+            - name: Request – metoda
+              href: iclrdatatarget-request-method.md
+            - name: SetThreadContext – metoda
+              href: iclrdatatarget-setthreadcontext-method.md
+            - name: SetTLSValue – metoda
+              href: iclrdatatarget-settlsvalue-method.md
+            - name: WriteVirtual – metoda
+              href: iclrdatatarget-writevirtual-method.md
+        - name: ICLRDataTarget2 – rozhraní
+          href: iclrdatatarget2-interface.md
+          items:
+            - name: AllocVirtual – metoda
+              href: iclrdatatarget2-allocvirtual-method.md
+            - name: FreeVirtual – metoda
+              href: iclrdatatarget2-freevirtual-method.md
+        - name: ICLRDataTarget3 – rozhraní
+          href: iclrdatatarget3-interface.md
+          items:
+            - name: GetExceptionRecord – metoda
+              href: iclrdatatarget3-getexceptionrecord-method.md
+            - name: GetExceptionContextRecord – metoda
+              href: iclrdatatarget3-getexceptioncontextrecord-method.md
+            - name: GetExceptionThreadID – metoda
+              href: iclrdatatarget3-getexceptionthreadid-method.md
+        - name: ICLRDebugging – rozhraní
+          href: iclrdebugging-interface.md
+          items:
+            - name: OpenVirtualProcess – metoda
+              href: iclrdebugging-openvirtualprocess-method.md
+            - name: CanUnloadNow – metoda
+              href: iclrdebugging-canunloadnow-method.md
+        - name: ICLRDebuggingLibraryProvider – rozhraní
+          href: iclrdebugginglibraryprovider-interface.md
+          items:
+            - name: ProvideLibrary – metoda
+              href: iclrdebugginglibraryprovider-providelibrary-method.md
+        - name: ICLRMetadataLocator – rozhraní
+          href: iclrmetadatalocator-interface.md
+          items:
+            - name: GetMetaData – metoda
+              href: iclrmetadatalocator-getmetadata-method.md
+        - name: ICorDebug – rozhraní
+          href: icordebug-interface.md
+          items:
+            - name: CanLaunchOrAttach – metoda
+              href: icordebug-canlaunchorattach-method.md
+            - name: CreateProcess – metoda
+              href: icordebug-createprocess-method.md
+            - name: DebugActiveProcess – metoda
+              href: icordebug-debugactiveprocess-method.md
+            - name: EnumerateProcesses – metoda
+              href: icordebug-enumerateprocesses-method.md
+            - name: GetProcess – metoda
+              href: icordebug-getprocess-method.md
+            - name: Initialize – metoda
+              href: icordebug-initialize-method.md
+            - name: SetManagedHandler – metoda
+              href: icordebug-setmanagedhandler-method.md
+            - name: SetUnmanagedHandler – metoda
+              href: icordebug-setunmanagedhandler-method.md
+            - name: Terminate – metoda
+              href: icordebug-terminate-method.md
+        - name: ICorDebugAppDomain – rozhraní
+          href: icordebugappdomain-interface.md
+          items:
+            - name: Attach – metoda
+              href: icordebugappdomain-attach-method.md
+            - name: EnumerateAssemblies – metoda
+              href: icordebugappdomain-enumerateassemblies-method.md
+            - name: EnumerateBreakpoints – metoda
+              href: icordebugappdomain-enumeratebreakpoints-method.md
+            - name: EnumerateSteppers – metoda
+              href: icordebugappdomain-enumeratesteppers-method.md
+            - name: GetID – metoda
+              href: icordebugappdomain-getid-method.md
+            - name: GetModuleFromMetaDataInterface – metoda
+              href: icordebugappdomain-getmodulefrommetadatainterface-method.md
+            - name: GetName – metoda
+              href: icordebugappdomain-getname-method.md
+            - name: GetObject – metoda
+              href: icordebugappdomain-getobject-method.md
+            - name: GetProcess – metoda
+              href: icordebugappdomain-getprocess-method.md
+            - name: IsAttached – metoda
+              href: icordebugappdomain-isattached-method.md
+        - name: ICorDebugAppDomain2 – rozhraní
+          href: icordebugappdomain2-interface.md
+          items:
+            - name: GetArrayOrPointerType – metoda
+              href: icordebugappdomain2-getarrayorpointertype-method.md
+            - name: GetFunctionPointerType
+              href: icordebugappdomain2-getfunctionpointertype-method.md
+        - name: ICorDebugAppDomain3 – rozhraní
+          href: icordebugappdomain3-interface.md
+          items:
+            - name: GetCachedWinRTTypes – metoda
+              href: icordebugappdomain3-getcachedwinrttypes-method.md
+            - name: GetCachedWinRTTypesForIIDs – metoda
+              href: icordebugappdomain3-getcachedwinrttypesforiids-method.md
+        - name: Rozhraní ICorDebugAppDomain4
+          href: icordebugappdomain4-interface.md
+          items:
+            - name: GetObjectForCCW – metoda
+              href: icordebugappdomain4-getobjectforccw-method.md
+        - name: ICorDebugAppDomainEnum – rozhraní
+          href: icordebugappdomainenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugappdomainenum-next-method.md
+        - name: ICorDebugArrayValue – rozhraní
+          href: icordebugarrayvalue-interface.md
+          items:
+            - name: GetBaseIndicies – metoda
+              href: icordebugarrayvalue-getbaseindicies-method.md
+            - name: GetCount – metoda
+              href: icordebugarrayvalue-getcount-method.md
+            - name: GetDimensions – metoda
+              href: icordebugarrayvalue-getdimensions-method.md
+            - name: GetElement – metoda
+              href: icordebugarrayvalue-getelement-method.md
+            - name: GetElementAtPosition – metoda
+              href: icordebugarrayvalue-getelementatposition-method.md
+            - name: GetElementType – metoda
+              href: icordebugarrayvalue-getelementtype-method.md
+            - name: GetRank – metoda
+              href: icordebugarrayvalue-getrank-method.md
+            - name: HasBaseIndicies – metoda
+              href: icordebugarrayvalue-hasbaseindicies-method.md
+        - name: ICorDebugAssembly – rozhraní
+          href: icordebugassembly-interface.md
+          items:
+            - name: EnumerateModules – metoda
+              href: icordebugassembly-enumeratemodules-method.md
+            - name: GetAppDomain – metoda
+              href: icordebugassembly-getappdomain-method.md
+            - name: GetCodeBase – metoda
+              href: icordebugassembly-getcodebase-method.md
+            - name: GetName – metoda
+              href: icordebugassembly-getname-method.md
+            - name: GetProcess – metoda
+              href: icordebugassembly-getprocess-method.md
+        - name: ICorDebugAssembly2 – rozhraní
+          href: icordebugassembly2-interface.md
+          items:
+            - name: IsFullyTrusted – metoda
+              href: icordebugassembly2-isfullytrusted-method.md
+        - name: Rozhraní ICorDebugAssembly3
+          href: icordebugassembly3-interface.md
+          items:
+            - name: EnumerateContainedAssemblies – metoda
+              href: icordebugassembly3-enumeratecontainedassemblies-method.md
+            - name: GetContainerAssembly – metoda
+              href: icordebugassembly3-getcontainerassembly-method.md
+        - name: ICorDebugAssemblyEnum – rozhraní
+          href: icordebugassemblyenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugassemblyenum-next-method.md
+        - name: ICorDebugBlockingObjectEnum – rozhraní
+          href: icordebugblockingobjectenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugblockingobjectenum-next-method.md
+        - name: ICorDebugBoxValue – rozhraní
+          href: icordebugboxvalue-interface.md
+          items:
+            - name: GetObject – metoda
+              href: icordebugboxvalue-getobject-method.md
+        - name: ICorDebugBreakpoint – rozhraní
+          href: icordebugbreakpoint-interface.md
+          items:
+            - name: Activate – metoda
+              href: icordebugbreakpoint-activate-method.md
+            - name: IsActive – metoda
+              href: icordebugbreakpoint-isactive-method.md
+        - name: ICorDebugBreakpointEnum – rozhraní
+          href: icordebugbreakpointenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugbreakpointenum-next-method.md
+        - name: ICorDebugChain – rozhraní
+          href: icordebugchain-interface.md
+          items:
+            - name: EnumerateFrames – metoda
+              href: icordebugchain-enumerateframes-method.md
+            - name: GetActiveFrame – metoda
+              href: icordebugchain-getactiveframe-method.md
+            - name: GetCallee – metoda
+              href: icordebugchain-getcallee-method.md
+            - name: GetCaller – metoda
+              href: icordebugchain-getcaller-method.md
+            - name: GetContext – metoda
+              href: icordebugchain-getcontext-method.md
+            - name: GetNext – metoda
+              href: icordebugchain-getnext-method.md
+            - name: GetPrevious – metoda
+              href: icordebugchain-getprevious-method.md
+            - name: GetReason – metoda
+              href: icordebugchain-getreason-method.md
+            - name: GetRegisterSet – metoda
+              href: icordebugchain-getregisterset-method.md
+            - name: GetStackRange – metoda
+              href: icordebugchain-getstackrange-method.md
+            - name: GetThread – metoda
+              href: icordebugchain-getthread-method.md
+            - name: IsManaged – metoda
+              href: icordebugchain-ismanaged-method.md
+        - name: ICorDebugChainEnum – rozhraní
+          href: icordebugchainenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugchainenum-next-method.md
+        - name: ICorDebugClass – rozhraní
+          href: icordebugclass-interface.md
+          items:
+            - name: GetModule – metoda
+              href: icordebugclass-getmodule-method.md
+            - name: GetStaticFieldValue – metoda
+              href: icordebugclass-getstaticfieldvalue-method.md
+            - name: GetToken – metoda
+              href: icordebugclass-gettoken-method.md
+        - name: ICorDebugClass2 – rozhraní
+          href: icordebugclass2-interface.md
+          items:
+            - name: GetParameterizedType – metoda
+              href: icordebugclass2-getparameterizedtype-method.md
+            - name: SetJMCStatus – metoda
+              href: icordebugclass2-setjmcstatus-method.md
+        - name: ICorDebugCode – rozhraní
+          href: icordebugcode-interface1.md
+          items:
+            - name: CreateBreakpoint – metoda
+              href: icordebugcode-createbreakpoint-method.md
+            - name: GetAddress – metoda
+              href: icordebugcode-getaddress-method.md
+            - name: GetCode – metoda
+              href: icordebugcode-getcode-method.md
+            - name: GetEnCRemapSequencePoints – metoda
+              href: icordebugcode-getencremapsequencepoints-method.md
+            - name: GetFunction – metoda
+              href: icordebugcode-getfunction-method.md
+            - name: GetILToNativeMapping – metoda
+              href: icordebugcode-getiltonativemapping-method.md
+            - name: GetSize – metoda
+              href: icordebugcode-getsize-method.md
+            - name: GetVersionNumber – metoda
+              href: icordebugcode-getversionnumber-method.md
+            - name: IsIL – metoda
+              href: icordebugcode-isil-method.md
+        - name: ICorDebugCode2 – rozhraní
+          href: icordebugcode2-interface.md
+          items:
+            - name: GetCodeChunks – metoda
+              href: icordebugcode2-getcodechunks-method.md
+            - name: GetCompilerFlags – metoda
+              href: icordebugcode2-getcompilerflags-method.md
+        - name: ICorDebugCode3 – rozhraní
+          href: icordebugcode3-interface.md
+          items:
+            - name: GetReturnValueLiveOffset – metoda
+              href: icordebugcode3-getreturnvalueliveoffset-method.md
+        - name: ICorDebugCode4 – rozhraní
+          href: icordebugcode4-interface.md
+          items:
+            - name: EnumerateVariableHomes – metoda
+              href: icordebugcode4-enumeratevariablehomes-method.md
+        - name: ICorDebugCodeEnum – rozhraní
+          href: icordebugcodeenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugcodeenum-next-method.md
+        - name: ICorDebugComObjectValue – rozhraní
+          href: icordebugcomobjectvalue-interface.md
+          items:
+            - name: GetCachedInterfacePointers – metoda
+              href: icordebugcomobjectvalue-getcachedinterfacepointers-method.md
+            - name: GetCachedInterfaceTypes – metoda
+              href: icordebugcomobjectvalue-getcachedinterfacetypes-method.md
+        - name: ICorDebugContext – rozhraní
+          href: icordebugcontext-interface.md
+        - name: ICorDebugController – rozhraní
+          href: icordebugcontroller-interface.md
+          items:
+            - name: CanCommitChanges – metoda
+              href: icordebugcontroller-cancommitchanges-method.md
+            - name: CommitChanges – metoda
+              href: icordebugcontroller-commitchanges-method.md
+            - name: Continue – metoda
+              href: icordebugcontroller-continue-method.md
+            - name: Detach – metoda
+              href: icordebugcontroller-detach-method.md
+            - name: EnumerateThreads – metoda
+              href: icordebugcontroller-enumeratethreads-method.md
+            - name: HasQueuedCallbacks – metoda
+              href: icordebugcontroller-hasqueuedcallbacks-method.md
+            - name: IsRunning – metoda
+              href: icordebugcontroller-isrunning-method.md
+            - name: SetAllThreadsDebugState – metoda
+              href: icordebugcontroller-setallthreadsdebugstate-method.md
+            - name: Stop – metoda
+              href: icordebugcontroller-stop-method.md
+            - name: Terminate – metoda
+              href: icordebugcontroller-terminate-method.md
+        - name: ICorDebugDataTarget – rozhraní
+          href: icordebugdatatarget-interface.md
+          items:
+            - name: GetPlatform – metoda
+              href: icordebugdatatarget-getplatform-method.md
+            - name: ReadVirtual – metoda
+              href: icordebugdatatarget-readvirtual-method.md
+            - name: GetThreadContext – metoda
+              href: icordebugdatatarget-getthreadcontext-method.md
+        - name: Rozhraní ICorDebugDataTarget2
+          href: icordebugdatatarget2-interface.md
+          items:
+            - name: CreateVirtualUnwinder – metoda
+              href: icordebugdatatarget2-createvirtualunwinder-method.md
+            - name: EnumerateThreadIDs – metoda
+              href: icordebugdatatarget2-enumeratethreadids-method.md
+            - name: GetImageFromPointer – metoda
+              href: icordebugdatatarget2-getimagefrompointer-method.md
+            - name: GetImageLocation – metoda
+              href: icordebugdatatarget2-getimagelocation-method.md
+            - name: GetSymbolProviderForImage – metoda
+              href: icordebugdatatarget2-getsymbolproviderforimage-method.md
+        - name: Rozhraní ICorDebugDataTarget3
+          href: icordebugdatatarget3-interface.md
+          items:
+            - name: GetLoadedModules – metoda
+              href: icordebugdatatarget3-getloadedmodules-method.md
+        - name: Rozhraní ICorDebugDebugEvent
+          href: icordebugdebugevent-interface.md
+          items:
+            - name: GetEventKind – metoda
+              href: icordebugdebugevent-geteventkind-method.md
+            - name: GetThread – metoda
+              href: icordebugdebugevent-getthread-method.md
+        - name: ICorDebugEditAndContinueErrorInfo – rozhraní
+          href: icordebugeditandcontinueerrorinfo-interface.md
+          items:
+            - name: GetErrorCode – metoda
+              href: icordebugeditandcontinueerrorinfo-geterrorcode-method.md
+            - name: GetModule – metoda
+              href: icordebugeditandcontinueerrorinfo-getmodule-method.md
+            - name: GetString – metoda
+              href: icordebugeditandcontinueerrorinfo-getstring-method.md
+            - name: GetToken – metoda
+              href: icordebugeditandcontinueerrorinfo-gettoken-method.md
+        - name: ICorDebugEditAndContinueSnapshot – rozhraní
+          href: icordebugeditandcontinuesnapshot-interface.md
+          items:
+            - name: CopyMetaData – metoda
+              href: icordebugeditandcontinuesnapshot-copymetadata-method.md
+            - name: GetMvid – metoda
+              href: icordebugeditandcontinuesnapshot-getmvid-method.md
+            - name: GetRoDataRVA – metoda
+              href: icordebugeditandcontinuesnapshot-getrodatarva-method.md
+            - name: GetRwDataRVA – metoda
+              href: icordebugeditandcontinuesnapshot-getrwdatarva-method.md
+            - name: SetILMap – metoda
+              href: icordebugeditandcontinuesnapshot-setilmap-method.md
+            - name: SetPEBytes – metoda
+              href: icordebugeditandcontinuesnapshot-setpebytes-method.md
+            - name: SetPESymbolBytes – metoda
+              href: icordebugeditandcontinuesnapshot-setpesymbolbytes-method.md
+        - name: ICorDebugEnum – rozhraní
+          href: icordebugenum-interface1.md
+          items:
+            - name: Clone – metoda
+              href: icordebugenum-clone-method.md
+            - name: GetCount – metoda
+              href: icordebugenum-getcount-method.md
+            - name: Reset – metoda
+              href: icordebugenum-reset-method.md
+            - name: Skip – metoda
+              href: icordebugenum-skip-method.md
+        - name: ICorDebugErrorInfoEnum – rozhraní
+          href: icordebugerrorinfoenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugerrorinfoenum-next-method.md
+        - name: ICorDebugEval – rozhraní
+          href: icordebugeval-interface.md
+          items:
+            - name: Abort – metoda
+              href: icordebugeval-abort-method.md
+            - name: CallFunction – metoda
+              href: icordebugeval-callfunction-method.md
+            - name: CreateValue – metoda
+              href: icordebugeval-createvalue-method.md
+            - name: GetResult – metoda
+              href: icordebugeval-getresult-method.md
+            - name: GetThread – metoda
+              href: icordebugeval-getthread-method.md
+            - name: IsActive – metoda
+              href: icordebugeval-isactive-method.md
+            - name: NewArray – metoda
+              href: icordebugeval-newarray-method.md
+            - name: NewObject – metoda
+              href: icordebugeval-newobject-method.md
+            - name: NewObjectNoConstructor – metoda
+              href: icordebugeval-newobjectnoconstructor-method.md
+            - name: NewString – metoda
+              href: icordebugeval-newstring-method.md
+        - name: ICorDebugEval2 – rozhraní
+          href: icordebugeval2-interface.md
+          items:
+            - name: CallParameterizedFunction – metoda
+              href: icordebugeval2-callparameterizedfunction-method.md
+            - name: CreateValueForType – metoda
+              href: icordebugeval2-createvaluefortype-method.md
+            - name: NewParameterizedArray – metoda
+              href: icordebugeval2-newparameterizedarray-method.md
+            - name: NewParameterizedObject – metoda
+              href: icordebugeval2-newparameterizedobject-method.md
+            - name: NewParameterizedObjectNoConstructor – metoda
+              href: icordebugeval2-newparameterizedobjectnoconstructor-method.md
+            - name: NewStringWithLength – metoda
+              href: icordebugeval2-newstringwithlength-method.md
+            - name: RudeAbort – metoda
+              href: icordebugeval2-rudeabort-method.md
+        - name: Rozhraní ICorDebugExceptionDebugEvent
+          href: icordebugexceptiondebugevent-interface.md
+          items:
+            - name: GetFlags – metoda
+              href: icordebugexceptiondebugevent-getflags-method.md
+            - name: GetNativeIP – metoda
+              href: icordebugexceptiondebugevent-getnativeip-method.md
+            - name: GetStackPointer – metoda
+              href: icordebugexceptiondebugevent-getstackpointer-method.md
+        - name: 'ICorDebugExceptionObjectCallStackEnum::Next – rozhraní'
+          href: icordebugexceptionobjectcallstackenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugexceptionobjectcallstackenum-next-method.md
+        - name: ICorDebugExceptionObjectValue – rozhraní
+          href: icordebugexceptionobjectvalue-interface.md
+          items:
+            - name: EnumerateExceptionCallStack – metoda
+              href: icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md
+        - name: ICorDebugFrame – rozhraní
+          href: icordebugframe-interface.md
+          items:
+            - name: CreateStepper – metoda
+              href: icordebugframe-createstepper-method.md
+            - name: GetCallee – metoda
+              href: icordebugframe-getcallee-method.md
+            - name: GetCaller – metoda
+              href: icordebugframe-getcaller-method.md
+            - name: GetChain – metoda
+              href: icordebugframe-getchain-method.md
+            - name: GetCode – metoda
+              href: icordebugframe-getcode-method.md
+            - name: GetFunction – metoda
+              href: icordebugframe-getfunction-method.md
+            - name: GetFunctionToken – metoda
+              href: icordebugframe-getfunctiontoken-method.md
+            - name: GetStackRange – metoda
+              href: icordebugframe-getstackrange-method.md
+        - name: ICorDebugFrameEnum – rozhraní
+          href: icordebugframeenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugframeenum-next-method.md
+        - name: ICorDebugFunction – rozhraní
+          href: icordebugfunction-interface1.md
+          items:
+            - name: CreateBreakpoint – metoda
+              href: icordebugfunction-createbreakpoint-method.md
+            - name: GetClass – metoda
+              href: icordebugfunction-getclass-method.md
+            - name: GetCurrentVersionNumber – metoda
+              href: icordebugfunction-getcurrentversionnumber-method.md
+            - name: GetILCode – metoda
+              href: icordebugfunction-getilcode-method.md
+            - name: GetLocalVarSigToken – metoda
+              href: icordebugfunction-getlocalvarsigtoken-method.md
+            - name: GetModule – metoda
+              href: icordebugfunction-getmodule-method.md
+            - name: GetNativeCode – metoda
+              href: icordebugfunction-getnativecode-method.md
+            - name: GetToken – metoda
+              href: icordebugfunction-gettoken-method.md
+        - name: ICorDebugFunction2 – rozhraní
+          href: icordebugfunction2-interface.md
+          items:
+            - name: EnumerateNativeCode – metoda
+              href: icordebugfunction2-enumeratenativecode-method.md
+            - name: GetJMCStatus – metoda
+              href: icordebugfunction2-getjmcstatus-method.md
+            - name: GetVersionNumber – metoda
+              href: icordebugfunction2-getversionnumber-method.md
+            - name: SetJMCStatus – metoda
+              href: icordebugfunction2-setjmcstatus-method.md
+        - name: Rozhraní ICorDebugFunction3
+          href: icordebugfunction3-interface.md
+          items:
+            - name: GetActiveReJitRequestILCode – metoda
+              href: icordebugfunction3-getactiverejitrequestilcode-method.md
+        - name: ICorDebugFunctionBreakpoint – rozhraní
+          href: icordebugfunctionbreakpoint-interface.md
+          items:
+            - name: GetFunction – metoda
+              href: icordebugfunctionbreakpoint-getfunction-method.md
+            - name: GetOffset – metoda
+              href: icordebugfunctionbreakpoint-getoffset-method.md
+        - name: ICorDebugGCReferenceEnum – rozhraní
+          href: icordebuggcreferenceenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebuggcreferenceenum-next-method.md
+        - name: ICorDebugGenericValue – rozhraní
+          href: icordebuggenericvalue-interface.md
+          items:
+            - name: GetValue – metoda
+              href: icordebuggenericvalue-getvalue-method.md
+            - name: SetValue – metoda
+              href: icordebuggenericvalue-setvalue-method.md
+        - name: ICorDebugGuidToTypeEnum – rozhraní
+          href: icordebugguidtotypeenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugguidtotypeenum-next-method.md
+        - name: ICorDebugHandleValue – rozhraní
+          href: icordebughandlevalue-interface.md
+          items:
+            - name: Dispose – metoda
+              href: icordebughandlevalue-dispose-method.md
+            - name: GetHandleType – metoda
+              href: icordebughandlevalue-gethandletype-method.md
+        - name: ICorDebugHeapEnum – rozhraní
+          href: icordebugheapenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugheapenum-next-method.md
+        - name: ICorDebugHeapSegmentEnum – rozhraní
+          href: icordebugheapsegmentenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugheapsegmentenum-next-method.md
+        - name: ICorDebugHeapValue – rozhraní
+          href: icordebugheapvalue-interface.md
+          items:
+            - name: CreateRelocBreakpoint – metoda
+              href: icordebugheapvalue-createrelocbreakpoint-method.md
+            - name: IsValid – metoda
+              href: icordebugheapvalue-isvalid-method.md
+        - name: ICorDebugHeapValue2 – rozhraní
+          href: icordebugheapvalue2-interface1.md
+          items:
+            - name: CreateHandle – metoda
+              href: icordebugheapvalue2-createhandle-method.md
+        - name: ICorDebugHeapValue3 – rozhraní
+          href: icordebugheapvalue3-interface.md
+          items:
+            - name: GetThreadOwningMonitorLock – metoda
+              href: icordebugheapvalue3-getthreadowningmonitorlock-method.md
+            - name: GetMonitorEventWaitList – metoda
+              href: icordebugheapvalue3-getmonitoreventwaitlist-method.md
+        - name: Rozhraní ICorDebugILCode
+          href: icordebugilcode-interface.md
+          items:
+            - name: GetEHClauses – metoda
+              href: icordebugilcode-getehclauses-method.md
+        - name: Rozhraní ICorDebugILCode2
+          href: icordebugilcode2-interface.md
+          items:
+            - name: GetInstrumentedILMap – metoda
+              href: icordebugilcode2-getinstrumentedilmap-method.md
+            - name: GetLocalVarSigToken – metoda
+              href: icordebugilcode2-getlocalvarsigtoken-method.md
+        - name: ICorDebugILFrame – rozhraní
+          href: icordebugilframe-interface.md
+          items:
+            - name: CanSetIP – metoda
+              href: icordebugilframe-cansetip-method.md
+            - name: EnumerateArguments – metoda
+              href: icordebugilframe-enumeratearguments-method.md
+            - name: EnumerateLocalVariables – metoda
+              href: icordebugilframe-enumeratelocalvariables-method.md
+            - name: GetArgument – metoda
+              href: icordebugilframe-getargument-method.md
+            - name: GetIP – metoda
+              href: icordebugilframe-getip-method.md
+            - name: GetLocalVariable – metoda
+              href: icordebugilframe-getlocalvariable-method.md
+            - name: GetStackDepth – metoda
+              href: icordebugilframe-getstackdepth-method.md
+            - name: GetStackValue – metoda
+              href: icordebugilframe-getstackvalue-method.md
+            - name: SetIP – metoda
+              href: icordebugilframe-setip-method.md
+        - name: ICorDebugILFrame2 – rozhraní
+          href: icordebugilframe2-interface.md
+          items:
+            - name: EnumerateTypeParameters – metoda
+              href: icordebugilframe2-enumeratetypeparameters-method.md
+            - name: RemapFunction – metoda
+              href: icordebugilframe2-remapfunction-method.md
+        - name: ICorDebugILFrame3 – rozhraní
+          href: icordebugilframe3-interface.md
+          items:
+            - name: GetReturnValueForILOffset – metoda
+              href: icordebugilframe3-getreturnvalueforiloffset-method.md
+        - name: Rozhraní ICorDebugILFrame4
+          href: icordebugilframe4-interface.md
+          items:
+            - name: EnumerateLocalVariablesEx – metoda
+              href: icordebugilframe4-enumeratelocalvariablesex-method.md
+            - name: GetCodeEx – metoda
+              href: icordebugilframe4-getcodeex-method.md
+            - name: GetLocalVariableEx – metoda
+              href: icordebugilframe4-getlocalvariableex-method.md
+        - name: ICorDebugInstanceFieldSymbol – rozhraní
+          href: icordebuginstancefieldsymbol-interface.md
+          items:
+            - name: GetName – metoda
+              href: icordebuginstancefieldsymbol-getname-method.md
+            - name: GetOffset – metoda
+              href: icordebuginstancefieldsymbol-getoffset-method.md
+            - name: GetSize – metoda
+              href: icordebuginstancefieldsymbol-getsize-method.md
+        - name: ICorDebugInternalFrame – rozhraní
+          href: icordebuginternalframe-interface.md
+          items:
+            - name: GetFrameType – metoda
+              href: icordebuginternalframe-getframetype-method.md
+        - name: ICorDebugInternalFrame2 – rozhraní
+          href: icordebuginternalframe2-interface.md
+          items:
+            - name: GetFrameAddress – metoda
+              href: icordebuginternalframe2-getframeaddress-method.md
+            - name: IsCloserToLeaf – metoda
+              href: icordebuginternalframe2-isclosertoleaf-method.md
+        - name: Rozhraní ICorDebugLoadedModule
+          href: icordebugloadedmodule-interface.md
+          items:
+            - name: GetBaseAddress – metoda
+              href: icordebugloadedmodule-getbaseaddress-method.md
+            - name: GetName – metoda
+              href: icordebugloadedmodule-getname-method.md
+            - name: GetSize – metoda
+              href: icordebugloadedmodule-getsize-method.md
+        - name: ICorDebugManagedCallback – rozhraní
+          href: icordebugmanagedcallback-interface.md
+          items:
+            - name: Break – metoda
+              href: icordebugmanagedcallback-break-method.md
+            - name: Breakpoint – metoda
+              href: icordebugmanagedcallback-breakpoint-method.md
+            - name: BreakpointSetError – metoda
+              href: icordebugmanagedcallback-breakpointseterror-method.md
+            - name: ControlCTrap – metoda
+              href: icordebugmanagedcallback-controlctrap-method.md
+            - name: CreateAppDomain – metoda
+              href: icordebugmanagedcallback-createappdomain-method.md
+            - name: CreateProcess – metoda
+              href: icordebugmanagedcallback-createprocess-method.md
+            - name: CreateThread – metoda
+              href: icordebugmanagedcallback-createthread-method.md
+            - name: DebuggerError – metoda
+              href: icordebugmanagedcallback-debuggererror-method.md
+            - name: EditAndContinueRemap – metoda
+              href: icordebugmanagedcallback-editandcontinueremap-method.md
+            - name: EvalComplete – metoda
+              href: icordebugmanagedcallback-evalcomplete-method.md
+            - name: EvalException – metoda
+              href: icordebugmanagedcallback-evalexception-method.md
+            - name: Exception – metoda
+              href: icordebugmanagedcallback-exception-method.md
+            - name: ExitAppDomain – metoda
+              href: icordebugmanagedcallback-exitappdomain-method.md
+            - name: ExitProcess – metoda
+              href: icordebugmanagedcallback-exitprocess-method.md
+            - name: ExitThread – metoda
+              href: icordebugmanagedcallback-exitthread-method.md
+            - name: LoadAssembly – metoda
+              href: icordebugmanagedcallback-loadassembly-method.md
+            - name: LoadClass – metoda
+              href: icordebugmanagedcallback-loadclass-method.md
+            - name: LoadModule – metoda
+              href: icordebugmanagedcallback-loadmodule-method.md
+            - name: LogMessage – metoda
+              href: icordebugmanagedcallback-logmessage-method.md
+            - name: LogSwitch – metoda
+              href: icordebugmanagedcallback-logswitch-method.md
+            - name: NameChange – metoda
+              href: icordebugmanagedcallback-namechange-method.md
+            - name: StepComplete – metoda
+              href: icordebugmanagedcallback-stepcomplete-method.md
+            - name: UnloadAssembly – metoda
+              href: icordebugmanagedcallback-unloadassembly-method.md
+            - name: UnloadClass – metoda
+              href: icordebugmanagedcallback-unloadclass-method.md
+            - name: UnloadModule – metoda
+              href: icordebugmanagedcallback-unloadmodule-method.md
+            - name: UpdateModuleSymbols – metoda
+              href: icordebugmanagedcallback-updatemodulesymbols-method.md
+        - name: ICorDebugManagedCallback2 – rozhraní
+          href: icordebugmanagedcallback2-interface.md
+          items:
+            - name: ChangeConnection – metoda
+              href: icordebugmanagedcallback2-changeconnection-method.md
+            - name: CreateConnection – metoda
+              href: icordebugmanagedcallback2-createconnection-method.md
+            - name: DestroyConnection – metoda
+              href: icordebugmanagedcallback2-destroyconnection-method.md
+            - name: Exception – metoda
+              href: icordebugmanagedcallback2-exception-method.md
+            - name: ExceptionUnwind – metoda
+              href: icordebugmanagedcallback2-exceptionunwind-method.md
+            - name: FunctionRemapComplete – metoda
+              href: icordebugmanagedcallback2-functionremapcomplete-method.md
+            - name: FunctionRemapOpportunity – metoda
+              href: icordebugmanagedcallback2-functionremapopportunity-method.md
+            - name: MDANotification – metoda
+              href: icordebugmanagedcallback2-mdanotification-method.md
+        - name: ICorDebugManagedCallback3 – rozhraní
+          href: icordebugmanagedcallback3-interface.md
+          items:
+            - name: CustomNotification – metoda
+              href: icordebugmanagedcallback3-customnotification-method.md
+        - name: ICorDebugMDA – rozhraní
+          href: icordebugmda-interface.md
+          items:
+            - name: GetDescription – metoda
+              href: icordebugmda-getdescription-method.md
+            - name: GetFlags – metoda
+              href: icordebugmda-getflags-method.md
+            - name: GetName – metoda
+              href: icordebugmda-getname-method.md
+            - name: GetOSThreadId – metoda
+              href: icordebugmda-getosthreadid-method.md
+            - name: GetXML – metoda
+              href: icordebugmda-getxml-method.md
+        - name: ICorDebugMemoryBuffer – rozhraní
+          href: icordebugmemorybuffer-interface.md
+          items:
+            - name: GetSize – metoda
+              href: icordebugmemorybuffer-getsize-method.md
+            - name: GetStartAddress – metoda
+              href: icordebugmemorybuffer-getstartaddress-method.md
+        - name: ICorDebugMergedAssemblyRecord – rozhraní
+          href: icordebugmergedassemblyrecord-interface.md
+          items:
+            - name: GetCulture – metoda
+              href: icordebugmergedassemblyrecord-getculture-method.md
+            - name: GetIndex – metoda
+              href: icordebugmergedassemblyrecord-getindex-method.md
+            - name: GetPublicKey – metoda
+              href: icordebugmergedassemblyrecord-getpublickey-method.md
+            - name: GetPublicKeyToken – metoda
+              href: icordebugmergedassemblyrecord-getpublickeytoken-method.md
+            - name: GetSimpleName – metoda
+              href: icordebugmergedassemblyrecord-getsimplename-method.md
+            - name: GetVersion – metoda
+              href: icordebugmergedassemblyrecord-getversion-method.md
+        - name: ICorDebugMetaDataLocator – rozhraní
+          href: icordebugmetadatalocator-interface.md
+          items:
+            - name: GetMetaData – metoda
+              href: icordebugmetadatalocator-getmetadata-method.md
+        - name: ICorDebugModule – rozhraní
+          href: icordebugmodule-interface.md
+          items:
+            - name: CreateBreakpoint – metoda
+              href: icordebugmodule-createbreakpoint-method.md
+            - name: EnableClassLoadCallbacks – metoda
+              href: icordebugmodule-enableclassloadcallbacks-method.md
+            - name: EnableJITDebugging – metoda
+              href: icordebugmodule-enablejitdebugging-method.md
+            - name: GetAssembly – metoda
+              href: icordebugmodule-getassembly-method.md
+            - name: GetBaseAddress – metoda
+              href: icordebugmodule-getbaseaddress-method.md
+            - name: GetClassFromToken – metoda
+              href: icordebugmodule-getclassfromtoken-method.md
+            - name: GetEditAndContinueSnapshot – metoda
+              href: icordebugmodule-geteditandcontinuesnapshot-method.md
+            - name: GetFunctionFromRVA – metoda
+              href: icordebugmodule-getfunctionfromrva-method.md
+            - name: GetFunctionFromToken – metoda
+              href: icordebugmodule-getfunctionfromtoken-method.md
+            - name: GetGlobalVariableValue – metoda
+              href: icordebugmodule-getglobalvariablevalue-method.md
+            - name: GetMetaDataInterface – metoda
+              href: icordebugmodule-getmetadatainterface-method.md
+            - name: GetName – metoda
+              href: icordebugmodule-getname-method.md
+            - name: GetProcess – metoda
+              href: icordebugmodule-getprocess-method.md
+            - name: GetSize – metoda
+              href: icordebugmodule-getsize-method.md
+            - name: GetToken – metoda
+              href: icordebugmodule-gettoken-method.md
+            - name: IsDynamic – metoda
+              href: icordebugmodule-isdynamic-method.md
+            - name: IsInMemory – metoda
+              href: icordebugmodule-isinmemory-method.md
+        - name: ICorDebugModule2 – rozhraní
+          href: icordebugmodule2-interface.md
+          items:
+            - name: ApplyChanges – metoda
+              href: icordebugmodule2-applychanges-method.md
+            - name: GetJITCompilerFlags – metoda
+              href: icordebugmodule2-getjitcompilerflags-method.md
+            - name: ResolveAssembly – metoda
+              href: icordebugmodule2-resolveassembly-method.md
+            - name: SetJITCompilerFlags – metoda
+              href: icordebugmodule2-setjitcompilerflags-method.md
+            - name: SetJMCStatus – metoda
+              href: icordebugmodule2-setjmcstatus-method.md
+        - name: ICorDebugModule3 – rozhraní
+          href: icordebugmodule3-interface.md
+          items:
+            - name: 'ICorDebugModule3::CreateReaderForInMemorySymbols – metoda'
+              href: icordebugmodule3-createreaderforinmemorysymbols-method.md
+        - name: ICorDebugModuleBreakpoint – rozhraní
+          href: icordebugmodulebreakpoint-interface.md
+          items:
+            - name: GetModule – metoda
+              href: icordebugmodulebreakpoint-getmodule-method.md
+        - name: ICorDebugModuleDebugEvent – rozhraní
+          href: icordebugmoduledebugevent-interface.md
+          items:
+            - name: GetModule – metoda
+              href: icordebugmoduledebugevent-getmodule-method.md
+        - name: ICorDebugModuleEnum – rozhraní
+          href: icordebugmoduleenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugmoduleenum-next-method.md
+        - name: ICorDebugMutableDataTarget – rozhraní
+          href: icordebugmutabledatatarget-interface.md
+          items:
+            - name: ContinueStatusChanged – metoda
+              href: icordebugmutabledatatarget-continuestatuschanged-method.md
+            - name: SetThreadContext – metoda
+              href: icordebugmutabledatatarget-setthreadcontext-method.md
+            - name: WriteVirtual – metoda
+              href: icordebugmutabledatatarget-writevirtual-method.md
+        - name: ICorDebugNativeFrame – rozhraní
+          href: icordebugnativeframe-interface.md
+          items:
+            - name: CanSetIP – metoda
+              href: icordebugnativeframe-cansetip-method.md
+            - name: GetIP – metoda
+              href: icordebugnativeframe-getip-method.md
+            - name: GetLocalDoubleRegisterValue – metoda
+              href: icordebugnativeframe-getlocaldoubleregistervalue-method.md
+            - name: GetLocalMemoryRegisterValue – metoda
+              href: icordebugnativeframe-getlocalmemoryregistervalue-method.md
+            - name: GetLocalMemoryValue – metoda
+              href: icordebugnativeframe-getlocalmemoryvalue-method.md
+            - name: GetLocalRegisterMemoryValue – metoda
+              href: icordebugnativeframe-getlocalregistermemoryvalue-method.md
+            - name: GetLocalRegisterValue – metoda
+              href: icordebugnativeframe-getlocalregistervalue-method.md
+            - name: GetRegisterSet – metoda
+              href: icordebugnativeframe-getregisterset-method.md
+            - name: SetIP – metoda
+              href: icordebugnativeframe-setip-method.md
+        - name: ICorDebugNativeFrame2 – rozhraní
+          href: icordebugnativeframe2-interface.md
+          items:
+            - name: IsChild – metoda
+              href: icordebugnativeframe2-ischild-method.md
+            - name: IsMatchingParentFrame – metoda
+              href: icordebugnativeframe2-ismatchingparentframe-method.md
+            - name: GetStackParameterSize – metoda
+              href: icordebugnativeframe2-getstackparametersize-method.md
+        - name: ICorDebugObjectEnum – rozhraní
+          href: icordebugobjectenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugobjectenum-next-method.md
+        - name: ICorDebugObjectValue – rozhraní
+          href: icordebugobjectvalue-interface.md
+          items:
+            - name: GetClass – metoda
+              href: icordebugobjectvalue-getclass-method.md
+            - name: GetContext – metoda
+              href: icordebugobjectvalue-getcontext-method.md
+            - name: GetFieldValue – metoda
+              href: icordebugobjectvalue-getfieldvalue-method.md
+            - name: GetManagedCopy – metoda
+              href: icordebugobjectvalue-getmanagedcopy-method.md
+            - name: GetVirtualMethod – metoda
+              href: icordebugobjectvalue-getvirtualmethod-method.md
+            - name: IsValueClass – metoda
+              href: icordebugobjectvalue-isvalueclass-method.md
+            - name: SetFromManagedCopy – metoda
+              href: icordebugobjectvalue-setfrommanagedcopy-method.md
+        - name: ICorDebugObjectValue2 – rozhraní
+          href: icordebugobjectvalue2-interface.md
+          items:
+            - name: GetVirtualMethodAndType – metoda
+              href: icordebugobjectvalue2-getvirtualmethodandtype-method.md
+        - name: ICorDebugProcess – rozhraní
+          href: icordebugprocess-interface.md
+          items:
+            - name: ClearCurrentException – metoda
+              href: icordebugprocess-clearcurrentexception-method.md
+            - name: EnableLogMessages – metoda
+              href: icordebugprocess-enablelogmessages-method.md
+            - name: EnumerateAppDomains – metoda
+              href: icordebugprocess-enumerateappdomains-method.md
+            - name: EnumerateObjects – metoda
+              href: icordebugprocess-enumerateobjects-method.md
+            - name: GetHandle – metoda
+              href: icordebugprocess-gethandle-method.md
+            - name: GetHelperThreadID – metoda
+              href: icordebugprocess-gethelperthreadid-method.md
+            - name: GetID – metoda
+              href: icordebugprocess-getid-method.md
+            - name: GetObject – metoda
+              href: icordebugprocess-getobject-method.md
+            - name: GetThread – metoda
+              href: icordebugprocess-getthread-method.md
+            - name: GetThreadContext – metoda
+              href: icordebugprocess-getthreadcontext-method.md
+            - name: IsOSSuspended – metoda
+              href: icordebugprocess-isossuspended-method.md
+            - name: IsTransitionStub – metoda
+              href: icordebugprocess-istransitionstub-method.md
+            - name: ModifyLogSwitch – metoda
+              href: icordebugprocess-modifylogswitch-method.md
+            - name: ReadMemory – metoda
+              href: icordebugprocess-readmemory-method.md
+            - name: SetThreadContext – metoda
+              href: icordebugprocess-setthreadcontext-method.md
+            - name: ThreadForFiberCookie – metoda
+              href: icordebugprocess-threadforfibercookie-method.md
+            - name: WriteMemory – metoda
+              href: icordebugprocess-writememory-method.md
+        - name: ICorDebugProcess2 – rozhraní
+          href: icordebugprocess2-interface1.md
+          items:
+            - name: ClearUnmanagedBreakpoint – metoda
+              href: icordebugprocess2-clearunmanagedbreakpoint-method.md
+            - name: GetDesiredNGENCompilerFlags – metoda
+              href: icordebugprocess2-getdesiredngencompilerflags-method.md
+            - name: GetReferenceValueFromGCHandle – metoda
+              href: icordebugprocess2-getreferencevaluefromgchandle-method.md
+            - name: GetThreadForTaskID – metoda
+              href: icordebugprocess2-getthreadfortaskid-method.md
+            - name: GetVersion – metoda
+              href: icordebugprocess2-getversion-method.md
+            - name: SetDesiredNGENCompilerFlags – metoda
+              href: icordebugprocess2-setdesiredngencompilerflags-method.md
+            - name: SetUnmanagedBreakpoint – metoda
+              href: icordebugprocess2-setunmanagedbreakpoint-method.md
+        - name: ICorDebugProcess3 – rozhraní
+          href: icordebugprocess3-interface.md
+          items:
+            - name: SetEnableCustomNotification – metoda
+              href: icordebugprocess3-setenablecustomnotification-method.md
+        - name: ICorDebugProcess4 – rozhraní
+          href: icordebugprocess4-interface.md
+          items:
+            - name: ProcessStateChanged – metoda
+              href: icordebugprocess4-processstatechanged-method.md
+        - name: ICorDebugProcess5 – rozhraní
+          href: icordebugprocess5-interface.md
+          items:
+            - name: EnableNGenPolicy – metoda
+              href: icordebugprocess5-enablengenpolicy-method.md
+            - name: EnumerateGCReferences – metoda
+              href: icordebugprocess5-enumerategcreferences-method.md
+            - name: EnumerateHandles – metoda
+              href: icordebugprocess5-enumeratehandles-method.md
+            - name: EnumerateHeap – metoda
+              href: icordebugprocess5-enumerateheap-method.md
+            - name: EnumerateHeapRegions – metoda
+              href: icordebugprocess5-enumerateheapregions-method.md
+            - name: GetArrayLayout – metoda
+              href: icordebugprocess5-getarraylayout-method.md
+            - name: GetGCHeapInformation – metoda
+              href: icordebugprocess5-getgcheapinformation-method.md
+            - name: GetObject – metoda
+              href: icordebugprocess5-getobject-method.md
+            - name: GetTypeFields – metoda
+              href: icordebugprocess5-gettypefields-method.md
+            - name: GetTypeForTypeID – metoda
+              href: icordebugprocess5-gettypefortypeid-method.md
+            - name: GetTypeID – metoda
+              href: icordebugprocess5-gettypeid-method.md
+            - name: GetTypeLayout – metoda
+              href: icordebugprocess5-gettypelayout-method.md
+        - name: Rozhraní ICorDebugProcess6
+          href: icordebugprocess6-interface.md
+          items:
+            - name: DecodeEvent – metoda
+              href: icordebugprocess6-decodeevent-method.md
+            - name: EnableVirtualModuleSplitting – metoda
+              href: icordebugprocess6-enablevirtualmodulesplitting-method.md
+            - name: GetCode – metoda
+              href: icordebugprocess6-getcode-method.md
+            - name: GetExportStepInfo – metoda
+              href: icordebugprocess6-getexportstepinfo-method.md
+            - name: MarkDebuggerAttached – metoda
+              href: icordebugprocess6-markdebuggerattached-method.md
+            - name: ProcessStateChanged – metoda
+              href: icordebugprocess6-processstatechanged-method.md
+        - name: Rozhraní ICorDebugProcess7
+          href: icordebugprocess7-interface.md
+          items:
+            - name: SetWriteableMetadataUpdateMode – metoda
+              href: icordebugprocess7-setwriteablemetadataupdatemode-method.md
+        - name: Rozhraní ICorDebugProcess8
+          href: icordebugprocess8-interface.md
+          items:
+            - name: EnableExceptionCallbacksOutsideOfMyCode – metoda
+              href: icordebugprocess8-enableexceptioncallbacksoutsideofmycode-method.md
+        - name: ICorDebugProcessEnum – rozhraní
+          href: icordebugprocessenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugprocessenum-next-method.md
+        - name: ICorDebugReferenceValue – rozhraní
+          href: icordebugreferencevalue-interface.md
+          items:
+            - name: Dereference – metoda
+              href: icordebugreferencevalue-dereference-method.md
+            - name: DereferenceStrong – metoda
+              href: icordebugreferencevalue-dereferencestrong-method.md
+            - name: GetValue – metoda
+              href: icordebugreferencevalue-getvalue-method.md
+            - name: IsNull – metoda
+              href: icordebugreferencevalue-isnull-method.md
+            - name: SetValue – metoda
+              href: icordebugreferencevalue-setvalue-method.md
+        - name: ICorDebugRegisterSet – rozhraní
+          href: icordebugregisterset-interface.md
+          items:
+            - name: GetRegisters – metoda
+              href: icordebugregisterset-getregisters-method.md
+            - name: GetRegistersAvailable – metoda
+              href: icordebugregisterset-getregistersavailable-method.md
+            - name: GetThreadContext – metoda
+              href: icordebugregisterset-getthreadcontext-method.md
+            - name: SetRegisters – metoda
+              href: icordebugregisterset-setregisters-method.md
+            - name: SetThreadContext – metoda
+              href: icordebugregisterset-setthreadcontext-method.md
+        - name: ICorDebugRegisterSet2 – rozhraní
+          href: icordebugregisterset2-interface.md
+          items:
+            - name: GetRegisters – metoda
+              href: icordebugregisterset2-getregisters-method.md
+            - name: GetRegistersAvailable – metoda
+              href: icordebugregisterset2-getregistersavailable-method.md
+            - name: SetRegisters – metoda
+              href: icordebugregisterset2-setregisters-method.md
+        - name: ICorDebugRemote – rozhraní
+          href: icordebugremote-interface.md
+          items:
+            - name: 'ICorDebugRemote::CreateProcessEx – metoda'
+              href: icordebugremote-createprocessex-method.md
+            - name: 'ICorDebugRemote::DebugActiveProcessEx – metoda'
+              href: icordebugremote-debugactiveprocessex-method.md
+        - name: ICorDebugRemoteTarget – rozhraní
+          href: icordebugremotetarget-interface.md
+          items:
+            - name: 'ICorDebugRemoteTarget::GetHostName – metoda'
+              href: icordebugremotetarget-gethostname-method.md
+        - name: ICorDebugRuntimeUnwindableFrame – rozhraní
+          href: icordebugruntimeunwindableframe-interface.md
+        - name: ICorDebugStackWalk – rozhraní
+          href: icordebugstackwalk-interface.md
+          items:
+            - name: GetContext – metoda
+              href: icordebugstackwalk-getcontext-method.md
+            - name: SetContext – metoda
+              href: icordebugstackwalk-setcontext-method.md
+            - name: Next – metoda
+              href: icordebugstackwalk-next-method.md
+            - name: GetFrame – metoda
+              href: icordebugstackwalk-getframe-method.md
+        - name: ICorDebugStaticFieldSymbol – rozhraní
+          href: icordebugstaticfieldsymbol-interface.md
+          items:
+            - name: GetAddress – metoda
+              href: icordebugstaticfieldsymbol-getaddress-method.md
+            - name: GetName – metoda
+              href: icordebugstaticfieldsymbol-getname-method.md
+            - name: GetSize – metoda
+              href: icordebugstaticfieldsymbol-getsize-method.md
+        - name: ICorDebugStepper – rozhraní
+          href: icordebugstepper-interface.md
+          items:
+            - name: Deactivate – metoda
+              href: icordebugstepper-deactivate-method.md
+            - name: IsActive – metoda
+              href: icordebugstepper-isactive-method.md
+            - name: SetInterceptMask – metoda
+              href: icordebugstepper-setinterceptmask-method.md
+            - name: SetRangeIL – metoda
+              href: icordebugstepper-setrangeil-method.md
+            - name: SetUnmappedStopMask – metoda
+              href: icordebugstepper-setunmappedstopmask-method.md
+            - name: Step – metoda
+              href: icordebugstepper-step-method.md
+            - name: StepOut – metoda
+              href: icordebugstepper-stepout-method.md
+            - name: StepRange – metoda
+              href: icordebugstepper-steprange-method.md
+        - name: ICorDebugStepper2 – rozhraní
+          href: icordebugstepper2-interface1.md
+          items:
+            - name: SetJMC – metoda
+              href: icordebugstepper2-setjmc-method.md
+        - name: ICorDebugStepperEnum – rozhraní
+          href: icordebugstepperenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugstepperenum-next-method.md
+        - name: ICorDebugStringValue – rozhraní
+          href: icordebugstringvalue-interface.md
+          items:
+            - name: GetLength – metoda
+              href: icordebugstringvalue-getlength-method.md
+            - name: GetString – metoda
+              href: icordebugstringvalue-getstring-method.md
+        - name: ICorDebugSymbolProvider – rozhraní
+          href: icordebugsymbolprovider-interface.md
+          items:
+            - name: GetAssemblyImageBytes – metoda
+              href: icordebugsymbolprovider-getassemblyimagebytes-method.md
+            - name: GetAssemblyImageMetadata – metoda
+              href: icordebugsymbolprovider-getassemblyimagemetadata-method.md
+            - name: GetCodeRange – metoda
+              href: icordebugsymbolprovider-getcoderange-method.md
+            - name: GetInstanceFieldSymbols – metoda
+              href: icordebugsymbolprovider-getinstancefieldsymbols-method.md
+            - name: GetMergedAssemblyRecords – metoda
+              href: icordebugsymbolprovider-getmergedassemblyrecords-method.md
+            - name: GetMethodLocalSymbols – metoda
+              href: icordebugsymbolprovider-getmethodlocalsymbols-method.md
+            - name: GetMethodParameterSymbols – metoda
+              href: icordebugsymbolprovider-getmethodparametersymbols-method.md
+            - name: GetMethodProps – metoda
+              href: icordebugsymbolprovider-getmethodprops-method.md
+            - name: GetObjectSize – metoda
+              href: icordebugsymbolprovider-getobjectsize-method.md
+            - name: GetStaticFieldSymbols – metoda
+              href: icordebugsymbolprovider-getstaticfieldsymbols-method.md
+            - name: GetTypeProps – metoda
+              href: icordebugsymbolprovider-gettypeprops-method.md
+        - name: ICorDebugSymbolProvider2 – rozhraní
+          href: icordebugsymbolprovider2-interface.md
+          items:
+            - name: GetFrameProps – metoda
+              href: icordebugsymbolprovider2-getframeprops-method.md
+            - name: GetGenericDictionaryInfo – metoda
+              href: icordebugsymbolprovider2-getgenericdictionaryinfo-method.md
+        - name: ICorDebugThread – rozhraní
+          href: icordebugthread-interface.md
+          items:
+            - name: ClearCurrentException – metoda
+              href: icordebugthread-clearcurrentexception-method.md
+            - name: CreateEval – metoda
+              href: icordebugthread-createeval-method.md
+            - name: CreateStepper – metoda
+              href: icordebugthread-createstepper-method.md
+            - name: EnumerateChains – metoda
+              href: icordebugthread-enumeratechains-method.md
+            - name: GetActiveChain – metoda
+              href: icordebugthread-getactivechain-method.md
+            - name: GetActiveFrame – metoda
+              href: icordebugthread-getactiveframe-method.md
+            - name: GetAppDomain – metoda
+              href: icordebugthread-getappdomain-method.md
+            - name: GetCurrentException – metoda
+              href: icordebugthread-getcurrentexception-method.md
+            - name: GetDebugState – metoda
+              href: icordebugthread-getdebugstate-method.md
+            - name: GetHandle – metoda
+              href: icordebugthread-gethandle-method.md
+            - name: GetID – metoda
+              href: icordebugthread-getid-method.md
+            - name: GetObject – metoda
+              href: icordebugthread-getobject-method.md
+            - name: GetProcess – metoda
+              href: icordebugthread-getprocess-method.md
+            - name: GetRegisterSet – metoda
+              href: icordebugthread-getregisterset-method.md
+            - name: GetUserState – metoda
+              href: icordebugthread-getuserstate-method.md
+            - name: SetDebugState – metoda
+              href: icordebugthread-setdebugstate-method.md
+        - name: ICorDebugThread2 – rozhraní
+          href: icordebugthread2-interface.md
+          items:
+            - name: GetActiveFunctions – metoda
+              href: icordebugthread2-getactivefunctions-method.md
+            - name: GetConnectionID – metoda
+              href: icordebugthread2-getconnectionid-method.md
+            - name: GetTaskID – metoda
+              href: icordebugthread2-gettaskid-method.md
+            - name: GetVolatileOSThreadID – metoda
+              href: icordebugthread2-getvolatileosthreadid-method.md
+            - name: InterceptCurrentException – metoda
+              href: icordebugthread2-interceptcurrentexception-method.md
+        - name: ICorDebugThread3 – rozhraní
+          href: icordebugthread3-interface.md
+          items:
+            - name: CreateStackWalk – metoda
+              href: icordebugthread3-createstackwalk-method.md
+            - name: GetActiveInternalFrames – metoda
+              href: icordebugthread3-getactiveinternalframes-method.md
+        - name: ICorDebugThread4 – rozhraní
+          href: icordebugthread4-interface.md
+          items:
+            - name: GetBlockingObjects – metoda
+              href: icordebugthread4-getblockingobjects-method.md
+            - name: HadUnhandledException – metoda
+              href: icordebugthread4-hadunhandledexception-method.md
+            - name: GetCurrentCustomDebuggerNotification – metoda
+              href: icordebugthread4-getcurrentcustomdebuggernotification-method.md
+        - name: ICorDebugThreadEnum – rozhraní
+          href: icordebugthreadenum-interface1.md
+          items:
+            - name: Next – metoda
+              href: icordebugthreadenum-next-method.md
+        - name: ICorDebugType – rozhraní
+          href: icordebugtype-interface.md
+          items:
+            - name: EnumerateTypeParameters – metoda
+              href: icordebugtype-enumeratetypeparameters-method.md
+            - name: GetBase – metoda
+              href: icordebugtype-getbase-method.md
+            - name: GetClass – metoda
+              href: icordebugtype-getclass-method.md
+            - name: GetFirstTypeParameter – metoda
+              href: icordebugtype-getfirsttypeparameter-method.md
+            - name: GetRank – metoda
+              href: icordebugtype-getrank-method.md
+            - name: GetStaticFieldValue – metoda
+              href: icordebugtype-getstaticfieldvalue-method.md
+            - name: GetType – metoda
+              href: icordebugtype-gettype-method.md
+        - name: ICorDebugType2 – rozhraní
+          href: icordebugtype2-interface.md
+          items:
+            - name: GetTypeID – metoda
+              href: icordebugtype2-gettypeid-method.md
+        - name: ICorDebugTypeEnum – rozhraní
+          href: icordebugtypeenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugtypeenum-next-method.md
+        - name: ICorDebugUnmanagedCallback – rozhraní
+          href: icordebugunmanagedcallback-interface.md
+          items:
+            - name: DebugEvent – metoda
+              href: icordebugunmanagedcallback-debugevent-method.md
+        - name: ICorDebugValue – rozhraní
+          href: icordebugvalue-interface.md
+          items:
+            - name: CreateBreakpoint – metoda
+              href: icordebugvalue-createbreakpoint-method.md
+            - name: GetAddress – metoda
+              href: icordebugvalue-getaddress-method.md
+            - name: GetSize – metoda
+              href: icordebugvalue-getsize-method.md
+            - name: GetType – metoda
+              href: icordebugvalue-gettype-method.md
+        - name: ICorDebugValue2 – rozhraní
+          href: icordebugvalue2-interface.md
+          items:
+            - name: GetExactType – metoda
+              href: icordebugvalue2-getexacttype-method.md
+        - name: ICorDebugValue3 – rozhraní
+          href: icordebugvalue3-interface.md
+          items:
+            - name: GetSize64 – metoda
+              href: icordebugvalue3-getsize64-method.md
+        - name: ICorDebugValueBreakpoint – rozhraní
+          href: icordebugvaluebreakpoint-interface.md
+          items:
+            - name: GetValue – metoda
+              href: icordebugvaluebreakpoint-getvalue-method.md
+        - name: ICorDebugValueEnum – rozhraní
+          href: icordebugvalueenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugvalueenum-next-method.md
+        - name: ICorDebugVariableHome – rozhraní
+          href: icordebugvariablehome-interface.md
+          items:
+            - name: GetArgumentIndex – metoda
+              href: icordebugvariablehome-getargumentindex-method.md
+            - name: GetCode – metoda
+              href: icordebugvariablehome-getcode-method.md
+            - name: GetLiveRange – metoda
+              href: icordebugvariablehome-getliverange-method.md
+            - name: GetLocationType – metoda
+              href: icordebugvariablehome-getlocationtype-method.md
+            - name: GetOffset – metoda
+              href: icordebugvariablehome-getoffset-method.md
+            - name: GetRegister – metoda
+              href: icordebugvariablehome-getregister-method.md
+            - name: GetSlotIndex – metoda
+              href: icordebugvariablehome-getslotindex-method.md
+        - name: ICorDebugVariableHomeEnum – rozhraní
+          href: icordebugvariablehomeenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icordebugvariablehomeenum-next-method.md
+        - name: ICorDebugVariableSymbol – rozhraní
+          href: icordebugvariablesymbol-interface.md
+          items:
+            - name: GetName – metoda
+              href: icordebugvariablesymbol-getname-method.md
+            - name: GetSize – metoda
+              href: icordebugvariablesymbol-getsize-method.md
+            - name: GetSlotIndex – metoda
+              href: icordebugvariablesymbol-getslotindex-method.md
+            - name: GetValue – metoda
+              href: icordebugvariablesymbol-getvalue-method.md
+            - name: SetValue – metoda
+              href: icordebugvariablesymbol-setvalue-method.md
+        - name: Rozhraní ICorDebugVirtualUnwinder
+          href: icordebugvirtualunwinder-interface.md
+          items:
+            - name: GetContext – metoda
+              href: icordebugvirtualunwinder-getcontext-method.md
+            - name: Next – metoda
+              href: icordebugvirtualunwinder-next-method.md
+        - name: ICorPublish – rozhraní
+          href: icorpublish-interface.md
+          items:
+            - name: EnumProcesses – metoda
+              href: icorpublish-enumprocesses-method.md
+            - name: GetProcess – metoda
+              href: icorpublish-getprocess-method.md
+        - name: ICorPublishAppDomain – rozhraní
+          href: icorpublishappdomain-interface.md
+          items:
+            - name: GetID – metoda
+              href: icorpublishappdomain-getid-method.md
+            - name: GetName – metoda
+              href: icorpublishappdomain-getname-method.md
+        - name: ICorPublishAppDomainEnum – rozhraní
+          href: icorpublishappdomainenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icorpublishappdomainenum-next-method.md
+        - name: ICorPublishEnum – rozhraní
+          href: icorpublishenum-interface.md
+          items:
+            - name: Clone – metoda
+              href: icorpublishenum-clone-method.md
+            - name: GetCount – metoda
+              href: icorpublishenum-getcount-method.md
+            - name: Reset – metoda
+              href: icorpublishenum-reset-method.md
+            - name: Skip – metoda
+              href: icorpublishenum-skip-method.md
+        - name: ICorPublishProcess – rozhraní
+          href: icorpublishprocess-interface.md
+          items:
+            - name: EnumAppDomains – metoda
+              href: icorpublishprocess-enumappdomains-method.md
+            - name: GetDisplayName – metoda
+              href: icorpublishprocess-getdisplayname-method.md
+            - name: GetProcessID – metoda
+              href: icorpublishprocess-getprocessid-method.md
+            - name: IsManaged – metoda
+              href: icorpublishprocess-ismanaged-method.md
+        - name: ICorPublishProcessEnum – rozhraní
+          href: icorpublishprocessenum-interface.md
+          items:
+            - name: Next – metoda
+              href: icorpublishprocessenum-next-method.md
+        - name: ISOSDacInterface – rozhraní
+          href: isosdacinterface-interface.md
+          items:
+            - name: GetMethodDescData
+              href: isosdacinterface-getmethoddescdata-method.md
+            - name: GetMethodDescPtrFromIP
+              href: isosdacinterface-getmethoddescptrfromip-method.md
+            - name: GetModuleData
+              href: isosdacinterface-getmoduledata-method.md
+        - name: IXCLRDataMethodDefinition – rozhraní
+          href: ixclrdatamethoddefinition-interface.md
+          items:
+            - name: StartEnumInstances
+              href: ixclrdatamethoddefinition-startenuminstances-method.md
+            - name: EnumInstance
+              href: ixclrdatamethoddefinition-enuminstance-method.md
+            - name: EndEnumInstances
+              href: ixclrdatamethoddefinition-endenuminstances-method.md
+        - name: IXCLRDataMethodInstance – rozhraní
+          href: ixclrdatamethodinstance-interface.md
+          items:
+            - name: GetILAddressMap
+              href: ixclrdatamethodinstance-getiladdressmap-method.md
+            - name: GetRepresentativeEntryAddress
+              href: ixclrdatamethodinstance-getrepresentativeentryaddress-method.md
+        - name: IXCLRDataModule – rozhraní
+          href: ixclrdatamodule-interface.md
+          items:
+            - name: GetMethodDefinitionByToken
+              href: ixclrdatamodule-getmethoddefinitionbytoken-method.md
+            - name: Request
+              href: ixclrdatamodule-request-method.md
+            - name: GetVersionId
+              href: ixclrdatamodule-getversionid-method.md
+        - name: IXCLRDataProcess – rozhraní
+          href: ixclrdataprocess-interface.md
+          items:
+            - name: GetAppDomainByUniqueId
+              href: ixclrdataprocess-getappdomainbyuniqueid-method.md
+            - name: StartEnumModules
+              href: ixclrdataprocess-startenummodules-method.md
+            - name: EnumModule
+              href: ixclrdataprocess-enummodule-method.md
+            - name: EndEnumModules
+              href: ixclrdataprocess-endenummodules-method.md
+            - name: StartEnumMethodInstancesByAddress
+              href: ixclrdataprocess-startenummethodinstancesbyaddress-method.md
+            - name: EnumMethodInstanceByAddress
+              href: ixclrdataprocess-enummethodinstancebyaddress-method.md
+            - name: EndEnumMethodInstancesByAddress
+              href: ixclrdataprocess-endenummethodinstancesbyaddress-method.md
+    - name: Globální statické funkce ladění
+      href: debugging-global-static-functions.md
+      items:
+        - name: _EFN_GetManagedExcepStack – funkce
+          href: efn-getmanagedexcepstack-function.md
+        - name: _EFN_GetManagedObjectFieldInfo – funkce
+          href: efn-getmanagedobjectfieldinfo-function.md
+        - name: _EFN_GetManagedObjectName – funkce
+          href: efn-getmanagedobjectname-function.md
+        - name: _EFN_StackTrace – funkce
+          href: efn-stacktrace-function.md
+        - name: CLRDataCreateInstance – funkce
+          href: clrdatacreateinstance-function.md
+        - name: PFN_CLRDataCreateInstance – ukazatel na funkci
+          href: pfn-clrdatacreateinstance-function-pointer.md
+    - name: Ladění výčtů
+      href: debugging-enumerations.md
+      items:
+        - name: CLR_DEBUGGING_PROCESS_FLAGS – výčet
+          href: clr-debugging-process-flags-enumeration.md
+        - name: CLRDataEnumMemoryFlags – výčet
+          href: clrdataenummemoryflags-enumeration.md
+        - name: ClrDataSourceType – výčet
+          href: clrdatasourcetype-enumeration.md
+        - name: COR_PUB_ENUMPROCESS – výčet
+          href: cor-pub-enumprocess-enumeration.md
+        - name: CorDebugBlockingReason – výčet
+          href: cordebugblockingreason-enumeration.md
+        - name: CorDebugChainReason – výčet
+          href: cordebugchainreason-enumeration.md
+        - name: Výčet CorDebugCodeInvokeKind
+          href: cordebugcodeinvokekind-enumeration.md
+        - name: Výčet CorDebugCodeInvokePurpose
+          href: cordebugcodeinvokepurpose-enumeration.md
+        - name: CorDebugCreateProcessFlags – výčet
+          href: cordebugcreateprocessflags-enumeration.md
+        - name: Výčet CorDebugDebugEventKind
+          href: cordebugdebugeventkind-enumeration.md
+        - name: Výčet CorDebugDecodeEventFlagsWindows
+          href: cordebugdecodeeventflagswindows-enumeration.md
+        - name: CorDebugExceptionCallbackType – výčet
+          href: cordebugexceptioncallbacktype-enumeration.md
+        - name: CorDebugExceptionFlags – výčet
+          href: cordebugexceptionflags-enumeration.md
+        - name: CorDebugExceptionUnwindCallbackType – výčet
+          href: cordebugexceptionunwindcallbacktype-enumeration.md
+        - name: CorDebugGCType – výčet
+          href: cordebuggctype-enumeration.md
+        - name: CorDebugGenerationTypes – výčet
+          href: cordebuggenerationtypes-enumeration.md
+        - name: CorDebugHandleType – výčet
+          href: cordebughandletype-enumeration.md
+        - name: CorDebugIlToNativeMappingTypes – výčet
+          href: cordebugiltonativemappingtypes-enumeration.md
+        - name: CorDebugIntercept – výčet
+          href: cordebugintercept-enumeration.md
+        - name: CorDebugInterfaceVersion – výčet
+          href: cordebuginterfaceversion-enumeration.md
+        - name: CorDebugInternalFrameType – výčet
+          href: cordebuginternalframetype-enumeration.md
+        - name: CorDebugJITCompilerFlags – výčet
+          href: cordebugjitcompilerflags-enumeration.md
+        - name: CorDebugJITCompilerFlagsDeprecated – výčet
+          href: cordebugjitcompilerflagsdeprecated-enumeration.md
+        - name: CorDebugMappingResult – výčet
+          href: cordebugmappingresult-enumeration.md
+        - name: CorDebugMDAFlags – výčet
+          href: cordebugmdaflags-enumeration.md
+        - name: CorDebugNGenPolicy – výčet
+          href: cordebugngenpolicy-enumeration.md
+        - name: Výčet CorDebugPlatform
+          href: cordebugplatform-enumeration.md
+        - name: Výčet CorDebugRecordFormat
+          href: cordebugrecordformat-enumeration.md
+        - name: CorDebugRegister – výčet
+          href: cordebugregister-enumeration.md
+        - name: CorDebugSetContextFlag – výčet
+          href: cordebugsetcontextflag-enumeration.md
+        - name: Výčet CorDebugStateChange
+          href: cordebugstatechange-enumeration.md
+        - name: CorDebugStepReason – výčet
+          href: cordebugstepreason-enumeration.md
+        - name: CorDebugThreadState – výčet
+          href: cordebugthreadstate-enumeration.md
+        - name: CorDebugUnmappedStop – výčet
+          href: cordebugunmappedstop-enumeration.md
+        - name: CorDebugUserState – výčet
+          href: cordebuguserstate-enumeration.md
+        - name: CorGCReferenceType – výčet
+          href: corgcreferencetype-enumeration.md
+        - name: Výčet ILCodeKind
+          href: ilcodekind-enumeration.md
+        - name: LoggingLevelEnum – výčet
+          href: logginglevelenum-enumeration.md
+        - name: LogSwitchCallReason – výčet
+          href: logswitchcallreason-enumeration.md
+        - name: VariableLocationType – výčet
+          href: variablelocationtype-enumeration.md
+        - name: Výčet WriteableMetadataUpdateMode
+          href: writeablemetadataupdatemode-enumeration.md
+    - name: Struktury pro ladění
+      href: debugging-structures.md
+      items:
+        - name: CLRDATA_ADDRESS_RANGE – struktura
+          href: clrdata-address-range-structure.md
+        - name: CLRDATA_IL_ADDRESS_MAP – struktura
+          href: clrdata-il-address-map-structure.md
+        - name: CLR_DEBUGGING_VERSION – struktura
+          href: clr-debugging-version-structure.md
+        - name: CodeChunkInfo – struktura
+          href: codechunkinfo-structure.md
+        - name: COR_ACTIVE_FUNCTION – struktura
+          href: cor-active-function-structure.md
+        - name: COR_ARRAY_LAYOUT – struktura
+          href: cor-array-layout-structure.md
+        - name: COR_DEBUG_IL_TO_NATIVE_MAP – struktura
+          href: cor-debug-il-to-native-map-structure.md
+        - name: COR_DEBUG_STEP_RANGE – struktura
+          href: cor-debug-step-range-structure.md
+        - name: COR_FIELD – struktura
+          href: cor-field-structure.md
+        - name: COR_GC_REFERENCE – struktura
+          href: cor-gc-reference-structure.md
+        - name: COR_HEAPINFO – struktura
+          href: cor-heapinfo-structure.md
+        - name: COR_HEAPOBJECT – struktura
+          href: cor-heapobject-structure.md
+        - name: COR_IL_MAP – struktura
+          href: cor-il-map-structure.md
+        - name: COR_SEGMENT – struktura
+          href: cor-segment-structure.md
+        - name: COR_TYPEID – struktura
+          href: cor-typeid-structure.md
+        - name: COR_TYPE_LAYOUT – struktura
+          href: cor-type-layout-structure.md
+        - name: COR_VERSION – struktura
+          href: cor-version-structure.md
+        - name: CorDebugBlockingObject – struktura
+          href: cordebugblockingobject-structure.md
+        - name: Struktura CorDebugEHClause
+          href: cordebugehclause-structure.md
+        - name: CorDebugExceptionObjectStackFrame – struktura
+          href: cordebugexceptionobjectstackframe-structure.md
+        - name: CorDebugGuidToTypeMapping – struktura
+          href: cordebugguidtotypemapping-structure.md
+        - name: DacpMethodDescData – struktura
+          href: dacpmethoddescdata-structure.md
+        - name: DacpModuleData – struktura
+          href: dacpmoduledata-structure.md
+        - name: DacpReJitData – struktura
+          href: dacprejitdata-structure.md
+        - name: StackTrace_SimpleContext – struktura
+          href: stacktrace-simplecontext-structure.md
+    - name: Ladění aplikací Silverlight
+      href: silverlight-debugging.md
+      items:
+        - name: CloseCLREnumeration – funkce
+          href: closeclrenumeration-function.md
+        - name: CreateCoreClrDebugTarget – funkce
+          href: createcoreclrdebugtarget-function.md
+        - name: CreateCordbObject – funkce
+          href: createcordbobject-function.md
+        - name: CreateVersionStringFromModule – funkce
+          href: createversionstringfrommodule-function.md
+        - name: CreateDebuggingInterfaceFromVersion – funkce
+          href: createdebugginginterfacefromversion-function-for-silverlight.md
+        - name: CoreClrDebugProcInfo – struktura
+          href: coreclrdebugprocinfo-structure.md
+        - name: CoreClrDebugRuntimeInfo – struktura
+          href: coreclrdebugruntimeinfo-structure.md
+        - name: EnumerateCLRs – funkce
+          href: enumerateclrs-function.md
+        - name: GetStartupNotificationEvent – funkce
+          href: getstartupnotificationevent-function.md
+        - name: ICoreClrDebugTarget – rozhraní
+          href: icoreclrdebugtarget-interface.md
+          items:
+            - name: 'ICoreClrDebugTarget::EnumProcesses – metoda'
+              href: icoreclrdebugtarget-enumprocesses-method.md
+            - name: 'ICoreClrDebugTarget::EnumRuntimes – metoda'
+              href: icoreclrdebugtarget-enumruntimes-method.md
+            - name: 'ICoreClrDebugTarget::FreeMemory – metoda'
+              href: icoreclrdebugtarget-freememory-method.md
+        - name: InitDbgTransportManager – funkce
+          href: initdbgtransportmanager-function.md
+        - name: ShutdownDbgTransportManager – funkce
+          href: shutdowndbgtransportmanager-function.md

@@ -1,24 +1,17 @@
-items:
 - name: Kolekce a datové struktury
   href: index.md
   items:
-  - name: Výběr třídy kolekce
-    href: selecting-a-collection-class.md
-  - name: Běžně používané typy kolekcí
-    href: commonly-used-collection-types.md
-  - name: Kdy použít generické kolekce
-    href: when-to-use-generic-collections.md
-  - name: Porovnávání a řazení v kolekcích
-    href: comparisons-and-sorts-within-collections.md
-  - name: Typy řazených kolekcí
-    href: sorted-collection-types.md
-  - name: Typy kolekce Hashtable a Dictionary
-    href: hashtable-and-dictionary-collection-types.md
-  - name: Kolekce se zabezpečenými vlákny
-    href: thread-safe/
-ms.openlocfilehash: c9d534277d71f3cb3f18ac90809698a3e63e5145
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471511"
+    - name: Výběr třídy kolekce
+      href: selecting-a-collection-class.md
+    - name: Běžně používané typy kolekcí
+      href: commonly-used-collection-types.md
+    - name: Kdy použít generické kolekce
+      href: when-to-use-generic-collections.md
+    - name: Porovnávání a řazení v kolekcích
+      href: comparisons-and-sorts-within-collections.md
+    - name: Typy řazených kolekcí
+      href: sorted-collection-types.md
+    - name: Typy kolekce Hashtable a Dictionary
+      href: hashtable-and-dictionary-collection-types.md
+    - name: Kolekce se zabezpečenými vlákny
+      href: thread-safe/

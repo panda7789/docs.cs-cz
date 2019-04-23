@@ -1,37 +1,30 @@
-items:
 - name: Asynchronní programování pomocí modifikátoru Async a operátoru Await
   href: index.md
   items:
-  - name: Model asynchronního programování úloh
-    href: task-asynchronous-programming-model.md
-  - name: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await'
-    href: walkthrough-accessing-the-web-by-using-async-and-await.md
-  - name: 'Postupy: Rozšíření návodu k modifikátoru Async pomocí metody Task.WhenAll'
-    href: how-to-extend-the-async-walkthrough-by-using-task-whenall.md
-  - name: 'Postupy: Paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await'
-    href: how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
-  - name: Asynchronní návratové typy
-    href: async-return-types.md
-  - name: Řízení toku v programech s modifikátorem Async
-    href: control-flow-in-async-programs.md
-  - name: Vyladění aplikace s modifikátorem Async
-    href: fine-tuning-your-async-application.md
-    items:
-    - name: Zrušení úlohy nebo seznamu úloh s modifikátorem Async
-      href: cancel-an-async-task-or-a-list-of-tasks.md
-    - name: Zrušení úloh s modifikátorem Async po uplynutí časového intervalu
-      href: cancel-async-tasks-after-a-period-of-time.md
-    - name: Zrušení zbývajících úloh s modifikátorem Async po dokončení jedné z nich
-      href: cancel-remaining-async-tasks-after-one-is-complete.md
-    - name: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení
-      href: start-multiple-async-tasks-and-process-them-as-they-complete.md
-  - name: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async
-    href: handling-reentrancy-in-async-apps.md
-  - name: Použití modifikátoru Async pro přístup k souborům
-    href: using-async-for-file-access.md
-ms.openlocfilehash: 72bac78b384a76eb7f9b6e4ed83c299129014223
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471290"
+    - name: Model asynchronního programování úloh
+      href: task-asynchronous-programming-model.md
+    - name: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await'
+      href: walkthrough-accessing-the-web-by-using-async-and-await.md
+    - name: 'Postupy: Rozšíření návodu k modifikátoru Async pomocí metody Task.WhenAll'
+      href: how-to-extend-the-async-walkthrough-by-using-task-whenall.md
+    - name: 'Postupy: Paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await'
+      href: how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
+    - name: Asynchronní návratové typy
+      href: async-return-types.md
+    - name: "Řízení toku v programech s\_modifikátorem Async"
+      href: control-flow-in-async-programs.md
+    - name: "Vyladění aplikace s\_modifikátorem Async"
+      href: fine-tuning-your-async-application.md
+      items:
+        - name: "Zrušení úlohy nebo seznamu úloh s\_modifikátorem Async"
+          href: cancel-an-async-task-or-a-list-of-tasks.md
+        - name: "Zrušení úloh s\_modifikátorem Async po uplynutí časového intervalu"
+          href: cancel-async-tasks-after-a-period-of-time.md
+        - name: "Zrušení zbývajících úloh s\_modifikátorem Async po dokončení jedné z\_nich"
+          href: cancel-remaining-async-tasks-after-one-is-complete.md
+        - name: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení
+          href: start-multiple-async-tasks-and-process-them-as-they-complete.md
+    - name: "Podpora vícenásobného přístupu v\_aplikacích s\_modifikátorem Async"
+      href: handling-reentrancy-in-async-apps.md
+    - name: Použití modifikátoru Async pro přístup k souborům
+      href: using-async-for-file-access.md

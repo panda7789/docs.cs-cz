@@ -1,20 +1,13 @@
-items:
 - name: Pole v jazyce Visual Basic
   href: index.md
   items:
-  - name: Rozměry pole
-    href: array-dimensions.md
-  - name: 'Postupy: Inicializace proměnné pole'
-    href: how-to-initialize-an-array-variable.md
-  - name: 'Postupy: Řazení pole'
-    href: how-to-sort-an-array.md
-  - name: 'Postupy: Přiřazení jednoho pole k druhému'
-    href: how-to-assign-one-array-to-another-array.md
-  - name: Řešení potíží s poli
-    href: troubleshooting-arrays.md
-ms.openlocfilehash: cec0bed9cd5de72b0b48d6e8392715bb792e0836
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471109"
+    - name: Rozměry pole
+      href: array-dimensions.md
+    - name: 'Postupy: Inicializace proměnné pole'
+      href: how-to-initialize-an-array-variable.md
+    - name: 'Postupy: Řazení pole'
+      href: how-to-sort-an-array.md
+    - name: 'Postupy: Přiřazení jednoho pole k druhému'
+      href: how-to-assign-one-array-to-another-array.md
+    - name: Řešení potíží s poli
+      href: troubleshooting-arrays.md

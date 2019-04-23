@@ -1,143 +1,136 @@
-items:
 - name: Paralelní programování
   href: index.md
   items:
-  - name: Task Parallel Library (TPL)
-    href: task-parallel-library-tpl.md
-    items:
-    - name: Datový paralelismus
-      href: data-parallelism-task-parallel-library.md
+    - name: Task Parallel Library (TPL)
+      href: task-parallel-library-tpl.md
       items:
-      - name: 'Postupy: Zápis jednoduché smyčky Parallel.For'
-        href: how-to-write-a-simple-parallel-for-loop.md
-      - name: 'Postupy: Zápis jednoduché smyčky Parallel.ForEach'
-        href: how-to-write-a-simple-parallel-foreach-loop.md
-      - name: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
-        href: how-to-write-a-parallel-for-loop-with-thread-local-variables.md
-      - name: 'Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu'
-        href: how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md
-      - name: 'Postupy: Zrušení smyček Parallel.For nebo ForEach'
-        href: how-to-cancel-a-parallel-for-or-foreach-loop.md
-      - name: 'Postupy: Zpracování výjimek v paralelních smyčkách'
-        href: how-to-handle-exceptions-in-parallel-loops.md
-      - name: 'Postupy: Zrychlení malých smyček'
-        href: how-to-speed-up-small-loop-bodies.md
-      - name: 'Postupy: Procházení adresářů se soubory pomocí paralelní třídy'
-        href: how-to-iterate-file-directories-with-the-parallel-class.md
-    - name: Asynchronní programování založené na úlohách
-      href: task-based-asynchronous-programming.md
+        - name: Datový paralelismus
+          href: data-parallelism-task-parallel-library.md
+          items:
+            - name: 'Postupy: Zápis jednoduché smyčky Parallel.For'
+              href: how-to-write-a-simple-parallel-for-loop.md
+            - name: 'Postupy: Zápis jednoduché smyčky Parallel.ForEach'
+              href: how-to-write-a-simple-parallel-foreach-loop.md
+            - name: 'Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu'
+              href: how-to-write-a-parallel-for-loop-with-thread-local-variables.md
+            - name: 'Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu'
+              href: how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md
+            - name: 'Postupy: Zrušení smyček Parallel.For nebo ForEach'
+              href: how-to-cancel-a-parallel-for-or-foreach-loop.md
+            - name: 'Postupy: Zpracování výjimek v paralelních smyčkách'
+              href: how-to-handle-exceptions-in-parallel-loops.md
+            - name: 'Postupy: Zrychlení malých smyček'
+              href: how-to-speed-up-small-loop-bodies.md
+            - name: 'Postupy: Procházení adresářů se soubory pomocí paralelní třídy'
+              href: how-to-iterate-file-directories-with-the-parallel-class.md
+        - name: Asynchronní programování založené na úlohách
+          href: task-based-asynchronous-programming.md
+          items:
+            - name: Řetězení úloh pomocí úloh pokračování
+              href: chaining-tasks-by-using-continuation-tasks.md
+            - name: "Připojené a\_odpojené podřízené úlohy"
+              href: attached-and-detached-child-tasks.md
+            - name: Zrušení úlohy
+              href: task-cancellation.md
+            - name: Zpracování výjimek
+              href: exception-handling-task-parallel-library.md
+            - name: 'Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací'
+              href: how-to-use-parallel-invoke-to-execute-parallel-operations.md
+            - name: 'Postupy: Vrácení hodnoty z úlohy'
+              href: how-to-return-a-value-from-a-task.md
+            - name: 'Postupy: Zrušení úlohy a podřízených elementů'
+              href: how-to-cancel-a-task-and-its-children.md
+            - name: 'Postupy: Vytváření předvypočítaných úloh'
+              href: how-to-create-pre-computed-tasks.md
+            - name: 'Postupy: Procházení binárního stromu s paralelními úlohami'
+              href: how-to-traverse-a-binary-tree-with-parallel-tasks.md
+            - name: 'Postupy: Rozbalení vnořené úlohy'
+              href: how-to-unwrap-a-nested-task.md
+            - name: 'Postupy: Zabránění připojení podřízené úlohy ke své nadřazené úloze'
+              href: how-to-prevent-a-child-task-from-attaching-to-its-parent.md
+        - name: Tok dat
+          href: dataflow-task-parallel-library.md
+          items:
+            - name: 'Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat'
+              href: how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md
+            - name: 'Postupy: Implementace vzoru toku dat producent–příjemce'
+              href: how-to-implement-a-producer-consumer-dataflow-pattern.md
+            - name: 'Postupy: Provádění akcí po přijetí dat do bloku toku dat'
+              href: how-to-perform-action-when-a-dataflow-block-receives-data.md
+            - name: 'Návod: Vytvoření kanálu toku dat'
+              href: walkthrough-creating-a-dataflow-pipeline.md
+            - name: 'Postupy: Zrušení propojení bloků toku dat'
+              href: how-to-unlink-dataflow-blocks.md
+            - name: 'Návod: Použití toku dat ve formulářové aplikaci Windows'
+              href: walkthrough-using-dataflow-in-a-windows-forms-application.md
+            - name: 'Postupy: Zrušení bloku toku dat'
+              href: how-to-cancel-a-dataflow-block.md
+            - name: 'Návod: Vytvoření bloku toku dat vlastního typu'
+              href: walkthrough-creating-a-custom-dataflow-block-type.md
+            - name: 'Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock'
+              href: how-to-use-joinblock-to-read-data-from-multiple-sources.md
+            - name: 'Postupy: Určení stupně paralelního zpracování v bloku toku dat'
+              href: how-to-specify-the-degree-of-parallelism-in-a-dataflow-block.md
+            - name: 'Postupy: Určení plánovače úloh v bloku toku dat'
+              href: how-to-specify-a-task-scheduler-in-a-dataflow-block.md
+            - name: 'Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
+              href: walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md
+        - name: Použití TPL s dalšími asynchronními vzory
+          href: using-tpl-with-other-asynchronous-patterns.md
+          items:
+            - name: TPL a tradiční asynchronní programování v .NET Framework
+              href: tpl-and-traditional-async-programming.md
+            - name: 'Postupy: Zalomení vzoru EAP v úloze'
+              href: how-to-wrap-eap-patterns-in-a-task.md
+        - name: Potenciální nástrahy datového a funkčního paralelismu
+          href: potential-pitfalls-in-data-and-task-parallelism.md
+    - name: Paralelní LINQ (PLINQ)
+      href: parallel-linq-plinq.md
       items:
-      - name: Řetězení úloh pomocí úloh pokračování
-        href: chaining-tasks-by-using-continuation-tasks.md
-      - name: Připojené a odpojené podřízené úlohy
-        href: attached-and-detached-child-tasks.md
-      - name: Zrušení úlohy
-        href: task-cancellation.md
-      - name: Zpracování výjimek
-        href: exception-handling-task-parallel-library.md
-      - name: 'Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací'
-        href: how-to-use-parallel-invoke-to-execute-parallel-operations.md
-      - name: 'Postupy: Vrácení hodnoty z úlohy'
-        href: how-to-return-a-value-from-a-task.md
-      - name: 'Postupy: Zrušení úlohy a podřízených elementů'
-        href: how-to-cancel-a-task-and-its-children.md
-      - name: 'Postupy: Vytváření předvypočítaných úloh'
-        href: how-to-create-pre-computed-tasks.md
-      - name: 'Postupy: Procházení binárního stromu s paralelními úlohami'
-        href: how-to-traverse-a-binary-tree-with-parallel-tasks.md
-      - name: 'Postupy: Rozbalení vnořené úlohy'
-        href: how-to-unwrap-a-nested-task.md
-      - name: 'Postupy: Zabránění připojení podřízené úlohy ke své nadřazené úloze'
-        href: how-to-prevent-a-child-task-from-attaching-to-its-parent.md
-    - name: Tok dat
-      href: dataflow-task-parallel-library.md
+        - name: Úvod do PLINQ
+          href: introduction-to-plinq.md
+        - name: Porozumění zrychlení v PLINQ
+          href: understanding-speedup-in-plinq.md
+        - name: Zachování pořadí v PLINQ
+          href: order-preservation-in-plinq.md
+        - name: Možnosti sloučení v PLINQ
+          href: merge-options-in-plinq.md
+        - name: Potenciální nástrahy PLINQ
+          href: potential-pitfalls-with-plinq.md
+        - name: 'Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ'
+          href: how-to-create-and-execute-a-simple-plinq-query.md
+        - name: 'Postupy: Řazení ovládacích prvků v PLINQ dotazu'
+          href: how-to-control-ordering-in-a-plinq-query.md
+        - name: 'Postupy: Kombinování paralelních a sekvenčních LINQ dotazů'
+          href: how-to-combine-parallel-and-sequential-linq-queries.md
+        - name: 'Postupy: Zpracování výjimek v dotazu PLINQ'
+          href: how-to-handle-exceptions-in-a-plinq-query.md
+        - name: 'Postupy: Zrušení dotazu PLINQ'
+          href: how-to-cancel-a-plinq-query.md
+        - name: 'Postupy: Psaní vlastní agregační funkce pro PLINQ'
+          href: how-to-write-a-custom-plinq-aggregate-function.md
+        - name: 'Postupy: Určení režimu spouštění v PLINQ'
+          href: how-to-specify-the-execution-mode-in-plinq.md
+        - name: 'Postupy: Určení možností sloučení v PLINQ'
+          href: how-to-specify-merge-options-in-plinq.md
+        - name: 'Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ'
+          href: how-to-iterate-file-directories-with-plinq.md
+        - name: 'Postupy: Měření výkonu dotazu PLINQ'
+          href: how-to-measure-plinq-query-performance.md
+        - name: Ukázková data pro PLINQ
+          href: plinq-data-sample.md
+    - name: Datové struktury pro paralelní programování
+      href: data-structures-for-parallel-programming.md
+    - name: Paralelní diagnostické nástroje
+      href: parallel-diagnostic-tools.md
+    - name: Vlastní dělicí metody pro PLINQ a TPL
+      href: custom-partitioners-for-plinq-and-tpl.md
       items:
-      - name: 'Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat'
-        href: how-to-write-messages-to-and-read-messages-from-a-dataflow-block.md
-      - name: 'Postupy: Implementace vzoru toku dat producent–příjemce'
-        href: how-to-implement-a-producer-consumer-dataflow-pattern.md
-      - name: 'Postupy: Provádění akcí po přijetí dat do bloku toku dat'
-        href: how-to-perform-action-when-a-dataflow-block-receives-data.md
-      - name: 'Návod: Vytvoření kanálu toku dat'
-        href: walkthrough-creating-a-dataflow-pipeline.md
-      - name: 'Postupy: Zrušení propojení bloků toku dat'
-        href: how-to-unlink-dataflow-blocks.md
-      - name: 'Návod: Použití toku dat ve formulářové aplikaci Windows'
-        href: walkthrough-using-dataflow-in-a-windows-forms-application.md
-      - name: 'Postupy: Zrušení bloku toku dat'
-        href: how-to-cancel-a-dataflow-block.md
-      - name: 'Návod: Vytvoření bloku toku dat vlastního typu'
-        href: walkthrough-creating-a-custom-dataflow-block-type.md
-      - name: 'Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock'
-        href: how-to-use-joinblock-to-read-data-from-multiple-sources.md
-      - name: 'Postupy: Určení stupně paralelního zpracování v bloku toku dat'
-        href: how-to-specify-the-degree-of-parallelism-in-a-dataflow-block.md
-      - name: 'Postupy: Určení plánovače úloh v bloku toku dat'
-        href: how-to-specify-a-task-scheduler-in-a-dataflow-block.md
-      - name: 'Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
-        href: walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md
-    - name: Použití TPL s dalšími asynchronními vzory
-      href: using-tpl-with-other-asynchronous-patterns.md
-      items:
-      - name: TPL a tradiční asynchronní programování v .NET Framework
-        href: tpl-and-traditional-async-programming.md
-      - name: 'Postupy: Zalomení vzoru EAP v úloze'
-        href: how-to-wrap-eap-patterns-in-a-task.md
-    - name: Potenciální nástrahy datového a funkčního paralelismu
-      href: potential-pitfalls-in-data-and-task-parallelism.md
-  - name: Paralelní LINQ (PLINQ)
-    href: parallel-linq-plinq.md
-    items:
-    - name: Úvod do PLINQ
-      href: introduction-to-plinq.md
-    - name: Porozumění zrychlení v PLINQ
-      href: understanding-speedup-in-plinq.md
-    - name: Zachování pořadí v PLINQ
-      href: order-preservation-in-plinq.md
-    - name: Možnosti sloučení v PLINQ
-      href: merge-options-in-plinq.md
-    - name: Potenciální nástrahy PLINQ
-      href: potential-pitfalls-with-plinq.md
-    - name: 'Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ'
-      href: how-to-create-and-execute-a-simple-plinq-query.md
-    - name: 'Postupy: Řazení ovládacích prvků v PLINQ dotazu'
-      href: how-to-control-ordering-in-a-plinq-query.md
-    - name: 'Postupy: Kombinování paralelních a sekvenčních LINQ dotazů'
-      href: how-to-combine-parallel-and-sequential-linq-queries.md
-    - name: 'Postupy: Zpracování výjimek v dotazu PLINQ'
-      href: how-to-handle-exceptions-in-a-plinq-query.md
-    - name: 'Postupy: Zrušení dotazu PLINQ'
-      href: how-to-cancel-a-plinq-query.md
-    - name: 'Postupy: Psaní vlastní agregační funkce pro PLINQ'
-      href: how-to-write-a-custom-plinq-aggregate-function.md
-    - name: 'Postupy: Určení režimu spouštění v PLINQ'
-      href: how-to-specify-the-execution-mode-in-plinq.md
-    - name: 'Postupy: Určení možností sloučení v PLINQ'
-      href: how-to-specify-merge-options-in-plinq.md
-    - name: 'Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ'
-      href: how-to-iterate-file-directories-with-plinq.md
-    - name: 'Postupy: Měření výkonu dotazu PLINQ'
-      href: how-to-measure-plinq-query-performance.md
-    - name: Ukázková data pro PLINQ
-      href: plinq-data-sample.md
-  - name: Datové struktury pro paralelní programování
-    href: data-structures-for-parallel-programming.md
-  - name: Paralelní diagnostické nástroje
-    href: parallel-diagnostic-tools.md
-  - name: Vlastní dělicí metody pro PLINQ a TPL
-    href: custom-partitioners-for-plinq-and-tpl.md
-    items:
-    - name: 'Postupy: Implementace dynamických oddílů'
-      href: how-to-implement-dynamic-partitions.md
-    - name: 'Postupy: Implementace rozdělovače pro statické dělení'
-      href: how-to-implement-a-partitioner-for-static-partitioning.md
-  - name: Výrazy lambda v PLINQ a TPL
-    href: lambda-expressions-in-plinq-and-tpl.md
-  - name: Pro další čtení
-    href: for-further-reading-parallel-programming.md
-ms.openlocfilehash: b4b7cd0e6e93175d223cbd076712fe3b9fe436f2
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471338"
+        - name: 'Postupy: Implementace dynamických oddílů'
+          href: how-to-implement-dynamic-partitions.md
+        - name: 'Postupy: Implementace rozdělovače pro statické dělení'
+          href: how-to-implement-a-partitioner-for-static-partitioning.md
+    - name: Výrazy lambda v PLINQ a TPL
+      href: lambda-expressions-in-plinq-and-tpl.md
+    - name: Pro další čtení
+      href: for-further-reading-parallel-programming.md
