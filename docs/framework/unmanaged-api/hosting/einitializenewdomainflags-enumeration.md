@@ -15,10 +15,10 @@ ms.assetid: 3a120ab2-f5ef-4c9b-8595-d3ed7247c342
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 04b0d9989d66888c33de0359e4c93529fcfbf8d1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095357"
 ---
 # <a name="einitializenewdomainflags-enumeration"></a>EInitializeNewDomainFlags – výčet
@@ -54,5 +54,5 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
 - [SetAppDomainManagerType – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrdomainmanager-setappdomainmanagertype-method.md)

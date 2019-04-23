@@ -3,10 +3,10 @@ title: omezující vlastnost
 ms.date: 03/30/2017
 ms.assetid: 91c4e6aa-3e54-4b6c-a38a-abf27808cc85
 ms.openlocfilehash: 9353b143a328e0fb183b7870332462a0a2c91b10
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59094499"
 ---
 # <a name="facet"></a>omezující vlastnost
@@ -22,8 +22,8 @@ A *omezující vlastnost* slouží k přidání podrobností k definici vlastnos
 |`Collation`|Určuje pořadí řazení (nebo pořadí řazení) pro použití při provádění porovnání a řazení operací na hodnotách vlastnosti.|`String`|  
 |`ConcurrencyMode`|Označuje, že hodnota vlastnosti má být použita pro kontroly optimistické souběžnosti.|Všechny primitivní typ vlastnosti|  
 |`Default`|Určuje výchozí hodnotu vlastnosti, pokud není zadána žádná hodnota, při vytváření instance.|Všechny primitivní typ vlastnosti|  
-|`FixedLength`|Určuje, zda se může lišit délka hodnoty vlastnosti.|`Binary`,  `String`|  
-|`MaxLength`|Určuje maximální délku hodnoty vlastnosti.|`Binary`,  `String`|  
+|`FixedLength`|Určuje, zda se může lišit délka hodnoty vlastnosti.|`Binary`, `String`|  
+|`MaxLength`|Určuje maximální délku hodnoty vlastnosti.|`Binary`, `String`|  
 |`Nullable`|Určuje, zda tato vlastnost může mít hodnotu null.|Všechny primitivní typ vlastnosti|  
 |`Precision`|Pro vlastnosti typu `Decimal`, určuje počet číslic, může mít hodnotu vlastnosti. Pro vlastnosti typu `Time`, `DateTime`, a `DateTimeOffset`, určuje počet číslic za desetinnou čárkou sady sekund hodnoty vlastnosti.|`DateTime`, `DateTimeOffset`, `Decimal`, `Time`,|  
 |`Scale`|Určuje počet číslic vpravo od desetinné čárky pro hodnotu vlastnosti.|Desetinné číslo|  
@@ -37,4 +37,4 @@ A *omezující vlastnost* slouží k přidání podrobností k definici vlastnos
 ## <a name="see-also"></a>Viz také:
 
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

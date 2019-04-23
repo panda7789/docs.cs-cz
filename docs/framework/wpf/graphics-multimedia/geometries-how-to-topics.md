@@ -7,10 +7,10 @@ helpviewer_keywords:
 - geometry classes [WPF]
 ms.assetid: 83873331-b013-472e-8197-8ba993dd242f
 ms.openlocfilehash: 3afee770e36b7daea754775f64dd7f1030659267
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59096235"
 ---
 # <a name="geometries-how-to-topics"></a>Postupy: Geometrie
@@ -37,5 +37,5 @@ Témata v této části ukazují, jak používat <xref:System.Windows.Media.Geom
 
 - <xref:System.Windows.Media.Brushes>
 - <xref:System.Windows.Shapes.Shape>
-- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Grafika a multimédia](index.md)

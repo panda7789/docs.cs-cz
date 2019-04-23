@@ -8,10 +8,10 @@ f1_keywords:
 helpviewer_keywords:
 - fixed keyword [C#]
 ms.openlocfilehash: 4ef334f6d200e75f29e22a9586f4538309797942
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095981"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed – příkaz (Referenční dokumentace jazyka C#)
@@ -74,7 +74,7 @@ V nezabezpečeného režimu můžete přidělit paměť v zásobníku, kde není
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [unsafe](unsafe.md)
 - [Vyrovnávací paměti pevné velikosti](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

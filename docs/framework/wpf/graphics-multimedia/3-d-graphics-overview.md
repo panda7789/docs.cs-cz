@@ -9,10 +9,10 @@ helpviewer_keywords:
 - graphics [WPF], 3-D
 ms.assetid: 67f31ed4-e36b-4b02-9889-dcce245d7afc
 ms.openlocfilehash: 79dc7a3578c395ae8cdf5933e1249441f97071a2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59087986"
 ---
 # <a name="3-d-graphics-overview"></a>Přehled 3D grafiky
@@ -117,7 +117,7 @@ Perspektivy a pravoúhle projekce
   
 -   <xref:System.Windows.Media.Media3D.PointLight>: Osvětluje jako blízké světelného zdroje. PointLights polohy a přetypovat světla z této pozici. V závislosti na jejich umístění a vzdálenost s ohledem na světla jsou osvětlená objekty na scéně. <xref:System.Windows.Media.Media3D.PointLightBase> Zpřístupňuje <xref:System.Windows.Media.Media3D.PointLightBase.Range%2A> vlastnost, která určuje vzdálenost, jejichž překročení nebudou modely osvětlení světla. PointLight také poskytuje zeslabení vlastnosti, které určují, jak světla intenzita snižuje vzdálenost. Můžete určit konstantní lineární či kvadratické interpolace pro útlum světla.  
   
--   <xref:System.Windows.Media.Media3D.SpotLight>: Dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
+-   <xref:System.Windows.Media.Media3D.SpotLight>: dědí z <xref:System.Windows.Media.Media3D.PointLight>. Světelné kužele osvětlení jako PointLight a mít umístění a směrování. Microsoft Office project světla v oblasti ve tvaru kužel nastavil <xref:System.Windows.Media.Media3D.SpotLight.InnerConeAngle%2A> a <xref:System.Windows.Media.Media3D.SpotLight.OuterConeAngle%2A> vlastnosti, které jsou zadány ve stupních.  
   
  Světla jsou <xref:System.Windows.Media.Media3D.Model3D> objekty, dají se transformovat a animovat vlastnosti světla, včetně umístění, barvy, směr a rozsah.  
   
@@ -176,6 +176,6 @@ Perspektivy a pravoúhle projekce
 - <xref:System.Windows.Media.Media3D.Material>
 - [Přehled 3D transformací](3-d-transformations-overview.md)
 - [Maximalizace výkonu WPF 3D](maximize-wpf-3d-performance.md)
-- [– postupy](3-d-graphics-how-to-topics.md)
-- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
-- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Témata s postupy](3-d-graphics-how-to-topics.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

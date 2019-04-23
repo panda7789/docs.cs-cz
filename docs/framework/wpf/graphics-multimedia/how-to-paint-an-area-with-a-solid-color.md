@@ -7,10 +7,10 @@ helpviewer_keywords:
 - painting [WPF], with solid colors
 ms.assetid: 5d27d8a7-4bd7-4063-bdf3-2c5c0f19f9d3
 ms.openlocfilehash: c85ba72c858d155f29875bb944824db1c44ffaab
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086842"
 ---
 # <a name="how-to-paint-an-area-with-a-solid-color"></a>Postupy: Vykreslení oblasti plnou barvou

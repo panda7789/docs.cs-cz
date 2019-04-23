@@ -3,10 +3,10 @@ title: <issuerMetadata>
 ms.date: 03/30/2017
 ms.assetid: e7eae2c0-cc17-4281-af59-e4eb8d54f92a
 ms.openlocfilehash: 0dffad6a17720dd0506acbcd60efe4aafe24ed28
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090105"
 ---
 # <a name="issuermetadata"></a>\<issuerMetadata>
@@ -61,7 +61,7 @@ ms.locfileid: "59090105"
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení pro [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) elementu.|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení pro [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) elementu.|  
   
 ## <a name="see-also"></a>Viz také:
 

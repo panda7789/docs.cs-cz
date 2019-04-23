@@ -9,10 +9,10 @@ helpviewer_keywords:
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
 ms.openlocfilehash: febea73ddbc45276f97835eb4af7ee0d0d68dda5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095267"
 ---
 # <a name="systemnet-element-network-settings"></a>\<system.Net > – Element (nastavení sítě)
@@ -36,21 +36,21 @@ Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k s
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření požadavků na Internetu.|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k hostiteli, který Internet.|  
 |[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).|  
 |[mailSettings](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Konfiguruje možnosti pro odesílání pošty Simple Mail Transport Protocol (SMTP).|  
 |[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro třídy v <xref:System.Net> a související podřízené obory názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro třídy v <xref:System.Net> a související podřízené obory názvů.|  
 |[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly, které slouží k vyžádání informací z Internetu hostitelů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[konfigurace](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
+|[Konfigurace](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Obsahuje nastavení pro všechny obory názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  [ \<System.net >](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element obsahuje nastavení pro třídy v <xref:System.Net> a související podřízené obory názvů. Nastavení konfigurace modulů ověřování, Správa připojení, nastavení pošty, proxy server a Internetu žádost moduly pro příjem informací z Internetu hostitelů.  

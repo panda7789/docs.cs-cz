@@ -8,10 +8,10 @@ helpviewer_keywords:
 - inline styles [WPF]
 ms.assetid: 69a1a3f9-acb5-4e2c-9c43-2e376c055ac4
 ms.openlocfilehash: b566e157e2d4a9e9be21a678541bf5d5341a898c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091431"
 ---
 # <a name="inline-styles-and-templates"></a>Vložené styly a šablony
@@ -20,15 +20,15 @@ ms.locfileid: "59091431"
 ## <a name="limitations-of-inline-styles-and-templates"></a>Omezení vložené styly a šablony  
  V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], styl a šablony vlastnosti lze nastavit technicky v jednom ze dvou způsobů. Syntaxe atributu slouží k odkazování styl, který byl definován v rámci prostředku, třeba `<` *objekt*`Style="{StaticResource`*myResourceKey*`}" .../>`. Nebo syntax prvku vlastnosti můžete použít k definování vložených styl, například:  
   
- `<` *odkazy objektů* `>`  
+ `<` *objekt* `>`  
   
- `<` *odkazy objektů* `.Style>`  
+ `<` *objekt* `.Style>`  
   
  `<` `Style`  `.../>`  
   
- `</` *odkazy objektů* `.Style>`  
+ `</` *objekt* `.Style>`  
   
- `</` *odkazy objektů* `>`  
+ `</` *objekt* `>`  
   
  Použití atributu je mnohem častější. Styl, který je definována vložením a není definováno v prostředků nutně působí na nadřazeného elementu a nejde znovu použít, stejně snadno, protože nemá klíč prostředku. Obecně definován prostředek stylu je univerzální a užitečné a další podle obecného [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] programovací model Princip oddělení logiku programu v kódu z návrhu v kódu.  
   

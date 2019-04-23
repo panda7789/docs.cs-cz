@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <listeners> element for <source>
 ms.assetid: a2991f43-b4d3-4614-a8e7-da392de9697f
 ms.openlocfilehash: b15a30fb6d356f92312bf33bc1964c7922ba1383
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089650"
 ---
 # <a name="listeners-element-for-source"></a>\<naslouchací procesy > – Element pro \<zdroje >
@@ -91,4 +91,4 @@ Přidá nebo odebere naslouchacích procesů v <xref:System.Diagnostics.TraceSou
 
 - <xref:System.Diagnostics.TraceListener>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [Naslouchací procesy trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

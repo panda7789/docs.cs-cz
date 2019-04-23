@@ -5,10 +5,10 @@ helpviewer_keywords:
 - COM [WCF], integration overview
 ms.assetid: 02c5697f-6e2e-47d6-b715-f3a28aebfbd5
 ms.openlocfilehash: 182e5f41498d8f5e3fcbc4b84aa7e86b67ce3ccc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59087622"
 ---
 # <a name="integrating-with-com-applications-overview"></a>Přehled integrace s aplikacemi modelu COM
@@ -67,4 +67,4 @@ Windows Communication Foundation (WCF) poskytuje vývojářům spravovaného kó
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+- [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

@@ -5,10 +5,10 @@ helpviewer_keywords:
 - data binding [WPF], CompositeCollection class
 ms.assetid: 0d8fc84c-7920-427f-8ad7-d55ca656c170
 ms.openlocfilehash: 8361c2bfa9c125aeadf0a62ca86af1855e5c3dbc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091158"
 ---
 # <a name="how-to-implement-a-compositecollection"></a>Postupy: Implementace CompositeCollection
@@ -24,4 +24,4 @@ ms.locfileid: "59091158"
 - <xref:System.Windows.Data.XmlDataProvider>
 - <xref:System.Windows.DataTemplate>
 - [Přehled datových vazeb](data-binding-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

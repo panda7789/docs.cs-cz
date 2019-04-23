@@ -9,10 +9,10 @@ helpviewer_keywords:
 - DataTemplate [WPF]
 ms.assetid: bfcd564e-5e9e-451e-8641-a9b5c3cfac90
 ms.openlocfilehash: de5a4937feabdb4486d9dcf9d5e5bfddd2356690
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089168"
 ---
 # <a name="how-to-find-datatemplate-generated-elements"></a>Postupy: Hledání elementů generovaných šablonou DataTemplate
@@ -41,7 +41,7 @@ Tento příklad ukazuje, jak najít prvky, které jsou generovány <xref:System.
 
 - [Postupy: Vyhledávání elementů generovaných objektem ControlTemplate](../controls/how-to-find-controltemplate-generated-elements.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Obory názvů WPF XAML](../advanced/wpf-xaml-namescopes.md)
 - [Stromy v subsystému WPF](../advanced/trees-in-wpf.md)

@@ -7,10 +7,10 @@ helpviewer_keywords:
 - data grids [Windows Forms], data entry
 ms.assetid: 4a6d4676-d4e7-4b0e-9c22-50ce65ffe0d6
 ms.openlocfilehash: 3ebfcaaf22ca632e5784dc1f01a351583e78e865
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090703"
 ---
 # <a name="data-entry-in-the-windows-forms-datagridview-control"></a>Zadávání dat v ovládacím prvku Windows Forms DataGridView
@@ -29,7 +29,7 @@ ms.locfileid: "59090703"
  [Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView](walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)  
  Popisuje způsob ověření vstupu uživatele, aby se zabránilo chyby formátování zadávání dat.  
   
- [Návod: Zpracování chyb, k nimž došlo při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
+ [Návod: Zpracování chyb vzniklých při zadávání dat v ovládacím prvku Windows Forms DataGridView](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
  Popisuje způsob zpracování chyb zadávání dat, které pocházejí ze zdroje dat, když se uživatel pokusí o potvrzení novou hodnotu.  
   
 ## <a name="reference"></a>Odkaz  
@@ -54,5 +54,5 @@ ms.locfileid: "59090703"
   
 ## <a name="see-also"></a>Viz také:
 
-- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

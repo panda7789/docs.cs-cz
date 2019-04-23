@@ -5,10 +5,10 @@ ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1484d50df51ea85a94da0aad1ebaab54b80a6ecb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59088285"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native

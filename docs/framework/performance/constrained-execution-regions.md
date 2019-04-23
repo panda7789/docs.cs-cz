@@ -8,10 +8,10 @@ ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d4c1d07e2469a36c4b8e1ef7b8d90a80a3530ae3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59097171"
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
@@ -102,7 +102,7 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
   
 -   Volání metody prostřednictvím reflexe.  
   
--   <xref:System.Threading.Monitor.Enter%2A> or <xref:System.IO.FileStream.Lock%2A>.  
+-   <xref:System.Threading.Monitor.Enter%2A> nebo <xref:System.IO.FileStream.Lock%2A>.  
   
 -   Kontroly zabezpečení. Není provádět požadavky, pouze požadavky na propojení.  
   

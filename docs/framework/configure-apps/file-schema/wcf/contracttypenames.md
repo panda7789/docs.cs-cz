@@ -3,10 +3,10 @@ title: <contractTypeNames>
 ms.date: 03/30/2017
 ms.assetid: 5ec5efc6-87f8-4160-9be0-dcd2e01df3df
 ms.openlocfilehash: b1cec9272a1de029ab72ea4d5f36c74630e5b93a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089494"
 ---
 # <a name="contracttypenames"></a>\<contractTypeNames>
@@ -58,7 +58,7 @@ Konfigurační oddíl, který určuje seznam názvy typu smlouvy, které jsou n�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<kritéria hledání >](../../../../../docs/framework/configure-apps/file-schema/wcf/findcriteria.md)|Konfigurace element, který dodává sadu kritérií pro službu zjišťování používá klientská aplikace pro hledání. Kritéria mohou být seskupeny do kritéria vyhledávání (určení služby, kterou hledáte) a nalézt ukončení kritéria (jak dlouho vyhledávání by měl trvat).|  
+|[\<findCriteria>](../../../../../docs/framework/configure-apps/file-schema/wcf/findcriteria.md)|Konfigurace element, který dodává sadu kritérií pro službu zjišťování používá klientská aplikace pro hledání. Kritéria mohou být seskupeny do kritéria vyhledávání (určení služby, kterou hledáte) a nalézt ukončení kritéria (jak dlouho vyhledávání by měl trvat).|  
   
 ## <a name="see-also"></a>Viz také:
 

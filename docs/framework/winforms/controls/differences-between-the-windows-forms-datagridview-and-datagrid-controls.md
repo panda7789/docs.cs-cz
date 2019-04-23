@@ -7,10 +7,10 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], DataGrid control compared
 ms.assetid: d412c786-140e-4210-8a56-a68467530a55
 ms.openlocfilehash: 6802ef375d8d15826725e68f5065317192523178
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095669"
 ---
 # <a name="differences-between-the-windows-forms-datagridview-and-datagrid-controls"></a>Rozdíly mezi ovládacími prvky Windows Forms DataGridView a DataGrid
@@ -37,14 +37,14 @@ ms.locfileid: "59095669"
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGrid>
 - <xref:System.Windows.Forms.BindingSource>
-- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
-- [BindingSource – komponenta](bindingsource-component.md)
+- [Komponenta BindingSource](bindingsource-component.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)
 - [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
 - [Režimy zobrazení dat v ovládacím prvku Windows Forms DataGridView](data-display-modes-in-the-windows-forms-datagridview-control.md)
 - [Formátování dat v ovládacím prvku Windows Forms DataGridView](data-formatting-in-the-windows-forms-datagridview-control.md)
 - [Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md)
-- [Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
+- [Režimy řazení sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
 - [Režimy výběru v ovládacím prvku Windows Forms DataGridView](selection-modes-in-the-windows-forms-datagridview-control.md)
 - [Přizpůsobení ovládacího prvku Windows Forms DataGridView](customizing-the-windows-forms-datagridview-control.md)

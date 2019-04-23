@@ -6,10 +6,10 @@ helpviewer_keywords:
 - data binding [WPF], performance
 ms.assetid: 1506a35d-c009-43db-9f1e-4e230ad5be73
 ms.openlocfilehash: ac7ca815bedf180c8a680840f585d08f7018d6ab
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59087830"
 ---
 # <a name="optimizing-performance-data-binding"></a>Optimalizace výkonu: Datová vazba
@@ -81,6 +81,6 @@ ms.locfileid: "59087830"
 - [Chování objektu](optimizing-performance-object-behavior.md)
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
-- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)
-- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání dat aplikací v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

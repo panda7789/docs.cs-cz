@@ -10,10 +10,10 @@ helpviewer_keywords:
 - master-details lists [Windows Forms], creating
 ms.assetid: 99f6e876-3f7f-4139-9063-e36587c95b02
 ms.openlocfilehash: ccd9354d623cf1b452bc3890b7fd9a5248cb69c8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59088792"
 ---
 # <a name="how-to-create-a-masterdetail-form-using-two-windows-forms-datagridview-controls"></a>Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView
@@ -41,6 +41,6 @@ Následující příklad kódu vytvoří hlavního/podrobného formuláře pomoc
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
-- [Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků Windows Forms DataGridView](creating-a-master-detail-form-using-two-datagridviews.md)
+- [Návod: Vytvoření hlavního/podrobného formuláře pomocí dvou prvkům Windows Forms DataGridView](creating-a-master-detail-form-using-two-datagridviews.md)
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
 - [Ochrana informací o připojení](../../data/adonet/protecting-connection-information.md)

@@ -18,10 +18,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1e2d7a344cabb1ab816e4fe696ebb47276397ec3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095032"
 ---
 # <a name="icordebugenumskip-method"></a>ICorDebugEnum::Skip – metoda
@@ -50,4 +50,4 @@ HRESULT Skip (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)
+- [Icordebugenum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)

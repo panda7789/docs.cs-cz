@@ -10,10 +10,10 @@ helpviewer_keywords:
 - data grids [Windows Forms], sorting data
 ms.assetid: 57dfed60-a608-40d5-86f9-d65686ffb325
 ms.openlocfilehash: 4894de00a323f70ca244ea877101a5af1cbb37e0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59096365"
 ---
 # <a name="how-to-set-the-sort-modes-for-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView
@@ -42,5 +42,5 @@ V <xref:System.Windows.Forms.DataGridView> ovládací prvek textové pole sloupc
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A?displayProperty=nameWithType>
 - [Řazení dat v ovládacím prvku Windows Forms DataGridView](sorting-data-in-the-windows-forms-datagridview-control.md)
-- [Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)
+- [Režimy řazení sloupce v ovládacím prvku Windows Forms DataGridView](column-sort-modes-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)

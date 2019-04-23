@@ -1,12 +1,12 @@
 ---
-title: <message> of <basicHttpBinding>
+title: <message> z <basicHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
 ms.openlocfilehash: 746acd91074863029211a1ca2584743c464c9ce1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59083293"
 ---
 # <a name="message-of-basichttpbinding"></a>\<Zpráva > z \<basicHttpBinding >
@@ -38,19 +38,19 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |UserName|-Vyžaduje ověření klienta k serveru pomocí přihlašovacích údajů uživatelského jména. Tyto přihlašovací údaje musí být zadaná pomocí [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md).<br />-WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. Proto WCF vynutí, že přenos zabezpečit při použití pověření uživatelských jmen. Pro `basicHttpBinding`, to vyžaduje nastavení kanálu SSL.|  
 |Certifikát|Vyžaduje se k serveru, používá certifikát ověření klienta. Pověření klienta nejsou v tomto případě musí být zadaná pomocí [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) a [ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md). Kromě toho-když používají režim zabezpečených zpráv, klient musí být zřízená s certifikátem služby. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí <xref:System.ServiceModel.Description.ClientCredentials> třídy nebo `ClientCredentials` prvek chování a zadáním služby certifikátu pomocí [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje možnosti zabezpečení pro [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje možnosti zabezpečení pro [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).|  
   
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje, jak implementovat aplikaci, která používá zabezpečení tříd basicHttpBinding a zprávy. V následujícím příkladu konfigurace pro službu, definice koncového bodu, určuje, basicHttpBinding a odkazuje na konfiguraci vazby s názvem `Binding1`. Nastavení certifikátu, který službu používá ke svému ověření ke klientovi `behaviors` souboru konfigurace v rámci `serviceCredentials` elementu. Režim ověřování, který se vztahuje na certifikát, který klient použije ke svému ověření ke službě je také nastavena `behaviors` části `clientCertificate` elementu.  

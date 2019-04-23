@@ -8,10 +8,10 @@ ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 28ac90eadcc7a13fe946aabf17973ebc602c9d4a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59084593"
 ---
 # <a name="clrverexe-clr-version-tool"></a>Clrver.exe (nástroj verze CLR)
@@ -32,7 +32,7 @@ clrver [option]
 |Možnost|Popis|  
 |------------|-----------------|  
 |`-all`|Zobrazí všechny procesy v počítači využívající modul CLR.|  
-|*Identifikátor PID*|Zobrazí verze modulu CLR využívané procesem se zadaným identifikátorem ID procesu (PID).|  
+|*pid*|Zobrazí verze modulu CLR využívané procesem se zadaným identifikátorem ID procesu (PID).|  
 |`-?`|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  

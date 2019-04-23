@@ -1,5 +1,5 @@
 ---
-title: <ipv6> – Element (nastavení sítě)
+title: <ipv6> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/ipv6
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - ipv6 element
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
 ms.openlocfilehash: b8969cecf8ffb2ef23522f193bb322b1170e6111
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089208"
 ---
 # <a name="ipv6-element-network-settings"></a>\<IPv6 > – Element (nastavení sítě)
@@ -45,9 +45,9 @@ Umožňuje Internet Protocol verze 6 (IPv6) odpovědí z zastaralé členy <xref
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy <xref:System.Net.Dns> třídy: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>, a <xref:System.Net.Dns.Resolve%2A>. Pro ostatní členy <xref:System.Net?displayProperty=nameWithType> obor názvů, IPv6 adresy mohou být vráceny Pokud v operačním systému je povolen protokol IPv6.  

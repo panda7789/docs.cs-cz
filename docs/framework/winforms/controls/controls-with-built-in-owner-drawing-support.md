@@ -9,10 +9,10 @@ helpviewer_keywords:
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
 ms.openlocfilehash: 1807170b2f5df2333ec3b271a11f9b929c1e7993
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59087180"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Ovládací prvky s vestavěnou podporou vykreslování vlastníkem
@@ -185,7 +185,7 @@ Vykreslení ve Windows Forms, který je také označován jako vlastní kreslen�
   
 -   <xref:System.Windows.Forms.ToolStripRenderer>  
   
--   [Postupy: Vytvoření a nastavení vlastního rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
+-   [Postupy: Vytvoření a nastavení vlastního Rendereru pro ovládací prvek ToolStrip ve Windows Forms](create-and-set-a-custom-renderer-for-the-toolstrip-control-in-wf.md)  
   
 -   [Postupy: Vlastní vykreslení ovládacího prvku ToolStrip](how-to-custom-draw-a-toolstrip-control.md)  
   

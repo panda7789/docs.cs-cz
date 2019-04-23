@@ -11,10 +11,10 @@ ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 906d9d4dfd1c1082a4b49b7143f590967dcc7fd0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59092263"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
@@ -36,10 +36,10 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
 |------------|-----------------|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/list**|Zobrazí všechna existující úložiště pro aktuálního uživatele. Jedná se o úložiště pro všechny aplikace nebo sestavení spuštěná tímto uživatelem.|  
-|**/ Machine**|Vybere úložiště počítače. Tuto možnost použijte spolu s **/list** nebo **/remove** možnost určit, že akce se má použít na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
+|**/machine**|Vybere úložiště počítače. Tuto možnost použijte spolu s **/list** nebo **/remove** možnost určit, že akce se má použít na úložiště počítače.<br /><br /> Novinky v rozhraní .NET Framework 2.0|  
 |**/quiet**|Nastaví tichý režim; potlačí informační výstup tak, aby se zobrazovaly pouze chybové zprávy.|  
 |**/remove**|Permanentně odstraní všechna existující úložiště pro aktuálního uživatele.|  
-|**/roaming**|Vybere roamingové úložiště. Tuto možnost použijte spolu s **/list** nebo **/remove** možností, které určují, akce se má použít na roamingové úložiště.|  
+|**/ roaming**|Vybere roamingové úložiště. Tuto možnost použijte spolu s **/list** nebo **/remove** možností, které určují, akce se má použít na roamingové úložiště.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  

@@ -5,10 +5,10 @@ helpviewer_keywords:
 - basicHttpBinding Element
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
 ms.openlocfilehash: d62746ad55b5e6a7cd9300a5f534e4ecd2d5d81e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090430"
 ---
 # <a name="basichttpbinding"></a>\<basicHttpBinding>
@@ -85,14 +85,14 @@ Představuje vazbu, která služby Windows Communication Foundation (WCF) může
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>.|  
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  BasicHttpBinding používá protokol HTTP jako přenosu pro odesílání zpráv SOAP 1.1. Služby můžete použít tuto vazbu k zpřístupňují koncové body, které odpovídají WS-I BP 1.1, jako jsou ty, které využívají ASMX klientů. Podobně může klient používat BasicHttpBinding komunikace se službami vystavení koncové body, které odpovídají WS-I BP 1.1, jako je například ASMX webové služby nebo služeb nakonfigurovanou BasicHttpBinding.  

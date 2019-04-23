@@ -3,10 +3,10 @@ title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
 ms.openlocfilehash: b93b78a5fabbcf60eefb386144ec90e877cfed0e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089858"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
@@ -104,6 +104,6 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 ## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Zabezpečení v .NET](../../../standard/security/index.md)
+- [Zabezpečení v rozhraní .NET](../../../standard/security/index.md)
 - [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

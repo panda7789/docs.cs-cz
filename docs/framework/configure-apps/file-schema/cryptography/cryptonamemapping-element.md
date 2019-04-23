@@ -1,5 +1,5 @@
 ---
-title: <cryptoNameMapping> Prvek
+title: Element <cryptoNameMapping>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptoNameMapping
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
 ms.openlocfilehash: bcf7894dba66736fcc1a30af9b5557549ef25e7d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59092461"
 ---
 # <a name="cryptonamemapping-element"></a>\<cryptoNameMapping> Element
@@ -78,5 +78,5 @@ Obsahuje mapování tříd pro popisné názvy.
 
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
-- [Šifrovací služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

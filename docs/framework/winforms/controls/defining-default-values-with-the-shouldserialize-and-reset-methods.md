@@ -9,10 +9,10 @@ helpviewer_keywords:
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
 ms.openlocfilehash: f1f5a668c5d4f52ef7dd9f60a31c04f2173165f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090612"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset

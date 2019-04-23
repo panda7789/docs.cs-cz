@@ -9,10 +9,10 @@ helpviewer_keywords:
 - add element for <sharedListeners>
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
 ms.openlocfilehash: e7934ed5e71005cfd28271298ff6ce1eb8829a0d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59095630"
 ---
 # <a name="add-element-for-sharedlisteners"></a>\<Přidat > – Element pro \<sharedListeners >
@@ -80,7 +80,7 @@ Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je 
  Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat `<add>` prvky pro přidání <xref:System.Diagnostics.TextWriterTraceListener>`textListener` k `sharedListeners` kolekce.   `textListener` název, který přidává `Listeners` kolekce pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchacího procesu zapisuje do souboru myListener.log výstupu trasování.  
+ Následující příklad ukazuje, jak používat `<add>` prvky pro přidání <xref:System.Diagnostics.TextWriterTraceListener> `textListener` k `sharedListeners` kolekce.   `textListener` název, který přidává `Listeners` kolekce pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchacího procesu zapisuje do souboru myListener.log výstupu trasování.  
   
 ```xml  
 <configuration>  
@@ -113,4 +113,4 @@ Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TraceListener>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [Naslouchací procesy trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

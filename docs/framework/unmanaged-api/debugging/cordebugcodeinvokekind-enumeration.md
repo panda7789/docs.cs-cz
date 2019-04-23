@@ -13,10 +13,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b3b4906f988d09f7b01aee40e8f63b589da5f33d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086413"
 ---
 # <a name="cordebugcodeinvokekind-enumeration"></a>Výčet CorDebugCodeInvokeKind
@@ -58,5 +58,5 @@ typedef enum CorDebugCodeInvokeKind
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

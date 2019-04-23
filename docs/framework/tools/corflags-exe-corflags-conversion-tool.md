@@ -9,10 +9,10 @@ ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7ee801a5af214e2306e6f1667b5e4ee067683fdb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59093108"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (CorFlags – převodní nástroj)
@@ -42,7 +42,7 @@ CorFlags.exe assembly [options]
 |**/32BITPREF-**|Odstraní příznak 32BITPREFERRED.<br /><br /> Novinkou [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ Force**|Vynutí aktualizaci i v případě sestavení se silným názvem. **Důležité:**  Při aktualizaci sestavení se silným názvem je nutné toto sestavení před spuštěním jeho kódu znovu podepsat.|  
-|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/ILONLY+**|Nastaví příznak ILONLY.|  
 |**/ILONLY-**|Odstraní příznak ILONLY.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  

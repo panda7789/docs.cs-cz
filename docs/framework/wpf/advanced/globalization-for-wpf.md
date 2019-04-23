@@ -8,10 +8,10 @@ helpviewer_keywords:
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
 ms.openlocfilehash: 9a08fdeaa3517b1483af3f9958ad2db1c64648b8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59084164"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
@@ -152,7 +152,7 @@ Následující příklad ukazuje odkaz šestnáctkové kódy znaků. Všimněte 
  Z prostředků hlediska [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru určená k popisu závislá na jazyku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] je element prostředku a proto jeho poslední distribuce musí být ve formátu lokalizovatelné pro podporu mezinárodní jazyky. Protože [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] nemůže zpracovávat události, mnoho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace obsahují bloky kódu k tomu. Další informace najdete v tématu [přehled XAML (WPF)](xaml-overview-wpf.md). Kód je vynechají a zkompilovány do různých binární soubory při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je soubor tokenizovaného do formuláře BAML z XAML. Formulář BAML souborů XAML, obrázky a další typy objektů spravovaných prostředků jsou vloženy do satelitní sestavení prostředků, které může být lokalizována do jiných jazyků, nebo hlavní sestavení při lokalizaci se nevyžaduje.
 
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)][!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] prostředky, včetně tabulek řetězců, obrázků a tak dále.
+>  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace podporují všechny [!INCLUDE[TLA2#tla_netframewk](../../../../includes/tla2sharptla-netframewk-md.md)] [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] prostředky, včetně tabulek řetězců, obrázků a tak dále.
 
 <a name="building_localizable_apps"></a>
 ### <a name="building-localizable-applications"></a>Vytváření lokalizovatelných aplikacích

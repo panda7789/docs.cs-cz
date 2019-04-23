@@ -13,10 +13,10 @@ helpviewer_keywords:
 - change notifications
 ms.assetid: ab8b4096-37ff-4e30-aabc-de79a2f2e972
 ms.openlocfilehash: 68073f245e1a2eb18a277d7011ca0183dabb3724
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59085061"
 ---
 # <a name="how-to-raise-change-notifications-using-the-bindingsource-resetitem-method"></a>Postupy: Vytváření oznámení o změnách pomocí metody BindingSource ResetItem
@@ -41,5 +41,5 @@ Některé zdroje dat pro ovládací prvky nevyvolávejte oznámení o změnách 
 - <xref:System.Windows.Forms.BindingNavigator>
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
-- [BindingSource – komponenta](bindingsource-component.md)
+- [Komponenta BindingSource](bindingsource-component.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu](how-to-bind-a-windows-forms-control-to-a-type.md)

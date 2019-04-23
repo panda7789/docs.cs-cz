@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
 ms.openlocfilehash: 786094bc426066b45fd1a214950ec1e030f0b731
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59088831"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory

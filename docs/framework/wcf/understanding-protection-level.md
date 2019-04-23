@@ -9,10 +9,10 @@ helpviewer_keywords:
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
 ms.openlocfilehash: 90fb844931c3af54367d0e7c14a766636cdcc71a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59096046"
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany

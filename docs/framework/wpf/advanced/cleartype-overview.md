@@ -6,10 +6,10 @@ helpviewer_keywords:
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
 ms.openlocfilehash: 0127ee4112c4b42a7a55b9233217ea1e02604042
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59085191"
 ---
 # <a name="cleartype-overview"></a>ClearType – přehled

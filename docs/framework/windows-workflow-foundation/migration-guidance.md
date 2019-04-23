@@ -3,10 +3,10 @@ title: Pokyny pro migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
 ms.openlocfilehash: a36108e8c711b9e5d5253b19a9122373fc513855
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59083163"
 ---
 # <a name="migration-guidance"></a>Pokyny pro migraci
@@ -32,7 +32,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
  [WF pokyny: pravidla](https://go.microsoft.com/fwlink/?LinkId=153854)  
  Popisuje, jak přenést související pravidla investice vpřed do [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] řešení.  
   
- [WF pokyny: Stavový stroj](https://go.microsoft.com/fwlink/?LinkId=153855)  
+ [WF pokyny: Stavového stroje](https://go.microsoft.com/fwlink/?LinkId=153855)  
  Tento článek popisuje tok řízení WF4 modelování chybí aktivit stavového stroje.  
   
  Všimněte si, že tyto pokyny platí jenom pro projekty pracovního postupu, které jsou cíleny na rozhraní .NET Framework 4. Pracovní postupy stavového stroje byly přidány ve verzi Update 1 platformy .NET 4.0.1 a byly součástí rozhraní .NET Framework 4.5. Další informace o pracovní postupy stavu počítače v prostředí .NET 4.0.1 - 4.0.3 a rozhraní .NET Framework 4.5, naleznete v tématu [aktualizace 4.0.1 pro funkce rozhraní Microsoft .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hh290669(v=vs.100)) a [pracovní postupy stavu počítače](state-machine-workflows.md).  

@@ -3,10 +3,10 @@ title: <message> Element <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
 ms.openlocfilehash: f05bd90bd2e4c7e1fd606518d9e5cb8d4e5ad974
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59092991"
 ---
 # <a name="message-element-of-ws2007federationhttpbinding"></a>\<Zpráva > prvek \<ws2007FederationHttpBinding >
@@ -93,7 +93,7 @@ Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationH
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Basic128|Zabalení klíče použijte Aes128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
 |Basic192|Použijte šifrování Aes192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
@@ -125,7 +125,7 @@ Definuje nastavení pro zprávy úroveň zabezpečení pro [ \<ws2007FederationH
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)|Definuje nastavení zabezpečení pro vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 

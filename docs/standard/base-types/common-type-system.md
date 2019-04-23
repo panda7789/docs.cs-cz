@@ -20,10 +20,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: d973ec68486ca46a38819ce9972c789b156d878b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59096261"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
@@ -65,7 +65,7 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 -   [Rozhraní](#Interfaces)  
   
--   [Delegáty](#Delegates)  
+-   [Delegáti](#Delegates)  
   
 <a name="Classes"></a>   
 ### <a name="classes"></a>Třídy  
@@ -318,6 +318,6 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Prohlížeč rozhraní API pro .NET](/dotnet/api)
-- [CLR (Common Language Runtime)](../../../docs/standard/clr.md)
+- [Prohlížeč rozhraní API .NET](/dotnet/api)
+- [Modul Common Language Runtime](../../../docs/standard/clr.md)
 - [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)

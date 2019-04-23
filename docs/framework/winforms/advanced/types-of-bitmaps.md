@@ -21,10 +21,10 @@ helpviewer_keywords:
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
 ms.openlocfilehash: f41585ba8816e0b1894a9f01163191848ae391e3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59089157"
 ---
 # <a name="types-of-bitmaps"></a>Typy rastrových obrázků

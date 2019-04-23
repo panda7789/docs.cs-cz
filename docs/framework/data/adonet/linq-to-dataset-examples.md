@@ -3,10 +3,10 @@ title: Příklady LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: dfd91658-8d8a-45a4-a356-e327e809f21d
 ms.openlocfilehash: 07ad4a993187c91babb74fae9d05f17b66c2098b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091691"
 ---
 # <a name="linq-to-dataset-examples"></a>Příklady LINQ to DataSet
@@ -20,7 +20,7 @@ Tato část obsahuje LINQ na DataSet programovací příklady použití standard
   
 -   [Omezení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-restriction-linq-to-dataset.md)  
   
--   [Dělení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
+-   [Segmentace](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
   
 -   [Řazení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-ordering-linq-to-dataset.md)  
   
@@ -35,7 +35,7 @@ Tato část obsahuje LINQ na DataSet programovací příklady použití standard
   
 -   [Projekce](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-projection.md)  
   
--   [Dělení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
+-   [Segmentace](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
   
 -   [Řazení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-ordering-linq-to-dataset.md)  
   
@@ -47,7 +47,7 @@ Tato část obsahuje LINQ na DataSet programovací příklady použití standard
   
 -   [Agregační operátory](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-aggregate-operators.md)  
   
--   [Join](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
+-   [Spojení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
   
  [Příklady operátorů specifických pro datovou sadu](../../../../docs/framework/data/adonet/dataset-specific-operator-examples-linq-to-dataset.md)  
  Obsahuje příklady, které ukazují, jak používat <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> metoda a <xref:System.Data.DataRowComparer> třídy.  

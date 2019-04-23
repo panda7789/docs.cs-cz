@@ -6,10 +6,10 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], customization
 ms.assetid: 01ea5d4c-a736-4596-b0e9-a67a1b86e15f
 ms.openlocfilehash: ab8d1f07c608aca4f14f5e73860f8c3e263a4610
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091379"
 ---
 # <a name="customizing-the-windows-forms-datagridview-control"></a>Přizpůsobení ovládacího prvku Windows Forms DataGridView
@@ -27,7 +27,7 @@ ms.locfileid: "59091379"
  [Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)  
  Popisuje, jak vytvořit vlastní typy odvozené z `DataGridViewCell` a `DataGridViewColumn` informují buňky při umístění ukazatele myši na ně.  
   
- [Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView](disable-buttons-in-a-button-column-in-the-datagrid.md)  
+ [Postupy: Zakázat tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView](disable-buttons-in-a-button-column-in-the-datagrid.md)  
  Popisuje, jak vytvořit vlastní typy odvozené z <xref:System.Windows.Forms.DataGridViewButtonCell> a <xref:System.Windows.Forms.DataGridViewButtonColumn> mohla zobrazit zakázané tlačítek ve sloupci tlačítek.  
   
  [Postupy: Hostitelské ovládací prvky v buňkách Windows Forms DataGridView](how-to-host-controls-in-windows-forms-datagridview-cells.md)  
@@ -55,5 +55,5 @@ ms.locfileid: "59091379"
   
 ## <a name="see-also"></a>Viz také:
 
-- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Typy sloupců v ovládacím prvku Windows Forms DataGridView](column-types-in-the-windows-forms-datagridview-control.md)

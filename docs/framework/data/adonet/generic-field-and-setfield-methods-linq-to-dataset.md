@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
 ms.openlocfilehash: 7c7f1fef5d1fa575cd6d3bfdb7e6cbbea79ade28
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086010"
 ---
 # <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a metody SetField (LINQ to DataSet)

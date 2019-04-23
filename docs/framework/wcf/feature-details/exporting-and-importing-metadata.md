@@ -5,10 +5,10 @@ helpviewer_keywords:
 - metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
 ms.openlocfilehash: 39b964584cde42e6569da35f8653042f6d7432cb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091938"
 ---
 # <a name="exporting-and-importing-metadata"></a>Export a import metadat
@@ -48,16 +48,16 @@ Ve Windows Communication Foundation (WCF), Export metadat je proces popisující
  <xref:System.ServiceModel.Description.WsdlExporter> Typ znovu vyvolá všechny výjimky zachycené během procesu exportu. Tyto výjimky nejsou zaznamenat jako chyby v `Errors` vlastnost. Jakmile <xref:System.ServiceModel.Description.WsdlExporter> vyvolá výjimku, je v chybovém stavu a nejde použít znovu. <xref:System.ServiceModel.Description.WsdlExporter> Přidá upozornění na jeho `Errors` při operaci nejde exportovat, protože používá akce zástupný znak a když se vyskytují duplicitní vazbu názvy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Import metadat do koncových bodů služeb](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
+ [Postupy: Import metadat do koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
  Popisuje, jak importovat metadata stažený do popisu objektů.  
   
- [Postupy: Export metadat z koncových bodů služeb](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
+ [Postupy: Export metadat z koncových bodů služby](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
  Popisuje, jak exportovat objekty popis do metadat.  
   
- [ServiceDescription and WSDL Reference](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
+ [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
  Popisuje mapování mezi objekty, popis a WSDL.  
   
- [Postupy: Použití nástroje Svcutil.exe pro export metadat z kompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
+ [Postupy: Použití Svcutil.exe pro Export metadat z kompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
  Popisuje použití nástroje Svcutil.exe pro export metadat pro služby, kontrakty a datové typy v kompilovaných sestavení.  
   
  [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  

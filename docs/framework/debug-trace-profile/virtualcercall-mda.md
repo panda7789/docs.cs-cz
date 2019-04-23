@@ -12,10 +12,10 @@ ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e2c8712837dab17f70be32617711c1bad9349508
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086075"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall – pomocník spravovaného ladění (MDA)

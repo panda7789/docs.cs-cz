@@ -10,10 +10,10 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], creating toggle buttons
 ms.assetid: d9c197df-4c65-43f2-beee-b68b52b2befc
 ms.openlocfilehash: e688e9a220e6c82caa2d107589b5ca9a1e59e72b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091249"
 ---
 # <a name="how-to-create-toggle-buttons-in-toolstrip-controls"></a>Postupy: Vytváření přepínacích tlačítek v ovládacích prvcích ToolStrip

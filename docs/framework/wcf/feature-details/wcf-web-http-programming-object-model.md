@@ -3,10 +3,10 @@ title: Programovací objektový model WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
 ms.openlocfilehash: f1772220ed5f425ec603fd8927f4617446d106eb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59096007"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Programovací objektový model WCF Web HTTP
@@ -106,4 +106,4 @@ HTTP programovacího modelu WCF WEB umožňuje vývojářům vystavit služby Wi
 - <xref:System.ServiceModel.Web.WebInvokeAttribute>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
 - <xref:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector>
-- [Přehled modelu webového programování HTTP služby WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

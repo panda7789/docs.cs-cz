@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
 ms.openlocfilehash: d8a1a12a4d8ab5e6f4b0fe6ad6c2a3759aa65aa9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59085126"
 ---
 # <a name="annotating-typed-datasets"></a>Zadávání poznámek k typovým datovým sadám
@@ -68,7 +68,7 @@ Anotace umožňují změnit názvy prvků v váš zadaný <xref:System.Data.Data
 |**Objekt DataTable** metody|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|TypedName služby Active Directory|  
 |**DataRowCollection**|TableName|typedPlural|  
 |**DataRow**|TableNameRow|TypedName služby Active Directory|  
-|**Objekt DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
+|**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|TypedName služby Active Directory|  
 |**Vlastnost**|Vlastnost PropertyName|TypedName služby Active Directory|  
 |**Podřízené** přístupového objektu|GetChildTableNameRows|typedChildren|  
 |**Nadřazené** přístupového objektu|TableNameRow|typedParent|  

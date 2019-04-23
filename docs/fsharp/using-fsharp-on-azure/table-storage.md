@@ -4,10 +4,10 @@ description: Store strukturovaných dat v cloudu pomocí služby Azure Table sto
 author: sylvanc
 ms.date: 03/26/2018
 ms.openlocfilehash: 54c777acd454e4f675175b814675c185e41ad9a4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59086699"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocí F\#
@@ -191,8 +191,8 @@ Můžete odstranit tabulku z účtu úložiště. Tabulku, která byla odstraně
 
 Teď, když jste se naučili základy používání služby Table storage, na následujících odkazech najdete informace o složitějších úlohách úložiště a rozhraní Azure Cosmos DB Table API.
 
-- [Úvod do služby Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
-- [Klientská knihovna pro úložiště pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+- [Úvod do rozhraní Table API služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
+- [Klientská knihovna Storage pro .NET – referenční informace](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
 - [Typ zprostředkovatele služby Azure Storage](https://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Blog týmu Azure Storage](https://blogs.msdn.com/b/windowsazurestorage/)
 - [Konfigurace připojovacích řetězců](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string)

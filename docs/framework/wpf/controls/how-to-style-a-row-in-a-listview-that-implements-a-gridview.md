@@ -7,14 +7,14 @@ helpviewer_keywords:
 - ListView controls [WPF], styling rows with GridViews
 ms.assetid: 2e406ba2-70a0-4e62-841f-0934859de76e
 ms.openlocfilehash: 9af8d10c7db2d3bbe8b9443402cbb1cfeaa7edb3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091457"
 ---
 # <a name="how-to-style-a-row-in-a-listview-that-implements-a-gridview"></a>Postupy: Nastavení stylu řádku v zobrazení ListView s implementací GridView
-Tento příklad ukazuje, jak nastavení stylu řádku v <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView><xref:System.Windows.Controls.ListView.View%2A> režimu.  
+Tento příklad ukazuje, jak nastavení stylu řádku v <xref:System.Windows.Controls.ListView> ovládací prvek, který implementuje <xref:System.Windows.Controls.GridView> <xref:System.Windows.Controls.ListView.View%2A> režimu.  
   
 ## <a name="example"></a>Příklad  
  Můžete stylu řádku v <xref:System.Windows.Controls.ListView> ovládacího prvku tak, že nastavíte <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> na <xref:System.Windows.Controls.ListView> ovládacího prvku. Nastavit styl pro jeho položky, které jsou reprezentovány ve formě <xref:System.Windows.Controls.ListViewItem> objekty. <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> Odkazy <xref:System.Windows.Controls.ControlTemplate> objekty, které se používají k zobrazení obsahu řádku.  
@@ -37,6 +37,6 @@ Tento příklad ukazuje, jak nastavení stylu řádku v <xref:System.Windows.Con
 
 - <xref:System.Windows.Controls.ListView>
 - <xref:System.Windows.Controls.GridView>
-- [– postupy](listview-how-to-topics.md)
+- [Témata s postupy](listview-how-to-topics.md)
 - [ListView – přehled](listview-overview.md)
 - [Styly a šablony](styling-and-templating.md)

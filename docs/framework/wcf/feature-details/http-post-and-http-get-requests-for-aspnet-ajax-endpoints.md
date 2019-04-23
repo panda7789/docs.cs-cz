@@ -3,10 +3,10 @@ title: 'Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů A
 ms.date: 03/30/2017
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
 ms.openlocfilehash: 33763a77d1ab1c82af9b9e1fb9c42d72392f8798
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59091275"
 ---
 # <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: Volba mezi žádostmi HTTP POST a HTTP GET u koncových bodů ASP.NET AJAX
@@ -93,4 +93,4 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
 ## <a name="see-also"></a>Viz také:
 
 - [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)
-- [Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)
+- [Postupy: Migrace s povoleným AJAX webových služeb ASP.NET na WCF](../../../../docs/framework/wcf/feature-details/how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)

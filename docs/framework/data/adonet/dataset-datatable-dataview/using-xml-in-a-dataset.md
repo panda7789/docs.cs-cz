@@ -3,10 +3,10 @@ title: Použití XML v datové sadě
 ms.date: 03/30/2017
 ms.assetid: 35138159-e199-49ec-baf7-1ec6777e171e
 ms.openlocfilehash: 9e586ff0c6f28dd5919bc8b1bc640389a5cad610
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59087416"
 ---
 # <a name="using-xml-in-a-dataset"></a>Použití XML v datové sadě

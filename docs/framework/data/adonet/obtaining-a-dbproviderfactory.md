@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
 ms.openlocfilehash: c84229dc1c32217099eb7ed8b90accc04cc66148
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59097405"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
@@ -41,7 +41,7 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
   
 |Pořadí sloupce|Název sloupce|Příklad výstupu|Popis|  
 |--------------------|-----------------|--------------------|-----------------|  
-|0|**Name**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
+|0|**Název**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
 |1|**Popis**|.NET framework Data Provider pro SqlServer|Čitelný Popis zprostředkovatele dat|  
 |2|**InvariantName**|System.Data.SqlClient|Název, který je možné prostřednictvím kódu programu k odkazování na poskytovatele dat|  
 |3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Plně kvalifikovaný název třídy factory, který obsahuje dostatek informací pro vytvoření instance objektu|  
