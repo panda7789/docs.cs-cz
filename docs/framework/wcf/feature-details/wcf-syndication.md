@@ -5,23 +5,23 @@ helpviewer_keywords:
 - syndication [WCF]
 ms.assetid: ebf80384-0fc9-4919-a1e8-23ca2a13e300
 ms.openlocfilehash: 198b664ff52b42b7f393eec3e8162f3a12037d9d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59175913"
 ---
 # <a name="wcf-syndication"></a>Syndikace WCF
 Windows Communication Foundation (WCF) poskytuje podporu pro snadno pracovat s informačními kanály syndikace Atom, RSS nebo jiných vlastních formátů, které umožňuje číst a vytvořte je, stejně jako vystavit na koncový bod služby. Témata v této části popisují Tento programovací model pro syndikaci podrobně.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Syndikace WCF – přehled](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
  Poskytuje přehled syndikace podpora poskytovaná WCF.  
   
  [Architektura syndikace](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
  Popisuje třídy v objektovém modelu a rozšiřitelnost syndikace.  
   
- [Mapování modelu objektu syndikace WCF na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)  
+ [Mapování objektového modelu syndikace WCF na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)  
  Popisuje, jak jsou reprezentovány informačních kanálů v rámci modelu objektu syndikace WCF a jak jsou převedeny na RSS a informační kanály Atom.  
   
  [Postupy: Vytvoření základního kanálu RSS](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
@@ -42,5 +42,5 @@ Windows Communication Foundation (WCF) poskytuje podporu pro snadno pracovat s i
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
 - [Částečná důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust.md)

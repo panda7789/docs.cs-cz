@@ -6,10 +6,10 @@ helpviewer_keywords:
 - accessibility [Windows Forms], Windows Forms control properties
 ms.assetid: ad3567a6-313b-4708-9e15-f487a831f049
 ms.openlocfilehash: b3f10fe472e449d39385facdbc716cba9b3f7382
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183778"
 ---
 # <a name="properties-on-windows-forms-controls-that-support-accessibility-guidelines"></a>Vlastnosti v ovládacích prvcích Windows Forms, jež podporují pokyny pro usnadnění přístupu
@@ -32,4 +32,4 @@ Ovládací prvky na standardní panel nástrojů pro Windows Forms podporují ř
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytvoření aplikace systému Windows s usnadněním přístupu](walkthrough-creating-an-accessible-windows-based-application.md)
+- [Návod: Vytvoření přístupné aplikace založené na Windows](walkthrough-creating-an-accessible-windows-based-application.md)

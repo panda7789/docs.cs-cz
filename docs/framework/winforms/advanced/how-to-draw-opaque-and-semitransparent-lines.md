@@ -11,10 +11,10 @@ helpviewer_keywords:
 - alpha blending [Windows Forms], drawing lines
 ms.assetid: 8f2508af-f495-4223-b5cc-646cbbb520eb
 ms.openlocfilehash: 7408722dc13e83828cfca3f0615a2730e3c53461
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59188263"
 ---
 # <a name="how-to-draw-opaque-and-semitransparent-lines"></a>Postupy: Kreslení neprůhledných a poloprůhledných čar
@@ -33,10 +33,10 @@ Když nakreslíte čáru, je nutné předat <xref:System.Drawing.Pen> objektu <x
  ![Obrázek, na kterém neprůhledných a poloprůhledných výstupu](./media/how-to-draw-opaque-and-semitransparent-lines/opaque-semitransparent-lines.png)  
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Alfa míchání čar a výplní](alpha-blending-lines-and-fills.md)
-- [Postupy: Nastavení průhledného pozadí pro vlastní ovládací prvek](../controls/how-to-give-your-control-a-transparent-background.md)
+- [Postupy: Zadejte svůj ovládací prvek průhledné pozadí](../controls/how-to-give-your-control-a-transparent-background.md)
 - [Postupy: Kreslení pomocí neprůhledných a poloprůhledných štětců](how-to-draw-with-opaque-and-semitransparent-brushes.md)

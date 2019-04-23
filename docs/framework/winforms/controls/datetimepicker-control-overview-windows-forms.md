@@ -8,10 +8,10 @@ helpviewer_keywords:
 - date and time picker controls
 ms.assetid: 501af106-e9fc-4efc-b9b3-c9d8dcaf8c5c
 ms.openlocfilehash: 451172b51427e4932470c53737c7bc276920271c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59173589"
 ---
 # <a name="datetimepicker-control-overview-windows-forms"></a>DateTimePicker – přehled ovládacího prvku (Windows Forms)
@@ -27,4 +27,4 @@ Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládací prvek umož�
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Zobrazení data ve vlastním formátu pomocí ovládacího prvku Windows Forms DateTimePicker](display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)
-- [Postupy: Nastavení a vracení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)
+- [Postupy: Nastavení a vrácení kalendářních dat pomocí ovládacího prvku Windows Forms DateTimePicker](how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)

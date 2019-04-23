@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 89552a099241f1bec61f9aa8a8321ef9932e886c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59173222"
 ---
 # <a name="icordebugstepperenum-interface"></a>ICorDebugStepperEnum – rozhraní
@@ -48,4 +48,4 @@ Implementuje metody ICorDebugEnum a vytváří výčet polí icordebugstepper �
   
 ## <a name="see-also"></a>Viz také:
 
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

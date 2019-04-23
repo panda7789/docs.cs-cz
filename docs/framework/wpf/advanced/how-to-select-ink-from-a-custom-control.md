@@ -10,10 +10,10 @@ helpviewer_keywords:
 - custom controls [WPF], ink selection
 ms.assetid: 5f3a45c6-6d40-4017-9b47-933f134ceba3
 ms.openlocfilehash: 5c9b2f3d64e4cbb309772d6a1d9fa88f589df84c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59173590"
 ---
 # <a name="how-to-select-ink-from-a-custom-control"></a>Postupy: Výběr rukopisu pomocí vlastního ovládacího prvku
@@ -91,4 +91,4 @@ Tak, že přidáte <xref:System.Windows.Ink.IncrementalLassoHitTester> do vlastn
 - <xref:System.Windows.Ink.IncrementalLassoHitTester>
 - <xref:System.Windows.Ink.StrokeCollection>
 - <xref:System.Windows.Input.StylusPointCollection>
-- [Vytvoření ovládacího prvku vstupu inkoustu](creating-an-ink-input-control.md)
+- [Vytvoření ovládacího prvku vstupu rukopisu](creating-an-ink-input-control.md)

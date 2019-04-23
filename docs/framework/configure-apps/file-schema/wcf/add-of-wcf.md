@@ -3,10 +3,10 @@ title: <add> služby WCF
 ms.date: 03/30/2017
 ms.assetid: c196f6d7-77f6-4266-973c-305b2b4dd8a2
 ms.openlocfilehash: e9ece03ec9376e6a428ac6a82a3f26020f64d744
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59186612"
 ---
 # <a name="add-of-wcf"></a>\<Přidat > služby WCF
@@ -49,7 +49,7 @@ Nakonfigurujte účastníkem sledování, která naslouchá na sledování zázn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<participants >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
+|[\<participants>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Seznam sledování účastníků|  
   
 ## <a name="remarks"></a>Poznámky  
  Sledování účastníci se používají pro získání data sledování vyzařovaného z pracovního postupu a uložit je do různá média. Stejně tak jakýkoli příspěvek zpracování na sledování, které záznamy lze provést také v rámci tohoto sledování.  

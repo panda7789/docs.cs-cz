@@ -11,10 +11,10 @@ helpviewer_keywords:
 - playing sounds [Windows Forms], looping
 ms.assetid: ea95dd46-10a3-46c0-8263-4b205f00df7f
 ms.openlocfilehash: a74acbbbcb5646a35de54a6000a0feae30f145a5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59188510"
 ---
 # <a name="how-to-loop-a-sound-playing-on-a-windows-form"></a>Postupy: Opakované přehrávání zvuku ve formuláři Windows Forms
@@ -56,5 +56,5 @@ Následující příklad kódu opakovaně přehraje zvuk. Když kód v `stopPlay
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Media.SoundPlayer.PlayLooping%2A>
-- [Postupy: Přehrávání zvuku z formuláře Windows Forms](how-to-play-a-sound-from-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows](how-to-play-a-sound-from-a-windows-form.md)
 - [Přehled třídy SoundPlayer](soundplayer-class-overview.md)

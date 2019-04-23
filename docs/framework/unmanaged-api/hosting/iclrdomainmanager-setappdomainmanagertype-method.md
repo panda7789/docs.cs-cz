@@ -16,10 +16,10 @@ ms.assetid: ee91abb0-cb74-41dd-927b-e117fb8ffdf4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6cfef7d929d40996716a02a4db51630827011a68
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183245"
 ---
 # <a name="iclrdomainmanagersetappdomainmanagertype-method"></a>ICLRDomainManager::SetAppDomainManagerType – metoda

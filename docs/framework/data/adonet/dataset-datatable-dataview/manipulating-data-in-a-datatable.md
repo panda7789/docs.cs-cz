@@ -3,17 +3,17 @@ title: Manipulace s daty v datové tabulce
 ms.date: 03/30/2017
 ms.assetid: 5cb86d48-a987-4af4-80e0-8cc2c8373d62
 ms.openlocfilehash: 96be67859d9fd136d7ad370ae06d9fcf33426f53
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59202570"
 ---
 # <a name="manipulating-data-in-a-datatable"></a>Manipulace s daty v datové tabulce
 Po vytvoření <xref:System.Data.DataTable> v <xref:System.Data.DataSet>, můžete provést stejný aktivity, které byste použili tabulky v databázi. Můžete přidat, zobrazit, upravit a odstranit data v tabulce. můžete sledovat chyby a události; a můžete zadat dotaz data v tabulce. Při změně dat v **DataTable**, můžete si taky ověřit, zda změny jsou správné a určete, zda prostřednictvím kódu programu přijmout nebo odmítnout změny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přidání dat do datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
+ [Přidání dat v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
  Vysvětluje, jak vytvořit nové řádky a přidat je do tabulky.  
   
  [Zobrazení dat v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  

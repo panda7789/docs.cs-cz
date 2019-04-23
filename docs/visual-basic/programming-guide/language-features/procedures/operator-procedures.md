@@ -12,10 +12,10 @@ helpviewer_keywords:
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
 ms.openlocfilehash: 80c9a77494be95365899c6a25435fcfc5d2a7293
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59175016"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
@@ -44,7 +44,7 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
  Syntaxe pro deklaraci procedury operátora vypadá takto:  
   
- `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*   
+ `Public Shared`   `[Widening | Narrowing]`   `Operator`  *operatorsymbol* `(` *operand1*`[,`*operand2* `]) As` *datový typ*  
   
  `' Statements of the operator procedure.`  
   
@@ -68,7 +68,7 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
   
  `Dim testStruct As`  *%{structurename/*  
   
- `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*   `10`  
+ `Dim testNewStruct As`  *%{structurename/*`= testStruct`*operatorsymbol*  `10`  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
  Následující strukturu uloží hodnotu se znaménkem 128-bit jako základní části nejvyšším a nižšího řádu. Definuje `+` operátor přidejte dva `veryLong` hodnoty a generovat výsledném `veryLong` hodnotu.  
@@ -83,11 +83,11 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury Function](./function-procedures.md)
-- [Procedury Property](./property-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Operator – příkaz](../../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Postupy: Definování operátoru](./how-to-define-an-operator.md)
-- [Postupy: Definování operátoru převodu](./how-to-define-a-conversion-operator.md)
-- [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)
+- [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Postupy: Definovat operátor](./how-to-define-an-operator.md)
+- [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)
+- [Postupy: Volání procedury operátora](./how-to-call-an-operator-procedure.md)
 - [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)

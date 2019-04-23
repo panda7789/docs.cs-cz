@@ -7,10 +7,10 @@ helpviewer_keywords:
 - control patterns, Selection Item
 ms.assetid: 76b0949a-5b23-4cfc-84cc-154f713e2e12
 ms.openlocfilehash: 00a2dae818091c20649deae79c093a61b6e93732
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183752"
 ---
 # <a name="implementing-the-ui-automation-selectionitem-control-pattern"></a>Implementace vzoru ovládacích prvků SelectionItem pro automatizaci uživatelského rozhraní
@@ -33,9 +33,9 @@ ms.locfileid: "59183752"
   
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|Metoda|Žádný|  
 |<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Událost|Vyvoláno při výběru v kontejneru významně změnil a vyžaduje odeslání více <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> a <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> událostí, než <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> povoluje – konstanta.|  
   
 -   Pokud výsledek <xref:System.Windows.Automation.SelectionItemPattern.Select%2A>, <xref:System.Windows.Automation.SelectionItemPattern.AddToSelection%2A>, nebo <xref:System.Windows.Automation.SelectionItemPattern.RemoveFromSelection%2A> je vybrané položce <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent> by měla být zvýšena; jinak odešlete <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent> /  <xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent> podle potřeby.  

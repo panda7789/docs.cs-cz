@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
 ms.openlocfilehash: 2f15bf569da6127d6c9d27be255590ce3784d7a5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59174613"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
@@ -71,6 +71,6 @@ Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se za
 
 ## <a name="see-also"></a>Viz také:
 
-- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
 - [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)
 - [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

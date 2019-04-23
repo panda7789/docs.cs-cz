@@ -6,10 +6,10 @@ helpviewer_keywords:
 - binding to LINQ query results [WPF]
 ms.assetid: ff2844d9-17ed-4ea6-aab1-5111af0bc684
 ms.openlocfilehash: 5464ee9c59a7c99a83774a7535b9b3c422c1d2e1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59185897"
 ---
 # <a name="how-to-bind-to-the-results-of-a-linq-query"></a>Postupy: Vytvoření vazby k výsledkům dotazu LINQ
@@ -26,7 +26,7 @@ Tento příklad ukazuje, jak spustit dotaz LINQ a potom připojení k výsledků
 [!code-csharp[LinqExample#Tasks](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#tasks)]  
 [!code-csharp[LinqExample#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/LinqExample/CSharp/Window1.xaml.cs#handler)]  
   
- Druhý seznam vytvoří vazbu na tuto kolekci, protože jeho <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> nastavena na hodnotu `{Binding}`. V důsledku toho se zobrazí vrácená kolekce (na základě `myTaskTemplate`<xref:System.Windows.DataTemplate>).  
+ Druhý seznam vytvoří vazbu na tuto kolekci, protože jeho <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> nastavena na hodnotu `{Binding}`. V důsledku toho se zobrazí vrácená kolekce (na základě `myTaskTemplate` <xref:System.Windows.DataTemplate>).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -34,4 +34,4 @@ Tento příklad ukazuje, jak spustit dotaz LINQ a potom připojení k výsledků
 - [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](how-to-bind-to-a-collection-and-display-information-based-on-selection.md)
 - [Novinky ve verzi 4.5 grafického subsystému WPF](../getting-started/whats-new.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

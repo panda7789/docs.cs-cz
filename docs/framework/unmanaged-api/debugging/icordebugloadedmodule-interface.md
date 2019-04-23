@@ -5,10 +5,10 @@ ms.assetid: 34be6369-2e75-4a95-a538-3b29ac97cf6d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6e91dda9cbc5957768e98db2b2a9e1026d94c03e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59200750"
 ---
 # <a name="icordebugloadedmodule-interface"></a>Rozhraní ICorDebugLoadedModule
@@ -39,5 +39,5 @@ Poskytuje informace o u načteného modulu.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

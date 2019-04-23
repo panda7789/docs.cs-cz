@@ -5,10 +5,10 @@ helpviewer_keywords:
 - metadata [WCF]
 ms.assetid: 66a61bd0-18d3-4e7e-bf8b-177a10ac2f60
 ms.openlocfilehash: 10b93f94a5a5193513e20eed4571aaf8f6c882a5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59174015"
 ---
 # <a name="metadata"></a>Metadata
@@ -33,7 +33,7 @@ Windows Communication Foundation (WCF) poskytuje infrastrukturu pro export, publ
  [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
  Popisuje různé způsoby použití metadat služby.  
   
- [Informace o zabezpečení pro metadata](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
+ [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  Popisuje důležité informace o zabezpečení při zpracování metadat služby.  
   
 ## <a name="see-also"></a>Viz také:

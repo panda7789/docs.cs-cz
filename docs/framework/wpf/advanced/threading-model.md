@@ -19,10 +19,10 @@ helpviewer_keywords:
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
 ms.openlocfilehash: 0bcb0e7369345aaae39d99a005a07304aaad7043
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59200347"
 ---
 # <a name="threading-model"></a>Model vláken
@@ -97,7 +97,7 @@ ms.locfileid: "59200347"
  [!code-csharp[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/csharp/VS_Snippets_Wpf/ThreadingPrimeNumbers/CSharp/Window1.xaml.cs#threadingprimenumberchecknextnumber)]
  [!code-vb[ThreadingPrimeNumbers#ThreadingPrimeNumberCheckNextNumber](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ThreadingPrimeNumbers/visualbasic/mainwindow.xaml.vb#threadingprimenumberchecknextnumber)]  
   
- Tato metoda ověří, zda je nejbližší liché číslo prime. Pokud je primární, metoda přímo aktualizuje `bigPrime`<xref:System.Windows.Controls.TextBlock> tak, aby odrážely jeho zjišťování. Můžeme to udělat, protože dochází k výpočtu ve stejném vláknu, která byla použita k vytvoření komponenty. Zvolili jsme použít pro výpočet samostatném vlákně, měli jsme pro složitější mechanismus synchronizace a provádění aktualizací v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Ukážeme si tuto situaci dále.  
+ Tato metoda ověří, zda je nejbližší liché číslo prime. Pokud je primární, metoda přímo aktualizuje `bigPrime` <xref:System.Windows.Controls.TextBlock> tak, aby odrážely jeho zjišťování. Můžeme to udělat, protože dochází k výpočtu ve stejném vláknu, která byla použita k vytvoření komponenty. Zvolili jsme použít pro výpočet samostatném vlákně, měli jsme pro složitější mechanismus synchronizace a provádění aktualizací v [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vlákna. Ukážeme si tuto situaci dále.  
   
  Úplný zdrojový kód pro tuto ukázku, najdete v článku [jedno vláknové objekty aplikace s ukázkou dlouhotrvající výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)  
   
@@ -143,7 +143,7 @@ ms.locfileid: "59200347"
   
  [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] Průzkumník funguje tímto způsobem. Každé nové okno Průzkumníka patří k původní procesu, ale je vytvořené v rámci ovládacího prvku nezávislé vlákna.  
   
- Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.Frame> ovládacího prvku, zobrazíme webové stránky. Můžeme snadno vytvořit jednoduchý [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nahradit. Začneme s důležitou funkcí: možnost otevřete nové okno Průzkumníka. Když uživatel klepne "nové okno" tlačítko, můžeme spustit kopii naše okna v samostatném vlákně. Tímto způsobem, dlouhotrvající nebo blokující operace v jednom ovládacím prvku windows nebudou uzamčení všech ostatních oken.  
+ Pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.Frame> ovládacího prvku, zobrazíme webové stránky. Můžeme snadno vytvořit jednoduchý [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] nahradit. Začneme s důležitou funkcí: možnost otevřete nové okno Průzkumníka. Když uživatel klepne "nové okno" tlačítko, můžeme spustit kopii naše okna v samostatném vlákně. Tímto způsobem, dlouhotrvající nebo blokující operace v jednom ovládacím prvku windows nebudou uzamčení všech ostatních oken.  
   
  Model webového prohlížeče ve skutečnosti má svůj vlastní složité vláken model. Zvolili jsme ji vzhledem k tomu, že by mělo být známé většina čtenářů.  
   

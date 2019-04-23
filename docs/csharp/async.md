@@ -6,10 +6,10 @@ ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.custom: seodec18
 ms.openlocfilehash: 8570692c02855cda7a1990f10ef97590449baccd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184662"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
@@ -244,7 +244,7 @@ Blokuje aktuální vlákno jako prostředek k čekání na dokončení úkolu m�
 
 | Použijte tento... | Místo to... | Když chce udělat |
 | --- | --- | --- |
-| `await` | `Task.Wait` or `Task.Result` | Načítání výsledků úlohy na pozadí |
+| `await` | `Task.Wait` Nebo `Task.Result` | Načítání výsledků úlohy na pozadí |
 | `await Task.WhenAny` | `Task.WaitAny` | Čekání na dokončení úkolu |
 | `await Task.WhenAll` | `Task.WaitAll` | Čekání na dokončení všech úloh |
 | `await Task.Delay` | `Thread.Sleep` | Čekání na časový úsek |

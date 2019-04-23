@@ -1,5 +1,5 @@
 ---
-title: <supportPortability> Prvek
+title: Element <supportPortability>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - supportPortability element
@@ -8,10 +8,10 @@ ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8cc26f9721e911e05c5b5d4092be21a4e1191c84
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183938"
 ---
 # <a name="supportportability-element"></a>\<supportPortability > – Element
@@ -40,7 +40,7 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |true|Povolte podporu pro přenositelnost mezi implementacemi zadaného sestavení rozhraní .NET Framework. Toto nastavení je výchozí.|  
 |false|Zakažte podporu pro přenositelnost mezi implementacemi zadaného sestavení rozhraní .NET Framework. To umožňuje aplikaci mít odkazy na více implementací zadaného sestavení.|  
@@ -80,5 +80,5 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
   
 ## <a name="see-also"></a>Viz také:
 
-- [/appconfig (Možnosti kompilátoru C#)](../../../../../docs/csharp/language-reference/compiler-options/appconfig-compiler-option.md)
-- [.NET Framework – přehled sjednocení sestavení](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))
+- [/ appconfig (možnosti kompilátoru C#)](../../../../../docs/csharp/language-reference/compiler-options/appconfig-compiler-option.md)
+- [Přehled sjednocení sestavení rozhraní .NET framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))

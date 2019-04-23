@@ -1,12 +1,12 @@
 ---
-title: <add> of <authorizationPolicies>
+title: <add> z <authorizationPolicies>
 ms.date: 03/30/2017
 ms.assetid: 613a03d8-4384-4556-bce2-8c23286c0bb0
 ms.openlocfilehash: 532f7f1a74cb3af24d7a1bc26046be901f3cf025
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59205235"
 ---
 # <a name="add-of-authorizationpolicies"></a>\<Přidat > z \<authorizationPolicies >
@@ -61,6 +61,6 @@ Určuje zásadu autorizace pro transformaci deklarace.
 - <xref:System.ServiceModel.Configuration.AuthorizationPolicyTypeElementCollection>
 - <xref:System.IdentityModel.Policy.IAuthorizationPolicy>
 - [Autorizace přístupu k operacím služby](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)
-- [Postupy: Vytvoření vlastního správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
 - [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-authorizationpolicies.md)
-- [Zásada autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Zásady autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md)

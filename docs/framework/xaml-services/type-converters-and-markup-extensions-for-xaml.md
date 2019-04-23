@@ -9,10 +9,10 @@ helpviewer_keywords:
 - XAML [XAML Services], service context
 ms.assetid: db07a952-05ce-4aa4-b6f9-aac7397d0326
 ms.openlocfilehash: e6f8ed3b893319e771eb0af96da7a58a7fad5c9b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59200984"
 ---
 # <a name="type-converters-and-markup-extensions-for-xaml"></a>Převaděče typů a rozšíření značek pro jazyk XAML

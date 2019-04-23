@@ -3,10 +3,10 @@ title: <privacyNoticeAt>
 ms.date: 03/30/2017
 ms.assetid: 4cc96942-4eb9-4241-b2fd-45aa239915e8
 ms.openlocfilehash: e2ce2111e4bb26cc6a51b4a772b1d8a4d3238c70
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59200763"
 ---
 # <a name="privacynoticeat"></a>\<privacyNoticeAt>
@@ -53,6 +53,6 @@ Představuje prvek konfigurace, který určuje oznámení o ochraně osobních �
 - <xref:System.ServiceModel.Channels.PrivacyNoticeBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

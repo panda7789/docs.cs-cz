@@ -8,10 +8,10 @@ helpviewer_keywords:
 - ToolBar control [Windows Forms], about ToolBar controls
 ms.assetid: d426b203-0216-4dbe-b834-1641e50a9c29
 ms.openlocfilehash: 7b39c8e3dca88e968b43ba5ff14794e2e77247d1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59174808"
 ---
 # <a name="toolbar-control-overview-windows-forms"></a>ToolBar – přehled ovládacího prvku (Windows Forms)
@@ -33,7 +33,7 @@ ms.locfileid: "59174808"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ToolBar>
-- [ToolBar – ovládací prvek](toolbar-control-windows-forms.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
 - [Postupy: Přidání tlačítek do ovládacího prvku ToolBar](how-to-add-buttons-to-a-toolbar-control.md)
 - [Postupy: Definování ikony pro tlačítko ToolBar](how-to-define-an-icon-for-a-toolbar-button.md)
-- [Postupy: Spouštění událostí nabídky pro tlačítka ToolBar](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)

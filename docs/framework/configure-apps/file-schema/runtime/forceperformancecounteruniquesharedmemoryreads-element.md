@@ -1,5 +1,5 @@
 ---
-title: <forcePerformanceCounterUniqueSharedMemoryReads> Prvek
+title: Element <forcePerformanceCounterUniqueSharedMemoryReads>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - forcePerformanceCounterUniqueSharedMemoryReads element
@@ -8,10 +8,10 @@ ms.assetid: 91149858-4810-4f65-9b48-468488172c9b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1d4a205f643c844b2fe77d3aa5211b4bc1f322fd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59186963"
 ---
 # <a name="forceperformancecounteruniquesharedmemoryreads-element"></a>\<forcePerformanceCounterUniqueSharedMemoryReads> Element
@@ -39,7 +39,7 @@ enabled="true|false"/>
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|PerfCounter.dll CategoryOptions nepoužívá výchozí nastavení je toto nastavení registru.|  
 |`true`|PerfCounter.dll pomocí nastavení registru CategoryOptions.|  

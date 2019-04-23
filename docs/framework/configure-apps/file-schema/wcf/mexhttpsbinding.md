@@ -3,10 +3,10 @@ title: <mexHttpsBinding>
 ms.date: 03/30/2017
 ms.assetid: f2ed3774-78b9-4a15-b79b-655f1ad68b86
 ms.openlocfilehash: 4e96c28ac9b372092d06538d24d165dde6c5fe48
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59203129"
 ---
 # <a name="mexhttpsbinding"></a>\<mexHttpsBinding>
@@ -49,7 +49,7 @@ Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tato vazba je v podstatě `WSHttpBinding` vazby, která podporuje zabezpečení na úrovni přenosu pomocí certifikátů. Další informace o konfiguraci a používání těchto koncových bodů metadat najdete v tématu [jak: Konfigurace vlastního protokolu WS-Metadata Exchange vazby](../../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md), [jak: Načítání metadat přes vazbu jiného typu než MEX](../../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)a ukázku [koncový bod metadat zabezpečení vlastní](../../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md).  
@@ -60,7 +60,7 @@ Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange
 - <xref:System.ServiceModel.Configuration.MexHttpsBindingElement>
 - [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
 - [Publikování a načítání metadat prostřednictvím vlastní vazby](../../../../../docs/framework/wcf/extending/publishing-and-retrieving-metadata-over-a-custom-binding.md)
-- [Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange](../../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
+- [Postupy: Konfigurace vlastního protokolu WS-Metadata Exchange vazby](../../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
 - [Postupy: Načítání metadat přes vazbu jiného typu než MEX](../../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)
 - [Vlastní zabezpečený koncový bod metadat](../../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)
 - [Metadata](../../../../../docs/framework/wcf/feature-details/metadata.md)

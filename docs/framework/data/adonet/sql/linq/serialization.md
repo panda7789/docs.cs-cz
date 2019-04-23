@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
 ms.openlocfilehash: b6778522b5757c0ece899f7465d3ab500038fc49
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59202557"
 ---
 # <a name="serialization"></a>Serializace

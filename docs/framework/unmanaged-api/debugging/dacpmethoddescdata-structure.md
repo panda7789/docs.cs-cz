@@ -16,10 +16,10 @@ topic_type:
 author: hoyosjs
 ms.author: juhoyosa
 ms.openlocfilehash: 567dc3942f79b6bfd29338b9103083aa64e66451
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59203194"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData – struktura
@@ -80,7 +80,7 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 ## <a name="requirements"></a>Požadavky
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
 **Záhlaví:** Žádné  
-**Knihovna:** Žádné  
+**Knihovna:** Žádný  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

@@ -1,12 +1,12 @@
 ---
-title: <routing> of <serviceBehavior>
+title: <routing> z <serviceBehavior>
 ms.date: 03/30/2017
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
 ms.openlocfilehash: b7a9be18395ef8878900d754b5aa5afdeee0cff8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59202505"
 ---
 # <a name="routing-of-servicebehavior"></a>\<směrování > z \<serviceBehavior >
@@ -50,7 +50,7 @@ Poskytuje přístup ke službě Směrování a povolit dynamickou změnu konfigu
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Když se přidá do konfigurace chování služby, umožňuje tento prvek konfigurace, směrování pro službu. Můžete určit skutečný směrovací tabulky používané služby v tomto elementu.  

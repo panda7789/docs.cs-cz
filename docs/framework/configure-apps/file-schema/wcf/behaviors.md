@@ -3,10 +3,10 @@ title: <behaviors>
 ms.date: 03/30/2017
 ms.assetid: 0e5da4e6-1aa5-466c-924e-f10efee57f0b
 ms.openlocfilehash: 108c349a44ed3ac902652f86241c1e96a622549b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59204234"
 ---
 # <a name="behaviors"></a>\<chování >
@@ -54,8 +54,8 @@ Tento prvek definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.
 - <xref:System.ServiceModel.Configuration.EndpointBehaviorElement>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>
-- [Konfigurace a rozšíření modulu runtime s chováním](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
-- [Konfigurace chování klientů](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
-- [Nastavení běhového chování klienta](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace chování klienta](../../../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Nastavení chování klienta za běhu](../../../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
 - [Určování chování služby za běhu](../../../../../docs/framework/wcf/specifying-service-run-time-behavior.md)
 - [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)

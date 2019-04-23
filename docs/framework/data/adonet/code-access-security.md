@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
 ms.openlocfilehash: 6c26ae82939a3d011ecb7ecd97e162ab2f45cd48
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59174106"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu ke kódu a ADO.NET

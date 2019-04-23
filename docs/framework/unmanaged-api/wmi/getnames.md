@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f664edf29e5d2f9ec4e523aa7f7b204cf999e01b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59202648"
 ---
 # <a name="getnames-function"></a>Funkce GetNames
@@ -82,14 +82,14 @@ Příznak hodnoty v `lFlags` jsou bitová pole
 
 Příznaky, které mohou být předány jako `lEnumFlags` argument jsou bitová pole, které jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty ve vašem kódu.  Můžete kombinovat jeden příznak z každé skupiny s všechny příznaky z jiné skupiny. Ale příznaky ze stejné skupiny se vzájemně vylučují. 
 
-| Příznaky skupiny 1 |Hodnota  |Popis  |
+| Příznaky skupiny 1 |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_ALWAYS` | 0 | Vrátí všechny názvy vlastností. `strQualifierName` a `pQualifierVal` nejsou používány. |
 | `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Vrátit pouze vlastnosti, které mají kvalifikátoru název určený `strQualifierName` parametru. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Vrátit pouze vlastnosti, které nemají kvalifikátoru název určený `strQualifierName` parametru. Pokud tento příznak se používá, je nutné zadat `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Vrátit pouze vlastnosti, které mají kvalifikátoru název určený `wszQualifierName` parametr a také mít identické s klíči určenému hodnotu `pQualifierVal` struktury. Pokud tento příznak se používá, je nutné zadat obě `wszQualifierName` a `pQualifierValue`. |
 
-| Příznaky skupiny 2 |Hodnota  |Popis  |
+| Příznaky skupiny 2 |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Vrátíte pouze názvy vlastností, které definují klíče. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Vrácení pouze názvy vlastností, které jsou odkazy na objekty. |

@@ -5,10 +5,10 @@ helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
 ms.openlocfilehash: 4342b3d6219f0c996264bb7ed190b1204338ba64
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59185533"
 ---
 # <a name="hosting-services"></a>Služby hostování
@@ -57,7 +57,7 @@ Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí
 |Služby Windows (dříve známé jako služby NT)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[wv](../../../includes/wv-md.md)],<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET.TCP,<br /><br /> NET.pipe,<br /><br /> net.msmq|Ne|  
 |IIS 5.1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|Ano|  
 |[!INCLUDE[iis601](../../../includes/iis601-md.md)]|[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]|HTTP|Ano|  
-|Aktivační služba procesů Windows (WAS)|[!INCLUDE[wv](../../../includes/wv-md.md)],  [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET.TCP,<br /><br /> NET.pipe,<br /><br /> net.msmq|Ano|  
+|Aktivační služba procesů Windows (WAS)|[!INCLUDE[wv](../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET.TCP,<br /><br /> NET.pipe,<br /><br /> net.msmq|Ano|  
   
  Je důležité si uvědomit, že spuštěné služby nebo žádné rozšíření z ohrožení zabezpečení nedůvěryhodného hostitele. Mějte také na paměti, která při otevírání <xref:System.ServiceModel.ServiceHost> v zosobnění, musí aplikace zajistit, že uživatel není odhlášen, například díky ukládání do mezipaměti <xref:System.Security.Principal.WindowsIdentity> uživatele.  
   
@@ -68,5 +68,5 @@ Přejít do aktivního stavu, musí být služba hostovaný v rámci prostředí
 - [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)
 - [Postupy: Hostování služby WCF v IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
 - [Postupy: Hostování služby WCF ve WAS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)
-- [Postupy: Hostování služby WCF ve spravované službě Windows](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Postupy: Hostování služby WCF ve spravované Windows Service](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Postupy: Hostování služby WCF ve spravované aplikaci](../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)

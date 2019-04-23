@@ -9,10 +9,10 @@ helpviewer_keywords:
 - DockPanel control [WPF], creating
 ms.assetid: 9194f663-e279-4f1a-86d7-125a57d05c6f
 ms.openlocfilehash: 35434a13386ae89fdc1428bd632d21c1551c9871
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59200594"
 ---
 # <a name="how-to-create-a-dockpanel"></a>Postupy: Vytvoření objektu DockPanel
@@ -26,4 +26,4 @@ ms.locfileid: "59200594"
 
 - <xref:System.Windows.Controls.DockPanel>
 - <xref:System.Windows.Controls.Dock>
-- [Přehled panelů](panels-overview.md)
+- [Přehled panelu](panels-overview.md)

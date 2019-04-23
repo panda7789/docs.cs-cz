@@ -9,10 +9,10 @@ helpviewer_keywords:
 - metadata [Windows Forms], reading image
 ms.assetid: 72ec0b31-0be7-444a-9575-1dbcb864e0be
 ms.openlocfilehash: 0a53e9b9d23c03715bf3088a4ae8577a39527995
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59173612"
 ---
 # <a name="how-to-read-image-metadata"></a>Postupy: Čtení metadat obrázku
@@ -29,7 +29,7 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
 |-----------------------|-----------------|  
 |0x0320<br /><br /> 0x010F<br /><br /> 0x0110<br /><br /> 0x9003<br /><br /> 0x829A<br /><br /> 0x5090<br /><br /> 0x5091|Název bitové kopie<br /><br /> Výrobce OEM<br /><br /> Model zařízení<br /><br /> ExifDTOriginal<br /><br /> Chcete zkrátit dobu expozice EXIF<br /><br /> Tabulka světlosti<br /><br /> Chrominance tabulky|  
   
-## <a name="value"></a>Hodnota  
+## <a name="value"></a>Value  
  Pole hodnot. Formát hodnoty je určeno <xref:System.Drawing.Imaging.PropertyItem.Type%2A> vlastnost.  
   
 ## <a name="len"></a>Délka  
@@ -40,7 +40,7 @@ Některé soubory obrázku obsahují metadata, která si můžete přečíst ur�
   
 |Číselná hodnota|Popis|  
 |-------------------|-----------------|  
-|1|OBJEKT `Byte`|  
+|1|A `Byte`|  
 |2|Pole `Byte` objekty kódováním ASCII|  
 |3|16bitové celé číslo|  
 |4|32bitové celé číslo|  

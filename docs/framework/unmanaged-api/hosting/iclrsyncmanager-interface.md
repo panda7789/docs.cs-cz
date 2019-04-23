@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d3e4affa363083ce55ac3764c26412a0d60ba3f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59203090"
 ---
 # <a name="iclrsyncmanager-interface"></a>ICLRSyncManager – rozhraní
@@ -49,4 +49,4 @@ Definuje metody, které umožňují hostitele a získat informace o požadované
 - <xref:System.Threading.Thread>
 - [IHostSyncManager – rozhraní](ihostsyncmanager-interface.md)
 - [Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))
-- [Rozhraní hostování](hosting-interfaces.md)
+- [Rozhraní pro hostování](hosting-interfaces.md)

@@ -3,10 +3,10 @@ title: Doporučené postupy s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: 0d052bc0-5b98-4c50-8bb5-270cc8a8b145
 ms.openlocfilehash: c83c36020cfd5b41e99ff9eeb7968d0b5df909a6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184077"
 ---
 # <a name="partial-trust-best-practices"></a>Doporučené postupy s částečnou důvěryhodností

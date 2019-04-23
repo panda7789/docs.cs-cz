@@ -10,10 +10,10 @@ helpviewer_keywords:
 - aligning [WPF], content
 ms.assetid: c1e8f962-72c8-4e7a-8670-7a2d7e021791
 ms.openlocfilehash: 03348aa0eb5b6c1791c27683c1c6c6a5d4a8a9d4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59186040"
 ---
 # <a name="how-to-horizontally-or-vertically-align-content-in-a-stackpanel"></a>Postupy: Vodorovné a svislé zarovnání obsahu v elementu StackPanel
@@ -35,4 +35,4 @@ Tento příklad ukazuje, jak upravit <xref:System.Windows.Controls.StackPanel.Or
 - <xref:System.Windows.Controls.ListBox>
 - <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>
 - <xref:System.Windows.FrameworkElement.VerticalAlignment%2A>
-- [Přehled panelů](panels-overview.md)
+- [Přehled panelu](panels-overview.md)

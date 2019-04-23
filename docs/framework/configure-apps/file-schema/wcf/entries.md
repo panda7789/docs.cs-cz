@@ -3,10 +3,10 @@ title: <entries>
 ms.date: 03/30/2017
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
 ms.openlocfilehash: 5561cf61cef2258ec61bd32770538add1c69f5c1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59201790"
 ---
 # <a name="entries"></a>\<položky >
@@ -45,7 +45,7 @@ Směrování položky, které obsahují mapování mezi směrovacími filtry a c
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry >](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Filtr se mapuje na koncový bod klienta, který byl dříve definován. Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.|  
+|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Filtr se mapuje na koncový bod klienta, který byl dříve definován. Tomuto filtru odpovídá zprávy se odešlou do tohoto cílového místa.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

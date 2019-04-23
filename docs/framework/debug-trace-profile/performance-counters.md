@@ -9,10 +9,10 @@ ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 210a0a7d84f21360dce93627cdf6a27777c09968
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184805"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
@@ -120,8 +120,8 @@ Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Mon
 |**Počet bajtů ve všech haldách**|Součet **velikost haldy 1 Obecné**, **velikost haldy 2. generace**, a **velikost haldy velkých objektů** čítače. Tento čítač označuje velikost aktuální paměti přidělených bajtů na uvolnění paměti haldy.|  
 |**Počet popisovačů GC**|Zobrazí aktuální počet popisovačů kolekce uvolnění paměti. Obslužné rutiny uvolnění paměti jsou popisovače k prostředkům, které jsou externí vzhledem k common language runtime a spravované prostředí.|  
 |**Počet úklidů 0**|Zobrazí počet pokusů, které objekty generace 0 (to znamená, nejmladší, naposledy přidělené objekty) uklizeny od spuštění aplikace.<br /><br /> Pokud není dostatečná pro uspokojení požadavku na přidělení dostupné paměti v generaci 0, dojde k uvolnění paměti generace 0. Tento čítač se zvyšuje na konci uvolnění 0. generace. Vyšší generace uvolňování pamětí zahrnout všechny nižší generace kolekce. Tento čítač je explicitně zvýší, když dojde větší uvolnění paměti generace (generace 1 nebo 2).<br /><br /> Tento čítač zobrazí naposledy zjištěnou hodnotu. **_Global\_**  hodnota čítače není přesná a je třeba ji ignorovat.|  
-|**# Počet úklidů 1**|Zobrazí počet pokusů, které objekty 1. generace uklizeny od spuštění aplikace.<br /><br /> Hodnota čítače je zvýšena na konci 1 uvolnění paměti generace. Vyšší generace uvolňování pamětí zahrnout všechny nižší generace kolekce. Tento čítač je explicitně zvýší, když dojde k uvolnění vyšší generaci (2. generace).<br /><br /> Tento čítač zobrazí naposledy zjištěnou hodnotu. **_Global\_**  hodnota čítače není přesná a je třeba ji ignorovat.|  
-|**# Počet úklidů 2**|Zobrazí počet pokusů, které objekty 2. generace uklizeny od spuštění aplikace. Hodnota čítače je zvýšena na konci 2 uvolnění paměti generace (také nazývané úplného uvolňování paměti kolekce).<br /><br /> Tento čítač zobrazí naposledy zjištěnou hodnotu. **_Global\_**  hodnota čítače není přesná a je třeba ji ignorovat.|  
+|**Počet úklidů 1**|Zobrazí počet pokusů, které objekty 1. generace uklizeny od spuštění aplikace.<br /><br /> Hodnota čítače je zvýšena na konci 1 uvolnění paměti generace. Vyšší generace uvolňování pamětí zahrnout všechny nižší generace kolekce. Tento čítač je explicitně zvýší, když dojde k uvolnění vyšší generaci (2. generace).<br /><br /> Tento čítač zobrazí naposledy zjištěnou hodnotu. **_Global\_**  hodnota čítače není přesná a je třeba ji ignorovat.|  
+|**Počet úklidů 2**|Zobrazí počet pokusů, které objekty 2. generace uklizeny od spuštění aplikace. Hodnota čítače je zvýšena na konci 2 uvolnění paměti generace (také nazývané úplného uvolňování paměti kolekce).<br /><br /> Tento čítač zobrazí naposledy zjištěnou hodnotu. **_Global\_**  hodnota čítače není přesná a je třeba ji ignorovat.|  
 |**Počet vyvolání GC**|Zobrazí maximální počet, kolikrát se provedlo uvolňování kvůli explicitní volání konstruktoru <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Je dobrým zvykem umožňuje systému uvolňování paměti, frekvence jeho kolekcích.|  
 |**počet nepřesunutelných objektů**|Zobrazí počet připojených objektů v posledním uvolnění paměti. Připojený objekt je objekt, který systému uvolňování paměti nelze přesunout v paměti. Čítač zaznamenává připojené objekty pouze v haldách, které jsou uvolněna z paměti. Například uvolnění paměti generace 0 způsobí, že nepřesunutelné pouze v haldě 0. generace.|  
 |**Počet používaných bloků jímek**|Zobrazí aktuální počet bloků synchronizace. Synchronizační bloky jsou datové struktury jednotlivé objekty přidělené pro ukládání informací o synchronizaci. Drží slabé odkazy na spravované objekty a musí být kontrolována uvolnění paměti. Synchronizace bloků nejsou omezeny na ukládání informací o synchronizaci; můžete ukládat také COM interop metadat. Tento čítač označuje problémy s výkonem se hojně používají synchronizací primitiv.|  

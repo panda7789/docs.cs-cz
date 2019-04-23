@@ -13,10 +13,10 @@ helpviewer_keywords:
 - brushes [WPF], painting with visuals
 ms.assetid: 779aac3f-8d41-49d8-8130-768244aa2240
 ms.openlocfilehash: 826c5a0656a9a7e7cff0e96fc6755c5c9c717993
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59204195"
 ---
 # <a name="painting-with-images-drawings-and-visuals"></a>Kreslení pomocí obrázků, kreseb a vizuálních objektů
@@ -142,8 +142,8 @@ Součástí TileBrush s víc dlaždic
 - [TileBrush – přehled](tilebrush-overview.md)
 - [Přehled štětců WPF](wpf-brushes-overview.md)
 - [Přehled obrázků](imaging-overview.md)
-- [Přehled vykreslovaných objektů](drawing-objects-overview.md)
-- [Přehled masek krytí](opacity-masks-overview.md)
+- [Přehled nakreslených objektů](drawing-objects-overview.md)
+- [Přehled masek neprůhlednosti](opacity-masks-overview.md)
 - [Přehled vykreslování grafiky WPF](wpf-graphics-rendering-overview.md)
 - [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

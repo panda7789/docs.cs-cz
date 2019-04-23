@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Value control pattern
 ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
 ms.openlocfilehash: cccaf1afa55d786e43863e094a9745a0a1d00870
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59174951"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
@@ -50,8 +50,8 @@ Příklad mapování řetězec vzorníku barev
 |Požadované členy|Typ člena|Poznámky|  
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.ValuePattern.ValueProperty>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.ValuePattern.SetValue%2A>|Metoda|Žádný|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  

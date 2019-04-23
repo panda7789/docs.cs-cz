@@ -10,10 +10,10 @@ helpviewer_keywords:
 - states [WPF], Window
 ms.assetid: 2dfdf025-347b-4342-bf28-95206c273f35
 ms.openlocfilehash: ebd21829591b8fefe87aeba0b86280f18eff4f06
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59203727"
 ---
 # <a name="window-styles-and-templates"></a>Styly a šablony oken
@@ -50,4 +50,4 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Window> ovládací
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](styling-and-templating.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)

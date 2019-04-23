@@ -3,10 +3,10 @@ title: <security> Element <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
 ms.openlocfilehash: 15740144b0aad7eb2798db4712e4769d08d893a6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59186859"
 ---
 # <a name="security-element-of-ws2007federationhttpbinding"></a>\<zabezpečení > prvek \<ws2007FederationHttpBinding >
@@ -56,7 +56,7 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení. Tento prvek je typu <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -72,7 +72,7 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
 - [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Výběr typu pověření](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
 - [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
 - [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
