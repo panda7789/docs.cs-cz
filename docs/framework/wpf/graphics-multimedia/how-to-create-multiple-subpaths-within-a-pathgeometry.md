@@ -7,26 +7,26 @@ helpviewer_keywords:
 - subpaths [WPF]
 ms.assetid: 104a862c-dde2-4e62-ac87-80660dd1681c
 ms.openlocfilehash: 286075448cd6a343f8a7b15b2b5005f840f68e1d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59111745"
 ---
-# <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a><span data-ttu-id="59708-102">Postupy: Vytvoření několika dílčích cest v rámci PathGeometry</span><span class="sxs-lookup"><span data-stu-id="59708-102">How to: Create Multiple Subpaths Within a PathGeometry</span></span>
-<span data-ttu-id="59708-103">Tento příklad ukazuje postup vytvoření několika dílčích cest v <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="59708-103">This example shows how to create multiple subpaths in a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="59708-104">K vytvoření několika dílčích cest, můžete vytvořit <xref:System.Windows.Media.PathFigure> pro každý dílčí cestou.</span><span class="sxs-lookup"><span data-stu-id="59708-104">To create multiple subpaths, you create a <xref:System.Windows.Media.PathFigure> for each subpath.</span></span>  
+# <a name="how-to-create-multiple-subpaths-within-a-pathgeometry"></a><span data-ttu-id="0681b-102">Postupy: Vytvoření několika dílčích cest v rámci PathGeometry</span><span class="sxs-lookup"><span data-stu-id="0681b-102">How to: Create Multiple Subpaths Within a PathGeometry</span></span>
+<span data-ttu-id="0681b-103">Tento příklad ukazuje postup vytvoření několika dílčích cest v <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="0681b-103">This example shows how to create multiple subpaths in a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="0681b-104">K vytvoření několika dílčích cest, můžete vytvořit <xref:System.Windows.Media.PathFigure> pro každý dílčí cestou.</span><span class="sxs-lookup"><span data-stu-id="0681b-104">To create multiple subpaths, you create a <xref:System.Windows.Media.PathFigure> for each subpath.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="59708-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="59708-105">Example</span></span>  
- <span data-ttu-id="59708-106">Následující příklad vytvoří dvě dílčí cesty, každý z nich trojúhelník.</span><span class="sxs-lookup"><span data-stu-id="59708-106">The following example creates two subpaths, each one a triangle.</span></span>  
+## <a name="example"></a><span data-ttu-id="0681b-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="0681b-105">Example</span></span>  
+ <span data-ttu-id="0681b-106">Následující příklad vytvoří dvě dílčí cesty, každý z nich trojúhelník.</span><span class="sxs-lookup"><span data-stu-id="0681b-106">The following example creates two subpaths, each one a triangle.</span></span>  
   
  [!code-xaml[GeometrySample#38](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/pathgeometryexample.xaml#38)]  
   
- <span data-ttu-id="59708-107">Následující příklad ukazuje postup vytvoření několika dílčích cest pomocí <xref:System.Windows.Shapes.Path> a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe atributu.</span><span class="sxs-lookup"><span data-stu-id="59708-107">The following example shows how to create multiple subpaths by using a <xref:System.Windows.Shapes.Path> and [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribute syntax.</span></span> <span data-ttu-id="59708-108">Každý `M` tak, aby tento příklad vytvoří dvě dílčí cesty, že každý nakreslit trojúhelník vytvoří novou cestou.</span><span class="sxs-lookup"><span data-stu-id="59708-108">Each `M` creates a new subpath so that the example creates two subpaths that each draw a triangle.</span></span>  
+ <span data-ttu-id="0681b-107">Následující příklad ukazuje postup vytvoření několika dílčích cest pomocí <xref:System.Windows.Shapes.Path> a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntaxe atributu.</span><span class="sxs-lookup"><span data-stu-id="0681b-107">The following example shows how to create multiple subpaths by using a <xref:System.Windows.Shapes.Path> and [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribute syntax.</span></span> <span data-ttu-id="0681b-108">Každý `M` tak, aby tento příklad vytvoří dvě dílčí cesty, že každý nakreslit trojúhelník vytvoří novou cestou.</span><span class="sxs-lookup"><span data-stu-id="0681b-108">Each `M` creates a new subpath so that the example creates two subpaths that each draw a triangle.</span></span>  
   
  [!code-xaml[GeometrySample#58](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/geometryattributesyntaxexample.xaml#58)]  
   
- <span data-ttu-id="59708-109">(Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="59708-109">(Note that this attribute syntax actually creates a <xref:System.Windows.Media.StreamGeometry>, a lighter-weight version of a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="59708-110">Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)</span><span class="sxs-lookup"><span data-stu-id="59708-110">For more information, see the [Path Markup Syntax](path-markup-syntax.md) page.)</span></span>  
+ <span data-ttu-id="0681b-109">(Všimněte si, že tato syntaxe atributu ve skutečnosti vytváří <xref:System.Windows.Media.StreamGeometry>, nenáročný verzi <xref:System.Windows.Media.PathGeometry>.</span><span class="sxs-lookup"><span data-stu-id="0681b-109">(Note that this attribute syntax actually creates a <xref:System.Windows.Media.StreamGeometry>, a lighter-weight version of a <xref:System.Windows.Media.PathGeometry>.</span></span> <span data-ttu-id="0681b-110">Další informace najdete v tématu [syntaxe značek cesty](path-markup-syntax.md) stránky.)</span><span class="sxs-lookup"><span data-stu-id="0681b-110">For more information, see the [Path Markup Syntax](path-markup-syntax.md) page.)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="59708-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="59708-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0681b-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0681b-111">See also</span></span>
 
-- [<span data-ttu-id="59708-112">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="59708-112">Geometry Overview</span></span>](geometry-overview.md)
+- [<span data-ttu-id="0681b-112">Přehled geometrie</span><span class="sxs-lookup"><span data-stu-id="0681b-112">Geometry Overview</span></span>](geometry-overview.md)

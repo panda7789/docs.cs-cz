@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: babe098b16729cfcd41b48075a49b9ae9be7dfdc
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59117180"
 ---
-# <a name="imetadatatablesgetblob-method"></a><span data-ttu-id="9b370-102">IMetaDataTables::GetBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="9b370-102">IMetaDataTables::GetBlob Method</span></span>
-<span data-ttu-id="9b370-103">Získá ukazatel na binární rozsáhlý objekt (BLOB) na zadaný sloupec indexu.</span><span class="sxs-lookup"><span data-stu-id="9b370-103">Gets a pointer to the binary large object (BLOB) at the specified column index.</span></span>  
+# <a name="imetadatatablesgetblob-method"></a><span data-ttu-id="11dc0-102">IMetaDataTables::GetBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="11dc0-102">IMetaDataTables::GetBlob Method</span></span>
+<span data-ttu-id="11dc0-103">Získá ukazatel na binární rozsáhlý objekt (BLOB) na zadaný sloupec indexu.</span><span class="sxs-lookup"><span data-stu-id="11dc0-103">Gets a pointer to the binary large object (BLOB) at the specified column index.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9b370-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b370-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="11dc0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="11dc0-104">Syntax</span></span>  
   
 ```  
 HRESULT GetBlob (  
@@ -37,26 +37,26 @@ HRESULT GetBlob (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9b370-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9b370-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="11dc0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="11dc0-105">Parameters</span></span>  
  `ixBlob`  
- <span data-ttu-id="9b370-106">[in] Adresa paměti, ze kterého chcete získat `ppData`.</span><span class="sxs-lookup"><span data-stu-id="9b370-106">[in] The memory address from which to get `ppData`.</span></span>  
+ <span data-ttu-id="11dc0-106">[in] Adresa paměti, ze kterého chcete získat `ppData`.</span><span class="sxs-lookup"><span data-stu-id="11dc0-106">[in] The memory address from which to get `ppData`.</span></span>  
   
  `pcbData`  
- <span data-ttu-id="9b370-107">[out] Ukazatel na velikost v bajtech, z `ppData`.</span><span class="sxs-lookup"><span data-stu-id="9b370-107">[out] A pointer to the size, in bytes, of `ppData`.</span></span>  
+ <span data-ttu-id="11dc0-107">[out] Ukazatel na velikost v bajtech, z `ppData`.</span><span class="sxs-lookup"><span data-stu-id="11dc0-107">[out] A pointer to the size, in bytes, of `ppData`.</span></span>  
   
  `ppData`  
- <span data-ttu-id="9b370-108">[out] Načte ukazatel na ukazatel na binární data.</span><span class="sxs-lookup"><span data-stu-id="9b370-108">[out] A pointer to a pointer to the binary data retrieved.</span></span>  
+ <span data-ttu-id="11dc0-108">[out] Načte ukazatel na ukazatel na binární data.</span><span class="sxs-lookup"><span data-stu-id="11dc0-108">[out] A pointer to a pointer to the binary data retrieved.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9b370-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9b370-109">Requirements</span></span>  
- <span data-ttu-id="9b370-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9b370-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="11dc0-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="11dc0-109">Requirements</span></span>  
+ <span data-ttu-id="11dc0-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="11dc0-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9b370-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9b370-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="11dc0-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="11dc0-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="9b370-112">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9b370-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="11dc0-112">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="11dc0-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="9b370-113">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="9b370-113">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="11dc0-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="11dc0-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9b370-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b370-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="11dc0-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="11dc0-114">See also</span></span>
 
-- [<span data-ttu-id="9b370-115">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b370-115">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [<span data-ttu-id="9b370-116">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b370-116">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [<span data-ttu-id="11dc0-115">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="11dc0-115">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [<span data-ttu-id="11dc0-116">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="11dc0-116">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

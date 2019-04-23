@@ -17,16 +17,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2138dd32cf39db7b7c8989ba5827178d1a1e46c7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59117232"
 ---
-# <a name="cormethodimpl-enumeration"></a><span data-ttu-id="234d4-102">CorMethodImpl – výčet</span><span class="sxs-lookup"><span data-stu-id="234d4-102">CorMethodImpl Enumeration</span></span>
-<span data-ttu-id="234d4-103">Obsahuje hodnoty, které popisují způsob implementace funkce.</span><span class="sxs-lookup"><span data-stu-id="234d4-103">Contains values that describe method implementation features.</span></span>  
+# <a name="cormethodimpl-enumeration"></a><span data-ttu-id="e73f3-102">CorMethodImpl – výčet</span><span class="sxs-lookup"><span data-stu-id="e73f3-102">CorMethodImpl Enumeration</span></span>
+<span data-ttu-id="e73f3-103">Obsahuje hodnoty, které popisují způsob implementace funkce.</span><span class="sxs-lookup"><span data-stu-id="e73f3-103">Contains values that describe method implementation features.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="234d4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="234d4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e73f3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e73f3-104">Syntax</span></span>  
   
 ```  
 typedef enum CorMethodImpl {  
@@ -54,34 +54,34 @@ typedef enum CorMethodImpl {
 } CorMethodImpl;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="234d4-105">Členové</span><span class="sxs-lookup"><span data-stu-id="234d4-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="e73f3-105">Členové</span><span class="sxs-lookup"><span data-stu-id="e73f3-105">Members</span></span>  
   
-|<span data-ttu-id="234d4-106">Člen</span><span class="sxs-lookup"><span data-stu-id="234d4-106">Member</span></span>|<span data-ttu-id="234d4-107">Popis</span><span class="sxs-lookup"><span data-stu-id="234d4-107">Description</span></span>|  
+|<span data-ttu-id="e73f3-106">Člen</span><span class="sxs-lookup"><span data-stu-id="e73f3-106">Member</span></span>|<span data-ttu-id="e73f3-107">Popis</span><span class="sxs-lookup"><span data-stu-id="e73f3-107">Description</span></span>|  
 |------------|-----------------|  
-|`miCodeTypeMask`|<span data-ttu-id="234d4-108">Příznaky, které popisují typ kódu.</span><span class="sxs-lookup"><span data-stu-id="234d4-108">Flags that describe code type.</span></span>|  
-|`miIL`|<span data-ttu-id="234d4-109">Určuje, že implementace metody je jazyk Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="234d4-109">Specifies that the method implementation is Microsoft intermediate language (MSIL).</span></span>|  
-|`miNative`|<span data-ttu-id="234d4-110">Určuje, že je nativní implementace metody.</span><span class="sxs-lookup"><span data-stu-id="234d4-110">Specifies that the method implementation is native.</span></span>|  
-|`miOPTIL`|<span data-ttu-id="234d4-111">Určuje, že implementace metody OPTIL.</span><span class="sxs-lookup"><span data-stu-id="234d4-111">Specifies that the method implementation is OPTIL.</span></span>|  
-|`miRuntime`|<span data-ttu-id="234d4-112">Určuje, že implementace metody poskytuje modul common language runtime.</span><span class="sxs-lookup"><span data-stu-id="234d4-112">Specifies that the method implementation is provided by the common language runtime.</span></span>|  
-|`miManagedMask`|<span data-ttu-id="234d4-113">Příznaky, které označují, zda kód je spravovaná nebo nespravovaná.</span><span class="sxs-lookup"><span data-stu-id="234d4-113">Flags that indicate whether the code is managed or unmanaged.</span></span>|  
-|`miUnmanaged`|<span data-ttu-id="234d4-114">Určuje, že implementace metody nespravované.</span><span class="sxs-lookup"><span data-stu-id="234d4-114">Specifies that the method implementation is unmanaged.</span></span>|  
-|`miManaged`|<span data-ttu-id="234d4-115">Určuje, že je spravovaná implementace metody.</span><span class="sxs-lookup"><span data-stu-id="234d4-115">Specifies that the method implementation is managed.</span></span>|  
-|`miForwardRef`|<span data-ttu-id="234d4-116">Určuje, že metoda je definována.</span><span class="sxs-lookup"><span data-stu-id="234d4-116">Specifies that the method is defined.</span></span> <span data-ttu-id="234d4-117">Tento příznak se používá především ve scénářích sloučení.</span><span class="sxs-lookup"><span data-stu-id="234d4-117">This flag is used primarily in merge scenarios.</span></span>|  
-|`miPreserveSig`|<span data-ttu-id="234d4-118">Určuje, že podpis metody nemůže být pozměnění pro konverzi HRESULT.</span><span class="sxs-lookup"><span data-stu-id="234d4-118">Specifies that the method signature cannot be mangled for an HRESULT conversion.</span></span>|  
-|`miInternalCall`|<span data-ttu-id="234d4-119">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="234d4-119">Reserved for internal use by the common language runtime.</span></span>|  
-|`miSynchronized`|<span data-ttu-id="234d4-120">Určuje, že metoda je jednovláknový prostřednictvím svého těla.</span><span class="sxs-lookup"><span data-stu-id="234d4-120">Specifies that the method is single-threaded through its body.</span></span>|  
-|`miNoInlining`|<span data-ttu-id="234d4-121">Určuje, že metoda nemůže být vložená.</span><span class="sxs-lookup"><span data-stu-id="234d4-121">Specifies that the method cannot be inlined.</span></span>|  
-|`miAggressiveInlining`|<span data-ttu-id="234d4-122">Určuje, že metoda by měla být vložit. Pokud je to možné.</span><span class="sxs-lookup"><span data-stu-id="234d4-122">Specifies that the method should be inlined if possible.</span></span>|  
-|`miNoOptimization`|<span data-ttu-id="234d4-123">Určuje, že metoda neměl optimalizovat.</span><span class="sxs-lookup"><span data-stu-id="234d4-123">Specifies that the method should not be optimized.</span></span>|  
-|`miMaxMethodImplVal`|<span data-ttu-id="234d4-124">Největší platná hodnota pro `CorMethodImpl`.</span><span class="sxs-lookup"><span data-stu-id="234d4-124">The maximum valid value for a `CorMethodImpl`.</span></span>|  
+|`miCodeTypeMask`|<span data-ttu-id="e73f3-108">Příznaky, které popisují typ kódu.</span><span class="sxs-lookup"><span data-stu-id="e73f3-108">Flags that describe code type.</span></span>|  
+|`miIL`|<span data-ttu-id="e73f3-109">Určuje, že implementace metody je jazyk Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="e73f3-109">Specifies that the method implementation is Microsoft intermediate language (MSIL).</span></span>|  
+|`miNative`|<span data-ttu-id="e73f3-110">Určuje, že je nativní implementace metody.</span><span class="sxs-lookup"><span data-stu-id="e73f3-110">Specifies that the method implementation is native.</span></span>|  
+|`miOPTIL`|<span data-ttu-id="e73f3-111">Určuje, že implementace metody OPTIL.</span><span class="sxs-lookup"><span data-stu-id="e73f3-111">Specifies that the method implementation is OPTIL.</span></span>|  
+|`miRuntime`|<span data-ttu-id="e73f3-112">Určuje, že implementace metody poskytuje modul common language runtime.</span><span class="sxs-lookup"><span data-stu-id="e73f3-112">Specifies that the method implementation is provided by the common language runtime.</span></span>|  
+|`miManagedMask`|<span data-ttu-id="e73f3-113">Příznaky, které označují, zda kód je spravovaná nebo nespravovaná.</span><span class="sxs-lookup"><span data-stu-id="e73f3-113">Flags that indicate whether the code is managed or unmanaged.</span></span>|  
+|`miUnmanaged`|<span data-ttu-id="e73f3-114">Určuje, že implementace metody nespravované.</span><span class="sxs-lookup"><span data-stu-id="e73f3-114">Specifies that the method implementation is unmanaged.</span></span>|  
+|`miManaged`|<span data-ttu-id="e73f3-115">Určuje, že je spravovaná implementace metody.</span><span class="sxs-lookup"><span data-stu-id="e73f3-115">Specifies that the method implementation is managed.</span></span>|  
+|`miForwardRef`|<span data-ttu-id="e73f3-116">Určuje, že metoda je definována.</span><span class="sxs-lookup"><span data-stu-id="e73f3-116">Specifies that the method is defined.</span></span> <span data-ttu-id="e73f3-117">Tento příznak se používá především ve scénářích sloučení.</span><span class="sxs-lookup"><span data-stu-id="e73f3-117">This flag is used primarily in merge scenarios.</span></span>|  
+|`miPreserveSig`|<span data-ttu-id="e73f3-118">Určuje, že podpis metody nemůže být pozměnění pro konverzi HRESULT.</span><span class="sxs-lookup"><span data-stu-id="e73f3-118">Specifies that the method signature cannot be mangled for an HRESULT conversion.</span></span>|  
+|`miInternalCall`|<span data-ttu-id="e73f3-119">Modul common language runtime vyhrazené pro interní použití.</span><span class="sxs-lookup"><span data-stu-id="e73f3-119">Reserved for internal use by the common language runtime.</span></span>|  
+|`miSynchronized`|<span data-ttu-id="e73f3-120">Určuje, že metoda je jednovláknový prostřednictvím svého těla.</span><span class="sxs-lookup"><span data-stu-id="e73f3-120">Specifies that the method is single-threaded through its body.</span></span>|  
+|`miNoInlining`|<span data-ttu-id="e73f3-121">Určuje, že metoda nemůže být vložená.</span><span class="sxs-lookup"><span data-stu-id="e73f3-121">Specifies that the method cannot be inlined.</span></span>|  
+|`miAggressiveInlining`|<span data-ttu-id="e73f3-122">Určuje, že metoda by měla být vložit. Pokud je to možné.</span><span class="sxs-lookup"><span data-stu-id="e73f3-122">Specifies that the method should be inlined if possible.</span></span>|  
+|`miNoOptimization`|<span data-ttu-id="e73f3-123">Určuje, že metoda neměl optimalizovat.</span><span class="sxs-lookup"><span data-stu-id="e73f3-123">Specifies that the method should not be optimized.</span></span>|  
+|`miMaxMethodImplVal`|<span data-ttu-id="e73f3-124">Největší platná hodnota pro `CorMethodImpl`.</span><span class="sxs-lookup"><span data-stu-id="e73f3-124">The maximum valid value for a `CorMethodImpl`.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="234d4-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="234d4-125">Requirements</span></span>  
- <span data-ttu-id="234d4-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="234d4-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e73f3-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e73f3-125">Requirements</span></span>  
+ <span data-ttu-id="e73f3-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e73f3-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="234d4-127">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="234d4-127">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="e73f3-127">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="e73f3-127">**Header:** CorHdr.h</span></span>  
   
- **<span data-ttu-id="234d4-128">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="234d4-128">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="e73f3-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e73f3-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="234d4-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="234d4-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e73f3-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e73f3-129">See also</span></span>
 
-- [<span data-ttu-id="234d4-130">Výčty metadat</span><span class="sxs-lookup"><span data-stu-id="234d4-130">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="e73f3-130">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="e73f3-130">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3ff91a24dec7f8507989b701ea24b569c1670c89
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59109704"
 ---
-# <a name="imetadataimportgetpermissionsetprops-method"></a><span data-ttu-id="3c150-102">IMetaDataImport::GetPermissionSetProps – metoda</span><span class="sxs-lookup"><span data-stu-id="3c150-102">IMetaDataImport::GetPermissionSetProps Method</span></span>
-<span data-ttu-id="3c150-103">Získá metadata přidružená k <xref:System.Security.PermissionSet?displayProperty=nameWithType> reprezentována zadaný token oprávnění.</span><span class="sxs-lookup"><span data-stu-id="3c150-103">Gets the metadata associated with the <xref:System.Security.PermissionSet?displayProperty=nameWithType> represented by the specified Permission token.</span></span>  
+# <a name="imetadataimportgetpermissionsetprops-method"></a><span data-ttu-id="aa46d-102">IMetaDataImport::GetPermissionSetProps – metoda</span><span class="sxs-lookup"><span data-stu-id="aa46d-102">IMetaDataImport::GetPermissionSetProps Method</span></span>
+<span data-ttu-id="aa46d-103">Získá metadata přidružená k <xref:System.Security.PermissionSet?displayProperty=nameWithType> reprezentována zadaný token oprávnění.</span><span class="sxs-lookup"><span data-stu-id="aa46d-103">Gets the metadata associated with the <xref:System.Security.PermissionSet?displayProperty=nameWithType> represented by the specified Permission token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3c150-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3c150-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="aa46d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aa46d-104">Syntax</span></span>  
   
 ```  
 HRESULT GetPermissionSetProps (  
@@ -38,30 +38,30 @@ HRESULT GetPermissionSetProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3c150-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3c150-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="aa46d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="aa46d-105">Parameters</span></span>  
  `pm`  
- <span data-ttu-id="3c150-106">[in] Token metadat oprávnění, který představuje sadu k získání vlastností metadat pro oprávnění.</span><span class="sxs-lookup"><span data-stu-id="3c150-106">[in] The Permission metadata token that represents the permission set to get the metadata properties for.</span></span>  
+ <span data-ttu-id="aa46d-106">[in] Token metadat oprávnění, který představuje sadu k získání vlastností metadat pro oprávnění.</span><span class="sxs-lookup"><span data-stu-id="aa46d-106">[in] The Permission metadata token that represents the permission set to get the metadata properties for.</span></span>  
   
  `pdwAction`  
- <span data-ttu-id="3c150-107">[out] Ukazatel na sadu oprávnění.</span><span class="sxs-lookup"><span data-stu-id="3c150-107">[out] A pointer to the permission set.</span></span>  
+ <span data-ttu-id="aa46d-107">[out] Ukazatel na sadu oprávnění.</span><span class="sxs-lookup"><span data-stu-id="aa46d-107">[out] A pointer to the permission set.</span></span>  
   
  `ppvPermission`  
- <span data-ttu-id="3c150-108">[out] Ukazatel na podpis binárního metadata sady oprávnění.</span><span class="sxs-lookup"><span data-stu-id="3c150-108">[out] A pointer to the binary metadata signature of the permission set.</span></span>  
+ <span data-ttu-id="aa46d-108">[out] Ukazatel na podpis binárního metadata sady oprávnění.</span><span class="sxs-lookup"><span data-stu-id="aa46d-108">[out] A pointer to the binary metadata signature of the permission set.</span></span>  
   
  `pcbPermission`  
- <span data-ttu-id="3c150-109">[out] Velikost v bajtech `ppvPermission`.</span><span class="sxs-lookup"><span data-stu-id="3c150-109">[out] The size in bytes of `ppvPermission`.</span></span>  
+ <span data-ttu-id="aa46d-109">[out] Velikost v bajtech `ppvPermission`.</span><span class="sxs-lookup"><span data-stu-id="aa46d-109">[out] The size in bytes of `ppvPermission`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3c150-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3c150-110">Requirements</span></span>  
- <span data-ttu-id="3c150-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3c150-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="aa46d-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aa46d-110">Requirements</span></span>  
+ <span data-ttu-id="aa46d-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aa46d-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3c150-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="3c150-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="aa46d-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="aa46d-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="3c150-113">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3c150-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="aa46d-113">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="aa46d-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="3c150-114">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3c150-114">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="aa46d-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="aa46d-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3c150-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3c150-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aa46d-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aa46d-115">See also</span></span>
 
 - <xref:System.Security.PermissionSet>
-- [<span data-ttu-id="3c150-116">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3c150-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="3c150-117">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3c150-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="aa46d-116">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aa46d-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="aa46d-117">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aa46d-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
