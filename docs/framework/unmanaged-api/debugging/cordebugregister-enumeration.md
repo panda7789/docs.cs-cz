@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fab5225225d4e4a4e07961b0f967cff2c1b07321
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59168607"
 ---
-# <a name="cordebugregister-enumeration"></a><span data-ttu-id="f85b9-102">CorDebugRegister – výčet</span><span class="sxs-lookup"><span data-stu-id="f85b9-102">CorDebugRegister Enumeration</span></span>
-<span data-ttu-id="f85b9-103">Určuje registrů spojené s danou procesor architektury.</span><span class="sxs-lookup"><span data-stu-id="f85b9-103">Specifies the registers associated with a given processor architecture.</span></span>  
+# <a name="cordebugregister-enumeration"></a><span data-ttu-id="20bf5-102">CorDebugRegister – výčet</span><span class="sxs-lookup"><span data-stu-id="20bf5-102">CorDebugRegister Enumeration</span></span>
+<span data-ttu-id="20bf5-103">Určuje registrů spojené s danou procesor architektury.</span><span class="sxs-lookup"><span data-stu-id="20bf5-103">Specifies the registers associated with a given processor architecture.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f85b9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f85b9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="20bf5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20bf5-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugRegister {  
@@ -114,101 +114,101 @@ typedef enum CorDebugRegister {
 } CorDebugRegister;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="f85b9-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f85b9-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="20bf5-105">Členové</span><span class="sxs-lookup"><span data-stu-id="20bf5-105">Members</span></span>  
   
-|<span data-ttu-id="f85b9-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f85b9-106">Member</span></span>|<span data-ttu-id="f85b9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f85b9-107">Description</span></span>|  
+|<span data-ttu-id="20bf5-106">Člen</span><span class="sxs-lookup"><span data-stu-id="20bf5-106">Member</span></span>|<span data-ttu-id="20bf5-107">Popis</span><span class="sxs-lookup"><span data-stu-id="20bf5-107">Description</span></span>|  
 |------------|-----------------|  
-|`REGISTER_INSTRUCTION_POINTER`|<span data-ttu-id="f85b9-108">Ukazatele na instrukci zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="f85b9-108">An instruction pointer register on any processor.</span></span>|  
-|`REGISTER_STACK_POINTER`|<span data-ttu-id="f85b9-109">Ukazatel zásobníku zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="f85b9-109">A stack pointer register on any processor.</span></span>|  
-|`REGISTER_FRAME_POINTER`|<span data-ttu-id="f85b9-110">Ukazatel na rámec zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="f85b9-110">A frame pointer register on any processor.</span></span>|  
-|`REGISTER_X86_EIP`|<span data-ttu-id="f85b9-111">Instrukce registr ukazatelů na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-111">The instruction pointer register on the x86 processor.</span></span>|  
-|`REGISTER_X86_ESP`|<span data-ttu-id="f85b9-112">Zásobník registr ukazatelů na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-112">The stack pointer register on the x86 processor.</span></span>|  
-|`REGISTER_X86_EBP`|<span data-ttu-id="f85b9-113">Registr základního ukazatele na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-113">The base pointer register on the x86 processor.</span></span>|  
-|`REGISTER_X86_EAX`|<span data-ttu-id="f85b9-114">A data zaregistrujte na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-114">The A data register on the x86 processor.</span></span>|  
-|`REGISTER_X86_ECX`|<span data-ttu-id="f85b9-115">Registr dat C na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-115">The C data register on the x86 processor.</span></span>|  
-|`REGISTER_X86_EDX`|<span data-ttu-id="f85b9-116">D data registrovat x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-116">The D data register on the x86 processor.</span></span>|  
-|`REGISTER_X86_EBX`|<span data-ttu-id="f85b9-117">Registr B dat na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-117">The B data register on the x86 processor.</span></span>|  
-|`REGISTER_X86_ESI`|<span data-ttu-id="f85b9-118">Registr indexu zdroje na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-118">The source index register on the x86 processor.</span></span>|  
-|`REGISTER_X86_EDI`|<span data-ttu-id="f85b9-119">Určení registr indexu na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-119">The destination index register on the x86 processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_0`|<span data-ttu-id="f85b9-120">Procesor registru 0 na s plovoucí desetinnou čárkou x86 (FP) zásobníku.</span><span class="sxs-lookup"><span data-stu-id="f85b9-120">The stack register 0 on the x86 floating-point (FP) processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_1`|<span data-ttu-id="f85b9-121">#1 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-121">The #1 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_2`|<span data-ttu-id="f85b9-122">#2 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-122">The #2 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_3`|<span data-ttu-id="f85b9-123">#3 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-123">The #3 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_4`|<span data-ttu-id="f85b9-124">#4 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-124">The #4 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_5`|<span data-ttu-id="f85b9-125">#5 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-125">The #5 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_6`|<span data-ttu-id="f85b9-126">#6 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-126">The #6 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_X86_FPSTACK_7`|<span data-ttu-id="f85b9-127">#7 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="f85b9-127">The #7 stack register on the x86 FP processor.</span></span>|  
-|`REGISTER_AMD64_RIP`|<span data-ttu-id="f85b9-128">Ukazatele na instrukci zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-128">The instruction pointer register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RSP`|<span data-ttu-id="f85b9-129">Ukazatel zásobníku zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-129">The stack pointer register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RBP`|<span data-ttu-id="f85b9-130">Registr základního ukazatele na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-130">The base pointer register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RAX`|<span data-ttu-id="f85b9-131">A data zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-131">The A data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RCX`|<span data-ttu-id="f85b9-132">C data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-132">The C data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RDX`|<span data-ttu-id="f85b9-133">D data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-133">The D data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RBX`|<span data-ttu-id="f85b9-134">B data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-134">The B data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RSI`|<span data-ttu-id="f85b9-135">Index zdroje zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-135">The source index register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_RDI`|<span data-ttu-id="f85b9-136">Cílový index zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-136">The destination index register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R8`|<span data-ttu-id="f85b9-137">Data #8 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-137">The #8 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R9`|<span data-ttu-id="f85b9-138">Data #9 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-138">The #9 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R10`|<span data-ttu-id="f85b9-139">Data #10 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-139">The #10 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R11`|<span data-ttu-id="f85b9-140">Data #11 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-140">The #11 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R12`|<span data-ttu-id="f85b9-141">Data #12 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-141">The #12 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R13`|<span data-ttu-id="f85b9-142">Data #13 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-142">The #13 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R14`|<span data-ttu-id="f85b9-143">Data #14 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-143">The #14 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_R15`|<span data-ttu-id="f85b9-144">Data #15 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-144">The #15 data register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM0`|<span data-ttu-id="f85b9-145">Multimediální #0 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-145">The #0 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM1`|<span data-ttu-id="f85b9-146">Multimediální #1 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-146">The #1 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM2`|<span data-ttu-id="f85b9-147">Multimediální #2 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-147">The #2 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM3`|<span data-ttu-id="f85b9-148">Multimediální #3 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-148">The #3 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM4`|<span data-ttu-id="f85b9-149">Multimediální #4 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-149">The #4 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM5`|<span data-ttu-id="f85b9-150">Multimediální #5 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-150">The #5 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM6`|<span data-ttu-id="f85b9-151">Multimediální #6 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-151">The #6 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM7`|<span data-ttu-id="f85b9-152">Multimediální #7 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-152">The #7 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM8`|<span data-ttu-id="f85b9-153">Multimediální #8 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-153">The #8 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM9`|<span data-ttu-id="f85b9-154">Multimediální #9 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-154">The #9 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM10`|<span data-ttu-id="f85b9-155">Multimediální #10 se zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-155">The #10 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM11`|<span data-ttu-id="f85b9-156">Multimediální #11 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-156">The #11 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM12`|<span data-ttu-id="f85b9-157">Multimediální #12 se zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-157">The #12 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM13`|<span data-ttu-id="f85b9-158">Multimediální #13 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-158">The #13 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM14`|<span data-ttu-id="f85b9-159">Multimediální #14 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-159">The #14 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_AMD64_XMM15`|<span data-ttu-id="f85b9-160">Multimediální #15 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-160">The #15 multimedia register on the AMD64 processor.</span></span>|  
-|`REGISTER_IA64_BSP`|<span data-ttu-id="f85b9-161">Ukazatel zásobníku zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-161">The stack pointer register on the IA-64 processor.</span></span>|  
-|`REGISTER_IA64_R0`|<span data-ttu-id="f85b9-162">Data #0 zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-162">The #0 data register on the IA-64 processor.</span></span>|  
-|`REGISTER_IA64_F0`|<span data-ttu-id="f85b9-163">Data FP #0 zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-163">The #0 FP data register on the IA-64 processor.</span></span>|  
-|`REGISTER_ARM_PC`|<span data-ttu-id="f85b9-164">Čítač programu registrace (R15) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-164">The program counter register (R15) on the ARM processor.</span></span>|  
-|`REGISTER_ARM_SP`|<span data-ttu-id="f85b9-165">Ukazatel zásobníku zaregistrovat na procesoru ARM (R13).</span><span class="sxs-lookup"><span data-stu-id="f85b9-165">The stack pointer register (R13) on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R0`|<span data-ttu-id="f85b9-166">Data zaregistrovat R0 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-166">Data register R0 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R1`|<span data-ttu-id="f85b9-167">R1 registr dat na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-167">Data register R1 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R2`|<span data-ttu-id="f85b9-168">Data zaregistrovat R2 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-168">Data register R2 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R3`|<span data-ttu-id="f85b9-169">Data zaregistrovat R3 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-169">Data register R3 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R4`|<span data-ttu-id="f85b9-170">Zaregistrujte R4 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-170">Register R4 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R5`|<span data-ttu-id="f85b9-171">Zaregistrujte R5 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-171">Register R5 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R6`|<span data-ttu-id="f85b9-172">Zaregistrujte R6 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-172">Register R6 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R7`|<span data-ttu-id="f85b9-173">Zaregistrujte R7 (THUMB ukazatel na rámec) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-173">Register R7 (the THUMB frame pointer) on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R8`|<span data-ttu-id="f85b9-174">Zaregistrujte R8 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-174">Register R8 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R9`|<span data-ttu-id="f85b9-175">Zaregistrujte R9 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-175">Register R9 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R10`|<span data-ttu-id="f85b9-176">Zaregistrujte R10 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-176">Register R10 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R11`|<span data-ttu-id="f85b9-177">Ukazatele na rámce u procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-177">The frame pointer on the ARM processor.</span></span>|  
-|`REGISTER_ARM_R12`|<span data-ttu-id="f85b9-178">Zaregistrujte r 12 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-178">Register R12 on the ARM processor.</span></span>|  
-|`REGISTER_ARM_LR`|<span data-ttu-id="f85b9-179">Odkaz na registraci (R14) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="f85b9-179">The link register (R14) on the ARM processor.</span></span>|  
+|`REGISTER_INSTRUCTION_POINTER`|<span data-ttu-id="20bf5-108">Ukazatele na instrukci zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="20bf5-108">An instruction pointer register on any processor.</span></span>|  
+|`REGISTER_STACK_POINTER`|<span data-ttu-id="20bf5-109">Ukazatel zásobníku zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="20bf5-109">A stack pointer register on any processor.</span></span>|  
+|`REGISTER_FRAME_POINTER`|<span data-ttu-id="20bf5-110">Ukazatel na rámec zaregistrovat na jakýkoli procesor.</span><span class="sxs-lookup"><span data-stu-id="20bf5-110">A frame pointer register on any processor.</span></span>|  
+|`REGISTER_X86_EIP`|<span data-ttu-id="20bf5-111">Instrukce registr ukazatelů na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-111">The instruction pointer register on the x86 processor.</span></span>|  
+|`REGISTER_X86_ESP`|<span data-ttu-id="20bf5-112">Zásobník registr ukazatelů na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-112">The stack pointer register on the x86 processor.</span></span>|  
+|`REGISTER_X86_EBP`|<span data-ttu-id="20bf5-113">Registr základního ukazatele na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-113">The base pointer register on the x86 processor.</span></span>|  
+|`REGISTER_X86_EAX`|<span data-ttu-id="20bf5-114">A data zaregistrujte na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-114">The A data register on the x86 processor.</span></span>|  
+|`REGISTER_X86_ECX`|<span data-ttu-id="20bf5-115">Registr dat C na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-115">The C data register on the x86 processor.</span></span>|  
+|`REGISTER_X86_EDX`|<span data-ttu-id="20bf5-116">D data registrovat x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-116">The D data register on the x86 processor.</span></span>|  
+|`REGISTER_X86_EBX`|<span data-ttu-id="20bf5-117">Registr B dat na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-117">The B data register on the x86 processor.</span></span>|  
+|`REGISTER_X86_ESI`|<span data-ttu-id="20bf5-118">Registr indexu zdroje na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-118">The source index register on the x86 processor.</span></span>|  
+|`REGISTER_X86_EDI`|<span data-ttu-id="20bf5-119">Určení registr indexu na x86 procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-119">The destination index register on the x86 processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_0`|<span data-ttu-id="20bf5-120">Procesor registru 0 na s plovoucí desetinnou čárkou x86 (FP) zásobníku.</span><span class="sxs-lookup"><span data-stu-id="20bf5-120">The stack register 0 on the x86 floating-point (FP) processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_1`|<span data-ttu-id="20bf5-121">#1 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-121">The #1 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_2`|<span data-ttu-id="20bf5-122">#2 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-122">The #2 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_3`|<span data-ttu-id="20bf5-123">#3 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-123">The #3 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_4`|<span data-ttu-id="20bf5-124">#4 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-124">The #4 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_5`|<span data-ttu-id="20bf5-125">#5 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-125">The #5 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_6`|<span data-ttu-id="20bf5-126">#6 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-126">The #6 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_X86_FPSTACK_7`|<span data-ttu-id="20bf5-127">#7 zásobníku zaregistrovat na x86 FP procesoru.</span><span class="sxs-lookup"><span data-stu-id="20bf5-127">The #7 stack register on the x86 FP processor.</span></span>|  
+|`REGISTER_AMD64_RIP`|<span data-ttu-id="20bf5-128">Ukazatele na instrukci zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-128">The instruction pointer register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RSP`|<span data-ttu-id="20bf5-129">Ukazatel zásobníku zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-129">The stack pointer register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RBP`|<span data-ttu-id="20bf5-130">Registr základního ukazatele na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-130">The base pointer register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RAX`|<span data-ttu-id="20bf5-131">A data zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-131">The A data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RCX`|<span data-ttu-id="20bf5-132">C data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-132">The C data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RDX`|<span data-ttu-id="20bf5-133">D data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-133">The D data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RBX`|<span data-ttu-id="20bf5-134">B data zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-134">The B data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RSI`|<span data-ttu-id="20bf5-135">Index zdroje zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-135">The source index register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_RDI`|<span data-ttu-id="20bf5-136">Cílový index zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-136">The destination index register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R8`|<span data-ttu-id="20bf5-137">Data #8 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-137">The #8 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R9`|<span data-ttu-id="20bf5-138">Data #9 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-138">The #9 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R10`|<span data-ttu-id="20bf5-139">Data #10 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-139">The #10 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R11`|<span data-ttu-id="20bf5-140">Data #11 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-140">The #11 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R12`|<span data-ttu-id="20bf5-141">Data #12 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-141">The #12 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R13`|<span data-ttu-id="20bf5-142">Data #13 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-142">The #13 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R14`|<span data-ttu-id="20bf5-143">Data #14 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-143">The #14 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_R15`|<span data-ttu-id="20bf5-144">Data #15 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-144">The #15 data register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM0`|<span data-ttu-id="20bf5-145">Multimediální #0 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-145">The #0 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM1`|<span data-ttu-id="20bf5-146">Multimediální #1 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-146">The #1 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM2`|<span data-ttu-id="20bf5-147">Multimediální #2 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-147">The #2 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM3`|<span data-ttu-id="20bf5-148">Multimediální #3 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-148">The #3 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM4`|<span data-ttu-id="20bf5-149">Multimediální #4 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-149">The #4 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM5`|<span data-ttu-id="20bf5-150">Multimediální #5 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-150">The #5 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM6`|<span data-ttu-id="20bf5-151">Multimediální #6 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-151">The #6 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM7`|<span data-ttu-id="20bf5-152">Multimediální #7 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-152">The #7 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM8`|<span data-ttu-id="20bf5-153">Multimediální #8 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-153">The #8 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM9`|<span data-ttu-id="20bf5-154">Multimediální #9 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-154">The #9 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM10`|<span data-ttu-id="20bf5-155">Multimediální #10 se zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-155">The #10 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM11`|<span data-ttu-id="20bf5-156">Multimediální #11 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-156">The #11 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM12`|<span data-ttu-id="20bf5-157">Multimediální #12 se zaregistrujte na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-157">The #12 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM13`|<span data-ttu-id="20bf5-158">Multimediální #13 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-158">The #13 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM14`|<span data-ttu-id="20bf5-159">Multimediální #14 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-159">The #14 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_AMD64_XMM15`|<span data-ttu-id="20bf5-160">Multimediální #15 zaregistrovat na procesor AMD64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-160">The #15 multimedia register on the AMD64 processor.</span></span>|  
+|`REGISTER_IA64_BSP`|<span data-ttu-id="20bf5-161">Ukazatel zásobníku zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-161">The stack pointer register on the IA-64 processor.</span></span>|  
+|`REGISTER_IA64_R0`|<span data-ttu-id="20bf5-162">Data #0 zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-162">The #0 data register on the IA-64 processor.</span></span>|  
+|`REGISTER_IA64_F0`|<span data-ttu-id="20bf5-163">Data FP #0 zaregistrovat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-163">The #0 FP data register on the IA-64 processor.</span></span>|  
+|`REGISTER_ARM_PC`|<span data-ttu-id="20bf5-164">Čítač programu registrace (R15) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-164">The program counter register (R15) on the ARM processor.</span></span>|  
+|`REGISTER_ARM_SP`|<span data-ttu-id="20bf5-165">Ukazatel zásobníku zaregistrovat na procesoru ARM (R13).</span><span class="sxs-lookup"><span data-stu-id="20bf5-165">The stack pointer register (R13) on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R0`|<span data-ttu-id="20bf5-166">Data zaregistrovat R0 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-166">Data register R0 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R1`|<span data-ttu-id="20bf5-167">R1 registr dat na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-167">Data register R1 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R2`|<span data-ttu-id="20bf5-168">Data zaregistrovat R2 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-168">Data register R2 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R3`|<span data-ttu-id="20bf5-169">Data zaregistrovat R3 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-169">Data register R3 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R4`|<span data-ttu-id="20bf5-170">Zaregistrujte R4 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-170">Register R4 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R5`|<span data-ttu-id="20bf5-171">Zaregistrujte R5 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-171">Register R5 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R6`|<span data-ttu-id="20bf5-172">Zaregistrujte R6 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-172">Register R6 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R7`|<span data-ttu-id="20bf5-173">Zaregistrujte R7 (THUMB ukazatel na rámec) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-173">Register R7 (the THUMB frame pointer) on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R8`|<span data-ttu-id="20bf5-174">Zaregistrujte R8 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-174">Register R8 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R9`|<span data-ttu-id="20bf5-175">Zaregistrujte R9 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-175">Register R9 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R10`|<span data-ttu-id="20bf5-176">Zaregistrujte R10 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-176">Register R10 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R11`|<span data-ttu-id="20bf5-177">Ukazatele na rámce u procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-177">The frame pointer on the ARM processor.</span></span>|  
+|`REGISTER_ARM_R12`|<span data-ttu-id="20bf5-178">Zaregistrujte r 12 na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-178">Register R12 on the ARM processor.</span></span>|  
+|`REGISTER_ARM_LR`|<span data-ttu-id="20bf5-179">Odkaz na registraci (R14) na procesoru ARM.</span><span class="sxs-lookup"><span data-stu-id="20bf5-179">The link register (R14) on the ARM processor.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f85b9-180">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f85b9-180">Remarks</span></span>  
- <span data-ttu-id="f85b9-181">Existují 128 pro obecné účely datových registrů a 128 s plovoucí desetinnou čárkou datových registrů na IA-64 procesorů, ale pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0` jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="f85b9-181">There are 128 general-purpose data registers and 128 floating-point data registers on the IA-64 processor, but only values `REGISTER_IA64_R0` and `REGISTER_IA64_F0` are provided.</span></span> <span data-ttu-id="f85b9-182">Ostatní hodnoty můžou být stanoven následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="f85b9-182">The other values can be determined as follows:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="20bf5-180">Poznámky</span><span class="sxs-lookup"><span data-stu-id="20bf5-180">Remarks</span></span>  
+ <span data-ttu-id="20bf5-181">Existují 128 pro obecné účely datových registrů a 128 s plovoucí desetinnou čárkou datových registrů na IA-64 procesorů, ale pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0` jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="20bf5-181">There are 128 general-purpose data registers and 128 floating-point data registers on the IA-64 processor, but only values `REGISTER_IA64_R0` and `REGISTER_IA64_F0` are provided.</span></span> <span data-ttu-id="20bf5-182">Ostatní hodnoty můžou být stanoven následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="20bf5-182">The other values can be determined as follows:</span></span>  
   
--   <span data-ttu-id="f85b9-183">Přidat registr číslo, které má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají registr #1 dat prostřednictvím #127 data registru na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-183">Add the register number to `REGISTER_IA64_R0` for values `REGISTER_IA64_R1` through `REGISTER_IA64_R127`, which correspond to the #1 data register through the #127 data register on the IA-64 processor.</span></span>  
+-   <span data-ttu-id="20bf5-183">Přidat registr číslo, které má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají registr #1 dat prostřednictvím #127 data registru na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-183">Add the register number to `REGISTER_IA64_R0` for values `REGISTER_IA64_R1` through `REGISTER_IA64_R127`, which correspond to the #1 data register through the #127 data register on the IA-64 processor.</span></span>  
   
--   <span data-ttu-id="f85b9-184">Přidat registr číslo, které má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají data registr FP #1 až #127 registr FP dat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="f85b9-184">Add the register number to `REGISTER_IA64_F0` for values `REGISTER_IA64_F1` through `REGISTER_IA64_F127`, which correspond to the #1 FP data register through the #127 FP data register on the IA-64 processor.</span></span>  
+-   <span data-ttu-id="20bf5-184">Přidat registr číslo, které má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají data registr FP #1 až #127 registr FP dat na procesor IA-64.</span><span class="sxs-lookup"><span data-stu-id="20bf5-184">Add the register number to `REGISTER_IA64_F0` for values `REGISTER_IA64_F1` through `REGISTER_IA64_F127`, which correspond to the #1 FP data register through the #127 FP data register on the IA-64 processor.</span></span>  
   
- <span data-ttu-id="f85b9-185">Například pokud je třeba zadat registr #83 dat na procesor IA-64, použijte `REGISTER_IA64_R0` + 83.</span><span class="sxs-lookup"><span data-stu-id="f85b9-185">For example, if you need to specify the #83 data register on the IA-64 processor, use `REGISTER_IA64_R0` + 83.</span></span>  
+ <span data-ttu-id="20bf5-185">Například pokud je třeba zadat registr #83 dat na procesor IA-64, použijte `REGISTER_IA64_R0` + 83.</span><span class="sxs-lookup"><span data-stu-id="20bf5-185">For example, if you need to specify the #83 data register on the IA-64 processor, use `REGISTER_IA64_R0` + 83.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f85b9-186">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f85b9-186">Requirements</span></span>  
- <span data-ttu-id="f85b9-187">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f85b9-187">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="20bf5-186">Požadavky</span><span class="sxs-lookup"><span data-stu-id="20bf5-186">Requirements</span></span>  
+ <span data-ttu-id="20bf5-187">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="20bf5-187">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f85b9-188">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f85b9-188">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="20bf5-188">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="20bf5-188">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f85b9-189">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f85b9-189">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="20bf5-189">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="20bf5-189">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="f85b9-190">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f85b9-190">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="20bf5-190">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="20bf5-190">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f85b9-191">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f85b9-191">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20bf5-191">Viz také:</span><span class="sxs-lookup"><span data-stu-id="20bf5-191">See also</span></span>
 
-- [<span data-ttu-id="f85b9-192">Ladění výčtů</span><span class="sxs-lookup"><span data-stu-id="f85b9-192">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [<span data-ttu-id="20bf5-192">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="20bf5-192">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

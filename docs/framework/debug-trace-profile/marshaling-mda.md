@@ -10,28 +10,28 @@ ms.assetid: 5433b1f8-b0e5-40c9-a49a-0e5bd213363d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 463c8e42e76a61eb0820c1af72c20d004161ad25
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59184467"
 ---
-# <a name="marshaling-mda"></a><span data-ttu-id="91116-102">zařazování MDA</span><span class="sxs-lookup"><span data-stu-id="91116-102">marshaling MDA</span></span>
-<span data-ttu-id="91116-103">`marshaling` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR nastaví zařazovací informace pro parametr metody nebo pole struktury.</span><span class="sxs-lookup"><span data-stu-id="91116-103">The `marshaling` managed debugging assistant (MDA) is activated when the CLR sets up marshaling information for a method parameter or a field of a structure.</span></span> <span data-ttu-id="91116-104">Toto MDA nefunguje pro sestavení s kompilací JIT.</span><span class="sxs-lookup"><span data-stu-id="91116-104">This MDA does not work for JIT-compiled assemblies.</span></span>  
+# <a name="marshaling-mda"></a><span data-ttu-id="0e197-102">zařazování MDA</span><span class="sxs-lookup"><span data-stu-id="0e197-102">marshaling MDA</span></span>
+<span data-ttu-id="0e197-103">`marshaling` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul CLR nastaví zařazovací informace pro parametr metody nebo pole struktury.</span><span class="sxs-lookup"><span data-stu-id="0e197-103">The `marshaling` managed debugging assistant (MDA) is activated when the CLR sets up marshaling information for a method parameter or a field of a structure.</span></span> <span data-ttu-id="0e197-104">Toto MDA nefunguje pro sestavení s kompilací JIT.</span><span class="sxs-lookup"><span data-stu-id="0e197-104">This MDA does not work for JIT-compiled assemblies.</span></span>  
   
-## <a name="effect-on-the-runtime"></a><span data-ttu-id="91116-105">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="91116-105">Effect on the Runtime</span></span>  
- <span data-ttu-id="91116-106">Toto MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="91116-106">This MDA has no effect on the CLR.</span></span>  
+## <a name="effect-on-the-runtime"></a><span data-ttu-id="0e197-105">Vliv na modul Runtime</span><span class="sxs-lookup"><span data-stu-id="0e197-105">Effect on the Runtime</span></span>  
+ <span data-ttu-id="0e197-106">Toto MDA nemá žádný vliv na CLR.</span><span class="sxs-lookup"><span data-stu-id="0e197-106">This MDA has no effect on the CLR.</span></span>  
   
-## <a name="output"></a><span data-ttu-id="91116-107">Výstup</span><span class="sxs-lookup"><span data-stu-id="91116-107">Output</span></span>  
- <span data-ttu-id="91116-108">MDA zobrazí typ parametru nebo pole v kontextech spravované a nespravované a struktury nebo metody obsahující typ.</span><span class="sxs-lookup"><span data-stu-id="91116-108">The MDA displays the type of the parameter or field in the managed and unmanaged contexts, and the structure or method containing the type.</span></span>  <span data-ttu-id="91116-109">Následuje příklad výstupu pro pole:</span><span class="sxs-lookup"><span data-stu-id="91116-109">The following is an example of the output for a field:</span></span>  
+## <a name="output"></a><span data-ttu-id="0e197-107">Výstup</span><span class="sxs-lookup"><span data-stu-id="0e197-107">Output</span></span>  
+ <span data-ttu-id="0e197-108">MDA zobrazí typ parametru nebo pole v kontextech spravované a nespravované a struktury nebo metody obsahující typ.</span><span class="sxs-lookup"><span data-stu-id="0e197-108">The MDA displays the type of the parameter or field in the managed and unmanaged contexts, and the structure or method containing the type.</span></span>  <span data-ttu-id="0e197-109">Následuje příklad výstupu pro pole:</span><span class="sxs-lookup"><span data-stu-id="0e197-109">The following is an example of the output for a field:</span></span>  
   
 ```  
 Marshaling from 'Char' to 'ANSI char'  
 name="assembly!Namespace.Class::myChar  
 ```  
   
-## <a name="configuration"></a><span data-ttu-id="91116-110">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="91116-110">Configuration</span></span>  
- <span data-ttu-id="91116-111">Konfigurace MDA vám umožní filtrovat ohlášené zařazovací informace na základě zahrnutých pole nebo metoda názvů.</span><span class="sxs-lookup"><span data-stu-id="91116-111">The MDA configuration allows you to filter the reported marshaling information based on the involved field or method names.</span></span>  <span data-ttu-id="91116-112">Následující příklad ukazuje použití `methodFilter`, `fieldFilter`, a `match` prvky zadat filtry.</span><span class="sxs-lookup"><span data-stu-id="91116-112">The following example shows the use of the `methodFilter`, `fieldFilter`, and `match` elements to specify filters.</span></span>  <span data-ttu-id="91116-113">Nastavení `name` atribut na hvězdičku (\*) budou odpovídat všechno.</span><span class="sxs-lookup"><span data-stu-id="91116-113">Setting the `name` attribute to an asterisk (\*) will match everything.</span></span>  
+## <a name="configuration"></a><span data-ttu-id="0e197-110">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="0e197-110">Configuration</span></span>  
+ <span data-ttu-id="0e197-111">Konfigurace MDA vám umožní filtrovat ohlášené zařazovací informace na základě zahrnutých pole nebo metoda názvů.</span><span class="sxs-lookup"><span data-stu-id="0e197-111">The MDA configuration allows you to filter the reported marshaling information based on the involved field or method names.</span></span>  <span data-ttu-id="0e197-112">Následující příklad ukazuje použití `methodFilter`, `fieldFilter`, a `match` prvky zadat filtry.</span><span class="sxs-lookup"><span data-stu-id="0e197-112">The following example shows the use of the `methodFilter`, `fieldFilter`, and `match` elements to specify filters.</span></span>  <span data-ttu-id="0e197-113">Nastavení `name` atribut na hvězdičku (\*) budou odpovídat všechno.</span><span class="sxs-lookup"><span data-stu-id="0e197-113">Setting the `name` attribute to an asterisk (\*) will match everything.</span></span>  
   
 ```xml  
 <mdaConfig>  
@@ -50,8 +50,8 @@ name="assembly!Namespace.Class::myChar
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="91116-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91116-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e197-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e197-114">See also</span></span>
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
-- [<span data-ttu-id="91116-115">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="91116-115">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [<span data-ttu-id="91116-116">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="91116-116">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)
+- [<span data-ttu-id="0e197-115">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="0e197-115">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="0e197-116">Zařazování spolupráce</span><span class="sxs-lookup"><span data-stu-id="0e197-116">Interop Marshaling</span></span>](../../../docs/framework/interop/interop-marshaling.md)

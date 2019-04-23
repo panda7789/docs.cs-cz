@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4ebd4e9beca315ef8284c915800afec6bdb78c78
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59183232"
 ---
-# <a name="imetadataemitdefinenestedtype-method"></a><span data-ttu-id="774ad-102">IMetaDataEmit::DefineNestedType – metoda</span><span class="sxs-lookup"><span data-stu-id="774ad-102">IMetaDataEmit::DefineNestedType Method</span></span>
-<span data-ttu-id="774ad-103">Vytvoří metadata podpis definici typu, vrátí `mdTypeDef` token pro daný typ a určí, že definovaný typ je členem typu odkazuje `tdEncloser` parametru.</span><span class="sxs-lookup"><span data-stu-id="774ad-103">Creates the metadata signature of a type definition, returns an `mdTypeDef` token for that type, and specifies that the defined type is a member of the type referenced by the `tdEncloser` parameter.</span></span>  
+# <a name="imetadataemitdefinenestedtype-method"></a><span data-ttu-id="9b20b-102">IMetaDataEmit::DefineNestedType – metoda</span><span class="sxs-lookup"><span data-stu-id="9b20b-102">IMetaDataEmit::DefineNestedType Method</span></span>
+<span data-ttu-id="9b20b-103">Vytvoří metadata podpis definici typu, vrátí `mdTypeDef` token pro daný typ a určí, že definovaný typ je členem typu odkazuje `tdEncloser` parametru.</span><span class="sxs-lookup"><span data-stu-id="9b20b-103">Creates the metadata signature of a type definition, returns an `mdTypeDef` token for that type, and specifies that the defined type is a member of the type referenced by the `tdEncloser` parameter.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="774ad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="774ad-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b20b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b20b-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineNestedType (   
@@ -40,35 +40,35 @@ HRESULT DefineNestedType (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="774ad-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="774ad-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9b20b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9b20b-105">Parameters</span></span>  
  `szTypeDef`  
- <span data-ttu-id="774ad-106">[in] Název typu v kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="774ad-106">[in] The name of the type in Unicode.</span></span>  
+ <span data-ttu-id="9b20b-106">[in] Název typu v kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="9b20b-106">[in] The name of the type in Unicode.</span></span>  
   
  `dwTypeDefFlags`  
- <span data-ttu-id="774ad-107">[in] `TypeDef` atributy.</span><span class="sxs-lookup"><span data-stu-id="774ad-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="774ad-108">To je bitová maska z `CorTypeAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="774ad-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
+ <span data-ttu-id="9b20b-107">[in] `TypeDef` atributy.</span><span class="sxs-lookup"><span data-stu-id="9b20b-107">[in] `TypeDef` attributes.</span></span> <span data-ttu-id="9b20b-108">To je bitová maska z `CorTypeAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="9b20b-108">This is a bitmask of `CorTypeAttr` values.</span></span>  
   
  `tkExtends`  
- <span data-ttu-id="774ad-109">[in] Token základní třídy.</span><span class="sxs-lookup"><span data-stu-id="774ad-109">[in] The token of the base class.</span></span> <span data-ttu-id="774ad-110">Je to `mdTypeDef` nebo `mdTypeRef` token.</span><span class="sxs-lookup"><span data-stu-id="774ad-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
+ <span data-ttu-id="9b20b-109">[in] Token základní třídy.</span><span class="sxs-lookup"><span data-stu-id="9b20b-109">[in] The token of the base class.</span></span> <span data-ttu-id="9b20b-110">Je to `mdTypeDef` nebo `mdTypeRef` token.</span><span class="sxs-lookup"><span data-stu-id="9b20b-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
   
- `rtkImplements`<span data-ttu-id="774ad-111">[]</span><span class="sxs-lookup"><span data-stu-id="774ad-111">[]</span></span>  
- <span data-ttu-id="774ad-112">[in] Pole tokeny, které určují, které tuto třídu nebo rozhraní implementuje rozhraní.</span><span class="sxs-lookup"><span data-stu-id="774ad-112">[in] An array of tokens that specify the interfaces that this class or interface implements.</span></span>  
+ <span data-ttu-id="9b20b-111">`rtkImplements`[]</span><span class="sxs-lookup"><span data-stu-id="9b20b-111">`rtkImplements`[]</span></span>  
+ <span data-ttu-id="9b20b-112">[in] Pole tokeny, které určují, které tuto třídu nebo rozhraní implementuje rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9b20b-112">[in] An array of tokens that specify the interfaces that this class or interface implements.</span></span>  
   
  `tdEncloser`  
- <span data-ttu-id="774ad-113">[in] Token nadřazeného typu.</span><span class="sxs-lookup"><span data-stu-id="774ad-113">[in] The token of the enclosing type.</span></span> <span data-ttu-id="774ad-114">Poslední element pole musí být `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="774ad-114">The last element of the array must be `mdTokenNil`.</span></span>  
+ <span data-ttu-id="9b20b-113">[in] Token nadřazeného typu.</span><span class="sxs-lookup"><span data-stu-id="9b20b-113">[in] The token of the enclosing type.</span></span> <span data-ttu-id="9b20b-114">Poslední element pole musí být `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="9b20b-114">The last element of the array must be `mdTokenNil`.</span></span>  
   
  `ptd`  
- <span data-ttu-id="774ad-115">[out] `mdTypeDef` Token přiřazený.</span><span class="sxs-lookup"><span data-stu-id="774ad-115">[out] The `mdTypeDef` token assigned.</span></span>  
+ <span data-ttu-id="9b20b-115">[out] `mdTypeDef` Token přiřazený.</span><span class="sxs-lookup"><span data-stu-id="9b20b-115">[out] The `mdTypeDef` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="774ad-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="774ad-116">Requirements</span></span>  
- <span data-ttu-id="774ad-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="774ad-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b20b-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9b20b-116">Requirements</span></span>  
+ <span data-ttu-id="9b20b-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9b20b-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="774ad-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="774ad-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="9b20b-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9b20b-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="774ad-119">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="774ad-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="9b20b-119">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9b20b-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="774ad-120">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="774ad-120">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="9b20b-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9b20b-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="774ad-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="774ad-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9b20b-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b20b-121">See also</span></span>
 
-- [<span data-ttu-id="774ad-122">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="774ad-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="774ad-123">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="774ad-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="9b20b-122">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b20b-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="9b20b-123">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b20b-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

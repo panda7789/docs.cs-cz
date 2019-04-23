@@ -10,25 +10,25 @@ helpviewer_keywords:
 - visual layer [WPF]
 ms.assetid: d82c89db-077f-4c3c-a4f8-310ebfbe0fe2
 ms.openlocfilehash: 599ef73e2e8c772559badb3a562a12f8311e9c60
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59172065"
 ---
-# <a name="visual-layer-programming"></a><span data-ttu-id="aa315-102">Programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="aa315-102">Visual Layer Programming</span></span>
-<span data-ttu-id="aa315-103"><xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování.</span><span class="sxs-lookup"><span data-stu-id="aa315-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="aa315-104">Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="aa315-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
+# <a name="visual-layer-programming"></a><span data-ttu-id="66e32-102">Programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="66e32-102">Visual Layer Programming</span></span>
+<span data-ttu-id="66e32-103"><xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování.</span><span class="sxs-lookup"><span data-stu-id="66e32-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="66e32-104">Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="66e32-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="aa315-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="aa315-105">In This Section</span></span>  
- [<span data-ttu-id="aa315-106">Spuštění testování ve vizuální vrstvě</span><span class="sxs-lookup"><span data-stu-id="aa315-106">Hit Testing in the Visual Layer</span></span>](hit-testing-in-the-visual-layer.md)  
- [<span data-ttu-id="aa315-107">Použití objektů DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="aa315-107">Using DrawingVisual Objects</span></span>](using-drawingvisual-objects.md)  
- [<span data-ttu-id="aa315-108">Kurz: Hostování vizuálních objektů v aplikaci Win32</span><span class="sxs-lookup"><span data-stu-id="aa315-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](tutorial-hosting-visual-objects-in-a-win32-application.md)  
- [<span data-ttu-id="aa315-109">– postupy</span><span class="sxs-lookup"><span data-stu-id="aa315-109">How-to Topics</span></span>](visual-layer-programming-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="66e32-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="66e32-105">In This Section</span></span>  
+ [<span data-ttu-id="66e32-106">Ověřování pozice ve vizuální vrstvě</span><span class="sxs-lookup"><span data-stu-id="66e32-106">Hit Testing in the Visual Layer</span></span>](hit-testing-in-the-visual-layer.md)  
+ [<span data-ttu-id="66e32-107">Použití objektů DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="66e32-107">Using DrawingVisual Objects</span></span>](using-drawingvisual-objects.md)  
+ [<span data-ttu-id="66e32-108">Kurz: Hostování vizuální objektů v aplikaci Win32</span><span class="sxs-lookup"><span data-stu-id="66e32-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](tutorial-hosting-visual-objects-in-a-win32-application.md)  
+ [<span data-ttu-id="66e32-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="66e32-109">How-to Topics</span></span>](visual-layer-programming-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="aa315-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="aa315-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="66e32-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="66e32-110">See also</span></span>
 
 - <xref:System.Windows.Media.Visual>
 - <xref:System.Windows.Media.VisualTreeHelper>
 - <xref:System.Windows.Media.DrawingVisual>
-- [<span data-ttu-id="aa315-111">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="aa315-111">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
-- [<span data-ttu-id="aa315-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="aa315-112">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="66e32-111">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="66e32-111">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="66e32-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="66e32-112">Graphics and Multimedia</span></span>](index.md)

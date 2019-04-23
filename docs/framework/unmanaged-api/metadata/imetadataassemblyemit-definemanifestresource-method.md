@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b617e29e2df22b59114c8b978daa645de1cc6176
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59186716"
 ---
-# <a name="imetadataassemblyemitdefinemanifestresource-method"></a><span data-ttu-id="1aebd-102">IMetaDataAssemblyEmit::DefineManifestResource – metoda</span><span class="sxs-lookup"><span data-stu-id="1aebd-102">IMetaDataAssemblyEmit::DefineManifestResource Method</span></span>
-<span data-ttu-id="1aebd-103">Vytvoří `ManifestResource` struktury obsahující metadata pro zadaný prostředek manifestu a vrátí token metadat.</span><span class="sxs-lookup"><span data-stu-id="1aebd-103">Creates a `ManifestResource` structure containing metadata for the specified manifest resource, and returns the associated metadata token.</span></span>  
+# <a name="imetadataassemblyemitdefinemanifestresource-method"></a><span data-ttu-id="e205e-102">IMetaDataAssemblyEmit::DefineManifestResource – metoda</span><span class="sxs-lookup"><span data-stu-id="e205e-102">IMetaDataAssemblyEmit::DefineManifestResource Method</span></span>
+<span data-ttu-id="e205e-103">Vytvoří `ManifestResource` struktury obsahující metadata pro zadaný prostředek manifestu a vrátí token metadat.</span><span class="sxs-lookup"><span data-stu-id="e205e-103">Creates a `ManifestResource` structure containing metadata for the specified manifest resource, and returns the associated metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1aebd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1aebd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e205e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e205e-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineManifestResource (  
@@ -39,34 +39,34 @@ HRESULT DefineManifestResource (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1aebd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1aebd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e205e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e205e-105">Parameters</span></span>  
  `szName`  
- <span data-ttu-id="1aebd-106">[in] Název prostředku.</span><span class="sxs-lookup"><span data-stu-id="1aebd-106">[in] The name of the resource.</span></span>  
+ <span data-ttu-id="e205e-106">[in] Název prostředku.</span><span class="sxs-lookup"><span data-stu-id="e205e-106">[in] The name of the resource.</span></span>  
   
  `tkImplementation`  
- <span data-ttu-id="1aebd-107">[in] Token metadat typu `mdtFile` nebo `mdtAssemblyRef` , který se mapuje na poskytovateli prostředků.</span><span class="sxs-lookup"><span data-stu-id="1aebd-107">[in] A metadata token of type `mdtFile` or `mdtAssemblyRef` that maps to the resource provider.</span></span> <span data-ttu-id="1aebd-108">Hodnota NULL označuje, že je soubor, ve kterém se vloží metadata poskytovatele prostředků.</span><span class="sxs-lookup"><span data-stu-id="1aebd-108">A NULL value indicates that the file in which the metadata is embedded is the resource provider.</span></span>  
+ <span data-ttu-id="e205e-107">[in] Token metadat typu `mdtFile` nebo `mdtAssemblyRef` , který se mapuje na poskytovateli prostředků.</span><span class="sxs-lookup"><span data-stu-id="e205e-107">[in] A metadata token of type `mdtFile` or `mdtAssemblyRef` that maps to the resource provider.</span></span> <span data-ttu-id="e205e-108">Hodnota NULL označuje, že je soubor, ve kterém se vloží metadata poskytovatele prostředků.</span><span class="sxs-lookup"><span data-stu-id="e205e-108">A NULL value indicates that the file in which the metadata is embedded is the resource provider.</span></span>  
   
  `dwOffset`  
- <span data-ttu-id="1aebd-109">[in] Posun k začátku prostředků v rámci souboru.</span><span class="sxs-lookup"><span data-stu-id="1aebd-109">[in] The offset to the beginning of the resource within the file.</span></span> <span data-ttu-id="1aebd-110">Pro prostředky v samostatné soubory bude vždy nula.</span><span class="sxs-lookup"><span data-stu-id="1aebd-110">For resources in standalone files, this will always be zero.</span></span> <span data-ttu-id="1aebd-111">Pokud je prostředek vložený v souboru PE (portable executable), je to posun objektu BLOB, který spouští v umístění zadaném v souboru hlaviček cor.h prostředku.</span><span class="sxs-lookup"><span data-stu-id="1aebd-111">If the resource is embedded in a PE (portable executable) file, this is an offset of the resource BLOB, which starts at the location specified in the cor.h header file.</span></span>  
+ <span data-ttu-id="e205e-109">[in] Posun k začátku prostředků v rámci souboru.</span><span class="sxs-lookup"><span data-stu-id="e205e-109">[in] The offset to the beginning of the resource within the file.</span></span> <span data-ttu-id="e205e-110">Pro prostředky v samostatné soubory bude vždy nula.</span><span class="sxs-lookup"><span data-stu-id="e205e-110">For resources in standalone files, this will always be zero.</span></span> <span data-ttu-id="e205e-111">Pokud je prostředek vložený v souboru PE (portable executable), je to posun objektu BLOB, který spouští v umístění zadaném v souboru hlaviček cor.h prostředku.</span><span class="sxs-lookup"><span data-stu-id="e205e-111">If the resource is embedded in a PE (portable executable) file, this is an offset of the resource BLOB, which starts at the location specified in the cor.h header file.</span></span>  
   
  `dwResourceFlags`  
- <span data-ttu-id="1aebd-112">[in] Bitová kombinace hodnot příznaků, které určují nastavení vlastností pro definici prostředků.</span><span class="sxs-lookup"><span data-stu-id="1aebd-112">[in] A bitwise combination of flag values that specify property settings for the resource definition.</span></span>  
+ <span data-ttu-id="e205e-112">[in] Bitová kombinace hodnot příznaků, které určují nastavení vlastností pro definici prostředků.</span><span class="sxs-lookup"><span data-stu-id="e205e-112">[in] A bitwise combination of flag values that specify property settings for the resource definition.</span></span>  
   
  `pmdmr`  
- <span data-ttu-id="1aebd-113">[out] Ukazatel na token vrácený metadat.</span><span class="sxs-lookup"><span data-stu-id="1aebd-113">[out] A pointer to the returned metadata token.</span></span>  
+ <span data-ttu-id="e205e-113">[out] Ukazatel na token vrácený metadat.</span><span class="sxs-lookup"><span data-stu-id="e205e-113">[out] A pointer to the returned metadata token.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1aebd-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1aebd-114">Remarks</span></span>  
- <span data-ttu-id="1aebd-115">Jeden `ManifestResource` struktury metadat musí být definované pro každý prostředek, který je implementován v každém ze souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="1aebd-115">One `ManifestResource` metadata structure must be defined for each resource that is implemented in each of the assembly's files.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e205e-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e205e-114">Remarks</span></span>  
+ <span data-ttu-id="e205e-115">Jeden `ManifestResource` struktury metadat musí být definované pro každý prostředek, který je implementován v každém ze souborů sestavení.</span><span class="sxs-lookup"><span data-stu-id="e205e-115">One `ManifestResource` metadata structure must be defined for each resource that is implemented in each of the assembly's files.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1aebd-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1aebd-116">Requirements</span></span>  
- <span data-ttu-id="1aebd-117">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1aebd-117">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e205e-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e205e-116">Requirements</span></span>  
+ <span data-ttu-id="e205e-117">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e205e-117">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1aebd-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="1aebd-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="e205e-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="e205e-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="1aebd-119">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1aebd-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="e205e-119">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e205e-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="1aebd-120">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="1aebd-120">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="e205e-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e205e-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1aebd-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1aebd-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e205e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e205e-121">See also</span></span>
 
-- [<span data-ttu-id="1aebd-122">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1aebd-122">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="e205e-122">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e205e-122">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

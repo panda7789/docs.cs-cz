@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d98829b29100824e5d606e23aaf287c9f6e81d69
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59170960"
 ---
-# <a name="createapplicationcontext-function"></a><span data-ttu-id="d7e0b-102">CreateApplicationContext – funkce</span><span class="sxs-lookup"><span data-stu-id="d7e0b-102">CreateApplicationContext Function</span></span>
-<span data-ttu-id="d7e0b-103">Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="d7e0b-103">This function supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="createapplicationcontext-function"></a><span data-ttu-id="4645c-102">CreateApplicationContext – funkce</span><span class="sxs-lookup"><span data-stu-id="4645c-102">CreateApplicationContext Function</span></span>
+<span data-ttu-id="4645c-103">Tato funkce podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="4645c-103">This function supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d7e0b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7e0b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4645c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4645c-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateApplicationContext (  
@@ -35,24 +35,24 @@ HRESULT CreateApplicationContext (
  );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d7e0b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d7e0b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4645c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4645c-105">Parameters</span></span>  
  `pName`  
- <span data-ttu-id="d7e0b-106">[in] Ukazatel na popisný název.</span><span class="sxs-lookup"><span data-stu-id="d7e0b-106">[in] A pointer to a friendly name.</span></span>  
+ <span data-ttu-id="4645c-106">[in] Ukazatel na popisný název.</span><span class="sxs-lookup"><span data-stu-id="4645c-106">[in] A pointer to a friendly name.</span></span>  
   
  `ppCtx`  
- <span data-ttu-id="d7e0b-107">[out] Ukazatel na objekt context aplikace.</span><span class="sxs-lookup"><span data-stu-id="d7e0b-107">[out] A pointer to an application context.</span></span>  
+ <span data-ttu-id="4645c-107">[out] Ukazatel na objekt context aplikace.</span><span class="sxs-lookup"><span data-stu-id="4645c-107">[out] A pointer to an application context.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d7e0b-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d7e0b-108">Requirements</span></span>  
- <span data-ttu-id="d7e0b-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d7e0b-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4645c-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4645c-108">Requirements</span></span>  
+ <span data-ttu-id="4645c-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4645c-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d7e0b-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="d7e0b-110">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="4645c-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="4645c-110">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="d7e0b-111">**Knihovna:** Zahrnuté jako prostředek v soubor Fusion.dll</span><span class="sxs-lookup"><span data-stu-id="d7e0b-111">**Library:** Included as a resource in Fusion.dll</span></span>  
+ <span data-ttu-id="4645c-111">**Knihovna:** Zahrnuté jako prostředek v soubor Fusion.dll</span><span class="sxs-lookup"><span data-stu-id="4645c-111">**Library:** Included as a resource in Fusion.dll</span></span>  
   
- **<span data-ttu-id="d7e0b-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="d7e0b-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="4645c-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4645c-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d7e0b-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d7e0b-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4645c-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4645c-113">See also</span></span>
 
-- [<span data-ttu-id="d7e0b-114">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d7e0b-114">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
-- [<span data-ttu-id="d7e0b-115">Fúze globálních statických funkcí</span><span class="sxs-lookup"><span data-stu-id="d7e0b-115">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
-- [<span data-ttu-id="d7e0b-116">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="d7e0b-116">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)
+- [<span data-ttu-id="4645c-114">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4645c-114">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [<span data-ttu-id="4645c-115">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="4645c-115">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="4645c-116">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="4645c-116">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)

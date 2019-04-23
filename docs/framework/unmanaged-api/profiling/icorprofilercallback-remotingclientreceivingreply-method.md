@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5865935af96260982d47b778d208f4235f6245e2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59164915"
 ---
-# <a name="icorprofilercallbackremotingclientreceivingreply-method"></a><span data-ttu-id="5ba93-102">ICorProfilerCallback::RemotingClientReceivingReply – metoda</span><span class="sxs-lookup"><span data-stu-id="5ba93-102">ICorProfilerCallback::RemotingClientReceivingReply Method</span></span>
-<span data-ttu-id="5ba93-103">Oznámí profileru, který je dokončená část vzdálené volání na straně serveru a nyní přijímá klienta a o zpracování odpovědi.</span><span class="sxs-lookup"><span data-stu-id="5ba93-103">Notifies the profiler that the server-side portion of a remoting call has completed and the client is now receiving and about to process the reply.</span></span>  
+# <a name="icorprofilercallbackremotingclientreceivingreply-method"></a><span data-ttu-id="39e53-102">ICorProfilerCallback::RemotingClientReceivingReply – metoda</span><span class="sxs-lookup"><span data-stu-id="39e53-102">ICorProfilerCallback::RemotingClientReceivingReply Method</span></span>
+<span data-ttu-id="39e53-103">Oznámí profileru, který je dokončená část vzdálené volání na straně serveru a nyní přijímá klienta a o zpracování odpovědi.</span><span class="sxs-lookup"><span data-stu-id="39e53-103">Notifies the profiler that the server-side portion of a remoting call has completed and the client is now receiving and about to process the reply.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5ba93-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5ba93-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="39e53-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="39e53-104">Syntax</span></span>  
   
 ```  
 HRESULT RemotingClientReceivingReply(  
@@ -35,30 +35,30 @@ HRESULT RemotingClientReceivingReply(
     [in] BOOL fIsAsync);   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5ba93-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5ba93-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="39e53-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="39e53-105">Parameters</span></span>  
  `pCookie`  
- <span data-ttu-id="5ba93-106">[in] Hodnotu, která bude odpovídat s hodnotou v [icorprofilercallback::remotingserversendingreply –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md) za těchto podmínek:</span><span class="sxs-lookup"><span data-stu-id="5ba93-106">[in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingServerSendingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md) under these conditions:</span></span>  
+ <span data-ttu-id="39e53-106">[in] Hodnotu, která bude odpovídat s hodnotou v [icorprofilercallback::remotingserversendingreply –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md) za těchto podmínek:</span><span class="sxs-lookup"><span data-stu-id="39e53-106">[in] A value that will correspond with the value provided in [ICorProfilerCallback::RemotingServerSendingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md) under these conditions:</span></span>  
   
--   <span data-ttu-id="5ba93-107">Vzdálená komunikace GUID soubory cookie jsou aktivní.</span><span class="sxs-lookup"><span data-stu-id="5ba93-107">Remoting GUID cookies are active.</span></span>  
+-   <span data-ttu-id="39e53-107">Vzdálená komunikace GUID soubory cookie jsou aktivní.</span><span class="sxs-lookup"><span data-stu-id="39e53-107">Remoting GUID cookies are active.</span></span>  
   
--   <span data-ttu-id="5ba93-108">Kanál úspěšně odesílá zprávu.</span><span class="sxs-lookup"><span data-stu-id="5ba93-108">The channel succeeds in transmitting the message.</span></span>  
+-   <span data-ttu-id="39e53-108">Kanál úspěšně odesílá zprávu.</span><span class="sxs-lookup"><span data-stu-id="39e53-108">The channel succeeds in transmitting the message.</span></span>  
   
--   <span data-ttu-id="5ba93-109">Identifikátor GUID soubory cookie jsou aktivní na straně serveru procesu.</span><span class="sxs-lookup"><span data-stu-id="5ba93-109">GUID cookies are active on the server-side process.</span></span>  
+-   <span data-ttu-id="39e53-109">Identifikátor GUID soubory cookie jsou aktivní na straně serveru procesu.</span><span class="sxs-lookup"><span data-stu-id="39e53-109">GUID cookies are active on the server-side process.</span></span>  
   
- <span data-ttu-id="5ba93-110">To umožňuje snadno párování Vzdálená volání.</span><span class="sxs-lookup"><span data-stu-id="5ba93-110">This allows easy pairing of remoting calls.</span></span>  
+ <span data-ttu-id="39e53-110">To umožňuje snadno párování Vzdálená volání.</span><span class="sxs-lookup"><span data-stu-id="39e53-110">This allows easy pairing of remoting calls.</span></span>  
   
  `fIsAsync`  
- <span data-ttu-id="5ba93-111">[in] Hodnotu, která je `true` Pokud je volání asynchronní; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="5ba93-111">[in] A value that is `true` if the call is asynchronous; otherwise, `false`.</span></span>  
+ <span data-ttu-id="39e53-111">[in] Hodnotu, která je `true` Pokud je volání asynchronní; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="39e53-111">[in] A value that is `true` if the call is asynchronous; otherwise, `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5ba93-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5ba93-112">Requirements</span></span>  
- <span data-ttu-id="5ba93-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5ba93-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="39e53-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="39e53-112">Requirements</span></span>  
+ <span data-ttu-id="39e53-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="39e53-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5ba93-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="5ba93-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="39e53-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="39e53-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="5ba93-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5ba93-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="39e53-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="39e53-115">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="5ba93-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="5ba93-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="39e53-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="39e53-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5ba93-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5ba93-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="39e53-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="39e53-117">See also</span></span>
 
-- [<span data-ttu-id="5ba93-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5ba93-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="39e53-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="39e53-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
