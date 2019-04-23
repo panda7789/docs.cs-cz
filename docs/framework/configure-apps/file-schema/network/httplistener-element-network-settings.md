@@ -1,12 +1,12 @@
 ---
-title: <httpListener> – Element (nastavení sítě)
+title: <httpListener> – element (nastavení sítě)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
 ms.openlocfilehash: b3a6d527bc1bf8210bb85424fa218fda495a2a2d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59099739"
 ---
 # <a name="httplistener-element-network-settings"></a>\<httpListener > – Element (nastavení sítě)
@@ -41,9 +41,9 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  **UnescapeRequestUrl** atribut označuje, zda <xref:System.Net.HttpListener> používá nezpracovaná neuvozené identifikátor URI namísto převedený identifikátor URI, kde všechny procentuálně zakódovaný hodnoty se převedou a ostatní kroky normalizace pocházejí.  

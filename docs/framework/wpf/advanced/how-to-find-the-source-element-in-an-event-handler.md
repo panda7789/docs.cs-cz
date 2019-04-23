@@ -9,10 +9,10 @@ helpviewer_keywords:
 - event handlers [WPF], finding source element in
 ms.assetid: 85f71c5a-b714-4c65-9711-7d905c2bbe98
 ms.openlocfilehash: 9a49878c9ad8313903df4506796998fd43e2e749
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59104556"
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a>Postupy: Hledání zdrojového elementu v obslužné rutině události
@@ -30,4 +30,4 @@ Tento příklad ukazuje, jak hledání zdrojového elementu v obslužné rutině
 
 - <xref:System.Windows.RoutedEventArgs>
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [– postupy](events-how-to-topics.md)
+- [Témata s postupy](events-how-to-topics.md)

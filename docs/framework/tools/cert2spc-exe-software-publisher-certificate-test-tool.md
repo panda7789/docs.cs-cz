@@ -11,10 +11,10 @@ ms.assetid: be434d7d-9c0d-46e7-8392-58a9b542d11d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 079c48a9975861646f1d28338d02dab8e4775031
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59101223"
 ---
 # <a name="cert2spcexe-software-publisher-certificate-test-tool"></a>Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)
@@ -58,5 +58,5 @@ cert2spc oneCertificate.cer twoCertificate.cer mySPCFile.spc
 ## <a name="see-also"></a>Viz také:
 
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Makecert.exe (nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)
+- [MakeCert.exe (nástroj pro vytvoření certifikátu)](/windows/desktop/SecCrypto/makecert)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

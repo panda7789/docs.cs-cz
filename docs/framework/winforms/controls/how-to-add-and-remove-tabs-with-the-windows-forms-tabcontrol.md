@@ -13,10 +13,10 @@ helpviewer_keywords:
 - tab pages
 ms.assetid: 66d4dfca-41e8-44e3-9c80-fb7ac4cb1619
 ms.openlocfilehash: 723e05803b1f7d2bc56476248987085dbe5e23f0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59101598"
 ---
 # <a name="how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol"></a>Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl
@@ -77,6 +77,6 @@ Ve výchozím nastavení <xref:System.Windows.Forms.TabControl> ovládací prvek
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
-- [Postupy: Zakázání karet](how-to-disable-tab-pages.md)
+- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

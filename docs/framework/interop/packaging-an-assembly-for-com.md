@@ -19,10 +19,10 @@ ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dc02178223e48c7c578d10ba92123d9436d4f439
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59097262"
 ---
 # <a name="packaging-an-assembly-for-com"></a>Zabalení sestavení pro model COM
@@ -50,13 +50,13 @@ Následující informace o spravované typy, že chtějí začlenit ve svých ap
   
      Většina typů vyžadují knihovny typů při používané aplikace modelu COM. Můžete generovat knihovnu typů nebo mají vývojáři COM provedení této úlohy. [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] Poskytuje následující možnosti pro vytváření knihovny typů:  
   
-    -   [knihovna typů – exportér](#cpconpackagingassemblyforcomanchor1)  
+    -   [Exportér knihovny typů](#cpconpackagingassemblyforcomanchor1)  
   
     -   [Typelibconverter – třída](#cpconpackagingassemblyforcomanchor2)  
   
     -   [Nástroj registrace sestavení](#cpconpackagingassemblyforcomanchor3)  
   
-    -   [.NET Services Installation Tool](#cpconpackagingassemblyforcomanchor4)  
+    -   [Nástroj pro instalaci služeb .NET](#cpconpackagingassemblyforcomanchor4)  
   
      Bez ohledu na to mechanismus, který zvolíte jsou pouze veřejné typy definované v sestavení, ve kterém zadáte součástí vygenerovanou knihovnu typů.  
   

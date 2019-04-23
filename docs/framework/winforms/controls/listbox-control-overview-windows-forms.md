@@ -8,10 +8,10 @@ helpviewer_keywords:
 - ListBox control [Windows Forms], about ListBox control
 ms.assetid: 37ea226b-6fc8-4c70-936a-c6af4e0cad4c
 ms.openlocfilehash: f70246d4a4d158815ee9662036eca8edeb891d85
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59104193"
 ---
 # <a name="listbox-control-overview-windows-forms"></a>ListBox – přehled ovládacího prvku (Windows Forms)
@@ -25,10 +25,10 @@ Windows Forms <xref:System.Windows.Forms.ListBox> ovládací prvek zobrazí sezn
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ListBox>
-- [Postupy: Přidání a odebrání položek z ovládacích prvků Windows Forms ComboBox, ListBox nebo CheckedListBox](add-and-remove-items-from-a-wf-combobox.md)
-- [Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
-- [Postupy: Vázání ovládacího prvku Windows Forms ComboBox nebo ListBox k datům](how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
+- [Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](add-and-remove-items-from-a-wf-combobox.md)
+- [Postupy: Řazení obsahu Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data](how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
 - [Přehled ovládacího prvku ComboBox](combobox-control-overview-windows-forms.md)
 - [Přehled ovládacího prvku CheckedListBox](checkedlistbox-control-overview-windows-forms.md)
 - [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)
-- [Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox](create-a-lookup-table-for-a-wf-combobox-listbox.md)
+- [Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](create-a-lookup-table-for-a-wf-combobox-listbox.md)

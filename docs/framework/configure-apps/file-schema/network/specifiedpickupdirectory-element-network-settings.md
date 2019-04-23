@@ -1,5 +1,5 @@
 ---
-title: <specifiedPickupDirectory> – Element (nastavení sítě)
+title: <specifiedPickupDirectory> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#specifiedPickupDirectory
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
 ms.openlocfilehash: a459fee557285935c383dcfaf512c8a8a9aea570
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59099271"
 ---
 # <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedpickupdirectory – > – Element (nastavení sítě)

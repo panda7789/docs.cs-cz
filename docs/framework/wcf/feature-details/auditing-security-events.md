@@ -5,10 +5,10 @@ helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
 ms.openlocfilehash: 7d19c32994fdfc5587c06b979886f20ab2a04508
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59101289"
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
@@ -88,7 +88,7 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
 |Systém|Protokolu aplikace|Protokol zabezpečení|  
 |------------|---------------------|------------------|  
 |[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] nebo novější|Podporováno|Není podporováno|  
-|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] and [!INCLUDE[wv](../../../../includes/wv-md.md)]|Podporováno|Musí mít kontext vlákna `SeAuditPrivilege`|  
+|[!INCLUDE[ws2003sp1](../../../../includes/ws2003sp1-md.md)] a [!INCLUDE[wv](../../../../includes/wv-md.md)]|Podporováno|Musí mít kontext vlákna `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Další faktory  
  Kromě operačního systému následující tabulka popisuje další nastavení, která řídí povolení protokolování.  
@@ -106,5 +106,5 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
 - [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)
 - [Postupy: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
 - [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)
-- [\<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+- [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
 - [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

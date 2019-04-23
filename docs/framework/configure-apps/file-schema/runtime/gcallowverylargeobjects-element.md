@@ -1,5 +1,5 @@
 ---
-title: <gcAllowVeryLargeObjects> Prvek
+title: Element <gcAllowVeryLargeObjects>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - gcAllowVeryLargeObjects element
@@ -8,10 +8,10 @@ ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 19103b2ac6e6dbba930050074fcea3cfd5a97661
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59098013"
 ---
 # <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects> Element
@@ -39,7 +39,7 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Pole o celkové velikosti větší než 2 GB nejsou povolena. Toto nastavení je výchozí.|  
 |`true`|Pole o celkové velikosti větší než 2 GB jsou povolena na 64bitových platformách.|  

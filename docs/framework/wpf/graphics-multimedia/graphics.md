@@ -8,10 +8,10 @@ helpviewer_keywords:
 - graphics [WPF], effects
 ms.assetid: 3bfc652e-91b7-4697-a4f4-83ff0e98327e
 ms.openlocfilehash: c59d19c925d99ac8f5dd07da84295ee002c956de
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59102346"
 ---
 # <a name="graphics"></a>Grafika
@@ -20,13 +20,13 @@ ms.locfileid: "59102346"
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Bitmapové efekty](bitmap-effects.md)  
  [Štětce](brushes.md)  
- [Kreslení](drawings.md)  
+ [Kresby](drawings.md)  
  [Geometrie](geometries.md)  
  [Obrázky](images.md)  
- [Obrazce](shapes.md)  
+ [Tvary](shapes.md)  
  [Transformace](transformations.md)  
  [Nastavení registru pro vykreslení grafiky](graphics-rendering-registry-settings.md)  
- [– postupy](graphics-how-to-topics.md)  
+ [Témata s postupy](graphics-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
 

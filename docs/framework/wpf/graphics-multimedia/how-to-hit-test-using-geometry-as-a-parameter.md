@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Geometry objects [WPF], hit tests on visual objects [WPF]
 ms.assetid: 6c8bdbf2-19e0-4fbb-bf89-c1252b2ebc61
 ms.openlocfilehash: 73420d6ae1386676ed900e91b3951df9e0934db8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59100961"
 ---
 # <a name="how-to-hit-test-using-geometry-as-a-parameter"></a>Postupy: Ověřování pozice pomocí objektu Geometry jako parametru
@@ -39,5 +39,5 @@ Tento příklad ukazuje, jak provádět ověření pozice ve vizuální objekty 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
 - [Ověření pozice objektu Geometry ve vizuálním objektu](how-to-hit-test-geometry-in-a-visual.md)

@@ -15,10 +15,10 @@ ms.assetid: f08b2390-d872-4521-a815-e9c237c4c45d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce53149b92ca40ad50ecbefaf4701940e8567ae5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59103919"
 ---
 # <a name="iclrdomainmanager-interface"></a>ICLRDomainManager – rozhraní
@@ -45,5 +45,5 @@ Umožňuje hostiteli určit, který se použije k inicializaci výchozí domény
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
 - [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

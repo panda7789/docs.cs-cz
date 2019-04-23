@@ -7,10 +7,10 @@ helpviewer_keywords:
 - images [WPF], drawing
 ms.assetid: df28ab41-25fb-4ab3-b51d-7f695b24f55e
 ms.openlocfilehash: f9459185bf81160b45222e7d6821e0f945ada381
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59100155"
 ---
 # <a name="how-to-draw-an-image-using-imagedrawing"></a>Postupy: Vykreslení obrázku pomocí ImageDrawing
@@ -31,6 +31,6 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ImageDrawin
 
 - <xref:System.Windows.Freezable.Freeze%2A>
 - <xref:System.Windows.Controls.Image>
-- [Přehled vykreslovaných objektů](drawing-objects-overview.md)
+- [Přehled nakreslených objektů](drawing-objects-overview.md)
 - [Přehled zablokovatelných objektů](../advanced/freezable-objects-overview.md)
 - [PresentationOptions:Freeze – atribut](../advanced/presentationoptions-freeze-attribute.md)

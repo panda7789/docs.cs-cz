@@ -3,10 +3,10 @@ title: <host>
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
 ms.openlocfilehash: 3d1f7774f61060880a5c3b0327bdd6c2cc4dd74e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59102996"
 ---
 # <a name="host"></a>\<host>
@@ -43,13 +43,13 @@ Určuje nastavení pro hostitele služby.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<baseAddresses>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)|Kolekce `baseAddress` prvky, které určuje základní adresy použité hostitelem služby.|  
-|[\<vypršení časových limitů >](../../../../../docs/framework/configure-apps/file-schema/wcf/timeouts.md)|Konfigurace element, který určuje dobu hostitel služby otevřít nebo zavřít.|  
+|[\<timeOuts>](../../../../../docs/framework/configure-apps/file-schema/wcf/timeouts.md)|Konfigurace element, který určuje dobu hostitel služby otevřít nebo zavřít.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Určuje nastavení pro službu Windows Communication Foundation (WCF).|  
+|[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Určuje nastavení pro službu Windows Communication Foundation (WCF).|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - UI Automation, clients, control patterns for
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
 ms.openlocfilehash: 829df66f49d5df5f5c8cf8d2b6cfa74f0a2172dd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59101130"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní
@@ -34,44 +34,44 @@ ms.locfileid: "59101130"
   
 |Typ ovládacího prvku|Podporováno|Podpora podmíněného|Nepodporováno|  
 |------------------|---------------|-------------------------|-------------------|  
-|Tlačítko|Žádné|Vyvolání přepínací tlačítko, Rozbalit/sbalit|Žádné|  
+|Tlačítko|Žádné|Vyvolání přepínací tlačítko, Rozbalit/sbalit|Žádný|  
 |Kalendář|Mřížka tabulky|Výběr, posuňte|Value|  
-|Zaškrtávací políčko|Přepnout|Žádné|Žádný|  
+|Zaškrtávací políčko|Přepnout|Žádné|Žádné|  
 |Pole se seznamem|Rozbalit/sbalit|Výběr, hodnota|Posuv|  
-|Datová mřížka|Mřížka|Posunout výběr tabulky|Žádný|  
-|Datová položka|Položka výběru|Rozbalte sbalit položky mřížky, Posunout položku, tabulky, přepínací tlačítko, hodnota|Žádný|  
+|Datová mřížka|Mřížka|Posunout výběr tabulky|Žádné|  
+|Datová položka|Položka výběru|Rozbalte sbalit položky mřížky, Posunout položku, tabulky, přepínací tlačítko, hodnota|Žádné|  
 |Dokument|Text|Posouvání, hodnota|Žádné|  
-|Upravit|Žádný|Textová hodnota rozsahu, hodnota|Žádné|  
-|Skupina|Žádné|Rozbalit/sbalit|Žádné|  
+|Upravit|Žádné|Textová hodnota rozsahu, hodnota|Žádné|  
+|Skupina|Žádný|Rozbalit/sbalit|Žádné|  
 |Záhlaví|Žádné|Transformace|Žádné|  
-|Položka hlavičky|Žádný|Transformace, vyvolají|Žádné|  
-|Hypertextový odkaz|Vyvolat|Value|Žádné|  
-|Image|Žádný|Mřížky nebo položky tabulky|Vyvolání, výběr položky|  
+|Položka hlavičky|Žádné|Transformace, vyvolají|Žádné|  
+|Hypertextový odkaz|Vyvolat|Hodnota|Žádné|  
+|Image|Žádné|Mřížky nebo položky tabulky|Vyvolání, výběr položky|  
 |Seznam|Žádný|Mřížka, více zobrazení posuvníku, výběr|Tabulka|  
 |Položka seznamu|Položka výběru|Rozbalit/sbalit položky mřížky vyvolání, posuňte se položky, přepnout, hodnota|Žádný|  
-|Nabídka|Žádné|Žádný|Žádný|  
-|Řádek nabídek|Žádný|Rozbalte sbalit Dock transformace|Žádný|  
-|Položka nabídky|Žádné|Rozbalit/sbalit, vyvolají, výběr položky přepínací tlačítko|Žádné|  
+|Nabídka|Žádné|Žádný|Žádné|  
+|Řádek nabídek|Žádný|Rozbalte sbalit Dock transformace|Žádné|  
+|Položka nabídky|Žádné|Rozbalit/sbalit, vyvolají, výběr položky přepínací tlačítko|Žádný|  
 |Podokno|Žádné|Ukotvěte. Posouvání, transformace|Okno|  
-|Indikátor průběhu|Žádný|Hodnota rozsahu|Žádný|  
-|Přepínač|Položka výběru|Žádné|Přepnout|  
+|Indikátor průběhu|Žádné|Hodnota rozsahu|Žádné|  
+|Přepínač|Položka výběru|Žádný|Přepnout|  
 |Posuvník|Žádné|Hodnota v rozsahu|Posuv|  
-|Oddělovač|Žádný|Žádný|Žádné|  
+|Oddělovač|Žádné|Žádný|Žádné|  
 |Posuvník|Žádné|Rozsah, výběr, hodnota|Žádné|  
-|Číselník|Žádné|Rozsah, výběr, hodnota|Žádné|  
-|Tlačítko rozdělení|Vyvolání, Rozbalit/sbalit|Žádné|Žádné|  
-|Stavový řádek|Žádné|Mřížka|Žádný|  
+|Číselník|Žádný|Rozsah, výběr, hodnota|Žádné|  
+|Tlačítko rozdělení|Vyvolání, Rozbalit/sbalit|Žádný|Žádné|  
+|Stavový řádek|Žádný|Mřížka|Žádné|  
 |Karta|Výběr|Posuv|Žádné|  
 |Položka tabulátoru|Položka výběru|Žádný|Vyvolat|  
-|Tabulka|Mřížka položky mřížky, tabulky, položka tabulky|Žádný|Žádné|  
-|Text|Žádné|Text položky, položka tabulky mřížky|Hodnota|  
-|Jezdec|Transformace|Žádné|Žádný|  
+|Tabulka|Mřížka položky mřížky, tabulky, položka tabulky|Žádné|Žádné|  
+|Text|Žádný|Text položky, položka tabulky mřížky|Value|  
+|Jezdec|Transformace|Žádné|Žádné|  
 |Záhlaví|Žádné|Žádný|Žádné|  
-|Panel nástrojů|Žádný|Ukotvit, Rozbalit/sbalit, transformace|Žádné|  
-|Popis tlačítka|Žádné|Text okna|Žádné|  
-|Strom|Žádné|Posunout výběr|Žádné|  
+|Panel nástrojů|Žádné|Ukotvit, Rozbalit/sbalit, transformace|Žádný|  
+|Popis tlačítka|Žádný|Text okna|Žádné|  
+|Strom|Žádné|Posunout výběr|Žádný|  
 |Položka stromu|Rozbalit/sbalit|Vyvolání, Posunout položku výběru položek, přepínací tlačítko|Žádné|  
-|Okno|Transformace, okno|Ukotvení|Žádný|  
+|Okno|Transformace, okno|Ukotvení|Žádné|  
   
 > [!NOTE]
 >  Pokud typ ovládacího prvku nemá žádné vzory podporovaných ovládacích prvků uvedené, ale má jeden nebo více podmíněně podporováno vzorů ovládacích prvků pro, pak jednu z těchto vzorů ovládacích prvků podmíněné bude podporovat ve všech vícekrát.  

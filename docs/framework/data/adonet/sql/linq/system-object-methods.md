@@ -3,10 +3,10 @@ title: Metody System.Object
 ms.date: 03/30/2017
 ms.assetid: 5397fca0-689e-443e-802f-e1cbdc866427
 ms.openlocfilehash: 3a52f081f1c0c6e6c5218550009c736d0ed60514
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59097665"
 ---
 # <a name="systemobject-methods"></a>Metody System.Object

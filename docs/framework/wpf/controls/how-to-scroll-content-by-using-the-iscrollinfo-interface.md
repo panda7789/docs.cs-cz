@@ -10,10 +10,10 @@ helpviewer_keywords:
 - IScrollInfo interface [WPF]
 ms.assetid: d8700bef-a3f8-4c12-9de2-fc3b79f32cd3
 ms.openlocfilehash: 6ebd8268e1358b45709885c07e6b096d5f806ebb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59098543"
 ---
 # <a name="how-to-scroll-content-by-using-the-iscrollinfo-interface"></a>Postupy: Posunutí obsahu použitím rozhraní IScrollInfo
@@ -35,5 +35,5 @@ Tento příklad ukazuje, jak posunutí obsahu použitím <xref:System.Windows.Co
 - <xref:System.Windows.Controls.Primitives.IScrollInfo>
 - <xref:System.Windows.Controls.StackPanel>
 - [ScrollViewer – přehled](scrollviewer-overview.md)
-- [– postupy](scrollviewer-how-to-topics.md)
-- [Přehled panelů](panels-overview.md)
+- [Témata s postupy](scrollviewer-how-to-topics.md)
+- [Přehled panelu](panels-overview.md)

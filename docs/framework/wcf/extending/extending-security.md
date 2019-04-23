@@ -5,10 +5,10 @@ helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
 ms.openlocfilehash: 95dacf3ef975be1ddd56db747936cca35db50625
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59099635"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
@@ -16,19 +16,19 @@ Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete r
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
- [Vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
+ [Vlastní přihlašovací údaje a jejich ověřování](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
  Vysvětluje, jak modelem Identity se používá při ověřování vlastní přihlašovací údaje.  
   
  [Vlastní tokeny](../../../../docs/framework/wcf/extending/custom-tokens.md)  
  Vystavené tokeny z tokenu služby zabezpečení (STS) jsou obvykle tokeny SAML. Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.  
   
- [Autorizace uživatele](../../../../docs/framework/wcf/extending/custom-authorization.md)  
+ [Vlastní autorizace](../../../../docs/framework/wcf/extending/custom-authorization.md)  
  Vysvětluje, jak implementovat vlastní autorizace.  
   
  [Přepsání identity služby kvůli ověřování](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
  Popisuje přepsání identity služby kvůli ověřování.  
   
- [Postupy: Vytvoření vlastního ověřovatele identity klientů](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ [Postupy: Vytvoření vlastního ověřovatele Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
  Ukazuje, jak se ověřit identitu vlastní koncový bod.  
   
  [Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  

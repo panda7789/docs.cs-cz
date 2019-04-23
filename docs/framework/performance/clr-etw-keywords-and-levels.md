@@ -10,10 +10,10 @@ ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ef621d1cbbd04421b392e64f5507fcbe23860465
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59105739"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
@@ -37,7 +37,7 @@ ms.locfileid: "59105739"
 ### <a name="clr-etw-runtime-keywords"></a>Modul Runtime CLR ETW – klíčová slova  
  V následující tabulce jsou uvedeny klíčová slova CLR ETW runtime, jejich hodnoty a jejich použití.  
   
-|Název modulu runtime – klíčové slovo|Value|Účel|  
+|Název modulu runtime – klíčové slovo|Hodnota|Účel|  
 |--------------------------|-----------|-------------|  
 |`GCKeyword`|0x00000001|Povoluje shromažďování [události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md).|  
 |`LoaderKeyword`|0x00000008|Povoluje shromažďování [události zavaděče](../../../docs/framework/performance/loader-etw-events.md).|  
@@ -124,6 +124,6 @@ ms.locfileid: "59105739"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Poskytovatelé CLR ETW](../../../docs/framework/performance/clr-etw-providers.md)
-- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
 - [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

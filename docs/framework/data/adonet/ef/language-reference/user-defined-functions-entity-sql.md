@@ -3,10 +3,10 @@ title: Uživatelem definované funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 3f9e6bbd-8e5a-43e1-809f-f8a61338e522
 ms.openlocfilehash: 4922e7fada676a6c26042236ccdb6315d6d455ae
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59104621"
 ---
 # <a name="user-defined-functions-entity-sql"></a>Uživatelem definované funkce (Entity SQL)

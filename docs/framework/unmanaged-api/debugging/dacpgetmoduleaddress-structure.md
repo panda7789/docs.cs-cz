@@ -16,10 +16,10 @@ topic_type:
 author: cshung
 ms.author: andrewau
 ms.openlocfilehash: cbea6c0562c68ae5d18247dc97bc53eb9dfbfd7e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59104102"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>Struktura DacpGetModuleAddress
@@ -47,7 +47,7 @@ struct DacpGetModuleAddress
 
 | Metoda                                                                                               | Popis                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [Request](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-request-method.md) | Provede požadavek na naplnit struktura ze struktury daného modulu runtime. |
+| [Požadavek](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-request-method.md) | Provede požadavek na naplnit struktura ze struktury daného modulu runtime. |
 
 ## <a name="remarks"></a>Poznámky
 

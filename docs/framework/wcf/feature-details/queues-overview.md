@@ -5,10 +5,10 @@ helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
 ms.openlocfilehash: e34f2033ec0f7dac784634d06712d65786503299
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59099765"
 ---
 # <a name="queues-overview"></a>Fronty – přehled
@@ -75,11 +75,11 @@ Tato část představuje obecné a základní koncepty za komunikace ve frontě.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
 - [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
 - [Fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md)
 - [Nestálá komunikace ve frontě](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)
-- [Z WCF do Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
+- [Z Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
 - [Instalace služby Řízení front zpráv (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [Řízení front zpráv do WCF](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
+- [Ze služby Řízení front zpráv do Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
 - [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)

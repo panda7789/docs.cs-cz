@@ -23,10 +23,10 @@ helpviewer_keywords:
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
 ms.openlocfilehash: a98528a4bae1a22352096958cfec2350b21ddf8e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59103412"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Představení aplikací spouštěných jako služby systému Windows
@@ -84,9 +84,9 @@ Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytv
 
 - [Aplikace služby systému Windows](../../../docs/framework/windows-services/index.md)
 - [Architektura programování aplikace služby](../../../docs/framework/windows-services/service-application-programming-architecture.md)
-- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
 - [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
-- [Postupy: Spuštění služby](../../../docs/framework/windows-services/how-to-start-services.md)
-- [Postupy: Ladění aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
+- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
 - [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

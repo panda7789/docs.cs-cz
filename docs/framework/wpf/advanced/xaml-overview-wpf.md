@@ -20,10 +20,10 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
 ms.openlocfilehash: 56b97170884ef31004b06b0eb50a8d79ad1d041c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59102827"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
@@ -329,7 +329,7 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 
 - [Podrobná syntaxe XAML](xaml-syntax-in-detail.md)
 - [XAML a vlastní třídy pro WPF](xaml-and-custom-classes-for-wpf.md)
-- [Jazykové funkce kompatibility značek (mc:)](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled základních elementů](base-elements-overview.md)
 - [Stromy v subsystému WPF](trees-in-wpf.md)

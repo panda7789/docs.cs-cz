@@ -7,10 +7,10 @@ helpviewer_keywords:
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
 ms.openlocfilehash: b0e4f9af0ff84a8d560b332d227b1ba9ae18bd4b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59099700"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Architektura Windows Communication Foundation
@@ -47,5 +47,5 @@ Následující obrázek znázorňuje hlavní vrstvy architektury Windows Communi
   
 ## <a name="see-also"></a>Viz také:
 
-- [Co je to Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
-- [Základní koncepty služby Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)
+- [Co je Windows Communication Foundation](../../../docs/framework/wcf/whats-wcf.md)
+- [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)

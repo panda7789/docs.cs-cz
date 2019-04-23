@@ -10,10 +10,10 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], selecting cells
 ms.assetid: 82cffcad-8b30-4897-bddb-c3a79d751b83
 ms.openlocfilehash: 1836fbc1887082ca685c49bef2bc42bdb167578f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59105846"
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView
@@ -29,7 +29,7 @@ ms.locfileid: "59105846"
  [Postupy: Získání vybraných buněk, řádků a sloupců v ovládacím prvku Windows Forms DataGridView](selected-cells-rows-and-columns-datagridview.md)  
  Popisuje, jak pracovat s kolekcí vybraných buněk, řádků a sloupců.  
   
- [Postupy: Povolení kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
+ [Postupy: Povolit uživatelům kopírování více buněk do schránky z ovládacího prvku Windows Forms DataGridView](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
  Popisuje, jak povolit podporu schránky v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
@@ -53,5 +53,5 @@ ms.locfileid: "59105846"
   
 ## <a name="see-also"></a>Viz také:
 
-- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)
 - [Výchozí zpracování klávesnice a myši v ovládacím prvku Windows Forms DataGridView](default-keyboard-and-mouse-handling-in-the-windows-forms-datagridview-control.md)

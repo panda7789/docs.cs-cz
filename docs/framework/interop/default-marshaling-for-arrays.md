@@ -11,10 +11,10 @@ ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e3eb5c9686f54bcaacef8d593f0ace4804d4ae60
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59098218"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
@@ -34,7 +34,7 @@ V případě aplikace tvořené zcela spravovaný kód modul common language run
 |Spravovaná pole|Typ elementu|pořadí|Dolní mez|Zápis podpis|  
 |------------------------|------------------|----------|-----------------|------------------------|  
 |**ELEMENT_TYPE_ARRAY**|Určený typem.|Určené pořadí.|Volitelně můžete zadat pomocí hranice.|*typ* **[** *n*,*m* **]**|  
-|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array**|  
+|**ELEMENT_TYPE_CLASS**|Neznámé|Neznámé|Neznámé|**System.Array** |  
 |**ELEMENT_TYPE_SZARRAY**|Určený typem.|1|0|*typ* **[** *n* **]**|  
   
 ## <a name="unmanaged-arrays"></a>Nespravované pole  

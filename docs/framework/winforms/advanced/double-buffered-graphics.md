@@ -8,10 +8,10 @@ helpviewer_keywords:
 - examples [Windows Forms], double-buffered graphics
 ms.assetid: 4f6fef99-0972-436e-9d73-0167e4033f71
 ms.openlocfilehash: 20ec03e6b84110f7ea00c134dc18b23f233c5f58
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59103438"
 ---
 # <a name="double-buffered-graphics"></a>Grafiky s dvojitou vyrovnávací pamětí
@@ -37,7 +37,7 @@ Blikání je běžný problém při programování grafiky. Grafické operace, k
 - <xref:System.Drawing.BufferedGraphics>
 - <xref:System.Drawing.BufferedGraphicsContext>
 - <xref:System.Drawing.BufferedGraphicsManager>
-- [Postupy: Ruční vykreslení grafiky uložené do vyrovnávací paměti](how-to-manually-render-buffered-graphics.md)
-- [Postupy: Omezení blikání grafiky dvojitým uložením do vyrovnávací paměti pro formuláře a ovládací prvky](how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)
+- [Postupy: Ruční zobrazení grafiky uložené do vyrovnávací paměti](how-to-manually-render-buffered-graphics.md)
+- [Postupy: Omezení blikání grafiky dvojité ukládání do vyrovnávací paměti pro formuláře a ovládací prvky](how-to-reduce-graphics-flicker-with-double-buffering-for-forms-and-controls.md)
 - [Postupy: Ruční správa grafiky uložené do vyrovnávací paměti](how-to-manually-manage-buffered-graphics.md)
-- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)

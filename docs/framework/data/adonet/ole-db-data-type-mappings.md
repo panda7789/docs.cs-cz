@@ -3,16 +3,16 @@ title: Mapování datových typů OLE DB
 ms.date: 03/30/2017
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
 ms.openlocfilehash: 09fab7c5df99ffdb0aef6d32a8ad5ca1ed446d42
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59100584"
 ---
 # <a name="ole-db-data-type-mappings"></a>Mapování datových typů OLE DB
 V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typu pro typy dat od zprostředkovatele dat .NET Framework pro ADO a technologie OLE DB (<xref:System.Data.OleDb>). Zadaný přístupové metody pro <xref:System.Data.OleDb.OleDbDataReader> jsou také uvedeny.  
   
-|Typ rozhraní ADO|Typ OLE DB|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]  – typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zadaný přístupový objekt|  
+|Typ rozhraní ADO|Typ OLE DB|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Typ|[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zadaný přístupový objekt|  
 |--------------|-----------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------|  
 |adBigInt|DBTYPE_I8|Int64|GetInt64()|  
 |adBinary|DBTYPE_BYTES|Byte[]|GetBytes()|  

@@ -1,12 +1,12 @@
 ---
-title: <message> of <netHttpBinding>
+title: <message> z <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9def5a35-475d-40d6-b716-ccdbd93863c7
 ms.openlocfilehash: 5bc953b4a1fad90aec5db507469368e7b21bb7e4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59105453"
 ---
 # <a name="message-of-nethttpbinding"></a>\<Zpráva > z \<netHttpBinding >
@@ -38,7 +38,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |UserName|-Vyžaduje ověření klienta k serveru pomocí přihlašovacích údajů uživatelského jména. Tyto přihlašovací údaje musí být zadaná pomocí <`clientCredentials`> element.<br />-WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. Proto WCF vynutí, že přenos zabezpečit při použití pověření uživatelských jmen. Pro `basicHttpBinding`, to vyžaduje nastavení kanálu SSL.|  
 |Certifikát|Vyžaduje se k serveru, používá certifikát ověření klienta. Pověření klienta nejsou v tomto případě musí být zadaná pomocí <`clientCredentials`> a <`clientCertificate`>. Kromě toho-když používají režim zabezpečených zpráv, klient musí být zřízená s certifikátem služby. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí <xref:System.ServiceModel.Description.ClientCredentials> třídy nebo `ClientCredentials` prvek chování a zadáním služby certifikátu pomocí \<serviceCertificate > elementu serviceCredentials.|  

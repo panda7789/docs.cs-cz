@@ -8,10 +8,10 @@ helpviewer_keywords:
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
 ms.openlocfilehash: 2237ba71487afc132f9164243a664b277397ccfa
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59098634"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
@@ -40,29 +40,29 @@ ms.locfileid: "59098634"
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.Forms.BindingSource.Current%2A> property|Získá aktuální položku datového zdroje.|  
-|<xref:System.Windows.Forms.BindingSource.Position%2A> property|Získá nebo nastaví aktuální pozici v nadřízeném seznamu.|  
-|<xref:System.Windows.Forms.BindingSource.List%2A> property|Získá seznam, který je po vyhodnocení <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> hodnocení. Pokud <xref:System.Windows.Forms.BindingSource.DataMember%2A> není nastavena, vrací seznam určené <xref:System.Windows.Forms.BindingSource.DataSource%2A>.|  
-|<xref:System.Windows.Forms.BindingSource.Insert%2A> – metoda|Vloží položku v seznamu na zadaném indexu.|  
-|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> – metoda|Odebere aktuální položky ze seznamu.|  
-|<xref:System.Windows.Forms.BindingSource.EndEdit%2A> – metoda|Podkladový zdroj dat se týká čekající změny.|  
-|<xref:System.Windows.Forms.BindingSource.CancelEdit%2A> – metoda|Zruší aktuální operaci úprav.|  
-|<xref:System.Windows.Forms.BindingSource.AddNew%2A> – metoda|Přidá novou položku do seznamu základní. Pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList> a vrátí položku ze <xref:System.Windows.Forms.BindingSource.AddingNew> události, přidá tuto položku. V opačném případě požadavek je předán do seznamu <xref:System.ComponentModel.IBindingList.AddNew%2A> metody. Pokud je podkladový seznam <xref:System.ComponentModel.IBindingList>, položka je automaticky vytvořená prostřednictvím jeho veřejný výchozí konstruktor.|  
+|<xref:System.Windows.Forms.BindingSource.Current%2A> Vlastnost|Získá aktuální položku datového zdroje.|  
+|<xref:System.Windows.Forms.BindingSource.Position%2A> Vlastnost|Získá nebo nastaví aktuální pozici v nadřízeném seznamu.|  
+|<xref:System.Windows.Forms.BindingSource.List%2A> Vlastnost|Získá seznam, který je po vyhodnocení <xref:System.Windows.Forms.BindingSource.DataSource%2A> a <xref:System.Windows.Forms.BindingSource.DataMember%2A> hodnocení. Pokud <xref:System.Windows.Forms.BindingSource.DataMember%2A> není nastavena, vrací seznam určené <xref:System.Windows.Forms.BindingSource.DataSource%2A>.|  
+|<xref:System.Windows.Forms.BindingSource.Insert%2A> – Metoda|Vloží položku v seznamu na zadaném indexu.|  
+|<xref:System.Windows.Forms.BindingSource.RemoveCurrent%2A> – Metoda|Odebere aktuální položky ze seznamu.|  
+|<xref:System.Windows.Forms.BindingSource.EndEdit%2A> – Metoda|Podkladový zdroj dat se týká čekající změny.|  
+|<xref:System.Windows.Forms.BindingSource.CancelEdit%2A> – Metoda|Zruší aktuální operaci úprav.|  
+|<xref:System.Windows.Forms.BindingSource.AddNew%2A> – Metoda|Přidá novou položku do seznamu základní. Pokud zdroj dat implementuje <xref:System.ComponentModel.IBindingList> a vrátí položku ze <xref:System.Windows.Forms.BindingSource.AddingNew> události, přidá tuto položku. V opačném případě požadavek je předán do seznamu <xref:System.ComponentModel.IBindingList.AddNew%2A> metody. Pokud je podkladový seznam <xref:System.ComponentModel.IBindingList>, položka je automaticky vytvořená prostřednictvím jeho veřejný výchozí konstruktor.|  
   
 ## <a name="sorting-and-filtering"></a>Řazení a filtrování  
  Obvykle byste měli spolupracovat s zobrazení zdroje dat o seřazený a filtrovaný. Následující tabulka uvádí členy, které <xref:System.Windows.Forms.BindingSource> poskytuje zdroj dat součástí.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.Windows.Forms.BindingSource.Sort%2A> property|Pokud je zdroj dat <xref:System.ComponentModel.IBindingList>, získá nebo nastaví název sloupce pro řazení a informace o pořadí řazení. Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView> a podporuje rozšířené řazení, získá více názvů sloupců použité pro řazení a informace o pořadí řazení|  
-|<xref:System.Windows.Forms.BindingSource.Filter%2A> property|Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>, získá nebo nastaví výraz určený k filtrování, které řádky jsou zobrazeny.|  
+|<xref:System.Windows.Forms.BindingSource.Sort%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingList>, získá nebo nastaví název sloupce pro řazení a informace o pořadí řazení. Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView> a podporuje rozšířené řazení, získá více názvů sloupců použité pro řazení a informace o pořadí řazení|  
+|<xref:System.Windows.Forms.BindingSource.Filter%2A> Vlastnost|Pokud je zdroj dat <xref:System.ComponentModel.IBindingListView>, získá nebo nastaví výraz určený k filtrování, které řádky jsou zobrazeny.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.BindingSource>
 - <xref:System.Windows.Forms.BindingNavigator>
-- [Architektura součásti BindingSource](bindingsource-component-architecture.md)
-- [BindingSource – komponenta](bindingsource-component.md)
+- [Architektura komponenty BindingSource](bindingsource-component-architecture.md)
+- [Komponenta BindingSource](bindingsource-component.md)
 - [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)
 - [Windows Forms – datová vazba](../windows-forms-data-binding.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

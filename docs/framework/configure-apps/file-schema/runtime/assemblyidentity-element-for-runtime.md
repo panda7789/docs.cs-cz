@@ -10,10 +10,10 @@ helpviewer_keywords:
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
 ms.openlocfilehash: d5766b76f18dce441cb260887a753dcf64642a6f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59098694"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<Vlastnost assemblyIdentity > – Element pro \<runtime >
@@ -48,7 +48,7 @@ culture="assembly culture"/>
   
 ## <a name="processorarchitecture-attribute"></a>Vlastnost processorArchitecture atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`amd64`|AMD pouze architektura x86 – x 64.|  
 |`ia64`|Pouze Intel Itanium architekturu.|  

@@ -5,10 +5,10 @@ ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eda4f8d3819af05b022e0633d6883cca940f67e5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59100259"
 ---
 # <a name="library-element-net-native"></a>\<Knihovna > – Element (.NET Native)
@@ -36,15 +36,15 @@ Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k d
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*název_sestavení*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření". V části poznámky pro zvláštní forma *název_sestavení* , který podporuje podmíněné zahrnutí metadat ze sestavení.|  
+|*assembly_name*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření". V části poznámky pro zvláštní forma *název_sestavení* , který podporuje podmíněné zahrnutí metadat ze sestavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady na Konstruovaný obecný typ. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může použít k definování zásad pro `List<String>` typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  

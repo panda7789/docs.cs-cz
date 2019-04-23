@@ -3,10 +3,10 @@ title: Čísla s plovoucí desetinnou čárkou
 ms.date: 03/30/2017
 ms.assetid: 73c218c6-1c44-4402-a167-4f6262629a91
 ms.openlocfilehash: aae7bd2ea6b5ba7bc9c69b99c93b62ba7a413d59
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59102515"
 ---
 # <a name="floating-point-numbers"></a>Čísla s plovoucí desetinnou čárkou
@@ -20,5 +20,5 @@ Toto téma popisuje některé z problémů, které vývojáři často dojde při
   
 ## <a name="see-also"></a>Viz také:
 
-- [Proč čísla s plovoucí desetinnou čárkou mohou ztratit přesnost](/cpp/build/reference/why-floating-point-numbers-may-lose-precision)
+- [Proč čísla s plovoucí desetinnou čárkou můžou ztratit přesnost](/cpp/build/reference/why-floating-point-numbers-may-lose-precision)
 - [Přehled ADO.NET](ado-net-overview.md)
