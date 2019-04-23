@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
 ms.openlocfilehash: 0f06ca2251ae1bf9bd5e199562eff116614e7117
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59140228"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
@@ -76,7 +76,7 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
  Soubory cookie  
  2B0F765D-C0E9-4171-908E-08A611B84FF6  
   
- Desktop  
+ Aplikace klasické pracovní plochy  
  B4BFCC3A-DB2C-424C-B029-7FE99A87C641  
   
  Dokumenty  
@@ -289,4 +289,4 @@ Můžete použít <xref:System.Guid> k určení [!INCLUDE[wiprlhext](../../../..
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Postupy: Přidání vlastního místa do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Postupy: Přidání vlastního prostoru do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)

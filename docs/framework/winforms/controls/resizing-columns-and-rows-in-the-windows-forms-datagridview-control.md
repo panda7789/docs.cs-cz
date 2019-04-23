@@ -7,10 +7,10 @@ helpviewer_keywords:
 - data grids [Windows Forms], resizing columns and rows
 ms.assetid: 7532764d-e5c1-4943-a08b-6377a722d3b6
 ms.openlocfilehash: e1fa2d57cfb2cd374d691fe03a0e0bdbd3ad7141
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59138109"
 ---
 # <a name="resizing-columns-and-rows-in-the-windows-forms-datagridview-control"></a>Změna velikosti sloupců a řádků v ovládacím prvku Windows Forms DataGridView
@@ -42,4 +42,4 @@ ms.locfileid: "59138109"
   
 ## <a name="see-also"></a>Viz také:
 
-- [DataGridView – ovládací prvek](datagridview-control-windows-forms.md)
+- [Ovládací prvek DataGridView](datagridview-control-windows-forms.md)

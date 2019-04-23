@@ -10,10 +10,10 @@ helpviewer_keywords:
 - hit-test objects [WPF]
 ms.assetid: 47ad531d-a4da-4e99-b12e-1de710c32493
 ms.openlocfilehash: 57e32d3e56c3f319f7ee8aa58020d37e46a6454d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59140215"
 ---
 # <a name="geometries"></a>Geometrie
@@ -22,12 +22,12 @@ ms.locfileid: "59140215"
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Syntaxe značek cesty](path-markup-syntax.md)  
  [Přehled geometrie](geometry-overview.md)  
- [– postupy](geometries-how-to-topics.md)  
+ [Témata s postupy](geometries-how-to-topics.md)  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Media.Brushes>
 - <xref:System.Windows.Shapes.Shape>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Grafika a multimédia](index.md)

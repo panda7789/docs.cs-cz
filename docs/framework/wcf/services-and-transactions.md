@@ -5,10 +5,10 @@ helpviewer_keywords:
 - service contracts [WCF], designing services and transactions
 ms.assetid: 864813ff-2709-4376-912d-f5c8d318c460
 ms.openlocfilehash: 9dfe34406bfda2c16bd2f0cd53796b2fcef07b57
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59138330"
 ---
 # <a name="services-and-transactions"></a>Služby a transakce
@@ -90,6 +90,6 @@ using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Require
   
 ## <a name="see-also"></a>Viz také:
 
-- [Podpora transakcí v názvovém prostoru System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)
+- [Podpora transakcí v System.ServiceModel](../../../docs/framework/wcf/feature-details/transactional-support-in-system-servicemodel.md)
 - [Modely transakcí](../../../docs/framework/wcf/feature-details/transaction-models.md)
-- [Tok transakcí webové služby](../../../docs/framework/wcf/samples/ws-transaction-flow.md)
+- [Tok transakcí WS](../../../docs/framework/wcf/samples/ws-transaction-flow.md)

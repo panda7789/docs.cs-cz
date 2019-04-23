@@ -12,10 +12,10 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 ms.assetid: 525e2347-0804-49aa-b9a3-9b2cabbf1c35
 ms.openlocfilehash: f0e8668ef46de8cc073663786bcd43b740a1b2f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59138577"
 ---
 # <a name="how-to-set-the-toolstrip-renderer-at-run-time"></a>Postupy: Nastavení rendereru prvku ToolStrip za běhu
@@ -57,4 +57,4 @@ Můžete přizpůsobit vzhled vašich <xref:System.Windows.Forms.ToolStrip> ovl�
 - <xref:System.Windows.Forms.MenuStrip>
 - <xref:System.Windows.Forms.ToolStrip>
 - <xref:System.Windows.Forms.ToolStripProfessionalRenderer>
-- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: <etwEnable> Prvek
+title: Element <etwEnable>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - etwEnable element
@@ -8,10 +8,10 @@ ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6ba411114bfb853e06c83adb42713d43f1452d9c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59135067"
 ---
 # <a name="etwenable-element"></a>\<etwenable – > – Element
@@ -38,7 +38,7 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro comm
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |true|Povolte trasování událostí pro Windows. Toto je výchozí verze Windows od verze operačních systémů Windows Vista a Windows Server 2008.|  
 |false|Zakážete trasování událostí pro Windows. Toto je výchozí hodnota u starších verzí systému Windows.|  

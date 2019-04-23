@@ -5,10 +5,10 @@ ms.assetid: 348b49e5-589d-4eb2-a597-d6ff60ab52d1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9fdc4441a8a11df5427badfaea95edb0abe52bde
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59131713"
 ---
 # <a name="method-element-net-native"></a>\<Metoda > – Element (.NET Native)
@@ -43,7 +43,7 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
   
 ## <a name="signature-attribute"></a>Atribut podpisu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*method_signature*|Typy parametrů, které tvoří podpisu metody. Více parametrů jsou odděleny čárkami, například `"System.String,System.Int32,System.Int32)"`. Názvy typů parametrů by měl být úplný.|  
   
@@ -60,13 +60,13 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
 |[\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)|Použije zásady na typ argument předaný metodě.|  
 |[\<GenericParameter >](../../../docs/framework/net-native/genericparameter-element-net-native.md)|Použije zásady na typ parametru obecného typu nebo metody.|  
 |[\<ImpliesType>](../../../docs/framework/net-native/impliestype-element-net-native.md)|Použije zásady na typ, pokud tyto zásady se nastavily pro metodu reprezentovanou obsahující `<Method>` elementu.|  
-|[\<TypeParameter >](../../../docs/framework/net-native/typeparameter-element-net-native.md)|Použije zásady na typ zastoupený <xref:System.Type> argument předaný metodě.|  
+|[\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)|Použije zásady na typ zastoupený <xref:System.Type> argument předaný metodě.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -150,4 +150,4 @@ Použije zásady reflexe runtime konstruktoru nebo metody.
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
 - [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
-- [\<MethodInstantiation > – Element](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)
+- [\<MethodInstantiation> Element](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)

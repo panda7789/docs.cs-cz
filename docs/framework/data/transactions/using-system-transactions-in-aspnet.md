@@ -3,10 +3,10 @@ title: Použití System.Transactions v ASP.NET
 ms.date: 03/30/2017
 ms.assetid: 1982c300-7ea6-4242-95ed-dc28ccfacac9
 ms.openlocfilehash: df9a9f1878b2268d1d6bc3d9b05d0ad8d7bcc3f0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59134576"
 ---
 # <a name="using-systemtransactions-in-aspnet"></a>Použití System.Transactions v ASP.NET
@@ -63,4 +63,4 @@ Toto téma popisuje, jak lze úspěšně pomocí <xref:System.Transactions> v r�
 
 - [Úrovně důvěryhodnosti technologie ASP.NET a zásady souborů](https://docs.microsoft.com/previous-versions/aspnet/wyts434y(v=vs.100))
 - [securityPolicy – Element (schéma nastavení technologie ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/zhs35b56(v=vs.100))
-- [Eskalace správy transakcí](../../../../docs/framework/data/transactions/transaction-management-escalation.md)
+- [Eskalace správy transakce](../../../../docs/framework/data/transactions/transaction-management-escalation.md)

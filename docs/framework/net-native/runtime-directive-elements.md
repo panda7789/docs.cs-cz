@@ -5,10 +5,10 @@ ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6bf692ff93a575858d1d1a89346611cb9c5957b3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59137810"
 ---
 # <a name="runtime-directive-elements"></a>Elementy direktivy modulu runtime
@@ -41,31 +41,31 @@ Formát souboru modulu runtime (rd.xml) direktivy podporuje následující eleme
  [\<Library>](../../../docs/framework/net-native/library-element-net-native.md)  
  Zásady modulu runtime se vztahuje na všechny typy v sestavení. To je podřízeným prvkem [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md) a [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementy.  
   
- [\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)  
+ [\<Method>](../../../docs/framework/net-native/method-element-net-native.md)  
  Zásady modulu runtime se vztahuje na metodu. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
   
  [\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)  
  Použije zásady modulu runtime konstruovanou obecnou metodu. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
   
- [\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)  
+ [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)  
  Zásady modulu runtime se vztahuje na všechny typy v oboru názvů.  
   
  [\<Parametr >](../../../docs/framework/net-native/parameter-element-net-native.md)  
  Použije zásady modulu runtime typu argument předaný metodě.  
   
- [\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)  
+ [\<Property>](../../../docs/framework/net-native/property-element-net-native.md)  
  Vlastnost se týká zásady modulu runtime. To je podřízeným prvkem [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) a [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementy.  
   
  [\<Subtypes >](../../../docs/framework/net-native/subtypes-element-net-native.md)  
  Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
   
- [\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)  
+ [\<Type>](../../../docs/framework/net-native/type-element-net-native.md)  
  Použije zásady modulu runtime typu.  
   
  [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)  
  Platí pro Konstruovaný obecný typ zásady modulu runtime.  
   
- [\<TypeParameter >](../../../docs/framework/net-native/typeparameter-element-net-native.md)  
+ [\<TypeParameter>](../../../docs/framework/net-native/typeparameter-element-net-native.md)  
  Zásady modulu runtime se vztahuje na typ zastoupený <xref:System.Type> argument předaný metodě.  
   
 ## <a name="see-also"></a>Viz také:

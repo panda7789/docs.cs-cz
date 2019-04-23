@@ -10,10 +10,10 @@ helpviewer_keywords:
 - spin button control [Windows Forms], removing items
 ms.assetid: e70f5cbc-b497-41a9-975a-344c00e56ed2
 ms.openlocfilehash: 0c07365f5be2e419b4049a466949fed2d884d897
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59131401"
 ---
 # <a name="how-to-remove-items-from-windows-forms-domainupdown-controls"></a>Postupy: Odebrání položek z ovládacích prvků Windows Forms DomainUpDown

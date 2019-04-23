@@ -5,10 +5,10 @@ helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
 ms.openlocfilehash: 144d2b6732ea319ba920317601eff2ebd7b58322
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132571"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
@@ -78,7 +78,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
   
 -   `behaviorConfiguration`. Určuje název jedné z `behavior` součástí prvky `behaviors` elementu. Zadané chování se řídí akce, například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdný název nebo žádnou instanci `behaviorConfiguration` je k dispozici potom výchozí sadu chování služby je přidán do služby.  
   
--   [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+-   [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
   
 ### <a name="the-endpoint-element"></a>\<Endpoint > – Element  
  Každý koncový bod požaduje adresu vazba a kontrakt, které jsou znázorněny následující atributy:  
@@ -96,7 +96,7 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-bindings-element"></a>\<Vazby > – Element  
  `bindings` Prvek obsahuje specifikace pro všechny vazby, které může používat libovolný koncový bod definovaný v libovolnou službu.  
   
- [\<vazby >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
   
 ### <a name="the-binding-element"></a>\<Vazby > – Element  
  `binding` Elementů obsažených v `bindings` element může být buď jeden vazeb poskytovaných systémem (naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md)) nebo vlastní vazby (naleznete v tématu [vlastních vazeb](../../../docs/framework/wcf/extending/custom-bindings.md)). `binding` Element má `name` atributů, které souvisí s koncového bodu určeného v vazbu `bindingConfiguration` atribut `endpoint` elementu. Pokud není zadán žádný název, pak je, že vazba odpovídá na výchozí hodnotu tohoto typu vazby.  
@@ -108,12 +108,12 @@ Další informace o konfiguraci služeb a klientů najdete v tématu [konfigurac
 ### <a name="the-behaviors-element"></a>\<Chování > – Element  
  Toto je prvek kontejneru pro `behavior` prvky, které definují chování pro službu.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
+ [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
   
 ### <a name="the-behavior-element"></a>\<Chování > – Element  
  Každý `behavior` element je identifikován `name` atribut a poskytuje buď poskytnuté systémem chování, například <`throttling`>, nebo vlastní chování. Pokud není zadán název prvku chování odpovídá výchozí chování služby nebo koncového bodu.  
   
- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
+ [\<behavior>](../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)  
   
 ## <a name="how-to-use-binding-and-behavior-configurations"></a>Jak používat vazby a chování konfigurace  
  WCF umožňuje snadno sdílet konfigurace mezi koncovými body pomocí referenčního systému v konfiguraci. Místo toho přímo konfigurační hodnoty pro koncový bod, související vazby konfigurační hodnoty jsou seskupené ve `bindingConfiguration` prvky `<binding>` části. Konfigurace vazby je pojmenovaná skupina nastavení na vazbu. Koncové body můžete odkázat `bindingConfiguration` podle názvu.  
@@ -266,5 +266,5 @@ Další informace o konfiguraci služeb a klientů najdete v tématu [konfigurac
 
 - [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
 - [Konfigurace služeb WCF](configuring-services.md)
-- [\<služby >](../../../docs/framework/configure-apps/file-schema/wcf/service.md)
+- [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)
 - [\<Vytvoření vazby >](../../../docs/framework/misc/binding.md)

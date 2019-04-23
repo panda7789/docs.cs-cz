@@ -3,10 +3,10 @@ title: Příklady dotazů založených na volání metody (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: d340775c-7f39-4087-a290-5cbec6cfa68e
 ms.openlocfilehash: 9419bd664a0e918b1ed40e5d468d01cf724f054d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59139799"
 ---
 # <a name="method-based-query-examples-linq-to-dataset"></a>Příklady dotazů založených na volání metody (LINQ to DataSet)
@@ -16,7 +16,7 @@ Tato část obsahuje LINQ k datové sadě programování příklady syntaxe dota
  [Projekce](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-projection.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> a <xref:System.Linq.Enumerable.SelectMany%2A> metody pro dotazování <xref:System.Data.DataSet>.  
   
- [Dělení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
+ [Segmentace](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-partitioning-linq.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody pro dotazování <xref:System.Data.DataSet> a rozdělit na oddíly výsledky.  
   
  [Řazení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-ordering-linq-to-dataset.md)  
@@ -34,7 +34,7 @@ Tato část obsahuje LINQ k datové sadě programování příklady syntaxe dota
  [Agregační operátory](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-aggregate-operators.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Sum%2A> metody pro dotazování <xref:System.Data.DataSet> a agregovat data.  
   
- [Join](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
+ [Spojení](../../../../docs/framework/data/adonet/method-based-query-syntax-examples-join-linq-to-dataset.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.GroupJoin%2A> a <xref:System.Linq.Enumerable.Join%2A> metody pro dotazování <xref:System.Data.DataSet>.  
   
 ## <a name="see-also"></a>Viz také:

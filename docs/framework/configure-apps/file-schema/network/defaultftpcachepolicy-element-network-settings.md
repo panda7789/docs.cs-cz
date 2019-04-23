@@ -1,5 +1,5 @@
 ---
-title: <defaultFtpCachePolicy> – Element (nastavení sítě)
+title: <defaultFtpCachePolicy> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultFtpCachePolicy
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
 ms.openlocfilehash: 36d174beea58ff96674bd873bfbcb8be89591669
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132532"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultftpcachepolicy – > – Element (nastavení sítě)

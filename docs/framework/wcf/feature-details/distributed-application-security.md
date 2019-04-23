@@ -6,10 +6,10 @@ helpviewer_keywords:
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
 ms.openlocfilehash: e447cd5ccf84e49ff384bd3591884404736d04f8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132052"
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
@@ -40,7 +40,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
   
 |Režim|Popis|  
 |----------|-----------------|  
-|Žádné|Žádné zabezpečení je poskytnut na přenosové vrstvě nebo ve vrstvě zprávy. Žádná z předdefinovaných vazeb tento režim používejte ve výchozím nastavení s výjimkou [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element nebo při použití kódu, <xref:System.ServiceModel.BasicHttpBinding> třídy.|  
+|Žádný|Žádné zabezpečení je poskytnut na přenosové vrstvě nebo ve vrstvě zprávy. Žádná z předdefinovaných vazeb tento režim používejte ve výchozím nastavení s výjimkou [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element nebo při použití kódu, <xref:System.ServiceModel.BasicHttpBinding> třídy.|  
 |Přenos|Používá zabezpečeného přenosu, jako je například HTTPS pro integritu, utajení a vzájemné ověřování.|  
 |Zpráva|Používá zabezpečení zprávu protokolu SOAP pro integritu, utajení a vzájemné ověřování. Podle specifikace WS-Security standardy, které jsou zabezpečené zprávy protokolu SOAP.|  
 |Ve smíšeném režimu|Zabezpečení pro ověřování integrity, utajení a server přenosu používá. Používá zprávy zabezpečení (WS-Security a dalších standardů) pro ověřování klientů.<br /><br /> (Tento výčet pro tento režim je `TransportWithMessageCredential`.)|  

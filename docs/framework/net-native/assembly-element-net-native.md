@@ -5,10 +5,10 @@ ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c0788c05edace2142d348c679c73aa1b4404ce75
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59137849"
 ---
 # <a name="assembly-element-net-native"></a>\<Sestavení > – Element (.NET Native)
@@ -53,7 +53,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
   
 |Value|Popis|  
 |-----------|-----------------|  
-|*název_sestavení*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření".<br /><br /> Můžete také určit řetězcového literálu `*Application*` uplatňovat zásady na všechna sestavení v balíčku aplikace, zda tato sestavení jsou načteny, nebo ne. `*Application*` nikdy použije zásady na sestavení rozhraní .NET Framework.|  
+|*assembly_name*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření".<br /><br /> Můžete také určit řetězcového literálu `*Application*` uplatňovat zásady na všechna sestavení v balíčku aplikace, zda tato sestavení jsou načteny, nebo ne. `*Application*` nikdy použije zásady na sestavení rozhraní .NET Framework.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
@@ -65,8 +65,8 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy z podřízených oborů názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy z podřízených oborů názvů.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  

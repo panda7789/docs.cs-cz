@@ -9,10 +9,10 @@ ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cb7520518497b244be8be3751ca8a3063a02717a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59135860"
 ---
 # <a name="clr-etw-events"></a>Události ETW CLR
@@ -43,10 +43,10 @@ Témata v této části popisují trasování událostí pro Windows (ETW). Kaž
  [Události metod](../../../docs/framework/performance/method-etw-events.md)  
  Zaznamenává informace o metodách CLR pro rozlišení symbolů.  
   
- [Události uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)  
+ [Události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md)  
  Zaznamenává informace týkající se uvolňování paměti, které vám pomůžou Diagnostika a ladění.  
   
- [Události trasování JIT](../../../docs/framework/performance/jit-tracing-etw-events.md)  
+ [JIT – události trasování (CLR)](../../../docs/framework/performance/jit-tracing-etw-events.md)  
  Zaznamenává informace o just-in-time (JIT) vkládání a volání funkce tail.  
   
  [Události interoperability](../../../docs/framework/performance/interop-etw-events.md)  
@@ -66,6 +66,6 @@ Témata v této části popisují trasování událostí pro Windows (ETW). Kaž
 - [Vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](https://go.microsoft.com/fwlink/?LinkId=179696)
 - [Blog o Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509)
 - [Řízení přihlašování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md)
-- [Poskytovatelé CLR ETW](../../../docs/framework/performance/clr-etw-providers.md)
-- [Klíčová slova a úrovně ETW CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)
+- [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)
+- [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)
 - [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

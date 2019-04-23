@@ -1,5 +1,5 @@
 ---
-title: <gcServer> Prvek
+title: Element <gcServer>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/gcServer
@@ -11,10 +11,10 @@ ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd91cf0179ef9731c456b41fdc865e3eacdb33eb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132805"
 ---
 # <a name="gcserver-element"></a>\<gcServer> Element
@@ -42,7 +42,7 @@ Určuje, zda modul common language runtime spustí uvolnění paměti serveru.
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Nejde spustit uvolňování paměti serveru. Toto nastavení je výchozí.|  
 |`true`|Spustí uvolnění paměti serveru.|  

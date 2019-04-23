@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.assetid: 17514d95-f0f5-4789-8e28-346640dc227c
 author: BrucePerlerMS
 ms.openlocfilehash: 5202e162a7eb5fc4e36d6a6c0a2c18af48872a69
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59130322"
 ---
 # <a name="nameclaimtype"></a>\<nameClaimType>
@@ -47,7 +47,7 @@ Nastaví typ deklarace identity, která určuje, <xref:System.Security.Principal
 |value|Řetězec určující identifikátor URI, který představuje typ deklarace identity z deklarací identity pro <xref:System.Security.Principal.IIdentity.Name%2A> vlastnost. Povinný parametr.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

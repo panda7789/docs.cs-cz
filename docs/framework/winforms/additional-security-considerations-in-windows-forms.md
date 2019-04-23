@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
 ms.openlocfilehash: a101b5838b843f0130d16aab6eb199c7a54ca6b9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59139526"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
@@ -52,7 +52,7 @@ ms.locfileid: "59139526"
 |<xref:System.Windows.Forms.Control>|-Získávání <xref:System.Windows.Forms.Control.Parent%2A> vlastnost.<br />-Nastavení `Region` vlastnost.<br />-Volání <xref:System.Windows.Forms.Control.FindForm%2A> , <xref:System.Windows.Forms.Control.Focus%2A>, <xref:System.Windows.Forms.Control.FromChildHandle%2A> a <xref:System.Windows.Forms.Control.FromHandle%2A>, <xref:System.Windows.Forms.Control.PreProcessMessage%2A>, <xref:System.Windows.Forms.Control.ReflectMessage%2A>, nebo <xref:System.Windows.Forms.Control.SetTopLevel%2A> metody.<br />-Volání <xref:System.Windows.Forms.Control.GetChildAtPoint%2A> metodu, pokud se ovládací prvek není podřízeným volání ovládacího prvku.<br />– Úprava aktivního ovládacího prvku uvnitř ovládacího prvku kontejneru.|  
 |<xref:System.Windows.Forms.Cursor>|-Nastavení <xref:System.Windows.Forms.Cursor.Clip%2A> vlastnost.<br />-Volání <xref:System.Windows.Forms.Control.Hide%2A> metody.|  
 |<xref:System.Windows.Forms.DataGrid>|-Volání <xref:System.Windows.Forms.ContainerControl.ProcessTabKey%2A> metody.|  
-|<xref:System.Windows.Forms.Form>|-Získávání <xref:System.Windows.Forms.Form.ActiveForm%2A> nebo <xref:System.Windows.Forms.Form.MdiParent%2A> vlastnost.<br />-Nastavení <xref:System.Windows.Forms.Form.ControlBox%2A>, <xref:System.Windows.Forms.Form.ShowInTaskbar%2A>, nebo <xref:System.Windows.Forms.Form.TopMost%2A> vlastnost.<br />-Nastavení <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost pod 50 %.<br />-Nastavení <xref:System.Windows.Forms.Form.WindowState%2A> vlastnost <xref:System.Windows.Forms.FormWindowState.Minimized> prostřednictvím kódu programu.<br />-Volání <xref:System.Windows.Forms.Form.Activate%2A> metody.<br />– Používání <xref:System.Windows.Forms.FormBorderStyle.None>, <xref:System.Windows.Forms.FormBorderStyle.FixedToolWindow>, a <xref:System.Windows.Forms.FormBorderStyle.SizableToolWindow><xref:System.Windows.Forms.FormBorderStyle> hodnot výčtu.|  
+|<xref:System.Windows.Forms.Form>|-Získávání <xref:System.Windows.Forms.Form.ActiveForm%2A> nebo <xref:System.Windows.Forms.Form.MdiParent%2A> vlastnost.<br />-Nastavení <xref:System.Windows.Forms.Form.ControlBox%2A>, <xref:System.Windows.Forms.Form.ShowInTaskbar%2A>, nebo <xref:System.Windows.Forms.Form.TopMost%2A> vlastnost.<br />-Nastavení <xref:System.Windows.Forms.Form.Opacity%2A> vlastnost pod 50 %.<br />-Nastavení <xref:System.Windows.Forms.Form.WindowState%2A> vlastnost <xref:System.Windows.Forms.FormWindowState.Minimized> prostřednictvím kódu programu.<br />-Volání <xref:System.Windows.Forms.Form.Activate%2A> metody.<br />– Používání <xref:System.Windows.Forms.FormBorderStyle.None>, <xref:System.Windows.Forms.FormBorderStyle.FixedToolWindow>, a <xref:System.Windows.Forms.FormBorderStyle.SizableToolWindow> <xref:System.Windows.Forms.FormBorderStyle> hodnot výčtu.|  
 |<xref:System.Windows.Forms.NotifyIcon>|– Používání <xref:System.Windows.Forms.NotifyIcon> komponenta je zcela omezen.|  
   
  <xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows> Hodnota omezuje akce uvedené v následující tabulce, kromě omezení umístí <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows> hodnotu.  
@@ -90,8 +90,8 @@ ms.locfileid: "59139526"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Více zabezpečený přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
-- [Bezpečnější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
+- [Zabezpečenější přístup k souborům a datům ve Windows Forms](more-secure-file-and-data-access-in-windows-forms.md)
+- [Zabezpečenější tisk ve Windows Forms](more-secure-printing-in-windows-forms.md)
 - [Přehled zabezpečení ve Windows Forms](security-in-windows-forms-overview.md)
 - [Windows Forms – zabezpečení](windows-forms-security.md)
 - [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications)

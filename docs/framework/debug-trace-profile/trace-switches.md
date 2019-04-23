@@ -15,10 +15,10 @@ ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 85a1a017197826717280f53995ed98f26f1d80bb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132662"
 ---
 # <a name="trace-switches"></a>Přepínače trasování
@@ -49,7 +49,7 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 |Výčtová hodnota|Celočíselná hodnota|Typ zprávy zobrazí (nebo zapsat do zadaného výstupního cíle)|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
-|Off|0|Žádný|  
+|Off|0|Žádné|  
 |Chyba|1|Pouze chybové zprávy|  
 |Upozornění|2|Zprávy upozornění a chybové zprávy|  
 |Informace o|3|Informační zprávy, upozornění a chybové zprávy|  
@@ -85,6 +85,6 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
   
 ## <a name="see-also"></a>Viz také:
 
-- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 - [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

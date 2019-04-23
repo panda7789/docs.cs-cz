@@ -7,10 +7,10 @@ helpviewer_keywords:
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
 ms.openlocfilehash: da49c6f0b44ab0eefbd338963a744a11502f75da
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59130465"
 ---
 # <a name="accessibility-levels-c-reference"></a>Úrovně přístupnosti (Referenční dokumentace jazyka C#)
@@ -38,7 +38,7 @@ Používat modifikátory přístupu `public`, `protected`, `internal`, nebo `pri
   
 |Členové|Výchozí člen dostupnost|Povolené deklarovaná přístupnost člena|  
 |----------------|----------------------------------|--------------------------------------------------|  
-|`enum`|`public`|Žádné|  
+|`enum`|`public`|Žádný|  
 |`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal` <br /><br />`private protected`|  
 |`interface`|`public`|Žádné|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
@@ -51,7 +51,7 @@ Používat modifikátory přístupu `public`, `protected`, `internal`, nebo `pri
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [Modifikátory přístupu](../../../csharp/language-reference/keywords/access-modifiers.md)
 - [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md)

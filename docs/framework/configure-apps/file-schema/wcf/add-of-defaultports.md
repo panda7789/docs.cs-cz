@@ -1,12 +1,12 @@
 ---
-title: <add> of <defaultPorts>
+title: <add> z <defaultPorts>
 ms.date: 03/30/2017
 ms.assetid: f162ce42-963b-4779-96a7-d6d8b4ea0d2f
 ms.openlocfilehash: 5200c8893a89488b72c2c71d1a3703bf2aad1235
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59136744"
 ---
 # <a name="add-of-defaultports"></a>\<Přidat > z \<defaultPorts >

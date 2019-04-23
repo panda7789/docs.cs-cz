@@ -8,10 +8,10 @@ helpviewer_keywords:
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
 ms.openlocfilehash: 53291a0e428b723cd7a6e7b1184639a7b3c3b972
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59141554"
 ---
 # <a name="optimizing-wpf-application-performance"></a>Optimalizace výkonu aplikace WPF
@@ -39,9 +39,9 @@ V této části je určený jako reference pro [!INCLUDE[TLA#tla_winclient](../.
   
  [Ovládací prvky](optimizing-performance-controls.md)  
   
- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)  
+ [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)  
   
- [Rychlejší spuštění aplikace](application-startup-time.md)  
+ [Doba spuštění aplikace](application-startup-time.md)  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -51,15 +51,15 @@ V této části je určený jako reference pro [!INCLUDE[TLA#tla_winclient](../.
 - [Přehled vykreslování grafiky WPF](../graphics-multimedia/wpf-graphics-rendering-overview.md)
 - [Rozložení](layout.md)
 - [Stromy v subsystému WPF](trees-in-wpf.md)
-- [Přehled vykreslovaných objektů](../graphics-multimedia/drawing-objects-overview.md)
+- [Přehled nakreslených objektů](../graphics-multimedia/drawing-objects-overview.md)
 - [Použití objektů DrawingVisual](../graphics-multimedia/using-drawingvisual-objects.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [Přehled zablokovatelných objektů](freezable-objects-overview.md)
-- [Zdroje XAML](xaml-resources.md)
+- [Prostředky XAML](xaml-resources.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [Kreslení formátovaného textu](drawing-formatted-text.md)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)
 - [Přehled navigace](../app-development/navigation-overview.md)
 - [Tipy a triky animace](../graphics-multimedia/animation-tips-and-tricks.md)
-- [Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)
+- [Návod: Ukládání dat aplikací v aplikaci WPF](walkthrough-caching-application-data-in-a-wpf-application.md)

@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 241e428e-5030-4b13-8a0a-69f05288d3d9
 ms.openlocfilehash: 60847f423c61b9e7f49a4a7594c965fb75354714
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59140176"
 ---
 # <a name="sendmessagechannelcache"></a>\<sendMessageChannelCache>
@@ -52,7 +52,7 @@ Chování služby, který umožňuje vlastní nastavení mezipaměti sdílení �
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<channelSettings>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/channelsettings.md)|Určuje nastavení mezipaměti kanálu.|  
-|[\<factorySettings >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|Určuje nastavení mezipaměti objekt pro vytváření kanálu.|  
+|[\<factorySettings>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/factorysettings.md)|Určuje nastavení mezipaměti objekt pro vytváření kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

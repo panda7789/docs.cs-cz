@@ -8,17 +8,17 @@ helpviewer_keywords:
 - controls [WPF], customization
 ms.assetid: a3d9930e-5597-470e-a636-dcf65eac500b
 ms.openlocfilehash: b70a6654e5c3722ad1ef1d926ee3a441d24d9e68
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59135379"
 ---
 # <a name="control-customization"></a>Přizpůsobení ovládacího prvku
 Tato kategorie zahrnuje různé základní třídy, rozhraní a další prvky a koncepty použité při vytváření plně funkčních [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ovládacího prvku.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Přehled řízeného vytváření](control-authoring-overview.md)  
+ [Přehled vytváření ovládacích prvků](control-authoring-overview.md)  
  [Pokyny pro návrh ovládacích prvků s podporou stylů](guidelines-for-designing-stylable-controls.md)  
  [Doplňky pro úpravy](adorners.md)  
  [Styly a šablony ovládacích prvků](control-styles-and-templates.md)  

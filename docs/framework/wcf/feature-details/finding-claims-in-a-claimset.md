@@ -9,10 +9,10 @@ helpviewer_keywords:
 - claims [WCF]
 ms.assetid: a76ce107-aeb3-47d0-bfa9-134c53664e20
 ms.openlocfilehash: 42e6ee682220913f872da337eb41f6c290082988
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59137121"
 ---
 # <a name="finding-claims-in-a-claimset"></a>Hledání deklarací v sadě deklarací
@@ -24,4 +24,4 @@ Zkoumání obsahu <xref:System.IdentityModel.Claims.ClaimSet> pro konkrétní ty
   
 ## <a name="see-also"></a>Viz také:
 
-- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

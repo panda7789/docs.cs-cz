@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Windows Forms dialog boxes [Windows Forms], tabs
 ms.assetid: 2b4ea784-a39d-463c-81d8-af74ce068476
 ms.openlocfilehash: 4511882aa4c7804e535f228dd150c26a8f7689f0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59140878"
 ---
 # <a name="tabcontrol-control-overview-windows-forms"></a>TabControl – přehled ovládacího prvku (Windows Forms)
@@ -25,9 +25,9 @@ Windows Forms <xref:System.Windows.Forms.TabControl> zobrazí několik karet, st
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.TabControl>
-- [TabControl – ovládací prvek](tabcontrol-control-windows-forms.md)
+- [Ovládací prvek TabControl](tabcontrol-control-windows-forms.md)
 - [Postupy: Změna vzhledu ovládacího prvku Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
-- [Postupy: Přidání ovládacího prvku na kartu](how-to-add-a-control-to-a-tab-page.md)
+- [Postupy: Přidání ovládacího prvku do stránky karty](how-to-add-a-control-to-a-tab-page.md)
 - [Postupy: Přidání a odebrání karet pomocí ovládacího prvku Windows Forms TabControl](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
-- [Postupy: Zakázání karet](how-to-disable-tab-pages.md)
+- [Postupy: Zákaz stránek karet](how-to-disable-tab-pages.md)
 - [Dialogová okna ve Windows Forms](../dialog-boxes-in-windows-forms.md)

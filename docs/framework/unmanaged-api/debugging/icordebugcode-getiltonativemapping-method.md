@@ -18,10 +18,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c30623e53b57a78287b26d4a362793cfb32baede
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59131056"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping – metoda
@@ -64,4 +64,4 @@ HRESULT GetILToNativeMapping (
   
 ## <a name="see-also"></a>Viz také:
 
-- [ICorDebugCode – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+- [Icordebugcode – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)

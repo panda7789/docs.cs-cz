@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
 ms.openlocfilehash: 0443e5b37e637351d6491c37ec443c93636460a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59134885"
 ---
 # <a name="contracts"></a>Kontrakty
@@ -67,6 +67,6 @@ Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communicati
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
 - [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)
 - [Implementace kontraktů služeb](../../../../docs/framework/wcf/implementing-service-contracts.md)

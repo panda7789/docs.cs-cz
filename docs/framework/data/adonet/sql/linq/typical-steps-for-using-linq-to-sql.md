@@ -3,10 +3,10 @@ title: Typické postupy použití LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
 ms.openlocfilehash: a7c6257bc27728d101d64d07ffedb1e38bc994eb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59132844"
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Typické postupy použití LINQ to SQL
@@ -20,7 +20,7 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ### <a name="1-select-a-tool-to-create-the-model"></a>1. Vyberte nástroj k vytváření modelu.  
  Tři nástroje jsou k dispozici pro vytváření modelu.  
   
--   Rozhraní [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+-   Na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
   
      Tento návrhář poskytuje bohaté možnosti uživatelského rozhraní pro vytvoření modelu objektu z existující databáze. Tento nástroj je součástí rozhraní IDE sady Visual Studio a je nejvhodnější pro malé a střední databáze.  
   

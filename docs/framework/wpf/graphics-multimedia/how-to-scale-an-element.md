@@ -6,10 +6,10 @@ helpviewer_keywords:
 - graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
 ms.openlocfilehash: 607b3a11085f746503c1b82552f1740b49d9ef5d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59131700"
 ---
 # <a name="how-to-scale-an-element"></a>Postupy: Změna velikosti elementu
@@ -42,4 +42,4 @@ Dvě operace ScaleTransform – identické ScaleX a ScaleY hodnoty, ale jiné ce
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.ScaleTransform>
 - [Přehled transformace](transforms-overview.md)
-- [– postupy](transformations-how-to-topics.md)
+- [Témata s postupy](transformations-how-to-topics.md)

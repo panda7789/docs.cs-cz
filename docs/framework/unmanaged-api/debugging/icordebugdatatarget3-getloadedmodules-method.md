@@ -5,10 +5,10 @@ ms.assetid: 9a48c05b-1949-416e-933c-52549b6fcf5e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 464fd9ac44d6ba5717dbc4ecfbe03b6e6ad52276
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59138655"
 ---
 # <a name="icordebugdatatarget3getloadedmodules-method"></a>Metoda ICorDebugDataTarget3::GetLoadedModules
@@ -50,5 +50,5 @@ HRESULT GetLoadedModules(
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní ICorDebugDataTarget3](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-interface.md)
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

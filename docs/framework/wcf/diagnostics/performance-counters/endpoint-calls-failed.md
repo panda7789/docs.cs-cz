@@ -3,10 +3,10 @@ title: 'Koncový bod: Počet nezdařených volání'
 ms.date: 03/30/2017
 ms.assetid: 3bdca983-7199-4596-b7e1-de15c0766250
 ms.openlocfilehash: c3f2ad3cbad9db75d172489284faf575fc09e003
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59135548"
 ---
 # <a name="endpoint-calls-failed"></a>Koncový bod: Počet nezdařených volání

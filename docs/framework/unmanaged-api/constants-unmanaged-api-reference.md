@@ -9,10 +9,10 @@ ms.assetid: 77526f65-b71c-4483-9d19-3a3751fd8a45
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8c76db644ffee478003d834460c155c4ec6d0070
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59133949"
 ---
 # <a name="constants-unmanaged-api-reference"></a>Konstanty (referenční dokumentace nespravovaného rozhraní API)
@@ -52,4 +52,4 @@ Toto téma popisuje typ jazyka, jazyk dodavatele a konstanty typu dokumentu, kte
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nespravované rozhraní API](../../../docs/framework/unmanaged-api/index.md)
+- [Referenční informace o nespravovaném rozhraní API](../../../docs/framework/unmanaged-api/index.md)

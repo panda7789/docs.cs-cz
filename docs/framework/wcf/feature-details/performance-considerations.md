@@ -3,17 +3,17 @@ title: Faktory ovlivňující výkon
 ms.date: 03/30/2017
 ms.assetid: 83082d4a-7350-4b04-ab2d-1fa5ffd643f5
 ms.openlocfilehash: 46e5b5c392ff3a0d401bb709b21637b3d2e784ab
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59139734"
 ---
 # <a name="performance-considerations"></a>Faktory ovlivňující výkon
 Důležité informace o výkonu jsou důležité vždy při tvorbě aplikací. Tato část obsahuje položky týkajících se výkonu a zabezpečení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
+ [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
  Popisuje nejrychlejší mechanismus pro vyhledání deklarace identity v kolekci deklarací identity.  
   
  [Šifrování digitálních podpisů](../../../../docs/framework/wcf/feature-details/encryption-of-digital-signatures.md)  
