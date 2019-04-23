@@ -3,10 +3,10 @@ title: <authentication> z <clientCertificate> – Element
 ms.date: 03/30/2017
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
 ms.openlocfilehash: e232cde8f6838de734e37aeee3f52cd7f7e7502d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59221199"
 ---
 # <a name="authentication-of-clientcertificate-element"></a>\<ověřování > z \<clientCertificate > – Element
@@ -47,7 +47,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |String|Určuje název typu a sestavení a další data použít k vyhledání typu.|  
   
@@ -65,7 +65,7 @@ Určuje chování ověřování pro klientské certifikáty používané službo
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`.|  
   

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - ColorDialog component [Windows Forms], about ColorDialog
 ms.assetid: 6dbdd8f0-f697-4728-bb09-7ea156f6d800
 ms.openlocfilehash: 284d42218fb4fbce873325b1e45c883d51eefab8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59222351"
 ---
 # <a name="colordialog-component-overview-windows-forms"></a>ColorDialog – přehled komponenty (Windows Forms)
@@ -24,4 +24,4 @@ Windows Forms <xref:System.Windows.Forms.ColorDialog> komponenta je předem nako
 - <xref:System.Windows.Forms.ColorDialog>
 - [Komponenta ColorDialog](colordialog-component-windows-forms.md)
 - [Ovládací prvky a součásti dialogového okna](dialog-box-controls-and-components-windows-forms.md)
-- [Postupy: Změna vzhledu komponenty Windows Forms ColorDialog](how-to-change-the-appearance-of-the-windows-forms-colordialog-component.md)
+- [Postupy: Změna vzhledu Windows Forms ColorDialog – komponenta](how-to-change-the-appearance-of-the-windows-forms-colordialog-component.md)

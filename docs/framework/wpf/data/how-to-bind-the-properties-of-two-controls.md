@@ -7,10 +7,10 @@ helpviewer_keywords:
 - controls [WPF], binding properties of
 ms.assetid: 06318fac-6afd-4c7d-a277-6d7ef50f47bc
 ms.openlocfilehash: 0dd7b817b632758cfca8b5c45d88e333510485f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59222058"
 ---
 # <a name="how-to-bind-the-properties-of-two-controls"></a>Postupy: Vytvoření vazby vlastností dvou ovládacích prvků
@@ -30,4 +30,4 @@ Tento příklad ukazuje, jak vytvořit vazbu vlastnosti jedné instance ovládac
 ## <a name="see-also"></a>Viz také:
 
 - [Určení zdroje vazby](how-to-specify-the-binding-source.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
