@@ -6,10 +6,10 @@ helpviewer_keywords:
 - GridView [WPF], displaying ListView contents
 ms.assetid: 5bc1e767-ab46-4f14-bd41-3d5d39e1d000
 ms.openlocfilehash: 9b467c95d541c326a41d1ed4bd9eb5c87e25bd5c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59112785"
 ---
 # <a name="how-to-display-listview-contents-by-using-a-gridview"></a>Postupy: Zobrazení obsahu ListView použitím GridView
@@ -30,4 +30,4 @@ Tento příklad ukazuje, jak definovat <xref:System.Windows.Controls.GridView> r
 - <xref:System.Windows.Controls.GridView>
 - [ListView – přehled](listview-overview.md)
 - [GridView – přehled](gridview-overview.md)
-- [– postupy](listview-how-to-topics.md)
+- [Témata s postupy](listview-how-to-topics.md)

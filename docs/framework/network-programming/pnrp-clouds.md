@@ -3,10 +3,10 @@ title: Cloudy PNRP
 ms.date: 03/30/2017
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
 ms.openlocfilehash: 943cad880885a624c0ed0798738665c8bcd7036f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59110042"
 ---
 # <a name="pnrp-clouds"></a>Cloudy PNRP
@@ -34,4 +34,4 @@ Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikov
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Net.PeerToPeer.Cloud>
-- [Protokol PNRP (Peer Name Resolution Protocol)](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)
+- [Protokol PNRP](../../../docs/framework/network-programming/peer-name-resolution-protocol.md)

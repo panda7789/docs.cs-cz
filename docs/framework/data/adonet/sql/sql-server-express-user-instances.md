@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
 ms.openlocfilehash: b456549daefa0fdf67524b0b039a091652cf41ff
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59111147"
 ---
 # <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
@@ -37,7 +37,7 @@ sp_configure 'user instances enabled','0'
  Síťový protokol pro uživatelské instance musí být místní pojmenovaných kanálů. Uživatelské instance nelze spustit ve vzdálené instanci systému SQL Server a SQL serveru přihlašovací jména nejsou povoleny.  
   
 ## <a name="connecting-to-a-user-instance"></a>Připojování k uživatelské instanci  
- `User Instance` a `AttachDBFilename`<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> povolit klíčová slova <xref:System.Data.SqlClient.SqlConnection> pro připojení k uživatelské instanci. Uživatelské instance jsou také podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder>`UserInstance` a `AttachDBFilename` vlastnosti.  
+ `User Instance` a `AttachDBFilename` <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> povolit klíčová slova <xref:System.Data.SqlClient.SqlConnection> pro připojení k uživatelské instanci. Uživatelské instance jsou také podporovány <xref:System.Data.SqlClient.SqlConnectionStringBuilder> `UserInstance` a `AttachDBFilename` vlastnosti.  
   
  Mějte na paměti následující skutečnosti související ukázkové připojovací řetězec je uvedeno níže:  
   
@@ -58,7 +58,7 @@ Initial Catalog=InstanceDB;
 ```  
   
 > [!NOTE]
->  Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder><xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec při běhu.  
+>  Můžete také použít <xref:System.Data.SqlClient.SqlConnectionStringBuilder> <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance%2A> a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename%2A> vlastnosti, které chcete vytvořit připojovací řetězec při běhu.  
   
 ### <a name="using-the-124datadirectory124-substitution-string"></a>Použití &#124;DataDirectory&#124; náhradní řetězec  
  `AttachDbFileName` rozšířila po zavedení služby ve verzi 2.0 rozhraní ADO.NET `|DataDirectory|` (ohraničen symboly kanálu) náhradní řetězec. `DataDirectory` používá se společně s `AttachDbFileName` označující relativní cesta k souboru dat, umožňuje vývojářům vytvářet připojovací řetězce, které jsou založeny na relativní cestu ke zdroji dat namísto zapotřebí zadat úplnou cestu.  

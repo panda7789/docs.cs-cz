@@ -10,10 +10,10 @@ helpviewer_keywords:
 - hosting [WPF], visual objects in Win32 code
 ms.assetid: f0e1600c-3217-43d5-875d-1864fa7fe628
 ms.openlocfilehash: b260f96246f0d9e5447b74a05e1396bfef176197
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59111459"
 ---
 # <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>Kurz: Hostování vizuálních objektů v aplikaci Win32
@@ -79,4 +79,4 @@ ms.locfileid: "59111459"
 
 - <xref:System.Windows.Interop.HwndSource>
 - [Spuštění testu s ukázkou Win32 vzájemné spolupráce](https://go.microsoft.com/fwlink/?LinkID=159995)
-- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)

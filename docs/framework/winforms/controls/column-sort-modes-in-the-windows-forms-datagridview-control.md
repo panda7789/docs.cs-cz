@@ -6,16 +6,16 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], sort mode
 ms.assetid: 43715887-2df9-4da7-bcf1-b9c7c842b2bf
 ms.openlocfilehash: b8f6048946d367dd79b1ce0d23d84446ffdb1115
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59106663"
 ---
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Režimy třídění sloupce v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> sloupce mají tři režimy řazení. Režim řazení pro každý sloupec se specifikuje prostřednictvím <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> vlastnost sloupec, který může být nastavena na jednu z následujících <xref:System.Windows.Forms.DataGridViewColumnSortMode> hodnot výčtu.  
   
-|`DataGridViewColumnSortMode` value|Popis|  
+|`DataGridViewColumnSortMode` Hodnota|Popis|  
 |----------------------------------------|-----------------|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>|Výchozí nastavení pro textové pole sloupce. Pokud nepoužíváte záhlaví sloupců jsou pro výběr, automaticky kliknutím na záhlaví sloupce seřadí <xref:System.Windows.Forms.DataGridView> podle tohoto sloupce a zobrazí piktogram určující pořadí řazení.|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>|Výchozí hodnoty pro sloupce bez – textové pole. Tento sloupec lze seřadit prostřednictvím kódu programu; ale není určena pro řazení, tak žádné místo je vyhrazený pro řazení glyfů.|  
@@ -68,4 +68,4 @@ ms.locfileid: "59106663"
 - <xref:System.Windows.Forms.DataGridViewColumnHeaderCell.SortGlyphDirection%2A?displayProperty=nameWithType>
 - [Řazení dat v ovládacím prvku Windows Forms DataGridView](sorting-data-in-the-windows-forms-datagridview-control.md)
 - [Postupy: Nastavení režimů řazení pro sloupce v ovládacím prvku Windows Forms DataGridView](set-the-sort-modes-for-columns-wf-datagridview-control.md)
-- [Postupy: Přizpůsobení řazení v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Přizpůsobení třídění v ovládacím prvku Windows Forms DataGridView](how-to-customize-sorting-in-the-windows-forms-datagridview-control.md)

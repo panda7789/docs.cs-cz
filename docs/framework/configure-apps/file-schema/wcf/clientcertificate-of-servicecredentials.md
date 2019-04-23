@@ -1,12 +1,12 @@
 ---
-title: <clientCertificate> of <serviceCredentials>
+title: <clientCertificate> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 90ad03aa-2317-43dd-8a72-6d24cdcad15c
 ms.openlocfilehash: 26ebac6439a90959e3a926e6a36c9044251a4aae
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59107980"
 ---
 # <a name="clientcertificate-of-servicecredentials"></a>\<clientCertificate> of \<serviceCredentials>
@@ -39,8 +39,8 @@ Určuje certifikát X.509 použitý k podepisování a šifrování zpráv do fo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<ověřování >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)|Určuje možnosti ověřování klientského certifikátu.|  
-|[\<certifikát >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md)|Určuje certifikát, který chcete použít.|  
+|[\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)|Určuje možnosti ověřování klientského certifikátu.|  
+|[\<certificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-clientcertificate-element.md)|Určuje certifikát, který chcete použít.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

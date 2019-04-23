@@ -9,10 +9,10 @@ helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
 ms.openlocfilehash: 1faebe2ce1a59798621888e3a518900234720be5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59116253"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
@@ -154,11 +154,11 @@ Můžete kombinovat modifikátory pro deklaraci struktury jako `readonly ref`. A
 ## <a name="see-also"></a>Viz také:
 
 - [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)
-- [Návratové hodnoty podle odkazu a lokální proměnné podle odkazu](../../programming-guide/classes-and-structs/ref-returns.md)
+- [Návratové a místní referenční hodnoty](../../programming-guide/classes-and-structs/ref-returns.md)
 - [Ref podmíněný výraz](../operators/conditional-operator.md#conditional-ref-expression)
 - [operátoru přiřazení odkazu](../operators/assignment-operator.md#ref-assignment-operator)
 - [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)
 - [Parametry metody](method-parameters.md)
 - [Referenční dokumentace jazyka C#](../index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)

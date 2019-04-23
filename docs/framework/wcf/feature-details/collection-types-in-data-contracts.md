@@ -10,10 +10,10 @@ helpviewer_keywords:
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
 ms.openlocfilehash: e7c7dd72c733036031fcf28d0dd2c1bc023d6552
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59106740"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
@@ -321,8 +321,8 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
 |Implementuje typ kolekce|Volat metody pro serializaci|Volá metody k deserializaci|  
 |--------------------------------|-----------------------------------------|-------------------------------------------|  
-|Obecné <xref:System.Collections.Generic.IDictionary%602>|`get_Keys`,  `get_Values`|Přidání obecného|  
-|<xref:System.Collections.IDictionary>|`get_Keys`,  `get_Values`|`Add`|  
+|Obecné <xref:System.Collections.Generic.IDictionary%602>|`get_Keys`, `get_Values`|Přidání obecného|  
+|<xref:System.Collections.IDictionary>|`get_Keys`, `get_Values`|`Add`|  
 |Obecné <xref:System.Collections.Generic.IList%601>|Obecný <xref:System.Collections.Generic.IList%601> indexeru|Přidání obecného|  
 |Obecné <xref:System.Collections.Generic.ICollection%601>|Enumerátor|Přidání obecného|  
 |<xref:System.Collections.IList>|<xref:System.Collections.IList> Indexer|`Add`|  

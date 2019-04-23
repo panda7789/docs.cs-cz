@@ -3,10 +3,10 @@ title: SqlClient pro funkce Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 71a3613c-b94e-494c-8ad8-90cf86ae0b87
 ms.openlocfilehash: 54072576b73b933277d33839fdbb575d420f2286
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59117776"
 ---
 # <a name="sqlclient-for-entity-framework-functions"></a>SqlClient pro funkce Entity Framework
@@ -25,7 +25,7 @@ Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) pro Entity Frame
   
  [Matematické funkce](../../../../../docs/framework/data/adonet/ef/mathematical-functions.md)  
   
- [Funkce řetězce](../../../../../docs/framework/data/adonet/ef/string-functions.md)  
+ [Řetězcové funkce](../../../../../docs/framework/data/adonet/ef/string-functions.md)  
   
  [Systémové funkce](../../../../../docs/framework/data/adonet/ef/system-functions.md)  
   

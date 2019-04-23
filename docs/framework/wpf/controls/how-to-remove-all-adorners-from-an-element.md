@@ -8,10 +8,10 @@ helpviewer_keywords:
 - adorners [WPF], removing
 ms.assetid: fe5303a3-b76e-4643-aafb-51419032b47b
 ms.openlocfilehash: 8504bb1ec70de188033b2b092bbb66cf9da3dc11
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59116791"
 ---
 # <a name="how-to-remove-all-adorners-from-an-element"></a>Postupy: Odebrání všech doplňků pro úpravy z elementu
@@ -31,4 +31,4 @@ Tento příklad ukazuje, jak prostřednictvím kódu programu odebrání všech 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled doplňků](adorners-overview.md)
+- [Přehled doplňků pro úpravy](adorners-overview.md)
