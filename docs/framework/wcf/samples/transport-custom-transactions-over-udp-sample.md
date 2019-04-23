@@ -3,17 +3,17 @@ title: 'Přenos: Ukázka vlastních transakcí přes UDP'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
 ms.openlocfilehash: e257c987d93fc7a5b5e8e7f51d79dd8399b45d72
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59310119"
 ---
-# <a name="transport-custom-transactions-over-udp-sample"></a><span data-ttu-id="16474-102">Přenos: Ukázka vlastních transakcí přes UDP</span><span class="sxs-lookup"><span data-stu-id="16474-102">Transport: Custom Transactions over UDP Sample</span></span>
-<span data-ttu-id="16474-103">Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázku ve Windows Communication Foundation (WCF)[rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span><span class="sxs-lookup"><span data-stu-id="16474-103">This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample in the Windows Communication Foundation (WCF)[Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span></span> <span data-ttu-id="16474-104">Rozšiřuje podporu toku transakcí vlastní ukázku přenos UDP a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="16474-104">It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
+# <a name="transport-custom-transactions-over-udp-sample"></a><span data-ttu-id="64404-102">Přenos: Ukázka vlastních transakcí přes UDP</span><span class="sxs-lookup"><span data-stu-id="64404-102">Transport: Custom Transactions over UDP Sample</span></span>
+<span data-ttu-id="64404-103">Tato ukázka je založena na [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázku ve Windows Communication Foundation (WCF)[rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span><span class="sxs-lookup"><span data-stu-id="64404-103">This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample in the Windows Communication Foundation (WCF)[Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md).</span></span> <span data-ttu-id="64404-104">Rozšiřuje podporu toku transakcí vlastní ukázku přenos UDP a demonstruje použití <xref:System.ServiceModel.Channels.TransactionMessageProperty> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="64404-104">It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.</span></span>  
   
-## <a name="code-changes-in-the-udp-transport-sample"></a><span data-ttu-id="16474-105">Změny kódu v ukázce přenosu UDP</span><span class="sxs-lookup"><span data-stu-id="16474-105">Code Changes in the UDP Transport Sample</span></span>  
- <span data-ttu-id="16474-106">Abychom si předvedli tok transakcí, ukázka změní kontrakt služby pro `ICalculatorContract` tak, aby vyžadovala oboru transakce pro `CalculatorService.Add()`.</span><span class="sxs-lookup"><span data-stu-id="16474-106">To demonstrate transaction flow, the sample changes the service contract for `ICalculatorContract` to require a transaction scope for `CalculatorService.Add()`.</span></span> <span data-ttu-id="16474-107">Ukázka přidá také speciální `System.Guid` parametr kontraktu `Add` operace.</span><span class="sxs-lookup"><span data-stu-id="16474-107">The sample also adds an extra `System.Guid` parameter to the contract of the `Add` operation.</span></span> <span data-ttu-id="16474-108">Tento parametr se používá k předání identifikátor transakce klienta ke službě.</span><span class="sxs-lookup"><span data-stu-id="16474-108">This parameter is used to pass the identifier of the client transaction to the service.</span></span>  
+## <a name="code-changes-in-the-udp-transport-sample"></a><span data-ttu-id="64404-105">Změny kódu v ukázce přenosu UDP</span><span class="sxs-lookup"><span data-stu-id="64404-105">Code Changes in the UDP Transport Sample</span></span>  
+ <span data-ttu-id="64404-106">Abychom si předvedli tok transakcí, ukázka změní kontrakt služby pro `ICalculatorContract` tak, aby vyžadovala oboru transakce pro `CalculatorService.Add()`.</span><span class="sxs-lookup"><span data-stu-id="64404-106">To demonstrate transaction flow, the sample changes the service contract for `ICalculatorContract` to require a transaction scope for `CalculatorService.Add()`.</span></span> <span data-ttu-id="64404-107">Ukázka přidá také speciální `System.Guid` parametr kontraktu `Add` operace.</span><span class="sxs-lookup"><span data-stu-id="64404-107">The sample also adds an extra `System.Guid` parameter to the contract of the `Add` operation.</span></span> <span data-ttu-id="64404-108">Tento parametr se používá k předání identifikátor transakce klienta ke službě.</span><span class="sxs-lookup"><span data-stu-id="64404-108">This parameter is used to pass the identifier of the client transaction to the service.</span></span>  
   
 ```  
 class CalculatorService : IDatagramContract, ICalculatorContract  
@@ -38,7 +38,7 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- <span data-ttu-id="16474-109">[Přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) Ukázka používá k předávání zpráv mezi klientem a službou UDP paketů.</span><span class="sxs-lookup"><span data-stu-id="16474-109">The [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample uses UDP packets to pass messages between a client and a service.</span></span> <span data-ttu-id="16474-110">[Přenosu: Přenos ukázková](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) používá stejný mechanismus pro přenos zpráv, ale když je počet plynoucích transakcí, je vložen do UDP paketů spolu s kódováním zpráv.</span><span class="sxs-lookup"><span data-stu-id="16474-110">The [Transport: Custom Transport Sample](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) uses the same mechanism to transport messages, but when a transaction is flowed, it is inserted into the UDP packet along with the encoded message.</span></span>  
+ <span data-ttu-id="64404-109">[Přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) Ukázka používá k předávání zpráv mezi klientem a službou UDP paketů.</span><span class="sxs-lookup"><span data-stu-id="64404-109">The [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample uses UDP packets to pass messages between a client and a service.</span></span> <span data-ttu-id="64404-110">[Přenosu: Přenos ukázková](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) používá stejný mechanismus pro přenos zpráv, ale když je počet plynoucích transakcí, je vložen do UDP paketů spolu s kódováním zpráv.</span><span class="sxs-lookup"><span data-stu-id="64404-110">The [Transport: Custom Transport Sample](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md) uses the same mechanism to transport messages, but when a transaction is flowed, it is inserted into the UDP packet along with the encoded message.</span></span>  
   
 ```  
 byte[] txmsgBuffer =                TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
@@ -46,13 +46,13 @@ byte[] txmsgBuffer =                TransactionMessageBuffer.WriteTransactionMes
 int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFlags.None, this.remoteEndPoint);  
 ```  
   
- `TransactionMessageBuffer.WriteTransactionMessageBuffer` <span data-ttu-id="16474-111">je pomocná metoda, která obsahuje novou funkci pro sloučení token šíření hodnoty pro aktuální transakce s entitou zprávy a umístěte ho do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="16474-111">is a helper method that contains new functionality to merge the propagation token for the current transaction with the message entity and place it into a buffer.</span></span>  
+ <span data-ttu-id="64404-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` je pomocná metoda, která obsahuje novou funkci pro sloučení token šíření hodnoty pro aktuální transakce s entitou zprávy a umístěte ho do vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="64404-111">`TransactionMessageBuffer.WriteTransactionMessageBuffer` is a helper method that contains new functionality to merge the propagation token for the current transaction with the message entity and place it into a buffer.</span></span>  
   
- <span data-ttu-id="16474-112">Pro tok transport vlastní transakce, musíte znát implementace klienta, jaké operace služby vyžaduje tok transakce a předávat tyto informace WCF.</span><span class="sxs-lookup"><span data-stu-id="16474-112">For custom transaction flow transport, the client implementation must know what service operations require transaction flow and to pass this information to WCF.</span></span> <span data-ttu-id="16474-113">Měla by existovat i mechanismus pro předávání uživatelské transakce do přenosové vrstvy.</span><span class="sxs-lookup"><span data-stu-id="16474-113">There should also be a mechanism for transmitting the user transaction to the transport layer.</span></span> <span data-ttu-id="16474-114">Tato ukázka používá "Inspektoři zpráv WCF" pro získání těchto informací.</span><span class="sxs-lookup"><span data-stu-id="16474-114">This sample uses "WCF message inspectors" to obtain this information.</span></span> <span data-ttu-id="16474-115">Klienta zpráva inspektor implementované tady, která se nazývá `TransactionFlowInspector`, provede následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="16474-115">The client message inspector implemented here, which is called `TransactionFlowInspector`, performs the following tasks:</span></span>  
+ <span data-ttu-id="64404-112">Pro tok transport vlastní transakce, musíte znát implementace klienta, jaké operace služby vyžaduje tok transakce a předávat tyto informace WCF.</span><span class="sxs-lookup"><span data-stu-id="64404-112">For custom transaction flow transport, the client implementation must know what service operations require transaction flow and to pass this information to WCF.</span></span> <span data-ttu-id="64404-113">Měla by existovat i mechanismus pro předávání uživatelské transakce do přenosové vrstvy.</span><span class="sxs-lookup"><span data-stu-id="64404-113">There should also be a mechanism for transmitting the user transaction to the transport layer.</span></span> <span data-ttu-id="64404-114">Tato ukázka používá "Inspektoři zpráv WCF" pro získání těchto informací.</span><span class="sxs-lookup"><span data-stu-id="64404-114">This sample uses "WCF message inspectors" to obtain this information.</span></span> <span data-ttu-id="64404-115">Klienta zpráva inspektor implementované tady, která se nazývá `TransactionFlowInspector`, provede následující úlohy:</span><span class="sxs-lookup"><span data-stu-id="64404-115">The client message inspector implemented here, which is called `TransactionFlowInspector`, performs the following tasks:</span></span>  
   
--   <span data-ttu-id="16474-116">Určuje, zda musí počet plynoucích transakcí pro danou zprávu akci (Tato akce se provede `IsTxFlowRequiredForThisOperation()`).</span><span class="sxs-lookup"><span data-stu-id="16474-116">Determines whether a transaction must be flowed for a given message action (this takes place in `IsTxFlowRequiredForThisOperation()`).</span></span>  
+-   <span data-ttu-id="64404-116">Určuje, zda musí počet plynoucích transakcí pro danou zprávu akci (Tato akce se provede `IsTxFlowRequiredForThisOperation()`).</span><span class="sxs-lookup"><span data-stu-id="64404-116">Determines whether a transaction must be flowed for a given message action (this takes place in `IsTxFlowRequiredForThisOperation()`).</span></span>  
   
--   <span data-ttu-id="16474-117">Připojí aktuální okolí transakce do zprávy pomocí `TransactionFlowProperty`, pokud se vyžaduje tok transakce (to se provádí v `BeforeSendRequest()`).</span><span class="sxs-lookup"><span data-stu-id="16474-117">Attaches the current ambient transaction to the message using `TransactionFlowProperty`, if a transaction is required to be flowed (this is done in `BeforeSendRequest()`).</span></span>  
+-   <span data-ttu-id="64404-117">Připojí aktuální okolí transakce do zprávy pomocí `TransactionFlowProperty`, pokud se vyžaduje tok transakce (to se provádí v `BeforeSendRequest()`).</span><span class="sxs-lookup"><span data-stu-id="64404-117">Attaches the current ambient transaction to the message using `TransactionFlowProperty`, if a transaction is required to be flowed (this is done in `BeforeSendRequest()`).</span></span>  
   
 ```  
 public class TransactionFlowInspector : IClientMessageInspector  
@@ -92,7 +92,7 @@ public class TransactionFlowInspector : IClientMessageInspector
 }  
 ```  
   
- <span data-ttu-id="16474-118">`TransactionFlowInspector` Samotného je předán rozhraní framework pomocí vlastního chování: `TransactionFlowBehavior`.</span><span class="sxs-lookup"><span data-stu-id="16474-118">The `TransactionFlowInspector` itself is passed to the framework using a custom behavior: the `TransactionFlowBehavior`.</span></span>  
+ <span data-ttu-id="64404-118">`TransactionFlowInspector` Samotného je předán rozhraní framework pomocí vlastního chování: `TransactionFlowBehavior`.</span><span class="sxs-lookup"><span data-stu-id="64404-118">The `TransactionFlowInspector` itself is passed to the framework using a custom behavior: the `TransactionFlowBehavior`.</span></span>  
   
 ```  
 public class TransactionFlowBehavior : IEndpointBehavior  
@@ -117,7 +117,7 @@ public class TransactionFlowBehavior : IEndpointBehavior
 }  
 ```  
   
- <span data-ttu-id="16474-119">S předchozím mechanismus v místě, vytvoří kód uživatele `TransactionScope` před voláním operace služby.</span><span class="sxs-lookup"><span data-stu-id="16474-119">With the preceding mechanism in place, the user code creates a `TransactionScope` before calling the service operation.</span></span> <span data-ttu-id="16474-120">Inspektor zpráv zajišťuje, že transakce je předán do přenosu v případě, že je potřeba být převedena do operace služby.</span><span class="sxs-lookup"><span data-stu-id="16474-120">The message inspector ensures that the transaction is passed to the transport in case it is required to be flowed to the service operation.</span></span>  
+ <span data-ttu-id="64404-119">S předchozím mechanismus v místě, vytvoří kód uživatele `TransactionScope` před voláním operace služby.</span><span class="sxs-lookup"><span data-stu-id="64404-119">With the preceding mechanism in place, the user code creates a `TransactionScope` before calling the service operation.</span></span> <span data-ttu-id="64404-120">Inspektor zpráv zajišťuje, že transakce je předán do přenosu v případě, že je potřeba být převedena do operace služby.</span><span class="sxs-lookup"><span data-stu-id="64404-120">The message inspector ensures that the transaction is passed to the transport in case it is required to be flowed to the service operation.</span></span>  
   
 ```  
 CalculatorContractClient calculatorClient = new CalculatorContractClient("SampleProfileUdpBinding_ICalculatorContract");  
@@ -151,7 +151,7 @@ catch (Exception)
 }  
 ```  
   
- <span data-ttu-id="16474-121">Při přijetí UDP paketů z klienta, služba ho deserializuje extrahovat zprávy a případně transakce.</span><span class="sxs-lookup"><span data-stu-id="16474-121">Upon receiving a UDP packet from the client, the service deserializes it to extract the message and possibly a transaction.</span></span>  
+ <span data-ttu-id="64404-121">Při přijetí UDP paketů z klienta, služba ho deserializuje extrahovat zprávy a případně transakce.</span><span class="sxs-lookup"><span data-stu-id="64404-121">Upon receiving a UDP packet from the client, the service deserializes it to extract the message and possibly a transaction.</span></span>  
   
 ```  
 count = listenSocket.EndReceiveFrom(result, ref dummy);  
@@ -159,9 +159,9 @@ count = listenSocket.EndReceiveFrom(result, ref dummy);
 // read the transaction and message                       TransactionMessageBuffer.ReadTransactionMessageBuffer(buffer, count, out transaction, out msg);  
 ```  
   
- `TransactionMessageBuffer.ReadTransactionMessageBuffer()` <span data-ttu-id="16474-122">je pomocná metoda, která obrací procesu serializace provádí `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span><span class="sxs-lookup"><span data-stu-id="16474-122">is the helper method that reverses the serialization process performed by `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span></span>  
+ <span data-ttu-id="64404-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` je pomocná metoda, která obrací procesu serializace provádí `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span><span class="sxs-lookup"><span data-stu-id="64404-122">`TransactionMessageBuffer.ReadTransactionMessageBuffer()` is the helper method that reverses the serialization process performed by `TransactionMessageBuffer.WriteTransactionMessageBuffer()`.</span></span>  
   
- <span data-ttu-id="16474-123">Pokud v byla převedena do transakce, je připojen na tuto zprávu najdete v `TransactionMessageProperty`.</span><span class="sxs-lookup"><span data-stu-id="16474-123">If a transaction was flowed in, it is appended to the message in the `TransactionMessageProperty`.</span></span>  
+ <span data-ttu-id="64404-123">Pokud v byla převedena do transakce, je připojen na tuto zprávu najdete v `TransactionMessageProperty`.</span><span class="sxs-lookup"><span data-stu-id="64404-123">If a transaction was flowed in, it is appended to the message in the `TransactionMessageProperty`.</span></span>  
   
 ```  
 message = MessageEncoderFactory.Encoder.ReadMessage(msg, bufferManager);  
@@ -172,15 +172,15 @@ if (transaction != null)
 }  
 ```  
   
- <span data-ttu-id="16474-124">Tím se zajistí, že dispečer vybere transakce v okamžiku odeslání a při volání operace služby řešený zprávy ji používá.</span><span class="sxs-lookup"><span data-stu-id="16474-124">This ensures that the dispatcher picks up the transaction at dispatch time and uses it when calling the service operation addressed by the message.</span></span>  
+ <span data-ttu-id="64404-124">Tím se zajistí, že dispečer vybere transakce v okamžiku odeslání a při volání operace služby řešený zprávy ji používá.</span><span class="sxs-lookup"><span data-stu-id="64404-124">This ensures that the dispatcher picks up the transaction at dispatch time and uses it when calling the service operation addressed by the message.</span></span>  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="16474-125">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="16474-125">To set up, build, and run the sample</span></span>  
+#### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="64404-125">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="64404-125">To set up, build, and run the sample</span></span>  
   
-1. <span data-ttu-id="16474-126">Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="16474-126">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+1. <span data-ttu-id="64404-126">Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="64404-126">To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-2. <span data-ttu-id="16474-127">Aktuální ukázky by měl být spuštěn, podobně jako [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="16474-127">The current sample should be run similarly to the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span> <span data-ttu-id="16474-128">K jeho spuštění spusťte službu s UdpTestService.exe.</span><span class="sxs-lookup"><span data-stu-id="16474-128">To run it, start the service with UdpTestService.exe.</span></span> <span data-ttu-id="16474-129">Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], musíte spustit službu se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="16474-129">If you are running [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], you must start the service with elevated privileges.</span></span> <span data-ttu-id="16474-130">Chcete-li to provést, klikněte pravým tlačítkem na UdpTestService.exe v [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] a klikněte na tlačítko **spustit jako správce**.</span><span class="sxs-lookup"><span data-stu-id="16474-130">To do so, right-click UdpTestService.exe in [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] and click **Run as administrator**.</span></span>  
+2. <span data-ttu-id="64404-127">Aktuální ukázky by měl být spuštěn, podobně jako [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.</span><span class="sxs-lookup"><span data-stu-id="64404-127">The current sample should be run similarly to the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample.</span></span> <span data-ttu-id="64404-128">K jeho spuštění spusťte službu s UdpTestService.exe.</span><span class="sxs-lookup"><span data-stu-id="64404-128">To run it, start the service with UdpTestService.exe.</span></span> <span data-ttu-id="64404-129">Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], musíte spustit službu se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="64404-129">If you are running [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], you must start the service with elevated privileges.</span></span> <span data-ttu-id="64404-130">Chcete-li to provést, klikněte pravým tlačítkem na UdpTestService.exe v [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] a klikněte na tlačítko **spustit jako správce**.</span><span class="sxs-lookup"><span data-stu-id="64404-130">To do so, right-click UdpTestService.exe in [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] and click **Run as administrator**.</span></span>  
   
-3. <span data-ttu-id="16474-131">To vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="16474-131">This produces the following output.</span></span>  
+3. <span data-ttu-id="64404-131">To vytvoří následující výstup.</span><span class="sxs-lookup"><span data-stu-id="64404-131">This produces the following output.</span></span>  
   
     ```  
     Testing Udp From Code.  
@@ -188,7 +188,7 @@ if (transaction != null)
     Press <ENTER> to terminate the service and start service from config...  
     ```  
   
-4. <span data-ttu-id="16474-132">V současné době může spuštění klienta spuštěním UdpTestClient.exe.</span><span class="sxs-lookup"><span data-stu-id="16474-132">At this time, you can start the client by running UdpTestClient.exe.</span></span> <span data-ttu-id="16474-133">Výstup vytvořený klienta vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="16474-133">The output produced by the client is as follows.</span></span>  
+4. <span data-ttu-id="64404-132">V současné době může spuštění klienta spuštěním UdpTestClient.exe.</span><span class="sxs-lookup"><span data-stu-id="64404-132">At this time, you can start the client by running UdpTestClient.exe.</span></span> <span data-ttu-id="64404-133">Výstup vytvořený klienta vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="64404-133">The output produced by the client is as follows.</span></span>  
   
     ```  
     0  
@@ -199,7 +199,7 @@ if (transaction != null)
     Press <ENTER> to complete test.  
     ```  
   
-5. <span data-ttu-id="16474-134">Služba výstup vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="16474-134">The service output is as follows.</span></span>  
+5. <span data-ttu-id="64404-134">Služba výstup vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="64404-134">The service output is as follows.</span></span>  
   
     ```  
     Hello, world!  
@@ -219,9 +219,9 @@ if (transaction != null)
        adding 4 + 8  
     ```  
   
-6. <span data-ttu-id="16474-135">Aplikace služby zobrazí zprávu `The client transaction has flowed to the service` Pokud by odpovídat v odesílaném klientem, identifikátor transakce `clientTransactionId` parametr `CalculatorService.Add()` operace, identifikátor transakce služby.</span><span class="sxs-lookup"><span data-stu-id="16474-135">The service application displays the message `The client transaction has flowed to the service` if it can match the transaction identifier sent by the client, in the `clientTransactionId` parameter of the `CalculatorService.Add()` operation, to the identifier of the service transaction.</span></span> <span data-ttu-id="16474-136">Shoda se získá jenom v případě, že klientská transakce prochází ke službě.</span><span class="sxs-lookup"><span data-stu-id="16474-136">A match is obtained only if the client transaction has flowed to the service.</span></span>  
+6. <span data-ttu-id="64404-135">Aplikace služby zobrazí zprávu `The client transaction has flowed to the service` Pokud by odpovídat v odesílaném klientem, identifikátor transakce `clientTransactionId` parametr `CalculatorService.Add()` operace, identifikátor transakce služby.</span><span class="sxs-lookup"><span data-stu-id="64404-135">The service application displays the message `The client transaction has flowed to the service` if it can match the transaction identifier sent by the client, in the `clientTransactionId` parameter of the `CalculatorService.Add()` operation, to the identifier of the service transaction.</span></span> <span data-ttu-id="64404-136">Shoda se získá jenom v případě, že klientská transakce prochází ke službě.</span><span class="sxs-lookup"><span data-stu-id="64404-136">A match is obtained only if the client transaction has flowed to the service.</span></span>  
   
-7. <span data-ttu-id="16474-137">Ke spuštění klientské aplikace publikované pomocí konfigurace koncových bodů, stiskněte klávesu ENTER na okno aplikace služby a poté znovu spusťte testovací klient.</span><span class="sxs-lookup"><span data-stu-id="16474-137">To run the client application against endpoints published using configuration, press ENTER on the service application window and then run the test client again.</span></span> <span data-ttu-id="16474-138">Ve službě byste měli vidět následující výstup.</span><span class="sxs-lookup"><span data-stu-id="16474-138">You should see the following output on the service.</span></span>  
+7. <span data-ttu-id="64404-137">Ke spuštění klientské aplikace publikované pomocí konfigurace koncových bodů, stiskněte klávesu ENTER na okno aplikace služby a poté znovu spusťte testovací klient.</span><span class="sxs-lookup"><span data-stu-id="64404-137">To run the client application against endpoints published using configuration, press ENTER on the service application window and then run the test client again.</span></span> <span data-ttu-id="64404-138">Ve službě byste měli vidět následující výstup.</span><span class="sxs-lookup"><span data-stu-id="64404-138">You should see the following output on the service.</span></span>  
   
     ```  
     Testing Udp From Config.  
@@ -229,15 +229,15 @@ if (transaction != null)
     Press <ENTER> to terminate the service and exit...  
     ```  
   
-8. <span data-ttu-id="16474-139">Podobný výstup jako spuštění klienta na službu nyní vytvoří stejně jako předtím.</span><span class="sxs-lookup"><span data-stu-id="16474-139">Running the client against the service now produces similar output as before.</span></span>  
+8. <span data-ttu-id="64404-139">Podobný výstup jako spuštění klienta na službu nyní vytvoří stejně jako předtím.</span><span class="sxs-lookup"><span data-stu-id="64404-139">Running the client against the service now produces similar output as before.</span></span>  
   
-9. <span data-ttu-id="16474-140">Znovu vygenerovat kód klienta a konfigurace pomocí Svcutil.exe, spusťte aplikaci služby a pak spusťte následující příkaz Svcutil.exe z kořenového adresáře vzorku.</span><span class="sxs-lookup"><span data-stu-id="16474-140">To regenerate the client code and configuration using Svcutil.exe, start the service application and then run the following Svcutil.exe command from the root directory of the sample.</span></span>  
+9. <span data-ttu-id="64404-140">Znovu vygenerovat kód klienta a konfigurace pomocí Svcutil.exe, spusťte aplikaci služby a pak spusťte následující příkaz Svcutil.exe z kořenového adresáře vzorku.</span><span class="sxs-lookup"><span data-stu-id="64404-140">To regenerate the client code and configuration using Svcutil.exe, start the service application and then run the following Svcutil.exe command from the root directory of the sample.</span></span>  
   
     ```  
     svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
     ```  
   
-10. <span data-ttu-id="16474-141">Všimněte si, že Svcutil.exe negeneruje pro konfiguraci rozšíření vazby `sampleProfileUdpBinding`; je třeba přidat ji ručně.</span><span class="sxs-lookup"><span data-stu-id="16474-141">Note that Svcutil.exe does not generate the binding extension configuration for the `sampleProfileUdpBinding`; you must add it manually.</span></span>  
+10. <span data-ttu-id="64404-141">Všimněte si, že Svcutil.exe negeneruje pro konfiguraci rozšíření vazby `sampleProfileUdpBinding`; je třeba přidat ji ručně.</span><span class="sxs-lookup"><span data-stu-id="64404-141">Note that Svcutil.exe does not generate the binding extension configuration for the `sampleProfileUdpBinding`; you must add it manually.</span></span>  
   
     ```xml  
     <configuration>  
@@ -254,14 +254,14 @@ if (transaction != null)
     ```  
   
 > [!IMPORTANT]
->  <span data-ttu-id="16474-142">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="16474-142">The samples may already be installed on your machine.</span></span> <span data-ttu-id="16474-143">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="16474-143">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="64404-142">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="64404-142">The samples may already be installed on your machine.</span></span> <span data-ttu-id="64404-143">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="64404-143">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="16474-144">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="16474-144">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="16474-145">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="16474-145">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="64404-144">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="64404-144">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="64404-145">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="64404-145">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
-## <a name="see-also"></a><span data-ttu-id="16474-146">Viz také:</span><span class="sxs-lookup"><span data-stu-id="16474-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="64404-146">Viz také:</span><span class="sxs-lookup"><span data-stu-id="64404-146">See also</span></span>
 
-- [<span data-ttu-id="16474-147">Přenos: UDP</span><span class="sxs-lookup"><span data-stu-id="16474-147">Transport: UDP</span></span>](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [<span data-ttu-id="64404-147">Přenos: UDP</span><span class="sxs-lookup"><span data-stu-id="64404-147">Transport: UDP</span></span>](../../../../docs/framework/wcf/samples/transport-udp.md)
