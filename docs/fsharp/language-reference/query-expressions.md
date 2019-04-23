@@ -3,28 +3,28 @@ title: Výrazy dotazu
 description: Další informace o podpoře výrazu dotazu LINQ v JAZYKU F# programovací jazyk.
 ms.date: 05/16/2016
 ms.openlocfilehash: 3e5be7f81d7e15953142186be3aca64e68ded2a5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191559"
 ---
-# <a name="query-expressions"></a><span data-ttu-id="37f08-103">Výrazy dotazu</span><span class="sxs-lookup"><span data-stu-id="37f08-103">Query Expressions</span></span>
+# <a name="query-expressions"></a><span data-ttu-id="77308-103">Výrazy dotazu</span><span class="sxs-lookup"><span data-stu-id="77308-103">Query Expressions</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="37f08-104">Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.</span><span class="sxs-lookup"><span data-stu-id="37f08-104">The API reference links in this article will take you to MSDN.</span></span>  <span data-ttu-id="37f08-105">Reference k rozhraní API webu docs.microsoft.com není dokončena.</span><span class="sxs-lookup"><span data-stu-id="37f08-105">The docs.microsoft.com API reference is not complete.</span></span>
+> <span data-ttu-id="77308-104">Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.</span><span class="sxs-lookup"><span data-stu-id="77308-104">The API reference links in this article will take you to MSDN.</span></span>  <span data-ttu-id="77308-105">Reference k rozhraní API webu docs.microsoft.com není dokončena.</span><span class="sxs-lookup"><span data-stu-id="77308-105">The docs.microsoft.com API reference is not complete.</span></span>
 
-<span data-ttu-id="37f08-106">Výrazy dotazů umožňují dotazování na zdroj dat a umístit data v požadované podobě.</span><span class="sxs-lookup"><span data-stu-id="37f08-106">Query expressions enable you to query a data source and put the data in a desired form.</span></span> <span data-ttu-id="37f08-107">Výrazy dotazů poskytovat podporu pro LINQ v JAZYKU F#.</span><span class="sxs-lookup"><span data-stu-id="37f08-107">Query expressions provide support for LINQ in F#.</span></span>
+<span data-ttu-id="77308-106">Výrazy dotazů umožňují dotazování na zdroj dat a umístit data v požadované podobě.</span><span class="sxs-lookup"><span data-stu-id="77308-106">Query expressions enable you to query a data source and put the data in a desired form.</span></span> <span data-ttu-id="77308-107">Výrazy dotazů poskytovat podporu pro LINQ v JAZYKU F#.</span><span class="sxs-lookup"><span data-stu-id="77308-107">Query expressions provide support for LINQ in F#.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="37f08-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="37f08-108">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="77308-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="77308-108">Syntax</span></span>
 
 ```fsharp
 query { expression }
 ```
 
-## <a name="remarks"></a><span data-ttu-id="37f08-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="37f08-109">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="77308-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="77308-109">Remarks</span></span>
 
-<span data-ttu-id="37f08-110">Výrazy dotazu představují typ výrazu výpočtu podobný výrazech pořadí.</span><span class="sxs-lookup"><span data-stu-id="37f08-110">Query expressions are a type of computation expression similar to sequence expressions.</span></span> <span data-ttu-id="37f08-111">Stejně jako určení posloupnost zadáním kódu ve výrazu pořadí, je třeba zadat sadu dat tím, že poskytuje kód ve výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-111">Just as you specify a sequence by providing code in a sequence expression, you specify a set of data by providing code in a query expression.</span></span> <span data-ttu-id="37f08-112">Ve výrazu pořadí `yield` – klíčové slovo identifikuje data, která má být vrácena jako součást výsledné pořadí.</span><span class="sxs-lookup"><span data-stu-id="37f08-112">In a sequence expression, the `yield` keyword identifies data to be returned as part of the resulting sequence.</span></span> <span data-ttu-id="37f08-113">Ve výrazech dotazů `select` – klíčové slovo provádí stejnou funkci.</span><span class="sxs-lookup"><span data-stu-id="37f08-113">In query expressions, the `select` keyword performs the same function.</span></span> <span data-ttu-id="37f08-114">Kromě `select` – klíčové slovo, F# rovněž podporuje několik operátorů dotazu, které jsou stejně jako část příkazu SQL SELECT.</span><span class="sxs-lookup"><span data-stu-id="37f08-114">In addition to the `select` keyword, F# also supports a number of query operators that are much like the parts of a SQL SELECT statement.</span></span> <span data-ttu-id="37f08-115">Tady je příklad výrazu jednoduchý dotaz, spolu s kódem, který se připojuje ke zdroji OData s názvem Northwind.</span><span class="sxs-lookup"><span data-stu-id="37f08-115">Here is an example of a simple query expression, along with code that connects to the Northwind OData source.</span></span>
+<span data-ttu-id="77308-110">Výrazy dotazu představují typ výrazu výpočtu podobný výrazech pořadí.</span><span class="sxs-lookup"><span data-stu-id="77308-110">Query expressions are a type of computation expression similar to sequence expressions.</span></span> <span data-ttu-id="77308-111">Stejně jako určení posloupnost zadáním kódu ve výrazu pořadí, je třeba zadat sadu dat tím, že poskytuje kód ve výrazu dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-111">Just as you specify a sequence by providing code in a sequence expression, you specify a set of data by providing code in a query expression.</span></span> <span data-ttu-id="77308-112">Ve výrazu pořadí `yield` – klíčové slovo identifikuje data, která má být vrácena jako součást výsledné pořadí.</span><span class="sxs-lookup"><span data-stu-id="77308-112">In a sequence expression, the `yield` keyword identifies data to be returned as part of the resulting sequence.</span></span> <span data-ttu-id="77308-113">Ve výrazech dotazů `select` – klíčové slovo provádí stejnou funkci.</span><span class="sxs-lookup"><span data-stu-id="77308-113">In query expressions, the `select` keyword performs the same function.</span></span> <span data-ttu-id="77308-114">Kromě `select` – klíčové slovo, F# rovněž podporuje několik operátorů dotazu, které jsou stejně jako část příkazu SQL SELECT.</span><span class="sxs-lookup"><span data-stu-id="77308-114">In addition to the `select` keyword, F# also supports a number of query operators that are much like the parts of a SQL SELECT statement.</span></span> <span data-ttu-id="77308-115">Tady je příklad výrazu jednoduchý dotaz, spolu s kódem, který se připojuje ke zdroji OData s názvem Northwind.</span><span class="sxs-lookup"><span data-stu-id="77308-115">Here is an example of a simple query expression, along with code that connects to the Northwind OData source.</span></span>
 
 ```fsharp
 // Use the OData type provider to create types that can be used to access the Northwind database.
@@ -46,23 +46,23 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-<span data-ttu-id="37f08-116">V předchozím příkladu kódu je výraz dotazu ve složených závorkách.</span><span class="sxs-lookup"><span data-stu-id="37f08-116">In the previous code example, the query expression is in curly braces.</span></span> <span data-ttu-id="37f08-117">Význam kódu ve výrazu, vraťte každý zákazník v tabulce zákazníků v databáze ve výsledcích dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-117">The meaning of the code in the expression is, return every customer in the Customers table in the database in the query results.</span></span> <span data-ttu-id="37f08-118">Výrazy dotazů návratový typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601>, a proto se můžete provést iteraci pomocí [Seq – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) stejně jako v příkladu se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="37f08-118">Query expressions return a type that implements <xref:System.Linq.IQueryable%601> and <xref:System.Collections.Generic.IEnumerable%601>, and so they can be iterated using the [Seq module](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) as the example shows.</span></span>
+<span data-ttu-id="77308-116">V předchozím příkladu kódu je výraz dotazu ve složených závorkách.</span><span class="sxs-lookup"><span data-stu-id="77308-116">In the previous code example, the query expression is in curly braces.</span></span> <span data-ttu-id="77308-117">Význam kódu ve výrazu, vraťte každý zákazník v tabulce zákazníků v databáze ve výsledcích dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-117">The meaning of the code in the expression is, return every customer in the Customers table in the database in the query results.</span></span> <span data-ttu-id="77308-118">Výrazy dotazů návratový typ, který implementuje <xref:System.Linq.IQueryable%601> a <xref:System.Collections.Generic.IEnumerable%601>, a proto se můžete provést iteraci pomocí [Seq – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) stejně jako v příkladu se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="77308-118">Query expressions return a type that implements <xref:System.Linq.IQueryable%601> and <xref:System.Collections.Generic.IEnumerable%601>, and so they can be iterated using the [Seq module](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) as the example shows.</span></span>
 
-<span data-ttu-id="37f08-119">Každý typ výrazu výpočtu je sestaven z třídy tvůrce.</span><span class="sxs-lookup"><span data-stu-id="37f08-119">Every computation expression type is built from a builder class.</span></span> <span data-ttu-id="37f08-120">Třída tvůrce pro query – výpočetní výraz je `QueryBuilder`.</span><span class="sxs-lookup"><span data-stu-id="37f08-120">The builder class for the query computation expression is `QueryBuilder`.</span></span> <span data-ttu-id="37f08-121">Další informace najdete v tématu [výrazech výpočtu](computation-expressions.md) a [LINQ.QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span><span class="sxs-lookup"><span data-stu-id="37f08-121">For more information, see [Computation Expressions](computation-expressions.md) and [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span></span>
+<span data-ttu-id="77308-119">Každý typ výrazu výpočtu je sestaven z třídy tvůrce.</span><span class="sxs-lookup"><span data-stu-id="77308-119">Every computation expression type is built from a builder class.</span></span> <span data-ttu-id="77308-120">Třída tvůrce pro query – výpočetní výraz je `QueryBuilder`.</span><span class="sxs-lookup"><span data-stu-id="77308-120">The builder class for the query computation expression is `QueryBuilder`.</span></span> <span data-ttu-id="77308-121">Další informace najdete v tématu [výrazech výpočtu](computation-expressions.md) a [LINQ.QueryBuilder – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span><span class="sxs-lookup"><span data-stu-id="77308-121">For more information, see [Computation Expressions](computation-expressions.md) and [Linq.QueryBuilder Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d).</span></span>
 
-## <a name="query-operators"></a><span data-ttu-id="37f08-122">Operátory dotazů</span><span class="sxs-lookup"><span data-stu-id="37f08-122">Query Operators</span></span>
+## <a name="query-operators"></a><span data-ttu-id="77308-122">Operátory dotazů</span><span class="sxs-lookup"><span data-stu-id="77308-122">Query Operators</span></span>
 
-<span data-ttu-id="37f08-123">Operátory dotazů umožňují určit podrobnosti o dotazu, jako např. Chcete změnit kritéria na vrácených záznamů, nebo určit pořadí řazení výsledků.</span><span class="sxs-lookup"><span data-stu-id="37f08-123">Query operators enable you to specify the details of the query, such as to put criteria on records to be returned, or specify the sorting order of results.</span></span> <span data-ttu-id="37f08-124">Zdroj dotazu musí podporovat – operátor dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-124">The query source must support the query operator.</span></span> <span data-ttu-id="37f08-125">Pokud se pokusíte použít operátor nepodporovaný dotaz `System.NotSupportedException` bude vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="37f08-125">If you attempt to use an unsupported query operator, `System.NotSupportedException` will be thrown.</span></span>
+<span data-ttu-id="77308-123">Operátory dotazů umožňují určit podrobnosti o dotazu, jako např. Chcete změnit kritéria na vrácených záznamů, nebo určit pořadí řazení výsledků.</span><span class="sxs-lookup"><span data-stu-id="77308-123">Query operators enable you to specify the details of the query, such as to put criteria on records to be returned, or specify the sorting order of results.</span></span> <span data-ttu-id="77308-124">Zdroj dotazu musí podporovat – operátor dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-124">The query source must support the query operator.</span></span> <span data-ttu-id="77308-125">Pokud se pokusíte použít operátor nepodporovaný dotaz `System.NotSupportedException` bude vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="77308-125">If you attempt to use an unsupported query operator, `System.NotSupportedException` will be thrown.</span></span>
 
-<span data-ttu-id="37f08-126">Ve výrazech dotazů jsou povoleny pouze výrazy, které lze do kódu SQL.</span><span class="sxs-lookup"><span data-stu-id="37f08-126">Only expressions that can be translated to SQL are allowed in query expressions.</span></span> <span data-ttu-id="37f08-127">Například žádná volání funkce jsou povoleny ve výrazech při použití `where` – operátor dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-127">For example, no function calls are allowed in the expressions when you use the `where` query operator.</span></span>
+<span data-ttu-id="77308-126">Ve výrazech dotazů jsou povoleny pouze výrazy, které lze do kódu SQL.</span><span class="sxs-lookup"><span data-stu-id="77308-126">Only expressions that can be translated to SQL are allowed in query expressions.</span></span> <span data-ttu-id="77308-127">Například žádná volání funkce jsou povoleny ve výrazech při použití `where` – operátor dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-127">For example, no function calls are allowed in the expressions when you use the `where` query operator.</span></span>
 
-<span data-ttu-id="37f08-128">Tabulka 1 zobrazuje dostupných operátorů dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-128">Table 1 shows available query operators.</span></span> <span data-ttu-id="37f08-129">Kromě toho najdete v článku tabulka2, která porovná dotazy SQL a ekvivalent F# dotazování dále v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="37f08-129">In addition, see Table2, which compares SQL queries and the equivalent F# query expressions later in this topic.</span></span> <span data-ttu-id="37f08-130">Někteří poskytovatelé typů nejsou podporovány některé operátory dotazu.</span><span class="sxs-lookup"><span data-stu-id="37f08-130">Some query operators aren't supported by some type providers.</span></span> <span data-ttu-id="37f08-131">Zejména poskytovatele typu OData má zobrazení omezenou operátorů dotazu, které podporuje z důvodu omezení v prostředí OData.</span><span class="sxs-lookup"><span data-stu-id="37f08-131">In particular, the OData type provider is limited in the query operators that it supports due to limitations in OData.</span></span> <span data-ttu-id="37f08-132">Další informace najdete v tématu [odataservice – zprostředkovatel typu (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span><span class="sxs-lookup"><span data-stu-id="37f08-132">For more information, see [ODataService Type Provider (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span></span>
+<span data-ttu-id="77308-128">Tabulka 1 zobrazuje dostupných operátorů dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-128">Table 1 shows available query operators.</span></span> <span data-ttu-id="77308-129">Kromě toho najdete v článku tabulka2, která porovná dotazy SQL a ekvivalent F# dotazování dále v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="77308-129">In addition, see Table2, which compares SQL queries and the equivalent F# query expressions later in this topic.</span></span> <span data-ttu-id="77308-130">Někteří poskytovatelé typů nejsou podporovány některé operátory dotazu.</span><span class="sxs-lookup"><span data-stu-id="77308-130">Some query operators aren't supported by some type providers.</span></span> <span data-ttu-id="77308-131">Zejména poskytovatele typu OData má zobrazení omezenou operátorů dotazu, které podporuje z důvodu omezení v prostředí OData.</span><span class="sxs-lookup"><span data-stu-id="77308-131">In particular, the OData type provider is limited in the query operators that it supports due to limitations in OData.</span></span> <span data-ttu-id="77308-132">Další informace najdete v tématu [odataservice – zprostředkovatel typu (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span><span class="sxs-lookup"><span data-stu-id="77308-132">For more information, see [ODataService Type Provider (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).</span></span>
 
-<span data-ttu-id="37f08-133">Tato tabulka předpokládá databáze v následujícím tvaru:</span><span class="sxs-lookup"><span data-stu-id="37f08-133">This table assumes a database in the following form:</span></span>
+<span data-ttu-id="77308-133">Tato tabulka předpokládá databáze v následujícím tvaru:</span><span class="sxs-lookup"><span data-stu-id="77308-133">This table assumes a database in the following form:</span></span>
 
 ![Diagram zobrazující ukázkovou databázi.](./media/query-expressions/student-course-database.png)
 
-<span data-ttu-id="37f08-135">Kód v tabulkách, které následují také předpokládá následující kód připojení databáze.</span><span class="sxs-lookup"><span data-stu-id="37f08-135">The code in the tables that follow also assumes the following database connection code.</span></span> <span data-ttu-id="37f08-136">Projekty měli přidat odkazy na sestavení FSharp.Data.TypeProviders, System.Data a System.Data.Linq.</span><span class="sxs-lookup"><span data-stu-id="37f08-136">Projects should add references to System.Data,  System.Data.Linq, and FSharp.Data.TypeProviders assemblies.</span></span> <span data-ttu-id="37f08-137">Kód, který vytvoří tato databáze je součástí na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="37f08-137">The code that creates this database is included at the end of this topic.</span></span>
+<span data-ttu-id="77308-135">Kód v tabulkách, které následují také předpokládá následující kód připojení databáze.</span><span class="sxs-lookup"><span data-stu-id="77308-135">The code in the tables that follow also assumes the following database connection code.</span></span> <span data-ttu-id="77308-136">Projekty měli přidat odkazy na sestavení FSharp.Data.TypeProviders, System.Data a System.Data.Linq.</span><span class="sxs-lookup"><span data-stu-id="77308-136">Projects should add references to System.Data,  System.Data.Linq, and FSharp.Data.TypeProviders assemblies.</span></span> <span data-ttu-id="77308-137">Kód, který vytvoří tato databáze je součástí na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="77308-137">The code that creates this database is included at the end of this topic.</span></span>
 
 ```fsharp
 open System
@@ -79,16 +79,16 @@ let db = schema.GetDataContext()
 let data = [ 1; 5; 7; 11; 18; 21]
 ```
 
-### <a name="table-1-query-operators"></a><span data-ttu-id="37f08-138">Tabulka 1.</span><span class="sxs-lookup"><span data-stu-id="37f08-138">Table 1.</span></span> <span data-ttu-id="37f08-139">Operátory dotazů</span><span class="sxs-lookup"><span data-stu-id="37f08-139">Query Operators</span></span>
+### <a name="table-1-query-operators"></a><span data-ttu-id="77308-138">Tabulka 1.</span><span class="sxs-lookup"><span data-stu-id="77308-138">Table 1.</span></span> <span data-ttu-id="77308-139">Operátory dotazů</span><span class="sxs-lookup"><span data-stu-id="77308-139">Query Operators</span></span>
 
 <table style="width:100%">
   <tr>
-    <th><span data-ttu-id="37f08-140">Operátor</span><span class="sxs-lookup"><span data-stu-id="37f08-140">Operator</span></span></th>
-    <th><span data-ttu-id="37f08-141">Popis</span><span class="sxs-lookup"><span data-stu-id="37f08-141">Description</span></span></th>
+    <th><span data-ttu-id="77308-140">Operátor</span><span class="sxs-lookup"><span data-stu-id="77308-140">Operator</span></span></th>
+    <th><span data-ttu-id="77308-141">Popis</span><span class="sxs-lookup"><span data-stu-id="77308-141">Description</span></span></th>
   </tr>
   <tr>
   <td><code>contains</code></td>
-<td><span data-ttu-id="37f08-142">Určuje, zda zadaný prvek direktivy include vybrané elementy.</span><span class="sxs-lookup"><span data-stu-id="37f08-142">Determines whether the selected elements include a specified element.</span></span><br/><br/>
+<td><span data-ttu-id="77308-142">Určuje, zda zadaný prvek direktivy include vybrané elementy.</span><span class="sxs-lookup"><span data-stu-id="77308-142">Determines whether the selected elements include a specified element.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -101,7 +101,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </tr>
 
 <tr>
-  <td><code>count</code></td><td><span data-ttu-id="37f08-143">Vrátí počet vybraných elementů.</span><span class="sxs-lookup"><span data-stu-id="37f08-143">Returns the number of selected elements.</span></span><br/><br/>
+  <td><code>count</code></td><td><span data-ttu-id="77308-143">Vrátí počet vybraných elementů.</span><span class="sxs-lookup"><span data-stu-id="77308-143">Returns the number of selected elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -112,7 +112,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 </td></tr>
 <tr>
-<td><code>last</code></td><td><span data-ttu-id="37f08-144">Vybere poslední prvek z nich vybrali doposud.</span><span class="sxs-lookup"><span data-stu-id="37f08-144">Selects the last element of those selected so far.</span></span><br/><br/>
+<td><code>last</code></td><td><span data-ttu-id="77308-144">Vybere poslední prvek z nich vybrali doposud.</span><span class="sxs-lookup"><span data-stu-id="77308-144">Selects the last element of those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -122,7 +122,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 </td></tr>
 <tr>
-<td><code>lastOrDefault</code></td><td><span data-ttu-id="37f08-145">Vybere poslední prvek zatím zvolené nebo výchozí hodnotu, pokud není nalezen žádný element.</span><span class="sxs-lookup"><span data-stu-id="37f08-145">Selects the last element of those selected so far, or a default value if no element is found.</span></span><br/><br/>
+<td><code>lastOrDefault</code></td><td><span data-ttu-id="77308-145">Vybere poslední prvek zatím zvolené nebo výchozí hodnotu, pokud není nalezen žádný element.</span><span class="sxs-lookup"><span data-stu-id="77308-145">Selects the last element of those selected so far, or a default value if no element is found.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -132,7 +132,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOne</code></td><td><span data-ttu-id="37f08-146">Vybere jeden, konkrétní element zatím vybrali.</span><span class="sxs-lookup"><span data-stu-id="37f08-146">Selects the single, specific element selected so far.</span></span> <span data-ttu-id="37f08-147">Pokud jsou k dispozici více elementy, je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="37f08-147">If multiple elements are present, an exception is thrown.</span></span><br/><br/>
+<td><code>exactlyOne</code></td><td><span data-ttu-id="77308-146">Vybere jeden, konkrétní element zatím vybrali.</span><span class="sxs-lookup"><span data-stu-id="77308-146">Selects the single, specific element selected so far.</span></span> <span data-ttu-id="77308-147">Pokud jsou k dispozici více elementy, je vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="77308-147">If multiple elements are present, an exception is thrown.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -143,7 +143,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exactlyOneOrDefault</code></td><td><span data-ttu-id="37f08-148">Vybere jeden, konkrétní element zvolené zatím nebo výchozí hodnotu, pokud tento prvek nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="37f08-148">Selects the single, specific element of those selected so far, or a default value if that element is not found.</span></span><br/><br/>
+<td><code>exactlyOneOrDefault</code></td><td><span data-ttu-id="77308-148">Vybere jeden, konkrétní element zvolené zatím nebo výchozí hodnotu, pokud tento prvek nebyl nalezen.</span><span class="sxs-lookup"><span data-stu-id="77308-148">Selects the single, specific element of those selected so far, or a default value if that element is not found.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -154,7 +154,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>headOrDefault</code></td><td><span data-ttu-id="37f08-149">Vybere první prvek zatím zvolené nebo výchozí hodnotu v případě, že posloupnost neobsahuje žádné elementy.</span><span class="sxs-lookup"><span data-stu-id="37f08-149">Selects the first element of those selected so far, or a default value if the sequence contains no elements.</span></span><br/><br/>
+<td><code>headOrDefault</code></td><td><span data-ttu-id="77308-149">Vybere první prvek zatím zvolené nebo výchozí hodnotu v případě, že posloupnost neobsahuje žádné elementy.</span><span class="sxs-lookup"><span data-stu-id="77308-149">Selects the first element of those selected so far, or a default value if the sequence contains no elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -164,7 +164,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>select</code></td><td><span data-ttu-id="37f08-150">Každý prvek, pokud vybrané projekty.</span><span class="sxs-lookup"><span data-stu-id="37f08-150">Projects each of the elements selected so far.</span></span><br/><br/>
+<td><code>select</code></td><td><span data-ttu-id="77308-150">Každý prvek, pokud vybrané projekty.</span><span class="sxs-lookup"><span data-stu-id="77308-150">Projects each of the elements selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -173,7 +173,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>where</code></td><td><span data-ttu-id="37f08-151">Vybere elementy podle zadanou predikát.</span><span class="sxs-lookup"><span data-stu-id="37f08-151">Selects elements based on a specified predicate.</span></span><br/><br/>
+<td><code>where</code></td><td><span data-ttu-id="77308-151">Vybere elementy podle zadanou predikát.</span><span class="sxs-lookup"><span data-stu-id="77308-151">Selects elements based on a specified predicate.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -183,7 +183,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minBy</code></td><td><span data-ttu-id="37f08-152">Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu minimální.</span><span class="sxs-lookup"><span data-stu-id="37f08-152">Selects a value for each element selected so far and returns the minimum resulting value.</span></span><br/><br/>
+<td><code>minBy</code></td><td><span data-ttu-id="77308-152">Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu minimální.</span><span class="sxs-lookup"><span data-stu-id="77308-152">Selects a value for each element selected so far and returns the minimum resulting value.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -192,7 +192,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxBy</code></td><td><span data-ttu-id="37f08-153">Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu maximální.</span><span class="sxs-lookup"><span data-stu-id="37f08-153">Selects a value for each element selected so far and returns the maximum resulting value.</span></span><br/><br/>
+<td><code>maxBy</code></td><td><span data-ttu-id="77308-153">Hodnotu pro každý prvek vybraný zatím vybere a vrátí výslednou hodnotu maximální.</span><span class="sxs-lookup"><span data-stu-id="77308-153">Selects a value for each element selected so far and returns the maximum resulting value.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -201,7 +201,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupBy</code></td><td><span data-ttu-id="37f08-154">Seskupuje prvky vybrali zatím podle zadaného selektoru klíče.</span><span class="sxs-lookup"><span data-stu-id="37f08-154">Groups the elements selected so far according to a specified key selector.</span></span><br/><br/>
+<td><code>groupBy</code></td><td><span data-ttu-id="77308-154">Seskupuje prvky vybrali zatím podle zadaného selektoru klíče.</span><span class="sxs-lookup"><span data-stu-id="77308-154">Groups the elements selected so far according to a specified key selector.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -211,7 +211,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortBy</code></td><td><span data-ttu-id="37f08-155">Seřadí prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="37f08-155">Sorts the elements selected so far in ascending order by the given sorting key.</span></span><br/><br/>
+<td><code>sortBy</code></td><td><span data-ttu-id="77308-155">Seřadí prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="77308-155">Sorts the elements selected so far in ascending order by the given sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -221,7 +221,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByDescending</code></td><td><span data-ttu-id="37f08-156">Seřadí prvky vybrali zatím v sestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="37f08-156">Sorts the elements selected so far in descending order by the given sorting key.</span></span><br/><br/>
+<td><code>sortByDescending</code></td><td><span data-ttu-id="77308-156">Seřadí prvky vybrali zatím v sestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="77308-156">Sorts the elements selected so far in descending order by the given sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -231,7 +231,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenBy</code></td><td><span data-ttu-id="37f08-157">Provádí následující řazení prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="37f08-157">Performs a subsequent ordering of the elements selected so far in ascending order by the given sorting key.</span></span> <span data-ttu-id="37f08-158">Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.</span><span class="sxs-lookup"><span data-stu-id="37f08-158">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
+<td><code>thenBy</code></td><td><span data-ttu-id="77308-157">Provádí následující řazení prvky vybrali zatím ve vzestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="77308-157">Performs a subsequent ordering of the elements selected so far in ascending order by the given sorting key.</span></span> <span data-ttu-id="77308-158">Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.</span><span class="sxs-lookup"><span data-stu-id="77308-158">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -243,7 +243,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByDescending</code></td><td><span data-ttu-id="37f08-159">Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="37f08-159">Performs a subsequent ordering of the elements selected so far in descending order by the given sorting key.</span></span> <span data-ttu-id="37f08-160">Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.</span><span class="sxs-lookup"><span data-stu-id="37f08-160">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
+<td><code>thenByDescending</code></td><td><span data-ttu-id="77308-159">Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daného klíče řazení.</span><span class="sxs-lookup"><span data-stu-id="77308-159">Performs a subsequent ordering of the elements selected so far in descending order by the given sorting key.</span></span> <span data-ttu-id="77308-160">Tento operátor se dá použít jenom po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>.</span><span class="sxs-lookup"><span data-stu-id="77308-160">This operator may only be used after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -255,7 +255,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupValBy</code></td><td><span data-ttu-id="37f08-161">Vybere hodnotu pro každý prvek vybraný zatím a seskupuje prvky podle daného klíče.</span><span class="sxs-lookup"><span data-stu-id="37f08-161">Selects a value for each element selected so far and groups the elements by the given key.</span></span><br/><br/>
+<td><code>groupValBy</code></td><td><span data-ttu-id="77308-161">Vybere hodnotu pro každý prvek vybraný zatím a seskupuje prvky podle daného klíče.</span><span class="sxs-lookup"><span data-stu-id="77308-161">Selects a value for each element selected so far and groups the elements by the given key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -265,7 +265,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>join</code></td><td><span data-ttu-id="37f08-162">Koreluje dvě sady vybraných hodnot založené na shodujících se klíčích.</span><span class="sxs-lookup"><span data-stu-id="37f08-162">Correlates two sets of selected values based on matching keys.</span></span> <span data-ttu-id="37f08-163">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="37f08-163">Note that the order of the keys around the = sign in a join expression is significant.</span></span> <span data-ttu-id="37f08-164">Ve všech spojení, pokud je řádek rozdělit po <code>-&gt;</code> symbol, odsazení musí být odsazený alespoň pokud klíčové slovo <code>for</code>.</span><span class="sxs-lookup"><span data-stu-id="37f08-164">In all joins, if the line is split after the <code>-&gt;</code> symbol, the indentation must be indented at least as far as the keyword <code>for</code>.</span></span><br/><br/>
+<td><code>join</code></td><td><span data-ttu-id="77308-162">Koreluje dvě sady vybraných hodnot založené na shodujících se klíčích.</span><span class="sxs-lookup"><span data-stu-id="77308-162">Correlates two sets of selected values based on matching keys.</span></span> <span data-ttu-id="77308-163">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="77308-163">Note that the order of the keys around the = sign in a join expression is significant.</span></span> <span data-ttu-id="77308-164">Ve všech spojení, pokud je řádek rozdělit po <code>-&gt;</code> symbol, odsazení musí být odsazený alespoň pokud klíčové slovo <code>for</code>.</span><span class="sxs-lookup"><span data-stu-id="77308-164">In all joins, if the line is split after the <code>-&gt;</code> symbol, the indentation must be indented at least as far as the keyword <code>for</code>.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -276,7 +276,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>groupJoin</code></td><td><span data-ttu-id="37f08-165">Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky.</span><span class="sxs-lookup"><span data-stu-id="37f08-165">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="37f08-166">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="37f08-166">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
+<td><code>groupJoin</code></td><td><span data-ttu-id="77308-165">Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky.</span><span class="sxs-lookup"><span data-stu-id="77308-165">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="77308-166">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="77308-166">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -290,7 +290,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>leftOuterJoin</code></td><td><span data-ttu-id="37f08-167">Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky.</span><span class="sxs-lookup"><span data-stu-id="37f08-167">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="37f08-168">Pokud libovolná skupina je prázdný, skupinu jeden výchozí hodnotou je místo toho použít.</span><span class="sxs-lookup"><span data-stu-id="37f08-168">If any group is empty, a group with a single default value is used instead.</span></span> <span data-ttu-id="37f08-169">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="37f08-169">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
+<td><code>leftOuterJoin</code></td><td><span data-ttu-id="77308-167">Koreluje dvě sady založené na shodujících se klíčích vybraných hodnot a seskupí výsledky.</span><span class="sxs-lookup"><span data-stu-id="77308-167">Correlates two sets of selected values based on matching keys and groups the results.</span></span> <span data-ttu-id="77308-168">Pokud libovolná skupina je prázdný, skupinu jeden výchozí hodnotou je místo toho použít.</span><span class="sxs-lookup"><span data-stu-id="77308-168">If any group is empty, a group with a single default value is used instead.</span></span> <span data-ttu-id="77308-169">Všimněte si, že pořadí klíčů kolem = podepsat ve výrazu join je důležité.</span><span class="sxs-lookup"><span data-stu-id="77308-169">Note that the order of the keys around the = sign in a join expression is significant.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -302,7 +302,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumByNullable</code></td><td><span data-ttu-id="37f08-170">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="37f08-170">Selects a nullable value for each element selected so far and returns the sum of these values.</span></span> <span data-ttu-id="37f08-171">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="37f08-171">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>sumByNullable</code></td><td><span data-ttu-id="77308-170">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="77308-170">Selects a nullable value for each element selected so far and returns the sum of these values.</span></span> <span data-ttu-id="77308-171">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="77308-171">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -311,7 +311,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>minByNullable</code></td><td><span data-ttu-id="37f08-172">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí minimum z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="37f08-172">Selects a nullable value for each element selected so far and returns the minimum of these values.</span></span> <span data-ttu-id="37f08-173">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="37f08-173">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>minByNullable</code></td><td><span data-ttu-id="77308-172">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí minimum z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="77308-172">Selects a nullable value for each element selected so far and returns the minimum of these values.</span></span> <span data-ttu-id="77308-173">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="77308-173">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -320,7 +320,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>maxByNullable</code></td><td><span data-ttu-id="37f08-174">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí maximální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="37f08-174">Selects a nullable value for each element selected so far and returns the maximum of these values.</span></span> <span data-ttu-id="37f08-175">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="37f08-175">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>maxByNullable</code></td><td><span data-ttu-id="77308-174">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí maximální hodnoty.</span><span class="sxs-lookup"><span data-stu-id="77308-174">Selects a nullable value for each element selected so far and returns the maximum of these values.</span></span> <span data-ttu-id="77308-175">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="77308-175">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -329,7 +329,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageByNullable</code></td><td><span data-ttu-id="37f08-176">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="37f08-176">Selects a nullable value for each element selected so far and returns the average of these values.</span></span> <span data-ttu-id="37f08-177">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="37f08-177">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
+<td><code>averageByNullable</code></td><td><span data-ttu-id="77308-176">Hodnotu s možnou hodnotou Null pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="77308-176">Selects a nullable value for each element selected so far and returns the average of these values.</span></span> <span data-ttu-id="77308-177">Pokud existuje s možnou hodnotou Null nemá hodnotu, je ignorován.</span><span class="sxs-lookup"><span data-stu-id="77308-177">If any nullable does not have a value, it is ignored.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -338,7 +338,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>averageBy</code></td><td><span data-ttu-id="37f08-178">Hodnotu pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="37f08-178">Selects a value for each element selected so far and returns the average of these values.</span></span><br/><br/>
+<td><code>averageBy</code></td><td><span data-ttu-id="77308-178">Hodnotu pro každý prvek vybraný zatím vybere a vrátí průměrnou hodnotu z těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="77308-178">Selects a value for each element selected so far and returns the average of these values.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -347,7 +347,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>distinct</code></td><td><span data-ttu-id="37f08-179">Vybere různých elementů z prvků vybraných doposud.</span><span class="sxs-lookup"><span data-stu-id="37f08-179">Selects distinct elements from the elements selected so far.</span></span><br/><br/>
+<td><code>distinct</code></td><td><span data-ttu-id="77308-179">Vybere různých elementů z prvků vybraných doposud.</span><span class="sxs-lookup"><span data-stu-id="77308-179">Selects distinct elements from the elements selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -358,7 +358,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>exists</code></td><td><span data-ttu-id="37f08-180">Určuje, zda libovolný element, pokud vybrané splňuje podmínku.</span><span class="sxs-lookup"><span data-stu-id="37f08-180">Determines whether any element selected so far satisfies a condition.</span></span><br/><br/>
+<td><code>exists</code></td><td><span data-ttu-id="77308-180">Určuje, zda libovolný element, pokud vybrané splňuje podmínku.</span><span class="sxs-lookup"><span data-stu-id="77308-180">Determines whether any element selected so far satisfies a condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -371,7 +371,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>find</code></td><td><span data-ttu-id="37f08-181">Vybere první prvek, pokud vybrané, který splňuje zadanou podmínku.</span><span class="sxs-lookup"><span data-stu-id="37f08-181">Selects the first element selected so far that satisfies a specified condition.</span></span><br/><br/>
+<td><code>find</code></td><td><span data-ttu-id="77308-181">Vybere první prvek, pokud vybrané, který splňuje zadanou podmínku.</span><span class="sxs-lookup"><span data-stu-id="77308-181">Selects the first element selected so far that satisfies a specified condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -380,7 +380,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>all</code></td><td><span data-ttu-id="37f08-182">Určuje, zda všechny prvky vybrali zatím splňují podmínku.</span><span class="sxs-lookup"><span data-stu-id="37f08-182">Determines whether all elements selected so far satisfy a condition.</span></span><br/><br/>
+<td><code>all</code></td><td><span data-ttu-id="77308-182">Určuje, zda všechny prvky vybrali zatím splňují podmínku.</span><span class="sxs-lookup"><span data-stu-id="77308-182">Determines whether all elements selected so far satisfy a condition.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -389,7 +389,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>head</code></td><td><span data-ttu-id="37f08-183">Vybere první prvek od těch, které zatím vybrali.</span><span class="sxs-lookup"><span data-stu-id="37f08-183">Selects the first element from those selected so far.</span></span><br/><br/>
+<td><code>head</code></td><td><span data-ttu-id="77308-183">Vybere první prvek od těch, které zatím vybrali.</span><span class="sxs-lookup"><span data-stu-id="77308-183">Selects the first element from those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -398,7 +398,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>nth</code></td><td><span data-ttu-id="37f08-184">Element v zadaném indexu mimo tyto vybrané zatím vybere.</span><span class="sxs-lookup"><span data-stu-id="37f08-184">Selects the element at a specified index amongst those selected so far.</span></span><br/><br/>
+<td><code>nth</code></td><td><span data-ttu-id="77308-184">Element v zadaném indexu mimo tyto vybrané zatím vybere.</span><span class="sxs-lookup"><span data-stu-id="77308-184">Selects the element at a specified index amongst those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for numbers in data do
@@ -407,7 +407,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skip</code></td><td><span data-ttu-id="37f08-185">Vynechá zadaný počet prvků, zatím vybrána a potom vybere zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="37f08-185">Bypasses a specified number of the elements selected so far and then selects the remaining elements.</span></span><br/><br/>
+<td><code>skip</code></td><td><span data-ttu-id="77308-185">Vynechá zadaný počet prvků, zatím vybrána a potom vybere zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="77308-185">Bypasses a specified number of the elements selected so far and then selects the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -416,7 +416,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>skipWhile</code></td><td><span data-ttu-id="37f08-186">Vynechává prvky v sekvenci, dokud je zadaná podmínka pravdivá a potom vybere zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="37f08-186">Bypasses elements in a sequence as long as a specified condition is true and then selects the remaining elements.</span></span><br/><br/>
+<td><code>skipWhile</code></td><td><span data-ttu-id="77308-186">Vynechává prvky v sekvenci, dokud je zadaná podmínka pravdivá a potom vybere zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="77308-186">Bypasses elements in a sequence as long as a specified condition is true and then selects the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -426,7 +426,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sumBy</code></td><td><span data-ttu-id="37f08-187">Hodnotu pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="37f08-187">Selects a value for each element selected so far and returns the sum of these values.</span></span><br/><br/>
+<td><code>sumBy</code></td><td><span data-ttu-id="77308-187">Hodnotu pro každý prvek vybraný zatím vybere a vrátí součet těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="77308-187">Selects a value for each element selected so far and returns the sum of these values.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -435,7 +435,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>take</code></td><td><span data-ttu-id="37f08-188">Zatím Vybere zadaný počet souvislých prvků z vybraných.</span><span class="sxs-lookup"><span data-stu-id="37f08-188">Selects a specified number of contiguous elements from those selected so far.</span></span><br/><br/>
+<td><code>take</code></td><td><span data-ttu-id="77308-188">Zatím Vybere zadaný počet souvislých prvků z vybraných.</span><span class="sxs-lookup"><span data-stu-id="77308-188">Selects a specified number of contiguous elements from those selected so far.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -445,7 +445,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>takeWhile</code></td><td><span data-ttu-id="37f08-189">Vybere elementy ze sekvence, dokud je zadaná podmínka je PRAVDA a potom přeskočí zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="37f08-189">Selects elements from a sequence as long as a specified condition is true, and then skips the remaining elements.</span></span><br/><br/>
+<td><code>takeWhile</code></td><td><span data-ttu-id="77308-189">Vybere elementy ze sekvence, dokud je zadaná podmínka je PRAVDA a potom přeskočí zbývající prvky.</span><span class="sxs-lookup"><span data-stu-id="77308-189">Selects elements from a sequence as long as a specified condition is true, and then skips the remaining elements.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for number in data do
@@ -454,7 +454,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullable</code></td><td><span data-ttu-id="37f08-190">Seřadí prvky zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-190">Sorts the elements selected so far in ascending order by the given nullable sorting key.</span></span><br/><br/>
+<td><code>sortByNullable</code></td><td><span data-ttu-id="77308-190">Seřadí prvky zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-190">Sorts the elements selected so far in ascending order by the given nullable sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -464,7 +464,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>sortByNullableDescending</code></td><td><span data-ttu-id="37f08-191">Seřadí prvky vybrali zatím v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-191">Sorts the elements selected so far in descending order by the given nullable sorting key.</span></span><br/><br/>
+<td><code>sortByNullableDescending</code></td><td><span data-ttu-id="77308-191">Seřadí prvky vybrali zatím v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-191">Sorts the elements selected so far in descending order by the given nullable sorting key.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -474,7 +474,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullable</code></td><td><span data-ttu-id="37f08-192">Provádí následující řazení elementů zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-192">Performs a subsequent ordering of the elements selected so far in ascending order by the given nullable sorting key.</span></span> <span data-ttu-id="37f08-193">Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-193">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
+<td><code>thenByNullable</code></td><td><span data-ttu-id="77308-192">Provádí následující řazení elementů zatím vybrány ve vzestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-192">Performs a subsequent ordering of the elements selected so far in ascending order by the given nullable sorting key.</span></span> <span data-ttu-id="77308-193">Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-193">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -485,7 +485,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </code></pre>
 
 </td></tr><tr>
-<td><code>thenByNullableDescending</code></td><td><span data-ttu-id="37f08-194">Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-194">Performs a subsequent ordering of the elements selected so far in descending order by the given nullable sorting key.</span></span> <span data-ttu-id="37f08-195">Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="37f08-195">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
+<td><code>thenByNullableDescending</code></td><td><span data-ttu-id="77308-194">Provádí následující řazení elementů dosud vybraných v sestupném pořadí podle daný klíč řazení s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-194">Performs a subsequent ordering of the elements selected so far in descending order by the given nullable sorting key.</span></span> <span data-ttu-id="77308-195">Tento operátor se dá použít jenom ihned po <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, nebo <code>thenByDescending</code>, nebo jejich variant s možnou hodnotou Null.</span><span class="sxs-lookup"><span data-stu-id="77308-195">This operator may only be used immediately after a <code>sortBy</code>, <code>sortByDescending</code>, <code>thenBy</code>, or <code>thenByDescending</code>, or their nullable variants.</span></span><br/><br/>
 
 <pre><code class="lang-fsharp">query {
     for student in db.Student do
@@ -498,18 +498,18 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </td></tr>
 </table>
 
-## <a name="comparison-of-transact-sql-and-f-query-expressions"></a><span data-ttu-id="37f08-196">Porovnání výrazů dotazů v jazycích Transact-SQL a F#</span><span class="sxs-lookup"><span data-stu-id="37f08-196">Comparison of Transact-SQL and F# Query Expressions</span></span>
-<span data-ttu-id="37f08-197">V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v F#.</span><span class="sxs-lookup"><span data-stu-id="37f08-197">The following table shows some common Transact-SQL queries and their equivalents in F#.</span></span> <span data-ttu-id="37f08-198">Kód v této tabulce také předpokládá stejné databázi jako v předchozí tabulce a stejné počáteční kód pro nastavení poskytovatele typu.</span><span class="sxs-lookup"><span data-stu-id="37f08-198">The code in this table also assumes the same database as the previous table and the same initial code to set up the type provider.</span></span>
+## <a name="comparison-of-transact-sql-and-f-query-expressions"></a><span data-ttu-id="77308-196">Porovnání výrazů dotazů v jazycích Transact-SQL a F#</span><span class="sxs-lookup"><span data-stu-id="77308-196">Comparison of Transact-SQL and F# Query Expressions</span></span>
+<span data-ttu-id="77308-197">V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v F#.</span><span class="sxs-lookup"><span data-stu-id="77308-197">The following table shows some common Transact-SQL queries and their equivalents in F#.</span></span> <span data-ttu-id="77308-198">Kód v této tabulce také předpokládá stejné databázi jako v předchozí tabulce a stejné počáteční kód pro nastavení poskytovatele typu.</span><span class="sxs-lookup"><span data-stu-id="77308-198">The code in this table also assumes the same database as the previous table and the same initial code to set up the type provider.</span></span>
 
-### <a name="table-2-transact-sql-and-f-query-expressions"></a><span data-ttu-id="37f08-199">Tabulka 2.</span><span class="sxs-lookup"><span data-stu-id="37f08-199">Table 2.</span></span> <span data-ttu-id="37f08-200">Výrazy dotazů v jazycích Transact-SQL a F#</span><span class="sxs-lookup"><span data-stu-id="37f08-200">Transact-SQL and F# Query Expressions</span></span>
+### <a name="table-2-transact-sql-and-f-query-expressions"></a><span data-ttu-id="77308-199">Tabulka 2.</span><span class="sxs-lookup"><span data-stu-id="77308-199">Table 2.</span></span> <span data-ttu-id="77308-200">Výrazy dotazů v jazycích Transact-SQL a F#</span><span class="sxs-lookup"><span data-stu-id="77308-200">Transact-SQL and F# Query Expressions</span></span>
 
 <table style="width:100%">
   <tr>
-    <th><span data-ttu-id="37f08-201">Příkaz Transact-SQL (nerozlišuje velikost písmen)</span><span class="sxs-lookup"><span data-stu-id="37f08-201">Transact-SQL (not case sensitive)</span></span></th>
-    <th><span data-ttu-id="37f08-202">F#Dotazování výrazu (rozlišuje velikost písmen)</span><span class="sxs-lookup"><span data-stu-id="37f08-202">F# Query Expression (case sensitive)</span></span></th>
+    <th><span data-ttu-id="77308-201">Příkaz Transact-SQL (nerozlišuje velikost písmen)</span><span class="sxs-lookup"><span data-stu-id="77308-201">Transact-SQL (not case sensitive)</span></span></th>
+    <th><span data-ttu-id="77308-202">F#Dotazování výrazu (rozlišuje velikost písmen)</span><span class="sxs-lookup"><span data-stu-id="77308-202">F# Query Expression (case sensitive)</span></span></th>
   </tr>
 <tr><td>
-<span data-ttu-id="37f08-203">Vyberte všechna pole z tabulky.</span><span class="sxs-lookup"><span data-stu-id="37f08-203">Select all fields from table.</span></span><br>
+<span data-ttu-id="77308-203">Vyberte všechna pole z tabulky.</span><span class="sxs-lookup"><span data-stu-id="77308-203">Select all fields from table.</span></span><br>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 </code></pre>
@@ -524,7 +524,7 @@ query {
 
 </td></tr>
 <tr><td>
-<span data-ttu-id="37f08-204">Počet záznamů v tabulce.</span><span class="sxs-lookup"><span data-stu-id="37f08-204">Count records in a table.</span></span><br/>
+<span data-ttu-id="77308-204">Počet záznamů v tabulce.</span><span class="sxs-lookup"><span data-stu-id="77308-204">Count records in a table.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 </code></pre>
@@ -563,7 +563,7 @@ query {
 </code></pre>
 
 </td></tr><tr>
-<td><span data-ttu-id="37f08-205">Seskupování</span><span class="sxs-lookup"><span data-stu-id="37f08-205">Grouping</span></span><br/>
+<td><span data-ttu-id="77308-205">Seskupování</span><span class="sxs-lookup"><span data-stu-id="77308-205">Grouping</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) FROM Student
 GROUP BY Student.Age
@@ -585,7 +585,7 @@ query {
 }
 </code></pre>
 </td></tr><tr><td>
-<span data-ttu-id="37f08-206">Seskupení s podmínkou.</span><span class="sxs-lookup"><span data-stu-id="37f08-206">Grouping with condition.</span></span><br/>
+<span data-ttu-id="77308-206">Seskupení s podmínkou.</span><span class="sxs-lookup"><span data-stu-id="77308-206">Grouping with condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -605,7 +605,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="37f08-207">Seskupování pomocí podmínku počtu.</span><span class="sxs-lookup"><span data-stu-id="37f08-207">Grouping with count condition.</span></span><br/>
+<span data-ttu-id="77308-207">Seskupování pomocí podmínku počtu.</span><span class="sxs-lookup"><span data-stu-id="77308-207">Grouping with count condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * )
 FROM Student
@@ -626,7 +626,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="37f08-208">Seskupení, počítací a sčítání.</span><span class="sxs-lookup"><span data-stu-id="37f08-208">Grouping, counting, and summing.</span></span><br/>
+<span data-ttu-id="77308-208">Seskupení, počítací a sčítání.</span><span class="sxs-lookup"><span data-stu-id="77308-208">Grouping, counting, and summing.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ), SUM(Student.Age) as total
 FROM Student
@@ -649,7 +649,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="37f08-209">Seskupování, počítací a řazení podle počtu.</span><span class="sxs-lookup"><span data-stu-id="37f08-209">Grouping, counting, and ordering by count.</span></span><br/>
+<span data-ttu-id="77308-209">Seskupování, počítací a řazení podle počtu.</span><span class="sxs-lookup"><span data-stu-id="77308-209">Grouping, counting, and ordering by count.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Age, COUNT( * ) as myCount
 FROM Student
@@ -672,8 +672,9 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>
-<code>IN</code> <span data-ttu-id="37f08-210">sadu zadaných hodnot</span><span class="sxs-lookup"><span data-stu-id="37f08-210">a set of specified values</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-210">
+<code>IN</code> sadu zadaných hodnot</span><span class="sxs-lookup"><span data-stu-id="77308-210">
+<code>IN</code> a set of specified values</span></span><br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -695,8 +696,9 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>
-<code>LIKE</code> <span data-ttu-id="37f08-211">a <code>TOP</code>.</span><span class="sxs-lookup"><span data-stu-id="37f08-211">and <code>TOP</code>.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-211">
+<code>LIKE</code> a <code>TOP</code>.</span><span class="sxs-lookup"><span data-stu-id="77308-211">
+<code>LIKE</code> and <code>TOP</code>.</span></span><br/>
 
 <pre><code class="lang-sql">-- '_e%' matches strings where the second character is 'e'
 SELECT TOP 2 * FROM Student
@@ -713,8 +715,9 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>
-<code>LIKE</code> <span data-ttu-id="37f08-212">se vzorkem odpovídat sady.</span><span class="sxs-lookup"><span data-stu-id="37f08-212">with pattern match set.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-212">
+<code>LIKE</code> se vzorkem odpovídat sady.</span><span class="sxs-lookup"><span data-stu-id="77308-212">
+<code>LIKE</code> with pattern match set.</span></span><br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -730,8 +733,9 @@ WHERE Student.Name LIKE '[abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td>
-<code>LIKE</code> <span data-ttu-id="37f08-213">se vzorkem sadu vyloučení.</span><span class="sxs-lookup"><span data-stu-id="37f08-213">with set exclusion pattern.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-213">
+<code>LIKE</code> se vzorkem sadu vyloučení.</span><span class="sxs-lookup"><span data-stu-id="77308-213">
+<code>LIKE</code> with set exclusion pattern.</span></span><br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -749,8 +753,9 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td>
-<code>LIKE</code> <span data-ttu-id="37f08-214">u jednoho pole, ale vybrat jiné pole.</span><span class="sxs-lookup"><span data-stu-id="37f08-214">on one field, but select a different field.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-214">
+<code>LIKE</code> u jednoho pole, ale vybrat jiné pole.</span><span class="sxs-lookup"><span data-stu-id="77308-214">
+<code>LIKE</code> on one field, but select a different field.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -765,7 +770,7 @@ WHERE Student.Name LIKE '[^abc]%'
 }
 </code></pre>
 
-</td></tr><tr><td><code>LIKE</code><span data-ttu-id="37f08-215">, se hledání dílčího řetězce.</span><span class="sxs-lookup"><span data-stu-id="37f08-215">, with substring search.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-215"><code>LIKE</code>, se hledání dílčího řetězce.</span><span class="sxs-lookup"><span data-stu-id="77308-215"><code>LIKE</code>, with substring search.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Name like '%A%'
@@ -782,7 +787,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<span data-ttu-id="37f08-216">Jednoduché <code>JOIN</code> se dvěma tabulkami.</span><span class="sxs-lookup"><span data-stu-id="37f08-216">Simple <code>JOIN</code> with two tables.</span></span><br/>
+<span data-ttu-id="77308-216">Jednoduché <code>JOIN</code> se dvěma tabulkami.</span><span class="sxs-lookup"><span data-stu-id="77308-216">Simple <code>JOIN</code> with two tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 JOIN CourseSelection
@@ -800,7 +805,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code> <span data-ttu-id="37f08-217">se dvěma tabulkami.</span><span class="sxs-lookup"><span data-stu-id="37f08-217">with two tables.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-217"><code>LEFT JOIN</code> se dvěma tabulkami.</span><span class="sxs-lookup"><span data-stu-id="77308-217"><code>LEFT JOIN</code> with two tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -819,7 +824,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>JOIN</code> <span data-ttu-id="37f08-218">with</span><span class="sxs-lookup"><span data-stu-id="37f08-218">with</span></span> <code>COUNT</code><br/>
+</td></tr><tr><td><span data-ttu-id="77308-218"><code>JOIN</code> s <code>COUNT</code></span><span class="sxs-lookup"><span data-stu-id="77308-218"><code>JOIN</code> with <code>COUNT</code></span></span><br/>
 
 <pre><code class="lang-sql">SELECT COUNT( * ) FROM Student
 JOIN CourseSelection
@@ -853,7 +858,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-219">Počet jedinečných položek.</span><span class="sxs-lookup"><span data-stu-id="37f08-219">Distinct count.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-219">Počet jedinečných položek.</span><span class="sxs-lookup"><span data-stu-id="77308-219">Distinct count.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT DISTINCT COUNT(StudentID) FROM CourseSelection
 </code></pre>
@@ -902,7 +907,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code> <span data-ttu-id="37f08-220">s řazení</span><span class="sxs-lookup"><span data-stu-id="37f08-220">with ordering</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-220"><code>OR</code> s řazení</span><span class="sxs-lookup"><span data-stu-id="77308-220"><code>OR</code> with ordering</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -920,7 +925,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>TOP</code><span data-ttu-id="37f08-221">, <code>OR</code>a řazení.</span><span class="sxs-lookup"><span data-stu-id="37f08-221">, <code>OR</code>, and ordering.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-221"><code>TOP</code>, <code>OR</code>a řazení.</span><span class="sxs-lookup"><span data-stu-id="77308-221"><code>TOP</code>, <code>OR</code>, and ordering.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT TOP 2 student.Name FROM Student
 WHERE Student.Age = 11 OR Student.Age = 12
@@ -942,7 +947,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code> <span data-ttu-id="37f08-222">dva dotazů.</span><span class="sxs-lookup"><span data-stu-id="37f08-222">of two queries.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-222"><code>UNION</code> dva dotazů.</span><span class="sxs-lookup"><span data-stu-id="77308-222"><code>UNION</code> of two queries.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 UNION
@@ -967,7 +972,7 @@ let query2 =
 query2.Union (query1)
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-223">Průnik dvou dotazů.</span><span class="sxs-lookup"><span data-stu-id="37f08-223">Intersection of two queries.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-223">Průnik dvou dotazů.</span><span class="sxs-lookup"><span data-stu-id="77308-223">Intersection of two queries.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 INTERSECT
@@ -991,7 +996,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code> <span data-ttu-id="37f08-224">Podmínka.</span><span class="sxs-lookup"><span data-stu-id="37f08-224">condition.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-224"><code>CASE</code> Podmínka.</span><span class="sxs-lookup"><span data-stu-id="77308-224"><code>CASE</code> condition.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -1013,7 +1018,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-225">Více případů.</span><span class="sxs-lookup"><span data-stu-id="37f08-225">Multiple cases.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-225">Více případů.</span><span class="sxs-lookup"><span data-stu-id="77308-225">Multiple cases.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.StudentID,
 CASE Student.Age
@@ -1039,7 +1044,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-226">Více tabulek.</span><span class="sxs-lookup"><span data-stu-id="37f08-226">Multiple tables.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-226">Více tabulek.</span><span class="sxs-lookup"><span data-stu-id="77308-226">Multiple tables.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student, Course
 </code></pre>
@@ -1054,7 +1059,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-227">Více spojení.</span><span class="sxs-lookup"><span data-stu-id="37f08-227">Multiple joins.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-227">Více spojení.</span><span class="sxs-lookup"><span data-stu-id="77308-227">Multiple joins.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1077,7 +1082,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><span data-ttu-id="37f08-228">Více levé vnější spojení.</span><span class="sxs-lookup"><span data-stu-id="37f08-228">Multiple left outer joins.</span></span><br/>
+</td></tr><tr><td><span data-ttu-id="77308-228">Více levé vnější spojení.</span><span class="sxs-lookup"><span data-stu-id="77308-228">Multiple left outer joins.</span></span><br/>
 
 <pre><code class="lang-sql">SELECT Student.Name, Course.CourseName
 FROM Student
@@ -1104,7 +1109,7 @@ query {
 
 </td></tr></table>
 
-<span data-ttu-id="37f08-229">Následující kód slouží k vytvoření ukázkové databáze pro tyto příklady.</span><span class="sxs-lookup"><span data-stu-id="37f08-229">The following code can be used to create the sample database for these examples.</span></span>
+<span data-ttu-id="77308-229">Následující kód slouží k vytvoření ukázkové databáze pro tyto příklady.</span><span class="sxs-lookup"><span data-stu-id="77308-229">The following code can be used to create the sample database for these examples.</span></span>
 
 <pre><code class="lang-sql">SET ANSI_NULLS ON
 GO
@@ -1226,7 +1231,7 @@ INSERT INTO CourseSelection (ID, StudentID, CourseID)
 VALUES(15, 7, 3);
 </code></pre>
 
-<span data-ttu-id="37f08-230">Následující kód obsahuje vzorový kód, který se zobrazí v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="37f08-230">The following code contains  the sample code that appears in this topic.</span></span>
+<span data-ttu-id="77308-230">Následující kód obsahuje vzorový kód, který se zobrazí v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="77308-230">The following code contains  the sample code that appears in this topic.</span></span>
 
 ```fsharp
 #if INTERACTIVE
@@ -1860,7 +1865,7 @@ query {
 |> Seq.iter (fun (studentName, courseName) -> printfn "%s %s" studentName courseName)
 ```
 
-<span data-ttu-id="37f08-231">A tady je úplný výstup, když je tento kód spuštěný F# interaktivní.</span><span class="sxs-lookup"><span data-stu-id="37f08-231">And here is the full output when this code is run in F# Interactive.</span></span>
+<span data-ttu-id="77308-231">A tady je úplný výstup, když je tento kód spuštěný F# interaktivní.</span><span class="sxs-lookup"><span data-stu-id="77308-231">And here is the full output when this code is run in F# Interactive.</span></span>
 
 ```
 --> Referenced 'C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\FSharp.Data.TypeProviders.dll'
@@ -2421,8 +2426,8 @@ module Queries2 = begin
 end
 ```
 
-## <a name="see-also"></a><span data-ttu-id="37f08-232">Viz také:</span><span class="sxs-lookup"><span data-stu-id="37f08-232">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="77308-232">Viz také:</span><span class="sxs-lookup"><span data-stu-id="77308-232">See also</span></span>
 
-- [<span data-ttu-id="37f08-233">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="37f08-233">F# Language Reference</span></span>](index.md)
-- [<span data-ttu-id="37f08-234">Linq.QueryBuilder Class</span><span class="sxs-lookup"><span data-stu-id="37f08-234">Linq.QueryBuilder Class</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
-- [<span data-ttu-id="37f08-235">Výpočetní výrazy</span><span class="sxs-lookup"><span data-stu-id="37f08-235">Computation Expressions</span></span>](Computation-Expressions.md)
+- [<span data-ttu-id="77308-233">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="77308-233">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="77308-234">Linq.QueryBuilder Class</span><span class="sxs-lookup"><span data-stu-id="77308-234">Linq.QueryBuilder Class</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [<span data-ttu-id="77308-235">Výpočetní výrazy</span><span class="sxs-lookup"><span data-stu-id="77308-235">Computation Expressions</span></span>](Computation-Expressions.md)

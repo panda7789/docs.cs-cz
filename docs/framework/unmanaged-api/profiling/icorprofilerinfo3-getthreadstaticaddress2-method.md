@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f62dadf4f21022f8f425596cf5957891ed39effe
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59189180"
 ---
-# <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a><span data-ttu-id="a41dc-102">ICorProfilerInfo3::GetThreadStaticAddress2 – metoda</span><span class="sxs-lookup"><span data-stu-id="a41dc-102">ICorProfilerInfo3::GetThreadStaticAddress2 Method</span></span>
-<span data-ttu-id="a41dc-103">Získá adresu zadané pole vlákna, která je v rámci zadaného vlákna a domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="a41dc-103">Gets the address of the specified thread-static field that is in the scope of the specified thread and application domain.</span></span>  
+# <a name="icorprofilerinfo3getthreadstaticaddress2-method"></a><span data-ttu-id="79bc0-102">ICorProfilerInfo3::GetThreadStaticAddress2 – metoda</span><span class="sxs-lookup"><span data-stu-id="79bc0-102">ICorProfilerInfo3::GetThreadStaticAddress2 Method</span></span>
+<span data-ttu-id="79bc0-103">Získá adresu zadané pole vlákna, která je v rámci zadaného vlákna a domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="79bc0-103">Gets the address of the specified thread-static field that is in the scope of the specified thread and application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a41dc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a41dc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="79bc0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="79bc0-104">Syntax</span></span>  
   
 ```  
 HRESULT GetThreadStaticAddress2(  
@@ -38,44 +38,44 @@ HRESULT GetThreadStaticAddress2(
                 [out] void **ppAddress);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a41dc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a41dc-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="79bc0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="79bc0-105">Parameters</span></span>  
  `classId`  
- <span data-ttu-id="a41dc-106">[in] ID třídy, která obsahuje požadovaná pole statická na úrovni vlákna.</span><span class="sxs-lookup"><span data-stu-id="a41dc-106">[in] The ID of the class that contains the requested thread-static field.</span></span>  
+ <span data-ttu-id="79bc0-106">[in] ID třídy, která obsahuje požadovaná pole statická na úrovni vlákna.</span><span class="sxs-lookup"><span data-stu-id="79bc0-106">[in] The ID of the class that contains the requested thread-static field.</span></span>  
   
  `fieldToken`  
- <span data-ttu-id="a41dc-107">[in] Token metadat pro požadované pole statická na úrovni vlákna.</span><span class="sxs-lookup"><span data-stu-id="a41dc-107">[in] The metadata token for the requested thread-static field.</span></span>  
+ <span data-ttu-id="79bc0-107">[in] Token metadat pro požadované pole statická na úrovni vlákna.</span><span class="sxs-lookup"><span data-stu-id="79bc0-107">[in] The metadata token for the requested thread-static field.</span></span>  
   
  `appDomainId`  
- <span data-ttu-id="a41dc-108">[in] ID domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="a41dc-108">[in] The ID of the application domain.</span></span>  
+ <span data-ttu-id="79bc0-108">[in] ID domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="79bc0-108">[in] The ID of the application domain.</span></span>  
   
  `threadId`  
- <span data-ttu-id="a41dc-109">[in] ID vlákna, která je v oboru pro požadovaný statické pole.</span><span class="sxs-lookup"><span data-stu-id="a41dc-109">[in] The ID of the thread that is the scope for the requested static field.</span></span>  
+ <span data-ttu-id="79bc0-109">[in] ID vlákna, která je v oboru pro požadovaný statické pole.</span><span class="sxs-lookup"><span data-stu-id="79bc0-109">[in] The ID of the thread that is the scope for the requested static field.</span></span>  
   
  `ppAddress`  
- <span data-ttu-id="a41dc-110">[out] Ukazatel na adresu statické pole, která je v rámci zadaného vlákna.</span><span class="sxs-lookup"><span data-stu-id="a41dc-110">[out] A pointer to the address of the static field that is within the specified thread.</span></span>  
+ <span data-ttu-id="79bc0-110">[out] Ukazatel na adresu statické pole, která je v rámci zadaného vlákna.</span><span class="sxs-lookup"><span data-stu-id="79bc0-110">[out] A pointer to the address of the static field that is within the specified thread.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a41dc-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a41dc-111">Remarks</span></span>  
- <span data-ttu-id="a41dc-112">`GetThreadStaticAddress2` Metoda může vrátit jednu z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="a41dc-112">The `GetThreadStaticAddress2` method may return one of the following:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="79bc0-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="79bc0-111">Remarks</span></span>  
+ <span data-ttu-id="79bc0-112">`GetThreadStaticAddress2` Metoda může vrátit jednu z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="79bc0-112">The `GetThreadStaticAddress2` method may return one of the following:</span></span>  
   
--   <span data-ttu-id="a41dc-113">CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.</span><span class="sxs-lookup"><span data-stu-id="a41dc-113">A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.</span></span>  
+-   <span data-ttu-id="79bc0-113">CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.</span><span class="sxs-lookup"><span data-stu-id="79bc0-113">A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.</span></span>  
   
--   <span data-ttu-id="a41dc-114">Adresy objektů, které mohou být v haldě uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="a41dc-114">The addresses of objects that may be in the garbage collection heap.</span></span> <span data-ttu-id="a41dc-115">Tyto adresy mohou stát neplatnými po uvolnění paměti, takže po uvolnění paměti, profilovací programy by neměl se předpokládá, že jsou platné.</span><span class="sxs-lookup"><span data-stu-id="a41dc-115">These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.</span></span>  
+-   <span data-ttu-id="79bc0-114">Adresy objektů, které mohou být v haldě uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="79bc0-114">The addresses of objects that may be in the garbage collection heap.</span></span> <span data-ttu-id="79bc0-115">Tyto adresy mohou stát neplatnými po uvolnění paměti, takže po uvolnění paměti, profilovací programy by neměl se předpokládá, že jsou platné.</span><span class="sxs-lookup"><span data-stu-id="79bc0-115">These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.</span></span>  
   
- <span data-ttu-id="a41dc-116">Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress2` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="a41dc-116">Before a class’s class constructor is completed, `GetThreadStaticAddress2` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.</span></span>  
+ <span data-ttu-id="79bc0-116">Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress2` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="79bc0-116">Before a class’s class constructor is completed, `GetThreadStaticAddress2` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.</span></span>  
   
- <span data-ttu-id="a41dc-117">[ICorProfilerInfo2::getthreadstaticaddress –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) metoda je podobná `GetThreadStaticAddress2` metody, ale nepřijímá argument domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="a41dc-117">The [ICorProfilerInfo2::GetThreadStaticAddress](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) method is similar to the `GetThreadStaticAddress2` method, but does not accept an application domain argument.</span></span>  
+ <span data-ttu-id="79bc0-117">[ICorProfilerInfo2::getthreadstaticaddress –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) metoda je podobná `GetThreadStaticAddress2` metody, ale nepřijímá argument domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="79bc0-117">The [ICorProfilerInfo2::GetThreadStaticAddress](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getthreadstaticaddress-method.md) method is similar to the `GetThreadStaticAddress2` method, but does not accept an application domain argument.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a41dc-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a41dc-118">Requirements</span></span>  
- <span data-ttu-id="a41dc-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a41dc-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="79bc0-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="79bc0-118">Requirements</span></span>  
+ <span data-ttu-id="79bc0-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="79bc0-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a41dc-120">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a41dc-120">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="79bc0-120">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="79bc0-120">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="a41dc-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a41dc-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="79bc0-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="79bc0-121">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="a41dc-122">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="a41dc-122">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ <span data-ttu-id="79bc0-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="79bc0-122">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a41dc-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a41dc-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="79bc0-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="79bc0-123">See also</span></span>
 
-- [<span data-ttu-id="a41dc-124">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a41dc-124">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [<span data-ttu-id="a41dc-125">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="a41dc-125">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="a41dc-126">Profilace</span><span class="sxs-lookup"><span data-stu-id="a41dc-126">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [<span data-ttu-id="79bc0-124">ICorProfilerInfo3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="79bc0-124">ICorProfilerInfo3 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
+- [<span data-ttu-id="79bc0-125">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="79bc0-125">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="79bc0-126">Profilace</span><span class="sxs-lookup"><span data-stu-id="79bc0-126">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)

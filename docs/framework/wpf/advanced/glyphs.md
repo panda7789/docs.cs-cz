@@ -11,23 +11,23 @@ helpviewer_keywords:
 - glyphs [WPF]
 ms.assetid: d5d9274c-23b3-4859-8869-6e64403c9ca7
 ms.openlocfilehash: a887e83babd6126d298170c6aead45c5370c1916
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59193145"
 ---
-# <a name="glyphs"></a><span data-ttu-id="0debf-102">Glyfy</span><span class="sxs-lookup"><span data-stu-id="0debf-102">Glyphs</span></span>
-<span data-ttu-id="0debf-103">Glyfy jsou nízké úrovně znázornění znaku potřeba vykreslit na obrazovce.</span><span class="sxs-lookup"><span data-stu-id="0debf-103">Glyphs are a low-level depiction of a character to be drawn on-screen.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="0debf-104">poskytuje přímý přístup k glyfů pro zákazníky, kteří chtějí zachytit a zachovat po formátování textu.</span><span class="sxs-lookup"><span data-stu-id="0debf-104">provides direct access to glyphs for customers who want to intercept and persist text after formatting.</span></span>  
+# <a name="glyphs"></a><span data-ttu-id="c6f4f-102">Glyfy</span><span class="sxs-lookup"><span data-stu-id="c6f4f-102">Glyphs</span></span>
+<span data-ttu-id="c6f4f-103">Glyfy jsou nízké úrovně znázornění znaku potřeba vykreslit na obrazovce.</span><span class="sxs-lookup"><span data-stu-id="c6f4f-103">Glyphs are a low-level depiction of a character to be drawn on-screen.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="c6f4f-104">poskytuje přímý přístup k glyfů pro zákazníky, kteří chtějí zachytit a zachovat po formátování textu.</span><span class="sxs-lookup"><span data-stu-id="c6f4f-104">provides direct access to glyphs for customers who want to intercept and persist text after formatting.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="0debf-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="0debf-105">In This Section</span></span>  
- [<span data-ttu-id="0debf-106">Úvod do objektu GlyphRun a elementu Glyph</span><span class="sxs-lookup"><span data-stu-id="0debf-106">Introduction to the GlyphRun Object and Glyphs Element</span></span>](introduction-to-the-glyphrun-object-and-glyphs-element.md)  
-  [<span data-ttu-id="0debf-107">Postupy: Vykreslení textu použitím piktogramů</span><span class="sxs-lookup"><span data-stu-id="0debf-107">How to: Draw Text Using Glyphs</span></span>](draw-text-using-glyphs.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c6f4f-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c6f4f-105">In This Section</span></span>  
+ [<span data-ttu-id="c6f4f-106">Úvod do objektu GlyphRun a elementu Glyph</span><span class="sxs-lookup"><span data-stu-id="c6f4f-106">Introduction to the GlyphRun Object and Glyphs Element</span></span>](introduction-to-the-glyphrun-object-and-glyphs-element.md)  
+  [<span data-ttu-id="c6f4f-107">Postupy: Vykreslení textu použitím piktogramů</span><span class="sxs-lookup"><span data-stu-id="c6f4f-107">How to: Draw Text Using Glyphs</span></span>](draw-text-using-glyphs.md)  
   
-## <a name="see-also"></a><span data-ttu-id="0debf-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0debf-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c6f4f-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6f4f-108">See also</span></span>
 
 - <xref:System.Windows.Media.GlyphRun>
 - <xref:System.Windows.Media.DrawingContext.DrawText%2A>
 - <xref:System.Windows.Documents.Glyphs>
-- [<span data-ttu-id="0debf-109">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="0debf-109">Documents in WPF</span></span>](documents-in-wpf.md)
-- [<span data-ttu-id="0debf-110">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="0debf-110">Typography in WPF</span></span>](typography-in-wpf.md)
+- [<span data-ttu-id="c6f4f-109">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="c6f4f-109">Documents in WPF</span></span>](documents-in-wpf.md)
+- [<span data-ttu-id="c6f4f-110">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="c6f4f-110">Typography in WPF</span></span>](typography-in-wpf.md)
