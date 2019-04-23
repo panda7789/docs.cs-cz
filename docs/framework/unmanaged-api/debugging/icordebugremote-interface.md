@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a50a799c625c647aa275994bc92738b8a4267eec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59135574"
 ---
-# <a name="icordebugremote-interface"></a><span data-ttu-id="cade7-102">ICorDebugRemote – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cade7-102">ICorDebugRemote Interface</span></span>
-<span data-ttu-id="cade7-103">Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.</span><span class="sxs-lookup"><span data-stu-id="cade7-103">Provides the ability to launch or attach a managed debugger to a remote target process.</span></span>  
+# <a name="icordebugremote-interface"></a><span data-ttu-id="c3e20-102">ICorDebugRemote – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3e20-102">ICorDebugRemote Interface</span></span>
+<span data-ttu-id="c3e20-103">Umožňuje spustit nebo připojit spravovaný ladicí program ke vzdálenému cílovému procesu.</span><span class="sxs-lookup"><span data-stu-id="c3e20-103">Provides the ability to launch or attach a managed debugger to a remote target process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cade7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cade7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3e20-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c3e20-104">Syntax</span></span>  
   
 ```  
 interface ICorDebugRemote : IUnknown  
@@ -58,28 +58,28 @@ interface ICorDebugRemote : IUnknown
 };  
 ```  
   
-## <a name="methods"></a><span data-ttu-id="cade7-105">Metody</span><span class="sxs-lookup"><span data-stu-id="cade7-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="c3e20-105">Metody</span><span class="sxs-lookup"><span data-stu-id="c3e20-105">Methods</span></span>  
   
-|<span data-ttu-id="cade7-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="cade7-106">Method</span></span>|<span data-ttu-id="cade7-107">Popis</span><span class="sxs-lookup"><span data-stu-id="cade7-107">Description</span></span>|  
+|<span data-ttu-id="c3e20-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="c3e20-106">Method</span></span>|<span data-ttu-id="c3e20-107">Popis</span><span class="sxs-lookup"><span data-stu-id="c3e20-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="cade7-108">ICorDebugRemote::CreateProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="cade7-108">ICorDebugRemote::CreateProcessEx Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-createprocessex-method.md)|<span data-ttu-id="cade7-109">Vytvoří proces ve vzdáleném počítači pro spravované ladění.</span><span class="sxs-lookup"><span data-stu-id="cade7-109">Creates a process on a remote machine for managed debugging.</span></span>|  
-|[<span data-ttu-id="cade7-110">ICorDebugRemote::DebugActiveProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="cade7-110">ICorDebugRemote::DebugActiveProcessEx Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|<span data-ttu-id="cade7-111">Spustí nějaký proces ve vzdáleném počítači v ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="cade7-111">Launches a process on a remote machine under the debugger.</span></span>|  
+|[<span data-ttu-id="c3e20-108">ICorDebugRemote::CreateProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="c3e20-108">ICorDebugRemote::CreateProcessEx Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-createprocessex-method.md)|<span data-ttu-id="c3e20-109">Vytvoří proces ve vzdáleném počítači pro spravované ladění.</span><span class="sxs-lookup"><span data-stu-id="c3e20-109">Creates a process on a remote machine for managed debugging.</span></span>|  
+|[<span data-ttu-id="c3e20-110">ICorDebugRemote::DebugActiveProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="c3e20-110">ICorDebugRemote::DebugActiveProcessEx Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-debugactiveprocessex-method.md)|<span data-ttu-id="c3e20-111">Spustí nějaký proces ve vzdáleném počítači v ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="c3e20-111">Launches a process on a remote machine under the debugger.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="cade7-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cade7-112">Remarks</span></span>  
- <span data-ttu-id="cade7-113">Tato funkce v současné době je podporována pouze pro ladění aplikace založené na technologii Silverlight cíl, který běží na vzdáleném počítači Macintosh.</span><span class="sxs-lookup"><span data-stu-id="cade7-113">Currently, this functionality is supported only for debugging a Silverlight-based application target that is running on a remote Macintosh machine.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c3e20-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c3e20-112">Remarks</span></span>  
+ <span data-ttu-id="c3e20-113">Tato funkce v současné době je podporována pouze pro ladění aplikace založené na technologii Silverlight cíl, který běží na vzdáleném počítači Macintosh.</span><span class="sxs-lookup"><span data-stu-id="c3e20-113">Currently, this functionality is supported only for debugging a Silverlight-based application target that is running on a remote Macintosh machine.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cade7-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cade7-114">Requirements</span></span>  
- <span data-ttu-id="cade7-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cade7-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c3e20-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c3e20-114">Requirements</span></span>  
+ <span data-ttu-id="c3e20-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c3e20-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cade7-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="cade7-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c3e20-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c3e20-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="cade7-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cade7-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c3e20-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c3e20-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="cade7-118">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="cade7-118">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
+ <span data-ttu-id="c3e20-118">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="c3e20-118">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cade7-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cade7-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3e20-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3e20-119">See also</span></span>
 
-- [<span data-ttu-id="cade7-120">ICorDebugRemoteTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cade7-120">ICorDebugRemoteTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)
-- [<span data-ttu-id="cade7-121">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cade7-121">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [<span data-ttu-id="c3e20-120">ICorDebugRemoteTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3e20-120">ICorDebugRemoteTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)
+- [<span data-ttu-id="c3e20-121">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3e20-121">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
 
-- [<span data-ttu-id="cade7-122">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cade7-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="c3e20-122">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="c3e20-122">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

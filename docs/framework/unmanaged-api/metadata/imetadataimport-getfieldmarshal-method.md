@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 35e780c330d0184d40bd99f34c3454f83075c1e0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59139279"
 ---
-# <a name="imetadataimportgetfieldmarshal-method"></a><span data-ttu-id="dd286-102">IMetaDataImport::GetFieldMarshal – metoda</span><span class="sxs-lookup"><span data-stu-id="dd286-102">IMetaDataImport::GetFieldMarshal Method</span></span>
-<span data-ttu-id="dd286-103">Získá ukazatel na nativní, nespravovaným typem pole reprezentována token metadat zadaného pole.</span><span class="sxs-lookup"><span data-stu-id="dd286-103">Gets a pointer to the native, unmanaged type of the field represented by the specified field metadata token.</span></span>  
+# <a name="imetadataimportgetfieldmarshal-method"></a><span data-ttu-id="55021-102">IMetaDataImport::GetFieldMarshal – metoda</span><span class="sxs-lookup"><span data-stu-id="55021-102">IMetaDataImport::GetFieldMarshal Method</span></span>
+<span data-ttu-id="55021-103">Získá ukazatel na nativní, nespravovaným typem pole reprezentována token metadat zadaného pole.</span><span class="sxs-lookup"><span data-stu-id="55021-103">Gets a pointer to the native, unmanaged type of the field represented by the specified field metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dd286-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dd286-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="55021-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="55021-104">Syntax</span></span>  
   
 ```  
 HRESULT GetFieldMarshal (  
@@ -37,26 +37,26 @@ HRESULT GetFieldMarshal (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="dd286-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="dd286-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="55021-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="55021-105">Parameters</span></span>  
  `tk`  
- <span data-ttu-id="dd286-106">[in] Token metadat, který představuje pole mají být získány spolupráce zařazovací informace.</span><span class="sxs-lookup"><span data-stu-id="dd286-106">[in] The metadata token that represents the field to get interop marshaling information for.</span></span>  
+ <span data-ttu-id="55021-106">[in] Token metadat, který představuje pole mají být získány spolupráce zařazovací informace.</span><span class="sxs-lookup"><span data-stu-id="55021-106">[in] The metadata token that represents the field to get interop marshaling information for.</span></span>  
   
  `ppvNativeType`  
- <span data-ttu-id="dd286-107">[out] Ukazatel na podpis metadat nativního typu pole.</span><span class="sxs-lookup"><span data-stu-id="dd286-107">[out] A pointer to the metadata signature of the field's native type.</span></span>  
+ <span data-ttu-id="55021-107">[out] Ukazatel na podpis metadat nativního typu pole.</span><span class="sxs-lookup"><span data-stu-id="55021-107">[out] A pointer to the metadata signature of the field's native type.</span></span>  
   
  `pcbNativeType`  
- <span data-ttu-id="dd286-108">[out] Velikost v bajtech `ppvNativeType`.</span><span class="sxs-lookup"><span data-stu-id="dd286-108">[out] The size in bytes of `ppvNativeType`.</span></span>  
+ <span data-ttu-id="55021-108">[out] Velikost v bajtech `ppvNativeType`.</span><span class="sxs-lookup"><span data-stu-id="55021-108">[out] The size in bytes of `ppvNativeType`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="dd286-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dd286-109">Requirements</span></span>  
- <span data-ttu-id="dd286-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dd286-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="55021-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="55021-109">Requirements</span></span>  
+ <span data-ttu-id="55021-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="55021-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dd286-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="dd286-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="55021-111">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="55021-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="dd286-112">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="dd286-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="55021-112">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="55021-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="dd286-113">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="dd286-113">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="55021-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="55021-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dd286-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dd286-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="55021-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="55021-114">See also</span></span>
 
-- [<span data-ttu-id="dd286-115">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="dd286-115">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="dd286-116">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="dd286-116">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="55021-115">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="55021-115">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="55021-116">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="55021-116">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

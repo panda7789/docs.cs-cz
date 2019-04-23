@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c30623e53b57a78287b26d4a362793cfb32baede
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59131056"
 ---
-# <a name="icordebugcodegetiltonativemapping-method"></a><span data-ttu-id="9f360-102">ICorDebugCode::GetILToNativeMapping – metoda</span><span class="sxs-lookup"><span data-stu-id="9f360-102">ICorDebugCode::GetILToNativeMapping Method</span></span>
-<span data-ttu-id="9f360-103">Získává pole instancí "cor_debug_il_to_native_map –", které představují mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů.</span><span class="sxs-lookup"><span data-stu-id="9f360-103">Gets an array of "COR_DEBUG_IL_TO_NATIVE_MAP" instances that represent mappings from Microsoft intermediate language (MSIL) offsets to native offsets.</span></span>  
+# <a name="icordebugcodegetiltonativemapping-method"></a><span data-ttu-id="38783-102">ICorDebugCode::GetILToNativeMapping – metoda</span><span class="sxs-lookup"><span data-stu-id="38783-102">ICorDebugCode::GetILToNativeMapping Method</span></span>
+<span data-ttu-id="38783-103">Získává pole instancí "cor_debug_il_to_native_map –", které představují mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů.</span><span class="sxs-lookup"><span data-stu-id="38783-103">Gets an array of "COR_DEBUG_IL_TO_NATIVE_MAP" instances that represent mappings from Microsoft intermediate language (MSIL) offsets to native offsets.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9f360-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9f360-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="38783-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="38783-104">Syntax</span></span>  
   
 ```  
 HRESULT GetILToNativeMapping (  
@@ -38,30 +38,30 @@ HRESULT GetILToNativeMapping (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9f360-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9f360-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="38783-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="38783-105">Parameters</span></span>  
  `cMap`  
- <span data-ttu-id="9f360-106">[in] Velikost `map` pole.</span><span class="sxs-lookup"><span data-stu-id="9f360-106">[in] The size of the `map` array.</span></span>  
+ <span data-ttu-id="38783-106">[in] Velikost `map` pole.</span><span class="sxs-lookup"><span data-stu-id="38783-106">[in] The size of the `map` array.</span></span>  
   
  `pcMap`  
- <span data-ttu-id="9f360-107">[out] Ukazatel na skutečný počet prvků vrácených v `map` pole.</span><span class="sxs-lookup"><span data-stu-id="9f360-107">[out] A pointer to the actual number of elements returned in the `map` array.</span></span>  
+ <span data-ttu-id="38783-107">[out] Ukazatel na skutečný počet prvků vrácených v `map` pole.</span><span class="sxs-lookup"><span data-stu-id="38783-107">[out] A pointer to the actual number of elements returned in the `map` array.</span></span>  
   
  `map`  
- <span data-ttu-id="9f360-108">[out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, z nichž každý představuje mapování z jazyka MSIL posun na nativní posun.</span><span class="sxs-lookup"><span data-stu-id="9f360-108">[out] An array of `COR_DEBUG_IL_TO_NATIVE_MAP` structures, each of which represents a mapping from an MSIL offset to a native offset.</span></span>  
+ <span data-ttu-id="38783-108">[out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, z nichž každý představuje mapování z jazyka MSIL posun na nativní posun.</span><span class="sxs-lookup"><span data-stu-id="38783-108">[out] An array of `COR_DEBUG_IL_TO_NATIVE_MAP` structures, each of which represents a mapping from an MSIL offset to a native offset.</span></span>  
   
- <span data-ttu-id="9f360-109">Neexistuje žádné řazení k poli prvků vrácených.</span><span class="sxs-lookup"><span data-stu-id="9f360-109">There is no ordering to the array of elements returned.</span></span>  
+ <span data-ttu-id="38783-109">Neexistuje žádné řazení k poli prvků vrácených.</span><span class="sxs-lookup"><span data-stu-id="38783-109">There is no ordering to the array of elements returned.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="9f360-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9f360-110">Remarks</span></span>  
- <span data-ttu-id="9f360-111">`GetILToNativeMapping` Metoda vrátí smysluplné výsledky, pouze v případě, že tato instance "ICorDebugCode" představuje nativní kód, který byl just-in-time (JIT) kompilaci kódu jazyka MSIL.</span><span class="sxs-lookup"><span data-stu-id="9f360-111">The `GetILToNativeMapping` method returns meaningful results only if this "ICorDebugCode" instance represents native code that was just-in-time (JIT) compiled from MSIL code.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="38783-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="38783-110">Remarks</span></span>  
+ <span data-ttu-id="38783-111">`GetILToNativeMapping` Metoda vrátí smysluplné výsledky, pouze v případě, že tato instance "ICorDebugCode" představuje nativní kód, který byl just-in-time (JIT) kompilaci kódu jazyka MSIL.</span><span class="sxs-lookup"><span data-stu-id="38783-111">The `GetILToNativeMapping` method returns meaningful results only if this "ICorDebugCode" instance represents native code that was just-in-time (JIT) compiled from MSIL code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9f360-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9f360-112">Requirements</span></span>  
- <span data-ttu-id="9f360-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9f360-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="38783-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="38783-112">Requirements</span></span>  
+ <span data-ttu-id="38783-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="38783-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9f360-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="9f360-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="38783-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="38783-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="9f360-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9f360-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="38783-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="38783-115">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="9f360-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="9f360-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="38783-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="38783-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9f360-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9f360-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="38783-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="38783-117">See also</span></span>
 
-- [<span data-ttu-id="9f360-118">ICorDebugCode – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9f360-118">ICorDebugCode Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+- [<span data-ttu-id="38783-118">Icordebugcode – rozhraní</span><span class="sxs-lookup"><span data-stu-id="38783-118">ICorDebugCode Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
