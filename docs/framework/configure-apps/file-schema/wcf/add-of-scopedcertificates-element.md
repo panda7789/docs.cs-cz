@@ -3,10 +3,10 @@ title: <add> z <scopedCertificates> – Element
 ms.date: 03/30/2017
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
 ms.openlocfilehash: 06a624d0146745581dfe907d044d1f7d3b857902
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59119675"
 ---
 # <a name="add-of-scopedcertificates-element"></a>\<Přidat > z \<scopedCertificates > – Element
@@ -64,7 +64,7 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
   
 ## <a name="storename-attribute"></a>storeName atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Mezi hodnoty patří: Adresáře, AuthRoot, CertificateAuthority zakázané, My, Root, TrustedPeople a TrustedPublisher.|  
   

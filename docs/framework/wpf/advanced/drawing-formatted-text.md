@@ -11,10 +11,10 @@ helpviewer_keywords:
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
 ms.openlocfilehash: a61031c36dea84449ad07175287bf834544df886
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129087"
 ---
 # <a name="drawing-formatted-text"></a>Kreslení formátovaného textu
@@ -91,7 +91,7 @@ Sphere následující cestu geometrii textu
 |Příznak DrawText|Ekvivalent WPF|Poznámky|  
 |-------------------|--------------------|-----------|  
 |DT_BOTTOM|<xref:System.Windows.Media.FormattedText.Height%2A>|Použití <xref:System.Windows.Media.FormattedText.Height%2A> vlastnost pro výpočet odpovídající [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] pozice DrawText "y".|  
-|DT_CALCRECT|<xref:System.Windows.Media.FormattedText.Height%2A>,  <xref:System.Windows.Media.FormattedText.Width%2A>|Použití <xref:System.Windows.Media.FormattedText.Height%2A> a <xref:System.Windows.Media.FormattedText.Width%2A> vlastnosti pro výpočet výstupu obdélník.|  
+|DT_CALCRECT|<xref:System.Windows.Media.FormattedText.Height%2A>, <xref:System.Windows.Media.FormattedText.Width%2A>|Použití <xref:System.Windows.Media.FormattedText.Height%2A> a <xref:System.Windows.Media.FormattedText.Width%2A> vlastnosti pro výpočet výstupu obdélník.|  
 |DT_CENTER|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Center>.|  
 |DT_EDITCONTROL|Žádné|Není nutné. Šířka mezery a poslední řádek vykreslení jsou že stejné jako v rámci ovládacích prvků pro úpravy.|  
 |DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.CharacterEllipsis>.<br /><br /> Použití <xref:System.Windows.TextTrimming.WordEllipsis> zobrazíte [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DT_END_ELLIPSIS s DT_WORD_ELIPSIS ukončit tlačítko se třemi tečkami – v takovém případě znak tlačítko se třemi tečkami dochází jenom na slova, která se nevejdou na jednom řádku.|  
@@ -101,7 +101,7 @@ Sphere následující cestu geometrii textu
 |DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Toto je výchozí zarovnání textu. Použití <xref:System.Windows.Media.FormattedText.TextAlignment%2A> vlastnost nastavená na hodnotu <xref:System.Windows.TextAlignment.Left>. (Pouze WPF)|  
 |DT_MODIFYSTRING|Žádný|Není podporováno.|  
 |DT_NOCLIP|<xref:System.Windows.Media.Visual.VisualClip%2A>|Výstřižek neprobíhá automaticky. Pokud chcete do Galerie textu, použijte <xref:System.Windows.Media.Visual.VisualClip%2A> vlastnost.|  
-|DT_NOFULLWIDTHCHARBREAK|Žádný|Není podporováno.|  
+|DT_NOFULLWIDTHCHARBREAK|Žádné|Není podporováno.|  
 |DT_NOPREFIX|Žádné|Není nutné. Znak '&' v řetězcích je vždy považován za normálních znaků.|  
 |DT_PATHELLIPSIS|Žádné|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
 |DT_PREFIX|Žádné|Není podporováno. Pokud chcete použít podtržítka pro text, například klíče akcelerátoru nebo odkaz, použijte <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> metody.|  
@@ -112,7 +112,7 @@ Sphere následující cestu geometrii textu
 |DT_TABSTOP|Žádné|Bez podpory pro uživatelem definované stop tabulátorů.|  
 |DT_TOP|<xref:System.Windows.Media.FormattedText.Height%2A>|Není nutné. Začátek zarovnání do bloku je výchozí nastavení. Ostatní svislé umístění hodnoty lze definovat pomocí <xref:System.Windows.Media.FormattedText.Height%2A> vlastnost pro výpočet odpovídající [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] pozice DrawText "y".|  
 |DT_VCENTER|<xref:System.Windows.Media.FormattedText.Height%2A>|Použití <xref:System.Windows.Media.FormattedText.Height%2A> vlastnost pro výpočet odpovídající [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] pozice DrawText "y".|  
-|DT_WORDBREAK|Žádný|Není nutné. Dělení slov se automaticky stane s <xref:System.Windows.Media.FormattedText> objekty. Nebudete je moct zakázat.|  
+|DT_WORDBREAK|Žádné|Není nutné. Dělení slov se automaticky stane s <xref:System.Windows.Media.FormattedText> objekty. Nebudete je moct zakázat.|  
 |DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Použití <xref:System.Windows.Media.FormattedText.Trimming%2A> vlastnost s hodnotou <xref:System.Windows.TextTrimming.WordEllipsis>.|  
   
 ## <a name="see-also"></a>Viz také:

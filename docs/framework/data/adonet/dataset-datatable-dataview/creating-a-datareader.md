@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 49d4422a-7464-4ab8-8ec7-90185fde3ecf
 ms.openlocfilehash: 8932f393af58f2014f643c5b6ebd6dc7a127b7eb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59122002"
 ---
 # <a name="creating-a-datareader"></a>Vytvoření čtečky dat

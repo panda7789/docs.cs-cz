@@ -9,10 +9,10 @@ helpviewer_keywords:
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
 ms.openlocfilehash: 8319e451268152e95326c02027157db72df631b8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125143"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource – rozšíření značek
@@ -72,5 +72,5 @@ Poskytuje hodnotu pro všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla
 - [Styly a šablony](../controls/styling-and-templating.md)
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md)
-- [Zdroje XAML](xaml-resources.md)
-- [Zdroje a kód](resources-and-code.md)
+- [Prostředky XAML](xaml-resources.md)
+- [Prostředky a kód](resources-and-code.md)

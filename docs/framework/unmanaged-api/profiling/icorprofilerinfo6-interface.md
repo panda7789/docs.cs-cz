@@ -11,10 +11,10 @@ ms.assetid: 6f2bb148-1e2b-4e45-a5a5-0ceddc40064b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: febe130b4d61b6179aeab3bfcd63891c38b13fbe
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59128931"
 ---
 # <a name="icorprofilerinfo6-interface"></a>ICorProfilerInfo6 Interface

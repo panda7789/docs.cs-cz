@@ -3,10 +3,10 @@ title: Dotazy v technologii LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
 ms.openlocfilehash: 0e005939c8168606c7f58467f11115666cf1ef24
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59124738"
 ---
 # <a name="queries-in-linq-to-entities"></a>Dotazy v technologii LINQ to Entities
@@ -32,13 +32,13 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
   
 -   [Příklady syntaxe výrazů dotazů: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-aggregate-operators.md)  
   
--   [Příklady syntaxe výrazů dotazů: Dělení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
+-   [Příklady syntaxe výrazů dotazů: Vytváření oddílů](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-partitioning.md)  
   
 -   [Příklady syntaxe výrazů dotazů: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-join-operators.md)  
   
 -   [Příklady syntaxe výrazů dotazů: Operátory elementů](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-element-operators.md)  
   
--   [Příklady syntaxe výrazů dotazů: Seskupování](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
+-   [Příklady syntaxe výrazů dotazů: Seskupení](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-grouping.md)  
   
 -   [Příklady syntaxe výrazů dotazů: Navigace v relacích](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expression-syntax-examples-navigating-relationships.md)  
   
@@ -53,15 +53,15 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
   
 -   [Příklady syntaxe dotazů založených na volání metody: Agregační operátory](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-aggregate-operators.md)  
   
--   [Příklady syntaxe dotazů založených na volání metody: Dělení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Vytváření oddílů](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-partitioning.md)  
   
--   [Příklady syntaxe dotazů založených na volání metody: Konverze](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Převod](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-conversion.md)  
   
 -   [Příklady syntaxe dotazů založených na volání metody: Operátory spojení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-join-operators.md)  
   
 -   [Příklady syntaxe dotazů založených na volání metody: Operátory elementů](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-element-operators.md)  
   
--   [Příklady syntaxe dotazů založených na volání metody: Seskupování](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
+-   [Příklady syntaxe dotazů založených na volání metody: Seskupení](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-grouping.md)  
   
 -   [Příklady syntaxe dotazů založených na volání metody: Navigace v relacích](../../../../../../docs/framework/data/adonet/ef/language-reference/method-based-query-syntax-examples-navigating-relationships.md)  
   

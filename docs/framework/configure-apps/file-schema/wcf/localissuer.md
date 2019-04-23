@@ -3,10 +3,10 @@ title: <localIssuer>
 ms.date: 03/30/2017
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
 ms.openlocfilehash: 9a51387cd75d57a6828ecde1dcd788b056f7e27a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59122873"
 ---
 # <a name="localissuer"></a>\<localIssuer>

@@ -7,10 +7,10 @@ helpviewer_keywords:
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
 ms.openlocfilehash: e71946ec06eb1b4c75f30084dfdb863d8e3b093e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59122353"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
@@ -114,6 +114,6 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
 - [Vlastní vlastnosti závislosti](custom-dependency-properties.md)
-- [Přehled řízeného vytváření](../controls/control-authoring-overview.md)
+- [Přehled vytváření ovládacích prvků](../controls/control-authoring-overview.md)
 - [Přehled základních elementů](base-elements-overview.md)
-- [Vlastnost závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)
+- [Vlastnosti závislostí a načítání XAML](xaml-loading-and-dependency-properties.md)

@@ -160,10 +160,10 @@ ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 99fa84b8dea326bc7a32ff4f3c3187acc9883748
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59121638"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe

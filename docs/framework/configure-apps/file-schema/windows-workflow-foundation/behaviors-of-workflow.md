@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 3c6017b6-0c4f-4192-bd67-9515f5d1ec82
 ms.openlocfilehash: b7c5cf93a82ac88c25f9c478ad52cf41eb6f6d65
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129204"
 ---
 # <a name="behaviors-of-workflow"></a>\<chování > pracovního postupu
@@ -47,4 +47,4 @@ Tento prvek obsahuje **serviceBehaviors** kolekce.  Každý prvek v kolekci defi
 - <xref:System.ServiceModel.Configuration.BehaviorsSection>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElementCollection>
 - <xref:System.ServiceModel.Configuration.ServiceBehaviorElement>
-- [Konfigurace a rozšíření modulu runtime s chováním](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Konfigurace a rozšíření modulu runtime pomocí chování](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

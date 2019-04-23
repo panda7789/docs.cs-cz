@@ -5,10 +5,10 @@ helpviewer_keywords:
 - message security [WCF]
 ms.assetid: e681f3bd-0c09-4a58-b0e4-0ecbdf1aa6c7
 ms.openlocfilehash: e455c7a48e1484d5acdcc5f6cdc9098997a3ba83
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59120722"
 ---
 # <a name="securing-services-and-clients"></a>Zabezpečení služeb a klientů

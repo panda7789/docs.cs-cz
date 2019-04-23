@@ -1,12 +1,12 @@
 ---
-title: <connectionPoolSettings> of <tcpTransport>
+title: <connectionPoolSettings> z <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 2fbc3aa7-fcc9-4193-99a3-85d31d60d3f7
 ms.openlocfilehash: 93363c5ff1753ff02956404da7697780078c9839
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129971"
 ---
 # <a name="connectionpoolsettings-of-tcptransport"></a>\<connectionPoolSettings> of \<tcpTransport>
@@ -59,6 +59,6 @@ Určuje další nastavení fondu připojení přenosu protokolu TCP.
 - [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

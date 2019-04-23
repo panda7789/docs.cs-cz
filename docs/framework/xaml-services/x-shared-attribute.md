@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Shared attribute in XAML [XAML Services]
 ms.assetid: c8cff434-2785-405f-9f95-16deb34c9e64
 ms.openlocfilehash: da35f209b632bdf9e4ab2298239a505df69d6048
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125734"
 ---
 # <a name="xshared-attribute"></a>x:Shared – atribut
@@ -52,5 +52,5 @@ Pokud je nastavena na `false`, upravuje chování načtení prostředku WPF, tak
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.ResourceDictionary>
-- [Zdroje XAML](../wpf/advanced/xaml-resources.md)
+- [Prostředky XAML](../wpf/advanced/xaml-resources.md)
 - [Základní elementy](../wpf/advanced/base-elements.md)

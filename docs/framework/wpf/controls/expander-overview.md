@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Expander control [WPF], about Expander control
 ms.assetid: 877bf425-0e54-49ec-8fd2-13a211377abb
 ms.openlocfilehash: ddf6ee550e0eb6af5af44d032e85ecd5b735b951
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59130400"
 ---
 # <a name="expander-overview"></a>Přehled rozšíření
@@ -28,7 +28,7 @@ ms.locfileid: "59130400"
   
 <a name="SettingtheDirectionoftheExpandingWindow"></a>   
 ## <a name="setting-the-direction-of-the-expanding-content-area"></a>Nastavení směr rozbalení oblast obsahu  
- Můžete nastavit oblast obsahu <xref:System.Windows.Controls.Expander> ovládacího prvku v jednom ze čtyř směrů (<xref:System.Windows.Controls.ExpandDirection.Down>, <xref:System.Windows.Controls.ExpandDirection.Up>, <xref:System.Windows.Controls.ExpandDirection.Left>, nebo <xref:System.Windows.Controls.ExpandDirection.Right>) s použitím <xref:System.Windows.Controls.ExpandDirection> vlastnost. Když oblasti obsahu je sbalena, pouze <xref:System.Windows.Controls.Expander><xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a zobrazí jeho přepínacího tlačítka. A <xref:System.Windows.Controls.Button> ovládací prvek, který zobrazí směrové šipky se používá jako přepínací tlačítko pro rozbalení a sbalení oblasti obsahu. Po rozbalení <xref:System.Windows.Controls.Expander> pokusí zobrazit veškerý jeho obsah v oblasti jako okna.  
+ Můžete nastavit oblast obsahu <xref:System.Windows.Controls.Expander> ovládacího prvku v jednom ze čtyř směrů (<xref:System.Windows.Controls.ExpandDirection.Down>, <xref:System.Windows.Controls.ExpandDirection.Up>, <xref:System.Windows.Controls.ExpandDirection.Left>, nebo <xref:System.Windows.Controls.ExpandDirection.Right>) s použitím <xref:System.Windows.Controls.ExpandDirection> vlastnost. Když oblasti obsahu je sbalena, pouze <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A> a zobrazí jeho přepínacího tlačítka. A <xref:System.Windows.Controls.Button> ovládací prvek, který zobrazí směrové šipky se používá jako přepínací tlačítko pro rozbalení a sbalení oblasti obsahu. Po rozbalení <xref:System.Windows.Controls.Expander> pokusí zobrazit veškerý jeho obsah v oblasti jako okna.  
   
 <a name="SettingSizeDimensionsonanExpanderinaPanel"></a>   
 ## <a name="controlling-the-size-of-an-expander-in-a-panel"></a>Řízení velikosti rozšíření v panelu  
@@ -62,4 +62,4 @@ ms.locfileid: "59130400"
 
 - <xref:System.Windows.Controls.Expander>
 - <xref:System.Windows.Controls.ExpandDirection>
-- [– postupy](expander-how-to-topics.md)
+- [Témata s postupy](expander-how-to-topics.md)

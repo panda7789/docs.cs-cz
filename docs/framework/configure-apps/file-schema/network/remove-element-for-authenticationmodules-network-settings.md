@@ -1,5 +1,5 @@
 ---
-title: <remove> – Element pro authenticationModules (nastavení sítě)
+title: <remove> – element pro authenticationModules (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules/remove
@@ -11,10 +11,10 @@ helpviewer_keywords:
 - authenticationModules, remove element
 ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
 ms.openlocfilehash: 0eb3ef7db422d5cbbe70bd5633798b8d3787452d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125250"
 ---
 # <a name="remove-element-for-authenticationmodules-network-settings"></a>\<Odebrat > – Element pro authenticationModules (nastavení sítě)
@@ -40,14 +40,14 @@ Odebere ověřovací modul z aplikace.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|** – typ**|Název modulu ověřování k odebrání.|  
+|**type**|Název modulu ověřování k odebrání.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
   

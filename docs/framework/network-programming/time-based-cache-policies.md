@@ -18,10 +18,10 @@ helpviewer_keywords:
 - age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
 ms.openlocfilehash: 0fb9b50fdbc0a1e11992baac684c5e2e8c081f5f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129308"
 ---
 # <a name="time-based-cache-policies"></a>Zásady mezipaměti na základě času
@@ -65,6 +65,6 @@ Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipam�
 
 - [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
 - [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
-- [Zásady mezipaměti na základě umístění](../../../docs/framework/network-programming/location-based-cache-policies.md)
-- [Konfigurace ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
+- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)
 - [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

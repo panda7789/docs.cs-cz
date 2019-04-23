@@ -3,10 +3,10 @@ title: Protokol PNRP (Peer Name Resolution Protocol)
 ms.date: 03/30/2017
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
 ms.openlocfilehash: 4473ccb01349d2697ba512861aa505d5e363ab19
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59119064"
 ---
 # <a name="peer-name-resolution-protocol"></a>Protokol PNRP (Peer Name Resolution Protocol)

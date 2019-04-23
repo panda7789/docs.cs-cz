@@ -12,10 +12,10 @@ helpviewer_keywords:
 - OnSerializedAttribute [WCF]
 ms.assetid: aa4a3a6f-05ec-4efd-bdbf-2181e13e6468
 ms.openlocfilehash: da13f9989b427da047c4a94f77907847ed2ae4d9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59124628"
 ---
 # <a name="version-tolerant-serialization-callbacks"></a>Zpětná volání serializace tolerantní k verzím
@@ -48,4 +48,4 @@ Programovací model kontraktu dat plně podporuje metody zpětného volání ser
 - <xref:System.Runtime.Serialization.OnDeserializingAttribute>
 - <xref:System.Runtime.Serialization.OnDeserializedAttribute>
 - <xref:System.Runtime.Serialization.StreamingContext>
-- [Serializace tolerantní vůči verzím](../../../../docs/standard/serialization/version-tolerant-serialization.md)
+- [Serializace tolerantní vůči verzím (VTS)](../../../../docs/standard/serialization/version-tolerant-serialization.md)

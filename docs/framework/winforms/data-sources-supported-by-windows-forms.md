@@ -16,10 +16,10 @@ helpviewer_keywords:
 - data [Windows Forms], data providers
 ms.assetid: 3d2c43f6-462b-4d35-9c86-13e9afe012e1
 ms.openlocfilehash: b648d62c9128f0864d60ace1ca56700f594b78c5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59124615"
 ---
 # <a name="data-sources-supported-by-windows-forms"></a>Zdroje dat podporované rozhraním Windows Forms
@@ -59,6 +59,6 @@ Tradičně datové vazby používá v rámci aplikací využít data uložená v
   
 ## <a name="see-also"></a>Viz také:
 
-- [Oznámení změn v datové vazbě rozhraní Windows Forms](change-notification-in-windows-forms-data-binding.md)
-- [Datové vazby a rozhraní Windows Forms](data-binding-and-windows-forms.md)
+- [Oznámení změn v datové vazbě Windows Forms](change-notification-in-windows-forms-data-binding.md)
+- [Datové vazby a Windows Forms](data-binding-and-windows-forms.md)
 - [Windows Forms – datová vazba](windows-forms-data-binding.md)

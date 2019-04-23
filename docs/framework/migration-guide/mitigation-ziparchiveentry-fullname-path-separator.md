@@ -11,10 +11,10 @@ ms.assetid: 8d575722-4fb6-49a2-8a06-f72d62dc3766
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eba871215f33e4d3b50054e9ceaa92be090d0143
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125104"
 ---
 # <a name="mitigation-ziparchiveentryfullname-path-separator"></a>Omezení rizik: Oddělovač cesty ZipArchiveEntry.FullName

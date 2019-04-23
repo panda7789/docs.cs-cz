@@ -9,10 +9,10 @@ helpviewer_keywords:
 - XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
 ms.openlocfilehash: 10f8e0899e61d5d54589c910bdcbcd92d8ee947c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129353"
 ---
 # <a name="how-to-add-an-event-handler-using-code"></a>Postupy: Přidání obslužné rutiny události pomocí kódu
@@ -40,4 +40,4 @@ Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled směrovaných událostí](routed-events-overview.md)
-- [– postupy](events-how-to-topics.md)
+- [Témata s postupy](events-how-to-topics.md)

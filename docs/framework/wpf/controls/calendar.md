@@ -6,10 +6,10 @@ helpviewer_keywords:
 - Calendar control [WPF]
 ms.assetid: ee844e4a-eefe-48e2-bd0d-1d82cc5e960b
 ms.openlocfilehash: 9a64c6cd6fc1cc53383f2617f7a7a78959e87c4e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59124784"
 ---
 # <a name="calendar"></a>Kalendář
@@ -49,7 +49,7 @@ Ovládací prvky kalendáře
 |END|<xref:System.Windows.Controls.CalendarMode.Decade>|Rok se změní <xref:System.Windows.Controls.Calendar.DisplayDate%2A> s tím loňským desetiletí. <xref:System.Windows.Controls.Calendar.SelectedDate%2A> Nezmění.|  
 |CTRL + ŠIPKA NAHORU|Jakýkoli|Přepne na další větší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Decade>, žádná akce.|  
 |CTRL + ŠIPKA DOLŮ|Jakýkoli|Přepne na další menší <xref:System.Windows.Controls.Calendar.DisplayMode%2A>. Pokud <xref:System.Windows.Controls.Calendar.DisplayMode%2A> již <xref:System.Windows.Controls.CalendarMode.Month>, žádná akce.|  
-|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> or <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
+|MEZERNÍK nebo ENTER|<xref:System.Windows.Controls.CalendarMode.Year> Nebo <xref:System.Windows.Controls.CalendarMode.Decade>|Přepínače <xref:System.Windows.Controls.Calendar.DisplayMode%2A> k <xref:System.Windows.Controls.CalendarMode.Month> nebo <xref:System.Windows.Controls.CalendarMode.Year> reprezentována cílených položky.|  
   
 ## <a name="see-also"></a>Viz také:
 

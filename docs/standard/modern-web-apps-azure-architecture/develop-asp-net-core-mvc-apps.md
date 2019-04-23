@@ -5,10 +5,10 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
 ms.openlocfilehash: 1d58f6ef590e798e52730d79e56b8c16830c1712
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59128385"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
@@ -499,9 +499,9 @@ Vezměte v úvahu, že prostředí způsoby, ve kterých vaše aplikace komuniko
 
 > ### <a name="references--client-communication"></a>Odkazy – komunikace klienta
 >
-> - **Funkce SignalR technologie ASP.NET Core**  
+> - **ASP.NET Core SignalR**  
 >   <https://github.com/aspnet/SignalR>
-> - **Správce protokolu WebSocket**  
+> - **WebSocket Manager**  
 >   https://github.com/radu-matei/websocket-manager
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>Návrhy řízené doménou – by je použijete?

@@ -3,10 +3,10 @@ title: Fronty ve WCF
 ms.date: 03/30/2017
 ms.assetid: e98d76ba-1acf-42cd-b137-0f8214661112
 ms.openlocfilehash: 502f1ad74cd4bd6294db11a3e48f4c41068704ae
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59128762"
 ---
 # <a name="queuing-in-wcf"></a>Fronty ve WCF
@@ -105,7 +105,7 @@ Tato část popisuje způsob použití komunikaci ve frontě ve Windows Communic
 ### <a name="sample-code"></a>Vzorový kód  
  Podrobné pokyny o tom, jak napsat WCF služby, které používají služby MSMQ naleznete v následujících tématech:  
   
--   [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+-   [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
   
 -   [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
   

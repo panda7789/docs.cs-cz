@@ -8,10 +8,10 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <trace>
 ms.assetid: b44732a8-271f-4a06-ba9e-fe3298d6f192
 ms.openlocfilehash: 97b18f9d6baa618b0f535955b232e2119c758b11
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59124888"
 ---
 # <a name="clear-element-for-listeners-for-trace"></a>\<Vymazat > – Element pro \<naslouchacích procesů > pro \<trasování >
@@ -85,4 +85,4 @@ Vymaže `Listeners` kolekce pro trasování.
 - <xref:System.Diagnostics.TraceSource>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
 - [\<remove>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md)
-- [Naslouchací procesy trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

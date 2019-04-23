@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
 ms.openlocfilehash: df03c68193a1068b4bdf0b6ed0923b3bbb8a046a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59127709"
 ---
 # <a name="managing-dataviews"></a>Správa zobrazení dat

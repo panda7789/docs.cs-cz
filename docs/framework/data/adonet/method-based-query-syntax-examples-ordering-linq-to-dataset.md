@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 8f9ce4fd-e84f-48c0-bb64-89e217236d3e
 ms.openlocfilehash: 76bc4751a25e82a731e136f838d12b8d1c1d691f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59119558"
 ---
 # <a name="method-based-query-syntax-examples-ordering-linq-to-dataset"></a>Příklady syntaxe dotazů založených na volání metody: Řazení (LINQ to DataSet)

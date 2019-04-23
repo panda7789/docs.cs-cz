@@ -6,10 +6,10 @@ helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
 ms.openlocfilehash: 769d1ac0b6266c87e99605c76a25e016f15eb11c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125739"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
@@ -74,6 +74,6 @@ V předchozím příkladu `number` proměnná je silně typováno jako `int`. Im
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
 - [Parametry metody](../../../csharp/language-reference/keywords/method-parameters.md)

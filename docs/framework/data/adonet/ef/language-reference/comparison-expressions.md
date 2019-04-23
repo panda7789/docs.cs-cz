@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
 ms.openlocfilehash: a37e7e3d0759cb3cf17d2b4cbd3dd2e4877ff6c9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125642"
 ---
 # <a name="comparison-expressions"></a>Výrazy porovnání

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - font metrics [Windows Forms], obtaining
 ms.assetid: ff7c0616-67f7-4fa2-84ee-b8d642f2b09b
 ms.openlocfilehash: 24cada3962339cae0608bbe01e070a0b8e256e73
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59119051"
 ---
 # <a name="how-to-obtain-font-metrics"></a>Postupy: Získání metriky písma
@@ -57,5 +57,5 @@ ms.locfileid: "59119051"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Použití písem a textu](using-fonts-and-text.md)

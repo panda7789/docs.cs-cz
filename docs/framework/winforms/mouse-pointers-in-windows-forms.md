@@ -10,10 +10,10 @@ helpviewer_keywords:
 - mouse [Windows Forms], cursors
 ms.assetid: c3400d85-de5b-42e8-abc3-d6088d69ee53
 ms.openlocfilehash: e9b572ba40618a72b8db58917008ebd61a23de79
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59122782"
 ---
 # <a name="mouse-pointers-in-windows-forms"></a>Ukazatele myši ve Windows Forms
@@ -34,4 +34,4 @@ Myši *ukazatel*, které se někdy označuje jako ukazatel, je rastrový obráze
 
 - <xref:System.Windows.Forms.Cursor>
 - [Vstup z myši v aplikaci Windows Forms](mouse-input-in-a-windows-forms-application.md)
-- [Přetažení funkce ve Windows Forms ](drag-and-drop-functionality-in-windows-forms.md)
+- [Funkce přetažení ve Windows Forms](drag-and-drop-functionality-in-windows-forms.md)

@@ -3,10 +3,10 @@ title: Aktivit stavového stroje v WF
 ms.date: 03/30/2017
 ms.assetid: 93312eaf-07e0-4a55-b4f7-4cdbbc4dee2d
 ms.openlocfilehash: 5aee2a7cb078d9d62c9296f7dda9f28ff812a88a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59120910"
 ---
 # <a name="state-machine-activities-in-wf"></a>Aktivit stavového stroje v WF

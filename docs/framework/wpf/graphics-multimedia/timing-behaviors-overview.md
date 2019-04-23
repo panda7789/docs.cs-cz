@@ -6,10 +6,10 @@ helpviewer_keywords:
 - behaviors [WPF], timing
 ms.assetid: 5b714d46-bd46-48b8-b467-b4be89ba3091
 ms.openlocfilehash: c3403a8602cc874e993bd649851b77d7bf652cce
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129587"
 ---
 # <a name="timing-behaviors-overview"></a>Přehled chování časování
@@ -41,7 +41,7 @@ Toto téma popisuje chování časování animací a jiných <xref:System.Window
 |Termín|Popis|Vlastnosti||||  
 |----------|-----------------|----------------|-|-|-|  
 |Jednoduché doba trvání|Dlouhá doba časové osy přístupu do jednoho dopředné iterace.|<xref:System.Windows.Media.Animation.Timeline.Duration%2A>||||  
-|Jednoho opakování|Doba, která je potřebná pro časovou osu přehrávání vpřed po a pokud <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> vlastnost má hodnotu true, přehrávat pozpátku jednou.|<xref:System.Windows.Media.Animation.Timeline.Duration%2A>,  <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>||||  
+|Jednoho opakování|Doba, která je potřebná pro časovou osu přehrávání vpřed po a pokud <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A> vlastnost má hodnotu true, přehrávat pozpátku jednou.|<xref:System.Windows.Media.Animation.Timeline.Duration%2A>, <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>||||  
 |Aktivního období|Doba, která je potřebná pro časovou osu pro dokončení všech opakování není určené jeho <xref:System.Windows.Media.Animation.RepeatBehavior> vlastnost.|<xref:System.Windows.Media.Animation.Timeline.Duration%2A>, <xref:System.Windows.Media.Animation.Timeline.AutoReverse%2A>, <xref:System.Windows.Media.Animation.RepeatBehavior>||||  
   
 <a name="duration"></a>   
@@ -125,7 +125,7 @@ Toto téma popisuje chování časování animací a jiných <xref:System.Window
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled animace](animation-overview.md)
-- [Animace a časování přehledu systému](animation-and-timing-system-overview.md)
+- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
 - [Přehled událostí časování](timing-events-overview.md)
-- [– postupy](animation-and-timing-how-to-topics.md)
+- [Témata s postupy](animation-and-timing-how-to-topics.md)
 - [Ukázka chování časování animace](https://go.microsoft.com/fwlink/?LinkID=159970)

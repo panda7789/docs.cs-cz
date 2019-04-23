@@ -11,10 +11,10 @@ helpviewer_keywords:
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
 ms.openlocfilehash: fb91d4b413db512021b90f0d4ba3049fe7333601
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59123786"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
@@ -174,7 +174,7 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 
 - <xref:System.Windows.Documents.Typography>
 - <xref:System.Windows.Media.FontFamily>
-- [Microsoft Typography: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
+- [Typografie společnosti Microsoft: Odkazy, zprávy a kontaktů](https://docs.microsoft.com/typography/)
 - [Specifikace OpenType](https://www.microsoft.com/typography/otspec/)
 - [Funkce písma OpenType](opentype-font-features.md)
 - [Ukázková sada písem OpenType](sample-opentype-font-pack.md)

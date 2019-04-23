@@ -1,12 +1,12 @@
 ---
-title: <add> of <filters>
+title: <add> z <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
 ms.openlocfilehash: 399fc4e22a9253469a5494af61dac862e33814a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59128697"
 ---
 # <a name="add-of-filters"></a>\<Přidat > z \<filtry >
@@ -42,7 +42,7 @@ Filtr XPath určující druh zaznamenávané zprávy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry >](../../../../../docs/framework/configure-apps/file-schema/wcf/filters.md)|Obsahuje kolekci filtrů XPath umožňují určit, jaký druh zprávy se protokoluje.|  
+|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters.md)|Obsahuje kolekci filtrů XPath umožňují určit, jaký druh zprávy se protokoluje.|  
   
 ## <a name="remarks"></a>Poznámky  
  Filtry se použijí pouze na transportní vrstvě, určené `logMessagesAtTransportLevel` je `true`. Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.  

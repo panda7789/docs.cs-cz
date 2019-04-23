@@ -5,10 +5,10 @@ ms.assetid: a3355d78-2a88-4109-8521-830d7cae260a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ae15e6d61267feb0388170ee27dcd939035329b0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59121690"
 ---
 # <a name="methodinstantiation-element-net-native"></a>\<MethodInstantiation > – Element (.NET Native)
@@ -39,13 +39,13 @@ Použije zásady reflexe runtime konstruovanou obecnou metodu.
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*method_name*|Název metody. Typ metody je definován nadřazený [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) nebo [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.|  
   
 ## <a name="signature-attribute"></a>Atribut podpisu  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*method_signature*|Určuje pojmenované parametry metody. Pokud více parametrů jsou k dispozici, jsou odděleny čárkami.|  
   
@@ -68,7 +68,7 @@ Použije zásady reflexe runtime konstruovanou obecnou metodu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  

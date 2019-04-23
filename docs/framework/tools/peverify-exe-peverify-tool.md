@@ -13,10 +13,10 @@ ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0423946ab32c04274bb3d5656ed8603ec4314d88
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59128730"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
@@ -36,14 +36,14 @@ peverify filename [options]
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*filename*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
+|*Název souboru*|Přenosný spustitelný soubor (PE), pro který chcete zkontrolovat jazyk MSIL a metadata.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/break=** *maxErrorCount*|Přeruší ověřování po *maxErrorCount* chyby.<br /><br /> Tento parametr není podporován v rozhraní .NET Framework verze 2.0 a vyšší.|  
-|**/clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD Val. Cyklus**<br /> Cyklus ověření metadat<br /><br /> **MD Val. pouze**<br /> Čisté ověření metadat<br /><br /> **IL Ver. Cyklus**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **IL Ver pure**<br /> Čisté ověřování MSIL<br /><br /> **MD Val. cycle** a **IL Ver. cycle** časy zahrnují čas potřebný k provedení potřebné procedur spuštění a vypnutí. **MD Val. pure** a **IL Ver pure** časy odrážet čas potřebný k provedení ověření nebo jenom k ověření.|  
-|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/hresult**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
+|**/Clock**|Změří a oznámí následující časy ověření v milisekundách:<br /><br /> **MD Val. cycle**<br /> Cyklus ověření metadat<br /><br /> **MD Val. pure**<br /> Čisté ověření metadat<br /><br /> **IL Ver. cycle**<br /> Cyklus ověřování Microsoft Intermediate Language (MSIL)<br /><br /> **IL Ver pure**<br /> Čisté ověřování MSIL<br /><br /> **MD Val. cycle** a **IL Ver. cycle** časy zahrnují čas potřebný k provedení potřebné procedur spuštění a vypnutí. **MD Val. pure** a **IL Ver pure** časy odrážet čas potřebný k provedení ověření nebo jenom k ověření.|  
+|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/HRESULT**|Zobrazí kódy chyb v šestnáctkovém formátu.|  
 |**/ignore=** *hex.code* [, *hex.code*]|Ignoruje zadané kódy chyb.|  
 |**/ Ignorovat = @** *responseFile*|Ignoruje kódy chyb uvedené v zadaném souboru odpovědí.|  
 |**/il**|Provádí kontroly ověření bezpečnosti typů jazyka MSIL pro metody implementované v sestavení určeném parametrem *filename*. Nástroj Vrátí podrobný popis každého nalezeného problému, pokud zadáte **/quiet** možnost.|  
@@ -52,7 +52,7 @@ peverify filename [options]
 |**/nosymbols**|V rozhraní .NET Framework verze 2.0 potlačí zobrazování čísel řádků z důvodu zpětné kompatibility.|  
 |**/quiet**|Nastaví tichý režim; potlačí výstup hlášení problémů ověření. Nástroj Peverify.exe stále hlásí, zda je soubor typově bezpečný, ale již nehlásí informace o problémech, které brání v ověření bezpečnosti typu.|  
 |`/transparent`|Ověří pouze transparentní metody.|  
-|**/unique**|Ignoruje opakující se kódy chyb.|  
+|**/ Jedinečný**|Ignoruje opakující se kódy chyb.|  
 |**/verbose**|V rozhraní .NET Framework verze 2.0 zobrazí další informace ve zprávách ověření MSIL.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   

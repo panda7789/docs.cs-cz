@@ -10,10 +10,10 @@ helpviewer_keywords:
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
 ms.openlocfilehash: 28033e3e90c5010eee63f35791b0c3c77e64d1ec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129932"
 ---
 # <a name="using-data-contracts"></a>Použití kontraktů dat
@@ -71,13 +71,13 @@ A *kontraktu dat* je oficiální smlouvu mezi službou a klienta, který abstrak
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - [Serializovatelné typy](../../../../docs/framework/wcf/feature-details/serializable-types.md)
-- [Názvy kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
+- [Názvy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-names.md)
 - [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
 - [Pořadí datových členů](../../../../docs/framework/wcf/feature-details/data-member-order.md)
 - [Známé typy kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
 - [Kontrakty dat s dopřednou kompatibilitou](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
 - [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
 - [Zpětná volání serializace tolerantní k verzím](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)
-- [Vychozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)
+- [Výchozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md)
 - [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Postupy: Vytvoření základního kontraktu dat pro třídu nebo strukturu](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

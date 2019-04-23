@@ -3,10 +3,10 @@ title: Omezení distribuce zpráv
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
 ms.openlocfilehash: d09a2be4a59a08a4bddbb1e0f4d038cd2c5ff3e2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59130218"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
@@ -44,7 +44,7 @@ Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. S
   
  Odpovědi na tyto otázky vám umožňují určit, jestli se má použít počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení. Vezměte v úvahu následující obecné pokyny:  
   
--   **Kdo**  
+-   **Who**  
   
     -   *Jednotlivých uzlů*:  Filtr místní nebo přímé připojení.  
   
@@ -66,4 +66,4 @@ Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. S
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytvoření aplikace rovnocenného kanálu](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [Vytvoření aplikace protokolu Peer Channel](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

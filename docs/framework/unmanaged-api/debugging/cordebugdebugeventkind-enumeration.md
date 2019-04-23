@@ -13,10 +13,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e5479fad3f19c219a0ca1d5d01934ce92a7162e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59127160"
 ---
 # <a name="cordebugdebugeventkind-enumeration"></a>Výčet CorDebugDebugEventKind
@@ -63,4 +63,4 @@ typedef enum CorDebugDebugEventKind {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

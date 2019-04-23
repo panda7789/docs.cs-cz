@@ -3,10 +3,10 @@ title: entity set
 ms.date: 03/30/2017
 ms.assetid: 59ec6ab0-88e5-4d25-b112-7a4eccbe61f0
 ms.openlocfilehash: 7fcaa2cb9bac02271940a712d4d044df25d7d4cf
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59126617"
 ---
 # <a name="entity-set"></a>entity set
@@ -47,4 +47,4 @@ ms.locfileid: "59126617"
 ## <a name="see-also"></a>Viz také:
 
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
