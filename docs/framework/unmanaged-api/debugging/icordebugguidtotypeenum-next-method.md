@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f48c142b2b3742d01a8f796f11d5c9174529a041
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59105816"
 ---
-# <a name="icordebugguidtotypeenumnext-method"></a><span data-ttu-id="f91dd-102">ICorDebugGuidToTypeEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="f91dd-102">ICorDebugGuidToTypeEnum::Next Method</span></span>
-<span data-ttu-id="f91dd-103">Získá zadaný počet [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instancí, které se mapují GUID informací o typu.</span><span class="sxs-lookup"><span data-stu-id="f91dd-103">Gets the specified number of [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instances that map GUIDs to type information.</span></span>  
+# <a name="icordebugguidtotypeenumnext-method"></a><span data-ttu-id="a15f7-102">ICorDebugGuidToTypeEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="a15f7-102">ICorDebugGuidToTypeEnum::Next Method</span></span>
+<span data-ttu-id="a15f7-103">Získá zadaný počet [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instancí, které se mapují GUID informací o typu.</span><span class="sxs-lookup"><span data-stu-id="a15f7-103">Gets the specified number of [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instances that map GUIDs to type information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f91dd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f91dd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a15f7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a15f7-104">Syntax</span></span>  
   
 ```  
 HRESULT Next(  
@@ -37,28 +37,28 @@ HRESULT Next(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f91dd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f91dd-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a15f7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a15f7-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="f91dd-106">[in] Počet objektů typu GUID mapování se má načíst.</span><span class="sxs-lookup"><span data-stu-id="f91dd-106">[in] The number of GUID-to-type mapping objects to be retrieved.</span></span>  
+ <span data-ttu-id="a15f7-106">[in] Počet objektů typu GUID mapování se má načíst.</span><span class="sxs-lookup"><span data-stu-id="a15f7-106">[in] The number of GUID-to-type mapping objects to be retrieved.</span></span>  
   
  `values`  
- <span data-ttu-id="f91dd-107">[out] Pole ukazatelů, každý z nich odkazuje na [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objekt, který mapuje [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID na jeho odpovídající objekt ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="f91dd-107">[out] An array of pointers, each of which points to a [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) object that maps a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID to its corresponding ICorDebugType object.</span></span>  
+ <span data-ttu-id="a15f7-107">[out] Pole ukazatelů, každý z nich odkazuje na [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objekt, který mapuje [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID na jeho odpovídající objekt ICorDebugType.</span><span class="sxs-lookup"><span data-stu-id="a15f7-107">[out] An array of pointers, each of which points to a [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) object that maps a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID to its corresponding ICorDebugType object.</span></span>  
   
  `pceltFetched`  
- <span data-ttu-id="f91dd-108">[out] Ukazatel na počet [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objektů skutečně vrácených v `values`.</span><span class="sxs-lookup"><span data-stu-id="f91dd-108">[out] A pointer to the number of [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objects actually returned in `values`.</span></span>  
+ <span data-ttu-id="a15f7-108">[out] Ukazatel na počet [cordebugguidtotypemapping –](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objektů skutečně vrácených v `values`.</span><span class="sxs-lookup"><span data-stu-id="a15f7-108">[out] A pointer to the number of [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objects actually returned in `values`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f91dd-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f91dd-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a15f7-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a15f7-109">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f91dd-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f91dd-110">Requirements</span></span>  
- **<span data-ttu-id="f91dd-111">Platformy:</span><span class="sxs-lookup"><span data-stu-id="f91dd-111">Platforms:</span></span>** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]  
+## <a name="requirements"></a><span data-ttu-id="a15f7-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a15f7-110">Requirements</span></span>  
+ <span data-ttu-id="a15f7-111">**Platformy:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a15f7-111">**Platforms:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]</span></span>  
   
- <span data-ttu-id="f91dd-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f91dd-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a15f7-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a15f7-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f91dd-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f91dd-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a15f7-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a15f7-113">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="f91dd-114">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="f91dd-114">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ <span data-ttu-id="a15f7-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a15f7-114">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f91dd-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f91dd-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a15f7-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a15f7-115">See also</span></span>
 
-- [<span data-ttu-id="f91dd-116">ICorDebugGuidToTypeEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f91dd-116">ICorDebugGuidToTypeEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)
-- [<span data-ttu-id="f91dd-117">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f91dd-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="a15f7-116">ICorDebugGuidToTypeEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a15f7-116">ICorDebugGuidToTypeEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)
+- [<span data-ttu-id="a15f7-117">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="a15f7-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

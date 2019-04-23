@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a6c715183d3ae04130b729a9680335d65959836a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59104062"
 ---
-# <a name="isframeworkassembly-function"></a><span data-ttu-id="d0676-102">IsFrameworkAssembly – funkce</span><span class="sxs-lookup"><span data-stu-id="d0676-102">IsFrameworkAssembly Function</span></span>
-<span data-ttu-id="d0676-103">Získá hodnotu, která určuje, zda se spravuje zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0676-103">Gets a value that indicates whether the specified assembly is managed.</span></span>  
+# <a name="isframeworkassembly-function"></a><span data-ttu-id="fc880-102">IsFrameworkAssembly – funkce</span><span class="sxs-lookup"><span data-stu-id="fc880-102">IsFrameworkAssembly Function</span></span>
+<span data-ttu-id="fc880-103">Získá hodnotu, která určuje, zda se spravuje zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc880-103">Gets a value that indicates whether the specified assembly is managed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d0676-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0676-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fc880-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fc880-104">Syntax</span></span>  
   
 ```  
 HRESULT IsFrameworkAssembly (  
@@ -37,29 +37,29 @@ HRESULT IsFrameworkAssembly (
  );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d0676-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d0676-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="fc880-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fc880-105">Parameters</span></span>  
  `pwzAssemblyReference`  
- <span data-ttu-id="d0676-106">[in] Název sestavení ke kontrole.</span><span class="sxs-lookup"><span data-stu-id="d0676-106">[in] The name of the assembly to check.</span></span>  
+ <span data-ttu-id="fc880-106">[in] Název sestavení ke kontrole.</span><span class="sxs-lookup"><span data-stu-id="fc880-106">[in] The name of the assembly to check.</span></span>  
   
  `pbIsFrameworkAssembly`  
- <span data-ttu-id="d0676-107">[out] Logická hodnota, která určuje, jestli je spravované sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0676-107">[out] A Boolean value that indicates whether the assembly is managed.</span></span>  
+ <span data-ttu-id="fc880-107">[out] Logická hodnota, která určuje, jestli je spravované sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc880-107">[out] A Boolean value that indicates whether the assembly is managed.</span></span>  
   
  `pwzFrameworkAssemblyIdentity`  
- <span data-ttu-id="d0676-108">[in] Uncanonicalized řetězec, který obsahuje jedinečné identity sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0676-108">[in] An uncanonicalized string that contains the unique identity of the assembly.</span></span>  
+ <span data-ttu-id="fc880-108">[in] Uncanonicalized řetězec, který obsahuje jedinečné identity sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc880-108">[in] An uncanonicalized string that contains the unique identity of the assembly.</span></span>  
   
  `pccSize`  
- <span data-ttu-id="d0676-109">[in] Velikost `pwzFrameworkAssemblyIdentity`.</span><span class="sxs-lookup"><span data-stu-id="d0676-109">[in] The size of `pwzFrameworkAssemblyIdentity`.</span></span>  
+ <span data-ttu-id="fc880-109">[in] Velikost `pwzFrameworkAssemblyIdentity`.</span><span class="sxs-lookup"><span data-stu-id="fc880-109">[in] The size of `pwzFrameworkAssemblyIdentity`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d0676-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d0676-110">Remarks</span></span>  
- <span data-ttu-id="d0676-111">`pwzAssemblyReference` Parametrem je ukazatel na řetězec znaků, který obsahuje název sestavení.</span><span class="sxs-lookup"><span data-stu-id="d0676-111">The `pwzAssemblyReference` parameter is a pointer to a character string that contains the name of an assembly.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="fc880-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fc880-110">Remarks</span></span>  
+ <span data-ttu-id="fc880-111">`pwzAssemblyReference` Parametrem je ukazatel na řetězec znaků, který obsahuje název sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc880-111">The `pwzAssemblyReference` parameter is a pointer to a character string that contains the name of an assembly.</span></span>  
   
- <span data-ttu-id="d0676-112">Pokud je toto sestavení součástí .NET Framework `pbIsFrameworkAssembly` parametr bude obsahovat hodnotu typu Boolean `true`.</span><span class="sxs-lookup"><span data-stu-id="d0676-112">If this assembly is part of the .NET Framework, the `pbIsFrameworkAssembly` parameter will contain a Boolean value of `true`.</span></span>  
+ <span data-ttu-id="fc880-112">Pokud je toto sestavení součástí .NET Framework `pbIsFrameworkAssembly` parametr bude obsahovat hodnotu typu Boolean `true`.</span><span class="sxs-lookup"><span data-stu-id="fc880-112">If this assembly is part of the .NET Framework, the `pbIsFrameworkAssembly` parameter will contain a Boolean value of `true`.</span></span>  
   
- <span data-ttu-id="d0676-113">Pokud pojmenované sestavení není součástí rozhraní .NET Framework, nebo pokud `pwzAssemblyReference` sestavení, nikoli název parametru `pbIsFrameworkAssembly` bude obsahovat hodnotu typu Boolean `false`.</span><span class="sxs-lookup"><span data-stu-id="d0676-113">If the named assembly is not part of the .NET Framework, or if the `pwzAssemblyReference` parameter does not name an assembly, `pbIsFrameworkAssembly` will contain a Boolean value of `false`.</span></span>  
+ <span data-ttu-id="fc880-113">Pokud pojmenované sestavení není součástí rozhraní .NET Framework, nebo pokud `pwzAssemblyReference` sestavení, nikoli název parametru `pbIsFrameworkAssembly` bude obsahovat hodnotu typu Boolean `false`.</span><span class="sxs-lookup"><span data-stu-id="fc880-113">If the named assembly is not part of the .NET Framework, or if the `pwzAssemblyReference` parameter does not name an assembly, `pbIsFrameworkAssembly` will contain a Boolean value of `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d0676-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d0676-114">Requirements</span></span>  
- <span data-ttu-id="d0676-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d0676-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fc880-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fc880-114">Requirements</span></span>  
+ <span data-ttu-id="fc880-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fc880-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d0676-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0676-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fc880-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fc880-116">See also</span></span>
 
-- [<span data-ttu-id="d0676-117">Fúze globálních statických funkcí</span><span class="sxs-lookup"><span data-stu-id="d0676-117">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="fc880-117">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="fc880-117">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
