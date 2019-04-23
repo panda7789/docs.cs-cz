@@ -3,10 +3,10 @@ title: Vlastní skládání využívající nativní aktivitu
 ms.date: 03/30/2017
 ms.assetid: ef9e739c-8a8a-4d11-9e25-cb42c62e3c76
 ms.openlocfilehash: 41a823ab00a2be0772a07b15d1292dbb4e8d1a6b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59340292"
 ---
 # <a name="custom-composite-using-native-activity"></a>Vlastní skládání využívající nativní aktivitu
@@ -25,7 +25,7 @@ Tato ukázka předvádí, jak psát <xref:System.Activities.NativeActivity> , kt
 
  Po dokončení podřízené aktivity <xref:System.Activities.CompletionCallback> provádí. Cyklus pokračuje v horní části. Stejně jako `Execute`, <xref:System.Activities.CompletionCallback> přebírá <xref:System.Activities.NativeActivityContext>, poskytne implementátora přístup k modulu runtime.
 
- `MyWhile` se liší od `MySequence` v tom, že naplánuje jeden <xref:System.Activities.Activity> objektu opakovaně a, který se použije <xref:System.Activities.Activity%601>< bool\> s názvem `Condition` k určení, zda by dojít k plánování. Stejně jako `MySequence`, `MyWhile` používá `InternalExecute` metoda centralizovat svou logikou plánování. Naplánuje `Condition`<xref:System.Activities.Activity>< bool\> s <xref:System.Activities.CompletionCallback%601> \<bool > s názvem `OnEvaluationCompleted`. Při provádění `Condition` je dokončeno, výsledek bude k dispozici prostřednictvím tohoto <xref:System.Activities.CompletionCallback> v parametr silného typu s názvem `result`. Pokud `true`, `MyWhile` volání <xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>, předejte `Body`<xref:System.Activities.Activity> objektu a `InternalExecute` jako <xref:System.Activities.CompletionCallback>. Při provádění `Body` dokončení `Condition` získá znovu v naplánované `InternalExecute`, spouští se smyčka znovu. Když `Condition` vrátí `false`, instance `MyWhile` poskytuje řízení zpět do modulu runtime bez plánování `Body` a modul runtime přesouvá ji do <xref:System.Activities.ActivityInstanceState.Closed> stavu.
+ `MyWhile` se liší od `MySequence` v tom, že naplánuje jeden <xref:System.Activities.Activity> objektu opakovaně a, který se použije <xref:System.Activities.Activity%601>< bool\> s názvem `Condition` k určení, zda by dojít k plánování. Stejně jako `MySequence`, `MyWhile` používá `InternalExecute` metoda centralizovat svou logikou plánování. Naplánuje `Condition` <xref:System.Activities.Activity>< bool\> s <xref:System.Activities.CompletionCallback%601> \<bool > s názvem `OnEvaluationCompleted`. Při provádění `Condition` je dokončeno, výsledek bude k dispozici prostřednictvím tohoto <xref:System.Activities.CompletionCallback> v parametr silného typu s názvem `result`. Pokud `true`, `MyWhile` volání <xref:System.Activities.NativeActivityContext.ScheduleActivity%2A>, předejte `Body` <xref:System.Activities.Activity> objektu a `InternalExecute` jako <xref:System.Activities.CompletionCallback>. Při provádění `Body` dokončení `Condition` získá znovu v naplánované `InternalExecute`, spouští se smyčka znovu. Když `Condition` vrátí `false`, instance `MyWhile` poskytuje řízení zpět do modulu runtime bez plánování `Body` a modul runtime přesouvá ji do <xref:System.Activities.ActivityInstanceState.Closed> stavu.
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
 

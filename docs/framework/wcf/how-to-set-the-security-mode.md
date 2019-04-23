@@ -10,10 +10,10 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
 ms.openlocfilehash: 5a4550e4c914dcdbc9908e766c67a2efa53e6e9e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59339382"
 ---
 # <a name="how-to-set-the-security-mode"></a>Postupy: Nastavení režimu zabezpečení
@@ -116,11 +116,11 @@ Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy z
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Konfigurace portu s certifikátem SSL](../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
+- [Postupy: Zabezpečení přenosu pomocí přihlašovacích údajů a zpráv](../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
 - [Zabezpečení přenosu](../../../docs/framework/wcf/feature-details/transport-security.md)
 - [Zabezpečení zpráv](../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
 - [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)
-- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [\<security>](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [\<zabezpečení >](../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
 ms.openlocfilehash: bb35a4d47f583aad710e178bdb12cb9adf6321e0
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59340019"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
@@ -182,7 +182,7 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
   
 -   Implementovat pár `public` `static` CLR metody s názvem `Set` *PropertyName* a `Get` *PropertyName*. Obě metody by měla přijímat třídy odvozené od <xref:System.Windows.DependencyProperty> jako jejich první argument. `Set` *PropertyName* metoda také přijímá argument, jehož typ odpovídá typu registrované datové vlastnosti. `Get` *PropertyName* metoda by měla vracet hodnotu stejného typu. Pokud `Set` *PropertyName* chybí metoda, vlastnost je označena jako jen pro čtení.  
   
--   `Set` **Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů.DNávrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
+-   `Set` *Vlastnost PropertyName* a `Get` *PropertyName* musí směrovat přímo <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A> metody na závislost cílové objektů. Návrháři může přístup k připojené vlastnosti volání prostřednictvím metody obálky nebo přímé volání cílový objekt závislosti.  
   
  Další informace o přidružené vlastnosti najdete v tématu [přehled připojených vlastností](../advanced/attached-properties-overview.md).  
   
@@ -268,6 +268,6 @@ Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-w
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
 - [Sbalení URI v technologii WPF](../app-development/pack-uris-in-wpf.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

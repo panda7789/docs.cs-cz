@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
 ms.openlocfilehash: ed988547e0be3ef934c46d725c41646c3a75e626
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59339057"
 ---
 # <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>"\<name1 >' je nejednoznačný a importuje z oboru názvů nebo typů\<name2 >"
@@ -27,6 +27,6 @@ Zadali jste název, který je nejednoznačný a proto je v konfliktu s jiným n�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Namespace – příkaz](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Příkaz Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)
