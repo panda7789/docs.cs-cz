@@ -8,10 +8,10 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
 ms.openlocfilehash: 8bb630d3fb7e064935440439f2f07816e87c77dc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317009"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
@@ -80,10 +80,10 @@ Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvá
   
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](walkthrough-authoring-a-composite-control-with-visual-basic.md)
+- [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](walkthrough-authoring-a-composite-control-with-visual-basic.md)
 - [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 - [Doporučení ohledně typu ovládacího prvku](control-type-recommendations.md)
-- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)

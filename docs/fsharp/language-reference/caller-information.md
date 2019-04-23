@@ -3,10 +3,10 @@ title: Informace o volajícím
 description: Popisuje způsob použití atributů Argument informace o volajícím získat informace o volajícím z metody.
 ms.date: 04/25/2017
 ms.openlocfilehash: 13092df453b684d3ed4a93c842ea49c066157cb6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59316151"
 ---
 # <a name="caller-information"></a>Informace o volajícím

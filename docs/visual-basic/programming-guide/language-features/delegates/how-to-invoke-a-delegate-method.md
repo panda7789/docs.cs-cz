@@ -3,10 +3,10 @@ title: 'Postupy: Volání metody delegáta (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
 ms.openlocfilehash: ac3e32010e7c20ba76e39915d694b11ab3a65d40
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59319609"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
@@ -44,7 +44,7 @@ Tento příklad ukazuje, jak přidružit metodu delegáta a poté vyvolat tuto m
   
 ## <a name="see-also"></a>Viz také:
 
-- [Delegate – příkaz](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
 - [Vícevláknové aplikace](../../../../standard/threading/using-threads-and-threading.md)

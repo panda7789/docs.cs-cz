@@ -3,10 +3,10 @@ title: -target:winmdobj (C# Compiler Options)
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
 ms.openlocfilehash: 9cc85bf582d737114bc0e621a9568bbb9acb791b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59319297"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (C# Compiler Options)
@@ -49,4 +49,4 @@ csc -target:winmdobj filename.cs
 ## <a name="see-also"></a>Viz také:
 
 - [-target (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

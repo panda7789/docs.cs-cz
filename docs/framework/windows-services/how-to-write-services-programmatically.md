@@ -10,10 +10,10 @@ helpviewer_keywords:
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
 ms.openlocfilehash: baa7655481c24ebe96b76a0accbff63b6965a021
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59328423"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
@@ -72,8 +72,8 @@ Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete nap
   
 ## <a name="see-also"></a>Viz také:
 
-- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
-- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Postupy: Zaznamenávání informací o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
+- [Postupy: Protokolu informace o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
 - [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

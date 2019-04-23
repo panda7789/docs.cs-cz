@@ -8,10 +8,10 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
 ms.openlocfilehash: 5fb175bdd255af1b506dacb973a778b1f6f515f9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329346"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows
@@ -150,7 +150,7 @@ Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Commu
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.WSHttpBinding>
-- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
 - [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 - [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
 - [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)

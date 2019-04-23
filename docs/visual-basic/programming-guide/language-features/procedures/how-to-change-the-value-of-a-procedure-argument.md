@@ -14,10 +14,10 @@ helpviewer_keywords:
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
 ms.openlocfilehash: a56bdf888163c9559b87e857abb33522c547ed45
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59316619"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Postupy: Změna hodnoty argumentu procedury (Visual Basic)
@@ -81,11 +81,11 @@ Při volání procedury, každý argument, který zadáte odpovídá jednomu z p
 
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Postupy: Předávání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
-- [Předávání argumentů hodnotou nebo referencí](./passing-arguments-by-value-and-by-reference.md)
+- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
 - [Rozdíly mezi upravitelnými a neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md)
-- [Rozdíly mezi předáváním argumentů hodnotou a referencí](./differences-between-passing-an-argument-by-value-and-by-reference.md)
-- [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
-- [Postupy: Vynucení předání argumentu hodnotou](./how-to-force-an-argument-to-be-passed-by-value.md)
-- [Předávání argumentů pozicí nebo názvem](./passing-arguments-by-position-and-by-name.md)
-- [Typy hodnot a typy odkazu](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Rozdíly mezi předáním argumentu podle hodnoty a podle reference](./differences-between-passing-an-argument-by-value-and-by-reference.md)
+- [Postupy: Ochrana argumentu procedury proti změnám hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
+- [Postupy: Vynucení argumentu být předána podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
+- [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

@@ -27,10 +27,10 @@ helpviewer_keywords:
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
 ms.openlocfilehash: 9121041f936c091cda0e2af41b4f5be8d826d582
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59318441"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy (Visual Basic)
@@ -79,7 +79,7 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [z](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)
 - [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

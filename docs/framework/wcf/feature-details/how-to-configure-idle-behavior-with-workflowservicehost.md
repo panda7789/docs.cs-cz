@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 1bb93652-d687-46ff-bff6-69ecdcf97437
 ms.openlocfilehash: a676f03b4e6f9dd210b843a6f3bf00c735889500
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59330152"
 ---
 # <a name="how-to-configure-idle-behavior-with-workflowservicehost"></a>Postupy: Konfigurace chování při nečinnosti pomocí WorkflowServiceHost
@@ -43,6 +43,6 @@ Když narazí záložku, která se musí obnovit některé externí podnětů, n
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšíření hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)
+- [Rozšiřitelnost hostitele služby pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)
 - [Zjednodušená konfigurace](../../../../docs/framework/wcf/simplified-configuration.md)
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)

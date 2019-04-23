@@ -8,10 +8,10 @@ helpviewer_keywords:
 - child controls [Windows Forms], anchoring and docking
 ms.assetid: a2bcdfca-9b63-45e6-9c0e-3411015cba98
 ms.openlocfilehash: 255ac50ae79d6931c9b82b50677c450c0834fdea
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329034"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel
@@ -63,4 +63,4 @@ ms.locfileid: "59329034"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
-- [FlowLayoutPanel – přehled ovládacího prvku](flowlayoutpanel-control-overview.md)
+- [Přehled ovládacího prvku FlowLayoutPanel](flowlayoutpanel-control-overview.md)

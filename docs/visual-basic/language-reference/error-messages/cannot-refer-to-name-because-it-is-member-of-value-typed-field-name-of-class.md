@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC30310
 ms.assetid: 2aeb8872-7c87-4f01-98ef-9714ba3eebbe
 ms.openlocfilehash: 78b0a3131b6e77ed257f200523ecebd4dfce3691
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59316541"
 ---
 # <a name="cannot-refer-to-name-because-it-is-a-member-of-the-value-typed-field-name-of-class-classname-which-has-systemmarshalbyrefobject-as-a-base-class"></a>Nemůže odkazovat na "\<název >" protože se jedná o člen pole typu hodnota '\<název > "' třídy\<classname >' obsahující 'System.MarshalByRefObject' jako základní třída
@@ -28,4 +28,4 @@ ms.locfileid: "59316541"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.MarshalByRefObject>
-- [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)

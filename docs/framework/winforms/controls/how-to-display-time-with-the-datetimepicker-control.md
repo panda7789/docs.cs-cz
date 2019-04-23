@@ -10,10 +10,10 @@ helpviewer_keywords:
 - DateTimePicker control [Windows Forms], displaying time
 ms.assetid: 0c1c8b40-1b50-4301-a90c-39516775ccb1
 ms.openlocfilehash: 7906811d5a324ba3f2bd73cc057298e007ac311b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329853"
 ---
 # <a name="how-to-display-time-with-the-datetimepicker-control"></a>Postupy: Zobrazení času pomocí ovládacího prvku DateTimePicker

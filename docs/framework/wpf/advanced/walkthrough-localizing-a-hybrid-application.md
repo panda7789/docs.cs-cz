@@ -6,10 +6,10 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
 ms.openlocfilehash: 01530d4ae9779934948bbaff60fbbd392de6e701
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329294"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
@@ -46,7 +46,7 @@ Prvním krokem je vytvoření [!INCLUDE[TLA#tla_winforms](../../../../includes/t
 
 1. Vytvoření **aplikace WPF** projekt s názvem `LocalizingWpfInWf`.  (**Souboru** > **nové** > **projektu** > **Visual C#** nebo **jazyka Visual Basic**   >  **Klasický desktopový** > **aplikace WPF**).
 
-2. Přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Controls.UserControl> prvek s názvem `SimpleControl` do projektu.
+2. Přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Controls.UserControl> prvek s názvem `SimpleControl` do projektu.
 
 3. Použití <xref:System.Windows.Forms.Integration.ElementHost> ovládací prvek umístit `SimpleControl` prvek na formuláři. Další informace najdete v tématu [názorný postup: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md).
 
@@ -178,4 +178,4 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Lokalizace aplikace](how-to-localize-an-application.md)
 - [Návod: Lokalizace formulářů Windows](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/y99d1cd3(v=vs.100))
-- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
 ms.openlocfilehash: b7aba4935756fc218a1fadaa1dd9f20a5bc3034f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317882"
 ---
 # <a name="how-to-validate-application-settings"></a>Postupy: Ověření nastavení aplikace
@@ -163,4 +163,4 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
 ## <a name="see-also"></a>Viz také:
 
 - [Vytváření obslužných rutin událostí ve Windows Forms](../creating-event-handlers-in-windows-forms.md)
-- [Postupy: Vytváření nastavení aplikace](how-to-create-application-settings.md)
+- [Postupy: Vytvořit nastavení aplikace](how-to-create-application-settings.md)

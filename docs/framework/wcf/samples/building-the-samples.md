@@ -3,10 +3,10 @@ title: Ukázky vytváření Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
 ms.openlocfilehash: b1f1005e32687d2683f757d847d9fa19e098f290
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317854"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
@@ -84,4 +84,4 @@ Ukázky Windows Communication Foundation (WCF) může být sestaven pomocí inte
 ## <a name="see-also"></a>Viz také:
 
 - [Spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md)
-- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

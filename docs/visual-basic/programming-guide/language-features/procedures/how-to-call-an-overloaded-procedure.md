@@ -9,10 +9,10 @@ helpviewer_keywords:
 - procedure calls [Visual Basic], overloaded
 ms.assetid: 3bb331fb-f6bc-406f-9ca0-9609b497014c
 ms.openlocfilehash: d325c09516b4ce03facedce86f17ea49480b997a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317802"
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>Postupy: Volání přetížené procedury (Visual Basic)
@@ -38,9 +38,9 @@ Výhodou přetížení procedury je flexibilitu volání. Volající kód může
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
-- [Postupy: Definování více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
+- [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
 - [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Postupy: Přetížení procedury, která přebírá neurčitý počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
-- [Rozlišení přetěžování](./overload-resolution.md)
-- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Řešení přetížení](./overload-resolution.md)
+- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - PageSetupDialog component
 ms.assetid: 6dae05bc-c0fd-4357-bb93-841a1631d98f
 ms.openlocfilehash: 7c65eb54bb95b9a20cd1e43f0d491af47985f2e0
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329203"
 ---
 # <a name="how-to-determine-page-properties-using-the-pagesetupdialog-component"></a>Postupy: Určení vlastností stránky pomocí komponenty PageSetupDialog
@@ -90,5 +90,5 @@ ms.locfileid: "59329203"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.PageSetupDialog>
-- [Postupy: Vytváření standardních tiskových úloh v modelu Windows Forms](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
+- [Postupy: Vytvoření tiskových úloh standardní Windows Forms](../advanced/how-to-create-standard-windows-forms-print-jobs.md)
 - [Komponenta PageSetupDialog](pagesetupdialog-component-windows-forms.md)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
 ms.openlocfilehash: f849cf306f4de0cbaa7623ded4ab7045bb5112a6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315319"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
@@ -174,7 +174,7 @@ ms.locfileid: "59315319"
   
  A <xref:System.Windows.Data.BindingExpression> objektu můžete získat prostřednictvím vrácenou hodnotu volání funkce <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> na objekt vázaný na data. Následující témata ukazují některé z použití <xref:System.Windows.Data.BindingExpression> třídy:  
   
--   [Získání objektu vazby ze vlastnosti cíle vazby](how-to-get-the-binding-object-from-a-bound-target-property.md)  
+-   [Získání objektu vazby ze svázané cílové vlastnosti](how-to-get-the-binding-object-from-a-bound-target-property.md)  
   
 -   [Určení, kdy dojde k aktualizaci zdroje textem TextBox](how-to-control-when-the-textbox-text-updates-the-source.md)  
   
@@ -434,5 +434,5 @@ ms.locfileid: "59315319"
 - [Vytvoření vazby k výsledkům dotazu LINQ](how-to-bind-to-the-results-of-a-linq-query.md)
 - [Datová vazba](../advanced/optimizing-performance-data-binding.md)
 - [Ukázka vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)
 - [Vytvoření vazby ke zdroji dat ADO.NET](how-to-bind-to-an-ado-net-data-source.md)

@@ -3,10 +3,10 @@ title: 'Postupy: Vytvoření vložených prostředků modelu a souborů mapován
 ms.date: 03/30/2017
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
 ms.openlocfilehash: eae3681664ab1fd095487a7b7ed395302faf2588
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329528"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Postupy: Vytvoření vložených prostředků modelu a souborů mapování
@@ -25,9 +25,9 @@ ms.locfileid: "59329528"
   
 4. V **Průzkumníka řešení**, poklikejte na soubor App.config a potom změňte `Metadata` parametr `connectionString` atributů na základě jedné z následujících formátů:  
   
-    -   `Metadata=` `res://<assemblyFullName>/<resourceName>;`  
+    -   `Metadata=``res://<assemblyFullName>/<resourceName>;`  
   
-    -   `Metadata=` `res://*/<resourceName>;`  
+    -   `Metadata=``res://*/<resourceName>;`  
   
     -   `Metadata=res://*;`  
   
@@ -40,5 +40,5 @@ ms.locfileid: "59329528"
 
 - [Modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)
 - [Postupy: Definování připojovacího řetězce](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md)
-- [Postupy: Sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)
-- [Nástroje modelu Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Postupy: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)
+- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

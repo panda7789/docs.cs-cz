@@ -3,10 +3,10 @@ title: 'Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapován�
 ms.date: 03/30/2017
 ms.assetid: 2641906a-971a-4d0b-8aee-13fabc02a1cc
 ms.openlocfilehash: ac278123e9b0927ba6b2ce07059561e7fbb3a898
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329268"
 ---
 # <a name="how-to-use-edmgenexe-to-validate-model-and-mapping-files"></a>Postupy: Použití EdmGen.exe pro ověření modelu a souborů mapování
@@ -27,6 +27,6 @@ Toto téma ukazuje, jak používat [generátor EDM (EdmGen.exe)](../../../../../
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Ruční konfigurace projektu v Entity Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))
-- [Nástroje modelu Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
 - [Postupy: Předběžně generovat zobrazení pro zlepšení výkonu dotazů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))
 - [Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)

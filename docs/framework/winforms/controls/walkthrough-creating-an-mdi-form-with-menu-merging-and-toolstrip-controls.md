@@ -15,10 +15,10 @@ helpviewer_keywords:
 - MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
 ms.openlocfilehash: 62e137df53d06f5aedb2701b5727c25e52f35614
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59319063"
 ---
 # <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Návod: Vytvoření formuláře MDI s ovládacími prvky Menu Merging a ToolStrip
@@ -212,4 +212,4 @@ ms.locfileid: "59319063"
 - [Postupy: Vytváření nadřazených formulářů MDI](../advanced/how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](../advanced/how-to-create-mdi-child-forms.md)
 - [Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI](how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)
-- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)

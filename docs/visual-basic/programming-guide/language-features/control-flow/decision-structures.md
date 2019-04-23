@@ -10,10 +10,10 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
 ms.openlocfilehash: 4a76b2565c343e69ac3c11441035a7682a8f08ec
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59318933"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
@@ -51,4 +51,4 @@ Visual Basic umožňuje podmínky testu a provádět různé operace v závislos
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
 - [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)
 - [Vnořené řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [If – operátor](../../../../visual-basic/language-reference/operators/if-operator.md)
+- [Operátor If](../../../../visual-basic/language-reference/operators/if-operator.md)

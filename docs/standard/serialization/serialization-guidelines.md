@@ -9,10 +9,10 @@ helpviewer_keywords:
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
 ms.openlocfilehash: 05cbe8b18a0d9635091b373d0acddb2ba665cc37
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317334"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
@@ -70,7 +70,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
      <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
-    <xref:System.Runtime.Serialization.OnSerializingAttribute> a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
+    <xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
   
 4. ZVAŽTE použití <xref:System.Runtime.Serialization.KnownTypeAttribute> označuje konkrétní typy, které se mají používat při deserializaci komplexní objekt grafu.  
   
@@ -144,6 +144,6 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
 - [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
 - [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [Binární serializace](binary-serialization.md)
-- [Vzdálené komunikace pomocí rozhraní .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
+- [Vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [Serializace XML a SOAP](xml-and-soap-serialization.md)
 - [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

@@ -12,10 +12,10 @@ helpviewer_keywords:
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
 ms.openlocfilehash: d0a86d7fe53dba3da6bd63587561f82877bc2f06
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59328332"
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>Postupy: Změna velikosti či umístění obrázku za běhu (Windows Forms)
@@ -85,7 +85,7 @@ Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládac
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.PictureBox>
-- [Postupy: Načtení obrázku pomocí Návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Postupy: Načtení obrázku pomocí návrháře](how-to-load-a-picture-using-the-designer-windows-forms.md)
 - [Přehled ovládacího prvku PictureBox](picturebox-control-overview-windows-forms.md)
 - [Postupy: Nastavení obrázků za běhu](how-to-set-pictures-at-run-time-windows-forms.md)
 - [Ovládací prvek PictureBox](picturebox-control-windows-forms.md)

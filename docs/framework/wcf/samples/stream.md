@@ -3,10 +3,10 @@ title: Stream
 ms.date: 03/30/2017
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
 ms.openlocfilehash: f6ca887240ec4f6a304f0d5972790837c0121721
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59330217"
 ---
 # <a name="stream"></a>Stream
@@ -66,7 +66,7 @@ public interface IStreamingSample
 ## <a name="processing-data-as-it-is-streamed"></a>Zpracování dat, jako je streamování  
  Operace `GetStream`, `UploadStream` a `EchoStream` všechna řešení odesílat data přímo ze souboru nebo uložení přijatá data přímo do souboru. Ale v některých případech je požadavek na odeslání nebo příjem velkých objemů dat a provádět některé zpracování na bloky dat se ještě odeslány nebo přijaty. Jedním ze způsobů takových situacích je napsat vlastní datový proud (třída, která je odvozena z <xref:System.IO.Stream>), který zpracovává data, jako je číst nebo zapisovat. `GetReversedStream` Operace a `ReverseStream` třídy jsou příkladem.  
   
- `GetReversedStream` Vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte od `ReverseStream` objektu. `ReverseStream.Read` Implementace čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Toto zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Toto je příklad, chcete-li zobrazit, jak můžete provádět zpracování datového proudu jako obsah se číst nebo zapisovat z a do datového proudu.  
+ `GetReversedStream` vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte od `ReverseStream` objektu. `ReverseStream.Read` Implementace čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Toto zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Toto je příklad, chcete-li zobrazit, jak můžete provádět zpracování datového proudu jako obsah se číst nebo zapisovat z a do datového proudu.  
   
 ```csharp
 class ReverseStream : Stream  

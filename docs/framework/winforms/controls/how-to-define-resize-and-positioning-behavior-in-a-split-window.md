@@ -10,10 +10,10 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], resizing
 ms.assetid: 9bf73f36-ed2d-4a02-b15a-0770eff4fdfa
 ms.openlocfilehash: 8cdcfdfaa135a92ed6a6e96d4a72de2c97f2493d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59328670"
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>Postupy: Definování chování změny velikosti a polohování v rozděleném okně
@@ -21,11 +21,11 @@ Panelů <xref:System.Windows.Forms.SplitContainer> ovládací prvek se přizpůs
   
  <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> Vlastnost a dalších vlastností <xref:System.Windows.Forms.SplitContainer> ovládací prvek vám poskytnou přesnou kontrolu nad chováním uživatelského rozhraní tak, aby odpovídala vašim potřebám. Tyto vlastnosti jsou uvedeny v následující tabulce.  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
-|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property|Určuje, zda je příčky přesouvatelný prostřednictvím klávesnice nebo myši.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> property|Určuje vzdálenost v pixelech přesouvatelný příčky od levého nebo horního okraje.|  
-|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> property|Určuje minimální vzdálenost v pixelech, může uživatel přesune příčky.|  
+|<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> Vlastnost|Určuje, zda je příčky přesouvatelný prostřednictvím klávesnice nebo myši.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A> Vlastnost|Určuje vzdálenost v pixelech přesouvatelný příčky od levého nebo horního okraje.|  
+|<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> Vlastnost|Určuje minimální vzdálenost v pixelech, může uživatel přesune příčky.|  
   
  Následující příklad upravuje <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A> vlastnost k vytvoření efektu "přichycení rozdělovač"; když uživatel přetáhne příčky, zvýší v jednotkách 10 pixelů a ne výchozí hodnota 1.  
   

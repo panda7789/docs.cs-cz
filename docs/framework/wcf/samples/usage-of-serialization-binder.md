@@ -3,17 +3,17 @@ title: Použití vazače serializace
 ms.date: 03/30/2017
 ms.assetid: ab46c087-200c-45bf-9c95-5a6cda6e8b98
 ms.openlocfilehash: 47a1974386927316ea9230ec27cf647d7245c44a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59329840"
 ---
 # <a name="usage-of-serialization-binder"></a>Použití vazače serializace
 Tento příklad ukazuje způsob použití <xref:System.Runtime.Serialization.SerializationBinder> chcete změnit verzi obecného typu, pokud je serializována.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- <xref:System.Runtime.Serialization.SerializationBinder>,  <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
+ <xref:System.Runtime.Serialization.SerializationBinder>, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
   
 ## <a name="discussion"></a>Diskuse  
  Tato ukázka předvádí, jak dvě entity, které cílí na různé verze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] mohou komunikovat pomocí binární formátovací modul a vazače serializace.  

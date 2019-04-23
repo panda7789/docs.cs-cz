@@ -10,10 +10,10 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
 ms.openlocfilehash: 127e1afa7707f31584e93f3d4b08e865d7fcedf6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59319596"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
@@ -82,10 +82,10 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [Join – klauzule](../../../../visual-basic/language-reference/queries/join-clause.md)
-- [Group Join – klauzule](../../../../visual-basic/language-reference/queries/group-join-clause.md)
-- [From – klauzule](../../../../visual-basic/language-reference/queries/from-clause.md)
-- [Where – klauzule](../../../../visual-basic/language-reference/queries/where-clause.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)
+- [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)
+- [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
 - [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)

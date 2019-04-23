@@ -15,10 +15,10 @@ helpviewer_keywords:
 - nonvisual controls [Windows Forms]
 ms.assetid: 52134d9c-cff6-4eed-8e2b-3d5eb3bd494e
 ms.openlocfilehash: 0768f811653543b3370310ccc0b59890273baf52
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59330100"
 ---
 # <a name="how-to-add-controls-without-a-user-interface-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms
@@ -81,11 +81,11 @@ Nevizuální ovládací prvek (nebo komponenta) poskytuje funkce, které vaše a
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ovládací prvky Windows Forms](index.md)
-- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
-- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](how-to-add-activex-controls-to-windows-forms.md)
-- [Postupy: Kopírování ovládacích prvků mezi formuláři Windows Forms](how-to-copy-controls-between-windows-forms.md)
-- [Vkládání ovládacích prvků do formulářů Windows](putting-controls-on-windows-forms.md)
+- [Windows Forms – ovládací prvky](index.md)
+- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)
+- [Postupy: Kopírování ovládacích prvků mezi formuláři Windows](how-to-copy-controls-between-windows-forms.md)
+- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

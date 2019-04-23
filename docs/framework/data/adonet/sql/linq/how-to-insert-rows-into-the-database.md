@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 44d99680-69c7-4879-a732-f6771b334211
 ms.openlocfilehash: cb2319d51e0518114a04eea2fc7ab6b5a836b7ff
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59328592"
 ---
 # <a name="how-to-insert-rows-into-the-database"></a>Postupy: Vložení řádků do databáze
@@ -39,6 +39,6 @@ Vkládání řádků do databáze přidáním objektů s příslušnými [!INCLU
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Správa konfliktů změn](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
-- [Metody DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
-- [Postupy: Přiřazení uložených procedur za účelem aktualizace, vložení a odstranění (O/R Designer)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
+- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
 - [Vytvoření a odeslání změn dat](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)

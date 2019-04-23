@@ -10,10 +10,10 @@ helpviewer_keywords:
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
 ms.openlocfilehash: 93aaa8e21ef483fc21297e29189d86f93fbe138a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59327851"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Předpoklady rozložení pro element WindowsFormsHost
@@ -102,7 +102,7 @@ Toto téma popisuje, jak <xref:System.Windows.Forms.Integration.WindowsFormsHost
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návod: Uspořádání ovládacích prvků Windows Forms ve WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
+- [Návod: Ovládací prvky uspořádání Windows Forms v subsystému WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
 - [Uspořádání Windows Forms ovládací prvky v ukázce WPF](https://go.microsoft.com/fwlink/?LinkID=159971)
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)
