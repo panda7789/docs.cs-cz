@@ -7,50 +7,50 @@ helpviewer_keywords:
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
 ms.openlocfilehash: 18734627e299c696e23bb0ec9bc63ed37fe3e601
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59294974"
 ---
-# <a name="how-to-override-the-tostring-method-c-programming-guide"></a><span data-ttu-id="e9811-102">Postupy: Potlačení metody ToString (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="e9811-102">How to: Override the ToString Method (C# Programming Guide)</span></span>
-<span data-ttu-id="e9811-103">Implicitně dědí všechny třídy nebo struktury v jazyce C# <xref:System.Object> třídy.</span><span class="sxs-lookup"><span data-stu-id="e9811-103">Every class or struct in C# implicitly inherits the <xref:System.Object> class.</span></span> <span data-ttu-id="e9811-104">Proto, získá každý objekt v jazyce C# <xref:System.Object.ToString%2A> metodu, která vrátí řetězcovou reprezentaci tohoto objektu.</span><span class="sxs-lookup"><span data-stu-id="e9811-104">Therefore, every object in C# gets the <xref:System.Object.ToString%2A> method, which returns a string representation of that object.</span></span> <span data-ttu-id="e9811-105">Například všechny proměnné typu `int` mít `ToString` metodu, která umožňuje k návratu jejich obsah jako řetězec:</span><span class="sxs-lookup"><span data-stu-id="e9811-105">For example, all variables of type `int` have a `ToString` method, which enables them to return their contents as a string:</span></span>  
+# <a name="how-to-override-the-tostring-method-c-programming-guide"></a><span data-ttu-id="de193-102">Postupy: Potlačení metody ToString (C# Průvodce programováním v)</span><span class="sxs-lookup"><span data-stu-id="de193-102">How to: Override the ToString Method (C# Programming Guide)</span></span>
+<span data-ttu-id="de193-103">Implicitně dědí všechny třídy nebo struktury v jazyce C# <xref:System.Object> třídy.</span><span class="sxs-lookup"><span data-stu-id="de193-103">Every class or struct in C# implicitly inherits the <xref:System.Object> class.</span></span> <span data-ttu-id="de193-104">Proto, získá každý objekt v jazyce C# <xref:System.Object.ToString%2A> metodu, která vrátí řetězcovou reprezentaci tohoto objektu.</span><span class="sxs-lookup"><span data-stu-id="de193-104">Therefore, every object in C# gets the <xref:System.Object.ToString%2A> method, which returns a string representation of that object.</span></span> <span data-ttu-id="de193-105">Například všechny proměnné typu `int` mít `ToString` metodu, která umožňuje k návratu jejich obsah jako řetězec:</span><span class="sxs-lookup"><span data-stu-id="de193-105">For example, all variables of type `int` have a `ToString` method, which enables them to return their contents as a string:</span></span>  
   
  [!code-csharp[csProgGuideInheritance#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#37)]  
   
- <span data-ttu-id="e9811-106">Když vytvoříte vlastní třídy nebo struktury, kterou byste měli přepsat <xref:System.Object.ToString%2A> metodu za účelem poskytnutí informací o typu pro klientský kód.</span><span class="sxs-lookup"><span data-stu-id="e9811-106">When you create a custom class or struct, you should override the <xref:System.Object.ToString%2A> method in order to provide information about your type to client code.</span></span>  
+ <span data-ttu-id="de193-106">Když vytvoříte vlastní třídy nebo struktury, kterou byste měli přepsat <xref:System.Object.ToString%2A> metodu za účelem poskytnutí informací o typu pro klientský kód.</span><span class="sxs-lookup"><span data-stu-id="de193-106">When you create a custom class or struct, you should override the <xref:System.Object.ToString%2A> method in order to provide information about your type to client code.</span></span>  
   
- <span data-ttu-id="e9811-107">Informace o tom, jak používat formátovacích řetězců a dalších typů vlastní formátování pomocí `ToString` metodu, najdete v článku [Formatting Types](../../../standard/base-types/formatting-types.md).</span><span class="sxs-lookup"><span data-stu-id="e9811-107">For information about how to use format strings and other types of custom formatting with the `ToString` method, see [Formatting Types](../../../standard/base-types/formatting-types.md).</span></span>  
+ <span data-ttu-id="de193-107">Informace o tom, jak používat formátovacích řetězců a dalších typů vlastní formátování pomocí `ToString` metodu, najdete v článku [Formatting Types](../../../standard/base-types/formatting-types.md).</span><span class="sxs-lookup"><span data-stu-id="de193-107">For information about how to use format strings and other types of custom formatting with the `ToString` method, see [Formatting Types](../../../standard/base-types/formatting-types.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="e9811-108">Při rozhodování, jaké informace, které poskytují prostřednictvím této metody, zvažte, zda třídy nebo struktury se někdy použije nedůvěryhodným kódem.</span><span class="sxs-lookup"><span data-stu-id="e9811-108">When you decide what information to provide through this method, consider whether your class or struct will ever be used by untrusted code.</span></span> <span data-ttu-id="e9811-109">Pečlivě zkontrolujte neposkytují žádné informace, které by se dala zneužít škodlivým kódem.</span><span class="sxs-lookup"><span data-stu-id="e9811-109">Be careful to ensure that you do not provide any information that could be exploited by malicious code.</span></span>  
+>  <span data-ttu-id="de193-108">Při rozhodování, jaké informace, které poskytují prostřednictvím této metody, zvažte, zda třídy nebo struktury se někdy použije nedůvěryhodným kódem.</span><span class="sxs-lookup"><span data-stu-id="de193-108">When you decide what information to provide through this method, consider whether your class or struct will ever be used by untrusted code.</span></span> <span data-ttu-id="de193-109">Pečlivě zkontrolujte neposkytují žádné informace, které by se dala zneužít škodlivým kódem.</span><span class="sxs-lookup"><span data-stu-id="de193-109">Be careful to ensure that you do not provide any information that could be exploited by malicious code.</span></span>  
   
-### <a name="to-override-the-tostring-method-in-your-class-or-struct"></a><span data-ttu-id="e9811-110">Přepsání metody ToString ve třídě nebo struktuře</span><span class="sxs-lookup"><span data-stu-id="e9811-110">To override the ToString method in your class or struct</span></span>  
+### <a name="to-override-the-tostring-method-in-your-class-or-struct"></a><span data-ttu-id="de193-110">Přepsání metody ToString ve třídě nebo struktuře</span><span class="sxs-lookup"><span data-stu-id="de193-110">To override the ToString method in your class or struct</span></span>  
   
-1. <span data-ttu-id="e9811-111">Deklarace `ToString` pomocí následujících parametrů a návratový typ metody:</span><span class="sxs-lookup"><span data-stu-id="e9811-111">Declare a `ToString` method with the following modifiers and return type:</span></span>  
+1. <span data-ttu-id="de193-111">Deklarace `ToString` pomocí následujících parametrů a návratový typ metody:</span><span class="sxs-lookup"><span data-stu-id="de193-111">Declare a `ToString` method with the following modifiers and return type:</span></span>  
   
     ```csharp  
     public override string ToString(){}  
     ```  
   
-2. <span data-ttu-id="e9811-112">Implementujte metodu tak, aby vrátil řetězec.</span><span class="sxs-lookup"><span data-stu-id="e9811-112">Implement the method so that it returns a string.</span></span>  
+2. <span data-ttu-id="de193-112">Implementujte metodu tak, aby vrátil řetězec.</span><span class="sxs-lookup"><span data-stu-id="de193-112">Implement the method so that it returns a string.</span></span>  
   
-     <span data-ttu-id="e9811-113">Následující příklad vrátí název třídy, kromě dat podle konkrétní instance třídy.</span><span class="sxs-lookup"><span data-stu-id="e9811-113">The following example returns the name of the class in addition to the data specific to a particular instance of the class.</span></span>  
+     <span data-ttu-id="de193-113">Následující příklad vrátí název třídy, kromě dat podle konkrétní instance třídy.</span><span class="sxs-lookup"><span data-stu-id="de193-113">The following example returns the name of the class in addition to the data specific to a particular instance of the class.</span></span>  
   
      [!code-csharp[csProgGuideInheritance#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#36)]  
   
-     <span data-ttu-id="e9811-114">Můžete testovat `ToString` způsob, jak je znázorněno v následujícím příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="e9811-114">You can test the `ToString` method as shown in the following code example:</span></span>  
+     <span data-ttu-id="de193-114">Můžete testovat `ToString` způsob, jak je znázorněno v následujícím příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="de193-114">You can test the `ToString` method as shown in the following code example:</span></span>  
   
      [!code-csharp[csProgGuideInheritance#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#38)]  
   
-## <a name="see-also"></a><span data-ttu-id="e9811-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9811-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="de193-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="de193-115">See also</span></span>
 
 - <xref:System.IFormattable>
-- [<span data-ttu-id="e9811-116">Průvodce programováním v C#</span><span class="sxs-lookup"><span data-stu-id="e9811-116">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="e9811-117">Třídy a struktury</span><span class="sxs-lookup"><span data-stu-id="e9811-117">Classes and Structs</span></span>](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [<span data-ttu-id="e9811-118">Řetězce</span><span class="sxs-lookup"><span data-stu-id="e9811-118">Strings</span></span>](../../../csharp/programming-guide/strings/index.md)
-- [<span data-ttu-id="e9811-119">odkazy řetězců</span><span class="sxs-lookup"><span data-stu-id="e9811-119">string</span></span>](../../../csharp/language-reference/keywords/string.md)
-- [<span data-ttu-id="e9811-120">new</span><span class="sxs-lookup"><span data-stu-id="e9811-120">new</span></span>](../../../csharp/language-reference/keywords/new.md)
-- [<span data-ttu-id="e9811-121">override</span><span class="sxs-lookup"><span data-stu-id="e9811-121">override</span></span>](../../../csharp/language-reference/keywords/override.md)
-- [<span data-ttu-id="e9811-122">virtual</span><span class="sxs-lookup"><span data-stu-id="e9811-122">virtual</span></span>](../../../csharp/language-reference/keywords/virtual.md)
-- [<span data-ttu-id="e9811-123">Typy formátování</span><span class="sxs-lookup"><span data-stu-id="e9811-123">Formatting Types</span></span>](../../../standard/base-types/formatting-types.md)
+- [<span data-ttu-id="de193-116">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="de193-116">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="de193-117">Třídy a struktury</span><span class="sxs-lookup"><span data-stu-id="de193-117">Classes and Structs</span></span>](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [<span data-ttu-id="de193-118">Řetězce</span><span class="sxs-lookup"><span data-stu-id="de193-118">Strings</span></span>](../../../csharp/programming-guide/strings/index.md)
+- [<span data-ttu-id="de193-119">string</span><span class="sxs-lookup"><span data-stu-id="de193-119">string</span></span>](../../../csharp/language-reference/keywords/string.md)
+- [<span data-ttu-id="de193-120">new</span><span class="sxs-lookup"><span data-stu-id="de193-120">new</span></span>](../../../csharp/language-reference/keywords/new.md)
+- [<span data-ttu-id="de193-121">override</span><span class="sxs-lookup"><span data-stu-id="de193-121">override</span></span>](../../../csharp/language-reference/keywords/override.md)
+- [<span data-ttu-id="de193-122">virtual</span><span class="sxs-lookup"><span data-stu-id="de193-122">virtual</span></span>](../../../csharp/language-reference/keywords/virtual.md)
+- [<span data-ttu-id="de193-123">Typy formátování</span><span class="sxs-lookup"><span data-stu-id="de193-123">Formatting Types</span></span>](../../../standard/base-types/formatting-types.md)
