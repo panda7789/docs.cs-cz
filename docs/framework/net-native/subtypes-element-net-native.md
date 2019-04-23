@@ -5,10 +5,10 @@ ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e0ec1ed73148b319217a70cc3be99b486be2f8e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59208290"
 ---
 # <a name="subtypes-element-net-native"></a>\<Subtypes > – Element (.NET Native)
@@ -49,7 +49,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -60,7 +60,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<Subtypes>` Element použije zásady na všechny podtypy jeho nadřazeného typu. Použijete ji, pokud chcete použít jiné zásady pro odvozené typy a jejich základní třídy.  

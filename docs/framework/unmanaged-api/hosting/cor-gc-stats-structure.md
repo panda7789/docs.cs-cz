@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d335a62545f06a66d4044b59aa9499d3f7ede515
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59208472"
 ---
 # <a name="corgcstats-structure"></a>COR_GC_STATS – struktura
@@ -90,4 +90,4 @@ pCLRGCManager->GetStats(&GCStats);
 
 - [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
 - [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)
-- [Kolekce paměti](../../../../docs/standard/garbage-collection/index.md)
+- [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)
