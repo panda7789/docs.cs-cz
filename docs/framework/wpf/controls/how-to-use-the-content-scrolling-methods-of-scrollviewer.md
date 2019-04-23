@@ -10,10 +10,10 @@ helpviewer_keywords:
 - ScrollViewer control [WPF], scrolling methods
 ms.assetid: 4708cc65-6510-45f8-82e6-30b0d3e30045
 ms.openlocfilehash: e81c63de16d09de8435d5ec49a013bf8dc5927cd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59142152"
 ---
 # <a name="how-to-use-the-content-scrolling-methods-of-scrollviewer"></a>Postupy: Použití metod pro posunutí obsahu prvku ScrollViewer

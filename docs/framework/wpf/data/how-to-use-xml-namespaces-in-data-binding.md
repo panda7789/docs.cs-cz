@@ -7,10 +7,10 @@ helpviewer_keywords:
 - namespaces [WPF], XML
 ms.assetid: a47c832f-dc84-48f2-96d5-cde18fc4284b
 ms.openlocfilehash: 38bf6e8f88b0325193d49148cd6c33031f7b0a6d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59149991"
 ---
 # <a name="how-to-use-xml-namespaces-in-data-binding"></a>Postupy: Použití oborů názvů XML v datové vazbě
@@ -33,4 +33,4 @@ ms.locfileid: "59149991"
 
 - [Vytvoření vazby k datům XML pomocí objektu XMLDataProvider a dotazů XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md)
 - [Přehled datových vazeb](data-binding-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

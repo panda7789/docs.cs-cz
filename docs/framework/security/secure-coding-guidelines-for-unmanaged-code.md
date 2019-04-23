@@ -10,10 +10,10 @@ ms.assetid: a8d15139-d368-4c9c-a747-ba757781117c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 138713c4a1397369ea18792a3b2742389b107a6b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59143764"
 ---
 # <a name="secure-coding-guidelines-for-unmanaged-code"></a>Pokyny pro zabezpečení nespravovaného kódu
@@ -47,8 +47,8 @@ Kód knihovny je potřeba volat nespravovaný kód (například nativního kódu
   
 |Klíčové slovo|Důležité informace o zabezpečení|  
 |-------------|-----------------------------|  
-|**Bezpečné**|Zcela neškodný pro libovolný kód, dokonce i škodlivý kód pro volání. Můžete použít stejně jako ostatní spravovaného kódu. Například funkce, která získá denní dobu, je obvykle bezpečné.|  
-|**nativní**|Zabezpečení – neutrální; To znamená nespravovaný kód, který vyžaduje nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, které zastaví neoprávněného volajícího.|  
+|**safe**|Zcela neškodný pro libovolný kód, dokonce i škodlivý kód pro volání. Můžete použít stejně jako ostatní spravovaného kódu. Například funkce, která získá denní dobu, je obvykle bezpečné.|  
+|**Nativní**|Zabezpečení – neutrální; To znamená nespravovaný kód, který vyžaduje nespravovaný kód oprávnění k volání. Zabezpečení je zaškrtnuto, které zastaví neoprávněného volajícího.|  
 |**unsafe**|Vstupní bod nespravovaného kódu potenciálně nebezpečné se zabezpečením potlačena. Vývojáři by měl použít nejvyšší opatrností při použití těchto nespravovaného kódu, ujistěte se, že dalších způsobů ochrany jsou na místě, aby se zabránilo ohrožení zabezpečení. Vývojáři musí být zodpovědná, jak toto klíčové slovo přepíše zabezpečení systému.|  
   
 ## <a name="see-also"></a>Viz také:

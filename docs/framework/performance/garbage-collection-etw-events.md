@@ -9,10 +9,10 @@ ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7f9bf0e309ec8c77d4b1d6afbf111e7eeae629ac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59149731"
 ---
 # <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti
@@ -46,7 +46,7 @@ ms.locfileid: "59149731"
   
 -   [GCCreateConcurrentThread_V1 Event](#gccreateconcurrentthread_v1_event)  
   
--   [GCTerminateConcurrentThread_V1 události](#gcterminateconcurrentthread_v1_event)  
+-   [GCTerminateConcurrentThread_V1 Event](#gcterminateconcurrentthread_v1_event)  
   
 <a name="gcstart_v1_event"></a>   
 ## <a name="gcstartv1-event"></a>GCStart_V1 Event  
@@ -368,4 +368,4 @@ ms.locfileid: "59149731"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

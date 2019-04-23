@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cbcff46b1932f3293fba4fda922e78f3b9ac37b0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59148847"
 ---
 # <a name="asmdisplayflags-enumeration"></a>ASM_DISPLAY_FLAGS – výčet
@@ -66,4 +66,4 @@ typedef enum {
 ## <a name="see-also"></a>Viz také:
 
 - [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Výčty fúzí](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)

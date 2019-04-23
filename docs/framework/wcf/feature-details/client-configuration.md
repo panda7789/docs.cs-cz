@@ -3,10 +3,10 @@ title: Konfigurace klienta
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
 ms.openlocfilehash: b9975c6caeedc94bf4a7773e71a95eb0d8c7aed2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59144687"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
@@ -95,5 +95,5 @@ Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k u
   
 ## <a name="see-also"></a>Viz také:
 
-- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
-- [Konfigurace chování klientů](../../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Konfigurace chování klienta](../../../../docs/framework/wcf/configuring-client-behaviors.md)

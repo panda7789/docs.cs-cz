@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 4fd5ed2c-b03a-4054-a3ed-3ddb380d7d9d
 ms.openlocfilehash: 84bd5f48c993dc5b15104b70081f739a1bec2e5c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59152474"
 ---
 # <a name="method-based-query-syntax-examples-join-linq-to-dataset"></a>Příklady syntaxe dotazů založených na volání metody: Připojte se k (LINQ to DataSet)

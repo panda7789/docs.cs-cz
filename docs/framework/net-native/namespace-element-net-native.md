@@ -5,10 +5,10 @@ ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c304606a27552e604bf40953f49a30a794026281
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59150745"
 ---
 # <a name="namespace-element-net-native"></a>\<Namespace > – Element (.NET Native)
@@ -51,7 +51,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru n�
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*namespace_name*|Název oboru názvů. Pokud \<Namespace > element je podřízeným prvkem [ \<aplikace >](../../../docs/framework/net-native/application-element-net-native.md), [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md), nebo [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md) elementu *namespace_name* musí být plně kvalifikovaný obor názvů. Pokud \<Namespace > element je podřízeným prvkem jiného \<Namespace > elementu *namespace_name* musí být název oboru názvů relativní.|  
   
@@ -66,7 +66,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru n�
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`<Namespace>`|Platí pro všechny typy v oboru nadřazené zásady reflexe modulu runtime.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe typu.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  

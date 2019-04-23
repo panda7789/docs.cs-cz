@@ -3,10 +3,10 @@ title: entity container
 ms.date: 03/30/2017
 ms.assetid: 16e80405-2c75-42fc-b0e4-b1df53b1c584
 ms.openlocfilehash: 4a629a800df63c67dc17d3fc1531a9862861e9c4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59144063"
 ---
 # <a name="entity-container"></a>entity container
@@ -32,4 +32,4 @@ ms.locfileid: "59144063"
 ## <a name="see-also"></a>Viz také:
 
 - [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

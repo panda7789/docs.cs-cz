@@ -5,10 +5,10 @@ ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b47af2955d0ad8e618d0143d7eedff7c74278fbd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59150992"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>Rozhraní MEF pro .NET pro aplikace pro Windows Store
@@ -28,6 +28,6 @@ ms.locfileid: "59150992"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled rozhraní .NET pro aplikace pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=238312)
+- [.NET pro Windows Store apps – přehled](https://go.microsoft.com/fwlink/p/?LinkID=238312)
 - [Aplikace .NET pro Windows Store – podporována rozhraní API](https://go.microsoft.com/fwlink/p/?LinkID=247912)
-- [Managed Extensibility Framework (MEF)](../../../docs/framework/mef/index.md)
+- [MEF (Managed Extensibility Framework)](../../../docs/framework/mef/index.md)

@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 19f66872-d5ab-49f8-969f-e53f9632a13d
 ms.openlocfilehash: bf6c889fff2635cd50597e72151c46fbb4d9b97d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59150615"
 ---
 # <a name="method-based-query-syntax-examples-conversion"></a>Příklady syntaxe dotazů založených na volání metody: Konverze

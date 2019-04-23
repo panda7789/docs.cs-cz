@@ -7,10 +7,10 @@ helpviewer_keywords:
 - classes [WPF], SkewTransform
 ms.assetid: 56b65f2f-dc6e-4238-923f-ca44ec53c52f
 ms.openlocfilehash: 47f671f493e7b379c36f9bf4b50ec9d185d10b8a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59144960"
 ---
 # <a name="how-to-skew-an-element"></a>Postupy: Zkosení elementu
@@ -47,4 +47,4 @@ Tři SkewTransform – příklady jsou znázorněné
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.SkewTransform>
 - [Přehled transformace](transforms-overview.md)
-- [– postupy](transformations-how-to-topics.md)
+- [Témata s postupy](transformations-how-to-topics.md)

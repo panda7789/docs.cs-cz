@@ -5,10 +5,10 @@ helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
 - Protected Friend keyword [Visual Basic], syntax
 ms.openlocfilehash: 331c63dc290d4096e8158f265ee869b47743a273
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59151772"
 ---
 # <a name="protected-friend-visual-basic"></a>Chráněné Friend (Visual Basic)
@@ -25,10 +25,10 @@ ms.locfileid: "59151772"
 ## <a name="see-also"></a>Viz také:
 
 - [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Chráněno](../../../visual-basic/language-reference/modifiers/protected.md)
+- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](friend.md)
-- [Soukromé](../../../visual-basic/language-reference/modifiers/private.md)
-- [Privátní, chráněné](./private-protected.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Private Protected](./private-protected.md)
 - [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)

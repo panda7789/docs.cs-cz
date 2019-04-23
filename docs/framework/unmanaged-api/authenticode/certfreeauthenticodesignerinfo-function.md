@@ -11,10 +11,10 @@ ms.assetid: 8029633c-b6e4-4665-a7c2-89607c3247ef
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bdb764417b757cd7388c49d7e5cac9a960074820
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59142399"
 ---
 # <a name="certfreeauthenticodesignerinfo-function"></a>Funkce CertFreeAuthenticodeSignerInfo

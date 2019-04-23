@@ -9,10 +9,10 @@ helpviewer_keywords:
 - rectangles [WPF], animating
 ms.assetid: 572ffb95-790d-4ace-adbf-b2ea8a90e75b
 ms.openlocfilehash: 7f7cf24f7883553329de3761ff0670e8e3a09463
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59151005"
 ---
 # <a name="how-to-animate-a-rectangle"></a>Postupy: Animace obdélníku
@@ -31,5 +31,5 @@ Tento příklad ukazuje, jak animace změn velikosti a pozici obdélníku.
 - <xref:System.Windows.Media.RectangleGeometry>
 - [Přehled animace](animation-overview.md)
 - [Grafika a multimédia](index.md)
-- [Postupy: Témata grafiky](graphics-how-to-topics.md)
-- [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)
+- [Postupy: témata grafiky](graphics-how-to-topics.md)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)

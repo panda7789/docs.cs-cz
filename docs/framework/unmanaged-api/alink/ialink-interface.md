@@ -9,10 +9,10 @@ ms.assetid: 50abd02d-6488-4815-999b-4fb89af4d568
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ab7cbac98af24e89ec4da3cc9737b0cadf5cc394
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59146572"
 ---
 # <a name="ialink-interface"></a>IALink – rozhraní
@@ -21,7 +21,7 @@ Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhran
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AddFile – metoda](../../../../docs/framework/unmanaged-api/alink/addfile-method.md)  
   
- [AddImport – metoda](../../../../docs/framework/unmanaged-api/alink/addimport-method.md)  
+ [Addimport – metoda](../../../../docs/framework/unmanaged-api/alink/addimport-method.md)  
   
  [CloseAssembly – metoda](../../../../docs/framework/unmanaged-api/alink/closeassembly-method.md)  
   
@@ -53,7 +53,7 @@ Pomáhá při konstrukci sestavení rozhraní .NET Framework. Mimo jiné rozhran
   
  [GetResolutionScope – metoda](../../../../docs/framework/unmanaged-api/alink/getresolutionscope-method.md)  
   
- [GetScope – metoda](../../../../docs/framework/unmanaged-api/alink/getscope-method.md)  
+ [Getscope – metoda](../../../../docs/framework/unmanaged-api/alink/getscope-method.md)  
   
  [GetWin32ResBlob – metoda](../../../../docs/framework/unmanaged-api/alink/getwin32resblob-method.md)  
   

@@ -6,10 +6,10 @@ helpviewer_keywords:
 - animation [WPF], Popup controls
 ms.assetid: acaa2a0a-6137-4efd-9cd1-75ece222e390
 ms.openlocfilehash: b70d9c4cb1bca26a6c77d3a7c50add517ca8ef92
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59150108"
 ---
 # <a name="how-to-animate-a-popup"></a>Postupy: Animace prvku Popup
@@ -35,5 +35,5 @@ Tento příklad ukazuje dva způsoby, jak animovat <xref:System.Windows.Controls
 - <xref:System.Windows.Media.RotateTransform>
 - <xref:System.Windows.Media.Animation.Storyboard>
 - <xref:System.Windows.Controls.Primitives.Popup>
-- [– postupy](popup-how-to-topics.md)
-- [Přehled překryvných objektů](popup-overview.md)
+- [Témata s postupy](popup-how-to-topics.md)
+- [Přehled prvku Popup](popup-overview.md)

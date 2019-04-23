@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Grid control [WPF], creating [WPF], dialog box
 ms.assetid: d6ac3d51-844b-4d29-96d8-81a696a7b960
 ms.openlocfilehash: 0ade908e92e552017acb9ba242ccba2c28c3c995
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59149523"
 ---
 # <a name="how-to-build-a-standard-ui-dialog-box-by-using-grid"></a>Postupy: Sestavení standardního dialogového okna uživatelského rozhraní pomocí mřížky
@@ -36,5 +36,5 @@ Tento příklad ukazuje, jak vytvořit standardní [!INCLUDE[TLA#tla_ui](../../.
 
 - <xref:System.Windows.Controls.Grid>
 - <xref:System.Windows.GridUnitType>
-- [Přehled panelů](panels-overview.md)
-- [– postupy](grid-how-to-topics.md)
+- [Přehled panelu](panels-overview.md)
+- [Témata s postupy](grid-how-to-topics.md)

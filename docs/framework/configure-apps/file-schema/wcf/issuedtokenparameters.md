@@ -3,10 +3,10 @@ title: <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
 ms.openlocfilehash: 6bdf56e3d2084dec8d44e1c4d3f0c1e50b711b92
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59153137"
 ---
 # <a name="issuedtokenparameters"></a>\<issuedTokenParameters>
@@ -68,7 +68,7 @@ Určuje parametry pro token zabezpečení vydané ve scénáři federativní zab
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -77,7 +77,7 @@ Určuje parametry pro token zabezpečení vydané ve scénáři federativní zab
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.IssuedTokenParameters%2A>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
 - [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

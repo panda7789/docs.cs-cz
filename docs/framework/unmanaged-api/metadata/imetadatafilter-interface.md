@@ -17,10 +17,10 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4196ff2cb2d4ebc401076f603a8a7fdc9b9c76ea
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59143790"
 ---
 # <a name="imetadatafilter-interface"></a>IMetaDataFilter – rozhraní
@@ -45,4 +45,4 @@ Poskytuje metody pro označení a filtrování tokeny metadat předcházet opako
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)

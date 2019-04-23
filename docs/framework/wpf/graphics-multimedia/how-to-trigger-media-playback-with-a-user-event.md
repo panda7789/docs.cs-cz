@@ -8,10 +8,10 @@ helpviewer_keywords:
 - multimedia [WPF], synchronizing media playback with events
 ms.assetid: c4dbe632-6e7f-4d7f-9df5-98737a758bc3
 ms.openlocfilehash: ae8ba54cc852bb85350492c95e3e890aebf6534f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59150173"
 ---
 # <a name="how-to-trigger-media-playback-with-a-user-event"></a>Postupy: Spuštění přehrání média pomocí události uživatele
@@ -28,5 +28,5 @@ Tento příklad ukazuje, jak synchronizovat přehrání média pomocí události
 - <xref:System.Windows.Media.MediaTimeline>
 - <xref:System.Windows.EventTrigger.RoutedEvent%2A>
 - <xref:System.Windows.Media.Animation.Storyboard>
-- [– postupy](audio-and-video-how-to-topics.md)
+- [Témata s postupy](audio-and-video-how-to-topics.md)
 - [Grafika a multimédia](index.md)

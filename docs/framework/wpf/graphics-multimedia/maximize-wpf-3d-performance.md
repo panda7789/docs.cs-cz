@@ -5,10 +5,10 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 ms.assetid: 4bcf949d-d92f-4d8d-8a9b-1e4c61b25bf6
 ms.openlocfilehash: 8629748c37aae8e35bb928c5a8d5a9caa7046942
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59147521"
 ---
 # <a name="maximize-wpf-3d-performance"></a>Maximalizace výkonu WPF 3D

@@ -3,10 +3,10 @@ title: Datové typy a funkce
 ms.date: 03/30/2017
 ms.assetid: 683413c5-0312-4e60-8619-9a97bdc6e62a
 ms.openlocfilehash: c17c02900ea6ebda1ee4bbf6e6534310f125a0a6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59151941"
 ---
 # <a name="data-types-and-functions"></a>Datové typy a funkce
@@ -34,4 +34,4 @@ Témata uvedená v následující tabulce popisují LINQ pro podporu SQL pro čl
 ## <a name="see-also"></a>Viz také:
 
 - [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
-- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

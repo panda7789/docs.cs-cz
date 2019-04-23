@@ -8,10 +8,10 @@ helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 ms.openlocfilehash: 5abafe1edfdbac1966a98d5eef28265e6504c868
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59154411"
 ---
 # <a name="controls"></a>Ovládací prvky
@@ -100,7 +100,7 @@ ms.locfileid: "59154411"
 ## <a name="see-also"></a>Viz také:
 
 - [Styly a šablony](styling-and-templating.md)
-- [Řízení podle kategorie](controls-by-category.md)
+- [Ovládací prvky podle kategorie](controls-by-category.md)
 - [Knihovna ovládacích prvků](control-library.md)
 - [Přehled datových šablon](../data/data-templating-overview.md)
 - [Přehled datových vazeb](../data/data-binding-overview.md)

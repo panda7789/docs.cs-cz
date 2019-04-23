@@ -10,10 +10,10 @@ helpviewer_keywords:
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
 ms.openlocfilehash: 4859c361b3321c1144204f63896152694f6ac5c9
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59148756"
 ---
 # <a name="namespace-c-reference"></a>namespace (Referenční dokumentace jazyka C#)
@@ -28,15 +28,15 @@ V rámci oboru názvů můžete deklarovat nula nebo více z následujících ty
 
 - jiný obor názvů
 
-- [třída](class.md)
+- [class](class.md)
 
-- [rozhraní](interface.md)
+- [interface](interface.md)
 
-- [struct ](struct.md)
+- [struct](struct.md)
 
 - [enum](enum.md)
 
-- [delegát](delegate.md)
+- [delegate](delegate.md)
 
 Zda explicitně deklarovat oboru názvů do zdrojového souboru jazyka C#, kompilátor přidá výchozí obor názvů. Tato nepojmenovaného oboru názvů, někdy označovány jako globální obor názvů, je k dispozici v každém souboru. Žádný identifikátor v globálním oboru názvů je k dispozici pro použití s názvem oboru názvů.
 
@@ -56,11 +56,11 @@ Následující příklad ukazuje, jak zavolat statickou metodu ve vnořené obor
 
 Další informace o použití oboru názvů naleznete v následujících tématech:
 
-- [Jmenné prostory](../../programming-guide/namespaces/index.md)
+- [Obory názvů](../../programming-guide/namespaces/index.md)
 
 - [Použití oboru názvů](../../programming-guide/namespaces/using-namespaces.md)
 
-- [Postupy: Použití aliasu globálního oboru názvů](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
+- [Postupy: Použití aliasu globálního Namespace](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -69,8 +69,8 @@ Další informace o použití oboru názvů naleznete v následujících témate
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../language-reference/index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova oboru názvů](namespace-keywords.md)
-- [používání](using-directive.md)
+- [using](using-directive.md)
 - [Pomocí statické](using-static.md)

@@ -5,10 +5,10 @@ ms.assetid: 72389860-7e37-4656-ba46-b6aeee1860f8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9baa3632b6ede9ce45f34302611710344ed33761
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59154320"
 ---
 # <a name="icordebugstaticfieldsymbolgetsize-method"></a>ICorDebugStaticFieldSymbol::GetSize – metoda
@@ -43,4 +43,4 @@ HRESULT GetSize(
 ## <a name="see-also"></a>Viz také:
 
 - [ICorDebugStaticFieldSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

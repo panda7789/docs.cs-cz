@@ -4,10 +4,10 @@ description: Rekapitulace použití stromů výrazů k vytvoření dynamické pr
 ms.date: 06/20/2016
 ms.assetid: eb687ebd-1149-4453-9fc1-12a084495a66
 ms.openlocfilehash: 99b9463df096d3aada19ed7995b04ef4bd41c179
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59148626"
 ---
 # <a name="expression-trees-summary"></a>Souhrn stromů výrazů

@@ -3,10 +3,10 @@ title: <serviceCertificate> z <clientCredentials> – Element
 ms.date: 03/30/2017
 ms.assetid: e50c0ac5-f0df-4c90-b54b-fc602c1f84ea
 ms.openlocfilehash: 4fe196ef8737c7abde939e36c2bb7afd5a0d86b5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59145337"
 ---
 # <a name="servicecertificate-of-clientcredentials-element"></a>\<serviceCertificate > z \<clientCredentials > – Element
@@ -37,7 +37,7 @@ Určuje certifikát používaný při ověřování služby ke klientovi.
 |-------------|-----------------|  
 |[\<defaultCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)|Určuje certifikát X.509, který se má použít při služba nebo STS neposkytne pomocí protokolu vyjednávání.|  
 |[\<scopedCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování. Tato kolekce se obvykle používá k určení certifikáty služeb pro služby tokenu zabezpečení v případě federovaných.|  
-|[\<ověřování >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)|Určuje chování ověřování pro klientem používané certifikáty služeb.|  
+|[\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)|Určuje chování ověřování pro klientem používané certifikáty služeb.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
