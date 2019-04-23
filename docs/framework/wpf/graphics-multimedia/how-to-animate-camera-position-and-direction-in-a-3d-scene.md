@@ -10,21 +10,21 @@ helpviewer_keywords:
 - animation [WPF], camera direction in 3-D scenes
 ms.assetid: 480224b7-a5e5-4165-ba7f-ef760ddff94a
 ms.openlocfilehash: b64263a495ffe845a76317aad8f5b4a14e11b31e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59146000"
 ---
-# <a name="how-to-animate-camera-position-and-direction-in-a-3d-scene"></a><span data-ttu-id="c0675-102">Postupy: Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="c0675-102">How to: Animate Camera Position and Direction in a 3D Scene</span></span>
-<span data-ttu-id="c0675-103">Následující příklad ukazuje, jak umístění kamery animace a animovat směr, který se odkazuje ve 3D scéně.</span><span class="sxs-lookup"><span data-stu-id="c0675-103">The following example shows how to animate the position of a camera and animate the direction it is pointing in a 3D scene.</span></span> <span data-ttu-id="c0675-104">To se provádí pomocí <xref:System.Windows.Media.Animation.Point3DAnimation> a <xref:System.Windows.Media.Animation.Vector3DAnimation> pro animaci <xref:System.Windows.Media.Media3D.ProjectionCamera.Position%2A> a <xref:System.Windows.Media.Media3D.ProjectionCamera.LookDirection%2A> vlastnosti v uvedeném pořadí <xref:System.Windows.Media.Media3D.PerspectiveCamera>.</span><span class="sxs-lookup"><span data-stu-id="c0675-104">This is done by using <xref:System.Windows.Media.Animation.Point3DAnimation> and <xref:System.Windows.Media.Animation.Vector3DAnimation> to animate the <xref:System.Windows.Media.Media3D.ProjectionCamera.Position%2A> and <xref:System.Windows.Media.Media3D.ProjectionCamera.LookDirection%2A> properties respectively of the <xref:System.Windows.Media.Media3D.PerspectiveCamera>.</span></span> <span data-ttu-id="c0675-105">Chcete-li změnit zobrazení onlooker scény v reakci na událost můžete použít animace následujícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="c0675-105">You might use an animation like this to change the onlooker's view of a scene in response to an event.</span></span>  
+# <a name="how-to-animate-camera-position-and-direction-in-a-3d-scene"></a><span data-ttu-id="60396-102">Postupy: Animace umístění a směrování kamery ve 3D scéně</span><span class="sxs-lookup"><span data-stu-id="60396-102">How to: Animate Camera Position and Direction in a 3D Scene</span></span>
+<span data-ttu-id="60396-103">Následující příklad ukazuje, jak umístění kamery animace a animovat směr, který se odkazuje ve 3D scéně.</span><span class="sxs-lookup"><span data-stu-id="60396-103">The following example shows how to animate the position of a camera and animate the direction it is pointing in a 3D scene.</span></span> <span data-ttu-id="60396-104">To se provádí pomocí <xref:System.Windows.Media.Animation.Point3DAnimation> a <xref:System.Windows.Media.Animation.Vector3DAnimation> pro animaci <xref:System.Windows.Media.Media3D.ProjectionCamera.Position%2A> a <xref:System.Windows.Media.Media3D.ProjectionCamera.LookDirection%2A> vlastnosti v uvedeném pořadí <xref:System.Windows.Media.Media3D.PerspectiveCamera>.</span><span class="sxs-lookup"><span data-stu-id="60396-104">This is done by using <xref:System.Windows.Media.Animation.Point3DAnimation> and <xref:System.Windows.Media.Animation.Vector3DAnimation> to animate the <xref:System.Windows.Media.Media3D.ProjectionCamera.Position%2A> and <xref:System.Windows.Media.Media3D.ProjectionCamera.LookDirection%2A> properties respectively of the <xref:System.Windows.Media.Media3D.PerspectiveCamera>.</span></span> <span data-ttu-id="60396-105">Chcete-li změnit zobrazení onlooker scény v reakci na událost můžete použít animace následujícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="60396-105">You might use an animation like this to change the onlooker's view of a scene in response to an event.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c0675-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="c0675-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="60396-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="60396-106">Example</span></span>  
  [!code-xaml[Animation3DGallery_snip#PointVector3DAnimationExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Animation3DGallery_snip/CS/PointVector3DAnimationExample.xaml#pointvector3danimationexamplewholepage)]  
   
-## <a name="see-also"></a><span data-ttu-id="c0675-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c0675-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="60396-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="60396-107">See also</span></span>
 
 - <xref:System.Windows.Media.Animation.Vector3DAnimation>
 - <xref:System.Windows.Media.Animation.Point3DAnimation>
-- [<span data-ttu-id="c0675-108">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="c0675-108">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)
-- [<span data-ttu-id="c0675-109">Přehled 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="c0675-109">3-D Graphics Overview</span></span>](3-d-graphics-overview.md)
+- [<span data-ttu-id="60396-108">Animace umístění a směrování kamery pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="60396-108">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)
+- [<span data-ttu-id="60396-109">Přehled 3D grafiky</span><span class="sxs-lookup"><span data-stu-id="60396-109">3-D Graphics Overview</span></span>](3-d-graphics-overview.md)

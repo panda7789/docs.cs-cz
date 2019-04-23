@@ -18,18 +18,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3cb2a8d2a4e089d16b6c2129c165a9d8b6828f3f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59141726"
 ---
-# <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a><span data-ttu-id="3642c-102">ICLRErrorReportingManager::GetBucketParametersForCurrentException – metoda</span><span class="sxs-lookup"><span data-stu-id="3642c-102">ICLRErrorReportingManager::GetBucketParametersForCurrentException Method</span></span>
-<span data-ttu-id="3642c-103">Získá Watson kbelíku pro aktuální výjimky na volajícím vlákně.</span><span class="sxs-lookup"><span data-stu-id="3642c-103">Gets the Watson bucket for the current exception on the calling thread.</span></span>  
+# <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a><span data-ttu-id="20d9a-102">ICLRErrorReportingManager::GetBucketParametersForCurrentException – metoda</span><span class="sxs-lookup"><span data-stu-id="20d9a-102">ICLRErrorReportingManager::GetBucketParametersForCurrentException Method</span></span>
+<span data-ttu-id="20d9a-103">Získá Watson kbelíku pro aktuální výjimky na volajícím vlákně.</span><span class="sxs-lookup"><span data-stu-id="20d9a-103">Gets the Watson bucket for the current exception on the calling thread.</span></span>  
   
- <span data-ttu-id="3642c-104">A *kbelíku* je kolekce data chyby týkající se stejnou chybu v kódu.</span><span class="sxs-lookup"><span data-stu-id="3642c-104">A *bucket* is a collection of error data that is related to the same code defect.</span></span> <span data-ttu-id="3642c-105">*Watson* odkazuje na sadu technologií pro shromažďování a analýza dat, který je spojen s výjimkou.</span><span class="sxs-lookup"><span data-stu-id="3642c-105">*Watson* refers to a set of technologies for collecting and analyzing data that is associated with an exception.</span></span>  
+ <span data-ttu-id="20d9a-104">A *kbelíku* je kolekce data chyby týkající se stejnou chybu v kódu.</span><span class="sxs-lookup"><span data-stu-id="20d9a-104">A *bucket* is a collection of error data that is related to the same code defect.</span></span> <span data-ttu-id="20d9a-105">*Watson* odkazuje na sadu technologií pro shromažďování a analýza dat, který je spojen s výjimkou.</span><span class="sxs-lookup"><span data-stu-id="20d9a-105">*Watson* refers to a set of technologies for collecting and analyzing data that is associated with an exception.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3642c-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3642c-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="20d9a-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20d9a-106">Syntax</span></span>  
   
 ```  
 HRESULT GetBucketParametersForCurrentException(  
@@ -37,19 +37,19 @@ HRESULT GetBucketParametersForCurrentException(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3642c-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="3642c-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="20d9a-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="20d9a-107">Parameters</span></span>  
  `pParams`  
- <span data-ttu-id="3642c-108">[out] Ukazatel [bucketparameters –](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) strukturu, která obsahuje data o chybách pro výjimku.</span><span class="sxs-lookup"><span data-stu-id="3642c-108">[out] A pointer to a [BucketParameters](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) structure that contains error data for the exception.</span></span>  
+ <span data-ttu-id="20d9a-108">[out] Ukazatel [bucketparameters –](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) strukturu, která obsahuje data o chybách pro výjimku.</span><span class="sxs-lookup"><span data-stu-id="20d9a-108">[out] A pointer to a [BucketParameters](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) structure that contains error data for the exception.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3642c-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3642c-109">Requirements</span></span>  
- <span data-ttu-id="3642c-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3642c-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="20d9a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="20d9a-109">Requirements</span></span>  
+ <span data-ttu-id="20d9a-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="20d9a-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3642c-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="3642c-111">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="20d9a-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="20d9a-111">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="3642c-112">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3642c-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="20d9a-112">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="20d9a-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="3642c-113">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3642c-113">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="20d9a-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="20d9a-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3642c-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3642c-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20d9a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="20d9a-114">See also</span></span>
 
-- [<span data-ttu-id="3642c-115">ICLRErrorReportingManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3642c-115">ICLRErrorReportingManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
+- [<span data-ttu-id="20d9a-115">ICLRErrorReportingManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="20d9a-115">ICLRErrorReportingManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)

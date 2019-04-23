@@ -18,15 +18,15 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bfec360dc7817864c57ae99c9d1648c805f524b5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59154464"
 ---
-# <a name="icordebugeditandcontinuesnapshotgetrodatarva-method"></a><span data-ttu-id="9a69c-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="9a69c-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA Method</span></span>
-`GetRoDataRVA` <span data-ttu-id="9a69c-103">je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="9a69c-103">is obsolete.</span></span> <span data-ttu-id="9a69c-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="9a69c-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinuesnapshotgetrodatarva-method"></a><span data-ttu-id="70ab2-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="70ab2-102">ICorDebugEditAndContinueSnapshot::GetRoDataRVA Method</span></span>
+<span data-ttu-id="70ab2-103">`GetRoDataRVA` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="70ab2-103">`GetRoDataRVA` is obsolete.</span></span> <span data-ttu-id="70ab2-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="70ab2-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a69c-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a69c-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70ab2-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70ab2-105">See also</span></span>
 
-- [<span data-ttu-id="9a69c-106">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a69c-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="70ab2-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="70ab2-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

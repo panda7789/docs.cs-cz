@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5f62fa23d30a93f863cb2be0fa060bd2eba8dca1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59141727"
 ---
-# <a name="icordebugmdagetname-method"></a><span data-ttu-id="164f2-102">ICorDebugMDA::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="164f2-102">ICorDebugMDA::GetName Method</span></span>
-<span data-ttu-id="164f2-103">Získá řetězec obsahující název pomocníka spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).</span><span class="sxs-lookup"><span data-stu-id="164f2-103">Gets a string containing the name of the managed debugging assistant (MDA) represented by [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).</span></span>  
+# <a name="icordebugmdagetname-method"></a><span data-ttu-id="78bd1-102">ICorDebugMDA::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="78bd1-102">ICorDebugMDA::GetName Method</span></span>
+<span data-ttu-id="78bd1-103">Získá řetězec obsahující název pomocníka spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).</span><span class="sxs-lookup"><span data-stu-id="78bd1-103">Gets a string containing the name of the managed debugging assistant (MDA) represented by [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="164f2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="164f2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="78bd1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="78bd1-104">Syntax</span></span>  
   
 ```  
 HRESULT GetName (  
@@ -38,29 +38,29 @@ HRESULT GetName (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="164f2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="164f2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="78bd1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="78bd1-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="164f2-106">[in] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="164f2-106">[in] The size of the `szName` array.</span></span>  
+ <span data-ttu-id="78bd1-106">[in] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="78bd1-106">[in] The size of the `szName` array.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="164f2-107">[out] Ukazatel na délka názvu.</span><span class="sxs-lookup"><span data-stu-id="164f2-107">[out] A pointer to the length of the name.</span></span>  
+ <span data-ttu-id="78bd1-107">[out] Ukazatel na délka názvu.</span><span class="sxs-lookup"><span data-stu-id="78bd1-107">[out] A pointer to the length of the name.</span></span>  
   
  `szName`  
- <span data-ttu-id="164f2-108">[out] Pole pro uložení názvu.</span><span class="sxs-lookup"><span data-stu-id="164f2-108">[out] An array in which to store the name.</span></span>  
+ <span data-ttu-id="78bd1-108">[out] Pole pro uložení názvu.</span><span class="sxs-lookup"><span data-stu-id="78bd1-108">[out] An array in which to store the name.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="164f2-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="164f2-109">Remarks</span></span>  
- <span data-ttu-id="164f2-110">MDA názvy jsou jedinečné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="164f2-110">MDA names are unique values.</span></span> <span data-ttu-id="164f2-111">`GetName` Metody je vhodné výkonu alternativou k získání datový proud XML a extrahování název z datového proudu na základě schématu.</span><span class="sxs-lookup"><span data-stu-id="164f2-111">The `GetName` method is a convenient performance alternative to getting the XML stream and extracting the name from the stream based on the schema.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="78bd1-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="78bd1-109">Remarks</span></span>  
+ <span data-ttu-id="78bd1-110">MDA názvy jsou jedinečné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="78bd1-110">MDA names are unique values.</span></span> <span data-ttu-id="78bd1-111">`GetName` Metody je vhodné výkonu alternativou k získání datový proud XML a extrahování název z datového proudu na základě schématu.</span><span class="sxs-lookup"><span data-stu-id="78bd1-111">The `GetName` method is a convenient performance alternative to getting the XML stream and extracting the name from the stream based on the schema.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="164f2-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="164f2-112">Requirements</span></span>  
- <span data-ttu-id="164f2-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="164f2-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="78bd1-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="78bd1-112">Requirements</span></span>  
+ <span data-ttu-id="78bd1-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="78bd1-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="164f2-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="164f2-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="78bd1-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="78bd1-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="164f2-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="164f2-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="78bd1-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="78bd1-115">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="164f2-116">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="164f2-116">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="78bd1-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="78bd1-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="164f2-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="164f2-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="78bd1-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="78bd1-117">See also</span></span>
 
-- [<span data-ttu-id="164f2-118">ICorDebugMDA – rozhraní</span><span class="sxs-lookup"><span data-stu-id="164f2-118">ICorDebugMDA Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
-- [<span data-ttu-id="164f2-119">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="164f2-119">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [<span data-ttu-id="78bd1-118">ICorDebugMDA – rozhraní</span><span class="sxs-lookup"><span data-stu-id="78bd1-118">ICorDebugMDA Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [<span data-ttu-id="78bd1-119">Diagnostikování chyb pomocí asistentů spravovaného ladění</span><span class="sxs-lookup"><span data-stu-id="78bd1-119">Diagnosing Errors with Managed Debugging Assistants</span></span>](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

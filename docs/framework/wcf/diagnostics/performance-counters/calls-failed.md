@@ -3,18 +3,18 @@ title: Počet nezdařených volání
 ms.date: 03/30/2017
 ms.assetid: 52afeff8-333c-44a5-96ce-1f3c418523fc
 ms.openlocfilehash: e844f18b96a28c807a6f10195c9ab20780f23306
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59151759"
 ---
-# <a name="calls-failed"></a><span data-ttu-id="156c6-102">Počet nezdařených volání</span><span class="sxs-lookup"><span data-stu-id="156c6-102">Calls Failed</span></span>
-<span data-ttu-id="156c6-103">Název čítače: Počet nezdařených volání</span><span class="sxs-lookup"><span data-stu-id="156c6-103">Counter Name: Calls Failed</span></span>  
+# <a name="calls-failed"></a><span data-ttu-id="fe0d5-102">Počet nezdařených volání</span><span class="sxs-lookup"><span data-stu-id="fe0d5-102">Calls Failed</span></span>
+<span data-ttu-id="fe0d5-103">Název čítače: Počet nezdařených volání</span><span class="sxs-lookup"><span data-stu-id="fe0d5-103">Counter Name: Calls Failed</span></span>  
   
-## <a name="description"></a><span data-ttu-id="156c6-104">Popis</span><span class="sxs-lookup"><span data-stu-id="156c6-104">Description</span></span>  
- <span data-ttu-id="156c6-105">Počet volání s neošetřenými výjimkami v této operaci.</span><span class="sxs-lookup"><span data-stu-id="156c6-105">Number of calls with unhandled exceptions in this operation.</span></span> <span data-ttu-id="156c6-106">Tento čítač je zvýšena pokaždé, když dojde k neošetřené výjimce v této operaci.</span><span class="sxs-lookup"><span data-stu-id="156c6-106">This counter is incremented everytime there is an unhandled exception in this operation.</span></span>  
+## <a name="description"></a><span data-ttu-id="fe0d5-104">Popis</span><span class="sxs-lookup"><span data-stu-id="fe0d5-104">Description</span></span>  
+ <span data-ttu-id="fe0d5-105">Počet volání s neošetřenými výjimkami v této operaci.</span><span class="sxs-lookup"><span data-stu-id="fe0d5-105">Number of calls with unhandled exceptions in this operation.</span></span> <span data-ttu-id="fe0d5-106">Tento čítač je zvýšena pokaždé, když dojde k neošetřené výjimce v této operaci.</span><span class="sxs-lookup"><span data-stu-id="fe0d5-106">This counter is incremented everytime there is an unhandled exception in this operation.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="156c6-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="156c6-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fe0d5-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fe0d5-107">See also</span></span>
 
-- [<span data-ttu-id="156c6-108">Určování a zpracování chyb v kontraktech a službách</span><span class="sxs-lookup"><span data-stu-id="156c6-108">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+- [<span data-ttu-id="fe0d5-108">Určování a zpracování chyb v kontraktech a službách</span><span class="sxs-lookup"><span data-stu-id="fe0d5-108">Specifying and Handling Faults in Contracts and Services</span></span>](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
