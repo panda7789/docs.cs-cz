@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b95a583aec87e3ba3e247d1ef800302b62657837
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59176004"
 ---
-# <a name="imetadataassemblyemitdefineassembly-method"></a><span data-ttu-id="b2afa-102">IMetaDataAssemblyEmit::DefineAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="b2afa-102">IMetaDataAssemblyEmit::DefineAssembly Method</span></span>
-<span data-ttu-id="b2afa-103">Vytvoří `Assembly` struktury obsahující metadata pro zadané sestavení a vrátí token metadat.</span><span class="sxs-lookup"><span data-stu-id="b2afa-103">Creates an `Assembly` structure containing metadata for the specified assembly and returns the associated metadata token.</span></span>  
+# <a name="imetadataassemblyemitdefineassembly-method"></a><span data-ttu-id="b621e-102">IMetaDataAssemblyEmit::DefineAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="b621e-102">IMetaDataAssemblyEmit::DefineAssembly Method</span></span>
+<span data-ttu-id="b621e-103">Vytvoří `Assembly` struktury obsahující metadata pro zadané sestavení a vrátí token metadat.</span><span class="sxs-lookup"><span data-stu-id="b621e-103">Creates an `Assembly` structure containing metadata for the specified assembly and returns the associated metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b2afa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b2afa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b621e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b621e-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineAssembly (  
@@ -41,40 +41,40 @@ HRESULT DefineAssembly (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b2afa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b2afa-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b621e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b621e-105">Parameters</span></span>  
  `pbPublicKey`  
- <span data-ttu-id="b2afa-106">[in] Veřejný klíč, který identifikuje vydavatele sestavení nebo hodnota NULL, pokud sestavení není silně pojmenováno.</span><span class="sxs-lookup"><span data-stu-id="b2afa-106">[in] The public key that identifies the publisher of the assembly, or NULL if the assembly is not strongly named.</span></span>  
+ <span data-ttu-id="b621e-106">[in] Veřejný klíč, který identifikuje vydavatele sestavení nebo hodnota NULL, pokud sestavení není silně pojmenováno.</span><span class="sxs-lookup"><span data-stu-id="b621e-106">[in] The public key that identifies the publisher of the assembly, or NULL if the assembly is not strongly named.</span></span>  
   
  `cbPublicKey`  
- <span data-ttu-id="b2afa-107">[in] Velikost v bajtech `pbPublicKey`.</span><span class="sxs-lookup"><span data-stu-id="b2afa-107">[in] The size in bytes of `pbPublicKey`.</span></span>  
+ <span data-ttu-id="b621e-107">[in] Velikost v bajtech `pbPublicKey`.</span><span class="sxs-lookup"><span data-stu-id="b621e-107">[in] The size in bytes of `pbPublicKey`.</span></span>  
   
  `uHashAlgId`  
- <span data-ttu-id="b2afa-108">[in] Identifikátor algoritmu hash určený k šifrování souborů v sestavení nebo hodnota NULL k určení algoritmus SHA-1.</span><span class="sxs-lookup"><span data-stu-id="b2afa-108">[in] The identifier of the hashing algorithm to use to encrypt the files in the assembly, or NULL to specify the SHA-1 algorithm.</span></span>  
+ <span data-ttu-id="b621e-108">[in] Identifikátor algoritmu hash určený k šifrování souborů v sestavení nebo hodnota NULL k určení algoritmus SHA-1.</span><span class="sxs-lookup"><span data-stu-id="b621e-108">[in] The identifier of the hashing algorithm to use to encrypt the files in the assembly, or NULL to specify the SHA-1 algorithm.</span></span>  
   
  `szName`  
- <span data-ttu-id="b2afa-109">[in] Uživatelsky čitelná textová název sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2afa-109">[in] The human-readable text name of the assembly.</span></span> <span data-ttu-id="b2afa-110">Tato hodnota nesmí překročit 1024 znaků.</span><span class="sxs-lookup"><span data-stu-id="b2afa-110">This value must not exceed 1024 characters.</span></span>  
+ <span data-ttu-id="b621e-109">[in] Uživatelsky čitelná textová název sestavení.</span><span class="sxs-lookup"><span data-stu-id="b621e-109">[in] The human-readable text name of the assembly.</span></span> <span data-ttu-id="b621e-110">Tato hodnota nesmí překročit 1024 znaků.</span><span class="sxs-lookup"><span data-stu-id="b621e-110">This value must not exceed 1024 characters.</span></span>  
   
  `pMetaData`  
- <span data-ttu-id="b2afa-111">[in] Ukazatel na instanci assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2afa-111">[in] A pointer to an ASSEMBLYMETADATA instance that contains the version, platform, and locale information for the assembly.</span></span>  
+ <span data-ttu-id="b621e-111">[in] Ukazatel na instanci assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="b621e-111">[in] A pointer to an ASSEMBLYMETADATA instance that contains the version, platform, and locale information for the assembly.</span></span>  
   
  `dwAssemblyFlags`  
- <span data-ttu-id="b2afa-112">[in] Kombinace [corassemblyflags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty, které popisují funkce sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2afa-112">[in] A combination of [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values that describe features of the assembly.</span></span>  
+ <span data-ttu-id="b621e-112">[in] Kombinace [corassemblyflags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty, které popisují funkce sestavení.</span><span class="sxs-lookup"><span data-stu-id="b621e-112">[in] A combination of [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values that describe features of the assembly.</span></span>  
   
  `pmda`  
- <span data-ttu-id="b2afa-113">[out] Ukazatel na token metadat.</span><span class="sxs-lookup"><span data-stu-id="b2afa-113">[out] A pointer to the metadata token.</span></span>  
+ <span data-ttu-id="b621e-113">[out] Ukazatel na token metadat.</span><span class="sxs-lookup"><span data-stu-id="b621e-113">[out] A pointer to the metadata token.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b2afa-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b2afa-114">Remarks</span></span>  
- <span data-ttu-id="b2afa-115">Pouze jeden `Assembly` metadat struktury lze definovat v rámci manifestu.</span><span class="sxs-lookup"><span data-stu-id="b2afa-115">Only one `Assembly` metadata structure can be defined within a manifest.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b621e-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b621e-114">Remarks</span></span>  
+ <span data-ttu-id="b621e-115">Pouze jeden `Assembly` metadat struktury lze definovat v rámci manifestu.</span><span class="sxs-lookup"><span data-stu-id="b621e-115">Only one `Assembly` metadata structure can be defined within a manifest.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b2afa-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b2afa-116">Requirements</span></span>  
- <span data-ttu-id="b2afa-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b2afa-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b621e-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b621e-116">Requirements</span></span>  
+ <span data-ttu-id="b621e-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b621e-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b2afa-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b2afa-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b621e-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b621e-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="b2afa-119">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b2afa-119">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b621e-119">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b621e-119">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="b2afa-120">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="b2afa-120">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="b621e-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b621e-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b2afa-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b2afa-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b621e-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b621e-121">See also</span></span>
 
-- [<span data-ttu-id="b2afa-122">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b2afa-122">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="b621e-122">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b621e-122">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
