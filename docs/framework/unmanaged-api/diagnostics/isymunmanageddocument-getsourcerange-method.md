@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 59420cfd29c3228aece9fc5ae02b950db6099ea0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59218469"
 ---
-# <a name="isymunmanageddocumentgetsourcerange-method"></a><span data-ttu-id="da3f7-102">ISymUnmanagedDocument::GetSourceRange – metoda</span><span class="sxs-lookup"><span data-stu-id="da3f7-102">ISymUnmanagedDocument::GetSourceRange Method</span></span>
-<span data-ttu-id="da3f7-103">Vrátí zadaný rozsah vloženého zdroje do daného vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="da3f7-103">Returns the specified range of the embedded source into the given buffer.</span></span> <span data-ttu-id="da3f7-104">Vyrovnávací paměť musí být dostatečně velký pro umístění zdroje.</span><span class="sxs-lookup"><span data-stu-id="da3f7-104">The buffer must be large enough to hold the source.</span></span>  
+# <a name="isymunmanageddocumentgetsourcerange-method"></a><span data-ttu-id="d79c3-102">ISymUnmanagedDocument::GetSourceRange – metoda</span><span class="sxs-lookup"><span data-stu-id="d79c3-102">ISymUnmanagedDocument::GetSourceRange Method</span></span>
+<span data-ttu-id="d79c3-103">Vrátí zadaný rozsah vloženého zdroje do daného vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="d79c3-103">Returns the specified range of the embedded source into the given buffer.</span></span> <span data-ttu-id="d79c3-104">Vyrovnávací paměť musí být dostatečně velký pro umístění zdroje.</span><span class="sxs-lookup"><span data-stu-id="d79c3-104">The buffer must be large enough to hold the source.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="da3f7-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da3f7-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d79c3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d79c3-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSourceRange(  
@@ -41,31 +41,31 @@ HRESULT GetSourceRange(
         length_is(*pcSourceBytes)] BYTE source[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="da3f7-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="da3f7-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d79c3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d79c3-106">Parameters</span></span>  
  `startLine`  
- <span data-ttu-id="da3f7-107">[in] Počáteční řádek v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="da3f7-107">[in] The starting line in the current document.</span></span>  
+ <span data-ttu-id="d79c3-107">[in] Počáteční řádek v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d79c3-107">[in] The starting line in the current document.</span></span>  
   
  `startColumn`  
- <span data-ttu-id="da3f7-108">[in] Počáteční sloupec v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="da3f7-108">[in] The starting column in the current document.</span></span>  
+ <span data-ttu-id="d79c3-108">[in] Počáteční sloupec v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d79c3-108">[in] The starting column in the current document.</span></span>  
   
  `endLine`  
- <span data-ttu-id="da3f7-109">[in] Poslední řádek v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="da3f7-109">[in] The final line in the current document.</span></span>  
+ <span data-ttu-id="d79c3-109">[in] Poslední řádek v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d79c3-109">[in] The final line in the current document.</span></span>  
   
  `endColumn`  
- <span data-ttu-id="da3f7-110">[in] Poslední sloupec v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="da3f7-110">[in] The final column in the current document.</span></span>  
+ <span data-ttu-id="d79c3-110">[in] Poslední sloupec v aktuálním dokumentu.</span><span class="sxs-lookup"><span data-stu-id="d79c3-110">[in] The final column in the current document.</span></span>  
   
  `cSourceBytes`  
- <span data-ttu-id="da3f7-111">[in] Velikost zdroje, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="da3f7-111">[in] The size of the source, in bytes.</span></span>  
+ <span data-ttu-id="d79c3-111">[in] Velikost zdroje, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="d79c3-111">[in] The size of the source, in bytes.</span></span>  
   
  `pcSourceBytes`  
- <span data-ttu-id="da3f7-112">[out] Ukazovat na proměnnou, která bude přijímat velikost zdroje.</span><span class="sxs-lookup"><span data-stu-id="da3f7-112">[out] A pointer to a variable that receives the source size.</span></span>  
+ <span data-ttu-id="d79c3-112">[out] Ukazovat na proměnnou, která bude přijímat velikost zdroje.</span><span class="sxs-lookup"><span data-stu-id="d79c3-112">[out] A pointer to a variable that receives the source size.</span></span>  
   
  `source`  
- <span data-ttu-id="da3f7-113">[out] Velikost a délku zadaného rozsahu ve zdrojovém dokumentu, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="da3f7-113">[out] The size and length of the specified range of the source document, in bytes.</span></span>  
+ <span data-ttu-id="d79c3-113">[out] Velikost a délku zadaného rozsahu ve zdrojovém dokumentu, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="d79c3-113">[out] The size and length of the specified range of the source document, in bytes.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="da3f7-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="da3f7-114">Return Value</span></span>  
- <span data-ttu-id="da3f7-115">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="da3f7-115">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d79c3-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d79c3-114">Return Value</span></span>  
+ <span data-ttu-id="d79c3-115">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="d79c3-115">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="da3f7-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da3f7-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d79c3-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d79c3-116">See also</span></span>
 
-- [<span data-ttu-id="da3f7-117">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da3f7-117">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="d79c3-117">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d79c3-117">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

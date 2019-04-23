@@ -10,14 +10,14 @@ helpviewer_keywords:
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
 ms.openlocfilehash: ef8669e9e78f65451ffb250283a1f14c89d61270
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59219743"
 ---
-# <a name="synchronous-client-socket-example"></a><span data-ttu-id="d64ce-102">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="d64ce-102">Synchronous Client Socket Example</span></span>
-<span data-ttu-id="d64ce-103">Následující ukázkový program vytvoří klienta, která se připojuje k serveru.</span><span class="sxs-lookup"><span data-stu-id="d64ce-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="d64ce-104">Klient je sestavena s soket synchronního, takže spuštění klientské aplikace je pozastaveno, dokud server vrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="d64ce-104">The client is built with a synchronous socket, so execution of the client application is suspended until the server returns a response.</span></span> <span data-ttu-id="d64ce-105">Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.</span><span class="sxs-lookup"><span data-stu-id="d64ce-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
+# <a name="synchronous-client-socket-example"></a><span data-ttu-id="4cc52-102">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="4cc52-102">Synchronous Client Socket Example</span></span>
+<span data-ttu-id="4cc52-103">Následující ukázkový program vytvoří klienta, která se připojuje k serveru.</span><span class="sxs-lookup"><span data-stu-id="4cc52-103">The following example program creates a client that connects to a server.</span></span> <span data-ttu-id="4cc52-104">Klient je sestavena s soket synchronního, takže spuštění klientské aplikace je pozastaveno, dokud server vrátí odpověď.</span><span class="sxs-lookup"><span data-stu-id="4cc52-104">The client is built with a synchronous socket, so execution of the client application is suspended until the server returns a response.</span></span> <span data-ttu-id="4cc52-105">Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.</span><span class="sxs-lookup"><span data-stu-id="4cc52-105">The application sends a string to the server and then displays the string returned by the server on the console.</span></span>  
   
 ```vb  
 Imports System  
@@ -135,8 +135,8 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d64ce-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d64ce-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4cc52-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4cc52-106">See also</span></span>
 
-- [<span data-ttu-id="d64ce-107">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="d64ce-107">Synchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/synchronous-server-socket-example.md)
-- [<span data-ttu-id="d64ce-108">Použití synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="d64ce-108">Using a Synchronous Client Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)
-- [<span data-ttu-id="d64ce-109">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="d64ce-109">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
+- [<span data-ttu-id="4cc52-107">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="4cc52-107">Synchronous Server Socket Example</span></span>](../../../docs/framework/network-programming/synchronous-server-socket-example.md)
+- [<span data-ttu-id="4cc52-108">Použití synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="4cc52-108">Using a Synchronous Client Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-client-socket.md)
+- [<span data-ttu-id="4cc52-109">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="4cc52-109">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
