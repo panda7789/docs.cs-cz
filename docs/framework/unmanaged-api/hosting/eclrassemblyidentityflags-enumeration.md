@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9a0372afe6718e5b8cf4d5ed99b3198a8163ae7c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59214765"
 ---
-# <a name="eclrassemblyidentityflags-enumeration"></a><span data-ttu-id="3a415-102">ECLRAssemblyIdentityFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="3a415-102">ECLRAssemblyIdentityFlags Enumeration</span></span>
-<span data-ttu-id="3a415-103">Určuje typ z identity sestavení.</span><span class="sxs-lookup"><span data-stu-id="3a415-103">Indicates the type of an assembly's identity.</span></span>  
+# <a name="eclrassemblyidentityflags-enumeration"></a><span data-ttu-id="9fc81-102">ECLRAssemblyIdentityFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="9fc81-102">ECLRAssemblyIdentityFlags Enumeration</span></span>
+<span data-ttu-id="9fc81-103">Určuje typ z identity sestavení.</span><span class="sxs-lookup"><span data-stu-id="9fc81-103">Indicates the type of an assembly's identity.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3a415-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3a415-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9fc81-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9fc81-104">Syntax</span></span>  
   
 ```  
 typedef enum _CLRAssemblyIdentityFlags {  
@@ -34,19 +34,19 @@ typedef enum _CLRAssemblyIdentityFlags {
 } ECLRAssemblyIdentityFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="3a415-105">Členové</span><span class="sxs-lookup"><span data-stu-id="3a415-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="9fc81-105">Členové</span><span class="sxs-lookup"><span data-stu-id="9fc81-105">Members</span></span>  
   
-|<span data-ttu-id="3a415-106">Člen</span><span class="sxs-lookup"><span data-stu-id="3a415-106">Member</span></span>|<span data-ttu-id="3a415-107">Popis</span><span class="sxs-lookup"><span data-stu-id="3a415-107">Description</span></span>|  
+|<span data-ttu-id="9fc81-106">Člen</span><span class="sxs-lookup"><span data-stu-id="9fc81-106">Member</span></span>|<span data-ttu-id="9fc81-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9fc81-107">Description</span></span>|  
 |------------|-----------------|  
-|`CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT`|<span data-ttu-id="3a415-108">Identita je ho kanonizovat.</span><span class="sxs-lookup"><span data-stu-id="3a415-108">The identity is canonicalized.</span></span>|  
+|`CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT`|<span data-ttu-id="9fc81-108">Identita je ho kanonizovat.</span><span class="sxs-lookup"><span data-stu-id="9fc81-108">The identity is canonicalized.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="3a415-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3a415-109">Requirements</span></span>  
- <span data-ttu-id="3a415-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3a415-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9fc81-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9fc81-109">Requirements</span></span>  
+ <span data-ttu-id="9fc81-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9fc81-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3a415-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="3a415-111">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="9fc81-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9fc81-111">**Header:** MSCorEE.h</span></span>  
   
- **<span data-ttu-id="3a415-112">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3a415-112">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="9fc81-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9fc81-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3a415-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3a415-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9fc81-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9fc81-113">See also</span></span>
 
-- [<span data-ttu-id="3a415-114">Výčty hostování</span><span class="sxs-lookup"><span data-stu-id="3a415-114">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [<span data-ttu-id="9fc81-114">Výčty pro hostování</span><span class="sxs-lookup"><span data-stu-id="9fc81-114">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

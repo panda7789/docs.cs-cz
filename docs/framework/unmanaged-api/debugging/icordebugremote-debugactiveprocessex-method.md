@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 45b919d90454c9424cadb1d4dfc3b0dfb09e5053
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59209447"
 ---
-# <a name="icordebugremotedebugactiveprocessex-method"></a><span data-ttu-id="a972e-102">ICorDebugRemote::DebugActiveProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="a972e-102">ICorDebugRemote::DebugActiveProcessEx Method</span></span>
-<span data-ttu-id="a972e-103">Spustí nějaký proces ve vzdáleném počítači v ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="a972e-103">Launches a process on a remote machine under the debugger.</span></span>  
+# <a name="icordebugremotedebugactiveprocessex-method"></a><span data-ttu-id="47f89-102">ICorDebugRemote::DebugActiveProcessEx – metoda</span><span class="sxs-lookup"><span data-stu-id="47f89-102">ICorDebugRemote::DebugActiveProcessEx Method</span></span>
+<span data-ttu-id="47f89-103">Spustí nějaký proces ve vzdáleném počítači v ladicím programu.</span><span class="sxs-lookup"><span data-stu-id="47f89-103">Launches a process on a remote machine under the debugger.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a972e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a972e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="47f89-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="47f89-104">Syntax</span></span>  
   
 ```  
 HRESULT DebugActiveProcessEx (  
@@ -38,41 +38,41 @@ HRESULT DebugActiveProcessEx (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a972e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a972e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="47f89-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="47f89-105">Parameters</span></span>  
  `pRemoteTarget`  
- <span data-ttu-id="a972e-106">[in] Ukazatel [icordebugremotetarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md).</span><span class="sxs-lookup"><span data-stu-id="a972e-106">[in] Pointer to an [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md).</span></span> <span data-ttu-id="a972e-107">Tento parametr slouží k určení počítače, na kterém je proces spuštěn.</span><span class="sxs-lookup"><span data-stu-id="a972e-107">This parameter is used to determine the machine on which the process is running.</span></span>  
+ <span data-ttu-id="47f89-106">[in] Ukazatel [icordebugremotetarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md).</span><span class="sxs-lookup"><span data-stu-id="47f89-106">[in] Pointer to an [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md).</span></span> <span data-ttu-id="47f89-107">Tento parametr slouží k určení počítače, na kterém je proces spuštěn.</span><span class="sxs-lookup"><span data-stu-id="47f89-107">This parameter is used to determine the machine on which the process is running.</span></span>  
   
  `id`  
- <span data-ttu-id="a972e-108">[in] ID procesu, ke kterému je ladicí program připojit.</span><span class="sxs-lookup"><span data-stu-id="a972e-108">[in] The ID of the process to which the debugger is to be attached.</span></span>  
+ <span data-ttu-id="47f89-108">[in] ID procesu, ke kterému je ladicí program připojit.</span><span class="sxs-lookup"><span data-stu-id="47f89-108">[in] The ID of the process to which the debugger is to be attached.</span></span>  
   
  `win32Attach`  
- <span data-ttu-id="a972e-109">[in] `true` Pokud ladicí program by měl chovat jako ladicí program systému Win32 pro proces a odeslání nespravované zpětná volání; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="a972e-109">[in] `true` if the debugger should behave as the Win32 debugger for the process and dispatch the unmanaged callbacks; otherwise, `false`.</span></span>  
+ <span data-ttu-id="47f89-109">[in] `true` Pokud ladicí program by měl chovat jako ladicí program systému Win32 pro proces a odeslání nespravované zpětná volání; v opačném případě `false`.</span><span class="sxs-lookup"><span data-stu-id="47f89-109">[in] `true` if the debugger should behave as the Win32 debugger for the process and dispatch the unmanaged callbacks; otherwise, `false`.</span></span>  
   
  `ppProcess`  
- <span data-ttu-id="a972e-110">[out] Ukazatel na adresu "ICorDebugProcess" objekt, který představuje proces, ke kterému je připojen ladicí program.</span><span class="sxs-lookup"><span data-stu-id="a972e-110">[out] A pointer to the address of an "ICorDebugProcess" object that represents the process to which the debugger has been attached.</span></span>  
+ <span data-ttu-id="47f89-110">[out] Ukazatel na adresu "ICorDebugProcess" objekt, který představuje proces, ke kterému je připojen ladicí program.</span><span class="sxs-lookup"><span data-stu-id="47f89-110">[out] A pointer to the address of an "ICorDebugProcess" object that represents the process to which the debugger has been attached.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a972e-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a972e-111">Return Value</span></span>  
- <span data-ttu-id="a972e-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="a972e-112">S_OK</span></span>  
- <span data-ttu-id="a972e-113">Úspěšně připojeno k procesu ve vzdáleném počítači.</span><span class="sxs-lookup"><span data-stu-id="a972e-113">Successfully attached to the process on the remote machine.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="47f89-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="47f89-111">Return Value</span></span>  
+ <span data-ttu-id="47f89-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="47f89-112">S_OK</span></span>  
+ <span data-ttu-id="47f89-113">Úspěšně připojeno k procesu ve vzdáleném počítači.</span><span class="sxs-lookup"><span data-stu-id="47f89-113">Successfully attached to the process on the remote machine.</span></span>  
   
- <span data-ttu-id="a972e-114">E_FAIL (nebo jiné E_ návratové kódy)</span><span class="sxs-lookup"><span data-stu-id="a972e-114">E_FAIL (or other E_ return codes)</span></span>  
- <span data-ttu-id="a972e-115">Nelze se připojit k procesu ve vzdáleném počítači.</span><span class="sxs-lookup"><span data-stu-id="a972e-115">Unable to attach to the process on the remote machine.</span></span>  
+ <span data-ttu-id="47f89-114">E_FAIL (nebo jiné E_ návratové kódy)</span><span class="sxs-lookup"><span data-stu-id="47f89-114">E_FAIL (or other E_ return codes)</span></span>  
+ <span data-ttu-id="47f89-115">Nelze se připojit k procesu ve vzdáleném počítači.</span><span class="sxs-lookup"><span data-stu-id="47f89-115">Unable to attach to the process on the remote machine.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a972e-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a972e-116">Remarks</span></span>  
- <span data-ttu-id="a972e-117">Ladění ve smíšeném režimu není v Silverlightu podporovaný.</span><span class="sxs-lookup"><span data-stu-id="a972e-117">Mixed-mode debugging is not supported in Silverlight.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="47f89-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="47f89-116">Remarks</span></span>  
+ <span data-ttu-id="47f89-117">Ladění ve smíšeném režimu není v Silverlightu podporovaný.</span><span class="sxs-lookup"><span data-stu-id="47f89-117">Mixed-mode debugging is not supported in Silverlight.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a972e-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a972e-118">Requirements</span></span>  
- <span data-ttu-id="a972e-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a972e-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="47f89-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="47f89-118">Requirements</span></span>  
+ <span data-ttu-id="47f89-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="47f89-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a972e-120">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a972e-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="47f89-120">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="47f89-120">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="a972e-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a972e-121">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="47f89-121">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="47f89-121">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="a972e-122">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="a972e-122">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
+ <span data-ttu-id="47f89-122">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="47f89-122">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a972e-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a972e-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="47f89-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47f89-123">See also</span></span>
 
-- [<span data-ttu-id="a972e-124">ICorDebugRemote – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a972e-124">ICorDebugRemote Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)
-- [<span data-ttu-id="a972e-125">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a972e-125">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [<span data-ttu-id="47f89-124">ICorDebugRemote – rozhraní</span><span class="sxs-lookup"><span data-stu-id="47f89-124">ICorDebugRemote Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)
+- [<span data-ttu-id="47f89-125">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="47f89-125">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
 
-- [<span data-ttu-id="a972e-126">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a972e-126">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="47f89-126">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="47f89-126">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

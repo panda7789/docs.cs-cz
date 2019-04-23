@@ -10,26 +10,26 @@ helpviewer_keywords:
 - PropertyNameChanged pattern [Windows Forms], applying
 ms.assetid: aa47ddf6-5223-40c4-833f-a78992194836
 ms.openlocfilehash: 36670eee6235277a7fe98770192df9ae05d3dd03
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59213022"
 ---
-# <a name="how-to-apply-the-propertynamechanged-pattern"></a><span data-ttu-id="bb92a-102">Postupy: Použití vzoru PropertyNameChanged</span><span class="sxs-lookup"><span data-stu-id="bb92a-102">How to: Apply the PropertyNameChanged Pattern</span></span>
-<span data-ttu-id="bb92a-103">Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vzor, který má vlastní ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="bb92a-103">The following code example demonstrates how to apply the *PropertyName*Changed pattern to a custom control.</span></span> <span data-ttu-id="bb92a-104">Tento model použijte při implementaci vlastní ovládací prvky, které se používají s modulem Windows Forms datové vazby.</span><span class="sxs-lookup"><span data-stu-id="bb92a-104">Apply this pattern when you implement custom controls that are used with the Windows Forms data binding engine.</span></span>  
+# <a name="how-to-apply-the-propertynamechanged-pattern"></a><span data-ttu-id="d9b02-102">Postupy: Použití vzoru PropertyNameChanged</span><span class="sxs-lookup"><span data-stu-id="d9b02-102">How to: Apply the PropertyNameChanged Pattern</span></span>
+<span data-ttu-id="d9b02-103">Následující příklad kódu ukazuje, jak použít *PropertyName*změněné vzor, který má vlastní ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="d9b02-103">The following code example demonstrates how to apply the *PropertyName*Changed pattern to a custom control.</span></span> <span data-ttu-id="d9b02-104">Tento model použijte při implementaci vlastní ovládací prvky, které se používají s modulem Windows Forms datové vazby.</span><span class="sxs-lookup"><span data-stu-id="d9b02-104">Apply this pattern when you implement custom controls that are used with the Windows Forms data binding engine.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="bb92a-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="bb92a-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="d9b02-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="d9b02-105">Example</span></span>  
  [!code-csharp[System.Windows.Forms.ChangeNotification#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ChangeNotification/CS/Form1.cs#3)]
  [!code-vb[System.Windows.Forms.ChangeNotification#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ChangeNotification/VB/Form1.vb#3)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="bb92a-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="bb92a-106">Compiling the Code</span></span>  
- <span data-ttu-id="bb92a-107">Chcete-li zkompilovat v předchozím příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="bb92a-107">To compile the previous code example:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="d9b02-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d9b02-106">Compiling the Code</span></span>  
+ <span data-ttu-id="d9b02-107">Chcete-li zkompilovat v předchozím příkladu kódu:</span><span class="sxs-lookup"><span data-stu-id="d9b02-107">To compile the previous code example:</span></span>  
   
--   <span data-ttu-id="bb92a-108">Vložte kód do prázdný soubor kódu.</span><span class="sxs-lookup"><span data-stu-id="bb92a-108">Paste the code into an empty code file.</span></span> <span data-ttu-id="bb92a-109">Je nutné použít vlastní ovládací prvek na formuláři Windows, který obsahuje `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="bb92a-109">You must use the custom control on a Windows Form that contains a `Main` method.</span></span>  
+-   <span data-ttu-id="d9b02-108">Vložte kód do prázdný soubor kódu.</span><span class="sxs-lookup"><span data-stu-id="d9b02-108">Paste the code into an empty code file.</span></span> <span data-ttu-id="d9b02-109">Je nutné použít vlastní ovládací prvek na formuláři Windows, který obsahuje `Main` metoda.</span><span class="sxs-lookup"><span data-stu-id="d9b02-109">You must use the custom control on a Windows Form that contains a `Main` method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bb92a-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bb92a-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9b02-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d9b02-110">See also</span></span>
 
-- [<span data-ttu-id="bb92a-111">Postupy: Implementace rozhraní INotifyPropertyChanged</span><span class="sxs-lookup"><span data-stu-id="bb92a-111">How to: Implement the INotifyPropertyChanged Interface</span></span>](how-to-implement-the-inotifypropertychanged-interface.md)
-- [<span data-ttu-id="bb92a-112">Oznámení změn v datové vazbě rozhraní Windows Forms</span><span class="sxs-lookup"><span data-stu-id="bb92a-112">Change Notification in Windows Forms Data Binding</span></span>](change-notification-in-windows-forms-data-binding.md)
-- [<span data-ttu-id="bb92a-113">Windows Forms – datová vazba</span><span class="sxs-lookup"><span data-stu-id="bb92a-113">Windows Forms Data Binding</span></span>](windows-forms-data-binding.md)
+- [<span data-ttu-id="d9b02-111">Postupy: Implementace rozhraní INotifyPropertyChanged</span><span class="sxs-lookup"><span data-stu-id="d9b02-111">How to: Implement the INotifyPropertyChanged Interface</span></span>](how-to-implement-the-inotifypropertychanged-interface.md)
+- [<span data-ttu-id="d9b02-112">Oznámení změn v datové vazbě Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d9b02-112">Change Notification in Windows Forms Data Binding</span></span>](change-notification-in-windows-forms-data-binding.md)
+- [<span data-ttu-id="d9b02-113">Windows Forms – datová vazba</span><span class="sxs-lookup"><span data-stu-id="d9b02-113">Windows Forms Data Binding</span></span>](windows-forms-data-binding.md)
