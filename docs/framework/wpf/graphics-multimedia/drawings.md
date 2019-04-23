@@ -14,23 +14,23 @@ helpviewer_keywords:
 - DrawingGroup objects [WPF]
 ms.assetid: 6ab1fe6b-3eed-4432-a248-b487e7234e5b
 ms.openlocfilehash: 975fafebe255d5ff4848fde2c0b0ff08b68d4f7b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59206405"
 ---
-# <a name="drawings"></a><span data-ttu-id="fa46c-102">Kreslení</span><span class="sxs-lookup"><span data-stu-id="fa46c-102">Drawings</span></span>
-<xref:System.Windows.Media.Drawing> <span data-ttu-id="fa46c-103">objekty se používají k efektivnímu kreslení tvarů, Image nebo text.</span><span class="sxs-lookup"><span data-stu-id="fa46c-103">objects are used to efficiently draw shapes, images, or text.</span></span> <span data-ttu-id="fa46c-104">Kreslení se používají, když se Malování <xref:System.Windows.Media.DrawingBrush> nebo programování s <xref:System.Windows.Media.Visual> objekty.</span><span class="sxs-lookup"><span data-stu-id="fa46c-104">Drawings are used when painting with a <xref:System.Windows.Media.DrawingBrush> or programming with <xref:System.Windows.Media.Visual> objects.</span></span>  
+# <a name="drawings"></a><span data-ttu-id="73b85-102">Kreslení</span><span class="sxs-lookup"><span data-stu-id="73b85-102">Drawings</span></span>
+<span data-ttu-id="73b85-103"><xref:System.Windows.Media.Drawing> objekty se používají k efektivnímu kreslení tvarů, Image nebo text.</span><span class="sxs-lookup"><span data-stu-id="73b85-103"><xref:System.Windows.Media.Drawing> objects are used to efficiently draw shapes, images, or text.</span></span> <span data-ttu-id="73b85-104">Kreslení se používají, když se Malování <xref:System.Windows.Media.DrawingBrush> nebo programování s <xref:System.Windows.Media.Visual> objekty.</span><span class="sxs-lookup"><span data-stu-id="73b85-104">Drawings are used when painting with a <xref:System.Windows.Media.DrawingBrush> or programming with <xref:System.Windows.Media.Visual> objects.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="fa46c-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="fa46c-105">In This Section</span></span>  
- [<span data-ttu-id="fa46c-106">Přehled vykreslovaných objektů</span><span class="sxs-lookup"><span data-stu-id="fa46c-106">Drawing Objects Overview</span></span>](drawing-objects-overview.md)  
-  [<span data-ttu-id="fa46c-107">– postupy</span><span class="sxs-lookup"><span data-stu-id="fa46c-107">How-to Topics</span></span>](drawings-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="73b85-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="73b85-105">In This Section</span></span>  
+ [<span data-ttu-id="73b85-106">Přehled nakreslených objektů</span><span class="sxs-lookup"><span data-stu-id="73b85-106">Drawing Objects Overview</span></span>](drawing-objects-overview.md)  
+  [<span data-ttu-id="73b85-107">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="73b85-107">How-to Topics</span></span>](drawings-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="fa46c-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fa46c-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="73b85-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="73b85-108">See also</span></span>
 
 - <xref:System.Windows.Media.Drawing>
-- [<span data-ttu-id="fa46c-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="fa46c-109">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [<span data-ttu-id="fa46c-110">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="fa46c-110">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
-- [<span data-ttu-id="fa46c-111">Tvary a základní kresby v přehledu WPF</span><span class="sxs-lookup"><span data-stu-id="fa46c-111">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
-- [<span data-ttu-id="fa46c-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="fa46c-112">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="73b85-109">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="73b85-109">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [<span data-ttu-id="73b85-110">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="73b85-110">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="73b85-111">Přehled objektů Shape a základního kreslení ve WPF</span><span class="sxs-lookup"><span data-stu-id="73b85-111">Shapes and Basic Drawing in WPF Overview</span></span>](shapes-and-basic-drawing-in-wpf-overview.md)
+- [<span data-ttu-id="73b85-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="73b85-112">Graphics and Multimedia</span></span>](index.md)

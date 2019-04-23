@@ -17,29 +17,29 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 38de9fa878db18222d2666ba86420ca856e4b121
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59199112"
 ---
-# <a name="isymunmanagedbinder2-interface"></a><span data-ttu-id="8650e-102">ISymUnmanagedBinder2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8650e-102">ISymUnmanagedBinder2 Interface</span></span>
-<span data-ttu-id="8650e-103">Představuje vazač symbolů pro nespravovaný kód a rozšiřuje [isymunmanagedbinder –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8650e-103">Represents a symbol binder for unmanaged code, and extends the [ISymUnmanagedBinder](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md) interface.</span></span>  
+# <a name="isymunmanagedbinder2-interface"></a><span data-ttu-id="b5029-102">ISymUnmanagedBinder2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5029-102">ISymUnmanagedBinder2 Interface</span></span>
+<span data-ttu-id="b5029-103">Představuje vazač symbolů pro nespravovaný kód a rozšiřuje [isymunmanagedbinder –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="b5029-103">Represents a symbol binder for unmanaged code, and extends the [ISymUnmanagedBinder](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md) interface.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="8650e-104">To představuje bezpečnostní riziko pro otevření souboru databáze (PDB) programu z nedůvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="8650e-104">It is a security risk to open a program database (PDB) file from an untrusted source.</span></span>  
+>  <span data-ttu-id="b5029-104">To představuje bezpečnostní riziko pro otevření souboru databáze (PDB) programu z nedůvěryhodného zdroje.</span><span class="sxs-lookup"><span data-stu-id="b5029-104">It is a security risk to open a program database (PDB) file from an untrusted source.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="8650e-105">Metody</span><span class="sxs-lookup"><span data-stu-id="8650e-105">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="b5029-105">Metody</span><span class="sxs-lookup"><span data-stu-id="b5029-105">Methods</span></span>  
   
-|<span data-ttu-id="8650e-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="8650e-106">Method</span></span>|<span data-ttu-id="8650e-107">Popis</span><span class="sxs-lookup"><span data-stu-id="8650e-107">Description</span></span>|  
+|<span data-ttu-id="b5029-106">Metoda</span><span class="sxs-lookup"><span data-stu-id="b5029-106">Method</span></span>|<span data-ttu-id="b5029-107">Popis</span><span class="sxs-lookup"><span data-stu-id="b5029-107">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="8650e-108">GetReaderForFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="8650e-108">GetReaderForFile2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)|<span data-ttu-id="8650e-109">Rozhraní metadat a název souboru, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní, které budou číst symboly ladění, které jsou spojené s modulem.</span><span class="sxs-lookup"><span data-stu-id="8650e-109">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.</span></span> <span data-ttu-id="8650e-110">Poskytuje rozsáhlejší vyhledávání, než [isymunmanagedbinder::getreaderforfile –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="8650e-110">Provides a more extensive search than the [ISymUnmanagedBinder::GetReaderForFile](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) method.</span></span>|  
+|[<span data-ttu-id="b5029-108">GetReaderForFile2 – metoda</span><span class="sxs-lookup"><span data-stu-id="b5029-108">GetReaderForFile2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)|<span data-ttu-id="b5029-109">Rozhraní metadat a název souboru, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní, které budou číst symboly ladění, které jsou spojené s modulem.</span><span class="sxs-lookup"><span data-stu-id="b5029-109">Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.</span></span> <span data-ttu-id="b5029-110">Poskytuje rozsáhlejší vyhledávání, než [isymunmanagedbinder::getreaderforfile –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="b5029-110">Provides a more extensive search than the [ISymUnmanagedBinder::GetReaderForFile](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) method.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="8650e-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8650e-111">Requirements</span></span>  
- <span data-ttu-id="8650e-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="8650e-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b5029-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5029-111">Requirements</span></span>  
+ <span data-ttu-id="b5029-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="b5029-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8650e-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8650e-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b5029-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5029-113">See also</span></span>
 
-- [<span data-ttu-id="8650e-114">Rozhraní úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="8650e-114">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
-- [<span data-ttu-id="8650e-115">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8650e-115">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
-- [<span data-ttu-id="8650e-116">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8650e-116">ISymUnmanagedBinder3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)
+- [<span data-ttu-id="b5029-114">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="b5029-114">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="b5029-115">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5029-115">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
+- [<span data-ttu-id="b5029-116">ISymUnmanagedBinder3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5029-116">ISymUnmanagedBinder3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)
