@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 77aed78e7822e06b3b1e6c48b07790d93e09559c
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
-ms.translationtype: MT
+ms.openlocfilehash: 5ff883e541c614832286b4027bc1574952f8fd3d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612722"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979908"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 
@@ -34,7 +34,7 @@ Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty. 
 
 Hodnoty typových proměnných nesmí být `null` ve výchozím nastavení. Ale proměnné k odpovídající položce [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md) může být `null`.
 
-Každý hodnotový typ má implicitní výchozí konstruktor, který inicializuje výchozí hodnota tohoto typu. Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).
+Každý hodnotový typ má implicitní konstruktor bez parametrů, která inicializuje výchozí hodnota tohoto typu. Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).
 
 ## <a name="simple-types"></a>Jednoduché typy
 
@@ -67,7 +67,7 @@ int myInt;
 Nelze ji použít předtím, než ji inicializovat. Můžete inicializovat pomocí následujícího příkazu:
 
 ```csharp
-myInt = new int();  // Invoke default constructor for int type.
+myInt = new int();  // Invoke parameterless constructor for int type.
 ```
 
 Tento příkaz je ekvivalentem následujícího příkazu:
@@ -88,12 +88,12 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-Použití [nové](new.md) operátor volá výchozí konstruktor třídy určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu, výchozí konstruktor přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
+Použití [nové](new.md) operátor volá konstruktor určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu konstruktor bez parametrů přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
 
-Pomocí uživatelem definované typy [nové](new.md) k vyvolání výchozího konstruktoru. Například následující příkaz volá výchozí konstruktor třídy `Point` struktury:
+Pomocí uživatelem definované typy [nové](new.md) vyvolat konstruktor bez parametrů. Například následující příkaz volá konstruktor bez parametrů `Point` struktury:
 
 ```csharp
-Point p = new Point(); // Invoke default constructor for the struct.
+Point p = new Point(); // Invoke parameterless constructor for the struct.
 ```
 
 Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.

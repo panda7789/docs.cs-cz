@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6c1740df66ead271afa5f97dc125587810946bc6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235237"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59981604"
 ---
 ### <a name="flowdocument-may-show-an-extra-line-of-text"></a>FlowDocument můžou zobrazovat další řádek textu
 

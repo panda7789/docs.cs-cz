@@ -18,10 +18,10 @@ ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e2cb07389ad68985362993e76f82e58d2a59e237
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59178877"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
@@ -76,11 +76,11 @@ resgen filename.extension [outputDirectory]
 |`/define:` *symbol1*[, *symbol2*,...]|Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], podporuje podmíněnou kompilaci v založený na textu (.txt nebo .restext) soubory prostředků. Pokud *symbol* odpovídá symbolu zahrnutému ve vstupním textovém souboru v rámci `#ifdef` konstrukce, příslušný řetězcový prostředek jsou uvedeny v souboru .resources. Pokud vstupní textový soubor obsahuje `#if !` příkazu se symbolem nedefinovaným `/define` přepínače, příslušný řetězcový prostředek je součástí souboru prostředků.<br /><br /> `/define` Pokud se používá s netextovými soubory je ignorována. Rozlišují se malá a velká písmena.<br /><br /> Další informace o této možnosti najdete v tématu [Podmíněná kompilace prostředků](#Conditional) dále v tomto tématu.|  
 |`useSourcePath`|Určuje, že k vyhodnocení relativních cest k souborům má být použit aktuální adresář vstupního souboru.|  
 |`/compile`|Umožňuje zadat několik textových souborů nebo souborů .resx pro převod na několik souborů .resources jednou hromadnou operací. Pokud tuto možnost nezadáte, lze zadat pouze jeden argument vstupního souboru. Výstupní soubory jsou pojmenovány *filename*.resources.<br /><br /> Tento parametr nelze použít s `/str:` možnost.<br /><br /> Další informace o této možnosti najdete v tématu [kompilace nebo převod více souborů](#Multiple) dále v tomto tématu.|  
-|`/r:` `assembly`|Odkazuje na metadata z určeného sestavení. Používá se při převodu souborů .resx a umožňuje nástroji Resgen.exe serializovat a deserializovat prostředky objektů. Se podobá `/reference:` nebo `/r:` možnosti pro kompilátory jazyků C# a Visual Basic.|  
+|`/r:``assembly`|Odkazuje na metadata z určeného sestavení. Používá se při převodu souborů .resx a umožňuje nástroji Resgen.exe serializovat a deserializovat prostředky objektů. Se podobá `/reference:` nebo `/r:` možnosti pro kompilátory jazyků C# a Visual Basic.|  
 |`filename.extension`|Určuje název vstupního souboru, který má být převeden. Pokud používáte první, delší syntaxi příkazového řádku popsanou nad touto tabulkou `extension` musí být jedna z následujících akcí:<br /><br /> .txt nebo .restext<br /> Textový soubor, který má být převeden na soubor .resources nebo .resx. Textové soubory mohou obsahovat pouze řetězcové prostředky. Informace o formátu souborů, najdete v části "Prostředky v textových souborech" [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Soubor prostředků založený na jazyce XML, který má být převeden na soubor .resources nebo textový soubor (.txt nebo .restext).<br /><br /> .resources<br /> Binární soubor prostředků, který má být převeden na soubor .resx nebo textový soubor (.txt nebo .restext).<br /><br /> Pokud používáte druhou, kratší syntaxi příkazového řádku popsanou nad touto tabulkou `extension` musí být následující:<br /><br /> .exe nebo .dll<br /> Jehož řetězcové prostředky mají být extrahovány do souboru .resw pro použití při vývoji sestavení rozhraní .NET Framework (spustitelné nebo knihovna) [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.|  
 |`outputFilename.extension`|Určuje název a typ souboru prostředků, který má být vytvořen.<br /><br /> Při převodu ze souboru .txt, .restext nebo .resx na soubor .resources je tento argument nepovinný. Pokud nezadáte `outputFilename`, Resgen.exe připojí příponu .resources na vstup `filename` a zapíše soubor do adresáře, který obsahuje `filename,extension`.<br /><br /> `outputFilename.extension` Při převodu ze souboru .resources je povinný argument. Při převodu souboru .resources na soubor prostředků založený na jazyce XML zadejte název souboru s příponou .resx. Při převodu souboru .resources na textový soubor zadejte název souboru s příponou .txt nebo restext. Soubor .resources by měl být na soubor .txt převeden pouze v případě, že soubor .resources obsahuje výhradně řetězcové hodnoty.|  
 |`outputDirectory`|Pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, určuje adresář, ve kterém soubor .resw obsahující řetězcové prostředky v `filename.extension` budou zapsány. `outputDirectory` už musí existovat.|  
-|`/str:` `language[,namespace[,classname[,filename]]]`|Vytvoří soubor třídy prostředků se silnými typy v programovacím jazyce určeném `language` možnost. `language` se může skládat z jedné z následujících literálů:<br /><br /> -Pro jazyk C#: `c#`, `cs`, nebo `csharp`.<br />-Pro jazyk Visual Basic: `vb` nebo `visualbasic`.<br />-Pro jazyk VBScript: `vbs` nebo `vbscript`.<br />-Pro jazyk C++: `c++`, `mc`, nebo `cpp`.<br />-Pro jazyk JavaScript: `js`, `jscript`, nebo `javascript`.<br /><br /> `namespace` Určuje výchozí obor názvů projektu, `classname` Určuje název generované třídy a `filename` parametr určuje název souboru třídy.<br /><br /> `/str:` Možnost umožňuje pouze jednoho vstupního souboru, takže ho nejde použít s `/compile` možnost.<br /><br /> Pokud `namespace` je zadán, ale `classname` není, název třídy je odvozen z názvu výstupního souboru (například podtržítka jsou nahrazena tečkami). Prostředky se silnými typy možná důsledkem toho nebudou fungovat správně. Chcete-li se tomuto problému vyhnout, zadejte název třídy i název výstupního souboru.<br /><br /> Další informace o této možnosti najdete v tématu [generování silně typované třídy prostředků](#Strong) dále v tomto tématu.|  
+|`/str:``language[,namespace[,classname[,filename]]]`|Vytvoří soubor třídy prostředků se silnými typy v programovacím jazyce určeném `language` možnost. `language` se může skládat z jedné z následujících literálů:<br /><br /> -Pro jazyk C#: `c#`, `cs`, nebo `csharp`.<br />-Pro jazyk Visual Basic: `vb` nebo `visualbasic`.<br />-Pro jazyk VBScript: `vbs` nebo `vbscript`.<br />-Pro jazyk C++: `c++`, `mc`, nebo `cpp`.<br />-Pro jazyk JavaScript: `js`, `jscript`, nebo `javascript`.<br /><br /> `namespace` Určuje výchozí obor názvů projektu, `classname` Určuje název generované třídy a `filename` parametr určuje název souboru třídy.<br /><br /> `/str:` Možnost umožňuje pouze jednoho vstupního souboru, takže ho nejde použít s `/compile` možnost.<br /><br /> Pokud `namespace` je zadán, ale `classname` není, název třídy je odvozen z názvu výstupního souboru (například podtržítka jsou nahrazena tečkami). Prostředky se silnými typy možná důsledkem toho nebudou fungovat správně. Chcete-li se tomuto problému vyhnout, zadejte název třídy i název výstupního souboru.<br /><br /> Další informace o této možnosti najdete v tématu [generování silně typované třídy prostředků](#Strong) dále v tomto tématu.|  
 |`/publicClass`|Vytvoří třídu prostředků se silnými typy jako veřejnou třídu. Ve výchozím nastavení je třída prostředků `internal` v jazyce C# a `Friend` v jazyce Visual Basic.<br /><br /> Tato možnost se ignoruje, pokud `/str:` není použita možnost.|  
   
 ## <a name="resgenexe-and-resource-file-types"></a>Nástroj Resgen.exe a typy souborů prostředků  
@@ -293,18 +293,18 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
   
  Pokud `inputFilename` soubor .resources, Resgen.exe zkopíruje Pokud `outputFilename` je také soubor .resources. Pokud `outputFilename` je tento parametr vynechán, Resgen.exe přepíše `inputFilename` s identickým souborem .resources.  
   
- *jazyk*  
+ *Jazyk*  
  Jazyk, v němž má být vygenerován zdrojový kód pro třídu prostředků se silnými typy. Možné hodnoty jsou `cs`, `C#`, a `csharp` pro kód jazyka C#, `vb` a `visualbasic` pro kód jazyka Visual Basic, `vbs` a `vbscript` pro kód jazyka VBScript a `c++`, `mc`a `cpp` pro kód C++.  
   
- *– obor názvů*  
+ *namespace*  
  Obor názvů obsahující třídu prostředku se silnými typy. Soubor .resources a třída prostředků by měly mít stejný obor názvů. Informace o zadávání názvů v `outputFilename`, naleznete v tématu [kompilace prostředků do binárního souboru](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling). Pokud *obor názvů* je tento parametr vynechán, třída prostředků není obsažen v oboru názvů.  
   
- *Název třídy*  
+ *classname*  
  Název třídy prostředku se silnými typy. Tento parametr by měl odpovídat názvu kořenového souboru .resources. Pokud například nástroj Resgen.exe vygeneruje soubor .resources pojmenovaný MyCompany.Libraries.Strings.resources, název třídy prostředků silného typu je Strings. Pokud *classname* je tento parametr vynechán, generovaná třída odvozena od kořenového názvu `outputFilename`. Pokud `outputFilename` je tento parametr vynechán, generovaná třída odvozena od kořenového názvu `inputFilename`.  
   
  *ClassName* nesmí obsahovat neplatné znaky, jako například vložené mezery. Pokud *classname* obsahuje vložené mezery, nebo pokud *classname* je generována ve výchozím nastavení *inputFilename*, a *inputFilename* obsahuje vložené mezery, Resgen.exe nahradí všechny neplatné znaky podtržítkem (_).  
   
- *filename*  
+ *Název souboru*  
  Název souboru třídy.  
   
  `/publicclass`  
@@ -332,7 +332,7 @@ resgen StringResources.txt /str:vb,,StringResources
 ## <a name="see-also"></a>Viz také:
 
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
 - [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

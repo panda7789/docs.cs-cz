@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 7422267d6ce067ed30d0fbd4be8de2fd122b4a90
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 1f47459fc5002118d94cc8d389f35c18fa2c611a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200634"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979820"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 Při [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá konstruktoru. Konstruktory mají stejný název jako třídy nebo struktury a obvykle inicializují datové členy nového objektu.  
@@ -19,9 +19,9 @@ Při [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struk
   
  [!code-csharp[csProgGuideObjects#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#53)]  
   
- Je volána konstruktor, který nepřijímá žádné parametry *výchozí konstruktor*. Výchozí konstruktory jsou vyvolány při každém objektu je vytvořena instance s použitím `new` operátor a bez argumentů `new`. Další informace najdete v tématu [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+ Je volána konstruktor, který nepřijímá žádné parametry *konstruktor bez parametrů*. Výchozí konstruktory jsou vyvolány při každém objektu je vytvořena instance s použitím `new` operátor a bez argumentů `new`. Další informace najdete v tématu [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
   
- Pokud je třída [statické](../../../csharp/language-reference/keywords/static.md), třídy bez konstruktory jsou uvedeny výchozí veřejný konstruktor kompilátorem jazyka C#, chcete-li povolit vytváření instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Pokud je třída [statické](../../../csharp/language-reference/keywords/static.md), třídy bez konstruktory jsou uvedeny veřejný konstruktor bez parametrů podle C# kompilátoru Chcete-li povolit vytváření instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
  Třída může zabránit před tím, že konstruktor soukromý, následujícím způsobem:  
   
@@ -29,7 +29,7 @@ Při [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struk
   
  Další informace najdete v tématu [soukromé konstruktory](../../../csharp/programming-guide/classes-and-structs/private-constructors.md).  
   
- Konstruktory pro [struktura](../../../csharp/language-reference/keywords/struct.md) typy vypadat podobně jako konstruktor třídy, ale `structs` nemůžou obsahovat explicitní výchozí konstruktor, protože je automaticky zadáno kompilátorem. Tento konstruktor inicializuje každé pole v `struct` na výchozí hodnoty. Další informace najdete v tématu [výchozí hodnoty tabulky](../../../csharp/language-reference/keywords/default-values-table.md). Ale tato výchozí konstruktor je vyvolána pouze v případě `struct` je vytvořena instance s `new`. Například tento kód používá výchozí konstruktor pro <xref:System.Int32>, takže budete mít jistotu, že je inicializován na celé číslo:  
+ Konstruktory pro [struktura](../../../csharp/language-reference/keywords/struct.md) typy vypadat podobně jako konstruktor třídy, ale `structs` nemůžou obsahovat explicitní konstruktor bez parametrů, protože je automaticky zadáno kompilátorem. Tento konstruktor inicializuje každé pole v `struct` na výchozí hodnoty. Další informace najdete v tématu [výchozí hodnoty tabulky](../../../csharp/language-reference/keywords/default-values-table.md). Nicméně, tento konstruktor je vyvolána pouze v případě `struct` je vytvořena instance s `new`. Například tento kód používá konstruktor bez parametrů <xref:System.Int32>, takže budete mít jistotu, že je inicializován na celé číslo:  
   
 ```csharp  
 int i = new int();  
@@ -52,9 +52,9 @@ b = 33;      // Or assign it before using it.
 Console.WriteLine("{0}, {1}", a, b);  
 ```  
   
- Proto volání výchozího konstruktoru pro typ hodnoty se nevyžaduje.  
+ Proto volání konstruktoru bez parametrů typu hodnoty se nevyžaduje.  
   
- Obě třídy a `structs` můžete definovat konstruktory, které přijímají parametry. Konstruktory, které přijímají parametry musí být volána až `new` příkaz nebo [základní](../../../csharp/language-reference/keywords/base.md) příkazu. Třídy a `structs` můžete také definovat víc konstruktorů a ani je potřeba definovat výchozí konstruktor. Příklad:  
+ Obě třídy a `structs` můžete definovat konstruktory, které přijímají parametry. Konstruktory, které přijímají parametry musí být volána až `new` příkaz nebo [základní](../../../csharp/language-reference/keywords/base.md) příkazu. Třídy a `structs` můžete také definovat víc konstruktorů a ani je potřeba definovat konstruktor bez parametrů. Příklad:  
   
  [!code-csharp[csProgGuideObjects#54](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#54)]  
   
@@ -68,13 +68,13 @@ Console.WriteLine("{0}, {1}", a, b);
   
  V tomto příkladu je volána konstruktor základní třídy před provedením blok pro konstruktor. `base` – Klíčové slovo lze použít s nebo bez parametrů. Žádné parametry pro konstruktor může sloužit jako parametry pro `base`, nebo jako součást výrazu. Další informace najdete v tématu [základní](../../../csharp/language-reference/keywords/base.md).  
   
- V odvozené třídě, pokud není explicitně volána konstruktor základní třídy pomocí `base` – klíčové slovo, výchozí konstruktor se nevolá implicitně pokud existuje. To znamená, že následující deklarace konstruktoru se prakticky neliší:  
+ V odvozené třídě, pokud není explicitně volána konstruktor základní třídy pomocí `base` – klíčové slovo, konstruktor bez parametrů, pokud existuje, nazývá implicitně. To znamená, že následující deklarace konstruktoru se prakticky neliší:  
   
  [!code-csharp[csProgGuideObjects#58](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#58)]  
   
  [!code-csharp[csProgGuideObjects#57](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#57)]  
   
- Pokud základní třída neposkytuje výchozí konstruktor, odvozené třídy musí provést explicitní volání konstruktoru základní konstruktor pomocí `base`.  
+ Pokud základní třída se nebude poskytovat konstruktor bez parametrů, odvozené třídy musí provést explicitní volání konstruktoru základní konstruktor pomocí `base`.  
   
  Konstruktor může vyvolat jiný konstruktor ve stejném objektu pomocí [to](../../../csharp/language-reference/keywords/this.md) – klíčové slovo. Stejně jako `base`, `this` lze použít s nebo bez parametrů, a jsou k dispozici jako parametry pro všechny parametry v konstruktoru `this`, nebo jako součást výrazu. Například, druhý konstruktor v předchozím příkladu může být přepsán pomocí `this`:  
   

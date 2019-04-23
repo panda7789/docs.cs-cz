@@ -8,11 +8,11 @@ helpviewer_keywords:
 - coordinates [Windows Forms], Windows Forms
 ms.assetid: cc06e61f-43b6-4408-a676-2542dcfcd96e
 ms.openlocfilehash: 6feabadff17538f4a7368c348f7b72226e2d678e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59116130"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980652"
 ---
 # <a name="windows-forms-coordinates"></a>Windows Forms – souřadnice
 Systém souřadnic pro formulář Windows je založen na souřadnice zařízení a základní jednotka měření při kreslení v modelu Windows Forms je jednotka zařízení (obvykle pixelů). Body na obrazovce jsou popsány pomocí dvojice souřadnice x a y, s souřadnice x zvýšení souřadnice y zvýšení shora dolů a doprava. Umístění zdroje, vzhledem k obrazovce, se bude lišit v závislosti na tom, zda jsou určení souřadnice obrazovky nebo klienta.  

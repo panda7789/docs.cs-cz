@@ -4,12 +4,12 @@ description: Zjistěte, jak volat nativní funkce prostřednictvím P/Invoke v r
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 1a5f2f9d13429f84d5b5bb58d36f015004fb746b
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
+ms.openlocfilehash: d1da6be56e14f72e17cf8fc9ba343ce148fe0931
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59517860"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980522"
 ---
 # <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
@@ -18,16 +18,18 @@ P/Invoke je technologie, která umožňuje přístup ke strukturám, zpětná vo
 Začněme od Nejběžnějším příkladem a, který je volání nespravovaných funkcí ve spravovaném kódu. Pojďme zobrazit okno se zprávou z aplikace příkazového řádku:
 
 ```csharp
+using System;
 using System.Runtime.InteropServices;
 
-public class Program {
-
+public class Program
+{
     // Import user32.dll (containing the function we need) and define
     // the method corresponding to the native function.
     [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    public static extern int MessageBox(IntPtr hWnd, String text, String caption, int options);
+    public static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
 
-    public static void Main(string[] args) {
+    public static void Main(string[] args)
+    {
         // Invoke the function as a regular managed method.
         MessageBox(IntPtr.Zero, "Command-line message box", "Attention!", 0);
     }
@@ -48,14 +50,17 @@ Vzorek je podobný pro macOS. Název knihovny `DllImport` atributů je potřeba 
 using System;
 using System.Runtime.InteropServices;
 
-namespace PInvokeSamples {
-    public static class Program {
-
-        // Import the libSystem shared library and define the method corresponding to the native function.
+namespace PInvokeSamples
+{
+    public static class Program
+    {
+        // Import the libSystem shared library and define the method
+        // corresponding to the native function.
         [DllImport("libSystem.dylib")]
         private static extern int getpid();
 
-        public static void Main(string[] args){
+        public static void Main(string[] args)
+        {
             // Invoke the function and get the process ID.
             int pid = getpid();
             Console.WriteLine(pid);
@@ -70,14 +75,17 @@ Je to podobné v Linuxu. Název funkce je stejný, protože `getpid(2)` je stand
 using System;
 using System.Runtime.InteropServices;
 
-namespace PInvokeSamples {
-    public static class Program {
-
-        // Import the libc shared library and define the method corresponding to the native function.
+namespace PInvokeSamples
+{
+    public static class Program
+    {
+        // Import the libc shared library and define the method
+        // corresponding to the native function.
         [DllImport("libc.so.6")]
         private static extern int getpid();
 
-        public static void Main(string[] args){
+        public static void Main(string[] args)
+        {
             // Invoke the function and get the process ID.
             int pid = getpid();
             Console.WriteLine(pid);
@@ -96,10 +104,10 @@ Způsob, jak používat tuto funkci je podobný jako spravované do nativní pop
 using System;
 using System.Runtime.InteropServices;
 
-namespace ConsoleApplication1 {
-
-    class Program {
-
+namespace ConsoleApplication1
+{
+    class Program
+    {
         // Define a delegate that corresponds to the unmanaged function.
         delegate bool EnumWC(IntPtr hwnd, IntPtr lParam);
 
@@ -109,12 +117,14 @@ namespace ConsoleApplication1 {
         static extern int EnumWindows(EnumWC lpEnumFunc, IntPtr lParam);
 
         // Define the implementation of the delegate; here, we simply output the window handle.
-        static bool OutputWindow(IntPtr hwnd, IntPtr lParam) {
+        static bool OutputWindow(IntPtr hwnd, IntPtr lParam)
+        {
             Console.WriteLine(hwnd.ToInt64());
             return true;
         }
 
-        static void Main(string[] args) {
+        static void Main(string[] args)
+        {
             // Invoke the method; note the delegate as a first parameter.
             EnumWindows(OutputWindow, IntPtr.Zero);
         }
@@ -139,48 +149,52 @@ Níže jsou uvedeny příklady operačních systémů Linux a macOS. Pro ně pou
 using System;
 using System.Runtime.InteropServices;
 
-namespace PInvokeSamples {
-    public static class Program {
+namespace PInvokeSamples
+{
+    public static class Program
+    {
+        // Define a delegate that has the same signature as the native function.
+        delegate int DirClbk(string fName, StatClass stat, int typeFlag);
 
-            // Define a delegate that has the same signature as the native function.
-            delegate int DirClbk(string fName, StatClass stat, int typeFlag);
+        // Import the libc and define the method to represent the native function.
+        [DllImport("libc.so.6")]
+        static extern int ftw(string dirpath, DirClbk cl, int descriptors);
 
-            // Import the libc and define the method to represent the native function.
-            [DllImport("libc.so.6")]
-            static extern int ftw(string dirpath, DirClbk cl, int descriptors);
+        // Implement the above DirClbk delegate;
+        // this one just prints out the filename that is passed to it.
+        static int DisplayEntry(string fName, StatClass stat, int typeFlag)
+        {
+            Console.WriteLine(fName);
+            return 0;
+        }
 
-            // Implement the above DirClbk delegate;
-            // this one just prints out the filename that is passed to it.
-            static int DisplayEntry(string fName, StatClass stat, int typeFlag) {
-                    Console.WriteLine(fName);
-                    return 0;
-            }
-
-            public static void Main(string[] args){
-                    // Call the native function.
-                    // Note the second parameter which represents the delegate (callback).
-                    ftw(".", DisplayEntry, 10);
-            }
+        public static void Main(string[] args)
+        {
+            // Call the native function.
+            // Note the second parameter which represents the delegate (callback).
+            ftw(".", DisplayEntry, 10);
+        }
     }
 
     // The native callback takes a pointer to a struct. The below class
     // represents that struct in managed code. You can find more information
     // about this in the section on marshalling below.
     [StructLayout(LayoutKind.Sequential)]
-    public class StatClass {
-            public uint DeviceID;
-            public uint InodeNumber;
-            public uint Mode;
-            public uint HardLinks;
-            public uint UserID;
-            public uint GroupID;
-            public uint SpecialDeviceID;
-            public ulong Size;
-            public ulong BlockSize;
-            public uint Blocks;
-            public long TimeLastAccess;
-            public long TimeLastModification;
-            public long TimeLastStatusChange;
+    public class StatClass
+    {
+        public uint DeviceID;
+        public uint InodeNumber;
+        public uint Mode;
+        public uint HardLinks;
+        public uint UserID;
+        public uint GroupID;
+        public uint SpecialDeviceID;
+        public ulong Size;
+        public ulong BlockSize;
+        public uint Blocks;
+        public long TimeLastAccess;
+        public long TimeLastModification;
+        public long TimeLastStatusChange;
     }
 }
 ```
@@ -191,48 +205,52 @@ macOS příklad používá stejnou funkci, a jediným rozdílem je, že argument
 using System;
 using System.Runtime.InteropServices;
 
-namespace PInvokeSamples {
-        public static class Program {
+namespace PInvokeSamples
+{
+    public static class Program
+    {
+        // Define a delegate that has the same signature as the native function.
+        delegate int DirClbk(string fName, StatClass stat, int typeFlag);
 
-                // Define a delegate that has the same signature as the native function.
-                delegate int DirClbk(string fName, StatClass stat, int typeFlag);
+        // Import the libc and define the method to represent the native function.
+        [DllImport("libSystem.dylib")]
+        static extern int ftw(string dirpath, DirClbk cl, int descriptors);
 
-                // Import the libc and define the method to represent the native function.
-                [DllImport("libSystem.dylib")]
-                static extern int ftw(string dirpath, DirClbk cl, int descriptors);
-
-                // Implement the above DirClbk delegate;
-                // this one just prints out the filename that is passed to it.
-                static int DisplayEntry(string fName, StatClass stat, int typeFlag) {
-                        Console.WriteLine(fName);
-                        return 0;
-                }
-
-                public static void Main(string[] args){
-                        // Call the native function.
-                        // Note the second parameter which represents the delegate (callback).
-                        ftw(".", DisplayEntry, 10);
-                }
+        // Implement the above DirClbk delegate;
+        // this one just prints out the filename that is passed to it.
+        static int DisplayEntry(string fName, StatClass stat, int typeFlag)
+        {
+            Console.WriteLine(fName);
+            return 0;
         }
 
-        // The native callback takes a pointer to a struct. The below class
-        // represents that struct in managed code.
-        [StructLayout(LayoutKind.Sequential)]
-        public class StatClass {
-                public uint DeviceID;
-                public uint InodeNumber;
-                public uint Mode;
-                public uint HardLinks;
-                public uint UserID;
-                public uint GroupID;
-                public uint SpecialDeviceID;
-                public ulong Size;
-                public ulong BlockSize;
-                public uint Blocks;
-                public long TimeLastAccess;
-                public long TimeLastModification;
-                public long TimeLastStatusChange;
+        public static void Main(string[] args)
+        {
+            // Call the native function.
+            // Note the second parameter which represents the delegate (callback).
+            ftw(".", DisplayEntry, 10);
         }
+    }
+
+    // The native callback takes a pointer to a struct. The below class
+    // represents that struct in managed code.
+    [StructLayout(LayoutKind.Sequential)]
+    public class StatClass
+    {
+        public uint DeviceID;
+        public uint InodeNumber;
+        public uint Mode;
+        public uint HardLinks;
+        public uint UserID;
+        public uint GroupID;
+        public uint SpecialDeviceID;
+        public ulong Size;
+        public ulong BlockSize;
+        public uint Blocks;
+        public long TimeLastAccess;
+        public long TimeLastModification;
+        public long TimeLastStatusChange;
+    }
 }
 ```
 
@@ -240,6 +258,6 @@ I v předchozích příkladech záviset na parametrech a v obou případech jsou
 
 ## <a name="more-resources"></a>Další materiály
 
-*   [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní API Windows a postupu při jejich volání.
-*   [P/Invoke na webu MSDN](/cpp/dotnet/native-and-dotnet-interoperability)
-*   [Dokumentace mono na P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)
+- [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní API Windows a postupu při jejich volání.
+- [P/Invoke v C++vyhodnocovací](/cpp/dotnet/native-and-dotnet-interoperability)
+- [Dokumentace mono na P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)

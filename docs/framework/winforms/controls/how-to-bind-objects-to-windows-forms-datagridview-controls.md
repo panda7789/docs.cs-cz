@@ -10,10 +10,10 @@ helpviewer_keywords:
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
 ms.openlocfilehash: 02c4f94eddfcf782d7d2323787d9b6a9b18db2d5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59180255"
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView
@@ -34,4 +34,4 @@ Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů 
 
 - <xref:System.Windows.Forms.DataGridView>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Přístup k objektům připojeným k řádkům Windows Forms DataGridView](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)
+- [Postupy: Přístup k objektům Svázaným Windows Forms DataGridView řádků](how-to-access-objects-bound-to-windows-forms-datagridview-rows.md)

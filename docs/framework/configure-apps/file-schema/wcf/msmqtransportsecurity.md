@@ -3,10 +3,10 @@ title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
 ms.openlocfilehash: fece74e76f879eff51f154eab8c8edea2c27119e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59180125"
 ---
 # <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity>
@@ -49,7 +49,7 @@ Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<msmqIntegration>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqintegration.md)|Určuje nastavení pro interakci s řízení front zpráv (MSMQ) odesílatele a příjemce.|  
-|[\<msmqTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqtransport.md)|Určuje vlastnosti komunikaci služby Řízení front služby Windows Communication Foundation (WCF), který používá nativní protokol služby MSMQ.|  
+|[\<msmqTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqtransport.md)|Určuje vlastnosti komunikaci služby Řízení front služby Windows Communication Foundation (WCF), který používá nativní protokol služby MSMQ.|  
   
 ## <a name="remarks"></a>Poznámky  
  Další informace o zabezpečení přenosu, naleznete v tématu [zabezpečení přenosu](../../../../../docs/framework/wcf/feature-details/transport-security.md).  
@@ -63,7 +63,7 @@ Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.
 - [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
 - [Zabezpečení přenosu](../../../../../docs/framework/wcf/feature-details/transport-security.md)

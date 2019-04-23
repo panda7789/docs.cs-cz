@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ab2907b05bff409fed9a370d5cbebbf3d1575d2f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235360"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59981544"
 ---
 ### <a name="systemthreadingtaskstask-no-longer-throw-objectdisposedexception-after-object-is-disposed"></a>System.Threading.Tasks.Task již nezobrazují výjimku objectdisposedexception – po uvolnění objektu
 

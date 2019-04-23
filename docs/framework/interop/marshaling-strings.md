@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e21b078b-70fb-4905-be26-c097ab2433ff
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0db33d59d1fc1c19e07567108970db77059cebb7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.openlocfilehash: ab192f086e3e86a879d3478f2bf0d7084ae411b0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59223027"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980093"
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
 Zkopíruje řetězec parametrů, jejich konverze z formátu rozhraní .NET Framework (Unicode) na nespravované formátu (ANSI), v případě potřeby vyvolání platformy. Protože spravované řetězce jsou neměnné, vyvolání platformy nekopíruje je zpět z nespravované paměti pro spravované paměti při návratu funkce.  
@@ -32,14 +32,15 @@ Zkopíruje řetězec parametrů, jejich konverze z formátu rozhraní .NET Frame
 |Podle odkazu.|Předá řetězců jako vstup a výstup parametry s využitím <xref:System.Text.StringBuilder>.|[Vyrovnávací paměti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))|  
 |Ve struktuře podle hodnoty.|Předá řetězce ve struktuře, která je parametr In.|[Struktury](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))|  
 |Ve struktuře odkazem **(char\*)**.|Předá řetězce ve struktuře je vstupně-výstupní parametr. Nespravovaná funkce očekává ukazatel na znak vyrovnávací paměť a velikost vyrovnávací paměti je členem struktury.|[Řetězce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e765dyyy(v=vs.100))|  
-|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře je vstupně-výstupní parametr. Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[Osinfo –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Ve struktuře odkazem **(char[])**.|Předá řetězce ve struktuře je vstupně-výstupní parametr. Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
 |Ve třídě podle hodnoty **(char\*)**.|Předá řetězce do třídy (třídy je vstupně-výstupní parametr). Nespravovaná funkce očekává ukazatel do vyrovnávací paměti pro znaky.|[OpenFileDlg](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w5tyztk9(v=vs.100))|  
-|Ve třídě podle hodnoty **(char[])**.|Předá řetězce do třídy (třídy je vstupně-výstupní parametr). Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[Osinfo –](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
+|Ve třídě podle hodnoty **(char[])**.|Předá řetězce do třídy (třídy je vstupně-výstupní parametr). Nespravovaná funkce očekává vyrovnávací pamětí vloženého znaku.|[OSInfo](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|  
 |Jako pole řetězců podle hodnoty.|Je vytvořeno pole řetězců, který je předán podle hodnoty.|[Pole](marshaling-different-types-of-arrays.md)|  
 |Jako pole struktury, které obsahují řetězce podle hodnoty.|Vytvoří pole struktur, které obsahují řetězce a pole je předán podle hodnoty.|[Pole](marshaling-different-types-of-arrays.md)|  
   
 ## <a name="see-also"></a>Viz také:
 
+- [Výchozí zařazování pro řetězce](default-marshaling-for-strings.md)
 - [Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)
 - [Zařazování tříd, struktur a sjednocení](marshaling-classes-structures-and-unions.md)
 - [Zařazování různých typů polí](marshaling-different-types-of-arrays.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: 2a15fade1beb8f3da0d9b6f48a216dda81e669fd
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 7a99afa92c7b2cc19933eded8e06e6d8f2ce7562
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202688"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979365"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  
@@ -56,7 +56,7 @@ Výjimky jsou slouží k označení, že došlo k chybě při spuštění progra
 -   Nevytvářejte výjimky, které mohou být vyvolány v režimu ladění, ale ne ve verzi. K identifikaci chyby za běhu ve vývojové fázi, použijte kontrolní výraz ladění.  
   
 ## <a name="defining-exception-classes"></a>Definování třídy výjimek  
- Programy může vrátit třídu předdefinovaná výjimka <xref:System> oboru názvů (s výjimkou tam, kde si předtím poznamenali), nebo vytvořit vlastní výjimky třídy odvozené z <xref:System.Exception>. Odvozené třídy by měl definovat alespoň čtyři konstruktory: jeden výchozí konstruktor, ten, který nastaví vlastnost zprávy a ten, který nastaví i <xref:System.Exception.Message%2A> a <xref:System.Exception.InnerException%2A> vlastnosti. Čtvrtý konstruktor se používá k serializaci výjimku. Nové třídy výjimky by měly být serializovatelný. Příklad:  
+ Programy může vrátit třídu předdefinovaná výjimka <xref:System> oboru názvů (s výjimkou tam, kde si předtím poznamenali), nebo vytvořit vlastní výjimky třídy odvozené z <xref:System.Exception>. Odvozené třídy by měl definovat alespoň čtyři konstruktory: jeden konstruktor bez parametrů, ten, který nastaví vlastnost zprávy a ten, který nastaví i <xref:System.Exception.Message%2A> a <xref:System.Exception.InnerException%2A> vlastnosti. Čtvrtý konstruktor se používá k serializaci výjimku. Nové třídy výjimky by měly být serializovatelný. Příklad:  
   
  [!code-csharp[csProgGuideExceptions#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#15)]  
   

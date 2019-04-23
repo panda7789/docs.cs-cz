@@ -6,11 +6,11 @@ helpviewer_keywords:
 - My.User object
 ms.assetid: caa7462e-2149-4bdb-8850-802b80b93cbf
 ms.openlocfilehash: 7154b52f6bbd45756702deccbec3d8d45778b641
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58835086"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980132"
 ---
 # <a name="myuser-object"></a>My.User – objekt
 Poskytuje přístup k informacím o aktuálním uživateli.  

@@ -3,12 +3,12 @@ title: Struktury – průvodce v C#
 description: Další informace o typu Struktura a jak vytvořit
 ms.date: 10/12/2016
 ms.assetid: a7094b8c-7229-4b6f-82fc-824d0ea0ec40
-ms.openlocfilehash: 0db9ebca8a3b0be1d380128f7802e30a41c34a37
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6fcd30907880be9159b3cc2e3ab10659ddec248b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54506976"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979482"
 ---
 # <a name="structs"></a>Struktury
 A *struktura* je typ hodnoty. Když se vytvoří struktura, obsahuje proměnné, ke kterému je přiřazena struktura, obsahovat skutečná data. Když je struktura přiřazena nové proměnné, zkopíruje se. Nové proměnné a původní proměnné proto obsahují dvě oddělené kopie stejných dat. Změny provedené v jedné kopii neovlivní druhou kopii.
@@ -37,7 +37,7 @@ Většinu podle stejné syntaxe jako třídy, struktury sdílet, ačkoli struktu
   
 -   V deklaraci struktury nelze inicializovat pole, jestliže nejsou deklarovány jako `const` nebo `static`.  
   
--   Struktury nelze deklarovat výchozí konstruktor (konstruktor bez parametrů) nebo finalizační metodu.  
+-   Struktury nelze deklarovat konstruktor bez parametrů (konstruktor bez parametrů) nebo finalizační metodu.  
   
 -   Struktury se zkopírují na přiřazení. Když je struktura přiřazena nové proměnné, se data kopírují a jakékoli změny nová kopie nezmění data pro původní kopírování. To je důležité pamatovat při práci s kolekcemi typů hodnot, jako je například Dictionary < string, myStruct >.  
   

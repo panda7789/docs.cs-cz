@@ -2,12 +2,12 @@
 title: Tvar stromu příkazů
 ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-ms.openlocfilehash: aba5511b8baa395714bde315d9542932e854c98b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 08a67c8d181188cbc14c6f60876a7e26cd6de25a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378545"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980080"
 ---
 # <a name="the-shape-of-the-command-trees"></a>Tvar stromu příkazů
 
@@ -85,9 +85,9 @@ DbNewInstanceExpression může vyskytovat jenom v těchto dvou případů:
 
 - Jako vlastnost projekce DbProjectExpression.  Pokud se použije jako takové platí následující omezení:
 
-    - Typ výsledku musí být typu řádku.
+  - Typ výsledku musí být typu řádku.
 
-    - Každá z jejích argumentů je výraz, který vytváří výsledek s primitivního typu. Obvykle každý argument je skalární výraz, stejně jako PropertyExpression DbVariableReferenceExpression, volání funkce nebo pro aritmetické výpočtu DbPropertyExpression přes DbVariableReferenceExpression nebo volání funkce . Ale představující poddotaz skalární výraz může vzniknout také v seznamu argumentů DbNewInstanceExpression. Strom výrazů, který představuje poddotazu, která vrací přesně jeden řádek a jeden sloupec primitivní typ objektu kořenovou DbElementExpression je výraz, který reprezentuje skalární poddotazu
+  - Každá z jejích argumentů je výraz, který vytváří výsledek s primitivního typu. Obvykle každý argument je skalární výraz, stejně jako PropertyExpression DbVariableReferenceExpression, volání funkce nebo pro aritmetické výpočtu DbPropertyExpression přes DbVariableReferenceExpression nebo volání funkce . Ale představující poddotaz skalární výraz může vzniknout také v seznamu argumentů DbNewInstanceExpression. Strom výrazů, který představuje poddotazu, která vrací přesně jeden řádek a jeden sloupec primitivní typ objektu kořenovou DbElementExpression je výraz, který reprezentuje skalární poddotazu
 
 - S návratovým typem kolekce v takovém případě definuje novou kolekci výrazů zadané jako argumenty.
 

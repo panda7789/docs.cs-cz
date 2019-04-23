@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
 ms.openlocfilehash: 3bbb2e046054e35cf01fe223318a3bf560ef7253
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59180723"
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu ADO.NET
@@ -33,7 +33,7 @@ Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí ná
 
   - [EntityClient](#entityclient) (`System.Data.EntityClient`)
 
-- [Technologie LINQ to SQL](#linq-to-sql)
+- [LINQ to SQL](#linq-to-sql)
 
 ## <a name="adonet-data-provider-examples"></a>Příklady zprostředkovatele dat ADO.NET
 Následující příklady kódu ukazují, jak načíst data z databáze pomocí zprostředkovatele dat ADO.NET. Vrácená data v `DataReader`. Další informace najdete v tématu [načítání dat pomocí čtečky dat](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md).

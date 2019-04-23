@@ -5,10 +5,10 @@ ms.assetid: d0fbbf61-71c6-4fb1-8c9f-d619ca5d7d68
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 08c219dd033b39fc07159875b184cdf70e3aa3ed
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59181516"
 ---
 # <a name="isymunmanagedwriter5maptokentosourcespan-method"></a>ISymUnmanagedWriter5::MapTokenToSourceSpan – metoda

@@ -5,11 +5,11 @@ author: guardrex
 ms.date: 06/12/2017
 ms.custom: seodec18
 ms.openlocfilehash: d99cabf15be63593b272474867359324a5892b04
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59300876"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59980405"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 

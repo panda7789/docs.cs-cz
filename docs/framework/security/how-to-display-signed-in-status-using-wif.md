@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
 ms.openlocfilehash: b07a8930255786686fb1e587b2a29bbc708eff63
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59311029"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979846"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Postupy: Zobrazení stavu přihlášení pomocí WIF
 ## <a name="applies-to"></a>Platí pro  

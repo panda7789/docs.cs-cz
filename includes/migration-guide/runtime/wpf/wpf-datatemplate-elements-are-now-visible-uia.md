@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 51691ced3f05201f784ccdeffbc130e34748b7c1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235286"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59981543"
 ---
 ### <a name="wpf-datatemplate-elements-are-now-visible-to-uia"></a>Jsou nyní viditelné pro UIA elementů WPF DataTemplate
 

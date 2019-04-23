@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID59
 ms.assetid: 0926a3a4-177b-4452-9b33-d8a01e24cc21
 ms.openlocfilehash: 1bc75303bcc2f46e54c06e89347da28997e59786
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59324172"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979733"
 ---
 # <a name="bad-record-length"></a>Chybná délka záznamu
 Mezi možné příčiny této chyby patří:  

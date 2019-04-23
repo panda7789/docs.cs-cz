@@ -3,10 +3,10 @@ title: ServiceDescription and WSDL Reference
 ms.date: 03/30/2017
 ms.assetid: eedc025d-abd9-46b1-bf3b-61d2d5c95fd6
 ms.openlocfilehash: 6690bea3d3df0f39a5581c3a6c14723c0f30f40c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59182881"
 ---
 # <a name="servicedescription-and-wsdl-reference"></a>ServiceDescription and WSDL Reference
@@ -113,7 +113,7 @@ Toto téma popisuje, jak Windows Communication Foundation (WCF) mapuje dokumenty
 |`ProtectionLevel`|Kontrolní výrazy ochrany v zásadách zabezpečení připojené k `wsdl:message` definice pro tuto zprávu.|  
 |`Body`|Text zprávy pro zprávu.|  
 |`Headers`|Záhlaví zprávy.|  
-|`ContractDescription.Name`,  `OperationContract.Name`|Při exportu, použít k odvození `wsdl:message` /@name hodnotu.|  
+|`ContractDescription.Name`, `OperationContract.Name`|Při exportu, použít k odvození `wsdl:message` /@name hodnotu.|  
   
 #### <a name="message-body"></a>Text zprávy  
  A `MessageBodyDescription` instance se mapuje `wsdl:message` / `wsdl:part` definice těla zprávy. Tělo zprávy může být zabaleny nebo úplné.  

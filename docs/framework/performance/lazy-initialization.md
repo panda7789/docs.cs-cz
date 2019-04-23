@@ -10,10 +10,10 @@ ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce217e2ed8e542ad0f7122970655aa32a353f51a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59182296"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
@@ -75,7 +75,7 @@ ms.locfileid: "59182296"
   
  Některé <xref:System.Lazy%601> mají konstruktory <xref:System.Threading.LazyThreadSafetyMode> parametr s názvem `mode`. Tyto konstruktory zadat režim zabezpečení další vlákna. Následující tabulka ukazuje, jak bezpečnost vlákna <xref:System.Lazy%601> je objekt ovlivněn parametry konstruktoru, které určují bezpečný přístup z více vláken. Každý konstruktor má nejvýše jeden takový parametr.  
   
-|Zabezpečení vlákna objektu|`LazyThreadSafetyMode` `mode` parametr|Logická `isThreadSafe` parametr|Žádné parametry bezpečný přístup z více vláken|  
+|Zabezpečení vlákna objektu|`LazyThreadSafetyMode` `mode` Parametr|Logická `isThreadSafe` parametr|Žádné parametry bezpečný přístup z více vláken|  
 |---------------------------------|---------------------------------------------|--------------------------------------|---------------------------------|  
 |Plně bezpečné pro vlákna; pouze jedno vlákno současně pokusí o inicializaci hodnoty.|<xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication>|`true`|Ano.|  
 |Není bezpečné pro vlákna.|<xref:System.Threading.LazyThreadSafetyMode.None>|`false`|Není k dispozici.|  

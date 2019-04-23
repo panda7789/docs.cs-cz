@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 69b25db88c7580787bbb47fb0902b6bb072f8dde
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235373"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59981535"
 ---
 ### <a name="assemblies-compiled-with-regexcompiletoassembly-breaks-between-40-and-45"></a>Sestavení zkompilovaná Regex.CompileToAssembly zalomení mezi 4.0 a 4.5
 

@@ -3,12 +3,12 @@ title: Práce s jazykem LINQ
 description: V tomto kurzu se naučíte, jak vygenerovat pořadí s dotazy LINQ, Zapsat metody pro použití v dotazech LINQ a rozlišovat mezi nemůžou dočkat, až a opožděné vyhodnocení.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: cfb4f53f47cc316ad6f1ee2772af27af5aee4d00
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: d6dbe158c5f9b474dbd2cc61982ab8e23e584ec7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58815580"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979677"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 
@@ -340,9 +340,9 @@ Kromě LINQ jste se dozvěděli něco o použití magicians techniku pro triky k
 
 Další informace o LINQ naleznete v tématu:
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
-    - [Úvod do jazyka LINQ](../programming-guide/concepts/linq/introduction-to-linq.md)
-    - [Začínáme s dotazy LINQ vC#](../programming-guide/concepts/linq/getting-started-with-linq.md)
-        - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
-        - [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
-        - [Syntaxe využívající dotazy a syntaxe využívající metody v technologii LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
-        - [Funkce C# podporující LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
+  - [Úvod do jazyka LINQ](../programming-guide/concepts/linq/introduction-to-linq.md)
+  - [Začínáme s dotazy LINQ vC#](../programming-guide/concepts/linq/getting-started-with-linq.md)
+    - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
+    - [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
+    - [Syntaxe využívající dotazy a syntaxe využívající metody v technologii LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
+    - [Funkce C# podporující LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)

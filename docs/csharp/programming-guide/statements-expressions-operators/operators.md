@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: 0b2af8c41bc6411d2665d2cf37bd48040fc8d8dc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
+ms.openlocfilehash: 109298a7945a6b76b35970b7b9c42e159bad8f90
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59307454"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979378"
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 
@@ -64,7 +64,7 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |[+](../../../csharp/language-reference/operators/addition-operator.md)x|Identita|  
 |[-](../../../csharp/language-reference/operators/subtraction-operator.md)x|Negace|  
 |[\!](../../../csharp/language-reference/operators/boolean-logical-operators.md#logical-negation-operator-)x|Logická negace|  
-|[~](../../../csharp/language-reference/operators/bitwise-complement-operator.md)x|Bitová negace.|  
+|[~](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#bitwise-complement-operator-)x|Bitová negace.|  
 |[++](../../../csharp/language-reference/operators/arithmetic-operators.md#increment-operator-)x|Preinkrementace|  
 |[--](../../../csharp/language-reference/operators/arithmetic-operators.md#decrement-operator---)x|Predekrementace|  
 |[(T)](../../../csharp/language-reference/operators/invocation-operator.md)x|Explicitní převod x na typ T|  
@@ -86,12 +86,12 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
   
  **Operátory posunutí**  
   
-|Výraz|Popis|  
-|----------------|-----------------|  
-|x [<\<](../../../csharp/language-reference/operators/left-shift-operator.md) y|Posun doleva|  
-|x [>>](../../../csharp/language-reference/operators/right-shift-operator.md) y|Posun doprava|  
+|Výraz|Popis|
+|----------------|-----------------|
+|x [<\<](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#left-shift-operator-) y|Posun doleva|
+|x [>>](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#right-shift-operator-) y|Posun doprava|
   
- **Relační operátory a operátory typu**  
+ **Relační operátory a operátory typu**  
   
 |Výraz|Popis|  
 |----------------|-----------------|  
@@ -109,25 +109,25 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |x [==](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-) y|Rovno|  
 |x [! =](../../../csharp/language-reference/operators/equality-operators.md#inequality-operator-) y|Nerovná se|  
   
- **Logické, podmiňovací a nulové operátory**  
+ **Logické, Podmiňovací a nulové operátory**  
   
-|Kategorie|Výraz|Popis|  
-|--------------|----------------|-----------------|  
-|Logický operátor AND|x [&](../../../csharp/language-reference/operators/and-operator.md) y|Bitový operátor AND celého čísla, logická hodnota operátoru AND|  
-|Logický operátor XOR|x [^](../../../csharp/language-reference/operators/xor-operator.md) y|Bitové operace XOR celého čísla, logická logický operátor XOR|  
-|Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Celé číslo bitového nebo logické logický operátor OR|  
-|Podmiňovací operátor AND|x [&&](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
-|Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
-|Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  
-|Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|  
+|Kategorie|Výraz|Popis|
+|--------------|----------------|-----------------|
+|Logický operátor AND|`x & y`|[Bitový operátor AND celého čísla](../../language-reference/operators/bitwise-and-shift-operators.md#logical-and-operator-), [logická logický operátor AND](../../language-reference/operators/boolean-logical-operators.md#logical-and-operator-)|
+|Logický operátor XOR|`x ^ y`|[Bitový operátor XOR celého čísla](../../language-reference/operators/bitwise-and-shift-operators.md#logical-exclusive-or-operator-), [logická logický operátor XOR](../../language-reference/operators/boolean-logical-operators.md#logical-exclusive-or-operator-)|
+|Logický operátor OR|`x | y`|[Bitový operátor OR celého čísla](../../language-reference/operators/bitwise-and-shift-operators.md#logical-or-operator-), [logická logický operátor OR](../../language-reference/operators/boolean-logical-operators.md#logical-or-operator-)|
+|Podmiňovací operátor AND|x [&&](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-and-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|
+|Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/boolean-logical-operators.md#conditional-logical-or-operator-) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|
+|Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|
+|Podmiňovací operátor|x [?](../../../csharp/language-reference/operators/conditional-operator.md) y : z|Vyhodnotí y, pokud x má hodnotu true; vyhodnotí z, pokud x má hodnotu false|
   
- **Operátory přiřazení a anonymní operátory**  
+ **Přiřazení a anonymní operátory**  
   
-|Výraz|Popis|  
-|----------------|-----------------|  
-|[=](../../../csharp/language-reference/operators/assignment-operator.md)|Přiřazení|  
-|x op= y|Složené přiřazení. Podporuje tyto operátory: [ += ](../../../csharp/language-reference/operators/addition-assignment-operator.md), [ -= ](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [ *= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ /= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ %= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment) , [&=](../../../csharp/language-reference/operators/and-assignment-operator.md), [&#124;=](../../../csharp/language-reference/operators/or-assignment-operator.md), [^=](../../../csharp/language-reference/operators/xor-assignment-operator.md), [<\<=](../../../csharp/language-reference/operators/left-shift-assignment-operator.md), [>>=](../../../csharp/language-reference/operators/right-shift-assignment-operator.md)|  
-|(T x) [=>](../../../csharp/language-reference/operators/lambda-operator.md) y|Anonymní funkce (výraz lambda)|  
+|Výraz|Popis|
+|----------------|-----------------|
+|[=](../../../csharp/language-reference/operators/assignment-operator.md)|Přiřazení|
+|x op= y|Složené přiřazení. Podporuje tyto operátory: [ += ](../../../csharp/language-reference/operators/addition-assignment-operator.md), [ -= ](../../../csharp/language-reference/operators/subtraction-assignment-operator.md), [ *= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ /= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment), [ %= ](../../../csharp/language-reference/operators/arithmetic-operators.md#compound-assignment) , [&=](../../../csharp/language-reference/operators/boolean-logical-operators.md#compound-assignment), [&#124;=](../../../csharp/language-reference/operators/boolean-logical-operators.md#compound-assignment), [^=](../../../csharp/language-reference/operators/boolean-logical-operators.md#compound-assignment), [<\<=](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#compound-assignment), [>>=](../../../csharp/language-reference/operators/bitwise-and-shift-operators.md#compound-assignment)|
+|(T x) [=>](../../../csharp/language-reference/operators/lambda-operator.md) y|Anonymní funkce (výraz lambda)|
   
 ## <a name="associativity"></a>Asociativita
 
@@ -177,5 +177,5 @@ a = (b = c);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)

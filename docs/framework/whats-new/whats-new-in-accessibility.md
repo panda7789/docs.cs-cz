@@ -1,7 +1,7 @@
 ---
 title: Co je nového v usnadnění přístupu v rozhraní .NET Framework
 ms.custom: updateeachrelease
-ms.date: 04/10/2018
+ms.date: 04/18/2019
 dev_langs:
 - csharp
 - vb
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59fe1a5492b34d2aef88e81b86307498e3a5dc2c
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: afd4b77529f64852e77926b7fecc0e15033e7735
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612287"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979976"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Co je nového v usnadnění přístupu v rozhraní .NET Framework
 
@@ -22,16 +22,17 @@ Rozhraní .NET Framework, zaměřuje na zpřístupnění aplikace více uživate
 
 ## <a name="accessibility-switches"></a>Usnadnění přepínače
 
-Můžete nakonfigurovat aplikaci tak, aby přihlašují funkce pro usnadnění přístupu, pokud cílí na rozhraní .NET Framework 4.7 nebo starší verzi, ale běží na rozhraní .NET Framework 4.7.1 nebo novější. Můžete také konfigurovat aplikace pro použití funkce starší verze (a ne Využijte výhod funkce pro usnadnění přístupu), pokud je zaměřena rozhraní .NET Framework 4.7.1 nebo novější. Každá verze rozhraní .NET Framework, která zahrnuje funkce pro usnadnění přístupu má specifické pro verzi usnadnění přepínač, který přidáte do [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md) oddílu konfiguračního souboru aplikace. Tady jsou podporované přepínače:
+Můžete nakonfigurovat aplikaci tak, aby přihlašují funkce pro usnadnění přístupu, pokud cílí na .NET Framework 4.7 nebo starší verzi, ale běží na rozhraní .NET Framework 4.7.1 nebo novější. Můžete také konfigurovat aplikace pro použití funkce starší verze (a ne Využijte výhod funkce pro usnadnění přístupu), pokud se zaměřuje na rozhraní .NET Framework 4.7.1 nebo novější. Každá verze rozhraní .NET Framework, která zahrnuje funkce pro usnadnění přístupu má specifické pro verzi usnadnění přepínač, který přidáte do [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md) oddílu konfiguračního souboru aplikace. Tady jsou podporované přepínače:
 
 |Version|Přepínač|
 |---|---|
 |.NET Framework 4.7.1|"Switch.UseLegacyAccessibilityFeatures"|
 |.NET Framework 4.7.2|"Switch.UseLegacyAccessibilityFeatures.2"|
+|.NET Framework 4.8|"Switch.UseLegacyAccessibilityFeatures.3"|
 
 ### <a name="taking-advantage-of-accessibility-enhancements"></a>Využití výhod vylepšení přístupnosti
 
-Nové funkce pro usnadnění přístupu se ve výchozím nastavení pro aplikace, které jsou cíleny rozhraní .NET Framework 4.7.1 povolená nebo novější. Kromě toho aplikace, které cílí na starší verzi rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.7.1 nebo později se můžou rozhodnout ze starší verze usnadnění chování (a tím využít výhod vylepšení přístupnosti) přidáním přepínače [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md) oddílu konfiguračního souboru aplikace a nastavení jejich hodnoty na `false`. Následující ukazuje, jak můžete vyjádřit výslovný souhlas vylepšení přístupnosti představena v rozhraní .NET Framework 4.7.1:
+Nové funkce pro usnadnění přístupu se ve výchozím nastavení pro aplikace, které jsou cíleny na rozhraní .NET Framework 4.7.1 povolená nebo novější. Kromě toho aplikace, které cílí na starší verzi rozhraní .NET Framework, ale jsou spuštěny v rozhraní .NET Framework 4.7.1 nebo později se můžou rozhodnout ze starší verze usnadnění chování (a tím využít výhod vylepšení přístupnosti) tak, že přidáte přepínače [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md) oddílu konfiguračního souboru aplikace a nastavení jejich hodnoty na `false`. Následující ukazuje, jak můžete vyjádřit výslovný souhlas vylepšení přístupnosti zavedena v rozhraní .NET Framework 4.7.1:
 
 ```xml
 <runtime>
@@ -49,6 +50,15 @@ Pokud budete chtít povolit funkce usnadnění v novější verzi rozhraní .NET
 </runtime>
 ```
 
+Vaše aplikace využívat vylepšení přístupnosti v rozhraní .NET Framework 4.7.1 4.7.2 a 4.8 konfigurace vyžaduje následující [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) element:
+
+```xml
+<runtime>
+    <!-- AppContextSwitchOverrides value attribute is in the form of 'key1=true|false;key2=true|false  -->
+    <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3" />
+</runtime>
+```
+
 ### <a name="restoring-legacy-behavior"></a>Obnovit starší chování
 
 Aplikací s cílovou verzí rozhraní .NET Framework 4.7.1 počínaje může zakázat funkce pro usnadnění přístupu přidáním přepínače [ `<AppContextSwitchOverrides>` ](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) prvek [ `<runtime>` ](~/docs/framework/configure-apps/file-schema/runtime/index.md) část konfigurační soubor aplikace a nastavení jejich hodnoty na `true`. Například následující konfigurace výslovný představena v rozhraní .NET Framework 4.7.2 funkce pro usnadnění přístupu:
@@ -60,9 +70,260 @@ Aplikací s cílovou verzí rozhraní .NET Framework 4.7.1 počínaje může zak
 </runtime>
 ```
 
-## <a name="whats-new-in-accessibility-in-the-net-framework-472"></a>Co je nového v usnadnění přístupu v rozhraní .NET Framework 4.7.2
+## <a name="whats-new-in-accessibility-in-net-framework-48"></a>Co je nového v usnadnění v rozhraní .NET Framework 4.8
 
-Rozhraní .NET Framework 4.7.2 obsahuje nové funkce pro usnadnění přístupu v následujících oblastech:
+4.8 rozhraní .NET framework zahrnuje nové funkce pro usnadnění přístupu v následujících oblastech:
+
+- [Windows Forms](#winforms48)
+
+- [Windows Presentation Foundation (WPF)](#wpf48)
+
+- [Návrháře pracovních postupů Windows Workflow Foundation (WF)](#wf48)
+
+<a name="winforms48" />
+
+### <a name="windows-forms"></a>Windows Forms
+
+Windows Forms v rozhraní .NET Framework 4.8, přidává podporu pro LiveRegions a oznámení události pro mnoho běžně používaných ovládacích prvků. Taky přidává podporu pro popisy tlačítek, když uživatel přejde k ovládacímu prvku pomocí klávesnice.
+
+**Podpora LiveRegions UIA v popiscích a StatusStrips**
+
+UIA LiveRegions umožňují vývojářům aplikací oznámit čtečky obrazovky změny textu v ovládacím prvku, který se nachází mimo umístění, kde uživatel pracuje. To je užitečné, například <xref:System.Windows.Forms.StatusStrip> ovládací prvek, který se zobrazuje stav připojení. Pokud připojení se ukončí a změní stav, vývojář může být vhodné upozornit čtečka obrazovky.
+
+Od verze rozhraní .NET Framework 4.8, Windows Forms implementuje UIA LiveRegions pro obě <xref:System.Windows.Forms.Label> a <xref:System.Windows.Forms.StatusStrip> ovládací prvky. Například následující kód používá LiveRegion v <xref:System.Windows.Forms.Label> ovládací prvek s názvem `label1`:
+
+```csharp
+public Form1()
+{
+   InitializeComponent();
+   label1.AutomationLiveSetting = AutomationLiveSetting.Polite;
+}
+
+…
+Label1.Text = “Ready!”;
+```
+
+Program Předčítání oznamuje bez ohledu na to, kde uživatel pracuje s aplikací "Připraveno".
+
+Můžete také implementovat vaše <xref:System.Windows.Forms.UserControl> jako LiveRegion:
+
+```csharp
+using System;
+using System.Windows.Forms;
+using System.Windows.Forms.Automation;
+
+namespace WindowsFormsApplication
+{
+   public partial class UserControl1 : UserControl, IAutomationLiveRegion
+   {
+      public UserControl1()
+      {
+         InitializeComponent();
+      }
+
+      public AutomationLiveSetting AutomationLiveSetting { get; set; }
+      private AutomationLiveSetting IAutomationLiveRegion.GetLiveSetting()
+      {
+         return this.AutomationLiveSetting;
+      }
+
+      protected override void OnTextChanged(EventArgs e)
+      {
+         base.OnTextChanged(e);
+         AutomationNotifications.UiaRaiseLiveRegionChangedEvent(this.AccessibilityObject);
+      }
+   }
+}
+```
+
+**Oznámení události modelu UIA**
+
+UIA oznámení události, zavedená ve Windows 10 Fall Creators Update, umožňuje aplikaci, aby se vyvolala událost UIA, které vede k Předčítání jednoduše provedení na základě textu oznámení zadejte s událostí, aniž byste museli mít odpovídající ovládací prvek v uživatelském rozhraní. V některých scénářích je to jednoduchý způsob, jak výrazně zlepšit dostupnost vaší aplikace. V může rovněž hodit oznámení o průběhu nějaký proces, který může trvat dlouhou dobu. Další informace o událostech UIA oznámení, naleznete v tématu [vaši desktopovou aplikaci využít novou událost oznámení uživatelského rozhraní?](https://blogs.msdn.microsoft.com/winuiautomation/2017/11/08/can-your-desktop-app-leverage-the-new-uia-notification-event-in-order-to-have-narrator-say-exactly-what-your-customers-need/).
+
+V následujícím příkladu vyvolává [událost oznámení](xref:System.Windows.Forms.AccessibleObject.RaiseAutomationNotification%2A):
+
+```csharp
+MethodInfo raiseMethod = typeof(AccessibleObject).GetMethod("RaiseAutomationNotification");
+if (raiseMethod != null) {
+   raiseMethod.Invoke(progressBar1.AccessibilityObject, new object[3] {/*Other*/ 4, /*All*/ 2, "The progress is 50%." });
+}
+```
+
+**Popisy tlačítek na klávesnici přístup**
+
+V aplikacích, které jsou cíleny na rozhraní .NET Framework 4.7.2 a předchozími verzemi, ovládací prvek [popisek](xref:System.Windows.Forms.ToolTip) pouze se dá spouštět na pop up přesunutím ukazatele myši do ovládacího prvku. Od verze rozhraní .NET Framework 4.8, můžete uživatele klávesnice ovládacího prvku pomocí klávesy Tab nebo klávesy se šipkami, s nebo bez něj modifikační klávesy se zaměříte aktivovat ovládací prvek tooltip. Toto vylepšení přístupnosti konkrétní vyžaduje další [přepínač AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md):
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+   <startup>
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1"/>
+   </startup>
+   <runtime>
+      <!-- AppContextSwitchOverrides values are in the form of 'key1=true|false;key2=true|false  -->
+      <!-- Please note that disabling Switch.UseLegacyAccessibilityFeatures, Switch.UseLegacyAccessibilityFeatures.2 and Switch.UseLegacyAccessibilityFeatures.3 is required to disable Switch.System.Windows.Forms.UseLegacyToolTipDisplay -->
+      <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false;Switch.System.Windows.Forms.UseLegacyToolTipDisplay=false"/>
+   </runtime>
+</configuration>
+```
+
+Následující obrázek znázorňuje popis tlačítka, když uživatel vybral nějaké tlačítko pomocí klávesnice.
+
+![Popis tlačítka, když uživatel přejde na tlačítka pomocí klávesnice](media/tooltip.png)
+
+<a name="wpf48" />
+
+### <a name="windows-presentation-foundation-wpf"></a>Windows Presentation Foundation (WPF)
+
+Od verze rozhraní .NET Framework 4.8, WPF obsahuje několik vylepšení přístupnosti.
+
+**Programy pro čtení obrazovky obrazovky už oznamujeme prvky s sbalené nebo skrytý viditelnost**
+
+Prvky s sbaleném nebo skrytý viditelností jsou už jsme oznámili čtečka obrazovky. Uživatelská rozhraní, které obsahují prvky s viditelnost <xref:System.Windows.Visibility.Collapsed?displayProperty=nameWithType> nebo <xref:System.Windows.Visibility.Hidden?displayProperty=nameWithType> může být neuvede nepravdivý pomocí čtečky obrazovky pokud jejich oznámení uživateli. Od verze rozhraní .NET Framework 4.8, WPF již obsahuje sbalený nebo skrytý prvky v ovládacím zobrazení stromu vlastnosti UIAutomation tak čtečky obrazovky můžete oznamujeme už tyto prvky.
+
+**Vlastnost SelectionTextBrush pro použití s doplněk pro úpravy na základě výběru textu**
+
+V rozhraní .NET Framework 4.7.2 přidány WPF umožňuje nakreslit <xref:System.Windows.Controls.TextBox> a <xref:System.Windows.Controls.PasswordBox> výběr textu bez použití vrstvy pro úpravy. Barva popředí vybraného textu v tomto scénáři byl určený <xref:System.Windows.SystemColors.HighlightTextBrush?displayProperty=nameWithType>.
+
+Rozhraní .NET framework 4.8 přidá nová vlastnost `SelectionTextBrush`, který umožňuje vývojářům vybrat konkrétní štětec vybraný text při použití jiných doplněk pro úpravy na základě výběru textu. Tato vlastnost funguje pouze na <xref:System.Windows.Controls.Primitives.TextBoxBase>-odvozené ovládací prvky a <xref:System.Windows.Controls.PasswordBox> ovládacího prvku v aplikaci WPF se výběr nezaložené doplněk pro úpravy textu povoleno. Nelze použít u <xref:System.Windows.Controls.RichTextBox> ovládacího prvku. Pokud není povolen výběr nezaložené doplněk pro úpravy textu, tato vlastnost se ignoruje.
+
+Tuto vlastnost používat, jednoduše ho přidejte do kódu XAML a použijte příslušné štětce nebo vazby. Výsledný text výběru vypadá takto:
+
+![Popis tlačítka, když uživatel přejde na tlačítka pomocí klávesnice](media/selectiontextbrush-property.png)
+
+Můžete kombinovat používání `SelectionBrush` a `SelectionTextBrush` vlastnosti, které chcete generovat žádné na pozadí a popředí barva kombinaci, která uznáte za vhodné.
+
+**Podpora pro vlastnost vlastnosti UIAutomation ControllerFor**
+
+Pro vlastnosti UIAutomation `ControllerFor` vlastnost vrací pole Pohyb mezi elementy automatizace, které jsou manipulovat automatizace elementu, který podporuje tuto vlastnost. Tato vlastnost se obvykle používá pro automatické návrhy usnadnění přístupu. `ControllerFor` používá se při automatizaci prvek má vliv na jeden nebo více segmentů aplikace uživatelského rozhraní nebo plochy. V opačném případě se těžko přidružit dopad operace ovládací prvky uživatelského rozhraní. Tato funkce přidává možnost zadat hodnotu pro ovládací prvky `ControllerFor` vlastnost.
+
+Rozhraní .NET framework 4.8 přidá novou virtuální metodou, <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType>. K zadání hodnoty pro `ControllerFor` vlastnost, jednoduše přepsat tuto metodu a vrátí `List<AutomationPeer>` pro ovládací prvky se manipulovat situace <xref:System.Windows.Automation.Peers.AutomationPeer>:
+
+```csharp
+public class AutoSuggestTextBox: TextBox
+{
+   protected override AutomationPeer OnCreateAutomationPeer()
+   {
+      return new AutoSuggestTextBoxAutomationPeer(this);
+   }
+
+   public ListBox SuggestionListBox;
+}
+
+internal class AutoSuggestTextBoxAutomationPeer : TextBoxAutomationPeer
+{
+   public AutoSuggestTextBoxAutomationPeer(AutoSuggestTextBox owner) : base(owner)
+   {
+   }
+
+   protected override List<AutomationPeer> GetControlledPeersCore()
+   {
+      List<AutomationPeer> controlledPeers = new List<AutomationPeer>();
+      AutoSuggestTextBox owner = Owner as AutoSuggestTextBox;
+      controlledPeers.Add(UIElementAutomationPeer.CreatePeerForElement(owner.SuggestionListBox));
+      return controlledPeers;
+   }
+}
+```
+
+**Popisy tlačítek na klávesnici přístup**
+
+Popisy tlačítek v rozhraní .NET Framework 4.7.2 a dřívějších verzích, zobrazují jenom v případě, že uživatel najede myší na ovládací prvek myší do. V rozhraní .NET Framework 4.8 také zobrazit popisy tlačítek na fokus klávesnice i pomocí klávesové zkratky.
+
+Pokud chcete tuto funkci povolit, aplikace musí cílit na .NET Framework 4.8 nebo vyjádřit výslovný souhlas s použitím `Switch.UseLegacyAccessibilityFeatures.3` a `Switch.UseLegacyToolTipDisplay` [AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepínače. Následuje ukázkový soubor konfigurace aplikace:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+   <startup>
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+   </startup>
+   <runtime>
+      <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false;Switch.UseLegacyToolTipDisplay=false" />
+   </runtime>
+</configuration>
+```
+
+Po povolení všechny ovládací prvky, které obsahují popis ji zobrazit, když ovládací prvek dostane fokus klávesnice. Popisek je možné zavřít v čase nebo při změně fokusu klávesnice. Uživatelé můžou taky zavřít popis ručně pomocí nové klávesové zkratky, Ctrl + Shift + F10. Jakmile se zavře popis tlačítka se může zobrazovat znovu pomocí stejné klávesové zkratky.
+
+> [!NOTE]
+> [Popisy tlačítek pásu karet] (xref:System.Windows.Controls.Ribbon.RibbonToolTips > na <xref:System.Windows.Controls.Ribbon.Ribbon> ovládací prvky se nezobrazí na fokus klávesnice, zobrazí pouze pomocí klávesové zkratky.
+
+**Přidání podpory pro SizeOfSet a vlastnosti PositionInSet UIAutomation vlastnosti**
+
+Windows 10 zavedené dvě nové vlastnosti vlastnosti UIAutomation `SizeOfSet` a `PositionInSet`, které se aplikace používají k popisu počet položek v objektu set. Vlastnosti UIAutomation klientské aplikace jako čtečky obrazovky můžete dotazovat aplikace pro tyto vlastnosti a oznamujeme přesnou reprezentací uživatelského rozhraní aplikace.
+
+Od verze rozhraní .NET Framework 4.8, WPF zpřístupňuje tyto dvě vlastnosti do vlastnosti UIAutomation v aplikaci WPF. Můžete to provést dvěma způsoby:
+
+- Pomocí vlastnosti závislosti.
+
+   WPF přidá dva nové vlastnosti závislosti <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> a <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Vývojáři mohou využít k nastavení jejich hodnot XAML:
+
+   ```xaml
+   <Button AutomationProperties.SizeOfSet="3"
+     AutomationProperties.PositionInSet="1">Button 1</Button>
+
+   <Button AutomationProperties.SizeOfSet="3"
+     AutomationProperties.PositionInSet="2">Button 2</Button>
+
+   <Button AutomationProperties.SizeOfSet="3"
+     AutomationProperties.PositionInSet="3">Button 3</Button>
+   ```
+
+- Tak, že přepíšete AutomationPeer virtuální metody.
+
+   <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> a <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> virtuální metody byl přidán do třídy AutomationPeer. Vývojář můžete zadat hodnoty pro `SizeOfSet` a `PositionInSet` tak, že přepíšete těchto metod, jak je znázorněno v následujícím příkladu:
+
+   ```csharp
+   public class MyButtonAutomationPeer : ButtonAutomationPeer
+   {
+      protected override int GetSizeOfSetCore()
+      {
+         // Call into your own logic to provide a value for SizeOfSet
+         return CalculateSizeOfSet();
+      }
+
+      protected override int GetPositionInSetCore()
+      {
+         // Call into your own logic to provide a value for PositionInSet
+         return CalculatePositionInSet();
+      }
+   }
+   ```
+
+Kromě toho položky v <xref:System.Windows.Controls.ItemsControl> instancí zadejte hodnotu pro tyto vlastnosti automaticky bez další akce od vývojáře. Pokud <xref:System.Windows.Controls.ItemsControl> je seskupeny, kolekci skupin je reprezentována jako sada a každá skupina se přitom počítá jako samostatné sady s každou položku v rámci této skupiny poskytování jeho pozice v této skupině, jakož i velikost skupiny. Automatické hodnoty nejsou ovlivněny virtualizace. I v případě, že není realizované položku, se stále počítá směrem k celkové velikosti sady a má vliv na pozici v sadě položek na stejné úrovni.
+
+Automatické hodnoty jsou zobrazeny pouze, pokud aplikace cílí na .NET Framework 4.8. Pro aplikace, které jsou cíleny na starší verzi rozhraní .NET Framework, můžete nastavit `Switch.UseLegacyAccessibilityFeatures.3` [přepínač AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md), jak je znázorněno v následujícím souboru App.config:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+   <startup>
+      <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+   </startup>
+   <runtime>
+      <AppContextSwitchOverrides value="Switch.UseLegacyAccessibilityFeatures=false;Switch.UseLegacyAccessibilityFeatures.2=false;Switch.UseLegacyAccessibilityFeatures.3=false" />
+   </runtime>
+</configuration>
+```
+
+<a name="wf48" />
+
+### <a name="windows-workflow-foundation-wf-workflow-designer"></a>Návrháře pracovních postupů Windows Workflow Foundation (WF)
+
+Návrhář pracovního postupu obsahuje následující změny v rozhraní .NET Framework 4.8:
+
+- Uživatele, kteří používají Narrator, se zobrazí vylepšení v popiscích případu FlowSwitch.
+
+- Uživatele, kteří používají Předčítání uvidí vylepšení v popisu tlačítka.
+
+- Vylepšení v zobrazení návrháře pracovních postupů a jeho ovládacích prvků, jako je lepší kontrastní poměr mezi elementy a snadněji postřehnutelné zaškrtávacími políčky použitých pro elementy fokus uvidí uživatelé, kteří se rozhodnou vysoký kontrast – motivy.
+
+Pokud vaše aplikace cílí na rozhraní .NET Framework 4.7.2 nebo starší verzi, můžete se rozhodnout do těchto změn tak, že nastavíte `Switch.UseLegacyAccessibilityFeatures.3` [přepínač AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) k `false` v konfiguračním souboru aplikace. Další informace najdete v tématu [využívat vylepšené přístupnosti](#taking-advantage-of-accessibility-enhancements) části v tomto článku.
+
+## <a name="whats-new-in-accessibility-in-net-framework-472"></a>Co je nového v usnadnění v rozhraní .NET Framework 4.7.2
+
+Rozhraní .NET framework 4.7.2 zahrnuje nové funkce pro usnadnění přístupu v následujících oblastech:
 
 - [Windows Forms](#winforms472)
 
@@ -138,9 +399,9 @@ Pro ovládací prvek WinForms je hostován v aplikaci WPF v rozhraní .NET Frame
 
 Automatizované aplikace, které spoléhají na fokus nikdy uvození WinForms vrstvy, ale už nemusí fungovat podle očekávání.
 
-## <a name="whats-new-in-accessibility-in-the-net-framework-471"></a>Co je nového v usnadnění přístupu v rozhraní .NET Framework 4.7.1
+## <a name="whats-new-in-accessibility-in-net-framework-471"></a>Co je nového v usnadnění v rozhraní .NET Framework 4.7.1
 
-Rozhraní .NET Framework 4.7.1 obsahuje nové funkce pro usnadnění přístupu v následujících oblastech:
+Rozhraní .NET framework 4.7.1 zahrnuje nové funkce pro usnadnění přístupu v následujících oblastech:
 
 - [Windows Presentation Foundation (WPF)](#wpf471)
 
@@ -162,7 +423,7 @@ Pokud jsou povolené vylepšení přístupnosti, rozhraní .NET Framework 4.7.1 
 
 - V rozhraní .NET Framework 4.7 a předchozími verzemi <xref:System.Windows.Controls.Expander> ovládací prvky byly oznamovaný čtečkami obrazovky jako tlačítka. Od verze rozhraní .NET Framework 4.7.1, jejich správně oznámení jako rozšíření/sbalitelné skupiny.
 
-- V rozhraní .NET Framework 4.7 a předchozími verzemi <xref:System.Windows.Controls.DataGridCell> ovládací prvky byly oznamovaný čtečkami obrazovky jako "vlastní". Od verze rozhraní .NET Framework 4.7.1, jejich nyní správně oznámení jako buňka datové mřížky (lokalizované).
+- V rozhraní .NET Framework 4.7 a předchozími verzemi <xref:System.Windows.Controls.DataGridCell> ovládací prvky byly oznamovaný čtečkami obrazovky jako "vlastní". Od verze rozhraní .NET Framework 4.7.1, že jsou nyní správně uvolněné jako buňka datové mřížky (lokalizované).
 
 - Od verze rozhraní .NET Framework 4.7.1, čtečky obrazovky oznamujeme název upravitelné <xref:System.Windows.Controls.ComboBox>.
 
