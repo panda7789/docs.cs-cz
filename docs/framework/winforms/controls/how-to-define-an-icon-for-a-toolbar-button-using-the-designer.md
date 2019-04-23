@@ -10,10 +10,10 @@ helpviewer_keywords:
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: d848f38e-67f2-49d4-8e88-01c845c06c02
 ms.openlocfilehash: 19d0b284238ed662b25627d6077c1ebe6ecc6e86
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59323704"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Postupy: Definování ikony pro tlačítko ToolBar pomocí Návrháře
@@ -44,6 +44,6 @@ ms.locfileid: "59323704"
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ToolBar>
-- [Postupy: Spouštění událostí nabídky pro tlačítka ToolBar](how-to-trigger-menu-events-for-toolbar-buttons.md)
-- [ToolBar – ovládací prvek](toolbar-control-windows-forms.md)
+- [Postupy: Aktivační události nabídky pro tlačítka panelu nástrojů](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Ovládací prvek ToolBar](toolbar-control-windows-forms.md)
 - [Komponenta ImageList](imagelist-component-windows-forms.md)

@@ -5,10 +5,10 @@ helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
 ms.openlocfilehash: 75e60a3a9b39c0dd63a24a1e71c4823e7cb0bd74
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322833"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms
@@ -230,7 +230,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 4. Přidejte následující <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> ovládací prvky do formuláře.  
   
-    |Name|Text|  
+    |Název|Text|  
     |----------|----------|  
     |groupBox1|Barva pozadí|  
     |groupBox2|Barva popředí|  
@@ -242,7 +242,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 5. Přidejte následující <xref:System.Windows.Forms.RadioButton?displayProperty=nameWithType> ovládacích prvků <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType> ovládacích prvků.  
   
-    |GroupBox|Name|Text|  
+    |GroupBox|Název|Text|  
     |--------------|----------|----------|  
     |groupBox1|radioBackgroundOriginal|Původní|  
     |groupBox1|radioBackgroundLightGreen|Světle zelená|  
@@ -263,7 +263,7 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
   
 6. Přidejte následující <xref:System.Windows.Forms.Label?displayProperty=nameWithType> ovládací prvky na poslední <xref:System.Windows.Forms.GroupBox?displayProperty=nameWithType>. Tyto ovládací prvky zobrazení dat vrácených [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] složeného ovládacího prvku.  
   
-    |GroupBox|Name|Text|  
+    |GroupBox|Název|Text|  
     |--------------|----------|----------|  
     |groupBox7|lblName|Jméno:|  
     |groupBox7|lblAddress|Poštovní adresa:|  
@@ -326,6 +326,6 @@ Následující obrázek ukazuje složeného ovládacího prvku WPF hostované v 
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování složeného ovládacího prvku Windows Forms ve WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návod: Hostování složeného ovládacího Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku 3D WPF ve Windows Forms](walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms.md)

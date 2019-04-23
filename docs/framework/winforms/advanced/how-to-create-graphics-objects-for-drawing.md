@@ -11,10 +11,10 @@ helpviewer_keywords:
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
 ms.openlocfilehash: 79eae4d37c056fc95ac73c78e00dd1a2b68bcd24
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59324198"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
@@ -165,14 +165,14 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
     |K vykreslení|Další informace naleznete v tématu|  
     |---------------|---------|  
-    |řádky|[Postupy: Kreslení čáry na formuláři Windows](how-to-draw-a-line-on-a-windows-form.md)|  
+    |řádky|[Postupy: Nakreslit čáru na formuláři Windows](how-to-draw-a-line-on-a-windows-form.md)|  
     |Obrazce|[Postupy: Kreslení obrazce s obrysem](how-to-draw-an-outlined-shape.md)|  
-    |Text|[Postupy: Kreslení textu na formuláři Windows](how-to-draw-text-on-a-windows-form.md)|  
-    |Obrázky|[Postupy: Vykreslení obrázků pomocí GDI+](how-to-render-images-with-gdi.md)|  
+    |Text|[Postupy: Vykreslení textu ve formuláři Windows](how-to-draw-text-on-a-windows-form.md)|  
+    |Obrázky|[Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
-- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Čáry, křivky a obrazce](lines-curves-and-shapes.md)
-- [Postupy: Vykreslení obrázků pomocí GDI+](how-to-render-images-with-gdi.md)
+- [Postupy: Vykreslení obrázků pomocí GDI +](how-to-render-images-with-gdi.md)

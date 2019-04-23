@@ -13,10 +13,10 @@ helpviewer_keywords:
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
 ms.openlocfilehash: 24a7ae3b8f3400beeaedb20ea6352ea44bdb7597
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59324315"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
@@ -88,9 +88,9 @@ Public strMsg As String
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)

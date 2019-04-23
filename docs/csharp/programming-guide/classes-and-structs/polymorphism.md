@@ -7,10 +7,10 @@ helpviewer_keywords:
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
 ms.openlocfilehash: 9bb87115f4649a890d1fb2aab1595c3b6848bc74
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322079"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
@@ -97,7 +97,7 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
 - [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
 - [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)

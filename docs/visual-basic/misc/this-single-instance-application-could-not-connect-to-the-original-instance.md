@@ -5,10 +5,10 @@ f1_keywords:
 - vbrAppModel_SingleInstanceCantConnect
 ms.assetid: 7c2c0cee-02a1-4157-be03-39d18e18408f
 ms.openlocfilehash: 7ffa9b185e16cfdf8223ce84e77d1a0e1fa67f65
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322651"
 ---
 # <a name="this-single-instance-application-could-not-connect-to-the-original-instance"></a>Nelze se připojit k původní instanci této aplikace s jedinou instancí

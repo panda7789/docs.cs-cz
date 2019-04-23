@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
 ms.openlocfilehash: 16c06ddade79c2b3a48401f5620431e46e18f5ef
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59323242"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
@@ -201,6 +201,6 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Poradce při potížích](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)
+- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Odstraňování potíží](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)
 - [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

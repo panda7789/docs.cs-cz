@@ -3,10 +3,10 @@ title: 'Postupy: Načítání metadat a implementace kompatibilní služby'
 ms.date: 03/30/2017
 ms.assetid: f6f3a2b9-c8aa-4b0b-832c-ec2927bf1163
 ms.openlocfilehash: edf8fe2f174202d19b075ec218f059ea9b988843
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322664"
 ---
 # <a name="how-to-retrieve-metadata-and-implement-a-compliant-service"></a>Postupy: Načítání metadat a implementace kompatibilní služby
@@ -61,4 +61,4 @@ Stejné osobě často není navrhování a implementaci služby. V prostředích
   
 ## <a name="see-also"></a>Viz také:
 
-- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

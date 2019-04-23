@@ -3,10 +3,10 @@ title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
 ms.openlocfilehash: 5f8d734738606ada2db6db7f3c8e6c08ca57a543
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59323743"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)

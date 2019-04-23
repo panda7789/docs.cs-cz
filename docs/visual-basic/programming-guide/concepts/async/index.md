@@ -3,10 +3,10 @@ title: Asynchronní programování pomocí modifikátoru Async a operátoru Awai
 ms.date: 07/20/2015
 ms.assetid: bd7e462b-583b-4395-9c36-45aa9e61072c
 ms.openlocfilehash: 8593275371fcd97db2357211c3e221839b878527
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59324718"
 ---
 # <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)
@@ -23,7 +23,7 @@ Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zl
   
 |Oblast aplikace|Podpora rozhraní API, která obsahují asynchronní metody|  
 |----------------------|------------------------------------------------|  
-|Webový přístup|<xref:System.Net.Http.HttpClient>,  <xref:Windows.Web.Syndication.SyndicationClient>|  
+|Webový přístup|<xref:System.Net.Http.HttpClient>, <xref:Windows.Web.Syndication.SyndicationClient>|  
 |Práce se soubory|<xref:Windows.Storage.StorageFile>, <xref:System.IO.StreamWriter>, <xref:System.IO.StreamReader>, <xref:System.Xml.XmlReader>|  
 |Práce s obrázky|<xref:Windows.Media.Capture.MediaCapture>, <xref:Windows.Graphics.Imaging.BitmapEncoder>, <xref:Windows.Graphics.Imaging.BitmapDecoder>|  
 |Programování WCF|[Synchronní a asynchronní operace](../../../../framework/wcf/synchronous-and-asynchronous-operations.md)|  
@@ -164,7 +164,7 @@ Dim urlContents As String = Await client.GetStringAsync()
   
 -   [Async](../../../../visual-basic/language-reference/modifiers/async.md)  
   
--   [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)  
+-   [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)  
   
 ## <a name="BKMK_ReturnTypesandParameters"></a> Typy vrácených hodnot a parametrů  
  Při programování rozhraní .NET Framework asynchronní metoda obvykle vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. V asynchronní metodě `Await` operátor je použít pro úlohu, která je vrácena z volání do jiné asynchronní metody.  
@@ -240,7 +240,7 @@ Await Task_MethodAsync()
 |[Postupy: Rozšíření návodu asynchronních úloh pomocí metody Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|Přidá <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> k předchozímu návodu. Použití `WhenAll` zahájí všechna stahování současně.||  
 |[Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Ukazuje, jak spustit několik úloh současně.|[Ukázka asynchronní metody: Paralelní provádění vícenásobných webových](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|  
 |[Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)|Znázorňuje typy, které může vrátit asynchronní metoda, a vysvětluje, kdy se každý typ hodí.||  
-|[Tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)|Podrobně sleduje tok řízení pomocí sledu očekávání výrazů v asynchronním programu.|[Ukázka asynchronní metody: Řízení toku v programech s modifikátorem Async](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|  
+|[Tok řízení v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)|Podrobně sleduje tok řízení pomocí sledu očekávání výrazů v asynchronním programu.|[Ukázka asynchronní metody: Tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|  
 |[Doladění aplikace s modifikátorem Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)|Ukazuje, jak přidat k asynchronnímu řešení následující funkce:<br /><br /> -   [Zrušení asynchronní úlohy nebo seznamu úkolů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)<br />-   [Zrušení asynchronních úloh po určitou dobu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-async-tasks-after-a-period-of-time.md)<br />-   [Zrušení zbývajících asynchronních úloh po jedné z nich kompletní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md)<br />-   [Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Ukázka asynchronní metody: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|  
 |[Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/handling-reentrancy-in-async-apps.md)|Ukazuje, jak zpracovat případy, ve kterých je aktivní asynchronní operace restartována po jejím spuštění.||  
 |[WhenAny: Přemostění rozhraní .NET Framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|Ukazuje, jak propojit typy úloh v rozhraní .NET Framework a iasyncoperations v rámci [!INCLUDE[wrt](~/includes/wrt-md.md)] tak, aby vám <xref:System.Threading.Tasks.Task.WhenAny%2A> s [!INCLUDE[wrt](~/includes/wrt-md.md)] metoda.|[Ukázka asynchronní metody: Přemostění mezi rozhraním .NET a prostředí Windows Runtime (AsTask a WhenAny)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|  
@@ -315,5 +315,5 @@ End Class
   
 ## <a name="see-also"></a>Viz také:
 
-- [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)
+- [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)

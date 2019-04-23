@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: c2209fdb-70ef-4dea-8bb8-097fe96f5563
 ms.openlocfilehash: a428f54c3834ccdf6a0c7a5bfce8307172724524
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322885"
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>Postupy: Provedení dotazu, který vrátí komplexní typy

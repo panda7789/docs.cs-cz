@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
 ms.openlocfilehash: 8459ee7fec6d761161a721c88ccdc88e513fc95f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59324380"
 ---
 # <a name="constructor-name-cannot-call-itself"></a>Konstruktor '\<name >' nemůže volat sám sebe
@@ -29,4 +29,4 @@ A `Sub New` postupu ve třídě nebo struktuře zavolá sama sebe.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Doba života objektu: Vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [Doba života objektu: Způsob vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

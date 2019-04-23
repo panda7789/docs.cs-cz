@@ -3,10 +3,10 @@ title: 'Přenos: Interoperabilita TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
 ms.openlocfilehash: cc483e44e625534d87ea94e84fc984f0aff880f9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59324211"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Interoperabilita TCP ve WSE 3.0
@@ -23,7 +23,7 @@ Ukázka přenosu interoperabilita TCP ve WSE 3.0 ukazuje, jak implementovat dupl
 5. Přidejte prvek vazby, který přidá vlastní přenosu do zásobníku kanálu. Další informace najdete v tématu [přidání prvku vazby].  
   
 ## <a name="creating-iduplexsessionchannel"></a>Vytváření IDuplexSessionChannel  
- Prvním krokem při psaní přenosu Interoperability TCP ve WSE 3.0, je vytvořit implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> nahoře <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` Je odvozen od <xref:System.ServiceModel.Channels.ChannelBase>. Logiku odesílání zprávy se skládá ze dvou hlavních částí: (1) do bajtů a (2) rámců těchto bajtů a poslat mu na lince kódování zprávy.  
+ Prvním krokem při psaní přenosu Interoperability TCP ve WSE 3.0, je vytvořit implementace <xref:System.ServiceModel.Channels.IDuplexSessionChannel> nahoře <xref:System.Net.Sockets.Socket>. `WseTcpDuplexSessionChannel` je odvozen od <xref:System.ServiceModel.Channels.ChannelBase>. Logiku odesílání zprávy se skládá ze dvou hlavních částí: (1) do bajtů a (2) rámců těchto bajtů a poslat mu na lince kódování zprávy.  
   
  `ArraySegment<byte> encodedBytes = EncodeMessage(message);`  
   

@@ -15,10 +15,10 @@ helpviewer_keywords:
 - StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
 ms.openlocfilehash: 105a44f90c1c654a21fc8920a149ad63b2dabc99
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59323847"
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
@@ -100,5 +100,5 @@ Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykres
   
 ## <a name="see-also"></a>Viz také:
 
-- [Upřesnění zpracování inkoustu](advanced-ink-handling.md)
+- [Pokročilé zpracování rukopisu](advanced-ink-handling.md)
 - [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

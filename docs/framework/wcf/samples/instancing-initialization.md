@@ -3,10 +3,10 @@ title: Inicializace vytváření instancí
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
 ms.openlocfilehash: 1414908025416f4cdd6e5b51c052799631ab52cd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59322183"
 ---
 # <a name="instancing-initialization"></a>Inicializace vytváření instancí
@@ -154,7 +154,7 @@ if (activeObjectsCount == 0)
   
  Tato ukázka používá vlastní atribut. Když <xref:System.ServiceModel.ServiceHost> je vytvořen, zkontroluje atributy použité v definici služby typu a přidá do kolekce chování popis služby k dispozici chování.  
   
- <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní obsahuje tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A>`,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A>`,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány aplikací WCF při <xref:System.ServiceModel.ServiceHost> je inicializována. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> je volána. To umožňuje službě zkontroloval za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> je volána vedle; Tato metoda je potřeba jenom velmi pokročilých scénářů. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> je volána poslední a je zodpovědná za konfiguraci modulu runtime. Následující parametry jsou předány do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
+ <xref:System.ServiceModel.Description.IServiceBehavior> Rozhraní obsahuje tři metody: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> `,` a <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A>. Tyto metody jsou volány aplikací WCF při <xref:System.ServiceModel.ServiceHost> je inicializována. <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> je volána. To umožňuje službě zkontroloval za účelem nalezení nekonzistencí. <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> je volána vedle; Tato metoda je potřeba jenom velmi pokročilých scénářů. <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> je volána poslední a je zodpovědná za konfiguraci modulu runtime. Následující parametry jsou předány do <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType>:  
   
 -   `Description`: Tento parametr obsahuje popis služby pro celou službu. To lze použít ke kontrole popis data o koncové body služby, kontrakty, vazby a další data související se službou.  
   
