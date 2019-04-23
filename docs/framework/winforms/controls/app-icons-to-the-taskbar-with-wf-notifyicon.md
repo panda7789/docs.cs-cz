@@ -14,10 +14,10 @@ helpviewer_keywords:
 - taskbar [Windows Forms], adding icons
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
 ms.openlocfilehash: 52c18b959361079aac6b95dc5d4584bf464a306a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59304516"
 ---
 # <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon
@@ -75,6 +75,6 @@ Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu i
 
 - <xref:System.Windows.Forms.NotifyIcon>
 - <xref:System.Windows.Forms.NotifyIcon.Icon%2A>
-- [Postupy: Přidružení místní nabídky ke komponentě Windows Forms NotifyIcon](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)
+- [Postupy: Přidružení místní nabídky s komponentou Windows Forms NotifyIcon](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)
 - [Komponenta NotifyIcon](notifyicon-component-windows-forms.md)
 - [Přehled komponenty NotifyIcon](notifyicon-component-overview-windows-forms.md)

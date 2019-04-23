@@ -10,10 +10,10 @@ ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c35e796333aa3a93b7a66416fe0d93b7b1f3837f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59311952"
 ---
 # <a name="net-framework-tools"></a>.NET Framework – nástroje
@@ -68,10 +68,10 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  [Lc.exe (kompilátor licencí)](../../../docs/framework/tools/lc-exe-license-compiler.md)  
  Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime). Čte textové soubory obsahující licenční informace a vytváří soubor .licenses, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
   
- [Mage.exe (generování manifestu a nástroj pro úpravy)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
+ [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
  Dovoluje vytvářet, upravovat a podepisovat aplikace a manifesty nasazení. Jakožto nástroj příkazového řádku lze nástroj Mage.exe spouštět z dávkových skriptů a jiných aplikací pro systém Windows, včetně aplikací ASP.NET.  
   
- [MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
+ [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)  
  Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows. Podporuje stejnou funkci jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na Windows.  
   
  [MDbg.exe (ladicí program z příkazového řádku .NET Framework)](../../../docs/framework/tools/mdbg-exe.md)  
@@ -132,5 +132,5 @@ Většina nástrojů rozhraní .NET Framework popsaná v této části je automa
  [WPF – nástroje](https://docs.microsoft.com/previous-versions/ms742404(v=vs.110))  
  Obsahuje nástroje, jako je například nástroj isxps pro kontrolu shody (isXPS.exe) a nástroje pro profilaci výkonu.  
   
- [Nástroje služby Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
+ [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
  Obsahuje nástroje, které usnadňují vytváření, zavádění a správu aplikací služby Windows Communication Foundation (WCF).

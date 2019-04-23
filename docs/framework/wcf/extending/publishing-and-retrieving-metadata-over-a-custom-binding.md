@@ -3,10 +3,10 @@ title: Publikování a načítání metadat prostřednictvím vlastní vazby
 ms.date: 03/30/2017
 ms.assetid: 904e11b4-d90e-45c6-9ee5-c3472c90008c
 ms.openlocfilehash: 33777358262465e9ecbadd75df8abf066bafcd01
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59222975"
 ---
 # <a name="publishing-and-retrieving-metadata-over-a-custom-binding"></a>Publikování a načítání metadat prostřednictvím vlastní vazby
@@ -30,6 +30,6 @@ ms.locfileid: "59222975"
 ## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
-- [WS-MetadataExchange Bindings](../../../../docs/framework/wcf/extending/ws-metadataexchange-bindings.md)
-- [Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange](../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
+- [Vazby WS-MetadataExchange](../../../../docs/framework/wcf/extending/ws-metadataexchange-bindings.md)
+- [Postupy: Konfigurace vlastního protokolu WS-Metadata Exchange vazby](../../../../docs/framework/wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
 - [Postupy: Načítání metadat přes vazbu jiného typu než MEX](../../../../docs/framework/wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)

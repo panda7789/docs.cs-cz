@@ -7,10 +7,10 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], displaying scroll bars
 ms.assetid: cdeb42e1-86e8-410c-ba46-18aec264ef5f
 ms.openlocfilehash: 152706cee511e4bca1dd324a652e8077b1f8548a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59312654"
 ---
 # <a name="how-to-display-scroll-bars-in-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení posuvníků v ovládacím prvku Windows Forms RichTextBox
@@ -34,7 +34,7 @@ Ve výchozím nastavení, Windows Forms <xref:System.Windows.Forms.RichTextBox> 
   
 3. Nastavte <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> vlastnost na odpovídající hodnotu.  
   
-    |Value|Popis|  
+    |Hodnota|Popis|  
     |-----------|-----------------|  
     |`false`|Text v ovládacím prvku není automaticky upraven na šířku ovládacího prvku, takže ho se posuňte doprava, dokud nebude dosaženo konce řádku. Tuto hodnotu použijte, pokud jste zvolili vodorovným posuvníkům nebo obojí, výše.|  
     |`true` (výchozí)|Text v ovládacím prvku se automaticky upraví na šířku ovládacího prvku. Vodorovný posuvník nezobrazí. Tuto hodnotu použijte, pokud jste zvolili svislé posuvníky nebo none, výše, chcete-li zobrazit jeden nebo více odstavců.|  

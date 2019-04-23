@@ -3,10 +3,10 @@ title: 'Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
 ms.openlocfilehash: 15e5b4ea08b6bc243484b6963c1c06f448bb985b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306002"
 ---
 # <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úkol 3: Vytvoření podoken pro sady nástrojů a mřížku vlastností
@@ -215,5 +215,5 @@ namespace HostingApplication
 ## <a name="see-also"></a>Viz také:
 
 - [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
-- [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
-- [Úkol 2: Hostování Návrháře postupu provádění](task-2-host-the-workflow-designer.md)
+- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](task-1-create-a-new-wpf-app.md)
+- [Úloha 2: Hostování návrháře postupu provádění](task-2-host-the-workflow-designer.md)

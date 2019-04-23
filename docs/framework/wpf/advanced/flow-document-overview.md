@@ -10,10 +10,10 @@ helpviewer_keywords:
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
 ms.openlocfilehash: f8e5a7475765bffb76e7b07e81db25b4a62ae038
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303489"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
@@ -107,7 +107,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Jak vidíte níže, ale může obsahovat také další elementy odvozené vložené. 
   
- **Sekce**  
+ **Oddíl**  
   
  <xref:System.Windows.Documents.Section> slouží jenom k obsahovat jiné <xref:System.Windows.Documents.Block>-odvozené elementy. Se nevztahují žádné výchozí formátování prvků, které obsahuje. Však hodnoty nastavené na žádné vlastnosti <xref:System.Windows.Documents.Section> se vztahuje na jeho podřízené prvky. Oddíl také umožňuje programově iteraci v rámci její podřízená kolekce. <xref:System.Windows.Documents.Section> se používá podobným způsobem jako do \<DIV > značku ve formátu HTML.  
   
@@ -146,7 +146,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
  <xref:System.Windows.Documents.Table> slouží k vytvoření tabulky. <xref:System.Windows.Documents.Table> se podobá <xref:System.Windows.Controls.Grid> element, ale je k dispozici další možnosti a proto vyžaduje větší režijní náklady na prostředek. Protože <xref:System.Windows.Controls.Grid> je <xref:System.Windows.UIElement>, tok obsahu jej nelze použít, pokud je obsažen v <xref:System.Windows.Documents.BlockUIContainer> nebo <xref:System.Windows.Documents.InlineUIContainer>. Další informace o <xref:System.Windows.Documents.Table>, naleznete v tématu [Přehled tabulek](table-overview.md).  
   
 ### <a name="inline-derived-classes"></a>Vložené odvozené třídy  
- **Spustit**  
+ **Spuštění**  
   
  <xref:System.Windows.Documents.Run> slouží jako neformátovaný text. Očekáváte <xref:System.Windows.Documents.Run> objekty pro rozsáhlé v toku obsahu. Ale v kódu <xref:System.Windows.Documents.Run> prvky nejsou musí být použito explicitně. <xref:System.Windows.Documents.Run> je potřeba použít při vytváření nebo manipulace s dokumenty toku pomocí kódu. Například v kódu níže, první <xref:System.Windows.Documents.Paragraph> Určuje <xref:System.Windows.Documents.Run> element explicitně při druhém nikoli. Oba odstavce generovat výstup identické.  
   
@@ -350,7 +350,7 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
 
 - [Text](optimizing-performance-text.md)
 - [Typografie v rozhraní WPF](typography-in-wpf.md)
-- [– postupy](flow-content-elements-how-to-topics.md)
+- [Témata s postupy](flow-content-elements-how-to-topics.md)
 - [Přehled modelu obsahu TextElement](textelement-content-model-overview.md)
 - [RichTextBox – přehled](../controls/richtextbox-overview.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)

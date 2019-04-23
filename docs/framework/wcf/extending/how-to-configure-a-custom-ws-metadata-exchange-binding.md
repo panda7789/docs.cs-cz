@@ -6,10 +6,10 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
 ms.openlocfilehash: 51681e258e6a21b3a7ae604d1c0ef65d320bfb4f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59311874"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
@@ -115,8 +115,8 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Chování publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)
+- [Chování při publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)
 - [Načítání metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)
 - [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
 - [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)
-- [Publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)
+- [Publikování koncových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)

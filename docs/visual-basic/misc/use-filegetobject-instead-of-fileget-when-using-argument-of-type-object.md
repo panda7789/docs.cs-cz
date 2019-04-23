@@ -3,10 +3,10 @@ title: Používat "Filegetobject –" místo 'FileGet', při použití argument 
 ms.date: 07/20/2015
 ms.assetid: 090b8088-895a-482a-9362-606596bac304
 ms.openlocfilehash: fdad64a4b35aa792c996d25a9fd72a9ce1126fbd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306921"
 ---
 # <a name="use-filegetobject-instead-of-fileget-when-using-argument-of-type-object"></a>Používat "Filegetobject –" místo 'FileGet', při použití argument typu 'Object'

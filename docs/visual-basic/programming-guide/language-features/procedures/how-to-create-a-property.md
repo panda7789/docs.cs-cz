@@ -8,10 +8,10 @@ helpviewer_keywords:
 - properties [Visual Basic]
 ms.assetid: 4d229712-6be8-4c5c-bac5-06995ce9185a
 ms.openlocfilehash: 91f34de36e88724ccab21097bf54a4604f7eee37
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306713"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Postupy: Vytvoření vlastnosti (Visual Basic)
@@ -63,11 +63,11 @@ Použijte definici vlastnosti mezi `Property` příkazu a `End Property` příka
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury](./index.md)
-- [Procedury Property](./property-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Postupy: Volání procedury Property](./how-to-call-a-property-procedure.md)
+- [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
 - [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
-- [Postupy: Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+- [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

@@ -3,10 +3,10 @@ title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
 ms.openlocfilehash: fe748ac40f03ed22cacb254ab464a6caf3d27a8c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59305023"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
@@ -105,6 +105,6 @@ A *nezpracovatelná zpráva byla* je zpráva, která byla překročena maximáln
   
 ## <a name="see-also"></a>Viz také:
 
-- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)
-- [Rozdíly funkcí front zpráv v systémech Windows Vista, Windows Server 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)
+- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Rozdíly ve funkcích zařazování do front ve Windows Vista, Windows Serveru 2003 a Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)
 - [Určování a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

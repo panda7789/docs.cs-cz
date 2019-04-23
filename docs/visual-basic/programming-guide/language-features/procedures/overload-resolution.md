@@ -11,16 +11,16 @@ helpviewer_keywords:
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
 ms.openlocfilehash: 4f81c7377423899c142c4270f325bbd7ed20b877
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59312238"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
 Když kompilátor jazyka Visual Basic dojde během volání procedury, která je definována v několika přetížené verze, kompilátor musí rozhodnout, které přetížení volání. Dělá to pomocí následujících kroků:  
   
-1. **Usnadnění přístupu.** Eliminuje žádného přetížení s úrovní přístupu, který brání volání volající kód.  
+1. **Přístupnost** Eliminuje žádného přetížení s úrovní přístupu, který brání volání volající kód.  
   
 2. **Počet parametrů.** Eliminuje žádného přetížení, která definuje různý počet parametrů než je zadaný ve volání.  
   
@@ -60,14 +60,14 @@ Když kompilátor jazyka Visual Basic dojde během volání procedury, která je
   
 ## <a name="see-also"></a>Viz také:
 
-- [Volitelné parametry](./optional-parameters.md)
+- [Nepovinné parametry](./optional-parameters.md)
 - [Pole parametrů](./parameter-arrays.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
-- [Postupy: Definování více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
+- [Postupy: Definice více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md)
 - [Postupy: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md)
 - [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Postupy: Přetížení procedury, která přebírá neurčitý počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
-- [Přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md)
-- [Metody rozšíření](./extension-methods.md)
+- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Rozšiřující metody](./extension-methods.md)

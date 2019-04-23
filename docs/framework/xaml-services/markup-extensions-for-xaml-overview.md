@@ -6,10 +6,10 @@ helpviewer_keywords:
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
 ms.openlocfilehash: 41fe3cb368bed12ccb2dbe9bd31f95fd556e3968
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59224920"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Přehled rozšíření značek pro jazyk XAML
@@ -27,7 +27,7 @@ Rozšíření značek jsou technika XAML pro získání hodnotu, která není na
 ### <a name="xtype"></a>x:Type  
  `x:Type` dodává <xref:System.Type> objekt s názvem typu. Tato funkce se nejčastěji používá v odložení mechanismy, které používají základní typ CLR a typ odvození jako zástupný název seskupení nebo identifikátor. WPF styly a šablony a jejich využití `TargetType` vlastnosti, jsou konkrétní příklad. Další informace najdete v tématu [x: Type – rozšíření značek](x-type-markup-extension.md).  
   
-### <a name="xstatic"></a>x: Static  
+### <a name="xstatic"></a>X:static  
  `x:Static` vytváří statické hodnoty z entity kód typ hodnoty, které nejsou přímo typ hodnoty vlastnosti, ale může být vyhodnocen jako typu. To je užitečné pro zadání hodnoty, které již existují jako dobře známé konstanty v definici typu. Další informace najdete v tématu [x: Static – rozšíření značek](x-static-markup-extension.md).  
   
 ### <a name="xnull"></a>x: Null  

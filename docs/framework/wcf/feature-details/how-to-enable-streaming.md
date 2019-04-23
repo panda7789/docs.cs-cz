@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
 ms.openlocfilehash: 0d8428487c3c320a634914b99219e23befb70d55
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59312160"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
@@ -34,7 +34,7 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 2. Datový proud musí být povolené na vazbu. Můžete nastavit `TransferMode` vlastnost, která můžete provést jednu z následujících hodnot:  
   
-    1.  `Buffered`,   
+    1.  `Buffered`,  
   
     2.  `Streamed`, která umožňuje streamování komunikaci v obou směrech.  
   
@@ -69,12 +69,12 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 1. Speciální zpracování na každý blok datového proudu současně s odesíláním ho nebo přijme, odvoďte třídu vlastního datového proudu z <xref:System.IO.Stream>. Jako příklad vlastního datového proudu, obsahuje následující kód `GetReversedStream` metoda a `ReverseStream` třída-.  
   
-     `GetReversedStream` Vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte z `ReverseStream` objektu. `ReverseStream.Read` Metoda čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Tato metoda zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Tento příklad ukazuje, jak můžete provádět zpracování datového proudu jako obsah se ještě na číst nebo zapisovat z datového proudu.  
+     `GetReversedStream` vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte z `ReverseStream` objektu. `ReverseStream.Read` Metoda čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Tato metoda zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Tento příklad ukazuje, jak můžete provádět zpracování datového proudu jako obsah se ještě na číst nebo zapisovat z datového proudu.  
   
      [!code-csharp[c_HowTo_EnableStreaming#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/cs/service.cs#2)]
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Objemná data a vysílání datových proudů](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
+- [Objemná data a streamování](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
 - [Stream](../../../../docs/framework/wcf/samples/stream.md)

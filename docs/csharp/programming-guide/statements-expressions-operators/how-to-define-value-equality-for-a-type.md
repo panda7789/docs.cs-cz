@@ -10,10 +10,10 @@ helpviewer_keywords:
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
 ms.openlocfilehash: 73cb9249343b02c937c3e4e652021c7a6dbb4386
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59311471"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (C# Průvodce programováním v)
@@ -21,7 +21,7 @@ Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvoři
   
 1. `x.Equals(x)` Vrátí `true`. Tomu se říká reflexivní vlastnost.  
   
-2. `x.Equals(y)` Vrátí stejnou hodnotu jako `y.Equals(x)`. Tomu se říká symetrický vlastnost.  
+2. `x.Equals(y)` vrátí stejnou hodnotu jako `y.Equals(x)`. Tomu se říká symetrický vlastnost.  
   
 3. Pokud `(x.Equals(y) && y.Equals(z))` vrátí `true`, pak `x.Equals(z)` vrátí `true`. Tomu se říká vlastnost tranzitivní.  
   
@@ -66,4 +66,4 @@ Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvoři
 ## <a name="see-also"></a>Viz také:
 
 - [Porovnání rovnosti](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

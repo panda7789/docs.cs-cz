@@ -9,10 +9,10 @@ dev_langs:
 - vb
 ms.custom: seodec18
 ms.openlocfilehash: a72e5e557cd3aa098b674bffd277e3cc6da99d33
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306063"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publikování .NET Core aplikací pomocí rozhraní příkazového řádku
@@ -128,8 +128,7 @@ Publikování FDE vytvoří aplikaci, která automaticky zobrazí souhrn po dop�
 
 Je nutné (s výjimkou .NET Core 3.x, pokud cílíte na platformu aktuální) použijte následující přepínače s `dotnet publish` příkaz pro publikování FDE:
 
-- `-r <RID>`
-  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
 - `--self-contained false` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako FDE.
 
@@ -148,8 +147,7 @@ Publikování SCD vytvoří aplikaci, která není vpřed na nejnovější dostu
 
 Je nutné použít následující přepínače s `dotnet publish` příkaz pro publikování SCD:
 
-- `-r <RID>`
-  Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
+- `-r <RID>` Tento přepínač identifikátor (RID) používá k určení cílové platformy. Seznam identifikátorů modulů runtime, naleznete v tématu [identifikátor modulu Runtime (RID) katalogu](../rid-catalog.md).
 
 - `--self-contained true` Tento přepínač říká .NET Core SDK k vytvoření spustitelného souboru jako SCD.
 

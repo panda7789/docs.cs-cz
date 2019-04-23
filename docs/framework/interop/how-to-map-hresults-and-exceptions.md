@@ -14,10 +14,10 @@ ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 60173739842835a705a72da4e7ab442cacfc08d2
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306544"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
@@ -86,32 +86,32 @@ CMyClass::MethodThatThrows
 |**COR_E_INVALIDFILTERCRITERIA**|**InvalidFilterCriteriaException**|  
 |**COR_E_INVALIDOLEVARIANTTYPE**|**InvalidOleVariantTypeException**|  
 |**COR_E_INVALIDOPERATION**|**InvalidOperationException**|  
-|**COR_E_IO**|**IOException –**|  
+|**COR_E_IO**|**IOException**|  
 |**COR_E_MEMBERACCESS**|**AccessException**|  
 |**COR_E_METHODACCESS**|**MethodAccessException**|  
-|**COR_E_MISSINGFIELD**|**MissingFieldException**|  
+|**COR_E_MISSINGFIELD**|**Missingfieldexception –**|  
 |**COR_E_MISSINGMANIFESTRESOURCE**|**MissingManifestResourceException**|  
 |**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
 |**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
 |**COR_E_MULTICASTNOTSUPPORTED**|**MulticastNotSupportedException**|  
 |**COR_E_NOTFINITENUMBER**|**NotFiniteNumberException**|  
 |**E_NOTIMPL**|**NotImplementedException**|  
-|**COR_E_NOTSUPPORTED**|**NotSupportedException**|  
+|**COR_E_NOTSUPPORTED**|**NotSupportedException –**|  
 |**COR_E_NULLREFERENCE orE_POINTER**|**NullReferenceException**|  
 |**COR_E_OUTOFMEMORY nebo**<br /><br /> **E_OUTOFMEMORY**|**OutOfMemoryException**|  
 |**COR_E_OVERFLOW**|**OverflowException**|  
 |**COR_E_PATHTOOLONG nebo ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException**|  
-|**COR_E_RANK**|**Rankexception –**|  
+|**COR_E_RANK**|**RankException**|  
 |**COR_E_REFLECTIONTYPELOAD**|**ReflectionTypeLoadException**|  
 |**COR_E_REMOTING**|**Remotingexception –**|  
 |**COR_E_SAFEARRAYTYPEMISMATCH**|**SafeArrayTypeMismatchException**|  
-|**COR_E_SECURITY**|**SecurityException –**|  
+|**COR_E_SECURITY**|**SecurityException**|  
 |**COR_E_SERIALIZATION**|**SerializationException**|  
 |**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
 |**COR_E_SYNCHRONIZATIONLOCK**|**SynchronizationLockException**|  
 |**COR_E_SYSTEM**|**SystemException**|  
 |**COR_E_TARGET**|**TargetException**|  
-|**COR_E_TARGETINVOCATION**|**Targetinvocationexception –**|  
+|**COR_E_TARGETINVOCATION**|**TargetInvocationException**|  
 |**COR_E_TARGETPARAMCOUNT**|**TargetParameterCountException**|  
 |**COR_E_THREADABORTED**|**ThreadAbortException**|  
 |**COR_E_THREADINTERRUPTED**|**ThreadInterruptedException**|  
@@ -137,7 +137,7 @@ CMyClass::MethodThatThrows
 |**InnerException**|Vždy odkaz s hodnotou null (**nic** v jazyce Visual Basic).|  
 |**Zpráva**|Řetězec vrácený z **IErrorInfo -> GetDescription**.|  
 |**Zdroj**|Řetězec vrácený z **IErrorInfo -> GetSource**.|  
-|**Trasování zásobníku**|Trasování zásobníku.|  
+|**StackTrace**|Trasování zásobníku.|  
 |**TargetSite**|Název metody, která vrátí selhání HRESULT.|  
   
  Výjimka pole, jako například **zpráva**, **zdroj**, a **trasování zásobníku** nejsou k dispozici pro **StackOverflowException –**.  

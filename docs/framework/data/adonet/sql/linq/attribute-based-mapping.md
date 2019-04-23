@@ -3,10 +3,10 @@ title: Mapování na základě atributů
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
 ms.openlocfilehash: d7d7c14ca12e40af643d164069cf7b0f3165fa20
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59223560"
 ---
 # <a name="attribute-based-mapping"></a>Mapování na základě atributů
@@ -26,7 +26,7 @@ ms.locfileid: "59223560"
   
 |Vlastnost|Type|Výchozí|Popis|  
 |--------------|----------|-------------|-----------------|  
-|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Použít s jeho <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost určuje název databáze.|  
+|<xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|String|V tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A>|Použít s jeho <xref:System.Data.Linq.Mapping.DatabaseAttribute.Name%2A> vlastnost určuje název databáze.|  
   
  Další informace naleznete v tématu <xref:System.Data.Linq.Mapping.DatabaseAttribute>.  
   
@@ -144,4 +144,4 @@ ms.locfileid: "59223560"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Odkaz](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

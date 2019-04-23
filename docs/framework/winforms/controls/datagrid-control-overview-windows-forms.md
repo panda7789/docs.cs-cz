@@ -21,10 +21,10 @@ helpviewer_keywords:
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
 ms.openlocfilehash: 34bf38a59e4f2b1f975cf1836973d24d8a3bae32
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59304728"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
@@ -57,13 +57,13 @@ ms.locfileid: "59304728"
   
  Platné datové zdroje pro <xref:System.Windows.Forms.DataGrid> patří:  
   
--   <xref:System.Data.DataTable> třída  
+-   <xref:System.Data.DataTable> Třída  
   
--   <xref:System.Data.DataView> třída  
+-   <xref:System.Data.DataView> Třída  
   
--   <xref:System.Data.DataSet> třída  
+-   <xref:System.Data.DataSet> Třída  
   
--   <xref:System.Data.DataViewManager> třída  
+-   <xref:System.Data.DataViewManager> Třída  
   
  Pokud je zdrojem datovou sadu, může být datovou sadu objektu ve formě nebo objekt předaných do formuláře webové služby XML. Můžete vytvořit vazbu na typové a netypové datové sady.  
   
@@ -143,6 +143,6 @@ ms.locfileid: "59304728"
 
 - [Ovládací prvek DataGrid](datagrid-control-windows-forms.md)
 - [Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
-- [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
-- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
 - [Postupy: Formátování ovládacího prvku Windows Forms DataGrid](how-to-format-the-windows-forms-datagrid-control.md)

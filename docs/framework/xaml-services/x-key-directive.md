@@ -11,10 +11,10 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
 ms.openlocfilehash: 6ac878f24de594f8557ded8b0c3356217021b035
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59223716"
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
@@ -112,6 +112,6 @@ keyObject
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zdroje XAML](../wpf/advanced/xaml-resources.md)
-- [Zdroje a kód](../wpf/advanced/resources-and-code.md)
-- [StaticResource – rozšíření značek](../wpf/advanced/staticresource-markup-extension.md)
+- [Prostředky XAML](../wpf/advanced/xaml-resources.md)
+- [Prostředky a kód](../wpf/advanced/resources-and-code.md)
+- [Rozšíření značek StaticResource](../wpf/advanced/staticresource-markup-extension.md)

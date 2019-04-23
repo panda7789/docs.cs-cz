@@ -5,10 +5,10 @@ f1_keywords:
 - vbrID49
 ms.assetid: 7c7def45-b0ab-450f-ad3f-4383dfd9aed7
 ms.openlocfilehash: f7b0c3a6edbe0b950195306fa66287ff9b209bfe
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59306622"
 ---
 # <a name="bad-dll-calling-convention"></a>Chybná konvence volání knihovny DLL
@@ -25,5 +25,5 @@ Argumenty předané dynamická knihovna (DLL) musí přesně odpovídat názvům
 ## <a name="see-also"></a>Viz také:
 
 - [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
-- [Call – příkaz](../../../visual-basic/language-reference/statements/call-statement.md)
-- [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Příkaz Call](../../../visual-basic/language-reference/statements/call-statement.md)
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

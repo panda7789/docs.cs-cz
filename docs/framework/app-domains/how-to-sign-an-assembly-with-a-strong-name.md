@@ -14,10 +14,10 @@ ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5580b6d8af7319397ad7eb6416941c2be0dcdb76
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303417"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
@@ -107,4 +107,4 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
 - [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
 - [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)
 - [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)
-- [Stránka Podepisování, návrhář projektu (C#)](/visualstudio/ide/reference/signing-page-project-designer)
+- [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)

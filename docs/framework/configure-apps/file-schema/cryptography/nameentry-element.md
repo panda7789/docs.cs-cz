@@ -1,5 +1,5 @@
 ---
-title: <nameEntry> Prvek
+title: Element <nameEntry>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#nameEntry
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - nameEntry element
 ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
 ms.openlocfilehash: 97521ba9073820beeea62f5fc7cab480b5422fb0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59225323"
 ---
 # <a name="nameentry-element"></a>\<nameEntry – > – Element
@@ -37,8 +37,8 @@ Název třídy mapuje na algoritmus popisný název, který umožňuje jedna tř
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**name**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který implementuje kryptografickou třídu.|  
-|**třída**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) elementu.|  
+|**Jméno**|Požadovaný atribut.<br /><br /> Určuje popisný název algoritmu, který implementuje kryptografickou třídu.|  
+|**class**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md) elementu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -79,5 +79,5 @@ Název třídy mapuje na algoritmus popisný název, který umožňuje jedna tř
 
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
-- [Šifrovací služby](../../../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)
 - [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
