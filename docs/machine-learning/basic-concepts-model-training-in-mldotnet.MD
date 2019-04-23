@@ -4,12 +4,12 @@ description: Tento článek vysvětluje základní koncepty pokrývající *mode
 ms.date: 03/05/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 78554cfd1dfdb3dba82a325d47245aeb313bb6fe
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.openlocfilehash: d29f6b901b0296f4d9a75b470a84dc087fb50e5d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675560"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973834"
 ---
 # <a name="basic-concepts-for-model-training-in-mlnet"></a>Základní koncepty k tréninku modelu v ML.NET
 
@@ -37,7 +37,7 @@ Tento dokument popisuje tyto koncepty související s cvičení modelu v ML.NET:
 - [*Funkce předpovědi* ](#prediction-function) vyjádřené `PredictionEngine<TSrc, TDst>` třídy.
   - Funkce předpovědi se dají považovat za počítač, který se vztahuje na jeden řádek, transformátoru, jako v době předpovědi.
 
-## <a name="data"></a>Data
+## <a name="data"></a>Data 
 
 Data jsou v ML.NET, podobně jako zobrazení SQL: Jde laxně Vyhodnocená, schematizovanými cursorable heterogenní, datové sady.
 

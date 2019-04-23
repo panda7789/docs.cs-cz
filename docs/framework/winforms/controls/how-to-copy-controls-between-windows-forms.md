@@ -6,10 +6,10 @@ helpviewer_keywords:
 - controls [Windows Forms], copying
 ms.assetid: 106c1eb2-1fba-4f69-b2ec-9ea3fa182f1e
 ms.openlocfilehash: 8a60dd4c5fc80af46b1552e99abbba37a8a390af
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59345609"
 ---
 # <a name="how-to-copy-controls-between-windows-forms"></a>Postupy: Kopírování ovládacích prvků mezi formuláři Windows Forms
@@ -23,13 +23,13 @@ Ovládací prvek nelze zkopírovat na stejného formuláře, do jiného formulá
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ovládací prvky Windows Forms](index.md)
-- [Postupy: Přidávání ovládacích prvků do Windows Forms](how-to-add-controls-to-windows-forms.md)
-- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](how-to-add-activex-controls-to-windows-forms.md)
-- [Postupy: Přidávání ovládacích prvků bez uživatelského rozhraní do Windows Forms](how-to-add-controls-without-a-user-interface-to-windows-forms.md)
+- [Windows Forms – ovládací prvky](index.md)
+- [Postupy: Přidání ovládacích prvků do formulářů Windows](how-to-add-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](how-to-add-activex-controls-to-windows-forms.md)
+- [Postupy: Přidání ovládacích prvků bez uživatelského rozhraní do formulářů Windows](how-to-add-controls-without-a-user-interface-to-windows-forms.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
-- [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
-- [Vkládání ovládacích prvků do formulářů Windows](putting-controls-on-windows-forms.md)
+- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Vkládání ovládacích prvků do Windows Forms](putting-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)

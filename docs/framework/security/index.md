@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 7eb50bcb-38d8-4afb-86aa-2573586697c2
 author: BrucePerlerMS
 ms.openlocfilehash: 36f7687f42c6e0d6f865a025f09c4ead6f79960c
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481402"
 ---
 # <a name="windows-identity-foundation"></a>Windows Identity Foundation
 
-- [Novinky ve Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)
+- [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)
 
 - [Přehled Windows Identity Foundation 4.5](../../../docs/framework/security/wif-overview.md)
 
@@ -28,7 +28,7 @@ ms.locfileid: "59481402"
 
   - [Sestavení první služby WCF pracující s deklaracemi](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)
 
-- [Funkce WIF](../../../docs/framework/security/wif-features.md)
+- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)
 
   - [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)
 
@@ -40,17 +40,17 @@ ms.locfileid: "59481402"
 
   - [WSTrustChannelFactory a WSTrustChannel](../../../docs/framework/security/wstrustchannelfactory-and-wstrustchannel.md)
 
-- [Rejstřík postupů pro WIF](../../../docs/framework/security/wif-how-tos-index.md)
+- [Rejstřík návodů pro WIF](../../../docs/framework/security/wif-how-tos-index.md)
 
-  - [Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)
+  - [Postupy: Vytvoření webové aplikace ASP.NET MVC s deklaracemi identity pomocí technologie WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)
 
-  - [Postupy: Sestavení aplikace Webových formulářů ASP.NET pracující s deklaracemi pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+  - [Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
 
-  - [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)
+  - [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování pomocí formulářů](../../../docs/framework/security/claims-aware-aspnet-app-forms-authentication.md)
 
-  - [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows](../../../docs/framework/security/how-to-build-claims-aware-aspnet-app-using-windows-authentication.md)
+  - [Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování Windows](../../../docs/framework/security/how-to-build-claims-aware-aspnet-app-using-windows-authentication.md)
 
-  - [Postupy: Ladění aplikací a služeb pracujících s deklaracemi s trasováním WIF](../../../docs/framework/security/how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)
+  - [Postupy: Ladění s deklaracemi identity aplikace a služby pomocí trasování WIF](../../../docs/framework/security/how-to-debug-claims-aware-applications-and-services-using-wif-tracing.md)
 
   - [Postupy: Zobrazení stavu přihlášení pomocí WIF](../../../docs/framework/security/how-to-display-signed-in-status-using-wif.md)
 
@@ -60,7 +60,7 @@ ms.locfileid: "59481402"
 
   - [Postupy: Povolení WIF pro aplikaci webové služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md)
 
-  - [Postupy: Transformace příchozích deklarací identit](../../../docs/framework/security/how-to-transform-incoming-claims.md)
+  - [Postupy: Transformovat příchozí deklarace identity](../../../docs/framework/security/how-to-transform-incoming-claims.md)
 
 - [Pokyny pro WIF](../../../docs/framework/security/wif-guidelines.md)
 
@@ -70,10 +70,10 @@ ms.locfileid: "59481402"
 
 - [Index ukázkového kódu WIF](../../../docs/framework/security/wif-code-sample-index.md)
 
-- [WIF – rozšíření](../../../docs/framework/security/wif-extensions.md)
+- [Rozšíření WIF](../../../docs/framework/security/wif-extensions.md)
 
 - [Referenční dokumentace k rozhraní API WIF](../../../docs/framework/security/wif-api-reference.md)
 
 - [Referenční dokumentace ke konfiguraci WIF](../../../docs/framework/security/wif-configuration-reference.md)
 
-  - [Konvence schématu konfigurace WIF](../../../docs/framework/security/wif-configuration-schema-conventions.md)
+  - [Převody schématu konfigurace WIF](../../../docs/framework/security/wif-configuration-schema-conventions.md)

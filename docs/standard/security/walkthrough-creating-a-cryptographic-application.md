@@ -13,10 +13,10 @@ ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f141f21f80275a592caf3f87a5cbe0def6869c0c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59341761"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
@@ -53,7 +53,7 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
 ## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
  Většina příkladů kódu v tomto názorném postupu jsou navržené tak, aby obslužné rutiny událostí pro ovládací prvky tlačítek. Následující tabulka uvádí prvky, které jsou vyžadovány pro ukázkovou aplikaci a požadovaná názvy v příkladech kódu.  
   
-|Control|Name|Vlastnost text (podle potřeby)|  
+|Control|Název|Vlastnost text (podle potřeby)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Šifrování souboru|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Dešifrování souboru|  
@@ -212,4 +212,4 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
 ## <a name="see-also"></a>Viz také:
 
-- [Šifrovací služby](../../../docs/standard/security/cryptographic-services.md)
+- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)

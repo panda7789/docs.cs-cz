@@ -10,10 +10,10 @@ helpviewer_keywords:
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
 ms.openlocfilehash: 73f2004470d5d1da04199af75832cefd6348ce18
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342456"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
@@ -110,6 +110,6 @@ Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní v�
 
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
-- [Postupy: Určení aktivního podřízeného formuláře MDI](how-to-determine-the-active-mdi-child.md)
-- [Postupy: Odesílání dat do aktivního podřízeného formuláře MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
 - [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

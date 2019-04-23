@@ -7,10 +7,10 @@ helpviewer_keywords:
 - object variables [Visual Basic], determining type
 ms.assetid: 6f6a138d-58a4-40d1-9f4e-0a3c598eaf81
 ms.openlocfilehash: 6499dfce880cc9ce16e5d77887afc0598692f48e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342866"
 ---
 # <a name="how-to-determine-what-type-an-object-variable-refers-to-visual-basic"></a>Postupy: Určit, jaký typ proměnná objektu odkazuje (Visual Basic)
@@ -60,4 +60,4 @@ Objektová proměnná obsahuje ukazatel na data, která je uložená na jiném m
 - <xref:System.TypeCode>
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

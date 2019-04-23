@@ -3,11 +3,11 @@ title: Třída Operation
 ms.date: 03/30/2017
 ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
 ms.openlocfilehash: 9696a7f026e54afacb5ccbfa8703a2ba617a9f3d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59165071"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973197"
 ---
 # <a name="operation-class"></a>Třída Operation
 Operace  
@@ -94,7 +94,7 @@ class Operation
   
  Označení metody operace.  
   
-### <a name="name"></a>Name  
+### <a name="name"></a>Název  
  Datový typ: řetězec  
   
  Typ přístupu: jen pro čtení  

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
 ms.openlocfilehash: f4399d8548eff76aaa4effae6da7239cd3b0284b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59343711"
 ---
 # <a name="how-to-send-data-to-the-active-mdi-child"></a>Postupy: Odesílání dat do aktivního podřízeného formuláře MDI
@@ -96,5 +96,5 @@ ms.locfileid: "59343711"
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Určení aktivního podřízeného formuláře MDI](how-to-determine-the-active-mdi-child.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](how-to-determine-the-active-mdi-child.md)
 - [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

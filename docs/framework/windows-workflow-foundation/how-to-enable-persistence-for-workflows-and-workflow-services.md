@@ -3,11 +3,11 @@ title: 'Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních
 ms.date: 03/30/2017
 ms.assetid: 2b1c8bf3-9866-45a4-b06d-ee562393e503
 ms.openlocfilehash: 6a2a8d73298e14f92f376b97b9637db91532e937
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59340149"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772692"
 ---
 # <a name="how-to-enable-persistence-for-workflows-and-workflow-services"></a>Postupy: Povolení trvalosti pro pracovní postupy a služby pracovních postupů
 Toto téma popisuje postup povolení trvalosti pro pracovní postupy a služby pracovních postupů.  

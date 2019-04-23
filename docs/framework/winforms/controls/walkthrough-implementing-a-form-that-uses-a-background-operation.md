@@ -16,10 +16,10 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
 ms.openlocfilehash: 6399fb853162174895d892399fd3eb5226101515
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59343399"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
@@ -167,8 +167,8 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 
 - <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType>
 - [Dělení na spravovaná vlákna](../../../standard/threading/index.md)
-- [Doporučené postupy spravovaného dělení na vlákna](../../../standard/threading/managed-threading-best-practices.md)
+- [Doporučené postupy dělení na spravovaná vlákna](../../../standard/threading/managed-threading-best-practices.md)
 - [Přehled asynchronních vzorů založených na událostech](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Návod: Spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md)
-- [BackgroundWorker – komponenta](backgroundworker-component.md)
+- [Komponenta BackgroundWorker](backgroundworker-component.md)

@@ -15,10 +15,10 @@ helpviewer_keywords:
 - ListBox control [Windows Forms], creating lookup tables
 ms.assetid: 4ce35f12-1f4e-4317-92d1-af8686a8cfaa
 ms.openlocfilehash: a58522cc17ac379897a89a8e61485a1e271438a3
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344101"
 ---
 # <a name="how-to-create-a-lookup-table-for-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox
@@ -33,7 +33,7 @@ Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve fo
   
 ### <a name="itemtable"></a>ItemTable  
   
-|ID|Name|  
+|ID|Název|  
 |--------|----------|  
 |12|Potato|  
 |13|Kuřecí|  
@@ -72,7 +72,7 @@ Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve fo
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové vazby a rozhraní Windows Forms](../data-binding-and-windows-forms.md)
+- [Datové vazby a Windows Forms](../data-binding-and-windows-forms.md)
 - [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)
 - [Přehled ovládacího prvku ComboBox](combobox-control-overview-windows-forms.md)
 - [Přehled ovládacího prvku CheckedListBox](checkedlistbox-control-overview-windows-forms.md)

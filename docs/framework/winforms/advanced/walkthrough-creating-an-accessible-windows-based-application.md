@@ -7,11 +7,11 @@ helpviewer_keywords:
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
 ms.openlocfilehash: e7bc996c3d64c0ea3ac8fca5fef759ad309f2967
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59336652"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59773360"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Návod: Vytvoření aplikace systému Windows s usnadněním přístupu
 Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád mají usnadnění předpisy pro nákup softwaru. Logo Certified pro Windows obsahuje požadavky na usnadnění přístupu. Odhadované pobytem 30 milionů amerických samostatně, mnoho z nich potenciálních zákazníků, jsou ovlivněny usnadnění softwaru.  
@@ -65,17 +65,17 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
   
 -   Přidat ovládací prvky do formuláře a nastavte vlastnosti, jak je popsáno níže. Podívejte se na obrázku na konec tabulky modelu o tom, jak uspořádat ovládací prvky ve formuláři.  
   
-    |Objekt|Vlastnost|Hodnota|  
+    |Objekt|Vlastnost|Value|  
     |------------|--------------|-----------|  
     |Form1|AccessibleDescription|Formulář objednávky|  
     ||AccessibleName|Formulář objednávky|  
     ||Velikost písma|10|  
     ||Text|Formulář objednávky pizza|  
-    |PictureBox|Name|logo|  
+    |PictureBox|Název|logo|  
     ||AccessibleDescription|Řez pizza|  
     ||AccessibleName|Logo společnosti|  
     ||Image|Žádné ikona nebo rastrový obrázek|  
-    |Popisek|Name|companyLabel|  
+    |Popisek|Název|companyLabel|  
     ||Text|Good Pizza|  
     ||TabIndex|1|  
     ||AccessibleDescription|Název společnosti|  
@@ -83,58 +83,58 @@ Vytvoření přístupné aplikace má vliv na důležitá obchodní. Mnoha vlád
     ||Barva pozadí|Modrá|  
     ||Barva popředí|Žlutá|  
     ||Velikost písma|18|  
-    |Popisek|Name|customerLabel|  
+    |Popisek|Název|customerLabel|  
     ||Text|& název|  
     ||TabIndex|2|  
     ||AccessibleDescription|Popisek názvu zákazníka|  
     ||AccessibleName|Popisek názvu zákazníka|  
     ||Usemnemonic –|Pravda|  
-    |TextBox|Name|customerName|  
+    |TextBox|Název|customerName|  
     ||Text|(žádné)|  
     ||TabIndex|3|  
     ||AccessibleDescription|Jméno zákazníka|  
     ||AccessibleName|Jméno zákazníka|  
-    |GroupBox|Name|sizeOptions|  
+    |GroupBox|Název|sizeOptions|  
     ||AccessibleDescription|Možnosti velikosti pizza|  
     ||AccessibleName|Možnosti velikosti pizza|  
     ||Text|Velikost pizza|  
     ||TabIndex|4|  
-    |RadioButton|Name|smallPizza|  
+    |RadioButton|Název|smallPizza|  
     ||Text|& malé $6.00|  
     ||Zaškrtnuto|Pravda|  
     ||TabIndex|0|  
     ||AccessibleDescription|Malé pizza|  
     ||AccessibleName|Malé pizza|  
-    |RadioButton|Name|largePizza|  
+    |RadioButton|Název|largePizza|  
     ||Text|& velké 10,00 USD|  
     ||TabIndex|1|  
     ||AccessibleDescription|Velké pizza|  
     ||AccessibleName|Velké pizza|  
-    |Popisek|Name|toppingsLabel|  
+    |Popisek|Název|toppingsLabel|  
     ||Text|& toppings ($0,75 každý)|  
     ||TabIndex|5|  
     ||AccessibleDescription|Popisek toppings|  
     ||AccessibleName|Popisek toppings|  
     ||Usemnemonic –|Pravda|  
-    |CheckedListBox|Name|toppings|  
+    |CheckedListBox|Název|toppings|  
     ||TabIndex|6|  
     ||AccessibleDescription|K dispozici toppings|  
     ||AccessibleName|K dispozici toppings|  
     ||Položky|Pepperoni salám, hub|  
-    |Tlačítko|Name|pořadí|  
+    |Tlačítko|Název|pořadí|  
     ||Text|& pořadí|  
     ||TabIndex|7|  
     ||AccessibleDescription|Celkový počet pořadí|  
     ||AccessibleName|Celkový počet pořadí|  
-    |Tlačítko|Name|Zrušit|  
+    |Tlačítko|Název|Zrušit|  
     ||Text|& Zrušit|  
     ||TabIndex|8|  
     ||AccessibleDescription|Zrušit pořadí|  
     ||AccessibleName|Zrušit objednávku|  
-    |MainMenu|Name|theMainMenu|  
-    |Položku nabídky|Name|fileCommands|  
+    |MainMenu|Název|theMainMenu|  
+    |Položku nabídky|Název|fileCommands|  
     ||Text|& soubor|  
-    |Položku nabídky|Name|exitApp|  
+    |Položku nabídky|Název|exitApp|  
     ||Text|U & končit|
     
       Formulář bude vypadat podobně jako na následujícím obrázku:

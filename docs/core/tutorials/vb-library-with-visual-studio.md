@@ -8,11 +8,11 @@ dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
 ms.openlocfilehash: f14e4ffbebfe0d7e01d548a6d4f2dc8924633682
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59157297"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973678"
 ---
 # <a name="build-a-net-standard-library-with-visual-basic-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny .NET Standard pomocí jazyka Visual Basic a .NET Core SDK v sadě Visual Studio 2017
 

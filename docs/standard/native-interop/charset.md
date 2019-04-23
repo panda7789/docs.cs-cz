@@ -5,10 +5,10 @@ author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
 ms.openlocfilehash: f436bbbf435df07d242f9bf295b0264c4cfd5b3b
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480843"
 ---
 # <a name="charsets-and-marshalling"></a>Znakových sad a zařazování

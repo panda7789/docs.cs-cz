@@ -8,10 +8,10 @@ helpviewer_keywords:
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
 ms.openlocfilehash: ce2df9d4cea601652ebde2032758137b01faacdc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344660"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
@@ -61,7 +61,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
     -   *PublisherPolicyAssemblyFile* argumentem je název sestavení zásad vydavatele, která je výsledkem tohoto příkazu. Název souboru sestavení musí vyhovovat formátu:  
   
-         **zásady.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
+         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
     -   *KeyPairFile* argumentem je název souboru, který obsahuje pár klíčů. Musíte podepsat sestavení a sestavení zásad vydavatele s stejného páru klíčů.  
   

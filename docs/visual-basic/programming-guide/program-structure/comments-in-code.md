@@ -15,10 +15,10 @@ helpviewer_keywords:
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
 ms.openlocfilehash: a8094397ff2a076cf474d735e65298b3d2f0a9cd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59343009"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
@@ -64,5 +64,5 @@ Při prohlížení příklady kódu, můžete často narazit na symbol komentá�
 - [Základní Instinkty – dokumentace kódu pomocí komentářů XML](https://msdn.microsoft.com/magazine/dd722812.aspx)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
-- [Struktura programu a pravidla týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [REM – příkaz](../../../visual-basic/language-reference/statements/rem-statement.md)
+- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+- [Příkaz REM](../../../visual-basic/language-reference/statements/rem-statement.md)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - examples [Windows Forms], tooltips
 ms.assetid: 08979ba7-dd84-477b-ab17-8d06e759be99
 ms.openlocfilehash: cf257cccd272c16c3d7c3d403456265444fc8ac8
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59345479"
 ---
 # <a name="how-to-change-the-delay-of-the-windows-forms-tooltip-component"></a>Postupy: Změna zpoždění komponenty Windows Forms ToolTip
@@ -45,5 +45,5 @@ Existuje více hodnot zpoždění, které můžete nastavit pro Windows Forms <x
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled komponenty ToolTip](tooltip-component-overview-windows-forms.md)
-- [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)
-- [ToolTip – komponenta](tooltip-component-windows-forms.md)
+- [Postupy: Nastavení ToolTips pro ovládací prvky ve formuláři Windows Forms v době návrhu](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)
+- [Komponenta ToolTip](tooltip-component-windows-forms.md)

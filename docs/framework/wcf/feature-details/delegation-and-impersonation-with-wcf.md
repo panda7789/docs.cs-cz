@@ -9,10 +9,10 @@ helpviewer_keywords:
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
 ms.openlocfilehash: ec34c19da9cd642f5de51166bef0264c2e75c58c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59345518"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
@@ -111,7 +111,7 @@ ms.locfileid: "59345518"
   
  Následující tabulka určuje úroveň zosobnění, které služba získává při zosobňování z tokenu v mezipaměti.  
   
-|`AllowedImpersonationLevel` value|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
+|`AllowedImpersonationLevel` Hodnota|Služba má `SeImpersonatePrivilege`|Klienta a služby podporují delegování|Token v mezipaměti `ImpersonationLevel`|  
 |---------------------------------------|------------------------------------------|--------------------------------------------------|---------------------------------------|  
 |Anonymní|Ano|není k dispozici|Zosobnění|  
 |Anonymní|Ne|není k dispozici|Identifikace|  
@@ -223,4 +223,4 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
 - [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)
 - [Zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md)
 - [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
-- [Nástroj ServiceModel Metadata Utility (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

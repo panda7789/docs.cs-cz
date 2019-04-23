@@ -3,11 +3,11 @@ title: Jednorázový postup nastavení pro ukázky Windows Communication Foundat
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
 ms.openlocfilehash: 2b9d84089cdd987f2e2b1e3d23354505520a80f8
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59326707"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59773048"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.

@@ -3,11 +3,11 @@ title: Služba AJAX, která používá HTTP POST
 ms.date: 03/30/2017
 ms.assetid: 1ac80f20-ac1c-4ed1-9850-7e49569ff44e
 ms.openlocfilehash: 2bc1722056af4fc71f5f93d92ecd12accd99548f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59343243"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772125"
 ---
 # <a name="ajax-service-using-http-post"></a>Služba AJAX, která používá HTTP POST
 Tato ukázka předvádí, jak použít Windows Communication Foundation (WCF) k vytvoření [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] asynchronní JavaScript a XML (AJAX) služby, která používá HTTP POST. Služby AJAX je ten, který se dostanete pomocí základního kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka; jediným rozdílem mezi dvěma vzorky se používá HTTP POST místo HTTP GET.  

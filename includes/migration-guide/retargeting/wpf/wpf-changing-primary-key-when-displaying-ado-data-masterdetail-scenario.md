@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 2cd107dc92fd0fae89717c38840ce7ea44f3ac9a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59233947"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59774018"
 ---
 ### <a name="wpf-changing-a-primary-key-when-displaying-ado-data-in-a-masterdetail-scenario"></a>Změna primárního klíče při zobrazování dat ADO v případě záznamů Master/Detail v WPF
 

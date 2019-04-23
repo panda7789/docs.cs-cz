@@ -3,10 +3,10 @@ title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
 ms.openlocfilehash: a256b2f23bca973d1ed489724bf4d34ab35449f1
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481103"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
@@ -24,7 +24,7 @@ Pokud kolekce obsahuje prvky pouze jednoho datového typu, můžete použít jed
 > [!NOTE]
 > U příkladů v tomto tématu, zahrnují [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktivy pro `System.Collections.Generic` a `System.Linq` obory názvů.
 
- **V tomto tématu**
+ **V tomto tématu**
 
 - [Používání jednoduché kolekce](#BKMK_SimpleCollection)
 
@@ -32,7 +32,7 @@ Pokud kolekce obsahuje prvky pouze jednoho datového typu, můžete použít jed
 
   - [Třídy System.Collections.Generic](#BKMK_Generic)
 
-  - [Třídy System.Collections.Concurrent](#BKMK_Concurrent)
+  - [System.Collections.Concurrent Classes](#BKMK_Concurrent)
 
   - [System.Collections Classes](#BKMK_Collections)
 
@@ -186,11 +186,11 @@ Mnoho nejběžnějších kolekcí jsou k dispozici v rozhraní .NET Framework. K
 
 V této části jsou popsány některé běžné třídy kolekce:
 
-- <xref:System.Collections.Generic>  – třídy
+- <xref:System.Collections.Generic> Třídy
 
-- <xref:System.Collections.Concurrent>  – třídy
+- <xref:System.Collections.Concurrent> Třídy
 
-- <xref:System.Collections>  – třídy
+- <xref:System.Collections> Třídy
 
 <a name="BKMK_Generic"></a>
 
@@ -600,7 +600,7 @@ private static IEnumerable<int> EvenSequence(
 
 - [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
 - [Koncepty programování (C#)](../../../csharp/programming-guide/concepts/index.md)
-- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
 - [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)
 - [Kolekce a datové struktury](../../../standard/collections/index.md)

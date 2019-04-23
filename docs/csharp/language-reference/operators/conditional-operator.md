@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 82ada5e4d1f56ea93bbd7f41b04cda9f98d678c9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.openlocfilehash: 53a867e46b02793df5ad5bd9ca5ef676d0653a2a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672391"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59974302"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 
@@ -43,10 +43,12 @@ je vyhodnocen jako
 a ? b : (c ? d : e)
 ```
 
-Po ruce mnemotechnická, která vám pomůže si zapamatovat, jak tento operátor vyhodnocuje je s dotazem: 
+Po ruce mnemotechnická, která vám pomůže si zapamatovat, jak tento operátor vyhodnocuje je s dotazem:
+
 ```
 is this condition true ? yes : no
 ```
+
 s? část operátor, který funguje jako otazník pro předchozí prohlášení a následný funguje jako logické odpověď na tuto otázku.
 
 Následující příklad ukazuje použití podmíněný operátor:

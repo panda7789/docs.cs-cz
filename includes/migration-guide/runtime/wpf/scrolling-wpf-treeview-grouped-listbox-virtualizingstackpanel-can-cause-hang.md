@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 0887379fb23e9e66c6cc55a3774545162634c3f0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236691"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803650"
 ---
 ### <a name="scrolling-a-wpf-treeview-or-grouped-listbox-in-a-virtualizingstackpanel-can-cause-a-hang"></a>Posouvání prvku WPF TreeView nebo seskupené ListBox v VirtualizingStackPanel může způsobit zablokování
 

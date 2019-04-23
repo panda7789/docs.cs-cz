@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8c9087bf75d13b9613217357ac19900782076657
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59481604"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803677"
 ---
 **Toto téma platí pro: ✓** sady SDK .NET Core 2.2 a novější verze

@@ -3,10 +3,10 @@ title: Co je nového v C# 7.1
 description: Přehled nových funkcí v C# 7.1.
 ms.date: 04/09/2019
 ms.openlocfilehash: c79c8576f9cbbd921ebf30bd84ee5a817d6dc6e7
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480960"
 ---
 # <a name="whats-new-in-c-71"></a>Co je nového v C# 7.1
@@ -17,7 +17,7 @@ C#7.1 přidává [výběr verze jazyka](../language-reference/configure-language
 
 Nové funkce jazyků v této verzi jsou:
 
-* [`async` `Main` – metoda](#async-main)
+* [`async` `Main` – Metoda](#async-main)
   - Vstupní bod pro aplikaci může mít `async` modifikátor.
 * [`default` literálové výrazy](#default-literal-expressions)
   - Když jde odvodit typ cíle, můžete použít výchozí literál výrazy v výrazy s výchozími hodnotami.

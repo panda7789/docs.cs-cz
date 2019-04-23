@@ -13,11 +13,11 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 ms.assetid: 9445af8f-4f62-48b0-a3f6-068058964b9f
 ms.openlocfilehash: 1de835bda5ac906837ac3fbd97b87f68f14d1953
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59333922"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59771527"
 ---
 # <a name="how-to-set-the-image-displayed-by-a-windows-forms-control"></a>Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms
 Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky. Tyto Image může být ikon, které vysvětluje účel ovládacího prvku, jako je například ikonu diskety na tlačítko, které označuje **Uložit** příkazu. Ikony, případně může být obrázky na pozadí vzhledu a chování, které chcete poskytnout ovládací prvek.  

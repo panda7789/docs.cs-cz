@@ -8,10 +8,10 @@ helpviewer_keywords:
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
 ms.openlocfilehash: c8dc4ba5a17ca6a950d7ef3e0835f31463979bd3
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342515"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled

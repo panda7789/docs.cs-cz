@@ -6,10 +6,10 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
 ms.openlocfilehash: fc2b7ed2004b842116d051b393f00506428def61
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344543"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu Lambda (Visual Basic)
@@ -107,10 +107,10 @@ A *výraz lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq.Enumerable>
-- [Lambda – výrazy](./lambda-expressions.md)
-- [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Výrazy lambda](./lambda-expressions.md)
+- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
-- [Delegate – příkaz](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

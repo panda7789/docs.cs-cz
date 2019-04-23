@@ -4,10 +4,10 @@ description: Teprve se C#? Naučte se základy jazyka.
 ms.date: 04/05/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: c3a117d660c02702e900b827c2eed9c6b56b5606
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481090"
 ---
 # <a name="a-tour-of-the-c-language"></a>Připravuje C# jazyka
@@ -69,7 +69,7 @@ Další informace o mnohem víc C#.  V následujících tématech přehledu elem
   - ***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
 * [Výčty](enums.md)
   - ***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant.
-* [Delegáty](delegates.md)
+* [Delegáti](delegates.md)
   - A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 * [Atributy](attributes.md)
   * ***Atributy*** programu povolit programy k určení dalších deklarativní informace o typy, členy a dalších entit.

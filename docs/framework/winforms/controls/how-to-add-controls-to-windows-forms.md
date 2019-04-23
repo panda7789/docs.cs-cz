@@ -10,10 +10,10 @@ helpviewer_keywords:
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
 ms.openlocfilehash: 04597283a8ff2e21a0f227268671d3605eac6356
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59343581"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Postupy: Přidávání ovládacích prvků do Windows Forms
@@ -91,8 +91,8 @@ Většinou forem jsou navržené tak, že přidáte ovládací prvky na plochu f
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ovládací prvky Windows Forms](index.md)
+- [Windows Forms – ovládací prvky](index.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
-- [Postupy: Změna velikosti ovládacích prvků ve Windows Forms](how-to-resize-controls-on-windows-forms.md)
-- [Postupy: Nastavení textu zobrazovaného ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Postupy: Změna velikosti ovládacích prvků ve formulářích Windows](how-to-resize-controls-on-windows-forms.md)
+- [Postupy: Nastavit Text, zobrazený ovládacím prvkem Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

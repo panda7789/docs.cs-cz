@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: fbc39b6e1cc19f6c2846caaabb9a8a721494b4e6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236120"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803716"
 ---
 ### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>Povolit kódování Unicode v identifikátory URI, které se podobají UNC sdílené složky
 

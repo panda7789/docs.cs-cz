@@ -11,11 +11,11 @@ ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6f70b4c67de892c3b66a0099dae9f618a99b3f1
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59314110"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59770487"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Postupy: Přijímání oznámení o první odpovídající výjimce
 <xref:System.AppDomain.FirstChanceException> Událost <xref:System.AppDomain> třída umožňuje dostávat oznámení, že byla vyvolána výjimka, před common language runtime začne hledat obslužné rutiny výjimek.

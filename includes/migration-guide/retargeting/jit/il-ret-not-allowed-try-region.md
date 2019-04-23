@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 1687b1b9a1a6861f9569a0e29426de7f32ffc32b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234390"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803648"
 ---
 ### <a name="il-ret-not-allowed-in-a-try-region"></a>IL není povolena v oblasti, zkuste vrácená hodnota:
 

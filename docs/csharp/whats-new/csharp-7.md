@@ -4,18 +4,18 @@ description: Získejte přehled o nové funkce ve verzi 7.0 C# jazyka.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ms.openlocfilehash: 69e32bf6aae0da15c23e8f08da8c2bb9e3d3456e
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481298"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
 C# 7.0 přidá několik nových funkcí jazyka C#:
-* [`out` proměnné](#out-variables)
+* [`out` Proměnné](#out-variables)
   - Je možné deklarovat `out` hodnoty inline jako argumentů metody, které používají.
-* [N-tice](#tuples)
+* [Řazené kolekce členů](#tuples)
   - Můžete vytvořit jednoduchý, Nepojmenované typy, které obsahují více veřejná pole. Kompilátory a nástroje pro prostředí IDE pochopit sémantiku z těchto typů.
 * [Zahození](#discards)
   - Zahození jsou dočasné, jen pro zápis proměnné při nezáleží hodnota přiřazená v přiřazeních. Jsou nejužitečnější tehdy, když dekonstrukce řazených kolekcí členů a uživatelem definovaných typů, stejně jako při volání metody s `out` parametry.

@@ -5,11 +5,11 @@ author: richlander
 ms.date: 06/20/2016
 ms.custom: seodec18
 ms.openlocfilehash: a03a4961b116b05468ac6c6ce5e648c07a77b7f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59090495"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973912"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 

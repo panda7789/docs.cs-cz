@@ -3,10 +3,10 @@ title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
 ms.openlocfilehash: a7a3ce1b33d040b337087dfede90b58906c95cbd
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481168"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
@@ -53,7 +53,7 @@ Tato část popisuje následující pojmy:
 
 - [Obecné typy](#Generics)
 
-- [Delegáty](#Delegates)
+- [Delegáti](#Delegates)
 
 ## <a name="Classes"></a> Třídy a objekty
 
@@ -79,9 +79,9 @@ struct SampleStruct
 
 Další informace naleznete v tématu:
 
-- [třída](../../../csharp/language-reference/keywords/class.md)
+- [class](../../../csharp/language-reference/keywords/class.md)
 
-- [struct ](../../../csharp/language-reference/keywords/struct.md)
+- [struct](../../../csharp/language-reference/keywords/struct.md)
 
 ### <a name="Members"></a> Členy třídy
 
@@ -168,7 +168,7 @@ Další informace naleznete v tématu:
 
 - [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
 
-- [Metody rozšíření](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+- [Rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
 
 #### <a name="Constructors"></a> Konstruktory
 
@@ -386,7 +386,7 @@ Další informace naleznete v tématu:
 
 [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)
 
-[rozhraní](../../../csharp/language-reference/keywords/interface.md)
+[interface](../../../csharp/language-reference/keywords/interface.md)
 
 ## <a name="Generics"></a> Obecné typy
 
@@ -448,10 +448,10 @@ class SampleClass
 
 Další informace naleznete v tématu:
 
-- [Delegáty](../../../csharp/programming-guide/delegates/index.md)
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
 
-- [delegát](../../../csharp/language-reference/keywords/delegate.md)
+- [delegate](../../../csharp/language-reference/keywords/delegate.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

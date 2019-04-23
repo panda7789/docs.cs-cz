@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 297af393e86c65e84ea7271d98eab36dbc6dbb0e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234668"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59774386"
 ---
 ### <a name="some-workflow-drag-and-drop-apis-are-obsolete"></a>Některá rozhraní API a přetahování pracovního postupu jsou popsané zastaralé
 

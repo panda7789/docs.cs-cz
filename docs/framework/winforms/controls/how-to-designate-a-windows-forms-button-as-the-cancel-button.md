@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Button control [Windows Forms], designating as cancel button
 ms.assetid: 252f0834-e54b-44d9-96f7-ee5f50e94f2c
 ms.openlocfilehash: 8170190145e76a86f5343bc42b39be7fb9d61a0f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344140"
 ---
 # <a name="how-to-designate-a-windows-forms-button-as-the-cancel-button"></a>Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit
@@ -50,5 +50,5 @@ Na formuláři Windows, můžete určit <xref:System.Windows.Forms.Button> ovlá
 - [Přehled ovládacího prvku Button](button-control-overview-windows-forms.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
-- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout](how-to-designate-a-windows-forms-button-as-the-accept-button.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

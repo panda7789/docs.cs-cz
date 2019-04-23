@@ -3,29 +3,29 @@ title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async 
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
 ms.openlocfilehash: 5774aab9357c5af58cd1ee664066ba5e4ee9b1f6
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480869"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.
 
-**V tomto tématu**
+**V tomto tématu**
 
 - [Rozpoznávání vícenásobného přístupu](#BKMK_RecognizingReentrancy)
 
-- [Vyřešení vícenásobného přístupu](#BKMK_HandlingReentrancy)
+- [Podpora vícenásobného přístupu](#BKMK_HandlingReentrancy)
 
   - [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)
 
-  - [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)
+  - [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)
 
-  - [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)
+  - [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)
 
-- [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)
+- [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)
 
 > [!NOTE]
 > Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.
@@ -96,11 +96,11 @@ Můžete zpracovat vícenásobnost různými způsoby v závislosti na tom, co c
 
   Zakažte **Start** tlačítko během operace tak, aby uživatel nemohl přerušit ho.
 
-- [Zrušení a opětovné spuštění operace](#BKMK_CancelAndRestart)
+- [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)
 
   Zrušit jakoukoli operaci, která je stále spuštěna, když uživatel klikne **Start** tlačítko znovu, a potom pokračujte umožňují nedávno požadované operace.
 
-- [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)
+- [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)
 
   Povolit, že všechny požadované operace běžely asynchronně, ale koordinovat zobrazení výstupu tak, aby se výsledky z každé operace zobrazovaly společně a v pořadí.
 

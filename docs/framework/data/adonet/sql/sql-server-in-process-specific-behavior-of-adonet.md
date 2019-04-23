@@ -3,10 +3,10 @@ title: Chování ADO.NET specifické pro proces SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 4f223948-ae8f-4c16-bdc2-4acc6debed3f
 ms.openlocfilehash: 0c227e1177e59b3421297e80510d1a7077f7f165
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344842"
 ---
 # <a name="sql-server-in-process-specific-behavior-of-adonet"></a>Chování ADO.NET specifické pro proces SQL Serveru

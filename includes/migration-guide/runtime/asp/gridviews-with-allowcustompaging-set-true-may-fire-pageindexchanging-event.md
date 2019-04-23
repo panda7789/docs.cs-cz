@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: c9c46793a0f66894649796d960547848ff5ebf8c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235214"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803663"
 ---
 ### <a name="gridviews-with-allowcustompaging-set-to-true-may-fire-the-pageindexchanging-event-when-leaving-the-final-page-of-the-view"></a>Prvků GridViews s AllowCustomPaging na hodnotu nastavenou na hodnotu true může vyvolat události PageIndexChanging při opuštění poslední stránky zobrazení
 

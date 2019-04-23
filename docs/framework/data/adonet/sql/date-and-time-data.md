@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
 ms.openlocfilehash: 80b7df4922e1398c7290e769e53627a1d46ebc83
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344169"
 ---
 # <a name="date-and-time-data"></a>Kalendářní a časová data
@@ -99,7 +99,7 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jed
 >  Vyvolá výjimku časové hodnoty, které jsou menší než nula nebo větší než nebo roven 24 hodin <xref:System.ArgumentException>.  
   
 ### <a name="creating-parameters"></a>Vytváří se parametry  
- Můžete vytvořit <xref:System.Data.SqlClient.SqlParameter> objektu pomocí jeho konstruktoru, nebo jejím přidáním na <xref:System.Data.SqlClient.SqlCommand><xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce voláním `Add` metodu <xref:System.Data.SqlClient.SqlParameterCollection>. `Add` Metoda vezme jako vstupní argumenty konstruktoru nebo existující objekt parametru.  
+ Můžete vytvořit <xref:System.Data.SqlClient.SqlParameter> objektu pomocí jeho konstruktoru, nebo jejím přidáním na <xref:System.Data.SqlClient.SqlCommand> <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> kolekce voláním `Add` metodu <xref:System.Data.SqlClient.SqlParameterCollection>. `Add` Metoda vezme jako vstupní argumenty konstruktoru nebo existující objekt parametru.  
   
  Další části v tomto tématu obsahují příklady toho, jak zadat datum a čas parametry. Další příklady práce s parametry, naleznete v tématu [parametry konfigurace a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md) a [parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
   
@@ -237,7 +237,7 @@ command.Parameters.AddWithValue( _
 |-----------|-----------------|  
 |[Datum a čas Data typy a funkce (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98360)|Poskytuje přehled příkazů jazyka Transact-SQL data a času datové typy a funkce.|  
 |[Pomocí kalendářní a časová Data](https://go.microsoft.com/fwlink/?LinkId=98361)|Poskytuje informace o datum a čas datové typy a funkce a příklady jejich použití.|  
-|[Datové typy (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje datové typy systému SQL Server 2008.|  
+|[Data Types (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje datové typy systému SQL Server 2008.|  
   
 ## <a name="see-also"></a>Viz také:
 

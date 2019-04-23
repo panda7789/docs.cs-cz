@@ -3,11 +3,11 @@ title: Zjišťování doby provádění operací služby
 ms.date: 03/30/2017
 ms.assetid: e8a93a2c-2c20-48b3-8986-57e90e9aa908
 ms.openlocfilehash: fd7dec5784f50a0613b574822a31202a859b34c6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59299030"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772768"
 ---
 # <a name="determining-service-operation-duration"></a>Zjišťování doby provádění operací služby
 Pokud analytické trasování je povolené v aplikaci Windows Communication Foundation (WCF), doba trvání spuštění pro operaci služby můžete snadno určit, naleznete v protokolu událostí.  Toto téma ukazuje, jak určit množství času, které zabere operaci služby.  

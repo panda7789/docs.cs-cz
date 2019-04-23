@@ -13,10 +13,10 @@ helpviewer_keywords:
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
 ms.openlocfilehash: 58ee58577b9ff71112103abb4d33c8b85d3c806f
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481350"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
@@ -167,9 +167,9 @@ Další informace najdete v tématu [multimédia přehled](multimedia-overview.m
 - <xref:System.Windows.Media.Animation>
 - <xref:System.Windows.Media.Media3D>
 - [2D grafika a obrázky](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [Tvary a základní kresby v přehledu WPF](shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](shapes-and-basic-drawing-in-wpf-overview.md)
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
-- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
-- [Postupy: Témata animace a časování](animation-and-timing-how-to-topics.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Animace a časování témata s postupy](animation-and-timing-how-to-topics.md)
 - [Přehled 3D grafiky](3-d-graphics-overview.md)
 - [Přehled multimédií](multimedia-overview.md)

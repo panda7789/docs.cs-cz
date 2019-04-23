@@ -5,11 +5,11 @@ author: richlander
 ms.date: 08/01/2018
 ms.custom: updateeachrelease
 ms.openlocfilehash: 79a0c09074159160dd01b0c7970612f7058cc3fc
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920620"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59974354"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 

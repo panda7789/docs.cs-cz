@@ -12,11 +12,11 @@ helpviewer_keywords:
 - FlowLayoutPanel control [Windows Forms], layout engine
 ms.assetid: f91aa91c-29f4-4089-95ca-5d48b774b00e
 ms.openlocfilehash: 8e5043e2b42b1e7449c6dab51691b6d57e28cd53
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59083371"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772678"
 ---
 # <a name="how-to-implement-a-custom-layout-engine"></a>Postupy: Implementace vlastního modulu pro rozložení
 Následující příklad kódu ukazuje, jak vytvořit vlastního modulu pro rozložení, který provádí jednoduché plovoucí rozložení. Implementuje ovládací prvek panel s názvem `DemoFlowPanel`, která přepisuje <xref:System.Windows.Forms.Control.LayoutEngine%2A> vlastnosti instance `DemoFlowLayout` třídy.  

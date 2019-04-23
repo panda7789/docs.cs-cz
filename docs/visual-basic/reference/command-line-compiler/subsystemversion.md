@@ -7,10 +7,10 @@ helpviewer_keywords:
 - subsystemversion compiler option [Visual Basic]
 ms.assetid: 08be22b2-f447-4cd3-8203-120b1b920b54
 ms.openlocfilehash: 0eca7918e5e4b8702858f972003faef1274e56e3
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480856"
 ---
 # <a name="-subsystemversion-visual-basic"></a>-subsystemversion (Visual Basic)
@@ -58,7 +58,7 @@ Výchozí hodnota **- subsystemversion** – možnost kompilátoru závisí na p
 
   - [-target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)
 
-  - [-platform: arm](../../../visual-basic/reference/command-line-compiler/platform.md)
+  - [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)
 
 - Výchozí hodnota je 6.00, pokud používáte MSBuild, které cílíte [!INCLUDE[net_v45](~/includes/net-v45-md.md)], a jste nenastavili žádné možnosti kompilátoru, která jste zadali dříve v tomto seznamu.
 
@@ -70,6 +70,6 @@ Chcete-li nastavit **- subsystemversion** – možnost kompilátoru v sadě Visu
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 
 - [Vlastnosti nástroje MSBuild](/visualstudio/msbuild/msbuild-properties)

@@ -4,10 +4,10 @@ description: výrazy, operandy a operátory jsou stavební bloky C# jazyka
 ms.date: 11/06/2016
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
 ms.openlocfilehash: 4ffe947a4cb8c36a5925a4b3846486e44a9d8ec4
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480752"
 ---
 # <a name="expressions"></a>Výrazy

@@ -3,11 +3,11 @@ title: Contract1
 ms.date: 03/30/2017
 ms.assetid: aa00f6b3-7e1f-4213-841a-206463fca20b
 ms.openlocfilehash: 10789f9a2940c239ae20c8fd1e9d48bca0e820ed
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59201088"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772996"
 ---
 # <a name="contract"></a>Kontrakt
 Kontrakt  
@@ -49,7 +49,7 @@ class Contract
   
  Vlastnosti přičleněné k tomuto kontraktu.  
   
-### <a name="name"></a>Name  
+### <a name="name"></a>Název  
  Datový typ: řetězec  
   
  Typ přístupu: jen pro čtení  

@@ -21,10 +21,10 @@ ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e425394df0d04ffbb4cde41c83a9efe3c5b4abe0
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481259"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (generátor nativních obrázků)
@@ -118,8 +118,8 @@ Následující tabulka ukazuje syntaxi každé `action`. Popisy jednotlivých č
 
 |Konfigurace|Popis|
 |-------------------|-----------------|
-|`/ExeConfig:` `exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Pokud sdílená komponenta načtena za běhu, pomocí <xref:System.Reflection.Assembly.Load%2A> metoda, konfigurační soubor aplikace určí závislosti, která jsou načtena pro sdílenou komponentu – například verzi načtené závislosti. `/ExeConfig` Přepínač poskytuje Ngen.exe pokyny, na které závislosti budou načteny za běhu.|
-|`/AppBase:` `directoryPath`|Při hledání závislostí aplikace použije jako základ cesty zadaný adresář.|
+|`/ExeConfig:``exePath`|Použije konfiguraci zadaného spustitelného sestavení.<br /><br /> Při vytváření vazeb na závislosti musí nástroj Ngen.exe učinit stejná rozhodnutí jako zavaděč. Pokud sdílená komponenta načtena za běhu, pomocí <xref:System.Reflection.Assembly.Load%2A> metoda, konfigurační soubor aplikace určí závislosti, která jsou načtena pro sdílenou komponentu – například verzi načtené závislosti. `/ExeConfig` Přepínač poskytuje Ngen.exe pokyny, na které závislosti budou načteny za běhu.|
+|`/AppBase:``directoryPath`|Při hledání závislostí aplikace použije jako základ cesty zadaný adresář.|
 
 <a name="OptionTable"></a>
 
@@ -130,7 +130,7 @@ Následující tabulka ukazuje syntaxi každé `action`. Popisy jednotlivých č
 |`/nologo`|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|
 |`/silent`|Potlačí zobrazování zpráv o úspěchu.|
 |`/verbose`|Zobrazí podrobné informace o ladění. **Poznámka:**  Vzhledem k omezením operačního systému tato možnost nezobrazí dodatečných informací o Windows 98 a Windows Millennium Edition.|
-|`/help`,  `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
+|`/help`, `/?`|Zobrazí syntaxi příkazu a možnosti aktuální verze.|
 
 ## <a name="remarks"></a>Poznámky
 
@@ -187,9 +187,9 @@ V této části Poznámky:
 
   - [Neplatné bitové kopie](#InvalidImages)
 
-- [Poradce při potížích](#Troubleshooting)
+- [Odstraňování potíží](#Troubleshooting)
 
-  - [vazba sestavení – prohlížeč protokolu](#Fusion)
+  - [Assembly Binding Log Viewer](#Fusion)
 
   - [JITCompilationStart Pomocník spravovaného ladění](#MDA)
 
@@ -637,6 +637,6 @@ V rozhraní .NET Framework verze 2.0 je pouze interakci se službou nativních b
 ## <a name="see-also"></a>Viz také:
 
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Proces spravovaného spouštění](../../../docs/standard/managed-execution-process.md)
+- [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
 - [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

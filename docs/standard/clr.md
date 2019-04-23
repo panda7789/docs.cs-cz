@@ -1,7 +1,6 @@
 ---
-title: Common Language Runtime (CLR)
-ms.custom: updateeachrelease
-ms.date: 04/16/2018
+title: Přehled modelu Common Language Runtime (CLR) – .NET Framework
+ms.date: 04/02/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - compiling source code, runtime functionality
@@ -18,12 +17,13 @@ helpviewer_keywords:
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 740c804dae32a79dd06f951751bd0980fb34ca07
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
-ms.translationtype: MT
+ms.custom: updateeachrelease
+ms.openlocfilehash: 798b3d29a13434511f64dfc358fb7690948cacfa
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904116"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59972950"
 ---
 # <a name="common-language-runtime-clr-overview"></a>Přehled modelu Common Language Runtime (CLR)
 
@@ -64,7 +64,7 @@ Kompilátory a nástroje poskytují funkcionalitu modulu runtime takovým způso
 
 ## <a name="clr-versions"></a>Verze modulu CLR
 
-Číslo verze rozhraní .NET Framework není nemusí nutně odpovídat číslu verze modulu CLR, které obsahuje. Následující tabulka ukazuje, jak souvisí čísla dvou verzí.
+Číslo verze rozhraní .NET Framework není nemusí nutně odpovídat číslu verze modulu CLR, které obsahuje. Následující tabulka ukazuje, jak souvisí čísla dvou verzí:
 
 |Verze rozhraní .NET Framework|Zahrnuje verzi CLR|
 |----------------------------|--------------------------|
@@ -77,6 +77,7 @@ Kompilátory a nástroje poskytují funkcionalitu modulu runtime takovým způso
 |4.5 (včetně 4.5.1 a 4.5.2)|4|
 |4.6 (včetně 4.6.1 a 4.6.2)|4|
 |4.7 (včetně 4.7.1 a 4.7.2)|4|
+|4.8|4|
 
 ## <a name="related-topics"></a>Související témata
 

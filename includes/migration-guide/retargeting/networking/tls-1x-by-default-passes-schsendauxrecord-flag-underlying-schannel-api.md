@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 0ea8c4843bb0dfb4e4208f2bfad4c416bfae7a1e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234389"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803673"
 ---
 ### <a name="tls-1x-by-default-passes-the-schsendauxrecord-flag-to-the-underlying-schannel-api"></a>Protokol TLS 1.x ve výchozím nastavení se předá příznak SCH_SEND_AUX_RECORD základního rozhraní API zprostředkovatele SCHANNEL
 

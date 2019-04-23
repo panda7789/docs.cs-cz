@@ -5,10 +5,10 @@ f1_keywords:
 - vbrID14
 ms.assetid: 16681c75-a400-422d-9351-c691d3c7614e
 ms.openlocfilehash: 119d17e1aea974a0c40451260e671994653cee46
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342313"
 ---
 # <a name="out-of-string-space-visual-basic"></a>Nedostatek místa pro řetězce (Visual Basic)

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
 ms.openlocfilehash: 0176ebffe82e60671ea66481b7d659004dc31477
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59344920"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
@@ -128,7 +128,7 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
   
 -   Vlastnost nastavena, musí být vlastnost na <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement>. Vlastnost musí opírá <xref:System.Windows.DependencyProperty>.  
   
--   Odkaz je pro hodnoty v rámci <xref:System.Windows.Style><xref:System.Windows.Setter>.  
+-   Odkaz je pro hodnoty v rámci <xref:System.Windows.Style> <xref:System.Windows.Setter>.  
   
 -   Vlastnost nastavena, musí být vlastnost na <xref:System.Windows.Freezable> , který je zadaný jako hodnota buď <xref:System.Windows.FrameworkElement> nebo <xref:System.Windows.FrameworkContentElement> vlastnost, nebo <xref:System.Windows.Setter> hodnotu.  
   
@@ -144,7 +144,7 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
   
  [!code-xaml[FEResourceSH_snip#ImplicitStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/FEResourceSH_snip/CS/page2.xaml#implicitstyle)]  
   
- Styl opravdu že klíč: implicitní klíč `typeof(`<xref:System.Windows.Controls.Button>`)`. V kódu, můžete zadat <xref:System.Windows.Style.TargetType%2A> přímo jako typ název (nebo můžete volitelně použít [{x: Type...}](../../xaml-services/x-type-markup-extension.md) Chcete-li vrátit <xref:System.Type>.  
+ Styl opravdu že klíč: implicitní klíč `typeof(` <xref:System.Windows.Controls.Button> `)`. V kódu, můžete zadat <xref:System.Windows.Style.TargetType%2A> přímo jako typ název (nebo můžete volitelně použít [{x: Type...}](../../xaml-services/x-type-markup-extension.md) Chcete-li vrátit <xref:System.Type>.  
   
  Prostřednictvím mechanismů výchozí motiv styl používaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], stylem jako styl modulu runtime <xref:System.Windows.Controls.Button> na stránce i v případě, <xref:System.Windows.Controls.Button> samotný nebude pokoušet o zadejte jeho <xref:System.Windows.FrameworkElement.Style%2A> vlastnost nebo konkrétní prostředek odkaz na styl. Vašemu stylu na stránce definován najdete výše v pořadí vyhledávání než styl slovníku motivu, pomocí stejného klíče, který má slovníku stylu motivu. Můžete pouze zadat `<Button>Hello</Button>` kamkoli do stránky a styl je definovaný s <xref:System.Windows.Style.TargetType%2A> z `Button` by použít na toto tlačítko. Pokud chcete, můžete stále explicitně klíče styl se stejnou hodnotou typu jako <xref:System.Windows.Style.TargetType%2A>pro přehlednost ve vašem kódu, ale je volitelný.  
   
@@ -156,9 +156,9 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
 
 - <xref:System.Windows.ResourceDictionary>
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
-- [Zdroje a kód](resources-and-code.md)
-- [Definování prostředků a odkazování na ně](how-to-define-and-reference-a-resource.md)
+- [Prostředky a kód](resources-and-code.md)
+- [Definice a odkaz prostředku](how-to-define-and-reference-a-resource.md)
 - [Přehled správy aplikací](../app-development/application-management-overview.md)
 - [x:Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md)
-- [StaticResource – rozšíření značek](staticresource-markup-extension.md)
-- [DynamicResource – rozšíření značek](dynamicresource-markup-extension.md)
+- [Rozšíření značek StaticResource](staticresource-markup-extension.md)
+- [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: efe8a2dd98865f6a24b65ce0f08eb0c574b708f7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234378"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803682"
 ---
 ### <a name="currentculture-and-currentuiculture-flow-across-tasks"></a>CurrentCulture a CurrentUICulture téct přes úlohy
 

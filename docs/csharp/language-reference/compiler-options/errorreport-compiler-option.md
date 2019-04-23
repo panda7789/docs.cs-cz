@@ -9,10 +9,10 @@ helpviewer_keywords:
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
 ms.openlocfilehash: 4797f35a3738955f620fad7a93f8695685d21057
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59345089"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
@@ -28,13 +28,13 @@ Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazy
 ```  
   
 ## <a name="arguments"></a>Arguments  
- **žádná**  
+ **None**  
  Sestavy o vnitřních chybách kompilátoru nebudou shromážděné nebo odeslané společnosti Microsoft.  
   
- **řádek**  
+ **prompt**  
  Zobrazí výzvu k odeslání hlášení, pokud obdržíte chybu kompilátoru. **řádek** výchozí nastavení je při kompilaci aplikace ve vývojovém prostředí.  
   
- **queue**  
+ **fronty**  
  Zařadí do fronty zprávy o chybách. Při přihlášení s přihlašovacími údaji správce, můžete nahlásit všechny chyby od posledního přihlášení. Nezobrazí výzva k odeslání zprávy o chybách více než jednou za tři dny. **fronty** výchozí nastavení je při kompilaci aplikace příkazového řádku.  
   
  **Odeslat**  
@@ -63,4 +63,4 @@ Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazy
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

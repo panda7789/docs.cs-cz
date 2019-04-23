@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Windows Forms, keyboard input
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
 ms.openlocfilehash: ddc2f3338b231ab3ae59e65bc82c00bb8f663540
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342166"
 ---
 # <a name="how-keyboard-input-works"></a>Jak funguje vstup z klávesnice
@@ -73,6 +73,6 @@ Windows Forms zpracovává vstup z klávesnice vyvoláním události klávesnice
 - <xref:System.Windows.Forms.Keys>
 - <xref:System.Windows.Forms.Control.WndProc%2A>
 - <xref:System.Windows.Forms.Control.PreProcessMessage%2A>
-- [My.Computer.Keyboard – objekt](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
+- [Objekt My.Computer.Keyboard](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)
 - [Přístup ke klávesnici](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)
 - [Použití událostí klávesnice](using-keyboard-events.md)

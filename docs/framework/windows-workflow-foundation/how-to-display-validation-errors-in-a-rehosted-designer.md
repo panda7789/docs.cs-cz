@@ -3,11 +3,11 @@ title: 'Postupy: Zobrazení chyb ověřování v návrháři se změněným host
 ms.date: 03/30/2017
 ms.assetid: 5aa8fb53-8f75-433b-bc06-7c7d33583d5d
 ms.openlocfilehash: a3d993f55bf130039905f1a6512a7ae104512432
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59310197"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59770903"
 ---
 # <a name="how-to-display-validation-errors-in-a-rehosted-designer"></a>Postupy: Zobrazení chyb ověřování v návrháři se změněným hostováním
 Toto téma popisuje, jak načíst a publikovat chyby ověření provádění se změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]. To nám poskytuje s postupem, abyste se ujistili, že pracovního postupu v návrháři se změněným hostováním platný.  

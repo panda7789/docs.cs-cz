@@ -3,11 +3,11 @@ title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
 ms.openlocfilehash: d75a535a601612196ef66151a4685723e048848f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59312641"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59772658"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuovaném systému obsahující propojených služeb je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí tok požadavku pro podporu důležitých scénářů, jako je stav monitorování, řešení problémů a analýzu kořenových příčin. Chcete-li povolit trasování korelace různých služeb v rozhraní .NET Framework 4 přidali jsme podporu prostřednictvím následujících funkcí:

@@ -10,10 +10,10 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7c6d0c7128becb154955664cfdcf96d020de9369
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480661"
 ---
 # <a name="-deterministic"></a>-deterministic
@@ -56,5 +56,5 @@ Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít p
 
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

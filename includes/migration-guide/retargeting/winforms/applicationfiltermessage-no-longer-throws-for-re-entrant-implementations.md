@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8a1e2ca0790cb62e3c2c879f2ba0bb169ef07d77
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234383"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803700"
 ---
 ### <a name="applicationfiltermessage-no-longer-throws-for-re-entrant-implementations-of-imessagefilterprefiltermessage"></a>Application.FilterMessage již nevyvolá pro vícenásobně implementace IMessageFilter.PreFilterMessage
 

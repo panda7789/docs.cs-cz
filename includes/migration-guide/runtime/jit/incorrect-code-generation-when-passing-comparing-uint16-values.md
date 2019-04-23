@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ad624a665dbe8e989ea05acc20213809e515e6ac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236582"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803696"
 ---
 ### <a name="incorrect-code-generation-when-passing-and-comparing-uint16-values"></a>Nesprávné generování kódu při předávání a porovnávání hodnot UInt16
 

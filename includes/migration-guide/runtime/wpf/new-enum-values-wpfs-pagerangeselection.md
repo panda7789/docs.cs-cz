@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: edd194fef27d97976f1ff45daec1cd56382bbb55
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235250"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803685"
 ---
 ### <a name="new-enum-values-in-wpfs-pagerangeselection"></a>Nové hodnoty výčtu v PageRangeSelection WPF.
 

@@ -2,61 +2,63 @@
 title: Číselné a porovnávací operátory
 ms.date: 03/30/2017
 ms.assetid: 25b4a26a-06f2-4f80-87a9-76705ed46197
-ms.openlocfilehash: 9b31fd2d819afbb1e589ad74f23ec139830c68b8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.openlocfilehash: b29f78a13d6d0313e0ad29754f6d13ac08be1092
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59212164"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973340"
 ---
 # <a name="numeric-and-comparison-operators"></a>Číselné a porovnávací operátory
-Aritmetické operace a porovnání operátory fungovat podle očekávání v modulu common language runtime (CLR) s výjimkou následujícím způsobem:  
-  
--   SQL nepodporuje operátor numerického zbytku na čísla s plovoucí desetinnou čárkou.  
-  
--   SQL nepodporuje Nekontrolovaná aritmetické operace.  
-  
--   Operátory přírůstku a snížení způsobit vedlejší účinky při použití ve výrazech, které nelze replikovat v SQL a, proto nejsou podporovány.  
-  
-## <a name="supported-operators"></a>Podporované operátory  
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje následující operátory.  
-  
--   Základní aritmetické operátory:  
-  
-    -   `+`  
-  
-    -   `-` (odčítání)  
-  
-    -   `*`  
-  
-    -   `/`  
-  
-    -   Dělení celého čísla v jazyce Visual Basic (`\`)  
-  
-    -   `%` (Visual Basic `Mod`)  
-  
-    -   `<<`  
-  
-    -   `>>`  
-  
-    -   `-` (unární negace)  
-  
--   Základní relační operátory:  
-  
-    -   Visual Basic `=` a C# `==`  
-  
-    -   Visual Basic `<>` a C# `!=`  
-  
-    -   Visual Basic `Is/IsNot`  
-  
-    -   `<`  
-  
-    -   `<=`  
-  
-    -   `>`  
-  
-    -   `>=`  
-  
+
+Aritmetické operace a porovnání operátory fungovat podle očekávání v modulu common language runtime (CLR) s výjimkou následujícím způsobem:
+
+- SQL nepodporuje operátor numerického zbytku na čísla s plovoucí desetinnou čárkou.
+
+- SQL nepodporuje Nekontrolovaná aritmetické operace.
+
+- Operátory přírůstku a snížení způsobit vedlejší účinky při použití ve výrazech, které nelze replikovat v SQL a, proto nejsou podporovány.
+
+## <a name="supported-operators"></a>Podporované operátory
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje následující operátory.
+
+- Základní aritmetické operátory:
+
+  - `+`
+
+  - `-` (odčítání)
+
+  - `*`
+
+  - `/`
+
+  - Dělení celého čísla v jazyce Visual Basic (`\`)
+
+  - `%` (Visual Basic `Mod`)
+
+  - `<<`
+
+  - `>>`
+
+  - `-` (unární negace)
+
+- Základní relační operátory:
+
+  - Visual Basic `=` and C# `==`
+
+  - Visual Basic `<>` and C# `!=`
+
+  - Visual Basic `Is/IsNot`
+
+  - `<`
+
+  - `<=`
+
+  - `>`
+
+  - `>=`
+
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

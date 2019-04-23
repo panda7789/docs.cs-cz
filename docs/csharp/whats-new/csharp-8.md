@@ -3,10 +3,10 @@ title: Co je nového v C# 8.0 – C# Průvodce
 description: Získejte přehled o nových funkcí dostupných v C# 8.0. V tomto článku je aktuální verze Preview 2.
 ms.date: 02/12/2019
 ms.openlocfilehash: eecc37433e4b026b7337418eac1a5e80ef48ea6e
-ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59427276"
 ---
 # <a name="whats-new-in-c-80"></a>Co je nového v C# 8.0
@@ -24,7 +24,7 @@ Existuje mnoho vylepšení C# jazyk, který můžete vyzkoušet již s verzí pr
 
 Následující funkce jazyka poprvé objevil v C# 8.0 ve verzi preview 1:
 
-- [Typy s možnou hodnotou Null odkazů](#nullable-reference-types)
+- [Odkazové typy s možnou hodnotou null](#nullable-reference-types)
 - [Asynchronní datové proudy](#asynchronous-streams)
 - [Indexy a rozsahy](#indices-and-ranges)
 

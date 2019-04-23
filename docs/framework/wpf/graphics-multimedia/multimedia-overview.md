@@ -6,10 +6,10 @@ helpviewer_keywords:
 - media [WPF]
 ms.assetid: feb25b15-d741-4ac3-818f-1b19f63a3562
 ms.openlocfilehash: 66cb28fce9485898711b9029baf8a17dd9b2c011
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59340487"
 ---
 # <a name="multimedia-overview"></a>Přehled multimédií
@@ -99,7 +99,7 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 ### <a name="controlling-mediaplayer"></a>Řízení MediaPlayer  
  Protože <xref:System.Windows.Media.MediaPlayer> je bezstavové, existují jenom dva způsoby, jak ovládací prvek přehrávání médií.  
   
-1. Interaktivní řízení metody. Na místě v nezávislých režimu (`null`<xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
+1. Interaktivní řízení metody. Na místě v nezávislých režimu (`null` <xref:System.Windows.Media.MediaPlayer.Clock%2A> vlastnost).  
   
 2. <xref:System.Windows.Media.MediaClock>. Na místě, když má média <xref:System.Windows.Media.MediaPlayer.Clock%2A>.  
   
@@ -114,4 +114,4 @@ Multimédií funkce v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharp
 
 - <xref:System.Windows.Media.DrawingGroup>
 - [Rozložení](../advanced/layout.md)
-- [– postupy](audio-and-video-how-to-topics.md)
+- [Témata s postupy](audio-and-video-how-to-topics.md)

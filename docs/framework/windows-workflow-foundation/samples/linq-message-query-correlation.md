@@ -3,11 +3,11 @@ title: Korelace dotazů zprávy LINQ
 ms.date: 03/30/2017
 ms.assetid: b746872e-57b1-4514-b337-53398a0e0deb
 ms.openlocfilehash: cc13696cfd8eb2dcdf22fdc067518c8bd55ca32d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59327669"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973314"
 ---
 # <a name="linq-message-query-correlation"></a>Korelace dotazů zprávy LINQ
 Tato ukázka předvádí, jak provádět korelace na základě obsahu pomocí vlastní <xref:System.ServiceModel.Dispatcher.MessageQuery> implementace na rozdíl od poskytnuté systémem <xref:System.ServiceModel.XPathMessageQuery>.  

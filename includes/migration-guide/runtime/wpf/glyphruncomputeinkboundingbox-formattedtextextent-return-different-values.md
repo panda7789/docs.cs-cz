@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 059aa6f5885634b22b64d594563973f17fd2c4e7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59235298"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803645"
 ---
 ### <a name="glyphruncomputeinkboundingbox-and-formattedtextextent-return-different-values-beginning-in-net-framework-45"></a>GlyphRun.ComputeInkBoundingBox() a FormattedText.Extent vracet různé hodnoty od v rozhraní .NET Framework 4.5
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 72acd0029d0189de1c724856572957f111b9d18f
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58760388"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803714"
 ---
 ## <a name="installation-instructions"></a>Pokyny k instalaci 
 

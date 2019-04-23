@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC30202
 ms.assetid: 6f75060c-2db4-4a79-b5d1-5780c09a74cd
 ms.openlocfilehash: 71a25784f357a7e596093b314ed5b3d721d6f92c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59341878"
 ---
 # <a name="optional-expected"></a>Bylo očekáváno klíčové slovo 'Optional'.
@@ -27,4 +27,4 @@ Volitelný argument v deklaraci procedury následuje povinný argument. Každý 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
+- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
 ms.openlocfilehash: 12c266a473aa7c20ab35d6047fedafbfa04dac4a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59299303"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59773262"
 ---
 # <a name="transport-quotas"></a>Přenosové kvóty
 Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom, kdy připojení spotřebovává přemíru prostředků. Kvóta je pevný limit, který brání použití další zdroje informací po překročení hodnoty kvóty. Přenosové kvóty zabránit škodlivým nebo neúmyslným útoky s cílem odepření služby.  
@@ -30,7 +30,7 @@ Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom
   
  Každé nastavení kvóty má typ, minimální hodnota a výchozí hodnota. Jeho typ je omezená maximální hodnota kvóty. Vzhledem k omezením počítač není vždy možné nastavit kvótu pro maximální hodnota.  
   
-|Name|Type|Min.<br /><br /> value|Výchozí<br /><br /> value|Popis|  
+|Název|Type|Min.<br /><br /> value|Výchozí<br /><br /> value|Popis|  
 |----------|----------|--------------------|-----------------------|-----------------|  
 |`ChannelInitializationTimeout`|TimeSpan|1 značek|5 s|Maximální doba čekání na připojení k odesílání preambule během počáteční pro čtení. Přijetí tato data předtím, než dojde k ověření. Toto nastavení je obvykle mnohem menší, než `ReceiveTimeout` hodnota kvóty.|  
 |`CloseTimeout`|TimeSpan|0|1 min.|Maximální doba čekání na připojení k zavřete, než přenos vyvolá výjimku.|  
@@ -59,7 +59,7 @@ Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom
 ### <a name="controlling-transport-quotas-from-the-binding-element"></a>Přenosové kvóty z elementu vazby řízení  
  Nastavení přenosové kvóty prostřednictvím element vazby nabízí nejvyšší flexibilitu při řízení chování přenosu. Výchozí časové limity pro zavřít, otevřít, přijetí a odešlete operace pocházejí z vazby při vytváření kanálu.  
   
-|Name|HTTP|TCP/IP|Pojmenovaný kanál|  
+|Název|HTTP|TCP/IP|Pojmenovaný kanál|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||X|X|  
 |`CloseTimeout`||||  
@@ -81,7 +81,7 @@ Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom
 ### <a name="controlling-transport-quotas-from-the-binding"></a>Přenosové kvóty z vazby řízení  
  Nastavení přenosové kvóty prostřednictvím vazby nabízí zjednodušené sadu kvót vybírat a přitom stále poskytují přístup k nejběžnějších hodnot kvóty.  
   
-|Name|HTTP|TCP/IP|Pojmenovaný kanál|  
+|Název|HTTP|TCP/IP|Pojmenovaný kanál|  
 |----------|----------|-------------|----------------|  
 |`ChannelInitializationTimeout`||||  
 |`CloseTimeout`|X|X|X|  

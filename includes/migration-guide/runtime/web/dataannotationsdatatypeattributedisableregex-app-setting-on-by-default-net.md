@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 4a31310551cea4250275843da3eae927bad23840
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236143"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59803626"
 ---
 ### <a name="dataannotationsdatatypeattributedisableregex-app-setting-is-on-by-default-in-net-framework-472"></a>nastavení aplikace, které "dataAnnotations:dataTypeAttribute:disableRegEx" je ve výchozím v rozhraní .NET Framework 4.7.2
 

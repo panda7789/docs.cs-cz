@@ -6,11 +6,11 @@ helpviewer_keywords:
 - mouse [Visual Basic], accessing [Visual Basic]
 ms.assetid: 6d31a3d2-d860-459d-9d13-3aa192d62ba2
 ms.openlocfilehash: 0297df4ebfbbe718dd553b279ad62a6b30f0e7e4
-ms.sourcegitcommit: bce0586f0cccaae6d6cbd625d5a7b824d1d3de4b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58837988"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59973808"
 ---
 # <a name="accessing-the-mouse-visual-basic"></a>Přístup k myši (Visual Basic)
 `My.Computer.Mouse` Objekt, který poskytuje způsob, jak najít informace o myši počítače, například když myší existuje, počet tlačítka myši a podrobnosti o kolečko myši.  

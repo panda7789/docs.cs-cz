@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 4529d8040fc08b5290ac46abd1ef752086ea3aeb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234656"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59774396"
 ---
 ### <a name="new-ambiguous-dispatcherinvoke-overloads-could-result-in-different-behavior"></a>Nová přetížení (nejednoznačný) Dispatcher.Invoke by mohlo způsobit různé chování
 

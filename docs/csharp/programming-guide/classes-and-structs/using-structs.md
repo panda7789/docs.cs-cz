@@ -6,10 +6,10 @@ helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
 ms.openlocfilehash: d2e89c842ae83a5be65c7500e47beb7f302e23be
-ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59427185"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
@@ -53,6 +53,6 @@ ms.locfileid: "59427185"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
 - [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)

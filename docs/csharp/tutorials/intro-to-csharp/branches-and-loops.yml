@@ -12,10 +12,10 @@ metadata:
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Kolekce seznamu
   ms.openlocfilehash: 62cc52e22406c6c19dad6cc800078e0d8f34f0d6
-  ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
-  ms.translationtype: MT
+  ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+  ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 04/09/2019
+  ms.lasthandoff: 04/18/2019
   ms.locfileid: "59427523"
 items:
 - durationInMinutes: 1
@@ -226,8 +226,8 @@ items:
 
     - [Pokud a else – příkaz](../../language-reference/keywords/if-else.md)
 
-    - [While – příkaz](../../language-reference/keywords/while.md)
+    - [while – příkaz](../../language-reference/keywords/while.md)
 
-    - [Do – příkaz](../../language-reference/keywords/do.md)
+    - [do – příkaz](../../language-reference/keywords/do.md)
 
     - [For – příkaz](../../language-reference/keywords/for.md)

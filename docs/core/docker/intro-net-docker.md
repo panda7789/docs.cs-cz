@@ -4,10 +4,10 @@ description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplik
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
 ms.openlocfilehash: acf1307c241d9462278bc0fce5cf59fdde0750a3
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59480726"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru

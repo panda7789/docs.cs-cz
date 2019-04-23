@@ -4,10 +4,10 @@ description: V tomto kurzu o větvích a smyčkách napíšete C# kódu syntaxi 
 ms.date: 10/31/2017
 ms.custom: mvc
 ms.openlocfilehash: 4a116ae5294915770dec742c147cf2ba1bf6e284
-ms.sourcegitcommit: d21bee9dbd32b9540ad30f9d0e2e874227040be3
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59427250"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další podmíněnou logiku s příkazy větve a smyčky
@@ -258,6 +258,6 @@ Můžete pokračovat [pole a kolekce](arrays-and-collections.md) kurz ve svém v
 Další informace o těchto konceptech v těchto tématech:
 
 - [Pokud a else – příkaz](../../language-reference/keywords/if-else.md)
-- [While – příkaz](../../language-reference/keywords/while.md)
-- [Do – příkaz](../../language-reference/keywords/do.md)
+- [while – příkaz](../../language-reference/keywords/while.md)
+- [do – příkaz](../../language-reference/keywords/do.md)
 - [For – příkaz](../../language-reference/keywords/for.md)

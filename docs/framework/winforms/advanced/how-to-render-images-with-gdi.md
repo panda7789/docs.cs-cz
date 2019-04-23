@@ -10,10 +10,10 @@ helpviewer_keywords:
 - GDI+, rendering existing images
 ms.assetid: c128b79a-3e31-47d8-9e66-3470f570a056
 ms.openlocfilehash: e038da545bb3f56cc757710bcaa93aa2c86bfa67
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59342542"
 ---
 # <a name="how-to-render-images-with-gdi"></a>Postupy: Vykreslení obrázků pomocí GDI+
@@ -86,7 +86,7 @@ Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md
 - [Začínáme s programováním grafiky](getting-started-with-graphics-programming.md)
 - [Postupy: Vytváření grafických objektů pro kreslení](how-to-create-graphics-objects-for-drawing.md)
 - [Pera, čáry a obdélníky v GDI+](pens-lines-and-rectangles-in-gdi.md)
-- [Postupy: Kreslení textu na formuláři Windows](how-to-draw-text-on-a-windows-form.md)
-- [Grafika a kreslení v rozhraní Windows Forms](graphics-and-drawing-in-windows-forms.md)
+- [Postupy: Vykreslení textu ve formuláři Windows](how-to-draw-text-on-a-windows-form.md)
+- [Grafika a kreslení v modelu Windows Forms](graphics-and-drawing-in-windows-forms.md)
 - [Kreslení čar nebo uzavřených obrázků](/cpp/windows/drawing-lines-or-closed-figures-image-editor-for-icons)
 - [Editor obrázků pro ikony](/cpp/windows/image-editor-for-icons)

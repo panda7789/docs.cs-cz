@@ -10,10 +10,10 @@ helpviewer_keywords:
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
 ms.openlocfilehash: abae49e709fa2e77d641d991dd6e09cf82216732
-ms.sourcegitcommit: 680a741667cf6859de71586a0caf6be14f4f7793
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/12/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59517288"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování v datové službě (WCF Data Services)

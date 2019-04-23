@@ -8,10 +8,10 @@ helpviewer_keywords:
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
 ms.openlocfilehash: 8b709de728726b7695b987c48574d2a70a1bc27e
-ms.sourcegitcommit: 859b2ba0c74a1a5a4ad0d59a3c3af23450995981
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/11/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59481376"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení služeb WCF Data Services
@@ -40,14 +40,14 @@ Toto téma popisuje zejména vývoji a nasazení datových služeb pomocí sady 
 
 Při vývoji datových služeb WCF jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webu pomocí sady Visual Studio 2015, máte možnost volby z webových serverů, na kterém chcete datovou službu spouštět během vývoje. Integrovány následující webové servery pomocí sady Visual Studio, aby bylo snazší pro testování a ladění datových služeb v místním počítači.
 
-1. **Místní server IIS**
+1. **Místní Server IIS**
 
      Při vytváření datových služeb je [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace nebo [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou stránku, na kterém běží v Internetové informační služby (IIS), doporučujeme ji vyvíjet a testovat pomocí služby IIS v místním počítači. Spuštění datové služby ve službě IIS usnadňuje sledování požadavků HTTP během ladění. Zároveň vám to umožňuje předem stanovit práva, jež služba IIS potřebuje pro přístup k souborům, databázím a jiným prostředkům vyžadovaným datovou službou. Ke spuštění datové služby ve službě IIS, musí je zajištěno, že služba IIS a služby Windows Communication Foundation (WCF) jsou správnost instalace a konfigurace a udělit přístup k účtům služby IIS v systému souborů a databáze. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
 
     > [!NOTE]
     > Visual Studio je nutné spustit s právy správce, chcete-li povolit ve vývojovém prostředí konfiguraci místního serveru služby IIS.
 
-2. **Vývojový server sady Visual Studio**
+2. **Vývojový Server sady Visual Studio**
 
      Visual Studio zahrnuje vestavěný webový server, Server sady Visual Studio vývoje, což je výchozí webový server pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty. Tento webový server je navržen pro spouštění [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekty v místním počítači během vývoje. [Rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md) ukazuje, jak vytvořit datových služeb běžících v vývojový Server sady Visual Studio.
 
@@ -68,7 +68,7 @@ Při vývoji datových služeb WCF jako [!INCLUDE[vstecasp](../../../../includes
     > [!TIP]
     > I když vývojový Server sady Visual Studio můžete použít k otestování svých datových služeb během vývoje, je však vhodné služby otestovat znovu po nasazení na webový server, na kterém běží služby IIS.
 
-3. **Vývojové prostředí Azure**
+3. **Prostředí Windows Azure – vývoj**
 
      Windows Azure Tools for Visual Studio zahrnuje integrovanou sadu nástrojů pro vývoj služeb Windows Azure v sadě Visual Studio. Pomocí těchto nástrojů můžete vyvíjet datové služby, které lze nasazovat na platformě Azure, a před nasazením je otestovat v místním počítači. Tyto nástroje využijete při vývoji datových služeb, na kterém běží na platformě Windows Azure pomocí sady Visual Studio. Nástroje Windows Azure pro Visual Studio z můžete stáhnout [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o vývoji datových služeb, který běží na Windows Azure, najdete v příspěvku [nasazení služby OData na platformě Windows Azure](https://go.microsoft.com/fwlink/?LinkId=201847).
 
@@ -90,7 +90,7 @@ Při vývoji datových služeb je vhodné zvážit následující faktory:
 
 Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je hostitelem datové služby. Visual Studio můžete použít k nasazení datové služby na následujících platformách:
 
-- **Webový server hostovaný ve službě IIS**
+- **Webový Server hostovaný ve službě IIS**
 
     Když datové služby je mimo jiné vyvinuto [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, dá se nasadit na webovém serveru IIS s využitím standardu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] procesů nasazení.  Visual Studio poskytuje následující technologie nasazení pro [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], v závislosti na typu z [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, který je hostitelem datové služby, kterou nasazujete.
 
@@ -113,7 +113,7 @@ Služba WCF Data Service nabízí flexibilitu při výběru procesu, který je h
     > [!TIP]
     > Než datovou službu nasadíte do služby IIS, nezapomeňte otestovat nasazení na webový server, na kterém je spuštěna služba IIS. Další informace najdete v tématu [jak: Vývoj datové služby WCF ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).
 
-- **Microsoft Azure**
+- **Windows Azure**
 
      Datové služby Windows Azure můžete nasadit pomocí nástroje Windows Azure pro sadu Visual Studio. Nástroje Windows Azure pro Visual Studio z můžete stáhnout [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkID=201848). Další informace o nasazení datových služeb Windows Azure, najdete v příspěvku [nasazení služby OData na platformě Windows Azure](https://go.microsoft.com/fwlink/?LinkId=201847).
 
