@@ -11,10 +11,10 @@ helpviewer_keywords:
 - data types [Visual Basic], nullable
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
 ms.openlocfilehash: d17d2ad3fd99c6d563c21ddd646396ccb1c1ca48
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921309"
 ---
 # <a name="nullable-value-types-visual-basic"></a>Typy hodnot s povolenou hodnotou Null (Visual Basic)
@@ -111,10 +111,10 @@ Databáze je jedním z nejdůležitějších místa k použití s povolenou hodn
 - <xref:System.Nullable%601.HasValue%2A>
 - [Použití typů s povolenou hodnotou Null](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)
 - [Datové typy](index.md)
-- [Typy hodnot a typy odkazu](value-types-and-reference-types.md)
+- [Typy hodnot a odkazové typy](value-types-and-reference-types.md)
 - [Řešení potíží s datovými typy](troubleshooting-data-types.md)
-- [Vyplnění datové sady s použitím objektů TableAdapter](/visualstudio/data-tools/fill-datasets-by-using-tableadapters)
-- [If – operátor](../../../language-reference/operators/if-operator.md)
+- [Vyplnění datových sad pomocí objektů TableAdapter](/visualstudio/data-tools/fill-datasets-by-using-tableadapters)
+- [Operátor If](../../../language-reference/operators/if-operator.md)
 - [Odvození místního typu](../variables/local-type-inference.md)
-- [Is – operátor](../../../language-reference/operators/is-operator.md)
-- [IsNot – operátor](../../../language-reference/operators/isnot-operator.md)
+- [Operátor Is](../../../language-reference/operators/is-operator.md)
+- [Operátor IsNot](../../../language-reference/operators/isnot-operator.md)

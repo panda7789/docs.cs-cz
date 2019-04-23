@@ -8,10 +8,10 @@ helpviewer_keywords:
 - From/to/by animation
 ms.assetid: 59afba57-6fc1-44c8-987e-8a5f4142adad
 ms.openlocfilehash: 56522ee5bd4391e43c261558b2fa622234c9ea3b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59073269"
 ---
 # <a name="how-to-control-an-animation-using-from-to-and-by"></a>Postupy: Řízení animací pomocí polí Od, Komu a Kdo
@@ -20,8 +20,8 @@ ms.locfileid: "59073269"
 |Byly zadány vlastnosti|Výsledné chování|  
 |--------------------------|------------------------|  
 |<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnoty v závislosti na konfiguraci předchozí animace.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> and <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou proměnnou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost.|  
-|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> and <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou pomocí součtu <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou proměnnou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost.|  
+|<xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace průběhu z hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu zadanou pomocí součtu <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.|  
 |<xref:System.Windows.Media.Animation.DoubleAnimation.To%2A>|Animace postupuje od základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnota, která má hodnotu určenou <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost.|  
 |<xref:System.Windows.Media.Animation.DoubleAnimation.By%2A>|Animace postupuje od základní hodnotou animované vlastnosti nebo předchozí animace výstupní hodnotu na součet dané hodnoty a hodnoty určené <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost.|  
   

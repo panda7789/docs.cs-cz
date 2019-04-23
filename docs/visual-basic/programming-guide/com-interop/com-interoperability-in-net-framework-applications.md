@@ -7,10 +7,10 @@ helpviewer_keywords:
 - shared components
 ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
 ms.openlocfilehash: 6e8b4eba40cc1872cb289ca120679bb951f2652a
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920802"
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interoperabilita modelů COM v aplikacích .NET Framework (Visual Basic)
@@ -27,6 +27,6 @@ Odkazy na této stránce poskytují podrobné informace o interakcích mezi obje
 |---------|---------|
 | [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md) | Obsahuje odkazy na témata týkající se interoperabilita modelů COM v jazyce Visual Basic, včetně modelu COM objekty ActiveX ovládací prvky, knihovnami DLL Win32, spravované objekty a dědičnosti objektů modelu COM. |
 | [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md) | Stručně popisuje některé z problémů interakce mezi spravovaným a nespravovaným kódem a obsahuje odkazy na další studie. |
-| [Obálky COM](../../../framework/interop/com-wrappers.md) | Tento článek popisuje obálek volatelných za běhu, které umožňují spravovanému kódu volat metody modelu COM, a obálky volatelné modelem COM, které umožní klientům modelu COM, volání metod objekt .NET. |
+| [COM – obálky](../../../framework/interop/com-wrappers.md) | Tento článek popisuje obálek volatelných za běhu, které umožňují spravovanému kódu volat metody modelu COM, a obálky volatelné modelem COM, které umožní klientům modelu COM, volání metod objekt .NET. |
 | [Rozšířená interoperabilita modelu COM](../../../framework/interop/index.md) | Obsahuje odkazy na témata týkající se vzájemná funkční spolupráce modelu COM s ohledem na obálky, výjimky, dědičnost, práce s vlákny, události, převody a zařazování. |
 | [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md) | Tento článek popisuje nástroje, které lze použít k převodu definice typu nalezené v knihovně typů modelu COM na ekvivalentní definice v sestavení common language runtime. |

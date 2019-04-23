@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Win32 host containers [WPF], hit tests using
 ms.assetid: 9491f7f3-d8ba-4573-a888-2f064d1349dc
 ms.openlocfilehash: ac5cae5bcd94dc8bf80ff95b8971914e1fa5ba2c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59081460"
 ---
 # <a name="how-to-hit-test-using-a-win32-host-container"></a>Postupy: Ověřování pozice pomocí kontejneru hostitele Win32
@@ -37,5 +37,5 @@ Můžete vytvořit vizuální objekty v rámci [!INCLUDE[TLA#tla_win32](../../..
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Interop.HwndSource>
-- [Spuštění testování ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
-- [Kurz: Hostování vizuálních objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)
+- [Ověřování pozice ve vizuální vrstvě](hit-testing-in-the-visual-layer.md)
+- [Kurz: Hostování vizuální objektů v aplikaci Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)

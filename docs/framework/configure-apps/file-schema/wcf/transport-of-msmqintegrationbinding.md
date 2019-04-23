@@ -1,12 +1,12 @@
 ---
-title: <transport> of <msmqIntegrationBinding>
+title: <transport> z <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: 054579e3-7fdd-47df-99ca-952706ba5c8e
 ms.openlocfilehash: 3126618eca6e8317968c6eb568a04615ec8de884
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59073445"
 ---
 # <a name="transport-of-msmqintegrationbinding"></a>\<přenos > z \<msmqIntegrationBinding >
@@ -43,13 +43,13 @@ msmqIntegrationBinding
 |`msmqSecureHashAlgorithm`|: Určuje algoritmus pro výpočet výběru jako součást podpisu. Platné hodnoty patří:<br />-   MD5<br />-   SHA1<br />-   SHA256<br />-   SHA512<br /><br /> Výchozí hodnota je SHA1. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.<br>Způsobeny problémy kolizí se MD5 a SHA1 společnost Microsoft doporučuje SHA256 nebo vyšší.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazby služby MSMQ.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)|Definuje nastavení zabezpečení pro vazby služby MSMQ.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek zapouzdřuje nastavení zabezpečení pro přenos integrace služby Řízení front zpráv. Nastavení jsou stejné pro integrace služby Řízení front zpráv a přenosů zařazených do fronty. Umožňuje vám nastavit režim ověřování, algoritmu šifrování, Secure Hash Algorithm a úroveň ochrany.  

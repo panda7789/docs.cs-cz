@@ -8,10 +8,10 @@ helpviewer_keywords:
 - controls [WPF], ListBox
 ms.assetid: b91bb352-4f51-44e0-9017-a041f216c852
 ms.openlocfilehash: 69f93b902fc3c35749871a187e57d45a404c6602
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59055050"
 ---
 # <a name="listbox"></a>ListBox
@@ -23,7 +23,7 @@ A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam
 Typické ListBox  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [– postupy](listbox-how-to-topics.md)  
+ [Témata s postupy](listbox-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Controls.ListBox>  

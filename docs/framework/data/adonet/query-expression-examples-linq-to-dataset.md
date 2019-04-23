@@ -3,10 +3,10 @@ title: Příklady výrazů dotazů (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: f743fbc7-faff-45e5-af1e-61577d87f0cc
 ms.openlocfilehash: f15e397c711bd01d5770e59c4f2c8227ee2ac7ca
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59074284"
 ---
 # <a name="query-expression-examples-linq-to-dataset"></a>Příklady výrazů dotazů (LINQ to DataSet)
@@ -19,7 +19,7 @@ Tato část obsahuje do datové sady ukázky programování v syntaxe výrazu do
  [Omezení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-restriction-linq-to-dataset.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Where%2A> metodu dotazu <xref:System.Data.DataSet>.  
   
- [Dělení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
+ [Segmentace](../../../../docs/framework/data/adonet/query-expression-syntax-examples-partitioning.md)  
  Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody pro dotazování <xref:System.Data.DataSet> a rozdělit na oddíly výsledky.  
   
  [Řazení](../../../../docs/framework/data/adonet/query-expression-syntax-examples-ordering-linq-to-dataset.md)  

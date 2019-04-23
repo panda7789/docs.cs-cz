@@ -6,10 +6,10 @@ helpviewer_keywords:
 - properties [WPF], getting binding objects from
 ms.assetid: 87974c5f-136b-4de7-b07d-9285b62ab123
 ms.openlocfilehash: 7c7392bc11af57b2e9f27e2302f36efb59d40e9d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59083103"
 ---
 # <a name="how-to-get-the-binding-object-from-a-bound-target-property"></a>Postupy: Získání objektu vazby ze vlastnosti cíle vazby
@@ -33,4 +33,4 @@ Tento příklad ukazuje, jak získat objekt binding z vlastnosti cílového váz
 ## <a name="see-also"></a>Viz také:
 
 - [Vytvoření vazby v kódu](how-to-create-a-binding-in-code.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - buttons [Windows Forms], about buttons
 ms.assetid: 255b291b-51a9-4a92-a1a4-2400cd82443f
 ms.openlocfilehash: 1ded871fdfab83407d8022ca0c4ce6b2c8a6c67c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59076546"
 ---
 # <a name="button-control-overview-windows-forms"></a>Přehled ovládacího prvku Tlačítko (Windows Forms)
@@ -26,6 +26,6 @@ Windows Forms <xref:System.Windows.Forms.Button> ovládací prvek umožňuje už
 - <xref:System.Windows.Forms.Button>
 - [Postupy: Reakce na kliknutí na tlačítko Windows Forms](how-to-respond-to-windows-forms-button-clicks.md)
 - [Metody výběru ovládacího prvku Windows Forms Button](ways-to-select-a-windows-forms-button-control.md)
-- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Přijmout pomocí Návrháře](designate-a-wf-button-as-the-accept-button-using-the-designer.md)
-- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Zrušit pomocí Návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka přijmout pomocí návrháře](designate-a-wf-button-as-the-accept-button-using-the-designer.md)
+- [Postupy: Určení tlačítka Windows Forms pro funkci tlačítka Storno pomocí návrháře](designate-a-wf-button-as-the-cancel-button-using-the-designer.md)
 - [Ovládací prvek Button](button-control-windows-forms.md)

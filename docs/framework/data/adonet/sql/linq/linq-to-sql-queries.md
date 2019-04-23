@@ -3,10 +3,10 @@ title: Dotazy LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: f4897aaa-7f44-4c20-a471-b948c2971aae
 ms.openlocfilehash: 49106502dc58eef36ea0c910c627c9cf397f419e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59076182"
 ---
 # <a name="linq-to-sql-queries"></a>Dotazy LINQ to SQL
@@ -19,7 +19,7 @@ Můžete definovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-m
   
  Následující tabulka ukazuje, podobnosti a rozdíly mezi [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotaz položek.  
   
-|Položka|Dotaz LINQ|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dotazy|  
+|Položka|Dotaz LINQ|[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dotaz|  
 |----------|----------------|----------------------------------------------------------------------|  
 |Návratový typ místní proměnné, která obsahuje dotaz (pro dotazy, které vracejí pořadí)|Obecné `IEnumerable`|Obecné `IQueryable`|  
 |Určení zdroje dat|Používá `From` (Visual Basic) nebo `from` (C#) – klauzule|Stejné|  

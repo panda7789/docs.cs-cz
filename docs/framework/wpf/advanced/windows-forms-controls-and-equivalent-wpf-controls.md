@@ -7,10 +7,10 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 ms.assetid: 8a157e6b-8054-46db-a5cf-a78966acc7a1
 ms.openlocfilehash: abfcb9f5398a6a8d264985543df585bea93a0446
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59075272"
 ---
 # <a name="windows-forms-controls-and-equivalent-wpf-controls"></a>Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF
@@ -34,7 +34,7 @@ Mnoho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.m
 |<xref:System.Windows.Forms.DateTimePicker>|<xref:System.Windows.Controls.DatePicker>||  
 |<xref:System.Windows.Forms.DomainUpDown>|<xref:System.Windows.Controls.TextBox> a dvě <xref:System.Windows.Controls.Primitives.RepeatButton> ovládacích prvků.||  
 |<xref:System.Windows.Forms.ErrorProvider>|Žádný odpovídající ovládací prvek.||  
-|<xref:System.Windows.Forms.FlowLayoutPanel>|<xref:System.Windows.Controls.WrapPanel> or <xref:System.Windows.Controls.StackPanel>||  
+|<xref:System.Windows.Forms.FlowLayoutPanel>|<xref:System.Windows.Controls.WrapPanel> Nebo <xref:System.Windows.Controls.StackPanel>||  
 |<xref:System.Windows.Forms.FolderBrowserDialog>|Žádný odpovídající ovládací prvek.||  
 |<xref:System.Windows.Forms.FontDialog>|Žádný odpovídající ovládací prvek.||  
 |<xref:System.Windows.Forms.Form>|<xref:System.Windows.Window>|<xref:System.Windows.Window> nepodporuje podřízená okna.|  
@@ -82,13 +82,13 @@ Mnoho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.m
 |<xref:System.Windows.Forms.TreeView>|<xref:System.Windows.Controls.TreeView>||  
 |<xref:System.Windows.Forms.UserControl>|<xref:System.Windows.Controls.UserControl>||  
 |<xref:System.Windows.Forms.VScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Posouvání je integrovaná do kontejnerů ovládacích prvků.|  
-|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>,  <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|<xref:System.Windows.Controls.Frame> Ovládací prvek může být hostitelem stránek HTML.<br /><br /> Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> ovládací prvek může být hostitelem stránky HTML a také zpětných <xref:System.Windows.Controls.Frame> ovládacího prvku.|  
+|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|<xref:System.Windows.Controls.Frame> Ovládací prvek může být hostitelem stránek HTML.<br /><br /> Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> ovládací prvek může být hostitelem stránky HTML a také zpětných <xref:System.Windows.Controls.Frame> ovládacího prvku.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [WPF Designer pro Windows Forms vývojáře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/cc165605(v=vs.100))
-- [Návod: Hostování ovládacího prvku Windows Forms ve WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
 - [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
 - [Migrace a interoperabilita](migration-and-interoperability.md)

@@ -11,10 +11,10 @@ helpviewer_keywords:
 - Columns property [WPF]
 ms.assetid: 3f8884f4-7e1f-456b-be06-fbd3cf469bf3
 ms.openlocfilehash: d379d1a98bff614ff9e16cdd340bb69644988743
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59078418"
 ---
 # <a name="how-to-manipulate-a-tables-columns-through-the-columns-property"></a>Postupy: Zpracování sloupců tabulky prostřednictvím vlastnosti Columns
@@ -68,8 +68,8 @@ Tento příklad ukazuje některé běžné operace, které lze provést na sloup
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled tabulky](table-overview.md)
-- [Definování tabulky pomocí jazyka XAML](how-to-define-a-table-with-xaml.md)
-- [Vytvoření tabulky pomocí programu](how-to-build-a-table-programmatically.md)
-- [Zpracování skupin řádků tabulky prostřednictvím vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+- [Definice tabulky pomocí XAML](how-to-define-a-table-with-xaml.md)
+- [Sestavení tabulky z programu](how-to-build-a-table-programmatically.md)
+- [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
 - [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](how-to-manipulate-a-flowdocument-through-the-blocks-property.md)
-- [Zpracování skupin řádků tabulky prostřednictvím vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+- [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)

@@ -16,10 +16,10 @@ helpviewer_keywords:
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
 ms.openlocfilehash: 2aeafa7065b587497fb6f3b23605c21dca291cd1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59075857"
 ---
 # <a name="printing-overview"></a>Přehled tisku
@@ -43,7 +43,7 @@ Rozhraní Microsoft .NET Framework aplikace vývojářům, kteří používají 
   
  Výhody [!INCLUDE[TLA2#tla_metro](../../../../includes/tla2sharptla-metro-md.md)] cesta tisku jsou významné a zahrnují:  
   
--   [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] podpora tisku  
+-   [!INCLUDE[TLA2#tla_wys](../../../../includes/tla2sharptla-wys-md.md)] Podpora tisku  
   
 -   Nativní podpora profilů pokročilé barev, mezi které patří 32 bitů na kanál, CMYK, pojmenované barvy, barvy n a nativní podporu transparentnosti a přechody.  
   
@@ -143,8 +143,8 @@ Pro aplikace, které nevyžadují [!INCLUDE[TLA2#tla_metro](../../../../includes
 - <xref:System.Printing.PrintCapabilities>
 - <xref:System.Printing.PrintServer>
 - <xref:System.Printing.PrintQueue>
-- [– postupy](printing-how-to-topics.md)
+- [Témata s postupy](printing-how-to-topics.md)
 - [Dokumenty v platformě WPF](documents-in-wpf.md)
 - [XPS – dokumenty](/windows/desktop/printdocs/documents)
-- [Serializace a úložiště dokumentu](document-serialization-and-storage.md)
+- [Serializace a úložiště dokumentů](document-serialization-and-storage.md)
 - [Převaděč (MXDC) dokumentů Microsoft XPS](/windows/desktop/printdocs/microsoft-xps-document-converter--mxdc-)

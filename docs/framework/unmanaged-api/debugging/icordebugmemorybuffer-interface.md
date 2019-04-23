@@ -5,10 +5,10 @@ ms.assetid: 85dc2d65-3657-4b93-9f23-9feaa95d37ff
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e12b50e964ec470b843ae35c960f20c5675fd572
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59072906"
 ---
 # <a name="icordebugmemorybuffer-interface"></a>ICorDebugMemoryBuffer Interface
@@ -37,5 +37,5 @@ Představuje vyrovnávací paměť v paměti.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

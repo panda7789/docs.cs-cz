@@ -5,10 +5,10 @@ ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 572fcee528098a4f2929e07dfae63efc56e93dfd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59081642"
 ---
 # <a name="corprfhighmonitor-enumeration"></a>Výčet COR_PRF_HIGH_MONITOR
@@ -61,6 +61,6 @@ Počínaje [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)], hodnota `C
   
 ## <a name="see-also"></a>Viz také:
 
-- [Profilace výčtů](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
 - [COR_PRF_MONITOR – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)
-- [Rozhraní ICorProfilerInfo5](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-interface.md)
+- [ICorProfilerInfo5 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-interface.md)

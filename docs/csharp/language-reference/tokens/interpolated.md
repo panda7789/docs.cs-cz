@@ -14,10 +14,10 @@ helpviewer_keywords:
 author: pkulikov
 ms.author: ronpet
 ms.openlocfilehash: 64728182fe0b758f8da668d19761305e2001f1a5
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920893"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – interpolace řetězců (referenční dokumentace jazyka C#)
@@ -97,6 +97,6 @@ Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace v C
 - [Složené formátování](../../../standard/base-types/composite-formatting.md)
 - [Tabulka formátování číselných výsledků](../keywords/formatting-numeric-results-table.md)
 - [Řetězce](../../programming-guide/strings/index.md)
-- [Průvodce programováním v C#](../../programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Speciální znaky v jazyce C#](index.md)
 - [Referenční dokumentace jazyka C#](../index.md)

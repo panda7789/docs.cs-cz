@@ -1,5 +1,5 @@
 ---
-title: <trace> Prvek
+title: Element <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace
@@ -11,10 +11,10 @@ helpviewer_keywords:
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 ms.openlocfilehash: 5faf352dce2a459a999b3cf54209f6bd9793bde0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59073790"
 ---
 # <a name="trace-element"></a>\<trasování > – Element
@@ -45,7 +45,7 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 ## <a name="autoflush-attribute"></a>autoflush atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Není vyprázdnění automaticky výstupní vyrovnávací paměť. Toto nastavení je výchozí.|  
 |`true`|Automaticky vyprázdní vyrovnávací paměť pro výstup.|  
@@ -61,7 +61,7 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<naslouchací procesy >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 8fe0eadf-297b-487c-8d4b-7816753c2883
 ms.openlocfilehash: 2b45a4629474c394c8e49c41a7a98fc1181e124b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59077170"
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a>Porovnání datových řádků (LINQ to DataSet)

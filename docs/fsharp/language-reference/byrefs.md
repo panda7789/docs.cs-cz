@@ -3,10 +3,10 @@ title: Parametry ByRef
 description: Další informace o typu byref a typů předávané v F#, které se používají pro programování nízké úrovně.
 ms.date: 09/02/2018
 ms.openlocfilehash: c0bad26672fbb9eb315eee1c3e275183ddeb9297
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59055362"
 ---
 # <a name="byrefs"></a>Parametry ByRef
@@ -112,17 +112,17 @@ C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Násle
 
 |Konstrukce jazyka C#|F#odvodí z něj|
 |------------|---------|
-|`ref` návratová hodnota|`outref<'T>`|
-|`ref readonly` návratová hodnota|`inref<'T>`|
-|`in ref` parametr|`inref<'T>`|
-|`out ref` parametr|`outref<'T>`|
+|`ref` Návratová hodnota|`outref<'T>`|
+|`ref readonly` Návratová hodnota|`inref<'T>`|
+|`in ref` Parametr|`inref<'T>`|
+|`out ref` Parametr|`outref<'T>`|
 
 V následující tabulce jsou uvedeny co F# vysílá:
 
 |F#konstrukce|Emitovaný konstrukce|
 |------------|-----------------|
 |`inref<'T>` Argument|`[In]` atribut na argumentu|
-|`inref<'T>` return|`modreq` atribut na hodnotu|
+|`inref<'T>` Vrátí|`modreq` atribut na hodnotu|
 |`inref<'T>` abstraktní datovou oblast nebo provádění|`modreq` v argumentu nebo return|
 |`outref<'T>` Argument|`[Out]` atribut na argumentu|
 

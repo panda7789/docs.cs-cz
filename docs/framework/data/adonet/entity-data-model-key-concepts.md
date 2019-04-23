@@ -3,10 +3,10 @@ title: Koncepty modelu EDM (Entity Data Model)
 ms.date: 03/30/2017
 ms.assetid: c635a16d-6674-45aa-9344-dcb7df992bab
 ms.openlocfilehash: 2efa54b6bd656129812cc9dd7c2ce38a4fb2a89a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59074442"
 ---
 # <a name="entity-data-model-key-concepts"></a>Koncepty modelu EDM (Entity Data Model)
@@ -40,4 +40,4 @@ Entity Data Model (EDM) používá k popisu struktury dat tři klíčové koncep
   
 ## <a name="see-also"></a>Viz také:
 
-- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

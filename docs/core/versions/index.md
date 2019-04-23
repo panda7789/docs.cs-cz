@@ -5,10 +5,10 @@ author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
 ms.openlocfilehash: e060eac3a63ff869a2fe51fae0166b75329fcb49
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58921283"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Přehled, jak se systémovou správou verzí .NET Core
@@ -106,8 +106,8 @@ Implementuje každou verzi .NET Core na verzi .NET Standard. Implementace verze 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Cílové architektury](../../standard/frameworks.md)
-- [Vytváření distribučních balíčků .NET core](../build/distribution-packaging.md)
+- [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)
+- [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)
 - [.NET core podpory životního cyklu fakt list](https://www.microsoft.com/net/core/support)
-- [.NET Core 2+ Version Binding](https://github.com/dotnet/designs/issues/3)
+- [Vázání verze rozhraní .NET core 2 +](https://github.com/dotnet/designs/issues/3)
 - [Image dockeru pro .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)

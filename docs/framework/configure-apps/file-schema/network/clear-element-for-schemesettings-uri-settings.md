@@ -1,12 +1,12 @@
 ---
-title: <clear> – Element pro schemeSettings (nastavení Uri)
+title: <clear> – element pro schemeSettings (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
 ms.openlocfilehash: 132506dc15335b738fcdb026f4d31429bc45a228
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59082682"
 ---
 # <a name="clear-element-for-schemesettings-uri-settings"></a>\<Vymazat > – Element pro schemeSettings (nastavení Uri)
