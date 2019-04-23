@@ -9,10 +9,10 @@ helpviewer_keywords:
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
 ms.openlocfilehash: 530f6cb8fbe80df3ad374f8ad0e4836be82830a9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59337731"
 ---
 # <a name="animation-overview"></a>Přehled animace
@@ -331,18 +331,18 @@ ms.locfileid: "59337731"
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Animace a časování přehledu systému](animation-and-timing-system-overview.md)|Popisuje, jak časování systému používá <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvářet animace.|  
+|[Přehled animace a systému časování](animation-and-timing-system-overview.md)|Popisuje, jak časování systému používá <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy, které vám umožňují vytvářet animace.|  
 |[Tipy a triky animace](animation-tips-and-tricks.md)|Obsahuje užitečné tipy pro řešení problémů s použitím animací, jako je například výkon.|  
 |[Přehled vlastních animací](custom-animations-overview.md)|Popisuje, jak rozšířit systém animace pomocí klíčových snímků, třídy animace nebo zpětná volání za snímků.|  
 |Přehled animace od/komu/kým|Popisuje, jak vytvořit animaci, která přechází mezi dvěma hodnotami.|  
 |[Přehled animací klíčových snímků](key-frame-animations-overview.md)|Popisuje, jak vytvořit animaci s více hodnotami Cíl, včetně možnosti řídit metodu interpolace.|  
-|[Funkce usnadnění](easing-functions.md)|Vysvětluje, jak použít vašich animacích získáte realistické chování, jako je například skákání matematické vzorce.|  
+|[Funkce uvolnění](easing-functions.md)|Vysvětluje, jak použít vašich animacích získáte realistické chování, jako je například skákání matematické vzorce.|  
 |[Přehled animací cesty](path-animations-overview.md)|Popisuje, jak se přesunout nebo otočit objekt komplexní cestě.|  
 |[Přehled způsobů animace vlastností](property-animation-techniques-overview.md)|Popisuje animace vlastnosti pomocí scénáře, místní animace, hodiny a za snímků animace.|  
 |[Přehled scénářů](storyboards-overview.md)|Popisuje způsob použití scénářů s více časové osy k vytvoření složitých animace.|  
 |[Přehled chování časování](timing-behaviors-overview.md)|Popisuje <xref:System.Windows.Media.Animation.Timeline> typy a vlastnosti používané ve animace.|  
 |[Přehled událostí časování](timing-events-overview.md)|Popisuje události, které jsou k dispozici na <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty pro provádění kódu na místech na časové ose, jako například začít, pozastavení, obnovení, přeskočit nebo zastavit.|  
-|[– postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časových os ve vaší aplikaci.|  
+|[Témata s postupy](animation-and-timing-how-to-topics.md)|Obsahuje příklady kódu pro použití animace a časových os ve vaší aplikaci.|  
 |[Postupy: Témata hodin](clocks-how-to-topics.md)|Obsahuje příklady kódu pro použití <xref:System.Windows.Media.Animation.Clock> objektu v aplikaci.|  
 |[Témata s postupy ke klíčovým snímkům](key-frame-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animací klíčových snímků v aplikaci.|  
 |[Postupy: Témata animace cesty](path-animation-how-to-topics.md)|Obsahuje příklady kódu pro použití animace cesty ve vaší aplikaci.|  

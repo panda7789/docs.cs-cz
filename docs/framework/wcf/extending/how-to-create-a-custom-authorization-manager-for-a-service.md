@@ -9,10 +9,10 @@ helpviewer_keywords:
 - OperationRequirement class
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
 ms.openlocfilehash: e3d0143cd68bc94c6ff07e65ca5a3c8971b45f23
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59337835"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>Postupy: Vytvoření vlastního správce autorizací pro službu
@@ -120,4 +120,4 @@ Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuj
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [Zásada autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Zásady autorizace](../../../../docs/framework/wcf/samples/authorization-policy.md)

@@ -3,11 +3,11 @@ title: Přechod přes překlad síťových adres (NAT) využívající protokoly
 ms.date: 03/30/2017
 ms.assetid: 568cd245-3300-49ef-a995-d81bf845d961
 ms.openlocfilehash: f617dc8912091576727b90da1e9efb9ebd5f9bda
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59170756"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59768173"
 ---
 # <a name="nat-traversal-using-ipv6-and-teredo"></a>Přechod přes překlad síťových adres (NAT) využívající protokoly IPv6 a Teredo
 Vylepšení byly provedeny, který zajišťuje podporu pro procházení překladu adres (NAT). Tyto změny jsou určeny k použití s IPv6 a Teredo, ale navíc se vztahuje na jiné IP tunelování technologie. Tato vylepšení ovlivnit třídy v <xref:System.Net> a souvisejících oborech názvů.  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
 ms.openlocfilehash: 71057ec219f46cb8b51eb9b44d8b93af540d1b01
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59344244"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59768192"
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
 Chování umožňují změnit výchozí chování a přidejte vlastní rozšíření, které kontrola a ověření konfigurace služby a změny chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak je implementovat a jak přidat popis služby (v aplikaci služby) nebo koncový bod (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [určení chování za běhu klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  

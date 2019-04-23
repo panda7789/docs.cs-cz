@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
 ms.openlocfilehash: 539d897230fc69b2c30bd2a3930b305220d8345e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59309287"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59768095"
 ---
 # <a name="session"></a>Relace
 Ukázková relace ukazuje, jak implementovat kontrakt, který vyžaduje relaci. Relace poskytuje kontext pro provádění více operací. To umožňuje službám přidružení stavu dané relace tak, aby následné operace můžete použít stav předchozí operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. `ICalculator` Povolit sadu aritmetické operace, které mají být provedeny, a zajistit přitom ochranu spuštěné výsledek byl změněn kontraktu. Tato funkce je definována `ICalculatorSession` kontraktu. Služba zajišťuje stav na klienty, jako jsou volány více operací služby k provedení výpočtu. Klient může načíst aktuální výsledek voláním `Result()` a zrušte zaškrtnutí výsledek, který má nulovou voláním `Clear()`.  

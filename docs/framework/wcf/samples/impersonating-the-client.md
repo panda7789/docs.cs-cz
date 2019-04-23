@@ -7,11 +7,11 @@ helpviewer_keywords:
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
 ms.openlocfilehash: d79ce0d189fc88310594f356f1901d93b3e1e06f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59340916"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59768030"
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
 Ukázka zosobnění ukazuje, jak zosobnit volající aplikace na službu tak, aby službě můžete získat přístup k systémovým prostředkům jménem volající.  
