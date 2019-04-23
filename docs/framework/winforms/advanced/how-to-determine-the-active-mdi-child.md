@@ -12,10 +12,10 @@ helpviewer_keywords:
 - MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
 ms.openlocfilehash: 9b70824670b8f47a2346135cb31ad39bd55694d1
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300603"
 ---
 # <a name="how-to-determine-the-active-mdi-child"></a>Postupy: Určení aktivního podřízeného formuláře MDI
@@ -88,5 +88,5 @@ V některých případech budete chtít zadat příkaz, který funguje na ovlád
 - [Aplikace MDI (Multiple-Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Postupy: Vytváření nadřazených formulářů MDI](how-to-create-mdi-parent-forms.md)
 - [Postupy: Vytváření podřízených formulářů MDI](how-to-create-mdi-child-forms.md)
-- [Postupy: Odesílání dat do aktivního podřízeného formuláře MDI](how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](how-to-send-data-to-the-active-mdi-child.md)
 - [Postupy: Uspořádání podřízených formulářů MDI](how-to-arrange-mdi-child-forms.md)

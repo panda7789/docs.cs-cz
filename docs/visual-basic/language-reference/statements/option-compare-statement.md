@@ -19,10 +19,10 @@ helpviewer_keywords:
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
 ms.openlocfilehash: e7c1e8e4431b7a653bb3a086589c35921f8001b9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300629"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
@@ -97,7 +97,7 @@ Option Compare { Binary | Text }
 - [/optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Like – operátor](../../../visual-basic/language-reference/operators/like-operator.md)
-- [Funkce řetězce](../../../visual-basic/language-reference/functions/string-functions.md)
-- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
-- [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)
+- [Řetězcové funkce](../../../visual-basic/language-reference/functions/string-functions.md)
+- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

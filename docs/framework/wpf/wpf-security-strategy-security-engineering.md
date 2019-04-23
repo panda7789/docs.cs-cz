@@ -11,10 +11,10 @@ helpviewer_keywords:
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
 ms.openlocfilehash: 27258110a8852c00990d73cd9ca8685c3ead315d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300564"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Strategie zabezpečení WPF – engineering zabezpečení
@@ -95,4 +95,4 @@ Trustworthy Computing je iniciativy Microsoftu pro zajištění provozní bezpe�
 - [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)
 - [Strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)
 - [Trustworthy Computing](https://www.microsoft.com/mscorp/twc/default.mspx)
-- [Zabezpečení v .NET](../../standard/security/index.md)
+- [Zabezpečení v rozhraní .NET](../../standard/security/index.md)

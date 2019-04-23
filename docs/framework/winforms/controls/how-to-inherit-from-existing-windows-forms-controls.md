@@ -9,10 +9,10 @@ helpviewer_keywords:
 - custom controls [Windows Forms], inheritance
 ms.assetid: 1e1fc8ea-c615-4cf0-a356-16d6df7444ab
 ms.openlocfilehash: 788addee7c024577d029626da4aeb86d0ca9076a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300525"
 ---
 # <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Postupy: Dědění ze stávajících ovládacích prvků Windows Forms
@@ -86,9 +86,9 @@ Pokud chcete rozšířit funkce pro existující ovládací prvek, můžete vytv
 ## <a name="see-also"></a>Viz také:
 
 - [Typy vlastních ovládacích prvků](varieties-of-custom-controls.md)
-- [Postupy: Dědění ze třídy Control](how-to-inherit-from-the-control-class.md)
-- [Postupy: Dědění ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
-- [Postupy: Vytváření ovládacích prvků pro Windows Forms](how-to-author-controls-for-windows-forms.md)
+- [Postupy: Dědit ze třídy Control](how-to-inherit-from-the-control-class.md)
+- [Postupy: Dědit ze třídy UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Postupy: Autor ovládacích prvků Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
-- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
+- [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
 - [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
