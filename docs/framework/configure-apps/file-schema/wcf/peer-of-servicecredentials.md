@@ -1,12 +1,12 @@
 ---
-title: <peer> of <serviceCredentials>
+title: <peer> z <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
 ms.openlocfilehash: d726ab460141b1e373a1cabf770b8958f50319eb
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59219145"
 ---
 # <a name="peer-of-servicecredentials"></a>\<sdílené > z \<serviceCredentials >
@@ -39,7 +39,7 @@ Určuje aktuální pověření pro partnerský uzel.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<certifikát >](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-peer.md)|Určuje certifikát X.509, který chcete použít pro podepisování a šifrování zpráv služeb peer-to-peer. .|  
+|[\<certificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/certificate-of-peer.md)|Určuje certifikát X.509, který chcete použít pro podepisování a šifrování zpráv služeb peer-to-peer. .|  
 |[\<messageSenderAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication.md)|Určuje možnosti ověřování pro odesílatele zpráv.|  
 |[\<peerAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication.md)|Určuje možnosti ověřování pro partnerské služby.|  
   
@@ -58,5 +58,5 @@ Určuje aktuální pověření pro partnerský uzel.
 - [Síť rovnocenných počítačů](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)
 - [Ověřování zpráv protokolu peer Channel](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
 - [Vlastní ověřování protokolu peer Channel](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
-- [Zabezpečení aplikací rovnocenného kanálu](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
+- [Zabezpečení aplikací protokolu Peer Channel](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
 - [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

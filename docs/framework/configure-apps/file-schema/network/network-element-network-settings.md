@@ -1,5 +1,5 @@
 ---
-title: <network> – Element (nastavení sítě)
+title: <network> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#network
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
 ms.openlocfilehash: c411e00026f03fdb355664049f8db00f3c800352
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59219964"
 ---
 # <a name="network-element-network-settings"></a>\<Síť > – Element (nastavení sítě)

@@ -16,10 +16,10 @@ helpviewer_keywords:
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
 ms.openlocfilehash: 75ebf605e9abb844e7a713b448aefe2ec4cd1a27
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59218378"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
@@ -47,7 +47,7 @@ ms.locfileid: "59218378"
 |Integrace Web|Dialogové okno Stažení prohlížeče<br /><br /> Navigace nejvyšší úrovně zahájená uživatelem<br /><br /> mailto:Links<br /><br /> Parametry identifikátoru URI<br /><br /> HTTPWebRequest<br /><br /> Obsah WPF hostované v elementu IFRAME<br /><br /> Hostování stejný web HTML stránek pomocí rámce<br /><br /> Hostování stejné stránek HTML pomocí WebBrowser<br /><br /> Web Services (ASMX)<br /><br /> Webové služby (s použitím Windows Communication Foundation)<br /><br /> Skriptování<br /><br /> Modelu Document Object Model|  
 |Vizuály|2D a 3D<br /><br /> Animace<br /><br /> Média (lokalita původu a mezi doménami)<br /><br /> Vytvoření bitové kopie/Audio/Video|  
 |Čtení|FlowDocuments<br /><br /> XPS – dokumenty<br /><br /> Vložený & systémových písem<br /><br /> Vývojového diagramu křížového procesu & písma TrueType|  
-|Úpravy|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Ve formátu prostého textu a podpora schránky inkoustu<br /><br /> Vložit uživatelem iniciované<br /><br /> Kopírování vybraný obsah|  
+|Úprava|Kontrola pravopisu<br /><br /> RichTextBox<br /><br /> Ve formátu prostého textu a podpora schránky inkoustu<br /><br /> Vložit uživatelem iniciované<br /><br /> Kopírování vybraný obsah|  
 |Ovládací prvky|Obecné ovládacích prvků|  
   
  Tato tabulka popisuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce na vysoké úrovni. Podrobnější informace, [!INCLUDE[TLA#tla_lhsdk](../../../includes/tlasharptla-lhsdk-md.md)] dokumenty oprávnění, které vyžaduje každý člen [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Kromě toho tyto funkce mít podrobnější informace týkající se provádění částečným vztahem důvěryhodnosti, včetně zvláštní požadavky.  
@@ -74,7 +74,7 @@ ms.locfileid: "59218378"
 |------------------|-------------|  
 |Obecné|Okno (Windows definované aplikací a dialogová okna)<br /><br /> SaveFileDialog<br /><br /> Systém souborů<br /><br /> Přístup k registru<br /><br /> Přetažení<br /><br /> Serializace XAML (přes funkci XamlWriter.Save)<br /><br /> Vlastnosti UIAutomation klientů<br /><br /> Přístup ke zdrojovému kódu okno (HwndHost)<br /><br /> Podpora úplné řeči<br /><br /> Windows Forms Interoperability|  
 |Vizuály|Bitmapové efekty<br /><br /> Kódování obrázků|  
-|Úpravy|Formát schránky formátovaného textu<br /><br /> Plná podpora XAML|  
+|Úprava|Formát schránky formátovaného textu<br /><br /> Plná podpora XAML|  
   
 <a name="Partial_Trust_Programming"></a>   
 ## <a name="partial-trust-programming"></a>Programování v částečném vztahu důvěryhodnosti  

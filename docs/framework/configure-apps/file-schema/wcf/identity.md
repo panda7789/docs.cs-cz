@@ -3,10 +3,10 @@ title: <identity>
 ms.date: 03/30/2017
 ms.assetid: c1d2ae56-e231-4a07-9c3f-9f13381dc0d8
 ms.openlocfilehash: 0f5eace346fd0ed2c0532fb602585c4593d97291
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59220354"
 ---
 # <a name="identity"></a>\<identity>
@@ -54,7 +54,7 @@ Prvek identita umožňuje vývojáři klientského programu zadat v době návrh
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vlastní >](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje mechanismus rozpoznávání partnera vlastní pro netPeerTcpBinding.|  
+|[\<custom>](../../../../../docs/framework/configure-apps/file-schema/wcf/custom.md)|Určuje mechanismus rozpoznávání partnera vlastní pro netPeerTcpBinding.|  
 |[\<endpoint>](endpoint-element.md)|Nakonfiguruje koncových bodů služby.|  
 |[\<koncový bod > z \<klienta >](endpoint-of-client.md)|Nakonfiguruje kanál koncových bodů.|  
 |[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Určuje Token služba zabezpečení (STS) pro federované služby.|  
@@ -68,4 +68,4 @@ Prvek identita umožňuje vývojáři klientského programu zadat v době návrh
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Koncové body: adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

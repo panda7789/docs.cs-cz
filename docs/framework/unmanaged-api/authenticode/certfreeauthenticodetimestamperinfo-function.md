@@ -11,10 +11,10 @@ ms.assetid: 3eb14c49-68c2-4516-ac89-e5bd7473831c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 355e6c7b1cd77936d5ccfa5ccff7312c8e35ac63
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59220396"
 ---
 # <a name="certfreeauthenticodetimestamperinfo-function"></a>Funkce CertFreeAuthenticodeTimestamperInfo
