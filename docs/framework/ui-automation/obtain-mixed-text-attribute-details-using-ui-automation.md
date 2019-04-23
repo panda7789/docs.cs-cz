@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: d0e4c005-abd1-42bb-92a4-5faf87097311
 ms.openlocfilehash: f52ff1b669f821d102a65888189d9bbf2c000da8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59158480"
 ---
 # <a name="obtain-mixed-text-attribute-details-using-ui-automation"></a>Získání podrobných informací o smíšených textových atributech s použitím automatizace uživatelského rozhraní

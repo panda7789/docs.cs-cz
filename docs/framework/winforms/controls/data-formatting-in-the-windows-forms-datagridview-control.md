@@ -7,10 +7,10 @@ helpviewer_keywords:
 - data grids [Windows Forms], formatting data
 ms.assetid: 07bf558d-3748-42ba-8ba0-37fdef924081
 ms.openlocfilehash: b5c055bdd12a4bede6e77233726c697de424a055
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59158637"
 ---
 # <a name="data-formatting-in-the-windows-forms-datagridview-control"></a>Formátování dat v ovládacím prvku Windows Forms DataGridView
@@ -37,5 +37,5 @@ ms.locfileid: "59158637"
 - <xref:System.Windows.Forms.DataGridViewCellStyle>
 - [Zobrazení dat v ovládacím prvku Windows Forms DataGridView](displaying-data-in-the-windows-forms-datagridview-control.md)
 - [Styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md)
-- [Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-format-data-in-the-windows-forms-datagridview-control.md)
+- [Postupy: Formát dat v Windows Forms DataGridView](how-to-format-data-in-the-windows-forms-datagridview-control.md)
 - [Postupy: Přizpůsobení formátování dat v ovládacím prvku Windows Forms DataGridView](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)

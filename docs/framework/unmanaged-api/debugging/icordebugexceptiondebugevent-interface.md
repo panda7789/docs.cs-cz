@@ -5,10 +5,10 @@ ms.assetid: f9ba60d8-b54d-417e-bb3e-fde4b41ca44c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2e2a147d46412eb4feb192070ff8420cab842a6c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59156452"
 ---
 # <a name="icordebugexceptiondebugevent-interface"></a>Rozhraní ICorDebugExceptionDebugEvent
@@ -47,5 +47,5 @@ Rozšiřuje [ICorDebugDebugEvent](../../../../docs/framework/unmanaged-api/debug
   
 ## <a name="see-also"></a>Viz také:
 
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

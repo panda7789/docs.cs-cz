@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 ms.openlocfilehash: caf9a66e8c42fb80955539aa9d3eb32179309004
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157446"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
@@ -47,7 +47,7 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
   
 |Kategorie|Protocol (Protokol)|Specifikace a využití|  
 |--------------|--------------|-----------------------------|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Úvod do](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)<br /><br /> `wsHttpBinding`, `ws2007HttpBinding`, A `wsDualHttpBinding` implementace WS-Addressing World Wide Web Consortium (W3C) doporučení Povolit asynchronní zasílání zpráv, korelace zprávy a adresování mechanismy přenosu doménově neutrální.<br /><br /> WCF nepodporuje šifrování záhlaví WS-Addressing, i když je to povoleno parametrem WS-* specifikace.|  
 |Zasílání zpráv|WS-Addressing 1.0 - metadat|[WS-Addressing metadat 1.0](https://www.w3.org/2007/05/addressing/metadata) podporu pro tento protokol se povoluje nastavením verze zásad chování ServiceMetadata – s policyversion nastavena na 1.2 (výchozí), popis wsdl je v souladu s WS-Addressing wsdl, s policyversion nastavena na 1.5, popis wsdl je kompatibilní s metadaty ws-addressing.<br /><br /> WCF nepodporuje šifrování záhlaví WS-Addressing, i když je to povoleno parametrem WS-* specifikace.|  
 |Zabezpečení|Zabezpečení zpráv SOAP WSS 1.0|[Zabezpečení zpráv SOAP WSS 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> Použít, když `securityMode` atribut je nastaven na "wsSecurityOverHttp" (výchozí) a parametry jsou nakonfigurovány pomocí `wsSecurity` podřízený element.<br /><br /> `<wsHttpBinding>   <binding name="myBinding">      <security mode="Message" .../>   </binding> </wsHttpBinding>`|  
@@ -58,7 +58,7 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
 |Zabezpečení|WS-Trust|[WS-Trust](https://go.microsoft.com/fwlink/?LinkId=95318)<br /><br /> Použít WS-SecureConversation (viz výše).|  
 |Spolehlivé zasílání zpráv|WS-ReliableMessaging|[WS-ReliableMessaging](https://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Použijte, pokud je vazba konfigurována pro použití `reliableSession`.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
 |Transakce|WS-AtomicTransaction|[WS-AtomicTransaction](https://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Používá se pro komunikaci mezi správci transakcí. Klienti WCF a služby vždy používá správce místní transakce.|  
-|Transakce|Koordinace WS|[Koordinace WS](https://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Použijte tok kontext transakce při `flowTransactions` atribut je nastaven na "Povoleno" nebo "Required".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
+|Transakce|Koordinace WS|[WS-Coordination](https://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Použijte tok kontext transakce při `flowTransactions` atribut je nastaven na "Povoleno" nebo "Required".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
   
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>wsFederationHttpBinding a ws2007FederationHttpBinding  
  [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a [ \<ws2007FederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) prvky jsou zavedené kvůli zajištění podpory pro federovaných scénářích, kde je třetí strana vystaví token pro ověření klienta. Kromě protokolech používaných `wsHttpBinding`, `wsFederationHttpBinding` využívá:  
@@ -94,7 +94,7 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
 |Kategorie|Protocol (Protokol)|Specifikace a využití|  
 |--------------|--------------|-----------------------------|  
 |Přenos|HTTP 1.1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Úvod do](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-Policy.|  
   
@@ -104,7 +104,7 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
 |Kategorie|Protocol (Protokol)|Specifikace a využití|  
 |--------------|--------------|-----------------------------|  
 |Přenos|HTTP 1.1|[HTTP 1.1](https://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> Zabezpečení přenosu je povoleno.|  
-|Zasílání zpráv|PROTOKOL SOAP 1.2|[Úvod do](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
+|Zasílání zpráv|PROTOKOL SOAP 1.2|[Primer](https://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Zasílání zpráv framework](https://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (včetně vazby HTTP)](https://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Zasílání zpráv|WS-Addressing 2005/08|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Webové služby SOAP adresování 1.0-](https://go.microsoft.com/fwlink/?LinkId=95330)|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implementuje WS-MetadataExchange pro načtení schématu XML, WSDL a WS-Policy.|  
   

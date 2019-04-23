@@ -13,10 +13,10 @@ helpviewer_keywords:
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
 ms.openlocfilehash: 6f7cbd91be83c96b25248f87ddc377159ba39b64
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59162196"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
@@ -69,10 +69,10 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
   
 |Type|Vlastnosti transformace|  
 |----------|-------------------------------|  
-|<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>,  <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
+|<xref:System.Windows.Media.Brush>|<xref:System.Windows.Media.Brush.Transform%2A>, <xref:System.Windows.Media.Brush.RelativeTransform%2A>|  
 |<xref:System.Windows.Media.ContainerVisual>|<xref:System.Windows.Media.ContainerVisual.Transform%2A>|  
 |<xref:System.Windows.Media.DrawingGroup>|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|  
-|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.UIElement.RenderTransform%2A>,  <xref:System.Windows.FrameworkElement.LayoutTransform%2A>|  
+|<xref:System.Windows.FrameworkElement>|<xref:System.Windows.UIElement.RenderTransform%2A>, <xref:System.Windows.FrameworkElement.LayoutTransform%2A>|  
 |<xref:System.Windows.Media.Geometry>|<xref:System.Windows.Media.Geometry.Transform%2A>|  
 |<xref:System.Windows.Media.TextEffect>|<xref:System.Windows.Media.TextEffect.Transform%2A>|  
 |<xref:System.Windows.UIElement>|<xref:System.Windows.UIElement.RenderTransform%2A>|  
@@ -152,5 +152,5 @@ LayoutTransform – používá k otočení tlačítka
 
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.Matrix>
-- [– postupy](transformations-how-to-topics.md)
+- [Témata s postupy](transformations-how-to-topics.md)
 - [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

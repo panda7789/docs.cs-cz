@@ -3,10 +3,10 @@ title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
 ms.openlocfilehash: f32e932bb6616911baa8991cb46a5940c8d285ef
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160885"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
@@ -98,6 +98,6 @@ Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ
   
 ## <a name="see-also"></a>Viz také:
 
-- [Fronty – přehled](queues-overview.md)
+- [Přehled front](queues-overview.md)
 - [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
 - [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -3,10 +3,10 @@ title: Serializovatelné typy
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
 ms.openlocfilehash: 44fc538ccb69296b91c94d2b9ae497be599c0c7e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160846"
 ---
 # <a name="serializable-types"></a>Serializovatelné typy

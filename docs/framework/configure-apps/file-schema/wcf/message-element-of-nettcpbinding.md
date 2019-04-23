@@ -3,10 +3,10 @@ title: <message> Element <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
 ms.openlocfilehash: ac6977a8422055f998c7ed932c853992b7809911
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59161015"
 ---
 # <a name="message-element-of-nettcpbinding"></a>\<Zpráva > prvek \<netTcpBinding >
@@ -38,7 +38,7 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Basic128|Zabalení klíče použijte Aes128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
 |Basic192|Použijte šifrování Aes192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
@@ -59,7 +59,7 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Žádný|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |Windows|Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows.|  
@@ -68,13 +68,13 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
 |Třídy IssuedToken|Určuje vlastní token, obvykle vydané službou tokenu služby zabezpečení (STS).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Definuje možnosti zabezpečení pro <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nettcpbinding.md)|Definuje možnosti zabezpečení pro <xref:System.ServiceModel.Configuration.NetTcpBindingElement>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Zprávy používá zabezpečení na úrovni zprávy pro integritu a důvěrnost zpráv SOAP a pro vzájemné ověřování partnerských uzlů komunikace. Vybrali tento režim zabezpečení u vazby kanálu zásobníku je nakonfigurována s elementy vazby zabezpečení zpráv a zabezpečené zprávy protokolu SOAP v souladu s WS-Security * standardy.  

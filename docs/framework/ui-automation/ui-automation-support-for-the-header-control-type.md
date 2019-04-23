@@ -7,10 +7,10 @@ helpviewer_keywords:
 - control types, Header
 ms.assetid: d2e48891-2dbe-409e-8655-2f753908e29b
 ms.openlocfilehash: 8a7fe7fb8ec3e4b33ff4814859afe7d1d8de9c60
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160118"
 ---
 # <a name="ui-automation-support-for-the-header-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku záhlaví
@@ -29,7 +29,7 @@ ms.locfileid: "59160118"
   
 |Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
-|Záhlaví<br /><br /> -HeaderItem (1 nebo více)|Žádný|  
+|Záhlaví<br /><br /> -HeaderItem (1 nebo více)|Žádné|  
   
  1 nebo více podřízených ovládacích prvků záhlaví mít vždy v zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.  
   
@@ -39,7 +39,7 @@ ms.locfileid: "59160118"
 ## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  
  Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, jejichž hodnota nebo definice je obzvláště důležité pro ovládací prvky záhlaví. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, viz [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Value|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Hodnota|Poznámky|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|V části poznámky.|Hodnota této vlastnosti musí být jedinečný v rámci všech ovládacích prvků v aplikaci.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélník, který obsahuje celý ovládací prvek.|  
@@ -65,12 +65,12 @@ ms.locfileid: "59160118"
 ## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  
  Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události potřebné to, že všechny ovládací prvky záhlaví. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Událost|Podpora|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádný|  
-|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádný|  
 |<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|Požadováno|Žádný|  
 |<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|Požadováno|Žádné|  
   
 ## <a name="see-also"></a>Viz také:

@@ -1,5 +1,5 @@
 ---
-title: <socket> – Element (nastavení sítě)
+title: <socket> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/socket
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
 ms.openlocfilehash: 82bfe3b6e3107ff787716657dbf0b31dcadde911
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160157"
 ---
 # <a name="socket-element-network-settings"></a>\<soket > – Element (nastavení sítě)
@@ -49,9 +49,9 @@ Určuje, zda operace soketu používat porty dokončení.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` atributy se používají k určení výchozí chování týkající se použití portů dokončení třídy v <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace. Dokončení porty se doporučuje pro aplikace s vysokým výkonem serveru.  

@@ -1,5 +1,5 @@
 ---
-title: <relativeBindForResources> Prvek
+title: Element <relativeBindForResources>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - RelativeBindForResources element
@@ -8,10 +8,10 @@ ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c98914f57c24dc51625564e266157731ff173337
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157375"
 ---
 # <a name="relativebindforresources-element"></a>\<relativeBindForResources> Element
@@ -39,7 +39,7 @@ Optimalizuje sondy pro satelitní sestavení.
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime neoptimalizuje sondy pro satelitní sestavení. Jedná se o výchozí hodnotu.|  
 |`true`|Modul runtime optimalizuje sondy pro satelitní sestavení.|  

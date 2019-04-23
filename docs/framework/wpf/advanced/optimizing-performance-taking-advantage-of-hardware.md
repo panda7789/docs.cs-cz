@@ -10,10 +10,10 @@ helpviewer_keywords:
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
 ms.openlocfilehash: 683804acf43065543fa5d4ffb1a5ecf7e5b4c49a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59163173"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimalizace výkonu: Využití výhod hardwaru
@@ -64,4 +64,4 @@ Interní architektury portálu [!INCLUDE[TLA2#tla_winclient](../../../../include
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)

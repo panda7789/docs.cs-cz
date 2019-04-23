@@ -10,10 +10,10 @@ helpviewer_keywords:
 - scaling elements [WPF], Viewbox control
 ms.assetid: 00fc0a16-1078-4d55-9849-ffaf7da96531
 ms.openlocfilehash: 707375230acea3558b060f398add919370d352b2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160716"
 ---
 # <a name="viewbox"></a>Viewbox

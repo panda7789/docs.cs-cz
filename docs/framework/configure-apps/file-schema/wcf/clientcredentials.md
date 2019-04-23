@@ -3,10 +3,10 @@ title: <clientCredentials>
 ms.date: 03/30/2017
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
 ms.openlocfilehash: ebe976df9af0c316e95a1e089412e57a575a6df1
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157232"
 ---
 # <a name="clientcredentials"></a>\<clientCredentials>
@@ -63,7 +63,7 @@ Určuje pověření pro ověření klienta ke službě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Přihlašovací údaje pro klienta se používají k ověření klienta ke službám v případech, kdy je vyžaduje vzájemné ověřování. Tento oddíl konfigurace lze také určení certifikátů služby pro scénáře, ve kterém musí klient zabezpečené zprávy do služby pomocí certifikátu služby.  

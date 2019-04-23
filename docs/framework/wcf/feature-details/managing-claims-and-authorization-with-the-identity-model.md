@@ -9,10 +9,10 @@ helpviewer_keywords:
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
 ms.openlocfilehash: 568fb1c2a18cfde5b15b844754f4356af0a576a3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155087"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
@@ -69,7 +69,7 @@ Autorizace je proces určování entit, které mají oprávnění změnit, zobra
  Pravé  
  Funkce na prostředku. Definice rozhraní API modelu Identity práv jsou vlastnosti <xref:System.IdentityModel.Claims.Rights> třídy. Příklady poskytované systémem rights <xref:System.IdentityModel.Claims.Rights.Identity%2A> a <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>.  
   
- Value  
+ Hodnota  
  Něco, nad tím, které je požadováno práva.  
   
 ## <a name="claims"></a>deklarace identity  
@@ -171,12 +171,12 @@ Autorizace je proces určování entit, které mají oprávnění změnit, zobra
 - <xref:System.IdentityModel.Policy>
 - <xref:System.IdentityModel.Tokens>
 - <xref:System.IdentityModel.Selectors>
-- [Deklarace a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
-- [Deklarace a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)
-- [Vytvoření nároku a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
+- [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
+- [Deklarace identity a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)
+- [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
 - [Postupy: Vytvoření vlastní deklarace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
 - [Postupy: Porovnání deklarací](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)
 - [Postupy: Vytvoření vlastní zásady autorizace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)
-- [Postupy: Vytvoření vlastního správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
 - [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)

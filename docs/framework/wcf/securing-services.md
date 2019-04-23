@@ -7,10 +7,10 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
 ms.openlocfilehash: 65d4f2858c2be4c2a6872f96ef3739bb16253d74
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157667"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
@@ -113,7 +113,7 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
 - [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)
 - [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
 - [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)
-- [Postupy: Určení typu přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
+- [Postupy: Určení typu pověření klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
 - [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
 - [Postupy: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
 - [Postupy: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)

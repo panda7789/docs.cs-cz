@@ -5,10 +5,10 @@ helpviewer_keywords:
 - configuration [WCF]
 ms.assetid: beac771e-f28e-4f84-9ff1-ad9251c726d3
 ms.openlocfilehash: 81727adbf985986a71cc9f9e2d42a1de0cb1fd76
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59156504"
 ---
 # <a name="configuring-wcf-services"></a>Konfigurace služeb WCF
@@ -52,7 +52,7 @@ Jakmile máte navrženy a implementovány servisní smlouvy, jste připraveni ke
   
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
   
- [Úvod do rozšíření](../../../docs/framework/wcf/introduction-to-extensibility.md)  
+ [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
   
  [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)  
   

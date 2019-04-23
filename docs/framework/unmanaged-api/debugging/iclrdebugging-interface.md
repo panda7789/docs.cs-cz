@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c6edee34c8560c989040475fee4a35c6bd2ddb3e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155711"
 ---
 # <a name="iclrdebugging-interface"></a>ICLRDebugging – rozhraní
@@ -47,5 +47,5 @@ Poskytuje metody, které zpracovávají načítání a uvolňování modulů pro
   
 ## <a name="see-also"></a>Viz také:
 
-- [Debugging – rozhraní](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

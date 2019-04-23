@@ -1,5 +1,5 @@
 ---
-title: <remove> – Element pro connectionManagement (nastavení sítě)
+title: <remove> – element pro connectionManagement (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove
@@ -11,10 +11,10 @@ helpviewer_keywords:
 - remove element, connectionManagement
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
 ms.openlocfilehash: d9c584fb2faa971e7ce1ca287a94c8c6129820fd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59158857"
 ---
 # <a name="remove-element-for-connectionmanagement-network-settings"></a>\<Odebrat > – Element pro connectionManagement (nastavení sítě)
@@ -47,7 +47,7 @@ Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
   

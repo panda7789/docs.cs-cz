@@ -6,10 +6,10 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
 ms.openlocfilehash: c2923a1940e3d58b6e3434f5b02edfb02995a202
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155932"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Použití datové služby v klientské aplikaci (WCF Data Services)

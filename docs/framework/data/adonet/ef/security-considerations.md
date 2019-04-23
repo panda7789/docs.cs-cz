@@ -3,10 +3,10 @@ title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
 ms.openlocfilehash: 1e3c1f74c1bf30da47fb38b6799bff11090cf31a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59161356"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
@@ -69,7 +69,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
 -   <xref:System.Security.Permissions.ReflectionPermission>: <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> podporovat LINQ dotazů entity.  
   
--   <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> k zařazení <xref:System.Transactions><xref:System.Transactions.Transaction>.  
+-   <xref:System.Transactions.DistributedTransactionPermission>: <xref:System.Security.Permissions.PermissionState.Unrestricted> k zařazení <xref:System.Transactions> <xref:System.Transactions.Transaction>.  
   
 -   <xref:System.Security.Permissions.SecurityPermission>: <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> k serializaci výjimky pomocí <xref:System.Runtime.Serialization.ISerializable> rozhraní.  
   
@@ -164,5 +164,5 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 ## <a name="see-also"></a>Viz také:
 
 - [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
+- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
 - [Důležité informace o migraci](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)

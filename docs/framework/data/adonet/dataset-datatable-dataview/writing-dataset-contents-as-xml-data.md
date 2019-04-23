@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: fd15f8a5-3b4c-46d0-a561-4559ab2a4705
 ms.openlocfilehash: dae044a9d7802e858f1f24dd4aa0f1de8f6cba7a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59158948"
 ---
 # <a name="writing-dataset-contents-as-xml-data"></a>Kopírování obsahu datové sady jako dat XML
@@ -68,7 +68,7 @@ xmlSW.Close();
   
 |Hodnota MappingType|Popis|  
 |-----------------------|-----------------|  
-|**Prvek**|Toto nastavení je výchozí. Sloupec je zapsán jako element XML, kde vlastnost ColumnName je název elementu a obsah sloupce se zapisují jako text elementu. Příklad:<br /><br /> `<ColumnName>Column Contents</ColumnName>`|  
+|**Element**|Toto nastavení je výchozí. Sloupec je zapsán jako element XML, kde vlastnost ColumnName je název elementu a obsah sloupce se zapisují jako text elementu. Příklad:<br /><br /> `<ColumnName>Column Contents</ColumnName>`|  
 |**Atribut**|Sloupec je zapsán jako atribut XML elementu XML pro aktuální řádek, kde vlastnost ColumnName je název atributu a obsah sloupce se zapisují jako hodnota atributu. Příklad:<br /><br /> `<RowElement ColumnName="Column Contents" />`|  
 |**SimpleContent**|Obsah sloupce se zapisují jako text v elementu jazyka XML pro aktuální řádek. Příklad:<br /><br /> `<RowElement>Column Contents</RowElement>`<br /><br /> Všimněte si, že **SimpleContent** nelze nastavit pro sloupec tabulky, který má **Element** sloupce nebo vnořené relace.|  
 |**Hidden**|Sloupec není zapsán ve výstupu XML.|  

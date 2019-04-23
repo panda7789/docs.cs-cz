@@ -17,10 +17,10 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fdfd8e8fc419809a3a490639ada1c533f286fe8b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157505"
 ---
 # <a name="isymunmanagedbinder3-interface"></a>ISymUnmanagedBinder3 – rozhraní
@@ -40,6 +40,6 @@ Rozšiřuje rozhraní symbol vazače. Získat po zavolání tohoto rozhraní `Qu
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozhraní úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
 - [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
 - [ISymUnmanagedBinder2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)

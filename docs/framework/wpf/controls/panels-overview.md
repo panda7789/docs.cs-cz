@@ -10,10 +10,10 @@ helpviewer_keywords:
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
 ms.openlocfilehash: 946e0f5ee90235498b8089732ae526ab6f35665c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59157869"
 ---
 # <a name="panels-overview"></a>Přehled panelů
@@ -81,7 +81,7 @@ ms.locfileid: "59157869"
   
  Každý odvozené <xref:System.Windows.Controls.Panel> element zpracovává omezení velikosti odlišně. Vysvětlení jak <xref:System.Windows.Controls.Panel> omezení obslužné rutiny ve vodorovném nebo svislém směru mohli rozložení předvídatelnější.  
   
-|**Název panelu**|**x dimenze**|**Dimenze y**|  
+|**Název panelu**|**x-Dimension**|**Dimenze y**|  
 |--------------------|----------------------|----------------------|  
 |<xref:System.Windows.Controls.Canvas>|Omezené na obsah|Omezené na obsah|  
 |<xref:System.Windows.Controls.DockPanel>|Omezené|Omezené|  
@@ -260,6 +260,6 @@ ms.locfileid: "59157869"
 - [Ukázková galerie ovládacích prvků WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
 - [Přehled zarovnání, okrajů a odsazení](../advanced/alignment-margins-and-padding-overview.md)
 - [Vytvoření vlastního panelu ukázky zabalení obsahu](https://go.microsoft.com/fwlink/?LinkID=159979)
-- [Přehled připojených vlastností](../advanced/attached-properties-overview.md)
+- [Přehled přidružených vlastností](../advanced/attached-properties-overview.md)
 - [Přehled automatického rozložení](../advanced/use-automatic-layout-overview.md)
 - [Rozložení a návrh](../advanced/optimizing-performance-layout-and-design.md)

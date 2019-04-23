@@ -6,10 +6,10 @@ helpviewer_keywords:
 - security [WCF], authorization
 ms.assetid: 8ea0b552-af65-45b0-a157-c6c111b8ce5e
 ms.openlocfilehash: 26aa445f3136fcb16e2eb9cdce6b245476297dfd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59161357"
 ---
 # <a name="authorization-in-wcf"></a>Autorizace ve WCF
@@ -25,10 +25,10 @@ Autorizace je proces řízení přístupu a oprávnění k prostředkům, jako j
  [Postupy: Použití zprostředkovatele rolí ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-role-provider-with-a-service.md)  
  Provede konfiguraci této služby, který umožňuje použít funkci zprostředkovatele rolí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)].  
   
- [Postupy: Použití zprostředkovatele role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)  
+ [Postupy: Použití zprostředkovatele Role Správce autorizací ASP.NET se službou](../../../../docs/framework/wcf/feature-details/how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service.md)  
  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Správce autorizací můžete použít ke správě autorizace pro webový server. Podobně můžou využít WCF [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]kombinaci /Authorization správce pro autorizaci klientů.  
   
- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
+ [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)  
  Popisuje základní informace o používání infrastruktury modelu identit pro ověřování na základě deklarací identity.  
   
  [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  

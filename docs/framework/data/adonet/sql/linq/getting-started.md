@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: db8a557a-fef8-4f4f-bb91-8cff7250ee25
 ms.openlocfilehash: 506257c13bbaada98dffa9d3a15c834037c1d971
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155230"
 ---
 # <a name="getting-started"></a>Začínáme
@@ -31,7 +31,7 @@ S použitím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]
   
 ## <a name="see-also"></a>Viz také:
 
-- [Technologie LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)
+- [LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/index.md)
 - [Úvod do LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq.md)
 - [Úvod do LINQ (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)
 - [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)

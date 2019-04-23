@@ -10,10 +10,10 @@ helpviewer_keywords:
 - WCF, COM integration
 ms.assetid: c98bda3e-6779-419e-8e6d-9aa94053026d
 ms.openlocfilehash: 51626da6e97e346f43cfe606a5164024580a2ac7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155321"
 ---
 # <a name="integrating-with-com-applications"></a>Integrace s aplikacemi modelu COM
@@ -23,16 +23,16 @@ Služby Windows Communication Foundation (WCF) je možné integrovat přímo do 
  [Přehled integrace s aplikacemi modelu COM](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)  
  Poskytuje přehled hlavních částí procesu integrace.  
   
- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)  
+ [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)  
  Použití monikeru služby WCF v rámci aplikace modelu COM, zaregistrujte požadované typy s atributy s modelem COM a konfigurace aplikace COM i Přezdívka pomocí konfigurace požadované vazby.  
   
- [Postupy: Použití monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
+ [Postupy: Použití Monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
  Vysvětluje, jak získat definici kontraktu ve formě souboru definice jazyka WSDL (Web Services) nebo z koncového bodu WS-MetadataExchange.  
   
- [Postupy: Použití monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)  
+ [Postupy: Použití Monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)  
  Popisuje, jak volat Ukázky WCF pomocí monikeru WCF WSDL.  
   
- [Postupy: Použití monikeru služby u kontraktů Metadata Exchange](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-metadata-exchange-contracts.md)  
+ [Postupy: Použití Monikeru služby u kontraktů Metadata Exchange](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-metadata-exchange-contracts.md)  
  Popisuje, jak volat WCF ukázku použití monikeru služby WCF, který určuje koncový bod Mex.  
   
  [Postupy: Určení zabezpečovacích pověření kanálu](../../../../docs/framework/wcf/feature-details/how-to-specify-channel-security-credentials.md)  

@@ -10,10 +10,10 @@ helpviewer_keywords:
 - traversing text
 ms.assetid: 3ddb3b7b-1d6b-4dba-8678-5a68e868aadb
 ms.openlocfilehash: d73ae4ca11d6f5417bb5cb768eae4e586538bd92
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59154788"
 ---
 # <a name="traverse-text-using-ui-automation"></a>Procházení textu s použitím automatizace uživatelského rozhraní
