@@ -18,21 +18,21 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6c6b998bfe2c04d45b332088ad43272c8013e354
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59224322"
 ---
-# <a name="icatalogservicesautodone-method"></a><span data-ttu-id="786f1-102">ICatalogServices::Autodone – metoda</span><span class="sxs-lookup"><span data-stu-id="786f1-102">ICatalogServices::Autodone Method</span></span>
-<span data-ttu-id="786f1-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="786f1-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icatalogservicesautodone-method"></a><span data-ttu-id="a3852-102">ICatalogServices::Autodone – metoda</span><span class="sxs-lookup"><span data-stu-id="a3852-102">ICatalogServices::Autodone Method</span></span>
+<span data-ttu-id="a3852-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="a3852-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="786f1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="786f1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a3852-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a3852-104">Syntax</span></span>  
   
 ```  
 HRESULT Autodone ( );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="786f1-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="786f1-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3852-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a3852-105">See also</span></span>
 
-- [<span data-ttu-id="786f1-106">Rozhraní hostování</span><span class="sxs-lookup"><span data-stu-id="786f1-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="a3852-106">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="a3852-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

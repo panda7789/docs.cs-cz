@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4ed5ddd74e61e63426871f659aa1c962d38fd534
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59221398"
 ---
-# <a name="imetadataimportenumparams-method"></a><span data-ttu-id="3d19e-102">IMetaDataImport::EnumParams – metoda</span><span class="sxs-lookup"><span data-stu-id="3d19e-102">IMetaDataImport::EnumParams Method</span></span>
-<span data-ttu-id="3d19e-103">Vytvoří výčet ParamDef tokeny představující parametry metody odkazuje zadaný token MethodDef.</span><span class="sxs-lookup"><span data-stu-id="3d19e-103">Enumerates ParamDef tokens representing the parameters of the method referenced by the specified MethodDef token.</span></span>  
+# <a name="imetadataimportenumparams-method"></a><span data-ttu-id="b6799-102">IMetaDataImport::EnumParams – metoda</span><span class="sxs-lookup"><span data-stu-id="b6799-102">IMetaDataImport::EnumParams Method</span></span>
+<span data-ttu-id="b6799-103">Vytvoří výčet ParamDef tokeny představující parametry metody odkazuje zadaný token MethodDef.</span><span class="sxs-lookup"><span data-stu-id="b6799-103">Enumerates ParamDef tokens representing the parameters of the method referenced by the specified MethodDef token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3d19e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3d19e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b6799-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6799-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumParams (  
@@ -39,39 +39,39 @@ HRESULT EnumParams (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3d19e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3d19e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b6799-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b6799-105">Parameters</span></span>  
  `phEnum`  
- <span data-ttu-id="3d19e-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="3d19e-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="3d19e-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="3d19e-107">This must be NULL for the first call of this method.</span></span>  
+ <span data-ttu-id="b6799-106">[out v] Ukazatel na enumerátor.</span><span class="sxs-lookup"><span data-stu-id="b6799-106">[in, out] A pointer to the enumerator.</span></span> <span data-ttu-id="b6799-107">První volání této metody musí mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="b6799-107">This must be NULL for the first call of this method.</span></span>  
   
  `mb`  
- <span data-ttu-id="3d19e-108">[in] Token MethodDef představující metodu s parametry pro vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="3d19e-108">[in] A MethodDef token representing the method with the parameters to enumerate.</span></span>  
+ <span data-ttu-id="b6799-108">[in] Token MethodDef představující metodu s parametry pro vytvoření výčtu.</span><span class="sxs-lookup"><span data-stu-id="b6799-108">[in] A MethodDef token representing the method with the parameters to enumerate.</span></span>  
   
  `rParams`  
- <span data-ttu-id="3d19e-109">[out] Pole pro ukládání tokenů ParamDef.</span><span class="sxs-lookup"><span data-stu-id="3d19e-109">[out] The array used to store the ParamDef tokens.</span></span>  
+ <span data-ttu-id="b6799-109">[out] Pole pro ukládání tokenů ParamDef.</span><span class="sxs-lookup"><span data-stu-id="b6799-109">[out] The array used to store the ParamDef tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="3d19e-110">[in] Maximální velikost `rParams` pole.</span><span class="sxs-lookup"><span data-stu-id="3d19e-110">[in] The maximum size of the `rParams` array.</span></span>  
+ <span data-ttu-id="b6799-110">[in] Maximální velikost `rParams` pole.</span><span class="sxs-lookup"><span data-stu-id="b6799-110">[in] The maximum size of the `rParams` array.</span></span>  
   
  `pcTokens`  
- <span data-ttu-id="3d19e-111">[out] Počet tokenů ParamDef vrácené v `rParams`.</span><span class="sxs-lookup"><span data-stu-id="3d19e-111">[out] The number of ParamDef tokens returned in `rParams`.</span></span>  
+ <span data-ttu-id="b6799-111">[out] Počet tokenů ParamDef vrácené v `rParams`.</span><span class="sxs-lookup"><span data-stu-id="b6799-111">[out] The number of ParamDef tokens returned in `rParams`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3d19e-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3d19e-112">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="b6799-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b6799-112">Return Value</span></span>  
   
-|<span data-ttu-id="3d19e-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="3d19e-113">HRESULT</span></span>|<span data-ttu-id="3d19e-114">Popis</span><span class="sxs-lookup"><span data-stu-id="3d19e-114">Description</span></span>|  
+|<span data-ttu-id="b6799-113">HRESULT</span><span class="sxs-lookup"><span data-stu-id="b6799-113">HRESULT</span></span>|<span data-ttu-id="b6799-114">Popis</span><span class="sxs-lookup"><span data-stu-id="b6799-114">Description</span></span>|  
 |-------------|-----------------|  
-|`S_OK`|`EnumParams` <span data-ttu-id="3d19e-115">bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="3d19e-115">returned successfully.</span></span>|  
-|`S_FALSE`|<span data-ttu-id="3d19e-116">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="3d19e-116">There are no tokens to enumerate.</span></span> <span data-ttu-id="3d19e-117">V takovém případě `pcTokens` je nula.</span><span class="sxs-lookup"><span data-stu-id="3d19e-117">In that case, `pcTokens` is zero.</span></span>|  
+|`S_OK`|<span data-ttu-id="b6799-115">`EnumParams` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="b6799-115">`EnumParams` returned successfully.</span></span>|  
+|`S_FALSE`|<span data-ttu-id="b6799-116">Neexistují žádné tokeny se vytvořit výčet.</span><span class="sxs-lookup"><span data-stu-id="b6799-116">There are no tokens to enumerate.</span></span> <span data-ttu-id="b6799-117">V takovém případě `pcTokens` je nula.</span><span class="sxs-lookup"><span data-stu-id="b6799-117">In that case, `pcTokens` is zero.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="3d19e-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3d19e-118">Requirements</span></span>  
- <span data-ttu-id="3d19e-119">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3d19e-119">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b6799-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b6799-118">Requirements</span></span>  
+ <span data-ttu-id="b6799-119">**Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b6799-119">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3d19e-120">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="3d19e-120">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b6799-120">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b6799-120">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="3d19e-121">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3d19e-121">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b6799-121">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b6799-121">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="3d19e-122">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="3d19e-122">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="b6799-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b6799-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3d19e-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3d19e-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6799-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6799-123">See also</span></span>
 
-- [<span data-ttu-id="3d19e-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3d19e-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="3d19e-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3d19e-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="b6799-124">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b6799-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="b6799-125">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b6799-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

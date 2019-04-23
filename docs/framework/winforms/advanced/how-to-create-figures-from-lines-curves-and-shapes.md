@@ -9,21 +9,21 @@ helpviewer_keywords:
 - figures [Windows Forms], creating from lines
 ms.assetid: 82fd56c7-b443-4765-9b7c-62ce030656ec
 ms.openlocfilehash: eeaf478375e08734b20d83b6f3c8030732495013
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59224907"
 ---
-# <a name="how-to-create-figures-from-lines-curves-and-shapes"></a><span data-ttu-id="e2f60-102">Postupy: Vytváření obrázků z čar, křivek a obrazců</span><span class="sxs-lookup"><span data-stu-id="e2f60-102">How to: Create Figures from Lines, Curves, and Shapes</span></span>
-<span data-ttu-id="e2f60-103">Vytvoření elementu figure, sestavit <xref:System.Drawing.Drawing2D.GraphicsPath>a pak volat metody, jako například <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, chcete-li přidat primitivních elementů do cesty.</span><span class="sxs-lookup"><span data-stu-id="e2f60-103">To create a figure, construct a <xref:System.Drawing.Drawing2D.GraphicsPath>, and then call methods, such as <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> and <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, to add primitives to the path.</span></span>  
+# <a name="how-to-create-figures-from-lines-curves-and-shapes"></a><span data-ttu-id="95b56-102">Postupy: Vytváření obrázků z čar, křivek a obrazců</span><span class="sxs-lookup"><span data-stu-id="95b56-102">How to: Create Figures from Lines, Curves, and Shapes</span></span>
+<span data-ttu-id="95b56-103">Vytvoření elementu figure, sestavit <xref:System.Drawing.Drawing2D.GraphicsPath>a pak volat metody, jako například <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> a <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, chcete-li přidat primitivních elementů do cesty.</span><span class="sxs-lookup"><span data-stu-id="95b56-103">To create a figure, construct a <xref:System.Drawing.Drawing2D.GraphicsPath>, and then call methods, such as <xref:System.Drawing.Drawing2D.GraphicsPath.AddLine%2A> and <xref:System.Drawing.Drawing2D.GraphicsPath.AddCurve%2A>, to add primitives to the path.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e2f60-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="e2f60-104">Example</span></span>  
- <span data-ttu-id="e2f60-105">Následující příklady kódu vytvořte cesty, které se mají hodnoty:</span><span class="sxs-lookup"><span data-stu-id="e2f60-105">The following code examples create paths that have figures:</span></span>  
+## <a name="example"></a><span data-ttu-id="95b56-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="95b56-104">Example</span></span>  
+ <span data-ttu-id="95b56-105">Následující příklady kódu vytvořte cesty, které se mají hodnoty:</span><span class="sxs-lookup"><span data-stu-id="95b56-105">The following code examples create paths that have figures:</span></span>  
   
--   <span data-ttu-id="e2f60-106">První příklad vytváří cestu, která má jednoho elementu figure.</span><span class="sxs-lookup"><span data-stu-id="e2f60-106">The first example creates a path that has a single figure.</span></span> <span data-ttu-id="e2f60-107">Na obrázku se skládá z jedné oblouk. Oblouku má úhel oblouku – 180 stupňů, což je proti směru hodinových ručiček ve výchozím nastavení systém souřadnic.</span><span class="sxs-lookup"><span data-stu-id="e2f60-107">The figure consists of a single arc. The arc has a sweep angle of –180 degrees, which is counterclockwise in the default coordinate system.</span></span>  
+-   <span data-ttu-id="95b56-106">První příklad vytváří cestu, která má jednoho elementu figure.</span><span class="sxs-lookup"><span data-stu-id="95b56-106">The first example creates a path that has a single figure.</span></span> <span data-ttu-id="95b56-107">Na obrázku se skládá z jedné oblouk. Oblouku má úhel oblouku – 180 stupňů, což je proti směru hodinových ručiček ve výchozím nastavení systém souřadnic.</span><span class="sxs-lookup"><span data-stu-id="95b56-107">The figure consists of a single arc. The arc has a sweep angle of –180 degrees, which is counterclockwise in the default coordinate system.</span></span>  
   
--   <span data-ttu-id="e2f60-108">V druhém příkladu vytvoří cestu, která má dvě číslice.</span><span class="sxs-lookup"><span data-stu-id="e2f60-108">The second example creates a path that has two figures.</span></span> <span data-ttu-id="e2f60-109">První obrázek je oblouk, za nímž následuje řádku.</span><span class="sxs-lookup"><span data-stu-id="e2f60-109">The first figure is an arc followed by a line.</span></span> <span data-ttu-id="e2f60-110">Druhý obrázek je řádek, za nímž následuje křivku, za nímž následuje řádku.</span><span class="sxs-lookup"><span data-stu-id="e2f60-110">The second figure is a line followed by a curve followed by a line.</span></span> <span data-ttu-id="e2f60-111">První obrázek je otevřená a druhý obrázek je zavřený.</span><span class="sxs-lookup"><span data-stu-id="e2f60-111">The first figure is left open, and the second figure is closed.</span></span>  
+-   <span data-ttu-id="95b56-108">V druhém příkladu vytvoří cestu, která má dvě číslice.</span><span class="sxs-lookup"><span data-stu-id="95b56-108">The second example creates a path that has two figures.</span></span> <span data-ttu-id="95b56-109">První obrázek je oblouk, za nímž následuje řádku.</span><span class="sxs-lookup"><span data-stu-id="95b56-109">The first figure is an arc followed by a line.</span></span> <span data-ttu-id="95b56-110">Druhý obrázek je řádek, za nímž následuje křivku, za nímž následuje řádku.</span><span class="sxs-lookup"><span data-stu-id="95b56-110">The second figure is a line followed by a curve followed by a line.</span></span> <span data-ttu-id="95b56-111">První obrázek je otevřená a druhý obrázek je zavřený.</span><span class="sxs-lookup"><span data-stu-id="95b56-111">The first figure is left open, and the second figure is closed.</span></span>  
   
  [!code-csharp[System.Drawing.ConstructingDrawingPaths#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.ConstructingDrawingPaths#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/VB/Class1.vb#21)]  
@@ -31,11 +31,11 @@ ms.locfileid: "59224907"
  [!code-csharp[System.Drawing.ConstructingDrawingPaths#22](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/CS/Class1.cs#22)]
  [!code-vb[System.Drawing.ConstructingDrawingPaths#22](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingPaths/VB/Class1.vb#22)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="e2f60-112">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="e2f60-112">Compiling the Code</span></span>  
- <span data-ttu-id="e2f60-113">V předchozích příkladech jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="e2f60-113">The previous examples are designed for use with Windows Forms, and they require <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="95b56-112">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="95b56-112">Compiling the Code</span></span>  
+ <span data-ttu-id="95b56-113">V předchozích příkladech jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="95b56-113">The previous examples are designed for use with Windows Forms, and they require <xref:System.Windows.Forms.PaintEventArgs> `e`, which is a parameter of the <xref:System.Windows.Forms.Control.Paint> event handler.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2f60-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e2f60-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95b56-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="95b56-114">See also</span></span>
 
 - <xref:System.Drawing.Drawing2D.GraphicsPath>
-- [<span data-ttu-id="e2f60-115">Sestavování a kreslení cest</span><span class="sxs-lookup"><span data-stu-id="e2f60-115">Constructing and Drawing Paths</span></span>](constructing-and-drawing-paths.md)
-- [<span data-ttu-id="e2f60-116">Kreslení čar a obrazců pomocí pera</span><span class="sxs-lookup"><span data-stu-id="e2f60-116">Using a Pen to Draw Lines and Shapes</span></span>](using-a-pen-to-draw-lines-and-shapes.md)
+- [<span data-ttu-id="95b56-115">Sestavování a kreslení cest</span><span class="sxs-lookup"><span data-stu-id="95b56-115">Constructing and Drawing Paths</span></span>](constructing-and-drawing-paths.md)
+- [<span data-ttu-id="95b56-116">Kreslení čar a obrazců pomocí pera</span><span class="sxs-lookup"><span data-stu-id="95b56-116">Using a Pen to Draw Lines and Shapes</span></span>](using-a-pen-to-draw-lines-and-shapes.md)
