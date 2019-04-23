@@ -1,61 +1,54 @@
-items:
 - name: Dynamické programování
   href: index.md
   items:
-  - name: Reflexe
-    href: reflection.md
-    items:
-    - name: Zobrazení informací o typu
-      href: viewing-type-information.md
-    - name: Reflexe a obecné typy
-      href: reflection-and-generic-types.md
-    - name: 'Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe'
-      href: how-to-examine-and-instantiate-generic-types-with-reflection.md
-    - name: Důležité informace o zabezpečení pro reflexi
-      href: security-considerations-for-reflection.md
-    - name: Dynamické načtení a použití typů
-      href: dynamically-loading-and-using-types.md
-    - name: 'Postupy: Načtení sestavení do kontextu pouze pro reflexi'
-      href: how-to-load-assemblies-into-the-reflection-only-context.md
-    - name: Přístup k vlastním atributům
-      href: accessing-custom-attributes.md
-    - name: Určení úplných názvů typů
-      href: specifying-fully-qualified-type-names.md
-    - name: 'Postupy: Připojení delegáta pomocí reflexe'
-      href: how-to-hook-up-a-delegate-using-reflection.md
-    - name: Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
-      href: reflection-for-windows-store-apps.md
-  - name: Generování dynamických metod a sestavení
-    href: emitting-dynamic-methods-and-assemblies.md
-    items:
-    - name: Bezpečnostní problémy v generování reflexe
-      href: security-issues-in-reflection-emit.md
-    - name: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
-      href: walkthrough-emitting-code-in-partial-trust-scenarios.md
-    - name: 'Postupy: Definování a provádění dynamických metod'
-      href: how-to-define-and-execute-dynamic-methods.md
-    - name: 'Postupy: Definování obecného typu pomocí generování reflexe'
-      href: how-to-define-a-generic-type-with-reflection-emit.md
-    - name: 'Postupy: Definování obecné metody pomocí generování reflexe'
-      href: how-to-define-a-generic-method-with-reflection-emit.md
-    - name: Kolekční sestavení pro generování dynamických typů
-      href: collectible-assemblies.md
-  - name: Přehled DLR (Dynamic Language Runtime)
-    href: dynamic-language-runtime-overview.md
-  - name: Dynamické vytváření a kompilování zdrojového kódu
-    href: dynamic-source-code-generation-and-compilation.md
-    items:
-    - name: Použití modelu CodeDOM
-      href: using-the-codedom.md
-    - name: Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
-      href: generating-and-compiling-source-code-from-a-codedom-graph.md
-    - name: 'Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM'
-      href: how-to-create-an-xml-documentation-file-using-codedom.md
-    - name: 'Postupy: Vytváření třídy pomocí modelu CodeDOM'
-      href: how-to-create-a-class-using-codedom.md
-ms.openlocfilehash: 00d24c89f04d5bfb257fa3e7835741190c8fcbdc
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471141"
+    - name: Reflexe
+      href: reflection.md
+      items:
+        - name: Zobrazení informací o typu
+          href: viewing-type-information.md
+        - name: Reflexe a obecné typy
+          href: reflection-and-generic-types.md
+        - name: 'Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe'
+          href: how-to-examine-and-instantiate-generic-types-with-reflection.md
+        - name: Důležité informace o zabezpečení pro reflexi
+          href: security-considerations-for-reflection.md
+        - name: Dynamické načtení a použití typů
+          href: dynamically-loading-and-using-types.md
+        - name: 'Postupy: Načtení sestavení do kontextu pouze pro reflexi'
+          href: how-to-load-assemblies-into-the-reflection-only-context.md
+        - name: Přístup k vlastním atributům
+          href: accessing-custom-attributes.md
+        - name: Určení úplných názvů typů
+          href: specifying-fully-qualified-type-names.md
+        - name: 'Postupy: Připojení delegáta pomocí reflexe'
+          href: how-to-hook-up-a-delegate-using-reflection.md
+        - name: "Reflexe v\_rozhraní .NET Framework pro aplikace pro Windows Store"
+          href: reflection-for-windows-store-apps.md
+    - name: Generování dynamických metod a sestavení
+      href: emitting-dynamic-methods-and-assemblies.md
+      items:
+        - name: Bezpečnostní problémy v generování reflexe
+          href: security-issues-in-reflection-emit.md
+        - name: 'Návod: Vytváření kódu ve scénářích s částečnou důvěryhodností'
+          href: walkthrough-emitting-code-in-partial-trust-scenarios.md
+        - name: 'Postupy: Definování a provádění dynamických metod'
+          href: how-to-define-and-execute-dynamic-methods.md
+        - name: 'Postupy: Definování obecného typu pomocí generování reflexe'
+          href: how-to-define-a-generic-type-with-reflection-emit.md
+        - name: 'Postupy: Definování obecné metody pomocí generování reflexe'
+          href: how-to-define-a-generic-method-with-reflection-emit.md
+        - name: Kolekční sestavení pro generování dynamických typů
+          href: collectible-assemblies.md
+    - name: Přehled DLR (Dynamic Language Runtime)
+      href: dynamic-language-runtime-overview.md
+    - name: Dynamické vytváření a kompilování zdrojového kódu
+      href: dynamic-source-code-generation-and-compilation.md
+      items:
+        - name: Použití modelu CodeDOM
+          href: using-the-codedom.md
+        - name: "Generování a\_kompilace zdrojového kódu z\_grafu modelu CodeDOM"
+          href: generating-and-compiling-source-code-from-a-codedom-graph.md
+        - name: 'Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM'
+          href: how-to-create-an-xml-documentation-file-using-codedom.md
+        - name: 'Postupy: Vytváření třídy pomocí modelu CodeDOM'
+          href: how-to-create-a-class-using-codedom.md

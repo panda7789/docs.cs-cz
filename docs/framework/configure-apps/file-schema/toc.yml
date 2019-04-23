@@ -1,66 +1,59 @@
-items:
 - name: Schéma konfiguračního souboru
   href: index.md
   items:
-  - name: Element <configuration>
-    href: configuration-element.md
-  - name: Element <assemblyBinding>
-    href: assemblybinding-element-for-configuration.md
-  - name: Element <linkedConfiguration>
-    href: linkedconfiguration-element.md
-  - name: Element <configSections>
-    href: configsections-element-for-configuration.md
-  - name: Element <clear> pro <configSections>
-    href: clear-element-for-configsections.md
-  - name: Element <remove> pro <configSections>
-    href: remove-element-for-configsections.md
-  - name: Element <sectionGroup>
-    href: sectiongroup-element-for-configsections.md
-  - name: Vlastní element pro SingleTagSectionHandler
-    href: custom-element-1.md
-  - name: Vlastní element pro NameValueSectionHandler a DictionarySectionHandler
-    href: custom-element-2.md
-  - name: Element <add>
-    href: add-element-for-custom-2.md
-  - name: Element <clear> pro NameValueSectionHandler a DictionarySectionHandler
-    href: clear-element-for-custom-2.md
-  - name: Element <remove> pro NameValueSectionHandler a DictionarySectionHandler
-    href: remove-element-for-custom-2.md
-  - name: <section> Prvek
-    href: section-element.md
-  - name: Schéma nastavení aplikace
-    href: appsettings/index.md
-  - name: Schéma nastavení aplikace
-    href: application-settings-schema.md
-  - name: Schéma nastavení kompilátoru a poskytovatele jazyka
-    href: compiler/index.md
-  - name: Schéma oddílů konfigurace
-    href: configuration-sections-schema.md
-  - name: Schéma nastavení šifrování
-    href: cryptography/index.md
-  - name: Schéma nastavení sítě
-    href: network/index.md
-  - name: Schéma nastavení běhového prostředí
-    href: runtime/index.md
-  - name: Schéma nastavení spouštění
-    href: startup/index.md
-  - name: Trasování a ladění schématu nastavení
-    href: trace-debug/index.md
-  - name: Schéma nastavení webu
-    href: web/index.md
-  - name: Konfigurační schéma služby WCF
-    href: wcf/index.md
-  - name: Syntaxe direktivy WCF
-    href: wcf-directive/index.md
-  - name: Schéma konfigurace WIF
-    href: windows-identity-foundation/index.md
-  - name: Konfigurační oddíl pro model Windows Forms
-    href: winforms/index.md
-  - name: Konfigurační schéma pro Windows Workflow Foundation
-    href: windows-workflow-foundation/index.md
-ms.openlocfilehash: 69b0e7862ab6c9a7540469f79d6870a8f9976f14
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471092"
+    - name: Element <configuration>
+      href: configuration-element.md
+    - name: Element <assemblyBinding>
+      href: assemblybinding-element-for-configuration.md
+    - name: Element <linkedConfiguration>
+      href: linkedconfiguration-element.md
+    - name: Element <configSections>
+      href: configsections-element-for-configuration.md
+    - name: Element <clear> pro <configSections>
+      href: clear-element-for-configsections.md
+    - name: Element <remove> pro <configSections>
+      href: remove-element-for-configsections.md
+    - name: Element <sectionGroup>
+      href: sectiongroup-element-for-configsections.md
+    - name: Vlastní element pro SingleTagSectionHandler
+      href: custom-element-1.md
+    - name: Vlastní element pro NameValueSectionHandler a DictionarySectionHandler
+      href: custom-element-2.md
+    - name: Element <add>
+      href: add-element-for-custom-2.md
+    - name: Element <clear> pro NameValueSectionHandler a DictionarySectionHandler
+      href: clear-element-for-custom-2.md
+    - name: Element <remove> pro NameValueSectionHandler a DictionarySectionHandler
+      href: remove-element-for-custom-2.md
+    - name: <section> Prvek
+      href: section-element.md
+    - name: Schéma nastavení aplikace
+      href: appsettings/index.md
+    - name: Schéma nastavení aplikace
+      href: application-settings-schema.md
+    - name: Schéma nastavení kompilátoru a poskytovatele jazyka
+      href: compiler/index.md
+    - name: Schéma oddílů konfigurace
+      href: configuration-sections-schema.md
+    - name: Schéma nastavení šifrování
+      href: cryptography/index.md
+    - name: Schéma nastavení sítě
+      href: network/index.md
+    - name: Schéma nastavení běhového prostředí
+      href: runtime/index.md
+    - name: Schéma nastavení spouštění
+      href: startup/index.md
+    - name: Trasování a ladění schématu nastavení
+      href: trace-debug/index.md
+    - name: Schéma nastavení webu
+      href: web/index.md
+    - name: Konfigurační schéma služby WCF
+      href: wcf/index.md
+    - name: Syntaxe direktivy WCF
+      href: wcf-directive/index.md
+    - name: Schéma konfigurace WIF
+      href: windows-identity-foundation/index.md
+    - name: Konfigurační oddíl pro model Windows Forms
+      href: winforms/index.md
+    - name: Konfigurační schéma pro Windows Workflow Foundation
+      href: windows-workflow-foundation/index.md

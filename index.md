@@ -10,8 +10,8 @@ ms.openlocfilehash: 01472d5586becf0bca2333557a05ddb10ee8b607
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978078"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794586"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">

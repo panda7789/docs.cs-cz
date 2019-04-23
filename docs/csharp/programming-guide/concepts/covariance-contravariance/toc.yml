@@ -1,24 +1,17 @@
-items:
 - name: Kovariance a kontravariance
   href: index.md
   items:
-  - name: Odchylky obecných rozhraní
-    href: variance-in-generic-interfaces.md
-    items:
-    - name: Vytváření variantních obecných rozhraní
-      href: creating-variant-generic-interfaces.md
-    - name: Použití odchylky v rozhraní pro obecné kolekce
-      href: using-variance-in-interfaces-for-generic-collections.md
-  - name: Odchylky v delegátech
-    href: variance-in-delegates.md
-    items:
-    - name: Použití odchylek v delegátech
-      href: using-variance-in-delegates.md
-    - name: Použití odchylek pro obecné delegáty Func a Action
-      href: using-variance-for-func-and-action-generic-delegates.md
-ms.openlocfilehash: 9cc69c37946ca16f911dcf0b58bd947c37a7bf07
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471153"
+    - name: Odchylky obecných rozhraní
+      href: variance-in-generic-interfaces.md
+      items:
+        - name: Vytváření variantních obecných rozhraní
+          href: creating-variant-generic-interfaces.md
+        - name: Použití odchylky v rozhraní pro obecné kolekce
+          href: using-variance-in-interfaces-for-generic-collections.md
+    - name: Odchylky v delegátech
+      href: variance-in-delegates.md
+      items:
+        - name: Použití odchylek v delegátech
+          href: using-variance-in-delegates.md
+        - name: Použití odchylek pro obecné delegáty Func a Action
+          href: using-variance-for-func-and-action-generic-delegates.md

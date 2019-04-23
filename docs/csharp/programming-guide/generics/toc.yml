@@ -1,36 +1,29 @@
-items:
 - name: Obecné typy
   href: index.md
   items:
-  - name: Úvod do obecných typů
-    href: introduction-to-generics.md
-  - name: Výhody obecných typů
-    href: benefits-of-generics.md
-  - name: Parametry obecného typu
-    href: generic-type-parameters.md
-  - name: Omezení parametrů typů
-    href: constraints-on-type-parameters.md
-  - name: Obecné třídy
-    href: generic-classes.md
-  - name: Obecná rozhraní
-    href: generic-interfaces.md
-  - name: Obecné metody
-    href: generic-methods.md
-  - name: Obecné typy a pole
-    href: generics-and-arrays.md
-  - name: Obecní delegáti
-    href: generic-delegates.md
-  - name: Rozdíly mezi šablonami C++ a obecnými typy C#
-    href: differences-between-cpp-templates-and-csharp-generics.md
-  - name: Obecné typy v běhovém prostředí
-    href: generics-in-the-run-time.md
-  - name: Obecné typy a reflexe
-    href: generics-and-reflection.md
-  - name: Obecné typy a atributy
-    href: generics-and-attributes.md
-ms.openlocfilehash: daccd9dc4b0c808750866aacad6dacffc1282f6e
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471170"
+    - name: Úvod do obecných typů
+      href: introduction-to-generics.md
+    - name: Výhody obecných typů
+      href: benefits-of-generics.md
+    - name: Parametry obecného typu
+      href: generic-type-parameters.md
+    - name: Omezení parametrů typů
+      href: constraints-on-type-parameters.md
+    - name: Obecné třídy
+      href: generic-classes.md
+    - name: Obecná rozhraní
+      href: generic-interfaces.md
+    - name: Obecné metody
+      href: generic-methods.md
+    - name: Obecné typy a pole
+      href: generics-and-arrays.md
+    - name: Obecní delegáti
+      href: generic-delegates.md
+    - name: 'Rozdíly mezi šablonami C++ a obecnými typy C#'
+      href: differences-between-cpp-templates-and-csharp-generics.md
+    - name: Obecné typy v běhovém prostředí
+      href: generics-in-the-run-time.md
+    - name: Obecné typy a reflexe
+      href: generics-and-reflection.md
+    - name: Obecné typy a atributy
+      href: generics-and-attributes.md

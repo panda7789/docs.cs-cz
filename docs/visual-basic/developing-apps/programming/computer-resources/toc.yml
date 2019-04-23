@@ -1,58 +1,51 @@
-items:
-- name: Přístup k prostředkům počítače
+- name: "Přístup k\_prostředkům počítače"
   href: index.md
   items:
-  - name: Přehrávání zvuků
-    href: playing-sounds.md
-  - name: Ukládání dat do schránky a čtení ze schránky
-    href: storing-data-to-and-reading-from-the-clipboard.md
-  - name: Získání informací o počítači
-    href: getting-information-about-the-computer.md
-  - name: Přístup ke klávesnici
-    href: accessing-the-keyboard.md
-    items:
-    - name: 'Postupy: Spuštění aplikace a posílání informací o stisknutých klávesách do aplikace'
-      href: how-to-start-an-application-and-send-it-keystrokes.md
-  - name: Přístup k myši
-    href: accessing-the-mouse.md
-  - name: Provádění síťových operací
-    href: performing-network-operations.md
-    items:
-    - name: 'Postupy: Nahrání souboru'
-      href: how-to-upload-a-file.md
-    - name: 'Postupy: Stažení souboru'
-      href: how-to-download-a-file.md
-    - name: 'Postupy: Kontrola stavu připojení'
-      href: how-to-check-connection-status.md
-  - name: Přístup k portům počítače
-    href: accessing-the-computer-s-ports.md
-    items:
-    - name: 'Postupy: Zobrazení dostupných sériových portů'
-      href: how-to-show-available-serial-ports.md
-    - name: 'Postupy: Vytáčení čísel na modemech připojených k sériovým portům'
-      href: how-to-dial-modems-attached-to-serial-ports.md
-    - name: 'Postupy: Posílání řetězců na sériové porty'
-      href: how-to-send-strings-to-serial-ports.md
-    - name: 'Postupy: Příjem řetězců ze sériových portů'
-      href: how-to-receive-strings-from-serial-ports.md
-    - name: Portové operace v rozhraní .NET Framework
-      href: port-operations-in-the-net-framework.md
-  - name: Čtení z registru a zápis do něj
-    href: reading-from-and-writing-to-the-registry.md
-    items:
-    - name: 'Postupy: Vytvoření klíče registru a nastavení jeho hodnoty'
-      href: how-to-create-a-registry-key-and-set-its-value.md
-    - name: 'Postupy: Načtení hodnoty z klíče registru'
-      href: how-to-read-a-value-from-a-registry-key.md
-    - name: 'Postupy: Odstranění klíče z registru'
-      href: how-to-delete-a-registry-key.md
-    - name: Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32
-      href: reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md
-    - name: Zabezpečení a registr
-      href: security-and-the-registry.md
-ms.openlocfilehash: b45e258b05c06cb8494a1644bd43cca447578e6c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471095"
+    - name: Přehrávání zvuků
+      href: playing-sounds.md
+    - name: Ukládání dat do schránky a čtení ze schránky
+      href: storing-data-to-and-reading-from-the-clipboard.md
+    - name: Získání informací o počítači
+      href: getting-information-about-the-computer.md
+    - name: Přístup ke klávesnici
+      href: accessing-the-keyboard.md
+      items:
+        - name: 'Postupy: Spuštění aplikace a posílání informací o stisknutých klávesách do aplikace'
+          href: how-to-start-an-application-and-send-it-keystrokes.md
+    - name: "Přístup k\_myši"
+      href: accessing-the-mouse.md
+    - name: Provádění síťových operací
+      href: performing-network-operations.md
+      items:
+        - name: 'Postupy: Nahrání souboru'
+          href: how-to-upload-a-file.md
+        - name: 'Postupy: Stažení souboru'
+          href: how-to-download-a-file.md
+        - name: 'Postupy: Kontrola stavu připojení'
+          href: how-to-check-connection-status.md
+    - name: "Přístup k\_portům počítače"
+      href: accessing-the-computer-s-ports.md
+      items:
+        - name: 'Postupy: Zobrazení dostupných sériových portů'
+          href: how-to-show-available-serial-ports.md
+        - name: "Postupy: Vytáčení čísel na modemech připojených k\_sériovým portům"
+          href: how-to-dial-modems-attached-to-serial-ports.md
+        - name: 'Postupy: Posílání řetězců na sériové porty'
+          href: how-to-send-strings-to-serial-ports.md
+        - name: 'Postupy: Příjem řetězců ze sériových portů'
+          href: how-to-receive-strings-from-serial-ports.md
+        - name: "Portové operace v\_rozhraní .NET Framework"
+          href: port-operations-in-the-net-framework.md
+    - name: "Čtení z\_registru a zápis do něj"
+      href: reading-from-and-writing-to-the-registry.md
+      items:
+        - name: 'Postupy: Vytvoření klíče registru a nastavení jeho hodnoty'
+          href: how-to-create-a-registry-key-and-set-its-value.md
+        - name: "Postupy: Načtení hodnoty z\_klíče registru"
+          href: how-to-read-a-value-from-a-registry-key.md
+        - name: "Postupy: Odstranění klíče z\_registru"
+          href: how-to-delete-a-registry-key.md
+        - name: "Čtení z\_registru a zápis do něj s\_použitím oboru názvů Microsoft.Win32"
+          href: reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md
+        - name: Zabezpečení a registr
+          href: security-and-the-registry.md

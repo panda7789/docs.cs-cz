@@ -1,73 +1,66 @@
-items:
 - name: I/O souborů a proudů
   href: index.md
   items:
-  - name: Formáty cesty k souborům v systémech Windows
-    href: file-path-formats.md
-  - name: Obecné vstupně-výstupní úlohy
-    href: common-i-o-tasks.md
-    items:
-    - name: 'Postupy: Kopírování adresářů'
-      href: how-to-copy-directories.md
-    - name: 'Postupy: Vytvoření výčtu adresářů a souborů'
-      href: how-to-enumerate-directories-and-files.md
-    - name: 'Postupy: Čtení a zápis do nově vytvořeného datového souboru'
-      href: how-to-read-and-write-to-a-newly-created-data-file.md
-    - name: 'Postupy: Otevření a připojení k souboru protokolu'
-      href: how-to-open-and-append-to-a-log-file.md
-    - name: 'Postupy: Zápis textu do souboru'
-      href: how-to-write-text-to-a-file.md
-    - name: 'Postupy: Čtení textu ze souboru'
-      href: how-to-read-text-from-a-file.md
-    - name: 'Postupy: Čtení znaků z řetězce'
-      href: how-to-read-characters-from-a-string.md
-    - name: 'Postupy: Zápis znaků do řetězce'
-      href: how-to-write-characters-to-a-string.md
-    - name: 'Postupy: Přidávání a odebírání položek seznamu řízení přístupu'
-      href: how-to-add-or-remove-access-control-list-entries.md
-    - name: 'Postupy: Komprese a extrahování souborů'
-      href: how-to-compress-and-extract-files.md
-    - name: Skládání streamů
-      href: composing-streams.md
-    - name: 'Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a datovými proudy prostředí Windows Runtime'
-      href: how-to-convert-between-dotnet-streams-and-winrt-streams.md
-  - name: Asynchronní I/O soubory
-    href: asynchronous-file-i-o.md
-  - name: Ošetření chyb vstupně-výstupních operací
-    href: handling-io-errors.md
-  - name: Izolované úložiště
-    href: isolated-storage.md
-    items:
-    - name: Typy izolace
-      href: types-of-isolation.md
-    - name: 'Postupy: Získávání úložišť pro izolované úložiště'
-      href: how-to-obtain-stores-for-isolated-storage.md
-    - name: 'Postupy: Vytvoření výčtu úložišť pro izolované úložiště'
-      href: how-to-enumerate-stores-for-isolated-storage.md
-    - name: 'Postupy: Odstraňování úložišť v izolovaném úložišti'
-      href: how-to-delete-stores-in-isolated-storage.md
-    - name: 'Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště'
-      href: how-to-anticipate-out-of-space-conditions-with-isolated-storage.md
-    - name: 'Postupy: Vytváření souborů a adresářů v izolovaném úložišti'
-      href: how-to-create-files-and-directories-in-isolated-storage.md
-    - name: 'Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti'
-      href: how-to-find-existing-files-and-directories-in-isolated-storage.md
-    - name: 'Postupy: Čtení a zápis do souborů v izolovaném úložišti'
-      href: how-to-read-and-write-to-files-in-isolated-storage.md
-    - name: 'Postupy: Odstraňování souborů a adresářů v izolovaném úložišti'
-      href: how-to-delete-files-and-directories-in-isolated-storage.md
-  - name: Kanály
-    href: pipe-operations.md
-    items:
-    - name: 'Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů'
-      href: how-to-use-anonymous-pipes-for-local-interprocess-communication.md
-    - name: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
-      href: how-to-use-named-pipes-for-network-interprocess-communication.md
-  - name: Soubory mapované paměti
-    href: memory-mapped-files.md
-ms.openlocfilehash: 2da7230409fe2ccb8e6b21c21cbee57d3cd134ac
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471559"
+    - name: Formáty cesty k souborům v systémech Windows
+      href: file-path-formats.md
+    - name: Obecné vstupně-výstupní úlohy
+      href: common-i-o-tasks.md
+      items:
+        - name: 'Postupy: Kopírování adresářů'
+          href: how-to-copy-directories.md
+        - name: 'Postupy: Vytvoření výčtu adresářů a souborů'
+          href: how-to-enumerate-directories-and-files.md
+        - name: 'Postupy: Čtení a zápis do nově vytvořeného datového souboru'
+          href: how-to-read-and-write-to-a-newly-created-data-file.md
+        - name: 'Postupy: Otevření a připojení k souboru protokolu'
+          href: how-to-open-and-append-to-a-log-file.md
+        - name: 'Postupy: Zápis textu do souboru'
+          href: how-to-write-text-to-a-file.md
+        - name: 'Postupy: Čtení textu ze souboru'
+          href: how-to-read-text-from-a-file.md
+        - name: 'Postupy: Čtení znaků z řetězce'
+          href: how-to-read-characters-from-a-string.md
+        - name: 'Postupy: Zápis znaků do řetězce'
+          href: how-to-write-characters-to-a-string.md
+        - name: 'Postupy: Přidávání a odebírání položek seznamu řízení přístupu'
+          href: how-to-add-or-remove-access-control-list-entries.md
+        - name: 'Postupy: Komprese a extrahování souborů'
+          href: how-to-compress-and-extract-files.md
+        - name: Skládání streamů
+          href: composing-streams.md
+        - name: "Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a\_datovými proudy prostředí Windows Runtime"
+          href: how-to-convert-between-dotnet-streams-and-winrt-streams.md
+    - name: Asynchronní I/O soubory
+      href: asynchronous-file-i-o.md
+    - name: Ošetření chyb vstupně-výstupních operací
+      href: handling-io-errors.md
+    - name: Izolované úložiště
+      href: isolated-storage.md
+      items:
+        - name: Typy izolace
+          href: types-of-isolation.md
+        - name: 'Postupy: Získávání úložišť pro izolované úložiště'
+          href: how-to-obtain-stores-for-isolated-storage.md
+        - name: 'Postupy: Vytvoření výčtu úložišť pro izolované úložiště'
+          href: how-to-enumerate-stores-for-isolated-storage.md
+        - name: 'Postupy: Odstraňování úložišť v izolovaném úložišti'
+          href: how-to-delete-stores-in-isolated-storage.md
+        - name: 'Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště'
+          href: how-to-anticipate-out-of-space-conditions-with-isolated-storage.md
+        - name: 'Postupy: Vytváření souborů a adresářů v izolovaném úložišti'
+          href: how-to-create-files-and-directories-in-isolated-storage.md
+        - name: 'Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti'
+          href: how-to-find-existing-files-and-directories-in-isolated-storage.md
+        - name: 'Postupy: Čtení a zápis do souborů v izolovaném úložišti'
+          href: how-to-read-and-write-to-files-in-isolated-storage.md
+        - name: 'Postupy: Odstraňování souborů a adresářů v izolovaném úložišti'
+          href: how-to-delete-files-and-directories-in-isolated-storage.md
+    - name: Kanály
+      href: pipe-operations.md
+      items:
+        - name: 'Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů'
+          href: how-to-use-anonymous-pipes-for-local-interprocess-communication.md
+        - name: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
+          href: how-to-use-named-pipes-for-network-interprocess-communication.md
+    - name: Soubory mapované paměti
+      href: memory-mapped-files.md

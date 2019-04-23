@@ -1,154 +1,147 @@
-items:
 - name: SQL Server a ADO.NET
   href: index.md
 - name: SQL Server – zabezpečení
   href: sql-server-security.md
   items:
-  - name: Přehled zabezpečení SQL Serveru
-    href: overview-of-sql-server-security.md
-    items:
-    - name: Ověřování v SQL Serveru
-      href: authentication-in-sql-server.md
-    - name: Serverové a databázové role na SQL Serveru
-      href: server-and-database-roles-in-sql-server.md
-    - name: Vlastnictví a oddělení uživatelských schémat na SQL Serveru
-      href: ownership-and-user-schema-separation-in-sql-server.md
-    - name: Autorizace a oprávnění na SQL Serveru
-      href: authorization-and-permissions-in-sql-server.md
-    - name: Šifrování dat na SQL Serveru
-      href: data-encryption-in-sql-server.md
-    - name: Zabezpečení integrace CLR na SQL Serveru
-      href: clr-integration-security-in-sql-server.md
-  - name: Scénáře zabezpečení aplikací na SQL Serveru
-    href: application-security-scenarios-in-sql-server.md
-    items:
-    - name: Správa oprávnění pomocí uložených procedur na SQL Serveru
-      href: managing-permissions-with-stored-procedures-in-sql-server.md
-    - name: Zápis zabezpečené dynamické SQL na SQL Serveru
-      href: writing-secure-dynamic-sql-in-sql-server.md
-    - name: Podepisování uložených procedur na SQL Serveru
-      href: signing-stored-procedures-in-sql-server.md
-    - name: Přizpůsobení oprávnění se zosobněním na SQL Serveru
-      href: customizing-permissions-with-impersonation-in-sql-server.md
-    - name: Udělení oprávnění na úrovni řádků na SQL Serveru
-      href: granting-row-level-permissions-in-sql-server.md
-    - name: Vytváření rolí aplikací na SQL Serveru
-      href: creating-application-roles-in-sql-server.md
-    - name: Povolení přístupu mezi databázemi na SQL Serveru
-      href: enabling-cross-database-access-in-sql-server.md
-  - name: Zabezpečení SQL Serveru Express
-    href: sql-server-express-security.md
+    - name: Přehled zabezpečení SQL Serveru
+      href: overview-of-sql-server-security.md
+      items:
+        - name: Ověřování v SQL Serveru
+          href: authentication-in-sql-server.md
+        - name: Serverové a databázové role na SQL Serveru
+          href: server-and-database-roles-in-sql-server.md
+        - name: Vlastnictví a oddělení uživatelských schémat na SQL Serveru
+          href: ownership-and-user-schema-separation-in-sql-server.md
+        - name: Autorizace a oprávnění na SQL Serveru
+          href: authorization-and-permissions-in-sql-server.md
+        - name: Šifrování dat na SQL Serveru
+          href: data-encryption-in-sql-server.md
+        - name: Zabezpečení integrace CLR na SQL Serveru
+          href: clr-integration-security-in-sql-server.md
+    - name: Scénáře zabezpečení aplikací na SQL Serveru
+      href: application-security-scenarios-in-sql-server.md
+      items:
+        - name: Správa oprávnění pomocí uložených procedur na SQL Serveru
+          href: managing-permissions-with-stored-procedures-in-sql-server.md
+        - name: Zápis zabezpečené dynamické SQL na SQL Serveru
+          href: writing-secure-dynamic-sql-in-sql-server.md
+        - name: Podepisování uložených procedur na SQL Serveru
+          href: signing-stored-procedures-in-sql-server.md
+        - name: Přizpůsobení oprávnění se zosobněním na SQL Serveru
+          href: customizing-permissions-with-impersonation-in-sql-server.md
+        - name: Udělení oprávnění na úrovni řádků na SQL Serveru
+          href: granting-row-level-permissions-in-sql-server.md
+        - name: Vytváření rolí aplikací na SQL Serveru
+          href: creating-application-roles-in-sql-server.md
+        - name: Povolení přístupu mezi databázemi na SQL Serveru
+          href: enabling-cross-database-access-in-sql-server.md
+    - name: Zabezpečení SQL Serveru Express
+      href: sql-server-express-security.md
 - name: Datové typy SQL Serveru a ADO.NET
   href: sql-server-data-types.md
   items:
-  - name: SqlTypes a datová sada
-    href: sqltypes-and-the-dataset.md
-  - name: Zpracování hodnot null
-    href: handling-null-values.md
-  - name: Porovnání hodnoty GUID a uniqueidentifier
-    href: comparing-guid-and-uniqueidentifier-values.md
-  - name: Kalendářní a časová data
-    href: date-and-time-data.md
-  - name: Velké uživatelsky definované typy
-    href: large-udts.md
-  - name: Data XML na SQL Serveru
-    href: xml-data-in-sql-server.md
-    items:
-    - name: Hodnoty pro sloupce SQL XML
-      href: sql-xml-column-values.md
-    - name: Zadání hodnot XML jako parametry
-      href: specifying-xml-values-as-parameters.md
+    - name: SqlTypes a datová sada
+      href: sqltypes-and-the-dataset.md
+    - name: Zpracování hodnot null
+      href: handling-null-values.md
+    - name: Porovnání hodnoty GUID a uniqueidentifier
+      href: comparing-guid-and-uniqueidentifier-values.md
+    - name: Kalendářní a časová data
+      href: date-and-time-data.md
+    - name: Velké uživatelsky definované typy
+      href: large-udts.md
+    - name: Data XML na SQL Serveru
+      href: xml-data-in-sql-server.md
+      items:
+        - name: Hodnoty pro sloupce SQL XML
+          href: sql-xml-column-values.md
+        - name: Zadání hodnot XML jako parametry
+          href: specifying-xml-values-as-parameters.md
 - name: Binární a vysoké hodnoty na SQL Serveru
   href: sql-server-binary-and-large-value-data.md
   items:
-  - name: Úprava vysokých (maximálních) hodnot v ADO.NET
-    href: modifying-large-value-max-data.md
-  - name: Data FILESTREAM
-    href: filestream-data.md
-  - name: Vložení obrázku ze souboru
-    href: inserting-an-image-from-a-file.md
+    - name: Úprava vysokých (maximálních) hodnot v ADO.NET
+      href: modifying-large-value-max-data.md
+    - name: Data FILESTREAM
+      href: filestream-data.md
+    - name: Vložení obrázku ze souboru
+      href: inserting-an-image-from-a-file.md
 - name: Operace dat na SQL Serveru v ADO.NET
   href: sql-server-data-operations.md
   items:
-  - name: Operace hromadného kopírování na SQL Serveru
-    href: bulk-copy-operations-in-sql-server.md
-    items:
-    - name: Příklad nastavení hromadného kopírování
-      href: bulk-copy-example-setup.md
-    - name: Jednorázové operace hromadného kopírování
-      href: single-bulk-copy-operations.md
-    - name: Vícečetné operace hromadného kopírování
-      href: multiple-bulk-copy-operations.md
-    - name: Operace transakcí a hromadného kopírování
-      href: transaction-and-bulk-copy-operations.md
-  - name: Více aktivních sad výsledků (MARS)
-    href: multiple-active-result-sets-mars.md
-    items:
-    - name: Povolení více aktivních sad výsledků
-      href: enabling-multiple-active-result-sets.md
-    - name: Manipulace s daty
-      href: manipulating-data.md
-  - name: Asynchronní operace
-    href: asynchronous-operations.md
-    items:
-    - name: Aplikace Windows využívající zpětná volání
-      href: windows-applications-using-callbacks.md
-    - name: Aplikace ASP.NET využívající obslužné rutiny čekání
-      href: aspnet-apps-using-wait-handles.md
-    - name: Dotazování v konzolových aplikacích
-      href: polling-in-console-applications.md
-  - name: Parametry s hodnotami v tabulkách
-    href: table-valued-parameters.md
+    - name: Operace hromadného kopírování na SQL Serveru
+      href: bulk-copy-operations-in-sql-server.md
+      items:
+        - name: Příklad nastavení hromadného kopírování
+          href: bulk-copy-example-setup.md
+        - name: Jednorázové operace hromadného kopírování
+          href: single-bulk-copy-operations.md
+        - name: Vícečetné operace hromadného kopírování
+          href: multiple-bulk-copy-operations.md
+        - name: Operace transakcí a hromadného kopírování
+          href: transaction-and-bulk-copy-operations.md
+    - name: Více aktivních sad výsledků (MARS)
+      href: multiple-active-result-sets-mars.md
+      items:
+        - name: Povolení více aktivních sad výsledků
+          href: enabling-multiple-active-result-sets.md
+        - name: Manipulace s daty
+          href: manipulating-data.md
+    - name: Asynchronní operace
+      href: asynchronous-operations.md
+      items:
+        - name: Aplikace Windows využívající zpětná volání
+          href: windows-applications-using-callbacks.md
+        - name: Aplikace ASP.NET využívající obslužné rutiny čekání
+          href: aspnet-apps-using-wait-handles.md
+        - name: Dotazování v konzolových aplikacích
+          href: polling-in-console-applications.md
+    - name: Parametry s hodnotami v tabulkách
+      href: table-valued-parameters.md
 - name: Funkce SQL Serveru a ADO.NET
   href: sql-server-features-and-adonet.md
   items:
-  - name: Vytváření výčtu instancí SQL Serveru (ADO.NET)
-    href: enumerating-instances-of-sql-server.md
-  - name: Statistiky zprostředkovatelů na SQL Serveru
-    href: provider-statistics-for-sql-server.md
-  - name: Uživatelské instance SQL Serveru Express
-    href: sql-server-express-user-instances.md
-  - name: Zrcadlení databáze na SQL Serveru
-    href: database-mirroring-in-sql-server.md
-  - name: Integrace CLR (Common Language Runtime) na SQL Serveru
-    href: sql-server-common-language-runtime-integration.md
-    items:
-    - name: Úvod k integraci modulu CLR na SQL Serveru
-      href: introduction-to-sql-server-clr-integration.md
-    - name: Uživatelem definované funkce CLR
-      href: clr-user-defined-functions.md
-    - name: Uživatelem definované typy CLR
-      href: clr-user-defined-types.md
-    - name: Uložené procedury CLR
-      href: clr-stored-procedures.md
-    - name: Aktivační procedury CLR
-      href: clr-triggers.md
-    - name: Kontextové připojení
-      href: the-context-connection.md
-    - name: Chování ADO.NET specifické pro proces SQL Serveru
-      href: sql-server-in-process-specific-behavior-of-adonet.md
-  - name: Oznámení pro dotazy na SQL Serveru
-    href: query-notifications-in-sql-server.md
-    items:
-    - name: Povolení oznámení dotazů
-      href: enabling-query-notifications.md
-    - name: SqlDependency v aplikaci ASP.NET
-      href: sqldependency-in-an-aspnet-app.md
-    - name: Detekce změn pomocí SqlDependency
-      href: detecting-changes-with-sqldependency.md
-    - name: Provádění SqlCommand pomocí SqlNotificationRequest
-      href: sqlcommand-execution-with-a-sqlnotificationrequest.md
-  - name: Izolace snímků na SQL Serveru
-    href: snapshot-isolation-in-sql-server.md
-  - name: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
-    href: sqlclient-support-for-high-availability-disaster-recovery.md
-  - name: Podpora klienta SqlClient pro LocalDB
-    href: sqlclient-support-for-localdb.md
+    - name: Vytváření výčtu instancí SQL Serveru (ADO.NET)
+      href: enumerating-instances-of-sql-server.md
+    - name: Statistiky zprostředkovatelů na SQL Serveru
+      href: provider-statistics-for-sql-server.md
+    - name: Uživatelské instance SQL Serveru Express
+      href: sql-server-express-user-instances.md
+    - name: Zrcadlení databáze na SQL Serveru
+      href: database-mirroring-in-sql-server.md
+    - name: Integrace CLR (Common Language Runtime) na SQL Serveru
+      href: sql-server-common-language-runtime-integration.md
+      items:
+        - name: Úvod k integraci modulu CLR na SQL Serveru
+          href: introduction-to-sql-server-clr-integration.md
+        - name: Uživatelem definované funkce CLR
+          href: clr-user-defined-functions.md
+        - name: Uživatelem definované typy CLR
+          href: clr-user-defined-types.md
+        - name: Uložené procedury CLR
+          href: clr-stored-procedures.md
+        - name: Aktivační procedury CLR
+          href: clr-triggers.md
+        - name: Kontextové připojení
+          href: the-context-connection.md
+        - name: Chování ADO.NET specifické pro proces SQL Serveru
+          href: sql-server-in-process-specific-behavior-of-adonet.md
+    - name: Oznámení pro dotazy na SQL Serveru
+      href: query-notifications-in-sql-server.md
+      items:
+        - name: Povolení oznámení dotazů
+          href: enabling-query-notifications.md
+        - name: SqlDependency v aplikaci ASP.NET
+          href: sqldependency-in-an-aspnet-app.md
+        - name: Detekce změn pomocí SqlDependency
+          href: detecting-changes-with-sqldependency.md
+        - name: Provádění SqlCommand pomocí SqlNotificationRequest
+          href: sqlcommand-execution-with-a-sqlnotificationrequest.md
+    - name: Izolace snímků na SQL Serveru
+      href: snapshot-isolation-in-sql-server.md
+    - name: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
+      href: sqlclient-support-for-high-availability-disaster-recovery.md
+    - name: Podpora klienta SqlClient pro LocalDB
+      href: sqlclient-support-for-localdb.md
 - name: Technologie LINQ to SQL
   href: linq/
-ms.openlocfilehash: ab9104f2a2d626748988c89bc78cbf0668c51512
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471570"

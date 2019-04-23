@@ -1,16 +1,9 @@
-items:
 - name: Komentáře v kódu
   href: comments-in-code.md
   items:
-  - name: Dokumentace kódu s XML
-    href: documenting-your-code-with-xml.md
-  - name: Zpracování souboru XML
-    href: processing-the-xml-file.md
-  - name: 'Postupy: Vytvoření dokumentace XML'
-    href: how-to-create-xml-documentation.md
-ms.openlocfilehash: 9a5c821d3f3de1b47ab4be58835d2562a1228cf2
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471518"
+    - name: Dokumentace kódu s XML
+      href: documenting-your-code-with-xml.md
+    - name: "Zpracování souboru\_XML"
+      href: processing-the-xml-file.md
+    - name: 'Postupy: Vytvoření dokumentace XML'
+      href: how-to-create-xml-documentation.md

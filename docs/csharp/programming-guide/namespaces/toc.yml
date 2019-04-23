@@ -1,16 +1,9 @@
-items:
 - name: Jmenné prostory
   href: index.md
   items:
-  - name: Použití oboru názvů
-    href: using-namespaces.md
-  - name: 'Postupy: Použití aliasu globálního oboru názvů'
-    href: how-to-use-the-global-namespace-alias.md
-  - name: 'Postupy: Použití oboru názvů My'
-    href: how-to-use-the-my-namespace.md
-ms.openlocfilehash: 289817c09457dd50111d9d7514d27802d337cb79
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471214"
+    - name: Použití oboru názvů
+      href: using-namespaces.md
+    - name: 'Postupy: Použití aliasu globálního oboru názvů'
+      href: how-to-use-the-global-namespace-alias.md
+    - name: 'Postupy: Použití oboru názvů My'
+      href: how-to-use-the-my-namespace.md

@@ -1,18 +1,11 @@
-items:
 - name: Stromy výrazů
   href: index.md
   items:
-  - name: 'Postupy: Provádění stromů výrazů'
-    href: how-to-execute-expression-trees.md
-  - name: 'Postupy: Úpravy stromů výrazů'
-    href: how-to-modify-expression-trees.md
-  - name: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů'
-    href: how-to-use-expression-trees-to-build-dynamic-queries.md
-  - name: Ladění stromů výrazů v sadě Visual Studio
-    href: debugging-expression-trees-in-visual-studio.md
-ms.openlocfilehash: 4f5abd220c0835eec40fd815088ef5dca1dca417
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471316"
+    - name: 'Postupy: Provádění stromů výrazů'
+      href: how-to-execute-expression-trees.md
+    - name: 'Postupy: Úpravy stromů výrazů'
+      href: how-to-modify-expression-trees.md
+    - name: 'Postupy: Použití stromů výrazů k sestavování dynamických dotazů'
+      href: how-to-use-expression-trees-to-build-dynamic-queries.md
+    - name: Ladění stromů výrazů v sadě Visual Studio
+      href: debugging-expression-trees-in-visual-studio.md

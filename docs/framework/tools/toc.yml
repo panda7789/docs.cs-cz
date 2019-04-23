@@ -1,80 +1,73 @@
-items:
 - name: Nástroje
   href: index.md
   items:
-  - name: Al.exe (linker sestavení)
-    href: al-exe-assembly-linker.md
-  - name: Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
-    href: aximp-exe-windows-forms-activex-control-importer.md
-  - name: Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
-    href: caspol-exe-code-access-security-policy-tool.md
-  - name: Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)
-    href: cert2spc-exe-software-publisher-certificate-test-tool.md
-  - name: Certmgr.exe (nástroj Certificate Manager)
-    href: certmgr-exe-certificate-manager-tool.md
-  - name: Clrver.exe (nástroj verze CLR)
-    href: clrver-exe-clr-version-tool.md
-  - name: Příkazové řádky
-    href: developer-command-prompt-for-vs.md
-  - name: CorFlags.exe (CorFlags – převodní nástroj)
-    href: corflags-exe-corflags-conversion-tool.md
-  - name: Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
-    href: fuslogvw-exe-assembly-binding-log-viewer.md
-  - name: Gacutil.exe (nástroj globální mezipaměti sestavení)
-    href: gacutil-exe-gac-tool.md
-  - name: Ilasm.exe (IL Assembler)
-    href: ilasm-exe-il-assembler.md
-  - name: Ildasm.exe (IL Disassembler)
-    href: ildasm-exe-il-disassembler.md
-  - name: Installutil.exe (instalační nástroj)
-    href: installutil-exe-installer-tool.md
-  - name: Lc.exe (kompilátor licencí)
-    href: lc-exe-license-compiler.md
-  - name: Mage.exe (generování manifestu a nástroj pro úpravy)
-    href: mage-exe-manifest-generation-and-editing-tool.md
-  - name: MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
-    href: mageui-exe-manifest-generation-and-editing-tool-graphical-client.md
-  - name: MDbg.exe (ladicí program z příkazového řádku .NET Framework)
-    href: mdbg-exe.md
-  - name: Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
-    href: mgmtclassgen-exe.md
-  - name: Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
-    href: mpgo-exe-managed-profile-guided-optimization-tool.md
-  - name: Ngen.exe (generátor nativních obrázků)
-    href: ngen-exe-native-image-generator.md
-  - name: Peverify.exe (nástroj PEVerify)
-    href: peverify-exe-peverify-tool.md
-  - name: Regasm.exe (nástroj registrace sestavení)
-    href: regasm-exe-assembly-registration-tool.md
-  - name: Regsvcs.exe (nástroj pro instalaci služeb .NET)
-    href: regsvcs-exe-net-services-installation-tool.md
-  - name: Resgen.exe (generátor zdrojových souborů)
-    href: resgen-exe-resource-file-generator.md
-  - name: SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
-    href: secannotate-exe-net-security-annotator-tool.md
-  - name: SignTool.exe (nástroj pro podpis)
-    href: signtool-exe.md
-  - name: Sn.exe (nástroj pro silný název)
-    href: sn-exe-strong-name-tool.md
-  - name: SOS.dll (rozšíření ladění SOS)
-    href: sos-dll-sos-debugging-extension.md
-  - name: SqlMetal.exe (nástroj pro vytváření kódu)
-    href: sqlmetal-exe-code-generation-tool.md
-  - name: Storeadm.exe (nástroj izolovaného úložiště)
-    href: storeadm-exe-isolated-storage-tool.md
-  - name: Tlbexp.exe (exportér knihovny typů)
-    href: tlbexp-exe-type-library-exporter.md
-  - name: Tlbimp.exe (importér knihovny typů)
-    href: tlbimp-exe-type-library-importer.md
-  - name: Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
-    href: winmdexp-exe-windows-runtime-metadata-export-tool.md
-  - name: Chybové zprávy nástroje Winmdexp.exe
-    href: winmdexp-exe-error-messages.md
-  - name: Winres.exe (editor prostředků Windows Forms)
-    href: winres-exe-windows-forms-resource-editor.md
-ms.openlocfilehash: 1e8fb586651d9372e6811ee3d632a49319b142c2
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471220"
+    - name: Al.exe (linker sestavení)
+      href: al-exe-assembly-linker.md
+    - name: Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)
+      href: aximp-exe-windows-forms-activex-control-importer.md
+    - name: Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
+      href: caspol-exe-code-access-security-policy-tool.md
+    - name: Cert2spc.exe (nástroj pro testování certifikátu vydavatele softwaru)
+      href: cert2spc-exe-software-publisher-certificate-test-tool.md
+    - name: Certmgr.exe (nástroj Certificate Manager)
+      href: certmgr-exe-certificate-manager-tool.md
+    - name: Clrver.exe (nástroj verze CLR)
+      href: clrver-exe-clr-version-tool.md
+    - name: Příkazové řádky
+      href: developer-command-prompt-for-vs.md
+    - name: CorFlags.exe (CorFlags – převodní nástroj)
+      href: corflags-exe-corflags-conversion-tool.md
+    - name: Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
+      href: fuslogvw-exe-assembly-binding-log-viewer.md
+    - name: Gacutil.exe (nástroj globální mezipaměti sestavení)
+      href: gacutil-exe-gac-tool.md
+    - name: Ilasm.exe (IL Assembler)
+      href: ilasm-exe-il-assembler.md
+    - name: Ildasm.exe (IL Disassembler)
+      href: ildasm-exe-il-disassembler.md
+    - name: Installutil.exe (instalační nástroj)
+      href: installutil-exe-installer-tool.md
+    - name: Lc.exe (kompilátor licencí)
+      href: lc-exe-license-compiler.md
+    - name: Mage.exe (generování manifestu a nástroj pro úpravy)
+      href: mage-exe-manifest-generation-and-editing-tool.md
+    - name: 'MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)'
+      href: mageui-exe-manifest-generation-and-editing-tool-graphical-client.md
+    - name: MDbg.exe (ladicí program z příkazového řádku .NET Framework)
+      href: mdbg-exe.md
+    - name: Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
+      href: mgmtclassgen-exe.md
+    - name: Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
+      href: mpgo-exe-managed-profile-guided-optimization-tool.md
+    - name: Ngen.exe (generátor nativních obrázků)
+      href: ngen-exe-native-image-generator.md
+    - name: Peverify.exe (nástroj PEVerify)
+      href: peverify-exe-peverify-tool.md
+    - name: Regasm.exe (nástroj registrace sestavení)
+      href: regasm-exe-assembly-registration-tool.md
+    - name: Regsvcs.exe (nástroj pro instalaci služeb .NET)
+      href: regsvcs-exe-net-services-installation-tool.md
+    - name: Resgen.exe (generátor zdrojových souborů)
+      href: resgen-exe-resource-file-generator.md
+    - name: SecAnnotate.exe (nástroj Security Annotator rozhraní .NET)
+      href: secannotate-exe-net-security-annotator-tool.md
+    - name: SignTool.exe (nástroj pro podpis)
+      href: signtool-exe.md
+    - name: Sn.exe (nástroj pro silný název)
+      href: sn-exe-strong-name-tool.md
+    - name: SOS.dll (rozšíření ladění SOS)
+      href: sos-dll-sos-debugging-extension.md
+    - name: SqlMetal.exe (nástroj pro vytváření kódu)
+      href: sqlmetal-exe-code-generation-tool.md
+    - name: Storeadm.exe (nástroj izolovaného úložiště)
+      href: storeadm-exe-isolated-storage-tool.md
+    - name: Tlbexp.exe (exportér knihovny typů)
+      href: tlbexp-exe-type-library-exporter.md
+    - name: Tlbimp.exe (importér knihovny typů)
+      href: tlbimp-exe-type-library-importer.md
+    - name: Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
+      href: winmdexp-exe-windows-runtime-metadata-export-tool.md
+    - name: Chybové zprávy nástroje Winmdexp.exe
+      href: winmdexp-exe-error-messages.md
+    - name: Winres.exe (editor prostředků Windows Forms)
+      href: winres-exe-windows-forms-resource-editor.md

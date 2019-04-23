@@ -1,162 +1,155 @@
-items:
-- name: Datové sady, datové tabulky a datová zobrazení
+- name: 'Datové sady, datové tabulky a datová zobrazení'
   href: index.md
   items:
-  - name: Vytvoření datové sady
-    href: creating-a-dataset.md
-  - name: Přidání datové tabulky do datové sady
-    href: adding-a-datatable-to-a-dataset.md
-  - name: Přidání datových relací
-    href: adding-datarelations.md
-  - name: Navigace v datových relacích
-    href: navigating-datarelations.md
-  - name: Slučování obsahu datové sady
-    href: merging-dataset-contents.md
-  - name: Kopírování obsahu datové sady
-    href: copying-dataset-contents.md
-  - name: Zpracování událostí datové sady
-    href: handling-dataset-events.md
-  - name: Typové datové sady
-    href: typed-datasets.md
-    items:
-    - name: Generování datových sad se silnými typy
-      href: generating-strongly-typed-datasets.md
-    - name: Zadávání poznámek k typovým datovým sadám
-      href: annotating-typed-datasets.md
-  - name: Datové tabulky
-    href: datatables.md
-    items:
-    - name: Vytvoření datové tabulky
-      href: creating-a-datatable.md
-    - name: Definice schématu datové tabulky
-      href: datatable-schema-definition.md
+    - name: Vytvoření datové sady
+      href: creating-a-dataset.md
+    - name: Přidání datové tabulky do datové sady
+      href: adding-a-datatable-to-a-dataset.md
+    - name: Přidání datových relací
+      href: adding-datarelations.md
+    - name: Navigace v datových relacích
+      href: navigating-datarelations.md
+    - name: Slučování obsahu datové sady
+      href: merging-dataset-contents.md
+    - name: Kopírování obsahu datové sady
+      href: copying-dataset-contents.md
+    - name: Zpracování událostí datové sady
+      href: handling-dataset-events.md
+    - name: Typové datové sady
+      href: typed-datasets.md
       items:
-      - name: Přidání sloupců do datové tabulky
-        href: adding-columns-to-a-datatable.md
-      - name: Vytváření sloupců výrazů
-        href: creating-expression-columns.md
-      - name: Vytváření sloupců s automatickým navyšováním
-        href: creating-autoincrement-columns.md
-      - name: Definování primárních klíčů
-        href: defining-primary-keys.md
-      - name: Omezení datových tabulek
-        href: datatable-constraints.md
-    - name: Manipulace s daty v datové tabulce
-      href: manipulating-data-in-a-datatable.md
+        - name: Generování datových sad se silnými typy
+          href: generating-strongly-typed-datasets.md
+        - name: Zadávání poznámek k typovým datovým sadám
+          href: annotating-typed-datasets.md
+    - name: Datové tabulky
+      href: datatables.md
       items:
-      - name: Přidání dat do datové tabulky
-        href: adding-data-to-a-datatable.md
-      - name: Zobrazení dat v datové tabulce
-        href: viewing-data-in-a-datatable.md
-      - name: Metoda Load
-        href: the-load-method.md
-      - name: Úpravy datových tabulek
-        href: datatable-edits.md
-      - name: Stavy řádků a verze řádků
-        href: row-states-and-row-versions.md
-      - name: Odstranění datového řádku
-        href: datarow-deletion.md
-      - name: Informace o chybě na řádku
-        href: row-error-information.md
-      - name: Metody AcceptChanges a RejectChanges
-        href: acceptchanges-and-rejectchanges.md
-    - name: Zpracování událostí datové tabulky
-      href: handling-datatable-events.md
-  - name: Čtečky datových tabulek
-    href: datatablereaders.md
-    items:
-    - name: Vytvoření čtečky dat
-      href: creating-a-datareader.md
-    - name: Navigace v datových tabulkách
-      href: navigating-datatables.md
-  - name: Zobrazení dat
-    href: dataviews.md
-    items:
-    - name: Vytvoření zobrazení dat
-      href: creating-a-dataview.md
-    - name: Řazení a filtrování dat
-      href: sorting-and-filtering-data.md
-    - name: DataRows a DataRowViews
-      href: datarows-and-datarowviews.md
-    - name: Hledání řádků
-      href: finding-rows.md
-    - name: ChildViews a relace
-      href: childviews-and-relations.md
-    - name: Úpravy zobrazení dat
-      href: modifying-dataviews.md
-    - name: Zpracování událostí zobrazení dat
-      href: handling-dataview-events.md
-    - name: Správa zobrazení dat
-      href: managing-dataviews.md
-    - name: Vytvoření datové tabulky ze zobrazení dat
-      href: creating-a-datatable-from-a-dataview.md
-  - name: Použití XML v datové sadě
-    href: using-xml-in-a-dataset.md
-    items:
-    - name: DiffGrams
-      href: diffgrams.md
-    - name: Načtení datové sady z XML
-      href: loading-a-dataset-from-xml.md
-    - name: Kopírování obsahu datové sady jako dat XML
-      href: writing-dataset-contents-as-xml-data.md
-    - name: Načtení informací o schématu datové sady z XML
-      href: loading-dataset-schema-information-from-xml.md
-    - name: Zápis informací o schématu datové sady jako XSD
-      href: writing-dataset-schema-information-as-xsd.md
-    - name: Synchronizace datové sady a datového dokumentu XML
-      href: dataset-and-xmldatadocument-synchronization.md
+        - name: Vytvoření datové tabulky
+          href: creating-a-datatable.md
+        - name: Definice schématu datové tabulky
+          href: datatable-schema-definition.md
+          items:
+            - name: Přidání sloupců do datové tabulky
+              href: adding-columns-to-a-datatable.md
+            - name: Vytváření sloupců výrazů
+              href: creating-expression-columns.md
+            - name: Vytváření sloupců s automatickým navyšováním
+              href: creating-autoincrement-columns.md
+            - name: Definování primárních klíčů
+              href: defining-primary-keys.md
+            - name: Omezení datových tabulek
+              href: datatable-constraints.md
+        - name: "Manipulace s\_daty v datové tabulce"
+          href: manipulating-data-in-a-datatable.md
+          items:
+            - name: Přidání dat do datové tabulky
+              href: adding-data-to-a-datatable.md
+            - name: Zobrazení dat v datové tabulce
+              href: viewing-data-in-a-datatable.md
+            - name: Metoda Load
+              href: the-load-method.md
+            - name: Úpravy datových tabulek
+              href: datatable-edits.md
+            - name: Stavy řádků a verze řádků
+              href: row-states-and-row-versions.md
+            - name: Odstranění datového řádku
+              href: datarow-deletion.md
+            - name: Informace o chybě na řádku
+              href: row-error-information.md
+            - name: Metody AcceptChanges a RejectChanges
+              href: acceptchanges-and-rejectchanges.md
+        - name: Zpracování událostí datové tabulky
+          href: handling-datatable-events.md
+    - name: Čtečky datových tabulek
+      href: datatablereaders.md
       items:
-      - name: Synchronizace datové sady s datovým dokumentem XML
-        href: synchronizing-a-dataset-with-an-xmldatadocument.md
-      - name: Provedení dotazu XPath u datové sady
-        href: performing-an-xpath-query-on-a-dataset.md
-      - name: Použití transformace XSLT u datové sady
-        href: applying-an-xslt-transform-to-a-dataset.md
-    - name: Vnoření datových relací
-      href: nesting-datarelations.md
-    - name: Odvozování relační struktury datové sady ze schématu XML (XSD)
-      href: deriving-dataset-relational-structure-from-xml-schema-xsd.md
+        - name: Vytvoření čtečky dat
+          href: creating-a-datareader.md
+        - name: Navigace v datových tabulkách
+          href: navigating-datatables.md
+    - name: Zobrazení dat
+      href: dataviews.md
       items:
-      - name: Mapování omezení schématu XML (XSD) k omezením datové sady
-        href: mapping-xml-schema-xsd-constraints-to-dataset-constraints.md
-        items:
-        - name: Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
-          href: map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md
-        - name: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
-          href: map-key-xml-schema-xsd-constraints-to-dataset-constraints.md
-        - name: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
-          href: map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md
-      - name: Generování relací datové sady ze schématu XML (XSD)
-        href: generating-dataset-relations-from-xml-schema-xsd.md
-        items:
-        - name: Mapování implicitních relací mezi elementy ve vnořeném schématu
-          href: map-implicit-relations-between-nested-schema-elements.md
-        - name: Mapování relací zadaných pro vnořené elementy
-          href: map-relations-specified-for-nested-elements.md
-        - name: Určení relací mezi elementy bez vnoření
-          href: specify-relations-between-elements-with-no-nesting.md
-      - name: Omezení schématu XML a relací
-        href: xml-schema-constraints-and-relationships.md
-    - name: Odvození relační struktury datové sady z XML
-      href: inferring-dataset-relational-structure-from-xml.md
+        - name: Vytvoření zobrazení dat
+          href: creating-a-dataview.md
+        - name: Řazení a filtrování dat
+          href: sorting-and-filtering-data.md
+        - name: DataRows a DataRowViews
+          href: datarows-and-datarowviews.md
+        - name: Hledání řádků
+          href: finding-rows.md
+        - name: ChildViews a relace
+          href: childviews-and-relations.md
+        - name: Úpravy zobrazení dat
+          href: modifying-dataviews.md
+        - name: Zpracování událostí zobrazení dat
+          href: handling-dataview-events.md
+        - name: Správa zobrazení dat
+          href: managing-dataviews.md
+        - name: Vytvoření datové tabulky ze zobrazení dat
+          href: creating-a-datatable-from-a-dataview.md
+    - name: Použití XML v datové sadě
+      href: using-xml-in-a-dataset.md
       items:
-      - name: Souhrn procesu odvození schématu datové sady
-        href: summary-of-the-dataset-schema-inference-process.md
-      - name: Odvozování tabulek
-        href: inferring-tables.md
-      - name: Odvozování sloupců
-        href: inferring-columns.md
-      - name: Odvozování relací
-        href: inferring-relationships.md
-      - name: Odvození textu elementu
-        href: inferring-element-text.md
-      - name: Odvození omezení
-        href: inference-limitations.md
-  - name: Spotřebování datové sady z webové služby XML
-    href: consuming-a-dataset-from-an-xml-web-service.md
-ms.openlocfilehash: 739874c03720eac9e49db2f1e80a8bcafd28d1f8
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471110"
+        - name: DiffGrams
+          href: diffgrams.md
+        - name: Načtení datové sady z XML
+          href: loading-a-dataset-from-xml.md
+        - name: Kopírování obsahu datové sady jako dat XML
+          href: writing-dataset-contents-as-xml-data.md
+        - name: Načtení informací o schématu datové sady z XML
+          href: loading-dataset-schema-information-from-xml.md
+        - name: Zápis informací o schématu datové sady jako XSD
+          href: writing-dataset-schema-information-as-xsd.md
+        - name: Synchronizace datové sady a datového dokumentu XML
+          href: dataset-and-xmldatadocument-synchronization.md
+          items:
+            - name: Synchronizace datové sady s datovým dokumentem XML
+              href: synchronizing-a-dataset-with-an-xmldatadocument.md
+            - name: Provedení dotazu XPath u datové sady
+              href: performing-an-xpath-query-on-a-dataset.md
+            - name: Použití transformace XSLT u datové sady
+              href: applying-an-xslt-transform-to-a-dataset.md
+        - name: Vnoření datových relací
+          href: nesting-datarelations.md
+        - name: Odvozování relační struktury datové sady ze schématu XML (XSD)
+          href: deriving-dataset-relational-structure-from-xml-schema-xsd.md
+          items:
+            - name: Mapování omezení schématu XML (XSD) k omezením datové sady
+              href: mapping-xml-schema-xsd-constraints-to-dataset-constraints.md
+              items:
+                - name: Mapování jedinečných omezení schématu XML (XSD) k omezením datové sady
+                  href: map-unique-xml-schema-xsd-constraints-to-dataset-constraints.md
+                - name: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
+                  href: map-key-xml-schema-xsd-constraints-to-dataset-constraints.md
+                - name: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
+                  href: map-keyref-xml-schema-xsd-constraints-to-dataset-constraints.md
+            - name: Generování relací datové sady ze schématu XML (XSD)
+              href: generating-dataset-relations-from-xml-schema-xsd.md
+              items:
+                - name: Mapování implicitních relací mezi elementy ve vnořeném schématu
+                  href: map-implicit-relations-between-nested-schema-elements.md
+                - name: Mapování relací zadaných pro vnořené elementy
+                  href: map-relations-specified-for-nested-elements.md
+                - name: Určení relací mezi elementy bez vnoření
+                  href: specify-relations-between-elements-with-no-nesting.md
+            - name: Omezení schématu XML a relací
+              href: xml-schema-constraints-and-relationships.md
+        - name: Odvození relační struktury datové sady z XML
+          href: inferring-dataset-relational-structure-from-xml.md
+          items:
+            - name: Souhrn procesu odvození schématu datové sady
+              href: summary-of-the-dataset-schema-inference-process.md
+            - name: Odvozování tabulek
+              href: inferring-tables.md
+            - name: Odvozování sloupců
+              href: inferring-columns.md
+            - name: Odvozování relací
+              href: inferring-relationships.md
+            - name: Odvození textu elementu
+              href: inferring-element-text.md
+            - name: Odvození omezení
+              href: inference-limitations.md
+    - name: Spotřebování datové sady z webové služby XML
+      href: consuming-a-dataset-from-an-xml-web-service.md

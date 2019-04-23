@@ -1,22 +1,15 @@
-items:
 - name: Události
   href: index.md
   items:
-  - name: 'Postupy: Přihlášení a odhlášení odběru událostí'
-    href: how-to-subscribe-to-and-unsubscribe-from-events.md
-  - name: 'Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework'
-    href: how-to-publish-events-that-conform-to-net-framework-guidelines.md
-  - name: 'Postupy: Vyvolávání událostí třídy Base v odvozených třídách'
-    href: how-to-raise-base-class-events-in-derived-classes.md
-  - name: 'Postupy: Implementace událostí rozhraní'
-    href: how-to-implement-interface-events.md
-  - name: 'Postupy: Použití slovníku k ukládání instancí událostí'
-    href: how-to-use-a-dictionary-to-store-event-instances.md
-  - name: 'Postupy: Implementace vlastních přístupových objektů událostí'
-    href: how-to-implement-custom-event-accessors.md
-ms.openlocfilehash: ad3adc4026915e1173dacd33dde9746cfb0adcdd
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471589"
+    - name: 'Postupy: Přihlášení a odhlášení odběru událostí'
+      href: how-to-subscribe-to-and-unsubscribe-from-events.md
+    - name: 'Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework'
+      href: how-to-publish-events-that-conform-to-net-framework-guidelines.md
+    - name: 'Postupy: Vyvolávání událostí třídy Base v odvozených třídách'
+      href: how-to-raise-base-class-events-in-derived-classes.md
+    - name: 'Postupy: Implementace událostí rozhraní'
+      href: how-to-implement-interface-events.md
+    - name: 'Postupy: Použití slovníku k ukládání instancí událostí'
+      href: how-to-use-a-dictionary-to-store-event-instances.md
+    - name: 'Postupy: Implementace vlastních přístupových objektů událostí'
+      href: how-to-implement-custom-event-accessors.md

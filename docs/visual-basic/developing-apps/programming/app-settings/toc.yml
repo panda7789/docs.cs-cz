@@ -1,18 +1,11 @@
-items:
 - name: Přístup k nastavení aplikace
   href: index.md
   items:
-  - name: 'Postupy: Vytváření mřížek vlastností pro nastavení uživatele'
-    href: how-to-create-property-grids-for-user-settings.md
-  - name: 'Postupy: Zachování uživatelského nastavení'
-    href: how-to-persist-user-settings.md
-  - name: 'Postupy: Změna uživatelského nastavení'
-    href: how-to-change-user-settings.md
-  - name: 'Postupy: Čtení nastavení aplikace'
-    href: how-to-read-application-settings.md
-ms.openlocfilehash: 1360983a14f27ca882a6d5323ee4620386352b99
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471550"
+    - name: 'Postupy: Vytváření mřížek vlastností pro nastavení uživatele'
+      href: how-to-create-property-grids-for-user-settings.md
+    - name: 'Postupy: Zachování uživatelského nastavení'
+      href: how-to-persist-user-settings.md
+    - name: 'Postupy: Změna uživatelského nastavení'
+      href: how-to-change-user-settings.md
+    - name: 'Postupy: Čtení nastavení aplikace'
+      href: how-to-read-application-settings.md

@@ -1,48 +1,41 @@
-items:
-- name: Data, časy a časová pásma
+- name: 'Data, časy a časová pásma'
   href: index.md
   items:
-  - name: Přehled časových pásem
-    href: time-zone-overview.md
-  - name: Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo
-    href: choosing-between-datetime.md
-  - name: Hledání časových pásem definovaných v lokálním systému
-    href: finding-the-time-zones-on-local-system.md
-  - name: 'Postupy: Vytvoření výčtu časových pásem přítomných na počítači'
-    href: enumerate-time-zones.md
-  - name: 'Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma'
-    href: access-utc-and-local.md
-  - name: 'Postupy: Vytvoření instance objektu TimeZoneInfo'
-    href: instantiate-time-zone-info.md
-  - name: Vytvoření instance objektu DateTimeOffset
-    href: instantiating-a-datetimeoffset-object.md
-  - name: 'Postupy: Vytváření časových pásem bez pravidel úpravy'
-    href: create-time-zones-without-adjustment-rules.md
-  - name: 'Postupy: Vytváření časových pásem s pravidly úpravy'
-    href: create-time-zones-with-adjustment-rules.md
-  - name: Ukládání a obnovování časových pásem
-    href: saving-and-restoring-time-zones.md
-  - name: 'Postupy: Ukládání časových pásem do integrovaného prostředku'
-    href: save-time-zones-to-an-embedded-resource.md
-  - name: 'Postupy: Obnovení časových pásem z integrovaného prostředku'
-    href: restore-time-zones-from-an-embedded-resource.md
-  - name: Práce s kalendáři
-    href: working-with-calendars.md
-  - name: Provádění aritmetických operací s daty a časy
-    href: performing-arithmetic-operations.md
-  - name: 'Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů'
-    href: use-time-zones-in-arithmetic.md
-  - name: Převádění mezi DateTime a DateTimeOffset
-    href: converting-between-datetime-and-offset.md
-  - name: Převádění časových údajů mezi časovými pásmy
-    href: converting-between-time-zones.md
-  - name: 'Postupy: Řešení nejednoznačných časových údajů'
-    href: resolve-ambiguous-times.md
-  - name: 'Postupy: Umožnění řešení nejednoznačných časových údajů pro uživatele'
-    href: let-users-resolve-ambiguous-times.md
-ms.openlocfilehash: 302dc3e44cacb3148ae0e246220721ccfda44d98
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471243"
+    - name: Přehled časových pásem
+      href: time-zone-overview.md
+    - name: 'Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo'
+      href: choosing-between-datetime.md
+    - name: Hledání časových pásem definovaných v lokálním systému
+      href: finding-the-time-zones-on-local-system.md
+    - name: 'Postupy: Vytvoření výčtu časových pásem přítomných na počítači'
+      href: enumerate-time-zones.md
+    - name: 'Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma'
+      href: access-utc-and-local.md
+    - name: 'Postupy: Vytvoření instance objektu TimeZoneInfo'
+      href: instantiate-time-zone-info.md
+    - name: Vytvoření instance objektu DateTimeOffset
+      href: instantiating-a-datetimeoffset-object.md
+    - name: 'Postupy: Vytváření časových pásem bez pravidel úpravy'
+      href: create-time-zones-without-adjustment-rules.md
+    - name: 'Postupy: Vytváření časových pásem s pravidly úpravy'
+      href: create-time-zones-with-adjustment-rules.md
+    - name: Ukládání a obnovování časových pásem
+      href: saving-and-restoring-time-zones.md
+    - name: 'Postupy: Ukládání časových pásem do integrovaného prostředku'
+      href: save-time-zones-to-an-embedded-resource.md
+    - name: 'Postupy: Obnovení časových pásem z integrovaného prostředku'
+      href: restore-time-zones-from-an-embedded-resource.md
+    - name: Práce s kalendáři
+      href: working-with-calendars.md
+    - name: Provádění aritmetických operací s daty a časy
+      href: performing-arithmetic-operations.md
+    - name: 'Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů'
+      href: use-time-zones-in-arithmetic.md
+    - name: Převádění mezi DateTime a DateTimeOffset
+      href: converting-between-datetime-and-offset.md
+    - name: Převádění časových údajů mezi časovými pásmy
+      href: converting-between-time-zones.md
+    - name: 'Postupy: Řešení nejednoznačných časových údajů'
+      href: resolve-ambiguous-times.md
+    - name: 'Postupy: Umožnění řešení nejednoznačných časových údajů pro uživatele'
+      href: let-users-resolve-ambiguous-times.md

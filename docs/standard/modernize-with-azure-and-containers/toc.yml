@@ -1,51 +1,44 @@
-items:
 - name: Úvod
   href: index.md
   items:
-  - name: Migrace existujících aplikací metodou „lift and shift“ na Azure IaaS
-    href: lift-and-shift-existing-apps-azure-iaas.md
-  - name: Migrace relačních databází do Azure
-    href: migrate-your-relational-databases-to-azure.md
-  - name: Modernizace existujících aplikací .NET na optimalizované pro cloud
-    href: ./modernize-existing-apps-to-cloud-optimized/index.md
-    items:
-    - name: Důvody modernizace existujících aplikací .NET na aplikace optimalizované pro cloud
-      href: ./modernize-existing-apps-to-cloud-optimized/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md
-    - name: Technologie Microsoftu v aplikacích optimalizovaných pro cloud
-      href: ./modernize-existing-apps-to-cloud-optimized/microsoft-technologies-in-cloud-optimized-applications.md
-    - name: Co jsou nativní cloudové aplikace?
-      href: ./modernize-existing-apps-to-cloud-optimized/what-about-cloud-native-applications.md
-    - name: Nasazení existujících aplikací .NET jako kontejnery Windows
-      href: ./modernize-existing-apps-to-cloud-optimized/deploy-existing-net-apps-as-windows-containers.md
-    - name: Kdy neprovádět nasazení do kontejnerů Windows
-      href: ./modernize-existing-apps-to-cloud-optimized/when-not-to-deploy-to-windows-containers.md
-    - name: Kdy nasadit kontejnery Windows v místní infrastruktuře virtuálních počítačů IaaS
-      href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md
-    - name: Kdy nasadit kontejnery Windows na virtuální počítače Azure (cloud IaaS)
-      href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md
-    - name: Kdy nasadit kontejnery Windows do Windows Container Instances (ACI)
-      href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-instances-ACI.md
-    - name: Kdy nasadit kontejnery Windows do Service Fabricu
-      href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-service-fabric.md
-    - name: Kdy nasadit kontejnery Windows do Azure Container Service (ACS-Kubernetes)
-      href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md
-    - name: Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
-      href: ./modernize-existing-apps-to-cloud-optimized/choosing-azure-compute-options-for-container-based-applications.md
-    - name: 'Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu'
-      href: ./modernize-existing-apps-to-cloud-optimized/build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md
-    - name: Modernizace aplikací pomocí monitorování a telemetrie
-      href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-with-monitoring-and-telemetry.md
-    - name: Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
-      href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md
-    - name: Scénáře migrace do hybridního cloudu
-      href: ./modernize-existing-apps-to-cloud-optimized/migrate-to-hybrid-cloud-scenarios.md
-  - name: Návody a přehled technických začátků
-    href: walkthroughs-technical-get-started-overview.md
-  - name: Závěry
-    href: conclusions.md
-ms.openlocfilehash: f88e21a8b7769b34b365d0bfcef46736bf5732c1
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471184"
+    - name: Migrace existujících aplikací metodou „lift and shift“ na Azure IaaS
+      href: lift-and-shift-existing-apps-azure-iaas.md
+    - name: Migrace relačních databází do Azure
+      href: migrate-your-relational-databases-to-azure.md
+    - name: Modernizace existujících aplikací .NET na optimalizované pro cloud
+      href: ./modernize-existing-apps-to-cloud-optimized/index.md
+      items:
+        - name: Důvody modernizace existujících aplikací .NET na aplikace optimalizované pro cloud
+          href: ./modernize-existing-apps-to-cloud-optimized/reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications.md
+        - name: Technologie Microsoftu v aplikacích optimalizovaných pro cloud
+          href: ./modernize-existing-apps-to-cloud-optimized/microsoft-technologies-in-cloud-optimized-applications.md
+        - name: Co jsou nativní cloudové aplikace?
+          href: ./modernize-existing-apps-to-cloud-optimized/what-about-cloud-native-applications.md
+        - name: Nasazení existujících aplikací .NET jako kontejnery Windows
+          href: ./modernize-existing-apps-to-cloud-optimized/deploy-existing-net-apps-as-windows-containers.md
+        - name: Kdy neprovádět nasazení do kontejnerů Windows
+          href: ./modernize-existing-apps-to-cloud-optimized/when-not-to-deploy-to-windows-containers.md
+        - name: Kdy nasadit kontejnery Windows v místní infrastruktuře virtuálních počítačů IaaS
+          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-in-your-on-premises-iaas-vm-infrastructure.md
+        - name: Kdy nasadit kontejnery Windows na virtuální počítače Azure (cloud IaaS)
+          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md
+        - name: Kdy nasadit kontejnery Windows do Windows Container Instances (ACI)
+          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-instances-ACI.md
+        - name: Kdy nasadit kontejnery Windows do Service Fabricu
+          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-service-fabric.md
+        - name: Kdy nasadit kontejnery Windows do Azure Container Service (ACS-Kubernetes)
+          href: ./modernize-existing-apps-to-cloud-optimized/when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md
+        - name: Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
+          href: ./modernize-existing-apps-to-cloud-optimized/choosing-azure-compute-options-for-container-based-applications.md
+        - name: 'Vytváření odolných služeb připravených pro cloud: Zpracování přechodných selhání v cloudu'
+          href: ./modernize-existing-apps-to-cloud-optimized/build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md
+        - name: Modernizace aplikací pomocí monitorování a telemetrie
+          href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-with-monitoring-and-telemetry.md
+        - name: Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
+          href: ./modernize-existing-apps-to-cloud-optimized/modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md
+        - name: Scénáře migrace do hybridního cloudu
+          href: ./modernize-existing-apps-to-cloud-optimized/migrate-to-hybrid-cloud-scenarios.md
+    - name: Návody a přehled technických začátků
+      href: walkthroughs-technical-get-started-overview.md
+    - name: Závěry
+      href: conclusions.md

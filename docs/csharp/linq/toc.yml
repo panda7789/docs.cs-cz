@@ -1,48 +1,41 @@
-items:
 - name: LINQ (Language Integrated Query)
   href: index.md
   items:
-  - name: Základy výrazů dotazů
-    href: query-expression-basics.md
-  - name: LINQ v jazyku C#
-    href: linq-in-csharp.md
-  - name: Zápis dotazů LINQ v jazyce C#
-    href: write-linq-queries.md
-  - name: Dotazování na kolekci objektů
-    href: query-a-collection-of-objects.md
-  - name: Vrácení dotazu z metody
-    href: return-a-query-from-a-method.md
-  - name: Ukládání výsledků dotazu do paměti
-    href: store-the-results-of-a-query-in-memory.md
-  - name: Seskupení výsledků dotazu
-    href: group-query-results.md
-  - name: Vytvoření vnořené skupiny
-    href: create-a-nested-group.md
-  - name: Provádění poddotazů na skupinách
-    href: perform-a-subquery-on-a-grouping-operation.md
-  - name: Seskupení výsledků podle sousedních klíčů
-    href: group-results-by-contiguous-keys.md
-  - name: Dynamické určování filtrů predikátů při běhu
-    href: dynamically-specify-predicate-filters-at-runtime.md
-  - name: Provádění vnitřních spojení
-    href: perform-inner-joins.md
-  - name: Provádění seskupených spojení
-    href: perform-grouped-joins.md
-  - name: Provedení levých vnějších spojení
-    href: perform-left-outer-joins.md
-  - name: Řazení výsledků klauzule join
-    href: order-the-results-of-a-join-clause.md
-  - name: Spojení pomocí složených klíčů
-    href: join-by-using-composite-keys.md
-  - name: Provádění vlastních operací spojování
-    href: perform-custom-join-operations.md
-  - name: Zpracování hodnot Null ve výrazech dotazů
-    href: handle-null-values-in-query-expressions.md
-  - name: Zpracování výjimek ve výrazech dotazů
-    href: handle-exceptions-in-query-expressions.md
-ms.openlocfilehash: 1bc1fb625c7627abe63db2b69071df1ef1b7d11c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471104"
+    - name: Základy výrazů dotazů
+      href: query-expression-basics.md
+    - name: 'LINQ v jazyku C#'
+      href: linq-in-csharp.md
+    - name: "Zápis dotazů LINQ v\_jazyce C#"
+      href: write-linq-queries.md
+    - name: Dotazování na kolekci objektů
+      href: query-a-collection-of-objects.md
+    - name: "Vrácení dotazu z\_metody"
+      href: return-a-query-from-a-method.md
+    - name: Ukládání výsledků dotazu do paměti
+      href: store-the-results-of-a-query-in-memory.md
+    - name: Seskupení výsledků dotazu
+      href: group-query-results.md
+    - name: Vytvoření vnořené skupiny
+      href: create-a-nested-group.md
+    - name: Provádění poddotazů na skupinách
+      href: perform-a-subquery-on-a-grouping-operation.md
+    - name: Seskupení výsledků podle sousedních klíčů
+      href: group-results-by-contiguous-keys.md
+    - name: Dynamické určování filtrů predikátů při běhu
+      href: dynamically-specify-predicate-filters-at-runtime.md
+    - name: Provádění vnitřních spojení
+      href: perform-inner-joins.md
+    - name: Provádění seskupených spojení
+      href: perform-grouped-joins.md
+    - name: Provedení levých vnějších spojení
+      href: perform-left-outer-joins.md
+    - name: Řazení výsledků klauzule join
+      href: order-the-results-of-a-join-clause.md
+    - name: Spojení pomocí složených klíčů
+      href: join-by-using-composite-keys.md
+    - name: Provádění vlastních operací spojování
+      href: perform-custom-join-operations.md
+    - name: Zpracování hodnot Null ve výrazech dotazů
+      href: handle-null-values-in-query-expressions.md
+    - name: Zpracování výjimek ve výrazech dotazů
+      href: handle-exceptions-in-query-expressions.md

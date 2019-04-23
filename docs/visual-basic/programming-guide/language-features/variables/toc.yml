@@ -1,51 +1,44 @@
-items:
 - name: Proměnné v jazyce Visual Basic
   href: index.md
   items:
-  - name: Deklarace proměnné
-    href: variable-declaration.md
-    items:
-    - name: 'Postupy: Vytvoření nové proměnné'
-      href: how-to-create-a-new-variable.md
-    - name: 'Postupy: Postupy: Vytvoření proměnné, která nemění hodnotu'
-      href: how-to-create-a-variable-that-does-not-change-in-value.md
-    - name: 'Postupy: Přesun dat do proměnné a z proměnné'
-      href: how-to-move-data-into-and-out-of-a-variable.md
-  - name: Objektové proměnné
-    href: object-variables.md
-    items:
-    - name: 'Postupy: Urychlení přístupu k objektu pomocí cesty s dlouhou kvalifikací'
-      href: how-to-speed-up-access-to-an-object-with-a-long-qualification-path.md
-  - name: Deklarace objektové proměnné
-    href: object-variable-declaration.md
-    items:
-    - name: 'Postupy: Přístup ke členům v objektu'
-      href: how-to-access-members-of-an-object.md
-    - name: Přiřazení objektové proměnné
-      href: object-variable-assignment.md
+    - name: Deklarace proměnné
+      href: variable-declaration.md
       items:
-      - name: 'Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné'
-        href: how-to-declare-an-object-variable-and-assign-an-object-to-it.md
-      - name: 'Postupy: Nastavení objektové proměnné tak, aby neodkazovala na žádnou instanci'
-        href: how-to-make-an-object-variable-not-refer-to-any-instance.md
-    - name: Hodnoty objektové proměnné
-      href: object-variable-values.md
+        - name: 'Postupy: Vytvoření nové proměnné'
+          href: how-to-create-a-new-variable.md
+        - name: 'Postupy: Postupy: Vytvoření proměnné, která nemění hodnotu'
+          href: how-to-create-a-variable-that-does-not-change-in-value.md
+        - name: 'Postupy: Přesun dat do proměnné a z proměnné'
+          href: how-to-move-data-into-and-out-of-a-variable.md
+    - name: Objektové proměnné
+      href: object-variables.md
       items:
-      - name: 'Postupy: Odkazování na aktuální instanci objektu'
-        href: how-to-refer-to-the-current-instance-of-an-object.md
-      - name: 'Postupy: Zjištění, na jaký typ objektová proměnná odkazuje'
-        href: how-to-determine-what-type-an-object-variable-refers-to.md
-      - name: 'Postupy: Zjištění, jestli spolu dva objekty souvisí'
-        href: how-to-determine-whether-two-objects-are-related.md
-      - name: 'Postupy: Zjištění, jestli jsou dva objekty identické'
-        href: how-to-determine-whether-two-objects-are-identical.md
-  - name: Odvození typu místní proměnné
-    href: local-type-inference.md
-  - name: Řešení potíží s proměnnými
-    href: troubleshooting-variables.md
-ms.openlocfilehash: b62af96e958cd45db593e3334075b432814b51d5
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471313"
+        - name: 'Postupy: Urychlení přístupu k objektu pomocí cesty s dlouhou kvalifikací'
+          href: how-to-speed-up-access-to-an-object-with-a-long-qualification-path.md
+    - name: Deklarace objektové proměnné
+      href: object-variable-declaration.md
+      items:
+        - name: 'Postupy: Přístup ke členům v objektu'
+          href: how-to-access-members-of-an-object.md
+        - name: Přiřazení objektové proměnné
+          href: object-variable-assignment.md
+          items:
+            - name: 'Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné'
+              href: how-to-declare-an-object-variable-and-assign-an-object-to-it.md
+            - name: 'Postupy: Nastavení objektové proměnné tak, aby neodkazovala na žádnou instanci'
+              href: how-to-make-an-object-variable-not-refer-to-any-instance.md
+        - name: Hodnoty objektové proměnné
+          href: object-variable-values.md
+          items:
+            - name: 'Postupy: Odkazování na aktuální instanci objektu'
+              href: how-to-refer-to-the-current-instance-of-an-object.md
+            - name: 'Postupy: Zjištění, na jaký typ objektová proměnná odkazuje'
+              href: how-to-determine-what-type-an-object-variable-refers-to.md
+            - name: 'Postupy: Zjištění, jestli spolu dva objekty souvisí'
+              href: how-to-determine-whether-two-objects-are-related.md
+            - name: 'Postupy: Zjištění, jestli jsou dva objekty identické'
+              href: how-to-determine-whether-two-objects-are-identical.md
+    - name: Odvození místního typu
+      href: local-type-inference.md
+    - name: Řešení potíží s proměnnými
+      href: troubleshooting-variables.md

@@ -1,64 +1,57 @@
-items:
 - name: Vytváření silných názvů
   href: index.md
   items:
-  - name: GetHashFromAssemblyFile – funkce
-    href: gethashfromassemblyfile-function.md
-  - name: GetHashFromAssemblyFileW – funkce
-    href: gethashfromassemblyfilew-function.md
-  - name: GetHashFromBlob – funkce
-    href: gethashfromblob-function.md
-  - name: GetHashFromFile – funkce
-    href: gethashfromfile-function.md
-  - name: GetHashFromFileW – funkce
-    href: gethashfromfilew-function.md
-  - name: GetHashFromHandle – funkce
-    href: gethashfromhandle-function.md
-  - name: PublicKeyBlob – struktura
-    href: publickeyblob-structure.md
-  - name: StrongNameCompareAssemblies – funkce
-    href: strongnamecompareassemblies-function.md
-  - name: StrongNameErrorInfo – funkce
-    href: strongnameerrorinfo-function.md
-  - name: StrongNameFreeBuffer – funkce
-    href: strongnamefreebuffer-function.md
-  - name: StrongNameGetBlob – funkce
-    href: strongnamegetblob-function.md
-  - name: StrongNameGetBlobFromImage – funkce
-    href: strongnamegetblobfromimage-function.md
-  - name: StrongNameGetPublicKey – funkce
-    href: strongnamegetpublickey-function.md
-  - name: StrongNameHashSize – funkce
-    href: strongnamehashsize-function.md
-  - name: StrongNameKeyDelete – funkce
-    href: strongnamekeydelete-function.md
-  - name: StrongNameKeyGen – funkce
-    href: strongnamekeygen-function.md
-  - name: StrongNameKeyGenEx – funkce
-    href: strongnamekeygenex-function.md
-  - name: StrongNameKeyInstall – funkce
-    href: strongnamekeyinstall-function.md
-  - name: StrongNameSignatureGeneration – funkce
-    href: strongnamesignaturegeneration-function.md
-  - name: StrongNameSignatureGenerationEx – funkce
-    href: strongnamesignaturegenerationex-function.md
-  - name: StrongNameSignatureSize – funkce
-    href: strongnamesignaturesize-function.md
-  - name: StrongNameSignatureVerification – funkce
-    href: strongnamesignatureverification-function.md
-  - name: StrongNameSignatureVerificationEx – funkce
-    href: strongnamesignatureverificationex-function.md
-  - name: StrongNameSignatureVerificationFromImage – funkce
-    href: strongnamesignatureverificationfromimage-function.md
-  - name: StrongNameTokenFromAssembly – funkce
-    href: strongnametokenfromassembly-function.md
-  - name: StrongNameTokenFromAssemblyEx – funkce
-    href: strongnametokenfromassemblyex-function.md
-  - name: StrongNameTokenFromPublicKey – funkce
-    href: strongnametokenfrompublickey-function.md
-ms.openlocfilehash: 4c06fdc28855b0dadf1aca52c372236ffb30b782
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471181"
+    - name: GetHashFromAssemblyFile – funkce
+      href: gethashfromassemblyfile-function.md
+    - name: GetHashFromAssemblyFileW – funkce
+      href: gethashfromassemblyfilew-function.md
+    - name: GetHashFromBlob – funkce
+      href: gethashfromblob-function.md
+    - name: GetHashFromFile – funkce
+      href: gethashfromfile-function.md
+    - name: GetHashFromFileW – funkce
+      href: gethashfromfilew-function.md
+    - name: GetHashFromHandle – funkce
+      href: gethashfromhandle-function.md
+    - name: PublicKeyBlob – struktura
+      href: publickeyblob-structure.md
+    - name: StrongNameCompareAssemblies – funkce
+      href: strongnamecompareassemblies-function.md
+    - name: StrongNameErrorInfo – funkce
+      href: strongnameerrorinfo-function.md
+    - name: StrongNameFreeBuffer – funkce
+      href: strongnamefreebuffer-function.md
+    - name: StrongNameGetBlob – funkce
+      href: strongnamegetblob-function.md
+    - name: StrongNameGetBlobFromImage – funkce
+      href: strongnamegetblobfromimage-function.md
+    - name: StrongNameGetPublicKey – funkce
+      href: strongnamegetpublickey-function.md
+    - name: StrongNameHashSize – funkce
+      href: strongnamehashsize-function.md
+    - name: StrongNameKeyDelete – funkce
+      href: strongnamekeydelete-function.md
+    - name: StrongNameKeyGen – funkce
+      href: strongnamekeygen-function.md
+    - name: StrongNameKeyGenEx – funkce
+      href: strongnamekeygenex-function.md
+    - name: StrongNameKeyInstall – funkce
+      href: strongnamekeyinstall-function.md
+    - name: StrongNameSignatureGeneration – funkce
+      href: strongnamesignaturegeneration-function.md
+    - name: StrongNameSignatureGenerationEx – funkce
+      href: strongnamesignaturegenerationex-function.md
+    - name: StrongNameSignatureSize – funkce
+      href: strongnamesignaturesize-function.md
+    - name: StrongNameSignatureVerification – funkce
+      href: strongnamesignatureverification-function.md
+    - name: StrongNameSignatureVerificationEx – funkce
+      href: strongnamesignatureverificationex-function.md
+    - name: StrongNameSignatureVerificationFromImage – funkce
+      href: strongnamesignatureverificationfromimage-function.md
+    - name: StrongNameTokenFromAssembly – funkce
+      href: strongnametokenfromassembly-function.md
+    - name: StrongNameTokenFromAssemblyEx – funkce
+      href: strongnametokenfromassemblyex-function.md
+    - name: StrongNameTokenFromPublicKey – funkce
+      href: strongnametokenfrompublickey-function.md

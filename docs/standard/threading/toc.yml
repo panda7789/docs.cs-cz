@@ -1,87 +1,80 @@
-items:
 - name: Dělení na vlákna
   href: index.md
   items:
-  - name: Základy dělení na spravovaná vlákna
-    href: managed-threading-basics.md
-    items:
-    - name: Vlákna a dělení na vlákna
-      href: threads-and-threading.md
-    - name: Výjimky ve spravovaných vláknech
-      href: exceptions-in-managed-threads.md
-    - name: Synchronizace dat pro vícevláknové zpracování
-      href: synchronizing-data-for-multithreading.md
-    - name: Vlákna v popředí a v pozadí
-      href: foreground-and-background-threads.md
-    - name: Spravovaná a nespravovaná vlákna ve Windows
-      href: managed-and-unmanaged-threading-in-windows.md
-    - name: Thread.Suspend, kolekce paměti a bezpečné body
-      href: thread-suspend-garbage-collection-and-safe-points.md
-    - name: 'Lokální úložiště vláken: Statická pole a datové sloty ve vztahu k vláknům'
-      href: thread-local-storage-thread-relative-static-fields-and-data-slots.md
-  - name: Použití vláken a dělení na vlákna
-    href: using-threads-and-threading.md
-    items:
-    - name: Vytváření vláken a předávání dat při spuštění
-      href: creating-threads-and-passing-data-at-start-time.md
-    - name: Pozastavení a přerušení vláken
-      href: pausing-and-resuming-threads.md
-    - name: Zničení vláken
-      href: destroying-threads.md
-    - name: Plánování vláken
-      href: scheduling-threads.md
-    - name: Zrušení ve spravovaných vláknech
-      href: cancellation-in-managed-threads.md
+    - name: Základy dělení na spravovaná vlákna
+      href: managed-threading-basics.md
       items:
-      - name: Spolupráce při rušení vláken
-        href: canceling-threads-cooperatively.md
-      - name: 'Postupy: Naslouchání požadavkům zrušení dotazováním'
-        href: how-to-listen-for-cancellation-requests-by-polling.md
-      - name: 'Postupy: Registrace zpětných volání pro požadavky zrušení'
-        href: how-to-register-callbacks-for-cancellation-requests.md
-      - name: 'Postupy: Naslouchání požadavkům zrušení, které mají obslužné rutiny čekání'
-        href: how-to-listen-for-cancellation-requests-that-have-wait-handles.md
-      - name: 'Postupy: Naslouchání více požadavkům zrušení'
-        href: how-to-listen-for-multiple-cancellation-requests.md
-  - name: Doporučené postupy spravovaného dělení na vlákna
-    href: managed-threading-best-practices.md
-  - name: Dělení objektů a funkcí na vlákna
-    href: threading-objects-and-features.md
-    items:
-    - name: Spravovaný fond vláken
-      href: the-managed-thread-pool.md
-    - name: Časovače
-      href: timers.md
-    - name: Přehled primitiv synchronizace
-      href: overview-of-synchronization-primitives.md
-    - name: EventWaitHandle
-      href: eventwaithandle.md
-    - name: CountdownEvent
-      href: countdownevent.md
-    - name: Mutex – třídy
-      href: mutexes.md
-    - name: Semafor a SemaphoreSlim
-      href: semaphore-and-semaphoreslim.md
-    - name: Bariéra
-      href: barrier.md
+        - name: Vlákna a dělení na vlákna
+          href: threads-and-threading.md
+        - name: Výjimky ve spravovaných vláknech
+          href: exceptions-in-managed-threads.md
+        - name: Synchronizace dat pro vícevláknové zpracování
+          href: synchronizing-data-for-multithreading.md
+        - name: Vlákna v popředí a v pozadí
+          href: foreground-and-background-threads.md
+        - name: "Spravovaná a\_nespravovaná vlákna ve Windows"
+          href: managed-and-unmanaged-threading-in-windows.md
+        - name: 'Thread.Suspend, kolekce paměti a bezpečné body'
+          href: thread-suspend-garbage-collection-and-safe-points.md
+        - name: 'Lokální úložiště vláken: Statická pole a datové sloty ve vztahu k vláknům'
+          href: thread-local-storage-thread-relative-static-fields-and-data-slots.md
+    - name: Použití vláken a dělení na vlákna
+      href: using-threads-and-threading.md
       items:
-      - name: 'Postupy: Synchronizace souběžných operací pomocí třídy Barrier'
-        href: how-to-synchronize-concurrent-operations-with-a-barrier.md
-    - name: SpinLock
-      href: spinlock.md
+        - name: Vytváření vláken a předávání dat při spuštění
+          href: creating-threads-and-passing-data-at-start-time.md
+        - name: Pozastavení a přerušení vláken
+          href: pausing-and-resuming-threads.md
+        - name: Zničení vláken
+          href: destroying-threads.md
+        - name: Plánování vláken
+          href: scheduling-threads.md
+        - name: Zrušení ve spravovaných vláknech
+          href: cancellation-in-managed-threads.md
+          items:
+            - name: Spolupráce při rušení vláken
+              href: canceling-threads-cooperatively.md
+            - name: 'Postupy: Naslouchání požadavkům zrušení dotazováním'
+              href: how-to-listen-for-cancellation-requests-by-polling.md
+            - name: 'Postupy: Registrace zpětných volání pro požadavky zrušení'
+              href: how-to-register-callbacks-for-cancellation-requests.md
+            - name: 'Postupy: Naslouchání požadavkům zrušení, které mají obslužné rutiny čekání'
+              href: how-to-listen-for-cancellation-requests-that-have-wait-handles.md
+            - name: 'Postupy: Naslouchání více požadavkům zrušení'
+              href: how-to-listen-for-multiple-cancellation-requests.md
+    - name: Doporučené postupy spravovaného dělení na vlákna
+      href: managed-threading-best-practices.md
+    - name: Dělení objektů a funkcí na vlákna
+      href: threading-objects-and-features.md
       items:
-      - name: 'Postupy: Použití struktury SpinLock pro synchronizaci nízké úrovně'
-        href: how-to-use-spinlock-for-low-level-synchronization.md
-      - name: 'Postupy: Povolení režimu sledování vláken ve struktuře SpinLock'
-        href: how-to-enable-thread-tracking-mode-in-spinlock.md
-    - name: SpinWait
-      href: spinwait.md
-      items:
-      - name: 'Postupy: Použití objektu SpinWait k implementaci dvoufázové operace čekání'
-        href: how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md
-ms.openlocfilehash: c015db2bc66897ca487e29e36d93e7d84a0897f1
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471124"
+        - name: Spravovaný fond vláken
+          href: the-managed-thread-pool.md
+        - name: Časovače
+          href: timers.md
+        - name: Přehled primitiv synchronizace
+          href: overview-of-synchronization-primitives.md
+        - name: EventWaitHandle
+          href: eventwaithandle.md
+        - name: CountdownEvent
+          href: countdownevent.md
+        - name: Mutex – třídy
+          href: mutexes.md
+        - name: Semafor a SemaphoreSlim
+          href: semaphore-and-semaphoreslim.md
+        - name: Bariéra
+          href: barrier.md
+          items:
+            - name: 'Postupy: Synchronizace souběžných operací pomocí třídy Barrier'
+              href: how-to-synchronize-concurrent-operations-with-a-barrier.md
+        - name: SpinLock
+          href: spinlock.md
+          items:
+            - name: 'Postupy: Použití struktury SpinLock pro synchronizaci nízké úrovně'
+              href: how-to-use-spinlock-for-low-level-synchronization.md
+            - name: 'Postupy: Povolení režimu sledování vláken ve struktuře SpinLock'
+              href: how-to-enable-thread-tracking-mode-in-spinlock.md
+        - name: SpinWait
+          href: spinwait.md
+          items:
+            - name: 'Postupy: Použití objektu SpinWait k implementaci dvoufázové operace čekání'
+              href: how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md
