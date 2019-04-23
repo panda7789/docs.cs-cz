@@ -3,18 +3,18 @@ title: 'Postupy: Vytvoření služby, která vrací libovolná data pomocí mode
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
 ms.openlocfilehash: 55fdc6824ab82bdf3b5913cd600815ed05bd909c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59303918"
 ---
-# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a><span data-ttu-id="bff6c-102">Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF</span><span class="sxs-lookup"><span data-stu-id="bff6c-102">How to: Create a Service That Returns Arbitrary Data Using The WCF Web HTTP Programming Model</span></span>
-<span data-ttu-id="bff6c-103">Vývojáři v některých případech musí mít úplnou kontrolu nad jak se data vrácená z operace služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-103">Sometimes developers must have full control of how data is returned from a service operation.</span></span> <span data-ttu-id="bff6c-104">To je případ, kdy operace služby musí vracet data ve formátu není podporován službou WCF.</span><span class="sxs-lookup"><span data-stu-id="bff6c-104">This is the case when a service operation must return data in a format not supported by WCF.</span></span> <span data-ttu-id="bff6c-105">Toto téma popisuje použití HTTP programovacího modelu WCF WEB k vytvoření takové služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-105">This topic discusses using the WCF WEB HTTP Programming Model to create such a service.</span></span> <span data-ttu-id="bff6c-106">Tato služba má jednu operaci, která vrací datový proud.</span><span class="sxs-lookup"><span data-stu-id="bff6c-106">This service has one operation that returns a stream.</span></span>  
+# <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a><span data-ttu-id="1b88f-102">Postupy: Vytvoření služby, která vrací libovolná data pomocí modelu programování webových služeb HTTP WCF</span><span class="sxs-lookup"><span data-stu-id="1b88f-102">How to: Create a Service That Returns Arbitrary Data Using The WCF Web HTTP Programming Model</span></span>
+<span data-ttu-id="1b88f-103">Vývojáři v některých případech musí mít úplnou kontrolu nad jak se data vrácená z operace služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-103">Sometimes developers must have full control of how data is returned from a service operation.</span></span> <span data-ttu-id="1b88f-104">To je případ, kdy operace služby musí vracet data ve formátu není podporován službou WCF.</span><span class="sxs-lookup"><span data-stu-id="1b88f-104">This is the case when a service operation must return data in a format not supported by WCF.</span></span> <span data-ttu-id="1b88f-105">Toto téma popisuje použití HTTP programovacího modelu WCF WEB k vytvoření takové služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-105">This topic discusses using the WCF WEB HTTP Programming Model to create such a service.</span></span> <span data-ttu-id="1b88f-106">Tato služba má jednu operaci, která vrací datový proud.</span><span class="sxs-lookup"><span data-stu-id="1b88f-106">This service has one operation that returns a stream.</span></span>  
   
-### <a name="to-implement-the-service-contract"></a><span data-ttu-id="bff6c-107">Implementace kontraktu služby</span><span class="sxs-lookup"><span data-stu-id="bff6c-107">To implement the service contract</span></span>  
+### <a name="to-implement-the-service-contract"></a><span data-ttu-id="1b88f-107">Implementace kontraktu služby</span><span class="sxs-lookup"><span data-stu-id="1b88f-107">To implement the service contract</span></span>  
   
-1. <span data-ttu-id="bff6c-108">Definování kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-108">Define the service contract.</span></span> <span data-ttu-id="bff6c-109">Smlouva se nazývá `IImageServer` a má jednu metodu s názvem `GetImage` , která vrací <xref:System.IO.Stream>.</span><span class="sxs-lookup"><span data-stu-id="bff6c-109">The contract is called `IImageServer` and has one method called `GetImage` that returns a <xref:System.IO.Stream>.</span></span>  
+1. <span data-ttu-id="1b88f-108">Definování kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-108">Define the service contract.</span></span> <span data-ttu-id="1b88f-109">Smlouva se nazývá `IImageServer` a má jednu metodu s názvem `GetImage` , která vrací <xref:System.IO.Stream>.</span><span class="sxs-lookup"><span data-stu-id="1b88f-109">The contract is called `IImageServer` and has one method called `GetImage` that returns a <xref:System.IO.Stream>.</span></span>  
   
     ```  
     [ServiceContract]  
@@ -25,9 +25,9 @@ ms.locfileid: "59303918"
         }  
     ```  
   
-     <span data-ttu-id="bff6c-110">Protože metoda vrátí <xref:System.IO.Stream>WCF se předpokládá, že operace má plnou kontrolu nad bajtů, které jsou vráceny z operace služby a použije se žádné formátování data, která je vrácena.</span><span class="sxs-lookup"><span data-stu-id="bff6c-110">Because the method returns a <xref:System.IO.Stream>, WCF assumes that the operation has complete control over the bytes that are returned from the service operation and it applies no formatting to the data that is returned.</span></span>  
+     <span data-ttu-id="1b88f-110">Protože metoda vrátí <xref:System.IO.Stream>WCF se předpokládá, že operace má plnou kontrolu nad bajtů, které jsou vráceny z operace služby a použije se žádné formátování data, která je vrácena.</span><span class="sxs-lookup"><span data-stu-id="1b88f-110">Because the method returns a <xref:System.IO.Stream>, WCF assumes that the operation has complete control over the bytes that are returned from the service operation and it applies no formatting to the data that is returned.</span></span>  
   
-2. <span data-ttu-id="bff6c-111">Implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-111">Implement the service contract.</span></span> <span data-ttu-id="bff6c-112">Smlouva obsahuje pouze jednu operaci (`GetImage`).</span><span class="sxs-lookup"><span data-stu-id="bff6c-112">The contract has only one operation (`GetImage`).</span></span> <span data-ttu-id="bff6c-113">Tato metoda generuje rastrový obrázek a uložte ji <xref:System.IO.MemoryStream> ve formátu .jpg.</span><span class="sxs-lookup"><span data-stu-id="bff6c-113">This method generates a bitmap and then save it to a <xref:System.IO.MemoryStream> in .jpg format.</span></span> <span data-ttu-id="bff6c-114">Operaci poté vrátí volajícímu tohoto datového proudu.</span><span class="sxs-lookup"><span data-stu-id="bff6c-114">The operation then returns that stream to the caller.</span></span>  
+2. <span data-ttu-id="1b88f-111">Implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-111">Implement the service contract.</span></span> <span data-ttu-id="1b88f-112">Smlouva obsahuje pouze jednu operaci (`GetImage`).</span><span class="sxs-lookup"><span data-stu-id="1b88f-112">The contract has only one operation (`GetImage`).</span></span> <span data-ttu-id="1b88f-113">Tato metoda generuje rastrový obrázek a uložte ji <xref:System.IO.MemoryStream> ve formátu .jpg.</span><span class="sxs-lookup"><span data-stu-id="1b88f-113">This method generates a bitmap and then save it to a <xref:System.IO.MemoryStream> in .jpg format.</span></span> <span data-ttu-id="1b88f-114">Operaci poté vrátí volajícímu tohoto datového proudu.</span><span class="sxs-lookup"><span data-stu-id="1b88f-114">The operation then returns that stream to the caller.</span></span>  
   
     ```  
     public class Service : IImageServer  
@@ -51,13 +51,13 @@ ms.locfileid: "59303918"
        }  
     ```  
   
-     <span data-ttu-id="bff6c-115">Všimněte si, že druhá poslední řádek kódu:</span><span class="sxs-lookup"><span data-stu-id="bff6c-115">Notice the second to last line of code:</span></span> `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
+     <span data-ttu-id="1b88f-115">Všimněte si, že druhá poslední řádek kódu: `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`</span><span class="sxs-lookup"><span data-stu-id="1b88f-115">Notice the second to last line of code: `WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`</span></span>  
   
-     <span data-ttu-id="bff6c-116">Tím se nastaví záhlaví typu obsahu `"image/jpeg"`.</span><span class="sxs-lookup"><span data-stu-id="bff6c-116">This sets the content type header to `"image/jpeg"`.</span></span> <span data-ttu-id="bff6c-117">Přestože tento příklad ukazuje, jak vrátit soubor .jpg, může být upraveno vrátit libovolného typu dat, která je požadována v libovolném formátu.</span><span class="sxs-lookup"><span data-stu-id="bff6c-117">Although this sample shows how to return a .jpg file, it can be modified to return any type of data that is required, in any format.</span></span> <span data-ttu-id="bff6c-118">Operace nutné získat nebo generování dat a potom se zapsaly do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="bff6c-118">The operation must retrieve or generate the data and then write it to a stream.</span></span>  
+     <span data-ttu-id="1b88f-116">Tím se nastaví záhlaví typu obsahu `"image/jpeg"`.</span><span class="sxs-lookup"><span data-stu-id="1b88f-116">This sets the content type header to `"image/jpeg"`.</span></span> <span data-ttu-id="1b88f-117">Přestože tento příklad ukazuje, jak vrátit soubor .jpg, může být upraveno vrátit libovolného typu dat, která je požadována v libovolném formátu.</span><span class="sxs-lookup"><span data-stu-id="1b88f-117">Although this sample shows how to return a .jpg file, it can be modified to return any type of data that is required, in any format.</span></span> <span data-ttu-id="1b88f-118">Operace nutné získat nebo generování dat a potom se zapsaly do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="1b88f-118">The operation must retrieve or generate the data and then write it to a stream.</span></span>  
   
-### <a name="to-host-the-service"></a><span data-ttu-id="bff6c-119">K hostování služby</span><span class="sxs-lookup"><span data-stu-id="bff6c-119">To host the service</span></span>  
+### <a name="to-host-the-service"></a><span data-ttu-id="1b88f-119">K hostování služby</span><span class="sxs-lookup"><span data-stu-id="1b88f-119">To host the service</span></span>  
   
-1. <span data-ttu-id="bff6c-120">Vytvořte konzolovou aplikaci pro hostování služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-120">Create a console application to host the service.</span></span>  
+1. <span data-ttu-id="1b88f-120">Vytvořte konzolovou aplikaci pro hostování služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-120">Create a console application to host the service.</span></span>  
   
     ```  
     class Program  
@@ -68,31 +68,31 @@ ms.locfileid: "59303918"
     }  
     ```  
   
-2. <span data-ttu-id="bff6c-121">Vytvořte proměnnou pro uchování základní adresu pro službu v rámci `Main` metody.</span><span class="sxs-lookup"><span data-stu-id="bff6c-121">Create a variable to hold the base address for the service within the `Main` method.</span></span>  
+2. <span data-ttu-id="1b88f-121">Vytvořte proměnnou pro uchování základní adresu pro službu v rámci `Main` metody.</span><span class="sxs-lookup"><span data-stu-id="1b88f-121">Create a variable to hold the base address for the service within the `Main` method.</span></span>  
   
     ```  
     string baseAddress = "http://" + Environment.MachineName + ":8000/Service";  
     ```  
   
-3. <span data-ttu-id="bff6c-122">Vytvoření <xref:System.ServiceModel.ServiceHost> instanci pro třídu služby a základní adresa služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-122">Create a <xref:System.ServiceModel.ServiceHost> instance for the service specifying the service class and the base address.</span></span>  
+3. <span data-ttu-id="1b88f-122">Vytvoření <xref:System.ServiceModel.ServiceHost> instanci pro třídu služby a základní adresa služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-122">Create a <xref:System.ServiceModel.ServiceHost> instance for the service specifying the service class and the base address.</span></span>  
   
     ```  
     ServiceHost host = new ServiceHost(typeof(Service), new Uri(baseAddress));  
     ```  
   
-4. <span data-ttu-id="bff6c-123">Přidat koncový bod pomocí <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>.</span><span class="sxs-lookup"><span data-stu-id="bff6c-123">Add an endpoint using the <xref:System.ServiceModel.WebHttpBinding> and the <xref:System.ServiceModel.Description.WebHttpBehavior>.</span></span>  
+4. <span data-ttu-id="1b88f-123">Přidat koncový bod pomocí <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>.</span><span class="sxs-lookup"><span data-stu-id="1b88f-123">Add an endpoint using the <xref:System.ServiceModel.WebHttpBinding> and the <xref:System.ServiceModel.Description.WebHttpBehavior>.</span></span>  
   
     ```  
     host.AddServiceEndpoint(typeof(IImageServer), new WebHttpBinding(), "").Behaviors.Add(new WebHttpBehavior());  
     ```  
   
-5. <span data-ttu-id="bff6c-124">Otevření hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-124">Open the service host.</span></span>  
+5. <span data-ttu-id="1b88f-124">Otevření hostitele služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-124">Open the service host.</span></span>  
   
     ```  
     host.Open()  
     ```  
   
-6. <span data-ttu-id="bff6c-125">Počkejte, až uživatel stiskne klávesu ENTER k ukončení služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-125">Wait until the user presses ENTER to terminate the service.</span></span>  
+6. <span data-ttu-id="1b88f-125">Počkejte, až uživatel stiskne klávesu ENTER k ukončení služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-125">Wait until the user presses ENTER to terminate the service.</span></span>  
   
     ```  
     Console.WriteLine("Service is running");  
@@ -101,14 +101,14 @@ ms.locfileid: "59303918"
     host.Close();  
     ```  
   
-### <a name="to-call-the-raw-service-using-internet-explorer"></a><span data-ttu-id="bff6c-126">Volat službu nezpracované pomocí aplikace Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="bff6c-126">To call the raw service using Internet Explorer</span></span>  
+### <a name="to-call-the-raw-service-using-internet-explorer"></a><span data-ttu-id="1b88f-126">Volat službu nezpracované pomocí aplikace Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="1b88f-126">To call the raw service using Internet Explorer</span></span>  
   
-1. <span data-ttu-id="bff6c-127">Spuštění služby, byste měli vidět následující výstup ze služby.</span><span class="sxs-lookup"><span data-stu-id="bff6c-127">Run the service, you should see the following output from the service.</span></span> `Service is running Press ENTER to close the host`  
+1. <span data-ttu-id="1b88f-127">Spuštění služby, byste měli vidět následující výstup ze služby.</span><span class="sxs-lookup"><span data-stu-id="1b88f-127">Run the service, you should see the following output from the service.</span></span> `Service is running Press ENTER to close the host`  
   
-2. <span data-ttu-id="bff6c-128">Spusťte aplikaci Internet Explorer a zadejte `http://localhost:8000/Service/GetImage?width=50&height=40` byste měli vidět žlutý obdélníku s modrá čára Úhlopříčný prostřednictvím centra.</span><span class="sxs-lookup"><span data-stu-id="bff6c-128">Open Internet Explorer and type in `http://localhost:8000/Service/GetImage?width=50&height=40` you should see a yellow rectangle with a blue diagonal line through the center.</span></span>  
+2. <span data-ttu-id="1b88f-128">Spusťte aplikaci Internet Explorer a zadejte `http://localhost:8000/Service/GetImage?width=50&height=40` byste měli vidět žlutý obdélníku s modrá čára Úhlopříčný prostřednictvím centra.</span><span class="sxs-lookup"><span data-stu-id="1b88f-128">Open Internet Explorer and type in `http://localhost:8000/Service/GetImage?width=50&height=40` you should see a yellow rectangle with a blue diagonal line through the center.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="bff6c-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="bff6c-129">Example</span></span>  
- <span data-ttu-id="bff6c-130">Následuje úplný výpis kódu pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="bff6c-130">The following is a complete listing of the code for this topic.</span></span>  
+## <a name="example"></a><span data-ttu-id="1b88f-129">Příklad</span><span class="sxs-lookup"><span data-stu-id="1b88f-129">Example</span></span>  
+ <span data-ttu-id="1b88f-130">Následuje úplný výpis kódu pro toto téma.</span><span class="sxs-lookup"><span data-stu-id="1b88f-130">The following is a complete listing of the code for this topic.</span></span>  
   
 ```  
 using System;  
@@ -171,10 +171,10 @@ namespace RawImageService
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="bff6c-131">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="bff6c-131">Compiling the Code</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="1b88f-131">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="1b88f-131">Compiling the Code</span></span>  
   
--   <span data-ttu-id="bff6c-132">Při kompilování ukázkového kódu odkazovat na System.ServiceModel.dll a System.ServiceModel.Web.dll.</span><span class="sxs-lookup"><span data-stu-id="bff6c-132">When compiling the sample code reference System.ServiceModel.dll and System.ServiceModel.Web.dll.</span></span>  
+-   <span data-ttu-id="1b88f-132">Při kompilování ukázkového kódu odkazovat na System.ServiceModel.dll a System.ServiceModel.Web.dll.</span><span class="sxs-lookup"><span data-stu-id="1b88f-132">When compiling the sample code reference System.ServiceModel.dll and System.ServiceModel.Web.dll.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bff6c-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bff6c-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1b88f-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1b88f-133">See also</span></span>
 
-- [<span data-ttu-id="bff6c-134">Model programování webových služeb HTTP WCF</span><span class="sxs-lookup"><span data-stu-id="bff6c-134">WCF Web HTTP Programming Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [<span data-ttu-id="1b88f-134">Programovací model webových služeb HTTP WCF</span><span class="sxs-lookup"><span data-stu-id="1b88f-134">WCF Web HTTP Programming Model</span></span>](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

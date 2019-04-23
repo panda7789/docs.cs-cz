@@ -8,28 +8,28 @@ helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
 ms.openlocfilehash: 8564499b9ff55514179314217b7d40d8d3cdf6a2
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59311641"
 ---
-# <a name="type-typename-has-no-constructors"></a><span data-ttu-id="c2785-102">Typ '\<typename >' nemá žádné konstruktory</span><span class="sxs-lookup"><span data-stu-id="c2785-102">Type '\<typename>' has no constructors</span></span>
-<span data-ttu-id="c2785-103">Typ nepodporuje volání `Sub New()`.</span><span class="sxs-lookup"><span data-stu-id="c2785-103">A type does not support a call to `Sub New()`.</span></span> <span data-ttu-id="c2785-104">Jednou z možných příčin je poškozená kompilátor nebo binárního souboru.</span><span class="sxs-lookup"><span data-stu-id="c2785-104">One possible cause is a corrupted compiler or binary file.</span></span>  
+# <a name="type-typename-has-no-constructors"></a><span data-ttu-id="ecb99-102">Typ '\<typename >' nemá žádné konstruktory</span><span class="sxs-lookup"><span data-stu-id="ecb99-102">Type '\<typename>' has no constructors</span></span>
+<span data-ttu-id="ecb99-103">Typ nepodporuje volání `Sub New()`.</span><span class="sxs-lookup"><span data-stu-id="ecb99-103">A type does not support a call to `Sub New()`.</span></span> <span data-ttu-id="ecb99-104">Jednou z možných příčin je poškozená kompilátor nebo binárního souboru.</span><span class="sxs-lookup"><span data-stu-id="ecb99-104">One possible cause is a corrupted compiler or binary file.</span></span>  
   
- <span data-ttu-id="c2785-105">**ID chyby:** BC30251</span><span class="sxs-lookup"><span data-stu-id="c2785-105">**Error ID:** BC30251</span></span>  
+ <span data-ttu-id="ecb99-105">**ID chyby:** BC30251</span><span class="sxs-lookup"><span data-stu-id="ecb99-105">**Error ID:** BC30251</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="c2785-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="c2785-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="ecb99-106">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="ecb99-106">To correct this error</span></span>  
   
-1. <span data-ttu-id="c2785-107">Pokud je typ v jiném projektu nebo v odkazovaném souboru, přeinstalujte projekt nebo soubor.</span><span class="sxs-lookup"><span data-stu-id="c2785-107">If the type is in a different project or in a referenced file, reinstall the project or file.</span></span>  
+1. <span data-ttu-id="ecb99-107">Pokud je typ v jiném projektu nebo v odkazovaném souboru, přeinstalujte projekt nebo soubor.</span><span class="sxs-lookup"><span data-stu-id="ecb99-107">If the type is in a different project or in a referenced file, reinstall the project or file.</span></span>  
   
-2. <span data-ttu-id="c2785-108">Pokud je typ ve stejném projektu, překompilujte sestavení obsahující daný typ.</span><span class="sxs-lookup"><span data-stu-id="c2785-108">If the type is in the same project, recompile the assembly containing the type.</span></span>  
+2. <span data-ttu-id="ecb99-108">Pokud je typ ve stejném projektu, překompilujte sestavení obsahující daný typ.</span><span class="sxs-lookup"><span data-stu-id="ecb99-108">If the type is in the same project, recompile the assembly containing the type.</span></span>  
   
-3. <span data-ttu-id="c2785-109">Pokud se chyba objeví znovu, přeinstalujte kompilátor jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="c2785-109">If the error recurs, reinstall the Visual Basic compiler.</span></span>  
+3. <span data-ttu-id="ecb99-109">Pokud se chyba objeví znovu, přeinstalujte kompilátor jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="ecb99-109">If the error recurs, reinstall the Visual Basic compiler.</span></span>  
   
-4. <span data-ttu-id="c2785-110">Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.</span><span class="sxs-lookup"><span data-stu-id="c2785-110">If the error persists, gather information about the circumstances and notify Microsoft Product Support Services.</span></span>  
+4. <span data-ttu-id="ecb99-110">Pokud potíže potrvají, shromážděte informace o okolnostech a upozornit Microsoft Product Support Services.</span><span class="sxs-lookup"><span data-stu-id="ecb99-110">If the error persists, gather information about the circumstances and notify Microsoft Product Support Services.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c2785-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c2785-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ecb99-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ecb99-111">See also</span></span>
 
-- [<span data-ttu-id="c2785-112">Objekty a třídy</span><span class="sxs-lookup"><span data-stu-id="c2785-112">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [<span data-ttu-id="c2785-113">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="c2785-113">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
+- [<span data-ttu-id="ecb99-112">Objekty a třídy</span><span class="sxs-lookup"><span data-stu-id="ecb99-112">Objects and Classes</span></span>](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [<span data-ttu-id="ecb99-113">Kontaktujte nás</span><span class="sxs-lookup"><span data-stu-id="ecb99-113">Talk to Us</span></span>](/visualstudio/ide/talk-to-us)
