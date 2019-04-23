@@ -17,16 +17,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 882242da493c49a2e6aa09888e9503dcf2933589
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59119584"
 ---
-# <a name="ceesectionreloctype-enumeration"></a><span data-ttu-id="91425-102">CeeSectionRelocType – výčet</span><span class="sxs-lookup"><span data-stu-id="91425-102">CeeSectionRelocType Enumeration</span></span>
-<span data-ttu-id="91425-103">Poskytuje hodnoty k ovlivnění typu `reloc` instrukci, protože ho ve volání [iceegen::addsectionreloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).</span><span class="sxs-lookup"><span data-stu-id="91425-103">Provides values to influence the type of `reloc` instruction emitted in a call to [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).</span></span>  
+# <a name="ceesectionreloctype-enumeration"></a><span data-ttu-id="3258b-102">CeeSectionRelocType – výčet</span><span class="sxs-lookup"><span data-stu-id="3258b-102">CeeSectionRelocType Enumeration</span></span>
+<span data-ttu-id="3258b-103">Poskytuje hodnoty k ovlivnění typu `reloc` instrukci, protože ho ve volání [iceegen::addsectionreloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).</span><span class="sxs-lookup"><span data-stu-id="3258b-103">Provides values to influence the type of `reloc` instruction emitted in a call to [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="91425-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="91425-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3258b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3258b-104">Syntax</span></span>  
   
 ```  
 typedef enum  {  
@@ -50,37 +50,37 @@ typedef enum  {
     } CeeSectionRelocType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="91425-105">Členové</span><span class="sxs-lookup"><span data-stu-id="91425-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="3258b-105">Členové</span><span class="sxs-lookup"><span data-stu-id="3258b-105">Members</span></span>  
   
-|<span data-ttu-id="91425-106">Člen</span><span class="sxs-lookup"><span data-stu-id="91425-106">Member</span></span>|<span data-ttu-id="91425-107">Popis</span><span class="sxs-lookup"><span data-stu-id="91425-107">Description</span></span>|  
+|<span data-ttu-id="3258b-106">Člen</span><span class="sxs-lookup"><span data-stu-id="3258b-106">Member</span></span>|<span data-ttu-id="3258b-107">Popis</span><span class="sxs-lookup"><span data-stu-id="3258b-107">Description</span></span>|  
 |------------|-----------------|  
-|`srRelocAbsolute`|<span data-ttu-id="91425-108">Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu.</span><span class="sxs-lookup"><span data-stu-id="91425-108">Generates only a section-relative `reloc`, sending nothing into a .reloc section.</span></span>|  
-|`srRelocHighLow`|<span data-ttu-id="91425-109">Generuje `reloc` pro umístění velikosti ukazatele.</span><span class="sxs-lookup"><span data-stu-id="91425-109">Generates a `reloc` for a pointer-sized location.</span></span> <span data-ttu-id="91425-110">To se transformuje na BASED_HIGHLOW nebo BASED_DIR64 podle platformy.</span><span class="sxs-lookup"><span data-stu-id="91425-110">This is transformed into BASED_HIGHLOW or BASED_DIR64 depending on the platform.</span></span>|  
-|`srRelocHighAdj`|<span data-ttu-id="91425-111">Generuje `reloc` pro horní 16 bitů 32bitová čísla, kde další slovo v tabulce .reloc součástí dolní 16 bitů.</span><span class="sxs-lookup"><span data-stu-id="91425-111">Generates a `reloc` for the top 16 bits of a 32-bit number, where the bottom 16 bits are included in the next word in the .reloc table.</span></span>|  
-|`srRelocMapToken`|<span data-ttu-id="91425-112">Generuje token mapy přemístění, odesílání nic do části .reloc.</span><span class="sxs-lookup"><span data-stu-id="91425-112">Generates a token map relocation, sending nothing into a .reloc section.</span></span>|  
-|`srRelocRelative`|<span data-ttu-id="91425-113">Označuje, že hodnota je relativní adresa opravy.</span><span class="sxs-lookup"><span data-stu-id="91425-113">Indicates that the value is a relative address fixup.</span></span>|  
-|`srRelocFilePos`|<span data-ttu-id="91425-114">Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu.</span><span class="sxs-lookup"><span data-stu-id="91425-114">Generates only a section-relative `reloc`, sending nothing into a .reloc section.</span></span> <span data-ttu-id="91425-115">To `reloc` je relativní vzhledem k umístění souboru oddílu, ne v části virtuální adresy.</span><span class="sxs-lookup"><span data-stu-id="91425-115">This `reloc` is relative to the file position of the section, not the section's virtual address.</span></span>|  
-|`srRelocCodeRelative`|<span data-ttu-id="91425-116">Určuje kód relativní adresa opravy.</span><span class="sxs-lookup"><span data-stu-id="91425-116">Specifies a code-relative address fixup.</span></span>|  
-|`srRelocIA64Imm64`|<span data-ttu-id="91425-117">Generuje `reloc` 64bitových adres v ia64 `movl` instrukce.</span><span class="sxs-lookup"><span data-stu-id="91425-117">Generates a `reloc` for a 64 bit address in an ia64 `movl` instruction.</span></span>|  
-|`srRelocDir64`|<span data-ttu-id="91425-118">Generuje `reloc` 64-bit adresy.</span><span class="sxs-lookup"><span data-stu-id="91425-118">Generates a `reloc` for a 64-bit address.</span></span>|  
-|`srRelocIA64PcRel25`|<span data-ttu-id="91425-119">Generování `reloc` pro PC relativní adresu 25-bit ia64 `br.call` instrukce.</span><span class="sxs-lookup"><span data-stu-id="91425-119">Generate a `reloc` for a 25-bit PC-relative address in an ia64 `br.call` instruction.</span></span>|  
-|`srRelocIA64PcRel64`|<span data-ttu-id="91425-120">Generuje `reloc` pro PC relativní adresu 64-bit ia64 `brl.call` instrukce.</span><span class="sxs-lookup"><span data-stu-id="91425-120">Generates a `reloc` for a 64-bit PC-relative address in an ia64 `brl.call` instruction.</span></span>|  
-|`srRelocAbsoluteTagged`|<span data-ttu-id="91425-121">Generuje vláknům části 30-bit `reloc`, která se používá pro hodnoty příznakem ukazatele.</span><span class="sxs-lookup"><span data-stu-id="91425-121">Generates a 30-bit section-relative `reloc`, used for tagged pointer values.</span></span>|  
-|`srRelocSentinel`|<span data-ttu-id="91425-122">Hodnotu sentinel k zajištění jakékoli dodatky na tento výčet se projeví na vnitřní `reloc` název pole.</span><span class="sxs-lookup"><span data-stu-id="91425-122">A sentinel value to help ensure any additions to this enum are reflected to the internal `reloc` name array.</span></span>|  
-|`srNoBaseReloc`|<span data-ttu-id="91425-123">Určuje, že generování základní `reloc`.</span><span class="sxs-lookup"><span data-stu-id="91425-123">Specifies not to emit a base `reloc`.</span></span>|  
-|`srRelocPtr`|<span data-ttu-id="91425-124">Hodnota označující, že jsou pre oprava obsah paměti ukazatel, nikoli oddíl posun.</span><span class="sxs-lookup"><span data-stu-id="91425-124">A value indicating that the pre-fixup contents of memory are a pointer rather than a section offset.</span></span>|  
+|`srRelocAbsolute`|<span data-ttu-id="3258b-108">Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu.</span><span class="sxs-lookup"><span data-stu-id="3258b-108">Generates only a section-relative `reloc`, sending nothing into a .reloc section.</span></span>|  
+|`srRelocHighLow`|<span data-ttu-id="3258b-109">Generuje `reloc` pro umístění velikosti ukazatele.</span><span class="sxs-lookup"><span data-stu-id="3258b-109">Generates a `reloc` for a pointer-sized location.</span></span> <span data-ttu-id="3258b-110">To se transformuje na BASED_HIGHLOW nebo BASED_DIR64 podle platformy.</span><span class="sxs-lookup"><span data-stu-id="3258b-110">This is transformed into BASED_HIGHLOW or BASED_DIR64 depending on the platform.</span></span>|  
+|`srRelocHighAdj`|<span data-ttu-id="3258b-111">Generuje `reloc` pro horní 16 bitů 32bitová čísla, kde další slovo v tabulce .reloc součástí dolní 16 bitů.</span><span class="sxs-lookup"><span data-stu-id="3258b-111">Generates a `reloc` for the top 16 bits of a 32-bit number, where the bottom 16 bits are included in the next word in the .reloc table.</span></span>|  
+|`srRelocMapToken`|<span data-ttu-id="3258b-112">Generuje token mapy přemístění, odesílání nic do části .reloc.</span><span class="sxs-lookup"><span data-stu-id="3258b-112">Generates a token map relocation, sending nothing into a .reloc section.</span></span>|  
+|`srRelocRelative`|<span data-ttu-id="3258b-113">Označuje, že hodnota je relativní adresa opravy.</span><span class="sxs-lookup"><span data-stu-id="3258b-113">Indicates that the value is a relative address fixup.</span></span>|  
+|`srRelocFilePos`|<span data-ttu-id="3258b-114">Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu.</span><span class="sxs-lookup"><span data-stu-id="3258b-114">Generates only a section-relative `reloc`, sending nothing into a .reloc section.</span></span> <span data-ttu-id="3258b-115">To `reloc` je relativní vzhledem k umístění souboru oddílu, ne v části virtuální adresy.</span><span class="sxs-lookup"><span data-stu-id="3258b-115">This `reloc` is relative to the file position of the section, not the section's virtual address.</span></span>|  
+|`srRelocCodeRelative`|<span data-ttu-id="3258b-116">Určuje kód relativní adresa opravy.</span><span class="sxs-lookup"><span data-stu-id="3258b-116">Specifies a code-relative address fixup.</span></span>|  
+|`srRelocIA64Imm64`|<span data-ttu-id="3258b-117">Generuje `reloc` 64bitových adres v ia64 `movl` instrukce.</span><span class="sxs-lookup"><span data-stu-id="3258b-117">Generates a `reloc` for a 64 bit address in an ia64 `movl` instruction.</span></span>|  
+|`srRelocDir64`|<span data-ttu-id="3258b-118">Generuje `reloc` 64-bit adresy.</span><span class="sxs-lookup"><span data-stu-id="3258b-118">Generates a `reloc` for a 64-bit address.</span></span>|  
+|`srRelocIA64PcRel25`|<span data-ttu-id="3258b-119">Generování `reloc` pro PC relativní adresu 25-bit ia64 `br.call` instrukce.</span><span class="sxs-lookup"><span data-stu-id="3258b-119">Generate a `reloc` for a 25-bit PC-relative address in an ia64 `br.call` instruction.</span></span>|  
+|`srRelocIA64PcRel64`|<span data-ttu-id="3258b-120">Generuje `reloc` pro PC relativní adresu 64-bit ia64 `brl.call` instrukce.</span><span class="sxs-lookup"><span data-stu-id="3258b-120">Generates a `reloc` for a 64-bit PC-relative address in an ia64 `brl.call` instruction.</span></span>|  
+|`srRelocAbsoluteTagged`|<span data-ttu-id="3258b-121">Generuje vláknům části 30-bit `reloc`, která se používá pro hodnoty příznakem ukazatele.</span><span class="sxs-lookup"><span data-stu-id="3258b-121">Generates a 30-bit section-relative `reloc`, used for tagged pointer values.</span></span>|  
+|`srRelocSentinel`|<span data-ttu-id="3258b-122">Hodnotu sentinel k zajištění jakékoli dodatky na tento výčet se projeví na vnitřní `reloc` název pole.</span><span class="sxs-lookup"><span data-stu-id="3258b-122">A sentinel value to help ensure any additions to this enum are reflected to the internal `reloc` name array.</span></span>|  
+|`srNoBaseReloc`|<span data-ttu-id="3258b-123">Určuje, že generování základní `reloc`.</span><span class="sxs-lookup"><span data-stu-id="3258b-123">Specifies not to emit a base `reloc`.</span></span>|  
+|`srRelocPtr`|<span data-ttu-id="3258b-124">Hodnota označující, že jsou pre oprava obsah paměti ukazatel, nikoli oddíl posun.</span><span class="sxs-lookup"><span data-stu-id="3258b-124">A value indicating that the pre-fixup contents of memory are a pointer rather than a section offset.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="91425-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="91425-125">Requirements</span></span>  
- <span data-ttu-id="91425-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="91425-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3258b-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3258b-125">Requirements</span></span>  
+ <span data-ttu-id="3258b-126">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3258b-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="91425-127">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="91425-127">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="3258b-127">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="3258b-127">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="91425-128">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="91425-128">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="3258b-128">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3258b-128">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- **<span data-ttu-id="91425-129">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="91425-129">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="3258b-129">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3258b-129">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="91425-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91425-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3258b-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3258b-130">See also</span></span>
 
-- [<span data-ttu-id="91425-131">Výčty metadat</span><span class="sxs-lookup"><span data-stu-id="91425-131">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
-- [<span data-ttu-id="91425-132">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="91425-132">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
-- [<span data-ttu-id="91425-133">AddSectionReloc – metoda</span><span class="sxs-lookup"><span data-stu-id="91425-133">AddSectionReloc Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)
+- [<span data-ttu-id="3258b-131">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="3258b-131">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="3258b-132">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3258b-132">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="3258b-133">AddSectionReloc – metoda</span><span class="sxs-lookup"><span data-stu-id="3258b-133">AddSectionReloc Method</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)

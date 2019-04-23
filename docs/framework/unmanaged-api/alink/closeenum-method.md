@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fd7d63596690e2a5d0bc26448884ec09ecd63231
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59129516"
 ---
-# <a name="closeenum-method"></a><span data-ttu-id="61d3e-102">CloseEnum – metoda</span><span class="sxs-lookup"><span data-stu-id="61d3e-102">CloseEnum Method</span></span>
-<span data-ttu-id="61d3e-103">Zadaný výčet se zavře a uvolní přidružené prostředky.</span><span class="sxs-lookup"><span data-stu-id="61d3e-103">Closes the indicated enumeration and frees associated resources.</span></span>  
+# <a name="closeenum-method"></a><span data-ttu-id="c56e1-102">CloseEnum – metoda</span><span class="sxs-lookup"><span data-stu-id="c56e1-102">CloseEnum Method</span></span>
+<span data-ttu-id="c56e1-103">Zadaný výčet se zavře a uvolní přidružené prostředky.</span><span class="sxs-lookup"><span data-stu-id="c56e1-103">Closes the indicated enumeration and frees associated resources.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="61d3e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="61d3e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c56e1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c56e1-104">Syntax</span></span>  
   
 ```  
 HRESULT CloseEnum(  
@@ -35,18 +35,18 @@ HRESULT CloseEnum(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="61d3e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="61d3e-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c56e1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c56e1-105">Parameters</span></span>  
  `hEnum`  
- <span data-ttu-id="61d3e-106">Popisovač výčtu bude uzavřen.</span><span class="sxs-lookup"><span data-stu-id="61d3e-106">Handle of enumeration to be closed.</span></span>  
+ <span data-ttu-id="c56e1-106">Popisovač výčtu bude uzavřen.</span><span class="sxs-lookup"><span data-stu-id="c56e1-106">Handle of enumeration to be closed.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="61d3e-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="61d3e-107">Return Value</span></span>  
- <span data-ttu-id="61d3e-108">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="61d3e-108">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c56e1-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c56e1-107">Return Value</span></span>  
+ <span data-ttu-id="c56e1-108">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="c56e1-108">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="61d3e-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="61d3e-109">Requirements</span></span>  
- <span data-ttu-id="61d3e-110">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="61d3e-110">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c56e1-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c56e1-109">Requirements</span></span>  
+ <span data-ttu-id="c56e1-110">Vyžaduje alink.h</span><span class="sxs-lookup"><span data-stu-id="c56e1-110">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="61d3e-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="61d3e-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c56e1-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c56e1-111">See also</span></span>
 
-- [<span data-ttu-id="61d3e-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="61d3e-112">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="61d3e-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="61d3e-113">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="61d3e-114">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="61d3e-114">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="c56e1-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c56e1-112">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [<span data-ttu-id="c56e1-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c56e1-113">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [<span data-ttu-id="c56e1-114">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="c56e1-114">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

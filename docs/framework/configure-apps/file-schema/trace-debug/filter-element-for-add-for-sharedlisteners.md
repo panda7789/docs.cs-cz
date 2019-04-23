@@ -11,57 +11,57 @@ helpviewer_keywords:
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
 ms.openlocfilehash: 2bef729f179b41509d3c0381b26e38e364dbf86b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59120741"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a><span data-ttu-id="3d9e4-102">\<Filtr > – Element pro \<Přidat > pro \<sharedListeners ></span><span class="sxs-lookup"><span data-stu-id="3d9e4-102">\<filter> Element for \<add> for \<sharedListeners></span></span>
-<span data-ttu-id="3d9e4-103">Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-103">Adds a filter to a listener in the `sharedListeners` collection.</span></span>  
+# <a name="filter-element-for-add-for-sharedlisteners"></a><span data-ttu-id="529e9-102">\<Filtr > – Element pro \<Přidat > pro \<sharedListeners ></span><span class="sxs-lookup"><span data-stu-id="529e9-102">\<filter> Element for \<add> for \<sharedListeners></span></span>
+<span data-ttu-id="529e9-103">Přidá filtr do naslouchacího procesu v `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="529e9-103">Adds a filter to a listener in the `sharedListeners` collection.</span></span>  
   
- <span data-ttu-id="3d9e4-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="3d9e4-104">\<configuration></span></span>  
-<span data-ttu-id="3d9e4-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="3d9e4-105">\<system.diagnostics></span></span>  
-<span data-ttu-id="3d9e4-106">\<sharedListeners > – Element</span><span class="sxs-lookup"><span data-stu-id="3d9e4-106">\<sharedListeners> Element</span></span>  
-<span data-ttu-id="3d9e4-107">\<add></span><span class="sxs-lookup"><span data-stu-id="3d9e4-107">\<add></span></span>  
-<span data-ttu-id="3d9e4-108">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="3d9e4-108">\<filter></span></span>  
+ <span data-ttu-id="529e9-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="529e9-104">\<configuration></span></span>  
+<span data-ttu-id="529e9-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="529e9-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="529e9-106">\<sharedListeners > – Element</span><span class="sxs-lookup"><span data-stu-id="529e9-106">\<sharedListeners> Element</span></span>  
+<span data-ttu-id="529e9-107">\<add></span><span class="sxs-lookup"><span data-stu-id="529e9-107">\<add></span></span>  
+<span data-ttu-id="529e9-108">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="529e9-108">\<filter></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3d9e4-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3d9e4-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="529e9-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="529e9-109">Syntax</span></span>  
   
 ```xml  
 <filter type="System.Diagnostics.EventTypeFilter"   
   initializeData="Warning" />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3d9e4-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="3d9e4-110">Attributes and Elements</span></span>  
- <span data-ttu-id="3d9e4-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="529e9-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="529e9-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="529e9-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="529e9-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3d9e4-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="3d9e4-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="529e9-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="529e9-112">Attributes</span></span>  
   
-|<span data-ttu-id="3d9e4-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="3d9e4-113">Attribute</span></span>|<span data-ttu-id="3d9e4-114">Popis</span><span class="sxs-lookup"><span data-stu-id="3d9e4-114">Description</span></span>|  
+|<span data-ttu-id="529e9-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="529e9-113">Attribute</span></span>|<span data-ttu-id="529e9-114">Popis</span><span class="sxs-lookup"><span data-stu-id="529e9-114">Description</span></span>|  
 |---------------|-----------------|  
-|**<span data-ttu-id="3d9e4-115"> – typ</span><span class="sxs-lookup"><span data-stu-id="3d9e4-115">type</span></span>**|<span data-ttu-id="3d9e4-116">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-116">Required attribute.</span></span><br /><br /> <span data-ttu-id="3d9e4-117">Určuje typ filtru.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-117">Specifies the type of the filter.</span></span> <span data-ttu-id="3d9e4-118">Můžete použít pouze úplný název typu (ve formátu <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> vlastnost).</span><span class="sxs-lookup"><span data-stu-id="3d9e4-118">You can use only the full name of the type (in the format of the <xref:System.Type.FullName%2A?displayProperty=nameWithType> property), or you can use the fully qualified type name including the assembly information (in the format of the <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> property).</span></span> <span data-ttu-id="3d9e4-119">Informace o vytvoření plně kvalifikovaného názvu typu, najdete v tématu [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).</span><span class="sxs-lookup"><span data-stu-id="3d9e4-119">For information on creating a fully qualified type name, see [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).</span></span>|  
-|**<span data-ttu-id="3d9e4-120">initializeData</span><span class="sxs-lookup"><span data-stu-id="3d9e4-120">initializeData</span></span>**|<span data-ttu-id="3d9e4-121">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-121">Optional attribute.</span></span><br /><br /> <span data-ttu-id="3d9e4-122">Řetězec předaný konstruktoru pro zadanou třídu.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-122">The string passed to the constructor for the specified class.</span></span>|  
+|<span data-ttu-id="529e9-115">**type**</span><span class="sxs-lookup"><span data-stu-id="529e9-115">**type**</span></span>|<span data-ttu-id="529e9-116">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="529e9-116">Required attribute.</span></span><br /><br /> <span data-ttu-id="529e9-117">Určuje typ filtru.</span><span class="sxs-lookup"><span data-stu-id="529e9-117">Specifies the type of the filter.</span></span> <span data-ttu-id="529e9-118">Můžete použít pouze úplný název typu (ve formátu <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnost), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> vlastnost).</span><span class="sxs-lookup"><span data-stu-id="529e9-118">You can use only the full name of the type (in the format of the <xref:System.Type.FullName%2A?displayProperty=nameWithType> property), or you can use the fully qualified type name including the assembly information (in the format of the <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> property).</span></span> <span data-ttu-id="529e9-119">Informace o vytvoření plně kvalifikovaného názvu typu, najdete v tématu [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).</span><span class="sxs-lookup"><span data-stu-id="529e9-119">For information on creating a fully qualified type name, see [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).</span></span>|  
+|<span data-ttu-id="529e9-120">**initializeData**</span><span class="sxs-lookup"><span data-stu-id="529e9-120">**initializeData**</span></span>|<span data-ttu-id="529e9-121">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="529e9-121">Optional attribute.</span></span><br /><br /> <span data-ttu-id="529e9-122">Řetězec předaný konstruktoru pro zadanou třídu.</span><span class="sxs-lookup"><span data-stu-id="529e9-122">The string passed to the constructor for the specified class.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="3d9e4-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="3d9e4-123">Child Elements</span></span>  
- <span data-ttu-id="3d9e4-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="3d9e4-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="529e9-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="529e9-123">Child Elements</span></span>  
+ <span data-ttu-id="529e9-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="529e9-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="3d9e4-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="3d9e4-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="529e9-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="529e9-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="3d9e4-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="3d9e4-126">Element</span></span>|<span data-ttu-id="3d9e4-127">Popis</span><span class="sxs-lookup"><span data-stu-id="3d9e4-127">Description</span></span>|  
+|<span data-ttu-id="529e9-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="529e9-126">Element</span></span>|<span data-ttu-id="529e9-127">Popis</span><span class="sxs-lookup"><span data-stu-id="529e9-127">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="3d9e4-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="3d9e4-129">Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
-|`sharedListeners`|<span data-ttu-id="3d9e4-130">Kolekce naslouchacích procesů, které všechny zdroje nebo trasování – element může odkazovat.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-130">A collection of listeners that any source or trace element can reference.</span></span>|  
-|`add`|<span data-ttu-id="3d9e4-131">Přidá naslouchací proces pro **sharedListeners** kolekce.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-131">Adds a listener to the **sharedListeners** collection.</span></span>|  
+|`configuration`|<span data-ttu-id="529e9-128">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="529e9-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="529e9-129">Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="529e9-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|`sharedListeners`|<span data-ttu-id="529e9-130">Kolekce naslouchacích procesů, které všechny zdroje nebo trasování – element může odkazovat.</span><span class="sxs-lookup"><span data-stu-id="529e9-130">A collection of listeners that any source or trace element can reference.</span></span>|  
+|`add`|<span data-ttu-id="529e9-131">Přidá naslouchací proces pro **sharedListeners** kolekce.</span><span class="sxs-lookup"><span data-stu-id="529e9-131">Adds a listener to the **sharedListeners** collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3d9e4-132">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3d9e4-132">Remarks</span></span>  
- <span data-ttu-id="3d9e4-133">Pokud naslouchací proces je definována v `<add>` elementu `<sharedListeners>` elementu, filtr pro tuto naslouchací proces musí být definován v `<filter>` element, který je podřízeným prvkem `<add>` elementu.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-133">If a listener is defined in an `<add>` element of the `<sharedListeners>` element, the filter for that listener should be defined in a `<filter>` element that is a child of the `<add>` element.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="529e9-132">Poznámky</span><span class="sxs-lookup"><span data-stu-id="529e9-132">Remarks</span></span>  
+ <span data-ttu-id="529e9-133">Pokud naslouchací proces je definována v `<add>` elementu `<sharedListeners>` elementu, filtr pro tuto naslouchací proces musí být definován v `<filter>` element, který je podřízeným prvkem `<add>` elementu.</span><span class="sxs-lookup"><span data-stu-id="529e9-133">If a listener is defined in an `<add>` element of the `<sharedListeners>` element, the filter for that listener should be defined in a `<filter>` element that is a child of the `<add>` element.</span></span>  
   
- <span data-ttu-id="3d9e4-134">Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-134">This element can be used in the machine configuration file (Machine.config) and the application configuration file.</span></span>  
+ <span data-ttu-id="529e9-134">Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.</span><span class="sxs-lookup"><span data-stu-id="529e9-134">This element can be used in the machine configuration file (Machine.config) and the application configuration file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3d9e4-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="3d9e4-135">Example</span></span>  
- <span data-ttu-id="3d9e4-136">Následující příklad ukazuje způsob použití `<filter>` prvek, který chcete přidat filtr na naslouchací proces trasování `console` v `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="3d9e4-136">The following example shows how to use the `<filter>` element to add a filter to the trace listener `console` in the `sharedListeners` collection.</span></span>  
+## <a name="example"></a><span data-ttu-id="529e9-135">Příklad</span><span class="sxs-lookup"><span data-stu-id="529e9-135">Example</span></span>  
+ <span data-ttu-id="529e9-136">Následující příklad ukazuje způsob použití `<filter>` prvek, který chcete přidat filtr na naslouchací proces trasování `console` v `sharedListeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="529e9-136">The following example shows how to use the `<filter>` element to add a filter to the trace listener `console` in the `sharedListeners` collection.</span></span>  
   
 ```xml  
 <configuration>  
@@ -85,9 +85,9 @@ ms.locfileid: "59120741"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3d9e4-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3d9e4-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="529e9-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="529e9-137">See also</span></span>
 
 - <xref:System.Diagnostics.TraceFilter>
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.TraceSource>
-- [<span data-ttu-id="3d9e4-138">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="3d9e4-138">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [<span data-ttu-id="529e9-138">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="529e9-138">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

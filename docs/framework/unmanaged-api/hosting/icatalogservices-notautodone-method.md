@@ -18,21 +18,21 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 499ba1887846cc670dc763ec998ef335c17a9ae5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59125993"
 ---
-# <a name="icatalogservicesnotautodone-method"></a><span data-ttu-id="a0c5b-102">ICatalogServices::NotAutodone – metoda</span><span class="sxs-lookup"><span data-stu-id="a0c5b-102">ICatalogServices::NotAutodone Method</span></span>
-<span data-ttu-id="a0c5b-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="a0c5b-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icatalogservicesnotautodone-method"></a><span data-ttu-id="76cac-102">ICatalogServices::NotAutodone – metoda</span><span class="sxs-lookup"><span data-stu-id="76cac-102">ICatalogServices::NotAutodone Method</span></span>
+<span data-ttu-id="76cac-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="76cac-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a0c5b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a0c5b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="76cac-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="76cac-104">Syntax</span></span>  
   
 ```  
 HRESULT NotAutodone ( );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="a0c5b-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a0c5b-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76cac-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76cac-105">See also</span></span>
 
-- [<span data-ttu-id="a0c5b-106">Rozhraní hostování</span><span class="sxs-lookup"><span data-stu-id="a0c5b-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="76cac-106">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="76cac-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

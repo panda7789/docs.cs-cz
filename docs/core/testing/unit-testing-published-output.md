@@ -6,25 +6,25 @@ ms.author: kehavens
 ms.date: 10/18/2017
 ms.custom: seodec18
 ms.openlocfilehash: 660b966c6d02353b855e5728094083042a561558
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59126084"
 ---
-# <a name="test-published-output-with-dotnet-vstest"></a><span data-ttu-id="dbb21-103">Testování publikované výstup s dotnet test</span><span class="sxs-lookup"><span data-stu-id="dbb21-103">Test published output with dotnet vstest</span></span>
+# <a name="test-published-output-with-dotnet-vstest"></a><span data-ttu-id="ac047-103">Testování publikované výstup s dotnet test</span><span class="sxs-lookup"><span data-stu-id="ac047-103">Test published output with dotnet vstest</span></span>
 
-<span data-ttu-id="dbb21-104">Je možné spustit testy na výstupu už byla publikována s použitím `dotnet vstest` příkazu.</span><span class="sxs-lookup"><span data-stu-id="dbb21-104">You can run tests on already published output by using the `dotnet vstest` command.</span></span> <span data-ttu-id="dbb21-105">Bude to fungovat u xUnit, MSTest a NUnit testy.</span><span class="sxs-lookup"><span data-stu-id="dbb21-105">This will work on xUnit, MSTest, and NUnit tests.</span></span> <span data-ttu-id="dbb21-106">Jednoduše vyhledejte soubor knihovny DLL, která byla součástí publikovaný výstup a spusťte:</span><span class="sxs-lookup"><span data-stu-id="dbb21-106">Simply locate the DLL file that was part of your published output and run:</span></span>
+<span data-ttu-id="ac047-104">Je možné spustit testy na výstupu už byla publikována s použitím `dotnet vstest` příkazu.</span><span class="sxs-lookup"><span data-stu-id="ac047-104">You can run tests on already published output by using the `dotnet vstest` command.</span></span> <span data-ttu-id="ac047-105">Bude to fungovat u xUnit, MSTest a NUnit testy.</span><span class="sxs-lookup"><span data-stu-id="ac047-105">This will work on xUnit, MSTest, and NUnit tests.</span></span> <span data-ttu-id="ac047-106">Jednoduše vyhledejte soubor knihovny DLL, která byla součástí publikovaný výstup a spusťte:</span><span class="sxs-lookup"><span data-stu-id="ac047-106">Simply locate the DLL file that was part of your published output and run:</span></span>
 
 ```
 dotnet vstest <MyPublishedTests>.dll
 ```
 
-<span data-ttu-id="dbb21-107">kde `<MyPublishedTests>` je název publikované testovacího projektu.</span><span class="sxs-lookup"><span data-stu-id="dbb21-107">Where `<MyPublishedTests>` is the name of your published test project.</span></span>
+<span data-ttu-id="ac047-107">kde `<MyPublishedTests>` je název publikované testovacího projektu.</span><span class="sxs-lookup"><span data-stu-id="ac047-107">Where `<MyPublishedTests>` is the name of your published test project.</span></span>
 
-## <a name="example"></a><span data-ttu-id="dbb21-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="dbb21-108">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac047-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="ac047-108">Example</span></span>
 
-<span data-ttu-id="dbb21-109">Následující příkazy ukazují, spouštění testů na publikované knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="dbb21-109">The commands below demonstrate running tests on a published DLL.</span></span>
+<span data-ttu-id="ac047-109">Následující příkazy ukazují, spouštění testů na publikované knihovny DLL.</span><span class="sxs-lookup"><span data-stu-id="ac047-109">The commands below demonstrate running tests on a published DLL.</span></span>
 
 ```
 dotnet new mstest -o MyProject.Tests
@@ -34,10 +34,10 @@ dotnet vstest out/MyProject.Tests.dll
 ```
 
 > [!NOTE]
-> <span data-ttu-id="dbb21-110">Poznámka: Pokud vaše aplikace cílí na rozhraní než `netcoreapp` můžete nadále spouštět `dotnet vstest` příkaz předáním s příznakem framework cíleného rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dbb21-110">Note: If your app is targeting a framework other than `netcoreapp` you can still run the `dotnet vstest` command by passing in the targeted framework with a framework flag.</span></span> <span data-ttu-id="dbb21-111">Například, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`.</span><span class="sxs-lookup"><span data-stu-id="dbb21-111">For example, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`.</span></span> <span data-ttu-id="dbb21-112">Ve verzi Visual Studio 2017 Update 5 je automaticky rozpoznán požadované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dbb21-112">In Visual Studio 2017 Update 5 the desired framework is automatically detected.</span></span>
+> <span data-ttu-id="ac047-110">Poznámka: Pokud vaše aplikace cílí na rozhraní než `netcoreapp` můžete nadále spouštět `dotnet vstest` příkaz předáním s příznakem framework cíleného rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ac047-110">Note: If your app is targeting a framework other than `netcoreapp` you can still run the `dotnet vstest` command by passing in the targeted framework with a framework flag.</span></span> <span data-ttu-id="ac047-111">Například, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`.</span><span class="sxs-lookup"><span data-stu-id="ac047-111">For example, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`.</span></span> <span data-ttu-id="ac047-112">Ve verzi Visual Studio 2017 Update 5 je automaticky rozpoznán požadované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ac047-112">In Visual Studio 2017 Update 5 the desired framework is automatically detected.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="dbb21-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dbb21-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ac047-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ac047-113">See also</span></span>
 
-- [<span data-ttu-id="dbb21-114">Testování částí pomocí příkazu dotnet test a xUnit</span><span class="sxs-lookup"><span data-stu-id="dbb21-114">Unit Testing with dotnet test and xUnit</span></span>](unit-testing-with-dotnet-test.md)
-- [<span data-ttu-id="dbb21-115">Testování částí pomocí příkazu dotnet test a NUnit</span><span class="sxs-lookup"><span data-stu-id="dbb21-115">Unit Testing with dotnet test and NUnit</span></span>](unit-testing-with-nunit.md)
-- [<span data-ttu-id="dbb21-116">Testování částí pomocí příkazu dotnet test a MSTest</span><span class="sxs-lookup"><span data-stu-id="dbb21-116">Unit Testing with dotnet test and MSTest</span></span>](unit-testing-with-mstest.md)
+- [<span data-ttu-id="ac047-114">Testování částí pomocí příkazu dotnet test a xUnit</span><span class="sxs-lookup"><span data-stu-id="ac047-114">Unit Testing with dotnet test and xUnit</span></span>](unit-testing-with-dotnet-test.md)
+- [<span data-ttu-id="ac047-115">Testování částí pomocí příkazu dotnet test a NUnit</span><span class="sxs-lookup"><span data-stu-id="ac047-115">Unit Testing with dotnet test and NUnit</span></span>](unit-testing-with-nunit.md)
+- [<span data-ttu-id="ac047-116">Testování částí pomocí příkazu dotnet test a MSTest</span><span class="sxs-lookup"><span data-stu-id="ac047-116">Unit Testing with dotnet test and MSTest</span></span>](unit-testing-with-mstest.md)
