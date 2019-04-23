@@ -10,10 +10,10 @@ helpviewer_keywords:
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
 ms.openlocfilehash: 5976bc0cb8b34e68d5e89dd70a608d7e52ded332
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59216779"
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání třídy SystemFonts
@@ -41,8 +41,8 @@ Tento příklad ukazuje způsob použití statické prostředky <xref:System.Win
 - <xref:System.Windows.SystemFonts>
 - [Vykreslení oblasti systémovým štětcem](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
 - [Používání třídy SystemParameters](how-to-use-systemparameters.md)
-- [Používání klíčů systémových písem](how-to-use-system-fonts-keys.md)
-- [– postupy](resources-how-to-topics.md)
+- [Použití klíčů systémových písem](how-to-use-system-fonts-keys.md)
+- [Témata s postupy](resources-how-to-topics.md)
 - [x:Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md)
-- [Zdroje XAML](xaml-resources.md)
-- [DynamicResource – rozšíření značek](dynamicresource-markup-extension.md)
+- [Prostředky XAML](xaml-resources.md)
+- [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)

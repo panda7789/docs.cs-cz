@@ -10,10 +10,10 @@ ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c825ccc15ff7eeb736169f7ae120b4a3692ffe39
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59216467"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
@@ -45,5 +45,5 @@ Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy mů�
 ## <a name="see-also"></a>Viz také:
 
 - [Výkon](../../../docs/framework/performance/index.md)
-- [Příručka k programování v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
-- [Průvodce programováním v C#](../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce Visual Basic](../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)

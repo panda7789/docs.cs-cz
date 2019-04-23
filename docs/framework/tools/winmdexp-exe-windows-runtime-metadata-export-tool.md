@@ -8,10 +8,10 @@ ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5803ef1d174c3e3a5e8e18b130e6b7a0c65eac81
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59216338"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
@@ -34,13 +34,13 @@ winmdexp [options] winmdmodule
 |Argument nebo možnost|Popis|  
 |------------------------|-----------------|  
 |`winmdmodule`|Určuje modul (.winmdobj), který má být exportován. Je povolen pouze jeden modul. Chcete-li vytvořit tento modul, použijte `/target` – možnost kompilátoru s `winmdobj` cíl. Zobrazit [/target: winmdobj (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md) nebo [/Target (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/target.md).|  
-|`/docfile:` `docfile`<br /><br /> `/d:` `docfile`|Určuje výstupní soubor dokumentace XML, který bude vytvořen nástrojem Winmdexp.exe. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výstupní soubor je v podstatě stejný jako vstupní soubor dokumentace XML.|  
-|`/moduledoc:` `docfile`<br /><br /> `/md:` `docfile`|Určuje název souboru dokumentace XML, který kompilátor vytvořil pomocí `winmdmodule`.|  
-|`/modulepdb:` `symbolfile`<br /><br /> `/mp:` `symbolfile`|Určuje název souboru databáze (PDB) program, který obsahuje symboly pro `winmdmodule`.|  
-|`/nowarn:` `warning`|Potlačí zadané číslo upozornění. Pro *upozornění*, zadejte pouze číselnou část chybového kódu bez počátečních nul.|  
-|`/out:` `file`<br /><br /> `/o:` `file`|Určuje název výstupního souboru metadat Windows (.winmd).|  
-|`/pdb:` `symbolfile`<br /><br /> `/p:` `symbolfile`|Určuje název výstupního souboru databáze programu (PDB), který bude obsahovat symboly pro exportovaný soubor metadat Windows (.winmd).|  
-|`/reference:` `winmd`<br /><br /> `/r:` `winmd`|Určuje referenční soubor metadat (.winmd nebo sestavení) používaný při exportu. Pokud použijete referenční sestavení v "\Program soubory (x86) \Reference Assemblies\Microsoft\Framework\\. NETCore\v4.5 "(" \Program Files\\... "na 32bitových počítačích), zahrnují odkazy na knihovnu System.Runtime.dll i mscorlib.dll.|  
+|`/docfile:``docfile`<br /><br /> `/d:``docfile`|Určuje výstupní soubor dokumentace XML, který bude vytvořen nástrojem Winmdexp.exe. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], výstupní soubor je v podstatě stejný jako vstupní soubor dokumentace XML.|  
+|`/moduledoc:``docfile`<br /><br /> `/md:``docfile`|Určuje název souboru dokumentace XML, který kompilátor vytvořil pomocí `winmdmodule`.|  
+|`/modulepdb:``symbolfile`<br /><br /> `/mp:``symbolfile`|Určuje název souboru databáze (PDB) program, který obsahuje symboly pro `winmdmodule`.|  
+|`/nowarn:``warning`|Potlačí zadané číslo upozornění. Pro *upozornění*, zadejte pouze číselnou část chybového kódu bez počátečních nul.|  
+|`/out:``file`<br /><br /> `/o:``file`|Určuje název výstupního souboru metadat Windows (.winmd).|  
+|`/pdb:``symbolfile`<br /><br /> `/p:``symbolfile`|Určuje název výstupního souboru databáze programu (PDB), který bude obsahovat symboly pro exportovaný soubor metadat Windows (.winmd).|  
+|`/reference:``winmd`<br /><br /> `/r:``winmd`|Určuje referenční soubor metadat (.winmd nebo sestavení) používaný při exportu. Pokud použijete referenční sestavení v "\Program soubory (x86) \Reference Assemblies\Microsoft\Framework\\. NETCore\v4.5 "(" \Program Files\\... "na 32bitových počítačích), zahrnují odkazy na knihovnu System.Runtime.dll i mscorlib.dll.|  
 |`/utf8output`|Určuje, že výstupní zpráva má být v kódování UTF-8.|  
 |`/warnaserror+`|Určuje, že všechna upozornění mají být považována za chyby.|  
 |**@** `responsefile`|Určuje soubor odpovědí (.rsp) obsahující možnosti (a volitelně `winmdmodule`). Každý řádek v `responsefile` by měl obsahovat jeden argument nebo parametr.|  
