@@ -3,40 +3,40 @@ title: (Modulo) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 243ddc4f-3c4e-41e1-a3ef-4ed39e36248b
 ms.openlocfilehash: e2d2c4cd6fd62cf5785d6b69aa399a74f8d04d30
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59326733"
 ---
-# <a name="modulo-entity-sql"></a><span data-ttu-id="2c0aa-102">(Modulo) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="2c0aa-102">(Modulo) (Entity SQL)</span></span>
-<span data-ttu-id="2c0aa-103">Vrátí zbytek jeden výraz hodnotou druhého.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-103">Returns the remainder of one expression divided by another.</span></span>  
+# <a name="modulo-entity-sql"></a><span data-ttu-id="0e582-102">(Modulo) (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="0e582-102">(Modulo) (Entity SQL)</span></span>
+<span data-ttu-id="0e582-103">Vrátí zbytek jeden výraz hodnotou druhého.</span><span class="sxs-lookup"><span data-stu-id="0e582-103">Returns the remainder of one expression divided by another.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2c0aa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2c0aa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0e582-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0e582-104">Syntax</span></span>  
   
 ```  
 dividend % divisor  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="2c0aa-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="2c0aa-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="0e582-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="0e582-105">Arguments</span></span>  
  `dividend`  
- <span data-ttu-id="2c0aa-106">Číselný výraz, který se má dělit.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-106">The numeric expression to divide.</span></span> `dividend` <span data-ttu-id="2c0aa-107">je libovolný platný výraz některou z číselných datových typů.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-107">is any valid expression of any one of the numeric data types.</span></span>  
+ <span data-ttu-id="0e582-106">Číselný výraz, který se má dělit.</span><span class="sxs-lookup"><span data-stu-id="0e582-106">The numeric expression to divide.</span></span> <span data-ttu-id="0e582-107">`dividend` je libovolný platný výraz některou z číselných datových typů.</span><span class="sxs-lookup"><span data-stu-id="0e582-107">`dividend` is any valid expression of any one of the numeric data types.</span></span>  
   
  `divisor`  
- <span data-ttu-id="2c0aa-108">Číselný výraz, který se má dělit dělenec.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-108">The numeric expression to divide the dividend by.</span></span> `divisor` <span data-ttu-id="2c0aa-109">je libovolný platný výraz některou z číselných datových typů.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-109">is any valid expression of any one of the numeric data types.</span></span>  
+ <span data-ttu-id="0e582-108">Číselný výraz, který se má dělit dělenec.</span><span class="sxs-lookup"><span data-stu-id="0e582-108">The numeric expression to divide the dividend by.</span></span> <span data-ttu-id="0e582-109">`divisor` je libovolný platný výraz některou z číselných datových typů.</span><span class="sxs-lookup"><span data-stu-id="0e582-109">`divisor` is any valid expression of any one of the numeric data types.</span></span>  
   
-## <a name="result-types"></a><span data-ttu-id="2c0aa-110">Typy výsledků</span><span class="sxs-lookup"><span data-stu-id="2c0aa-110">Result Types</span></span>  
- <span data-ttu-id="2c0aa-111">Edm.Int32</span><span class="sxs-lookup"><span data-stu-id="2c0aa-111">Edm.Int32</span></span>  
+## <a name="result-types"></a><span data-ttu-id="0e582-110">Typy výsledků</span><span class="sxs-lookup"><span data-stu-id="0e582-110">Result Types</span></span>  
+ <span data-ttu-id="0e582-111">Edm.Int32</span><span class="sxs-lookup"><span data-stu-id="0e582-111">Edm.Int32</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2c0aa-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="2c0aa-112">Example</span></span>  
- <span data-ttu-id="2c0aa-113">Následující dotaz Entity SQL používá aritmetického operátoru % vrátit zbývající jeden výraz hodnotou druhého.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-113">The following Entity SQL query uses the % arithmetic operator to return the remainder of one expression divided by another.</span></span> <span data-ttu-id="2c0aa-114">Dotaz je založen na modelu Sales AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="2c0aa-114">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="2c0aa-115">Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:</span><span class="sxs-lookup"><span data-stu-id="2c0aa-115">To compile and run this query, follow these steps:</span></span>  
+## <a name="example"></a><span data-ttu-id="0e582-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="0e582-112">Example</span></span>  
+ <span data-ttu-id="0e582-113">Následující dotaz Entity SQL používá aritmetického operátoru % vrátit zbývající jeden výraz hodnotou druhého.</span><span class="sxs-lookup"><span data-stu-id="0e582-113">The following Entity SQL query uses the % arithmetic operator to return the remainder of one expression divided by another.</span></span> <span data-ttu-id="0e582-114">Dotaz je založen na modelu Sales AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="0e582-114">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="0e582-115">Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:</span><span class="sxs-lookup"><span data-stu-id="0e582-115">To compile and run this query, follow these steps:</span></span>  
   
-1. <span data-ttu-id="2c0aa-116">Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="2c0aa-116">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
+1. <span data-ttu-id="0e582-116">Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="0e582-116">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>  
   
-2. <span data-ttu-id="2c0aa-117">Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:</span><span class="sxs-lookup"><span data-stu-id="2c0aa-117">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
+2. <span data-ttu-id="0e582-117">Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:</span><span class="sxs-lookup"><span data-stu-id="0e582-117">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>  
   
  [!code-csharp[DP EntityServices Concepts 2#MODULO](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#modulo)]  
   
-## <a name="see-also"></a><span data-ttu-id="2c0aa-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2c0aa-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0e582-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e582-118">See also</span></span>
 
-- [<span data-ttu-id="2c0aa-119">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="2c0aa-119">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [<span data-ttu-id="0e582-119">Reference k Entity SQL</span><span class="sxs-lookup"><span data-stu-id="0e582-119">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
