@@ -4,10 +4,10 @@ description: Příručka k používání služeb Azure sF#
 author: sylvanc
 ms.date: 09/22/2016
 ms.openlocfilehash: 92b453b680a5f8c55f35458e9020f15444e90035
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211735"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
@@ -41,10 +41,10 @@ Další materiály týkající se používání Azure Functions a F#:
 
 Azure Storage je základní vrstvě služby úložiště pro moderní aplikace, které spoléhají na odolnost, dostupnost a škálovatelnost podle potřeb zákazníků. F#programy můžou pracovat přímo s služby Azure storage, pomocí technik popsaných v následujících článcích.
 
-* [Začínáme s využitím úložiště objektů Blob v AzureF#](blob-storage.md)
-* [Začínáme s Azure File storage pomocíF#](file-storage.md)
-* [Začínáme s Azure Queue storage pomocíF#](queue-storage.md)
-* [Začínáme s Azure Table storage pomocíF#](table-storage.md)
+* [Začínáme s Azure Blob Storage s využitím F#](blob-storage.md)
+* [Začínáme s Azure File Storage s využitím F#](file-storage.md)
+* [Začínáme s Azure Queue Storage s využitím F#](queue-storage.md)
+* [Začínáme s Azure Table Storage s využitím F#](table-storage.md)
 
 Úložiště Azure je také možné ve spojení s využitím Azure Functions prostřednictvím deklarativních místo explicitního volání rozhraní API. Zobrazit [aktivační události Azure Functions a vazby pro službu Azure Storage](/azure/azure-functions/functions-bindings-storage) obsahující F# příklady.
 

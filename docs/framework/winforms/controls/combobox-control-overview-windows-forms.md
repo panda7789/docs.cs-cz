@@ -10,10 +10,10 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], about combo boxes
 ms.assetid: a58b393f-a614-45d1-8961-857a024b5acd
 ms.openlocfilehash: 80056771744c9b97828a024adf32638e545a839e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211569"
 ---
 # <a name="combobox-control-overview-windows-forms"></a>ComboBox – přehled ovládacího prvku (Windows Forms)
@@ -28,9 +28,9 @@ Windows Forms <xref:System.Windows.Forms.ComboBox> ovládacího prvku se použí
 - <xref:System.Windows.Forms.ComboBox>
 - [Přehled ovládacího prvku ListBox](listbox-control-overview-windows-forms.md)
 - [Kdy použít prvek Windows Forms ComboBox místo prvku ListBox](when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)
-- [Postupy: Přidání a odebrání položek z ovládacích prvků Windows Forms ComboBox, ListBox nebo CheckedListBox](add-and-remove-items-from-a-wf-combobox.md)
-- [Postupy: Řazení obsahu ovládacího prvku Windows Forms ComboBox, ListBox nebo CheckedListBox](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
-- [Postupy: Přístup ke konkrétním položkám v ovládacím prvku Windows Forms ComboBox, ListBox nebo CheckedListBox](access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)
-- [Postupy: Vázání ovládacího prvku Windows Forms ComboBox nebo ListBox k datům](how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
+- [Postupy: Přidání a odebrání položek z Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](add-and-remove-items-from-a-wf-combobox.md)
+- [Postupy: Řazení obsahu Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [Postupy: Přístup ke konkrétním položkám v Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](access-specific-items-in-a-wf-combobox-listbox-or-checkedlistbox.md)
+- [Postupy: Windows Forms ComboBox nebo ListBox – ovládací prvek svázat Data](how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md)
 - [Ovládací prvky Windows Forms používané k výpisu možností](windows-forms-controls-used-to-list-options.md)
-- [Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox](create-a-lookup-table-for-a-wf-combobox-listbox.md)
+- [Postupy: Vytvoření vyhledávací tabulky pro Windows Forms ComboBox, ListBox nebo CheckedListBox – ovládací prvek](create-a-lookup-table-for-a-wf-combobox-listbox.md)

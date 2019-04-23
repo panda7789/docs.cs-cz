@@ -8,10 +8,10 @@ dev_langs:
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
 ms.openlocfilehash: 79b74090a5a443c944df94f9df1c3f4d283df02f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59214738"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
@@ -53,7 +53,7 @@ V tomto článku:
 
     * [Události](#events)
 
-    * [Přetížení](#overloads)
+    * [Overloads](#overloads)
 
     * [Výjimky](#exceptions)
 
@@ -187,8 +187,8 @@ Rozhraní | [Rozhraní](#interfaces) | Rozhraní odpovídající specifikaci CLS
 Zásady vytváření názvů | [Zásady vytváření názvů](#naming-conventions) | Sestavení musí dodržovat přílohu 7 technické zprávy 15 sady Unicode Standard3.0 řídící sadu znaků povolených pro spuštění a být součástí identifikátory, které jsou k dispozici online na [tvarů normalizace Unicode](https://www.unicode.org/unicode/reports/tr15/tr15-18.html). Identifikátory musí být v kanonickém formátu definovaném v normalizačním formuláři Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné v případě mapování jejich malých písmen (podle specifikací Unicode národním prostředí, 1: 1 malé písmeno mapování) jsou totožné. To znamená, že dva identifikátory, aby bylo považováno za jiné v rámci specifikace CLS se liší se ve více než jednoduchém případě. Za účelem přepsání zděděné definice však rozhraní příkazového řádku vyžaduje, přesného kódování v původní deklaraci použít. | 4
 Přetížení | [Zásady vytváření názvů](#naming-conventions) | Všechny názvy zavedené v oboru kompatibilní se Specifikací CLS musí být odlišné bez ohledu na typ, s výjimkou případů, kdy jsou názvy shodné a jsou vyřešeny prostřednictvím přetížení. To znamená, že zatímco CTS umožňuje jeden typ používal stejný název pro metodu a pole, CLS to neumožňuje. | 5
 Přetížení | [Zásady vytváření názvů](#naming-conventions) | Pole a vnořené typy musí být různé podle porovnání identifikátoru, i když CTS umožňuje odlišit různé podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátoru) se musí lišit více než jen návratovým typem, mimo specifikaci v pravidla 39 CLS | 6
-Přetížení | [Přetížení](#overloads) | Mohou být přetíženy pouze vlastnosti a metody. | 37
-Přetížení | [Přetížení](#overloads) |Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu. | 38
+Přetížení | [Overloads](#overloads) | Mohou být přetíženy pouze vlastnosti a metody. | 37
+Přetížení | [Overloads](#overloads) |Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu. | 38
 Přetížení | -- | Pokud mají dvě nebo více kompatibilní se Specifikací CLS metod deklarovaných v typu stejný název a pro konkrétní sadu vytváření instancí typů mají stejný parametr a návratové typy, musí být sémanticky rovnocenné v těchto instancí typů všechny tyto metody. | 48
 Vlastnosti | [Vlastnosti](#properties) | Metody, které implementují metody getter a setter vlastnosti musí být označeny `SpecialName` v metadatech. | 24
 Vlastnosti | [Vlastnosti](#properties) | Přistupující objekty vlastnosti musí být statická, virtuální nebo instanční. | 26
@@ -317,23 +317,23 @@ Všechny typy, které se zobrazují v signaturách členu, včetně návratový 
 
 Typ kompatibilní se Specifikací CLS | Popis
 ------------------ | -----------
-[Byte](xref:System.Byte) | 8bitové celé číslo bez znaménka
+[Bajtů](xref:System.Byte) | 8bitové celé číslo bez znaménka
 [Int16](xref:System.Int16) | 16bitové celé číslo se znaménkem
 [Int32](xref:System.Int32) | 32bitové celé číslo se znaménkem
 [Int64](xref:System.Int64) | 64bitové celé číslo se znaménkem
-[Single](xref:System.Single) | S plovoucí desetinnou čárkou s jednoduchou přesností
+[Jeden](xref:System.Single) | S plovoucí desetinnou čárkou s jednoduchou přesností
 [Double](xref:System.Double) | Dvojité přesnosti s plovoucí desetinnou čárkou
-[Boolean](xref:System.Boolean) | Typ hodnoty true nebo false
+[Datový typ Boolean](xref:System.Boolean) | Typ hodnoty true nebo false
 [Char](xref:System.Char) | Kódová jednotka v kódování UTF-16
-[Desetinné číslo](xref:System.Decimal) | Desetinné číslo bez plovoucí desetinné čárky
+[Decimal](xref:System.Decimal) | Desetinné číslo bez plovoucí desetinné čárky
 [IntPtr](xref:System.IntPtr) | Ukazatel nebo popisovač platformou definované velikosti
-[String](xref:System.String) | Kolekce žádným, jedním nebo více objektů Char
+[Řetězec](xref:System.String) | Kolekce žádným, jedním nebo více objektů Char
 
 Vnitřní typy, které jsou uvedeny v následující tabulce nejsou kompatibilní se Specifikací CLS.
 
 Nevyhovující typ | Popis | Alternativy CLS
 ------------------ | ----------- | -------------------------
-[SByte](xref:System.SByte) | 8bitové celé číslo se znaménkem datový typ | [Int16](xref:System.Int16)
+[SByte –](xref:System.SByte) | 8bitové celé číslo se znaménkem datový typ | [Int16](xref:System.Int16)
 [UInt16](xref:System.UInt16) | 16bitové celé číslo bez znaménka | [Int32](xref:System.Int32)
 [UInt32](xref:System.UInt32) | 32bitové celé číslo bez znaménka | [Int64](xref:System.Int64)
 [UInt64](xref:System.UInt64) | 64bitové celé číslo bez znaménka | [Int64](xref:System.Int64) (může přetéci), [BigInteger](xref:System.Numerics.BigInteger), nebo [Double](xref:System.Double)
@@ -2564,9 +2564,9 @@ End Structure
 
 Konstruktor nebo vlastnosti odpovídající specifikaci CLS atributu mohou vystavit pouze následující typy:
 
-* [Boolean](xref:System.Boolean)
+* [Datový typ Boolean](xref:System.Boolean)
 
-* [Byte](xref:System.Byte)
+* [Bajtů](xref:System.Byte)
 
 * [Char](xref:System.Char)
 
@@ -2578,11 +2578,11 @@ Konstruktor nebo vlastnosti odpovídající specifikaci CLS atributu mohou vysta
 
 * [Int64](xref:System.Int64)
 
-* [Single](xref:System.Single)
+* [Jeden](xref:System.Single)
 
-* [String](xref:System.String)
+* [Řetězec](xref:System.String)
 
-* [Type](xref:System.Type)
+* [Typ](xref:System.Type)
 
 * Libovolný typ výčtu, jehož základní typ je `Byte`, `Int16`, `Int32`, nebo `Int64`.
 

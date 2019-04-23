@@ -25,10 +25,10 @@ helpviewer_keywords:
 - modifier keys
 ms.assetid: 1e184048-0ae3-4067-a200-d4ba31dbc2cb
 ms.openlocfilehash: 571af49cdf82b876cfb72a7c7636874c8d155fb7
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59213933"
 ---
 # <a name="how-to-determine-which-modifier-key-was-pressed"></a>Postupy: Určení modifikační klávesy, která byla stisknuta
@@ -49,5 +49,5 @@ Když vytvoříte aplikaci, která přijímá stisknutí kláves uživatele, mů
 
 - <xref:System.Windows.Forms.Keys>
 - <xref:System.Windows.Forms.Control.ModifierKeys%2A>
-- [Vstup z klávesnice ve formulářové aplikaci Windows](keyboard-input-in-a-windows-forms-application.md)
+- [Vstup z klávesnice v aplikaci Windows Forms](keyboard-input-in-a-windows-forms-application.md)
 - [Postupy: Určení, že CapsLock – Pokud je v jazyce Visual Basic](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9c9d1fz9(v=vs.100))

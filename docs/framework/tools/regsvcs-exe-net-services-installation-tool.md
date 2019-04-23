@@ -12,10 +12,10 @@ ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1b529ccd8c5e0cf0563adf556a7d316372ac4d0e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59215037"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
@@ -50,11 +50,11 @@ Instalační nástroj .NET Services vykonává tyto akce:
 |**/appdir:** *cesta*|Určuje kořenový adresář aplikace.|  
 |**příkazy/appname:** *applicationName*|Určuje název aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  
 |**/c**|Vytvoří cílovou aplikaci.|  
-|**/componly**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
+|**RegSvcs**|Nakonfiguruje pouze součásti; ignoruje metody a rozhraní.|  
 |**/exapp**|Určuje, že nástroj má očekávat existující aplikaci.|  
 |**/extlb**|Použije existující knihovnu typů.|  
 |**/fc**|Vyhledá nebo vytvoří cílovou aplikaci.|  
-|**/help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
+|**/ Help**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/noreconfig**|Znovu nekonfiguruje existující cílovou aplikaci.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
 |**/parname:** *název*|Určuje název nebo ID aplikace modelu COM+, která se má vyhledat nebo vytvořit.|  

@@ -4,10 +4,10 @@ description: Zjistěte, jak napsat kód, který zkontrolujte strukturu stromu v�
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
 ms.openlocfilehash: 952a1c553e2392ffc717dc344dfe77a11f025cc4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211241"
 ---
 # <a name="interpreting-expressions"></a>Interpretace výrazů

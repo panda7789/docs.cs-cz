@@ -7,10 +7,10 @@ helpviewer_keywords:
 - binding [WPF], updates [WPF], notifications of
 ms.assetid: 5673073e-dbe1-49da-980a-484a88f9595a
 ms.openlocfilehash: 4185198312ed98f9aaa1388626600d9f21abae55
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59213959"
 ---
 # <a name="how-to-set-up-notification-of-binding-updates"></a>Postupy: Nastavení oznámení pro aktualizace vazeb
@@ -35,4 +35,4 @@ Tento příklad ukazuje, jak nastavit upozornění, až se aktualizovala cíl va
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled datových vazeb](data-binding-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

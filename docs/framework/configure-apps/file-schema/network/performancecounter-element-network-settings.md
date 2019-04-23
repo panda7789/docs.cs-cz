@@ -1,5 +1,5 @@
 ---
-title: <performanceCounter> – Element (nastavení sítě)
+title: <performanceCounter> – element (nastavení sítě)
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/performanceCounters
@@ -9,10 +9,10 @@ helpviewer_keywords:
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
 ms.openlocfilehash: 30c5cd07c92a8fc3c340cab0ff9ae74e940c0c12
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59210929"
 ---
 # <a name="performancecounter-element-network-settings"></a>\<performanceCounter > – Element (nastavení sítě)
@@ -47,7 +47,7 @@ Povolí nebo zakáže čítače výkonu sítě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
@@ -78,4 +78,4 @@ Povolí nebo zakáže čítače výkonu sítě.
 - <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
-- [Čítače výkonu práce v síti](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)
+- [Čítače výkonu sítě](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)

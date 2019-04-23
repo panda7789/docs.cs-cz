@@ -18,10 +18,10 @@ helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
 ms.openlocfilehash: 075f70e3ef053507dfe3d408246d179bb57c5891
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211918"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
@@ -123,7 +123,7 @@ ms.locfileid: "59211918"
  Když vaše aplikace vyžaduje určitou sadu datových souborů aplikací, které chcete aktualizovat bez nutnosti rekompilace sestavení, která využívá, je možné, měli byste použít soubory obsahu.  
   
 ### <a name="configuring-content-files"></a>Konfigurace souborů obsahu  
- Přidání obsahu souboru do projektu, musí být zahrnut jako soubor dat aplikace `Content` položky. Navíc vzhledem k tomu, že soubor s obsahem není zkompilován přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`CopyToOutputDirectory` prvek metadat k určení, že obsahu soubor je zkopírován do umístění, která je relativní vzhledem k sestavení. Pokud chcete prostředek, který má být zkopírován do výstupní složka sestavení pokaždé, když je sestaven projekt, můžete nastavit `CopyToOutputDirectory` metadat element s `Always` hodnotu. V opačném případě můžete zajistit, pouze nejnovější verzi prostředku je zkopírována do výstupní složka sestavení s použitím `PreserveNewest` hodnotu.  
+ Přidání obsahu souboru do projektu, musí být zahrnut jako soubor dat aplikace `Content` položky. Navíc vzhledem k tomu, že soubor s obsahem není zkompilován přímo do sestavení, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` prvek metadat k určení, že obsahu soubor je zkopírován do umístění, která je relativní vzhledem k sestavení. Pokud chcete prostředek, který má být zkopírován do výstupní složka sestavení pokaždé, když je sestaven projekt, můžete nastavit `CopyToOutputDirectory` metadat element s `Always` hodnotu. V opačném případě můžete zajistit, pouze nejnovější verzi prostředku je zkopírována do výstupní složka sestavení s použitím `PreserveNewest` hodnotu.  
   
  Následující uvádí soubor, který je nakonfigurovaný jako soubor obsahu, který se zkopíruje do sestavení výstupní složky pouze v případě, že nová verze prostředku se přidá do projektu.  
   
@@ -197,7 +197,7 @@ ms.locfileid: "59211918"
 ### <a name="configuring-site-of-origin-files"></a>Konfigurace serveru původu souborů  
  Pokud váš web původu soubory jsou neexistující nebo neznámé v době kompilace, budete muset použít tradiční nasazení mechanismy pro zajištění požadované soubory jsou k dispozici v době běhu, včetně použití buď `XCopy` program v příkazovém řádku nebo [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- Pokud víte, v době kompilace soubory, které by má být umístěn v lokalitě původu, ale přesto chcete vyhnout explicitní závislosti, můžete přidat tyto soubory [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`CopyToOutputDirectory` atribut k určení, že lokality zdrojový soubor je zkopírován do umístění, která je relativní vzhledem k sestavení, zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
+ Pokud víte, v době kompilace soubory, které by má být umístěn v lokalitě původu, ale přesto chcete vyhnout explicitní závislosti, můžete přidat tyto soubory [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] projektu jako `None` položky. Jak se soubory obsahu, je nutné nastavit [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` atribut k určení, že lokality zdrojový soubor je zkopírován do umístění, která je relativní vzhledem k sestavení, zadáním buď `Always` hodnotu nebo `PreserveNewest` hodnotu.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  

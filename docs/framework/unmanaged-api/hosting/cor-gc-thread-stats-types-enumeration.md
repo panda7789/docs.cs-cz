@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c631a0a3abb3cb2a342dfd44fdffb147b742ae3c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59212463"
 ---
 # <a name="corgcthreadstatstypes-enumeration"></a>COR_GC_THREAD_STATS_TYPES – výčet
@@ -49,4 +49,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Viz také:
 
-- [Výčty hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

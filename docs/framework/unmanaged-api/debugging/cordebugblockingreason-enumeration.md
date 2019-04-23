@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 54652727b4684d71068a19eb5eeb2e862f413f25
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59215076"
 ---
 # <a name="cordebugblockingreason-enumeration"></a>CorDebugBlockingReason – výčet
@@ -43,7 +43,7 @@ Typedef enum CorDebugBlockingReason
 |------------|-----------------|  
 |`BLOCKING_NONE`|Pouze pro interní použití.|  
 |`BLOCKING_MONITOR_CRITICAL_SECTION`|Vlákno se pokouší získat kritický oddíl, který je přidružený k uzamčení monitoru objektu. Obvykle to nastane, pokud voláním <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> metody.|  
-|`BLOCKING_MONITOR_EVENT`|Vlákno čeká na událost, která je přidružený k uzamčení monitoru objektu. Obvykle to nastane, pokud voláním <xref:System.Threading.Monitor?displayProperty=nameWithType>`Wait` metody.|  
+|`BLOCKING_MONITOR_EVENT`|Vlákno čeká na událost, která je přidružený k uzamčení monitoru objektu. Obvykle to nastane, pokud voláním <xref:System.Threading.Monitor?displayProperty=nameWithType> `Wait` metody.|  
   
 ## <a name="remarks"></a>Poznámky  
  Při `BLOCKING_MONITOR_CRITICAL_SECTION` nebo `BLOCKING_MONITOR_EVENT` člena se používá v [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury, `pBlockingObject` členem struktury odkazuje na rozhraní "ICorDebugValue", který představuje objekt, který je zadání . Je také zaručeno, že k implementaci [icordebugheapvalue3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-interface.md) rozhraní.  
@@ -59,5 +59,5 @@ Typedef enum CorDebugBlockingReason
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ladění výčtů](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - credentials [WCF], validation
 ms.assetid: da831bec-e281-4d44-b343-437b5eef688e
 ms.openlocfilehash: 3b1ff700010f471a4d9be117f363083b6cbed493
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59210630"
 ---
 # <a name="custom-credential-and-credential-validation"></a>Vlastní pověření a ověřování pověření
@@ -28,7 +28,7 @@ Zabezpečení Windows Communication Foundation (WCF) je založeno na výměnou p
  [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
  Vysvětluje, jak vytvořit poskytovatele tokenu zabezpečení ke zpracování nových typů přihlašovacích údajů a vrátí nové tokeny pro přihlašovací údaje. Toto je druhá téma v řadě.  
   
- [Postupy: Vytvoření vlastního ověřovacího modulu tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
  Vysvětluje, jak vytvořit vlastní ověřovací data k ověření nový typ přihlašovacích údajů. Toto je třetí téma v řadě.  
   
 ## <a name="reference"></a>Odkaz  

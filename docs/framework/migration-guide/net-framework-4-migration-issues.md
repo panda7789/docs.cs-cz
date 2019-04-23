@@ -8,10 +8,10 @@ ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 368d5f7fa2eec8f3526a10b4777a862e8334617c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59210227"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET Framework 4
@@ -118,7 +118,7 @@ Namespace: <xref:System.Reflection>; sestavení: mscorlib (v knihovně mscorlib.
 | **Algoritmy hash sestavení** | <xref:System.Reflection.AssemblyName.HashAlgorithm> Vlastnosti nyní vrátí <xref:System.Configuration.Assemblies.AssemblyHashAlgorithm>, protože modul runtime neví hashovacího algoritmu sestavení odkazované sestavení není načteno. (To se vztahuje na použití vlastnosti v odkazovaném sestavení vrácený rutinou <xref:System.Reflection.Assembly.GetReferencedAssemblies%2A> metoda.) | Žádné |
 | **Načítání sestavení** | Aby se zabránilo nadbytečné načítání sestavení a uložíte virtuální adresní prostor, CLR se teď načte sestavení pomocí pouze Win32 `MapViewOfFile` funkce. Volá už také `LoadLibrary` funkce.<br><br>Tato změna ovlivní diagnostiky aplikace následujícími způsoby:<br><br>* A <xref:System.Diagnostics.ProcessModuleCollection> již nemusí obsahovat všechny moduly, které z knihovny tříd (soubor .dll), získaný z volání `Process.GetCurrentProcess().Modules`.<br>* Win32 – aplikace, které používají `EnumProcessModules` funkce se nezobrazí všechny spravované moduly, které jsou uvedené. | Žádné |
 | **Deklarující typ** | <xref:System.Type.DeclaringType> Vlastnost nyní správně vrací hodnotu null typu nemá deklarujícího typu. | Žádné |
-| **Delegáty** | Nyní vyvolá delegáta <xref:System.ArgumentNullException> místo <xref:System.NullReferenceException> při hodnotu null je předán konstruktoru delegáta. | Ujistěte se, že jakékoli zpracování výjimky zachytí <xref:System.ArgumentNullException>. |
+| **Delegáti** | Nyní vyvolá delegáta <xref:System.ArgumentNullException> místo <xref:System.NullReferenceException> při hodnotu null je předán konstruktoru delegáta. | Ujistěte se, že jakékoli zpracování výjimky zachytí <xref:System.ArgumentNullException>. |
 | **Změna umístění mezipaměti globálního sestavení** | Pro sestavení rozhraní .NET Framework 4 byl přesunut do globální mezipaměti sestavení v adresáři Windows (% WINDIR %) do podadresáře Microsoft.Net (*% WINDIR %\\Microsoft.Net*). Sestavení ze starší verze, zůstanou v adresáři starší.<br><br>Nespravovanou [ASM_CACHE_FLAGS](../unmanaged-api/fusion/asm-cache-flags-enumeration.md) výčet obsahuje nové `ASM_CACHE_ROOT_EX` příznak. Tento příznak získá umístění mezipaměti pro sestavení rozhraní .NET Framework 4, které je možné získat [GetCachePath](../unmanaged-api/fusion/getcachepath-function.md) funkce. | Žádné, za předpokladu, že aplikace nepoužívejte explicitní cesty k sestavením, která není doporučený postup. |
 | **Nástroj globální mezipaměti sestavení** | [Gacutil.exe (Global Assembly Cache Tool)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ex0ss12c%28v=vs.100%29) už podporuje modul plug-in prohlížeče prostředí. | Žádné |
 
@@ -329,4 +329,4 @@ Obory názvů: <xref:System.Xml.Linq>; <xref:System.Xml.Schema>, <xref:System.Xm
 
 ### <a name="other-resources"></a>Další zdroje
 
-- [Zastaralé položky v knihovně tříd rozhraní .NET Framework](../whats-new/whats-obsolete.md)
+- [Co je zastaralé v knihovně tříd rozhraní .NET Framework](../whats-new/whats-obsolete.md)

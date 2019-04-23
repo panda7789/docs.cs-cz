@@ -6,10 +6,10 @@ helpviewer_keywords:
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
 ms.openlocfilehash: 3b7e1d04173741088935104e8d4225691927a27b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211059"
 ---
 # <a name="application-development"></a>Vývoj aplikací
@@ -122,7 +122,7 @@ ms.locfileid: "59211059"
 |Název|Popis|  
 |-----------|-----------------|  
 |[Přehled správy aplikací](application-management-overview.md)|Najdete zde přehled <xref:System.Windows.Application> třídy, včetně správy životního cyklu aplikací, windows, prostředků aplikace a navigace.|  
-|[Okna ve WPF](windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě windows ve vaší aplikaci, včetně použití <xref:System.Windows.Window> třídy a v dialogových oknech.|  
+|[Windows ve WPF](windows-in-wpf-applications.md)|Poskytuje podrobné informace o správě windows ve vaší aplikaci, včetně použití <xref:System.Windows.Window> třídy a v dialogových oknech.|  
 |[Přehled navigace](navigation-overview.md)|Poskytuje přehled správy navigace mezi stránkami vaší aplikace.|  
 |[Hostování](hosting-wpf-applications.md)|Poskytuje přehled o [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)].|  
 |[Sestavení a nasazení](building-and-deploying-wpf-applications.md)|Popisuje, jak sestavit a nasadit aplikaci WPF.|  

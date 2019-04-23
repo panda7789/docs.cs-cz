@@ -3,10 +3,10 @@ title: <enableWebScript>
 ms.date: 03/30/2017
 ms.assetid: 9c7e96e1-af70-4e6e-ac5c-d67929dddbaa
 ms.openlocfilehash: b2cdd29cda7f82ce555b0f6c1a963567b41ff81b
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59212996"
 ---
 # <a name="enablewebscript"></a>\<enableWebScript>
@@ -37,7 +37,7 @@ Tento prvek umožňuje chování koncového bodu, který umožňuje využívat s
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje sadu chování koncového bodu.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje sadu chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Toto chování byste měli použít pouze ve spojení s buď [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) standardní vazbu, nebo [ \<webMessageEncoding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webmessageencoding.md) element vazby.  Další informace o tomto chování najdete v tématu <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>.  
@@ -46,5 +46,5 @@ Tento prvek umožňuje chování koncového bodu, který umožňuje využívat s
 
 - <xref:System.ServiceModel.Configuration.WebScriptEnablingElement>
 - <xref:System.ServiceModel.Description.WebScriptEnablingBehavior>
-- [Integrace jazyka AJAX a podpora formátu JSON](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)
+- [Integrace jazyka AJAX a podpora JSON](../../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)
 - [\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)

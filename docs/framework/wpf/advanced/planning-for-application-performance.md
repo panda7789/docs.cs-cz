@@ -6,10 +6,10 @@ helpviewer_keywords:
 - WPF application [WPF], optimizing
 ms.assetid: c91bd0c5-a193-46ff-9da1-eb7a3a76a3b3
 ms.openlocfilehash: 70dda68112d47d3e5a0609a5df7696920477c698
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59210201"
 ---
 # <a name="planning-for-application-performance"></a>Plánování výkonu aplikace
@@ -42,4 +42,4 @@ ms.locfileid: "59210201"
 - [Prostředky aplikace](optimizing-performance-application-resources.md)
 - [Text](optimizing-performance-text.md)
 - [Datová vazba](optimizing-performance-data-binding.md)
-- [Další doporučení k optimalizaci výkonu](optimizing-performance-other-recommendations.md)
+- [Další výkonnostní doporučení](optimizing-performance-other-recommendations.md)

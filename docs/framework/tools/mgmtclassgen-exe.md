@@ -14,10 +14,10 @@ ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 061b5aa2208a73f6a53bc5eaee056410256ac6ac
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59213126"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
@@ -54,23 +54,23 @@ WMIClass [options]
   
 |Typ CIM|Datový typ ve vygenerované třídě|  
 |--------------|--------------------------------------|  
-|CIM_SINT8|**SByte**|  
-|CIM_UINT8|**Byte**|  
+|CIM_SINT8|**SByte –**|  
+|CIM_UINT8|**Bajtů**|  
 |CIM_SINT16|**Int16**|  
 |CIM_UINT16|**UInt16**|  
 |CIM_SINT32|**Int32**|  
 |SIM_UINT32|**UInt32**|  
 |CIM_SINT64|**Int64**|  
 |CIM_UINT64|**UInt64**|  
-|CIM_REAL32|**Single**|  
+|CIM_REAL32|**Jeden**|  
 |CIM_REAL64|**Double**|  
-|CIM_BOOLEAN|**Boolean**|  
-|CIM_String|**String**|  
+|CIM_BOOLEAN|**Datový typ Boolean**|  
+|CIM_String|**Řetězec**|  
 |CIM_DATETIME|**Datum a čas** nebo **časový interval**|  
 |CIM_REFERENCE|**ManagementPath**|  
 |CIM_CHAR16|**Char**|  
 |CIM_OBJECT|**ManagementBaseObject**|  
-|CIM_IUNKNOWN|**Objekt**|  
+|CIM_IUNKNOWN|**objekt**|  
 |CIM_ARRAY|Pole objektů uvedených výše|  
   
  Při generování třídy WMI si všimněte následujícího chování:  

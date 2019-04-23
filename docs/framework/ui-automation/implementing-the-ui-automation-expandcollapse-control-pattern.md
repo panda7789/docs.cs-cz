@@ -7,10 +7,10 @@ helpviewer_keywords:
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
 ms.openlocfilehash: ff07f5264ccb3ec699e3676a2e9ba64443b2875f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59211657"
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
@@ -52,7 +52,7 @@ ms.locfileid: "59211657"
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Událost|Tento ovládací prvek nemá žádné přidružené události; Použijte tento obecný delegát.|  
   
 <a name="Exceptions"></a>   

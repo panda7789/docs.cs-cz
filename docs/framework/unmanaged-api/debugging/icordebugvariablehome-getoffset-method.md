@@ -18,10 +18,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 864cb893511bceabd61ce0064065b3866ce01dfe
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59212593"
 ---
 # <a name="icordebugvariablehomegetoffset-method"></a>ICorDebugVariableHome::GetOffset – metoda
@@ -42,7 +42,7 @@ HRESULT GetOffset(
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda vrátí následující hodnoty:  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`S_OK`|Proměnná se nachází v umístění paměti register relativní.|  
 |`E_FAIL`|Proměnná se nenachází v paměti register relativní umístění.|  
