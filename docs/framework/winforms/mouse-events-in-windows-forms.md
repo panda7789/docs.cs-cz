@@ -16,10 +16,10 @@ helpviewer_keywords:
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
 ms.openlocfilehash: 671e37c7d6dc40046d6d717d7785b03b6b545c7e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59333675"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Události myši ve Windows Forms
@@ -93,7 +93,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Vpravo klikněte dvakrát na: Žádné události kliknutí na vyvolána  
   
--   <xref:System.Windows.Forms.ListView>  – ovládací prvek  
+-   <xref:System.Windows.Forms.ListView> Ovládací prvek  
   
     > [!NOTE]
     >  Chování události, které jsou podrobně popsané dochází, pouze když uživatel klikne na položky v <xref:System.Windows.Forms.ListView> ovládacího prvku. Žádné události se generují pro kliknutí na ovládací prvek někde jinde. Kromě události je popsáno dále, jsou k dispozici <xref:System.Windows.Forms.ListView.BeforeLabelEdit> a <xref:System.Windows.Forms.ListView.AfterLabelEdit> události, které mohou být vás zajímají, pokud chcete použít ověřování pomocí <xref:System.Windows.Forms.ListView> ovládacího prvku.  
@@ -106,7 +106,7 @@ Při zpracování vstup z myši obvykle chtít znát umístění myši ukazatele
   
     -   Vpravo klikněte dvakrát na: <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>; <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>  
   
--   <xref:System.Windows.Forms.TreeView>  – ovládací prvek  
+-   <xref:System.Windows.Forms.TreeView> Ovládací prvek  
   
     > [!NOTE]
     >  Chování události, které jsou podrobně popsané dochází, pouze pokud uživatel klikne na samotných položkách nebo napravo od položky <xref:System.Windows.Forms.TreeView> ovládacího prvku. Žádné události se generují pro kliknutí na ovládací prvek někde jinde. Kromě těch popsaných dále, jsou k dispozici <xref:System.Windows.Forms.TreeView.BeforeCheck>, <xref:System.Windows.Forms.TreeView.BeforeSelect>, <xref:System.Windows.Forms.TreeView.BeforeLabelEdit>, <xref:System.Windows.Forms.TreeView.AfterSelect>, <xref:System.Windows.Forms.TreeView.AfterCheck>, a <xref:System.Windows.Forms.TreeView.AfterLabelEdit> události, které mohou být vás zajímají, pokud chcete použít ověřování pomocí <xref:System.Windows.Forms.TreeView> ovládacího prvku .  

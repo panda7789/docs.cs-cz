@@ -8,10 +8,10 @@ helpviewer_keywords:
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
 ms.openlocfilehash: 0b3977e73e3b2aa9e80e2dab08d15035283b8387
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59334143"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty COM (Visual Basic)
@@ -132,5 +132,5 @@ Lze odvodit třídy jazyka Visual Basic z `Public` třídy v objektech COM, vče
 ## <a name="see-also"></a>Viz také:
 
 - [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)
-- [Inherits – příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [Short – datový typ](../../../visual-basic/language-reference/data-types/short-data-type.md)
+- [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)

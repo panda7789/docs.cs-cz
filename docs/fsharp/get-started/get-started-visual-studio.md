@@ -3,10 +3,10 @@ title: Začínáme s F# v sadě Visual Studio
 description: Další informace o použití F# pomocí sady Visual Studio.
 ms.date: 07/03/2018
 ms.openlocfilehash: 020e5d32b3aa5d5a2195c19d70d8fe684fbd56ef
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59331907"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F# v sadě Visual Studio

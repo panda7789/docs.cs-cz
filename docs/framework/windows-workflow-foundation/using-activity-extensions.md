@@ -3,11 +3,11 @@ title: Používání rozšíření aktivit
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
 ms.openlocfilehash: e524f7e7127eb215be85b0c317474eee70830c2b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59321286"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59768955"
 ---
 # <a name="using-activity-extensions"></a>Používání rozšíření aktivit
 Aktivity můžete pracovat s příponami aplikace pracovního postupu, které povolí hostitelské funkce, která není explicitně modelován v pracovním postupu.  Toto téma popisuje postup vytvoření a použití rozšíření ke zjištění počtu pokusů, které tato aktivity spustí.

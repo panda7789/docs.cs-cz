@@ -3,10 +3,10 @@ title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
 ms.openlocfilehash: ed6fc8f5d16ae2d604cdbdf4659ecfaaa83bfa02
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59333272"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
@@ -314,5 +314,5 @@ static void DisplayOrderStatus()
   
 ## <a name="see-also"></a>Viz také:
 
-- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
 - [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)

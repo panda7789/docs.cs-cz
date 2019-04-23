@@ -3,11 +3,11 @@ title: Použití oboru úprav
 ms.date: 03/30/2017
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
 ms.openlocfilehash: 6417e51a29215ce2da22fa4c655642a5fe9b7d18
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59308624"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59769421"
 ---
 # <a name="using-editing-scope"></a>Použití oboru úprav
 Tento příklad ukazuje, jak batch sady změn, takže se můžete vrátit zpět v jednu atomickou jednotku. Ve výchozím nastavení jsou akce prováděné návrháře autorem aktivity automaticky integrované do systému zpět/znovu.  

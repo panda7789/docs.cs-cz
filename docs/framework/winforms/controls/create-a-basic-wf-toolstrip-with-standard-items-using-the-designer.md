@@ -8,10 +8,10 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], adding standard items
 ms.assetid: 028deb1a-acf8-4911-979a-ba8431cd9d82
 ms.openlocfilehash: df6fe22eef338732c14d6f1ff56f25e6d1aa8a2a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59332167"
 ---
 # <a name="how-to-create-a-basic-windows-forms-toolstrip-with-standard-items-using-the-designer"></a>Postupy: Vytvoření základní Windows Forms ToolStrip se standardními položkami pomocí návrháře
@@ -32,6 +32,6 @@ Následující postup ukazuje, jak vytvořit <xref:System.Windows.Forms.ToolStri
 
 - <xref:System.Windows.Forms.ToolStrip>
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
-- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
 - [Architektura ovládacího prvku ToolStrip](toolstrip-control-architecture.md)
-- [Souhrn technologie ToolStrip](toolstrip-technology-summary.md)
+- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)

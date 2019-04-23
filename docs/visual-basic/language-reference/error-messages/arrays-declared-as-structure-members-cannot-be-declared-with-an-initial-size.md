@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC31043
 ms.assetid: 5bd90c71-1b78-444b-91e1-4789451ef085
 ms.openlocfilehash: 5d58b531b670715716e849cd37227bc899195df6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59335300"
 ---
 # <a name="arrays-declared-as-structure-members-cannot-be-declared-with-an-initial-size"></a>U polí deklarovaných jako členové struktury nelze deklarovat počáteční velikost.
@@ -39,4 +39,4 @@ Pole ve struktuře je deklarována s počáteční velikostí. Nelze inicializov
 ## <a name="see-also"></a>Viz také:
 
 - [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Postupy: Definice struktury](../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Postupy: Deklarace struktury](../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)

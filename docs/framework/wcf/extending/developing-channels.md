@@ -3,10 +3,10 @@ title: Vývoj kanálů
 ms.date: 03/30/2017
 ms.assetid: 0513af9f-a0c2-457b-9a50-5b6bfee48513
 ms.openlocfilehash: 44fb0da52c60b900c41b7b497861c12ed72d8ffc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59334534"
 ---
 # <a name="developing-channels"></a>Vývoj kanálů
@@ -35,4 +35,4 @@ Aplikační vrstva pro vývoj pro protokol nebo přenos kanál, který lze použ
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

@@ -3,10 +3,10 @@ title: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
 ms.openlocfilehash: 40054378319b81113dcb8f40cb82a8b1d02fc594
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59307591"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
@@ -79,7 +79,7 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  `ApplicationIntent` – Klíčové slovo nefunguje s databázemi starší verze, jen pro čtení.  
   
- Databázi můžete povolit nebo zakázat úlohami pro čtení na cílovou databázi AlwaysOn. (Používá se k tomu `ALLOW_CONNECTIONS` klauzuli `PRIMARY_ROLE` a `SECONDARY_ROLE`[!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy.)  
+ Databázi můžete povolit nebo zakázat úlohami pro čtení na cílovou databázi AlwaysOn. (Používá se k tomu `ALLOW_CONNECTIONS` klauzuli `PRIMARY_ROLE` a `SECONDARY_ROLE` [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy.)  
   
  `ApplicationIntent` – Klíčové slovo se používá k povolení směrování jen pro čtení.  
   

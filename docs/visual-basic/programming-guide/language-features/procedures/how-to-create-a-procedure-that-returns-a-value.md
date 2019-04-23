@@ -7,10 +7,10 @@ helpviewer_keywords:
 - procedures [Visual Basic], returning a value
 ms.assetid: 8ee19f95-a9ef-4033-963b-d224dca207c4
 ms.openlocfilehash: 115c1df4bd49d5848d72c4cbd0242a49a12740c7
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59335495"
 ---
 # <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Vytvořit proceduru, která vrací hodnotu (Visual Basic)
@@ -40,9 +40,9 @@ Můžete použít `Function` postup, který vrací hodnotu volajícímu kódu.
 
 - [Procedury](./index.md)
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury Property](./property-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
 - [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)
 - [Postupy: Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)

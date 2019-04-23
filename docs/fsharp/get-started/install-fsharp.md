@@ -3,10 +3,10 @@ title: InstalaceF#
 description: Zjistěte, jak nainstalovat F# podle vašeho prostředí.
 ms.date: 08/28/2018
 ms.openlocfilehash: 792c61c0522cd4d0c68a64572f2892ce33f71ea6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59331972"
 ---
 # <a name="install-f"></a>Instalaci F\#
@@ -31,7 +31,7 @@ Po dokončení instalace zvolte možnost "Spustit Visual Studio". Také ho můž
 
 Musíte mít [nainstalovaný git](https://git-scm.com/download) a dostupný na vaší cesty pomocí šablon projektu. Můžete ověřit, jestli je správně nainstalovaný zadáním `git --version` na příkazovém řádku a stisknutím klávesy **Enter**.
 
-### [<a name="macos"></a>macOS](#tab/macos)
+### <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 [Mono](https://www.mono-project.com) se používá pro [ F# interaktivní](../tutorials/fsharp-interactive/index.md) podporovat. Pomocí Homebrew je nejjednodušší způsob, jak nainstalovat Mono v systému macOS. Jednoduše do svého terminálu zadejte následující příkaz:
 
@@ -41,7 +41,7 @@ brew install mono
 
 Nainstalovat také [.NET Core SDK](https://www.microsoft.com/net/download).
 
-### [<a name="linux"></a>Linux](#tab/linux)
+### <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 [Mono](https://www.mono-project.com) se používá pro [ F# interaktivní](../tutorials/fsharp-interactive/index.md) podporovat. Pokud jste v systému Debian nebo Ubuntu, můžete použít následující:
 
@@ -52,7 +52,7 @@ sudo apt-get install mono-complete fsharp
 
 Nainstalovat také [.NET Core SDK](https://www.microsoft.com/net/download).
 
-### [<a name="windows"></a>Windows](#tab/windows)
+### <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 Nainstalujte [Visual Studio s F# podporují](#install-f-with-visual-studio). Tím se nainstaluje všechny komponenty potřebné k zápisu, kompilaci a spouštění F# kódu.
 

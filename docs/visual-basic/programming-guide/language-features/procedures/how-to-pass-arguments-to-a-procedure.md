@@ -12,10 +12,10 @@ helpviewer_keywords:
 - argument passing [Visual Basic], procedures
 ms.assetid: 08723588-3890-4ddc-8249-79e049e0f241
 ms.openlocfilehash: 012ad8e6229958575030ee820a3b0b79cc50facc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59333903"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Postupy: Předání argumentů proceduře (Visual Basic)
@@ -48,11 +48,11 @@ Při volání procedury, použijte název procedury se seznamem argumentů v zá
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury Sub](./sub-procedures.md)
-- [Procedury Function](./function-procedures.md)
-- [Procedury Property](./property-procedures.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Procedury operátoru](./operator-procedures.md)
 - [Postupy: Definování parametru pro proceduru](./how-to-define-a-parameter-for-a-procedure.md)
-- [Předávání argumentů hodnotou nebo referencí](./passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

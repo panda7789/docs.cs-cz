@@ -3,10 +3,10 @@ title: PŘÍPAD (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
 ms.openlocfilehash: e44f48d040fc77bf702759be0c53a618cd84f9fc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59334884"
 ---
 # <a name="case-entity-sql"></a>PŘÍPAD (Entity SQL)
@@ -28,7 +28,7 @@ END
  `n`  
  Je zástupný symbol, který označuje, že více při `Boolean_expression` pak `result_expression` klauzule můžete použít.  
   
- THEN `result_expression`  
+ POTOM `result_expression`  
  Výraz dochází při `Boolean_expression` vyhodnotí jako `true`. `result expression` Je libovolný platný výraz.  
   
  ELSE `else_result_expression`  

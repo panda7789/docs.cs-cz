@@ -6,10 +6,10 @@ helpviewer_keywords:
 - TreeNode [Windows Forms], attaching a shortcut menu using Designer
 ms.assetid: 8e45e184-1313-4f8f-90ff-2cd5789b2268
 ms.openlocfilehash: 9be633d14429bc2ceda1f0db2ff09252d55d5dd5
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59337445"
 ---
 # <a name="how-to-attach-a-shortcut-menu-to-a-treenode-using-the-designer"></a>Postupy: Připojení místní nabídky k TreeNode pomocí Návrháře
@@ -32,6 +32,6 @@ Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek zobrazuje hi
   
 ## <a name="see-also"></a>Viz také:
 
-- [TreeView – ovládací prvek](treeview-control-windows-forms.md)
+- [Ovládací prvek TreeView](treeview-control-windows-forms.md)
 - [Přehled ovládacího prvku TreeView](treeview-control-overview-windows-forms.md)
-- [ContextMenuStrip – ovládací prvek](contextmenustrip-control.md)
+- [Ovládací prvek ContextMenuStrip](contextmenustrip-control.md)

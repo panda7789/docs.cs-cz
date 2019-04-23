@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
 ms.openlocfilehash: cf3ae6f47f63c545edf3d65804daa049d4541788
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59334923"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Doporučené postupy: Správa verzí kontraktů dat
@@ -103,6 +103,6 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
 - <xref:System.Runtime.Serialization.OnDeserializingAttribute>
 - [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
 - [Správa verzí kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
-- [Názvy kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-names.md)
+- [Názvy kontraktů dat](../../../docs/framework/wcf/feature-details/data-contract-names.md)
 - [Kontrakty dat s dopřednou kompatibilitou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)
 - [Zpětná volání serializace tolerantní k verzím](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)

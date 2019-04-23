@@ -3,10 +3,10 @@ title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await 
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
 ms.openlocfilehash: 7f9b71bc76e8d17cf2fb6714070b4439265d1fda
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59335898"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
@@ -22,7 +22,7 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 -   [Vytvoření aplikace WPF](#CreateWPFApp)  
   
--   [Návrh jednoduchého okna MainWindow grafického subsystému WPF](#MainWindow)  
+-   [Návrh jednoduchého hlavního okna MainWindow WPF](#MainWindow)  
   
 -   [Přidání odkazu](#AddRef)  
   
@@ -676,7 +676,7 @@ End Class
 ## <a name="see-also"></a>Viz také:
 
 - [Ukázka asynchronní metody: Přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
-- [Await – operátor](../../../../visual-basic/language-reference/operators/await-operator.md)
+- [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
 - [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)

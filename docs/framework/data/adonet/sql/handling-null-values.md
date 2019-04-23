@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: f18b288f-b265-4bbe-957f-c6833c0645ef
 ms.openlocfilehash: 0d200ad35d3ab56bf97114b51b4f7fcc898eecdf
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59332141"
 ---
 # <a name="handling-null-values"></a>Zpracování hodnot null
@@ -118,7 +118,7 @@ isColumnNull=True, ID=Null, Description=Null
 ```  
   
 ## <a name="comparing-null-values-with-sqltypes-and-clr-types"></a>Porovnání hodnoty Null s SqlTypes a typy CLR  
- Při porovnání hodnoty null, je důležité pochopit rozdíl mezi způsob, jakým `Equals` metoda vyhodnocuje hodnoty null v <xref:System.Data.SqlTypes> mezi tak, jak to funguje s typy CLR. Všechny <xref:System.Data.SqlTypes>`Equals` metody používají sémantiku databáze za vaše rozhodnutí vyzkoušet hodnoty null: Pokud jeden nebo oba z hodnoty null, porovnání vrací hodnotu null. Na druhé straně pomocí CLR `Equals` metoda na dvou <xref:System.Data.SqlTypes> předá hodnotu true, pokud jsou obě hodnotu null. To odpovídá rozdíl mezi použitím metodu instance, jako je například CLR `String.Equals` metoda a pomocí metody statického/shared `SqlString.Equals`.  
+ Při porovnání hodnoty null, je důležité pochopit rozdíl mezi způsob, jakým `Equals` metoda vyhodnocuje hodnoty null v <xref:System.Data.SqlTypes> mezi tak, jak to funguje s typy CLR. Všechny <xref:System.Data.SqlTypes> `Equals` metody používají sémantiku databáze za vaše rozhodnutí vyzkoušet hodnoty null: Pokud jeden nebo oba z hodnoty null, porovnání vrací hodnotu null. Na druhé straně pomocí CLR `Equals` metoda na dvou <xref:System.Data.SqlTypes> předá hodnotu true, pokud jsou obě hodnotu null. To odpovídá rozdíl mezi použitím metodu instance, jako je například CLR `String.Equals` metoda a pomocí metody statického/shared `SqlString.Equals`.  
   
  Následující příklad ukazuje rozdíl mezi výsledky `SqlString.Equals` metoda a `String.Equals` metoda každý je předána dvojici hodnot null a pak pár prázdné řetězce.  
   
