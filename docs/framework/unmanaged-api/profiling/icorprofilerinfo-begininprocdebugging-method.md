@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f12442eb5596ff3dca49cf24e27040f3e92d3a7c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59072607"
 ---
-# <a name="icorprofilerinfobegininprocdebugging-method"></a><span data-ttu-id="b4b7e-102">ICorProfilerInfo::BeginInprocDebugging – metoda</span><span class="sxs-lookup"><span data-stu-id="b4b7e-102">ICorProfilerInfo::BeginInprocDebugging Method</span></span>
-<span data-ttu-id="b4b7e-103">Inicializuje podporu ladění v procesu.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-103">Initializes in-process debugging support.</span></span> <span data-ttu-id="b4b7e-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-104">This method is obsolete in the .NET Framework version 2.0.</span></span>  
+# <a name="icorprofilerinfobegininprocdebugging-method"></a><span data-ttu-id="1f245-102">ICorProfilerInfo::BeginInprocDebugging – metoda</span><span class="sxs-lookup"><span data-stu-id="1f245-102">ICorProfilerInfo::BeginInprocDebugging Method</span></span>
+<span data-ttu-id="1f245-103">Inicializuje podporu ladění v procesu.</span><span class="sxs-lookup"><span data-stu-id="1f245-103">Initializes in-process debugging support.</span></span> <span data-ttu-id="1f245-104">Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="1f245-104">This method is obsolete in the .NET Framework version 2.0.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b4b7e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b4b7e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1f245-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1f245-105">Syntax</span></span>  
   
 ```  
 HRESULT BeginInprocDebugging(  
@@ -35,25 +35,25 @@ HRESULT BeginInprocDebugging(
     [out] DWORD *pdwProfilerContext);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b4b7e-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b4b7e-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1f245-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1f245-106">Parameters</span></span>  
  `fThisThreadOnly`  
- <span data-ttu-id="b4b7e-107">[in] Nastavte tuto hodnotu na `true` inicializovat podporu ladění pro pouze aktuální vlákno, nastavte ho na `false` inicializovat podporu ladění pro všemi vlákny.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-107">[in] Set this value to `true` to initialize debugging support for only the current thread; set it to `false` to initialize debugging support for all threads.</span></span>  
+ <span data-ttu-id="1f245-107">[in] Nastavte tuto hodnotu na `true` inicializovat podporu ladění pro pouze aktuální vlákno, nastavte ho na `false` inicializovat podporu ladění pro všemi vlákny.</span><span class="sxs-lookup"><span data-stu-id="1f245-107">[in] Set this value to `true` to initialize debugging support for only the current thread; set it to `false` to initialize debugging support for all threads.</span></span>  
   
  `pdwProfilerContext`  
- <span data-ttu-id="b4b7e-108">[out] Ukazatel na vrácené hodnoty, který identifikuje relace ladění.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-108">[out] The pointer to a returned value that identifies the debugging session.</span></span>  
+ <span data-ttu-id="1f245-108">[out] Ukazatel na vrácené hodnoty, který identifikuje relace ladění.</span><span class="sxs-lookup"><span data-stu-id="1f245-108">[out] The pointer to a returned value that identifies the debugging session.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b4b7e-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b4b7e-109">Remarks</span></span>  
- <span data-ttu-id="b4b7e-110">Ladění služby CLR nepodporuje omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0 a 1.1.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-110">The CLR debugging services supported limited in-process debugging in the .NET Framework versions 1.0 and 1.1.</span></span> <span data-ttu-id="b4b7e-111">Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-111">In-process debugging enabled a profiler to use the inspection portions of the debugging API.</span></span> <span data-ttu-id="b4b7e-112">Ale z důvodu zpětné vazby od zákazníků, vnitroprocesové ladění má byla odebrána z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.</span><span class="sxs-lookup"><span data-stu-id="b4b7e-112">However, due to customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1f245-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1f245-109">Remarks</span></span>  
+ <span data-ttu-id="1f245-110">Ladění služby CLR nepodporuje omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0 a 1.1.</span><span class="sxs-lookup"><span data-stu-id="1f245-110">The CLR debugging services supported limited in-process debugging in the .NET Framework versions 1.0 and 1.1.</span></span> <span data-ttu-id="1f245-111">Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění.</span><span class="sxs-lookup"><span data-stu-id="1f245-111">In-process debugging enabled a profiler to use the inspection portions of the debugging API.</span></span> <span data-ttu-id="1f245-112">Ale z důvodu zpětné vazby od zákazníků, vnitroprocesové ladění má byla odebrána z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.</span><span class="sxs-lookup"><span data-stu-id="1f245-112">However, due to customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b4b7e-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b4b7e-113">Requirements</span></span>  
- <span data-ttu-id="b4b7e-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b4b7e-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1f245-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1f245-113">Requirements</span></span>  
+ <span data-ttu-id="1f245-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1f245-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b4b7e-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="b4b7e-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1f245-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1f245-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="b4b7e-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b4b7e-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1f245-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1f245-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b4b7e-117">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="b4b7e-117">**.NET Framework Version:** 1.0</span></span>  
+ <span data-ttu-id="1f245-117">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="1f245-117">**.NET Framework Version:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b4b7e-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b4b7e-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1f245-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1f245-118">See also</span></span>
 
-- [<span data-ttu-id="b4b7e-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b4b7e-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="1f245-119">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1f245-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

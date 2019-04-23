@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 35ae3a9761798ed9ea42b984f2c6c2cad4e42777
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59075922"
 ---
-# <a name="icordebugmanagedcallback2destroyconnection-method"></a><span data-ttu-id="45369-102">ICorDebugManagedCallback2::DestroyConnection – metoda</span><span class="sxs-lookup"><span data-stu-id="45369-102">ICorDebugManagedCallback2::DestroyConnection Method</span></span>
-<span data-ttu-id="45369-103">Upozorní ladicího programu, že zadané připojení se ukončilo.</span><span class="sxs-lookup"><span data-stu-id="45369-103">Notifies the debugger that the specified connection has been terminated.</span></span>  
+# <a name="icordebugmanagedcallback2destroyconnection-method"></a><span data-ttu-id="a544c-102">ICorDebugManagedCallback2::DestroyConnection – metoda</span><span class="sxs-lookup"><span data-stu-id="a544c-102">ICorDebugManagedCallback2::DestroyConnection Method</span></span>
+<span data-ttu-id="a544c-103">Upozorní ladicího programu, že zadané připojení se ukončilo.</span><span class="sxs-lookup"><span data-stu-id="a544c-103">Notifies the debugger that the specified connection has been terminated.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="45369-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="45369-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a544c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a544c-104">Syntax</span></span>  
   
 ```  
 HRESULT DestroyConnection (  
@@ -36,26 +36,26 @@ HRESULT DestroyConnection (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="45369-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="45369-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a544c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a544c-105">Parameters</span></span>  
  `pProcess`  
- <span data-ttu-id="45369-106">[in] Ukazatel na objekt ICorDebugProcess, který reprezentuje proces obsahující připojení, které se zničil.</span><span class="sxs-lookup"><span data-stu-id="45369-106">[in] A pointer to an ICorDebugProcess object that represents the process containing the connection that was destroyed.</span></span>  
+ <span data-ttu-id="a544c-106">[in] Ukazatel na objekt ICorDebugProcess, který reprezentuje proces obsahující připojení, které se zničil.</span><span class="sxs-lookup"><span data-stu-id="a544c-106">[in] A pointer to an ICorDebugProcess object that represents the process containing the connection that was destroyed.</span></span>  
   
  `dwConnectionId`  
- <span data-ttu-id="45369-107">[in] ID připojení, které se zničil.</span><span class="sxs-lookup"><span data-stu-id="45369-107">[in] The ID of the connection that was destroyed.</span></span>  
+ <span data-ttu-id="a544c-107">[in] ID připojení, které se zničil.</span><span class="sxs-lookup"><span data-stu-id="a544c-107">[in] The ID of the connection that was destroyed.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="45369-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="45369-108">Remarks</span></span>  
- <span data-ttu-id="45369-109">A `DestroyConnection` zpětné volání bude vyvoláno, když volá hostitele [iclrdebugmanager::endconnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) v [API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).</span><span class="sxs-lookup"><span data-stu-id="45369-109">A `DestroyConnection` callback will be fired when a host calls [ICLRDebugManager::EndConnection](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) in the [Hosting API](../../../../docs/framework/unmanaged-api/hosting/index.md).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a544c-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a544c-108">Remarks</span></span>  
+ <span data-ttu-id="a544c-109">A `DestroyConnection` zpětné volání bude vyvoláno, když volá hostitele [iclrdebugmanager::endconnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) v [API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).</span><span class="sxs-lookup"><span data-stu-id="a544c-109">A `DestroyConnection` callback will be fired when a host calls [ICLRDebugManager::EndConnection](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) in the [Hosting API](../../../../docs/framework/unmanaged-api/hosting/index.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="45369-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="45369-110">Requirements</span></span>  
- <span data-ttu-id="45369-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="45369-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a544c-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a544c-110">Requirements</span></span>  
+ <span data-ttu-id="a544c-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a544c-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="45369-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="45369-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="a544c-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="a544c-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="45369-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="45369-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a544c-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a544c-113">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="45369-114">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="45369-114">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="a544c-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a544c-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="45369-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="45369-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a544c-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a544c-115">See also</span></span>
 
-- [<span data-ttu-id="45369-116">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="45369-116">ICorDebugManagedCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [<span data-ttu-id="45369-117">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="45369-117">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [<span data-ttu-id="a544c-116">ICorDebugManagedCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a544c-116">ICorDebugManagedCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [<span data-ttu-id="a544c-117">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a544c-117">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

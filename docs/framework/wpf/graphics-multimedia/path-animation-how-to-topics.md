@@ -8,30 +8,30 @@ helpviewer_keywords:
 - path animations [WPF]
 ms.assetid: e9b71017-bac4-40d7-858b-326939442cb1
 ms.openlocfilehash: 714303569111f30d4cc03ab0ab7cb2acec4276c2
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59072503"
 ---
-# <a name="path-animation-how-to-topics"></a><span data-ttu-id="f3982-102">Postupy: Témata animace cesty</span><span class="sxs-lookup"><span data-stu-id="f3982-102">Path Animation How-to Topics</span></span>
-<span data-ttu-id="f3982-103">Témata v této části ukazují, jak animace objektu podél cesty.</span><span class="sxs-lookup"><span data-stu-id="f3982-103">The topics in this section demonstrate how to animate an object along a path.</span></span>  
+# <a name="path-animation-how-to-topics"></a><span data-ttu-id="d8472-102">Postupy: Témata animace cesty</span><span class="sxs-lookup"><span data-stu-id="d8472-102">Path Animation How-to Topics</span></span>
+<span data-ttu-id="d8472-103">Témata v této části ukazují, jak animace objektu podél cesty.</span><span class="sxs-lookup"><span data-stu-id="d8472-103">The topics in this section demonstrate how to animate an object along a path.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f3982-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f3982-104">In This Section</span></span>  
- [<span data-ttu-id="f3982-105">Animace objektu podél cesty (dvojitá animace)</span><span class="sxs-lookup"><span data-stu-id="f3982-105">Animate an Object Along a Path (Double Animation)</span></span>](how-to-animate-an-object-along-a-path-double-animation.md)  
- [<span data-ttu-id="f3982-106">Animace objektu podél cesty (bodová animace)</span><span class="sxs-lookup"><span data-stu-id="f3982-106">Animate an Object Along a Path (Point Animation)</span></span>](how-to-animate-an-object-along-a-path-point-animation.md)  
- [<span data-ttu-id="f3982-107">Animace objektu podél cesty (animace matice)</span><span class="sxs-lookup"><span data-stu-id="f3982-107">Animate an Object Along a Path (Matrix Animation)</span></span>](how-to-animate-an-object-along-a-path-matrix-animation.md)  
- [<span data-ttu-id="f3982-108">Animace objektu podél cesty (animace matice s akumulací posunu)</span><span class="sxs-lookup"><span data-stu-id="f3982-108">Animate an Object Along a Path (Matrix Animation with Offset Accumulation)</span></span>](animate-an-object-along-a-path-matrix-animation-with-offset.md)  
- [<span data-ttu-id="f3982-109">Otočení objektu pomocí geometrické cesty (animace matice)</span><span class="sxs-lookup"><span data-stu-id="f3982-109">Rotate an Object by Using a Geometric Path (Matrix Animation)</span></span>](how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation.md)  
- [<span data-ttu-id="f3982-110">Otočení objektu pomocí geometrické cesty</span><span class="sxs-lookup"><span data-stu-id="f3982-110">Rotate an Object by Using a Geometric Path</span></span>](how-to-rotate-an-object-by-using-a-geometric-path.md)  
+## <a name="in-this-section"></a><span data-ttu-id="d8472-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d8472-104">In This Section</span></span>  
+ [<span data-ttu-id="d8472-105">Animace objektu podél cesty (dvojitá animace)</span><span class="sxs-lookup"><span data-stu-id="d8472-105">Animate an Object Along a Path (Double Animation)</span></span>](how-to-animate-an-object-along-a-path-double-animation.md)  
+ [<span data-ttu-id="d8472-106">Animace objektu podél cesty (bodová animace)</span><span class="sxs-lookup"><span data-stu-id="d8472-106">Animate an Object Along a Path (Point Animation)</span></span>](how-to-animate-an-object-along-a-path-point-animation.md)  
+ [<span data-ttu-id="d8472-107">Animace objektu podél cesty (animace matice)</span><span class="sxs-lookup"><span data-stu-id="d8472-107">Animate an Object Along a Path (Matrix Animation)</span></span>](how-to-animate-an-object-along-a-path-matrix-animation.md)  
+ [<span data-ttu-id="d8472-108">Animace objektu podél cesty (animace matice s akumulací posunu)</span><span class="sxs-lookup"><span data-stu-id="d8472-108">Animate an Object Along a Path (Matrix Animation with Offset Accumulation)</span></span>](animate-an-object-along-a-path-matrix-animation-with-offset.md)  
+ [<span data-ttu-id="d8472-109">Otočení objektu pomocí geometrické cesty (animace matice)</span><span class="sxs-lookup"><span data-stu-id="d8472-109">Rotate an Object by Using a Geometric Path (Matrix Animation)</span></span>](how-to-rotate-an-object-by-using-a-geometric-path-matrix-animation.md)  
+ [<span data-ttu-id="d8472-110">Otočení objektu pomocí geometrické cesty</span><span class="sxs-lookup"><span data-stu-id="d8472-110">Rotate an Object by Using a Geometric Path</span></span>](how-to-rotate-an-object-by-using-a-geometric-path.md)  
   
-## <a name="reference"></a><span data-ttu-id="f3982-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f3982-111">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="d8472-111">Odkaz</span><span class="sxs-lookup"><span data-stu-id="d8472-111">Reference</span></span>  
  <xref:System.Windows.Media.Animation.PathAnimationSource>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  
   
-## <a name="see-also"></a><span data-ttu-id="f3982-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3982-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d8472-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d8472-112">See also</span></span>
 
-- [<span data-ttu-id="f3982-113">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="f3982-113">Graphics and Multimedia</span></span>](index.md)
-- [<span data-ttu-id="f3982-114">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="f3982-114">Animation Overview</span></span>](animation-overview.md)
-- [<span data-ttu-id="f3982-115">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f3982-115">Key-Frame Animations Overview</span></span>](key-frame-animations-overview.md)
+- [<span data-ttu-id="d8472-113">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="d8472-113">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="d8472-114">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="d8472-114">Animation Overview</span></span>](animation-overview.md)
+- [<span data-ttu-id="d8472-115">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d8472-115">Key-Frame Animations Overview</span></span>](key-frame-animations-overview.md)

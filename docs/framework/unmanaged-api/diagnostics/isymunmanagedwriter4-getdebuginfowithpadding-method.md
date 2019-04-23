@@ -5,38 +5,38 @@ ms.assetid: 881e20ca-8131-4bd0-ba41-c2d6391b0fe2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 191aa16c285b3a28beed65004d65525c9214ec93
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59081564"
 ---
-# <a name="isymunmanagedwriter4getdebuginfowithpadding-method"></a><span data-ttu-id="8ba57-102">ISymUnmanagedWriter4::GetDebugInfoWithPadding – metoda</span><span class="sxs-lookup"><span data-stu-id="8ba57-102">ISymUnmanagedWriter4::GetDebugInfoWithPadding Method</span></span>
-<span data-ttu-id="8ba57-103">Funguje stejně jako [GetDebugInfo – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty doplněno nulami po ukončujícího znaku null na pevnou velikost, aby se data řetězce `MAX_PATH`.</span><span class="sxs-lookup"><span data-stu-id="8ba57-103">Functions the same as [GetDebugInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) except that the path string is padded with zeros following the terminating null character to make the string data a fixed size of `MAX_PATH`.</span></span> <span data-ttu-id="8ba57-104">Odsazení je uveden pouze pokud je délka řetězec cesty, samotný menší než `MAX_PATH`.</span><span class="sxs-lookup"><span data-stu-id="8ba57-104">Padding is only given if the path string length itself is less than `MAX_PATH`.</span></span>  
+# <a name="isymunmanagedwriter4getdebuginfowithpadding-method"></a><span data-ttu-id="7b0de-102">ISymUnmanagedWriter4::GetDebugInfoWithPadding – metoda</span><span class="sxs-lookup"><span data-stu-id="7b0de-102">ISymUnmanagedWriter4::GetDebugInfoWithPadding Method</span></span>
+<span data-ttu-id="7b0de-103">Funguje stejně jako [GetDebugInfo – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) s tím rozdílem, že řetězec cesty doplněno nulami po ukončujícího znaku null na pevnou velikost, aby se data řetězce `MAX_PATH`.</span><span class="sxs-lookup"><span data-stu-id="7b0de-103">Functions the same as [GetDebugInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-getdebuginfo-method.md) except that the path string is padded with zeros following the terminating null character to make the string data a fixed size of `MAX_PATH`.</span></span> <span data-ttu-id="7b0de-104">Odsazení je uveden pouze pokud je délka řetězec cesty, samotný menší než `MAX_PATH`.</span><span class="sxs-lookup"><span data-stu-id="7b0de-104">Padding is only given if the path string length itself is less than `MAX_PATH`.</span></span>  
   
- <span data-ttu-id="8ba57-105">Díky tomu je snazší psát nástroje tento rozdíl PE soubory.</span><span class="sxs-lookup"><span data-stu-id="8ba57-105">This makes it easier to write tools that difference PE files.</span></span>  
+ <span data-ttu-id="7b0de-105">Díky tomu je snazší psát nástroje tento rozdíl PE soubory.</span><span class="sxs-lookup"><span data-stu-id="7b0de-105">This makes it easier to write tools that difference PE files.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8ba57-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8ba57-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7b0de-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7b0de-106">Syntax</span></span>  
   
 ```idl  
 HRESULT GetDebugInfoWithPadding(    [in, out] IMAGE_DEBUG_DIRECTORY *pIDD,    [in] DWORD cData,    [out] DWORD *pcData,    [out, size_is(cData), length_is(*pcData)] BYTE data[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8ba57-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="8ba57-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7b0de-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="7b0de-107">Parameters</span></span>  
   
-|<span data-ttu-id="8ba57-108">Parametr</span><span class="sxs-lookup"><span data-stu-id="8ba57-108">Parameter</span></span>|<span data-ttu-id="8ba57-109">Popis</span><span class="sxs-lookup"><span data-stu-id="8ba57-109">Description</span></span>|  
+|<span data-ttu-id="7b0de-108">Parametr</span><span class="sxs-lookup"><span data-stu-id="7b0de-108">Parameter</span></span>|<span data-ttu-id="7b0de-109">Popis</span><span class="sxs-lookup"><span data-stu-id="7b0de-109">Description</span></span>|  
 |---------------|-----------------|  
 |`pIDD`||  
 |`cData`||  
 |`pcData`||  
 |`data`||  
   
-## <a name="return-value"></a><span data-ttu-id="8ba57-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8ba57-110">Return Value</span></span>  
- <span data-ttu-id="8ba57-111">Vrátí `HRESULT`.</span><span class="sxs-lookup"><span data-stu-id="8ba57-111">Returns `HRESULT`.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="7b0de-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7b0de-110">Return Value</span></span>  
+ <span data-ttu-id="7b0de-111">Vrátí `HRESULT`.</span><span class="sxs-lookup"><span data-stu-id="7b0de-111">Returns `HRESULT`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8ba57-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8ba57-112">Requirements</span></span>  
- <span data-ttu-id="8ba57-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="8ba57-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7b0de-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7b0de-112">Requirements</span></span>  
+ <span data-ttu-id="7b0de-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="7b0de-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8ba57-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8ba57-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7b0de-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7b0de-114">See also</span></span>
 
-- [<span data-ttu-id="8ba57-115">ISymUnmanagedWriter4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8ba57-115">ISymUnmanagedWriter4 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-interface.md)
+- [<span data-ttu-id="7b0de-115">ISymUnmanagedWriter4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7b0de-115">ISymUnmanagedWriter4 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-interface.md)

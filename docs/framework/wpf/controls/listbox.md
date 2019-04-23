@@ -8,25 +8,25 @@ helpviewer_keywords:
 - controls [WPF], ListBox
 ms.assetid: b91bb352-4f51-44e0-9017-a041f216c852
 ms.openlocfilehash: 69f93b902fc3c35749871a187e57d45a404c6602
-ms.sourcegitcommit: 68eb5c4928e2b082f178a42c16f73fedf52c2ab8
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59055050"
 ---
-# <a name="listbox"></a><span data-ttu-id="81750-102">ListBox</span><span class="sxs-lookup"><span data-stu-id="81750-102">ListBox</span></span>
-<span data-ttu-id="81750-103">A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam volitelných položek.</span><span class="sxs-lookup"><span data-stu-id="81750-103">A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.</span></span>  
+# <a name="listbox"></a><span data-ttu-id="9c053-102">ListBox</span><span class="sxs-lookup"><span data-stu-id="9c053-102">ListBox</span></span>
+<span data-ttu-id="9c053-103">A <xref:System.Windows.Controls.ListBox> řízení poskytuje uživatelům seznam volitelných položek.</span><span class="sxs-lookup"><span data-stu-id="9c053-103">A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.</span></span>  
   
- <span data-ttu-id="81750-104">Následující obrázek ukazuje typické <xref:System.Windows.Controls.ListBox>.</span><span class="sxs-lookup"><span data-stu-id="81750-104">The following figure illustrates a typical <xref:System.Windows.Controls.ListBox>.</span></span>  
+ <span data-ttu-id="9c053-104">Následující obrázek ukazuje typické <xref:System.Windows.Controls.ListBox>.</span><span class="sxs-lookup"><span data-stu-id="9c053-104">The following figure illustrates a typical <xref:System.Windows.Controls.ListBox>.</span></span>  
   
- <span data-ttu-id="81750-105">![ListBox screenshot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span><span class="sxs-lookup"><span data-stu-id="81750-105">![ListBox screenshot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span></span>  
-<span data-ttu-id="81750-106">Typické ListBox</span><span class="sxs-lookup"><span data-stu-id="81750-106">Typical ListBox</span></span>  
+ <span data-ttu-id="9c053-105">![ListBox screenshot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span><span class="sxs-lookup"><span data-stu-id="9c053-105">![ListBox screenshot](./media/ss-ctl-listbox.gif "SS_CTL_listbox")</span></span>  
+<span data-ttu-id="9c053-106">Typické ListBox</span><span class="sxs-lookup"><span data-stu-id="9c053-106">Typical ListBox</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="81750-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="81750-107">In This Section</span></span>  
- [<span data-ttu-id="81750-108">– postupy</span><span class="sxs-lookup"><span data-stu-id="81750-108">How-to Topics</span></span>](listbox-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9c053-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9c053-107">In This Section</span></span>  
+ [<span data-ttu-id="9c053-108">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="9c053-108">How-to Topics</span></span>](listbox-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="81750-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="81750-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="9c053-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="9c053-109">Reference</span></span>  
  <xref:System.Windows.Controls.ListBox>  
   <xref:System.Windows.Controls.ListBoxItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="81750-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="81750-110">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="9c053-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="9c053-110">Related Sections</span></span>

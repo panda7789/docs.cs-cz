@@ -18,47 +18,47 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6a55b62c7c71510435b980a4e5938c20628046f4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59075876"
 ---
-# <a name="iclrtaskexittask-method"></a><span data-ttu-id="4a1bc-102">ICLRTask::ExitTask – metoda</span><span class="sxs-lookup"><span data-stu-id="4a1bc-102">ICLRTask::ExitTask Method</span></span>
-<span data-ttu-id="4a1bc-103">Upozorní common language runtime (CLR), která úloha je reprezentována aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance ukončuje a pokusí se řádně úlohu ukončit.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-103">Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is ending, and attempts to shut the task down gracefully.</span></span>  
+# <a name="iclrtaskexittask-method"></a><span data-ttu-id="9ea37-102">ICLRTask::ExitTask – metoda</span><span class="sxs-lookup"><span data-stu-id="9ea37-102">ICLRTask::ExitTask Method</span></span>
+<span data-ttu-id="9ea37-103">Upozorní common language runtime (CLR), která úloha je reprezentována aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance ukončuje a pokusí se řádně úlohu ukončit.</span><span class="sxs-lookup"><span data-stu-id="9ea37-103">Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is ending, and attempts to shut the task down gracefully.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4a1bc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4a1bc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9ea37-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ea37-104">Syntax</span></span>  
   
 ```  
 HRESULT ExitTask ();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="4a1bc-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4a1bc-105">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9ea37-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9ea37-105">Return Value</span></span>  
   
-|<span data-ttu-id="4a1bc-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="4a1bc-106">HRESULT</span></span>|<span data-ttu-id="4a1bc-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4a1bc-107">Description</span></span>|  
+|<span data-ttu-id="9ea37-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="9ea37-106">HRESULT</span></span>|<span data-ttu-id="9ea37-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9ea37-107">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="4a1bc-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="4a1bc-108">S_OK</span></span>|`ExitTask` <span data-ttu-id="4a1bc-109">bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-109">returned successfully.</span></span>|  
-|<span data-ttu-id="4a1bc-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="4a1bc-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="4a1bc-111">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-111">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="4a1bc-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="4a1bc-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="4a1bc-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-113">The call timed out.</span></span>|  
-|<span data-ttu-id="4a1bc-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="4a1bc-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="4a1bc-115">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-115">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="4a1bc-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="4a1bc-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="4a1bc-117">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="4a1bc-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="4a1bc-118">E_FAIL</span></span>|<span data-ttu-id="4a1bc-119">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="4a1bc-120">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="4a1bc-121">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="9ea37-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="9ea37-108">S_OK</span></span>|<span data-ttu-id="9ea37-109">`ExitTask` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="9ea37-109">`ExitTask` returned successfully.</span></span>|  
+|<span data-ttu-id="9ea37-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="9ea37-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="9ea37-111">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="9ea37-111">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="9ea37-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="9ea37-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="9ea37-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="9ea37-113">The call timed out.</span></span>|  
+|<span data-ttu-id="9ea37-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="9ea37-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="9ea37-115">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="9ea37-115">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="9ea37-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="9ea37-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="9ea37-117">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="9ea37-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="9ea37-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="9ea37-118">E_FAIL</span></span>|<span data-ttu-id="9ea37-119">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="9ea37-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="9ea37-120">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="9ea37-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="9ea37-121">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="9ea37-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="4a1bc-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4a1bc-122">Remarks</span></span>  
- `ExitTask` <span data-ttu-id="4a1bc-123">pokusy o čistého vypnutí úkolu, způsobem, který je obdobou odpojení vlákna od nespravovaný typ knihovny.</span><span class="sxs-lookup"><span data-stu-id="4a1bc-123">attempts a clean shutdown of a task, in a manner analogous to detaching a thread from an unmanaged type library.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9ea37-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9ea37-122">Remarks</span></span>  
+ <span data-ttu-id="9ea37-123">`ExitTask` pokusy o čistého vypnutí úkolu, způsobem, který je obdobou odpojení vlákna od nespravovaný typ knihovny.</span><span class="sxs-lookup"><span data-stu-id="9ea37-123">`ExitTask` attempts a clean shutdown of a task, in a manner analogous to detaching a thread from an unmanaged type library.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4a1bc-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4a1bc-124">Requirements</span></span>  
- <span data-ttu-id="4a1bc-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4a1bc-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9ea37-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9ea37-124">Requirements</span></span>  
+ <span data-ttu-id="9ea37-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9ea37-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4a1bc-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="4a1bc-126">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="9ea37-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9ea37-126">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="4a1bc-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4a1bc-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="9ea37-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9ea37-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="4a1bc-128">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="4a1bc-128">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="9ea37-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ea37-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4a1bc-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a1bc-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9ea37-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ea37-129">See also</span></span>
 
-- [<span data-ttu-id="4a1bc-130">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4a1bc-130">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [<span data-ttu-id="4a1bc-131">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4a1bc-131">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [<span data-ttu-id="4a1bc-132">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4a1bc-132">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [<span data-ttu-id="4a1bc-133">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4a1bc-133">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [<span data-ttu-id="9ea37-130">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ea37-130">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [<span data-ttu-id="9ea37-131">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ea37-131">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [<span data-ttu-id="9ea37-132">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ea37-132">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [<span data-ttu-id="9ea37-133">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ea37-133">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

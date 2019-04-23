@@ -14,20 +14,20 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
 ms.openlocfilehash: 8ed3ba9050a9117a53b5f4f1cccd26381f55ab32
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59073595"
 ---
-# <a name="how-to-set-pictures-at-run-time-windows-forms"></a><span data-ttu-id="90a13-102">Postupy: Nastavení obrázků za běhu (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="90a13-102">How to: Set Pictures at Run Time (Windows Forms)</span></span>
-<span data-ttu-id="90a13-103">Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="90a13-103">You can programmatically set the image displayed by a Windows Forms <xref:System.Windows.Forms.PictureBox> control.</span></span>  
+# <a name="how-to-set-pictures-at-run-time-windows-forms"></a><span data-ttu-id="5cfe3-102">Postupy: Nastavení obrázků za běhu (Windows Forms)</span><span class="sxs-lookup"><span data-stu-id="5cfe3-102">How to: Set Pictures at Run Time (Windows Forms)</span></span>
+<span data-ttu-id="5cfe3-103">Můžete programově nastavení obrázku zobrazovaného rozhraním Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-103">You can programmatically set the image displayed by a Windows Forms <xref:System.Windows.Forms.PictureBox> control.</span></span>  
   
-### <a name="to-set-a-picture-programmatically"></a><span data-ttu-id="90a13-104">Chcete-li nastavit obrázek prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="90a13-104">To set a picture programmatically</span></span>  
+### <a name="to-set-a-picture-programmatically"></a><span data-ttu-id="5cfe3-104">Chcete-li nastavit obrázek prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="5cfe3-104">To set a picture programmatically</span></span>  
   
--   <span data-ttu-id="90a13-105">Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.</span><span class="sxs-lookup"><span data-stu-id="90a13-105">Set the <xref:System.Windows.Forms.PictureBox.Image%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image> class.</span></span>  
+-   <span data-ttu-id="5cfe3-105">Nastavte <xref:System.Windows.Forms.PictureBox.Image%2A> pomocí vlastnosti <xref:System.Drawing.Image.FromFile%2A> metodu <xref:System.Drawing.Image> třídy.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-105">Set the <xref:System.Windows.Forms.PictureBox.Image%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image> class.</span></span>  
   
-     <span data-ttu-id="90a13-106">V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty.</span><span class="sxs-lookup"><span data-stu-id="90a13-106">In the example below, the path set for the location of the image is the My Documents folder.</span></span> <span data-ttu-id="90a13-107">Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář.</span><span class="sxs-lookup"><span data-stu-id="90a13-107">This is done, because you can assume that most computers running the Windows operating system will include this directory.</span></span> <span data-ttu-id="90a13-108">Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace.</span><span class="sxs-lookup"><span data-stu-id="90a13-108">This also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="90a13-109">Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="90a13-109">The example below assumes a form with a <xref:System.Windows.Forms.PictureBox> control already added.</span></span>  
+     <span data-ttu-id="5cfe3-106">V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-106">In the example below, the path set for the location of the image is the My Documents folder.</span></span> <span data-ttu-id="5cfe3-107">Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-107">This is done, because you can assume that most computers running the Windows operating system will include this directory.</span></span> <span data-ttu-id="5cfe3-108">Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-108">This also allows users with minimal system access levels to safely run the application.</span></span> <span data-ttu-id="5cfe3-109">Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-109">The example below assumes a form with a <xref:System.Windows.Forms.PictureBox> control already added.</span></span>  
   
     ```vb  
     Private Sub LoadNewPict()  
@@ -65,9 +65,9 @@ ms.locfileid: "59073595"
        }  
     ```  
   
-### <a name="to-clear-a-graphic"></a><span data-ttu-id="90a13-110">Vymazat obrázek</span><span class="sxs-lookup"><span data-stu-id="90a13-110">To clear a graphic</span></span>  
+### <a name="to-clear-a-graphic"></a><span data-ttu-id="5cfe3-110">Vymazat obrázek</span><span class="sxs-lookup"><span data-stu-id="5cfe3-110">To clear a graphic</span></span>  
   
--   <span data-ttu-id="90a13-111">Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku.</span><span class="sxs-lookup"><span data-stu-id="90a13-111">First, release the memory being used by the image, and then clear the graphic.</span></span> <span data-ttu-id="90a13-112">Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.</span><span class="sxs-lookup"><span data-stu-id="90a13-112">Garbage collection will free up the memory later if memory management becomes a problem.</span></span>  
+-   <span data-ttu-id="5cfe3-111">Nejprve uvolnění paměti používané bitovou kopii a zrušte na obrázku.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-111">First, release the memory being used by the image, and then clear the graphic.</span></span> <span data-ttu-id="5cfe3-112">Uvolňování paměti uvolní se paměť později Pokud Správa paměti stane problém.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-112">Garbage collection will free up the memory later if memory management becomes a problem.</span></span>  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  
@@ -93,15 +93,15 @@ ms.locfileid: "59073595"
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="90a13-113">Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).</span><span class="sxs-lookup"><span data-stu-id="90a13-113">For more information on why you should use the <xref:System.Drawing.Image.Dispose%2A> method in this way, see [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).</span></span>  
+    >  <span data-ttu-id="5cfe3-113">Další informace o důvod, proč byste měli použít <xref:System.Drawing.Image.Dispose%2A> najdete v článku metoda tímto způsobem [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).</span><span class="sxs-lookup"><span data-stu-id="5cfe3-113">For more information on why you should use the <xref:System.Drawing.Image.Dispose%2A> method in this way, see [Cleaning Up Unmanaged Resources](../../../standard/garbage-collection/unmanaged.md).</span></span>  
   
-     <span data-ttu-id="90a13-114">Tento kód se vymažou bitovou kopii, i v případě, že grafický objekt byl načten do ovládacího prvku v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="90a13-114">This code will clear the image even if a graphic was loaded into the control at design time.</span></span>  
+     <span data-ttu-id="5cfe3-114">Tento kód se vymažou bitovou kopii, i v případě, že grafický objekt byl načten do ovládacího prvku v době návrhu.</span><span class="sxs-lookup"><span data-stu-id="5cfe3-114">This code will clear the image even if a graphic was loaded into the control at design time.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="90a13-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="90a13-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5cfe3-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5cfe3-115">See also</span></span>
 
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="90a13-116">Přehled ovládacího prvku PictureBox</span><span class="sxs-lookup"><span data-stu-id="90a13-116">PictureBox Control Overview</span></span>](picturebox-control-overview-windows-forms.md)
-- [<span data-ttu-id="90a13-117">Postupy: Načtení obrázku pomocí Návrháře</span><span class="sxs-lookup"><span data-stu-id="90a13-117">How to: Load a Picture Using the Designer</span></span>](how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [<span data-ttu-id="90a13-118">Postupy: Změna velikosti či umístění obrázku za běhu</span><span class="sxs-lookup"><span data-stu-id="90a13-118">How to: Modify the Size or Placement of a Picture at Run Time</span></span>](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
-- [<span data-ttu-id="90a13-119">Ovládací prvek PictureBox</span><span class="sxs-lookup"><span data-stu-id="90a13-119">PictureBox Control</span></span>](picturebox-control-windows-forms.md)
+- [<span data-ttu-id="5cfe3-116">Přehled ovládacího prvku PictureBox</span><span class="sxs-lookup"><span data-stu-id="5cfe3-116">PictureBox Control Overview</span></span>](picturebox-control-overview-windows-forms.md)
+- [<span data-ttu-id="5cfe3-117">Postupy: Načtení obrázku pomocí návrháře</span><span class="sxs-lookup"><span data-stu-id="5cfe3-117">How to: Load a Picture Using the Designer</span></span>](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [<span data-ttu-id="5cfe3-118">Postupy: Změna velikosti či umístění obrázku za běhu</span><span class="sxs-lookup"><span data-stu-id="5cfe3-118">How to: Modify the Size or Placement of a Picture at Run Time</span></span>](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [<span data-ttu-id="5cfe3-119">Ovládací prvek PictureBox</span><span class="sxs-lookup"><span data-stu-id="5cfe3-119">PictureBox Control</span></span>](picturebox-control-windows-forms.md)

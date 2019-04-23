@@ -1,5 +1,5 @@
 ---
-title: <trace> Prvek
+title: Element <trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace
@@ -11,20 +11,20 @@ helpviewer_keywords:
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 ms.openlocfilehash: 5faf352dce2a459a999b3cf54209f6bd9793bde0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59073790"
 ---
-# <a name="trace-element"></a><span data-ttu-id="7fcab-102">\<trasování > – Element</span><span class="sxs-lookup"><span data-stu-id="7fcab-102">\<trace> Element</span></span>
-<span data-ttu-id="7fcab-103">Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="7fcab-103">Contains listeners that collect, store, and route tracing messages.</span></span>  
+# <a name="trace-element"></a><span data-ttu-id="f3217-102">\<trasování > – Element</span><span class="sxs-lookup"><span data-stu-id="f3217-102">\<trace> Element</span></span>
+<span data-ttu-id="f3217-103">Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="f3217-103">Contains listeners that collect, store, and route tracing messages.</span></span>  
   
- <span data-ttu-id="7fcab-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="7fcab-104">\<configuration></span></span>  
-<span data-ttu-id="7fcab-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="7fcab-105">\<system.diagnostics></span></span>  
-<span data-ttu-id="7fcab-106">\<trasování ></span><span class="sxs-lookup"><span data-stu-id="7fcab-106">\<trace></span></span>  
+ <span data-ttu-id="f3217-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="f3217-104">\<configuration></span></span>  
+<span data-ttu-id="f3217-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="f3217-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="f3217-106">\<trasování ></span><span class="sxs-lookup"><span data-stu-id="f3217-106">\<trace></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7fcab-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7fcab-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f3217-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3217-107">Syntax</span></span>  
   
 ```xml  
 <trace autoflush="true|false"   
@@ -32,46 +32,46 @@ ms.locfileid: "59073790"
        useGlobalLock="true| false"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7fcab-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7fcab-108">Attributes and Elements</span></span>  
- <span data-ttu-id="7fcab-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7fcab-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f3217-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f3217-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="f3217-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="f3217-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7fcab-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="7fcab-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="f3217-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="f3217-110">Attributes</span></span>  
   
-|<span data-ttu-id="7fcab-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="7fcab-111">Attribute</span></span>|<span data-ttu-id="7fcab-112">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcab-112">Description</span></span>|  
+|<span data-ttu-id="f3217-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="f3217-111">Attribute</span></span>|<span data-ttu-id="f3217-112">Popis</span><span class="sxs-lookup"><span data-stu-id="f3217-112">Description</span></span>|  
 |---------------|-----------------|  
-|`autoflush`|<span data-ttu-id="7fcab-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="7fcab-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="7fcab-114">Určuje, zda naslouchacími procesy trasování automaticky vyprázdní výstupní vyrovnávací paměť po každé operaci zápisu.</span><span class="sxs-lookup"><span data-stu-id="7fcab-114">Specifies whether the trace listeners automatically flush the output buffer after every write operation.</span></span>|  
-|`indentsize`|<span data-ttu-id="7fcab-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="7fcab-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="7fcab-116">Určuje počet mezer pro odsazení.</span><span class="sxs-lookup"><span data-stu-id="7fcab-116">Specifies the number of spaces to indent.</span></span>|  
-|`useGlobalLock`|<span data-ttu-id="7fcab-117">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="7fcab-117">Optional attribute.</span></span><br /><br /> <span data-ttu-id="7fcab-118">Označuje, zda má být použita globální zámku.</span><span class="sxs-lookup"><span data-stu-id="7fcab-118">Indicates whether the global lock should be used.</span></span>|  
+|`autoflush`|<span data-ttu-id="f3217-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="f3217-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="f3217-114">Určuje, zda naslouchacími procesy trasování automaticky vyprázdní výstupní vyrovnávací paměť po každé operaci zápisu.</span><span class="sxs-lookup"><span data-stu-id="f3217-114">Specifies whether the trace listeners automatically flush the output buffer after every write operation.</span></span>|  
+|`indentsize`|<span data-ttu-id="f3217-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="f3217-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="f3217-116">Určuje počet mezer pro odsazení.</span><span class="sxs-lookup"><span data-stu-id="f3217-116">Specifies the number of spaces to indent.</span></span>|  
+|`useGlobalLock`|<span data-ttu-id="f3217-117">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="f3217-117">Optional attribute.</span></span><br /><br /> <span data-ttu-id="f3217-118">Označuje, zda má být použita globální zámku.</span><span class="sxs-lookup"><span data-stu-id="f3217-118">Indicates whether the global lock should be used.</span></span>|  
   
-## <a name="autoflush-attribute"></a><span data-ttu-id="7fcab-119">autoflush atribut</span><span class="sxs-lookup"><span data-stu-id="7fcab-119">autoflush Attribute</span></span>  
+## <a name="autoflush-attribute"></a><span data-ttu-id="f3217-119">autoflush atribut</span><span class="sxs-lookup"><span data-stu-id="f3217-119">autoflush Attribute</span></span>  
   
-|<span data-ttu-id="7fcab-120">Value</span><span class="sxs-lookup"><span data-stu-id="7fcab-120">Value</span></span>|<span data-ttu-id="7fcab-121">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcab-121">Description</span></span>|  
+|<span data-ttu-id="f3217-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="f3217-120">Value</span></span>|<span data-ttu-id="f3217-121">Popis</span><span class="sxs-lookup"><span data-stu-id="f3217-121">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="7fcab-122">Není vyprázdnění automaticky výstupní vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="7fcab-122">Does not automatically flush the output buffer.</span></span> <span data-ttu-id="7fcab-123">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="7fcab-123">This is the default.</span></span>|  
-|`true`|<span data-ttu-id="7fcab-124">Automaticky vyprázdní vyrovnávací paměť pro výstup.</span><span class="sxs-lookup"><span data-stu-id="7fcab-124">Automatically flushes the output buffer.</span></span>|  
+|`false`|<span data-ttu-id="f3217-122">Není vyprázdnění automaticky výstupní vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="f3217-122">Does not automatically flush the output buffer.</span></span> <span data-ttu-id="f3217-123">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="f3217-123">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="f3217-124">Automaticky vyprázdní vyrovnávací paměť pro výstup.</span><span class="sxs-lookup"><span data-stu-id="f3217-124">Automatically flushes the output buffer.</span></span>|  
   
-## <a name="usegloballock-attribute"></a><span data-ttu-id="7fcab-125">useGlobalLock atribut</span><span class="sxs-lookup"><span data-stu-id="7fcab-125">useGlobalLock Attribute</span></span>  
+## <a name="usegloballock-attribute"></a><span data-ttu-id="f3217-125">useGlobalLock atribut</span><span class="sxs-lookup"><span data-stu-id="f3217-125">useGlobalLock Attribute</span></span>  
   
-|<span data-ttu-id="7fcab-126">Value</span><span class="sxs-lookup"><span data-stu-id="7fcab-126">Value</span></span>|<span data-ttu-id="7fcab-127">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcab-127">Description</span></span>|  
+|<span data-ttu-id="f3217-126">Value</span><span class="sxs-lookup"><span data-stu-id="f3217-126">Value</span></span>|<span data-ttu-id="f3217-127">Popis</span><span class="sxs-lookup"><span data-stu-id="f3217-127">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="7fcab-128">Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.</span><span class="sxs-lookup"><span data-stu-id="7fcab-128">Does not use the global lock if the listener is thread safe; otherwise, uses the global lock.</span></span>|  
-|`true`|<span data-ttu-id="7fcab-129">Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces.</span><span class="sxs-lookup"><span data-stu-id="7fcab-129">Uses the global lock regardless of whether the listener is thread safe.</span></span> <span data-ttu-id="7fcab-130">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="7fcab-130">This is the default.</span></span>|  
+|`false`|<span data-ttu-id="f3217-128">Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.</span><span class="sxs-lookup"><span data-stu-id="f3217-128">Does not use the global lock if the listener is thread safe; otherwise, uses the global lock.</span></span>|  
+|`true`|<span data-ttu-id="f3217-129">Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces.</span><span class="sxs-lookup"><span data-stu-id="f3217-129">Uses the global lock regardless of whether the listener is thread safe.</span></span> <span data-ttu-id="f3217-130">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="f3217-130">This is the default.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="7fcab-131">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7fcab-131">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="f3217-131">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f3217-131">Child Elements</span></span>  
   
-|<span data-ttu-id="7fcab-132">Prvek</span><span class="sxs-lookup"><span data-stu-id="7fcab-132">Element</span></span>|<span data-ttu-id="7fcab-133">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcab-133">Description</span></span>|  
+|<span data-ttu-id="f3217-132">Prvek</span><span class="sxs-lookup"><span data-stu-id="f3217-132">Element</span></span>|<span data-ttu-id="f3217-133">Popis</span><span class="sxs-lookup"><span data-stu-id="f3217-133">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7fcab-134">\<naslouchací procesy ></span><span class="sxs-lookup"><span data-stu-id="7fcab-134">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|<span data-ttu-id="7fcab-135">Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="7fcab-135">Specifies a listener that collects, stores, and routes messages.</span></span>|  
+|[<span data-ttu-id="f3217-134">\<listeners></span><span class="sxs-lookup"><span data-stu-id="f3217-134">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|<span data-ttu-id="f3217-135">Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="f3217-135">Specifies a listener that collects, stores, and routes messages.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="7fcab-136">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7fcab-136">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="f3217-136">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f3217-136">Parent Elements</span></span>  
   
-|<span data-ttu-id="7fcab-137">Prvek</span><span class="sxs-lookup"><span data-stu-id="7fcab-137">Element</span></span>|<span data-ttu-id="7fcab-138">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcab-138">Description</span></span>|  
+|<span data-ttu-id="f3217-137">Prvek</span><span class="sxs-lookup"><span data-stu-id="f3217-137">Element</span></span>|<span data-ttu-id="f3217-138">Popis</span><span class="sxs-lookup"><span data-stu-id="f3217-138">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="7fcab-139">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7fcab-139">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="7fcab-140">Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="7fcab-140">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|`configuration`|<span data-ttu-id="f3217-139">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f3217-139">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="f3217-140">Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="f3217-140">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="7fcab-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="7fcab-141">Example</span></span>  
- <span data-ttu-id="7fcab-142">Následující příklad ukazuje způsob použití `<trace>` prvek a přidat naslouchací proces `MyListener` k `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="7fcab-142">The following example shows how to use the `<trace>` element to add the listener `MyListener` to the `Listeners` collection.</span></span> `MyListener` <span data-ttu-id="7fcab-143">Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="7fcab-143">creates a file that is named `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="7fcab-144">`useGlobalLock` Atribut je nastaven na `false`, což způsobí, že globální zámek nechcete použít, pokud je bezpečná pro posluchače trasování.</span><span class="sxs-lookup"><span data-stu-id="7fcab-144">The `useGlobalLock` attribute is set to `false`, which causes the global lock not to be used if the trace listener is thread safe.</span></span> <span data-ttu-id="7fcab-145">`autoflush` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování pro zápis do souboru bez ohledu na to, zda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="7fcab-145">The `autoflush` attribute is set to `true`, which causes the trace listener to write to the file regardless of whether the <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="7fcab-146">`indentsize` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="7fcab-146">The `indentsize` attribute is set to 0 (zero), which causes the listener to indent zero spaces when the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> method is called.</span></span>  
+## <a name="example"></a><span data-ttu-id="f3217-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="f3217-141">Example</span></span>  
+ <span data-ttu-id="f3217-142">Následující příklad ukazuje způsob použití `<trace>` prvek a přidat naslouchací proces `MyListener` k `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="f3217-142">The following example shows how to use the `<trace>` element to add the listener `MyListener` to the `Listeners` collection.</span></span> <span data-ttu-id="f3217-143">`MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="f3217-143">`MyListener` creates a file that is named `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="f3217-144">`useGlobalLock` Atribut je nastaven na `false`, což způsobí, že globální zámek nechcete použít, pokud je bezpečná pro posluchače trasování.</span><span class="sxs-lookup"><span data-stu-id="f3217-144">The `useGlobalLock` attribute is set to `false`, which causes the global lock not to be used if the trace listener is thread safe.</span></span> <span data-ttu-id="f3217-145">`autoflush` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování pro zápis do souboru bez ohledu na to, zda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="f3217-145">The `autoflush` attribute is set to `true`, which causes the trace listener to write to the file regardless of whether the <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="f3217-146">`indentsize` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="f3217-146">The `indentsize` attribute is set to 0 (zero), which causes the listener to indent zero spaces when the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> method is called.</span></span>  
   
 ```xml  
 <configuration>  
@@ -85,10 +85,10 @@ ms.locfileid: "59073790"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7fcab-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7fcab-147">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f3217-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3217-147">See also</span></span>
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [<span data-ttu-id="7fcab-148">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="7fcab-148">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [<span data-ttu-id="f3217-148">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="f3217-148">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
