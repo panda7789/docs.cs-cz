@@ -18,17 +18,17 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f626ff6e562bd9bc94440f31e9470a45cc32cfbd
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59216324"
 ---
-# <a name="icordebugthread4getcurrentcustomdebuggernotification-method"></a><span data-ttu-id="6150e-102">ICorDebugThread4::GetCurrentCustomDebuggerNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="6150e-102">ICorDebugThread4::GetCurrentCustomDebuggerNotification Method</span></span>
+# <a name="icordebugthread4getcurrentcustomdebuggernotification-method"></a><span data-ttu-id="5e6c7-102">ICorDebugThread4::GetCurrentCustomDebuggerNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="5e6c7-102">ICorDebugThread4::GetCurrentCustomDebuggerNotification Method</span></span>
 
-<span data-ttu-id="6150e-103">Získá aktuální [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) objektu v aktuálním vláknu.</span><span class="sxs-lookup"><span data-stu-id="6150e-103">Gets the current [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) object on the current thread.</span></span>
+<span data-ttu-id="5e6c7-103">Získá aktuální [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) objektu v aktuálním vláknu.</span><span class="sxs-lookup"><span data-stu-id="5e6c7-103">Gets the current [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) object on the current thread.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="6150e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6150e-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="5e6c7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e6c7-104">Syntax</span></span>
 
 ```cpp
 HRESULT GetCurrentCustomDebuggerNotification(
@@ -36,27 +36,27 @@ HRESULT GetCurrentCustomDebuggerNotification(
     );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="6150e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6150e-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="5e6c7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e6c7-105">Parameters</span></span>
 
 `ppNotificationObject`\
-<span data-ttu-id="6150e-106">[out] Ukazatel na aktuální `ICorDebugManagedCallback3::CustomNotification` objektu v aktuálním vláknu.</span><span class="sxs-lookup"><span data-stu-id="6150e-106">[out] A pointer to the current `ICorDebugManagedCallback3::CustomNotification` object on the current thread.</span></span>
+<span data-ttu-id="5e6c7-106">[out] Ukazatel na aktuální `ICorDebugManagedCallback3::CustomNotification` objektu v aktuálním vláknu.</span><span class="sxs-lookup"><span data-stu-id="5e6c7-106">[out] A pointer to the current `ICorDebugManagedCallback3::CustomNotification` object on the current thread.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="6150e-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6150e-107">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="5e6c7-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5e6c7-107">Remarks</span></span>
 
-<span data-ttu-id="6150e-108">Hodnota `ppNotificationObject` má hodnotu null, pokud metoda není volána zevnitř `ICorDebugManagedCallback3::CustomNotification` zpětné volání, nebo pokud neexistuje žádné aktuální objekt oznámení.</span><span class="sxs-lookup"><span data-stu-id="6150e-108">The value of `ppNotificationObject` is null if the method is not called from within a `ICorDebugManagedCallback3::CustomNotification` callback, or if no current notification object exists.</span></span>
+<span data-ttu-id="5e6c7-108">Hodnota `ppNotificationObject` má hodnotu null, pokud metoda není volána zevnitř `ICorDebugManagedCallback3::CustomNotification` zpětné volání, nebo pokud neexistuje žádné aktuální objekt oznámení.</span><span class="sxs-lookup"><span data-stu-id="5e6c7-108">The value of `ppNotificationObject` is null if the method is not called from within a `ICorDebugManagedCallback3::CustomNotification` callback, or if no current notification object exists.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6150e-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6150e-109">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="5e6c7-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e6c7-109">Requirements</span></span>
 
-<span data-ttu-id="6150e-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6150e-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="5e6c7-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5e6c7-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="6150e-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6150e-111">**Header:** CorDebug.idl, CorDebug.h</span></span>
+<span data-ttu-id="5e6c7-111">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="5e6c7-111">**Header:** CorDebug.idl, CorDebug.h</span></span>
 
-<span data-ttu-id="6150e-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6150e-112">**Library:** CorGuids.lib</span></span>
+<span data-ttu-id="5e6c7-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5e6c7-112">**Library:** CorGuids.lib</span></span>
 
-**<span data-ttu-id="6150e-113">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="6150e-113">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]
+<span data-ttu-id="5e6c7-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5e6c7-113">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6150e-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6150e-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5e6c7-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e6c7-114">See also</span></span>
 
-- [<span data-ttu-id="6150e-115">ICorDebugThread4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6150e-115">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [<span data-ttu-id="6150e-116">Debugging – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6150e-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="6150e-117">Ladění</span><span class="sxs-lookup"><span data-stu-id="6150e-117">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="5e6c7-115">ICorDebugThread4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e6c7-115">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
+- [<span data-ttu-id="5e6c7-116">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="5e6c7-116">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="5e6c7-117">Ladění</span><span class="sxs-lookup"><span data-stu-id="5e6c7-117">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

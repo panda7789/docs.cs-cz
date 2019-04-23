@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 81b647032b2e9474e3b4472552ed884cec92ffc3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59216410"
 ---
-# <a name="iassemblycachequeryassemblyinfo-method"></a><span data-ttu-id="37ba2-102">IAssemblyCache::QueryAssemblyInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="37ba2-102">IAssemblyCache::QueryAssemblyInfo Method</span></span>
-<span data-ttu-id="37ba2-103">Získá požadovaná data o zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="37ba2-103">Gets the requested data about the specified assembly.</span></span>  
+# <a name="iassemblycachequeryassemblyinfo-method"></a><span data-ttu-id="c8d7d-102">IAssemblyCache::QueryAssemblyInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="c8d7d-102">IAssemblyCache::QueryAssemblyInfo Method</span></span>
+<span data-ttu-id="c8d7d-103">Získá požadovaná data o zadané sestavení.</span><span class="sxs-lookup"><span data-stu-id="c8d7d-103">Gets the requested data about the specified assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="37ba2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="37ba2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c8d7d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c8d7d-104">Syntax</span></span>  
   
 ```  
 HRESULT QueryAssemblyInfo (  
@@ -37,27 +37,27 @@ HRESULT QueryAssemblyInfo (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="37ba2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="37ba2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c8d7d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c8d7d-105">Parameters</span></span>  
  `dwFlags`  
- <span data-ttu-id="37ba2-106">[in] Příznaky definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="37ba2-106">[in] Flags defined in Fusion.idl.</span></span> <span data-ttu-id="37ba2-107">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="37ba2-107">The following values are supported:</span></span>  
+ <span data-ttu-id="c8d7d-106">[in] Příznaky definované v Fusion.idl.</span><span class="sxs-lookup"><span data-stu-id="c8d7d-106">[in] Flags defined in Fusion.idl.</span></span> <span data-ttu-id="c8d7d-107">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="c8d7d-107">The following values are supported:</span></span>  
   
--   <span data-ttu-id="37ba2-108">QUERYASMINFO_FLAG_VALIDATE (0X00000001)</span><span class="sxs-lookup"><span data-stu-id="37ba2-108">QUERYASMINFO_FLAG_VALIDATE (0x00000001)</span></span>  
+-   <span data-ttu-id="c8d7d-108">QUERYASMINFO_FLAG_VALIDATE (0X00000001)</span><span class="sxs-lookup"><span data-stu-id="c8d7d-108">QUERYASMINFO_FLAG_VALIDATE (0x00000001)</span></span>  
   
--   <span data-ttu-id="37ba2-109">QUERYASMINFO_FLAG_GETSIZE (0X00000002)</span><span class="sxs-lookup"><span data-stu-id="37ba2-109">QUERYASMINFO_FLAG_GETSIZE (0x00000002)</span></span>  
+-   <span data-ttu-id="c8d7d-109">QUERYASMINFO_FLAG_GETSIZE (0X00000002)</span><span class="sxs-lookup"><span data-stu-id="c8d7d-109">QUERYASMINFO_FLAG_GETSIZE (0x00000002)</span></span>  
   
  `pszAssemblyName`  
- <span data-ttu-id="37ba2-110">[in] Název sestavení, pro kterou budou načtena data.</span><span class="sxs-lookup"><span data-stu-id="37ba2-110">[in] The name of the assembly for which data will be retrieved.</span></span>  
+ <span data-ttu-id="c8d7d-110">[in] Název sestavení, pro kterou budou načtena data.</span><span class="sxs-lookup"><span data-stu-id="c8d7d-110">[in] The name of the assembly for which data will be retrieved.</span></span>  
   
  `pAsmInfo`  
- <span data-ttu-id="37ba2-111">[out v] [Assembly_info –](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) strukturu, která obsahuje data o sestavení.</span><span class="sxs-lookup"><span data-stu-id="37ba2-111">[in, out] An [ASSEMBLY_INFO](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) structure that contains data about the assembly.</span></span>  
+ <span data-ttu-id="c8d7d-111">[out v] [Assembly_info –](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) strukturu, která obsahuje data o sestavení.</span><span class="sxs-lookup"><span data-stu-id="c8d7d-111">[in, out] An [ASSEMBLY_INFO](../../../../docs/framework/unmanaged-api/fusion/assembly-info-structure.md) structure that contains data about the assembly.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="37ba2-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="37ba2-112">Requirements</span></span>  
- <span data-ttu-id="37ba2-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="37ba2-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c8d7d-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c8d7d-112">Requirements</span></span>  
+ <span data-ttu-id="c8d7d-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c8d7d-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="37ba2-114">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="37ba2-114">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="c8d7d-114">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="c8d7d-114">**Header:** Fusion.h</span></span>  
   
- **<span data-ttu-id="37ba2-115">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="37ba2-115">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="c8d7d-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c8d7d-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="37ba2-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="37ba2-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c8d7d-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c8d7d-116">See also</span></span>
 
-- [<span data-ttu-id="37ba2-117">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="37ba2-117">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [<span data-ttu-id="c8d7d-117">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c8d7d-117">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
