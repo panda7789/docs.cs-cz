@@ -1,5 +1,5 @@
 ---
-title: <dependentAssembly> Prvek
+title: Element <dependentAssembly>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly
@@ -12,52 +12,52 @@ ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ac83a0b27a965721dabe1bdf2e05afbdc9b9c961
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59083657"
 ---
-# <a name="dependentassembly-element"></a><span data-ttu-id="1de7a-102">\<dependentAssembly > – Element</span><span class="sxs-lookup"><span data-stu-id="1de7a-102">\<dependentAssembly> Element</span></span>
-<span data-ttu-id="1de7a-103">Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-103">Encapsulates binding policy and assembly location for each assembly.</span></span> <span data-ttu-id="1de7a-104">Použijte jednu `dependentAssembly` – element pro každé sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-104">Use one `dependentAssembly` element for each assembly.</span></span>  
+# <a name="dependentassembly-element"></a><span data-ttu-id="16ebe-102">\<dependentAssembly > – Element</span><span class="sxs-lookup"><span data-stu-id="16ebe-102">\<dependentAssembly> Element</span></span>
+<span data-ttu-id="16ebe-103">Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-103">Encapsulates binding policy and assembly location for each assembly.</span></span> <span data-ttu-id="16ebe-104">Použijte jednu `dependentAssembly` – element pro každé sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-104">Use one `dependentAssembly` element for each assembly.</span></span>  
   
- <span data-ttu-id="1de7a-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="1de7a-105">\<configuration></span></span>  
-<span data-ttu-id="1de7a-106">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="1de7a-106">\<runtime></span></span>  
-<span data-ttu-id="1de7a-107">\<assemblybinding – ></span><span class="sxs-lookup"><span data-stu-id="1de7a-107">\<assemblyBinding></span></span>  
-<span data-ttu-id="1de7a-108">\<dependentAssembly ></span><span class="sxs-lookup"><span data-stu-id="1de7a-108">\<dependentAssembly></span></span>  
+ <span data-ttu-id="16ebe-105">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="16ebe-105">\<configuration></span></span>  
+<span data-ttu-id="16ebe-106">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="16ebe-106">\<runtime></span></span>  
+<span data-ttu-id="16ebe-107">\<assemblybinding – ></span><span class="sxs-lookup"><span data-stu-id="16ebe-107">\<assemblyBinding></span></span>  
+<span data-ttu-id="16ebe-108">\<dependentAssembly ></span><span class="sxs-lookup"><span data-stu-id="16ebe-108">\<dependentAssembly></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1de7a-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1de7a-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="16ebe-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="16ebe-109">Syntax</span></span>  
   
 ```xml  
 <dependentAssembly>   
 </dependentAssembly>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="1de7a-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="1de7a-110">Attributes and Elements</span></span>  
- <span data-ttu-id="1de7a-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="1de7a-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="16ebe-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="16ebe-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="16ebe-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="16ebe-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="1de7a-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="1de7a-112">Attributes</span></span>  
- <span data-ttu-id="1de7a-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="1de7a-113">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="16ebe-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="16ebe-112">Attributes</span></span>  
+ <span data-ttu-id="16ebe-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="16ebe-113">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="1de7a-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="1de7a-114">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="16ebe-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="16ebe-114">Child Elements</span></span>  
   
-|<span data-ttu-id="1de7a-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="1de7a-115">Element</span></span>|<span data-ttu-id="1de7a-116">Popis</span><span class="sxs-lookup"><span data-stu-id="1de7a-116">Description</span></span>|  
+|<span data-ttu-id="16ebe-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="16ebe-115">Element</span></span>|<span data-ttu-id="16ebe-116">Popis</span><span class="sxs-lookup"><span data-stu-id="16ebe-116">Description</span></span>|  
 |-------------|-----------------|  
-|`assemblyIdentity`|<span data-ttu-id="1de7a-117">Obsahuje identifikační informace o sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-117">Contains identifying information about the assembly.</span></span> <span data-ttu-id="1de7a-118">Tento element musí být součástí každého `dependentAssembly` elementu.</span><span class="sxs-lookup"><span data-stu-id="1de7a-118">This element must be included in each `dependentAssembly` element.</span></span>|  
-|`codeBase`|<span data-ttu-id="1de7a-119">Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalovaná na počítači.</span><span class="sxs-lookup"><span data-stu-id="1de7a-119">Specifies where the runtime can find a shared assembly if it is not installed on the computer.</span></span>|  
-|`bindingRedirect`|<span data-ttu-id="1de7a-120">Přesměruje jednu verzi sestavení k jiné.</span><span class="sxs-lookup"><span data-stu-id="1de7a-120">Redirects one assembly version to another.</span></span>|  
-|`publisherPolicy`|<span data-ttu-id="1de7a-121">Určuje, zda modul runtime použije zásady vydavatele pro toto sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-121">Specifies whether the runtime applies publisher policy for this assembly.</span></span>|  
+|`assemblyIdentity`|<span data-ttu-id="16ebe-117">Obsahuje identifikační informace o sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-117">Contains identifying information about the assembly.</span></span> <span data-ttu-id="16ebe-118">Tento element musí být součástí každého `dependentAssembly` elementu.</span><span class="sxs-lookup"><span data-stu-id="16ebe-118">This element must be included in each `dependentAssembly` element.</span></span>|  
+|`codeBase`|<span data-ttu-id="16ebe-119">Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalovaná na počítači.</span><span class="sxs-lookup"><span data-stu-id="16ebe-119">Specifies where the runtime can find a shared assembly if it is not installed on the computer.</span></span>|  
+|`bindingRedirect`|<span data-ttu-id="16ebe-120">Přesměruje jednu verzi sestavení k jiné.</span><span class="sxs-lookup"><span data-stu-id="16ebe-120">Redirects one assembly version to another.</span></span>|  
+|`publisherPolicy`|<span data-ttu-id="16ebe-121">Určuje, zda modul runtime použije zásady vydavatele pro toto sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-121">Specifies whether the runtime applies publisher policy for this assembly.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="1de7a-122">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="1de7a-122">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="16ebe-122">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="16ebe-122">Parent Elements</span></span>  
   
-|<span data-ttu-id="1de7a-123">Prvek</span><span class="sxs-lookup"><span data-stu-id="1de7a-123">Element</span></span>|<span data-ttu-id="1de7a-124">Popis</span><span class="sxs-lookup"><span data-stu-id="1de7a-124">Description</span></span>|  
+|<span data-ttu-id="16ebe-123">Prvek</span><span class="sxs-lookup"><span data-stu-id="16ebe-123">Element</span></span>|<span data-ttu-id="16ebe-124">Popis</span><span class="sxs-lookup"><span data-stu-id="16ebe-124">Description</span></span>|  
 |-------------|-----------------|  
-|`assemblyBinding`|<span data-ttu-id="1de7a-125">Obsahuje informace o přesměrování verze sestavení a umístění sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-125">Contains information about assembly version redirection and the locations of assemblies.</span></span>|  
-|`configuration`|<span data-ttu-id="1de7a-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1de7a-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`runtime`|<span data-ttu-id="1de7a-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="1de7a-127">Contains information about assembly binding and garbage collection.</span></span>|  
+|`assemblyBinding`|<span data-ttu-id="16ebe-125">Obsahuje informace o přesměrování verze sestavení a umístění sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-125">Contains information about assembly version redirection and the locations of assemblies.</span></span>|  
+|`configuration`|<span data-ttu-id="16ebe-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="16ebe-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="16ebe-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="16ebe-127">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="1de7a-128">Příklad</span><span class="sxs-lookup"><span data-stu-id="1de7a-128">Example</span></span>  
- <span data-ttu-id="1de7a-129">Následující příklad ukazuje, jak zapouzdřit informace o sestavení pro dvě sestavení.</span><span class="sxs-lookup"><span data-stu-id="1de7a-129">The following example shows how to encapsulate assembly information for two assemblies.</span></span>  
+## <a name="example"></a><span data-ttu-id="16ebe-128">Příklad</span><span class="sxs-lookup"><span data-stu-id="16ebe-128">Example</span></span>  
+ <span data-ttu-id="16ebe-129">Následující příklad ukazuje, jak zapouzdřit informace o sestavení pro dvě sestavení.</span><span class="sxs-lookup"><span data-stu-id="16ebe-129">The following example shows how to encapsulate assembly information for two assemblies.</span></span>  
   
 ```xml  
 <configuration>  
@@ -80,8 +80,8 @@ ms.locfileid: "59083657"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1de7a-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1de7a-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="16ebe-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="16ebe-130">See also</span></span>
 
-- [<span data-ttu-id="1de7a-131">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="1de7a-131">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [<span data-ttu-id="1de7a-132">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="1de7a-132">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [<span data-ttu-id="1de7a-133">Přesměrování verzí sestavení</span><span class="sxs-lookup"><span data-stu-id="1de7a-133">Redirecting Assembly Versions</span></span>](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [<span data-ttu-id="16ebe-131">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="16ebe-131">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [<span data-ttu-id="16ebe-132">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="16ebe-132">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="16ebe-133">Přesměrování verzí sestavení</span><span class="sxs-lookup"><span data-stu-id="16ebe-133">Redirecting Assembly Versions</span></span>](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

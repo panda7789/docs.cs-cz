@@ -5,30 +5,30 @@ helpviewer_keywords:
 - claims [WCF], creation and resource values
 ms.assetid: 30431f76-cbe7-4bad-bad7-8e43e23a82d4
 ms.openlocfilehash: bd9a8b7faf3cd7a648ff6b2a50ac68f21561497c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59093693"
 ---
-# <a name="claim-creation-and-resource-values"></a><span data-ttu-id="938ca-102">Vytvoření nároku a hodnoty prostředků</span><span class="sxs-lookup"><span data-stu-id="938ca-102">Claim Creation and Resource Values</span></span>
-<span data-ttu-id="938ca-103"><xref:System.IdentityModel.Claims.Claim> Třída poskytuje několik metod pro vytváření instancí vestavěné typy deklarací identity.</span><span class="sxs-lookup"><span data-stu-id="938ca-103">The <xref:System.IdentityModel.Claims.Claim> class provides several methods for creating instances of built-in claims types.</span></span> <span data-ttu-id="938ca-104">Z těchto metod následující provést žádné sémantické nebo formátování kontrolujeme zadaného prostředku:</span><span class="sxs-lookup"><span data-stu-id="938ca-104">Of these methods, the following perform no semantic or format checking on the supplied resource:</span></span>  
+# <a name="claim-creation-and-resource-values"></a><span data-ttu-id="465ae-102">Vytvoření nároku a hodnoty prostředků</span><span class="sxs-lookup"><span data-stu-id="465ae-102">Claim Creation and Resource Values</span></span>
+<span data-ttu-id="465ae-103"><xref:System.IdentityModel.Claims.Claim> Třída poskytuje několik metod pro vytváření instancí vestavěné typy deklarací identity.</span><span class="sxs-lookup"><span data-stu-id="465ae-103">The <xref:System.IdentityModel.Claims.Claim> class provides several methods for creating instances of built-in claims types.</span></span> <span data-ttu-id="465ae-104">Z těchto metod následující provést žádné sémantické nebo formátování kontrolujeme zadaného prostředku:</span><span class="sxs-lookup"><span data-stu-id="465ae-104">Of these methods, the following perform no semantic or format checking on the supplied resource:</span></span>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateDnsClaim%2A>  
   
--   <xref:System.IdentityModel.Claims.Claim.CreateHashClaim%2A> <span data-ttu-id="938ca-105">(nekontroluje délku nebo obsahu objektu pole bajtů)</span><span class="sxs-lookup"><span data-stu-id="938ca-105">(does not check the length or content of the byte array)</span></span>  
+-   <span data-ttu-id="465ae-105"><xref:System.IdentityModel.Claims.Claim.CreateHashClaim%2A> (nekontroluje délku nebo obsahu objektu pole bajtů)</span><span class="sxs-lookup"><span data-stu-id="465ae-105"><xref:System.IdentityModel.Claims.Claim.CreateHashClaim%2A> (does not check the length or content of the byte array)</span></span>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateNameClaim%2A>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateSpnClaim%2A>  
   
--   <xref:System.IdentityModel.Claims.Claim.CreateThumbprintClaim%2A> <span data-ttu-id="938ca-106">(nekontroluje délku nebo obsahu objektu pole bajtů)</span><span class="sxs-lookup"><span data-stu-id="938ca-106">(does not check the length or content of the byte array)</span></span>  
+-   <span data-ttu-id="465ae-106"><xref:System.IdentityModel.Claims.Claim.CreateThumbprintClaim%2A> (nekontroluje délku nebo obsahu objektu pole bajtů)</span><span class="sxs-lookup"><span data-stu-id="465ae-106"><xref:System.IdentityModel.Claims.Claim.CreateThumbprintClaim%2A> (does not check the length or content of the byte array)</span></span>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateUpnClaim%2A>  
   
- <span data-ttu-id="938ca-107">By měl být věnovat pozornost při volání metody výše zajistit, že prostředek, který předané hodnoty jsou ve správném formátu nebo obsahují správný druh informací (nebo obojí).</span><span class="sxs-lookup"><span data-stu-id="938ca-107">Care should be taken when calling the above methods to ensure that the resource values passed in are of the correct format or contain the correct kind of information (or both).</span></span>  
+ <span data-ttu-id="465ae-107">By měl být věnovat pozornost při volání metody výše zajistit, že prostředek, který předané hodnoty jsou ve správném formátu nebo obsahují správný druh informací (nebo obojí).</span><span class="sxs-lookup"><span data-stu-id="465ae-107">Care should be taken when calling the above methods to ensure that the resource values passed in are of the correct format or contain the correct kind of information (or both).</span></span>  
   
- <span data-ttu-id="938ca-108">Následující metody provést určité typy:</span><span class="sxs-lookup"><span data-stu-id="938ca-108">The following methods take specific types:</span></span>  
+ <span data-ttu-id="465ae-108">Následující metody provést určité typy:</span><span class="sxs-lookup"><span data-stu-id="465ae-108">The following methods take specific types:</span></span>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateDenyOnlyWindowsSidClaim%2A>  
   
@@ -42,8 +42,8 @@ ms.locfileid: "59093693"
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim%2A>  
   
-## <a name="see-also"></a><span data-ttu-id="938ca-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="938ca-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="465ae-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="465ae-109">See also</span></span>
 
 - <xref:System.IdentityModel.Claims.Claim>
 - <xref:System.IdentityModel.Claims.ClaimSet>
-- [<span data-ttu-id="938ca-110">Správa deklarací a autorizace s modelem identity</span><span class="sxs-lookup"><span data-stu-id="938ca-110">Managing Claims and Authorization with the Identity Model</span></span>](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [<span data-ttu-id="465ae-110">Správa deklarací identity a autorizace pomocí modelu identit</span><span class="sxs-lookup"><span data-stu-id="465ae-110">Managing Claims and Authorization with the Identity Model</span></span>](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

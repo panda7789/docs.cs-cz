@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c9debf041a26af128dea3cde214630f5a95eac71
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59090653"
 ---
-# <a name="imetadataemitdefineimporttype-method"></a><span data-ttu-id="b5c2a-102">IMetaDataEmit::DefineImportType – metoda</span><span class="sxs-lookup"><span data-stu-id="b5c2a-102">IMetaDataEmit::DefineImportType Method</span></span>
-<span data-ttu-id="b5c2a-103">Vytvoří odkaz na zadaný typ definovaný vně aktuálního oboru, který definuje token pro tento odkaz.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-103">Creates a reference to the specified type that is defined outside the current scope, and defines a token for that reference.</span></span>  
+# <a name="imetadataemitdefineimporttype-method"></a><span data-ttu-id="0fcba-102">IMetaDataEmit::DefineImportType – metoda</span><span class="sxs-lookup"><span data-stu-id="0fcba-102">IMetaDataEmit::DefineImportType Method</span></span>
+<span data-ttu-id="0fcba-103">Vytvoří odkaz na zadaný typ definovaný vně aktuálního oboru, který definuje token pro tento odkaz.</span><span class="sxs-lookup"><span data-stu-id="0fcba-103">Creates a reference to the specified type that is defined outside the current scope, and defines a token for that reference.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b5c2a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b5c2a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0fcba-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0fcba-104">Syntax</span></span>  
   
 ```  
 HRESULT DefineImportType (   
@@ -41,41 +41,41 @@ HRESULT DefineImportType (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b5c2a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b5c2a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0fcba-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0fcba-105">Parameters</span></span>  
  `pAssemImport`  
- <span data-ttu-id="b5c2a-106">[in] [Imetadataassemblyimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní, které představuje sestavení, ze kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-106">[in] An [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface that represents the assembly from which the target type is imported.</span></span>  
+ <span data-ttu-id="0fcba-106">[in] [Imetadataassemblyimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní, které představuje sestavení, ze kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="0fcba-106">[in] An [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface that represents the assembly from which the target type is imported.</span></span>  
   
  `pbHashValue`  
- <span data-ttu-id="b5c2a-107">[in] Pole, která obsahuje hodnotu hash pro sestavení určené parametrem `pAssemImport`.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-107">[in] An array that contains the hash for the assembly specified by `pAssemImport`.</span></span>  
+ <span data-ttu-id="0fcba-107">[in] Pole, která obsahuje hodnotu hash pro sestavení určené parametrem `pAssemImport`.</span><span class="sxs-lookup"><span data-stu-id="0fcba-107">[in] An array that contains the hash for the assembly specified by `pAssemImport`.</span></span>  
   
  `cbHashValue`  
- <span data-ttu-id="b5c2a-108">[in] Počet bajtů `pbHashValue` pole.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-108">[in] The number of bytes in the `pbHashValue` array.</span></span>  
+ <span data-ttu-id="0fcba-108">[in] Počet bajtů `pbHashValue` pole.</span><span class="sxs-lookup"><span data-stu-id="0fcba-108">[in] The number of bytes in the `pbHashValue` array.</span></span>  
   
  `pImport`  
- <span data-ttu-id="b5c2a-109">[in] [Imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní, které představuje obor metadat, ze kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-109">[in] An [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) interface that represents the metadata scope from which the target type is imported.</span></span>  
+ <span data-ttu-id="0fcba-109">[in] [Imetadataimport –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) rozhraní, které představuje obor metadat, ze kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="0fcba-109">[in] An [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) interface that represents the metadata scope from which the target type is imported.</span></span>  
   
  `tdImport`  
- <span data-ttu-id="b5c2a-110">[in] `mdTypeDef` Token, který určuje typ cíle.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-110">[in] An `mdTypeDef` token that specifies the target type.</span></span>  
+ <span data-ttu-id="0fcba-110">[in] `mdTypeDef` Token, který určuje typ cíle.</span><span class="sxs-lookup"><span data-stu-id="0fcba-110">[in] An `mdTypeDef` token that specifies the target type.</span></span>  
   
  `pAssemEmit`  
- <span data-ttu-id="b5c2a-111">[in] [Imetadataassemblyemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) rozhraní, které představuje sestavení, do kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-111">[in] An [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) interface that represents the assembly into which the target type is imported.</span></span>  
+ <span data-ttu-id="0fcba-111">[in] [Imetadataassemblyemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) rozhraní, které představuje sestavení, do kterého se importují cílového typu.</span><span class="sxs-lookup"><span data-stu-id="0fcba-111">[in] An [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) interface that represents the assembly into which the target type is imported.</span></span>  
   
  `ptr`  
- <span data-ttu-id="b5c2a-112">[out] `mdTypeRef` Token, který je definován v oboru pro typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-112">[out] The `mdTypeRef` token that is defined in the current scope for the type reference.</span></span>  
+ <span data-ttu-id="0fcba-112">[out] `mdTypeRef` Token, který je definován v oboru pro typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="0fcba-112">[out] The `mdTypeRef` token that is defined in the current scope for the type reference.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="b5c2a-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b5c2a-113">Remarks</span></span>  
- <span data-ttu-id="b5c2a-114">Před voláním [imetadataemit::defineimportmember –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) metodu, můžete použít `DefineImportType` metodu pro vytvoření odkazu typu v aktuálním oboru pro nadřazené třídu nebo rozhraní nadřazeného člena.</span><span class="sxs-lookup"><span data-stu-id="b5c2a-114">Prior to calling the [IMetaDataEmit::DefineImportMember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) method, you can use the `DefineImportType` method to create a type reference, in the current scope, for the member's parent class or parent interface.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0fcba-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0fcba-113">Remarks</span></span>  
+ <span data-ttu-id="0fcba-114">Před voláním [imetadataemit::defineimportmember –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) metodu, můžete použít `DefineImportType` metodu pro vytvoření odkazu typu v aktuálním oboru pro nadřazené třídu nebo rozhraní nadřazeného člena.</span><span class="sxs-lookup"><span data-stu-id="0fcba-114">Prior to calling the [IMetaDataEmit::DefineImportMember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) method, you can use the `DefineImportType` method to create a type reference, in the current scope, for the member's parent class or parent interface.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b5c2a-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b5c2a-115">Requirements</span></span>  
- <span data-ttu-id="b5c2a-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b5c2a-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0fcba-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0fcba-115">Requirements</span></span>  
+ <span data-ttu-id="0fcba-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0fcba-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b5c2a-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b5c2a-117">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="0fcba-117">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="0fcba-117">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="b5c2a-118">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b5c2a-118">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="0fcba-118">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="0fcba-118">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="b5c2a-119">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="b5c2a-119">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ <span data-ttu-id="0fcba-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0fcba-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b5c2a-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5c2a-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0fcba-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0fcba-120">See also</span></span>
 
-- [<span data-ttu-id="b5c2a-121">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5c2a-121">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="b5c2a-122">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5c2a-122">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="0fcba-121">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0fcba-121">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="0fcba-122">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0fcba-122">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
