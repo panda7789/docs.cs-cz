@@ -9,24 +9,24 @@ helpviewer_keywords:
 - visual effects [WPF]
 ms.assetid: 959cb1cc-d26c-4bbc-b637-251091987288
 ms.openlocfilehash: 3ddcb0b68e2b86393775c159a06f4c38dc7b6971
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59230652"
 ---
-# <a name="graphics-how-to-topics"></a><span data-ttu-id="9b961-102">Postupy: Témata grafiky</span><span class="sxs-lookup"><span data-stu-id="9b961-102">Graphics How-to Topics</span></span>
-<span data-ttu-id="9b961-103">Následující témata ukazují, jak použít grafické funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9b961-103">The following topics demonstrate how to use the graphic capabilities of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="graphics-how-to-topics"></a><span data-ttu-id="e099a-102">Postupy: Témata grafiky</span><span class="sxs-lookup"><span data-stu-id="e099a-102">Graphics How-to Topics</span></span>
+<span data-ttu-id="e099a-103">Následující témata ukazují, jak použít grafické funkce [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e099a-103">The following topics demonstrate how to use the graphic capabilities of the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="9b961-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9b961-104">In This Section</span></span>  
- [<span data-ttu-id="9b961-105">Animace obdélníku</span><span class="sxs-lookup"><span data-stu-id="9b961-105">Animate a Rectangle</span></span>](how-to-animate-a-rectangle.md)  
- [<span data-ttu-id="9b961-106">Animace umístění objektu pomocí PointAnimation</span><span class="sxs-lookup"><span data-stu-id="9b961-106">Animate the Position of an Object by Using PointAnimation</span></span>](how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
- [<span data-ttu-id="9b961-107">Body a vektory transformace</span><span class="sxs-lookup"><span data-stu-id="9b961-107">Transform Points and Vectors</span></span>](how-to-transform-points-and-vectors.md)  
- [<span data-ttu-id="9b961-108">Rozšíření skleněného rámečku do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="9b961-108">Extend Glass Frame Into a WPF Application</span></span>](extend-glass-frame-into-a-wpf-application.md)  
- [<span data-ttu-id="9b961-109">Postupy: Zvýšení výkonu vykreslování uložením elementu do mezipaměti</span><span class="sxs-lookup"><span data-stu-id="9b961-109">How to: Improve Rendering Performance by Caching an Element</span></span>](how-to-improve-rendering-performance-by-caching-an-element.md)  
- [<span data-ttu-id="9b961-110">Postupy: Použití elementu uloženého v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="9b961-110">How to: Use a Cached Element as a Brush</span></span>](how-to-use-a-cached-element-as-a-brush.md)  
+## <a name="in-this-section"></a><span data-ttu-id="e099a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e099a-104">In This Section</span></span>  
+ [<span data-ttu-id="e099a-105">Animace obdélníku</span><span class="sxs-lookup"><span data-stu-id="e099a-105">Animate a Rectangle</span></span>](how-to-animate-a-rectangle.md)  
+ [<span data-ttu-id="e099a-106">Animace umístění objektu pomocí PointAnimation</span><span class="sxs-lookup"><span data-stu-id="e099a-106">Animate the Position of an Object by Using PointAnimation</span></span>](how-to-animate-the-position-of-an-object-by-using-pointanimation.md)  
+ [<span data-ttu-id="e099a-107">Body a vektory transformace</span><span class="sxs-lookup"><span data-stu-id="e099a-107">Transform Points and Vectors</span></span>](how-to-transform-points-and-vectors.md)  
+ [<span data-ttu-id="e099a-108">Rozšíření skleněného rámečku do aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="e099a-108">Extend Glass Frame Into a WPF Application</span></span>](extend-glass-frame-into-a-wpf-application.md)  
+ [<span data-ttu-id="e099a-109">Postupy: Zvýšení výkonu vykreslování zachycením elementu</span><span class="sxs-lookup"><span data-stu-id="e099a-109">How to: Improve Rendering Performance by Caching an Element</span></span>](how-to-improve-rendering-performance-by-caching-an-element.md)  
+ [<span data-ttu-id="e099a-110">Postupy: Použití elementu uloženého v mezipaměti jako štětce</span><span class="sxs-lookup"><span data-stu-id="e099a-110">How to: Use a Cached Element as a Brush</span></span>](how-to-use-a-cached-element-as-a-brush.md)  
   
-## <a name="see-also"></a><span data-ttu-id="9b961-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b961-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e099a-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e099a-111">See also</span></span>
 
 - <xref:System.Windows.Shapes.Shape>
 - <xref:System.Windows.Media.Transform>
@@ -35,5 +35,5 @@ ms.locfileid: "59230652"
 - <xref:System.Windows.Media.Drawing>
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Effects.BitmapEffect>
-- [<span data-ttu-id="9b961-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="9b961-112">Graphics and Multimedia</span></span>](index.md)
-- [<span data-ttu-id="9b961-113">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="9b961-113">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="e099a-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="e099a-112">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="e099a-113">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="e099a-113">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)

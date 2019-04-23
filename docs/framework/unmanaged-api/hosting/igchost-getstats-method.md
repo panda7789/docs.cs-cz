@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 14751b41809eeda5e6bd990fae368879d0f30492
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59227831"
 ---
-# <a name="igchostgetstats-method"></a><span data-ttu-id="eba79-102">IGCHost::GetStats – metoda</span><span class="sxs-lookup"><span data-stu-id="eba79-102">IGCHost::GetStats Method</span></span>
-<span data-ttu-id="eba79-103">Získá statistiku pro aktuální stav systému uvolňování paměti kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba79-103">Gets the statistics for the current state of the garbage collection system.</span></span>  
+# <a name="igchostgetstats-method"></a><span data-ttu-id="5d8ff-102">IGCHost::GetStats – metoda</span><span class="sxs-lookup"><span data-stu-id="5d8ff-102">IGCHost::GetStats Method</span></span>
+<span data-ttu-id="5d8ff-103">Získá statistiku pro aktuální stav systému uvolňování paměti kolekce.</span><span class="sxs-lookup"><span data-stu-id="5d8ff-103">Gets the statistics for the current state of the garbage collection system.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eba79-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eba79-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5d8ff-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5d8ff-104">Syntax</span></span>  
   
 ```  
 HRESULT GetStats (  
@@ -35,22 +35,22 @@ HRESULT GetStats (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="eba79-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="eba79-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5d8ff-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5d8ff-105">Parameters</span></span>  
  `pStats`  
- <span data-ttu-id="eba79-106">[out v] Ukazatel [cor_gc_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) strukturu, která obsahuje statistiku pro aktuální stav systému uvolňování paměti kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba79-106">[in, out] A pointer to a [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) structure that contains the statistics for the current state of the garbage collection system.</span></span>  
+ <span data-ttu-id="5d8ff-106">[out v] Ukazatel [cor_gc_stats –](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) strukturu, která obsahuje statistiku pro aktuální stav systému uvolňování paměti kolekce.</span><span class="sxs-lookup"><span data-stu-id="5d8ff-106">[in, out] A pointer to a [COR_GC_STATS](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md) structure that contains the statistics for the current state of the garbage collection system.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="eba79-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="eba79-107">Remarks</span></span>  
- <span data-ttu-id="eba79-108">Statistiku lze inteligentní přidělení systému systém uvolňování paměti kolekce, provoz.</span><span class="sxs-lookup"><span data-stu-id="eba79-108">The statistics can be used by a smart allocation system to help the garbage collection system operate.</span></span> <span data-ttu-id="eba79-109">Například přidělení systém může určit, prohlédněte si statistiky, které je nutné přidat další paměť nebo vynutit kolekce.</span><span class="sxs-lookup"><span data-stu-id="eba79-109">For example, the allocation system may determine, after reviewing the statistics, that it needs to add more memory or force a collection.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5d8ff-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5d8ff-107">Remarks</span></span>  
+ <span data-ttu-id="5d8ff-108">Statistiku lze inteligentní přidělení systému systém uvolňování paměti kolekce, provoz.</span><span class="sxs-lookup"><span data-stu-id="5d8ff-108">The statistics can be used by a smart allocation system to help the garbage collection system operate.</span></span> <span data-ttu-id="5d8ff-109">Například přidělení systém může určit, prohlédněte si statistiky, které je nutné přidat další paměť nebo vynutit kolekce.</span><span class="sxs-lookup"><span data-stu-id="5d8ff-109">For example, the allocation system may determine, after reviewing the statistics, that it needs to add more memory or force a collection.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="eba79-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eba79-110">Requirements</span></span>  
- <span data-ttu-id="eba79-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eba79-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5d8ff-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5d8ff-110">Requirements</span></span>  
+ <span data-ttu-id="5d8ff-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5d8ff-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="eba79-112">**Záhlaví:** GCHost.idl, GCHost.h</span><span class="sxs-lookup"><span data-stu-id="eba79-112">**Header:** GCHost.idl, GCHost.h</span></span>  
+ <span data-ttu-id="5d8ff-112">**Záhlaví:** GCHost.idl, GCHost.h</span><span class="sxs-lookup"><span data-stu-id="5d8ff-112">**Header:** GCHost.idl, GCHost.h</span></span>  
   
- <span data-ttu-id="eba79-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="eba79-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="5d8ff-113">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5d8ff-113">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="eba79-114">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="eba79-114">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="5d8ff-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5d8ff-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eba79-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eba79-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5d8ff-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5d8ff-115">See also</span></span>
 
-- [<span data-ttu-id="eba79-116">IGCHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eba79-116">IGCHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+- [<span data-ttu-id="5d8ff-116">IGCHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5d8ff-116">IGCHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

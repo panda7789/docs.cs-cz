@@ -3,18 +3,18 @@ title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
 ms.openlocfilehash: 775f93f319c136a29a32ffaa1dfabc12ee081b29
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59227506"
 ---
-# <a name="bindingelementextensions"></a><span data-ttu-id="60edc-101">\<bindingElementExtensions ></span><span class="sxs-lookup"><span data-stu-id="60edc-101">\<bindingElementExtensions></span></span>
-<span data-ttu-id="60edc-102">Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="60edc-102">This section enables the use of a custom binding element from a machine or application configuration file.</span></span> <span data-ttu-id="60edc-103">Vlastní prvek vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu, který chcete rozšíření elementu vazby, stejně jako `name` atribut na prvek vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="60edc-103">You can add a custom binding element to this collection by using the `add` keyword, and setting the `type` attribute of the element to a binding element extension, as well as the `name` attribute to the custom binding element.</span></span>  
+# <a name="bindingelementextensions"></a><span data-ttu-id="91df7-101">\<bindingElementExtensions ></span><span class="sxs-lookup"><span data-stu-id="91df7-101">\<bindingElementExtensions></span></span>
+<span data-ttu-id="91df7-102">Tato část umožňuje používat vlastní prvek vazby z počítače nebo konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="91df7-102">This section enables the use of a custom binding element from a machine or application configuration file.</span></span> <span data-ttu-id="91df7-103">Vlastní prvek vazby můžete přidat do této kolekce pomocí `add` – klíčové slovo a nastavení `type` atribut elementu, který chcete rozšíření elementu vazby, stejně jako `name` atribut na prvek vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="91df7-103">You can add a custom binding element to this collection by using the `add` keyword, and setting the `type` attribute of the element to a binding element extension, as well as the `name` attribute to the custom binding element.</span></span>  
   
- <span data-ttu-id="60edc-104">Rozšíření vazby umožňují uživateli vytvořit uživatelem definované vazby prvky pro použití jako součást vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="60edc-104">Binding extensions enable the user to create user-defined binding elements for use as part of custom bindings.</span></span> <span data-ttu-id="60edc-105">Prostřednictvím kódu programu, rozšíření vazby je typ, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.BindingElement>.</span><span class="sxs-lookup"><span data-stu-id="60edc-105">Programmatically, a binding extension is a type that implements the abstract class <xref:System.ServiceModel.Channels.BindingElement>.</span></span> <span data-ttu-id="60edc-106">V konfiguračním souboru `bindingElementExtensions` oddíl se používá k definování element rozšíření.</span><span class="sxs-lookup"><span data-stu-id="60edc-106">In the configuration file, the `bindingElementExtensions` section is used to define an extension element.</span></span>  
+ <span data-ttu-id="91df7-104">Rozšíření vazby umožňují uživateli vytvořit uživatelem definované vazby prvky pro použití jako součást vlastní vazby.</span><span class="sxs-lookup"><span data-stu-id="91df7-104">Binding extensions enable the user to create user-defined binding elements for use as part of custom bindings.</span></span> <span data-ttu-id="91df7-105">Prostřednictvím kódu programu, rozšíření vazby je typ, který implementuje abstraktní třídu <xref:System.ServiceModel.Channels.BindingElement>.</span><span class="sxs-lookup"><span data-stu-id="91df7-105">Programmatically, a binding extension is a type that implements the abstract class <xref:System.ServiceModel.Channels.BindingElement>.</span></span> <span data-ttu-id="91df7-106">V konfiguračním souboru `bindingElementExtensions` oddíl se používá k definování element rozšíření.</span><span class="sxs-lookup"><span data-stu-id="91df7-106">In the configuration file, the `bindingElementExtensions` section is used to define an extension element.</span></span>  
   
- <span data-ttu-id="60edc-107">V následujícím příkladu `add` element, stejně jako `name` atribut můžete přidat příponu vazby na `bindingElementExtensions` oddílu konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="60edc-107">The following example uses the `add` element, as well as the `name` attribute to add a binding extension to the `bindingElementExtensions` section of the configuration file.</span></span>  
+ <span data-ttu-id="91df7-107">V následujícím příkladu `add` element, stejně jako `name` atribut můžete přidat příponu vazby na `bindingElementExtensions` oddílu konfiguračního souboru.</span><span class="sxs-lookup"><span data-stu-id="91df7-107">The following example uses the `add` element, as well as the `name` attribute to add a binding extension to the `bindingElementExtensions` section of the configuration file.</span></span>  
   
 ```xml  
 <system.serviceModel>
@@ -28,9 +28,9 @@ ms.locfileid: "59227506"
 </system.serviceModel>
 ```  
   
- <span data-ttu-id="60edc-108">Chcete-li přidat možnosti konfigurace na prvek, uživatel musí k zápisu a registrace `bindingElementExtensionSection` elementu.</span><span class="sxs-lookup"><span data-stu-id="60edc-108">To add configuration abilities to the element, the user needs to write and register a `bindingElementExtensionSection` element.</span></span> <span data-ttu-id="60edc-109">Další informace najdete v článku <xref:System.Configuration> dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="60edc-109">For more information on this, see the <xref:System.Configuration> documentation.</span></span>  
+ <span data-ttu-id="91df7-108">Chcete-li přidat možnosti konfigurace na prvek, uživatel musí k zápisu a registrace `bindingElementExtensionSection` elementu.</span><span class="sxs-lookup"><span data-stu-id="91df7-108">To add configuration abilities to the element, the user needs to write and register a `bindingElementExtensionSection` element.</span></span> <span data-ttu-id="91df7-109">Další informace najdete v článku <xref:System.Configuration> dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="91df7-109">For more information on this, see the <xref:System.Configuration> documentation.</span></span>  
   
- <span data-ttu-id="60edc-110">Po definování elementu a jeho typ konfigurace rozšíření, je možné jako součást vlastní vazby, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="60edc-110">After the element and its configuration type are defined, the extension can be used as part of a custom binding as shown in the following example.</span></span>  
+ <span data-ttu-id="91df7-110">Po definování elementu a jeho typ konfigurace rozšíření, je možné jako součást vlastní vazby, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="91df7-110">After the element and its configuration type are defined, the extension can be used as part of a custom binding as shown in the following example.</span></span>  
   
 ```xml  
 <customBinding>
@@ -43,7 +43,7 @@ ms.locfileid: "59227506"
 </customBinding>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="60edc-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="60edc-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="91df7-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91df7-111">See also</span></span>
 
 - <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>
-- [<span data-ttu-id="60edc-112">Rozšiřování vazeb</span><span class="sxs-lookup"><span data-stu-id="60edc-112">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [<span data-ttu-id="91df7-112">Rozšíření vazeb</span><span class="sxs-lookup"><span data-stu-id="91df7-112">Extending Bindings</span></span>](../../../../../docs/framework/wcf/extending/extending-bindings.md)

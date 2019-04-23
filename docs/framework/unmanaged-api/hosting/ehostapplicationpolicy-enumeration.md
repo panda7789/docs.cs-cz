@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b3fb71686c3d708de7a2cc71f65a32c22e52f26
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59229424"
 ---
-# <a name="ehostapplicationpolicy-enumeration"></a><span data-ttu-id="83b3c-102">EHostApplicationPolicy – výčet</span><span class="sxs-lookup"><span data-stu-id="83b3c-102">EHostApplicationPolicy Enumeration</span></span>
-<span data-ttu-id="83b3c-103">Určuje, jak upravit [ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu.</span><span class="sxs-lookup"><span data-stu-id="83b3c-103">Indicates how to modify an [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) interface object.</span></span> <span data-ttu-id="83b3c-104">Tento výčet je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="83b3c-104">This enumeration has been deprecated.</span></span>  
+# <a name="ehostapplicationpolicy-enumeration"></a><span data-ttu-id="342d3-102">EHostApplicationPolicy – výčet</span><span class="sxs-lookup"><span data-stu-id="342d3-102">EHostApplicationPolicy Enumeration</span></span>
+<span data-ttu-id="342d3-103">Určuje, jak upravit [ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu.</span><span class="sxs-lookup"><span data-stu-id="342d3-103">Indicates how to modify an [IHostAssemblyManager](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) interface object.</span></span> <span data-ttu-id="342d3-104">Tento výčet je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="342d3-104">This enumeration has been deprecated.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="83b3c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83b3c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="342d3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="342d3-105">Syntax</span></span>  
   
 ```  
 typedef enum _HostApplicationPolicy {  
@@ -34,15 +34,15 @@ typedef enum _HostApplicationPolicy {
 } EHostApplicationPolicy;  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="83b3c-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83b3c-106">Requirements</span></span>  
- <span data-ttu-id="83b3c-107">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="83b3c-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="342d3-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="342d3-106">Requirements</span></span>  
+ <span data-ttu-id="342d3-107">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="342d3-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="83b3c-108">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="83b3c-108">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="342d3-108">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="342d3-108">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="83b3c-109">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="83b3c-109">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="342d3-109">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="342d3-109">**Library:** MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="83b3c-110">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="83b3c-110">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="342d3-110">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="342d3-110">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83b3c-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83b3c-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="342d3-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="342d3-111">See also</span></span>
 
-- [<span data-ttu-id="83b3c-112">Výčty hostování</span><span class="sxs-lookup"><span data-stu-id="83b3c-112">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+- [<span data-ttu-id="342d3-112">Výčty pro hostování</span><span class="sxs-lookup"><span data-stu-id="342d3-112">Hosting Enumerations</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
