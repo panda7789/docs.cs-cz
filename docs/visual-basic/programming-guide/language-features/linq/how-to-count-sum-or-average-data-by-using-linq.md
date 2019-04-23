@@ -16,10 +16,10 @@ helpviewer_keywords:
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
 ms.openlocfilehash: 9b29c738a953bb6260357b1b67cc46a97eeb4369
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313629"
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, SUMA nebo průměr dat pomocí LINQ (Visual Basic)
@@ -81,7 +81,7 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
 
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
-- [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
-- [Metody DataContext (O/R Designer)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
-- [Aggregate – klauzule](../../../../visual-basic/language-reference/queries/aggregate-clause.md)
-- [Group By – klauzule](../../../../visual-basic/language-reference/queries/group-by-clause.md)
+- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [Klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md)
+- [Klauzule Group By](../../../../visual-basic/language-reference/queries/group-by-clause.md)

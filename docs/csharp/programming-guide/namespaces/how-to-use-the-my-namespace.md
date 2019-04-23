@@ -6,10 +6,10 @@ helpviewer_keywords:
 - C# language, My namespace access
 ms.assetid: e7152414-0ea5-4c8e-bf02-c8d5bbe45ff4
 ms.openlocfilehash: 9621f6a01ef4e30bf34b97df3d2c3033e9b62a23
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59316021"
 ---
 # <a name="how-to-use-the-my-namespace-c-programming-guide"></a>Postupy: Použití My Namespace (C# Průvodce programováním v)
@@ -41,6 +41,6 @@ ms.locfileid: "59316021"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
-- [Jmenné prostory](../../../csharp/programming-guide/namespaces/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)
 - [Použití oboru názvů](../../../csharp/programming-guide/namespaces/using-namespaces.md)

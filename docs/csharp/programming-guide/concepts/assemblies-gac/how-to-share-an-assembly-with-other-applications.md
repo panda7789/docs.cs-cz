@@ -3,10 +3,10 @@ title: 'Postupy: Sdílení sestavení s jinými aplikacemi (C#)'
 ms.date: 07/20/2015
 ms.assetid: c30e972b-1693-4e05-b115-c31831fdf9f2
 ms.openlocfilehash: 8bb36c2aded1144349b86b17a45eef4b48c8aabe
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314786"
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-c"></a>Postupy: Sdílení sestavení s jinými aplikacemi (C#)
@@ -28,5 +28,5 @@ Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, vět�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
 - [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)

@@ -12,10 +12,10 @@ ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6bf6acc719b4697534e845f64890ddcd9cac550f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315761"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
@@ -378,7 +378,7 @@ interface _Graphics {
   
 |Typ hodnoty systému|IDL – typ|  
 |-----------------------|--------------|  
-|<xref:System.DateTime?displayProperty=nameWithType>|**DATE (Datum)**|  
+|<xref:System.DateTime?displayProperty=nameWithType>|**DATUM**|  
 |<xref:System.Decimal?displayProperty=nameWithType>|**DECIMAL**|  
 |<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
 |<xref:System.Drawing.Color?displayProperty=nameWithType>|**OLE_COLOR**|  

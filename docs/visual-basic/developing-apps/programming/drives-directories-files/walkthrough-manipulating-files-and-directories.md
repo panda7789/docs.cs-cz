@@ -16,10 +16,10 @@ helpviewer_keywords:
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
 ms.openlocfilehash: 4d0aac533759f8cc20ac4f19d7f0e49fef17bf56
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314682"
 ---
 # <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáře v jazyce Visual Basic
@@ -43,13 +43,13 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
   
 4. Přidat ovládací prvky do formuláře v následující tabulce a nastavit odpovídající hodnoty pro jejich vlastností.  
   
-    |Control|Vlastnost|Value|  
+    |Control|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Name**|`filesListBox`|  
-    |**Tlačítko**|**Name**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
-    |**Tlačítko**|**Name**<br /><br /> **Text**|`examineButton`<br /><br /> **Prozkoumat**|  
-    |**CheckBox**|**Name**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložit výsledky**|  
-    |**FolderBrowserDialog**|**Name**|`FolderBrowserDialog1`|  
+    |**ListBox**|**Název**|`filesListBox`|  
+    |**Tlačítko**|**Název**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
+    |**Tlačítko**|**Název**<br /><br /> **Text**|`examineButton`<br /><br /> **Prozkoumat**|  
+    |**CheckBox**|**Název**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložit výsledky**|  
+    |**FolderBrowserDialog**|**Název**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Vyberte složku, a seznam souborů ve složce  
   
@@ -164,4 +164,4 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
 - <xref:System.IO>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
-- [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+- [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

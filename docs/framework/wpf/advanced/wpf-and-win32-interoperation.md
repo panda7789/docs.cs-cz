@@ -8,10 +8,10 @@ helpviewer_keywords:
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
 ms.openlocfilehash: 71c454edc6a124f732f1e6b56e25c28671fa11b6
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314409"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Win32
@@ -29,7 +29,7 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
   
 <a name="projects"></a>   
 ## <a name="wpf-interoperation-projects"></a>Součinnost projekty WPF  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] are managed code, but most existing [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sspravovaný kód, ale většina existující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programy jsou napsané v nespravované [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)].enNejde volat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] ze skutečného nespravované aplikace.nNicméně s použitím `/clr` spolu s možností [!INCLUDE[TLA#tla_visualcpp](../../../../includes/tlasharptla-visualcpp-md.md)] kompilátor, můžete vytvořit smíšené spravovaného nespravovaného programu ve kterém můžete bez problémů používat spravované a nespravované [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] volání.  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] spravovaný kód, ale většina existující [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programy jsou napsané v nespravované [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)].  Nejde volat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] ze skutečného nespravované aplikace. Nicméně s použitím `/clr` spolu s možností [!INCLUDE[TLA#tla_visualcpp](../../../../includes/tlasharptla-visualcpp-md.md)] kompilátor, můžete vytvořit smíšené spravovaného nespravovaného programu ve kterém můžete bez problémů používat spravované a nespravované [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] volání.  
   
  Jeden komplikací na úrovni projektu je, že nejde zkompilovat [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory do [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] projektu.  Existuje několik postupů dělení projektu jako kompenzaci za to.  
   
@@ -159,5 +159,5 @@ Toto téma obsahuje přehled o tom, jak zajistit vzájemnou funkční spoluprác
 - <xref:System.Windows.Interop.HwndHost>
 - <xref:System.Windows.Interop.HwndSource>
 - <xref:System.Windows.Interop>
-- [Návod: Hostování ovládacího prvku Win32 ve WPF](walkthrough-hosting-a-win32-control-in-wpf.md)
-- [Návod: Hostování obsahu WPF ve Win32](walkthrough-hosting-wpf-content-in-win32.md)
+- [Návod: Hostování ovládacího prvku Win32 v subsystému WPF](walkthrough-hosting-a-win32-control-in-wpf.md)
+- [Návod: Hostování obsahu WPF v Win32](walkthrough-hosting-wpf-content-in-win32.md)

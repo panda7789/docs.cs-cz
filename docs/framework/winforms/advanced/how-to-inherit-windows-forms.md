@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Windows Forms, inheritance
 ms.assetid: cb3e1c0f-3d2a-4cdc-b0d1-c92eae567ffb
 ms.openlocfilehash: 0d8799359a12b9bb64331d83df2500bede8c0ff2
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314539"
 ---
 # <a name="how-to-inherit-windows-forms"></a>Postupy: Dědění v modelu Windows Forms
@@ -42,8 +42,8 @@ Vytvoření nového formuláře Windows děděním z podkladové formuláře je 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Inherits – příkaz](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
-- [Imports – příkaz (obor názvů a typ rozhraní .NET)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [používání](~/docs/csharp/language-reference/keywords/using.md)
+- [Příkaz Inherits](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
+- [Příkaz Imports (obor názvů a typ .NET)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [using](~/docs/csharp/language-reference/keywords/using.md)
 - [Účinky úpravy vzhledu základního formuláře](effects-of-modifying-base-form-appearance.md)
-- [Vizuální dědění Windows Forms](windows-forms-visual-inheritance.md)
+- [Vizuální dědění modelu Windows Forms](windows-forms-visual-inheritance.md)

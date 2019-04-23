@@ -7,10 +7,10 @@ helpviewer_keywords:
 - Windows Forms controls, filling client area
 ms.assetid: bc11f2e4-e90a-4830-b0e2-f43b6e2b8bec
 ms.openlocfilehash: d015dce7307bec092f6da1dc5ee31691a6baf1f0
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317256"
 ---
 # <a name="how-to-dock-controls-on-windows-forms"></a>Postupy: Ukotvení ovládacích prvků ve Windows Forms
@@ -38,12 +38,12 @@ Můžete ukotvit ovládací prvky k okrajům formuláře nebo ho zadejte kontejn
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ovládací prvky Windows Forms](index.md)
+- [Windows Forms – ovládací prvky](index.md)
 - [Uspořádávání ovládacích prvků ve Windows Forms](arranging-controls-on-windows-forms.md)
 - [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)
 - [Ovládací prvky Windows Forms podle funkce](windows-forms-controls-by-function.md)
-- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)
-- [Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
+- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku FlowLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control.md)
+- [Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel](how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control.md)
 - [Přehled vlastnosti AutoSize](autosize-property-overview.md)
 - [Postupy: Ukotvení ovládacích prvků ve Windows Forms](how-to-anchor-controls-on-windows-forms.md)

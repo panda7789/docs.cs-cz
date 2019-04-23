@@ -9,10 +9,10 @@ helpviewer_keywords:
 - custom animation classes [WPF]
 ms.assetid: 9be69d50-3384-4938-886f-08ce00e4a7a6
 ms.openlocfilehash: 268d218097233aee795154226cc6f7c3ce318f5c
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313941"
 ---
 # <a name="custom-animations-overview"></a>Přehled vlastních animací
@@ -132,5 +132,5 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
 - [Přehled animací klíčových snímků](key-frame-animations-overview.md)
 - [Přehled animací cesty](path-animations-overview.md)
 - [Přehled animace](animation-overview.md)
-- [Animace a časování přehledu systému](animation-and-timing-system-overview.md)
+- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
 - [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)

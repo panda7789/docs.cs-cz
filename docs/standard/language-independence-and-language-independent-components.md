@@ -16,10 +16,10 @@ ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b64b0dd843f408f9a6d064aff935f8d18b3dbddd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313369"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Jazyková nezávislost a jazykově nezávislé komponenty
@@ -60,7 +60,7 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
   
     -   [Události](#events)  
   
-    -   [Přetížení](#overloads)  
+    -   [Overloads](#overloads)  
   
     -   [Výjimky](#exceptions)  
   
@@ -137,8 +137,8 @@ Rozhraní .NET Framework je nezávislá na jazyce. To znamená, že jako vývoj�
 |Zásady vytváření názvů|[Zásady vytváření názvů](#naming)|Sestavení musí dodržovat přílohu 7 technické zprávy 15 sady Unicode Standard3.0 řídící sadu znaků povolených pro spuštění a být součástí identifikátory, které jsou k dispozici online na <https://www.unicode.org/unicode/reports/tr15/tr15-18.html>. Identifikátory musí být v kanonickém formátu definovaném v normalizačním formuláři Unicode C. Pro účely specifikace CLS jsou dva identifikátory stejné v případě mapování jejich malých písmen (podle specifikací Unicode národním prostředí, 1: 1 malé písmeno mapování) jsou totožné. To znamená, že dva identifikátory, aby bylo považováno za jiné v rámci specifikace CLS se liší se ve více než jednoduchém případě. Za účelem přepsání zděděné definice však rozhraní příkazového řádku vyžaduje, přesného kódování v původní deklaraci použít.|4|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Všechny názvy zavedené v oboru kompatibilní se Specifikací CLS musí být odlišné bez ohledu na typ, s výjimkou případů, kdy jsou názvy shodné a jsou vyřešeny prostřednictvím přetížení. To znamená, že při CTS umožňuje, aby jeden typ používal stejný název pro metodu a pole, CLS to neumožňuje.|5|  
 |Přetížení|[Zásady vytváření názvů](#naming)|Pole a vnořené typy musí být různé podle porovnání identifikátoru, i když CTS umožňuje odlišit různé podpisy. Metody, vlastnosti a události, které mají stejný název (podle porovnání identifikátoru) se musí lišit více než jen návratovým typem, mimo specifikaci v pravidla 39 CLS.|6|  
-|Přetížení|[Přetížení](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
-|Přetížení|[Přetížení](#overloads)|Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu.|38|  
+|Přetížení|[Overloads](#overloads)|Mohou být přetíženy pouze vlastnosti a metody.|37|  
+|Přetížení|[Overloads](#overloads)|Vlastnosti a metody mohou být přetíženy pouze na základě čísla a typů jejich parametrů, s výjimkou operátorů převodu s názvem `op_Implicit` a `op_Explicit`, které mohou také být přetíženy podle jejich návratového typu.|38|  
 |Přetížení|--|Pokud mají dvě nebo více kompatibilní se Specifikací CLS metod deklarovaných v typu stejný název a pro konkrétní sadu vytváření instancí typů mají stejný parametr a návratové typy, musí být sémanticky rovnocenné v těchto instancí typů všechny tyto metody.|48|  
 |Typy|[Typ a signatury členů typu](#Types)|<xref:System.Object?displayProperty=nameWithType> je kompatibilní se Specifikací CLS. Jiná třída odpovídající specifikaci CLS musí dědit z třídy odpovídající specifikaci CLS.|23|  
 |Vlastnosti|[Vlastnosti](#properties)|Metody, které implementují metody getter a setter vlastnosti musí být označeny `SpecialName` v metadatech.|24|  

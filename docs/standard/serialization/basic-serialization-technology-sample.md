@@ -3,10 +3,10 @@ title: Ukázka technologie základní serializace
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
 ms.openlocfilehash: dc190a93e45bf2b682aff0158ccd42bc09762d9a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315007"
 ---
 # <a name="basic-serialization-technology-sample"></a>Ukázka technologie základní serializace
@@ -52,7 +52,7 @@ ms.locfileid: "59315007"
   
  Příklad:  
   
- **Serialize.exe - dx Test.xml**  
+ **Serialize.exe -dx Test.xml**  
   
  V obou výše uvedených příkladech "x" v přepínačem příkazového řádku udává, že serializace XML SOAP. "B" můžete místo ní používat binární serializace. Pokud chcete akci serializace s velmi velkým počtem uzlů, můžete chtít přesměrovat výstup konzoly do souboru.  
   

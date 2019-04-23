@@ -3,10 +3,10 @@ title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59318231"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: Vytváření nepodepsaných přátelských sestavení (C#)
@@ -93,7 +93,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
+- [Sestavení v .NET](../../../../standard/assembly/index.md)
 - [Přátelská sestavení](../../../../standard/assembly/friend-assemblies.md)
 - [Postupy: Vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [Průvodce programováním v C#](../../../../csharp/programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

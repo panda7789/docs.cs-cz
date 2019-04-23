@@ -7,10 +7,10 @@ helpviewer_keywords:
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
 ms.openlocfilehash: 469074336c8aa49fee1acf871360f8dbc1363247
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313265"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
@@ -69,11 +69,11 @@ Při vytváření služby můžete použít šablonu projektu sady Visual Studio
   
 ## <a name="see-also"></a>Viz také:
 
-- [Představení aplikací spouštěných jako služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
 - [Postupy: Zápis služeb prostřednictvím kódu programu](../../../docs/framework/windows-services/how-to-write-services-programmatically.md)
 - [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
-- [Postupy: Zaznamenávání informací o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
-- [Postupy: Spuštění služby](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Protokolu informace o službách](../../../docs/framework/windows-services/how-to-log-information-about-services.md)
+- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
 - [Postupy: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
 - [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
 - [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)

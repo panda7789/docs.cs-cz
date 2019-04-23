@@ -10,10 +10,10 @@ helpviewer_keywords:
 - properties [WPF], methods for animating
 ms.assetid: 74f61413-f8c0-4e75-bf04-951886426c8b
 ms.openlocfilehash: ebee350f69b5c5e4f9d38c452b9c87bf003528ee
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317906"
 ---
 # <a name="property-animation-techniques-overview"></a>Přehled způsobů animace vlastností
@@ -59,7 +59,7 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](how-to-trigger-an-animation-when-a-property-value-changes.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Spuštění animace při změně dat](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa970679(v=vs.90))|  
-|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
+|<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  Další informace o <xref:System.Windows.Media.Animation.Storyboard> objekty, najdete [přehled scénářů](storyboards-overview.md).  
   
@@ -125,5 +125,5 @@ Toto téma popisuje různé přístupy k animace vlastností: scénáře, místn
 
 - [Přehled animace](animation-overview.md)
 - [Přehled scénářů](storyboards-overview.md)
-- [Animace a časování přehledu systému](animation-and-timing-system-overview.md)
+- [Přehled animace a systému časování](animation-and-timing-system-overview.md)
 - [Přehled vlastností závislosti](../advanced/dependency-properties-overview.md)

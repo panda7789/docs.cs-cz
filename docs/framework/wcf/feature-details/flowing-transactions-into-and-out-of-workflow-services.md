@@ -3,10 +3,10 @@ title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
 ms.openlocfilehash: 25ab4e415ce2cd6044cedef4841c1ba88254542e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315111"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
@@ -130,10 +130,10 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 10. Přetáhnout myší <xref:System.Activities.Statements.Assign> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Value|  
+    |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |Chcete-li|replyMessage|  
-    |Value|"Service: Odeslání odpovědi."|  
+    |Hodnota|"Service: Odeslání odpovědi."|  
   
 11. Přetáhnout myší <xref:System.Activities.Statements.WriteLine> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte jeho <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnost "Service: Začněte odpověď."  
   
@@ -315,4 +315,4 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
 ## <a name="see-also"></a>Viz také:
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
-- [Transakce ve Windows Communication Foundation – přehled](../../../../docs/framework/wcf/feature-details/transactions-overview.md)
+- [Přehled transakcí ve Windows Communication Foundation](../../../../docs/framework/wcf/feature-details/transactions-overview.md)

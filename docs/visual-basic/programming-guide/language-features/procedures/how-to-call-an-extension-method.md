@@ -6,10 +6,10 @@ helpviewer_keywords:
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
 ms.openlocfilehash: 5cb0684637a716dfec947740ba345c62eaabddd7
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313798"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Postupy: Volání metody rozšíření (Visual Basic)
@@ -96,6 +96,6 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Zápis rozšiřující metody](./how-to-write-an-extension-method.md)
-- [Metody rozšíření](./extension-methods.md)
-- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Postupy: Zápis metody rozšíření](./how-to-write-an-extension-method.md)
+- [Rozšiřující metody](./extension-methods.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

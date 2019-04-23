@@ -19,10 +19,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 074cca51cee2b0227e1d124f1d40a2ffc31e3c85
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314071"
 ---
 # <a name="identityattributeblob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
@@ -247,4 +247,4 @@ Exit:
 - [IReferenceIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)
 - [IEnumIDENTITY_ATTRIBUTE – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)
 - [IDENTITY_ATTRIBUTE – struktura](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)
-- [Struktury fúzí](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)

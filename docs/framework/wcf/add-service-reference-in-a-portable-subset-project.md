@@ -3,10 +3,10 @@ title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
 ms.openlocfilehash: 92ee180da531259b005b5782c180a139fd66847b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59316723"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu

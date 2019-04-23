@@ -4,10 +4,10 @@ description: Informace v závislosti na vaší Windows potřebujete počítač p
 ms.custom: updateeachvsrelease
 ms.date: 04/08/2019
 ms.openlocfilehash: 2941721dfa4b87d4113e4f4b529845e47f3dc1b9
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313707"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
@@ -73,7 +73,7 @@ Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .
 
 Další informace o změnách v sadě Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
 
-# [<a name="net-core-2x"></a>.NET Core 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Můžete vyvíjet aplikace .NET Core v sadě Visual Studio 2017 pomocí .NET Core 2.2 SDK:
 
@@ -101,7 +101,7 @@ Jakmile budete mít nakonfigurované s .NET Core 2.2 SDK sady Visual Studio, mů
 * Změnit cílení projektů .NET Core 1.x a 2.x na .NET Core 2.2, sestavení a spusťte.
 * Vytvořte nové projekty .NET Core 2.2.
 
-# [<a name="net-core-1x"></a>.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 Můžete vyvíjet aplikace .NET Core 1.x v sadě Visual Studio [stáhnout a nainstalovat sadu Visual Studio 2017](/visualstudio/install/install-visual-studio) s **"Vývoj pro různé platformy .NET Core"** úloh (v **další sady nástrojů**části) vybrané.
 

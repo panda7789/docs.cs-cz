@@ -3,10 +3,10 @@ title: Použití editoru vlastních výrazů
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
 ms.openlocfilehash: 4bf885911719f2ec673cb515807f0879535aed7d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314084"
 ---
 # <a name="using-a-custom-expression-editor"></a>Použití editoru vlastních výrazů

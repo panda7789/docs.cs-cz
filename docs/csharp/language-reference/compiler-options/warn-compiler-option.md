@@ -13,10 +13,10 @@ helpviewer_keywords:
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
 ms.openlocfilehash: 17dd992edbec5ce444b53ed42b2b486282618672
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315800"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
@@ -66,5 +66,5 @@ csc -warn:1 in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

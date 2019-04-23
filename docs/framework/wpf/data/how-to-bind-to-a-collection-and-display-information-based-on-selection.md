@@ -11,10 +11,10 @@ helpviewer_keywords:
 - data binding [WPF], binding to collections
 ms.assetid: 952a7d76-dd29-49e5-86f5-32c4530e70eb
 ms.openlocfilehash: bb7d4c89e63982a3052857dcb50d04d36d9517dd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314386"
 ---
 # <a name="how-to-bind-to-a-collection-and-display-information-based-on-selection"></a>Postupy: Vytvoření vazby ke kolekci a zobrazení informací podle výběru
@@ -51,4 +51,4 @@ V jednoduchém scénáři hlavní podrobnosti máte vázaný na data <xref:Syste
 - [Použití vzoru seznam-podrobnosti s hierarchickými daty XML](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
 - [Přehled datových vazeb](data-binding-overview.md)
 - [Přehled datových šablon](data-templating-overview.md)
-- [– postupy](data-binding-how-to-topics.md)
+- [Témata s postupy](data-binding-how-to-topics.md)

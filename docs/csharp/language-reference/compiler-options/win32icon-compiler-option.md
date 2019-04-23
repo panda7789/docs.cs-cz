@@ -9,10 +9,10 @@ helpviewer_keywords:
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
 ms.openlocfilehash: 7bc7da8121ec1190908d9b94fc7c987f9888c020
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59317444"
 ---
 # <a name="-win32icon-c-compiler-options"></a>-win32icon (možnosti kompilátoru C#)
@@ -52,5 +52,5 @@ csc -win32icon:rf.ico in.cs
   
 ## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -3,10 +3,10 @@ title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
 ms.openlocfilehash: 048c5331028bbe2bb232302637dbb12bcdd2adc3
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59313512"
 ---
 # <a name="diffgrams"></a>DiffGrams
@@ -70,7 +70,7 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
  **\<**  ***DataInstance***  **>**  
  Název tohoto elementu ***DataInstance***, se používá pro účely vysvětlení v této dokumentaci. A ***DataInstance*** reprezentuje element <xref:System.Data.DataSet> nebo řádek <xref:System.Data.DataTable>. Místo *DataInstance*, element bude obsahovat název <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable>. Tento blok formát DiffGram formátu obsahuje aktuální data, zda byl upraven, nebo ne. Je označen elementu, nebo řádek, který byl změněn **diffgr:hasChanges** poznámky.  
   
- **\<diffgr: před >**  
+ **\<diffgr:before>**  
  Tento blok formát DiffGram formátu obsahuje původní verzi řádku. Prvky v tomto bloku budou odpovídat na prvky ***DataInstance*** blokovat, s využitím **diffgr:id** poznámky.  
   
  **\<diffgr:errors>**  
@@ -85,7 +85,7 @@ Formát DiffGram je formát XML, který identifikuje aktuální a původní verz
 |----------------|-----------------|  
 |**id**|Použít na dvojici prvků v  **\<diffgr: před >** a  **\<diffgr:errors >** bloky na prvky **\<** ***DataInstance*** **>** bloku. Hodnoty s **diffgr:id** poznámky jsou ve formě *[TableName] [RowIdentifier]*. Například: `<Customers diffgr:id="Customers1">`.|  
 |**parentId**|Určuje které elementy ze **\<** ***DataInstance*** **>** blok je nadřazený element aktuálního prvku. Hodnoty s **diffgr:parentId** poznámky jsou ve formě *[TableName] [RowIdentifier]*. Například: `<Orders diffgr:parentId="Customers1">`.|  
-|**hasChanges**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat, jako jsou změny. **Haschanges –** anotace může mít jednu z následujících dvou hodnot:<br /><br /> **Vložit**<br /> Identifikuje **přidané** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádku, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale nebudou mít žádný element s poznámkami v **\<** ***DataInstance*** **>** bloku.|  
+|**hasChanges**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat, jako jsou změny. **Haschanges –** anotace může mít jednu z následujících dvou hodnot:<br /><br /> **inserted**<br /> Identifikuje **přidané** řádek.<br /><br /> **Upravit**<br /> Identifikuje **změněné** řádku, který obsahuje **původní** verze řádku v  **\<diffgr: před >** bloku. Všimněte si, že **odstraněné** řádky budou mít **původní** verze řádku v  **\<diffgr: před >** bloku, ale nebudou mít žádný element s poznámkami v **\<** ***DataInstance*** **>** bloku.|  
 |**hasErrors**|Označuje řádek v **\<** ***DataInstance*** **>** blokovat s **RowError**. Chyba prvek je umístěn v  **\<diffgr:errors >** bloku.|  
 |**Chyba**|Obsahuje text **RowError** pro konkrétní element v  **\<diffgr:errors >** bloku.|  
   

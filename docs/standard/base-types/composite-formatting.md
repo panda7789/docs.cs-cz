@@ -16,10 +16,10 @@ ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 93abf6e91c2e13173184faee281de52eb83e17f5
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59314006"
 ---
 # <a name="composite-formatting"></a>Složené formátování
@@ -90,8 +90,8 @@ Funkce složeného formátování je podporována například následujícími m
 |Typ nebo kategorie typů|Další informace naleznete v tématu|  
 |---------------------------|---------|  
 |Typy data a času (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|Výčtové typy (všechny typy odvozené z <xref:System.Enum?displayProperty=nameWithType>)|[Vytvoření výčtu řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Číselné typy (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Výčtové typy (všechny typy odvozené z <xref:System.Enum?displayProperty=nameWithType>)|[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  
+|Číselné typy (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
@@ -166,10 +166,10 @@ Funkce složeného formátování je podporována například následujícími m
 - [Interpolace řetězců (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolace (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 - [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
-- [Standardní řetězce formátu čísla](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
 - [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
 - [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)
 - [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Vytvoření výčtu řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
 ms.openlocfilehash: 04d5f9e6f128d9b4ed3f07a5faebe06ae4ffdebf
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59315189"
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a>Postupy: Přístup k modelu spravovaného objektu dokumentu HTML
@@ -47,4 +47,4 @@ Spravované HTML Document Object Model (DOM) se můžete dostat ze dvou typů ap
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití modelu spravovaného objektu dokumentu HTML](using-the-managed-html-document-object-model.md)
+- [Použití spravovaného modelu DOM (Document Object Model) HTML](using-the-managed-html-document-object-model.md)

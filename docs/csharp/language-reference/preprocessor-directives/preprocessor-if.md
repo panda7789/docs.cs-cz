@@ -8,10 +8,10 @@ helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
 ms.openlocfilehash: 027c99df806197637675837b7556b176dc115aba
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59318972"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
@@ -90,6 +90,6 @@ public class MyClass
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
-- [Průvodce programováním v C#](../../../csharp/programming-guide/index.md)
-- [Direktivy preprocesoru jazyka C#](index.md)
-- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [C# Direktivy preprocesoru](index.md)
+- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
