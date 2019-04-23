@@ -1,13 +1,13 @@
 ---
-title: <states> of <activityStateQuery>
+title: <states> z <activityStateQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: a7cc2018-2b79-44f1-825a-bb7ca08690a3
 ms.openlocfilehash: fa3736fc13f6f40f52d15b8257b7a79f4179d738
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59189596"
 ---
 # <a name="states-of-activitystatequery"></a>\<states> of \<activityStateQuery>
@@ -50,7 +50,7 @@ Kolekce elementů konfigurace, které obsahují stavy předplacenému aktivity, 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Stav >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/state-of-states.md)|Konfigurace element, který obsahuje stavy předplacenému aktivity, pro který by měl vyzařovaného záznamem sledování.|  
+|[\<state>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/state-of-states.md)|Konfigurace element, který obsahuje stavy předplacenému aktivity, pro který by měl vyzařovaného záznamem sledování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -17,10 +17,10 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 9f483f93-1613-4be1-a021-b4934e9c78f3
 ms.openlocfilehash: 98d51f9c6465186e77784aba080130110545f399
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59192157"
 ---
 # <a name="how-to-implement-a-form-that-uses-a-background-operation"></a>Postupy: Implementace formuláře, který používá operaci na pozadí
@@ -52,4 +52,4 @@ Následující ukázkový program vytvoří formulář, který vypočítá Fibon
 - <xref:System.ComponentModel.BackgroundWorker>
 - <xref:System.ComponentModel.DoWorkEventArgs>
 - [Přehled asynchronních vzorů založených na událostech](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
-- [Doporučené postupy spravovaného dělení na vlákna](../../../standard/threading/managed-threading-best-practices.md)
+- [Doporučené postupy dělení na spravovaná vlákna](../../../standard/threading/managed-threading-best-practices.md)

@@ -3,10 +3,10 @@ title: Typy F#
 description: Další informace o typech, které se používají v F# a jak F# jsou typy s názvem a popsané.
 ms.date: 05/16/2016
 ms.openlocfilehash: b48376c80b48df210bf7bc699a769d40fec60864
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59193587"
 ---
 # <a name="f-types"></a>Typy F#
@@ -55,7 +55,7 @@ V následující tabulce jsou uvedeny aspekty syntaxe typu pro F# typy.
 |-----|-----------|
 |[Primitivní typy](primitive-types.md)|Popisuje předdefinované jednoduché typy, například celočíselných typů, typu Boolean a typů znaků.|
 |[Typ jednotky](unit-type.md)|Popisuje `unit` typ, typ, který má jednu hodnotu a je indikován (); ekvivalent `void` v C# a `Nothing` v jazyce Visual Basic.|
-|[N-tice](tuples.md)|Popisuje typ řazené kolekce členů, typ, který se skládá z přidružené hodnoty libovolného typu, které jsou seskupené ve dvojicích, trojic, quadruples a tak dále.|
+|[Řazené kolekce členů](tuples.md)|Popisuje typ řazené kolekce členů, typ, který se skládá z přidružené hodnoty libovolného typu, které jsou seskupené ve dvojicích, trojic, quadruples a tak dále.|
 |[Možnosti](options.md)|Popisuje typ možnosti, typ, který může mít hodnotu nebo být prázdný.|
 |[Seznamy](lists.md)|Popisuje, seznamy, které jsou seřazené, neměnné řadu prvků všechny stejného typu.|
 |[Pole](arrays.md)|Popisuje pole, která jsou seřazené sady proměnlivé prvků stejného typu, které zabírají blok souvislé paměti a mají pevnou velikost.|
@@ -66,7 +66,7 @@ V následující tabulce jsou uvedeny aspekty syntaxe typu pro F# typy.
 |[Třídy](classes.md)|Popisuje typ třídy, typ objektu, který odpovídá typu odkaz na rozhraní .NET. Typy tříd může obsahovat členy, vlastnosti, implementovaná rozhraní a základního typu.|
 |[Struktury](structures.md)|Popisuje `struct` typ, typ objektu, který odpovídá typu hodnoty .NET. `struct` Typ obvykle představuje malé agregace data.|
 |[Rozhraní](interfaces.md)|Popisuje typy rozhraní, které jsou typy, které představují sadu členů, které poskytují určité funkce, ale která neobsahují žádná data. Typ rozhraní musí být implementované podle typu objektu, aby byla užitečná.|
-|[Delegáty](delegates.md)|Popisuje typ delegáta, který reprezentuje funkce jako objekt.|
+|[Delegáti](delegates.md)|Popisuje typ delegáta, který reprezentuje funkce jako objekt.|
 |[Výčty](enumerations.md)|Popisuje typy výčtu, jehož hodnoty patří do sady pojmenovaných hodnot.|
 |[Atributy](attributes.md)|Popisuje atributy, které se používají k určení metadata pro jiného typu.|
 |[Typy výjimek](exception-handling/exception-types.md)|Popisuje výjimky, které určují informace o chybě.|

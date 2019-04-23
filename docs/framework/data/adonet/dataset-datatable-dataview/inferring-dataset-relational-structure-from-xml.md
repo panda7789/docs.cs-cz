@@ -3,10 +3,10 @@ title: Odvození relační struktury datové sady z XML
 ms.date: 03/30/2017
 ms.assetid: cd2f41c6-6785-420e-aa43-3ceb0bdccdce
 ms.openlocfilehash: 9a9dc7d94728ea797a8930d3f77068fdd3ebfb5c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191534"
 ---
 # <a name="inferring-dataset-relational-structure-from-xml"></a>Odvození relační struktury datové sady z XML

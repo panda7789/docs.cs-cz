@@ -3,10 +3,10 @@ title: <webMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
 ms.openlocfilehash: 7221f19dd131dbd60ef1a61625633d54dfdbe85a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191741"
 ---
 # <a name="webmessageencoding"></a>\<webMessageEncoding>
@@ -80,6 +80,6 @@ Umožňuje prostého textu XML, zpráv kodovaných zápis JSON (JavaScript Objec
 - [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
 - [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

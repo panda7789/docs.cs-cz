@@ -1,5 +1,5 @@
 ---
-title: <sharedListeners> Prvek
+title: Element <sharedListeners>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#sharedListeners
@@ -12,10 +12,10 @@ helpviewer_keywords:
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
 ms.openlocfilehash: 48cb59dfc0871822bfcff5e16d4283008a411479
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59190795"
 ---
 # <a name="sharedlisteners-element"></a>\<sharedListeners > – Element
@@ -92,4 +92,4 @@ Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – e
 
 - <xref:System.Diagnostics.TraceListener>
 - [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [Naslouchací procesy trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

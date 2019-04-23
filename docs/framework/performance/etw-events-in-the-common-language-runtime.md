@@ -9,10 +9,10 @@ ms.assetid: 5bb9b6a2-7b57-4aea-8809-32b28bc73e88
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1d059a5d4df402b309f628bf3e9393114c4cdeec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191390"
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Události Trasování událostí pro Windows v CLR (Common Language Runtime)
@@ -26,15 +26,15 @@ Modul CLR (CLR) poskytuje užitečné události trasování pro Windows (ETW) di
  [Řízení přihlašování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md)  
  Popisuje nástroje a příkazy pro zachytávání a zobrazování událostí trasování událostí pro Windows.  
   
- [Poskytovatelé CLR ETW](../../../docs/framework/performance/clr-etw-providers.md)  
+ [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
  Poskytuje informace o modulu runtime a zprostředkovatele doběhu a jak je použít pro shromažďování dat trasování událostí pro Windows.  
   
- [Klíčová slova a úrovně ETW CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
+ [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-keywords-and-levels.md)  
  Popisuje klíčová slova pro modul Runtime a doběhu zprostředkovatelů, které umožňují filtrovat události podle kategorie.  
   
- [Události ETW CLR](../../../docs/framework/performance/clr-etw-events.md)  
+ [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)  
  Poskytuje podrobné informace o CLR ETW – události, klíčová slova, úrovní a data události.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Události Trasování událostí pro Windows v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)
+- [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../docs/framework/performance/etw-events.md)

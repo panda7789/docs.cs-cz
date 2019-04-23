@@ -8,10 +8,10 @@ helpviewer_keywords:
 - grouping controls [Windows Forms], Windows Forms
 ms.assetid: 03bd8ff9-c905-4f01-9bc6-8438b11d0881
 ms.openlocfilehash: ba3361c8477cf72031296651af022bac3ac90281
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191754"
 ---
 # <a name="groupbox-control-overview-windows-forms"></a>GroupBox – přehled ovládacího prvku (Windows Forms)

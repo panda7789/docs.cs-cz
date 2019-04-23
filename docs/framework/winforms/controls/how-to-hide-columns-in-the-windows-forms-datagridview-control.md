@@ -10,10 +10,10 @@ helpviewer_keywords:
 - columns [Windows Forms], hiding
 ms.assetid: 3f94143a-2ef0-49a5-a22a-b2e6f9289642
 ms.openlocfilehash: 40fccee551e7840ef474e7775873d4e7178748fe
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59194315"
 ---
 # <a name="how-to-hide-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Skrytí sloupců v ovládacím prvku Windows Forms DataGridView

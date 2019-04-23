@@ -9,10 +9,10 @@ helpviewer_keywords:
 - vertical space
 ms.assetid: aa47af39-1e71-40ee-bb75-2d2478f81bd0
 ms.openlocfilehash: 8dc45e1cedca6a4c73ada057168e0d3194bef741
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59192274"
 ---
 # <a name="toolstrippanel-control"></a>ToolStripPanel – ovládací prvek
@@ -21,13 +21,13 @@ ms.locfileid: "59192274"
  Témata v této části popisují, koncepty a techniky, které můžete použít k sestavení `ToolStripPanel` funkce do svých aplikací.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [ToolStripPanel – přehled ovládacího prvku](toolstrippanel-control-overview.md)  
+ [Přehled ovládacího prvku ToolStripPanel](toolstrippanel-control-overview.md)  
  Obsahuje témata, které popisují účel a hlavní koncepty formulářů Windows <xref:System.Windows.Forms.ToolStripContainer> ovládacího prvku.  
   
- [Postupy: Spojení prvků ToolStripPanel](how-to-join-toolstrippanels.md)  
+ [Postupy: Připojte se k prvku ToolStripPanels](how-to-join-toolstrippanels.md)  
  Ukazuje přidání <xref:System.Windows.Forms.ToolStrip> ovládacích prvků `ToolStripPanel`.  
   
- [Postupy: Použití prvků ToolStripPanel pro MDI](how-to-use-toolstrippanels-for-mdi.md)  
+ [Postupy: Použití prvku ToolStripPanels pro MDI](how-to-use-toolstrippanels-for-mdi.md)  
  Ukazuje flexibilitu poskytované `ToolStripPanel` ovládací prvky v aplikaci rozhraní více dokumentů.  
   
 ## <a name="reference"></a>Odkaz  

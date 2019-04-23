@@ -5,10 +5,10 @@ helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
 ms.openlocfilehash: dbc5c0b51024c7b88b8c6cd9a052addd74e6f7e8
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191026"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Sledování a trasování pracovních postupů

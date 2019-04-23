@@ -10,10 +10,10 @@ helpviewer_keywords:
 - Canvas control [WPF], using
 ms.assetid: 420b9487-9a15-477c-9489-a22a4dec7779
 ms.openlocfilehash: 33b98024699a88f56d27b7e5ab8d5216c906e7ec
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59190766"
 ---
 # <a name="how-to-create-and-use-a-canvas"></a>Postupy: Vytvoření a použití plátna
@@ -36,5 +36,5 @@ Tento příklad ukazuje, jak vytvořit a použít instanci <xref:System.Windows.
 - <xref:System.Windows.Controls.Canvas.SetLeft%2A>
 - <xref:System.Windows.Controls.Canvas.Top%2A>
 - <xref:System.Windows.Controls.Canvas.Left%2A>
-- [Přehled panelů](panels-overview.md)
-- [– postupy](canvas-how-to-topics.md)
+- [Přehled panelu](panels-overview.md)
+- [Témata s postupy](canvas-how-to-topics.md)

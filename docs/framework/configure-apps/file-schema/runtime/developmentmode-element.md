@@ -1,5 +1,5 @@
 ---
-title: <developmentMode> Prvek
+title: Element <developmentMode>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/developmentMode
@@ -12,10 +12,10 @@ ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fdf840035150f08c894c984213af9a0abe6e95af
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59192053"
 ---
 # <a name="developmentmode-element"></a>\<developmentmode – > – Element
@@ -42,7 +42,7 @@ Určuje, zda modul runtime vyhledává sestavení v adresářích určených pro
   
 ## <a name="developerinstallation-attribute"></a>developerInstallation atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |**true**|Vyhledá sestavení v adresářích určených proměnnou prostředí DEVPATH.|  
 |**false**|Není hledat sestavení v adresářích určených proměnnou prostředí DEVPATH. Toto je výchozí|  

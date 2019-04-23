@@ -3,10 +3,10 @@ title: Datové sady ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
 ms.openlocfilehash: 50e8e8f5e4b3ee2f5a41cb9dad11b5e701135d9e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59190935"
 ---
 # <a name="adonet-datasets"></a>Datové sady ADO.NET

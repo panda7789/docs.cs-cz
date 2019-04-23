@@ -3,10 +3,10 @@ title: ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
 ms.openlocfilehash: 4105aaba92c73206e7a162415e3bc245507f40e3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59191910"
 ---
 # <a name="adonet"></a>ADO.NET
@@ -31,7 +31,7 @@ ADO.NET je sada tříd, které zprostředkovávají služby data access services
  [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  Popisuje, jak vytvořit a používat `DataSets`, zadaný `DataSets`, `DataTables`, a `DataViews`.  
   
- [LINQ na DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
+ [LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset.md)  
  Poskytuje informace o LINQ k datové sadě, včetně příklady programování.  
   
  [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
@@ -53,7 +53,7 @@ ADO.NET je sada tříd, které zprostředkovávají služby data access services
  [WCF Data Services 4.5](../../../../docs/framework/data/wcf/index.md)  
  Popisuje způsob použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pro nasazení datových služeb na webu nebo intranetu, které implementují Open Data Protocol (OData).  
   
- [Průvodce vývojem s použitím rozhraní .NET Framework](../../development-guide.md)  
+ [Příručka pro vývojáře v rozhraní .NET framework](../../development-guide.md)  
  Obsahuje odkazy na informace o úkolech vývoje ve standardu v rozhraní .NET Framework.  
   
  [Ukázky a kurzy](../../../samples-and-tutorials/index.md)  

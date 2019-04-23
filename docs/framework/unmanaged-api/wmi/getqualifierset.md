@@ -17,10 +17,10 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 75bf52fbf9552dc464d9c646f0a2b1bc01cf89c0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59193093"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
@@ -47,13 +47,13 @@ HRESULT GetQualifierSet (
 [in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `ppQualSet`  
-[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory třídy objektu. `ppQualSet` Nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel myši zůstane bez úprav. 
+[out] Přijímá ukazatel rozhraní, která umožňuje přístup k kvalifikátory třídy objektu. `ppQualSet` nemůže být `null`. Pokud dojde k chybě, není vrátí nový objekt a ukazatel myši zůstane bez úprav. 
 
 ## <a name="return-value"></a>Návratová hodnota
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |

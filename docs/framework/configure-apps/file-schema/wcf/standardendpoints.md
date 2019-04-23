@@ -3,10 +3,10 @@ title: <standardEndpoints>
 ms.date: 03/30/2017
 ms.assetid: d62153d7-a6e6-462a-a784-cca61e9c2ba1
 ms.openlocfilehash: 66b86647689ea2ca39ae2f569d275aff1f48cba5
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59190272"
 ---
 # <a name="standardendpoints"></a>\<standardEndpoints>
@@ -33,7 +33,7 @@ Tento konfigurační oddíl umožňuje definovat kolekci standardních koncovýc
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<announcementEndpoint >](announcementendpoint.md)|Definuje standardní koncový bod s pevným kontraktem oznámení. Službu můžete volitelně oznámit její dostupnost odesláním zprávu online a offline oznámení při otevření nebo zavření v uvedeném pořadí. Služba Windows Communication Foundation (WCF) určuje koncových bodů oznámení v [ \<serviceDiscovery >](servicediscovery.md) prvku a používá AnnouncementClient provádět oznámení. Klient přejí k naslouchání pro oznámení z jiné služby, ve skutečnosti funguje jako služba WCF; proto budete muset nakonfigurovat koncových bodů oznámení pro daného klienta v [ \<služby >](services.md) oddílu.|  
+|[\<announcementEndpoint>](announcementendpoint.md)|Definuje standardní koncový bod s pevným kontraktem oznámení. Službu můžete volitelně oznámit její dostupnost odesláním zprávu online a offline oznámení při otevření nebo zavření v uvedeném pořadí. Služba Windows Communication Foundation (WCF) určuje koncových bodů oznámení v [ \<serviceDiscovery >](servicediscovery.md) prvku a používá AnnouncementClient provádět oznámení. Klient přejí k naslouchání pro oznámení z jiné služby, ve skutečnosti funguje jako služba WCF; proto budete muset nakonfigurovat koncových bodů oznámení pro daného klienta v [ \<služby >](services.md) oddílu.|  
 |[\<discoveryEndpoint>](discoveryendpoint.md)|Definuje standardní koncový bod s pevným kontraktem zjišťování. Po přidání do konfigurace služby, se určuje, kde naslouchat zprávám zjišťování. Po přidání do konfigurace klienta Určuje, kam má odesílat dotazy zjišťování.|  
 |[\<dynamicEndpoint>](dynamicendpoint.md)|Tento prvek konfigurace definuje standardní koncový bod, který obsahuje informace, které umožní, aby aplikace fungovala jako klientský program, který může najít adresu koncového bodu dynamicky za běhu.|  
 |[\<mexEndpoint>](mexendpoint.md)|Definuje standardní koncový bod s pevným kontraktem IMetadataExchange. Protože všechny koncové body metadat exchange určit jako jejich kontraktu IMetadataExchange, můžete použít tento standardní bod místo definování sami.|  

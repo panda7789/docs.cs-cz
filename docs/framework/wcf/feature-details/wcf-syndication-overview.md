@@ -3,10 +3,10 @@ title: Syndikace WCF – přehled
 ms.date: 03/30/2017
 ms.assetid: af6d4c39-e5e8-4099-aee6-5261feff9107
 ms.openlocfilehash: ef62c4460ff5dd4890de174afda671facee97f2e
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59189822"
 ---
 # <a name="wcf-syndication-overview"></a>Syndikace WCF – přehled
@@ -23,4 +23,4 @@ Windows Communication Foundation (WCF) poskytuje podporu pro vystavení informa�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model programování webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

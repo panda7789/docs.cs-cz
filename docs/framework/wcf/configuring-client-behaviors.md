@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: df5b32fa-e73b-4e8e-b66f-357c748e0173
 ms.openlocfilehash: 83fdc77bd17115f9952f2ca6c494ed0eb873cd9c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59193652"
 ---
 # <a name="configuring-client-behaviors"></a>Konfigurace chování klientů
@@ -53,4 +53,4 @@ Windows Communication Foundation (WCF) nakonfiguruje chování dvěma způsoby: 
   
 ## <a name="see-also"></a>Viz také:
 
-- [\<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
+- [\<behaviors>](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
