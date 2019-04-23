@@ -3,17 +3,17 @@ title: <system.serviceModel.activation>
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
 ms.openlocfilehash: b29f7173b4d75ec9adff37449d3d56266f01a03c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59196187"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59771956"
 ---
-# <a name="systemservicemodelactivation"></a><span data-ttu-id="6a73a-102">\<system.serviceModel.activation></span><span class="sxs-lookup"><span data-stu-id="6a73a-102">\<system.serviceModel.activation></span></span>
-<span data-ttu-id="6a73a-103">Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe.</span><span class="sxs-lookup"><span data-stu-id="6a73a-103">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="6a73a-104">Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config.</span><span class="sxs-lookup"><span data-stu-id="6a73a-104">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="6a73a-105">Konkrétně obsahuje všechna nastavení celý počítač, musí být nakonfigurované.</span><span class="sxs-lookup"><span data-stu-id="6a73a-105">Specifically, it includes all machine-wide settings that must be configured.</span></span>  
+# <a name="systemservicemodelactivation"></a><span data-ttu-id="f2ac4-102">\<system.serviceModel.activation></span><span class="sxs-lookup"><span data-stu-id="f2ac4-102">\<system.serviceModel.activation></span></span>
+<span data-ttu-id="f2ac4-103">Tento konfigurační oddíl představuje nastavení konfigurace pro nástroj SMSvcHost.exe.</span><span class="sxs-lookup"><span data-stu-id="f2ac4-103">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="f2ac4-104">Konfigurační prvky můžete nakonfigurovat v souboru konfigurace SMSvcHost.exe.config.</span><span class="sxs-lookup"><span data-stu-id="f2ac4-104">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="f2ac4-105">Konkrétně obsahuje všechna nastavení celý počítač, musí být nakonfigurované.</span><span class="sxs-lookup"><span data-stu-id="f2ac4-105">Specifically, it includes all machine-wide settings that must be configured.</span></span>  
   
-## <a name="sample-configuration-file"></a><span data-ttu-id="6a73a-106">Ukázkový konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="6a73a-106">Sample Configuration File</span></span>  
- <span data-ttu-id="6a73a-107">Následuje ukázkový soubor konfigurace (konfigurace SMSvcHost.exe.config), který je používán procesem naslouchací proces SMSvcHost.exe.</span><span class="sxs-lookup"><span data-stu-id="6a73a-107">The following is a sample configuration file (SMSvcHost.exe.config), which is used by the listener process SMSvcHost.exe.</span></span>  
+## <a name="sample-configuration-file"></a><span data-ttu-id="f2ac4-106">Ukázkový konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="f2ac4-106">Sample Configuration File</span></span>  
+ <span data-ttu-id="f2ac4-107">Následuje ukázkový soubor konfigurace (konfigurace SMSvcHost.exe.config), který je používán procesem naslouchací proces SMSvcHost.exe.</span><span class="sxs-lookup"><span data-stu-id="f2ac4-107">The following is a sample configuration file (SMSvcHost.exe.config), which is used by the listener process SMSvcHost.exe.</span></span>  
   
 ```xml  
 <configuration>
@@ -60,6 +60,6 @@ ms.locfileid: "59196187"
 </configuration>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6a73a-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6a73a-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f2ac4-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f2ac4-108">See also</span></span>
 
 - <xref:System.ServiceModel.Activation.Configuration>

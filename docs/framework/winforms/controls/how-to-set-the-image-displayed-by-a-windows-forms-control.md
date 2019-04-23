@@ -13,20 +13,20 @@ helpviewer_keywords:
 - examples [Windows Forms], controls
 ms.assetid: 9445af8f-4f62-48b0-a3f6-068058964b9f
 ms.openlocfilehash: 1de835bda5ac906837ac3fbd97b87f68f14d1953
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59333922"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59771527"
 ---
-# <a name="how-to-set-the-image-displayed-by-a-windows-forms-control"></a><span data-ttu-id="28fc9-102">Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="28fc9-102">How to: Set the Image Displayed by a Windows Forms Control</span></span>
-<span data-ttu-id="28fc9-103">Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky.</span><span class="sxs-lookup"><span data-stu-id="28fc9-103">Several Windows Forms controls can display images.</span></span> <span data-ttu-id="28fc9-104">Tyto Image může být ikon, které vysvětluje účel ovládacího prvku, jako je například ikonu diskety na tlačítko, které označuje **Uložit** příkazu.</span><span class="sxs-lookup"><span data-stu-id="28fc9-104">These images can be icons that clarify the purpose of the control, such as a diskette icon on a button denoting the **Save** command.</span></span> <span data-ttu-id="28fc9-105">Ikony, případně může být obrázky na pozadí vzhledu a chování, které chcete poskytnout ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="28fc9-105">Alternatively, the icons can be background images to give the control the appearance and behavior you want.</span></span>  
+# <a name="how-to-set-the-image-displayed-by-a-windows-forms-control"></a><span data-ttu-id="10b17-102">Postupy: Nastavení obrázku zobrazovaného ovládacím prvkem Windows Forms</span><span class="sxs-lookup"><span data-stu-id="10b17-102">How to: Set the Image Displayed by a Windows Forms Control</span></span>
+<span data-ttu-id="10b17-103">Několik ovládacích prvků Windows Forms nemohl zobrazit obrázky.</span><span class="sxs-lookup"><span data-stu-id="10b17-103">Several Windows Forms controls can display images.</span></span> <span data-ttu-id="10b17-104">Tyto Image může být ikon, které vysvětluje účel ovládacího prvku, jako je například ikonu diskety na tlačítko, které označuje **Uložit** příkazu.</span><span class="sxs-lookup"><span data-stu-id="10b17-104">These images can be icons that clarify the purpose of the control, such as a diskette icon on a button denoting the **Save** command.</span></span> <span data-ttu-id="10b17-105">Ikony, případně může být obrázky na pozadí vzhledu a chování, které chcete poskytnout ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="10b17-105">Alternatively, the icons can be background images to give the control the appearance and behavior you want.</span></span>  
   
-### <a name="to-set-the-image-displayed-by-a-control"></a><span data-ttu-id="28fc9-106">K nastavení obrázku zobrazovaného ovládacím prvkem</span><span class="sxs-lookup"><span data-stu-id="28fc9-106">To set the image displayed by a control</span></span>  
+### <a name="to-set-the-image-displayed-by-a-control"></a><span data-ttu-id="10b17-106">K nastavení obrázku zobrazovaného ovládacím prvkem</span><span class="sxs-lookup"><span data-stu-id="10b17-106">To set the image displayed by a control</span></span>  
   
-1. <span data-ttu-id="28fc9-107">Nastavit u tohoto prvku `Image` nebo `BackgroundImage` vlastnost na objekt typu <xref:System.Drawing.Image>.</span><span class="sxs-lookup"><span data-stu-id="28fc9-107">Set the control's `Image` or `BackgroundImage` property to an object of type <xref:System.Drawing.Image>.</span></span> <span data-ttu-id="28fc9-108">Obecně platí, můžete se načítá image ze souboru pomocí <xref:System.Drawing.Image.FromFile%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="28fc9-108">Generally, you will be loading the image from a file by using the <xref:System.Drawing.Image.FromFile%2A> method.</span></span>  
+1. <span data-ttu-id="10b17-107">Nastavit u tohoto prvku `Image` nebo `BackgroundImage` vlastnost na objekt typu <xref:System.Drawing.Image>.</span><span class="sxs-lookup"><span data-stu-id="10b17-107">Set the control's `Image` or `BackgroundImage` property to an object of type <xref:System.Drawing.Image>.</span></span> <span data-ttu-id="10b17-108">Obecně platí, můžete se načítá image ze souboru pomocí <xref:System.Drawing.Image.FromFile%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="10b17-108">Generally, you will be loading the image from a file by using the <xref:System.Drawing.Image.FromFile%2A> method.</span></span>  
   
-     <span data-ttu-id="28fc9-109">V následujícím příkladu kódu nastavena cesta pro umístění image je **obrázky** složky.</span><span class="sxs-lookup"><span data-stu-id="28fc9-109">In the following code example, the path set for the location of the image is the **My Pictures** folder.</span></span> <span data-ttu-id="28fc9-110">Tento adresář bude obsahovat většinu počítačů s operačním systémem Windows.</span><span class="sxs-lookup"><span data-stu-id="28fc9-110">Most computers running the Windows operating system will include this directory.</span></span> <span data-ttu-id="28fc9-111">Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace.</span><span class="sxs-lookup"><span data-stu-id="28fc9-111">This also enables users with minimal system access levels to run the application safely.</span></span> <span data-ttu-id="28fc9-112">Následující příklad kódu vyžaduje, abyste už měli formulář s <xref:System.Windows.Forms.PictureBox> přidán ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="28fc9-112">The following code example requires that you already have a form with a <xref:System.Windows.Forms.PictureBox> control added.</span></span>  
+     <span data-ttu-id="10b17-109">V následujícím příkladu kódu nastavena cesta pro umístění image je **obrázky** složky.</span><span class="sxs-lookup"><span data-stu-id="10b17-109">In the following code example, the path set for the location of the image is the **My Pictures** folder.</span></span> <span data-ttu-id="10b17-110">Tento adresář bude obsahovat většinu počítačů s operačním systémem Windows.</span><span class="sxs-lookup"><span data-stu-id="10b17-110">Most computers running the Windows operating system will include this directory.</span></span> <span data-ttu-id="10b17-111">Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace.</span><span class="sxs-lookup"><span data-stu-id="10b17-111">This also enables users with minimal system access levels to run the application safely.</span></span> <span data-ttu-id="10b17-112">Následující příklad kódu vyžaduje, abyste už měli formulář s <xref:System.Windows.Forms.PictureBox> přidán ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="10b17-112">The following code example requires that you already have a form with a <xref:System.Windows.Forms.PictureBox> control added.</span></span>  
   
     ```vb  
     ' Replace the image named below  
@@ -56,7 +56,7 @@ ms.locfileid: "59333922"
        "\\Image.gif"));  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="28fc9-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28fc9-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10b17-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10b17-113">See also</span></span>
 
 - <xref:System.Drawing.Image.FromFile%2A>
 - <xref:System.Drawing.Image>
