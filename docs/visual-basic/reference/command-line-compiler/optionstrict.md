@@ -9,61 +9,61 @@ helpviewer_keywords:
 - /optionstrict compiler option [Visual Basic]
 ms.assetid: c7b10086-0fa4-49db-b3c8-4ae0db5957da
 ms.openlocfilehash: e18fe451ea4a80ac959ed61b66394920f8bf177f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59336080"
 ---
-# <a name="-optionstrict"></a><span data-ttu-id="4e37e-102">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="4e37e-102">-optionstrict</span></span>
-<span data-ttu-id="4e37e-103">Vynutí sémantiku přísného typu pro omezení převodů implicitních typů.</span><span class="sxs-lookup"><span data-stu-id="4e37e-103">Enforces strict type semantics to restrict implicit type conversions.</span></span>  
+# <a name="-optionstrict"></a><span data-ttu-id="7fe84-102">-optionstrict</span><span class="sxs-lookup"><span data-stu-id="7fe84-102">-optionstrict</span></span>
+<span data-ttu-id="7fe84-103">Vynutí sémantiku přísného typu pro omezení převodů implicitních typů.</span><span class="sxs-lookup"><span data-stu-id="7fe84-103">Enforces strict type semantics to restrict implicit type conversions.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4e37e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4e37e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7fe84-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7fe84-104">Syntax</span></span>  
   
 ```  
 -optionstrict[+ | -]  
 -optionstrict[:custom]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="4e37e-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="4e37e-105">Arguments</span></span>  
- `+` <span data-ttu-id="4e37e-106">&#124;</span><span class="sxs-lookup"><span data-stu-id="4e37e-106">&#124;</span></span> `-`  
- <span data-ttu-id="4e37e-107">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="4e37e-107">Optional.</span></span> <span data-ttu-id="4e37e-108">`-optionstrict+` Omezí implicitní převod typu.</span><span class="sxs-lookup"><span data-stu-id="4e37e-108">The `-optionstrict+` option restricts implicit type conversion.</span></span> <span data-ttu-id="4e37e-109">Výchozí hodnota pro tuto možnost je `-optionstrict-`.</span><span class="sxs-lookup"><span data-stu-id="4e37e-109">The default for this option is `-optionstrict-`.</span></span> <span data-ttu-id="4e37e-110">`-optionstrict+` Možnost je stejný jako `-optionstrict`.</span><span class="sxs-lookup"><span data-stu-id="4e37e-110">The `-optionstrict+` option is the same as `-optionstrict`.</span></span> <span data-ttu-id="4e37e-111">Můžete je používat pro typ povolující sémantiku.</span><span class="sxs-lookup"><span data-stu-id="4e37e-111">You can use both for permissive type semantics.</span></span>  
+## <a name="arguments"></a><span data-ttu-id="7fe84-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="7fe84-105">Arguments</span></span>  
+ <span data-ttu-id="7fe84-106">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="7fe84-106">`+` &#124; `-`</span></span>  
+ <span data-ttu-id="7fe84-107">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="7fe84-107">Optional.</span></span> <span data-ttu-id="7fe84-108">`-optionstrict+` Omezí implicitní převod typu.</span><span class="sxs-lookup"><span data-stu-id="7fe84-108">The `-optionstrict+` option restricts implicit type conversion.</span></span> <span data-ttu-id="7fe84-109">Výchozí hodnota pro tuto možnost je `-optionstrict-`.</span><span class="sxs-lookup"><span data-stu-id="7fe84-109">The default for this option is `-optionstrict-`.</span></span> <span data-ttu-id="7fe84-110">`-optionstrict+` Možnost je stejný jako `-optionstrict`.</span><span class="sxs-lookup"><span data-stu-id="7fe84-110">The `-optionstrict+` option is the same as `-optionstrict`.</span></span> <span data-ttu-id="7fe84-111">Můžete je používat pro typ povolující sémantiku.</span><span class="sxs-lookup"><span data-stu-id="7fe84-111">You can use both for permissive type semantics.</span></span>  
   
  `custom`  
- <span data-ttu-id="4e37e-112">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="4e37e-112">Required.</span></span> <span data-ttu-id="4e37e-113">Zobrazit upozornění, pokud není respektována striktní sémantika jazyka.</span><span class="sxs-lookup"><span data-stu-id="4e37e-113">Warn when strict language semantics are not respected.</span></span>  
+ <span data-ttu-id="7fe84-112">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="7fe84-112">Required.</span></span> <span data-ttu-id="7fe84-113">Zobrazit upozornění, pokud není respektována striktní sémantika jazyka.</span><span class="sxs-lookup"><span data-stu-id="7fe84-113">Warn when strict language semantics are not respected.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4e37e-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4e37e-114">Remarks</span></span>  
- <span data-ttu-id="4e37e-115">Když `-optionstrict+` platí, pouze rozšiřující převody typu lze implicitně.</span><span class="sxs-lookup"><span data-stu-id="4e37e-115">When `-optionstrict+` is in effect, only widening type conversions can be made implicitly.</span></span> <span data-ttu-id="4e37e-116">Implicitní zužující převody typů, jako je například přiřazení `Decimal` zadejte objekt na objekt typu celé číslo, které jsou hlášeny jako chyby.</span><span class="sxs-lookup"><span data-stu-id="4e37e-116">Implicit narrowing type conversions, such as assigning a `Decimal` type object to an integer type object, are reported as errors.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7fe84-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7fe84-114">Remarks</span></span>  
+ <span data-ttu-id="7fe84-115">Když `-optionstrict+` platí, pouze rozšiřující převody typu lze implicitně.</span><span class="sxs-lookup"><span data-stu-id="7fe84-115">When `-optionstrict+` is in effect, only widening type conversions can be made implicitly.</span></span> <span data-ttu-id="7fe84-116">Implicitní zužující převody typů, jako je například přiřazení `Decimal` zadejte objekt na objekt typu celé číslo, které jsou hlášeny jako chyby.</span><span class="sxs-lookup"><span data-stu-id="7fe84-116">Implicit narrowing type conversions, such as assigning a `Decimal` type object to an integer type object, are reported as errors.</span></span>  
   
- <span data-ttu-id="4e37e-117">Chcete-li generovat upozornění pro implicitní zužující převody typů, použijte `-optionstrict:custom`.</span><span class="sxs-lookup"><span data-stu-id="4e37e-117">To generate warnings for implicit narrowing type conversions, use `-optionstrict:custom`.</span></span> <span data-ttu-id="4e37e-118">Použití `-nowarn:numberlist` ignorovat konkrétní varování a `-warnaserror:numberlist` považovat konkrétní upozornění jako chyby.</span><span class="sxs-lookup"><span data-stu-id="4e37e-118">Use `-nowarn:numberlist` to ignore particular warnings and `-warnaserror:numberlist` to treat particular warnings as errors.</span></span>  
+ <span data-ttu-id="7fe84-117">Chcete-li generovat upozornění pro implicitní zužující převody typů, použijte `-optionstrict:custom`.</span><span class="sxs-lookup"><span data-stu-id="7fe84-117">To generate warnings for implicit narrowing type conversions, use `-optionstrict:custom`.</span></span> <span data-ttu-id="7fe84-118">Použití `-nowarn:numberlist` ignorovat konkrétní varování a `-warnaserror:numberlist` považovat konkrétní upozornění jako chyby.</span><span class="sxs-lookup"><span data-stu-id="7fe84-118">Use `-nowarn:numberlist` to ignore particular warnings and `-warnaserror:numberlist` to treat particular warnings as errors.</span></span>  
   
-### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a><span data-ttu-id="4e37e-119">Chcete-li nastavit - optionstrict v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4e37e-119">To set -optionstrict in the Visual Studio IDE</span></span>  
+### <a name="to-set--optionstrict-in-the-visual-studio-ide"></a><span data-ttu-id="7fe84-119">Chcete-li nastavit - optionstrict v integrovaném vývojovém prostředí sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="7fe84-119">To set -optionstrict in the Visual Studio IDE</span></span>  
   
-1. <span data-ttu-id="4e37e-120">Mají projekt vybraný v **Průzkumníka řešení**.</span><span class="sxs-lookup"><span data-stu-id="4e37e-120">Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="4e37e-121">Na **projektu** nabídky, klikněte na tlačítko **vlastnosti.**</span><span class="sxs-lookup"><span data-stu-id="4e37e-121">On the **Project** menu, click **Properties.**</span></span>   
+1. <span data-ttu-id="7fe84-120">Mají projekt vybraný v **Průzkumníka řešení**.</span><span class="sxs-lookup"><span data-stu-id="7fe84-120">Have a project selected in **Solution Explorer**.</span></span> <span data-ttu-id="7fe84-121">Na **projektu** nabídky, klikněte na tlačítko **vlastnosti.**</span><span class="sxs-lookup"><span data-stu-id="7fe84-121">On the **Project** menu, click **Properties.**</span></span>   
   
-2. <span data-ttu-id="4e37e-122">Klikněte na tlačítko **kompilaci** kartu.</span><span class="sxs-lookup"><span data-stu-id="4e37e-122">Click the **Compile** tab.</span></span>  
+2. <span data-ttu-id="7fe84-122">Klikněte na tlačítko **kompilaci** kartu.</span><span class="sxs-lookup"><span data-stu-id="7fe84-122">Click the **Compile** tab.</span></span>  
   
-3. <span data-ttu-id="4e37e-123">Upravte hodnotu v **Option Strict** pole.</span><span class="sxs-lookup"><span data-stu-id="4e37e-123">Modify the value in the **Option Strict** box.</span></span>  
+3. <span data-ttu-id="7fe84-123">Upravte hodnotu v **Option Strict** pole.</span><span class="sxs-lookup"><span data-stu-id="7fe84-123">Modify the value in the **Option Strict** box.</span></span>  
   
-### <a name="to-set--optionstrict-programmatically"></a><span data-ttu-id="4e37e-124">Chcete-li nastavit - optionstrict prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="4e37e-124">To set -optionstrict programmatically</span></span>  
+### <a name="to-set--optionstrict-programmatically"></a><span data-ttu-id="7fe84-124">Chcete-li nastavit - optionstrict prostřednictvím kódu programu</span><span class="sxs-lookup"><span data-stu-id="7fe84-124">To set -optionstrict programmatically</span></span>  
   
--   <span data-ttu-id="4e37e-125">Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).</span><span class="sxs-lookup"><span data-stu-id="4e37e-125">See [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).</span></span>  
+-   <span data-ttu-id="7fe84-125">Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).</span><span class="sxs-lookup"><span data-stu-id="7fe84-125">See [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4e37e-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="4e37e-126">Example</span></span>  
- <span data-ttu-id="4e37e-127">Následující kód zkompiluje `Test.vb` pomocí sémantiku přísného typu.</span><span class="sxs-lookup"><span data-stu-id="4e37e-127">The following code compiles `Test.vb` using strict type semantics.</span></span>  
+## <a name="example"></a><span data-ttu-id="7fe84-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="7fe84-126">Example</span></span>  
+ <span data-ttu-id="7fe84-127">Následující kód zkompiluje `Test.vb` pomocí sémantiku přísného typu.</span><span class="sxs-lookup"><span data-stu-id="7fe84-127">The following code compiles `Test.vb` using strict type semantics.</span></span>  
   
 ```console
 vbc -optionstrict+ test.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4e37e-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e37e-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7fe84-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7fe84-128">See also</span></span>
 
-- [<span data-ttu-id="4e37e-129">Kompilátor příkazového řádku jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="4e37e-129">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="4e37e-130">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="4e37e-130">-optioncompare</span></span>](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [<span data-ttu-id="4e37e-131">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="4e37e-131">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [<span data-ttu-id="4e37e-132">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="4e37e-132">-optioninfer</span></span>](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [<span data-ttu-id="4e37e-133">-nowarn</span><span class="sxs-lookup"><span data-stu-id="4e37e-133">-nowarn</span></span>](../../../visual-basic/reference/command-line-compiler/nowarn.md)
-- [<span data-ttu-id="4e37e-134">-warnaserror (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4e37e-134">-warnaserror (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
-- [<span data-ttu-id="4e37e-135">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="4e37e-135">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [<span data-ttu-id="4e37e-136">Option Strict – příkaz</span><span class="sxs-lookup"><span data-stu-id="4e37e-136">Option Strict Statement</span></span>](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [<span data-ttu-id="4e37e-137">Výchozí možnosti jazyka Visual Basic, projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="4e37e-137">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [<span data-ttu-id="7fe84-129">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="7fe84-129">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="7fe84-130">-optioncompare</span><span class="sxs-lookup"><span data-stu-id="7fe84-130">-optioncompare</span></span>](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
+- [<span data-ttu-id="7fe84-131">-optionexplicit</span><span class="sxs-lookup"><span data-stu-id="7fe84-131">-optionexplicit</span></span>](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
+- [<span data-ttu-id="7fe84-132">-optioninfer</span><span class="sxs-lookup"><span data-stu-id="7fe84-132">-optioninfer</span></span>](../../../visual-basic/reference/command-line-compiler/optioninfer.md)
+- [<span data-ttu-id="7fe84-133">-nowarn</span><span class="sxs-lookup"><span data-stu-id="7fe84-133">-nowarn</span></span>](../../../visual-basic/reference/command-line-compiler/nowarn.md)
+- [<span data-ttu-id="7fe84-134">-warnaserror (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7fe84-134">-warnaserror (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/warnaserror.md)
+- [<span data-ttu-id="7fe84-135">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="7fe84-135">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="7fe84-136">Příkaz Option Strict</span><span class="sxs-lookup"><span data-stu-id="7fe84-136">Option Strict Statement</span></span>](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [<span data-ttu-id="7fe84-137">Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti</span><span class="sxs-lookup"><span data-stu-id="7fe84-137">Visual Basic Defaults, Projects, Options Dialog Box</span></span>](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

@@ -7,42 +7,42 @@ helpviewer_keywords:
 - procedures [Visual Basic], returning a value
 ms.assetid: 8ee19f95-a9ef-4033-963b-d224dca207c4
 ms.openlocfilehash: 115c1df4bd49d5848d72c4cbd0242a49a12740c7
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59335495"
 ---
-# <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a><span data-ttu-id="c9788-102">Postupy: Vytvořit proceduru, která vrací hodnotu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c9788-102">How to: Create a Procedure that Returns a Value (Visual Basic)</span></span>
-<span data-ttu-id="c9788-103">Můžete použít `Function` postup, který vrací hodnotu volajícímu kódu.</span><span class="sxs-lookup"><span data-stu-id="c9788-103">You use a `Function` procedure to return a value to the calling code.</span></span>  
+# <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a><span data-ttu-id="89ef7-102">Postupy: Vytvořit proceduru, která vrací hodnotu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="89ef7-102">How to: Create a Procedure that Returns a Value (Visual Basic)</span></span>
+<span data-ttu-id="89ef7-103">Můžete použít `Function` postup, který vrací hodnotu volajícímu kódu.</span><span class="sxs-lookup"><span data-stu-id="89ef7-103">You use a `Function` procedure to return a value to the calling code.</span></span>  
   
-### <a name="to-create-a-procedure-that-returns-a-value"></a><span data-ttu-id="c9788-104">Chcete-li vytvořit proceduru, která vrací hodnotu</span><span class="sxs-lookup"><span data-stu-id="c9788-104">To create a procedure that returns a value</span></span>  
+### <a name="to-create-a-procedure-that-returns-a-value"></a><span data-ttu-id="89ef7-104">Chcete-li vytvořit proceduru, která vrací hodnotu</span><span class="sxs-lookup"><span data-stu-id="89ef7-104">To create a procedure that returns a value</span></span>  
   
-1. <span data-ttu-id="c9788-105">Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.</span><span class="sxs-lookup"><span data-stu-id="c9788-105">Outside any other procedure, use a `Function` statement, followed by an `End Function` statement.</span></span>  
+1. <span data-ttu-id="89ef7-105">Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.</span><span class="sxs-lookup"><span data-stu-id="89ef7-105">Outside any other procedure, use a `Function` statement, followed by an `End Function` statement.</span></span>  
   
-2. <span data-ttu-id="c9788-106">V `Function` prohlášení, postupujte `Function` – klíčové slovo s názvem podle postupu a seznam parametrů v závorkách.</span><span class="sxs-lookup"><span data-stu-id="c9788-106">In the `Function` statement, follow the `Function` keyword with the name of the procedure, and then the parameter list in parentheses.</span></span>  
+2. <span data-ttu-id="89ef7-106">V `Function` prohlášení, postupujte `Function` – klíčové slovo s názvem podle postupu a seznam parametrů v závorkách.</span><span class="sxs-lookup"><span data-stu-id="89ef7-106">In the `Function` statement, follow the `Function` keyword with the name of the procedure, and then the parameter list in parentheses.</span></span>  
   
-3. <span data-ttu-id="c9788-107">Postupujte podle závorek s `As` klauzule zadejte datový typ vrácené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="c9788-107">Follow the parentheses with an `As` clause to specify the data type of the returned value.</span></span>  
+3. <span data-ttu-id="89ef7-107">Postupujte podle závorek s `As` klauzule zadejte datový typ vrácené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="89ef7-107">Follow the parentheses with an `As` clause to specify the data type of the returned value.</span></span>  
   
-4. <span data-ttu-id="c9788-108">Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.</span><span class="sxs-lookup"><span data-stu-id="c9788-108">Place the procedure's code statements between the `Function` and `End Function` statements.</span></span>  
+4. <span data-ttu-id="89ef7-108">Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.</span><span class="sxs-lookup"><span data-stu-id="89ef7-108">Place the procedure's code statements between the `Function` and `End Function` statements.</span></span>  
   
-5. <span data-ttu-id="c9788-109">Použití `Return` příkazu vrátí hodnotu volajícímu kódu.</span><span class="sxs-lookup"><span data-stu-id="c9788-109">Use a `Return` statement to return the value to the calling code.</span></span>  
+5. <span data-ttu-id="89ef7-109">Použití `Return` příkazu vrátí hodnotu volajícímu kódu.</span><span class="sxs-lookup"><span data-stu-id="89ef7-109">Use a `Return` statement to return the value to the calling code.</span></span>  
   
-     <span data-ttu-id="c9788-110">Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="c9788-110">The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.</span></span>  
+     <span data-ttu-id="89ef7-110">Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="89ef7-110">The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.</span></span>  
   
      [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
-     <span data-ttu-id="c9788-111">Následující příklad ukazuje typické volání `hypotenuse`.</span><span class="sxs-lookup"><span data-stu-id="c9788-111">The following example shows a typical call to `hypotenuse`.</span></span>  
+     <span data-ttu-id="89ef7-111">Následující příklad ukazuje typické volání `hypotenuse`.</span><span class="sxs-lookup"><span data-stu-id="89ef7-111">The following example shows a typical call to `hypotenuse`.</span></span>  
   
      [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   
-## <a name="see-also"></a><span data-ttu-id="c9788-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c9788-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="89ef7-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="89ef7-112">See also</span></span>
 
-- [<span data-ttu-id="c9788-113">Procedury</span><span class="sxs-lookup"><span data-stu-id="c9788-113">Procedures</span></span>](./index.md)
-- [<span data-ttu-id="c9788-114">Procedury Sub</span><span class="sxs-lookup"><span data-stu-id="c9788-114">Sub Procedures</span></span>](./sub-procedures.md)
-- [<span data-ttu-id="c9788-115">Procedury Property</span><span class="sxs-lookup"><span data-stu-id="c9788-115">Property Procedures</span></span>](./property-procedures.md)
-- [<span data-ttu-id="c9788-116">Procedury operátoru</span><span class="sxs-lookup"><span data-stu-id="c9788-116">Operator Procedures</span></span>](./operator-procedures.md)
-- [<span data-ttu-id="c9788-117">Parametry a argumenty procedury</span><span class="sxs-lookup"><span data-stu-id="c9788-117">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)
-- [<span data-ttu-id="c9788-118">Function – příkaz</span><span class="sxs-lookup"><span data-stu-id="c9788-118">Function Statement</span></span>](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [<span data-ttu-id="c9788-119">Postupy: Vrácení hodnoty z procedury</span><span class="sxs-lookup"><span data-stu-id="c9788-119">How to: Return a Value from a Procedure</span></span>](./how-to-return-a-value-from-a-procedure.md)
-- [<span data-ttu-id="c9788-120">Postupy: Volání procedury, která vrací hodnotu</span><span class="sxs-lookup"><span data-stu-id="c9788-120">How to: Call a Procedure That Returns a Value</span></span>](./how-to-call-a-procedure-that-returns-a-value.md)
+- [<span data-ttu-id="89ef7-113">Procedury</span><span class="sxs-lookup"><span data-stu-id="89ef7-113">Procedures</span></span>](./index.md)
+- [<span data-ttu-id="89ef7-114">Procedury Sub</span><span class="sxs-lookup"><span data-stu-id="89ef7-114">Sub Procedures</span></span>](./sub-procedures.md)
+- [<span data-ttu-id="89ef7-115">Procedury vlastnosti</span><span class="sxs-lookup"><span data-stu-id="89ef7-115">Property Procedures</span></span>](./property-procedures.md)
+- [<span data-ttu-id="89ef7-116">Procedury operátoru</span><span class="sxs-lookup"><span data-stu-id="89ef7-116">Operator Procedures</span></span>](./operator-procedures.md)
+- [<span data-ttu-id="89ef7-117">Parametry a argumenty procedury</span><span class="sxs-lookup"><span data-stu-id="89ef7-117">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)
+- [<span data-ttu-id="89ef7-118">Příkaz Function</span><span class="sxs-lookup"><span data-stu-id="89ef7-118">Function Statement</span></span>](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [<span data-ttu-id="89ef7-119">Postupy: Vrácení hodnoty z procedury</span><span class="sxs-lookup"><span data-stu-id="89ef7-119">How to: Return a Value from a Procedure</span></span>](./how-to-return-a-value-from-a-procedure.md)
+- [<span data-ttu-id="89ef7-120">Postupy: Volání procedury, která vrací hodnotu</span><span class="sxs-lookup"><span data-stu-id="89ef7-120">How to: Call a Procedure That Returns a Value</span></span>](./how-to-call-a-procedure-that-returns-a-value.md)
