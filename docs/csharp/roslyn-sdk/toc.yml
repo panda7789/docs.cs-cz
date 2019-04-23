@@ -1,48 +1,25 @@
-items:
 - name: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
   href: index.md
   items:
-  - name: Pochopení modelu rozhraní API kompilátoru
-    href: compiler-api-model.md
-  - name: Práce se syntaxí
-    href: work-with-syntax.md
-  - name: Práce se sémantikou
-    href: work-with-semantics.md
-  - name: Práce s pracovním prostorem
-    href: work-with-workspace.md
-  - name: Prozkoumání kódu pomocí vizualizéru syntaxe
-    href: syntax-visualizer.md
-  - name: Rychlé starty
-    items:
-    - name: Analýza syntaxe
-      href: get-started/syntax-analysis.md
-    - name: Sémantická analýza
-      href: get-started/semantic-analysis.md
-    - name: Transformace syntaxe
-      href: get-started/syntax-transformation.md
-  - name: Kurzy
-    items:
-    - name: Sestavení vašeho prvního analyzátoru a opravy kódu
-      href: tutorials/how-to-write-csharp-analyzer-code-fix.md
-    - name: Začínáme s psaním vlastních analyzátorů a oprav kódu
-  - name: Kurzy
-    items:
-    - name: Sestavení prvního analyzátoru
-    - name: Sestavení první opravy kódu
-    - name: Nasazení analyzátoru jako VSIX
-    - name: Nasazení analyzátoru jako balíčku NuGet
-- name: Ukázky
-  items:
-  - name: Asynchronní balíčky
-  - name: Třídění konzol
-  - name: Převedení na automatickou vlastnost
-  - name: Řešení formátu
-  - name: Implementace oznámení o změně vlastnosti
-  - name: Vytváření const
-  - name: Průvodci postupy
-ms.openlocfilehash: cd4a028bc393f99ef3da5277430276b1094682a8
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58471251"
+    - name: Pochopení modelu rozhraní API kompilátoru
+      href: compiler-api-model.md
+    - name: Práce se syntaxí
+      href: work-with-syntax.md
+    - name: Práce se sémantikou
+      href: work-with-semantics.md
+    - name: Práce s pracovním prostorem
+      href: work-with-workspace.md
+    - name: Prozkoumání kódu pomocí vizualizéru syntaxe
+      href: syntax-visualizer.md
+    - name: Rychlé starty
+      items:
+        - name: Analýza syntaxe
+          href: get-started/syntax-analysis.md
+        - name: Sémantická analýza
+          href: get-started/semantic-analysis.md
+        - name: Transformace syntaxe
+          href: get-started/syntax-transformation.md
+    - name: Kurzy
+      items:
+        - name: Sestavení vašeho prvního analyzátoru a opravy kódu
+          href: tutorials/how-to-write-csharp-analyzer-code-fix.md
