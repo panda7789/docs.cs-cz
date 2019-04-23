@@ -10,10 +10,10 @@ helpviewer_keywords:
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
 ms.openlocfilehash: 1ffc665cb7ec5893dddf4efff5021e600b16fc45
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59330490"
 ---
 # <a name="layout"></a>Rozložení
@@ -152,6 +152,6 @@ Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptl
 
 - <xref:System.Windows.FrameworkElement>
 - <xref:System.Windows.UIElement>
-- [Přehled panelů](../controls/panels-overview.md)
+- [Přehled panelu](../controls/panels-overview.md)
 - [Přehled zarovnání, okrajů a odsazení](alignment-margins-and-padding-overview.md)
 - [Rozložení a návrh](optimizing-performance-layout-and-design.md)

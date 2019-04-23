@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Reliable session
 ms.assetid: 86e914f2-060b-432b-bd17-333695317745
 ms.openlocfilehash: c682db98ac72019d434e06ae79d87b69c85c275e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59310288"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59767406"
 ---
 # <a name="ws-reliable-session"></a>Spolehlivá relace WS
 Tento příklad ukazuje použití spolehlivé relace. Spolehlivé relace poskytovat podporu pro spolehlivé zasílání zpráv a relací. Spolehlivé zasílání zpráv se pokusí znovu navázat komunikaci s selhání a umožňuje záruky doručení zadání, jako je například v pořadí doručení zpráv. Relace uchování stavu pro klienty mezi voláními. Ukázka implementuje relací pro zachování stavu klienta a určuje záruky doručení v daném pořadí.  

@@ -5,10 +5,10 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
 ms.openlocfilehash: 265ac7aa996014ea24e9c128076e12c937de0857
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59330815"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET ukázky a kurzy
@@ -57,7 +57,7 @@ Tato ukázka předvádí, syntaxe a funkcí pro C# Delegáti a události. [Úpln
 
 V této ukázce mnohé z problémů, které je možné řešit s využitím stromy výrazů. [Úplnou vzorovou](https://github.com/dotnet/samples/tree/master/csharp/expression-trees) je k dispozici v úložišti dotnet/samples na Githubu.
 
-**Ukázky LINQ**
+**Základní ukázky dotazů LINQ**
 
 Tato série ukázky ukazují řadu funkcí, z Language Integrated Query (LINQ). [Úplnou vzorovou](https://github.com/dotnet/samples/tree/master/core/linq/csharp) je k dispozici v úložišti dotnet/samples na Githubu.
 

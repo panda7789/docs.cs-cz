@@ -3,11 +3,11 @@ title: Schéma databáze trvalosti
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
 ms.openlocfilehash: 38df4b3d629840f1b5def2eafa0d074a2b2397a2
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59331062"
+ms.lasthandoff: 04/18/2019
+ms.locfileid: "59767991"
 ---
 # <a name="persistence-database-schema"></a>Schéma databáze trvalosti
 Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovního postupu SQL.  
