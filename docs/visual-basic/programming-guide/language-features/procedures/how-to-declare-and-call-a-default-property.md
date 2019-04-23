@@ -11,10 +11,10 @@ helpviewer_keywords:
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
 ms.openlocfilehash: 9ca9a0ccdac3ac13429928233a0c09d58427ce74
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295637"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
@@ -83,13 +83,13 @@ A *výchozí vlastnost* je vlastnost třídy nebo struktury, který váš kód m
   
 ## <a name="see-also"></a>Viz také:
 
-- [Procedury Property](./property-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Výchozí](../../../../visual-basic/language-reference/modifiers/default.md)
+- [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
+- [Default](../../../../visual-basic/language-reference/modifiers/default.md)
 - [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Postupy: Volání procedury Property](./how-to-call-a-property-procedure.md)
+- [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
-- [Postupy: Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+- [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

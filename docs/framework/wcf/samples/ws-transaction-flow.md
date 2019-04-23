@@ -5,10 +5,10 @@ helpviewer_keywords:
 - Transactions
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
 ms.openlocfilehash: cde5599734dbeb450e10b2b74cf035b41129d653
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296092"
 ---
 # <a name="ws-transaction-flow"></a>Tok transakcí webové služby
@@ -188,7 +188,7 @@ Console.WriteLine("Transaction committed");
   
 -   Druhá `Subtract` žádosti se provede v rámci nového oboru transakce deklarována s `TransactionScopeOption.Suppress` možnost. Toto potlačí počáteční vnější transakci klienta a požadavek nepostupuje transakci ke službě. Tento přístup umožňuje klientovi explicitně odhlásit a ochranu proti toku transakce služby, při které se nevyžaduje. V rámci oboru transakce nové a nepřipojené provedou služby akce.  
   
--   `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption>`NotAllowed`.  
+-   `Multiply` Žádost o nepostupuje transakce ve službě, protože klient vygenerovaný definice `ICalculator` zahrnuje rozhraní <xref:System.ServiceModel.TransactionFlowAttribute> nastavena na <xref:System.ServiceModel.TransactionFlowOption> `NotAllowed`.  
   
 -   `Divide` Požadavek nepostupuje transakce ve službě, protože znovu klienta vygenerovaný definice `ICalculator` rozhraní nezahrnuje `TransactionFlowAttribute`. V rámci oboru jinou transakcí nové a nepřipojené dojde znovu k akcím služby.  
   

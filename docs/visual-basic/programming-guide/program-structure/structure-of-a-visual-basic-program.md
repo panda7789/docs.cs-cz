@@ -8,10 +8,10 @@ helpviewer_keywords:
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
 ms.openlocfilehash: 42e366a844f9c5e80a8f617bf73dfd869608540d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295767"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Struktura programu jazyka Visual Basic
@@ -22,9 +22,9 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
 ## <a name="file-level-programming-elements"></a>Elementy programování na úrovni souboru  
  Při spuštění projektu nebo souboru a otevřete editor kódu, se zobrazí kód již na místě a ve správném pořadí. Veškerý kód, který napíšete postupujte podle následujících pořadí:  
   
-1. `Option` příkazy  
+1. `Option` Příkazy  
   
-2. `Imports` příkazy  
+2. `Imports` Příkazy  
   
 3. `Namespace` Příkazy a elementů na úrovni oboru názvů  
   
@@ -47,30 +47,30 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
 ## <a name="namespace-level-programming-elements"></a>Namespace – úroveň programovací elementy  
  Třídy, struktury a moduly obsahovat veškerý kód ve zdrojovém souboru. Jsou *úrovni oboru názvů* prvky, které se mohou objevit v oboru názvů nebo na úrovni zdroje souboru. Drží deklarace dalších programovacích prvků. Rozhraní, které definují element podpisy, ale poskytnout implementaci, zobrazit i na úrovni modulu. Další informace na úrovni modulu prvky naleznete v následujících tématech:  
   
--   [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md)  
+-   [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
--   [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md)  
+-   [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
--   [Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md)  
+-   [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
   
--   [Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md)  
+-   [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
  Výčty a Delegáti jsou prvky dat na úrovni oboru názvů.  
   
 ## <a name="module-level-programming-elements"></a>Úroveň modulu programovací elementy  
  Postupy, operátory, vlastnosti a události jsou jediným programovací prvky, které mohou obsahovat spustitelného kódu (příkazy, které provádějí akce za běhu). Jsou *úrovni modulu* prvky programu. Další informace o postupu úrovně prvky naleznete v následujících tématech:  
   
--   [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)  
+-   [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)  
+-   [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
--   [Declare – příkaz](../../../visual-basic/language-reference/statements/declare-statement.md)  
+-   [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)  
+-   [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
--   [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md)  
+-   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md)  
+-   [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
  Údaje na úrovni modulu jsou proměnné, konstanty, výčty a delegáti.  
   
@@ -96,4 +96,4 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
 
 - [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
 - [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
-- [Omezení jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/limitations.md)
+- [Visual Basic Limitations](../../../visual-basic/programming-guide/program-structure/limitations.md)
