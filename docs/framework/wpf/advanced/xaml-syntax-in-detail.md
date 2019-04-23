@@ -30,10 +30,10 @@ helpviewer_keywords:
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
 ms.openlocfilehash: bf4118c6e811f409715b7b6684851b8b3e8bbb25
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298887"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
@@ -316,7 +316,7 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled XAML (WPF)](xaml-overview-wpf.md)
-- [Jazykové funkce kompatibility značek (mc:)](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Namespace XAML (x:) Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [TypeConverters a XAML](typeconverters-and-xaml.md)

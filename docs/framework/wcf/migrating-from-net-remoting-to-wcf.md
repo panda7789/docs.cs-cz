@@ -3,10 +3,10 @@ title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
 ms.openlocfilehash: c6bc16e97a87461be7b2c4877777329a0005a497
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296196"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
@@ -142,7 +142,7 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
   
  Tento příklad ukazuje programování na úrovni kanálu, protože je nejvíce podobně jako v příkladu vzdálené komunikace. K dispozici je také **přidat odkaz na službu** přístup v sadě Visual Studio, který generuje kód pro zjednodušení programování klienta. Další informace naleznete v následujících tématech:  
   
--   [Programování na úrovni kanálu klienta](./extending/client-channel-level-programming.md)  
+-   [Programování klienta na úrovni kanálu](./extending/client-channel-level-programming.md)  
   
 -   [Postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   

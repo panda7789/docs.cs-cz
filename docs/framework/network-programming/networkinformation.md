@@ -5,10 +5,10 @@ helpviewer_keywords:
 - Network
 ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
 ms.openlocfilehash: 0820ad6a6d5000ef7ea575e856d883ba5325b1b0
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59230977"
 ---
 # <a name="networkinformation"></a>NetworkInformation

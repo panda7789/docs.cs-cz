@@ -13,10 +13,10 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], determining node clicked
 ms.assetid: 06a4a191-d918-42af-9f49-956c93eff261
 ms.openlocfilehash: 71f13c7b160822c92475d4d03e923b40d4f0454d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296729"
 ---
 # <a name="how-to-determine-which-treeview-node-was-clicked-windows-forms"></a>Postupy: Určení uzlu TreeView označeného kliknutím (Windows Forms)
@@ -60,4 +60,4 @@ Při práci s formuláři Windows <xref:System.Windows.Forms.TreeView> ovládac�
   
 ## <a name="see-also"></a>Viz také:
 
-- [TreeView – ovládací prvek](treeview-control-windows-forms.md)
+- [Ovládací prvek TreeView](treeview-control-windows-forms.md)

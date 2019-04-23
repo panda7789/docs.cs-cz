@@ -10,10 +10,10 @@ helpviewer_keywords:
 - creating [WPF], tile patterns with TileBrush
 ms.assetid: 5aa46632-3527-4668-9d8d-0375c8af28aa
 ms.openlocfilehash: c1051b234961eee9ae740af2abac3d64c523656c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59227402"
 ---
 # <a name="how-to-create-different-tile-patterns-with-a-tilebrush"></a>Postupy: Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush
@@ -36,4 +36,4 @@ Vytvořen s vlastností vlastnosti TileMode objektu vzorů dlaždic
 ## <a name="see-also"></a>Viz také:
 
 - [Nastavení velikosti dlaždice pro TileBrush](how-to-set-the-tile-size-for-a-tilebrush.md)
-- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)

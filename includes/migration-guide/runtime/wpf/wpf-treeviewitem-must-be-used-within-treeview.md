@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 88e00454894c8404fd48e92404e35ae27fa056f6
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59235225"
 ---
 ### <a name="wpf-treeviewitem-must-be-used-within-a-treeview"></a>Musí být použita WPF TreeViewItem v objektu TreeView

@@ -3,10 +3,10 @@ title: Neplatný řetězec vzoru.
 ms.date: 07/20/2015
 ms.assetid: ec1aecdb-5339-4a93-be71-eec56b1d7438
 ms.openlocfilehash: 7390b9b32eea248969813b52f8d9799798718de0
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298679"
 ---
 # <a name="invalid-pattern-string"></a>Neplatný řetězec vzoru.
@@ -24,4 +24,4 @@ Vzor řetězec zadaný v poli `Like` operace hledání je neplatná.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Like – operátor](../../visual-basic/language-reference/operators/like-operator.md)
+- [Operátor Like](../../visual-basic/language-reference/operators/like-operator.md)

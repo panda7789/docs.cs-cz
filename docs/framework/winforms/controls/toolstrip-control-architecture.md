@@ -5,10 +5,10 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], architecture
 ms.assetid: 71df2d18-862e-4701-9ff9-c1fe606f94f2
 ms.openlocfilehash: 91813928344f9210ce1383daa9ba7f765117833a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296209"
 ---
 # <a name="toolstrip-control-architecture"></a>Architektura ovládacího prvku ToolStrip
@@ -316,7 +316,7 @@ ms.locfileid: "59296209"
  <xref:System.Windows.Forms.ToolStripMenuItem> je <xref:System.Windows.Forms.ToolStripDropDownItem> , který funguje s <xref:System.Windows.Forms.ToolStripDropDownMenu> a <xref:System.Windows.Forms.ContextMenuStrip> zpracovat speciální uspořádání zvýrazňování, rozložení a sloupec pro nabídky.  
   
 ### <a name="toolstripdropdownbutton"></a>ToolStripDropDownButton  
- <xref:System.Windows.Forms.ToolStripDropDownButton> vypadá podobně jako <xref:System.Windows.Forms.ToolStripButton>, ale zobrazuje oblasti rozevíracího seznamu, když na něj uživatel klikne. Skrytí nebo zobrazení tak, že nastavíte na šipku rozevíracího seznamu <xref:System.Windows.Forms.ToolStripDropDownButton.ShowDropDownArrow%2A> vlastnost. <xref:System.Windows.Forms.ToolStripDropDownButton> Hostitelé <xref:System.Windows.Forms.ToolStripOverflowButton> , který zobrazí položky, které přetečení <xref:System.Windows.Forms.ToolStrip>.  
+ <xref:System.Windows.Forms.ToolStripDropDownButton> vypadá podobně jako <xref:System.Windows.Forms.ToolStripButton>, ale zobrazuje oblasti rozevíracího seznamu, když na něj uživatel klikne. Skrytí nebo zobrazení tak, že nastavíte na šipku rozevíracího seznamu <xref:System.Windows.Forms.ToolStripDropDownButton.ShowDropDownArrow%2A> vlastnost. <xref:System.Windows.Forms.ToolStripDropDownButton> hostitelé <xref:System.Windows.Forms.ToolStripOverflowButton> , který zobrazí položky, které přetečení <xref:System.Windows.Forms.ToolStrip>.  
   
 ### <a name="toolstripsplitbutton"></a>Prvku ToolStripSplitButton  
  <xref:System.Windows.Forms.ToolStripSplitButton> kombinuje funkcí tlačítko rozevíracího seznamu a tlačítko.  
@@ -379,9 +379,9 @@ ms.locfileid: "59296209"
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled ovládacího prvku ToolStrip](toolstrip-control-overview-windows-forms.md)
-- [Souhrn technologie ToolStrip](toolstrip-technology-summary.md)
-- [ToolStrip – ovládací prvek](toolstrip-control-windows-forms.md)
+- [Shrnutí technologie ToolStrip](toolstrip-technology-summary.md)
+- [Ovládací prvek ToolStrip](toolstrip-control-windows-forms.md)
 - [Ovládací prvek MenuStrip](menustrip-control-windows-forms.md)
-- [StatusStrip – ovládací prvek](statusstrip-control.md)
-- [ContextMenuStrip – ovládací prvek](contextmenustrip-control.md)
+- [Ovládací prvek StatusStrip](statusstrip-control.md)
+- [Ovládací prvek ContextMenuStrip](contextmenustrip-control.md)
 - [Ovládací prvek BindingNavigator](bindingnavigator-control-windows-forms.md)

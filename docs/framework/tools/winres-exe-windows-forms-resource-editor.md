@@ -14,10 +14,10 @@ ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c9a14c2ea2d7d817aacca1fa25b04ac643f16bf
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296651"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Editor lokalizace prostředků Windows)
@@ -145,5 +145,5 @@ Měli byste použít verzi nástroje Winres.exe vydanou s rozhraním .NET Framew
 - <xref:System.Resources.ResourceReader>
 - <xref:System.Resources.ResourceWriter>
 - [Nástroje](../../../docs/framework/tools/index.md)
-- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
 - [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)

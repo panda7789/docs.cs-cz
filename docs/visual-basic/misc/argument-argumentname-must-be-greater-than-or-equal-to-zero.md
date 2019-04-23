@@ -5,10 +5,10 @@ f1_keywords:
 - vbrFinancial_ArgGEZero1
 ms.assetid: 7b901c2a-3447-4afc-91f8-8fa5f6f961d7
 ms.openlocfilehash: 25872e8cd2ca18d12a6d2f07a9a97c0d2bcb4f7e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298229"
 ---
 # <a name="argument-argumentname-must-be-greater-than-or-equal-to-zero"></a>Argument '\<název argumentu argumentname >' musí být větší než nebo rovna hodnotě nula.
@@ -22,4 +22,4 @@ Argument není platný, protože je menší než nula.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Předávání argumentů hodnotou nebo referencí](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)

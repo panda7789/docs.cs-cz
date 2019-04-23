@@ -9,10 +9,10 @@ helpviewer_keywords:
 - object variables [Visual Basic], accessing
 ms.assetid: 3eb7657f-c9fe-4e05-8bc3-4bb14d5ae585
 ms.openlocfilehash: 94c838a69aab9fcae9dc0c79b6038ee90e2369e7
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299134"
 ---
 # <a name="how-to-speed-up-access-to-an-object-with-a-long-qualification-path-visual-basic"></a>Postupy: Urychlení přístupu k objektu pomocí cesty dlouhou kvalifikací (Visual Basic)
@@ -56,4 +56,4 @@ Pokud využíváte častěji objekt, který se vyžaduje cesta kvalifikace něko
 ## <a name="see-also"></a>Viz také:
 
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [With...End With – příkaz](../../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [Příkaz With...End With](../../../../visual-basic/language-reference/statements/with-end-with-statement.md)

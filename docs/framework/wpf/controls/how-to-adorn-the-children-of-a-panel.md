@@ -9,10 +9,10 @@ helpviewer_keywords:
 - Panel control [WPF], binding adorners to children
 ms.assetid: 4cc9b972-b472-4e5c-bdf3-3702d7fbb1f5
 ms.openlocfilehash: 746f197a5132934f94a678dc3b5e2a1f65eb93bd
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299810"
 ---
 # <a name="how-to-adorn-the-children-of-a-panel"></a>Postupy: Doplnění podřízených položek panelu
@@ -21,7 +21,7 @@ Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplň
 ## <a name="example"></a>Příklad  
  K připojení doplňku k podřízených položek <xref:System.Windows.Controls.Panel>, postupujte podle těchto kroků:  
   
-1. Deklarovat nový <xref:System.Windows.Documents.AdornerLayer> objektu a volání `static`<xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> metody k vyhledání vrstvu doplněk pro úpravy pro element, jehož potomci mají být opatřený.  
+1. Deklarovat nový <xref:System.Windows.Documents.AdornerLayer> objektu a volání `static` <xref:System.Windows.Documents.AdornerLayer.GetAdornerLayer%2A> metody k vyhledání vrstvu doplněk pro úpravy pro element, jehož potomci mají být opatřený.  
   
 2. Zobrazit výčet prostřednictvím podřízené objekty nadřazeného elementu a volání <xref:System.Windows.Documents.AdornerLayer.Add%2A> metodu připojení doplňku k každý podřízený prvek.  
   
@@ -35,4 +35,4 @@ Tento příklad ukazuje, jak prostřednictvím kódu programu připojení doplň
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled doplňků](adorners-overview.md)
+- [Přehled doplňků pro úpravy](adorners-overview.md)

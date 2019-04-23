@@ -8,10 +8,10 @@ helpviewer_keywords:
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
 ms.openlocfilehash: 8e3d893a21b36868f59d132bd8ba9a6f634cac62
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296066"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů v jazyce Visual Basic
@@ -134,13 +134,13 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 ## <a name="additional-information"></a>Další informace  
  Jakmile se seznámíte se základními koncepcemi práce s dotazy, budete chtít přečíst dokumentaci a ukázky pro konkrétní typ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají:  
   
- [LINQ na objekty](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+ [LINQ to Objects](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
- [Technologie LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
- [Technologie LINQ to XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
+ [LINQ to XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
   
- [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+ [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -149,6 +149,6 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Představení technologie LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

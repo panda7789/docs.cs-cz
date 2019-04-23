@@ -8,10 +8,10 @@ helpviewer_keywords:
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
 ms.openlocfilehash: 9e005d0dc7da154fbaffbf7e02c55445a1213195
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296235"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
@@ -178,10 +178,10 @@ End Module
 
 - <xref:System.Runtime.CompilerServices>
 - <xref:System.Runtime.CompilerServices.ExtensionAttribute>
-- [Metody rozšíření](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
-- [Module – příkaz](../../../../visual-basic/language-reference/statements/module-statement.md)
+- [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)
+- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Volitelné parametry](./optional-parameters.md)
+- [Nepovinné parametry](./optional-parameters.md)
 - [Pole parametrů](./parameter-arrays.md)
 - [Přehled atributy](../../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

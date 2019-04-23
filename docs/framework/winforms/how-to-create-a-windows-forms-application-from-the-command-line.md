@@ -12,10 +12,10 @@ ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce97089ec71fc910079910957e784605387f3e06
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299865"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace Windows Forms z příkazového řádku
@@ -65,7 +65,7 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
     -   Pokud používáte Visual Basic, zadejte: `vbc form1.vb`  
   
-3. V příkazovém řádku zadejte příkaz: `Form1.exe`  
+3. Na příkazovém řádku zadejte: `Form1.exe`  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>Přidání ovládacího prvku a zpracování událostí  
  Předchozí kroky postupu jsme vám ukázali jen vytvoření základního formuláře Windows, který zkompiluje a spustí. Následující postup obsahuje pokyny k vytvoření a přidání ovládacího prvku na formuláři a zpracovat události pro ovládací prvek. Další informace o ovládacích prvků můžete přidat do formulářů Windows, naleznete v tématu [ovládacích prvků Windows Forms](./controls/index.md).  
@@ -117,6 +117,6 @@ Následující postupy popisují základní kroky, které je třeba provést k v
 
 - <xref:System.Windows.Forms.Form>
 - <xref:System.Windows.Forms.Control>
-- [Změna vzhledu Windows Forms ](changing-the-appearance-of-windows-forms.md)
-- [Rozšiřování formulářových aplikací Windows](./advanced/index.md)
+- [Změna vzhledu Windows Forms](changing-the-appearance-of-windows-forms.md)
+- [Rozšiřování aplikací Windows Forms](./advanced/index.md)
 - [Začínáme s Windows Forms](getting-started-with-windows-forms.md)

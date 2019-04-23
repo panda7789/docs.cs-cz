@@ -7,10 +7,10 @@ helpviewer_keywords:
 - documents [WPF], features for
 ms.assetid: 7bf37ccb-5d09-4eae-9661-929582aeb259
 ms.openlocfilehash: 4dbe2e8257bfc92f354d032d7bb6e2ba7a693075
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59206938"
 ---
 # <a name="documents"></a>Dokumenty
@@ -18,15 +18,15 @@ ms.locfileid: "59206938"
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Dokumenty v platformě WPF](documents-in-wpf.md)  
- [Serializace a úložiště dokumentu](document-serialization-and-storage.md)  
+ [Serializace a úložiště dokumentů](document-serialization-and-storage.md)  
  [Poznámky](annotations.md)  
  [Obsah toku](flow-content.md)  
  [Typografie](typography.md)  
- [Tisk a systémová správa tisku](printing-and-print-system-management.md)  
+ [Tisk a správa systému tisku](printing-and-print-system-management.md)  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Controls.DocumentViewer>
 - <xref:System.Windows.Documents.FlowDocument>
 - <xref:System.Windows.Xps>
-- [isXPS.exe (nástroj isXPS pro kontrolu shody)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))
+- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))

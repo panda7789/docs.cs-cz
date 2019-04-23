@@ -3,10 +3,10 @@ title: <namedPipeTransport>
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
 ms.openlocfilehash: fd7dc38e229b6135f91fc159596ed1669d43701a
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59228234"
 ---
 # <a name="namedpipetransport"></a>\<namedPipeTransport>
@@ -59,7 +59,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |maxPendingConnections|Získá nebo nastaví maximální počet připojení čeká na odeslání ve službě.|  
 |maxReceivedMessageSize|Získá nebo nastaví maximální povolenou velikost zprávy, v bajtech, které může být přijata.|  
 |transferMode|Získá nebo nastaví hodnotu určující, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.|  
-|[\<connectionPoolSettings> of \<namedPipeTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/connectionpoolsettings.md)|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
+|[\<connectionPoolSettings > z \<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/connectionpoolsettings.md)|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -81,6 +81,6 @@ Tento přenos používá identifikátory URI ve tvaru "net.pipe://hostname/path"
 - [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
 - [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
 - [Vazby](../../../../../docs/framework/wcf/bindings.md)
-- [Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
 - [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

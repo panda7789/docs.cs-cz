@@ -13,10 +13,10 @@ helpviewer_keywords:
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
 ms.openlocfilehash: 14e5a7f47c1c1f2cbaf0457be34019454ff041f4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59230561"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k internetu přes proxy server
@@ -28,9 +28,9 @@ Pokud váš web používá k zajištění přístupu k Internetu proxy server, m
   
 -   [Automatické rozpoznávání proxy serveru](../../../docs/framework/network-programming/automatic-proxy-detection.md)  
   
--   [Postupy: Povolení žádosti WebRequest, aby se používal proxy server pro komunikaci s internetem](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+-   [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
--   [Postupy: Přepsání globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+-   [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
 ## <a name="see-also"></a>Viz také:
 

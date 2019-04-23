@@ -9,10 +9,10 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], creating window lists
 ms.assetid: 04fb414b-811f-4a83-aab6-b4a24646dec5
 ms.openlocfilehash: ec0d8af81e320bea3d9d69305f91bd56666ba7cc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299641"
 ---
 # <a name="how-to-create-an-mdi-window-list-with-menustrip-windows-forms"></a>Postupy: Vytvoření seznamu okna MDI pomocí MenuStrip (Windows Forms)
@@ -30,11 +30,11 @@ Můžete vytvářet aplikace, které můžete otevřít několik dokumentů ve s
   
 4. Přidat podnabídku položku `&File` položky nabídky a nastavte jeho <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost `&Open`.  
   
-5. Nastavte <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastnost <xref:System.Windows.Forms.MenuStrip> k `&Window`<xref:System.Windows.Forms.ToolStripMenuItem>.  
+5. Nastavte <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> vlastnost <xref:System.Windows.Forms.MenuStrip> k `&Window` <xref:System.Windows.Forms.ToolStripMenuItem>.  
   
 6. Přidat formuláře do projektu a přidejte ovládací prvek, například jiného <xref:System.Windows.Forms.MenuStrip>.  
   
-7. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
+7. Vytvořte obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost `&New` <xref:System.Windows.Forms.ToolStripMenuItem>.  
   
 8. V rámci obslužné rutiny události, vložte kód podobný následujícímu k vytváření a zobrazování nových instancí `Form2` jako podřízený objekt MDI `Form1`.  
   
@@ -61,7 +61,7 @@ Můžete vytvářet aplikace, které můžete otevřít několik dokumentů ve s
     }  
     ```  
   
-9. Umístěte kód v následujícím postupem `&New`<xref:System.Windows.Forms.ToolStripMenuItem> zaregistrovat obslužnou rutinu události.  
+9. Umístěte kód v následujícím postupem `&New` <xref:System.Windows.Forms.ToolStripMenuItem> zaregistrovat obslužnou rutinu události.  
   
     ```vb  
     Private Sub newToolStripMenuItem_Click(sender As Object, e As _  

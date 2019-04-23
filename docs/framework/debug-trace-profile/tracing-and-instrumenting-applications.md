@@ -16,10 +16,10 @@ ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6749f54db106bffaba57b7cb77cb13808175af3a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298903"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
@@ -122,9 +122,9 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 |Metoda|Výstup|  
 |------------|------------|  
-|**Assert**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání. Výstup bude zapsán pouze pokud je podmínka zadaný jako argument v **Assert** příkaz je **false**.|  
+|**Kontrolní výraz**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání. Výstup bude zapsán pouze pokud je podmínka zadaný jako argument v **Assert** příkaz je **false**.|  
 |**Selhání**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání.|  
-|**Write**|Zadaný text.|  
+|**Zápis**|Zadaný text.|  
 |**Writeif –**|Zadaný text, pokud podmínka zadaný jako argument v **writeif –** příkazu není splněna.|  
 |**WriteLine**|Zadaný text a zalomení řádku.|  
 |**WriteLineIf**|Zadaný text a zalomení řádku vrátit, pokud podmínka zadaný jako argument v **writelineif –** příkazu není splněna.|  
@@ -148,9 +148,9 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 - [Kontrakty kódu](../../../docs/framework/debug-trace-profile/code-contracts.md)
 - [Typy projektů jazyka C#, F# a Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
-- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 - [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
 - [Postupy: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)
 - [Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)
-- [Naslouchací procesy trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
 - [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)

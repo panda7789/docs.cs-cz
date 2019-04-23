@@ -1,12 +1,12 @@
 ---
-title: <iriParsing> – Element (nastavení Uri)
+title: <iriParsing> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
 ms.openlocfilehash: 7033f4dcda7d2fe73310ae0d36d9b05c090d13d4
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299667"
 ---
 # <a name="iriparsing-element-uri-settings"></a>\<iriParsing > – Element (nastavení Uri)
@@ -32,7 +32,7 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
   
 ### <a name="attributes"></a>Atributy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
 |`enabled`|Určuje, zda je povolena analýza IRI. Výchozí hodnota je `false`.|  
   
@@ -41,9 +41,9 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**Prvek**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[identifikátor URI](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).|  
+|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).|  
   
 ## <a name="remarks"></a>Poznámky  
  Existující <xref:System.Uri> bylo rozšířeno třídy v rozhraní .NET Framework 3.5. 3.0 SP1 a 2.0 SP1 pro poskytnutí podpory pro mezinárodní prostředků identifikátory (IRI) a mezinárodní názvy domén (IDN). Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud výslovně povolit IRI a IDN podporovat. Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.  

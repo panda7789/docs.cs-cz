@@ -3,10 +3,10 @@ title: Stručné reference k Entity SQL
 ms.date: 03/30/2017
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
 ms.openlocfilehash: b4e3eaf8abd82b63fa2663b47f878ecfa9584897
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59207068"
 ---
 # <a name="entity-sql-quick-reference"></a>Stručné reference k Entity SQL
@@ -44,7 +44,7 @@ DATETIME '2006-12-25 01:01'
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |12/25/2006 1:01:00: 00|  
   
@@ -83,7 +83,7 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
   
  Výstup:  
   
-|ProductID|Name|  
+|ProductID|Název|  
 |---------------|----------|  
 |1|Měnitelné závodu|  
 |879|Univerzální kol samostatné|  
@@ -138,7 +138,7 @@ SELECT REF(o) AS OrderID FROM Orders AS o
   
  Výstup:  
   
-|Hodnota|  
+|Value|  
 |-----------|  
 |1|  
 |2|  
@@ -252,7 +252,7 @@ using SqlServer; LOWER('AA');
   
  Výstup:  
   
-|Value|  
+|Hodnota|  
 |-----------|  
 |aa|  
   
@@ -268,7 +268,7 @@ SELECT c.ContactID as ID, c.LastName as Name FROM
   
  Výstup:  
   
-|ID|Name|  
+|ID|Název|  
 |--------|----------|  
 |10|Adina|  
 |11|Agcaoili|  
@@ -326,7 +326,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
   
  Výstup:  
   
-|Name|  
+|Název|  
 |----------|  
 |Měnitelné závodu|  
 |Univerzální kol samostatné|  
@@ -340,7 +340,7 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
   
  Vyberte p.Name, p.ProductID z AdventureWorksEntities.Product jako p výstup:  
   
-|Name|ProductID|  
+|Název|ProductID|  
 |----------|---------------|  
 |Měnitelné závodu|1|  
 |Univerzální kol samostatné|879|  

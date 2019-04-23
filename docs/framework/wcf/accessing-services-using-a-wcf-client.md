@@ -8,10 +8,10 @@ helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
 ms.openlocfilehash: 6bf683cdd0a03a5d1dbc452c28e7b33911464f09
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59297249"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
@@ -191,9 +191,9 @@ Pokud dojde k tyto typy výjimek, je nejlepší způsob, jak problém vyřešit 
 - [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 - [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
 - [Postupy: Asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [Postupy: Přístup ke službě WSE 3.0](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek odpověď](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Postupy: Přístup k WSE 3.0 Service](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Principy generovaného klientského kódu](../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)
-- [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
-- [Nastavení běhového chování klienta](../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
-- [Konfigurace chování klientů](../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Postupy: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Nastavení chování klienta za běhu](../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
+- [Konfigurace chování klienta](../../../docs/framework/wcf/configuring-client-behaviors.md)

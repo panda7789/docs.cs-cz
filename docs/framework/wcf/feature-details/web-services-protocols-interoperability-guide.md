@@ -3,10 +3,10 @@ title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
 ms.openlocfilehash: 647212558b6be38e9b30239f7fb71213e6eb7d86
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59228259"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
@@ -102,7 +102,7 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
+- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
 - [Protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)
 - [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
 - [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)

@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
 ms.openlocfilehash: 2fa84052bcf9ca97b903111fc02e319b25deb384
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296963"
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: Přiřazení uživatelských informací pro seskupení připojení

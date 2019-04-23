@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
 ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59299186"
 ---
 # <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>Operátor musí být jeden z: +,-, *,\,/, ^, &amp;, Like, Mod a, Or, Xor, Not, \< \<, >>...
@@ -35,8 +35,8 @@ Je možné deklarovat pouze operátor, který opravňuje k přetížení. V nás
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [Postupy: Definování operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [Postupy: Definování operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)

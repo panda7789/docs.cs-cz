@@ -9,10 +9,10 @@ helpviewer_keywords:
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
 ms.openlocfilehash: edd9d6f698ba27cacb5e9a5eecab43f58d47b8e1
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296521"
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Návod: Mapování vlastností použitím elementu WindowsFormsHost
@@ -83,7 +83,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
      `AddClipMapping` Metoda přidá nové mapování <xref:System.Windows.UIElement.Clip%2A> vlastnost.
 
-     `OnClipChange` Metoda překládá <xref:System.Windows.UIElement.Clip%2A> vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.Region%2A> vlastnost.
+     `OnClipChange` Metoda překládá <xref:System.Windows.UIElement.Clip%2A> vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Control.Region%2A> vlastnost.
 
      `Window1_SizeChanged` Obsluhovala v okně <xref:System.Windows.FrameworkElement.SizeChanged> události a velikosti oblast ořezu podle okna aplikace.
 
@@ -113,7 +113,7 @@ Nahraďte výchozí mapování vlastnosti tak, že odeberete výchozí mapován�
 
      `ReplaceFlowDirectionMapping` Metoda nahradí výchozí mapování <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost.
 
-     `OnFlowDirectionChange` Metoda překládá <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost.
+     `OnFlowDirectionChange` Metoda překládá <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost.
 
      `cb_CheckedChanged` Metoda obslužné rutiny <xref:System.Windows.Forms.CheckBox.CheckedChanged> událostí na <xref:System.Windows.Forms.CheckBox> ovládacího prvku. Přiřazuje <xref:System.Windows.FrameworkElement.FlowDirection%2A> nastavenou na hodnotu <xref:System.Windows.Forms.CheckBox.CheckState%2A> vlastnost
 
@@ -145,7 +145,7 @@ Nastavení mapování vlastností pomocí volání metody bylo popsáno dříve 
 
      `WindowLoaded` Metoda obslužné rutiny <xref:System.Windows.FrameworkElement.Loaded> událostí a provádí následující inicializace.
 
-    -   Vytvoří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]<xref:System.Windows.Forms.CheckBox> ovládacího prvku.
+    -   Vytvoří [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] <xref:System.Windows.Forms.CheckBox> ovládacího prvku.
 
     -   Volá metody, které jste definovali dříve v návodu k nastavení mapování vlastností.
 
@@ -159,5 +159,5 @@ Nastavení mapování vlastností pomocí volání metody bylo popsáno dříve 
 - <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Mapování vlastnosti Windows Forms a WPF](windows-forms-and-wpf-property-mapping.md)
-- [Návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
-- [Návod: Hostování ovládacího prvku Windows Forms ve WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Návrh kódu XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio)
+- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)

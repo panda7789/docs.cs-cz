@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c37b90f7f68c4de1d22e148c8800005ae3d8e800
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59236396"
 ---
 ### <a name="accessibility-improvements-in-wpf"></a>Vylepšení přístupnosti v subsystému WPF

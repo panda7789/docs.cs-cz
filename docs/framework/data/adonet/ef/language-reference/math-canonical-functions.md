@@ -3,10 +3,10 @@ title: Matematické kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
 ms.openlocfilehash: f575785bb198251ef50ba3563e736946253c9526
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59228767"
 ---
 # <a name="math-canonical-functions"></a>Matematické kanonické funkce
@@ -17,7 +17,7 @@ Entita SQL obsahuje následující matematické kanonické funkce:
 
 Vrátí absolutní hodnotu `value`.
 
-**Arguments**
+**Argumenty**
 
 `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, A `Decimal`.
 
@@ -33,7 +33,7 @@ Typ `value`.
 
 Vrátí nejmenší celé číslo, které není menší než `value`.
 
-**Arguments**
+**Argumenty**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -50,7 +50,7 @@ Typ `value`.
 
 Vrátí největší celé číslo, které není větší než `value`.
 
-**Arguments**
+**Argumenty**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -67,7 +67,7 @@ Typ `value`.
 
 Vrátí výsledek zadaného `value` do zadaného `exponent`.
 
-**Arguments**
+**Argumenty**
 
 |  |  |
 |--|--|
@@ -86,7 +86,7 @@ Typ `value`.
 
 Vrátí celočíselnou část `value`, zaokrouhlený na nejbližší celé číslo.
 
-**Arguments**
+**Argumenty**
 
 A `Single`, `Double`, a `Decimal`.
 
@@ -102,12 +102,12 @@ Typ `value`.
 
 Vrátí `value`, zaokrouhleno na nejbližší zadaný `digits`.
 
-**Arguments**
+**Argumenty**
 
 |  |  |
 |--|--|
-|`value`|`Double` or `Decimal`.|
-|`digits`|`Int16` or `Int32`.|
+|`value`|`Double` nebo `Decimal`.|
+|`digits`|`Int16` nebo `Int32`.|
 
 **Návratová hodnota**
 
@@ -121,12 +121,12 @@ Typ `value`.
 
 Vrátí `value`, došlo ke zkrácení na nejbližší zadaný `digits`.
 
-**Arguments**
+**Argumenty**
 
 |  |  |
 |--|--|
-|`value`|`Double` or `Decimal`.|
-|`digits`|`Int16` or `Int32`.|
+|`value`|`Double` nebo `Decimal`.|
+|`digits`|`Int16` nebo `Int32`.|
 
 **Návratová hodnota**
 

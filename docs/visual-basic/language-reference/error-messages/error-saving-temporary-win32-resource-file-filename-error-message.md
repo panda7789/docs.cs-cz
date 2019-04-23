@@ -1,5 +1,5 @@
 ---
-title: "Chyba při ukládání dočasného souboru prostředků Win32 '<filename>\": <error message>"
+title: "Při ukládání dočasného zdrojového souboru '<filename>' Win32 došlo k chybě: <error message>"
 ms.date: 07/20/2015
 f1_keywords:
 - bc30137
@@ -8,10 +8,10 @@ helpviewer_keywords:
 - BC30137
 ms.assetid: 61c23f48-0e06-42fc-be00-5598053c86dd
 ms.openlocfilehash: 578eac69ea36d8320933a2cbeff0a5bed4f24d3e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298770"
 ---
 # <a name="error-saving-temporary-win32-resource-file-filename-error-message"></a>Chyba při ukládání dočasného souboru prostředků Win32 '\<název souboru >': \<chybová zpráva >

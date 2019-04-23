@@ -21,10 +21,10 @@ helpviewer_keywords:
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
 ms.openlocfilehash: b4621da21200e6c9e2b174a0e2ba508a4f6bab92
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59228195"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
@@ -67,4 +67,4 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
 - [Přehled XAML (WPF)](../wpf/advanced/xaml-overview-wpf.md)
 - [Rozšíření značek a WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md)
 - [XamlName – gramatika](xamlname-grammar.md)
-- [Zpracování prázdných znaků v jazyku XAML](whitespace-processing-in-xaml.md)
+- [Zpracování mezerových znaků v XAML](whitespace-processing-in-xaml.md)

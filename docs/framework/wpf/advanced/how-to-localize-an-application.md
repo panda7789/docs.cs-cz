@@ -10,10 +10,10 @@ helpviewer_keywords:
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
 ms.openlocfilehash: d08f991204b2d74899cbd1aee82c0cc23e175dd4
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298315"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
@@ -149,10 +149,10 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
    Následující tabulka ukazuje, jak tato pole se mapují na hodnoty s oddělovači souboru CSV:  
   
-   |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Hodnota|  
+   |Název BAML|Klíč prostředku|Kategorie|Lepší čitelnost|Modifiability|Komentáře|Value|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
    |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorovat|FALSE|FALSE||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|Žádné|HODNOTA TRUE|HODNOTA TRUE||Hello World|
    |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|Žádný|HODNOTA TRUE|HODNOTA TRUE||Goodbye World|
   
    Všimněte si, že všechny hodnoty **komentáře** pole neobsahují žádné hodnoty; Pokud pole nemá hodnotu, je prázdný. Všimněte si také, že položka v prvním řádku není ani čitelná ani měnit a má "Ignorovat" jako jeho **kategorie** hodnoty, které označuje, že hodnota není lokalizovatelné.  

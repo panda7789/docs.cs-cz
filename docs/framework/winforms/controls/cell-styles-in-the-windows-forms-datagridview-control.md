@@ -7,10 +7,10 @@ helpviewer_keywords:
 - data grids [Windows Forms], cell styles
 ms.assetid: dbb75ed6-8804-4232-8382-f9920c2e380c
 ms.openlocfilehash: 41794c5ecadbcdc0b38c7c73afc7c010a4ea6989
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300018"
 ---
 # <a name="cell-styles-in-the-windows-forms-datagridview-control"></a>Styly buňky v ovládacím prvku Windows Forms DataGridView
@@ -21,17 +21,17 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
 ## <a name="the-datagridviewcellstyle-class"></a>The DataGridViewCellStyle Class  
  <xref:System.Windows.Forms.DataGridViewCellStyle> Třída obsahuje následující vlastnosti související s vizuálního stylu:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> and <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> and <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
   
 -   <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A>  
   
  Tato třída také obsahuje následující vlastnosti související s formátování:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> and <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> and <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
+-   <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
   
 -   <xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>  
   
@@ -81,7 +81,7 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
   
 1. <xref:System.Windows.Forms.DataGridViewCell.Style%2A?displayProperty=nameWithType>  
   
-2. <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType> or <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
+2. <xref:System.Windows.Forms.DataGridView.ColumnHeadersDefaultCellStyle%2A?displayProperty=nameWithType> Nebo <xref:System.Windows.Forms.DataGridView.RowHeadersDefaultCellStyle%2A?displayProperty=nameWithType>  
   
 3. <xref:System.Windows.Forms.DataGridView.DefaultCellStyle%2A?displayProperty=nameWithType>  
   

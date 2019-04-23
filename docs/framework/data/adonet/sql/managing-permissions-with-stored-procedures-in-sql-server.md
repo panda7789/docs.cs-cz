@@ -3,10 +3,10 @@ title: Správa oprávnění pomocí uložených procedur na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
 ms.openlocfilehash: 0688157b45892cacb73f858dffb93836da9fc91d
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59229989"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Správa oprávnění pomocí uložených procedur na SQL Serveru

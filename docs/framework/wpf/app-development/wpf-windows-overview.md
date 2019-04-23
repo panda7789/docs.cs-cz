@@ -29,10 +29,10 @@ helpviewer_keywords:
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
 ms.openlocfilehash: 5acebf0f88f3147bf274818f11697b480146701a
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59296118"
 ---
 # <a name="wpf-windows-overview"></a>Přehled WPF Windows
@@ -108,9 +108,9 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
 ## <a name="configuring-a-window-definition-for-msbuild"></a>Konfigurace definice okna pro MSBuild  
  Jak implementovat okno určuje, jak je nakonfigurována pro [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]. Pro okno, které je definováno pomocí obou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu:  
   
--   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory kódu nejsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Page` položky.  
+-   [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory kódu nejsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Page` položky.  
   
--   Soubory kódu na pozadí jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]`Compile` položky.  
+-   Soubory kódu na pozadí jsou nakonfigurované jako [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Compile` položky.  
   
  To je ukázáno v následujícím [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] souboru projektu.  
   
@@ -257,7 +257,7 @@ Uživatelé komunikují s samostatné aplikace Windows Presentation Foundation (
  [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
  [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
 
- <xref:System.Windows.Window.Closing> Je předána obslužné rutiny události <xref:System.ComponentModel.CancelEventArgs>, která implementuje `Boolean`<xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která nastavíte na `true` zabránit okno zavřít.  
+ <xref:System.Windows.Window.Closing> Je předána obslužné rutiny události <xref:System.ComponentModel.CancelEventArgs>, která implementuje `Boolean` <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> vlastnost, která nastavíte na `true` zabránit okno zavřít.  
   
  Pokud <xref:System.Windows.Window.Closing> není zpracována, nebo je zpracována, ale není zrušena, okno se zavře. Těsně před plánovaným začátkem skutečně okno zavře, <xref:System.Windows.Window.Closed> je vyvolána. V tuto chvíli nelze zabránit okno zabrání v uzavření.  
   

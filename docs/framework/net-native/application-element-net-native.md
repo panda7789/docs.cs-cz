@@ -5,10 +5,10 @@ ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5b858b9daad22cdda6df30be7b28cdecfd275b8f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59228299"
 ---
 # <a name="application-element-net-native"></a>\<Aplikace > – Element (.NET Native)
@@ -52,7 +52,7 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Nastavení pro tuto zásadu použít typy v aplikaci. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
@@ -61,12 +61,12 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
-|[\<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
 |[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady na Konstruovaný obecný typ. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může použít k definování zásad pro `List<String>` typu.|  
-|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady na metoda u určitého typu.|  
+|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady na metoda u určitého typu.|  
 |[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady na konstruovanou obecnou metodu.|  
-|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady na vlastnost určitého typu.|  
+|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady na vlastnost určitého typu.|  
 |[\<pole >](../../../docs/framework/net-native/field-element-net-native.md)|Použije zásady na pole určitého typu.|  
 |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady na událost u určitého typu.|  
   

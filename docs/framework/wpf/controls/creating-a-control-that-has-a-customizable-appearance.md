@@ -14,10 +14,10 @@ helpviewer_keywords:
 - VisualStateManager [WPF], best practice
 ms.assetid: 9e356d3d-a3d0-4b01-a25f-2d43e4d53fe5
 ms.openlocfilehash: a5d7c06502b66298d530d0180ffaf63862b9fc28
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298341"
 ---
 # <a name="creating-a-control-that-has-a-customizable-appearance"></a>Vytvoření ovládacího prvku se vzhledem, který lze přizpůsobit
@@ -121,7 +121,7 @@ Vlastní ovládací prvek NumericUpDown
 ### <a name="use-the-visualstatemanager-to-manage-states"></a>Použití VisualStateManager ke správě stavů  
  <xref:System.Windows.VisualStateManager> Uchovává informace o stavu ovládacího prvku a provádějí logiku potřebnou pro přechod mezi stavy. Když přidáte <xref:System.Windows.VisualState> objektů <xref:System.Windows.Controls.ControlTemplate>, přidejte je do <xref:System.Windows.VisualStateGroup> a přidejte <xref:System.Windows.VisualStateGroup> k <xref:System.Windows.VisualStateManager.VisualStateGroups%2A?displayProperty=nameWithType> přidružená vlastnost tak, aby <xref:System.Windows.VisualStateManager> k nim má přístup.  
   
- V následujícím příkladu se opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídá `Positive` a `Negative` stavy ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative`<xref:System.Windows.VisualState> se změní <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> červené.   Při `NumericUpDown` ovládací prvek je v `Negative` scénář ve stavu `Negative` začíná stavu.  Pak bude <xref:System.Windows.Media.Animation.Storyboard> v `Negative` stavu zastaví, když se ovládací prvek vrátí `Positive` stavu.  `Positive`<xref:System.Windows.VisualState> Nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard> vzhledem k tomu, když <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí původní barvu.  
+ V následujícím příkladu se opakuje předchozí příklad, který ukazuje <xref:System.Windows.VisualState> objekty, které odpovídá `Positive` a `Negative` stavy ovládacího prvku. <xref:System.Windows.Media.Animation.Storyboard> v `Negative` <xref:System.Windows.VisualState> se změní <xref:System.Windows.Controls.TextBlock.Foreground%2A> z <xref:System.Windows.Controls.TextBlock> červené.   Při `NumericUpDown` ovládací prvek je v `Negative` scénář ve stavu `Negative` začíná stavu.  Pak bude <xref:System.Windows.Media.Animation.Storyboard> v `Negative` stavu zastaví, když se ovládací prvek vrátí `Positive` stavu.  `Positive` <xref:System.Windows.VisualState> Nemusí obsahovat <xref:System.Windows.Media.Animation.Storyboard> vzhledem k tomu, když <xref:System.Windows.Media.Animation.Storyboard> pro `Negative` zastaví, <xref:System.Windows.Controls.TextBlock.Foreground%2A> vrátí původní barvu.  
   
  [!code-xaml[VSMCustomControl#ValueStates](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#valuestates)]  
   
@@ -156,7 +156,7 @@ Vlastní ovládací prvek NumericUpDown
   
  Pokud předáte název stavu, který <xref:System.Windows.VisualStateManager.GoToState%2A> ovládací prvek je již v tomto stavu <xref:System.Windows.VisualStateManager.GoToState%2A> nemá žádný účinek, takže není nutné ke kontrole aktuální stav ovládacího prvku.  Například pokud `Value` změní z jedné záporné číslo na jiné záporné číslo, scénář pro `Negative` stavu proces se nepřerušil, a uživatel neuvidí změn v ovládacím prvku.  
   
- <xref:System.Windows.VisualStateManager> Používá <xref:System.Windows.VisualStateGroup> objekty k určení stavu, které pro ukončení při volání <xref:System.Windows.VisualStateManager.GoToState%2A>. Ovládací prvek je vždy v jednom ze stavů pro každou <xref:System.Windows.VisualStateGroup> , která je definována v jeho <xref:System.Windows.Controls.ControlTemplate> a pouze opustí stavu při přechodu do jiného státu ze stejné <xref:System.Windows.VisualStateGroup>. Například <xref:System.Windows.Controls.ControlTemplate> z `NumericUpDown` definuje ovládací prvek `Positive` a `Negative`<xref:System.Windows.VisualState> objektů v jednom <xref:System.Windows.VisualStateGroup> a `Focused` a `Unfocused`<xref:System.Windows.VisualState> objekty v jiném. (Můžete zobrazit `Focused` a `Unfocused`<xref:System.Windows.VisualState> definované v [kompletní příklad](#complete_example) v tomto tématu, když se ovládací prvek dostane od `Positive` do stavu `Negative` stavu, nebo naopak, ovládací prvek zůstane v buď `Focused` nebo `Unfocused` stavu.  
+ <xref:System.Windows.VisualStateManager> Používá <xref:System.Windows.VisualStateGroup> objekty k určení stavu, které pro ukončení při volání <xref:System.Windows.VisualStateManager.GoToState%2A>. Ovládací prvek je vždy v jednom ze stavů pro každou <xref:System.Windows.VisualStateGroup> , která je definována v jeho <xref:System.Windows.Controls.ControlTemplate> a pouze opustí stavu při přechodu do jiného státu ze stejné <xref:System.Windows.VisualStateGroup>. Například <xref:System.Windows.Controls.ControlTemplate> z `NumericUpDown` definuje ovládací prvek `Positive` a `Negative` <xref:System.Windows.VisualState> objektů v jednom <xref:System.Windows.VisualStateGroup> a `Focused` a `Unfocused` <xref:System.Windows.VisualState> objekty v jiném. (Můžete zobrazit `Focused` a `Unfocused` <xref:System.Windows.VisualState> definované v [kompletní příklad](#complete_example) v tomto tématu, když se ovládací prvek dostane od `Positive` do stavu `Negative` stavu, nebo naopak, ovládací prvek zůstane v buď `Focused` nebo `Unfocused` stavu.  
   
  Existují tři typické místa, kde může změnit stav ovládacího prvku:  
   
@@ -239,5 +239,5 @@ Vlastní ovládací prvek NumericUpDown
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)

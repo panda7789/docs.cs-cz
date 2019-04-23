@@ -10,10 +10,10 @@ helpviewer_keywords:
 - transformation properties of brushes [WPF]
 ms.assetid: 8b9bfc09-12fd-4cd5-b445-99949f27bc39
 ms.openlocfilehash: 39b3ad9bebfc56002f77ad6e9026a4446c95455b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298328"
 ---
 # <a name="brush-transformation-overview"></a>Přehled transformace štětce
@@ -104,5 +104,5 @@ Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Me
 - <xref:System.Windows.Media.Transform>
 - <xref:System.Windows.Media.Brush>
 - [Přehled malování plnými barvami a přechody](painting-with-solid-colors-and-gradients-overview.md)
-- [Kreslení pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](painting-with-images-drawings-and-visuals.md)
 - [Přehled transformace](transforms-overview.md)

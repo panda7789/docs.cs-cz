@@ -7,10 +7,10 @@ helpviewer_keywords:
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
 ms.openlocfilehash: 3e78e7cf0c5acde53d7ee23294fd52134414e860
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59207523"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
@@ -84,10 +84,10 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
  [Postupy: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
  Popisuje postup vytvoření koncového bodu služby v kódu.  
   
- [Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
+ [Postupy: Pomocí Svcutil.exe k ověření zkompilovaného kódu služby](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)  
  Popisuje, jak detekovat chyby v implementacemi služeb a konfigurace bez hostování pomocí služby [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)
-- [Rozšiřování vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)

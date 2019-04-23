@@ -5,10 +5,10 @@ ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f72a1d6a10c5899a02019bf826dc3cc9d5457bed
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59298471"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
@@ -115,7 +115,7 @@ Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stáva
 ## <a name="see-also"></a>Viz také:
 
 - [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Nastavení a konfigurace .NET Native](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [.NET native instalací a konfigurací](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
 - [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md)
 - [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
 - [Rozhraní API, která závisí na reflexi](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)
