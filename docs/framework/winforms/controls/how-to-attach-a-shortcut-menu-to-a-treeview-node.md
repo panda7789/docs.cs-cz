@@ -11,10 +11,10 @@ helpviewer_keywords:
 - tree nodes in TreeView control [Windows Forms], shortcut menus
 ms.assetid: a23c6752-fd8f-44ad-b781-bab37962fc7c
 ms.openlocfilehash: f818cccb3103866af993f1aff527a9c1a7c82109
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59294170"
 ---
 # <a name="how-to-attach-a-shortcut-menu-to-a-treeview-node"></a>Postupy: Připojení místní nabídky k uzlu TreeView
@@ -39,4 +39,4 @@ Windows Forms <xref:System.Windows.Forms.TreeView> ovládací prvek zobrazuje hi
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.ContextMenuStrip>
-- [TreeView – ovládací prvek](treeview-control-windows-forms.md)
+- [Ovládací prvek TreeView](treeview-control-windows-forms.md)

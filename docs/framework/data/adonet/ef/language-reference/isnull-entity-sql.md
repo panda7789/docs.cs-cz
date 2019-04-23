@@ -3,10 +3,10 @@ title: ISNULL (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: dc7a0173-3664-4c90-a57b-5cbb0a8ed7ee
 ms.openlocfilehash: aaecce3ff74d64b8e07b31329ced5b5e581fca5b
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295091"
 ---
 # <a name="isnull-entity-sql"></a>ISNULL (Entity SQL)

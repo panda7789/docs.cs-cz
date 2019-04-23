@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6c78d1e1a69dd247b51722cc888f3bdd2de93993
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234141"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60118469"
 ---
 ### <a name="product-versioning-changes-in-the-net-framework-46-and-later-versions"></a>Změn správy verzí produktu v rozhraní .NET Framework 4.6 a novějších verzích
 

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
 ms.openlocfilehash: 0327c497025630747e526503556f4a1705948850
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295260"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>Postupy: Objekty odkaz modelu COM z jazyka Visual Basic
@@ -57,6 +57,6 @@ V jazyce Visual Basic přidávání odkazů na objekty modelu COM, které mají 
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
 - [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
-- [Návod: Implementace dědičnosti s objekty COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 - [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
-- [Imports – příkaz (obor názvů a typ rozhraní .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)

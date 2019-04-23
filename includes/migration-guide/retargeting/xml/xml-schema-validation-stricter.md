@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ef0381dc2ce4373b2a62e8ebefa44152059ca332
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234639"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "60118474"
 ---
 ### <a name="xml-schema-validation-is-stricter"></a>Je ověřování schématu XML přísnější
 

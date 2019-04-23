@@ -3,10 +3,10 @@ title: Funkce SQL Serveru a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 2839529b-a79b-4450-be5d-07a98dbc7a0f
 ms.openlocfilehash: 4f2d93ca2abc15e4c7af8489d5b875c0a46d7185
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59294896"
 ---
 # <a name="sql-server-features-and-adonet"></a>Funkce SQL Serveru a ADO.NET
@@ -50,6 +50,6 @@ Témata v této části popisují funkce v systému SQL Server, které jsou zam�
 
 - [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
 - [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
+- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)
 - [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
 - [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

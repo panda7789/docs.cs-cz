@@ -16,10 +16,10 @@ helpviewer_keywords:
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
 ms.openlocfilehash: 8b17f5a7167eb539e04a19db797bc1b0cc6c5eaa
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295455"
 ---
 # <a name="internet-authentication"></a>Ověřování v internetu
@@ -41,6 +41,6 @@ ms.locfileid: "59295455"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní ověřování a ověřování hodnotou hash](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
+- [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
 - [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)
 - [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)

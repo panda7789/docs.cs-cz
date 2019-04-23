@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
 ms.openlocfilehash: 1892e910a86e01b7b2ee0f6a2403ad7af4688808
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295377"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: Vytvoření vlastní deklarace
@@ -81,4 +81,4 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
 - <xref:System.IdentityModel.Claims.ClaimTypes>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
-- [Správa deklarací a autorizace s modelem identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

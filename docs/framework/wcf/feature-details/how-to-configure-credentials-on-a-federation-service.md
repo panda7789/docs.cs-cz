@@ -9,10 +9,10 @@ helpviewer_keywords:
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
 ms.openlocfilehash: 33df685b4d14130ae00d59012706b7637924c9be
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295429"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service

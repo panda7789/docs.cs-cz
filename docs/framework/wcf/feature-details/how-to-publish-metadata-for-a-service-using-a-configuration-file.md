@@ -3,10 +3,10 @@ title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
 ms.openlocfilehash: 367ebeee5c12d809a758f1bee73dfaadda85788d
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295533"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru

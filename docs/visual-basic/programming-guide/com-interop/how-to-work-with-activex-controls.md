@@ -6,10 +6,10 @@ helpviewer_keywords:
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
 ms.openlocfilehash: 5950779e1f0d1e76b933b83135a8bf516161aced
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295078"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Postupy: Práce s ovládacími prvky ActiveX (Visual Basic)
@@ -33,7 +33,7 @@ Ovládací prvky ActiveX jsou součástí modelu COM nebo objekty, které může
 ## <a name="see-also"></a>Viz také:
 
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Postupy: Přidávání ovládacích prvků ActiveX do Windows Forms](../../../framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)
+- [Postupy: Přidávání ovládacích prvků ActiveX do formulářů Windows](../../../framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)
 - [Aximp.exe (importér ovládacích prvků ActiveX Windows Forms)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md)
-- [Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)
+- [Aspekty hostování ovládacího prvku ActiveX ve formuláři Windows Forms](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)
 - [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)

@@ -5,10 +5,10 @@ f1_keywords:
 - vbrID35
 ms.assetid: 661fdb90-ee7d-40ce-b30b-5e7267bd957a
 ms.openlocfilehash: 397648618ea3764efafb5cff41deaef320bbeff3
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59294675"
 ---
 # <a name="sub-or-function-not-defined-visual-basic"></a>Příkaz Sub nebo funkce není definována (Visual Basic)
@@ -34,5 +34,5 @@ A `Sub` nebo `Function` musí být definován, aby bylo možné volat. Mezi mož
 
 - [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)
 - [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project)
-- [Sub – příkaz](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)

@@ -9,10 +9,10 @@ ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a944cf87783c59c21bffc9c48a18237c9fe6cdec
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295494"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe

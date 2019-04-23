@@ -8,10 +8,10 @@ helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
 ms.openlocfilehash: 37f0874ea99ee928e49a54a3e6a05ea4ef06f84e
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59294662"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
@@ -84,4 +84,4 @@ Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje sesku
 ## <a name="see-also"></a>Viz také:
 
 - [Relace a fronty](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [Fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)

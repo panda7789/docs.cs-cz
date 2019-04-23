@@ -3,11 +3,11 @@ title: Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 ms.date: 03/30/2017
 ms.assetid: 80bf2e97-398d-4db5-9040-d96478a2ccab
 ms.openlocfilehash: 53592db03c88e673d529ef04f2fbc6e182897457
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59319349"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59979118"
 ---
 # <a name="readme-for-extended-protection-authentication-sample"></a>Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky (typu MITM) man-in-the-middle, při které útočník ("man-in-the-middle") zachycuje přihlašovací údaje klienta a používá pro přístup k zabezpečeným prostředkům na serveru určené pro klienta.  

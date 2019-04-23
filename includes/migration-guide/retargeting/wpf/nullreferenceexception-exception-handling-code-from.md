@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: e4cf139d308a1c12425d966a84d59a0c3bb89712
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236389"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59982079"
 ---
 ### <a name="nullreferenceexception-in-exception-handling-code-from-imagesourceconverterconvertfrom"></a>NullReferenceException v kódu z ImageSourceConverter.ConvertFrom pro zpracování výjimek
 

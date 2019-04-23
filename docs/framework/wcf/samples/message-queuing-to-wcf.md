@@ -3,10 +3,10 @@ title: Řízení front zpráv do WCF
 ms.date: 03/30/2017
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
 ms.openlocfilehash: c0674d23f1b4e611e8f3b51a6480a65e9b52d038
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59295169"
 ---
 # <a name="message-queuing-to-windows-communication-foundation"></a>Řízení front zpráv do WCF
@@ -156,5 +156,5 @@ Console.ReadLine();
 ## <a name="see-also"></a>Viz také:
 
 - [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
-- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
 - [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)
