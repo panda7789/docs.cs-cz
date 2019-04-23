@@ -12,10 +12,10 @@ helpviewer_keywords:
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
 ms.openlocfilehash: 8547e8e1eaf73b266d737e33acd79dd4ec539c6f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59310184"
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
@@ -69,11 +69,11 @@ Option Strict { On | Off }
   
 -   [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
   
--   [\ – operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
+-   [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
--   [/= – operátor [Visual Basic]](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
+-   [/ = – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
   
--   [Char – datový typ](../../../visual-basic/language-reference/data-types/char-data-type.md)  
+-   [Datový typ Char](../../../visual-basic/language-reference/data-types/char-data-type.md)  
   
  Při zřetězení řetězců s použitím [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md), všechny převody na řetězce jsou považovány za být rozšíření. Tak tyto převody nejsou generovány implicitní zužující převod chyby, i když `Option Strict` zapnutý.  
   
@@ -155,12 +155,12 @@ Option Strict { On | Off }
 
 - [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Implicitní a explicitní převody](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [Stránka Kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
-- [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Stránka Kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
+- [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [Postupy: Přístup ke členům v objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
+- [Postupy: Přístup k členům v objektu](../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
 - [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
 - [Volný převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
 - [Pozdní vazba v řešeních pro systém Office](/visualstudio/vsto/late-binding-in-office-solutions)
 - [/optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [Výchozí možnosti jazyka Visual Basic, projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
+- [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)

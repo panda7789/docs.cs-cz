@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
 ms.openlocfilehash: 15cf94d5ea191435723f754f35e43d65632142e2
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59311198"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Postupy: Vytvoření pracovního postupu vývojového diagramu
@@ -154,7 +154,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
 
 - <xref:System.Activities.Statements.Flowchart>
 - <xref:System.Activities.Statements.FlowDecision>
-- [Programování ve Windows Workflow Foundation](programming.md)
+- [Programování Windows Workflow Foundation](programming.md)
 - [Návrh pracovních postupů](designing-workflows.md)
 - [Kurz Začínáme](getting-started-tutorial.md)
 - [Postupy: Vytvoření aktivity](how-to-create-an-activity.md)

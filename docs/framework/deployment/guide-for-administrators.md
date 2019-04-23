@@ -8,10 +8,10 @@ ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 41cdc3db069ecf7ea854b76ac45d4b268a357459
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59309508"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
@@ -27,11 +27,11 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
  [Proces nasazení](#the_deployment_process)  
  [Nasazení rozhraní .NET Framework](#deploying_in_a_test_environment)  
  [Vytvoření kolekce](#creating_a_collection)  
- [Vytvoření balíčku a programu](#creating_a_package)  
- [Výběr distribučního bodu](#select_dist_point)  
+ [Vytvoření balíčku a programu](#creating_a_package)  
+ [Vyberte distribuční bod](#select_dist_point)  
  [Nasazení balíčku](#deploying_package)  
 [Prostředky](#resources)  
-[Poradce při potížích](#troubleshooting)  
+[Odstraňování potíží](#troubleshooting)  
   
 <a name="the_deployment_process"></a>   
 ## <a name="the-deployment-process"></a>Proces nasazení  
@@ -191,7 +191,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  **Active Directory, DNS, DHCP:**  
   
--   [Služba Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)  
+-   [Active Directory Domain Services](/windows/desktop/ad/active-directory-domain-services)  
   
 -   [Domain Name System (DNS)](/windows-server/networking/dns/dns-top)  
   
@@ -203,13 +203,13 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 -   [Přehled zabezpečení služby SQL Server 2008 pro správce databáze](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)  
   
- **Nástroj System Center 2012 Configuration Manager (bod správy, distribuční bod):**  
+ **System Center 2012 Configuration Manager (bod správy, distribuční bod):**  
   
 -   [Správa lokality pro System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)  
   
 -   [Na jednom webu nástroje Configuration Manager plánování a nasazení](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)  
   
- **Klient nástroje System Center 2012 Configuration Manager pro počítače se systémem Windows:**  
+ **Klient System Center 2012 Configuration Manager pro počítače s Windows:**  
   
 -   [Nasazení klientů pro System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391%28v=technet.10%29)  
   

@@ -12,10 +12,10 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], drag-and-drop operations
 ms.assetid: ca167d1c-2014-4cf0-96a0-20598470be3b
 ms.openlocfilehash: 5c60fe411fcbf6257c8aaacf1f7400c11c150ddc
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59310275"
 ---
 # <a name="how-to-enable-drag-and-drop-operations-with-the-windows-forms-richtextbox-control"></a>Postupy: Povolení operací přetažení myší pomocí ovládacího prvku Windows Forms RichTextBox
@@ -167,6 +167,6 @@ Operace přetažení myší pomocí Windows Forms <xref:System.Windows.Forms.Ric
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.RichTextBox>
-- [Postupy: Provádění operací přetažení mezi aplikacemi](../advanced/how-to-perform-drag-and-drop-operations-between-applications.md)
+- [Postupy: Provádění operací přetažení myší mezi aplikacemi](../advanced/how-to-perform-drag-and-drop-operations-between-applications.md)
 - [Ovládací prvek RichTextBox](richtextbox-control-windows-forms.md)
 - [Ovládací prvky používané ve Windows Forms](controls-to-use-on-windows-forms.md)

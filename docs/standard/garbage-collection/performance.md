@@ -9,10 +9,10 @@ ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9aa04051a8aad56c653eaee1a79fb48a849cf377
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59310561"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
@@ -304,7 +304,7 @@ ms.locfileid: "59310561"
   
 3. Můžete použít následující příkaz pro výpis vnořené výjimky.  
   
-     **! pe -vnořené**  
+     **! pe-vnořené**  
   
      Pokud nenajdete žádné výjimky, výstup z důvodu nedostatku paměti výjimka pochází z nespravovaného kódu.  
   
@@ -456,7 +456,7 @@ ms.locfileid: "59310561"
   
 -   Pokud chcete zjistit odkazy pro konkrétní objekt, patří adresu:  
   
-     **!gcroot 1c37b2ac**  
+     **! gcroot 1c37b2ac**  
   
      Kořeny na zásobníky může být falešně pozitivních výsledků. Další informace získáte pomocí příkazu `!help gcroot`.  
   
@@ -780,4 +780,4 @@ ms.locfileid: "59310561"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kolekce paměti](../../../docs/standard/garbage-collection/index.md)
+- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

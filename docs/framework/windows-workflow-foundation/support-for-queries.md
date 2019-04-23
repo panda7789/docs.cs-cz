@@ -3,10 +3,10 @@ title: Podpora pro dotazy
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
 ms.openlocfilehash: 30695fcd791a0d69c31a897068d69838c80c3957
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59307948"
 ---
 # <a name="support-for-queries"></a>Podpora pro dotazy
@@ -80,7 +80,7 @@ Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastno
 ### <a name="the-servicedeployments-view"></a>Zobrazení ServiceDeployments  
  Zobrazení ServiceDeployments obsahuje následující pole:  
   
-1. **SiteName**  
+1. **Název webu**  
   
 2. **RelativeServicePath**  
   

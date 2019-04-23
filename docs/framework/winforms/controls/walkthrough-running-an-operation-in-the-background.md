@@ -14,10 +14,10 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 1b9a4e0a-f134-48ff-a1be-c461446a31ba
 ms.openlocfilehash: c1881ffa1c6fca546b086efea59d2263af853949
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59308442"
 ---
 # <a name="walkthrough-running-an-operation-in-the-background"></a>Návod: Spuštění operace na pozadí
@@ -32,10 +32,10 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 1. S formuláři aktivní v Návrháři formulářů Windows, přetáhněte dva <xref:System.Windows.Forms.Button> ovládacích prvků z **nástrojů** formulář a pak nastavte `Name` a <xref:System.Windows.Forms.Control.Text%2A> vlastnosti tlačítka podle následující tabulky.  
   
-    |Tlačítko|Name|Text|  
+    |Tlačítko|Název|Text|  
     |------------|----------|----------|  
-    |`button1`|`startBtn`|**Spustit**|  
-    |`button2`|`cancelBtn`|**Zrušit**|  
+    |`button1`|`startBtn`|**Start**|  
+    |`button2`|`cancelBtn`|**Zrušení**|  
   
 2. Otevřít **nástrojů**, klikněte na tlačítko **součásti** kartu a potom přetáhněte <xref:System.ComponentModel.BackgroundWorker> komponentu do formuláře.  
   
@@ -106,4 +106,4 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 - <xref:System.ComponentModel.DoWorkEventArgs>
 - [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Postupy: Spuštění operace na pozadí](how-to-run-an-operation-in-the-background.md)
-- [BackgroundWorker – komponenta](backgroundworker-component.md)
+- [Komponenta BackgroundWorker](backgroundworker-component.md)

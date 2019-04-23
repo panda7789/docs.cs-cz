@@ -6,10 +6,10 @@ helpviewer_keywords:
 - progress dialog [C#]
 ms.assetid: 01b71fe7-8178-4dc8-aeb1-12053be7b51c
 ms.openlocfilehash: 882e4ea71331fe0513f3be71c371bbc0f714b44f
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59309534"
 ---
 # <a name="how-to-provide-a-progress-dialog-box-for-file-operations-c-programming-guide"></a>Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory (C# Průvodce programováním v)
@@ -34,4 +34,4 @@ Můžete zadat standardní dialogové okno, který znázorňuje průběh operac�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Systém souborů a registr (Průvodce programováním v C#)](../../../csharp/programming-guide/file-system/index.md)
+- [Systém souborů a registr (C# Programming Guide)](../../../csharp/programming-guide/file-system/index.md)
