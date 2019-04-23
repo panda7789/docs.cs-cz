@@ -3,25 +3,25 @@ title: Metody System.String
 ms.date: 03/30/2017
 ms.assetid: ce307f14-87e6-4816-8694-8a4147f6b784
 ms.openlocfilehash: 3a7b45f27441d889524f5055eb5c6a3b06937bd3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160495"
 ---
-# <a name="systemstring-methods"></a><span data-ttu-id="e3c4e-102">Metody System.String</span><span class="sxs-lookup"><span data-stu-id="e3c4e-102">System.String Methods</span></span>
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="e3c4e-103">nepodporuje následující <xref:System.String> metody.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-103">does not support the following <xref:System.String> methods.</span></span>  
+# <a name="systemstring-methods"></a><span data-ttu-id="984b4-102">Metody System.String</span><span class="sxs-lookup"><span data-stu-id="984b4-102">System.String Methods</span></span>
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <span data-ttu-id="984b4-103">nepodporuje následující <xref:System.String> metody.</span><span class="sxs-lookup"><span data-stu-id="984b4-103">does not support the following <xref:System.String> methods.</span></span>  
   
-## <a name="unsupported-systemstring-methods-in-general"></a><span data-ttu-id="e3c4e-104">Obecně nepodporované metody System.String</span><span class="sxs-lookup"><span data-stu-id="e3c4e-104">Unsupported System.String Methods in General</span></span>  
- <span data-ttu-id="e3c4e-105">Nepodporovaná <xref:System.String> v obecné metody:</span><span class="sxs-lookup"><span data-stu-id="e3c4e-105">Unsupported <xref:System.String> methods in general:</span></span>  
+## <a name="unsupported-systemstring-methods-in-general"></a><span data-ttu-id="984b4-104">Obecně nepodporované metody System.String</span><span class="sxs-lookup"><span data-stu-id="984b4-104">Unsupported System.String Methods in General</span></span>  
+ <span data-ttu-id="984b4-105">Nepodporovaná <xref:System.String> v obecné metody:</span><span class="sxs-lookup"><span data-stu-id="984b4-105">Unsupported <xref:System.String> methods in general:</span></span>  
   
--   <span data-ttu-id="e3c4e-106">Zohledňující jazykovou verzi přetížení (metody, které přebírají `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).</span><span class="sxs-lookup"><span data-stu-id="e3c4e-106">Culture-aware overloads (methods that take a `CultureInfo` / `StringComparison` / `IFormatProvider`).</span></span>  
+-   <span data-ttu-id="984b4-106">Zohledňující jazykovou verzi přetížení (metody, které přebírají `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).</span><span class="sxs-lookup"><span data-stu-id="984b4-106">Culture-aware overloads (methods that take a `CultureInfo` / `StringComparison` / `IFormatProvider`).</span></span>  
   
--   <span data-ttu-id="e3c4e-107">Metody, které trvat nebo vytvářet `char` pole.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-107">Methods that take or produce a `char` array.</span></span>  
+-   <span data-ttu-id="984b4-107">Metody, které trvat nebo vytvářet `char` pole.</span><span class="sxs-lookup"><span data-stu-id="984b4-107">Methods that take or produce a `char` array.</span></span>  
   
-## <a name="unsupported-systemstring-static-methods"></a><span data-ttu-id="e3c4e-108">Nepodporovaná System.String statické metody</span><span class="sxs-lookup"><span data-stu-id="e3c4e-108">Unsupported System.String Static Methods</span></span>  
+## <a name="unsupported-systemstring-static-methods"></a><span data-ttu-id="984b4-108">Nepodporovaná System.String statické metody</span><span class="sxs-lookup"><span data-stu-id="984b4-108">Unsupported System.String Static Methods</span></span>  
   
-|<span data-ttu-id="e3c4e-109">Nepodporovaná System.String statické metody</span><span class="sxs-lookup"><span data-stu-id="e3c4e-109">Unsupported System.String Static Methods</span></span>|  
+|<span data-ttu-id="984b4-109">Nepodporovaná System.String statické metody</span><span class="sxs-lookup"><span data-stu-id="984b4-109">Unsupported System.String Static Methods</span></span>|  
 |----------------------------------------------|  
 |<xref:System.String.Copy%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType>|  
@@ -34,9 +34,9 @@ ms.locfileid: "59160495"
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|  
 |<xref:System.String.Join%2A?displayProperty=nameWithType>|  
   
-## <a name="unsupported-systemstring-non-static-methods"></a><span data-ttu-id="e3c4e-110">Nepodporovaná System.String nestatických metod</span><span class="sxs-lookup"><span data-stu-id="e3c4e-110">Unsupported System.String Non-static Methods</span></span>  
+## <a name="unsupported-systemstring-non-static-methods"></a><span data-ttu-id="984b4-110">Nepodporovaná System.String nestatických metod</span><span class="sxs-lookup"><span data-stu-id="984b4-110">Unsupported System.String Non-static Methods</span></span>  
   
-|<span data-ttu-id="e3c4e-111">Nepodporovaná System.String nestatických metod</span><span class="sxs-lookup"><span data-stu-id="e3c4e-111">Unsupported System.String Non-static Methods</span></span>|  
+|<span data-ttu-id="984b4-111">Nepodporovaná System.String nestatických metod</span><span class="sxs-lookup"><span data-stu-id="984b4-111">Unsupported System.String Non-static Methods</span></span>|  
 |---------------------------------------------------|  
 |<xref:System.String.IndexOfAny%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
 |<xref:System.String.Split%2A?displayProperty=nameWithType>|  
@@ -45,16 +45,16 @@ ms.locfileid: "59160495"
 |<xref:System.String.TrimEnd%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
 |<xref:System.String.TrimStart%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
   
-## <a name="differences-from-net"></a><span data-ttu-id="e3c4e-112">Rozdíl oproti .NET</span><span class="sxs-lookup"><span data-stu-id="e3c4e-112">Differences from .NET</span></span>  
+## <a name="differences-from-net"></a><span data-ttu-id="984b4-112">Rozdíl oproti .NET</span><span class="sxs-lookup"><span data-stu-id="984b4-112">Differences from .NET</span></span>  
   
--   <span data-ttu-id="e3c4e-113">Dotazy nespadá kolací systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat Porovnání zohledňující jazykovou verzi, velká a malá písmena ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-113">Queries do not account for SQL Server collations that might be in effect on the server, and therefore will provide culture-sensitive, case-insensitive comparisons by default.</span></span> <span data-ttu-id="e3c4e-114">Toto chování se liší od výchozí malá a velká písmena sémantiku rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-114">This behavior differs from the default, case-sensitive semantics of the .NET Framework.</span></span>  
+-   <span data-ttu-id="984b4-113">Dotazy nespadá kolací systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat Porovnání zohledňující jazykovou verzi, velká a malá písmena ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="984b4-113">Queries do not account for SQL Server collations that might be in effect on the server, and therefore will provide culture-sensitive, case-insensitive comparisons by default.</span></span> <span data-ttu-id="984b4-114">Toto chování se liší od výchozí malá a velká písmena sémantiku rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="984b4-114">This behavior differs from the default, case-sensitive semantics of the .NET Framework.</span></span>  
   
--   <span data-ttu-id="e3c4e-115">Když `LastIndexOf` vrátí hodnotu 0, řetězec je `NULL` nebo nalezený pozice je 0.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-115">When `LastIndexOf` returns 0, either the string is `NULL` or the found position is 0.</span></span>  
+-   <span data-ttu-id="984b4-115">Když `LastIndexOf` vrátí hodnotu 0, řetězec je `NULL` nebo nalezený pozice je 0.</span><span class="sxs-lookup"><span data-stu-id="984b4-115">When `LastIndexOf` returns 0, either the string is `NULL` or the found position is 0.</span></span>  
   
--   <span data-ttu-id="e3c4e-116">Může vrátit neočekávané výsledky ze zřetězení nebo jiné operace na řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy mají automaticky odsazení použijí v databázi.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-116">Unexpected results might be returned from concatenation or other operations on fixed-length strings (`CHAR`, `NCHAR`), because these types automatically have padding applied in the database.</span></span>  
+-   <span data-ttu-id="984b4-116">Může vrátit neočekávané výsledky ze zřetězení nebo jiné operace na řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy mají automaticky odsazení použijí v databázi.</span><span class="sxs-lookup"><span data-stu-id="984b4-116">Unexpected results might be returned from concatenation or other operations on fixed-length strings (`CHAR`, `NCHAR`), because these types automatically have padding applied in the database.</span></span>  
   
--   <span data-ttu-id="e3c4e-117">Protože mnoho metod, jako `Replace`, `ToLower`, `ToUpper`a indexeru znaků, obsahovat žádný platný překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud obvykle přeložit.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-117">Because many methods, such as `Replace`, `ToLower`, `ToUpper`, and the character indexer, have no valid translation for `TEXT` or `NTEXT` columns and XML, `SqlExceptions` occur if translated normally.</span></span> <span data-ttu-id="e3c4e-118">Toto chování se považuje za přijatelné pro tyto typy.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-118">This behavior is considered acceptable for these types.</span></span> <span data-ttu-id="e3c4e-119">Nicméně všechny operace s řetězci musí odpovídat common language runtime (CLR) Sémantika pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.</span><span class="sxs-lookup"><span data-stu-id="e3c4e-119">However, all string operations must match common language runtime (CLR) semantics for `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, and `NVARCHAR(max)`.</span></span>  
+-   <span data-ttu-id="984b4-117">Protože mnoho metod, jako `Replace`, `ToLower`, `ToUpper`a indexeru znaků, obsahovat žádný platný překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud obvykle přeložit.</span><span class="sxs-lookup"><span data-stu-id="984b4-117">Because many methods, such as `Replace`, `ToLower`, `ToUpper`, and the character indexer, have no valid translation for `TEXT` or `NTEXT` columns and XML, `SqlExceptions` occur if translated normally.</span></span> <span data-ttu-id="984b4-118">Toto chování se považuje za přijatelné pro tyto typy.</span><span class="sxs-lookup"><span data-stu-id="984b4-118">This behavior is considered acceptable for these types.</span></span> <span data-ttu-id="984b4-119">Nicméně všechny operace s řetězci musí odpovídat common language runtime (CLR) Sémantika pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.</span><span class="sxs-lookup"><span data-stu-id="984b4-119">However, all string operations must match common language runtime (CLR) semantics for `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, and `NVARCHAR(max)`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e3c4e-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e3c4e-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="984b4-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="984b4-120">See also</span></span>
 
-- [<span data-ttu-id="e3c4e-121">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="e3c4e-121">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [<span data-ttu-id="984b4-121">Datové typy a funkce</span><span class="sxs-lookup"><span data-stu-id="984b4-121">Data Types and Functions</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

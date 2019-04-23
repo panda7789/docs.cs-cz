@@ -17,58 +17,58 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 636ff5613b2681a73986cc5bfe9a28954f014588
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59155477"
 ---
-# <a name="functiontailcall3-function"></a><span data-ttu-id="790da-102">FunctionTailcall3 – funkce</span><span class="sxs-lookup"><span data-stu-id="790da-102">FunctionTailcall3 Function</span></span>
-<span data-ttu-id="790da-103">Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.</span><span class="sxs-lookup"><span data-stu-id="790da-103">Notifies the profiler that the currently executing function is about to perform a tail call to another function.</span></span>  
+# <a name="functiontailcall3-function"></a><span data-ttu-id="5fa09-102">FunctionTailcall3 – funkce</span><span class="sxs-lookup"><span data-stu-id="5fa09-102">FunctionTailcall3 Function</span></span>
+<span data-ttu-id="5fa09-103">Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.</span><span class="sxs-lookup"><span data-stu-id="5fa09-103">Notifies the profiler that the currently executing function is about to perform a tail call to another function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="790da-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="790da-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5fa09-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5fa09-104">Syntax</span></span>  
   
 ```  
 void __stdcall FunctionTailcall3 (FunctionOrRemappedID functionOrRemappedID);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="790da-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="790da-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5fa09-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5fa09-105">Parameters</span></span>  
  `functionOrRemappedID`  
- <span data-ttu-id="790da-106">[in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.</span><span class="sxs-lookup"><span data-stu-id="790da-106">[in] The identifier of the currently executing function that is about to make a tail call.</span></span>  
+ <span data-ttu-id="5fa09-106">[in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.</span><span class="sxs-lookup"><span data-stu-id="5fa09-106">[in] The identifier of the currently executing function that is about to make a tail call.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="790da-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="790da-107">Remarks</span></span>  
- <span data-ttu-id="790da-108">`FunctionTailcall3` Funkce zpětného volání oznámí profileru, jako jsou funkce volány.</span><span class="sxs-lookup"><span data-stu-id="790da-108">The `FunctionTailcall3` callback function notifies the profiler as functions are being called.</span></span> <span data-ttu-id="790da-109">Použití [icorprofilerinfo3::setenterleavefunctionhooks3 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md) k registraci vaši implementaci této funkce.</span><span class="sxs-lookup"><span data-stu-id="790da-109">Use the [ICorProfilerInfo3::SetEnterLeaveFunctionHooks3 method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md) to register your implementation of this function.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="5fa09-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5fa09-107">Remarks</span></span>  
+ <span data-ttu-id="5fa09-108">`FunctionTailcall3` Funkce zpětného volání oznámí profileru, jako jsou funkce volány.</span><span class="sxs-lookup"><span data-stu-id="5fa09-108">The `FunctionTailcall3` callback function notifies the profiler as functions are being called.</span></span> <span data-ttu-id="5fa09-109">Použití [icorprofilerinfo3::setenterleavefunctionhooks3 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md) k registraci vaši implementaci této funkce.</span><span class="sxs-lookup"><span data-stu-id="5fa09-109">Use the [ICorProfilerInfo3::SetEnterLeaveFunctionHooks3 method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md) to register your implementation of this function.</span></span>  
   
- <span data-ttu-id="790da-110">`FunctionTailcall3` Funkce je zpětné volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="790da-110">The `FunctionTailcall3` function is a callback; you must implement it.</span></span> <span data-ttu-id="790da-111">Musíte použít implementaci `__declspec(naked)` atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="790da-111">The implementation must use the `__declspec(naked)` storage-class attribute.</span></span>  
+ <span data-ttu-id="5fa09-110">`FunctionTailcall3` Funkce je zpětné volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="5fa09-110">The `FunctionTailcall3` function is a callback; you must implement it.</span></span> <span data-ttu-id="5fa09-111">Musíte použít implementaci `__declspec(naked)` atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="5fa09-111">The implementation must use the `__declspec(naked)` storage-class attribute.</span></span>  
   
- <span data-ttu-id="790da-112">Prováděcí modul nelze uložit žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="790da-112">The execution engine does not save any registers before calling this function.</span></span>  
+ <span data-ttu-id="5fa09-112">Prováděcí modul nelze uložit žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="5fa09-112">The execution engine does not save any registers before calling this function.</span></span>  
   
--   <span data-ttu-id="790da-113">Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="790da-113">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
+-   <span data-ttu-id="5fa09-113">Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="5fa09-113">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
   
--   <span data-ttu-id="790da-114">Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.</span><span class="sxs-lookup"><span data-stu-id="790da-114">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
+-   <span data-ttu-id="5fa09-114">Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.</span><span class="sxs-lookup"><span data-stu-id="5fa09-114">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
   
- <span data-ttu-id="790da-115">Provádění `FunctionTailcall3` by neměla blokovat, protože způsobí zpoždění uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="790da-115">The implementation of `FunctionTailcall3` should not block, because it will delay garbage collection.</span></span> <span data-ttu-id="790da-116">Implementace by se neměly pokoušet uvolnění paměti, protože zásobníku nemusí být ve stavu přívětivá kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="790da-116">The implementation should not attempt a garbage collection, because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="790da-117">Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionTailcall3` vrátí.</span><span class="sxs-lookup"><span data-stu-id="790da-117">If a garbage collection is attempted, the runtime will block until `FunctionTailcall3` returns.</span></span>  
+ <span data-ttu-id="5fa09-115">Provádění `FunctionTailcall3` by neměla blokovat, protože způsobí zpoždění uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="5fa09-115">The implementation of `FunctionTailcall3` should not block, because it will delay garbage collection.</span></span> <span data-ttu-id="5fa09-116">Implementace by se neměly pokoušet uvolnění paměti, protože zásobníku nemusí být ve stavu přívětivá kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="5fa09-116">The implementation should not attempt a garbage collection, because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="5fa09-117">Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionTailcall3` vrátí.</span><span class="sxs-lookup"><span data-stu-id="5fa09-117">If a garbage collection is attempted, the runtime will block until `FunctionTailcall3` returns.</span></span>  
   
- <span data-ttu-id="790da-118">`FunctionTailcall3` Funkce nesmí volat do spravovaného kódu nebo způsobit přidělování spravované paměti žádným způsobem.</span><span class="sxs-lookup"><span data-stu-id="790da-118">The `FunctionTailcall3` function must not call into managed code or cause a managed memory allocation in any way.</span></span>  
+ <span data-ttu-id="5fa09-118">`FunctionTailcall3` Funkce nesmí volat do spravovaného kódu nebo způsobit přidělování spravované paměti žádným způsobem.</span><span class="sxs-lookup"><span data-stu-id="5fa09-118">The `FunctionTailcall3` function must not call into managed code or cause a managed memory allocation in any way.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="790da-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="790da-119">Requirements</span></span>  
- <span data-ttu-id="790da-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="790da-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5fa09-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5fa09-119">Requirements</span></span>  
+ <span data-ttu-id="5fa09-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5fa09-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="790da-121">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="790da-121">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="5fa09-121">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="5fa09-121">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="790da-122">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="790da-122">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="5fa09-122">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="5fa09-122">**Library:** CorGuids.lib</span></span>  
   
- **<span data-ttu-id="790da-123">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="790da-123">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ <span data-ttu-id="5fa09-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5fa09-123">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="790da-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="790da-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5fa09-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5fa09-124">See also</span></span>
 
-- [<span data-ttu-id="790da-125">FunctionEnter3</span><span class="sxs-lookup"><span data-stu-id="790da-125">FunctionEnter3</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md)
-- [<span data-ttu-id="790da-126">FunctionLeave3</span><span class="sxs-lookup"><span data-stu-id="790da-126">FunctionLeave3</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md)
-- [<span data-ttu-id="790da-127">FunctionEnter3WithInfo</span><span class="sxs-lookup"><span data-stu-id="790da-127">FunctionEnter3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)
-- [<span data-ttu-id="790da-128">FunctionLeave3WithInfo</span><span class="sxs-lookup"><span data-stu-id="790da-128">FunctionLeave3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)
-- [<span data-ttu-id="790da-129">FunctionTailcall3WithInfo – funkce</span><span class="sxs-lookup"><span data-stu-id="790da-129">FunctionTailcall3WithInfo Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)
-- [<span data-ttu-id="790da-130">SetEnterLeaveFunctionHooks3</span><span class="sxs-lookup"><span data-stu-id="790da-130">SetEnterLeaveFunctionHooks3</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
-- [<span data-ttu-id="790da-131">SetEnterLeaveFunctionHooks3WithInfo</span><span class="sxs-lookup"><span data-stu-id="790da-131">SetEnterLeaveFunctionHooks3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
-- [<span data-ttu-id="790da-132">SetFunctionIDMapper</span><span class="sxs-lookup"><span data-stu-id="790da-132">SetFunctionIDMapper</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)
-- [<span data-ttu-id="790da-133">SetFunctionIDMapper2</span><span class="sxs-lookup"><span data-stu-id="790da-133">SetFunctionIDMapper2</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setfunctionidmapper2-method.md)
-- [<span data-ttu-id="790da-134">Profilace globálních statických funkcí</span><span class="sxs-lookup"><span data-stu-id="790da-134">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [<span data-ttu-id="5fa09-125">FunctionEnter3</span><span class="sxs-lookup"><span data-stu-id="5fa09-125">FunctionEnter3</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md)
+- [<span data-ttu-id="5fa09-126">FunctionLeave3</span><span class="sxs-lookup"><span data-stu-id="5fa09-126">FunctionLeave3</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md)
+- [<span data-ttu-id="5fa09-127">FunctionEnter3WithInfo</span><span class="sxs-lookup"><span data-stu-id="5fa09-127">FunctionEnter3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)
+- [<span data-ttu-id="5fa09-128">FunctionLeave3WithInfo</span><span class="sxs-lookup"><span data-stu-id="5fa09-128">FunctionLeave3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)
+- [<span data-ttu-id="5fa09-129">FunctionTailcall3WithInfo – funkce</span><span class="sxs-lookup"><span data-stu-id="5fa09-129">FunctionTailcall3WithInfo Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)
+- [<span data-ttu-id="5fa09-130">SetEnterLeaveFunctionHooks3</span><span class="sxs-lookup"><span data-stu-id="5fa09-130">SetEnterLeaveFunctionHooks3</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3-method.md)
+- [<span data-ttu-id="5fa09-131">SetEnterLeaveFunctionHooks3WithInfo</span><span class="sxs-lookup"><span data-stu-id="5fa09-131">SetEnterLeaveFunctionHooks3WithInfo</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)
+- [<span data-ttu-id="5fa09-132">SetFunctionIDMapper</span><span class="sxs-lookup"><span data-stu-id="5fa09-132">SetFunctionIDMapper</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setfunctionidmapper-method.md)
+- [<span data-ttu-id="5fa09-133">SetFunctionIDMapper2</span><span class="sxs-lookup"><span data-stu-id="5fa09-133">SetFunctionIDMapper2</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-setfunctionidmapper2-method.md)
+- [<span data-ttu-id="5fa09-134">Globální statické funkce pro profilaci</span><span class="sxs-lookup"><span data-stu-id="5fa09-134">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

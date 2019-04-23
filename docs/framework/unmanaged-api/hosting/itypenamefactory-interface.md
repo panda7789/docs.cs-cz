@@ -17,27 +17,27 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ef9d623892f3ea55965772bd69fe878c6fc800f3
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59160469"
 ---
-# <a name="itypenamefactory-interface"></a><span data-ttu-id="ca988-102">ITypeNameFactory – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ca988-102">ITypeNameFactory Interface</span></span>
-<span data-ttu-id="ca988-103">Poskytuje metody pro dekonstrukce název typu.</span><span class="sxs-lookup"><span data-stu-id="ca988-103">Provides methods for deconstructing a type name.</span></span>  
+# <a name="itypenamefactory-interface"></a><span data-ttu-id="496b4-102">ITypeNameFactory – rozhraní</span><span class="sxs-lookup"><span data-stu-id="496b4-102">ITypeNameFactory Interface</span></span>
+<span data-ttu-id="496b4-103">Poskytuje metody pro dekonstrukce název typu.</span><span class="sxs-lookup"><span data-stu-id="496b4-103">Provides methods for deconstructing a type name.</span></span>  
   
- <span data-ttu-id="ca988-104">Toto rozhraní podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="ca988-104">This interface supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+ <span data-ttu-id="496b4-104">Toto rozhraní podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="496b4-104">This interface supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ca988-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ca988-105">Requirements</span></span>  
- <span data-ttu-id="ca988-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ca988-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="496b4-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="496b4-105">Requirements</span></span>  
+ <span data-ttu-id="496b4-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="496b4-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ca988-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="ca988-107">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="496b4-107">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="496b4-107">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="ca988-108">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ca988-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="496b4-108">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="496b4-108">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- **<span data-ttu-id="ca988-109">Verze rozhraní .NET framework:</span><span class="sxs-lookup"><span data-stu-id="ca988-109">.NET Framework Versions:</span></span>** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ <span data-ttu-id="496b4-109">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="496b4-109">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ca988-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ca988-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="496b4-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="496b4-110">See also</span></span>
 
-- [<span data-ttu-id="ca988-111">Rozhraní hostování</span><span class="sxs-lookup"><span data-stu-id="ca988-111">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [<span data-ttu-id="ca988-112">TypeNameFactory – třída typu coclass</span><span class="sxs-lookup"><span data-stu-id="ca988-112">TypeNameFactory Coclass</span></span>](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)
+- [<span data-ttu-id="496b4-111">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="496b4-111">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="496b4-112">TypeNameFactory – třída typu coclass</span><span class="sxs-lookup"><span data-stu-id="496b4-112">TypeNameFactory Coclass</span></span>](../../../../docs/framework/unmanaged-api/hosting/typenamefactory-coclass.md)
