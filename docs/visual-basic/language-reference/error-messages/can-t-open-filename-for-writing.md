@@ -8,25 +8,25 @@ helpviewer_keywords:
 - BC2012
 ms.assetid: 73270fe4-a638-42c7-be21-5e156e2b18f6
 ms.openlocfilehash: b92a2c6f3de02a1a31ad131004dd613b15f01f19
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59325160"
 ---
-# <a name="cant-open-filename-for-writing"></a><span data-ttu-id="80acb-102">Nelze otevřít '\<název souboru > "pro zápis.</span><span class="sxs-lookup"><span data-stu-id="80acb-102">Can't open '\<filename>' for writing</span></span>
-<span data-ttu-id="80acb-103">Zadaný soubor nelze otevřít pro zápis, pravděpodobně protože je již otevřen.</span><span class="sxs-lookup"><span data-stu-id="80acb-103">The specified file cannot be opened for writing, perhaps because it has already been opened.</span></span>  
+# <a name="cant-open-filename-for-writing"></a><span data-ttu-id="8411b-102">Nelze otevřít '\<název souboru > "pro zápis.</span><span class="sxs-lookup"><span data-stu-id="8411b-102">Can't open '\<filename>' for writing</span></span>
+<span data-ttu-id="8411b-103">Zadaný soubor nelze otevřít pro zápis, pravděpodobně protože je již otevřen.</span><span class="sxs-lookup"><span data-stu-id="8411b-103">The specified file cannot be opened for writing, perhaps because it has already been opened.</span></span>  
   
- <span data-ttu-id="80acb-104">**ID chyby:** BC2012</span><span class="sxs-lookup"><span data-stu-id="80acb-104">**Error ID:** BC2012</span></span>  
+ <span data-ttu-id="8411b-104">**ID chyby:** BC2012</span><span class="sxs-lookup"><span data-stu-id="8411b-104">**Error ID:** BC2012</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="80acb-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="80acb-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="8411b-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="8411b-105">To correct this error</span></span>  
   
-1. <span data-ttu-id="80acb-106">Zavřete a znovu ho otevřete.</span><span class="sxs-lookup"><span data-stu-id="80acb-106">Close the file and reopen it.</span></span>  
+1. <span data-ttu-id="8411b-106">Zavřete a znovu ho otevřete.</span><span class="sxs-lookup"><span data-stu-id="8411b-106">Close the file and reopen it.</span></span>  
   
-2. <span data-ttu-id="80acb-107">Zkontrolujte oprávnění.</span><span class="sxs-lookup"><span data-stu-id="80acb-107">Check the file's permissions.</span></span>  
+2. <span data-ttu-id="8411b-107">Zkontrolujte oprávnění.</span><span class="sxs-lookup"><span data-stu-id="8411b-107">Check the file's permissions.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="80acb-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="80acb-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8411b-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8411b-108">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>
-- [<span data-ttu-id="80acb-109">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="80acb-109">Writing to Files</span></span>](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [<span data-ttu-id="8411b-109">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="8411b-109">Writing to Files</span></span>](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

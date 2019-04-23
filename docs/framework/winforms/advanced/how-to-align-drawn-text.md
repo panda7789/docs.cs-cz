@@ -9,34 +9,34 @@ helpviewer_keywords:
 - Windows Forms, aligning drawn text
 ms.assetid: 83c10a81-1a90-4b5c-98aa-2c6c4b280079
 ms.openlocfilehash: 0e77e4d8eeb9d7a07115b89525ac80074afeb6e8
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59323262"
 ---
-# <a name="how-to-align-drawn-text"></a><span data-ttu-id="40649-102">Postupy: Zarovnání vykresleného textu</span><span class="sxs-lookup"><span data-stu-id="40649-102">How to: Align Drawn Text</span></span>
-<span data-ttu-id="40649-103">Při provádění vlastní kreslení, můžete často center vykreslený text na formulář nebo ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="40649-103">When you perform custom drawing, you may often want to center drawn text on a form or control.</span></span> <span data-ttu-id="40649-104">Je možné snadno zarovnat text nakreslit <xref:System.Drawing.Graphics.DrawString%2A> nebo <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody vytvořením správný objekt formátování a nastavení příznaků příslušném formátu.</span><span class="sxs-lookup"><span data-stu-id="40649-104">You can easily align text drawn with the <xref:System.Drawing.Graphics.DrawString%2A> or <xref:System.Windows.Forms.TextRenderer.DrawText%2A> methods by creating the correct formatting object and setting the appropriate format flags.</span></span>  
+# <a name="how-to-align-drawn-text"></a><span data-ttu-id="91f50-102">Postupy: Zarovnání vykresleného textu</span><span class="sxs-lookup"><span data-stu-id="91f50-102">How to: Align Drawn Text</span></span>
+<span data-ttu-id="91f50-103">Při provádění vlastní kreslení, můžete často center vykreslený text na formulář nebo ovládací prvek.</span><span class="sxs-lookup"><span data-stu-id="91f50-103">When you perform custom drawing, you may often want to center drawn text on a form or control.</span></span> <span data-ttu-id="91f50-104">Je možné snadno zarovnat text nakreslit <xref:System.Drawing.Graphics.DrawString%2A> nebo <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody vytvořením správný objekt formátování a nastavení příznaků příslušném formátu.</span><span class="sxs-lookup"><span data-stu-id="91f50-104">You can easily align text drawn with the <xref:System.Drawing.Graphics.DrawString%2A> or <xref:System.Windows.Forms.TextRenderer.DrawText%2A> methods by creating the correct formatting object and setting the appropriate format flags.</span></span>  
   
-### <a name="to-draw-centered-text-with-gdi-drawstring"></a><span data-ttu-id="40649-105">Chcete-li nakreslit na střed textu pomocí GDI + (tkanicí stažení)</span><span class="sxs-lookup"><span data-stu-id="40649-105">To draw centered text with GDI+ (DrawString)</span></span>  
+### <a name="to-draw-centered-text-with-gdi-drawstring"></a><span data-ttu-id="91f50-105">Chcete-li nakreslit na střed textu pomocí GDI + (tkanicí stažení)</span><span class="sxs-lookup"><span data-stu-id="91f50-105">To draw centered text with GDI+ (DrawString)</span></span>  
   
-1. <span data-ttu-id="40649-106">Použití <xref:System.Drawing.StringFormat> příslušnou <xref:System.Drawing.Graphics.DrawString%2A> metoda zadat text na střed.</span><span class="sxs-lookup"><span data-stu-id="40649-106">Use a <xref:System.Drawing.StringFormat> with the appropriate <xref:System.Drawing.Graphics.DrawString%2A> method to specify centered text.</span></span>  
+1. <span data-ttu-id="91f50-106">Použití <xref:System.Drawing.StringFormat> příslušnou <xref:System.Drawing.Graphics.DrawString%2A> metoda zadat text na střed.</span><span class="sxs-lookup"><span data-stu-id="91f50-106">Use a <xref:System.Drawing.StringFormat> with the appropriate <xref:System.Drawing.Graphics.DrawString%2A> method to specify centered text.</span></span>  
   
      [!code-csharp[System.Drawing.AlignDrawnText#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#10)]
      [!code-vb[System.Drawing.AlignDrawnText#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#10)]  
   
-### <a name="to-draw-centered-text-with-gdi-drawtext"></a><span data-ttu-id="40649-107">Chcete-li nakreslit na střed textu pomocí GDI (DrawText)</span><span class="sxs-lookup"><span data-stu-id="40649-107">To draw centered text with GDI (DrawText)</span></span>  
+### <a name="to-draw-centered-text-with-gdi-drawtext"></a><span data-ttu-id="91f50-107">Chcete-li nakreslit na střed textu pomocí GDI (DrawText)</span><span class="sxs-lookup"><span data-stu-id="91f50-107">To draw centered text with GDI (DrawText)</span></span>  
   
-1. <span data-ttu-id="40649-108">Použití <xref:System.Windows.Forms.TextFormatFlags> výčtu pro obtékání také vertikální i horizontální zarovnání textu příslušnou <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="40649-108">Use the <xref:System.Windows.Forms.TextFormatFlags> enumeration for wrapping as well as vertically and horizontally centering text with the appropriate <xref:System.Windows.Forms.TextRenderer.DrawText%2A> method.</span></span>  
+1. <span data-ttu-id="91f50-108">Použití <xref:System.Windows.Forms.TextFormatFlags> výčtu pro obtékání také vertikální i horizontální zarovnání textu příslušnou <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="91f50-108">Use the <xref:System.Windows.Forms.TextFormatFlags> enumeration for wrapping as well as vertically and horizontally centering text with the appropriate <xref:System.Windows.Forms.TextRenderer.DrawText%2A> method.</span></span>  
   
      [!code-csharp[System.Drawing.AlignDrawnText#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#20)]
      [!code-vb[System.Drawing.AlignDrawnText#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#20)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="40649-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="40649-109">Compiling the Code</span></span>  
- <span data-ttu-id="40649-110">V předchozích příkladech kódu jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs>`e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="40649-110">The preceding code examples are designed for use with Windows Forms, and they require <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="91f50-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="91f50-109">Compiling the Code</span></span>  
+ <span data-ttu-id="91f50-110">V předchozích příkladech kódu jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.</span><span class="sxs-lookup"><span data-stu-id="91f50-110">The preceding code examples are designed for use with Windows Forms, and they require <xref:System.Windows.Forms.PaintEventArgs>`e`, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="40649-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40649-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="91f50-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91f50-111">See also</span></span>
 
-- [<span data-ttu-id="40649-112">Postupy: Kreslení textu pomocí GDI</span><span class="sxs-lookup"><span data-stu-id="40649-112">How to: Draw Text with GDI</span></span>](how-to-draw-text-with-gdi.md)
-- [<span data-ttu-id="40649-113">Použití písem a textu</span><span class="sxs-lookup"><span data-stu-id="40649-113">Using Fonts and Text</span></span>](using-fonts-and-text.md)
-- [<span data-ttu-id="40649-114">Postupy: Vytváření rodin písem a písem</span><span class="sxs-lookup"><span data-stu-id="40649-114">How to: Construct Font Families and Fonts</span></span>](how-to-construct-font-families-and-fonts.md)
+- [<span data-ttu-id="91f50-112">Postupy: Kreslení textu pomocí GDI</span><span class="sxs-lookup"><span data-stu-id="91f50-112">How to: Draw Text with GDI</span></span>](how-to-draw-text-with-gdi.md)
+- [<span data-ttu-id="91f50-113">Použití písem a textu</span><span class="sxs-lookup"><span data-stu-id="91f50-113">Using Fonts and Text</span></span>](using-fonts-and-text.md)
+- [<span data-ttu-id="91f50-114">Postupy: Vytváření rodin písem a písem</span><span class="sxs-lookup"><span data-stu-id="91f50-114">How to: Construct Font Families and Fonts</span></span>](how-to-construct-font-families-and-fonts.md)
