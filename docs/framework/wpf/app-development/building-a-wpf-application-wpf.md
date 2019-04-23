@@ -8,10 +8,10 @@ helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
 ms.openlocfilehash: d1aa402ec28fc22654d8f1513366c091215fa4d4
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59300954"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
@@ -170,4 +170,4 @@ End Sub
 - [Nasazení aplikace WPF](deploying-a-wpf-application-wpf.md)
 - [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)
 - [Sbalení URI v technologii WPF](pack-uris-in-wpf.md)
-- [Zdroj, obsah a datové soubory zdroje aplikací WPF](wpf-application-resource-content-and-data-files.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](wpf-application-resource-content-and-data-files.md)

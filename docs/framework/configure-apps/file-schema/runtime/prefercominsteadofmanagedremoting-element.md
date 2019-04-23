@@ -1,5 +1,5 @@
 ---
-title: <PreferComInsteadOfManagedRemoting> Prvek
+title: Element <PreferComInsteadOfManagedRemoting>
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <PreferComInsteadOfManagedRemoting> element
@@ -8,10 +8,10 @@ ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c5b0a394500dbea0d557a33ea8d2e169c2c6561f
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59195667"
 ---
 # <a name="prefercominsteadofmanagedremoting-element"></a>\<PreferComInsteadOfManagedRemoting> Element
@@ -38,7 +38,7 @@ Určuje, zda modul runtime použijí komunikace s objekty COM místo vzdálené 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime bude používat vzdálenou komunikaci přes hranice aplikačních domén. Toto nastavení je výchozí.|  
 |`true`|Modul runtime použije komunikace s objekty COM přes hranice aplikačních domén.|  

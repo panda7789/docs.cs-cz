@@ -7,10 +7,10 @@ helpviewer_keywords:
 - sounds [Windows Forms], playing
 ms.assetid: fcebb938-62b9-4677-9cbe-6465bc863e22
 ms.openlocfilehash: 3ff23cbfa78b803d4526e7a7c389fd5d458a967c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59195004"
 ---
 # <a name="soundplayer-class-overview"></a>Přehled třídy SoundPlayer
@@ -24,15 +24,15 @@ ms.locfileid: "59195004"
   
 |Name|Popis|  
 |----------|-----------------|  
-|<xref:System.Media.SoundPlayer.SoundLocation%2A> property|Cesta k souboru nebo webovou adresu zvuku. Přípustné hodnoty může být název UNC nebo HTTP.|  
-|<xref:System.Media.SoundPlayer.LoadTimeout%2A> property|Počet milisekund, po které váš program bude čekat na načítání zvuku dříve, než dojde k výjimce. Výchozí hodnota je 10 sekund.|  
-|<xref:System.Media.SoundPlayer.IsLoadCompleted%2A> property|Logická hodnota označující, zda zvuk dokončení načítání.|  
-|<xref:System.Media.SoundPlayer.Load%2A> – metoda|Načte zvuk synchronně.|  
-|<xref:System.Media.SoundPlayer.LoadAsync%2A> – metoda|Zahájí asynchronní načítání zvuku. Po dokončení načítání se vyvolá <xref:System.Media.SoundPlayer.OnLoadCompleted%2A> událostí.|  
-|<xref:System.Media.SoundPlayer.Play%2A> – metoda|Přehraje zvuk podle <xref:System.Media.SoundPlayer.SoundLocation%2A> nebo <xref:System.Media.SoundPlayer.Stream%2A> vlastnost v nové vlákno.|  
-|<xref:System.Media.SoundPlayer.PlaySync%2A> – metoda|Přehraje zvuk podle <xref:System.Media.SoundPlayer.SoundLocation%2A> nebo <xref:System.Media.SoundPlayer.Stream%2A> vlastnost v aktuálním vlákně.|  
-|<xref:System.Media.SoundPlayer.Stop%2A> – metoda|Zastaví všechny aktuálně přehrávání zvuku.|  
-|<xref:System.Media.SoundPlayer.LoadCompleted> event|Je aktivována po pokusu o načtení zvuk.|  
+|<xref:System.Media.SoundPlayer.SoundLocation%2A> Vlastnost|Cesta k souboru nebo webovou adresu zvuku. Přípustné hodnoty může být název UNC nebo HTTP.|  
+|<xref:System.Media.SoundPlayer.LoadTimeout%2A> Vlastnost|Počet milisekund, po které váš program bude čekat na načítání zvuku dříve, než dojde k výjimce. Výchozí hodnota je 10 sekund.|  
+|<xref:System.Media.SoundPlayer.IsLoadCompleted%2A> Vlastnost|Logická hodnota označující, zda zvuk dokončení načítání.|  
+|<xref:System.Media.SoundPlayer.Load%2A> – Metoda|Načte zvuk synchronně.|  
+|<xref:System.Media.SoundPlayer.LoadAsync%2A> – Metoda|Zahájí asynchronní načítání zvuku. Po dokončení načítání se vyvolá <xref:System.Media.SoundPlayer.OnLoadCompleted%2A> událostí.|  
+|<xref:System.Media.SoundPlayer.Play%2A> – Metoda|Přehraje zvuk podle <xref:System.Media.SoundPlayer.SoundLocation%2A> nebo <xref:System.Media.SoundPlayer.Stream%2A> vlastnost v nové vlákno.|  
+|<xref:System.Media.SoundPlayer.PlaySync%2A> – Metoda|Přehraje zvuk podle <xref:System.Media.SoundPlayer.SoundLocation%2A> nebo <xref:System.Media.SoundPlayer.Stream%2A> vlastnost v aktuálním vlákně.|  
+|<xref:System.Media.SoundPlayer.Stop%2A> – Metoda|Zastaví všechny aktuálně přehrávání zvuku.|  
+|<xref:System.Media.SoundPlayer.LoadCompleted> Události|Je aktivována po pokusu o načtení zvuk.|  
   
 ## <a name="see-also"></a>Viz také:
 

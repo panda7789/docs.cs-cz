@@ -13,10 +13,10 @@ helpviewer_keywords:
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
 ms.openlocfilehash: 2b76c8fd3e2c6961b6ebdddc9b7ff9649f5196f4
-ms.sourcegitcommit: 558d78d2a68acd4c95ef23231c8b4e4c7bac3902
-ms.translationtype: MT
+ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59301396"
 ---
 # <a name="drag-and-drop-overview"></a>Přehled přetažení
@@ -185,7 +185,7 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
   
 2. <xref:System.Windows.DragDrop.DragOver>  
   
-3. <xref:System.Windows.DragDrop.DragLeave> or <xref:System.Windows.DragDrop.Drop>  
+3. <xref:System.Windows.DragDrop.DragLeave> Nebo <xref:System.Windows.DragDrop.Drop>  
   
  <xref:System.Windows.DragDrop.DragEnter> Události dojde, když data kvůli usnadnění použití vypsány hranici cíl přetažení. Tato událost ve verzi preview účinky operace přetažení myší, můžete obvykle zpracovávat ve v případě potřeby pro vaši aplikaci. Nenastavujte <xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType> vlastnost <xref:System.Windows.DragDrop.DragEnter> událost, protože se přepíše v <xref:System.Windows.DragDrop.DragOver> událostí.  
   
@@ -218,6 +218,6 @@ Toto téma poskytuje přehled podpory přetažení myší v [!INCLUDE[TLA#tla_wi
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Clipboard>
-- [Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
-- [– postupy](drag-and-drop-how-to-topics.md)
+- [Návod: Povolení přetahování na uživatelský ovládací prvek](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [Témata s postupy](drag-and-drop-how-to-topics.md)
 - [Přetažení](drag-and-drop.md)
