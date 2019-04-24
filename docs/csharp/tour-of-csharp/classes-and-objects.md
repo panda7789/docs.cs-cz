@@ -3,12 +3,12 @@ title: Třídy a objekty v C# – připravuje C# jazyka
 description: Teprve se C#? Přečtěte si tento přehled tříd, objektů a dědičnost
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: 6f06a43b60a1101e5583ffa85bd948c69679943b
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
-ms.translationtype: MT
+ms.openlocfilehash: 36def74888f67dfa216cea7c093d80724e452c7b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921244"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59976401"
 ---
 # <a name="classes-and-objects"></a>Třídy a objekty
 
@@ -33,42 +33,42 @@ Paměti obsazena objekt je automaticky uvolněn, když objekt už není dostupn�
 Následující body nabízí přehled o druhy členů, které mohou obsahovat třídu.
 
 * Konstanty
-    - Konstantní hodnoty, které jsou přidružené k třídě
+  - Konstantní hodnoty, které jsou přidružené k třídě
 * Pole
-    - Proměnné třídy
+  - Proměnné třídy
 * Metody
-    - Výpočtů a akcí, které lze provést pomocí třídy
+  - Výpočtů a akcí, které lze provést pomocí třídy
 * Vlastnosti
-    - Akce přidružené k čtení a zápis s názvem vlastnosti třídy
+  - Akce přidružené k čtení a zápis s názvem vlastnosti třídy
 * Indexery
-    - Akce přidružené k indexování instancí třídy jako pole
+  - Akce přidružené k indexování instancí třídy jako pole
 * Události
-    - Oznámení, která mohou být generovány třídy
+  - Oznámení, která mohou být generovány třídy
 * Operátory
-    - Převody a podporovaných třídou operátory výrazů
+  - Převody a podporovaných třídou operátory výrazů
 * Konstruktory
-    - Akce potřebné k inicializaci instance třídy nebo vlastní třídy
+  - Akce potřebné k inicializaci instance třídy nebo vlastní třídy
 * Finalizační metody
-    - Akce k provedení před instancí třídy budou trvale odstraněny
+  - Akce k provedení před instancí třídy budou trvale odstraněny
 * Typy
-    - Vnořené typy deklarované pomocí třídy
+  - Vnořené typy deklarované pomocí třídy
 
 ## <a name="accessibility"></a>Usnadnění
 
 Každý člen třídy má přidružené usnadnění přístupu, který řídí oblasti textem programu, které budou mít přístup k členu. Existuje šest možných formy usnadnění přístupu. Ty jsou shrnuté dole.
 
 * `public`
-    - Přístup mimo jiné
+  - Přístup mimo jiné
 * `protected`
-    - Přístup pouze pro tuto třídu nebo třídy odvozené z této třídy
+  - Přístup pouze pro tuto třídu nebo třídy odvozené z této třídy
 * `internal`
-    - Přístup pouze pro aktuální sestavení (.exe, .dll, atd.)
+  - Přístup pouze pro aktuální sestavení (.exe, .dll, atd.)
 * `protected internal`
-    - Přístup omezen na obsahující třídy, třídy odvozené od třídy obsahující nebo tříd v rámci stejného sestavení
+  - Přístup omezen na obsahující třídy, třídy odvozené od třídy obsahující nebo tříd v rámci stejného sestavení
 * `private`
-    - Přístup pouze pro tuto třídu
+  - Přístup pouze pro tuto třídu
 * `private protected`
-    - Přístup omezen na obsahující třídu nebo třídy odvozené z nadřazeného typu v rámci stejného sestavení
+  - Přístup omezen na obsahující třídu nebo třídy odvozené z nadřazeného typu v rámci stejného sestavení
 
 ## <a name="type-parameters"></a>Parametry typu
 
