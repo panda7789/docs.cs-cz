@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f7f385f3-ffcf-4f3b-af35-de8818938e5f
 ms.openlocfilehash: c923ffb6e2653c148b9523b99c4717d42ea57427
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605955"
 ---
 # <a name="how-to-execute-a-query-that-returns-nested-collections"></a>Postupy: Provedení dotazu, který vrátí vnořené kolekce
 To ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst výsledky vnořené kolekce s použitím <xref:System.Data.EntityClient.EntityDataReader>.  

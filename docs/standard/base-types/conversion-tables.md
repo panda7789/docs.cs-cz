@@ -15,11 +15,11 @@ ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f018ed182e6354bbc6e6873f0df1b35e023c9c17
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650320"
 ---
 # <a name="type-conversion-tables-in-net"></a>Tabulky převodu typů v .NET
 Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ, který je roven nebo větší velikosti. Zužující převod nastane, pokud je hodnota jednoho typu je převedena na hodnotu jiný typ, který je menší velikost. Tabulky v tomto tématu ilustrují chování vykazují oba typy převodů.  
@@ -27,7 +27,7 @@ Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ,
 ## <a name="widening-conversions"></a>Rozšiřující převody  
  Následující tabulka popisuje rozšiřující převody, které lze provést bez ztráty informací.  
   
-|Typ|Je možné převést bez ztráty dat do|  
+|Type|Je možné převést bez ztráty dat do|  
 |----------|-------------------------------------------|  
 |<xref:System.Byte>|<xref:System.UInt16>, <xref:System.Int16>, <xref:System.UInt32>, <xref:System.Int32>, <xref:System.UInt64>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
 |<xref:System.SByte>|<xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.Single>, <xref:System.Double>, <xref:System.Decimal>|  
@@ -42,7 +42,7 @@ Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ,
   
  Některé rozšiřující převody na <xref:System.Single> nebo <xref:System.Double> může způsobit ztrátu přesnosti. Následující tabulka popisuje rozšiřující převody, které někdy dojít ke ztrátě informací.  
   
-|Typ|Je možné převést na|  
+|Type|Je možné převést na|  
 |----------|-------------------------|  
 |<xref:System.Int32>|<xref:System.Single>|  
 |<xref:System.UInt32>|<xref:System.Single>|  
@@ -57,7 +57,7 @@ Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ,
   
  V následující tabulce jsou uvedeny převody, které vyvolají <xref:System.OverflowException> pomocí <xref:System.Convert?displayProperty=nameWithType> nebo pokud hodnota převáděného typu je mimo definovaný rozsah výsledný typ kterákoli zaškrtnutá převodu.  
   
-|Typ|Je možné převést na|  
+|Type|Je možné převést na|  
 |----------|-------------------------|  
 |<xref:System.Byte>|<xref:System.SByte>|  
 |<xref:System.SByte>|<xref:System.Byte>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>|  

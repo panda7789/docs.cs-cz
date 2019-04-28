@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3077e0494816a083d97839d66d06b18130e5dac8
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61645575"
 ---
 # <a name="icordebugassemblygetname-method"></a>ICorDebugAssembly::GetName – metoda
 Získá název sestavení, která to `ICorDebugAssembly` instance představuje.  

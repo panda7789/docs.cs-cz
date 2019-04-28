@@ -10,11 +10,11 @@ ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8c070f043d306cfc67cc2a05cb474d92c1d382ae
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646069"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 
@@ -40,13 +40,13 @@ ms.locfileid: "57355633"
 
 - **Kódy ukončení příkazu**. Následující kódy ukončení příkazu k volání [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] distribuovatelné součásti programu označuje, zda má instalační program úspěšné nebo neúspěšné:
 
-    - 0 – instalace byla úspěšně dokončena.
+  - 0 – instalace byla úspěšně dokončena.
 
-    - 3010 – instalace byla dokončena úspěšně; je třeba restartovat systém.
+  - 3010 – instalace byla dokončena úspěšně; je třeba restartovat systém.
 
-    - 1602 – instalace byla zrušena.
+  - 1602 – instalace byla zrušena.
 
-    - Všechny ostatní kódy – instalační program zjistil chyby; Zkontrolujte soubory protokolů vytvořené ve složce % temp % podrobnosti.
+  - Všechny ostatní kódy – instalační program zjistil chyby; Zkontrolujte soubory protokolů vytvořené ve složce % temp % podrobnosti.
 
 - **Ruší se instalace**. Instalační program můžete kdykoli zrušit pomocí `Abort` metody nastavte `m_downloadAbort` a `m_ installAbort` příznaky v části MMIO.
 

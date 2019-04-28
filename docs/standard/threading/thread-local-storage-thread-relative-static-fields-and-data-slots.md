@@ -1,5 +1,5 @@
 ---
-title: 'Úložiště Thread Local: Statická pole relativní vůči vláknu a datové sloty ve vztahu'
+title: 'Lokální úložiště vláken: Statická pole a datové sloty ve vztahu k vláknům'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,18 +11,18 @@ ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 69107cd7f1f84fa402479bb8a76c4b9b8a825d69
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54718257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651088"
 ---
-# <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Úložiště Thread Local: Statická pole relativní vůči vláknu a datové sloty ve vztahu
+# <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Lokální úložiště vláken: Statická pole a datové sloty ve vztahu k vláknům
 Můžete použít spravovaného úložiště thread local (TLS) k ukládání dat, který je jedinečný k doméně vlákna a aplikace. Rozhraní .NET Framework poskytuje dva způsoby, jak používat spravované TLS: statická pole a datové sloty relativní vůči vláknu.  
   
--   Použít statická pole relativní vůči vláknu (relativní vůči vláknu `Shared` pole v jazyce Visual Basic) Pokud očekáváte vaše konkrétní požadavky v době kompilace. Statická pole relativní vůči vláknu poskytovat nejlepší výkon. Také poskytují výhody kontrola typu v době kompilace.  
+- Použít statická pole relativní vůči vláknu (relativní vůči vláknu `Shared` pole v jazyce Visual Basic) Pokud očekáváte vaše konkrétní požadavky v době kompilace. Statická pole relativní vůči vláknu poskytovat nejlepší výkon. Také poskytují výhody kontrola typu v době kompilace.  
   
--   Používejte datové sloty ve vztahu skutečné požadavky může být zjištěny pouze v době běhu. Datové sloty ve vztahu jsou pomalejší a větší než statická pole relativní vůči vláknu není vhodný, a data se ukládají jako typ <xref:System.Object>, takže musíte vysílat na správný typ před jejich použitím.  
+- Používejte datové sloty ve vztahu skutečné požadavky může být zjištěny pouze v době běhu. Datové sloty ve vztahu jsou pomalejší a větší než statická pole relativní vůči vláknu není vhodný, a data se ukládají jako typ <xref:System.Object>, takže musíte vysílat na správný typ před jejich použitím.  
   
  V nespravované C++ pomocí `TlsAlloc` dynamicky přidělit slotů a `__declspec(thread)` deklarovat, že by měla být proměnná přidělená v úložišti relativní vůči vláknu. Statická pole a datové sloty relativní vůči vláknu poskytují spravovaná verze tohoto chování.  
   
@@ -31,9 +31,9 @@ Můžete použít spravovaného úložiště thread local (TLS) k ukládání da
 ## <a name="uniqueness-of-data-in-managed-tls"></a>Jedinečnost dat ve spravované TLS  
  Ať už používáte statická pole relativní vůči vláknu nebo datové sloty ve vztahu, data ve spravované TLS jsou jedinečné pro kombinaci domény vlákna a aplikace.  
   
--   V doméně aplikace nelze jedno vlákno upravovat data z jiného vlákna, i když oba vlákna použít stejné pole nebo slotu.  
+- V doméně aplikace nelze jedno vlákno upravovat data z jiného vlákna, i když oba vlákna použít stejné pole nebo slotu.  
   
--   Při vlákno přistupuje ke stejné pole nebo slotu z několika domén aplikace, samostatné hodnota se zachová v každé doméně aplikace.  
+- Při vlákno přistupuje ke stejné pole nebo slotu z několika domén aplikace, samostatné hodnota se zachová v každé doméně aplikace.  
   
  Například pokud vlákna nastaví hodnotu statická pole relativní vůči vláknu, přejde do jiné doméně aplikace a pak načte hodnotu pole, hodnota získali v druhém doménu aplikace se liší od hodnoty v první domény aplikace. Nastavení nové hodnoty pro pole ve druhém doménu aplikace nemá vliv na hodnotu pole v prvním aplikační doméně.  
   
@@ -49,9 +49,9 @@ Můžete použít spravovaného úložiště thread local (TLS) k ukládání da
 ## <a name="data-slots"></a>Datové sloty ve vztahu  
  Rozhraní .NET Framework poskytuje dynamické datové sloty ve vztahu, které jsou jedinečné pro kombinaci vlákna a domény aplikace. Existují dva typy datové sloty ve vztahu: s názvem slotů a nepojmenované sloty. Obě jsou implementovány pomocí <xref:System.LocalDataStoreSlot> struktury.  
   
--   Chcete-li vytvořit slot s názvem data, použijte <xref:System.Threading.Thread.AllocateNamedDataSlot%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Thread.GetNamedDataSlot%2A?displayProperty=nameWithType> metody. Pokud chcete získat odkaz na existující slot s názvem, předat její název na <xref:System.Threading.Thread.GetNamedDataSlot%2A> metody.  
+- Chcete-li vytvořit slot s názvem data, použijte <xref:System.Threading.Thread.AllocateNamedDataSlot%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Thread.GetNamedDataSlot%2A?displayProperty=nameWithType> metody. Pokud chcete získat odkaz na existující slot s názvem, předat její název na <xref:System.Threading.Thread.GetNamedDataSlot%2A> metody.  
   
--   Chcete-li vytvořit nepojmenované datové oblasti, použijte <xref:System.Threading.Thread.AllocateDataSlot%2A?displayProperty=nameWithType> metody.  
+- Chcete-li vytvořit nepojmenované datové oblasti, použijte <xref:System.Threading.Thread.AllocateDataSlot%2A?displayProperty=nameWithType> metody.  
   
  Pro obě pojmenované a nepojmenované sloty, použijte <xref:System.Threading.Thread.SetData%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.GetData%2A?displayProperty=nameWithType> metody pro nastavení a načtení informací ve slotu. Toto jsou statické metody, které vždy práci s daty pro vlákno, které je právě probíhá.  
   

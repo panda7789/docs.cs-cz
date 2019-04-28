@@ -7,11 +7,11 @@ helpviewer_keywords:
 - dynamic Web applications [ASP.NET]
 ms.assetid: b7861df0-690a-4a58-bd12-f9d0123e40df
 ms.openlocfilehash: 0b36c25742757f2606d103d6af05eee7bc175ea0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644099"
 ---
 # <a name="developing-web-apps-with-aspnet"></a>Vývoj webových aplikací pomocí ASP.NET
 

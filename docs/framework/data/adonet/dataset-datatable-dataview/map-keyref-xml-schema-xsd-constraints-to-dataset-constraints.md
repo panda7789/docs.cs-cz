@@ -3,11 +3,11 @@ title: Mapování klíčových referenčních omezení schématu XML (XSD) k ome
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
 ms.openlocfilehash: dcb295aef6d93222e682ef7f720c83963036e795
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607485"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 **Keyref** element slouží k vytvoření vazeb mezi prvky v rámci dokumentu. Toto je podobný vztahu cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převeden při rušení mapování schématu odpovídající omezení cizího klíče na sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element zároveň vytvoří relaci, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** vlastnosti zadané na vztah.  
@@ -75,7 +75,7 @@ Order(OrderNumber, EmpNumber)
   
  Kromě toho **datovou sadu** definuje následující omezení:  
   
--   Omezení unique u **pořadí** tabulky.  
+- Omezení unique u **pořadí** tabulky.  
   
     ```  
               Table: Order  
@@ -85,7 +85,7 @@ Order(OrderNumber, EmpNumber)
     IsPrimaryKey: False  
     ```  
   
--   Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** je nastavena na **False** dva prvky nejsou vnořené ve schématu.  
+- Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** je nastavena na **False** dva prvky nejsou vnořené ve schématu.  
   
     ```  
               ParentTable: Order  
@@ -98,7 +98,7 @@ Order(OrderNumber, EmpNumber)
     Nested: False  
     ```  
   
--   Omezení cizího klíče na **OrderDetail** tabulky.  
+- Omezení cizího klíče na **OrderDetail** tabulky.  
   
     ```  
               ConstraintName: OrderNoRef  

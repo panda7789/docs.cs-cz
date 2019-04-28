@@ -7,11 +7,11 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e91069c25ebe6c2a22927391734e5030a908e4ae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646225"
 ---
 # <a name="local-functions-c-programming-guide"></a>Lokální funkce (C# Programming Guide)
 

@@ -3,11 +3,11 @@ title: Publikování a řešení názvů partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: f0370e08-9fa6-4ee5-ab78-9a58a20a7da2
 ms.openlocfilehash: 330117e103f7729ecf6f18ff551f65f1ba0f35da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642097"
 ---
 # <a name="peer-name-publication-and-resolution"></a>Publikování a řešení názvů partnerských uzlů
 
@@ -15,9 +15,9 @@ ms.locfileid: "59769486"
 
  Chcete-li publikovat nové ID PNRP, partnerské zařízení provede následující akce:  
   
--   Odešle zprávy publikace PNRP k jejím sousedům mezipaměti (partnerské uzly, které jste zaregistrovali ID PNRP na nejnižší úrovni mezipaměti) naplnit jejich mezipamětí.  
+- Odešle zprávy publikace PNRP k jejím sousedům mezipaměti (partnerské uzly, které jste zaregistrovali ID PNRP na nejnižší úrovni mezipaměti) naplnit jejich mezipamětí.  
   
--   Zvolí náhodné uzly v cloudu, které nejsou jeho okolím a odesílá požadavky na řešení PNRP název pro vlastní ID P2P. Výsledný procesu určení koncový bod nasazení nasazuje mezipamětí náhodné uzly v cloudu s ID PNRP publikování partnerského uzlu.  
+- Zvolí náhodné uzly v cloudu, které nejsou jeho okolím a odesílá požadavky na řešení PNRP název pro vlastní ID P2P. Výsledný procesu určení koncový bod nasazení nasazuje mezipamětí náhodné uzly v cloudu s ID PNRP publikování partnerského uzlu.  
   
 PNRP verze 2 uzly nepublikujte ID PNRP, pokud jsou pouze řeší jiné ID P2P. HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PeerNet\PNRP\IPV6-Global\SearchOnly = 1 hodnotu registru (typ REG_DWORD) určuje, zda partnerské uzly protokolu PNRP pouze používat pro překlad názvů, nikdy pro název publikace. Tato hodnota registru je také možné nakonfigurovat pomocí zásad skupiny.  
   
@@ -37,11 +37,11 @@ PNRP verze 2 uzly nepublikujte ID PNRP, pokud jsou pouze řeší jiné ID P2P. H
   
  Provádět překlad adres v PNRP byly partnerské prozkoumá položky vlastní mezipaměti pro položku, která odpovídá cílové ID PNRP. Pokud najde, partnerský uzel odešle zprávu požadavku PNRP partnerským zařízením a čeká na odpověď. Pokud není nalezen záznam pro PNRP ID, partnerský uzel odešle zprávu požadavku protokolu PNRP na partnera, který odpovídá položce, která má ID PNRP, který nejlépe odpovídá cílové ID PNRP. Uzel, který obdrží zprávu požadavku PNRP prozkoumá svoji vlastní mezipaměti a provede následující akce:  
   
--   Pokud je nalezeno PNRP ID, požadovaný koncový bod partnera odpovědi přímo na vyžádání partnera.  
+- Pokud je nalezeno PNRP ID, požadovaný koncový bod partnera odpovědi přímo na vyžádání partnera.  
   
--   Pokud nebylo nalezeno PNRP ID a ID PNRP v mezipaměti je blíž ke cílové PNRP ID, požadované sdílené odešle odpověď na žádost o partnera obsahující IPv6 adresu partnerského uzlu, který představuje položku s ID PNRP, která lépe odpovídá cílovému ID PNRP. Pomocí IP adresy v odpovědi, odešle žádost o uzlu další zprávu požadavku protokolu PNRP na adresu IPv6 a odpověď nebo zkontrolovat uloženou v mezipaměti.  
+- Pokud nebylo nalezeno PNRP ID a ID PNRP v mezipaměti je blíž ke cílové PNRP ID, požadované sdílené odešle odpověď na žádost o partnera obsahující IPv6 adresu partnerského uzlu, který představuje položku s ID PNRP, která lépe odpovídá cílovému ID PNRP. Pomocí IP adresy v odpovědi, odešle žádost o uzlu další zprávu požadavku protokolu PNRP na adresu IPv6 a odpověď nebo zkontrolovat uloženou v mezipaměti.  
   
--   Pokud nebylo nalezeno PNRP ID a neexistuje žádné ID PNRP v mezipaměti, který je blíž k cíli PNRP ID, požadované sdílené odešle žádost o peer odpověď, která upozorňuje na tento stav. Žádost o peer potom Vybere nejbližší ID PNRP.  
+- Pokud nebylo nalezeno PNRP ID a neexistuje žádné ID PNRP v mezipaměti, který je blíž k cíli PNRP ID, požadované sdílené odešle žádost o peer odpověď, která upozorňuje na tento stav. Žádost o peer potom Vybere nejbližší ID PNRP.  
   
 Žádost o peer tento proces pokračuje s každou následnou iterací, nakonec vyhledání uzel, který zaregistrované ID protokolu PNRP.  
   

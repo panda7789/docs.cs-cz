@@ -5,11 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 12/07/2018
 ms.openlocfilehash: be55cd1d1c67b0542c8474d1b2e47f6752f658a2
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663138"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologií rozhraní .NET framework není k dispozici v rozhraní .NET Core
 

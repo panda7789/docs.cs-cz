@@ -15,10 +15,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ab192f086e3e86a879d3478f2bf0d7084ae411b0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642843"
 ---
 # <a name="marshaling-strings"></a>Zařazování řetězců
 Zkopíruje řetězec parametrů, jejich konverze z formátu rozhraní .NET Framework (Unicode) na nespravované formátu (ANSI), v případě potřeby vyvolání platformy. Protože spravované řetězce jsou neměnné, vyvolání platformy nekopíruje je zpět z nespravované paměti pro spravované paměti při návratu funkce.  

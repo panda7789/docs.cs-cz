@@ -3,22 +3,22 @@ title: Mapování omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
 ms.openlocfilehash: a1690e99aeaeb7ed9c85fd28697ae22d34bb2018
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607891"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování omezení schématu XML (XSD) k omezením datové sady
 Schéma XML definice jazyk (XSD) umožňuje zadat pro prvky a atributy, které definuje omezení. Při mapování schématu XML na relační schéma v <xref:System.Data.DataSet>, omezení schématu XML se mapují na odpovídající omezení relačních tabulek a sloupců v rámci **datovou sadu**.  
   
  Tato část pojednává o mapování následující omezení schématu XML:  
   
--   Omezení jedinečnosti zadat pomocí **jedinečný** elementu.  
+- Omezení jedinečnosti zadat pomocí **jedinečný** elementu.  
   
--   Omezení pro klíč zadaný pomocí **klíč** elementu.  
+- Omezení pro klíč zadaný pomocí **klíč** elementu.  
   
--   Omezení keyref zadat pomocí **keyref** elementu.  
+- Omezení keyref zadat pomocí **keyref** elementu.  
   
  Pomocí omezení na elementu nebo atributu zadejte určitá omezení na hodnoty elementu v žádné instanci dokumentu. Například klíče omezení na **CustomerID** podřízený prvek **zákazníka** element ve schématu znamená, že hodnoty **CustomerID** musí být podřízený element Jedinečný v žádné instanci dokumentu, a že nejsou povoleny hodnoty null.  
   

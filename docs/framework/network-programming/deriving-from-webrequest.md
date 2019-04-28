@@ -11,11 +11,11 @@ helpviewer_keywords:
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
 ms.openlocfilehash: e8e7c1d2943dcbfa8d9faa0b2e53bae57c767101
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642968"
 ---
 # <a name="deriving-from-webrequest"></a>Odvození ze žádosti WebRequest
 <xref:System.Net.WebRequest> Třída je abstraktní základní třídu, která poskytuje základní metody a vlastnosti pro vytvoření konkrétní žádost o obslužnou rutinu, která vyhovuje připojitelných protokolů model rozhraní .NET Framework. Aplikace, které používají **WebRequest** třídy můžete žádost o data pomocí libovolného protokolu pro podporované bez nutnosti určit protokol použitý.  

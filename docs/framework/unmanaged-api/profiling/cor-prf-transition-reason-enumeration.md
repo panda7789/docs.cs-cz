@@ -17,14 +17,14 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2556196b7c8f81709e6880962e8ff36e126dd8b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61599036"
 ---
 # <a name="corprftransitionreason-enumeration"></a>COR_PRF_TRANSITION_REASON – výčet
-Označuje důvod pro přechod ze spravovaného na nespravovaný kód nebo naopak.  
+Označuje důvod pro přechod ze spravovaného do nespravovaného kódu a naopak.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,14 +39,14 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_TRANSITION_CALL`|Přechod je z důvodu volání do funkce.|  
-|`COR_PRF_TRANSITION_RETURN`|Přechod je z důvodu vrátit z funkce.|  
+|`COR_PRF_TRANSITION_CALL`|Tento přechod je kvůli volání funkce.|  
+|`COR_PRF_TRANSITION_RETURN`|Tento přechod je kvůli vrácení z funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když dojde k přechodu, obdrží profileru [icorprofilercallback::managedtounmanagedtransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) nebo [icorprofilercallback::unmanagedtomanagedtransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) zpětné volání, buď z nich poskytuje hodnotu `COR_PRF_TRANSITION_REASON` výčtu k označení důvodu přechodu.  
+ Pokud dojde k přechodu, profiler obdrží [icorprofilercallback::managedtounmanagedtransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) nebo [icorprofilercallback::unmanagedtomanagedtransition –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) zpětné volání, každý z nich poskytuje hodnotu `COR_PRF_TRANSITION_REASON` výčet označující důvod pro přechod.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   

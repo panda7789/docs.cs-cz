@@ -3,20 +3,20 @@ title: Architektura a návrh
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
 ms.openlocfilehash: a4b597c8a62c661ace4485959589823094b9a08f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61606851"
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 Modul generování SQL v [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) je implementovaný jako návštěvníky na strom výrazu, který představuje strom příkazů. Generování se provádí v jednom průchodu přes strom výrazu.  
   
  Uzly stromu jsou zpracovávány zdola nahoru. Nejprve je vytvořen zprostředkující struktury: SqlSelectStatement nebo SqlBuilder, obě implementující ISqlFragment. V dalším kroku řetězec příkazu SQL je vytvořený z této struktury. Existují dva důvody pro zprostředkující strukturu:  
   
--   Příkaz SELECT se vyplní logicky, mimo pořadí. Uzly, které jsou součástí v klauzuli FROM jsou zobrazeny před uzly, které jsou součástí WHERE, GROUP BY a ORDER BY – klauzule.  
+- Příkaz SELECT se vyplní logicky, mimo pořadí. Uzly, které jsou součástí v klauzuli FROM jsou zobrazeny před uzly, které jsou součástí WHERE, GROUP BY a ORDER BY – klauzule.  
   
--   Přejmenování aliasy, je nutné určit všech použitých aliasy pro zabránění kolizím při přejmenování. Přejmenování možnosti v SqlBuilder odložit, představují sloupce, které jsou kandidáty pro přejmenování pomocí symbolu objektů.  
+- Přejmenování aliasy, je nutné určit všech použitých aliasy pro zabránění kolizím při přejmenování. Přejmenování možnosti v SqlBuilder odložit, představují sloupce, které jsou kandidáty pro přejmenování pomocí symbolu objektů.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/de1ca705-4f7c-4d2d-ace5-afefc6d3cefa.gif "de1ca705-4f7c-4d2d-ace5-afefc6d3cefa")  
   
@@ -30,9 +30,9 @@ Modul generování SQL v [zprostředkovateli ukázek](https://code.msdn.microsof
 ### <a name="isqlfragment"></a>ISqlFragment  
  Tato část popisuje třídy, které implementují rozhraní ISqlFragment, které má dva účely:  
   
--   Běžné návratový typ pro všechny metody návštěvníka.  
+- Běžné návratový typ pro všechny metody návštěvníka.  
   
--   Poskytuje metodu pro zápis konečný řetězec SQL.  
+- Poskytuje metodu pro zápis konečný řetězec SQL.  
   
 ```  
 internal interface ISqlFragment {  
@@ -194,11 +194,11 @@ private bool IsParentAJoin{get}
   
  Obvykle Pokud klauzule příkaz SQL se vyhodnocují po klauzulích, kde nejsou prázdné uzly se nebude zvažovat sloučení, uzel nelze přidat k aktuálnímu příkazu. Například pokud další uzel je filtr, takový uzel může být zahrnut do aktuální SqlSelectStatement pouze v případě, že platí následující:  
   
--   Vyberte seznam je prázdný. Pokud seznam SELECT není prázdný, seznamu příkazu select se vytvořil parametrem uzlu předchází filtr a predikát mohou odkazovat na sloupce produkované tohoto seznamu výběru.  
+- Vyberte seznam je prázdný. Pokud seznam SELECT není prázdný, seznamu příkazu select se vytvořil parametrem uzlu předchází filtr a predikát mohou odkazovat na sloupce produkované tohoto seznamu výběru.  
   
--   GROUPBY je prázdný. Pokud funkce GROUPBY není prázdná, přidání filtru by znamenal filtrování před seskupení, který není správný.  
+- GROUPBY je prázdný. Pokud funkce GROUPBY není prázdná, přidání filtru by znamenal filtrování před seskupení, který není správný.  
   
--   Klauzule TOP je prázdný. Pokud klauzule TOP není prázdná, přidání filtru by znamenal filtrování než přistoupíte k horní části, který není správný.  
+- Klauzule TOP je prázdný. Pokud klauzule TOP není prázdná, přidání filtru by znamenal filtrování než přistoupíte k horní části, který není správný.  
   
  To se nevztahují na nerelačních uzlů jako DbConstantExpression nebo aritmetických výrazů, protože jsou vždy součástí existující SqlSelectStatement.  
   
@@ -236,35 +236,35 @@ private bool IsParentAJoin{get}
 ### <a name="relational-non-join-nodes"></a>Relační uzly (nikoli na spojení)  
  Následující typy výrazů podporují – připojení k uzlům:  
   
--   DbDistinctExpression  
+- DbDistinctExpression  
   
--   DbFilterExpression  
+- DbFilterExpression  
   
--   DbGroupByExpression  
+- DbGroupByExpression  
   
--   DbLimitExpession  
+- DbLimitExpession  
   
--   DbProjectExpression  
+- DbProjectExpression  
   
--   DbSkipExpression  
+- DbSkipExpression  
   
--   DbSortExpression  
+- DbSortExpression  
   
  Navštívit tyto uzly následuje následujícímu vzoru:  
   
 1. Navštivte relační vstupní a získat výsledný SqlSelectStatement. Vstup do relační uzlu může být jeden z následujících akcí:  
   
-    -   Relační uzlu, včetně rozsahu (DbScanExpression, například). Navštívit takový uzel vrátí SqlSelectStatement.  
+    - Relační uzlu, včetně rozsahu (DbScanExpression, například). Navštívit takový uzel vrátí SqlSelectStatement.  
   
-    -   Operace výraz sady (UNION ALL, například). Výsledek musí být zabalené v hranatých závorkách a put v klauzuli FROM nové SqlSelectStatement.  
+    - Operace výraz sady (UNION ALL, například). Výsledek musí být zabalené v hranatých závorkách a put v klauzuli FROM nové SqlSelectStatement.  
   
 2. Zkontrolujte, zda aktuální uzel, mohou být přidány do SqlSelectStatement vytvářených vstupu. V části s názvem výrazy seskupování na příkazy SQL popisuje to. Pokud ne,  
   
-    -   Aktuální objekt SqlSelectStatement POP.  
+    - Aktuální objekt SqlSelectStatement POP.  
   
-    -   Vytvořit nový objekt SqlSelectStatement a přidejte popped SqlSelectStatement jako z nového objektu SqlSelectStatement.  
+    - Vytvořit nový objekt SqlSelectStatement a přidejte popped SqlSelectStatement jako z nového objektu SqlSelectStatement.  
   
-    -   Vložte nový objekt vrcholu zásobníku.  
+    - Vložte nový objekt vrcholu zásobníku.  
   
 3. Přesměrování vazby vstupní výraz na správném symbolu ze vstupu. Tyto informace se udržuje v SqlSelectStatement objektu.  
   
@@ -289,11 +289,11 @@ ORDER BY sk1, sk2, ...
 ### <a name="join-expressions"></a>Připojte se k výrazy  
  Následující považují spojení výrazů a jejich zpracování v běžným způsobem metodou VisitJoinExpression:  
   
--   DbApplyExpression  
+- DbApplyExpression  
   
--   DbJoinExpression  
+- DbJoinExpression  
   
--   DbCrossJoinExpression  
+- DbCrossJoinExpression  
   
  Tady jsou kroky najdete:  
   
@@ -305,15 +305,15 @@ ORDER BY sk1, sk2, ...
   
 2. Proces příspěvek výsledek hostujících vstup vyvoláním ProcessJoinInputResult, která zodpovídá za údržbu tabulky symbolů po navštívit podřízený výrazu spojení a pravděpodobně dokončení SqlSelectStatement vytvářených podřízené. Dítěte výsledkem může být jeden z následujících akcí:  
   
-    -   SqlSelectStatement jinak než ke které se přidají nadřazené. V takovém případě bude pravděpodobně nutné dokončit tak, že přidáte výchozí sloupce. Pokud tento vstup byl spojení, musíte vytvořit nový symbol spojení. V opačném případě vytvořte symbol normální.  
+    - SqlSelectStatement jinak než ke které se přidají nadřazené. V takovém případě bude pravděpodobně nutné dokončit tak, že přidáte výchozí sloupce. Pokud tento vstup byl spojení, musíte vytvořit nový symbol spojení. V opačném případě vytvořte symbol normální.  
   
-    -   Rozsah (DbScanExpression, například), ve kterém v takovém případě se jednoduše přidá na seznam vstupů nadřazené SqlSelectStatement.  
+    - Rozsah (DbScanExpression, například), ve kterém v takovém případě se jednoduše přidá na seznam vstupů nadřazené SqlSelectStatement.  
   
-    -   Není SqlSelectStatement, ve kterém složené závorky případu, které je zabalena.  
+    - Není SqlSelectStatement, ve kterém složené závorky případu, které je zabalena.  
   
-    -   Stejné SqlSelectStatement, ke kterému se přidá nadřazené. V takovém případě potřebujete symboly v seznamu FromExtents nahradit jednu novou JoinSymbol představující všechny.  
+    - Stejné SqlSelectStatement, ke kterému se přidá nadřazené. V takovém případě potřebujete symboly v seznamu FromExtents nahradit jednu novou JoinSymbol představující všechny.  
   
-    -   Pro první tři případy se nazývá AddFromSymbol přidejte klauzuli AS a aktualizovat tabulky symbolů.  
+    - Pro první tři případy se nazývá AddFromSymbol přidejte klauzuli AS a aktualizovat tabulky symbolů.  
   
  Třetí je zobrazeny jako podmínku připojení (pokud existuje).  
   
@@ -337,18 +337,18 @@ ORDER BY sk1, sk2, ...
   
  Vlastnost Instance je nejprve nenavštívil a výsledkem je Symbol, JoinSymbol nebo SymbolPair. Tady je způsob zpracování těchto třech případech:  
   
--   Pokud se vrátí JoinSymbol, než jeho NameToExtent vlastnost obsahuje symbol pro vlastnost potřebné. Pokud spojení symbol představuje vnořené spojení, vrátí se nový pár Symbol symbolem spojení ke sledování symbol, který se použije jako instance alias a symbol představující skutečný vlastnost pro další řešení.  
+- Pokud se vrátí JoinSymbol, než jeho NameToExtent vlastnost obsahuje symbol pro vlastnost potřebné. Pokud spojení symbol představuje vnořené spojení, vrátí se nový pár Symbol symbolem spojení ke sledování symbol, který se použije jako instance alias a symbol představující skutečný vlastnost pro další řešení.  
   
--   Pokud se vrátí SymbolPair a části sloupce je symbol, spojení, znovu vrátí symbol spojení, ale nyní je vlastnost sloupec aktualizovat tak, aby odkazoval na vlastnost reprezentována výrazem aktuální vlastnost. Jinak se vrátí SqlBuilder zdrojem SymbolPair jako alias a symbolů pro aktuální vlastnost jako sloupec.  
+- Pokud se vrátí SymbolPair a části sloupce je symbol, spojení, znovu vrátí symbol spojení, ale nyní je vlastnost sloupec aktualizovat tak, aby odkazoval na vlastnost reprezentována výrazem aktuální vlastnost. Jinak se vrátí SqlBuilder zdrojem SymbolPair jako alias a symbolů pro aktuální vlastnost jako sloupec.  
   
--   Pokud je Symbol, navštivte metoda vrátí SqlBuilder metodou instance jako alias a název jako název sloupce.  
+- Pokud je Symbol, navštivte metoda vrátí SqlBuilder metodou instance jako alias a název jako název sloupce.  
   
 ### <a name="dbnewinstanceexpression"></a>DbNewInstanceExpression  
  Při použití jako vlastnost DbProjectExpression projekce DbNewInstanceExpression vytváří čárkou oddělený seznam argumentů pro reprezentaci předpokládané sloupce.  
   
  Pokud DbNewInstanceExpression má návratový typ kolekce a definuje novou kolekci výrazů ve formě argumentů, následující tři případy se řeší samostatně:  
   
--   Pokud DbNewInstanceExpression DbElementExpression jako jediný argument, je přeložen následujícím způsobem:  
+- Pokud DbNewInstanceExpression DbElementExpression jako jediný argument, je přeložen následujícím způsobem:  
   
     ```  
     NewInstance(Element(X)) =>  SELECT TOP 1 …FROM X  

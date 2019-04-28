@@ -11,11 +11,11 @@ ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4a928dde8615589cbc8e502a9b5dd033beded4c9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643488"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele s objekty COM: klient COM a server .NET
 V této ukázce vzájemnou spolupráci [klient modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty na dům. V tomto příkladu vytvoří klienta a volá instance managed `Loan` třídy, předá čtyři argumenty (jedna z těchto čtyř se rovná nule) instance a zobrazí výpočtů. Příklady kódů z této ukázce se mají v této části.  

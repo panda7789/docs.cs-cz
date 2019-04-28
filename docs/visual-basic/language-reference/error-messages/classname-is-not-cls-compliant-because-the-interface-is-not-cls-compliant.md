@@ -11,8 +11,8 @@ ms.openlocfilehash: 063c42249abbfb506fd15311659599b4777d397f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649878"
 ---
 # <a name="classname-is-not-cls-compliant-because-the-interface-interfacename-it-implements-is-not-cls-compliant"></a>"\<classname >' není kompatibilní se Specifikací CLS, protože rozhraní"\<interfacename > "ji implementuje, není kompatibilní se Specifikací CLS
 Třídy nebo rozhraní je označen jako `<CLSCompliant(True)>` , pokud je odvozena od nebo implementuje typ, který je označen jako `<CLSCompliant(False)>` nebo není označen.  
@@ -29,6 +29,6 @@ Třídy nebo rozhraní je označen jako `<CLSCompliant(True)>` , pokud je odvoze
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud budete vyžadovat dodržování specifikace CLS, definujte schéma hierarchie nebo k provádění různých dědičnosti tohoto typu.  
+- Pokud budete vyžadovat dodržování specifikace CLS, definujte schéma hierarchie nebo k provádění různých dědičnosti tohoto typu.  
   
--   Pokud budete vyžadovat, že tento typ větší než doporučovaných její aktuální schéma hierarchie nebo implementace dědičnosti, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  
+- Pokud budete vyžadovat, že tento typ větší než doporučovaných její aktuální schéma hierarchie nebo implementace dědičnosti, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  

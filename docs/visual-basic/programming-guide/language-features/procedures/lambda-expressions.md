@@ -10,11 +10,11 @@ helpviewer_keywords:
 - inline functions [Visual Basic]
 ms.assetid: 137064b0-3928-4bfa-ba71-c3f9cbd951e2
 ms.openlocfilehash: c43739e098a91d54d300fa7074d1563da179c0e9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665790"
 ---
 # <a name="lambda-expressions-visual-basic"></a>Lambda – výrazy (Visual Basic)
 A *výraz lambda* je funkce nebo podprogramu bez názvu, který lze použít bez ohledu na to delegát je platný. Výrazy lambda může být funkce nebo podprogramy a může být jeden nebo více řádků. Můžete předat hodnoty z aktuálního oboru pro výraz lambda.  
@@ -43,27 +43,27 @@ A *výraz lambda* je funkce nebo podprogramu bez názvu, který lze použít bez
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
  Syntaxe výrazu lambda se podobá standardní funkce nebo podprogram. Rozdíly jsou následující:  
   
--   Výraz lambda nemá název.  
+- Výraz lambda nemá název.  
   
--   Výrazy lambda nemůžou mít modifikátory, jako například `Overloads` nebo `Overrides`.  
+- Výrazy lambda nemůžou mít modifikátory, jako například `Overloads` nebo `Overrides`.  
   
--   Funkce lambda jednořádkového nepoužívejte `As` klauzule k určení návratového typu. Místo toho typ je odvozen z hodnotu, která se vyhodnotí jako hlavní část výrazu lambda. Například pokud tělo výrazu lambda je `cust.City = "London"`, je její typ vrácené hodnoty `Boolean`.  
+- Funkce lambda jednořádkového nepoužívejte `As` klauzule k určení návratového typu. Místo toho typ je odvozen z hodnotu, která se vyhodnotí jako hlavní část výrazu lambda. Například pokud tělo výrazu lambda je `cust.City = "London"`, je její typ vrácené hodnoty `Boolean`.  
   
--   Ve funkcích víceřádkového výrazu lambda, můžete zadat typ vrácené hodnoty pomocí `As` klauzuli, nebo vynechejte `As` klauzule tak, aby návratový typ je odvozen. Když `As` klauzule vynecháte víceřádkového výrazu lambda funkce, návratový typ je odvozen dominantní typ ze všech `Return` příkazy ve funkci víceřádkového výrazu lambda. *Dominantní typ* je jedinečný typ, který lze rozšířit všechny ostatní typy na. Pokud nelze určit tento jedinečný typ, dominantní typ je jedinečný typ, který můžete zúžit všechny typy jako pole k. Pokud ani jeden z těchto jedinečných typů nelze určit, dominantní typ je `Object`. V takovém případě pokud `Option Strict` je nastavena na `On`, dojde k chybě kompilátoru.  
+- Ve funkcích víceřádkového výrazu lambda, můžete zadat typ vrácené hodnoty pomocí `As` klauzuli, nebo vynechejte `As` klauzule tak, aby návratový typ je odvozen. Když `As` klauzule vynecháte víceřádkového výrazu lambda funkce, návratový typ je odvozen dominantní typ ze všech `Return` příkazy ve funkci víceřádkového výrazu lambda. *Dominantní typ* je jedinečný typ, který lze rozšířit všechny ostatní typy na. Pokud nelze určit tento jedinečný typ, dominantní typ je jedinečný typ, který můžete zúžit všechny typy jako pole k. Pokud ani jeden z těchto jedinečných typů nelze určit, dominantní typ je `Object`. V takovém případě pokud `Option Strict` je nastavena na `On`, dojde k chybě kompilátoru.  
   
      Například, pokud zadaný výraz pro `Return` příkaz obsahovat hodnoty typu `Integer`, `Long`, a `Double`, výsledné pole je typu `Double`. Obě `Integer` a `Long` rozšířit na `Double` a pouze `Double`. Proto `Double` dominantní typ je. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
--   Výraz, který vrací hodnotu, ne příkaz, musí být tělo funkce jedním řádkem. Neexistuje žádná `Return` příkaz pro funkce jedním řádkem. Hodnota vrácená funkcí jedním řádkem je hodnota výrazu v těle funkce.  
+- Výraz, který vrací hodnotu, ne příkaz, musí být tělo funkce jedním řádkem. Neexistuje žádná `Return` příkaz pro funkce jedním řádkem. Hodnota vrácená funkcí jedním řádkem je hodnota výrazu v těle funkce.  
   
--   Jednořádkového příkazu musí být tělo tohoto podprogram jedním řádkem.  
+- Jednořádkového příkazu musí být tělo tohoto podprogram jedním řádkem.  
   
--   Jedním řádkem funkce a podprogramy nezahrnují `End Function` nebo `End Sub` příkazu.  
+- Jedním řádkem funkce a podprogramy nezahrnují `End Function` nebo `End Sub` příkazu.  
   
--   Datový typ parametru výrazu lambda můžete určit pomocí `As` jde odvodit – klíčové slovo nebo datový typ parametru. Buď všechny parametry musí mít zadaný datové typy nebo všechny musí být odvozený.  
+- Datový typ parametru výrazu lambda můžete určit pomocí `As` jde odvodit – klíčové slovo nebo datový typ parametru. Buď všechny parametry musí mít zadaný datové typy nebo všechny musí být odvozený.  
   
--   `Optional` a `Paramarray` parametry nejsou povoleny.  
+- `Optional` a `Paramarray` parametry nejsou povoleny.  
   
--   Obecné parametry nejsou povoleny.  
+- Obecné parametry nejsou povoleny.  
   
 ## <a name="async-lambdas"></a>Asynchronní lambdy  
  Můžete snadno vytvořit výrazy lambda a příkazy, které zahrnují asynchronní zpracování pomocí [asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) a [operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md) klíčová slova. Například následující příklad Windows Forms obsahuje obslužnou rutinu události, která volá a očekává asynchronní metodu, `ExampleMethodAsync`.  
@@ -118,15 +118,15 @@ End Class
   
  Následující příklad ukazuje širokou škálu přístupová práva vnořený výraz lambda. Při spouštění vrácený výraz lambda se z `Main` jako `aDel`, přistupuje k tyto prvky:  
   
--   Pole třídy, ve kterém je definována: `aField`  
+- Pole třídy, ve kterém je definována: `aField`  
   
--   Vlastnost třídy, ve kterém je definována: `aProp`  
+- Vlastnost třídy, ve kterém je definována: `aProp`  
   
--   Parametr metody `functionWithNestedLambda`, ve kterém je definována: `level1`  
+- Parametr metody `functionWithNestedLambda`, ve kterém je definována: `level1`  
   
--   Místní proměnná `functionWithNestedLambda`: `localVar`  
+- Místní proměnná `functionWithNestedLambda`: `localVar`  
   
--   Parametr lambda výrazu, ve kterém je vnořená: `level2`  
+- Parametr lambda výrazu, ve kterém je vnořená: `level2`  
   
  [!code-vb[VbVbalrLambdas#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class3.vb#9)]  
   
@@ -143,11 +143,11 @@ End Class
   
 ## <a name="examples"></a>Příklady  
   
--   Následující příklad definuje výraz lambda, který vrátí `True` Pokud s možnou hodnotou Null argument má přiřazenou hodnotu, a `False` pokud její hodnota je `Nothing`.  
+- Následující příklad definuje výraz lambda, který vrátí `True` Pokud s možnou hodnotou Null argument má přiřazenou hodnotu, a `False` pokud její hodnota je `Nothing`.  
   
      [!code-vb[VbVbalrLambdas#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#4)]  
   
--   Následující příklad definuje výraz lambda, který vrátí index posledního prvku v poli.  
+- Následující příklad definuje výraz lambda, který vrátí index posledního prvku v poli.  
   
      [!code-vb[VbVbalrLambdas#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#5)]  
   

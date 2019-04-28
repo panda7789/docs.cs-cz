@@ -10,11 +10,11 @@ ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b4aad615df6db5a29b9af21b585ea2b0dfbdedf4
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644022"
 ---
 # <a name="overview-of-the-net-framework"></a>Přehled rozhraní .NET Framework
 

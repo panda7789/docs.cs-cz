@@ -6,17 +6,17 @@ helpviewer_keywords:
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
 ms.openlocfilehash: d3981be7977b56af0b60f9796519b78dc9ac5db3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640505"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 
 Automatické škálování umožňuje formuláře a jejích ovládacích prvků, navržená na jeden počítač s určité zobrazení řešení nebo systémové písmo, odpovídajícím způsobem zobrazený na jiný počítač s jiným zobrazením systému nebo rozlišení písma. Který zajišťuje formuláře a jejích ovládacích prvků bude inteligentně mění svou velikost tak být konzistentní s nativní windows a další aplikace v počítačích uživatelů i ostatní vývojáři. Podpora [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro automatické škálování a vizuální styly umožňuje [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] aplikace udržovat konzistentní vzhled a chování ve srovnání s nativních aplikací Windows pro každého uživatele počítače.
 
-Ve většině případů automatické škálování funguje podle očekávání v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0 nebo novější. Změny schématu písem však může být problematické. Příklad toho, jak tento problém vyřešit, najdete v části [postupy: reakce na změny schématu písem ve formulářové aplikaci Windows](how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md).
+Ve většině případů automatické škálování funguje podle očekávání v [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] verze 2.0 nebo novější. Změny schématu písem však může být problematické. Příklad toho, jak tento problém vyřešit, najdete v části [jak: Reakce na změny schématu písem ve formulářové aplikaci Windows](how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md).
 
 ## <a name="need-for-automatic-scaling"></a>Potřebu automatické škálování
 

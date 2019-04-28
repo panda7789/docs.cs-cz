@@ -7,11 +7,11 @@ helpviewer_keywords:
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
 ms.openlocfilehash: 869eeab6515340b2f1884ab7206979e83654a10b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660590"
 ---
 # <a name="true-and-false-operators-c-reference"></a>operátory true a false (C# odkaz)
 

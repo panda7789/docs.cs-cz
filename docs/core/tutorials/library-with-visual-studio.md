@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 08/07/2017
 ms.custom: vs-dotnet, seodec18
 ms.openlocfilehash: 6228cd93b275a059da63a8b8e3408032d78c5e39
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647277"
 ---
 # <a name="build-a-net-standard-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení knihovny .NET Standard s C# a .NET Core SDK v sadě Visual Studio 2017
 

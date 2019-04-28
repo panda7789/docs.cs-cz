@@ -15,11 +15,11 @@ ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2166412269a84329d42f58c7e3423229be4327b8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650307"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>Kompilace a opětovné používání v regulárních výrazech
 Můžete optimalizovat výkon aplikací, které usnadňují rozsáhlé používání regulárních výrazů, pochopení, jak modul regulárních výrazů zkompiluje výrazy a principy regulárních výrazů v mezipaměti. Toto téma popisuje kompilace a ukládání do mezipaměti.  
@@ -40,9 +40,9 @@ Generovaný jazyk MSIL však nelze uvolnit. Jediný způsob, jak uvolnit kód je
   
  Aplikace můžete využít předkompilované regulárních výrazů v jednom z následujících dvou způsobů:  
   
--   Pomocí statické metody <xref:System.Text.RegularExpressions.Regex> objektu k definování regulárního výrazu. Pokud používáte vzor regulárního výrazu, který již byl definován v jiné volání statické metody, modul regulárních výrazů budou načítat z mezipaměti. Pokud ne, modul se kompiluje regulární výraz a přidejte ji do mezipaměti.  
+- Pomocí statické metody <xref:System.Text.RegularExpressions.Regex> objektu k definování regulárního výrazu. Pokud používáte vzor regulárního výrazu, který již byl definován v jiné volání statické metody, modul regulárních výrazů budou načítat z mezipaměti. Pokud ne, modul se kompiluje regulární výraz a přidejte ji do mezipaměti.  
   
--   Opětovným použitím existující <xref:System.Text.RegularExpressions.Regex> objekt tak dlouho, dokud jeho vzor regulárního výrazu je potřeba.  
+- Opětovným použitím existující <xref:System.Text.RegularExpressions.Regex> objekt tak dlouho, dokud jeho vzor regulárního výrazu je potřeba.  
   
  Z důvodu režie vytváření instancí objektu a kompilace regulárních výrazů, vytváření a ničení rychle mnoho <xref:System.Text.RegularExpressions.Regex> objekty je velmi nákladný proces. Pro aplikace, které používají velký počet různých regulárních výrazů, můžete optimalizovat výkon pomocí volání statických `Regex` metody a případně zvětšením velikosti mezipaměti regulárních výrazů.  
   

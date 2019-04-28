@@ -13,11 +13,11 @@ helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
 ms.openlocfilehash: 960394bd61f9e9163fe93c4324bf708d50ec3e08
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660603"
 ---
 # <a name="switch-c-reference"></a>Přepnout (referenční dokumentace jazyka C#)
 

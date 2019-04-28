@@ -11,11 +11,11 @@ ms.assetid: 8a3cca8b-dd94-4e3d-ad9a-9ee7590654bc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e3eb5c9686f54bcaacef8d593f0ace4804d4ae60
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643436"
 ---
 # <a name="default-marshaling-for-arrays"></a>Výchozí zařazování pro pole
 V případě aplikace tvořené zcela spravovaný kód modul common language runtime předá typy polí jako vstup a výstup parametry. Naproti tomu interoperační zařazovač předá pole jako parametry in ve výchozím nastavení.  
@@ -146,7 +146,7 @@ void New3(ref String ar);
   
  Aby zařazování odvozovalo můžete poskytnout velikost pole úpravou Microsoft kód intermediate language (MSIL) vytvořený pomocí Tlbimp.exe a poté opětovné kompilace. Podrobnosti o tom, jak upravovat kód jazyka MSIL, najdete v článku [přizpůsobení obálek Volatelných za běhu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100)). Chcete-li určit počet prvků v poli, použijte <xref:System.Runtime.InteropServices.MarshalAsAttribute> typ pro parametr pole definici spravované metody v jednom z následujících způsobů:  
   
--   Určete další parametr, který obsahuje počet prvků v poli. Parametry jsou označeny pozici, počínaje první parametr jako číslo 0.     
+- Určete další parametr, který obsahuje počet prvků v poli. Parametry jsou označeny pozici, počínaje první parametr jako číslo 0.     
   
     ```vb  
     Sub [New](ElemCnt As Integer, _  
@@ -160,7 +160,7 @@ void New3(ref String ar);
        [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=0)] int[] ar );  
     ```  
   
--   Definujte velikost pole jako konstanta. Příklad:  
+- Definujte velikost pole jako konstanta. Příklad:  
   
     ```vb  
     Sub [New](\<MarshalAs(UnmanagedType.LPArray, SizeConst:=128)> _  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 98ddbdb9-66b1-4080-92ad-51f5c447fcf8
 ms.openlocfilehash: 5c9a81fc61a2272056ba34fa387fdafee6203824
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59079497"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642552"
 ---
 # <a name="how-to-register-a-custom-protocol-using-webrequest"></a>Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest
 Tento příklad ukazuje, jak registrovat protokol určité třídy, která je definována jinde. V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrací `CustomWebRequest` objektu. Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.  

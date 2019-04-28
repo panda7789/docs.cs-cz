@@ -5,11 +5,11 @@ author: KathleenDollard
 ms.date: 05/31/2018
 ms.custom: seodec18
 ms.openlocfilehash: 9af1454ede03b277f9b1a10e1d99a997e38809ea
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61613550"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Samostatná nasazení modulu runtime dopředné posunutí
 

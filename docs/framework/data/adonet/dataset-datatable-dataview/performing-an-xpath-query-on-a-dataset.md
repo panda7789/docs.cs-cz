@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
 ms.openlocfilehash: 29d1e5ae494b2fff4e13886159bb937041152382
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59209473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607892"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Provedení dotazu XPath u datové sady
 Vztah mezi synchronizovaný <xref:System.Data.DataSet> a <xref:System.Xml.XmlDataDocument> umožňuje použití XML služby, jako je jazyk XML Path (XPath) dotazu, které přistupují k **XmlDataDocument** a mohou provádět určité funkce snadněji než přímý přístup k **datovou sadu** přímo. Například místo použití **vyberte** metodu <xref:System.Data.DataTable> k procházení vztahů s dalšími tabulkami v **datovou sadu**, provedením dotazu XPath na **XmlDataDocument**  , který se synchronizuje s **datovou sadu**, k získání seznamu elementů XML ve formě <xref:System.Xml.XmlNodeList>. Uzly v **XmlNodeList**, vícesměrového vysílání jako <xref:System.Xml.XmlElement> uzlů, může pak být předán **GetRowFromElement** metodu **XmlDataDocument**, který vrátí odpovídající <xref:System.Data.DataRow> odkazy na řádky tabulky synchronizovaných **datovou sadu**.  

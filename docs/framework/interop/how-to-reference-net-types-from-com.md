@@ -15,11 +15,11 @@ ms.assetid: 54917f6f-cb18-4103-b622-856b55da93f3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1e033ba4b3b98367452b355363058adc7f1a5887
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59198397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643020"
 ---
 # <a name="how-to-reference-net-types-from-com"></a>Postupy: Odkazování na typy .NET z modelu COM
 Z hlediska kódu klienta a serveru jsou rozdíly mezi modelem COM a rozhraním .NET Framework z velké části nepostřehnutelné. Klienti aplikace Microsoft Visual Basic mohou zobrazovat objekt rozhraní .NET v prohlížeči objektů, který vystavuje metody objektu a syntaxi, vlastnosti a pole přesně tak, jako by se jednalo o jakýkoli jiný objekt modelu COM.  
@@ -28,7 +28,7 @@ Z hlediska kódu klienta a serveru jsou rozdíly mezi modelem COM a rozhraní
   
 ### <a name="to-import-a-library"></a>Postup importování knihovny  
   
--   Zadejte **raw_interfaces_only** možnost **#import** směrnice. Příklad:  
+- Zadejte **raw_interfaces_only** možnost **#import** směrnice. Příklad:  
   
     ```cpp  
     #import "..\LoanLib\LoanLib.tlb" raw_interfaces_only  
@@ -36,7 +36,7 @@ Z hlediska kódu klienta a serveru jsou rozdíly mezi modelem COM a rozhraní
   
      -nebo-  
   
--   Zadejte také direktivu #import pro knihovnu Mscorlib.tlb. Příklad:  
+- Zadejte také direktivu #import pro knihovnu Mscorlib.tlb. Příklad:  
   
     ```cpp  
     #import "mscorlib.tlb"  

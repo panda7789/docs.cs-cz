@@ -7,11 +7,11 @@ helpviewer_keywords:
 - TableControl pattern
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
 ms.openlocfilehash: dc1ddfaa13b83d06b1d3211e9d21bd82bfeabc3c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59144648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646009"
 ---
 # <a name="implementing-the-ui-automation-table-control-pattern"></a>Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,16 +25,16 @@ ms.locfileid: "59144648"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků tabulka, mějte na paměti následující pokyny a konvence:  
   
--   Přístup k obsahu jednotlivých buněk je dvojrozměrné logické souřadnicový systém nebo pole poskytované vyžaduje souběžné provádění <xref:System.Windows.Automation.Provider.IGridProvider>.  
+- Přístup k obsahu jednotlivých buněk je dvojrozměrné logické souřadnicový systém nebo pole poskytované vyžaduje souběžné provádění <xref:System.Windows.Automation.Provider.IGridProvider>.  
   
--   Sloupec nebo řádek záhlaví mohou být obsaženy v rámci objektu tabulky nebo být samostatné hlavičkové objekt, který je přidružený objekt tabulky.  
+- Sloupec nebo řádek záhlaví mohou být obsaženy v rámci objektu tabulky nebo být samostatné hlavičkové objekt, který je přidružený objekt tabulky.  
   
--   Záhlaví řádků a sloupců může obsahovat hlavičku primární i podpůrné záhlaví.  
+- Záhlaví řádků a sloupců může obsahovat hlavičku primární i podpůrné záhlaví.  
   
 > [!NOTE]
 >  Tento koncept se stane zřejmé ve [!INCLUDE[TLA#tla_xl](../../../includes/tlasharptla-xl-md.md)] tabulky, kde má uživatelem definovaný sloupce "Jméno". Tento sloupec obsahuje teď dvě záhlaví – hlavička "Jméno" definované uživatelem a alfanumerické označení pro tento sloupec přiřazené aplikace.  
   
--   Zobrazit [implementace vzoru ovládacích prvků mřížka automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md) pro funkci související mřížce.  
+- Zobrazit [implementace vzoru ovládacích prvků mřížka automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/implementing-the-ui-automation-grid-control-pattern.md) pro funkci související mřížce.  
   
  ![Tabulka s položkami complex – hlavička ](../../../docs/framework/ui-automation/media/uia-tablepattern-complex-column-headers.PNG "UIA_TablePattern_Complex_Column_Headers")  
 Příklad tabulky se záhlavími sloupců komplexní  
@@ -50,7 +50,7 @@ Příklad tabulky s vlastností nejednoznačný RowOrColumnMajor
 |----------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.ITableProvider.RowOrColumnMajor%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.ITableProvider.GetColumnHeaders%2A>|Metoda|Žádné|  
-|<xref:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITableProvider.GetRowHeaders%2A>|Metoda|Žádný|  
   
  Tento model ovládací prvek nemá žádné přidružené události.  
   

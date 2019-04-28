@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9981e97e3be58f6646612dc5c3a50a9e7650e376
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61628116"
 ---
 # <a name="fexecuteinappdomaincallback-function-pointer"></a>FExecuteInAppDomainCallback – ukazatel na funkci
 Odkazuje na funkci, která je volána modulem common language runtime (CLR) pro spuštění spravovaného kódu.  

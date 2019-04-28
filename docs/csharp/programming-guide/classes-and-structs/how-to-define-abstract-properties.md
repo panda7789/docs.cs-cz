@@ -7,22 +7,22 @@ helpviewer_keywords:
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
 ms.openlocfilehash: 98a535f68efc50c2ff7409d8eadf52f9e7549566
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646433"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních a vlastností (C# Průvodce programováním v)
 Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnost neposkytuje implementaci pro přistupující objekty vlastnosti – deklaruje, že podporuje vlastnosti třídy, ale ponechá implementace přistupujícího objektu odvozené třídy. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
   
  Tento příklad se skládá ze tří souborů, z nichž každý je kompilován samostatně a jeho výsledné sestavení se odkazuje na další kompilace:  
   
--   abstractshape.cs: `Shape` třídy obsahující abstraktní `Area` vlastnost.  
+- abstractshape.cs: `Shape` třídy obsahující abstraktní `Area` vlastnost.  
   
--   Shapes.cs: Podtřídy třídy `Shape` třídy.  
+- Shapes.cs: Podtřídy třídy `Shape` třídy.  
   
--   shapetest.cs: Testovací program do zobrazované oblasti některých `Shape`-odvozené objekty.  
+- shapetest.cs: Testovací program do zobrazované oblasti některých `Shape`-odvozené objekty.  
   
  Chcete-li příklad zkompilovat, použijte následující příkaz:  
   
@@ -35,13 +35,13 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/la
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
   
--   Modifikátory pro vlastnost jsou umístěny v deklaraci vlastnosti. Příklad:  
+- Modifikátory pro vlastnost jsou umístěny v deklaraci vlastnosti. Příklad:  
   
     ```csharp  
     public abstract double Area  
     ```  
   
--   Při deklarování abstraktní vlastnosti (například `Area` v tomto příkladu), můžete jednoduše označit, jaký přistupující objekty vlastnosti jsou k dispozici, ale neimplementují je. V tomto příkladu, pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt není k dispozici, tak vlastnost je jen pro čtení.  
+- Při deklarování abstraktní vlastnosti (například `Area` v tomto příkladu), můžete jednoduše označit, jaký přistupující objekty vlastnosti jsou k dispozici, ale neimplementují je. V tomto příkladu, pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt není k dispozici, tak vlastnost je jen pro čtení.  
   
 ## <a name="example"></a>Příklad  
  Následující kód ukazuje tři podtřídy třídy `Shape` a jak mohou přepsat `Area` vlastnost poskytli vlastní implementaci.  

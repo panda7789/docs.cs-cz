@@ -7,11 +7,11 @@ ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9ee17426e3ac8d5351490276a8c71cdfe996eb1a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644614"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Souběžné spouštění v .NET Framework
 Souběžné spouštění je možnost spuštění několika verzí aplikace nebo komponenty v jednom počítači. V jednom počítači lze nainstalovat více verzí modulu CLR (Common Language Runtime) a několik verzí aplikací a komponent, které využívají verzi modulu runtime ve stejnou dobu.  
@@ -33,15 +33,15 @@ Souběžné spouštění je možnost spuštění několika verzí aplikace nebo 
   
  Souběžné spouštění a rozhraní .NET Framework poskytují následující funkce, které pomáhají předcházet konfliktům knihoven DLL:  
   
--   Sestavení se silným názvem.  
+- Sestavení se silným názvem.  
   
      Souběžné spouštění používá sestavení se silným názvem k vytvoření vazby informací o typu ke konkrétní verzi sestavení. Díky tomu aplikace nebo součást nevytvoří vazbu k neplatné verzi sestavení. Sestavení se silným názvem také umožňují, aby na stejném počítači existovalo více verzí souboru a aby je mohly využívat aplikace. Další informace najdete v tématu [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).  
   
--   Úložiště kódu podporující verze.  
+- Úložiště kódu podporující verze.  
   
      Rozhraní .NET Framework poskytuje úložiště kódu podporující verze v globální mezipaměti sestavení (GAC). Globální mezipaměť sestavení (GAC) je mezipaměť kódu pro celý počítač, která je k dispozici na všech počítačích s nainstalovaným rozhraním .NET Framework. Jsou v ní uložena sestavení na základě informací o verzi, jazykové verzi a vydavateli a podporuje více verzí komponent a aplikací. Další informace najdete v tématu [Global Assembly Cache](../../../docs/framework/app-domains/gac.md).  
   
--   Izolace.  
+- Izolace.  
   
      Pomocí rozhraní .NET Framework lze vytvořit aplikace a komponenty, které jsou spouštěny v izolaci. Izolace je základní součástí souběžného spouštění. Zahrnuje znalost prostředků, které využíváte, a zkušenosti se sdílením prostředků napříč několika verzemi aplikace nebo komponenty. Izolace zahrnuje také ukládání souborů na základě verze. Další informace o izolaci naleznete v tématu [pokyny pro vytváření komponent pro spuštění vedle sebe](../../../docs/framework/deployment/guidelines-for-creating-components-for-side-by-side-execution.md).  
   
@@ -66,9 +66,9 @@ Souběžné spouštění je možnost spuštění několika verzí aplikace nebo 
 ## <a name="determining-which-version-of-the-runtime-to-load"></a>Určení verze běhového prostředí, která má být načtena  
  Modul common language runtime používá tyto informace k určení verze modulu runtime k načtení pro aplikaci:  
   
--   Verze modulu runtime, které jsou k dispozici.  
+- Verze modulu runtime, které jsou k dispozici.  
   
--   Verze modulu runtime, které podporuje aplikace.  
+- Verze modulu runtime, které podporuje aplikace.  
   
 ### <a name="supported-runtime-versions"></a>Podporované verze modulu Runtime  
  Modul runtime používá k určení, která verze modulu runtime aplikace podporuje konfiguračního souboru aplikace a přenosný spustitelný soubor záhlaví souboru (PE). Pokud se nachází konfigurační soubor aplikace, modul runtime načte modul runtime verze specifikovaná v hlavičkách přenositelných Spustitelných souborů aplikace, pokud tato verze je k dispozici.  

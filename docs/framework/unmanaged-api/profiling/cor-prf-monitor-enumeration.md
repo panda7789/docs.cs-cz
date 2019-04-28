@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dbb39eb768069a737f3f89c771bf02fd6bc0c3b4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61599049"
 ---
 # <a name="corprfmonitor-enumeration"></a>COR_PRF_MONITOR – výčet
 Obsahuje hodnoty, které se používají k určení chování, funkce nebo události, ke kterým profileru chce odběru.  
@@ -102,15 +102,15 @@ typedef enum {
 ## <a name="members"></a>Členové  
  Následující seznam oddílů `COR_PRF_MONITOR` členy výčtu podle kategorie. Kategorie jsou:  
   
--   [Není nastaven žádný příznaky](#None)  
+- [Není nastaven žádný příznaky](#None)  
   
--   [Příznaky zpětného volání](#Callback)  
+- [Příznaky zpětného volání](#Callback)  
   
--   [Povolení funkce příznaky](#Feature)  
+- [Povolení funkce příznaky](#Feature)  
   
--   [Konfigurace příznaky](#Config)  
+- [Konfigurace příznaky](#Config)  
   
--   [Složený příznaky](#Composite)  
+- [Složený příznaky](#Composite)  
   
 <a name="None"></a>   
 ### <a name="no-flags-set"></a>Není nastaven žádný příznaky  

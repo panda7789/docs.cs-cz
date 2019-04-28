@@ -1,21 +1,21 @@
 ---
-title: Konceptuální Model kanonický k mapování funkcí SQL serveru
+title: Konceptuální model v kanonickém formátu pro mapování funkcí SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 1a2631bc-a426-4c0a-ba8d-26d9c80d39e2
 ms.openlocfilehash: 3dd655e7acf924fa1bf0c09f0da82826e69482d5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61606816"
 ---
-# <a name="conceptual-model-canonical-to-sql-server-functions-mapping"></a>Konceptuální Model kanonický k mapování funkcí SQL serveru
-Toto téma popisuje, jak konceptuální model kanonické funkce mapu, která odpovídající funkce SQL Server.  
+# <a name="conceptual-model-canonical-to-sql-server-functions-mapping"></a>Konceptuální model v kanonickém formátu pro mapování funkcí SQL Serveru
+Toto téma popisuje, jak Koncepční model kanonické funkce mapují na odpovídající funkce SQL Server.  
   
-## <a name="date-and-time-functions"></a>Funkce data a času  
- Následující tabulka popisuje funkce data a času mapování:  
+## <a name="date-and-time-functions"></a>Funkce pro datum a čas  
+ Následující tabulka popisuje funkce date a time mapování:  
   
-|Kanonické funkce|Funkce SQL Server|  
+|Kanonické funkce|Funkce SQL serveru|  
 |-------------------------|--------------------------|  
 |[AddDays(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(day, number, date)`|  
 |[AddHours(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(hour, number, date)`|  
@@ -26,11 +26,11 @@ Toto téma popisuje, jak konceptuální model kanonické funkce mapu, která odp
 |[AddNanoseconds(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(nanosecond, number, date)`|  
 |[AddSeconds(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(second, number, date)`|  
 |[AddYears(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(year, number, date)`|  
-|[CreateDateTime (rok, měsíc, den, hodinu, minutu, sekundu)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|Pro SQL Server 2000 a SQL Server 2005 `datetime` formátovaná hodnota je vytvořena na serveru. Pro SQL Server 2008 a novější verze `datetime2` hodnota je vytvořena na serveru.|  
-|[CreateDateTimeOffset (rok, měsíc, den, hodinu, minutu, sekundu, tzoffset)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|A `datetimeoffset` formátovaná hodnota je vytvořena na serveru.<br /><br /> Není podporována v systému SQL Server 2000 nebo SQL Server 2005.|  
-|[CreateTime (hodinu, minutu, sekundu)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|A `time` formátovaná hodnota je vytvořena na serveru.<br /><br /> Není podporována v systému SQL Server 2000 nebo SQL Server 2005.|  
-|[CurrentDateTime()](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`SysDateTime()` v systému SQL Server 2008.<br /><br /> `GetDate()` v SQL Server 2000 a SQL Server 2005.|  
-|[CurrentDateTimeOffset()](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`SysDateTimeOffset()` v systému SQL Server 2008.<br /><br /> Není podporována v systému SQL Server 2000 nebo SQL Server 2005.|  
+|[CreateDateTime (rok, měsíc, den, hodinu, minutu a sekundu)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|Pro SQL Server 2000 a SQL Server 2005 `datetime` formátovaná hodnota je vytvořena na serveru. Pro SQL Server 2008 a novějších verzích `datetime2` hodnoty je vytvořena na serveru.|  
+|[CreateDateTimeOffset (rok, měsíc, den, hodinu, minutu, sekundu, tzoffset)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|A `datetimeoffset` formátovaná hodnota je vytvořena na serveru.<br /><br /> Není podporováno v systému SQL Server 2000 nebo SQL Server 2005.|  
+|[CreateTime (hodinu, minutu, sekundu)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|A `time` formátovaná hodnota je vytvořena na serveru.<br /><br /> Není podporováno v systému SQL Server 2000 nebo SQL Server 2005.|  
+|[CurrentDateTime()](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`SysDateTime()` v systému SQL Server 2008.<br /><br /> `GetDate()` v systému SQL Server 2000 a systému SQL Server 2005.|  
+|[CurrentDateTimeOffset()](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`SysDateTimeOffset()` v systému SQL Server 2008.<br /><br /> Není podporováno v systému SQL Server 2000 nebo SQL Server 2005.|  
 |[CurrentUtcDateTime()](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`SysUtcDateTime()` v systému SQL Server 2008. `GetUtcDate()` v systému SQL Server 2000 a SQL Server 2005.|  
 |[DayOfYear(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(dayofyear, expression)`|  
 |[Day(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(day, expression)`|  
@@ -48,13 +48,13 @@ Toto téma popisuje, jak konceptuální model kanonické funkce mapu, která odp
 |[MINUTE(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(minute, expression)`|  
 |[Month(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(month, expression)`|  
 |[Second(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(second, expression)`|  
-|[Truncate(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|Pro SQL Server 2000 a SQL Server 2005, zkrácený `datetime` formátovaná hodnota je vytvořena na serveru. Pro SQL Server 2008 a novější verze, zkrácený `datetime2` nebo `datetimeoffset` hodnota je vytvořena na serveru.|  
+|[Truncate(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|Pro SQL Server 2000 a SQL Server 2005, oříznutým `datetime` formátovaná hodnota je vytvořena na serveru. Pro SQL Server 2008 a novější verze, oříznutým `datetime2` nebo `datetimeoffset` hodnoty je vytvořena na serveru.|  
 |[Year(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(YEAR, expression)`|  
   
 ## <a name="aggregate-functions"></a>Agregační funkce  
- Následující tabulka popisuje použití agregačních funkcí mapování:  
+ Následující tabulka popisuje agregační funkce mapování:  
   
-|Kanonické funkce|Funkce SQL Server|  
+|Kanonické funkce|Funkce SQL serveru|  
 |-------------------------|--------------------------|  
 |[AVG(Expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`AVG(expression)`|  
 |[BigCount(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`BIGCOUNT(expression)`|  
@@ -70,43 +70,43 @@ Toto téma popisuje, jak konceptuální model kanonické funkce mapu, která odp
 ## <a name="math-functions"></a>Matematické funkce  
  Následující tabulka popisuje matematické funkce mapování:  
   
-|Kanonické funkce|Funkce SQL Server|  
+|Kanonické funkce|Funkce SQL serveru|  
 |-------------------------|--------------------------|  
 |[Abs(Value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ABS(value)`|  
 |[CEILING(Value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`CEILING(value)`|  
 |[Floor(Value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`FLOOR(value)`|  
 |[Power(Value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`POWER(value, exponent)`|  
 |[Round(Value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ROUND(value, digits, 0)`|  
-|[zkrácení](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ROUND(value , digits, 1)`|  
+|[zkrátit](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ROUND(value , digits, 1)`|  
   
 ## <a name="string-functions"></a>Funkce řetězce  
- Následující tabulka popisuje mapování funkce pro řetězce:  
+ Následující tabulka popisuje funkce řetězce mapování:  
   
-|Kanonické funkce|Funkce SQL Server|  
+|Kanonické funkce|Funkce SQL serveru|  
 |-------------------------|--------------------------|  
 |[Contains(String, Target)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string)`|  
 |[Concat (řetězec1, řetězec2)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|řetězec1 + řetězec2|  
-|[EndsWith (řetězec, cíl)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(REVERSE(target), REVERSE(string)) = 1`<br /><br /> **Poznámka:** `CHARINDEX` funkce vrátí `false` Pokud `string` je uložený ve sloupci řetězec pevnou délkou a `target` konstanta. V takovém případě je prohledána celý řetězec, včetně všech odsazení koncové mezery. Možným řešením je oříznout data v řetězce pevné délky před předáním řetězec, který má `EndsWith` funkce, jako v následujícím příkladu: `EndsWith(TRIM(string), target)`|  
-|[IndexOf (cíl, řetězec2)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string2)`|  
+|[EndsWith (string, cíl)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(REVERSE(target), REVERSE(string)) = 1`<br /><br /> **Poznámka:** `CHARINDEX` vrací funkce `false` Pokud `string` je uložen ve sloupci řetězec pevné délky a `target` je konstanta. V takovém případě je prohledána celý řetězec, včetně všech odsazení koncové mezery. Možným řešením je oříznout data v řetězce pevné délky před předáním řetězec, který má `EndsWith` funkce, jako v následujícím příkladu: `EndsWith(TRIM(string), target)`|  
+|[IndexOf (cíl; řetězec2)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string2)`|  
 |[Left (řetězec1, délka)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LEFT(string1, length)`|  
 |[Délka (string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LEN(string)`|  
 |[LTrim(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LTRIM(string)`|  
 |[Right (řetězec1, délka)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`RIGHT (string1, length)`|  
 |[Trim(String)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LTRIM(RTRIM(string))`|  
-|[Nahraďte (řetězec1, řetězec2 řetězec3.)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`REPLACE(string1, string2, string3)`|  
-|[Zpětného (string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`REVERSE (string)`|  
+|[Nahraďte (řetězec1, řetězec2 string3.)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`REPLACE(string1, string2, string3)`|  
+|[Reverzní (string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`REVERSE (string)`|  
 |[RTrim(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`RTRIM(string)`|  
-|[StartsWith (řetězec, cíl)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string)`|  
-|[Dílčí řetězec (string, spuštění, délka)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`SUBSTRING(string, start, length)`|  
+|[StartsWith (string, cíl)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string)`|  
+|[Dílčí řetězec (string, start, délka)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`SUBSTRING(string, start, length)`|  
 |[ToLower(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LOWER(string)`|  
 |[ToUpper(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`UPPER(string)`|  
   
 ## <a name="bitwise-functions"></a>Bitový funkce  
- Následující tabulka popisuje bitové mapování funkcí:  
+ Následující tabulka popisuje bitový funkce mapování:  
   
-|Kanonické funkce|Funkce SQL Server|  
+|Kanonické funkce|Funkce SQL serveru|  
 |-------------------------|--------------------------|  
-|[BitWiseAnd (hodnota1, hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 & hodnota2|  
+|[BitWiseAnd (Hodnota1; hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|Hodnota1 & hodnota2|  
 |[BitWiseNot (hodnota)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|~ Hodnota|  
-|[BitWiseOr (hodnota1, hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 &#124; hodnota2|  
-|[BitWiseXor (hodnota1, hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 ^ hodnota2|
+|[BitWiseOr (Hodnota1; hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|hodnota1 &#124; hodnota2|  
+|[BitWiseXor (Hodnota1; hodnota2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|Hodnota1 ^ hodnota2|

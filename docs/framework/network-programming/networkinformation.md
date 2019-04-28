@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Network
 ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
 ms.openlocfilehash: 0820ad6a6d5000ef7ea575e856d883ba5325b1b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642084"
 ---
 # <a name="networkinformation"></a>NetworkInformation
 <xref:System.Net.NetworkInformation> Oborů názvů umožňuje shromažďování informací o událostech sítě, změnách, statistiky a vlastnosti. Můžete také určit, jestli je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.  

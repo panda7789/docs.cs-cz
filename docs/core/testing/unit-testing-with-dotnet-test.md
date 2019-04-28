@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
 ms.openlocfilehash: 97cf42c78154375ce06639d4a3029ed87b993ced
-ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58504350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665439"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování jednotek C# v .NET Core pomocí příkazu dotnet test a xUnit
 

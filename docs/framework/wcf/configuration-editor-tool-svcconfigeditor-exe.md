@@ -11,8 +11,8 @@ ms.openlocfilehash: e4b54026c71e18e4011661c5cad2ca95dfcb733e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608850"
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>Nástroj Configuration Editor (SvcConfigEditor.exe)
 Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEditor.exe) umožňuje správcům a vývojářům umožňuje vytvářet a upravovat nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro vazby WCF, chování, služby a diagnostické nástroje bez nutnosti přímo upravit konfigurační soubory XML.  
@@ -50,11 +50,11 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
   
  Editor konfigurace služby uživatelské rozhraní je rozdělen do následujících oblastí:  
   
--   Podokně se stromovým zobrazením, která zobrazuje konfigurační prvky ve stromové struktuře na levé straně. Ve stromové struktuře můžete provádět operace, kliknutím pravým tlačítkem myši uzly.  
+- Podokně se stromovým zobrazením, která zobrazuje konfigurační prvky ve stromové struktuře na levé straně. Ve stromové struktuře můžete provádět operace, kliknutím pravým tlačítkem myši uzly.  
   
--   Podokna úloh, kde se zobrazují běžné úlohy pro aktuální prvky v levém dolním rohu okna  
+- Podokna úloh, kde se zobrazují běžné úlohy pro aktuální prvky v levém dolním rohu okna  
   
--   Podokno Podrobnosti, které zobrazí podrobné informace o nastavení konfigurace uzlu vybraném v zobrazení stromu na pravé straně.  
+- Podokno Podrobnosti, které zobrazí podrobné informace o nastavení konfigurace uzlu vybraném v zobrazení stromu na pravé straně.  
   
 ### <a name="opening-a-configuration-file"></a>Otevřete konfigurační soubor  
   
@@ -77,16 +77,16 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 #### <a name="creating-a-new-service-configuration"></a>Vytvořit novou konfiguraci služby  
  Můžete vytvořit novou konfiguraci služby následujícími způsoby:  
   
--   Pomocí průvodce: Klikněte na odkaz **vytvořit novou službu...** Podokno úloh nebo stránka Souhrn spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**.  
+- Pomocí průvodce: Klikněte na odkaz **vytvořit novou službu...** Podokno úloh nebo stránka Souhrn spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**.  
   
--   Ruční vytvoření: Můžete kliknout pravým tlačítkem **služby** uzlu a zvolte **novou službu**.  
+- Ruční vytvoření: Můžete kliknout pravým tlačítkem **služby** uzlu a zvolte **novou službu**.  
   
 #### <a name="creating-a-new-service-endpoint-configuration"></a>Vytváří se nová konfigurace koncového bodu služby  
  Můžete vytvořit nové konfigurace koncového bodu služby následujícími způsoby:  
   
--   Vytvoření s použitím průvodce: klikněte na odkaz **vytvořit nový koncový bod služby...** Podokno úloh nebo stránka Souhrn spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**.  
+- Vytvoření s použitím průvodce: klikněte na odkaz **vytvořit nový koncový bod služby...** Podokno úloh nebo stránka Souhrn spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**.  
   
--   Ruční vytvoření: Po vytvoření služby kliknete pravým tlačítkem **koncové body** uzlu a zvolte možnost "**nový koncový bod služby**".  
+- Ruční vytvoření: Po vytvoření služby kliknete pravým tlačítkem **koncové body** uzlu a zvolte možnost "**nový koncový bod služby**".  
   
 #### <a name="editing-a-service-configuration"></a>Úprava konfigurace služby  
   
@@ -121,9 +121,9 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 #### <a name="creating-a-new-client-endpoint-configuration"></a>Vytvoření nového koncového bodu konfigurace klienta  
  Můžete vytvořit novou konfiguraci koncových bodů klienta následujícími způsoby:  
   
--   Vytvořte pomocí průvodce: Klikněte na odkaz **vytvořit nového klienta...** na **podokna úloh** na levém okraji okna, nebo **stránka Souhrn** spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**. Průvodce vás vyzve, abyste odkazovalo na umístění konfigurace služby, ze kterého se vygeneruje konfigurace klienta. Zvolte koncový bod služby pro připojení k.  
+- Vytvořte pomocí průvodce: Klikněte na odkaz **vytvořit nového klienta...** na **podokna úloh** na levém okraji okna, nebo **stránka Souhrn** spusťte průvodce. Můžete také provést, **souboru** nabídka -> **přidat novou položku**. Průvodce vás vyzve, abyste odkazovalo na umístění konfigurace služby, ze kterého se vygeneruje konfigurace klienta. Zvolte koncový bod služby pro připojení k.  
   
--   Ruční vytvoření: Klikněte pravým tlačítkem myši **koncové body** pod uzlem **klienta**a zvolte **nový koncový bod klienta**.  
+- Ruční vytvoření: Klikněte pravým tlačítkem myši **koncové body** pod uzlem **klienta**a zvolte **nový koncový bod klienta**.  
   
 #### <a name="editing-a-client-endpoint-configuration"></a>Úprava konfigurace koncový bod klienta  
   
@@ -141,27 +141,27 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 #### <a name="creating-a-new-standard-endpoint-configuration"></a>Vytváří se nová konfigurace standardní koncový bod  
  Můžete vytvořit novou konfiguraci standardní koncový bod následujícími způsoby:  
   
--   Klikněte pravým tlačítkem myši **standardní koncový bod** uzel a vyberte možnost **nový standardní konfigurace koncového bodu...** V dialogovém okně vyberte typ vazby a klikněte na tlačítko **OK**.  
+- Klikněte pravým tlačítkem myši **standardní koncový bod** uzel a vyberte možnost **nový standardní konfigurace koncového bodu...** V dialogovém okně vyberte typ vazby a klikněte na tlačítko **OK**.  
   
--   Vyberte **standardní koncový bod** uzel a klikněte na tlačítko **nový standardní konfigurace koncového bodu...** v **podokna úloh** v levém dolním rohu okna.  
+- Vyberte **standardní koncový bod** uzel a klikněte na tlačítko **nový standardní konfigurace koncového bodu...** v **podokna úloh** v levém dolním rohu okna.  
   
  **Vytváří se nový standardní koncový bod** dialogové okno zobrazí a zobrazí seznam všech registrovaných typů standardní koncový bod.  
   
 #### <a name="viewing-and-editing-a-standard-endpoint-configuration"></a>Prohlížení a úpravy konfigurace standardního koncového bodu  
  Můžete otevřít konfiguraci standardní koncový bod pro prohlížení a úpravy následujícími způsoby:  
   
--   Rozbalte kliknutím **standardní koncový bod** uzel a klikněte na uzel dílčí příslušný koncový bod.  
+- Rozbalte kliknutím **standardní koncový bod** uzel a klikněte na uzel dílčí příslušný koncový bod.  
   
--   Klikněte na tlačítko **standardní koncový bod** uzel a klikněte na příslušný koncový bod v podokně podrobností.  
+- Klikněte na tlačítko **standardní koncový bod** uzel a klikněte na příslušný koncový bod v podokně podrobností.  
   
  Atributy pro koncový bod se zobrazí v pravém podokně pro úpravy.  
   
 #### <a name="deleting-a-standard-endpoint-configuration"></a>Odstraňuje se konfigurace standardní koncový bod  
  Standardní koncový bod konfigurace můžete odstranit následujícím způsobem:  
   
--   Rozbalte kliknutím **standardní koncový bod** uzel a klikněte pravým tlačítkem na uzel dílčí příslušný koncový bod. Pomocí příkazu kontextové **odstranit standardní konfigurace koncového bodu** odstranit koncový bod.  
+- Rozbalte kliknutím **standardní koncový bod** uzel a klikněte pravým tlačítkem na uzel dílčí příslušný koncový bod. Pomocí příkazu kontextové **odstranit standardní konfigurace koncového bodu** odstranit koncový bod.  
   
--   Klikněte na tlačítko **standardní koncový bod** uzlu. V **úloh** podokně klikněte na tlačítko **odstranit standardní konfigurace koncového bodu**.  
+- Klikněte na tlačítko **standardní koncový bod** uzlu. V **úloh** podokně klikněte na tlačítko **odstranit standardní konfigurace koncového bodu**.  
   
  Pokud standardní koncový bod v používá, zobrazí se zpráva upozornění při pokusu odstranit: **Standardní koncový bod se používá. Pokud je odstraníte nyní, nezapomeňte odstranit všechny jeho odkazy v ostatních částech konfigurace (například v koncový bod služby nebo koncový bod klienta). Konfigurace v opačném případě budou neplatné a nelze otevřít další čas. Opravdu že chcete odstranit koncový bod standard?"**  
   
@@ -175,11 +175,11 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 #### <a name="creating-a-new-binding-configuration"></a>Vytváří se nová konfigurace vazby  
  Takto můžete vytvořit novou konfiguraci vazby.  
   
--   Klikněte pravým tlačítkem myši **vazby** uzel a vyberte možnost **novou konfiguraci vazby**... V dialogovém okně vyberte typ vazby a klikněte na tlačítko **OK**.  
+- Klikněte pravým tlačítkem myši **vazby** uzel a vyberte možnost **novou konfiguraci vazby**... V dialogovém okně vyberte typ vazby a klikněte na tlačítko **OK**.  
   
--   Vyberte **vazby** uzel a klikněte na tlačítko **novou konfiguraci vazby**... v **podokna úloh** v levém dolním rohu okna.  
+- Vyberte **vazby** uzel a klikněte na tlačítko **novou konfiguraci vazby**... v **podokna úloh** v levém dolním rohu okna.  
   
--   Služba nebo klient na stránce shrnutí, klikněte na tlačítko **klikněte na vytvořit** v **konfigurace vazby** pole, které chcete vytvořit konfiguraci vazby pro odpovídající koncový bod.  
+- Služba nebo klient na stránce shrnutí, klikněte na tlačítko **klikněte na vytvořit** v **konfigurace vazby** pole, které chcete vytvořit konfiguraci vazby pro odpovídající koncový bod.  
   
 #### <a name="adding-binding-element-extensions-to-a-custom-binding"></a>Přidání rozšíření elementu vazby k vlastní vazby  
   
@@ -278,9 +278,9 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 ##### <a name="creating-a-new-behavior-configuration"></a>Vytváří se nová konfigurace chování  
  Nová konfigurace chování lze vytvořit dvěma způsoby.  
   
--   Klikněte pravým tlačítkem na jednom z uzlů chování a vyberte "**novou konfiguraci chování...**  
+- Klikněte pravým tlačítkem na jednom z uzlů chování a vyberte "**novou konfiguraci chování...**  
   
--   Vyberte jeden z uzlů chování a klikněte **novou konfiguraci chování**... v **podokna úloh** v levém dolním rohu okna.  
+- Vyberte jeden z uzlů chování a klikněte **novou konfiguraci chování**... v **podokna úloh** v levém dolním rohu okna.  
   
 ##### <a name="adding-behavior-element-extensions-to-a-behavior"></a>Přidání chování Element rozšíření k chování  
   
@@ -319,13 +319,13 @@ Windows Communication Foundation (WCF) Service Configuration Editor (SvcConfigEd
 #### <a name="extensions"></a>Rozšíření  
  Nová rozšíření vazby, rozšíření elementu vazby, rozšíření standardní koncový bod a chování rozšíření může být zaregistrovaná pro použití v konfigurace WCF. Rozšíření jsou páry název/typu. Název definuje název rozšíření v konfiguraci, že typ implementuje rozšíření. Existují čtyři typy rozšíření:  
   
--   Rozšíření vazby definice typu celého vazby. Příklad: `basicHttpBinding`.  
+- Rozšíření vazby definice typu celého vazby. Příklad: `basicHttpBinding`.  
   
--   Rozšíření elementu vazby definuje prvek vazby. Příklad: `textMessageEncoding`.  
+- Rozšíření elementu vazby definuje prvek vazby. Příklad: `textMessageEncoding`.  
   
--   Standardní koncový bod rozšíření definovat celou standardní koncový bod. Příklad: `discoveryEndpoint`.  
+- Standardní koncový bod rozšíření definovat celou standardní koncový bod. Příklad: `discoveryEndpoint`.  
   
--   Element rozšíření chování definujte prvek chování. Příklad: `clientVia`.  
+- Element rozšíření chování definujte prvek chování. Příklad: `clientVia`.  
   
  Rozšíření, které jsou zaregistrovány v konfiguraci lze použít stejně jako ostatní součásti WCF stejného typu.  
   

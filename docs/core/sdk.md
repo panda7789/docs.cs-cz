@@ -4,11 +4,11 @@ description: Přečtěte si o .NET Core SDK, což je sada knihoven a nástrojů 
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.openlocfilehash: f23140166ada0c39d4267a4fd2ba5187b6c13c83
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648721"
 ---
 # <a name="net-core-sdk-overview"></a>Přehled sady SDK .NET core
 

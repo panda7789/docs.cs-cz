@@ -3,11 +3,11 @@ title: Ukázky programování sítě
 ms.date: 03/30/2017
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
 ms.openlocfilehash: 6d66a5ce0835a52dd1b8c331d94bc58ce17622c1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642136"
 ---
 # <a name="network-programming-samples"></a>Ukázky programování sítě
 Tato část obsahuje popisy a odkazy na ke stažení síťové programování ukázky, které používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a souvisejících oborech názvů. 

@@ -5,11 +5,11 @@ author: smadala
 ms.date: 03/22/2017
 ms.custom: seodec18
 ms.openlocfilehash: 6160a8b9184d031fcc06356b5b489ee24b765e84
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648708"
 ---
 # <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 

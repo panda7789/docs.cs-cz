@@ -8,11 +8,11 @@ ms.assetid: 653da4ba-3752-4d1f-a08a-de017dc86ecc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f05f66af71b86ccaefe19c0ddce2bfe7572f1084
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627889"
 ---
 # <a name="net-framework-application-essentials"></a>Základy vytváření aplikací pomocí rozhraní .NET Framework
 Tato část dokumentace rozhraní .NET Framework obsahuje informace o základních úkolech vývoje aplikací v rozhraní .NET Framework.  
@@ -27,8 +27,8 @@ Tato část dokumentace rozhraní .NET Framework obsahuje informace o základn�
  [Obecné typy](../../docs/standard/generics/index.md)  
  Popisuje funkci obecných typů, včetně obecných kolekcí, delegátů a rozhraní poskytovaných rozhraním .NET Framework. Obsahuje odkazy na dokumentaci funkcí jazyka C#, Visual Basic a Visual C++ a na podpůrné technologie, jako je například reflexe.  
   
- [Číslice](../../docs/standard/numerics.md)  
- Popisuje číselnými typy v rozhraní .NET Framework.  
+ [Numerické hodnoty](../../docs/standard/numerics.md)  
+ Popisuje typy čísel v rozhraní .NET Framework.  
   
  [Události](../../docs/standard/events/index.md)  
  Obsahuje přehled modelu události v rozhraní .NET Framework.  
@@ -37,7 +37,7 @@ Tato část dokumentace rozhraní .NET Framework obsahuje informace o základn�
  Popisuje zpracování chyb, které poskytuje rozhraní .NET Framework, a základy zpracování výjimek.  
   
  [Vstup/výstup souborů a streamů](../../docs/standard/io/index.md)  
- Vysvětluje, jak můžete provádět synchronní a asynchronní souboru a přístup k datovému proudu dat a jak používat k izolovanému úložišti.  
+ Vysvětluje, jak lze provést synchronní a asynchronní souboru a datovým proudům přístup a jak používat izolované úložiště.  
   
  [Data, časy a časová pásma](../../docs/standard/datetime/index.md)  
  Popisuje způsob práce s časovými pásmy a jejich převody v aplikacích, které časová pásma zohledňují.  

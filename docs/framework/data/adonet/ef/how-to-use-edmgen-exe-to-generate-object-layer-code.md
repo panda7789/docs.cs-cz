@@ -3,11 +3,11 @@ title: 'Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstv
 ms.date: 03/30/2017
 ms.assetid: c44d2ebe-f66f-42cb-9741-4a3f0c2dcffb
 ms.openlocfilehash: 8a39027ee6a5647bbd645f5a38e35d61f7ebbd8e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605766"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-object-layer-code"></a>Postupy: Použití EdmGen.exe pro generování kódu na objektové vrstvě
 Toto téma ukazuje, jak používat [generátor EDM (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md) nástroj pro generování kódu na objektové vrstvě podle soubor .csdl.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 1daf42c2-c9f4-4cda-b291-7641b9c6d3fe
 ms.openlocfilehash: 0c711a2d9edbc3b462048272dd7dd138fd934a89
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644668"
 ---
 # <a name="query-expression-syntax-examples-restriction-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Omezení (LINQ to DataSet)
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Where%2A> metodu dotazu <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  

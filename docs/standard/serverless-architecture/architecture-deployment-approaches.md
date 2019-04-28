@@ -5,13 +5,13 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 5477b8c4531780fdebf194e4f798564e59cd2953
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640253"
 ---
-# <a name="architecture-deployment-approaches"></a>Způsoby nasazení architektury
+# <a name="architecture-deployment-approaches"></a>Přístupy k nasazení architektury
 
 Bez ohledu na architekturu přístup umožňuje navrhovat obchodní aplikace, implementaci a nasazení těchto aplikací se můžou lišit. Podniky hostovat aplikace pro všechno, od fyzického hardwaru a funkce bez serveru.
 
@@ -139,8 +139,8 @@ Není široké spektrum dostupné možnosti pro architekturu, včetně s hybridn
 |         |IaaS     |PaaS     |Kontejner|Bez serveru|
 |---------|---------|---------|---------|----------|
 |**Škálování**|Virtuální počítač       |instance |Aplikace      |Funkce  |
-|**Přehledů**|Hardware|Platforma|Operační systém hostitele|Modul runtime   |
-|**Jednotka** |Virtuální počítač       |Projekt  |Image    |Kód      |
+|**Přehledů**|Hardware|Platforma|OS Host|Modul runtime   |
+|**Jednotka** |Virtuální počítač       |Project  |Image    |Kód      |
 |**Doba platnosti**|Měsíců|Dnů, měsíců|Minut po dny|Počet milisekund minut|
 |**Odpovědnosti**|Aplikace, závislostí, modul runtime a operačního systému|Aplikace a závislosti|Aplikace, závislostí a modulu runtime|Funkce
 

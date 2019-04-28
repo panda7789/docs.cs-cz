@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Napsat vlastní agregační funkce pro PLINQ'
+title: 'Postupy: Psaní vlastní agregační funkce pro PLINQ'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,13 +11,13 @@ ms.assetid: 5a70dd49-ab2a-4798-b551-196ee7042b1a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 03bbb9b7cf33eda1cc479759740e6c5325f635fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608759"
 ---
-# <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Postupy: Napsat vlastní agregační funkce pro PLINQ
+# <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Postupy: Psaní vlastní agregační funkce pro PLINQ
 Tento příklad ukazuje způsob použití <xref:System.Linq.ParallelEnumerable.Aggregate%2A> způsob, jak použít vlastní agregační funkce zdrojové sekvence.  
   
 > [!WARNING]

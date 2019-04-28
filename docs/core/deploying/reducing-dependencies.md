@@ -5,11 +5,11 @@ author: cartermp
 ms.date: 06/20/2016
 ms.custom: seodec18
 ms.openlocfilehash: 9d4f9d7f6e7a736b7d07062f3cd31d6f45176cb1
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61615338"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 

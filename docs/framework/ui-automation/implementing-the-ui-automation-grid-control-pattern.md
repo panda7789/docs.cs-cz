@@ -7,11 +7,11 @@ helpviewer_keywords:
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
 ms.openlocfilehash: 63885e0467f79f140678ffcaa6737f40a8fa7f6f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61609761"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,22 +25,22 @@ ms.locfileid: "59100571"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků mřížka, mějte na paměti následující pokyny a konvence:  
   
--   Souřadnice mřížky jsou počítány od nuly s vlevo nahoře (nebo horním pravém buňky v závislosti na národním prostředí) s souřadnice (0, 0).  
+- Souřadnice mřížky jsou počítány od nuly s vlevo nahoře (nebo horním pravém buňky v závislosti na národním prostředí) s souřadnice (0, 0).  
   
--   Pokud je prázdná buňka, prvku automatizace uživatelského rozhraní musí být vrácena stále za účelem podpory <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> vlastnosti pro tuto buňku. To je možné, pokud je podobný nepravidelné pole rozložení podřízených elementů mřížky (viz následující příklad).  
+- Pokud je prázdná buňka, prvku automatizace uživatelského rozhraní musí být vrácena stále za účelem podpory <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> vlastnosti pro tuto buňku. To je možné, pokud je podobný nepravidelné pole rozložení podřízených elementů mřížky (viz následující příklad).  
   
  ![Průzkumník Windows zobrazení zobrazuje nepravidelné rozložení. ](../../../docs/framework/ui-automation/media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
 Příklad ovládací prvek mřížky s prázdnou souřadnice  
   
--   Mřížka s jednu položku se stále vyžadují k implementaci <xref:System.Windows.Automation.Provider.IGridProvider> Pokud logicky má se za to být mřížku. Počet podřízených položek v mřížce je důležité.  
+- Mřížka s jednu položku se stále vyžadují k implementaci <xref:System.Windows.Automation.Provider.IGridProvider> Pokud logicky má se za to být mřížku. Počet podřízených položek v mřížce je důležité.  
   
--   Skryté řádků a sloupců, v závislosti na implementaci zprostředkovatele mohou být načteny v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu a proto se projeví ve <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> a <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A> vlastnosti. Pokud skrytý řádků a sloupců ještě nebyly načteny, by neměly být započítány.  
+- Skryté řádků a sloupců, v závislosti na implementaci zprostředkovatele mohou být načteny v [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu a proto se projeví ve <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> a <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A> vlastnosti. Pokud skrytý řádků a sloupců ještě nebyly načteny, by neměly být započítány.  
   
--   <xref:System.Windows.Automation.Provider.IGridProvider> nepovolí aktivní zpracování mřížky; <xref:System.Windows.Automation.Provider.ITransformProvider> musí být implementován pro povolení této funkce.  
+- <xref:System.Windows.Automation.Provider.IGridProvider> nepovolí aktivní zpracování mřížky; <xref:System.Windows.Automation.Provider.ITransformProvider> musí být implementován pro povolení této funkce.  
   
--   Použití <xref:System.Windows.Automation.StructureChangedEventHandler> pro naslouchání strukturální nebo rozložení mřížky, jako je například buňky, které byly přidány, odebrány nebo sloučit změny.  
+- Použití <xref:System.Windows.Automation.StructureChangedEventHandler> pro naslouchání strukturální nebo rozložení mřížky, jako je například buňky, které byly přidány, odebrány nebo sloučit změny.  
   
--   Použití <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> ke sledování přechod zálohovaných položek nebo buňky mřížky.  
+- Použití <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> ke sledování přechod zálohovaných položek nebo buňky mřížky.  
   
 <a name="Required_Members_for_IGridProvider"></a>   
 ## <a name="required-members-for-igridprovider"></a>Požadované členy pro IGridProvider  
@@ -49,7 +49,7 @@ Příklad ovládací prvek mřížky s prázdnou souřadnice
 |Požadované členy|Type|Poznámky|  
 |----------------------|----------|-----------|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Vlastnost|Žádný|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Metoda|Žádné|  
   
  Tento model ovládací prvek nemá žádné přidružené události.  

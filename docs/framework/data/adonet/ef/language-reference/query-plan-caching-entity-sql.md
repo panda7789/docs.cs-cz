@@ -3,11 +3,11 @@ title: Plán dotazu, ukládání do mezipaměti (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 90b0c685-5ef2-461b-98b4-c3c0a2b253c7
 ms.openlocfilehash: 9f042d46d9a601c1091e36f8d81ce8f933140b20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59178175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61613661"
 ---
 # <a name="query-plan-caching-entity-sql"></a>Plán dotazu, ukládání do mezipaměti (Entity SQL)
 Pokaždé, když je proveden pokus o provedení dotazu, kanál dotaz vyhledá mezipaměti plánu dotazu, jestli přesně dotazu je již kompilované a k dispozici. Pokud ano, jeho opakované používání plánů v mezipaměti namísto vytváření nové. Pokud se najde shoda v mezipaměti plánu dotazu dotazu je zkompilován a uložili do mezipaměti. Dotaz je identifikován jeho [!INCLUDE[esql](../../../../../../includes/esql-md.md)] text a parametr kolekce (názvy a typy). Všechna porovnání textu rozlišují malá a velká písmena.  
@@ -34,19 +34,19 @@ Pokaždé, když je proveden pokus o provedení dotazu, kanál dotaz vyhledá me
   
  Pro dotazy se nezúčastní správně mezipaměti plánu dotazu by měly splňovat následující požadavky:  
   
--   Text dotazu by měl být konstantní vzorek, pokud možno konstanty typu řetězec nebo prostředek.  
+- Text dotazu by měl být konstantní vzorek, pokud možno konstanty typu řetězec nebo prostředek.  
   
--   <xref:System.Data.EntityClient.EntityParameter> nebo <xref:System.Data.Objects.ObjectParameter> by měl použít, kdykoli se musí předávat hodnotu zadanou uživatelem.  
+- <xref:System.Data.EntityClient.EntityParameter> nebo <xref:System.Data.Objects.ObjectParameter> by měl použít, kdykoli se musí předávat hodnotu zadanou uživatelem.  
   
  Měli byste se vyhnout následující vzory dotazů, které zbytečně spotřebovávají sloty v mezipaměti plánu dotazu:  
   
--   Změny písmena v textu.  
+- Změny písmena v textu.  
   
--   Změní na prázdný znak.  
+- Změní na prázdný znak.  
   
--   Změny na literálové hodnoty.  
+- Změny na literálové hodnoty.  
   
--   Změny v textu v komentářích.  
+- Změny v textu v komentářích.  
   
 ## <a name="see-also"></a>Viz také:
 

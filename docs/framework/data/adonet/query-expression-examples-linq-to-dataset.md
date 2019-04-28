@@ -3,11 +3,11 @@ title: Příklady výrazů dotazů (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: f743fbc7-faff-45e5-af1e-61577d87f0cc
 ms.openlocfilehash: f15e397c711bd01d5770e59c4f2c8227ee2ac7ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61637649"
 ---
 # <a name="query-expression-examples-linq-to-dataset"></a>Příklady výrazů dotazů (LINQ to DataSet)
 Tato část obsahuje do datové sady ukázky programování v syntaxe výrazu dotazu, které používají operátory standardního dotazu LINQ. <xref:System.Data.DataSet> Používá v těchto příkladech je vyplněna pomocí `FillDataSet` metodu, která je zadána v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md). Další informace najdete v tématu [přehled standardních operátorů dotazu (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) nebo [přehled operátory standardního dotazu (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).  

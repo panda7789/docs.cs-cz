@@ -13,11 +13,11 @@ helpviewer_keywords:
 - GradientStop objects [WPF], animating position of
 ms.assetid: 6f5b8b47-6c32-4b8e-98ee-fdf6515ec843
 ms.openlocfilehash: eeaea4732855155bf711912644f2f5b3f5a4f8d0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651360"
 ---
 # <a name="how-to-animate-the-position-or-color-of-a-gradient-stop"></a>Postupy: Animace umístění nebo barvy přechodové zarážky
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Color%2A> a <xref:System.Windows.Media.GradientStop.Offset%2A> z <xref:System.Windows.Media.GradientStop> objekty.  
@@ -25,11 +25,11 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.GradientStop.Co
 ## <a name="example"></a>Příklad  
  Následující příklad animuje tři Přechodové zarážky dovnitř <xref:System.Windows.Media.LinearGradientBrush>. V příkladu tři animace, z nichž každý animuje různé Přechodové zarážky:  
   
--   První animace <xref:System.Windows.Media.Animation.DoubleAnimation>, animuje první ukončení přechodu <xref:System.Windows.Media.GradientStop.Offset%2A> od 0.0 do 1.0 a pak zpátky 0,0. V důsledku toho první barvy v přechodu staffhubu od levého okraje pravé části obdélníku a pak zpátky na levé straně.  
+- První animace <xref:System.Windows.Media.Animation.DoubleAnimation>, animuje první ukončení přechodu <xref:System.Windows.Media.GradientStop.Offset%2A> od 0.0 do 1.0 a pak zpátky 0,0. V důsledku toho první barvy v přechodu staffhubu od levého okraje pravé části obdélníku a pak zpátky na levé straně.  
   
--   Druhé animace <xref:System.Windows.Media.Animation.ColorAnimation>, animuje druhý ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> z <xref:System.Windows.Media.Colors.Purple%2A> k <xref:System.Windows.Media.Colors.Yellow%2A> a pak zpátky <xref:System.Windows.Media.Colors.Purple%2A>. Prostřední barva přechodu v důsledku toho změní z nachová na žlutou a zpět na fialový.  
+- Druhé animace <xref:System.Windows.Media.Animation.ColorAnimation>, animuje druhý ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> z <xref:System.Windows.Media.Colors.Purple%2A> k <xref:System.Windows.Media.Colors.Yellow%2A> a pak zpátky <xref:System.Windows.Media.Colors.Purple%2A>. Prostřední barva přechodu v důsledku toho změní z nachová na žlutou a zpět na fialový.  
   
--   Třetí animace jiného <xref:System.Windows.Media.Animation.ColorAnimation>, animuje krytí třetí ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> podle -1 a pak zpátky. V důsledku toho třetí barev v gradientu zmizí a pak stane neprůhledné.  
+- Třetí animace jiného <xref:System.Windows.Media.Animation.ColorAnimation>, animuje krytí třetí ukončení přechodu <xref:System.Windows.Media.GradientStop.Color%2A> podle -1 a pak zpátky. V důsledku toho třetí barev v gradientu zmizí a pak stane neprůhledné.  
   
  [!code-csharp[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesIntroduction_snip/CSharp/GradientStopAnimationExample.cs#graphicsmmgradientanimationexampleswholepage)]
  [!code-vb[BrushesIntroduction_snip#GraphicsMMGradientAnimationExamplesWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesIntroduction_snip/visualbasic/gradientstopanimationexample.vb#graphicsmmgradientanimationexampleswholepage)]

@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření vložených prostředků modelu a souborů mapován
 ms.date: 03/30/2017
 ms.assetid: 20dfae4d-e95a-4264-9540-f5ad23b462d3
 ms.openlocfilehash: eae3681664ab1fd095487a7b7ed395302faf2588
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607437"
 ---
 # <a name="how-to-make-model-and-mapping-files-embedded-resources"></a>Postupy: Vytvoření vložených prostředků modelu a souborů mapování
 [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Umožňuje nasadit modelu a souborů mapování jako vložené prostředky aplikace. Sestavení s vloženým modelem a souborů mapování musí být ve stejné doméně aplikace jako připojení entity načíst. Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md). Ve výchozím nastavení [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)] nástroje vložení modelu a souborů mapování. Když definujete modelu a souborů mapování ručně, pomocí tohoto postupu můžete zajistit, že jsou soubory nasazeny jako vložené prostředky spolu s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace.  
@@ -25,11 +25,11 @@ ms.locfileid: "59329528"
   
 4. V **Průzkumníka řešení**, poklikejte na soubor App.config a potom změňte `Metadata` parametr `connectionString` atributů na základě jedné z následujících formátů:  
   
-    -   `Metadata=``res://<assemblyFullName>/<resourceName>;`  
+    - `Metadata=``res://<assemblyFullName>/<resourceName>;`  
   
-    -   `Metadata=``res://*/<resourceName>;`  
+    - `Metadata=``res://*/<resourceName>;`  
   
-    -   `Metadata=res://*;`  
+    - `Metadata=res://*;`  
   
      Další informace najdete v tématu [připojovací řetězce](../../../../../docs/framework/data/adonet/ef/connection-strings.md).  
   

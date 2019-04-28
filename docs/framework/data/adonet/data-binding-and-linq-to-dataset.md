@@ -3,11 +3,11 @@ title: Datová vazba a LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: 310bff4a-32dd-4f20-a271-6dbd82912631
 ms.openlocfilehash: b081a648023aa21eea3a20ec409600d3bcbe9878
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607384"
 ---
 # <a name="data-binding-and-linq-to-dataset"></a>Datová vazba a LINQ to DataSet
 *Vytváření datových vazeb* je proces, který vytvoří připojení mezi uživatelského rozhraní aplikace a obchodní logiky. Pokud data poskytuje správné oznámení, když se data změní jeho hodnotu vazbu se správným nastavením, elementy, které jsou vázány na data automaticky odrážejí změny. <xref:System.Data.DataSet> Je v paměti reprezentace dat, která poskytuje konzistentní relační programovací model, bez ohledu na zdroj dat obsahuje. ADO.NET 2.0 <xref:System.Data.DataView> umožňuje řazení a filtrování dat uložených v <xref:System.Data.DataTable>. Tato funkce se často používá v aplikacích datové vazby. Pomocí <xref:System.Data.DataView>, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků. Další informace o <xref:System.Data.DataView> objektu, najdete v článku [zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 3b381f04-593b-471f-bd33-0362be1aade5
 author: BrucePerlerMS
 ms.openlocfilehash: 07e1aee85e22f6dd5257cdd49e8af99b423cb17f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61645874"
 ---
 # <a name="whats-new-in-windows-identity-foundation-45"></a>Novinky ve Windows Identity Foundation 4.5
 První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh jako samostatný produkt ke stažení a je známa pod označením WIF 3.5, protože byla uvedena ve stejném období jako technologie .NET 3.5 SP1. Počínaje verzí .NET 4.5 je technologie WIF součástí rozhraní .NET Framework. Tříd WIF přímo k dispozici v rozhraní umožňuje mnohem hlubší integraci deklarovaných identit v .NET, což usnadňuje používání deklarací. Aplikace napsané pro technologie WIF 3.5 bude nutné upravit tak, aby mohli využít nový model; informace najdete v tématu [pokyny k migraci Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
@@ -23,29 +23,29 @@ První verze technologie Windows Identity Foundation (WIF) byla uvedena na trh j
   
 ## <a name="changes-to-the-wif-45-visual-studio-experience"></a>Změny v používání technologie WIF 4.5 v prostředí sady Visual Studio  
   
--   **Přidat odkaz STS....** Funkce Visual Studio (nástroj příkazového řádku FedUtil) již existuje Místo toho můžete použít nové rozšíření sady Visual Studio **Identity and Access Tool for Visual Studio 2012**. To umožňuje federaci s existující službou tokenů zabezpečení (STS). Svá řešení můžete také testovat s použitím místní služby tokenů zabezpečení LocalSTS. Po instalaci rozšíření klikněte pravým tlačítkem na projekt a hledejte **identit a přístupu** v místní nabídce.  
+- **Přidat odkaz STS....** Funkce Visual Studio (nástroj příkazového řádku FedUtil) již existuje Místo toho můžete použít nové rozšíření sady Visual Studio **Identity and Access Tool for Visual Studio 2012**. To umožňuje federaci s existující službou tokenů zabezpečení (STS). Svá řešení můžete také testovat s použitím místní služby tokenů zabezpečení LocalSTS. Po instalaci rozšíření klikněte pravým tlačítkem na projekt a hledejte **identit a přístupu** v místní nabídce.  
   
--   Šablony technologie ASP.NET a služby STS již nejsou k dispozici, protože deklarace je možné používat přímo v existujících šablonách projektů pro technologii ASP.NET, weby a technologii WCF.  
+- Šablony technologie ASP.NET a služby STS již nejsou k dispozici, protože deklarace je možné používat přímo v existujících šablonách projektů pro technologii ASP.NET, weby a technologii WCF.  
   
--   Ovládací prvky `Microsoft.IdentityModel.Web.Controls` obor názvů (`SignInControl`, `FederatedPassiveSignInControl`, a `FederatedPassiveSignInStatus`) nejsou přeneseny do verze WIF 4.5.  
+- Ovládací prvky `Microsoft.IdentityModel.Web.Controls` obor názvů (`SignInControl`, `FederatedPassiveSignInControl`, a `FederatedPassiveSignInStatus`) nejsou přeneseny do verze WIF 4.5.  
   
 ## <a name="changes-to-the-wif-45-api"></a>Změny v rozhraní API technologie WIF 4.5  
   
--   Obecně jsou deklarace identity související třídy v <xref:System.Security.Claims?displayProperty=nameWithType> obor názvů. Související třídy – WCF – servisní smlouvy, kanály, objekty pro vytváření kanálů a obsluha hostitelů, které se používají pro scénáře, WS-Trust – se v <xref:System.ServiceModel.Security?displayProperty=nameWithType>; a všechny ostatní třídy technologie WIF jsou rozděleny mezi různými [System.IdentityModel](https://go.microsoft.com/fwlink/?LinkId=272004) obory názvů – patří mezi ně, například třídy, které představují WS-* a artefaktů SAML, obslužné rutiny tokenů a související třídy a třídy používané ve scénářích WS-Federation. Další informace najdete v tématu [Namespace mapování mezi verzemi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md) a [Reference k rozhraní API technologie WIF](../../../docs/framework/security/wif-api-reference.md).  
+- Obecně jsou deklarace identity související třídy v <xref:System.Security.Claims?displayProperty=nameWithType> obor názvů. Související třídy – WCF – servisní smlouvy, kanály, objekty pro vytváření kanálů a obsluha hostitelů, které se používají pro scénáře, WS-Trust – se v <xref:System.ServiceModel.Security?displayProperty=nameWithType>; a všechny ostatní třídy technologie WIF jsou rozděleny mezi různými [System.IdentityModel](https://go.microsoft.com/fwlink/?LinkId=272004) obory názvů – patří mezi ně, například třídy, které představují WS-* a artefaktů SAML, obslužné rutiny tokenů a související třídy a třídy používané ve scénářích WS-Federation. Další informace najdete v tématu [Namespace mapování mezi verzemi WIF 3.5 a WIF 4.5](../../../docs/framework/security/namespace-mapping-between-wif-3-5-and-wif-4-5.md) a [Reference k rozhraní API technologie WIF](../../../docs/framework/security/wif-api-reference.md).  
   
--   Bylo povoleno používání klíče počítače v souborech cookie relací při používání webových farem. Další informace najdete v tématu [technologie WIF a webové farmy](../../../docs/framework/security/wif-and-web-farms.md).  
+- Bylo povoleno používání klíče počítače v souborech cookie relací při používání webových farem. Další informace najdete v tématu [technologie WIF a webové farmy](../../../docs/framework/security/wif-and-web-farms.md).  
   
--   Lze nyní deklarativně nakonfigurovat technologie WIF pod [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) a [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) elementy. Další informace o konfiguraci technologie WIF Nalezete v tématu [WIF Configuration Reference](../../../docs/framework/security/wif-configuration-reference.md).  
+- Lze nyní deklarativně nakonfigurovat technologie WIF pod [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) a [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) elementy. Další informace o konfiguraci technologie WIF Nalezete v tématu [WIF Configuration Reference](../../../docs/framework/security/wif-configuration-reference.md).  
   
 ## <a name="other-notable-net-changes-or-features-that-are-caused-by-the-integration-of-wif-into-net"></a>Další významné změny technologie .NET nebo funkce způsobené začleněním technologie WIF do technologie .NET  
   
--   Možnost autorizace na základě deklarované identity (CBAC) je nyní součástí rozhraní .NET Framework. Můžete nakonfigurovat <xref:System.Security.Claims.ClaimsAuthorizationManager> objektu a pak použít <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> a <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy provádět imperativní a deklarativní kontroly přístupu v kódu. Autorizace CBAC poskytuje větší flexibilitu a přesnost než tradiční kontroly přístupu na základě rolí (RBAC). Umožňuje také větší oddělení zásad autorizace od obchodní logiky, protože obchodní logika může kontrolovat přístup na konkrétní deklarace identity nebo sadu deklarací identity a zásady autorizace pro tyto deklarace identit lze nakonfigurovat deklarativně v rámci [ \<claimsAuthorizationManager >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) elementu.  
+- Možnost autorizace na základě deklarované identity (CBAC) je nyní součástí rozhraní .NET Framework. Můžete nakonfigurovat <xref:System.Security.Claims.ClaimsAuthorizationManager> objektu a pak použít <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> a <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy provádět imperativní a deklarativní kontroly přístupu v kódu. Autorizace CBAC poskytuje větší flexibilitu a přesnost než tradiční kontroly přístupu na základě rolí (RBAC). Umožňuje také větší oddělení zásad autorizace od obchodní logiky, protože obchodní logika může kontrolovat přístup na konkrétní deklarace identity nebo sadu deklarací identity a zásady autorizace pro tyto deklarace identit lze nakonfigurovat deklarativně v rámci [ \<claimsAuthorizationManager >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) elementu.  
   
 ## <a name="wcf-changes-as-a-result-of-wif-integration"></a>Změny v technologii WCF v důsledku integrace technologie WIF:  
   
--   Model deklarovaných identit technologie WCF je nahrazen technologií WIF. To znamená, že třídy v <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType>, a <xref:System.IdentityModel.Selectors?displayProperty=nameWithType> obory názvů by se měly zahodit používat třídy technologie WIF.  
+- Model deklarovaných identit technologie WCF je nahrazen technologií WIF. To znamená, že třídy v <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType>, a <xref:System.IdentityModel.Selectors?displayProperty=nameWithType> obory názvů by se měly zahodit používat třídy technologie WIF.  
   
--   Technologie WIF je nyní povolena ve službě WCF zadáním `useIdentityConfiguration` atribut na `<system.serviceModel>` / `<behaviors>` / `<serviceBehaviors>` / `<serviceCredentials>` element jako následující kód XML:  
+- Technologie WIF je nyní povolena ve službě WCF zadáním `useIdentityConfiguration` atribut na `<system.serviceModel>` / `<behaviors>` / `<serviceBehaviors>` / `<serviceCredentials>` element jako následující kód XML:  
   
     ```xml  
     <serviceCredentials useIdentityConfiguration="true">  

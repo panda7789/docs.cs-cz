@@ -18,11 +18,11 @@ helpviewer_keywords:
 - lines [Windows Forms], dashed
 ms.assetid: 30b25aae-e3eb-4479-bdb8-187cf651fc84
 ms.openlocfilehash: 84752773c0b56d9684dc31620d463d4ddccf9dad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59078223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641396"
 ---
 # <a name="pens-lines-and-rectangles-in-gdi"></a>Pera, čáry a obdélníky v GDI+
 Kreslení čar pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je potřeba vytvořit <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje metody, které se dělají kreslení, a <xref:System.Drawing.Pen> ukládá atributy, jako je barva čáry, šířku a stylu.  

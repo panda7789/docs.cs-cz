@@ -6,22 +6,22 @@ ms.assetid: 7e74918c-bc72-4977-a49b-e1520a6d8f60
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 55756092f086de47c4b2acb8f147ca3ab231abe1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650203"
 ---
 # <a name="load-data-from-a-reader"></a>Načtení dat z čtečky
 Pokud dokument XML je načtené pomocí možnosti <xref:System.Xml.XmlDocument.Load%2A> metoda a parametr <xref:System.Xml.XmlReader>, existují rozdíly v chování, která nastane v porovnání s chování načítání dat z jiných formátů. Pokud čtečka nachází ve stavu počáteční <xref:System.Xml.XmlDocument.Load%2A> využívá celý obsah ze čtečky a sestavení XML Document Object Model (DOM) z všechna data ve čtečce.  
   
  Pokud ukazatel čtení je již umístěný na uzlu někde v dokumentu a čtečky je pak předán <xref:System.Xml.XmlDocument.Load%2A> metody <xref:System.Xml.XmlDocument.Load%2A> se pokusí přečíst aktuální uzel a všechny na stejné úrovni, až koncovou značku, která ukončí aktuální hloubka do paměti. Úspěch pokusu o <xref:System.Xml.XmlDocument.Load%2A> závisí na uzlu, který je čtečka na při pokusu o zatížení, jako <xref:System.Xml.XmlDocument.Load%2A> ověří, jestli je ve správném formátu XML ze čtečky. Pokud kód XML není ve správném formátu, <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku. Například následující sadu uzlů obsahovat dva prvky na kořenové úrovni serveru, kód XML není ve správném formátu, a <xref:System.Xml.XmlDocument.Load%2A> vyvolá výjimku.  
   
--   Uzel komentáře, za nímž následuje uzlu elementu, za nímž následuje uzlu elementu, za nímž následuje uzlu EndElement.  
+- Uzel komentáře, za nímž následuje uzlu elementu, za nímž následuje uzlu elementu, za nímž následuje uzlu EndElement.  
   
  Následující sada uzlů vytvoří neúplné modelu DOM, protože neexistuje žádný element na kořenové úrovni.  
   
--   Uzel komentáře, za nímž následuje za nímž následuje uzel komentáře, za nímž následuje uzlu EndElement ProcessingInstruction uzlu.  
+- Uzel komentáře, za nímž následuje za nímž následuje uzel komentáře, za nímž následuje uzlu EndElement ProcessingInstruction uzlu.  
   
  Nevyvolá výjimku a načíst data. Můžete přidat kořenový element k hornímu okraji tyto uzly a vytvořit ve správném formátu XML, který můžete uložit bez chyb.  
   

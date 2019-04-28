@@ -3,11 +3,11 @@ title: Integrované ověřování systému Windows s rozšířenou ochranou
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
 ms.openlocfilehash: 3088d59a91b5caa75cda3e40a5203874c24325cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642383"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířenou ochranou
 Vylepšení, které ovlivňují způsob integrované ověřování zařizuje služba Windows byly provedeny <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a souvisejících oborech názvů. Byla přidána podpora pro rozšířené ochrany pro zvýšení zabezpečení.  
@@ -39,21 +39,21 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
  Informace o vazbách služby je údaj o záměru klienta k ověření koncového bodu konkrétní služby. Její komunikace z klienta na server s následujícími vlastnostmi:  
   
--   Hodnota hlavního názvu služby musí být k dispozici na serveru, který provádí ověření klienta v podobě prostého textu.  
+- Hodnota hlavního názvu služby musí být k dispozici na serveru, který provádí ověření klienta v podobě prostého textu.  
   
--   Hodnota hlavního názvu služby je veřejná.  
+- Hodnota hlavního názvu služby je veřejná.  
   
--   Hlavní název služby musí být kryptograficky chráněný během přenosu, tak, aby útok man-in-the-middle nelze vložit, odstranit nebo změnit jeho hodnotu.  
+- Hlavní název služby musí být kryptograficky chráněný během přenosu, tak, aby útok man-in-the-middle nelze vložit, odstranit nebo změnit jeho hodnotu.  
   
  CBT je vlastnost vnější zabezpečeného kanálu (například TLS) používá k tie (vazba) se do konverzace přes kanál vnitřní, ověření klienta. CBT musí mít následující vlastnosti (také definované v IETF RFC 5056):  
   
--   Když vnější kanálu existuje, hodnota CBT musí být vlastnost vnější kanálu nebo koncový bod serveru nezávisle na sobě byly přijaty klientských i serverových stranami konverzaci.  
+- Když vnější kanálu existuje, hodnota CBT musí být vlastnost vnější kanálu nebo koncový bod serveru nezávisle na sobě byly přijaty klientských i serverových stranami konverzaci.  
   
--   Hodnota CBT odeslány klientem, nesmí být něco, co útočník může ovlivnit.  
+- Hodnota CBT odeslány klientem, nesmí být něco, co útočník může ovlivnit.  
   
--   O tajemství CBT hodnoty nebudou provedeny žádné záruky. To ale neznamená, že hodnota vazby služby a také informace o vazbě kanál vždy se dají prozkoumat jakýkoli jiný, ale serveru, který provádí ověřování, jak může být šifrování protokolu výkonu CBT.  
+- O tajemství CBT hodnoty nebudou provedeny žádné záruky. To ale neznamená, že hodnota vazby služby a také informace o vazbě kanál vždy se dají prozkoumat jakýkoli jiný, ale serveru, který provádí ověřování, jak může být šifrování protokolu výkonu CBT.  
   
--   CBT musí být kryptograficky integrity chráněný během přenosu, tak, aby útočník nelze vložit, odstranit nebo změnit jeho hodnotu.  
+- CBT musí být kryptograficky integrity chráněný během přenosu, tak, aby útočník nelze vložit, odstranit nebo změnit jeho hodnotu.  
   
  Klient přenosu na server v podobě tamperproof hlavní název služby a CBT provádí vazby kanálu. Server ověří informace o vazbě kanálu v souladu s jeho zásadami a odmítá pokusy o ověření, pro které je není myslíte, že samotný byla zamýšleným cílem. Tímto způsobem, jsou k dispozici dva kanály stát kryptograficky jsou technologicky propojené.  
   
@@ -72,37 +72,37 @@ Vylepšení, které ovlivňují způsob integrované ověřování zařizuje slu
   
  A <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> , který obsahuje následující prvky:  
   
--   <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.OSSupportsExtendedProtection%2A> Vlastnost, která určuje, zda operační systém podporuje integrované ověřování systému windows s rozšířenou ochranu.  
+- <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.OSSupportsExtendedProtection%2A> Vlastnost, která určuje, zda operační systém podporuje integrované ověřování systému windows s rozšířenou ochranu.  
   
--   A <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> hodnotu, která určuje, kdy by se měly vynucovat zásady rozšířené ochrany.  
+- A <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> hodnotu, která určuje, kdy by se měly vynucovat zásady rozšířené ochrany.  
   
--   A <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> určující scénář nasazení. To ovlivňuje způsob rozšířené ochrany je zaškrtnuté políčko.  
+- A <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> určující scénář nasazení. To ovlivňuje způsob rozšířené ochrany je zaškrtnuté políčko.  
   
--   Volitelně <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection> , který obsahuje vlastní seznam hlavní název služby, který se používá k porovnání s hlavní název služby, který klient poskytl jako zamýšleným cílem ověřování.  
+- Volitelně <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection> , který obsahuje vlastní seznam hlavní název služby, který se používá k porovnání s hlavní název služby, který klient poskytl jako zamýšleným cílem ověřování.  
   
--   Volitelně <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> , který obsahuje vlastní vazbu kanálu pro účely ověření. Tento scénář není běžný případ  
+- Volitelně <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> , který obsahuje vlastní vazbu kanálu pro účely ověření. Tento scénář není běžný případ  
   
  <xref:System.Security.Authentication.ExtendedProtection.Configuration> Obor názvů poskytuje podporu pro konfiguraci ověřování s použitím rozšířené ochrany pro aplikace.  
   
  Počet funkcí změny byly provedeny pro podporu rozšířenou ochranu v existujícím <xref:System.Net> oboru názvů. Tyto změny patří:  
   
--   Nový <xref:System.Net.TransportContext> přidá do třídy <xref:System.Net> obor názvů, který reprezentuje kontext přenosu.  
+- Nový <xref:System.Net.TransportContext> přidá do třídy <xref:System.Net> obor názvů, který reprezentuje kontext přenosu.  
   
--   Nové <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A> a <xref:System.Net.HttpWebRequest.GetRequestStream%2A> přetížení metody v <xref:System.Net.HttpWebRequest> třídu, která povolí načítání <xref:System.Net.TransportContext> pro podporu rozšířené ochrany pro klientské aplikace.  
+- Nové <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A> a <xref:System.Net.HttpWebRequest.GetRequestStream%2A> přetížení metody v <xref:System.Net.HttpWebRequest> třídu, která povolí načítání <xref:System.Net.TransportContext> pro podporu rozšířené ochrany pro klientské aplikace.  
   
--   Doplňky <xref:System.Net.HttpListener> a <xref:System.Net.HttpListenerRequest> třídy pro podporu serverových aplikací.  
+- Doplňky <xref:System.Net.HttpListener> a <xref:System.Net.HttpListenerRequest> třídy pro podporu serverových aplikací.  
   
  Provedené změny funkcí pro podporu rozšířené ochrany pro klientské aplikace SMTP v existujícím <xref:System.Net.Mail> obor názvů:  
   
--   A <xref:System.Net.Mail.SmtpClient.TargetName%2A> vlastnost <xref:System.Net.Mail.SmtpClient> třídu, která představuje hlavní název služby pro účely ověření při používání aplikace Rozšířená ochrana pro klienta SMTP.  
+- A <xref:System.Net.Mail.SmtpClient.TargetName%2A> vlastnost <xref:System.Net.Mail.SmtpClient> třídu, která představuje hlavní název služby pro účely ověření při používání aplikace Rozšířená ochrana pro klienta SMTP.  
   
  Počet funkcí změny byly provedeny pro podporu rozšířenou ochranu v existujícím <xref:System.Net.Security> oboru názvů. Tyto změny patří:  
   
--   Nové <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsClient%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsClient%2A> přetížení metody v <xref:System.Net.Security.NegotiateStream> třídu, která povolí předávání CBT pro podporu rozšířené ochrany pro klientské aplikace.  
+- Nové <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsClient%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsClient%2A> přetížení metody v <xref:System.Net.Security.NegotiateStream> třídu, která povolí předávání CBT pro podporu rozšířené ochrany pro klientské aplikace.  
   
--   Nové <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsServer%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsServer%2A> přetížení metody v <xref:System.Net.Security.NegotiateStream> třídu, která povolí předávání <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> pro podporu rozšířené ochrany pro serverové aplikace.  
+- Nové <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsServer%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsServer%2A> přetížení metody v <xref:System.Net.Security.NegotiateStream> třídu, která povolí předávání <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> pro podporu rozšířené ochrany pro serverové aplikace.  
   
--   Nový <xref:System.Net.Security.SslStream.TransportContext%2A> vlastnost <xref:System.Net.Security.SslStream> třída podporující rozšířené ochrany pro klientské a serverové aplikace.  
+- Nový <xref:System.Net.Security.SslStream.TransportContext%2A> vlastnost <xref:System.Net.Security.SslStream> třída podporující rozšířené ochrany pro klientské a serverové aplikace.  
   
  A <xref:System.Net.Configuration.SmtpNetworkElement> vlastnost byla přidaná kvůli podpoře konfigurace rozšířené ochrany pro klienty SMTP v <xref:System.Net.Security> oboru názvů.  
   

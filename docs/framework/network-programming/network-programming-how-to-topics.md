@@ -8,74 +8,74 @@ helpviewer_keywords:
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
 ms.openlocfilehash: c165470cd00ac39a45464ec5a534eb0eea531be2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642149"
 ---
 # <a name="network-programming-how-to-topics"></a>Témata s postupy: Programování vizuální vrstvy
 Následující seznam obsahuje odkazy na témata s postupy v rámcové dokumentaci k síťové programování.  
   
  **Požadavek na Data:**  
   
--   [Postupy: Vyžádání webové stránky a načtení výsledků jako Stream](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
+- [Postupy: Vyžádání webové stránky a načtení výsledků jako Stream](../../../docs/framework/network-programming/how-to-request-a-web-page-and-retrieve-the-results-as-a-stream.md)  
   
--   [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
+- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)  
   
--   [Postupy: Odesílání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)  
+- [Postupy: Odesílání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)  
   
--   [Postupy: Načíst WebResponse specifické pro protokol, který odpovídá položce WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)  
+- [Postupy: Načíst WebResponse specifické pro protokol, který odpovídá položce WebRequest](../../../docs/framework/network-programming/how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest.md)  
   
  **Modulární a aplikační protokoly:**  
   
--   [Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest](../../../docs/framework/network-programming/how-to-register-a-custom-protocol-using-webrequest.md)  
+- [Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest](../../../docs/framework/network-programming/how-to-register-a-custom-protocol-using-webrequest.md)  
   
--   [Postupy: Zadání žádosti WebRequest pro přístup k protokolu konkrétním vlastnostem](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)  
+- [Postupy: Zadání žádosti WebRequest pro přístup k protokolu konkrétním vlastnostem](../../../docs/framework/network-programming/how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)  
   
--   [Postupy: Přístup k vlastnostem specifickým pro HTTP](../../../docs/framework/network-programming/how-to-access-http-specific-properties.md)  
+- [Postupy: Přístup k vlastnostem specifickým pro HTTP](../../../docs/framework/network-programming/how-to-access-http-specific-properties.md)  
   
--   [Postupy: Přiřazení uživatelských informací pro seskupení připojení](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)  
+- [Postupy: Přiřazení uživatelských informací pro seskupení připojení](../../../docs/framework/network-programming/how-to-assign-user-information-to-group-connections.md)  
   
--   [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
+- [Postupy: Vytvoření soketu](../../../docs/framework/network-programming/how-to-create-a-socket.md)  
   
--   [Postupy: Stahování souborů přes FTP](../../../docs/framework/network-programming/how-to-download-files-with-ftp.md)  
+- [Postupy: Stahování souborů přes FTP](../../../docs/framework/network-programming/how-to-download-files-with-ftp.md)  
   
--   [Postupy: Nahrávání souborů přes FTP](../../../docs/framework/network-programming/how-to-upload-files-with-ftp.md)  
+- [Postupy: Nahrávání souborů přes FTP](../../../docs/framework/network-programming/how-to-upload-files-with-ftp.md)  
   
--   [Postupy: Výpis obsahu adresáře s využitím protokolu FTP](../../../docs/framework/network-programming/how-to-list-directory-contents-with-ftp.md)  
+- [Postupy: Výpis obsahu adresáře s využitím protokolu FTP](../../../docs/framework/network-programming/how-to-list-directory-contents-with-ftp.md)  
   
  **Internet Protocol verze 6:**  
   
--   [Postupy: Upravte konfigurační soubor počítače na povolení podpory IPv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)  
+- [Postupy: Upravte konfigurační soubor počítače na povolení podpory IPv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)  
   
  **Trasování sítě:**  
   
--   [Postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)  
+- [Postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md)  
   
  **Konfigurace ukládání do mezipaměti:**  
   
--   [Postupy: Nastavení zásad mezipaměti na základě polohy pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md)  
+- [Postupy: Nastavení zásad mezipaměti na základě polohy pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md)  
   
--   [Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md)  
+- [Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md)  
   
--   [Postupy: Přizpůsobení zásad mezipaměti na základě času](../../../docs/framework/network-programming/how-to-customize-a-time-based-cache-policy.md)  
+- [Postupy: Přizpůsobení zásad mezipaměti na základě času](../../../docs/framework/network-programming/how-to-customize-a-time-based-cache-policy.md)  
   
--   [Postupy: Nastavení zásad mezipaměti pro žádost](../../../docs/framework/network-programming/how-to-set-cache-policy-for-a-request.md)  
+- [Postupy: Nastavení zásad mezipaměti pro žádost](../../../docs/framework/network-programming/how-to-set-cache-policy-for-a-request.md)  
   
  **Pomocí proxy servery:**  
   
--   [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
+- [Postupy: Povolit žádosti WebRequest pro komunikaci s Internetem použití proxy serveru](../../../docs/framework/network-programming/how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet.md)  
   
--   [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
+- [Postupy: Přepsat globálního výběru proxy serveru](../../../docs/framework/network-programming/how-to-override-a-global-proxy-selection.md)  
   
  **Informace o síti:**  
   
--   [Postupy: Zjištění dostupnosti sítě a vyřešení změn](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md)  
+- [Postupy: Zjištění dostupnosti sítě a vyřešení změn](../../../docs/framework/network-programming/how-to-detect-network-availability-and-address-changes.md)  
   
--   [Postupy: Získejte informace o protokolu a Interface](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md)  
+- [Postupy: Získejte informace o protokolu a Interface](../../../docs/framework/network-programming/how-to-get-interface-and-protocol-information.md)  
   
--   [Postupy: Příkaz ping na hostitele](../../../docs/framework/network-programming/how-to-ping-a-host.md)  
+- [Postupy: Příkaz ping na hostitele](../../../docs/framework/network-programming/how-to-ping-a-host.md)  
   
 ## <a name="see-also"></a>Viz také:
 

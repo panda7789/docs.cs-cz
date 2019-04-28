@@ -15,11 +15,11 @@ helpviewer_keywords:
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
 ms.openlocfilehash: 751f8a0745322e7e8573d392a504ea02cb18572e
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654026"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646264"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] představuje pojmenované a nepovinné argumenty. *Pojmenované argumenty* vám umožní zadat argument pro parametr konkrétní tím, že přidružíte argument s názvem parametru místo parametru pozice v seznamu parametrů. *Volitelné argumenty* umožňují vynechejte argumenty pro některé parametry. Obě tyto metody lze pomocí metody, indexery, konstruktory a delegáti.  
@@ -68,11 +68,11 @@ ms.locfileid: "58654026"
   
  Každý volitelný parametr má výchozí hodnotu jako součást jeho definici. Pokud pro tento parametr je odeslán žádný argument, je použita výchozí hodnota. Výchozí hodnota musí být jedna z následujících typů výrazů:  
   
--   konstantní výraz;  
+- konstantní výraz;  
   
--   výraz ve tvaru `new ValType()`, kde `ValType` , jako je typ hodnoty, [výčtu](../../../csharp/language-reference/keywords/enum.md) nebo [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md);  
+- výraz ve tvaru `new ValType()`, kde `ValType` , jako je typ hodnoty, [výčtu](../../../csharp/language-reference/keywords/enum.md) nebo [struktury](../../../csharp/programming-guide/classes-and-structs/structs.md);  
   
--   výraz ve tvaru [default(ValType)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md), kde `ValType` je typ hodnoty.  
+- výraz ve tvaru [default(ValType)](../../../csharp/programming-guide/statements-expressions-operators/default-value-expressions.md), kde `ValType` je typ hodnoty.  
   
  Volitelné parametry jsou definované na konci seznamu parametrů po požadované parametry. Pokud volající zadá argument pro každý z sledu očekávání volitelné parametry, je nutné zadat argumenty pro všechny předchozí volitelné parametry. Exportovaná mezery v seznamu argumentů nejsou podporovány. Například následující kód metodu instance `ExampleMethod` je definována s vyžadovaný a dva volitelné parametry.  
   
@@ -118,11 +118,11 @@ ms.locfileid: "58654026"
 ## <a name="overload-resolution"></a>Rozlišení přetěžování  
  Použití pojmenovaných a nepovinných argumentů řešení přetížení ovlivňuje následujícími způsoby:  
   
--   Metoda, indexer nebo konstruktor je kandidátem pro spuštění, pokud každý ze svých parametrů je nepovinný nebo odpovídá podle názvu nebo podle pozice jediný argument ve volání příkazu, a že argument lze převést na typ parametru.  
+- Metoda, indexer nebo konstruktor je kandidátem pro spuštění, pokud každý ze svých parametrů je nepovinný nebo odpovídá podle názvu nebo podle pozice jediný argument ve volání příkazu, a že argument lze převést na typ parametru.  
   
--   Pokud je nalezen více než jeden Release candidate, pravidla rozlišení přetížení pro upřednostňované převody se aplikují na argumenty, které jsou explicitně zadány. Vynechaný argumenty pro volitelné parametry jsou ignorovány.  
+- Pokud je nalezen více než jeden Release candidate, pravidla rozlišení přetížení pro upřednostňované převody se aplikují na argumenty, které jsou explicitně zadány. Vynechaný argumenty pro volitelné parametry jsou ignorovány.  
   
--   Pokud dvě kandidáty jsou považovány za stejnou měrou bezproblémový, předvoleb přejde na Release candidate, který nemá žádné volitelné parametry, které byly vynechány argumenty ve volání. Toto je důsledkem obecné předvoleb v rozlišení přetížení pro kandidáty, které mají méně parametrů.  
+- Pokud dvě kandidáty jsou považovány za stejnou měrou bezproblémový, předvoleb přejde na Release candidate, který nemá žádné volitelné parametry, které byly vynechány argumenty ve volání. Toto je důsledkem obecné předvoleb v rozlišení přetížení pro kandidáty, které mají méně parametrů.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

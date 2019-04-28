@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b16cc6a899b1ad5c814c29a93c6125250ca8186d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638837"
 ---
 # <a name="iclrpolicymanagersettimeout-method"></a>ICLRPolicyManager::SetTimeout – metoda
 Nastaví hodnotu časového limitu pro danou operaci.  
@@ -40,13 +40,13 @@ HRESULT SetTimeout (
  `operation`  
  [in] Jeden z [eclroperation –](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) hodnoty určující běžné operace jazyka runtime (CLR) pro kterou chcete nastavit vypršení časového limitu. Podporovány jsou následující hodnoty:  
   
--   OPR_AppDomainUnload  
+- OPR_AppDomainUnload  
   
--   OPR_ProcessExit  
+- OPR_ProcessExit  
   
--   OPR_ThreadRudeAbortInCriticalRegion  
+- OPR_ThreadRudeAbortInCriticalRegion  
   
--   OPR_ThreadRudeAbortInNonCriticalRegion  
+- OPR_ThreadRudeAbortInNonCriticalRegion  
   
  `dwMilliseconds`  
  [in] Nová hodnota časového limitu, v milisekundách. Hodnota NEKONEČNO způsobí, že nikdy na vypršení časového limitu operace.  

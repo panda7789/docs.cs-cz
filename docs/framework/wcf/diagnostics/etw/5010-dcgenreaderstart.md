@@ -3,11 +3,11 @@ title: 5010 - DCGenReaderStart
 ms.date: 03/30/2017
 ms.assetid: 199ff3ce-b811-4151-a9c2-e726c109e87b
 ms.openlocfilehash: 2403f5d9bc130a7281a1e9f5b278044984f5daed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33468873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650632"
 ---
 # <a name="5010---dcgenreaderstart"></a>5010 - DCGenReaderStart
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33468873"
 |||  
 |-|-|  
 |ID|5010|  
-|Klíčová slova|Serializace|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|Serializace|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při generování kontraktu spustí čtečku.  
+ Tato událost je vygenerován při kontraktu dat DataContract generování čtečky spustí.  
   
 ## <a name="message"></a>Zpráva  
- Kontraktu generovat čtečka %1 pro %2 start.  
+ Kontrakt DataContract zahájeno generování čtečky %1 pro %2.  
   
 ## <a name="details"></a>Podrobnosti

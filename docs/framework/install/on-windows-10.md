@@ -7,10 +7,10 @@ ms.date: 04/18/2019
 ms.custom: updateeachrelease
 ms.openlocfilehash: c9499e44a6074525c634959e385ee91c03cdf9d4
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643917"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016 nebo novější
 

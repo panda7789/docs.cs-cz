@@ -9,11 +9,11 @@ helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
 ms.openlocfilehash: eede3359b195661ff89a387e9b226bc970c27942
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660369"
 ---
 # <a name="virtual-c-reference"></a>virtual (Referenční dokumentace jazyka C#)
 

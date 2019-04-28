@@ -16,11 +16,11 @@ helpviewer_keywords:
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
 ms.openlocfilehash: 8b17f5a7167eb539e04a19db797bc1b0cc6c5eaa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642344"
 ---
 # <a name="internet-authentication"></a>Ověřování v internetu
 <xref:System.Net> Třídy podporu různých mechanismů ověřování klienta, včetně standardní Internet metody ověřování basic, digest, negotiate, NTLM a ověřování protokolu Kerberos, jakož i vlastních metod, které můžete vytvořit.  

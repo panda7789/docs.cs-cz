@@ -10,11 +10,11 @@ helpviewer_keywords:
 - as keyword [C#]
 ms.assetid: a9be126b-cbf4-4990-a70d-d0e1983cad0e
 ms.openlocfilehash: b87e75bd4866a191e84465e44d53850e6e2e9723
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662085"
 ---
 # <a name="as-c-reference"></a>as (Referenční dokumentace jazyka C#)
 Můžete použít `as` operátor pro provádění určitých typů převody mezi typy kompatibilní odkazů nebo [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md). Následující kód ukazuje příklad.  

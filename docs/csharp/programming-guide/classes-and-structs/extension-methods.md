@@ -8,11 +8,11 @@ helpviewer_keywords:
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
 ms.openlocfilehash: 35ab91279c9ed8703f29d8cbb8df3d7d4bf2a6b8
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646511"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro klientský kód napsaný v C#, F# a Visual Basic neexistuje žádný zjevný rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definovány v rámci typu.  
@@ -73,9 +73,9 @@ using System.Linq;
   
  Pokud implementujete metody rozšíření pro daný typ, mějte na paměti následující body:  
   
--   Metoda rozšíření nebude nikdy volána, pokud má stejnou signaturu jako metoda definovaná v typu.  
+- Metoda rozšíření nebude nikdy volána, pokud má stejnou signaturu jako metoda definovaná v typu.  
   
--   Dále jsou metody rozšíření přeneseny do rozsahu na úrovni oboru názvů. Například, pokud máte větší počet statických tříd, které obsahují rozšiřující metody do jednoho oboru názvů s názvem `Extensions`, se budou všechny přeneseny do rozsahu pomocí `using Extensions;` směrnice.  
+- Dále jsou metody rozšíření přeneseny do rozsahu na úrovni oboru názvů. Například, pokud máte větší počet statických tříd, které obsahují rozšiřující metody do jednoho oboru názvů s názvem `Extensions`, se budou všechny přeneseny do rozsahu pomocí `using Extensions;` směrnice.  
   
  Chcete-li zamezit zvýšení čísla verze sestavení, neměli byste pro implementovanou knihovnu metody rozšíření používat. Pokud chcete přidat významné funkce do knihovny, jejíž zdrojový kód vlastníte, měli byste postupovat podle standardních pokynů pro rozhraní .NET Framework pro správu verzí sestavení. Další informace najdete v tématu [Správa verzí sestavení](../../../../docs/framework/app-domains/assembly-versioning.md).  
   

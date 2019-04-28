@@ -8,11 +8,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 12/04/2018
 ms.openlocfilehash: 49a65dd44159e9800f7cf50a1edaa3d9e9b82e47
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646784"
 ---
 # <a name="whats-new-in-net-core-22"></a>Co je nového v .NET Core 2.2
 

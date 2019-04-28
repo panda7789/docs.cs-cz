@@ -3,11 +3,11 @@ title: Cloudy PNRP
 ms.date: 03/30/2017
 ms.assetid: a82e2bf1-62ab-4c2d-83f3-3217a6aead2e
 ms.openlocfilehash: 943cad880885a624c0ed0798738665c8bcd7036f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641980"
 ---
 # <a name="pnrp-clouds"></a>Cloudy PNRP
 Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikovat přes síť. Termín "cloud" je synonymem "partnerské sítě" a "peer-to-peer graf".  
@@ -18,9 +18,9 @@ Protokol PNRP "cloud" představuje sadu uzlů, které mohou vzájemně komunikov
   
  Protokol PNRP používá tři cloud "oborů", ve kterých je obor seskupení počítačů, které jsou vzájemně najít:  
   
--   Globální cloudové odpovídá globální rozsah adres protokolu IPv6 a globální adresy a představuje všechny počítače v celé Internet s protokolem IPv6. Existuje pouze jedna globální Cloudová.  
+- Globální cloudové odpovídá globální rozsah adres protokolu IPv6 a globální adresy a představuje všechny počítače v celé Internet s protokolem IPv6. Existuje pouze jedna globální Cloudová.  
   
--   Specifická pro připojení cloudových odpovídá rozsah adres protokolu IPv6 specifická pro připojení a adresy specifická pro připojení. Specifická pro připojení cloudu je pro konkrétní odkaz, který je obvykle stejné jako místně připojené podsítě. Může existovat více cloudů specifická pro připojení.  
+- Specifická pro připojení cloudových odpovídá rozsah adres protokolu IPv6 specifická pro připojení a adresy specifická pro připojení. Specifická pro připojení cloudu je pro konkrétní odkaz, který je obvykle stejné jako místně připojené podsítě. Může existovat více cloudů specifická pro připojení.  
   
  Třetí cloud, pro danou lokalitu cloudu odpovídá rozsah adres IPv6 serveru a místní adresy. Tento cloud je zastaralá, i když je stále podporovaná v PNRP.  
   

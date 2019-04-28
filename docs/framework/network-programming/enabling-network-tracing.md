@@ -12,20 +12,20 @@ helpviewer_keywords:
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
 ms.openlocfilehash: 50ad01376f3de9cda26f6b00e2d32fc8d3dabdcd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642747"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
 Trasování sítě poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Je nutné dokončit následující úlohy, jak povolit trasování sítě ve vaší aplikaci:  
   
--   Kompilace kódu s povoleným trasováním. Zobrazit [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaného k povolení trasování.  
+- Kompilace kódu s povoleným trasováním. Zobrazit [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md) pro další informace o přepínačích kompilátoru vyžadovaného k povolení trasování.  
   
--   Zadejte cíl výstupu trasování.  
+- Zadejte cíl výstupu trasování.  
   
--   Konfigurace chování trasování sítě. Zobrazit [jak: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) podrobné informace.  
+- Konfigurace chování trasování sítě. Zobrazit [jak: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md) podrobné informace.  
   
  Nejčastěji používané cíle trasování také označuje jako naslouchacími procesy trasování, jsou výchozí naslouchací proces a soubor protokolu.  
   

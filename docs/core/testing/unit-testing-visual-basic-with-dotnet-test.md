@@ -8,11 +8,11 @@ dev_langs:
 - vb
 ms.custom: seodec18
 ms.openlocfilehash: 193746e8efda5d7bc9e086bb0abf934cfeb1741a
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665543"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Testování knihovny jazyka Visual Basic .NET Core pomocí příkazu dotnet test a xUnit
 

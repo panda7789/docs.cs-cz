@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 19f657fd76f73c4016824511079e6f037bc3bc53
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61597322"
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi – funkce
 
@@ -66,7 +66,7 @@ HRESULT PutInstanceWmi (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k aktualizaci instance dané třídy. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |

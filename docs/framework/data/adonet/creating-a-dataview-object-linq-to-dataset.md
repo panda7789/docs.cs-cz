@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 76057508-e12d-4779-a707-06a4c2568acf
 ms.openlocfilehash: 95bc9beed9965bad32118dfafa4a5aa76902ca10
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607823"
 ---
 # <a name="creating-a-dataview-object-linq-to-dataset"></a>Vytvoření objektu DataView (LINQ to DataSet)
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu. Můžete vytvořit <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz nad <xref:System.Data.DataTable>, nebo si můžete vytvořit z typovaného nebo netypové <xref:System.Data.DataTable>. V obou případech můžete vytvořit <xref:System.Data.DataView> pomocí jedné z <xref:System.Data.DataTableExtensions.AsDataView%2A> rozšiřující metody; <xref:System.Data.DataView> není přímo constructible v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kontextu.  
@@ -31,19 +31,19 @@ Existují dva způsoby, jak vytvořit <xref:System.Data.DataView> v [!INCLUDE[li
   
  Jsou podporovány pouze následující operátory dotazu v dotazu použít k vytvoření <xref:System.Data.DataView>:  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.Cast%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.Cast%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.OrderBy%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.OrderBy%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.OrderByDescending%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.OrderByDescending%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.ThenBy%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.ThenBy%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.ThenByDescending%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.ThenByDescending%2A>  
   
--   <xref:System.Data.EnumerableRowCollectionExtensions.Where%2A>  
+- <xref:System.Data.EnumerableRowCollectionExtensions.Where%2A>  
   
  Všimněte si, že <xref:System.Data.DataView> je vytvořený z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotaz <xref:System.Data.EnumerableRowCollectionExtensions.Select%2A> metoda musí být finální metodou volána v dotazu. To je ukázáno v následujícím příkladu, který vytvoří <xref:System.Data.DataView> online objednávek, seřazené podle dlužná částka:  
   

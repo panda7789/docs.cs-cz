@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: 4b75ebb2-2e29-43de-929c-d736a8f27ce6
 ms.openlocfilehash: 494b7625ff8e90b1b81fd32de031ff60d5c6d029
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646407"
 ---
 # <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>Postupy: Inicializace objektů pomocí inicializátoru objektů (C# Průvodce programováním v)
 

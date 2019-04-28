@@ -23,11 +23,11 @@ helpviewer_keywords:
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
 ms.openlocfilehash: 5081f80ad0da738ebb950bcd649af7a593582356
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638074"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů pro každý prvek v kolekci.  
@@ -92,11 +92,11 @@ Next [ element ]
   
  `Exit For` často se používá po vyhodnocení některé podmínky, třeba v `If`... `Then`... `Else` struktury. Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
--   Pokračování k iteraci je zbytečné nebo nemožné. Příčinou může být chybná hodnota nebo žádost o ukončení.  
+- Pokračování k iteraci je zbytečné nebo nemožné. Příčinou může být chybná hodnota nebo žádost o ukončení.  
   
--   Výjimka zachycena v `Try`... `Catch`... `Finally`. Můžete použít `Exit For` na konci `Finally` bloku.  
+- Výjimka zachycena v `Try`... `Catch`... `Finally`. Můžete použít `Exit For` na konci `Finally` bloku.  
   
--   Zde nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+- Zde nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
 ## <a name="iterators"></a>Iterátory  
  Můžete použít *iterátoru* k provedení vlastní iterace nad kolekcí. Iterátor může být způsobená nebo `Get` přistupujícího objektu. Použije `Yield` příkaz k vrácení každého prvku kolekce jeden po druhém.  

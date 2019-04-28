@@ -5,11 +5,11 @@ author: guardrex
 ms.date: 08/12/2017
 ms.custom: seodec18
 ms.openlocfilehash: 3b45a24c8a249eeb99fb1a4b14918483b978980b
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647382"
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet
 
@@ -68,7 +68,7 @@ Použití existujícího projektu, který ověření, že zkompiluje a spustí n
 
 1. Uvnitř  **\<packageTypes >** element v *nuspec* souboru, zahrnují  **\<packageType >** element s `name` Hodnota atributu `Template`. Oba *obsah* složky a *nuspec* soubor by měl být uložený ve stejném adresáři. V tabulce jsou uvedeny minimální *nuspec* souboru prvků vyžadovaných pro vytvoření šablony jako balíček NuGet.
 
-   | Prvek            | Typ   | Popis |
+   | Prvek            | Type   | Popis |
    | ------------------ | ------ | ----------- |
    | **\<authors>**     | odkazy řetězců | Čárkou oddělený seznam autorů balíčků, odpovídající názvy profilů na nuget.org. Autoři se zobrazí v galerii NuGet na nuget.org a slouží k křížový odkaz balíčky stejné autory. |
    | **\<description>** | odkazy řetězců | Dlouhý popis balíčku zobrazí v uživatelském rozhraní. |

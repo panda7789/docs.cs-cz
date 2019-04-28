@@ -5,20 +5,20 @@ ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 74acea566e4b0e407e86cb67d3f521f18c2d68af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643059"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Postupy: Migrace spravovaného kódu DCOM do WCF
 Windows Communication Foundation (WCF) je volba doporučené a zabezpečené přes distribuované DCOM Component Object Model () pro spravovaný kód volání mezi servery a klienty v distribuovaném prostředí. Tento článek popisuje, jak vám migrace kódu z modelu DCOM do WCF v následujících scénářích.  
   
--   Vzdálená služba vrátí objektu podle hodnoty do klienta  
+- Vzdálená služba vrátí objektu podle hodnoty do klienta  
   
--   Klient odešle objektu podle hodnoty do vzdálené služby  
+- Klient odešle objektu podle hodnoty do vzdálené služby  
   
--   Vzdálená služba vrátí klientovi pomocí – odkaz na objekt  
+- Vzdálená služba vrátí klientovi pomocí – odkaz na objekt  
   
  Z bezpečnostních důvodů odesílání pomocí – odkaz na objekt z klienta do služby není povolena ve službě WCF. Tento scénář vyžaduje konverzace vpřed a zpět mezi klientem a serverem lze dosáhnout pomocí duplexní služby WCF.  Další informace o duplexní služby najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   

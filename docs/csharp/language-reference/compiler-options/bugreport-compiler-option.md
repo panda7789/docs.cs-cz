@@ -9,11 +9,11 @@ helpviewer_keywords:
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 ms.openlocfilehash: 63d64acc0d0a1ed90a722db75b467bd3ce5f260e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663008"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport (možnosti kompilátoru C#)
 Určuje, že informace o ladění by měly být umístěny v souboru pro pozdější analýzu.  
@@ -31,19 +31,19 @@ Určuje, že informace o ladění by měly být umístěny v souboru pro pozděj
 ## <a name="remarks"></a>Poznámky  
  **- Bugreport** možnost určuje, že tyto informace mají být umístěny v `file`:  
   
--   Kopírování všech souborů zdrojového kódu dané kompilace.  
+- Kopírování všech souborů zdrojového kódu dané kompilace.  
   
--   Seznam možností kompilátoru použita při kompilaci.  
+- Seznam možností kompilátoru použita při kompilaci.  
   
--   Informace o verzi kompilátoru, běhu a operačního systému.  
+- Informace o verzi kompilátoru, běhu a operačního systému.  
   
--   Odkazovaná sestavení a modulů, které jsou uloženy jako šestnáctkové číslice, s výjimkou sestavení, které se dodávají pomocí rozhraní .NET Framework a sady SDK.  
+- Odkazovaná sestavení a modulů, které jsou uloženy jako šestnáctkové číslice, s výjimkou sestavení, které se dodávají pomocí rozhraní .NET Framework a sady SDK.  
   
--   Výstup kompilátoru, pokud existuje.  
+- Výstup kompilátoru, pokud existuje.  
   
--   Popis problému, který zobrazí se výzva k zadání.  
+- Popis problému, který zobrazí se výzva k zadání.  
   
--   Popis jak domníváte, že problém je třeba stanovit, která vám zobrazí výzva k zadání.  
+- Popis jak domníváte, že problém je třeba stanovit, která vám zobrazí výzva k zadání.  
   
  Pokud tato možnost se používá s **- errorreport: řádku** nebo **- errorreport: Odeslat**, informace v souboru se odešlou do Microsoft Corporation.  
   

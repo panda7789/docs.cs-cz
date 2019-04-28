@@ -3,11 +3,11 @@ title: 508 - HostedTransportConfigurationManagerConfigInitStop
 ms.date: 03/30/2017
 ms.assetid: 24838d74-05e4-4860-876e-428f947dc7ca
 ms.openlocfilehash: 68ee6ef5a1e5c5dfcb7a7e0a895912940be4e1b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33472667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651542"
 ---
 # <a name="508---hostedtransportconfigurationmanagerconfiginitstop"></a>508 - HostedTransportConfigurationManagerConfigInitStop
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33472667"
 |||  
 |-|-|  
 |ID|508|  
-|Klíčová slova|Tomuto webovému hostiteli|  
+|klíčová slova|WebHost|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při ukončení HostedTransportConfigurationManager inicializace.  
+ Tato událost je vygenerován při ukončení správce hostedtransportconfigurationmanager ukončil inicializaci.  
   
 ## <a name="message"></a>Zpráva  
- Inicializace konfigurace HostedTransportConfigurationManager end.  
+ Správce hostedtransportconfigurationmanager ukončil inicializaci konfigurace end.  
   
 ## <a name="details"></a>Podrobnosti

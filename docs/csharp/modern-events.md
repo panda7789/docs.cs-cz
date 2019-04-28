@@ -7,8 +7,8 @@ ms.openlocfilehash: 5c7b9b4cb9bc22a73b865c45e225ce5c382380b1
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61652036"
 ---
 # <a name="the-updated-net-core-event-pattern"></a>Vzor události aktualizované rozhraní .NET Core
 
@@ -23,7 +23,21 @@ Program bude fungovat stejně.
 
 Můžete také změnit `SearchDirectoryArgs` na strukturu, pokud jste provedli jednu další změny:
 
-[!code-csharp[SearchDir](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Define search directory event")]
+```csharp
+internal struct SearchDirectoryArgs
+{
+    internal string CurrentSearchDirectory { get; }
+    internal int TotalDirs { get; }
+    internal int CompletedDirs { get; }
+
+    internal SearchDirectoryArgs(string dir, int totalDirs, int completedDirs) : this()
+    {
+        CurrentSearchDirectory = dir;
+        TotalDirs = totalDirs;
+        CompletedDirs = completedDirs;
+    }
+}
+```
 
 Další změnou je volat konstruktor bez parametrů před zadáním konstruktor, který inicializuje všechna pole. Bez tohoto přidání pravidel C# zasílat zprávy, že vlastnosti přistupuje předtím, než jí byla přiřazena.
 

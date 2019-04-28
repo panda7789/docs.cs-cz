@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření Předvypočítaných úloh'
+title: 'Postupy: Vytváření předvypočítaných úloh'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,13 +11,13 @@ ms.assetid: a73eafa2-1f49-4106-a19e-997186029b58
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: aa95eccfa39073bb8ccb3cb9c49e099ac1f90ab1
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638941"
 ---
-# <a name="how-to-create-pre-computed-tasks"></a>Postupy: Vytváření Předvypočítaných úloh
+# <a name="how-to-create-pre-computed-tasks"></a>Postupy: Vytváření předvypočítaných úloh
 Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti. <xref:System.Threading.Tasks.Task.FromResult%2A> Metoda vrátí dokončení <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje zadaná hodnota jako jeho <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost. Tato metoda je užitečná při provádění asynchronní operace, která vrátí <xref:System.Threading.Tasks.Task%601> objektu a výsledek tohoto objektu <xref:System.Threading.Tasks.Task%601> již je vypočítán.  
   
 ## <a name="example"></a>Příklad  
@@ -37,7 +37,7 @@ Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Task.From
   
  Visual Basic  
   
- **Vbc.exe CachedDownloads.vb**  
+ **vbc.exe CachedDownloads.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
   

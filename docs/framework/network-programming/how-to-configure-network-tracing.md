@@ -12,11 +12,11 @@ helpviewer_keywords:
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
 ms.openlocfilehash: cc08faba7edede3dd527b7c05fe47f6408e18a04
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642695"
 ---
 # <a name="how-to-configure-network-tracing"></a>Postupy: Konfigurace trasování sítě
 Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Informace o povolení trasování najdete v tématu [Enabling Network Tracing](../../../docs/framework/network-programming/enabling-network-tracing.md).  
@@ -27,7 +27,7 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
   
 ### <a name="to-configure-network-tracing"></a>Konfigurace trasování sítě  
   
--   Přidejte následující řádky do příslušného konfiguračního souboru. Hodnoty a možnosti těchto nastavení jsou popsány v níže uvedených tabulkách.  
+- Přidejte následující řádky do příslušného konfiguračního souboru. Hodnoty a možnosti těchto nastavení jsou popsány v níže uvedených tabulkách.  
   
     ```xml  
     <configuration>  
@@ -80,7 +80,7 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
   
  Když přidáte název, který `<switches>` bloku, výstup trasování obsahovat informace z některé metody s tímto názvem souvisejí. Výstup popisuje následující tabulka.  
   
-|Name|Výstup z|  
+|Název|Výstup z|  
 |----------|-----------------|  
 |`System.Net.Sockets`|Některé veřejné metody <xref:System.Net.Sockets.Socket>, <xref:System.Net.Sockets.TcpListener>, <xref:System.Net.Sockets.TcpClient>, a <xref:System.Net.Dns> třídy|  
 |`System.Net`|Některé veřejné metody <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpWebResponse>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FtpWebResponse> třídy a ladicí informace (neplatné certifikáty, seznam chybějících vydavatelů a chyby klientských certifikátů.) protokolu SSL|  

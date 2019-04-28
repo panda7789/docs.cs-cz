@@ -8,11 +8,11 @@ helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
 ms.openlocfilehash: ba156eed25f28a0568e11c986de1e84db3cd9cf0
-ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58504480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661578"
 ---
 # <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 

@@ -10,17 +10,17 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
 ms.openlocfilehash: 6bf8043b97d23fdb91ca5798ed46cdea783bad7e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661656"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 
 `float` – Klíčové slovo znamená jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou. V následující tabulce jsou uvedeny přesnosti a rozsahu pro `float` typu.
 
-|Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|  
+|Type|Přibližný rozsah|Přesnost|Typ formátu .NET|  
 |----------|-----------------------|---------------|-------------------------|  
 |`float`|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|<xref:System.Single?displayProperty=nameWithType>|  
 

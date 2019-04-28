@@ -8,26 +8,26 @@ helpviewer_keywords:
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
 ms.openlocfilehash: 19c1f754aaef66197b033a68bc215255511cd618
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646524"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
 Finalizační metody (také nazývané **destruktory**) jsou používány k provádění všechny nezbytné konečné vyčištění při instanci třídy se shromažďují pomocí systému uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
   
--   Finalizační metody nelze definovat ve strukturách. Používají se jenom s třídami.  
+- Finalizační metody nelze definovat ve strukturách. Používají se jenom s třídami.  
   
--   Třída může mít pouze jeden finalizační metodu.  
+- Třída může mít pouze jeden finalizační metodu.  
   
--   Finalizační metody nemůže zděděné nebo přetížené.  
+- Finalizační metody nemůže zděděné nebo přetížené.  
   
--   Nelze volat finalizační metody. Jsou vyvolány automaticky.  
+- Nelze volat finalizační metody. Jsou vyvolány automaticky.  
   
--   Finalizační metoda nepodporuje trvat modifikátory ani mít parametry.  
+- Finalizační metoda nepodporuje trvat modifikátory ani mít parametry.  
   
  Například tady je deklarace finalizační metodu pro `Car` třídy.
   
@@ -72,11 +72,11 @@ protected override void Finalize()
   
  Podrobné informace o vymazání prostředků naleznete v následujících tématech:  
   
--   [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md)  
+- [Vymazání nespravovaných prostředků](../../../standard/garbage-collection/unmanaged.md)  
   
--   [Implementace metody Dispose](../../../standard/garbage-collection/implementing-dispose.md)  
+- [Implementace metody Dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
--   [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)  
+- [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří tři třídy, které usnadňují řetězu dědičnosti. Třída `First` je základní třídou `Second` je odvozen z `First`, a `Third` je odvozen z `Second`. Všechny tři mají finalizační metody. V `Main`, je vytvořena instance třídy odvozený. Když se program spouští, Všimněte si, že finalizační metody pro tři třídy jsou volaní automaticky a v pořadí, nejvíce odvozenému na typ derived nejméně.  

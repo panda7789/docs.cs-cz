@@ -4,17 +4,17 @@ description: Příkaz dotnet vstest sestavení projektu a všechny jeho závislo
 author: guardrex
 ms.date: 05/30/2018
 ms.openlocfilehash: dcf17a59fea1f58757f39721c5dd5947ed30df0f
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648513"
 ---
 # <a name="dotnet-vstest"></a>DotNet test
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet-vstest` -Spustí testy ze zadaných souborů.
 

@@ -3,11 +3,11 @@ title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
 ms.openlocfilehash: 048c5331028bbe2bb232302637dbb12bcdd2adc3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607810"
 ---
 # <a name="diffgrams"></a>DiffGrams
 Formát DiffGram je formát XML, který identifikuje aktuální a původní verzí datové prvky. <xref:System.Data.DataSet> Používá formát DiffGram formát pro načtení a uložení jeho obsah a k serializaci jeho obsah pro přenos přes síťové připojení. Když <xref:System.Data.DataSet> je zapsán jako formát DiffGram, naplní formát DiffGram přesně znovu vytvořit obsah, i když není schéma, o všechny potřebné informace <xref:System.Data.DataSet>, včetně hodnot sloupců z obou **původní** a **aktuální** verze řádků, informace o chybě řádek a řádek pořadí.  

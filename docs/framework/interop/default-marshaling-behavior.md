@@ -12,11 +12,11 @@ ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6bf6acc719b4697534e845f64890ddcd9cac550f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643553"
 ---
 # <a name="default-marshaling-behavior"></a>Výchozí chování zařazování
 Zařazování spolupráce funguje v pravidlech této diktování chování data související s parametry metody během mezi spravovanými a nespravovanými paměti. Tato integrovaná pravidla takové zařazování aktivity jako typ transformace dat, řízení, zda volaný můžete změnit data předaná do ní a tyto změny vrátit volající a pod kterým okolností, aby zařazování odvozovalo poskytuje optimalizace výkonu.  
@@ -58,9 +58,9 @@ BSTR MethodOne (BSTR b) {
   
  V následujícím příkladu, aby zařazování odvozovalo Určuje, že by měl být obálkové třídy slouží k zabalení rozhraní, které bylo předáno do spravovaného kódu. Při zařazování se nejprve předává rozhraní, aby zařazování odvozovalo kontroluje, zda rozhraní pochází ze známého objektu. Tato kontrola probíhá ve dvou situacích:  
   
--   Rozhraní je prováděna jiný spravovaný objekt, který byl předán COM jinde. Zařazování mohli snadno identifikovat rozhraní vystavené spravovaných objektů a bude schopen odpovídat rozhraní s spravovaný objekt, který poskytuje implementaci. Spravovaný objekt je pak předán do metody a je zapotřebí žádné obálky.  
+- Rozhraní je prováděna jiný spravovaný objekt, který byl předán COM jinde. Zařazování mohli snadno identifikovat rozhraní vystavené spravovaných objektů a bude schopen odpovídat rozhraní s spravovaný objekt, který poskytuje implementaci. Spravovaný objekt je pak předán do metody a je zapotřebí žádné obálky.  
   
--   Objekt, který už je zabalená implementuje rozhraní. Pokud chcete zjistit, zda se jedná o tento případ, aby zařazování odvozovalo dotaz se týká objektu pro jeho **IUnknown** rozhraní a porovnává rozhraní vrácená rozhraním jiné objekty, které už jsou zabaleny. Pokud rozhraní je stejný jako u jiného obálky, objekty mají stejnou identitu a existující obálky je předán metodě.  
+- Objekt, který už je zabalená implementuje rozhraní. Pokud chcete zjistit, zda se jedná o tento případ, aby zařazování odvozovalo dotaz se týká objektu pro jeho **IUnknown** rozhraní a porovnává rozhraní vrácená rozhraním jiné objekty, které už jsou zabaleny. Pokud rozhraní je stejný jako u jiného obálky, objekty mají stejnou identitu a existující obálky je předán metodě.  
   
  Pokud rozhraní není od známých objektu, aby zařazování odvozovalo provede následující akce:  
   
@@ -73,9 +73,9 @@ BSTR MethodOne (BSTR b) {
 ## <a name="default-marshaling-for-delegates"></a>Výchozí zařazování pro delegáty  
  Spravované delegáta je zařadit jako rozhraní modelu COM nebo jako ukazatel na funkci, na základě mechanismu volání:  
   
--   Pro platformu vyvolání, delegát je zařadit jako ukazatele nespravované funkce ve výchozím nastavení.  
+- Pro platformu vyvolání, delegát je zařadit jako ukazatele nespravované funkce ve výchozím nastavení.  
   
--   Pro komunikace s objekty COM, delegát zařadit jako rozhraní modelu COM typu **_Delegate** ve výchozím nastavení. **_Delegate** rozhraní je definovaný v knihovně typů Mscorlib.tlb a obsahuje <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> metodu, která umožňuje volat metodu, která odkazuje na delegáta.  
+- Pro komunikace s objekty COM, delegát zařadit jako rozhraní modelu COM typu **_Delegate** ve výchozím nastavení. **_Delegate** rozhraní je definovaný v knihovně typů Mscorlib.tlb a obsahuje <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> metodu, která umožňuje volat metodu, která odkazuje na delegáta.  
   
  V následující tabulce jsou uvedeny zařazování možnosti pro datový typ spravovaného delegáta. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nabízí několik <xref:System.Runtime.InteropServices.UnmanagedType> zařazování delegátů hodnot výčtu.  
   
@@ -166,23 +166,23 @@ internal class DelegateTest {
   
  Tato část obsahuje informace o následujících typech formátovaná hodnota:  
   
--   [Typy hodnot používá v platformě vyvolání](#value-types-used-in-platform-invoke)  
+- [Typy hodnot používá v platformě vyvolání](#value-types-used-in-platform-invoke)  
   
--   [Typy hodnot používá ve spolupráci s COM](#value-types-used-in-com-interop)  
+- [Typy hodnot používá ve spolupráci s COM](#value-types-used-in-com-interop)  
   
  Kromě popisující typy formátovaný, toto téma popisuje [systém hodnotou typy](#system-value-types) , které mají neobvyklé chování zařazování.  
   
  Formátovaný typ je komplexní typ, který obsahuje informace, které explicitně určuje rozložení z jejích členů v paměti. Informace o rozložení člen je prováděno pomocí <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut. Rozložení může být jedna z následujících <xref:System.Runtime.InteropServices.LayoutKind> hodnot výčtu:  
   
--   **LayoutKind.Automatic**  
+- **LayoutKind.Automatic**  
   
      Označuje, že je modul common language runtime můžete změnit pořadí členů typu efektivitu. Pokud typ hodnoty je předán do nespravovaného kódu, rozložení členy ale předvídatelné. Pokus o zařazení takovouto strukturu automaticky dojde k výjimce.  
   
--   **LayoutKind.Sequential**  
+- **LayoutKind.Sequential**  
   
      Označuje, že členy typu rozloží v nespravované paměti ve stejném pořadí, v jakém jsou uvedeny v definici spravovaného typu.  
   
--   **LayoutKind.Explicit**  
+- **LayoutKind.Explicit**  
   
      Označuje, že členové jsou rozloženy podle <xref:System.Runtime.InteropServices.FieldOffsetAttribute> součástí každé pole.  
   

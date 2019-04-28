@@ -3,11 +3,11 @@ title: Agregační kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
 ms.openlocfilehash: f5d3584c6e9d35c9eb69b4f54cad45187416ee59
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607450"
 ---
 # <a name="aggregate-canonical-functions"></a>Agregační kanonické funkce
 

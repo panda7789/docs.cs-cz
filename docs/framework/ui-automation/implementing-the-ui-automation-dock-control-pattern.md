@@ -7,11 +7,11 @@ helpviewer_keywords:
 - UI Automation, dock control pattern
 ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
 ms.openlocfilehash: 32ee58833b83e2a3356b6c1598abd207364e6ec1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59190513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61609930"
 ---
 # <a name="implementing-the-ui-automation-dock-control-pattern"></a>Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -28,13 +28,13 @@ Ukotvení příklad ze sady Visual Studio, ve kterém je okno "Zobrazení tříd
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků ukotvení, mějte na paměti následující pokyny a konvence:  
   
--   <xref:System.Windows.Automation.Provider.IDockProvider> nevystavuje žádné vlastnosti kontejneru dokovací ani žádné vlastnosti ovládacích prvků, které jsou ukotveny vedle aktuální ovládací prvek v rámci kontejneru ukotvení.  
+- <xref:System.Windows.Automation.Provider.IDockProvider> nevystavuje žádné vlastnosti kontejneru dokovací ani žádné vlastnosti ovládacích prvků, které jsou ukotveny vedle aktuální ovládací prvek v rámci kontejneru ukotvení.  
   
--   Ovládací prvky jsou ukotveny relativně vůči sobě navzájem podle jejich aktuálního pořadí vykreslování; vyšší jejich pořadí z umístění, dál vystavili z zadaný okraj kontejneru ukotvení.  
+- Ovládací prvky jsou ukotveny relativně vůči sobě navzájem podle jejich aktuálního pořadí vykreslování; vyšší jejich pořadí z umístění, dál vystavili z zadaný okraj kontejneru ukotvení.  
   
--   Pokud je velikost kontejneru ukotvení, všechny ukotvených ovládacích prvků v kontejneru přemístí vyprázdnění stejné hrany, které byly původně ukotven. Ukotvených ovládacích prvků se taky změnit velikost, tak, aby vyplnil libovolné místo v kontejneru podle dokovací chování jejich <xref:System.Windows.Automation.DockPosition>. Například pokud <xref:System.Windows.Automation.DockPosition.Top> není zadána, levé a pravé straně ovládacího prvku se rozbalí a k dispozici prostor. Pokud <xref:System.Windows.Automation.DockPosition.Fill> není zadána, všechny čtyři strany ovládacího prvku se rozbalí a k dispozici prostor.  
+- Pokud je velikost kontejneru ukotvení, všechny ukotvených ovládacích prvků v kontejneru přemístí vyprázdnění stejné hrany, které byly původně ukotven. Ukotvených ovládacích prvků se taky změnit velikost, tak, aby vyplnil libovolné místo v kontejneru podle dokovací chování jejich <xref:System.Windows.Automation.DockPosition>. Například pokud <xref:System.Windows.Automation.DockPosition.Top> není zadána, levé a pravé straně ovládacího prvku se rozbalí a k dispozici prostor. Pokud <xref:System.Windows.Automation.DockPosition.Fill> není zadána, všechny čtyři strany ovládacího prvku se rozbalí a k dispozici prostor.  
   
--   V systému s více monitorů by měl ovládacích prvků ukotvení do levé nebo pravé straně aktuálního monitoru. Pokud to není možné, jsou by měl ukotvení na levé straně úplně vlevo monitorování nebo pravé straně úplně vpravo monitorování.  
+- V systému s více monitorů by měl ovládacích prvků ukotvení do levé nebo pravé straně aktuálního monitoru. Pokud to není možné, jsou by měl ukotvení na levé straně úplně vlevo monitorování nebo pravé straně úplně vpravo monitorování.  
   
 <a name="Required_Members_for_IDockProvider"></a>   
 ## <a name="required-members-for-idockprovider"></a>Požadované členy pro IDockProvider  

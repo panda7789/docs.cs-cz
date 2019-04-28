@@ -3,24 +3,24 @@ title: 'Postupy: Použití EdmGen.exe pro generování modelu a souborů mapová
 ms.date: 03/30/2017
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
 ms.openlocfilehash: 915a9f3c53dba355480a3869602f963b195d53fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59323795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605982"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a>Postupy: Použití EdmGen.exe pro generování modelu a souborů mapování
 Toto téma ukazuje, jak používat nástroj Generátor EDM (EdmGen.exe) můžete vygenerovat následující soubory podle databáze školy:  
   
--   Koncepční model (soubor .csdl).  
+- Koncepční model (soubor .csdl).  
   
--   Model úložiště (souboru ssdl).  
+- Model úložiště (souboru ssdl).  
   
--   Mapování mezi modely koncepční a úložiště (soubor .msl).  
+- Mapování mezi modely koncepční a úložiště (soubor .msl).  
   
--   Objektové vrstvě kód v jazyce Visual Basic nebo C#.  
+- Objektové vrstvě kód v jazyce Visual Basic nebo C#.  
   
--   Zobrazit soubory.  
+- Zobrazit soubory.  
   
  Nástroje EdmGen.exe /mode:FullGeneration používá ke generování souborů uvedených výše. Další informace o příkazech EdmGen.exe najdete v tématu [generátor EDM (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).  
   

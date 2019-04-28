@@ -4,11 +4,11 @@ description: Zjistěte, jak chcete navštívit každý uzel ve stromu výrazů p
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
 ms.openlocfilehash: 4c14837c1d92845991d8ea9990b77eb9052757d8
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57490070"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646550"
 ---
 # <a name="translating-expression-trees"></a>Translating Expression Trees
 

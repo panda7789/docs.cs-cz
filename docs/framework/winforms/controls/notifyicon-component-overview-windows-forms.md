@@ -9,11 +9,11 @@ helpviewer_keywords:
 - system tray icons [Windows Forms], using in Windows Forms
 ms.assetid: 5b9189fa-d4ae-41a6-9b97-eb1f44bb1a69
 ms.openlocfilehash: 430d869265b9add34c6de617a178aa27af6218f3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627860"
 ---
 # <a name="notifyicon-component-overview-windows-forms"></a>NotifyIcon – přehled komponenty (Windows Forms)
 

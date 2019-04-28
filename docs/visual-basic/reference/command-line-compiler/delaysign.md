@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -delaysign compiler option [Visual Basic]
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
 ms.openlocfilehash: 770dcad385c522a548a0c6fd3b6ef02dfbac82f5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649709"
 ---
 # <a name="-delaysign"></a>-delaysign
 Určuje, zda bude sestavení zcela nebo částečně podepsáno.  

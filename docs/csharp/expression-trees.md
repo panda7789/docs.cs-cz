@@ -4,11 +4,11 @@ description: Další informace o stromů výrazů v .NET Core a jak se dají pou
 ms.date: 06/20/2016
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
 ms.openlocfilehash: db6e23d1ad0014a7dbb58a0cd473e67d6bd9acc0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096612"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614346"
 ---
 # <a name="expression-trees"></a>Stromy výrazů
 

@@ -24,11 +24,11 @@ helpviewer_keywords:
 - For statement [Visual Basic]
 ms.assetid: f5fc0d51-67ce-4c36-9f09-31c9a91c94e9
 ms.openlocfilehash: 5d47d57b75005d5c13dbf8633981dfb2d57d3e90
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638052"
 ---
 # <a name="fornext-statement-visual-basic"></a>For...Next – příkaz (Visual Basic)
 Opakuje skupinu příkazů zadaného počtu opakování.  
@@ -98,11 +98,11 @@ Next [ counter ]
   
  `Exit For` často se používá po vyhodnocení některé podmínky (třeba v `If`... `Then`... `Else` struktura). Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
--   Pokračování k iteraci je zbytečné nebo nemožné. K tomuto stavu může vytvořit chybnou hodnotu nebo žádost o ukončení.  
+- Pokračování k iteraci je zbytečné nebo nemožné. K tomuto stavu může vytvořit chybnou hodnotu nebo žádost o ukončení.  
   
--   A `Try`... `Catch`... `Finally` příkaz zachytí výjimku. Můžete použít `Exit For` na konci `Finally` bloku.  
+- A `Try`... `Catch`... `Finally` příkaz zachytí výjimku. Můžete použít `Exit For` na konci `Finally` bloku.  
   
--   Máte nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+- Máte nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
 ## <a name="technical-implementation"></a>Technická implementace  
  Když `For`... `Next` spuštění cyklu, Visual Basic vyhodnotí `start`, `end`, a `step`. Visual Basic vyhodnotí tyto hodnoty pouze v této době a pak přiřadí `start` k `counter`. Před příkazem blok spustí, Visual Basic porovná `counter` k `end`. Pokud `counter` je větší než `end` hodnotu (nebo menší, pokud `step` záporné), `For` skončení smyčky a řízení se předá příkazu, který následuje `Next` příkazu. V opačném případě spouští blok příkazů.  
@@ -137,13 +137,13 @@ Next [ counter ]
   
  Datový typ `counter` Určuje typ iterace, který musí být jeden z následujících typů:  
   
--   A `Byte`, `SByte`, `UShort`, `Short`, `UInteger`, `Integer`, `ULong`, `Long`, `Decimal`, `Single`, nebo `Double`.  
+- A `Byte`, `SByte`, `UShort`, `Short`, `UInteger`, `Integer`, `ULong`, `Long`, `Decimal`, `Single`, nebo `Double`.  
   
--   Výčet, který je deklarovat s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
+- Výčet, který je deklarovat s použitím [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md).  
   
--   `Object`.  
+- `Object`.  
   
--   Typ `T` , který má následující operátory, kde `B` je typ, který lze použít v `Boolean` výrazu.  
+- Typ `T` , který má následující operátory, kde `B` je typ, který lze použít v `Boolean` výrazu.  
   
      `Public Shared Operator >= (op1 As T, op2 As T) As B`  
   

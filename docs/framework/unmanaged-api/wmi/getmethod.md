@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cb8919e8760616676ea5ff99069e2d2ceb5f7451
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608915"
 ---
 # <a name="getmethod-function"></a>Funkce GetMethod
 

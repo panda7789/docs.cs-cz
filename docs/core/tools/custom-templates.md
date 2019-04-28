@@ -4,11 +4,11 @@ description: Další informace o vlastních šablon pro jakýkoli druh projektu 
 author: guardrex
 ms.date: 08/11/2017
 ms.openlocfilehash: e37fb692640c25d7a91904b0802f97ebfab75851
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665327"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
@@ -42,7 +42,7 @@ Soubory a složky uložené v šabloně nejsou omezené na formální typy proje
 
 *Template.json* soubor umístěn v *. template.config* složku v kořenovém adresáři šablony. Soubor obsahuje informace o konfiguraci pro modul šablony. Minimální požadavky na konfiguraci vyžaduje členů je znázorněno v následující tabulce, což je dostatečná pro vytvoření funkční šablony.
 
-| Člen            | Typ          | Popis |
+| Člen            | Type          | Popis |
 | ----------------- | ------------- | ----------- |
 | `$schema`         | Identifikátor URI           | Schéma JSON pro *template.json* souboru. Editory, které podporují schémat JSON povolte úpravy v editoru JSON funkce-li zadána schématu. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje tento člen pro povolení technologie IntelliSense. Použijte hodnotu `http://json.schemastore.org/template`. |
 | `author`          | odkazy řetězců        | Autor šablony. |
@@ -80,7 +80,7 @@ V současné době je zabalena vlastní šablony na Windows s [nuget.exe](https:
 
 Obsah složky projektu, který je společně s jeho *.template.config/template.json* souboru, se umístí do složky s názvem *obsah*. Vedle položky *obsah* složky, přidejte [ *nuspec* souboru](/nuget/create-packages/creating-a-package), souboru manifestu XML, který popisuje obsah balíčku a řídí proces vytvoření balíčku NuGet. Uvnitř  **\<packageTypes >** element v *nuspec* souboru, zahrnují  **\<packageType >** element s `name` Hodnota atributu `Template`. Oba *obsah* složky a *nuspec* soubor by měl být uložený ve stejném adresáři. V tabulce jsou uvedeny minimální *nuspec* souboru prvků vyžadovaných pro vytvoření šablony jako balíček NuGet.
 
-| Prvek            | Typ   | Popis |
+| Prvek            | Type   | Popis |
 | ------------------ | ------ | ----------- |
 | **\<authors>**     | odkazy řetězců | Čárkou oddělený seznam autorů balíčků, odpovídající názvy profilů na nuget.org. Autoři se zobrazí v galerii NuGet na nuget.org a slouží k křížový odkaz balíčky stejné autory. |
 | **\<description>** | odkazy řetězců | Dlouhý popis balíčku zobrazí v uživatelském rozhraní. |

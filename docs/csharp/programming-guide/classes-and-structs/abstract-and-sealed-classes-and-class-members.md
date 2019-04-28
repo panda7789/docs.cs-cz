@@ -9,11 +9,11 @@ helpviewer_keywords:
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
 ms.openlocfilehash: fc3e29ad606cf8a60318a320e8ebc65b0d7f6e48
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651854"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>Abstraktní a uzavřené třídy a jejich členové (Průvodce programováním v C#)
 [Abstraktní](../../../csharp/language-reference/keywords/abstract.md) – klíčové slovo umožňuje vytvářet třídy a [třídy](../../../csharp/language-reference/keywords/class.md) členy, kteří jsou nekompletní a které musí být implementované v odvozené třídě.  

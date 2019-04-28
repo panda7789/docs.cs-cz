@@ -8,11 +8,11 @@ helpviewer_keywords:
 - animation [WPF], changing property values after
 ms.assetid: 79466556-4dbf-40bd-9c1e-a77613b07077
 ms.openlocfilehash: 2e1389392c6465ed56b2c71e53b2e3c1947acbe2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651100"
 ---
 # <a name="how-to-set-a-property-after-animating-it-with-a-storyboard"></a>Postupy: Nastavení vlastnosti po animaci pomocí scénáře
 V některých případech se může zobrazit, že po jeho animovat nelze změnit hodnotu vlastnosti.  
@@ -30,11 +30,11 @@ V některých případech se může zobrazit, že po jeho animovat nelze změnit
   
  Předchozí kód nezobrazí žádné akce: poskytnutých žlutý, štětce zůstane, což je hodnota <xref:System.Windows.Media.Animation.ColorAnimation> , který animovat štětec. Základní hodnota vlastnosti (základní hodnoty) se ve skutečnosti změní na modrou. Ale zůstává žlutý hodnota efektivní nebo aktuální, protože <xref:System.Windows.Media.Animation.ColorAnimation> stále přepisuje základní hodnoty. Pokud chcete základní hodnota opět platnou hodnotu, je nutné zastavit animace z vliv na vlastnost. Existují tři způsoby, jak to provést s animacemi scénáře:  
   
--   Nastavení se animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
+- Nastavení se animace <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> vlastnost <xref:System.Windows.Media.Animation.FillBehavior.Stop>  
   
--   Odeberte celý scénář.  
+- Odeberte celý scénář.  
   
--   Odstranit animaci jednotlivých vlastností.  
+- Odstranit animaci jednotlivých vlastností.  
   
 ## <a name="set-the-animations-fillbehavior-property-to-stop"></a>Nastavte vlastnost FillBehavior animace Stop  
  Nastavením <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> k <xref:System.Windows.Media.Animation.FillBehavior.Stop>, dáte animace zastavit po dosažení konce jeho aktivního období by to ovlivnilo její vlastnost target.  

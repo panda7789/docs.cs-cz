@@ -12,11 +12,11 @@ ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4cc9d592bc2030cdd17e7f87d7c5ac458dc01106
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643072"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
 Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní ukazatele na funkci zajišťující bezpečnost typů nebo zpětného volání funkce.
@@ -26,13 +26,13 @@ Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává 
 
 Ukázka zpětného volání používá následující nespravované funkce zobrazené s původní deklarací funkce:
 
--   `TestCallBack` exportovaná z knihovny PinvokeLib.dll.
+- `TestCallBack` exportovaná z knihovny PinvokeLib.dll.
 
     ```cpp
     void TestCallBack(FPTR pf, int value);
     ```
 
--   `TestCallBack2` exportovaná z knihovny PinvokeLib.dll.
+- `TestCallBack2` exportovaná z knihovny PinvokeLib.dll.
 
     ```cpp
     void TestCallBack2(FPTR2 pf2, char* value);

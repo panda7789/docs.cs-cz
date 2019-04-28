@@ -16,11 +16,11 @@ helpviewer_keywords:
 - protocols, pluggable
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
 ms.openlocfilehash: d14eb426c8e142f56d9f024dcbf37a1d2d78664d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641967"
 ---
 # <a name="programming-pluggable-protocols"></a>Programování připojitelných protokolů
 Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojitelné protokoly. Odvozené třídy pro konkrétní z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, můžete data žádosti z internetového zdroji a čtení odpovědi bez zadání protokolu používá aplikace.  

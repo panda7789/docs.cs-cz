@@ -9,11 +9,11 @@ helpviewer_keywords:
 - void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
 ms.openlocfilehash: ce52e4d19335db0e21637b87bbd1589c86c06ae1
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660317"
 ---
 # <a name="void-c-reference"></a>void (Referenční dokumentace jazyka C#)
 

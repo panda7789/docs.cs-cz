@@ -9,11 +9,11 @@ helpviewer_keywords:
 - connection pooling
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
 ms.openlocfilehash: 00ccc11919f0ccd4f9361bfd8f265dea1ad2390d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59184560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642773"
 ---
 # <a name="connection-grouping"></a>Seskupení připojení
 Seskupení připojení přidruží konkrétní požadavky v rámci jedné aplikace do fondu definovaná připojení. To může být požadované aplikace střední vrstvy, která se připojuje k back endového serveru jménem uživatele a používá protokol ověřování, který podporuje delegování, jako je třeba Kerberos, nebo aplikace střední vrstvy, který poskytuje svoje vlastní přihlašovací údaje, jako Následující příklad. Předpokládejme například, že uživatel, Joe, navštíví interní web, který zobrazuje své mzdové informace. Po ověření Joe, server aplikace střední vrstvy používá Michalův přihlašovací údaje pro připojení k back endového serveru načíst své mzdové informace. V dalším kroku Susan navštíví web a požádá o své mzdové informace. Vzhledem k tomu, že připojení pomocí přihlašovacích údajů Jana už vytvořil aplikace střední vrstvy, back-end server odpoví Michalův informace. Pokud ale aplikace přiřadí každého požadavku odeslaného do back-end serverů do skupiny připojení vytvořený z uživatelského jména, pak každý uživatel patří do samostatného připojení fondu a nesmí omylem sdílet ověřovací údaje s jiným uživatelem.  

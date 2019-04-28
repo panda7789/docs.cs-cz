@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
 ms.openlocfilehash: 389fc46e0293823fa859859b7a32ef3730ca8051
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646238"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 Konstruktory instancí se používají k vytváření a inicializace žádné proměnné členů instance při použití [nové](../../../csharp/language-reference/keywords/new.md) výraz, který se vytvoří objekt [třídy](../../../csharp/language-reference/keywords/class.md). Inicializace [statické](../../../csharp/language-reference/keywords/static.md) třídy nebo statické proměnné v nestatické třídy, je nutné definovat statický konstruktor. Další informace najdete v tématu [statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  

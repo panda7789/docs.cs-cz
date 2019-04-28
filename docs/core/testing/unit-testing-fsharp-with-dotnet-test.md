@@ -8,11 +8,11 @@ dev_langs:
 - fsharp
 ms.custom: seodec18
 ms.openlocfilehash: 9765c463bb427f79dcd0308e7e4fc643fdc06968
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665907"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 

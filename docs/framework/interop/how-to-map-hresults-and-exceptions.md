@@ -14,11 +14,11 @@ ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 60173739842835a705a72da4e7ab442cacfc08d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643046"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
 Metody modelu COM zprávy o chybách tak, že vrací výsledky HRESULT; metod rozhraní .NET dejte nám o nich vyvoláním výjimky. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework se mapuje na HRESULT.  

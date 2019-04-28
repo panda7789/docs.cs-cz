@@ -16,11 +16,11 @@ ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 93abf6e91c2e13173184faee281de52eb83e17f5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650255"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
@@ -126,11 +126,11 @@ Funkce složeného formátování je podporována například následujícími m
   
 3. Pokud hodnota implementuje <xref:System.IFormattable> rozhraní, což je rozhraní <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> metoda je volána. Metodě je předána *formatString* hodnotu, pokud je k dispozici v položce formátu, nebo `null` nesplnění. <xref:System.IFormatProvider> Argument je stanoven následujícím způsobem:  
   
-    -   Pro číselnou hodnotu, pokud složeného formátování s nenulovým <xref:System.IFormatProvider> argument je volána, modul runtime požádá o <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud metody složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.NumberFormatInfo> objektů pro aktuální jazykovou verzi vlákna se používá.  
+    - Pro číselnou hodnotu, pokud složeného formátování s nenulovým <xref:System.IFormatProvider> argument je volána, modul runtime požádá o <xref:System.Globalization.NumberFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud metody složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.NumberFormatInfo> objektů pro aktuální jazykovou verzi vlákna se používá.  
   
-    -   Pro hodnoty data a času, pokud složeného formátování s nenulovým <xref:System.IFormatProvider> argument je volána, modul runtime požádá o <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud metody složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.DateTimeFormatInfo> objektů pro aktuální jazykovou verzi vlákna se používá.  
+    - Pro hodnoty data a času, pokud složeného formátování s nenulovým <xref:System.IFormatProvider> argument je volána, modul runtime požádá o <xref:System.Globalization.DateTimeFormatInfo> objekt z jeho <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metoda. Pokud nelze zadat, pokud je hodnota argumentu `null`, nebo pokud metody složeného formátování nemá <xref:System.IFormatProvider> parametr, <xref:System.Globalization.DateTimeFormatInfo> objektů pro aktuální jazykovou verzi vlákna se používá.  
   
-    -   Pro objekty jiných typů, pokud složené formátování metoda je volána pomocí <xref:System.IFormatProvider> argument, její hodnota je předána přímo <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace. V opačném případě `null` je předán <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
+    - Pro objekty jiných typů, pokud složené formátování metoda je volána pomocí <xref:System.IFormatProvider> argument, její hodnota je předána přímo <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace. V opačném případě `null` je předán <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> implementace.  
   
 4. Typ uživatele bez parametrů `ToString` metoda, která buď přepíše <xref:System.Object.ToString?displayProperty=nameWithType> nebo zdědí chování základní třídy, je volána. V takovém případě řetězec formátu zadaný součástí *formatString* komponenty v položce formátu, pokud je k dispozici, je ignorován.  
   

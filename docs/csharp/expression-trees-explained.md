@@ -4,11 +4,11 @@ description: Další informace o stromů výrazů a jak jsou užitečné při p�
 ms.date: 06/20/2016
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
 ms.openlocfilehash: 3bad826bb58ff361688d3e13497343661e7edbd3
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646591"
 ---
 # <a name="expression-trees-explained"></a>Vysvětlení stromů výrazů
 

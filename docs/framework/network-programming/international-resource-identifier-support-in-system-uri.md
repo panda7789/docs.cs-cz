@@ -3,11 +3,11 @@ title: Podpora mezinárodních identifikátorů prostředků v System.Uri
 ms.date: 03/30/2017
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
 ms.openlocfilehash: 589c49859592cba55cb5110fe65fdc49e451f478
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769109"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642357"
 ---
 # <a name="international-resource-identifier-support-in-systemuri"></a>Podpora mezinárodních identifikátorů prostředků v System.Uri
 <xref:System.Uri?displayProperty=nameWithType> Třídy bylo rozšířeno pomocí International Resource Identifier (IRI) a podporu mezinárodní názvy domén (IDN). Tato vylepšení jsou k dispozici v rozhraní .NET Framework 3.5, 3.0 SP1 a 2.0 SP1.  
@@ -15,11 +15,11 @@ ms.locfileid: "59769109"
 ## <a name="iri-and-idn-support"></a>IRI a podporu IDN  
  Webové adresy jsou obvykle vyjádřeny pomocí identifikátorů URI (Uniform Resource), které obsahují velmi omezené sady znaků:  
   
--   Velká a malá písmena znaků ASCII – písmena anglické abecedy.  
+- Velká a malá písmena znaků ASCII – písmena anglické abecedy.  
   
--   Číslice od 0 do 9.  
+- Číslice od 0 do 9.  
   
--   Malý počet dalších symbolů ASCII.  
+- Malý počet dalších symbolů ASCII.  
   
  Specifikace pro identifikátory URI jsou popsány v dokumentu RFC 2396 a RFC 3986 publikovaná pomocí Engineering Task Force IETF (Internet).  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f4d86667-3392-470d-a076-5ca6cbb660f6
 ms.openlocfilehash: c0bc66bfe78a52fe092890c070c339df1a89199d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61637671"
 ---
 # <a name="query-expression-syntax-examples-join-operators-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Připojte se k operátory (LINQ to DataSet)
 Připojení je důležité operace v dotazech, které se zaměřují zdroje dat, které jste žádné relace navigaci k sobě navzájem, jako je například tabulek relační databáze. Přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat. je spojení dvou datových zdrojů. Další informace najdete v tématu [přehled standardních operátorů dotazu (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md) nebo [přehled operátory standardního dotazu (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).  

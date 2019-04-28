@@ -11,18 +11,18 @@ ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1b05d5c72491265b7617950550935e3c719421f3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643346"
 ---
 # <a name="default-marshaling-for-objects"></a>Výchozí zařazování pro objekty
 Parametry a pole typu <xref:System.Object?displayProperty=nameWithType> daly vystavit do nespravovaného kódu jako jeden z následujících typů:  
   
--   Hodnotu typu variant, když je parametr objekt.  
+- Hodnotu typu variant, když je parametr objekt.  
   
--   Rozhraní, když je objekt pole struktury.  
+- Rozhraní, když je objekt pole struktury.  
   
  Jenom komunikace s objekty COM podporuje zařazování pro typy objektů. Výchozí chování je zařadit objektů variant modelu COM. Tato pravidla se vztahují pouze na typ **objekt** a se nedá použít u objektů se silným typem, které jsou odvozeny z **objekt** třídy.  
   
@@ -120,11 +120,11 @@ struct ObjectHolder {
 ## <a name="marshaling-object-to-variant"></a>Zařazování objektu Variant  
  Při objektu je zařazení na hodnotu typu variant, interní variantního typu se určuje v době běhu na základě následujících pravidel:  
   
--   Pokud odkaz na objekt má hodnotu null (**nic** v jazyce Visual Basic), objekt je zařazeno do variant typu **VT_EMPTY**.  
+- Pokud odkaz na objekt má hodnotu null (**nic** v jazyce Visual Basic), objekt je zařazeno do variant typu **VT_EMPTY**.  
   
--   Pokud se objekt instance libovolného typu, které jsou uvedeny v následující tabulce, je výsledný typ variant určeno pravidla součástí zařazování a uvedené v tabulce.  
+- Pokud se objekt instance libovolného typu, které jsou uvedeny v následující tabulce, je výsledný typ variant určeno pravidla součástí zařazování a uvedené v tabulce.  
   
--   Můžete implementovat další objekty, které je potřeba explicitně řídit chování zařazování <xref:System.IConvertible> rozhraní. V takovém případě je typ variant určeno kód typu vrácených <xref:System.IConvertible.GetTypeCode%2A?displayProperty=nameWithType> metody. V opačném případě je objekt zařazen jako typ variant typu **VT_UNKNOWN**.  
+- Můžete implementovat další objekty, které je potřeba explicitně řídit chování zařazování <xref:System.IConvertible> rozhraní. V takovém případě je typ variant určeno kód typu vrácených <xref:System.IConvertible.GetTypeCode%2A?displayProperty=nameWithType> metody. V opačném případě je objekt zařazen jako typ variant typu **VT_UNKNOWN**.  
   
 ### <a name="marshaling-system-types-to-variant"></a>Zařazování typu Variant typy systémů  
  V následující tabulce jsou uvedeny typy spravovaných objektů a jejich odpovídající typy variant modelu COM. Tyto typy jsou převeden pouze v případě, že podpis volané metody je typu <xref:System.Object?displayProperty=nameWithType>.  
@@ -281,26 +281,26 @@ Varianty předán podle hodnoty a podle reference
   
  **Výchozí chování zařazování objektů a proměnných typu Variant podle hodnoty**  
   
--   Při předávání objektů modelu COM ze spravovaného kódu, obsah objektu se zkopíruje do novou variantu vytvořili zařazováním použitím z pravidel definovaných v [zařazování objektu Variant](#marshaling-object-to-variant). Změny provedené v variant v nespravované oblasti nejsou šířeny zpět do původního objektu při návratu z volání.  
+- Při předávání objektů modelu COM ze spravovaného kódu, obsah objektu se zkopíruje do novou variantu vytvořili zařazováním použitím z pravidel definovaných v [zařazování objektu Variant](#marshaling-object-to-variant). Změny provedené v variant v nespravované oblasti nejsou šířeny zpět do původního objektu při návratu z volání.  
   
--   Při předání proměnných typu Variant z modelu COM pro spravovaný kód, obsah objektu variant zkopírují do nově vytvořeného objektu pomocí pravidel definovaných v [zařazování typu Variant pro objekt](#marshaling-variant-to-object). Změny provedené v objektu na spravované straně nejsou šířeny zpět do původní typ variant při návratu z volání.  
+- Při předání proměnných typu Variant z modelu COM pro spravovaný kód, obsah objektu variant zkopírují do nově vytvořeného objektu pomocí pravidel definovaných v [zařazování typu Variant pro objekt](#marshaling-variant-to-object). Změny provedené v objektu na spravované straně nejsou šířeny zpět do původní typ variant při návratu z volání.  
   
  **Výchozí chování zařazování objektů a proměnných typu Variant odkazem.**  
   
  Šíření změny zpět do volajícího, musí být parametry předány podle odkazu. Například můžete použít **ref** – klíčové slovo v C# (nebo **ByRef** v jazyce Visual Basic spravovaného kódu) pro předání parametrů podle odkazu. V modelu COM, odkaz parametry se jí předávají pomocí ukazatele, jako třeba **variant \***.  
   
--   Při předávání objektů modelu COM pomocí odkazu, aby zařazování odvozovalo vytvoří novou variantu a zkopíruje obsah odkaz na objekt do varianty předtím, než se provádí volání. Varianty je předán nespravované funkci, kde uživatel je zdarma pro změnu obsahu objektu variant. Při návratu z volání všechny změny provedené v nespravované oblasti varianty jsou šířeny zpět na původní objekt. Pokud se typ objektu variant liší od typu variant předává do volání, změny jsou šířeny zpět do objektu jiného typu. To znamená typ objektu předaný do volání se může lišit od typu objektu vrácená z volání.  
+- Při předávání objektů modelu COM pomocí odkazu, aby zařazování odvozovalo vytvoří novou variantu a zkopíruje obsah odkaz na objekt do varianty předtím, než se provádí volání. Varianty je předán nespravované funkci, kde uživatel je zdarma pro změnu obsahu objektu variant. Při návratu z volání všechny změny provedené v nespravované oblasti varianty jsou šířeny zpět na původní objekt. Pokud se typ objektu variant liší od typu variant předává do volání, změny jsou šířeny zpět do objektu jiného typu. To znamená typ objektu předaný do volání se může lišit od typu objektu vrácená z volání.  
   
--   Při předávání hodnotu typu variant na spravovaný kód podle odkazu, aby zařazování odvozovalo vytvoří nový objekt a zkopíruje obsah objektu variant do objektu před uskutečněním hovoru. Odkaz na objekt je předán spravované funkce, kde uživatel je zdarma, chcete-li změnit objekt. Při návratu z volání jsou všechny změny provedené odkazovaný objekt šířeny zpět do původní typ variant. Pokud typ objektu se liší od typu objektu předaného do volání, změnit typ původní typ variant a hodnota se šíří zpět do variantu. Znovu typ objektu variant předaná do volání se může lišit od typu hodnota variant vrácená z volání.  
+- Při předávání hodnotu typu variant na spravovaný kód podle odkazu, aby zařazování odvozovalo vytvoří nový objekt a zkopíruje obsah objektu variant do objektu před uskutečněním hovoru. Odkaz na objekt je předán spravované funkce, kde uživatel je zdarma, chcete-li změnit objekt. Při návratu z volání jsou všechny změny provedené odkazovaný objekt šířeny zpět do původní typ variant. Pokud typ objektu se liší od typu objektu předaného do volání, změnit typ původní typ variant a hodnota se šíří zpět do variantu. Znovu typ objektu variant předaná do volání se může lišit od typu hodnota variant vrácená z volání.  
   
  **Výchozí chování zařazování variantpro s příznakem VT_BYREF**  
   
--   Může mít hodnotu typu variant předávaný spravovaný kód podle hodnoty **VT_BYREF** nastaven příznak označující, že varianty obsahuje odkaz na místo hodnoty. V takovém případě je varianty stále zařazeno do objektu vzhledem k tomu, že varianta je předáván podle hodnoty. Zařazování automaticky přístupů přes ukazatel, obsah objektu variant a zkopíruje se do nově vytvořeného objektu před uskutečněním hovoru. Objekt je pak předán do spravované funkci. Při návratu z volání však není objekt šířeny zpět do původní typ variant. Změny provedené na spravovaný objekt se ztratí.  
+- Může mít hodnotu typu variant předávaný spravovaný kód podle hodnoty **VT_BYREF** nastaven příznak označující, že varianty obsahuje odkaz na místo hodnoty. V takovém případě je varianty stále zařazeno do objektu vzhledem k tomu, že varianta je předáván podle hodnoty. Zařazování automaticky přístupů přes ukazatel, obsah objektu variant a zkopíruje se do nově vytvořeného objektu před uskutečněním hovoru. Objekt je pak předán do spravované funkci. Při návratu z volání však není objekt šířeny zpět do původní typ variant. Změny provedené na spravovaný objekt se ztratí.  
   
     > [!CAUTION]
     >  Neexistuje žádný způsob, jak změnit hodnotu typu variant předán podle hodnoty, i v případě varianty **VT_BYREF** nastaven příznak.  
   
--   Hodnotu typu variant předávaný odkazem na spravovaný kód může mít také **VT_BYREF** nastaven příznak označující, že varianty obsahuje odkaz na jiný. Pokud ano, varianty je zařazeno do **ref** objektu, protože varianty je předáván odkazem. Zařazování automaticky přístupů přes ukazatel, obsah objektu variant a zkopíruje se do nově vytvořeného objektu před uskutečněním hovoru. Při návratu z volání hodnotu objektu se šíří zpět k odkazu v rámci původní typ variant pouze v případě, že objekt je stejného typu jako objekt předaný v. To znamená, šíření nezmění typu variant s **VT_BYREF** nastaven příznak. Pokud se změní typ objektu v průběhu hovoru, <xref:System.InvalidCastException> dojde k návratu z volání.  
+- Hodnotu typu variant předávaný odkazem na spravovaný kód může mít také **VT_BYREF** nastaven příznak označující, že varianty obsahuje odkaz na jiný. Pokud ano, varianty je zařazeno do **ref** objektu, protože varianty je předáván odkazem. Zařazování automaticky přístupů přes ukazatel, obsah objektu variant a zkopíruje se do nově vytvořeného objektu před uskutečněním hovoru. Při návratu z volání hodnotu objektu se šíří zpět k odkazu v rámci původní typ variant pouze v případě, že objekt je stejného typu jako objekt předaný v. To znamená, šíření nezmění typu variant s **VT_BYREF** nastaven příznak. Pokud se změní typ objektu v průběhu hovoru, <xref:System.InvalidCastException> dojde k návratu z volání.  
   
  Následující tabulka shrnuje pravidla pro šíření variant a objektů.  
   

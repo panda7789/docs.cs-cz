@@ -7,11 +7,11 @@ helpviewer_keywords:
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
 ms.openlocfilehash: d038991da4048e3279ae974cbf4d3e53691349af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61645770"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,13 +25,13 @@ ms.locfileid: "59088550"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků transformace, mějte na paměti následující pokyny a konvence:  
   
--   Podpora pro tuto – vzor ovládacích prvků není omezeno pouze na objekty v klientských počítačích. Tento vzor ovládacích prvků musí také podporovat podřízené objekty daného objektu kontejneru Pokud podřízené objekty lze přesunout, se změněnou velikostí ani otočen volně v rámci hranice kontejneru.  
+- Podpora pro tuto – vzor ovládacích prvků není omezeno pouze na objekty v klientských počítačích. Tento vzor ovládacích prvků musí také podporovat podřízené objekty daného objektu kontejneru Pokud podřízené objekty lze přesunout, se změněnou velikostí ani otočen volně v rámci hranice kontejneru.  
   
--   Objekt nelze přesunout, změně velikosti nebo otočit tak, aby jeho výsledné umístění na obrazovce by být zcela mimo souřadnice svého kontejneru a proto nejsou přístupné na klávesnici nebo myš (například když okno nejvyšší úrovně je přesunut mimo obrazovku nebo podřízený objekt je přesunut mimo hranice kontejneru zobrazení). V těchto případech se objekt nachází nejblíže požadované obrazovky souřadnice nejvíce s horním nebo levém souřadnice přepsána za hranice kontejneru.  
+- Objekt nelze přesunout, změně velikosti nebo otočit tak, aby jeho výsledné umístění na obrazovce by být zcela mimo souřadnice svého kontejneru a proto nejsou přístupné na klávesnici nebo myš (například když okno nejvyšší úrovně je přesunut mimo obrazovku nebo podřízený objekt je přesunut mimo hranice kontejneru zobrazení). V těchto případech se objekt nachází nejblíže požadované obrazovky souřadnice nejvíce s horním nebo levém souřadnice přepsána za hranice kontejneru.  
   
--   Systémů více monitorů Pokud je přesunout objekt, jehož velikost byla změněna nebo otočený úplně mimo souřadnice kombinované klasické pracovní plochy obrazovky objektu umístěn na primární monitorování co nejblíže požadované souřadnice nejvíce.  
+- Systémů více monitorů Pokud je přesunout objekt, jehož velikost byla změněna nebo otočený úplně mimo souřadnice kombinované klasické pracovní plochy obrazovky objektu umístěn na primární monitorování co nejblíže požadované souřadnice nejvíce.  
   
--   Všechny parametry a hodnoty vlastností jsou absolutní a nezávislý na národním prostředí.  
+- Všechny parametry a hodnoty vlastností jsou absolutní a nezávislý na národním prostředí.  
   
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>   
 ## <a name="required-members-for-itransformprovider"></a>Požadované členy pro ITransformProvider  
@@ -42,7 +42,7 @@ ms.locfileid: "59088550"
 |<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|Metoda|Žádné|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|Metoda|Žádný|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|Metoda|Žádné|  
   

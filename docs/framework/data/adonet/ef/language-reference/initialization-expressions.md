@@ -6,22 +6,22 @@ dev_langs:
 - vb
 ms.assetid: 98daef1f-15d4-483e-985c-d78ea3abe8c8
 ms.openlocfilehash: 6f6f27eaecd760e565eeb98a286252981d6df0bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129139"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61615022"
 ---
 # <a name="initialization-expressions"></a>Výrazy inicializace
 Výraz inicializace inicializuje nový objekt. Většina výrazy inicializace jsou podporované. zahrnuje to nové C# 3.0 a výrazy jazyka Visual Basic 9.0 inicializace. Následující typy lze inicializovat a vrácené LINQ dotazu entity:  
   
--   Kolekce nulu nebo více objektů zadané entity nebo projekce komplexní typy, které jsou definované v konceptuálním modelu.  
+- Kolekce nulu nebo více objektů zadané entity nebo projekce komplexní typy, které jsou definované v konceptuálním modelu.  
   
--   Typy CLR nepodporuje [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+- Typy CLR nepodporuje [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
   
--   Vložené kolekce.  
+- Vložené kolekce.  
   
--   Anonymní typy.  
+- Anonymní typy.  
   
  Inicializace anonymního typu můžete vidět v následujícím příkladu v syntaxi výrazů dotazů:  
   

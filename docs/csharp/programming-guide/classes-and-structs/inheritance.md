@@ -11,11 +11,11 @@ helpviewer_keywords:
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
 ms.openlocfilehash: 9ad7253fb9efc891e1f0fdea118e1fe7bde6a857
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646317"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 

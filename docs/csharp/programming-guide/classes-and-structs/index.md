@@ -12,11 +12,11 @@ helpviewer_keywords:
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
 ms.openlocfilehash: 7b85940f8ce64139d056497a8007379f1658010d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646329"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Třídy a struktury (Průvodce programováním v C#)
 Třídy a struktury jsou dvě základní konstrukce obecný systém typů v rozhraní .NET Framework. Každá je v podstatě datová struktura, která zapouzdřuje sadu dat a chování, které patří k sobě jako logická jednotka. Data a chování jsou *členy* třídy nebo struktury, a zahrnují metody, vlastnosti a události a tak dále, jak je uvedeno dále v tomto tématu.  
@@ -44,25 +44,25 @@ Třídy a struktury jsou dvě základní konstrukce obecný systém typů v rozh
 ### <a name="members"></a>Členové  
  Všechny metody, pole, konstanty, vlastnosti a události musí být deklarována v rámci typu; Toto nastavení se nazývá *členy* typu. V jazyce C# nejsou žádné globální proměnné ani metody jako v některých jiných jazycích. Dokonce i vstupní bod programu, `Main` metodu, musí být deklarována v rámci třídy nebo struktury. Následující seznam obsahuje všechny různé druhy členů, které mohou být deklarovány ve třídě nebo struktuře.  
   
--   [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)  
+- [Pole](../../../csharp/programming-guide/classes-and-structs/fields.md)  
   
--   [Konstanty](../../../csharp/programming-guide/classes-and-structs/constants.md)  
+- [Konstanty](../../../csharp/programming-guide/classes-and-structs/constants.md)  
   
--   [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
   
--   [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
   
--   [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
   
--   [Události](../../../csharp/programming-guide/events/index.md)  
+- [Události](../../../csharp/programming-guide/events/index.md)  
   
--   [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
   
--   [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
   
--   [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
   
--   [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
+- [Vnořené typy](../../../csharp/programming-guide/classes-and-structs/nested-types.md)  
   
 ### <a name="accessibility"></a>Usnadnění  
  Některé metody a vlastnosti jsou určeny k volání nebo přístupu z kódu mimo vaši třídu nebo strukturu a jsou známé jako *klientský kód*. Jiné metody a vlastnosti může být pouze pro použití v dané třídy nebo struktury samotné. Je důležité omezit dostupnost vašeho kódu tak, aby k němu lze přistoupit pouze zamýšlený klientský kód. Můžete upřesnit, jak počítačové vaše typy a členové pro klientský kód pomocí přístupu modifikátory přístupu [veřejné](../../../csharp/language-reference/keywords/public.md), [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), [ interní chráněné](../../../csharp/language-reference/keywords/protected-internal.md), [privátní](../../../csharp/language-reference/keywords/private.md) a [private, protected](../../../csharp/language-reference/keywords/private-protected.md). Výchozí dostupnost je `private`. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  

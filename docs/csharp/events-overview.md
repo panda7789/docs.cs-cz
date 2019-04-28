@@ -4,11 +4,11 @@ description: Další informace o události v rozhraní .NET Core a naše cíle n
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
 ms.openlocfilehash: 9f14954dd2e8aeacf3c5ae70a9e891ad11a6f0d7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646615"
 ---
 # <a name="introduction-to-events"></a>Úvod do událostí
 

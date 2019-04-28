@@ -9,11 +9,11 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 ms.assetid: 99be5692-967a-4e85-993e-cd18139a5a69
 ms.openlocfilehash: de60bbe111de151ac358c1b1c00a14dee225447d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672806"
 ---
 # <a name="how-to-read-from-fixed-width-text-files-in-visual-basic"></a>Postupy: čtení ze souborů s pevnou šířkou v jazyce Visual Basic
 `TextFieldParser` Objekt poskytuje způsob, jak snadno a efektivně analýza strukturovaných textových souborů, jako jsou protokoly.  
@@ -46,15 +46,15 @@ ms.locfileid: "59344062"
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Řádek nelze analyzovat pomocí určeného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce určuje řádek, který způsobil výjimku, a <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> vlastnost je přiřazena k obsažené v řádku textu.  
+- Řádek nelze analyzovat pomocí určeného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce určuje řádek, který způsobil výjimku, a <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> vlastnost je přiřazena k obsažené v řádku textu.  
   
--   Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
--   Stav částečným vztahem důvěryhodnosti, ve kterém uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
+- Stav částečným vztahem důvěryhodnosti, ve kterém uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
   
--   Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
--   Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

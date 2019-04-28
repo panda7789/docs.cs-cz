@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fab5225225d4e4a4e07961b0f967cff2c1b07321
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61599315"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister – výčet
 Určuje registrů spojené s danou procesor architektury.  
@@ -194,9 +194,9 @@ typedef enum CorDebugRegister {
 ## <a name="remarks"></a>Poznámky  
  Existují 128 pro obecné účely datových registrů a 128 s plovoucí desetinnou čárkou datových registrů na IA-64 procesorů, ale pouze hodnoty `REGISTER_IA64_R0` a `REGISTER_IA64_F0` jsou k dispozici. Ostatní hodnoty můžou být stanoven následujícím způsobem:  
   
--   Přidat registr číslo, které má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají registr #1 dat prostřednictvím #127 data registru na procesor IA-64.  
+- Přidat registr číslo, které má `REGISTER_IA64_R0` pro hodnoty `REGISTER_IA64_R1` prostřednictvím `REGISTER_IA64_R127`, které odpovídají registr #1 dat prostřednictvím #127 data registru na procesor IA-64.  
   
--   Přidat registr číslo, které má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají data registr FP #1 až #127 registr FP dat na procesor IA-64.  
+- Přidat registr číslo, které má `REGISTER_IA64_F0` pro hodnoty `REGISTER_IA64_F1` prostřednictvím `REGISTER_IA64_F127`, které odpovídají data registr FP #1 až #127 registr FP dat na procesor IA-64.  
   
  Například pokud je třeba zadat registr #83 dat na procesor IA-64, použijte `REGISTER_IA64_R0` + 83.  
   

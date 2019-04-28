@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d98a0c1c3187b81c44fae6eee91d975169a40045
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627941"
 ---
 # <a name="ememoryavailable-enumeration"></a>EMemoryAvailable – výčet
 Obsahuje hodnoty, které označují množství volné fyzické paměti v počítači. Tyto hodnoty logicky mapování na události pro vysoké a nízké je paměť vrácena z `CreateMemoryResourceNotification` funkce v rozhraní Windows API.  

@@ -4,17 +4,17 @@ description: Příkaz dotnet nuget nabízených odešle balíček na server a pu
 author: karann-msft
 ms.date: 12/04/2018
 ms.openlocfilehash: 9f38fb29ef5b802a5b7091dd1e9659c653cf04d0
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648643"
 ---
 # <a name="dotnet-nuget-push"></a>DotNet nuget push
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet nuget push` -Odešle balíček na server a publikuje ji.
 

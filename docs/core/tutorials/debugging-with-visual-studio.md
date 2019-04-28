@@ -4,11 +4,11 @@ description: Zjistěte, jak ladit aplikaci Hello World v jazyce C# nebo Visual B
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
 ms.openlocfilehash: 9b2375443c9947a32fcccea062642103601d5010
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648077"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Ladit vaše C# nebo Visual Basic .NET Core aplikace Hello World pomocí sady Visual Studio 2017
 

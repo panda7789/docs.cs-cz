@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 7b9017c30deebf6762b60d70e2be0b68ab5e27fc
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.openlocfilehash: 79154713e370029ff31591523525fb05422571d8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57844733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627876"
 ---
 # <a name="async-in-depth"></a>Asynchronní do hloubky
 
@@ -82,7 +82,7 @@ Po volání rozhraní API systému žádost je nyní v prostoru jádra zajistit 
 
 V operační systém Windows například vlákno provede volání k ovladači zařízení sítě a vyzve ho k provedení této operace sítě prostřednictvím přerušení žádosti paketů (IRP), která představuje operaci.  Ovladače zařízení obdrží kontrolní, provede volání do sítě, označí IRP jako "čekající na vyřízení" a vrátí zpět do operačního systému.  Protože vlákna operačního systému nyní ví, že je kontrolní "čekající na vyřízení", nemá žádné další práci pro tuto úlohu a "vrátí" tak, aby je možné provádět jinou práci.
 
-Pokud je požadavek splněn a data se vrátí zpět prostřednictvím ovladače zařízení, upozorní procesoru nová data přijatá přes přerušení.  Získá zpracování této přerušení se budou lišit v závislosti na operační systém, ale nakonec data se předají pomocí operačního systému dokud nedosáhne volání interop systému (třeba v systému Linux obslužné rutiny přerušení se naplánuje dolní polovinu IRQ předávání dat operačního systému  asynchronně).  Všimněte si, že tento *také* probíhá asynchronně!  Výsledkem je zařazena do fronty až další vlákno k dispozici je možné provést asynchronní metody a "rozbalení" výsledek dokončené úlohy.
+Pokud je požadavek splněn a data se vrátí zpět prostřednictvím ovladače zařízení, upozorní procesoru nová data přijatá přes přerušení.  Získá zpracování této přerušení se budou lišit v závislosti na operační systém, ale nakonec data se předají pomocí operačního systému dokud nedosáhne volání interop systému (třeba v systému Linux obslužné rutiny přerušení se naplánuje dolní polovinu IRQ předávání dat operačního systému  asynchronně).  Všimněte si, že tento *také* probíhá asynchronně!  Výsledek je zařadí do fronty, dokud další dostupné vlákno je možné ke spouštění asynchronní metody "rozbalení" výsledek dokončené úlohy.
 
 V průběhu celý tento proces hlavní, co vyplývá je, že **žádné vlákno je vyhrazen pro spuštění úlohy**.  I když práce provádí v kontextu (to znamená, že operační systém nemá předat data do ovladače zařízení a reagovat na přerušení), je vyhrazený pro žádné vlákno *čekání* pro data z požadavku k téhle akci vrátit.  To umožňuje zpracovat mnohem větší objem práce spíše než čekání na některé volání vstupně-výstupních operací na dokončení systému.
 

@@ -13,11 +13,11 @@ ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d6911ff96ca847f554e9b615aba6ab83a212efee
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660564"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 

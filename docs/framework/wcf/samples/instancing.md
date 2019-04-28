@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Instancing Sample [Windows Communication Foundation]
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
 ms.openlocfilehash: 2cc3c54563b261d49264314f7306193accbe4040
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61596802"
 ---
 # <a name="instancing"></a>Vytváření instancí
 Instancing ukázce vytvoření instance nastavení chování, které řídí, jak se vytvářejí instance třídy služby v reakci na požadavky klientů. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorInstance`, který dědí z `ICalculator`. Kontrakt určený `ICalculatorInstance` poskytuje tři další operace, kontroly stavu instance služby. Změnou nastavení vytvoření instance můžete sledovat změny v chování pomocí klienta.  
@@ -22,11 +22,11 @@ Instancing ukázce vytvoření instance nastavení chování, které řídí, ja
   
  K dispozici jsou následující režimy vytvoření instance:  
   
--   <xref:System.ServiceModel.InstanceContextMode.PerCall>: Pro každý požadavek klienta je vytvořena nová instance služby.  
+- <xref:System.ServiceModel.InstanceContextMode.PerCall>: Pro každý požadavek klienta je vytvořena nová instance služby.  
   
--   <xref:System.ServiceModel.InstanceContextMode.PerSession>: Novou instanci je vytvořena pro každou novou relaci klienta a Udržovat dobu trvání relace (vyžaduje vazbu, která podporuje relace).  
+- <xref:System.ServiceModel.InstanceContextMode.PerSession>: Novou instanci je vytvořena pro každou novou relaci klienta a Udržovat dobu trvání relace (vyžaduje vazbu, která podporuje relace).  
   
--   <xref:System.ServiceModel.InstanceContextMode.Single>: Jednu instanci třídy služby zpracuje všechny žádosti klienta po dobu životnosti aplikace.  
+- <xref:System.ServiceModel.InstanceContextMode.Single>: Jednu instanci třídy služby zpracuje všechny žádosti klienta po dobu životnosti aplikace.  
   
  Určuje chování při vytvoření instance s využitím třídu služby `[ServiceBehavior(InstanceContextMode=<setting>)]` atributu, jak je znázorněno v ukázce kódu, který následuje. Změnou řádků jsou označené jako komentář, můžete sledovat chování oba režimy instance. Nezapomeňte znovu sestavit službě po změně vytvoření instance režimu. Nejsou žádná nastavení týkající se vytváření instancí k určení na straně klienta.  
   

@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: odeslání souborů pomocí protokolu FTP'
-description: Tento článek ukazuje vzorku o tom, jak nahrát soubor na FTP server.
+title: 'Postupy: Nahrávání souborů přes FTP'
+description: Tento článek popisuje ukázku toho, jak nahrát soubor na FTP server.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: e40f17c5-dd12-4c62-9dbf-00ab491382dc
 ms.openlocfilehash: a1f067462361bb123c9d61a1d099c900a6641d6b
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642396"
 ---
-# <a name="how-to-upload-files-with-ftp"></a>Postupy: odeslání souborů pomocí protokolu FTP
+# <a name="how-to-upload-files-with-ftp"></a>Postupy: Nahrávání souborů přes FTP
 
-Tento příklad ukazuje, jak nahrát soubor do serveru FTP.
+Tento příklad ukazuje, jak nahrát soubor na FTP server.
 
 ## <a name="example"></a>Příklad
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d8c90785-f16b-42a5-8439-ed2f731b2ba8
 ms.openlocfilehash: fee2b725afbceef45b9651a7cd88a61b37952e32
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642513"
 ---
 # <a name="how-to-retrieve-a-protocol-specific-webresponse-that-matches-a-webrequest"></a>Postupy: Načtení žádosti WebResponse specifické pro protokol, která odpovídá žádosti WebRequest
 Tento příklad ukazuje, jak načíst WebResponse specifické pro protokol, který odpovídá položce WebRequest.  
@@ -30,7 +30,7 @@ Dim resp As WebResponse = req.GetResponse()
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy **System.Net** oboru názvů.  
+- Odkazy **System.Net** oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

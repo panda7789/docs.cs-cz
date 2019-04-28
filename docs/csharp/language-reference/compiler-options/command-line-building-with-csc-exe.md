@@ -6,11 +6,11 @@ helpviewer_keywords:
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
 ms.openlocfilehash: bb8f9ace8f259ece803aa6681ebab90355146380
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663048"
 ---
 # <a name="command-line-build-with-cscexe"></a>Sestavení z příkazového řádku s csc.exe
 Kompilátor jazyka C# můžete vyvolat zadáním názvu její spustitelný soubor (*csc.exe*) z příkazového řádku.

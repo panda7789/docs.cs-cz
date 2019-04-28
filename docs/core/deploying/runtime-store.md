@@ -5,11 +5,11 @@ author: bleroy
 ms.date: 08/12/2017
 ms.custom: seodec18
 ms.openlocfilehash: 2f37e0de4b6fcb1b2047470b0a9df3753fe87d71
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614359"
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčků modulu runtime
 

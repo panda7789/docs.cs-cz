@@ -3,11 +3,11 @@ title: Zápis zprostředkovatele dat Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 092e88c4-a301-453a-b5c3-5740c6575a9f
 ms.openlocfilehash: 2aa27475c28bed521c636139b19454b0720960ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667299"
 ---
 # <a name="writing-an-entity-framework-data-provider"></a>Zápis zprostředkovatele dat Entity Framework
 Tato část popisuje, jak psát [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] zprostředkovatele pro podporu zdroje dat než SQL Server. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Zahrnuje poskytovatele, který podporuje SQL Server.  
@@ -17,17 +17,17 @@ Tato část popisuje, jak psát [!INCLUDE[adonet_ef](../../../../../includes/ado
   
  Zprostředkovatel dat Entity Framework (vytvořené pomocí modelu zprostředkovatele dat ADO.NET) provádí následující funkce:  
   
--   Primitivní typy Entity Data Model (EDM) se mapuje na poskytovatele typů.  
+- Primitivní typy Entity Data Model (EDM) se mapuje na poskytovatele typů.  
   
--   Zpřístupňuje funkce specifické pro zprostředkovatele.  
+- Zpřístupňuje funkce specifické pro zprostředkovatele.  
   
--   Generuje příkazy specifickým pro zprostředkovatele pro daného DbQueryCommandTree pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dotazy.  
+- Generuje příkazy specifickým pro zprostředkovatele pro daného DbQueryCommandTree pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dotazy.  
   
--   Generuje příkazy specifickým pro zprostředkovatele aktualizace pro danou DbModificationCommandTree podporovat aktualizace prostřednictvím [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+- Generuje příkazy specifickým pro zprostředkovatele aktualizace pro danou DbModificationCommandTree podporovat aktualizace prostřednictvím [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
--   Zpřístupňuje mapování souborů pro definici schématu úložiště pro podporu generování model založený na databázi.  
+- Zpřístupňuje mapování souborů pro definici schématu úložiště pro podporu generování model založený na databázi.  
   
--   Poskytuje metadata (tabulek a zobrazení, například) prostřednictvím konceptuálního modelu.  
+- Poskytuje metadata (tabulek a zobrazení, například) prostřednictvím konceptuálního modelu.  
   
  ![b42a7a5c&#45;0ac0&#45;4911&#45;86be&#45;0460a78760ba](../../../../../docs/framework/data/adonet/ef/media/b42a7a5c-0ac0-4911-86be-0460a78760ba.gif "b42a7a5c-0ac0-4911-86be-0460a78760ba")  
   

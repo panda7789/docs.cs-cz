@@ -3,28 +3,28 @@ title: Podpora pro dotazy
 ms.date: 03/30/2017
 ms.assetid: 093c22f5-3294-4642-857a-5252233d6796
 ms.openlocfilehash: 30695fcd791a0d69c31a897068d69838c80c3957
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641512"
 ---
 # <a name="support-for-queries"></a>Podpora pro dotazy
 Store Instance pracovního postupu SQL zaznamenává sadu dobře známé vlastnosti v úložišti. Uživatelé mohou odesílat dotazy na instance založené na těchto vlastností. Následující seznam obsahuje některé z těchto dobře známé vlastnosti:  
   
--   **Název webu.** Název webu, který obsahuje službu.  
+- **Název webu.** Název webu, který obsahuje službu.  
   
--   **Cesta relativní aplikace.** Cesta k aplikaci vzhledem k webu.  
+- **Cesta relativní aplikace.** Cesta k aplikaci vzhledem k webu.  
   
--   **Cesta relativní služby.** Cesta ke službě vzhledem k aplikaci.  
+- **Cesta relativní služby.** Cesta ke službě vzhledem k aplikaci.  
   
--   **Název služby.** Název služby  
+- **Název služby.** Název služby  
   
--   **Služba Namespace.** Název oboru názvů, který služba používá.  
+- **Služba Namespace.** Název oboru názvů, který služba používá.  
   
--   **Aktuálním počítači.**  
+- **Aktuálním počítači.**  
   
--   **Poslední počítač**. Počítač, na kterém běžel instance služby pracovního postupu posledního.  
+- **Poslední počítač**. Počítač, na kterém běžel instance služby pracovního postupu posledního.  
   
 > [!NOTE]
 >  Pro scénáře, v místním prostředí pomocí hostitele služby pracovního postupu naplní se pouze poslední čtyři vlastnosti. U scénářů s aplikace pracovního postupu se vyplní pouze poslední vlastnost.  

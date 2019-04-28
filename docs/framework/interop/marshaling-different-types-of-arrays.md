@@ -11,11 +11,11 @@ ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cafb15f691daa8d0d0e6c1ebab3cb89f7c811612
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095097"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642840"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Zařazování různých typů polí
 Pole je typem odkazu ve spravovaném kódu, který obsahuje jeden nebo víc elementů stejného typu. I když pole jsou typy odkazů, jsou předány jako parametry in k nespravovaným funkcím. Toto chování je konzistentní se způsobem spravovaných polí jsou předány do spravovaných objektů, což je jako vstup a výstup parametry. Další podrobnosti najdete v tématu [kopírování a přichycování](copying-and-pinning.md).  
@@ -34,53 +34,53 @@ Pole je typem odkazu ve spravovaném kódu, který obsahuje jeden nebo víc elem
 ## <a name="example"></a>Příklad  
  Tato ukázka demonstruje následující typy polí:  
   
--   Pole celých čísel podle hodnoty.  
+- Pole celých čísel podle hodnoty.  
   
--   Pole celých čísel podle odkazu, který se dá změnit.  
+- Pole celých čísel podle odkazu, který se dá změnit.  
   
--   Vícerozměrná pole (matice) celých čísel podle hodnoty.  
+- Vícerozměrná pole (matice) celých čísel podle hodnoty.  
   
--   Pole řetězců podle hodnoty.  
+- Pole řetězců podle hodnoty.  
   
--   Pole struktury s celými čísly.  
+- Pole struktury s celými čísly.  
   
--   Pole struktury s řetězci.  
+- Pole struktury s řetězci.  
   
  Pokud pole je explicitně zařazen podle odkazu, zařazuje výchozí chování pole jako parametr In. Toto chování lze změnit použitím <xref:System.Runtime.InteropServices.InAttribute> a <xref:System.Runtime.InteropServices.OutAttribute> atributy explicitně.  
   
  Ukázka polí používá následující nespravované funkce zobrazené s původní deklarací funkce:  
   
--   **TestArrayOfInts** exportovaná z knihovny PinvokeLib.dll.  
+- **TestArrayOfInts** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestArrayOfInts(int* pArray, int pSize);  
     ```  
   
--   **TestRefArrayOfInts** exportovaná z knihovny PinvokeLib.dll.  
+- **TestRefArrayOfInts** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestRefArrayOfInts(int** ppArray, int* pSize);  
     ```  
   
--   **TestMatrixOfInts** exportovaná z knihovny PinvokeLib.dll.  
+- **TestMatrixOfInts** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestMatrixOfInts(int pMatrix[][COL_DIM], int row);  
     ```  
   
--   **TestArrayOfStrings** exportovaná z knihovny PinvokeLib.dll.  
+- **TestArrayOfStrings** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestArrayOfStrings(char** ppStrArray, int size);  
     ```  
   
--   **TestArrayOfStructs** exportovaná z knihovny PinvokeLib.dll.  
+- **TestArrayOfStructs** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestArrayOfStructs(MYPOINT* pPointArray, int size);  
     ```  
   
--   **TestArrayOfStructs2** exportovaná z knihovny PinvokeLib.dll.  
+- **TestArrayOfStructs2** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestArrayOfStructs2 (MYPERSON* pPersonArray, int size);  

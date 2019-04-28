@@ -5,11 +5,11 @@ author: janvorli
 ms.author: janvorli
 ms.date: 02/05/2019
 ms.openlocfilehash: 2929110952feb0913f21a9c69975cc605f49c646
-ms.sourcegitcommit: a532e8314c3a4b5b039656567fedff9787a31957
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627789"
 ---
 # <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>Jak používat a unloadability sestavení ladění v rozhraní .NET Core
 

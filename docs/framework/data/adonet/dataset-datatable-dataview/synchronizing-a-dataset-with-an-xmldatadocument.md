@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
 ms.openlocfilehash: b4682d60e213ad57308143b2c7ea06d123daf61d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607491"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace datové sady s datovým dokumentem XML
 V této části ukazuje jeden krok zpracování nákupní objednávka, použitím silného typu <xref:System.Data.DataSet> synchronizovat se službou <xref:System.Xml.XmlDataDocument>. Následující příklady vytvoření **datovou sadu** minimalizované schématu, která odpovídá pouze část zdrojovém dokumentu XML. V příkladech se používá **objektu XmlDataDocument** zachovat věrnost zdrojovém dokumentu XML, povolíte **datovou sadu** se použije k vystavení podmnožinu dokumentů XML.  

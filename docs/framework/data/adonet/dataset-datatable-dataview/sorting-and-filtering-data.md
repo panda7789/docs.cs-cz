@@ -6,24 +6,24 @@ dev_langs:
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
 ms.openlocfilehash: 8d8bd85f65adfde5f239e1e2dd79d65517b745a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607424"
 ---
 # <a name="sorting-and-filtering-data"></a>Řazení a filtrování dat
 <xref:System.Data.DataView> Poskytuje několik možností, jak řazení a filtrování dat v <xref:System.Data.DataTable>:  
   
--   Můžete použít <xref:System.Data.DataView.Sort%2A> vlastnosti a určit jeden nebo více sloupců, pořadí řazení a zahrnují (vzestupně) ASC a DESC (sestupně) parametry.  
+- Můžete použít <xref:System.Data.DataView.Sort%2A> vlastnosti a určit jeden nebo více sloupců, pořadí řazení a zahrnují (vzestupně) ASC a DESC (sestupně) parametry.  
   
--   Můžete použít <xref:System.Data.DataView.ApplyDefaultSort%2A> automaticky vytvořit pořadí řazení ve vzestupném pořadí, nastavenou na sloupec primárního klíče nebo sloupců v tabulce. <xref:System.Data.DataView.ApplyDefaultSort%2A> platí, jen když **řazení** vlastnost je odkaz s hodnotou null nebo prázdný řetězec, a pokud tabulka má definován primární klíč.  
+- Můžete použít <xref:System.Data.DataView.ApplyDefaultSort%2A> automaticky vytvořit pořadí řazení ve vzestupném pořadí, nastavenou na sloupec primárního klíče nebo sloupců v tabulce. <xref:System.Data.DataView.ApplyDefaultSort%2A> platí, jen když **řazení** vlastnost je odkaz s hodnotou null nebo prázdný řetězec, a pokud tabulka má definován primární klíč.  
   
--   Můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti a určit tak podmnožiny řádků podle jejich hodnoty sloupce. Další informace o zobrazení platných výrazů pro **RowFilter** vlastnost, naleznete v tématu referenční informace pro <xref:System.Data.DataColumn.Expression%2A> vlastnost <xref:System.Data.DataColumn> třídy.  
+- Můžete použít <xref:System.Data.DataView.RowFilter%2A> vlastnosti a určit tak podmnožiny řádků podle jejich hodnoty sloupce. Další informace o zobrazení platných výrazů pro **RowFilter** vlastnost, naleznete v tématu referenční informace pro <xref:System.Data.DataColumn.Expression%2A> vlastnost <xref:System.Data.DataColumn> třídy.  
   
      Pokud chcete vrátit výsledky konkrétní dotaz na data, na rozdíl od poskytují dynamický náhled na podmnožinu dat, může použít <xref:System.Data.DataView.Find%2A> nebo <xref:System.Data.DataView.FindRows%2A> metody **DataView** k dosažení nejlepšího výkonu dosáhnete spíše než nastavení **RowFilter** vlastnost. Nastavení **RowFilter** vlastnost znovu sestaví index pro data, přidání režie pro vaši aplikaci a snížit výkon. **RowFilter** vlastnost je nejvhodnější v aplikace vázané na data kde vázaného ovládacího prvku zobrazí filtrované výsledky. **Najít** a **FindRows** metody využívat bez nutnosti index znovu sestavit aktuální index. Další informace o **najít** a **FindRows** metody, naleznete v tématu [vyhledání řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md).  
   
--   Můžete použít <xref:System.Data.DataView.RowStateFilter%2A> vlastnosti a určit, jaké verze řádků k zobrazení. **DataView** implicitně spravuje verzi řádku, která se má zveřejnit, v závislosti na **RowState** základní řádku. Například pokud **Vlastnost RowStateFilter** je nastavena na **DataViewRowState.Deleted**, **DataView** zpřístupňuje **původní** verze řádku všechny **odstraněné** řádky, protože neexistuje žádný **aktuální** verze řádku. Můžete určit, kterou verzi řádku řádku je vystaven pomocí **RowVersion** vlastnost **DataRowView**.  
+- Můžete použít <xref:System.Data.DataView.RowStateFilter%2A> vlastnosti a určit, jaké verze řádků k zobrazení. **DataView** implicitně spravuje verzi řádku, která se má zveřejnit, v závislosti na **RowState** základní řádku. Například pokud **Vlastnost RowStateFilter** je nastavena na **DataViewRowState.Deleted**, **DataView** zpřístupňuje **původní** verze řádku všechny **odstraněné** řádky, protože neexistuje žádný **aktuální** verze řádku. Můžete určit, kterou verzi řádku řádku je vystaven pomocí **RowVersion** vlastnost **DataRowView**.  
   
      V následující tabulce jsou uvedeny možnosti **DataViewRowState**.  
   

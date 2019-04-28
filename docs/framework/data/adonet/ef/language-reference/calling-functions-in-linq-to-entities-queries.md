@@ -3,11 +3,11 @@ title: Volání funkcí v dotazech LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 12a525a9-727c-4464-a0c7-71a0ef541792
 ms.openlocfilehash: 6fa1a7204a91a62c30e8683c449cc2be44132b4f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605779"
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a>Volání funkcí v dotazech LINQ to Entities
 Témata v této části popisují, jak k volání funkce v jazyce LINQ dotazy na entity.  

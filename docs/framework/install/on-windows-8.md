@@ -7,10 +7,10 @@ ms.author: mairaw
 ms.date: 04/18/2019
 ms.openlocfilehash: 9f3d3aa35e69ab850ca6d6f564796fe43c65fbd1
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643787"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Instalace rozhraní .NET Framework v systému Windows 8 a Windows Server 2012
 

@@ -5,11 +5,11 @@ ms.date: 04/10/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
 ms.openlocfilehash: fcbac0e0d17d2481d42e715a7f2790586e31d085
-ms.sourcegitcommit: 8080271c246b57f4fb68c28369634bff46843424
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59553833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614268"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Kurz: Kontejnerizace .NET Core aplikace
 

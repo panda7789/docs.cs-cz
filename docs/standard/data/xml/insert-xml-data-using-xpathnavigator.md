@@ -10,11 +10,11 @@ ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 224e4f3db31e4818833eb8411f44f547538534fc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650242"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>Vložení dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod pro vložení na stejné úrovni, podřízený a atribut uzly v dokumentu XML. Chcete-li používat tyto metody <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí být vlastnost `true`.  
@@ -29,13 +29,13 @@ ms.locfileid: "54517250"
 ### <a name="inserting-sibling-nodes"></a>Vkládání uzlů na stejné úrovni  
  <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje následující metody, chcete-li vložit uzlů na stejné úrovni.  
   
--   <xref:System.Xml.XPath.XPathNavigator.InsertAfter%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.InsertAfter%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.InsertBefore%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.InsertBefore%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.InsertElementAfter%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.InsertElementAfter%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.InsertElementBefore%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.InsertElementBefore%2A>  
   
  Tyto metody vložit na stejné úrovni uzly před a za uzel <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na.  
   
@@ -58,13 +58,13 @@ ms.locfileid: "54517250"
 ### <a name="inserting-child-nodes"></a>Vkládání podřízené uzly  
  <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje následující metody, chcete-li vložit podřízené uzly.  
   
--   <xref:System.Xml.XPath.XPathNavigator.AppendChild%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.AppendChild%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.AppendChildElement%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.AppendChildElement%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.PrependChildElement%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.PrependChildElement%2A>  
   
  Tyto metody připojení a předřaďte podřízených uzlů na konci a na začátek seznamu podřízené uzly uzlu <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na.  
   
@@ -87,9 +87,9 @@ ms.locfileid: "54517250"
 ### <a name="inserting-attribute-nodes"></a>Vkládání uzlů atributů  
  <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje následující metody, chcete-li vložit uzlů atributů.  
   
--   <xref:System.Xml.XPath.XPathNavigator.CreateAttribute%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.CreateAttribute%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.CreateAttributes%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.CreateAttributes%2A>  
   
  Tyto metody vložení, atribut uzlů na uzlu elementu <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na. <xref:System.Xml.XPath.XPathNavigator.CreateAttribute%2A> Metoda vytvoří uzel atributu na uzlu elementu <xref:System.Xml.XPath.XPathNavigator> objekt je aktuálně umístěn na použití předponu oboru názvů, místní název, identifikátor URI oboru názvů a hodnotě zadané jako parametry. <xref:System.Xml.XPath.XPathNavigator.CreateAttributes%2A> Vrátí metoda <xref:System.Xml.XmlWriter> objekt používaný pro vkládání uzlů atributů.  
   
@@ -227,26 +227,26 @@ navigator.SetTypedValue(DateTime.Now);
   
  Tady jsou možné obor názvů konflikty.  
   
--   Pokud je obor názvů v obor v rámci <xref:System.Xml.XmlReader> objektu kontextu, kde není v předponu pro obor názvů identifikátoru URI mapování <xref:System.Xml.XPath.XPathNavigator> kontext objektu na nově vložený uzel se přidá nová deklarace oboru názvů.  
+- Pokud je obor názvů v obor v rámci <xref:System.Xml.XmlReader> objektu kontextu, kde není v předponu pro obor názvů identifikátoru URI mapování <xref:System.Xml.XPath.XPathNavigator> kontext objektu na nově vložený uzel se přidá nová deklarace oboru názvů.  
   
--   Pokud stejný obor názvů identifikátoru URI je v oboru v rámci i <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale má jinou předponu k němu mapována v obou kontextech, přidá novou deklaraci oboru názvů na nově vložený uzel s předponou a z identifikátoru URI oboru názvů <xref:System.Xml.XmlReader> objektu.  
+- Pokud stejný obor názvů identifikátoru URI je v oboru v rámci i <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale má jinou předponu k němu mapována v obou kontextech, přidá novou deklaraci oboru názvů na nově vložený uzel s předponou a z identifikátoru URI oboru názvů <xref:System.Xml.XmlReader> objektu.  
   
--   Pokud stejnou předponu oboru názvů je v oboru v rámci i <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu nově vložený uzel má jiný obor názvů identifikátoru URI k němu mapována v obou kontextech, se přidá nová deklarace oboru názvů, ale které znovu deklaruje tuto předponu oboru názvů identifikátoru URI na základě <xref:System.Xml.XmlReader> objektu.  
+- Pokud stejnou předponu oboru názvů je v oboru v rámci i <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu nově vložený uzel má jiný obor názvů identifikátoru URI k němu mapována v obou kontextech, se přidá nová deklarace oboru názvů, ale které znovu deklaruje tuto předponu oboru názvů identifikátoru URI na základě <xref:System.Xml.XmlReader> objektu.  
   
--   Pokud předponu, stejně jako obor názvů URI v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu je stejný, bez nové deklarace oboru názvů se přidá na nově vložený uzel.  
+- Pokud předponu, stejně jako obor názvů URI v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu je stejný, bez nové deklarace oboru názvů se přidá na nově vložený uzel.  
   
 > [!NOTE]
 >  Výše uvedený popis platí také pro deklarace oboru názvů s prázdnou `string` jako předpona (například výchozí deklaraci oboru názvů).  
   
  Toto jsou možné `xml:lang` je v konfliktu.  
   
--   Pokud dojde `xml:lang` atribut v oboru v rámci <xref:System.Xml.XmlReader> objektu kontextu, ale ne v <xref:System.Xml.XPath.XPathNavigator> kontext objektu `xml:lang` atribut, jehož hodnota je převzata z <xref:System.Xml.XmlReader> je objekt přidán na nově vložený uzel.  
+- Pokud dojde `xml:lang` atribut v oboru v rámci <xref:System.Xml.XmlReader> objektu kontextu, ale ne v <xref:System.Xml.XPath.XPathNavigator> kontext objektu `xml:lang` atribut, jehož hodnota je převzata z <xref:System.Xml.XmlReader> je objekt přidán na nově vložený uzel.  
   
--   Pokud dojde `xml:lang` atribut v oboru v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale každý má jinou hodnotu, `xml:lang` atribut, jehož hodnota je převzata z <xref:System.Xml.XmlReader> objekt je přidat do nově vložený uzel.  
+- Pokud dojde `xml:lang` atribut v oboru v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale každý má jinou hodnotu, `xml:lang` atribut, jehož hodnota je převzata z <xref:System.Xml.XmlReader> objekt je přidat do nově vložený uzel.  
   
--   Pokud dojde `xml:lang` atribut v oboru v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale každý se stejnou hodnotou, nové `xml:lang` přidat atribut na nově vložený uzel.  
+- Pokud dojde `xml:lang` atribut v oboru v obou <xref:System.Xml.XmlReader> objektu kontextu a <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale každý se stejnou hodnotou, nové `xml:lang` přidat atribut na nově vložený uzel.  
   
--   Pokud dojde `xml:lang` atribut v oboru v rámci <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale žádné existující v <xref:System.Xml.XmlReader> objektu kontextu, ne `xml:lang` přidat atribut na nově vložený uzel.  
+- Pokud dojde `xml:lang` atribut v oboru v rámci <xref:System.Xml.XPath.XPathNavigator> objektu kontextu, ale žádné existující v <xref:System.Xml.XmlReader> objektu kontextu, ne `xml:lang` přidat atribut na nově vložený uzel.  
   
 ## <a name="inserting-nodes-with-xmlwriter"></a>Vkládání uzlů s XmlWriter  
  Jsou přetížené metody použité k vložení na stejné úrovni, podřízený a atribut uzly, které jsou popsané v části "Vkládání uzlů a hodnoty". <xref:System.Xml.XPath.XPathNavigator.InsertAfter%2A>, <xref:System.Xml.XPath.XPathNavigator.InsertBefore%2A>, <xref:System.Xml.XPath.XPathNavigator.AppendChild%2A>, <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A> a <xref:System.Xml.XPath.XPathNavigator.CreateAttributes%2A> metody <xref:System.Xml.XPath.XPathNavigator> třídy vrátit <xref:System.Xml.XmlWriter> objekt použitý k vložení uzlů.  
@@ -271,11 +271,11 @@ navigator.SetTypedValue(DateTime.Now);
   
  Tady jsou důležité poznámky ke zvážení při použití více <xref:System.Xml.XmlWriter> objekty.  
   
--   Fragmenty XML autorem <xref:System.Xml.XmlWriter> objekty jsou přidány do souboru XML dokumentů, kdy <xref:System.Xml.XmlWriter.Close%2A> metoda jednotlivých <xref:System.Xml.XmlWriter> objekt, se nazývá. Do tohoto bodu <xref:System.Xml.XmlWriter> objekt zapisuje odpojené fragment. Pokud se operace provádí v dokumentu XML, jakékoli fragmenty jsou zapsána pomocí <xref:System.Xml.XmlWriter> objektu před <xref:System.Xml.XmlWriter.Close%2A> byla volána, nejsou ovlivněny.  
+- Fragmenty XML autorem <xref:System.Xml.XmlWriter> objekty jsou přidány do souboru XML dokumentů, kdy <xref:System.Xml.XmlWriter.Close%2A> metoda jednotlivých <xref:System.Xml.XmlWriter> objekt, se nazývá. Do tohoto bodu <xref:System.Xml.XmlWriter> objekt zapisuje odpojené fragment. Pokud se operace provádí v dokumentu XML, jakékoli fragmenty jsou zapsána pomocí <xref:System.Xml.XmlWriter> objektu před <xref:System.Xml.XmlWriter.Close%2A> byla volána, nejsou ovlivněny.  
   
--   Pokud není otevřený <xref:System.Xml.XmlWriter> odstranění objektu na konkrétní podstrom XML a že podstrom <xref:System.Xml.XmlWriter> objekt může přesto přidat do dílčí stromu. Podstrom jednoduše stane odstraněné fragment.  
+- Pokud není otevřený <xref:System.Xml.XmlWriter> odstranění objektu na konkrétní podstrom XML a že podstrom <xref:System.Xml.XmlWriter> objekt může přesto přidat do dílčí stromu. Podstrom jednoduše stane odstraněné fragment.  
   
--   Pokud je položek víc <xref:System.Xml.XmlWriter> objektů jsou otevřené na stejné místo v dokumentu XML, jsou přidány do dokumentu XML v pořadí, ve kterém <xref:System.Xml.XmlWriter> objektů jsou uzavřeny, ne v pořadí, v jakém byly otevřeny.  
+- Pokud je položek víc <xref:System.Xml.XmlWriter> objektů jsou otevřené na stejné místo v dokumentu XML, jsou přidány do dokumentu XML v pořadí, ve kterém <xref:System.Xml.XmlWriter> objektů jsou uzavřeny, ne v pořadí, v jakém byly otevřeny.  
   
  Následující příklad vytvoří <xref:System.Xml.XmlDocument> objektu, vytvoří <xref:System.Xml.XPath.XPathNavigator> a pak použije <xref:System.Xml.XmlWriter> objekt vrácený <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A> metodu pro vytvoření struktury první adresáře v `books.xml` souboru. Jako příklad pak uloží `book.xml` souboru.  
   

@@ -14,10 +14,10 @@ helpviewer_keywords:
 - types [C#], parameterless constructor return values
 ms.openlocfilehash: 1eb2fbc707b7c1ff9575e694457fa975f3d2e363
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59976505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661851"
 ---
 # <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (referenční dokumentace jazyka C#)
 

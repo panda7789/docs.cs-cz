@@ -11,11 +11,11 @@ ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3cb310dc6d786c3c7711f4c194c6623324c777dd
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58412393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642864"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 

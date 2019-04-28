@@ -11,20 +11,20 @@ helpviewer_keywords:
 - horizontal alignment of Tilebrushes [WPF]
 ms.assetid: 65ae89bd-9246-4c9e-bde4-2fb991d4060d
 ms.openlocfilehash: ddef63bba7fce1bfb8d50b4f2dbaaddfa76709ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651303"
 ---
 # <a name="how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush"></a>Postupy: Nastavení vodorovného a svislého zarovnání prvku TileBrush
 Tento příklad ukazuje, jak ovládací prvek vodorovné a svislé zarovnání obsahu v bloku. K řízení vodorovného a svislého zarovnání <xref:System.Windows.Media.TileBrush>, použijte jeho <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti.  
   
  <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti <xref:System.Windows.Media.TileBrush> se používají Pokud je splněna jedna z následujících podmínek:  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.Uniform> nebo <xref:System.Windows.Media.Stretch.UniformToFill> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> mají různé poměry stran.  
+- <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.Uniform> nebo <xref:System.Windows.Media.Stretch.UniformToFill> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> mají různé poměry stran.  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.None> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> jsou různých velikostí.  
+- <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.None> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> jsou různých velikostí.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad Zarovná obsah <xref:System.Windows.Media.DrawingBrush>, což je typ <xref:System.Windows.Media.TileBrush>, do levého horního rohu jeho dlaždice. Zarovnání obsahu v příkladu je nastavena <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.DrawingBrush> k <xref:System.Windows.Media.AlignmentX.Left> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Top>. Tento příklad vytvoří následující výstup.  

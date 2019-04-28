@@ -10,18 +10,18 @@ helpviewer_keywords:
 - cache [.NET Framework], time-based policies
 ms.assetid: 8d84f936-2376-4356-9264-03162e0f9279
 ms.openlocfilehash: d4a35882d99a87ca5bf22fb386a87158e3c2d664
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59154567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642656"
 ---
 # <a name="how-to-customize-a-time-based-cache-policy"></a>Postupy: Přizpůsobení zásad mezipaměti na základě času
 Při vytváření zásad mezipaměti na základě času, můžete přizpůsobit chování ukládání do mezipaměti tak, že zadáte hodnoty pro maximální stáří, minimální novost, maximální neaktuálnost nebo datum synchronizace mezipaměti. <xref:System.Net.Cache.HttpRequestCachePolicy> Objekt, který poskytuje několik konstruktorů, které vám umožňují určit platné kombinace těchto hodnot.  
   
 ### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a>Vytvoření zásad mezipaměti na základě času, který používá data synchronizaci mezipaměti  
   
--   Vytvoření zásady mezipaměti na základě času, který používá data synchronizaci mezipaměti předáním <xref:System.DateTime> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
+- Vytvoření zásady mezipaměti na základě času, který používá data synchronizaci mezipaměti předáním <xref:System.DateTime> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateLastSyncPolicy(DateTime when)  
@@ -52,7 +52,7 @@ Level:Default CacheSyncDate:1/14/2004 8:07:30 AM
   
 ### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness"></a>Vytvoření zásad mezipaměti na základě času, který je založen na minimální novost  
   
--   Vytvoření zásady mezipaměti na základě času, který je založen na minimální novost zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
+- Vytvoření zásady mezipaměti na základě času, který je založen na minimální novost zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
@@ -84,7 +84,7 @@ Level:Default MinFresh:3600
   
 ### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness-and-maximum-age"></a>Vytvoření zásad mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří  
   
--   Vytvoření zásady mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objektů <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, chcete-li určit maximální stáří prostředky a druhý k určení minimální novost povolené pro objekt vrácený z mezipaměti.  
+- Vytvoření zásady mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objektů <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, chcete-li určit maximální stáří prostředky a druhý k určení minimální novost povolené pro objekt vrácený z mezipaměti.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - collection initializers [C#], with Dictionary
 ms.assetid: 25283922-f8ee-40dc-a639-fac30804ec71
 ms.openlocfilehash: acd426b7652705ff395df9a81cde8ef549af0e31
-ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54084690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646394"
 ---
 # <a name="how-to-initialize-a-dictionary-with-a-collection-initializer-c-programming-guide"></a>Způsob inicializace slovníku pomocí inicializátoru kolekce (C# Programming Guide)
 

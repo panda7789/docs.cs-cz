@@ -18,11 +18,11 @@ helpviewer_keywords:
 - ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
 ms.openlocfilehash: 9c434ce0f5934509489a7deeced9e9e579d9cf7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642162"
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k datovým prostředkům můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a aby to pomohl ostatním dosažení optimálního škálování a výkon.  

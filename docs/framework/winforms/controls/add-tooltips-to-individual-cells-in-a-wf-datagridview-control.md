@@ -11,11 +11,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], adding tooltips
 ms.assetid: 2a81f9de-d58b-4ea8-bc0b-8d93c2f4cf78
 ms.openlocfilehash: 3307c92a13e5730de6dce0fe45b924e44b7af554
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640293"
 ---
 # <a name="how-to-add-tooltips-to-individual-cells-in-a-windows-forms-datagridview-control"></a>Postupy: Přidání popisů jednotlivých buněk v ovládacím prvku Windows Forms DataGridView
 Ve výchozím nastavení, popisy slouží k zobrazení hodnoty <xref:System.Windows.Forms.DataGridView> buňky, které jsou příliš malé a zobrazit jejich celý obsah. Toto chování můžete přepsat však můžete nastavit text popisku hodnoty jednotlivých buněk. To je užitečné, chcete-li zobrazit uživatelům další informace o buňku nebo můžete uživatelům poskytnout alternativní popis obsah buňky. Například pokud máte řádek, který zobrazuje ikony stavu, můžete zadat text vysvětlení použití popisů tlačítek.  
@@ -24,7 +24,7 @@ Ve výchozím nastavení, popisy slouží k zobrazení hodnoty <xref:System.Wind
   
 ### <a name="to-add-a-tooltip-to-a-cell"></a>Chcete-li přidat popisek buňky  
   
--   Nastavte <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A?displayProperty=nameWithType> vlastnost.  
+- Nastavte <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A?displayProperty=nameWithType> vlastnost.  
   
      [!code-cpp[System.Windows.Forms.DataGridViewCell.ToolTipText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCell.ToolTipText/cpp/datagridviewcell.tooltiptext.cpp#1)]
      [!code-csharp[System.Windows.Forms.DataGridViewCell.ToolTipText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCell.ToolTipText/CS/datagridviewcell.tooltiptext.cs#1)]
@@ -32,11 +32,11 @@ Ve výchozím nastavení, popisy slouží k zobrazení hodnoty <xref:System.Wind
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Tento příklad vyžaduje:  
+- Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` , která obsahuje sloupec s názvem `Rating` pro zobrazení hodnoty řetězců jeden až čtyři hvězdičky ("*") symboly. <xref:System.Windows.Forms.DataGridView.CellFormatting> Události ovládacího prvku musí být přidružená k metodě obslužné rutiny události v příkladu.  
+- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1` , která obsahuje sloupec s názvem `Rating` pro zobrazení hodnoty řetězců jeden až čtyři hvězdičky ("*") symboly. <xref:System.Windows.Forms.DataGridView.CellFormatting> Události ovládacího prvku musí být přidružená k metodě obslužné rutiny události v příkladu.  
   
--   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Po vytvoření vazby <xref:System.Windows.Forms.DataGridView> řízení k externímu zdroji dat nebo poskytnutí zdroje dat tak, že implementace virtuálního režimu, může dojít problémům s výkonem. Aby se zabránilo snížení výkonu při práci s velkými objemy dat, zpracovat <xref:System.Windows.Forms.DataGridView.CellToolTipTextNeeded> události spíše než nastavení <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> vlastnost více buněk. Při zpracování této události, získání vyšší hodnoty buňky <xref:System.Windows.Forms.DataGridViewCell.ToolTipText%2A> vlastnost vyvolá událost a vrátí hodnotu <xref:System.Windows.Forms.DataGridViewCellToolTipTextNeededEventArgs.ToolTipText%2A?displayProperty=nameWithType> vlastnost jako uvedené v události obslužné rutiny.  

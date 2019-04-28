@@ -4,11 +4,11 @@ description: Další informace o základní typy (číselné, řetězce a objekt
 ms.date: 10/10/2016
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
 ms.openlocfilehash: dc91452bb261b7c799cf3b69cab5b33175148b8a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646745"
 ---
 # <a name="types-variables-and-values"></a>Typy, proměnných a hodnot
 

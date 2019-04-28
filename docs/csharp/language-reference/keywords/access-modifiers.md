@@ -6,19 +6,19 @@ helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
 ms.openlocfilehash: d87ea1ff18c4697a2c04f22cbf67720f21cbf459
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59118128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662150"
 ---
 # <a name="access-modifiers-c-reference"></a>Modifikátory přístupu (Referenční dokumentace jazyka C#)
 Modifikátory přístupu jsou klíčová slova používaná k určení je deklarovaná přístupnost člena nebo typu. Tato část představuje čtyři přístupu modifikátory přístupu:  
   
--   `public`
--   `protected`
--   `internal`
--   `private`
+- `public`
+- `protected`
+- `internal`
+- `private`
   
  Následujících šest úrovní přístupu se dá nastavit pomocí přístupu modifikátory přístupu:  
   
@@ -36,11 +36,11 @@ Modifikátory přístupu jsou klíčová slova používaná k určení je deklar
   
  Tato část představuje také následující:  
   
--   [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md): Chcete-li deklarovat šest úrovní usnadnění přístupu pomocí čtyř přístupu modifikátory přístupu.  
+- [Úrovně přístupnosti](../../../csharp/language-reference/keywords/accessibility-levels.md): Chcete-li deklarovat šest úrovní usnadnění přístupu pomocí čtyř přístupu modifikátory přístupu.  
   
--   [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md): Určuje, kde v částech programu může být odkazováno člena.  
+- [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md): Určuje, kde v částech programu může být odkazováno člena.  
   
--   [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md): Souhrn omezení týkající se použití deklaraci úrovní přístupu.  
+- [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md): Souhrn omezení týkající se použití deklaraci úrovní přístupu.  
   
 ## <a name="see-also"></a>Viz také:
 

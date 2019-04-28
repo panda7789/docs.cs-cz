@@ -9,11 +9,11 @@ dev_langs:
 - vb
 ms.custom: vs-dotnet, seodoc18
 ms.openlocfilehash: 352599d60a42a034b3d6647b1fe8f1cbf2f4572d
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647845"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Test knihovny .NET Standard s .NET Core v sadě Visual Studio 2017
 

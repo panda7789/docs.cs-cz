@@ -14,11 +14,11 @@ helpviewer_keywords:
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
 ms.openlocfilehash: 68d9365e6aed247770eb250f5a2e296b710febc2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54671288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644132"
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací s použitím rozhraní .NET Framework
 

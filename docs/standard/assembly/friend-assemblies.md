@@ -3,11 +3,11 @@ title: Přátelská sestavení (C#)
 ms.date: 03/03/2019
 ms.assetid: b65ea7de-0801-477a-a39c-e914c2cc107c
 ms.openlocfilehash: 770eb70a5350d7d26e03cb4e605b442100da2a53
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59614029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627871"
 ---
 # <a name="friend-assemblies"></a>Přátelská sestavení
 

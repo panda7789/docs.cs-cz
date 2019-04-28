@@ -7,11 +7,11 @@ helpviewer_keywords:
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
 ms.openlocfilehash: c02e4f62aabb17213ce172e7e3a773e86d1e9908
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646157"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt vlastnosti rozhraní:  

@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet, seodec18
 ms.openlocfilehash: df91d9da1f743e17072ad6106d0c4e06d751c2ea
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647056"
 ---
 # <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení C# aplikace Hello World pomocí sady .NET Core SDK v sadě Visual Studio 2017
 

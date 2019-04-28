@@ -6,11 +6,11 @@ ms.date: 03/16/2017
 titleSuffix: ''
 ms.custom: seodec18
 ms.openlocfilehash: 794aa91e11f8d7386d3fe98f692e245e8af95eaa
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647239"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Další nástroje sady SDK .NET Core a .NET Core, ve kterých tyto kurzy
 
@@ -30,7 +30,7 @@ V následujících kurzech jsou k dispozici pro získání informací o .NET Cor
 ## <a name="building-applications-with-visual-studio-code"></a>Vytváření aplikací pomocí Visual Studio Code
 
 - [Začínáme s jazykem C# a nástrojem Visual Studio Code](with-visual-studio-code.md)
-- [Začínáme s .NET Core v macOS](using-on-macos.md)
+- [Začínáme s .NET Core v systému macOS](using-on-macos.md)
 
 ## <a name="building-applications-with-visual-studio-for-mac"></a>Vytváření aplikací pomocí sady Visual Studio pro Mac
 

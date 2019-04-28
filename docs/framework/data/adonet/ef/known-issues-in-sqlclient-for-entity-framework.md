@@ -3,11 +3,11 @@ title: Známé problémy v SqlClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
 ms.openlocfilehash: a3df5a42b40e1851875c35165301af082f5d3269
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607731"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Známé problémy v SqlClient pro Entity Framework
 Tato část popisuje známé problémy související s zprostředkovatele dat .NET Framework pro SQL Server (SqlClient).  
@@ -25,15 +25,15 @@ Tato část popisuje známé problémy související s zprostředkovatele dat .N
   
  Následují některé typické scénáře, které by mohly vést k přítomnost CROSS APPLY a/nebo operátoru OUTER APPLY operátory v dotazu výstup:  
   
--   Korelační poddotaz s stránkování.  
+- Korelační poddotaz s stránkování.  
   
--   `AnyElement` Přes korelovaný poddotaz, nebo kolekci vytvořenou testovaným navigace.  
+- `AnyElement` Přes korelovaný poddotaz, nebo kolekci vytvořenou testovaným navigace.  
   
--   LINQ dotazy, které používají seskupení metody, které přijímají elementu selektor.  
+- LINQ dotazy, které používají seskupení metody, které přijímají elementu selektor.  
   
--   Dotaz, ve kterém je explicitně zadán CROSS APPLY nebo operátoru OUTER APPLY  
+- Dotaz, ve kterém je explicitně zadán CROSS APPLY nebo operátoru OUTER APPLY  
   
--   Vytvořit dotaz, který má DEREF přes konstrukci REF.  
+- Vytvořit dotaz, který má DEREF přes konstrukci REF.  
   
 ## <a name="skip-operator"></a>Operátor SKIP  
  Pokud používáte [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)], pomocí přeskočit s klauzulí ORDER BY v neklíčových sloupců může vrátit nesprávné výsledky. Větší než zadaný počet řádků se možná přeskočí, pokud neklíčový sloupec v sobě obsahuje duplicitní data. Je to kvůli jak SKIP je přeložen pro [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)]. Například následující dotaz, více než pět řádků možná přeskočí, pokud `E.NonKeyColumn` obsahují duplicitní hodnoty:  

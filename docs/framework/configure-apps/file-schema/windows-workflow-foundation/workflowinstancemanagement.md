@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 63ac89ba-c844-4ae2-96ae-cd752a90a109
 ms.openlocfilehash: 98bc1b24da6e65a11a39d133057c1bb55b003a58
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61613423"
 ---
 # <a name="workflowinstancemanagement"></a>\<workflowInstanceManagement>
 Chování služby, která vám umožní zadat nastavení, které určují, jak jsou spuštěny instance pracovních postupů, včetně stálost, neošetřené výjimky chování a nečinnosti chování.  

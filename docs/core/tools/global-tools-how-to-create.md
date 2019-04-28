@@ -5,11 +5,11 @@ author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
 ms.openlocfilehash: 3d0a64d0473f51d73892cd40633e2982c1130469
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647941"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
 

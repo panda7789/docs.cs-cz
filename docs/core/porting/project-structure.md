@@ -5,11 +5,11 @@ author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: ab484ccc2c5b51b2ee1dca57df51669d288f3e6b
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663177"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
 

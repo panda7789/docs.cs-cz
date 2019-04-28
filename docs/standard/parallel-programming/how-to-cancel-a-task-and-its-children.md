@@ -11,11 +11,11 @@ ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 08e5712db60fb09b48d6be9f35737c9a884d1ce8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638785"
 ---
 # <a name="how-to-cancel-a-task-and-its-children"></a>Postupy: Zrušení úlohy a podřízených elementů
 Tyto příklady znázorňují, jak provádět následující úkoly:  

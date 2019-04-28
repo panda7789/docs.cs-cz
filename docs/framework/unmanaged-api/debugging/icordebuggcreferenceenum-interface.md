@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8f83d2ac9ca96145fa89b283fec42c71858097f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651620"
 ---
 # <a name="icordebuggcreferenceenum-interface"></a>ICorDebugGCReferenceEnum – rozhraní
 Poskytuje enumerátor pro objekty, které budou uvolněny z paměti.  
@@ -39,11 +39,11 @@ Poskytuje enumerátor pro objekty, které budou uvolněny z paměti.
   
  [Cor_gc_reference –](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) objekty v kolekci vyplněn prostředkem tato metoda představují tři typy objektů:  
   
--   Objekty ze všech spravovaných zásobníků. To zahrnuje živé odkazy ve spravovaném kódu, jakož i objekty vytvořené modulem common language runtime.  
+- Objekty ze všech spravovaných zásobníků. To zahrnuje živé odkazy ve spravovaném kódu, jakož i objekty vytvořené modulem common language runtime.  
   
--   Objekty z tabulky popisovače. Jedná se o silná odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
+- Objekty z tabulky popisovače. Jedná se o silná odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
   
--   Objekty ve frontě finalizační metodu. Fronta finalizační metody kořeny objekty, dokud finalizační metodu.  
+- Objekty ve frontě finalizační metodu. Fronta finalizační metody kořeny objekty, dokud finalizační metodu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

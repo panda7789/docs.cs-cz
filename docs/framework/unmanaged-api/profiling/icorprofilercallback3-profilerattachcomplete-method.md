@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6bd3326aa5807bd7f2dd882991d211cbbf873067
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650828"
 ---
 # <a name="icorprofilercallback3profilerattachcomplete-method"></a>ICorProfilerCallback3::ProfilerAttachComplete – metoda
 Volá se, modulem common language runtime (CLR), která označuje, že profiler nyní volat [icorprofilerinfo3::enumjitedfunctions –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enumjitedfunctions-method.md) a [ICorProfilerInfo3::EnumModules](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enummodules-method.md) můžete projít metody.  
@@ -36,9 +36,9 @@ HRESULT ProfilerAttachComplete ();
 ## <a name="remarks"></a>Poznámky  
  `ProfilerAttachComplete` Zpětného volání je vydané po [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) metoda je volána. Označuje následující:  
   
--   Zpětná volání, které bylo vyžádáno profilerem v `InitializeForAttach` aktivaci.  
+- Zpětná volání, které bylo vyžádáno profilerem v `InitializeForAttach` aktivaci.  
   
--   Profiler teď můžete provádět zachytávání přidružené identifikátory bez obavy z chybějícího upozornění.  
+- Profiler teď můžete provádět zachytávání přidružené identifikátory bez obavy z chybějícího upozornění.  
   
  Modul CLR bude ignorovat návratovou hodnotu z této zpětné volání.  
   

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
 ms.openlocfilehash: b57465d4cf89bb38dd5cda70f090f444e52ea819
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641928"
 ---
 # <a name="security-in-network-programming"></a>Zabezpečení v síťovém programování
 

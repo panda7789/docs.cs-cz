@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 7139d585-4034-4dfa-916f-2120a8b72792
 ms.openlocfilehash: 78d6c9287c5c69c41bd2f50abd8d57dcd1cb4e06
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605806"
 ---
 # <a name="how-to-execute-a-query-that-returns-primitivetype-results"></a>Postupy: Provedení dotazu, který vrátí výsledky typu PrimitiveType
 Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand>a jak načíst <xref:System.Data.Metadata.Edm.PrimitiveType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>.  

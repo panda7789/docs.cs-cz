@@ -9,10 +9,10 @@ helpviewer_keywords:
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
 ms.openlocfilehash: becc3fc8a75cd4d2d5e0c1db2858b15b8b61ae20
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646537"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 Pokaždé, když se [třídy](../../../csharp/language-reference/keywords/class.md) nebo [– struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá konstruktoru. Třídy nebo struktury může mít více konstruktorů, které přijímají různé argumenty. Konstruktory povolit programátorovi, aby nastavení výchozích hodnot, omezení vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady najdete v tématu [pomocí konstruktorů](../../../csharp/programming-guide/classes-and-structs/using-constructors.md) a [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  

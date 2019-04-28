@@ -5,11 +5,11 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 04ad383586f974bb2dccc4623a9a254f5668dab4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640176"
 ---
 # <a name="architecture-approaches"></a>Přístupy k architektuře
 
@@ -77,7 +77,7 @@ Bez serveru slouží k implementaci jednu nebo více vrstev.
 
 Mikroslužby nemusí být vzájemně se vylučující k jiné přístupy k architektuře. Například může použít N-vrstvou architekturu mikroslužeb pro střední vrstvy. Také je možné implementovat mikroslužby v celou řadu způsobů, z adresáře v hostitelích služby IIS do kontejnerů. Zkontrolujte charakteristiky mikroslužeb je zvláště ideální pro implementace bez serveru.
 
-![Architektura Mikroslužeb](./media/microservices-architecture.png)
+![Architektura mikroslužeb](./media/microservices-architecture.png)
 
 Profesionálové mikroslužeb patří:
 

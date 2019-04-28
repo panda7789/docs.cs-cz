@@ -9,20 +9,20 @@ helpviewer_keywords:
 - typography
 ms.assetid: 068c0ef3-f6ee-4d58-a7b6-eb2531ead408
 ms.openlocfilehash: ccbd5e236b47d1d870c9b77cfa2b3880619cf3cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651516"
 ---
 # <a name="three-categories-of-graphics-services"></a>Tři kategorie grafických služeb
 Nabídky grafiky ve Windows Forms spadají do následujících tří hlavních kategorií:  
   
--   Dvourozměrné (2-D) vektorové grafiky  
+- Dvourozměrné (2-D) vektorové grafiky  
   
--   Vytvoření bitové kopie  
+- Vytvoření bitové kopie  
   
--   Typografie  
+- Typografie  
   
 ## <a name="2-d-vector-graphics"></a>2D vektorová grafika  
  Primitiv; jsou dvojrozměrná vektorová grafika například čáry, křivky a údaje. která jsou určena pomocí sady bodů na systém souřadnic. Například rovné čáry je určená jeho dva koncové body a je určen bod poskytuje místo jeho levého horního rohu a dvojici čísel poskytuje svou šířku a výšku obdélníku. Jednoduché cesta je určena pole body, které jsou spojeny čarami přímo. Bézierovy křivky je sofistikované křivky určené čtyři kontrolní body.  

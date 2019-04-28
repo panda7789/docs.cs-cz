@@ -10,10 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3617492d905270370453735d6f6b74e38a9449d8
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643748"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework
 

@@ -5,10 +5,10 @@ ms.date: 04/10/2019
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
 ms.openlocfilehash: 5ace3c4552184b848b90dee3516d549ca8fd5806
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61652023"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: fd15f8a5-3b4c-46d0-a561-4559ab2a4705
 ms.openlocfilehash: dae044a9d7802e858f1f24dd4aa0f1de8f6cba7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607008"
 ---
 # <a name="writing-dataset-contents-as-xml-data"></a>Kopírování obsahu datové sady jako dat XML
 Napište reprezentaci v jazyce XML v ADO.NET <xref:System.Data.DataSet>, s nebo bez jeho schématu. Je-li informace o schématu zahrnuty vložené XML, je zapsán pomocí jazyka pro definici schématu XML (XSD). Schéma obsahuje definice tabulky <xref:System.Data.DataSet> a také definice relace a omezení.  

@@ -3,11 +3,11 @@ title: Syntaxe připojovacího řetězce
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
 ms.openlocfilehash: 4c5ed5000f075fb637915dc40e122a9337176e36
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608018"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 Každý poskytovatel dat rozhraní .NET Framework má `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxe specifické připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. V následující tabulce jsou uvedeny zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -22,13 +22,13 @@ Každý poskytovatel dat rozhraní .NET Framework má `Connection` objekt, kter�
 ## <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců  
  ADO.NET 2.0 zavedeny následující tvůrci připojovacích řetězců pro zprostředkovatele dat .NET Framework.  
   
--   <xref:System.Data.SqlClient.SqlConnectionStringBuilder>  
+- <xref:System.Data.SqlClient.SqlConnectionStringBuilder>  
   
--   <xref:System.Data.OleDb.OleDbConnectionStringBuilder>  
+- <xref:System.Data.OleDb.OleDbConnectionStringBuilder>  
   
--   <xref:System.Data.Odbc.OdbcConnectionStringBuilder>  
+- <xref:System.Data.Odbc.OdbcConnectionStringBuilder>  
   
--   <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
+- <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
   
  Tvůrci připojovacích řetězců umožňuje vytvářet syntakticky správný připojovací řetězce v době běhu, takže není potřeba ručně zřetězit hodnoty připojovacího řetězce v kódu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../docs/framework/data/adonet/connection-string-builders.md).  
 

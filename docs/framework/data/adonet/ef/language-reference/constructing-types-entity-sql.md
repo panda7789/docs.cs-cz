@@ -3,11 +3,11 @@ title: Vytváření typů (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 41fa7bde-8d20-4a3f-a3d2-fb791e128010
 ms.openlocfilehash: 53aa7fcc82a476c8b8bd87b059e08bee6741c0d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605832"
 ---
 # <a name="constructing-types-entity-sql"></a>Vytváření typů (Entity SQL)
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] nabízí tři druhy konstruktory: řádek konstruktory, konstruktory s názvem typu a kolekce konstruktory.  
@@ -21,9 +21,9 @@ ms.locfileid: "59073777"
   
  Výraz aliasing v konstruktoru row platí následující pravidla:  
   
--   Výrazy v konstruktoru row nelze odkazovat na jiné aliasy v konstruktoru stejné.  
+- Výrazy v konstruktoru row nelze odkazovat na jiné aliasy v konstruktoru stejné.  
   
--   Dvou výrazů ve stejné konstruktor row nemůže mít stejný alias.  
+- Dvou výrazů ve stejné konstruktor row nemůže mít stejný alias.  
   
  Další informace o konstruktorech řádku, naleznete v tématu [řádek](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md).  
   

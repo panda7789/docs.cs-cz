@@ -3,11 +3,11 @@ title: Zachování dvojic název hodnota (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 57ac2072-d9f5-432b-84f0-a889c62fd813
 ms.openlocfilehash: 67bde0954b74b7e5145dd2d930e16feb3371a881
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650945"
 ---
 # <a name="maintaining-namevalue-pairs-visual-basic"></a>Zachování dvojic název/hodnota (Visual Basic)
 Mnoho aplikací nutné udržovat informace, které nejlépe se ukládají jako dvojice název/hodnota. Tyto informace mohou být informace o konfiguraci nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje některé metody, které usnadňují zachovat sadu párů název/hodnota. Buď můžete zachovat informace jako atributy nebo sadu podřízených elementů.  
@@ -19,19 +19,19 @@ Mnoho aplikací nutné udržovat informace, které nejlépe se ukládají jako d
   
  <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> můžete přidat, upravit nebo odebrat atributy elementu.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného prvku.  
+- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného prvku.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s některými zadaný obsahu, obsah atributu nahrazují se zadaným obsahem.  
+- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s některými zadaný obsahu, obsah atributu nahrazují se zadaným obsahem.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut se odebere ze svého nadřazeného objektu.  
+- Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut se odebere ze svého nadřazeného objektu.  
   
  <xref:System.Xml.Linq.XElement.SetElementValue%2A> můžete přidat, upravit nebo odebrat podřízené prvky prvku.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného prvku.  
+- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného prvku.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s některými zadaný obsahu, obsah elementu se nahradí se zadaným obsahem.  
+- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s některými zadaný obsahu, obsah elementu se nahradí se zadaným obsahem.  
   
--   Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a zadejte hodnotu null pro obsah, elementu se odebere ze svého nadřazeného objektu.  
+- Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a zadejte hodnotu null pro obsah, elementu se odebere ze svého nadřazeného objektu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří element se žádné atributy. Poté použije <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.  

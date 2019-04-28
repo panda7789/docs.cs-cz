@@ -5,11 +5,11 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
 ms.openlocfilehash: 2ec7f57250db8779552305b2ee69cbcf1db55d0c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614155"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 

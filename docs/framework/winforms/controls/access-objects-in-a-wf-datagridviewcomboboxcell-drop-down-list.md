@@ -10,11 +10,11 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], accessing objects in DataGridViewComboBoxCell drop-down lists
 ms.assetid: bcbe794a-d1fa-47f8-b5a3-5f085b32097d
 ms.openlocfilehash: 17b7c93effe9338a9e2d6cb207a948a956d9b666
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640423"
 ---
 # <a name="how-to-access-objects-in-a-windows-forms-datagridviewcomboboxcell-drop-down-list"></a>Postupy: Přístup k objektům v rozevíracím seznamu Windows Forms DataGridViewComboBoxCell
 Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:System.Windows.Forms.DataGridViewComboBoxColumn> a <xref:System.Windows.Forms.DataGridViewComboBoxCell> typy umožňují přidat libovolné objekty do rozevíracích seznamů. Pomocí této funkce může představovat komplexní státy v rozevíracím seznamu bez nutnosti mít uložené odpovídající objekty v samostatné kolekce.  
@@ -44,7 +44,7 @@ Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:Syste
   
 ### <a name="to-retrieve-the-currently-selected-business-object"></a>Aby se načetl objekt aktuálně vybrané obchodní  
   
--   Získat buňku <xref:System.Windows.Forms.DataGridViewCell.Value%2A> vlastnost a přetypujte ji pro obchodní typ objektu.  
+- Získat buňku <xref:System.Windows.Forms.DataGridViewCell.Value%2A> vlastnost a přetypujte ji pro obchodní typ objektu.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewComboBoxObjectBinding#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/CS/form1.cs#120)]
      [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#120)]  
@@ -66,7 +66,7 @@ Podobně jako <xref:System.Windows.Forms.ComboBox> ovládací prvek, <xref:Syste
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

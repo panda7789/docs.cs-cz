@@ -3,11 +3,11 @@ title: Metoda CLR pro mapování kanonických funkcí
 ms.date: 03/30/2017
 ms.assetid: e3363261-2cb8-4b54-9555-2870be99b929
 ms.openlocfilehash: 16d447e82959f5ade7210b36dcf9d06bed9c9b00
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605714"
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Metoda CLR pro mapování kanonických funkcí
 
@@ -67,10 +67,10 @@ U scénářů s LINQ dotazy na Entity Framework zahrnují určitá CLR metody ma
 |System.DateTime.UtcNow|CurrentUtcDateTime()||
 |Logická op_Equality (datum a čas `d1`, data a času `d2`)|= – operátor||
 |Logická op_GreaterThan (datum a čas `t1`, data a času `t2`)|> – operátor||
-|Logická op_GreaterThanOrEqual (datum a čas `t1`, data a času `t2`)|>= – operátor||
+|Logická op_GreaterThanOrEqual (datum a čas `t1`, data a času `t2`)|> = – operátor||
 |Op_inequality – logická (datum a čas `t1`, data a času `t2`)|!= – operátor||
 |Logická op_LessThan (datum a čas `t1`, data a času `t2`)|< – operátor||
-|Logická op_LessThanOrEqual (datum a čas `t1`, data a času `t2`)|<= – operátor||
+|Logická op_LessThanOrEqual (datum a čas `t1`, data a času `t2`)|< = – operátor||
 |Microsoft.VisualBasic.DateAndTime.DatePart( _<br /><br /> ByVal `Interval` jako DateInterval, \_<br /><br /> ByVal `DateValue` jako datový typ DateTime, \_<br /><br /> Optional ByVal `FirstDayOfWeekValue` As FirstDayOfWeek = VbSunday, \_<br /><br /> Optional ByVal `FirstWeekOfYearValue` As FirstWeekOfYear = VbFirstJan1 \_<br /><br /> ) Jako celé číslo||Další informace v části Funkce DatePart.|
 |Microsoft.VisualBasic.DateAndTime.Now|CurrentDateTime()||
 |Microsoft.VisualBasic.DateAndTime.Year(DateTime `TimeValue`)|Year()||

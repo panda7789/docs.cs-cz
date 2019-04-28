@@ -3,11 +3,11 @@ title: příkaz listovat nástrojů DotNet
 description: Příkaz dotnet nástroj seznam uvádí zadaného nástroje rozhraní .NET Core globální z vašeho počítače.
 ms.date: 05/29/2018
 ms.openlocfilehash: d3ff7fc90faf6ede3f7de0d5af5112c77ca140db
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54712914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648565"
 ---
 # <a name="dotnet-tool-list"></a>seznam nástrojů DotNet
 

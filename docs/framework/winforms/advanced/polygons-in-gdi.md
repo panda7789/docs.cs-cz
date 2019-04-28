@@ -10,11 +10,11 @@ helpviewer_keywords:
 - GDI+, polygons
 ms.assetid: a72213d2-d69a-4c2b-a75c-be7b20390c13
 ms.openlocfilehash: 2b1e3d387e4d056d9187c54dcef560544206c370
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641290"
 ---
 # <a name="polygons-in-gdi"></a>Mnohoúhelníky v GDI+
 Mnohoúhelník je uzavřený obrazec se třemi nebo více stran přímo. Například trojúhelník je mnohoúhelník s tři strany obdélníku je mnohoúhelník s čtyřech stranách a pětiúhelník je mnohoúhelník s pěti strany. Následující obrázek znázorňuje několik mnohoúhelníku.  

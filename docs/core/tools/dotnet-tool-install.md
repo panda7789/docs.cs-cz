@@ -3,11 +3,11 @@ title: instalační příkaz DotNet nástroj
 description: Nástroj dotnet nainstalovat příkaz nainstaluje zadaný globální nástroji .NET Core na počítači.
 ms.date: 05/29/2018
 ms.openlocfilehash: 1348eb1165c77376a885fdcbf094bd17b2aa3514
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54563701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648578"
 ---
 # <a name="dotnet-tool-install"></a>Instalace nástrojů DotNet
 

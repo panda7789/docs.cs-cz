@@ -7,11 +7,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
 ms.openlocfilehash: 0bde31a004b1952be488569f89cfd3b129c82771
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57369075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627952"
 ---
 # <a name="net-assembly-file-format"></a>Formát souborů sestavení .NET
 

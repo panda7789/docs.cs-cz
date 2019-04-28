@@ -8,11 +8,11 @@ ms.assetid: 4b2fcf8a-429d-43ce-8334-e026040be8bb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 29f29da6f5a95181abfd4540b017561115d59284
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643007"
 ---
 # <a name="how-to-register-primary-interop-assemblies"></a>Postupy: Registrace primárních sestavení spolupráce
 
@@ -28,9 +28,9 @@ Třídy lze zařadit pouze pomocí zprostředkovatele komunikace s objekty COM a
 
  Ačkoli to není potřeba registrace primárních sestavení spolupráce, jen pokud plánujete použití sady Visual Studio, registrace přináší dvě výhody:
 
--   Registrované primární definiční sestavení je přehledně označen v klíči registru původní knihovny typů. Registrace je nejlepší způsob, jak vám umožňuje vyhledávat primární spolupracující sestavení v počítači.
+- Registrované primární definiční sestavení je přehledně označen v klíči registru původní knihovny typů. Registrace je nejlepší způsob, jak vám umožňuje vyhledávat primární spolupracující sestavení v počítači.
 
--   Náhodně generování a použití nového sestavení zprostředkovatele komunikace, pokud někdy v budoucnu, pomocí sady Visual Studio odkazovat na typ, pro které je nutné zrušit primární definiční sestavení se můžete vyhnout.
+- Náhodně generování a použití nového sestavení zprostředkovatele komunikace, pokud někdy v budoucnu, pomocí sady Visual Studio odkazovat na typ, pro které je nutné zrušit primární definiční sestavení se můžete vyhnout.
 
 Použití [nástroj registrace sestavení (Regasm.exe)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md) registrovat primární definiční sestavení.
 

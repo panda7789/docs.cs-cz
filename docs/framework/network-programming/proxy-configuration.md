@@ -12,11 +12,11 @@ helpviewer_keywords:
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
 ms.openlocfilehash: c6b3808a2d73070cc07b31eb0fca7ca9d6af8cdb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641954"
 ---
 # <a name="proxy-configuration"></a>Konfigurace proxy serveru
 Proxy server zpracovává požadavky klientů na prostředky. Proxy server můžete vrátit požadovaný prostředek uloženou v mezipaměti nebo předání požadavku na server, ve kterém je prostředek umístěn. Proxy může zlepšit výkon sítě snížením počtu požadavky odeslané na vzdálených serverech. Proxy servery lze také omezit přístup k prostředkům.  
@@ -45,11 +45,11 @@ Proxy server zpracovává požadavky klientů na prostředky. Proxy server můž
   
  Několik možností, jak řídit, jak funguje statické proxy serveru. Můžete zadat následující:  
   
--   Adresa proxy serveru.  
+- Adresa proxy serveru.  
   
--   Určuje, zda by měl obejít proxy server pro místní adresy.  
+- Určuje, zda by měl obejít proxy server pro místní adresy.  
   
--   Určuje, zda by měl obejdou pro sadu adres proxy serveru.  
+- Určuje, zda by měl obejdou pro sadu adres proxy serveru.  
   
  V následující tabulce jsou uvedeny možnosti konfigurace pro statické proxy serveru.  
   

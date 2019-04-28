@@ -6,11 +6,11 @@ helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
 ms.openlocfilehash: bce8901b4fec4386462ebaa85436b52aedc3f3bf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661890"
 ---
 # <a name="contextual-keywords-c-reference"></a>Kontextová klíčová slova (Referenční dokumentace jazyka C#)
 Kontextové klíčové slovo slouží k poskytování zvláštní význam v kódu, ale to není rezervované slovo v jazyce C#. V této části jsou zavedené následující kontextová klíčová slova:  

@@ -11,11 +11,11 @@ ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65492beb888da1986f456d3fd000fc02f340f3c4
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627795"
 ---
 # <a name="weak-references"></a>Slabé odkazy
 Systému uvolňování paměti nelze shromáždit objektu používá aplikace, zatímco kód aplikace může dosáhnout tohoto objektu. Aplikace se říká, že mají silného odkazu na objekt.  
@@ -33,11 +33,11 @@ Systému uvolňování paměti nelze shromáždit objektu používá aplikace, z
 ## <a name="short-and-long-weak-references"></a>Krátký a dlouhý slabé odkazy  
  Můžete vytvořit krátké nestálý odkaz nebo long nestálý odkaz:  
   
--   krátké  
+- Krátké  
   
      Cíl krátké nestálý odkaz stane `null` při objektu je uvolněn systémem uvolňování paměti. Slabý odkaz je samotný objekt spravovaný a je časovač uvolněn z paměti stejně jako jakýkoli jiný spravovaný objekt.  Krátký nestálý odkaz je výchozí konstruktor pro <xref:System.WeakReference>.  
   
--   Long  
+- Dlouhé  
   
      Dlouho nestálý odkaz se uchovávají po objektu <xref:System.Object.Finalize%2A> byla volána metoda. To umožňuje objekt, který chcete znovu vytvořit, ale zůstane stav objektu nepředvídatelné. Použít odkaz na dlouhé, zadejte `true` v <xref:System.WeakReference> konstruktoru.  
   

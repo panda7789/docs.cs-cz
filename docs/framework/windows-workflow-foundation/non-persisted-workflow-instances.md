@@ -1,40 +1,40 @@
 ---
-title: Instance pracovního postupu netrvalé
+title: Netrvalé instance pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 5e01af77-6b14-4964-91a5-7dfd143449c0
 ms.openlocfilehash: 410451f0dfeb91111e77634245aa786c4afc5b04
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644262"
 ---
-# <a name="non-persisted-workflow-instances"></a>Instance pracovního postupu netrvalé
-Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, hostitel služby vytvoří záznam pro tuto službu v úložišti instance. Když je následně k instanci pracovního postupu trvalé poprvé, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> uloží aktuální stav instance. Pokud je pracovní postup je hostovaná v aktivační službě procesů systému Windows, data nasazení služby se zapisují také do instance úložiště při první instance.  
+# <a name="non-persisted-workflow-instances"></a>Netrvalé instance pracovních postupů
+Když pracovního postupu je vytvořena nová instance, která udržuje svůj stav v <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, hostitel služby vytvoří záznam pro tuto službu v úložišti instancí. Následně, když instance pracovního postupu trvala poprvé, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> uloží aktuální stav instance. Pokud pracovní postup je hostovaný v aktivační službě procesů Windows, data nasazení služby se zapisují také do úložiště instancí při instance je trvale uložena poprvé.  
   
- Tak dlouho, dokud k instanci pracovního postupu nebyla byla jako trvalé, je v **netrvalé** stavu. V tomto stavu, nelze obnovit instance pracovního postupu po provedení recyklace domény aplikace, selhání hostitele nebo počítače se nezdařilo.  
+ Za předpokladu, instance pracovního postupu ještě nebyla trvale uložena, je v **netrvalé** stavu. V tomto stavu nelze obnovit instance pracovního postupu po provedení recyklace domény aplikace, selhání hostitele nebo selhání počítače.  
   
-## <a name="the-non-persisted-state"></a>Netrvalého stavu  
- Instance pracovního postupu trvanlivý nezůstanou zůstanou v netrvalého stavu v následujících případech:  
+## <a name="the-non-persisted-state"></a>-Trvalý stav  
+ Instance trvalý pracovních postupů, které ještě nebyla trvale uložena zůstanou ve stavu netrvalé v následujících případech:  
   
--   Hostitel služby spadne, než se k instanci pracovního postupu je trvalá pro první. Instance pracovního postupu zůstává v úložišti instance a není obnoven. Pokud je korelační zpráva doručena, instance pracovního postupu zase aktivní.  
+- Hostitel služby spadne, než se instance pracovního postupu je trvalý poprvé. Instance pracovního postupu zůstává v úložišti instancí a není obnoven. Pokud je korelační přijetí e-mailu, instance pracovního postupu aktivují znovu.  
   
--   Instance pracovního postupu dojde k výjimce předtím, než je nastavené jako trvalé poprvé. V závislosti na tom <xref:System.Activities.UnhandledExceptionAction> vrátí, dojde k následující scénáře:  
+- Instance pracovního postupu dojde k výjimce předtím, než je umístěný prvním. V závislosti na tom <xref:System.Activities.UnhandledExceptionAction> vrátila, dojde k následující scénáře:  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> je nastavena na <xref:System.Activities.UnhandledExceptionAction.Abort>: když dojde k výjimce, informace o nasazení služby je zapsán do instance úložiště a k instanci pracovního postupu je uvolněn z paměti. Instance pracovního postupu zůstane v netrvalého stavu a nelze znovu načíst.  
+    - <xref:System.Activities.UnhandledExceptionAction> je nastavena na <xref:System.Activities.UnhandledExceptionAction.Abort>: Když dojde k výjimce, informace o nasazení služby se zapisují do úložiště instancí a instance pracovního postupu je uvolněn z paměti. Zůstane ve stavu netrvalé instance pracovního postupu a nelze znovu načíst.  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> je nastavena na <xref:System.Activities.UnhandledExceptionAction.Cancel> nebo <xref:System.Activities.UnhandledExceptionAction.Terminate>: když dojde k výjimce, informace o nasazení služby je zapsán do úložiště instance a stav instance aktivity je nastavený na <xref:System.Activities.ActivityInstanceState.Closed>.  
+    - <xref:System.Activities.UnhandledExceptionAction> je nastavena na <xref:System.Activities.UnhandledExceptionAction.Cancel> nebo <xref:System.Activities.UnhandledExceptionAction.Terminate>: Když dojde k výjimce, informace o nasazení služby se zapisují do úložiště instancí a instance stav aktivity je nastavený na <xref:System.Activities.ActivityInstanceState.Closed>.  
   
- Chcete-li minimalizovat riziko zjištění instance pracovního postupu odpojen netrvalý, doporučujeme setrvání pracovního postupu již v rané fázi v jeho životním cyklu.  
+ Chcete-li minimalizovat riziko vzniku pracovní postup uvolněn netrvalé instance, doporučujeme uchování pracovního postupu v rané fázi svého životního cyklu.  
   
-## <a name="detection-and-removal-of-non-persisted-instances"></a>Detekce a odebrání netrvalé instancí  
- <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Neodebere všechny instance pracovního postupu netrvalé z obchodu instance. Také neodstraňuje žádné vypršela platnost zámku vlastníky, která mají instance pracovního postupu netrvalé s nimi spojených.  
+## <a name="detection-and-removal-of-non-persisted-instances"></a>Rozpoznání a odstranění netrvalé instance  
+ <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Neodebere všechny instance pracovního postupu netrvalé instance storu. Všechny vlastníky vypršela platnost zámku, které mají pracovní postup netrvalé instance k nim má přiřazené také nezpůsobí odebrání.  
   
- Doporučujeme, aby správce pravidelně zjišťuje, zda úložiště instance k netrvalé instancí. Tak dlouho, dokud věděli, že tento pracovní postup korelační zprávy nezobrazí, mohou správci odebrat tyto instance z obchodu instance. Například pokud instance byla v databázi několik měsíců a se ví, že pracovní postup má obvykle životnost několik dní, je bezpečné předpokládá, že bylo inicializovaného instanci, která měla došlo k chybě.  
+ Doporučujeme vám, že správce pravidelně kontroluje úložiště instance k netrvalé instance. Za předpokladu, ví, že tento pracovní postup neobdrží korelovaných zpráv, mohou správci odebrat tyto instance ze v úložišti instancí. Například pokud instance v databázi na několik měsíců, a je známo, že pracovní postup má obvykle životnost několik dní, by se dá předpokládat, že bylo inicializované instance, který měl došlo k chybě.  
   
- Najít netrvalé instancí v úložišti Instance pracovního postupu SQL můžete použít následující dotazy SQL:  
+ Najít netrvalé instance v Store Instance pracovního postupu SQL můžete použít následující dotazy SQL:  
   
--   Tento dotaz najde všechny instance, které ještě jako trvalé a vrátí čas ID a vytvoření (uložené v čase UTC) pro ně.  
+- Tento dotaz najde všechny instance, která ještě nebyla trvale uložena a vrátí čas ID a vytvoření (uložené v čase UTC) pro ně.  
   
     ```sql  
     select InstanceId, CreationTime   
@@ -42,7 +42,7 @@ Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <
         where IsInitialized = 0  
     ```  
   
--   Tento dotaz najde všechny instance, která nezůstanou a které nejsou načíst a vrátí čas ID a vytvoření (uložené v čase UTC) pro ně.  
+- Tento dotaz najde všechny instance, která ještě nebyla trvale uložena, a, které nejsou načtené a vrátí čas ID a vytvoření (uložené v čase UTC) pro ně.  
   
     ```sql  
     select InstanceId, CreationTime   
@@ -51,7 +51,7 @@ Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <
             and CurrentMachine is NULL  
     ```  
   
--   Tento dotaz najde všechny pozastavené instancí, které ještě jako trvalé a vrátí ID, čas vytvoření (uložené v čase UTC), Důvod pozastavení a název výjimky pro ně.  
+- Tento dotaz najde všechny pozastavené instance, která ještě nebyla trvale uložena a vrátí ID, čas vytvoření (uložené v čase UTC), pozastavení a název výjimky pro ně.  
   
     ```sql  
     select InstanceId, CreationTime, SuspensionReason, SuspensionExceptionName   
@@ -60,7 +60,7 @@ Novou instanci pracovního postupu vytvoření která je uchována jeho stav v <
             and IsSuspended = 1  
     ```  
   
- Použijte pozor při odstraňování netrvalé instancí. Obecně je bezpečné odebrání netrvalé instance vytvořené <xref:System.ServiceModel.Activities.WorkflowServiceHost> , jsou pozastavené, nebo se nenačítají. Tyto určité instance můžete odstranit z úložiště odstraněním je z `[System.Activities.DurableInstancing].[Instances]` zobrazení pomocí následujícího příkazu SQL, nahraďte ID správné instance.  
+ Při odstraňování netrvalé instance, použijte pozornost. Obecně je bezpečně odebrat netrvalé instance vytvořené <xref:System.ServiceModel.Activities.WorkflowServiceHost> , které jsou pozastavené, nebo se nenačítají. Tyto konkrétní instance můžete odstranit z úložiště tak, že odstraníte je z `[System.Activities.DurableInstancing].[Instances]` s použitím následujícího příkazu SQL, nahraďte ID instance správný.  
   
 ```sql  
 delete [System.Activities.DurableInstancing].[Instances]   
@@ -68,4 +68,4 @@ delete [System.Activities.DurableInstancing].[Instances]
 ```  
   
 > [!WARNING]
->  Odebrání všech instancí netrvalý, protože to zahrnuje instance, které jste právě vytvořili a ještě nezůstanou nedoporučujeme.
+>  Nedoporučujeme odebrání všech netrvalé instance, protože to zahrnuje instance, které jste právě vytvořili a ještě nebyla trvale uložena.

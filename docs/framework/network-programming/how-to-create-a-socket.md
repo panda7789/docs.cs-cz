@@ -18,11 +18,11 @@ helpviewer_keywords:
 - sockets, creating
 ms.assetid: c64a049c-5981-43bc-a2dc-1851473589c7
 ms.openlocfilehash: 0bbdab11201171bf8d730276c7f94cbc5317acdd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642682"
 ---
 # <a name="how-to-create-a-socket"></a>Postupy: Vytvoření soketu
 Než použijete soket pro komunikaci se vzdálenými zařízeními soketu. je nutné inicializovat s informace o protokolu a síťové adrese. Konstruktor pro <xref:System.Net.Sockets.Socket> třída obsahuje parametry, které určují rodina adres, typ soketu a typ protokolu, který využívá soket, aby připojení.  

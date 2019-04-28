@@ -5,18 +5,18 @@ ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c82d32fe5b1e62a19ff5e2920c5943f1303b2d64
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61599479"
 ---
 # <a name="serialization-and-metadata"></a>Serializace a metadata
 Pokud vaše aplikace serializuje a deserializuje objekty, budete muset přidat položky do vašich direktivy modulu runtime (. rd.xml) souboru k zajištění, že je k dispozici v době běhu potřebná metadata. Existují dvě kategorie serializátory a vyžaduje jiný zpracování v souboru direktiv modulu runtime:  
   
--   Serializátory založenými na reflexi třetích stran. Ty vyžadují změny do souboru direktiv modulu runtime a jsou popsané v další části.  
+- Serializátory založenými na reflexi třetích stran. Ty vyžadují změny do souboru direktiv modulu runtime a jsou popsané v další části.  
   
--   Na Non reflexi serializátory najdete v knihovně tříd rozhraní .NET Framework. Ty mohou vyžadovat změny do souboru direktiv modulu runtime a jsou popsány v [Microsoft serializátory](#Microsoft) oddílu.  
+- Na Non reflexi serializátory najdete v knihovně tříd rozhraní .NET Framework. Ty mohou vyžadovat změny do souboru direktiv modulu runtime a jsou popsány v [Microsoft serializátory](#Microsoft) oddílu.  
   
 <a name="ThirdParty"></a>   
 ## <a name="third-party-serializers"></a>Serializátory třetích stran  

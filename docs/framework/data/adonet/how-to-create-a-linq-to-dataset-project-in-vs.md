@@ -3,11 +3,11 @@ title: Vytvoření LINQ to DataSet projektu v sadě Visual Studio
 ms.date: 08/15/2018
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
 ms.openlocfilehash: 22763d3b9581d09d7bdda0c09480f8d36bb8e2ec
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667041"
 ---
 # <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: Vytvoření LINQ to DataSet projektu v sadě Visual Studio
 

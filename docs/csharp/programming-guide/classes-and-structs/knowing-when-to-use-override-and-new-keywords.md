@@ -8,11 +8,11 @@ helpviewer_keywords:
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
 ms.openlocfilehash: b1d99b0c5241a99ba7f621faff7c39d20776b2ad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646147"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 V jazyce C# metoda v odvozené třídě, může mít stejný název jako metodu v základní třídě. Můžete určit, jak interagovat pomocí metody [nové](../../../csharp/language-reference/keywords/new.md) a [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova. `override` Modifikátor *rozšiřuje* metodu základní třídy a `new` modifikátor *skryje* ho. Rozdíl je znázorněn v příkladech v tomto tématu.  
@@ -39,11 +39,11 @@ class DerivedClass : BaseClass
   
  V `Main` metody deklarovat proměnné `bc`, `dc`, a `bcdc`.  
   
--   `bc` je typu `BaseClass`, a její hodnota je typu `BaseClass`.  
+- `bc` je typu `BaseClass`, a její hodnota je typu `BaseClass`.  
   
--   `dc` je typu `DerivedClass`, a její hodnota je typu `DerivedClass`.  
+- `dc` je typu `DerivedClass`, a její hodnota je typu `DerivedClass`.  
   
--   `bcdc` je typu `BaseClass`, a její hodnota je typu `DerivedClass`. Jedná se o proměnnou je potřeba věnovat pozornost.  
+- `bcdc` je typu `BaseClass`, a její hodnota je typu `DerivedClass`. Jedná se o proměnnou je potřeba věnovat pozornost.  
   
  Protože `bc` a `bcdc` mít typ `BaseClass`, bude moct pouze přímo `Method1`, pokud nechcete použít přetypování. Proměnné `dc` přístup i k `Method1` a `Method2`. Tyto vztahy jsou uvedeny v následujícím kódu.  
   

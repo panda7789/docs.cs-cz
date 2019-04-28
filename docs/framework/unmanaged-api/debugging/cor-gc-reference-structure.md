@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e1e31e95473136bf7e7c196eacc278fa8a1caab2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59093654"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61609447"
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE – struktura
 Obsahuje informace o objektu, který má být uvolněna.  
@@ -49,19 +49,19 @@ typedef struct _COR_GC_REFERENCE {
 ## <a name="remarks"></a>Poznámky  
  `type` Je pole [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnotu výčtu, která určuje, odkud pochází odkaz. Konkrétní `COR_GC_REFERENCE` hodnotu můžete sledovat některé z následujících typů spravovaných objektů:  
   
--   Objekty z všechny spravované zásobníky (`CorGCReferenceType.CorReferenceStack`). To zahrnuje živé odkazy ve spravovaném kódu, jakož i objekty vytvořené modulem common language runtime.  
+- Objekty z všechny spravované zásobníky (`CorGCReferenceType.CorReferenceStack`). To zahrnuje živé odkazy ve spravovaném kódu, jakož i objekty vytvořené modulem common language runtime.  
   
--   Objekty z tabulky popisovače (`CorGCReferenceType.CorHandle*`). Jedná se o silná odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
+- Objekty z tabulky popisovače (`CorGCReferenceType.CorHandle*`). Jedná se o silná odkazy (`HNDTYPE_STRONG` a `HNDTYPE_REFCOUNT`) a statické proměnné v modulu.  
   
--   Objekty ve frontě finalizační metody (`CorGCReferenceType.CorReferenceFinalizer`). Fronta finalizační metody kořeny objekty, dokud finalizační metodu.  
+- Objekty ve frontě finalizační metody (`CorGCReferenceType.CorReferenceFinalizer`). Fronta finalizační metody kořeny objekty, dokud finalizační metodu.  
   
  `extraData` Pole obsahuje doplňující data v závislosti na zdroj (nebo typ) odkaz. Možné hodnoty jsou:  
   
--   `DependentSource`. Pokud `type` je `CorGCREferenceType.CorHandleStrongDependent`, toto pole je objekt, který, pokud zachování připojení, kořenových adresářů objekt, který má být prováděno uvolnění paměti na `COR_GC_REFERENCE.Location`.  
+- `DependentSource`. Pokud `type` je `CorGCREferenceType.CorHandleStrongDependent`, toto pole je objekt, který, pokud zachování připojení, kořenových adresářů objekt, který má být prováděno uvolnění paměti na `COR_GC_REFERENCE.Location`.  
   
--   `RefCount`. Pokud `type` je `CorGCREferenceType.CorHandleStrongRefCount`, toto pole je počet odkazů popisovače.  
+- `RefCount`. Pokud `type` je `CorGCREferenceType.CorHandleStrongRefCount`, toto pole je počet odkazů popisovače.  
   
--   `Size`. Pokud `type` je `CorGCREferenceType.CorHandleStrongSizedByref`, toto pole je poslední velikost stromu objektů, pro které systému uvolňování paměti počítá kořeny objektu. Všimněte si, že tento výpočet není nutně aktuální.  
+- `Size`. Pokud `type` je `CorGCREferenceType.CorHandleStrongSizedByref`, toto pole je poslední velikost stromu objektů, pro které systému uvolňování paměti počítá kořeny objektu. Všimněte si, že tento výpočet není nutně aktuální.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

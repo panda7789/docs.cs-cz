@@ -3,22 +3,22 @@ title: entity type
 ms.date: 03/30/2017
 ms.assetid: a6dee9ab-9e4a-48f2-a169-3f79cc15821c
 ms.openlocfilehash: 026b0aef7cf2de8fe222721191afa459859701ee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667182"
 ---
 # <a name="entity-type"></a>entity type
 *Typ entity* je základním stavebním blokem pro popis struktury data pomocí modelu Entity Data Model (EDM). Typ entity v konceptuálním modelu reprezentuje strukturu těchto koncepty nejvyšší úrovně, jako je například Zákazníci a objednávky. Typ entity je šablona pro instance typu entity. Každá šablona obsahuje následující informace:  
   
--   Jedinečný název. (Povinné).  
+- Jedinečný název. (Povinné).  
   
--   [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) určené jednu nebo více vlastností. (Povinné).  
+- [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) určené jednu nebo více vlastností. (Povinné).  
   
--   Data ve formě [vlastnosti](../../../../docs/framework/data/adonet/property.md). (Volitelné).  
+- Data ve formě [vlastnosti](../../../../docs/framework/data/adonet/property.md). (Volitelné).  
   
--   [Navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) , která umožňují navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) ze [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. (Volitelné)  
+- [Navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) , která umožňují navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) ze [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. (Volitelné)  
   
  V aplikaci, která představuje instance typu entity na konkrétní objekt (například konkrétního zákazníka nebo pořadí). Každá instance typu entity musí mít jedinečnou [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) v rámci [sadu entit](../../../../docs/framework/data/adonet/entity-set.md).  
   

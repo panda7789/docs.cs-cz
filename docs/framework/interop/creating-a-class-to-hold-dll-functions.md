@@ -13,11 +13,11 @@ ms.assetid: e08e4c34-0223-45f7-aa55-a3d8dd979b0f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 399ad6649016e53d91d5d9d30ecc031ae8a97a4a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643579"
 ---
 # <a name="creating-a-class-to-hold-dll-functions"></a>Vytvoření třídy k umístění funkcí DLL
 Obtékání často používané funkce knihovny DLL ve spravované třídě je efektivního přístupu k zapouzdření funkce platformy. Ačkoli to není nutné provést ve všech případech, za předpokladu, že třída obálky je pohodlné, protože definice funkcí knihovny DLL může být náročné a náchylné k chybě. Pokud programujete v jazyce Visual Basic nebo C#, je třeba deklarovat funkce knihovny DLL v rámci třídy nebo modulu jazyka Visual Basic.  
@@ -28,11 +28,11 @@ Obtékání často používané funkce knihovny DLL ve spravované třídě je e
   
  Při navrhování spravovanou třídu pro platformu vyvolání, vezměte v úvahu vztahy mezi třídami a funkcí knihovny DLL. Například můžete:  
   
--   Deklarování funkcí knihovny DLL v rámci existující třídy.  
+- Deklarování funkcí knihovny DLL v rámci existující třídy.  
   
--   Vytvoření jednotlivých tříd pro každou funkci knihovny DLL, udržování funkce izolované a snadno najít.  
+- Vytvoření jednotlivých tříd pro každou funkci knihovny DLL, udržování funkce izolované a snadno najít.  
   
--   Vytvořte jednu třídu sady souvisejících funkcí knihovny DLL tvoří logické seskupení a snížit režii.  
+- Vytvořte jednu třídu sady souvisejících funkcí knihovny DLL tvoří logické seskupení a snížit režii.  
   
  Název třídy a můžete její metody, jako je prosím. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
   

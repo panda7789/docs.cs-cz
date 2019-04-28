@@ -6,8 +6,8 @@ ms.openlocfilehash: 9cd1901e716cab9f1b47825a5d3ecdb071a58440
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642006"
 ---
 # <a name="pnrp-caches"></a>Mezipaměti PNRP
 Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce koncových bodů algorithmically vybrané sdílené udržuje na partnerský uzel.  
@@ -15,9 +15,9 @@ Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce kon
 ## <a name="pnrp-cache-initialization"></a>Inicializace mezipaměti PNRP  
  Inicializace mezipaměti PNRP nebo Peer název záznamu kolekce, při spuštění partnerský uzel, uzel můžete použít následující metody:  
   
--   Trvalá mezipaměť položky, které byly k dispozici, pokud byl vypnutý uzel se načítají z úložiště na pevném disku.  
+- Trvalá mezipaměť položky, které byly k dispozici, pokud byl vypnutý uzel se načítají z úložiště na pevném disku.  
   
--   Pokud aplikace používá infrastrukturu P2P spolupráce, spolupráce informace jsou k dispozici v Správce kontaktů pro tento uzel.  
+- Pokud aplikace používá infrastrukturu P2P spolupráce, spolupráce informace jsou k dispozici v Správce kontaktů pro tento uzel.  
   
 ## <a name="scaling-peer-name-resolution-with-a-multi-level-cache"></a>Škálování Peer Name Resolution s více úrovně mezipaměti  
  Pokud chcete zachovat velikosti mezipaměti PNRP malý, použijte partnerské uzly na více mezipamětí, ve kterém každá úroveň obsahuje maximální počet položek. Každá úroveň v mezipaměti představuje desetina menší část prostoru číslo PNRP ID (2<sup>256</sup>). Nejnižší úrovni v mezipaměti obsahuje místně registrované ID PNRP a jiné ID PNRP, které jsou číselně blízko ho. Jako úroveň mezipaměti je vyplněna maximálně 20 položek, vytvoří se nové nižší úrovni. Maximální počet úrovní v mezipaměti je v řádu log10 (celkový počet ID PNRP v cloudu). Například pro globálního cloudu s ID 100 milionů PNRP, nejsou maximálně 8 (=log10(100,000,000)) úrovně v mezipaměti a podobně jako počet segmentů směrování se přeložit PNRP ID během překladu názvů. Tento mechanismus umožňuje distribuovaná zatřiďovací tabulku, pro který dá vyřešit libovolného ID PNRP přesměrovací zprávy s požadavkem na protokolu PNRP na nejbližší partnera, dokud nebude nalezen partnera s odpovídající CPA.  

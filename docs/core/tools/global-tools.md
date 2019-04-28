@@ -1,15 +1,15 @@
 ---
-title: Globální nástroje .NET core
+title: .NET Core Global Tools
 description: Přehled o co jsou globální nástroje .NET Core a .NET Core CLI příkazy pro ně k dispozici.
 author: KathleenDollard
 ms.date: 05/29/2018
 ms.custom: seodec18
 ms.openlocfilehash: 3bbf1e7953482dc07f05570443cf640a9fab6258
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647747"
 ---
 # <a name="net-core-global-tools-overview"></a>Přehled globální nástroje .NET core
 
@@ -72,7 +72,7 @@ Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v k
 
 | Operační systém          | Cesta                          |
 |-------------|-------------------------------|
-| Linux nebo macOS | `$HOME/.dotnet/tools`         |
+| Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
 Tato místa jsou přidány do cesty uživatele při prvním spuštění sady SDK, tak že nainstalované nástroje pro globální mohou být volány.

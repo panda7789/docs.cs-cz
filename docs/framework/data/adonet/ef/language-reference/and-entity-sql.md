@@ -3,11 +3,11 @@ title: '&amp;&amp; (AND) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: e7d24213-471d-4807-b85e-570375df89b5
 ms.openlocfilehash: eab05f7454f8ebc88ed29030503bfa96d0c70756
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605735"
 ---
 # <a name="ampamp-and-entity-sql"></a>&amp;&amp; (AND) (Entity SQL)
 Vrátí `true` Pokud jsou oba výrazy `true`; v opačném případě `false` nebo `NULL`.  

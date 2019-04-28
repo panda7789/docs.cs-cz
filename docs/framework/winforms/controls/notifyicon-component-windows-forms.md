@@ -12,11 +12,11 @@ helpviewer_keywords:
 - SysTray icons
 ms.assetid: 20312268-1d67-494a-8601-5c43b7f1b513
 ms.openlocfilehash: b1237a1280142cf65002ca307179b054a8fb7dd2
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627808"
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon – komponenta (Windows Forms)
 Windows Forms `NotifyIcon` komponenty zobrazuje ikony v oznamovací oblasti hlavního panelu Stav pro procesy, které běží na pozadí a v opačném případě nebude mít uživatelská rozhraní. Příkladem může být program antivirové ochrany, který je přístupný kliknutím na ikonu v oznamovací oblasti na hlavním panelu Stav.  

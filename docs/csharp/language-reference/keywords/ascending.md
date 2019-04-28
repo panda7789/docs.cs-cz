@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ascending keyword [C#]
 ms.assetid: 57fbb619-8187-481c-b68e-3a91996fde69
 ms.openlocfilehash: b04c2b3cf9069c12073ba36600125aaf24b96434
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59123837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662059"
 ---
 # <a name="ascending-c-reference"></a>ascending (Referenční dokumentace jazyka C#)
 `ascending` Kontextové klíčové slovo se používá v [klauzule orderby](../../../csharp/language-reference/keywords/orderby-clause.md) ve výrazech dotazu k určení, že pořadí řazení je od nejmenšího po největší. Protože `ascending` je výchozí řazení order, není nutné k jeho zadání.  

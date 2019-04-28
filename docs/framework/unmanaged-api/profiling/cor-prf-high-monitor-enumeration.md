@@ -5,11 +5,11 @@ ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 572fcee528098a4f2929e07dfae63efc56e93dfd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61599557"
 ---
 # <a name="corprfhighmonitor-enumeration"></a>Výčet COR_PRF_HIGH_MONITOR
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  

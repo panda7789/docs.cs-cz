@@ -8,11 +8,11 @@ helpviewer_keywords:
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
 ms.openlocfilehash: 4cea68e76c17e5393ab7213f457c0875cdc5b53b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651880"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 

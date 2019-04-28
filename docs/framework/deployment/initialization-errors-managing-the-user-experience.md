@@ -9,11 +9,11 @@ ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8e5a3cb79187d6434585560e9c128e03fe8003b7
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646107"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele
 

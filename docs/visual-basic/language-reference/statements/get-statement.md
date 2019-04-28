@@ -12,11 +12,11 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
 ms.openlocfilehash: 245d2cc36abde76a8f8bd73bae5d7ede183d4d03
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638022"
 ---
 # <a name="get-statement"></a>Get – příkaz
 Deklaruje `Get` vlastnost postup použitý k načtení hodnoty vlastnosti.  
@@ -49,23 +49,23 @@ End Get
   
 ## <a name="rules"></a>pravidla  
   
--   **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Get` postup `Private`, ale ne `Public`.  
+- **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Get` postup `Private`, ale ne `Public`.  
   
      Pokud definujete `ReadOnly` vlastnost, `Get` postup představuje celou vlastnost. Nelze deklarovat různý přístup úroveň `Get`, protože dvě úrovně přístupu pro vlastnost, která byste nastavili.  
   
--   **Návratový typ.** [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md) můžete deklarovat datový typ hodnoty vrácením. `Get` Procedura automaticky vrací, datového typu. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní.  
+- **Návratový typ.** [Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md) můžete deklarovat datový typ hodnoty vrácením. `Get` Procedura automaticky vrací, datového typu. Můžete zadat libovolný datový typ nebo název výčtu, strukturu, třídu nebo rozhraní.  
   
      Pokud `Property` příkaz neurčuje `returntype`, vrátí postup `Object`.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Vrácení z procedury.** Když `Get` postup vrátí volajícímu kódu, provádění pokračuje v rámci příkazu, který požadovaná hodnota vlastnosti.  
+- **Vrácení z procedury.** Když `Get` postup vrátí volajícímu kódu, provádění pokračuje v rámci příkazu, který požadovaná hodnota vlastnosti.  
   
      `Get` procedury vlastnosti může vrátit hodnotu pomocí buď [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo přiřazením návratovou hodnotu pro název vlastnosti. Další informace najdete v tématu "Vrátit hodnotu" v [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
   
      `Exit Property` a `Return` příkazy způsobit okamžité ukončení z procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů může vyskytovat kdekoli v postupu, a je možné kombinovat `Exit Property` a `Return` příkazy.  
   
--   **Vrátí hodnotu.** Pro navrácení hodnoty z `Get` postup, můžete přiřadit hodnoty pro název vlastnosti, nebo ho v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md). `Return` Příkaz současně přiřadí `Get` procedura vracet hodnotu a ukončí proceduru.  
+- **Vrátí hodnotu.** Pro navrácení hodnoty z `Get` postup, můžete přiřadit hodnoty pro název vlastnosti, nebo ho v [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md). `Return` Příkaz současně přiřadí `Get` procedura vracet hodnotu a ukončí proceduru.  
   
      Pokud používáte `Exit Property` bez přiřazení hodnoty pro název vlastnosti `Get` procedura vrací výchozí hodnota pro typ dat vlastnosti. Další informace najdete v tématu "Vrátit hodnotu" v [Function – příkaz](../../../visual-basic/language-reference/statements/function-statement.md).  
   

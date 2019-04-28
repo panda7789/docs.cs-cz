@@ -3,11 +3,11 @@ title: Spolupráce peer-to-peer
 ms.date: 03/30/2017
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
 ms.openlocfilehash: 91e9179fc426934e78a1e0223c9bffafe5efbef1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59225297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642032"
 ---
 # <a name="peer-to-peer-collaboration"></a>Spolupráce peer-to-peer
 
@@ -19,21 +19,21 @@ Infrastruktura spolupráce Peer-to-Peer je zjednodušenou implementaci Peer-to-P
 
  Typické spolupráci peer-to-peer aplikace se skládá z následujících kroků:  
   
--   Peer určuje identitu partnerského uzlu, kteří chtějí hostování relaci spolupráce  
+- Peer určuje identitu partnerského uzlu, kteří chtějí hostování relaci spolupráce  
   
--   Je odeslána žádost o hostiteli relace, nějakým způsobem, a partnerským zařízením hostitele souhlasí, že ke správě aktivity spolupráce.  
+- Je odeslána žádost o hostiteli relace, nějakým způsobem, a partnerským zařízením hostitele souhlasí, že ke správě aktivity spolupráce.  
   
--   Hostitel vyzvat kontakty v podsíti (včetně žadatel) k relaci.  
+- Hostitel vyzvat kontakty v podsíti (včetně žadatel) k relaci.  
   
--   Všechny partnerské uzly, kteří potřebují spolupracovat může přidat hostitele tak, aby jejich kontaktujte správce.  
+- Všechny partnerské uzly, kteří potřebují spolupracovat může přidat hostitele tak, aby jejich kontaktujte správce.  
   
--   Většina partnerské uzly pošle odpovědi na pozvánku, zda přijata nebo odmítnuta zpět na hostitele partnera včas.  
+- Většina partnerské uzly pošle odpovědi na pozvánku, zda přijata nebo odmítnuta zpět na hostitele partnera včas.  
   
--   Všechny partnerské uzly, kteří potřebují spolupracovat se přihlásit k partnerským zařízením hostitele.  
+- Všechny partnerské uzly, kteří potřebují spolupracovat se přihlásit k partnerským zařízením hostitele.  
   
--   Zatímco partnerské uzly provádíte jejich aktivita počáteční spolupráce, partnerský uzel hostitele přidat vzdálených partnerských uzlů jeho kontaktujte správce. Také zpracuje všechny odpovědi na pozvánku k určení kteří přijali, kdo odmítl a kdo nebyl odpovědi.  Může zrušit pozvánky všem uživatelům, kteří neodpověděli, nebo provést nějakou aktivitu.  
+- Zatímco partnerské uzly provádíte jejich aktivita počáteční spolupráce, partnerský uzel hostitele přidat vzdálených partnerských uzlů jeho kontaktujte správce. Také zpracuje všechny odpovědi na pozvánku k určení kteří přijali, kdo odmítl a kdo nebyl odpovědi.  Může zrušit pozvánky všem uživatelům, kteří neodpověděli, nebo provést nějakou aktivitu.  
   
--   Sdílené hostitele v tomto okamžiku můžete spustit relaci spolupráci se všemi pozvaný partnery nebo registrace aplikace s vaší stávající infrastrukturou spolupráci.  P2P aplikací používat infrastrukturu spolupráci Peer-to-Peer a <xref:System.Net.PeerToPeer.Collaboration> obor názvů pro koordinaci komunikace pro hry, BBS, konference a další aplikace bez serveru přítomnost.  
+- Sdílené hostitele v tomto okamžiku můžete spustit relaci spolupráci se všemi pozvaný partnery nebo registrace aplikace s vaší stávající infrastrukturou spolupráci.  P2P aplikací používat infrastrukturu spolupráci Peer-to-Peer a <xref:System.Net.PeerToPeer.Collaboration> obor názvů pro koordinaci komunikace pro hry, BBS, konference a další aplikace bez serveru přítomnost.  
   
 ## <a name="peer-to-peer-networking-security"></a>Zabezpečení sítě peer-to-peer  
 

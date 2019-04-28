@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1290aa864a3f65e549bc26173dcd23648b8dee90
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627987"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo – funkce
 Získá informace o common language runtime (CLR) požadovaný aplikací verzi a adresář.  
@@ -94,25 +94,25 @@ HRESULT GetRequestedRuntimeInfo (
   
  V rozhraní .NET Framework verze 2.0, můžete získat informace o nejnovější verze pomocí `GetRequestedRuntimeInfo` metodu následujícím způsobem:  
   
--   Zadejte `pExe`, `pwszVersion`, a `pConfigurationFile` parametry jako hodnota null.  
+- Zadejte `pExe`, `pwszVersion`, a `pConfigurationFile` parametry jako hodnota null.  
   
--   Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION v `RUNTIME_INFO_FLAGS` výčty pro `runtimeInfoFlags` parametru.  
+- Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION v `RUNTIME_INFO_FLAGS` výčty pro `runtimeInfoFlags` parametru.  
   
  `GetRequestedRuntimeInfo` Metoda nevrací na nejnovější verzi modulu CLR v následujících případech:  
   
--   Existuje konfigurační soubor aplikace, která určuje načtení konkrétní verze modulu CLR. Všimněte si, že rozhraní .NET Framework se použít konfigurační soubor i v případě, že zadáte hodnotu null pro `pConfigurationFile` parametru.  
+- Existuje konfigurační soubor aplikace, která určuje načtení konkrétní verze modulu CLR. Všimněte si, že rozhraní .NET Framework se použít konfigurační soubor i v případě, že zadáte hodnotu null pro `pConfigurationFile` parametru.  
   
--   [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána metoda zadání starší verzi modulu CLR.  
+- [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána metoda zadání starší verzi modulu CLR.  
   
--   Aplikace, která byla zkompilována pro starší verzi modulu CLR je právě spuštěna.  
+- Aplikace, která byla zkompilována pro starší verzi modulu CLR je právě spuštěna.  
   
  Pro `runtimeInfoFlags` parametr, můžete zadat jenom jednu z konstant architektury `RUNTIME_INFO_FLAGS` výčtu v čase:  
   
--   RUNTIME_INFO_REQUEST_IA64  
+- RUNTIME_INFO_REQUEST_IA64  
   
--   RUNTIME_INFO_REQUEST_AMD64  
+- RUNTIME_INFO_REQUEST_AMD64  
   
--   RUNTIME_INFO_REQUEST_X86  
+- RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

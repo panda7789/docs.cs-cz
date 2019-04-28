@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e6d8023c7ac6d917c9df40fb18316ddc12df5ec1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59190421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61609423"
 ---
 # <a name="corilmap-structure"></a>COR_IL_MAP – struktura
 Určuje změny v relativním posunem funkce.  
@@ -49,37 +49,37 @@ typedef struct _COR_IL_MAP {
   
  Pro krokování fungovalo správně, musí být splněny následující požadavky:  
   
--   Na mapě mají být řazeny ve vzestupném pořadí.  
+- Na mapě mají být řazeny ve vzestupném pořadí.  
   
--   By neměl být přeuspořádány instrumentované kód jazyka MSIL.  
+- By neměl být přeuspořádány instrumentované kód jazyka MSIL.  
   
--   Původní kód jazyka MSIL by se neměly odebírat.  
+- Původní kód jazyka MSIL by se neměly odebírat.  
   
--   Na mapě by měl obsahovat záznamy pro všechny body posloupnosti ze souboru databáze (PDB) programu mapování.  
+- Na mapě by měl obsahovat záznamy pro všechny body posloupnosti ze souboru databáze (PDB) programu mapování.  
   
  Mapa není interpolovat chybějící položky. Následující příklad ukazuje, mapy a jeho výsledky.  
   
  Mapy:  
   
--   Posun 0 starý, nový posun 0  
+- Posun 0 starý, nový posun 0  
   
--   staré posun 5, 10 nových posun  
+- staré posun 5, 10 nových posun  
   
--   staré posun 9, 20 nové posun  
+- staré posun 9, 20 nové posun  
   
  Počet výsledků:  
   
--   Staré posun 0, 1, 2, 3 nebo 4 se namapují na nové posun 0.  
+- Staré posun 0, 1, 2, 3 nebo 4 se namapují na nové posun 0.  
   
--   Posun staré 5, 6, 7 nebo 8 se namapují na nové posun 10.  
+- Posun staré 5, 6, 7 nebo 8 se namapují na nové posun 10.  
   
--   Staré posun 9 nebo vyšší se namapují na nové posun 20.  
+- Staré posun 9 nebo vyšší se namapují na nové posun 20.  
   
--   Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 a 9 se namapují na staré posun 0.  
+- Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 a 9 se namapují na staré posun 0.  
   
--   Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 se namapují na staré posun 5.  
+- Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 se namapují na staré posun 5.  
   
--   Nové posun 20 nebo vyšší se namapují na staré posun 9.  
+- Nové posun 20 nebo vyšší se namapují na staré posun 9.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
