@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7e201b9a350c030da59e2b6ed27f84f570c8e621
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698379"
 ---
-# <a name="efngetmanagedexcepstack-function"></a><span data-ttu-id="71522-102">_EFN_GetManagedExcepStack – funkce</span><span class="sxs-lookup"><span data-stu-id="71522-102">_EFN_GetManagedExcepStack Function</span></span>
-<span data-ttu-id="71522-103">Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.</span><span class="sxs-lookup"><span data-stu-id="71522-103">Given a managed exception object address, returns a string version of the stack trace contained inside.</span></span>  
+# <a name="efngetmanagedexcepstack-function"></a><span data-ttu-id="3f0cb-102">_EFN_GetManagedExcepStack – funkce</span><span class="sxs-lookup"><span data-stu-id="3f0cb-102">_EFN_GetManagedExcepStack Function</span></span>
+<span data-ttu-id="3f0cb-103">Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-103">Given a managed exception object address, returns a string version of the stack trace contained inside.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="71522-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="71522-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3f0cb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3f0cb-104">Syntax</span></span>  
   
 ```  
 HRESULT _EFN_GetManagedExcepStack(  
@@ -37,29 +37,29 @@ HRESULT _EFN_GetManagedExcepStack(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="71522-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="71522-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="3f0cb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3f0cb-105">Parameters</span></span>  
  `Client`  
- <span data-ttu-id="71522-106">[in] Klient, který se právě ladí.</span><span class="sxs-lookup"><span data-stu-id="71522-106">[in] The client being debugged.</span></span>  
+ <span data-ttu-id="3f0cb-106">[in] Klient, který se právě ladí.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-106">[in] The client being debugged.</span></span>  
   
  `StackObjAddr`  
- <span data-ttu-id="71522-107">[in] Ukazatel spravovaný objekt, odvozený z <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="71522-107">[in] A managed object pointer, derived from <xref:System.Exception>.</span></span>  
+ <span data-ttu-id="3f0cb-107">[in] Ukazatel spravovaný objekt, odvozený z <xref:System.Exception>.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-107">[in] A managed object pointer, derived from <xref:System.Exception>.</span></span>  
   
- <span data-ttu-id="71522-108">szStackString</span><span class="sxs-lookup"><span data-stu-id="71522-108">szStackString</span></span>  
- <span data-ttu-id="71522-109">[out] Vrácený řetězec.</span><span class="sxs-lookup"><span data-stu-id="71522-109">[out] The returned string.</span></span>  
+ <span data-ttu-id="3f0cb-108">szStackString</span><span class="sxs-lookup"><span data-stu-id="3f0cb-108">szStackString</span></span>  
+ <span data-ttu-id="3f0cb-109">[out] Vrácený řetězec.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-109">[out] The returned string.</span></span>  
   
  `cbString`  
- <span data-ttu-id="71522-110">[out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.</span><span class="sxs-lookup"><span data-stu-id="71522-110">[out] The number of characters available in the string buffer.</span></span>  
+ <span data-ttu-id="3f0cb-110">[out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-110">[out] The number of characters available in the string buffer.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="71522-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="71522-111">Remarks</span></span>  
- <span data-ttu-id="71522-112">Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.</span><span class="sxs-lookup"><span data-stu-id="71522-112">If there is no managed code on the thread currently in context, the function returns HRESULT SOS_E_NOMANAGEDCODE with a facility value of 0xa0 and an error code of 0x1000.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3f0cb-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3f0cb-111">Remarks</span></span>  
+ <span data-ttu-id="3f0cb-112">Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.</span><span class="sxs-lookup"><span data-stu-id="3f0cb-112">If there is no managed code on the thread currently in context, the function returns HRESULT SOS_E_NOMANAGEDCODE with a facility value of 0xa0 and an error code of 0x1000.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="71522-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="71522-113">Requirements</span></span>  
- <span data-ttu-id="71522-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="71522-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3f0cb-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3f0cb-113">Requirements</span></span>  
+ <span data-ttu-id="3f0cb-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3f0cb-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="71522-115">**Záhlaví:** SOS_Stacktrace.h</span><span class="sxs-lookup"><span data-stu-id="71522-115">**Header:** SOS_Stacktrace.h</span></span>  
+ <span data-ttu-id="3f0cb-115">**Záhlaví:** SOS_Stacktrace.h</span><span class="sxs-lookup"><span data-stu-id="3f0cb-115">**Header:** SOS_Stacktrace.h</span></span>  
   
- <span data-ttu-id="71522-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="71522-116">**.NET Framework Version:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="3f0cb-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3f0cb-116">**.NET Framework Version:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="71522-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71522-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3f0cb-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3f0cb-117">See also</span></span>
 
-- [<span data-ttu-id="71522-118">Globální statické funkce pro ladění</span><span class="sxs-lookup"><span data-stu-id="71522-118">Debugging Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+- [<span data-ttu-id="3f0cb-118">Globální statické funkce pro ladění</span><span class="sxs-lookup"><span data-stu-id="3f0cb-118">Debugging Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

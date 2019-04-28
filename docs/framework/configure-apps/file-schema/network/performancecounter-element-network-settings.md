@@ -9,21 +9,21 @@ helpviewer_keywords:
 - <performanceCounter> element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
 ms.openlocfilehash: 30c5cd07c92a8fc3c340cab0ff9ae74e940c0c12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705231"
 ---
-# <a name="performancecounter-element-network-settings"></a><span data-ttu-id="e9433-102">\<performanceCounter > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="e9433-102">\<performanceCounter> Element (Network Settings)</span></span>
-<span data-ttu-id="e9433-103">Povolí nebo zakáže čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="e9433-103">Enables or disables networking performance counters.</span></span>  
+# <a name="performancecounter-element-network-settings"></a><span data-ttu-id="6ed44-102">\<performanceCounter > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="6ed44-102">\<performanceCounter> Element (Network Settings)</span></span>
+<span data-ttu-id="6ed44-103">Povolí nebo zakáže čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="6ed44-103">Enables or disables networking performance counters.</span></span>  
   
- <span data-ttu-id="e9433-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="e9433-104">\<configuration></span></span>  
-<span data-ttu-id="e9433-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="e9433-105">\<system.net></span></span>  
-<span data-ttu-id="e9433-106">\<settings></span><span class="sxs-lookup"><span data-stu-id="e9433-106">\<settings></span></span>  
-<span data-ttu-id="e9433-107">\<performanceCounters></span><span class="sxs-lookup"><span data-stu-id="e9433-107">\<performanceCounters></span></span>  
+ <span data-ttu-id="6ed44-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="6ed44-104">\<configuration></span></span>  
+<span data-ttu-id="6ed44-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="6ed44-105">\<system.net></span></span>  
+<span data-ttu-id="6ed44-106">\<settings></span><span class="sxs-lookup"><span data-stu-id="6ed44-106">\<settings></span></span>  
+<span data-ttu-id="6ed44-107">\<performanceCounters></span><span class="sxs-lookup"><span data-stu-id="6ed44-107">\<performanceCounters></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e9433-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e9433-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6ed44-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6ed44-108">Syntax</span></span>  
   
 ```xml  
 <performanceCounters  
@@ -31,35 +31,35 @@ ms.locfileid: "59210929"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="e9433-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="e9433-109">Attributes and Elements</span></span>  
- <span data-ttu-id="e9433-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="e9433-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="6ed44-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="6ed44-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="6ed44-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="6ed44-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="e9433-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="e9433-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="6ed44-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="6ed44-111">Attributes</span></span>  
   
-|<span data-ttu-id="e9433-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="e9433-112">Attribute</span></span>|<span data-ttu-id="e9433-113">Popis</span><span class="sxs-lookup"><span data-stu-id="e9433-113">Description</span></span>|  
+|<span data-ttu-id="6ed44-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="6ed44-112">Attribute</span></span>|<span data-ttu-id="6ed44-113">Popis</span><span class="sxs-lookup"><span data-stu-id="6ed44-113">Description</span></span>|  
 |---------------|-----------------|  
-|`enabled`|<span data-ttu-id="e9433-114">Určuje, zda jsou povoleny čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="e9433-114">Specifies whether the networking performance counters are enabled.</span></span> <span data-ttu-id="e9433-115">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="e9433-115">The default value is `false`.</span></span>|  
+|`enabled`|<span data-ttu-id="6ed44-114">Určuje, zda jsou povoleny čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="6ed44-114">Specifies whether the networking performance counters are enabled.</span></span> <span data-ttu-id="6ed44-115">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="6ed44-115">The default value is `false`.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="e9433-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="e9433-116">Child Elements</span></span>  
- <span data-ttu-id="e9433-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="e9433-117">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="6ed44-116">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="6ed44-116">Child Elements</span></span>  
+ <span data-ttu-id="6ed44-117">Žádné</span><span class="sxs-lookup"><span data-stu-id="6ed44-117">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="e9433-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="e9433-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="6ed44-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="6ed44-118">Parent Elements</span></span>  
   
-|<span data-ttu-id="e9433-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="e9433-119">Element</span></span>|<span data-ttu-id="e9433-120">Popis</span><span class="sxs-lookup"><span data-stu-id="e9433-120">Description</span></span>|  
+|<span data-ttu-id="6ed44-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="6ed44-119">Element</span></span>|<span data-ttu-id="6ed44-120">Popis</span><span class="sxs-lookup"><span data-stu-id="6ed44-120">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="e9433-121">settings</span><span class="sxs-lookup"><span data-stu-id="e9433-121">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="e9433-122">Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="e9433-122">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
+|[<span data-ttu-id="6ed44-121">settings</span><span class="sxs-lookup"><span data-stu-id="6ed44-121">settings</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|<span data-ttu-id="6ed44-122">Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="6ed44-122">Configures basic network options for the <xref:System.Net> namespace.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e9433-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e9433-123">Remarks</span></span>  
- <span data-ttu-id="e9433-124">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="e9433-124">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6ed44-123">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6ed44-123">Remarks</span></span>  
+ <span data-ttu-id="6ed44-124">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="6ed44-124">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
- <span data-ttu-id="e9433-125">Čítače výkonu sítě musí být povolené v konfiguračním souboru, který se má použít.</span><span class="sxs-lookup"><span data-stu-id="e9433-125">Networking performance counters need to be enabled in the configuration file to be used.</span></span> <span data-ttu-id="e9433-126">Všechny čítače výkonu sítě jsou povolené nebo zakázané s jedno nastavení v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="e9433-126">All networking performance counters are enabled or disabled with a single setting in the configuration file.</span></span> <span data-ttu-id="e9433-127">Jednotlivé čítače výkonu sítě nemůže být povolena nebo zakázána.</span><span class="sxs-lookup"><span data-stu-id="e9433-127">Individual networking performance counters cannot be enabled or disabled.</span></span> <span data-ttu-id="e9433-128">Další informace o konkrétní čítače výkonu sítě, naleznete v tématu [čítače výkonu sítě](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking).</span><span class="sxs-lookup"><span data-stu-id="e9433-128">For more information on the specific networking performance counters, see [Networking Performance Counters](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking).</span></span>  
+ <span data-ttu-id="6ed44-125">Čítače výkonu sítě musí být povolené v konfiguračním souboru, který se má použít.</span><span class="sxs-lookup"><span data-stu-id="6ed44-125">Networking performance counters need to be enabled in the configuration file to be used.</span></span> <span data-ttu-id="6ed44-126">Všechny čítače výkonu sítě jsou povolené nebo zakázané s jedno nastavení v konfiguračním souboru.</span><span class="sxs-lookup"><span data-stu-id="6ed44-126">All networking performance counters are enabled or disabled with a single setting in the configuration file.</span></span> <span data-ttu-id="6ed44-127">Jednotlivé čítače výkonu sítě nemůže být povolena nebo zakázána.</span><span class="sxs-lookup"><span data-stu-id="6ed44-127">Individual networking performance counters cannot be enabled or disabled.</span></span> <span data-ttu-id="6ed44-128">Další informace o konkrétní čítače výkonu sítě, naleznete v tématu [čítače výkonu sítě](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking).</span><span class="sxs-lookup"><span data-stu-id="6ed44-128">For more information on the specific networking performance counters, see [Networking Performance Counters](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking).</span></span>  
   
- <span data-ttu-id="e9433-129">Výchozí hodnota je tento výkon sítě za čítače jsou zakázané.</span><span class="sxs-lookup"><span data-stu-id="e9433-129">The default value is that networking performance counters are disabled.</span></span>  
+ <span data-ttu-id="6ed44-129">Výchozí hodnota je tento výkon sítě za čítače jsou zakázané.</span><span class="sxs-lookup"><span data-stu-id="6ed44-129">The default value is that networking performance counters are disabled.</span></span>  
   
- <span data-ttu-id="e9433-130"><xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty **povolené** atribut z příslušných konfiguračních souborů.</span><span class="sxs-lookup"><span data-stu-id="e9433-130">The <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> property can be used to get the current value of the **enabled** attribute from applicable configuration files.</span></span>  
+ <span data-ttu-id="6ed44-130"><xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> Vlastnost lze použít k získání aktuální hodnoty **povolené** atribut z příslušných konfiguračních souborů.</span><span class="sxs-lookup"><span data-stu-id="6ed44-130">The <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType> property can be used to get the current value of the **enabled** attribute from applicable configuration files.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e9433-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9433-131">Example</span></span>  
- <span data-ttu-id="e9433-132">Následující příklad ukazuje, jak nakonfigurovat <xref:System.Net> a souvisejících oborech názvů umožňuje čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="e9433-132">The following example shows how to configure the <xref:System.Net> and related namespaces to enable networking performance counters.</span></span>  
+## <a name="example"></a><span data-ttu-id="6ed44-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="6ed44-131">Example</span></span>  
+ <span data-ttu-id="6ed44-132">Následující příklad ukazuje, jak nakonfigurovat <xref:System.Net> a souvisejících oborech názvů umožňuje čítače výkonu sítě.</span><span class="sxs-lookup"><span data-stu-id="6ed44-132">The following example shows how to configure the <xref:System.Net> and related namespaces to enable networking performance counters.</span></span>  
   
 ```xml  
 <configuration>  
@@ -73,9 +73,9 @@ ms.locfileid: "59210929"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e9433-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9433-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6ed44-133">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6ed44-133">See also</span></span>
 
 - <xref:System.Net.Configuration.PerformanceCountersElement?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.PerformanceCountersElement.Enabled%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="e9433-134">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="e9433-134">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
-- [<span data-ttu-id="e9433-135">Čítače výkonu sítě</span><span class="sxs-lookup"><span data-stu-id="e9433-135">Networking Performance Counters</span></span>](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)
+- [<span data-ttu-id="6ed44-134">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="6ed44-134">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [<span data-ttu-id="6ed44-135">Čítače výkonu sítě</span><span class="sxs-lookup"><span data-stu-id="6ed44-135">Networking Performance Counters</span></span>](../../../../../docs/framework/debug-trace-profile/performance-counters.md#networking)

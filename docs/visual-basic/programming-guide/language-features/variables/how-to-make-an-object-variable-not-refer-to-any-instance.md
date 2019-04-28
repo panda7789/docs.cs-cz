@@ -6,18 +6,18 @@ helpviewer_keywords:
 - object variables [Visual Basic], null reference
 ms.assetid: e6d30578-bdae-4142-a3ac-a10697bf696a
 ms.openlocfilehash: 373d4ae84c44b212ad02b0b4266af75921e40423
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769054"
 ---
-# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a><span data-ttu-id="c5014-102">Postupy: Objekt nastavení proměnné, aby neodkazovala na žádnou instanci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c5014-102">How to: Make an Object Variable Not Refer to Any Instance (Visual Basic)</span></span>
-<span data-ttu-id="c5014-103">Proměnné objektu z libovolné instance objektu můžete zrušit nastavením na [nic](../../../../visual-basic/language-reference/nothing.md).</span><span class="sxs-lookup"><span data-stu-id="c5014-103">You can disassociate an object variable from any object instance by setting it to [Nothing](../../../../visual-basic/language-reference/nothing.md).</span></span>  
+# <a name="how-to-make-an-object-variable-not-refer-to-any-instance-visual-basic"></a><span data-ttu-id="0d705-102">Postupy: Objekt nastavení proměnné, aby neodkazovala na žádnou instanci (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="0d705-102">How to: Make an Object Variable Not Refer to Any Instance (Visual Basic)</span></span>
+<span data-ttu-id="0d705-103">Proměnné objektu z libovolné instance objektu můžete zrušit nastavením na [nic](../../../../visual-basic/language-reference/nothing.md).</span><span class="sxs-lookup"><span data-stu-id="0d705-103">You can disassociate an object variable from any object instance by setting it to [Nothing](../../../../visual-basic/language-reference/nothing.md).</span></span>  
   
-### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a><span data-ttu-id="c5014-104">Zrušit přiřazení proměnné objektu z libovolné instance objektu</span><span class="sxs-lookup"><span data-stu-id="c5014-104">To disassociate an object variable from any object instance</span></span>  
+### <a name="to-disassociate-an-object-variable-from-any-object-instance"></a><span data-ttu-id="0d705-104">Zrušit přiřazení proměnné objektu z libovolné instance objektu</span><span class="sxs-lookup"><span data-stu-id="0d705-104">To disassociate an object variable from any object instance</span></span>  
   
--   <span data-ttu-id="c5014-105">Nastavte proměnnou na `Nothing` v příkazu přiřazení.</span><span class="sxs-lookup"><span data-stu-id="c5014-105">Set the variable to `Nothing` in an assignment statement.</span></span>  
+- <span data-ttu-id="0d705-105">Nastavte proměnnou na `Nothing` v příkazu přiřazení.</span><span class="sxs-lookup"><span data-stu-id="0d705-105">Set the variable to `Nothing` in an assignment statement.</span></span>  
   
     ```  
     ' Assume account is a defined class  
@@ -25,16 +25,16 @@ ms.locfileid: "58818684"
     currentAccount = Nothing  
     ```  
   
-## <a name="robust-programming"></a><span data-ttu-id="c5014-106">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="c5014-106">Robust Programming</span></span>  
- <span data-ttu-id="c5014-107">Pokud váš kód se pokusí o přístup ke členu objektu proměnné, která byla nastavena na `Nothing`, <xref:System.NullReferenceException> vyvolá.</span><span class="sxs-lookup"><span data-stu-id="c5014-107">If your code tries to access a member of an object variable that has been set to `Nothing`, a <xref:System.NullReferenceException> occurs.</span></span> <span data-ttu-id="c5014-108">Pokud nastavíte proměnné objektu na `Nothing` často, nebo pokud je to možné, proměnná není inicializovaná, je vhodné k uzavření přístupu členů v `Try...Catch...Finally` bloku.</span><span class="sxs-lookup"><span data-stu-id="c5014-108">If you set an object variable to `Nothing` frequently, or if it is possible the variable is not initialized, it is a good idea to enclose member accesses in a `Try...Catch...Finally` block.</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="0d705-106">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="0d705-106">Robust Programming</span></span>  
+ <span data-ttu-id="0d705-107">Pokud váš kód se pokusí o přístup ke členu objektu proměnné, která byla nastavena na `Nothing`, <xref:System.NullReferenceException> vyvolá.</span><span class="sxs-lookup"><span data-stu-id="0d705-107">If your code tries to access a member of an object variable that has been set to `Nothing`, a <xref:System.NullReferenceException> occurs.</span></span> <span data-ttu-id="0d705-108">Pokud nastavíte proměnné objektu na `Nothing` často, nebo pokud je to možné, proměnná není inicializovaná, je vhodné k uzavření přístupu členů v `Try...Catch...Finally` bloku.</span><span class="sxs-lookup"><span data-stu-id="0d705-108">If you set an object variable to `Nothing` frequently, or if it is possible the variable is not initialized, it is a good idea to enclose member accesses in a `Try...Catch...Finally` block.</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="c5014-109">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="c5014-109">.NET Framework Security</span></span>  
- <span data-ttu-id="c5014-110">Pokud používáte proměnné objektu pro objekty, které obsahují důvěrné nebo citlivé údaje, můžete nastavit proměnnou `Nothing` při nezabýváte aktivně se jeden z těchto objektů.</span><span class="sxs-lookup"><span data-stu-id="c5014-110">If you use an object variable for objects that contain confidential or sensitive data, you can set the variable to `Nothing` when you are not actively dealing with one of those objects.</span></span> <span data-ttu-id="c5014-111">To snižuje riziko škodlivý kód, získání přístupu k datům.</span><span class="sxs-lookup"><span data-stu-id="c5014-111">This reduces the chance of malicious code gaining access to the data.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="0d705-109">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0d705-109">.NET Framework Security</span></span>  
+ <span data-ttu-id="0d705-110">Pokud používáte proměnné objektu pro objekty, které obsahují důvěrné nebo citlivé údaje, můžete nastavit proměnnou `Nothing` při nezabýváte aktivně se jeden z těchto objektů.</span><span class="sxs-lookup"><span data-stu-id="0d705-110">If you use an object variable for objects that contain confidential or sensitive data, you can set the variable to `Nothing` when you are not actively dealing with one of those objects.</span></span> <span data-ttu-id="0d705-111">To snižuje riziko škodlivý kód, získání přístupu k datům.</span><span class="sxs-lookup"><span data-stu-id="0d705-111">This reduces the chance of malicious code gaining access to the data.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c5014-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c5014-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0d705-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0d705-112">See also</span></span>
 
 - <xref:System.NullReferenceException>
-- [<span data-ttu-id="c5014-113">Objektové proměnné</span><span class="sxs-lookup"><span data-stu-id="c5014-113">Object Variables</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [<span data-ttu-id="c5014-114">Přiřazení objektové proměnné</span><span class="sxs-lookup"><span data-stu-id="c5014-114">Object Variable Assignment</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
-- [<span data-ttu-id="c5014-115">Nothing</span><span class="sxs-lookup"><span data-stu-id="c5014-115">Nothing</span></span>](../../../../visual-basic/language-reference/nothing.md)
-- [<span data-ttu-id="c5014-116">Příkaz Try...Catch...Finally</span><span class="sxs-lookup"><span data-stu-id="c5014-116">Try...Catch...Finally Statement</span></span>](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [<span data-ttu-id="0d705-113">Objektové proměnné</span><span class="sxs-lookup"><span data-stu-id="0d705-113">Object Variables</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
+- [<span data-ttu-id="0d705-114">Přiřazení objektové proměnné</span><span class="sxs-lookup"><span data-stu-id="0d705-114">Object Variable Assignment</span></span>](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
+- [<span data-ttu-id="0d705-115">Nothing</span><span class="sxs-lookup"><span data-stu-id="0d705-115">Nothing</span></span>](../../../../visual-basic/language-reference/nothing.md)
+- [<span data-ttu-id="0d705-116">Příkaz Try...Catch...Finally</span><span class="sxs-lookup"><span data-stu-id="0d705-116">Try...Catch...Finally Statement</span></span>](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

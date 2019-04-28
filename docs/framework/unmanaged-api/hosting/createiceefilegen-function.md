@@ -19,18 +19,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 566f73335861a8eb769b21a254e0e93b51a78d02
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756387"
 ---
-# <a name="createiceefilegen-function"></a><span data-ttu-id="f5354-102">CreateICeeFileGen – funkce</span><span class="sxs-lookup"><span data-stu-id="f5354-102">CreateICeeFileGen Function</span></span>
-<span data-ttu-id="f5354-103">Vytvoří [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="f5354-103">Creates an [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) object.</span></span>  
+# <a name="createiceefilegen-function"></a><span data-ttu-id="9217b-102">CreateICeeFileGen – funkce</span><span class="sxs-lookup"><span data-stu-id="9217b-102">CreateICeeFileGen Function</span></span>
+<span data-ttu-id="9217b-103">Vytvoří [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="9217b-103">Creates an [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) object.</span></span>  
   
- <span data-ttu-id="f5354-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="f5354-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="9217b-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="9217b-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f5354-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f5354-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9217b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9217b-105">Syntax</span></span>  
   
 ```  
 HRESULT CreateICeeFileGen (  
@@ -38,27 +38,27 @@ HRESULT CreateICeeFileGen (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f5354-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f5354-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9217b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="9217b-106">Parameters</span></span>  
  `ceeFileGen`  
- <span data-ttu-id="f5354-107">[out] Ukazatel na novou adresu `ICeeFileGen` objektu.</span><span class="sxs-lookup"><span data-stu-id="f5354-107">[out] A pointer to the address of a new `ICeeFileGen` object.</span></span>  
+ <span data-ttu-id="9217b-107">[out] Ukazatel na novou adresu `ICeeFileGen` objektu.</span><span class="sxs-lookup"><span data-stu-id="9217b-107">[out] A pointer to the address of a new `ICeeFileGen` object.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f5354-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f5354-108">Return Value</span></span>  
- <span data-ttu-id="f5354-109">Tato metoda vrací standardní kódy chyb COM.</span><span class="sxs-lookup"><span data-stu-id="f5354-109">This method returns standard COM error codes.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9217b-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9217b-108">Return Value</span></span>  
+ <span data-ttu-id="9217b-109">Tato metoda vrací standardní kódy chyb COM.</span><span class="sxs-lookup"><span data-stu-id="9217b-109">This method returns standard COM error codes.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f5354-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f5354-110">Remarks</span></span>  
- <span data-ttu-id="f5354-111">`ICeeFileGen` Objektu se používá k vytvoření common language runtime (CLR) souborů (PE portable executable).</span><span class="sxs-lookup"><span data-stu-id="f5354-111">The `ICeeFileGen` object is used to create common language runtime (CLR) portable executable (PE) files.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9217b-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9217b-110">Remarks</span></span>  
+ <span data-ttu-id="9217b-111">`ICeeFileGen` Objektu se používá k vytvoření common language runtime (CLR) souborů (PE portable executable).</span><span class="sxs-lookup"><span data-stu-id="9217b-111">The `ICeeFileGen` object is used to create common language runtime (CLR) portable executable (PE) files.</span></span>  
   
- <span data-ttu-id="f5354-112">Volání [destroyiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) funkce zrušení `ICeeFileGen` objekt po dokončení.</span><span class="sxs-lookup"><span data-stu-id="f5354-112">Call the [DestroyICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) function to destroy the `ICeeFileGen` object when finished.</span></span>  
+ <span data-ttu-id="9217b-112">Volání [destroyiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) funkce zrušení `ICeeFileGen` objekt po dokončení.</span><span class="sxs-lookup"><span data-stu-id="9217b-112">Call the [DestroyICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) function to destroy the `ICeeFileGen` object when finished.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f5354-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f5354-113">Requirements</span></span>  
- <span data-ttu-id="f5354-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f5354-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9217b-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9217b-113">Requirements</span></span>  
+ <span data-ttu-id="9217b-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9217b-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f5354-115">**Záhlaví:** ICeeFileGen.h</span><span class="sxs-lookup"><span data-stu-id="f5354-115">**Header:** ICeeFileGen.h</span></span>  
+ <span data-ttu-id="9217b-115">**Záhlaví:** ICeeFileGen.h</span><span class="sxs-lookup"><span data-stu-id="9217b-115">**Header:** ICeeFileGen.h</span></span>  
   
- <span data-ttu-id="f5354-116">**Knihovna:** MSCorPE.dll</span><span class="sxs-lookup"><span data-stu-id="f5354-116">**Library:** MSCorPE.dll</span></span>  
+ <span data-ttu-id="9217b-116">**Knihovna:** MSCorPE.dll</span><span class="sxs-lookup"><span data-stu-id="9217b-116">**Library:** MSCorPE.dll</span></span>  
   
- <span data-ttu-id="f5354-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f5354-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9217b-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9217b-117">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f5354-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f5354-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9217b-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9217b-118">See also</span></span>
 
-- [<span data-ttu-id="f5354-119">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="f5354-119">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="9217b-119">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="9217b-119">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
