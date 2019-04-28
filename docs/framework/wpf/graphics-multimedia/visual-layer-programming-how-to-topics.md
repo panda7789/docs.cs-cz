@@ -9,27 +9,27 @@ helpviewer_keywords:
 - visual layer [WPF]
 ms.assetid: ac550423-60a3-43e6-a0bc-d65ef026e0cb
 ms.openlocfilehash: f41f9cf2b6deb30f5f1960cfab6e898f7032901e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59142685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762082"
 ---
-# <a name="visual-layer-programming-how-to-topics"></a><span data-ttu-id="db5c4-102">Postupy: Témata programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="db5c4-102">Visual Layer Programming How-to Topics</span></span>
-<span data-ttu-id="db5c4-103">Témata v této části ukazují, jak používat vizuální vrstvy pro spuštění testu a nízké úrovně složení.</span><span class="sxs-lookup"><span data-stu-id="db5c4-103">The topics in this section demonstrate how to use the visual layer for hit-testing and low-level composition.</span></span>  
+# <a name="visual-layer-programming-how-to-topics"></a><span data-ttu-id="9cd6a-102">Postupy: Témata programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="9cd6a-102">Visual Layer Programming How-to Topics</span></span>
+<span data-ttu-id="9cd6a-103">Témata v této části ukazují, jak používat vizuální vrstvy pro spuštění testu a nízké úrovně složení.</span><span class="sxs-lookup"><span data-stu-id="9cd6a-103">The topics in this section demonstrate how to use the visual layer for hit-testing and low-level composition.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="db5c4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="db5c4-104">In This Section</span></span>  
- [<span data-ttu-id="db5c4-105">Získání posunu vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="db5c4-105">Get the Offset of a Visual</span></span>](how-to-get-the-offset-of-a-visual.md)  
- [<span data-ttu-id="db5c4-106">Vyčíslení vykreslovaného vizuálního obsahu</span><span class="sxs-lookup"><span data-stu-id="db5c4-106">Enumerate Drawing Content of a Visual</span></span>](how-to-enumerate-drawing-content-of-a-visual.md)  
- [<span data-ttu-id="db5c4-107">Ověření pozice objektu Geometry ve vizuálním objektu</span><span class="sxs-lookup"><span data-stu-id="db5c4-107">Hit Test Geometry in a Visual</span></span>](how-to-hit-test-geometry-in-a-visual.md)  
- [<span data-ttu-id="db5c4-108">Ověřování pozice pomocí objektu Geometry jako parametru</span><span class="sxs-lookup"><span data-stu-id="db5c4-108">Hit Test Using Geometry as a Parameter</span></span>](how-to-hit-test-using-geometry-as-a-parameter.md)  
- [<span data-ttu-id="db5c4-109">Ověřování pozice pomocí kontejneru hostitele Win32</span><span class="sxs-lookup"><span data-stu-id="db5c4-109">Hit Test Using a Win32 Host Container</span></span>](how-to-hit-test-using-a-win32-host-container.md)  
- [<span data-ttu-id="db5c4-110">Vykreslení intervalu podle snímků pomocí CompositionTarget</span><span class="sxs-lookup"><span data-stu-id="db5c4-110">Render on a Per Frame Interval Using CompositionTarget</span></span>](how-to-render-on-a-per-frame-interval-using-compositiontarget.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9cd6a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9cd6a-104">In This Section</span></span>  
+ [<span data-ttu-id="9cd6a-105">Získání posunu vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="9cd6a-105">Get the Offset of a Visual</span></span>](how-to-get-the-offset-of-a-visual.md)  
+ [<span data-ttu-id="9cd6a-106">Vyčíslení vykreslovaného vizuálního obsahu</span><span class="sxs-lookup"><span data-stu-id="9cd6a-106">Enumerate Drawing Content of a Visual</span></span>](how-to-enumerate-drawing-content-of-a-visual.md)  
+ [<span data-ttu-id="9cd6a-107">Ověření pozice objektu Geometry ve vizuálním objektu</span><span class="sxs-lookup"><span data-stu-id="9cd6a-107">Hit Test Geometry in a Visual</span></span>](how-to-hit-test-geometry-in-a-visual.md)  
+ [<span data-ttu-id="9cd6a-108">Ověřování pozice pomocí objektu Geometry jako parametru</span><span class="sxs-lookup"><span data-stu-id="9cd6a-108">Hit Test Using Geometry as a Parameter</span></span>](how-to-hit-test-using-geometry-as-a-parameter.md)  
+ [<span data-ttu-id="9cd6a-109">Ověřování pozice pomocí kontejneru hostitele Win32</span><span class="sxs-lookup"><span data-stu-id="9cd6a-109">Hit Test Using a Win32 Host Container</span></span>](how-to-hit-test-using-a-win32-host-container.md)  
+ [<span data-ttu-id="9cd6a-110">Vykreslení intervalu podle snímků pomocí CompositionTarget</span><span class="sxs-lookup"><span data-stu-id="9cd6a-110">Render on a Per Frame Interval Using CompositionTarget</span></span>](how-to-render-on-a-per-frame-interval-using-compositiontarget.md)  
   
-## <a name="see-also"></a><span data-ttu-id="db5c4-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="db5c4-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9cd6a-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9cd6a-111">See also</span></span>
 
 - <xref:System.Windows.Media.Visual>
 - <xref:System.Windows.Media.VisualTreeHelper>
 - <xref:System.Windows.Media.DrawingVisual>
-- [<span data-ttu-id="db5c4-112">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="db5c4-112">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
-- [<span data-ttu-id="db5c4-113">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="db5c4-113">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="9cd6a-112">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="9cd6a-112">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="9cd6a-113">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="9cd6a-113">Graphics and Multimedia</span></span>](index.md)

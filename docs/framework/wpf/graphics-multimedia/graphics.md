@@ -8,27 +8,27 @@ helpviewer_keywords:
 - graphics [WPF], effects
 ms.assetid: 3bfc652e-91b7-4697-a4f4-83ff0e98327e
 ms.openlocfilehash: c59d19c925d99ac8f5dd07da84295ee002c956de
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762212"
 ---
-# <a name="graphics"></a><span data-ttu-id="762e4-102">Grafika</span><span class="sxs-lookup"><span data-stu-id="762e4-102">Graphics</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="762e4-103">nabídky integrovaná podpora pro multimédia, vektorovou grafiku, animace a obsahu složení, a usnadňuje vývojářům umožní tvořit zajímavou uživatelská rozhraní a obsah.</span><span class="sxs-lookup"><span data-stu-id="762e4-103">offers integrated support for multimedia, vector graphics, animation, and content composition, making it easy for developers to build interesting user interfaces and content.</span></span>  
+# <a name="graphics"></a><span data-ttu-id="60e5f-102">Grafika</span><span class="sxs-lookup"><span data-stu-id="60e5f-102">Graphics</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="60e5f-103">nabídky integrovaná podpora pro multimédia, vektorovou grafiku, animace a obsahu složení, a usnadňuje vývojářům umožní tvořit zajímavou uživatelská rozhraní a obsah.</span><span class="sxs-lookup"><span data-stu-id="60e5f-103">offers integrated support for multimedia, vector graphics, animation, and content composition, making it easy for developers to build interesting user interfaces and content.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="762e4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="762e4-104">In This Section</span></span>  
- [<span data-ttu-id="762e4-105">Bitmapové efekty</span><span class="sxs-lookup"><span data-stu-id="762e4-105">Bitmap Effects</span></span>](bitmap-effects.md)  
- [<span data-ttu-id="762e4-106">Štětce</span><span class="sxs-lookup"><span data-stu-id="762e4-106">Brushes</span></span>](brushes.md)  
- [<span data-ttu-id="762e4-107">Kresby</span><span class="sxs-lookup"><span data-stu-id="762e4-107">Drawings</span></span>](drawings.md)  
- [<span data-ttu-id="762e4-108">Geometrie</span><span class="sxs-lookup"><span data-stu-id="762e4-108">Geometries</span></span>](geometries.md)  
- [<span data-ttu-id="762e4-109">Obrázky</span><span class="sxs-lookup"><span data-stu-id="762e4-109">Images</span></span>](images.md)  
- [<span data-ttu-id="762e4-110">Tvary</span><span class="sxs-lookup"><span data-stu-id="762e4-110">Shapes</span></span>](shapes.md)  
- [<span data-ttu-id="762e4-111">Transformace</span><span class="sxs-lookup"><span data-stu-id="762e4-111">Transformations</span></span>](transformations.md)  
- [<span data-ttu-id="762e4-112">Nastavení registru pro vykreslení grafiky</span><span class="sxs-lookup"><span data-stu-id="762e4-112">Graphics Rendering Registry Settings</span></span>](graphics-rendering-registry-settings.md)  
- [<span data-ttu-id="762e4-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="762e4-113">How-to Topics</span></span>](graphics-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="60e5f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="60e5f-104">In This Section</span></span>  
+ [<span data-ttu-id="60e5f-105">Bitmapové efekty</span><span class="sxs-lookup"><span data-stu-id="60e5f-105">Bitmap Effects</span></span>](bitmap-effects.md)  
+ [<span data-ttu-id="60e5f-106">Štětce</span><span class="sxs-lookup"><span data-stu-id="60e5f-106">Brushes</span></span>](brushes.md)  
+ [<span data-ttu-id="60e5f-107">Kresby</span><span class="sxs-lookup"><span data-stu-id="60e5f-107">Drawings</span></span>](drawings.md)  
+ [<span data-ttu-id="60e5f-108">Geometrie</span><span class="sxs-lookup"><span data-stu-id="60e5f-108">Geometries</span></span>](geometries.md)  
+ [<span data-ttu-id="60e5f-109">Obrázky</span><span class="sxs-lookup"><span data-stu-id="60e5f-109">Images</span></span>](images.md)  
+ [<span data-ttu-id="60e5f-110">Tvary</span><span class="sxs-lookup"><span data-stu-id="60e5f-110">Shapes</span></span>](shapes.md)  
+ [<span data-ttu-id="60e5f-111">Transformace</span><span class="sxs-lookup"><span data-stu-id="60e5f-111">Transformations</span></span>](transformations.md)  
+ [<span data-ttu-id="60e5f-112">Nastavení registru pro vykreslení grafiky</span><span class="sxs-lookup"><span data-stu-id="60e5f-112">Graphics Rendering Registry Settings</span></span>](graphics-rendering-registry-settings.md)  
+ [<span data-ttu-id="60e5f-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="60e5f-113">How-to Topics</span></span>](graphics-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="762e4-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="762e4-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="60e5f-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="60e5f-114">See also</span></span>
 
 - <xref:System.Windows.Shapes.Shape>
 - <xref:System.Windows.Media.Transform>
@@ -37,6 +37,6 @@ ms.locfileid: "59102346"
 - <xref:System.Windows.Media.Drawing>
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Effects.BitmapEffect>
-- [<span data-ttu-id="762e4-115">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="762e4-115">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
-- [<span data-ttu-id="762e4-116">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="762e4-116">Graphics and Multimedia</span></span>](index.md)
-- [<span data-ttu-id="762e4-117">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="762e4-117">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="60e5f-115">2D grafika a obrázky</span><span class="sxs-lookup"><span data-stu-id="60e5f-115">2D Graphics and Imaging</span></span>](../advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [<span data-ttu-id="60e5f-116">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="60e5f-116">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="60e5f-117">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="60e5f-117">WPF Graphics Rendering Overview</span></span>](wpf-graphics-rendering-overview.md)
