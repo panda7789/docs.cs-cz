@@ -12,11 +12,11 @@ helpviewer_keywords:
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
 ms.openlocfilehash: 46ceca3a84e8ffbe6d07886c1b93d062f3ccd2d1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59305257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662956"
 ---
 # <a name="-define-c-compiler-options"></a>-definovat (možnosti kompilátoru C#)
 **-Definovat** možnost definuje `name` jako symbol ve zdrojovém kódu všechny soubory programu.  

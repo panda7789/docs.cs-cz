@@ -8,11 +8,11 @@ helpviewer_keywords:
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
 ms.openlocfilehash: 2475f63099e47beedc610b8815a8e39e1f7be77e
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660304"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (referenční dokumentace jazyka C#)
 
@@ -23,10 +23,10 @@ Následující tabulka ukazuje C# typů hodnot:
 |[bool](bool.md)|Boolean||
 |[byte](byte.md)|Bez znaménka, číselné hodnoty a [integrální](integral-types-table.md)||
 |[char](char.md)|Bez znaménka, číselné hodnoty a [integrální](integral-types-table.md)||
-|[decimal](decimal.md)|Číselné hodnoty a [s plovoucí desetinnou čárkou](floating-point-types-table.md)|M nebo m|
-|[double](double.md)|Číselné hodnoty a [s plovoucí desetinnou čárkou](floating-point-types-table.md)|D nebo d|
+|[decimal](decimal.md)|Numeric, [floating-point](floating-point-types-table.md)|M nebo m|
+|[double](double.md)|Numeric, [floating-point](floating-point-types-table.md)|D nebo d|
 |[enum](enum.md)|Výčet||
-|[float](float.md)|Číselné hodnoty a [s plovoucí desetinnou čárkou](floating-point-types-table.md)|F nebo f|
+|[float](float.md)|Numeric, [floating-point](floating-point-types-table.md)|F nebo f|
 |[int](int.md)|Podepsaný držitelem, číselné hodnoty a [integrální](integral-types-table.md)||
 |[long](long.md)|Podepsaný držitelem, číselné hodnoty a [integrální](integral-types-table.md)|L nebo l|
 |[sbyte](sbyte.md)|Podepsaný držitelem, číselné hodnoty a [integrální](integral-types-table.md)||

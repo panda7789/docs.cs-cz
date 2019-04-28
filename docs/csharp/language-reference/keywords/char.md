@@ -9,11 +9,11 @@ helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
 ms.openlocfilehash: b0aaf6c0b2f614fa5ff8611407cea567da1faafb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54616312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661942"
 ---
 # <a name="char-c-reference"></a>char (Referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ ms.locfileid: "54616312"
 
  Znaky kódování Unicode se používá k reprezentování většinu psané jazyky po celém světě.
 
-|Typ|Rozsah|Velikost|Typ formátu .NET|
+|Type|Rozsah|Velikost|Typ formátu .NET|
 |----------|-----------|----------|-------------------------|
 |`char`|U + 0000 U + FFFF|16bitový znak Unicode|<xref:System.Char?displayProperty=nameWithType>|
 

@@ -7,10 +7,10 @@ ms.author: mairaw
 ms.date: 04/18/2019
 ms.openlocfilehash: 401073d29ca0a0bb0b1511e65cd1bad31e1bbceb
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643800"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Instalace rozhraní .NET Framework v systému Windows XP a Windows Server 2003
 

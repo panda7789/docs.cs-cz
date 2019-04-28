@@ -5,11 +5,11 @@ author: cartermp
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 6c0f55150a4a1c4d0fb8b3125565c9ab8ade3117
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663125"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analýza závislostí do portu kódu až po .NET Core
 

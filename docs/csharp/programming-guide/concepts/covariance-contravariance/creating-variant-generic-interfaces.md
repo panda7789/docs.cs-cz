@@ -3,11 +3,11 @@ title: Vytváření variantních obecných rozhraní (C#)
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
 ms.openlocfilehash: ad82ba27a98d27a18d9cff1e65ab929cd9d711a6
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668572"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Vytváření variantních obecných rozhraní (C#)
 

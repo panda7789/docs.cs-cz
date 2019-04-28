@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
 ms.openlocfilehash: ba0838d562ac0ec0ea531161c437dec5ce66c3f5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649995"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.
 Protože toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání. Jestli nebude lepší uplatňovat operátor 'Await' na výsledek volání.  
@@ -29,7 +29,7 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
   
 ### <a name="to-address-this-warning"></a>Chcete-li vyřešit tato upozornění  
   
--   Měli byste zvážit potlačení upozornění pouze v případě, že jste si jisti, že nechcete čekat na dokončení asynchronního volání a že volané metody nevyvolá žádné výjimky. V takovém případě lze potlačit upozornění přiřazením úkolu výsledek volání do proměnné.  
+- Měli byste zvážit potlačení upozornění pouze v případě, že jste si jisti, že nechcete čekat na dokončení asynchronního volání a že volané metody nevyvolá žádné výjimky. V takovém případě lze potlačit upozornění přiřazením úkolu výsledek volání do proměnné.  
   
      Následující příklad ukazuje, jak vyvolat upozornění, jak ho potlačit a jak očekávat volání.  
   

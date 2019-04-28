@@ -10,22 +10,22 @@ helpviewer_keywords:
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
 ms.openlocfilehash: 9b2719ca000ab86b9ca40f9e78af46cbf598d16e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61640537"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo windows, které může obsahovat vlastní odlišné dokumentů HTML. Pomocí snímků usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel, jeden nebo více kusů stránky, zatímco jiné rámce neustále měnit jejich obsah.  
   
  Autoři HTML můžete vytvořit snímky v jednom ze dvou způsobů:  
   
--   Použití `FRAMESET` a `FRAME` značky, které vytvářejí oprava systému windows.  
+- Použití `FRAMESET` a `FRAME` značky, které vytvářejí oprava systému windows.  
   
  -nebo-  
   
--   Použití `IFRAME` značky, který vytvoří okno s plovoucí desetinnou čárkou, které lze přesunout za běhu.  
+- Použití `IFRAME` značky, který vytvoří okno s plovoucí desetinnou čárkou, které lze přesunout za běhu.  
   
 1. Protože snímky obsahují dokumentů HTML, jsou reprezentovány v modelu Document Object Model (DOM) jako prvků a elementů rámce.  
   

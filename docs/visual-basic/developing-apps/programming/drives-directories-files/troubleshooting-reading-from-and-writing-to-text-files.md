@@ -10,11 +10,11 @@ helpviewer_keywords:
 - reading text files [Visual Basic], troubleshooting
 ms.assetid: a8e9b44d-facb-4718-8c0f-466537171182
 ms.openlocfilehash: 90a04d9de2ac77c28a92d99e1fe118a1f8ecf448
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58831776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650047"
 ---
 # <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení a zápis do textových souborů (Visual Basic)
 Toto téma popisuje běžné problémy vzniklé při práci s textem soubory a navrhne přístup ke každému.  

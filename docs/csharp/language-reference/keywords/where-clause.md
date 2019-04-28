@@ -9,11 +9,11 @@ helpviewer_keywords:
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
 ms.openlocfilehash: 470fcfde7a5e68887fa3a6e99cb8881073ffeba5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660239"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
 

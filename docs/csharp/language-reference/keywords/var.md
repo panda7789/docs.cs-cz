@@ -9,11 +9,11 @@ helpviewer_keywords:
 - var keyword [C#]
 ms.assetid: 0777850a-2691-4e3e-927f-0c850f5efe15
 ms.openlocfilehash: 79a3fe331107a902957158a9631f607cb431be32
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660265"
 ---
 # <a name="var-c-reference"></a>var (Referenční dokumentace jazyka C#)
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - explicit keyword [C#]
 ms.assetid: cfb8f42a-e411-4db2-af9b-796b05644846
 ms.openlocfilehash: 4949b88a32dae2a727e623bb6e4db0a4f9d8418c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661708"
 ---
 # <a name="explicit-c-reference"></a>explicit (Referenční dokumentace jazyka C#)
 

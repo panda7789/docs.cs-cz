@@ -18,17 +18,16 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0793f3688f1f6ca66d92c5a22e158aa85e5470ae
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
-ms.translationtype: MT
+ms.openlocfilehash: ee433c91a4fdc78c1b24d2aa232f61ab7d4cb5cf
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58133334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650353"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
 Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z jednoho nebo několika vlastních číselných specifikátorů pro definování formátování číselných dat. Vlastní číselný formátovací řetězec je formátovací řetězec, který není [řetězec standardního číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
-  
 
  Vlastní řetězce číselného formátu jsou podporovány některými přetíženími `ToString` metoda všechny číselné typy. Například můžete zadat číselný formátovací řetězec <xref:System.Int32.ToString%28System.String%29> a <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> metody <xref:System.Int32> typu. Vlastní řetězce číselného formátu jsou také podporovány v rozhraní .NET [funkci složeného formátování](../../../docs/standard/base-types/composite-formatting.md), která je používána některými `Write` a `WriteLine` metody <xref:System.Console> a <xref:System.IO.StreamWriter> třídy, <xref:System.String.Format%2A?displayProperty=nameWithType>metody a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> metoda. [Interpolace řetězců](../../csharp/language-reference/tokens/interpolated.md) funkce také podporuje vlastní řetězce číselného formátu.  
   
@@ -109,11 +108,11 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 ## <a name="the--custom-specifier"></a>Vlastní specifikátor ""  
  Znak "," slouží jako oddělovač skupin a specifikátor číselného měřítka.  
   
--   Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné symboly číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.  
+- Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné symboly číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.  
   
      <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> a <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> vlastnostmi aktuálního <xref:System.Globalization.NumberFormatInfo> objekt určí znak použitý jako oddělovač číselných skupin a velikost každé skupiny čísel. Pokud je například pro formátování čísla 1000 použit řetězec "#,#" a invariantní jazyková verze, zobrazí se výstup "1,000".  
   
--   Specifikátor číselného měřítka: Pokud jeden nebo více čárek zadávají bezprostředně vlevo od explicitní nebo implicitní desetinné čárky, číslo má být formátováno, je vyděleno hodnotou 1000 pro každou čárku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".  
+- Specifikátor číselného měřítka: Pokud jeden nebo více čárek zadávají bezprostředně vlevo od explicitní nebo implicitní desetinné čárky, číslo má být formátováno, je vyděleno hodnotou 1000 pro každou čárku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".  
   
  Můžete použít oddělovač skupin a specifikátory číselného měřítka ve stejném formátovacím řetězci. Pokud je pro formátování čísla jedna miliarda použit například řetězec "#,0,," a invariantní jazyková verze, zobrazí se výstup "1,000".  
   

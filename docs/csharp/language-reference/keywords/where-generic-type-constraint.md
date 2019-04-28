@@ -8,11 +8,11 @@ f1_keywords:
 helpviewer_keywords:
 - where (generic type constraint) [C#]
 ms.openlocfilehash: 094358dea9054bf198ded77736dc45af1a436787
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660226"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 

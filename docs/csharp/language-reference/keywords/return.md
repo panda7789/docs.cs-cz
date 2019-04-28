@@ -10,11 +10,11 @@ helpviewer_keywords:
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
 ms.openlocfilehash: 058dc1d51099196559bee4ec2b96dc883e813f93
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660811"
 ---
 # <a name="return-c-reference"></a>return (Referenční dokumentace jazyka C#)
 

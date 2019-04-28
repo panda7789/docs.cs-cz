@@ -3,11 +3,11 @@ title: Agregační operace (C#)
 ms.date: 07/20/2015
 ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
 ms.openlocfilehash: 151332964b4efd495acff5d8763dfab5f380ee6c
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668469"
 ---
 # <a name="aggregation-operations-c"></a>Agregační operace (C#)
 Operace agregace vypočítá jedinou hodnotu z kolekce hodnot. Příklad operace agregace je výpočet denní teplota z za měsíc denní teplotní hodnoty.  
@@ -24,7 +24,7 @@ Operace agregace vypočítá jedinou hodnotu z kolekce hodnot. Příklad operace
 |-----------------|-----------------|---------------------------------|----------------------|  
 |Aggregate|Provede vlastní agregační operace na hodnotách kolekce.|Není k dispozici.|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
 |Průměr|Vypočítá průměrnou hodnotu kolekci hodnot.|Není k dispozici.|<xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Average%2A?displayProperty=nameWithType>|  
-|Počet|Vrátí počet prvků v kolekci, volitelně pouze elementy, které splňují funkce predikátu.|Není k dispozici.|<xref:System.Linq.Enumerable.Count%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Count%2A?displayProperty=nameWithType>|  
+|Count|Vrátí počet prvků v kolekci, volitelně pouze elementy, které splňují funkce predikátu.|Není k dispozici.|<xref:System.Linq.Enumerable.Count%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Count%2A?displayProperty=nameWithType>|  
 |LongCount|Vrátí počet prvků v velkou kolekci volitelně pouze elementy, které splňují funkce predikátu.|Není k dispozici.|<xref:System.Linq.Enumerable.LongCount%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LongCount%2A?displayProperty=nameWithType>|  
 |Maximum|Určuje maximální hodnotu v kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Max%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Max%2A?displayProperty=nameWithType>|  
 |Minimum|Určuje minimální hodnota v kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Min%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Min%2A?displayProperty=nameWithType>|  

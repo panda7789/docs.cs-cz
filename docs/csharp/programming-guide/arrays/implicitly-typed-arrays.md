@@ -8,11 +8,11 @@ helpviewer_keywords:
 - C# language, implicitly typed arrays
 ms.assetid: e05be95c-6732-403d-ae42-b35f057cbbea
 ms.openlocfilehash: 7aa820d87ec36f1963183b7e4e2e46de998a08c9
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61652010"
 ---
 # <a name="implicitly-typed-arrays-c-programming-guide"></a>Implicitně typovaná pole (Průvodce programováním v C#)
 

@@ -6,11 +6,11 @@ ms.author: kehavens
 ms.date: 10/18/2017
 ms.custom: seodec18
 ms.openlocfilehash: 660b966c6d02353b855e5728094083042a561558
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665816"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s dotnet test
 

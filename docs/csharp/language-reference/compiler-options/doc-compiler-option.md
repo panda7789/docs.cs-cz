@@ -13,11 +13,11 @@ helpviewer_keywords:
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
 ms.openlocfilehash: c46118a9b02df653844a0ca04f9e8f9952a957c4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662904"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (C# Compiler Options)
 **-Doc** možnost umožňuje umístit komentáře dokumentace do souboru XML.  
@@ -35,9 +35,9 @@ ms.locfileid: "59333597"
 ## <a name="remarks"></a>Poznámky  
  V souborech zdrojového kódu je možné zpracovat a přidat do souboru XML dokumentační komentáře, které předcházet následující:  
   
--   Uživatelem definované typy jako [třídy](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md)  
+- Uživatelem definované typy jako [třídy](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md)  
   
--   Členy jako pole, [události](../../../csharp/language-reference/keywords/event.md), [vlastnost](../../../csharp/programming-guide/classes-and-structs/using-properties.md), nebo – metoda  
+- Členy jako pole, [události](../../../csharp/language-reference/keywords/event.md), [vlastnost](../../../csharp/programming-guide/classes-and-structs/using-properties.md), nebo – metoda  
   
  Výstup souboru se zdrojovým kódem, který obsahuje hlavní je nejdříve do souboru XML.  
   

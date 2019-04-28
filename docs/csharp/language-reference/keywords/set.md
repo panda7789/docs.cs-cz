@@ -9,11 +9,11 @@ helpviewer_keywords:
 - set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
 ms.openlocfilehash: 0322f1bb94174dd3a0cdd2089c8626d25a80cc1c
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660746"
 ---
 # <a name="set-c-reference"></a>set (Referenční dokumentace jazyka C#)
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
 ms.openlocfilehash: fc2b7ed2004b842116d051b393f00506428def61
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344543"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665933"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu Lambda (Visual Basic)
 A *výraz lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda je možné bez ohledu na typ delegáta je platný.  

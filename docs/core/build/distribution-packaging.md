@@ -5,11 +5,11 @@ author: bleroy
 ms.date: 06/28/2017
 ms.custom: seodec18
 ms.openlocfilehash: be5767351ad1cdac15c73f718f67a0d120cf65b0
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650866"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET core
 
@@ -77,13 +77,13 @@ Následující tabulka ukazuje doporučené balíčky.
 
 | Název                                    | Příklad                | Případ použití: Instalace...           | Obsahuje           | Závislosti                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
-| dotnet-sdk-[major]                      | dotnet-sdk-2           | Nejnovější sadu sdk pro modul runtime hlavní    |                    | dotnet-sdk-[major].[latestminor]               | \<verze sady SDK >     |
-| dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sadu sdk pro konkrétní prostředí runtime |                    | DotNet - sdk-[hlavníverze]. [podverze]. [nejnovější sdk feat] xx | \<verze sady SDK >     |
-| DotNet - sdk-[hlavníverze]. [podverze]. xx [sdk feat] | dotnet-sdk-2.1.3xx     | Konkrétní sada sdk vydávání verzí    | (3),(4)            | aspnetcore - runtime-[hlavníverze]. [podverze]             | \<verze sady SDK >     |
+| dotnet-sdk-[major]                      | dotnet-sdk-2           | Nejnovější sadu sdk pro modul runtime hlavní    |                    | dotnet-sdk-[major].[latestminor]               | \<sdk version>     |
+| dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sadu sdk pro konkrétní prostředí runtime |                    | DotNet - sdk-[hlavníverze]. [podverze]. [nejnovější sdk feat] xx | \<sdk version>     |
+| DotNet - sdk-[hlavníverze]. [podverze]. xx [sdk feat] | dotnet-sdk-2.1.3xx     | Konkrétní sada sdk vydávání verzí    | (3),(4)            | aspnetcore - runtime-[hlavníverze]. [podverze]             | \<sdk version>     |
 | aspnetcore - runtime-[hlavníverze]. [podverze]      | aspnetcore. modul runtime 2.1 | Zvláštní modul runtime ASP.NET Core   | (6),[(7)]          | DotNet – modul runtime-[hlavníverze]. [podverze]                 | \<verze modulu runtime > |
 | DotNet – modul runtime-[hlavníverze]. [podverze]          | DotNet – modul runtime-2.1     | Modulu runtime specifické                | (5)                | Hostitel fxr:\<verze modulu runtime > +                   | \<verze modulu runtime > |
 | dotnet-host-fxr                         | dotnet-host-fxr        | _Závislost_                    | (2)                | Hostitel:\<verze modulu runtime > +                       | \<verze modulu runtime > |
-| DotNet – hostitele                             | DotNet – hostitele            | _Závislost_                    | (1),(8),(9),(10)   |                                                | \<verze modulu runtime > |
+| dotnet-host                             | dotnet-host            | _Závislost_                    | (1),(8),(9),(10)   |                                                | \<verze modulu runtime > |
 
 Většině distribucí vyžadují všechny artefakty, které má být sestaven ze zdroje. Tato akce nemá dopad na balíčky:
 
@@ -110,11 +110,11 @@ V následující tabulce jsou uvedeny doporučené balíčky a **oprava balíčk
 | DotNet - sdk-[hlavníverze]. [podverze]. xx [sdk feat]        | dotnet-sdk-2.1.3xx       |                  | DotNet - sdk-[hlavníverze]. [podverze]. [oprava nejnovější sdk]             |
 | **dotnet-sdk-[major].[minor].[patch]**         | dotnet-sdk-2.1.300       | (3),(4)          | aspnetcore - runtime-[hlavníverze]. [podverze]. [oprava sady sdk modulu runtime]    |
 | aspnetcore - runtime-[hlavníverze]. [podverze]             | aspnetcore. modul runtime 2.1   |                  | aspnetcore - runtime-[hlavníverze]. [podverze]. [nejnovější opravu runtime] |
-| **aspnetcore-runtime-[major].[minor].[patch]** | aspnetcore. modul runtime 2.1.0 | (6),[(7)]        | dotnet-runtime-[major].[minor].[patch]                    |
+| **aspnetcore-runtime-[major].[minor].[patch]** | aspnetcore-runtime-2.1.0 | (6),[(7)]        | dotnet-runtime-[major].[minor].[patch]                    |
 | DotNet – modul runtime-[hlavníverze]. [podverze]                 | DotNet – modul runtime-2.1       |                  | DotNet – modul runtime-[hlavníverze]. [podverze]. [nejnovější opravu runtime]     |
 | **dotnet-runtime-[major].[minor].[patch]**     | dotnet-runtime-2.1.0     | (5)              | Hostitel fxr:\<verze modulu runtime > +                              |
 | dotnet-host-fxr                                | dotnet-host-fxr          | (2)              | Hostitel:\<verze modulu runtime > +                                  |
-| DotNet – hostitele                                    | DotNet – hostitele              | (1),(8),(9),(10) |                                                           |
+| dotnet-host                                    | dotnet-host              | (1),(8),(9),(10) |                                                           |
 
 Se o alternativu k použití balíčky opravy _Připnutí_ balíčky na konkrétní verzi pomocí Správce balíčků. Pokud chcete vyhnout, tím ovlivnili ostatní aplikace nebo uživatele, můžete takové aplikace vytvořené a nasazené v kontejneru.
 

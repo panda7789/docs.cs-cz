@@ -3,11 +3,11 @@ title: Atomizované objekty XName a Xnamespace (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: a5b21433-b49d-415c-b00e-bcbfb0d267d7
 ms.openlocfilehash: ff5677e84d0a4401c9d3ce8c43e7743385cdd432
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54557855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668429"
 ---
 # <a name="atomized-xname-and-xnamespace-objects-linq-to-xml-c"></a>Atomizované objekty XName a Xnamespace (LINQ to XML) (C#)
 <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty jsou *atomizované objekty*; to znamená, pokud obsahují stejné kvalifikovaný název, odkazují na stejný objekt. To poskytuje výhody výkon pro dotazy: Při porovnávání rovnosti dvou atomizované objekty názvy základní převodní jazyk má jenom k určení, zda dva odkazy odkazují na stejný objekt. Základní kód nemusí řetězec porovnání, které by byly časově náročné.  

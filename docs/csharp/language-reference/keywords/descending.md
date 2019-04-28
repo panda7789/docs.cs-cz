@@ -9,11 +9,11 @@ helpviewer_keywords:
 - descending keyword [C#]
 ms.assetid: 8d2cd1e5-9c1c-4dfc-b84c-60e2d3240927
 ms.openlocfilehash: ccf8e8a70b6ab0c7179143f7827bd2e0cf51eb51
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54741123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661825"
 ---
 # <a name="descending-c-reference"></a>descending (Referenční dokumentace jazyka C#)
 

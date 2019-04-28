@@ -10,11 +10,11 @@ helpviewer_keywords:
 - types [Visual Basic], user-defined
 ms.assetid: 55e86462-5e99-4d33-8018-6d097ca491b2
 ms.openlocfilehash: ebfc82665bb18d96c83db8f29a6c206a9a71fd7f
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663359"
 ---
 # <a name="structures-visual-basic"></a>Struktury (Visual Basic)
 A *struktura* je generalizace uživatelem definovaný typ (UDT) podporované v předchozích verzích jazyka Visual Basic. Kromě polí můžete zveřejnit struktury vlastnosti, metody a události. Struktura může implementovat jedno nebo více rozhraní a je možné deklarovat individuální úrovně přístupu pro každé pole.  
@@ -24,7 +24,7 @@ A *struktura* je generalizace uživatelem definovaný typ (UDT) podporované v p
  Struktury jsou užitečné, pokud chcete jednu proměnnou pro uchování několik související údaje. Například můžete chtít zachovat název zaměstnance, telefonní číslo a salary společně. Tyto informace můžete použít několik proměnných, nebo může definovat strukturu a použít ji pro proměnnou jednoho zaměstnance. Výhodou struktury pocítíte, když máte mnoho zaměstnanců a proto velký počet instancí proměnné.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
  Ukazuje, jak deklarovat strukturu a jeho elementy.  
   
  [Proměnné struktury](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  

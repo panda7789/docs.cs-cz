@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Window control pattern
 ms.assetid: a28cb286-296e-4a62-b4cb-55ad636ebccc
 ms.openlocfilehash: 4f11f82b628ac020cbda70d65adf7813291c60a6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61645743"
 ---
 # <a name="implementing-the-ui-automation-window-control-pattern"></a>Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní
 > [!NOTE]
@@ -25,15 +25,15 @@ ms.locfileid: "59168035"
 ## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
  Při implementaci vzoru ovládacích prvků okno, poznamenejte si následující pokyny a konvence:  
   
--   Chcete-li podporují možnost změnit velikost obě okna a obrazovky pozice použitím automatizace uživatelského rozhraní, musí implementovat ovládací prvek <xref:System.Windows.Automation.Provider.ITransformProvider> kromě <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Chcete-li podporují možnost změnit velikost obě okna a obrazovky pozice použitím automatizace uživatelského rozhraní, musí implementovat ovládací prvek <xref:System.Windows.Automation.Provider.ITransformProvider> kromě <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Ovládací prvky, které obsahují záhlaví a prvky název panelu, které povolte stažení ovládacího prvku přesune, velikost, maximalizované, minimalizovat nebo uzavřel jsou zpravidla vyžadovány k implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Ovládací prvky, které obsahují záhlaví a prvky název panelu, které povolte stažení ovládacího prvku přesune, velikost, maximalizované, minimalizovat nebo uzavřel jsou zpravidla vyžadovány k implementaci <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Ovládací prvky, jako je například automaticky otevíraná okna popisu tlačítka a pole se seznamem pole nebo nabídky rozevíracích neimplementují obvykle <xref:System.Windows.Automation.Provider.IWindowProvider>.  
+- Ovládací prvky, jako je například automaticky otevíraná okna popisu tlačítka a pole se seznamem pole nebo nabídky rozevíracích neimplementují obvykle <xref:System.Windows.Automation.Provider.IWindowProvider>.  
   
--   Bublině nápovědy systému windows jsou rozlišené ze základní popis automaticky otevíraná okna tak, že zřídíte jako okno zavřít.  
+- Bublině nápovědy systému windows jsou rozlišené ze základní popis automaticky otevíraná okna tak, že zřídíte jako okno zavřít.  
   
--   Režim celé obrazovky není podporována IWindowProvider je specifické pro funkce k aplikaci a není chování typické okna.  
+- Režim celé obrazovky není podporována IWindowProvider je specifické pro funkce k aplikaci a není chování typické okna.  
   
 <a name="Required_Members_for_IWindowProvider"></a>   
 ## <a name="required-members-for-iwindowprovider"></a>Požadované členy pro IWindowProvider  
@@ -42,14 +42,14 @@ ms.locfileid: "59168035"
 |Povinný člen|Typ člena|Poznámky|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Vlastnost|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Vlastnost|Žádné|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Vlastnost|Žádný|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Vlastnost|Žádné|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Metoda|Žádný|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádný|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Metoda|Žádné|  
 |<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Událost|Žádný|  
 |<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Událost|Žádné|  
 |<xref:System.Windows.Automation.WindowInteractionState>|Událost|Není zaručeno, že bude <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  

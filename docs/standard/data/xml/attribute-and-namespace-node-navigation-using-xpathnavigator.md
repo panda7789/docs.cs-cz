@@ -1,18 +1,18 @@
 ---
-title: Atribut a navigace Namespace uzlů pomocí XPathNavigator
+title: Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 23975f88-e0af-4b88-93de-9e20e11880ad
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fd3b1cacc73743622aaaad72bfd4edb26dc26390
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54740473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670063"
 ---
-# <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Atribut a navigace Namespace uzlů pomocí XPathNavigator
+# <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje dvě sady navigačních metod, najít první sady v [uzlu nastavení navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) tématu, se používají pro navigaci *sad uzlů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu. Druhá sada popsané v tomto tématu slouží k navigaci *uzly atributu a oboru názvů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  
   
 ## <a name="attribute-node-navigation"></a>Atribut uzlu navigace  
@@ -22,11 +22,11 @@ ms.locfileid: "54740473"
   
  Níže jsou atribut metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A>  
   
  Pokud aktuální uzel je element, můžete použít <xref:System.Xml.XPath.XPathNavigator.HasAttributes%2A> vlastnosti chcete zobrazit, pokud jsou všechny atributy přidružené k elementu. Poté, co je známo, že element má atributy, existuje několik metod pro přístup k atributům. Chcete-li načíst z elementu jeden atribut, použijte <xref:System.Xml.XPath.XPathNavigator.GetAttribute%2A> metody. Přesunout <xref:System.Xml.XPath.XPathNavigator> konkrétní atribut, použijte <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A> metody. Jednotlivé atributy elementu mohou také iteraci pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute%2A> metoda, za nímž následuje několik volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A> metody.  
   
@@ -40,11 +40,11 @@ ms.locfileid: "54740473"
   
  Níže jsou obor názvů navigačních metod <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A>  
   
  Je vždy alespoň jeden uzel oboru názvů v oboru pro libovolný prvek v dokumentu XML. Toto je uzel oboru názvů s předponou `xml` a identifikátor URI oboru názvů `http://www.w3.org/XML/1998/namespace`. Chcete-li získat identifikátor URI v oboru uvedeny konkrétní předpony oboru názvů, použijte <xref:System.Xml.XPath.XPathNavigator.GetNamespace%2A> metody. Přesunout <xref:System.Xml.XPath.XPathNavigator> objekt pro konkrétní obor názvů uzlu, použijte <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A> metody. Každý uzel oboru názvů v oboru pro daný element můžete také iteraci pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda a více volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody.  
   
@@ -66,11 +66,11 @@ ms.locfileid: "54740473"
   
  Pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následovaný sérii volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metoda) vypadá takto.  
   
--   Když umístíte na `element2`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
+- Když umístíte na `element2`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
--   Když umístíte na `element1`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
+- Když umístíte na `element1`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
--   Když umístíte na `root`: `xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
+- Když umístíte na `root`: `xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
   
 > [!NOTE]
 >  <xref:System.Xml.XPath.XPathNavigator> Třídy vrátí uzly oboru názvů v pořadí reverzní dokumentů. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  
@@ -87,11 +87,11 @@ ms.locfileid: "54740473"
   
  Při umístění na `child2`, pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následovaný sérii volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> – metoda) je následující.  
   
--   <xref:System.Xml.XPath.XPathNamespaceScope.All>: `xmlns:c="urn:c"`, `xmlns:a="urn:a"`, `xmlns=""`, `xmlns:b="http://www.contoso.com/b"`, `xmlns:a="http://www.contoso.com/a"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
+- <xref:System.Xml.XPath.XPathNamespaceScope.All>: `xmlns:c="urn:c"`, `xmlns:a="urn:a"`, `xmlns=""`, `xmlns:b="http://www.contoso.com/b"`, `xmlns:a="http://www.contoso.com/a"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
--   <xref:System.Xml.XPath.XPathNamespaceScope.ExcludeXml>: `xmlns:c="urn:c"`, `xmlns:a="urn:a"`, `xmlns=""`, `xmlns:b="http://www.contoso.com/b"`, `xmlns:a="http://www.contoso.com/a"`, a `xmlns="http://www.contoso.com"`.  
+- <xref:System.Xml.XPath.XPathNamespaceScope.ExcludeXml>: `xmlns:c="urn:c"`, `xmlns:a="urn:a"`, `xmlns=""`, `xmlns:b="http://www.contoso.com/b"`, `xmlns:a="http://www.contoso.com/a"`, a `xmlns="http://www.contoso.com"`.  
   
--   <xref:System.Xml.XPath.XPathNamespaceScope.Local>: `xmlns:c="urn:c"`.  
+- <xref:System.Xml.XPath.XPathNamespaceScope.Local>: `xmlns:c="urn:c"`.  
   
 > [!NOTE]
 >  <xref:System.Xml.XPath.XPathNavigator> Třídy vrátí uzly oboru názvů v pořadí reverzní dokumentů. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  

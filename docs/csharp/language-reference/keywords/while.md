@@ -9,11 +9,11 @@ helpviewer_keywords:
 - while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
 ms.openlocfilehash: 6e485bc80a213be6a5d0da8a00c8ca718f867efb
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660187"
 ---
 # <a name="while-c-reference"></a>while (Referenční dokumentace jazyka C#)
 

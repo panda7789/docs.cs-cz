@@ -3,11 +3,11 @@ title: příkaz DotNet test
 description: Příkaz dotnet test slouží ke spuštění testů jednotek v daném projektu.
 ms.date: 05/29/2018
 ms.openlocfilehash: 1b2a3917a930db0c0a49ebea41f568aaf4a58ee3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665530"
 ---
 # <a name="dotnet-test"></a>DotNet test
 

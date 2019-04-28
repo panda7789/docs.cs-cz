@@ -3,11 +3,11 @@ title: Model EDM (Entity Data Model) Primitivní datové typy
 ms.date: 03/30/2017
 ms.assetid: 7635168e-0566-4fdd-8391-7941b0d9f787
 ms.openlocfilehash: 044a0ed981bb9cda3550fb3a3a9f1cb9bff96f25
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59142646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667129"
 ---
 # <a name="entity-data-model-primitive-data-types"></a>Model EDM (Entity Data Model) Primitivní datové typy
 Entity Data Model (EDM) podporuje sadu abstraktní primitivní datové typy (například řetězce, Boolean, Int32 a tak dále), které se používají k definování [vlastnosti](../../../../docs/framework/data/adonet/property.md) v konceptuálním modelu. Tyto primitivní datové typy jsou proxy servery pro skutečné primitivní datové typy, které jsou podporovány ve službě storage nebo hostitelské prostředí, jako je například do databáze serveru SQL nebo common language runtime (CLR). Modelu EDM primitivní datové typy; nedefinuje sémantiku operací nebo převody Tyto sémantiku jsou definovány úložiště nebo hostitelského prostředí. V modelu EDM primitivní datové typy se obvykle mapují na odpovídající primitivní datové typy ve službě storage nebo hostitelského prostředí. Informace o způsobu, jakým rozhraní Entity Framework mapuje primitivní typy v modelu EDM na datové typy serveru SQL Server najdete v tématu [SqlClient pro typy Entity Framework](../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-types.md).  

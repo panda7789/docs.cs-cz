@@ -6,11 +6,11 @@ ms.author: ronpet
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
 ms.openlocfilehash: 6c24c1ec04bdd7ce7ee2061c2551652e26a28cf9
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646732"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Dekonstrukce řazených kolekcí členů a ostatními typy
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
 ms.openlocfilehash: 44301333f7a36e6b0baa6ea9e089d930bb485a45
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660473"
 ---
 # <a name="unchecked-c-reference"></a>unchecked (Referenční dokumentace jazyka C#)
 

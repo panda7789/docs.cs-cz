@@ -7,11 +7,11 @@ helpviewer_keywords:
 - data types [C#], type system
 ms.assetid: 16b984df-f417-4e02-b1e6-4589d4a614ea
 ms.openlocfilehash: 41406e74a207f289968017f1f9869b23b165c34b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660460"
 ---
 # <a name="types-c-reference"></a>Typy (Referenční dokumentace jazyka C#)
 

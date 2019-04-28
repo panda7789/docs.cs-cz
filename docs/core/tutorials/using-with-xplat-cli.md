@@ -6,11 +6,11 @@ ms.date: 09/10/2018
 ms.technology: dotnet-cli
 ms.custom: seodec18
 ms.openlocfilehash: 92ca5149ad5f0e4a50c809a316123fbf77d4152d
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646966"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 

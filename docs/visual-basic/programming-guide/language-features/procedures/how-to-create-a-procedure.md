@@ -9,11 +9,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], about procedures
 ms.assetid: 4f779247-0b50-47e8-9e5c-ab5cf39ac0d2
 ms.openlocfilehash: 56099d334a03e85b816cf48983cbbead0784ef5b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320389"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665803"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvořit procedury (Visual Basic)
 Použijte postup mezi počáteční příkazu deklarace (`Sub` nebo `Function`) a koncové příkazu deklarace (`End Sub` nebo `End Function`). Kód všechny procedury leží mezi těmito příkazy.  

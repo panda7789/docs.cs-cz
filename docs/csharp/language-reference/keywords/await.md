@@ -9,11 +9,11 @@ helpviewer_keywords:
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
 ms.openlocfilehash: 91d76309fedb2a6f3d877a47f230fda74060107e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662033"
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor je použít pro úkol v asynchronní metodě vložte bodu pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  

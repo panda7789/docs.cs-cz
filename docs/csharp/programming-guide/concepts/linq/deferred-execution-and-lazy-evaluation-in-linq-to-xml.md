@@ -3,11 +3,11 @@ title: Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
 ms.openlocfilehash: 83fdc73b583a2c8aba5383f4a5b3af11a1f6f9c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668533"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 Operace dotazů a osy jsou často implementována pomocí odloženého provedení. Toto téma popisuje požadavky a výhody odložené provedení a některé důležité informace o implementaci.  
@@ -22,16 +22,16 @@ Operace dotazů a osy jsou často implementována pomocí odloženého proveden�
 ## <a name="eager-vs-lazy-evaluation"></a>Nemůžou dočkat, až vs. Opožděné vyhodnocení  
  Když napíšete metodu, která implementuje odložené provedení, máte také rozhodnout, jestli se má implementovat metodu pomocí opožděné vyhodnocení nebo nemůžou dočkat, až hodnocení.  
   
--   V *opožděné vyhodnocení*, jeden element zdrojové kolekce je zpracovaných za každé volání iterátoru. Toto je typická způsob, ve kterém jsou implementovány iterátory.  
+- V *opožděné vyhodnocení*, jeden element zdrojové kolekce je zpracovaných za každé volání iterátoru. Toto je typická způsob, ve kterém jsou implementovány iterátory.  
   
--   V *nemůžou dočkat, až hodnocení*, první volání iterátoru způsobí celou kolekci právě zpracovává. Dočasná kopie zdrojové kolekce může být také potřeba. Například <xref:System.Linq.Enumerable.OrderBy%2A> metoda se má seřadit celou kolekci dříve, než vrátí první prvek.  
+- V *nemůžou dočkat, až hodnocení*, první volání iterátoru způsobí celou kolekci právě zpracovává. Dočasná kopie zdrojové kolekce může být také potřeba. Například <xref:System.Linq.Enumerable.OrderBy%2A> metoda se má seřadit celou kolekci dříve, než vrátí první prvek.  
   
  Opožděné vyhodnocení obvykle poskytuje lepší výkon, protože distribuuje nároky na zpracování rovnoměrně během vyhodnocení kolekce a minimalizuje využití dočasná data. Samozřejmě pro některé operace, neexistuje žádná možnost než a materializovat mezilehlých výsledků.  
   
 ## <a name="next-steps"></a>Další kroky  
  Další téma v tomto kurzu ukazuje odložené provedení:  
   
--   [Příklad odloženého provedení (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-example.md)  
+- [Příklad odloženého provedení (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-example.md)  
   
 ## <a name="see-also"></a>Viz také:
 

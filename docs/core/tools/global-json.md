@@ -1,16 +1,16 @@
 ---
-title: Přehled Global.JSON
+title: global.json overview
 description: Zjistěte, jak použít soubor global.json se nastavit verzi .NET Core SDK, při spuštění příkazů rozhraní příkazového řádku .NET Core.
 ms.date: 12/03/2018
 ms.custom: updateeachrelease, seodec18
 ms.openlocfilehash: e0f929a049812cac6f62e5218629c9b0add83de8
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647968"
 ---
-# <a name="globaljson-overview"></a>Přehled Global.JSON
+# <a name="globaljson-overview"></a>global.json overview
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
@@ -20,7 +20,7 @@ Další informace o zadávání místo toho modul runtime, naleznete v tématu [
 
 Sada .NET core SDK hledá *global.json* soubor v aktuálním pracovním adresáři (který není nutně stejné jako adresář projektu) nebo v některém z jeho nadřazené adresáře.
 
-## <a name="globaljson-schema"></a>Global.JSON schématu
+## <a name="globaljson-schema"></a>global.json schema
 
 ### <a name="sdk"></a>Sady SDK
 

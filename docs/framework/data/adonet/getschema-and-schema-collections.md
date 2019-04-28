@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
 ms.openlocfilehash: 11cfad81e40e76691db9f99efd1d60f5528600d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667042"
 ---
 # <a name="getschema-and-schema-collections"></a>Příkaz GetSchema a kolekce schémat
 **Připojení** třídami implementace spravovaného zprostředkovatele .NET Framework **GetSchema** metodu, která se používá k načtení informací o schématu databáze, která je aktuálně připojena, a informace o schématu vrácených **GetSchema** metoda je k dispozici ve formě <xref:System.Data.DataTable>. **GetSchema** je metoda přetížená metoda, která poskytuje volitelných parametrů pro určení kolekce schématu pro vrácení a omezit množství vrácených informací.  

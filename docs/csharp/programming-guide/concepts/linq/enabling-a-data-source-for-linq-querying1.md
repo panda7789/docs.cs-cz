@@ -3,22 +3,22 @@ title: Povoluje se zdrojem dat pro LINQ Querying1
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
 ms.openlocfilehash: d3faeb15c5c8deedec3c3347c6317cac872224f3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668416"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Povolení zdroje dat pro dotazy LINQ
 Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pro libovolný zdroj dat, aby se dalo dotazovat v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] vzor. Zdrojem dat může být kromě jiného například datová struktura, webová služba, systém souborů nebo databáze. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Vzor usnadňuje klientům dotazování na zdroj dat, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování je povoleno, protože syntaxe a vzor dotazu se nezmění. Způsoby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] je možné rozšířit na tyto data zdroje patří následující:  
   
--   Implementace <xref:System.Collections.Generic.IEnumerable%601> rozhraní v typu, aby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] mohl dotazovat na objekty tohoto typu.  
+- Implementace <xref:System.Collections.Generic.IEnumerable%601> rozhraní v typu, aby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] mohl dotazovat na objekty tohoto typu.  
   
--   Vytváření dotazu na standardní metody operátoru jako <xref:System.Linq.Enumerable.Where%2A> a <xref:System.Linq.Enumerable.Select%2A> , které rozšiřují typ, chcete povolit vlastní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování daného typu.  
+- Vytváření dotazu na standardní metody operátoru jako <xref:System.Linq.Enumerable.Where%2A> a <xref:System.Linq.Enumerable.Select%2A> , které rozšiřují typ, chcete povolit vlastní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování daného typu.  
   
--   Vytvořením zprostředkovatele zdroje dat, který implementuje <xref:System.Linq.IQueryable%601> rozhraní. Zprostředkovatel, který implementuje toto rozhraní obdrží [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy v podobě stromů výrazů, jež provádí vlastním způsobem, například vzdáleně.  
+- Vytvořením zprostředkovatele zdroje dat, který implementuje <xref:System.Linq.IQueryable%601> rozhraní. Zprostředkovatel, který implementuje toto rozhraní obdrží [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy v podobě stromů výrazů, jež provádí vlastním způsobem, například vzdáleně.  
   
--   Vytvořením zprostředkovatele zdroje dat, který využívá existující [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] technologie. Takový zprostředkovatel umožní nejen dotazování, ale také operace vložení, aktualizace a odstranění a mapování pro typy definované uživatelem.  
+- Vytvořením zprostředkovatele zdroje dat, který využívá existující [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] technologie. Takový zprostředkovatel umožní nejen dotazování, ale také operace vložení, aktualizace a odstranění a mapování pro typy definované uživatelem.  
   
  Těmito možnostmi se zabývá toto téma.  
   

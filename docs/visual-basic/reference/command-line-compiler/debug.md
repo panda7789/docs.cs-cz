@@ -8,11 +8,11 @@ helpviewer_keywords:
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
 ms.openlocfilehash: 9bf7170cee31f92481b15fb1227f21895cd3734d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649735"
 ---
 # <a name="-debug-visual-basic"></a>-debug (Visual Basic)
 Způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupních souborů.  

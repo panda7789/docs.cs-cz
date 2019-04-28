@@ -5,11 +5,11 @@ author: thraka
 ms.author: adegeo
 ms.date: 12/17/2018
 ms.openlocfilehash: 16574e02aa9f9167602401eef2ad7a73e07ad107
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648214"
 ---
 # <a name="how-to-enable-tab-completion-for-net-core-cli"></a>Povolení dokončování pomocí TABULÁTORU pro rozhraní příkazového řádku .NET Core
 

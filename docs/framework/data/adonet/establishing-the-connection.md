@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
 ms.openlocfilehash: 7f8cca02e673339e892c16e0de99e20accdfd404
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59142336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667103"
 ---
 # <a name="establishing-the-connection"></a>Navazování připojení
 Pro připojení k serveru Microsoft SQL Server, použijte <xref:System.Data.SqlClient.SqlConnection> objektu zprostředkovatele dat .NET Framework pro SQL Server. Pro připojení ke zdroji dat OLE DB, použijte <xref:System.Data.OleDb.OleDbConnection> objektu zprostředkovatele dat .NET Framework pro OLE DB. Chcete-li se připojit ke zdroji dat rozhraní ODBC, použijte <xref:System.Data.Odbc.OdbcConnection> objektu zprostředkovatele dat .NET Framework pro ODBC. Chcete-li se připojit ke zdroji dat Oracle, použijte <xref:System.Data.OracleClient.OracleConnection> objektu zprostředkovatele dat .NET Framework pro Oracle. Bezpečné ukládání a načítání připojovacích řetězců najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
@@ -58,9 +58,9 @@ using (SqlConnection connection = new SqlConnection(connectionString))
   
  Formát připojovacího řetězce pro zprostředkovatele dat .NET Framework pro OLE DB, je stejný jako formát připojovacího řetězce používán ADO, s následujícími výjimkami:  
   
--   **Poskytovatele** – klíčové slovo je povinný.  
+- **Poskytovatele** – klíčové slovo je povinný.  
   
--   **URL**, **vzdáleného poskytovatele**, a **vzdálený Server** klíčová slova nejsou podporovány.  
+- **URL**, **vzdáleného poskytovatele**, a **vzdálený Server** klíčová slova nejsou podporovány.  
   
  Další informace o připojovacích řetězcích OLE DB, najdete v článku <xref:System.Data.OleDb.OleDbConnection.ConnectionString%2A> tématu. Můžete také použít <xref:System.Data.OleDb.OleDbConnectionStringBuilder> vytvoření připojovací řetězce v době běhu.  
   

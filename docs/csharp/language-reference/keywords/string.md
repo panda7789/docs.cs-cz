@@ -12,11 +12,11 @@ helpviewer_keywords:
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
 ms.openlocfilehash: f6c76f8effc5aef82803014b9a7257c2ad6865b8
-ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660694"
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
 

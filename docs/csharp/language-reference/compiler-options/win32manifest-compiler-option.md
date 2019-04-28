@@ -9,11 +9,11 @@ helpviewer_keywords:
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
 ms.openlocfilehash: 9718febfe5aefba75decc133ad2113b64e4547de
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618074"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662216"
 ---
 # <a name="-win32manifest-c-compiler-options"></a>-win32manifest (možnosti kompilátoru C#)
 Použití **-win32manifest** možnost určit uživatelský soubor manifestu aplikace Win32, který má být vložen do projektu soubor (PE portable executable).  
@@ -38,9 +38,9 @@ Použití **-win32manifest** možnost určit uživatelský soubor manifestu apli
   
  Vaše aplikace bude v souladu s virtualizace, pokud platí některá z těchto podmínek:  
   
--   Použijete **-nowin32manifest** a neposkytuje manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků (.res) Windows s použitím **-win32res** možnost.  
+- Použijete **-nowin32manifest** a neposkytuje manifest v pozdějším kroku sestavení nebo jako součást souboru prostředků (.res) Windows s použitím **-win32res** možnost.  
   
--   Poskytnete vlastního manifestu, která neurčuje požadovanou úroveň spuštění.  
+- Poskytnete vlastního manifestu, která neurčuje požadovanou úroveň spuštění.  
   
  Visual Studio vytvoří výchozí soubor .manifest a ukládá ho do adresáře debug a release spustitelný soubor. Vytvoření nového v libovolném textovém editoru a následným přidáním souboru do projektu můžete přidat vlastní manifest. Alternativně je můžete kliknout pravým tlačítkem **projektu** ikonu **Průzkumníku řešení**, klikněte na tlačítko **přidat novou položku**a potom klikněte na tlačítko **soubor manifestu aplikace**. Po přidání nového nebo existujícího souboru manifestu, se zobrazí v **Manifest** rozevírací seznam. Další informace najdete v tématu [stránka aplikace, Návrhář projektu (C#)](/visualstudio/ide/reference/application-page-project-designer-csharp).  
   

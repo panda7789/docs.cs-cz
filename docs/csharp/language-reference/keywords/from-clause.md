@@ -10,11 +10,11 @@ helpviewer_keywords:
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
 ms.openlocfilehash: d44c0b7a2f6617a01416ccc5bd1eb857b1f782da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661530"
 ---
 # <a name="from-clause-c-reference"></a>from clause (Referenční dokumentace jazyka C#)
 

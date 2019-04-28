@@ -11,11 +11,11 @@ helpviewer_keywords:
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
 ms.openlocfilehash: 9ca9a0ccdac3ac13429928233a0c09d58427ce74
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665764"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
 A *výchozí vlastnost* je vlastnost třídy nebo struktury, který váš kód může přistupovat bez zadání ho. Při volání metody kódu názvy třídy nebo struktury, ale není vlastnost a kontext umožňuje přístup k vlastnosti, Visual Basic přeloží přístup k dané třídy nebo struktury výchozí vlastnost pokud existuje.  

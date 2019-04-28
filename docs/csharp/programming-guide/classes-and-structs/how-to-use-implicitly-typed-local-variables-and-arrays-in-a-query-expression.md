@@ -6,11 +6,11 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
 ms.openlocfilehash: 8e3534abf961ba7b8a41eed592455962e5b551e7
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646342"
 ---
 # <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (C# Průvodce programováním v)
 Implicitně typované lokální proměnné lze použít, když chcete, aby kompilátor určit typ místní proměnné. Implicitně typované lokální proměnné musíte použít k ukládání anonymní typy, které se často používají ve výrazech dotazů. Následující příklady ilustrují použití povinných a volitelných implicitně typované lokální proměnné v dotazech.  

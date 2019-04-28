@@ -3,11 +3,11 @@ title: příkaz DotNet msbuild
 description: Příkaz dotnet msbuild poskytuje přístup k příkazovému řádku nástroje MSBuild.
 ms.date: 12/03/2018
 ms.openlocfilehash: f025b5b92e57c7b804b9bdd59c8b4a4a806796da
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169076"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648695"
 ---
 # <a name="dotnet-msbuild"></a>DotNet msbuild
 

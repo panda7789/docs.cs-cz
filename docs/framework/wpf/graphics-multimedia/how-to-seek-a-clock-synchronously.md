@@ -9,11 +9,11 @@ helpviewer_keywords:
 - seeking clocks synchronously [WPF]
 ms.assetid: e5b7529b-b7d0-40d2-9e1d-fa4b5e736e96
 ms.openlocfilehash: 9b6b1f5523effc56ccd9ddaa4f478e1d3a20ada8
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61651256"
 ---
 # <a name="how-to-seek-a-clock-synchronously"></a>Postupy: Synchronní vyhledání hodin
 Použití <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A> metodu na synchronní vyhledání hodin do určitého bodu. Následující příklad ukazuje, jak <xref:System.Windows.Media.Animation.ClockController.Seek%2A> a <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A> metody <xref:System.Windows.Media.Animation.ClockController>.  

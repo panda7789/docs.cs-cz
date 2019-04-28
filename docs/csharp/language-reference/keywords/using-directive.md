@@ -6,11 +6,11 @@ helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
 ms.openlocfilehash: 3e8daf24929339e31cda81a726ec11fdcffc687a
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660382"
 ---
 # <a name="using-directive-c-reference"></a>Using – direktiva (C# odkaz)
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - typeof keyword [C#]
 ms.assetid: 0c08d880-515e-46bb-8cd2-48b8dd62c08d
 ms.openlocfilehash: f218414bf60a86b95461d747fb6c557f03bcfcb3
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660447"
 ---
 # <a name="typeof-c-reference"></a>typeof (Referenční dokumentace jazyka C#)
 

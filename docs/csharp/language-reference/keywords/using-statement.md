@@ -6,11 +6,11 @@ helpviewer_keywords:
 - using statement [C#]
 ms.assetid: afc355e6-f0b9-4240-94dd-0d93f17d9fc3
 ms.openlocfilehash: df116a200795fd20405381fd71e82d1d6fe662bc
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660343"
 ---
 # <a name="using-statement-c-reference"></a>Using – příkaz (C# odkaz)
 

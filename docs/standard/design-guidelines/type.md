@@ -1,5 +1,5 @@
 ---
-title: Pokyny k návrhu typu
+title: Pokyny k návrhu typu
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,13 +10,13 @@ helpviewer_keywords:
 ms.assetid: 6b49314e-8bba-43ea-97ca-4e0255812f95
 author: KrzysztofCwalina
 ms.openlocfilehash: 16f2a095f461a406eedbd2b34b0c91d3ac43bbe5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650099"
 ---
-# <a name="type-design-guidelines"></a>Pokyny k návrhu typu
+# <a name="type-design-guidelines"></a>Pokyny k návrhu typu
 Z pohledu CLR existují jenom dvě kategorie typů – typy odkazu a typy hodnot, ale pro účely diskuse o návrhu rozhraní framework, jsme typy rozdělit do více logických skupin, každou s vlastní pravidla konkrétního návrhu.  
   
  Třídy jsou obecné případ odkazových typů. Tvoří hromadné typy ve většině platforem. Třídy je splatná jejich oblíbenosti bohaté sady objektově orientovaných vlastností, které podporují a jejich obecné použitelnosti. Základní třídy a abstraktní třídy jsou speciální logických skupin souvisejících do rozšíření.  
@@ -41,7 +41,7 @@ Z pohledu CLR existují jenom dvě kategorie typů – typy odkazu a typy hodnot
  [Návrh struktury](../../../docs/standard/design-guidelines/struct.md)  
  [Návrh výčtu](../../../docs/standard/design-guidelines/enum.md)  
  [Vnořené typy](../../../docs/standard/design-guidelines/nested-types.md)  
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   

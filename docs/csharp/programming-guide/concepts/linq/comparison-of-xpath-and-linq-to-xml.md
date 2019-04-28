@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 87d361b1-daa9-4fd4-a53a-cbfa40111ad3
 ms.openlocfilehash: afd8701c6a37fd981d9fc23b57904da80eabf86e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668390"
 ---
 # <a name="comparison-of-xpath-and-linq-to-xml"></a>Porovnání jazyka XPath a technologie LINQ to XML
 Výraz XPath a technologie LINQ to XML nabízejí některé podobné funkce. Jak lze použít k dotazování stromu XML, vrátí tyto výsledky jako kolekci elementů, kolekce atributů, kolekce uzlů nebo hodnotu elementu nebo atributu. Existují však také několik rozdílů.  

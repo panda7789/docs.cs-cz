@@ -5,11 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 12/07/2018
 ms.openlocfilehash: 88e3edb0442b3326a77323fe4b6396f3eb1ca767
-ms.sourcegitcommit: c6f69b0cf149f6b54483a6d5c2ece222913f43ce
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55904902"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663112"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Nástroje, které pomáhají s přenos aplikací .NET Core
 

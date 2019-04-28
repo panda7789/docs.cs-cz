@@ -3,11 +3,11 @@ title: Možnosti hostování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 37bcd668-9c5c-4e7c-81da-a1f1b3a16514
 ms.openlocfilehash: 2a03c7b5e15b76eabc714f44624f04d3385720d4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57713316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670220"
 ---
 # <a name="workflow-hosting-options"></a>Možnosti hostování pracovního postupu
 Většina ukázky Windows Workflow Foundation (WF) používá pracovní postupy, které jsou hostované v konzolové aplikaci, ale to není realistické scénáře pro pracovní postupy v reálném světě. Pracovní postupy v samotných obchodních aplikací bude hostována v trvalé procesy – služba Windows autoři článku, vývojář nebo serverové aplikace, jako [!INCLUDE[iisver](../../../includes/iisver-md.md)] nebo AppFabric. Rozdíly mezi těmito dvěma způsoby jsou následující.  

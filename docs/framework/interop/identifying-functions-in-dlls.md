@@ -14,18 +14,18 @@ ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0ca01234bf7adaca1337053bbc2bbba0731be3cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642955"
 ---
 # <a name="identifying-functions-in-dlls"></a>Identifikace funkcí ve knihovnách DLL
 Identita funkce knihovny DLL se skládá z následujících elementů:  
   
--   Funkce názvu nebo řádu  
+- Funkce názvu nebo řádu  
   
--   Název souboru knihovny DLL, ve kterém můžete najít implementaci  
+- Název souboru knihovny DLL, ve kterém můžete najít implementaci  
   
  Například zadání **MessageBox** funkce User32.dll určuje funkci (**MessageBox**) a jeho umístění (User32.dll, User32 nebo user32). Rozhraní (Windows API) Windows Microsoft může obsahovat dvě verze jednotlivých funkcí, která zpracovává znaků a řetězce: verze ANSI 1 dvoubajtového znaku zjistí a 2bajtové znaky Unicode verze. Pokud tento parametr nezadáte, znakové sady reprezentována <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> pole, výchozí hodnota je ANSI. Některé funkce mohou mít více než dvě verze.  
   

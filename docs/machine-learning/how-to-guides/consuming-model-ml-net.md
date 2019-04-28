@@ -4,11 +4,11 @@ description: Objevte, jak využívají model trénovaného a vyhodnocené strojo
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: be6906c939b82d00067babaeebe809dae3de413a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675131"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650424"
 ---
 # <a name="operationalize-a-trained-machine-learning-model-in-apps---mlnet"></a>Zprovoznění trénovaný model strojového učení v aplikacích – ML.NET
 

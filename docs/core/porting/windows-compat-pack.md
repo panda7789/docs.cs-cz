@@ -5,11 +5,11 @@ author: terrajobst
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: c4fd888e0fbce86ab317f18fd77374af5d3ca244
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663099"
 ---
 # <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Windows Compatibility Pack port kódu až po .NET Core
 

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
 ms.openlocfilehash: 4026fcbd7dc2ef29c1e7ee01a0f37b3ff471b187
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662202"
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res (možnosti kompilátoru C#)
 **-Win32res** možnost vloží prostředek systému Win32 do výstupního souboru.  

@@ -3,11 +3,11 @@ title: Architektura nástroje příkazového řádku .NET core
 description: Další informace o .NET Core, nástroje vrstvy a co se změnilo v nejnovější verze.
 ms.date: 03/06/2017
 ms.openlocfilehash: e9226a314932eb73c6474c0fd17c77c87683e6db
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665503"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích pro .NET Core
 

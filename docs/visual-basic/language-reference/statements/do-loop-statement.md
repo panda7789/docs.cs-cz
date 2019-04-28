@@ -21,11 +21,11 @@ helpviewer_keywords:
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
 ms.openlocfilehash: 3ff3d67f38f510b798da3e470de066cff1e98f29
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638772"
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop – příkaz (Visual Basic)
 Opakuje blok příkazů při `Boolean` podmínka je `True` nebo dokud se podmínka nestane `True`.  

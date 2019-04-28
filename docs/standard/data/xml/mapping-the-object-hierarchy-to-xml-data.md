@@ -1,5 +1,5 @@
 ---
-title: Mapování hierarchie objektů na XML Data
+title: Mapování hierarchie objektů na data XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,13 +9,13 @@ ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b1808121049c6344b72b1c9d99e19c46422dfa0c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650282"
 ---
-# <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na XML Data
+# <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na data XML
 Když je dokument XML v paměti, koncepční reprezentace je strom. Pro programování, můžete mít hierarchii objektů pro přístup k uzly stromu. Následující příklad ukazuje, jak obsah XML stane uzly.  
   
  XML je pro čtení do XML Document Object Model (DOM), kusy jsou přeloženy do uzlů a další metadata o samotné, jako je například jejich typ uzlu a hodnoty uchovávat tyto uzly. Typ uzlu je její objekt a co určuje, jaké akce lze provádět a které vlastnosti můžete nastavit nebo načíst.  
@@ -191,25 +191,25 @@ public class Sample
 |\<? xml verze = "1.0"? >|\<? xml verze = "1.0'? >|XmlNodeType.XmlDeclaration|  
 |\<! – Toto je ukázkový dokument XML-->|\<! – Toto je ukázkový dokument XML-->|XmlNodeType.Comment|  
 |\<! Typ dokumentu položky [\<! Počet ENTIT "123" >] >|\<! Typ dokumentu položky [\<! Počet ENTIT "123" >]|XmlNodeType.DocumentType|  
-|\<Položky >|\<Položky >|Očekáván element XmlNodeType.Element|  
-|\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|Testování s převodem entity: &number;|Test s převodem entity: 123|XmlNodeType.Text|  
+|\<Položky >|\<Položky >|XmlNodeType.Element|  
+|\<Položka >|\<Položka >|XmlNodeType.Element|  
+|Testování s převodem entity: &number;|Testování s převodem entity: 123|XmlNodeType.Text|  
 |\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|XmNodeType.Element|  
 |testování s podřízeným elementem|testování s podřízeným elementem|XmlNodeType.Text|  
-|\<Další >|\<Další >|Očekáván element XmlNodeType.Element|  
+|\<Další >|\<Další >|XmlNodeType.Element|  
 |věci|věci|XmlNodeType.Text|  
 |\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
-|\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
+|\<Položka >|\<Položka >|XmlNodeType.Element|  
 |testování pomocí sekce CDATA|testování pomocí sekce CDATA|XmlTest.Text|  
-|&LT;! [CDATA [\<456 &GT;]]\>|&LT;! [CDATA [\<456 &GT;]]\>|XmlTest.CDATA|  
+|<![CDATA[\<456>]]\>|<![CDATA[\<456>]]\>|XmlTest.CDATA|  
 |DEF|DEF|XmlNodeType.Text|  
 |\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
-|\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType.Text|  
+|\<Položka >|\<Položka >|XmlNodeType.Element|  
+|Test s entitou char: &\#65;|Testování s char entity: OBJEKT|XmlNodeType.Text|  
 |\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\<! –--> Čtrnáct znaky v tomto elementu.|\<----> Čtrnáct znaky v tomto elementu.|XmlNodeType.Comment|  
-|\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
+|\<Položka >|\<Položka >|XmlNodeType.Element|  
 |1234567890ABCD|1234567890ABCD|XmlNodeType.Text|  
 |\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  

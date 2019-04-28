@@ -12,11 +12,11 @@ helpviewer_keywords:
 - WebRequest class, asynchronous access
 ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
 ms.openlocfilehash: b812db3259cbd2313cdf172950f51ab34679b460
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59208563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642188"
 ---
 # <a name="making-asynchronous-requests"></a>Vytváření asynchronních žádostí
 <xref:System.Net> Třídy pomocí rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  
@@ -32,15 +32,15 @@ ms.locfileid: "59208563"
   
  **ClientGetAsync** třída implementuje asynchronního požadavku k internetového zdroji a zapíše výsledný odpovědi do konzoly. Obsahuje metody a vlastnosti, které je popsáno v následujícím seznamu.  
   
--   `allDone` Vlastnost obsahuje instanci <xref:System.Threading.ManualResetEvent> třídu, která signalizuje dokončení požadavku.  
+- `allDone` Vlastnost obsahuje instanci <xref:System.Threading.ManualResetEvent> třídu, která signalizuje dokončení požadavku.  
   
--   `Main()` Metoda načte příkazového řádku a zahájí žádost o zadaný internetového zdroji. Vytváří **WebRequest** `wreq` a **RequestState** `rs`, volání **BeginGetResponse** začala zpracovat požadavek a poté zavolá `allDone.WaitOne()`metodu tak, že aplikace nebude ukončeno až do dokončení zpětného volání. Poté, co je pro čtení odpovědi z internetového zdroji `Main()` zapisuje do konzoly a ukončením aplikace.  
+- `Main()` Metoda načte příkazového řádku a zahájí žádost o zadaný internetového zdroji. Vytváří **WebRequest** `wreq` a **RequestState** `rs`, volání **BeginGetResponse** začala zpracovat požadavek a poté zavolá `allDone.WaitOne()`metodu tak, že aplikace nebude ukončeno až do dokončení zpětného volání. Poté, co je pro čtení odpovědi z internetového zdroji `Main()` zapisuje do konzoly a ukončením aplikace.  
   
--   `showusage()` Metoda zapíše příklad příkazového řádku v konzole. Je volána metodou `Main()` při zadaný žádný identifikátor URI na příkazovém řádku.  
+- `showusage()` Metoda zapíše příklad příkazového řádku v konzole. Je volána metodou `Main()` při zadaný žádný identifikátor URI na příkazovém řádku.  
   
--   `RespCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro daný požadavek Internet. Vytváří **WebResponse** instance, který obsahuje odpověď z internetového zdroji získá datového proudu odpovědi a pak spustí asynchronnímu čtení dat z datového proudu.  
+- `RespCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro daný požadavek Internet. Vytváří **WebResponse** instance, který obsahuje odpověď z internetového zdroji získá datového proudu odpovědi a pak spustí asynchronnímu čtení dat z datového proudu.  
   
--   `ReadCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro čtení datového proudu odpovědi. Přenosy dat přijatých z internetového zdroji do **ResponseData** vlastnost **RequestState** instance a potom spustí jiné asynchronní čtení z datového proudu odpovědi, dokud není žádná další data Vrátí. Jakmile všechna data byla načtena, `ReadCallBack()` zavře datový proud odpovědí a volání `allDone.Set()` indikace, že je k dispozici v celé odpovědi **ResponseData**.  
+- `ReadCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro čtení datového proudu odpovědi. Přenosy dat přijatých z internetového zdroji do **ResponseData** vlastnost **RequestState** instance a potom spustí jiné asynchronní čtení z datového proudu odpovědi, dokud není žádná další data Vrátí. Jakmile všechna data byla načtena, `ReadCallBack()` zavře datový proud odpovědí a volání `allDone.Set()` indikace, že je k dispozici v celé odpovědi **ResponseData**.  
   
     > [!NOTE]
     >  Je velmi důležité, že všechny datové proudy sítě zavřená. Pokud jste neukončíte každý datový proud požadavku a odpovědi, vaše aplikace vyčerpala volné připojení k serveru a nebudete moct zpracovávat další požadavky.  

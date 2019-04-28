@@ -8,11 +8,11 @@ ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7fad67c1a3c53cd83dec6bfa161333b5e20ab4c4
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644694"
 ---
 # <a name="thread-safe-collections"></a>Kolekce se zabezpečenými vlákny
 [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Zavádí <xref:System.Collections.Concurrent?displayProperty=nameWithType> obor názvů, který zahrnuje několik tříd kolekcí, které jsou bezpečná a škálovatelná. Více vláken můžete bezpečně a efektivně přidat nebo odebrat položky z těchto kolekcí, bez nutnosti další synchronizace v uživatelském kódu. Pokud píšete nový kód, použijte třídy souběžných kolekcích pokaždé, když se více vláken současně zapíše do kolekce. Pokud jsou pouze čtení ze sdílené kolekce, pak můžete použít třídy v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Doporučujeme, abyste provedli třídy kolekcí verze 1.0, pokud je potřeba cílit na .NET Framework 1.1 nebo starší modul runtime.  
@@ -34,7 +34,7 @@ ms.locfileid: "54058318"
   
  V následující tabulce jsou uvedeny typy kolekcí v <xref:System.Collections.Concurrent?displayProperty=nameWithType> oboru názvů.  
   
-|Typ|Popis|  
+|Type|Popis|  
 |----------|-----------------|  
 |<xref:System.Collections.Concurrent.BlockingCollection%601>|Poskytuje funkcí ohraničování a blokování pro libovolný typ, který implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>. Další informace najdete v tématu [BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md).|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|Bezpečná pro vlákno provádění slovník párů klíč hodnota.|  

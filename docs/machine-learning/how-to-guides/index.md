@@ -4,11 +4,11 @@ description: Zjistěte, jak provádět specifické úkoly, které vám pomůže 
 ms.custom: seodec18
 ms.date: 03/01/2019
 ms.openlocfilehash: c8d1258629f777cd8bced47e4b956c9cf100a682
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650398"
 ---
 # <a name="net-machine-learning-how-to-guides---mlnet"></a>.NET strojového učení návody - ML.NET
 

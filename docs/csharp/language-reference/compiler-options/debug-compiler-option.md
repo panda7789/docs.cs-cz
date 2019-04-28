@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
 ms.openlocfilehash: 4828e1cdd8b830f10b134b613bc96e69490091fe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662969"
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (možnosti kompilátoru C#)
 **– Ladění** možnost způsobí, že kompilátor generovat ladicí informace a umístěte ho do výstupního souboru nebo souborů.  

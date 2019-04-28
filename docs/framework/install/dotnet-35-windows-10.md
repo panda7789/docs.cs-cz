@@ -1,17 +1,17 @@
 ---
-title: Instalace rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
+title: Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
 description: Informace o instalaci rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8.
 author: rlander
 ms.author: mairaw
 ms.date: 07/16/2018
 ms.openlocfilehash: 7b3b7ca5709008260ea284602a3ed8d2b288c410
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644183"
 ---
-# <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
+# <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
 
 Možná bude nutné rozhraní .NET Framework 3.5 ke spuštění aplikace na Windows 10, Windows 8.1 a Windows 8. Můžete také použít tyto pokyny pro starší verze Windows.
 
@@ -39,7 +39,7 @@ Můžete povolit rozhraní .NET Framework 3.5 prostřednictvím Ovládacích pan
 
 ## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Řešení potíží s instalací rozhraní .NET Framework 3.5
 
-Během instalace, můžete narazit chyby 0x800f0906, 0x800f0907, 0x800f081f nebo 0x800F0922, v takovém případě si [Chyba instalace rozhraní .NET Framework 3.5: 0x800f0906, 0x800f0907 nebo 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) se dozvíte, jak toto řešení problémy.
+Během instalace, můžete narazit chyby 0x800f0906, 0x800f0907, 0x800f081f nebo 0x800F0922, v takovém případě si [Chyba instalace rozhraní .NET Framework 3.5: 0x800f0906, 0x800f0907 nebo 0x800f081f](https://support.microsoft.com/help/2734782/net-framework-3-5-installation-error-0x800f0906--0x800f081f--0x800f09) informace o tom, jak tyto problémy vyřešit.
 
 Pokud stále nelze vyřešit váš problém s instalací nebo nemáte připojení k Internetu, můžete zkusit instalaci pomocí instalačního média Windows. Další informace najdete v tématu [nasazení rozhraní .NET Framework 3.5 pomocí Deployment Image Servicing and Management (DISM)](/windows-hardware/manufacture/desktop/deploy-net-framework-35-by-using-deployment-image-servicing-and-management--dism). Pokud nemáte k dispozici instalačním médiu, přečtěte si téma [vytvořit instalační médium pro Windows](https://support.microsoft.com/help/15088/windows-create-installation-media).
 

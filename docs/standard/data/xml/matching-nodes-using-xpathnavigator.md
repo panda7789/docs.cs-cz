@@ -9,11 +9,11 @@ ms.assetid: e6848c47-ee5d-401a-89a5-50b5eed40f30
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 525c8332d2884415ccf883dae03866776510f354
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61650164"
 ---
 # <a name="matching-nodes-using-xpathnavigator"></a>Párování uzlů pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje <xref:System.Xml.XPath.XPathNavigator.Matches%2A> metodou ke zjištění, pokud uzel odpovídá výrazu XPath. <xref:System.Xml.XPath.XPathNavigator.Matches%2A> Metoda výraz XPath jako vstup převezme a vrátí <xref:System.Boolean> , která indikuje, jestli aktuální uzel odpovídá dané výraz XPath nebo zadaný kompilované <xref:System.Xml.XPath.XPathExpression> objektu.  

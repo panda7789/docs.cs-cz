@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 6c54c704-b55e-4631-88ff-4d4a5621554c
 author: BrucePerlerMS
 ms.openlocfilehash: 7b8823d792e3f15846a9483d670994be4b368980
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55273894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667350"
 ---
 # <a name="certificatevalidation"></a>\<certificateValidation>
 Určuje nastavení, které obslužné rutiny tokenů používat ověřování certifikátů. Tato nastavení jsou přepsány, pokud jsou nakonfigurované vlastní validátor konkrétní obslužnou rutinou.  

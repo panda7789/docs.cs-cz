@@ -5,11 +5,11 @@ helpviewer_keywords:
 - properties [Visual Basic]
 ms.assetid: c995caf9-8d0e-4fb8-ae02-e9e6087d7651
 ms.openlocfilehash: b7c0040a45da34d6b7c7123b585b0d6e5463278c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663528"
 ---
 # <a name="properties-visual-basic"></a>Vlastnosti (Visual Basic)
 Tato stránka obsahuje vlastnosti, které jsou členy moduly jazyka Visual Basic. Další vlastnosti, které jsou členy určitých objektů jazyka Visual Basic jsou uvedeny v [objekty](../../visual-basic/language-reference/objects/index.md).  

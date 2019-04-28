@@ -9,17 +9,17 @@ helpviewer_keywords:
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
 ms.openlocfilehash: 7330325b885b7ad7bc9cb9421f815a6922a01200
-ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53396835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661565"
 ---
 # <a name="floating-point-types-table-c-reference"></a>Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
 
 V následující tabulce jsou uvedeny přesnosti a přibližné rozsahy typů s plovoucí desetinnou čárkou.  
   
-|Typ|Přibližný rozsah|Přesnost|  
+|Type|Přibližný rozsah|Přesnost|  
 |----------|-----------------------|---------------|  
 |[float](float.md)|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|  
 |[double](double.md)|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|~ 15-17 číslic|  

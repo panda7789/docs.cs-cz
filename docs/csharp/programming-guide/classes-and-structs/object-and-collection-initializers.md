@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
 ms.openlocfilehash: 6c713072e120f2b5a6740add296c957d499c93c7
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646213"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Inicializátory objektu a kolekce (Průvodce programováním v C#)
 

@@ -10,10 +10,10 @@ helpviewer_keywords:
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
 ms.openlocfilehash: fbb685abcc5c2e79a64501385edf8f6c2041861d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661994"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 

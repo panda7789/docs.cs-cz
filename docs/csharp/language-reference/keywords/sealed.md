@@ -9,11 +9,11 @@ helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
 ms.openlocfilehash: babad3b07c5faea1381e6af13d3c713122de2332
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660759"
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 

@@ -32,11 +32,11 @@ helpviewer_keywords:
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
 ms.openlocfilehash: 26e2a25855485bdd19d30e8497d0f75b7d4432e0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642721"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
 <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy vyvolávat výjimky i systému (například <xref:System.ArgumentException>) a výjimky pro konkrétní Web (které jsou <xref:System.Net.WebException> vyvolané <xref:System.Net.WebRequest.GetResponse%2A> – metoda).  

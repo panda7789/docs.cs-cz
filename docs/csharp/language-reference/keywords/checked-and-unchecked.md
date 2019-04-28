@@ -11,26 +11,26 @@ helpviewer_keywords:
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
 ms.openlocfilehash: 12f65fe4b1dc710ff5c053073817dbd793c86082
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661922"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
 Příkazy jazyka C# lze spustit v kontextu zaškrtnuté nebo nezaškrtnuté. Aritmetické přetečení ve zkontrolovaném kontextu, vyvolá výjimku. V nekontrolovaném kontextu je ignorován Přetečení aritmetické operace a výsledek je rozdělená do se zahodí všechny bity nejvyšším, které se nehodí do cílového typu.  
   
--   [checked](checked.md) kontextu zadejte zaškrtnuto.  
+- [checked](checked.md) kontextu zadejte zaškrtnuto.  
   
--   [unchecked](unchecked.md) zadejte nezkontrolovaném kontextu.  
+- [unchecked](unchecked.md) zadejte nezkontrolovaném kontextu.  
   
  Tyto operace jsou ovlivněny kontrola přetečení:  
   
--   Pomocí následující předdefinované operátory na integrální typy výrazů:  
+- Pomocí následující předdefinované operátory na integrální typy výrazů:  
   
      `++`, `--`, unární `-`, `+`, `-`, `*`, `/`  
   
--   Explicitní číselné převody mezi celočíselnými typy nebo z `float` nebo `double` na celočíselný typ.  
+- Explicitní číselné převody mezi celočíselnými typy nebo z `float` nebo `double` na celočíselný typ.  
   
  Pokud ani `checked` ani `unchecked` není zadán, výchozí kontext pro výrazy nekonstantní (výrazy, které jsou vyhodnocovány v době běhu) je definován hodnotou [-checked](../compiler-options/checked-compiler-option.md) – možnost kompilátoru. Ve výchozím nastavení má tato možnost hodnotu unset a aritmetické operace jsou provedeny v nekontrolovaném kontextu.
  

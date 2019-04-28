@@ -3,11 +3,11 @@ title: DotNet – instalačních skriptů
 description: Další informace o dotnet instalačních skriptů k instalaci nástroje rozhraní příkazového řádku .NET Core a sdílený modul runtime.
 ms.date: 01/16/2019
 ms.openlocfilehash: 6404a8332a7196f0e6fdfe649c2c180970390775
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204792"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665101"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 

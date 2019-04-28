@@ -5,11 +5,11 @@ helpviewer_keywords:
 - wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
 ms.openlocfilehash: 6059bc91588492afdd1f205398e6cdfdba0be7ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59177460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670180"
 ---
 # <a name="wshttpbinding"></a>\<wsHttpBinding>
 Definuje bezpečné, spolehlivé a interoperabilní vazby vhodné pro neduplexní servisní smlouvy. Vazba implementuje následující specifikace: Posílání WS-Reliable spolehlivost a WS-Security pro ověřování a zabezpečení zpráv. Přenos HTTP a kódování zpráv je Text/XML kódování.  

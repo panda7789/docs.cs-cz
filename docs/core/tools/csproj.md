@@ -3,11 +3,11 @@ title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 ms.date: 04/08/2019
 ms.openlocfilehash: 89f0bbab1f9887295a68ffc6434340f1c6f10d5d
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665426"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -74,7 +74,7 @@ V následující tabulce jsou uvedeny které elementy a které [globy](https://e
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
 | Kompilace           | \*\*/\*.cs (nebo jiných jazykových rozšíření) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc  | Není k dispozici                      |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | Není k dispozici                      |
-| Žádné              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | \*\*/\*.cs; \* \* / \*resx   |
+| Žádný              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | \*\*/\*.cs; \* \* / \*resx   |
 
 > [!NOTE]
 > **Vyloučit glob** vždy vyloučí `./bin` a `./obj` složek, které jsou znázorněny `$(BaseOutputPath)` a `$(BaseIntermediateOutputPath)` vlastnosti nástroje MSBuild, v uvedeném pořadí. Jako celek, vyloučí všechny jsou reprezentovány `$(DefaultItemExcludes)`.
