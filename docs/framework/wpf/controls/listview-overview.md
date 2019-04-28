@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ListView controls [WPF], about ListView control
 ms.assetid: 989e12b0-260e-4570-95c6-489284003ce2
 ms.openlocfilehash: 6d4a6c19dc0af8a2950754f32890ae9c3bcbad21
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769533"
 ---
 # <a name="listview-overview"></a>ListView – přehled
 <xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení. Uživatel může být vhodné například pro zobrazení položek dat v tabulce a také k seřazení její sloupce.  
@@ -58,9 +58,9 @@ ms.locfileid: "59186495"
 ## <a name="styling-a-listview-that-implements-a-gridview"></a>Práce se styly ListView, který s implementací GridView  
  <xref:System.Windows.Controls.ListView> Ovládací prvek obsahuje <xref:System.Windows.Controls.ListViewItem> objekty, které představují datové položky, které jsou zobrazeny. K definování obsah a styl položek dat můžete použít následující vlastnosti:  
   
--   Na <xref:System.Windows.Controls.ListView> řídit, použijte <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>, <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>, a <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> vlastnosti.  
+- Na <xref:System.Windows.Controls.ListView> řídit, použijte <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>, <xref:System.Windows.Controls.ItemsControl.ItemTemplateSelector%2A>, a <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> vlastnosti.  
   
--   Na <xref:System.Windows.Controls.ListViewItem> řídit, použijte <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> a <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> vlastnosti.  
+- Na <xref:System.Windows.Controls.ListViewItem> řídit, použijte <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> a <xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A> vlastnosti.  
   
  Abyste předešli problémům s zarovnání mezi buňkami v <xref:System.Windows.Controls.GridView>, nepoužívejte <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A> nastavit vlastnosti nebo přidat obsah, který má vliv na šířku položky v <xref:System.Windows.Controls.ListView>. Například zarovnání problému může dojít, když jste nastavili <xref:System.Windows.FrameworkElement.Margin%2A> vlastnost <xref:System.Windows.Controls.ItemsControl.ItemContainerStyle%2A>. Zadejte vlastnosti nebo definovat obsah, který má vliv na šířku položky v <xref:System.Windows.Controls.GridView>, použijte vlastnosti <xref:System.Windows.Controls.GridView> třídy a jejich souvisejícími třídami, jako <xref:System.Windows.Controls.GridViewColumn>.  
   

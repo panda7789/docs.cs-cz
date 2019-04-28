@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4e67e4685320f56a4a6a8be2e3eb2e6c8065ce59
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769002"
 ---
 # <a name="icordebugvariablehomeenum-interface"></a>ICorDebugVariableHomeEnum – rozhraní
 Poskytuje enumerátor pro místní proměnné a argumenty ve funkci.  

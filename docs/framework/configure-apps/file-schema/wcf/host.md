@@ -3,11 +3,11 @@ title: <host>
 ms.date: 03/30/2017
 ms.assetid: be566d55-9d50-4b2e-985d-52a5cc26cbbb
 ms.openlocfilehash: 3d1f7774f61060880a5c3b0327bdd6c2cc4dd74e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746711"
 ---
 # <a name="host"></a>\<host>
 Určuje nastavení pro hostitele služby.  

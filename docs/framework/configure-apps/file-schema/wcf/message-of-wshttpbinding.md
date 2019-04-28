@@ -3,11 +3,11 @@ title: <message> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 621abbde-590b-454d-90ac-68dc3c69c720
 ms.openlocfilehash: 4d9b46b6c148f9280f6504b9bccdf644ab451c00
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768892"
 ---
 # <a name="message-of-wshttpbinding"></a>\<message> of \<wsHttpBinding>
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
@@ -45,7 +45,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Basic128|Zabalení klíče použijte Basic128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
 |Basic192|Použijte šifrování Basic192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
@@ -66,16 +66,16 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádný|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
+|Žádné|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečených zpráv a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být zřízená s certifikátem služby.|  
 |Třídy IssuedToken|Určuje vlastní token, obvykle vydávají služby tokenů zabezpečení.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití pověření uživatelských jmen je zabezpečený přenos. Výsledkem interoperabilní exchange nebo -interoperabilní vyjednávání na základě tohoto režimu přihlašovacích údajů `negotiateServiceCredential` atribut.|  
 |Windows|Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. Pokud `negotiateServiceCredential` atribut je nastaven na `true`, buď provede vyjednávání SSPI nebo aplikace pomocí protokolu Kerberos (interoperabilní standard).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

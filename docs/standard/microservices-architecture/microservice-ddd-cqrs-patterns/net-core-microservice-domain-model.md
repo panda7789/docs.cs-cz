@@ -5,13 +5,13 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
 ms.openlocfilehash: ec56a02e27f4218b3abc5839d1265815e188d2ea
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760985"
 ---
-# <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core 
+# <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core
 
 V předchozí části byly vysvětlení principů návrhu základní a vzory pro navrhování modelu domény. Teď můžete prozkoumat možnosti, jak implementovat doménový model s využitím .NET Core (plain C\# kódu) a EF Core. Všimněte si, že doménový model se skládá pouze z kódu. Jenom požadavky modelu EF Core, ale ne skutečné závislosti bude mít na EF. Pevné závislosti nebo odkazy na EF Core nebo jiných ORM by neměl mít v doménovém modelu.
 
@@ -60,7 +60,7 @@ public class Order : Entity, IAggregateRoot
 
     private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
-  
+
     public Order(string userId, Address address, int cardTypeId, string cardNumber, string cardSecurityNumber,
             string cardHolderName, DateTime cardExpiration, int? buyerId = null, int? paymentMethodId = null)
     {
@@ -74,8 +74,8 @@ public class Order : Entity, IAggregateRoot
         // ...Additional code ...
     }
 
-    public void AddOrderItem(int productId, string productName, 
-                            decimal unitPrice, decimal discount, 
+    public void AddOrderItem(int productId, string productName,
+                            decimal unitPrice, decimal discount,
                             string pictureUrl, int units = 1)
     {
         //...
@@ -83,9 +83,9 @@ public class Order : Entity, IAggregateRoot
         // ...
 
         var orderItem = new OrderItem(productId, productName, unitPrice, discount, pictureUrl, units);
-        
+
         _orderItems.Add(orderItem);
-  
+
     }
     // ...
     // Additional methods with domain rules/logic related to the Order aggregate
@@ -117,7 +117,7 @@ Například následující vzorů DDD **byste měli *není* takto** z libovolné
 OrderItem myNewOrderItem = new OrderItem(orderId, productId, productName,
     pictureUrl, unitPrice, discount, units);
 
-//... (WRONG) Accessing the OrderItems colletion directly from the application layer // or command handlers
+//... (WRONG) Accessing the OrderItems collection directly from the application layer // or command handlers
 myOrder.OrderItems.Add(myNewOrderItem);
 //...
 ```
@@ -177,6 +177,6 @@ Například v předchozím příkladu kódu OrderAggregate existují několik pr
 - **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů** \
   <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
->[!div class="step-by-step"]
->[Předchozí](microservice-domain-model.md)
->[další](seedwork-domain-model-base-classes-interfaces.md)
+> [!div class="step-by-step"]
+> [Předchozí](microservice-domain-model.md)
+> [další](seedwork-domain-model-base-classes-interfaces.md)

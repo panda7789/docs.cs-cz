@@ -10,11 +10,11 @@ helpviewer_keywords:
 - scaling elements [WPF], Viewbox control
 ms.assetid: 00fc0a16-1078-4d55-9849-ffaf7da96531
 ms.openlocfilehash: 707375230acea3558b060f398add919370d352b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761192"
 ---
 # <a name="viewbox"></a>Viewbox
 <xref:System.Windows.Controls.Viewbox> Ovládacího prvku se používá k roztažení nebo škálovat podřízený element.  

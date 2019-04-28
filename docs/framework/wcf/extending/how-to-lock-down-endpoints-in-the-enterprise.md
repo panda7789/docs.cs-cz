@@ -3,11 +3,11 @@ title: 'Postupy: Uzamknutí koncových bodů v podniku'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
 ms.openlocfilehash: da90c2e9d096d32c819590058f1e513224fd9242
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59305952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766828"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: Uzamknutí koncových bodů v podniku
 Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalace klienta validátor koncový bod, který slouží k ověření všech klientských aplikací Windows Communication Foundation (WCF) nainstalována na počítačích.  
@@ -43,15 +43,15 @@ Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásada
   
 3. Použití <xref:System.Configuration?displayProperty=nameWithType> obor názvů, typy mají:  
   
-    1.  Přidat rozšíření [ \<behaviorExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md) části použití plně kvalifikovaný název typu a uzamčení elementu.  
+    1. Přidat rozšíření [ \<behaviorExtensions >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md) části použití plně kvalifikovaný název typu a uzamčení elementu.  
   
          [!code-csharp[LockdownValidation#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/lockdownvalidation/cs/hostapplication.cs#5)]  
   
-    2.  Přidat prvek chování `EndpointBehaviors` vlastnost [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) bod a uzamčení elementu. (Pro instalaci ověřovací modul ve službě, musí být validátor <xref:System.ServiceModel.Description.IServiceBehavior> a přidán do `ServiceBehaviors` vlastnost.) Následující příklad kódu ukazuje správné konfigurace po krocích. a b. s jedinou výjimkou, že neexistuje žádná silného názvu.  
+    2. Přidat prvek chování `EndpointBehaviors` vlastnost [ \<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md) bod a uzamčení elementu. (Pro instalaci ověřovací modul ve službě, musí být validátor <xref:System.ServiceModel.Description.IServiceBehavior> a přidán do `ServiceBehaviors` vlastnost.) Následující příklad kódu ukazuje správné konfigurace po krocích. a b. s jedinou výjimkou, že neexistuje žádná silného názvu.  
   
          [!code-csharp[LockdownValidation#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/lockdownvalidation/cs/hostapplication.cs#6)]  
   
-    3.  Uložte soubor machine.config. Následující příklad kódu provede všechny úkoly v kroku 3, ale uloží kopii souboru machine.config změny místně.  
+    3. Uložte soubor machine.config. Následující příklad kódu provede všechny úkoly v kroku 3, ale uloží kopii souboru machine.config změny místně.  
   
          [!code-csharp[LockdownValidation#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/lockdownvalidation/cs/hostapplication.cs#7)]  
   

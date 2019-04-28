@@ -9,11 +9,11 @@ helpviewer_keywords:
 - MonthCalendar control [Windows Forms], setting the first day of the week
 ms.assetid: 788c5325-b721-44ec-95bf-9b680ba0f6a2
 ms.openlocfilehash: 8928a78735392920d893661c70554bd35eba2886
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106233"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768482"
 ---
 # <a name="monthcalendar-control-overview-windows-forms"></a>MonthCalendar – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek zobrazí intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu. Ovládací prvek zobrazuje kalendář: Mřížka obsahující číslované dny v měsíci, uspořádané do sloupce pod dny v týdnu, s vybraný rozsah kalendářních dat, zvýrazněn. Můžete vybrat jiného měsíce kliknutím na tlačítka se šipkami na obou stranách titulek měsíce. Na rozdíl od podobný <xref:System.Windows.Forms.DateTimePicker> ovládací prvek, vyberete více než jeden den s tímto ovládacím prvkem. Další informace o <xref:System.Windows.Forms.DateTimePicker> řídí, najdete v článku [DateTimePicker – ovládací prvek](datetimepicker-control-windows-forms.md).  

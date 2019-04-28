@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zápis zpráv a čtení zpráv z bloku toku dat'
+title: 'Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,13 +12,13 @@ ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 638cd917bdb40fa5bbf1cb02857c71a0127d0e3f
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769169"
 ---
-# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv a čtení zpráv z bloku toku dat
+# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
 Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro zápis zpráv a čtení zpráv z bloku toku dat. Knihovna TPL datového toku poskytuje synchronní a asynchronní metody pro zápis zpráv a čtení zpráv z bloku toku dat. Tento dokument používá <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídy. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třídy ukládá do vyrovnávací paměti zpráv a jak se bude chovat jako zdroj zprávy a jako cíl zprávy.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -60,7 +60,7 @@ Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro zá
   
  Visual Basic  
   
- **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowReadWrite.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowReadWrite.vb**  
   
 ## <a name="next-steps"></a>Další kroky  
  Tento příklad ukazuje, jak číst z a zapisovat do bloku zprávy přímo. Můžete také připojit bloků toku dat do formuláře *kanály*, které představují lineární posloupnosti bloků toku dat, nebo *sítě*, které jsou grafy bloků toku dat. V kanálu nebo síťové zdroje asynchronně šířit data do cíle jako tato data k dispozici. Příklad, který vytvoří kanál základní toku dat, naleznete v tématu [názorný postup: Vytvoření kanálu toku dat](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Příklad, který vytvoří složitější síť toku dat, naleznete v tématu [názorný postup: Použití toku dat v Windows Forms aplikace](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  

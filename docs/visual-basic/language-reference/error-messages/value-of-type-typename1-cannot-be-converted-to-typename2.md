@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
 ms.openlocfilehash: 5f313a43bc3a2f983dabbd45477d120fdb80d063
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766802"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a>Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >"
 Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typů může být způsobena kombinováním odkazu na soubor s odkazem na projekt do sestavení '\<assemblyname >'. Nahraďte odkaz na soubor "\<filepath >' v projektu"\<projectname1 >' s odkazem na projekt '\<projectname2 >'.  
@@ -57,7 +57,7 @@ Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typ
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Změňte odkaz na soubor odkazu na projekt.  
+- Změňte odkaz na soubor odkazu na projekt.  
   
 ## <a name="see-also"></a>Viz také:
 

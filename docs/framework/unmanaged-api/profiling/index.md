@@ -9,11 +9,11 @@ ms.assetid: 14c68e84-657e-49c2-aa8b-4978dbaf4454
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 75df075cd39375084a7d5a4489694ec937e15d99
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757882"
 ---
 # <a name="profiling-unmanaged-api-reference"></a>Profilace (referenční dokumentace nespravovaného rozhraní API)
 

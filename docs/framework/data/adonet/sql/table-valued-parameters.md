@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
 ms.openlocfilehash: d1d52e048ee54ce967215ad134d5bcff2983103e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758077"
 ---
 # <a name="table-valued-parameters"></a>Parametry s hodnotami v tabulkách
 Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
@@ -30,13 +30,13 @@ Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řá
 ## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>Předání více řádků v předchozích verzích systému SQL Server  
  Předtím, než se seznámili s parametry table-valued systému SQL Server 2008, byly omezené možnosti pro předání více řádků dat uložené procedury nebo parametrizovaného příkazu SQL. Vývojář může zvolit jednu z následujících možností pro předání více řádků na server:  
   
--   K reprezentaci hodnoty do více sloupců a řádků dat použijte řadu jednotlivé parametry. Množství dat, které mohou být předány tímto způsobem je omezen počet povolených parametrů. Postupy pro SQL Server může mít maximálně 2100 parametry. Je potřeba sestavit tyto jednotlivé hodnoty do proměnné tabulky nebo dočasná tabulka pro zpracování logiky na straně serveru.  
+- K reprezentaci hodnoty do více sloupců a řádků dat použijte řadu jednotlivé parametry. Množství dat, které mohou být předány tímto způsobem je omezen počet povolených parametrů. Postupy pro SQL Server může mít maximálně 2100 parametry. Je potřeba sestavit tyto jednotlivé hodnoty do proměnné tabulky nebo dočasná tabulka pro zpracování logiky na straně serveru.  
   
--   Vytvoření balíčku více hodnot dat do řetězce s oddělovači nebo dokumentů XML a předat tyto hodnoty text do procedury nebo příkaz. To vyžaduje procedury nebo prohlášení přidat logiku potřebnou pro ověření datových struktur a zpřístupnění hodnoty.  
+- Vytvoření balíčku více hodnot dat do řetězce s oddělovači nebo dokumentů XML a předat tyto hodnoty text do procedury nebo příkaz. To vyžaduje procedury nebo prohlášení přidat logiku potřebnou pro ověření datových struktur a zpřístupnění hodnoty.  
   
--   Vytvořte řadu jednotlivých příkazů SQL pro změny dat, které ovlivňují více řádků, jako jsou ty voláním `Update` metodu <xref:System.Data.SqlClient.SqlDataAdapter>. Změny můžete odeslat na server samostatně nebo v dávce do skupin. Ale i v případě, že odešle v dávkách, které obsahují více příkazů, každý příkaz je proveden odděleně na serveru.  
+- Vytvořte řadu jednotlivých příkazů SQL pro změny dat, které ovlivňují více řádků, jako jsou ty voláním `Update` metodu <xref:System.Data.SqlClient.SqlDataAdapter>. Změny můžete odeslat na server samostatně nebo v dávce do skupin. Ale i v případě, že odešle v dávkách, které obsahují více příkazů, každý příkaz je proveden odděleně na serveru.  
   
--   Použití `bcp` nástroj nebo <xref:System.Data.SqlClient.SqlBulkCopy> objektu, který chcete načíst počet řádků dat do tabulky. I když tato technika je velmi efektivní, nepodporuje zpracování na straně serveru, pokud načtení dat do dočasné tabulky nebo proměnné tabulky.  
+- Použití `bcp` nástroj nebo <xref:System.Data.SqlClient.SqlBulkCopy> objektu, který chcete načíst počet řádků dat do tabulky. I když tato technika je velmi efektivní, nepodporuje zpracování na straně serveru, pokud načtení dat do dočasné tabulky nebo proměnné tabulky.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Vytváření typů Table-Valued Parameter  
  Parametry Table-valued jsou založené na tabulce silného typu struktury, které jsou definovány pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy CREATE TYPE. Budete muset vytvořit tabulku typu a definují strukturu v systému SQL Server, abyste mohli používat parametry table-valued v klientských aplikacích. Další informace o vytváření typů tabulek, naleznete v tématu [uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkID=98364) v SQL Server Books Online.  
@@ -77,13 +77,13 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
 ## <a name="limitations-of-table-valued-parameters"></a>Omezení parametrů Table-Valued  
  Existují některá omezení pro parametry s hodnotou tabulky:  
   
--   Nelze předat parametry s hodnotou tabulky [uživatelem definované funkce CLR](/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions).  
+- Nelze předat parametry s hodnotou tabulky [uživatelem definované funkce CLR](/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions).  
   
--   Parametry s hodnotou tabulky je možné indexovat pouze pro podporu omezení UNIQUE a PRIMARY KEY. SQL Server nespravuje statistiky pro parametry s hodnotou tabulky.  
+- Parametry s hodnotou tabulky je možné indexovat pouze pro podporu omezení UNIQUE a PRIMARY KEY. SQL Server nespravuje statistiky pro parametry s hodnotou tabulky.  
   
--   Parametry Table-valued jsou jen pro čtení v [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] kódu. Hodnoty sloupce na řádky parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Pokud chcete upravit data, která je předána uloženou proceduru nebo příkaz v parametr s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
+- Parametry Table-valued jsou jen pro čtení v [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] kódu. Hodnoty sloupce na řádky parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Pokud chcete upravit data, která je předána uloženou proceduru nebo příkaz v parametr s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
   
--   Pomocí příkazů ALTER TABLE nelze použít k úpravě návrhu parametrů table-valued.  
+- Pomocí příkazů ALTER TABLE nelze použít k úpravě návrhu parametrů table-valued.  
   
 ## <a name="configuring-a-sqlparameter-example"></a>Konfigurace příklad SqlParameter  
  <xref:System.Data.SqlClient> podporuje sestavování parametrů table-valued z <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> nebo <xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord> objekty. Musíte zadat název typu pro parametr s hodnotou tabulky s použitím <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. `TypeName` Musí odpovídat názvu kompatibilního typu dříve vytvořené na serveru. Následující fragment kódu ukazuje, jak nakonfigurovat <xref:System.Data.SqlClient.SqlParameter> vložit data.  

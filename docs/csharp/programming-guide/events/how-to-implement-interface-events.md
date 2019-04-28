@@ -7,11 +7,11 @@ helpviewer_keywords:
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
 ms.openlocfilehash: dfd0602ef92f9b0f84a8e1434ef834a328d60f03
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200270"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710898"
 ---
 # <a name="how-to-implement-interface-events-c-programming-guide"></a>Postupy: Implementace událostí rozhraní (C# Průvodce programováním v)
 [Rozhraní](../../../csharp/language-reference/keywords/interface.md) lze deklarovat [události](../../../csharp/language-reference/keywords/event.md). Následující příklad ukazuje, jak implementace událostí rozhraní ve třídě. V podstatě pravidla jsou stejné jako při implementaci metody rozhraní ani vlastnost.  

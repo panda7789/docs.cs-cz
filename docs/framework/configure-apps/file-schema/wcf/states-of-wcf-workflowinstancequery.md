@@ -3,11 +3,11 @@ title: <states> služby WCF, <workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: d17f7525-8035-4e9e-85a0-4cddae59f85d
 ms.openlocfilehash: fad6f9c8871f79e4a1e26c893eed86ba168f6d01
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55281460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757947"
 ---
 # <a name="states-of-wcf-workflowinstancequery"></a>\<stavy > služby WCF, \<workflowInstanceQuery >
 

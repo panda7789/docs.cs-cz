@@ -11,11 +11,11 @@ helpviewer_keywords:
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
 ms.openlocfilehash: 51da86d6c0f565d1baa58452a661ccbaa321538c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765684"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Pokud používáte informační kanál, Atom [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] poskytuje standardní metodu k serializaci dat, jako je například entit a vztahů do formátu XML, které mohou být součástí těla zprávy HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Definuje výchozí vlastnost entity mapování mezi elementy Atom a data, která je obsažená v entitách. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
@@ -83,12 +83,12 @@ ms.locfileid: "59517314"
 ## <a name="feed-customization-considerations"></a>Důležité informace o přizpůsobení informačního kanálu  
  Při definování vlastního informačního kanálu mapování byste měli zvážit následující.  
   
--   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klienta považuje za mapované prvky v informačním kanálu prázdný obsahující jenom prázdné znaky. Z tohoto důvodu nejsou vyhodnocena mapované prvky, které obsahují pouze prázdné znaky na klientovi stejnou prázdnými znaky. Zachovat tento mezer na straně klienta, musíte nastavit hodnotu `KeepInContext` k `true` v atributu mapování informačního kanálu.  
+- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klienta považuje za mapované prvky v informačním kanálu prázdný obsahující jenom prázdné znaky. Z tohoto důvodu nejsou vyhodnocena mapované prvky, které obsahují pouze prázdné znaky na klientovi stejnou prázdnými znaky. Zachovat tento mezer na straně klienta, musíte nastavit hodnotu `KeepInContext` k `true` v atributu mapování informačního kanálu.  
   
 ## <a name="versioning-requirements"></a>Požadavky na správu verzí  
  Přizpůsobení informačního kanálu má následující [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol požadavků na správu verzí:  
   
--   Přizpůsobení informačního kanálu vyžaduje, aby tento klient i data služby podpory verze 2.0 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol a novějších verzích.  
+- Přizpůsobení informačního kanálu vyžaduje, aby tento klient i data služby podpory verze 2.0 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol a novějších verzích.  
   
  Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   

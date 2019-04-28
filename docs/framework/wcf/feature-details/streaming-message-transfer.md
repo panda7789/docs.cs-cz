@@ -3,20 +3,20 @@ title: Streamování přenosu zpráv
 ms.date: 03/30/2017
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
 ms.openlocfilehash: e58b0ce698df310a5e18bcd24201fb2e27a9c1aa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59136874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747573"
 ---
 # <a name="streaming-message-transfer"></a>Streamování přenosu zpráv
 Přenosy Windows Communication Foundation (WCF) podporují dva režimy pro přenos zpráv:  
   
--   Přenosy ve vyrovnávací paměti uložení celá zpráva vyrovnávací paměť, až do dokončení přenosu. Ve vyrovnávací paměti zpráv musí být zcela doručována předtím, než příjemce může číst.  
+- Přenosy ve vyrovnávací paměti uložení celá zpráva vyrovnávací paměť, až do dokončení přenosu. Ve vyrovnávací paměti zpráv musí být zcela doručována předtím, než příjemce může číst.  
   
--   Streamovaná přenosy zveřejnit zprávu jako datový proud. Příjemce se spustí předtím, než je zcela doručit zprávu zpracovat.  
+- Streamovaná přenosy zveřejnit zprávu jako datový proud. Příjemce se spustí předtím, než je zcela doručit zprávu zpracovat.  
   
--   Streamovaná přenosy lze vylepšit škálovatelnost služby eliminuje požadavek pro velké paměti vyrovnávací paměti. Zda je režim přenosu změna zlepšuje škálovatelnost závisí na velikosti přenášených zprávy. Velikost velkých zpráv upřednostnit pomocí proudu přenosy.  
+- Streamovaná přenosy lze vylepšit škálovatelnost služby eliminuje požadavek pro velké paměti vyrovnávací paměti. Zda je režim přenosu změna zlepšuje škálovatelnost závisí na velikosti přenášených zprávy. Velikost velkých zpráv upřednostnit pomocí proudu přenosy.  
   
  Ve výchozím nastavení používají ve vyrovnávací paměti přenosy HTTP, protokolu TCP/IP a přenosy pojmenovaného kanálu. Tento dokument popisuje, jak přepnout těchto přenosů z ve vyrovnávací paměti proudu přenosu režimu a důsledky tohoto postupu.  
   

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - properties [Windows Forms], changes
 ms.assetid: 268039ec-5aaa-4d76-b902-acccb036c850
 ms.openlocfilehash: cabfd9e799288a332a0b2f96140f5f1cc328508b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59105765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755425"
 ---
 # <a name="property-changed-events"></a>Události změny vlastnosti
 Pokud chcete, aby ovládací prvek k odesílání oznámení, když vlastnost s názvem *PropertyName* změny, definovat událost s názvem *PropertyName* `Changed` a metodu s názvem `On` *PropertyName* `Changed` , která vyvolává událost. Zásady vytváření názvů v modelu Windows Forms je připojit slovo *změněné* k názvu vlastnosti. Typ delegáta přidružené události pro události změny vlastnosti je <xref:System.EventHandler>, a datový typ události je <xref:System.EventArgs>. Základní třída <xref:System.Windows.Forms.Control> definuje mnoho události změny vlastnosti, jako například <xref:System.Windows.Forms.Control.BackColorChanged>, <xref:System.Windows.Forms.Control.BackgroundImageChanged>, <xref:System.Windows.Forms.Control.FontChanged>, <xref:System.Windows.Forms.Control.LocationChanged>a další. Základní informace o událostech, naleznete v tématu [události](../../../standard/events/index.md) a [události v ovládacích prvcích Windows Forms](events-in-windows-forms-controls.md).  

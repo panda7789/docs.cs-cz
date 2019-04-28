@@ -5,20 +5,20 @@ f1_keywords:
 - vbrAppModel_CantGetMemoryMappedFile
 ms.assetid: 0d9f2a30-ff72-4355-8060-744f22339359
 ms.openlocfilehash: 9aa7ba0babe0a89942e320a76e07c05162b31700
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751615"
 ---
 # <a name="an-unexpected-error-has-occurred-because-an-operating-system-resource-required-for-single-instance-startup-cannot-be-acquired"></a>Došlo k neočekávané chybě, protože nelze získat prostředek operačního systému požadovaný ke spuštění jedné instance.
 Aplikaci nebylo možné získat prostředek operačního systému nutné. Zde jsou některé možné příčiny tohoto problému:  
   
--   Aplikace nemá oprávnění k vytvoření pojmenovaných objektů operačního systému.  
+- Aplikace nemá oprávnění k vytvoření pojmenovaných objektů operačního systému.  
   
--   Modul common language runtime nemá oprávnění k vytvoření souborů mapovaných do paměti.  
+- Modul common language runtime nemá oprávnění k vytvoření souborů mapovaných do paměti.  
   
--   Aplikace potřebuje pro přístup k objektu operačního systému, ale používá jiný proces.  
+- Aplikace potřebuje pro přístup k objektu operačního systému, ale používá jiný proces.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

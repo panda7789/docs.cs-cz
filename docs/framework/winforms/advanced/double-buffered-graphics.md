@@ -8,11 +8,11 @@ helpviewer_keywords:
 - examples [Windows Forms], double-buffered graphics
 ms.assetid: 4f6fef99-0972-436e-9d73-0167e4033f71
 ms.openlocfilehash: 20ec03e6b84110f7ea00c134dc18b23f233c5f58
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59103438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756010"
 ---
 # <a name="double-buffered-graphics"></a>Grafiky s dvojitou vyrovnávací pamětí
 Blikání je běžný problém při programování grafiky. Grafické operace, které vyžadují více komplexní Malování operací může způsobit vykresleného obrázku do blikat nebo v opačném případě nepřijatelné vzhled. K řešení těchto problémů, rozhraní .NET Framework poskytuje přístup k dvojité ukládání do vyrovnávací paměti.  

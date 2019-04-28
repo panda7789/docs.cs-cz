@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
 ms.openlocfilehash: dc979a66c73fdf15a4349a003680156e0ce27ed3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61764358"
 ---
 # <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>"\<typename >' nemůže dědit od třídy \<typu >"\<basetypename >' protože rozšiřuje přístup základní třídy \<typ > mimo sestavení
 Třídy nebo rozhraní dědí ze základní třídy nebo rozhraní, ale má míň omezující úroveň přístupu.  
@@ -23,11 +23,11 @@ Třídy nebo rozhraní dědí ze základní třídy nebo rozhraní, ale má mí�
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Změníte úroveň přístupu odvozené třídy nebo rozhraní, které má být omezující jako základní třídu nebo rozhraní.  
+- Změníte úroveň přístupu odvozené třídy nebo rozhraní, které má být omezující jako základní třídu nebo rozhraní.  
   
      -nebo-  
   
--   Pokud požadujete méně omezující úroveň přístupu, odeberte `Inherits` příkazu. Nemůže dědit z více omezený základní třídu nebo rozhraní.  
+- Pokud požadujete méně omezující úroveň přístupu, odeberte `Inherits` příkazu. Nemůže dědit z více omezený základní třídu nebo rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a5eae9e14bcd0ca430f03a873818246896438463
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59227090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61749264"
 ---
 # <a name="icordebugcontrollerisrunning-method"></a>ICorDebugController::IsRunning – metoda
 Získá hodnotu, která označuje, zda vlákna v procesu jsou aktuálně spuštěna bez omezení.  

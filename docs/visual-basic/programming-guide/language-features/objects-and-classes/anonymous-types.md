@@ -9,11 +9,11 @@ helpviewer_keywords:
 - types [Visual Basic], anonymous
 ms.assetid: 7b87532c-4b3e-4398-8503-6ea9d67574a4
 ms.openlocfilehash: 3dc2083e5b4fd06250a1387c32f0eba28e879b30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758493"
 ---
 # <a name="anonymous-types-visual-basic"></a>Anonymní typy (Visual Basic)
 Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty bez psaní definice třídy datového typu. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název, dědí přímo z <xref:System.Object>a obsahuje vlastnosti, které jste zadali v rámci deklarace objektu. Protože není zadán název datového typu, to se označuje jako *anonymního typu*.  
@@ -53,22 +53,22 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty b
 ## <a name="key-properties"></a>Vlastnosti klíče  
  Vlastnosti klíče lišit od vlastnosti neklíčovým základní způsoby:  
   
--   Aby bylo možné zjistit, zda jsou dvě instance rovnocenné jsou porovnány pouze hodnoty vlastnosti klíče.  
+- Aby bylo možné zjistit, zda jsou dvě instance rovnocenné jsou porovnány pouze hodnoty vlastnosti klíče.  
   
--   Hodnoty vlastnosti klíče jsou jen pro čtení a nedá se změnit.  
+- Hodnoty vlastnosti klíče jsou jen pro čtení a nedá se změnit.  
   
--   Pouze hodnoty vlastností klíče jsou součástí kód generovaný kompilátorem hashovací algoritmus pro anonymního typu.  
+- Pouze hodnoty vlastností klíče jsou součástí kód generovaný kompilátorem hashovací algoritmus pro anonymního typu.  
   
 ### <a name="equality"></a>Rovnost  
  Instance anonymních typů může být rovny, pouze pokud jsou instancemi stejného anonymního typu. Kompilátor zpracovává dvě instance jako instance stejného typu, pokud nebudou splňovat následující podmínky:  
   
--   Jsou deklarovány ve stejném sestavení.  
+- Jsou deklarovány ve stejném sestavení.  
   
--   Jejich vlastnosti mají stejné názvy, stejné odvozené typy a jsou deklarovány ve stejném pořadí. Název porovnání nerozlišují malá a velká písmena.  
+- Jejich vlastnosti mají stejné názvy, stejné odvozené typy a jsou deklarovány ve stejném pořadí. Název porovnání nerozlišují malá a velká písmena.  
   
--   Stejné vlastnosti v každém jsou označeny jako vlastnosti klíče.  
+- Stejné vlastnosti v každém jsou označeny jako vlastnosti klíče.  
   
--   Alespoň jednu vlastnost v deklaraci je klíčovou vlastnost.  
+- Alespoň jednu vlastnost v deklaraci je klíčovou vlastnost.  
   
  Instance anonymních typů, která nemá žádné klíčové vlastnosti rovná pouze na sebe sama.  
   
@@ -86,11 +86,11 @@ Visual Basic podporuje anonymní typy, které vám umožní vytvářet objekty b
 ## <a name="anonymous-types-from-query-expressions"></a>Anonymní typy z – výrazy dotazů  
  Výrazy dotazu není vždy třídou vyžadována vytváření anonymních typů. Pokud je to možné, používají k uložení dat sloupce existujícího typu. K tomu dojde, když dotaz vrátí buď celých záznamů ze zdroje dat, nebo pouze jedno pole z každého záznamu. V následujících příkladech kódu `customers` je kolekce objektů `Customer` třídy. Třída má mnoho vlastností a může obsahovat jeden nebo více z nich ve výsledku dotazu v libovolném pořadí. V první dva příklady jsou vyžadovány žádné anonymní typy, protože dotazů vyberte elementů pojmenovaných typů:  
   
--   `custs1` obsahuje kolekci prvků řetězce, protože `cust.Name` je řetězec.  
+- `custs1` obsahuje kolekci prvků řetězce, protože `cust.Name` je řetězec.  
   
      [!code-vb[VbVbalrAnonymousTypes#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#30)]  
   
--   `custs2` obsahuje kolekci `Customer` objekty, protože každý prvek `customers` je `Customer` objektu a celý prvek je vybrána v dotazu.  
+- `custs2` obsahuje kolekci `Customer` objekty, protože každý prvek `customers` je `Customer` objektu a celý prvek je vybrána v dotazu.  
   
      [!code-vb[VbVbalrAnonymousTypes#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#31)]  
   

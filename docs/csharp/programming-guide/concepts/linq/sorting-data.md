@@ -3,11 +3,11 @@ title: Řazení dat (C#)
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
 ms.openlocfilehash: bceb599d9e8eb3c51c07526b9ad22d3d4206efdd
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711939"
 ---
 # <a name="sorting-data-c"></a>Řazení dat (C#)
 Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atributů. První kritérium řazení provede primární řazení elementů. Zadáním druhý kritérium řazení, lze řazení elementů v rámci jednotlivých skupin primární řazení.  
@@ -26,7 +26,7 @@ Operace řazení Seřadí prvky pořadí na základě jednoho nebo více atribut
 |OrderByDescending|Seřadí v sestupném pořadí.|`orderby … descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|  
 |ThenBy|Provede sekundární řazení ve vzestupném pořadí.|`orderby …, …`|<xref:System.Linq.Enumerable.ThenBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenBy%2A?displayProperty=nameWithType>|  
 |ThenByDescending|Provádí sekundární seřadit v sestupném pořadí.|`orderby …, … descending`|<xref:System.Linq.Enumerable.ThenByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ThenByDescending%2A?displayProperty=nameWithType>|  
-|reverzní|Obrátí pořadí prvků v kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
+|reverzní|Obrátí pořadí prvků v kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Reverse%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Reverse%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - pointer expressions [C#], address-of operator
 ms.assetid: 44fe2cd9-a64f-4ef5-be2a-09ce807c0182
 ms.openlocfilehash: b12d3bf99f32a3526bd4a1ec8c49b1fd88afd68a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61708793"
 ---
 # <a name="how-to-obtain-the-address-of-a-variable-c-programming-guide"></a>Postupy: získávání adresy proměnné (C# Programming Guide)
 

@@ -3,32 +3,32 @@ title: Skupiny partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d93e312e-ac04-40f8-baea-5da1cacb546e
 ms.openlocfilehash: afd9eae36f28c28b33b74c4456feb4ba8c91314d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766789"
 ---
 # <a name="peer-meshes"></a>Skupiny partnerských uzlů
-A *OK sítě* je pojmenovaná kolekce partnerské uzly, který dokáže komunikovat mezi sebou a které jsou určeny OK jedinečné ID (vzájemně propojena graf) Každý uzel je připojen k více dalších uzlů. V dobře propojené mřížku je mezi dvěma uzly, s relativně malý počet směrování mezi uzly ve nejvzdálenější okrajů oka, cestu a OK zůstanou připojené i v případě, že některé uzly nebo připojení vyřadit. Aktivní uzly v mřížce publikovaly své informace o koncový bod s odpovídajícím ID mřížky, aby ostatní partnerské uzly najít.  
+A *mřížky* je pojmenované kolekci (propojených graf) partnerské uzly, který dokáže komunikovat mezi sebou a které jsou označeny identifikátorem sítě jedinečné ID. Každý uzel je připojen k více uzlech. V dobře propojené sítě cesty mezi dvěma uzly, s relativně malý počet segmentů směrování mezi uzly v nejvzdálenější okraji sítě, a síť zůstanou připojené i v případě, že některé uzly nebo připojení vyřadit navýšení kapacity. Aktivní uzlům v síti publikovaly své informace koncový bod s odpovídajícím ID sítě, takže je můžete najít další partnerské uzly.  
   
-## <a name="characteristics-of-a-mesh-created-using-peer-channel"></a>Vlastnosti vytvořený rovnocenného kanálu oka sítě  
+## <a name="characteristics-of-a-mesh-created-using-peer-channel"></a>Charakteristiky sítě vytvořené pomocí protokolu Peer Channel  
   
-#### <a name="uniquely-identified"></a>Jednoznačně identifikuje  
+#### <a name="uniquely-identified"></a>Jednoznačně identifikují  
   
--   Jedinečné ID identifikuje každého OK. Název OK (nebo OK ID) je ve stejném formátu jako název hostitele systému DNS (Domain Name). Toto ID OK jako takový musí být jedinečný pro určený klientský aplikace v rámci oboru překladač používá. Běžný název, například "MyFamilysPeers" nebo "KevinsPokerTable", může snadno dojít ke konfliktu s další uživatelská jména a může vracet neúmyslným sdílené informace koncového bodu, což může způsobit problémy ochrany osobních údajů nebo zvýšení latence připojení. Jedním ze způsobů, abyste se těmto problémům může být k přidání jedinečné ID jako operátory Přezdívka pro síť (například "KevinsPokerTable90210").  
+- Jedinečné ID identifikuje každou síť. Název sítě (nebo ID sítě) je ve stejném formátu jako název hostitele systému DNS (Domain Name). Toto ID sítě v důsledku toho musí být jedinečný pro určený klientský aplikace v rámci oboru překladač používá. Běžný název jako "MyFamilysPeers" nebo "KevinsPokerTable," může snadno kolidují s názvy jiných uživatelů a může vrátit neúmyslnému sdílené informace o koncovém bodu, což může způsobit problémy ochrany osobních údajů nebo zvýšit latenci připojení. Jedním ze způsobů, abyste se těmto problémům může být přidat jedinečné ID příponový pojmenování pro sítě (například "KevinsPokerTable90210").  
   
-#### <a name="message-flooding"></a>Zpráva zahlcení  
+#### <a name="message-flooding"></a>Zahlcení zprávy  
   
--   OK umožňuje zprávy, které mají být předány z jednoho nebo více odesílatelů všechny ostatní partnerské uzly stejné v mřížce. Zprávy zaplněn partnerské uzly použít záhlaví zadaná v oboru názvů v `http://schemas.microsoft.com/net/2006/05/peer`.  
+- Síť umožňuje zprávy rozšířit z jednoho nebo více uživatelů pro všechny další partnerské uzly ve stejné síti. Zprávy budete zaplaveni podle partnerské uzly používají hlavičky zadané v oboru názvů na `http://schemas.microsoft.com/net/2006/05/peer`.  
   
 #### <a name="optimized-connections"></a>Optimalizované připojení  
   
--   Pokud uzly připojení nebo odpojení, zajistíte, že všechny uzly mají dobré připojení s menší riziko vytváření oddílů (skupiny uzly navzájem izolované) automaticky upraví rovnocenného kanálu oka. Připojení v mřížce jsou také dynamicky optimalizované podle aktuální vzory přenosů dat tak, aby latence zprávu od odesílatele k příjemce je co nejmenší.  
+- Sítě protokolu Peer Channel automaticky přizpůsobí při uzly Zúčastněte se dvoudenního a, ověříte, že všechny uzly máte dobré připojení s malou riziko vytváření oddílů (skupiny uzlů navzájem izolované). Připojení v síť se také dynamicky optimalizují podle aktuální vzory provozu tak, aby byla co nejmenší latenci zprávu od odesílatele příjemci.  
   
-#### <a name="popular-network-features-that-peer-channel-does-not-provide"></a>Oblíbené síťové funkce, které neposkytuje rovnocenného kanálu  
- Je důležité si uvědomit oblíbených síťové funkce, které neposkytuje rovnocenného kanálu. Tyto funkce, které může všechny být postavená na rovnocenného kanálu, patří:  
+#### <a name="popular-network-features-that-peer-channel-does-not-provide"></a>Oblíbené síťové funkce, které neposkytuje protokolu Peer Channel  
+ Je důležité znát oblíbených síťové funkce, které neposkytuje rovnocenného kanálu. Tyto funkce, které mohou všechny být postavená na protokolu Peer Channel, patří:  
   
--   **Řazení zpráv:** zprávy pocházející z jednoho zdroje nemusí dorazí na všech jiných stran ve stejném pořadí, nebo v pořadí, odeslaný zdroji. Aplikace, které vyžadují zprávy být dodávány v určitém pořadí musí vytvořit ji do svých aplikací (například zahrnutím monotónně se zvyšující ID s všechny zprávy).  
+- **Pořadí zpráv:** Zprávy pocházející z jednoho zdroje nemusí přijetí u všech ostatních strany ve stejném pořadí, nebo v pořadí, ve kterém odeslané zdroji. Aplikace, které vyžadují zprávy doručit v určitém pořadí musíte ho integrovat do svých aplikací (třeba podle monotónně se zvyšující ID se všechny zprávy včetně).  
   
--   **Spolehlivé zasílání zpráv:** rovnocenného kanálu nezahrnuje mechanismus zajistit příjem zpráv ve všech partnerských uzlů. Pokud chcete zajistit doručení zpráv, musíte napsat spolehlivost vrstvu nad rovnocenného kanálu.
+- **Spolehlivé zasílání zpráv:** Rovnocenný kanál neobsahuje mechanismus pro zajištění příjem zpráv pomocí všechny partnerské uzly. Zaručit doručování zpráv, musíte napsat spolehlivost vrstvu nad rovnocenného kanálu.

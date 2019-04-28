@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: fd9b50ed-98a1-4518-836d-e4e02c670822
 ms.openlocfilehash: 31490c7425572909cc30fe4237af9309754b68e4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768846"
 ---
 # <a name="tracking"></a>\<sledování >
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  

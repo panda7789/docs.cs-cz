@@ -3,11 +3,11 @@ title: Ukázkové dokumenty XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 9ec89809-41a1-484c-b1e3-6c4ecdca7b8d
 ms.openlocfilehash: 69c49718b7d257aedcf7c0140f139547be37774b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54509623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712446"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Ukázkové dokumenty XML (LINQ to XML)
 Následující příklad soubory se používají v ukázky kódu a fragmenty kódu v průběhu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.  

@@ -12,11 +12,11 @@ ms.assetid: 9ec1af27-604b-477e-9ee2-e833eb10d3ce
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eb0810a9e0ffce825abecc87eb2698920209d86f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59171805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61753761"
 ---
 # <a name="noncomvisiblebaseclass-mda"></a>nonComVisibleBaseClass – pomocník spravovaného ladění (MDA)
 `nonComVisibleBaseClass` Pomocníka spravovaného ladění (MDA) se aktivuje při `QueryInterface` je provedeno volání pomocí nativní nebo nespravovaného kódu na obálka volatelná aplikacemi COM (CCW) COM – viditelné spravované třídy, která je odvozena ze základní třídy, které nejsou viditelné modelu COM.  `QueryInterface` Volání způsobí, že MDA aktivovat pouze v případech, kde požadavky na třídy rozhraní nebo výchozí volání `IDispatch` COM-viditelných spravované třídy.  MDA není aktivuje se, když `QueryInterface` je pro explicitní rozhraní, který má <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> použít atribut a je explicitně implementované COM – viditelné třídy.  

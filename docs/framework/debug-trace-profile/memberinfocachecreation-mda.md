@@ -13,11 +13,11 @@ ms.assetid: 5abdad23-1335-4744-8acb-934002c0b6fe
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 90f59f4d593a8aa077a6710cc0f5c1747ac1a3ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59103763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61753996"
 ---
 # <a name="memberinfocachecreation-mda"></a>memberInfoCacheCreation – pomocník spravovaného ladění (MDA)
 `memberInfoCacheCreation` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Reflection.MemberInfo> mezipaměť je vytvořená. Toto je silné údaj o program, který provádí používání funkcí prostředků reflexe.  

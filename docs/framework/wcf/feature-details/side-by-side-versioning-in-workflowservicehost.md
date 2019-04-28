@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
 ms.openlocfilehash: 3f180fa115453be86fa5f99fbabb776eb7198623
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747925"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Práce s víc verzemi současně ve třídě WorkflowServiceHost
 <xref:System.ServiceModel.Activities.WorkflowServiceHost> Počínaje verzí vedle sebe [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] poskytuje možnost hostování několika verzí služby pracovního postupu v jednom koncovém bodu. Vedle sebe funkce poskytované umožňuje nakonfigurovat tak, aby nové instance služby pracovního postupu jsou vytvořené pomocí novou definici pracovního postupu při spuštění úplné pomocí existující definici instance služby pracovního postupu. Toto téma obsahuje přehled používání vedle sebe provádění pracovního postupu služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
@@ -27,21 +27,21 @@ ms.locfileid: "58465864"
 ### <a name="rules-for-hosting-multiple-versions-of-a-workflow-service"></a>Pravidla pro hostování více verzí služby pracovního postupu  
  Pokud uživatel přidá další verze pro <xref:System.ServiceModel.Activities.WorkflowServiceHost>, existuje několik podmínek, které musí být splněny v pořadí pro službu pracovního postupu hostovat se stejnou sadu koncových bodů a popis. Pokud některé z dalších verzí splňovat tyto podmínky <xref:System.ServiceModel.Activities.WorkflowServiceHost> vyvolá výjimku při `Open` je volána. Každá definice pracovního postupu, který je k dispozici na hostitele jako další verze musí splňovat následující požadavky (kde primární verze je definice služby pracovního postupu, který byl poskytnut konstruktor hostitele). Verze další pracovní postup musí:  
   
--   Mají stejné <xref:System.ServiceModel.Activities.WorkflowService.Name%2A> jako primární verzí služby pracovního postupu.  
+- Mají stejné <xref:System.ServiceModel.Activities.WorkflowService.Name%2A> jako primární verzí služby pracovního postupu.  
   
--   Nesmí mít žádné <xref:System.ServiceModel.Activities.Receive> nebo <xref:System.ServiceModel.Activities.SendReply> aktivit v jeho <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> , které nejsou ve primárního verzi a musí se shodovat s kontrakt.  
+- Nesmí mít žádné <xref:System.ServiceModel.Activities.Receive> nebo <xref:System.ServiceModel.Activities.SendReply> aktivit v jeho <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> , které nejsou ve primárního verzi a musí se shodovat s kontrakt.  
   
--   Mít jedinečnou <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>. Může mít jeden a pouze jeden definice pracovního postupu `null` <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>.  
+- Mít jedinečnou <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>. Může mít jeden a pouze jeden definice pracovního postupu `null` <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A>.  
   
  Některé změny nejsou povoleny. Následující položky se může lišit mezi verzemi:  
   
--   <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> Může mít jiný název a balíček než primární verze.  
+- <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> Může mít jiný název a balíček než primární verze.  
   
--   <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> Hodnota může být jiné než primární verze.  
+- <xref:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive%2A> Hodnota může být jiné než primární verze.  
   
--   <xref:System.ServiceModel.Activities.WorkflowService.ConfigurationName%2A> Může být jiný než primární verze.  
+- <xref:System.ServiceModel.Activities.WorkflowService.ConfigurationName%2A> Může být jiný než primární verze.  
   
--   <xref:System.ServiceModel.Activities.WorkflowService.ImplementedContracts%2A> Může být jiný než primární verze.  
+- <xref:System.ServiceModel.Activities.WorkflowService.ImplementedContracts%2A> Může být jiný než primární verze.  
   
 ### <a name="configuring-the-definitionidentity"></a>Konfigurace identitou DefinitionIdentity  
  Při vytvoření služby pracovních postupů pomocí návrháře postupu provádění <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> se nastavuje pomocí **vlastnosti** okna. Klikněte na tlačítko mimo kořenová aktivita služby v Návrháři vyberte služby pracovního postupu a zvolte **okno vlastností** z **zobrazení** nabídky. Vyberte **identita WorkflowIdentity** z rozevíracího seznamu, který se zobrazí vedle **identitou DefinitionIdentity** vlastnosti, rozbalte položku a zadejte požadovaný <xref:System.Activities.WorkflowIdentity> vlastnosti. V následujícím příkladu <xref:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity%2A> má nakonfigurovanou <xref:System.Activities.WorkflowIdentity.Name%2A> `MortgageWorkflow` a <xref:System.Activities.WorkflowIdentity.Version%2A> z `1.0.0.0`. <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a v tomto příkladu je `null`.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - geometry classes [WPF]
 ms.assetid: 83873331-b013-472e-8197-8ba993dd242f
 ms.openlocfilehash: 3afee770e36b7daea754775f64dd7f1030659267
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762238"
 ---
 # <a name="geometries-how-to-topics"></a>Postupy: Geometrie
 Témata v této části ukazují, jak používat <xref:System.Windows.Media.Geometry> objekty ve svých aplikacích.  

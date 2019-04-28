@@ -3,11 +3,11 @@ title: <messageSenderAuthentication> – element
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
 ms.openlocfilehash: 410fffd541926b9a2e75c04d26a2a1e08a262939
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59135054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61764085"
 ---
 # <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication > – element
 Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.  
@@ -45,7 +45,7 @@ Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |String|Volitelné. Určuje název typu a sestavení a další data použít k vyhledání typu. Minimálně název oboru názvů a typ jsou požadovány. Volitelné informace zahrnují: název sestavení, číslo verze, jazykovou verzi a token veřejného klíče.|  
   
@@ -57,13 +57,13 @@ Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.
   
 ## <a name="revocationmode-attribute"></a>revocationMode atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `NoCheck`, `Online`, `Offline`. Výchozí hodnota je `Online`.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: `LocalMachine` nebo `CurrentUser`. Výchozí hodnota je `CurrentUser`. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle pod `LocalMachine`. Pokud klientská aplikace běží pod účtem uživatele, že certifikát je obvykle v `CurrentUser`. Výchozí hodnota je `CurrentUser`.|  
   

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c742410da8e7dbce53b53978516ab94243455849
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763708"
 ---
 # <a name="iclrsyncmanagercreaterwlockowneriterator-method"></a>ICLRSyncManager::CreateRWLockOwnerIterator – metoda
 Požadavky, které modul CLR (CLR) vytvořit iterátor pro hostitele použít k určení sady úloh čeká na zámek čtení a zápis.  
@@ -58,9 +58,9 @@ HRESULT CreateRWLockOwnerIterator (
 ## <a name="remarks"></a>Poznámky  
  Hostitelé obvykle volání `CreateRWLockOwnerIterator`, `DeleteRWLockOwnerIterator`, a `GetRWLockOwnerNext` metod rozpoznávání zablokování. Hostitel zodpovídá za to, že zámek pro čtení a zápis je stále platný, protože modul CLR nesnaží se zachování zámku pro čtení a zápis. Jsou dostupné pro hostitele, aby platnost zámku několik strategií:  
   
--   Hostitel zablokovat volání uvolnění zámku pro čtení a zápis (například [ihostsemaphore::releasesemaphore –](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)) při zajištění, že tento blok způsobit zablokování.  
+- Hostitel zablokovat volání uvolnění zámku pro čtení a zápis (například [ihostsemaphore::releasesemaphore –](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)) při zajištění, že tento blok způsobit zablokování.  
   
--   Hostitel může blokovat výstupu z čekání na událost objekt přidružený k zámku pro čtení a zápis, znovu zajistit, že tento blok způsobit zablokování.  
+- Hostitel může blokovat výstupu z čekání na událost objekt přidružený k zámku pro čtení a zápis, znovu zajistit, že tento blok způsobit zablokování.  
   
 > [!NOTE]
 >  `CreateRWLockOwnerIterator` musí být volána pouze na vlákna, která jsou aktuálně spuštěny nespravovaného kódu.  

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - MaskedTextBox control [Windows Forms], binding data
 ms.assetid: 34b29f07-e8df-48d4-b08b-53fcca524708
 ms.openlocfilehash: ebc8eaf63c6b5280961a80ef11afb919810dbdb8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761367"
 ---
 # <a name="how-to-bind-data-to-the-maskedtextbox-control"></a>Postupy: Vytvoření vazby dat k ovládacímu prvku MaskedTextBox
 Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně jako na jakýkoli jiný ovládací prvek Windows Forms. Ale pokud formátu vašich dat v databázi neodpovídá formátu očekávaném definicí maska, je potřeba změnit formát data. Následující postup ukazuje, jak to udělat <xref:System.Windows.Forms.Binding.Format> a <xref:System.Windows.Forms.Binding.Parse> události <xref:System.Windows.Forms.Binding> třídy k zobrazení samostatné telefonní číslo a Telefon rozšíření databázová pole jako jedno pole upravitelné.  
@@ -239,15 +239,15 @@ Můžete svázat data <xref:System.Windows.Forms.MaskedTextBox> řídit stejně 
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Vytvoření Vizuálu C# nebo projektu jazyka Visual Basic.  
+- Vytvoření Vizuálu C# nebo projektu jazyka Visual Basic.  
   
--   Přidat <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.MaskedTextBox> ovládacích prvků do formuláře, jak je popsáno v předchozím postupu.  
+- Přidat <xref:System.Windows.Forms.TextBox> a <xref:System.Windows.Forms.MaskedTextBox> ovládacích prvků do formuláře, jak je popsáno v předchozím postupu.  
   
--   Otevření souboru se zdrojovým kódem pro výchozí formuláře projektu.  
+- Otevření souboru se zdrojovým kódem pro výchozí formuláře projektu.  
   
--   Zdrojový kód v tomto souboru nahraďte kód uvedený v předchozí části "Kód".  
+- Zdrojový kód v tomto souboru nahraďte kód uvedený v předchozí části "Kód".  
   
--   Zkompilujte aplikaci.  
+- Zkompilujte aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC42104
 ms.assetid: 6909aa0b-b4a1-46f5-a18c-ba3e565c1dd8
 ms.openlocfilehash: 46551a917aeb794c8d35985076b67a315386f628
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766724"
 ---
 # <a name="variable-variablename-is-used-before-it-has-been-assigned-a-value"></a>Proměnná '\<NázevProměnné >' se použije dřív, než jí byla přiřazena hodnota
 Proměnná '\<NázevProměnné >' se použije dřív, než jí byla přiřazena hodnota. Výjimka nulového odkazu by mohlo způsobit v době běhu.  
@@ -27,9 +27,9 @@ Proměnná '\<NázevProměnné >' se použije dřív, než jí byla přiřazena 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zkontrolujte logiku toku řízení a ujistěte se, že proměnná obsahuje platnou hodnotu před řízení se předá jakýkoli příkaz, který čte ho.  
+- Zkontrolujte logiku toku řízení a ujistěte se, že proměnná obsahuje platnou hodnotu před řízení se předá jakýkoli příkaz, který čte ho.  
   
--   Jedním ze způsobů zaručí, že má proměnná vždy platná hodnota je inicializovat ho jako součást její deklarace. Naleznete v části "Inicializace" v [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).  
+- Jedním ze způsobů zaručí, že má proměnná vždy platná hodnota je inicializovat ho jako součást její deklarace. Naleznete v části "Inicializace" v [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
 

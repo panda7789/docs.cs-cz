@@ -3,11 +3,11 @@ title: Sledování proměnných a argumentů
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
 ms.openlocfilehash: 7062e44a18cfd4b07cc63f4b490c08fbbfeeb8a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755516"
 ---
 # <a name="variable-and-argument-tracking"></a>Sledování proměnných a argumentů
 Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  
@@ -15,9 +15,9 @@ Při sledování provádění pracovního postupu, je často užitečné extraho
 ## <a name="variables-and-arguments"></a>Proměnné a argumenty  
  Pokud aktivita vyzařuje ActivityStateRecord se extrahují proměnné a argumenty.  Proměnná je k dispozici pro extrahování, pouze pokud je v rámci oboru aktivity. Tímto způsobem je zadána proměnná extrahovaným v rámci aktivity:  
   
--   Pokud proměnná je určen název proměnné, sledování vypadá pro proměnné v rámci aktuální aktivitu sledován a v nadřazené aktivity. Proměnná vyhledává v aktuálním oboru aktivity a v nadřazeném oboru.  
+- Pokud proměnná je určen název proměnné, sledování vypadá pro proměnné v rámci aktuální aktivitu sledován a v nadřazené aktivity. Proměnná vyhledává v aktuálním oboru aktivity a v nadřazeném oboru.  
   
--   Pokud proměnné extrahovaným je určené vlastností name = "*", pak se extrahují všechny proměnné v rámci aktuální aktivitu sledován. V tomto případě proměnné, které jsou v oboru, ale definované v nadřazeném prvku, které nejsou extrahována aktivity.  
+- Pokud proměnné extrahovaným je určené vlastností name = "*", pak se extrahují všechny proměnné v rámci aktuální aktivitu sledován. V tomto případě proměnné, které jsou v oboru, ale definované v nadřazeném prvku, které nejsou extrahována aktivity.  
   
  Při extrahování argumenty, argumenty extrahovat závisí na stavu aktivity. Když stav aktivity je zpracování, pak pouze `InArguments` jsou k dispozici pro extrakci. Pro všechny ostatní aktivity stavu (uzavřeno, Faulted, zrušeno) všechny argumenty, InArguments a OutArguments, jsou k dispozici pro extrakci.  
   

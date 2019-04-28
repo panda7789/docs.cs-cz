@@ -4,11 +4,11 @@ description: Pole jsou v základním typem kolekce C# jazyka
 ms.date: 08/10/2016
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
 ms.openlocfilehash: 8685e6ad08eb74534cdad499099b3d12da0a497a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706413"
 ---
 # <a name="arrays"></a>Pole
 

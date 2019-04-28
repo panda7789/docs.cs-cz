@@ -9,11 +9,11 @@ helpviewer_keywords:
 - properties [WPF], backing with dependency properties
 ms.assetid: 855fd6d7-19ac-493c-bf5e-2f40b57cdc92
 ms.openlocfilehash: e2f18cb3941be2ebf4315a844c05b91ff49c6aa2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757453"
 ---
 # <a name="how-to-implement-a-dependency-property"></a>Postupy: Implementace vlastnosti závislosti
 Tento příklad ukazuje, jak zálohovat [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] vlastnost s <xref:System.Windows.DependencyProperty> pole, proto definování vlastnost závislosti. Při definování vlastní vlastnosti a nechcete, aby podporují mnoho aspektů [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] funkce, včetně styly, vazby dat, dědičnost, animace a výchozí hodnoty, měli byste implementovat jako vlastnost závislosti.  

@@ -3,11 +3,11 @@ title: NAVIGATE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
 ms.openlocfilehash: 993c07b824d30c89773c5cfea90c7c194c6b3869
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57356874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760412"
 ---
 # <a name="navigate-entity-sql"></a>NAVIGATE (Entity SQL)
 

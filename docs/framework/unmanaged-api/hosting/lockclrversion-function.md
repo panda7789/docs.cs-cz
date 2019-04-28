@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 91bb1a9416e577dbb5cc96e8be87033c53232811
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765268"
 ---
 # <a name="lockclrversion-function"></a>LockClrVersion – funkce
 Umožňuje hostiteli zjistit, která verze modulu common language runtime (CLR) se použije v rámci procesu před explicitní inicializací modulu CLR.  
@@ -72,15 +72,15 @@ typedef HRESULT ( __stdcall *FLockClrVersionCallback ) ();
   
 3. Funkce určené `hostCallback` pak provede následující posloupnost volání:  
   
-    -   Určené funkce `pBeginHostSetup` parametru.  
+    - Určené funkce `pBeginHostSetup` parametru.  
   
-    -   `CorBindToRuntimeEx` (nebo jinou funkci inicializace modulu runtime).  
+    - `CorBindToRuntimeEx` (nebo jinou funkci inicializace modulu runtime).  
   
-    -   [ICLRRuntimeHost::SetHostControl](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-sethostcontrol-method.md).  
+    - [ICLRRuntimeHost::SetHostControl](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-sethostcontrol-method.md).  
   
-    -   [ICLRRuntimeHost::Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md).  
+    - [ICLRRuntimeHost::Start](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md).  
   
-    -   Určené funkce `pEndHostSetup` parametru.  
+    - Určené funkce `pEndHostSetup` parametru.  
   
  Všechna volání z `pBeginHostSetup` k `pEndHostSetup` musí vyskytovat na jednoho vlákna nebo vlákénka se stejným zásobníkem logické. Toto vlákno může lišit od vlákna, na kterém `hostCallback` je volána.  
   

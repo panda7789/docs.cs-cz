@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
 ms.openlocfilehash: d1aa402ec28fc22654d8f1513366c091215fa4d4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757597"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
@@ -21,11 +21,11 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
 ## <a name="building-a-wpf-application"></a>Sestavení aplikace WPF  
  Aplikace WPF, mohou být zkompilovány následujícími způsoby:  
   
--   Příkazový řádek. Aplikace musí obsahovat pouze kód (bez XAML) a soubor definice aplikace. Další informace najdete v tématu [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
+- Příkazový řádek. Aplikace musí obsahovat pouze kód (bez XAML) a soubor definice aplikace. Další informace najdete v tématu [sestavení příkazového řádku s csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) nebo [sestavení z příkazového řádku (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
--   Microsoft Build Engine (MSBuild). Kromě kód a soubory XAML musí aplikace obsahovat souboru projektu MSBuild. Další informace najdete v tématu "MSBuild".  
+- Microsoft Build Engine (MSBuild). Kromě kód a soubory XAML musí aplikace obsahovat souboru projektu MSBuild. Další informace najdete v tématu "MSBuild".  
   
--   Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [zapisovat a spravovat kód pomocí sady Visual Studio](/visualstudio/ide/index-writing-code) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
+- Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [zapisovat a spravovat kód pomocí sady Visual Studio](/visualstudio/ide/index-writing-code) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
   
 <a name="The_Windows_Presentation_Foundation_Build_Pipeline"></a>   
 ## <a name="wpf-build-pipeline"></a>WPF Build Pipeline  
@@ -37,13 +37,13 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
 ### <a name="pre-build-initializations"></a>Inicializace před sestavením  
  Před sestavením, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] Určuje umístění důležité nástroje a knihovny, včetně následujících:  
   
--   Rozhraní .NET Framework.  
+- Rozhraní .NET Framework.  
   
--   [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Adresáře.  
+- [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)] Adresáře.  
   
--   Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] odkazovat na sestavení.  
+- Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] odkazovat na sestavení.  
   
--   Vlastnost cesty pro vyhledávání sestavení.  
+- Vlastnost cesty pro vyhledávání sestavení.  
   
  První místo kde [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] vyhledá sestavení je adresář sestavení odkazu (%ProgramFiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Během tohoto kroku proces sestavení také inicializuje různé vlastnosti a skupiny položek a provede všechny potřebné vyčištění práci.  
   
@@ -129,41 +129,41 @@ End Sub
 ## <a name="incremental-build-support"></a>Podpora přírůstkové sestavení  
  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Sestavovací systém poskytuje podporu pro přírůstkové sestavení. Je poměrně inteligentní o zjišťování změny značek nebo kódu a zkompiluje jenom tyto artefakty, které jsou ovlivněny změnou. Mechanismus přírůstkového sestavení používá následující soubory:  
   
--   $(*AssemblyName*) _MarkupCompiler.Cache soubor, abyste zachovali aktuální stav kompilátoru.  
+- $(*AssemblyName*) _MarkupCompiler.Cache soubor, abyste zachovali aktuální stav kompilátoru.  
   
--   $(*AssemblyName*) _MarkupCompiler.lref soubor do mezipaměti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory s odkazy na místně definované typy.  
+- $(*AssemblyName*) _MarkupCompiler.lref soubor do mezipaměti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory s odkazy na místně definované typy.  
   
  Následuje sadu pravidel, kterými se řídí přírůstkové sestavení:  
   
--   Soubor je nejmenší jednotka, ve kterém sestavovací systém zjistí změnu. Takže pro soubor kódu nemůže určit systém sestavení, pokud se změnil typ nebo kód byl přidán. Totéž platí pro soubory projektu.  
+- Soubor je nejmenší jednotka, ve kterém sestavovací systém zjistí změnu. Takže pro soubor kódu nemůže určit systém sestavení, pokud se změnil typ nebo kód byl přidán. Totéž platí pro soubory projektu.  
   
--   Mechanismus přírůstkového sestavení musí být cognizant, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránku definuje třídu nebo používá jiné třídy.  
+- Mechanismus přírůstkového sestavení musí být cognizant, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránku definuje třídu nebo používá jiné třídy.  
   
--   Pokud `Reference` položky přejít, a potom znovu kompilovat všechny stránky.  
+- Pokud `Reference` položky přejít, a potom znovu kompilovat všechny stránky.  
   
--   Pokud se změní soubor kódu, znovu kompilovat všechny stránky s lokálně definovaný typ reference.  
+- Pokud se změní soubor kódu, znovu kompilovat všechny stránky s lokálně definovaný typ reference.  
   
--   Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] změny souborů:  
+- Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] změny souborů:  
   
-    -   Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `Page` v projektu: Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] neobsahuje odkazy lokálně definovaný typ, můžete znovu zkompilovat, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] plus všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní; Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] má místní odkazy, znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.  
+    - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `Page` v projektu: Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] neobsahuje odkazy lokálně definovaný typ, můžete znovu zkompilovat, který [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] plus všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní; Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] má místní odkazy, znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.  
   
-    -   Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `ApplicationDefinition` v projektu: znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky (důvod: každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahuje odkaz na <xref:System.Windows.Application> typ, který se mohl změnit).  
+    - Pokud [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je deklarován jako `ApplicationDefinition` v projektu: znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky (důvod: každý [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahuje odkaz na <xref:System.Windows.Application> typ, který se mohl změnit).  
   
--   Pokud soubor projektu deklaruje jako definice aplikace místo souboru kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru:  
+- Pokud soubor projektu deklaruje jako definice aplikace místo souboru kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru:  
   
-    -   Zkontrolujte, zda `ApplicationClassName` změnila hodnota v souboru projektu (existuje nový typ aplikace?). Pokud ano, znovu zkompilujte celé aplikace.  
+    - Zkontrolujte, zda `ApplicationClassName` změnila hodnota v souboru projektu (existuje nový typ aplikace?). Pokud ano, znovu zkompilujte celé aplikace.  
   
-    -   V opačném případě znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.  
+    - V opačném případě znovu kompilovat všechny [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky s odkazy na místní.  
   
--   Pokud se změní soubor projektu: všechny předchozí pravidla a zjistit, co je potřeba překompilovat. Změní na následující vlastnosti trigger dokončení opětovné kompilace: `AssemblyName`, `IntermediateOutputPath`, `RootNamespace`, a `HostInBrowser`.  
+- Pokud se změní soubor projektu: všechny předchozí pravidla a zjistit, co je potřeba překompilovat. Změní na následující vlastnosti trigger dokončení opětovné kompilace: `AssemblyName`, `IntermediateOutputPath`, `RootNamespace`, a `HostInBrowser`.  
   
  Následující scénáře překompilujte jsou možné:  
   
--   Celá aplikace je znovu zkompilovat.  
+- Celá aplikace je znovu zkompilovat.  
   
--   Pouze ty [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které se mají místně definované odkazy na typ překompilují.  
+- Pouze ty [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory, které se mají místně definované odkazy na typ překompilují.  
   
--   Nic přepsán (Pokud se nic v projektu nezměnilo).  
+- Nic přepsán (Pokud se nic v projektu nezměnilo).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
 ms.openlocfilehash: e1111077a407dc32475976b15ff71170978e3184
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765502"
 ---
 # <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: Vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)
 
@@ -31,19 +31,19 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
      Tím se vytvoří následující prvky objektu v souboru XAML pro okno:
 
-    -   A <xref:System.Windows.Data.CollectionViewSource> element s názvem `customersViewSource`. <xref:System.Windows.FrameworkElement.DataContext%2A> Vlastnost na nejvyšší úrovni <xref:System.Windows.Controls.Grid> prvek objektu je nastavena na tento nový <xref:System.Windows.Data.CollectionViewSource>.
+    - A <xref:System.Windows.Data.CollectionViewSource> element s názvem `customersViewSource`. <xref:System.Windows.FrameworkElement.DataContext%2A> Vlastnost na nejvyšší úrovni <xref:System.Windows.Controls.Grid> prvek objektu je nastavena na tento nový <xref:System.Windows.Data.CollectionViewSource>.
 
-    -   Vázaný na data <xref:System.Windows.Controls.ComboBox> s názvem `CustomerID`.
+    - Vázaný na data <xref:System.Windows.Controls.ComboBox> s názvem `CustomerID`.
 
-    -   A <xref:System.Windows.Controls.Label>.
+    - A <xref:System.Windows.Controls.Label>.
 
 4. Přetáhněte **objednávky** navigační vlastnost do návrháře.
 
      Tím se vytvoří následující prvky další objekt v souboru XAML pro okno:
 
-    -   Sekundy <xref:System.Windows.Data.CollectionViewSource> element s názvem `customersOrdersViewSource`, zdroj, který je `customerViewSource`.
+    - Sekundy <xref:System.Windows.Data.CollectionViewSource> element s názvem `customersOrdersViewSource`, zdroj, který je `customerViewSource`.
 
-    -   Vázaný na data <xref:System.Windows.Controls.DataGrid> ovládací prvek s názvem `ordersDataGrid`.
+    - Vázaný na data <xref:System.Windows.Controls.DataGrid> ovládací prvek s názvem `ordersDataGrid`.
 
 5. (Volitelné) Přetáhněte další položky z **zákazníkům** uzlu do návrháře.
 
@@ -82,13 +82,13 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
      Tím se vytvoří následující ovládací prvky ve formuláři:
 
-    -   Instance <xref:System.Windows.Forms.BindingSource> s názvem `customersBindingSource`.
+    - Instance <xref:System.Windows.Forms.BindingSource> s názvem `customersBindingSource`.
 
-    -   Instance <xref:System.Windows.Forms.BindingNavigator> s názvem `customersBindingNavigator`. Tento ovládací prvek můžete odstranit nebude potřeba.
+    - Instance <xref:System.Windows.Forms.BindingNavigator> s názvem `customersBindingNavigator`. Tento ovládací prvek můžete odstranit nebude potřeba.
 
-    -   Vázaný na data <xref:System.Windows.Forms.ComboBox> s názvem `CustomerID`.
+    - Vázaný na data <xref:System.Windows.Forms.ComboBox> s názvem `CustomerID`.
 
-    -   A <xref:System.Windows.Forms.Label>.
+    - A <xref:System.Windows.Forms.Label>.
 
 3. Přetáhněte **objednávky** navigační vlastnost pro formulář.
 

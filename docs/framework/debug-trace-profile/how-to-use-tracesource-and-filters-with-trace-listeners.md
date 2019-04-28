@@ -17,11 +17,11 @@ ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6805385ec21deb8748354647ab0f09b3a51353fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338576"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754411"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování
 Mezi nové funkce v rozhraní .NET Framework verze 2.0 je systém rozšířené trasování. Základní se nezmění: trasování zprávy odesílány prostřednictvím přepínače naslouchacích procesů, které nahlásit střední přidružené výstupní data. Hlavní rozdíl pro verzi 2.0 je, že můžete zahájit trasování prostřednictvím instancí <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource> slouží jako systém rozšířené trasování a dá se použít místo statické metody starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale doporučený postup je použít <xref:System.Diagnostics.TraceSource> třídy pro trasování.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - sounds [Windows Forms], playing
 ms.assetid: f3945af9-045c-4e2d-b251-377c37ca2d77
 ms.openlocfilehash: 6f5c2e43b4ea0da6f7efd7454c5e193af5d4cdb0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57719296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756400"
 ---
 # <a name="soundplayer-class"></a>SoundPlayer – třída
 `SoundPlayer` Třída umožňuje snadno zahrnout zvuky ve svých aplikacích.  

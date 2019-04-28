@@ -3,11 +3,11 @@ title: 'Optimistická metoda souběžného zpracování: Přehled'
 ms.date: 03/30/2017
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
 ms.openlocfilehash: 8f3bd35cc1391339d99d5aa0a4021e29fa81756c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106545"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767485"
 ---
 # <a name="optimistic-concurrency-overview"></a>Optimistická metoda souběžného zpracování: Přehled
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje optimistického řízení souběžnosti. Následující tabulka popisuje podmínky, které se vztahují k optimistického řízení souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci:  
@@ -22,9 +22,9 @@ ms.locfileid: "59106545"
   
  V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model *optimistického řízení souběžnosti konflikt* nastane, pokud jsou splněny obě následující podmínky:  
   
--   Klient se pokusí odeslat změny do databáze.  
+- Klient se pokusí odeslat změny do databáze.  
   
--   Jeden nebo více hodnot kontrolu aktualizací v databázi byly aktualizovány od klienta posledního čtení.  
+- Jeden nebo více hodnot kontrolu aktualizací v databázi byly aktualizovány od klienta posledního čtení.  
   
  Řešení konfliktu obsahuje zjišťování, které členy objektu je v konfliktu a potom rozhodování o tom, co chcete udělat.  
   
@@ -49,44 +49,44 @@ ms.locfileid: "59106545"
 ## <a name="conflict-detection-and-resolution-checklist"></a>Kontrolní seznam řešení a zjišťování konfliktů  
  Můžete zjišťovat a řešit konflikty na libovolné úrovni podrobností. Na jeden extreme, můžete vyřešit všechny konflikty v jednom ze tří způsobů (viz <xref:System.Data.Linq.RefreshMode>) bez pečlivě zvážit. V jiných extreme můžete určit konkrétní akci pro každý typ konfliktu na každého člena v konfliktu.  
   
--   Zadejte nebo revidovat <xref:System.Data.Linq.Mapping.UpdateCheck> možnosti v objektovém modelu.  
+- Zadejte nebo revidovat <xref:System.Data.Linq.Mapping.UpdateCheck> možnosti v objektovém modelu.  
   
      Další informace najdete v tématu [jak: Zadejte, kteří členové jsou testovat na konflikty souběžnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-which-members-are-tested-for-concurrency-conflicts.md).  
   
--   V bloku try/catch – volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, určete, kdy chcete výjimky, která je vyvolána.  
+- V bloku try/catch – volání <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, určete, kdy chcete výjimky, která je vyvolána.  
   
      Další informace najdete v tématu [jak: Zadejte mají objevit výjimky souběžnosti při](../../../../../../docs/framework/data/adonet/sql/linq/how-to-specify-when-concurrency-exceptions-are-thrown.md).  
   
--   Určit, kolik detailů konflikt, které chcete načíst a zahrnutí kódu do vašeho bloku try/catch odpovídajícím způsobem.  
+- Určit, kolik detailů konflikt, které chcete načíst a zahrnutí kódu do vašeho bloku try/catch odpovídajícím způsobem.  
   
      Další informace najdete v tématu [jak: Načtení informací o konfliktech entit](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-entity-conflict-information.md) a [jak: Načtení informací o konfliktech členů](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-member-conflict-information.md).  
   
--   Zahrnout do vaší `try` / `catch` kódu, jak chcete vyřešit konflikty různých zjistíte.  
+- Zahrnout do vaší `try` / `catch` kódu, jak chcete vyřešit konflikty různých zjistíte.  
   
      Další informace najdete v tématu [jak: Řešení konfliktů zachováním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md), [jak: Řešení konfliktů přepsáním hodnot v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md), a [jak: Řešení konfliktů sloučení s hodnotami v databázi](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-merging-with-database-values.md).  
   
 ## <a name="linq-to-sql-types-that-support-conflict-discovery-and-resolution"></a>Technologie LINQ to SQL typy, které podporují konflikt zjišťování a řešení  
  Třídy a funkce, které podporují řešení konfliktů v optimistického řízení souběžnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] patří následující:  
   
--   <xref:System.Data.Linq.ObjectChangeConflict?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.ObjectChangeConflict?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.MemberChangeConflict?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.MemberChangeConflict?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.ChangeConflictCollection?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.ChangeConflictCollection?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.ChangeConflictException?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.ChangeConflictException?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.ChangeConflicts%2A?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.DataContext.ChangeConflicts%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.Refresh%2A?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.DataContext.Refresh%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.Mapping.UpdateCheck?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.Mapping.UpdateCheck?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.RefreshMode?displayProperty=nameWithType>  
+- <xref:System.Data.Linq.RefreshMode?displayProperty=nameWithType>  
   
 ## <a name="see-also"></a>Viz také:
 

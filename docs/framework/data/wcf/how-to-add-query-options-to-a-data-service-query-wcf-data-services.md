@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF Data Services, accessing data
 ms.assetid: e4258526-557e-4e96-91e1-2175400c7c8f
 ms.openlocfilehash: 2056b803b34faafdaebb85883de8b76ea2f9dcd8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59518055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765541"
 ---
 # <a name="how-to-add-query-options-to-a-data-service-query-wcf-data-services"></a>Postupy: Přidání možností do dotazu v datové službě (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje dotazování dat služby z klienta na základě rozhraní .NET Framework aplikace s použitím tříd generované klientské datové služby. Nejjednodušší k tomu je compose, který zahrnuje možnosti požadovaného dotazu výrazu dotazu Language Integrated Query (LINQ). Můžete také volat řadu metody LINQ dotazů k vytváření ekvivalentní dotazů. Nakonec můžete použít <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro přidání možností do dotazu. Ve všech těchto případech obsahuje identifikátor URI, který je generován klienta sady požadovaná entita se vybraný dotaz možnosti použít. Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

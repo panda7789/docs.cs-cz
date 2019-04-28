@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
 ms.openlocfilehash: 818495cd2f7100f416280ce019321fed3f26aee8
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765734"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Správa verzí datové služby (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Umožňuje vytvoření datové služby tak, aby klienti můžou přistupovat k datům jako prostředky pomocí identifikátorů URI, které jsou založeny na datovém modelu. OData podporuje také definice operace služby. Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu mohou tyto datové služby musí změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiných problémů. Pokud provedete změny do existující služby data, musíte zvážit, jestli se má definovat novou verzi vaše data služby a jak nejlepší k minimalizaci vlivu na existující klientské aplikace. Toto téma obsahuje pokyny pro kdy a jak vytvořit novou verzi datové služby. Také popisuje, jak služeb WCF Data Services zpracovává výměny mezi klienty a datových služeb, které podporují různé verze protokolu OData.
@@ -22,9 +22,9 @@ ms.locfileid: "56092914"
 ### <a name="data-model-changes-that-recommend-a-new-data-service-version"></a>Změn datových modelů, které doporučujeme nové verze datové služby
  Když zvažujete, jestli se má publikovat nové verze datové služby, je důležité pochopit, jak různé druhy změny mohou ovlivnit klientské aplikace. Změny dat službě, která může být nutné vytvořit novou verzi datové služby je možné rozdělit do těchto dvou kategorií:
 
--   Změny v kontraktu služby, mezi které patří aktualizace operace služby, změny přístupnost sady entit (kanály), verze změn a další změny chování služby.
+- Změny v kontraktu služby, mezi které patří aktualizace operace služby, změny přístupnost sady entit (kanály), verze změn a další změny chování služby.
 
--   Změny v kontraktu dat, které zahrnují změny do datového modelu, informační kanál formáty nebo informačního kanálu vlastní nastavení.
+- Změny v kontraktu dat, které zahrnují změny do datového modelu, informační kanál formáty nebo informačního kanálu vlastní nastavení.
 
  Následující podrobnosti tabulky, pro jaké typy změn byste měli zvážit publikování nové verze datové služby:
 
@@ -44,9 +44,9 @@ ms.locfileid: "56092914"
 ### <a name="how-to-version-a-data-service"></a>Jak verze datové služby
  V případě potřeby, nová verze datové služby je definován tak, že vytvoříte novou instanci služby s modelem aktualizovanou smlouvy nebo data. Tato nová služba je pak vystavena s použitím nového identifikátoru URI koncového bodu, který by jej odlišovala z předchozí verze. Příklad:
 
--   Starší verze: `http://services.odata.org/Northwind/v1/Northwind.svc/`
+- Starší verze: `http://services.odata.org/Northwind/v1/Northwind.svc/`
 
--   Nová verze: `http://services.odata.org/Northwind/v2/Northwind.svc/`
+- Nová verze: `http://services.odata.org/Northwind/v2/Northwind.svc/`
 
  Při upgradu datové služby, klientům bude nutné také aktualizovat založené na nové metadat datové služby a použití nového kořenového identifikátoru URI. Pokud je to možné, je vhodné ponechat předchozí verzi datové služby na podporu klientů, které ještě nebyly upgradovány na použití nové verze. Starší verze datové služby lze odebrat, pokud už nepotřebujete. Měli byste zvážit zachování koncový bod datové služby identifikátory URI v externí konfigurační soubor.
 

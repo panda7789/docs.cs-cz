@@ -3,11 +3,11 @@ title: <state> služby WCF, <workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
 ms.openlocfilehash: 1615c83ffe0735d9e55e822f2651da41d02b1610
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55270845"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757960"
 ---
 # <a name="state-of-wcf-workflowinstancequery"></a>\<Stav > služby WCF, \<workflowInstanceQuery >
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  

@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
 author: KrzysztofCwalina
 ms.openlocfilehash: d0a2f11b53f50f2ec2f301f7b88df65e1cd7b811
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617379"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762043"
 ---
 # <a name="static-class-design"></a>Návrh statické třídy
 Statická třída je definována jako třída, která obsahuje pouze statické členy (samozřejmě kromě instance členy zděděné z <xref:System.Object?displayProperty=nameWithType> a pravděpodobně soukromého konstruktoru). Některé jazyky poskytují integrovanou podporu pro statické třídy. V jazyce C# 2.0 nebo novější Pokud třída je deklarován jako statický, je zapečetěná, abstraktní a žádné členy instance můžete přepisu nebo deklarován.  

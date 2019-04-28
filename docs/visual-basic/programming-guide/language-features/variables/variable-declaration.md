@@ -18,11 +18,11 @@ helpviewer_keywords:
 - scope [Visual Basic], variables
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
 ms.openlocfilehash: 699737ffbe0b136af8862931fadacec26772b928
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756998"
 ---
 # <a name="variable-declaration-in-visual-basic"></a>Deklarace proměnné v jazyce Visual Basic
 Deklarujete proměnnou k určení jeho název a vlastnosti. Příkaz deklarace proměnných [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Jeho umístění a obsah zadat vlastnosti proměnnou.  
@@ -42,15 +42,15 @@ Deklarujete proměnnou k určení jeho název a vlastnosti. Příkaz deklarace p
 ## <a name="declaring-data-type"></a>Deklarující typ dat  
  [Jako](../../../../visual-basic/language-reference/statements/as-clause.md) klauzuli v příkazu deklarace umožňuje definovat datový typ nebo typ objektu se deklarace proměnné. Můžete určit kterékoli z následujících typů proměnné:  
   
--   Základní datový typ, jako například `Boolean`, `Long`, nebo `Decimal`  
+- Základní datový typ, jako například `Boolean`, `Long`, nebo `Decimal`  
   
--   Složený datový typ, jako je například pole nebo strukturu  
+- Složený datový typ, jako je například pole nebo strukturu  
   
--   Typ objektu nebo třída definovaná ve vaší aplikaci nebo v jiné aplikaci  
+- Typ objektu nebo třída definovaná ve vaší aplikaci nebo v jiné aplikaci  
   
--   A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, jako například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
+- A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] třídy, jako například <xref:System.Windows.Forms.Label> nebo <xref:System.Windows.Forms.TextBox>  
   
--   Typ rozhraní, jako například <xref:System.IComparable> nebo <xref:System.IDisposable>  
+- Typ rozhraní, jako například <xref:System.IComparable> nebo <xref:System.IDisposable>  
   
  Je možné deklarovat několik proměnných v jednom příkazu bez nutnosti opakování datového typu. V následující příkazy, proměnné `i`, `j`, a `k` jsou deklarovány jako typ `Integer`, `l` a `m` jako `Long`, a `x` a `y` jako `Single`:  
   

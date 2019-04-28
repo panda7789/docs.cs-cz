@@ -1,5 +1,5 @@
 ---
-title: Čtení dokumentu XML do modelu DOM
+title: Načtení dokumentu XML do modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,20 +9,20 @@ ms.assetid: a4fb291f-5630-49ba-a49a-5b66c3b71e49
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9031f5df0d0f48dc2844cdfd0654ee4ab876cc22
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759757"
 ---
-# <a name="reading-an-xml-document-into-the-dom"></a>Čtení dokumentu XML do modelu DOM
+# <a name="reading-an-xml-document-into-the-dom"></a>Načtení dokumentu XML do modelu DOM
 Informace o XML je načíst do paměti v různých formátech. Může být číst z řetězce, datového proudu, adresa URL, čtečky textu nebo třídu odvozenou z <xref:System.Xml.XmlReader>.  
   
  <xref:System.Xml.XmlDocument.Load%2A> Metoda přináší dokumentu do paměti a přetížil metody dostupné pro vzít data ze všech různých formátech. K dispozici je také <xref:System.Xml.XmlDocument.LoadXml%2A> metodu, která čte z řetězce XML.  
   
  Různé <xref:System.Xml.XmlDocument.Load%2A> metody vliv na uzly, na kterých jsou vytvořeny při načtení XML Document Object Model (DOM). V následující tabulce jsou uvedeny rozdíly mezi některé <xref:System.Xml.XmlDocument.Load%2A> metody a témata, která je řešit.  
   
-|Předmět|Téma|  
+|Subject|Téma|  
 |-------------|-----------|  
 |Vytvoření prázdné znaky uzly|Objekt použitý k načtení modelu DOM má vliv na mezer a významných mezer uzly vygenerované v modelu DOM. Další informace najdete v tématu [mezer a významných mezer zpracování při načítání modelu DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).|  
 |Načítá se XML od konkrétní uzel nebo načítání celého dokumentu XML|Použití <xref:System.Xml.XmlDocument.Load%2A?displayProperty=nameWithType> metoda data je možné načíst z určitého uzlu do modelu DOM. Další informace najdete v tématu [načtení dat z čtečky](../../../../docs/standard/data/xml/load-data-from-a-reader.md).|  

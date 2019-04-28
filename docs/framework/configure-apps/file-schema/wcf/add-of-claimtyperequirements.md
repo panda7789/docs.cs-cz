@@ -3,11 +3,11 @@ title: <add> z <claimTypeRequirements>
 ms.date: 03/30/2017
 ms.assetid: c68e83c9-39e8-4264-b1ce-b6a9eb5b98aa
 ms.openlocfilehash: 97d3ecca369aeffb7b2e8464f385eeae13bd470f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704476"
 ---
 # <a name="add-of-claimtyperequirements"></a>\<add> of \<claimTypeRequirements>
 Určuje typy požadovaných a volitelných deklarací, které se zobrazí ve federativním pověření. Například služby stavu požadavky na příchozí přihlašovací údaje, které musí obsahovat sadu typů deklarací identity.  
