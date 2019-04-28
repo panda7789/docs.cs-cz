@@ -9,53 +9,53 @@ ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: 731e52958b89886c2bc069c4c181c0cc3928d487
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674724"
 ---
-# <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a><span data-ttu-id="70145-102">Vlastní element pro NameValueSectionHandler a DictionarySectionHandler</span><span class="sxs-lookup"><span data-stu-id="70145-102">Custom element for NameValueSectionHandler and DictionarySectionHandler</span></span>
+# <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a><span data-ttu-id="35d3c-102">Vlastní element pro NameValueSectionHandler a DictionarySectionHandler</span><span class="sxs-lookup"><span data-stu-id="35d3c-102">Custom element for NameValueSectionHandler and DictionarySectionHandler</span></span>
 
-<span data-ttu-id="70145-103">Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="70145-103">Defines settings for custom configuration sections that use the <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> classes.</span></span>
+<span data-ttu-id="35d3c-103">Definuje nastavení pro vlastní konfigurační oddíly funkce, které používají <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="35d3c-103">Defines settings for custom configuration sections that use the <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> classes.</span></span>
 
-<span data-ttu-id="70145-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)\\</span><span class="sxs-lookup"><span data-stu-id="70145-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)\\</span></span>
-<span data-ttu-id="70145-105">&nbsp;&nbsp;**\<sectionName>**</span><span class="sxs-lookup"><span data-stu-id="70145-105">&nbsp;&nbsp;**\<sectionName>**</span></span>
+<span data-ttu-id="35d3c-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)\\</span><span class="sxs-lookup"><span data-stu-id="35d3c-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)\\</span></span>
+<span data-ttu-id="35d3c-105">&nbsp;&nbsp;**\<sectionName>**</span><span class="sxs-lookup"><span data-stu-id="35d3c-105">&nbsp;&nbsp;**\<sectionName>**</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="70145-106">Atributy</span><span class="sxs-lookup"><span data-stu-id="70145-106">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="35d3c-106">Atributy</span><span class="sxs-lookup"><span data-stu-id="35d3c-106">Attributes</span></span>
 
-<span data-ttu-id="70145-107">Žádné</span><span class="sxs-lookup"><span data-stu-id="70145-107">None</span></span>
+<span data-ttu-id="35d3c-107">Žádné</span><span class="sxs-lookup"><span data-stu-id="35d3c-107">None</span></span>
 
-## <a name="parent-element"></a><span data-ttu-id="70145-108">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="70145-108">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="35d3c-108">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="35d3c-108">Parent element</span></span>
 
-|     | <span data-ttu-id="70145-109">Popis</span><span class="sxs-lookup"><span data-stu-id="70145-109">Description</span></span> |
+|     | <span data-ttu-id="35d3c-109">Popis</span><span class="sxs-lookup"><span data-stu-id="35d3c-109">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="70145-110">**\<Konfigurace >**</span><span class="sxs-lookup"><span data-stu-id="70145-110">**\<configuration>**</span></span>](~/docs/framework/configure-apps/file-schema/configuration-element.md) | <span data-ttu-id="70145-111">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="70145-111">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span> |
+| [<span data-ttu-id="35d3c-110">**\<Konfigurace >**</span><span class="sxs-lookup"><span data-stu-id="35d3c-110">**\<configuration>**</span></span>](~/docs/framework/configure-apps/file-schema/configuration-element.md) | <span data-ttu-id="35d3c-111">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="35d3c-111">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="70145-112">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="70145-112">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="35d3c-112">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="35d3c-112">Child elements</span></span>
 
-|     | <span data-ttu-id="70145-113">Popis</span><span class="sxs-lookup"><span data-stu-id="70145-113">Description</span></span> |
+|     | <span data-ttu-id="35d3c-113">Popis</span><span class="sxs-lookup"><span data-stu-id="35d3c-113">Description</span></span> |
 | --- | ----------- |
-| <span data-ttu-id="70145-114">[**\<Přidat >** ](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="70145-114">[**\<add>**](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span>  | <span data-ttu-id="70145-115">Přidá nastavení vlastní aplikace.</span><span class="sxs-lookup"><span data-stu-id="70145-115">Adds custom application settings.</span></span> |
-| <span data-ttu-id="70145-116">[**\<Odebrat >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="70145-116">[**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span> | <span data-ttu-id="70145-117">Odstraní dříve definované nastavení.</span><span class="sxs-lookup"><span data-stu-id="70145-117">Removes a previously defined setting.</span></span> |
-| <span data-ttu-id="70145-118">[**\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="70145-118">[**\<clear>**](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span> | <span data-ttu-id="70145-119">Vymaže všechny dříve definované nastavení v oddílu.</span><span class="sxs-lookup"><span data-stu-id="70145-119">Clears all previously defined settings in a section.</span></span> |
+| <span data-ttu-id="35d3c-114">[**\<Přidat >** ](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="35d3c-114">[**\<add>**](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span>  | <span data-ttu-id="35d3c-115">Přidá nastavení vlastní aplikace.</span><span class="sxs-lookup"><span data-stu-id="35d3c-115">Adds custom application settings.</span></span> |
+| <span data-ttu-id="35d3c-116">[**\<Odebrat >** ](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="35d3c-116">[**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span> | <span data-ttu-id="35d3c-117">Odstraní dříve definované nastavení.</span><span class="sxs-lookup"><span data-stu-id="35d3c-117">Removes a previously defined setting.</span></span> |
+| <span data-ttu-id="35d3c-118">[**\<Vymazat >** ](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) pro <xref:System.Configuration.NameValueSectionHandler> a <xref:System.Configuration.DictionarySectionHandler></span><span class="sxs-lookup"><span data-stu-id="35d3c-118">[**\<clear>**](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler></span></span> | <span data-ttu-id="35d3c-119">Vymaže všechny dříve definované nastavení v oddílu.</span><span class="sxs-lookup"><span data-stu-id="35d3c-119">Clears all previously defined settings in a section.</span></span> |
 
-## <a name="remarks"></a><span data-ttu-id="70145-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="70145-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="35d3c-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="35d3c-120">Remarks</span></span>
 
-<span data-ttu-id="70145-121"> *\*\<SectionName>** prvek je prvek vlastní, určené *\*\<části>** značku *\*\<configSections>** elementu.</span><span class="sxs-lookup"><span data-stu-id="70145-121">The **\<sectionName>** element is a custom element defined by a **\<section>** tag in the **\<configSections>** element.</span></span>
+<span data-ttu-id="35d3c-121"> *\*\<SectionName>** prvek je prvek vlastní, určené *\*\<části>** značku *\*\<configSections>** elementu.</span><span class="sxs-lookup"><span data-stu-id="35d3c-121">The **\<sectionName>** element is a custom element defined by a **\<section>** tag in the **\<configSections>** element.</span></span>
 
-<span data-ttu-id="70145-122">V následující tabulce jsou uvedeny typ objektu ConfigurationSettings.GetConfig metoda vrátí pro každou obslužné rutiny konfiguračního oddílu:</span><span class="sxs-lookup"><span data-stu-id="70145-122">The following table shows the type of object the ConfigurationSettings.GetConfig method returns for each configuration section handler:</span></span>
+<span data-ttu-id="35d3c-122">V následující tabulce jsou uvedeny typ objektu ConfigurationSettings.GetConfig metoda vrátí pro každou obslužné rutiny konfiguračního oddílu:</span><span class="sxs-lookup"><span data-stu-id="35d3c-122">The following table shows the type of object the ConfigurationSettings.GetConfig method returns for each configuration section handler:</span></span>
 
-| <span data-ttu-id="70145-123">Obslužné rutiny konfiguračního oddílu</span><span class="sxs-lookup"><span data-stu-id="70145-123">Configuration section handler</span></span>                        | <span data-ttu-id="70145-124">Návratový typ</span><span class="sxs-lookup"><span data-stu-id="70145-124">Return type</span></span>                                                |
+| <span data-ttu-id="35d3c-123">Obslužné rutiny konfiguračního oddílu</span><span class="sxs-lookup"><span data-stu-id="35d3c-123">Configuration section handler</span></span>                        | <span data-ttu-id="35d3c-124">Návratový typ</span><span class="sxs-lookup"><span data-stu-id="35d3c-124">Return type</span></span>                                                |
 | ---------------------------------------------------- | ---------------------------------------------------------- |
 | <xref:System.Configuration.NameValueSectionHandler>  | <xref:System.Collections.Specialized.NameValueCollection>  |
 | <xref:System.Configuration.DictionarySectionHandler> | <xref:System.Collections.IDictionary>                      |
 
-## <a name="example"></a><span data-ttu-id="70145-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="70145-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="35d3c-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="35d3c-125">Example</span></span>
 
-<span data-ttu-id="70145-126">Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> a <xref:System.Configuration.NameValueSectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="70145-126">The following example shows how to declare sections that use the <xref:System.Configuration.DictionarySectionHandler> and <xref:System.Configuration.NameValueSectionHandler> classes.</span></span>
+<span data-ttu-id="35d3c-126">Následující příklad ukazuje, jak deklarovat oddíly, které používají <xref:System.Configuration.DictionarySectionHandler> a <xref:System.Configuration.NameValueSectionHandler> třídy.</span><span class="sxs-lookup"><span data-stu-id="35d3c-126">The following example shows how to declare sections that use the <xref:System.Configuration.DictionarySectionHandler> and <xref:System.Configuration.NameValueSectionHandler> classes.</span></span>
 
-<span data-ttu-id="70145-127">První vlastní prvek je  **\<dictionarySample >**, který obsahuje nastavení číst <xref:System.Configuration.DictionarySectionHandler> třídy v `System.dll` sestavení.</span><span class="sxs-lookup"><span data-stu-id="70145-127">The first custom element is **\<dictionarySample>**, which contains settings read by the <xref:System.Configuration.DictionarySectionHandler> class in the `System.dll` assembly.</span></span> <span data-ttu-id="70145-128">Vlastní druhý prvek je  **\<mySection >**, který obsahuje nastavení číst <xref:System.Configuration.NameValueSectionHandler> třídy v `System.dll` sestavení.</span><span class="sxs-lookup"><span data-stu-id="70145-128">The second custom element is **\<mySection>**, which contains settings read by the <xref:System.Configuration.NameValueSectionHandler> class in the `System.dll` assembly.</span></span>
+<span data-ttu-id="35d3c-127">První vlastní prvek je  **\<dictionarySample >**, který obsahuje nastavení číst <xref:System.Configuration.DictionarySectionHandler> třídy v `System.dll` sestavení.</span><span class="sxs-lookup"><span data-stu-id="35d3c-127">The first custom element is **\<dictionarySample>**, which contains settings read by the <xref:System.Configuration.DictionarySectionHandler> class in the `System.dll` assembly.</span></span> <span data-ttu-id="35d3c-128">Vlastní druhý prvek je  **\<mySection >**, který obsahuje nastavení číst <xref:System.Configuration.NameValueSectionHandler> třídy v `System.dll` sestavení.</span><span class="sxs-lookup"><span data-stu-id="35d3c-128">The second custom element is **\<mySection>**, which contains settings read by the <xref:System.Configuration.NameValueSectionHandler> class in the `System.dll` assembly.</span></span>
 
 ```xml
 <configuration>
@@ -76,10 +76,10 @@ ms.locfileid: "57845706"
 </configuration>
 ```
 
-## <a name="configuration-file"></a><span data-ttu-id="70145-129">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="70145-129">Configuration file</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="35d3c-129">Konfigurační soubor</span><span class="sxs-lookup"><span data-stu-id="35d3c-129">Configuration file</span></span>
 
-<span data-ttu-id="70145-130">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="70145-130">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
+<span data-ttu-id="35d3c-130">Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.</span><span class="sxs-lookup"><span data-stu-id="35d3c-130">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="70145-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70145-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35d3c-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="35d3c-131">See also</span></span>
 
-- [<span data-ttu-id="70145-132">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="70145-132">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="35d3c-132">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="35d3c-132">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
