@@ -16,11 +16,11 @@ ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: aff2dd26db4abb892b2fc775052b6e833aa25267
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54684590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754697"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Rozšíření ladění pomocí atributů zobrazení ladicího programu
 
@@ -45,11 +45,11 @@ Například, pokud objekt jazyka C# má překryté `ToString()`, ladicí program
 ## <a name="using-the-debuggerbrowsableattribute"></a>Použití debuggerbrowsableattribute –
  Použít <xref:System.Diagnostics.DebuggerBrowsableAttribute> pole nebo vlastnosti a určit, jak pole nebo vlastnost se zobrazí v okně ladicího programu. Konstruktor pro tento atribut má jednu z <xref:System.Diagnostics.DebuggerBrowsableState> hodnot výčtu, které určuje jeden z následujících stavů:
 
--   <xref:System.Diagnostics.DebuggerBrowsableState.Never> Označuje, že člen není zobrazen v okně data.  Například použití pro tuto hodnotu <xref:System.Diagnostics.DebuggerBrowsableAttribute> na pole odstraní pole z hierarchie; pole se nezobrazí, pokud rozšiřujete nadřazeného typu. Kliknutím na symbol plus (+) pro instanci typu.
+- <xref:System.Diagnostics.DebuggerBrowsableState.Never> Označuje, že člen není zobrazen v okně data.  Například použití pro tuto hodnotu <xref:System.Diagnostics.DebuggerBrowsableAttribute> na pole odstraní pole z hierarchie; pole se nezobrazí, pokud rozšiřujete nadřazeného typu. Kliknutím na symbol plus (+) pro instanci typu.
 
--   <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> Označuje, že člen je zobrazen ale nebyla rozšířená. ve výchozím nastavení.  Toto je výchozí chování.
+- <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> Označuje, že člen je zobrazen ale nebyla rozšířená. ve výchozím nastavení.  Toto je výchozí chování.
 
--   <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden> Označuje, že samotný člen není zobrazen, ale jeho základní objektů se zobrazí, pokud je pole nebo kolekce.
+- <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden> Označuje, že samotný člen není zobrazen, ale jeho základní objektů se zobrazí, pokud je pole nebo kolekce.
 
 > [!NOTE]
 >  <xref:System.Diagnostics.DebuggerBrowsableAttribute> Nepodporuje Visual Basic v rozhraní .NET Framework verze 2.0.

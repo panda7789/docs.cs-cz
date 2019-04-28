@@ -9,11 +9,11 @@ helpviewer_keywords:
 - visual layer [WPF], hit testing functionality
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
 ms.openlocfilehash: 0cb8d0656765e5bc2c2a54ef5f282a67d8579f20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082175"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762423"
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Spuštění testování ve vizuální vrstvě
 Toto téma obsahuje základní informace o volání funkce testování k dispozici ve vizuální vrstvě. Volání podpory testování umožňuje určit, zda hodnota geometrie nebo bodu spadá do vykreslený obsah <xref:System.Windows.Media.Visual>, abyste mohli implementovat rozhraní chování uživatelů, jako je například obdélníku výběru vybrat více objektů.  
@@ -22,13 +22,13 @@ Toto téma obsahuje základní informace o volání funkce testování k dispozi
 ## <a name="hit-testing-scenarios"></a>Spuštění testovacích scénářů  
  <xref:System.Windows.UIElement> Třída poskytuje <xref:System.Windows.UIElement.InputHitTest%2A> metodu, která umožňuje spuštění testu oproti elementu s použitím dané hodnoty souřadnic. V mnoha případech <xref:System.Windows.UIElement.InputHitTest%2A> metoda poskytuje požadované funkce pro provádění přístupů testování prvků. Existují však několik scénářů, ve kterých budete muset implementovat přístupů testování ve vizuální vrstvě.  
   
--   Spuštění testování na jinou hodnotu než<xref:System.Windows.UIElement> objekty: To platí, pokud dosáhnete testování jinou hodnotu než<xref:System.Windows.UIElement> objekty, jako například <xref:System.Windows.Media.DrawingVisual> nebo grafických objektů.  
+- Spuštění testování na jinou hodnotu než<xref:System.Windows.UIElement> objekty: To platí, pokud dosáhnete testování jinou hodnotu než<xref:System.Windows.UIElement> objekty, jako například <xref:System.Windows.Media.DrawingVisual> nebo grafických objektů.  
   
--   Spuštění testování pomocí geometrii: To platí, pokud je potřeba spuštění testu použitím geometrie objektu, nikoli hodnotu souřadnice bodu.  
+- Spuštění testování pomocí geometrii: To platí, pokud je potřeba spuštění testu použitím geometrie objektu, nikoli hodnotu souřadnice bodu.  
   
--   Spuštění testování na více objektů: To platí, když budete chtít spuštění testu s více objekty, jako je překrývání objekty. Získat výsledky pro všechny vizuály protínající se operátory geometrie nebo bodu, nikoli pouze první z nich.  
+- Spuštění testování na více objektů: To platí, když budete chtít spuštění testu s více objekty, jako je překrývání objekty. Získat výsledky pro všechny vizuály protínající se operátory geometrie nebo bodu, nikoli pouze první z nich.  
   
--   Ignorování <xref:System.Windows.UIElement> přístupů testování zásad: To platí, pokud chcete ignorovat <xref:System.Windows.UIElement> přístupů k testování zásad, který bere v úvahu faktory, jako Určuje, zda je prvek zakázaný nebo neviditelné.  
+- Ignorování <xref:System.Windows.UIElement> přístupů testování zásad: To platí, pokud chcete ignorovat <xref:System.Windows.UIElement> přístupů k testování zásad, který bere v úvahu faktory, jako Určuje, zda je prvek zakázaný nebo neviditelné.  
   
 > [!NOTE]
 >  Testování ve vizuální vrstvě kompletní kód ukázkové ilustrující průchodu, najdete v části [ukázka spuštění testu DrawingVisuals](https://go.microsoft.com/fwlink/?LinkID=159994) a [spuštění testu s ukázkou vzájemná spolupráce grafického subsystému Win32](https://go.microsoft.com/fwlink/?LinkID=159995).  

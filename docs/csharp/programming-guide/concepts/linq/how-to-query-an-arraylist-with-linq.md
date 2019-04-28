@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2bfb471c-6e9a-4e60-bd83-4a1778abde11
 ms.openlocfilehash: 9276ebe02858d7a7e295430b0125c590b9c2f308
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54651801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702045"
 ---
 # <a name="how-to-query-an-arraylist-with-linq-c"></a>Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (C#)
 Při použití LINQ dotaz neobecnou <xref:System.Collections.IEnumerable> kolekcí, jako <xref:System.Collections.ArrayList>, musíte explicitně deklarovat typ proměnné rozsahu tak, aby odrážely konkrétní typ objektů v kolekci. Pokud máte například <xref:System.Collections.ArrayList> z `Student` objekty, vaše [klauzule from](../../../../csharp/language-reference/keywords/from-clause.md) by měl vypadat takto:  

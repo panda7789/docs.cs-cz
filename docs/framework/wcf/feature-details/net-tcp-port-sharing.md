@@ -6,11 +6,11 @@ helpviewer_keywords:
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
 ms.openlocfilehash: b04266b15f786e3a5a93ac1e9fff1754c397ccd4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073686"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762749"
 ---
 # <a name="nettcp-port-sharing"></a>Sdílení portů Net.TCP
 Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťový protokol (net.tcp://) pro vysoce výkonné komunikaci. WCF také zavádí nové součásti systému, služba Net.TCP Port Sharing umožňující portů net.tcp sdílet mezi více procesy uživatele.  
@@ -27,11 +27,11 @@ Windows Communication Foundation (WCF) poskytuje nové založené na TCP síťov
 ## <a name="port-sharing-architecture"></a>Architektura sdílení portu  
  Architektura sdílení portů ve službě WCF má tři hlavní komponenty:  
   
--   Pracovní proces: Jakýkoli proces komunikaci přes net.tcp:// pomocí sdílených portů.  
+- Pracovní proces: Jakýkoli proces komunikaci přes net.tcp:// pomocí sdílených portů.  
   
--   Přenos WCF TCP: Implementuje protokol net.tcp://.  
+- Přenos WCF TCP: Implementuje protokol net.tcp://.  
   
--   Služba sdílení portů Net.TCP: Umožňuje sdílet stejný port TCP mnoha pracovních procesů.  
+- Služba sdílení portů Net.TCP: Umožňuje sdílet stejný port TCP mnoha pracovních procesů.  
   
  Služba sdílení portů Net.TCP je služba Windows uživatelského režimu, který přijímá připojení net.tcp:// jménem pracovních procesů, které se připojují přes něj. Po přijetí připojení soketu služby Sdílení portů kontroluje příchozí datový proud zpráv získat jeho cílové adresy. Na základě této adresy, služby Sdílení portů může směrovat na datový proud aplikace, takže v konečném důsledku zpracovává.  
   

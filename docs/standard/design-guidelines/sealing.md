@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
 author: KrzysztofCwalina
 ms.openlocfilehash: c8aeb5ce3d93755f30bf68732592a08d7af54957
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762056"
 ---
 # <a name="sealing"></a>Zapečetění
 Jednou z funkcí objektově orientované rozhraní je, že vývojáři můžete rozšířit a přizpůsobit způsoby neočekávané návrháři rozhraní framework. Toto je výkon a nebezpečí extensible návrhu. Při navrhování rozhraní framework je, proto velmi důležité, pečlivě navrhování pro rozšiřitelnost ho potřebujete a omezit rozšiřitelnosti, když je nebezpečné.  
@@ -27,13 +27,13 @@ Jednou z funkcí objektově orientované rozhraní je, že vývojáři můžete 
   
  Oprávněné důvody pro zapečetění třídy zahrnují následující:  
   
--   Třída je statická třída. Zobrazit [návrh statické třídy](../../../docs/standard/design-guidelines/static-class.md).  
+- Třída je statická třída. Zobrazit [návrh statické třídy](../../../docs/standard/design-guidelines/static-class.md).  
   
--   Třídy ukládá citlivé na zabezpečení tajné kódy ve zděděných chráněných členů.  
+- Třídy ukládá citlivé na zabezpečení tajné kódy ve zděděných chráněných členů.  
   
--   Třída dědí mnoho virtuální členy a náklady na jejich jednotlivě zapečetění by převážit nad výhodami opuštění nezapečetěné třídy.  
+- Třída dědí mnoho virtuální členy a náklady na jejich jednotlivě zapečetění by převážit nad výhodami opuštění nezapečetěné třídy.  
   
--   Třída je atribut, který vyžaduje velmi rychlé zpracování runtime vyhledat. Zapečetěné atributy mají mírně vyšší úrovně výkonu než nezapečetěné. Zobrazit [atributy](../../../docs/standard/design-guidelines/attributes.md).  
+- Třída je atribut, který vyžaduje velmi rychlé zpracování runtime vyhledat. Zapečetěné atributy mají mírně vyšší úrovně výkonu než nezapečetěné. Zobrazit [atributy](../../../docs/standard/design-guidelines/attributes.md).  
   
  **X DO NOT** deklarovat chráněný nebo virtuální členy v zapečetěných typech.  
   

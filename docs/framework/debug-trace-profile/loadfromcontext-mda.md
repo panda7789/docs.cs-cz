@@ -10,11 +10,11 @@ ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 01b2cf06a5ab921f5ae89da4856e8164b6f57db5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098602"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754255"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext – pomocník spravovaného ladění (MDA)
 `loadFromContext` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud je sestavení načteno do `LoadFrom` kontextu. Tato situace může nastat v důsledku volání <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo další podobné metody.  
@@ -28,11 +28,11 @@ ms.locfileid: "59098602"
 ## <a name="resolution"></a>Řešení  
  Konfigurace aplikací tak, aby <xref:System.Reflection.Assembly.LoadFrom%2A> volání už nejsou potřeba. Následující postupy můžete to udělat:  
   
--   Nainstalujte sestavení v globální mezipaměti sestavení.  
+- Nainstalujte sestavení v globální mezipaměti sestavení.  
   
--   Sestavení v umístit <xref:System.AppDomainSetup.ApplicationBase%2A> adresář <xref:System.AppDomain>. V případě výchozí doménu <xref:System.AppDomainSetup.ApplicationBase%2A> adresář je ten, který obsahuje spustitelný soubor, který spustil proces. To může také vyžadovat vytvoření nového <xref:System.AppDomain> Pokud není vhodné přesunout sestavení.  
+- Sestavení v umístit <xref:System.AppDomainSetup.ApplicationBase%2A> adresář <xref:System.AppDomain>. V případě výchozí doménu <xref:System.AppDomainSetup.ApplicationBase%2A> adresář je ten, který obsahuje spustitelný soubor, který spustil proces. To může také vyžadovat vytvoření nového <xref:System.AppDomain> Pokud není vhodné přesunout sestavení.  
   
--   Přidáte cesta zjišťování (.config) konfigurační soubor aplikace nebo sekundární aplikačních doménách, pokud jsou závislé sestavení v adresářích podřízené vzhledem ke spustitelnému souboru.  
+- Přidáte cesta zjišťování (.config) konfigurační soubor aplikace nebo sekundární aplikačních doménách, pokud jsou závislé sestavení v adresářích podřízené vzhledem ke spustitelnému souboru.  
   
  V obou případech lze změnit kód určený <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody.  
   

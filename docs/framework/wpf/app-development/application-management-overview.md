@@ -8,11 +8,11 @@ helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
 ms.openlocfilehash: 687037d4299c8a53a2dcd644fd778081b5e7a0a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757326"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vztahuje na aplikace implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídy pro vytváření a správu aplikací.  
@@ -20,17 +20,17 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 ## <a name="the-application-class"></a>Třída aplikace  
  V WPF, běžné funkce s rozsahem aplikace zapouzdřena v <xref:System.Windows.Application> třídy. <xref:System.Windows.Application> Třída zahrnuje následující funkce:  
   
--   Sledování a interakci s dobu životnosti aplikace.  
+- Sledování a interakci s dobu životnosti aplikace.  
   
--   Načítání a zpracování parametrů příkazového řádku.  
+- Načítání a zpracování parametrů příkazového řádku.  
   
--   Detekce a reakce na neošetřených výjimek.  
+- Detekce a reakce na neošetřených výjimek.  
   
--   Sdílení vlastností pro rozsah aplikace a prostředky.  
+- Sdílení vlastností pro rozsah aplikace a prostředky.  
   
--   Správa systému windows v samostatné aplikace.  
+- Správa systému windows v samostatné aplikace.  
   
--   Sledování a správu navigace.  
+- Sledování a správu navigace.  
   
 <a name="The_Application_Class"></a>   
 ## <a name="how-to-perform-common-tasks-using-the-application-class"></a>Jak provádět běžné úlohy pomocí třídy aplikace  
@@ -71,7 +71,7 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
   
 - V kódu `Application` musí obsahovat element `x:Class` atribut. Když je aplikace sestavená, existenci `x:Class` ve značkách soubor způsobí, že nástroj MSBuild vytvoří `partial` třídu odvozenou od <xref:System.Windows.Application> a má název, který je určen `x:Class` atribut. To vyžaduje přidání deklarace oboru názvů XML pro schéma XAML (`xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`).
   
--   V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu a musí být odvozen od <xref:System.Windows.Application>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](building-a-wpf-application-wpf.md)).  
+- V modelu code-behind, musí být třída `partial` třídy se stejným názvem, která je zadána `x:Class` atribut v kódu a musí být odvozen od <xref:System.Windows.Application>. To umožňuje použití modelu code-behind souboru má být spojen s `partial` třídu, která se vygeneruje pro označovacího souboru, když je aplikace sestavená (viz [sestavení aplikace WPF](building-a-wpf-application-wpf.md)).  
   
 > [!NOTE]
 >  Při vytváření nového projektu aplikace WPF nebo aplikace WPF pro prohlížeč projekt pomocí sady Visual Studio, definice aplikace je zahrnutá ve výchozím nastavení a je definován pomocí značek a kódu.  
@@ -195,17 +195,17 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 ### <a name="application-activation-and-deactivation"></a>Aplikace aktivace a deaktivace  
  Windows umožňuje uživatelům přepínat mezi aplikacemi. Nejběžnější způsob je pomocí kombinace kláves ALT + TAB. Aplikace lze přepnout pouze na, pokud má viditelné <xref:System.Windows.Window> , který může uživatel vybrat. Aktuálně vybraný <xref:System.Windows.Window> je *aktivní okno* (označované také jako *okno v popředí*) a je <xref:System.Windows.Window> , který přijímá vstup uživatele. Aplikace s aktivní okno *aktivní aplikace* (nebo *popředí aplikace*). Aplikace se stane aktivní aplikaci za následujících okolností:  
   
--   Spuštění a ukazuje <xref:System.Windows.Window>.  
+- Spuštění a ukazuje <xref:System.Windows.Window>.  
   
--   Uživatel přepíná z jiné aplikace tak, že vyberete <xref:System.Windows.Window> v aplikaci.  
+- Uživatel přepíná z jiné aplikace tak, že vyberete <xref:System.Windows.Window> v aplikaci.  
   
  Můžete rozpoznat, kdy se aplikace stane aktivním pomocí manipulace <xref:System.Windows.Application.Activated?displayProperty=nameWithType> událostí.  
   
  Aplikace se může stát, neaktivní v následujících případech:  
   
--   Uživatel přepne na jiná aplikace než je aktuální.  
+- Uživatel přepne na jiná aplikace než je aktuální.  
   
--   Při ukončení aplikace.  
+- Při ukončení aplikace.  
   
  Můžete rozpoznat, kdy se změní na neaktivní aplikace pomocí manipulace <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> událostí.  
   
@@ -225,13 +225,13 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 ### <a name="application-shutdown"></a>Ukončení aplikace  
  Dobu životnosti aplikace končí, když je vypnutý, kterému může dojít z následujících důvodů:  
   
--   Uživatel zavře každý <xref:System.Windows.Window>.  
+- Uživatel zavře každý <xref:System.Windows.Window>.  
   
--   Uživatel zavře hlavní <xref:System.Windows.Window>.  
+- Uživatel zavře hlavní <xref:System.Windows.Window>.  
   
--   Uživatel ukončí relaci Windows odhlášení nebo vypnutí.  
+- Uživatel ukončí relaci Windows odhlášení nebo vypnutí.  
   
--   Byla splněna podmínku specifické pro aplikaci.  
+- Byla splněna podmínku specifické pro aplikaci.  
   
  Vám pomohou při správě ukončení aplikace <xref:System.Windows.Application> poskytuje <xref:System.Windows.Application.Shutdown%2A> metody <xref:System.Windows.Application.ShutdownMode%2A> vlastnost a <xref:System.Windows.Application.SessionEnding> a <xref:System.Windows.Application.Exit> události.  
   
@@ -241,11 +241,11 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 #### <a name="shutdown-mode"></a>Ukončení režimu  
  Většina aplikací vypnout když jsou uzavřeny všechny systémy windows nebo při zavření hlavního okna. V některých případech však další podmínky specifické pro aplikaci může zjistit, kdy aplikace ukončí. Můžete určit podmínky, za kterých vaše aplikace se vypne nastavením <xref:System.Windows.Application.ShutdownMode%2A> s jedním z následujících <xref:System.Windows.ShutdownMode> hodnot výčtu:  
   
--   <xref:System.Windows.ShutdownMode.OnLastWindowClose>  
+- <xref:System.Windows.ShutdownMode.OnLastWindowClose>  
   
--   <xref:System.Windows.ShutdownMode.OnMainWindowClose>  
+- <xref:System.Windows.ShutdownMode.OnMainWindowClose>  
   
--   <xref:System.Windows.ShutdownMode.OnExplicitShutdown>  
+- <xref:System.Windows.ShutdownMode.OnExplicitShutdown>  
   
  Výchozí hodnota <xref:System.Windows.Application.ShutdownMode%2A> je <xref:System.Windows.ShutdownMode.OnLastWindowClose>, což znamená, že se aplikace automaticky ukončí při zavření posledního okna v aplikaci uživatele. Nicméně pokud vaše aplikace by měla být vypnut, při zavření hlavního okna, WPF automaticky toto dělá, pokud nastavíte <xref:System.Windows.Application.ShutdownMode%2A> k <xref:System.Windows.ShutdownMode.OnMainWindowClose>. To je ukázáno v následujícím příkladu.  
   
@@ -259,13 +259,13 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
 #### <a name="session-ending"></a>Ukončení relace  
  Vypnout podmínky, které jsou popsané <xref:System.Windows.Application.ShutdownMode%2A> vlastnosti jsou specifické pro aplikaci. V některých případech však aplikace může vypnout v důsledku externí podmínku. Nejběžnější externí stavu dochází, když uživatel ukončí relaci Windows pomocí následujících akcí:  
   
--   Odhlášení  
+- Odhlášení  
   
--   Vypínání  
+- Vypínání  
   
--   Restartování  
+- Restartování  
   
--   V režimu spánku  
+- V režimu spánku  
   
  Ke zjištění při ukončení relace Windows, dokáže zpracovat <xref:System.Windows.Application.SessionEnding> události, jak je znázorněno v následujícím příkladu.  
   
@@ -291,11 +291,11 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
   
  <xref:System.Windows.Application.Exit> může být zpracována samostatné aplikace a aplikace XBAP. Pro aplikace XBAP <xref:System.Windows.Application.Exit> dojde v následujících případech:  
   
--   XBAP, který je opuštění.  
+- XBAP, který je opuštění.  
   
--   V [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)], když na kartě, který je hostitelem XBAP, který je uzavřen.  
+- V [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)], když na kartě, který je hostitelem XBAP, který je uzavřen.  
   
--   Při zavření prohlížeče.  
+- Při zavření prohlížeče.  
   
 #### <a name="exit-code"></a>Ukončovací kód  
  Aplikace je většinou spuštěných podle operačního systému v reakci na žádost uživatele. Ale aplikace může spustit jinou aplikaci k provedení některých konkrétního úkolu. Při vypnutí aplikace spouštění aplikace může chtít vědět podmínka, jejímž ukončení aplikace. V těchto situacích Windows umožňuje aplikacím, které má být vrácen ukončovací kód aplikace při vypnutí. Aplikace WPF ve výchozím nastavení, vrátí hodnotu ukončovací kód 0.  
@@ -325,11 +325,11 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
   
  Z pohledu zkušenosti uživatele je lepší pro aplikaci, aby toto výchozí chování provedením některé nebo všechny z následujících akcí:  
   
--   Zobrazení informací o uživatelsky přívětivé.  
+- Zobrazení informací o uživatelsky přívětivé.  
   
--   Pokus zachovat aplikaci spuštěnou.  
+- Pokus zachovat aplikaci spuštěnou.  
   
--   Záznam podrobné informace o výjimce vývojářsky přívětivé v protokolu událostí Windows.  
+- Záznam podrobné informace o výjimce vývojářsky přívětivé v protokolu událostí Windows.  
   
  Tato podpora implementace závisí na schopnost rozpoznat neošetřené výjimky, to znamená, co <xref:System.Windows.Application.DispatcherUnhandledException> událost se vyvolá pro.  
   

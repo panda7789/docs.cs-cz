@@ -9,32 +9,32 @@ helpviewer_keywords:
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
 ms.openlocfilehash: e738fa1feebdd91bdb84484340b31e599d7f5f76
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765570"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
 Pomocí služeb WCF Data Services, můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definován jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv požadavků, provádění aktualizací na zdroji dat a vygenerování zprávy odpovědi, podle požadavků OData. Datové služby však nelze svázat a síťových soketů naslouchat příchozím požadavkům HTTP. Pro tato požadované funkce, která využívá datová služba hostitelská komponenta.
 
  Hostitele datové služby se provádí tyto úlohy jménem datové služby:
 
--   Čeká na požadavky a směrovat tyto žádosti do datové služby.
+- Čeká na požadavky a směrovat tyto žádosti do datové služby.
 
--   Vytvoří instance služby data pro každý požadavek.
+- Vytvoří instance služby data pro každý požadavek.
 
--   Požadavky, že datové služby zpracování příchozího požadavku.
+- Požadavky, že datové služby zpracování příchozího požadavku.
 
--   Odešle odpověď jménem datové služby.
+- Odešle odpověď jménem datové služby.
 
  Pro zjednodušení, který je hostitelem datové služby, služeb WCF Data Services slouží k integraci s Windows Communication Foundation (WCF). Data service poskytuje výchozí implementaci WCF, která slouží jako hostitele datové služby v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace. Proto může hostovat datové služby v jednom z následujících způsobů:
 
--   V [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace.
+- V [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace.
 
--   Ve spravované aplikaci, která podporuje v místním prostředí služby WCF.
+- Ve spravované aplikaci, která podporuje v místním prostředí služby WCF.
 
--   V některých jiných vlastního hostitele datové služby.
+- V některých jiných vlastního hostitele datové služby.
 
 ## <a name="hosting-a-data-service-in-an-aspnet-application"></a>Hostující datovou službu v aplikaci ASP.NET
 
@@ -65,13 +65,13 @@ Při použití **přidat novou položku** dialogového okna v sadě Visual Studi
 ## <a name="defining-a-custom-data-service-host"></a>Definování hostitele vlastní datové služby
  V případech, kde je příliš omezující implementace hostitele WCF můžete také definovat vlastní hostitele datové služby. Všechny třídy, která implementuje <xref:System.Data.Services.IDataServiceHost> rozhraní může sloužit jako síťovým hostitelem datové služby. Musí implementovat vlastního hostitele <xref:System.Data.Services.IDataServiceHost> rozhraní a být schopná zpracovat tyto základní povinnosti hostitele datové služby:
 
--   Zadejte datové služby s kořenovou cestou za služby.
+- Zadejte datové služby s kořenovou cestou za služby.
 
--   Zpracovat informace hlavičky požadavku a odpovědi na příslušné <xref:System.Data.Services.IDataServiceHost> implementace členu.
+- Zpracovat informace hlavičky požadavku a odpovědi na příslušné <xref:System.Data.Services.IDataServiceHost> implementace členu.
 
--   Zpracování výjimek vyvolaných datové služby.
+- Zpracování výjimek vyvolaných datové služby.
 
--   Ověření parametrů v řetězci dotazu.
+- Ověření parametrů v řetězci dotazu.
 
 ## <a name="see-also"></a>Viz také:
 

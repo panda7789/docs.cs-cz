@@ -7,11 +7,11 @@ helpviewer_keywords:
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
 ms.openlocfilehash: 09b8200d19b6f94cab423dbe4001fbeda83aa06f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710651"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Obecná rozhraní (Průvodce programováním v C#)
 Často je užitečné k definování rozhraní pro obecné kolekce tříd nebo pro obecné třídy, které představují položek v kolekci. Předvolby pro obecné třídy, je pomocí obecných rozhraní, jako <xref:System.IComparable%601> spíše než <xref:System.IComparable>, aby se zabránilo operace zabalení a rozbalení u typů hodnot. Definuje několik obecných rozhraní pro použití s kolekcí tříd v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> oboru názvů.  

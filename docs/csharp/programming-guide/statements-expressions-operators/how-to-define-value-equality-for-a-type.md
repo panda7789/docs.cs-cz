@@ -10,11 +10,11 @@ helpviewer_keywords:
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
 ms.openlocfilehash: 73cb9249343b02c937c3e4e652021c7a6dbb4386
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710098"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Postupy: Definování rovnosti hodnoty pro typ (C# Průvodce programováním v)
 Při definování třídy nebo struktury, rozhodnete se, zda je vhodné vytvořit vlastní definici rovnosti hodnoty (nebo ekvivalence) pro typ. Rovnost hodnot se obvykle, implementují se očekává, že objekty tohoto typu přidána do kolekce s nějakým nebo při jejich hlavním účelem je uložit sadu pole nebo vlastnosti. Vaše definici rovnosti hodnot daného můžete založit na porovnání všech polí a vlastností v typu, nebo můžete založit definice v podmnožině. Ale v obou případech a ve třídách a strukturách pět záruky ekvivalence postupujte podle vaší implementace:  

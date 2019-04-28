@@ -4,11 +4,11 @@ description: Pochopení důležitosti funkce modelů s důležitostí permutaci 
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: b0457bc07168579403e5a00383864c5612e1d17f
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755930"
 ---
 # <a name="determine-the-feature-importance-of-models-with-permutation-feature-importance-in-mlnet"></a>Určení funkcí důležitost modely s důležitostí permutaci funkce v ML.NET
 

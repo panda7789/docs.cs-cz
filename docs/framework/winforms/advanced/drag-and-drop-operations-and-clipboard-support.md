@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], Windows Forms
 ms.assetid: 7cce79b6-5835-46fd-b690-73f12ad368b2
 ms.openlocfilehash: 5e7bb75b648163dab7e410a159d55ebbb75f1b0a
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57711743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756426"
 ---
 # <a name="drag-and-drop-operations-and-clipboard-support"></a>Operace přetažení a podpora schránky
 Operace přetažení myší uživatelů v rámci aplikace založené na Windows můžete povolit řeší řadu událostí, zejména <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, a <xref:System.Windows.Forms.Control.DragDrop> události.  

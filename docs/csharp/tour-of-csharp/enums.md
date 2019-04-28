@@ -4,11 +4,11 @@ description: Další informace o výčtů diskrétní pojmenované konstanty vC#
 ms.date: 08/10/2016
 ms.assetid: 7faba1cc-6ea9-4a19-adb9-0335e4b132e5
 ms.openlocfilehash: 8c1c29c3c06829da81a9c9be8bb5bd99f1c9e395
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706348"
 ---
 # <a name="enums"></a>Výčty
 

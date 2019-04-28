@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro element <appSettings>
+title: <remove> – element pro <appSettings>
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/remove
@@ -10,11 +10,11 @@ ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: cf9a34e47b70aaff12b29b9c5cf944d5bb15fee9
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55258718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705386"
 ---
 # <a name="remove-element-for-appsettings"></a>\<Odebrat > – element pro \<appSettings >
 
@@ -46,7 +46,7 @@ Odebere vlastní nastavení aplikace.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
 
 ## <a name="example"></a>Příklad
 

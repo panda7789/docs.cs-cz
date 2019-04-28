@@ -16,11 +16,11 @@ ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 855a1329c9804e4b40d796c639bbe8768156dcc2
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754463"
 ---
 # <a name="debugging-tracing-and-profiling"></a>Ladění, trasování a profilace
 Pro ladění aplikace rozhraní .NET Framework, musí být nakonfigurováno kompilátoru a modulu runtime prostředí umožňující ladicího programu pro připojení k aplikaci a k vytvoření symboly a řádku mapy, pokud je to možné, aplikace a její odpovídající Microsoft intermediate Language (MSIL). Poté, co byl ladit spravované aplikace, můžete profilaci pro zvýšení výkonu. Profilace vyhodnocuje a popisuje, řádky zdrojového kódu, které generují kód nejčastěji prováděnou a kolik času je trvá je spouštět.  

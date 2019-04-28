@@ -7,11 +7,11 @@ helpviewer_keywords:
 - text boxes [Windows Forms], read-only
 ms.assetid: 60baa9ab-fa57-44ad-bb7c-61b05aa64296
 ms.openlocfilehash: 72dc188993474ad4b39f0cfa74cadffdb99ff46f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746819"
 ---
 # <a name="how-to-create-a-read-only-text-box-windows-forms"></a>Postupy: Vytvoření pole jen pro čtení textu (Windows Forms)
 Upravitelné textové pole formulářů Windows můžete transformovat na ovládací prvek jen pro čtení. Do textového pole mohou například zobrazit hodnotu, která je obvykle upraven, ale nemusí být v současné době kvůli stavu aplikace.  

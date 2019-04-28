@@ -4,11 +4,11 @@ description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula o
 author: erikdietrich
 ms.date: 09/20/2017
 ms.openlocfilehash: 727f0064ac1de46eb670a366af38cf561e1a1533
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706075"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C\#
 

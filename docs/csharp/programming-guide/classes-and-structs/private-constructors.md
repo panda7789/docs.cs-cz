@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
 ms.openlocfilehash: 0bd15b29f5e86b802eb48d96fde5be4b387261eb
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703345"
 ---
 # <a name="private-constructors-c-programming-guide"></a>Soukromé konstruktory (Průvodce programováním v C#)
 Soukromý konstruktor je speciální instanci konstruktoru. Obecně se používá ve třídách, které obsahují pouze statické členy. Pokud třída obsahuje jeden nebo více privátních konstruktorů a žádné veřejné konstruktory, jiné třídy (s výjimkou vnořené třídy) nelze vytvořit instance této třídy. Příklad:  

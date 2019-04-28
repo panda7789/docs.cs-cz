@@ -4,11 +4,11 @@ description: V tomto kurzu o větvích a smyčkách napíšete C# kódu syntaxi 
 ms.date: 10/31/2017
 ms.custom: mvc
 ms.openlocfilehash: 4a116ae5294915770dec742c147cf2ba1bf6e284
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706283"
 ---
 # <a name="learn-conditional-logic-with-branch-and-loop-statements"></a>Další podmíněnou logiku s příkazy větve a smyčky
 

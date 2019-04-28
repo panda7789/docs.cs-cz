@@ -12,11 +12,11 @@ ms.assetid: 7c4a167b-5236-4cde-a2ca-58646230730f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c0bcab0757bc48f6a8216dd5878f0289e49a275
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766750"
 ---
 # <a name="thread-safety-in-regular-expressions"></a>Bezpečnost vlákna v regulárních výrazech
 <xref:System.Text.RegularExpressions.Regex> Třídu je vlákno, byla v bezpečí a neměnné (jen pro čtení). To znamená **regulární výraz** objektů se dají vytvářet v libovolném vlákně a sdílet mezi vlákny; odpovídající metody lze volat z libovolného vlákna a nikdy měnit žádné globální stav.  

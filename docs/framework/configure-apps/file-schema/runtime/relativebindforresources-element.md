@@ -8,11 +8,11 @@ ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c98914f57c24dc51625564e266157731ff173337
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704567"
 ---
 # <a name="relativebindforresources-element"></a>\<relativeBindForResources> Element
 Optimalizuje sondy pro satelitní sestavení.  
@@ -57,19 +57,19 @@ Optimalizuje sondy pro satelitní sestavení.
 ## <a name="remarks"></a>Poznámky  
  Obecně platí, sondy Resource Manageru pro prostředky, jak je uvedeno v [Packaging and Deploying Resources](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) tématu. To znamená, že pokud pro konkrétní lokalizovanou verzi prostředkem sondy Resource Manageru, může hledat v globální mezipaměti sestavení, podívejte se do složky specifické pro jazykovou verzi na základní, dotaz kód aplikace Instalační služby systému Windows pro satelitní sestavení a zvýšit <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> události. `<relativeBindForResources>` Element optimalizuje způsob, ve kterém testy Resource Manageru pro satelitní sestavení. To může zlepšit výkon při zjišťování prostředků za následujících podmínek:  
   
--   Satelitní sestavení je při nasazení ve stejném umístění jako sestavení kódu. Jinými slovy Pokud sestavení kódu je nainstalováno v globální mezipaměti sestavení, satelitní sestavení musí být nainstalována také existuje. Pokud je kód sestavení nainstalovaná v základu kódu vaší aplikace, musí satelitní sestavení nainstalována také do složky specifické pro jazykovou verzi v základu kódu.  
+- Satelitní sestavení je při nasazení ve stejném umístění jako sestavení kódu. Jinými slovy Pokud sestavení kódu je nainstalováno v globální mezipaměti sestavení, satelitní sestavení musí být nainstalována také existuje. Pokud je kód sestavení nainstalovaná v základu kódu vaší aplikace, musí satelitní sestavení nainstalována také do složky specifické pro jazykovou verzi v základu kódu.  
   
--   Když instalační služby systému Windows se nepoužívá nebo jen zřídka se používá pro instalaci na vyžádání satelitních sestavení.  
+- Když instalační služby systému Windows se nepoužívá nebo jen zřídka se používá pro instalaci na vyžádání satelitních sestavení.  
   
--   Pokud kód aplikace nezpracovává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+- Pokud kód aplikace nezpracovává <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
  Nastavení `enabled` atribut `<relativeBindForResources>` elementu `true` optimalizuje test Resource Manageru pro satelitní sestavení následujícím způsobem:  
   
--   Umístění sestavení kódu nadřazené používá pro sběr dat pro satelitní sestavení.  
+- Umístění sestavení kódu nadřazené používá pro sběr dat pro satelitní sestavení.  
   
--   Neprohledává Instalační služby systému Windows pro satelitní sestavení.  
+- Neprohledává Instalační služby systému Windows pro satelitní sestavení.  
   
--   Nevyvolával <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+- Nevyvolával <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
 ## <a name="see-also"></a>Viz také:
 

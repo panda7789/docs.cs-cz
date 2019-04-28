@@ -9,11 +9,11 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.openlocfilehash: c44d16e543f85852cee39106688fd3870dff7c4d
-  ms.sourcegitcommit: c3cf1ace8a1d403aeae76d8976d01995893d2536
+  ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/07/2019
-  ms.locfileid: "55807041"
+  ms.lasthandoff: 04/23/2019
+  ms.locfileid: "61706296"
 items:
 - durationInMinutes: 1
   content: >

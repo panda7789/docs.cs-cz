@@ -3,11 +3,11 @@ title: 'Postupy: Provedení streamované transformace velkých dokumentů XML (C
 ms.date: 07/20/2015
 ms.assetid: 5f16d1f8-5370-4b55-b0c8-e497df163037
 ms.openlocfilehash: 8ddd7e25cf160526b741db5769a78682970c3724
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701954"
 ---
 # <a name="how-to-perform-streaming-transform-of-large-xml-documents-c"></a>Postupy: Provedení streamované transformace velkých dokumentů XML (C#)
 Někdy je nutné transformovat velké soubory XML a zápis aplikace tak, aby nároky na paměť pro aplikace předvídatelné. Pokud se pokusíte naplnění stromu XML pomocí velmi velkých souborů XML, využití paměti bude přímo úměrná velikosti souboru (to znamená, nadměrné). Proto měli používat streamování technika místo.  

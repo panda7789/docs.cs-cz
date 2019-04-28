@@ -3,11 +3,11 @@ title: Serializace (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
 ms.openlocfilehash: 947b38e8166ba05d871aafbaba5766aa9dab21f4
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751106"
 ---
 # <a name="serialization-visual-basic"></a>Serializace (Visual Basic)
 Serializace je proces převodu objektu do datového proudu bajtů za účelem uložení objektu nebo přenášet do paměti, databázi nebo souboru. Jejich hlavním účelem je pro uložení stavu objektu, aby bylo možné ho v případě potřeby znovu vytvořit. Reverzní proces se nazývá deserializace.  

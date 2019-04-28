@@ -3,11 +3,11 @@ title: Zápis zabezpečené dynamické SQL na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
 ms.openlocfilehash: 236fd925740d37c2cccabfcebfb7fcb46361489d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59107351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757713"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Zápis zabezpečené dynamické SQL na SQL Serveru
 Útok prostřednictvím injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazů jazyka Transact-SQL místo platný vstup. Pokud vstup je předána přímo na server bez ověřování, a pokud aplikace provádí neúmyslně vloženého kódu, útoku hrozí riziko poškození nebo zničení data.  
@@ -21,34 +21,34 @@ ms.locfileid: "59107351"
   
  Tady jsou některé užitečné pokyny:  
   
--   Příkazy jazyka Transact-SQL přímo ze vstupu uživatele; nikdy sestavení uložené procedury slouží k ověření vstupu uživatele.  
+- Příkazy jazyka Transact-SQL přímo ze vstupu uživatele; nikdy sestavení uložené procedury slouží k ověření vstupu uživatele.  
   
--   Ověření vstupu uživatele při testování typ, délku, formátu a rozsah. Použijte funkci QUOTENAME() příkazů jazyka Transact-SQL k uvození názvy systému nebo funkce REPLACE() k uvození libovolného znaku v řetězci.  
+- Ověření vstupu uživatele při testování typ, délku, formátu a rozsah. Použijte funkci QUOTENAME() příkazů jazyka Transact-SQL k uvození názvy systému nebo funkce REPLACE() k uvození libovolného znaku v řetězci.  
   
--   Implementujte několik úrovní ověření v jednotlivých vrstvách vaší aplikace.  
+- Implementujte několik úrovní ověření v jednotlivých vrstvách vaší aplikace.  
   
--   Testování velikosti a datový typ vstupu a vynucovat odpovídající omezení. To může pomoci zabránit přetečení vyrovnávací paměti rozhodnout vědomě a záměrně.  
+- Testování velikosti a datový typ vstupu a vynucovat odpovídající omezení. To může pomoci zabránit přetečení vyrovnávací paměti rozhodnout vědomě a záměrně.  
   
--   Testovací obsah proměnných řetězce a přijmout jenom očekávané hodnoty. Odmítnutí položky, které obsahují binárních dat, řídicích sekvencí a znaky komentáře.  
+- Testovací obsah proměnných řetězce a přijmout jenom očekávané hodnoty. Odmítnutí položky, které obsahují binárních dat, řídicích sekvencí a znaky komentáře.  
   
--   Při práci s dokumenty XML ověřte jako se zadají všechna data pro jeho schéma.  
+- Při práci s dokumenty XML ověřte jako se zadají všechna data pro jeho schéma.  
   
--   V prostředích s více vrstvé by měl být ověřen všechna data před jejich příchodu do zóny důvěryhodných serverů.  
+- V prostředích s více vrstvé by měl být ověřen všechna data před jejich příchodu do zóny důvěryhodných serverů.  
   
--   Nepřijmout následujících řetězců v polích, ze kterých lze zkonstruovat názvy souborů: AUX, CLOCK$, COM1 prostřednictvím COM8, CON, CONFIG$, LPT1, LPT8, NUL a PRN.  
+- Nepřijmout následujících řetězců v polích, ze kterých lze zkonstruovat názvy souborů: AUX, CLOCK$, COM1 prostřednictvím COM8, CON, CONFIG$, LPT1, LPT8, NUL a PRN.  
   
--   Použití <xref:System.Data.SqlClient.SqlParameter> objekty s uloženými procedurami a příkazy, které poskytují kontrolu a délka ověření typu.  
+- Použití <xref:System.Data.SqlClient.SqlParameter> objekty s uloženými procedurami a příkazy, které poskytují kontrolu a délka ověření typu.  
   
--   Použití <xref:System.Text.RegularExpressions.Regex> výrazy v klientském kódu k filtrování neplatné znaky.  
+- Použití <xref:System.Text.RegularExpressions.Regex> výrazy v klientském kódu k filtrování neplatné znaky.  
   
 ## <a name="dynamic-sql-strategies"></a>Strategie dynamické SQL  
  Provádění dynamicky vytvoří příkazy SQL v vašeho kódu procedury konce řetězce vlastnictví, způsobí systému SQL Server ke kontrole oprávnění volajícího u těchto objektů přistupuje dynamické SQL.  
   
  SQL Server má metody pro uživatelům udělíte přístup k datům pomocí uložených procedur a uživatelem definovaných funkcí, které jsou spouštěny dynamické SQL.  
   
--   Použití zosobnění se příkazů jazyka Transact-SQL spustit jako klauzuli, jak je popsáno v [přizpůsobení oprávnění se zosobněním na SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Použití zosobnění se příkazů jazyka Transact-SQL spustit jako klauzuli, jak je popsáno v [přizpůsobení oprávnění se zosobněním na SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
   
--   Podepisování uložených procedur s certifikáty, jak je popsáno v [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Podepisování uložených procedur s certifikáty, jak je popsáno v [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
   
 ### <a name="execute-as"></a>SPUSTIT JAKO  
  Spustit jako se nahradí klauzule oprávnění volající s ním uživatel zadaný v EXECUTE AS klauzuli. Vnořené uložených procedur a aktivačních událostí spuštění v kontextu zabezpečení uživatele proxy serveru. Toto může rozbít aplikace, které využívají zabezpečení na úrovní řádků nebo vyžadován audit. Některé funkce, které vrátí identitu uživatele, vrátí uživatele zadaného v EXECUTE AS klauzule, nikoli původní volající. Kontext spuštění se vrátí zpět na původní volajícího až po provádění procedury nebo při vydání příkazu obnovit.  

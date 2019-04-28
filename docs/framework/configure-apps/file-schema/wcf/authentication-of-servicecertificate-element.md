@@ -3,11 +3,11 @@ title: <authentication> z <serviceCertificate> – Element
 ms.date: 03/30/2017
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
 ms.openlocfilehash: b96d53312d672eebd67de82f69cd9a0a2b5bd22e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59117756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704463"
 ---
 # <a name="authentication-of-servicecertificate-element"></a>\<ověřování > z \<serviceCertificate > – Element
 Určuje nastavení klientského serveru proxy k ověření certifikátů služby, které jsou získány pomocí vyjednávání protokolu SSL/TLS.  
@@ -55,13 +55,13 @@ Určuje nastavení klientského serveru proxy k ověření certifikátů služby
   
 ## <a name="revocationmode-attribute"></a>revocationMode atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: NoCheck, Online, Offline.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Výčet|Jeden z následujících hodnot: LocalMachine nebo CurrentUser. Výchozí hodnota je CurrentUser. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle v rámci LocalMachine. Pokud klientská aplikace běží pod účtem uživatele, certifikát je obvykle v CurrentUser.|  
   

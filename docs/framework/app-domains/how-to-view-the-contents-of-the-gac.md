@@ -14,13 +14,13 @@ ms.assetid: c5f786a0-969b-4f14-9f02-e77c3384d9af
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0375c835dea8984db34d3d1e24b2876fb9af8337
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705594"
 ---
-# <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: zobrazení obsahu globální mezipaměti sestavení
+# <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: Zobrazení obsahu globální mezipaměti sestavení
 
 Použití [nástroj globální mezipaměti sestavení (gacutil.exe)](../tools/gacutil-exe-gac-tool.md) k zobrazení obsahu globální mezipaměti sestavení (GAC).
 

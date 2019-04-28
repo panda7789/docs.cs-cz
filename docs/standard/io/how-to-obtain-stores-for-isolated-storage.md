@@ -16,22 +16,22 @@ ms.assetid: fcb6b178-d526-47c4-b029-e946f880f9db
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0968443af28e2d403b08a1af50846e7a1369db49
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751745"
 ---
 # <a name="how-to-obtain-stores-for-isolated-storage"></a>Postupy: Získávání úložišť pro izolované úložiště
 Izolované úložiště poskytuje virtuální systém souborů v rámci datové přihrádky. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> Třída poskytuje několik metod pro interakci s izolované úložiště. K vytvoření a načtení úložišť, <xref:System.IO.IsolatedStorage.IsolatedStorageFile> poskytuje tři statické metody:  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> vrátí úložiště, které je izolováno podle uživatele a sestavení.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A> vrátí úložiště, které je izolováno podle uživatele a sestavení.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> vrátí úložiště, která je izolovaná podle domény a sestavení.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A> vrátí úložiště, která je izolovaná podle domény a sestavení.  
   
      Obě metody načíst úložiště, které patří do kódu, ve kterém jsou volány.  
   
--   Statická metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> vrátí izolované úložiště, které je určeno předáním kombinací parametry oboru.  
+- Statická metoda <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> vrátí izolované úložiště, které je určeno předáním kombinací parametry oboru.  
   
  Následující kód vrátí úložiště, které je izolováno podle uživatele, sestavení a domény.  
   

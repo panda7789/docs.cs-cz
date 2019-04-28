@@ -7,11 +7,11 @@ helpviewer_keywords:
 - types [Windows Forms], binding controls to
 ms.assetid: 5ab984b5-c2d0-4638-a572-1c84013e8746
 ms.openlocfilehash: b298efb0494994659673f9bf9893b667f7eb0f8c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761387"
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-type-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms k typu pomocí Návrháře
 Při vytváření ovládacích prvků, které pracují s daty, někdy potřebujete k vytvoření vazby ovládacího prvku typu, nikoli objekt. Obvykle budete muset vytvoření vazby ovládacího prvku na typ v době návrhu, když dat nemusí být k dispozici, ale stále chcete své ovládací prvky vázané na data pro zobrazení dat z veřejného rozhraní typu. Následující postupy ukazují, jak vytvořit nový <xref:System.Windows.Forms.BindingSource> , který je s vazbou na typ a pak jednu z vlastností typu vazba <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost <xref:System.Windows.Forms.TextBox>.  
@@ -30,11 +30,11 @@ Při vytváření ovládacích prvků, které pracují s daty, někdy potřebuje
   
 6. Vyberte typ, který chcete vytvořit vazbu na:  
   
-    -   Pokud je typ, který chcete vytvořit vazbu k v aktuálním projektu nebo sestavení obsahující typ je již přidána jako odkaz, rozbalte uzly najít požadovaný typ a pak ho vyberte.  
+    - Pokud je typ, který chcete vytvořit vazbu k v aktuálním projektu nebo sestavení obsahující typ je již přidána jako odkaz, rozbalte uzly najít požadovaný typ a pak ho vyberte.  
   
          -nebo-  
   
-    -   Pokud chcete vytvořit vazbu na typ je v jiném sestavení, není aktuálně v seznamu odkazů, klikněte na tlačítko **přidat odkaz**a potom klikněte na tlačítko **projekty** kartu. Vyberte projekt, který obsahuje obchodní objekt a klikněte na tlačítko **OK**. Tento projekt se objeví v seznamu sestavení, tak lze rozbalit uzly se najít typ můžete a pak vyberte ho.  
+    - Pokud chcete vytvořit vazbu na typ je v jiném sestavení, není aktuálně v seznamu odkazů, klikněte na tlačítko **přidat odkaz**a potom klikněte na tlačítko **projekty** kartu. Vyberte projekt, který obsahuje obchodní objekt a klikněte na tlačítko **OK**. Tento projekt se objeví v seznamu sestavení, tak lze rozbalit uzly se najít typ můžete a pak vyberte ho.  
   
         > [!NOTE]
         >  Pokud chcete vytvořit vazbu na typ v rámci nebo sestavení Microsoft, zrušte zaškrtnutí políčka **skrýt sestavení, které začínají s Microsoftem nebo systém** zaškrtávací políčko.  

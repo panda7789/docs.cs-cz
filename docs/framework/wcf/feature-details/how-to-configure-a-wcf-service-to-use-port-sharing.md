@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
 ms.openlocfilehash: bc0c822659ee57ac8dd87a2adddcd32e934ea4fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699711"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Postupy: Konfigurace používání sdílení portů ve službě WCF
 Nejjednodušší způsob, jak používat sdílení v aplikaci Windows Communication Foundation (WCF) portu net.tcp:// je zveřejnit službu pomocí <xref:System.ServiceModel.NetTcpBinding>.  

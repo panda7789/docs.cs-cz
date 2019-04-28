@@ -3,20 +3,20 @@ title: 'Postupy: Porovnání obsahu dvou složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
 ms.openlocfilehash: c6a44070e251a1521e7ea94c47a3c0c9360df1b5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702136"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnání obsahu dvou složek (LINQ) (C#)
 Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  
   
--   Pomocí dotazu na logickou hodnotu, která určuje, zda dva seznamy souborů jsou identické.  
+- Pomocí dotazu na logickou hodnotu, která určuje, zda dva seznamy souborů jsou identické.  
   
--   Pomocí dotazu pro je určena průsečíkem načíst soubory, které jsou v obě složky.  
+- Pomocí dotazu pro je určena průsečíkem načíst soubory, které jsou v obě složky.  
   
--   Pomocí dotazu pro množinových rozdílů načíst soubory, které jsou v jedné složce, ale nikoli u druhého.  
+- Pomocí dotazu pro množinových rozdílů načíst soubory, které jsou v jedné složce, ale nikoli u druhého.  
   
     > [!NOTE]
     >  Techniky je znázorněno zde mohou být přizpůsobeny pro porovnání sekvence objektů libovolného typu.  

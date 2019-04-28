@@ -20,11 +20,11 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
 ms.openlocfilehash: 56b97170884ef31004b06b0eb50a8d79ad1d041c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757196"
 ---
 # <a name="xaml-overview-wpf"></a>Přehled XAML (WPF)
 Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro zápis [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma popisuje XAML konkrétně, jak je implementované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. XAML samotného je větší než konceptu jazyka [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -115,11 +115,11 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 ### <a name="text-content"></a>Textový obsah  
  Malý počet elementů XAML může zpracovat text přímo jako obsah. Chcete-li povolit, jeden z následujících případech musí být splněné:  
   
--   Třída musí deklarovat vlastnost obsahu, a tuto vlastnost obsahu musí být přiřaditelný k řetězec typu (typ může být <xref:System.Object>). Například některé <xref:System.Windows.Controls.ContentControl> používá <xref:System.Windows.Controls.ContentControl.Content%2A> jako jeho vlastnost obsahu a to je typ <xref:System.Object>, a tento atribut podporuje následující použití na praktických <xref:System.Windows.Controls.ContentControl> například <xref:System.Windows.Controls.Button>: `<Button>Hello</Button>`.  
+- Třída musí deklarovat vlastnost obsahu, a tuto vlastnost obsahu musí být přiřaditelný k řetězec typu (typ může být <xref:System.Object>). Například některé <xref:System.Windows.Controls.ContentControl> používá <xref:System.Windows.Controls.ContentControl.Content%2A> jako jeho vlastnost obsahu a to je typ <xref:System.Object>, a tento atribut podporuje následující použití na praktických <xref:System.Windows.Controls.ContentControl> například <xref:System.Windows.Controls.Button>: `<Button>Hello</Button>`.  
   
--   Typ musí deklarovat konvertor typu, ve kterém případ textového obsahu se používá jako text inicializace pro tento konvertor typu. Například, `<Brush>Blue</Brush>`. Tento případ je méně častý v praxi.  
+- Typ musí deklarovat konvertor typu, ve kterém případ textového obsahu se používá jako text inicializace pro tento konvertor typu. Například, `<Brush>Blue</Brush>`. Tento případ je méně častý v praxi.  
   
--   Typ musí být primitivní známý jazyk XAML.  
+- Typ musí být primitivní známý jazyk XAML.  
   
 ### <a name="content-properties-and-collection-syntax-combined"></a>Kombinované syntaxe obsahu vlastnosti a kolekce  
  Podívejte se například:  
@@ -133,9 +133,9 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
   
  Tady každý <xref:System.Windows.Controls.Button> je podřízený prvek <xref:System.Windows.Controls.StackPanel>. Toto je zjednodušený a intuitivní značky, která vynechává dvě značky dvou různých důvodů.  
   
--   **Element vlastnosti vynechaný StackPanel.Children:** <xref:System.Windows.Controls.StackPanel> je odvozena z <xref:System.Windows.Controls.Panel>. <xref:System.Windows.Controls.Panel> definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> Vlastnost ContentProperty jako jeho XAML.  
+- **Element vlastnosti vynechaný StackPanel.Children:** <xref:System.Windows.Controls.StackPanel> je odvozena z <xref:System.Windows.Controls.Panel>. <xref:System.Windows.Controls.Panel> definuje <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> Vlastnost ContentProperty jako jeho XAML.  
   
--   **Element object vynechaný UIElementCollection:** <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> Vlastnost přijímá typ <xref:System.Windows.Controls.UIElementCollection>, která implementuje <xref:System.Collections.IList>. Značky elementu kolekce lze vynechat, na základě pravidel XAML pro zpracování kolekcí, jako <xref:System.Collections.IList>. (V tomto případě <xref:System.Windows.Controls.UIElementCollection> ve skutečnosti nejde vytvořit, protože nezveřejňuje výchozí konstruktor, a to je důvod, proč <xref:System.Windows.Controls.UIElementCollection> prvek objektu se zobrazí komentářem out).  
+- **Element object vynechaný UIElementCollection:** <xref:System.Windows.Controls.Panel.Children%2A?displayProperty=nameWithType> Vlastnost přijímá typ <xref:System.Windows.Controls.UIElementCollection>, která implementuje <xref:System.Collections.IList>. Značky elementu kolekce lze vynechat, na základě pravidel XAML pro zpracování kolekcí, jako <xref:System.Collections.IList>. (V tomto případě <xref:System.Windows.Controls.UIElementCollection> ve skutečnosti nejde vytvořit, protože nezveřejňuje výchozí konstruktor, a to je důvod, proč <xref:System.Windows.Controls.UIElementCollection> prvek objektu se zobrazí komentářem out).  
   
 ```xaml  
 <StackPanel>  
@@ -210,15 +210,15 @@ Toto téma popisuje funkce jazyka XAML a ukazuje, jak můžete použít XAML pro
 ### <a name="the-x-prefix"></a>Předpona x:  
  V předchozím příkladu kořenový element, předpona `x:` byl použit k mapování oboru názvů XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], což je vyhrazený obor názvů XAML, který podporuje jazyk XAML vytvoří. To `x:` předpona se používá pro tento obor názvů XAML v šablonách projektů, příklady a dokumentaci v rámci tohoto mapování [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. Obor názvů XAML pro jazyk XAML obsahovat několik programovací konstrukce, které se často používají ve vaší XAML. Tady je seznam nejčastěji používaných `x:` předpony programovací konstrukce, které budete používat:  
   
--   [x: Key](../../xaml-services/x-key-directive.md): Nastaví jedinečný klíč pro každý zdroj v <xref:System.Windows.ResourceDictionary> (nebo podobné slovníku koncepty v jiných rozhraní). `x:Key` pravděpodobně bude účet 90 % `x:` použití, zobrazí se v typické aplikaci WPF kódu.  
+- [x: Key](../../xaml-services/x-key-directive.md): Nastaví jedinečný klíč pro každý zdroj v <xref:System.Windows.ResourceDictionary> (nebo podobné slovníku koncepty v jiných rozhraní). `x:Key` pravděpodobně bude účet 90 % `x:` použití, zobrazí se v typické aplikaci WPF kódu.  
   
--   [x: Class](../../xaml-services/x-class-directive.md): Určuje, [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a název třídy pro třídu, která poskytuje kódu na pozadí stránky XAML. Musí mít třídu pro podporu modelu code-behind na programovací model WPF, a proto se téměř vždy zobrazí `x:` mapována, i když nejsou žádné prostředky.  
+- [x: Class](../../xaml-services/x-class-directive.md): Určuje, [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obor názvů a název třídy pro třídu, která poskytuje kódu na pozadí stránky XAML. Musí mít třídu pro podporu modelu code-behind na programovací model WPF, a proto se téměř vždy zobrazí `x:` mapována, i když nejsou žádné prostředky.  
   
--   [x: Name](../../xaml-services/x-name-directive.md): Určuje název run-time objekt instance, která existuje v kódu v době spuštění po zpracování elementu objektu. Obecně platí, často použijete WPF definován odpovídající vlastnost pro [x: Name](../../xaml-services/x-name-directive.md). Tyto vlastnosti mapování speciálně pro CLR zálohování vlastnost a jsou proto vhodnější pro programování aplikací, kde často používáte kódu v době běhu k nalezení pojmenované elementy ve inicializované XAML. Tato vlastnost je nejběžnější <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>. Mohou přesto používat [x: Name](../../xaml-services/x-name-directive.md) při ekvivalentní WPF úrovni framework <xref:System.Windows.FrameworkElement.Name%2A> vlastnost není podporována v určitého typu. K tomu dochází v některých scénářích animace.  
+- [x: Name](../../xaml-services/x-name-directive.md): Určuje název run-time objekt instance, která existuje v kódu v době spuštění po zpracování elementu objektu. Obecně platí, často použijete WPF definován odpovídající vlastnost pro [x: Name](../../xaml-services/x-name-directive.md). Tyto vlastnosti mapování speciálně pro CLR zálohování vlastnost a jsou proto vhodnější pro programování aplikací, kde často používáte kódu v době běhu k nalezení pojmenované elementy ve inicializované XAML. Tato vlastnost je nejběžnější <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>. Mohou přesto používat [x: Name](../../xaml-services/x-name-directive.md) při ekvivalentní WPF úrovni framework <xref:System.Windows.FrameworkElement.Name%2A> vlastnost není podporována v určitého typu. K tomu dochází v některých scénářích animace.  
   
--   [x: Static](../../xaml-services/x-static-markup-extension.md): Umožňuje odkaz, který vrací hodnotu statické, jinak není kompatibilní s XAML vlastností.  
+- [x: Static](../../xaml-services/x-static-markup-extension.md): Umožňuje odkaz, který vrací hodnotu statické, jinak není kompatibilní s XAML vlastností.  
   
--   [x:Type](../../xaml-services/x-type-markup-extension.md): Vytvoří <xref:System.Type> odkaz založen na názvu typu. To je možné určit atributy, které mají <xref:System.Type>, jako <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>, i když často vlastnost má nativní řetězec – k –<xref:System.Type> převod takovým způsobem, který [x: Type](../../xaml-services/x-type-markup-extension.md) se použití rozšíření značky volitelné.  
+- [x:Type](../../xaml-services/x-type-markup-extension.md): Vytvoří <xref:System.Type> odkaz založen na názvu typu. To je možné určit atributy, které mají <xref:System.Type>, jako <xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>, i když často vlastnost má nativní řetězec – k –<xref:System.Type> převod takovým způsobem, který [x: Type](../../xaml-services/x-type-markup-extension.md) se použití rozšíření značky volitelné.  
   
  Existují další programovací konstrukce v `x:` názvů předponu/XAML, který nejsou jako běžné. Podrobnosti najdete v tématu [Namespace XAML (x:) Funkce jazyka](../../xaml-services/xaml-namespace-x-language-features.md).  
   

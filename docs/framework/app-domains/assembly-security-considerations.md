@@ -18,26 +18,26 @@ ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e74d7a4a72b9595d6a280a16ad9bbc4118648404
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705698"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
 <a name="top"></a> Při sestavování sestavení, můžete zadat sadu oprávnění, která vyžaduje sestavení ke spuštění. Legitimace vychází, zda jsou určitá oprávnění udělit nebo nebyla udělena na sestavení.  
   
  Legitimace se používá dva různé způsoby:  
   
--   Vstupní legitimace se sloučí s legitimací shromážděné zavaděč, chcete-li vytvořit finální sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load**, **Assembly.LoadFrom**, a **Activator.CreateInstance**.  
+- Vstupní legitimace se sloučí s legitimací shromážděné zavaděč, chcete-li vytvořit finální sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load**, **Assembly.LoadFrom**, a **Activator.CreateInstance**.  
   
--   Vstupní legitimace se používá beze změny jako výsledná sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()**.  
+- Vstupní legitimace se používá beze změny jako výsledná sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()**.  
   
  Volitelné oprávnění lze udělit pomocí [zásady zabezpečení](../../../docs/framework/misc/code-access-security-basics.md) nastavit v počítači, ve kterém se spustí sestavení. Pokud chcete svůj kód pro zpracování všechny potenciální výjimky zabezpečení, můžete provést jednu z následujících:  
   
--   Vložte žádost o oprávnění pro všechna oprávnění, musíte mít kód a ještě před zahájením zpracování selhání během načítání, který nastane, pokud nejsou udělena oprávnění.  
+- Vložte žádost o oprávnění pro všechna oprávnění, musíte mít kód a ještě před zahájením zpracování selhání během načítání, který nastane, pokud nejsou udělena oprávnění.  
   
--   Nepoužívejte žádosti o oprávnění k získání oprávnění váš kód může být nutné, ale být připravena ke zpracování bezpečnostním výjimkám, pokud nejsou udělena oprávnění.  
+- Nepoužívejte žádosti o oprávnění k získání oprávnění váš kód může být nutné, ale být připravena ke zpracování bezpečnostním výjimkám, pokud nejsou udělena oprávnění.  
   
     > [!NOTE]
     >  Zabezpečení je komplexní oblast a můžete vybírat z mnoha různými způsoby. Další informace najdete v tématu [klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md).  

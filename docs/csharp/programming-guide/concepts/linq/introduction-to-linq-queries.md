@@ -8,11 +8,11 @@ helpviewer_keywords:
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
 ms.openlocfilehash: 4432270c8a1a9ad499f833bf8201ed3155bd7ce2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701760"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, které jsou vždy práce s objekty. Použijte stejné základní vzorce kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcích .NET a jakémkoli jiném formátu, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  

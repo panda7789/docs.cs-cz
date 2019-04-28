@@ -16,11 +16,11 @@ ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8820fb898e0944704b7c81363962d523770a541c
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683077"
 ---
 # <a name="globalization"></a>Globalizace
 

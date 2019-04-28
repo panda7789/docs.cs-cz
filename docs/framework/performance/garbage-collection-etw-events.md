@@ -9,44 +9,44 @@ ms.assetid: f14b6fd7-0966-4d87-bc89-54ef3a44a94a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7f9bf0e309ec8c77d4b1d6afbf111e7eeae629ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149731"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61722936"
 ---
 # <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti
 <a name="top"></a> Tyto události shromažďovat informace týkající se uvolňování paměti. Pomáhají v Diagnostika a ladění, včetně určení, kolikrát uvolňování paměti byla provedena, kolik paměti byl uvolněn při uvolňování paměti a tak dále.  
   
  Tato kategorie se skládá z následujících událostí:  
   
--   [GCStart_V1 Event](#gcstart_v1_event)  
+- [GCStart_V1 Event](#gcstart_v1_event)  
   
--   [GCEnd_V1 události](#gcend_v1_event)  
+- [GCEnd_V1 události](#gcend_v1_event)  
   
--   [GCHeapStats_V1 Event](#gcheapstats_v1_event)  
+- [GCHeapStats_V1 Event](#gcheapstats_v1_event)  
   
--   [GCCreateSegment_V1 Event](#gccreatesegment_v1_event)  
+- [GCCreateSegment_V1 Event](#gccreatesegment_v1_event)  
   
--   [GCFreeSegment_V1 Event](#gcfreesegment_v1_event)  
+- [GCFreeSegment_V1 Event](#gcfreesegment_v1_event)  
   
--   [GCRestartEEBegin_V1 Event](#gcrestarteebegin_v1_event)  
+- [GCRestartEEBegin_V1 Event](#gcrestarteebegin_v1_event)  
   
--   [GCRestartEEEnd_V1 Event](#gcrestarteeend_v1_event)  
+- [GCRestartEEEnd_V1 Event](#gcrestarteeend_v1_event)  
   
--   [GCSuspendEE_V1 události](#gcsuspendee_v1_event)  
+- [GCSuspendEE_V1 události](#gcsuspendee_v1_event)  
   
--   [GCSuspendEEEnd_V1 události](#gcsuspendeeend_v1_event)  
+- [GCSuspendEEEnd_V1 události](#gcsuspendeeend_v1_event)  
   
--   [GCAllocationTick_V2 události](#gcallocationtick_v2_event)  
+- [GCAllocationTick_V2 události](#gcallocationtick_v2_event)  
   
--   [GCFinalizersBegin_V1 události](#gcfinalizersbegin_v1_event)  
+- [GCFinalizersBegin_V1 události](#gcfinalizersbegin_v1_event)  
   
--   [GCFinalizersEnd_V1 události](#gcfinalizersend_v1_event)  
+- [GCFinalizersEnd_V1 události](#gcfinalizersend_v1_event)  
   
--   [GCCreateConcurrentThread_V1 Event](#gccreateconcurrentthread_v1_event)  
+- [GCCreateConcurrentThread_V1 Event](#gccreateconcurrentthread_v1_event)  
   
--   [GCTerminateConcurrentThread_V1 Event](#gcterminateconcurrentthread_v1_event)  
+- [GCTerminateConcurrentThread_V1 Event](#gcterminateconcurrentthread_v1_event)  
   
 <a name="gcstart_v1_event"></a>   
 ## <a name="gcstartv1-event"></a>GCStart_V1 Event  
@@ -66,7 +66,7 @@ ms.locfileid: "59149731"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt32|*n*th uvolňování paměti.|  
+|Count|win:UInt32|*n*th uvolňování paměti.|  
 |Hloubka|win:UInt32|Generování, jež jsou shromažďována.|  
 |Důvod|win:UInt32|Proč byla aktivována. uvolnění:<br /><br /> 0x0 - přidělení haldy malých objektů.<br /><br /> 0x1 - vyvolaných.<br /><br /> 0x2 - nedostatek paměti.<br /><br /> 0x3 - prázdný.<br /><br /> 0x4 - přidělení haldy velkých objektů.<br /><br /> 0x5 - nedostatek místa (pro haldu malých objektů).<br /><br /> 0x6 - nedostatek místa (pro haldu velkých objektů).<br /><br /> 0x7 - vyvolané, ale nejsou vynucené jako blokování.|  
 |Type|win:UInt32|0x0 - mimo uvolňování paměti na pozadí došlo k blokování uvolnění paměti.<br /><br /> 0x1 – uvolňování paměti na pozadí.<br /><br /> 0x2 - blokující uvolňování paměti došlo k chybě během uvolňování paměti na pozadí.|  
@@ -92,7 +92,7 @@ ms.locfileid: "59149731"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt32|*n*th uvolňování paměti.|  
+|Count|win:UInt32|*n*th uvolňování paměti.|  
 |Hloubka|win:UInt32|Generace, která byla shromážděna.|  
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
@@ -238,7 +238,7 @@ ms.locfileid: "59149731"
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
 |Důvod|win:UInt16|0x0 – ostatní.<br /><br /> 0x1 – uvolňování paměti.<br /><br /> 0x2 – ukončení domény aplikace.<br /><br /> 0x3 - pitching kódu.<br /><br /> 0x4 – vypnutí.<br /><br /> 0x5 – ladicí program.<br /><br /> 0x6 – Příprava pro uvolnění paměti.|  
-|Počet|win:UInt32|Uvolňování paměti – počet v době. Obvykle zobrazí následující události Start uvolňování paměti po to a její vlastnosti Count by tento počet + 1 jsme zvýšit index uvolňování paměti během uvolňování paměti.|  
+|Count|win:UInt32|Uvolňování paměti – počet v době. Obvykle zobrazí následující události Start uvolňování paměti po to a její vlastnosti Count by tento počet + 1 jsme zvýšit index uvolňování paměti během uvolňování paměti.|  
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
@@ -325,7 +325,7 @@ ms.locfileid: "59149731"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt32|Počet finalizační metody, které byly spuštěny.|  
+|Count|win:UInt32|Počet finalizační metody, které byly spuštěny.|  
 |ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  

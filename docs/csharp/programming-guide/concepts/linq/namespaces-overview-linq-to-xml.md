@@ -3,11 +3,11 @@ title: Přehled názvových prostorů (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 16283322-8238-4918-ab11-802ac6748eb7
 ms.openlocfilehash: 233b8ee23a5a587957f514ccc6586bdf96072511
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712237"
 ---
 # <a name="namespaces-overview-linq-to-xml"></a>Přehled názvových prostorů (LINQ to XML)
 Toto téma představuje obory názvů, <xref:System.Xml.Linq.XName> třídy a <xref:System.Xml.Linq.XNamespace> třídy.  

@@ -13,11 +13,11 @@ ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6d8f6975d117d9920d2199c3996246822d1fdb6c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61753799"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode – pomocník spravovaného ladění (MDA)
 `moduloObjectHashcode` Pomocníka spravovaného ladění (MDA) změní chování <xref:System.Object> pro provádění modulo operace na vrátil kód hash <xref:System.Object.GetHashCode%2A> metoda. Výchozí modul pro toto MDA je 1, což způsobí, že <xref:System.Object.GetHashCode%2A> vrátit 0 pro všechny objekty.  
@@ -25,13 +25,13 @@ ms.locfileid: "59170765"
 ## <a name="symptoms"></a>Příznaky  
  Po přesunutí na novou verzi modulu common language runtime (CLR), program už správně provede:  
   
--   Program je stále nesprávný objekt z <xref:System.Collections.Hashtable>.  
+- Program je stále nesprávný objekt z <xref:System.Collections.Hashtable>.  
   
--   Pořadí výčtu ze <xref:System.Collections.Hashtable> má změnu, která program přestane fungovat.  
+- Pořadí výčtu ze <xref:System.Collections.Hashtable> má změnu, která program přestane fungovat.  
   
--   Dva objekty, které používají musí rovnat už nejsou stejné.  
+- Dva objekty, které používají musí rovnat už nejsou stejné.  
   
--   Nyní jsou objekty, které používají nebude stejný jako rovnocenné.  
+- Nyní jsou objekty, které používají nebude stejný jako rovnocenné.  
   
 ## <a name="cause"></a>Příčina  
  Váš program může zobrazovat v objektu nesprávného z <xref:System.Collections.Hashtable> protože provádění <xref:System.Object.Equals%2A> metody ve třídě pro klíč do <xref:System.Collections.Hashtable> testy pro rovnost objektů porovnáním výsledky volání <xref:System.Object.GetHashCode%2A> – metoda . Kódů hash by neměl použije k testování rovnosti objektu, protože dva objekty mohou mít stejnou hodnotu hash, i když jejich příslušných polí mají různé hodnoty. Tyto kolize hodnot hash kód, i když je vzácné v praxi, dojde k. To má vliv <xref:System.Collections.Hashtable> vyhledávání je, že dva klíče, které nejsou shodné se zdají být stejné, a špatný objekt je vrácen z <xref:System.Collections.Hashtable>. Z důvodů výkonu provádění <xref:System.Object.GetHashCode%2A> verze modulu runtime, takže kolize, které nemusí být na jednu verzi můžou probíhat v budoucích verzích se může změnit. Povolte toto MDA k otestování, jestli váš kód obsahuje chyby, když dojde ke kolizi těchto kódů hash. Když je povoleno, toto MDA způsobí, že <xref:System.Object.GetHashCode%2A> metoda vrátí 0, výsledkem všech kódů hash kolize. Pouze účinku povolení, které toto MDA by měl mít v programu je, že váš program spouští pomaleji.  

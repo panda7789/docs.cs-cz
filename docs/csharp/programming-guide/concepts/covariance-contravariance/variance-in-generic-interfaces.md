@@ -3,11 +3,11 @@ title: Odchylky obecných rozhraní (C#)
 ms.date: 04/10/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
 ms.openlocfilehash: 5874a39a57f85695bedc3d1ffa61adf19fcdbe37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702474"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Odchylky obecných rozhraní (C#)
 

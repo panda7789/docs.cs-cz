@@ -17,11 +17,11 @@ ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 92f4b686a5a2bdc74ff3f0f68de4c6b2048da5a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751907"
 ---
 # <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Postupy: Vytváření souborů a adresářů v izolovaném úložišti
 Po získání izolovaného úložiště, můžete vytvořit adresářů a souborů k ukládání dat. V rámci úložiště jsou zadané názvy souborů a adresářů s ohledem na kořenovém virtuálním souborovém systému.  

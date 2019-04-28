@@ -3,11 +3,11 @@ title: <message> Element <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
 ms.openlocfilehash: ac6977a8422055f998c7ed932c853992b7809911
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767556"
 ---
 # <a name="message-element-of-nettcpbinding"></a>\<Zpráva > prvek \<netTcpBinding >
 Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfigurovaným s [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
@@ -61,7 +61,7 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Žádný|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
+|Žádné|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |Windows|Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití pověření uživatelských jmen je zabezpečený přenos. Výsledkem interoperabilní exchange nebo -interoperabilní vyjednávání na základě tohoto režimu přihlašovacích údajů `negotiateServiceCredential` atribut.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečených zpráv a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být poskytnut certifikát služby.|  

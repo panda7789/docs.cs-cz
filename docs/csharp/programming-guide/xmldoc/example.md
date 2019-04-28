@@ -10,11 +10,11 @@ helpviewer_keywords:
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
 ms.openlocfilehash: 16b4e8d2d62c2930411bb61abd4d4b65ab7989fc
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57487834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61708207"
 ---
 # <a name="example-c-programming-guide"></a>\<Příklad > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

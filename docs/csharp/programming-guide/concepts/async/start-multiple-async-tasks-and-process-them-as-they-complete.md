@@ -3,11 +3,11 @@ title: Zpracování asynchronních úloh po dokončení
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
 ms.openlocfilehash: 335eb5dce74a7f0a2b8af550250105d460212b6a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702591"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 
@@ -51,27 +51,27 @@ IEnumerable<Task<int>> downloadTasksQuery = from url in urlList select ProcessUR
 
 V souboru MainWindow.xaml.cs projektu proveďte následující změny `AccessTheWebAsync` metody.
 
--   Spusťte dotaz s použitím <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> místo <xref:System.Linq.Enumerable.ToArray%2A>.
+- Spusťte dotaz s použitím <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> místo <xref:System.Linq.Enumerable.ToArray%2A>.
 
     ```csharp
     List<Task<int>> downloadTasks = downloadTasksQuery.ToList();
     ```
 
--   Přidat `while` smyčku, která provede následující kroky pro každý úkol v kolekci:
+- Přidat `while` smyčku, která provede následující kroky pro každý úkol v kolekci:
 
-    1.  Čeká volání `WhenAny` identifikovat první úkol v kolekci, která se dokončí stažení.
+    1. Čeká volání `WhenAny` identifikovat první úkol v kolekci, která se dokončí stažení.
 
         ```csharp
         Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);
         ```
 
-    2.  Odebere tento úkol z kolekce.
+    2. Odebere tento úkol z kolekce.
 
         ```csharp
         downloadTasks.Remove(firstFinishedTask);
         ```
 
-    3.  Čeká `firstFinishedTask`, který je vrácen voláním `ProcessURLAsync`. `firstFinishedTask` Proměnná je <xref:System.Threading.Tasks.Task%601> kde `TReturn` je celé číslo. Úloha je již dokončena, ale můžete od něj načte délku staženého webu, jak ukazuje následující příklad očekávat.
+    3. Čeká `firstFinishedTask`, který je vrácen voláním `ProcessURLAsync`. `firstFinishedTask` Proměnná je <xref:System.Threading.Tasks.Task%601> kde `TReturn` je celé číslo. Úloha je již dokončena, ale můžete od něj načte délku staženého webu, jak ukazuje následující příklad očekávat.
 
         ```csharp
         int length = await firstFinishedTask;

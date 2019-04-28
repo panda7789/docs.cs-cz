@@ -9,11 +9,11 @@ helpviewer_keywords:
 - BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
 ms.openlocfilehash: 4d5cc91ca8bf71b2d5893f591652d777041e1a4d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757373"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Postupy: Přidávání tlačítek Načíst, Uložit a Zrušit do ovládacího prvku Windows Forms BindingNavigator
 <xref:System.Windows.Forms.BindingNavigator> Ovládací prvek se speciálním účelem <xref:System.Windows.Forms.ToolStrip> ovládací prvek, který je určený pro navigaci a manipulaci se ovládací prvky na formuláři, které jsou vázány na data.  
@@ -40,15 +40,15 @@ ms.locfileid: "59304776"
   
 7. V **Editor kolekce položek**, proveďte následující kroky:  
   
-    1.  Přidat <xref:System.Windows.Forms.ToolStripSeparator> a tři <xref:System.Windows.Forms.ToolStripButton> položky tak, že vyberete příslušný typ <xref:System.Windows.Forms.ToolStripItem> a kliknete **přidat** tlačítko.  
+    1. Přidat <xref:System.Windows.Forms.ToolStripSeparator> a tři <xref:System.Windows.Forms.ToolStripButton> položky tak, že vyberete příslušný typ <xref:System.Windows.Forms.ToolStripItem> a kliknete **přidat** tlačítko.  
   
-    2.  Nastavte <xref:System.Windows.Forms.ToolStripItem.Name%2A> vlastnost tlačítek na hodnotu **LoadButton**, **SaveButton**, a **CancelButton**v uvedeném pořadí.  
+    2. Nastavte <xref:System.Windows.Forms.ToolStripItem.Name%2A> vlastnost tlačítek na hodnotu **LoadButton**, **SaveButton**, a **CancelButton**v uvedeném pořadí.  
   
-    3.  Nastavte <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost tlačítek na hodnotu **zatížení**, **Uložit**, a **zrušit**.  
+    3. Nastavte <xref:System.Windows.Forms.ToolStripItem.Text%2A> vlastnost tlačítek na hodnotu **zatížení**, **Uložit**, a **zrušit**.  
   
-    4.  Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost pro každý z tlačítka **Text**. Alternativně nastavte tuto vlastnost na **Image** nebo **ImageAndText**a nastavit obrázek, který se zobrazí v <xref:System.Windows.Forms.ToolStripItem.Image%2A> vlastnost.  
+    4. Nastavte <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> vlastnost pro každý z tlačítka **Text**. Alternativně nastavte tuto vlastnost na **Image** nebo **ImageAndText**a nastavit obrázek, který se zobrazí v <xref:System.Windows.Forms.ToolStripItem.Image%2A> vlastnost.  
   
-    5.  Klikněte na tlačítko **OK** zavřete dialogové okno. Tlačítka jsou přidány do <xref:System.Windows.Forms.ToolStrip>.  
+    5. Klikněte na tlačítko **OK** zavřete dialogové okno. Tlačítka jsou přidány do <xref:System.Windows.Forms.ToolStrip>.  
   
 8. Klikněte pravým tlačítkem na formuláři a zvolte **zobrazit kód**.  
   

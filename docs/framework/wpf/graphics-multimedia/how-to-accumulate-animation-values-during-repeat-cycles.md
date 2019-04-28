@@ -6,11 +6,11 @@ helpviewer_keywords:
 - animation [WPF], accumulating values across repeating cycles
 ms.assetid: 548df369-c7cc-4dab-b569-08b95ced2e7e
 ms.openlocfilehash: 4b739883322751e2df86e13bfd07249abdb10a08
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762173"
 ---
 # <a name="how-to-accumulate-animation-values-during-repeat-cycles"></a>Postupy: Kumulování hodnot animace při opakujících se cyklech
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost kumulování hodnot animace přes opakující se cykly.  
@@ -22,13 +22,13 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.D
   
  Následující příklad ukazuje toto chování animace šířka čtyři obdélníků. Příklad:  
   
--   Animuje první obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimation> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost `true`.  
+- Animuje první obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimation> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost `true`.  
   
--   Animuje druhý obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimation> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost na výchozí hodnotu `false`.  
+- Animuje druhý obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimation> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.IsCumulative%2A> vlastnost na výchozí hodnotu `false`.  
   
--   Animuje třetí obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> vlastnost `true`.  
+- Animuje třetí obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> vlastnost `true`.  
   
--   Animuje poslední obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> vlastnost `false`.  
+- Animuje poslední obdélníku s <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> a nastaví <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative%2A> vlastnost `false`.  
   
  [!code-xaml[timingbehaviors_snip#IsCumulativeWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/IsCumulativeExample.xaml#iscumulativewholepage)]  
   

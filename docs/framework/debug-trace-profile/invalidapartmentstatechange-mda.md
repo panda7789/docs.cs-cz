@@ -14,30 +14,30 @@ ms.assetid: e56fb9df-5286-4be7-b313-540c4d876cd7
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c201ab51c1af8a86fc1c2c4f80738007152b3bd9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754502"
 ---
 # <a name="invalidapartmentstatechange-mda"></a>invalidApartmentStateChange – pomocník spravovaného ladění (MDA)
 `invalidApartmentStateChange` Pomocníka spravovaného ladění (MDS) je aktivován některý z dva problémy:  
   
--   Chcete-li změnit stavu apartment modelu COM, který již byl inicializován pomocí modelu COM do stavu různých apartment vlákna je proveden pokus o.  
+- Chcete-li změnit stavu apartment modelu COM, který již byl inicializován pomocí modelu COM do stavu různých apartment vlákna je proveden pokus o.  
   
--   Neočekávaně se změní stav objektu apartment modelu COM vlákna.  
+- Neočekávaně se změní stav objektu apartment modelu COM vlákna.  
   
 ## <a name="symptoms"></a>Příznaky  
   
--   Stav objektu apartment modelu COM vlákna je co nebyl požadován. To může způsobit proxy má být použit pro komponenty modelu COM, které mají jiný než aktuální model vlákna. Pak může dojít <xref:System.InvalidCastException> vyvolání při volání objektu COM prostřednictvím rozhraní, které nejsou nastaveny pro zařazování mezi objektu apartment.  
+- Stav objektu apartment modelu COM vlákna je co nebyl požadován. To může způsobit proxy má být použit pro komponenty modelu COM, které mají jiný než aktuální model vlákna. Pak může dojít <xref:System.InvalidCastException> vyvolání při volání objektu COM prostřednictvím rozhraní, které nejsou nastaveny pro zařazování mezi objektu apartment.  
   
--   Stav objektu apartment modelu COM vlákna je jiný, než se očekávalo. To může způsobit <xref:System.Runtime.InteropServices.COMException> s HRESULT RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při provádění volání na [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW). To může způsobit také některé komponenty modelu COM s jedním vláknem přístup více vláken ve stejnou dobu, což může vést k poškození nebo ztrátě dat k.  
+- Stav objektu apartment modelu COM vlákna je jiný, než se očekávalo. To může způsobit <xref:System.Runtime.InteropServices.COMException> s HRESULT RPC_E_WRONG_THREAD a také <xref:System.InvalidCastException> při provádění volání na [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW). To může způsobit také některé komponenty modelu COM s jedním vláknem přístup více vláken ve stejnou dobu, což může vést k poškození nebo ztrátě dat k.  
   
 ## <a name="cause"></a>Příčina  
   
--   K jiným stavem objektu apartment modelu COM byl dřív inicializovaný vlákna. Všimněte si, že stav oddílu vlákna lze nastavit explicitně nebo implicitně. Explicitní operace zahrnují <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost a <xref:System.Threading.Thread.SetApartmentState%2A> a <xref:System.Threading.Thread.TrySetApartmentState%2A> metody. Vlákna vytvořeného <xref:System.Threading.Thread.Start%2A> metoda je implicitně nastavena na <xref:System.Threading.ApartmentState.MTA> Pokud <xref:System.Threading.Thread.SetApartmentState%2A> je volána před spuštěním podprocesu. Hlavního vlákna aplikace je také implicitně inicializován na <xref:System.Threading.ApartmentState.MTA> není-li <xref:System.STAThreadAttribute> je zadán atribut v hlavní metodě.  
+- K jiným stavem objektu apartment modelu COM byl dřív inicializovaný vlákna. Všimněte si, že stav oddílu vlákna lze nastavit explicitně nebo implicitně. Explicitní operace zahrnují <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost a <xref:System.Threading.Thread.SetApartmentState%2A> a <xref:System.Threading.Thread.TrySetApartmentState%2A> metody. Vlákna vytvořeného <xref:System.Threading.Thread.Start%2A> metoda je implicitně nastavena na <xref:System.Threading.ApartmentState.MTA> Pokud <xref:System.Threading.Thread.SetApartmentState%2A> je volána před spuštěním podprocesu. Hlavního vlákna aplikace je také implicitně inicializován na <xref:System.Threading.ApartmentState.MTA> není-li <xref:System.STAThreadAttribute> je zadán atribut v hlavní metodě.  
   
--   `CoUninitialize` – Metoda (nebo `CoInitializeEx` metoda) s jinou souběžnosti se nazývá modelu ve vlákně.  
+- `CoUninitialize` – Metoda (nebo `CoInitializeEx` metoda) s jinou souběžnosti se nazývá modelu ve vlákně.  
   
 ## <a name="resolution"></a>Řešení  
  Před zahájením provádění se nastavit stav objektu apartment vlákna, nebo použít buď <xref:System.STAThreadAttribute> atribut nebo <xref:System.MTAThreadAttribute> atribut do metody main aplikace.  

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
 ms.openlocfilehash: 6f7cbd91be83c96b25248f87ddc377159ba39b64
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762323"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
 Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy otočit, škálování, přesuňte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
@@ -101,9 +101,9 @@ Element obdélník otáčet 45 stupňů o bodu (25, 25)
 ## <a name="transforming-a-frameworkelement"></a>Transformace FrameworkElement  
  Použití transformací pro <xref:System.Windows.FrameworkElement>, vytvořit <xref:System.Windows.Media.Transform> a použít ho na jednu ze dvou vlastností, které <xref:System.Windows.FrameworkElement> třída poskytuje:  
   
--   <xref:System.Windows.FrameworkElement.LayoutTransform%2A> – Transformace, který je použit před předání rozložení. Po je použita transformace, zpracuje systém rozložení transformovaný velikost a umístění elementu.  
+- <xref:System.Windows.FrameworkElement.LayoutTransform%2A> – Transformace, který je použit před předání rozložení. Po je použita transformace, zpracuje systém rozložení transformovaný velikost a umístění elementu.  
   
--   <xref:System.Windows.UIElement.RenderTransform%2A> – Transformace změní vzhled elementu, který se použije po předání rozložení je dokončena. S použitím <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A> vlastnost, získáte výhody výkonu.  
+- <xref:System.Windows.UIElement.RenderTransform%2A> – Transformace změní vzhled elementu, který se použije po předání rozložení je dokončena. S použitím <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost místo <xref:System.Windows.FrameworkElement.LayoutTransform%2A> vlastnost, získáte výhody výkonu.  
   
  Vlastností, které byste měli použít? Protože výkony těží, které poskytuje, použijte <xref:System.Windows.UIElement.RenderTransform%2A> pokaždé, když se nejvíce, zejména v případě, že používáte animovat vlastnost <xref:System.Windows.Media.Transform> objekty. Použití <xref:System.Windows.FrameworkElement.LayoutTransform%2A> vlastnost při škálování, otáčení nebo zkosení a potřebujete nadřazeného elementu upravit transformovaný velikosti prvku. Všimněte si, že při použití s <xref:System.Windows.FrameworkElement.LayoutTransform%2A> vlastnost <xref:System.Windows.Media.TranslateTransform> objekty se nemají žádný vliv na elementy. Důvodem je, systém rozložení vrátí přeložené prvek na jeho původní pozice v rámci jeho zpracování.  
   

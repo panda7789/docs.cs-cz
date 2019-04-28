@@ -3,11 +3,11 @@ title: <authorizationPolicies>
 ms.date: 03/30/2017
 ms.assetid: 5b367489-54d7-408b-8f56-cb157dd68eaf
 ms.openlocfilehash: 2910f47b85ee67694cae0c3a725c3c7c7b3803c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701720"
 ---
 # <a name="authorizationpolicies"></a>\<authorizationPolicies>
 Tento oddíl konfigurace obsahuje kolekci typů zásad autorizací, které lze přidat pomocí `add` – klíčové slovo. Každá zásada autorizace obsahuje jediný vyžaduje `policyType` atribut, který není řetězec. Atribut určuje zásadu autorizace, který umožňuje transformovat jednu sadu vstupních deklarací identity do jiné sady deklarací identity. Může být povolen nebo odepřen řízení přístupu na základě. Další informace o tom, jak funguje zásad autorizace najdete v tématu <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a [zásad autorizace](../../../../../docs/framework/wcf/samples/authorization-policy.md).  

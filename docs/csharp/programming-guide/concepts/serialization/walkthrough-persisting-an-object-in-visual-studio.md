@@ -2,11 +2,11 @@
 title: 'Návod: Uchování objektu pomocíC#'
 ms.date: 04/26/2018
 ms.openlocfilehash: 85b58e93d667d39800538bb2c29d4ba69146e7f3
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680581"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C\#
 

@@ -3,11 +3,11 @@ title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703254"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: Vytváření nepodepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.  

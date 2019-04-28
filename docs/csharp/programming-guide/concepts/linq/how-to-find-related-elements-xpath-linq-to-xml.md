@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
 ms.openlocfilehash: 0463be7cabca088a1a5a200b9e8648914f16e7f5
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57843336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702162"
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Postupy: Vyhledání souvisejících elementů (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat prvek Výběr na atribut, který je uvedené hodnotou jiného elementu.  

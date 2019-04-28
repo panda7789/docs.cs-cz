@@ -3,11 +3,11 @@ title: Generování operací (C#)
 ms.date: 07/20/2015
 ms.assetid: 1c421b3a-5954-448c-bcac-a27798d1858f
 ms.openlocfilehash: eb30fd9a354c7482ebe84cae764f362585aa87c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702240"
 ---
 # <a name="generation-operations-c"></a>Generování operací (C#)
 Generování odkazuje na vytvoření nového pořadí hodnot.  
@@ -18,10 +18,10 @@ Generování odkazuje na vytvoření nového pořadí hodnot.
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|DefaultIfEmpty|Nahradí výchozí s hodnotou typu singleton kolekci prázdnou kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
-|prázdný|Vrátí prázdnou kolekci.|Nelze použít.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
-|Rozsah|Vytvoří kolekci, která obsahuje posloupnost čísel.|Nelze použít.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
-|Opakovat|Vytvoří kolekci, která obsahuje opakované jednu hodnotu.|Nelze použít.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
+|DefaultIfEmpty|Nahradí výchozí s hodnotou typu singleton kolekci prázdnou kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|prázdný|Vrátí prázdnou kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|Rozsah|Vytvoří kolekci, která obsahuje posloupnost čísel.|Není k dispozici.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Opakovat|Vytvoří kolekci, která obsahuje opakované jednu hodnotu.|Není k dispozici.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 

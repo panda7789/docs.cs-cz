@@ -3,11 +3,11 @@ title: Úvod k čistě funkčním transformacím (C#)
 ms.date: 07/20/2015
 ms.assetid: 8495c9d9-2d02-4aa0-8a10-9e8794b985fe
 ms.openlocfilehash: 63b7a69baeb42c82fb1c94d08cee17519330025c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701577"
 ---
 # <a name="introduction-to-pure-functional-transformations-c"></a>Úvod k čistě funkčním transformacím (C#)
 Tato část představuje funkčním transformacím, včetně základní koncepty a podpůrné jazykové konstrukce. To se liší od objektově orientované a funkční transformace přístupy k programování, včetně Rady o tom, jak přechod na ten. Přestože funkční transformace lze použít v mnoha programovacích scénářů, je použita transformace XML jako konkrétní příklad zde.  

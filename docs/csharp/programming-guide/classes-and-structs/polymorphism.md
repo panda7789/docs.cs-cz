@@ -7,18 +7,18 @@ helpviewer_keywords:
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
 ms.openlocfilehash: 9bb87115f4649a890d1fb2aab1595c3b6848bc74
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703098"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
   
--   V době běhu můžou se považovat objekty odvozené třídy základní třídy na místech, jako je například parametry metody a kolekce nebo pole objektů. Pokud k tomu dojde, deklarovaného typu objektu již není stejný jako jeho typ za běhu.  
+- V době běhu můžou se považovat objekty odvozené třídy základní třídy na místech, jako je například parametry metody a kolekce nebo pole objektů. Pokud k tomu dojde, deklarovaného typu objektu již není stejný jako jeho typ za běhu.  
   
--   Základní třídy mohou definovat a implementovat [virtuální](../../../csharp/language-reference/keywords/virtual.md) *metody*, a mohou odvozené třídy [přepsat](../../../csharp/language-reference/keywords/override.md) je, což znamená, že poskytují vlastní definice a implementaci. V době běhu když klientský kód volá metodu, CLR vyhledá run-time typu objektu a vyvolá tuto přepsat virtuální metodu. Proto ve zdrojovém kódu můžete volat metodu v základní třídě a způsobit, že odvozené třídy verzi metody, který se spustí.  
+- Základní třídy mohou definovat a implementovat [virtuální](../../../csharp/language-reference/keywords/virtual.md) *metody*, a mohou odvozené třídy [přepsat](../../../csharp/language-reference/keywords/override.md) je, což znamená, že poskytují vlastní definice a implementaci. V době běhu když klientský kód volá metodu, CLR vyhledá run-time typu objektu a vyvolá tuto přepsat virtuální metodu. Proto ve zdrojovém kódu můžete volat metodu v základní třídě a způsobit, že odvozené třídy verzi metody, který se spustí.  
   
  Virtuální metody umožňují pracovat se skupinami souvisejících objektů jednotným způsobem. Předpokládejme například, že máte kreslicí aplikace, která umožňuje uživateli vytvořit různé druhy obrazců na návrhovém povrchu. Si nejste jisti v době kompilace jaké konkrétní typy tvary uživatel vytvořit. Ale aplikace musí udržovat přehled o různých typech tvary, které jsou vytvořeny a musí je aktualizovat v reakci na akce myši uživatele. Polymorfismus můžete použít pro vyřešení tohoto problému v dva základní kroky:  
   
@@ -37,11 +37,11 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
 ### <a name="virtual-members"></a>Virtuální členové  
  Pokud je odvozená třída dědí ze základní třídy, získává všechny metody, pole, vlastnosti a události základní třídy. Návrhář odvozené třídy můžete zvolit, jestli se má  
   
--   přepsat virtuální členy základní třídy  
+- přepsat virtuální členy základní třídy  
   
--   dědit nejbližší metodu základní třídy bez jeho přepsání  
+- dědit nejbližší metodu základní třídy bez jeho přepsání  
   
--   definujte novou implementaci nevirtuální těchto členů, které skrýt implementace základní třídy  
+- definujte novou implementaci nevirtuální těchto členů, které skrýt implementace základní třídy  
   
  Odvozená třída může přepsat člena základní třídy pouze v případě, že členu základní třídy je deklarován jako [virtuální](../../../csharp/language-reference/keywords/virtual.md) nebo [abstraktní](../../../csharp/language-reference/keywords/abstract.md). Odvozené člen musí používat [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo explicitně určit, že metoda je určena k účasti v virtuální volání. Následující kód představuje příklad:  
   
@@ -89,11 +89,11 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
+- [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
   
--   [Znalost, kdy použít klíčová slova override a new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)  
+- [Znalost, kdy použít klíčová slova override a new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)  
   
--   [Postupy: Potlačení metody ToString](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
+- [Postupy: Potlačení metody ToString](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
   
 ## <a name="see-also"></a>Viz také:
 

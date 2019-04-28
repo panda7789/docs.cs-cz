@@ -7,11 +7,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], creating
 ms.assetid: 8ae29ec5-e5fb-4137-9df5-60a288df7045
 ms.openlocfilehash: d847f589bc47f8ab3d6691666bbd879e795db0c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58813038"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756517"
 ---
 # <a name="creating-xml-in-visual-basic"></a>Vytvoření XML v jazyce Visual Basic
 Visual Basic umožňuje používat *literály XML* přímo v kódu. Syntaxe XML literál představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a to se podobá syntaxi XML 1.0. To usnadňuje vytvořit prvky, dokumenty a fragmenty XML prostřednictvím kódu programu, protože váš kód má stejnou strukturu jako poslední XML.  

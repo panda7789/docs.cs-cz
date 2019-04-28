@@ -4,11 +4,11 @@ description: Další informace o deklarativní programování v jazyce C# pomoc�
 ms.date: 08/10/2016
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
 ms.openlocfilehash: a8ee40e5d4956667dd54cf25cc7993d041cba6e7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706556"
 ---
 # <a name="attributes"></a>Atributy
 

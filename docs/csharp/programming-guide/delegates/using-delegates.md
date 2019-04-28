@@ -6,11 +6,11 @@ helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
 ms.openlocfilehash: eb5721d1c04ad761821bcdae03159f290a802ec0
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979837"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711158"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Použití delegátů (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který zapouzdřuje bezpečně metodu, podobně jako ukazatel na funkci v jazyce C a C++. Na rozdíl od ukazatelů na funkce jazyka C Delegáti jsou objektově orientované, zadejte bezpečným a zabezpečeným. Podle názvu delegáta je definován typ delegátu. Následující příklad deklaruje delegáta s názvem `Del` , který může zapouzdřit metodu, která přijímá [řetězec](../../../csharp/language-reference/keywords/string.md) jako argument a vrátí [void](../../../csharp/language-reference/keywords/void.md):  

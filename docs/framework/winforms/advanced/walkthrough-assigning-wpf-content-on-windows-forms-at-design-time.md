@@ -9,22 +9,22 @@ helpviewer_keywords:
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
 ms.openlocfilehash: b4efef869c96ddb4e58445e45ecad12b5658f9f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748887"
 ---
 # <a name="walkthrough-assigning-wpf-content-on-windows-forms-at-design-time"></a>Návod: Přiřazení obsahu WPF v modelu Windows Forms během návrhu
 Tento názorný postup ukazují, jak vybrat typy ovládacích prvků Windows Presentation Foundation (WPF), které chcete zobrazit ve formuláři. Můžete vybrat všechny typy ovládacích prvků WPF, které jsou zahrnuty ve vašem projektu.
 
  V tomto podrobném návodu můžete provádět následující úlohy:
 
--   Vytvoření projektu.
+- Vytvoření projektu.
 
--   Vytvořte typy ovládacích prvků WPF.
+- Vytvořte typy ovládacích prvků WPF.
 
--   Vyberte ovládací prvky WPF.
+- Vyberte ovládací prvky WPF.
 
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -32,7 +32,7 @@ Tento názorný postup ukazují, jak vybrat typy ovládacích prvků Windows Pre
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   Visual Studio 2012.  
+- Visual Studio 2012.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu Windows Forms.  
@@ -42,7 +42,7 @@ Tento názorný postup ukazují, jak vybrat typy ovládacích prvků Windows Pre
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
--   Vytvořte nový projekt Formulářové aplikace Windows v jazyce Visual Basic nebo Visual C# s názvem `SelectingWpfContent`.  
+- Vytvořte nový projekt Formulářové aplikace Windows v jazyce Visual Basic nebo Visual C# s názvem `SelectingWpfContent`.  
   
 ## <a name="creating-the-wpf-control-types"></a>Vytváření typů ovládacích prvků WPF  
  Po přidání typy ovládacích prvků WPF k projektu, můžete je hostujte v různých <xref:System.Windows.Forms.Integration.ElementHost> ovládacích prvků.  

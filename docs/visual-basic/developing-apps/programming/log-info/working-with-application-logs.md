@@ -7,11 +7,11 @@ helpviewer_keywords:
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
 ms.openlocfilehash: 00c54a59ccfe2a49dcf35b322ca077a10a48ae7d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712080"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 

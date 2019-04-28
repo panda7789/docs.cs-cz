@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
 ms.openlocfilehash: 0540c52cf3e4cd7594f051c10832ea99cf58a34e
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44078892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756959"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Přístup ke XML v jazyce Visual Basic
 Visual Basic poskytuje vlastnosti osy XML pro přístup k a navigace [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] struktury. Tyto vlastnosti pomocí speciální syntaxe umožňuje přístup k prvkům a atributům tak, že zadáte názvy XML.  
@@ -31,16 +31,16 @@ Visual Basic poskytuje vlastnosti osy XML pro přístup k a navigace [!INCLUDE[s
 |*value*|`contacts...<name>.Value`|Získá řetězcovou reprezentaci objektu první v pořadí, nebo `Nothing` Pokud sekvence je prázdný.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Přístup k následnickým elementům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
+ [Postupy: Přístup k Následnickým elementům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
  Ukazuje, jak používat vlastnost Následnické osy pro přístup k všech elementů XML, které jsou obsaženy v rámci zadaného elementu XML, které mají zadaný název.  
   
- [Postupy: Přístup k podřízeným elementům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
+ [Postupy: Přístup XML podřízených elementů](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
  Ukazuje, jak používat podřízený – vlastnost osy pro přístup k všechny podřízené prvky XML, které mají zadaný název v elementu jazyka XML.  
   
  [Postupy: Přístup k atributům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-attributes.md)  
  Ukazuje, jak pomocí vlastnost osy atributu přístup ke všem atributům XML, které mají zadaný název v elementu jazyka XML.  
   
- [Postupy: Deklarace a používání předpon názvového prostoru XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
+ [Postupy: Deklarace a používání předpon Namespace XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
  Ukazuje, jak deklarovat předponu oboru názvů XML a použít ho k vytváření a přístup k elementům XML.  
   
 ## <a name="related-sections"></a>Související oddíly  

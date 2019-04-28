@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], element names
 ms.assetid: cc110118-b6cf-4ff9-a4e4-6233c90c9fbf
 ms.openlocfilehash: 2221f2677183cf360fa82a4d73a679a8b68927d1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761699"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>Názvy deklarovaných XML elementů a atributů (Visual Basic)
 Toto téma obsahuje pokyny pro Visual Basic pro vytváření názvů XML elementů a atributů v literálech XML.  V literálu XML můžete zadat místní název nebo kvalifikovaný název. Úplný název se skládá z předponu oboru názvů XML, dvojtečku a místní název. Další informace o předpon názvového prostoru XML, naleznete v tématu [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
@@ -21,17 +21,17 @@ Toto téma obsahuje pokyny pro Visual Basic pro vytváření názvů XML element
 ## <a name="rules"></a>pravidla  
  Místní název elementu nebo atributu v jazyce Visual Basic musí splňovat následující pravidla.  
   
--   Můžete začít s oborem názvů. Musí začínat znakem abecedy nebo podtržítkem (`_`).  
+- Můžete začít s oborem názvů. Musí začínat znakem abecedy nebo podtržítkem (`_`).  
   
--   Musí obsahovat jenom abecední znaky, desítkové číslice, podtržítka, tečky (.) a pomlčky (-).  
+- Musí obsahovat jenom abecední znaky, desítkové číslice, podtržítka, tečky (.) a pomlčky (-).  
   
--   Nesmí být více než 1024 znaků.  
+- Nesmí být více než 1024 znaků.  
   
--   Použití dvojteček, které se zobrazují v názvech označení vymezení oboru názvů. Proto můžete pomocí dvojtečky pouze k určení obor názvů XML pro konkrétní název.  
+- Použití dvojteček, které se zobrazují v názvech označení vymezení oboru názvů. Proto můžete pomocí dvojtečky pouze k určení obor názvů XML pro konkrétní název.  
   
  Kromě toho by měl splňovat následujícími pravidly.  
   
--   Specifikace XML 1.0 si vyhrazuje všechna jména začíná tímto řetězcem "xml" jakékoliv změny malá a velká písmena. Proto nepoužívejte tyto názvy pro prvek a atributů.  
+- Specifikace XML 1.0 si vyhrazuje všechna jména začíná tímto řetězcem "xml" jakékoliv změny malá a velká písmena. Proto nepoužívejte tyto názvy pro prvek a atributů.  
   
 ### <a name="name-length-guidelines"></a>Pokyny pro délka názvu  
  Prakticky, název by měl být co nejkratší při identifikaci zjevně povaze elementu. To zlepšuje čitelnost vašeho kódu a zmenší velikost řádku délku a zdrojový soubor.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
 ms.openlocfilehash: dd70feaba29e29748ac56729632fa359582a6914
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746652"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Postupy: Vytváření rozhraní ve stylu Průzkumníka Windows ve formuláři Windows Forms
 Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z důvodu jeho známý připravený.  
@@ -29,11 +29,11 @@ Windows Explorer je běžné volbou uživatelského rozhraní pro aplikace z dů
   
 2. Z **nástrojů**:  
   
-    1.  Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku na formulář.  
+    1. Přetáhněte <xref:System.Windows.Forms.SplitContainer> ovládacího prvku na formulář.  
   
-    2.  Přetáhněte <xref:System.Windows.Forms.TreeView> ovládací prvek do **SplitterPanel1** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **Panel1**).  
+    2. Přetáhněte <xref:System.Windows.Forms.TreeView> ovládací prvek do **SplitterPanel1** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **Panel1**).  
   
-    3.  Přetáhněte <xref:System.Windows.Forms.ListView> ovládací prvek do **SplitterPanel2** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **ovládací prvek Panel2**).  
+    3. Přetáhněte <xref:System.Windows.Forms.ListView> ovládací prvek do **SplitterPanel2** (panelu <xref:System.Windows.Forms.SplitContainer> označený ovládací prvek **ovládací prvek Panel2**).  
   
 3. Vyberte klávesy CTRL a kliknutím zase na všechny tři ovládací prvky. Když vyberete <xref:System.Windows.Forms.SplitContainer> řídit, klikněte na tlačítko rozdělovač, nikoli panelů.  
   

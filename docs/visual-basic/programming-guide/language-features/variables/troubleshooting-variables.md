@@ -6,11 +6,11 @@ helpviewer_keywords:
 - variables [Visual Basic], troubleshooting
 ms.assetid: 928a2dc8-e565-4ae4-8ba3-80cc0cb50090
 ms.openlocfilehash: 55d0fdcdbed4f994e50e83e5a25baf83c3ad79cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58831121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756751"
 ---
 # <a name="troubleshooting-variables-in-visual-basic"></a>Řešení potíží s proměnnými v jazyce Visual Basic
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s proměnnými v jazyce Visual Basic.  
@@ -18,9 +18,9 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
 ## <a name="unable-to-access-members-of-an-object"></a>Nelze získat přístup ke členům objektu  
  Pokud váš kód se pokusí získat přístup k vlastnosti nebo metody pro objekt, existují dvě možná chyba výsledků:  
   
--   Kompilátor může generovat chybovou zprávu, pokud deklarujete proměnnou objektu určitého typu a přečtěte si informace na člen nejsou definovány parametrem typu.  
+- Kompilátor může generovat chybovou zprávu, pokud deklarujete proměnnou objektu určitého typu a přečtěte si informace na člen nejsou definovány parametrem typu.  
   
--   Za běhu <xref:System.MemberAccessException> nastane, pokud objekt přiřazen do proměnné objektu nevystavuje člen váš kód se pokouší o přístup. V případě proměnné [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md), můžete také získat tuto výjimku, pokud člen není `Public`. Důvodem je, že pozdní vazby povolí přístup pouze k `Public` členy.  
+- Za běhu <xref:System.MemberAccessException> nastane, pokud objekt přiřazen do proměnné objektu nevystavuje člen váš kód se pokouší o přístup. V případě proměnné [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md), můžete také získat tuto výjimku, pokud člen není `Public`. Důvodem je, že pozdní vazby povolí přístup pouze k `Public` členy.  
   
  Když [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) kontrolu typů sad `On`, proměnné objektu přístupné pouze metody a vlastnosti třídy, se kterým se deklaruje. Toto dokládá následující příklad.  
 

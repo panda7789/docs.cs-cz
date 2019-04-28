@@ -6,11 +6,11 @@ helpviewer_keywords:
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
 ms.openlocfilehash: 07c13d22235f1198188d26122c137db1d91e64e8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755880"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Návod: Vytváření vlastních součástí naslouchajících protokolům (Visual Basic)
 Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nakonfigurujte ho tak, aby naslouchala na výstupu `My.Application.Log` objektu.  
@@ -20,7 +20,7 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
 #### <a name="to-create-the-listener"></a>Chcete-li vytvořit naslouchací proces  
   
--   Ve vaší aplikaci, vytvořte třídu s názvem `SimpleListener` , která dědí z <xref:System.Diagnostics.TraceListener>.  
+- Ve vaší aplikaci, vytvořte třídu s názvem `SimpleListener` , která dědí z <xref:System.Diagnostics.TraceListener>.  
   
      [!code-vb[VbVbalrMyApplicationLog#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#16)]  
   
@@ -64,7 +64,7 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
 #### <a name="to-determine-the-strong-name-of-the-listener"></a>Chcete-li zjistit silný název naslouchacího procesu  
   
--   Následující kód ukazuje, jak určit název silným názvem typu `SimpleListener`.  
+- Následující kód ukazuje, jak určit název silným názvem typu `SimpleListener`.  
   
      [!code-vb[VbVbalrMyApplicationLog#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#17)]  
   
@@ -80,11 +80,11 @@ Tento návod ukazuje, jak vytvořit vlastní protokol naslouchací proces a nako
   
      Pokud je soubor app.config:  
   
-    1.  Na **projektu** nabídce zvolte **přidat novou položku**.  
+    1. Na **projektu** nabídce zvolte **přidat novou položku**.  
   
-    2.  Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
+    2. Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na **Přidat**.  
+    3. Klikněte na **Přidat**.  
   
 2. Vyhledejte `<listeners>` sekci `<source>` části s `name` atribut "DefaultSource" v `<sources>` oddílu. `<sources>` Je umístěna v `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   

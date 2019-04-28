@@ -11,11 +11,11 @@ helpviewer_keywords:
 - text boxes [Windows Forms], controlling insertion point
 ms.assetid: 5bee7d34-5121-429e-ab1f-d8ff67bc74c1
 ms.openlocfilehash: 43fdb023f19aa988dfef3dcd68443d6f59808472
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746625"
 ---
 # <a name="how-to-control-the-insertion-point-in-a-windows-forms-textbox-control"></a>Postupy: Řízení místa vložení v ovládacím prvku Windows Forms TextBox
 Když prvku Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek nejprve dostane fokus, je výchozí kurzor v textovém poli na levé straně jakýkoli existující text. Uživatel může přesunout kurzor pomocí klávesnice nebo myši. Pokud textové pole ztratí a potom získá fokus, kurzor se všude, kde uživatel naposledy vložili.  
@@ -59,7 +59,7 @@ Když prvku Windows Forms <xref:System.Windows.Forms.TextBox> ovládací prvek n
   
 #### <a name="to-make-the-text-box-insertion-point-visible-by-default-on-a-new-form"></a>Ke zviditelnění pole kurzor text ve výchozím nastavení nový formulář  
   
--   Nastavte <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost `0`.  
+- Nastavte <xref:System.Windows.Forms.TextBox> ovládacího prvku <xref:System.Windows.Forms.Control.TabIndex%2A> vlastnost `0`.  
   
 ## <a name="see-also"></a>Viz také:
 

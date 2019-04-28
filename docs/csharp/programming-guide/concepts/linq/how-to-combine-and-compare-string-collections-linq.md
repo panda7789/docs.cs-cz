@@ -3,11 +3,11 @@ title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
 ms.openlocfilehash: 5f8d734738606ada2db6db7f3c8e6c08ca57a543
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59323743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702292"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)
 Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.  

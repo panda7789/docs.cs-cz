@@ -3,11 +3,11 @@ title: 5607 – PrincipalSettingFromSessionTokenSuccess
 ms.date: 03/30/2017
 ms.assetid: f36cf68c-58e2-4bdd-bed9-eb7727650010
 ms.openlocfilehash: 05cb5f6cb465ce16c8e1410bda47e034ad0572f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33468189"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767283"
 ---
 # <a name="5607---principalsettingfromsessiontokensuccess"></a>5607 – PrincipalSettingFromSessionTokenSuccess
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33468189"
 |||  
 |-|-|  
 |ID|5607|  
-|Klíčová slova|Zabezpečení|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|Zabezpečení|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při nastavení hlavní z tokenu relace byla úspěšná.  
+ Tato událost je vygenerován při nastavení objektu zabezpečení z tokenu relace byla úspěšná.  
   
 ## <a name="message"></a>Zpráva  
- Hlavní nastavení z tokenu relace byla úspěšná.  
+ Nastavení objektu zabezpečení z tokenu relace se zdařilo.  
   
 ## <a name="details"></a>Podrobnosti

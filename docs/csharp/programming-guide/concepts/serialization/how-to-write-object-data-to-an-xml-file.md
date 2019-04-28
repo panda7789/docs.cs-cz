@@ -3,11 +3,11 @@ title: 'Postupy: Zápis dat objektů do souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
 ms.openlocfilehash: 064d7ed61921f3f700311a1b09ee77e0c9818d71
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710950"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>Postupy: Zápis dat objektů do souboru XML (C#)
 Tento příklad zapíše objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -50,13 +50,13 @@ public class XMLWrite
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Serializovaná třída nemá veřejný konstruktor bez parametrů.  
+- Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
--   Soubor existuje a je jen pro čtení (<xref:System.IO.IOException>).  
+- Soubor existuje a je jen pro čtení (<xref:System.IO.IOException>).  
   
--   Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
--   Disk je plný (<xref:System.IO.IOException>).  
+- Disk je plný (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje vytvořit soubor, pak tato aplikace potřebuje `Create` přístup ke složce. Pokud soubor již existuje, aplikace potřebuje pouze `Write` přístup, a menší oprávnění. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a udělit pouze `Read` přístup do jednoho souboru, spíše než `Create` přístup ke složce.  

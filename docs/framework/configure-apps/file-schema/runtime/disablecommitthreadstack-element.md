@@ -11,11 +11,11 @@ ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 08ffd6ffcb9a8fa356d486f6d2ae1113de0fa682
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674217"
 ---
 # <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> Element
 Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.  
@@ -41,7 +41,7 @@ Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |0|Nezakazujte výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
 |1|Zakážete výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
 ms.openlocfilehash: b96fe4790aac7ff5ff5394cbaaeaddc1e334e96c
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689330"
 ---
 # <a name="-operator-c-reference"></a>?? operator (Referenční dokumentace jazyka C#)
 
@@ -40,6 +40,6 @@ Další informace najdete v tématu [null operátor sloučení](~/_csharplang/sp
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C#operátory](index.md)
+- [Operátory jazyka C#](index.md)
 - [Typy s povolenou hodnotou Null](../../programming-guide/nullable-types/index.md)
 - [Co přesně se pojem "zrušeno" znamenají?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)

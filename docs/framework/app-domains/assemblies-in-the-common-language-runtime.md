@@ -15,34 +15,34 @@ ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eefd3773d26fe71741668a9df366f041ba0ae0a4
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675582"
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>Sestavení v modulu CLR (Common Language Runtime)
 Sestavení jsou stavební bloky aplikací rozhraní .NET Framework. Tvoří základní jednotku nasazení, správy verzí, opětovného použití, rozsahu platnosti při aktivaci a oprávnění zabezpečení. Sestavení je kolekce typů a prostředků, které jsou vytvořeny tak, aby vzájemně spolupracovaly a tvořily logickou jednotku funkčnosti. Sestavení poskytuje modulu CLR (Common Language Runtime) informace, které požaduje pro zjištění typu implementace. V modulu runtime neexistuje typ mimo kontext sestavení.  
   
  Sestavení provádí následující funkce:  
   
--   Obsahuje kód, který modul CLR (Common Language Runtime) provádí. Kód jazyka MSIL (Microsoft Intermediate Language) v přenositelném spustitelném souboru (PE) nebude spuštěn, pokud mu nebyl přiřazen manifest sestavení. Jednotlivá sestavení mohou mít pouze jeden vstupní bod (tedy `DllMain`, `WinMain` nebo `Main`).  
+- Obsahuje kód, který modul CLR (Common Language Runtime) provádí. Kód jazyka MSIL (Microsoft Intermediate Language) v přenositelném spustitelném souboru (PE) nebude spuštěn, pokud mu nebyl přiřazen manifest sestavení. Jednotlivá sestavení mohou mít pouze jeden vstupní bod (tedy `DllMain`, `WinMain` nebo `Main`).  
   
--   Vymezuje hranice zabezpečení. Sestavení je jednotka, ve které jsou požadována a udělována oprávnění. Další informace o zabezpečení hranice, jak se vztahují na sestavení, naleznete v [důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md).  
+- Vymezuje hranice zabezpečení. Sestavení je jednotka, ve které jsou požadována a udělována oprávnění. Další informace o zabezpečení hranic, která je použita k sestavení, naleznete v tématu [důležité informace o zabezpečení sestavení](../../../docs/framework/app-domains/assembly-security-considerations.md).  
   
--   Definuje omezení typu. Jednotlivé identity typu zahrnují název sestavení, ve kterém se nachází. Typ s názvem `MyType`, který je načten v oboru jednoho sestavení, není stejný jako typ s názvem `MyType`, který je načten v oboru jiného sestavení.  
+- Definuje omezení typu. Jednotlivé identity typu zahrnují název sestavení, ve kterém se nachází. Typ s názvem `MyType`, který je načten v oboru jednoho sestavení, není stejný jako typ s názvem `MyType`, který je načten v oboru jiného sestavení.  
   
--   Definuje hranici oboru referencí. Manifest sestavení obsahuje metadata sestavení, která se používají pro překlad typů a která plní požadavky prostředků. Určuje typy a prostředky, které jsou vystaveny mimo sestavení. Manifest také jmenovitě uvádí jiná sestavení, na kterých závisí.  
+- Definuje hranici oboru referencí. Manifest sestavení obsahuje metadata sestavení, která se používají pro překlad typů a která plní požadavky prostředků. Určuje typy a prostředky, které jsou vystaveny mimo sestavení. Manifest také jmenovitě uvádí jiná sestavení, na kterých závisí.  
   
--   Definuje omezení verze. Sestavení je nejmenší jednotka schopná správy verzí v modulu CLR (Common Language Runtime). Všechny typy a prostředky ve stejném sestavení jsou označeny stejnou verzí jako celek. Manifest sestavení popisuje závislosti verzí zadané pro všechna závislá sestavení. Další informace o správě verzí, naleznete v části [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md).  
+- Definuje omezení verze. Sestavení je nejmenší jednotka schopná správy verzí v modulu CLR (Common Language Runtime). Všechny typy a prostředky ve stejném sestavení jsou označeny stejnou verzí jako celek. Manifest sestavení popisuje závislosti verzí zadané pro všechna závislá sestavení. Další informace o správě verzí naleznete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md).  
   
--   Vytváří jednotku nasazení. Při spuštění aplikace je nutné, aby byla k dispozici pouze ta sestavení, která aplikace zpočátku volá. Jiná sestavení, jako například prostředky lokalizace nebo sestavení obsahující užitkové třídy, mohou být načtena na požádání. Díky tomu si aplikace při prvním stažení ponechávají malou velikost a jednoduchost. Další informace o nasazení sestavení najdete v tématu [nasazení aplikací](../../../docs/framework/deployment/index.md).  
+- Vytváří jednotku nasazení. Při spuštění aplikace je nutné, aby byla k dispozici pouze ta sestavení, která aplikace zpočátku volá. Jiná sestavení, jako například prostředky lokalizace nebo sestavení obsahující užitkové třídy, mohou být načtena na požádání. Díky tomu si aplikace při prvním stažení ponechávají malou velikost a jednoduchost. Další informace o nasazování sestavení naleznete v tématu [nasazování aplikací](../../../docs/framework/deployment/index.md).  
   
--   Je to jednotka, ve které je podporováno souběžné spouštění. Další informace o spuštění více verzí sestavení najdete v tématu [sestavení a spuštění vedle sebe](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md).  
+- Je to jednotka, ve které je podporováno souběžné spouštění. Další informace o spouštění více verzí sestavení naleznete v tématu [sestavení a spuštění vedle sebe](../../../docs/framework/app-domains/assemblies-and-side-by-side-execution.md).  
   
  Sestavení mohou být statická nebo dynamická. Statická sestavení mohou zahrnovat typy rozhraní .NET Framework (rozhraní a třídy) i prostředky pro sestavení (rastrové obrázky, soubory JPEG, soubory prostředků atd.). Statická sestavení jsou uložena na disku v přenosných spustitelných souborech (PE). Rozhraní .NET Framework můžete použít také k vytváření dynamických sestavení, která jsou spouštěna přímo z paměti a před spuštěním nejsou uložena na disk. Na disk můžete dynamická sestavení uložit až poté, co jsou spuštěna.  
   
- Existuje několik způsobů vytváření sestavení. Můžete použít nástroje pro vývoj, jako je například Visual Studio, který jste použili v minulosti. Chcete-li vytvořit soubory .dll nebo .exe. Také je možné použít nástroje, které poskytuje rozhraní [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] k vytváření sestavení s moduly vytvořenými v jiných vývojových prostředích. Můžete také použít modul common language runtime rozhraní API, například <xref:System.Reflection.Emit?displayProperty=nameWithType>, k vytvoření dynamických sestavení.  
+ Existuje několik způsobů vytváření sestavení. Můžete použít vývojářské nástroje, jako je Visual Studio, který jste použili v minulosti k vytvoření souborů .dll nebo .exe. Také je možné použít nástroje, které poskytuje rozhraní [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)] k vytváření sestavení s moduly vytvořenými v jiných vývojových prostředích. Modul common language runtime rozhraní API, můžete použít také jako <xref:System.Reflection.Emit?displayProperty=nameWithType>, k vytváření dynamických sestavení.  
   
 ## <a name="related-topics"></a>Související témata  
   

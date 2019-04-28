@@ -3,11 +3,11 @@ title: 5005 – ImportKnownTypesStart
 ms.date: 03/30/2017
 ms.assetid: e70c9c92-833d-4e88-b129-1decf7a0491d
 ms.openlocfilehash: e9f41ea0584ff42006958c228de09f7868df9a07
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33466811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699737"
 ---
 # <a name="5005---importknowntypesstart"></a>5005 – ImportKnownTypesStart
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33466811"
 |||  
 |-|-|  
 |ID|5005|  
-|Klíčová slova|Serializace|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|Serializace|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při spuštění ImportKnownTypes.  
+ Tato událost je vygenerován při spuštění ImportKnownTypes.  
   
 ## <a name="message"></a>Zpráva  
- ImportKnownTypes spustit.  
+ Operace importknowntypes.  
   
 ## <a name="details"></a>Podrobnosti

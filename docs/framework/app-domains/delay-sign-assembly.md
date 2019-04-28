@@ -15,11 +15,11 @@ ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fc955ca892a8a0e5d15710b76a6a1c798ad4ecf5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705724"
 ---
 # <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení
 Organizace může mít úzce strážených pár klíčů, že vývojáři nebudou mít přístup k každý den. Veřejný klíč je často k dispozici, ale přístup k privátnímu klíči je omezen pouze několika jednotlivcům. Při vývoji podepisují sestavení silnými názvy, každé sestavení této cílové sestavení silným názvem odkazy obsahuje token veřejný klíč slouží k pojmenování cílové sestavení silným názvem. To vyžaduje veřejný klíč k dispozici během procesu vývoje.  
@@ -32,9 +32,9 @@ Organizace může mít úzce strážených pár klíčů, že vývojáři nebudo
   
 2. Přidat poznámku zdrojového kódu pro sestavení pomocí dvou vlastních atributů z <xref:System.Reflection>:  
   
-    -   <xref:System.Reflection.AssemblyKeyFileAttribute>, který předává název souboru, který obsahuje veřejný klíč jako parametr konstruktoru.  
+    - <xref:System.Reflection.AssemblyKeyFileAttribute>, který předává název souboru, který obsahuje veřejný klíč jako parametr konstruktoru.  
   
-    -   <xref:System.Reflection.AssemblyDelaySignAttribute>, což znamená, že zpožděné podepisování se používá předáním **true** jako parametr konstruktoru. Příklad:  
+    - <xref:System.Reflection.AssemblyDelaySignAttribute>, což znamená, že zpožděné podepisování se používá předáním **true** jako parametr konstruktoru. Příklad:  
   
          [!code-cpp[AssemblyDelaySignAttribute#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#4)]
          [!code-csharp[AssemblyDelaySignAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#4)]

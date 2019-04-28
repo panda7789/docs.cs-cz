@@ -11,11 +11,11 @@ helpviewer_keywords:
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 ms.openlocfilehash: 34753d538ff37ac4ae621f653d47ac92ac6749a0
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705373"
 ---
 # <a name="compiler-element"></a>\<Kompilátor > – Element
 
@@ -45,7 +45,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |---------------|-----------------|
 |`compilerOptions`|Nepovinný atribut.<br /><br /> Určuje další argumenty kompilátoru specifické pro kompilaci. Hodnoty `compilerOptions` atribut jsou obvykle uvedeny v tématu možnosti kompilátoru pro kompilátor.|
 |`extension`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam přípon názvů souborů používá zdrojové soubory pro poskytovatele jazyka. Například "cs".|
-|`language`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam názvů jazyka podporována zprostředkovatelem jazyka. Například "C#; cs; csharp".|
+|`language`|Požadovaný atribut.<br /><br /> Poskytuje středníkem oddělený seznam názvů jazyka podporována zprostředkovatelem jazyka. Například "c#; cs; csharp".|
 |`type`|Požadovaný atribut.<br /><br /> Určuje název typu poskytovatele jazyka, včetně název sestavení obsahujícího implementaci zprostředkovatele. Název typu, musí splňovat požadavky definované v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|
 |`warningLevel`|Nepovinný atribut.<br /><br /> Určuje výchozí úroveň upozornění kompilátoru; Určuje úroveň, kdy zprostředkovatel jazyka zpracuje kompilace upozornění jako chyby.|
 

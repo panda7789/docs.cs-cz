@@ -7,17 +7,17 @@ helpviewer_keywords:
 - generics [C#], default keyword
 - default keyword [C#], generic programming
 ms.openlocfilehash: 8e10a5de73e8d49f1a380fb8945b98ac797ef270
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54575538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710885"
 ---
 # <a name="default-value-expressions-c-programming-guide"></a>výrazy s výchozími hodnotami (C# programovací příručka)
 
 Výraz výchozí hodnoty `default(T)` vytvoří výchozí hodnota typu `T`. V následující tabulce jsou uvedeny hodnoty, které jsou vytvořeny pro různé typy:
 
-|Typ|Výchozí hodnota|
+|Type|Výchozí hodnota|
 |---------|---------|
 |jakéhokoliv odkazového typu|`null`|
 |Zadejte číselnou hodnotu|Nula|

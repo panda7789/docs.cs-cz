@@ -13,11 +13,11 @@ ms.assetid: f356116d-e415-4f7c-a332-6e6a60227192
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f3011bd0327440cd04d5eccf5f88c036ddd76267
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212177"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705581"
 ---
 # <a name="how-to-unload-an-application-domain"></a>Postupy: Uvolnění domény aplikace
 Po dokončení používání domény aplikace, odinstalovat ji pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metody. **Uvolnění** metoda řádně ukončí zadanou doménu aplikace. Během procesu uvolnění žádná nová vlákna můžete přístup k doméně aplikace a všechny aplikace domény specifické datové struktury jsou uvolněny.  

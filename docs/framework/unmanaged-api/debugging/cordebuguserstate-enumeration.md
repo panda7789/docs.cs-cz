@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c54b2af6e7a200db89bfd7335868a629d7a886fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59141307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61724093"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState – výčet
 Určuje stav uživatele vlákna.  
@@ -44,7 +44,7 @@ typedef enum CorDebugUserState {
   
 ## <a name="members"></a>Členové  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`USER_STOP_REQUESTED`|Bylo vyžádáno ukončení vlákna.|  
 |`USER_SUSPEND_REQUESTED`|Se požaduje pozastavení vlákna.|  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
 ms.openlocfilehash: 7166c27a946fb76c9351647ac6465c151866a2ad
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61681205"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Postupy: Deklarování, vytváření instancí a použití delegáta (C# Průvodce programováním v)
 V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v následujícím příkladu.  
@@ -42,7 +42,7 @@ V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v 
   
 ## <a name="robust-programming"></a>Robustní programování  
   
--   Deklarace delegáta.  
+- Deklarace delegáta.  
   
      Následující příkaz deklaruje nový typ delegáta.  
   
@@ -50,7 +50,7 @@ V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v 
   
      Každý typ delegáta popisuje počet a typy argumentů a typ vrácené hodnoty metod, které může zapouzdřit. Pokaždé, když je potřeba nová sada typy argumentů nebo typ vrácené hodnoty, musí být deklarován nový typ delegáta.  
   
--   Vytvoření instance delegáta.  
+- Vytvoření instance delegáta.  
   
      Poté, co je deklarovaný typ delegáta, objektu delegáta musí vytvořit a přidružený k určité metodě. V předchozím příkladu, můžete to provést předáním `PrintTitle` metodu `ProcessPaperbackBooks` metody jako v následujícím příkladu:  
   
@@ -64,7 +64,7 @@ V jazyce C# 1.0 nebo novější delegáty lze deklarovat, jak je znázorněno v 
   
      Po vytvoření delegáta metodě je přidružen k nikdy změny. Delegát objekty jsou neměnné.  
   
--   Volání delegáta.  
+- Volání delegáta.  
   
      Po vytvoření objektu delegáta objekt delegáta je obvykle předat jiným kódem, který bude volání delegáta. Objekt delegáta je volána za použití názvu objektu delegáta, za nímž následuje argumenty v závorce má být předán delegáta. Následuje příklad volání delegáta:  
   

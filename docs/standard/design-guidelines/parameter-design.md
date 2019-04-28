@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
 author: KrzysztofCwalina
 ms.openlocfilehash: 5a0f6e0fab5d0f2fe8574e348fc6b8ae726eeb99
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757401"
 ---
 # <a name="parameter-design"></a>Návrh parametru
 Tato část obsahuje pokyny pro široké parametr návrh, včetně oddíly s pokyny pro kontrolu argumenty. Kromě toho by měla odkazovat na pokynů popsaných v [Naming Parameters](../../../docs/standard/design-guidelines/naming-parameters.md).  

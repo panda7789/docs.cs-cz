@@ -10,26 +10,26 @@ helpviewer_keywords:
 - interoperability [WPF]
 ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
 ms.openlocfilehash: 306c042fe432f0c087ceb1b5ff6b5aec0fe0bbc7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748249"
 ---
 # <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>Návod: Uspořádání obsahu WPF v modelu Windows Forms během návrhu
 Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).
 
  V tomto podrobném návodu můžete provádět následující úlohy:
 
--   Vytvoření projektu.
+- Vytvoření projektu.
 
--   Vytvoření ovládacího prvku WPF.
+- Vytvoření ovládacího prvku WPF.
 
--   Hostitelské ovládací prvky WPF v panelu rozložení.
+- Hostitelské ovládací prvky WPF v panelu rozložení.
 
--   Pomocí zarovnávacích čar Zarovnat ovládací prvky WPF.
+- Pomocí zarovnávacích čar Zarovnat ovládací prvky WPF.
 
--   Ukotvení a ovládacích prvků WPF.
+- Ukotvení a ovládacích prvků WPF.
 
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -37,7 +37,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   Visual Studio 2012.  
+- Visual Studio 2012.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu Windows Forms.  
@@ -47,7 +47,7 @@ Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako j
   
 #### <a name="to-create-the-project"></a>Vytvoření projektu  
   
--   Vytvořte nový projekt Formulářové aplikace Windows v jazyce Visual Basic nebo Visual C# s názvem `ArrangeElementHost`.  
+- Vytvořte nový projekt Formulářové aplikace Windows v jazyce Visual Basic nebo Visual C# s názvem `ArrangeElementHost`.  
   
 ## <a name="creating-the-wpf-control"></a>Vytvoření ovládacího prvku WPF  
  Po přidání ovládacího prvku WPF do projektu, můžete je nastavit na formuláři.  

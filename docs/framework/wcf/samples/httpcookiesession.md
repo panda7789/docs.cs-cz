@@ -3,24 +3,24 @@ title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
 ms.openlocfilehash: 801fc6baed623c920e5a20163782bc9d6551a6da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772983"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752734"
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
 Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubory cookie protokolu HTTP pro správu relací. Tento kanál umožňuje komunikaci mezi službami Windows Communication Foundation (WCF) a klienti ASMX nebo mezi klienty v WCF a službami ASMX.  
   
  Když klient volá webové metodě v ASMX webové služby, která je založená na relace [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] modul provede následující akce:  
   
--   Vygeneruje jedinečné ID (ID relace).  
+- Vygeneruje jedinečné ID (ID relace).  
   
--   Generuje objekt relace a přidruží ji k jedinečné ID.  
+- Generuje objekt relace a přidruží ji k jedinečné ID.  
   
--   Přidá hlavičku odpovědi Set-Cookie HTTP jedinečné ID a odešle ho klientovi.  
+- Přidá hlavičku odpovědi Set-Cookie HTTP jedinečné ID a odešle ho klientovi.  
   
--   Identifikuje klienta v následných voláních na základě ID relace, že se že odešle do ní.  
+- Identifikuje klienta v následných voláních na základě ID relace, že se že odešle do ní.  
   
  Klient zahrne toto ID relace v následných požadavcích na server. Tento server využívá ID relace, od klienta k načtení objektu odpovídající relace pro aktuální kontext HTTP.  
   
@@ -39,7 +39,7 @@ Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubo
 ## <a name="service-channel"></a>Služba kanálu  
  Ukázka poskytuje kanál služby v `HttpCookieReplySessionChannelListener` třídy. Tato třída implementuje <xref:System.ServiceModel.Channels.IChannelListener> rozhraní a převede <xref:System.ServiceModel.Channels.IReplyChannel> kanál z níže v kanálu zásobník, aby <xref:System.ServiceModel.Channels.IReplySessionChannel>. Tento proces je možné rozdělit do těchto částí:  
   
--   Po otevření modul pro naslouchání kanálu přijímá vnitřního kanálu z jeho vnitřní naslouchacího procesu. Protože vnitřní naslouchací proces běží naslouchací proces datagram a životního cyklu přijetí kanálu je oddělený od životnost naslouchací proces, můžeme zavřít vnitřní naslouchací proces a pouze blokovat vnitřního kanálu  
+- Po otevření modul pro naslouchání kanálu přijímá vnitřního kanálu z jeho vnitřní naslouchacího procesu. Protože vnitřní naslouchací proces běží naslouchací proces datagram a životního cyklu přijetí kanálu je oddělený od životnost naslouchací proces, můžeme zavřít vnitřní naslouchací proces a pouze blokovat vnitřního kanálu  
   
     ```  
                 this.innerChannelListener.Open(timeoutHelper.RemainingTime());  
@@ -48,7 +48,7 @@ Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubo
     this.innerChannelListener.Close(timeoutHelper.RemainingTime());  
     ```  
   
--   Po dokončení procesu otevřít nastavíme smyčky zpráv pro příjem zpráv z vnitřního kanálu.  
+- Po dokončení procesu otevřít nastavíme smyčky zpráv pro příjem zpráv z vnitřního kanálu.  
   
     ```  
     IAsyncResult result = BeginInnerReceiveRequest();  
@@ -63,7 +63,7 @@ Tento příklad ukazuje, jak vytvořit vlastní protokol kanál používat soubo
     }  
     ```  
   
--   Při přijetí e-mailu, kanál služba zkontroluje identifikátor relace a rušit spojuje do kanálu odpovídající relace. Modul pro naslouchání kanálu udržuje slovník, který mapuje identifikátory relace instancí kanálu relace.  
+- Při přijetí e-mailu, kanál služba zkontroluje identifikátor relace a rušit spojuje do kanálu odpovídající relace. Modul pro naslouchání kanálu udržuje slovník, který mapuje identifikátory relace instancí kanálu relace.  
   
     ```  
     Dictionary<string, IReplySessionChannel> channelMapping;  

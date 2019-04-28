@@ -15,11 +15,11 @@ helpviewer_keywords:
 - text [Windows Forms], vertical text
 ms.assetid: 717a6131-00f6-4373-b574-9894e8317799
 ms.openlocfilehash: eb00928205a318b068d49ea3f6f71c398f77bbcd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61722910"
 ---
 # <a name="how-to-draw-vertical-text-on-a-windows-form"></a>Postupy: Kreslení svislého textu na formuláři Windows
 Následující příklad kódu ukazuje, jak s použitím kreslení svislého textu ve formuláři <xref:System.Drawing.Graphics.DrawString%2A> metoda <xref:System.Drawing.Graphics>.  
@@ -35,7 +35,7 @@ Následující příklad kódu ukazuje, jak s použitím kreslení svislého tex
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Arial písmo není nainstalováno.  
+- Arial písmo není nainstalováno.  
   
 ## <a name="see-also"></a>Viz také:
 

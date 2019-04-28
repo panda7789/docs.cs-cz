@@ -11,26 +11,26 @@ helpviewer_keywords:
 - FlashTrackBar custom control
 ms.assetid: 24c5a2e3-058c-4b8d-a217-c06e6a130c2f
 ms.openlocfilehash: 1f457d6e2b0eb73da7a16dc93ea80a14ddb4b2c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746685"
 ---
 # <a name="how-to-create-a-windows-forms-control-that-shows-progress"></a>Postupy: Vytvoření ovládacího prvku Windows Forms zobrazujícího průběh
 Následující příklad kódu ukazuje vlastního ovládacího prvku volá `FlashTrackBar` , který umožňuje zobrazit uživatele, úroveň nebo průběh aplikace. Použije barevný přechod vizuálně znázornit průběh.  
   
  `FlashTrackBar` Ovládací prvek znázorňuje tyto koncepty:  
   
--   Definování vlastních vlastností.  
+- Definování vlastních vlastností.  
   
--   Definování vlastních událostí. (`FlashTrackBar` definuje `ValueChanged` události.)  
+- Definování vlastních událostí. (`FlashTrackBar` definuje `ValueChanged` události.)  
   
--   Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metodu k dispozici logiku pro vykreslení ovládacího prvku.  
+- Přepsání <xref:System.Windows.Forms.Control.OnPaint%2A> metodu k dispozici logiku pro vykreslení ovládacího prvku.  
   
--   Výpočetní oblasti k dispozici pro vykreslení ovládacího prvku s použitím jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost. `FlashTrackBar` to dělá jeho `OptimizedInvalidate` metoda.  
+- Výpočetní oblasti k dispozici pro vykreslení ovládacího prvku s použitím jeho <xref:System.Windows.Forms.Control.ClientRectangle%2A> vlastnost. `FlashTrackBar` to dělá jeho `OptimizedInvalidate` metoda.  
   
--   Implementace serializace nebo trvalosti pro vlastnost, když se změní v Návrháři formulářů Windows. `FlashTrackBar` definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.  
+- Implementace serializace nebo trvalosti pro vlastnost, když se změní v Návrháři formulářů Windows. `FlashTrackBar` definuje `ShouldSerializeStartColor` a `ShouldSerializeEndColor` metody pro serializaci jeho `StartColor` a `EndColor` vlastnosti.  
   
  V následující tabulce jsou uvedeny vlastní vlastnosti definované `FlashTrackBar`.  
   
@@ -59,23 +59,23 @@ Následující příklad kódu ukazuje vlastního ovládacího prvku volá `Flas
   
  Pro zpracování odpovídající *EventName* události, `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   
--   <xref:System.Windows.Forms.Control.OnPaint%2A>  
+- <xref:System.Windows.Forms.Control.OnPaint%2A>  
   
--   <xref:System.Windows.Forms.Control.OnMouseDown%2A>  
+- <xref:System.Windows.Forms.Control.OnMouseDown%2A>  
   
--   <xref:System.Windows.Forms.Control.OnMouseMove%2A>  
+- <xref:System.Windows.Forms.Control.OnMouseMove%2A>  
   
--   <xref:System.Windows.Forms.Control.OnMouseUp%2A>  
+- <xref:System.Windows.Forms.Control.OnMouseUp%2A>  
   
--   <xref:System.Windows.Forms.Control.OnResize%2A>  
+- <xref:System.Windows.Forms.Control.OnResize%2A>  
   
  Pro zpracování odpovídající události změny vlastnosti `FlashTrackBar` přepíše následující metody, které dědí z <xref:System.Windows.Forms.Control?displayProperty=nameWithType>:  
   
--   <xref:System.Windows.Forms.Control.OnBackColorChanged%2A>  
+- <xref:System.Windows.Forms.Control.OnBackColorChanged%2A>  
   
--   <xref:System.Windows.Forms.Control.OnBackgroundImageChanged%2A>  
+- <xref:System.Windows.Forms.Control.OnBackgroundImageChanged%2A>  
   
--   <xref:System.Windows.Forms.Control.OnTextChanged%2A>  
+- <xref:System.Windows.Forms.Control.OnTextChanged%2A>  
   
 ## <a name="example"></a>Příklad  
  `FlashTrackBar` Ovládací prvek definuje dvě editory typů uživatelského rozhraní, `FlashTrackBarValueEditor` a `FlashTrackBarDarkenByEditor`, které jsou uvedeny v následující výpis kódu. `HostApp` Třídy používá `FlashTrackBar` ovládací prvek na formuláři Windows.  

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
 ms.openlocfilehash: 9142c5abbbd3839caac377876ba54258cdf916b4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689745"
 ---
 # <a name="identify-domain-model-boundaries-for-each-microservice"></a>Identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb
 

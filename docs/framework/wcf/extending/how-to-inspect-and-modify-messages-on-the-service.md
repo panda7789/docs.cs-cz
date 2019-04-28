@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 9c5b1cc7-84f3-45f8-9226-d59c278e8c42
 ms.openlocfilehash: 87f9cf5040ffb757799c51d598d0755847c5bfd9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767088"
 ---
 # <a name="how-to-inspect-and-modify-messages-on-the-service"></a>Postupy: Kontrola a změny zpráv ve službě
 Může kontrola nebo úprava příchozí a odchozí zprávy přes klienta Windows Communication Foundation (WCF) implementací <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector?displayProperty=nameWithType> a jejich vložení do modulu runtime služby. Další informace najdete v tématu [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md). Je ekvivalentní funkce ve službě <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType>.  
@@ -26,11 +26,11 @@ Může kontrola nebo úprava příchozí a odchozí zprávy přes klienta Window
 ## <a name="example"></a>Příklad  
  Následující příklady kódu zobrazit v pořadí:  
   
--   Inspektor implementaci služby.  
+- Inspektor implementaci služby.  
   
--   Chování služby, který se vkládá inspektor.  
+- Chování služby, který se vkládá inspektor.  
   
--   Konfigurační soubor, který načte a spustí chování v aplikaci služby.  
+- Konfigurační soubor, který načte a spustí chování v aplikaci služby.  
   
  [!code-csharp[Interceptors#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#7)]
  [!code-vb[Interceptors#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#7)]  

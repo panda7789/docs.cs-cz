@@ -3,11 +3,11 @@ title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)'
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
 ms.openlocfilehash: a40ff5ddcf606b0de8a1f41d96523526dc849462
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54571334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702071"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)
 

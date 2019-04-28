@@ -3,11 +3,11 @@ title: <add> z <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
 ms.openlocfilehash: 399fc4e22a9253469a5494af61dac862e33814a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59128697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704541"
 ---
 # <a name="add-of-filters"></a>\<Přidat > z \<filtry >
 Filtr XPath určující druh zaznamenávané zprávy.  

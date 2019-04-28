@@ -12,11 +12,11 @@ ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6a4741c6a4745bdba00fdb525b39b70d0b15e005
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704853"
 ---
 # <a name="qualifyassembly-element"></a>\<qualifyassembly – > – Element
 Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.  

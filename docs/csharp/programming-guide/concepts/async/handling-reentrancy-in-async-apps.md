@@ -3,11 +3,11 @@ title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async 
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
 ms.openlocfilehash: 5774aab9357c5af58cd1ee664066ba5e4ee9b1f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702708"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (C#)
 

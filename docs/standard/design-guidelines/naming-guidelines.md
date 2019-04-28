@@ -1,5 +1,5 @@
 ---
-title: Pokyny pro pojmenování
+title: Pokyny k pojmenování
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
 author: KrzysztofCwalina
 ms.openlocfilehash: 4c7f411bdf538762de18873007c839f66911f96a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757258"
 ---
-# <a name="naming-guidelines"></a>Pokyny pro pojmenování
+# <a name="naming-guidelines"></a>Pokyny k pojmenování
 Následující konzistentní sadu konvence pojmenování ve vývoji rozhraní může být hlavní příspěvek do rozhraní framework použitelnost. To umožňuje rozhraní pro mnoho vývojářů na široce oddělených projektech. Nad rámec konzistence formuláře názvy prvků framework snadno pochopitelný a musí obsahovat funkci jednotlivých prvků.  
   
  Cílem této kapitole je sada konzistentní zásady vytváření názvů, jehož výsledkem názvy, které dávají smysl okamžité pro vývojáře.  
@@ -35,7 +35,7 @@ Následující konzistentní sadu konvence pojmenování ve vývoji rozhraní m�
  [Názvy členů typu](../../../docs/standard/design-guidelines/names-of-type-members.md)  
  [Parametry pojmenování](../../../docs/standard/design-guidelines/naming-parameters.md)  
  [Prostředky pojmenování](../../../docs/standard/design-guidelines/naming-resources.md)  
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   

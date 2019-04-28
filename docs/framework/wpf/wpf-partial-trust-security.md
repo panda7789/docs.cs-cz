@@ -16,11 +16,11 @@ helpviewer_keywords:
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
 ms.openlocfilehash: 75ebf605e9abb844e7a713b448aefe2ec4cd1a27
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696536"
 ---
 # <a name="wpf-partial-trust-security"></a>Částečné zabezpečení důvěryhodnosti WPF
 <a name="introduction"></a> Obecně platí by měly být omezené Internetové aplikace nebudou mít přímý přístup k důležité systémové prostředky, aby se zabránilo škodlivým poškození. Ve výchozím nastavení [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] a pro přístup k důležité systémové prostředky nemají skriptovací jazyky na straně klienta. Protože aplikace hostované prohlížečem Windows Presentation Foundation (WPF) může být spuštěn z prohlížeče, by měl odpovídat podobnou sadu omezení. Vynutit tato omezení [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] spoléhá na obě [!INCLUDE[TLA#tla_cas](../../../includes/tlasharptla-cas-md.md)] a [!INCLUDE[TLA#tla_clickonce](../../../includes/tlasharptla-clickonce-md.md)] (viz [strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)). Ve výchozím nastavení, aplikace hostované prohlížečem požádat o zóně Internet [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] sadu oprávnění, bez ohledu na to, zda jsou spouštěny z Internetu, místní intranet nebo místním počítači. Aplikace, které běží s nic méně než úplnou sadu oprávnění se říká, že běží s částečnou důvěryhodností.  
@@ -29,11 +29,11 @@ ms.locfileid: "59218378"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Podpora funkce částečné důvěryhodnosti WPF](#WPF_Feature_Partial_Trust_Support)  
+- [Podpora funkce částečné důvěryhodnosti WPF](#WPF_Feature_Partial_Trust_Support)  
   
--   [Programování v částečném vztahu důvěryhodnosti](#Partial_Trust_Programming)  
+- [Programování v částečném vztahu důvěryhodnosti](#Partial_Trust_Programming)  
   
--   [Správa oprávnění](#Managing_Permissions)  
+- [Správa oprávnění](#Managing_Permissions)  
   
 <a name="WPF_Feature_Partial_Trust_Support"></a>   
 ## <a name="wpf-feature-partial-trust-support"></a>Podpora funkce částečné důvěryhodnosti WPF  
@@ -52,19 +52,19 @@ ms.locfileid: "59218378"
   
  Tato tabulka popisuje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce na vysoké úrovni. Podrobnější informace, [!INCLUDE[TLA#tla_lhsdk](../../../includes/tlasharptla-lhsdk-md.md)] dokumenty oprávnění, které vyžaduje každý člen [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]. Kromě toho tyto funkce mít podrobnější informace týkající se provádění částečným vztahem důvěryhodnosti, včetně zvláštní požadavky.  
   
--   [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] (viz [přehled XAML (WPF)](./advanced/xaml-overview-wpf.md)).  
+- [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] (viz [přehled XAML (WPF)](./advanced/xaml-overview-wpf.md)).  
   
--   Automaticky otevíraná okna (viz <xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType>).  
+- Automaticky otevíraná okna (viz <xref:System.Windows.Controls.Primitives.Popup?displayProperty=nameWithType>).  
   
--   Přetažení (viz [vyřadit přehled a přetáhněte](./advanced/drag-and-drop-overview.md)).  
+- Přetažení (viz [vyřadit přehled a přetáhněte](./advanced/drag-and-drop-overview.md)).  
   
--   Schránka (viz <xref:System.Windows.Clipboard?displayProperty=nameWithType>).  
+- Schránka (viz <xref:System.Windows.Clipboard?displayProperty=nameWithType>).  
   
--   Vytvořením bitové kopie (viz <xref:System.Windows.Controls.Image?displayProperty=nameWithType>).  
+- Vytvořením bitové kopie (viz <xref:System.Windows.Controls.Image?displayProperty=nameWithType>).  
   
--   Serializace (viz <xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>, <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>).  
+- Serializace (viz <xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>, <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>).  
   
--   Otevřete dialogové okno souboru (viz <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>).  
+- Otevřete dialogové okno souboru (viz <xref:Microsoft.Win32.OpenFileDialog?displayProperty=nameWithType>).  
   
  V následující tabulce jsou podrobněji popsány dále [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] funkce, které nejsou bezpečné pro spuštění v rámci Internetu oprávnění sady zón.  
   
@@ -153,11 +153,11 @@ ms.locfileid: "59218378"
   
  Pokud potřebujete ke zvýšení oprávnění, musíte změnit nastavení projektu a ClickOnce – manifest aplikace. Další informace najdete v tématu [přehled aplikací prohlížeče WPF XAML](./app-development/wpf-xaml-browser-applications-overview.md). Následující dokumenty můžou být také užitečné.  
   
--   [Mage.exe (generování manifestu a nástroj pro úpravy)](../tools/mage-exe-manifest-generation-and-editing-tool.md).  
+- [Mage.exe (generování manifestu a nástroj pro úpravy)](../tools/mage-exe-manifest-generation-and-editing-tool.md).  
   
--   [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
+- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).  
   
--   [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
+- [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
   
  Pokud vaše [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] vyžaduje úplný vztah důvěryhodnosti, můžete použít stejné nástroje pro zvýšení požadovaná oprávnění. I když [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] budou dostávat jen úplný vztah důvěryhodnosti, pokud je nainstalovaná na a spustili z místního počítače intranetu nebo z adresy URL, která je uvedena v prohlížeči důvěryhodné nebo povolené lokality. Pokud je aplikace nainstalovaná z intranetu nebo důvěryhodných webů, uživatel dostane standardní ClickOnce řádek informující o zvýšenou úroveň oprávnění. Uživatel můžete rozhodnout pokračovat nebo zrušit instalaci.  
   

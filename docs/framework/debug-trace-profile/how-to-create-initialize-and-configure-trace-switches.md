@@ -14,11 +14,11 @@ ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 87170035df47e7605d25531df4b0759bf121ad80
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754346"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Postupy: Vytváření, inicializace a konfigurace přepínačů trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování.  
@@ -75,11 +75,11 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
   
 2. Pokud váš projekt neobsahuje soubor konfigurace (app.config nebo Web.config), pak z **projektu** nabídce vyberte možnost **přidat novou položku**.  
   
-    -   **Visual Basic:** V **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
+    - **Visual Basic:** V **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
          Konfigurační soubor aplikace je vytvořen a otevřít. Toto je dokument XML, jejichž kořenový element `<configuration>.`  
   
-    -   **Visual C#:** V **přidat novou položku** dialogového okna zvolte **soubor XML**. Název tohoto souboru **app.config**. Po deklaraci XML v editoru XML, přidejte následující kód XML:  
+    - **Visual C#:** V **přidat novou položku** dialogového okna zvolte **soubor XML**. Název tohoto souboru **app.config**. Po deklaraci XML v editoru XML, přidejte následující kód XML:  
   
         ```xml  
         <configuration>  

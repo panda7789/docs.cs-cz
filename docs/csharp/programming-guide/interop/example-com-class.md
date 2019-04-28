@@ -7,24 +7,24 @@ helpviewer_keywords:
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
 ms.openlocfilehash: e36dfe1117cc724f5388e3486a81310f2326ab7e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56978693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710131"
 ---
 # <a name="example-com-class-c-programming-guide"></a>Ukázka třídy COM (Průvodce programováním v C#)
 Následuje příklad třídy, která by vystavit jako objekt modelu COM. Poté, co tento kód byl umístěn v souboru .cs a přidány do projektu, nastavte **zaregistrovat pro interoperabilitu COM** vlastnost **True**. Další informace najdete v tématu [jak: Zaregistrovat pro interoperabilitu COM komponentu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).
   
  Vystavení objektů jazyka Visual C# do modelu COM vyžaduje deklarace třídy rozhraní, pokud se vyžaduje rozhraní události a vlastní třídy. Členy třídy musí dodržovat tato pravidla být viditelné modelu COM:  
   
--   Třída musí být veřejné.  
+- Třída musí být veřejné.  
   
--   Vlastnosti, metody a události musí být veřejné.  
+- Vlastnosti, metody a události musí být veřejné.  
   
--   Vlastnosti a metody musí být deklarována v rozhraní.  
+- Vlastnosti a metody musí být deklarována v rozhraní.  
   
--   Události musí být deklarována v události rozhraní.  
+- Události musí být deklarována v události rozhraní.  
   
  Jiné veřejné členy, které nejsou deklarovány v těchto rozhraní ve třídě nesmí být viditelné modelu COM, ale budou viditelné pro ostatní objekty rozhraní .NET Framework.  
   

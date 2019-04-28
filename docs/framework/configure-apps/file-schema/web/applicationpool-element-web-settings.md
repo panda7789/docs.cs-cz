@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
 ms.openlocfilehash: 16207c3f3c711d06b71cafb2b67c5d29f3f14e39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59184727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698574"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool > – Element (nastavení webu)
 Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
@@ -66,11 +66,11 @@ Určuje nastavení konfigurace, který ASP.NET používá ke správě celého pr
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak nakonfigurovat chování v celém procesu ASP.NET v souboru aspnet.config za následujících okolností:  
   
--   Aplikace je hostována v [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] fondu aplikací.  
+- Aplikace je hostována v [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] fondu aplikací.  
   
--   [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] běží v integrovaném režimu.  
+- [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] běží v integrovaném režimu.  
   
--   Aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější.  
+- Aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější.  
   
  Hodnoty v tomto příkladu jsou výchozí hodnoty.  
   

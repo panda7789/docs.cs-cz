@@ -6,11 +6,11 @@ helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: 97839aef-8fbc-40d5-9769-6b569bc2710b
 ms.openlocfilehash: bc792562b4849d402e03328e50dedac030520011
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201141"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710040"
 ---
 # <a name="how-to-implement-user-defined-conversions-between-structs-c-programming-guide"></a>Postupy: Implementace uživatelem definovaných převodů mezi strukturami (C# Průvodce programováním v)
 Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a ukazuje převody mezi nimi.  
@@ -20,13 +20,13 @@ Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a ukazuj
   
 ## <a name="robust-programming"></a>Robustní programování  
   
--   V předchozím příkladu, příkaz:  
+- V předchozím příkladu, příkaz:  
   
      [!code-csharp[csProgGuideStatements#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#14)]  
   
      provede konverzi `RomanNumeral` k `BinaryNumeral`. Protože neexistuje žádný přímý převod z `RomanNumeral` k `BinaryNumeral`, přetypování se používá k převodu z `RomanNumeral` do `int`a jiné přetypování pro převod z `int` k `BinaryNumeral`.  
   
--   Také – příkaz  
+- Také – příkaz  
   
      [!code-csharp[csProgGuideStatements#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#15)]  
   

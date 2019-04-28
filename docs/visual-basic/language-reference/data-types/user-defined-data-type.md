@@ -24,11 +24,11 @@ helpviewer_keywords:
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
 ms.openlocfilehash: 5fe12d18c7f403c1a50ed548a260ba39e83280eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746719"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje formát.  
@@ -50,15 +50,15 @@ Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Využití paměti.** Stejně jako u všech složených datových typů nelze bezpečně vypočítat celkovou spotřebu paměti struktury sečtením nominálních přidělení úložiště jejích členů. Kromě toho nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` příkazu.  
+- **Využití paměti.** Stejně jako u všech složených datových typů nelze bezpečně vypočítat celkovou spotřebu paměti struktury sečtením nominálních přidělení úložiště jejích členů. Kromě toho nelze bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí prohlášení. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut `Structure` příkazu.  
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že v jiných prostředích, uživatelem definované typy nejsou kompatibilní s jazykem Visual Basic struktury typů.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že v jiných prostředích, uživatelem definované typy nejsou kompatibilní s jazykem Visual Basic struktury typů.  
   
--   **Rozšíření.** Neexistuje žádný automatický převod do nebo z libovolného datového typu Struktura. Můžete definovat operátory převodu na váš pomocí struktury [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md), a deklarujete každý operátor převodu na `Widening` nebo `Narrowing`.  
+- **Rozšíření.** Neexistuje žádný automatický převod do nebo z libovolného datového typu Struktura. Můžete definovat operátory převodu na váš pomocí struktury [Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md), a deklarujete každý operátor převodu na `Widening` nebo `Narrowing`.  
   
--   **Znaky typu.** Struktura datové typy mít žádné – znak typu literálu nebo – znak typu identifikátoru.  
+- **Znaky typu.** Struktura datové typy mít žádné – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ architektury.** Neexistuje žádný odpovídající typ v rozhraní .NET Framework. Všechny struktury dědí z třídy rozhraní .NET Framework <xref:System.ValueType?displayProperty=nameWithType>, ale žádné jednotlivých struktura odpovídá <xref:System.ValueType?displayProperty=nameWithType>.  
+- **Typ architektury.** Neexistuje žádný odpovídající typ v rozhraní .NET Framework. Všechny struktury dědí z třídy rozhraní .NET Framework <xref:System.ValueType?displayProperty=nameWithType>, ale žádné jednotlivých struktura odpovídá <xref:System.ValueType?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
  Následující paradigma ukazuje obrys deklaraci struktury.  

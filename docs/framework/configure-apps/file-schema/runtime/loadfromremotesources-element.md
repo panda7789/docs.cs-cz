@@ -8,11 +8,11 @@ ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7568129f30267b212737ec8aa688cf882e19bbff
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55675306"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704593"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources > – element
 Určuje, zda sestavení načtená ze vzdáleného zdroje by měly být udělena úplná důvěryhodnost v rozhraní .NET Framework 4 nebo novější.
@@ -42,7 +42,7 @@ Určuje, zda sestavení načtená ze vzdáleného zdroje by měly být udělena 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Neudělujte úplný vztah důvěryhodnosti k aplikacím ze vzdálených zdrojů. Toto nastavení je výchozí.|  
 |`true`|Udělte úplný vztah důvěryhodnosti k aplikacím ze vzdálených zdrojů.|  

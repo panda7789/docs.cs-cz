@@ -5,10 +5,10 @@ ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
 ms.openlocfilehash: d6dbe158c5f9b474dbd2cc61982ab8e23e584ec7
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675609"
 ---
 # <a name="working-with-linq"></a>Práce s jazykem LINQ
 

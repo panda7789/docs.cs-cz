@@ -6,24 +6,24 @@ dev_langs:
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
 ms.openlocfilehash: 75a214ad1099bf48dcb2c2d3b36bf07dc0524f8d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763916"
 ---
 # <a name="working-with-data-definition-language"></a>Práce s jazykem DDL (Data Description Language)
 Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] verze 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje jazyk pro definování dat (DDL). To umožňuje vytvořit nebo odstranit instanci databáze na základě připojovacího řetězce a metadata modelu úložiště (SSDL).  
   
  Následující metody u <xref:System.Data.Objects.ObjectContext> můžete provádět následující připojovací řetězec a obsah souborů SSDL: vytvoření nebo odstranění databáze, zkontrolujte, jestli databáze existuje a zobrazit vygenerovaný skript jazyka DDL:  
   
--   <xref:System.Data.Objects.ObjectContext.CreateDatabase%2A>  
+- <xref:System.Data.Objects.ObjectContext.CreateDatabase%2A>  
   
--   <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A>  
+- <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A>  
   
--   <xref:System.Data.Objects.ObjectContext.DatabaseExists%2A>  
+- <xref:System.Data.Objects.ObjectContext.DatabaseExists%2A>  
   
--   <xref:System.Data.Objects.ObjectContext.CreateDatabaseScript%2A>  
+- <xref:System.Data.Objects.ObjectContext.CreateDatabaseScript%2A>  
   
 > [!NOTE]
 >  Provádění příkazů DDL předpokládá dostatečná oprávnění.  
@@ -40,13 +40,13 @@ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] ve
   
 2. Přidáte existující model pro vaši aplikaci.  
   
-    1.  Přidat prázdný model s názvem `SchoolModel`. Chcete-li vytvořit prázdný model, najdete v článku [jak: Vytvořit nový edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) tématu.  
+    1. Přidat prázdný model s názvem `SchoolModel`. Chcete-li vytvořit prázdný model, najdete v článku [jak: Vytvořit nový edmx soubor](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) tématu.  
   
      Soubor SchoolModel.edmx je přidán do projektu.  
   
-    1.  Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) tématu.  
+    1. Zkopírujte koncepční, úložiště a mapování obsahu pro model školní ze [školní modelu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) tématu.  
   
-    2.  Otevřete soubor SchoolModel.edmx a vložte obsah v rámci `edmx:Runtime` značky.  
+    2. Otevřete soubor SchoolModel.edmx a vložte obsah v rámci `edmx:Runtime` značky.  
   
 3. Přidejte následující kód do hlavní funkce. Kód inicializuje řetězec připojení k vašemu databázovému serveru, zobrazení skriptu jazyka DDL, vytvoří databázi, přidá nové entity v kontextu a uloží změny do databáze.  
   

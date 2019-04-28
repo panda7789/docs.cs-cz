@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 309c31dacd801f1c46a2d37932124638bc157cd6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61749043"
 ---
 # <a name="icordebugdatatargetgetplatform-method"></a>ICorDebugDataTarget::GetPlatform – metoda
 Poskytuje informace o platformě, včetně architektury procesoru a operačního systému, na kterém je spuštěný Cílový proces.  
@@ -44,9 +44,9 @@ HRESULT GetPlatform([out] CorDebugPlatform * pTargetPlatform);
   
  Tato metoda musí být úspěšný. Pokud selže, nepoužitelný cílovou platformu. Metoda může selhat z následujících důvodů:  
   
--   Platforma, která je emulovaných pro cíl nepoužitelné.  
+- Platforma, která je emulovaných pro cíl nepoužitelné.  
   
--   Skutečné hardwarové na cílové platformě není použitelná.  
+- Skutečné hardwarové na cílové platformě není použitelná.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9ae9a8e9e26f05675611ac4c6acd8ecfe5704b0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760191"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies – metoda
 Získá ukazatel rozhraní k [iclrassemblyreferencelist –](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) , která představuje seznam sestavení, které hostitele očekává, že modul CLR (CLR) pro načtení.  
@@ -54,13 +54,13 @@ HRESULT GetNonHostStoreAssemblies (
 ## <a name="remarks"></a>Poznámky  
  Odkazy pomocí následující sadu pokynů, které překládá CLR:  
   
--   Nejprve consults seznam odkazů na sestavení vrácené `GetNonHostStoreAssemblies`.  
+- Nejprve consults seznam odkazů na sestavení vrácené `GetNonHostStoreAssemblies`.  
   
--   Pokud sestavení se zobrazí v seznamu, CLR vytvoří vazbu k němu normálně.  
+- Pokud sestavení se zobrazí v seznamu, CLR vytvoří vazbu k němu normálně.  
   
--   Pokud sestavení se nezobrazují v seznamu a hostitel poskytuje implementaci [ihostassemblystore –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), volání CLR [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) umožňující hostitele slouží k poskytování sestavení k vytvoření vazby.  
+- Pokud sestavení se nezobrazují v seznamu a hostitel poskytuje implementaci [ihostassemblystore –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md), volání CLR [ihostassemblystore::provideassembly –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) umožňující hostitele slouží k poskytování sestavení k vytvoření vazby.  
   
--   V opačném případě CLR nezdaří k vytvoření vazby na sestavení.  
+- V opačném případě CLR nezdaří k vytvoření vazby na sestavení.  
   
  Pokud hostitel nastaví `ppReferenceList` na hodnotu null, první sond CLR volá do globální mezipaměti sestavení, `ProvideAssembly`a potom sondy základ cesty aplikace přeložit odkaz na sestavení.  
   

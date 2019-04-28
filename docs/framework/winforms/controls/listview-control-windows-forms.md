@@ -12,11 +12,11 @@ helpviewer_keywords:
 - list controls [Windows Forms], List view
 ms.assetid: 9f71cf5c-82da-488a-a04e-ef52c0817187
 ms.openlocfilehash: d826fe0a64ad226db62e01259b0466f7f495f8e0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757867"
 ---
 # <a name="listview-control-windows-forms"></a>ListView – ovládací prvek (Windows Forms)
 Windows Forms `ListView` ovládací prvek zobrazuje seznam položek s ikonami. Zobrazení seznamu můžete použít k vytvoření uživatelského rozhraní, jako je pravém podokně Průzkumníka Windows.  
@@ -58,15 +58,15 @@ Windows Forms `ListView` ovládací prvek zobrazuje seznam položek s ikonami. Z
  [Postupy: Přidání schopností vyhledávání do ovládacího prvku ListView](how-to-add-search-capabilities-to-a-listview-control.md)  
  Popisuje, jak prostřednictvím kódu programu najít pomocí vyhledávání nebo obrazovku souřadnic buď textu položky.  
   
--   [Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView pomocí návrháře](enable-tile-view-in-a-wf-listview-control-using-the-designer.md)  
+- [Postupy: Povolení zobrazení Tile v ovládacím prvku Windows Forms ListView pomocí návrháře](enable-tile-view-in-a-wf-listview-control-using-the-designer.md)  
   
--   [Postupy: Přidání a odebrání položek s ovládacím prvkem Windows Forms ListView pomocí návrháře](add-and-remove-items-with-wf-listview-control-using-the-designer.md)  
+- [Postupy: Přidání a odebrání položek s ovládacím prvkem Windows Forms ListView pomocí návrháře](add-and-remove-items-with-wf-listview-control-using-the-designer.md)  
   
--   [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView pomocí návrháře](how-to-add-columns-to-the-windows-forms-listview-control-using-the-designer.md)  
+- [Postupy: Přidání sloupců do ovládacího prvku Windows Forms ListView pomocí návrháře](how-to-add-columns-to-the-windows-forms-listview-control-using-the-designer.md)  
   
--   [Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView pomocí návrháře](how-to-group-items-in-a-windows-forms-listview-control-using-the-designer.md)  
+- [Postupy: Seskupení položek v ovládacím prvku Windows Forms ListView pomocí návrháře](how-to-group-items-in-a-windows-forms-listview-control-using-the-designer.md)  
   
--   [Návod: Vytváření rozhraní ve stylu Průzkumníku s ListView a ovládacích prvků TreeView pomocí návrháře](creating-an-explorer-style-interface-with-the-listview-and-treeview.md)  
+- [Návod: Vytváření rozhraní ve stylu Průzkumníku s ListView a ovládacích prvků TreeView pomocí návrháře](creating-an-explorer-style-interface-with-the-listview-and-treeview.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.ListView> Třída  

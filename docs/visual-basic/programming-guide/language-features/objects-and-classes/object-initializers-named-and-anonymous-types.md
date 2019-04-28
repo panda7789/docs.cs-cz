@@ -11,11 +11,11 @@ helpviewer_keywords:
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
 ms.openlocfilehash: 6602a68555e37bf793ba41076ba8f484b4a0dbc3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760750"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicializátory objektů: Pojmenované a anonymní typy (Visual Basic)
 Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s použitím jeden výraz. Může se použít pro vytvoření instancí typů pojmenované a anonymní typy.  
@@ -63,11 +63,11 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
 ### <a name="remarks-about-named-types"></a>Poznámky o pojmenovaných typů  
   
--   Člen třídy nelze inicializovat více než jednou v seznamu inicializátorů objektů. Deklarace `cust7` způsobí chybu.  
+- Člen třídy nelze inicializovat více než jednou v seznamu inicializátorů objektů. Deklarace `cust7` způsobí chybu.  
   
      [!code-vb[VbVbalrObjectInit#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#9)]  
   
--   Člen slouží k inicializaci sebe samu ani na jiné pole. Pokud člen je přístupná před inicializovaná, stejně jako v následující deklaraci pro `cust8`, bude použita výchozí hodnota. Mějte na paměti, že při zpracování deklarace, která používá inicializátor objektu první věc, ke které dochází, je, že je vyvolána odpovídajícího konstruktoru. Poté se inicializují jednotlivá pole v seznamu inicializátorů. V následujících příkladech, výchozí hodnota pro `Name` je přiřazen `cust8`, a inicializovaný hodnota přiřazená v `cust9`.  
+- Člen slouží k inicializaci sebe samu ani na jiné pole. Pokud člen je přístupná před inicializovaná, stejně jako v následující deklaraci pro `cust8`, bude použita výchozí hodnota. Mějte na paměti, že při zpracování deklarace, která používá inicializátor objektu první věc, ke které dochází, je, že je vyvolána odpovídajícího konstruktoru. Poté se inicializují jednotlivá pole v seznamu inicializátorů. V následujících příkladech, výchozí hodnota pro `Name` je přiřazen `cust8`, a inicializovaný hodnota přiřazená v `cust9`.  
   
      [!code-vb[VbVbalrObjectInit#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#10)]  
   
@@ -75,17 +75,17 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
      [!code-vb[VbVbalrObjectInit#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#11)]  
   
--   Inicializátory objektů mohou být vnořené. V následujícím příkladu `AddressClass` je třída, která má dvě vlastnosti `City` a `State`a `Customer` třída má `Address` vlastnost, která je instance `AddressClass`.  
+- Inicializátory objektů mohou být vnořené. V následujícím příkladu `AddressClass` je třída, která má dvě vlastnosti `City` a `State`a `Customer` třída má `Address` vlastnost, která je instance `AddressClass`.  
   
      [!code-vb[VbVbalrObjectInit#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#12)]  
   
--   Inicializační seznam nemůže být prázdný.  
+- Inicializační seznam nemůže být prázdný.  
   
--   Během inicializace instance nemůže být typu Object.  
+- Během inicializace instance nemůže být typu Object.  
   
--   Členy třídy, který je inicializován nemůže být sdílené členy, členy jen pro čtení, konstanty nebo volání metody.  
+- Členy třídy, který je inicializován nemůže být sdílené členy, členy jen pro čtení, konstanty nebo volání metody.  
   
--   Členy třídy, který je inicializován nelze indexovat nebo kvalifikovaný. Následující příklady vyvolání chyby kompilátoru:  
+- Členy třídy, který je inicializován nelze indexovat nebo kvalifikovaný. Následující příklady vyvolání chyby kompilátoru:  
   
      `'' Not valid.`  
   
@@ -109,19 +109,19 @@ Inicializátory objektů umožňují určit vlastnosti pro komplexní objekt s p
   
 ### <a name="remarks-about-anonymous-types"></a>Poznámky o anonymních typech  
   
--   Všechny nebo většinu vlastností v deklaraci anonymního typu bude obvykle klíčové vlastnosti, které jsou označeny zadáním klíčového slova `Key` před název vlastnosti.  
+- Všechny nebo většinu vlastností v deklaraci anonymního typu bude obvykle klíčové vlastnosti, které jsou označeny zadáním klíčového slova `Key` před název vlastnosti.  
   
      [!code-vb[VbVbalrObjectInit#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#14)]  
   
      Další informace o vlastnosti klíče najdete v tématu [klíč](../../../../visual-basic/language-reference/modifiers/key.md).  
   
--   Pojmenované typy, inicializační seznamy, jako je třeba pro definice anonymního typu musí deklarovat alespoň jednu vlastnost.  
+- Pojmenované typy, inicializační seznamy, jako je třeba pro definice anonymního typu musí deklarovat alespoň jednu vlastnost.  
   
      [!code-vb[VbVbalrObjectInit#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#2)]  
   
--   Při deklaraci instanci anonymního typu, kompilátor vygeneruje odpovídající definici anonymního typu. Názvy a datové typy vlastností jsou převzaty z deklaraci instance a jsou zahrnuty v kompilátoru v definici. Vlastnosti nejsou s názvem a definovaný v předstihu, jako by se použily pro pojmenovaného typu. Jejich typy jsou odvozeny. Datové typy vlastností nelze zadat s použitím `As` klauzuli.  
+- Při deklaraci instanci anonymního typu, kompilátor vygeneruje odpovídající definici anonymního typu. Názvy a datové typy vlastností jsou převzaty z deklaraci instance a jsou zahrnuty v kompilátoru v definici. Vlastnosti nejsou s názvem a definovaný v předstihu, jako by se použily pro pojmenovaného typu. Jejich typy jsou odvozeny. Datové typy vlastností nelze zadat s použitím `As` klauzuli.  
   
--   Anonymní typy lze také vytvořit názvy a hodnoty jejich vlastností několika jinými způsoby. Vlastnosti anonymního typu může například trvat název a hodnotu proměnné, nebo název a hodnotu vlastnosti jiného objektu.  
+- Anonymní typy lze také vytvořit názvy a hodnoty jejich vlastností několika jinými způsoby. Vlastnosti anonymního typu může například trvat název a hodnotu proměnné, nebo název a hodnotu vlastnosti jiného objektu.  
   
      [!code-vb[VbVbalrObjectInit#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#15)]  
   

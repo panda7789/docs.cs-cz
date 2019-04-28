@@ -3,11 +3,11 @@ title: Smíšeného deklarativního a imperativního kódu chyby (LINQ to XML) (
 ms.date: 07/20/2015
 ms.assetid: fada62d0-0680-4e73-945a-2b00d7a507af
 ms.openlocfilehash: 5963e470acebfe259126ab8f2a17e131cb44f25b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524699"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61682388"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Smíšený kód deklarativní nebo imperativní kód chyby (LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje různé metody, které umožňují upravit stromu XML přímo. Můžete přidat prvky, odstranění prvků, změňte obsah elementu, přidejte atributy a tak dále. Toto programovací rozhraní je popsán v [změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Pokud jste se provede iterace přes jeden z OS, jako <xref:System.Xml.Linq.XContainer.Elements%2A>a jak iterovat na ose upravujete stromu XML, můžete skončit s některé chyby neobvyklé.  

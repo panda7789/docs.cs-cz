@@ -12,22 +12,22 @@ helpviewer_keywords:
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
 ms.openlocfilehash: 9366c7ebe2e5b347f4795b15e6f2c2d0f3835482
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747519"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  
   
--   Vytvořte projekt knihovny tříd obsahující základní formulář.  
+- Vytvořte projekt knihovny tříd obsahující základní formulář.  
   
--   Přidejte tlačítko s vlastnostmi, které odvozené třídy základní formulář můžete upravit.  
+- Přidejte tlačítko s vlastnostmi, které odvozené třídy základní formulář můžete upravit.  
   
--   Přidejte tlačítko, které nemůže upravit dědice základní formulář.  
+- Přidejte tlačítko, které nemůže upravit dědice základní formulář.  
   
--   Vytvořit projekt obsahující formulář, který dědí z `BaseForm`.  
+- Vytvořit projekt obsahující formulář, který dědí z `BaseForm`.  
   
  Nakonec tento návod vám ukáže rozdíl mezi soukromým a chráněným ovládacích prvků na zděděný formulář.  
   
@@ -76,11 +76,11 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 3. V okně Vlastnosti nastavte následující vlastnosti tlačítka:  
   
-    -   Nastavte **Text** vlastnost **Say Hello**.  
+    - Nastavte **Text** vlastnost **Say Hello**.  
   
-    -   Nastavte **(název)** vlastnost **btnProtected**.  
+    - Nastavte **(název)** vlastnost **btnProtected**.  
   
-    -   Nastavte **modifikátory** vlastnost **chráněné**. To umožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnProtected**.  
+    - Nastavte **modifikátory** vlastnost **chráněné**. To umožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnProtected**.  
   
 4. Dvakrát klikněte **Say Hello** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí.  
   
@@ -100,11 +100,11 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 2. Přidejte druhé tlačítko a nastavte jeho vlastnosti následujícím způsobem:  
   
-    -   Nastavte **Text** vlastnost **Say Goodbye**.  
+    - Nastavte **Text** vlastnost **Say Goodbye**.  
   
-    -   Nastavte **(název)** vlastnost **btnPrivate**.  
+    - Nastavte **(název)** vlastnost **btnPrivate**.  
   
-    -   Nastavte **modifikátory** vlastnost **privátní**. To znemožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnPrivate**.  
+    - Nastavte **modifikátory** vlastnost **privátní**. To znemožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnPrivate**.  
   
 3. Dvakrát klikněte **Say Goodbye** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí. Vložte následující řádek kódu do procedury události:  
   
@@ -148,9 +148,9 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 8. Pokud používáte jazyk Visual C#:  
   
-    1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1** v **InheritanceTest** projektu a klikněte na tlačítko **odstranit**. V okně se zprávou, která se zobrazí, klikněte na tlačítko **OK** potvrďte odstranění.  
+    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Form1** v **InheritanceTest** projektu a klikněte na tlačítko **odstranit**. V okně se zprávou, která se zobrazí, klikněte na tlačítko **OK** potvrďte odstranění.  
   
-    2.  Otevřete soubor Program.cs a změňte řádek `Application.Run(new Form1());` k `Application.Run(new Form2());`.  
+    2. Otevřete soubor Program.cs a změňte řádek `Application.Run(new Form1());` k `Application.Run(new Form2());`.  
   
 9. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **InheritanceTest** projektu a vyberte **nastavit jako spouštěný projekt**.  
   

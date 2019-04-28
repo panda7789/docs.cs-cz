@@ -16,11 +16,11 @@ helpviewer_keywords:
 - GDI+, positioning images
 ms.assetid: 09f0c07a-19c0-43b4-90a2-862a10545ce8
 ms.openlocfilehash: b5f98e7bdef9ff8ed0a4cd0e040cb92a31f30503
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188445"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756908"
 ---
 # <a name="drawing-positioning-and-cloning-images-in-gdi"></a>Kreslení, umisťování a klonování obrázků v GDI+
 Můžete použít <xref:System.Drawing.Bitmap> třída načíst a zobrazit rastrové obrázky kde můžete použít <xref:System.Drawing.Imaging.Metafile> třídy načíst a zobrazit vektorové obrázky. <xref:System.Drawing.Bitmap> a <xref:System.Drawing.Imaging.Metafile> třídy dědí <xref:System.Drawing.Image> třídy. K zobrazení bitovou kopii vektoru, je třeba instance <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Imaging.Metafile>. K zobrazení rastrového obrázku, je třeba instance <xref:System.Drawing.Graphics> třídy a <xref:System.Drawing.Bitmap>. Instance <xref:System.Drawing.Graphics> třída poskytuje <xref:System.Drawing.Graphics.DrawImage%2A> metodu, která přijímá <xref:System.Drawing.Imaging.Metafile> nebo <xref:System.Drawing.Bitmap> jako argument.  

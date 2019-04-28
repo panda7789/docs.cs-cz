@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], about WPF controls
 ms.assetid: 3f255a8a-35a8-4712-9065-472ff7d75599
 ms.openlocfilehash: 5abafe1edfdbac1966a98d5eef28265e6504c868
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59154411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696364"
 ---
 # <a name="controls"></a>Ovládací prvky
 <a name="introduction"></a>
@@ -33,11 +33,11 @@ ms.locfileid: "59154411"
 ## <a name="changing-the-appearance-of-a-control"></a>Změna vzhledu ovládacího prvku  
  Je běžné, chcete-li změnit vzhled ovládacího prvku pro přizpůsobení vzhledu a chování vaší aplikace. Můžete změnit vzhled ovládacího prvku pomocí jedné z těchto možností podle toho, co chcete dosáhnout:  
   
--   Změňte hodnotu vlastnosti ovládacího prvku.  
+- Změňte hodnotu vlastnosti ovládacího prvku.  
   
--   Vytvoření <xref:System.Windows.Style> pro ovládací prvek.  
+- Vytvoření <xref:System.Windows.Style> pro ovládací prvek.  
   
--   Vytvořte nový <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek.  
+- Vytvořte nový <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek.  
   
 ### <a name="changing-a-controls-property-value"></a>Změna hodnoty vlastnosti ovládacího prvku  
  Mnoho ovládacích prvků mají vlastnosti, které umožňují změnit, jak ovládací prvek zobrazuje, jako <xref:System.Windows.Controls.Control.Background%2A> z <xref:System.Windows.Controls.Button>. Můžete nastavit hodnotu vlastnosti v obou [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a kódu. Následující příklad nastaví <xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.FontSize%2A>, a <xref:System.Windows.Controls.Control.FontWeight%2A> vlastnosti <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
@@ -87,13 +87,13 @@ ms.locfileid: "59154411"
 ## <a name="rich-content-in-controls"></a>Formátovaný obsah v ovládacích prvcích  
  Většina tříd, které dědí <xref:System.Windows.Controls.Control> třídy mají kapacitu tak, aby obsahovala formátovaný obsah. Například <xref:System.Windows.Controls.Label> může obsahovat libovolný objekt, jako je řetězec, <xref:System.Windows.Controls.Image>, nebo <xref:System.Windows.Controls.Panel>.  Následující třídy poskytovat podporu pro formátovaný obsah a plnit funkci základní třídy pro většinu prvků v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
--   <xref:System.Windows.Controls.ContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>, a <xref:System.Windows.Controls.ToolTip>.  
+- <xref:System.Windows.Controls.ContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.Label>, <xref:System.Windows.Controls.Button>, a <xref:System.Windows.Controls.ToolTip>.  
   
--   <xref:System.Windows.Controls.ItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.Primitives.StatusBar>.  
+- <xref:System.Windows.Controls.ItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.ListBox>, <xref:System.Windows.Controls.Menu>, a <xref:System.Windows.Controls.Primitives.StatusBar>.  
   
--   <xref:System.Windows.Controls.HeaderedContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.GroupBox>, a <xref:System.Windows.Controls.Expander>.  
+- <xref:System.Windows.Controls.HeaderedContentControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.TabItem>, <xref:System.Windows.Controls.GroupBox>, a <xref:System.Windows.Controls.Expander>.  
   
--   <xref:System.Windows.Controls.HeaderedItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>, a <xref:System.Windows.Controls.ToolBar>.  
+- <xref:System.Windows.Controls.HeaderedItemsControl>– Příklady tříd, které z této třídy dědit <xref:System.Windows.Controls.MenuItem>, <xref:System.Windows.Controls.TreeViewItem>, a <xref:System.Windows.Controls.ToolBar>.  
 
  Další informace o těchto základních třídách naleznete v tématu [Model obsahu WPF](wpf-content-model.md).  
   

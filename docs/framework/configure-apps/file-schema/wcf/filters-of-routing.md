@@ -3,11 +3,11 @@ title: <filters> z <routing>
 ms.date: 03/30/2017
 ms.assetid: 7993cf90-9afd-4c3c-9608-184d5da1105c
 ms.openlocfilehash: 8b2c735a19c4cece16dcb77e3ec548eb2d39ec18
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55272666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701031"
 ---
 # <a name="filters-of-routing"></a>\<Filtry > z \<směrování >
 
@@ -38,7 +38,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="attributes"></a>Atributy
 
-Žádná
+Žádné
 
 ### <a name="child-elements"></a>Podřízené prvky
 

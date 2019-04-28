@@ -3,11 +3,11 @@ title: 'Postupy: Publikování metadat služby promocí konfiguračního souboru
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
 ms.openlocfilehash: 367ebeee5c12d809a758f1bee73dfaadda85788d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761452"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>Postupy: Publikování metadat služby promocí konfiguračního souboru
 Toto je jedna z dva postupy: témata, které ukazují publikování metadat služby Windows Communication Foundation (WCF). Existují dva způsoby, jak určit, jak by měla služba publikování metadat, je používán konfigurační soubor a pomocí kódu. Toto téma ukazuje, jak publikování metadat služby promocí konfiguračního souboru.  
@@ -140,21 +140,21 @@ namespace Metadata.Samples
   
 7. Pro koncové body metadat přidali v předchozím kroku, nastavte `binding` atribut na jednu z následujících akcí:  
   
-    -   `mexHttpBinding` pro publikaci HTTP.  
+    - `mexHttpBinding` pro publikaci HTTP.  
   
-    -   `mexHttpsBinding` pro publikaci HTTPS.  
+    - `mexHttpsBinding` pro publikaci HTTPS.  
   
-    -   `mexNamedPipeBinding` pro publikaci pojmenovaného kanálu.  
+    - `mexNamedPipeBinding` pro publikaci pojmenovaného kanálu.  
   
-    -   `mexTcpBinding` pro publikaci TCP.  
+    - `mexTcpBinding` pro publikaci TCP.  
   
 8. Pro koncové body metadat přidali v předchozím kroku nastavte adresu na:  
   
-    -   Prázdný řetězec pro použití základní adresa hostitelské aplikace jako bod publikace, pokud základní adresa je stejný jako vazby metadat.  
+    - Prázdný řetězec pro použití základní adresa hostitelské aplikace jako bod publikace, pokud základní adresa je stejný jako vazby metadat.  
   
-    -   Relativní adresa, pokud má základní adresa hostitele aplikace.  
+    - Relativní adresa, pokud má základní adresa hostitele aplikace.  
   
-    -   Absolutní adresu.  
+    - Absolutní adresu.  
   
 9. Vytvořte a spusťte konzolovou aplikaci.  
   

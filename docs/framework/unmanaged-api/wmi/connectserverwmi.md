@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ff9ea8cdc8aea66b1dd1f54c8be881882f6e27f7
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611533"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703584"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 
@@ -93,7 +93,7 @@ HRESULT ConnectServerWmi (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Value  |Popis  |
+|Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |

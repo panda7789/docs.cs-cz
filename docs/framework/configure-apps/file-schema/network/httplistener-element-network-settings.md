@@ -3,11 +3,11 @@ title: <httpListener> – element (nastavení sítě)
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
 ms.openlocfilehash: b3a6d527bc1bf8210bb85424fa218fda495a2a2d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59099739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705074"
 ---
 # <a name="httplistener-element-network-settings"></a>\<httpListener > – Element (nastavení sítě)
 Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.  
@@ -52,9 +52,9 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
   
  `http.sys` Služba poskytuje dva řetězce identifikátoru URI požadavku:  
   
--   Identifikátor URI nezpracované  
+- Identifikátor URI nezpracované  
   
--   Převedený identifikátoru URI  
+- Převedený identifikátoru URI  
   
  Identifikátor URI nezpracované <xref:System.Uri?displayProperty=nameWithType> v řádku žádosti požadavku HTTP:  
   
@@ -72,11 +72,11 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
   
  `http.sys` Služby kombinuje <xref:System.Uri.Host%2A?displayProperty=nameWithType> řetězec v řádku žádost o vytvoření převedený identifikátor URI a hodnota vlastnosti. Kromě toho `http.sys` a <xref:System.Uri?displayProperty=nameWithType> třída rovněž provede následující akce:  
   
--   Zrušit – řídicí sekvence kódovaného všechny procentuální hodnoty.  
+- Zrušit – řídicí sekvence kódovaného všechny procentuální hodnoty.  
   
--   Převede procentuálně zakódovaný jiné znaky než ASCII na reprezentaci znaků UTF-16. Všimněte si, že jsou podporovány UTF-8 a ANSI/DBCS znaky a znaky kódování Unicode (kódování Unicode ve formátu uXXXX %).  
+- Převede procentuálně zakódovaný jiné znaky než ASCII na reprezentaci znaků UTF-16. Všimněte si, že jsou podporovány UTF-8 a ANSI/DBCS znaky a znaky kódování Unicode (kódování Unicode ve formátu uXXXX %).  
   
--   Spustí další kroky normalizace, jako je komprese cestu.  
+- Spustí další kroky normalizace, jako je komprese cestu.  
   
  Vzhledem k tomu, že žádost neobsahuje žádné informace o kódování použité pro procentuálně zakódovaný hodnoty, nemusí být možné určit správné kódování pouhým Analýza hodnot procentuálně zakódovaný.  
   

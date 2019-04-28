@@ -16,11 +16,11 @@ helpviewer_keywords:
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
 ms.openlocfilehash: de2edc6b16689673c3be6703ff1a201febe73526
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698639"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With – příkaz (Visual Basic)
 Vykoná řadu příkazů, které opakovaně odkazují na jeden objekt nebo strukturu, takže příkazy mohou při přístupu k členům tohoto objektu nebo struktury použít zjednodušenou syntaxi.  Při použití struktury lze pouze číst hodnoty členů nebo vyvolávat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty k členům struktury použité v `With...End With` příkazu.  
@@ -48,9 +48,9 @@ End With
   
  Pokud váš kód přistupuje ke stejným objektu ve více příkazech, získáte následující výhody pomocí `With` – příkaz:  
   
--   Nemusíte vyhodnocovat složitý výraz vícekrát ani přiřazovat výsledek k dočasné proměnné, chcete-li na jeho členy odkazovat vícekrát.  
+- Nemusíte vyhodnocovat složitý výraz vícekrát ani přiřazovat výsledek k dočasné proměnné, chcete-li na jeho členy odkazovat vícekrát.  
   
--   Odstraněním opakovaných kvalifikačních výrazů zlepšíte přehlednost kódu.  
+- Odstraněním opakovaných kvalifikačních výrazů zlepšíte přehlednost kódu.  
   
  Datový typ `objectExpression` může být libovolné třídy nebo typ struktury nebo dokonce základní typ jazyka Visual Basic například `Integer`.  Pokud `objectExpression` výsledky v nic jiného než objekt, můžete pouze číst hodnoty jeho členů nebo vyvolávat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty k členům struktury použité v `With...End With` příkazu.  Toto je ke stejné chybě kdyby jste vyvolali metodu, která vrátila strukturu a okamžitě získat přístup a přiřadili hodnotu člena výsledku této funkce, jako například `GetAPoint().x = 1`.  Problémem je v obou případech to, že tato struktura existuje pouze v zásobníku volání a neexistuje žádný způsob, jak člena změněné struktury v těchto situacích zapsat někam tak, aby jakýkoli jiný kód v programu tuto změnu zpozoroval.  
   

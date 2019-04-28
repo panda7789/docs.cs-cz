@@ -10,11 +10,11 @@ ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b1aa958e15449949a1b7ca740198fff71295b2ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59114830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704960"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforcefipspolicy – > – Element
 Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptografické algoritmy musí být v souladu se informace o zpracování normy FIPS (Federal).  
@@ -40,7 +40,7 @@ Určuje, jestli chcete vynutit požadavek konfigurace počítače, že kryptogra
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`true`|V případě, že váš počítač je nakonfigurován tak, aby vyžadovala kryptografické algoritmy pro rozpoznávání kompatibilní se standardem FIPS, tento požadavek se nevynutí. Pokud třída implementuje algoritmus, který není kompatibilní se standardem FIPS, konstruktory nebo `Create` metody pro danou třídu vyvolat výjimky při jejich spuštění na tomto počítači. Toto nastavení je výchozí.|  
 |`false`|Kryptografické algoritmy, které používají aplikace nejsou musí být v souladu se standardem FIPS, bez ohledu na konfigurace počítače.|  

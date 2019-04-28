@@ -7,11 +7,11 @@ helpviewer_keywords:
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
 ms.openlocfilehash: 0c9d8c33715b4baf11bfac05cd4881d1475f8844
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703514"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Předávání parametrů typu hodnoty (Průvodce programováním v C#)
 A [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) proměnná obsahuje jeho data přímo jako nikoli [typu odkazu](../../../csharp/language-reference/keywords/reference-types.md) proměnnou, která obsahuje odkaz na svoje data. Předání hodnotou proměnné typu hodnoty metodě znamená předání kopii proměnné metodě. Žádné změny k parametru, které se provedou uvnitř metody nemají žádný vliv na původní data uložená v proměnné argumentu. Pokud chcete volané metody, chcete-li změnit hodnotu argumentu, musíte jí předat odkazem, pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také použít [v](../../../csharp/language-reference/keywords/in-parameter-modifier.md) – klíčové slovo předávání pomocí odkazu, aby kopie při zajištění, že se nezmění hodnotu parametru hodnoty. Pro zjednodušení následující příklady používají `ref`.  

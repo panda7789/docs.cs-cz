@@ -3,11 +3,11 @@ title: <tracking> služby WCF
 ms.date: 03/30/2017
 ms.assetid: 70cfaf24-a91c-4e56-ac47-d2ed87a963b3
 ms.openlocfilehash: 4aac9f28de746e2a75a079cbaf774f01f4a08fca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59135821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758142"
 ---
 # <a name="tracking-of-wcf"></a>\<Tracking > služby WCF
 Představuje konfiguračního oddílu pro definování nastavení sledování služby pracovního postupu.  

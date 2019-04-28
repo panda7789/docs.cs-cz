@@ -8,11 +8,11 @@ ms.assetid: c7c56e39-a700-44f5-b94e-411bfce339d9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4fe1dfbd62a6967ae51031fa12f80e9c5563dc44
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704918"
 ---
 # <a name="appdomainmanagerassembly-element"></a>\<appDomainManagerAssembly> Element
 Určuje sestavení, které poskytuje správce domény aplikace ve výchozí doméně aplikace v procesu.  

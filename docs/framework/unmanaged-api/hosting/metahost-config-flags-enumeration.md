@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6e322f5c7119d13c8a872bd87d00c1e55324b581
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59135770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765190"
 ---
 # <a name="metahostconfigflags-enumeration"></a>METAHOST_CONFIG_FLAGS – výčet
 Popisuje možné příznaky vrácené v `pdwConfigFlags` parametr [iclrmetahostpolicy::getrequestedruntime –](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) metoda udávající přítomnost a nastavení `useLegacyV2RuntimeActivationPolicy` atribut [ \<spouštěný > prvku](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) konfiguračního souboru.  

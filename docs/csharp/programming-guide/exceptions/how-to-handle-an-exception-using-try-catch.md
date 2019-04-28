@@ -8,11 +8,11 @@ helpviewer_keywords:
 - try/catch blocks [C#]
 ms.assetid: ca8e3773-980e-4767-8633-7408540e9818
 ms.openlocfilehash: 0524248a0b82ddc115e82108f774e894f1dc2f26
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710833"
 ---
 # <a name="how-to-handle-an-exception-using-trycatch-c-programming-guide"></a>Postupy: Zpracování výjimky pomocí bloku try/catch (C# Programming Guide)
 Účel [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md) blok je k zachycení a zpracování výjimky generované funkční kód. Některé výjimky mohou být zpracovány v `catch` bloku a tento problém vyřešit bez výjimky je znovu vyvolána; však častěji pouze jednu, která vám pomůžou se ujistěte, že je vyvolána vhodná výjimka.  

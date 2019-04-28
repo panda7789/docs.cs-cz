@@ -7,11 +7,11 @@ helpviewer_keywords:
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
 ms.openlocfilehash: af796affa669d0f21e9d503f5263ad26b537fb91
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54553763"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711210"
 ---
 # <a name="how-to-create-a-key-in-the-registry-visual-c"></a>Postupy: Vytvoření klíče v registru (Visual C#)
 V tomto příkladu přidá dvojici hodnot "Name" a "Isabella" do registru aktuálního uživatele pod klíčem "Names".  
@@ -27,26 +27,26 @@ key.Close();
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Zkopírujte kód a vložte ho do `Main` metoda konzolové aplikace.  
+- Zkopírujte kód a vložte ho do `Main` metoda konzolové aplikace.  
   
--   Nahradit `Names` parametr s názvem klíče, který existuje přímo v uzlu registru HKEY_CURRENT_USER.  
+- Nahradit `Names` parametr s názvem klíče, který existuje přímo v uzlu registru HKEY_CURRENT_USER.  
   
--   Nahradit `Name` parametr s názvem hodnoty, která je uvedena přímo v uzlu názvy.  
+- Nahradit `Name` parametr s názvem hodnoty, která je uvedena přímo v uzlu názvy.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Zkontrolujte strukturu registrů k vyhledání příhodného místa pro váš klíč. Například můžete chtít otevřít softwarový klíč aktuálního uživatele a vytvořte klíč s názvem vaší společnosti. Hodnoty registru obnovte klíče vaší společnosti.  
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název klíče je null.  
+- Název klíče je null.  
   
--   Uživatel nemá oprávnění k vytvoření klíče registru.  
+- Uživatel nemá oprávnění k vytvoření klíče registru.  
   
--   Název klíče překračuje limit 255 znaků.  
+- Název klíče překračuje limit 255 znaků.  
   
--   Klíč je uzavřen.  
+- Klíč je uzavřen.  
   
--   Klíč registru je jen pro čtení.  
+- Klíč registru je jen pro čtení.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Je bezpečnější zapsat data do složky uživatele – `Microsoft.Win32.Registry.CurrentUser` – místo na místním počítači – `Microsoft.Win32.Registry.LocalMachine`.  

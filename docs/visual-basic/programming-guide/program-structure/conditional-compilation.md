@@ -6,11 +6,11 @@ helpviewer_keywords:
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
 ms.openlocfilehash: 828edf2e5491394f5ac802b5c9babfb3df359e59
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758454"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Podmíněná kompilace v jazyce Visual Basic
 V *podmíněné kompilace*, konkrétní bloky kódu v programu v jazyce jsou selektivně zkompilován, zatímco jiné jsou ignorovány.  
@@ -29,11 +29,11 @@ V *podmíněné kompilace*, konkrétní bloky kódu v programu v jazyce jsou sel
 ## <a name="declaring-conditional-compilation-constants"></a>Deklarace konstanty pro podmíněnou kompilaci  
  Konstanty pro podmíněnou kompilaci můžete nastavit v jednom ze tří způsobů:  
   
--   V **Návrhář projektu**  
+- V **Návrhář projektu**  
   
--   Na příkazovém řádku při použití kompilátoru příkazového řádku  
+- Na příkazovém řádku při použití kompilátoru příkazového řádku  
   
--   V kódu  
+- V kódu  
   
  Konstanty pro podmíněnou kompilaci mají zvláštní obor a nelze přistupovat z standardní kód. Rozsah Konstanta podmíněné kompilace je závislé na způsobu, jakým je nastavena. V následující tabulce jsou uvedeny oboru konstanty, které jsou deklarovány pomocí každé ze tří způsobů uvedených výše.  
   

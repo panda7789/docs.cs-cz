@@ -12,11 +12,11 @@ ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2d96de43d258e4a7ff925e0c5b1702727e67d737
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59339434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754515"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Postupy: Vytváření a inicializace zdrojů trasování
 <xref:System.Diagnostics.TraceSource> Třídu aplikace používá k vytvoření trasování, které lze asociovat s aplikací. <xref:System.Diagnostics.TraceSource> poskytuje metody trasování, které vám umožní snadno trasovat události, trasovat data a vydávat informační trasování. Trasování výstupu z <xref:System.Diagnostics.TraceSource> může být vytvořeno a inicializováno s nebo bez použití konfiguračních souborů. Toto téma obsahuje pokyny pro obě možnosti. Doporučujeme však použít konfigurační soubory pro usnadnění opětovné konfigurace trasování vyprodukované zdroji trasování za běhu.  
@@ -73,7 +73,7 @@ ms.locfileid: "59339434"
   
 ### <a name="to-initialize-trace-sources-listeners-and-filters-without-a-configuration-file"></a>Inicializace zdrojů trasování, posluchačů a filtrů bez konfiguračního souboru  
   
--   Použijte následující příklad kódu povolíte trasování prostřednictvím zdroje trasování bez použití konfiguračního souboru. Toto není doporučený postup, ale mohou nastat okolnosti, ve kterých nechcete záviset na konfiguračních souborech k zajištění sledování.  
+- Použijte následující příklad kódu povolíte trasování prostřednictvím zdroje trasování bez použití konfiguračního souboru. Toto není doporučený postup, ale mohou nastat okolnosti, ve kterých nechcete záviset na konfiguračních souborech k zajištění sledování.  
   
      [!code-csharp[TraceSourceExample2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample2/cs/program.cs#1)]
      [!code-vb[TraceSourceExample2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample2/vb/program.vb#1)]  

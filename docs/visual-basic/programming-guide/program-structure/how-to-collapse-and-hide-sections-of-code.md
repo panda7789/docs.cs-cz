@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual Basic code, collapsing and hiding
 ms.assetid: b770e8f5-e07d-491a-ab4b-a977980f9ba2
 ms.openlocfilehash: bf2a7188456097ac227039e4d902a14eb182664c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58822263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758272"
 ---
 # <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>Postupy: Sbalení a skrytí sekcí kódu (Visual Basic)
 `#Region` – Direktiva umožňuje sbalit a skrýt části kódu v souborech Visual Basicu. `#Region` Umožňuje určit blok kódu, které můžete rozbalit nebo sbalit při použití editoru kódu sady Visual Studio. Možnost Skrýt kódu selektivně díky soubory spravovatelné a snadněji čitelné. Další informace najdete v tématu [Osnova](/visualstudio/ide/outlining).  
@@ -20,7 +20,7 @@ ms.locfileid: "58822263"
   
 ### <a name="to-collapse-and-hide-a-section-of-code"></a>Pokud chcete sbalit a skrýt části kódu  
   
--   Umístit části kódu mezi `#Region` a `#End Region` příkazy jako v následujícím příkladu:  
+- Umístit části kódu mezi `#Region` a `#End Region` příkazy jako v následujícím příkladu:  
   
      [!code-vb[VbVbalrConditionalComp#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#6)]  
   

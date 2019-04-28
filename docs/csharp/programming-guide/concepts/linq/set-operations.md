@@ -3,11 +3,11 @@ title: Množinové operace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
 ms.openlocfilehash: 9e507bbaa39bf040a8ce1564630fb5fbb8c0dbe4
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58408909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712193"
 ---
 # <a name="set-operations-c"></a>Množinové operace (C#)
 Množinové operace LINQ naleznete operace dotazů, které vytvářejí sadu výsledků dotazu, který je založen na přítomnosti nebo nepřítomnosti ekvivalentních prvků ve stejném nebo různém kolekcí (nebo sady).  

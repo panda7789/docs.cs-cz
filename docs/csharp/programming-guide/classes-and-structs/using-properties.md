@@ -8,11 +8,11 @@ helpviewer_keywords:
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
 ms.openlocfilehash: f10f9aa17adf9a03b9b8905245983bdd9d865e39
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200387"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703072"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
 Vlastnosti zkombinovat prvky pole a metody. Uživateli objekt vlastnost se zobrazí jako pole, přístup k vlastnosti vyžaduje podle stejné syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představují [získat](../../../csharp/language-reference/keywords/get.md) přístupového objektu a/nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přístupový objekt se spouští při čtení vlastnosti; kód zablokuje `set` přístupový objekt se spouští při vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přístupový objekt je považován za jen pro čtení. Vlastnost bez `get` přístupový objekt je považován za jen pro zápis. Vlastnost, která má oba přístupové objekty je pro čtení i zápis.  
@@ -85,11 +85,11 @@ Vlastnosti zkombinovat prvky pole a metody. Uživateli objekt vlastnost se zobra
   
  Tady jsou důležité body v předchozím příkladu:  
   
--   Vlastnost `Name` odvozené třídy skryje vlastnost `Name` v základní třídě. V takovém případě `new` modifikátor se používá v deklarace vlastností v odvozené třídě:  
+- Vlastnost `Name` odvozené třídy skryje vlastnost `Name` v základní třídě. V takovém případě `new` modifikátor se používá v deklarace vlastností v odvozené třídě:  
   
      [!code-csharp[csProgGuideProperties#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#4)]  
   
--   Přetypování `(Employee)` slouží k přístupu k skrytá vlastnost v základní třídě:  
+- Přetypování `(Employee)` slouží k přístupu k skrytá vlastnost v základní třídě:  
   
      [!code-csharp[csProgGuideProperties#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#5)]  
   
