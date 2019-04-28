@@ -4,11 +4,11 @@ description: Zjistěte, jak seskupit výsledky pomocí jazyka LINQ v jazyce C#.
 ms.date: 12/01/2016
 ms.assetid: 2e4ec27f-06fb-4de7-8973-0189906d4520
 ms.openlocfilehash: 577a358c31fcf5346e7aab7a2e2b6be10fd1beff
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688459"
 ---
 # <a name="group-query-results"></a>Seskupení výsledků dotazu
 

@@ -3,20 +3,20 @@ title: 'Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na 
 ms.date: 03/30/2017
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
 ms.openlocfilehash: 6114fa90b10a5d0cacb60a7ad40f63fae776e174
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683519"
 ---
 # <a name="how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf"></a>Postupy: Migrace webových služeb ASP.NET s povolenou službou AJAX na WCF
 Toto téma popisuje postupy migrace základní služby technologie ASP.NET AJAX do ekvivalentní služby s povoleným AJAX Windows Communication Foundation (WCF). Ukazuje, jak vytvořit funkčně ekvivalentní verzi WCF služby technologie ASP.NET AJAX. Tyto dvě služby je pak možné použít vedle sebe nebo službu WCF je možné nahradit služby technologie ASP.NET AJAX.
 
  Migrace stávající technologie ASP.NET AJAX komunikace mezi službami WCF AJAX poskytuje následující výhody:
 
--   Vaše služba AJAX mohou vystavit jako službu SOAP s minimálními další konfiguraci.
+- Vaše služba AJAX mohou vystavit jako službu SOAP s minimálními další konfiguraci.
 
--   Můžete využívat funkce WCF, jako je sledování a tak dále.
+- Můžete využívat funkce WCF, jako je sledování a tak dále.
 
  V následujících postupech se předpokládá, že používáte sadu Visual Studio 2012.
 
@@ -179,9 +179,9 @@ namespace ASPHello
 
  Pokud ASMX webovými službami jsou upgraduje a migrovat vedle sebe ke službám WCF, vyhněte se dva typy mapování na stejné jméno v klientovi. To způsobí, že výjimka v serializátory Pokud je používán stejného typu <xref:System.Web.Services.WebMethodAttribute> a <xref:System.ServiceModel.ServiceContractAttribute>:
 
--   Pokud nejprve přidáte službu WCF, volání metody na webovou službu ASMX způsobí, že výjimka v <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> vzhledem k tomu, že má přednost před definice stylu WCF objednávky v proxy serveru.
+- Pokud nejprve přidáte službu WCF, volání metody na webovou službu ASMX způsobí, že výjimka v <xref:System.Web.UI.ObjectConverter.ConvertValue%28System.Object%2CSystem.Type%2CSystem.String%29> vzhledem k tomu, že má přednost před definice stylu WCF objednávky v proxy serveru.
 
--   Pokud nejprve přidá ASMX webovou službu, volání metody na službu WCF způsobí, že výjimka v <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> vzhledem k tomu, že má přednost před definice stylu webové služby objednávky v proxy serveru.
+- Pokud nejprve přidá ASMX webovou službu, volání metody na službu WCF způsobí, že výjimka v <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> vzhledem k tomu, že má přednost před definice stylu webové služby objednávky v proxy serveru.
 
  Existují významné rozdíly v chování mezi <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> a technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>. Například <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> představuje slovník jako pole párů klíč/hodnota, že technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> představuje slovník jako skutečné objekty JSON. Takže tady je slovník reprezentovány v rozhraní ASP.NET AJAX.
 
@@ -193,9 +193,9 @@ d.Add("two", 2);
 
  Tento slovník je reprezentován v objektech JSON, jak je znázorněno v následujícím seznamu:
 
--   [{"Klíče": "Jedna", "Value": 1}, {"Klíče": "Dvě", "Value": 2}] ve <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
+- [{"Klíče": "Jedna", "Value": 1}, {"Klíče": "Dvě", "Value": 2}] ve <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>
 
--   {"jedna": 1, "dvě": 2} pomocí technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>
+- {"jedna": 1, "dvě": 2} pomocí technologie ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>
 
  <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Účinnější v tom smyslu, že dokáže zpracovat slovníky kde typ klíče není řetězec, zatímco <xref:System.Web.Script.Serialization.JavaScriptSerializer> nelze. Ale je více vhodných JSON.
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
 ms.openlocfilehash: a94864563491b5bd2d50a6df59858f4b7235fd75
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696220"
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
 Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami pomocí WCF klienta nebo kanál objektů. [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základních klienta a kanál objektů a jejich používání.  
@@ -20,13 +20,13 @@ Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami po
 ## <a name="overview"></a>Přehled  
  Toto téma popisuje chování a problémů souvisejících se službou:  
   
--   Kanál a relace životnosti.  
+- Kanál a relace životnosti.  
   
--   Zpracování výjimek.  
+- Zpracování výjimek.  
   
--   Principy blokující problémy.  
+- Principy blokující problémy.  
   
--   Inicializace kanály interaktivně.  
+- Inicializace kanály interaktivně.  
   
 ### <a name="channel-and-session-lifetimes"></a>Kanál a doby trvání relace  
  Aplikace Windows Communication Foundation (WCF) obsahuje dvě kategorie kanály datagramu, který neobsahuje relace.  

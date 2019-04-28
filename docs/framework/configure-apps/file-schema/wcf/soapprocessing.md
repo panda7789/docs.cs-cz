@@ -3,11 +3,11 @@ title: <soapProcessing>
 ms.date: 03/30/2017
 ms.assetid: e8707027-e6b8-4539-893d-3cd7c13fbc18
 ms.openlocfilehash: 0bedcec1a87f8384a89f5e5931c18ccebe87f07e
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758006"
 ---
 # <a name="soapprocessing"></a>\<soapProcessing >
 
@@ -37,7 +37,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádný
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 

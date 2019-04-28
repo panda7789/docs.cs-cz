@@ -7,24 +7,24 @@ helpviewer_keywords:
 - controls [Windows Forms], creating
 ms.assetid: 6277bb81-90f7-4c5b-9f4b-b02bb42dd316
 ms.openlocfilehash: 21b8b08e56e8b4d48fb738b86247d3f04dc4150b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759866"
 ---
 # <a name="windows-forms-control-development-basics"></a>Základní informace o vývoji ovládacích prvků Windows Forms
 Je třída, která je odvozena přímo nebo nepřímo z ovládacího prvku Windows Forms <xref:System.Windows.Forms.Control?displayProperty=nameWithType>. Následující seznam popisuje běžné scénáře pro vývoj ovládacích prvků Windows Forms:  
   
--   Kombinování existující ovládací prvky pro vytvoření složeného ovládacího prvku.  
+- Kombinování existující ovládací prvky pro vytvoření složeného ovládacího prvku.  
   
      Složené ovládací prvky zapouzdřují uživatelské rozhraní, které lze znovu použít jako ovládací prvek. Příklad složený ovládací prvek je ovládací prvek, který se skládá z textového pole a tlačítko pro obnovení. Vizuální návrhářské nástroje nabízí bohatou podporu pro vytváření složených ovládacích prvků. Pro vytvoření složeného ovládacího prvku, jsou odvozeny z <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>. Základní třída <xref:System.Windows.Forms.UserControl> zajišťuje směrování klávesnice pro podřízené ovládací prvky a umožňuje podřízené ovládací prvky pro práci s jako skupinu. Další informace najdete v tématu [vývoj složeného ovládacího prvku Windows Forms](developing-a-composite-windows-forms-control.md).  
   
--   Rozšíření existujícího ovládacího prvku jej přizpůsobit nebo přidat její funkčnosti.  
+- Rozšíření existujícího ovládacího prvku jej přizpůsobit nebo přidat její funkčnosti.  
   
      Tlačítko, jejichž barva se nedá změnit a tlačítko, které obsahuje další vlastnost, který sleduje, kolikrát se kliklo jsou příkladem rozšířené ovládací prvky. Můžete přizpůsobit libovolný ovládací prvek Windows Forms odvozený z něj a přepsání nebo přidáním vlastnosti, metody a události.  
   
--   Vytvoření ovládacího prvku, který kombinovat nebo rozšířit existující ovládací prvky.  
+- Vytvoření ovládacího prvku, který kombinovat nebo rozšířit existující ovládací prvky.  
   
      V tomto scénáři odvozen od základní třídy ovládacího prvku <xref:System.Windows.Forms.Control>. Můžete lze přidat také přepsat vlastnosti, metody a události základní třídy. Abyste mohli začít, najdete v článku [jak: Vývoj ovládacího prvku jednoduchého Windows Forms](how-to-develop-a-simple-windows-forms-control.md).  
   

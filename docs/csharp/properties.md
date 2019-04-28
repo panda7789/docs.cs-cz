@@ -1,95 +1,95 @@
 ---
 title: Vlastnosti
-description: Další informace o C# vlastnosti, které obsahují funkce pro ověření, počítaný hodnoty, opožděné vyhodnocení, a vlastnost změnit oznámení.
+description: Další informace o C# vlastnosti, jako je například funkce pro ověření, vypočítané hodnoty, opožděné vyhodnocení, a vlastnost změnit oznámení.
 ms.date: 04/25/2018
 ms.openlocfilehash: d4fa7b6117bec63c41318dd4bcc3850ce55a5907
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33956235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675777"
 ---
 # <a name="properties"></a>Vlastnosti
 
-Vlastnosti jsou prvotřídní občanů v jazyce C#. Jazyk definuje syntaxi, která umožňuje vývojářům psát kód, který přesně vyjadřoval jejich záměr návrhu.
+Vlastnosti jsou první třídy občanům v C#. Jazyk definuje syntaxe, která vývojářům umožňuje psát kód, který se přesně vyjadřoval jejich návrhu záměr.
 
-Vlastnosti chovat jako pole, když k nim.
-Na rozdíl od pole, ale vlastnosti jsou u přistupující objekty, které definují příkazy spustit, když je vlastnost získat přístup nebo přiřazená implementován.
+Vlastnosti se chovat jako pole, když k nim přistupovat.
+Na rozdíl od pole, ale vlastnosti jsou implementovány s přístupové objekty, které definují příkazy, které jsou spouštěny, když je vlastnost přistupovat ani přiřazené.
 
-## <a name="property-syntax"></a>Syntaxe vlastností
+## <a name="property-syntax"></a>Syntaxe vlastnosti
 
-Syntaxe vlastností v představuje přirozené rozšíření na pole. Pole definuje umístění úložiště:
+Syntaxe vlastností je přirozeným pole. Pole určuje umístění úložiště:
 
 [!code-csharp[Person class with public fields](../../samples/snippets/csharp/properties/Person.cs#1)]
 
-Obsahuje deklarace pro definici vlastnosti `get` a `set` přistupujícího objektu, který načítá a přiřadí hodnota této vlastnosti:
+Definice vlastnosti obsahuje deklarace `get` a `set` přístupový objekt, který načte a přiřadí hodnotu této vlastnosti:
 
 [!code-csharp[Person class with public properties](../../samples/snippets/csharp/properties/Person.cs#2)]
 
-Syntaxe uvedené výše je *automaticky vlastnost* syntaxe. Kompilátor generuje umístění úložiště pro pole, který zálohuje vlastnost. Kompilátor také implementuje text `get` a `set` přistupující objekty.
+Syntaxe uvedené výše je *auto vlastnost* syntaxe. Kompilátor generuje umístění úložiště pro pole, který zálohuje vlastnost. Kompilátor také implementuje text `get` a `set` přistupující objekty.
 
-V některých případech je nutné inicializovat vlastnost na jinou hodnotu než výchozí u tohoto typu.  C# umožňuje který nastavením hodnoty po pravé složené závorce pro vlastnost. Dáte možná přednost počáteční hodnota `FirstName` vlastnost, která má být prázdný řetězec místo `null`. Zadáte, jak je uvedeno níže:
+V některých případech je nutné inicializovat vlastnost, která má jinou hodnotu než výchozí nastavení pro jeho typu.  C#který umožňuje tak, že nastavíte hodnotu po pravé složené závorce pro vlastnost. Možná dáte přednost počáteční hodnotu `FirstName` vlastnost jako prázdný řetězec spíše než `null`. By určíte, jak je znázorněno níže:
 
 [!code-csharp[Person class with properties and initializer](../../samples/snippets/csharp/properties/Person.cs#3)]
 
-Konkrétní inicializace je nejvhodnější pro vlastnosti jen pro čtení, jak uvidíte později v tomto článku.
+Konkrétní inicializační je zvláště užitečná pro vlastnosti jen pro čtení, jak uvidíte později v tomto článku.
 
-Můžete také definovat úložiště sami, jak je uvedeno níže:
+Můžete také definovat úložiště sami, jak je znázorněno níže:
 
 [!code-csharp[Person class with properties and backing field](../../samples/snippets/csharp/properties/Person.cs#4)]
 
-Pokud implementace vlastností jeden výraz, můžete použít *výraz vozidlo členy* pro mechanismu získání nebo nastavení:
+Pokud provádění vlastnost je jediný výraz, můžete použít *členové tvoření* pro getter nebo setter:
 
 [!code-csharp[Person class with properties and expression bodied getters and setters](../../samples/snippets/csharp/properties/Person.cs#5)]
 
-Tato zjednodušenou syntaxi se použije v případě potřeby v tomto článku.
+Tato zjednodušenou syntaxi se použije, případně v celém tomto článku.
 
-Definici vlastnosti uvedené výše je vlastnost pro čtení a zápis. Všimněte si klíčové slovo `value` v přistupující objekt set. `set` Přistupujícího objektu má vždy jeden parametr s názvem `value`. `get` Přistupujícího objektu musí vracet hodnotu, která je převést na typ vlastnosti (`string` v tomto příkladu).
+Definice vlastnosti uvedené výše je vlastnost pro čtení i zápis. Všimněte si, že klíčové slovo `value` přístupového objektu set. `set` Přístupového objektu má vždy jeden parametr s názvem `value`. `get` Přístupového objektu musí vracet hodnotu, která je převoditelná na typ proměnné (`string` v tomto příkladu).
 
-To je základní informace o syntaxi. Existuje mnoho různých variant, které podporují celou řadu různých idioms. Umožňuje prozkoumat a další možnosti syntaxe pro každou.
+To je základní informace o syntaxi. Existuje mnoho různých změn, které podporují širokou škálu návrhů idiomy. Pojďme prozkoumat a další možnosti syntaxe pro každý.
 
 ## <a name="scenarios"></a>Scénáře
 
-Výše uvedených příkladech vám ukázal, jedním z nejjednodušších definice vlastnost: vlastnost pro čtení a zápis bez ověřování. Zápis kódu chcete `get` a `set` přístupové objekty, můžete vytvořit mnoho různých scénářů.
+Výše uvedené příklady nám ukázaly, jedním z nejjednodušší případů definici vlastnosti: vlastnost pro čtení a zápis bez ověřování. Napsáním kódu, které chcete v `get` a `set` přístupové objekty, můžete vytvořit mnoho různých scénářů.
 
 ### <a name="validation"></a>Ověřování
 
-Můžete napsat kód ve `set` přistupujícího objektu hodnoty reprezentována vlastnost musí být vždy platné. Předpokládejme například, pro jedno pravidlo `Person` třída je, že název nemůže být prázdný nebo mezer. By zápisu, následujícím způsobem:
+Můžete napsat kód `set` přistupující k zajištění, že je vlastnost reprezentována jsou hodnoty vždycky platné. Předpokládejme například, že jedno pravidlo pro `Person` třída je, že název nemůže být prázdné nebo prázdný znak. Měli byste napsat následující:
 
 [!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#6)]
 
-V předchozím příkladu můžete zjednodušit pomocí`throw` výrazu v rámci ověření Metoda setter vlastnosti:
+V předchozím příkladu se dá zjednodušit pomocí`throw` výraz jako součást ověření setter vlastnosti:
 
 [!code-csharp[Validating property setters](../../samples/snippets/csharp/properties/Person.cs#7)]
 
-V předchozím příkladu vynucuje pravidlo, že křestní jméno nesmí být prázdný nebo mezer. Pokud vývojář zapíše
+Výše uvedený příklad vynucuje pravidla, křestní jméno nesmí být prázdné nebo prázdný znak. Pokud vývojář zapíše
 
 ```csharp
 hero.FirstName = "";
 ```
 
-Vyvolá tuto přiřazení `ArgumentException`. Protože vlastnosti musí mít typ vrácené hodnoty void, sestavu chyb v přistupující objekt set podle došlo k výjimce.
+Vyvolá přiřazení `ArgumentException`. Protože přístupový objekt set vlastnosti musí mít typ vrácené hodnoty void, vám umožňuje nahlásit chyby u přístupového objektu set vyvoláním výjimky.
 
-Tato stejná syntaxe k ničemu potřeba ve vašem scénáři můžete rozšířit. Můžete zkontrolovat vztahy mezi různé vlastnosti nebo vyhodnotit proti případné externí podmínky. Všechny platné příkazy jazyka C# jsou platné v přistupujícího objektu vlastnosti.
+Tahle stejné syntaxe cokoli, co je potřeba ve vašem scénáři můžete rozšířit. Můžete zkontrolovat vztahy mezi různými vlastnostmi nebo ověřovat proti všechny externí podmínky. Libovolný platný C# příkazy jsou platné v přistupujícího objektu vlastnosti.
 
 ### <a name="read-only"></a>jen pro čtení
 
-V tomto okamžiku jsou všechny definice vlastností, které jste viděli vlastností čtení/zápisu s veřejné přistupující objekty. Toto není platné pouze pro usnadnění přístupu pro vlastnosti.
-Můžete vytvořit vlastnosti jen pro čtení, nebo poskytnout jiné usnadnění přístupu k sadě a získat přístupové objekty. Předpokládat, že vaše `Person` třída měli jenom povolit změna hodnoty `FirstName` vlastnost z jiné metody v dané třídě. Může poskytnout přistupující objekt set `private` usnadnění místo `public`:
+Do této chvíle jsou všechny definice vlastností, které jste viděli vlastností čtení/zápisu s veřejnou přistupující objekty. To není jenom platné usnadnění přístupu pro vlastnosti.
+Můžete vytvořit vlastnosti jen pro čtení, nebo poskytují různou přístupností. do sady a získat přístupové objekty. Předpokládejme, že vaše `Person` třída by měla pouze povolit, změna hodnoty `FirstName` vlastnost z jiné metody v dané třídě. Můžete zadat přístupový objekt set `private` usnadnění místo `public`:
 
 [!code-csharp[Using a private setter for a publicly readonly property](../../samples/snippets/csharp/properties/Person.cs#8)]
 
-Nyní `FirstName` vlastnost je přístupná z žádný kód, ale lze přiřadit pouze z jiných kódu v `Person` třídy.
+Nyní `FirstName` vlastnost je přístupná z jakéhokoli kódu, ale lze přiřadit pouze od jiného kódu v `Person` třídy.
 
-Můžete přidat všechny – modifikátor přístupu omezující buď sadu nebo získat přístupové objekty. Žádné – modifikátor přístupu u jednotlivých přistupujícího objektu musí být omezenější než – modifikátor přístupu na definici vlastnosti. Výše je právní protože `FirstName` vlastnost je `public`, ale je přistupující objekt set `private`. Nelze deklarovat `private` vlastnost s `public` přistupujícího objektu. Vlastnost deklarace lze také deklarovat `protected`, `internal`, `protected internal`, nebo i `private`.
+Můžete přidat libovolné modifikátor omezující přístupová buď sadu nebo získat přístupové objekty. Žádné modifikátor přístupu, který umístíte na jednotlivé přístupový objekt musí být omezeny více než modifikátor přístupu v definici vlastnosti. Výše uvedené je právní protože `FirstName` vlastnost `public`, ale přistupující objekt Jet není `private`. Nelze deklarovat `private` vlastnost s `public` přistupujícího objektu. Deklarace vlastností lze také deklarovat `protected`, `internal`, `protected internal`, nebo dokonce `private`.
 
-Taky je platné umístit na víc omezující modifikátor `get` přistupujícího objektu. Například můžete mít `public` vlastnost, ale omezit `get` přistupujícího objektu `private`. Tento scénář se zřídka provádí v praxi.
+Je také možné umístit na víc omezující modifikátor `get` přistupujícího objektu. Například můžete mít `public` vlastnost, ale omezit `get` přístupového objektu `private`. Tento scénář se jen zřídka provádí v praxi.
 
-Úpravy vlastností můžete taky omezit tak, aby lze nastavit pouze v konstruktoru nebo inicializátoru vlastnost. Můžete upravit `Person` třídy tak následujícím způsobem:
+Můžete také omezit změny vlastnosti tak, aby lze nastavit pouze v konstruktoru nebo inicializátoru vlastnost. Můžete upravit `Person` třídy to následujícím způsobem:
 
 [!code-csharp[A readonly auto implemented property](../../samples/snippets/csharp/properties/Person.cs#9)]
 
-Tato funkce se nejčastěji používá pro inicializaci kolekce, které jsou zveřejněné jako jen pro čtení vlastnosti:
+Tato funkce se nejčastěji používá pro inicializaci kolekce, které jsou vystaveny jako vlastnosti jen pro čtení:
 
 ```csharp
 public class Measurements
@@ -98,54 +98,54 @@ public class Measurements
 }
 ```
 
-### <a name="computed-properties"></a>Počítané vlastnosti
+### <a name="computed-properties"></a>Vypočítané vlastnosti
 
-Vlastnost není nutné jednoduše vrátí hodnotu pole členů. Můžete vytvořit vlastnosti, které vracejí vypočtená hodnota. Umožňuje rozšířit `Person` objekt, který chcete vrátit úplný název, počítaný zřetězením názvy první a poslední:
+Vlastnost není potřeba jednoduše vrátit hodnotu člena pole. Můžete vytvořit vlastnosti, které vrací vypočítanou hodnotu. Můžeme rozšířit `Person` objekt vrátí úplný název, počítaný zřetězením jména a příjmení:
 
 [!code-csharp[A computed property](../../samples/snippets/csharp/properties/Person.cs#10)]
 
-V příkladu výše používá [řetězec interpolace](../csharp/language-reference/tokens/interpolated.md) funkce vytvořit formátovaný řetězec pro úplný název.
+V příkladu výše používá [interpolace](../csharp/language-reference/tokens/interpolated.md) funkci pro vytvoření formátovaný řetězec pro úplný název.
 
-Můžete použít také *výraz vozidlo člen*, který poskytuje více stručného způsob, jak vytvořit použití počítaných `FullName` vlastnost:
+Můžete také použít *s výrazem v těle členské*, která poskytuje stručnější způsob, jak vytvořit počítaných `FullName` vlastnost:
 
 [!code-csharp[A computed property using an expression bodied member](../../samples/snippets/csharp/properties/Person.cs#11)]
 
-*Výraz vozidlo členy* použít *výrazu lambda* syntaxe definovat metody, které obsahují jeden výraz. Tento výraz zde, vrátí úplný název pro objekt osoby.
+*Členové tvoření* použít *výraz lambda* syntaxe pro definování metod, které obsahují jeden výraz. Tady tento výraz vrátí úplný název objektu osoba.
 
-### <a name="cached-evaluated-properties"></a>V mezipaměti vyhodnotí vlastnosti
+### <a name="cached-evaluated-properties"></a>Vyhodnocený vlastnostem uloženým v mezipaměti
 
-Můžete kombinovat koncept vypočítané vlastnosti s úložištěm a vytvořit *mezipaměti vyhodnotí vlastnost*.  Například můžete aktualizovat `FullName` vlastnost tak, aby formátování řetězce pouze došlo při prvním byl přístup:
+Můžete kombinovat koncept vypočítané vlastnosti s úložištěm a vytvářet *uložené v mezipaměti Vyhodnocená vlastnost*.  Například můžete aktualizovat `FullName` vlastnost tak, aby formátování řetězce pouze se stalo se použila poprvé:
 
 [!code-csharp[Caching the value of a computed property](../../samples/snippets/csharp/properties/Person.cs#12)]
 
-Výše uvedený kód obsahuje chybu, když. Pokud kód aktualizace hodnotu buď `FirstName` nebo `LastName` vlastnost, dříve vyhodnotí `fullName` pole je neplatné. Můžete změnit `set` přístupových objektů `FirstName` a `LastName` vlastnost tak, aby `fullName` pole se vypočítává znovu:
+Výše uvedený kód však obsahuje chybu. Pokud kód aktualizuje hodnotu buď `FirstName` nebo `LastName` vlastnost, dříve Vyhodnocená `fullName` pole je neplatné. Můžete změnit `set` přistupující objekty `FirstName` a `LastName` vlastnost tak, aby `fullName` pole se vypočítá znovu:
 
 [!code-csharp[Invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#13)]
 
-Vyhodnotí této poslední verzi `FullName` vlastnost pouze v případě potřeby.
-Pokud je platný dříve počítané verze, se používá. Další změnou stavu by způsobila neplatnost dříve počítané verze, bude přepočítána. Vývojáři, které používají tuto třídu není potřeba znát podrobnosti implementace. Žádná z těchto interní změny mají vliv na použití objektu osoby. To je klíče důvod pomocí vlastnosti vystavit data členům v objektu.
+Tento poslední verze vyhodnocuje `FullName` vlastnost jenom v případě potřeby.
+Pokud dříve vypočtené verze je platný, se používá. Pokud jiná změna stavu zruší platnost dříve vypočtené verze, bude přepočítat. Vývojáři, kteří tuto třídu použít, není potřeba znát podrobnosti implementace. Žádná z těchto změn mají vliv na použití objektu osoba. To je důvod klíče pro použití vlastností ke zveřejnění datové členy objektu.
 
 ### <a name="attaching-attributes-to-auto-implemented-properties"></a>Atributy se připojuje k automaticky implementované vlastnosti
 
-Počínaje 7.3 C#, atributy pole lze připojit k poli kompilátoru generované zálohování v automaticky implementované vlastnosti. Představte si třeba revize k `Person` třída, která přidává jedinečné číslo `Id` vlastnost.
-Psaní`Id` vlastnost pomocí ve automaticky implementované vlastnosti, ale váš návrh nevyvolá pro uchování `Id` vlastnost. <xref:System.NonSerializedAttribute> Lze připojit pouze na pole není vlastnosti. Můžete připojit <xref:System.NonSerializedAttribute> základní pole pro `Id` vlastnost pomocí `field:` specifikátor pro atribut, jak je znázorněno v následujícím příkladu:
+Počínaje C# 7.3, atributy polí lze připojit k pomocným polem generované kompilátorem v automaticky implementované vlastnosti. Představte si třeba revizi `Person` třídu, která přidá jedinečné celé `Id` vlastnost.
+Při psaní`Id` vlastnost pomocí automaticky implementované vlastnosti, ale váš návrh nevolá pro trvalé `Id` vlastnost. <xref:System.NonSerializedAttribute> Lze připojit pouze na pole, nikoli vlastnosti. Můžete připojit <xref:System.NonSerializedAttribute> na pomocné pole `Id` vlastnost s použitím `field:` specifikátor atributu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Attaching attributes to a backing field](../../samples/snippets/csharp/properties/Person.cs#14)]
 
-Tento postup funguje pro všechny atributy, které můžete připojit k poli zálohování na automaticky implementované vlastnosti.
+Tento postup funguje pro všechny atributy, které můžete připojit na automaticky implementované vlastnosti pole zálohování.
 
 ### <a name="implementing-inotifypropertychanged"></a>Implementace rozhraní INotifyPropertyChanged.
 
-Poslední scénář, kde je potřeba psát kód v přistupujícího objektu vlastnosti je podpora <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní sloužící k upozornění klientů vazby dat, která byla hodnota změněna. Při změně hodnoty vlastnosti, vyvolá objekt <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged?displayProperty=nameWithType> události označit změny. Datové vazby knihovny, pak aktualizovat zobrazení prvky založené na tuto změnu. Následující kód ukazuje, jak můžete implementovat `INotifyPropertyChanged` pro `FirstName` vlastnost této třídy osoby.
+Poslední scénář, kde budete muset psát kód v přistupující objekt vlastnosti je podpora <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní používá k upozornění klientů vazby dat, které byla hodnota změněna. Při změně hodnoty vlastnosti, vyvolá objekt <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged?displayProperty=nameWithType> událost označující změnu. Datové vazby knihovny, zase aktualizaci založené na tuto změnu zobrazení elementů. Následující kód ukazuje, jak by implementovat `INotifyPropertyChanged` pro `FirstName` vlastnosti třídy této osoby.
 
 [!code-csharp[invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#15)]
 
-`?.` Operátor je volána *null podmíněný operátor*. Před vyhodnocením pravé straně operátoru zkontroluje pro odkaz s hodnotou null. Konečným výsledkem je, že pokud neexistují žádné odběratele, kteří mají `PropertyChanged` událostí, neprovede se kód pro vyvolání události. By throw `NullReferenceException` bez zkontrolujte v takovém případě. Další informace najdete na webu [`events`](delegates-events.md). Tento příklad také používá nové `nameof` operátor převést z názvu symbolu vlastnost textové reprezentace.
-Pomocí `nameof` můžete snížit počet chyb, které jste zadali název vlastnosti.
+`?.` Operátor je volána *null podmiňovací operátor*. Před vyhodnocením pravé straně operátoru zkontroluje odkaz s hodnotou null. Konečným výsledkem je, že pokud neexistují žádné Odběratelé `PropertyChanged` událostí, nebude spouštět kód pro vyvolání události. To vede `NullReferenceException` bez to zkontrolovat v takovém případě. Další informace najdete na webu [`events`](delegates-events.md). Tento příklad také používá nový `nameof` operátor převodu ze symbolů vlastnost název na jeho textové vyjádření.
+Pomocí `nameof` může snížit chyby, kde jste zadali název vlastnosti.
 
-Znovu implementace <xref:System.ComponentModel.INotifyPropertyChanged> je příklad případu, kde můžete napsat kód ve vaší přístupových objektů pro podporu scénářů, budete potřebovat.
+Znovu, implementace <xref:System.ComponentModel.INotifyPropertyChanged> je příkladem případem, kde psát kód v vaše přístupové objekty pro zajištění podpory scénářů, které potřebujete.
 
 ## <a name="summing-up"></a>Shrnutí
 
-Vlastnosti jsou formuláře inteligentních polí ve třídě nebo objekt. Z mimo objekt, zobrazí se jako pole v objektu. Však vlastnosti se dají implementovat pomocí úplné palety funkcí jazyka C#.
-Můžete zadat ověřování, jiný usnadnění, opožděné vyhodnocení nebo všechny požadavky potřebné pro vaše scénáře.
+Vlastnosti jsou formou inteligentních polí ve třídě nebo objekt. Z mimo objektu, zobrazí se jako pole v objektu. Nicméně vlastnosti je možné implementovat pomocí úplné paletu C# funkce.
+Můžete zadat ověření, různou přístupností, opožděné vyhodnocení nebo všechny požadavky potřebné pro vaše scénáře.

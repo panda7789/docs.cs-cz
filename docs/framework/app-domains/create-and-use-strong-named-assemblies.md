@@ -15,11 +15,11 @@ ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bdc9d6e954c75ccfeea15ec163bc81e7a3ab8ab7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705777"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Vytváření a používání sestavení se silným názvem
 
@@ -36,9 +36,9 @@ Následující scénář popisuje proces podepisování sestavení silným názv
 
 1. Sestavení A vytvoření se silným názvem pomocí jedné z následujících metod:
 
-    -   Použití vývojového prostředí, které podporuje vytváření silných názvů, jako je Visual Studio.
+    - Použití vývojového prostředí, které podporuje vytváření silných názvů, jako je Visual Studio.
 
-    -   Vytvoření páru kryptografických klíčů pomocí [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) a přiřazení páru klíčů pro sestavení pomocí kompilátoru příkazového řádku nebo [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Windows Software Development Kit (SDK) poskytuje Sn.exe a Al.exe.
+    - Vytvoření páru kryptografických klíčů pomocí [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) a přiřazení páru klíčů pro sestavení pomocí kompilátoru příkazového řádku nebo [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Windows Software Development Kit (SDK) poskytuje Sn.exe a Al.exe.
 
 2. Vývojové prostředí nebo nástroj podepíše hodnota hash souboru, který obsahuje manifest sestavení s privátním klíčem pro vývojáře. Tento digitální podpis je uložen v přenosné spustitelné (PE) souboru, který obsahuje manifest sestavení A.
 
@@ -55,13 +55,13 @@ Počínaje [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)],
 
 Funkce obejití vztahuje na všechny sestavení je podepsáno silným názvem a, který má následující vlastnosti:
 
--   Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> důkazy (třeba `MyComputer` legitimace zóny).
+- Plně důvěryhodné bez <xref:System.Security.Policy.StrongName> důkazy (třeba `MyComputer` legitimace zóny).
 
--   Načíst do plně důvěryhodné <xref:System.AppDomain>.
+- Načíst do plně důvěryhodné <xref:System.AppDomain>.
 
--   Načtené z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost, která <xref:System.AppDomain>.
+- Načtené z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost, která <xref:System.AppDomain>.
 
--   Není zpožděním.
+- Není zpožděním.
 
 Tuto funkci můžete zakázat pro jednotlivé aplikace nebo pro počítač. Zobrazit [jak: Zákaz funkce obejití silného názvu](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).
 

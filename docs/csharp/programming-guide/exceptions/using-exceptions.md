@@ -7,11 +7,11 @@ helpviewer_keywords:
 - exceptions [C#], about exceptions
 ms.assetid: 71472c62-320a-470a-97d2-67995180389d
 ms.openlocfilehash: 2edaf8c823f228ecb50a256961fe78980826d7f2
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61681244"
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
 V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí mechanizmu nazývány výjimkami. Výjimky jsou vyvolaných kódem, který dojde k chybě a zachytit kód, který můžete chybu opravit. Výjimky mohou být vyvolány pomocí rozhraní .NET Framework common language runtime (CLR) nebo kód v programu. Jakmile je vyvolána výjimka, rozšíří zásobníkem volání do `catch` se nachází příkaz pro výjimku. Nezachycených výjimek jsou zpracovány rutinou obecná výjimka poskytuje systém, který se zobrazí dialogové okno.  
@@ -38,11 +38,11 @@ V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí 
   
  Pokud žádné kompatibilní `catch` bloku se nachází v zásobníku volání po dojde k výjimce, nenastane některá z tři věci:  
   
--   Je-li výjimka v rámci finalizační metodu, finalizační metoda byla přerušena a základní finalizační metodu, pokud existuje, je volána.  
+- Je-li výjimka v rámci finalizační metodu, finalizační metoda byla přerušena a základní finalizační metodu, pokud existuje, je volána.  
   
--   Pokud obsahuje zásobník volání statického konstruktoru nebo inicializátoru statické pole <xref:System.TypeInitializationException> je vyvolána výjimka s původní výjimky přiřazené <xref:System.Exception.InnerException%2A> vlastnost novou výjimku.  
+- Pokud obsahuje zásobník volání statického konstruktoru nebo inicializátoru statické pole <xref:System.TypeInitializationException> je vyvolána výjimka s původní výjimky přiřazené <xref:System.Exception.InnerException%2A> vlastnost novou výjimku.  
   
--   Pokud je dosaženo začátku vlákno, vlákno ukončeno.  
+- Pokud je dosaženo začátku vlákno, vlákno ukončeno.  
   
 ## <a name="see-also"></a>Viz také:
 

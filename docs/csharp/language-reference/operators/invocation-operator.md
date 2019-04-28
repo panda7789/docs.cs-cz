@@ -10,11 +10,11 @@ helpviewer_keywords:
 - () operator [C#]
 ms.assetid: 846e1f94-8a8c-42fc-a42c-fbd38e70d8cc
 ms.openlocfilehash: 3a0af33739c9cb4d090842219eba4ece9700ef89
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689226"
 ---
 # <a name="-operator-c-reference"></a>() – operátor (C# odkaz)
 

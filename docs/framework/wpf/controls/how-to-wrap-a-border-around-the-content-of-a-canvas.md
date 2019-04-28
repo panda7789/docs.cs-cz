@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Border control [WPF], wrapping Canvas
 ms.assetid: caf0404f-f4e7-484f-9928-5dae1238d8ef
 ms.openlocfilehash: 5d33af798d2e626cea08fa71c9b2c88acb22b5e2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696155"
 ---
 # <a name="how-to-wrap-a-border-around-the-content-of-a-canvas"></a>Postupy: Zalomení ohraničení kolem obsahu plátna
 Tento příklad ukazuje postup při zabalení <xref:System.Windows.Controls.Canvas> křížkem <xref:System.Windows.Controls.Border>.  

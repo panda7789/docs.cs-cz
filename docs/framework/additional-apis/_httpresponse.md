@@ -13,15 +13,15 @@ ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: ef746d4a2e6782fa295b7c27f32ce5dc117350a7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745913"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675491"
 ---
 # <a name="httpwebrequesthttpresponse-field"></a>HttpWebRequest. \_HttpResponse pole
 
-`HttpWebRequest._HttpResponse` je <xref:System.Net.HttpWebResponse> obsahující podrobnosti o odpovědi HTTP z požadavku HTTP. Může být `null` dokud neobdrží odpověď HTTP.
+`HttpWebRequest._HttpResponse` je <xref:System.Net.HttpWebResponse> obsahující podrobnosti o odpovědi HTTP z požadavku HTTP. Může to být `null` dokud neobdrží odpověď HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -32,12 +32,12 @@ internal HttpWebResponse _HttpResponse
 > [!WARNING]
 > `HttpWebRequest._HttpResponse` Pole je interní a nejsou určeny pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
 **Namespace:** <xref:System.Net>
 
-**Sestavení:** systému (v System.dll)
+**Sestavení:** Systém (System.dll)
 
-**Verze rozhraní .NET framework:** dostupné od verze 2.0.
+**Verze rozhraní .NET framework:** Dostupné od verze 2.0.

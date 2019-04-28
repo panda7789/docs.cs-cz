@@ -7,11 +7,11 @@ helpviewer_keywords:
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
 ms.openlocfilehash: 87a85511669e676f2943bf5f079b54e96b926490
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680555"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem programátory C# pro oddíl kódu, které by mohly mít dopad výjimky. Související [catch](../../../csharp/language-reference/keywords/try-catch.md) bloky se používají ke zpracování všech výsledný výjimek. A [nakonec](../../../csharp/language-reference/keywords/try-finally.md) obsahuje kód, který se spustí bez ohledu na to, zda je výjimka vyvolána bloku `try` bloku, jako je například uvolnění prostředků, které jsou přiděleny v `try` bloku. A `try` blok vyžaduje jeden nebo více přidružené `catch` bloky, nebo `finally` bloku nebo obojí.  
@@ -33,13 +33,13 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem prog
   
  Byste zachytit výjimky, pokud jsou splněny následující podmínky:  
   
--   Je nutné dobrým porozumět tomu, proč může být vyvolána výjimka, a vy můžete implementovat konkrétní obnovení, například vyzvat uživatele k zadání nový název souboru, když při zachycení <xref:System.IO.FileNotFoundException> objektu.  
+- Je nutné dobrým porozumět tomu, proč může být vyvolána výjimka, a vy můžete implementovat konkrétní obnovení, například vyzvat uživatele k zadání nový název souboru, když při zachycení <xref:System.IO.FileNotFoundException> objektu.  
   
--   Můžete vytvořit a vyvolat výjimku nové a konkrétnější.  
+- Můžete vytvořit a vyvolat výjimku nové a konkrétnější.  
   
      [!code-csharp[csProgGuideExceptions#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#9)]  
   
--   Chcete částečně zpracování výjimky před předáním pro další zpracování. V následujícím příkladu `catch` blokování se používá k přidání položky do protokolu chyb před opětném vyvolávání výjimky.  
+- Chcete částečně zpracování výjimky před předáním pro další zpracování. V následujícím příkladu `catch` blokování se používá k přidání položky do protokolu chyb před opětném vyvolávání výjimky.  
   
      [!code-csharp[csProgGuideExceptions#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#10)]  
   

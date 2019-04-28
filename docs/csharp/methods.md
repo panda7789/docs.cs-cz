@@ -7,10 +7,10 @@ ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
 ms.openlocfilehash: 54657fb8ed4c0935c7c21fad333c7a62b42aec2e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688264"
 ---
 # <a name="methods"></a>Metody
 

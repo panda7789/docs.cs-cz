@@ -4,11 +4,11 @@ description: Zjistěte, jak k provádění seskupených spojení pomocí jazyka 
 ms.date: 12/01/2016
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
 ms.openlocfilehash: dfb75b55336d8ca486d5f10b187e955d20cd06fd
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689135"
 ---
 # <a name="perform-grouped-joins"></a>Provádění seskupených spojení
 

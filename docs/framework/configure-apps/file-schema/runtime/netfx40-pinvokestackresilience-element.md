@@ -8,11 +8,11 @@ ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 725bd715f6e70dff08929e58d588a3d8561d5011
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674061"
 ---
 # <a name="netfx40pinvokestackresilience-element"></a>\<Netfx40_pinvokestackresilience – > – Element
 Určuje, zda modul runtime automaticky opravy nesprávné volání nespravovaného kódu deklarace v době běhu, za cenu pomalejší přechody mezi spravováno a nespravovaný kód.  
@@ -38,7 +38,7 @@ Určuje, zda modul runtime automaticky opravy nesprávné volání nespravované
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`0`|Modul runtime používá rychlejší zprostředkovatele komunikace s objekty zařazování architektura zavedený [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], které není možné zjistit a oprava nesprávné volání nespravovaného kódu deklarace. Toto nastavení je výchozí.|  
 |`1`|Modul runtime používá pomalejší přechody zjistit a opravit nesprávný platformu vyvolání deklarace.|  

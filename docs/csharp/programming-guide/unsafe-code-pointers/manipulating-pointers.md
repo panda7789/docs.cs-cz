@@ -7,11 +7,11 @@ helpviewer_keywords:
 - pointer expressions [C#], operators
 ms.assetid: a5fb36ee-dd5b-4a60-b4a4-6d94b9901988
 ms.openlocfilehash: 0e545782a84d7fc7813d7dfba57d810291ed4ffc
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54573202"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709520"
 ---
 # <a name="manipulating-pointers-c-programming-guide"></a>Manipulace s ukazateli (Průvodce programováním v C#)
 Tato část zahrnuje následující operace ukazatele:  

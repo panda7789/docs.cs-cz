@@ -8,11 +8,11 @@ ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5cbda9c160b99bf5648c670a67d39b245f031645
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705659"
 ---
 # <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro identifikaci sestavení. Je digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat předávaných od příkazce (podepisující) příjemci (ověřovatel). Tento podpis slouží jako jedinečná identita pro sestavení a zajistí, že odkazy na sestavení nejsou nejednoznačné. Sestavení je podepsáno jako součást procesu sestavení a poté ověřeno, pokud je načten.  
@@ -22,16 +22,16 @@ Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro id
 ## <a name="limitations-of-conventional-strong-names"></a>Omezení konvenčních silných názvů.  
  Technologie silného pojmenování používaná ve verzích před [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] má následující nedostatky:  
   
--   Klíče jsou neustále pod útokem a dokonalejší metody a hardware usnadňují odvození soukromého klíče z veřejného klíče. Pro ochranu proti útokům jsou nezbytné větší klíče. Verze rozhraní .NET framework před [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] poskytují možnost přihlásit se pomocí klíče libovolné velikosti (výchozí velikost je 1024 bitů), ale podepsání sestavy s novým klíčem zalomí všechny binární soubory, které odkazují na starší identity sestavení. Proto je velmi obtížné upgradovat velikost podpisového klíče, pokud chcete zachovat kompatibilitu.  
+- Klíče jsou neustále pod útokem a dokonalejší metody a hardware usnadňují odvození soukromého klíče z veřejného klíče. Pro ochranu proti útokům jsou nezbytné větší klíče. Verze rozhraní .NET framework před [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] poskytují možnost přihlásit se pomocí klíče libovolné velikosti (výchozí velikost je 1024 bitů), ale podepsání sestavy s novým klíčem zalomí všechny binární soubory, které odkazují na starší identity sestavení. Proto je velmi obtížné upgradovat velikost podpisového klíče, pokud chcete zachovat kompatibilitu.  
   
--   Podepisování se silným názvem podporuje pouze algoritmus SHA-1. SHA-1 bylo nedávno zjištěno jako nedostatečné pro zatřiďování zabezpečených aplikací. Proto silnější algoritmus (SHA-256 nebo vyšší), je nezbytné. Je možné, že algoritmus SHA-1, dojde ke ztrátě jeho postavení kompatibilní se standardem FIPS, což by problémy pro ty, kteří se rozhodli použít pouze kompatibilní se standardem FIPS software a algoritmy.  
+- Podepisování se silným názvem podporuje pouze algoritmus SHA-1. SHA-1 bylo nedávno zjištěno jako nedostatečné pro zatřiďování zabezpečených aplikací. Proto silnější algoritmus (SHA-256 nebo vyšší), je nezbytné. Je možné, že algoritmus SHA-1, dojde ke ztrátě jeho postavení kompatibilní se standardem FIPS, což by problémy pro ty, kteří se rozhodli použít pouze kompatibilní se standardem FIPS software a algoritmy.  
   
 ## <a name="advantages-of-enhanced-strong-names"></a>Výhody rozšířených silných názvů  
  Hlavní výhody rozšířených silných názvů jsou kompatibilita se stávajícími silnými názvy a schopnost rozhodovat, že se jedna identita odpovídá jiné:  
   
--   Vývojáři, kteří mají existující podepsaná sestavení mohou přenést svoji identitu na algoritmy SHA-2 při zachování kompatibility se sestaveními, která odkazují na staré identity.  
+- Vývojáři, kteří mají existující podepsaná sestavení mohou přenést svoji identitu na algoritmy SHA-2 při zachování kompatibility se sestaveními, která odkazují na staré identity.  
   
--   Vývojáři, kteří vytvářejí nová sestavení a nejsou obeznámeni s již existujícími podpisy silného názvu můžete používat bezpečnější algoritmus SHA-2 a podepsat sestavení, tak jako vždy.  
+- Vývojáři, kteří vytvářejí nová sestavení a nejsou obeznámeni s již existujícími podpisy silného názvu můžete používat bezpečnější algoritmus SHA-2 a podepsat sestavení, tak jako vždy.  
   
 ## <a name="using-enhanced-strong-names"></a>Použití vylepšených silných názvů  
  Klíče se silným názvem jsou tvořeny podpisovými klíči a klíč identity. Sestavení je podepsáno pomocí klíče podpisu a je určeno klíčem identity. Před verzí [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], byly tyto dva klíče identické. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], zůstává klíč identity stejný jako v předchozích verzích rozhraní .NET Framework, ale podpis klíče jsou rozšířeny silnější hashovací algoritmus. Kromě toho podpisový klíč je podepsán klíčem identity pro tvorbu protipodpisu.  

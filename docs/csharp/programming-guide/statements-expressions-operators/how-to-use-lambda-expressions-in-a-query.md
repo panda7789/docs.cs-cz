@@ -6,11 +6,11 @@ helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
 ms.openlocfilehash: 18f8823327719a120888df580779125be5d07b2c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710209"
 ---
 # <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Postupy: Použití výrazů Lambda v dotazu (C# Průvodce programováním v)
 Nepoužívat výrazy lambda přímo v syntaxi dotazů, ale je použít ve volání metody a výrazy dotazů můžou obsahovat volání metody. Ve skutečnosti nějakých operací dotazů lze vyjádřit pouze v syntaxe metody. Další informace o rozdílech mezi syntaxi dotazů a syntaxe využívající metody, naleznete v tématu [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).  

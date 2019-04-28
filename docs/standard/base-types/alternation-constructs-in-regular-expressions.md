@@ -19,20 +19,20 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: 6d9761d2e9904e865e7f6a17526327e1b04a1597
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53142922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698873"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
 <a name="top"></a> Konstrukce alternace upravují regulární výraz, aby buď / nebo podmíněného přiřazování nebo. .NET podporuje tři konstrukcí alternace:  
   
--   [Porovnávání vzorů s&#124;](#Either_Or)  
+- [Porovnávání vzorů s&#124;](#Either_Or)  
   
--   [Podmíněné porovnávání s (? () výraz) Ano&#124;žádné)](#Conditional_Expr)  
+- [Podmíněné porovnávání s (? () výraz) Ano&#124;žádné)](#Conditional_Expr)  
   
--   [Podmíněného přiřazování na základě platný zachycené skupiny](#Conditional_Group)  
+- [Podmíněného přiřazování na základě platný zachycené skupiny](#Conditional_Group)  
   
 <a name="Either_Or"></a>   
 ## <a name="pattern-matching-with-124"></a>Porovnávání vzorů s&#124;  

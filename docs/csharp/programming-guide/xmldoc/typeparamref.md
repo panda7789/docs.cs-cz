@@ -9,11 +9,11 @@ helpviewer_keywords:
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
 ms.openlocfilehash: a9b0b9dec09e891105336b3cf0088ed279386d13
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706569"
 ---
 # <a name="typeparamref-c-programming-guide"></a>\<typeparamref > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

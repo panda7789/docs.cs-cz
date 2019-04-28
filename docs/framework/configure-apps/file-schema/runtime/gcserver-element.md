@@ -11,11 +11,11 @@ ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd91cf0179ef9731c456b41fdc865e3eacdb33eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674152"
 ---
 # <a name="gcserver-element"></a>\<gcServer> Element
 Určuje, zda modul common language runtime spustí uvolnění paměti serveru.  
@@ -42,7 +42,7 @@ Určuje, zda modul common language runtime spustí uvolnění paměti serveru.
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Nejde spustit uvolňování paměti serveru. Toto nastavení je výchozí.|  
 |`true`|Spustí uvolnění paměti serveru.|  

@@ -13,11 +13,11 @@ ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4893adaf528f1a9ef8fc8eab8027406fd8520cc2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59159273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704788"
 ---
 # <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> Element
 Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.  
@@ -43,7 +43,7 @@ Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochá
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |0|Nezakazujte ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto je výchozí chování vazby od verze rozhraní .NET Framework verze 2.0.|  
 |1|Zakáže ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto nastavení se vrátí k chování vazby rozhraní .NET Framework verze 1.1.|  
@@ -63,11 +63,11 @@ Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochá
   
  Některé vazby a načítání selhání nevztahují na tento element a jsou vždy uloženy v mezipaměti. Tyto chyby dojít, protože sestavení nebyl nalezen, ale nelze jej načíst. Generují výjimku <xref:System.BadImageFormatException> nebo <xref:System.IO.FileLoadException>. Následující seznam obsahuje několik příkladů takových selhání.  
   
--   Při pokusu načíst soubor není platným sestavením, následné pokusy o načtení sestavení se nezdaří, i když chybný soubor nahradí správné sestavení.  
+- Při pokusu načíst soubor není platným sestavením, následné pokusy o načtení sestavení se nezdaří, i když chybný soubor nahradí správné sestavení.  
   
--   Při pokusu o načtení sestavení, které je uzamčen systému souborů, následné pokusy o načtení sestavení se nezdaří, i po sestavení je vydáno systémem souborů.  
+- Při pokusu o načtení sestavení, které je uzamčen systému souborů, následné pokusy o načtení sestavení se nezdaří, i po sestavení je vydáno systémem souborů.  
   
--   Pokud je jeden nebo více verzí sestavení, které se pokoušíte načíst v cesta zjišťování, ale konkrétní verzi, které jste požádali, není mezi nimi, následné pokusy načíst tuto verzi se nezdaří, i v případě, že správná verze je přesunut do cesta zjišťování.  
+- Pokud je jeden nebo více verzí sestavení, které se pokoušíte načíst v cesta zjišťování, ale konkrétní verzi, které jste požádali, není mezi nimi, následné pokusy načíst tuto verzi se nezdaří, i v případě, že správná verze je přesunut do cesta zjišťování.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak zakázat ukládání do mezipaměti selhání vazby sestavení, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.  

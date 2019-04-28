@@ -7,18 +7,18 @@ ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 16ed4d86d64a6d3c569c7fd7ab9e9e3a3943f078
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61723664"
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné použít trasování událostí systému Windows (ETW). Můžete vytvořit a zobrazit trasování pomocí následujících nástrojů:  
   
--   [Logman](/windows-server/administration/windows-commands/logman) a [Tracerpt](/windows-server/administration/windows-commands/tracerpt_1) nástroje příkazového řádku, které jsou součástí operačního systému Windows.  
+- [Logman](/windows-server/administration/windows-commands/logman) a [Tracerpt](/windows-server/administration/windows-commands/tracerpt_1) nástroje příkazového řádku, které jsou součástí operačního systému Windows.  
   
--   [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) nástroje v [Windows Performance Toolkit](/windows-hardware/test/wpt/). Další informace o nástroji Xperf naleznete v tématu [blogu Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509).  
+- [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) nástroje v [Windows Performance Toolkit](/windows-hardware/test/wpt/). Další informace o nástroji Xperf naleznete v tématu [blogu Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509).  
   
  Pro zaznamenání informací události modulu CLR musí být v počítači nainstalován zprostředkovatel modulu CLR. Pokud chcete potvrdit, že je daný poskytovatel nainstalován, zadejte `logman query providers` příkazového řádku. Zobrazí se seznam zprostředkovatelů. Tento seznam by měl obsahovat následující záznam pro zprostředkovatele modulu CLR.  
   
@@ -37,11 +37,11 @@ Provider                                 GUID
   
  K zapnutí protokolování musí uživatel specifikovat tři věci:  
   
--   Zprostředkovatele pro komunikaci.  
+- Zprostředkovatele pro komunikaci.  
   
--   64bitové číslo představující sadu klíčových slov. Každé klíčové slovo představuje sadu událostí, které může zprostředkovatel zapnout. Číslo představuje kombinovanou sadu klíčových slov pro zapnutí.  
+- 64bitové číslo představující sadu klíčových slov. Každé klíčové slovo představuje sadu událostí, které může zprostředkovatel zapnout. Číslo představuje kombinovanou sadu klíčových slov pro zapnutí.  
   
--   Malé číslo představující úroveň (podrobnost) protokolu. Úroveň 1 je nejméně podrobná a úroveň 5 je nejvíce podrobná. Úroveň 0 je výchozí a její význam závisí na konkrétním zprostředkovateli.  
+- Malé číslo představující úroveň (podrobnost) protokolu. Úroveň 1 je nejméně podrobná a úroveň 5 je nejvíce podrobná. Úroveň 0 je výchozí a její význam závisí na konkrétním zprostředkovateli.  
   
 #### <a name="to-capture-clr-etw-events-using-logman"></a>Zachycení událostí CLR ETW pomocí nástroje Logman  
   
@@ -51,15 +51,15 @@ Provider                                 GUID
   
      kde:  
   
-    -   `-p` Parametr identifikuje GUID zprostředkovatele.  
+    - `-p` Parametr identifikuje GUID zprostředkovatele.  
   
-    -   `0x1CCBD` Určuje kategorie událostí, které budou aktivovány.  
+    - `0x1CCBD` Určuje kategorie událostí, které budou aktivovány.  
   
-    -   `0x5` Nastaví úroveň protokolování (v tomto případě verbose [5]).  
+    - `0x5` Nastaví úroveň protokolování (v tomto případě verbose [5]).  
   
-    -   `-ets` Parametr dává pokyn nástroji Logman odesílat příkazy do relace trasování událostí.  
+    - `-ets` Parametr dává pokyn nástroji Logman odesílat příkazy do relace trasování událostí.  
   
-    -   `-ct perf` Parametr určuje, že `QueryPerformanceCounter` funkce se použije k zaznamenání časového razítka pro každou jednotlivou událost.  
+    - `-ct perf` Parametr určuje, že `QueryPerformanceCounter` funkce se použije k zaznamenání časového razítka pro každou jednotlivou událost.  
   
 2. K ukončení protokolování událostí zadejte:  
   
@@ -86,7 +86,7 @@ Provider                                 GUID
   
 #### <a name="to-view-clr-etw-events-using-tracerpt"></a>Zobrazení událostí CLR ETW pomocí nástroje Tracerpt  
   
--   V příkazovém řádku zadejte příkaz:  
+- V příkazovém řádku zadejte příkaz:  
   
      `tracerpt clrevents.etl`  
   
@@ -94,7 +94,7 @@ Provider                                 GUID
   
 #### <a name="to-view-clr-etw-events-using-xperf"></a>Zobrazení událostí CLR ETW pomocí nástroje Xperf  
   
--   V příkazovém řádku zadejte příkaz:  
+- V příkazovém řádku zadejte příkaz:  
   
      `xperf clrevents.etl`  
   
@@ -102,7 +102,7 @@ Provider                                 GUID
   
 #### <a name="to-convert-the-etl-file-to-a-comma-separated-value-file"></a>Převod souboru .etl na soubor .csv  
   
--   V příkazovém řádku zadejte příkaz:  
+- V příkazovém řádku zadejte příkaz:  
   
      `xperf -i clrevents.etl -f clrevents.csv`  
   

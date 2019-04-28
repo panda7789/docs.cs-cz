@@ -3,11 +3,11 @@ title: <certificateReference> pro <identity>
 ms.date: 03/30/2017
 ms.assetid: ac359c65-c22d-42d2-97de-db53b77cebdb
 ms.openlocfilehash: 3b7779ac00c2fca6300c12ac18ff2d5f6b868424
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59138811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704333"
 ---
 # <a name="certificatereference-for-identity"></a>\<certificateReference > pro \<identity >
 Určuje nastavení pro ověřování certifikátu X.509. Zabezpečené klienta Windows Communication Foundation (WCF), která se připojuje k koncový bod s tuto identitu ověří, deklarací identity předkládaných server obsahovat deklaraci identity použít k vytvoření této identity.  

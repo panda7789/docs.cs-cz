@@ -7,11 +7,11 @@ helpviewer_keywords:
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
 ms.openlocfilehash: 25d2177eed9ef83ba8f2575668e72dc21c2cd43f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712614"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  
@@ -77,11 +77,11 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
      Pokud není dostupný žádný soubor app.config:  
   
-    1.  Na **projektu** nabídce zvolte **přidat novou položku**.  
+    1. Na **projektu** nabídce zvolte **přidat novou položku**.  
   
-    2.  Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
+    2. Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na **Přidat**.  
+    3. Klikněte na **Přidat**.  
   
 2. Vyhledejte `<switches>` oddíl, což je v `<system.diagnostics>` oddíl, což je na nejvyšší úrovni `<configuration>` oddílu.  
   
@@ -152,11 +152,11 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
      Pokud není dostupný žádný soubor app.config:  
   
-    1.  Na **projektu** nabídce zvolte **přidat novou položku**.  
+    1. Na **projektu** nabídce zvolte **přidat novou položku**.  
   
-    2.  Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
+    2. Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na **Přidat**.  
+    3. Klikněte na **Přidat**.  
   
 2. Klikněte pravým tlačítkem na app.config **Průzkumníka řešení**. Zvolte **otevřít**.  
   

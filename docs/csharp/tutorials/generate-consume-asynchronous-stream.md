@@ -4,11 +4,11 @@ description: V tomto kurzu pokročilé znázorňuje scénáře, kdy generování
 ms.date: 02/10/2019
 ms.custom: mvc
 ms.openlocfilehash: 0fa7c778ca9ce0f0124fcc520dd4de65f2f92ea8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675686"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Kurz: Vygenerování a zpracování datových proudů asynchronní pomocí C# 8.0 a .NET Core 3.0
 

@@ -3,11 +3,11 @@ title: Sledování záznamů
 ms.date: 03/30/2017
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
 ms.openlocfilehash: 46b52f6b774d1d692c0e7dec400d369428a9607e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699848"
 ---
 # <a name="tracking-records"></a>Sledování záznamů
 Modul runtime pracovního postupu je instrumentováno pro vydávání záznamy sledování, sledovat spuštění instance pracovního postupu.  
@@ -26,27 +26,27 @@ Modul runtime pracovního postupu je instrumentováno pro vydávání záznamy s
   
  Následující typy <xref:System.Activities.Tracking.TrackingRecord> objekty jsou emitovány modulem runtime pracovního postupu:  
   
--   **WorkflowInstanceRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> popisuje životního cyklu instance pracovního postupu. Záznam je vygenerován například, když se pracovní postup spustí nebo dokončí a obsahuje informace o stavu instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceRecord>.  
+- **WorkflowInstanceRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> popisuje životního cyklu instance pracovního postupu. Záznam je vygenerován například, když se pracovní postup spustí nebo dokončí a obsahuje informace o stavu instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceRecord>.  
   
--   **WorkflowInstanceAbortedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován při přerušení instance pracovního postupu. Záznam obsahuje důvod pro instanci pracovního postupu přerušení. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>.  
+- **WorkflowInstanceAbortedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován při přerušení instance pracovního postupu. Záznam obsahuje důvod pro instanci pracovního postupu přerušení. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>.  
   
--   **WorkflowInstanceUnhandledExceptionRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je aktivováno, pokud výjimka nastane v instanci pracovního postupu a není zpracována žádnou aktivitu. Záznam obsahuje podrobnosti o výjimce. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>.  
+- **WorkflowInstanceUnhandledExceptionRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je aktivováno, pokud výjimka nastane v instanci pracovního postupu a není zpracována žádnou aktivitu. Záznam obsahuje podrobnosti o výjimce. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>.  
   
--   **WorkflowInstanceSuspendedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se instance pracovního postupu je pozastaveno. Záznam obsahuje důvod pro instanci pracovního postupu bylo pozastaveno. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>.  
+- **WorkflowInstanceSuspendedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se instance pracovního postupu je pozastaveno. Záznam obsahuje důvod pro instanci pracovního postupu bylo pozastaveno. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>.  
   
--   **WorkflowInstanceTerminatedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se instance pracovního postupu je ukončeno. Záznam obsahuje důvod ukončení instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>.  
+- **WorkflowInstanceTerminatedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se instance pracovního postupu je ukončeno. Záznam obsahuje důvod ukončení instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>.  
   
--   **ActivityStateRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován, když se spustí aktivita v rámci pracovního postupu. Tyto záznamy ukazují stavu aktivity v rámci instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.ActivityStateRecord>.  
+- **ActivityStateRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován, když se spustí aktivita v rámci pracovního postupu. Tyto záznamy ukazují stavu aktivity v rámci instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.ActivityStateRecord>.  
   
--   **ActivityScheduledRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován při plánování podřízená aktivita aktivity. Tento záznam obsahuje podrobnosti o Nadřazená aktivita (plánování aktivit) a plánované podřízené aktivity. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.ActivityScheduledRecord>.  
+- **ActivityScheduledRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován při plánování podřízená aktivita aktivity. Tento záznam obsahuje podrobnosti o Nadřazená aktivita (plánování aktivit) a plánované podřízené aktivity. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.ActivityScheduledRecord>.  
   
--   **FaultPropagationRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pro každou obslužnou rutinu, která srovnává záznam, dokud není zpracována. Používá se k označení cestu, kterou trvalo chybu v rámci instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.FaultPropagationRecord>.  
+- **FaultPropagationRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pro každou obslužnou rutinu, která srovnává záznam, dokud není zpracována. Používá se k označení cestu, kterou trvalo chybu v rámci instance pracovního postupu. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.FaultPropagationRecord>.  
   
--   **CancelRequestedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se pokusí aktivitu pro zrušení podřízené aktivity. Tento záznam obsahuje podrobnosti pro aktivitu nadřazené a podřízené aktivity, která je právě rušen. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.CancelRequestedRecord>.  
+- **CancelRequestedRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> je vygenerován pokaždé, když se pokusí aktivitu pro zrušení podřízené aktivity. Tento záznam obsahuje podrobnosti pro aktivitu nadřazené a podřízené aktivity, která je právě rušen. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.CancelRequestedRecord>.  
   
--   **BookmarkResumptionRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> sleduje všechny záložky, který se úspěšně obnovil. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.BookmarkResumptionRecord>.  
+- **BookmarkResumptionRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> sleduje všechny záložky, který se úspěšně obnovil. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.BookmarkResumptionRecord>.  
   
--   **CustomTrackingRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> se vytvoří a, protože ho vygeneroval Autor pracovního postupu uvnitř pracovního postupu vlastní aktivity. Vlastní sledování záznamů je možné naplnit data emitování spolu s záznamy. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.CustomTrackingRecord>.  
+- **CustomTrackingRecord** – toto <xref:System.Activities.Tracking.TrackingRecord> se vytvoří a, protože ho vygeneroval Autor pracovního postupu uvnitř pracovního postupu vlastní aktivity. Vlastní sledování záznamů je možné naplnit data emitování spolu s záznamy. Najdete podrobnosti o tento záznam v <xref:System.Activities.Tracking.CustomTrackingRecord>.  
   
  Například může být ke jednoduchý <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje <xref:System.Activities.Statements.WriteLine> operaci s sledování záznamů, protože ho v následujícím pořadí:  
   

@@ -3,11 +3,11 @@ title: <activityStateQuery> služby WCF
 ms.date: 03/30/2017
 ms.assetid: d6cdc04b-6f3a-4097-a623-ee4a1be3b5c4
 ms.openlocfilehash: 97fce512415ad6ae165b29c7e8eff3394d5e675a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704528"
 ---
 # <a name="activitystatequery-of-wcf"></a>\<activityStateQuery > služby WCF
 

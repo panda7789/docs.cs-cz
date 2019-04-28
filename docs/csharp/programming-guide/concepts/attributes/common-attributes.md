@@ -3,22 +3,22 @@ title: Běžné atributy (C#)
 ms.date: 07/20/2015
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
 ms.openlocfilehash: d5d56fff82fb552f42f72c18b8c3b907c5bc113c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702578"
 ---
 # <a name="common-attributes-c"></a>Běžné atributy (C#)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka C#.  
   
--   [Globální atributy](#Global)  
+- [Globální atributy](#Global)  
   
--   [Zastaralé atribut](#Obsolete)  
+- [Zastaralé atribut](#Obsolete)  
   
--   [Atribut Conditional.](#Conditional)  
+- [Atribut Conditional.](#Conditional)  
   
--   [Atributy informace o volajícím](#CallerInfo)  
+- [Atributy informace o volajícím](#CallerInfo)  
   
 ## <a name="Global"></a> Globální atributy  
  Většina atributy se použijí na konkrétní jazykové prvky, jako jsou třídy nebo metody; Nicméně některé atributy jsou globální, se vztahují na celé sestavení nebo modulu. Například <xref:System.Reflection.AssemblyVersionAttribute> atribut lze použít k vložení informací o verzi do sestavení, například takto:  
@@ -31,11 +31,11 @@ Toto téma popisuje atributy, které se běžně používají v aplikacích jazy
   
  Atributy sestavení jsou hodnoty, které obsahují informace o sestavení. Spadají do následujících kategorií:  
   
--   Atributy identity sestavení  
+- Atributy identity sestavení  
   
--   Informační atributy  
+- Informační atributy  
   
--   Atributy manifestu sestavení  
+- Atributy manifestu sestavení  
   
 ### <a name="assembly-identity-attributes"></a>Atributy Identity sestavení  
  Tři atributy (se silným názvem, pokud je k dispozici) určují identitu sestavení: název, verzi a jazykovou verzi. Tyto atributy tvoří úplný název sestavení, jsou povinné, když odkazujete v kódu. Můžete nastavit verzi a jazykovou verzi pomocí atributů sestavení. Je však nastavena hodnota názvu kompilátorem v sadě Visual Studio IDE [dialogové okno informace o sestavení](/visualstudio/ide/reference/assembly-information-dialog-box), nebo Assembly Linker (Al.exe), když se vytvoří sestavení, na základě souboru, který obsahuje manifest sestavení. <xref:System.Reflection.AssemblyFlagsAttribute> Atribut určuje, zda mohou existovat vedle sebe více kopií daného sestavení.  
@@ -221,7 +221,7 @@ class SampleClass
   
  Pokud chcete získat informace o subjektu volajícím člen, použijte atributy, které jsou použity na volitelné parametry. Každý volitelný parametr určuje výchozí hodnotu. V následující tabulce jsou uvedeny atributy informace o volajícím, které jsou definovány v <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> obor názvů:  
   
-|Atribut|Popis|Typ|  
+|Atribut|Popis|Type|  
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta v době kompilace.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|  

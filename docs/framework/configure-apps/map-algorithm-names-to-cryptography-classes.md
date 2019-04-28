@@ -8,22 +8,22 @@ helpviewer_keywords:
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
 ms.openlocfilehash: 6ec98aabd92a7a0fed11482bdf6e5e8ddc045a7e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61700811"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mapování názvů algoritmů na třídy šifrování
 Existují čtyři způsoby Vývojář můžete vytvořit pomocí objektu kryptografie [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:  
   
--   Vytvoření objektu pomocí **nové** operátor.  
+- Vytvoření objektu pomocí **nové** operátor.  
   
--   Vytvoření objektu, který implementuje konkrétní kryptografický algoritmus voláním **vytvořit** metodu na abstraktní třídu pro tento algoritmus.  
+- Vytvoření objektu, který implementuje konkrétní kryptografický algoritmus voláním **vytvořit** metodu na abstraktní třídu pro tento algoritmus.  
   
--   Vytvoření objektu, který implementuje konkrétní kryptografický algoritmus voláním <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody.  
+- Vytvoření objektu, který implementuje konkrétní kryptografický algoritmus voláním <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metody.  
   
--   Vytvoření objektu, který implementuje třídu kryptografické algoritmy (například symetrický blokových šifrách) voláním **vytvořit** metodu na abstraktní třídu pro daný typ algoritmus (například <xref:System.Security.Cryptography.SymmetricAlgorithm>).  
+- Vytvoření objektu, který implementuje třídu kryptografické algoritmy (například symetrický blokových šifrách) voláním **vytvořit** metodu na abstraktní třídu pro daný typ algoritmus (například <xref:System.Security.Cryptography.SymmetricAlgorithm>).  
   
  Předpokládejme například, že si vývojář chce vypočítá hodnotu hash SHA1 sadu bajtů. <xref:System.Security.Cryptography> Obor názvů obsahuje dvě implementace algoritmus SHA1, jedna implementace čistě spravovaná a ten, který zabaluje rozhraní CryptoAPI. Vývojář můžete zvolit pro vytvoření instance na konkrétní implementace SHA1 (například <xref:System.Security.Cryptography.SHA1Managed>) voláním **nové** operátor. Pokud však není důležité, která třída načte modul common language runtime, za předpokladu, třída implementuje algoritmus hash SHA1, Vývojář můžete vytvořit objekt voláním <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> metody. Tato metoda volá **System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")**, které musí vracet implementace algoritmu hash SHA1.  
   

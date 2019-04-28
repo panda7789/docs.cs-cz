@@ -3,11 +3,11 @@ title: 'Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
 ms.openlocfilehash: ca340e82e33d9b3ec212f69cb73efafb3c6abc0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701928"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)
 

@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
 ms.openlocfilehash: f97bda11d1da3f6deb4597c8d7742fd47e9cf15f
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58028683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675543"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
@@ -187,7 +187,7 @@ public class D : B
 }
 ```
 
-### <a name="improved-overload-candidates"></a>Vylepšené přetížení kandidáty
+### <a name="improved-overload-candidates"></a>Vylepšení kandidátů přetížení
 
 V každé verzi pravidla rozlišení přetížení aktualizovat na situace, kdy mají "viditelných" volba volání metod nejednoznačný. Tato verze přidává tři nová pravidla ke kompilátoru vyberte jasnou volbou:
 

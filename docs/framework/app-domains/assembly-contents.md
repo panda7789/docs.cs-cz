@@ -10,22 +10,22 @@ ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 25594c55a5462c42611df7119dad37bd8a61cc2e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149341"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705814"
 ---
 # <a name="assembly-contents"></a>Obsah sestavení
 Obecně platí Statická sestavení se může skládat z čtyři elementy:  
   
--   [Manifestu sestavení](../../../docs/framework/app-domains/assembly-manifest.md), který obsahuje metadata sestavení.  
+- [Manifestu sestavení](../../../docs/framework/app-domains/assembly-manifest.md), který obsahuje metadata sestavení.  
   
--   Typ metadat.  
+- Typ metadat.  
   
--   Microsoft intermediate language (MSIL) kód, který implementuje typy.  
+- Microsoft intermediate language (MSIL) kód, který implementuje typy.  
   
--   Sada prostředků.  
+- Sada prostředků.  
   
  Vyžaduje se jenom manifest sestavení, ale typy nebo prostředky je nutné poskytnout sestavení žádné smysluplné funkce.  
   

@@ -13,22 +13,22 @@ ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6d07fe8ec61ee4515696eb3cf3d808483b50dfb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705451"
 ---
 # <a name="setting-assembly-attributes"></a>Nastavování atributů sestavení
 Atributy sestavení jsou hodnoty, které obsahují informace o sestavení. Atributy jsou rozdělené do následujících skupin informace:  
   
--   Atributy identity sestavení.  
+- Atributy identity sestavení.  
   
--   Informační atributy.  
+- Informační atributy.  
   
--   Atributy manifestu sestavení.  
+- Atributy manifestu sestavení.  
   
--   Atributy silného názvu.  
+- Atributy silného názvu.  
   
 ## <a name="assembly-identity-attributes"></a>Atributy Identity sestavení  
  Tři atributy, společně se silným názvem (Pokud je k dispozici), určují identitu sestavení: název, verzi a jazykovou verzi. Tyto atributy tvoří úplný název sestavení, jsou potřeba při odkazování na sestavení v kódu. Atributy lze nastavit jazykovou verzi a verzi sestavení. Kompilátor nebo [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) nastaví hodnotu názvu, když se vytvoří sestavení, na základě souboru obsahujícího manifest sestavení.  

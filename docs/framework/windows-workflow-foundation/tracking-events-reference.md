@@ -3,18 +3,18 @@ title: Přehled událostí sledování
 ms.date: 03/30/2017
 ms.assetid: c1c1ee87-f80a-449b-acd0-50d81eef116e
 ms.openlocfilehash: 5b3bba83b3c6c7ab27c9470213b7675f7e107c7e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57712211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699874"
 ---
 # <a name="tracking-events-reference"></a>Přehled událostí sledování
 Během provádění pracovní postup v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] vyvolá sledování událostí při jejich přesunu prostřednictvím různých fázích v průběhu své životnosti. Hostitel může přihlásit k odběru těchto událostí a aktualizovat stav pracovního postupu pokroku během celé jeho životnosti. Sledování událostí vyvolaných jsou popsány v této části.  
   
 ## <a name="event-reference"></a>Události – přehled  
   
-|ID události|Úroveň události|Zpráva o události|Klíčová slova|  
+|ID události|Úroveň události|Zpráva o události|klíčová slova|  
 |--------------|-----------------|-------------------|--------------|  
 |[100 – WorkflowInstanceRecord](100-workflowinstancerecord.md)|Informace o|TrackRecord= WorkflowInstanceRecord, InstanceID = %1, RecordNumber = %2, EventTime = %3, ActivityDefinitionId = %4, State = %5, Annotations = %6, ProfileName = %7|EndToEndMonitoring, řešení potíží, HealthMonitoring, WFTracking|  
 |[101 – WorkflowInstanceUnhandledExceptionRecord](101-workflowinstanceunhandledexceptionrecord.md)|Chyba|Záznam sledování = WorkflowInstanceUnhandledExceptionRecord, ID instance = %1, číslo záznamu = %2, čas události = %3, ID definice aktivity = %4, název zdroje = %5, ID zdroje = %6, ID instance zdroje = %7, název typu zdroje = %8, výjimka = %9, poznámky = % 10, název profilu = % 11|EndToEndMonitoring, řešení potíží, HealthMonitoring, WFTracking|  

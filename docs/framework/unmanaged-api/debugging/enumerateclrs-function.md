@@ -19,11 +19,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e7532218728aead72186b5156da87db6d3bc0a8c
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57469327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698210"
 ---
 # <a name="enumerateclrs-function"></a>EnumerateCLRs – funkce
 Poskytuje mechanismus pro vytvoření výčtu CLRs v procesu.  

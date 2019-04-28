@@ -5,11 +5,11 @@ helpviewer_keywords:
 - bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
 ms.openlocfilehash: 1866ba7a5419ea435a56daa63f94122d3b83473e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752747"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například bitmapových efektů umožňují snadno použít <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo rozostření mohou mít vliv na bitovou kopii nebo tlačítko.  
@@ -23,15 +23,15 @@ Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k
   
  Ve speciálním případě v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], účinky lze nastavit jako vlastnosti na živé <xref:System.Windows.Media.Visual> objekty, například <xref:System.Windows.Controls.Button> nebo <xref:System.Windows.Controls.TextBox>. Zpracování pixel se použije a vykreslí v době běhu. V takovém případě v době vykreslování <xref:System.Windows.Media.Visual> je automaticky převedena na jeho <xref:System.Windows.Media.Imaging.BitmapSource> ekvivalentní a se zobrazí jako vstup <xref:System.Windows.Media.Effects.BitmapEffect>. Nahradí výstup <xref:System.Windows.Media.Visual> výchozí chování vykreslování objektu. To je důvod, proč <xref:System.Windows.Media.Effects.BitmapEffect> objekty vynutit vizuály k vykreslení v softwaru pouze to znamená bez hardwarovou akceleraci ve vizuálech při použití účinky.  
   
--   <xref:System.Windows.Media.Effects.BlurBitmapEffect> simuluje objekt, který se zobrazí na více instancí fokus.  
+- <xref:System.Windows.Media.Effects.BlurBitmapEffect> simuluje objekt, který se zobrazí na více instancí fokus.  
   
--   <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect> Vytvoří Haló barvy kolem objektu.  
+- <xref:System.Windows.Media.Effects.OuterGlowBitmapEffect> Vytvoří Haló barvy kolem objektu.  
   
--   <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vytvoří stín za objektem.  
+- <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vytvoří stín za objektem.  
   
--   <xref:System.Windows.Media.Effects.BevelBitmapEffect> Vytvoří zkosení, což vyvolá na plochu bitovou kopii podle zadaná křivka.  
+- <xref:System.Windows.Media.Effects.BevelBitmapEffect> Vytvoří zkosení, což vyvolá na plochu bitovou kopii podle zadaná křivka.  
   
--   <xref:System.Windows.Media.Effects.EmbossBitmapEffect> vytvoří mapování hrbolů <xref:System.Windows.Media.Visual> poskytnout dojem hloubky a textury z umělé zdroji světla.  
+- <xref:System.Windows.Media.Effects.EmbossBitmapEffect> vytvoří mapování hrbolů <xref:System.Windows.Media.Visual> poskytnout dojem hloubky a textury z umělé zdroji světla.  
   
 > [!NOTE]
 >  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] bitmapové efekty jsou vykreslovány v režimu software. Libovolný objekt, který se použije efekt zobrazí také v softwaru. Nejvíce při použití rastrový obrázek účinky na velké vizuály nebo animování vlastnosti efektu rastrového obrázku má snížený výkon. To je Řekněme, že tímto způsobem vůbec neměli používat bitmapových efektů, že by měl buďte opatrní a důkladně testování pro zajištění, že vaši uživatelé získávají prostředí, které očekáváte.  

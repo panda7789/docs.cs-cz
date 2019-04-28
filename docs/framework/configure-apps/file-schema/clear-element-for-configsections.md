@@ -1,5 +1,5 @@
 ---
-title: <clear> – element pro element <configSections>
+title: <clear> – element pro <configSections>
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/clear
@@ -10,11 +10,11 @@ ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: d824ae828dd025f3292990facaa5e423add9c282
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55254759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705347"
 ---
 # <a name="clear-element-for-configsections"></a>\<Vymazat > – element pro \<configSections >
 
@@ -44,7 +44,7 @@ Vymaže všechny dříve definované oddíly a skupin oddílů.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1678f1de7c23387f028348dadbc7b61e2cdc035c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59201426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701018"
 ---
 # <a name="icordebugheapvalue3getthreadowningmonitorlock-method"></a>ICorDebugHeapValue3::GetThreadOwningMonitorLock – metoda
 Vrátí spravované vlákno, který vlastní monitorování zámek na tomto objektu.  
@@ -56,9 +56,9 @@ HRESULT GetThreadOwningMonitorLock (
 ## <a name="remarks"></a>Poznámky  
  Pokud spravované vlákno vlastní monitorování zámek na tomto objektu:  
   
--   Metoda vrátí hodnotu S_OK.  
+- Metoda vrátí hodnotu S_OK.  
   
--   Objekt vlákna je platná, dokud se vlákno ukončí.  
+- Objekt vlákna je platná, dokud se vlákno ukončí.  
   
  Pokud žádné spravované vlákno vlastní monitorování zámek na tomto objektu `ppThread` a `pAcquisitionCount` jsou beze změny, a metoda vrátí S_FALSE.  
   

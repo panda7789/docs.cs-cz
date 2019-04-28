@@ -3,11 +3,11 @@ title: 'Postupy: Rozšíření návodu úloh pomocí metody Task.whenall asynchr
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
 ms.openlocfilehash: 9710e5f31b9d01c5151b548c1b642293122d44b3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59297951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703085"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postupy: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)
 Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metody. Tato metoda asynchronně čeká na více asynchronních operací, které jsou reprezentovány ve formě kolekci úkolů.  
@@ -25,9 +25,9 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
   
 1. Přidat `ProcessURLAsync` metoda k první aplikaci, která je napsán v jazyce [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
-    -   Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough a přidejte `ProcessURLAsync` soubor MainWindow.xaml.cs.  
+    - Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough a přidejte `ProcessURLAsync` soubor MainWindow.xaml.cs.  
   
-    -   Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` aplikace, která zahrnuje `GetURLContentsAsync` metody. Soubor MainWindow.xaml.cs pro tuto aplikaci je první příklad v části "Kompletní kód příkladů z návodu".  
+    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` aplikace, která zahrnuje `GetURLContentsAsync` metody. Soubor MainWindow.xaml.cs pro tuto aplikaci je první příklad v části "Kompletní kód příkladů z návodu".  
   
      `ProcessURLAsync` Spojuje akce v těle metody `foreach` smyčky v `SumPageSizesAsync` v původním návodu. Metody asynchronně stáhnou obsah zadaného webu jako bajtové pole a potom zobrazí a vrátí délku bajtového pole.  
   
@@ -97,9 +97,9 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
   
 1. Přidejte následující verzi `ProcessURLAsync` do druhé aplikace, který byl vyvinut v [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
-    -   Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough_HttpClient a přidejte `ProcessURLAsync` soubor MainWindow.xaml.cs.  
+    - Pokud jste stáhli kód z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough_HttpClient a přidejte `ProcessURLAsync` soubor MainWindow.xaml.cs.  
   
-    -   Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` aplikace, která se používá `HttpClient.GetByteArrayAsync` metody. Soubor MainWindow.xaml.cs pro tuto aplikaci je druhý příklad v části "Kompletní kód příkladů z návodu".  
+    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` aplikace, která se používá `HttpClient.GetByteArrayAsync` metody. Soubor MainWindow.xaml.cs pro tuto aplikaci je druhý příklad v části "Kompletní kód příkladů z návodu".  
   
      `ProcessURLAsync` Spojuje akce v těle metody `foreach` smyčky v `SumPageSizesAsync` v původním návodu. Metody asynchronně stáhnou obsah zadaného webu jako bajtové pole a potom zobrazí a vrátí délku bajtového pole.  
   
@@ -170,7 +170,7 @@ Můžete zvýšit výkon asynchronního řešení v [názorný postup: Přístup
   
 ### <a name="to-test-the-taskwhenall-solutions"></a>Otestování řešení Task.WhenAll  
   
--   Pro kteréhokoli řešení, zvolte klávesu F5 ke spuštění programu a klikněte na tlačítko **Start** tlačítko. Výstup by měl vypadat jako výstup asynchronních řešení v [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Všimněte si však, že jsou weby zobrazeny v jiném pořadí pokaždé, když.  
+- Pro kteréhokoli řešení, zvolte klávesu F5 ke spuštění programu a klikněte na tlačítko **Start** tlačítko. Výstup by měl vypadat jako výstup asynchronních řešení v [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Všimněte si však, že jsou weby zobrazeny v jiném pořadí pokaždé, když.  
   
 ## <a name="example"></a>Příklad  
  Následující kód ukazuje rozšíření pro projekt, který se používá `GetURLContentsAsync` metoda stahovat obsah z webu.  

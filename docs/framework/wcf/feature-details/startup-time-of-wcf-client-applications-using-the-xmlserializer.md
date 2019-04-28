@@ -3,11 +3,11 @@ title: 'Postupy: Vylepšení doby spouštění klientských aplikací WCF pomoc�
 ms.date: 03/30/2017
 ms.assetid: 21093451-0bc3-4b1a-9a9d-05f7f71fa7d0
 ms.openlocfilehash: b6f010cb5edc3111f05c78f5d27cf178bd501ef9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747625"
 ---
 # <a name="how-to-improve-the-startup-time-of-wcf-client-applications-using-the-xmlserializer"></a>Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí třídy XmlSerializer
 Služby a klientské aplikace, které používají datové typy, které jsou serializovatelné pomocí <xref:System.Xml.Serialization.XmlSerializer> generování a kompilaci kódu serializace pro typy dat za běhu, což může vést k pomalé spouštění výkonu.  
@@ -37,11 +37,11 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
   
 4. Kód vygenerovaný serializace zpřístupnit do vaší aplikace pomocí jedné z následujících možností:  
   
-    1.  Kompilace generovaného Serializační kód do samostatné sestavení s názvem [*původní sestavení*]. XmlSerializers.dll (například MyApp.XmlSerializers.dll). Aplikace musí být schopný načíst sestavení, které musí být podepsané stejným klíčem jako původní sestavení. Pokud je provedena rekompilace původní sestavení, je třeba znovu vygenerovat sestavení serializace.  
+    1. Kompilace generovaného Serializační kód do samostatné sestavení s názvem [*původní sestavení*]. XmlSerializers.dll (například MyApp.XmlSerializers.dll). Aplikace musí být schopný načíst sestavení, které musí být podepsané stejným klíčem jako původní sestavení. Pokud je provedena rekompilace původní sestavení, je třeba znovu vygenerovat sestavení serializace.  
   
-    2.  Kompilace generovaného Serializační kód do samostatné sestavení a použít <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute> v kontraktu služby, který používá <xref:System.ServiceModel.XmlSerializerFormatAttribute>. Nastavte <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> nebo <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> vlastnosti tak, aby odkazoval na kompilované serializace sestavení.  
+    2. Kompilace generovaného Serializační kód do samostatné sestavení a použít <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute> v kontraktu služby, který používá <xref:System.ServiceModel.XmlSerializerFormatAttribute>. Nastavte <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> nebo <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> vlastnosti tak, aby odkazoval na kompilované serializace sestavení.  
   
-    3.  Kompilace generovaného Serializační kód do vašeho sestavení aplikace a přidat <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute> pro servisní smlouvy, které používá <xref:System.ServiceModel.XmlSerializerFormatAttribute>. Nenastavujte <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> nebo <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> vlastnosti. Výchozí sestavení serializace je považován za aktuální sestavení.  
+    3. Kompilace generovaného Serializační kód do vašeho sestavení aplikace a přidat <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute> pro servisní smlouvy, které používá <xref:System.ServiceModel.XmlSerializerFormatAttribute>. Nenastavujte <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> nebo <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> vlastnosti. Výchozí sestavení serializace je považován za aktuální sestavení.  
   
 ### <a name="to-generate-xmlserializer-serialization-code-in-visual-studio"></a>Ke generování kódu serializace XmlSerializer v sadě Visual Studio  
   

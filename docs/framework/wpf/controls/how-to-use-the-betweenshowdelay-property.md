@@ -6,11 +6,11 @@ helpviewer_keywords:
 - BetweenShowDelay time property [WPF]
 ms.assetid: 984ea76d-f2a2-4326-a02e-f97ec3d036d6
 ms.openlocfilehash: b6d55c72c8264546949833fc086937a8b1fe2540
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59139591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696051"
 ---
 # <a name="how-to-use-the-betweenshowdelay-property"></a>Postupy: Používání vlastnosti BetweenShowDelay
 Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A> čas vlastnost tak, aby popisky zobrazeny rychle – žádné nebo téměř žádné zpoždění – když uživatel přesune ukazatel myši z jeden popis přímo do jiného.  
@@ -20,9 +20,9 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.ToolTipS
   
  V některém z následujících scénářů <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A> vztahuje, což způsobí, že popisek pro druhý elipsa čekat jedné sekundy předtím, než se zobrazí:  
   
--   Pokud čas potřebný k přesunutí do druhé tlačítko je více než 2 sekundy.  
+- Pokud čas potřebný k přesunutí do druhé tlačítko je více než 2 sekundy.  
   
--   Pokud popisek se nezobrazuje na začátku časového intervalu pro první tři tečky.  
+- Pokud popisek se nezobrazuje na začátku časového intervalu pro první tři tečky.  
   
  [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
 [!code-xaml[ToolTipService#NoToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#notooltip)]  

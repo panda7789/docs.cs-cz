@@ -3,11 +3,11 @@ title: Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C
 ms.date: 07/20/2015
 ms.assetid: 40c9ed57-b827-4c9e-a3e7-8b2163122106
 ms.openlocfilehash: 72a3ae541733f2604f7ea95762fd48794a46856d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54689806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702318"
 ---
 # <a name="details-of-office-open-xml-wordprocessingml-documents-c"></a>Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C#)
 Tato část obsahuje informace o podrobnosti o dokumentech Office Open XML WordprocessingML. Zobrazuje příklady dokumentu a styl částí dokumentu Open XML.  

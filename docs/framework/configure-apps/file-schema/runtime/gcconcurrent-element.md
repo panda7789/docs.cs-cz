@@ -12,11 +12,11 @@ ms.assetid: 503f55ba-26ed-45ac-a2ea-caf994da04cd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0e2be4d9384f1e1ef73ce6064184aa2621a517a8
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674100"
 ---
 # <a name="gcconcurrent-element"></a>\<gcConcurrent> Element
 
@@ -45,7 +45,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
 |`false`|Není souběžně spustit uvolňování paměti.|
 |`true`|Uvolňování paměti běží souběžně. Toto nastavení je výchozí.|

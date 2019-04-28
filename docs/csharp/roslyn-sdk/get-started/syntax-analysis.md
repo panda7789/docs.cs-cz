@@ -4,11 +4,11 @@ description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 02/05/2018
 ms.custom: mvc
 ms.openlocfilehash: e377fe10e094e958627c3503fc39b7e2d02b3d7a
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706622"
 ---
 # <a name="get-started-with-syntax-analysis"></a>Začínáme s analýzou syntaxe
 
@@ -58,7 +58,7 @@ Má čtyři primární syntaxe stromů součásti:
 
 Triviální prvek, tokenů a uzly se skládají hierarchicky tvoří strom, který představuje úplně vše v fragment kódu jazyka Visual Basic nebo C#. Můžete zobrazit pomocí tato struktura **Syntax Visualizer** okna. V sadě Visual Studio, zvolte **zobrazení** > **ostatní Windows** > **Syntax Visualizer**. Například předchozím zdrojový soubor C# prozkoumat pomocí **Syntax Visualizer** vypadá podobně jako na následujícím obrázku:
 
-**SyntaxNode**: Blue | **SyntaxToken**: zelený | **SyntaxTrivia**: Red ![souboru s kódem jazyka C#](media/walkthrough-csharp-syntax-figure1.png)
+**SyntaxNode**: Blue | **SyntaxToken**: Green | **SyntaxTrivia**: Červená ![ C# soubor kódu](media/walkthrough-csharp-syntax-figure1.png)
 
 Otevřením této stromové struktury najdete prohlášení, výraz, token nebo trochu prázdné znaky v souboru kódu.
 

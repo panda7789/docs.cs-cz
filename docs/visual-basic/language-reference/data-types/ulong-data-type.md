@@ -17,11 +17,11 @@ helpviewer_keywords:
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
 ms.openlocfilehash: 82a2badc1bb22a55f753c9075562db3a5ee0d234
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54522957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747070"
 ---
 # <a name="ulong-data-type-visual-basic"></a>Ulong – datový typ (Visual Basic)
 
@@ -64,19 +64,19 @@ Dim number = &H_00_00_0A_96_2F_AC_14_D7ul
 
 ## <a name="programming-tips"></a>Tipy pro programování
   
--   **Záporná čísla.** Protože `ULong` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `ULong`, Visual Basic Převede výraz, který má `Decimal` první.  
+- **Záporná čísla.** Protože `ULong` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `ULong`, Visual Basic Převede výraz, který má `Decimal` první.  
   
--   **Dodržování specifikace CLS.** `ULong` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.  
+- **Dodržování specifikace CLS.** `ULong` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.  
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `ulong` může mít v jiných prostředích odlišnou datovou šířku (32bitová verze). Pokud takové součásti předáváte 32-bit argument, deklarujte ho jako `UInteger` místo `ULong` v spravovaného kódu jazyka Visual Basic.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy, jako `ulong` může mít v jiných prostředích odlišnou datovou šířku (32bitová verze). Pokud takové součásti předáváte 32-bit argument, deklarujte ho jako `UInteger` místo `ULong` v spravovaného kódu jazyka Visual Basic.  
   
      Kromě toho automatizace nepodporuje 64bitová celá čísla na Windows 95, Windows 98, Windows ME nebo Windows 2000. V jazyce Visual Basic nelze předat `ULong` argument pro komponentu služby Automation na těchto platformách.  
   
--   **Rozšíření.** `ULong` Datový typ rozšiřuje na `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `ULong` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `ULong` Datový typ rozšiřuje na `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `ULong` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znaky literálového typu `UL` k literálu se z něj stane `ULong` datového typu. `ULong` nemá žádné – znak typu identifikátoru.
+- **Znaky typu.** Přidávání znaky literálového typu `UL` k literálu se z něj stane `ULong` datového typu. `ULong` nemá žádné – znak typu identifikátoru.
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt64?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt64?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také:
 

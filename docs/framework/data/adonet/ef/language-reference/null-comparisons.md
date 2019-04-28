@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
 ms.openlocfilehash: a9e519fb8b2ca021d66adb23659d83efc571afae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59222663"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760425"
 ---
 # <a name="null-comparisons"></a>Porovnávání s hodnotou Null
 A `null` hodnota ve zdroji dat znamená, že hodnota neznámý. V [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, můžete zkontrolovat hodnoty null, tak že určité výpočtů nebo porovnání se provádí pouze u řádků, které mají platný nebo není null, data. Sémantika s hodnotou null CLR, ale může lišit od sémantika s hodnotou null zdroj dat. Většina databází použijte verzi s hodnotou tři logiku ke zpracování porovnávání s hodnotou null. To znamená, že porovnání proti hodnota null není vyhodnocen na `true` nebo `false`, je vyhodnocen jako `unknown`. Často je jím implementace ANSI hodnoty Null, ale není to vždy.  
