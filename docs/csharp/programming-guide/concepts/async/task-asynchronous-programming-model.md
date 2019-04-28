@@ -4,10 +4,10 @@ ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
 ms.openlocfilehash: eab57bda9e44358631aa10fc8c7d33bd9ba7d8d8
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668755"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 

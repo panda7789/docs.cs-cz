@@ -3,11 +3,11 @@ title: -target:winmdobj (C# Compiler Options)
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
 ms.openlocfilehash: 9cc85bf582d737114bc0e621a9568bbb9acb791b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319297"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662384"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (C# Compiler Options)
 Pokud používáte **-target: winmdobj** – možnost kompilátoru, kompilátor vytvoří přechodný soubor .winmdobj, který lze převést do binárního souboru (.winmd) souboru Windows Runtime. Soubor .winmd může být potom používán programy JavaScript a C++, kromě programů spravovaného jazyka.  

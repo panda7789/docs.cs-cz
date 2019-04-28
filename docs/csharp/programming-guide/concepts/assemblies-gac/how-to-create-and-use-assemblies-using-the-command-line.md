@@ -3,22 +3,22 @@ title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového ř�
 ms.date: 07/20/2015
 ms.assetid: 408ddce3-89e3-4e12-8353-34a49beeb72b
 ms.openlocfilehash: df22d52ad71b2a98d7e85f4c2002091b97d87b21
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56746886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702955"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (C#)
 Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
   
--   `MathLibrary.DLL`: Soubor knihovny, která obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
+- `MathLibrary.DLL`: Soubor knihovny, která obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
   
--   `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet svých parametrů. Třída `AddClass` , který obsahuje metodu `Add` patří do oboru názvů `UtilityMethods`.  
+- `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet svých parametrů. Třída `AddClass` , který obsahuje metodu `Add` patří do oboru názvů `UtilityMethods`.  
   
--   `Mult`: Zdrojový kód, který obsahuje metodu `Multiply`. Vrátí součin její parametry. Třída `MultiplyClass` , který obsahuje metodu `Multiply` je také členem oboru názvů `UtilityMethods`.  
+- `Mult`: Zdrojový kód, který obsahuje metodu `Multiply`. Vrátí součin její parametry. Třída `MultiplyClass` , který obsahuje metodu `Multiply` je také členem oboru názvů `UtilityMethods`.  
   
--   `TestCode`: Soubor, který obsahuje `Main` metody. Používá metody v souboru knihovny DLL pro výpočet součtu a produktu argumenty za běhu.  
+- `TestCode`: Soubor, který obsahuje `Main` metody. Používá metody v souboru knihovny DLL pro výpočet součtu a produktu argumenty za běhu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -125,5 +125,5 @@ csc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.cs
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
-- [Sestavení v rozhraní .NET](../../../../standard/assembly/index.md)
+- [Sestavení v .NET](../../../../standard/assembly/index.md)
 - [Vytvoření třídy k umístění funkcí DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

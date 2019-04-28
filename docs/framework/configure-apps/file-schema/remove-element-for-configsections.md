@@ -1,5 +1,5 @@
 ---
-title: <remove> – element pro element <configSections>
+title: <remove> – element pro <configSections>
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/remove
@@ -10,11 +10,11 @@ ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: 9ceffd3194c7df41f12ac6cd6b589602965b4920
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674308"
 ---
 # <a name="remove-element-for-configsections"></a>\<Odebrat > – element pro \<configSections >
 
@@ -44,7 +44,7 @@ Odstraní předdefinované oddílu nebo skupiny oddílů.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádný
 
 ## <a name="remarks"></a>Poznámky
 

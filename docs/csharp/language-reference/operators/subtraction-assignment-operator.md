@@ -9,11 +9,11 @@ helpviewer_keywords:
 - -= operator (subtraction assignment ) [C#]
 ms.assetid: 05c7d68a-423f-4de8-891b-cf24e8fb6ed7
 ms.openlocfilehash: 3b6890be4460a599a5d2f5f5f6ee1627be933f0b
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688680"
 ---
 # <a name="--operator-c-reference"></a>-= – operátor (C# odkaz)
 
@@ -47,4 +47,4 @@ s tím rozdílem, že `x` se jenom vyhodnotí jednou. Význam [-– operátor](s
 
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [C#operátory](index.md)
+- [Operátory jazyka C#](index.md)

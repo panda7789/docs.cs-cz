@@ -5,11 +5,11 @@ ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a467599084f01b1a48c95c5e25fb1f869156dffa
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55278756"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673885"
 ---
 # <a name="uselegacyjit-element"></a>\<useLegacyJit> Element
 
@@ -39,14 +39,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 ### <a name="enabled-attribute"></a>Atribut enabled  
   
-| Hodnota | Popis                                                                                                         |  
+| Value | Popis                                                                                                         |  
 | ----- | ------------------------------------------------------------------------------------------------------------------- |  
 | 0     | Modul common language runtime používá nový kompilátor JIT 64-bit zahrnuty v rozhraní .NET Framework 4.6 a novějších verzích. |  
 | 1     | Modul common language runtime používá starší 64bitovým kompilátorem JIT.                                                     |  
   
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   

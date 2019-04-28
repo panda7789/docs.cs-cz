@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
 ms.openlocfilehash: d474f5663448af39333b41c76d3fc93b2a7a187d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678624"
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>Přetížitelné operátory (C# Programming Guide)
 

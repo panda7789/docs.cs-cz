@@ -8,11 +8,11 @@ helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
 ms.openlocfilehash: 02b1b0f6215f7d26974a8e1e58fbefbb5d159cf7
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669691"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -94,7 +94,7 @@ Pro službu s koncovým bodem třída BasicHttpContextBinding *Svcutil.exe* gene
 |/excludeType:\<typ >|Určuje název plně kvalifikovaný nebo sestavením kvalifikovaný typ mají být vyloučeny z smlouvy odkazované typy.<br /><br /> Při použití tohoto parametru spolu s `/r` ze samostatné knihovny DLL, se odkazuje úplný název třídy XSD.<br /><br /> Krátký tvar: `/et`|
 |/importXmlTypes|Nakonfiguruje serializátor kontraktu dat. není pro import kontraktu dat typy jako typy rozhraní IXmlSerializable.|
 |/ interní|Vygeneruje třídy, které jsou označeny jako vnitřní. Výchozí: generovat veřejné třídy pouze.<br /><br /> Krátký tvar: `/i`|
-|/Language:\<jazyk >|Určuje programovací jazyk, který má použít pro generování kódu. By měla poskytnout buď název jazyka zaregistrovaný v souboru Machine.config, nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: C#, cs, csharp, vb, visualbasic, c ++, cpp<br /><br /> Výchozí: csharp<br /><br /> Krátký tvar: `/l`|
+|/Language:\<jazyk >|Určuje programovací jazyk, který má použít pro generování kódu. By měla poskytnout buď název jazyka zaregistrovaný v souboru Machine.config, nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, csharp, vb, visualbasic, c ++, cpp<br /><br /> Výchozí: csharp<br /><br /> Krátký tvar: `/l`|
 |/mergeConfig|Sloučí existující soubor, místo abyste přepsali tu stávající soubor vygenerovanou konfiguraci.|
 |/messageContract|Generuje typy kontraktů zpráv.<br /><br /> Krátký tvar: `/mc`|
 |/ NAMESPACE:\<string, string >|Určuje mapování z targetNamespace schématu WSDL nebo XML na názvový prostor CLR. Použití "\*" pro targetNamespace bez explicitního mapování všech lze mapovat na tento obor názvů CLR.<br /><br /> Pokud chcete mít jistotu, že název kontraktu zprávy nejsou v konfliktu s názvem operace, by měly buď kvalifikovat odkaz na typ s `::`, nebo se ujistěte, názvy musí být jedinečné.<br /><br /> Výchozí hodnota: Odvozenou z cílového oboru názvů dokumentu schématu pro kontrakty dat. Výchozí obor názvů je používán pro všechny ostatní generované typy.<br /><br /> Krátký tvar: `/n` **Poznámka:**  Při generování typů pro použití s pomocí třídy XmlSerializer, se podporuje jenom mapování jednoho oboru názvů. Všechny typy generovaného bude buď ve výchozí obor názvů nebo oboru názvů určeném "*".|

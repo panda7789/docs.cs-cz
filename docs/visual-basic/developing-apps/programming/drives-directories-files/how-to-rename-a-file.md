@@ -6,18 +6,18 @@ helpviewer_keywords:
 - files [Visual Basic], renaming
 ms.assetid: 0ea7e0c8-2cb2-4bf5-a00d-7b6e3c08a3bc
 ms.openlocfilehash: b86797018e1471590fd4c89848921e696afbc819
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672429"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Postupy: Přejmenování souboru v jazyce Visual Basic
 Použití `RenameFile` metodu `My.Computer.FileSystem` objektu přejmenovat soubor zadáním aktuální umístění, název souboru a název nového souboru. Tuto metodu nelze použít k přesouvání souborů. použít `MoveFile` metody pro přesun a přejmenujte soubor.  
   
 ### <a name="to-rename-a-file"></a>Pokud chcete přejmenovat soubor  
   
--   Použití `My.Computer.FileSystem.RenameFile` metoda chcete přejmenovat soubor. Tento příklad přejmenuje soubor s názvem `Test.txt` k `SecondTest.txt`.  
+- Použití `My.Computer.FileSystem.RenameFile` metoda chcete přejmenovat soubor. Tento příklad přejmenuje soubor s názvem `Test.txt` k `SecondTest.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#9)]  
   
@@ -26,25 +26,25 @@ Použití `RenameFile` metodu `My.Computer.FileSystem` objektu přejmenovat soub
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
   
--   `newName` obsahuje informace o cestě (<xref:System.ArgumentException>).  
+- `newName` obsahuje informace o cestě (<xref:System.ArgumentException>).  
   
--   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   `newName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
+- `newName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
   
--   Zdrojový soubor je neplatný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor je neplatný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
--   Jde o existující soubor nebo adresář s názvem zadaným v `newName` (<xref:System.IO.IOException>).  
+- Jde o existující soubor nebo adresář s názvem zadaným v `newName` (<xref:System.IO.IOException>).  
   
--   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
--   Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
   
--   Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
--   Uživatel nemá požadovaná oprávnění (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadovaná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

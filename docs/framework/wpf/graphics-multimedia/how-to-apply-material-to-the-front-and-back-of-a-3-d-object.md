@@ -7,11 +7,11 @@ helpviewer_keywords:
 - classes [WPF], Material
 ms.assetid: d93c8ad6-4939-4d29-9544-4d16d98093c1
 ms.openlocfilehash: 1d3f6a0622b5e0ccccf14af99782bb78dfe87ccb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59168048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698954"
 ---
 # <a name="how-to-apply-material-to-the-front-and-back-of-a-3-d-object"></a>Postupy: Použití materiálu na přední a zadní část 3D objektu
 Následující příklad ukazuje, jak použít <xref:System.Windows.Media.Media3D.Material> na přední a zadní 3D objekt a animovat objekt, který chcete zobrazit obě strany objektu. <xref:System.Windows.Media.Media3D.GeometryModel3D.Material%2A> Vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D> se používá k aplikování červený <xref:System.Windows.Media.Brush> do přední části objektu a <xref:System.Windows.Media.Media3D.GeometryModel3D.BackMaterial%2A> vlastnost <xref:System.Windows.Media.Media3D.GeometryModel3D> se používá k aplikování modrý <xref:System.Windows.Media.Brush> na zadní straně objektu. Následující kód ukazuje použití materiály k objektu:  

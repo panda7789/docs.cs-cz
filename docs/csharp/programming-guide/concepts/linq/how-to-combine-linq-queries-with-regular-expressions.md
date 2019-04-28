@@ -3,11 +3,11 @@ title: 'Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
 ms.openlocfilehash: e9aa8378fb6b4bbfbfca280e1a9fc73adc108d81
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54558758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668169"
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>Postupy: Kombinace dotazů LINQ s regulárními výrazy (C#)
 Tento příklad ukazuje způsob použití <xref:System.Text.RegularExpressions.Regex> třídy za účelem vytvoření regulárního výrazu pro složitější porovnávání v textových řetězců. Dotaz LINQ umožňuje snadno můžete filtrovat podle přesně soubory, které chcete hledat s regulárním výrazem a obrazce výsledky.  

@@ -3,11 +3,11 @@ title: <security> z <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
 ms.openlocfilehash: 3fd850862172ad2b9bd58cd01d332028ff76462a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670466"
 ---
 # <a name="security-of-nettcpbinding"></a>\<zabezpečení > z \<netTcpBinding >
 Definuje nastavení zabezpečení pro vazbu.  
@@ -42,7 +42,7 @@ Definuje nastavení zabezpečení pro vazbu.
   
 |Value|Popis|  
 |-----------|-----------------|  
-|Žádný|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Přenos|Zabezpečení přenosu pomocí protokolu TLS přes protokol TCP nebo SPNego poskytuje. Služba možná potřeba nakonfigurovat s využitím certifikátů SSL. Je možné kontrolovat úroveň ochrany s tímto režimem.|  
 |Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je SOAP body šifrované a podepsaný. Tento režim nabízí širokou škálu funkcí, jako je například, jestli přihlašovací údaje služby najdete na adrese klienta vzdáleně, sada algoritmů, které chcete použít a jaké úroveň ochrany a platí pro tělo zprávy. Ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  
 |TransportWithMessageCredential|Zabezpečení přenosu je párována s zabezpečení zpráv. Zabezpečení přenosu pomocí protokolu TLS poskytuje přes protokol TCP nebo SPNego a zajistí integritu, šifrování a ověřování serveru. Zabezpečení zpráv SOAP poskytuje ověření klienta. Ve výchozím nastavení ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  

@@ -3,11 +3,11 @@ title: Připojte se k operace (C#)
 ms.date: 07/20/2015
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
 ms.openlocfilehash: db42874becaf9760b7060d7f306cc20f950f143a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667559"
 ---
 # <a name="join-operations-c"></a>Připojte se k operace (C#)
 A *spojení* dva zdroje dat je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat.  

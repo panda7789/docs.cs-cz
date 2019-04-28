@@ -3,11 +3,11 @@ title: <clear> – element pro schemeSettings (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 65098332-ce61-4542-ab8d-e7dc0257d31f
 ms.openlocfilehash: 132506dc15335b738fcdb026f4d31429bc45a228
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674685"
 ---
 # <a name="clear-element-for-schemesettings-uri-settings"></a>\<Vymazat > – Element pro schemeSettings (nastavení Uri)
 Vymaže všechna existující nastavení schéma.  

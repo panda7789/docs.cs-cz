@@ -3,24 +3,24 @@ title: Použití WorkflowIdentity a správy verzí
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
 ms.openlocfilehash: 5bed526a47b802c60aa679e53c84af4e14656675
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669652"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Použití WorkflowIdentity a správy verzí
 <xref:System.Activities.WorkflowIdentity> nabízí způsob, jak pro pracovní postup přidružit název a <xref:System.Version> s definicí pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Toto téma obsahuje přehled používání <xref:System.Activities.WorkflowIdentity> s <xref:System.Activities.WorkflowApplication> hostování. Informace o spuštění vedle sebe definice pracovního postupu ve službě pracovního postupu v tématu [správy verzí vedle sebe ve třídě WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Informace o dynamické aktualizace, naleznete v tématu [dynamická aktualizace](dynamic-update.md).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [Pomocí identita WorkflowIdentity](using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)  
+- [Pomocí identita WorkflowIdentity](using-workflowidentity-and-versioning.md#UsingWorkflowIdentity)  
   
-    -   [Pomocí identita WorkflowIdentity spuštění vedle sebe](using-workflowidentity-and-versioning.md#SxS)  
+    - [Pomocí identita WorkflowIdentity spuštění vedle sebe](using-workflowidentity-and-versioning.md#SxS)  
   
--   [Upgrade rozhraní .NET Framework 4 trvalost databází pro podporu správy verzí pracovního postupu](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases)  
+- [Upgrade rozhraní .NET Framework 4 trvalost databází pro podporu správy verzí pracovního postupu](using-workflowidentity-and-versioning.md#UpdatingWF4PersistenceDatabases)  
   
-    -   [Aktualizace schématu databáze](using-workflowidentity-and-versioning.md#ToUpgrade)  
+    - [Aktualizace schématu databáze](using-workflowidentity-and-versioning.md#ToUpgrade)  
   
 ## <a name="UsingWorkflowIdentity"></a> Pomocí identita WorkflowIdentity  
  Použití <xref:System.Activities.WorkflowIdentity>vytvořit instanci, nakonfigurujte ji a přidružte jej k <xref:System.Activities.WorkflowApplication> instance. A <xref:System.Activities.WorkflowIdentity> instance obsahuje tři identifikační údaje. <xref:System.Activities.WorkflowIdentity.Name%2A> a <xref:System.Activities.WorkflowIdentity.Version%2A> obsahovat název a <xref:System.Version> a jsou povinné, a <xref:System.Activities.WorkflowIdentity.Package%2A> je volitelný a slouží k určení další řetězec obsahující informace, jako je název sestavení nebo jiné požadované informace. A <xref:System.Activities.WorkflowIdentity> je jedinečné, pokud některý z jeho tři vlastnosti se liší od jiného <xref:System.Activities.WorkflowIdentity>.  

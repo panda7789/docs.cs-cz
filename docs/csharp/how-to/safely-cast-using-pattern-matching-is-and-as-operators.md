@@ -7,11 +7,11 @@ helpviewer_keywords:
 - as operator [C#]
 - is operator [C#]
 ms.openlocfilehash: 4e0eb53a44a6348d0f5154a0a08222da90985864
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672117"
 ---
 # <a name="how-to-safely-cast-by-using-pattern-matching-is-and-as-operators"></a>Postupy: bezpečné přetypování pomocí porovnávání vzorů je a jako operátory
 

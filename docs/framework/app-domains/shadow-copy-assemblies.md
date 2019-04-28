@@ -9,11 +9,11 @@ ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f1f9a88a347650474c7a63b41984e3346e0ce205
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675011"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
@@ -30,21 +30,21 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
   
  Tento článek obsahuje následující části:  
   
--   [Povolení a používání stínové kopírování sestavení](#EnablingAndUsing) popisuje základní použití a možnosti, které jsou k dispozici pro stínové kopírování sestavení.  
+- [Povolení a používání stínové kopírování sestavení](#EnablingAndUsing) popisuje základní použití a možnosti, které jsou k dispozici pro stínové kopírování sestavení.  
   
--   [Výkon při spouštění](#StartupPerformance) jsou zde popsány změny, které jsou provedeny stínovém kopírování v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] zlepšit výkon při spouštění a jak se vrátit k chování z předchozích verzí.  
+- [Výkon při spouštění](#StartupPerformance) jsou zde popsány změny, které jsou provedeny stínovém kopírování v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] zlepšit výkon při spouštění a jak se vrátit k chování z předchozích verzí.  
   
--   [Zastaralé metody](#ObsoleteMethods) jsou zde popsány změny, které byly provedeny k vlastnostem a metodám, které řídí stínové kopírování v [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
+- [Zastaralé metody](#ObsoleteMethods) jsou zde popsány změny, které byly provedeny k vlastnostem a metodám, které řídí stínové kopírování v [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
   
 <a name="EnablingAndUsing"></a>   
 ## <a name="enabling-and-using-shadow-copying"></a>Povolení a používání stínové kopírování sestavení  
  Můžete použít vlastnosti <xref:System.AppDomainSetup> třídy následujícím způsobem, aby konfigurace domény aplikace pro stínové kopírování sestavení:  
   
--   Povolit stínové kopírování tak, že nastavíte <xref:System.AppDomainSetup.ShadowCopyFiles%2A> vlastnost na hodnotu řetězce `"true"`.  
+- Povolit stínové kopírování tak, že nastavíte <xref:System.AppDomainSetup.ShadowCopyFiles%2A> vlastnost na hodnotu řetězce `"true"`.  
   
      Ve výchozím nastavení toto nastavení způsobí, že všechna sestavení v cesta aplikace, které se mají zkopírovat do mezipaměti pro stahování před načtením. Jedná se o stejné mezipaměti udržuje modul common language runtime k ukládání souborů stažených z jiných počítačů, a modul common language runtime automaticky odstraní soubory, pokud už nepotřebujete.  
   
--   Volitelně můžete nastavit pomocí vlastní umístění pro soubory stínové kopie <xref:System.AppDomainSetup.CachePath%2A> vlastnost a <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost.  
+- Volitelně můžete nastavit pomocí vlastní umístění pro soubory stínové kopie <xref:System.AppDomainSetup.CachePath%2A> vlastnost a <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost.  
   
      Základní cesta pro umístění je vytvořený zřetězením <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost <xref:System.AppDomainSetup.CachePath%2A> jako podadresáře. Sestavení jsou stínové zkopírovány do podsložek této cesty, ne pro samotné základní cesty.  
   
@@ -55,7 +55,7 @@ Stínové kopírování sestavení umožňuje, které se používají v doméně
   
      Existuje několik důvodů, proč můžete chtít nastavit vlastní umístění pro soubory stínové kopie. Můžete nastavit vlastní umístění pro soubory stínové kopie, pokud vaše aplikace generuje mnoho kopií. Mezipaměť pro stahování má omezenou velikost, nikoli podle doby života, takže je možné, že se pokusí odstranit soubor, který je stále používán common language runtime. Dalším důvodem pro nastavení vlastního umístění je, pokud uživatelé používají vaše aplikace nemá oprávnění k zápisu do adresáře, který používá modul common language runtime pro mezipaměť pro stahování.  
   
--   Volitelně omezte sestavení, které jsou stínové kopie pomocí <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost.  
+- Volitelně omezte sestavení, které jsou stínové kopie pomocí <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost.  
   
      Když povolíte stínové kopírování sestavení aplikační domény, výchozí hodnota je zkopírovat všechna sestavení v cestě aplikace – to znamená, že v adresářích určené <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti. Můžete omezit kopírování do vybraného adresáře vytváření řetězec, který obsahuje jenom adresáře, které chcete stínové kopie a přiřazování řetězec, který má <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost. Adresáře oddělte středníkem. Pouze sestavení, které jsou stínové kopie jsou ty, které ve vybraných složkách.  
   

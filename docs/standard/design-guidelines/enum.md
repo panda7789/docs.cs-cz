@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
 author: KrzysztofCwalina
 ms.openlocfilehash: c0645ba1179c4c6fd961b871b3061cd51174f427
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54675196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669092"
 ---
 # <a name="enum-design"></a>Návrh výčtu
 Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednoduchý, výčty a příznak výčty.  
@@ -48,17 +48,17 @@ Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednodu
   
  **✓ CONSIDER** pomocí <xref:System.Int32> (výchozí ve většině programovacích jazycích) jako nadřazený typ enum Pokud žádné z následujících:  
   
--   Výčet je výčet příznaků a máte více než 32 příznaky, nebo chcete mít více v budoucnu.  
+- Výčet je výčet příznaků a máte více než 32 příznaky, nebo chcete mít více v budoucnu.  
   
--   Základní typ musí být jiná než <xref:System.Int32> jednodušší spolupráce s nespravovaným kódem očekává jinou velikost výčty.  
+- Základní typ musí být jiná než <xref:System.Int32> jednodušší spolupráce s nespravovaným kódem očekává jinou velikost výčty.  
   
--   Výsledkem by bylo menší základní typ značné úspory v prostoru. Pokud očekáváte, že výčtu použije hlavně jako argument pro tok řízení, velikost provede malý rozdíl. Úspora velikosti může být významné pokud:  
+- Výsledkem by bylo menší základní typ značné úspory v prostoru. Pokud očekáváte, že výčtu použije hlavně jako argument pro tok řízení, velikost provede malý rozdíl. Úspora velikosti může být významné pokud:  
   
-    -   Očekáváte, že se použije jako pole instance velmi často struktury nebo třídy výčtu.  
+    - Očekáváte, že se použije jako pole instance velmi často struktury nebo třídy výčtu.  
   
-    -   Očekáváte, že uživatelům vytvořit velké pole nebo kolekce výčet instancí.  
+    - Očekáváte, že uživatelům vytvořit velké pole nebo kolekce výčet instancí.  
   
-    -   Očekáváte velký počet instancí výčtového typu se musí serializovat.  
+    - Očekáváte velký počet instancí výčtového typu se musí serializovat.  
   
  Pro použití v paměti, mějte na paměti, že spravované objekty budou vždy `DWORD`-zarovnané, tak efektivně potřebujete více výčty nebo jiných malých struktury v instanci se zabalit menší výčet s aby rozdíl, protože velikost celkový počet instancí je vždy má zaokrouhlí `DWORD`.  
   

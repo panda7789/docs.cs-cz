@@ -4,10 +4,10 @@ ms.date: 03/30/2017
 ms.assetid: 8f356419-681a-4175-ae93-878eee970249
 ms.openlocfilehash: 47ddd42168445aa23eaaded6fd19ffe4698e4117
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669573"
 ---
 # <a name="using-a-custom-activity"></a>Použití vlastní aktivity
 Aktivity, které jsou odvozeny z <xref:System.Activities.Activity> nebo jejích podtříd složený do větší pracovních postupů, nebo přímo v kódu. Toto téma popisuje použití vlastních aktivit v vytvořených v kódu nebo v Návrháři pracovních postupů.  

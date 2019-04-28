@@ -8,11 +8,11 @@ helpviewer_keywords:
 - ?[] operator [C#]
 ms.assetid: 9c7b2c8f-a785-44ca-836c-407bfb6d27f5
 ms.openlocfilehash: 9cbf8a0f860f0bc0328cd98e558b20b5e8e1bf8f
-ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58348840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688875"
 ---
 # <a name="-and--null-conditional-operators-c-reference"></a>?. a? [] podmíněné operátory s null (C# odkaz)
 

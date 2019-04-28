@@ -7,11 +7,11 @@ helpviewer_keywords:
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
 ms.openlocfilehash: e0cd6837de626fa6bcd560811c6a70f7f6604daa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669366"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
 V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí nebude ve spolupráci s objektem naslouchací proces, který připojuje ke zdroji obslužné rutiny. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí návrhový vzor, který je možné tento problém vyřešit tak, že třída vyhrazený správce poskytuje pro určité události a implementace rozhraní pro naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabý vzor událostí*.  
@@ -40,13 +40,13 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdroj
 
  Následující části popisují, jak implementovat vzor slabých událostí.  Pro účely této diskuse Přihlaste se k odběru události má následující vlastnosti.  
   
--   Je název události `SomeEvent`.  
+- Je název události `SomeEvent`.  
   
--   Událost je vyvolána `EventSource` třídy.  
+- Událost je vyvolána `EventSource` třídy.  
   
--   Obslužná rutina události má typ: `SomeEventEventHandler` (nebo `EventHandler<SomeEventEventArgs>`).  
+- Obslužná rutina události má typ: `SomeEventEventHandler` (nebo `EventHandler<SomeEventEventArgs>`).  
   
--   Událost předává parametr typu `SomeEventEventArgs` obslužné rutiny události.  
+- Událost předává parametr typu `SomeEventEventArgs` obslužné rutiny události.  
   
 ### <a name="using-an-existing-weak-event-manager-class"></a>Použití existující třídy slabé správce událostí  
   

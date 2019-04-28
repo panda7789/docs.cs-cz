@@ -9,11 +9,11 @@ helpviewer_keywords:
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
 ms.openlocfilehash: 82bfe3b6e3107ff787716657dbf0b31dcadde911
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674386"
 ---
 # <a name="socket-element-network-settings"></a>\<soket > – Element (nastavení sítě)
 Určuje, zda operace soketu používat porty dokončení.  
@@ -64,9 +64,9 @@ Určuje, zda operace soketu používat porty dokončení.
   
  To `ipProtectionLevel` atribut nastavení má vliv počáteční příchozí provoz:  
   
--   Server TCP naslouchání pro příchozí spojení na soket.  
+- Server TCP naslouchání pro příchozí spojení na soket.  
   
--   Aplikace UDP příjem paketů pro soket.  
+- Aplikace UDP příjem paketů pro soket.  
   
  Toto nastavení nemá vliv na už navázané připojení TCP (v obou směrech je neomezený přenos) a nemá vliv na aplikace odešle pakety UDP.  
   

@@ -3,11 +3,11 @@ title: Výchozí kontext schématu XAML a kontext WPF schématu XAML
 ms.date: 03/30/2017
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
 ms.openlocfilehash: 0d6a0aa80d8490c509fa9036f88d4f6863ff040c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689395"
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
 Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produkční XAML, který používá určité slovníkové XAML s objektem zápis chování, včetně způsob mapování typu řeší, jak jsou načtené sestavení, jak některé čtečky a zapisovače nastavení jsou interpretovány. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružené výchozí kontext schématu XAML, která je založena na systému typů CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro WPF.  
@@ -50,11 +50,11 @@ Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produ
   
 2. V opačném případě jednu z následujících postupů na základě CLR <xref:System.Reflection.Assembly> rozhraní API slouží k načtení sestavení:  
   
-    -   Pokud se název kvalifikovaný v mapování, zavolejte <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
+    - Pokud se název kvalifikovaný v mapování, zavolejte <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-    -   Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+    - Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
-    -   Pokud je název nekvalifikované v mapování, zavolejte <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
+    - Pokud je název nekvalifikované v mapování, zavolejte <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
   
 #### <a name="xamlbuildtask"></a>XamlBuildTask  
  `XamlBuildTask` se používá pro Windows Communication Foundation (WCF) a Windows Workflow Foundation.  
@@ -82,11 +82,11 @@ Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produ
   
 2. Jednu z následujících postupů v opačném případě se používá k načtení sestavení:  
   
-    -   Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
+    - Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-    -   Pokud krátký název + veřejné token kombinace kláves odpovídaly sestavení, která byla načtena BAML z, použijte toto sestavení.  
+    - Pokud krátký název + veřejné token kombinace kláves odpovídaly sestavení, která byla načtena BAML z, použijte toto sestavení.  
   
-    -   Použít krátký název a token veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+    - Použít krátký název a token veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

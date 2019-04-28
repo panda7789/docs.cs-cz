@@ -3,11 +3,11 @@ title: <enableWebScript>
 ms.date: 03/30/2017
 ms.assetid: 9c7e96e1-af70-4e6e-ac5c-d67929dddbaa
 ms.openlocfilehash: b2cdd29cda7f82ce555b0f6c1a963567b41ff81b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673248"
 ---
 # <a name="enablewebscript"></a>\<enableWebScript>
 Tento prvek umožňuje chování koncového bodu, který umožňuje využívat služby z webových stránek ASP.NET AJAX.  

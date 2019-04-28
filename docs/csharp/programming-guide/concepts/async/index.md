@@ -3,11 +3,11 @@ title: Asynchronní programování v jazyce C#
 description: Přehled C# jazykovou podporu pro asynchronní programování pomocí asynchronní, await, úloh a úkolů<T>
 ms.date: 03/18/2019
 ms.openlocfilehash: dc85fd4fb30278dc39c75c88d5fd23c1f1633366
-ms.sourcegitcommit: 8258515adc6c37ab6278e5a3d102d593246f8672
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58504363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668676"
 ---
 # <a name="the-task-asynchronous-programming-model-in-c"></a>Asynchronní programovací model úkolu v jazyce C\#
 

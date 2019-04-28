@@ -5,11 +5,11 @@ helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
 ms.openlocfilehash: db0e4acc76f758004948857fc0b23a9cbc62f244
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669340"
 ---
 # <a name="workflow-persistence"></a>Trvalost pracovního postupu
 Trvalost pracovního postupu je trvalý zachycení stavu instance pracovního postupu, nezávisle na informace o procesu nebo počítač. To se provádí k poskytování známého bodu obnovení pro instanci pracovního postupu v případě selhání systému, nebo pro zachování paměti podle uvolnění instancí pracovních postupů, které nejsou aktivně provádějící práce nebo přesunout do jiného stavu instance pracovního postupu z jednoho uzlu uzel v serverové farmě.  
@@ -27,30 +27,30 @@ Trvalost pracovního postupu je trvalý zachycení stavu instance pracovního po
 ## <a name="implicit-persistence-points"></a>Implicitní body trvalosti  
  Následující seznam obsahuje příklady podmínek, na kterých je trvalá pracovního postupu při úložiště instance je přiřazen pracovní postup.  
   
--   Když **TransactionScope** dokončení aktivity nebo **TransactedReceiveScope** dokončení aktivity.  
+- Když **TransactionScope** dokončení aktivity nebo **TransactedReceiveScope** dokončení aktivity.  
   
--   Jakmile se instance pracovního postupu změní nečinnosti a **WorkflowIdleBehavior** je nastavena na hostitele pracovního postupu. K tomu dojde, například při použití zasílání zpráv aktivity nebo **zpoždění** aktivity.  
+- Jakmile se instance pracovního postupu změní nečinnosti a **WorkflowIdleBehavior** je nastavena na hostitele pracovního postupu. K tomu dojde, například při použití zasílání zpráv aktivity nebo **zpoždění** aktivity.  
   
--   Když aplikace WorkflowApplication změní na nečinnosti a **PersistableIdle** aplikace je nastavena na **PersistableIdleAction.Persist**.  
+- Když aplikace WorkflowApplication změní na nečinnosti a **PersistableIdle** aplikace je nastavena na **PersistableIdleAction.Persist**.  
   
--   Pokud hostitelská aplikace je nastaven na zachovat nebo uvolnit instance pracovního postupu.  
+- Pokud hostitelská aplikace je nastaven na zachovat nebo uvolnit instance pracovního postupu.  
   
--   Když instance pracovního postupu je ukončen nebo dokončení.  
+- Když instance pracovního postupu je ukončen nebo dokončení.  
   
--   Když **trvalého** aktivity spustí.  
+- Když **trvalého** aktivity spustí.  
   
--   Instance pracovního postupu vyvinuté pomocí předchozí verze Windows Workflow Foundation Pokud nalezne bod trvalost během interoperabilní provádění.  
+- Instance pracovního postupu vyvinuté pomocí předchozí verze Windows Workflow Foundation Pokud nalezne bod trvalost během interoperabilní provádění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md)  
+- [Úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md)  
   
--   [Úložiště instancí](instance-stores.md)  
+- [Úložiště instancí](instance-stores.md)  
   
--   [Účastníci trvalosti](persistence-participants.md)  
+- [Účastníci trvalosti](persistence-participants.md)  
   
--   [Osvědčené postupy pro trvalost](persistence-best-practices.md)  
+- [Osvědčené postupy pro trvalost](persistence-best-practices.md)  
   
--   [Netrvalé instance pracovních postupů](non-persisted-workflow-instances.md)  
+- [Netrvalé instance pracovních postupů](non-persisted-workflow-instances.md)  
   
--   [Pozastavení a obnovení pracovního postupu](pausing-and-resuming-a-workflow.md)
+- [Pozastavení a obnovení pracovního postupu](pausing-and-resuming-a-workflow.md)

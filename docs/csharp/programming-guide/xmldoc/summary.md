@@ -10,11 +10,11 @@ helpviewer_keywords:
 - summary C# XML tag
 ms.assetid: b4c43d92-2067-4eac-a59a-d32f5248c08b
 ms.openlocfilehash: 0e6408f1f45bb5f1406b4b1a7f6fe2cf543109e4
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57493567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675972"
 ---
 # <a name="summary-c-programming-guide"></a>\<Souhrn > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

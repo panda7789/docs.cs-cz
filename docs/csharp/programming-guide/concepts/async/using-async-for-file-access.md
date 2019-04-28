@@ -3,26 +3,26 @@ title: Použití modifikátoru Async pro přístup k souborům (C#)
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
 ms.openlocfilehash: 9fa96869e56357a5feb4b0ac0b5bc7514f6eb186
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668663"
 ---
 # <a name="using-async-for-file-access-c"></a>Použití modifikátoru Async pro přístup k souborům (C#)
 Můžete použít funkci async pro přístup k souborům. Pomocí asynchronní funkce může volat do asynchronní metody bez pomocí zpětných volání a rozdělení kódu mezi více metodách a výrazech lambda. Aby synchronního kódu asynchronní, stačí volání asynchronní metody namísto synchronní metody a do kódu přidat několik klíčových slov.  
   
  Můžete zvážit následující důvody pro přidání asynchronii volání přístup k souboru:  
   
--   Asynchronie urychluje uživatelského rozhraní aplikace odezvu vzhledem k tomu, že vlákno uživatelského rozhraní, který se spustí operace můžete provádět jinou práci. Pokud vlákno uživatelského rozhraní musí být spuštěn kód, který trvá moc dlouho (například více než 50 MS), uživatelské rozhraní může zablokovat až do dokončení vstupy/výstupy a znovu zpracovávat klávesnice a myš události vstupu a jiné vlákno uživatelského rozhraní.  
+- Asynchronie urychluje uživatelského rozhraní aplikace odezvu vzhledem k tomu, že vlákno uživatelského rozhraní, který se spustí operace můžete provádět jinou práci. Pokud vlákno uživatelského rozhraní musí být spuštěn kód, který trvá moc dlouho (například více než 50 MS), uživatelské rozhraní může zablokovat až do dokončení vstupy/výstupy a znovu zpracovávat klávesnice a myš události vstupu a jiné vlákno uživatelského rozhraní.  
   
--   Asynchronie zlepšuje škálovatelnost technologie ASP.NET a jiných serverových aplikací tím, že snižuje potřebu vlákna. Pokud aplikace používá vyhrazeném vlákně na odpověď a jsou právě tisíc požadavky zpracovávány současně, nejsou potřeba tisíc vlákna. Asynchronních operací často není nutné používat vlákno při čekání. Na konci stručně používají existující vlákno dokončení vstupně-výstupních operací.  
+- Asynchronie zlepšuje škálovatelnost technologie ASP.NET a jiných serverových aplikací tím, že snižuje potřebu vlákna. Pokud aplikace používá vyhrazeném vlákně na odpověď a jsou právě tisíc požadavky zpracovávány současně, nejsou potřeba tisíc vlákna. Asynchronních operací často není nutné používat vlákno při čekání. Na konci stručně používají existující vlákno dokončení vstupně-výstupních operací.  
   
--   Latence operace přístupu k souboru může být velmi nízkou pod aktuální podmínky, ale latence může výrazně zlepšit v budoucnu. Soubor může například přesunout na server, který je po celém světě.  
+- Latence operace přístupu k souboru může být velmi nízkou pod aktuální podmínky, ale latence může výrazně zlepšit v budoucnu. Soubor může například přesunout na server, který je po celém světě.  
   
--   Přidaný režijní náklady na použití asynchronní funkce je malý.  
+- Přidaný režijní náklady na použití asynchronní funkce je malý.  
   
--   Asynchronní úlohy můžete snadno spouštět paralelně.  
+- Asynchronní úlohy můžete snadno spouštět paralelně.  
   
 ## <a name="running-the-examples"></a>Spuštění příkladů  
  Pro spuštění příkladů v tomto tématu, můžete vytvořit **aplikace WPF** nebo **formulářová aplikace Windows** a pak přidejte **tlačítko**. Na tlačítku `Click` události, přidejte volání metody první v obou příkladech.  

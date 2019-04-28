@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '#line directive [C#]'
 ms.assetid: 6439e525-5dd5-4acb-b8ea-efabb32ff95b
 ms.openlocfilehash: f4e3c3edbe1d542f9bf5c984c403e0486a9da61b
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660044"
 ---
 # <a name="line-c-reference"></a>#line (referenční dokumentace jazyka C#)
 

@@ -16,11 +16,11 @@ helpviewer_keywords:
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
 ms.openlocfilehash: 9eea7f76d386816aad060e9b99cea6b906a09ab9
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662839"
 ---
 # <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia
 

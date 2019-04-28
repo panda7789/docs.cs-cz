@@ -13,11 +13,11 @@ ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d19410bd83605e6c7325a61e64a32a828846b7df
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59222565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705880"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje mezipaměť kódu celého stroje názvem do globální mezipaměti sestavení. Global Assembly Cache ukládá sestavení speciálně určené ke sdílení více aplikacemi v počítači.  
@@ -29,9 +29,9 @@ Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje 
   
  Existují dva způsoby, jak nasadit sestavení do globální mezipaměti sestavení:  
   
--   Pomocí instalačního programu navržené pro práci s globální pamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení.  
+- Pomocí instalačního programu navržené pro práci s globální pamětí sestavení. Toto je upřednostňovaná možnost pro instalaci sestavení do globální mezipaměti sestavení.  
   
--   Použijte nástroj pro vývojáře, volá se, [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), k dispozici ve [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+- Použijte nástroj pro vývojáře, volá se, [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md), k dispozici ve [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
   
     > [!NOTE]
     >  Ve scénářích nasazení použijte instalační služby systému Windows pro instalaci sestavení do globální mezipaměti sestavení. Použijte nástroj Global Assembly Cache pouze ve vývojové scénáře, protože neposkytuje počítání odkazů sestavení a další funkce, které poskytuje při použití Instalační služby systému Windows.  

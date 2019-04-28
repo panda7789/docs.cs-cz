@@ -3,11 +3,11 @@ title: Úvod do LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: 54874feb-55e5-4ca8-a9d6-1c1127fd7fb1
 ms.openlocfilehash: ea17de41bbbc03158179f207aa0bc9fc9cceb863
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667533"
 ---
 # <a name="introduction-to-linq-c"></a>Úvod do LINQ (C#)
 Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framework verze 3.5 této přemostění mezery mezi řadě objekty a světě orientovaném na data.  
@@ -25,13 +25,13 @@ Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framew
 ## <a name="next-steps"></a>Další kroky  
  Další informace o dotazech technologie LINQ, začněte tím, že se seznamovat s některé základní pojmy v části Začínáme [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md), a pak si můžete přečíst dokumentaci k technologie LINQ, který vás zajímá:  
   
--   Databáze systému SQL Server: [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+- Databáze systému SQL Server: [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
   
--   Dokumenty XML: [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
+- Dokumenty XML: [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
   
--   Datové sady ADO.NET: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+- Datové sady ADO.NET: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
--   Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
   
 ## <a name="see-also"></a>Viz také:
 

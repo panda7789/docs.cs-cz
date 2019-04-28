@@ -3,11 +3,11 @@ title: 'Postupy: Zachycení chyb při analýze (C#)'
 ms.date: 07/20/2015
 ms.assetid: bfb612d4-5605-48ef-8c93-915cf9d5dcfb
 ms.openlocfilehash: 2f56ca48278f9ad8b38f8564f54a379cc09f94ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668260"
 ---
 # <a name="how-to-catch-parsing-errors-c"></a>Postupy: Zachycení chyb při analýze (C#)
 Toto téma ukazuje, jak detekovat XML chybně vytvořený nebo je neplatný.  

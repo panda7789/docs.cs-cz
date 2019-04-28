@@ -4,11 +4,11 @@ description: Zjistěte, jak použít vytváření funkcí pro strojové učení 
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: f0101a3c9398637ece60051257c82eb69ef933d0
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689655"
 ---
 # <a name="apply-feature-engineering-for-model-training-on-categorical-data---mlnet"></a>Použijte vytváření funkcí k tréninku modelu na data v kategoriích – ML.NET
 
