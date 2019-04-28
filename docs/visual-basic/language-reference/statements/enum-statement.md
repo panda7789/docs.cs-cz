@@ -12,171 +12,184 @@ helpviewer_keywords:
 - constants [Visual Basic], enumerated
 ms.assetid: a45e51f1-65ff-48e1-bf32-79130f137377
 ms.openlocfilehash: fa97a374d4570e014222bf44844271b3394453da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638126"
 ---
-# <a name="enum-statement-visual-basic"></a><span data-ttu-id="e015e-102">Enum – příkaz (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e015e-102">Enum Statement (Visual Basic)</span></span>
-<span data-ttu-id="e015e-103">Deklaruje výčet a definuje hodnoty jeho členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-103">Declares an enumeration and defines the values of its members.</span></span>  
-  
-## <a name="syntax"></a><span data-ttu-id="e015e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e015e-104">Syntax</span></span>  
-  
-```  
-[ <attributelist> ] [ accessmodifier ]  [ Shadows ]   
-Enum enumerationname [ As datatype ]   
-   memberlist  
-End Enum  
-```  
-  
-## <a name="parts"></a><span data-ttu-id="e015e-105">Součásti</span><span class="sxs-lookup"><span data-stu-id="e015e-105">Parts</span></span>  
-  
--   `attributelist`  
-  
-     <span data-ttu-id="e015e-106">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e015e-106">Optional.</span></span> <span data-ttu-id="e015e-107">Seznam atributů, které platí pro tento výčet.</span><span class="sxs-lookup"><span data-stu-id="e015e-107">List of attributes that apply to this enumeration.</span></span> <span data-ttu-id="e015e-108">Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").</span><span class="sxs-lookup"><span data-stu-id="e015e-108">You must enclose the [attribute list](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").</span></span>  
-  
-     <span data-ttu-id="e015e-109"><xref:System.FlagsAttribute> Atribut označuje, že hodnota instance výčtu může obsahovat více členů výčtu a, že každý člen představuje bitového pole hodnoty výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-109">The <xref:System.FlagsAttribute> attribute indicates that the value of an instance of the enumeration can include multiple enumeration members, and that each member represents a bit field in the enumeration value.</span></span>  
-  
--   `accessmodifier`  
-  
-     <span data-ttu-id="e015e-110">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e015e-110">Optional.</span></span> <span data-ttu-id="e015e-111">Určuje, jaký kód může přistupovat k tento výčet.</span><span class="sxs-lookup"><span data-stu-id="e015e-111">Specifies what code can access this enumeration.</span></span> <span data-ttu-id="e015e-112">Může být jedna z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="e015e-112">Can be one of the following:</span></span>  
-  
-    -   [<span data-ttu-id="e015e-113">Public</span><span class="sxs-lookup"><span data-stu-id="e015e-113">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)  
-  
-    -   [<span data-ttu-id="e015e-114">Protected</span><span class="sxs-lookup"><span data-stu-id="e015e-114">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)  
-  
-    -   [<span data-ttu-id="e015e-115">Friend</span><span class="sxs-lookup"><span data-stu-id="e015e-115">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)  
-  
-    -   [<span data-ttu-id="e015e-116">Private</span><span class="sxs-lookup"><span data-stu-id="e015e-116">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)  
-  
-    - [<span data-ttu-id="e015e-117">Protected Friend</span><span class="sxs-lookup"><span data-stu-id="e015e-117">Protected Friend</span></span>](../../language-reference/modifiers/protected-friend.md)
-    
-    - [<span data-ttu-id="e015e-118">Private Protected</span><span class="sxs-lookup"><span data-stu-id="e015e-118">Private Protected</span></span>](../../language-reference/modifiers/private-protected.md)
+# <a name="enum-statement-visual-basic"></a><span data-ttu-id="caf44-102">Enum – příkaz (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="caf44-102">Enum Statement (Visual Basic)</span></span>
 
--   `Shadows`  
-  
-     <span data-ttu-id="e015e-119">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e015e-119">Optional.</span></span> <span data-ttu-id="e015e-120">Určuje, že tento výčet znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě.</span><span class="sxs-lookup"><span data-stu-id="e015e-120">Specifies that this enumeration redeclares and hides an identically named programming element, or set of overloaded elements, in a base class.</span></span> <span data-ttu-id="e015e-121">Můžete zadat [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) pouze na samotného výčtu, nikoli na kterýkoli z jejích členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-121">You can specify [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) only on the enumeration itself, not on any of its members.</span></span>  
-  
--   `enumerationname`  
-  
-     <span data-ttu-id="e015e-122">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="e015e-122">Required.</span></span> <span data-ttu-id="e015e-123">Název výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-123">Name of the enumeration.</span></span> <span data-ttu-id="e015e-124">Informace o platné názvy najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span><span class="sxs-lookup"><span data-stu-id="e015e-124">For information on valid names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
-  
--   `datatype`  
-  
-     <span data-ttu-id="e015e-125">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e015e-125">Optional.</span></span> <span data-ttu-id="e015e-126">Datový typ výčtu a všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="e015e-126">Data type of the enumeration and all its members.</span></span>  
-  
--   `memberlist`  
-  
-     <span data-ttu-id="e015e-127">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="e015e-127">Required.</span></span> <span data-ttu-id="e015e-128">Seznam členů konstanty deklarované v tomto prohlášení.</span><span class="sxs-lookup"><span data-stu-id="e015e-128">List of member constants being declared in this statement.</span></span> <span data-ttu-id="e015e-129">Víc členů se zobrazí na jednotlivé zdrojové řádky kódu.</span><span class="sxs-lookup"><span data-stu-id="e015e-129">Multiple members appear on individual source code lines.</span></span>  
-  
-     <span data-ttu-id="e015e-130">Každý `member` má následující syntaxi a části: `[<attribute list>] member name [ = initializer ]`</span><span class="sxs-lookup"><span data-stu-id="e015e-130">Each `member` has the following syntax and parts: `[<attribute list>] member name [ = initializer ]`</span></span>  
-  
-    |<span data-ttu-id="e015e-131">Část</span><span class="sxs-lookup"><span data-stu-id="e015e-131">Part</span></span>|<span data-ttu-id="e015e-132">Popis</span><span class="sxs-lookup"><span data-stu-id="e015e-132">Description</span></span>|  
-    |---|---|  
-    |`membername`|<span data-ttu-id="e015e-133">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="e015e-133">Required.</span></span> <span data-ttu-id="e015e-134">Název tohoto člena.</span><span class="sxs-lookup"><span data-stu-id="e015e-134">Name of this member.</span></span>|  
-    |`initializer`|<span data-ttu-id="e015e-135">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="e015e-135">Optional.</span></span> <span data-ttu-id="e015e-136">Výraz, který je vyhodnocen v době kompilace a přiřazené k tomuto členu.</span><span class="sxs-lookup"><span data-stu-id="e015e-136">Expression that is evaluated at compile time and assigned to this member.</span></span>|  
-  
--   <span data-ttu-id="e015e-137">`End``Enum`</span><span class="sxs-lookup"><span data-stu-id="e015e-137">`End` `Enum`</span></span>  
-  
-     <span data-ttu-id="e015e-138">Ukončuje `Enum` bloku.</span><span class="sxs-lookup"><span data-stu-id="e015e-138">Terminates the `Enum` block.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="e015e-139">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e015e-139">Remarks</span></span>  
- <span data-ttu-id="e015e-140">Pokud máte sadu neměnné hodnot, které logicky vzájemně souvisí, můžete je definovat společně ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-140">If you have a set of unchanging values that are logically related to each other, you can define them together in an enumeration.</span></span> <span data-ttu-id="e015e-141">To umožňuje smysluplné názvy výčtu a její členy, které jsou jednodušší mějte na paměti než jejich hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e015e-141">This provides meaningful names for the enumeration and its members, which are easier to remember than their values.</span></span> <span data-ttu-id="e015e-142">Pak můžete použít členy výčtu na mnoha místech ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="e015e-142">You can then use the enumeration members in many places in your code.</span></span>  
-  
- <span data-ttu-id="e015e-143">Mezi výhody používání výčtů, patří:</span><span class="sxs-lookup"><span data-stu-id="e015e-143">The benefits of using enumerations include the following:</span></span>  
-  
--   <span data-ttu-id="e015e-144">Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.</span><span class="sxs-lookup"><span data-stu-id="e015e-144">Reduces errors caused by transposing or mistyping numbers.</span></span>  
-  
--   <span data-ttu-id="e015e-145">Umožňuje snadno ke změně hodnot v budoucnu.</span><span class="sxs-lookup"><span data-stu-id="e015e-145">Makes it easy to change values in the future.</span></span>  
-  
--   <span data-ttu-id="e015e-146">Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že budou zavedeny chyby.</span><span class="sxs-lookup"><span data-stu-id="e015e-146">Makes code easier to read, which means it is less likely that errors will be introduced.</span></span>  
-  
--   <span data-ttu-id="e015e-147">Zajišťuje kompatibilitu.</span><span class="sxs-lookup"><span data-stu-id="e015e-147">Ensures forward compatibility.</span></span> <span data-ttu-id="e015e-148">Pokud používáte výčty, váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-148">If you use enumerations, your code is less likely to fail if in the future someone changes the values corresponding to the member names.</span></span>  
-  
- <span data-ttu-id="e015e-149">Výčet má název, příslušný datový typ a sadu členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-149">An enumeration has a name, an underlying data type, and a set of members.</span></span> <span data-ttu-id="e015e-150">Každý člen představuje konstantu.</span><span class="sxs-lookup"><span data-stu-id="e015e-150">Each member represents a constant.</span></span>  
-  
- <span data-ttu-id="e015e-151">Výčet deklarována třída, struktura, modul nebo rozhraní úroveň mimo všechny procedury, je *člen výčtu*.</span><span class="sxs-lookup"><span data-stu-id="e015e-151">An enumeration declared at class, structure, module, or interface level, outside any procedure, is a *member enumeration*.</span></span> <span data-ttu-id="e015e-152">Je členem třídy, struktury, modul nebo rozhraní, které se deklaruje.</span><span class="sxs-lookup"><span data-stu-id="e015e-152">It is a member of the class, structure, module, or interface that declares it.</span></span>  
-  
- <span data-ttu-id="e015e-153">Výčty člen je přístupný z kdekoli v rámci třídy, struktury, modul nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="e015e-153">Member enumerations can be accessed from anywhere within their class, structure, module, or interface.</span></span> <span data-ttu-id="e015e-154">Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena výčtu s názvem této třídy, struktury nebo modulu.</span><span class="sxs-lookup"><span data-stu-id="e015e-154">Code outside a class, structure, or module must qualify a member enumeration's name with the name of that class, structure, or module.</span></span> <span data-ttu-id="e015e-155">Vyhnete nutnosti použití plně kvalifikovaných názvů tak, že přidáte [importy](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) příkaz ke zdrojovému souboru.</span><span class="sxs-lookup"><span data-stu-id="e015e-155">You can avoid the need to use fully qualified names by adding an [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) statement to the source file.</span></span>  
-  
- <span data-ttu-id="e015e-156">Výčet deklarován na úrovni oboru názvů, mimo třídu, strukturu, modul nebo rozhraní, je členem oboru názvů, ve kterém se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="e015e-156">An enumeration declared at namespace level, outside any class, structure, module, or interface, is a member of the namespace in which it appears.</span></span>  
-  
- <span data-ttu-id="e015e-157">*Kontext deklarace* pro výčet musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedurou.</span><span class="sxs-lookup"><span data-stu-id="e015e-157">The *declaration context* for an enumeration must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure.</span></span> <span data-ttu-id="e015e-158">Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="e015e-158">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>  
-  
- <span data-ttu-id="e015e-159">Můžete použít atributy k vyčíslení jako celek, ale ne k jeho členy jednotlivě.</span><span class="sxs-lookup"><span data-stu-id="e015e-159">You can apply attributes to an enumeration as a whole, but not to its members individually.</span></span> <span data-ttu-id="e015e-160">Atribut přispívá informací o metadatech sestavení.</span><span class="sxs-lookup"><span data-stu-id="e015e-160">An attribute contributes information to the assembly's metadata.</span></span>  
-  
-## <a name="data-type"></a><span data-ttu-id="e015e-161">Datový typ</span><span class="sxs-lookup"><span data-stu-id="e015e-161">Data Type</span></span>  
- <span data-ttu-id="e015e-162">`Enum` Příkazu můžete deklarovat datový typ výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-162">The `Enum` statement can declare the data type of an enumeration.</span></span> <span data-ttu-id="e015e-163">Každý člen má datový typ výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-163">Each member takes the enumeration's data type.</span></span> <span data-ttu-id="e015e-164">Můžete zadat `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, nebo `UShort`.</span><span class="sxs-lookup"><span data-stu-id="e015e-164">You can specify `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, or `UShort`.</span></span>  
-  
- <span data-ttu-id="e015e-165">Pokud nezadáte `datatype` pro výčet, každý člen má datový typ jeho `initializer`.</span><span class="sxs-lookup"><span data-stu-id="e015e-165">If you do not specify `datatype` for the enumeration, each member takes the data type of its `initializer`.</span></span> <span data-ttu-id="e015e-166">Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`.</span><span class="sxs-lookup"><span data-stu-id="e015e-166">If you specify both `datatype` and `initializer`, the data type of `initializer` must be convertible to `datatype`.</span></span> <span data-ttu-id="e015e-167">Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Integer`.</span><span class="sxs-lookup"><span data-stu-id="e015e-167">If neither `datatype` nor `initializer` is present, the data type defaults to `Integer`.</span></span>  
-  
-## <a name="initializing-members"></a><span data-ttu-id="e015e-168">Inicializace členů</span><span class="sxs-lookup"><span data-stu-id="e015e-168">Initializing Members</span></span>  
- <span data-ttu-id="e015e-169">`Enum` Příkazu můžete inicializovat obsah vybrané členy v `memberlist`.</span><span class="sxs-lookup"><span data-stu-id="e015e-169">The `Enum` statement can initialize the contents of selected members in `memberlist`.</span></span> <span data-ttu-id="e015e-170">Použijete `initializer` zadat výraz, který má být přiřazena k členu.</span><span class="sxs-lookup"><span data-stu-id="e015e-170">You use `initializer` to supply an expression to be assigned to the member.</span></span>  
-  
- <span data-ttu-id="e015e-171">Pokud nezadáte `initializer` pro člena, Visual Basic inicializuje ji buď na hodnotu nula (Pokud je první `member` v `memberlist`), nebo na hodnotu větší než bezprostředně před jednou `member`.</span><span class="sxs-lookup"><span data-stu-id="e015e-171">If you do not specify `initializer` for a member, Visual Basic initializes it either to zero (if it is the first `member` in `memberlist`), or to a value greater by one than that of the immediately preceding `member`.</span></span>  
-  
- <span data-ttu-id="e015e-172">Výraz zadaný v každém `initializer` může být libovolná kombinace literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány, včetně předchozí členů tohoto výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-172">The expression supplied in each `initializer` can be any combination of literals, other constants that are already defined, and enumeration members that are already defined, including a previous member of this enumeration.</span></span> <span data-ttu-id="e015e-173">Aritmetické a logické operátory můžete kombinovat takovýchto prvků.</span><span class="sxs-lookup"><span data-stu-id="e015e-173">You can use arithmetic and logical operators to combine such elements.</span></span>  
-  
- <span data-ttu-id="e015e-174">Nelze použít proměnné nebo funkce v `initializer`.</span><span class="sxs-lookup"><span data-stu-id="e015e-174">You cannot use variables or functions in `initializer`.</span></span> <span data-ttu-id="e015e-175">Ale můžete použít klíčová slova převodu například `CByte` a `CShort`.</span><span class="sxs-lookup"><span data-stu-id="e015e-175">However, you can use conversion keywords such as `CByte` and `CShort`.</span></span> <span data-ttu-id="e015e-176">Můžete také použít `AscW` při volání s konstantou `String` nebo `Char` argument, protože, který může být vyhodnocen v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="e015e-176">You can also use `AscW` if you call it with a constant `String` or `Char` argument, since that can be evaluated at compile time.</span></span>  
-  
- <span data-ttu-id="e015e-177">Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="e015e-177">Enumerations cannot have floating-point values.</span></span> <span data-ttu-id="e015e-178">Pokud člen je přiřazena hodnota s plovoucí desetinnou čárkou a `Option Strict` nastavená na on, dojde k chybě kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="e015e-178">If a member is assigned a floating-point value and `Option Strict` is set to on, a compiler error occurs.</span></span> <span data-ttu-id="e015e-179">Pokud `Option Strict` je vypnuté, hodnota je automaticky převedena na `Enum` typu.</span><span class="sxs-lookup"><span data-stu-id="e015e-179">If `Option Strict` is off, the value is automatically converted to the `Enum` type.</span></span>  
-  
- <span data-ttu-id="e015e-180">Pokud hodnotu členu překračuje povolený rozsah pro příslušný datový typ, nebo pokud je inicializovat kteréhokoli člena na maximální hodnotu povolenou příslušný datový typ, kompilátor nahlásí chybu.</span><span class="sxs-lookup"><span data-stu-id="e015e-180">If the value of a member exceeds the allowable range for the underlying data type, or if you initialize any member to the maximum value allowed by the underlying data type, the compiler reports an error.</span></span>  
-  
-## <a name="modifiers"></a><span data-ttu-id="e015e-181">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="e015e-181">Modifiers</span></span>  
- <span data-ttu-id="e015e-182">Třída, struktura, modul a rozhraní člen výčty výchozí veřejný přístup.</span><span class="sxs-lookup"><span data-stu-id="e015e-182">Class, structure, module, and interface member enumerations default to public access.</span></span> <span data-ttu-id="e015e-183">Můžete nastavit jejich úrovně přístupu modifikátory přístupu.</span><span class="sxs-lookup"><span data-stu-id="e015e-183">You can adjust their access levels with the access modifiers.</span></span> <span data-ttu-id="e015e-184">Namespace člen výčty výchozí přístup typu friend.</span><span class="sxs-lookup"><span data-stu-id="e015e-184">Namespace member enumerations default to friend access.</span></span> <span data-ttu-id="e015e-185">Můžete nastavit jejich úrovně veřejnosti, ale ne k soukromé nebo chráněné.</span><span class="sxs-lookup"><span data-stu-id="e015e-185">You can adjust their access levels to public, but not to private or protected.</span></span> <span data-ttu-id="e015e-186">Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="e015e-186">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>  
-  
- <span data-ttu-id="e015e-187">Všechny členy výčtu mít veřejný přístup a žádné modifikátory přístupu nelze použít na ně.</span><span class="sxs-lookup"><span data-stu-id="e015e-187">All enumeration members have public access, and you cannot use any access modifiers on them.</span></span> <span data-ttu-id="e015e-188">Ale pokud stejný jako daný výčet má omezenější úroveň přístupu, úroveň přístupu zadaný výčet má přednost.</span><span class="sxs-lookup"><span data-stu-id="e015e-188">However, if the enumeration itself has a more restricted access level, the specified enumeration access level takes precedence.</span></span>  
-  
- <span data-ttu-id="e015e-189">Ve výchozím nastavení všechny výčty jsou typy a jejich polí jsou konstanty.</span><span class="sxs-lookup"><span data-stu-id="e015e-189">By default, all enumerations are types and their fields are constants.</span></span> <span data-ttu-id="e015e-190">Proto `Shared`, `Static`, a `ReadOnly` klíčová slova nelze použít při deklaraci výčtu ani jejích členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-190">Therefore the `Shared`, `Static`, and `ReadOnly` keywords cannot be used when declaring an enumeration or its members.</span></span>  
-  
-## <a name="assigning-multiple-values"></a><span data-ttu-id="e015e-191">Přiřazení více hodnot</span><span class="sxs-lookup"><span data-stu-id="e015e-191">Assigning Multiple Values</span></span>  
- <span data-ttu-id="e015e-192">Výčty obvykle představují vzájemně se vylučuje hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e015e-192">Enumerations typically represent mutually exclusive values.</span></span> <span data-ttu-id="e015e-193">Zahrnutím <xref:System.FlagsAttribute> atribut `Enum` prohlášení, můžete místo toho přiřadit víc hodnot do instance výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-193">By including the <xref:System.FlagsAttribute> attribute in the `Enum` declaration, you can instead assign multiple values to an instance of the enumeration.</span></span> <span data-ttu-id="e015e-194"><xref:System.FlagsAttribute> Atribut určuje, že výčet považovány za bitové pole, to znamená, že sada příznaků.</span><span class="sxs-lookup"><span data-stu-id="e015e-194">The <xref:System.FlagsAttribute> attribute specifies that the enumeration be treated as a bit field, that is, a set of flags.</span></span> <span data-ttu-id="e015e-195">Toto nastavení se nazývá *bitový* výčty.</span><span class="sxs-lookup"><span data-stu-id="e015e-195">These are called *bitwise* enumerations.</span></span>  
-  
- <span data-ttu-id="e015e-196">Pokud deklarujete výčet pomocí <xref:System.FlagsAttribute> atribut, doporučujeme použít mocninu 2, který je 1, 2, 4, 8, 16 a tak dále, pro hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e015e-196">When you declare an enumeration by using the <xref:System.FlagsAttribute> attribute, we recommend that you use powers of 2, that is, 1, 2, 4, 8, 16, and so on, for the values.</span></span> <span data-ttu-id="e015e-197">Doporučujeme také, že "None" být jméno člena, jehož hodnota je 0.</span><span class="sxs-lookup"><span data-stu-id="e015e-197">We also recommend that "None" be the name of a member whose value is 0.</span></span> <span data-ttu-id="e015e-198">Další pokyny najdete v části <xref:System.FlagsAttribute> a <xref:System.Enum>.</span><span class="sxs-lookup"><span data-stu-id="e015e-198">For additional guidelines, see <xref:System.FlagsAttribute> and <xref:System.Enum>.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="e015e-199">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-199">Example</span></span>  
- <span data-ttu-id="e015e-200">Následující příklad ukazuje způsob použití `Enum` příkazu.</span><span class="sxs-lookup"><span data-stu-id="e015e-200">The following example shows how to use the `Enum` statement.</span></span> <span data-ttu-id="e015e-201">Všimněte si, že člen se označuje jako `EggSizeEnum.Medium`a ne jako `Medium`.</span><span class="sxs-lookup"><span data-stu-id="e015e-201">Note that the member is referred to as `EggSizeEnum.Medium`, and not as `Medium`.</span></span>  
-  
- [!code-vb[VbEnumsTask#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#41)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-202">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-202">Example</span></span>  
- <span data-ttu-id="e015e-203">Metoda v následujícím příkladu je mimo `Egg` třídy.</span><span class="sxs-lookup"><span data-stu-id="e015e-203">The method in the following example is outside the `Egg` class.</span></span> <span data-ttu-id="e015e-204">Proto `EggSizeEnum` je plně kvalifikovaný jako `Egg.EggSizeEnum`.</span><span class="sxs-lookup"><span data-stu-id="e015e-204">Therefore, `EggSizeEnum` is fully qualified as `Egg.EggSizeEnum`.</span></span>  
-  
- [!code-vb[VbEnumsTask#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#42)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-205">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-205">Example</span></span>  
- <span data-ttu-id="e015e-206">V následujícím příkladu `Enum` příkaz k definování související sadu s názvem konstantní hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e015e-206">The following example uses the `Enum` statement to define a related set of named constant values.</span></span> <span data-ttu-id="e015e-207">V tomto případě hodnoty jsou barvy, které můžete se rozhodnout pro návrh formulářů pro zadávání dat pro databázi.</span><span class="sxs-lookup"><span data-stu-id="e015e-207">In this case, the values are colors you might choose to design data entry forms for a database.</span></span>  
-  
- [!code-vb[VbEnumsTask#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#30)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-208">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-208">Example</span></span>  
- <span data-ttu-id="e015e-209">Následující příklad ukazuje hodnoty, které obsahují kladná a záporná čísla.</span><span class="sxs-lookup"><span data-stu-id="e015e-209">The following example shows values that include both positive and negative numbers.</span></span>  
-  
- [!code-vb[VbEnumsTask#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#31)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-210">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-210">Example</span></span>  
- <span data-ttu-id="e015e-211">V následujícím příkladu `As` klauzule slouží k určení `datatype` výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-211">In the following example, an `As` clause is used to specify the `datatype` of an enumeration.</span></span>  
-  
- [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-212">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-212">Example</span></span>  
- <span data-ttu-id="e015e-213">Následující příklad ukazuje, jak použít bitový výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-213">The following example shows how to use a bitwise enumeration.</span></span> <span data-ttu-id="e015e-214">Víc hodnot je přiřadit k instanci bitové operace výčtu.</span><span class="sxs-lookup"><span data-stu-id="e015e-214">Multiple values can be assigned to an instance of a bitwise enumeration.</span></span> <span data-ttu-id="e015e-215">`Enum` Deklarace obsahuje <xref:System.FlagsAttribute> atribut, který označuje, že výčtu lze považovat za sada příznaků.</span><span class="sxs-lookup"><span data-stu-id="e015e-215">The `Enum` declaration includes the <xref:System.FlagsAttribute> attribute, which indicates that the enumeration can be treated as a set of flags.</span></span>  
-  
- [!code-vb[VbEnumsTask#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#61)]  
-  
-## <a name="example"></a><span data-ttu-id="e015e-216">Příklad</span><span class="sxs-lookup"><span data-stu-id="e015e-216">Example</span></span>  
- <span data-ttu-id="e015e-217">Následující příklad provede iteraci výčet.</span><span class="sxs-lookup"><span data-stu-id="e015e-217">The following example iterates through an enumeration.</span></span> <span data-ttu-id="e015e-218">Používá <xref:System.Enum.GetNames%2A> metody k načtení pole názvy členů výčtu, a <xref:System.Enum.GetValues%2A> k načtení pole hodnoty členů.</span><span class="sxs-lookup"><span data-stu-id="e015e-218">It uses the <xref:System.Enum.GetNames%2A> method to retrieve an array of member names from the enumeration, and <xref:System.Enum.GetValues%2A> to retrieve an array of member values.</span></span>  
-  
- [!code-vb[VbEnumsTask#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#51)]  
-  
-## <a name="see-also"></a><span data-ttu-id="e015e-219">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e015e-219">See also</span></span>
+<span data-ttu-id="caf44-103">Deklaruje výčet a definuje hodnoty jeho členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-103">Declares an enumeration and defines the values of its members.</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="caf44-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="caf44-104">Syntax</span></span>
+
+```
+[ <attributelist> ] [ accessmodifier ]  [ Shadows ]
+Enum enumerationname [ As datatype ]
+   memberlist
+End Enum
+```
+
+## <a name="parts"></a><span data-ttu-id="caf44-105">Součásti</span><span class="sxs-lookup"><span data-stu-id="caf44-105">Parts</span></span>
+
+- `attributelist`
+
+  <span data-ttu-id="caf44-106">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="caf44-106">Optional.</span></span> <span data-ttu-id="caf44-107">Seznam atributů, které platí pro tento výčet.</span><span class="sxs-lookup"><span data-stu-id="caf44-107">List of attributes that apply to this enumeration.</span></span> <span data-ttu-id="caf44-108">Je nutné uzavřít [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`"a"`>`").</span><span class="sxs-lookup"><span data-stu-id="caf44-108">You must enclose the [attribute list](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").</span></span>
+
+  <span data-ttu-id="caf44-109"><xref:System.FlagsAttribute> Atribut označuje, že hodnota instance výčtu může obsahovat více členů výčtu a, že každý člen představuje bitového pole hodnoty výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-109">The <xref:System.FlagsAttribute> attribute indicates that the value of an instance of the enumeration can include multiple enumeration members, and that each member represents a bit field in the enumeration value.</span></span>
+
+- `accessmodifier`
+
+  <span data-ttu-id="caf44-110">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="caf44-110">Optional.</span></span> <span data-ttu-id="caf44-111">Určuje, jaký kód může přistupovat k tento výčet.</span><span class="sxs-lookup"><span data-stu-id="caf44-111">Specifies what code can access this enumeration.</span></span> <span data-ttu-id="caf44-112">Může být jedna z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="caf44-112">Can be one of the following:</span></span>
+
+  - [<span data-ttu-id="caf44-113">Public</span><span class="sxs-lookup"><span data-stu-id="caf44-113">Public</span></span>](../../../visual-basic/language-reference/modifiers/public.md)
+
+  - [<span data-ttu-id="caf44-114">Protected</span><span class="sxs-lookup"><span data-stu-id="caf44-114">Protected</span></span>](../../../visual-basic/language-reference/modifiers/protected.md)
+
+  - [<span data-ttu-id="caf44-115">Friend</span><span class="sxs-lookup"><span data-stu-id="caf44-115">Friend</span></span>](../../../visual-basic/language-reference/modifiers/friend.md)
+
+  - [<span data-ttu-id="caf44-116">Private</span><span class="sxs-lookup"><span data-stu-id="caf44-116">Private</span></span>](../../../visual-basic/language-reference/modifiers/private.md)
+
+  - [<span data-ttu-id="caf44-117">Protected Friend</span><span class="sxs-lookup"><span data-stu-id="caf44-117">Protected Friend</span></span>](../../language-reference/modifiers/protected-friend.md)
+
+  - [<span data-ttu-id="caf44-118">Private Protected</span><span class="sxs-lookup"><span data-stu-id="caf44-118">Private Protected</span></span>](../../language-reference/modifiers/private-protected.md)
+
+- `Shadows`
+
+  <span data-ttu-id="caf44-119">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="caf44-119">Optional.</span></span> <span data-ttu-id="caf44-120">Určuje, že tento výčet znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě.</span><span class="sxs-lookup"><span data-stu-id="caf44-120">Specifies that this enumeration redeclares and hides an identically named programming element, or set of overloaded elements, in a base class.</span></span> <span data-ttu-id="caf44-121">Můžete zadat [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) pouze na samotného výčtu, nikoli na kterýkoli z jejích členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-121">You can specify [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) only on the enumeration itself, not on any of its members.</span></span>
+
+- `enumerationname`
+
+  <span data-ttu-id="caf44-122">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="caf44-122">Required.</span></span> <span data-ttu-id="caf44-123">Název výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-123">Name of the enumeration.</span></span> <span data-ttu-id="caf44-124">Informace o platné názvy najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span><span class="sxs-lookup"><span data-stu-id="caf44-124">For information on valid names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>
+
+- `datatype`
+
+  <span data-ttu-id="caf44-125">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="caf44-125">Optional.</span></span> <span data-ttu-id="caf44-126">Datový typ výčtu a všechny její členy.</span><span class="sxs-lookup"><span data-stu-id="caf44-126">Data type of the enumeration and all its members.</span></span>
+
+- `memberlist`
+
+  <span data-ttu-id="caf44-127">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="caf44-127">Required.</span></span> <span data-ttu-id="caf44-128">Seznam členů konstanty deklarované v tomto prohlášení.</span><span class="sxs-lookup"><span data-stu-id="caf44-128">List of member constants being declared in this statement.</span></span> <span data-ttu-id="caf44-129">Víc členů se zobrazí na jednotlivé zdrojové řádky kódu.</span><span class="sxs-lookup"><span data-stu-id="caf44-129">Multiple members appear on individual source code lines.</span></span>
+
+  <span data-ttu-id="caf44-130">Každý `member` má následující syntaxi a části: `[<attribute list>] member name [ = initializer ]`</span><span class="sxs-lookup"><span data-stu-id="caf44-130">Each `member` has the following syntax and parts: `[<attribute list>] member name [ = initializer ]`</span></span>
+
+  |<span data-ttu-id="caf44-131">Část</span><span class="sxs-lookup"><span data-stu-id="caf44-131">Part</span></span>|<span data-ttu-id="caf44-132">Popis</span><span class="sxs-lookup"><span data-stu-id="caf44-132">Description</span></span>|
+  |---|---|
+  |`membername`|<span data-ttu-id="caf44-133">Povinný parametr.</span><span class="sxs-lookup"><span data-stu-id="caf44-133">Required.</span></span> <span data-ttu-id="caf44-134">Název tohoto člena.</span><span class="sxs-lookup"><span data-stu-id="caf44-134">Name of this member.</span></span>|
+  |`initializer`|<span data-ttu-id="caf44-135">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="caf44-135">Optional.</span></span> <span data-ttu-id="caf44-136">Výraz, který je vyhodnocen v době kompilace a přiřazené k tomuto členu.</span><span class="sxs-lookup"><span data-stu-id="caf44-136">Expression that is evaluated at compile time and assigned to this member.</span></span>|
+
+- <span data-ttu-id="caf44-137">`End``Enum`</span><span class="sxs-lookup"><span data-stu-id="caf44-137">`End` `Enum`</span></span>
+
+  <span data-ttu-id="caf44-138">Ukončuje `Enum` bloku.</span><span class="sxs-lookup"><span data-stu-id="caf44-138">Terminates the `Enum` block.</span></span>
+
+## <a name="remarks"></a><span data-ttu-id="caf44-139">Poznámky</span><span class="sxs-lookup"><span data-stu-id="caf44-139">Remarks</span></span>
+
+<span data-ttu-id="caf44-140">Pokud máte sadu neměnné hodnot, které logicky vzájemně souvisí, můžete je definovat společně ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-140">If you have a set of unchanging values that are logically related to each other, you can define them together in an enumeration.</span></span> <span data-ttu-id="caf44-141">To umožňuje smysluplné názvy výčtu a její členy, které jsou jednodušší mějte na paměti než jejich hodnoty.</span><span class="sxs-lookup"><span data-stu-id="caf44-141">This provides meaningful names for the enumeration and its members, which are easier to remember than their values.</span></span> <span data-ttu-id="caf44-142">Pak můžete použít členy výčtu na mnoha místech ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="caf44-142">You can then use the enumeration members in many places in your code.</span></span>
+
+<span data-ttu-id="caf44-143">Mezi výhody používání výčtů, patří:</span><span class="sxs-lookup"><span data-stu-id="caf44-143">The benefits of using enumerations include the following:</span></span>
+
+- <span data-ttu-id="caf44-144">Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.</span><span class="sxs-lookup"><span data-stu-id="caf44-144">Reduces errors caused by transposing or mistyping numbers.</span></span>
+
+- <span data-ttu-id="caf44-145">Umožňuje snadno ke změně hodnot v budoucnu.</span><span class="sxs-lookup"><span data-stu-id="caf44-145">Makes it easy to change values in the future.</span></span>
+
+- <span data-ttu-id="caf44-146">Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že budou zavedeny chyby.</span><span class="sxs-lookup"><span data-stu-id="caf44-146">Makes code easier to read, which means it is less likely that errors will be introduced.</span></span>
+
+- <span data-ttu-id="caf44-147">Zajišťuje kompatibilitu.</span><span class="sxs-lookup"><span data-stu-id="caf44-147">Ensures forward compatibility.</span></span> <span data-ttu-id="caf44-148">Pokud používáte výčty, váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-148">If you use enumerations, your code is less likely to fail if in the future someone changes the values corresponding to the member names.</span></span>
+
+<span data-ttu-id="caf44-149">Výčet má název, příslušný datový typ a sadu členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-149">An enumeration has a name, an underlying data type, and a set of members.</span></span> <span data-ttu-id="caf44-150">Každý člen představuje konstantu.</span><span class="sxs-lookup"><span data-stu-id="caf44-150">Each member represents a constant.</span></span>
+
+<span data-ttu-id="caf44-151">Výčet deklarována třída, struktura, modul nebo rozhraní úroveň mimo všechny procedury, je *člen výčtu*.</span><span class="sxs-lookup"><span data-stu-id="caf44-151">An enumeration declared at class, structure, module, or interface level, outside any procedure, is a *member enumeration*.</span></span> <span data-ttu-id="caf44-152">Je členem třídy, struktury, modul nebo rozhraní, které se deklaruje.</span><span class="sxs-lookup"><span data-stu-id="caf44-152">It is a member of the class, structure, module, or interface that declares it.</span></span>
+
+<span data-ttu-id="caf44-153">Výčty člen je přístupný z kdekoli v rámci třídy, struktury, modul nebo rozhraní.</span><span class="sxs-lookup"><span data-stu-id="caf44-153">Member enumerations can be accessed from anywhere within their class, structure, module, or interface.</span></span> <span data-ttu-id="caf44-154">Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena výčtu s názvem této třídy, struktury nebo modulu.</span><span class="sxs-lookup"><span data-stu-id="caf44-154">Code outside a class, structure, or module must qualify a member enumeration's name with the name of that class, structure, or module.</span></span> <span data-ttu-id="caf44-155">Vyhnete nutnosti použití plně kvalifikovaných názvů tak, že přidáte [importy](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) příkaz ke zdrojovému souboru.</span><span class="sxs-lookup"><span data-stu-id="caf44-155">You can avoid the need to use fully qualified names by adding an [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) statement to the source file.</span></span>
+
+<span data-ttu-id="caf44-156">Výčet deklarován na úrovni oboru názvů, mimo třídu, strukturu, modul nebo rozhraní, je členem oboru názvů, ve kterém se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="caf44-156">An enumeration declared at namespace level, outside any class, structure, module, or interface, is a member of the namespace in which it appears.</span></span>
+
+<span data-ttu-id="caf44-157">*Kontext deklarace* pro výčet musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedurou.</span><span class="sxs-lookup"><span data-stu-id="caf44-157">The *declaration context* for an enumeration must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure.</span></span> <span data-ttu-id="caf44-158">Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="caf44-158">For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).</span></span>
+
+<span data-ttu-id="caf44-159">Můžete použít atributy k vyčíslení jako celek, ale ne k jeho členy jednotlivě.</span><span class="sxs-lookup"><span data-stu-id="caf44-159">You can apply attributes to an enumeration as a whole, but not to its members individually.</span></span> <span data-ttu-id="caf44-160">Atribut přispívá informací o metadatech sestavení.</span><span class="sxs-lookup"><span data-stu-id="caf44-160">An attribute contributes information to the assembly's metadata.</span></span>
+
+## <a name="data-type"></a><span data-ttu-id="caf44-161">Datový typ</span><span class="sxs-lookup"><span data-stu-id="caf44-161">Data Type</span></span>
+
+<span data-ttu-id="caf44-162">`Enum` Příkazu můžete deklarovat datový typ výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-162">The `Enum` statement can declare the data type of an enumeration.</span></span> <span data-ttu-id="caf44-163">Každý člen má datový typ výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-163">Each member takes the enumeration's data type.</span></span> <span data-ttu-id="caf44-164">Můžete zadat `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, nebo `UShort`.</span><span class="sxs-lookup"><span data-stu-id="caf44-164">You can specify `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, or `UShort`.</span></span>
+
+<span data-ttu-id="caf44-165">Pokud nezadáte `datatype` pro výčet, každý člen má datový typ jeho `initializer`.</span><span class="sxs-lookup"><span data-stu-id="caf44-165">If you do not specify `datatype` for the enumeration, each member takes the data type of its `initializer`.</span></span> <span data-ttu-id="caf44-166">Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`.</span><span class="sxs-lookup"><span data-stu-id="caf44-166">If you specify both `datatype` and `initializer`, the data type of `initializer` must be convertible to `datatype`.</span></span> <span data-ttu-id="caf44-167">Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Integer`.</span><span class="sxs-lookup"><span data-stu-id="caf44-167">If neither `datatype` nor `initializer` is present, the data type defaults to `Integer`.</span></span>
+
+## <a name="initializing-members"></a><span data-ttu-id="caf44-168">Inicializace členů</span><span class="sxs-lookup"><span data-stu-id="caf44-168">Initializing Members</span></span>
+
+<span data-ttu-id="caf44-169">`Enum` Příkazu můžete inicializovat obsah vybrané členy v `memberlist`.</span><span class="sxs-lookup"><span data-stu-id="caf44-169">The `Enum` statement can initialize the contents of selected members in `memberlist`.</span></span> <span data-ttu-id="caf44-170">Použijete `initializer` zadat výraz, který má být přiřazena k členu.</span><span class="sxs-lookup"><span data-stu-id="caf44-170">You use `initializer` to supply an expression to be assigned to the member.</span></span>
+
+<span data-ttu-id="caf44-171">Pokud nezadáte `initializer` pro člena, Visual Basic inicializuje ji buď na hodnotu nula (Pokud je první `member` v `memberlist`), nebo na hodnotu větší než bezprostředně před jednou `member`.</span><span class="sxs-lookup"><span data-stu-id="caf44-171">If you do not specify `initializer` for a member, Visual Basic initializes it either to zero (if it is the first `member` in `memberlist`), or to a value greater by one than that of the immediately preceding `member`.</span></span>
+
+<span data-ttu-id="caf44-172">Výraz zadaný v každém `initializer` může být libovolná kombinace literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány, včetně předchozí členů tohoto výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-172">The expression supplied in each `initializer` can be any combination of literals, other constants that are already defined, and enumeration members that are already defined, including a previous member of this enumeration.</span></span> <span data-ttu-id="caf44-173">Aritmetické a logické operátory můžete kombinovat takovýchto prvků.</span><span class="sxs-lookup"><span data-stu-id="caf44-173">You can use arithmetic and logical operators to combine such elements.</span></span>
+
+<span data-ttu-id="caf44-174">Nelze použít proměnné nebo funkce v `initializer`.</span><span class="sxs-lookup"><span data-stu-id="caf44-174">You cannot use variables or functions in `initializer`.</span></span> <span data-ttu-id="caf44-175">Ale můžete použít klíčová slova převodu například `CByte` a `CShort`.</span><span class="sxs-lookup"><span data-stu-id="caf44-175">However, you can use conversion keywords such as `CByte` and `CShort`.</span></span> <span data-ttu-id="caf44-176">Můžete také použít `AscW` při volání s konstantou `String` nebo `Char` argument, protože, který může být vyhodnocen v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="caf44-176">You can also use `AscW` if you call it with a constant `String` or `Char` argument, since that can be evaluated at compile time.</span></span>
+
+<span data-ttu-id="caf44-177">Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="caf44-177">Enumerations cannot have floating-point values.</span></span> <span data-ttu-id="caf44-178">Pokud člen je přiřazena hodnota s plovoucí desetinnou čárkou a `Option Strict` nastavená na on, dojde k chybě kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="caf44-178">If a member is assigned a floating-point value and `Option Strict` is set to on, a compiler error occurs.</span></span> <span data-ttu-id="caf44-179">Pokud `Option Strict` je vypnuté, hodnota je automaticky převedena na `Enum` typu.</span><span class="sxs-lookup"><span data-stu-id="caf44-179">If `Option Strict` is off, the value is automatically converted to the `Enum` type.</span></span>
+
+<span data-ttu-id="caf44-180">Pokud hodnotu členu překračuje povolený rozsah pro příslušný datový typ, nebo pokud je inicializovat kteréhokoli člena na maximální hodnotu povolenou příslušný datový typ, kompilátor nahlásí chybu.</span><span class="sxs-lookup"><span data-stu-id="caf44-180">If the value of a member exceeds the allowable range for the underlying data type, or if you initialize any member to the maximum value allowed by the underlying data type, the compiler reports an error.</span></span>
+
+## <a name="modifiers"></a><span data-ttu-id="caf44-181">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="caf44-181">Modifiers</span></span>
+
+<span data-ttu-id="caf44-182">Třída, struktura, modul a rozhraní člen výčty výchozí veřejný přístup.</span><span class="sxs-lookup"><span data-stu-id="caf44-182">Class, structure, module, and interface member enumerations default to public access.</span></span> <span data-ttu-id="caf44-183">Můžete nastavit jejich úrovně přístupu modifikátory přístupu.</span><span class="sxs-lookup"><span data-stu-id="caf44-183">You can adjust their access levels with the access modifiers.</span></span> <span data-ttu-id="caf44-184">Namespace člen výčty výchozí přístup typu friend.</span><span class="sxs-lookup"><span data-stu-id="caf44-184">Namespace member enumerations default to friend access.</span></span> <span data-ttu-id="caf44-185">Můžete nastavit jejich úrovně veřejnosti, ale ne k soukromé nebo chráněné.</span><span class="sxs-lookup"><span data-stu-id="caf44-185">You can adjust their access levels to public, but not to private or protected.</span></span> <span data-ttu-id="caf44-186">Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span><span class="sxs-lookup"><span data-stu-id="caf44-186">For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).</span></span>
+
+<span data-ttu-id="caf44-187">Všechny členy výčtu mít veřejný přístup a žádné modifikátory přístupu nelze použít na ně.</span><span class="sxs-lookup"><span data-stu-id="caf44-187">All enumeration members have public access, and you cannot use any access modifiers on them.</span></span> <span data-ttu-id="caf44-188">Ale pokud stejný jako daný výčet má omezenější úroveň přístupu, úroveň přístupu zadaný výčet má přednost.</span><span class="sxs-lookup"><span data-stu-id="caf44-188">However, if the enumeration itself has a more restricted access level, the specified enumeration access level takes precedence.</span></span>
+
+<span data-ttu-id="caf44-189">Ve výchozím nastavení všechny výčty jsou typy a jejich polí jsou konstanty.</span><span class="sxs-lookup"><span data-stu-id="caf44-189">By default, all enumerations are types and their fields are constants.</span></span> <span data-ttu-id="caf44-190">Proto `Shared`, `Static`, a `ReadOnly` klíčová slova nelze použít při deklaraci výčtu ani jejích členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-190">Therefore the `Shared`, `Static`, and `ReadOnly` keywords cannot be used when declaring an enumeration or its members.</span></span>
+
+## <a name="assigning-multiple-values"></a><span data-ttu-id="caf44-191">Přiřazení více hodnot</span><span class="sxs-lookup"><span data-stu-id="caf44-191">Assigning Multiple Values</span></span>
+
+<span data-ttu-id="caf44-192">Výčty obvykle představují vzájemně se vylučuje hodnoty.</span><span class="sxs-lookup"><span data-stu-id="caf44-192">Enumerations typically represent mutually exclusive values.</span></span> <span data-ttu-id="caf44-193">Zahrnutím <xref:System.FlagsAttribute> atribut `Enum` prohlášení, můžete místo toho přiřadit víc hodnot do instance výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-193">By including the <xref:System.FlagsAttribute> attribute in the `Enum` declaration, you can instead assign multiple values to an instance of the enumeration.</span></span> <span data-ttu-id="caf44-194"><xref:System.FlagsAttribute> Atribut určuje, že výčet považovány za bitové pole, to znamená, že sada příznaků.</span><span class="sxs-lookup"><span data-stu-id="caf44-194">The <xref:System.FlagsAttribute> attribute specifies that the enumeration be treated as a bit field, that is, a set of flags.</span></span> <span data-ttu-id="caf44-195">Toto nastavení se nazývá *bitový* výčty.</span><span class="sxs-lookup"><span data-stu-id="caf44-195">These are called *bitwise* enumerations.</span></span>
+
+<span data-ttu-id="caf44-196">Pokud deklarujete výčet pomocí <xref:System.FlagsAttribute> atribut, doporučujeme použít mocninu 2, který je 1, 2, 4, 8, 16 a tak dále, pro hodnoty.</span><span class="sxs-lookup"><span data-stu-id="caf44-196">When you declare an enumeration by using the <xref:System.FlagsAttribute> attribute, we recommend that you use powers of 2, that is, 1, 2, 4, 8, 16, and so on, for the values.</span></span> <span data-ttu-id="caf44-197">Doporučujeme také, že "None" být jméno člena, jehož hodnota je 0.</span><span class="sxs-lookup"><span data-stu-id="caf44-197">We also recommend that "None" be the name of a member whose value is 0.</span></span> <span data-ttu-id="caf44-198">Další pokyny najdete v části <xref:System.FlagsAttribute> a <xref:System.Enum>.</span><span class="sxs-lookup"><span data-stu-id="caf44-198">For additional guidelines, see <xref:System.FlagsAttribute> and <xref:System.Enum>.</span></span>
+
+## <a name="example"></a><span data-ttu-id="caf44-199">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-199">Example</span></span>
+
+<span data-ttu-id="caf44-200">Následující příklad ukazuje způsob použití `Enum` příkazu.</span><span class="sxs-lookup"><span data-stu-id="caf44-200">The following example shows how to use the `Enum` statement.</span></span> <span data-ttu-id="caf44-201">Všimněte si, že člen se označuje jako `EggSizeEnum.Medium`a ne jako `Medium`.</span><span class="sxs-lookup"><span data-stu-id="caf44-201">Note that the member is referred to as `EggSizeEnum.Medium`, and not as `Medium`.</span></span>
+
+[!code-vb[VbEnumsTask#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#41)]
+
+## <a name="example"></a><span data-ttu-id="caf44-202">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-202">Example</span></span>
+
+<span data-ttu-id="caf44-203">Metoda v následujícím příkladu je mimo `Egg` třídy.</span><span class="sxs-lookup"><span data-stu-id="caf44-203">The method in the following example is outside the `Egg` class.</span></span> <span data-ttu-id="caf44-204">Proto `EggSizeEnum` je plně kvalifikovaný jako `Egg.EggSizeEnum`.</span><span class="sxs-lookup"><span data-stu-id="caf44-204">Therefore, `EggSizeEnum` is fully qualified as `Egg.EggSizeEnum`.</span></span>
+
+[!code-vb[VbEnumsTask#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#42)]
+
+## <a name="example"></a><span data-ttu-id="caf44-205">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-205">Example</span></span>
+
+<span data-ttu-id="caf44-206">V následujícím příkladu `Enum` příkaz k definování související sadu s názvem konstantní hodnoty.</span><span class="sxs-lookup"><span data-stu-id="caf44-206">The following example uses the `Enum` statement to define a related set of named constant values.</span></span> <span data-ttu-id="caf44-207">V tomto případě hodnoty jsou barvy, které můžete se rozhodnout pro návrh formulářů pro zadávání dat pro databázi.</span><span class="sxs-lookup"><span data-stu-id="caf44-207">In this case, the values are colors you might choose to design data entry forms for a database.</span></span>
+
+[!code-vb[VbEnumsTask#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#30)]
+
+## <a name="example"></a><span data-ttu-id="caf44-208">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-208">Example</span></span>
+
+<span data-ttu-id="caf44-209">Následující příklad ukazuje hodnoty, které obsahují kladná a záporná čísla.</span><span class="sxs-lookup"><span data-stu-id="caf44-209">The following example shows values that include both positive and negative numbers.</span></span>
+
+[!code-vb[VbEnumsTask#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#31)]
+
+## <a name="example"></a><span data-ttu-id="caf44-210">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-210">Example</span></span>
+
+<span data-ttu-id="caf44-211">V následujícím příkladu `As` klauzule slouží k určení `datatype` výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-211">In the following example, an `As` clause is used to specify the `datatype` of an enumeration.</span></span>
+
+[!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]
+
+## <a name="example"></a><span data-ttu-id="caf44-212">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-212">Example</span></span>
+
+<span data-ttu-id="caf44-213">Následující příklad ukazuje, jak použít bitový výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-213">The following example shows how to use a bitwise enumeration.</span></span> <span data-ttu-id="caf44-214">Víc hodnot je přiřadit k instanci bitové operace výčtu.</span><span class="sxs-lookup"><span data-stu-id="caf44-214">Multiple values can be assigned to an instance of a bitwise enumeration.</span></span> <span data-ttu-id="caf44-215">`Enum` Deklarace obsahuje <xref:System.FlagsAttribute> atribut, který označuje, že výčtu lze považovat za sada příznaků.</span><span class="sxs-lookup"><span data-stu-id="caf44-215">The `Enum` declaration includes the <xref:System.FlagsAttribute> attribute, which indicates that the enumeration can be treated as a set of flags.</span></span>
+
+[!code-vb[VbEnumsTask#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#61)]
+
+## <a name="example"></a><span data-ttu-id="caf44-216">Příklad</span><span class="sxs-lookup"><span data-stu-id="caf44-216">Example</span></span>
+
+<span data-ttu-id="caf44-217">Následující příklad provede iteraci výčet.</span><span class="sxs-lookup"><span data-stu-id="caf44-217">The following example iterates through an enumeration.</span></span> <span data-ttu-id="caf44-218">Používá <xref:System.Enum.GetNames%2A> metody k načtení pole názvy členů výčtu, a <xref:System.Enum.GetValues%2A> k načtení pole hodnoty členů.</span><span class="sxs-lookup"><span data-stu-id="caf44-218">It uses the <xref:System.Enum.GetNames%2A> method to retrieve an array of member names from the enumeration, and <xref:System.Enum.GetValues%2A> to retrieve an array of member values.</span></span>
+
+[!code-vb[VbEnumsTask#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#51)]
+
+## <a name="see-also"></a><span data-ttu-id="caf44-219">Viz také:</span><span class="sxs-lookup"><span data-stu-id="caf44-219">See also</span></span>
 
 - <xref:System.Enum>
 - <xref:Microsoft.VisualBasic.Strings.AscW%2A>
-- [<span data-ttu-id="e015e-220">Příkaz Const</span><span class="sxs-lookup"><span data-stu-id="e015e-220">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)
-- [<span data-ttu-id="e015e-221">Příkaz Dim</span><span class="sxs-lookup"><span data-stu-id="e015e-221">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)
-- [<span data-ttu-id="e015e-222">Implicitní a explicitní převody</span><span class="sxs-lookup"><span data-stu-id="e015e-222">Implicit and Explicit Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [<span data-ttu-id="e015e-223">Funkce pro převod typů</span><span class="sxs-lookup"><span data-stu-id="e015e-223">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [<span data-ttu-id="e015e-224">Konstanty a výčty</span><span class="sxs-lookup"><span data-stu-id="e015e-224">Constants and Enumerations</span></span>](../../../visual-basic/language-reference/constants-and-enumerations.md)
+- [<span data-ttu-id="caf44-220">Příkaz Const</span><span class="sxs-lookup"><span data-stu-id="caf44-220">Const Statement</span></span>](../../../visual-basic/language-reference/statements/const-statement.md)
+- [<span data-ttu-id="caf44-221">Příkaz Dim</span><span class="sxs-lookup"><span data-stu-id="caf44-221">Dim Statement</span></span>](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [<span data-ttu-id="caf44-222">Implicitní a explicitní převody</span><span class="sxs-lookup"><span data-stu-id="caf44-222">Implicit and Explicit Conversions</span></span>](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [<span data-ttu-id="caf44-223">Funkce pro převod typů</span><span class="sxs-lookup"><span data-stu-id="caf44-223">Type Conversion Functions</span></span>](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [<span data-ttu-id="caf44-224">Konstanty a výčty</span><span class="sxs-lookup"><span data-stu-id="caf44-224">Constants and Enumerations</span></span>](../../../visual-basic/language-reference/constants-and-enumerations.md)

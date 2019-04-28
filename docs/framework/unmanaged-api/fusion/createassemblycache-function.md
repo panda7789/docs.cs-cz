@@ -19,16 +19,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bf78ded62f11b336d9f5fe0f3a205275ae37189b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669985"
 ---
-# <a name="createassemblycache-function"></a><span data-ttu-id="86a4b-102">CreateAssemblyCache – funkce</span><span class="sxs-lookup"><span data-stu-id="86a4b-102">CreateAssemblyCache Function</span></span>
-<span data-ttu-id="86a4b-103">Získá ukazatel na novou [iassemblycache –](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance, který představuje globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="86a4b-103">Gets a pointer to a new [IAssemblyCache](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance that represents the global assembly cache.</span></span>  
+# <a name="createassemblycache-function"></a><span data-ttu-id="9ca6c-102">CreateAssemblyCache – funkce</span><span class="sxs-lookup"><span data-stu-id="9ca6c-102">CreateAssemblyCache Function</span></span>
+<span data-ttu-id="9ca6c-103">Získá ukazatel na novou [iassemblycache –](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance, který představuje globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="9ca6c-103">Gets a pointer to a new [IAssemblyCache](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md) instance that represents the global assembly cache.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="86a4b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="86a4b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9ca6c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9ca6c-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateAssemblyCache (  
@@ -37,24 +37,24 @@ HRESULT CreateAssemblyCache (
  );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="86a4b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="86a4b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9ca6c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9ca6c-105">Parameters</span></span>  
  `ppAsmCache`  
- <span data-ttu-id="86a4b-106">[out] Vrácený `IAssemblyCache` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="86a4b-106">[out] The returned `IAssemblyCache` pointer.</span></span>  
+ <span data-ttu-id="9ca6c-106">[out] Vrácený `IAssemblyCache` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="9ca6c-106">[out] The returned `IAssemblyCache` pointer.</span></span>  
   
  `dwReserved`  
- <span data-ttu-id="86a4b-107">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="86a4b-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="86a4b-108">`dwReserved` musí být 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="86a4b-108">`dwReserved` must be 0 (zero).</span></span>  
+ <span data-ttu-id="9ca6c-107">[in] Vyhrazeno pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="9ca6c-107">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="9ca6c-108">`dwReserved` musí být 0 (nula).</span><span class="sxs-lookup"><span data-stu-id="9ca6c-108">`dwReserved` must be 0 (zero).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="86a4b-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="86a4b-109">Requirements</span></span>  
- <span data-ttu-id="86a4b-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="86a4b-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9ca6c-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9ca6c-109">Requirements</span></span>  
+ <span data-ttu-id="9ca6c-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9ca6c-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="86a4b-111">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="86a4b-111">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="9ca6c-111">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="9ca6c-111">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="86a4b-112">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="86a4b-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="9ca6c-112">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9ca6c-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="86a4b-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="86a4b-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="9ca6c-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9ca6c-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="86a4b-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="86a4b-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9ca6c-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ca6c-114">See also</span></span>
 
-- [<span data-ttu-id="86a4b-115">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="86a4b-115">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
-- [<span data-ttu-id="86a4b-116">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="86a4b-116">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
-- [<span data-ttu-id="86a4b-117">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="86a4b-117">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)
+- [<span data-ttu-id="9ca6c-115">IAssemblyCache – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9ca6c-115">IAssemblyCache Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+- [<span data-ttu-id="9ca6c-116">Globální statické funkce pro fúze</span><span class="sxs-lookup"><span data-stu-id="9ca6c-116">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="9ca6c-117">Globální mezipaměť sestavení</span><span class="sxs-lookup"><span data-stu-id="9ca6c-117">Global Assembly Cache</span></span>](../../../../docs/framework/app-domains/gac.md)

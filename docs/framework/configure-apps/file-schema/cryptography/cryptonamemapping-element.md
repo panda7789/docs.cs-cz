@@ -9,51 +9,51 @@ helpviewer_keywords:
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
 ms.openlocfilehash: bcf7894dba66736fcc1a30af9b5557549ef25e7d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59092461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674763"
 ---
-# <a name="cryptonamemapping-element"></a><span data-ttu-id="e914a-102">\<cryptoNameMapping> Element</span><span class="sxs-lookup"><span data-stu-id="e914a-102">\<cryptoNameMapping> Element</span></span>
-<span data-ttu-id="e914a-103">Obsahuje mapování tříd pro popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="e914a-103">Contains mappings of classes to friendly names.</span></span>  
+# <a name="cryptonamemapping-element"></a><span data-ttu-id="08d47-102">\<cryptoNameMapping> Element</span><span class="sxs-lookup"><span data-stu-id="08d47-102">\<cryptoNameMapping> Element</span></span>
+<span data-ttu-id="08d47-103">Obsahuje mapování tříd pro popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="08d47-103">Contains mappings of classes to friendly names.</span></span>  
   
- <span data-ttu-id="e914a-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="e914a-104">\<configuration></span></span>  
-<span data-ttu-id="e914a-105">\<mscorlib></span><span class="sxs-lookup"><span data-stu-id="e914a-105">\<mscorlib></span></span>  
-<span data-ttu-id="e914a-106">\<cryptographySettings></span><span class="sxs-lookup"><span data-stu-id="e914a-106">\<cryptographySettings></span></span>  
-<span data-ttu-id="e914a-107">\<cryptoNameMapping></span><span class="sxs-lookup"><span data-stu-id="e914a-107">\<cryptoNameMapping></span></span>  
+ <span data-ttu-id="08d47-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="08d47-104">\<configuration></span></span>  
+<span data-ttu-id="08d47-105">\<mscorlib></span><span class="sxs-lookup"><span data-stu-id="08d47-105">\<mscorlib></span></span>  
+<span data-ttu-id="08d47-106">\<cryptographySettings></span><span class="sxs-lookup"><span data-stu-id="08d47-106">\<cryptographySettings></span></span>  
+<span data-ttu-id="08d47-107">\<cryptoNameMapping></span><span class="sxs-lookup"><span data-stu-id="08d47-107">\<cryptoNameMapping></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e914a-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e914a-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="08d47-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08d47-108">Syntax</span></span>  
   
 ```xml  
       <cryptoNameMapping>   
 </cryptoNameMapping>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="e914a-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="e914a-109">Attributes and Elements</span></span>  
- <span data-ttu-id="e914a-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="e914a-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="08d47-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="08d47-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="08d47-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="08d47-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="e914a-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="e914a-111">Attributes</span></span>  
- <span data-ttu-id="e914a-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="e914a-112">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="08d47-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="08d47-111">Attributes</span></span>  
+ <span data-ttu-id="08d47-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="08d47-112">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="e914a-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="e914a-113">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="08d47-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="08d47-113">Child Elements</span></span>  
   
-|<span data-ttu-id="e914a-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="e914a-114">Element</span></span>|<span data-ttu-id="e914a-115">Popis</span><span class="sxs-lookup"><span data-stu-id="e914a-115">Description</span></span>|  
+|<span data-ttu-id="08d47-114">Prvek</span><span class="sxs-lookup"><span data-stu-id="08d47-114">Element</span></span>|<span data-ttu-id="08d47-115">Popis</span><span class="sxs-lookup"><span data-stu-id="08d47-115">Description</span></span>|  
 |-------------|-----------------|  
-|`cryptoClasses`|<span data-ttu-id="e914a-116">Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování  **\<nameEntry >** elementu.</span><span class="sxs-lookup"><span data-stu-id="e914a-116">Contains a list of cryptography classes that have a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
-|`nameEntry`|<span data-ttu-id="e914a-117">Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="e914a-117">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>|  
+|`cryptoClasses`|<span data-ttu-id="08d47-116">Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování  **\<nameEntry >** elementu.</span><span class="sxs-lookup"><span data-stu-id="08d47-116">Contains a list of cryptography classes that have a mapping to a friendly name in the **\<nameEntry>** element.</span></span>|  
+|`nameEntry`|<span data-ttu-id="08d47-117">Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="08d47-117">Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="e914a-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="e914a-118">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="08d47-118">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="08d47-118">Parent Elements</span></span>  
   
-|<span data-ttu-id="e914a-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="e914a-119">Element</span></span>|<span data-ttu-id="e914a-120">Popis</span><span class="sxs-lookup"><span data-stu-id="e914a-120">Description</span></span>|  
+|<span data-ttu-id="08d47-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="08d47-119">Element</span></span>|<span data-ttu-id="08d47-120">Popis</span><span class="sxs-lookup"><span data-stu-id="08d47-120">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="e914a-121">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e914a-121">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`cryptographySettings`|<span data-ttu-id="e914a-122">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="e914a-122">Contains cryptography settings.</span></span>|  
-|`cryptoNameMapping`|<span data-ttu-id="e914a-123">Obsahuje mapování tříd pro popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="e914a-123">Contains mappings of classes to friendly names.</span></span>|  
-|`mscorlib`|<span data-ttu-id="e914a-124">Obsahuje \<cryptographySettings – > element.</span><span class="sxs-lookup"><span data-stu-id="e914a-124">Contains the \<cryptographySettings> element.</span></span>|  
+|`configuration`|<span data-ttu-id="08d47-121">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="08d47-121">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`cryptographySettings`|<span data-ttu-id="08d47-122">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="08d47-122">Contains cryptography settings.</span></span>|  
+|`cryptoNameMapping`|<span data-ttu-id="08d47-123">Obsahuje mapování tříd pro popisné názvy.</span><span class="sxs-lookup"><span data-stu-id="08d47-123">Contains mappings of classes to friendly names.</span></span>|  
+|`mscorlib`|<span data-ttu-id="08d47-124">Obsahuje \<cryptographySettings – > element.</span><span class="sxs-lookup"><span data-stu-id="08d47-124">Contains the \<cryptographySettings> element.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="e914a-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="e914a-125">Example</span></span>  
- <span data-ttu-id="e914a-126">Následující příklad ukazuje způsob použití  **\<cryptoNameMapping >** element tak, aby odkazovaly kryptografickou třídu a konfigurace modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="e914a-126">The following example shows how to use the **\<cryptoNameMapping>** element to reference a cryptography class and to configure the runtime.</span></span> <span data-ttu-id="e914a-127">Můžete poté předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použití <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu pro návrat `MyCryptoRSAClass` objektu.</span><span class="sxs-lookup"><span data-stu-id="e914a-127">You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.</span></span>  
+## <a name="example"></a><span data-ttu-id="08d47-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="08d47-125">Example</span></span>  
+ <span data-ttu-id="08d47-126">Následující příklad ukazuje způsob použití  **\<cryptoNameMapping >** element tak, aby odkazovaly kryptografickou třídu a konfigurace modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="08d47-126">The following example shows how to use the **\<cryptoNameMapping>** element to reference a cryptography class and to configure the runtime.</span></span> <span data-ttu-id="08d47-127">Můžete poté předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použití <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu pro návrat `MyCryptoRSAClass` objektu.</span><span class="sxs-lookup"><span data-stu-id="08d47-127">You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.</span></span>  
   
 ```xml  
 <configuration>  
@@ -74,9 +74,9 @@ ms.locfileid: "59092461"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e914a-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e914a-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="08d47-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08d47-128">See also</span></span>
 
-- [<span data-ttu-id="e914a-129">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="e914a-129">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [<span data-ttu-id="e914a-130">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="e914a-130">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
-- [<span data-ttu-id="e914a-131">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="e914a-131">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)
-- [<span data-ttu-id="e914a-132">Konfigurace šifrovacích tříd</span><span class="sxs-lookup"><span data-stu-id="e914a-132">Configuring Cryptography Classes</span></span>](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [<span data-ttu-id="08d47-129">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="08d47-129">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="08d47-130">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="08d47-130">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [<span data-ttu-id="08d47-131">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="08d47-131">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)
+- [<span data-ttu-id="08d47-132">Konfigurace šifrovacích tříd</span><span class="sxs-lookup"><span data-stu-id="08d47-132">Configuring Cryptography Classes</span></span>](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

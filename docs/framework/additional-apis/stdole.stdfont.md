@@ -10,13 +10,13 @@ api_location:
 api_type:
 - Assembly
 ms.openlocfilehash: ae4e2a0e0914251ddc5b7e18202047546b97907f
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675244"
 ---
-# <a name="stdfont-interface"></a><span data-ttu-id="03e9d-102">StdFont rozhraní</span><span class="sxs-lookup"><span data-stu-id="03e9d-102">StdFont Interface</span></span>
+# <a name="stdfont-interface"></a><span data-ttu-id="239f6-102">StdFont – rozhraní</span><span class="sxs-lookup"><span data-stu-id="239f6-102">StdFont Interface</span></span>
 
 ```csharp
 [GuidAttribute("BEF6E003-A874-101A-8BBA-00AA00300CAB")]
@@ -24,8 +24,8 @@ public interface StdFont : Font,
   FontEvents_Event
 ```
 
-## <a name="requirements"></a><span data-ttu-id="03e9d-103">Požadavky</span><span class="sxs-lookup"><span data-stu-id="03e9d-103">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="239f6-103">Požadavky</span><span class="sxs-lookup"><span data-stu-id="239f6-103">Requirements</span></span>
 
-<span data-ttu-id="03e9d-104">**Namespace:** `stdole`</span><span class="sxs-lookup"><span data-stu-id="03e9d-104">**Namespace:** `stdole`</span></span>
+<span data-ttu-id="239f6-104">**Namespace:** `stdole`</span><span class="sxs-lookup"><span data-stu-id="239f6-104">**Namespace:** `stdole`</span></span>
 
-<span data-ttu-id="03e9d-105">**Sestavení:** stdole (v stdole.dll)</span><span class="sxs-lookup"><span data-stu-id="03e9d-105">**Assembly:** stdole (in stdole.dll)</span></span>
+<span data-ttu-id="239f6-105">**Sestavení:** stdole (v stdole.dll)</span><span class="sxs-lookup"><span data-stu-id="239f6-105">**Assembly:** stdole (in stdole.dll)</span></span>
