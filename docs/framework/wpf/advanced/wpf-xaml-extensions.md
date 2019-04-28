@@ -9,21 +9,21 @@ helpviewer_keywords:
 - WPF Namespace [WPF]
 ms.assetid: 5e1d60e8-9403-47d0-98e4-b49aec871ee7
 ms.openlocfilehash: 91416bba9c94c26cbc107e90c2f528d94600699c
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61764553"
 ---
-# <a name="wpf-xaml-extensions"></a><span data-ttu-id="04420-102">Rozšíření WPF XAML</span><span class="sxs-lookup"><span data-stu-id="04420-102">WPF XAML Extensions</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="04420-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="04420-103">In This Section</span></span>  
- [<span data-ttu-id="04420-104">Rozšíření značek datové vazby</span><span class="sxs-lookup"><span data-stu-id="04420-104">Binding Markup Extension</span></span>](binding-markup-extension.md)  
-  [<span data-ttu-id="04420-105">Rozšíření značek ColorConvertedBitmap</span><span class="sxs-lookup"><span data-stu-id="04420-105">ColorConvertedBitmap Markup Extension</span></span>](colorconvertedbitmap-markup-extension.md)  
-  [<span data-ttu-id="04420-106">Rozšíření značek ComponentResourceKey</span><span class="sxs-lookup"><span data-stu-id="04420-106">ComponentResourceKey Markup Extension</span></span>](componentresourcekey-markup-extension.md)  
-  [<span data-ttu-id="04420-107">Rozšíření značek DynamicResource</span><span class="sxs-lookup"><span data-stu-id="04420-107">DynamicResource Markup Extension</span></span>](dynamicresource-markup-extension.md)  
-  [<span data-ttu-id="04420-108">Rozšíření značek RelativeSource</span><span class="sxs-lookup"><span data-stu-id="04420-108">RelativeSource MarkupExtension</span></span>](relativesource-markupextension.md)  
-  [<span data-ttu-id="04420-109">Rozšíření značek StaticResource</span><span class="sxs-lookup"><span data-stu-id="04420-109">StaticResource Markup Extension</span></span>](staticresource-markup-extension.md)  
-  [<span data-ttu-id="04420-110">Rozšíření značek TemplateBinding</span><span class="sxs-lookup"><span data-stu-id="04420-110">TemplateBinding Markup Extension</span></span>](templatebinding-markup-extension.md)  
-  [<span data-ttu-id="04420-111">Rozšíření značek ThemeDictionary</span><span class="sxs-lookup"><span data-stu-id="04420-111">ThemeDictionary Markup Extension</span></span>](themedictionary-markup-extension.md)  
-  [<span data-ttu-id="04420-112">PropertyPath – syntaxe v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="04420-112">PropertyPath XAML Syntax</span></span>](propertypath-xaml-syntax.md)  
-  [<span data-ttu-id="04420-113">PresentationOptions:Freeze – atribut</span><span class="sxs-lookup"><span data-stu-id="04420-113">PresentationOptions:Freeze Attribute</span></span>](presentationoptions-freeze-attribute.md)
+# <a name="wpf-xaml-extensions"></a><span data-ttu-id="00770-102">Rozšíření WPF XAML</span><span class="sxs-lookup"><span data-stu-id="00770-102">WPF XAML Extensions</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="00770-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="00770-103">In This Section</span></span>  
+ [<span data-ttu-id="00770-104">Rozšíření značek datové vazby</span><span class="sxs-lookup"><span data-stu-id="00770-104">Binding Markup Extension</span></span>](binding-markup-extension.md)  
+  [<span data-ttu-id="00770-105">Rozšíření značek ColorConvertedBitmap</span><span class="sxs-lookup"><span data-stu-id="00770-105">ColorConvertedBitmap Markup Extension</span></span>](colorconvertedbitmap-markup-extension.md)  
+  [<span data-ttu-id="00770-106">Rozšíření značek ComponentResourceKey</span><span class="sxs-lookup"><span data-stu-id="00770-106">ComponentResourceKey Markup Extension</span></span>](componentresourcekey-markup-extension.md)  
+  [<span data-ttu-id="00770-107">Rozšíření značek DynamicResource</span><span class="sxs-lookup"><span data-stu-id="00770-107">DynamicResource Markup Extension</span></span>](dynamicresource-markup-extension.md)  
+  [<span data-ttu-id="00770-108">Rozšíření značek RelativeSource</span><span class="sxs-lookup"><span data-stu-id="00770-108">RelativeSource MarkupExtension</span></span>](relativesource-markupextension.md)  
+  [<span data-ttu-id="00770-109">Rozšíření značek StaticResource</span><span class="sxs-lookup"><span data-stu-id="00770-109">StaticResource Markup Extension</span></span>](staticresource-markup-extension.md)  
+  [<span data-ttu-id="00770-110">Rozšíření značek TemplateBinding</span><span class="sxs-lookup"><span data-stu-id="00770-110">TemplateBinding Markup Extension</span></span>](templatebinding-markup-extension.md)  
+  [<span data-ttu-id="00770-111">Rozšíření značek ThemeDictionary</span><span class="sxs-lookup"><span data-stu-id="00770-111">ThemeDictionary Markup Extension</span></span>](themedictionary-markup-extension.md)  
+  [<span data-ttu-id="00770-112">PropertyPath – syntaxe v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="00770-112">PropertyPath XAML Syntax</span></span>](propertypath-xaml-syntax.md)  
+  [<span data-ttu-id="00770-113">PresentationOptions:Freeze – atribut</span><span class="sxs-lookup"><span data-stu-id="00770-113">PresentationOptions:Freeze Attribute</span></span>](presentationoptions-freeze-attribute.md)
