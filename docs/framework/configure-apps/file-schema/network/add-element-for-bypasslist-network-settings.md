@@ -11,22 +11,22 @@ helpviewer_keywords:
 - add element, bypasslist
 ms.assetid: a0b86e28-86b4-4497-abe8-d5fd614c7926
 ms.openlocfilehash: 904c8e23f7a09a975a6f3b9322ed6bc4148d9ba4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674660"
 ---
-# <a name="add-element-for-bypasslist-network-settings"></a><span data-ttu-id="0592e-102">\<Přidat > – Element pro bypasslist (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="0592e-102">\<add> Element for bypasslist (Network Settings)</span></span>
-<span data-ttu-id="0592e-103">Přidá do seznamu obcházení proxy IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="0592e-103">Adds an IP address or DNS name to the proxy bypass list.</span></span>  
+# <a name="add-element-for-bypasslist-network-settings"></a><span data-ttu-id="6393a-102">\<Přidat > – Element pro bypasslist (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="6393a-102">\<add> Element for bypasslist (Network Settings)</span></span>
+<span data-ttu-id="6393a-103">Přidá do seznamu obcházení proxy IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="6393a-103">Adds an IP address or DNS name to the proxy bypass list.</span></span>  
   
- <span data-ttu-id="0592e-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="0592e-104">\<configuration></span></span>  
-<span data-ttu-id="0592e-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="0592e-105">\<system.net></span></span>  
-<span data-ttu-id="0592e-106">\<defaultProxy></span><span class="sxs-lookup"><span data-stu-id="0592e-106">\<defaultProxy></span></span>  
-<span data-ttu-id="0592e-107">\<bypasslist – ></span><span class="sxs-lookup"><span data-stu-id="0592e-107">\<bypasslist></span></span>  
-<span data-ttu-id="0592e-108">\<add></span><span class="sxs-lookup"><span data-stu-id="0592e-108">\<add></span></span>  
+ <span data-ttu-id="6393a-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="6393a-104">\<configuration></span></span>  
+<span data-ttu-id="6393a-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="6393a-105">\<system.net></span></span>  
+<span data-ttu-id="6393a-106">\<defaultProxy></span><span class="sxs-lookup"><span data-stu-id="6393a-106">\<defaultProxy></span></span>  
+<span data-ttu-id="6393a-107">\<bypasslist – ></span><span class="sxs-lookup"><span data-stu-id="6393a-107">\<bypasslist></span></span>  
+<span data-ttu-id="6393a-108">\<add></span><span class="sxs-lookup"><span data-stu-id="6393a-108">\<add></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0592e-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0592e-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6393a-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6393a-109">Syntax</span></span>  
   
 ```xml  
 <add   
@@ -34,38 +34,38 @@ ms.locfileid: "59098283"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="0592e-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="0592e-110">Attributes and Elements</span></span>  
- <span data-ttu-id="0592e-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="0592e-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="6393a-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="6393a-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="6393a-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="6393a-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="0592e-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="0592e-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="6393a-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="6393a-112">Attributes</span></span>  
   
-|<span data-ttu-id="0592e-113">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="0592e-113">**Attribute**</span></span>|<span data-ttu-id="0592e-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="0592e-114">**Description**</span></span>|  
+|<span data-ttu-id="6393a-113">**Atribut**</span><span class="sxs-lookup"><span data-stu-id="6393a-113">**Attribute**</span></span>|<span data-ttu-id="6393a-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="6393a-114">**Description**</span></span>|  
 |-------------------|---------------------|  
-|<span data-ttu-id="0592e-115">**address**</span><span class="sxs-lookup"><span data-stu-id="0592e-115">**address**</span></span>|<span data-ttu-id="0592e-116">Regulární výraz popisující IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="0592e-116">A regular expression describing an IP address or DNS name.</span></span>|  
+|<span data-ttu-id="6393a-115">**address**</span><span class="sxs-lookup"><span data-stu-id="6393a-115">**address**</span></span>|<span data-ttu-id="6393a-116">Regulární výraz popisující IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="6393a-116">A regular expression describing an IP address or DNS name.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="0592e-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="0592e-117">Child Elements</span></span>  
- <span data-ttu-id="0592e-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="0592e-118">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="6393a-117">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="6393a-117">Child Elements</span></span>  
+ <span data-ttu-id="6393a-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="6393a-118">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="0592e-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="0592e-119">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="6393a-119">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="6393a-119">Parent Elements</span></span>  
   
-|<span data-ttu-id="0592e-120">**Element**</span><span class="sxs-lookup"><span data-stu-id="0592e-120">**Element**</span></span>|<span data-ttu-id="0592e-121">**Popis**</span><span class="sxs-lookup"><span data-stu-id="0592e-121">**Description**</span></span>|  
+|<span data-ttu-id="6393a-120">**Element**</span><span class="sxs-lookup"><span data-stu-id="6393a-120">**Element**</span></span>|<span data-ttu-id="6393a-121">**Popis**</span><span class="sxs-lookup"><span data-stu-id="6393a-121">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="0592e-122">bypasslist</span><span class="sxs-lookup"><span data-stu-id="0592e-122">bypasslist</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|<span data-ttu-id="0592e-123">Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.</span><span class="sxs-lookup"><span data-stu-id="0592e-123">Provides a set of regular expressions that describe addresses that do not use a proxy.</span></span>|  
+|[<span data-ttu-id="6393a-122">bypasslist</span><span class="sxs-lookup"><span data-stu-id="6393a-122">bypasslist</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|<span data-ttu-id="6393a-123">Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.</span><span class="sxs-lookup"><span data-stu-id="6393a-123">Provides a set of regular expressions that describe addresses that do not use a proxy.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="0592e-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0592e-124">Remarks</span></span>  
- <span data-ttu-id="0592e-125">`add` Element vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS do seznamu adres, které obcházejí proxy server.</span><span class="sxs-lookup"><span data-stu-id="0592e-125">The `add` element inserts regular expressions describing IP addresses or DNS server names to the list of addresses that bypass a proxy server.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6393a-124">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6393a-124">Remarks</span></span>  
+ <span data-ttu-id="6393a-125">`add` Element vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS do seznamu adres, které obcházejí proxy server.</span><span class="sxs-lookup"><span data-stu-id="6393a-125">The `add` element inserts regular expressions describing IP addresses or DNS server names to the list of addresses that bypass a proxy server.</span></span>  
   
- <span data-ttu-id="0592e-126">Hodnota `address` atribut musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitele.</span><span class="sxs-lookup"><span data-stu-id="0592e-126">The value of the `address` attribute should be a regular expression that describes a set of IP addresses or host names.</span></span>  
+ <span data-ttu-id="6393a-126">Hodnota `address` atribut musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitele.</span><span class="sxs-lookup"><span data-stu-id="6393a-126">The value of the `address` attribute should be a regular expression that describes a set of IP addresses or host names.</span></span>  
   
- <span data-ttu-id="0592e-127">Buďte opatrní při zadávání regulární výraz pro tento element.</span><span class="sxs-lookup"><span data-stu-id="0592e-127">You should use caution when specifying a regular expression for this element.</span></span> <span data-ttu-id="0592e-128">Regulární výraz "[-z] +\\.contoso\\.com" odpovídá některé hostovat v doméně contoso.com, ale také odpovídající libovolného hostitele v doméně contoso.com.cpandl.com.</span><span class="sxs-lookup"><span data-stu-id="0592e-128">The regular expression "[a-z]+\\.contoso\\.com" matches any host in the contoso.com domain, but it also matches any host in the contoso.com.cpandl.com domain.</span></span> <span data-ttu-id="0592e-129">Tak, aby odpovídaly pouze na hostiteli v doméně contoso.com, použijte ukotvení ("$"): "[-z] +\\.contoso\\.com$".</span><span class="sxs-lookup"><span data-stu-id="0592e-129">To match only a host in the contoso.com domain, use an anchor ("$"): "[a-z]+\\.contoso\\.com$".</span></span>  
+ <span data-ttu-id="6393a-127">Buďte opatrní při zadávání regulární výraz pro tento element.</span><span class="sxs-lookup"><span data-stu-id="6393a-127">You should use caution when specifying a regular expression for this element.</span></span> <span data-ttu-id="6393a-128">Regulární výraz "[-z] +\\.contoso\\.com" odpovídá některé hostovat v doméně contoso.com, ale také odpovídající libovolného hostitele v doméně contoso.com.cpandl.com.</span><span class="sxs-lookup"><span data-stu-id="6393a-128">The regular expression "[a-z]+\\.contoso\\.com" matches any host in the contoso.com domain, but it also matches any host in the contoso.com.cpandl.com domain.</span></span> <span data-ttu-id="6393a-129">Tak, aby odpovídaly pouze na hostiteli v doméně contoso.com, použijte ukotvení ("$"): "[-z] +\\.contoso\\.com$".</span><span class="sxs-lookup"><span data-stu-id="6393a-129">To match only a host in the contoso.com domain, use an anchor ("$"): "[a-z]+\\.contoso\\.com$".</span></span>  
   
- <span data-ttu-id="0592e-130">Další informace o formátování regulárních výrazů naleznete v tématu. [Regulárních výrazech .NET Frameworku](../../../../../docs/standard/base-types/regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="0592e-130">For more information about regular expressions, see .[.NET Framework Regular Expressions](../../../../../docs/standard/base-types/regular-expressions.md).</span></span>  
+ <span data-ttu-id="6393a-130">Další informace o formátování regulárních výrazů naleznete v tématu. [Regulárních výrazech .NET Frameworku](../../../../../docs/standard/base-types/regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="6393a-130">For more information about regular expressions, see .[.NET Framework Regular Expressions](../../../../../docs/standard/base-types/regular-expressions.md).</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="0592e-131">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="0592e-131">Configuration Files</span></span>  
- <span data-ttu-id="0592e-132">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="0592e-132">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="6393a-131">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="6393a-131">Configuration Files</span></span>  
+ <span data-ttu-id="6393a-132">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="6393a-132">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0592e-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="0592e-133">Example</span></span>  
- <span data-ttu-id="0592e-134">Následující příklad přidá do seznamu obcházení dvě adresy.</span><span class="sxs-lookup"><span data-stu-id="0592e-134">The following example adds two addresses to the bypass list.</span></span> <span data-ttu-id="0592e-135">První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery, IP adresa začíná s 192.168.</span><span class="sxs-lookup"><span data-stu-id="0592e-135">The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP address begins with 192.168.</span></span>  
+## <a name="example"></a><span data-ttu-id="6393a-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="6393a-133">Example</span></span>  
+ <span data-ttu-id="6393a-134">Následující příklad přidá do seznamu obcházení dvě adresy.</span><span class="sxs-lookup"><span data-stu-id="6393a-134">The following example adds two addresses to the bypass list.</span></span> <span data-ttu-id="6393a-135">První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery, IP adresa začíná s 192.168.</span><span class="sxs-lookup"><span data-stu-id="6393a-135">The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP address begins with 192.168.</span></span>  
   
 ```xml  
 <configuration>  
@@ -80,7 +80,7 @@ ms.locfileid: "59098283"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0592e-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0592e-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6393a-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6393a-136">See also</span></span>
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [<span data-ttu-id="0592e-137">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="0592e-137">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [<span data-ttu-id="6393a-137">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="6393a-137">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

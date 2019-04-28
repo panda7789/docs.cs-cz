@@ -3,18 +3,18 @@ title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
 ms.openlocfilehash: a78274a51bfec59147d97f88596a6ec60e40a997
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667571"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a><span data-ttu-id="f4251-102">Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="f4251-102">How to: Split a File Into Many Files by Using Groups (LINQ) (C#)</span></span>
-<span data-ttu-id="f4251-103">Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.</span><span class="sxs-lookup"><span data-stu-id="f4251-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>  
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a><span data-ttu-id="d1b1d-102">Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="d1b1d-102">How to: Split a File Into Many Files by Using Groups (LINQ) (C#)</span></span>
+<span data-ttu-id="d1b1d-103">Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.</span><span class="sxs-lookup"><span data-stu-id="d1b1d-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>  
   
-### <a name="to-create-the-data-files"></a><span data-ttu-id="f4251-104">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="f4251-104">To create the data files</span></span>  
+### <a name="to-create-the-data-files"></a><span data-ttu-id="d1b1d-104">K vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="d1b1d-104">To create the data files</span></span>  
   
-1. <span data-ttu-id="f4251-105">Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="f4251-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1. <span data-ttu-id="d1b1d-105">Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="d1b1d-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ ms.locfileid: "59337367"
     Garcia, Debra  
     ```  
   
-2. <span data-ttu-id="f4251-106">Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.</span><span class="sxs-lookup"><span data-stu-id="f4251-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>  
+2. <span data-ttu-id="d1b1d-106">Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.</span><span class="sxs-lookup"><span data-stu-id="d1b1d-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>  
   
     ```  
     Liu, Jinghao  
@@ -44,7 +44,7 @@ ms.locfileid: "59337367"
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="f4251-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="f4251-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="d1b1d-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="d1b1d-107">Example</span></span>  
   
 ```csharp  
 class SplitWithGroups  
@@ -122,13 +122,13 @@ class SplitWithGroups
  */  
 ```  
   
- <span data-ttu-id="f4251-108">Program zapíše do samostatného souboru pro každou skupinu ve stejné složce jako datové soubory.</span><span class="sxs-lookup"><span data-stu-id="f4251-108">The program writes a separate file for each group in the same folder as the data files.</span></span>  
+ <span data-ttu-id="d1b1d-108">Program zapíše do samostatného souboru pro každou skupinu ve stejné složce jako datové soubory.</span><span class="sxs-lookup"><span data-stu-id="d1b1d-108">The program writes a separate file for each group in the same folder as the data files.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="f4251-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="f4251-109">Compiling the Code</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="d1b1d-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="d1b1d-109">Compiling the Code</span></span>
 
- <span data-ttu-id="f4251-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="f4251-110">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+ <span data-ttu-id="d1b1d-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="d1b1d-110">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f4251-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f4251-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d1b1d-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d1b1d-111">See also</span></span>
 
-- [<span data-ttu-id="f4251-112">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="f4251-112">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [<span data-ttu-id="f4251-113">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="f4251-113">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="d1b1d-112">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="d1b1d-112">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="d1b1d-113">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="d1b1d-113">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

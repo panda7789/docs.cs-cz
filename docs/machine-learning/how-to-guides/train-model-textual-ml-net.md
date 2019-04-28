@@ -4,31 +4,31 @@ description: Zjistěte, jak použít vytváření funkcí k tréninku modelu na 
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: e26a4b293869b7cdad3c439237bd0145cafa314a
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57844354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689682"
 ---
-# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="d89c4-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="d89c4-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
+# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="ff5b7-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="ff5b7-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d89c4-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="d89c4-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="d89c4-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="d89c4-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
+> <span data-ttu-id="ff5b7-104">Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-104">This topic refers to ML.NET, which is currently in Preview, and material may be subject to change.</span></span> <span data-ttu-id="ff5b7-105">Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span><span class="sxs-lookup"><span data-stu-id="ff5b7-105">For more information, visit [the ML.NET introduction](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).</span></span>
 
-<span data-ttu-id="d89c4-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="d89c4-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="d89c4-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="d89c4-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
+<span data-ttu-id="ff5b7-106">Aktuálně používáte této ukázky s postupy a související **ML.NET verze 0.10**.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-106">This how-to and related sample are currently using **ML.NET version 0.10**.</span></span> <span data-ttu-id="ff5b7-107">Další informace najdete v tématu poznámky k verzi v [úložiště GitHub dotnet/machinelearning](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span><span class="sxs-lookup"><span data-stu-id="ff5b7-107">For more information, see the release notes at the [dotnet/machinelearning GitHub repo](https://github.com/dotnet/machinelearning/tree/master/docs/release-notes).</span></span>
 
-<span data-ttu-id="d89c4-108">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="d89c4-108">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
+<span data-ttu-id="ff5b7-108">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-108">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
 
-<span data-ttu-id="d89c4-109">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="d89c4-109">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="d89c4-110">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="d89c4-110">ML.NET has some basic text feature extraction mechanisms:</span></span>
+<span data-ttu-id="ff5b7-109">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-109">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="ff5b7-110">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="ff5b7-110">ML.NET has some basic text feature extraction mechanisms:</span></span>
 
-- <span data-ttu-id="d89c4-111">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="d89c4-111">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
-- <span data-ttu-id="d89c4-112">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="d89c4-112">`Separator-based tokenization`.</span></span>
-- <span data-ttu-id="d89c4-113">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="d89c4-113">`Stopword` removal.</span></span>
-- <span data-ttu-id="d89c4-114">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="d89c4-114">`Ngram` and `skip-gram` extraction.</span></span>
-- <span data-ttu-id="d89c4-115">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="d89c4-115">`TF-IDF` rescaling.</span></span>
-- <span data-ttu-id="d89c4-116">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="d89c4-116">`Bag of words` conversion.</span></span>
+- <span data-ttu-id="ff5b7-111">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="ff5b7-111">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
+- <span data-ttu-id="ff5b7-112">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-112">`Separator-based tokenization`.</span></span>
+- <span data-ttu-id="ff5b7-113">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-113">`Stopword` removal.</span></span>
+- <span data-ttu-id="ff5b7-114">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-114">`Ngram` and `skip-gram` extraction.</span></span>
+- <span data-ttu-id="ff5b7-115">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-115">`TF-IDF` rescaling.</span></span>
+- <span data-ttu-id="ff5b7-116">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="ff5b7-116">`Bag of words` conversion.</span></span>
 
-<span data-ttu-id="d89c4-117">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="d89c4-117">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
+<span data-ttu-id="ff5b7-117">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="ff5b7-117">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
 
 <!-- markdownlint-disable MD010 -->
 ```console

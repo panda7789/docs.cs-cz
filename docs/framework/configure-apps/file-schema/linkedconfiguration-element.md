@@ -12,66 +12,66 @@ helpviewer_keywords:
 - linkedConfiguration Element
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
 ms.openlocfilehash: 909ee7cbb7cd31cf213f305b23237cb69e295882
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55284606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674646"
 ---
-# <a name="linkedconfiguration-element"></a><span data-ttu-id="630cf-102">\<linkedconfiguration – > – element</span><span class="sxs-lookup"><span data-stu-id="630cf-102">\<linkedConfiguration> element</span></span>
+# <a name="linkedconfiguration-element"></a><span data-ttu-id="3689d-102">\<linkedconfiguration – > – element</span><span class="sxs-lookup"><span data-stu-id="3689d-102">\<linkedConfiguration> element</span></span>
 
-<span data-ttu-id="630cf-103">Určuje konfigurační soubor, který chcete zahrnout.</span><span class="sxs-lookup"><span data-stu-id="630cf-103">Specifies a configuration file to include.</span></span>
+<span data-ttu-id="3689d-103">Určuje konfigurační soubor, který chcete zahrnout.</span><span class="sxs-lookup"><span data-stu-id="3689d-103">Specifies a configuration file to include.</span></span>
 
-<span data-ttu-id="630cf-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="630cf-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="630cf-105">&nbsp;&nbsp;[**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="630cf-105">&nbsp;&nbsp;[**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
-<span data-ttu-id="630cf-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span><span class="sxs-lookup"><span data-stu-id="630cf-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span></span>
+<span data-ttu-id="3689d-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="3689d-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
+<span data-ttu-id="3689d-105">&nbsp;&nbsp;[**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="3689d-105">&nbsp;&nbsp;[**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) </span></span>  
+<span data-ttu-id="3689d-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span><span class="sxs-lookup"><span data-stu-id="3689d-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="630cf-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="630cf-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="3689d-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3689d-107">Syntax</span></span>
 
 ```xml
 <linkedConfiguration href="URL of linked configuration file" />
 ```
 
-## <a name="attribute"></a><span data-ttu-id="630cf-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="630cf-108">Attribute</span></span>
+## <a name="attribute"></a><span data-ttu-id="3689d-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="3689d-108">Attribute</span></span>
 
-|           | <span data-ttu-id="630cf-109">Popis</span><span class="sxs-lookup"><span data-stu-id="630cf-109">Description</span></span> |
+|           | <span data-ttu-id="3689d-109">Popis</span><span class="sxs-lookup"><span data-stu-id="3689d-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="630cf-110">**href**</span><span class="sxs-lookup"><span data-stu-id="630cf-110">**href**</span></span>  | <span data-ttu-id="630cf-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="630cf-111">Required attribute.</span></span><br><br><span data-ttu-id="630cf-112">Adresa URL konfiguračního souboru chcete zahrnout.</span><span class="sxs-lookup"><span data-stu-id="630cf-112">The URL of the configuration file to include.</span></span> <span data-ttu-id="630cf-113">Jediným formátem podporovaným **href** atribut je `file://`.</span><span class="sxs-lookup"><span data-stu-id="630cf-113">The only format supported for the **href** attribute is `file://`.</span></span> <span data-ttu-id="630cf-114">Jsou podporovány místní soubory a soubory ve formátu UNC.</span><span class="sxs-lookup"><span data-stu-id="630cf-114">Local files and UNC files are supported.</span></span> |
+| <span data-ttu-id="3689d-110">**href**</span><span class="sxs-lookup"><span data-stu-id="3689d-110">**href**</span></span>  | <span data-ttu-id="3689d-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="3689d-111">Required attribute.</span></span><br><br><span data-ttu-id="3689d-112">Adresa URL konfiguračního souboru chcete zahrnout.</span><span class="sxs-lookup"><span data-stu-id="3689d-112">The URL of the configuration file to include.</span></span> <span data-ttu-id="3689d-113">Jediným formátem podporovaným **href** atribut je `file://`.</span><span class="sxs-lookup"><span data-stu-id="3689d-113">The only format supported for the **href** attribute is `file://`.</span></span> <span data-ttu-id="3689d-114">Jsou podporovány místní soubory a soubory ve formátu UNC.</span><span class="sxs-lookup"><span data-stu-id="3689d-114">Local files and UNC files are supported.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="630cf-115">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="630cf-115">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="3689d-115">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="3689d-115">Parent element</span></span>
 
-|     | <span data-ttu-id="630cf-116">Popis</span><span class="sxs-lookup"><span data-stu-id="630cf-116">Description</span></span> |
+|     | <span data-ttu-id="3689d-116">Popis</span><span class="sxs-lookup"><span data-stu-id="3689d-116">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="630cf-117">**\<assemblybinding – >** – Element</span><span class="sxs-lookup"><span data-stu-id="630cf-117">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | <span data-ttu-id="630cf-118">Určuje zásady vazeb sestavení na úrovni konfigurace.</span><span class="sxs-lookup"><span data-stu-id="630cf-118">Specifies assembly binding policy at the configuration level.</span></span> |
+| [<span data-ttu-id="3689d-117">**\<assemblybinding – >** – Element</span><span class="sxs-lookup"><span data-stu-id="3689d-117">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | <span data-ttu-id="3689d-118">Určuje zásady vazeb sestavení na úrovni konfigurace.</span><span class="sxs-lookup"><span data-stu-id="3689d-118">Specifies assembly binding policy at the configuration level.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="630cf-119">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="630cf-119">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="3689d-119">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="3689d-119">Child elements</span></span>
 
-<span data-ttu-id="630cf-120">Žádná</span><span class="sxs-lookup"><span data-stu-id="630cf-120">None</span></span>
+<span data-ttu-id="3689d-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="3689d-120">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="630cf-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="630cf-121">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="3689d-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3689d-121">Remarks</span></span>
 
-<span data-ttu-id="630cf-122">**\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent.</span><span class="sxs-lookup"><span data-stu-id="630cf-122">The **\<linkedConfiguration>** element simplifies servicing for component assemblies.</span></span> <span data-ttu-id="630cf-123">Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="630cf-123">If one or more applications use an assembly that has a configuration file residing in a well-known location, the configuration files of the applications that use the assembly can use the **\<linkedConfiguration>** element to include the assembly configuration file, rather than including configuration information directly.</span></span> <span data-ttu-id="630cf-124">Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.</span><span class="sxs-lookup"><span data-stu-id="630cf-124">When the component assembly is serviced, updating the common configuration file provides updated configuration information to all applications that use the assembly.</span></span>
+<span data-ttu-id="3689d-122">**\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent.</span><span class="sxs-lookup"><span data-stu-id="3689d-122">The **\<linkedConfiguration>** element simplifies servicing for component assemblies.</span></span> <span data-ttu-id="3689d-123">Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="3689d-123">If one or more applications use an assembly that has a configuration file residing in a well-known location, the configuration files of the applications that use the assembly can use the **\<linkedConfiguration>** element to include the assembly configuration file, rather than including configuration information directly.</span></span> <span data-ttu-id="3689d-124">Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.</span><span class="sxs-lookup"><span data-stu-id="3689d-124">When the component assembly is serviced, updating the common configuration file provides updated configuration information to all applications that use the assembly.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="630cf-125">**\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.</span><span class="sxs-lookup"><span data-stu-id="630cf-125">The **\<linkedConfiguration>** element is not supported for applications with Windows side-by-side manifests.</span></span>
+> <span data-ttu-id="3689d-125">**\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.</span><span class="sxs-lookup"><span data-stu-id="3689d-125">The **\<linkedConfiguration>** element is not supported for applications with Windows side-by-side manifests.</span></span>
 
-<span data-ttu-id="630cf-126">Následující pravidla určují, použití propojené konfigurační soubory:</span><span class="sxs-lookup"><span data-stu-id="630cf-126">The following rules govern the use of linked configuration files:</span></span>
+<span data-ttu-id="3689d-126">Následující pravidla určují, použití propojené konfigurační soubory:</span><span class="sxs-lookup"><span data-stu-id="3689d-126">The following rules govern the use of linked configuration files:</span></span>
 
-- <span data-ttu-id="630cf-127">Nastavení v souborech konfigurace na zahrnuté pouze ovlivnit zavaděč zásady vazeb a jsou používány pouze zavaděč.</span><span class="sxs-lookup"><span data-stu-id="630cf-127">The settings in included configuration files only affect loader binding policy and are used only by the loader.</span></span> <span data-ttu-id="630cf-128">Konfigurace zahrnuté soubory mohou mít nastavení vazby zásady, ale tato nastavení nemají žádný vliv.</span><span class="sxs-lookup"><span data-stu-id="630cf-128">The included configuration files can have settings other than binding policies, but those settings don't have any effect.</span></span>
+- <span data-ttu-id="3689d-127">Nastavení v souborech konfigurace na zahrnuté pouze ovlivnit zavaděč zásady vazeb a jsou používány pouze zavaděč.</span><span class="sxs-lookup"><span data-stu-id="3689d-127">The settings in included configuration files only affect loader binding policy and are used only by the loader.</span></span> <span data-ttu-id="3689d-128">Konfigurace zahrnuté soubory mohou mít nastavení vazby zásady, ale tato nastavení nemají žádný vliv.</span><span class="sxs-lookup"><span data-stu-id="3689d-128">The included configuration files can have settings other than binding policies, but those settings don't have any effect.</span></span>
 
-- <span data-ttu-id="630cf-129">Jediným formátem podporovaným `href` atribut je `file://`.</span><span class="sxs-lookup"><span data-stu-id="630cf-129">The only format supported for the `href` attribute is `file://`.</span></span> <span data-ttu-id="630cf-130">Jsou podporovány místní soubory a soubory ve formátu UNC.</span><span class="sxs-lookup"><span data-stu-id="630cf-130">Local files and UNC files are supported.</span></span>
+- <span data-ttu-id="3689d-129">Jediným formátem podporovaným `href` atribut je `file://`.</span><span class="sxs-lookup"><span data-stu-id="3689d-129">The only format supported for the `href` attribute is `file://`.</span></span> <span data-ttu-id="3689d-130">Jsou podporovány místní soubory a soubory ve formátu UNC.</span><span class="sxs-lookup"><span data-stu-id="3689d-130">Local files and UNC files are supported.</span></span>
 
-- <span data-ttu-id="630cf-131">Neexistuje žádné omezení počtu propojené konfigurace na konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="630cf-131">There is no constraint on the number of linked configurations per configuration file.</span></span>
+- <span data-ttu-id="3689d-131">Neexistuje žádné omezení počtu propojené konfigurace na konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="3689d-131">There is no constraint on the number of linked configurations per configuration file.</span></span>
 
-- <span data-ttu-id="630cf-132">Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako chování `#include` direktiva v jazyce C/C++.</span><span class="sxs-lookup"><span data-stu-id="630cf-132">All linked configuration files are merged to form one file, similar to the behavior of the `#include` directive in C/C++.</span></span>
+- <span data-ttu-id="3689d-132">Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako chování `#include` direktiva v jazyce C/C++.</span><span class="sxs-lookup"><span data-stu-id="3689d-132">All linked configuration files are merged to form one file, similar to the behavior of the `#include` directive in C/C++.</span></span>
 
-- <span data-ttu-id="630cf-133">**\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.</span><span class="sxs-lookup"><span data-stu-id="630cf-133">The **\<linkedConfiguration>** element is allowed only in application configuration files; it's ignored in *Machine.config*.</span></span>
+- <span data-ttu-id="3689d-133">**\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.</span><span class="sxs-lookup"><span data-stu-id="3689d-133">The **\<linkedConfiguration>** element is allowed only in application configuration files; it's ignored in *Machine.config*.</span></span>
 
-- <span data-ttu-id="630cf-134">Cyklické odkazy jsou zjištěny a byla ukončena.</span><span class="sxs-lookup"><span data-stu-id="630cf-134">Circular references are detected and terminated.</span></span> <span data-ttu-id="630cf-135">To znamená pokud  **\<linkedconfiguration – >** prvky z řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.</span><span class="sxs-lookup"><span data-stu-id="630cf-135">That is, if the **\<linkedConfiguration>** elements of a series of configuration files form a loop, the loop is detected and stopped.</span></span>
+- <span data-ttu-id="3689d-134">Cyklické odkazy jsou zjištěny a byla ukončena.</span><span class="sxs-lookup"><span data-stu-id="3689d-134">Circular references are detected and terminated.</span></span> <span data-ttu-id="3689d-135">To znamená pokud  **\<linkedconfiguration – >** prvky z řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.</span><span class="sxs-lookup"><span data-stu-id="3689d-135">That is, if the **\<linkedConfiguration>** elements of a series of configuration files form a loop, the loop is detected and stopped.</span></span>
 
-## <a name="example"></a><span data-ttu-id="630cf-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="630cf-136">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3689d-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="3689d-136">Example</span></span>
 
-<span data-ttu-id="630cf-137">Následující příklad ukazuje, jak zahrnout konfigurační soubor z místního pevného disku:</span><span class="sxs-lookup"><span data-stu-id="630cf-137">The following example shows how to include configuration file from the local hard disk:</span></span>
+<span data-ttu-id="3689d-137">Následující příklad ukazuje, jak zahrnout konfigurační soubor z místního pevného disku:</span><span class="sxs-lookup"><span data-stu-id="3689d-137">The following example shows how to include configuration file from the local hard disk:</span></span>
 
 ```xml
 <configuration>
@@ -81,7 +81,7 @@ ms.locfileid: "55284606"
 </configuration>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="630cf-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="630cf-138">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3689d-138">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3689d-138">See also</span></span>
 
-- [<span data-ttu-id="630cf-139">**\<assemblybinding – >** – Element</span><span class="sxs-lookup"><span data-stu-id="630cf-139">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)
-- [<span data-ttu-id="630cf-140">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="630cf-140">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="3689d-139">**\<assemblybinding – >** – Element</span><span class="sxs-lookup"><span data-stu-id="3689d-139">**\<assemblyBinding>** Element</span></span>](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)
+- [<span data-ttu-id="3689d-140">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="3689d-140">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
