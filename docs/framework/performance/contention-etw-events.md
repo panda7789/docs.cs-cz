@@ -8,11 +8,11 @@ ms.assetid: 6933e753-2f2a-425b-ae84-42138c957d76
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 95f56a6c8b51c58ed36d5d0de428bf57b728009c
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61723937"
 ---
 # <a name="contention-etw-events"></a>Kolizní události trasování událostí pro Windows
 

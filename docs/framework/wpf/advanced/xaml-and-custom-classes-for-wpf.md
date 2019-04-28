@@ -7,11 +7,11 @@ helpviewer_keywords:
 - classes [WPF], custom classes in XAML
 ms.assetid: e7313137-581e-4a64-8453-d44e15a6164a
 ms.openlocfilehash: e71946ec06eb1b4c75f30084dfdb863d8e3b093e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759931"
 ---
 # <a name="xaml-and-custom-classes-for-wpf"></a>XAML a vlastní třídy pro WPF
 Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] architektur podporuje schopnost definovat vlastní třídy nebo struktury v libovolném [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] jazyk a pak přístupu, které třídy pomocí kódu XAML. Můžete použít kombinaci [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]-definované typy a vlastních typů ve stejném souboru kódu, obvykle na předponu oboru názvů XAML mapování vlastních typů. Toto téma popisuje požadavky, které má být použitelná jako prvek XAML musí splňovat vlastní třídy.  
@@ -20,19 +20,19 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 ## <a name="custom-classes-in-applications-or-assemblies"></a>Vlastní třídy v aplikacích nebo sestavení  
  Dvě různé možnosti, jak lze definovat vlastní třídy, které se používají v XAML: v rámci modelu code-behind nebo jiný kód, který vytvoří primární [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, nebo jako třída v samostatné sestavení, jako je spustitelný soubor nebo knihovnu DLL používá jako knihovny tříd. Každá z těchto přístupů má určité výhody a nevýhody.  
   
--   Výhodou vytvoření knihovny tříd je, že všechny vlastní třídy mohou být sdíleny napříč mnoha různým aplikacím je to možné. Samostatné knihovny také snazší správa verzí – potíže aplikací ovládacího prvku a zjednodušuje vytváření třídy, kde je využití určené třídy jako kořenový element na stránce XAML.  
+- Výhodou vytvoření knihovny tříd je, že všechny vlastní třídy mohou být sdíleny napříč mnoha různým aplikacím je to možné. Samostatné knihovny také snazší správa verzí – potíže aplikací ovládacího prvku a zjednodušuje vytváření třídy, kde je využití určené třídy jako kořenový element na stránce XAML.  
   
--   Výhodou definování vlastní třídy v aplikaci je, že tato metoda je relativně jednoduché a minimalizuje nasazení a testování problémů při zavedení samostatné sestavení mimo hlavní spustitelný soubor aplikace.  
+- Výhodou definování vlastní třídy v aplikaci je, že tato metoda je relativně jednoduché a minimalizuje nasazení a testování problémů při zavedení samostatné sestavení mimo hlavní spustitelný soubor aplikace.  
   
--   Zda definované ve stejném nebo jiném sestavení, je potřeba namapovat mezi názvový prostor CLR a obor názvů XML jinak se nedá použít v XAML jako prvky vlastní třídy. Zobrazit [obory názvů XAML a mapování Namespace pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
+- Zda definované ve stejném nebo jiném sestavení, je potřeba namapovat mezi názvový prostor CLR a obor názvů XML jinak se nedá použít v XAML jako prvky vlastní třídy. Zobrazit [obory názvů XAML a mapování Namespace pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
 <a name="Requirements_for_a_Custom_Class_as_a_XAML_Element"></a>   
 ## <a name="requirements-for-a-custom-class-as-a-xaml-element"></a>Požadavky pro vlastní třídy jako prvek XAML  
  Aby bylo možné vytvořit instanci jako element objektu, vaše třída musí splňovat následující požadavky:  
   
--   Vlastní třída musí být veřejný a podporují výchozí veřejný konstruktor (bez parametrů). (Viz následující části pro poznámky týkající se struktury).  
+- Vlastní třída musí být veřejný a podporují výchozí veřejný konstruktor (bez parametrů). (Viz následující části pro poznámky týkající se struktury).  
   
--   Vlastní třída nesmí být vnořená třída. Vnořené třídy a "tečky" v jejich obecné použití syntaxe CLR v konfliktu s jinými [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a/nebo XAML funkce, jako jsou připojené vlastnosti.  
+- Vlastní třída nesmí být vnořená třída. Vnořené třídy a "tečky" v jejich obecné použití syntaxe CLR v konfliktu s jinými [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a/nebo XAML funkce, jako jsou připojené vlastnosti.  
   
  Kromě povolení syntaxe elementu objektu, vaše definice objektu taky umožňuje syntax prvku vlastnosti pro všechny veřejné vlastnosti, které získat tento objekt jako typ hodnoty. Je to proto teď může být vytvořen jako element objektu a můžete přejít k vyplnění hodnota vlastnosti element z těchto vlastností objektu.  
   
@@ -75,19 +75,19 @@ Jak je implementován v XAML [!INCLUDE[TLA#tla_clr](../../../../includes/tlashar
 ## <a name="writing-collection-properties"></a>Zápis vlastnosti kolekce  
  Vlastnosti, které zpracují typ kolekce mají syntaxe XAML, který umožňuje určit objekty, které jsou přidány do kolekce. Tato syntaxe má dvě důležité funkce.  
   
--   Objekt, který je objekt kolekce není nutné zadat v syntaxi elementu objektu. Pokaždé, když zadáte vlastnosti XAML, která přebírá typ kolekce je implicitní přítomnosti tohoto typu kolekce.  
+- Objekt, který je objekt kolekce není nutné zadat v syntaxi elementu objektu. Pokaždé, když zadáte vlastnosti XAML, která přebírá typ kolekce je implicitní přítomnosti tohoto typu kolekce.  
   
--   Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; Zobrazit [funkce jazyka XAML 2009](../../xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
+- Podřízené prvky prvku vlastnost kolekce, ve značkách jsou zpracovány do stanou členy kolekce. Obvykle kód přístup k členům kolekce se provádí prostřednictvím metody seznamu/slovníku jako `Add`, nebo prostřednictvím indexeru. Ale syntaxe XAML nepodporuje metody nebo indexery (výjimka: XAML 2009 může podporovat metody, ale pomocí XAML 2009 omezuje možná použití WPF; Zobrazit [funkce jazyka XAML 2009](../../xaml-services/xaml-2009-language-features.md)). Kolekce jsou samozřejmě velmi běžné požadavky pro vytváření stromové struktuře prvků a potřebujete způsob, jak naplnit těchto kolekcí v deklarativní XAML. Proto se zpracovávají podřízené prvky prvku vlastnost kolekce jejich přidáním do kolekce, která je typ hodnoty vlastnosti kolekce.  
   
  Implementace rozhraní .NET Framework XAML Services a proto procesor WPF XAML používá následující definici pro co se považuje za vlastnost kolekce. Vlastnost typ vlastnosti musí implementovat jedno z následujících akcí:  
   
--   Implementuje <xref:System.Collections.IList>.  
+- Implementuje <xref:System.Collections.IList>.  
   
--   Implementuje <xref:System.Collections.IDictionary> nebo jeho obecný ekvivalent (<xref:System.Collections.Generic.IDictionary%602>).  
+- Implementuje <xref:System.Collections.IDictionary> nebo jeho obecný ekvivalent (<xref:System.Collections.Generic.IDictionary%602>).  
   
--   Je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).)  
+- Je odvozen od <xref:System.Array> (Další informace o polích v XAML najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).)  
   
--   Implementuje <xref:System.Windows.Markup.IAddChild> (rozhraní určené [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]).  
+- Implementuje <xref:System.Windows.Markup.IAddChild> (rozhraní určené [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]).  
   
  Každý z těchto typů v prostředí CLR má `Add` metodu, která používá procesor XAML pro přidání položek do zdrojové kolekce při vytváření grafu objektů.  
   

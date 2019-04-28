@@ -3,11 +3,11 @@ title: 5604 – SessionCookieReadingStarted
 ms.date: 03/30/2017
 ms.assetid: 7348caaa-add0-473d-8af3-b2dadb68abdb
 ms.openlocfilehash: 549ece457f4c4498f38a7c19cf4d31137fbe7eff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33470247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767393"
 ---
 # <a name="5604---sessioncookiereadingstarted"></a>5604 – SessionCookieReadingStarted
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33470247"
 |||  
 |-|-|  
 |ID|5604|  
-|Klíčová slova|Zabezpečení|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|Zabezpečení|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při token relace čtení ze souboru cookie relace spuštění.  
+ Tato událost je vygenerován při token relace čtení ze souboru cookie relace spuštění.  
   
 ## <a name="message"></a>Zpráva  
- Čtení ze souboru cookie relace token relace spuštění.  
+ Bylo zahájeno načítání tokenu relace ze souboru cookie relace.  
   
 ## <a name="details"></a>Podrobnosti

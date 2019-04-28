@@ -9,11 +9,11 @@ helpviewer_keywords:
 - From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
 ms.openlocfilehash: 9708a4d06e8a2aa65fb4d3bb959f4699237a2bc6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59209148"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762394"
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnosti závislosti. Od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami.  
@@ -65,15 +65,15 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
 ## <a name="target-values"></a>Cílové hodnoty  
  Od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami Cíl. Je běžné nastavit počáteční hodnotu (nastavení s použitím <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost) a koncovou hodnotu (nastavení s použitím <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost). Ale můžete také zadat počáteční hodnotu, cílová hodnota nebo hodnoty posunu. Animace v těchto případech získává chybí cílová hodnota z vlastnost, která je právě animovat. Následující seznam popisuje různé způsoby, jak určit cílové hodnoty animace.  
   
--   **Počáteční hodnota**  
+- **Počáteční hodnota**  
   
      Použití <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnosti, pokud chcete explicitně zadat počáteční hodnoty animace. Můžete použít <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost samostatně nebo se <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> nebo <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost. Pokud zadáte pouze <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost, přechody animace z této hodnoty na základní hodnotu animované vlastnosti.  
   
--   **Koncová hodnota**  
+- **Koncová hodnota**  
   
      Pokud chcete zadat koncovou hodnotu animace, použijte jeho <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost. Pokud používáte <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost samostatně, animace získává svou výchozí hodnotu z vlastnosti, která je animované nebo z výstupu jiné animace, která se uplatňuje na stejnou vlastnost. Můžete použít <xref:System.Windows.Media.Animation.DoubleAnimation.To%2A> vlastnost spolu s <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost explicitně zadat počáteční a koncovou hodnotou pro animaci.  
   
--   **Hodnota posunu**  
+- **Hodnota posunu**  
   
      <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> Vlastnost umožňuje určit posun namísto explicitního počáteční nebo koncovou hodnotu pro animaci. <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> Vlastnost animace Určuje, kolik animace používá změny hodnotu v průběhu jejího trvání. Můžete použít <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost samostatně nebo se <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost. Pokud zadáte pouze <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost animace přidá hodnotu posunu základní hodnoty vlastnosti nebo výstupní jiné animace.  
   
@@ -134,9 +134,9 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
 ## <a name="other-animation-types"></a>Jiné typy animací  
  Animace od/Komu/kým nejste pouze typ animace, která [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje: nabízí taky animace klíčových snímků a animace cesty.  
   
--   Animace klíčových snímků animuje podél libovolný počet cílové hodnoty popisují pomocí klíčových snímků. Další informace najdete v tématu [přehled animací klíčových snímků](key-frame-animations-overview.md).  
+- Animace klíčových snímků animuje podél libovolný počet cílové hodnoty popisují pomocí klíčových snímků. Další informace najdete v tématu [přehled animací klíčových snímků](key-frame-animations-overview.md).  
   
--   Animace cesty vygeneruje výstupní hodnoty z <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [přehled animací cesty](path-animations-overview.md).  
+- Animace cesty vygeneruje výstupní hodnoty z <xref:System.Windows.Media.PathGeometry>. Další informace najdete v tématu [přehled animací cesty](path-animations-overview.md).  
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Můžete také vytvořit vlastní typy vlastní animace. Další informace najdete v tématu [Přehled vlastních animací](custom-animations-overview.md).  
   

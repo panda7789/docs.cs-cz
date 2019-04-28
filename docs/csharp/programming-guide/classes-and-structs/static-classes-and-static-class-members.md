@@ -10,11 +10,11 @@ helpviewer_keywords:
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
 ms.openlocfilehash: bcf4cd9d4ac4e4de3174cb57d83c8cab7de86c21
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703111"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou statickou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
@@ -44,13 +44,13 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  Následující seznam obsahuje hlavní funkce statické třídy:  
   
--   Obsahuje pouze statické členy.  
+- Obsahuje pouze statické členy.  
   
--   Nelze vytvořit instanci.  
+- Nelze vytvořit instanci.  
   
--   Je zapečetěná.  
+- Je zapečetěná.  
   
--   Nesmí obsahovat [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+- Nesmí obsahovat [konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
   
  Vytvoření statické třídy je tedy v podstatě stejné jako vytvoření třídy, která obsahuje pouze statické členy a soukromý konstruktor. Soukromý konstruktor zabraňuje instance třídy. Výhodou použití statické třídy je, že kompilátor můžete zkontrolovat, nezapomeňte omylem přidat žádné členy instance. Kompilátor zaručí, že nelze vytvořit instance této třídy.  
   

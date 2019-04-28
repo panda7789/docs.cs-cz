@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], ListBox
 ms.assetid: 15d58f1d-3db6-4cb5-88c7-8c45f19301e2
 ms.openlocfilehash: 0895b80f230d2c67ab0723c7935ae20443327a41
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57363424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766737"
 ---
 # <a name="listbox-how-to-topics"></a>ListBox – postupy
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListBox> ovládací prvek pro zobrazení volitelný seznam položek.  

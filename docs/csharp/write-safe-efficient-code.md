@@ -4,11 +4,11 @@ description: Poslední vylepšení C# jazyk umožňují také napsat bezpečnéh
 ms.date: 10/23/2018
 ms.custom: mvc
 ms.openlocfilehash: d363e357d3749bb2014456c0064c4de7dd7f1acb
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706036"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zápis jednoduché smyčky Parallel.for'
+title: 'Postupy: Zápis jednoduché smyčky Parallel.For'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: 9029ba7f-a9d1-4526-8c84-c88716dba5d4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f2070562ba0910b5cac951e925bd9c5f0e7f68fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769184"
 ---
-# <a name="how-to-write-a-simple-parallelfor-loop"></a>Postupy: Zápis jednoduché smyčky Parallel.for
+# <a name="how-to-write-a-simple-parallelfor-loop"></a>Postupy: Zápis jednoduché smyčky Parallel.For
 
 Toto téma obsahuje dva příklady, které ukazují <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metody. První použití <xref:System.Threading.Tasks.Parallel.For%28System.Int64%2CSystem.Int64%2CSystem.Action%7BSystem.Int64%7D%29?displayProperty=nameWithType> přetížení metody a druhý používá <xref:System.Threading.Tasks.Parallel.For%28System.Int32%2CSystem.Int32%2CSystem.Action%7BSystem.Int32%7D%29?displayProperty=nameWithType> přetížení, dvě přetížení Nejjednodušší <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metody. Můžete použít tyto dvě přetížení <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> metodu, když není potřeba zrušit smyčky, přerušit ze smyčky iterace nebo udržovat jakýkoli stav místního vlákna.
 

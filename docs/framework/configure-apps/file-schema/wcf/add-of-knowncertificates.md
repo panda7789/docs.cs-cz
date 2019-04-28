@@ -3,11 +3,11 @@ title: <add> z <knownCertificates>
 ms.date: 03/30/2017
 ms.assetid: 128aaabe-3f1a-4c3b-b59f-898d0f02910f
 ms.openlocfilehash: 3eb5bf74f909e6036154b7f5f7c6181b09fefbff
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59077716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704697"
 ---
 # <a name="add-of-knowncertificates"></a>\<Přidat > z \<knownCertificates >
 Do kolekce známých certifikátů přidává certifikát X.509.  
@@ -46,7 +46,7 @@ Do kolekce známých certifikátů přidává certifikát X.509.
   
 ## <a name="findvalue-attribute"></a>findValue atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |String|Hodnota závisí na poli (určenému atributem X509FindType) být vyhledán. Například pokud hledání kryptografickým otiskem, hodnota musí být řetězec šestnáctkových čísel.|  
   

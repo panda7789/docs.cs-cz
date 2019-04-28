@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ab6c0ac7-aac4-45ba-93d6-a0e9afd1756f
 ms.openlocfilehash: 2e294b7970a58fad9385802470a514e5a9240495
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303970"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766855"
 ---
 # <a name="how-to-inspect-or-modify-parameters"></a>Postupy: Kontrola nebo úprava parametrů
 Můžete zkontrolovat nebo upravit příchozí nebo odchozí zprávy pro jediná operace na objektu klienta Windows Communication Foundation (WCF) nebo službu WCF implementací <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> rozhraní a jejich vložení do klienta nebo služby modulu runtime. Obvykle na operaci chování slouží k přidání kontroly parametrů pro jednu operaci. jiné chování slouží k poskytování snadného přístupu k modulu runtime na větší rozsah. Další informace najdete v tématu [rozšíření klienty](../../../../docs/framework/wcf/extending/extending-clients.md) a [rozšíření dispečerů](../../../../docs/framework/wcf/extending/extending-dispatchers.md).  
@@ -26,11 +26,11 @@ Můžete zkontrolovat nebo upravit příchozí nebo odchozí zprávy pro jediná
 ## <a name="example"></a>Příklad  
  Následující příklady kódu zobrazit v pořadí:  
   
--   Na parametr inspektoru implementace.  
+- Na parametr inspektoru implementace.  
   
--   Implementace chování, která vloží inspektor parametr pomocí <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>a <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>.  
+- Implementace chování, která vloží inspektor parametr pomocí <xref:System.ServiceModel.Description.IOperationBehavior?displayProperty=nameWithType>, <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType>a <xref:System.ServiceModel.Description.IServiceBehavior?displayProperty=nameWithType>.  
   
--   Konfigurační soubor, který načte a spustí chování koncového bodu v klientské aplikaci k vložení parametru inspektoru na straně klienta.  
+- Konfigurační soubor, který načte a spustí chování koncového bodu v klientské aplikaci k vložení parametru inspektoru na straně klienta.  
   
  [!code-csharp[Interceptors#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/interceptors.cs#4)]
  [!code-vb[Interceptors#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/interceptors.vb#4)]  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
 ms.openlocfilehash: a0400ce32dc6dab2585a8d5e76ff8d416fae24c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61764977"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro vykreslování podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu.  
@@ -24,27 +24,27 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  <xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování. Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení. <xref:System.Windows.Media.Visual> Objekt, který poskytuje podporu pro:  
   
--   Zobrazení výstupu: Vykreslování trvalý, serializovat výkresu vykreslovaného vizuálního obsahu.  
+- Zobrazení výstupu: Vykreslování trvalý, serializovat výkresu vykreslovaného vizuálního obsahu.  
   
--   Transformace: Provádění transformací ve vizuálu.  
+- Transformace: Provádění transformací ve vizuálu.  
   
--   Omezení: Poskytuje podporu oblasti výstřižek vizuálu.  
+- Omezení: Poskytuje podporu oblasti výstřižek vizuálu.  
   
--   Testování průchodu: Určení, zda souřadnice nebo geometrie je obsažen v mezích vizuálu.  
+- Testování průchodu: Určení, zda souřadnice nebo geometrie je obsažen v mezích vizuálu.  
   
--   Ohraničující pole výpočty: Určení ohraničující obdélník vizuálu.  
+- Ohraničující pole výpočty: Určení ohraničující obdélník vizuálu.  
   
  Ale <xref:System.Windows.Media.Visual> objekt nezahrnuje podporu pro jiné vykreslovací funkce, jako například:  
   
--   Zpracování událostí  
+- Zpracování událostí  
   
--   Rozložení  
+- Rozložení  
   
--   Styly  
+- Styly  
   
--   Vytváření datových vazeb  
+- Vytváření datových vazeb  
   
--   Globalizace  
+- Globalizace  
   
  <xref:System.Windows.Media.Visual> je vystavena jako veřejné abstraktní třída, ze kterého musí být podřízené třídy odvozeny. Následující obrázek znázorňuje hierarchii vizuální objekty, které jsou vystaveny [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
@@ -127,13 +127,13 @@ Pořadí operací DrawingGroup –
   
  Existuje několik bodů byste měli znát hierarchie vizuální objekty a vektorové grafiky instrukce seznamy:  
   
--   Řazení v hierarchii představuje pořadí vykreslování informací o vykreslování. Z kořenové vizuální prvek jsou podřízené prvky procházet zleva doprava a shora dolů. Pokud má element visual podřízené elementy, jsou vyčerpán před elementu na stejné úrovni.  
+- Řazení v hierarchii představuje pořadí vykreslování informací o vykreslování. Z kořenové vizuální prvek jsou podřízené prvky procházet zleva doprava a shora dolů. Pokud má element visual podřízené elementy, jsou vyčerpán před elementu na stejné úrovni.  
   
--   Elementy bez listový uzel v hierarchii, jako například <xref:System.Windows.Controls.ContentPresenter>, se používají k obsahovat podřízené elementy – neobsahují instrukce seznamy.  
+- Elementy bez listový uzel v hierarchii, jako například <xref:System.Windows.Controls.ContentPresenter>, se používají k obsahovat podřízené elementy – neobsahují instrukce seznamy.  
   
--   Pokud vizuální prvek obsahuje seznam vektorové grafiky instrukce a podřazené prvky prvku visual, seznamu instrukce v nadřazeného prvku visual je vykreslen před kreslení v některém z visual podřízené objekty.  
+- Pokud vizuální prvek obsahuje seznam vektorové grafiky instrukce a podřazené prvky prvku visual, seznamu instrukce v nadřazeného prvku visual je vykreslen před kreslení v některém z visual podřízené objekty.  
   
--   Položky v seznamu instrukce vektorové grafiky jsou vykreslovány zleva doprava.  
+- Položky v seznamu instrukce vektorové grafiky jsou vykreslovány zleva doprava.  
   
 <a name="visual_tree"></a>   
 ## <a name="visual-tree"></a>Vizuální strom  

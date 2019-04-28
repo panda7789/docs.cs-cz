@@ -3,11 +3,11 @@ title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění
 ms.date: 03/30/2017
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
 ms.openlocfilehash: 4492626c2cb0958f8aa79fa2b511d9aa9e90b16a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769509"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace
 Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte podle předchozí doporučení, jakož i následující doporučení.  
@@ -32,9 +32,9 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
 ## <a name="service-development"></a>Vývoj služby  
  WCF umožňuje definování kontraktů služby s použitím <xref:System.ServiceModel.ServiceContractAttribute> rozhraní nebo tříd. Doporučujeme použít atribut rozhraní, nikoli třída, protože to uděláte tak vytvoří definici kontraktu, která může být libovolný počet tříd různě implementována. Technologie ASP.NET 2.0 podporuje možnost použít <xref:System.Web.Services.WebService> atribut rozhraní, stejně jako třídy. Jak již bylo zmíněno, existuje ale vadu v technologii ASP.NET 2.0, podle kterého parametru Namespace <xref:System.Web.Services.WebService> atribut nemá žádný vliv při použití atributu na rozhraní namísto třídy. Protože je obecně vhodné změnit obor názvů služby z výchozí hodnoty `http://tempuri.org`, pomocí parametru Namespace <xref:System.Web.Services.WebService> atribut, jeden by měl pokračovat definování webových služeb ASP.NET s použitím <xref:System.ServiceModel.ServiceContractAttribute> Atribut rozhraní nebo tříd.  
   
--   Metody, které jsou definovány těchto rozhraní je možné máte jako malým množstvím kódu. Požádejte svou práci do jiné třídy delegáta. Nový typ služby WCF pak rovněž delegovat práci nepotřebují důležité do těchto tříd.  
+- Metody, které jsou definovány těchto rozhraní je možné máte jako malým množstvím kódu. Požádejte svou práci do jiné třídy delegáta. Nový typ služby WCF pak rovněž delegovat práci nepotřebují důležité do těchto tříd.  
   
--   Zadat explicitní názvy pro operace využívání služby `MessageName` parametr <xref:System.Web.Services.WebMethodAttribute>.  
+- Zadat explicitní názvy pro operace využívání služby `MessageName` parametr <xref:System.Web.Services.WebMethodAttribute>.  
   
     ```csharp  
     [WebMethod(MessageName="ExplicitName")]  
@@ -43,9 +43,9 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
      To je důležité, protože se liší od výchozí názvy poskytnutých WCF výchozí názvy pro operace v technologii ASP.NET. Poskytnutím explicitní názvy neměli spoléhat na výchozí hodnoty.  
   
--   Neprovádějte implementaci operace služby rozhraní ASP.NET Web s polymorfní metody, protože WCF nepodporuje implementaci operace s polymorfní metody.  
+- Neprovádějte implementaci operace služby rozhraní ASP.NET Web s polymorfní metody, protože WCF nepodporuje implementaci operace s polymorfní metody.  
   
--   Použití <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> zadat explicitní hodnoty záhlaví SOAPAction HTTP, pomocí které protokolu HTTP se budou směrovat požadavky do metody.  
+- Použití <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> zadat explicitní hodnoty záhlaví SOAPAction HTTP, pomocí které protokolu HTTP se budou směrovat požadavky do metody.  
   
     ```csharp  
     [WebMethod]  
@@ -55,7 +55,7 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
      Tento postup zajistí obejde museli spoléhat na výchozí hodnoty SOAPAction používané technologie ASP.NET a WCF se stejné.  
   
--   Vyhněte se použití rozšíření SOAP. Pokud rozšíření SOAP, pak určete, zda je účely, pro které jsou právě považovány za funkce, která je již poskytované WCF. Pokud se ve skutečnosti je to tento případ, pak zvažte možnost, které nejsou hned přijmout WCF.  
+- Vyhněte se použití rozšíření SOAP. Pokud rozšíření SOAP, pak určete, zda je účely, pro které jsou právě považovány za funkce, která je již poskytované WCF. Pokud se ve skutečnosti je to tento případ, pak zvažte možnost, které nejsou hned přijmout WCF.  
   
 ## <a name="state-management"></a>Správa stavu  
  Vyhněte se nutnosti udržovat stav služby. Pouze nemá zachování stavu vést k ohrožení škálovatelnost aplikace, ale stav mechanismy správy technologie ASP.NET a WCF jsou velmi odlišné, i když WCF podporovat mechanismy ASP.NET v režim kompatibility ASP.NET.  
@@ -118,11 +118,11 @@ throw new SoapException(
 ## <a name="security"></a>Zabezpečení  
  Následují některá doporučení zabezpečení.  
   
--   Vyhněte se použití profilů ASP.NET 2.0, jako je použití by omezit použití režim integrace ASP.NET Pokud služby byl migrován a WCF.  
+- Vyhněte se použití profilů ASP.NET 2.0, jako je použití by omezit použití režim integrace ASP.NET Pokud služby byl migrován a WCF.  
   
--   Vyhněte se použití seznamů ACL pro řízení přístupu ke službám, jako rozhraní ASP.NET Web services podporuje seznamy řízení přístupu pomocí Internetové informační služby (IIS), WCF nepodporuje, protože rozhraní ASP.NET Web services závisí na službě IIS pro hostování a WCF nutně nemusí být hostovaná ve službě IIS.  
+- Vyhněte se použití seznamů ACL pro řízení přístupu ke službám, jako rozhraní ASP.NET Web services podporuje seznamy řízení přístupu pomocí Internetové informační služby (IIS), WCF nepodporuje, protože rozhraní ASP.NET Web services závisí na službě IIS pro hostování a WCF nutně nemusí být hostovaná ve službě IIS.  
   
--   Zvažte použití zprostředkovatele rolí ASP.NET 2.0 pro ověřování přístupu k prostředkům služby.  
+- Zvažte použití zprostředkovatele rolí ASP.NET 2.0 pro ověřování přístupu k prostředkům služby.  
   
 ## <a name="see-also"></a>Viz také:
 

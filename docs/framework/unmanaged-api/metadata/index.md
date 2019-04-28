@@ -9,14 +9,14 @@ ms.assetid: 10cfea92-db5e-4bcb-b301-ef029bcf77a3
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 194184f6ddafa1341fbb731ba51e9635ea66ffa3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768781"
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Metadata (referenční dokumentace nespravovaného rozhraní API)
-Metadat rozhraní API umožňuje klientovi, jako je například kompilátor, ke generování nebo získat přístup k metadatům komponenty bez typy načítá modulem common language runtime (CLR).  
+Metadata API umožňuje klientovi, například kompilátor, generovat nebo získat přístup k metadatům komponenty bez typů načítání modulem common language runtime (CLR).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
@@ -26,10 +26,10 @@ Metadat rozhraní API umožňuje klientovi, jako je například kompilátor, ke 
  Popisuje nespravované globální statické funkce, které používá metadat rozhraní API.  
   
  [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
- Popisuje nespravovaná vyčíslení, které používá metadat rozhraní API.  
+ Popisuje nespravované výčty, které používá metadat rozhraní API.  
   
  [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
- Popisuje nespravované struktury, která používá metadat rozhraní API.  
+ Popisuje nespravované struktury, které používá metadat rozhraní API.  
   
  [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)  
  Popisuje nespravovaná sjednocení, které používá metadat rozhraní API.

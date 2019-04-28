@@ -3,11 +3,11 @@ title: Direktivy kompilátoru
 description: Další informace o F# direktivy preprocesoru jazyka, direktivy podmíněné kompilace, direktivy line a direktivy kompilátoru.
 ms.date: 12/10/2018
 ms.openlocfilehash: 3fade7407f84b00163bd5b3d7774104bce8a25af
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766100"
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
@@ -21,7 +21,7 @@ Následující tabulka uvádí direktivy preprocesoru, které jsou k dispozici v
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#if` *Symbol*|Podporuje podmíněné kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována. Můžete také bude negovat symbol s `!`.|
+|`#if` *symbol*|Podporuje podmíněné kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována. Můžete také bude negovat symbol s `!`.|
 |`#else`|Podporuje podmíněné kompilace. Označí části kódu, které chcete zahrnout, pokud symbol použili s předchozí `#if` není definován.|
 |`#endif`|Podporuje podmíněné kompilace. Označuje konec podmíněné části kódu.|
 |`#`[řádku] *int*,<br/>`#`[řádku] *int* *řetězec*,<br/>`#`[řádku] *int* *doslovný řetězec*|Určuje původní zdrojový kód řádku a název souboru, pro ladění. Tato funkce je k dispozici pro nástroje, které generují F# zdrojový kód.|

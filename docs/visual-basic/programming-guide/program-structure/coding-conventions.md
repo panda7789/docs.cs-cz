@@ -7,67 +7,67 @@ helpviewer_keywords:
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
 ms.openlocfilehash: f73648888b28c349104a70e78c29eb208d438b78
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761686"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic – konvence kódování
 Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto tématu. Pokud budete postupovat podle stejné konvence psaní kódu, může získat následující výhody:  
   
--   Váš kód bude mít jednotný vzhled tak, aby se čtenáři mohli lépe soustředit na obsah ne na rozložení.  
+- Váš kód bude mít jednotný vzhled tak, aby se čtenáři mohli lépe soustředit na obsah ne na rozložení.  
   
--   Čtenáři pochopí váš kód rychle vzhledem k tomu, že budou mít předpoklady na základě předchozích zkušeností.  
+- Čtenáři pochopí váš kód rychle vzhledem k tomu, že budou mít předpoklady na základě předchozích zkušeností.  
   
--   Můžete zkopírovat, změnit a mnohem snazší údržbu kódu.  
+- Můžete zkopírovat, změnit a mnohem snazší údržbu kódu.  
   
--   Zajistíte, že váš kód ukazuje "osvědčené postupy" v jazyce Visual Basic.  
+- Zajistíte, že váš kód ukazuje "osvědčené postupy" v jazyce Visual Basic.  
   
 ## <a name="naming-conventions"></a>Zásady vytváření názvů  
   
--   Informace o pokyny pro pojmenování naleznete v tématu [pokyny pro pojmenování](../../../standard/design-guidelines/naming-guidelines.md) tématu.  
+- Informace o pokyny pro pojmenování naleznete v tématu [pokyny pro pojmenování](../../../standard/design-guidelines/naming-guidelines.md) tématu.  
   
--   Nepoužívejte "My" nebo "my" jako součást názvu proměnné. Tento postup vytvoří zmatení s `My` objekty.  
+- Nepoužívejte "My" nebo "my" jako součást názvu proměnné. Tento postup vytvoří zmatení s `My` objekty.  
   
--   Nemusíte změnit názvy objektů v automaticky vygenerovaném kódu, aby se daly přizpůsobit pokynům.  
+- Nemusíte změnit názvy objektů v automaticky vygenerovaném kódu, aby se daly přizpůsobit pokynům.  
   
 ## <a name="layout-conventions"></a>Konvence rozložení  
   
--   Vložte tabulátory mezer a použijte inteligentní odsazení o čtyři místa.  
+- Vložte tabulátory mezer a použijte inteligentní odsazení o čtyři místa.  
   
--   Použití **Hezký výpis (přeformátování) kódu** k přeformátování kódu v editoru kódu. Další informace najdete v tématu [možnosti, textový Editor, Basic (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
+- Použití **Hezký výpis (přeformátování) kódu** k přeformátování kódu v editoru kódu. Další informace najdete v tématu [možnosti, textový Editor, Basic (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
   
--   Použijte pouze jeden příkaz na každém řádku. Nepoužívejte znak oddělovače řádku jazyka Visual Basic (:).  
+- Použijte pouze jeden příkaz na každém řádku. Nepoužívejte znak oddělovače řádku jazyka Visual Basic (:).  
   
--   Nepoužívejte znak pokračování explicitní řádku "_" ve prospěch implicitní pokračování řádku bez ohledu na to jazyk umožňuje.  
+- Nepoužívejte znak pokračování explicitní řádku "_" ve prospěch implicitní pokračování řádku bez ohledu na to jazyk umožňuje.  
   
--   Použijte pouze jednu deklaraci na každém řádku.  
+- Použijte pouze jednu deklaraci na každém řádku.  
   
--   Pokud **Hezký výpis (přeformátování) kódu** nebude pokračovací řádky automaticky, ručně je odsaďte pokračování řádků jednu zarážku tabulátoru. Nicméně vždy vlevo zarovnávejte položky v seznamu.  
+- Pokud **Hezký výpis (přeformátování) kódu** nebude pokračovací řádky automaticky, ručně je odsaďte pokračování řádků jednu zarážku tabulátoru. Nicméně vždy vlevo zarovnávejte položky v seznamu.  
   
     ```  
     a As Integer,  
     b As Integer  
     ```  
   
--   Přidejte alespoň jeden prázdný řádek mezi definice metody a vlastnosti.  
+- Přidejte alespoň jeden prázdný řádek mezi definice metody a vlastnosti.  
   
 ## <a name="commenting-conventions"></a>Konvence při psaní komentářů  
   
--   Vložte poznámky na samostatný řádek místo na konci řádku kódu.  
+- Vložte poznámky na samostatný řádek místo na konci řádku kódu.  
   
--   Začněte text komentáře velkým písmenem a ukončit komentář tečkou.  
+- Začněte text komentáře velkým písmenem a ukončit komentář tečkou.  
   
--   Vložte jednu mezeru mezi oddělovač komentáře (') a text komentáře.  
+- Vložte jednu mezeru mezi oddělovač komentáře (') a text komentáře.  
   
      [!code-vb[VbVbalrGuidelines#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#2)]  
   
--   Nepoužívejte k ohraničení komentářů formátované bloky hvězdičky z obou stran.  
+- Nepoužívejte k ohraničení komentářů formátované bloky hvězdičky z obou stran.  
   
 ## <a name="program-structure"></a>Struktura programu  
   
--   Při použití `Main` metody, použijte výchozí konstrukci pro nové aplikace konzoly a použít `My` pro argumenty příkazového řádku.  
+- Při použití `Main` metody, použijte výchozí konstrukci pro nové aplikace konzoly a použít `My` pro argumenty příkazového řádku.  
   
      [!code-vb[VbVbalrGuidelines#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#3)]  
   
@@ -75,11 +75,11 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
 ### <a name="string-data-type"></a>Datový typ String  
   
--   Chcete-li řetězení řetězců, použijte znak ampersand (&).  
+- Chcete-li řetězení řetězců, použijte znak ampersand (&).  
   
      [!code-vb[VbVbalrGuidelines#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#4)]  
   
--   K přidání řetězce ve smyčkách použijte <xref:System.Text.StringBuilder> objektu.  
+- K přidání řetězce ve smyčkách použijte <xref:System.Text.StringBuilder> objektu.  
   
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
@@ -90,11 +90,11 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
 ### <a name="unsigned-data-type"></a>Nepodepsaný datový typ  
   
--   Použití `Integer` místo typů bez znaménka, s výjimkou případů, kdy jsou nezbytné.  
+- Použití `Integer` místo typů bez znaménka, s výjimkou případů, kdy jsou nezbytné.  
   
 ### <a name="arrays"></a>Pole  
   
--   Použijte krátkou syntaxi, když inicializujete pole v řádku deklarace. Například použijte následující syntaxi.  
+- Použijte krátkou syntaxi, když inicializujete pole v řádku deklarace. Například použijte následující syntaxi.  
   
      [!code-vb[VbVbalrGuidelines#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#8)]  
   
@@ -102,7 +102,7 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
      [!code-vb[VbVbalrGuidelines#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#9)]  
   
--   Vložte pole označení typu, nikoli na proměnnou. Například použijte následující syntaxi:  
+- Vložte pole označení typu, nikoli na proměnnou. Například použijte následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#11)]  
   
@@ -110,7 +110,7 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
      [!code-vb[VbVbalrGuidelines#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#10)]  
   
--   Když deklarujete a inicializujete pole základních datových typů, použijte syntax {}. Například použijte následující syntaxi:  
+- Když deklarujete a inicializujete pole základních datových typů, použijte syntax {}. Například použijte následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#12)]  
   
@@ -131,7 +131,7 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
 ### <a name="new-keyword"></a>New – klíčové slovo  
   
--   Použijte krátkou instanciaci. Například použijte následující syntaxi:  
+- Použijte krátkou instanciaci. Například použijte následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#21)]  
   
@@ -139,25 +139,25 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
   
      [!code-vb[VbVbalrGuidelines#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#22)]  
   
--   Pro nové objekty namísto konstruktoru bez parametrů, použijte inicializátory objektů:  
+- Pro nové objekty namísto konstruktoru bez parametrů, použijte inicializátory objektů:  
   
      [!code-vb[VbVbalrGuidelines#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#23)]  
   
 ### <a name="event-handling"></a>Zpracování událostí  
   
--   Použití `Handles` spíše než `AddHandler`:  
+- Použití `Handles` spíše než `AddHandler`:  
   
      [!code-vb[VbVbalrGuidelines#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#24)]  
   
--   Použití `AddressOf`a nikoli instanci delegáta explicitně:  
+- Použití `AddressOf`a nikoli instanci delegáta explicitně:  
   
      [!code-vb[VbVbalrGuidelines#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#25)]  
   
--   Když definujete událost, použijte krátkou syntaxi a nechte kompilátor definovat delegáta:  
+- Když definujete událost, použijte krátkou syntaxi a nechte kompilátor definovat delegáta:  
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
--   Nelze ověřit, zda je událost `Nothing` (null), dříve než zavoláte `RaiseEvent` metody. `RaiseEvent` Vyhledá `Nothing` předtím, než vyvolá událost.  
+- Nelze ověřit, zda je událost `Nothing` (null), dříve než zavoláte `RaiseEvent` metody. `RaiseEvent` Vyhledá `Nothing` předtím, než vyvolá událost.  
   
 ### <a name="using-shared-members"></a>Použití sdílených členů  
  Volání `Shared` členy pomocí názvu třídy, nikoli z proměnné instance.  
@@ -165,43 +165,43 @@ Microsoft vyvíjí vzorky a dokumentaci, postupujte podle pokynů v tomto témat
 ### <a name="use-xml-literals"></a>Použijte literály XML  
  Literály XML zjednodušují zvládnout běžné úkoly, které se vyskytnou při práci s XML (například načtení, dotaz a transformace). Při vývoji v XML postupujte podle následujících pokynů:  
   
--   Použijte literály XML k vytváření dokumentů XML a fragmentů namísto přímého volání rozhraní API XML.  
+- Použijte literály XML k vytváření dokumentů XML a fragmentů namísto přímého volání rozhraní API XML.  
   
--   Importujte obory názvů XML na úrovni souboru nebo projektu, abyste mohli využít optimalizace výkonu pro literály XML.  
+- Importujte obory názvů XML na úrovni souboru nebo projektu, abyste mohli využít optimalizace výkonu pro literály XML.  
   
--   Použijte vlastnosti osy XML pro přístup k prvkům a atributům v dokumentu XML.  
+- Použijte vlastnosti osy XML pro přístup k prvkům a atributům v dokumentu XML.  
   
--   Použijte vložené výrazy pro zahrnutí hodnota a vytvoření XML z existujících hodnot namísto použití volání rozhraní API, jako `Add` metody:  
+- Použijte vložené výrazy pro zahrnutí hodnota a vytvoření XML z existujících hodnot namísto použití volání rozhraní API, jako `Add` metody:  
   
      [!code-vb[VbVbalrGuidelines#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#27)]  
   
 ### <a name="linq-queries"></a>Dotazy LINQ  
   
--   Použijte smysluplné názvy proměnných dotazu:  
+- Použijte smysluplné názvy proměnných dotazu:  
   
      [!code-vb[VbVbalrGuidelines#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#28)]  
   
--   Zadejte názvy prvků v dotazu a ujistěte se, že názvy vlastností anonymních typů mají správnou velikost písmen Pascal použití malých a velkých písmen:  
+- Zadejte názvy prvků v dotazu a ujistěte se, že názvy vlastností anonymních typů mají správnou velikost písmen Pascal použití malých a velkých písmen:  
   
      [!code-vb[VbVbalrGuidelines#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#29)]  
   
--   Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku nejednoznačné. Například pokud dotaz vrátí zákazníka, název a ID objednávky, přejmenujte je, než byste museli opustit jako `Name` a `ID` ve výsledku:  
+- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku nejednoznačné. Například pokud dotaz vrátí zákazníka, název a ID objednávky, přejmenujte je, než byste museli opustit jako `Name` a `ID` ve výsledku:  
   
      [!code-vb[VbVbalrGuidelines#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#30)]  
   
--   Odvození typu použijte v deklaraci proměnné dotazu a proměnných rozsahu:  
+- Odvození typu použijte v deklaraci proměnné dotazu a proměnných rozsahu:  
   
      [!code-vb[VbVbalrGuidelines#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#31)]  
   
--   Zarovnejte klauzule dotazu v `From` – příkaz:  
+- Zarovnejte klauzule dotazu v `From` – příkaz:  
   
      [!code-vb[VbVbalrGuidelines#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#32)]  
   
--   Použití `Where` klauzule před dalšími klauzulemi dotazu tak, aby pozdější klauzule dotazu pracovaly na filtrované sadě dat:  
+- Použití `Where` klauzule před dalšími klauzulemi dotazu tak, aby pozdější klauzule dotazu pracovaly na filtrované sadě dat:  
   
      [!code-vb[VbVbalrGuidelines#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#33)]  
   
--   Použití `Join` klauzule k explicitnímu definování operace spojení namísto použití `Where` klauzule k implicitnímu definování operace spojení:  
+- Použití `Join` klauzule k explicitnímu definování operace spojení namísto použití `Where` klauzule k implicitnímu definování operace spojení:  
   
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   

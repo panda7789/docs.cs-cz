@@ -9,11 +9,11 @@ helpviewer_keywords:
 - focus in applications [WPF]
 ms.assetid: 0230c4eb-0c8a-462b-ac4b-ae3e511659f4
 ms.openlocfilehash: 72b866d714e6a77020bdb74843c3aaa0ba0c3278
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073881"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703423"
 ---
 # <a name="focus-overview"></a>Přehled fokusu
 V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] existují dva hlavní koncepty, které se týkají fokus: klávesnice fokus a logický fokus.  Fokus klávesnice odkazují na elementu, který přijímá vstup z klávesnice a logický fokus na prvek fokus obor, který má právě fokus.  Tyto koncepty jsou podrobně popsány v tomto přehledu.  Vysvětlení rozdílu v těchto konceptů je důležité vytvářet komplexní aplikace, které mají více oblastí, kde lze získat fokus.  

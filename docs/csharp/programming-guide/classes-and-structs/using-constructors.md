@@ -9,8 +9,8 @@ ms.openlocfilehash: 1f47459fc5002118d94cc8d389f35c18fa2c611a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703280"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Použití konstruktorů (Průvodce programováním v C#)
 Při [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) je vytvořen, se nazývá konstruktoru. Konstruktory mají stejný název jako třídy nebo struktury a obvykle inicializují datové členy nového objektu.  

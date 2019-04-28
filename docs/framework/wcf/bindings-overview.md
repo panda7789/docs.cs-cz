@@ -5,11 +5,11 @@ helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
 ms.openlocfilehash: 90da8f4a2b4efeb684cbe9e5513084e6d1c6f515
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703683"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  
@@ -32,13 +32,13 @@ Vazby jsou objekty, které se používají k určení detaily komunikace, které
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem  
  Informace v vazbu může být složité a některá nastavení nemusí být kompatibilní s ostatními. Z tohoto důvodu WCF obsahuje sadu vazeb poskytovaných systémem. Tyto vazby jsou navržené tak, aby pokryl většinu požadavků aplikace. Následující třídy představují některé příklady vazeb poskytovaných systémem:  
   
--   <xref:System.ServiceModel.BasicHttpBinding>: Protokol HTTP vazby vhodné pro připojení k webovým službám, který odpovídá WS-I Basic Profile specification (například webové služby technologie ASP.NET na základě služby).  
+- <xref:System.ServiceModel.BasicHttpBinding>: Protokol HTTP vazby vhodné pro připojení k webovým službám, který odpovídá WS-I Basic Profile specification (například webové služby technologie ASP.NET na základě služby).  
   
--   <xref:System.ServiceModel.WSHttpBinding>: Interoperabilní vazbu vhodný pro připojení ke koncovým bodům, které odpovídají WS-* protokoly.  
+- <xref:System.ServiceModel.WSHttpBinding>: Interoperabilní vazbu vhodný pro připojení ke koncovým bodům, které odpovídají WS-* protokoly.  
   
--   <xref:System.ServiceModel.NetNamedPipeBinding>: Používá [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro připojení k jiné koncových bodů WCF na stejném počítači.  
+- <xref:System.ServiceModel.NetNamedPipeBinding>: Používá [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] pro připojení k jiné koncových bodů WCF na stejném počítači.  
   
--   <xref:System.ServiceModel.NetMsmqBinding>: Používá [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] k vytvoření zprávy ve frontě připojení pomocí dalších koncových bodů WCF.  
+- <xref:System.ServiceModel.NetMsmqBinding>: Používá [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] k vytvoření zprávy ve frontě připojení pomocí dalších koncových bodů WCF.  
 
 - <xref:System.ServiceModel.NetTcpBinding>: Tato vazba nabízí vyšší výkon než vazby protokolu HTTP a je ideální pro použití v místní síti.
   

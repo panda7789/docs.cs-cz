@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3be6f2b9454ed2f74d2cc6792cd9aaa2c25215db
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765203"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo – struktura
 Poskytuje podrobnosti o `Event_MDAFired` událost, která se aktivuje vytvořením Pomocník spravovaného ladění (MDA).  
@@ -47,9 +47,9 @@ typedef struct _MDAInfo {
   
  Modul runtime provede následující kroky, když se aktivuje událost, která se aktivuje vytvořením MDA:  
   
--   Pokud nebyla zaregistrována hostitele [iactiononclrevent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) instance voláním [iclroneventmanager::registeractiononevent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) upozornit `Event_MDAFired` události, modul runtime bude pokračovat jeho výchozí chování bez hostitele.  
+- Pokud nebyla zaregistrována hostitele [iactiononclrevent –](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md) instance voláním [iclroneventmanager::registeractiononevent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) upozornit `Event_MDAFired` události, modul runtime bude pokračovat jeho výchozí chování bez hostitele.  
   
--   Pokud hostitel je zaregistrovaná obslužná rutina pro tuto událost, zkontroluje modulu runtime, zda je připojen ladicí program k procesu. Pokud se jedná, modul runtime se dělí do ladicího programu. Pokud ladicí program bude pokračovat, volá do hostitele. Pokud je připojen ladicí program nebyl, modul runtime zavolá `IActionOnCLREvent::OnEvent` a předává ukazatel `MDAInfo` instance jako `data` parametr.  
+- Pokud hostitel je zaregistrovaná obslužná rutina pro tuto událost, zkontroluje modulu runtime, zda je připojen ladicí program k procesu. Pokud se jedná, modul runtime se dělí do ladicího programu. Pokud ladicí program bude pokračovat, volá do hostitele. Pokud je připojen ladicí program nebyl, modul runtime zavolá `IActionOnCLREvent::OnEvent` a předává ukazatel `MDAInfo` instance jako `data` parametr.  
   
  K aktivaci mda a která vás upozorní, když MDA aktivováno, můžete zvolit hostitele. To dává možnost přepsat výchozí chování a na spravovaná vlákna, která vyvolala událost, chcete-li zabránit poškození stav procesu zrušení hostitele. Další informace o používání mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   

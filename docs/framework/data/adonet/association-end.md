@@ -3,27 +3,27 @@ title: association end
 ms.date: 03/30/2017
 ms.assetid: 2c345213-0296-4d90-ac6d-cef179798a75
 ms.openlocfilehash: e549254533f8362ce3475fb3aa5dbaffb3e900e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769611"
 ---
 # <a name="association-end"></a>association end
 *End přidružení* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) na jednom konci [přidružení](../../../../docs/framework/data/adonet/association-type.md) a počet entit zadejte instancí, které mohou existovat, které končí přidružení. Zakončení jsou definované jako součást přidružení; přidružení musí mít přesně dva elementy přidružení. [Vlastnosti navigace](../../../../docs/framework/data/adonet/navigation-property.md) umožňují navigace z end přidružení jednoho na druhý.  
   
  Definici end přidružení obsahuje následující informace:  
   
--   Jeden z typů entit, která je součástí přidružení. (Povinné)  
+- Jeden z typů entit, která je součástí přidružení. (Povinné)  
   
     > [!NOTE]
     >  Pro daný přidružení pro každý konec asociace zadán typ entity může být stejné. Tím se vytvoří vlastní přidružení.  
   
--   [Násobnost end přidružení](../../../../docs/framework/data/adonet/association-end-multiplicity.md) , která určuje počet instancí typu entity, které mohou být na jednom konci přidružení. Násobnost end přidružení může mít hodnotu jedna (1), žádný nebo jeden (0..1) nebo mnoho (\*).  
+- [Násobnost end přidružení](../../../../docs/framework/data/adonet/association-end-multiplicity.md) , která určuje počet instancí typu entity, které mohou být na jednom konci přidružení. Násobnost end přidružení může mít hodnotu jedna (1), žádný nebo jeden (0..1) nebo mnoho (\*).  
   
--   Název přidružení. (Volitelné)  
+- Název přidružení. (Volitelné)  
   
--   Informace o operacích, které se provádí na konci přidružení, jako je například kaskádové odstranění. (Volitelné)  
+- Informace o operacích, které se provádí na konci přidružení, jako je například kaskádové odstranění. (Volitelné)  
   
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `PublishedBy` a `WrittenBy`. Konec asociace `PublishedBy` přidružení se `Book` a `Publisher` typy entit. Násobnost `Publisher` end je jedna (1) a násobnost `Book` end je mnoho (\*), označující, že vydavatel publikuje mnoho knih a knihy se publikuje vydavatele.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC31183
 ms.assetid: 0ab1dbce-8397-4959-b2cd-f58798b051a0
 ms.openlocfilehash: dd5e67d573176a6b1a011b3191fca9607af85538
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55279874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766620"
 ---
 # <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>Identifikátor URI oboru názvů XML `http://www.w3.org/XML/1998/namespace`; může být vázaný jenom s xmlns.
 Identifikátor URI `http://www.w3.org/XML/1998/namespace` se používá v deklarace oboru názvů XML. Pomocí tohoto identifikátoru URI je vyhrazený obor názvů a nemůže být součástí deklarace oboru názvů XML.  

@@ -3,11 +3,11 @@ title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
 ms.openlocfilehash: 70fb2df1d37af23d9ec19932806989ce3329bf3c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768911"
 ---
 # <a name="messagelogging"></a>\<messageLogging>
 Tento prvek definuje nastavení možností protokolování zpráv Windows Communication Foundation (WCF).  

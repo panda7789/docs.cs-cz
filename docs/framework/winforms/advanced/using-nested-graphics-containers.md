@@ -10,11 +10,11 @@ helpviewer_keywords:
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
 ms.openlocfilehash: 6bbf7918ccff184e597204b35aa005ab17d8d8af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766266"
 ---
 # <a name="using-nested-graphics-containers"></a>Použití vnořených grafických kontejnerů
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje kontejnery, které vám umožní dočasně nahradit nebo rozšířit části stavu v <xref:System.Drawing.Graphics> objektu. Vytvořte kontejner zavoláním <xref:System.Drawing.Graphics.BeginContainer%2A> metodu <xref:System.Drawing.Graphics> objektu. Můžete volat <xref:System.Drawing.Graphics.BeginContainer%2A> opakovaně k formulářů vnořeného kontejnery. Každé volání <xref:System.Drawing.Graphics.BeginContainer%2A> musí být párována s volání <xref:System.Drawing.Graphics.EndContainer%2A>.  

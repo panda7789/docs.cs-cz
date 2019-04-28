@@ -9,11 +9,11 @@ helpviewer_keywords:
 - RadioButton control [Windows Forms]
 ms.assetid: e895b2a5-9bcb-4486-b165-eaf4c3ea9644
 ms.openlocfilehash: cf2da32dd286e03b89cfa59e09d38eceb030f5ea
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57725298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755399"
 ---
 # <a name="radiobutton-control-windows-forms"></a>RadioButton – ovládací prvek (Windows Forms)
 Windows Forms `RadioButton` ovládací prvky poskytují sadu vzájemně se vylučující možnosti dva nebo více uživateli. Zatímco přepínací tlačítka a zaškrtávací políčka může zdát, podobně jako funkce, je důležitý rozdíl: když uživatel vybere přepínací tlačítko, také nelze vybrat dalších přepínacích tlačítek ve stejné skupině.  

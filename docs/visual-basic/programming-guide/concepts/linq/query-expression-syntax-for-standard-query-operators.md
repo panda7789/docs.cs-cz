@@ -3,11 +3,11 @@ title: Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eb978d86-d3b5-497b-95ce-a054bea8f510
 ms.openlocfilehash: bdbca93d5898e363ccf62b13231163573e2ba972
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766529"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-visual-basic"></a>Syntaxe výrazu dotazu pro standardní operátory dotazu (Visual Basic)
 Některé častěji používané operátory standardního dotazu mít vyhrazené klíčové slovo syntaxe jazyka Visual Basic, umožňující volat v rámci *výrazu dotazu*. Výraz dotazu je lépe čitelný, jinou formu vyjádření dotazu než jeho *založených na volání metody* ekvivalentní. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace.  

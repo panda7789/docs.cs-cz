@@ -9,87 +9,87 @@ ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 059fadc5607e76b871083682136fda542ae9bacf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33462049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758194"
 ---
 # <a name="profiling-interfaces"></a>Rozhraní pro profilaci
-Tato část popisuje nespravovaná rozhraní, které vám umožní profilu program, který je vykonáván common language runtime (CLR).  
+Tato část popisuje nespravovaná rozhraní, které vám umožní profilování program, který se provádí modulem common language runtime (CLR).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ICLRProfiling – rozhraní](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-interface.md)  
- Poskytuje [attachprofiler –](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) metoda, která umožňuje profileru pro připojení k spuštěných procesů.  
+ Poskytuje [AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) metodu, která umožňuje profileru připojit ke spuštěnému procesu.  
   
  [ICorProfilerAssemblyReferenceProvider – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerassemblyreferenceprovider-interface.md)  
- Umožňuje profileru k informování CLR odkazů na sestavení, které profileru přidá [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání.  
+ Umožňuje profileru informovat CLR odkazy na sestavení, které profiler přidá [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání.  
   
  [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- Poskytuje metody, které jsou používány modulu CLR profileru kód upozornit, když dojde k události, ke kterým se připojila profileru.  
+ Poskytuje metody, které se používají modulem CLR upozornění profileru kód, pokud dojde k událostem, ke kterým se připojila profiler.  
   
  [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)  
  Rozšiřuje `ICorProfilerCallback` rozhraní s zpětná volání, které jsou podporovány v rozhraní .NET Framework 2.0 a novějších verzích.  
   
  [ICorProfilerCallback3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md)  
- Poskytuje metody zpětného volání, které modul CLR používá ke komunikaci připojení a odpojení informace o stavu do profileru.  
+ Poskytuje metody zpětného volání, které používá modul CLR pro komunikaci připojení a odpojení profileru informace o stavu.  
   
  [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)  
- Poskytuje metody zpětného volání, které modul CLR používá ke sdělování informací profileru.  
+ Poskytuje metody zpětného volání, které používá modul CLR ke sdělování informací profileru.  
   
  [ICorProfilerCallback5 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md)  
- Poskytne metodu, která identifikuje přechodné uzavření objekty odkazuje kořeny kolekce paměti.  
+ Poskytuje metodu, která identifikuje přechodné uzavření objekty odkazuje kořeny kolekce uvolnění paměti.  
   
  [ICorProfilerCallback6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback6-interface.md)  
- Poskytuje metody zpětného volání, která používá modulu CLR oznámit profileru, který načítá sestavení.  
+ Poskytuje metodu zpětného volání, která používá modul CLR oznámit profiler, který se načítá sestavení.  
   
  [ICorProfilerCallback7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)  
- Poskytuje metody zpětného volání, která používá modul common language runtime profileru oznámit, že se aktualizuje symbol datový proud přidružený modul v paměti.  
+ Poskytuje metodu zpětného volání, která používá modul common language runtime pro oznámení profileru, je aktualizovaný symbol proud přidružený k modulu v paměti.  
 
-[ICorProfilerCallback8 rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback8-interface.md)  
-Poskytuje metody zpětného volání, které používá modul common language runtime oznámit profileru, který má JIT – kompilace dynamické metody spuštění a dokončení.
+[ICorProfilerCallback8 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback8-interface.md)  
+Poskytuje metody zpětného volání, které používá modul common language runtime pro oznámení profileru, který je spuštěn a dokončení kompilace JIT dynamické metody.
 
-[ICorProfilerCallback9 rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback9-interface.md)  
-Poskytuje metody zpětného volání, která používá modul common language runtime oznámit profileru, který je dynamická metoda shromážděných a následně uvolňování paměti.
+[ICorProfilerCallback9 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback9-interface.md)  
+Poskytuje metodu zpětného volání, která používá modul common language runtime pro oznámení profileru, který je dynamická metoda uvolňování paměti shromažďují a následně byla uvolněna.
 
  [ICorProfilerFunctionControl – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md)  
- Poskytuje metody, které umožňují kódu profileru ke komunikaci s CLR řídit, jak by měla JIT kompilátoru generování kódu při nutnosti rekompilace konkrétní metody.  
+ Poskytuje metody, které umožňují profileru kód ke komunikaci s modulem CLR řídit, jak by měl kompilátor JIT generování kódu při opětovné kompilaci konkrétní metody.  
   
  [ICorProfilerFunctionEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)  
- Poskytuje metody pro postupně iteraci přes kolekci funkcí v modulu CLR.  
+ Poskytuje metody pro postupně iteraci prostřednictvím kolekce funkcí v CLR.  
   
  [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- Poskytuje metody pro použití profilery kódu ke komunikaci s CLR řízení sledování událostí a vyžádání informací.  
+ Poskytuje metody pro použití u profilery kódu ke komunikaci s modulem CLR řídit sledování událostí a žádost o informace.  
   
  [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)  
- Rozšiřuje `ICorProfilerInfo` rozhraní s metod podporovaných v rozhraní .NET Framework 2.0 a novějších verzích.  
+ Rozšiřuje `ICorProfilerInfo` rozhraní s metodami, které jsou podporovány v rozhraní .NET Framework 2.0 a novějších verzích.  
   
  [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
  Rozšiřuje `ICorProfilerInfo2` rozhraní s metod podporovaných v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] a novějších verzích.  
   
  [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
- Poskytuje metody, které profilery kódu se používají ke komunikaci s CLR řízení události monitorování a k požadavku na informace.  
+ Poskytuje metody, které profilery kódu se používají ke komunikaci s modulem CLR k řízení sledování událostí a požádat o informace.  
   
  [ICorProfilerInfo5 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-interface.md)  
- Poskytuje metody pro použití profilery kódu ke komunikaci s CLR řízení události monitorování.  
+ Poskytuje metody pro použití u profilery kódu ke komunikaci s modulem CLR řízení události monitorování.  
   
  [ICorProfilerInfo6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo6-interface.md)  
- Poskytuje enumerátor pro všechny metody, který patří k dané NGen modulu a které jsou vložená v těle dané metody.  
+ Poskytuje enumerátor pro všechny metody, která patří do daného modulu NGen a, které jsou vloženy do těla dané metody.  
   
  [ICorProfilerInfo7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo7-interface.md)  
- Poskytuje metodu použít nově definovaná metadata modulu, který poskytuje přístup k datovému proudu symbol v paměti.  
+ Poskytuje způsob, jak použít nově definované v modulu metadat, který poskytuje přístup k datovému proudu symbolu v paměti.  
   
  [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
- Poskytuje metody pro postupně iteraci prostřednictvím kolekce moduly zavedené aplikace nebo profileru.  
+ Poskytuje metody pro postupně iteraci prostřednictvím kolekce moduly načtené aplikace nebo profileru.  
   
  [ICorProfilerObjectEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)  
- Poskytuje metody pro postupně iteraci přes kolekci ukotvené objektů, které jsou generovány nástrojem [Ngen.exe (Generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Poskytuje metody, které postupně iterovat přes kolekci zmrazené objekty, které se vygenerovaly [Ngen.exe (Generátor nativních obrázků)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
   
  [ICorProfilerThreadEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
- Poskytuje metody pro postupně iteraci prostřednictvím kolekce vláken v modulu CLR.  
+ Poskytuje metody pro postupně iterovat přes kolekci vláken v modulu CLR.  
   
  [IMethodMalloc – rozhraní](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md)  
- Poskytuje [alokační](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md) metoda přidělení paměti pro nový tělo funkce (MSIL intermediate language) společnosti Microsoft.  
+ Poskytuje [alokační](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md) metoda přidělení paměti pro nové tělo funkce Microsoft intermediate language (MSIL).  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  

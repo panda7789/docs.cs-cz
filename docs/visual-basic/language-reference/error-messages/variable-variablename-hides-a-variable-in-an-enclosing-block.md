@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30616
 ms.assetid: e7658ebc-da45-451b-a409-a0f8915f0beb
 ms.openlocfilehash: 15c35cbb829bec782771b584ea25b111b81b5e1f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827130"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766882"
 ---
 # <a name="variable-variablename-hides-a-variable-in-an-enclosing-block"></a>Proměnná '\<NázevProměnné >' skrývá proměnnou v nadřízeném bloku
 Proměnné v bloku má stejný název jako jiná místní proměnná.  
@@ -21,7 +21,7 @@ Proměnné v bloku má stejný název jako jiná místní proměnná.
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Přejmenujte proměnnou v uzavřeném bloku tak, že není stejný jako další místní proměnné. Příklad:  
+- Přejmenujte proměnnou v uzavřeném bloku tak, že není stejný jako další místní proměnné. Příklad:  
   
     ```  
     Dim a, b, x As Integer  
@@ -30,9 +30,9 @@ Proměnné v bloku má stejný název jako jiná místní proměnná.
     End If  
     ```  
   
--   Běžnou příčinou této chyby je použití `Catch e As Exception` uvnitř obslužné rutiny události. Pokud tomu tak, `Catch` proměnná bloku `ex` spíše než `e`.  
+- Běžnou příčinou této chyby je použití `Catch e As Exception` uvnitř obslužné rutiny události. Pokud tomu tak, `Catch` proměnná bloku `ex` spíše než `e`.  
   
--   Další běžné zdroje této chyby je pokus o přístup k místní proměnné deklarované v rámci `Try` blokovat v samostatném `Catch` bloku. Když to pokud chcete opravit, deklarujte proměnnou mimo `Try...Catch...Finally` struktury.  
+- Další běžné zdroje této chyby je pokus o přístup k místní proměnné deklarované v rámci `Try` blokovat v samostatném `Catch` bloku. Když to pokud chcete opravit, deklarujte proměnnou mimo `Try...Catch...Finally` struktury.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30961
 ms.assetid: 8be5aa0d-d236-4ac3-aa9c-5044f9f6562b
 ms.openlocfilehash: 58b334eb5e6db443bcfaba72729d59cb1d798e70
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766815"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2-multiple-file-references"></a>Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >' (odkazy na více souborů)
 Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typů může být způsobena kombinováním odkazu na soubor "\<filepath1 >' v projektu"\<projectname1 >' s odkazem na soubor "\<filepath2 >' v projektu"\<projectname2 >'. Pokud jsou obě sestavení identická, zkuste, nahraďte tyto odkazy tak, aby oba odkazy byly ze stejného umístění.  
@@ -27,9 +27,9 @@ Hodnotu typu '\<NázevTypu1 >' nelze převést na "\<NázevTypu2 >'. Neshody typ
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud odkazovaná sestavení mají stejnou identitu sestavení, odebrat nebo nahradit jeden z odkazů na soubory tak, aby se pouze odkaz na jeden soubor.  
+- Pokud odkazovaná sestavení mají stejnou identitu sestavení, odebrat nebo nahradit jeden z odkazů na soubory tak, aby se pouze odkaz na jeden soubor.  
   
--   Pokud odkazovaná sestavení nemají stejnou identitu sestavení, pak změňte kód tak, aby se nebude pokoušet o převod typu v jednom typu v jiném.  
+- Pokud odkazovaná sestavení nemají stejnou identitu sestavení, pak změňte kód tak, aby se nebude pokoušet o převod typu v jednom typu v jiném.  
   
 ## <a name="see-also"></a>Viz také:
 

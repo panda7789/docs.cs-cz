@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f2d34e43-fa8b-46d2-91cf-d2960e13e16b
 ms.openlocfilehash: d8529929870b14611c136221f1eefe3eb4ba3d42
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767257"
 ---
 # <a name="how-to-create-a-custom-client-identity-verifier"></a>Postupy: Vytvoření vlastního ověřovatele identity klientů
 *Identity* funkce Windows Communication Foundation (WCF) umožňuje klientovi předem určit Očekávaná identita služby. Pokaždé, když se server ověří na klientovi, identita je porovnávána s Očekávaná identita. (Vysvětlení identity a jak to funguje, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).)  

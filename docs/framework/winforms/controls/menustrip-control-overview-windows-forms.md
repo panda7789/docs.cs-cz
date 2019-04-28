@@ -11,8 +11,8 @@ ms.openlocfilehash: 7cd761697a09205294727043efc6cf73816803ce
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761363"
 ---
 # <a name="menustrip-control-overview-windows-forms"></a>MenuStrip – přehled ovládacího prvku (Windows Forms)
 Nabídky poskytují funkcionalitu uživatele tím, že se příkazy, které jsou seskupeny podle společnými tématy.  
@@ -26,11 +26,11 @@ Nabídky poskytují funkcionalitu uživatele tím, že se příkazy, které jsou
 ## <a name="ways-to-use-the-menustrip-control"></a>Způsoby, jak pomocí ovládacího prvku MenuStrip  
  Použití <xref:System.Windows.Forms.MenuStrip> ovládacího prvku:  
   
--   Vytvářejte snadno přizpůsobená, běžně proces nabídek, které podporují rozšířené uživatelské rozhraní a rozložení funkce, jako je text a obrázek řazení a zarovnání, operace přetažení myší, MDI, přetečení a alternativní způsoby přístup k příkazům nabídky.  
+- Vytvářejte snadno přizpůsobená, běžně proces nabídek, které podporují rozšířené uživatelské rozhraní a rozložení funkce, jako je text a obrázek řazení a zarovnání, operace přetažení myší, MDI, přetečení a alternativní způsoby přístup k příkazům nabídky.  
   
--   Podpora typické vzhled a chování operačního systému.  
+- Podpora typické vzhled a chování operačního systému.  
   
--   Zpracování událostí konzistentní pro všechny kontejnery a upravovat položky, stejně jako zpracování událostí pro ostatní ovládací prvky.  
+- Zpracování událostí konzistentní pro všechny kontejnery a upravovat položky, stejně jako zpracování událostí pro ostatní ovládací prvky.  
   
  V následující tabulce jsou uvedeny některé zvlášť důležité vlastnosti <xref:System.Windows.Forms.MenuStrip> a související třídy.  
   

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - operator <<, Visual Basic left shift operator
 ms.assetid: fdb93d25-81ba-417f-b808-41207bfb8440
 ms.openlocfilehash: 75c16c27dc919ba365cbe3c28c61a1e46496b0ae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768287"
 ---
 # <a name="-operator-visual-basic"></a>\<\< – Operátor (Visual Basic)
 Provede aritmetický operátor posunu vlevo bitový vzor.  
@@ -60,15 +60,15 @@ result = pattern << amount
   
  Výsledky v předchozím příkladu jsou následující:  
   
--   `result1` is 192 (0000 0000 1100 0000).  
+- `result1` is 192 (0000 0000 1100 0000).  
   
--   `result2` is 3072 (0000 1100 0000 0000).  
+- `result2` is 3072 (0000 1100 0000 0000).  
   
--   `result3` is -32768 (1000 0000 0000 0000).  
+- `result3` is -32768 (1000 0000 0000 0000).  
   
--   `result4` is 384 (0000 0001 1000 0000).  
+- `result4` is 384 (0000 0001 1000 0000).  
   
--   `result5` je 0 (posunuté 15 míst na levé straně).  
+- `result5` je 0 (posunuté 15 míst na levé straně).  
   
  Hodnota shift pro `result4` se vypočte takto: 17 a 15, které se rovná 1.  
   

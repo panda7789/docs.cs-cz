@@ -12,11 +12,11 @@ ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e2c8712837dab17f70be32617711c1bad9349508
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086075"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766308"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall – pomocník spravovaného ladění (MDA)
 `virtualCERCall` Pomocníka spravovaného ladění (MDA) je aktivován jako upozornění, že lokalita volání v grafu volání (CER) oblasti omezeného provádění odkazuje na virtuální cíl, tedy virtuální volání nefinální virtuální metody nebo volání pomocí rozhraní. Modul CLR (CLR) nelze předvídat cílové metody těchto volání z intermediate language a metadata analýzy samostatně. V důsledku toho jako součást CER grafu nelze připravit stromu volání a přerušení vlákna v tomto podstromu, nejde blokovat automaticky. Toto MDA upozorňuje na případy, kdy může být nutné rozšířit pomocí explicitního volání CER <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metoda po další informace potřebné k volání cílové výpočetní prostředí je znám v době běhu.  

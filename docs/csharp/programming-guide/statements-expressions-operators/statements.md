@@ -7,11 +7,11 @@ helpviewer_keywords:
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
 ms.openlocfilehash: 232368d2b019b8c265bbb48bd197776f9e03a132
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709286"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
@@ -83,11 +83,11 @@ Následující příklady ukazují dvě použití pro prázdný příkaz:
   
 ## <a name="related-sections"></a>Související oddíly  
   
--   [Klíčová slova příkazů](../../../csharp/language-reference/keywords/statement-keywords.md)  
+- [Klíčová slova příkazů](../../../csharp/language-reference/keywords/statement-keywords.md)  
   
--   [Výrazy](../../../csharp/programming-guide/statements-expressions-operators/expressions.md)  
+- [Výrazy](../../../csharp/programming-guide/statements-expressions-operators/expressions.md)  
   
--   [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
