@@ -18,18 +18,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f66e00c3334aecdf8c653f57e28d1b327c4170e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59094050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61627999"
 ---
-# <a name="getcorversion-function"></a><span data-ttu-id="7b540-102">GetCORVersion – funkce</span><span class="sxs-lookup"><span data-stu-id="7b540-102">GetCORVersion Function</span></span>
-<span data-ttu-id="7b540-103">Vrátí číslo verze common language runtime (CLR), na kterém běží v aktuálním procesu.</span><span class="sxs-lookup"><span data-stu-id="7b540-103">Returns the version number of the common language runtime (CLR) that is running in the current process.</span></span>  
+# <a name="getcorversion-function"></a><span data-ttu-id="e7a2c-102">GetCORVersion – funkce</span><span class="sxs-lookup"><span data-stu-id="e7a2c-102">GetCORVersion Function</span></span>
+<span data-ttu-id="e7a2c-103">Vrátí číslo verze common language runtime (CLR), na kterém běží v aktuálním procesu.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-103">Returns the version number of the common language runtime (CLR) that is running in the current process.</span></span>  
   
- <span data-ttu-id="7b540-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="7b540-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="e7a2c-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e7a2c-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7b540-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7b540-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e7a2c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e7a2c-105">Syntax</span></span>  
   
 ```  
 HRESULT GetCORVersion (  
@@ -39,25 +39,25 @@ HRESULT GetCORVersion (
 );   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7b540-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="7b540-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e7a2c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="e7a2c-106">Parameters</span></span>  
  `pbuffer`  
- <span data-ttu-id="7b540-107">Ukazatel do vyrovnávací paměti, ve kterém CLR vrátí řetězec určující verzi modulu runtime, který je aktuálně načtená do procesu.</span><span class="sxs-lookup"><span data-stu-id="7b540-107">A pointer to a buffer in which the CLR returns a string specifying the version of the runtime that is currently loaded into the process.</span></span> <span data-ttu-id="7b540-108">Vrácený řetězec má stejného formuláře jako řetězce předané [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), například "v1.0.1216".</span><span class="sxs-lookup"><span data-stu-id="7b540-108">The returned string takes the same form as strings passed to [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), for example, "v1.0.1216".</span></span> <span data-ttu-id="7b540-109">Pokud modul runtime nebylo načteno do procesu, funkce vrátí informace o příslušné adresáře pro nejnovější verzi modulu runtime nainstalovaného v počítači.</span><span class="sxs-lookup"><span data-stu-id="7b540-109">If the runtime has not yet been loaded into the process, the function returns the appropriate directory information for the latest version of the runtime installed on the computer.</span></span>  
+ <span data-ttu-id="e7a2c-107">Ukazatel do vyrovnávací paměti, ve kterém CLR vrátí řetězec určující verzi modulu runtime, který je aktuálně načtená do procesu.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-107">A pointer to a buffer in which the CLR returns a string specifying the version of the runtime that is currently loaded into the process.</span></span> <span data-ttu-id="e7a2c-108">Vrácený řetězec má stejného formuláře jako řetězce předané [CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), například "v1.0.1216".</span><span class="sxs-lookup"><span data-stu-id="e7a2c-108">The returned string takes the same form as strings passed to [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), for example, "v1.0.1216".</span></span> <span data-ttu-id="e7a2c-109">Pokud modul runtime nebylo načteno do procesu, funkce vrátí informace o příslušné adresáře pro nejnovější verzi modulu runtime nainstalovaného v počítači.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-109">If the runtime has not yet been loaded into the process, the function returns the appropriate directory information for the latest version of the runtime installed on the computer.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="7b540-110">Počet znaků (`WCHAR`s), která se můžou uchovávat v `pbuffer`.</span><span class="sxs-lookup"><span data-stu-id="7b540-110">The number of characters (`WCHAR`s) that can be held in `pbuffer`.</span></span>  
+ <span data-ttu-id="e7a2c-110">Počet znaků (`WCHAR`s), která se můžou uchovávat v `pbuffer`.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-110">The number of characters (`WCHAR`s) that can be held in `pbuffer`.</span></span>  
   
  `dwLength`  
- <span data-ttu-id="7b540-111">Ukazatel na počet skutečně vrácených v znaků `pbuffer`.</span><span class="sxs-lookup"><span data-stu-id="7b540-111">A pointer to the number of characters actually returned in `pbuffer`.</span></span> <span data-ttu-id="7b540-112">Pokud `pbuffer` je ukazatel s hodnotou null, vrátí E_POINTER modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="7b540-112">If `pbuffer` is a null pointer, the runtime returns E_POINTER.</span></span> <span data-ttu-id="7b540-113">Pokud je větší počet znaků, které pak délka `pbuffer` , modul runtime vrátí ERROR_INSUFFICIENT_BUFFER.</span><span class="sxs-lookup"><span data-stu-id="7b540-113">If the number of characters is greater then the length of `pbuffer` , the runtime returns ERROR_INSUFFICIENT_BUFFER.</span></span>  
+ <span data-ttu-id="e7a2c-111">Ukazatel na počet skutečně vrácených v znaků `pbuffer`.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-111">A pointer to the number of characters actually returned in `pbuffer`.</span></span> <span data-ttu-id="e7a2c-112">Pokud `pbuffer` je ukazatel s hodnotou null, vrátí E_POINTER modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-112">If `pbuffer` is a null pointer, the runtime returns E_POINTER.</span></span> <span data-ttu-id="e7a2c-113">Pokud je větší počet znaků, které pak délka `pbuffer` , modul runtime vrátí ERROR_INSUFFICIENT_BUFFER.</span><span class="sxs-lookup"><span data-stu-id="e7a2c-113">If the number of characters is greater then the length of `pbuffer` , the runtime returns ERROR_INSUFFICIENT_BUFFER.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7b540-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7b540-114">Requirements</span></span>  
- <span data-ttu-id="7b540-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7b540-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e7a2c-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e7a2c-114">Requirements</span></span>  
+ <span data-ttu-id="e7a2c-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e7a2c-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7b540-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="7b540-116">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="e7a2c-116">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e7a2c-116">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="7b540-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7b540-117">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="e7a2c-117">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e7a2c-117">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="7b540-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7b540-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e7a2c-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e7a2c-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7b540-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7b540-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7a2c-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e7a2c-119">See also</span></span>
 
-- [<span data-ttu-id="7b540-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="7b540-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+- [<span data-ttu-id="e7a2c-120">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="e7a2c-120">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

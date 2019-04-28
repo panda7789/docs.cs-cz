@@ -9,52 +9,52 @@ helpviewer_keywords:
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
 ms.openlocfilehash: 63d64acc0d0a1ed90a722db75b467bd3ce5f260e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663008"
 ---
-# <a name="-bugreport-c-compiler-options"></a><span data-ttu-id="9119d-102">-bugreport (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="9119d-102">-bugreport (C# Compiler Options)</span></span>
-<span data-ttu-id="9119d-103">Určuje, že informace o ladění by měly být umístěny v souboru pro pozdější analýzu.</span><span class="sxs-lookup"><span data-stu-id="9119d-103">Specifies that debug information should be placed in a file for later analysis.</span></span>  
+# <a name="-bugreport-c-compiler-options"></a><span data-ttu-id="b6316-102">-bugreport (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="b6316-102">-bugreport (C# Compiler Options)</span></span>
+<span data-ttu-id="b6316-103">Určuje, že informace o ladění by měly být umístěny v souboru pro pozdější analýzu.</span><span class="sxs-lookup"><span data-stu-id="b6316-103">Specifies that debug information should be placed in a file for later analysis.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9119d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9119d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b6316-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b6316-104">Syntax</span></span>  
   
 ```console  
 -bugreport:file  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="9119d-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="9119d-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="b6316-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="b6316-105">Arguments</span></span>  
  `file`  
- <span data-ttu-id="9119d-106">Název souboru, který má obsahovat hlášení o chybě.</span><span class="sxs-lookup"><span data-stu-id="9119d-106">The name of the file that you want to contain your bug report.</span></span>  
+ <span data-ttu-id="b6316-106">Název souboru, který má obsahovat hlášení o chybě.</span><span class="sxs-lookup"><span data-stu-id="b6316-106">The name of the file that you want to contain your bug report.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="9119d-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9119d-107">Remarks</span></span>  
- <span data-ttu-id="9119d-108">**- Bugreport** možnost určuje, že tyto informace mají být umístěny v `file`:</span><span class="sxs-lookup"><span data-stu-id="9119d-108">The **-bugreport** option specifies that the following information should be placed in `file`:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b6316-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b6316-107">Remarks</span></span>  
+ <span data-ttu-id="b6316-108">**- Bugreport** možnost určuje, že tyto informace mají být umístěny v `file`:</span><span class="sxs-lookup"><span data-stu-id="b6316-108">The **-bugreport** option specifies that the following information should be placed in `file`:</span></span>  
   
--   <span data-ttu-id="9119d-109">Kopírování všech souborů zdrojového kódu dané kompilace.</span><span class="sxs-lookup"><span data-stu-id="9119d-109">A copy of all source code files in the compilation.</span></span>  
+- <span data-ttu-id="b6316-109">Kopírování všech souborů zdrojového kódu dané kompilace.</span><span class="sxs-lookup"><span data-stu-id="b6316-109">A copy of all source code files in the compilation.</span></span>  
   
--   <span data-ttu-id="9119d-110">Seznam možností kompilátoru použita při kompilaci.</span><span class="sxs-lookup"><span data-stu-id="9119d-110">A listing of the compiler options used in the compilation.</span></span>  
+- <span data-ttu-id="b6316-110">Seznam možností kompilátoru použita při kompilaci.</span><span class="sxs-lookup"><span data-stu-id="b6316-110">A listing of the compiler options used in the compilation.</span></span>  
   
--   <span data-ttu-id="9119d-111">Informace o verzi kompilátoru, běhu a operačního systému.</span><span class="sxs-lookup"><span data-stu-id="9119d-111">Version information about your compiler, run time, and operating system.</span></span>  
+- <span data-ttu-id="b6316-111">Informace o verzi kompilátoru, běhu a operačního systému.</span><span class="sxs-lookup"><span data-stu-id="b6316-111">Version information about your compiler, run time, and operating system.</span></span>  
   
--   <span data-ttu-id="9119d-112">Odkazovaná sestavení a modulů, které jsou uloženy jako šestnáctkové číslice, s výjimkou sestavení, které se dodávají pomocí rozhraní .NET Framework a sady SDK.</span><span class="sxs-lookup"><span data-stu-id="9119d-112">Referenced assemblies and modules, saved as hexadecimal digits, except assemblies that ship with the .NET Framework and SDK.</span></span>  
+- <span data-ttu-id="b6316-112">Odkazovaná sestavení a modulů, které jsou uloženy jako šestnáctkové číslice, s výjimkou sestavení, které se dodávají pomocí rozhraní .NET Framework a sady SDK.</span><span class="sxs-lookup"><span data-stu-id="b6316-112">Referenced assemblies and modules, saved as hexadecimal digits, except assemblies that ship with the .NET Framework and SDK.</span></span>  
   
--   <span data-ttu-id="9119d-113">Výstup kompilátoru, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="9119d-113">Compiler output, if any.</span></span>  
+- <span data-ttu-id="b6316-113">Výstup kompilátoru, pokud existuje.</span><span class="sxs-lookup"><span data-stu-id="b6316-113">Compiler output, if any.</span></span>  
   
--   <span data-ttu-id="9119d-114">Popis problému, který zobrazí se výzva k zadání.</span><span class="sxs-lookup"><span data-stu-id="9119d-114">A description of the problem, which you will be prompted for.</span></span>  
+- <span data-ttu-id="b6316-114">Popis problému, který zobrazí se výzva k zadání.</span><span class="sxs-lookup"><span data-stu-id="b6316-114">A description of the problem, which you will be prompted for.</span></span>  
   
--   <span data-ttu-id="9119d-115">Popis jak domníváte, že problém je třeba stanovit, která vám zobrazí výzva k zadání.</span><span class="sxs-lookup"><span data-stu-id="9119d-115">A description of how you think the problem should be fixed, which you will be prompted for.</span></span>  
+- <span data-ttu-id="b6316-115">Popis jak domníváte, že problém je třeba stanovit, která vám zobrazí výzva k zadání.</span><span class="sxs-lookup"><span data-stu-id="b6316-115">A description of how you think the problem should be fixed, which you will be prompted for.</span></span>  
   
- <span data-ttu-id="9119d-116">Pokud tato možnost se používá s **- errorreport: řádku** nebo **- errorreport: Odeslat**, informace v souboru se odešlou do Microsoft Corporation.</span><span class="sxs-lookup"><span data-stu-id="9119d-116">If this option is used with **-errorreport:prompt** or **-errorreport:send**, the information in the file will be sent to Microsoft Corporation.</span></span>  
+ <span data-ttu-id="b6316-116">Pokud tato možnost se používá s **- errorreport: řádku** nebo **- errorreport: Odeslat**, informace v souboru se odešlou do Microsoft Corporation.</span><span class="sxs-lookup"><span data-stu-id="b6316-116">If this option is used with **-errorreport:prompt** or **-errorreport:send**, the information in the file will be sent to Microsoft Corporation.</span></span>  
   
- <span data-ttu-id="9119d-117">Vzhledem k tomu, že kopie všech souborů zdrojového kódu budou umístěny v `file`, můžete chtít reprodukovat v nejkratší možné aplikaci podezřelý kód.</span><span class="sxs-lookup"><span data-stu-id="9119d-117">Because a copy of all source code files will be placed in `file`, you might want to reproduce the suspected code defect in the shortest possible program.</span></span>  
+ <span data-ttu-id="b6316-117">Vzhledem k tomu, že kopie všech souborů zdrojového kódu budou umístěny v `file`, můžete chtít reprodukovat v nejkratší možné aplikaci podezřelý kód.</span><span class="sxs-lookup"><span data-stu-id="b6316-117">Because a copy of all source code files will be placed in `file`, you might want to reproduce the suspected code defect in the shortest possible program.</span></span>  
   
- <span data-ttu-id="9119d-118">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="9119d-118">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
+ <span data-ttu-id="b6316-118">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="b6316-118">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
- <span data-ttu-id="9119d-119">Všimněte si, že obsah generovaný soubor vystavit zdrojový kód, který může dojít k neúmyslnému zpřístupnění informací.</span><span class="sxs-lookup"><span data-stu-id="9119d-119">Notice that contents of the generated file expose source code that could result in inadvertent information disclosure.</span></span>  
+ <span data-ttu-id="b6316-119">Všimněte si, že obsah generovaný soubor vystavit zdrojový kód, který může dojít k neúmyslnému zpřístupnění informací.</span><span class="sxs-lookup"><span data-stu-id="b6316-119">Notice that contents of the generated file expose source code that could result in inadvertent information disclosure.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9119d-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9119d-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6316-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6316-120">See also</span></span>
 
-- [<span data-ttu-id="9119d-121">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="9119d-121">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
-- [<span data-ttu-id="9119d-122">-errorreport (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="9119d-122">-errorreport (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)
-- [<span data-ttu-id="9119d-123">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="9119d-123">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="b6316-121">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b6316-121">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
+- [<span data-ttu-id="b6316-122">-errorreport (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="b6316-122">-errorreport (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/errorreport-compiler-option.md)
+- [<span data-ttu-id="b6316-123">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="b6316-123">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)

@@ -18,32 +18,32 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 649f44bd7966b9ca89d2d040b7eede662404aa0f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59093550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638603"
 ---
-# <a name="isymunmanagedsymbolsearchinfogetsearchpath-method"></a><span data-ttu-id="28d1a-102">ISymUnmanagedSymbolSearchInfo::GetSearchPath – metoda</span><span class="sxs-lookup"><span data-stu-id="28d1a-102">ISymUnmanagedSymbolSearchInfo::GetSearchPath Method</span></span>
-<span data-ttu-id="28d1a-103">Získá cestu hledání.</span><span class="sxs-lookup"><span data-stu-id="28d1a-103">Gets the search path.</span></span>  
+# <a name="isymunmanagedsymbolsearchinfogetsearchpath-method"></a><span data-ttu-id="d709b-102">ISymUnmanagedSymbolSearchInfo::GetSearchPath – metoda</span><span class="sxs-lookup"><span data-stu-id="d709b-102">ISymUnmanagedSymbolSearchInfo::GetSearchPath Method</span></span>
+<span data-ttu-id="d709b-103">Získá cestu hledání.</span><span class="sxs-lookup"><span data-stu-id="d709b-103">Gets the search path.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="28d1a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="28d1a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d709b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d709b-104">Syntax</span></span>  
   
 ```  
 HRESULT GetSearchPathLength(  
     [out] ULONG32 *pcchPath);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="28d1a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="28d1a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="d709b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d709b-105">Parameters</span></span>  
  `pcchPath`  
- <span data-ttu-id="28d1a-106">[out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat cesty pro hledání.</span><span class="sxs-lookup"><span data-stu-id="28d1a-106">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the search path.</span></span>  
+ <span data-ttu-id="d709b-106">[out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat cesty pro hledání.</span><span class="sxs-lookup"><span data-stu-id="d709b-106">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the search path.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="28d1a-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="28d1a-107">Return Value</span></span>  
- <span data-ttu-id="28d1a-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="28d1a-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d709b-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d709b-107">Return Value</span></span>  
+ <span data-ttu-id="d709b-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="d709b-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="28d1a-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="28d1a-109">Requirements</span></span>  
- <span data-ttu-id="28d1a-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="28d1a-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d709b-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d709b-109">Requirements</span></span>  
+ <span data-ttu-id="d709b-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="d709b-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="28d1a-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28d1a-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d709b-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d709b-111">See also</span></span>
 
-- [<span data-ttu-id="28d1a-112">ISymUnmanagedSymbolSearchInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="28d1a-112">ISymUnmanagedSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)
+- [<span data-ttu-id="d709b-112">ISymUnmanagedSymbolSearchInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d709b-112">ISymUnmanagedSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)

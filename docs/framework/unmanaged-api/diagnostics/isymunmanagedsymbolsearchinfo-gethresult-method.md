@@ -18,32 +18,32 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1534955c1f7cfd37732a08b0b33cda5bff8a8aab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638616"
 ---
-# <a name="isymunmanagedsymbolsearchinfogethresult-method"></a><span data-ttu-id="ebdf7-102">ISymUnmanagedSymbolSearchInfo::GetHRESULT – metoda</span><span class="sxs-lookup"><span data-stu-id="ebdf7-102">ISymUnmanagedSymbolSearchInfo::GetHRESULT Method</span></span>
-<span data-ttu-id="ebdf7-103">Získá hodnota HRESULT.</span><span class="sxs-lookup"><span data-stu-id="ebdf7-103">Gets the HRESULT.</span></span>  
+# <a name="isymunmanagedsymbolsearchinfogethresult-method"></a><span data-ttu-id="0cc47-102">ISymUnmanagedSymbolSearchInfo::GetHRESULT – metoda</span><span class="sxs-lookup"><span data-stu-id="0cc47-102">ISymUnmanagedSymbolSearchInfo::GetHRESULT Method</span></span>
+<span data-ttu-id="0cc47-103">Získá hodnota HRESULT.</span><span class="sxs-lookup"><span data-stu-id="0cc47-103">Gets the HRESULT.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ebdf7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ebdf7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0cc47-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0cc47-104">Syntax</span></span>  
   
 ```  
 HRESULT GetHRESULT(  
     [out] HRESULT *phr);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ebdf7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ebdf7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0cc47-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0cc47-105">Parameters</span></span>  
  `phr`  
- <span data-ttu-id="ebdf7-106">[out] Ukazatel na HRESULT.</span><span class="sxs-lookup"><span data-stu-id="ebdf7-106">[out] A pointer to the HRESULT.</span></span>  
+ <span data-ttu-id="0cc47-106">[out] Ukazatel na HRESULT.</span><span class="sxs-lookup"><span data-stu-id="0cc47-106">[out] A pointer to the HRESULT.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ebdf7-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ebdf7-107">Return Value</span></span>  
- <span data-ttu-id="ebdf7-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="ebdf7-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0cc47-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0cc47-107">Return Value</span></span>  
+ <span data-ttu-id="0cc47-108">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="0cc47-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ebdf7-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ebdf7-109">Requirements</span></span>  
- <span data-ttu-id="ebdf7-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ebdf7-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0cc47-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0cc47-109">Requirements</span></span>  
+ <span data-ttu-id="0cc47-110">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0cc47-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ebdf7-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ebdf7-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0cc47-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0cc47-111">See also</span></span>
 
-- [<span data-ttu-id="ebdf7-112">ISymUnmanagedSymbolSearchInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ebdf7-112">ISymUnmanagedSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)
+- [<span data-ttu-id="0cc47-112">ISymUnmanagedSymbolSearchInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0cc47-112">ISymUnmanagedSymbolSearchInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)

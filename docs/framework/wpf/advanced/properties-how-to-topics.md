@@ -9,20 +9,20 @@ helpviewer_keywords:
 - dependency properties [WPF]
 ms.assetid: e16dd710-1530-4462-81a2-43719b973970
 ms.openlocfilehash: 78bf1dbe9c9c95a3ae1afe2515adbd8bc65a7d44
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57368490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61628610"
 ---
-# <a name="properties-how-to-topics"></a><span data-ttu-id="391bd-102">Postupy: Témata vlastností</span><span class="sxs-lookup"><span data-stu-id="391bd-102">Properties How-to Topics</span></span>
-## <a name="in-this-section"></a><span data-ttu-id="391bd-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="391bd-103">In This Section</span></span>  
- [<span data-ttu-id="391bd-104">Implementace vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="391bd-104">Implement a Dependency Property</span></span>](how-to-implement-a-dependency-property.md)  
- [<span data-ttu-id="391bd-105">Přidání typu vlastníka pro vlastnost závislosti</span><span class="sxs-lookup"><span data-stu-id="391bd-105">Add an Owner Type for a Dependency Property</span></span>](how-to-add-an-owner-type-for-a-dependency-property.md)  
- [<span data-ttu-id="391bd-106">Registrace přidružené vlastnosti</span><span class="sxs-lookup"><span data-stu-id="391bd-106">Register an Attached Property</span></span>](how-to-register-an-attached-property.md)  
- [<span data-ttu-id="391bd-107">Přepsání metadat pro vlastnost závislosti</span><span class="sxs-lookup"><span data-stu-id="391bd-107">Override Metadata for a Dependency Property</span></span>](how-to-override-metadata-for-a-dependency-property.md)  
+# <a name="properties-how-to-topics"></a><span data-ttu-id="ee280-102">Postupy: Témata vlastností</span><span class="sxs-lookup"><span data-stu-id="ee280-102">Properties How-to Topics</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="ee280-103">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ee280-103">In This Section</span></span>  
+ [<span data-ttu-id="ee280-104">Implementace vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="ee280-104">Implement a Dependency Property</span></span>](how-to-implement-a-dependency-property.md)  
+ [<span data-ttu-id="ee280-105">Přidání typu vlastníka pro vlastnost závislosti</span><span class="sxs-lookup"><span data-stu-id="ee280-105">Add an Owner Type for a Dependency Property</span></span>](how-to-add-an-owner-type-for-a-dependency-property.md)  
+ [<span data-ttu-id="ee280-106">Registrace přidružené vlastnosti</span><span class="sxs-lookup"><span data-stu-id="ee280-106">Register an Attached Property</span></span>](how-to-register-an-attached-property.md)  
+ [<span data-ttu-id="ee280-107">Přepsání metadat pro vlastnost závislosti</span><span class="sxs-lookup"><span data-stu-id="ee280-107">Override Metadata for a Dependency Property</span></span>](how-to-override-metadata-for-a-dependency-property.md)  
   
-## <a name="reference"></a><span data-ttu-id="391bd-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="391bd-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ee280-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ee280-108">Reference</span></span>  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  
@@ -31,5 +31,5 @@ ms.locfileid: "57368490"
   
  <xref:System.Windows.DependencyObject>  
   
-## <a name="related-sections"></a><span data-ttu-id="391bd-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="391bd-109">Related Sections</span></span>  
- [<span data-ttu-id="391bd-110">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="391bd-110">Properties</span></span>](properties-wpf.md)
+## <a name="related-sections"></a><span data-ttu-id="ee280-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ee280-109">Related Sections</span></span>  
+ [<span data-ttu-id="ee280-110">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="ee280-110">Properties</span></span>](properties-wpf.md)

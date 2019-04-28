@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: odeslání souborů pomocí protokolu FTP'
-description: Tento článek ukazuje vzorku o tom, jak nahrát soubor na FTP server.
+title: 'Postupy: Nahrávání souborů přes FTP'
+description: Tento článek popisuje ukázku toho, jak nahrát soubor na FTP server.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: e40f17c5-dd12-4c62-9dbf-00ab491382dc
 ms.openlocfilehash: a1f067462361bb123c9d61a1d099c900a6641d6b
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61642396"
 ---
-# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="6f6f4-103">Postupy: odeslání souborů pomocí protokolu FTP</span><span class="sxs-lookup"><span data-stu-id="6f6f4-103">How to: Upload files with FTP</span></span>
+# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="7250c-103">Postupy: Nahrávání souborů přes FTP</span><span class="sxs-lookup"><span data-stu-id="7250c-103">How to: Upload files with FTP</span></span>
 
-<span data-ttu-id="6f6f4-104">Tento příklad ukazuje, jak nahrát soubor do serveru FTP.</span><span class="sxs-lookup"><span data-stu-id="6f6f4-104">This sample shows how to upload a file to an FTP server.</span></span>
+<span data-ttu-id="7250c-104">Tento příklad ukazuje, jak nahrát soubor na FTP server.</span><span class="sxs-lookup"><span data-stu-id="7250c-104">This sample shows how to upload a file to an FTP server.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6f6f4-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="6f6f4-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="7250c-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="7250c-105">Example</span></span>
 
 ```csharp
 using System;
