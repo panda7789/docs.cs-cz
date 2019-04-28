@@ -3,11 +3,11 @@ title: 'Postupy: Úpravy stromů výrazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
 ms.openlocfilehash: 26c00f3acc7ab44e74a81e346ab1c017d95d53b5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308637"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702877"
 ---
 # <a name="how-to-modify-expression-trees-c"></a>Postupy: Úpravy stromů výrazů (C#)
 Toto téma ukazuje, jak upravit strom výrazu. Stromy výrazů jsou neměnné, což znamená, že nejde změnit napřímo. Chcete-li změnit strom výrazu, musíte vytvořit kopie stávající strom výrazu a při vytváření kopie, proveďte požadované změny. Můžete použít <xref:System.Linq.Expressions.ExpressionVisitor> třídy k procházení stávající strom výrazu a zkopírovat každý uzel, který ho navštíví.  

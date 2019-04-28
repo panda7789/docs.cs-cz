@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e5e673f4-9b44-45ae-aaea-c504d1cc5d3e
 ms.openlocfilehash: f4dfccad23bf5d15f5cbd0a33e76a136417e13ea
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607256"
 ---
 # <a name="navigating-datarelations"></a>Navigace v datových relacích
 Jednou z primárních funkcí <xref:System.Data.DataRelation> je umožnit navigace z jednoho <xref:System.Data.DataTable> do jiného v rámci <xref:System.Data.DataSet>. To umožňuje načíst všechny související <xref:System.Data.DataRow> objektů v jednom **DataTable** při jediném **DataRow** z se souvisejícím **DataTable**. Například po vytvoření **DataRelation** mezi tabulku zákazníků a tabulku objednávek, můžete načíst všechny objednávky řádky pro konkrétní zákazníky řádku pomocí **GetChildRows**.  

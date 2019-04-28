@@ -9,11 +9,11 @@ helpviewer_keywords:
 - 3-D objects [WPF], applying EmissiveMaterial
 ms.assetid: fd442cc2-5adc-487a-ba70-e45ed54bb3b4
 ms.openlocfilehash: b898148fa07950e3ad1eddcaf9206f7d6a837241
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59163114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698963"
 ---
 # <a name="how-to-apply-emissive-material-to-a-3-d-object"></a>Postupy: Použití vyzařujícího materiálu na 3D objekt
 Následující příklad ukazuje, jak používat <xref:System.Windows.Media.Media3D.EmissiveMaterial> přidat barvu existující rovna barvy štětce EmissiveMaterial materiálu. Níže uvedený kód ukazuje <xref:System.Windows.Media.Media3D.DiffuseMaterial> a <xref:System.Windows.Media.Media3D.EmissiveMaterial> použít v kombinaci přidat modrá DiffuseMaterial vzhled.  

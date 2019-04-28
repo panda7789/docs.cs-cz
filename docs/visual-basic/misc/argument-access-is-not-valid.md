@@ -5,11 +5,11 @@ f1_keywords:
 - vbrFileSystem_IllegalOutputAccess
 ms.assetid: 29a40d2d-10d7-476b-b7c5-d10ab6a3bcce
 ms.openlocfilehash: ab32e01d851912430383fa7d57882a99e64b9fe9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61666337"
 ---
 # <a name="argument-access-is-not-valid-valid-values-for-output-mode-are-openaccesswrite-and-openaccessdefault"></a>Argument "Přístup" není platný. Platné hodnoty pro režim výstupu jsou "OpenAccess.Write" a "OpenAccess.Default.
 K přístupu hodnota není platná v režim výstupu.  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - new keyword [C#]
 ms.assetid: e4136516-f058-45a8-84e5-da00a5cf9b6a
 ms.openlocfilehash: 119dc0ddf4dd26332da2fe2367bf4d4886fd180f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54578517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661084"
 ---
 # <a name="new-c-reference"></a>new (Referenční dokumentace jazyka C#)
 V jazyce C# `new` – klíčové slovo lze použít jako operátor, modifikátor nebo omezení.  

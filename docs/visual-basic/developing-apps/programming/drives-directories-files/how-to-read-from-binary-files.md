@@ -8,43 +8,43 @@ helpviewer_keywords:
 - My.Computer.FileSystem object, reading from binary files
 ms.assetid: d2b1269e-24b6-42e0-9414-ae708db282d8
 ms.openlocfilehash: 88c9952818f6cb94db7b2da7ad44aa0da0eb43d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672845"
 ---
 # <a name="how-to-read-from-binary-files-in-visual-basic"></a>Postupy: Čtení z binárních souborů v jazyce Visual Basic
 `My.Computer.FileSystem` Objekt, který poskytuje `ReadAllBytes` metody pro čtení z binárních souborů.  
   
 ### <a name="to-read-from-a-binary-file"></a>Čtení z binárního souboru  
   
--   Použití `ReadAllBytes` metoda, která vrátí obsah souboru jako bajtové pole. V tomto příkladu načteme soubor `C:/Documents and Settings/selfportrait.jpg`.  
+- Použití `ReadAllBytes` metoda, která vrátí obsah souboru jako bajtové pole. V tomto příkladu načteme soubor `C:/Documents and Settings/selfportrait.jpg`.  
   
      [!code-vb[VbVbcnMyFileSystem#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#78)]  
   
--   Pro velké binární soubory, můžete použít <xref:System.IO.FileStream.Read%2A> metodu <xref:System.IO.FileStream> objektu určeného ke čtení ze souboru určenou dobu po jednom. Můžete omezit, jak velká část souboru je načten do paměti pro každou operaci čtení. Následující příklad kódu se zkopíruje soubor a umožňuje volajícímu zadat, jak velká část souboru je načíst do paměti za operace čtení.  
+- Pro velké binární soubory, můžete použít <xref:System.IO.FileStream.Read%2A> metodu <xref:System.IO.FileStream> objektu určeného ke čtení ze souboru určenou dobu po jednom. Můžete omezit, jak velká část souboru je načten do paměti pro každou operaci čtení. Následující příklad kódu se zkopíruje soubor a umožňuje volajícímu zadat, jak velká část souboru je načíst do paměti za operace čtení.  
   
      [!code-vb[VbVbcnMyFileSystem#91](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#91)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku, která je vyvolána:  
   
--   Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (<xref:System.ArgumentException>).  
+- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (<xref:System.ArgumentException>).  
   
--   Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
   
--   Soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
+- Soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
--   Soubor je používán jiným procesem nebo dojde k chybě vstupně-výstupních operací (<xref:System.IO.IOException>).  
+- Soubor je používán jiným procesem nebo dojde k chybě vstupně-výstupních operací (<xref:System.IO.IOException>).  
   
--   Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
   
--   Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
   
--   Není dostatek paměti k zápisu řetězce do vyrovnávací paměti (<xref:System.OutOfMemoryException>).  
+- Není dostatek paměti k zápisu řetězce do vyrovnávací paměti (<xref:System.OutOfMemoryException>).  
   
--   Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1.vb nemusí být zdrojový soubor jazyka Visual Basic.  
   

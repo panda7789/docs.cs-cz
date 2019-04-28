@@ -1,16 +1,22 @@
 ---
-title: 'Nezabezpečený kód a ukazatele – C# Průvodce programováním'
+title: Nezabezpečený kód a ukazatele – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'security [C#], type safety'
-  - 'C# language, unsafe code'
-  - 'type safety [C#]'
-  - 'unsafe keyword [C#]'
-  - 'unsafe code [C#]'
-  - 'C# language, pointers'
-  - 'pointers [C#], about pointers'
+- security [C#], type safety
+- C# language, unsafe code
+- type safety [C#]
+- unsafe keyword [C#]
+- unsafe code [C#]
+- C# language, pointers
+- pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
+ms.openlocfilehash: 3712e04d4496d13178843564b5d0753f62e28fa0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678085"
 ---
 # <a name="unsafe-code-and-pointers-c-programming-guide"></a>Nezabezpečený kód a ukazatele (Průvodce programováním v C#)
 Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmetiku ukazatele ve výchozím nastavení. Nicméně pomocí [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo, můžete definovat nezabezpečený kontext, ve které je možné ukazatele. Další informace o ukazatelích naleznete v tématu [typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
@@ -21,26 +27,26 @@ Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmeti
 ## <a name="unsafe-code-overview"></a>Přehled nebezpečného kódu  
  Nezabezpečený kód má následující vlastnosti:  
   
--   Metody, typy a bloků kódu může být definován jako bezpečné.  
+- Metody, typy a bloků kódu může být definován jako bezpečné.  
   
--   V některých případech může nezabezpečený kód zvýšit výkon vaší aplikace tak, že odeberete kontroly hranice pole.  
+- V některých případech může nezabezpečený kód zvýšit výkon vaší aplikace tak, že odeberete kontroly hranice pole.  
   
--   Nezabezpečený kód je potřeba při volání nativních funkcí, které vyžadují ukazatele.  
+- Nezabezpečený kód je potřeba při volání nativních funkcí, které vyžadují ukazatele.  
   
--   Použití nezabezpečeného kódu představuje rizika zabezpečení a stabilitu.  
+- Použití nezabezpečeného kódu představuje rizika zabezpečení a stabilitu.  
   
--   V pořadí pro jazyk C# ke kompilaci nezabezpečený kód aplikace musí být kompilována s [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
+- V pořadí pro jazyk C# ke kompilaci nezabezpečený kód aplikace musí být kompilována s [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace naleznete v tématu:  
   
--   [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
+- [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
   
--   [Vyrovnávací paměti pevné velikosti](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)  
+- [Vyrovnávací paměti pevné velikosti](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)  
   
--   [Postupy: Použití ukazatelů ke kopírování pole bajtů](../../../csharp/programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md)  
+- [Postupy: Použití ukazatelů ke kopírování pole bajtů](../../../csharp/programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md)  
   
--   [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
+- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

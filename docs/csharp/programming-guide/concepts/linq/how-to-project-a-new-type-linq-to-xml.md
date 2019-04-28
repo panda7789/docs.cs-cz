@@ -3,11 +3,11 @@ title: 'Postupy: Projektování nového typu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
 ms.openlocfilehash: eefe645f376f8f52a94b94cdd49640e165a69aae
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54636622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667857"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Postupy: Projektování nového typu (LINQ to XML) (C#)
 Další příklady v této části ukázaly, dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> z `string`, a <xref:System.Collections.Generic.IEnumerable%601> z `int`. Toto jsou běžné typy výsledků, ale nejsou vhodná pro každý scénář. V mnoha případech můžete vrátit dotazech <xref:System.Collections.Generic.IEnumerable%601> nějakého jiného typu.  

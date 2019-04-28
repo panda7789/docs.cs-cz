@@ -9,11 +9,11 @@ ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1716488f6e072b09469dfbe5cc8fb4965e5db44c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605240"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669131"
 ---
 # <a name="compiled-xpath-expressions"></a>Zkompilované výrazy XPath
 <xref:System.Xml.XPath.XPathExpression> Objekt představuje zkompilovaný dotaz XPath vrácený buď statické <xref:System.Xml.XPath.XPathExpression.Compile%2A> metodu <xref:System.Xml.XPath.XPathExpression> třídy nebo <xref:System.Xml.XPath.XPathNavigator.Compile%2A> metodu <xref:System.Xml.XPath.XPathNavigator> třídy.  
@@ -25,15 +25,15 @@ ms.locfileid: "54605240"
   
  Po kompilaci, <xref:System.Xml.XPath.XPathExpression> objektu mohou být použity jako vstup pro následující <xref:System.Xml.XPath.XPathNavigator> metody třídy v závislosti na typu vrácená z dotazu XPath.  
   
--   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
+- <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
+- <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Matches%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.Matches%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.Select%2A>  
   
--   <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
+- <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
  Následující tabulka popisuje každý návratové typy W3C XPath, jejich vztahů rozhraní Microsoft .NET Framework a jaké metody <xref:System.Xml.XPath.XPathExpression> objekt může být použit s podle jejího návratového typu.  
   
@@ -52,19 +52,19 @@ ms.locfileid: "54605240"
   
  <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> Vlastnost vrátí jednu z následujících <xref:System.Xml.XPath.XPathResultType> hodnot výčtu představující W3C XPath návratové typy.  
   
--   <xref:System.Xml.XPath.XPathResultType.Any>  
+- <xref:System.Xml.XPath.XPathResultType.Any>  
   
--   <xref:System.Xml.XPath.XPathResultType.Boolean>  
+- <xref:System.Xml.XPath.XPathResultType.Boolean>  
   
--   <xref:System.Xml.XPath.XPathResultType.Error>  
+- <xref:System.Xml.XPath.XPathResultType.Error>  
   
--   <xref:System.Xml.XPath.XPathResultType.Navigator>  
+- <xref:System.Xml.XPath.XPathResultType.Navigator>  
   
--   <xref:System.Xml.XPath.XPathResultType.NodeSet>  
+- <xref:System.Xml.XPath.XPathResultType.NodeSet>  
   
--   <xref:System.Xml.XPath.XPathResultType.Number>  
+- <xref:System.Xml.XPath.XPathResultType.Number>  
   
--   <xref:System.Xml.XPath.XPathResultType.String>  
+- <xref:System.Xml.XPath.XPathResultType.String>  
   
  V následujícím příkladu <xref:System.Xml.XPath.XPathExpression> objekt vrátí číslo a nastavení z uzlu `books.xml` souboru. <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> Vlastnosti každého <xref:System.Xml.XPath.XPathExpression> objektu a také výsledky z <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> a <xref:System.Xml.XPath.XPathNavigator.Select%2A> metody jsou zapsány do konzoly.  
   

@@ -3,11 +3,11 @@ title: <filterTable>
 ms.date: 03/30/2017
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
 ms.openlocfilehash: 4e5c7d56e35afe3001f4c70064adbfef7702c720
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673209"
 ---
 # <a name="filtertable"></a>\<filterTable >
 Představuje směrovací tabulku, která obsahuje seznam filtrů určených k vyhodnocení zpráv a koncový bod klienta pro směrování zpráv v případě ohodnocení filtru hodnotou true.  

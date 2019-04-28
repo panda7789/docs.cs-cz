@@ -6,11 +6,11 @@ helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 89c3e335-3f5b-4e24-8c5a-b8036561fe8a
 ms.openlocfilehash: 5813ad573e89886ba991ca8cbcebb7232af05821
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678727"
 ---
 # <a name="how-to-access-command-line-arguments-using-foreach-c-programming-guide"></a>Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach (C# Programming Guide)
 Dalším přístupem k iterování přes pole je použít [foreach](../../../csharp/language-reference/keywords/foreach-in.md) jak je uvedeno v tomto příkladu. Příkaz `foreach` lze použít k iteraci přes pole, kolekci třídy rozhraní .NET Framework nebo jakékoli třídy nebo struktury, která implementuje rozhraní <xref:System.Collections.IEnumerable>.  

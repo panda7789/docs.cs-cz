@@ -7,11 +7,11 @@ helpviewer_keywords:
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
 ms.openlocfilehash: cd0fae0c7d99491f21e5e1fb265e4aabafaa63c4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667604"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ a obecné typy (C#)
 [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy jsou založeny na obecné typy, které jsou nově ve verzi 2.0 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Předtím, než můžete začít psát dotazy nepotřebujete hlubokou znalost obecných typů. Však může být vhodné pochopit dvě základní koncepty:  

@@ -3,11 +3,11 @@ title: <security> z <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: dc41f6f7-cabc-4a64-9fa0-ceabf861b348
 ms.openlocfilehash: f2750036aa4d3fbe41062ad041e50ff3a4be32b5
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55283960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670558"
 ---
 # <a name="security-of-nethttpbinding"></a>\<zabezpečení > z \<netHttpBinding >
 
@@ -45,7 +45,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Hodnota|Popis|
 |-----------|-----------------|
-|Žádná|-Zprávy nejsou zabezpečená při přenosu.|
+|Žádné|-Zprávy nejsou zabezpečená při přenosu.|
 |Přenos|Zabezpečení je prováděno pomocí přenos protokolu HTTPS. Zprávy protokolu SOAP jsou zabezpečené pomocí protokolu HTTPS. Služba je ověřen u klienta pomocí certifikátu X.509 služby. Klient je ověřený pomocí nebyl typ ClientCredentialType zadán.|
 |Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je tělo zašifrovaný a podepsaný. Pro tuto vazbu systému vyžaduje, aby certifikát serveru poskytnuta klientovi mimo pásmo. Jediné platné `ClientCredentialType` pro tuto vazbu `Certificate`.|
 |TransportWithMessageCredential|Zabezpečení přenosu zajišťují integritu a důvěrnost serveru ověřování. Ověření klienta je k dispozici prostřednictvím zabezpečení zprávy protokolu SOAP. Tento režim je důležité, když se uživatel ověřuje pomocí uživatelského jména a hesla a nějaké existující nasazení HTTP pro přenos zpráv zabezpečení.|

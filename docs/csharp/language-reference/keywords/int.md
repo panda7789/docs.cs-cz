@@ -9,17 +9,17 @@ helpviewer_keywords:
 - int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
 ms.openlocfilehash: 6cabc2c6d4930c5d5fc88e76a17c1a6425ddd1bd
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661383"
 ---
 # <a name="int-c-reference"></a>int (Referenční dokumentace jazyka C#)
 
 `int` označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.
 
-|Typ|Rozsah|Velikost|Typ formátu .NET|
+|Type|Rozsah|Velikost|Typ formátu .NET|
 |----------|-----------|----------|-------------------------|
 |`int`|-2 147 483 648 do 2 147 483 647|32bitové celé číslo se znaménkem|<xref:System.Int32?displayProperty=nameWithType>|
 

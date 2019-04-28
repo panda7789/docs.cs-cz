@@ -9,36 +9,36 @@ ms.assetid: e2cf98b7-40c1-4f74-86c7-8a76dd9da677
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ec2fd3b309820f2bfb7f6091cc3db720db497408
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61697664"
 ---
 # <a name="fusion-interfaces"></a>Rozhraní fúze
-Tato část popisuje nespravované rozhraní, která fusion rozhraní API používá pro přístup k vlastnostem prostředků aplikace a k nalezení správné verze tyto prostředky pro aplikaci.  
+Tato část popisuje nespravovaná rozhraní, které používá fusion rozhraní API pro přístup k vlastnostem aplikační prostředky a k nalezení správné verze prvků tyto prostředky pro aplikaci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [IAppIdAuthority – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iappidauthority-interface.md)  
- Poskytuje metody, které generovat a porovnání klíče pro identity aplikace a odkazy.  
+ Poskytuje metody, která generují a porovnat klíče pro identity aplikací a odkazy.  
   
  [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)  
  Poskytuje reprezentaci globální mezipaměti sestavení.  
   
  [IAssemblyCacheItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)  
- Představuje jednoho sestavení v globální mezipaměti sestavení.  
+ Představuje jedno sestavení v globální mezipaměti sestavení.  
   
  [IAssemblyEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)  
- Představuje enumerátor pro pole `IAssemblyName` objekty.  
+ Představuje enumerátor pro celou řadu `IAssemblyName` objekty.  
   
  [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)  
  Poskytuje metody pro popisující a práci s jedinečnou identitu sestavení.  
   
  [IDefinitionAppId – rozhraní](../../../../docs/framework/unmanaged-api/fusion/idefinitionappid-interface.md)  
- Představuje jedinečný identifikátor pro kód, který definuje aplikace v aktuálním oboru.  
+ Představuje jedinečný identifikátor pro kód, který definuje aplikaci v aktuálním oboru.  
   
  [IDefinitionIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)  
- Představuje jedinečné podpis kód, který definuje aplikace v aktuálním oboru.  
+ Představuje jedinečný podpis kódu, který definuje aplikaci v aktuálním oboru.  
   
  [IEnumDefinitionIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ienumdefinitionidentity-interface.md)  
  Slouží jako enumerátoru pro kolekci `IDefinitionIdentity` objekty.  
@@ -53,7 +53,7 @@ Tato část popisuje nespravované rozhraní, která fusion rozhraní API použ�
  Spravuje klíče identity pro objekty kódu.  
   
  [IInstallReferenceEnum – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md)  
- Představuje enumerátor pro odkazované sestavení nainstalované v globální mezipaměti sestavení.  
+ Představuje enumerátor pro odkazovaná sestavení nainstalována v globální mezipaměti sestavení.  
   
  [IInstallReferenceItem – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-interface.md)  
  Představuje položku nainstalované v globální mezipaměti sestavení.  
@@ -62,7 +62,7 @@ Tato část popisuje nespravované rozhraní, která fusion rozhraní API použ�
  Představuje odkaz na jedinečný identifikátor pro aplikaci v aktuálním oboru.  
   
  [IReferenceIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)  
- Představuje odkaz na jedinečný podpis objekt kódu.  
+ Představuje odkaz na jedinečný podpis kódu objektu.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Reflection>  

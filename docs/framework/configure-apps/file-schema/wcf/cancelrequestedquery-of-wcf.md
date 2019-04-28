@@ -3,11 +3,11 @@ title: <cancelRequestedQuery> služby WCF
 ms.date: 03/30/2017
 ms.assetid: b690d870-02eb-4c56-8bc3-e5ca99d7097b
 ms.openlocfilehash: bd6157e63761efa954744ab08ea6c66535def514
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55281330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673347"
 ---
 # <a name="cancelrequestedquery-of-wcf"></a>\<cancelRequestedQuery > služby WCF
 

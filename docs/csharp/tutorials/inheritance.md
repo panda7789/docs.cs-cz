@@ -6,11 +6,11 @@ ms.author: ronpet
 ms.date: 07/05/2018
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ms.openlocfilehash: 644e0bb281525fad12e263b31263bb9caba149f0
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61676036"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v jazyce C# a .NET
 

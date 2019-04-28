@@ -3,11 +3,11 @@ title: Projekce a transformace (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: bb0457ab-1823-47e6-9d2d-c93c958cc913
 ms.openlocfilehash: 8d721f600a4a5bb6f3e8c625f825b08d9f59b0ed
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61681816"
 ---
 # <a name="projections-and-transformations-linq-to-xml-c"></a>Projekce a transformace (LINQ to XML) (C#)
 Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] projekce a transformace.  

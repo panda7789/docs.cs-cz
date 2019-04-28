@@ -9,28 +9,28 @@ ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a944cf87783c59c21bffc9c48a18237c9fe6cdec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643228"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Postupy: Generování primárních sestavení vzájemné spolupráce pomocí Tlbimp.exe
 Existují dva způsoby, jak vygenerovat primární spolupracující sestavení:  
   
--   Použití [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) poskytované [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+- Použití [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) poskytované [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
   
      Nejjednodušší způsob, jak vytvořit primárních sestavení vzájemné spolupráce je použít [Tlbimp.exe (Importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md). Tlbimp.exe obsahuje následující bezpečnostní opatření:  
   
-    -   Vyhledá další registrovaných primárních spolupracujících sestavení před vytvořením nového sestavení vzájemné spolupráce pro všechny odkazy na knihovnu vnořeného typu.  
+    - Vyhledá další registrovaných primárních spolupracujících sestavení před vytvořením nového sestavení vzájemné spolupráce pro všechny odkazy na knihovnu vnořeného typu.  
   
-    -   Pokud nezadáte, kontejneru nebo souboru název primárního spolupracujícího sestavení silným názvem generování primárních sestavení vzájemné spolupráce se nezdaří.  
+    - Pokud nezadáte, kontejneru nebo souboru název primárního spolupracujícího sestavení silným názvem generování primárních sestavení vzájemné spolupráce se nezdaří.  
   
-    -   Generování primárních sestavení vzájemné spolupráce vynecháte odkazy na závislé sestavení se nezdaří.  
+    - Generování primárních sestavení vzájemné spolupráce vynecháte odkazy na závislé sestavení se nezdaří.  
   
-    -   Generování primárního spolupracujícího sestavení, pokud přidáte odkazy na závislé sestavení, které nejsou primární spolupracující sestavení se nezdaří.  
+    - Generování primárního spolupracujícího sestavení, pokud přidáte odkazy na závislé sestavení, které nejsou primární spolupracující sestavení se nezdaří.  
   
--   Ruční vytváření primárních sestavení vzájemné spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní s specifikace CLS (Common Language), jako například C#. Tento přístup je užitečný, pokud knihovna typů není k dispozici.  
+- Ruční vytváření primárních sestavení vzájemné spolupráce ve zdrojovém kódu pomocí jazyka, který je kompatibilní s specifikace CLS (Common Language), jako například C#. Tento přístup je užitečný, pokud knihovna typů není k dispozici.  
   
  Musíte mít pár kryptografických klíčů k podepsání sestavení silným názvem. Podrobnosti najdete v tématu [vytváření dvojice klíč A](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md).  
   

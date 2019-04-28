@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
 ms.openlocfilehash: 01fb70a7b37d6c9c119fff16a9d680d4139421cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664126"
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>Řazení se zobrazením dat (LINQ to DataSet)
 Možnost řadit data podle určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak řadit data a vrátí řádky dat, které jsou seřazené podle konkrétní kritéria řazení. Kromě jeho založené na řetězci možnosti, řazení <xref:System.Data.DataView> také umožňuje používat [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] výrazy řazení kritérií. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a výkonné operace řazení než založené na řetězci řazení. Toto téma popisuje oba přístupy k řazení pomocí <xref:System.Data.DataView>.  
@@ -65,9 +65,9 @@ Možnost řadit data podle určitých kritérií a potom prezentovat data do kli
 ## <a name="clearing-the-sort"></a>Vymazání řazení  
  Řazení informace o <xref:System.Data.DataView> můžete vymazat, jakmile byla nastavena, pomocí <xref:System.Data.DataView.Sort%2A> vlastnost. Existují dva způsoby, jak vymazat řazení informace v <xref:System.Data.DataView>:  
   
--   Nastavte <xref:System.Data.DataView.Sort%2A> vlastnost `null`.  
+- Nastavte <xref:System.Data.DataView.Sort%2A> vlastnost `null`.  
   
--   Nastavte <xref:System.Data.DataView.Sort%2A> vlastnost na prázdný řetězec.  
+- Nastavte <xref:System.Data.DataView.Sort%2A> vlastnost na prázdný řetězec.  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.DataView> z dotazu a vymaže řazení tak, že nastavíte <xref:System.Data.DataView.Sort%2A> vlastnost na prázdný řetězec:  

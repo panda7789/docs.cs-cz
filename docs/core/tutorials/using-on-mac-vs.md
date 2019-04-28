@@ -6,10 +6,10 @@ ms.date: 06/12/2017
 ms.custom: seodec18
 ms.openlocfilehash: d99cabf15be63593b272474867359324a5892b04
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664762"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 

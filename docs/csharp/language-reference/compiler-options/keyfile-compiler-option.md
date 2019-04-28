@@ -9,11 +9,11 @@ helpviewer_keywords:
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
 ms.openlocfilehash: 3e11cbca004aedd7d4f992abf2f766de4f4f5935
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662787"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (možnosti kompilátoru C#)
 Určuje název souboru obsahujícího kryptografický klíč.  

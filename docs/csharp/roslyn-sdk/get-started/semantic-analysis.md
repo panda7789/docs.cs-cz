@@ -4,11 +4,11 @@ description: Tento kurz obsahuje přehled práce s sémantické analýzy pomocí
 ms.date: 02/06/2018
 ms.custom: mvc
 ms.openlocfilehash: 188104c3430b4ca32578cd35d3e161a6eb0e0e1a
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61676063"
 ---
 # <a name="get-started-with-semantic-analysis"></a>Začínáme s sémantická analýza
 

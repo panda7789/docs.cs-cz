@@ -3,11 +3,11 @@ title: <headers>
 ms.date: 03/30/2017
 ms.assetid: c79b897d-8ea3-40b5-a8b6-2471941f7ed3
 ms.openlocfilehash: 660497012dd057e4ecf95524833e2573fe03a8b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670674"
 ---
 # <a name="headers"></a>\<headers>
 Koncový bod vyřešíte tak, že jednu nebo víc hlaviček SOAP kromě svůj základní identifikátor URI. Jedna sada scénáře, kde je to užitečné je sada SOAP zprostředkující scénáře, kdy vyžaduje, aby koncový bod klientům tohoto koncového bodu zahrnout záhlaví SOAP určenou pro zprostředkovatele. Tento prvek konfigurace je možné definovat tyto hlavičky vlastní adresu. Položky v kolekci hlaviček koncového bodu jsou uživatelem definované elementy XML. Každý prvek musí být ve správném formátu XML.  

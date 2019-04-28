@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: abeb731ecd66e4412f904b085abcfc7b5b3a3c4b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665036"
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>ICLRStrongName::StrongNameKeyGen – metoda
 Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  
@@ -45,9 +45,9 @@ HRESULT StrongNameKeyGen (
  `dwFlags`  
  [in] Hodnota, která určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
+- 0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
+- 0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `ppbKeyBlob`  
  [out] Vrácený pár veřejného a privátního klíče.  

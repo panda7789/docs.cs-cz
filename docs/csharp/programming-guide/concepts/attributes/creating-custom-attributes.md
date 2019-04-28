@@ -3,11 +3,11 @@ title: Vytváření vlastních atributů (C#)
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
 ms.openlocfilehash: 0277a88b7e5beda511f6490261a7009adcfed4ee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668702"
 ---
 # <a name="creating-custom-attributes-c"></a>Vytváření vlastních atributů (C#)
 Můžete vytvořit vlastní atributy definováním třídy atributu, třídu, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, díky kterému budou Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značek s názvem programátora, který napsal typu. Můžete třeba definovat vlastní `Author` třídy atributů:  

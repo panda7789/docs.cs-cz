@@ -7,11 +7,11 @@ helpviewer_keywords:
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
 ms.openlocfilehash: 057532cae42d7a0b6d11750ae0e33e43108cfda9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678904"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Postupy: Test rovnosti (Identity) odkazů (C# Průvodce programováním v)
 Pro podporu porovnání rovnosti referencí u typů není nutné implementovat žádnou vlastní logiku. Tato funkce je poskytována pro všechny typy statickou metodou <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>.  

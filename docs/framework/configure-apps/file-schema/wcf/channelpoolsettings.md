@@ -3,11 +3,11 @@ title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
 ms.openlocfilehash: ca1f680e2de67984dfcec49b3d262799000a2625
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673326"
 ---
 # <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Určuje nastavení fondu kanálu pro vlastní vazbu.  
@@ -52,11 +52,11 @@ Určuje nastavení fondu kanálu pro vlastní vazbu.
   
  `ChannelPoolSettings` Určuje tři kvót:  
   
--   `idleTimeout` Kvóty slouží ke zmírnění útoků s cílem odepření služby (DOS) na serveru, které využívají obsadit prostředků delší dobu. Na straně klienta můžete nastavení správnou hodnotu zvýšit spolehlivost připojení ke službě. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- `idleTimeout` Kvóty slouží ke zmírnění útoků s cílem odepření služby (DOS) na serveru, které využívají obsadit prostředků delší dobu. Na straně klienta můžete nastavení správnou hodnotu zvýšit spolehlivost připojení ke službě. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
   
--   `leaseTimeout` Kvóty slouží k integraci s nástroji pro vyrovnávání zatížení a zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- `leaseTimeout` Kvóty slouží k integraci s nástroji pro vyrovnávání zatížení a zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní přidělení prostředků. Je vhodný pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
   
--   `maxOutboundChannelsPerEndpoint` Kvóta nastavuje omezení mezipaměti na serveru a klienta a slouží ke zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků, která je vhodná pro malé instalace scénáře a vývojové prostředí. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
+- `maxOutboundChannelsPerEndpoint` Kvóta nastavuje omezení mezipaměti na serveru a klienta a slouží ke zlepšení spolehlivosti. Výchozí hodnota je založena na konzervativní zvýšení přidělení prostředků, která je vhodná pro malé instalace scénáře a vývojové prostředí. Správci služeb by měl zkontrolujte hodnotu, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
   
 ## <a name="see-also"></a>Viz také:
 

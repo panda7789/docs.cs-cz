@@ -3,11 +3,11 @@ title: 'Postupy: Spojení dvou kolekcí (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
 ms.openlocfilehash: fb158427afd59caea5eecdad29fa0a68686f6381
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667961"
 ---
 # <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: Spojení dvou kolekcí (LINQ to XML) (C#)
 Prvek nebo atribut v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element z každé objednávky odkazuje `CustomerID` atribut v zákazníka.  

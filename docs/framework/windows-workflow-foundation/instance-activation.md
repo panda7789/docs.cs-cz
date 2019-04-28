@@ -3,11 +3,11 @@ title: Aktivace instance
 ms.date: 03/30/2017
 ms.assetid: 134c3f70-5d4e-46d0-9d49-469a6643edd8
 ms.openlocfilehash: 41dfc076bdee72c2f4d0c781c6588caa927c740e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703397"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641669"
 ---
 # <a name="instance-activation"></a>Aktivace instance
 Store Instance pracovního postupu SQL spouští interní úlohy, která pravidelně probudí a instance pracovních postupů spustitelných nebo aktivovatelné zjistí databáze trvalosti. Pokud najde instance pracovního postupu spustitelný, upozorní hostitele pracovního postupu, které podporují aktivaci instance. Pokud v úložišti instancí najde instanci aktivovatelné pracovního postupu, upozorní obecný hostitele, který aktivuje hostitele pracovního postupu, která pak spustí instanci pracovního postupu. Následující části v tomto tématu popisují proces aktivace instance podrobně.  
@@ -15,11 +15,11 @@ Store Instance pracovního postupu SQL spouští interní úlohy, která pravide
 ## <a name="RunnableSection"></a> Zjišťování a aktivace spustitelné instance pracovního postupu  
  Store Instance pracovního postupu SQL bude považovat za instanci pracovního postupu *spustitelných* Pokud instance není v pozastaveném stavu nebo stavu dokončení a splňuje následující podmínky:  
   
--   Instance odemknut a má čekajícího časovače, kterému vypršela platnost.  
+- Instance odemknut a má čekajícího časovače, kterému vypršela platnost.  
   
--   Instance má vypršela platnost zámku na něj.  
+- Instance má vypršela platnost zámku na něj.  
   
--   Instance je odemknutá a že má stav **zpracování**.  
+- Instance je odemknutá a že má stav **zpracování**.  
   
  Vyvolá Store Instance pracovního postupu SQL <xref:System.Activities.DurableInstancing.HasRunnableWorkflowEvent> když najde spustitelné instanci. Potom úložiště SqlWorkflowInstanceStore zastaví monitorování až <xref:System.Activities.DurableInstancing.TryLoadRunnableWorkflowCommand> se volá jednou ve storu.  
   

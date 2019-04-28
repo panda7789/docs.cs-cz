@@ -3,11 +3,11 @@ title: Mapování datových typů SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: fafdc31a-f435-4cd3-883f-1dfadd971277
 ms.openlocfilehash: f90f44666fa5843ccf9bd1cd9ccb5c20b812f494
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664087"
 ---
 # <a name="sql-server-data-type-mappings"></a>Mapování datových typů SQL Serveru
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy. Například rozhraní .NET Framework <xref:System.Decimal> struktura má maximální rozsah 28, že maximální rozsahu, 38 desetinných míst a číselné datové typy serveru SQL Server. K udržení integrity dat při čtení a zápis dat, <xref:System.Data.SqlClient.SqlDataReader> zpřístupňuje SQL Server – konkrétní zadali přístupové metody, které vracejí objekty <xref:System.Data.SqlTypes> typy a také přístupové metody, které vrací rozhraní .NET Framework. SQL Server typy a typy rozhraní .NET Framework jsou také reprezentované výčty v <xref:System.Data.DbType> a <xref:System.Data.SqlDbType> třídy, které můžete použít při zadávání <xref:System.Data.SqlClient.SqlParameter> datové typy.  
@@ -45,7 +45,7 @@ SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy. Nap�
 |časové razítko|Byte[]|<xref:System.Data.SqlDbType.Timestamp>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlBinary%2A>|<xref:System.Data.DbType.Binary>|<xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>|  
 |tinyint|Byte|<xref:System.Data.SqlDbType.TinyInt>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlByte%2A>|<xref:System.Data.DbType.Byte>|<xref:System.Data.SqlClient.SqlDataReader.GetByte%2A>|  
 |uniqueidentifier|Guid|<xref:System.Data.SqlDbType.UniqueIdentifier>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlGuid%2A>|<xref:System.Data.DbType.Guid>|<xref:System.Data.SqlClient.SqlDataReader.GetGuid%2A>|  
-|varbinary|Byte[]|<xref:System.Data.SqlDbType.VarBinary>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlBinary%2A>|<xref:System.Data.DbType.Binary>|<xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>|  
+|Varbinary|Byte[]|<xref:System.Data.SqlDbType.VarBinary>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlBinary%2A>|<xref:System.Data.DbType.Binary>|<xref:System.Data.SqlClient.SqlDataReader.GetBytes%2A>|  
 |varchar|String<br /><br /> Char]|<xref:System.Data.SqlDbType.VarChar>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlString%2A>|<xref:System.Data.DbType.AnsiString>, <xref:System.Data.DbType.String>|<xref:System.Data.SqlClient.SqlDataReader.GetString%2A><br /><br /> <xref:System.Data.SqlClient.SqlDataReader.GetChars%2A>|  
 |xml|XML|<xref:System.Data.SqlDbType.Xml>|<xref:System.Data.SqlClient.SqlDataReader.GetSqlXml%2A>|<xref:System.Data.DbType.Xml>|žádná|  
   

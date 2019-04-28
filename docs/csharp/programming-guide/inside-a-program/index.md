@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
 ms.openlocfilehash: dc4cb8aa63d4a63325e887e134fcda6aeb9d27fa
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61679814"
 ---
 # <a name="inside-a-c-program"></a>V programu jazyka C#
 

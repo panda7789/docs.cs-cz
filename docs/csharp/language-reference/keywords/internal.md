@@ -9,11 +9,11 @@ helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
 ms.openlocfilehash: aefb806b452452d4837b29b6ab11ce158ea412bc
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661357"
 ---
 # <a name="internal-c-reference"></a>internal (Referenční dokumentace jazyka C#)
 `internal` – Klíčové slovo je [modifikátor přístupu](../../../csharp/language-reference/keywords/access-modifiers.md) pro typy a členy typu. 

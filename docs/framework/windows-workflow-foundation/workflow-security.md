@@ -5,11 +5,11 @@ helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
 ms.openlocfilehash: a5a8d4d0d41efb7a255080994c8e18302d302447
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669235"
 ---
 # <a name="workflow-security"></a>Zabezpečení pracovních postupů
 Windows Workflow Foundation (WF) je integrovaná s několika různých technologií, jako je například Microsoft SQL Server a Windows Communication Foundation (WCF). Interakce s tyto technologie vznikat potíže se zabezpečením do vašich pracovních postupů v případě aktivace nesprávně.
@@ -28,21 +28,21 @@ Windows Workflow Foundation (WF) je integrovaná s několika různých technolog
 
 ## <a name="sql-server-security-concerns"></a>SQL Server Security Concerns
 
--   Pokud se používá velké množství podřízené aktivity, umístění, záložek, rozšíření hostitele nebo obory nebo pokud se používají záložky s velmi velkých datových částí, může dojít k vyčerpání paměti nebo odešel množství volného místa databáze může být přidělen při stálost. To lze zmírnit použitím zabezpečení na úrovni objektů a na úrovni databáze.
+- Pokud se používá velké množství podřízené aktivity, umístění, záložek, rozšíření hostitele nebo obory nebo pokud se používají záložky s velmi velkých datových částí, může dojít k vyčerpání paměti nebo odešel množství volného místa databáze může být přidělen při stálost. To lze zmírnit použitím zabezpečení na úrovni objektů a na úrovni databáze.
 
--   Při použití <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, musí být zabezpečené úložiště instancí. Další informace najdete v tématu [osvědčené postupy pro SQL Server](https://go.microsoft.com/fwlink/?LinkId=164972).
+- Při použití <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, musí být zabezpečené úložiště instancí. Další informace najdete v tématu [osvědčené postupy pro SQL Server](https://go.microsoft.com/fwlink/?LinkId=164972).
 
--   Zašifrovat citlivá data v úložišti instancí. Další informace najdete v tématu [šifrování zabezpečení SQL](https://go.microsoft.com/fwlink/?LinkId=164976).
+- Zašifrovat citlivá data v úložišti instancí. Další informace najdete v tématu [šifrování zabezpečení SQL](https://go.microsoft.com/fwlink/?LinkId=164976).
 
--   Vzhledem k tomu, že připojovací řetězec databáze je často součástí konfiguračního souboru, zabezpečení na úrovni systému windows (ACL) by měla sloužit k zajištění, že konfigurační soubor (obvykle Web.Config) je zabezpečený a přihlašovací jméno a heslo informace nejsou součástí připojovací řetězec. Ověřování Windows by měl místo toho použít mezi databází a webový server.
+- Vzhledem k tomu, že připojovací řetězec databáze je často součástí konfiguračního souboru, zabezpečení na úrovni systému windows (ACL) by měla sloužit k zajištění, že konfigurační soubor (obvykle Web.Config) je zabezpečený a přihlašovací jméno a heslo informace nejsou součástí připojovací řetězec. Ověřování Windows by měl místo toho použít mezi databází a webový server.
 
 ## <a name="considerations-for-workflowservicehost"></a>Důležité informace pro hostitele služby pracovního postupu
 
--   Windows Communication Foundation (WCF) koncových bodů použitých v pracovních postupech by měla být zabezpečená. Další informace najdete v tématu [WCF – Přehled zabezpečení](https://go.microsoft.com/fwlink/?LinkID=164975).
+- Windows Communication Foundation (WCF) koncových bodů použitých v pracovních postupech by měla být zabezpečená. Další informace najdete v tématu [WCF – Přehled zabezpečení](https://go.microsoft.com/fwlink/?LinkID=164975).
 
--   Může být implementována autorizaci na úrovni hostitele pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. Zobrazit [jak: Vytvoření vlastního Správce autorizací pro službu](https://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti.
+- Může být implementována autorizaci na úrovni hostitele pomocí <xref:System.ServiceModel.ServiceAuthorizationManager>. Zobrazit [jak: Vytvoření vlastního Správce autorizací pro službu](https://go.microsoft.com/fwlink/?LinkId=192228) podrobnosti.
 
--   ServiceSecurityContext pro příchozí zprávy je také dostupné v rámci pracovního postupu tak přístup k informacím OperationContext.
+- ServiceSecurityContext pro příchozí zprávy je také dostupné v rámci pracovního postupu tak přístup k informacím OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>Balíček zabezpečení WF CTP
  Microsoft WF zabezpečení Pack CTP 1 je první verze preview (CTP) technologie komunity sady aktivit a jejich provedení na základě [Windows Workflow Foundation](index.md) v [rozhraní .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) pracovní postup WF ( (4) a [Windows Identity Foundation (WIF)](../security/index.md).  CTP 1 Microsoft WF zabezpečení balíček obsahuje aktivity a jejich návrhářů, které ukazují, jak jednoduše povolit různé scénáře související se zabezpečením pomocí pracovního postupu, včetně:

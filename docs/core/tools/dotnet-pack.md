@@ -3,17 +3,17 @@ title: příkaz DotNet pack
 description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 ms.date: 12/04/2018
 ms.openlocfilehash: 8faa99bf35d9802b16f951082b20644d45a939c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664841"
 ---
 # <a name="dotnet-pack"></a>balíčku DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Název
 
 `dotnet pack` -Sbalit kód do balíčku NuGet.
 

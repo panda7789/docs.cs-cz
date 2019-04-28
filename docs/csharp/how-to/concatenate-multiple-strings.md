@@ -8,11 +8,11 @@ helpviewer_keywords:
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
 ms.openlocfilehash: da83a79f58c236692e284a7920c7b98c3520e5d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54710414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672208"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Postupy: Řetězení více řetězců (C# průvodce)
 

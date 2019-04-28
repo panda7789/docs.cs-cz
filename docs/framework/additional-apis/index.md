@@ -11,11 +11,11 @@ author: mairaw
 ms.author: mairaw
 ms.topic: conceptual
 ms.openlocfilehash: a48a145cd337a18c4ce63b281e1c82032d0532e7
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675361"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 
@@ -25,7 +25,7 @@ Kromě toho některé knihovny cílit na konkrétní platformy nebo implementace
   
 ## <a name="oob-projects"></a>Projekty OOB
   
-| Projekt | Popis |  
+| Project | Popis |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Obsahuje kolekce, které jsou vlákna bezpečné a zaručené nikdy nezmění jejich obsah. |
 | <xref:System.Net.Http.WinHttpHandler> | Poskytuje obslužné rutiny zpráv pro <xref:System.Net.Http.HttpClient> podle WinHTTP rozhraní Windows. |
@@ -34,7 +34,7 @@ Kromě toho některé knihovny cílit na konkrétní platformy nebo implementace
 
 ## <a name="platform-specific-libraries"></a>Knihovny pro konkrétní platformu
   
-| Projekt | Popis |  
+| Project | Popis |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | Rozšiřuje <xref:System.Text.EncodingProvider> třídy pro zpřístupnění kódování znakových stránek pro aplikace, které cílí univerzální platformu Windows. |  
   

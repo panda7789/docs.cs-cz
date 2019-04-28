@@ -9,11 +9,11 @@ helpviewer_keywords:
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
 ms.openlocfilehash: 459f83ee52d0ab6421fe7be4a597d8e5174b4fd9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662617"
 ---
 # <a name="-out-c-compiler-options"></a>-out (možnosti kompilátoru C#)
 **-Out** parametr určuje název výstupního souboru.  
@@ -35,9 +35,9 @@ ms.locfileid: "59331296"
   
  Pokud nezadáte název výstupního souboru:  
   
--   .Exe bude trvat, než jeho název souboru se zdrojovým kódem, který obsahuje **hlavní** metody.  
+- .Exe bude trvat, než jeho název souboru se zdrojovým kódem, který obsahuje **hlavní** metody.  
   
--   .Dll nebo .netmodule bude trvat, než jeho název prvního souboru se zdrojovým kódem.  
+- .Dll nebo .netmodule bude trvat, než jeho název prvního souboru se zdrojovým kódem.  
   
  Soubor zdrojového kódu používá ke kompilaci jeden výstupní soubor nelze použít ve stejné kompilaci pro kompilaci jiné výstupní soubor.  
   

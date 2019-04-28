@@ -4,11 +4,11 @@ description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
 ms.openlocfilehash: ae44dd273a2460e5718adc7324fae324e3de5bba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675738"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 

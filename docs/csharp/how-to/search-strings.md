@@ -7,11 +7,11 @@ helpviewer_keywords:
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ms.openlocfilehash: b9c27e419d37b6c0730f214d3b2b9bbdf7e30d11
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672065"
 ---
 # <a name="how-to-search-strings"></a>Postupy: vyhledávání řetězců
 
@@ -43,7 +43,7 @@ Následující příklad kódu vyhledá pro slovo "the" nebo "jejich" ve větě,
 
 Vzor hledání popisuje text, který hledáte. Následující tabulka popisuje každý prvek vzor hledání. (Následující tabulka používá jedné `\` musí být uvozena jako `\\` v řetězci jazyka C#).
 
-| vzor  | Význam     |
+| Vzor  | Význam     |
 | -------- |-------------|
 | the      | shodovat s textem "the" |
 | (eir)?   | porovnání 0 a 1 výskyt "eir" |
@@ -58,7 +58,7 @@ Vzor hledání popisuje text, který hledáte. Následující tabulka popisuje k
 
 Následující kód používá regulárních výrazů pro ověření formátu každý řetězec v poli. Vyžaduje ověření, že každý řetězec mít formát _služba ._protokol telefonní čísla, ve kterém jsou tří skupin číslic oddělených spojovníky, první dvě skupiny obsahují tři číslice a třetí skupina obsahuje čtyři číslice. Vzor hledání použit regulární výraz `^\\d{3}-\\d{3}-\\d{4}$`. Další informace najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../standard/base-types/regular-expression-language-quick-reference.md).
 
-| vzor  | Význam                             |
+| Vzor  | Význam                             |
 | -------- |-------------------------------------|
 | ^        | odpovídá začátku řetězce |
 | \d{3}    | odpovídá přesně 3 znaky číslice  |

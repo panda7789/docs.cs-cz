@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ca21911f3d16b79887b9d6d8185f8fab17651321
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59093212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672988"
 ---
 # <a name="icordebugfunction-interface"></a>ICorDebugFunction – rozhraní
 
@@ -45,9 +45,9 @@ Představuje spravovanou funkci nebo metodu.
   
  Vztah mezi tokenu metadat metodu, `mdMethodDef`a metody `ICorDebugFunction` objektu je závislá na Určuje, zda je povoleno upravit a pokračovat na funkci:  
   
--   Pokud funkce upravit a pokračovat není povoleno ve funkci, po jejím obnovení relace existuje mezi `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, že funkce má jeden `ICorDebugFunction` objekt a jeden `mdMethodDef` token.  
+- Pokud funkce upravit a pokračovat není povoleno ve funkci, po jejím obnovení relace existuje mezi `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, že funkce má jeden `ICorDebugFunction` objekt a jeden `mdMethodDef` token.  
   
--   Pokud je povoleno upravit a pokračovat na funkce, mezi existuje vztah mnoha k jednomu jinému `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, funkce může mít mnoho instancí `ICorDebugFunction`, jeden pro každou verzi funkce, ale pouze jeden `mdMethodDef` token.  
+- Pokud je povoleno upravit a pokračovat na funkce, mezi existuje vztah mnoha k jednomu jinému `ICorDebugFunction` objektu a `mdMethodDef` token. To znamená, funkce může mít mnoho instancí `ICorDebugFunction`, jeden pro každou verzi funkce, ale pouze jeden `mdMethodDef` token.  
   
 > [!NOTE]
 >  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  

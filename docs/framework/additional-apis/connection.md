@@ -1,5 +1,5 @@
 ---
-title: Třída připojení
+title: Connection – třída
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -13,13 +13,13 @@ ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: ed1fce1d16f9ddbe3a3ede91fecb1a3ca6b3d407
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675452"
 ---
-# <a name="connection-class"></a>Třída připojení
+# <a name="connection-class"></a>Connection – třída
 
 `Connection` Odpovědi serveru analyzuje třídy, fronty požadavků a požadavků kanálu.
 

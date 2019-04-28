@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
 ms.openlocfilehash: 6c9c77f96ff6032de43d9b5a257bc0796a19b858
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55269338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667376"
 ---
 # <a name="certificatereference"></a>\<certificateReference >
 Určuje nastavení, které se používají k vyhledání a ověřit certifikát X.509 v úložišti certifikátů.  
@@ -50,7 +50,7 @@ Určuje nastavení, které se používají k vyhledání a ověřit certifikát 
 |isChainIncluded|Určuje, zda by měl provádět ověření pomocí řetězu certifikátů. Výchozí hodnota je "true"; ověření se provádí na základě řetězu certifikátů. Volitelné.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

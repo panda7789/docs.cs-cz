@@ -4,11 +4,11 @@ description: Další informace o C# indexery a jak implementovat indexovaných v
 ms.date: 06/20/2016
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
 ms.openlocfilehash: a13163cb6bd835dfdd16c83c905c134eb8a86e7d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672026"
 ---
 # <a name="indexers"></a>Indexery
 

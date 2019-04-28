@@ -9,11 +9,11 @@ helpviewer_keywords:
 - addmodule compiler option [C#]
 ms.assetid: ed604546-0dc2-4bd4-9a3e-610a8d973e58
 ms.openlocfilehash: f45afd277818d7e1658751f2aae0b2153c940eee
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617509"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61682362"
 ---
 # <a name="-addmodule-c-compiler-options"></a>-addmodule (možnosti kompilátoru C#)
 Tato možnost přidá modul, který byl vytvořen s přepínačem target: module aktuální kompilace.  

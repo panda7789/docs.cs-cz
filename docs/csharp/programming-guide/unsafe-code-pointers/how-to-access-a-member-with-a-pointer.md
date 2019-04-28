@@ -6,11 +6,11 @@ helpviewer_keywords:
 - pointers [C#], member access
 ms.assetid: 1e998498-8c85-4a78-8ce2-4d8c20f08342
 ms.openlocfilehash: 9762b9e2487c30b81b7ef6ae22827b64e3cb02e2
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200348"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677725"
 ---
 # <a name="how-to-access-a-member-with-a-pointer-c-programming-guide"></a>Postupy: přístup ke členu pomocí ukazatele (C# Programming Guide)
 Pro přístup ke členu struktury, která je deklarována v nezabezpečeném kontextu, můžete použít operátor přístupu členů, jak je znázorněno v následujícím příkladu, ve kterém `p` je ukazatel [struktura](../../../csharp/language-reference/keywords/struct.md) , který obsahuje člena `x`.  

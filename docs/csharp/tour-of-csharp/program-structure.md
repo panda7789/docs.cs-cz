@@ -4,11 +4,11 @@ description: Přečtěte si základní stavební bloky C# programu
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
 ms.openlocfilehash: de10cd000b4028a66ce6dd6f21e39c013e38ecd2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675946"
 ---
 # <a name="program-structure"></a>Struktura programu
 

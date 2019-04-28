@@ -3,11 +3,11 @@ title: 'Postupy: Načtení mělké hodnoty elementu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
 ms.openlocfilehash: 593fe1c22664f1e4e8322cb8816e58f4721c5bf8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54672828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667701"
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: Načtení mělké hodnoty elementu (C#)
 Toto téma ukazuje, jak získat mělké hodnoty elementu. Mělké hodnoty je hodnota konkrétní elementu, na rozdíl od hloubkové hodnotu, která obsahuje hodnoty všechny podřízené prvky, které jsou spojeny do jednoho řetězce.  

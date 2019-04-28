@@ -3,18 +3,18 @@ title: Agregační funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: acfd3149-f519-4c6e-8fe1-b21d243a0e58
 ms.openlocfilehash: 113c19078feeca24a0817e52f8eb0d04537b0684
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607216"
 ---
 # <a name="aggregate-functions-entity-sql"></a>Agregační funkce (Entity SQL)
 Agregace je konstrukce jazyka, který zestruční kolekce do skaláru jako součást operace skupiny. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] agregace přicházet ve dvou formách:  
   
--   [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Kolekce funkcí, které může je použít kdekoli ve výrazu. To zahrnuje použití agregačních funkcí v projekce a predikátů, které fungují na kolekcích. Kolekce funkcí jsou preferovaný způsob určení agregace v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Kolekce funkcí, které může je použít kdekoli ve výrazu. To zahrnuje použití agregačních funkcí v projekce a predikátů, které fungují na kolekcích. Kolekce funkcí jsou preferovaný způsob určení agregace v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
--   Skupina agregace ve výrazech dotazů, které mají klauzuli Group by. Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], agregace skupiny přijmout DISTINCT a všechny jako modifikátory agregační vstupem.  
+- Skupina agregace ve výrazech dotazů, které mají klauzuli Group by. Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], agregace skupiny přijmout DISTINCT a všechny jako modifikátory agregační vstupem.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Nejprve se pokusí o interpretovat výraz jako funkce kolekce a Pokud výraz v kontextu výrazu SELECT ji interpretuje jako agregace skupiny.  
   

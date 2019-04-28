@@ -3,11 +3,11 @@ title: <iriParsing> – element (nastavení URI)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
 ms.openlocfilehash: 7033f4dcda7d2fe73310ae0d36d9b05c090d13d4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674516"
 ---
 # <a name="iriparsing-element-uri-settings"></a>\<iriParsing > – Element (nastavení Uri)
 Určuje, pokud analýze International Resource Identifier (IRI) se použije k <xref:System.Uri> a určuje, zda by měl použít IRI pravidel pro analýzu.  
@@ -37,7 +37,7 @@ Určuje, pokud analýze International Resource Identifier (IRI) se použije k <x
 |`enabled`|Určuje, zda je povolena analýza IRI. Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

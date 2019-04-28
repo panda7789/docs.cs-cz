@@ -3,11 +3,11 @@ title: 'Postupy: Načtení jednoho atributu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
 ms.openlocfilehash: 2bf42333d7a0b3e34cc0a636b68659b8c45d1d83
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667766"
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Postupy: Načtení jednoho atributu (LINQ to XML) (C#)
 Toto téma vysvětluje, jak načíst jeden atribut elementu, název atributu. To je užitečné pro psaní výrazů dotazů, ve které chcete najít element, který se má určitý atribut.  

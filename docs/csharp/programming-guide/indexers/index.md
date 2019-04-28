@@ -9,11 +9,11 @@ helpviewer_keywords:
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
 ms.openlocfilehash: 5ab0a5e524979110c355391cf800cc82e6d6244f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680154"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -40,29 +40,29 @@ Od verze C# 7.0, jak získat a přístupový objekt set mohou být implementovan
   
 ## <a name="indexers-overview"></a>Přehled indexerů  
   
--   Indexery povolují objekty, které mají být indexovány v podobným způsobem jako pole.  
+- Indexery povolují objekty, které mají být indexovány v podobným způsobem jako pole.  
   
--   A `get` přistupující objekt vrací hodnotu. A `set` přístupového objektu přiřadí hodnotu.  
+- A `get` přistupující objekt vrací hodnotu. A `set` přístupového objektu přiřadí hodnotu.  
   
--   [To](../../../csharp/language-reference/keywords/this.md) – klíčové slovo se používá k definování indexeru.  
+- [To](../../../csharp/language-reference/keywords/this.md) – klíčové slovo se používá k definování indexeru.  
   
--   [Hodnotu](../../../csharp/language-reference/keywords/value.md) – klíčové slovo se používá k definování přiřazené podle hodnoty `set` indexeru.  
+- [Hodnotu](../../../csharp/language-reference/keywords/value.md) – klíčové slovo se používá k definování přiřazené podle hodnoty `set` indexeru.  
   
--   Indexery není nutné indexovat pomocí celočíselnou hodnotu; je jenom na vás, jak definovat konkrétní vyhledávací mechanismus.  
+- Indexery není nutné indexovat pomocí celočíselnou hodnotu; je jenom na vás, jak definovat konkrétní vyhledávací mechanismus.  
   
--   Indexery můžou být přetížené.  
+- Indexery můžou být přetížené.  
   
--   Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrné pole.  
+- Indexery může mít více než jeden formální parametr, například při přístupu k dvourozměrné pole.  
   
 ## <a name="BKMK_RelatedSections"></a> Související oddíly  
   
--   [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)  
+- [Použití indexerů](../../../csharp/programming-guide/indexers/using-indexers.md)  
   
--   [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
+- [Indexery v rozhraní](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
   
--   [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
+- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
   
--   [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
+- [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 

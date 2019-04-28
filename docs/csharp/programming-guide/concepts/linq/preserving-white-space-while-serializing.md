@@ -3,11 +3,11 @@ title: Zachování prázdných znaků při Serializing3
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
 ms.openlocfilehash: c02524fbd22f56761189ed9ba7bd658dadeda19a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61682102"
 ---
 # <a name="preserving-white-space-while-serializing"></a>Zachování prázdných znaků při serializaci
 Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.  
@@ -19,13 +19,13 @@ Toto téma popisuje, jak řídit prázdných znaků při serializaci stromu XML.
 ## <a name="white-space-behavior-of-methods-that-serialize-xml-trees"></a>Prázdné místo chování metody, které serializace stromů XML  
  Následující metody u <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy serializaci stromu XML. Může serializovat stromu XML do souboru <xref:System.IO.TextReader>, nebo <xref:System.Xml.XmlReader>. `ToString` Metoda provede serializaci do řetězce.  
   
--   <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
+- <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
   
--   <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
+- <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
   
--   [XElement.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
+- [XElement.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
   
--   [XDocument.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
+- [XDocument.ToString()](xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType)
   
  Pokud metoda nepřijímá <xref:System.Xml.Linq.SaveOptions> jako argument, pak metoda naformátuje (odsazení) serializovaném kódu XML. V takovém případě se zahodí všechny neplatné prázdné znaky ve stromové struktuře XML.  
   

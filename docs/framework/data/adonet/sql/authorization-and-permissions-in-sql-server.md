@@ -3,11 +3,11 @@ title: Autorizace a oprávnění na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
 ms.openlocfilehash: 398041d678ba3e4ae5a36dd7714fd2a9bfee1b40
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59185858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663957"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění na SQL Serveru
 Při vytváření databázových objektů, je nutné explicitně udělit oprávnění, aby byly přístupné uživatelům. Všechny zabezpečitelné objekty má oprávnění, která lze udělit pomocí příkazů oprávnění objektu zabezpečení.  
@@ -37,7 +37,7 @@ Při vytváření databázových objektů, je nutné explicitně udělit oprávn
 |ODVOLAT|Odvolá oprávnění. Toto je výchozí stav nového objektu. Oprávnění odvolána uživatele nebo roli je stále možné zdědit z jiných skupin nebo role, ke kterým je přiřazen objekt zabezpečení.|  
 |ODEPŘÍT|ODEPŘÍT odvolá oprávnění tak, že nelze dědit. ODEPŘÍT má přednost před všechna oprávnění, kromě ODEPŘÍT se nevztahují na vlastníky objektu nebo členům `sysadmin`. Pokud třeba ODEPŘETE oprávnění u objektu `public` role se nezdařilo pro všechny uživatele a role s výjimkou objektu vlastníci a `sysadmin` členy.|  
   
--   Příkaz udělení oprávnění můžete přiřadit skupiny nebo role, která mohou být zděděny uživatele databáze s. ODEPŘÍT příkaz však má přednost před všechny ostatní příkazy oprávnění. Proto uživatel, který se zamítla oprávnění nemůže dědit ji z jiné role.  
+- Příkaz udělení oprávnění můžete přiřadit skupiny nebo role, která mohou být zděděny uživatele databáze s. ODEPŘÍT příkaz však má přednost před všechny ostatní příkazy oprávnění. Proto uživatel, který se zamítla oprávnění nemůže dědit ji z jiné role.  
   
 > [!NOTE]
 >  Členové `sysadmin` vlastníky role a objekt serveru nemůže být odepřeno oprávnění.  

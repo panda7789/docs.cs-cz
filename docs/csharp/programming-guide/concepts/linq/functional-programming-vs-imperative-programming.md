@@ -3,16 +3,16 @@ title: Funkční programování vs. Imperativní programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
 ms.openlocfilehash: 42c80146a091bfdcff2bbf3ebe1f4ed9a9510e29
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54518953"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668234"
 ---
 # <a name="functional-programming-vs-imperative-programming-c"></a>Funkční programování vs. Imperativní programování (C#)
 Toto téma porovnává a výrazně liší od tradičnější imperativního (procesního) programování s funkčního programování.  
   
-## <a name="functional-programming-vs-imperative-programming"></a>Funkční programování vs. Imperativní programování  
+## <a name="functional-programming-vs-imperative-programming"></a>Funkční programování vs. imperativní programování  
  *Funkční programování* paradigma byla explicitně vytvořili za účelem podpory čistě funkční přístup k řešení problémů. Funkční programování je forma *programování deklarativních*. Naproti tomu byly navrženy většiny běžných jazyků, včetně objektově orientované programovací jazyky (OOP) jako je C#, Visual Basic, C++ a jazyka Java, především podpoře *imperativní* (procesního) programování.  
   
  S imperativní přístup vývojář píše kód, který popisuje v přesnější podrobností kroky, které počítače nutné provést k dosažení tohoto cíle. To se někdy označuje jako *vylepšením* programování. Naproti tomu funkční přístup zahrnuje vytváření problému jako sadu funkcí, které má být proveden. Můžete definovat důkladně vstup pro každou funkci a jaké každá funkce vrátí. Následující tabulka popisuje některé obecné rozdíly mezi těmito dvěma přístupy.  
@@ -35,11 +35,11 @@ Toto téma porovnává a výrazně liší od tradičnější imperativního (pro
 ## <a name="advantages-of-pure-functions"></a>Výhody čisté funkce  
  Hlavním důvodem pro implementaci funkční transformace jako čistě funkce je, že čistě funkce sestavitelný: to znamená, samostatná a bezstavové. Tyto vlastnosti přinést řadu výhod, včetně následujících:  
   
--   Zvýšení přehlednosti a udržovatelnosti. Toto je vzhledem k tomu, že každá funkce je navržená k provedení určitého úkolu přiřazena svých argumentů. Funkce nevyžaduje žádné externího stavu.  
+- Zvýšení přehlednosti a udržovatelnosti. Toto je vzhledem k tomu, že každá funkce je navržená k provedení určitého úkolu přiřazena svých argumentů. Funkce nevyžaduje žádné externího stavu.  
   
--   Snadnější reiterative vývoje. Vzhledem k tomu je snazší Refaktorovat kód, změny návrhu jsou často usnadnil. Předpokládejme například, můžete psát složitější transformace a potom dobré si uvědomit, že nějaký kód je několikrát opakovat v transformace. Pokud refaktorujete prostřednictvím čistě metody, může volat vaši čistě metodu kdykoli bez starostí o vedlejší účinky.  
+- Snadnější reiterative vývoje. Vzhledem k tomu je snazší Refaktorovat kód, změny návrhu jsou často usnadnil. Předpokládejme například, můžete psát složitější transformace a potom dobré si uvědomit, že nějaký kód je několikrát opakovat v transformace. Pokud refaktorujete prostřednictvím čistě metody, může volat vaši čistě metodu kdykoli bez starostí o vedlejší účinky.  
   
--   Snazší testování a ladění. Protože čistě funkce můžete snadněji zkoušet v izolaci, můžete napsat kód testu, který volá funkci čistě s typické hodnoty platné hraniční případy a neplatný hraniční případy.  
+- Snazší testování a ladění. Protože čistě funkce můžete snadněji zkoušet v izolaci, můžete napsat kód testu, který volá funkci čistě s typické hodnoty platné hraniční případy a neplatný hraniční případy.  
   
 ## <a name="transitioning-for-oop-developers"></a>Přechod pro vývojáře OOP  
  V tradičních objektově orientované programování (OOP), jsou zvyklí na programování ve stylu dnešní/procedurální Většina vývojářů. Přepnout na vývoj ve stylu čistě funkční, musí provést přechod v jejich přemýšlení a jejich přístup k vývoji.  

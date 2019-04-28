@@ -3,11 +3,11 @@ title: 'Postupy: Načtení odstavců z dokumentu Office Open XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: cc2687cf-d648-451e-88ac-3847c6c967c8
 ms.openlocfilehash: 192f04e9862b9cb901494f0a09744d3f9f289399
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54688269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667688"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-c"></a>Postupy: Načtení odstavců z dokumentu Office Open XML (C#)
 Toto téma představuje příklad, který otevře dokumentu Office Open XML a načte kolekci všech odstavce v dokumentu.  

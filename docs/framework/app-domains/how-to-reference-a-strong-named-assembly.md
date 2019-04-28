@@ -14,11 +14,11 @@ ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 281cfa6507d293658e436a95a5ded0174154a13c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301019"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674945"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Postupy: Odkazování na sestavení se silným názvem
 Proces pro odkazování na typy a prostředky v sestavení se silným názvem je obvykle transparentní. Odkaz můžete provést v době kompilace (časné vazby) nebo v době běhu.  

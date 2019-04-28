@@ -5,11 +5,11 @@ helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
 ms.openlocfilehash: 009011100af86e315aa41beb822b1448e2f21b25
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608739"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, často chcete odložit rozhodnutí, která správci po nasazení aplikace. Například není často předem vědět, co adresu služby, nebo identifikátor URI (Uniform Resource), budou. Místo pevného kódování adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Díky této flexibilitě se provádí prostřednictvím konfigurace.  

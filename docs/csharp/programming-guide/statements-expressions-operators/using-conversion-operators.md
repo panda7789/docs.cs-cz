@@ -11,11 +11,11 @@ helpviewer_keywords:
 - explicit conversion operators [C#]
 ms.assetid: caf36e89-c6c0-4b87-9f9e-85780a45c9a4
 ms.openlocfilehash: 888339661ba1cb2e0b702f284d9f27b3217e74c1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678436"
 ---
 # <a name="using-conversion-operators-c-programming-guide"></a>Použití operátorů převodu (Průvodce programováním v C#)
 Je možné použít operátory převodů `implicit`, které jsou jednodušší, nebo operátory převodů `explicit`, které jasně označují každému, kdo čte kód, že převádíte typ. Toto téma ukazuje oba typy operátorů převodu.  

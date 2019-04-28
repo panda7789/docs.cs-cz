@@ -3,11 +3,11 @@ title: Referenční dokumentace jazyka F#
 description: Najít F# jazykové funkce informace z tohoto odkazu na jazyk tokeny, koncepty, typy, výrazy a témata konstrukce podporované kompilátorem.
 ms.date: 05/16/2016
 ms.openlocfilehash: b70264b44b0820993cd77cb6c4f95a1547783174
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846633"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61666440"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 
@@ -95,7 +95,7 @@ V následující tabulce jsou uvedeny témata, která popisují F# výrazy.
 |[Smyčky: `for...in` Výraz](loops-for-in-expression.md)|Popisuje `for...in` výraz, uvozuje konstruktor, který se používá k iteraci přes odpovídá vzoru v vyčíslitelné kolekce například rozsahu – výraz, pořadí, seznam, pole nebo jiné konstrukce, která podporuje výčtu.|
 |[Smyčky: `while...do` Výraz](loops-while-do-expression.md)|Popisuje `while...do` výraz, který se používá k provedení iterativní spuštění (opakování), když je zadaný testovací podmínka pravdivá.|
 |[Objektové výrazy](object-expressions.md)|Popisuje objektové výrazy, které jsou výrazy, které vytvářejí nové instance typu dynamicky generovaný anonymní objekt, který je založen na existující základní typ, rozhraní nebo sady rozhraní.|
-|[Opožděné výrazy](lazy-expressions.md)|Popisuje opožděné výrazy, které jsou výpočty, které není u nich vyhodnoceno okamžitě, ale místo toho se vyhodnocují při výsledek je skutečně potřeba.|
+|[Výrazy Lazy](lazy-expressions.md)|Popisuje opožděné výrazy, které jsou výpočty, které není u nich vyhodnoceno okamžitě, ale místo toho se vyhodnocují při výsledek je skutečně potřeba.|
 |[Výpočetní výrazy](computation-expressions.md)|Popisuje výrazech výpočtu v F#, které poskytují pomocí pohodlné syntaxe pro zápis výpočty, které mohou být seřazeny a kombinované pomocí řízení toku konstrukcí a vazby. Slouží k poskytování pomocí pohodlné syntaxe pro *monády*, funkční programovací funkce, která slouží ke správě dat, řízení a vedlejší efekty při funkční programy. Jeden typ výrazu výpočtu, asynchronního pracovního postupu, poskytuje podporu pro asynchronní a paralelní výpočty. Další informace najdete v tématu [asynchronní pracovní postupy](asynchronous-workflows.md).|
 |[Asynchronní pracovní postupy](asynchronous-workflows.md)|Popisuje funkce jazyka, který umožňuje zapisovat, asynchronní kód tak, že blíží tak, jak je přirozeně zapíše synchronního kódu asynchronní pracovní postupy.|
 |[Citace kódu](code-quotations.md)|Uvozovky kódu, funkci jazyka, která umožňuje generovat a pracovat s popisuje F# kódu výrazy prostřednictvím kódu programu.|

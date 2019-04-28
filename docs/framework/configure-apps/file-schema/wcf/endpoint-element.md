@@ -3,11 +3,11 @@ title: <endpoint> – element
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
 ms.openlocfilehash: 667086cda010daf51cb92116d636b9b526b4b34b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59163407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673027"
 ---
 # <a name="endpoint-element"></a>\<koncový bod > – element
 Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se používá k vystavení služby.  

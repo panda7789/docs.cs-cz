@@ -10,11 +10,11 @@ helpviewer_keywords:
 - noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
 ms.openlocfilehash: 8d28ef1334df847865721783fa98aaa9d8c576be
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528573"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662683"
 ---
 # <a name="-noconfig-c-compiler-options"></a>-noconfig (možnosti kompilátoru C#)
 **- Noconfig** přikáže kompilátoru, aby kompilovat s csc.rsp soubor, který je umístěn a načten ze stejného adresáře jako soubor csc.exe.  

@@ -11,11 +11,11 @@ ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5cce67b36330714a821012082457e0297395a09c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675063"
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která popisuje, jak prvky v sestavení vzájemně souvisí. Manifest sestavení obsahuje metadata toto sestavení. Manifest sestavení obsahuje všechna metadata potřebná k určení požadavky na verzi sestavení a zabezpečení identity a všechna metadata potřebná k určení oboru sestavení a odkazy na prostředky a třídy. Manifest sestavení mohou být uloženy v obou přenositelném Spustitelném souboru (příponou .exe nebo .dll) s kód Microsoft intermediate language (MSIL) nebo v samostatné přenositelného Spustitelného souboru, který obsahuje jenom informace o manifestu sestavení.  
@@ -28,15 +28,15 @@ Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která
   
  Každé sestavení manifestu provádí následující funkce:  
   
--   Vytvoří výčet soubory, které tvoří sestavení.  
+- Vytvoří výčet soubory, které tvoří sestavení.  
   
--   Řídí, jak odkazy na typy a prostředky sestavení se mapují na soubory, které obsahují jejich deklarace a implementaci.  
+- Řídí, jak odkazy na typy a prostředky sestavení se mapují na soubory, které obsahují jejich deklarace a implementaci.  
   
--   Jmenovitě uvádí jiná sestavení, na kterých závisí sestavení.  
+- Jmenovitě uvádí jiná sestavení, na kterých závisí sestavení.  
   
--   Poskytuje určitou úroveň dereference mezi spotřebiteli sestavení a podrobnosti implementace sestavení.  
+- Poskytuje určitou úroveň dereference mezi spotřebiteli sestavení a podrobnosti implementace sestavení.  
   
--   Vykresluje sestavení, která popisují samy sebe.  
+- Vykresluje sestavení, která popisují samy sebe.  
   
 ## <a name="assembly-manifest-contents"></a>Obsah manifestu sestavení  
  V následující tabulce jsou uvedeny informace obsažené v manifestu sestavení. První čtyři položky, název sestavení, číslo verze, jazykovou verzi a informací o silném názvu – skládá z identity sestavení.  

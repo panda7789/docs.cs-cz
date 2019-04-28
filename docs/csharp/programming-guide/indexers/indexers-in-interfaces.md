@@ -7,18 +7,18 @@ helpviewer_keywords:
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
 ms.openlocfilehash: c56369b28f8e1bab1ca8e8c13ebd9710c8f1d9fb
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61679827"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexery v rozhraní (Průvodce programováním v C#)
 Indexery mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Přistupující objekty rozhraní indexery se liší od přístupových objektů [třídy](../../../csharp/language-reference/keywords/class.md) indexery následujícími způsoby:  
   
--   Přístupové objekty rozhraní nepoužívejte modifikátory.  
+- Přístupové objekty rozhraní nepoužívejte modifikátory.  
   
--   Přístupový objekt rozhraní nemá tělo.  
+- Přístupový objekt rozhraní nemá tělo.  
   
  Účelem přístupového objektu je proto udává, jestli je indexeru pro čtení i zápis, jen pro čtení nebo jen pro zápis.  
   

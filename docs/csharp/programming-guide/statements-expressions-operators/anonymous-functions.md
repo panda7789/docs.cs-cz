@@ -8,20 +8,20 @@ helpviewer_keywords:
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
 ms.openlocfilehash: f7ab471514cd437b7b1816d7e0bde30459f281a9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678865"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
 Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta. Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.  
   
  Existují dva druhy anonymní funkce, které jsou jednotlivě podrobněji popsána v následujících tématech:  
   
--   [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
--   [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
+- [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
   
     > [!NOTE]
     >  Výrazy lambda mohou být vázány na stromy výrazů a také na delegáty.  

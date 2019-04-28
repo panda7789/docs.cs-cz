@@ -12,11 +12,11 @@ helpviewer_keywords:
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
 ms.openlocfilehash: 9dcb79a3310c4c814879501e2723560a84c9b48c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662775"
 ---
 # <a name="-link-c-compiler-options"></a>-link (možnosti kompilátoru C#)
 Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v zadaném sestavení pro projekt, který je aktuálně kompilován.  
@@ -47,9 +47,9 @@ Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v z
   
  Pokud jste se k sestavení modelu COM (sestavení A) která sama odkazuje na jiné sestavení modelu COM (sestavení B), budete mít taky odkaz na sestavení B, pokud je splněna jedna z následujících akcí:  
   
--   Typ v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
+- Typ v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
   
--   Pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je vyvolána.  
+- Pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B je vyvolána.  
   
  Stejně jako [– referenční dokumentace](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) – možnost kompilátoru, `-link` – možnost kompilátoru používá Csc.rsp soubor odpovědí, který často používá odkazy [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení. Použít [- noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) Pokud nechcete, aby kompilátor, aby používal soubor Csc.rsp – možnost kompilátoru.  
   

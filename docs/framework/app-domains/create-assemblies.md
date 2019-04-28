@@ -10,11 +10,11 @@ ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2713011d61b41dfa4d72a635c656c0c00cb42f8d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675127"
 ---
 # <a name="creating-assemblies"></a>Vytváření sestavení
 
@@ -24,23 +24,23 @@ Vytvořit vícesouborové sestavení z několika modulů kódu a souborů prost�
 
 Máte několik možností, jak při seskupování moduly kódu a prostředků do sestavení, v závislosti na následujících faktorech:
 
--   Správa verzí
+- Správa verzí
 
      Skupina modulů, které by měly mít stejné informace o verzi.
 
--   Nasazení
+- Nasazení
 
      Moduly skupiny kódu a prostředků, které podporují modelu nasazení.
 
--   Opakované použití
+- Opakované použití
 
      Seskupit moduly, pokud jsou logicky lze společně za účelem některé. Sestavení obsahující typy a třídy zřídka používané pro údržbu programu můžete například umístit ve stejném sestavení. Kromě toho by se měly seskupit typy, které chcete sdílet s více aplikacemi do sestavení a sestavení by měl být podepsáno silným názvem.
 
--   Zabezpečení
+- Zabezpečení
 
      Skupina moduly obsahující typy, které vyžadují stejná oprávnění zabezpečení.
 
--   Vytváření oborů
+- Vytváření oborů
 
      Skupina moduly obsahující typy, jejichž viditelnost by měla být omezena na stejné sestavení.
 

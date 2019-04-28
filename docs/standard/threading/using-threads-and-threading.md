@@ -9,11 +9,11 @@ ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 15f3aa8d2cd7c21fa2b77660cd668d211f8376a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672533"
 ---
 # <a name="using-threads-and-threading"></a>Použití vláken a dělení na vlákna
 

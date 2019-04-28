@@ -3,11 +3,11 @@ title: <security> z <netPeerBinding>
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
 ms.openlocfilehash: 6348bc6f6c0d3a9656fbe57bf71f531d1287a949
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61670479"
 ---
 # <a name="security-of-netpeerbinding"></a>\<zabezpečení > z \<netPeerBinding >
 Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md), včetně typ ověřování, který používá a zabezpečení pro přenos zpráv.  
@@ -41,10 +41,10 @@ Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/f
   
 ## <a name="mode-attribute"></a>režim atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Zpráva|Zabezpečení protokolu SOAP poskytuje ověřování, integritu a důvěrnost.|  
-|Žádný|Zabezpečení je zakázaná.|  
+|Žádné|Zabezpečení je zakázaná.|  
 |Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS.|  
 |TransportWithMessageCredential|HTTPS zajišťuje ověřování a zachováním důvěrnosti. Zprávy protokolu SOAP poskytuje typy bohaté přihlašovacích údajů.|  
   

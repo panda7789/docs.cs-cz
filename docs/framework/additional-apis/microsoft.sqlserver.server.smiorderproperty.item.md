@@ -14,11 +14,11 @@ api_location:
 api_type:
 - Assembly
 ms.openlocfilehash: 499522a11cac744c14ac32cf3bfe485a46b19d93
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58634320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675309"
 ---
 # <a name="smiorderpropertyitem-property"></a>Vlastnost SmiOrderProperty.Item
 

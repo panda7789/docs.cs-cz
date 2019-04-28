@@ -9,11 +9,11 @@ helpviewer_keywords:
 - pointers [C#], * operator
 ms.assetid: 460a813a-4995-44c1-9de2-213b91dc7668
 ms.openlocfilehash: 288d8cb2d286f55cc9a162614d45ef7b298f79f1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56974481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677981"
 ---
 # <a name="how-to-obtain-the-value-of-a-pointer-variable-c-programming-guide"></a>Postupy: získávání hodnoty proměnné ukazatele (C# Programming Guide)
 

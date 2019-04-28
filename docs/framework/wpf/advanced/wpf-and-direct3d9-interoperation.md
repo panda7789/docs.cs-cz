@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
 ms.openlocfilehash: 38f5eb36e3e5c055c5a354a67e15cde8049a2967
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307727"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669210"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
 Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření obsahu Direct3D9 tak, aby efektivně spolupracuje s WPF.  
@@ -32,9 +32,9 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Vytvoření zařízení voláním jedné z následujících metod.  
   
--   `IDirect3D9 * Direct3DCreate9(UINT SDKVersion);`  
+- `IDirect3D9 * Direct3DCreate9(UINT SDKVersion);`  
   
--   `HRESULT Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D);`  
+- `HRESULT Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D);`  
   
  Ve Windows Vista nebo novějšího operačního systému, použijte `Direct3DCreate9Ex` metodu s zobrazení, který je nakonfigurován pro použití Windows zobrazit ovladač WDDM (Model). Použití `Direct3DCreate9` metoda na libovolné platformě.  
   
@@ -97,11 +97,11 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
   
  Existují tři možné přístupy k zpracování změny velikosti.  
   
--   Součástí systému rozložení a vytvořte novou plochu při změně velikosti. Nevytvářejte příliš mnoho zařízení Surface, protože může vyčerpat nebo fragment grafické paměti.  
+- Součástí systému rozložení a vytvořte novou plochu při změně velikosti. Nevytvářejte příliš mnoho zařízení Surface, protože může vyčerpat nebo fragment grafické paměti.  
   
--   Počkejte, až událost změny velikosti nedošlo k pro určitou dobu, chcete-li vytvořit novou plochu.  
+- Počkejte, až událost změny velikosti nedošlo k pro určitou dobu, chcete-li vytvořit novou plochu.  
   
--   Vytvoření <xref:System.Windows.Threading.DispatcherTimer> , která zkontroluje dimenze kontejneru několikrát za sekundu.  
+- Vytvoření <xref:System.Windows.Threading.DispatcherTimer> , která zkontroluje dimenze kontejneru několikrát za sekundu.  
   
 ## <a name="multi-monitor-optimization"></a>Optimalizace více monitorů  
  Výrazně nižší výkon může dojít při vykreslování systém přesune <xref:System.Windows.Interop.D3DImage> na jiný monitor.  
@@ -132,11 +132,11 @@ Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (W
 ## <a name="wpf-software-rendering"></a>WPF softwarové vykreslování  
  WPF vykreslí synchronně ve vlákně uživatelského rozhraní v softwaru v následujících situacích.  
   
--   Tisk  
+- Tisk  
   
--   <xref:System.Windows.Media.Effects.BitmapEffect>  
+- <xref:System.Windows.Media.Effects.BitmapEffect>  
   
--   <xref:System.Windows.Media.Imaging.RenderTargetBitmap>  
+- <xref:System.Windows.Media.Imaging.RenderTargetBitmap>  
   
  Při jedné z těchto situací vykreslování systém volá <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> metoda kopírování vyrovnávací paměti hardware software. Výchozí implementace volá `GetRenderTargetData` metodu s vaší povrchu. Protože toto volání dochází mimo vzor Zamknout/odemknout, může dojít k selhání. V takovém případě `CopyBackBuffer` vrátí metoda `null` a zobrazí se žádný obrázek.  
   

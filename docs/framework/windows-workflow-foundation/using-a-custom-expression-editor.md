@@ -3,18 +3,18 @@ title: Použití editoru vlastních výrazů
 ms.date: 03/30/2017
 ms.assetid: 0901b58b-e037-44a8-8281-f6f54361cfca
 ms.openlocfilehash: 4bf885911719f2ec673cb515807f0879535aed7d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669599"
 ---
 # <a name="using-a-custom-expression-editor"></a>Použití editoru vlastních výrazů
 Chcete-li zadat výraz bohatší nebo jednodušší prostředí pro úpravy je možné implementovat editoru vlastních výrazů. Existuje několik scénářů, ve kterých můžete chtít pomocí Editoru vlastních výrazů:  
   
--   Zajištění podpory technologie IntelliSense a další bohaté funkce v Návrháři postupu provádění se změněným hostováním úprav. Tato funkce musí být zadaná, protože výchozí editor sady Visual Studio výrazu nelze použít v provádění se změněným hostováním aplikací.  
+- Zajištění podpory technologie IntelliSense a další bohaté funkce v Návrháři postupu provádění se změněným hostováním úprav. Tato funkce musí být zadaná, protože výchozí editor sady Visual Studio výrazu nelze použít v provádění se změněným hostováním aplikací.  
   
--   Zjednodušit výraz editační rozhraní pro obchodní uživatele analytik, takže, například musí Naučte se Visual Basic nebo řešit výrazy jazyka Visual Basic.  
+- Zjednodušit výraz editační rozhraní pro obchodní uživatele analytik, takže, například musí Naučte se Visual Basic nebo řešit výrazy jazyka Visual Basic.  
   
  Jsou tři základní kroky nezbytné k implementaci editoru vlastních výrazů:  
   

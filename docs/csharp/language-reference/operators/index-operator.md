@@ -11,11 +11,11 @@ helpviewer_keywords:
 - indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
 ms.openlocfilehash: 9088393f61d300ee76e56e320bec17b4a79bfebb
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689590"
 ---
 # <a name="-operator-c-reference"></a>[] – operátor (C# odkaz)
 

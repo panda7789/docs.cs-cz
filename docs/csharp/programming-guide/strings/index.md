@@ -7,11 +7,11 @@ helpviewer_keywords:
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
 ms.openlocfilehash: 57781dd5a988435778587636cc458256b966446c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58920685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678501"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  

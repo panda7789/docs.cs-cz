@@ -11,11 +11,11 @@ helpviewer_keywords:
 - trace listener, <trace> element
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 ms.openlocfilehash: 5faf352dce2a459a999b3cf54209f6bd9793bde0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073790"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673794"
 ---
 # <a name="trace-element"></a>\<trasování > – Element
 Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.  
@@ -45,14 +45,14 @@ Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směr
   
 ## <a name="autoflush-attribute"></a>autoflush atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Není vyprázdnění automaticky výstupní vyrovnávací paměť. Toto nastavení je výchozí.|  
 |`true`|Automaticky vyprázdní vyrovnávací paměť pro výstup.|  
   
 ## <a name="usegloballock-attribute"></a>useGlobalLock atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`false`|Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.|  
 |`true`|Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces. Toto nastavení je výchozí.|  

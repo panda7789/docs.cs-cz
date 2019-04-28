@@ -6,8 +6,8 @@ ms.openlocfilehash: ad0566eaff08d27e8368f091388adda7376a37ef
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608624"
 ---
 # <a name="contract-first-tool"></a>Nástroj Contract-First
 Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], třídy kontraktu dat může automaticky vytvořen z existující služby používat nástroj pro upřednostnění kontraktu. Pokud chcete použít nástroj pro upřednostnění kontraktu, musí být soubor definice schématu XML (XSD) stažen místně; Nástroj nemůže importovat kontrakty vzdálených dat přes protokol HTTP.
@@ -69,31 +69,31 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INC
 
  Toto nastavení lze nakonfigurovat pro generování kódu ze smluv. Nastavení se dá nakonfigurovat jenom pro všechny soubory v projektu. v tuto chvíli nelze konfigurovat pro jednotlivé soubory nastavení.
 
--   **Serializátor režimu**: Toto nastavení určuje, které serializátor se používá k přečtení soubory kontraktu služby. Když **serializátor XML** zaškrtnuto, **typy kolekcí** a **znovu použít typy** je zakázaná. Tyto možnosti platí pouze pro **serializátor kontraktu dat**.
+- **Serializátor režimu**: Toto nastavení určuje, které serializátor se používá k přečtení soubory kontraktu služby. Když **serializátor XML** zaškrtnuto, **typy kolekcí** a **znovu použít typy** je zakázaná. Tyto možnosti platí pouze pro **serializátor kontraktu dat**.
 
--   **Znovu použít typy**: Toto nastavení určuje, které knihovny se používají pro znovuvyužití typů. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **Znovu použít typy**: Toto nastavení určuje, které knihovny se používají pro znovuvyužití typů. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **Typ kolekce**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ kolekce. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **Typ kolekce**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ kolekce. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **Typ slovníku**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ slovníku.
+- **Typ slovníku**: Toto nastavení určuje plně kvalifikovaný nebo sestavením kvalifikovaný typ má být použit pro datový typ slovníku.
 
--   **EnableDataBinding**: Toto nastavení určuje, jestli se má implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní pro všechny datové typy pro implementaci datové vazby.
+- **EnableDataBinding**: Toto nastavení určuje, jestli se má implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní pro všechny datové typy pro implementaci datové vazby.
 
--   **Vyloučených typů**: Toto nastavení určuje seznam plně kvalifikovaný nebo sestavením kvalifikovaný typy, které se mají vyloučit z odkazovaných sestavení. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **Vyloučených typů**: Toto nastavení určuje seznam plně kvalifikovaný nebo sestavením kvalifikovaný typy, které se mají vyloučit z odkazovaných sestavení. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **GenerateInternalTypes**: Toto nastavení určuje, jestli se mají generovat třídy, které jsou označeny jako vnitřní. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **GenerateInternalTypes**: Toto nastavení určuje, jestli se mají generovat třídy, které jsou označeny jako vnitřní. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **GenerateSerializableTypes**: Toto nastavení určuje, jestli se mají generovat třídy s <xref:System.SerializableAttribute> atribut. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **GenerateSerializableTypes**: Toto nastavení určuje, jestli se mají generovat třídy s <xref:System.SerializableAttribute> atribut. Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **ImportXMLTypes**: Toto nastavení určuje, jestli se má nakonfigurovat serializátor kontraktu dat. Chcete-li použít <xref:System.SerializableAttribute> atribut třídy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut.  Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
+- **ImportXMLTypes**: Toto nastavení určuje, jestli se má nakonfigurovat serializátor kontraktu dat. Chcete-li použít <xref:System.SerializableAttribute> atribut třídy bez <xref:System.Runtime.Serialization.DataContractAttribute> atribut.  Toto nastavení platí, pouze pokud **serializátor režimu** je nastavena na **serializátor kontraktu dat**.
 
--   **SupportFx35TypedDataSets**: Toto nastavení určuje, jestli se mají poskytnout dodatečné funkce pro typové datové sady vytvořené pro rozhraní .NET Framework 3.5. Když **serializátor režimu** je nastavena na **serializátor XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozšíření se přidají do programu pro import schématu XML, když je tato hodnota nastavena na hodnotu True. Při **serializátor režimu** je nastavena na **serializátor kontraktu dat**, typ <xref:System.DateTimeOffset> budou vyloučeny z odkazů, pokud tato hodnota nastavena na hodnotu False, tak, aby <xref:System.DateTimeOffset> se vždy vygeneruje pro starší verze rozhraní framework.
+- **SupportFx35TypedDataSets**: Toto nastavení určuje, jestli se mají poskytnout dodatečné funkce pro typové datové sady vytvořené pro rozhraní .NET Framework 3.5. Když **serializátor režimu** je nastavena na **serializátor XML**, <xref:System.Data.Design.TypedDataSetSchemaImporterExtensionFx35> rozšíření se přidají do programu pro import schématu XML, když je tato hodnota nastavena na hodnotu True. Při **serializátor režimu** je nastavena na **serializátor kontraktu dat**, typ <xref:System.DateTimeOffset> budou vyloučeny z odkazů, pokud tato hodnota nastavena na hodnotu False, tak, aby <xref:System.DateTimeOffset> se vždy vygeneruje pro starší verze rozhraní framework.
 
--   **InputXsdFiles**: Toto nastavení určuje seznam vstupních souborů. Každý soubor musí obsahovat platné schéma XML.
+- **InputXsdFiles**: Toto nastavení určuje seznam vstupních souborů. Každý soubor musí obsahovat platné schéma XML.
 
--   **Jazyk**: Toto nastavení určuje jazyk kódu generovaného kontraktu. Nastavení musí být rozpoznat podle <xref:System.CodeDom.Compiler.CodeDomProvider>.
+- **Jazyk**: Toto nastavení určuje jazyk kódu generovaného kontraktu. Nastavení musí být rozpoznat podle <xref:System.CodeDom.Compiler.CodeDomProvider>.
 
--   **NamespaceMappings**: Toto nastavení určuje mapování z cílové obory názvů XSD u oborů názvů CLR. Každé mapování by měl použijte následující formát:
+- **NamespaceMappings**: Toto nastavení určuje mapování z cílové obory názvů XSD u oborů názvů CLR. Každé mapování by měl použijte následující formát:
 
     ```xml
     "<Schema Namespace>, <CLR Namespace>"
@@ -105,7 +105,7 @@ Kontrakty služeb často potřebují vytvořit z existujících služeb. V [!INC
     "*, <CLR Namespace>"
     ```
 
--   **OutputDirectory**: Toto nastavení určuje adresář, ve kterém se soubory kódu vygeneruje.
+- **OutputDirectory**: Toto nastavení určuje adresář, ve kterém se soubory kódu vygeneruje.
 
  Nastavení se použije ke generování typů kontraktu služby z kontraktu služby soubory při sestavení projektu.
 

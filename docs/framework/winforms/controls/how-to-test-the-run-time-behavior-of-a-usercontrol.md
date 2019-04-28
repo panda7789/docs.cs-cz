@@ -9,11 +9,11 @@ helpviewer_keywords:
 - UserControl class [Windows Forms], run-time behavior
 ms.assetid: 4e4d5c49-1346-40ac-9d96-40211b573583
 ms.openlocfilehash: 15b37c71e6643b588c0378510965a9a3e7cb56e9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672572"
 ---
 # <a name="how-to-test-the-run-time-behavior-of-a-usercontrol"></a>Postupy: Otestování běhového chování UserControl
 Při vývoji <xref:System.Windows.Forms.UserControl>, je potřeba testovat jeho chování za běhu. Můžete vytvořit projekt samostatné aplikace pro systém Windows a umístit ovládací prvek na formuláři testu, ale tento postup je praktické. Jednodušší a rychlejší způsob je použít **UserControl – kontejner testů** poskytovaný sadou Visual Studio. Tento kontejner testu spustí přímo z vašeho projektu knihovny ovládacích prvků Windows.  

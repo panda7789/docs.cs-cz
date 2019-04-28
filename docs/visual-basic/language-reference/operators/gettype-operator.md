@@ -8,11 +8,11 @@ helpviewer_keywords:
 - GetType keyword [Visual Basic]
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
 ms.openlocfilehash: 34ab192814583db5cdc0d0183c73cc22b8633e9c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663606"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType – operátor (Visual Basic)
 Vrátí <xref:System.Type> objekt zadaného typu. <xref:System.Type> Objekt poskytuje informace o typu jako jeho vlastnosti, metody a události.  
@@ -32,25 +32,25 @@ GetType(typename)
 ## <a name="remarks"></a>Poznámky  
  `GetType` Operátor vrátí <xref:System.Type> objekt pro zadaný rozbočovač `typename`. Můžete předat název libovolného typu definované v `typename`. Ta zahrnují následující:  
   
--   Zadejte všechna data v jazyce Visual Basic, například `Boolean` nebo `Date`.  
+- Zadejte všechna data v jazyce Visual Basic, například `Boolean` nebo `Date`.  
   
--   Všechny třídy rozhraní .NET Framework, struktura, modul nebo rozhraní, jako například <xref:System.ArgumentException?displayProperty=nameWithType> nebo <xref:System.Double?displayProperty=nameWithType>.  
+- Všechny třídy rozhraní .NET Framework, struktura, modul nebo rozhraní, jako například <xref:System.ArgumentException?displayProperty=nameWithType> nebo <xref:System.Double?displayProperty=nameWithType>.  
   
--   Všechny třídy, struktury, modul nebo rozhraní definovaných v aplikaci.  
+- Všechny třídy, struktury, modul nebo rozhraní definovaných v aplikaci.  
   
--   Jakékoli pole definovaných v aplikaci.  
+- Jakékoli pole definovaných v aplikaci.  
   
--   Jakýkoli delegát definovaných v aplikaci.  
+- Jakýkoli delegát definovaných v aplikaci.  
   
--   Žádné výčtu definované jazyka Visual Basic, rozhraní .NET Framework nebo aplikace.  
+- Žádné výčtu definované jazyka Visual Basic, rozhraní .NET Framework nebo aplikace.  
   
  Pokud chcete získat objekt typu objektové proměnné, použijte <xref:System.Type.GetType%2A?displayProperty=nameWithType> metody.  
   
  `GetType` Operátor může být užitečná v následujících případech:  
   
--   Třeba získat přístup k metadatům pro typ v době běhu. <xref:System.Type> Objekt poskytuje metadat – například členy typu a informace o nasazení. Je třeba to, například reflexi pro sestavení. Další informace naleznete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
+- Třeba získat přístup k metadatům pro typ v době běhu. <xref:System.Type> Objekt poskytuje metadat – například členy typu a informace o nasazení. Je třeba to, například reflexi pro sestavení. Další informace naleznete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
   
--   Chcete porovnat dva odkazy na objekty a zjistěte, jestli se vztahují na instance stejného typu. V takovém případě `GetType` vrátí odkazy na stejný <xref:System.Type> objektu.  
+- Chcete porovnat dva odkazy na objekty a zjistěte, jestli se vztahují na instance stejného typu. V takovém případě `GetType` vrátí odkazy na stejný <xref:System.Type> objektu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklady ukazují `GetType` operátor používá.  

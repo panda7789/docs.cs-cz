@@ -3,11 +3,11 @@ title: 'Postupy: Dotaz pro celkový počet bajtů v sadě složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: a01bd1d4-133c-4ca2-aa4e-e93e81d6076c
 ms.openlocfilehash: 52f428bcf427065b80e91c4d299c5d8fd9f32972
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667805"
 ---
 # <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>Postupy: Dotaz pro celkový počet bajtů v sadě složek (LINQ) (C#)
 Tento příklad ukazuje, jak získat celkový počet bajtů, které používají všechny soubory v zadané složce a jejích podsložkách.  

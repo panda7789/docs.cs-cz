@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání podřízených elementů na základě pozice (XPath
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 ms.openlocfilehash: 967d9cf80b5d5edfe995196751b4f769ed6088d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54577435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668078"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>Postupy: Vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)
 Někdy budete chtít najít prvky založené na jejich umístění. Můžete chtít najít druhý element nebo můžete chtít najít třetí prostřednictvím pátého prvku pole.  

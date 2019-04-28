@@ -8,11 +8,11 @@ ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6bdd27511de18c6cb119ddbf8621c43606c82ad4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675075"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat aplikace. Sestavení se silným názvem je plně kvalifikovaný název, který obsahuje název sestavení, jazykové verze, veřejného klíče a číslo verze. To se často označuje jako zobrazovaný název a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  

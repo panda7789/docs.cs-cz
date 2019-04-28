@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b31c3045b021bd3b00d2b2e42bf7a118110305b1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59099882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61598828"
 ---
 # <a name="functionleave3-function"></a>FunctionLeave3 – funkce
 Oznámí profileru, že se řízení vrací z funkce.  
@@ -43,9 +43,9 @@ void __stdcall FunctionLeave3(FunctionOrRemappedID functionOrRemappedID);
   
  Prováděcí modul nelze uložit žádné registry před voláním této funkce.  
   
--   Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).  
+- Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).  
   
--   Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.  
+- Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.  
   
  Provádění `FunctionLeave3` by neměla blokovat, protože způsobí zpoždění uvolnění paměti. Implementace by se neměly pokoušet uvolnění paměti, protože zásobníku nemusí být ve stavu přívětivá kolekce uvolnění paměti. Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionLeave3` vrátí.  
   

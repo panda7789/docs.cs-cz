@@ -6,11 +6,11 @@ helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
 ms.openlocfilehash: d5fd244ea22fd48bf5b81d2cdf55127f745c145b
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661181"
 ---
 # <a name="new-modifier-c-reference"></a>New – modifikátor (referenční dokumentace jazyka C#)
 

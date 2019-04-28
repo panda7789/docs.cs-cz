@@ -14,11 +14,11 @@ helpviewer_keywords:
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
 ms.openlocfilehash: 7965dd2682591cc0840030dfbc9f28401e2a15b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662501"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (možnosti kompilátoru C#)
 **– Referenční dokumentace** možnost způsobí, že kompilátor importovat [veřejné](../../../csharp/language-reference/keywords/public.md) zadávat informace do zadaného souboru do aktuálního projektu, což umožní k odkazování na metadata ze zadaných souborů sestavení.  
@@ -48,9 +48,9 @@ ms.locfileid: "54679432"
   
  Pokud odkazujete na sestavení (sestavení A), který odkazuje na jiné sestavení (sestavení B), budete muset odkaz na sestavení B pokud:  
   
--   Typ, který používáte v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
+- Typ, který používáte v sestavení A je odvozen z typu nebo implementuje rozhraní ze sestavení B.  
   
--   Vyvolání pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B.  
+- Vyvolání pole, vlastnosti, události nebo metodu, která má návratový typ nebo parametr typu ze sestavení B.  
   
  Použití [-lib](../../../csharp/language-reference/compiler-options/lib-compiler-option.md) určit adresář, ve kterém se nachází jeden nebo více odkazů na sestavení. **-Lib** téma také popisuje adresáře, ve kterých kompilátor hledá sestavení.  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
 ms.openlocfilehash: b25de14267bc31ad0ac5e3f51d4cd964b5a0535f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607333"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Vytvoření datové tabulky z dotazu (LINQ to DataSet)
 Datová vazba je běžně <xref:System.Data.DataTable> objektu. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> Metoda přijímá výsledky dotazu a zkopíruje data do <xref:System.Data.DataTable>, který potom slouží pro vytváření datových vazeb. Když prováděly operace s daty, nové <xref:System.Data.DataTable> se sloučí zpět do zdroje <xref:System.Data.DataTable>.  

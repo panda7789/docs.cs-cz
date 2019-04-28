@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XM
 ms.date: 07/20/2015
 ms.assetid: b281ff99-d08a-43d0-bea1-eff831b2f8ae
 ms.openlocfilehash: de5393f720a854b9644dc7cac7d73c3c6d380483
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54707424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668052"
 ---
 # <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-c"></a>Postupy: Vyhledání předcházejících elementů (XPath – LINQ to XML) (C#)
 Toto téma srovnává jazyka XPath `preceding-sibling` osy [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízené <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> osy.  

@@ -9,11 +9,11 @@ ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
 ms.openlocfilehash: 5c502c3832ca9afc30599d47d0890fae168fa998
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668949"
 ---
 # <a name="get-started-with-c"></a>Začínáme s C\#
 

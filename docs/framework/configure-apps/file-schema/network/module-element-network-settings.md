@@ -9,11 +9,11 @@ helpviewer_keywords:
 - <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
 ms.openlocfilehash: 0d108f2350d82666e3dc24f0f6854fe64ea4755f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674478"
 ---
 # <a name="module-element-network-settings"></a>\<modul > – Element (nastavení sítě)
 Přidá nový modul proxy serveru do aplikace.  

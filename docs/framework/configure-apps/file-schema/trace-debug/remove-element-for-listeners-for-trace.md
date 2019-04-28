@@ -8,11 +8,11 @@ helpviewer_keywords:
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
 ms.openlocfilehash: adf00394bc0bfe808836e74214003cd2078204e4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673677"
 ---
 # <a name="remove-element-for-listeners-for-trace"></a>\<Odebrat > – Element pro \<naslouchacích procesů > pro \<trasování >
 Odebere z naslouchacího procesu **naslouchacích procesů** kolekce.  

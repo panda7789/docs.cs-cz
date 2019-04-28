@@ -5,11 +5,11 @@ author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
 ms.openlocfilehash: 3141c1bf7ddcf3fd3426290428f9eeeb54b3c872
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675764"
 ---
 # <a name="using-attributes-in-c"></a>Použití atributů v jazyce C\#
 

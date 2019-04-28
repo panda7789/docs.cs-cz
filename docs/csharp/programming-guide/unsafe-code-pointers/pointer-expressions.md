@@ -7,11 +7,11 @@ helpviewer_keywords:
 - pointer expressions [C#]
 ms.assetid: 3e7d9db3-20e9-4493-9c99-53c3214d19e5
 ms.openlocfilehash: 50fb6985a3bdd23e0557abb898e6a9ec63e8a366
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517185"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677240"
 ---
 # <a name="pointer-expressions-c-programming-guide"></a>Výrazy ukazatelů (Průvodce programováním v C#)
 V této části jsou popsány následující výrazy ukazatelů:  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - pointers [C#], comparison
 ms.assetid: fcafd514-7405-4deb-8490-cc58efda5495
 ms.openlocfilehash: 5185bd5e1686858452efcc7c89e2c1977e094386
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56969203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677552"
 ---
 # <a name="pointer-comparison-c-programming-guide"></a>Porovnání ukazatelů (Průvodce programováním v C#)
 Můžete použít následující operátory porovnání ukazatelů libovolného typu:  

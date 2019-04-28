@@ -4,11 +4,11 @@ description: Příkaz dotnet nuget locals vymaže nebo vypíše místní prostř
 author: karann-msft
 ms.date: 12/04/2018
 ms.openlocfilehash: d0f1c7c2e0b233c214cc48d026c19755fc047bfa
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664828"
 ---
 # <a name="dotnet-nuget-locals"></a>DotNet nuget locals
 

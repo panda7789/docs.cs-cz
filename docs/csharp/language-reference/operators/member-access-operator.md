@@ -10,11 +10,11 @@ helpviewer_keywords:
 - dot operator (.) [C#]
 ms.assetid: a1f54b52-b686-4ae5-a48e-a2a9ebd0eb7b
 ms.openlocfilehash: 2661676d53deb874c5e5a90b4443b301730e09df
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689200"
 ---
 # <a name="-operator-c-reference"></a>. operator (Referenční dokumentace jazyka C#)
 

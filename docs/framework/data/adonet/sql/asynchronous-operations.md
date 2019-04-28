@@ -3,11 +3,11 @@ title: Asynchronní operace
 ms.date: 03/30/2017
 ms.assetid: e7d32c3c-bf78-4bfc-a357-c9e82e4a4b3c
 ms.openlocfilehash: 72c2cc33185cb7fba5b8c8ce8d3805a6bb76f8d7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663970"
 ---
 # <a name="asynchronous-operations"></a>Asynchronní operace
 Některé databázové operace, jako je například spuštění příkazu může trvat spoustu času k dokončení. V takovém případě musí aplikace s jedním vláknem blokování jiných operace a počkejte na dokončení předtím, než může i dál své vlastní operace příkazu. Naproti tomu nebudou moct přiřadit dlouho běžící operace ve vlákně na pozadí umožňuje vláknu popředí zůstanou aktivní v průběhu operace. V aplikaci Windows například delegování dlouho běžící operace ve vlákně na pozadí umožňuje vlákně uživatelského rozhraní nadále reagovat při provádění operace.  

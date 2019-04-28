@@ -6,11 +6,11 @@ helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
 ms.openlocfilehash: 6b129177e6eb916982a27ba76aca517b0642344c
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61679801"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Použití indexerů (C# Programming Guide)
 

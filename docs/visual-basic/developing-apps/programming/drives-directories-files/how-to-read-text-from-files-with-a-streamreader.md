@@ -8,18 +8,18 @@ helpviewer_keywords:
 - files [Visual Basic], reading
 ms.assetid: 384033c6-18f9-4d59-9610-36371226558f
 ms.openlocfilehash: d05590b3c36070c91b6d5e50defd71df133fb7d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672442"
 ---
 # <a name="how-to-read-text-from-files-with-a-streamreader-visual-basic"></a>Postupy: Čtení textu ze souborů pomocí třídy StreamReader (Visual Basic)
 `My.Computer.FileSystem` Objekt, který poskytuje metody pro otevření <xref:System.IO.TextReader> a <xref:System.IO.TextWriter>. Tyto metody `OpenTextFileWriter` a `OpenTextFileReader`, pokročilé metody, které se nezobrazují v technologii IntelliSense, pokud jste vybrali **všechny** kartu.  
   
 ### <a name="to-read-a-line-from-a-file-with-a-text-reader"></a>Čtení řádku ze souboru pomocí čtečky textu  
   
--   Použití `OpenTextFileReader` metoda otevřete <xref:System.IO.TextReader>, zadání souboru. Tento příklad otevře soubor s názvem `testfile.txt`, přečte řádek z něj a zobrazuje řádek v okně se zprávou.  
+- Použití `OpenTextFileReader` metoda otevřete <xref:System.IO.TextReader>, zadání souboru. Tento příklad otevře soubor s názvem `testfile.txt`, přečte řádek z něj a zobrazuje řádek v okně se zprávou.  
   
      [!code-vb[VbFileIORead#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#1)]  
   

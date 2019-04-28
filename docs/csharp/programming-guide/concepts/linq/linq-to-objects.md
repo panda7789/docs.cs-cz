@@ -3,11 +3,11 @@ title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
 ms.openlocfilehash: b82d21a7de4f596afb5e41487221498dd5ca9f98
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667389"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující zprostředkovatele LINQ nebo rozhraní API, jako [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md). LINQ můžete použít k dotazování všechny vyčíslitelné kolekce, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být uživatelem definované nebo mohou být vráceny rozhraní API .NET Framework.  

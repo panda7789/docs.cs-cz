@@ -4,11 +4,11 @@ description: Přečtěte si, že se že se základy C# hodnoty typů nazývanýc
 ms.date: 08/10/2016
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
 ms.openlocfilehash: d22cb23fe095874f24d7c002dfdb3eefdde66722
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55065957"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675751"
 ---
 # <a name="structs"></a>Struktury
 

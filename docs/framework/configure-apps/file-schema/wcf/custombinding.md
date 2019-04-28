@@ -3,11 +3,11 @@ title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
 ms.openlocfilehash: 60ce3cdfd7c78d152c71cdd652532cc96a6be296
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673183"
 ---
 # <a name="custombinding"></a>\<customBinding>
 

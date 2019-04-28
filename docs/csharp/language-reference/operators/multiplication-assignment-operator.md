@@ -9,11 +9,11 @@ helpviewer_keywords:
 - binary multiplication assignment operator (*=) [C#]
 ms.assetid: 2e472155-59db-4dbf-bb94-bcccfa1a794d
 ms.openlocfilehash: 70461f79e714e44354fe4137e5360769fa048d3e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689603"
 ---
 # <a name="-operator-c-reference"></a>\*= – Operátor (referenční dokumentace jazyka C#)
 

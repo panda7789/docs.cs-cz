@@ -9,11 +9,11 @@ helpviewer_keywords:
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
 ms.openlocfilehash: 1b5f7406f995a86f0a192dbf3249c067dff570ea
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674399"
 ---
 # <a name="smtp-element-network-settings"></a>\<SMTP > – Element (nastavení sítě)
 Nastaví formát dodání, způsob dodání a adresu odesílatele pro zasílání e-mailů.  

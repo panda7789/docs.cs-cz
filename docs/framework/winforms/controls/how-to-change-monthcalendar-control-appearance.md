@@ -10,18 +10,18 @@ helpviewer_keywords:
 - MonthCalendar control [Windows Forms], formatting display
 ms.assetid: d09b95c9-e108-4608-9b31-b9100c0677bf
 ms.openlocfilehash: 233143099996759cc006b3f28b984938554a0d18
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61666519"
 ---
 # <a name="how-to-change-the-windows-forms-monthcalendar-controls-appearance"></a>Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar
 Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožňuje přizpůsobit vzhled kalendáře mnoha způsoby. Můžete například nastavit barevné schéma a zvolte možnost zobrazit nebo skrýt čísla týdnů a aktuální datum.  
   
 ### <a name="to-change-the-month-calendars-color-scheme"></a>Chcete-li změnit barevné schéma měsíční kalendář  
   
--   Nastavte vlastnosti, jako je třeba <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A> a <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>. <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A> Vlastnost také určuje barvu písma pro dny v týdnu. <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> Vlastnost určuje barvu kalendářních dat, které předcházejí a následují zobrazený měsíc nebo měsíců.  
+- Nastavte vlastnosti, jako je třeba <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A>, <xref:System.Windows.Forms.MonthCalendar.TitleForeColor%2A> a <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A>. <xref:System.Windows.Forms.MonthCalendar.TitleBackColor%2A> Vlastnost také určuje barvu písma pro dny v týdnu. <xref:System.Windows.Forms.MonthCalendar.TrailingForeColor%2A> Vlastnost určuje barvu kalendářních dat, které předcházejí a následují zobrazený měsíc nebo měsíců.  
   
     ```vb  
     MonthCalendar1.TitleBackColor = System.Drawing.Color.Blue  
@@ -46,7 +46,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
   
 ### <a name="to-display-the-current-date-at-the-bottom-of-the-control"></a>Chcete-li zobrazit aktuální datum v dolní části ovládacího prvku  
   
--   Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> vlastnost `true`. Následující příklad Přepne mezi zobrazením a vynechání dnešní datum, když je formulář dvojitému kliknutí.  
+- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> vlastnost `true`. Následující příklad Přepne mezi zobrazením a vynechání dnešní datum, když je formulář dvojitému kliknutí.  
   
     ```vb  
     Private Sub Form1_DoubleClick(ByVal sender As Object, _  
@@ -87,7 +87,7 @@ Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek umožň
   
 ### <a name="to-display-week-numbers"></a>Chcete-li zobrazovat čísla týdnů  
   
--   Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tuto vlastnost lze nastavit v kódu nebo v okně Vlastnosti.  
+- Nastavte <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tuto vlastnost lze nastavit v kódu nebo v okně Vlastnosti.  
   
      Čísla týdnů joinkind samostatný sloupec nalevo od první den v týdnu.  
   

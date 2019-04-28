@@ -4,11 +4,11 @@ description: Zjistěte, jak použít vytváření funkcí k tréninku modelu na 
 ms.date: 03/05/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: e26a4b293869b7cdad3c439237bd0145cafa314a
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57844354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689682"
 ---
 # <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a>Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET
 

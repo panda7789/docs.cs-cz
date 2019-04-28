@@ -11,11 +11,11 @@ ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2a51b9fb485da605effbad0e81b8baf5e05e382a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675088"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>\<UseRandomizedStringHashAlgorithm > – Element
 Určuje, zda modul common language runtime vypočítá hash kódy pro řetězce na základě domény aplikace.  
@@ -42,7 +42,7 @@ Určuje, zda modul common language runtime vypočítá hash kódy pro řetězce 
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |`0`|Modul common language runtime nepočítá kódy hash pro řetězce na základě domény aplikace; jeden algoritmus se používá k výpočtu řetězce kódů hash. Toto nastavení je výchozí.|  
 |`1`|Modul common language runtime vypočítá hash kódy pro řetězce na základě domény aplikace. Shodné řetězce v různých aplikačních doménách a různých procesech budou mít různé hash kódy.|  

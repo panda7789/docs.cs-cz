@@ -9,11 +9,11 @@ helpviewer_keywords:
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
 ms.openlocfilehash: 7f82008d000bf0316b505bfc5d40e9e64b2685a3
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57465190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675796"
 ---
 # <a name="value-c-programming-guide"></a>\<Hodnota > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - pointer expressions [C#], increment and decrement
 ms.assetid: 1b8b9281-44ee-485a-9045-3db38a4b4b89
 ms.openlocfilehash: 358decb73666d5a5ef7c0fa828168d90d2c22c1e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677968"
 ---
 # <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>Postupy: přírůstek a úbytek ukazatelů (C# Programming Guide)
 

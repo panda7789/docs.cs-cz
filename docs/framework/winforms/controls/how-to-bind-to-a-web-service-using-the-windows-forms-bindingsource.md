@@ -13,11 +13,11 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], examples
 ms.assetid: ee261207-4573-4cb9-a8cb-5185037e0fba
 ms.openlocfilehash: 2f97a8c9b0d3f29ada108afaea92f39af3ac6b3e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61666414"
 ---
 # <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a>Postupy: Vytvoření vazby k webové službě pomocí Windows Forms BindingSource
 Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získaných z volání webové služby XML, můžete použít <xref:System.Windows.Forms.BindingSource> komponenty. Tento postup je podobný vazby <xref:System.Windows.Forms.BindingSource> komponentu do typu. Je nutné vytvořit proxy server na straně klienta, který obsahuje metody a typy, které jsou vystavené webové služby. Generování proxy server na straně klienta z webové služby (.asmx) samotný nebo jeho soubor webové služby WSDL (Description Language). Váš proxy server na straně klienta navíc musí vystavit pole komplexní typy použité ve webové službě jako veřejné vlastnosti. Pak vytvoříte vazbu <xref:System.Windows.Forms.BindingSource> na jeden z typů v webové služby serveru proxy.  
@@ -50,7 +50,7 @@ Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získ
   
 ### <a name="to-bind-controls-to-the-bindingsource-that-is-bound-to-a-web-service"></a>K vytvoření vazby ovládacích prvků do objektu BindingSource, který je vázán k webové službě  
   
--   Vytvoření vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>, veřejná vlastnost typ webové služby, který chcete, aby se předá jako parametr.  
+- Vytvoření vazby ovládacích prvků <xref:System.Windows.Forms.BindingSource>, veřejná vlastnost typ webové služby, který chcete, aby se předá jako parametr.  
   
      [!code-cpp[System.Windows.Forms.DataConnectorWebService#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CPP/form1.cpp#3)]
      [!code-csharp[System.Windows.Forms.DataConnectorWebService#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorWebService/CS/form1.cs#3)]
@@ -68,7 +68,7 @@ Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získ
   
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému, System.Drawing, System.Web.Services, System.Windows.Forms a System.Xml.  
+- Odkazy na sestavení systému, System.Drawing, System.Web.Services, System.Windows.Forms a System.Xml.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

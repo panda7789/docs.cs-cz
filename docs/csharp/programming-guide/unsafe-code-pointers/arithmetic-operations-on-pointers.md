@@ -6,11 +6,11 @@ helpviewer_keywords:
 - pointers [C#], arithmetic operations
 ms.assetid: d4f0b623-827e-45ce-8649-cfcebc8692aa
 ms.openlocfilehash: bfa81bc926b4fe81455cecb88bc55f4dcd69268e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61677890"
 ---
 # <a name="arithmetic-operations-on-pointers-c-programming-guide"></a>Aritmetické operace na ukazatelích (C# Programming Guide)
 Toto téma popisuje použití aritmetické operátory `+` a `-` manipulace s ukazateli.  

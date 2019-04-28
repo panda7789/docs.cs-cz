@@ -7,11 +7,11 @@ helpviewer_keywords:
 - errorreport compiler option [Visual Basic]
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
 ms.openlocfilehash: 5471f0783eee5e2c14cf0f140094d5c292a73756
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663255"
 ---
 # <a name="-errorreport"></a>-errorreport
 
@@ -55,6 +55,6 @@ vbc -errorreport:prompt t2.vb
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
 - [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)

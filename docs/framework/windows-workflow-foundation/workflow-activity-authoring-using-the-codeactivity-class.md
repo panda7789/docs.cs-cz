@@ -3,11 +3,11 @@ title: Používání třídy CodeActivity vytváření aktivit pracovního postu
 ms.date: 03/30/2017
 ms.assetid: cfe315c1-f86d-43ec-b9ce-2f8c469b1106
 ms.openlocfilehash: 549acec8b8101312d48bd20e63a4a988b798ff38
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669443"
 ---
 # <a name="workflow-activity-authoring-using-the-codeactivity-class"></a>Používání třídy CodeActivity vytváření aktivit pracovního postupu
 Aktivity vytvořené pomocí dědění z <xref:System.Activities.CodeActivity> základní imperativní chování můžete implementovat tak, že přepíšete <xref:System.Activities.CodeActivity.Execute%2A> metody.
@@ -15,11 +15,11 @@ Aktivity vytvořené pomocí dědění z <xref:System.Activities.CodeActivity> z
 ## <a name="using-codeactivitycontext"></a>Pomocí CodeActivityContext
  Funkce modulu runtime pracovního postupu je přístupný z v rámci <xref:System.Activities.CodeActivity.Execute%2A> metoda pomocí členy `context` parametr typu <xref:System.Activities.CodeActivityContext>. Funkcí dostupných prostřednictvím <xref:System.Activities.CodeActivityContext> patří následující:
 
--   Získání a nastavení hodnoty proměnných a argumentů.
+- Získání a nastavení hodnoty proměnných a argumentů.
 
--   Vlastní sledování funkce pomocí <xref:System.Activities.CodeActivityContext.Track%2A>.
+- Vlastní sledování funkce pomocí <xref:System.Activities.CodeActivityContext.Track%2A>.
 
--   Přístup k vlastnostem spuštění aktivity pomocí <xref:System.Activities.CodeActivityContext.GetProperty%2A>.
+- Přístup k vlastnostem spuštění aktivity pomocí <xref:System.Activities.CodeActivityContext.GetProperty%2A>.
 
 #### <a name="to-create-a-custom-activity-that-inherits-from-codeactivity"></a>Chcete-li vytvořit vlastní aktivitu, která dědí z třídy CodeActivity
 

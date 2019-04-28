@@ -3,11 +3,11 @@ title: 'Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (V
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
 ms.openlocfilehash: 0981da1e35f2c0b6023c009d4f62c95a612d8971
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614880"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (Visual Basic)
 V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  

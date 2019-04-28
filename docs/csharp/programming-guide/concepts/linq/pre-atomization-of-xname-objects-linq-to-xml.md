@@ -3,11 +3,11 @@ title: Předběžná atomizace objektů XName (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
 ms.openlocfilehash: 0ea45dbf0492491efac3560b7f1f04d36a787193
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54660538"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61682115"
 ---
 # <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>Předběžná atomizace objektů XName (LINQ to XML) (C#)
 Jedním ze způsobů ke zlepšení výkonu v technologii LINQ to XML je předem atomizovat <xref:System.Xml.Linq.XName> objekty. Předběžná atomizace znamená, že přiřadíte řetězec na <xref:System.Xml.Linq.XName> objektu před vytvořením stromu XML pomocí konstruktory <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XAttribute> třídy. Pak namísto předáním řetězce do konstruktoru, který byste použili implicitní převod z řetězce na <xref:System.Xml.Linq.XName>, předáte inicializovaná zpráva <xref:System.Xml.Linq.XName> objektu.  

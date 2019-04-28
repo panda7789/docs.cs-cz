@@ -4,15 +4,15 @@ description: Zavádí Language Integrated Query (LINQ) v jazyce C#.
 ms.date: 11/30/2016
 ms.assetid: 007cc736-f5cf-4919-b99b-0c00ab2814ce
 ms.openlocfilehash: 18dafaf590697a3c9d669f346c956fd4df3378f0
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197381"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688823"
 ---
-# <a name="language-integrated-query-linq"></a>Language Integrated Query (LINQ)
+# <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
-Language Integrated Query (LINQ) je název pro sadu technologií, v závislosti na integraci schopnosti příkazů jazyka přímo do jazyka C#. Tradičně dotazů na data jsou vyjádřené jako jednoduchý řetězce bez kontrolu typu v kompilaci čas nebo podporu technologie IntelliSense. Kromě toho budete muset učit jazyk dotazu pro každý typ zdroje dat: SQL databáze, dokumenty XML, různé webové služby a tak dále. S dotazy LINQ dotaz, který je typů prvotřídní jazykové konstrukce, stejně jako třídy, metody a události.
+Language Integrated Query (LINQ) je název pro sadu technologií, v závislosti na integraci schopnosti příkazů jazyka přímo do jazyka C#. Tradičně dotazů na data jsou vyjádřené jako jednoduchý řetězce bez kontrolu typu v kompilaci čas nebo podporu technologie IntelliSense. Kromě toho budete muset učit jazyk dotazu pro každý typ zdroje dat: Databáze SQL, dokumenty XML, různé webové služby a tak dále. S dotazy LINQ dotaz, který je typů prvotřídní jazykové konstrukce, stejně jako třídy, metody a události.
 
 Pro vývojáře, který zapíše dotazy je většina viditelnou část "language-integrated" LINQ výrazu dotazu. Výrazy dotazů jsou napsané v deklarativní *syntaxe dotazu*. Pomocí syntaxe dotazu, můžete provádět filtrování, řazení a seskupení operací u zdrojů dat s minimálním kódu. Použijte stejné vzorce výrazu základního dotazu pro dotazování a transformaci dat v SQL Database, ADO .NET datové sady, dokumentů XML a datových proudů a kolekcí .NET.
 
@@ -44,7 +44,7 @@ Další informace o dotazech technologie LINQ, začněte se seznamovat s někter
 
 - Dokumenty XML: [LINQ to XML](../programming-guide/concepts/linq/linq-to-xml.md)
 
-- ADO.NET Entity Framework: [technologii LINQ to entities](../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
+- ADO.NET Entity Framework: [Technologie LINQ to entities](../../framework/data/adonet/ef/language-reference/linq-to-entities.md)
 
 - Kolekce .NET, soubory, řetězce a tak dále: [LINQ na objekty](../programming-guide/concepts/linq/linq-to-objects.md)
 
