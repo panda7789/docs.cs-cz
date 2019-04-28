@@ -10,11 +10,11 @@ helpviewer_keywords:
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
 ms.openlocfilehash: dd9b77a90030a96d17104c8c0e48964b6a85d165
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58125730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678683"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Výrazy lambda (C# Programming Guide)
 

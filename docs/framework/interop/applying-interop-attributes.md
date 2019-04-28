@@ -16,11 +16,11 @@ ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 83afabf58048620b3b9936560f2b3fdf1e2039d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61643670"
 ---
 # <a name="applying-interop-attributes"></a>Použití atributů spolupráce
 <xref:System.Runtime.InteropServices> Obor názvů obsahuje tři kategorie atributy specifické pro zprostředkovatele komunikace s objekty: používaných v době návrhu vámi používaných ve vzájemné spolupráce COM nástroje a rozhraní API během procesu převodu a používaných buď vy nebo komunikace s objekty COM.  

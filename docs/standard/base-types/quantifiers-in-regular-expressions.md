@@ -17,11 +17,11 @@ ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b7ccee788a00e56da16d1e78597815553d3c6212
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765931"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí být k dispozici ve vstupu pro shodu, která se má najít.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -228,11 +228,11 @@ Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí
 ## <a name="greedy-and-lazy-quantifiers"></a>Greedy a opožděných kvantifikátory  
  Počet kvantifikátory mít dvě verze:  
   
--   Greedy verze.  
+- Greedy verze.  
   
      Greedy kvantifikátor pokusí porovnat prvek sady jako tolikrát, kolikrát to bude možné.  
   
--   Bez metody greedy (nebo opožděné) verze.  
+- Bez metody greedy (nebo opožděné) verze.  
   
      Bez metody greedy kvantifikátor pokusí porovnat prvek nejmenším počtem je to možné. Greedy kvantifikátor do opožděným kvantifikátorem můžete zapnout tak, že jednoduše přidáte `?`.  
   

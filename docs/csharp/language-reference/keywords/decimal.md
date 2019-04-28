@@ -9,17 +9,17 @@ helpviewer_keywords:
 - decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
 ms.openlocfilehash: 7bc806cd5516666c86780bb53842725f0c0c1617
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600697"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661909"
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 
 `decimal` – Klíčové slovo označuje typ 128bitových dat. Ve srovnání s jinými typy s plovoucí desetinnou čárkou `decimal` typ má větší přesnost a menší rozsah, díky čemuž je vhodný pro výpočty finančních a přepočty měn. Přibližný rozsah a přesnost `decimal` typu jsou uvedeny v následující tabulce.
 
-|Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|
+|Type|Přibližný rozsah|Přesnost|Typ formátu .NET|
 |----------|-----------------------|---------------|-------------------------|
 |`decimal`|±1.0 x 10<sup>– 28</sup> k ±7.9228 x 10<sup>28</sup>|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|
 

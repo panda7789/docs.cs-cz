@@ -2,15 +2,9 @@
 title: Základy formulářové aplikace Windows (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
-- Windows applications
-- Windows Forms, Visual Basic
+  - Windows applications
+  - 'Windows Forms, Visual Basic'
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 99aa61d921217ab5638172a54697054e8421fd5c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972674"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -18,11 +12,11 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
 ## <a name="designing-windows-forms-applications"></a>Navrhování Windows Forms aplikací  
  Windows Forms a aplikací služby Windows můžete vytvořit pomocí sady Visual Studio. Další informace naleznete v následujících tématech:  
   
--   [Začínáme s Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a program Windows Forms.  
+- [Začínáme s Windows Forms](../../../framework/winforms/getting-started-with-windows-forms.md). Poskytuje informace o tom, jak vytvořit a program Windows Forms.  
    
--   [Ovládací prvky Windows Forms](../../../framework/winforms/controls/index.md). Kolekce témat s podrobnostmi o použití ovládacích prvků Windows Forms.  
+- [Ovládací prvky Windows Forms](../../../framework/winforms/controls/index.md). Kolekce témat s podrobnostmi o použití ovládacích prvků Windows Forms.  
   
--   [Aplikace služeb Windows](../../../framework/windows-services/index.md). Vypíše seznam témat, která popisují, jak se vytvářejí služby Windows.  
+- [Aplikace služeb Windows](../../../framework/windows-services/index.md). Vypíše seznam témat, která popisují, jak se vytvářejí služby Windows.  
   
 ## <a name="building-rich-interactive-user-interfaces"></a>Vytváření bohatých, interaktivních uživatelských rozhraní  
  Windows Forms je chytrých klientských součástí služby [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], sadu spravované knihovny pro provádění běžných aplikačních úloh, jako je čtení a zápis do systému souborů. Použití vývojového prostředí, jako je Visual Studio, můžete vytvořit aplikace Windows Forms, které zobrazení informací, žádejte vstup od uživatele a komunikovat se vzdálenými počítači přes síť.  
@@ -46,7 +40,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Tutoriál 1: Vytvoření prohlížeče obrázků](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|  
+|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Kurz 1: Vytvoření prohlížeče obrázků](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidání ovládacích prvků do formulářů Windows](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |Vytváření grafiky <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytvořit vlastní ovládací prvky|[Postupy: Dědit ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  

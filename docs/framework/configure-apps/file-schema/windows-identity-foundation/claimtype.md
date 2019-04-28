@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
 author: BrucePerlerMS
 ms.openlocfilehash: 6bc185572528d4229ee53f1421eaa5bf27b053e6
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55267232"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667220"
 ---
 # <a name="claimtype"></a>\<claimType>
 Určuje jednu deklaraci nepovinné nebo povinné pro příchozí tokeny zabezpečení.  
@@ -38,11 +38,11 @@ Určuje jednu deklaraci nepovinné nebo povinné pro příchozí tokeny zabezpe�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Typ deklarace identity. Obvykle identifikátor URI. Povinný parametr.|  
+| – typ|Typ deklarace identity. Obvykle identifikátor URI. Povinný parametr.|  
 |optional|Logická hodnota určující, zda je typ deklarace identity volitelné. Volitelné.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádná  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -8,17 +8,17 @@ f1_keywords:
 helpviewer_keywords:
 - uint keyword [C#]
 ms.openlocfilehash: e22468eea63ce082f2e9842e6ec307aba1888964
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660434"
 ---
 # <a name="uint-c-reference"></a>uint (Referenční dokumentace jazyka C#)
 
 `uint` – Klíčové slovo označuje integrální typ, který uchovává hodnoty podle toho, velikost a rozsah je znázorněno v následující tabulce.
 
-|Typ|Rozsah|Velikost|Typ formátu .NET|
+|Type|Rozsah|Velikost|Typ formátu .NET|
 |----------|-----------|----------|-------------------------|
 |`uint`|0 do 4 294 967 295|Nepodepsané 32bitové celé číslo|<xref:System.UInt32?displayProperty=nameWithType>|
 

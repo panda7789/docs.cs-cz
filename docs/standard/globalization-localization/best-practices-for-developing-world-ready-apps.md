@@ -11,11 +11,11 @@ ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d96e223b85178c7f2784a523e5609057d1432488
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683207"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>Osvědčené postupy pro vývoj globalizovaných aplikací
 

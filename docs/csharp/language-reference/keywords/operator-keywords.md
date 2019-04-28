@@ -7,11 +7,11 @@ helpviewer_keywords:
 - operators [C#], keywords
 ms.assetid: f745c81f-f8d8-4673-86a1-0f3a85cc63c3
 ms.openlocfilehash: e03e1c930b452cf5e4f2c4bb1d06d5363f20c991
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661045"
 ---
 # <a name="operator-keywords-c-reference"></a>Klíčová slova operátorů (Referenční dokumentace jazyka C#)
 

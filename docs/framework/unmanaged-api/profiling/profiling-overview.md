@@ -30,11 +30,11 @@ ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 598722c44d8d20adab9ce7d624edb820f67c0fa4
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58654091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757555"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a> Profiler je nástroj, který sleduje spuštění jiné aplikace. Common language runtime (CLR) profiler je dynamická knihovna (DLL), který obsahuje funkce, které přijímají zprávy z a odesílání zpráv do CLR pomocí Profilování rozhraní API. Knihovna DLL profileru je načtena modulem CLR za běhu.  
@@ -47,25 +47,25 @@ ms.locfileid: "58654091"
   
  Tento přehled obsahuje následující části:  
   
--   [Rozhraní API pro profilaci](#profiling_api)  
+- [Rozhraní API pro profilaci](#profiling_api)  
   
--   [Podporované funkce](#support)  
+- [Podporované funkce](#support)  
   
--   [Vlákna oznámení](#notification_threads)  
+- [Vlákna oznámení](#notification_threads)  
   
--   [Zabezpečení](#security)  
+- [Zabezpečení](#security)  
   
--   [Kombinace spravovaného a nespravovaného kódu v Profiler kódu](#combining_managed_unmanaged)  
+- [Kombinace spravovaného a nespravovaného kódu v Profiler kódu](#combining_managed_unmanaged)  
   
--   [Profilování nespravovaného kódu](#unmanaged)  
+- [Profilování nespravovaného kódu](#unmanaged)  
   
--   [Používání modelu COM](#com)  
+- [Používání modelu COM](#com)  
   
--   [Zásobníky volání](#call_stacks)  
+- [Zásobníky volání](#call_stacks)  
   
--   [Zpětná volání a hloubka zásobníku](#callbacks)  
+- [Zpětná volání a hloubka zásobníku](#callbacks)  
   
--   [Související témata](#related_topics)  
+- [Související témata](#related_topics)  
   
 <a name="profiling_api"></a>   
 ## <a name="the-profiling-api"></a>Rozhraní API pro profilaci  
@@ -96,33 +96,33 @@ ms.locfileid: "58654091"
   
  Rozhraní API profilování načítá informace o následujících akcích a událostech, které se vyskytují v CLR:  
   
--   Události spuštění a vypnutí CLR.  
+- Události spuštění a vypnutí CLR.  
   
--   Aplikace domain událost vytvoření a ukončení.  
+- Aplikace domain událost vytvoření a ukončení.  
   
--   Načítání a uvolňování události sestavení.  
+- Načítání a uvolňování události sestavení.  
   
--   Modul události načítání a uvolňování.  
+- Modul události načítání a uvolňování.  
   
--   Vytváření a ničení událostí serveru COM vtable.  
+- Vytváření a ničení událostí serveru COM vtable.  
   
--   Just-in-time (JIT) kompilaci a události odsazování kódu.  
+- Just-in-time (JIT) kompilaci a události odsazování kódu.  
   
--   Události načítání a uvolňování třídy.  
+- Události načítání a uvolňování třídy.  
   
--   Události vytváření a ničení vlákna.  
+- Události vytváření a ničení vlákna.  
   
--   Vstupní a výstupní události funkce.  
+- Vstupní a výstupní události funkce.  
   
--   Výjimky.  
+- Výjimky.  
   
--   Přechody mezi spravovaným a nespravovaným kódem provádění.  
+- Přechody mezi spravovaným a nespravovaným kódem provádění.  
   
--   Přechody mezi různými kontexty za běhu.  
+- Přechody mezi různými kontexty za běhu.  
   
--   Informace o pozastavení běhu.  
+- Informace o pozastavení běhu.  
   
--   Informace o modulu runtime paměti haldy a uvolňování paměti kolekce aktivity.  
+- Informace o modulu runtime paměti haldy a uvolňování paměti kolekce aktivity.  
   
  Rozhraní API profilování lze volat z libovolného (nespravovaného) jazyka kompatibilního s modelem COM.  
   
@@ -133,19 +133,19 @@ ms.locfileid: "58654091"
 ### <a name="unsupported-functionality"></a>Nepodporované funkce  
  Rozhraní profilování API nepodporuje následující funkce:  
   
--   Nespravovaný kód, který musí být profilován použitím konvenčních metod Win32. Profiler modulu CLR však zahrnuje události přechodu k určení hranic mezi spravovaným a nespravovaným kódem.  
+- Nespravovaný kód, který musí být profilován použitím konvenčních metod Win32. Profiler modulu CLR však zahrnuje události přechodu k určení hranic mezi spravovaným a nespravovaným kódem.  
   
--   Aplikace, které upravují vlastní kód pro účely, jako je aspektově orientované programování upravující samy sebe.  
+- Aplikace, které upravují vlastní kód pro účely, jako je aspektově orientované programování upravující samy sebe.  
   
--   Kontrola hranic, protože profilování rozhraní API neposkytuje tyto informace. CLR poskytuje vnitřní podporu pro kontrolu veškerého spravovaného kódu hranic.  
+- Kontrola hranic, protože profilování rozhraní API neposkytuje tyto informace. CLR poskytuje vnitřní podporu pro kontrolu veškerého spravovaného kódu hranic.  
   
--   Vzdálené profilování, což není podporováno z následujících důvodů:  
+- Vzdálené profilování, což není podporováno z následujících důvodů:  
   
-    -   Vzdálené profilování prodlužuje dobu provádění. Při použití rozhraní profilování musíte minimalizovat čas spuštění, aby výsledky profilování nepřiměřeně ovlivněny. To platí zejména při sledování výkonu provádění. Ale vzdálené profilování není omezení při rozhraní profilování se používají ke sledování využití paměti nebo k získání informací o rámce zásobníku, objekty a tak dále.  
+    - Vzdálené profilování prodlužuje dobu provádění. Při použití rozhraní profilování musíte minimalizovat čas spuštění, aby výsledky profilování nepřiměřeně ovlivněny. To platí zejména při sledování výkonu provádění. Ale vzdálené profilování není omezení při rozhraní profilování se používají ke sledování využití paměti nebo k získání informací o rámce zásobníku, objekty a tak dále.  
   
-    -   Profiler kódu CLR musí zaregistrovat jedno nebo více rozhraní zpětného volání s modulem runtime v místním počítači, na kterém je spuštěný profilované aplikace. To omezuje schopnost vytvářet profiler vzdáleného kódu.  
+    - Profiler kódu CLR musí zaregistrovat jedno nebo více rozhraní zpětného volání s modulem runtime v místním počítači, na kterém je spuštěný profilované aplikace. To omezuje schopnost vytvářet profiler vzdáleného kódu.  
   
--   Profilování v provozním prostředí s požadavky na vysokou dostupnost. Rozhraní API profilování bylo vytvořeno pro podporu diagnostiky v době vývoje. Nebylo podrobeno, přísnému testování potřebnému pro podporu výrobních prostředí.  
+- Profilování v provozním prostředí s požadavky na vysokou dostupnost. Rozhraní API profilování bylo vytvořeno pro podporu diagnostiky v době vývoje. Nebylo podrobeno, přísnému testování potřebnému pro podporu výrobních prostředí.  
   
  [Zpět na začátek](#top)  
   
@@ -185,9 +185,9 @@ ms.locfileid: "58654091"
 ## <a name="profiling-unmanaged-code"></a>Profilování nespravovaného kódu  
  Common language runtime (CLR) rozhraní API profilování poskytuje minimální podporu pro profilování nespravovaného kódu. Je k dispozici následující funkce:  
   
--   Výčet řetězů zásobníku. Tato funkce umožňuje profileru kódu stanovit hranici mezi spravovaným kódem a nespravovaným kódem.  
+- Výčet řetězů zásobníku. Tato funkce umožňuje profileru kódu stanovit hranici mezi spravovaným kódem a nespravovaným kódem.  
   
--   Určení, zda řetěz zásobníku odpovídá spravovanému kódu nebo nativním kódu.  
+- Určení, zda řetěz zásobníku odpovídá spravovanému kódu nebo nativním kódu.  
   
  V rozhraní .NET Framework verze 1.0 a 1.1 tyto metody jsou k dispozici prostřednictvím podmnožinu API ladění CLR v procesu. Jsou definovány v souboru CorDebug.idl.  
   

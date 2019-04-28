@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics [WPF], geometry classes
 ms.assetid: 9fba8934-98b7-4af6-82f6-f4ef887f963a
 ms.openlocfilehash: f4f109b51ed566d1996b0c59b4ecbe51caa022cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59179995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762841"
 ---
 # <a name="geometry-overview"></a>Přehled geometrie
 Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Geometry> tříd k popisu obrazce. V tomto tématu jsou také uvedeny rozdíly mezi <xref:System.Windows.Media.Geometry> objekty a <xref:System.Windows.Shapes.Shape> elementy.  
@@ -55,11 +55,11 @@ Tento přehled popisuje způsob použití [!INCLUDE[TLA#tla_winclient](../../../
   
  Jednoduché geometrické třídy zahrnují <xref:System.Windows.Media.LineGeometry>, <xref:System.Windows.Media.RectangleGeometry>, a <xref:System.Windows.Media.EllipseGeometry> a slouží k vytvoření základní geometrické tvary, třeba řádky, obdélníky a kruzích.  
   
--   A <xref:System.Windows.Media.LineGeometry> je definován tak, že zadáte počáteční bod řádku a koncový bod.  
+- A <xref:System.Windows.Media.LineGeometry> je definován tak, že zadáte počáteční bod řádku a koncový bod.  
   
--   A <xref:System.Windows.Media.RectangleGeometry> je definována s <xref:System.Windows.Rect> struktura, která určuje relativní pozici a jeho výška a šířka. Zaoblený obdélník můžete vytvořit tak, že nastavíte <xref:System.Windows.Media.RectangleGeometry.RadiusX%2A> a <xref:System.Windows.Media.RectangleGeometry.RadiusY%2A> vlastnosti.  
+- A <xref:System.Windows.Media.RectangleGeometry> je definována s <xref:System.Windows.Rect> struktura, která určuje relativní pozici a jeho výška a šířka. Zaoblený obdélník můžete vytvořit tak, že nastavíte <xref:System.Windows.Media.RectangleGeometry.RadiusX%2A> a <xref:System.Windows.Media.RectangleGeometry.RadiusY%2A> vlastnosti.  
   
--   <xref:System.Windows.Media.EllipseGeometry> Je definována středový bod, x-radius a poloměr y.  Následující příklady ukazují, jak vytvořit jednoduchý geometrie pro vykreslování a pro oříznutí.  
+- <xref:System.Windows.Media.EllipseGeometry> Je definována středový bod, x-radius a poloměr y.  Následující příklady ukazují, jak vytvořit jednoduchý geometrie pro vykreslování a pro oříznutí.  
   
  Tyto stejné obrazce, jakož i složitější tvary, je možné vytvořit <xref:System.Windows.Media.PathGeometry> nebo kombinací geometrické objekty najednou, ale tyto třídy poskytují jednodušší prostředky pro vytváření těchto základních geometrické tvary.  
   
@@ -175,9 +175,9 @@ PathGeometry s několika obrázků
 ## <a name="composite-geometries"></a>Složený geometrie  
  Složený geometrické objekty lze vytvořit pomocí <xref:System.Windows.Media.GeometryGroup>, <xref:System.Windows.Media.CombinedGeometry>, nebo voláním statické <xref:System.Windows.Media.Geometry> metoda <xref:System.Windows.Media.Geometry.Combine%2A>.  
   
--   <xref:System.Windows.Media.CombinedGeometry> Objektu a <xref:System.Windows.Media.Geometry.Combine%2A> metoda provádí logické operace zkombinovat oblasti určené dvě geometrie. <xref:System.Windows.Media.Geometry> objekty, které mají žádné oblasti se zahodí. Jenom dva <xref:System.Windows.Media.Geometry> objekty mohou být kombinovány (i když tyto dvě geometrie může také být složené geometrie).  
+- <xref:System.Windows.Media.CombinedGeometry> Objektu a <xref:System.Windows.Media.Geometry.Combine%2A> metoda provádí logické operace zkombinovat oblasti určené dvě geometrie. <xref:System.Windows.Media.Geometry> objekty, které mají žádné oblasti se zahodí. Jenom dva <xref:System.Windows.Media.Geometry> objekty mohou být kombinovány (i když tyto dvě geometrie může také být složené geometrie).  
   
--   <xref:System.Windows.Media.GeometryGroup> Třída vytvoří sloučení <xref:System.Windows.Media.Geometry> objekty obsahuje bez kombinování jejich oblasti. Libovolný počet <xref:System.Windows.Media.Geometry> objekty mohou být přidány do <xref:System.Windows.Media.GeometryGroup>. Příklad najdete v tématu [vytvoření složeného tvaru](how-to-create-a-composite-shape.md).  
+- <xref:System.Windows.Media.GeometryGroup> Třída vytvoří sloučení <xref:System.Windows.Media.Geometry> objekty obsahuje bez kombinování jejich oblasti. Libovolný počet <xref:System.Windows.Media.Geometry> objekty mohou být přidány do <xref:System.Windows.Media.GeometryGroup>. Příklad najdete v tématu [vytvoření složeného tvaru](how-to-create-a-composite-shape.md).  
   
  Protože neprovádějte operaci combine, pomocí <xref:System.Windows.Media.GeometryGroup> objekty nabízí v porovnání s použitím výkony těží <xref:System.Windows.Media.CombinedGeometry> objekty nebo <xref:System.Windows.Media.Geometry.Combine%2A> metody.  
   
@@ -207,11 +207,11 @@ PathGeometry s několika obrázků
 ## <a name="other-geometry-features"></a>Další funkce geometrie  
  <xref:System.Windows.Media.Geometry> Třída rovněž poskytuje užitečné pomocné metody, jako je následující:  
   
--   <xref:System.Windows.Media.Geometry.GetArea%2A> -Získá oblasti <xref:System.Windows.Media.Geometry>.  
+- <xref:System.Windows.Media.Geometry.GetArea%2A> -Získá oblasti <xref:System.Windows.Media.Geometry>.  
   
--   <xref:System.Windows.Media.Geometry.FillContains%2A> -Určuje, zda geometrii obsahuje další <xref:System.Windows.Media.Geometry>.  
+- <xref:System.Windows.Media.Geometry.FillContains%2A> -Určuje, zda geometrii obsahuje další <xref:System.Windows.Media.Geometry>.  
   
--   <xref:System.Windows.Media.Geometry.StrokeContains%2A> -Určuje, zda tah <xref:System.Windows.Media.Geometry> obsahuje zadaný bod.  
+- <xref:System.Windows.Media.Geometry.StrokeContains%2A> -Určuje, zda tah <xref:System.Windows.Media.Geometry> obsahuje zadaný bod.  
   
  Zobrazit <xref:System.Windows.Media.Geometry> třídu pro úplný seznam všech její metody.  
   

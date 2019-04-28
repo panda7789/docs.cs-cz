@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
 ms.openlocfilehash: ecf26263bf47e8b4609e7adc208f0a59a2fa795b
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55255182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667324"
 ---
 # <a name="claimsauthenticationmanager"></a>\<claimsAuthenticationManager>
 Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity.  
@@ -36,7 +36,7 @@ Zaregistruje manažera ověřování deklarací identity pro příchozí deklara
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje, která je odvozena z vlastního typu <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy. Další informace o tom, jak zadat `type` atributu naleznete v tématu [vlastní typ reference].|  
+| – typ|Určuje, která je odvozena z vlastního typu <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy. Další informace o tom, jak zadat `type` atributu naleznete v tématu [vlastní typ reference].|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Pokud není žádné `type` atribut, nebo, pokud `type` atribut odkazy <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy, `<claimsAuthenticationManager>` element nevyužívá podřízených elementů, ale třídy odvozené z <xref:System.Security.Claims.ClaimsAuthenticationManager> můžete definovat podřízené prvky konfigurace.  

@@ -1,5 +1,5 @@
 ---
-title: <section> – element
+title: <section>  – element
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
@@ -11,11 +11,11 @@ ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: 58f823ce0c128f30e361b4a631d41286533b5f0f
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55259212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701499"
 ---
 # <a name="section-element"></a>\<část > – element
 
@@ -67,7 +67,7 @@ Následující atributy platí pouze pro aplikace ASP.NET. Konfigurační systé
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádná
+Žádné
 
 ## <a name="remarks"></a>Poznámky
 

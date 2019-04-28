@@ -9,11 +9,11 @@ helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
 ms.openlocfilehash: 997ce7399dc9742076932b213811abd1f847e60b
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661216"
 ---
 # <a name="long-c-reference"></a>long (Referenční dokumentace jazyka C#)
 

@@ -2,11 +2,11 @@
 title: AttributeUsage (C#)
 ms.date: 04/25/2018
 ms.openlocfilehash: a3a82e33d7259ec56ec3e907bc3d4d9f8a01167d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54589308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61668715"
 ---
 # <a name="attributeusage-c"></a>AttributeUsage (C#)
 
@@ -21,7 +21,7 @@ Určuje, jak je možné třídu vlastního atributu. <xref:System.AttributeUsage
   - Param
   - property
   - return
-  - – typ
+  -  – typ
 - Určuje, zda atribut lze použít na jednom elementu programu několikrát.
 - Určuje, zda atributy jsou zděděny z odvozených tříd.
 

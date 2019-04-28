@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
 ms.openlocfilehash: 548e374fbabee57e756d06e5cb56a59f8e97a47c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59153592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756270"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat pomocí adaptérů dat
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, třeba `Fill` metoda, přebírá jako argumenty instance `DataSet`a volitelně <xref:System.Data.DataTable> objektu nebo `DataTable` název. `DataSet` Instance je `DataSet` , která obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulky, ze kterých se mají obnovit změny. Pokud ne `DataTable` je zadán první `DataTable` v `DataSet` se používá.  
@@ -98,13 +98,13 @@ adapter.Update(table.Select(null, null, DataViewRowState.Added));
 ## <a name="use-a-dataadapter-to-retrieve-and-update-data"></a>Umožňuje načíst a aktualizovat Data adaptéru dat  
  Můžete použít adaptéru dat se načítají a aktualizují data.  
   
--   Ukázka používá DataAdapter.AcceptChangesDuringFill se klonovat data v databázi. Pokud je vlastnost nastavená na hodnotu false, metoda AcceptChanges není volána při vyplňování tabulky a nově přidané řádky jsou považovány za vložené řádky. Tedy Ukázka používá tyto řádky k vložení nových řádků do databáze.  
+- Ukázka používá DataAdapter.AcceptChangesDuringFill se klonovat data v databázi. Pokud je vlastnost nastavená na hodnotu false, metoda AcceptChanges není volána při vyplňování tabulky a nově přidané řádky jsou považovány za vložené řádky. Tedy Ukázka používá tyto řádky k vložení nových řádků do databáze.  
   
--   Ukázky pomocí DataAdapter.TableMappings definuje mapování mezi zdrojovou tabulku a DataTable.  
+- Ukázky pomocí DataAdapter.TableMappings definuje mapování mezi zdrojovou tabulku a DataTable.  
   
--   Ukázka používá DataAdapter.FillLoadOption určit, jakým způsobem adaptér naplňuje objekt DataTable z DbDataReader. Při vytváření objektu DataTable můžete pouze zapisovat data z databáze na aktuální verzi nebo verzi původního nastavením vlastnosti jako LoadOption.Upsert nebo LoadOption.PreserveChanges.  
+- Ukázka používá DataAdapter.FillLoadOption určit, jakým způsobem adaptér naplňuje objekt DataTable z DbDataReader. Při vytváření objektu DataTable můžete pouze zapisovat data z databáze na aktuální verzi nebo verzi původního nastavením vlastnosti jako LoadOption.Upsert nebo LoadOption.PreserveChanges.  
   
--   Ukázka také aktualizovat tabulky pomocí DbDataAdapter.UpdateBatchSize k provádění operací služby batch.  
+- Ukázka také aktualizovat tabulky pomocí DbDataAdapter.UpdateBatchSize k provádění operací služby batch.  
   
  Před kompilace a spuštění ukázky, budete muset vytvoření ukázkové databáze:  
   

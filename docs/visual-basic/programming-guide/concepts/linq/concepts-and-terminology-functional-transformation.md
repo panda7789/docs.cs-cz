@@ -3,11 +3,11 @@ title: Koncepty a terminologie (funkční transformace) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 24fd244d-ebae-4721-8858-89bb544aea0b
 ms.openlocfilehash: c6308185b39651095482dca434ce25d717bd5e6b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663476"
 ---
 # <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>Koncepty a terminologie (funkční transformace) (Visual Basic)
 Toto téma představuje koncepty a terminologie čistě funkční transformace. Funkční transformace přístup k transformaci dat vrací kód, který je často rychlejší program, více výrazovými možnostmi a jednodušší vyladit a udržovat než tradiční, imperativní programování.  
@@ -17,9 +17,9 @@ Toto téma představuje koncepty a terminologie čistě funkční transformace. 
 ## <a name="what-is-pure-functional-transformation"></a>Co je čistě funkční transformace?  
  V *čistě funkční transformace*, sadu funkcí volaných *čistě funkce*, definovat, jak transformovat sadu strukturovaná data z původní podobě do jiného formátu. Slovo "čistě" označuje, že jsou funkce *sestavitelné*, což vyžaduje, aby byly:  
   
--   *Samostatná*, takže je možné libovolně seřazených a změnit jejich uspořádání bez entanglement nebo vzájemných závislostí s využitím zbytku programu. Čistě transformace mít žádné znalosti jazyka nebo vliv na jejich prostředí. To znamená, nemají tyto funkce používají v transformace bez *vedlejší účinky*.  
+- *Samostatná*, takže je možné libovolně seřazených a změnit jejich uspořádání bez entanglement nebo vzájemných závislostí s využitím zbytku programu. Čistě transformace mít žádné znalosti jazyka nebo vliv na jejich prostředí. To znamená, nemají tyto funkce používají v transformace bez *vedlejší účinky*.  
   
--   *Bezstavové*tak, aby provádí stejnou funkci nebo konkrétní sadu funkcí na stejný vstup vždy výsledkem bude stejný výstup. Čistě transformace mají nedostatek paměti jejich předchozí použití.  
+- *Bezstavové*tak, aby provádí stejnou funkci nebo konkrétní sadu funkcí na stejný vstup vždy výsledkem bude stejný výstup. Čistě transformace mají nedostatek paměti jejich předchozí použití.  
   
 > [!IMPORTANT]
 >  Ve zbývající části tohoto kurzu se používá termín "čistě funkce" v obecném smyslu označující programovací přístup a není funkce konkrétní jazyk.  

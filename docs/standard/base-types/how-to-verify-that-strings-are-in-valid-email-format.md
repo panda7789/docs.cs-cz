@@ -21,11 +21,11 @@ ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 78210f9f007060551130812fcb5a9cd5b4728adc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58890498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768378"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>Postupy: Ověření platnosti e-mailového formátu řetězců
 Následující příklad používá regulární výraz k ověření, že je řetězec ve formátu platné e-mailu.  
@@ -91,9 +91,9 @@ vbc /t:library RegexUtilities.vb
   
  Za předpokladu, že jste vytvořili knihovnu tříd s názvem RegexUtilities.dll, který obsahuje regulární výraz ověření e-mailu, můžete kompilaci tohoto příkladu v některém z následujících způsobů:  
   
--   V sadě Visual Studio, tak, že vytvoření konzolové aplikace a přidání odkazu na RegexUtilities.dll do projektu.  
+- V sadě Visual Studio, tak, že vytvoření konzolové aplikace a přidání odkazu na RegexUtilities.dll do projektu.  
   
--   Z příkazového řádku, zkopírováním a vložením kódu do textového souboru a jeho kompilace s příkaz podobný tomuto (za předpokladu, že je název souboru se zdrojovým kódem Example.cs nebo Example.vb:  
+- Z příkazového řádku, zkopírováním a vložením kódu do textového souboru a jeho kompilace s příkaz podobný tomuto (za předpokladu, že je název souboru se zdrojovým kódem Example.cs nebo Example.vb:  
   
     ```csharp  
     csc Example.cs /r:RegexUtilities.dll  

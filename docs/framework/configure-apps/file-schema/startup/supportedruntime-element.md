@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 ms.openlocfilehash: 2b0bce015216c2eaf2c35aee2d9174f109dff16e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673910"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime > – element
 

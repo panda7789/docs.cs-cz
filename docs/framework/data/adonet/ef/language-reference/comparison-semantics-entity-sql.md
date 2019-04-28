@@ -3,11 +3,11 @@ title: Sémantika porovnání (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
 ms.openlocfilehash: 6b4c4177ebd6c45e00a1ac7774e40a43e0c14a74
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61605961"
 ---
 # <a name="comparison-semantics-entity-sql"></a>Sémantika porovnání (Entity SQL)
 Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zahrnuje operátory porovnání instance typu:  
@@ -15,53 +15,53 @@ Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../inc
 ## <a name="explicit-comparison"></a>Explicitní porovnání  
  Operace rovnosti:  
   
--   =  
+- =  
   
--   !=  
+- !=  
   
  Pořadí operací:  
   
--   <  
+- <  
   
--   \<=  
+- \<=  
   
--   \>  
+- \>  
   
--   \>=  
+- \>=  
   
  Možnost použití hodnoty Null operace:  
   
--   MÁ HODNOTU NULL.  
+- MÁ HODNOTU NULL.  
   
--   NENÍ ROVNO HODNOTĚ NULL  
+- NENÍ ROVNO HODNOTĚ NULL  
   
 ## <a name="explicit-distinction"></a>Explicitní rozlišení  
  Rovnost rozdíl:  
   
--   DISTINCT  
+- DISTINCT  
   
--   GROUP BY  
+- GROUP BY  
   
  Řazení rozdíl:  
   
--   ŘADIT PODLE  
+- ŘADIT PODLE  
   
 ## <a name="implicit-distinction"></a>Implicitní rozlišení  
  Operace a predikáty (rovnost) nastavte:  
   
--   UNION  
+- UNION  
   
--   INTERSECT  
+- INTERSECT  
   
--   EXCEPT  
+- EXCEPT  
   
--   SET  
+- SET  
   
--   OVERLAPS  
+- OVERLAPS  
   
  Predikáty položky (rovnost):  
   
--   IN  
+- IN  
   
 ## <a name="supported-combinations"></a>Podporované kombinace  
  V následující tabulce jsou uvedeny podporované kombinace operátory porovnání pro každý druh typu:  

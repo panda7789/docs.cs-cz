@@ -11,11 +11,11 @@ helpviewer_keywords:
 - classes [WPF], FrameworkContentElement
 ms.assetid: 52bbf4f2-15fc-40d4-837b-bb4c21ead7d4
 ms.openlocfilehash: a46942188fd417b46ba4feb44d436800e1362098
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59225791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61764644"
 ---
 # <a name="wpf-xaml-namescopes"></a>Obory názvů WPF XAML
 Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definovány v XAML. Názvy v XAML namescope lze použít k vytvoření relace mezi XAML definované názvy objektů a jejich ekvivalenty instance ve stromu objektů. Obvykle XAML obory názvů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spravovaného kódu jsou vytvořeny při načítání jednotlivých stránek XAML kořeny pro aplikace XAML. Obory názvů XAML jako programovací objekty jsou definovány <xref:System.Windows.Markup.INameScope> rozhraní a jsou také implementováno třídou praktické <xref:System.Windows.NameScope>.  
@@ -76,13 +76,13 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
 ### <a name="xaml-namescope-implementations"></a>Implementace Namescope XAML  
  Následující třídy implementují <xref:System.Windows.Markup.INameScope> přímo:  
   
--   <xref:System.Windows.NameScope>  
+- <xref:System.Windows.NameScope>  
   
--   <xref:System.Windows.Style>  
+- <xref:System.Windows.Style>  
   
--   <xref:System.Windows.ResourceDictionary>  
+- <xref:System.Windows.ResourceDictionary>  
   
--   <xref:System.Windows.FrameworkTemplate>  
+- <xref:System.Windows.FrameworkTemplate>  
   
  <xref:System.Windows.ResourceDictionary> nepoužívá XAML názvy nebo obory názvů; používá klíče místo, protože se jedná implementaci slovníku. Pouze důvodu <xref:System.Windows.ResourceDictionary> implementuje <xref:System.Windows.Markup.INameScope> je tak může vyvolat výjimky do uživatelského kódu, které pomohou vyjasnit, rozdíl mezi true XAML namescope a jak <xref:System.Windows.ResourceDictionary> zpracovává klíče a také, aby zajistil, že obory názvů XAML se nepoužije <xref:System.Windows.ResourceDictionary> nadřazené prvky.  
   
@@ -90,9 +90,9 @@ Obory názvů XAML jsou pojem, který identifikuje objekty, které jsou definov�
   
  Následující třídy definují vlastní obor namescope XAML pomocí <xref:System.Windows.NameScope?displayProperty=nameWithType> pomocná třída a připojení k její implementaci namescope XAML prostřednictvím <xref:System.Windows.NameScope.NameScope%2A?displayProperty=nameWithType> přidružená vlastnost:  
   
--   <xref:System.Windows.FrameworkElement>  
+- <xref:System.Windows.FrameworkElement>  
   
--   <xref:System.Windows.FrameworkContentElement>  
+- <xref:System.Windows.FrameworkContentElement>  
   
 ## <a name="see-also"></a>Viz také:
 

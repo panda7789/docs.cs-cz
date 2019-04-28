@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
 ms.openlocfilehash: 616110145db2796e05509094b1c023daacd68f03
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58835567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751669"
 ---
 # <a name="object-data-type"></a>Datový typ objektu
 Obsahuje adresy, které odkazují na objekty. Jakýkoli odkaz na typ (řetězec, pole, třídy nebo rozhraní) můžete přiřadit `Object` proměnné. `Object` Proměnné lze také odkazovat na data libovolného typu hodnoty (číselné, `Boolean`, `Char`, `Date`, struktury nebo výčet).  
@@ -42,19 +42,19 @@ datTyp = Type.GetTypeCode(myObject.GetType())
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy ukazatelů v jiných prostředích nejsou kompatibilní s jazykem Visual Basic `Object` typu.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, mějte na paměti, že typy ukazatelů v jiných prostředích nejsou kompatibilní s jazykem Visual Basic `Object` typu.  
   
--   **Výkon.** Proměnná deklarovaná pomocí `Object` typ je dostatečně flexibilní, aby obsahují odkaz na libovolný objekt. Nicméně při vyvolání metody nebo vlastnosti na tyto proměnné se vždy vynakládají *pozdní vazby* (za běhu). Chcete-li vynutit *časné vazby* (v době kompilace) a lepšího výkonu, deklarujte proměnnou s názvem určité třídy nebo přetypován na určitý datový typ.  
+- **Výkon.** Proměnná deklarovaná pomocí `Object` typ je dostatečně flexibilní, aby obsahují odkaz na libovolný objekt. Nicméně při vyvolání metody nebo vlastnosti na tyto proměnné se vždy vynakládají *pozdní vazby* (za běhu). Chcete-li vynutit *časné vazby* (v době kompilace) a lepšího výkonu, deklarujte proměnnou s názvem určité třídy nebo přetypován na určitý datový typ.  
   
      Při deklaraci proměnné objektu, zkuste použít určitý typ třídy, například <xref:System.OperatingSystem>, místo zobecněný `Object` typu. By měl také použít k dispozici, například na třídu nejspecifičtější <xref:System.Windows.Forms.TextBox> místo <xref:System.Windows.Forms.Control>, aby přístup k jeho vlastnosti a metody. Můžete obvykle použít **třídy** v seznamu **prohlížeče objektů** najít názvy tříd k dispozici.  
   
--   **Rozšíření.** Všechny typy dat a všechny typy odkazů rozšířit na `Object` datového typu. To znamená, že lze převést libovolný typ `Object` aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** Všechny typy dat a všechny typy odkazů rozšířit na `Object` datového typu. To znamená, že lze převést libovolný typ `Object` aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
      Ale při převodu mezi typy hodnot a `Object`, Visual Basic provádí operace volat *zabalení* a *rozbalení*, ujistěte se, které provádění pomalejší.  
   
--   **Znaky typu.** `Object` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
+- **Znaky typu.** `Object` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Object?displayProperty=nameWithType> třídy.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Object?displayProperty=nameWithType> třídy.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje `Object` proměnná odkazuje na instanci objektu.  
