@@ -7,11 +7,11 @@ helpviewer_keywords:
 - interfaces [C#], explicitly implementing with inheritance
 ms.assetid: 8b402ddc-dff9-4869-89cb-d718c764e68e
 ms.openlocfilehash: 9e4805f2a9d1a4a18166ea7bcc8fbf8a099e0b9e
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61679840"
 ---
 # <a name="how-to-explicitly-implement-members-of-two-interfaces-c-programming-guide"></a>Postupy: Explicitní implementace členů dvou rozhraní (C# Průvodce programováním v)
 Explicitní [rozhraní](../../../csharp/language-reference/keywords/interface.md) implementace také umožňuje programátorovi, aby implementovat dvě rozhraní, které mají stejné názvy členů a poskytnout samostatné implementace každého člena rozhraní. Tento příklad zobrazuje rozměry pole v metriky a angličtině jednotky. Do pole [třídy](../../../csharp/language-reference/keywords/class.md) implementuje dvě rozhraní IEnglishDimensions a IMetricDimensions, které představují systémy různých měření. Obě rozhraní mají názvy členů identické, délku a šířku.  

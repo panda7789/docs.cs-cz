@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření stromu ze třídy XmlReader (C#)'
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
 ms.openlocfilehash: fb65c7b74bf3bd006fd4f545e4587efe9a392131
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54496178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702149"
 ---
 # <a name="how-to-create-a-tree-from-an-xmlreader-c"></a>Postupy: Vytvoření stromu ze třídy XmlReader (C#)
 Toto téma ukazuje, jak vytvořit stromu XML přímo ze <xref:System.Xml.XmlReader>. K vytvoření <xref:System.Xml.Linq.XElement> ze <xref:System.Xml.XmlReader>, je třeba umístit <xref:System.Xml.XmlReader> na uzlu elementu. <xref:System.Xml.XmlReader> Komentáře se přeskočí a zpracování pokynů, ale pokud <xref:System.Xml.XmlReader> je umístěn na textový uzel, bude vyvolána k chybě. Aby se zabránilo podobné chyby, vždy umístěte <xref:System.Xml.XmlReader> v elementu před vytvořením stromu XML ze <xref:System.Xml.XmlReader>.  

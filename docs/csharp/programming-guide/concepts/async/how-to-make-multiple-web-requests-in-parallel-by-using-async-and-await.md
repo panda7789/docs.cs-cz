@@ -3,11 +3,11 @@ title: 'Postupy: Paralelní provádění vícenásobných webových pomocí modi
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
 ms.openlocfilehash: 3ea41c1fa0fce3a35635e069061f1953c6395406
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335417"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703020"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Postupy: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)
 V asynchronní metodě jsou úlohy spuštěny při jejich vytvoření. [Await](../../../../csharp/language-reference/keywords/await.md) operátor je použít pro úlohu v okamžiku v metodě, kdy zpracování nemůže pokračovat, dokud neskončí úloha. Úloha je často očekávaná ihned, jakmile se vytvoří, jak ukazuje následující příklad.  
@@ -45,11 +45,11 @@ var result = await myTask;
   
 1. Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Můžete najít podrobné pokyny k těmto krokům uvádí [názorný postup: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
-    -   Vytvoření aplikace WPF, která obsahuje textové pole a tlačítko. Pojmenujte tlačítko `startButton`a pojmenujte textového pole `resultsTextBox`.  
+    - Vytvoření aplikace WPF, která obsahuje textové pole a tlačítko. Pojmenujte tlačítko `startButton`a pojmenujte textového pole `resultsTextBox`.  
   
-    -   Přidat odkaz pro <xref:System.Net.Http>.  
+    - Přidat odkaz pro <xref:System.Net.Http>.  
   
-    -   V souboru MainWindow.xaml.cs přidejte `using` směrnice pro `System.Net.Http`.  
+    - V souboru MainWindow.xaml.cs přidejte `using` směrnice pro `System.Net.Http`.  
   
 ### <a name="to-add-the-code"></a>Přidání kódu  
   
@@ -67,9 +67,9 @@ var result = await myTask;
   
 3. Do projektu přidejte následující metody podpory:  
   
-    -   `ProcessURLAsync` používá <xref:System.Net.Http.HttpClient> metodu pro stažení obsahu webu jako bajtové pole. Podpůrná metoda `ProcessURLAsync` potom zobrazí a vrátí délku pole.  
+    - `ProcessURLAsync` používá <xref:System.Net.Http.HttpClient> metodu pro stažení obsahu webu jako bajtové pole. Podpůrná metoda `ProcessURLAsync` potom zobrazí a vrátí délku pole.  
   
-    -   `DisplayResults` Zobrazí počet bajtů pro každou adresu URL v bajtovém poli. Toto zobrazení se ukazuje po dokončení stahování jednotlivých úkolů.  
+    - `DisplayResults` Zobrazí počet bajtů pro každou adresu URL v bajtovém poli. Toto zobrazení se ukazuje po dokončení stahování jednotlivých úkolů.  
   
      Následující metody zkopírujte a vložte je za `startButton_Click` obslužné rutině událostí ve MainWindow.xaml.cs.  
   
@@ -95,13 +95,13 @@ var result = await myTask;
   
 4. Nakonec definujte metodu `CreateMultipleTasksAsync`, který provede následující kroky.  
   
-    -   Deklaruje metodu `HttpClient` objekt, který potřebuje získat přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.  
+    - Deklaruje metodu `HttpClient` objekt, který potřebuje získat přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.  
   
-    -   Metoda vytvoří a spustí tři úkoly typu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo. Když každý úkol dokončí, `DisplayResults` zobrazí adresu URL úkolu a délku staženého obsahu. Vzhledem k tomu, že úkoly jsou spouštěny asynchronně, pořadí, ve kterém se zobrazí výsledky mohou lišit od pořadí, ve kterém byly deklarovány.  
+    - Metoda vytvoří a spustí tři úkoly typu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo. Když každý úkol dokončí, `DisplayResults` zobrazí adresu URL úkolu a délku staženého obsahu. Vzhledem k tomu, že úkoly jsou spouštěny asynchronně, pořadí, ve kterém se zobrazí výsledky mohou lišit od pořadí, ve kterém byly deklarovány.  
   
-    -   Metoda čeká na ukončení každého úkolu. Každý `await` operátor pozastaví provádění `CreateMultipleTasksAsync` dokud nebude dokončena očekávaná úloha. Operátor také použije vrácenou hodnotu z volání `ProcessURLAsync` z každého dokončeného úkolu.  
+    - Metoda čeká na ukončení každého úkolu. Každý `await` operátor pozastaví provádění `CreateMultipleTasksAsync` dokud nebude dokončena očekávaná úloha. Operátor také použije vrácenou hodnotu z volání `ProcessURLAsync` z každého dokončeného úkolu.  
   
-    -   Když byly úlohy dokončeny a celočíselné hodnoty byly načteny, metoda sečte délky webových stránek a zobrazí výsledek.  
+    - Když byly úlohy dokončeny a celočíselné hodnoty byly načteny, metoda sečte délky webových stránek a zobrazí výsledek.  
   
      Následující metodu zkopírujte a vložte ho do vašeho řešení.  
   

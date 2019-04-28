@@ -3,11 +3,11 @@ title: ORDER BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
 ms.openlocfilehash: 4cf65637603fd6c20a33b1ae6ecd8b6ded36a246
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760295"
 ---
 # <a name="order-by-entity-sql"></a>ORDER BY (Entity SQL)
 Určuje pořadí řazení použít u objektů vrácených v příkazu SELECT.  
@@ -79,23 +79,23 @@ ORDER BY ...
 ## <a name="restricted-keywords"></a>Klíčová slova s omezeným přístupem  
  Následující klíčová slova musí být uzavřen v uvozovkách při použití `ORDER BY` klauzule:  
   
--   RŮZNÉ  
+- RŮZNÉ  
   
--   ÚPLNÉ  
+- ÚPLNÉ  
   
--   KEY  
+- KEY  
   
--   DOLEVA  
+- DOLEVA  
   
--   POŘADÍ  
+- POŘADÍ  
   
--   VNĚJŠÍ  
+- VNĚJŠÍ  
   
--   DOPRAVA  
+- DOPRAVA  
   
--   ROW  
+- ROW  
   
--   HODNOTA  
+- HODNOTA  
   
 ## <a name="ordering-nested-queries"></a>Řazení vnořené dotazy  
  V rozhraní Entity Framework vnořený výraz může být umístěna kdekoli v dotazu; není zachováno pořadí vnořeného dotazu.  

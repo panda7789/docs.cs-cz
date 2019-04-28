@@ -11,11 +11,11 @@ ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: caa9afcb1ab2ca53bba849c39651ca4cba3a9c77
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752968"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -92,15 +92,15 @@ AppDomain.CreateDomain( string friendlyName,
   
      Další informace:  
   
-    -   Toto je pouze přetížení <xref:System.AppDomain.CreateDomain%2A> metodu, která přebírá <xref:System.Security.PermissionSet> jako parametr a tedy pouze přetížení, která umožňuje načtení aplikace v částečným vztahem důvěryhodnosti nastavení.  
+    - Toto je pouze přetížení <xref:System.AppDomain.CreateDomain%2A> metodu, která přebírá <xref:System.Security.PermissionSet> jako parametr a tedy pouze přetížení, která umožňuje načtení aplikace v částečným vztahem důvěryhodnosti nastavení.  
   
-    -   `evidence` Parametr se používá k výpočtu sadu oprávnění, se používá k identifikaci dalších funkcí rozhraní .NET Framework.  
+    - `evidence` Parametr se používá k výpočtu sadu oprávnění, se používá k identifikaci dalších funkcí rozhraní .NET Framework.  
   
-    -   Nastavení <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost `info` parametr je povinný pro toto přetížení.  
+    - Nastavení <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost `info` parametr je povinný pro toto přetížení.  
   
-    -   `fullTrustAssemblies` Parametr má `params` – klíčové slovo, což znamená, že není nutné vytvořit <xref:System.Security.Policy.StrongName> pole. Předejte 0, 1 nebo více silných názvů jako parametry je povolen.  
+    - `fullTrustAssemblies` Parametr má `params` – klíčové slovo, což znamená, že není nutné vytvořit <xref:System.Security.Policy.StrongName> pole. Předejte 0, 1 nebo více silných názvů jako parametry je povolen.  
   
-    -   Kód k vytvoření domény aplikace je:  
+    - Kód k vytvoření domény aplikace je:  
   
     ```csharp
     AppDomain newDomain = AppDomain.CreateDomain("Sandbox", null, adSetup, permSet, fullTrustAssembly);  
@@ -108,15 +108,15 @@ AppDomain.CreateDomain( string friendlyName,
   
 5. Načíst kód do sandboxing <xref:System.AppDomain> , kterou jste vytvořili. To lze provést dvěma způsoby:  
   
-    -   Volání <xref:System.AppDomain.ExecuteAssembly%2A> metodu pro sestavení.  
+    - Volání <xref:System.AppDomain.ExecuteAssembly%2A> metodu pro sestavení.  
   
-    -   Použití <xref:System.Activator.CreateInstanceFrom%2A> metodu pro vytvoření instance třídy odvozené z <xref:System.MarshalByRefObject> na novém <xref:System.AppDomain>.  
+    - Použití <xref:System.Activator.CreateInstanceFrom%2A> metodu pro vytvoření instance třídy odvozené z <xref:System.MarshalByRefObject> na novém <xref:System.AppDomain>.  
   
      Druhý způsob je vhodnější, protože usnadňuje pro předání parametrů do nového <xref:System.AppDomain> instance. <xref:System.Activator.CreateInstanceFrom%2A> Metoda obsahuje dvě důležité funkce:  
   
-    -   Můžete použít, který odkazuje na umístění, které vaše sestavení neobsahuje základ kódu.  
+    - Můžete použít, který odkazuje na umístění, které vaše sestavení neobsahuje základ kódu.  
   
-    -   Vám pomůžou vytvářet v rámci <xref:System.Security.CodeAccessPermission.Assert%2A> pro plnou důvěryhodnost (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), což vám umožní vytvořit instanci třídy kritické. (Tento proces probíhá vždy sestavení nemá žádné označení transparentnosti a je načteno jako plně důvěryhodné.) Proto budete muset pečlivě vytvořit pouze kód, kterému důvěřujete s touto funkcí a doporučujeme vytvořit pouze instance plně důvěryhodné tříd v nové doméně aplikace.  
+    - Vám pomůžou vytvářet v rámci <xref:System.Security.CodeAccessPermission.Assert%2A> pro plnou důvěryhodnost (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), což vám umožní vytvořit instanci třídy kritické. (Tento proces probíhá vždy sestavení nemá žádné označení transparentnosti a je načteno jako plně důvěryhodné.) Proto budete muset pečlivě vytvořit pouze kód, kterému důvěřujete s touto funkcí a doporučujeme vytvořit pouze instance plně důvěryhodné tříd v nové doméně aplikace.  
   
     ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  

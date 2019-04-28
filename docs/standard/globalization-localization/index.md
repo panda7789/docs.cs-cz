@@ -14,11 +14,11 @@ ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 31f975b45ee854c73e6d502ece69bee24a7fcc3c
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683129"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Globalizace a lokalizace aplikací .NET
 
@@ -38,9 +38,9 @@ Tento krok spočívá v přizpůsobení aplikace pro specifické jazykové verze
 
 Následující tři kroky přináší dvě výhody:
 
--   Umožní vám zpětnému pozměnění aplikace, která je navržena pro podporu jediné jazykové verze, jako jsou USA Angličtina pro podporu dalších jazykových verzí.
+- Umožní vám zpětnému pozměnění aplikace, která je navržena pro podporu jediné jazykové verze, jako jsou USA Angličtina pro podporu dalších jazykových verzí.
 
--   Výsledkem jsou lokalizované aplikace, které jsou více stabilní a méně chybové.
+- Výsledkem jsou lokalizované aplikace, které jsou více stabilní a méně chybové.
 
 .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací. Konkrétně se mnoho členů typů v .NET třídy knihovny podporuje globalizaci vrácením hodnot, které odpovídají konvencím aktuální uživatel jazykovou verzi nebo zadané jazykové verze. .NET podporuje také satelitní sestavení, která usnadňují proces lokalizace aplikace.
 

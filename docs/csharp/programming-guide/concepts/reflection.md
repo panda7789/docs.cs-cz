@@ -3,11 +3,11 @@ title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
 ms.openlocfilehash: 4dfd9391407fec4bd20ac4ae05162763e909d665
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711106"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
 Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../../docs/standard/attributes/index.md).  
@@ -43,26 +43,26 @@ System.Console.WriteLine(info);
 ## <a name="reflection-overview"></a>Přehled reflexe  
  Reflexe je užitečná v následujících situacích:  
   
--   Pokud máte přístup k atributům v metadatech váš program. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
+- Pokud máte přístup k atributům v metadatech váš program. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
   
--   Pro prozkoumání a vytvoření instance typů v sestavení.  
+- Pro prozkoumání a vytvoření instance typů v sestavení.  
   
--   Pro vytváření nových typů v době běhu. Použití tříd v <xref:System.Reflection.Emit>.  
+- Pro vytváření nových typů v době běhu. Použití tříd v <xref:System.Reflection.Emit>.  
   
--   Pro provádění pozdní vazby, přístup k metodám na typy vytvořené v době běhu. Naleznete v tématu [dynamické načtení a použití typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+- Pro provádění pozdní vazby, přístup k metodám na typy vytvořené v době běhu. Naleznete v tématu [dynamické načtení a použití typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
   
--   [Reflexe](../../../framework/reflection-and-codedom/reflection.md)  
+- [Reflexe](../../../framework/reflection-and-codedom/reflection.md)  
   
--   [Zobrazení informací o typu](../../../framework/reflection-and-codedom/viewing-type-information.md)  
+- [Zobrazení informací o typu](../../../framework/reflection-and-codedom/viewing-type-information.md)  
   
--   [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
+- [Reflexe a obecné typy](../../../framework/reflection-and-codedom/reflection-and-generic-types.md)  
   
--   <xref:System.Reflection.Emit>  
+- <xref:System.Reflection.Emit>  
   
--   [Načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
+- [Načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
 ## <a name="see-also"></a>Viz také:
 

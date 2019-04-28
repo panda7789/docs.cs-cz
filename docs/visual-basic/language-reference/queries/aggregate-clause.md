@@ -11,11 +11,11 @@ helpviewer_keywords:
 - queries [Visual Basic], Aggregate
 ms.assetid: 1315a814-5db6-4077-b34b-b141e11cc0eb
 ms.openlocfilehash: 21781db637c71abbbe9366bc95b6ee4c89ac2246
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61712627"
 ---
 # <a name="aggregate-clause-visual-basic"></a>Aggregate – klauzule (Visual Basic)
 Použije jeden nebo více agregačních funkcí na kolekci.  
@@ -68,7 +68,7 @@ Vypočítá průměr všech prvků v kolekci nebo vypočítá zadaný výraz pro
 
  [!code-vb[VbSimpleQuerySamples#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#7)]
 
-### <a name="count"></a>Počet
+### <a name="count"></a>Count
 
 Vrátí počet prvků v kolekci. Můžete zadat volitelný `Boolean` výraz ke zjištění počtu prvků v kolekci, které splňují podmínku. Následuje příklad:
 

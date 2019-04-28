@@ -11,11 +11,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], hosting controls
 ms.assetid: e2ce4990-661d-4882-a116-8a9eb575dc84
 ms.openlocfilehash: ccf82b2ea767d69797af1ffa38381a7cc0fd3b67
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762326"
 ---
 # <a name="how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost"></a>Postupy: Zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost
 <xref:System.Windows.Forms.ToolStripControlHost> slouží k povolení hostování libovolného ovládacích prvků Windows Forms s použitím <xref:System.Windows.Forms.ToolStripControlHost> konstruktor nebo rozšířením <xref:System.Windows.Forms.ToolStripControlHost> samotný. Je snazší zabalení ovládacího prvku rozšířením <xref:System.Windows.Forms.ToolStripControlHost> a implementace vlastnosti a metody, které často vystavit použít vlastnosti a metody ovládacího prvku. Můžete také zveřejnit události pro ovládací prvek na <xref:System.Windows.Forms.ToolStripControlHost> úroveň.  
@@ -59,9 +59,9 @@ ms.locfileid: "59308000"
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Tento příklad vyžaduje:  
+- Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

@@ -3,11 +3,11 @@ title: Tok řízení v asynchronních programech (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
 ms.openlocfilehash: 6a7b8f3f41b2096e3e7524d03217bdc123f26f10
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702837"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Tok řízení v asynchronních programech (C#)
 
@@ -17,9 +17,9 @@ Obecně označujete metody, které obsahují asynchronní kód s [async (C#)](..
 
 Následující příklad používá asynchronní metody ke stahování obsahu zadaného webu jako řetězec a zobrazí délku řetězce. Tento příklad obsahuje následující dvě metody.
 
--   `startButton_Click`, který volá `AccessTheWebAsync` a zobrazí výsledek.
+- `startButton_Click`, který volá `AccessTheWebAsync` a zobrazí výsledek.
 
--   `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, chcete-li stáhnout obsah.
+- `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, chcete-li stáhnout obsah.
 
 Číslované řádky se zobrazí strategická místa v celém programu, které vám pomohou pochopit, jak program funguje a co se stane v každém bodu, který je označen jako zobrazení. Zobrazené řádky jsou označeny "Jedna"až "šest." Popisky představují pořadí, ve kterém dosáhne program tyto řádky kódu.
 

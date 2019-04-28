@@ -3,11 +3,11 @@ title: 3820 - RoutingServiceCreatingTransaction
 ms.date: 03/30/2017
 ms.assetid: 11b15ba8-7d62-4235-8efd-bc6b60218247
 ms.openlocfilehash: 6a418b707b08d5742d0c7e2896260db51a22a298
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33465946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748509"
 ---
 # <a name="3820---routingservicecreatingtransaction"></a>3820 - RoutingServiceCreatingTransaction
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33465946"
 |||  
 |-|-|  
 |ID|3820|  
-|Klíčová slova|RoutingServices|  
+|klíčová slova|RoutingServices|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované při směrovací služby vytvořil novou transakci pro zpracování zprávy.  
+ Tato událost je vygenerován při směrovací služba vytvořila novou transakci pro zpracování zprávy.  
   
 ## <a name="message"></a>Zpráva  
- Směrovací služby vytvořit novou transakci s id '%1' pro zpracování zprávy.  
+ Směrovací služba vytvořila novou transakci s id '%1' pro zpracování zpráv.  
   
 ## <a name="details"></a>Podrobnosti

@@ -3,11 +3,11 @@ title: Dotazování na XDocument vs. Dotazování na XElement (C#)
 ms.date: 07/20/2015
 ms.assetid: 46221ff5-62ee-4de8-93ba-66465facb5c1
 ms.openlocfilehash: 125b0811296695a0909f804931e0caca81f63df6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680776"
 ---
 # <a name="querying-an-xdocument-vs-querying-an-xelement-c"></a>Dotazování na XDocument vs. Dotazování na XElement (C#)
 Při načtení dokumentu prostřednictvím <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType>, všimnete si, že budete muset psát dotazy trochu jinak než při načtení prostřednictvím <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.  

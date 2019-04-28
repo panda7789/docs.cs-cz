@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ipv6 element
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
 ms.openlocfilehash: b8969cecf8ffb2ef23522f193bb322b1170e6111
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59089208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705061"
 ---
 # <a name="ipv6-element-network-settings"></a>\<IPv6 > – Element (nastavení sítě)
 Umožňuje Internet Protocol verze 6 (IPv6) odpovědí z zastaralé členy <xref:System.Net.Dns> třídy.  

@@ -3,11 +3,11 @@ title: Element <httpDigest>
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
 ms.openlocfilehash: 914711e4d6c3dbb1ccc741af1b3abd6b8de716a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751043"
 ---
 # <a name="httpdigest-element"></a>\<httpDigest> Element
 Určuje výběru pověření používaný při ověřování klienta ke službě zadejte.  
@@ -35,7 +35,7 @@ Určuje výběru pověření používaný při ověřování klienta ke službě
 |`impersonationLevel`|Nastavuje předvolbu zosobnění, který klient komunikuje na server. Režim zosobnění, který klient vybere nevynucuje na serveru. Platné hodnoty patří:<br /><br /> -Identifikace: Na serveru můžete získat identit a oprávnění klienta, ale nelze zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />-Anonymní: Server nelze zosobnit nebo identifikaci klienta.<br />-Žádný: Úroveň zosobnění není přiřazen.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

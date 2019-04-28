@@ -8,11 +8,11 @@ ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 27c8c1cac68aca1c40826ff549d62d9636d9b0c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59085880"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704905"
 ---
 # <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
 Určuje, zda je výchozí chování, které je umožnit hostitelský modul runtime pro přepsání nastavení konfigurace pro doménu aplikace, zakázáno.  
@@ -38,7 +38,7 @@ Určuje, zda je výchozí chování, které je umožnit hostitelský modul runti
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |0|Nezakazujte přepsat nastavení Fusion. Jedná se o výchozí chování, počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
 |1|Zakážete možnost přepsat nastavení Fusion. To obnoví na chování starších verzích rozhraní .NET Framework.|  

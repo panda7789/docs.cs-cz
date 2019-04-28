@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Windows Communication Foundation, data contracts
 ms.assetid: bf0ab338-4d36-4e12-8002-8ebfdeb346cb
 ms.openlocfilehash: cf3ae6f47f63c545edf3d65804daa049d4541788
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703527"
 ---
 # <a name="best-practices-data-contract-versioning"></a>Doporučené postupy: Správa verzí kontraktů dat
 Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v průběhu času můžete snadno vyvíjejí. Další informace o kontraktech dat, najdete v tématech v [kontraktů dat pomocí](../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
@@ -39,9 +39,9 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
   
  V některých případech musí zajistit dodržování předpisů striktní schéma pro zprávy odeslané aplikací ale nelze spoléhat na příchozí zprávy, které mají být přísně schématu nedodržující předpisy. V takovém případě hrozí, že příchozí zprávy může obsahovat nadbytečná data. Nadbytečné hodnoty jsou uloženy a vrácené WCF, jejichž výsledkem tedy schéma neplatný zprávy odesílané. Tomuto problému zabráníte tak, by měla být funkce verzemi vypnuta. Existují dva způsoby, jak to provést.  
   
--   Neprovádějte implementaci <xref:System.Runtime.Serialization.IExtensibleDataObject> na některý z typů rozhraní.  
+- Neprovádějte implementaci <xref:System.Runtime.Serialization.IExtensibleDataObject> na některý z typů rozhraní.  
   
--   Použít <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut vaše kontrakt služby s <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> nastavenou na `true`.  
+- Použít <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut vaše kontrakt služby s <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> nastavenou na `true`.  
   
  Další informace o verzemi najdete v tématu [kontraktů dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
@@ -66,11 +66,11 @@ Toto téma obsahuje osvědčené postupy pro vytváření dat smlouvy, které v 
   
 8. V novějších verzích je možné přidat nové datové členy. By měl vždy postupujte podle těchto pravidel:  
   
-    1.  <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Vlastnost by měl vždy být ponechány na jeho výchozí hodnotu `false`.  
+    1. <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> Vlastnost by měl vždy být ponechány na jeho výchozí hodnotu `false`.  
   
-    2.  Pokud výchozí hodnotu `null` nebo klesne na nepřijatelnou nulu pro člen, musí být zadaná metoda zpětného volání pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí hodnoty v případě, že člen není k dispozici v příchozím datovém proudu. Další informace o zpětné volání, naleznete v tématu [tolerantní zpětná volání serializace](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
+    2. Pokud výchozí hodnotu `null` nebo klesne na nepřijatelnou nulu pro člen, musí být zadaná metoda zpětného volání pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute> zajistit přiměřené výchozí hodnoty v případě, že člen není k dispozici v příchozím datovém proudu. Další informace o zpětné volání, naleznete v tématu [tolerantní zpětná volání serializace](../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
   
-    3.  <xref:System.Runtime.Serialization.DataMemberAttribute.Order?displayProperty=nameWithType> Vlastnost by měla sloužit k Ujistěte se, že všichni členové nově přidaná data se zobrazí po existující datové členy. Doporučený způsob, jak to vypadá takto: Žádné datové členy v první verzi kontraktu dat by měl mít jejich `Order` sadu vlastností. Všechny datové členy, které byly přidány ve verzi 2 kontraktu dat by měl mít jejich `Order` nastavenou na 2. Všechny datové členy, které byly přidány ve verzi 3 kontraktu dat by měl mít jejich `Order` nastaven na hodnotu 3 a tak dále. Je přípustné mít více než jeden datový člen nastaví na stejnou `Order` číslo.  
+    3. <xref:System.Runtime.Serialization.DataMemberAttribute.Order?displayProperty=nameWithType> Vlastnost by měla sloužit k Ujistěte se, že všichni členové nově přidaná data se zobrazí po existující datové členy. Doporučený způsob, jak to vypadá takto: Žádné datové členy v první verzi kontraktu dat by měl mít jejich `Order` sadu vlastností. Všechny datové členy, které byly přidány ve verzi 2 kontraktu dat by měl mít jejich `Order` nastavenou na 2. Všechny datové členy, které byly přidány ve verzi 3 kontraktu dat by měl mít jejich `Order` nastaven na hodnotu 3 a tak dále. Je přípustné mít více než jeden datový člen nastaví na stejnou `Order` číslo.  
   
 9. Neodebírejte datové členy v novějších verzích, i v případě, <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnost byla ponechána v její výchozí vlastnost `false` v předchozích verzích.  
   

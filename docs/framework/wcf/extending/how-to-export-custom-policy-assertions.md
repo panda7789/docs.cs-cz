@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 99030386-43b0-4f7b-866d-17ea307f5cbd
 ms.openlocfilehash: b3d3afdd1e3fba2a77186d1cd644d723c445600c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306219"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767166"
 ---
 # <a name="how-to-export-custom-policy-assertions"></a>Postupy: Export kontrolních výrazů vlastních zásad
 Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby. Aplikace služby můžete použít kontrolních výrazů vlastních zásad v metadata služby pro komunikaci koncový bod, informace o přizpůsobení vazby nebo smlouvy do klientské aplikace. Export kontrolních výrazů ve výrazech zásad připojena v vazby WSDL na koncový bod, operace nebo zprávy témata, v závislosti na možnosti nebo požadavky, které komunikují se můžete použít Windows Communication Foundation (WCF).  

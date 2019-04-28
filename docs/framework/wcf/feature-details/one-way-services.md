@@ -7,20 +7,20 @@ helpviewer_keywords:
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
 ms.openlocfilehash: 011bca07890e706b86f2a0b1dbf11acf77058548
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59231276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762485"
 ---
 # <a name="one-way-services"></a>Jednosměrné služby
 Výchozí chování operace služby je vzor požadavek odpověď. Ve vzoru požadavek odpověď, klient počká pro zprávy s odpovědí, i v případě, že v kódu, jako je reprezentována operace služby `void` metody. S jednosměrnou operaci se přenášejí pouze jednu zprávu. Příjemce neodešle zprávy s odpovědí, ani nemá odesílatel očekávat jeden.  
   
  Použití jednosměrné návrhový vzor:  
   
--   Když klient musí volat operace a nemá vliv výsledek operace na úrovni operace.  
+- Když klient musí volat operace a nemá vliv výsledek operace na úrovni operace.  
   
--   Při použití <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. (Další informace o tomto scénáři najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).)  
+- Při použití <xref:System.ServiceModel.NetMsmqBinding> nebo <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> třídy. (Další informace o tomto scénáři najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).)  
   
  Když je jednosměrná operace, neexistuje žádná zpráva odpovědi přenášet informace o chybě zpět do klienta. Chybové stavy můžete zjistit pomocí funkce základní vazby, jako je například spolehlivé relace, nebo podle návrhu služby duplexní kontrakt, který používá dvě jednosměrné operace – jednosměrného kontraktu z klienta do služby pro volání operace služby a další Jednosměrná kontraktů mezi klientem a službou tak, aby služba může odesílat back chyb klientovi pomocí zpětného volání, která implementuje klienta.  
   

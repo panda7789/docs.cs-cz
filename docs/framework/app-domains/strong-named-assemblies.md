@@ -8,11 +8,11 @@ ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 72e9e698e510153073515aa891f1ed3b4d7b9886
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59081434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705516"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům při sestavení.  
@@ -32,13 +32,13 @@ Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může 
   
  Sestavení se silným názvem jsou užitečné v následujících scénářích:  
   
--   Chcete povolit vaše sestavení může odkazovat sestavení se silným názvem, nebo chcete poskytnout `friend` přístup k sestavení z jiných sestavení se silným názvem.  
+- Chcete povolit vaše sestavení může odkazovat sestavení se silným názvem, nebo chcete poskytnout `friend` přístup k sestavení z jiných sestavení se silným názvem.  
   
--   Aplikace potřebuje přístup k různé verze téhož sestavení. To znamená, že potřebujete různé verze sestavení, které chcete načíst vedle sebe ve stejné doméně aplikace bez konfliktu. Například pokud různých rozšíření rozhraní API v sestavení, které mají stejný jednoduchý název, silné názvy poskytuje jedinečné identity pro každou verzi sestavení.  
+- Aplikace potřebuje přístup k různé verze téhož sestavení. To znamená, že potřebujete různé verze sestavení, které chcete načíst vedle sebe ve stejné doméně aplikace bez konfliktu. Například pokud různých rozšíření rozhraní API v sestavení, které mají stejný jednoduchý název, silné názvy poskytuje jedinečné identity pro každou verzi sestavení.  
   
--   Nechcete negativně ovlivnit výkon aplikace pomocí sestavení, takže má sestavení jako doménově neutrální. To vyžaduje silné názvy protože doménově neutrální sestavení musí být nainstalováno v globální mezipaměti sestavení.  
+- Nechcete negativně ovlivnit výkon aplikace pomocí sestavení, takže má sestavení jako doménově neutrální. To vyžaduje silné názvy protože doménově neutrální sestavení musí být nainstalováno v globální mezipaměti sestavení.  
   
--   Pokud chcete centralizovat údržby pro vaši aplikaci s použitím zásad vydavatele, což znamená, že sestavení v globální mezipaměti sestavení musí nainstalovat.  
+- Pokud chcete centralizovat údržby pro vaši aplikaci s použitím zásad vydavatele, což znamená, že sestavení v globální mezipaměti sestavení musí nainstalovat.  
   
  Pokud jsou open source vývojářů a chcete využít výhod Identita sestavení se silným názvem, je vhodné zkontrolovat v privátní klíč přidružený k sestavení do systému správy zdrojů.  
   

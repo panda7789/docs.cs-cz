@@ -7,11 +7,11 @@ helpviewer_keywords:
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
 ms.openlocfilehash: f59e00d80d28fc4bf24874d25b5c12643649c834
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769067"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>Postupy: Určení, zda dva objekty souvisejí (Visual Basic)
 Můžete porovnat dva objekty, určit vztah, pokud existuje mezi třídami, ze které se vytvářejí. <xref:System.Type.IsInstanceOfType%2A> Metodu <xref:System.Type?displayProperty=nameWithType> třídy vrátí `True` Pokud zadaná třída dědí ze třídy aktuální, nebo pokud aktuální typ je rozhraní nepodporuje zadanou třídu.  

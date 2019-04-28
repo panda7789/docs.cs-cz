@@ -7,11 +7,11 @@ helpviewer_keywords:
 - nullable types [C#], identifying
 ms.assetid: d4b67ee2-66e8-40c1-ae9d-545d32c71387
 ms.openlocfilehash: 33169315f8bef45aba52f0696d4acac031584817
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54582627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710326"
 ---
 # <a name="how-to-identify-a-nullable-type-c-programming-guide"></a>Postupy: Identifikace typu s možnou hodnotou Null (C# Programming Guide)
 

@@ -14,11 +14,11 @@ helpviewer_keywords:
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
 ms.openlocfilehash: 968913a52a1d86746498aed7c97b63594d346a31
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696837"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -31,17 +31,17 @@ ms.locfileid: "59313564"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Bezpečné navigace](#SafeTopLevelNavigation)  
+- [Bezpečné navigace](#SafeTopLevelNavigation)  
   
--   [Nastavení softwaru zabezpečení procházení webu](#InternetExplorerSecuritySettings)  
+- [Nastavení softwaru zabezpečení procházení webu](#InternetExplorerSecuritySettings)  
   
--   [WebBrowser – ovládací prvek a ovládací prvky funkcí](#webbrowser_control_and_feature_controls)  
+- [WebBrowser – ovládací prvek a ovládací prvky funkcí](#webbrowser_control_and_feature_controls)  
   
--   [Zakázání sestavení APTCA pro částečně důvěryhodná klientské aplikace](#APTCA)  
+- [Zakázání sestavení APTCA pro částečně důvěryhodná klientské aplikace](#APTCA)  
   
--   [Chování izolovaného prostoru pro soubory volný XAML](#LooseContentSandboxing)  
+- [Chování izolovaného prostoru pro soubory volný XAML](#LooseContentSandboxing)  
   
--   [Zdroje informací pro vývoj aplikací WPF, které podporují zabezpečení](#BestPractices)  
+- [Zdroje informací pro vývoj aplikací WPF, které podporují zabezpečení](#BestPractices)  
   
 <a name="SafeTopLevelNavigation"></a>   
 ## <a name="safe-navigation"></a>Bezpečné navigace  
@@ -69,19 +69,19 @@ ms.locfileid: "59313564"
   
  Soubory, typy obsahu se dá Navigovat buď uživatelem nebo prostřednictvím kódu programu:  
   
--   **Navigace**. Uživatel přejde po kliknutí <xref:System.Windows.Documents.Hyperlink> elementu.  
+- **Navigace**. Uživatel přejde po kliknutí <xref:System.Windows.Documents.Hyperlink> elementu.  
   
--   **Programově řízená navigace**. Přejde aplikaci bez zásahu uživatele, třeba tak, že nastavíte <xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType> vlastnost.  
+- **Programově řízená navigace**. Přejde aplikaci bez zásahu uživatele, třeba tak, že nastavíte <xref:System.Windows.Navigation.NavigationWindow.Source%2A?displayProperty=nameWithType> vlastnost.  
   
 <a name="Browser_Navigation_Security"></a>   
 ### <a name="browser-navigation-security"></a>Zabezpečení navigace prohlížeče  
  Navigace v prohlížeči je považován za bezpečný pouze za následujících podmínek:  
   
--   **Navigace**. Uživatel přejde po kliknutí <xref:System.Windows.Documents.Hyperlink> element, který je v rámci hlavní <xref:System.Windows.Navigation.NavigationWindow>, nikoli v vnořený <xref:System.Windows.Controls.Frame>.  
+- **Navigace**. Uživatel přejde po kliknutí <xref:System.Windows.Documents.Hyperlink> element, který je v rámci hlavní <xref:System.Windows.Navigation.NavigationWindow>, nikoli v vnořený <xref:System.Windows.Controls.Frame>.  
   
--   **Zóna**. Obsah se přejde poté, je umístěn na Internetu nebo místní intranet.  
+- **Zóna**. Obsah se přejde poté, je umístěn na Internetu nebo místní intranet.  
   
--   **Protokol**. Používá protokol je buď **http**, **https**, **souboru**, nebo **mailto**.  
+- **Protokol**. Používá protokol je buď **http**, **https**, **souboru**, nebo **mailto**.  
   
  Pokud [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] pokusí přejít na obsah způsobem, který není v souladu s těmito podmínkami <xref:System.Security.SecurityException> je vyvolána výjimka.  
   
@@ -91,15 +91,15 @@ ms.locfileid: "59313564"
   
  [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] poskytuje mechanismus, pomocí kterého můžete nakonfigurovat funkce, které se mohou být provedeny podle nebo z [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)], včetně následujících:  
   
--   Rozhraní .NET framework spolehlivé součásti  
+- Rozhraní .NET framework spolehlivé součásti  
   
--   Moduly plug-in a ovládacích prvků ActiveX  
+- Moduly plug-in a ovládacích prvků ActiveX  
   
--   Soubory ke stažení  
+- Soubory ke stažení  
   
--   Skriptování  
+- Skriptování  
   
--   Ověřování uživatelů  
+- Ověřování uživatelů  
   
  Kolekce funkcí, které je možné svázat tímto způsobem je nakonfigurována na základě na zóny pro **Internet**, **intranetu**, **Důvěryhodné servery**, a  **Servery s omezeným přístupem** zóny. Následující kroky popisují, jak nakonfigurovat nastavení zabezpečení:  
   
@@ -122,9 +122,9 @@ ms.locfileid: "59313564"
   
  Počínaje [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)], jsou zahrnuty následující nastavení zabezpečení konkrétně pro rozhraní .NET Framework:  
   
--   **Volný XAML**. Ovládací prvky, zda [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] můžete přejít na a dojde ke snížení [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] soubory. (Povolit, zakázat a vyzve možnosti).  
+- **Volný XAML**. Ovládací prvky, zda [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] můžete přejít na a dojde ke snížení [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] soubory. (Povolit, zakázat a vyzve možnosti).  
   
--   **Aplikace prohlížeče XAML**. Ovládací prvky, zda [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] můžete přejít na a spustit [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]. (Povolit, zakázat a vyzve možnosti).  
+- **Aplikace prohlížeče XAML**. Ovládací prvky, zda [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] můžete přejít na a spustit [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]. (Povolit, zakázat a vyzve možnosti).  
   
  Ve výchozím nastavení jsou povoleny pro **Internet**, **místní intranet**, a **Důvěryhodné servery** zóny a zakázáno **servery s omezeným přístupem**  zóny.  
   
@@ -232,11 +232,11 @@ ms.locfileid: "59313564"
   
  Tento klíč se vytvoří záznam pro sestavení APTCA. Také budete muset vytvořit hodnotu v tomto klíči, který povolí nebo zakáže sestavení. Toto jsou podrobnosti o hodnotě:  
   
--   Název hodnoty: **APTCA_FLAG**.  
+- Název hodnoty: **APTCA_FLAG**.  
   
--   Typ hodnoty: **REG_DWORD**.  
+- Typ hodnoty: **REG_DWORD**.  
   
--   Údaj hodnoty: **1** zakázat; **0** povolit.  
+- Údaj hodnoty: **1** zakázat; **0** povolit.  
   
  Pokud sestavení má být zakázána částečně důvěryhodné klientské aplikace, můžete napsat aktualizaci, která vytvoří klíče registru a hodnoty.  
   

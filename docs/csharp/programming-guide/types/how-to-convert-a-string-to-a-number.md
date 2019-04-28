@@ -9,11 +9,11 @@ helpviewer_keywords:
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
 ms.openlocfilehash: 1ff8db25fd76be6eb77355322d497d61096400aa
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56219331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709078"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převod řetězce na číslo (C# Průvodce programováním v)
 

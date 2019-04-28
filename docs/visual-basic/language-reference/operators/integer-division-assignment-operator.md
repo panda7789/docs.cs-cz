@@ -12,11 +12,11 @@ helpviewer_keywords:
 - compound assignment statements [Visual Basic]
 ms.assetid: 6f39915d-e398-4045-afcc-da6885e57b9c
 ms.openlocfilehash: 377a14a76f67e938f24c973b5946abd63f851bfd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842535"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768343"
 ---
 # <a name="-operator"></a>\\= – Operátor
 Vydělí hodnotu proměnné nebo vlastnosti hodnotou výrazu a přiřadí proměnné nebo vlastnosti výsledku celého čísla.  

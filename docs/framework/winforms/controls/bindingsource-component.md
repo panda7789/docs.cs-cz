@@ -7,11 +7,11 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms]
 ms.assetid: 3e2faf4c-f5b8-4fa6-9fbc-f59c37ec2fb9
 ms.openlocfilehash: 54639edb512a8bc6c5909282d5e4c210439e2a6e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57717593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683415"
 ---
 # <a name="bindingsource-component"></a>BindingSource – komponenta
 Zapouzdřuje zdroj dat pro vytvoření vazby na ovládací prvky.  

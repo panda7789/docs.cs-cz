@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 505491fa-5920-43ce-8a96-c25389e125d8
 ms.openlocfilehash: a38fce33fe34bf6485d0d5fcef4f194f4c2470b5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59194991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760503"
 ---
 # <a name="method-based-query-syntax-examples-projection"></a>Příklady syntaxe dotazů založených na volání metody: Projekce
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> a <xref:System.Linq.Enumerable.SelectMany%2A> metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  

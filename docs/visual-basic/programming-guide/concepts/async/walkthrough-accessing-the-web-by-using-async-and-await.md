@@ -3,11 +3,11 @@ title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await 
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
 ms.openlocfilehash: 7f9b71bc76e8d17cf2fb6714070b4439265d1fda
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765918"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
 Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce async/await. Můžete psát asynchronní kód, který vypadá jako synchronní kód a nechte kompilátor obtížné zpětného volání funkce a pokračování, které obvykle zahrnuje asynchronního kódu.  
@@ -20,29 +20,29 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
  V tomto návodu dokončíte následující úkoly:  
   
--   [Vytvoření aplikace WPF](#CreateWPFApp)  
+- [Vytvoření aplikace WPF](#CreateWPFApp)  
   
--   [Návrh jednoduchého hlavního okna MainWindow WPF](#MainWindow)  
+- [Návrh jednoduchého hlavního okna MainWindow WPF](#MainWindow)  
   
--   [Přidání odkazu](#AddRef)  
+- [Přidání odkazu](#AddRef)  
   
--   [Přidání potřebných příkazů Imports](#ImportsState)  
+- [Přidání potřebných příkazů Imports](#ImportsState)  
   
--   [Vytvoření synchronní aplikace](#synchronous)  
+- [Vytvoření synchronní aplikace](#synchronous)  
   
--   [Otestování synchronního řešení](#testSynch)  
+- [Otestování synchronního řešení](#testSynch)  
   
--   [Převedení metody GetURLContents na asynchronní metodu](#GetURLContents)  
+- [Převedení metody GetURLContents na asynchronní metodu](#GetURLContents)  
   
--   [Převedení metody SumPageSizes na asynchronní metodu](#SumPageSizes)  
+- [Převedení metody SumPageSizes na asynchronní metodu](#SumPageSizes)  
   
--   [Převedení metody startButton_Click na asynchronní metodu](#startButton)  
+- [Převedení metody startButton_Click na asynchronní metodu](#startButton)  
   
--   [Otestování asynchronního řešení](#testAsynch)  
+- [Otestování asynchronního řešení](#testAsynch)  
   
--   [Nahrazení metody GetURLContentsAsync metodou rozhraní .NET Framework](#GetURLContentsAsync)  
+- [Nahrazení metody GetURLContentsAsync metodou rozhraní .NET Framework](#GetURLContentsAsync)  
   
--   [Příklad](#BKMK_CompleteCodeExamples)  
+- [Příklad](#BKMK_CompleteCodeExamples)  
   
 ## <a name="prerequisites"></a>Požadavky  
  Visual Studio 2012 nebo novější musí nainstalovat ve vašem počítači. Další informace najdete v tématu [webu společnosti Microsoft](https://go.microsoft.com/fwlink/?LinkId=235233).  
@@ -72,19 +72,19 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 4. Zvýrazněte **TextBox** ovládací prvek a v **vlastnosti** okno, nastavte následující hodnoty:  
   
-    -   Nastavte **název** vlastnost `resultsTextBox`.  
+    - Nastavte **název** vlastnost `resultsTextBox`.  
   
-    -   Nastavte **výška** vlastnost na 250.  
+    - Nastavte **výška** vlastnost na 250.  
   
-    -   Nastavte **šířka** vlastnost na hodnotu 500.  
+    - Nastavte **šířka** vlastnost na hodnotu 500.  
   
-    -   Na **Text** kartu, zadejte neproporcionální písmo jako Arial konzoly nebo globální neproporcionálním písmem v.  
+    - Na **Text** kartu, zadejte neproporcionální písmo jako Arial konzoly nebo globální neproporcionálním písmem v.  
   
 5. Zvýrazněte **tlačítko** ovládací prvek a v **vlastnosti** okno, nastavte následující hodnoty:  
   
-    -   Nastavte **název** vlastnost `startButton`.  
+    - Nastavte **název** vlastnost `startButton`.  
   
-    -   Změňte hodnotu **obsahu** vlastnost z **tlačítko** k **Start**.  
+    - Změňte hodnotu **obsahu** vlastnost z **tlačítko** k **Start**.  
   
 6. Umístěte do textového pole a tlačítko tak, aby oba se objeví v **hlavního okna MainWindow** okna.  
   
@@ -137,13 +137,13 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 3. Kód pro synchronní řešení obsahuje následující čtyři metody:  
   
-    -   `SumPageSizes`, která načte seznam adres URL webové stránky z `SetUpURLList` a pak zavolá `GetURLContents` a `DisplayResults` zpracovat každou adresu URL.  
+    - `SumPageSizes`, která načte seznam adres URL webové stránky z `SetUpURLList` a pak zavolá `GetURLContents` a `DisplayResults` zpracovat každou adresu URL.  
   
-    -   `SetUpURLList`, který provede a vrátí seznam webové adresy.  
+    - `SetUpURLList`, který provede a vrátí seznam webové adresy.  
   
-    -   `GetURLContents`, který stáhne obsah každého webu a vrátí obsah jako bajtové pole.  
+    - `GetURLContents`, který stáhne obsah každého webu a vrátí obsah jako bajtové pole.  
   
-    -   `DisplayResults`, který zobrazuje počet bajtů v bajtové pole pro každou adresu URL.  
+    - `DisplayResults`, který zobrazuje počet bajtů v bajtové pole pro každou adresu URL.  
   
      Následující čtyři metody zkopírujte a vložte je za `startButton_Click` obslužné rutiny události v souborech MainWindow.xaml.vb:  
   
@@ -286,9 +286,9 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 3. Vzhledem k tomu, že jste přidali `Await` dojde k chybě kompilátoru operátor v předchozím kroku. Operátor, který lze použít pouze v metodách, které jsou označené [asynchronní](../../../../visual-basic/language-reference/modifiers/async.md) modifikátor. Ignorovat chybu, zatímco nahraďte volání kroky převod `CopyTo` voláním `CopyToAsync`.  
   
-    -   Změnit název metody, která je volána k <xref:System.IO.Stream.CopyToAsync%2A>.  
+    - Změnit název metody, která je volána k <xref:System.IO.Stream.CopyToAsync%2A>.  
   
-    -   `CopyTo` Nebo `CopyToAsync` metoda zkopíruje bajtů do svého argumentu, `content`a nevrací smysluplnou hodnotu. Synchronní verze volání `CopyTo` je jednoduchý příkaz, který nevrací hodnotu. Asynchronní verze `CopyToAsync`, vrátí <xref:System.Threading.Tasks.Task>. Úloha funkce jako "Task(void)" a umožňuje metodu k ní použít operátor await. Použít `Await` nebo `await` volání `CopyToAsync`, jak ukazuje následující kód.  
+    - `CopyTo` Nebo `CopyToAsync` metoda zkopíruje bajtů do svého argumentu, `content`a nevrací smysluplnou hodnotu. Synchronní verze volání `CopyTo` je jednoduchý příkaz, který nevrací hodnotu. Asynchronní verze `CopyToAsync`, vrátí <xref:System.Threading.Tasks.Task>. Úloha funkce jako "Task(void)" a umožňuje metodu k ní použít operátor await. Použít `Await` nebo `await` volání `CopyToAsync`, jak ukazuje následující kód.  
   
         ```vb  
         Await responseStream.CopyToAsync(content)  
@@ -317,9 +317,9 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
      Metoda `GetURLContents` disponuje návratovým příkazem, a příkaz vrátí pole bajtů. Návratový typ asynchronní verze je proto Task(T), kde T je bajtové pole. Proveďte následující změny v podpisu metody:  
   
-    -   Změňte návratový typ na `Task(Of Byte())`.  
+    - Změňte návratový typ na `Task(Of Byte())`.  
   
-    -   Podle konvence asynchronní metody mají názvy, které končí slovem "Async", takže přejmenovat metodu `GetURLContentsAsync`.  
+    - Podle konvence asynchronní metody mají názvy, které končí slovem "Async", takže přejmenovat metodu `GetURLContentsAsync`.  
   
      Následující kód znázorňuje tyto změny.  
   
@@ -334,9 +334,9 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 1. Zopakujte kroky z předchozího postupu pro `SumPageSizes`. Nejprve změňte volání `GetURLContents` pro asynchronní volání.  
   
-    -   Změnit název metody, která je volána z `GetURLContents` k `GetURLContentsAsync`, pokud jste tak již neučinili.  
+    - Změnit název metody, která je volána z `GetURLContents` k `GetURLContentsAsync`, pokud jste tak již neučinili.  
   
-    -   Použít `Await` úkolu, který `GetURLContentsAsync` hodnota pole vrátí získat bajt.  
+    - Použít `Await` úkolu, který `GetURLContentsAsync` hodnota pole vrátí získat bajt.  
   
      Následující kód znázorňuje tyto změny.  
   
@@ -355,11 +355,11 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 2. Proveďte následující změny v podpisu metody:  
   
-    -   Označení metody `Async` modifikátor.  
+    - Označení metody `Async` modifikátor.  
   
-    -   Přidáte k názvu metody "Async".  
+    - Přidáte k názvu metody "Async".  
   
-    -   Neexistuje žádná proměnná vrácené úlohy, T, tentokrát protože `SumPageSizesAsync` nevrací hodnotu pro T. (Metoda nemá žádný `Return` příkazu.) Metoda však musí vrátit `Task` bude očekávatelný. Proto změnit typ metody z `Sub` k `Function`. Návratový typ funkce je `Task`.  
+    - Neexistuje žádná proměnná vrácené úlohy, T, tentokrát protože `SumPageSizesAsync` nevrací hodnotu pro T. (Metoda nemá žádný `Return` příkazu.) Metoda však musí vrátit `Task` bude očekávatelný. Proto změnit typ metody z `Sub` k `Function`. Návratový typ funkce je `Task`.  
   
      Následující kód znázorňuje tyto změny.  
   
@@ -422,9 +422,9 @@ Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce a
   
 2. By se zobrazit výstup, který se podobá výstup synchronní řešení. Všimněte si však následující rozdíly.  
   
-    -   Výsledky všech nedojde ve stejnou dobu, po dokončení zpracování. Například obě aplikace obsahovat řádek v `startButton_Click` , který vymaže do textového pole. Naším záměrem je zrušte textové pole mezi spuštění, pokud se rozhodnete **Start** tlačítko podruhé, po jednu sadu výsledků nezobrazila. Synchronní verze do textového pole není zaškrtnuto, těsně před plánovaným začátkem zobrazují počty pro při druhém volání při dokončení stahování a vlákna uživatelského rozhraní je zdarma provádět další činnosti. V asynchronní verze, do textového pole vymaže ihned poté, co vyberete **Start** tlačítko.  
+    - Výsledky všech nedojde ve stejnou dobu, po dokončení zpracování. Například obě aplikace obsahovat řádek v `startButton_Click` , který vymaže do textového pole. Naším záměrem je zrušte textové pole mezi spuštění, pokud se rozhodnete **Start** tlačítko podruhé, po jednu sadu výsledků nezobrazila. Synchronní verze do textového pole není zaškrtnuto, těsně před plánovaným začátkem zobrazují počty pro při druhém volání při dokončení stahování a vlákna uživatelského rozhraní je zdarma provádět další činnosti. V asynchronní verze, do textového pole vymaže ihned poté, co vyberete **Start** tlačítko.  
   
-    -   Co je nejdůležitější vlákno uživatelského rozhraní není blokované, soubory ke stažení. Můžete přecházet nebo změně velikosti okna, zatímco v průběhu stahování webové prostředky počítá a zobrazuje. Pokud některý z webů je pomalý nebo nereaguje, můžete zrušit operaci výběrem **Zavřít** tlačítko (x červená pole v pravém horním rohu).  
+    - Co je nejdůležitější vlákno uživatelského rozhraní není blokované, soubory ke stažení. Můžete přecházet nebo změně velikosti okna, zatímco v průběhu stahování webové prostředky počítá a zobrazuje. Pokud některý z webů je pomalý nebo nereaguje, můžete zrušit operaci výběrem **Zavřít** tlačítko (x červená pole v pravém horním rohu).  
   
 ## <a name="BKMK_ReplaceGetByteArrayAsync"></a>   
 ### <a name="GetURLContentsAsync"></a> Nahrazení metody GetURLContentsAsync metodou rozhraní .NET Framework  

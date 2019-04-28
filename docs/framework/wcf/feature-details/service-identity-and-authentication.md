@@ -8,11 +8,11 @@ helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
 ms.openlocfilehash: f33144c320b3648f9e201505a34ed8f1ecd5965b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59145623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748262"
 ---
 # <a name="service-identity-and-authentication"></a>Identita a ověřování služby
 Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové služby WSDL (Description Language). Tato hodnota, rozšíří na všechny klienty, se používá k ověřování. Poté, co klient inicializuje komunikaci na koncový bod a služby se ověří na klienta, klient porovná hodnotu identity koncový bod s skutečná hodnota vrácená v procesu ověřování koncového bodu. Pokud se shodují, klient jistotu, že kontaktoval koncový bod služby očekávané. Tato operace funguje jako ochranu proti *phishing* zabraňuje klient se přesměrovává na koncový bod hostitelem škodlivé služby.  
@@ -26,9 +26,9 @@ Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové 
   
  Zpracování identity se skládá z následujících fází:  
   
--   V době návrhu vývojáře klienta určuje identitu služby z koncového bodu metadat (vystavené prostřednictvím WSDL).  
+- V době návrhu vývojáře klienta určuje identitu služby z koncového bodu metadat (vystavené prostřednictvím WSDL).  
   
--   Klientská aplikace za běhu, zkontroluje deklarací zabezpečovací přihlašovací údaje služby před odesláním jakýchkoli zpráv do služby.  
+- Klientská aplikace za běhu, zkontroluje deklarací zabezpečovací přihlašovací údaje služby před odesláním jakýchkoli zpráv do služby.  
   
  Identita zpracování na straně klienta je obdobou ověřování klientů na službu. Služba Zabezpečené nespustí kódu až po ověření pověření klienta. Podobně klient nezasílal zprávy do služby až po ověření přihlašovacích údajů služby založené na co předem známý z metadat služby.  
   
@@ -78,21 +78,21 @@ Služby *identitě koncového bodu* je hodnota vygenerovaná ze služby webové 
   
  Pokud kanál je nakonfigurován k ověření zprávy nebo transportní vrstvy SSL (Secure Sockets) pomocí certifikátů X.509 pro ověřování, platí následující hodnoty identity:  
   
--   DNS. WCF zajišťuje, že obsahuje položku certifikátu poskytnutého během metody handshake SSL DNS nebo `CommonName` (CN) atributu rovná hodnotě zadané v identitu DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě toho pro určení platnosti certifikátu serveru. Ve výchozím nastavení WCF ověří, že je certifikát serveru vydané důvěryhodnou kořenovou autoritou.  
+- DNS. WCF zajišťuje, že obsahuje položku certifikátu poskytnutého během metody handshake SSL DNS nebo `CommonName` (CN) atributu rovná hodnotě zadané v identitu DNS na klientovi. Všimněte si, že tyto kontroly se provádějí kromě toho pro určení platnosti certifikátu serveru. Ve výchozím nastavení WCF ověří, že je certifikát serveru vydané důvěryhodnou kořenovou autoritou.  
   
--   certifikát. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou certifikátu hodnotu zadanou v identitě.  
+- certifikát. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou certifikátu hodnotu zadanou v identitě.  
   
--   Odkaz na certifikát. Stejné jako certifikát.  
+- Odkaz na certifikát. Stejné jako certifikát.  
   
--   RSA. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou klíč RSA zadaný v identitě.  
+- RSA. Během metody handshake SSL WCF zajistí, že vzdálený koncový bod poskytuje přesnou klíč RSA zadaný v identitě.  
   
  Pokud služba se ověřuje pomocí SSL na úrovni zprávy nebo přenosu pomocí přihlašovacích údajů Windows pro ověřování a vyjedná přihlašovací údaje, platí následující hodnoty identity:  
   
--   DNS. Vyjednávání předá SPN služby tak, aby název DNS můžete kontrolovat. Hlavní název služby je ve formě `host/<dns name>`.  
+- DNS. Vyjednávání předá SPN služby tak, aby název DNS můžete kontrolovat. Hlavní název služby je ve formě `host/<dns name>`.  
   
--   HLAVNÍ NÁZEV SLUŽBY. Explicitní služby se vrátí hlavní název služby, například `host/myservice`.  
+- HLAVNÍ NÁZEV SLUŽBY. Explicitní služby se vrátí hlavní název služby, například `host/myservice`.  
   
--   HLAVNÍ NÁZEV UŽIVATELE. Hlavní název uživatele účtu služby. Hlavní název uživatele je ve formě `username` @ `domain`. Například pokud služba je spuštěna v uživatelském účtu, může být `username@contoso.com`.  
+- HLAVNÍ NÁZEV UŽIVATELE. Hlavní název uživatele účtu služby. Hlavní název uživatele je ve formě `username` @ `domain`. Například pokud služba je spuštěna v uživatelském účtu, může být `username@contoso.com`.  
   
  Programové určení identity (pomocí <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost) je volitelný. Pokud je zadána žádná identita a je typu pověření klienta Windows, výchozí hodnota je hodnota nastavena na název hostitele součástí adresu koncového bodu služby s předponou hlavního názvu služby "hostitele /" literál. Pokud je zadána žádná identita a typu pověření klienta je certifikát, výchozí hodnota je `Certificate`. To platí pro obě zprávy a přenos úroveň zabezpečení.  
   

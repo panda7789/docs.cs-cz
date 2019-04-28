@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 425c606b1f340bbd49cfe3497d394d5ad0dd37a9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763799"
 ---
 # <a name="icordebugmanagedcallback2mdanotification-method"></a>ICorDebugManagedCallback2::MDANotification – metoda
 Poskytuje oznámení, že spuštění kódu došlo k Pomocník spravovaného ladění (MDA) v aplikaci, která je právě laděna.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - inferring property types [Visual Basic]
 ms.assetid: 7c748b22-913f-4d9d-b747-6b7bf296a0bc
 ms.openlocfilehash: be3c74e8f8c69eb9f0a1d0dda4d6c90dfd7e567a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760737"
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a>Postupy: Odvození názvů vlastnosti a typů v deklaracích anonymního typu (Visual Basic)
 Anonymní typy umožňují žádný mechanismus pro datové typy vlastností přímo zadáním. Typy všech vlastností jsou odvozeny. V následujícím příkladu, typy `Name` a `Price` jsou odvozeny z hodnoty, které se používají k inicializaci je přímo.  
@@ -24,11 +24,11 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
 #### <a name="anonymous-types-can-infer-property-names-and-types-from-the-following-sources"></a>Anonymní typy lze odvodit názvy vlastností a typy z následujících zdrojů:  
   
--   Z názvů proměnných. Anonymní typ `anonProduct` bude mít dvě vlastnosti `productName` a `productPrice`. Jejich datové typy, budou původní proměnných `String` a `Double`v uvedeném pořadí.  
+- Z názvů proměnných. Anonymní typ `anonProduct` bude mít dvě vlastnosti `productName` a `productPrice`. Jejich datové typy, budou původní proměnných `String` a `Double`v uvedeném pořadí.  
   
      [!code-vb[VbVbalrAnonymousTypes#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#11)]  
   
--   Vlastnost nebo pole názvů jiné objekty. Představte si třeba `car` objekt `CarClass` typ, který zahrnuje `Name` a `ID` vlastnosti. Chcete-li vytvořit novou instanci anonymního typu `car1`, s `Name` a `ID` vlastnosti, které jsou inicializovány s hodnotami z `car` objektu, můžete napsat následující:  
+- Vlastnost nebo pole názvů jiné objekty. Představte si třeba `car` objekt `CarClass` typ, který zahrnuje `Name` a `ID` vlastnosti. Chcete-li vytvořit novou instanci anonymního typu `car1`, s `Name` a `ID` vlastnosti, které jsou inicializovány s hodnotami z `car` objektu, můžete napsat následující:  
   
      [!code-vb[VbVbalrAnonymousTypes#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#34)]  
   
@@ -36,13 +36,13 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
      [!code-vb[VbVbalrAnonymousTypes#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#35)]  
   
--   Z názvů členů XML.  
+- Z názvů členů XML.  
   
      [!code-vb[VbVbalrAnonymousTypes#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#12)]  
   
      Výsledný typ pro `anon` by mít jednu vlastnost `Book`, typu <xref:System.Collections.IEnumerable>(XElement z).  
   
--   Z funkce, která nemá žádné parametry, jako například `SomeFunction` v následujícím příkladu.  
+- Z funkce, která nemá žádné parametry, jako například `SomeFunction` v následujícím příkladu.  
   
      `Dim sc As New SomeClass`  
   
@@ -56,7 +56,7 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
 #### <a name="name-inference-will-fail-in-many-circumstances-including-the-following"></a>Název odvození se nezdaří v mnoha případech platí, včetně následujících:  
   
--   Odvození je odvozena z volání metody, konstruktor nebo parametrizovanou vlastnost, která vyžaduje argumenty. Předchozí deklarace této třídy `anon1` selže, pokud `someFunction` má jeden nebo více argumentů.  
+- Odvození je odvozena z volání metody, konstruktor nebo parametrizovanou vlastnost, která vyžaduje argumenty. Předchozí deklarace této třídy `anon1` selže, pokud `someFunction` má jeden nebo více argumentů.  
   
      `' Not valid.`  
   
@@ -68,7 +68,7 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
      `Dim anon4 = New With {Key .FunResult = sc.someFunction(someArg)}`  
   
--   Odvození je odvozena z složitý výraz.  
+- Odvození je odvozena z složitý výraz.  
   
     ```  
     Dim aString As String = "Act "  
@@ -80,7 +80,7 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
      [!code-vb[VbVbalrAnonymousTypes#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#14)]  
   
--   Odvození pro více vlastností vytvoří dva nebo více vlastností, které mají stejný název. Odkazující zpět na deklarace v předchozích příkladech, vás není možné vypsat obě `product.Name` a `car1.Name` jako vlastnosti anonymního typu. Důvodem je, že by být odvozené identifikátor pro každou z těchto `Name`.  
+- Odvození pro více vlastností vytvoří dva nebo více vlastností, které mají stejný název. Odkazující zpět na deklarace v předchozích příkladech, vás není možné vypsat obě `product.Name` a `car1.Name` jako vlastnosti anonymního typu. Důvodem je, že by být odvozené identifikátor pro každou z těchto `Name`.  
   
      `' Not valid.`  
   
@@ -98,7 +98,7 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
      `' Dim anon7 = New With {Key product.Price, Key price}`  
   
--   Počáteční typ a hodnotu jednu vlastnost závisí na jiné vlastnosti, která zatím nebyl určen. Například `.IDName = .LastName` není platný v deklaraci anonymního typu není-li `.LastName` již byl inicializován.  
+- Počáteční typ a hodnotu jednu vlastnost závisí na jiné vlastnosti, která zatím nebyl určen. Například `.IDName = .LastName` není platný v deklaraci anonymního typu není-li `.LastName` již byl inicializován.  
   
      `' Not valid.`  
   
@@ -108,7 +108,7 @@ Anonymní typy umožňují žádný mechanismus pro datové typy vlastností př
   
      [!code-vb[VbVbalrAnonymousTypes#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class1.vb#15)]  
   
--   Název vlastnosti anonymního typu je stejný jako název člena <xref:System.Object>. Například následující deklaraci selže, protože `Equals` je metoda <xref:System.Object>.  
+- Název vlastnosti anonymního typu je stejný jako název člena <xref:System.Object>. Například následující deklaraci selže, protože `Equals` je metoda <xref:System.Object>.  
   
      `' Not valid.`  
   

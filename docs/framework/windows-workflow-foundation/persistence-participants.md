@@ -3,11 +3,11 @@ title: Účastníci trvalosti
 ms.date: 03/30/2017
 ms.assetid: f84d2d5d-1c1b-4f19-be45-65b552d3e9e3
 ms.openlocfilehash: 18614962708eafa192d8163638fce2b8154d6106
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316359"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672650"
 ---
 # <a name="persistence-participants"></a>Účastníci trvalosti
 Trvalého účastníka mohou účastnit aktivuje hostitele aplikace operace trvalosti (Uložit nebo načíst). [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává se dvěma abstraktní třídy **PersistenceParticipant** a **PersistenceIOParticipant**, který můžete použít k vytvoření trvalého účastníka. Trvalého účastníka je odvozena z jedné z těchto tříd, implementuje metody, které vás zajímají a pak přidá instanci třídy, která se <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> kolekce na <xref:System.ServiceModel.Activities.WorkflowServiceHost> . Hostitel aplikace může vyhledat taková rozšíření pracovního postupu při trvalém ukládání instance pracovního postupu a volat metody odpovídající na účastníci trvalosti ve vhodných chvílích.  
@@ -48,17 +48,17 @@ Trvalého účastníka mohou účastnit aktivuje hostitele aplikace operace trva
   
  Při načítání instance pracovního postupu vytvoří poskytovatele trvalého chování zámku na tuto instanci. To zabrání tomu, aby instance načtení více než jeden hostitel ve scénáři více uzly. Při pokusu o načtení instance pracovního postupu, který je pevně spojené se zobrazí výjimku vypadat asi takto: Výjimka "System.ServiceModel.Persistence.InstanceLockException: Požadovaná operace nebyla dokončena, protože zámek pro instanci "00000000-0000-0000-0000-000000000000' nebylo možné získat". K této chybě dojde, pokud dojde k jedné z následujících akcí:  
   
--   V případě několika uzly v instanci načítá jiného hostitele.  Existuje několik různých způsobů, jak vyřešit tyto typy konfliktů: předávání zpracování na uzel, který vlastní zámek a zkuste to znovu, nebo vynuťte zatížení, což způsobí, že hostitel nebude možné práci uložit.  
+- V případě několika uzly v instanci načítá jiného hostitele.  Existuje několik různých způsobů, jak vyřešit tyto typy konfliktů: předávání zpracování na uzel, který vlastní zámek a zkuste to znovu, nebo vynuťte zatížení, což způsobí, že hostitel nebude možné práci uložit.  
   
--   V případě jedním uzlem a hostiteli došlo k chybě.  Při spuštění hostitele znovu (recyklace procesu nebo vytvořením nové továrny poskytovatele trvalosti) nového hostitele se pokusí načíst instanci, která je stále zamknuta staré hostitelem, protože nebyla dosud vypršela platnost zámku.  
+- V případě jedním uzlem a hostiteli došlo k chybě.  Při spuštění hostitele znovu (recyklace procesu nebo vytvořením nové továrny poskytovatele trvalosti) nového hostitele se pokusí načíst instanci, která je stále zamknuta staré hostitelem, protože nebyla dosud vypršela platnost zámku.  
   
--   V případě jedním uzlem a instanci dotyčný bylo přerušeno v určitém okamžiku a je vytvořena nová instance poskytovatele trvalosti, která má ID jiného hostitele.  
+- V případě jedním uzlem a instanci dotyčný bylo přerušeno v určitém okamžiku a je vytvořena nová instance poskytovatele trvalosti, která má ID jiného hostitele.  
   
  Hodnota časového limitu zámku má výchozí hodnotu 5 minut, můžete zadat jiný časový limit při volání metody <xref:System.ServiceModel.Persistence.PersistenceProvider.Load%2A>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
--   [Postupy: Vytvoření vlastního účastníka trvalosti](how-to-create-a-custom-persistence-participant.md)  
+- [Postupy: Vytvoření vlastního účastníka trvalosti](how-to-create-a-custom-persistence-participant.md)  
   
 ## <a name="see-also"></a>Viz také:
 

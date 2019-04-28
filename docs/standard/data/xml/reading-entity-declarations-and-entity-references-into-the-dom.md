@@ -1,18 +1,18 @@
 ---
-title: Čtení deklarací entit a odkazy na Entity do modelu DOM
+title: Načtení deklarací entit a odkazů na entity do modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e30b52b8cdfb4d185687d58c80f4475730031c86
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45748678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698794"
 ---
-# <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Čtení deklarací entit a odkazy na Entity do modelu DOM
+# <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Načtení deklarací entit a odkazů na entity do modelu DOM
 Entita je deklarace, která uvádí název, který se má použít v souboru XML místo obsahu nebo značky. Existují dvě části k entitám. Nejprve musíte tie název pro nahrazení obsahu pomocí deklarace entity. Vytvoří pomocí deklarace entity `<!ENTITY name "value">` syntaxe v definici typu dokumentu (DTD) nebo schématu XML. Za druhé název definovaný v deklaraci entity se následně používá v souboru XML. Při použití v souboru XML, je volána odkazu na entitu. Například následující deklaraci entita deklaruje entity názvu `publisher` jsou spojeny s obsahem "Microsoft Press".  
   
 ```xml  

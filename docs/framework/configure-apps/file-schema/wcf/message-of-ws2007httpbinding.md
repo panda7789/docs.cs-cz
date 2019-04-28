@@ -3,11 +3,11 @@ title: <message> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
 ms.openlocfilehash: bf0ed2de73505d5634d6c7d26881f9800a0bf1f2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768885"
 ---
 # <a name="message-of-ws2007httpbinding"></a>\<Zpráva > z \<ws2007HttpBinding >
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.  
@@ -52,7 +52,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Basic128|Zabalení klíče použijte Aes128 šifrování, algoritmus pro hash Sha1 a Rsa. oaep mgf1p.|  
 |Basic192|Použijte šifrování Aes192, Sha1 pro hodnotu hash, oaep mgf1p Rsa pro zabalení klíče.|  
@@ -73,7 +73,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<ws2007HttpBinding
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`None`|To umožňuje službě komunikovat s anonymní klienty. Ve službě to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |`Certificate`|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud `message` režimu zabezpečení se používá a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být poskytnut certifikát služby.|  

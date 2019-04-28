@@ -1,5 +1,5 @@
 ---
-title: Cesta formáty souborů v systémech Windows
+title: Formáty cesty k souborům v systémech Windows
 ms.date: 06/28/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,13 +12,13 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ecaae9e1af359ead1c15a9e431eac21e41040efe
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752292"
 ---
-# <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
+# <a name="file-path-formats-on-windows-systems"></a>Formáty cesty k souborům v systémech Windows
 
 Členy typů v mnoha <xref:System.IO> zahrnovat obor názvů `path` parametr, který vám umožní zadat absolutní nebo relativní cesta k souboru systémového prostředku. Tato cesta je pak předán [systém rozhraní API souborů Windows](/windows/desktop/fileio/file-systems). Toto téma popisuje formáty pro cesty k souborům, které vám v systémech Windows.
 

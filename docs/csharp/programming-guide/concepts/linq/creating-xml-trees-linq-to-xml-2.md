@@ -3,11 +3,11 @@ title: Vytváření stromů XML v jazyce C# (LINQ to XML)
 ms.date: 08/31/2018
 ms.assetid: cc74234a-0bac-4327-9c8c-5a2ead15b595
 ms.openlocfilehash: 3bac7b62d04c9690cdd08d1993b64db33c4e6ab8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702617"
 ---
 # <a name="creating-xml-trees-in-c-linq-to-xml"></a>Vytváření stromů XML v jazyce C# (LINQ to XML)
 Tato část obsahuje informace o vytváření stromů XML v jazyce C#.  
@@ -50,17 +50,17 @@ XElement contacts =
   
  `content` Parametr je velmi flexibilní. Podporuje jakýkoli typ objektu, který je platný podřízený <xref:System.Xml.Linq.XElement>. Následující pravidla platí pro různé druhy objektů předaných v tomto parametru:  
   
--   Řetězec se přidá jako textový obsah.  
+- Řetězec se přidá jako textový obsah.  
   
--   <xref:System.Xml.Linq.XElement> Je přidán jako podřízený element.  
+- <xref:System.Xml.Linq.XElement> Je přidán jako podřízený element.  
   
--   <xref:System.Xml.Linq.XAttribute> Se přidá jako atribut.  
+- <xref:System.Xml.Linq.XAttribute> Se přidá jako atribut.  
   
--   <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, Nebo <xref:System.Xml.Linq.XText> je přidán jako podřízený obsah.  
+- <xref:System.Xml.Linq.XProcessingInstruction>, <xref:System.Xml.Linq.XComment>, Nebo <xref:System.Xml.Linq.XText> je přidán jako podřízený obsah.  
   
--   <xref:System.Collections.IEnumerable> Výčtu a tato pravidla jsou aplikována rekurzivně na výsledky.  
+- <xref:System.Collections.IEnumerable> Výčtu a tato pravidla jsou aplikována rekurzivně na výsledky.  
   
--   Pro jakýkoli jiný typ jeho `ToString` volání metody a výsledek se přidá jako textový obsah.  
+- Pro jakýkoli jiný typ jeho `ToString` volání metody a výsledek se přidá jako textový obsah.  
   
 ### <a name="creating-an-xelement-with-content"></a>Vytváření s obsahem na XElement  
  Můžete vytvořit <xref:System.Xml.Linq.XElement> , který obsahuje jednoduchý obsah pomocí jedné metody volání. Chcete-li to provést, určení obsahu jako druhý parametr následujícím způsobem:  

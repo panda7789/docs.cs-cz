@@ -10,24 +10,24 @@ ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cb44fad991c8184686fcda90878bae2ec53260c5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617912"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769145"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
 Při více vláken mohl provádět volání k vlastnostem a metodám jednoho objektu, je důležité, že tato volání synchronizovat. V opačném případě jedno vlákno může dojít k přerušení činnosti jiné vlákno a objekt může zůstat v neplatném stavu. Třídy, jejíž členové jsou chráněny i před přerušení práce se nazývá bezpečné pro vlákna.  
   
  Common Language Infrastructure poskytuje několik strategií k synchronizaci přístupu k instanci a statické členy:  
   
--   Oblasti synchronizované kódu. Můžete použít <xref:System.Threading.Monitor> třídy nebo kompilátoru podpora pro tuto třídu synchronizovat pouze kód bloku, která potřebuje, zvýšení výkonu.  
+- Oblasti synchronizované kódu. Můžete použít <xref:System.Threading.Monitor> třídy nebo kompilátoru podpora pro tuto třídu synchronizovat pouze kód bloku, která potřebuje, zvýšení výkonu.  
   
--   Ruční synchronizace. Můžete používat synchronizaci objektů v knihovně tříd rozhraní .NET Framework poskytuje. Naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md), která obsahuje diskusi o <xref:System.Threading.Monitor> třídy.  
+- Ruční synchronizace. Můžete používat synchronizaci objektů v knihovně tříd rozhraní .NET Framework poskytuje. Naleznete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md), která obsahuje diskusi o <xref:System.Threading.Monitor> třídy.  
   
--   Synchronizované kontexty. Můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> umožňující jednoduchý, automatické synchronizace pro <xref:System.ContextBoundObject> objekty.  
+- Synchronizované kontexty. Můžete použít <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> umožňující jednoduchý, automatické synchronizace pro <xref:System.ContextBoundObject> objekty.  
   
--   Třídy kolekcí v <xref:System.Collections.Concurrent?displayProperty=nameWithType> oboru názvů. Tyto třídy poskytují integrovanou synchronizované přidávat a odebírat operace. Další informace najdete v tématu [kolekce bezpečné pro vlákna](../../../docs/standard/collections/thread-safe/index.md).  
+- Třídy kolekcí v <xref:System.Collections.Concurrent?displayProperty=nameWithType> oboru názvů. Tyto třídy poskytují integrovanou synchronizované přidávat a odebírat operace. Další informace najdete v tématu [kolekce bezpečné pro vlákna](../../../docs/standard/collections/thread-safe/index.md).  
   
  Modul common language runtime poskytuje model vláken ve kterém třídy spadají do několika kategorií, které lze synchronizovat v různých různými způsoby v závislosti na požadavky. Následující tabulka uvádí, jaké synchronizace podpora se poskytuje pro pole a metody synchronizace dané kategorie.  
   

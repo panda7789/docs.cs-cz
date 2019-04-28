@@ -9,11 +9,11 @@ helpviewer_keywords:
 - event handlers [WPF], finding source element in
 ms.assetid: 85f71c5a-b714-4c65-9711-7d905c2bbe98
 ms.openlocfilehash: 9a49878c9ad8313903df4506796998fd43e2e749
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757505"
 ---
 # <a name="how-to-find-the-source-element-in-an-event-handler"></a>Postupy: Hledání zdrojového elementu v obslužné rutině události
 Tento příklad ukazuje, jak hledání zdrojového elementu v obslužné rutině události.  

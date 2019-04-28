@@ -11,11 +11,11 @@ ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cdce2181490d32212cd2629e98267e43bbe0d334
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673996"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions> Element
 Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.  
@@ -69,9 +69,9 @@ Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému proces
   
  Můžete také určit chování výjimky v jednom z následujících způsobů:  
   
--   Nastavením proměnné prostředí `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
+- Nastavením proměnné prostředí `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
   
--   Nastavením registru typu DWORD hodnota throwunobservedtaskexceptions – = 1 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
+- Nastavením registru typu DWORD hodnota throwunobservedtaskexceptions – = 1 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit vyvolání výjimek v úlohách pomocí konfiguračního souboru aplikace.  

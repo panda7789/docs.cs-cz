@@ -10,18 +10,18 @@ helpviewer_keywords:
 - graphics [Windows Forms], cardinal splines
 ms.assetid: a4a41e80-4461-4b47-b6bd-2c5e68881994
 ms.openlocfilehash: 2f03177bf97936a2ca9558972d4d82fa3e07463c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703709"
 ---
 # <a name="how-to-draw-cardinal-splines"></a>Postupy: Kreslení základních křivek
 Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení křivky mohutnosti, vytvořit <xref:System.Drawing.Graphics> objektu a předat adresu pole odkazuje na <xref:System.Drawing.Graphics.DrawCurve%2A> metoda.  
   
 ### <a name="drawing-a-bell-shaped-cardinal-spline"></a>Kreslení ve tvaru zvonu křivky mohutnosti  
   
--   Následující příklad kreslení ve tvaru zvonu základní křivka vyhlazení, který prochází pět bodů určené. Následující obrázek znázorňuje křivky a pět bodů.  
+- Následující příklad kreslení ve tvaru zvonu základní křivka vyhlazení, který prochází pět bodů určené. Následující obrázek znázorňuje křivky a pět bodů.  
   
      ![Diagram zobrazující průběh křivky mohutnosti ve tvaru zvonu.](./media/how-to-draw-cardinal-splines/bell-shaped-cardinal-spline.png)  
   
@@ -30,7 +30,7 @@ Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení 
   
 ### <a name="drawing-a-closed-cardinal-spline"></a>Kreslení uzavřené křivky mohutnosti  
   
--   Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třídy kreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivka pokračuje přes poslední bod v poli a připojí se s prvním bodem v poli. Následující příklad kreslení uzavřené vyhlazení, který prochází šest určené body. Následující obrázek znázorňuje uzavřené křivky spolu s šest bodů:  
+- Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třídy kreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivka pokračuje přes poslední bod v poli a připojí se s prvním bodem v poli. Následující příklad kreslení uzavřené vyhlazení, který prochází šest určené body. Následující obrázek znázorňuje uzavřené křivky spolu s šest bodů:  
   
  ![Diagram zobrazující průběh uzavřené křivky mohutnosti.](./media/how-to-draw-cardinal-splines/closed-cardinal-spine.png)  
   
@@ -39,7 +39,7 @@ Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení 
   
 ### <a name="changing-the-bend-of-a-cardinal-spline"></a>Změna ohyb křivky mohutnosti  
   
--   Změnit způsob předáním napětí argument zatáčkách křivky mohutnosti <xref:System.Drawing.Graphics.DrawCurve%2A> metody. Následující příklad kreslení tři křivky mohutnosti, které prochází stejnou sadu body. Následující obrázek znázorňuje tři křivky spolu s příslušnými hodnotami napětí. Všimněte si, že 0 po hodnotu napětí body jsou spojeny čarami přímo.  
+- Změnit způsob předáním napětí argument zatáčkách křivky mohutnosti <xref:System.Drawing.Graphics.DrawCurve%2A> metody. Následující příklad kreslení tři křivky mohutnosti, které prochází stejnou sadu body. Následující obrázek znázorňuje tři křivky spolu s příslušnými hodnotami napětí. Všimněte si, že 0 po hodnotu napětí body jsou spojeny čarami přímo.  
   
  ![Diagram znázorňující tři křivky mohutnosti.](./media/how-to-draw-cardinal-splines/three-cardinal-splines.png)  
   

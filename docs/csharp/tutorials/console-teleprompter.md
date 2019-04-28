@@ -4,11 +4,11 @@ description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
 ms.openlocfilehash: 3ac4312ba5d6088826fdf151609f6693a265e5a3
-ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58348827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706465"
 ---
 # <a name="console-application"></a>Konzolová aplikace
 

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
 ms.openlocfilehash: 5f898bf342c8596d9dd4cc0b03396aec4dcf545c
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710755"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní data typu. Nejběžnějším využitím obecných tříd je s kolekcí jako propojené seznamy zatřiďovacích tabulek, zásobníků, front, stromy a tak dále. Operace, jako jsou přidávání a odebírání položek z kolekce jsou prováděny v podstatě stejným způsobem bez ohledu na typ data ukládat.  
@@ -20,19 +20,19 @@ Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní
   
  Obvykle vytvoříte obecných tříd od existující konkrétní třídy a změnou typy do parametry typu jeden po druhém, dokud se nedostanete optimální rovnováhu mezi Generalizace a použitelnost. Při vytváření vlastní obecných tříd, důležité informace patří:  
   
--   Jaké typy generalize do parametrů typu.  
+- Jaké typy generalize do parametrů typu.  
   
      Váš kód bude jako pravidlo, další typy, které můžete parametrizovat, více flexibilní a opakovaně použitelné. Příliš mnoho generalizace však můžete vytvořit kód, který je obtížné pro jiné vývojáře pro čtení nebo pochopit.  
   
--   Jaká omezení, pokud chcete použít pro parametry typu (viz [omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)).  
+- Jaká omezení, pokud chcete použít pro parametry typu (viz [omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)).  
   
      Pravidlo vhodné je použít maximální možné omezení, která bude stále umožňují zpracovat typy, které je třeba ošetřit. Například pokud víte, že obecné třídy je určena pro použití pouze s typy odkazů, platí omezení třídy. Který bude zabránit neúmyslnému použití třídy s typy hodnot a vám umožní používat `as` operátoru u `T`a kontrola hodnot null.  
   
--   Určuje, zda faktor obecné chování do základních tříd a podtříd.  
+- Určuje, zda faktor obecné chování do základních tříd a podtříd.  
   
      Protože obecné třídy může sloužit jako základní třídy, platí zde stejné aspekty návrhu stejně jako u neobecných třídách. Zobrazit pravidla o dědění z obecné základní třídy dále v tomto tématu.  
   
--   Určuje, zda implementovat jednu nebo více obecných rozhraní.  
+- Určuje, zda implementovat jednu nebo více obecných rozhraní.  
   
      Například pokud navrhujete třídu, která se použije k vytvoření položek v kolekci na základě obecných typů, budete muset implementovat rozhraní jako <xref:System.IComparable%601> kde `T` je typ třídy.  
   

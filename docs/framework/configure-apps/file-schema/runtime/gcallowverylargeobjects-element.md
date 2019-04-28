@@ -8,11 +8,11 @@ ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 19103b2ac6e6dbba930050074fcea3cfd5a97661
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704658"
 ---
 # <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects> Element
 Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).  
@@ -39,7 +39,7 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Pole o celkové velikosti větší než 2 GB nejsou povolena. Toto nastavení je výchozí.|  
 |`true`|Pole o celkové velikosti větší než 2 GB jsou povolena na 64bitových platformách.|  
@@ -57,11 +57,11 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
 ## <a name="remarks"></a>Poznámky  
  Použití tohoto prvku v konfiguračním souboru aplikace umožňuje použití polí, která jsou větší než 2 GB, ale nedojde ke změně jiných omezení velikosti objektu nebo velikosti pole:  
   
--   Maximální počet prvků v poli je <xref:System.UInt32.MaxValue?displayProperty=nameWithType>.  
+- Maximální počet prvků v poli je <xref:System.UInt32.MaxValue?displayProperty=nameWithType>.  
   
--   Maximální index v jakémkoli jednom rozměru je 2 147 483 591 (0x7FFFFFC7) pro bajtová pole a pole jednobajtových struktur a 2 146 435 071 (0X7FEFFFFF) pro ostatní typy.  
+- Maximální index v jakémkoli jednom rozměru je 2 147 483 591 (0x7FFFFFC7) pro bajtová pole a pole jednobajtových struktur a 2 146 435 071 (0X7FEFFFFF) pro ostatní typy.  
   
--   Maximální velikost řetězců a dalších objektů mimo pole se nezmění.  
+- Maximální velikost řetězců a dalších objektů mimo pole se nezmění.  
   
 > [!CAUTION]
 >  Před zapnutím této funkce je třeba se ujistit, že aplikace neobsahuje nebezpečný kód, což předpokládá, že jsou všechna pole menší než 2 GB. Například nebezpečný kód, který používá pole jako vyrovnávací paměť, může být náchylný k přetečení zásobníku, pokud se při jeho psaní vycházelo z předpokladu, že pole nebude větší než 2 GB.  

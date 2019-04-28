@@ -16,11 +16,11 @@ helpviewer_keywords:
 - images [Windows Forms], compression
 ms.assetid: ad5daf26-005f-45bc-a2af-e0e97777a21a
 ms.openlocfilehash: c3cdb06e99770808461f9266fb5f07df9074149b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769484"
 ---
 # <a name="cropping-and-scaling-images-in-gdi"></a>Oříznutí a změna měřítka obrázků v GDI+
 Můžete použít <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> třídu pro vykreslení a umístění vektorové obrázky a rastrové obrázky. <xref:System.Drawing.Graphics.DrawImage%2A> je přetěžované metody, takže je můžete zadat s argumenty několika způsoby.  

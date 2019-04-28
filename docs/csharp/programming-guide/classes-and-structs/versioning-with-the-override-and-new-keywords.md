@@ -7,28 +7,28 @@ helpviewer_keywords:
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
 ms.openlocfilehash: 39aae39a761414947c14f0a78aedcdbf89ddfbda
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702968"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Správa verzí pomocí klíčových slov override a new (Průvodce programováním v C#)
 Jazyk C# je navržený tak, aby Správa verzí mezi [základní](../../../csharp/language-reference/keywords/base.md) a odvozené třídy v jiných knihovnách můžete vyvíjet a udržovat zpětnou kompatibilitu. To znamená, například, že zavedení nového člena v základní třídě [třída](../../../csharp/language-reference/keywords/class.md) se stejným názvem jako člena v odvozené třídě je plně podporován v jazyce C# a nevede k neočekávanému chování. Také znamená, že třída musí explicitně uvést, zda metoda je určena k přepsání zděděné metody nebo určuje, zda je metoda novou metodu, která skrývá podobně pojmenovaných zděděné metody.  
   
  V jazyce C# odvozené třídy mohou obsahovat metody se stejným názvem jako metody základní třídy.  
   
--   Metoda základní třídy musí být definován [virtuální](../../../csharp/language-reference/keywords/virtual.md).  
+- Metoda základní třídy musí být definován [virtuální](../../../csharp/language-reference/keywords/virtual.md).  
   
--   Pokud metoda v odvozené třídě není předcházen [nové](../../../csharp/language-reference/keywords/new.md) nebo [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova, kompilátor vygeneruje upozornění a metodu se bude chovat jako `new` – klíčové slovo nebyly nalezeny.  
+- Pokud metoda v odvozené třídě není předcházen [nové](../../../csharp/language-reference/keywords/new.md) nebo [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova, kompilátor vygeneruje upozornění a metodu se bude chovat jako `new` – klíčové slovo nebyly nalezeny.  
   
--   Pokud je metoda v odvozené třídě začínající `new` – klíčové slovo, metoda je definována jako nezávislé na metodu v základní třídě.  
+- Pokud je metoda v odvozené třídě začínající `new` – klíčové slovo, metoda je definována jako nezávislé na metodu v základní třídě.  
   
--   Pokud je metoda v odvozené třídě začínající `override` – klíčové slovo, objekty odvozené třídy zavolá tato metoda namísto metody základní třídy.  
+- Pokud je metoda v odvozené třídě začínající `override` – klíčové slovo, objekty odvozené třídy zavolá tato metoda namísto metody základní třídy.  
   
--   Metoda základní třídy lze volat z v rámci odvozené třídy pomocí `base` – klíčové slovo.  
+- Metoda základní třídy lze volat z v rámci odvozené třídy pomocí `base` – klíčové slovo.  
   
--   `override`, `virtual`, A `new` klíčová slova lze také použít u vlastnosti, indexery a události.  
+- `override`, `virtual`, A `new` klíčová slova lze také použít u vlastnosti, indexery a události.  
   
  Ve výchozím nastavení nejsou virtuální metody jazyka C#. Pokud metoda deklarována jako virtuální, všechny třídu, která dědí metodu můžete implementovat vlastní verzi. Virtuální, aby metoda `virtual` modifikátor se používá v deklaraci metody základní třídy. Odvozená třída může přepsat základní metodu virtuální pak pomocí `override` – klíčové slovo nebo skrýt virtuální metodu v základní třídě pomocí `new` – klíčové slovo. Pokud ani `override` – klíčové slovo ani `new` zadáno klíčové slovo, kompilátor vygeneruje upozornění a metodu v odvozené třídě budou skrývat metodu v základní třídě.  
   

@@ -7,33 +7,33 @@ helpviewer_keywords:
 - custom components [Windows Forms], adding to Toolbox
 ms.assetid: 2fa1e3e8-6b9f-42b2-97c0-2be57444dba4
 ms.openlocfilehash: 6ecf69350b8337dc6049b73251809192b47dc2fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759905"
 ---
 # <a name="walkthrough-automatically-populating-the-toolbox-with-custom-components"></a>Návod: Automatické vyplnění sady nástrojů vlastními komponentami
 Pokud vaše komponenty jsou definovány projektu v aktuálně otevřené řešení, se automaticky zobrazí v **nástrojů**, třeba akce. Můžete také ručně naplnit **nástrojů** pomocí vlastních součástí s použitím [tlačítko panelu nástrojů položky dialogové okno (Visual Studio)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dyca0t6t(v=vs.100)), ale **nástrojů** bere v úvahu položky ve vašem řešení sestavení výstupy s následujícími charakteristikami:  
   
--   Implementuje <xref:System.ComponentModel.IComponent>;  
+- Implementuje <xref:System.ComponentModel.IComponent>;  
   
--   Nemá <xref:System.ComponentModel.ToolboxItemAttribute> nastavena na `false`;  
+- Nemá <xref:System.ComponentModel.ToolboxItemAttribute> nastavena na `false`;  
   
--   Nemá <xref:System.ComponentModel.DesignTimeVisibleAttribute> nastavena na `false`.  
+- Nemá <xref:System.ComponentModel.DesignTimeVisibleAttribute> nastavena na `false`.  
   
 > [!NOTE]
 >  **Nástrojů** nedodržuje odkaz na řetězcích, proto by se nezobrazil položky, které nejsou sestaveny projekt ve vašem řešení.  
   
  Tento návod ukazuje, jak vlastní komponenty se automaticky zobrazí v **nástrojů** po sestavení komponenty. Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu Windows Forms.  
+- Vytvoření projektu Windows Forms.  
   
--   Vytvoření vlastní komponenty.  
+- Vytvoření vlastní komponenty.  
   
--   Vytvoření instance vlastní komponenty.  
+- Vytvoření instance vlastní komponenty.  
   
--   Uvolnění a opětovné načtení volitelná množina komponent.  
+- Uvolnění a opětovné načtení volitelná množina komponent.  
   
  Až budete hotovi, uvidíte, že **nástrojů** se vyplní komponentu, kterou jste vytvořili.  
   

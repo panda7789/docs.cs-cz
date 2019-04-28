@@ -3,11 +3,11 @@ title: Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 ms.date: 07/20/2015
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
 ms.openlocfilehash: 01557bf80f40d4197d29ab05cfb4838f5d993a82
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702747"
 ---
 # <a name="cancel-an-async-task-or-a-list-of-tasks-c"></a>Zrušení asynchronní úlohy nebo seznamu úloh (C#)
 
@@ -70,14 +70,14 @@ Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z
 
 3. Proveďte následující změny v obslužné rutiny **Start** tlačítko `startButton_Click`.
 
-    -   Vytvoření instance `CancellationTokenSource`, `cts`.
+    - Vytvoření instance `CancellationTokenSource`, `cts`.
 
         ```csharp
         // ***Instantiate the CancellationTokenSource.
         cts = new CancellationTokenSource();
         ```
 
-    -   Při volání funkce `AccessTheWebAsync`, která stahuje obsah zadaného webu, odešlete <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost `cts` jako argument. `Token` Vlastnost šíří zprávy, pokud je požadováno zrušení. Přidáte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit stahování. Následující kód ukazuje změny.
+    - Při volání funkce `AccessTheWebAsync`, která stahuje obsah zadaného webu, odešlete <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost `cts` jako argument. `Token` Vlastnost šíří zprávy, pokud je požadováno zrušení. Přidáte blok catch, který zobrazí zprávu, pokud se uživatel rozhodne zrušit stahování. Následující kód ukazuje změny.
 
         ```csharp
         try

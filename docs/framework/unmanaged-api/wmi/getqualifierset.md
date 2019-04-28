@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 75bf52fbf9552dc464d9c646f0a2b1bc01cf89c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61723326"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
 Načte kvalifikátor, nastavte pro instanci třídy nebo definice třídy.
@@ -53,7 +53,7 @@ HRESULT GetQualifierSet (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Zadaná metoda neexistuje. |

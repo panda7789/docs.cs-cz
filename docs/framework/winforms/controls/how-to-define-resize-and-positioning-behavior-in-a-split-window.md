@@ -10,11 +10,11 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], resizing
 ms.assetid: 9bf73f36-ed2d-4a02-b15a-0770eff4fdfa
 ms.openlocfilehash: 8cdcfdfaa135a92ed6a6e96d4a72de2c97f2493d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757622"
 ---
 # <a name="how-to-define-resize-and-positioning-behavior-in-a-split-window"></a>Postupy: Definování chování změny velikosti a polohování v rozděleném okně
 Panelů <xref:System.Windows.Forms.SplitContainer> ovládací prvek se přizpůsobují dobře se velikost a manipulovat s uživateli. Ale bude existovat časy, kdy budete chtít programově řídit příčky, kde je umístěn a do jaké míry je možné přesunout.  

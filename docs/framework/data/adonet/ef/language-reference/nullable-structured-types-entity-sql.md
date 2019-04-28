@@ -3,11 +3,11 @@ title: Strukturované typy s možnou hodnotou Null (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ae006fa9-997e-45bb-8a04-a7f62026171e
 ms.openlocfilehash: 632b092e1d0d99a2a40cc3cd4b323e234de6232b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59127852"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760321"
 ---
 # <a name="nullable-structured-types-entity-sql"></a>Strukturované typy s možnou hodnotou Null (Entity SQL)
 A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se liší od existující instanci, ve kterém mají všechny vlastnosti `null` hodnoty.  
@@ -17,28 +17,28 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
 ## <a name="kinds-of-nullable-structured-types"></a>Strukturované typy s možnou hodnotou Null  
  Existují tři druhy typů s povolenou hodnotou Null struktury:  
   
--   Typy řádků.  
+- Typy řádků.  
   
--   Komplexní typy.  
+- Komplexní typy.  
   
--   Typy entit.  
+- Typy entit.  
   
 ## <a name="code-patterns-that-produce-null-instances-of-structured-types"></a>Vzory v kódu, které vyvolávají Null instancemi strukturované typy  
  Následující scénáře vytvoření `null` instancí:  
   
--   Strukturování `null` jako strukturovaný typ.:  
+- Strukturování `null` jako strukturovaný typ.:  
   
     ```  
     TREAT (NULL AS StructuredType)  
     ```  
   
--   Upcasting základního typu odvozeného typu:  
+- Upcasting základního typu odvozeného typu:  
   
     ```  
     TREAT (BaseType AS DerivedType)  
     ```  
   
--   Vnější spojení na false podmínku:  
+- Vnější spojení na false podmínku:  
   
     ```  
     Collection1 LEFT OUTER JOIN Collection2  
@@ -59,19 +59,19 @@ A `null` instance strukturovaný typ je instanci, která neexistuje. Tím se li�
     ON FalseCondition  
     ```  
   
--   Přesměrování `null` odkaz:  
+- Přesměrování `null` odkaz:  
   
     ```  
     DEREF(NullRef)  
     ```  
   
--   Získání ANYELEMENT z prázdné kolekce:  
+- Získání ANYELEMENT z prázdné kolekce:  
   
     ```  
     ANYELEMENT(EmptyCollection)  
     ```  
   
--   Kontrola `null` instance strukturovaných typů:  
+- Kontrola `null` instance strukturovaných typů:  
   
     ```csharp  
     ...  

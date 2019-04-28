@@ -8,11 +8,11 @@ helpviewer_keywords:
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
 ms.openlocfilehash: 29c24d9920bff38beced8f5995ec328571e6b5d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680373"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
 Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – výrazy dotazů.  
@@ -41,17 +41,17 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
 ## <a name="create-an-in-memory-data-source"></a>Vytvoření zdroje dat v paměti  
  Zdroj dat pro dotazy je jednoduchý seznam `Student` objekty. Každý `Student` záznam obsahuje jméno, příjmení a pole celých čísel, která představuje jejich výsledky testu ve třídě. Zkopírujte tento kód do vašeho projektu. Mějte na paměti následující vlastnosti:  
   
--   `Student` Třídy se skládá z automaticky implementované vlastnosti.  
+- `Student` Třídy se skládá z automaticky implementované vlastnosti.  
   
--   Každý student v seznamu je inicializovat pomocí inicializátoru objektu.  
+- Každý student v seznamu je inicializovat pomocí inicializátoru objektu.  
   
--   Samotný seznam je inicializovat pomocí inicializátoru kolekce.  
+- Samotný seznam je inicializovat pomocí inicializátoru kolekce.  
   
  Tato struktura celé datové bude inicializována a bez explicitní volání konstruktoru nebo přístup ke členu explicitní vytvoření instance. Další informace o těchto nových funkcích najdete v tématu [implemented Properties](../../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md) a [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
   
 #### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
--   Přidat `Student` třídy a inicializovaný seznam studenty, aby `Program` třídu ve vašem projektu.  
+- Přidat `Student` třídy a inicializovaný seznam studenty, aby `Program` třídu ve vašem projektu.  
   
      [!code-csharp[CsLinqGettingStarted#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#11)]  
   
@@ -63,7 +63,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 #### <a name="to-create-a-simple-query"></a>Vytvoření jednoduchého dotazu  
   
--   V aplikaci prvku `Main` metody vytvoření jednoduchého dotazu, který, pokud je spuštěn, bude vytvoření seznamu Všichni studenti, jehož skóre na první test byl větší než 90. Upozorňujeme, že celý `Student` vybrán objekt, je typ dotazu `IEnumerable<Student>`. I když kód může také použití implicitního zápisu pomocí [var](../../../../csharp/language-reference/keywords/var.md) – klíčové slovo, explicitní zadání slouží k jasně ukazuje výsledky. (Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).)  
+- V aplikaci prvku `Main` metody vytvoření jednoduchého dotazu, který, pokud je spuštěn, bude vytvoření seznamu Všichni studenti, jehož skóre na první test byl větší než 90. Upozorňujeme, že celý `Student` vybrán objekt, je typ dotazu `IEnumerable<Student>`. I když kód může také použití implicitního zápisu pomocí [var](../../../../csharp/language-reference/keywords/var.md) – klíčové slovo, explicitní zadání slouží k jasně ukazuje výsledky. (Další informace o `var`, naleznete v tématu [implicitně typované lokální proměnné](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).)  
   
      Všimněte si také, že v dotazu proměnná rozsahu `student`, slouží jako odkaz na každé `Student` ve zdroji, poskytují přístup ke členu pro každý objekt.  
   
@@ -75,9 +75,9 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1. Teď zapisovat `foreach` smyčku, která způsobí, že ke spuštění dotazu. Mějte na paměti následující skutečnosti související kód:  
   
-    -   Každý prvek ve vrácené posloupnosti je přístupné prostřednictvím proměnné iterace ve `foreach` smyčky.  
+    - Každý prvek ve vrácené posloupnosti je přístupné prostřednictvím proměnné iterace ve `foreach` smyčky.  
   
-    -   Typ této proměnné je `Student`, a typ proměnné dotazu je kompatibilní, `IEnumerable<Student>`.  
+    - Typ této proměnné je `Student`, a typ proměnné dotazu je kompatibilní, `IEnumerable<Student>`.  
   
 2. Po přidání tohoto kódu sestavte a spusťte aplikaci a ověřte výsledky v **konzoly** okna.  
   

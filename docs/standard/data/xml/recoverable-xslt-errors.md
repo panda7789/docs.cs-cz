@@ -6,11 +6,11 @@ ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 215fb807aa27b8a544351d26fd0c9500c76b6ead
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50202982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698769"
 ---
 # <a name="recoverable-xslt-errors"></a>Chyby XSLT s možností zotavení
 Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých může implementaci zprostředkovatele rozhodování o způsobu zpracování situaci. Tyto oblasti jsou považovány za volitelného chování. Například část 7.3 vytváření zpracování pokyny, XSLT 1.0 doporučení státy, jedná se o chybu, pokud vytvoření instance obsah `xsl:processing-instruction` vytvoří uzly než textové uzly. Pro některé problémy XSLT 1.0 doporučení indikuje, co rozhodnutí třeba pokud se rozhodne procesoru zotavit z chyby. Na problém uvedený v části 7.3 W3C říká, že implementace můžete obnovit tuto chybu ignorovat uzly a jejich obsah.  
@@ -18,13 +18,13 @@ Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých
 ## <a name="discretionary-behaviors"></a>Volitelného chování  
  Následující tabulka obsahuje seznam všech volitelného chování dovolují XSLT 1.0 doporučení a jak jsou zpracovávány těchto projevů <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
--   Obnovit znamená, že <xref:System.Xml.Xsl.XslCompiledTransform> třídy bude obnoven. k této chybě. <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered?displayProperty=nameWithType> Události je možné nahlásit všechny události z procesoru XSLT.  
+- Obnovit znamená, že <xref:System.Xml.Xsl.XslCompiledTransform> třídy bude obnoven. k této chybě. <xref:System.Xml.Xsl.XsltArgumentList.XsltMessageEncountered?displayProperty=nameWithType> Události je možné nahlásit všechny události z procesoru XSLT.  
   
--   Chyba udává, že je vyvolána výjimka pro tuto podmínku.  
+- Chyba udává, že je vyvolána výjimka pro tuto podmínku.  
   
--   Najdete v části odkazy [doporučení W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/TR/xslt) a [chyby specifikaci W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
+- Najdete v části odkazy [doporučení W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/TR/xslt) a [chyby specifikaci W3C transformace XSL (XSLT) verze 1.0](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).  
   
-|Podmínka XSLT|Oddíl|Chování XslCompiledTransform|  
+|Podmínka XSLT|Sekce|Chování XslCompiledTransform|  
 |--------------------|-------------|-----------------------------------|  
 |Textový uzel odpovídá obě `xsl:strip-space` a `xsl:preserve-space`.|3.4|Obnovit|  
 |Zdrojový uzel odpovídá více než jedno pravidlo šablony.|5.5|Obnovit|  
@@ -48,9 +48,9 @@ Verze 1.0 doporučení W3C transformace XSL (XSLT) zahrnuje oblasti, ve kterých
 |Zakazuje se výstup uvození pro textový uzel, který se používá pro něco jiného než textový uzel ve stromu výsledek.|16.4|Obnovit *|  
 |Převod fragment stromu výsledek na číslo nebo řetězec. Pokud fragment stromu výsledek obsahuje textový uzel se výstup uvození povolena.|16.4|Obnovit *|  
 |Výstup uvozovacích znaků je zakázaná pro znak, který nemůže být reprezentovaný v kódování, procesoru XSLT se používá pro výstup.|16.4|Obnovit *|  
-|Přidání uzlu oboru názvů na prvek po podřízené objekty byly přidány do ní nebo po atributy byly přidány do něj.|chyby 25|Chyba *|  
-|`value` Atribut `xsl:number` NaN, nekonečné nebo menší než 0,5|chyby 24|Obnovit|  
-|Druhý argument funkce dokumentu sady uzlů je prázdný a odkaz na identifikátor URI je relativní.|chyby 14|Obnovit|  
+|Přidání uzlu oboru názvů na prvek po podřízené objekty byly přidány do ní nebo po atributy byly přidány do něj.|errata 25|Chyba *|  
+|`value` Atribut `xsl:number` NaN, nekonečné nebo menší než 0,5|errata 24|Obnovit|  
+|Druhý argument funkce dokumentu sady uzlů je prázdný a odkaz na identifikátor URI je relativní.|errata 14|Obnovit|  
   
  <sup>*</sup> Toto chování se liší od <xref:System.Xml.Xsl.XslTransform> třídy. Další informace najdete v tématu [implementace volitelného chování ve třídě XslTransform](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md).  
   

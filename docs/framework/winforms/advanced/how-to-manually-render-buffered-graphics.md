@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics [Windows Forms], rendering
 ms.assetid: 5192295e-bd8e-45f7-8bd6-5c4f6bd21e61
 ms.openlocfilehash: 48dd1d76a42661df6ba642c032c991be4d6a2900
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59339928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756582"
 ---
 # <a name="how-to-manually-render-buffered-graphics"></a>Postupy: Ruční vykreslení grafiky uložené do vyrovnávací paměti
 Pokud spravujete ve vyrovnávací paměti grafiky, musíte být schopni vytvořit a vykreslit grafické vyrovnávací paměti. Můžete vytvořit instance <xref:System.Drawing.BufferedGraphics> třídu, která je přidružený k vykreslení plochy na obrazovce voláním <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> metody. Tato metoda vytvoří <xref:System.Drawing.BufferedGraphics> instanci, která souvisí s konkrétním vykreslovací plochu, jako je například formulář nebo ovládací prvek. Po vytvoření <xref:System.Drawing.BufferedGraphics> instance, můžete nakreslit grafiky do vyrovnávací paměti představuje prostřednictvím <xref:System.Drawing.BufferedGraphics.Graphics%2A> vlastnost. Po provedení všech operací grafiky, můžete zkopírovat obsah vyrovnávací paměti na obrazovku voláním <xref:System.Drawing.BufferedGraphics.Render%2A> metody.  

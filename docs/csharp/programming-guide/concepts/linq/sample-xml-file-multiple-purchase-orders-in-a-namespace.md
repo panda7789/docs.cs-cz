@@ -3,13 +3,13 @@ title: 'Ukázkový soubor XML: Více nákupních objednávek v Namespace2'
 ms.date: 07/20/2015
 ms.assetid: 595024f2-374a-4615-acb5-64fa1600f377
 ms.openlocfilehash: 2d5985fbfae543a6123d523a2caf4ec9ffc99a13
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680815"
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>Ukázkový soubor XML: Více nákupních objednávek v Namespace
+# <a name="sample-xml-file-multiple-purchase-orders-in-a-namespace"></a>Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje několik nákupních objednávek. XML je v oboru názvů.  
   
 ## <a name="purchaseordersinnamespacexml"></a>PurchaseOrdersInNamespace.xml  

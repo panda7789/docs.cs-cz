@@ -6,11 +6,11 @@ helpviewer_keywords:
 - application settings [Windows Forms], C#
 ms.assetid: 45007ac6-cf07-4be7-bc38-3f0ef962faf9
 ms.openlocfilehash: 9a4913f635204aac2214d97225c7b8147c6fe9ab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768547"
 ---
 # <a name="how-to-add-multiple-sets-of-settings-to-your-application-in-c"></a>Postupy: Přidání více množin nastavení do vaší aplikace v jazyce C\#
 V některých případech můžete chtít mít více množin nastavení v aplikaci. Například pokud vyvíjíte aplikaci kde se očekává často měnit konkrétní skupinu nastavení, může být vhodné oddělit vše do jediného souboru tak, aby soubor se dá nahradit velkoobchodních, ostatní nechat to neovlivní. Visual Studio umožňuje přidání více množin nastavení do projektu. Další sadu nastavení je možný prostřednictvím Properties.Settings objektu.  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Application object
 ms.assetid: a0ecfccf-acf7-49ec-a08b-72e6458c5c8d
 ms.openlocfilehash: c88e9da85357df5b0bbbb5957ed2f7ca8276a04b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751461"
 ---
 # <a name="myapplication-object"></a>My.Application – objekt
 Poskytuje vlastnosti, metody a události související s aktuální aplikace.  
@@ -17,11 +17,11 @@ Poskytuje vlastnosti, metody a události související s aktuální aplikace.
 ## <a name="remarks"></a>Poznámky  
  Informace o tom, metody a vlastnosti `My.Application` objektu, najdete v následujících zdrojích informací:  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> pro členy, které jsou k dispozici ve všech projektech.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> pro členy, které jsou k dispozici ve všech projektech.  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> pro členy, které jsou k dispozici v aplikacích Windows Forms.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> pro členy, které jsou k dispozici v aplikacích Windows Forms.  
   
--   <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> pro členy, které jsou k dispozici v konzolových aplikacích.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> pro členy, které jsou k dispozici v konzolových aplikacích.  
   
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** <xref:Microsoft.VisualBasic.ApplicationServices>  

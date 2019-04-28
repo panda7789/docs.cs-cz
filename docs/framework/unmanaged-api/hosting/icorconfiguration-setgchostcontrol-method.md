@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 50a92058e8a394b95c690d19f1bafdddbed8246a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59135990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763240"
 ---
 # <a name="icorconfigurationsetgchostcontrol-method"></a>ICorConfiguration::SetGCHostControl – metoda
 Nastaví rozhraní zpětného volání systému uvolňování paměti používané k vyžádání hostitele, chcete-li změnit omezení virtuální paměti.  

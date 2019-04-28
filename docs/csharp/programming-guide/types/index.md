@@ -13,11 +13,11 @@ helpviewer_keywords:
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
 ms.openlocfilehash: 23aae1a41a19689bd5ad4e29f19c8cff704e742c
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709690"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 

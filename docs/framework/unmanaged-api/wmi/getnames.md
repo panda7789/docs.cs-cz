@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f664edf29e5d2f9ec4e523aa7f7b204cf999e01b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61724080"
 ---
 # <a name="getnames-function"></a>Funkce GetNames
 Načte podmnožinu nebo všechny názvy vlastností objektu. 
@@ -65,7 +65,7 @@ HRESULT GetNames (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Obecné selhání došlo. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné, nebo byl zadán nesprávný kombinace příznaků a parametry. |

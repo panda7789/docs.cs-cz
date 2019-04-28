@@ -9,11 +9,11 @@ helpviewer_keywords:
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
 ms.openlocfilehash: 510a8dd2721e9c709444c065a8df25b0e5526c08
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678396"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů. Za prvé tříd rozhraní .NET Framework pomocí oborů názvů můžete organizovat jeho mnoho tříd. Za druhé deklarující vlastní obory názvů umožňují omezit rozsah třídy a metody názvy ve větších programovací projektů.  
@@ -52,13 +52,13 @@ V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů
   
  V předchozí segment kódu:  
   
--   Obor názvů `N1` je členem skupiny globální obor názvů. Jeho plně kvalifikovaný název je `N1`.  
+- Obor názvů `N1` je členem skupiny globální obor názvů. Jeho plně kvalifikovaný název je `N1`.  
   
--   Obor názvů `N2` je členem skupiny `N1`. Jeho plně kvalifikovaný název je `N1.N2`.  
+- Obor názvů `N2` je členem skupiny `N1`. Jeho plně kvalifikovaný název je `N1.N2`.  
   
--   Třída `C1` je členem skupiny `N1`. Jeho plně kvalifikovaný název je `N1.C1`.  
+- Třída `C1` je členem skupiny `N1`. Jeho plně kvalifikovaný název je `N1.C1`.  
   
--   Název třídy `C2` dvakrát se používá v tomto kódu. Plně kvalifikované názvy jsou však jedinečné. První výskyt `C2` je deklarována uvnitř `C1`, proto jeho plně kvalifikovaný název je: `N1.C1.C2`. Druhou instanci `C2` je deklarován uvnitř oboru názvů `N2`, proto jeho plně kvalifikovaný název je `N1.N2.C2`.  
+- Název třídy `C2` dvakrát se používá v tomto kódu. Plně kvalifikované názvy jsou však jedinečné. První výskyt `C2` je deklarována uvnitř `C1`, proto jeho plně kvalifikovaný název je: `N1.C1.C2`. Druhou instanci `C2` je deklarován uvnitř oboru názvů `N2`, proto jeho plně kvalifikovaný název je `N1.N2.C2`.  
   
  Pomocí předchozího segmentu kódu, můžete přidat nového člena třídy `C3`, do oboru názvů `N1.N2` následujícím způsobem:  
   

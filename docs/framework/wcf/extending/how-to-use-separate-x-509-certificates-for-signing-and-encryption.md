@@ -10,11 +10,11 @@ helpviewer_keywords:
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
 ms.openlocfilehash: f95274861f58d1581e4c5439861ebf186b1b3489
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766940"
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování
 Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) používat různé certifikáty pro podepisování zpráv a šifrování na klienta a služby.  
@@ -23,15 +23,15 @@ Toto téma ukazuje, jak konfigurovat Windows Communication Foundation (WCF) pou�
   
  Následující diagram znázorňuje hlavní třídy, třídy dědí z (zobrazují se šipkou ukazující vzhůru) a návratové typy některých metod a vlastností.  
   
--   `MyClientCredentials` je vlastní implementace <xref:System.ServiceModel.Description.ClientCredentials>.  
+- `MyClientCredentials` je vlastní implementace <xref:System.ServiceModel.Description.ClientCredentials>.  
   
-    -   Její vlastnosti, které je zobrazeno na diagramu všechny návratové výskyty <xref:System.Security.Cryptography.X509Certificates.X509Certificate2>.  
+    - Její vlastnosti, které je zobrazeno na diagramu všechny návratové výskyty <xref:System.Security.Cryptography.X509Certificates.X509Certificate2>.  
   
-    -   Jeho metoda <xref:System.ServiceModel.Description.ClientCredentials.CreateSecurityTokenManager%2A> vrátí instanci `MyClientCredentialsSecurityTokenManager`.  
+    - Jeho metoda <xref:System.ServiceModel.Description.ClientCredentials.CreateSecurityTokenManager%2A> vrátí instanci `MyClientCredentialsSecurityTokenManager`.  
   
--   `MyClientCredentialsSecurityTokenManager` je vlastní implementace <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.  
+- `MyClientCredentialsSecurityTokenManager` je vlastní implementace <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>.  
   
-    -   Jeho metoda <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> vrátí instanci <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider>.  
+    - Jeho metoda <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> vrátí instanci <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider>.  
   
  ![Graf zobrazující, jak se používají přihlašovací údaje pro klienta](../../../../docs/framework/wcf/extending/media/e4971edd-a59f-4571-b36f-7e6b2f0d610f.gif "e4971edd-a59f-4571-b36f-7e6b2f0d610f")  
   

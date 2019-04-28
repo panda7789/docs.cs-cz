@@ -14,28 +14,28 @@ ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 931edf3610d083f6821ec87d3e05db855e88c6f9
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683389"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
   
--   `Covariance`  
+- `Covariance`  
   
      Umožňuje použít více odvozený typ, než byl původně zadán.  
   
      Můžete přiřadit instanci `IEnumerable<Derived>` (`IEnumerable(Of Derived)` v jazyce Visual Basic) na proměnnou typu `IEnumerable<Base>`.  
   
--   `Contravariance`  
+- `Contravariance`  
   
      Umožňuje používat obecnější (méně odvozený) typ, než byl původně zadán.  
   
      Můžete přiřadit instanci `Action<Base>` (`Action(Of Base)` v jazyce Visual Basic) na proměnnou typu `Action<Derived>`.  
   
--   `Invariance`  
+- `Invariance`  
   
      To znamená, že můžete použít pouze původně zadaný typ; parametr invariantního obecného typu není ani kovariantní, ani kontravariantní.  
   
@@ -59,25 +59,25 @@ ms.locfileid: "56836419"
   
  Kovariance a kontravariance se souhrnně označují jako *variance*. Parametr obecného typu, který není označen jako kovariantní nebo kontravariantní se označuje jako *invariantní*. Stručný souhrn faktů o varianci v modulu CLR (Common Language Runtime):  
   
--   V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], parametry variantního typu omezeny na obecná rozhraní a obecné typy delegátů.  
+- V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], parametry variantního typu omezeny na obecná rozhraní a obecné typy delegátů.  
   
--   Obecná rozhraní nebo obecné typy delegátů mohou mít parametry kovariantního i kontravariantního typu.  
+- Obecná rozhraní nebo obecné typy delegátů mohou mít parametry kovariantního i kontravariantního typu.  
   
--   Variance platí pouze pro odkazované typy. Pokud zadáte typ hodnoty pro parametr variantního typu, je tento parametr typu pro výsledný konstruovaný typ invariantní.  
+- Variance platí pouze pro odkazované typy. Pokud zadáte typ hodnoty pro parametr variantního typu, je tento parametr typu pro výsledný konstruovaný typ invariantní.  
   
--   Variance se nevztahuje na kombinaci delegátů. To znamená, že u daných dvou delegátů typů `Action<Derived>` a `Action<Base>` (`Action(Of Derived)` a `Action(Of Base)` v jazyce Visual Basic), nelze kombinovat druhý delegát s prvním Ačkoli výsledek by byl typově bezpečný. Variance umožňuje druhého delegátu má být přiřazena k proměnné typu `Action<Derived>`, delegáty lze však kombinovat pouze v případě přesné shody typů.  
+- Variance se nevztahuje na kombinaci delegátů. To znamená, že u daných dvou delegátů typů `Action<Derived>` a `Action<Base>` (`Action(Of Derived)` a `Action(Of Base)` v jazyce Visual Basic), nelze kombinovat druhý delegát s prvním Ačkoli výsledek by byl typově bezpečný. Variance umožňuje druhého delegátu má být přiřazena k proměnné typu `Action<Derived>`, delegáty lze však kombinovat pouze v případě přesné shody typů.  
   
  Následující pododdíly obsahují podrobný popis parametrů kovariantního a kontravariantního typu:  
   
--   [Obecná rozhraní s parametry kovariantního typu](#InterfaceCovariantTypeParameters)  
+- [Obecná rozhraní s parametry kovariantního typu](#InterfaceCovariantTypeParameters)  
   
--   [Obecná rozhraní s parametry obecného kontravariantního typu](#InterfaceCovariantTypeParameters)  
+- [Obecná rozhraní s parametry obecného kontravariantního typu](#InterfaceCovariantTypeParameters)  
   
--   [Parametry typu obecné delegáty s typ Variant](#DelegateVariantTypeParameters)  
+- [Parametry typu obecné delegáty s typ Variant](#DelegateVariantTypeParameters)  
   
--   [Definování variantních obecných rozhraní a delegátů](#DefiningVariantTypeParameters)  
+- [Definování variantních obecných rozhraní a delegátů](#DefiningVariantTypeParameters)  
   
--   [Seznam variantních obecných rozhraní a typy delegátů](#VariantList)  
+- [Seznam variantních obecných rozhraní a typy delegátů](#VariantList)  
   
 <a name="InterfaceCovariantTypeParameters"></a>   
 ## <a name="generic-interfaces-with-covariant-type-parameters"></a>Obecná rozhraní s parametry kovariantního typu  
@@ -170,7 +170,7 @@ ms.locfileid: "56836419"
 ## <a name="list-of-variant-generic-interface-and-delegate-types"></a>Seznam variantních obecných typů rozhraní a delegátů  
  V [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], následující typy rozhraní a delegátů kovariantního a/nebo parametry kontravariantního typu.  
   
-|Typ|Parametry kovariantního typu|Parametry kontravariantního typu|  
+|Type|Parametry kovariantního typu|Parametry kontravariantního typu|  
 |----------|-------------------------------|-----------------------------------|  
 |<xref:System.Action%601> k <xref:System.Action%6016>||Ano|  
 |<xref:System.Comparison%601>||Ano|  

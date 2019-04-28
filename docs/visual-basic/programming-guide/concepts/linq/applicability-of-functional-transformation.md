@@ -3,11 +3,11 @@ title: Použitelnost funkční transformace (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3b74e134-e19b-44bc-8d06-e26c48305040
 ms.openlocfilehash: 7efeab82dafc284f64a950eb7f5e4a6ee3f2e73d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61689837"
 ---
 # <a name="applicability-of-functional-transformation-visual-basic"></a>Použitelnost funkční transformace (Visual Basic)
 Čistě funkční transformace se dají použít v nejrůznějších situacích.  
@@ -16,15 +16,15 @@ ms.locfileid: "58827611"
   
  Tento přístup se vztahuje na mnoho problémů, které nemusí být kandidát na první pohled zobrazit. Používá ve spojení s nebo samostatně z technologie LINQ, funkční transformace by měl být v následujících oblastech:  
   
--   Dokumenty XML. Ve správném formátu data z libovolné dialekt XML lze snadno ovládat pomocí funkční transformace. Další informace najdete v tématu [funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md).  
+- Dokumenty XML. Ve správném formátu data z libovolné dialekt XML lze snadno ovládat pomocí funkční transformace. Další informace najdete v tématu [funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md).  
   
--   Ostatní formáty souborů structured. Většina souborů ze souborů Windows.ini do prostého textu, dokumentů, mají některé struktura, která slouží k analýze a transformace.  
+- Ostatní formáty souborů structured. Většina souborů ze souborů Windows.ini do prostého textu, dokumentů, mají některé struktura, která slouží k analýze a transformace.  
   
--   Protokoly streamování dat. Data kódování a dekódování dat z komunikační protokoly můžete často reprezentované pomocí jednoduchého funkční transformace.  
+- Protokoly streamování dat. Data kódování a dekódování dat z komunikační protokoly můžete často reprezentované pomocí jednoduchého funkční transformace.  
   
--   Relační databázový systém a OODBMS data. Relační a objektově orientované databáze, stejně jako XML, jsou široce používaný strukturovaných datových zdrojů.  
+- Relační databázový systém a OODBMS data. Relační a objektově orientované databáze, stejně jako XML, jsou široce používaný strukturovaných datových zdrojů.  
   
--   Řešení matematických, statistiky a vědy. Tato pole mají tendenci k práci s velkými datovými sadami, aby pomáhaly při vizualizaci, odhad, nebo ve skutečnosti řešení potíží, které nejsou v netriviálních uživatele.  
+- Řešení matematických, statistiky a vědy. Tato pole mají tendenci k práci s velkými datovými sadami, aby pomáhaly při vizualizaci, odhad, nebo ve skutečnosti řešení potíží, které nejsou v netriviálních uživatele.  
   
  Jak je popsáno v [refaktoring do čistých funkcí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md), pomocí čisté funkce je příkladem funkčního programování. V další okamžitě přináší výhody použití čistě funkce poskytuje cenné zkušenosti zamyslíme nad problémy z hlediska funkční transformace. Tento přístup také může mít významný vliv na návrh aplikace a třídy. To platí zejména při problém slouží k transformaci řešení data, jak je popsáno výše.  
   

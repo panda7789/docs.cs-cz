@@ -9,11 +9,11 @@ ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fc90bedeee2d04c28a3860713ca5952a4564d3bd
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675635"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -30,26 +30,26 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
   
  Mnoho sestavení spustit stejně jako na modul CLR 32bitová verze a 64bitová verze CLR. Nicméně některé programy může chovat jinak, v závislosti na modulu CLR, pokud obsahují jeden nebo více z následujících akcí:  
   
--   Struktury, které obsahují členy, které se mění velikost podle platformy (například libovolný typ ukazatele).  
+- Struktury, které obsahují členy, které se mění velikost podle platformy (například libovolný typ ukazatele).  
   
--   Aritmetika ukazatele, který obsahuje konstantní velikostí.  
+- Aritmetika ukazatele, který obsahuje konstantní velikostí.  
   
--   Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Int32` pro popisovače místo `IntPtr`.  
+- Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Int32` pro popisovače místo `IntPtr`.  
   
--   Kód, který přetypování `IntPtr` k `Int32`.  
+- Kód, který přetypování `IntPtr` k `Int32`.  
   
  Další informace o vytvoření portu 32bitové aplikace ke spuštění v 64bitovém modulu CLR najdete v tématu [přenesení 32bitového spravovaného kódu na 64bitovou verzi](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973190(v=msdn.10)).  
   
 ## <a name="general-64-bit-programming-information"></a>Obecné informace o 64bitovém programování  
  Obecné informace o 64bitové programování najdete v následujících dokumentech:  
   
--   Další informace o 64bitové verzi modulu CLR v počítači Windows 64-bit, najdete v článku [středisko pro vývojáře rozhraní .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) na webu MSDN.  
+- Další informace o 64bitové verzi modulu CLR v počítači Windows 64-bit, najdete v článku [středisko pro vývojáře rozhraní .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) na webu MSDN.  
   
--   V [!INCLUDE[winsdkshort](../../includes/winsdkshort-md.md)] dokumentaci najdete v tématu [Průvodce programováním pro Windows 64-bit](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
+- V [!INCLUDE[winsdkshort](../../includes/winsdkshort-md.md)] dokumentaci najdete v tématu [Průvodce programováním pro Windows 64-bit](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
   
--   Informace o tom, jak stáhnout 64bitovou verzi modulu CLR najdete v tématu [rozhraní .NET Framework Developer Center stáhne](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
+- Informace o tom, jak stáhnout 64bitovou verzi modulu CLR najdete v tématu [rozhraní .NET Framework Developer Center stáhne](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
   
--   Informace o Visual Studio – podpora pro vytváření 64bitových aplikací najdete v tématu [podporu služby Visual Studio IDE 64-Bit](/visualstudio/ide/visual-studio-ide-64-bit-support).  
+- Informace o Visual Studio – podpora pro vytváření 64bitových aplikací najdete v tématu [podporu služby Visual Studio IDE 64-Bit](/visualstudio/ide/visual-studio-ide-64-bit-support).  
   
 ## <a name="compiler-support-for-creating-64-bit-applications"></a>Podpora kompilátoru pro vytváření 64bitových aplikací  
  Ve výchozím nastavení, při použití rozhraní .NET Framework a začít vytvářet aplikace pro 32bitové nebo 64bitové počítače, aplikace bude spuštěna na 64bitovém počítači jako nativní aplikaci (tedy ne v modulu WOW64). V následující tabulce jsou uvedeny dokumenty, které popisují, jak použít kompilátory sady Visual Studio k vytvoření 64bitových aplikací, které se spustí jako nativní v prostředí WOW64, nebo obojí.  

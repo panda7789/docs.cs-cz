@@ -20,11 +20,11 @@ ms.assetid: 261c5583-8a76-412d-bda7-9b8ee3b131e5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bcc451903f7fbf7f82e2ed64834d26e605a0c069
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59187795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705620"
 ---
 # <a name="how-to-build-a-multifile-assembly"></a>Postupy: Vytváření vícesouborového sestavení
 Tento článek vysvětluje, jak vytvořit vícesouborové sestavení a obsahuje kód, který ukazuje každý krok v postupu.

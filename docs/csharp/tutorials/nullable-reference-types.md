@@ -4,11 +4,11 @@ description: V tomto kurzu pokročilé obsahuje úvod do typy s možnou hodnotou
 ms.date: 02/19/2019
 ms.custom: mvc
 ms.openlocfilehash: 97b41574b328c9f6bed60d4bf2943c7a726261d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706166"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Kurz: Máte v úmyslu návrhu Express jasněji s typy s možnou hodnotou Null a Null reference
 

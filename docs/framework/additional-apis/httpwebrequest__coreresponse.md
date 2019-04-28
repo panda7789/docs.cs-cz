@@ -11,15 +11,15 @@ api_type:
 - Assembly
 author: stevewhims
 ms.openlocfilehash: 3627c9bf0d72ccec3a0d6d9c7c89b62f83dcd4b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356196"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706062"
 ---
 # <a name="httpwebrequestcoreresponse-field"></a>HttpWebRequest. \_CoreResponse pole
 
-`HttpWebRequest._CoreResponse` je objektem (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>) obsahující výsledek analýzy odpovědi HTTP.
+`HttpWebRequest._CoreResponse` je objekt (buď [CoreResponseData](coreresponsedata.md) nebo <xref:System.Exception>) obsahující výsledky analýzy odpovědi HTTP.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -28,14 +28,14 @@ private object _CoreResponse
 ```
 
 > [!WARNING]
-> Toto rozhraní API není určen pro použití přímo v kódu. Místo toho používejte <xref:System.Diagnostics.DiagnosticSource> napojit sítě kódu. V tématu [DiagnosticSource uživatelská příručka](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
+> Toto rozhraní API není určena pro použití přímo v kódu. Místo toho používejte <xref:System.Diagnostics.DiagnosticSource> k připojení sítě kódu. Zobrazit [DiagnosticSource uživatelská příručka](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md).
 > 
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
 **Namespace:** <xref:System.Net>
 
-**Sestavení:** systému (v System.dll)
+**Sestavení:** Systém (System.dll)
 
-**Verze rozhraní .NET framework:** dostupné od verze 2.0.
+**Verze rozhraní .NET framework:** Dostupné od verze 2.0.

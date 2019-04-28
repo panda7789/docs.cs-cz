@@ -14,11 +14,11 @@ ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8ba1ded1757d71a2b7839ae8b45489da53763b8e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54603609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765944"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analýza číselných řetězců v síti
 Všechny číselné typy mají dvě metody statické analýzy `Parse` a `TryParse`, že vám pomůže převést řetězcové vyjádření čísla na číselného typu. Tyto metody umožňují Analýza řetězců, které byly vytvořeny pomocí formátovacích řetězců dokumentovány v článku [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md) a [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md). Ve výchozím nastavení `Parse` a `TryParse` metody můžete převést úspěšně řetězce, které obsahují integrální desítkových číslic pouze pro celočíselné hodnoty. Můžete úspěšně převodu řetězce, které obsahují celých a desetinných desítkové číslice, oddělovače skupin a oddělovač desetinných míst pro hodnoty s plovoucí desetinnou čárkou. `Parse` Metoda vyvolá výjimku, pokud se operace nezdaří, zatímco `TryParse` vrátí metoda `false`.  
@@ -28,9 +28,9 @@ Všechny číselné typy mají dvě metody statické analýzy `Parse` a `TryPars
   
  Poskytovatele formátu počítaném od <xref:System.IFormatProvider> implementace. Toto rozhraní má jediný člen <xref:System.IFormatProvider.GetFormat%2A> metoda, jejíž jediný parametr je <xref:System.Type> objekt, který představuje typ, který má být formátován. Tato metoda vrátí objekt, který poskytuje informace o formátování. .NET podporuje následující dva <xref:System.IFormatProvider> implementace pro Analýza číselných řetězců:  
   
--   A <xref:System.Globalization.CultureInfo> jehož <xref:System.Globalization.CultureInfo.GetFormat%2A?displayProperty=nameWithType> metoda vrátí hodnotu <xref:System.Globalization.NumberFormatInfo> objekt, který poskytuje informace o formátování specifické pro jazykovou verzi.  
+- A <xref:System.Globalization.CultureInfo> jehož <xref:System.Globalization.CultureInfo.GetFormat%2A?displayProperty=nameWithType> metoda vrátí hodnotu <xref:System.Globalization.NumberFormatInfo> objekt, který poskytuje informace o formátování specifické pro jazykovou verzi.  
   
--   A <xref:System.Globalization.NumberFormatInfo> jehož <xref:System.Globalization.NumberFormatInfo.GetFormat%2A?displayProperty=nameWithType> metoda vrací samu sebe.  
+- A <xref:System.Globalization.NumberFormatInfo> jehož <xref:System.Globalization.NumberFormatInfo.GetFormat%2A?displayProperty=nameWithType> metoda vrací samu sebe.  
   
  Následující příklad se snaží převést každý řetězec v matici <xref:System.Double> hodnotu. Nejprve se pokusí analyzovat řetězec pomocí poskytovatele formátu, který odráží úmluv jazykové verze Angličtina (Spojené státy). Pokud tato operace vyvolá <xref:System.FormatException>, pokusí se analyzovat řetězec pomocí poskytovatele formátu, který odráží konvence jazykovou verzi francouzština (Francie).  
   

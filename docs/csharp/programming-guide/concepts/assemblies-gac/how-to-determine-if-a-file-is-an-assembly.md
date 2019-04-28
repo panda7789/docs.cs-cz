@@ -3,11 +3,11 @@ title: 'Postupy: Určení, zda je soubor sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
 ms.openlocfilehash: e8026ab5fa44b7601e54b5e76ebf9eb434596a07
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702890"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Postupy: Určení, zda je soubor sestavení (C#)
 Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svých metadatech, je soubor sestavení. Další informace o sestavení a metadata, naleznete v tématu [Manifest sestavení](../../../../../docs/framework/app-domains/assembly-manifest.md).  

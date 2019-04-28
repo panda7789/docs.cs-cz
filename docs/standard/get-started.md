@@ -7,11 +7,11 @@ ms.date: 05/01/2017
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
 ms.openlocfilehash: 825d7d950726c4f416624653704a51fb405325e3
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53765213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683220"
 ---
 # <a name="get-started"></a>Začínáme
 

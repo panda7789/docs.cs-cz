@@ -6,28 +6,28 @@ helpviewer_keywords:
 - certificates [WCF], verifying signatures
 ms.assetid: 7c719355-aa41-4567-80d0-5115a8cf73fd
 ms.openlocfilehash: 43296fad9519a08db5facdd220492ac70dffeca2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747638"
 ---
 # <a name="how-to-specify-the-certificate-authority-certificate-chain-used-to-verify-signatures-wcf"></a>Postupy: Zadání řetězu certifikátů certifikační autority používaného k ověřování podpisů (WCF)
 Přijetí Windows Communication Foundation (WCF) protokolu SOAP zprávy podepsány pomocí certifikátu X.509, ve výchozím nastavení ověřuje, že certifikát X.509 byl vydán důvěryhodnou certifikační autoritou. To se provádí vyhledávání v úložišti certifikátů a určení, pokud certifikát u této certifikační autoritě je určený jako důvěryhodné. Aby WCF za účelem určení musí být nainstalována řetěz certifikátů certifikační autority v úložišti certifikátů správné.  
   
 ### <a name="to-install-a-certification-authority-certificate-chain"></a>Chcete-li nainstalovat řetěz certifikátů certifikační autority  
   
--   Pro každou certifikační autoritu, která si klade za cíl příjemce zprávy protokolu SOAP důvěřovat instalaci certifikátů X.509 vystavených, řetěz certifikátů certifikační autority do úložiště certifikátů, WCF je nakonfigurován k načtení certifikátů X.509 z.  
+- Pro každou certifikační autoritu, která si klade za cíl příjemce zprávy protokolu SOAP důvěřovat instalaci certifikátů X.509 vystavených, řetěz certifikátů certifikační autority do úložiště certifikátů, WCF je nakonfigurován k načtení certifikátů X.509 z.  
   
      Například pokud příjemce zprávu protokolu SOAP v úmyslu důvěřovat společnost Microsoft vydá nové certifikáty X.509, řetěz certifikátů certifikační autority pro Microsoft musí být nainstalován v úložišti certifikátů, které WCF je nastaven na Hledat certifikáty X.509. Úložiště certifikátů, ve kterém hledá WCF certifikáty X.509 je zadat v kódu nebo konfigurace. Například můžete zadat v kódu pomocí <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metoda nebo v konfiguraci několika způsoby, třeba [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) .  
   
      Protože Windows se dodává se sadou výchozích řetězy certifikátů pro důvěryhodné certifikační autority, nemusí být potřeba instalovat řetěz certifikátů pro všechny certifikační autority.  
   
-    1.  Exportujte řetěz certifikátů certifikační autority.  
+    1. Exportujte řetěz certifikátů certifikační autority.  
   
          Přesně jak je to závisí na certifikační autoritě. Pokud certifikační autorita běží certifikační služby společnosti Microsoft, vyberte **stáhnout certifikát certifikační Autority, řetěz certifikátů nebo seznam CRL**a klikněte na tlačítko **stáhnout certifikát certifikační Autority**.  
   
-    2.  Importujte řetěz certifikátů certifikační autority.  
+    2. Importujte řetěz certifikátů certifikační autority.  
   
          V Microsoft Management Console (MMC), otevřete modul snap-in Certifikáty. Úložiště certifikátů je nakonfigurovaný tento WCF načíst certifikáty X.509 z vyberte **důvěryhodné kořenové** **certifikačních autorit** složky. V části **důvěryhodných kořenových certifikačních autorit** složky, klikněte pravým tlačítkem na **certifikáty** složku, přejděte na příkaz **všechny úkoly**a potom klikněte na tlačítko **Import** . Zadejte soubor exportovali v kroku.  
   

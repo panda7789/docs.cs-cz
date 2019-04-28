@@ -7,10 +7,10 @@ helpviewer_keywords:
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
 ms.openlocfilehash: e90280bf6673b21cfe4c8257f71dd0010cdd73a3
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703007"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
 `struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "Coords" místo.  

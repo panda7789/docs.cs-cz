@@ -4,11 +4,11 @@ description: Informace o zpracování výjimek ve výrazech dotazů LINQ v jazyc
 ms.date: 12/01/2016
 ms.assetid: 2bf0c397-13fb-4f68-bc2b-531c6c88a167
 ms.openlocfilehash: f900669412026e69598d3939c51ff8208b51b7ec
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688498"
 ---
 # <a name="handle-exceptions-in-query-expressions"></a>Zpracování výjimek ve výrazech dotazů
 

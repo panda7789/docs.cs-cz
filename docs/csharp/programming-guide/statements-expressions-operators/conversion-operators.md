@@ -9,11 +9,11 @@ helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: c5ad73a3-d57b-4d2b-b4c9-24e3c2856efc
 ms.openlocfilehash: 539a554da2ea2f785a54bd7e5ff81d09b908c9e4
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61678605"
 ---
 # <a name="conversion-operators-c-programming-guide"></a>Operátory převodu (C# Programming Guide)
 
@@ -25,27 +25,27 @@ C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak,
 
  Operátory převodu mají následující vlastnosti:  
   
--   Převody deklarovány jako `implicit` automaticky provedou, když je povinný.  
+- Převody deklarovány jako `implicit` automaticky provedou, když je povinný.  
   
--   Převody deklarovány jako `explicit` vyžaduje přetypování, která se má volat.  
+- Převody deklarovány jako `explicit` vyžaduje přetypování, která se má volat.  
   
--   Musí být všechny převody deklarovány jako `static`.  
+- Musí být všechny převody deklarovány jako `static`.  
   
 ## <a name="related-sections"></a>Související oddíly
 
  Další informace:  
   
--   [Použití operátorů převodu](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)  
+- [Použití operátorů převodu](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)  
   
--   [Přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
+- [Přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
   
--   [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)  
+- [Postupy: Implementace uživatelem definovaných převodů mezi strukturami](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)  
   
--   [explicit](../../../csharp/language-reference/keywords/explicit.md)  
+- [explicit](../../../csharp/language-reference/keywords/explicit.md)  
   
--   [implicit](../../../csharp/language-reference/keywords/implicit.md)  
+- [implicit](../../../csharp/language-reference/keywords/implicit.md)  
   
--   [static](../../../csharp/language-reference/keywords/static.md)  
+- [static](../../../csharp/language-reference/keywords/static.md)  
   
 ## <a name="see-also"></a>Viz také:
 

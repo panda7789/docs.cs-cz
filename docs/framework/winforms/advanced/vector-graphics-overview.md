@@ -10,11 +10,11 @@ helpviewer_keywords:
 - graphics [Windows Forms], vector graphics
 ms.assetid: 0195df81-66be-452d-bb53-5a582ebfdc09
 ms.openlocfilehash: d424254839db6c403bafe779f475c0e344918a5e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087960"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748421"
 ---
 # <a name="vector-graphics-overview"></a>Přehled vektorové grafiky
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Nakreslí na systém souřadnic řádky, obdélníky a ostatním tvarům. Můžete si vybrat z celé řady souřadnicových systémů, ale výchozí souřadnicový systém má původ v levém horním rohu se osy x, přejdete na pravé straně a osy y směřující dolů. Je pixel je jednotka měření ve výchozím nastavení systém souřadnic.  
@@ -32,19 +32,19 @@ ms.locfileid: "59087960"
   
  V průběhu času určité základní stavební bloky ukázaly být zvláště užitečná pro vytváření dvojrozměrné obrázků. Tyto stavební bloky, které jsou podporovány produktem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], jsou uvedeny v následujícím seznamu:  
   
--   řádky  
+- řádky  
   
--   Obdélníků  
+- Obdélníků  
   
--   Symbol tří teček  
+- Symbol tří teček  
   
--   Oblouky  
+- Oblouky  
   
--   Mnohoúhelníky  
+- Mnohoúhelníky  
   
--   Základní křivky vyhlazení  
+- Základní křivky vyhlazení  
   
--   Bézierovy křivky  
+- Bézierovy křivky  
   
 ## <a name="methods-for-drawing-with-a-graphics-object"></a>Metody pro vykreslování s objektem grafiky  
  <xref:System.Drawing.Graphics> Třídy v [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje následující metody pro vytvoření položky v předchozím seznamu: <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawRectangle%2A>, <xref:System.Drawing.Graphics.DrawEllipse%2A>, <xref:System.Drawing.Graphics.DrawPolygon%2A>, <xref:System.Drawing.Graphics.DrawArc%2A>, <xref:System.Drawing.Graphics.DrawCurve%2A> (pro základní křivky vyhlazení), a <xref:System.Drawing.Graphics.DrawBezier%2A>. Každá z těchto metod je přetížena. To znamená jednotlivé metody podporují několik různých parametr seznamů. Například jeden varianta <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a čtyř celých čísel při další variantou <xref:System.Drawing.Graphics.DrawLine%2A> metoda přijímá <xref:System.Drawing.Pen> objektu a dva <xref:System.Drawing.Point> objekty.  

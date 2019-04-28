@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
 ms.openlocfilehash: 481774e9127531bb38df0cc71ac8e7eab76da695
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747054"
 ---
 # <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Postupy: Vytvoření vyhledávací tabulky s komponentou Windows Forms BindingSource
 Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data ze záznamů v související tabulce. V následujících postupech <xref:System.Windows.Forms.ComboBox> ovládacího prvku se používá k zobrazení pole relace cizího klíče z nadřazené do podřízené tabulky.  
@@ -37,13 +37,13 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
  Čtyři důležité vlastnosti jsou nastaveny na [ovládacího prvku ComboBox](combobox-control-windows-forms.md) ovládacího prvku k vytvoření vyhledávací tabulky.  
   
--   <xref:System.Windows.Forms.ComboBox.DataSource%2A> Vlastnosti obsahuje název tabulky.  
+- <xref:System.Windows.Forms.ComboBox.DataSource%2A> Vlastnosti obsahuje název tabulky.  
   
--   <xref:System.Windows.Forms.ListControl.DisplayMember%2A> Vlastnost obsahuje sloupce dat této tabulky, kterou chcete zobrazit pro ovládací prvek text (jméno zákazníka).  
+- <xref:System.Windows.Forms.ListControl.DisplayMember%2A> Vlastnost obsahuje sloupce dat této tabulky, kterou chcete zobrazit pro ovládací prvek text (jméno zákazníka).  
   
--   <xref:System.Windows.Forms.ListControl.ValueMember%2A> Vlastnost obsahuje sloupce dat této tabulky s uložené informace (číslo ID nadřazené tabulky).  
+- <xref:System.Windows.Forms.ListControl.ValueMember%2A> Vlastnost obsahuje sloupce dat této tabulky s uložené informace (číslo ID nadřazené tabulky).  
   
--   <xref:System.Windows.Forms.ListControl.SelectedValue%2A> Vlastnost obsahuje hodnotu vyhledávání pro podřízené tabulky, na základě <xref:System.Windows.Forms.ListControl.ValueMember%2A>.  
+- <xref:System.Windows.Forms.ListControl.SelectedValue%2A> Vlastnost obsahuje hodnotu vyhledávání pro podřízené tabulky, na základě <xref:System.Windows.Forms.ListControl.ValueMember%2A>.  
   
  Následující postupy ukazují, jak Rozvrhněte svůj formulář jako vyhledávací tabulky a vytvoření vazby dat k ovládacím prvkům v něm. Pro úspěšné dokončení procedury, musí mít zdroj dat s nadřazenými a podřízenými tabulkami, které existuje vztah cizího klíče, jak již bylo zmíněno dříve.  
   
@@ -65,21 +65,21 @@ Vyhledávací tabulka je tabulka dat, která má sloupec, který zobrazuje data 
   
 3. Klikněte na šipku vedle položky **zdroj dat** rozevíracího seznamu. Pokud zdroj dat byl dříve nakonfigurován pro projekt nebo formuláře, zobrazí se; v opačném případě proveďte následující kroky (Tento příklad používá tabulky Zákazníci a objednávky v ukázkové databázi Northwind a odkazuje na ně v závorkách).  
   
-    1.  Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
+    1. Klikněte na tlačítko **přidat zdroj dat projektu** vytvořit zdroj dat a připojte se k datům.  
   
-    2.  Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
+    2. Na **Průvodce konfigurací zdroje dat** úvodní stránka, klikněte na tlačítko **Další**.  
   
-    3.  Vyberte **databáze** na **zvolte typ zdroje dat** stránky.  
+    3. Vyberte **databáze** na **zvolte typ zdroje dat** stránky.  
   
-    4.  Vybrat datové připojení ze seznamu dostupných připojení na **vyberte datové připojení** stránky. Pokud požadované datové připojení není k dispozici, vyberte **nové připojení** k vytvoření nové datové připojení.  
+    4. Vybrat datové připojení ze seznamu dostupných připojení na **vyberte datové připojení** stránky. Pokud požadované datové připojení není k dispozici, vyberte **nové připojení** k vytvoření nové datové připojení.  
   
-    5.  Klikněte na tlačítko **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
+    5. Klikněte na tlačítko **Ano, uložit připojení** uložit připojovací řetězec do konfiguračního souboru aplikace.  
   
-    6.  Vyberte databázové objekty do vaší aplikace. V tomto případě vyberte tabulky nadřazené a podřízené tabulky (například Zákazníci a objednávky) se vztahu cizího klíče.  
+    6. Vyberte databázové objekty do vaší aplikace. V tomto případě vyberte tabulky nadřazené a podřízené tabulky (například Zákazníci a objednávky) se vztahu cizího klíče.  
   
-    7.  Nahraďte výchozí název datové sady, chcete-li.  
+    7. Nahraďte výchozí název datové sady, chcete-li.  
   
-    8.  Klikněte na tlačítko **Dokončit**.  
+    8. Klikněte na tlačítko **Dokončit**.  
   
 4. V **členem zobrazení** rozevíracího seznamu vyberte název sloupce (například jméno kontaktu) který se má zobrazit v poli se seznamem.  
   

@@ -3,11 +3,11 @@ title: Klasifikace standardních operátorů dotazu podle metody provedení (C#)
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
 ms.openlocfilehash: eaf0be4faee01e94b508b31bf878a537471750a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54711769"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702370"
 ---
 # <a name="classification-of-standard-query-operators-by-manner-of-execution-c"></a>Klasifikace standardních operátorů dotazu podle metody provedení (C#)
 LINQ na objekty implementace metody standardních dotazovacích operátorů provést dva hlavní způsoby: okamžité nebo odložené. Operátory dotazů, které používají odložené provedení lze dále rozdělit do dvou kategorií: vysílání datových proudů a jiných datových proudů. Pokud víte, jak provést operátory jiný dotaz, se vám můžou pomoct porozumět výsledky, které jste získali z daný dotaz. To je obzvláště hodnotu true, pokud zdroj dat se mění nebo vytváření dotazu na jiný dotaz. Toto téma klasifikuje podle jejich metody provedení standardních dotazovacích operátorů.  

@@ -3,11 +3,11 @@ title: Přehled třídy XDocument (C#)
 ms.date: 07/20/2015
 ms.assetid: 63305603-ab54-49fc-84e4-f76eecc59549
 ms.openlocfilehash: e3ef7d66cb9759bd71e69c1a0db3614a02f785b3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54604194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680610"
 ---
 # <a name="xdocument-class-overview-c"></a>Přehled třídy XDocument (C#)
 Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.  
@@ -22,15 +22,15 @@ Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.
 ## <a name="components-of-xdocument"></a>Součástí XDocument  
  <xref:System.Xml.Linq.XDocument> Může obsahovat následující prvky:  
   
--   Jeden <xref:System.Xml.Linq.XDeclaration> objektu. <xref:System.Xml.Linq.XDeclaration> Umožňuje určit, které jsou relevantní části deklarace XML: XML version, kódování dokumentu, a zda je samostatný dokumentu XML.  
+- Jeden <xref:System.Xml.Linq.XDeclaration> objektu. <xref:System.Xml.Linq.XDeclaration> Umožňuje určit, které jsou relevantní části deklarace XML: XML version, kódování dokumentu, a zda je samostatný dokumentu XML.  
   
--   Jeden <xref:System.Xml.Linq.XElement> objektu. Toto je kořenový uzel dokumentu XML.  
+- Jeden <xref:System.Xml.Linq.XElement> objektu. Toto je kořenový uzel dokumentu XML.  
   
--   Libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> objekty. Instrukce pro zpracování komunikuje informace k aplikaci, která zpracovává XML.  
+- Libovolný počet <xref:System.Xml.Linq.XProcessingInstruction> objekty. Instrukce pro zpracování komunikuje informace k aplikaci, která zpracovává XML.  
   
--   Libovolný počet <xref:System.Xml.Linq.XComment> objekty. Komentáře se na stejné úrovni jako kořenový element. <xref:System.Xml.Linq.XComment> Objektu nemůže být prvním argumentem v seznamu, protože není platný pro začínat komentář dokumentu XML.  
+- Libovolný počet <xref:System.Xml.Linq.XComment> objekty. Komentáře se na stejné úrovni jako kořenový element. <xref:System.Xml.Linq.XComment> Objektu nemůže být prvním argumentem v seznamu, protože není platný pro začínat komentář dokumentu XML.  
   
--   Jeden <xref:System.Xml.Linq.XDocumentType> pro DTD.  
+- Jeden <xref:System.Xml.Linq.XDocumentType> pro DTD.  
   
  Při serializaci <xref:System.Xml.Linq.XDocument>i v případě `XDocument.Declaration` je `null`, výstup bude mít deklarace XML, pokud má modul pro zápis `Writer.Settings.OmitXmlDeclaration` nastavena na `false` (výchozí).  
   

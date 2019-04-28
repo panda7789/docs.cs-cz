@@ -13,11 +13,11 @@ ms.assetid: 13509e73-db77-4645-8165-aad8dfaedff6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bad63bbc8e221f306e5807f51fbbb8eb4761d0fb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705477"
 ---
 # <a name="multifile-assemblies"></a>Vícesouborová sestavení
 
@@ -30,14 +30,14 @@ Předpokládejme například, že máte aplikaci, která obsahuje dva moduly kó
 
 Existuje několik důvodů, proč že můžete chtít vytvořit vícesouborové sestavení:
 
--   Kombinování modulů napsaných v různých jazycích. Toto je nejběžnějším důvodem pro vytvoření vícesouborového sestavení.
+- Kombinování modulů napsaných v různých jazycích. Toto je nejběžnějším důvodem pro vytvoření vícesouborového sestavení.
 
--   K optimalizaci stahování aplikace tak, že vložíte zřídka používané typy modulu, který se stáhne jenom v případě potřeby.
+- K optimalizaci stahování aplikace tak, že vložíte zřídka používané typy modulu, který se stáhne jenom v případě potřeby.
 
     > [!NOTE]
     > Pokud vytváříte aplikace, které budou staženy pomocí `<object>` značku Microsoft Internet Explorer, je důležité vytvořit vícesouborové sestavení. V tomto scénáři vytvoříte soubor odděleně od moduly kódu, které obsahuje manifest sestavení. Aplikace Internet Explorer nejprve stáhne manifest sestavení a pak vytvoří pracovních vláken pro stahování jakékoli další moduly nebo požadovaná sestavení. Při stažení souboru, který obsahuje manifest sestavení aplikace Internet Explorer bude reagovat na vstup uživatele. Čím menší soubor obsahující manifest sestavení, tím méně času aplikace Internet Explorer nebude reagovat.
 
--   Kombinovat kód modulů napsaných několik vývojáři. I když každý vývojář může každý modul kódu zkompilovat do sestavení, tato vynutí některé typy veřejně zpřístupní, které nejsou vystaveny, pokud všechny moduly jsou vloženy do vícesouborové sestavení.
+- Kombinovat kód modulů napsaných několik vývojáři. I když každý vývojář může každý modul kódu zkompilovat do sestavení, tato vynutí některé typy veřejně zpřístupní, které nejsou vystaveny, pokud všechny moduly jsou vloženy do vícesouborové sestavení.
 
 Po vytvoření sestavení lze podepsat soubor obsahující manifest sestavení (a tedy sestavení), nebo můžete poskytnout silného názvu souboru (a sestavení) a vložit ho do globální mezipaměti sestavení.
 

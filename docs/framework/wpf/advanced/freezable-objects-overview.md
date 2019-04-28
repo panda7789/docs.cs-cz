@@ -10,11 +10,11 @@ helpviewer_keywords:
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
 ms.openlocfilehash: 8df19e69ff3be06704878ea290a3f4a2997127eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703320"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.Freezable> objekty, které mají speciální funkcí, které může pomoct zlepšit výkon aplikace. Příklady zablokovatelných objektů: štětce, pera, transformace, geometrie a animace.  
@@ -63,11 +63,11 @@ Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.
   
  Freezable **nelze** zmrazit, pokud je splněna některá z následujících akcí:  
   
--   Má animovat nebo data vázané vlastnosti.  
+- Má animovat nebo data vázané vlastnosti.  
   
--   Obsahuje vlastnosti nastavit pomocí dynamického prostředku. (Najdete v článku [prostředky XAML](xaml-resources.md) Další informace o dynamické prostředků.)  
+- Obsahuje vlastnosti nastavit pomocí dynamického prostředku. (Najdete v článku [prostředky XAML](xaml-resources.md) Další informace o dynamické prostředků.)  
   
--   Obsahuje <xref:System.Windows.Freezable> podřízených objektů, které nelze zmrazit.  
+- Obsahuje <xref:System.Windows.Freezable> podřízených objektů, které nelze zmrazit.  
   
  Pokud jsou tyto podmínky hodnotu false a nemáte v úmyslu změnit <xref:System.Windows.Freezable>, pak by měl ukotvit to zlepší výkon popsané výše.  
   
@@ -122,13 +122,13 @@ mc:Ignorable="PresentationOptions"
 ## <a name="creating-your-own-freezable-class"></a>Vytváření vlastních freezable – třída  
  Třída, která je odvozena z <xref:System.Windows.Freezable> získá následující funkce.  
   
--   Speciální stavy: jen pro čtení (zmrazeno) a stavu pro zápis.  
+- Speciální stavy: jen pro čtení (zmrazeno) a stavu pro zápis.  
   
--   Bezpečnost vlákna: zmrazený <xref:System.Windows.Freezable> mohou být sdílena mezi vlákny.  
+- Bezpečnost vlákna: zmrazený <xref:System.Windows.Freezable> mohou být sdílena mezi vlákny.  
   
--   Oznámení o změně podrobné: Na rozdíl od jiných <xref:System.Windows.DependencyObject>s, Zablokovatelných objektů poskytují oznámení o změnách při změně hodnoty vlastnosti dílčí.  
+- Oznámení o změně podrobné: Na rozdíl od jiných <xref:System.Windows.DependencyObject>s, Zablokovatelných objektů poskytují oznámení o změnách při změně hodnoty vlastnosti dílčí.  
   
--   Snadné klonování: zablokovatelného objektu třídy již provedlo několik metod, které vytvářejí hloubkové duplicity.  
+- Snadné klonování: zablokovatelného objektu třídy již provedlo několik metod, které vytvářejí hloubkové duplicity.  
   
  A <xref:System.Windows.Freezable> je typ <xref:System.Windows.DependencyObject>a proto používá systém vlastnost závislosti. Vlastnosti vaší třídy nemusí být vlastnosti závislostí, ale pomocí vlastnosti závislosti se sníží množství kódu, je nutné zapsat, protože <xref:System.Windows.Freezable> třídy byla navržena s vlastností závislosti v úvahu. Další informace o systému vlastnost závislosti, najdete v článku [přehled vlastností závislosti](dependency-properties-overview.md).  
   
@@ -136,23 +136,23 @@ mc:Ignorable="PresentationOptions"
   
  Pokud vaše třída obsahuje vlastnosti bez závislosti datových členů, musí také přepsat následující metody:  
   
--   <xref:System.Windows.Freezable.CloneCore%2A>  
+- <xref:System.Windows.Freezable.CloneCore%2A>  
   
--   <xref:System.Windows.Freezable.CloneCurrentValueCore%2A>  
+- <xref:System.Windows.Freezable.CloneCurrentValueCore%2A>  
   
--   <xref:System.Windows.Freezable.GetAsFrozenCore%2A>  
+- <xref:System.Windows.Freezable.GetAsFrozenCore%2A>  
   
--   <xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A>  
+- <xref:System.Windows.Freezable.GetCurrentValueAsFrozenCore%2A>  
   
--   <xref:System.Windows.Freezable.FreezeCore%2A>  
+- <xref:System.Windows.Freezable.FreezeCore%2A>  
   
  Také musí odpovídat následujícím pravidlům pro přístup k a zápis do datových členů, které nejsou vlastnosti závislosti:  
   
--   Na začátku žádné [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] , který čte vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.ReadPreamble%2A> metody.  
+- Na začátku žádné [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] , který čte vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.ReadPreamble%2A> metody.  
   
--   Na začátku jakéhokoli rozhraní API, která zapisuje vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.WritePreamble%2A> metody. (Když jste volat <xref:System.Windows.Freezable.WritePreamble%2A> v [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], není nutné provést další volání do <xref:System.Windows.Freezable.ReadPreamble%2A> Pokud načtete vlastnost bez závislosti datové členy.)  
+- Na začátku jakéhokoli rozhraní API, která zapisuje vlastnost bez závislosti datové členy, zavolejte <xref:System.Windows.Freezable.WritePreamble%2A> metody. (Když jste volat <xref:System.Windows.Freezable.WritePreamble%2A> v [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], není nutné provést další volání do <xref:System.Windows.Freezable.ReadPreamble%2A> Pokud načtete vlastnost bez závislosti datové členy.)  
   
--   Volání <xref:System.Windows.Freezable.WritePostscript%2A> metoda před ukončením metody, které se zápis do vlastnosti bez závislosti datové členy.  
+- Volání <xref:System.Windows.Freezable.WritePostscript%2A> metoda před ukončením metody, které se zápis do vlastnosti bez závislosti datové členy.  
   
  Pokud vaše třída obsahuje závislost vlastnost datové členy, které jsou <xref:System.Windows.DependencyObject> objekty, musíte také zavolat <xref:System.Windows.Freezable.OnFreezablePropertyChanged%2A> metoda pokaždé, když změníte obsah některého z jejich hodnot, i v případě, že nastavujete člen `null`.  
   

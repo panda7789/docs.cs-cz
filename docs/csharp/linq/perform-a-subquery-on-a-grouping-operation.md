@@ -4,13 +4,13 @@ description: Jak k provádění poddotazů na operace seskupení pomocí jazyka 
 ms.date: 12/01/2016
 ms.assetid: d75a588e-9b6f-4f37-b195-f99ec8503855
 ms.openlocfilehash: a3757a7d358a310dd1404f85e34178f6e561bcb9
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688420"
 ---
-# <a name="perform-a-subquery-on-a-grouping-operation"></a>Provádění poddotazů na operace seskupení
+# <a name="perform-a-subquery-on-a-grouping-operation"></a>Provádění poddotazů na skupinách
 
 Tento článek popisuje dva různé způsoby vytvoření dotazu, který seřadí zdroj dat do skupin a potom provede poddotaz v každé skupině jednotlivě. Základní postup v obou příkladech je seskupení zdrojové prvky pomocí *pokračování* s názvem `newGroup`a potom generovat nové poddotaz proti `newGroup`. Tato poddotaz spustí pro každou novou skupinu, která se vytvořila vnější dotaz. Všimněte si, že v tomto konkrétním příkladu závěrečný výstup skupinu, ale plochý sekvence anonymních typů.  
   

@@ -3,11 +3,11 @@ title: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)'
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
 ms.openlocfilehash: a3e9cb29b9ba027cfc70eeb0cd163b24834dff83
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564104"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701824"
 ---
 # <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)
 Toto téma představuje rozšiřující metody, které vám umožní dotazovat stromu XML pomocí XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  

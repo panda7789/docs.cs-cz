@@ -3,11 +3,11 @@ title: Přehled LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
 ms.openlocfilehash: 0ae7b226f4fef0aeec895b0b908711a6edb13728
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701538"
 ---
 # <a name="linq-to-xml-overview-c"></a>Přehled LINQ to XML (C#)
 

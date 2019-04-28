@@ -3,11 +3,11 @@ title: Zpracování zpráv mimo pořadí
 ms.date: 03/30/2017
 ms.assetid: 33fc62a5-5d59-461c-a37a-0e1b51ac763d
 ms.openlocfilehash: 4e1864b25a4dbe8192cd5c692c75645bebbb92d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59141398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701239"
 ---
 # <a name="out-of-order-message-processing"></a>Zpracování zpráv mimo pořadí
 Služby pracovních postupů může záviset na zprávy odesílané v určitém pořadí. Služba pracovního postupu obsahuje jeden nebo více <xref:System.ServiceModel.Activities.Receive> aktivity a každý <xref:System.ServiceModel.Activities.Receive> aktivity očekává konkrétní zprávu. Zprávy od klientů může bez záruky doručení konkrétní přenos, zpoždění a proto doručeny v pořadí, které nemusí očekávají služby pracovního postupu. Implementace služby pracovního postupu, který nevyžaduje zprávy odeslané v konkrétní pořadí se obvykle provádí pomocí paralelní aktivity. Pro složitější aplikační protokol pracovní postup by se mohla stát velmi složité velmi rychle.  Funkce ve Windows Communication Foundation (WCF) zpracování zpráv mimo pořadí umožňuje vytvořit pracovní postup, bez složitosti vnořené paralelní aktivity. Zpracování zpráv mimo pořadí je podporována pouze na kanály, které podporují <xref:System.ServiceModel.Channels.ReceiveContext> jako jsou třeba vazby služby MSMQ WCF.  

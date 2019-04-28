@@ -3,11 +3,11 @@ title: Úvod do C# – Seznamte se s nástroje pro vývoj
 description: Tento článek obsahuje základní informace o nástroji budete používat pro vývoj C# a aplikací .NET na svém počítači.
 ms.date: 10/23/2018
 ms.openlocfilehash: db0b3228272a17feaa11ec754fa0aa4952a0d1ee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58920659"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706231"
 ---
 # <a name="become-familiar-with-the-net-development-tools"></a>Seznamte se s nástroje pro vývoj .NET
 

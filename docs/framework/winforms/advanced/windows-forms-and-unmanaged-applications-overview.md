@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Windows Forms, interop
 ms.assetid: 0a26d99d-8135-4895-8760-c9a2b5f67f14
 ms.openlocfilehash: 63631378911a9ba95713e68fb19d8d08176c7562
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748173"
 ---
 # <a name="windows-forms-and-unmanaged-applications-overview"></a>Windows Forms a přehled nespravovaných aplikací
 Aplikace Windows Forms a ovládacích prvků můžete spolupracovat s nespravované aplikace, se některé upozornění. Následující části popisují scénáře a konfigurace, které podporují aplikace a ovládací prvky Windows Forms a ty, které nepodporují.  
@@ -51,9 +51,9 @@ Aplikace Windows Forms a ovládacích prvků můžete spolupracovat s nespravova
   
  Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte ho spustit na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
   
--   Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [jak: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
+- Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [jak: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
   
--   Každý formulář Windows pro zobrazení v novém vláknu. Další informace najdete v tématu [jak: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
+- Každý formulář Windows pro zobrazení v novém vláknu. Další informace najdete v tématu [jak: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
   
 ## <a name="see-also"></a>Viz také:
 

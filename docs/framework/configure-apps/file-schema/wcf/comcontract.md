@@ -3,11 +3,11 @@ title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
 ms.openlocfilehash: 8694f83a731363f83cb09de43214eb4b211ef5ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59145064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61704281"
 ---
 # <a name="comcontract"></a>\<comContract>
 Určuje kontrakt služby integrace modelu COM +.  
@@ -90,7 +90,6 @@ Určuje kontrakt služby integrace modelu COM +.
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElement>
 - [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)

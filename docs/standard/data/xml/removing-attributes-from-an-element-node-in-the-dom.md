@@ -6,11 +6,11 @@ ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0e38ad777112e5e88fe40c530da6107d0de0e3ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698717"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Odebrání atributů z uzlu elementu v modelu DOM
 Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kolekce atributu. K tomuto účelu se provádí následující kroky:  
@@ -19,19 +19,19 @@ Existuje mnoho způsobů, jak odebrat atributy. Jednou z metod je odebrat z kole
   
 2. Odeberte atribut z kolekce atributů pomocí jedné ze tří metod:  
   
-    -   Použití <xref:System.Xml.XmlAttributeCollection.Remove%2A> odebrat konkrétní atribut.  
+    - Použití <xref:System.Xml.XmlAttributeCollection.Remove%2A> odebrat konkrétní atribut.  
   
-    -   Použití <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> odebrat všechny atributy z kolekce a nechte elementu žádné atributy.  
+    - Použití <xref:System.Xml.XmlAttributeCollection.RemoveAll%2A> odebrat všechny atributy z kolekce a nechte elementu žádné atributy.  
   
-    -   Použití <xref:System.Xml.XmlAttributeCollection.RemoveAt%2A> odebrat atribut z kolekce atributů pomocí jeho indexové číslo.  
+    - Použití <xref:System.Xml.XmlAttributeCollection.RemoveAt%2A> odebrat atribut z kolekce atributů pomocí jeho indexové číslo.  
   
  Následující metody odebrání atributů z uzlu elementu.  
   
--   Použití <xref:System.Xml.XmlElement.RemoveAllAttributes%2A> odebrat kolekci atributů.  
+- Použití <xref:System.Xml.XmlElement.RemoveAllAttributes%2A> odebrat kolekci atributů.  
   
--   Použití <xref:System.Xml.XmlElement.RemoveAttribute%2A> odebrat jeden atribut podle názvu z kolekce.  
+- Použití <xref:System.Xml.XmlElement.RemoveAttribute%2A> odebrat jeden atribut podle názvu z kolekce.  
   
--   Použití <xref:System.Xml.XmlElement.RemoveAttributeAt%2A> odebrat jeden atribut číslem indexu z kolekce.  
+- Použití <xref:System.Xml.XmlElement.RemoveAttributeAt%2A> odebrat jeden atribut číslem indexu z kolekce.  
   
  Jeden další alternativou je načíst prvek, získat atribut z kolekce atributů a odebrat uzel atributu přímo. Pokud chcete získat atribut z kolekce atributů, můžete použít název, `XmlAttribute attr = attrs["attr_name"];`, index `XmlAttribute attr = attrs[0];`, nebo plně kvalifikovaný název s oborem názvů `XmlAttribute attr = attrs["attr_localName", "attr_namespace"]`.  
   

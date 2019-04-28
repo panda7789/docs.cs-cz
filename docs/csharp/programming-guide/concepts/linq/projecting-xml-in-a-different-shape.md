@@ -3,11 +3,11 @@ title: Projektování XML v odlišném tvaru (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
 ms.openlocfilehash: 381d674c420128f75d27394c21a7b622b2d78402
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54723781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61681686"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>Projektování XML v odlišném tvaru (C#)
 Toto téma ukazuje příklad projekci XML, který je v odlišném tvaru než zdrojového kódu XML.  
@@ -233,7 +233,7 @@ class Program
 ## <a name="next-steps"></a>Další kroky  
  V následujícím příkladu budete dotazovat najít veškerý text ve Wordovém dokumentu:  
   
--   [Hledání textu v dokumentech aplikace Word (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+- [Hledání textu v dokumentech aplikace Word (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
 ## <a name="see-also"></a>Viz také:
 

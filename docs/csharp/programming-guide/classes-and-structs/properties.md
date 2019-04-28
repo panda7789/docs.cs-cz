@@ -12,8 +12,8 @@ ms.openlocfilehash: 260c9e362281ba7996dc834ab47d7beb2755b636
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703488"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -60,15 +60,15 @@ Pokud je vlastnost i `get` a `set` přístupový objekt, musí být automaticky 
 
 ## <a name="related-sections"></a>Související oddíly  
   
--   [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
   
--   [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
+- [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
   
--   [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
+- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
   
--   [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
+- [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
--   [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
+- [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 

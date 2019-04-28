@@ -15,26 +15,26 @@ helpviewer_keywords:
 - MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
 ms.openlocfilehash: 62e137df53d06f5aedb2701b5727c25e52f35614
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759882"
 ---
 # <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Návod: Vytvoření formuláře MDI s ovládacími prvky Menu Merging a ToolStrip
 <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů podporuje více dokumentů aplikace (MDI interface) a <xref:System.Windows.Forms.MenuStrip> ovládací prvek podporuje slučování nabídek. MDI formuláře můžete také <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
   
  Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků formuláře MDI. Formulář podporuje také s nabídkami podřízené slučováním nabídek. Tyto úlohy jsou uvedené v tomto návodu:  
   
--   Vytvoření projektu Windows Forms.  
+- Vytvoření projektu Windows Forms.  
   
--   Vytvoření hlavní nabídky pro formulář. Skutečný název nabídky se liší.  
+- Vytvoření hlavní nabídky pro formulář. Skutečný název nabídky se liší.  
   
--   Přidávání <xref:System.Windows.Forms.ToolStripPanel> ovládací prvek **nástrojů**.  
+- Přidávání <xref:System.Windows.Forms.ToolStripPanel> ovládací prvek **nástrojů**.  
   
--   Vytváří se podřízený formulář.  
+- Vytváří se podřízený formulář.  
   
--   Uspořádání <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky podle pořadí vykreslování.  
+- Uspořádání <xref:System.Windows.Forms.ToolStripPanel> ovládací prvky podle pořadí vykreslování.  
   
  Až budete hotovi, budete mít formuláře MDI, která podporuje menu merging a přesouvatelných <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
   
@@ -46,7 +46,7 @@ ms.locfileid: "59319063"
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat:  
   
--   Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.  
+- Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu a nastavení formuláře.  
@@ -198,11 +198,11 @@ ms.locfileid: "59319063"
 ## <a name="next-steps"></a>Další kroky  
  V tomto návodu vytvoříte nadřazené formuláře MDI s <xref:System.Windows.Forms.ToolStrip> ovládací prvky a slučování nabídek. Můžete použít <xref:System.Windows.Forms.ToolStrip> řady ovládacích prvků pro mnoho dalších důvodů:  
   
--   Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](contextmenu-component-overview-windows-forms.md).  
+- Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](contextmenu-component-overview-windows-forms.md).  
   
--   Vytvoření formuláře se automaticky vyplněná standardní nabídky. Další informace najdete v tématu [názorný postup: Poskytnutí standardních položek nabídky formuláři](walkthrough-providing-standard-menu-items-to-a-form.md).  
+- Vytvoření formuláře se automaticky vyplněná standardní nabídky. Další informace najdete v tématu [názorný postup: Poskytnutí standardních položek nabídky formuláři](walkthrough-providing-standard-menu-items-to-a-form.md).  
   
--   Zadejte vaše <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled. Další informace najdete v tématu [jak: Nastavení vykreslovacího modulu prvku ToolStrip pro aplikaci](how-to-set-the-toolstrip-renderer-for-an-application.md).  
+- Zadejte vaše <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled. Další informace najdete v tématu [jak: Nastavení vykreslovacího modulu prvku ToolStrip pro aplikaci](how-to-set-the-toolstrip-renderer-for-an-application.md).  
   
 ## <a name="see-also"></a>Viz také:
 

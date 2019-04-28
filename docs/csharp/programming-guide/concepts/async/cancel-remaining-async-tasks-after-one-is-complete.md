@@ -3,11 +3,11 @@ title: Zrušení zbývajících asynchronních úloh po dokončení (C#) jedné 
 ms.date: 07/20/2015
 ms.assetid: d3cebc74-c392-497b-b1e6-62a262eabe05
 ms.openlocfilehash: baf757f7f7a71528dd5dc36b0f807eb452577a38
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702721"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>Zrušení zbývajících asynchronních úloh po dokončení (C#) jedné z nich
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metoda spolu s <xref:System.Threading.CancellationToken>, můžete po dokončení jednoho úkolu zrušit všechny zbývající úkoly. `WhenAny` Metoda přebírá argument, který je kolekce úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena po dokončení libovolné úlohy v kolekci.  

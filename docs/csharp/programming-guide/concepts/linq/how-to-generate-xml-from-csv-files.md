@@ -3,11 +3,11 @@ title: 'Postupy: Generování XML ze souborů CSV (C#)'
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
 ms.openlocfilehash: 769cc6c2ca8f4c05c46a0054eaccccfe3911a74c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54605783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702448"
 ---
 # <a name="how-to-generate-xml-from-csv-files-c"></a>Postupy: Generování XML ze souborů CSV (C#)
 Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).  

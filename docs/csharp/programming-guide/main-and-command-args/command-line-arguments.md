@@ -6,11 +6,11 @@ helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
 ms.openlocfilehash: 05978c5604e7aa359b016bd6e3f3196178f706ec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332206"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709975"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  

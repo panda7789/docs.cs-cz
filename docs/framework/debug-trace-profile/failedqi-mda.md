@@ -11,11 +11,11 @@ ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0ac478644561d2aab13d10811987d8d02c8d7608
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754723"
 ---
 # <a name="failedqi-mda"></a>failedQI – pomocník spravovaného ladění (MDA)
 `failedQI` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul runtime volá `QueryInterface` na ukazatele rozhraní modelu COM jménem obálka volatelná aplikacemi běhu (RCW) a `QueryInterface` volání selže.  
@@ -25,11 +25,11 @@ ms.locfileid: "59217624"
   
 ## <a name="cause"></a>Příčina  
   
--   Při volání z nesprávného kontextu.  
+- Při volání z nesprávného kontextu.  
   
--   Registrovaný server proxy se nedaří `QueryInterface` volat, protože došlo k pokusu o volání v chybném kontextu.  
+- Registrovaný server proxy se nedaří `QueryInterface` volat, protože došlo k pokusu o volání v chybném kontextu.  
   
--   Proxy služby vlastnictví OLE vrátí selhání hodnoty HRESULT.  
+- Proxy služby vlastnictví OLE vrátí selhání hodnoty HRESULT.  
   
 ## <a name="resolution"></a>Řešení  
  Pravidla modelu COM naleznete v dokumentaci MSDN.  

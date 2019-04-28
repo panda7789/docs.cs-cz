@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9483cf8671b7d3ad5430081d93925af30b3d8368
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59215682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765151"
 ---
 # <a name="runtimeinfoflags-enumeration"></a>RUNTIME_INFO_FLAGS – výčet
 Obsahuje hodnoty, které označují, jaké informace o common language runtime (CLR) má být vrácen.  
@@ -59,11 +59,11 @@ typedef enum {
 ## <a name="remarks"></a>Poznámky  
  Následující příznaky Architektura platformy může být zadaný jenom jeden po druhém a nelze kombinovat:  
   
--   RUNTIME_INFO_REQUEST_IA64  
+- RUNTIME_INFO_REQUEST_IA64  
   
--   RUNTIME_INFO_REQUEST_AMD64  
+- RUNTIME_INFO_REQUEST_AMD64  
   
--   RUNTIME_INFO_REQUEST_X86  
+- RUNTIME_INFO_REQUEST_X86  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - hierarchical structure [WPF], TreeView control
 ms.assetid: 805c235c-0a0e-4e34-8d96-9dc3865cf2df
 ms.openlocfilehash: b353b413f7486990b6dd8ae5126809b27590ae3c
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761333"
 ---
 # <a name="treeview"></a>TreeView
 <xref:System.Windows.Controls.TreeView> Ovládací prvek zobrazí informace v hierarchické struktuře s použitím sbalitelné uzly.  

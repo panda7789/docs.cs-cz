@@ -11,22 +11,22 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
 ms.openlocfilehash: 5928478518b0bc1eb498381567d52d5ddba4d8b7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702435"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načítání dat Je také výkonné nástroje pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence, stejně jako vstup a upravit v mnoha způsoby, jak vytvořit nové pořadí výstupu. Můžete změnit pořadí samotné beze změny samotné prvky řazení a seskupení. Ale možná procesorově nejvýkonnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzuli. Například můžete provádět následující úlohy:  
   
--   Na jednu výstupní sekvenci, která má nový typ sloučení více vstupních sekvencí.  
+- Na jednu výstupní sekvenci, která má nový typ sloučení více vstupních sekvencí.  
   
--   Vytvoření výstupní sekvence, jehož prvky jsou tvořeny pouze jednu nebo několik vlastností jednotlivých prvků ve zdrojové sekvenci.  
+- Vytvoření výstupní sekvence, jehož prvky jsou tvořeny pouze jednu nebo několik vlastností jednotlivých prvků ve zdrojové sekvenci.  
   
--   Výstup pořadí, jehož prvky jsou tvořeny výsledky operace provedené na zdroj dat vytvořte.  
+- Výstup pořadí, jehož prvky jsou tvořeny výsledky operace provedené na zdroj dat vytvořte.  
   
--   Vytváření pořadí výstup do jiného formátu. Například můžete transformovat data z SQL řádků nebo textové soubory do souboru XML.  
+- Vytváření pořadí výstup do jiného formátu. Například můžete transformovat data z SQL řádků nebo textové soubory do souboru XML.  
   
  Toto jsou jen několik příkladů. Samozřejmě tyto transformace zkombinovat ve stejném dotazu různými způsoby. Kromě toho výstup posloupnost jeden dotaz slouží jako vstupní sekvence pro nový dotaz.  
   

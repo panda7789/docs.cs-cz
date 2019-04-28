@@ -3,11 +3,11 @@ title: 'Postupy: Vytváření sjednocení C / C++ pomocí atributů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
 ms.openlocfilehash: a8b902536cd09ac732bf2144536605a66b5bbc56
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703059"
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postupy: Vytváření sjednocení C/C++ pomocí atributů (C#)
 Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  

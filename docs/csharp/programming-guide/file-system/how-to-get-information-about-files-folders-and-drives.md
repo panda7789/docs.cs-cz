@@ -6,24 +6,24 @@ helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
 ms.openlocfilehash: e2315f5bfdca05da79e5ee4d897cd06dba6f1ed1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56966161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61681218"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Postupy: Získání informací o souborech, složkách a jednotkách (C# Průvodce programováním v)
 Informace o systému souborů v rozhraní .NET Framework, přístupné pomocí následující třídy:  
   
--   <xref:System.IO.FileInfo?displayProperty=nameWithType>  
+- <xref:System.IO.FileInfo?displayProperty=nameWithType>  
   
--   <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>  
+- <xref:System.IO.DirectoryInfo?displayProperty=nameWithType>  
   
--   <xref:System.IO.DriveInfo?displayProperty=nameWithType>  
+- <xref:System.IO.DriveInfo?displayProperty=nameWithType>  
   
--   <xref:System.IO.Directory?displayProperty=nameWithType>  
+- <xref:System.IO.Directory?displayProperty=nameWithType>  
   
--   <xref:System.IO.File?displayProperty=nameWithType>  
+- <xref:System.IO.File?displayProperty=nameWithType>  
   
  <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo> třídy představují soubor nebo adresář a obsahovat vlastnosti, které vystavit hodně atributů souborů, které jsou podporovány v systému souborů NTFS. Také obsahují metody pro otevření, zavření, přesunutí nebo odstranění souborů a složek. Instance těchto tříd můžete vytvořit tím, že předáte řetězec představující název souboru, složce nebo jednotce v konstruktoru:  
   
@@ -43,13 +43,13 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
 ## <a name="robust-programming"></a>Robustní programování  
  Při zpracování řetězce zadaného uživatelem cesty by měl také zpracování výjimek byly splněny následující podmínky:  
   
--   Název souboru je poškozený. Například obsahuje neplatné znaky nebo pouze prázdné znaky.  
+- Název souboru je poškozený. Například obsahuje neplatné znaky nebo pouze prázdné znaky.  
   
--   Název souboru má hodnotu null.  
+- Název souboru má hodnotu null.  
   
--   Název souboru je delší než maximální délka definovaná systémem.  
+- Název souboru je delší než maximální délka definovaná systémem.  
   
--   Název souboru obsahuje dvojtečku (:).  
+- Název souboru obsahuje dvojtečku (:).  
   
  Pokud aplikace nemá dostatečná oprávnění ke čtení zadaného souboru `Exists` vrátí metoda `false` bez ohledu na to, zda cesta existuje, metoda nevyvolá výjimku.  
   

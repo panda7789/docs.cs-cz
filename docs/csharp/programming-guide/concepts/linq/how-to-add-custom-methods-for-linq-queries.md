@@ -3,11 +3,11 @@ title: 'Postupy: Přidávání vlastních metod do dotazů LINQ (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
 ms.openlocfilehash: 5aca346c182d63967f02a7f5444c5fd6d86ae3d1
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702227"
 ---
 # <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Postupy: Přidávání vlastních metod do dotazů LINQ (C#)
 

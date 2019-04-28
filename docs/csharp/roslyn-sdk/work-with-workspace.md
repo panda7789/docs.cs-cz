@@ -1,43 +1,43 @@
 ---
-title: Práce s modelu SDK pro platformu .NET kompilátoru pracovního prostoru.
-description: Tento přehled poskytuje představu o typ, který používáte pro dotazování a zpracování pracovního prostoru a projektů pro váš kód.
+title: Pracovat s modelu sada SDK platformy kompilátoru .NET pracovního prostoru.
+description: V tomto přehledu znalost typu, který používáte k dotazování a manipulaci s pracovních prostorů a projektů pro váš kód.
 ms.date: 10/15/2017
 ms.custom: mvc
 ms.openlocfilehash: 7d450b31cbf2c83c79552d1ace3a1ae692bfdd88
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706505"
 ---
-# <a name="work-with-a-workspace"></a>Práce s pracovním prostoru
+# <a name="work-with-a-workspace"></a>Práce s pracovním prostorem
 
-**Pracovních prostorů** vrstvy je výchozím bodem pro provádění analýzy kódu a refaktoring přes celé řešení. V této vrstvě rozhraní API prostoru vám usnadní uspořádání všechny informace o projekty v řešení do jednoho objektu modelu, nabídky můžete přímý přístup k kompilátoru vrstvy objektové modely jako zdrojový text, syntaxe stromy, sémantických modelů a kompilace bez nutnosti analyzovat souborů, nakonfigurujte možnosti nebo spravovat závislosti mezi projektu. 
+**Pracovní prostory** vrstva je výchozím bodem pro provedení analýzy kódu a refaktoring přes celé řešení. V rámci této vrstvy rozhraní API pro pracovní prostor vám pomůže v uspořádání do jednoho objektu modelu, všechny informace o projekty v řešení nabízející přímý přístup do kompilátoru vrstvy objektové modely jako zdrojový text, stromové struktury syntaxe, sémantickým modelům a kompilace, aniž by bylo nutné analyzovat soubory, konfigurovat možnosti ani spravovat závislostí mezi projekty. 
 
-Hostitelská prostředí IDE, jako je poskytnout pracovního prostoru vám odpovídající otevřete řešení. Je také možné použít tento model mimo IDE jednoduše načtením soubor řešení.
+Hostitelská prostředí, jako je integrované vývojové prostředí, zadejte pracovní prostor můžete otevřít řešení odpovídající. Je také možné použít tento model mimo integrované vývojové prostředí podle jednoduše načítání souboru řešení.
 
 ## <a name="workspace"></a>Pracovní prostor
 
-Pracovní prostor je aktivní reprezentace řešení jako kolekce projektů, každý s kolekci dokumentů. Pracovní prostor je obvykle svázané do prostředí hostitele, který se neustále mění jako typy uživatelů nebo manipuluje s vlastností. 
+Pracovní prostor je aktivní reprezentace vašeho řešení jako kolekce projektů, každý s kolekcí dokumentů. Pracovní prostor je obvykle vázán na hostitele prostředí, které se neustále mění jako typy uživatelů nebo provádí úpravy vlastnosti. 
 
-<xref:Microsoft.CodeAnalysis.Workspace> Poskytuje přístup k aktuální model řešení. Když dojde ke změně v hostitelském prostředí, aktivuje se v pracovním prostoru odpovídající události a <xref:Microsoft.CodeAnalysis.Workspace.CurrentSolution?displayProperty=nameWithType> vlastnosti. Například když typy uživatelů v textovém editoru odpovídající jedné zdrojové dokumenty, pracovním prostoru používá událost signál, že došlo ke změně celkové model řešení a který dokument byla změněna. Můžete se pak reagovat na tyto změny analýza nový model správnost, zvýraznění oblasti násobek nebo provádění návrhy pro změny kódu. 
+<xref:Microsoft.CodeAnalysis.Workspace> Poskytuje přístup k aktuální model řešení. Když dojde ke změně v hostitelském prostředí, aktivuje se v pracovním prostoru odpovídající události a <xref:Microsoft.CodeAnalysis.Workspace.CurrentSolution?displayProperty=nameWithType> vlastnost aktualizovat. Například když uživatelských typů v textovém editoru odpovídá jedné zdrojové dokumenty, pracovní prostor používá událost na signál, že došlo ke změně celkový model řešení a který dokument byla změněna. Potom můžete reagovat na tyto změny analýza nový model správnost, oblasti významu nebo zajištěním, návrh na změny kódu. 
 
-Můžete také vytvořit samostatné pracovní prostory, které budou odpojen od hostitelské prostředí nebo používat v aplikaci, která nemá žádné hostitelském prostředí.
+Můžete také vytvořit samostatný pracovní prostory, které jsou odpojené od hostitelského prostředí nebo použít v aplikaci, která nemá žádné hostitelského prostředí.
 
 ## <a name="solutions-projects-documents"></a>Řešení, projekty, dokumenty
 
-I když pracovního prostoru může změnit pokaždé, když stisknutí klávesy, můžete pracovat s modelem řešení v izolaci. 
+I když pracovní prostor může změnit pokaždé, když se stiskne klávesa, můžete pracovat s modelem řešení v izolaci. 
 
-Řešení je neměnné model projektů a dokumenty. To znamená, že modelu je možné sdílet bez zamknutí nebo duplicita. Po obdržení instance řešení z <xref:Microsoft.CodeAnalysis.Workspace.CurrentSolution?displayProperty=nameWithType> vlastnost, tato instance bude nikdy nezmění. Však jako s stromy syntaxe a kompilace, můžete upravit řešení vytvořením nové instance na základě existující řešení a konkrétní změny. Potřebujete pracovní prostor, aby se projevily provedené změny, je nutné explicitně použít změněné řešení zpět do pracovního prostoru.
+Řešení je neměnný modelu projektů a dokumenty. To znamená, že model lze sdílet bez uzamčení nebo duplicity. Po obdržení instanci řešení z <xref:Microsoft.CodeAnalysis.Workspace.CurrentSolution?displayProperty=nameWithType> vlastnost, instance se nikdy nezmění. Však stejně jako s stromové struktury syntaxe a kompilace, můžete upravit řešení tak, že vytváří nové instance na základě stávajících řešení a konkrétní změny. Získat pracovní prostor tak, aby odrážely změny, musíte explicitně použít změněné řešení zpět do pracovního prostoru.
 
-Projekt je součástí modelu celkové neměnné řešení. Reprezentuje všechny dokumenty zdrojového kódu, analýzu a kompilaci možnosti a jak sestavení a odkazy na projekt na projekt. Z projektu dostanete odpovídající kompilace bez nutnosti k určení závislosti projektu nebo analyzovat žádné zdrojové soubory.
+Projekt je součástí modelu celkové neměnné řešení. Představuje všechny dokumenty zdrojového kódu, analýzy a kompilace možnosti a jak sestavení a odkazy typu projekt projekt. Z projektu můžete přistupovat odpovídající kompilace, aniž by bylo nutné určit závislosti projektu nebo parsovat žádné zdrojové soubory.
 
-Dokument je také součástí modelu celkové neměnné řešení. Dokument představuje jeden zdrojový soubor, ze kterého můžete přístup textového souboru, ke stromu syntaxe a sémantického modelu.
+Dokument je také součástí modelu celkové neměnné řešení. Dokument představuje jeden zdrojový soubor, ze kterého přistupujete textového souboru, stromu syntaxe a sémantického modelu.
 
-Na následujícím diagramu je reprezentace jak pracovním prostoru souvisí s hostiteli prostředí, nástroje a jak jsou vytvářeny úpravy.
+V následujícím diagramu je reprezentace jak pracovní prostor má vztah k hostiteli prostředí, nástrojů a jak jsou provedeny změny.
 
 ![vztahy mezi různé prvky pracovního prostoru obsahující projekty a zdrojové soubory](media/work-with-workspace/workspace-obj-relations.png)
 
 ## <a name="summary"></a>Souhrn
 
-Roslyn zveřejňuje sadu kompilátoru rozhraní API a rozhraní API pracovních prostorů, nabízí bohaté informace o zdrojovém kódu, který má úplný věrnosti s C# a Visual Basic jazyky.  .NET SDK platformy kompilátoru výrazně snižuje překážku vstupu pro vytvoření zaměřené na kód nástrojů a aplikací. Vytvoří mnoho příležitosti pro inovace v oblastech, jako např. meta-programovací generování kódu a transformace, interaktivní použít jazyky C# a VB a vložení jazyka C# a VB v jazycích konkrétní domény.  
+Roslyn zveřejňuje sadu kompilátoru rozhraní API a rozhraní API pracovní prostory, které poskytuje podrobné informace o zdrojovém kódu, který má s plnou věrností C# a jazyky Visual Basic.  Sada SDK platformy kompilátoru .NET výrazně snižuje překážku položku pro vytvoření zaměřený na kód nástroje a aplikace. Vytvoří řadu příležitostí pro inovace v oblasti, jako je meta programování, generování kódu a transformace, interaktivní pomocí jazyků C# a VB a vkládání C# a VB v jazycích specifické domény.  

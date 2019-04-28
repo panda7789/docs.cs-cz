@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b3faffbf9dc85c563dac84fc2e4e4d849db5d42d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61700758"
 ---
 # <a name="icorthreadpoolcorbindiocompletioncallback-method"></a>ICorThreadpool::CorBindIoCompletionCallback – metoda
 Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  

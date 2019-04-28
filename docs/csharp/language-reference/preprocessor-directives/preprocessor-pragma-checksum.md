@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
 ms.openlocfilehash: ec215517cd667a6333137d0c7e51fe2ac58f5bcf
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57499822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688525"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma – kontrolní součet (Referenční dokumentace jazyka C#)
 Generuje kontrolní součty zdrojových souborů, které vám pomůže s laděním [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] stránky.  

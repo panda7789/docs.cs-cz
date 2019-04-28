@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Visual Basic code, conventions
 ms.assetid: 1916cd81-ea9d-4faa-81f7-4a0d864b60f4
 ms.openlocfilehash: 3255dff8268cd5500a1244716f37bf30f5b43cfb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698600"
 ---
 # <a name="typographic-and-code-conventions-visual-basic"></a>Typografická pravidla a pravidla vytváření kódu (Visual Basic)
 Dokumentace jazyka Visual Basic používá následující typografickém a pravidla týkající se kódu.  

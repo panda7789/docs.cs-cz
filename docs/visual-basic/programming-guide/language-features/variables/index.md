@@ -6,11 +6,11 @@ helpviewer_keywords:
 - values [Visual Basic], storing
 ms.assetid: 4cfaa06d-4ae3-4307-897b-cf599dc24caa
 ms.openlocfilehash: 9a39c53ea2d57bca379297897d6d4d1b9f7a1a9f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756608"
 ---
 # <a name="variables-in-visual-basic"></a>Proměnné v jazyce Visual Basic
 Často nutné pro ukládání hodnot při provádění výpočtů s jazykem Visual Basic. Můžete například výpočet několik hodnot, jejich porovnání a provádět s nimi, různé operace na základě výsledku porovnání. Je nutné zachovat hodnoty, pokud chcete porovnat.  

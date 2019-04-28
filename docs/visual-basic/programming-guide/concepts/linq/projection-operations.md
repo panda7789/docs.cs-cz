@@ -3,11 +3,11 @@ title: Operace projekce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
 ms.openlocfilehash: e2af45f9cbbed9eb88095a30e2b77a7730740898
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820981"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766686"
 ---
 # <a name="projection-operations-visual-basic"></a>Operace projekce (Visual Basic)
 Projekce odkazuje na operace transformace objektu na nový formulář, který často se skládá pouze z těchto vlastností, které se následně použijí. S použitím projekce, můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete vlastnosti projektu a provádění matematických funkcí na něj. Můžete také promítnout na původní objekt bez provedení změn.  

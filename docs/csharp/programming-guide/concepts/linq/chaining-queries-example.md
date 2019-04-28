@@ -3,11 +3,11 @@ title: Příklad řetězení dotazů (C#)
 ms.date: 07/20/2015
 ms.assetid: abbca162-d95e-43af-b92c-e46e6aa2540e
 ms.openlocfilehash: b77de6b1e5bd81ac70165640aecf0d4ce89be03d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54677345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702630"
 ---
 # <a name="chaining-queries-example-c"></a>Příklad řetězení dotazů (C#)
 Tento příklad vychází z předchozího příkladu a ukazuje, co se stane, když je řetězec společně dva dotazy, které obě používají odložené provedení a opožděné vyhodnocení.  
@@ -84,7 +84,7 @@ Main: str >GHI!!!<
   
  Další téma v tomto kurzu ukazuje přechodná materializace:  
   
--   [Přechodná Materializace (C#)](../../../../csharp/programming-guide/concepts/linq/intermediate-materialization.md)  
+- [Přechodná Materializace (C#)](../../../../csharp/programming-guide/concepts/linq/intermediate-materialization.md)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f4db24977d46277bc16a8800b0c4f7a550747cb9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61697391"
 ---
 # <a name="iassemblynamefinalize-method"></a>IAssemblyName::Finalize – metoda
 To umožňuje [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu k uvolnění prostředků a provádět jiné operace čištění před jeho destruktoru je volána.  

@@ -21,11 +21,11 @@ helpviewer_keywords:
 - ALT key
 ms.assetid: 4faa0991-28ec-4eca-91db-51dc2cd6a7ac
 ms.openlocfilehash: e6c829553163359301bad2cd896fc43562ee8069
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746810"
 ---
 # <a name="how-to-create-access-keys-for-windows-forms-controls"></a>Postupy: Vytváření přístupových klíčů pro ovládací prvky Windows Forms
 *Přístupový klíč* je znak podtržený text nabídky, položka nabídky nebo popisek ovládacích prvcích jako tlačítko. Přístupový klíč uživatel může "klikněte" tlačítko stisknutím klávesy ALT v kombinaci s předdefinovanou přístupový klíč. Například, pokud tlačítko spustí postup tisk formuláře a proto jeho `Text` je nastavena na "Print","Přidání ampersand před písmeno"P"způsobí, že písmeno"P", chcete-li být podtržený text tlačítka v době běhu. Uživatele můžete spustit příkaz přidružený k tlačítku stisknutím kombinace kláves ALT + P. Nemůžete mít přístupový klíč pro ovládací prvek, který nemůže získat fokus.  

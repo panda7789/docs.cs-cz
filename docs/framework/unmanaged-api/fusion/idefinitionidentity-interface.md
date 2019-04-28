@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4ff23330f307c10eac134048de39a6e19a67c75b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59192664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61697534"
 ---
 # <a name="idefinitionidentity-interface"></a>IDefinitionIdentity – rozhraní
 Představuje jedinečný podpis kódu, který definuje aplikaci v aktuálním oboru.  

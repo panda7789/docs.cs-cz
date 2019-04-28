@@ -3,11 +3,11 @@ title: 'Postupy: Čtení dat objektů ze souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
 ms.openlocfilehash: 33e4395c2be421385948d256a989d06ac215c9c4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711093"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-c"></a>Postupy: Čtení dat objektů ze souboru XML (C#)
 V tomto příkladu čte data objektu, který se předtím zapsala do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -52,11 +52,11 @@ public void ReadXML()
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Serializovaná třída nemá veřejný konstruktor bez parametrů.  
+- Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
--   Data v souboru nepředstavuje data ze třídy k deserializaci.  
+- Data v souboru nepředstavuje data ze třídy k deserializaci.  
   
--   Soubor neexistuje (<xref:System.IO.IOException>).  
+- Soubor neexistuje (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Vždy zkontrolujte vstupy a nikdy deserializovat data z nedůvěryhodného zdroje. Objekt znovu vytvořit běží na místním počítači s oprávněními kód, který ji deserializovat. Před použitím dat ve své aplikaci ověřte všechny vstupy.  

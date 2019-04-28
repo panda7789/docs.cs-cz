@@ -7,11 +7,11 @@ helpviewer_keywords:
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
 ms.openlocfilehash: df9063d0616b72ad15c9c48fa4459a6dc98b77c1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683922"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Vícerozměrná pole (Průvodce programováním v C#)
 

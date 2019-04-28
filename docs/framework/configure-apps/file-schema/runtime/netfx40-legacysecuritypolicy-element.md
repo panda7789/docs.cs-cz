@@ -8,11 +8,11 @@ ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 20a0ca8560fcd5d7f9d171df3e3b4c3f42e78641
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59075987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674178"
 ---
 # <a name="netfx40legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy> Element
 Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).  
@@ -39,7 +39,7 @@ Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |`false`|Modul runtime nepoužívá starší zásadu CAS. Toto nastavení je výchozí.|  
 |`true`|Modul runtime používá starší zásadu CAS.|  

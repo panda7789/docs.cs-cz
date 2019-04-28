@@ -3,11 +3,11 @@ title: Uspořádané zpracování zpráv v režimu jedné souběžnosti
 ms.date: 03/30/2017
 ms.assetid: a90f5662-a796-46cd-ae33-30a4072838af
 ms.openlocfilehash: 785c2953e57eaf967209b0d9e52ab85a3a99c450
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769444"
 ---
 # <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a>Uspořádané zpracování zpráv v režimu jedné souběžnosti
 WCF neposkytuje žádnou záruku o pořadí, ve kterém se zprávy zpracovávají, pokud je základní kanál s relacemi.  Například službu WCF používající MsmqInputChannel, který není kanál s relacemi, nepůjde zpracovat zprávy v pořadí. Existují některé okolnosti, kdy může vývojář má v pořadí zpracování chování ale nebudete chtít použít relace. Toto téma popisuje, jak konfigurovat toto chování, pokud služba běží v režimu jedné souběžnosti.  

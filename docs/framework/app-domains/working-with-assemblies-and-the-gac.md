@@ -11,62 +11,62 @@ ms.assetid: 8a18e5c2-d41d-49ef-abcb-7c27e2469433
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 91e780ed7e841809f21130822babe55ad4935670
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674854"
 ---
 # <a name="working-with-assemblies-and-the-global-assembly-cache"></a>Práce se sestaveními a s globální pamětí sestavení
-Pokud máte v úmyslu sdílet sestavení mezi více aplikacemi, můžete ji nainstalovat do globální mezipaměti sestavení. Každý počítač, kde je nainstalován modul common language runtime má tato mezipaměť strojový kód. Globální mezipaměti sestavení uchovává sestavení konkrétně určená ke sdílení více aplikacemi v počítači. Sestavení musí mít silným názvem být nainstalovaný v globální mezipaměti sestavení.  
+Pokud máte v úmyslu sdílení sestavení mezi více aplikacemi, můžete ji nainstalovat do globální mezipaměti sestavení. Každý počítač, kde je nainstalován modul common language runtime obsahuje tuto mezipaměť kódu celého stroje. Globální mezipaměti sestavení ukládá sestavení speciálně určené ke sdílení více aplikacemi v počítači. Sestavení musí mít nainstalovaný v globální mezipaměti sestavení silným názvem.  
   
 > [!NOTE]
->  Sestavení, které jsou umístěny v globální mezipaměti sestavení musí mít stejný název sestavení a název souboru (bez zahrnutí příponu názvu souboru). Sestavení s názvem sestavení myAssembly musí mít například název souboru myAssembly.exe nebo myAssembly.dll.  
+>  Sestavení do globální mezipaměti sestavení musí mít stejný název sestavení a název souboru (bez přípony názvu souboru). Například sestavení s názvem sestavení myAssembly musí mít název souboru, myAssembly.exe buď myAssembly.dll.  
   
- Sestavení by měly sdílet pomocí jejich instalace do globální mezipaměti sestavení pouze v případě potřeby. V rámci obecných pokynů udržujte sestavení závislosti privátním a vyhledání sestavení v adresáři aplikace, pokud sdílení sestavení není explicitně nutné. Kromě toho nemáte instalace sestavení do globální mezipaměti sestavení do zpřístupněte je COM spolupráce nebo nespravovaného kódu.  
+ Sestavení by měly sdílet pomocí instalace do globální mezipaměti sestavení pouze v případě potřeby. V rámci obecných pokynů udržujte soukromé závislosti sestavení a vyhledání sestavení v adresáři aplikace, pokud sdílení sestavení není explicitně vyžadováno. Kromě toho není nutné instalovat sestavení do globální mezipaměti sestavení zajistíte jejich přístupnost COM interop nebo nespravovaného kódu.  
   
  Tady je několik důvodů, proč můžete chtít instalace sestavení do globální mezipaměti sestavení:  
   
--   Sdílené umístění.  
+- Sdílené umístění.  
   
-     Sestavení, která má být používána aplikace může být uvedena v globální mezipaměti sestavení. Například pokud všechny aplikace by měly používat sestavení v globální mezipaměti sestavení, prohlášení o zásadách verze lze přidat do souboru Machine.config, který přesměruje odkazy na sestavení.  
+     Sestavení, které by měly být používány aplikací můžete umístit do globální mezipaměti sestavení. Například zda všechny aplikace by měly používat sestavení v globální mezipaměti sestavení, prohlášením o zásadách verze lze přidat do souboru Machine.config. ten přesměruje odkazy na sestavení.  
   
--   Soubor zabezpečení.  
+- Soubor zabezpečení.  
   
-     Správci často chrání kořenovou složku pomocí seznamu řízení přístupu (ACL) k řízení zápisu a provést přístup. Protože globální mezipaměti sestavení je nainstalována v kořenové složce systému, dědí řízení přístupu tohoto adresáře. Doporučuje se, že mohou pouze uživatelé s oprávněním správce k odstranění souborů z globální mezipaměti sestavení.  
+     Správci často chrání pomocí seznamu řízení přístupu (ACL) pro řízení zápisu a přístup pro spouštění kořenovou složku. Protože je nainstalována do globální mezipaměti sestavení v kořenové složce dědí seznamu ACL tohoto adresáře. Doporučuje se, že pouze uživatelé s oprávněními správce bude moct odstranit soubory z globální mezipaměti sestavení.  
   
--   Správa verzí vedle sebe.  
+- Správa verzí vedle sebe.  
   
-     Více kopií sestavení se stejným názvem, ale s jinou verzi informace je možné udržovat v globální mezipaměti sestavení.  
+     V globální mezipaměti sestavení může být udržuje několik kopií sestavení se stejným názvem, ale informace o různých verzích.  
   
--   Další hledání umístění.  
+- Poloha při hledání další.  
   
-     Modul CLR ověří globální mezipaměti sestavení pro sestavení, které odpovídají požadavku sestavení před použitím informací o kódu v konfiguračním souboru.  
+     Modul common language runtime vyhledává sestavení, které odpovídá požadavku sestavení před použitím informací o kódu v konfiguračním souboru do globální mezipaměti sestavení.  
   
- Všimněte si, že jsou scénáře, kde explicitně nechcete instalovat sestavení do globální mezipaměti sestavení. Pokud jeden z těchto sestavení, které tvoří aplikaci do globální mezipaměti sestavení, můžete už replikovat nebo nainstalovat aplikaci pomocí příkazu XCOPY pro kopírování adresář aplikace. V takovém případě musíte také přesunout sestavení do globální mezipaměti sestavení.  
+ Všimněte si, že jsou scénáře, kdy explicitně nechcete instalace sestavení do globální mezipaměti sestavení. Pokud umístíte jednoho sestavení, které tvoří aplikaci do globální mezipaměti sestavení, můžete už replikovat nebo nainstalujte aplikaci pomocí příkazu XCOPY zkopírovat adresář aplikace. V takovém případě musíte také přesunout sestavení do globální mezipaměti sestavení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Instalace sestavení do globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-install-an-assembly-into-the-gac.md)  
  Popisuje způsoby instalace sestavení do globální mezipaměti sestavení.  
   
  [Postupy: Zobrazení obsahu globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-view-the-contents-of-the-gac.md)  
- Vysvětluje, jak používat [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) zobrazení obsahu globální mezipaměti sestavení.  
+ Vysvětluje způsob používání [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) k zobrazení obsahu globální mezipaměti sestavení.  
   
  [Postupy: Odebrání sestavení z globální mezipaměti sestavení](../../../docs/framework/app-domains/how-to-remove-an-assembly-from-the-gac.md)  
- Vysvětluje, jak používat [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) pro odebrání sestavení z globální mezipaměti sestavení.  
+ Vysvětluje způsob používání [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) odebrání sestavení z globální mezipaměti sestavení.  
   
  [Používání obsluhovaných komponent s globální pamětí sestavení](../../../docs/framework/app-domains/use-serviced-components-with-the-gac.md)  
- Vysvětluje, proč obsluhované komponenty (spravované komponenty modelu COM +) musí být umístěny v globální mezipaměti sestavení.  
+ Vysvětluje, proč obsluhované komponenty (spravované komponenty COM +.) umístit do globální mezipaměti sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
- Poskytuje přehled vytváření sestavení.  
+ Poskytuje přehled o vytváření sestavení.  
   
  [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
  Popisuje globální mezipaměti sestavení.  
   
  [Postupy: Zobrazení obsahu sestavení](../../../docs/framework/app-domains/how-to-view-assembly-contents.md)  
- Vysvětluje, jak používat [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pro zobrazení informací (MSIL intermediate language) Microsoft v sestavení.  
+ Vysvětluje způsob používání [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) k zobrazení informací Microsoft intermediate language (MSIL) v sestavení.  
   
  [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  Popisuje, jak modul common language runtime vyhledá a načte sestavení, které tvoří vaši aplikaci.  

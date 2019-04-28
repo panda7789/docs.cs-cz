@@ -11,11 +11,11 @@ ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 23a36d1709f03583ce39af0e7c80bb1ecd7cf809
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754385"
 ---
 # <a name="illegalprepareconstrainedregion-mda"></a>illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)
 `illegalPrepareConstrainedRegion` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> volání metody bezprostředně nepředchází `try` příkaz obslužné rutiny výjimky. Toto omezení je na jazyk MSIL úrovně, takže je přípustné, aby bez kódu generování zdroje mezi volání a `try`, například pro komentáře.  

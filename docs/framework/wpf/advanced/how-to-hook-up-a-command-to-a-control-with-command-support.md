@@ -11,11 +11,11 @@ helpviewer_keywords:
 - classes [WPF], RoutedCommand [WPF], attaching to a Control
 ms.assetid: 8d8592ae-0c91-469e-a1cd-d179c4544548
 ms.openlocfilehash: 981fecf33b60c76ecab760185db7dab4bbb254d7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757245"
 ---
 # <a name="how-to-hook-up-a-command-to-a-control-with-command-support"></a>Postupy: Propojení příkazu s ovládacím prvkem s podporou příkazů
 Následující příklad ukazuje, jak k připojení <xref:System.Windows.Input.RoutedCommand> k <xref:System.Windows.Controls.Control> které má integrované v podpoře pro příkaz.  Kompletní příklad, který zachytí příkazy do více zdrojů, najdete v článku [vytvořením ukázkového routedcommand – vlastní](https://github.com/Microsoft/WPF-Samples/tree/master/Input%20and%20Commands/CustomRoutedCommand) vzorku.  

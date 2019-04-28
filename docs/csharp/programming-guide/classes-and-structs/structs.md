@@ -8,10 +8,10 @@ helpviewer_keywords:
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
 ms.openlocfilehash: 0c0faf9fe6d9752cafa03ee054f669334f56090d
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703293"
 ---
 # <a name="structs-c-programming-guide"></a>Struktury (Průvodce programováním v C#)
 

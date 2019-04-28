@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC42319
 ms.assetid: 62eeeba3-6811-48be-b1ef-c2e4feda3177
 ms.openlocfilehash: a974df5d2305b88946981d0d258a8088b23d3fc3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58813285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766601"
 ---
 # <a name="xml-comment-exception-must-have-a-cref-attribute"></a>Výjimka komentáře XML musí mít atribut 'cref'.
 \<Výjimky > značky poskytuje způsob, jak dokumentovat výjimky, které mohou být vyvolány metodou. Požadované `cref` atribut určuje název člena, který je zaškrtnuté políčko generátorem dokumentaci. Pokud existuje člen je přeložit název canonical elementu v souboru dokumentace.  
@@ -21,7 +21,7 @@ ms.locfileid: "58813285"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Přidat `cref` atribut na výjimku následujícím způsobem:  
+- Přidat `cref` atribut na výjimku následujícím způsobem:  
   
     ```  
     '''<exception cref="member">description</exception>  

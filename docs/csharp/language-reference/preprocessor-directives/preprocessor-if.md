@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
 ms.openlocfilehash: 027c99df806197637675837b7556b176dc115aba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61688550"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
 

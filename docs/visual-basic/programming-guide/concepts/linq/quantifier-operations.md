@@ -3,11 +3,11 @@ title: Operace kvantifikátoru (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ae1a2b73-503c-4f4b-a3fd-31b5adbee67c
 ms.openlocfilehash: e871a77caf0b7cfe361f11462085180c17bf2057
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766553"
 ---
 # <a name="quantifier-operations-visual-basic"></a>Operace kvantifikátoru (Visual Basic)
 Operace kvantifikátoru vrátit <xref:System.Boolean> hodnotu, která určuje, jestli některé nebo všechny prvky v sekvenci splňují podmínku.  

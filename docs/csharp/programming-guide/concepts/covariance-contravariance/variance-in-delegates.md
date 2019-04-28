@@ -3,11 +3,11 @@ title: Odchylky v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
 ms.openlocfilehash: 75b1f94a3fc7a59393d6a114a2b5346dd0534297
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54657204"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702487"
 ---
 # <a name="variance-in-delegates-c"></a>Odchylky v delegátech (C#)
 Rozhraní .NET framework 3.5 představil podporu odchylku pro spárování metod podpisů s typy delegáta v Všichni delegáti v jazyce C#. To znamená, že můžete přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo, která přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta . To zahrnuje obecných a neobecných delegátů.  
@@ -112,15 +112,15 @@ public static void Test()
 ### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a>Parametry typu obecné delegáty, které mají typ Variant v rozhraní .NET Framework  
  Rozhraní .NET framework 4 zavedena podpora odchylku pro parametry obecného typu v několika existující obecné delegáty:  
   
--   `Action` Deleguje z <xref:System> obor názvů, třeba <xref:System.Action%601> a <xref:System.Action%602>  
+- `Action` Deleguje z <xref:System> obor názvů, třeba <xref:System.Action%601> a <xref:System.Action%602>  
   
--   `Func` Deleguje z <xref:System> obor názvů, třeba <xref:System.Func%601> a <xref:System.Func%602>  
+- `Func` Deleguje z <xref:System> obor názvů, třeba <xref:System.Func%601> a <xref:System.Func%602>  
   
--   <xref:System.Predicate%601> Delegovat  
+- <xref:System.Predicate%601> Delegovat  
   
--   <xref:System.Comparison%601> Delegovat  
+- <xref:System.Comparison%601> Delegovat  
   
--   <xref:System.Converter%602> Delegovat  
+- <xref:System.Converter%602> Delegovat  
   
  Další informace a příklady najdete v tématu [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   

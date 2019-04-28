@@ -8,11 +8,11 @@ helpviewer_keywords:
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
 ms.openlocfilehash: dfbdcf29e0fc003f9478e6f691957b67574d5233
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200556"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680659"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  
@@ -26,40 +26,40 @@ Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným ne
 ## <a name="exceptions-overview"></a>Přehled výjimek  
  Výjimky mají následující vlastnosti:  
   
--   Výjimky jsou typy, které jsou odvozeny všechny nakonec z `System.Exception`.  
+- Výjimky jsou typy, které jsou odvozeny všechny nakonec z `System.Exception`.  
   
--   Použití `try` bloku kolem příkazy, které můžou vyvolat výjimku.  
+- Použití `try` bloku kolem příkazy, které můžou vyvolat výjimku.  
   
--   Jakmile dojde k výjimce v `try` blokovat, toku řízení přeskočí první obslužná rutina přidružené výjimky, která je k dispozici kdekoli v zásobníku volání. V jazyce C# `catch` – klíčové slovo se používá k definování obslužné rutiny výjimky.  
+- Jakmile dojde k výjimce v `try` blokovat, toku řízení přeskočí první obslužná rutina přidružené výjimky, která je k dispozici kdekoli v zásobníku volání. V jazyce C# `catch` – klíčové slovo se používá k definování obslužné rutiny výjimky.  
   
--   Pokud je k dispozici žádná obslužná rutina výjimky pro danou výjimku, program se zastaví provádění s chybovou zprávou.  
+- Pokud je k dispozici žádná obslužná rutina výjimky pro danou výjimku, program se zastaví provádění s chybovou zprávou.  
   
--   Nezachycujte výjimky, pokud jste ji zpracovat a nechte aplikaci do známého stavu. Při zachycení `System.Exception`, znovu ho pomocí `throw` klíčového slova na konci `catch` bloku.  
+- Nezachycujte výjimky, pokud jste ji zpracovat a nechte aplikaci do známého stavu. Při zachycení `System.Exception`, znovu ho pomocí `throw` klíčového slova na konci `catch` bloku.  
   
--   Pokud `catch` bloku definuje proměnnou výjimek, použijte ho k získání dalších informací o typu výjimky, ke které došlo.  
+- Pokud `catch` bloku definuje proměnnou výjimek, použijte ho k získání dalších informací o typu výjimky, ke které došlo.  
   
--   Výjimky mohou být explicitně generovány programu pomocí `throw` – klíčové slovo.  
+- Výjimky mohou být explicitně generovány programu pomocí `throw` – klíčové slovo.  
   
--   Objekty výjimky obsahují podrobné informace o chybě, jako je například stav zásobník volání a textový popis chyby.  
+- Objekty výjimky obsahují podrobné informace o chybě, jako je například stav zásobník volání a textový popis chyby.  
   
--   V kódu `finally` blok je spuštěn i v případě, že dojde k výjimce. Použití `finally` bloku k uvolnění prostředků, třeba když chcete zavřít všechny datové proudy nebo soubory, které byly otevřeny `try` bloku.  
+- V kódu `finally` blok je spuštěn i v případě, že dojde k výjimce. Použití `finally` bloku k uvolnění prostředků, třeba když chcete zavřít všechny datové proudy nebo soubory, které byly otevřeny `try` bloku.  
   
--   Spravované výjimky v rozhraní .NET Framework se implementuje nad mechanismus zpracování výjimek strukturované Win32. Další informace najdete v tématu [strukturovaného zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií kurz na Hlubin systému Win32 strukturovaného zpracování výjimek](https://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).  
+- Spravované výjimky v rozhraní .NET Framework se implementuje nad mechanismus zpracování výjimek strukturované Win32. Další informace najdete v tématu [strukturovaného zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií kurz na Hlubin systému Win32 strukturovaného zpracování výjimek](https://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Zobrazit další informace o výjimkách a zpracování výjimek v následujících tématech:  
   
--   [Použití výjimek](../../../csharp/programming-guide/exceptions/using-exceptions.md)  
+- [Použití výjimek](../../../csharp/programming-guide/exceptions/using-exceptions.md)  
   
--   [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)  
+- [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)  
   
--   [Vytváření a vyvolávání výjimek](../../../csharp/programming-guide/exceptions/creating-and-throwing-exceptions.md)  
+- [Vytváření a vyvolávání výjimek](../../../csharp/programming-guide/exceptions/creating-and-throwing-exceptions.md)  
   
--   [Výjimky generované kompilátorem](../../../csharp/programming-guide/exceptions/compiler-generated-exceptions.md)  
+- [Výjimky generované kompilátorem](../../../csharp/programming-guide/exceptions/compiler-generated-exceptions.md)  
   
--   [Postupy: Zpracování výjimky pomocí bloku try/catch (C# Programming Guide)](../../../csharp/programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md)  
+- [Postupy: Zpracování výjimky pomocí bloku try/catch (C# Programming Guide)](../../../csharp/programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md)  
   
--   [Postupy: Spuštění kódu čištění pomocí příkazu finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
+- [Postupy: Spuštění kódu čištění pomocí příkazu finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 

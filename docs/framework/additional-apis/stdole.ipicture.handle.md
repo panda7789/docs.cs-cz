@@ -11,13 +11,13 @@ api_location:
 api_type:
 - Assembly
 ms.openlocfilehash: 6758bcac7f24e2d042ca61a0853574080d16fa69
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56748855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705984"
 ---
-# <a name="ipicturehandle-property"></a>Vlastnost IPicture.Handle
+# <a name="ipicturehandle-property"></a>IPicture.Handle – vlastnost
 
 Získá popisovač obrázek spravují v rámci tohoto obrázku objektu pro určenou lokalitu.
 

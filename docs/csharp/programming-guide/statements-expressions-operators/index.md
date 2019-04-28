@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
 ms.openlocfilehash: 2d896708c702f5261239eb74f925c10eacd89619
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709884"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 

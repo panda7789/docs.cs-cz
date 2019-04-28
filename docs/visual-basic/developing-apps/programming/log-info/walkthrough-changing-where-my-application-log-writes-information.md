@@ -6,11 +6,11 @@ helpviewer_keywords:
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
 ms.openlocfilehash: 56fef77448f3523732e755f57e8cdabe6ad71379
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755295"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování informací o události, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, `Log` objekt k zápisu do jiných naslouchacích procesů protokolu.  
@@ -28,11 +28,11 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
      Pokud není dostupný žádný soubor app.config:  
   
-    1.  Na **projektu** nabídce zvolte **přidat novou položku**.  
+    1. Na **projektu** nabídce zvolte **přidat novou položku**.  
   
-    2.  Z **přidat novou položku** dialogu **konfiguračního souboru aplikace**.  
+    2. Z **přidat novou položku** dialogu **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na **Přidat**.  
+    3. Klikněte na **Přidat**.  
   
 2. Vyhledejte `<listeners>` pod `<source>` části s `name` atribut "DefaultSource" `<sources>` oddílu. `<sources>` Oddíl je ve `<system.diagnostics>` části na nejvyšší úrovni `<configuration>` oddílu.  
   
@@ -153,13 +153,13 @@ Můžete použít `My.Application.Log` a `My.Log` objekty k protokolování info
   
      Jsou některé typy, které můžete použít:  
   
-    -   A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje do souboru protokolu.  
+    - A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje do souboru protokolu.  
   
-    -   A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje informace do protokolu událostí počítače určené `initializeData` parametru.  
+    - A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje informace do protokolu událostí počítače určené `initializeData` parametru.  
   
-    -   <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> a <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> naslouchacích procesů, které zapisovat do souboru zadaného v `initializeData` parametru.  
+    - <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> a <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> naslouchacích procesů, které zapisovat do souboru zadaného v `initializeData` parametru.  
   
-    -   A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje do konzoly příkazového řádku.  
+    - A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> naslouchací proces, který zapisuje do konzoly příkazového řádku.  
   
      Informace o tom, kde psát jiných typů součástí naslouchajících protokolům informace najdete v dokumentaci tohoto typu.  
   

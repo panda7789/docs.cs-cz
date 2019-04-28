@@ -8,11 +8,11 @@ ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ac2b0eafa64b809d2b40ac6471806dc9ab3c8c53
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752318"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
 <xref:System.IO> Obor názvů poskytuje několik tříd, které umožňují nejrůznější akce, jako je čtení a zápis, pro soubory, adresáře a datové proudy. Další informace najdete v tématu [Souborová služba a vstupně-výstupní operace Stream](../../../docs/standard/io/index.md).  
@@ -22,7 +22,7 @@ ms.locfileid: "54609626"
 |Postup...|Další informace naleznete v příkladu v tomto tématu...|  
 |-------------------|--------------------------------------|  
 |Vytvoření textového souboru|<xref:System.IO.File.CreateText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.CreateText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.File.Create%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.Create%2A?displayProperty=nameWithType> – Metoda|  
-|Zápis do textového souboru|[Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)<br /><br /> [Postupy: Zápis do textového souboru (C + +/ CLI)](/cpp/dotnet/how-to-write-a-text-file-cpp-cli)|  
+|Zápis do textového souboru|[Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)<br /><br /> [Postupy: Zápis do textového souboru (C++vyhodnocovací)](/cpp/dotnet/how-to-write-a-text-file-cpp-cli)|  
 |Čtení z textového souboru|[Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)|  
 |Připojení textu k souboru|[Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType> – Metoda|  
 |Přejmenování nebo přesunutí souboru|<xref:System.IO.File.Move%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.MoveTo%2A?displayProperty=nameWithType> – Metoda|  

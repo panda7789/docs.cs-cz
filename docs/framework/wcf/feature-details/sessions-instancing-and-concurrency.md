@@ -3,11 +3,11 @@ title: Relace, vytváření instancí a souběžnost
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
 ms.openlocfilehash: 994b95bb8ebc14a9997e1e9510389fdf16098d12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748015"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>Relace, vytváření instancí a souběžnost
 A *relace* , že existuje korelace všech zpráv mezi dva koncové body. *Vytváření instancí* odkazuje na řízení životnosti služby uživatelem definované objekty a jejich související <xref:System.ServiceModel.InstanceContext> objekty. *Souběžnost* je termín určený do ovládacího prvku počet vláken v <xref:System.ServiceModel.InstanceContext> ve stejnou dobu.  
@@ -19,21 +19,21 @@ A *relace* , že existuje korelace všech zpráv mezi dva koncové body. *Vytvá
   
  Relace WCF mají koncepční následující hlavní funkce:  
   
--   Jsou explicitně zahájeno a ukončeno volající aplikace.  
+- Jsou explicitně zahájeno a ukončeno volající aplikace.  
   
--   Zprávy doručí během relace se zpracovávají v pořadí, ve kterém jsou přijímány.  
+- Zprávy doručí během relace se zpracovávají v pořadí, ve kterém jsou přijímány.  
   
--   Relace je možné korelovat skupinu zpráv do konverzace. Význam této korelace je abstrakcí. Například jeden kanál na základě relace mohou souviset zprávy založen na sdílených síťových připojení jiného kanálu založeného na relacích mohou souviset zprávy na základě sdílené značky v textu zprávy. Funkce, které mohou být odvozeny z relace závisí na povaze korelace.  
+- Relace je možné korelovat skupinu zpráv do konverzace. Význam této korelace je abstrakcí. Například jeden kanál na základě relace mohou souviset zprávy založen na sdílených síťových připojení jiného kanálu založeného na relacích mohou souviset zprávy na základě sdílené značky v textu zprávy. Funkce, které mohou být odvozeny z relace závisí na povaze korelace.  
   
--   Neexistuje žádné úložiště obecná data související s relací WCF.  
+- Neexistuje žádné úložiště obecná data související s relací WCF.  
   
  Pokud jste se seznámili s <xref:System.Web.SessionState.HttpSessionState?displayProperty=nameWithType> třídy v [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] poskytuje aplikace a funkce, můžete si všimnout následující rozdíly mezi tento druh relace a relace WCF:  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou vždy zahajované serverem.  
+- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou vždy zahajované serverem.  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou implicitně Neseřazený.  
+- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace jsou implicitně Neseřazený.  
   
--   [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace poskytují mechanismus pro ukládání obecná data napříč požadavky.  
+- [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] relace poskytují mechanismus pro ukládání obecná data napříč požadavky.  
   
  Klientské aplikace a aplikace služby pracovat s relacemi různými způsoby. Klientské aplikace zahájení relace přijímat a zpracovávat zprávy odeslané v rámci relace. Aplikace služby slouží k přidání další chování relace jako bod rozšiřitelnosti. To se provádí práci přímo s <xref:System.ServiceModel.InstanceContext> nebo implementaci zprostředkovatele vlastní instance kontextu.  
   
@@ -42,11 +42,11 @@ A *relace* , že existuje korelace všech zpráv mezi dva koncové body. *Vytvá
   
  K dispozici jsou následující režimy vytvoření instance:  
   
--   <xref:System.ServiceModel.InstanceContextMode.PerCall>: Nový <xref:System.ServiceModel.InstanceContext> (a tedy service objektu) se vytvoří pro každý požadavek klienta.  
+- <xref:System.ServiceModel.InstanceContextMode.PerCall>: Nový <xref:System.ServiceModel.InstanceContext> (a tedy service objektu) se vytvoří pro každý požadavek klienta.  
   
--   <xref:System.ServiceModel.InstanceContextMode.PerSession>: Nový <xref:System.ServiceModel.InstanceContext> (a tedy service objektu) se vytvoří pro každou novou relaci klienta a Udržovat dobu trvání relace (vyžaduje vazbu, která podporuje relace).  
+- <xref:System.ServiceModel.InstanceContextMode.PerSession>: Nový <xref:System.ServiceModel.InstanceContext> (a tedy service objektu) se vytvoří pro každou novou relaci klienta a Udržovat dobu trvání relace (vyžaduje vazbu, která podporuje relace).  
   
--   <xref:System.ServiceModel.InstanceContextMode.Single>: Jediný <xref:System.ServiceModel.InstanceContext> (a tedy objekt služby) zpracuje všechny žádosti klienta po dobu životnosti aplikace.  
+- <xref:System.ServiceModel.InstanceContextMode.Single>: Jediný <xref:System.ServiceModel.InstanceContext> (a tedy objekt služby) zpracuje všechny žádosti klienta po dobu životnosti aplikace.  
   
  Následující příklad kódu ukazuje výchozí <xref:System.ServiceModel.InstanceContextMode> hodnotu <xref:System.ServiceModel.InstanceContextMode.PerSession> explicitně nastavena na třídu služby.  
   
@@ -75,11 +75,11 @@ public class CalculatorService : ICalculatorInstance
   
  K dispozici jsou následující tři režimy souběžnosti:  
   
--   <xref:System.ServiceModel.ConcurrencyMode.Single>: Každý kontext instance může mít maximálně jedno vlákno zpracování zpráv v rámci instance najednou. Ostatní vlákna, které chtějí používat stejný kontext instance musí blokovat, dokud původní vlákno ukončí kontext instance.  
+- <xref:System.ServiceModel.ConcurrencyMode.Single>: Každý kontext instance může mít maximálně jedno vlákno zpracování zpráv v rámci instance najednou. Ostatní vlákna, které chtějí používat stejný kontext instance musí blokovat, dokud původní vlákno ukončí kontext instance.  
   
--   <xref:System.ServiceModel.ConcurrencyMode.Multiple>: Každá instance služby může mít více vláken současně zpracování zpráv. Implementace služby musí být bezpečná pro vlákno pro použití tohoto režimu souběžnosti.  
+- <xref:System.ServiceModel.ConcurrencyMode.Multiple>: Každá instance služby může mít více vláken současně zpracování zpráv. Implementace služby musí být bezpečná pro vlákno pro použití tohoto režimu souběžnosti.  
   
--   <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: Každá instance služby zpracovává zprávy jeden po druhém, ale přijímá vícenásobně operaci volání. Služba přijímá pouze tato volání při je volání navýšení kapacity pomocí objektu klienta WCF.  
+- <xref:System.ServiceModel.ConcurrencyMode.Reentrant>: Každá instance služby zpracovává zprávy jeden po druhém, ale přijímá vícenásobně operaci volání. Služba přijímá pouze tato volání při je volání navýšení kapacity pomocí objektu klienta WCF.  
   
 > [!NOTE]
 >  Principy a vývoji kódu, který bezpečně používá více než jedno vlákno může být obtížné je napsat úspěšně. Před použitím <xref:System.ServiceModel.ConcurrencyMode.Multiple> nebo <xref:System.ServiceModel.ConcurrencyMode.Reentrant> hodnoty, ujistěte se, že je vaše služba správně navržená pro tyto režimy. Další informace naleznete v tématu <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A>.  

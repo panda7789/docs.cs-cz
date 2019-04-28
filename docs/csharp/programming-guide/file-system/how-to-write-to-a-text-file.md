@@ -10,11 +10,11 @@ helpviewer_keywords:
 - text, writing to files [C#]
 ms.assetid: 2e99f184-d88b-4719-a7f1-d9ec482aa809
 ms.openlocfilehash: da1526afe48a0d4bda63274380dcf59ee30c480e
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968798"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710771"
 ---
 # <a name="how-to-write-to-a-text-file-c-programming-guide"></a>Postupy: Zápis do textového souboru (C# Průvodce programováním v)
 Tyto příklady znázorňují různé způsoby zápisu textu do souboru. První dva příklady používají statické pohodlí metody <xref:System.IO.File?displayProperty=nameWithType> třídu pro zápis každý prvek žádné `IEnumerable<string>` a řetězce do textového souboru. Příklad 3 ukazuje, jak přidat text do souboru, když máte při psaní do souboru zpracovávat každý řádek zvlášť. Příklady 1 – 3 přepisují veškerý existující obsah v souboru, ale příkladu 4 se dozvíte, jak lze připojit text k existujícímu souboru.  
@@ -27,11 +27,11 @@ Tyto příklady znázorňují různé způsoby zápisu textu do souboru. První 
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Soubor existuje a je určen jen pro čtení.  
+- Soubor existuje a je určen jen pro čtení.  
   
--   Název cesty je pravděpodobně příliš dlouhý.  
+- Název cesty je pravděpodobně příliš dlouhý.  
   
--   Disk je pravděpodobně plný.  
+- Disk je pravděpodobně plný.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -12,11 +12,11 @@ helpviewer_keywords:
 - status [WPF], printers [WPF], surveying remotely
 ms.assetid: d6324759-8292-4c23-9584-9c708887dc94
 ms.openlocfilehash: dc187a4ea120661e8118ce79a966d3d4a3b40711
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61768498"
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>Postupy: Vzdálený průzkum stavu tiskáren
 V každém okamžiku u středně velkých a velkých společností může být více tiskárny, které nejsou práce z důvodu zaseknutý papír nebo jsou mimo papír nebo jiné problematické situaci. Bohaté sadě vlastností tiskárny v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé zjišťování stavu tiskárny.  
@@ -39,9 +39,9 @@ V každém okamžiku u středně velkých a velkých společností může být v
   
  Příklad poté použije <xref:System.Printing.PrintServer.GetPrintQueues%2A> můžete vytvořit kolekci všech serveru je zařadí do fronty a spustí se ve smyčce projde. Tento vnitřní smyčka obsahuje strukturu větvení odpovídající na dva způsoby, jak kontroluje se stav tiskárny:  
   
--   Můžete si přečíst příznaky z <xref:System.Printing.PrintQueue.QueueStatus%2A> vlastnost, která je typu <xref:System.Printing.PrintQueueStatus>.  
+- Můžete si přečíst příznaky z <xref:System.Printing.PrintQueue.QueueStatus%2A> vlastnost, která je typu <xref:System.Printing.PrintQueueStatus>.  
   
--   Můžete si přečíst každý relevantní vlastnosti, jako <xref:System.Printing.PrintQueue.IsOutOfPaper%2A>, a <xref:System.Printing.PrintQueue.IsPaperJammed%2A>.  
+- Můžete si přečíst každý relevantní vlastnosti, jako <xref:System.Printing.PrintQueue.IsOutOfPaper%2A>, a <xref:System.Printing.PrintQueue.IsPaperJammed%2A>.  
   
  Tento příklad ukazuje obě metody, uživateli se zobrazí výzva, jakou metodu použít a odpověděl zprávou "y", pokud uživatel chce použít příznaky z <xref:System.Printing.PrintQueue.QueueStatus%2A> vlastnost. Níže naleznete podrobnosti ze dvou způsobů.  
   

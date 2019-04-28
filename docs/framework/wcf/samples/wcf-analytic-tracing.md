@@ -3,11 +3,11 @@ title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
 ms.openlocfilehash: 9ed89bdbe2469a96f2a959c9fda8442e80b6f7ec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61723352"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka předvádí, jak přidat vlastní události trasování do datového proudu analytického trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené k tomu, aby, získat přehled o vaší služby bez nutnosti platit penalizace vysoký výkon. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis událostí, které integrace se službami WCF.  
@@ -22,11 +22,11 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
 ## <a name="self-hosting-vs-web-hosting"></a>Hostování na vlastním vs. Web Hosting  
  Analytické trasování WCF. pro hostované webové služby, zadejte pole, s názvem "HostReference", který se používá k identifikaci služby, který generuje trasování. Trasování rozšiřitelnými uživatelskými mohl podílet na tomto modelu a v této ukázce osvědčené postupy to udělat. Formát webového hostitele odkazovat při do kanálu '&#124;"znak se objeví ve skutečnosti ve výsledné řetězce může být jedna z následujících akcí:  
   
--   Pokud aplikace není v kořenovém adresáři.  
+- Pokud aplikace není v kořenovém adresáři.  
   
      \<SiteName>\<ApplicationVirtualPath>&#124;\<ServiceVirtualPath>&#124;\<ServiceName>  
   
--   Pokud je v kořenovém adresáři.  
+- Pokud je v kořenovém adresáři.  
   
      \<SiteName>&#124;\<ServiceVirtualPath>&#124;\<ServiceName>  
   
@@ -77,13 +77,13 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
   
 10. Test pomocí testovacího klienta WCF.  
   
-    1.  Testovací klient WCF, dvakrát klikněte na panel **Add()** pod uzlem ICalculator služby.  
+    1. Testovací klient WCF, dvakrát klikněte na panel **Add()** pod uzlem ICalculator služby.  
   
          **Add()** metoda se zobrazí v pravém podokně se dvěma parametry.  
   
-    2.  Zadejte pro první parametr 2 a 3 pro druhý parametr.  
+    2. Zadejte pro první parametr 2 a 3 pro druhý parametr.  
   
-    3.  Klikněte na tlačítko **Invoke** k vyvolání metody.  
+    3. Klikněte na tlačítko **Invoke** k vyvolání metody.  
   
 11. Přejděte **Prohlížeč událostí** okno, které jste již otevřeli. Přejděte do **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikace Aplikace serveru**.  
   

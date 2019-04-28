@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eb5c05a88c12b5124c77b0d0a7f834b405dd289f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61697417"
 ---
 # <a name="corbindtoruntime-function"></a>CorBindToRuntime – funkce
 Umožní nespravovaným hostitelům načíst modul CLR (CLR) do procesu.  
@@ -77,9 +77,9 @@ HRESULT CorBindToRuntime (
   
 2. Změnou výchozí režim procesu na režim kompatibility verze 1, kde <xref:System.Security.Principal.WindowsIdentity> objektu není téct přes asynchronní fázi bez ohledu na to <xref:System.Threading.ExecutionContext> nastavení pro aktuální vlákno. Jak změnit výchozí režim závisí na, jestli používat spravované spustitelný soubor nebo nespravovaných hostitelských rozhraní načíst modul CLR:  
   
-    1.  Pro spravované spustitelné soubory, je nutné nastavit `enabled` atribut [ \<legacyimpersonationpolicy – >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu `true`.  
+    1. Pro spravované spustitelné soubory, je nutné nastavit `enabled` atribut [ \<legacyimpersonationpolicy – >](../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) elementu `true`.  
   
-    2.  Pro nespravovaná rozhraní pro hostování, nastavit `STARTUP_LEGACY_IMPERSONATION` příznak v `flags` parametru při volání `CorBindToRuntimeEx` funkce.  
+    2. Pro nespravovaná rozhraní pro hostování, nastavit `STARTUP_LEGACY_IMPERSONATION` příznak v `flags` parametru při volání `CorBindToRuntimeEx` funkce.  
   
      Režim kompatibility verze 1 platí pro celý proces a všech doménách aplikace v procesu.  
   

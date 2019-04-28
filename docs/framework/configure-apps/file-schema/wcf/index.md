@@ -3,11 +3,11 @@ title: Konfigurační schéma služby WCF
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
 ms.openlocfilehash: baea1e49bce10054530afa5b6f282023d5ceb981
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61755813"
 ---
 # <a name="wcf-configuration-schema"></a>Konfigurační schéma služby WCF
 Windows Communication Foundation (WCF) konfigurační prvky umožňují nakonfigurovat služeb a klientských aplikací WCF. Můžete použít [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) vytvářet a upravovat konfigurační soubory pro klienty a služby. Protože konfigurační soubory jsou formátovány jako XML, musíte znát XML Pokud budete chtít ručně upravovat pomocí textového editoru. Jinak můžete jej spustit do problémy jako k unfound značky elementu XML nebo atributu. Důvodem je, že značky elementu XML a atributy jsou malá a velká písmena.  

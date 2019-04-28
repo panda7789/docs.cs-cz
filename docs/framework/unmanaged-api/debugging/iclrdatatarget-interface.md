@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6ed3cb62b56e80a7fe4ea54b43ac9f4a28b8d102
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698106"
 ---
 # <a name="iclrdatatarget-interface"></a>ICLRDataTarget – rozhraní
 Poskytuje metody pro interakci s cílová položka modulu common language runtime (CLR).  

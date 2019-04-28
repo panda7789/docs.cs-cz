@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4221dbea2b5ad98f889e04eb8a9b6d992b59066e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61767452"
 ---
 # <a name="beginenumeration-function"></a>Funkce BeginEnumeration
 Obnoví enumerátor zpět na začátek výčtu.  
@@ -82,7 +82,7 @@ Konstanta  |Value  |Popis  |
 
 Pro třídy:
 
-Konstanta  |Value  |Popis  |
+Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Omezte výčet vlastností přepsat v definici třídy. |
 |`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Omezte výčet vlastností přepsat v aktuální definici třídy a nové vlastnosti definované ve třídě. |
@@ -92,7 +92,7 @@ Konstanta  |Value  |Popis  |
 
 Pro instance:
 
-Konstanta  |Hodnota  |Popis  |
+Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet vlastností, které jsou definovány nebo upraveny v samotné třídě. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |

@@ -3,11 +3,11 @@ title: Samostatná serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
 ms.openlocfilehash: 29c7dd6ebde07632ef7742b5e9bdd846fc632258
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747586"
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
 JSON (JavaScript Object Notation) je formát dat, která je navržená speciálně pro kód jazyka JavaScript na webových stránkách spuštěná v prohlížeči. Je výchozí formát dat používaný službou ASP.NET AJAX vytvořené ve Windows Communication Foundation (WCF).  
@@ -42,20 +42,20 @@ JSON (JavaScript Object Notation) je formát dat, která je navržená speciáln
 ### <a name="enumerations-and-json"></a>Výčty a JSON  
  Hodnoty výčtu členů jsou považovány za čísla ve formátu JSON, který se liší od jak se zpracovávají v kontraktech dat, ve kterém jsou zahrnuty jako názvy členů. Další informace o zpracování kontraktu dat najdete v tématu [výčtové typy v kontraktech dat](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
--   Pokud máte například `public enum Color {red, green, blue, yellow, pink}`, serializaci `yellow` vytváří není řetězec "yellow" a číslo 3.  
+- Pokud máte například `public enum Color {red, green, blue, yellow, pink}`, serializaci `yellow` vytváří není řetězec "yellow" a číslo 3.  
   
--   Všechny `enum` členy jsou serializovatelné. <xref:System.Runtime.Serialization.EnumMemberAttribute> a <xref:System.NonSerializedAttribute> atributy se ignorují. Pokud se používá.  
+- Všechny `enum` členy jsou serializovatelné. <xref:System.Runtime.Serialization.EnumMemberAttribute> a <xref:System.NonSerializedAttribute> atributy se ignorují. Pokud se používá.  
   
--   Je možné k deserializaci neexistující `enum` hodnota – například hodnota 87 může být deserializovat do předchozího výčtu barev i když není definován žádný odpovídající název barvy.  
+- Je možné k deserializaci neexistující `enum` hodnota – například hodnota 87 může být deserializovat do předchozího výčtu barev i když není definován žádný odpovídající název barvy.  
   
--   Příznaky `enum` není speciální a se chovají stejně jako jakýkoli jiný `enum`.  
+- Příznaky `enum` není speciální a se chovají stejně jako jakýkoli jiný `enum`.  
   
 ### <a name="datestimes-and-json"></a>Data a času a JSON  
  Formát JSON přímo nepodporuje data a časy. Nicméně se často používají a technologie ASP.NET AJAX obsahuje speciální podporu pro tyto typy. Při použití technologie ASP.NET AJAX proxy servery, <xref:System.DateTime> typu v rozhraní .NET plně odpovídá `DateTime` typu v jazyce JavaScript.  
   
--   Pokud nepoužíváte technologii ASP.NET <xref:System.DateTime> typ je vyjádřen v JSON jako řetězec s speciální formátu, který je popsaný v části Rozšířené informace o tomto tématu.  
+- Pokud nepoužíváte technologii ASP.NET <xref:System.DateTime> typ je vyjádřen v JSON jako řetězec s speciální formátu, který je popsaný v části Rozšířené informace o tomto tématu.  
   
--   <xref:System.DateTimeOffset> je reprezentován ve formátu JSON jako komplexní typ: {"Data a času": datum a čas, "OffsetMinutes": offsetMinutes}. `offsetMinutes` Člen je posun místního času z greenwichský střední čas (GMT), také nyní označuje jako koordinovaný univerzální čas (UTC), přidružený k místu události, které vás zajímají. `dateTime` Člen představuje instanci v okamžiku, kdy došlo k události zájmu (znovu, bude `DateTime` v jazyce JavaScript, pokud je technologie ASP.NET AJAX se používají a řetězec, pokud není). Na serializaci `dateTime` člena je vždy serializován v GMT. Pokud popisující čas 3:00:00 Praha, tedy `dateTime` obsahuje komponentu času 8:00:00 a `offsetMinutes` jsou 300 (minus 300 minut nebo 5 hodin od GMT).  
+- <xref:System.DateTimeOffset> je reprezentován ve formátu JSON jako komplexní typ: {"Data a času": datum a čas, "OffsetMinutes": offsetMinutes}. `offsetMinutes` Člen je posun místního času z greenwichský střední čas (GMT), také nyní označuje jako koordinovaný univerzální čas (UTC), přidružený k místu události, které vás zajímají. `dateTime` Člen představuje instanci v okamžiku, kdy došlo k události zájmu (znovu, bude `DateTime` v jazyce JavaScript, pokud je technologie ASP.NET AJAX se používají a řetězec, pokud není). Na serializaci `dateTime` člena je vždy serializován v GMT. Pokud popisující čas 3:00:00 Praha, tedy `dateTime` obsahuje komponentu času 8:00:00 a `offsetMinutes` jsou 300 (minus 300 minut nebo 5 hodin od GMT).  
   
     > [!NOTE]
     >  <xref:System.DateTime> a <xref:System.DateTimeOffset> objekty při serializován do formátu JSON, zachovat pouze informace, které přesností na milisekundy. Během serializace se ztratí hranicí milisekund hodnoty (mikro/nanosekundách).  
@@ -63,28 +63,28 @@ JSON (JavaScript Object Notation) je formát dat, která je navržená speciáln
 ### <a name="xml-types-and-json"></a>Typy XML a JSON  
  Typy XML se stanou řetězci JSON.  
   
--   Například pokud datový člen "q" z typu XElement obsahuje \<abc / >, ve formátu JSON je {"q": "\<abc / >"}.  
+- Například pokud datový člen "q" z typu XElement obsahuje \<abc / >, ve formátu JSON je {"q": "\<abc / >"}.  
   
--   Existují některé zvláštní pravidla, které určit, jak je zabalena XML – Další informace naleznete v části Rozšířené informace dále v tomto tématu.  
+- Existují některé zvláštní pravidla, které určit, jak je zabalena XML – Další informace naleznete v části Rozšířené informace dále v tomto tématu.  
   
--   Pokud používáte ASP.NET AJAX a nechcete použít řetězce v jazyce JavaScript, ale místo toho chcete modelu DOM jazyka XML, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> vlastnosti XML v <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost jazyka XML <xref:System.ServiceModel.Web.WebInvokeAttribute>.  
+- Pokud používáte ASP.NET AJAX a nechcete použít řetězce v jazyce JavaScript, ale místo toho chcete modelu DOM jazyka XML, nastavte <xref:System.ServiceModel.Web.WebGetAttribute.ResponseFormat%2A> vlastnosti XML v <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> vlastnost jazyka XML <xref:System.ServiceModel.Web.WebInvokeAttribute>.  
   
 ### <a name="collections-dictionaries-and-arrays"></a>Kolekce, adresáře a pole  
  Všechny kolekce, slovníky a pole jsou reprezentovány ve formátu JSON jako pole.  
   
--   Jakéhokoli přizpůsobení, která používá <xref:System.Runtime.Serialization.CollectionDataContractAttribute> je ignorován v reprezentaci JSON.  
+- Jakéhokoli přizpůsobení, která používá <xref:System.Runtime.Serialization.CollectionDataContractAttribute> je ignorován v reprezentaci JSON.  
   
--   Slovníky nejsou způsob, jak pracovat přímo s JSON. Slovník\<řetězec, objekt > nemusí být podporované stejně jako ve službě WCF dle očekávání od práce s jinými technologiemi JSON. Například pokud "abc" je namapovaná na "xyz" a "def" je namapována na 42 ve slovníku, reprezentaci JSON je {"abc": "xyz", "def": 42}, ale je [{"Klíče": "abc", "Hodnota": "xyz"}, {"Klíče": "def", "Value": 42}] místo.  
+- Slovníky nejsou způsob, jak pracovat přímo s JSON. Slovník\<řetězec, objekt > nemusí být podporované stejně jako ve službě WCF dle očekávání od práce s jinými technologiemi JSON. Například pokud "abc" je namapovaná na "xyz" a "def" je namapována na 42 ve slovníku, reprezentaci JSON je {"abc": "xyz", "def": 42}, ale je [{"Klíče": "abc", "Hodnota": "xyz"}, {"Klíče": "def", "Value": 42}] místo.  
   
--   Pokud chcete pracovat s JSON přímo (přístupu ke klíčům a hodnoty dynamicky, bez nutnosti předem definovat kontrakt od rigidních), máte několik možností:  
+- Pokud chcete pracovat s JSON přímo (přístupu ke klíčům a hodnoty dynamicky, bez nutnosti předem definovat kontrakt od rigidních), máte několik možností:  
   
-    -   Zvažte použití [slabě typovaná serializace JSON (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md) vzorku.  
+    - Zvažte použití [slabě typovaná serializace JSON (AJAX)](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md) vzorku.  
   
-    -   Zvažte použití <xref:System.Runtime.Serialization.ISerializable> rozhraní a deserializace konstruktory – tyto dva mechanismy umožňují přístup k páry klíč/hodnota JSON na serializaci a deserializaci v uvedeném pořadí, ale nebudou fungovat ve scénářích s částečnou důvěryhodností.  
+    - Zvažte použití <xref:System.Runtime.Serialization.ISerializable> rozhraní a deserializace konstruktory – tyto dva mechanismy umožňují přístup k páry klíč/hodnota JSON na serializaci a deserializaci v uvedeném pořadí, ale nebudou fungovat ve scénářích s částečnou důvěryhodností.  
   
-    -   Zvažte spolupráci s [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md) namísto použití serializátor.  
+    - Zvažte spolupráci s [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md) namísto použití serializátor.  
   
-    -   *Polymorfismus* v kontextu serializace odkazuje na schopnost serializovat odvozeného typu, kde je očekávána jeho základního typu. Existují zvláštní pravidla specifická pro JSON při použití kolekce polymorphically, když je například přiřazení kolekce k <xref:System.Object>. Tento problém je podrobněji popsáno v části Rozšířené informace dále v tomto tématu.  
+    - *Polymorfismus* v kontextu serializace odkazuje na schopnost serializovat odvozeného typu, kde je očekávána jeho základního typu. Existují zvláštní pravidla specifická pro JSON při použití kolekce polymorphically, když je například přiřazení kolekce k <xref:System.Object>. Tento problém je podrobněji popsáno v části Rozšířené informace dále v tomto tématu.  
   
 ## <a name="additional-details"></a>Další podrobnosti  
   
@@ -124,9 +124,9 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### <a name="supported-and-unsupported-iserializable-types"></a>Podporované a nepodporované typy ISerializable  
  Obecně platí, typy, které implementují <xref:System.Runtime.Serialization.ISerializable> rozhraní jsou plně podporované při serializaci/deserializaci JSON. Ale některé z těchto typů (včetně některých typů rozhraní .NET Framework) jsou implementovány v tak, že aspekty serializace JSON konkrétní způsobit, že není správně deserializovat:  
   
--   S <xref:System.Runtime.Serialization.ISerializable>, typ jednotlivých datových členů nikdy předem známý. To vede k polymorfní situace nějak deserializaci typy do objektu. Jak jsme zmínili, to může vést ke ztrátě informací o typu ve formátu JSON. Například typ, který serializuje `enum` v jeho <xref:System.Runtime.Serialization.ISerializable> provádění a pokusy o deserializaci zpět přímo do `enum` (bez správné přetypování) se nezdaří, protože `enum` serializován pomocí čísla ve formátu JSON a JSON čísla deserializovat do předdefinovaných typů .NET číselné (Int32, Decimal nebo Double). Tak skutečnost, že číslo používal `enum` dojde ke ztrátě hodnoty.  
+- S <xref:System.Runtime.Serialization.ISerializable>, typ jednotlivých datových členů nikdy předem známý. To vede k polymorfní situace nějak deserializaci typy do objektu. Jak jsme zmínili, to může vést ke ztrátě informací o typu ve formátu JSON. Například typ, který serializuje `enum` v jeho <xref:System.Runtime.Serialization.ISerializable> provádění a pokusy o deserializaci zpět přímo do `enum` (bez správné přetypování) se nezdaří, protože `enum` serializován pomocí čísla ve formátu JSON a JSON čísla deserializovat do předdefinovaných typů .NET číselné (Int32, Decimal nebo Double). Tak skutečnost, že číslo používal `enum` dojde ke ztrátě hodnoty.  
   
--   <xref:System.Runtime.Serialization.ISerializable> Typ, který závisí na konkrétní pořadí deserializace v jeho konstruktor deserializace může selhat také některá data JSON deserializovat, protože většina serializátory JSON není zaručena dodržovat konkrétní pořadí.  
+- <xref:System.Runtime.Serialization.ISerializable> Typ, který závisí na konkrétní pořadí deserializace v jeho konstruktor deserializace může selhat také některá data JSON deserializovat, protože většina serializátory JSON není zaručena dodržovat konkrétní pořadí.  
   
 #### <a name="factory-types"></a>Objekt pro vytváření typů  
  Zatímco <xref:System.Runtime.Serialization.IObjectReference> rozhraní není podporováno ve formátu JSON v obecné, všechny typy, které vyžadují funkci "typ objektu pro vytváření" (vrací instanci jiného typu než <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%28System.Runtime.Serialization.StreamingContext%29> než typ, který implementuje rozhraní) nejsou podporovány.  
@@ -204,11 +204,11 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### <a name="when-are-type-hints-emitted"></a>Když jsou emitovány typu  
  Pomocné parametry typu může výrazně zvýšit velikost zprávy (jedním ze způsobů, jak zmírnit jde použít kratší obory názvů kontraktu dat, pokud je to možné). Proto následující pravidla určují, zda jsou emitovány typu:  
   
--   Při použití technologie ASP.NET AJAX, typu jsou vždy, protože ho pokaždé, když je to možné, i v případě, že neexistuje žádná základní/odvozené přiřazení – třeba i v případě, že kruhu je přiřazená kruh. (To je potřeba povolit plně procesu volání z prostředí JSON slabého typu do prostředí .NET silného typu bez překvapivé ztráty informací.)  
+- Při použití technologie ASP.NET AJAX, typu jsou vždy, protože ho pokaždé, když je to možné, i v případě, že neexistuje žádná základní/odvozené přiřazení – třeba i v případě, že kruhu je přiřazená kruh. (To je potřeba povolit plně procesu volání z prostředí JSON slabého typu do prostředí .NET silného typu bez překvapivé ztráty informací.)  
   
--   Pokud používáte služby AJAX bez integrace technologie ASP.NET, typu jsou emitovány pouze po přiřazení základní/odvozené –, který je vygenerován při kruhu je přiřazena tvaru nebo <xref:System.Object> , ale ne, když je přiřazený k kruh. To poskytuje minimální informace požadované pro správnou implementaci jazyka JavaScript klienta, tedy zvýšení výkonu, ale neposkytuje ochranu proti ztrátě informací typu v klientech nesprávně navržen. Pokud chcete se vyhnout s řešením tohoto problému na straně klienta, nepoužívejte na serveru zcela základní/odvozené přiřazení.  
+- Pokud používáte služby AJAX bez integrace technologie ASP.NET, typu jsou emitovány pouze po přiřazení základní/odvozené –, který je vygenerován při kruhu je přiřazena tvaru nebo <xref:System.Object> , ale ne, když je přiřazený k kruh. To poskytuje minimální informace požadované pro správnou implementaci jazyka JavaScript klienta, tedy zvýšení výkonu, ale neposkytuje ochranu proti ztrátě informací typu v klientech nesprávně navržen. Pokud chcete se vyhnout s řešením tohoto problému na straně klienta, nepoužívejte na serveru zcela základní/odvozené přiřazení.  
   
--   Při použití <xref:System.Runtime.Serialization.DataContractSerializer> typ, `alwaysEmitTypeInformation` parametr konstruktoru umožňuje výběr mezi předchozí dva režimy s výchozím nastavení je "`false`" (pouze generování pomocných parametrů typu v případě potřeby).  
+- Při použití <xref:System.Runtime.Serialization.DataContractSerializer> typ, `alwaysEmitTypeInformation` parametr konstruktoru umožňuje výběr mezi předchozí dva režimy s výchozím nastavení je "`false`" (pouze generování pomocných parametrů typu v případě potřeby).  
   
 #### <a name="duplicate-data-member-names"></a>Duplicitní názvy datových členů  
  Odvozený typ informace se nachází ve stejném objektu JSON spolu s informacemi v základním typu a může dojít v libovolném pořadí. Například `Shape` mohou být zastoupeny následujícím způsobem.  
@@ -245,9 +245,9 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
   
  Při deserializaci zpět do <xref:System.Object>:  
   
--   `Shape` musí být v seznamu známé typy. S <xref:System.Collections.Generic.List%601> typu `Shape` ve známých typů nemá žádný vliv. Všimněte si, že není nutné přidat `Shape` pro známé typy v serializaci v tomto případě – to se provádí automaticky.  
+- `Shape` musí být v seznamu známé typy. S <xref:System.Collections.Generic.List%601> typu `Shape` ve známých typů nemá žádný vliv. Všimněte si, že není nutné přidat `Shape` pro známé typy v serializaci v tomto případě – to se provádí automaticky.  
   
--   Kolekce je deserializovat jako <xref:System.Array> typu <xref:System.Object> obsahující `Shape` instancí.  
+- Kolekce je deserializovat jako <xref:System.Array> typu <xref:System.Object> obsahující `Shape` instancí.  
   
 #### <a name="derived-collections-assigned-to-base-collections"></a>Odvozené kolekcích přiřazených základní kolekcí  
  Pokud odvozené kolekce je přiřazena k základní kolekce, kolekce obvykle serializován jako by to byla kolekce základního typu. Pokud typ položky kolekce odvozené nelze přiřadit typu položky základní kolekce, je vyvolána výjimka.  

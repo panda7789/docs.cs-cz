@@ -1,14 +1,14 @@
 ---
-title: .NET Compiler Platform SDK (rozhraní Roslyn API)
+title: Sada .NET Compiler Platform SDK (rozhraní Roslyn API)
 description: Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
 ms.openlocfilehash: ea733d4c5c54c18e510a028f3a724f89490db9dd
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706543"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 

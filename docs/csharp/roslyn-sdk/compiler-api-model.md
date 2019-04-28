@@ -4,11 +4,11 @@ description: V tomto přehledu najdete na pozadí, které potřebujete k práci 
 ms.date: 10/10/2017
 ms.custom: mvc
 ms.openlocfilehash: ee8f902bf1df8b63e229fd518e7a0c592fcd47ca
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675703"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706681"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>Pochopení modelu sada SDK platformy kompilátoru .NET
 

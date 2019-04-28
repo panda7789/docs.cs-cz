@@ -3,11 +3,11 @@ title: 'Postupy: Najít okamžité předcházející na stejné úrovni (XPath �
 ms.date: 07/20/2015
 ms.assetid: 74c06201-0b1b-4b5e-b3ac-0092980614e6
 ms.openlocfilehash: 00b74edd67df65522f9f95e7f48c66a9e17a937c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702214"
 ---
 # <a name="how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml-c"></a>Postupy: Najít okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)
 Někdy budete chtít najít okamžité předcházející na stejné k uzlu. Z důvodu rozdíly v sémantice poziční predikáty. pro předchozí osy na stejné úrovni ve výrazu XPath, nikoli [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], to je jedna z zajímavější porovnání.  

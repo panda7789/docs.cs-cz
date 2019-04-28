@@ -12,11 +12,11 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], examples
 ms.assetid: 7d59af89-ff82-41d8-a48a-f1fbae788b0d
 ms.openlocfilehash: 2de892d94afdfcdc580d20f90fb60ebabf4a9b37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59093030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761413"
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-factory-object"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms k objektu pro vytváření
 Při vytváření ovládacích prvků, které pracují s daty, někdy najdete je nezbytné pro vytvoření vazby ovládacího prvku na objekt nebo metoda, která generuje jiné objekty. Takový objekt nebo metoda je volána objekt pro vytváření. Zdroj dat může být například návratová hodnota z volání metody, namísto objektu v paměti nebo typu. K tomuto typu zdroje dat lze svázat ovládací prvek jako zdroj vrátí kolekci.  
@@ -33,7 +33,7 @@ Při vytváření ovládacích prvků, které pracují s daty, někdy najdete je
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

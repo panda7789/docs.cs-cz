@@ -13,11 +13,11 @@ ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a010b2ee1de17741b2d0bdd6e7c50d5f602256ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61754554"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual Studio vaší trasování a ladění výstupu. Ale musíte zahrnout funkce sledování nasazených aplikací, zkompilovat instrumentované aplikace s využitím **trasování** direktivy kompilátoru povolena. To umožňuje trasování kódu se zkompiluje do verze vaší aplikace. Pokud nepovolíte **trasování** direktiv, všechna trasování kódu je ignorována během kompilace a není součástí spustitelný kód, který nasadíte.  
@@ -28,11 +28,11 @@ Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual
   
  Můžete zadat nastavení kompilátoru pro vaši aplikaci několika způsoby:  
   
--   Stránky vlastností  
+- Stránky vlastností  
   
--   Příkazový řádek  
+- Příkazový řádek  
   
--   **#CONST** (pro jazyk Visual Basic) a **#define** (pro C#)  
+- **#CONST** (pro jazyk Visual Basic) a **#define** (pro C#)  
   
 ### <a name="to-change-compile-settings-from-the-property-pages-dialog-box"></a>Chcete-li změnit nastavení kompilace z dialogového okna stránky vlastností  
   
@@ -40,9 +40,9 @@ Při ladění aplikace během vývoje, přejděte do okna výstup v sadě Visual
   
 2. Zvolte **vlastnosti** z místní nabídky.  
   
-    -   V jazyce Visual Basic, klikněte na tlačítko **kompilace** kartu v levém podokně na stránce vlastností a pak klikněte na tlačítko **Upřesnit možnosti kompilace** tlačítka pro zobrazení **pokročilé nastavení kompilátoru**dialogové okno. Zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
+    - V jazyce Visual Basic, klikněte na tlačítko **kompilace** kartu v levém podokně na stránce vlastností a pak klikněte na tlačítko **Upřesnit možnosti kompilace** tlačítka pro zobrazení **pokročilé nastavení kompilátoru**dialogové okno. Zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
   
-    -   V C#, klikněte na tlačítko **sestavení** kartu v levém podokně na stránce vlastností a pak zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
+    - V C#, klikněte na tlačítko **sestavení** kartu v levém podokně na stránce vlastností a pak zaškrtněte políčka pro nastavení kompilátoru, které chcete povolit. Zrušte zaškrtnutí políček u nastavení, které chcete zakázat.  
   
 ### <a name="to-compile-instrumented-code-using-the-command-line"></a>Chcete-li zkompilovat instrumentované kódu pomocí příkazového řádku  
   

@@ -4,11 +4,11 @@ description: Definování kontraktů implementovaných typů v rozhraníC#
 ms.date: 08/10/2016
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
 ms.openlocfilehash: bfc6b59a411ff2ddb3331a8bdf24c0ae3d611273
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61706400"
 ---
 # <a name="interfaces"></a>Rozhraní
 

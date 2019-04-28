@@ -16,38 +16,38 @@ helpviewer_keywords:
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
 ms.openlocfilehash: 456308e37bddc1df86b49085139a3810c4959a58
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57354502"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763050"
 ---
 # <a name="easing-functions"></a>Funkce usnadnění
 Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. Například můžete objekt realisticky odraz nebo se chovat, jako by šlo o spring. Můžete použít k odhadu negativních dopadů klíčových snímků nebo dokonce od/Komu/kým animace, ale by to obnášelo značné množství práce a animace bude méně přesné než matematické vzorce.  
   
  Kromě vytvoření svoji vlastní funkci uvolnění děděním z <xref:System.Windows.Media.Animation.EasingFunctionBase>, jeden z několika funkcí usnadnění poskytovaný modulem runtime můžete použít k vytvoření běžné účinky.  
   
--   <xref:System.Windows.Media.Animation.BackEase>: Odvolá pohybu animace mírně před jeho zahájením animace v uvedené cestě.  
+- <xref:System.Windows.Media.Animation.BackEase>: Odvolá pohybu animace mírně před jeho zahájením animace v uvedené cestě.  
   
--   <xref:System.Windows.Media.Animation.BounceEase>: Vytváří skákající efekt.  
+- <xref:System.Windows.Media.Animation.BounceEase>: Vytváří skákající efekt.  
   
--   <xref:System.Windows.Media.Animation.CircleEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí, pomocí funkce cyklický.  
+- <xref:System.Windows.Media.Animation.CircleEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí, pomocí funkce cyklický.  
   
--   <xref:System.Windows.Media.Animation.CubicEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>3</sup>.  
+- <xref:System.Windows.Media.Animation.CubicEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>3</sup>.  
   
--   <xref:System.Windows.Media.Animation.ElasticEase>: Vytvoří animace, která se podobá spring oscilační vpřed a zpět, dokud jde o rozhraní rest.  
+- <xref:System.Windows.Media.Animation.ElasticEase>: Vytvoří animace, která se podobá spring oscilační vpřed a zpět, dokud jde o rozhraní rest.  
   
--   <xref:System.Windows.Media.Animation.ExponentialEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí exponenciálního vzorce.  
+- <xref:System.Windows.Media.Animation.ExponentialEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí exponenciálního vzorce.  
   
--   <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>p</sup> kde p je rovna <xref:System.Windows.Media.Animation.PowerEase.Power%2A>vlastnost.  
+- <xref:System.Windows.Media.Animation.PowerEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>p</sup> kde p je rovna <xref:System.Windows.Media.Animation.PowerEase.Power%2A>vlastnost.  
   
--   <xref:System.Windows.Media.Animation.QuadraticEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>2</sup>.  
+- <xref:System.Windows.Media.Animation.QuadraticEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>2</sup>.  
   
--   <xref:System.Windows.Media.Animation.QuarticEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>4</sup>.  
+- <xref:System.Windows.Media.Animation.QuarticEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>4</sup>.  
   
--   <xref:System.Windows.Media.Animation.QuinticEase>: Vytvořit animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>5</sup>.  
+- <xref:System.Windows.Media.Animation.QuinticEase>: Vytvořit animaci, která zrychluje a/nebo zpomalí pomocí vzorce *f*(*t*) = *t*<sup>5</sup>.  
   
--   <xref:System.Windows.Media.Animation.SineEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce sinus.  
+- <xref:System.Windows.Media.Animation.SineEase>: Vytvoří animaci, která zrychluje a/nebo zpomalí pomocí vzorce sinus.  
   
  Chcete-li použít funkci zpomalení animace, použijte `EasingFunction` zadejte funkci uvolnění použít pro animaci vlastnosti animace. Následující příklad se vztahuje <xref:System.Windows.Media.Animation.BounceEase> funkce k uvolnění <xref:System.Windows.Media.Animation.DoubleAnimation> vytvořit skákající efekt.  
   
@@ -59,11 +59,11 @@ Funkcí usnadnění umožňují použít vlastní matematické vzorce animace. N
   
  Můžete použít <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> změnit vlastnost změnit funkci zpomalení chování, to znamená, jak argument interpolaci animace. Existují tři možné hodnoty, které poskytnete pro <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
   
--   <xref:System.Windows.Media.Animation.EasingMode.EaseIn>: Interpolace následuje matematické vzorce přidružený k funkci přechodu.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseIn>: Interpolace následuje matematické vzorce přidružený k funkci přechodu.  
   
--   <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolace následuje interpolace 100 % minus výstup vzorec přidružený k funkci přechodu.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: Interpolace následuje interpolace 100 % minus výstup vzorec přidružený k funkci přechodu.  
   
--   <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Použití interpolace <xref:System.Windows.Media.Animation.EasingMode.EaseIn> v první polovině animace a <xref:System.Windows.Media.Animation.EasingMode.EaseOut> v druhé polovině.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: Použití interpolace <xref:System.Windows.Media.Animation.EasingMode.EaseIn> v první polovině animace a <xref:System.Windows.Media.Animation.EasingMode.EaseOut> v druhé polovině.  
   
  Následující grafy ukazují různé hodnoty <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> kde *f*(*x*) představuje animace průběhu a *t* představuje čas.  
   

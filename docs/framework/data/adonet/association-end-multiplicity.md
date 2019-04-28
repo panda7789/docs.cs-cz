@@ -3,22 +3,22 @@ title: association end multiplicity
 ms.date: 03/30/2017
 ms.assetid: 340926ee-aefb-4bef-92cc-453e5251fd03
 ms.openlocfilehash: 59eed56204543adf405cfc7c71a49697a9e18374
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59135028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769663"
 ---
 # <a name="association-end-multiplicity"></a>association end multiplicity
 *Násobnost end přidružení* definuje počet [typ entity](../../../../docs/framework/data/adonet/entity-type.md) instancí, které mohou být na jednom konci [přidružení](../../../../docs/framework/data/adonet/association-type.md).  
   
  Násobnost end přidružení může mít jednu z následujících hodnot:  
   
--   jedna (1): Označuje, že tuto instanci typu přesně jedna entita existuje na konci přidružení.  
+- jedna (1): Označuje, že tuto instanci typu přesně jedna entita existuje na konci přidružení.  
   
--   nula nebo jedna (0..1): Udává, že existuje žádnou nebo jednou instancí typu entity na konci přidružení.  
+- nula nebo jedna (0..1): Udává, že existuje žádnou nebo jednou instancí typu entity na konci přidružení.  
   
--   Mnoho (\*): Udává, že existuje žádného, jednoho nebo více instancí typu entity na konci přidružení.  
+- Mnoho (\*): Udává, že existuje žádného, jednoho nebo více instancí typu entity na konci přidružení.  
   
  Asociace je často vyznačují Násobnosti zakončení její přidružení. Například, pokud konce asociace mají násobnosti jeden (1) a mnoho (\*), přidružení je označováno jako jeden mnoho přidružení. V následujícím příkladu `PublishedBy` přidružení je přidružení jednoho k několika (vydavatel publikuje mnoho knih a knihy se publikuje vydavatele). `WrittenBy` Přidružení je přidružení many-to-many (knihu můžete mít více autoři a autor můžete psát více seznamů).  
   

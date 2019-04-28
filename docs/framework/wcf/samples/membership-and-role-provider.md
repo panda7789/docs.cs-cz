@@ -3,11 +3,11 @@ title: Členství a poskytovatel rolí
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
 ms.openlocfilehash: b5cb743fb3533d2f3a8016c9357d6ead498a5878
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61756114"
 ---
 # <a name="membership-and-role-provider"></a>Členství a poskytovatel rolí
 Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít službu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství a rolí k ověřování a autorizaci klientů.  
@@ -19,15 +19,15 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
  Vzorek ukazuje, jak:  
   
--   Klient může ověřit pomocí kombinace uživatelského jména hesla.  
+- Klient může ověřit pomocí kombinace uživatelského jména hesla.  
   
--   Server můžete ověřit přihlašovací údaje klienta proti [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství.  
+- Server můžete ověřit přihlašovací údaje klienta proti [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství.  
   
--   Na serveru, lze ověřit pomocí certifikátu X.509 serveru.  
+- Na serveru, lze ověřit pomocí certifikátu X.509 serveru.  
   
--   Server můžete namapovat ověřený klient do role pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí.  
+- Server můžete namapovat ověřený klient do role pomocí [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele rolí.  
   
--   Server můžete použít `PrincipalPermissionAttribute` pro řízení přístupu k určité metody, které jsou vystaveny službou.  
+- Server můžete použít `PrincipalPermissionAttribute` pro řízení přístupu k určité metody, které jsou vystaveny službou.  
   
  Zprostředkovatele členství a role jsou nakonfigurovány pro použití úložiště se opírá o systému SQL Server. Připojovací řetězec a různé možnosti jsou uvedeny v konfiguračním souboru služby. Zprostředkovatel členství je označen názvem `SqlMembershipProvider` při zprostředkovatele rolí je označen názvem `SqlRoleProvider`.  
   
@@ -164,7 +164,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 > [!NOTE]
 >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
@@ -174,7 +174,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.  
   
--   Vytváří se certifikát serveru.  
+- Vytváří se certifikát serveru.  
   
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Tento dávkový soubor výchozí hodnota je localhost.  
   
@@ -190,7 +190,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
     ```  
   
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.  
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.  
   
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   

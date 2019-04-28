@@ -9,11 +9,11 @@ ms.assetid: b6297c26-7624-4431-8af4-14112d07bcd5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d939063aaefb00d4db3de604df0dbd1b2175bf95
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698418"
 ---
 # <a name="debugging-interfaces"></a>Debugging – rozhraní
 Tato část popisuje nespravovaná rozhraní, která zpracovávají ladění programu, který je spouštěn v modulu CLR.  

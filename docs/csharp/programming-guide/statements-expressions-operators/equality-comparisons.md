@@ -6,11 +6,11 @@ helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
 ms.openlocfilehash: 7cbd1a2c1a9968ae8ed4f96d503d472bbe9b32c4
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710027"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Porovnání rovnosti (C# Programming Guide)
 

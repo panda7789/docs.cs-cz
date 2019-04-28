@@ -1,15 +1,15 @@
 ---
-title: LINQ to XML versus. DOM (C#)
+title: Technologie LINQ to XML vs. DOM (C#)
 ms.date: 07/20/2015
 ms.assetid: 51c0e3d2-c047-4e6a-a423-d61a882400b7
 ms.openlocfilehash: 44e5a4d00705d1cd7aff66e0a9be387d5c6c633a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54702428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701616"
 ---
-# <a name="linq-to-xml-vs-dom-c"></a>LINQ to XML versus. DOM (C#)
+# <a name="linq-to-xml-vs-dom-c"></a>Technologie LINQ to XML vs. DOM (C#)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
   
 ## <a name="new-ways-to-construct-xml-trees"></a>Nové způsoby, jak vytvořit stromů XML  
@@ -80,11 +80,11 @@ XElement contacts =
 ## <a name="working-directly-with-xml-elements"></a>Práce přímo se elementů XML  
  Když je program s XML, hlavním cílem je obvykle na prvky XML a případně na atributy. V [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], může spolupracovat přímo s XML elementů a atributů. Například můžete provést následující:  
   
--   Vytvořte prvky XML bez použití objektu dokumentu vůbec. Tato funkce usnadňuje programování v případě, že máte pro práci s fragmenty stromů XML.  
+- Vytvořte prvky XML bez použití objektu dokumentu vůbec. Tato funkce usnadňuje programování v případě, že máte pro práci s fragmenty stromů XML.  
   
--   Zatížení `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
+- Zatížení `T:System.Xml.Linq.XElement` objekty přímo ze souboru XML.  
   
--   Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datový proud.  
+- Serializace `T:System.Xml.Linq.XElement` objektů do souboru nebo datový proud.  
   
  Porovnejte W3C v modelu DOM, ve kterém se používá dokumentu XML jako logický kontejner pro stromové struktuře XML. V modelu DOM z uzlů XML, včetně elementů a atributů, musí být vytvořeny v rámci dokumentu XML. Tady je fragment kódu pro vytvoření názvu elementu v modelu DOM:  
   

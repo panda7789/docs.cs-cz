@@ -3,11 +3,11 @@ title: Atributy ServiceModel a odkazy ServiceDescription
 ms.date: 03/30/2017
 ms.assetid: 4ab86b17-eab9-4846-a881-0099f9a7cc64
 ms.openlocfilehash: 022731d7d6e60d36c5f4a595edc90aaff0586a79
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61747733"
 ---
 # <a name="servicemodel-attributes-and-servicedescription-reference"></a>Atributy ServiceModel a odkazy ServiceDescription
 *Popis stromu* je hierarchie typů (počínaje <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> třídy), které popisují společně všechny aspekty služby. Windows Communication Foundation (WCF) používá k vytvoření modul runtime platný Publikovat Web Services Description Language (WSDL), schéma XML definice jazyk (XSD) a kontrolní výrazy zásad (metadata) o služby, který můžou klienti použít k popisu stromu Připojte se k a službu používat a generovat různé kódu a konfigurace souboru reprezentace hodnot stromu popis.  
@@ -23,7 +23,7 @@ ms.locfileid: "59195342"
   
 |Vlastnost atributu ServiceBehaviorAttribute|Hodnota Popis stromu vliv|  
 |---------------------------------------|-------------------------------------|  
-|Name|<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>|  
+|Název|<xref:System.ServiceModel.Description.ServiceDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.ServiceDescription.Namespace%2A>|  
 |ConfigurationName|<xref:System.ServiceModel.Description.ServiceDescription.ConfigurationName%2A>|  
 |IgnoreExtensionDataObject|Nastaví <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject%2A> vlastnosti pro všechny operace.|  
@@ -47,7 +47,7 @@ ms.locfileid: "59195342"
 |IsOneWay|Mapuje se na jediného <xref:System.ServiceModel.Description.MessageDescription> v <xref:System.ServiceModel.Description.OperationDescription.Messages%2A>|  
 |IsInitiating|<xref:System.ServiceModel.Description.OperationDescription.IsInitiating%2A>|  
 |IsTerminating|<xref:System.ServiceModel.Description.OperationDescription.IsTerminating%2A>|  
-|Name|<xref:System.ServiceModel.Description.OperationDescription.Name%2A>|  
+|Název|<xref:System.ServiceModel.Description.OperationDescription.Name%2A>|  
 |Třída protectionLevel|<xref:System.ServiceModel.Description.OperationDescription.ProtectionLevel%2A> a pravděpodobně podřazených úrovních ochrany. Další informace o hierarchii úroveň ochrany, naleznete v tématu [úroveň ochrany Principy](../../../../docs/framework/wcf/understanding-protection-level.md).|  
 |Třídu ReplyAction|<xref:System.ServiceModel.Description.MessageDescription.Action%2A> pro výstupní zprávu nebo zprávu, v závislosti na smlouvy/zpětného volání kontraktu.|  
   
@@ -55,7 +55,7 @@ ms.locfileid: "59195342"
 |----------------------------------|-------------------------------------|  
 |Akce|<xref:System.ServiceModel.Description.FaultDescription.Action%2A> v závislosti na smlouvy/zpětného volání kontraktu.|  
 |DetailType|<xref:System.ServiceModel.Description.FaultDescription.DetailType%2A>|  
-|Name|<xref:System.ServiceModel.Description.FaultDescription.Name%2A>|  
+|Název|<xref:System.ServiceModel.Description.FaultDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.FaultDescription.Namespace%2A>|  
 |Třída protectionLevel|<xref:System.ServiceModel.Description.FaultDescription.ProtectionLevel%2A>|  
   
@@ -82,14 +82,14 @@ ms.locfileid: "59195342"
 |----------------------------------|-------------------------------------|  
 |objekt actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
-|Name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
 |Propojení|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A> odpovídající hlavičky v <xref:System.ServiceModel.Description.MessageDescription.Headers%2A>|  
   
 |Třídu MessageBodyMemberAttribute hodnota|Hodnota Popis stromu vliv|  
 |--------------------------------------|-------------------------------------|  
-|Name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |Objednání|<xref:System.ServiceModel.Description.MessagePartDescription.Index%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
 |Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
@@ -98,18 +98,18 @@ ms.locfileid: "59195342"
 |---------------------------------------|-------------------------------------|  
 |objekt actor|<xref:System.ServiceModel.Description.MessageHeaderDescription.Actor%2A>|  
 |MustUnderstand|<xref:System.ServiceModel.Description.MessageHeaderDescription.MustUnderstand%2A>|  
-|Name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
 |Obor názvů|<xref:System.ServiceModel.Description.MessagePartDescription.Namespace%2A>|  
 |Třída protectionLevel|<xref:System.ServiceModel.Description.MessagePartDescription.ProtectionLevel%2A>|  
 |Propojení|<xref:System.ServiceModel.Description.MessageHeaderDescription.Relay%2A>|  
   
 |Hodnota MessagePropertyAttribute|Hodnota Popis stromu vliv|  
 |------------------------------------|-------------------------------------|  
-|Name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A>|  
   
 |Hodnota MessageParameterAttribute|Hodnota Popis stromu vliv|  
 |-------------------------------------|-------------------------------------|  
-|Name|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
+|Název|<xref:System.ServiceModel.Description.MessagePartDescription.Name%2A> pro odpovídající část v <xref:System.ServiceModel.Description.MessageBodyDescription.Parts%2A>|  
   
  Další informace o jak popis stromu hodnoty se převedou na metadata, najdete v části [ServiceDescription a referenční informace pro WSDL](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md).  
   

@@ -11,11 +11,11 @@ ms.assetid: ba1fa43e-49f5-47d9-bd7f-3024af16f4ba
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ff85f5737babb73d87f4918ca0f4981263f7dadc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705711"
 ---
 # <a name="how-to-create-an-application-domain"></a>Postupy: Vytvoření domény aplikace
 Hostitel common language runtime automaticky vytvoří aplikační domény v případě potřeby. Můžete však vytvořit vlastní domény aplikace a načíst do nich tato sestavení, které chcete spravovat sami. Můžete také vytvořit aplikační domény, ze kterých je kód spuštěn.  

@@ -1,19 +1,19 @@
 ---
-title: Sledování profily
+title: Sledování profilů
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
 ms.openlocfilehash: 2fa4d65a6f0056824b2fc9dd67b93608777fc75d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699680"
 ---
-# <a name="tracking-profiles"></a>Sledování profily
+# <a name="tracking-profiles"></a>Sledování profilů
 
 Sledování profily obsahuje sledování dotazy, které umožňují sledování účastník přihlásit k odběru události pracovních postupů, které jsou emitovány při změně stavu instance pracovního postupu za běhu.
 
-## <a name="tracking-profiles"></a>Sledování profily
+## <a name="tracking-profiles"></a>Sledování profilů
 
 Sledování profily se používají k určení, jaké informace o sledování je vygenerován pro instanci pracovního postupu. Pokud není zadán žádný profil, jsou emitovány všechny události sledování. Pokud je zadaný profil, bude vygenerován sledování událostí specifikovaný v profilu. V závislosti na vašich požadavků na monitorování napíšete profilu, který je velmi obecná, který se přihlásí k odběru malou sadu změn stavu vysoké úrovně v pracovním postupu. Naopak můžete vytvořit profil velmi podrobné, jehož výsledné události jsou bohaté dostatečně k rekonstrukci podrobné provádění toku později.
 
@@ -110,8 +110,7 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
 
 Sledování profily mají strukturu deklarativní odběrů pro sledování záznamů, které umožňují dotazů modulu runtime pracovního postupu pro záznamy sledování. Existuje několik typů dotazu, které umožňují předplatit různé třídy <xref:System.Activities.Tracking.TrackingRecord> objekty. Sledování profily se dá nastavit v konfiguraci nebo prostřednictvím kódu. Tady jsou nejčastější typy dotazů:
 
-- <xref:System.Activities.Tracking.WorkflowInstanceQuery> – Můžete tak sledovat změny životního cyklu instance pracovního postupu jako dříve-jsme vám ukázali `Started` a `Completed`. 
-  <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:
+- <xref:System.Activities.Tracking.WorkflowInstanceQuery> – Můžete tak sledovat změny životního cyklu instance pracovního postupu jako dříve-jsme vám ukázali `Started` a `Completed`. <xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:
 
     - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
 

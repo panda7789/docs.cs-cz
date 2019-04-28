@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Příprava na vyčerpání prostoru pomocí izolovaného úložiště'
+title: 'Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -25,13 +25,13 @@ ms.assetid: e35d4535-3732-421e-b1a3-37412e036145
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cf5144cb1abd3a916d2b5afc361c8c96a221d47e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372292"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751996"
 ---
-# <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Postupy: Příprava na vyčerpání prostoru pomocí izolovaného úložiště
+# <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště
 
 Kód, který používá izolované úložiště je omezen [kvóty](../../../docs/standard/io/isolated-storage.md#quotas) , která určuje maximální velikost pro datové přihrádky, ve kterém izolované úložiště souborů a adresářů existovat. Kvóta je definována v zásadách zabezpečení a je možné konfigurovat správci. Pokud je maximální povolená velikost je překročena, při pokusu o zápis dat, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka a operace se nezdaří. To pomáhá zabránit nebezpečné útoky s cílem odepření služeb, které by mohly způsobit, že aplikace odmítnout požadavky, protože úložný prostor zaplněný.
 

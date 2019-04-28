@@ -3,11 +3,11 @@ title: Projektování XML v odlišném tvaru (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
 ms.openlocfilehash: ed689e2f0e659eade83fa8e4ec147b0edcddefc8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61766582"
 ---
 # <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projektování XML v odlišném tvaru (Visual Basic)
 Toto téma ukazuje příklad projekci XML, který je v odlišném tvaru než zdrojového kódu XML.  
@@ -230,7 +230,7 @@ End Module
 ## <a name="next-steps"></a>Další kroky  
  V následujícím příkladu budete dotazovat najít veškerý text ve Wordovém dokumentu:  
   
--   [Hledání textu v dokumentech aplikace Word (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
+- [Hledání textu v dokumentech aplikace Word (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
 ## <a name="see-also"></a>Viz také:
 

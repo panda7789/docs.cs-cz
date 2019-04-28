@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC42025
 ms.assetid: db3337e5-c349-42bf-86df-d9c1e00952a5
 ms.openlocfilehash: 8e6ddab16c59d7ce95d96b377e3f372f6ebe5278
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58843562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751602"
 ---
 # <a name="access-of-shared-member-through-an-instance-qualifying-expression-will-not-be-evaluated"></a>Přístup sdíleného člena prostřednictvím instance; kvalifikující výraz nebyl vyhodnocen.
 Proměnná instance třídy nebo struktury se používá k přístupu `Shared` proměnná, vlastnost, procedura nebo události definované v této třídě nebo struktuře. Toto upozornění může také dojít, pokud proměnnou instance se používá pro přístup k implicitně sdílenému členu třídy nebo struktury, jako je konstantní nebo výčtu, nebo vnořené třídy nebo struktury.  
@@ -29,7 +29,7 @@ Proměnná instance třídy nebo struktury se používá k přístupu `Shared` p
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Použijte název třídy nebo struktury, která definuje `Shared` člen k přístupu, jak je znázorněno v následujícím příkladu.  
+- Použijte název třídy nebo struktury, která definuje `Shared` člen k přístupu, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Public Class testClass  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
 ms.openlocfilehash: d328f8e73824a4773c6e10f506f3021d3c88d085
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61683935"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modifikátory přístupu (Průvodce programováním v C#)
 Všechny typy a členy typu mít úrovni přístupu, které řídí, jestli je možné použít od jiného kódu v sestavení nebo jiná sestavení. Následující modifikátory přístupu můžete použít k určení přístupnost typu nebo členu při jeho deklaraci:  

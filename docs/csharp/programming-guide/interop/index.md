@@ -9,11 +9,11 @@ helpviewer_keywords:
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
 ms.openlocfilehash: 50f2a72bf4981a49d5597a9bc8922db81197d810
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710222"
 ---
 # <a name="interoperability-c-programming-guide"></a>Interoperabilita (Průvodce programováním v C#)
 Interoperabilita umožňuje zachovat a využít stávající investice do nespravovaného kódu. Je volána kód, který běží v rámci ovládacího prvku modulu common language runtime (CLR) *spravovaného kódu*, a je volána kód, který běží mimo rámec platformy CLR *nespravovaný kód*. COM, modelu COM +, komponenty C++, součásti ActiveX a rozhraní API Microsoft Windows jsou příkladem nespravovaného kódu.  

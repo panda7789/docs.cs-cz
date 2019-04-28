@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Using statement [Visual Basic]
 ms.assetid: 665d1580-dd54-4e96-a9a9-6be2a68948f1
 ms.openlocfilehash: fe53ea58dc98a4de793fe9dad1c3ceeac71622fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58843198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698652"
 ---
 # <a name="using-statement-visual-basic"></a>Using – příkaz (Visual Basic)
 Deklaruje začátku `Using` blokovat a volitelně získá systémové prostředky, které řídí bloku.  
@@ -61,11 +61,11 @@ End Using
   
  A `Using` blok má tři části: získání, využití a vyřazení.  
   
--   *Získání* znamená, že vytváření proměnných a inicializuje ji k odkazování na systémový prostředek. `Using` Příkazu můžete získat jednu nebo více prostředků, nebo můžete získat přesně jeden prostředek před vstupem bloku a bude `Using` příkazu. Pokud zadáte `resourceexpression`, musíte získat zdroje před předáním řízení `Using` příkazu.  
+- *Získání* znamená, že vytváření proměnných a inicializuje ji k odkazování na systémový prostředek. `Using` Příkazu můžete získat jednu nebo více prostředků, nebo můžete získat přesně jeden prostředek před vstupem bloku a bude `Using` příkazu. Pokud zadáte `resourceexpression`, musíte získat zdroje před předáním řízení `Using` příkazu.  
   
--   *Využití* znamená, že přístup k prostředkům a provádění akcí s nimi. Příkazy mezi `Using` a `End Using` představují využití prostředků.  
+- *Využití* znamená, že přístup k prostředkům a provádění akcí s nimi. Příkazy mezi `Using` a `End Using` představují využití prostředků.  
   
--   *Vyřazení* znamená, že volání <xref:System.IDisposable.Dispose%2A> metodu na objekt v `resourcename`. To umožňuje objektu čistě ukončit jeho prostředky. `End Using` Příkaz uvolní prostředky v rámci `Using` bloku ovládacího prvku.  
+- *Vyřazení* znamená, že volání <xref:System.IDisposable.Dispose%2A> metodu na objekt v `resourcename`. To umožňuje objektu čistě ukončit jeho prostředky. `End Using` Příkaz uvolní prostředky v rámci `Using` bloku ovládacího prvku.  
   
 ## <a name="behavior"></a>Chování  
  A `Using` bloku se chová stejně jako `Try`... `Finally` konstrukce, ve kterém `Try` blok používá prostředky a `Finally` uvolní blok z nich. Z toho důvodu `Using` bloku zaručuje zacházení s prostředky, bez ohledu na to, jak ukončení bloku. To platí i v případě neošetřené výjimky, s výjimkou <xref:System.StackOverflowException>.  

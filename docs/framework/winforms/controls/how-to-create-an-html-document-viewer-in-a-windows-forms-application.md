@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Windows Forms, creating document viewers
 ms.assetid: 6a6338fe-f7ee-4f5e-9d8f-0465c57e9039
 ms.openlocfilehash: 99609e4bf5a352c436986e0773375d1c8e15e790
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746970"
 ---
 # <a name="how-to-create-an-html-document-viewer-in-a-windows-forms-application"></a>Postupy: Vytvoření prohlížeče dokumentu HTML v aplikaci Windows Forms
 Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro zobrazení a tisk dokumentů HTML bez zadání plnou funkčnost prohlížeči Internet. To je užitečné, když chtějí využít nabídky možností formátování HTML, ale nechcete, aby vaši uživatelé k načtení libovolného webové stránky, které mohou obsahovat nedůvěryhodné webové ovládací prvky nebo potenciálně škodlivý kód. Můžete chtít omezit schopnost <xref:System.Windows.Forms.WebBrowser> řídit tímto způsobem, například pro použití jako e-mailu prohlížeč formátu HTML nebo poskytnutí nápovědy ve formátu HTML v aplikaci.  
@@ -34,9 +34,9 @@ Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro zo
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.WebBrowser> ovládací prvek s názvem `webBrowser1`.  
+- A <xref:System.Windows.Forms.WebBrowser> ovládací prvek s názvem `webBrowser1`.  
   
--   Odkazy `System` a `System.Windows.Forms` sestavení.  
+- Odkazy `System` a `System.Windows.Forms` sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

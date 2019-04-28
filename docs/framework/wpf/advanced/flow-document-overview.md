@@ -10,11 +10,11 @@ helpviewer_keywords:
 - flow documents [WPF]
 ms.assetid: ef236a50-d44f-43c8-ba7c-82b0c733c0b7
 ms.openlocfilehash: f8e5a7475765bffb76e7b07e81db25b4a62ae038
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303489"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61703833"
 ---
 # <a name="flow-document-overview"></a>Přehled toku dokumentů
 Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumenty toku místo nastavování jedno předdefinované rozložení dynamicky upravit a přeformátování jejich obsah na základě proměnných za běhu, jako je například velikost okna, rozlišení zařízení a volitelné uživatelských předvoleb. Kromě toho nabízejí dokumenty toku dokumentu pokročilé funkce, jako je stránkování a sloupce. Toto téma obsahuje přehled toku dokumentů a postupy jejich vytvoření.  
@@ -42,13 +42,13 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  Jak je zdůrazněno na výše uvedeném obrázku jsou integrované do toku dokumenty několik funkcí:
   
--   Hledání: Umožňuje uživateli provádět fulltextové vyhledávání celého dokumentu.  
+- Hledání: Umožňuje uživateli provádět fulltextové vyhledávání celého dokumentu.  
   
--   Režim zobrazení: Uživatel může vybrat režim své upřednostňované zobrazení včetně zobrazení (stránka na-time) jednostránkové režimu, dvě--na stránkách (formát čtení adresáře) zobrazení režimu a režimu kontinuálního rolování (neomezené) zobrazení.  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  
+- Režim zobrazení: Uživatel může vybrat režim své upřednostňované zobrazení včetně zobrazení (stránka na-time) jednostránkové režimu, dvě--na stránkách (formát čtení adresáře) zobrazení režimu a režimu kontinuálního rolování (neomezené) zobrazení.  Další informace o těchto režimech zobrazení najdete v tématu <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  
   
--   Ovládací prvky navigace stránky: Pokud je režim zobrazení dokumentu používá stránky, ovládací prvky navigace stránky zahrnují tlačítka pro přechod na další stránce (šipka dolů) nebo předchozí stránku (na šipku nahoru), stejně jako ukazatele pro aktuální číslo stránky a celkový počet stránek. Překlopení prostřednictvím stránek lze dosáhnout také pomocí šipkových kláves klávesnice.  
+- Ovládací prvky navigace stránky: Pokud je režim zobrazení dokumentu používá stránky, ovládací prvky navigace stránky zahrnují tlačítka pro přechod na další stránce (šipka dolů) nebo předchozí stránku (na šipku nahoru), stejně jako ukazatele pro aktuální číslo stránky a celkový počet stránek. Překlopení prostřednictvím stránek lze dosáhnout také pomocí šipkových kláves klávesnice.  
   
--   Přiblížení: Ovládací prvky zvětšení povolení uživatele chcete zvýšit nebo snížit úroveň přiblížení, kliknutím na znaménko plus nebo mínus, v uvedeném pořadí. Ovládací prvky zvětšení také zahrnovat posuvníku pro úpravu úroveň zvětšení. Další informace naleznete v tématu <xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>.  
+- Přiblížení: Ovládací prvky zvětšení povolení uživatele chcete zvýšit nebo snížit úroveň přiblížení, kliknutím na znaménko plus nebo mínus, v uvedeném pořadí. Ovládací prvky zvětšení také zahrnovat posuvníku pro úpravu úroveň zvětšení. Další informace naleznete v tématu <xref:System.Windows.Controls.FlowDocumentReader.Zoom%2A>.  
   
  Tyto funkce lze upravit na základě ovládací prvek použitý k hostování plovoucího obsahu. Další část popisuje různé ovládací prvky.  
   
@@ -75,9 +75,9 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
 ## <a name="creating-flow-content"></a>Vytvoření toku obsahu  
  Obsah toku může být složité, který se skládá z různých prvků, včetně text, obrázky, tabulky a dokonce i <xref:System.Windows.UIElement> odvozené třídy jako ovládací prvky. Chcete-li pochopit, jak vytvořit komplexní tok obsahu, jsou důležité následující body:  
   
--   **Třídy související s tok**: Každá třída používaná v plovoucího obsahu má konkrétní účel. Kromě toho hierarchický vztah mezi třídami tok vám pomůže porozumět způsobu použití. Například třídy odvozené z <xref:System.Windows.Documents.Block> třída se používá k obsahovat další objekty, zatímco třídy odvozené z <xref:System.Windows.Documents.Inline> obsahují objekty, které jsou zobrazeny.  
+- **Třídy související s tok**: Každá třída používaná v plovoucího obsahu má konkrétní účel. Kromě toho hierarchický vztah mezi třídami tok vám pomůže porozumět způsobu použití. Například třídy odvozené z <xref:System.Windows.Documents.Block> třída se používá k obsahovat další objekty, zatímco třídy odvozené z <xref:System.Windows.Documents.Inline> obsahují objekty, které jsou zobrazeny.  
   
--   **Obsah schématu**: Plovoucí dokument může vyžadovat značné množství vnořené elementy. Schéma obsahu určuje možné nadřazené a podřízené vztahy mezi elementy.  
+- **Obsah schématu**: Plovoucí dokument může vyžadovat značné množství vnořené elementy. Schéma obsahu určuje možné nadřazené a podřízené vztahy mezi elementy.  
   
  Následující oddíly půjdou přes všechny tyto oblasti podrobněji.  
   
@@ -196,19 +196,19 @@ Dokumenty toku jsou určená k optimalizaci pro zobrazení a čitelnost. Dokumen
   
  **Obrázek:**  
   
--   Může být umístěné: Můžete nastavit jeho vodorovného a svislého kotev vztahů k ukotvení vzhledem ke stránce, obsah, sloupce nebo odstavce. Můžete také použít jeho <xref:System.Windows.Documents.Figure.HorizontalOffset%2A> a <xref:System.Windows.Documents.Figure.VerticalOffset%2A> vlastnosti k určení libovolné pozici.  
+- Může být umístěné: Můžete nastavit jeho vodorovného a svislého kotev vztahů k ukotvení vzhledem ke stránce, obsah, sloupce nebo odstavce. Můžete také použít jeho <xref:System.Windows.Documents.Figure.HorizontalOffset%2A> a <xref:System.Windows.Documents.Figure.VerticalOffset%2A> vlastnosti k určení libovolné pozici.  
   
--   Je více než jednomu sloupci proměnlivou velikostí: Můžete nastavit <xref:System.Windows.Documents.Figure> výšku a šířku na násobky stránky, obsah nebo sloupec výšky a šířky. Všimněte si, že v případě stránky a obsahu, násobky větší než 1 nejsou povoleny. Například můžete nastavit šířku <xref:System.Windows.Documents.Figure> "0,5 stránka" nebo "0,25 obsah" nebo "2 sloupci". Můžete také nastavit výšku a šířku na pixel absolutní hodnoty.  
+- Je více než jednomu sloupci proměnlivou velikostí: Můžete nastavit <xref:System.Windows.Documents.Figure> výšku a šířku na násobky stránky, obsah nebo sloupec výšky a šířky. Všimněte si, že v případě stránky a obsahu, násobky větší než 1 nejsou povoleny. Například můžete nastavit šířku <xref:System.Windows.Documents.Figure> "0,5 stránka" nebo "0,25 obsah" nebo "2 sloupci". Můžete také nastavit výšku a šířku na pixel absolutní hodnoty.  
   
--   Stránkování není: Pokud je obsah uvnitř <xref:System.Windows.Documents.Figure> nevejde dovnitř <xref:System.Windows.Documents.Figure>, zobrazí se pak přizpůsobit libovolný obsah a dojde ke ztrátě zbývající obsah  
+- Stránkování není: Pokud je obsah uvnitř <xref:System.Windows.Documents.Figure> nevejde dovnitř <xref:System.Windows.Documents.Figure>, zobrazí se pak přizpůsobit libovolný obsah a dojde ke ztrátě zbývající obsah  
   
  **Floater:**  
   
--   Nelze umístit a zobrazí se pak bez ohledu na místo, může být k dispozici pro něj. Nelze nastavit posun nebo ukotvení <xref:System.Windows.Documents.Floater>.  
+- Nelze umístit a zobrazí se pak bez ohledu na místo, může být k dispozici pro něj. Nelze nastavit posun nebo ukotvení <xref:System.Windows.Documents.Floater>.  
   
--   Nelze mít více než jednomu sloupci velikost: Ve výchozím nastavení <xref:System.Windows.Documents.Floater> velikosti na jeden sloupec. Má <xref:System.Windows.Documents.Floater.Width%2A> vlastnost, která můžete nastavit na hodnotu absolutní pixelů, ale pokud tato hodnota je větší než jeden sloupec šířky je ignorována a floater je nastavena na jeden sloupec. Můžete měnit velikost ho na méně než jeden sloupec tak, že nastavíte šířku správné pixelů, ale nastavení velikosti není relativní ke sloupci, takže "0.5Column" není platný výraz pro <xref:System.Windows.Documents.Floater> šířku. <xref:System.Windows.Documents.Floater> nemá žádnou vlastnost výšku a je nelze nastavit výšku, její výška závisí na obsahu  
+- Nelze mít více než jednomu sloupci velikost: Ve výchozím nastavení <xref:System.Windows.Documents.Floater> velikosti na jeden sloupec. Má <xref:System.Windows.Documents.Floater.Width%2A> vlastnost, která můžete nastavit na hodnotu absolutní pixelů, ale pokud tato hodnota je větší než jeden sloupec šířky je ignorována a floater je nastavena na jeden sloupec. Můžete měnit velikost ho na méně než jeden sloupec tak, že nastavíte šířku správné pixelů, ale nastavení velikosti není relativní ke sloupci, takže "0.5Column" není platný výraz pro <xref:System.Windows.Documents.Floater> šířku. <xref:System.Windows.Documents.Floater> nemá žádnou vlastnost výšku a je nelze nastavit výšku, její výška závisí na obsahu  
   
--   <xref:System.Windows.Documents.Floater> stránkuje: Pokud svůj obsah na jeho nastavená šířka rozšiřuje na více než 1 sloupec výšky, floater přestane fungovat a stránkuje do dalšího sloupce, další stránku, atd.  
+- <xref:System.Windows.Documents.Floater> stránkuje: Pokud svůj obsah na jeho nastavená šířka rozšiřuje na více než 1 sloupec výšky, floater přestane fungovat a stránkuje do dalšího sloupce, další stránku, atd.  
   
  <xref:System.Windows.Documents.Figure> je vhodné místo pro umístění obsahu samostatný ve které chcete určit velikost a umístění a si jisti, že se obsah vejde v zadané velikosti. <xref:System.Windows.Documents.Floater> je vhodné místo pro další obsah přeuspořádat, na kterém tok podobně jako na hlavní stránce obsah, ale je oddělená od něj.  
   

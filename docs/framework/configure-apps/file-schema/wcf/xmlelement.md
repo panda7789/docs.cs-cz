@@ -3,11 +3,11 @@ title: <xmlElement>
 ms.date: 03/30/2017
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
 ms.openlocfilehash: a72641b438801cfd493c322297e7c384e83e687c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698457"
 ---
 # <a name="xmlelement"></a>\<xmlElement>
 Určuje element XML, který posílá v těle zprávy služby tokenů zabezpečení při vyžádání tokenu.  

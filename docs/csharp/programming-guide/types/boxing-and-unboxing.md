@@ -11,11 +11,11 @@ helpviewer_keywords:
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
 ms.openlocfilehash: da4aabbd0529ee239dacd2dff7c7825d41110b44
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58835164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709637"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Zabalení a rozbalení (Průvodce programováním v C#)
 Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) typu `object` nebo na libovolný typ rozhraní implementovaný tímto typem hodnoty. Když modul CLR pole typu hodnoty, obtéká hodnotu uvnitř System.Object a uloží ji na spravované haldě. Rozbalení extrahuje typ hodnoty z objektu. Zabalení je implicitní; Rozbalení je explicitní. Pojem zabalení a rozbalení základem sjednocené zobrazení C# systému typů, ve kterém lze považovat hodnotu libovolného typu za objekt.  
@@ -63,9 +63,9 @@ Zabalení je proces převodu [typ hodnoty](../../../csharp/language-reference/ke
 ## <a name="unboxing"></a>Rozbalení  
  Rozbalení je explicitní převod z typu `object` k [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md) nebo z typu rozhraní na typ hodnoty, která implementuje rozhraní. Operace rozbalení se skládá ze:  
   
--   Kontrola instance objektu, abyste měli jistotu, že se jedná o zabalenou hodnotu daného typu hodnoty.  
+- Kontrola instance objektu, abyste měli jistotu, že se jedná o zabalenou hodnotu daného typu hodnoty.  
   
--   Kopírování hodnoty z instance do proměnné typu hodnoty.  
+- Kopírování hodnoty z instance do proměnné typu hodnoty.  
   
  Následující příkazy ukazují operace zabalení a rozbalení:  
   
@@ -108,9 +108,9 @@ int j = (int) o;
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
   
--   [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
   
--   [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
+- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
   
 ## <a name="see-also"></a>Viz také:
 

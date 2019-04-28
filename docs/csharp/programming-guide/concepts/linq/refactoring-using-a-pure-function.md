@@ -3,11 +3,11 @@ title: Refaktoring pomocí čisté funkce (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
 ms.openlocfilehash: 66aab1b92f1a017eae650b18bd13d52536e84a6f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54692295"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680750"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>Refaktoring pomocí čisté funkce (C#)
 Následující příklad refactors v předchozím příkladu [refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.  
@@ -177,7 +177,7 @@ StyleName:Code >Hello World<
 ### <a name="next-steps"></a>Další kroky  
  Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:  
   
--   [Projektování XML v odlišném tvaru (C#)](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+- [Projektování XML v odlišném tvaru (C#)](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
 ## <a name="see-also"></a>Viz také:
 

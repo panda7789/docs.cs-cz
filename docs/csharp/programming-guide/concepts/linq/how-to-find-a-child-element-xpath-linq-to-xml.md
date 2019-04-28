@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání podřízeného elementu (XPath – LINQ to XML) (C#
 ms.date: 07/20/2015
 ms.assetid: 4fa6182d-6196-4ed1-9c9e-82949ff89c71
 ms.openlocfilehash: 6ce31c803e1f0877a6029bda9de73e4bf8e79279
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702253"
 ---
 # <a name="how-to-find-a-child-element-xpath-linq-to-xml-c"></a>Postupy: Vyhledání podřízeného elementu (XPath – LINQ to XML) (C#)
 Toto téma srovnává osu XPath podřízený element pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> metody.  

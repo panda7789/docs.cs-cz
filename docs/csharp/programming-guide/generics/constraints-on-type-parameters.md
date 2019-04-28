@@ -8,11 +8,11 @@ helpviewer_keywords:
 - type parameters [C#], constraints
 - unbound type parameter [C#]
 ms.openlocfilehash: 08863e677413c27461d621c7126c64f2b76c33a8
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57202597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61710638"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typů (C# Programming Guide)
 

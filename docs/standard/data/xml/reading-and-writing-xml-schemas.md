@@ -1,5 +1,5 @@
 ---
-title: Čtení a zápis schémat XML
+title: Čtení ze schémat XML a zápis do nich
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,16 +10,16 @@ ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f80157ddf394fdd058793830bfe3052b41ad1e40
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698756"
 ---
-# <a name="reading-and-writing-xml-schemas"></a>Čtení a zápis schémat XML
+# <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich
 Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápis schémata jazyk (XSD) definice schématu XML ze souborů nebo jiných zdrojů a sestavení XML schémata v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů, které mapují na struktury definované v celém světě Wide Web Consortium (W3C) doporučení schématu XML.  
   
-## <a name="reading-and-writing-xml-schemas"></a>Čtení a zápis schémat XML  
+## <a name="reading-and-writing-xml-schemas"></a>Čtení ze schémat XML a zápis do nich  
  <xref:System.Xml.Schema.XmlSchema> Třída poskytuje <xref:System.Xml.Schema.XmlSchema.Read%2A> a <xref:System.Xml.Schema.XmlSchema.Write%2A> metody pro čtení a zápis schémat XML. <xref:System.Xml.Schema.XmlSchema.Read%2A> Vrátí metoda <xref:System.Xml.Schema.XmlSchema> objekt představující schématu XML a přijímá volitelný <xref:System.Xml.Schema.ValidationEventHandler> jako parametr pro zpracování upozornění při ověřování schématu a při čtení schématu XML došlo k chybám.  
   
  <xref:System.Xml.Schema.XmlSchema.Write%2A> Metoda zapíše schémat XML pro <xref:System.IO.Stream>, <xref:System.IO.TextWriter> a <xref:System.Xml.XmlWriter> objektů a můžete provést volitelný <xref:System.Xml.XmlNamespaceManager> objektu jako parametr. <xref:System.Xml.XmlNamespaceManager> Se používá ke zpracování obory názvů v schématu XML. Další informace o <xref:System.Xml.XmlNamespaceManager> najdete v tématu [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md).  

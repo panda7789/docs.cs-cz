@@ -13,11 +13,11 @@ helpviewer_keywords:
 - directories [Windows Forms], selecting
 ms.assetid: 4593670e-7c7d-4661-b46b-4ffb63258adb
 ms.openlocfilehash: 050af6d10faec3dd09998349dcf96e96ea0f9201
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61746914"
 ---
 # <a name="how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component"></a>Postupy: Výběr složek pomocí komponenty Windows Forms FolderBrowserDialog
 Často v rámci aplikace Windows, které vytvoříte, budete muset vyzvat uživatele, vyberte složku, většina často budou sadu souborů. Windows Forms <xref:System.Windows.Forms.FolderBrowserDialog> komponenta umožňuje snadno provést tuto úlohu.  

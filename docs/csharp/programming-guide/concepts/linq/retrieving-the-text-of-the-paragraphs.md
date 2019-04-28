@@ -3,11 +3,11 @@ title: Načtení textu odstavců (C#)
 ms.date: 07/20/2015
 ms.assetid: 127d635e-e559-408f-90c8-2bb621ca50ac
 ms.openlocfilehash: 070bf4a3254f8e30ff7f4568c283f37ca288348c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54737095"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711860"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-c"></a>Načtení textu odstavců (C#)
 Tento příklad je založen na předchozím příkladu [načtení odstavců a jejich stylů (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text k jednotlivým odstavcům jako řetězec.  
@@ -140,7 +140,7 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Další kroky  
  Následující příklad ukazuje způsob použití metody rozšíření, namísto <xref:System.Linq.Enumerable.Aggregate%2A>pro řetězení více řetězců do jednoho řetězce.  
   
--   [Refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+- [Refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
   
 ## <a name="see-also"></a>Viz také:
 

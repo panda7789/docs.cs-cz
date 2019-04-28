@@ -11,11 +11,11 @@ ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6f70b4c67de892c3b66a0099dae9f618a99b3f1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61705633"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Postupy: Přijímání oznámení o první odpovídající výjimce
 <xref:System.AppDomain.FirstChanceException> Událost <xref:System.AppDomain> třída umožňuje dostávat oznámení, že byla vyvolána výjimka, před common language runtime začne hledat obslužné rutiny výjimek.
@@ -100,7 +100,7 @@ ms.locfileid: "59770487"
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
--   V tomto příkladu je aplikace příkazového řádku. Chcete-li zkompilovat a spustit tento kód v sadě Visual Studio, přidejte kód jazyka C# `Console.ReadLine();` (v jazyce Visual Basic `Console.ReadLine()`) na konci `Main()`, zabránit ukončit dříve, než si můžete přečíst výstup příkazového okna.
+- V tomto příkladu je aplikace příkazového řádku. Chcete-li zkompilovat a spustit tento kód v sadě Visual Studio, přidejte kód jazyka C# `Console.ReadLine();` (v jazyce Visual Basic `Console.ReadLine()`) na konci `Main()`, zabránit ukončit dříve, než si můžete přečíst výstup příkazového okna.
 
 ## <a name="see-also"></a>Viz také:
 

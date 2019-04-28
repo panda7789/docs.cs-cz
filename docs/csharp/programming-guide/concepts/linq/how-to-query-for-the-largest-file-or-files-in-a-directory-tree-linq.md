@@ -3,24 +3,24 @@ title: 'Postupy: Dotazování na největší soubor či soubory v adresářovém
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
 ms.openlocfilehash: 20453c754c792d4f5c59fde481e1fec56dcd0e09
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702279"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)
 Tento příklad ukazuje pět dotazů souvisejících s velikostí souboru v bajtech:  
   
--   Jak načíst velikost v bajtech největší soubor.  
+- Jak načíst velikost v bajtech největší soubor.  
   
--   Jak načíst velikost v bajtech nejmenší souboru.  
+- Jak načíst velikost v bajtech nejmenší souboru.  
   
--   Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v rámci zadané kořenové složky.  
+- Jak načíst <xref:System.IO.FileInfo> největší nebo nejmenší soubor objektu z jedné nebo více složek v rámci zadané kořenové složky.  
   
--   Jak získávají pořadí, jako je například 10 největších souborů.  
+- Jak získávají pořadí, jako je například 10 největších souborů.  
   
--   Způsob řazení souborů do skupiny založené na jejich velikost souboru v bajtech, soubory, které jsou menší než zadaná velikost se ignoruje.  
+- Způsob řazení souborů do skupiny založené na jejich velikost souboru v bajtech, soubory, které jsou menší než zadaná velikost se ignoruje.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad obsahuje pět samostatné dotazy, které ukazují, jak zadávat dotazy na soubory a skupin, v závislosti na jejich velikost souboru v bajtech. Můžete snadno upravit tyto příklady na základní dotaz na některé jiné vlastnosti <xref:System.IO.FileInfo> objektu.  

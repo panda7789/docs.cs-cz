@@ -3,11 +3,11 @@ title: <add> z <contractTypeNames>
 ms.date: 03/30/2017
 ms.assetid: 03aff6be-5dfb-4a64-ada3-e36227cd43c7
 ms.openlocfilehash: 856298cb0639cf19b941f326b5b9a25aa6663088
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59091314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701187"
 ---
 # <a name="add-of-contracttypenames"></a>\<add> of \<contractTypeNames>
 Konfigurace element, který určuje název kontraktu služby vyhledaly a kritéria obvykle používá při vyhledávání pro službu. Pokud je zadán více než jeden název smlouvy, jenom koncové body služby odpovídající všechny kontrakty odpovíte. Všimněte si, že ve Windows Communication Foundation (WCF), koncový bod podporuje pouze jeden kontrakt.  
@@ -52,7 +52,7 @@ Konfigurace element, který určuje název kontraktu služby vyhledaly a kritér
 |– obor názvů|Řetězec, který určuje obor názvů typu kontraktu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

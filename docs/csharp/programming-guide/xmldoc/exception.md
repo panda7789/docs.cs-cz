@@ -10,11 +10,11 @@ helpviewer_keywords:
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
 ms.openlocfilehash: 639e3a345fc8ed3d348461718f73ead6167158db
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61675920"
 ---
 # <a name="exception-c-programming-guide"></a>\<Výjimka > (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

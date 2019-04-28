@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0109b25b1cdc42204fc4873577e495641c4ec4fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59131453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761569"
 ---
 # <a name="isymunmanagedscope2-interface"></a>ISymUnmanagedScope2 – rozhraní
 Představuje lexikální rozsah v rámci metody. Toto rozhraní rozšiřuje [isymunmanagedscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) rozhraní s metodami, které získávají informace o konstanty definované v rámci oboru.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 0e306067-5720-4782-9719-2286570a7e47
 ms.openlocfilehash: 06609ce14edeb7e9306816b8a8d58d2212b61751
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760607"
 ---
 # <a name="method-based-query-syntax-examples-aggregate-operators"></a>Příklady syntaxe dotazů založených na volání metody: Agregační operátory
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Aggregate%2A>, <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.LongCount%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Sum%2A> metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
@@ -52,7 +52,7 @@ Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable
  [!code-csharp[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#averageelements_mq)]
  [!code-vb[DP L2E Examples#AverageElements_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#averageelements_mq)]  
   
-## <a name="count"></a>Počet  
+## <a name="count"></a>Count  
   
 ### <a name="example"></a>Příklad  
  V následujícím příkladu <xref:System.Linq.Enumerable.Count%2A> metody, která vrátí počet produktů v tabulce Product.  

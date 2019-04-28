@@ -3,11 +3,11 @@ title: 'Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
 ms.openlocfilehash: b8839f42a9b8b5f4da0a1a8364c7eac5a4c06d4e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699770"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Postupy: Konfigurace trvalosti pomocí třídy WorkflowServiceHost
 Toto téma popisuje postup konfigurace funkce SQL Store Instance pracovního postupu pro povolení trvalosti pro pracovní postupy hostované v <xref:System.ServiceModel.Activities.WorkflowServiceHost> pomocí konfiguračního souboru. Před použitím funkce SQL Store Instance pracovního postupu musíte vytvořit databázi SQL, který se používá k uchování instance pracovního postupu. Další informace najdete v tématu [jak: Povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  

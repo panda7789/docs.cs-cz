@@ -3,11 +3,11 @@ title: Výběr typu pověření
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
 ms.openlocfilehash: 8aa959aa952e839039bebffddddd951fbc1eb0d4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59167840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61748799"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které státní instituce problémy prokázání citizenship v zemi nebo oblast. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například název tokeny uživatele a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v WCF a tom, jak vybrat správné přihlašovací údaje pro vaše aplikace.  
@@ -85,9 +85,9 @@ ms.locfileid: "59167840"
 ## <a name="how-client-credentials-are-used-to-authenticate-a-client-to-the-service"></a>Jak se používají přihlašovací údaje pro klienta k ověření klienta ke službě  
  Poskytuje informace o klientech přihlašovacích údajů potřebných pro komunikaci se službou buď pomocí <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastnost nebo <xref:System.ServiceModel.ChannelFactory.Credentials%2A> vlastnost. Zabezpečený kanál používá tyto informace k ověření klienta ke službě. Ověřování se provádí prostřednictvím jednoho ze dvou režimů:  
   
--   Přihlašovací údaje klienta se používají jednou před odesláním první zprávu pomocí instance klienta WCF k vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou pak zabezpečené skrze kontext zabezpečení.  
+- Přihlašovací údaje klienta se používají jednou před odesláním první zprávu pomocí instance klienta WCF k vytvoření kontextu zabezpečení. Všechny zprávy aplikace jsou pak zabezpečené skrze kontext zabezpečení.  
   
--   Přihlašovací údaje klienta slouží k ověření každé aplikace zpráva odeslaná do služby. V tomto případě žádný kontext pokládáme stav, mezi klientem a službou.  
+- Přihlašovací údaje klienta slouží k ověření každé aplikace zpráva odeslaná do služby. V tomto případě žádný kontext pokládáme stav, mezi klientem a službou.  
   
 ### <a name="established-identities-cannot-be-changed"></a>Zavedené identity nejde změnit.  
  Při použití první způsob je trvale přidružený identity klienta vytvořeným kontextem. Po vytvoření kontextu zabezpečení, to znamená, nemůže být změněna identita přidružené ke klientovi.  
@@ -108,7 +108,6 @@ ms.locfileid: "59167840"
 - <xref:System.ServiceModel.MessageSecurityOverMsmq.ClientCredentialType%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.TcpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>
-- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>
 - [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)

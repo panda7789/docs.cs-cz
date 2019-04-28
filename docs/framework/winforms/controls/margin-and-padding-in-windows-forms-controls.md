@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Margin property [Windows Forms]
 ms.assetid: 3781b5a1-3085-4072-bed0-44670c23ffdc
 ms.openlocfilehash: bf1f88f6efcedd740bff92dda391470391f16ce5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61752511"
 ---
 # <a name="margin-and-padding-in-windows-forms-controls"></a>Okraj a odsazení v ovládacích prvcích Windows Forms
 Přesné umístění ovládacích prvků na formuláři je důležitá pro mnoho aplikací. <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů poskytuje mnoho funkcí rozložení, jak toho dosáhnout. Dva nejdůležitější jsou <xref:System.Windows.Forms.Control.Margin%2A> a <xref:System.Windows.Forms.Control.Padding%2A> vlastnosti.  

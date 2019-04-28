@@ -3,11 +3,11 @@ title: Serializace stromů XML (C#)
 ms.date: 07/20/2015
 ms.assetid: b3937e54-4ce9-4236-ac96-14e7972aa594
 ms.openlocfilehash: a1c39c4c85cbd01fa7c3f3f99f2dfae49e3721d9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61711730"
 ---
 # <a name="serializing-xml-trees-c"></a>Serializace stromů XML (C#)
 Serializaci stromu XML znamená, že generování XML ze stromu XML. Může serializovat do souboru, do konkrétní implementaci <xref:System.IO.TextWriter> třídy, nebo na konkrétní implementaci <xref:System.Xml.XmlWriter>.  

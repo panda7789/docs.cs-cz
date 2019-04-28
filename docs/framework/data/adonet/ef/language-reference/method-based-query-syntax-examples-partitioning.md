@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b7b64874-c3c8-4bdb-862c-89a168d07827
 ms.openlocfilehash: eaf98dc21499817446efca2f10edf7faea15761c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59141655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61760516"
 ---
 # <a name="method-based-query-syntax-examples-partitioning"></a>Příklady syntaxe dotazů založených na volání metody: Dělení
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Skip%2A>, a <xref:System.Linq.Enumerable.Take%2A> metody k dotazování [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) pomocí syntaxe výrazu dotazu. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  

@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID449
 ms.assetid: 76e7bcf3-24ed-4cd5-945b-b98f1c76944b
 ms.openlocfilehash: bd5c5c498fb489f01e8a867e3400a06ef7905173
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61751576"
 ---
 # <a name="argument-not-optional-visual-basic"></a>Argument není nepovinný (Visual Basic).
 Počet a typy argumentů musí odpovídat očekávalo. Buď je nesprávný počet argumentů nebo vynechaný argument není nepovinný. Argument může vynechat pouze během volání procedury definovaný uživatelem, pokud jeho deklaraci byl `Optional` v definici procedury.  

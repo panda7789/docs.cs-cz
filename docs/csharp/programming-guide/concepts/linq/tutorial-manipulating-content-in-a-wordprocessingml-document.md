@@ -3,11 +3,11 @@ title: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)'
 ms.date: 07/20/2015
 ms.assetid: bc9815f8-13d2-4f50-a4d1-b1c0d50d37b3
 ms.openlocfilehash: 2d972f53b30ccd8ba8e1ffdaecb40cf7f76e7b6c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54583463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61680711"
 ---
 # <a name="tutorial-manipulating-content-in-a-wordprocessingml-document-c"></a>Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)
 Tento kurz ukazuje, jak použít funkční transformace, jehož přístup a LINQ to XML k práci s dokumenty XML. Příklady jazyka C#, dotaz a manipulovat s informacemi v dokumentech Office Open XML WordprocessingML, které jsou uloženy v aplikaci Microsoft Word.  
