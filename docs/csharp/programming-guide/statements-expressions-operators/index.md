@@ -12,42 +12,42 @@ helpviewer_keywords:
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
 ms.openlocfilehash: 2d896708c702f5261239eb74f925c10eacd89619
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61709884"
 ---
-# <a name="statements-expressions-and-operators-c-programming-guide"></a><span data-ttu-id="8bdb0-102">Příkazy, výrazy a operátory (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="8bdb0-102">Statements, Expressions, and Operators (C# Programming Guide)</span></span>
+# <a name="statements-expressions-and-operators-c-programming-guide"></a><span data-ttu-id="7c328-102">Příkazy, výrazy a operátory (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="7c328-102">Statements, Expressions, and Operators (C# Programming Guide)</span></span>
 
-<span data-ttu-id="8bdb0-103">Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené klíčová slova, výrazy a operátory.</span><span class="sxs-lookup"><span data-stu-id="8bdb0-103">The C# code that comprises an application consists of statements made up of keywords, expressions and operators.</span></span> <span data-ttu-id="8bdb0-104">Tato část obsahuje informace týkající se tyto základní prvky programu v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="8bdb0-104">This section contains information regarding these fundamental elements of a C# program.</span></span>
+<span data-ttu-id="7c328-103">Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené klíčová slova, výrazy a operátory.</span><span class="sxs-lookup"><span data-stu-id="7c328-103">The C# code that comprises an application consists of statements made up of keywords, expressions and operators.</span></span> <span data-ttu-id="7c328-104">Tato část obsahuje informace týkající se tyto základní prvky programu v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="7c328-104">This section contains information regarding these fundamental elements of a C# program.</span></span>
 
- <span data-ttu-id="8bdb0-105">Další informace naleznete v tématu:</span><span class="sxs-lookup"><span data-stu-id="8bdb0-105">For more information, see:</span></span>
+ <span data-ttu-id="7c328-105">Další informace naleznete v tématu:</span><span class="sxs-lookup"><span data-stu-id="7c328-105">For more information, see:</span></span>
 
-- [<span data-ttu-id="8bdb0-106">Příkazy</span><span class="sxs-lookup"><span data-stu-id="8bdb0-106">Statements</span></span>](statements.md)
+- [<span data-ttu-id="7c328-106">Příkazy</span><span class="sxs-lookup"><span data-stu-id="7c328-106">Statements</span></span>](statements.md)
 
-- [<span data-ttu-id="8bdb0-107">Výrazy</span><span class="sxs-lookup"><span data-stu-id="8bdb0-107">Expressions</span></span>](expressions.md)
+- [<span data-ttu-id="7c328-107">Výrazy</span><span class="sxs-lookup"><span data-stu-id="7c328-107">Expressions</span></span>](expressions.md)
 
-  - [<span data-ttu-id="8bdb0-108">Členové tvoření výrazy</span><span class="sxs-lookup"><span data-stu-id="8bdb0-108">Expression-bodied members</span></span>](expression-bodied-members.md)
+  - [<span data-ttu-id="7c328-108">Členové tvoření výrazy</span><span class="sxs-lookup"><span data-stu-id="7c328-108">Expression-bodied members</span></span>](expression-bodied-members.md)
 
-- [<span data-ttu-id="8bdb0-109">Operátory</span><span class="sxs-lookup"><span data-stu-id="8bdb0-109">Operators</span></span>](operators.md)
+- [<span data-ttu-id="7c328-109">Operátory</span><span class="sxs-lookup"><span data-stu-id="7c328-109">Operators</span></span>](operators.md)
 
-- [<span data-ttu-id="8bdb0-110">Anonymní funkce</span><span class="sxs-lookup"><span data-stu-id="8bdb0-110">Anonymous Functions</span></span>](anonymous-functions.md)
+- [<span data-ttu-id="7c328-110">Anonymní funkce</span><span class="sxs-lookup"><span data-stu-id="7c328-110">Anonymous Functions</span></span>](anonymous-functions.md)
 
-- [<span data-ttu-id="8bdb0-111">Přetížitelné operátory</span><span class="sxs-lookup"><span data-stu-id="8bdb0-111">Overloadable Operators</span></span>](overloadable-operators.md)
+- [<span data-ttu-id="7c328-111">Přetížitelné operátory</span><span class="sxs-lookup"><span data-stu-id="7c328-111">Overloadable Operators</span></span>](overloadable-operators.md)
 
-- [<span data-ttu-id="8bdb0-112">Operátory převodu</span><span class="sxs-lookup"><span data-stu-id="8bdb0-112">Conversion Operators</span></span>](conversion-operators.md)
+- [<span data-ttu-id="7c328-112">Operátory převodu</span><span class="sxs-lookup"><span data-stu-id="7c328-112">Conversion Operators</span></span>](conversion-operators.md)
 
-  - [<span data-ttu-id="8bdb0-113">Použití operátorů převodu</span><span class="sxs-lookup"><span data-stu-id="8bdb0-113">Using Conversion Operators</span></span>](using-conversion-operators.md)
+  - [<span data-ttu-id="7c328-113">Použití operátorů převodu</span><span class="sxs-lookup"><span data-stu-id="7c328-113">Using Conversion Operators</span></span>](using-conversion-operators.md)
 
-  - [<span data-ttu-id="8bdb0-114">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="8bdb0-114">How to: Implement User-Defined Conversions Between Structs</span></span>](how-to-implement-user-defined-conversions-between-structs.md)
+  - [<span data-ttu-id="7c328-114">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="7c328-114">How to: Implement User-Defined Conversions Between Structs</span></span>](how-to-implement-user-defined-conversions-between-structs.md)
 
-- [<span data-ttu-id="8bdb0-115">Porovnání rovnosti</span><span class="sxs-lookup"><span data-stu-id="8bdb0-115">Equality Comparisons</span></span>](equality-comparisons.md)
+- [<span data-ttu-id="7c328-115">Porovnání rovnosti</span><span class="sxs-lookup"><span data-stu-id="7c328-115">Equality Comparisons</span></span>](equality-comparisons.md)
 
-## <a name="c-language-specification"></a><span data-ttu-id="8bdb0-116">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8bdb0-116">C# Language Specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="7c328-116">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7c328-116">C# Language Specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="8bdb0-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8bdb0-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7c328-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c328-117">See also</span></span>
 
-- [<span data-ttu-id="8bdb0-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="8bdb0-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="8bdb0-119">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="8bdb0-119">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+- [<span data-ttu-id="7c328-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="7c328-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="7c328-119">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="7c328-119">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)

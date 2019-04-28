@@ -18,47 +18,47 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a215189461bd22011462842bf02ff6c0109119fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59090034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763474"
 ---
-# <a name="iclrtaskswitchout-method"></a><span data-ttu-id="ba6c5-102">ICLRTask::SwitchOut – metoda</span><span class="sxs-lookup"><span data-stu-id="ba6c5-102">ICLRTask::SwitchOut Method</span></span>
-<span data-ttu-id="ba6c5-103">Upozorní common language runtime (CLR), která úloha je reprezentována aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance již provozuschopného stavu.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-103">Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is no longer in an operable state.</span></span>  
+# <a name="iclrtaskswitchout-method"></a><span data-ttu-id="4d6ee-102">ICLRTask::SwitchOut – metoda</span><span class="sxs-lookup"><span data-stu-id="4d6ee-102">ICLRTask::SwitchOut Method</span></span>
+<span data-ttu-id="4d6ee-103">Upozorní common language runtime (CLR), která úloha je reprezentována aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance již provozuschopného stavu.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-103">Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is no longer in an operable state.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ba6c5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ba6c5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4d6ee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4d6ee-104">Syntax</span></span>  
   
 ```  
 HRESULT SwitchOut ();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="ba6c5-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ba6c5-105">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="4d6ee-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4d6ee-105">Return Value</span></span>  
   
-|<span data-ttu-id="ba6c5-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="ba6c5-106">HRESULT</span></span>|<span data-ttu-id="ba6c5-107">Popis</span><span class="sxs-lookup"><span data-stu-id="ba6c5-107">Description</span></span>|  
+|<span data-ttu-id="4d6ee-106">HRESULT</span><span class="sxs-lookup"><span data-stu-id="4d6ee-106">HRESULT</span></span>|<span data-ttu-id="4d6ee-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4d6ee-107">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="ba6c5-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="ba6c5-108">S_OK</span></span>|<span data-ttu-id="ba6c5-109">`SwitchOut` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-109">`SwitchOut` returned successfully.</span></span>|  
-|<span data-ttu-id="ba6c5-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="ba6c5-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="ba6c5-111">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-111">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="ba6c5-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="ba6c5-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="ba6c5-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-113">The call timed out.</span></span>|  
-|<span data-ttu-id="ba6c5-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="ba6c5-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="ba6c5-115">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-115">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="ba6c5-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="ba6c5-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="ba6c5-117">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="ba6c5-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="ba6c5-118">E_FAIL</span></span>|<span data-ttu-id="ba6c5-119">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="ba6c5-120">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="ba6c5-121">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="4d6ee-108">S_OK</span><span class="sxs-lookup"><span data-stu-id="4d6ee-108">S_OK</span></span>|<span data-ttu-id="4d6ee-109">`SwitchOut` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-109">`SwitchOut` returned successfully.</span></span>|  
+|<span data-ttu-id="4d6ee-110">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="4d6ee-110">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="4d6ee-111">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-111">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="4d6ee-112">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="4d6ee-112">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="4d6ee-113">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-113">The call timed out.</span></span>|  
+|<span data-ttu-id="4d6ee-114">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="4d6ee-114">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="4d6ee-115">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-115">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="4d6ee-116">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="4d6ee-116">HOST_E_ABANDONED</span></span>|<span data-ttu-id="4d6ee-117">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-117">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="4d6ee-118">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="4d6ee-118">E_FAIL</span></span>|<span data-ttu-id="4d6ee-119">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-119">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="4d6ee-120">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-120">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="4d6ee-121">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-121">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="ba6c5-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ba6c5-122">Remarks</span></span>  
- <span data-ttu-id="ba6c5-123">Volá hostitele `SwitchOut` CLR informovat, že dočasně zastavila provádění úlohy, které aktuální `ICLRTask` instance představuje a přeplánuje úkolu.</span><span class="sxs-lookup"><span data-stu-id="ba6c5-123">A host calls `SwitchOut` to inform the CLR that it has temporarily stopped executing the task that the current `ICLRTask` instance represents, and will reschedule the task.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4d6ee-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4d6ee-122">Remarks</span></span>  
+ <span data-ttu-id="4d6ee-123">Volá hostitele `SwitchOut` CLR informovat, že dočasně zastavila provádění úlohy, které aktuální `ICLRTask` instance představuje a přeplánuje úkolu.</span><span class="sxs-lookup"><span data-stu-id="4d6ee-123">A host calls `SwitchOut` to inform the CLR that it has temporarily stopped executing the task that the current `ICLRTask` instance represents, and will reschedule the task.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ba6c5-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ba6c5-124">Requirements</span></span>  
- <span data-ttu-id="ba6c5-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ba6c5-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4d6ee-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4d6ee-124">Requirements</span></span>  
+ <span data-ttu-id="4d6ee-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4d6ee-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ba6c5-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="ba6c5-126">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="4d6ee-126">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="4d6ee-126">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="ba6c5-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ba6c5-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="4d6ee-127">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4d6ee-127">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="ba6c5-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ba6c5-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4d6ee-128">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4d6ee-128">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ba6c5-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ba6c5-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4d6ee-129">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d6ee-129">See also</span></span>
 
-- [<span data-ttu-id="ba6c5-130">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ba6c5-130">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
-- [<span data-ttu-id="ba6c5-131">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ba6c5-131">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
-- [<span data-ttu-id="ba6c5-132">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ba6c5-132">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
-- [<span data-ttu-id="ba6c5-133">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ba6c5-133">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+- [<span data-ttu-id="4d6ee-130">ICLRTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d6ee-130">ICLRTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [<span data-ttu-id="4d6ee-131">ICLRTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d6ee-131">ICLRTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [<span data-ttu-id="4d6ee-132">IHostTask – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d6ee-132">IHostTask Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [<span data-ttu-id="4d6ee-133">IHostTaskManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d6ee-133">IHostTaskManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

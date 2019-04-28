@@ -3,20 +3,20 @@ title: <backupLists>
 ms.date: 03/30/2017
 ms.assetid: 593b3390-f65b-4684-ad40-0596b62f0954
 ms.openlocfilehash: 6e44dbe3c0966c6d243db343b9f9b0dec2480cb1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701070"
 ---
-# <a name="backuplists"></a><span data-ttu-id="4ad58-101">\<backupLists></span><span class="sxs-lookup"><span data-stu-id="4ad58-101">\<backupLists></span></span>
-<span data-ttu-id="4ad58-102">Představuje konfigurační oddíl pro definování sady záložních služeb použitých při zpracování chyb.</span><span class="sxs-lookup"><span data-stu-id="4ad58-102">Represents a configuration section for defining a set of backup services used in error handling.</span></span> <span data-ttu-id="4ad58-103">Každý podřízený prvek je záložní seznam, který uvádí sady koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="4ad58-103">Each child element is a backup list that enumerates a set of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="4ad58-104">Pokud je první koncový bod v seznamu dolů, směrovací služba se automaticky převzetí služby při selhání k dalším objektem v seznamu.</span><span class="sxs-lookup"><span data-stu-id="4ad58-104">If the first endpoint in the list is down, the Routing Service will automatically fail-over to the next one in the list.</span></span>  <span data-ttu-id="4ad58-105">To umožňuje rychlé přidání spolehlivosti do aplikace bez nutnosti představuje klientskou aplikaci, jak zpracovávat složité vzory nebo všechny služby, ve které jsou nasazené.</span><span class="sxs-lookup"><span data-stu-id="4ad58-105">This gives you a quick way to add reliability to your application without having to teach your client application how to handle complex patterns or where all of your services are deployed.</span></span>  
+# <a name="backuplists"></a><span data-ttu-id="de05c-101">\<backupLists></span><span class="sxs-lookup"><span data-stu-id="de05c-101">\<backupLists></span></span>
+<span data-ttu-id="de05c-102">Představuje konfigurační oddíl pro definování sady záložních služeb použitých při zpracování chyb.</span><span class="sxs-lookup"><span data-stu-id="de05c-102">Represents a configuration section for defining a set of backup services used in error handling.</span></span> <span data-ttu-id="de05c-103">Každý podřízený prvek je záložní seznam, který uvádí sady koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="de05c-103">Each child element is a backup list that enumerates a set of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="de05c-104">Pokud je první koncový bod v seznamu dolů, směrovací služba se automaticky převzetí služby při selhání k dalším objektem v seznamu.</span><span class="sxs-lookup"><span data-stu-id="de05c-104">If the first endpoint in the list is down, the Routing Service will automatically fail-over to the next one in the list.</span></span>  <span data-ttu-id="de05c-105">To umožňuje rychlé přidání spolehlivosti do aplikace bez nutnosti představuje klientskou aplikaci, jak zpracovávat složité vzory nebo všechny služby, ve které jsou nasazené.</span><span class="sxs-lookup"><span data-stu-id="de05c-105">This gives you a quick way to add reliability to your application without having to teach your client application how to handle complex patterns or where all of your services are deployed.</span></span>  
   
- <span data-ttu-id="4ad58-106">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="4ad58-106">\<system.serviceModel></span></span>  
-<span data-ttu-id="4ad58-107">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="4ad58-107">\<routing></span></span>  
-<span data-ttu-id="4ad58-108">\<backupLists></span><span class="sxs-lookup"><span data-stu-id="4ad58-108">\<backupLists></span></span>  
+ <span data-ttu-id="de05c-106">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="de05c-106">\<system.serviceModel></span></span>  
+<span data-ttu-id="de05c-107">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="de05c-107">\<routing></span></span>  
+<span data-ttu-id="de05c-108">\<backupLists></span><span class="sxs-lookup"><span data-stu-id="de05c-108">\<backupLists></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4ad58-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ad58-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="de05c-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="de05c-109">Syntax</span></span>  
   
 ```xml  
 <routing>
@@ -28,24 +28,24 @@ ms.locfileid: "59134443"
 </routing>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="4ad58-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4ad58-110">Attributes and Elements</span></span>  
- <span data-ttu-id="4ad58-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4ad58-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="de05c-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="de05c-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="de05c-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="de05c-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="4ad58-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="4ad58-112">Attributes</span></span>  
- <span data-ttu-id="4ad58-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="4ad58-113">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="de05c-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="de05c-112">Attributes</span></span>  
+ <span data-ttu-id="de05c-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="de05c-113">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="4ad58-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4ad58-114">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="de05c-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="de05c-114">Child Elements</span></span>  
   
-|<span data-ttu-id="4ad58-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="4ad58-115">Element</span></span>|<span data-ttu-id="4ad58-116">Popis</span><span class="sxs-lookup"><span data-stu-id="4ad58-116">Description</span></span>|  
+|<span data-ttu-id="de05c-115">Prvek</span><span class="sxs-lookup"><span data-stu-id="de05c-115">Element</span></span>|<span data-ttu-id="de05c-116">Popis</span><span class="sxs-lookup"><span data-stu-id="de05c-116">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4ad58-117">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="4ad58-117">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md)|<span data-ttu-id="4ad58-118">Obsahuje seznam koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="4ad58-118">Contains a list of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="4ad58-119">.</span><span class="sxs-lookup"><span data-stu-id="4ad58-119">.</span></span>|  
+|[<span data-ttu-id="de05c-117">\<Filtr ></span><span class="sxs-lookup"><span data-stu-id="de05c-117">\<filter></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md)|<span data-ttu-id="de05c-118">Obsahuje seznam koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="de05c-118">Contains a list of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.</span></span> <span data-ttu-id="de05c-119">.</span><span class="sxs-lookup"><span data-stu-id="de05c-119">.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="4ad58-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4ad58-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="de05c-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="de05c-120">Parent Elements</span></span>  
   
-|<span data-ttu-id="4ad58-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="4ad58-121">Element</span></span>|<span data-ttu-id="4ad58-122">Popis</span><span class="sxs-lookup"><span data-stu-id="4ad58-122">Description</span></span>|  
+|<span data-ttu-id="de05c-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="de05c-121">Element</span></span>|<span data-ttu-id="de05c-122">Popis</span><span class="sxs-lookup"><span data-stu-id="de05c-122">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4ad58-123">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="4ad58-123">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|<span data-ttu-id="4ad58-124">Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definujjí koncové body do odesílání zpráv do při shodě s filtrem.</span><span class="sxs-lookup"><span data-stu-id="4ad58-124">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages, as well as routing tables that define the target endpoints to send messages to when a filter matches.</span></span>|  
+|[<span data-ttu-id="de05c-123">\<směrování ></span><span class="sxs-lookup"><span data-stu-id="de05c-123">\<routing></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|<span data-ttu-id="de05c-124">Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definujjí koncové body do odesílání zpráv do při shodě s filtrem.</span><span class="sxs-lookup"><span data-stu-id="de05c-124">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages, as well as routing tables that define the target endpoints to send messages to when a filter matches.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="4ad58-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4ad58-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="de05c-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="de05c-125">See also</span></span>
 
 - <xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection?displayProperty=nameWithType>

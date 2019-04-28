@@ -19,36 +19,36 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 74cb2c7d1f79d23e1331cc7192ba2d6acfd9835c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61761647"
 ---
-# <a name="initdbgtransportmanager-function"></a><span data-ttu-id="20b6d-102">InitDbgTransportManager – funkce</span><span class="sxs-lookup"><span data-stu-id="20b6d-102">InitDbgTransportManager Function</span></span>
-<span data-ttu-id="20b6d-103">Inicializuje správce přenosu pro připojení k vzdálené cíle pro výčet proces a modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="20b6d-103">Initializes the transport manager to connect to a remote target for process and runtime enumeration.</span></span>  
+# <a name="initdbgtransportmanager-function"></a><span data-ttu-id="f7d92-102">InitDbgTransportManager – funkce</span><span class="sxs-lookup"><span data-stu-id="f7d92-102">InitDbgTransportManager Function</span></span>
+<span data-ttu-id="f7d92-103">Inicializuje správce přenosu pro připojení k vzdálené cílové pro výčet procesu a modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="f7d92-103">Initializes the transport manager to connect to a remote target for process and runtime enumeration.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="20b6d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20b6d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f7d92-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7d92-104">Syntax</span></span>  
   
 ```  
 HRESULT InitDbgTransportManager ();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="20b6d-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="20b6d-105">Return Value</span></span>  
- <span data-ttu-id="20b6d-106">S_OK</span><span class="sxs-lookup"><span data-stu-id="20b6d-106">S_OK</span></span>  
- <span data-ttu-id="20b6d-107">Úspěch.</span><span class="sxs-lookup"><span data-stu-id="20b6d-107">Success.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="f7d92-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f7d92-105">Return Value</span></span>  
+ <span data-ttu-id="f7d92-106">S_OK</span><span class="sxs-lookup"><span data-stu-id="f7d92-106">S_OK</span></span>  
+ <span data-ttu-id="f7d92-107">Úspěch.</span><span class="sxs-lookup"><span data-stu-id="f7d92-107">Success.</span></span>  
   
- <span data-ttu-id="20b6d-108">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="20b6d-108">E_OUTOFMEMORY</span></span>  
- <span data-ttu-id="20b6d-109">Funkce se nepodařilo přidělit paměť pro správce přenosu.</span><span class="sxs-lookup"><span data-stu-id="20b6d-109">The function was unable to allocate memory for a transport manager.</span></span>  
+ <span data-ttu-id="f7d92-108">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="f7d92-108">E_OUTOFMEMORY</span></span>  
+ <span data-ttu-id="f7d92-109">Funkce se nepodařilo přidělit paměť pro správce přenosu.</span><span class="sxs-lookup"><span data-stu-id="f7d92-109">The function was unable to allocate memory for a transport manager.</span></span>  
   
- <span data-ttu-id="20b6d-110">E_FAIL (nebo ostatní návratové kódy E_)</span><span class="sxs-lookup"><span data-stu-id="20b6d-110">E_FAIL (or other E_ return codes)</span></span>  
- <span data-ttu-id="20b6d-111">Jiné chyby.</span><span class="sxs-lookup"><span data-stu-id="20b6d-111">Other failures.</span></span>  
+ <span data-ttu-id="f7d92-110">E_FAIL (nebo jiné E_ návratové kódy)</span><span class="sxs-lookup"><span data-stu-id="f7d92-110">E_FAIL (or other E_ return codes)</span></span>  
+ <span data-ttu-id="f7d92-111">Jiné chyby.</span><span class="sxs-lookup"><span data-stu-id="f7d92-111">Other failures.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="20b6d-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="20b6d-112">Requirements</span></span>  
- <span data-ttu-id="20b6d-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="20b6d-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f7d92-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f7d92-112">Requirements</span></span>  
+ <span data-ttu-id="f7d92-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7d92-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="20b6d-114">**Záhlaví:** CoreClrRemoteDebuggingInterfaces.h</span><span class="sxs-lookup"><span data-stu-id="20b6d-114">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
+ <span data-ttu-id="f7d92-114">**Záhlaví:** CoreClrRemoteDebuggingInterfaces.h</span><span class="sxs-lookup"><span data-stu-id="f7d92-114">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
   
- <span data-ttu-id="20b6d-115">**Knihovna:** mscordbi_macx86.dll</span><span class="sxs-lookup"><span data-stu-id="20b6d-115">**Library:** mscordbi_macx86.dll</span></span>  
+ <span data-ttu-id="f7d92-115">**Library:** mscordbi_macx86.dll</span><span class="sxs-lookup"><span data-stu-id="f7d92-115">**Library:** mscordbi_macx86.dll</span></span>  
   
- <span data-ttu-id="20b6d-116">**Verze rozhraní .NET framework:** 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="20b6d-116">**.NET Framework Versions:** 3.5 SP1</span></span>
+ <span data-ttu-id="f7d92-116">**Verze rozhraní .NET framework:** 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="f7d92-116">**.NET Framework Versions:** 3.5 SP1</span></span>

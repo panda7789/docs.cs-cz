@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 354d2f278bcb0618b823b7300079278fc4c3315c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157342"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758480"
 ---
-# <a name="icorprofilercallbackmoduleloadfinished-method"></a><span data-ttu-id="19b6f-102">ICorProfilerCallback::ModuleLoadFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="19b6f-102">ICorProfilerCallback::ModuleLoadFinished Method</span></span>
-<span data-ttu-id="19b6f-103">Upozorní profiler modulu dokončení načítání.</span><span class="sxs-lookup"><span data-stu-id="19b6f-103">Notifies the profiler that a module has finished loading.</span></span>  
+# <a name="icorprofilercallbackmoduleloadfinished-method"></a><span data-ttu-id="a6b7c-102">ICorProfilerCallback::ModuleLoadFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="a6b7c-102">ICorProfilerCallback::ModuleLoadFinished Method</span></span>
+<span data-ttu-id="a6b7c-103">Upozorní profiler modulu dokončení načítání.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-103">Notifies the profiler that a module has finished loading.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="19b6f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="19b6f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a6b7c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a6b7c-104">Syntax</span></span>  
   
 ```  
 HRESULT ModuleLoadFinished(  
@@ -35,28 +35,28 @@ HRESULT ModuleLoadFinished(
     [in] HRESULT  hrStatus);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="19b6f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="19b6f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a6b7c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a6b7c-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="19b6f-106">[in] ID modulu, který se dokončila načítání.</span><span class="sxs-lookup"><span data-stu-id="19b6f-106">[in] The ID of the module that has finished loading.</span></span>  
+ <span data-ttu-id="a6b7c-106">[in] ID modulu, který se dokončila načítání.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-106">[in] The ID of the module that has finished loading.</span></span>  
   
  `hrStatus`  
- <span data-ttu-id="19b6f-107">[in] HRESULT, která určuje, jestli byl modul načten úspěšně.</span><span class="sxs-lookup"><span data-stu-id="19b6f-107">[in] An HRESULT that indicates whether the module was loaded successfully.</span></span>  
+ <span data-ttu-id="a6b7c-107">[in] HRESULT, která určuje, jestli byl modul načten úspěšně.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-107">[in] An HRESULT that indicates whether the module was loaded successfully.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="19b6f-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="19b6f-108">Remarks</span></span>  
- <span data-ttu-id="19b6f-109">Hodnota `moduleId` není platná pro požadavek informace do `ModuleLoadFinished` metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="19b6f-109">The value of `moduleId` is not valid for an information request until the `ModuleLoadFinished` method is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a6b7c-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a6b7c-108">Remarks</span></span>  
+ <span data-ttu-id="a6b7c-109">Hodnota `moduleId` není platná pro požadavek informace do `ModuleLoadFinished` metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-109">The value of `moduleId` is not valid for an information request until the `ModuleLoadFinished` method is called.</span></span>  
   
- <span data-ttu-id="19b6f-110">Některé části načítání modulu může pokračovat po `ModuleLoadFinished` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="19b6f-110">Some parts of loading the module might continue after the `ModuleLoadFinished` callback.</span></span> <span data-ttu-id="19b6f-111">Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu.</span><span class="sxs-lookup"><span data-stu-id="19b6f-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="19b6f-112">Ale úspěch HRESULT v `hrStatus` značí pouze, že má první část načítání modulu bylo úspěšné.</span><span class="sxs-lookup"><span data-stu-id="19b6f-112">However, a success HRESULT in `hrStatus` indicates only that the first part of loading the module has succeeded.</span></span>  
+ <span data-ttu-id="a6b7c-110">Některé části načítání modulu může pokračovat po `ModuleLoadFinished` zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-110">Some parts of loading the module might continue after the `ModuleLoadFinished` callback.</span></span> <span data-ttu-id="a6b7c-111">Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="a6b7c-112">Ale úspěch HRESULT v `hrStatus` značí pouze, že má první část načítání modulu bylo úspěšné.</span><span class="sxs-lookup"><span data-stu-id="a6b7c-112">However, a success HRESULT in `hrStatus` indicates only that the first part of loading the module has succeeded.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="19b6f-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="19b6f-113">Requirements</span></span>  
- <span data-ttu-id="19b6f-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="19b6f-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a6b7c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a6b7c-113">Requirements</span></span>  
+ <span data-ttu-id="a6b7c-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a6b7c-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="19b6f-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="19b6f-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="a6b7c-115">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a6b7c-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="19b6f-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="19b6f-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a6b7c-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a6b7c-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="19b6f-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="19b6f-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="a6b7c-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a6b7c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="19b6f-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="19b6f-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a6b7c-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a6b7c-118">See also</span></span>
 
-- [<span data-ttu-id="19b6f-119">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="19b6f-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="19b6f-120">ModuleLoadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="19b6f-120">ModuleLoadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)
+- [<span data-ttu-id="a6b7c-119">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a6b7c-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="a6b7c-120">ModuleLoadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="a6b7c-120">ModuleLoadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)

@@ -19,26 +19,26 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 213ca658e7a84f03b15f97cf07aa1ed7cb39205b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424099"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61765333"
 ---
-# <a name="shutdowndbgtransportmanager-function"></a><span data-ttu-id="5cad3-102">ShutdownDbgTransportManager – funkce</span><span class="sxs-lookup"><span data-stu-id="5cad3-102">ShutdownDbgTransportManager Function</span></span>
-<span data-ttu-id="5cad3-103">Správce přenosu pro připojení k vzdálené cílový počítač vypne.</span><span class="sxs-lookup"><span data-stu-id="5cad3-103">Shuts down the transport manager for a connection to a remote target machine.</span></span>  
+# <a name="shutdowndbgtransportmanager-function"></a><span data-ttu-id="2e0cc-102">ShutdownDbgTransportManager – funkce</span><span class="sxs-lookup"><span data-stu-id="2e0cc-102">ShutdownDbgTransportManager Function</span></span>
+<span data-ttu-id="2e0cc-103">Správce přenosu pro připojení k vzdálené cílový počítač vypne.</span><span class="sxs-lookup"><span data-stu-id="2e0cc-103">Shuts down the transport manager for a connection to a remote target machine.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5cad3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5cad3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2e0cc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2e0cc-104">Syntax</span></span>  
   
 ```  
 void InitDbgTransportManager ();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="5cad3-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5cad3-105">Requirements</span></span>  
- <span data-ttu-id="5cad3-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5cad3-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2e0cc-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2e0cc-105">Requirements</span></span>  
+ <span data-ttu-id="2e0cc-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2e0cc-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5cad3-107">**Záhlaví:** CoreClrRemoteDebuggingInterfaces.h</span><span class="sxs-lookup"><span data-stu-id="5cad3-107">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
+ <span data-ttu-id="2e0cc-107">**Záhlaví:** CoreClrRemoteDebuggingInterfaces.h</span><span class="sxs-lookup"><span data-stu-id="2e0cc-107">**Header:** CoreClrRemoteDebuggingInterfaces.h</span></span>  
   
- <span data-ttu-id="5cad3-108">**Knihovna:** mscordbi_macx86.dll</span><span class="sxs-lookup"><span data-stu-id="5cad3-108">**Library:** mscordbi_macx86.dll</span></span>  
+ <span data-ttu-id="2e0cc-108">**Library:** mscordbi_macx86.dll</span><span class="sxs-lookup"><span data-stu-id="2e0cc-108">**Library:** mscordbi_macx86.dll</span></span>  
   
- <span data-ttu-id="5cad3-109">**Verze rozhraní .NET framework:** 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="5cad3-109">**.NET Framework Versions:** 3.5 SP1</span></span>
+ <span data-ttu-id="2e0cc-109">**Verze rozhraní .NET framework:** 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="2e0cc-109">**.NET Framework Versions:** 3.5 SP1</span></span>
