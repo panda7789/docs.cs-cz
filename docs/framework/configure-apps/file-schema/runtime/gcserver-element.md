@@ -11,64 +11,64 @@ ms.assetid: 8d25b80e-2581-4803-bd87-a59528e3cb03
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd91cf0179ef9731c456b41fdc865e3eacdb33eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61674152"
 ---
-# <a name="gcserver-element"></a><span data-ttu-id="3ae30-102">\<gcServer> Element</span><span class="sxs-lookup"><span data-stu-id="3ae30-102">\<gcServer> Element</span></span>
-<span data-ttu-id="3ae30-103">Určuje, zda modul common language runtime spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-103">Specifies whether the common language runtime runs server garbage collection.</span></span>  
+# <a name="gcserver-element"></a><span data-ttu-id="f3100-102">\<gcServer> Element</span><span class="sxs-lookup"><span data-stu-id="f3100-102">\<gcServer> Element</span></span>
+<span data-ttu-id="f3100-103">Určuje, zda modul common language runtime spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-103">Specifies whether the common language runtime runs server garbage collection.</span></span>  
   
- <span data-ttu-id="3ae30-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="3ae30-104">\<configuration></span></span>  
-<span data-ttu-id="3ae30-105">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="3ae30-105">\<runtime></span></span>  
-<span data-ttu-id="3ae30-106">\<gcServer></span><span class="sxs-lookup"><span data-stu-id="3ae30-106">\<gcServer></span></span>  
+ <span data-ttu-id="f3100-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="f3100-104">\<configuration></span></span>  
+<span data-ttu-id="f3100-105">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="f3100-105">\<runtime></span></span>  
+<span data-ttu-id="f3100-106">\<gcServer></span><span class="sxs-lookup"><span data-stu-id="f3100-106">\<gcServer></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3ae30-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3ae30-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f3100-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3100-107">Syntax</span></span>  
   
 ```xml  
 <gcServer    
    enabled="true|false"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3ae30-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="3ae30-108">Attributes and Elements</span></span>  
- <span data-ttu-id="3ae30-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="3ae30-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f3100-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f3100-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="f3100-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="f3100-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3ae30-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="3ae30-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="f3100-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="f3100-110">Attributes</span></span>  
   
-|<span data-ttu-id="3ae30-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="3ae30-111">Attribute</span></span>|<span data-ttu-id="3ae30-112">Popis</span><span class="sxs-lookup"><span data-stu-id="3ae30-112">Description</span></span>|  
+|<span data-ttu-id="f3100-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="f3100-111">Attribute</span></span>|<span data-ttu-id="f3100-112">Popis</span><span class="sxs-lookup"><span data-stu-id="f3100-112">Description</span></span>|  
 |---------------|-----------------|  
-|`enabled`|<span data-ttu-id="3ae30-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="3ae30-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="3ae30-114">Určuje, zda modul runtime spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-114">Specifies whether the runtime runs server garbage collection.</span></span>|  
+|`enabled`|<span data-ttu-id="f3100-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="f3100-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="f3100-114">Určuje, zda modul runtime spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-114">Specifies whether the runtime runs server garbage collection.</span></span>|  
   
-## <a name="enabled-attribute"></a><span data-ttu-id="3ae30-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="3ae30-115">enabled Attribute</span></span>  
+## <a name="enabled-attribute"></a><span data-ttu-id="f3100-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="f3100-115">enabled Attribute</span></span>  
   
-|<span data-ttu-id="3ae30-116">Hodnota</span><span class="sxs-lookup"><span data-stu-id="3ae30-116">Value</span></span>|<span data-ttu-id="3ae30-117">Popis</span><span class="sxs-lookup"><span data-stu-id="3ae30-117">Description</span></span>|  
+|<span data-ttu-id="f3100-116">Value</span><span class="sxs-lookup"><span data-stu-id="f3100-116">Value</span></span>|<span data-ttu-id="f3100-117">Popis</span><span class="sxs-lookup"><span data-stu-id="f3100-117">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="3ae30-118">Nejde spustit uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-118">Does not run server garbage collection.</span></span> <span data-ttu-id="3ae30-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="3ae30-119">This is the default.</span></span>|  
-|`true`|<span data-ttu-id="3ae30-120">Spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-120">Runs server garbage collection.</span></span>|  
+|`false`|<span data-ttu-id="f3100-118">Nejde spustit uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-118">Does not run server garbage collection.</span></span> <span data-ttu-id="f3100-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="f3100-119">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="f3100-120">Spustí uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-120">Runs server garbage collection.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="3ae30-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="3ae30-121">Child Elements</span></span>  
- <span data-ttu-id="3ae30-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="3ae30-122">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="f3100-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f3100-121">Child Elements</span></span>  
+ <span data-ttu-id="f3100-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="f3100-122">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="3ae30-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="3ae30-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="f3100-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f3100-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="3ae30-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="3ae30-124">Element</span></span>|<span data-ttu-id="3ae30-125">Popis</span><span class="sxs-lookup"><span data-stu-id="3ae30-125">Description</span></span>|  
+|<span data-ttu-id="f3100-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="f3100-124">Element</span></span>|<span data-ttu-id="f3100-125">Popis</span><span class="sxs-lookup"><span data-stu-id="f3100-125">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="3ae30-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3ae30-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`runtime`|<span data-ttu-id="3ae30-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="3ae30-127">Contains information about assembly binding and garbage collection.</span></span>|  
+|`configuration`|<span data-ttu-id="f3100-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f3100-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="f3100-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="f3100-127">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3ae30-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3ae30-128">Remarks</span></span>  
- <span data-ttu-id="3ae30-129">Modul CLR (CLR) podporuje dva typy uvolňování paměti: uvolnění paměti pracovní stanice, která je dostupná na všech systémech, a uvolňování paměti serveru, který je k dispozici v systémech s více procesory.</span><span class="sxs-lookup"><span data-stu-id="3ae30-129">The common language runtime (CLR) supports two types of garbage collection: workstation garbage collection, which is available on all systems, and server garbage collection, which is available on multiprocessor systems.</span></span> <span data-ttu-id="3ae30-130">Můžete použít `<gcServer>` elementu k řízení typu CLR uvolňování paměti provede.</span><span class="sxs-lookup"><span data-stu-id="3ae30-130">You use the `<gcServer>` element to control the type of garbage collection the CLR performs.</span></span> <span data-ttu-id="3ae30-131">Použití <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> a určí, zda je povoleno uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-131">Use the <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> property to determine if server garbage collection is enabled.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f3100-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f3100-128">Remarks</span></span>  
+ <span data-ttu-id="f3100-129">Modul CLR (CLR) podporuje dva typy uvolňování paměti: uvolnění paměti pracovní stanice, která je dostupná na všech systémech, a uvolňování paměti serveru, který je k dispozici v systémech s více procesory.</span><span class="sxs-lookup"><span data-stu-id="f3100-129">The common language runtime (CLR) supports two types of garbage collection: workstation garbage collection, which is available on all systems, and server garbage collection, which is available on multiprocessor systems.</span></span> <span data-ttu-id="f3100-130">Můžete použít `<gcServer>` elementu k řízení typu CLR uvolňování paměti provede.</span><span class="sxs-lookup"><span data-stu-id="f3100-130">You use the `<gcServer>` element to control the type of garbage collection the CLR performs.</span></span> <span data-ttu-id="f3100-131">Použití <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> a určí, zda je povoleno uvolnění paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-131">Use the <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType> property to determine if server garbage collection is enabled.</span></span>  
   
- <span data-ttu-id="3ae30-132">Jednoprocesorových počítačích výchozí kolekce uvolnění paměti pracovní stanice by měl být nejrychlejší možnost.</span><span class="sxs-lookup"><span data-stu-id="3ae30-132">For single-processor computers, the default workstation garbage collection should be the fastest option.</span></span> <span data-ttu-id="3ae30-133">Pracovní stanice nebo serveru lze použít pro počítače se dvěma procesory.</span><span class="sxs-lookup"><span data-stu-id="3ae30-133">Either workstation or server can be used for two-processor computers.</span></span> <span data-ttu-id="3ae30-134">Uvolnění paměti serveru by měl být nejrychlejší možnost pro více než dva procesory.</span><span class="sxs-lookup"><span data-stu-id="3ae30-134">Server garbage collection should be the fastest option for more than two processors.</span></span>  
+ <span data-ttu-id="f3100-132">Jednoprocesorových počítačích výchozí kolekce uvolnění paměti pracovní stanice by měl být nejrychlejší možnost.</span><span class="sxs-lookup"><span data-stu-id="f3100-132">For single-processor computers, the default workstation garbage collection should be the fastest option.</span></span> <span data-ttu-id="f3100-133">Pracovní stanice nebo serveru lze použít pro počítače se dvěma procesory.</span><span class="sxs-lookup"><span data-stu-id="f3100-133">Either workstation or server can be used for two-processor computers.</span></span> <span data-ttu-id="f3100-134">Uvolnění paměti serveru by měl být nejrychlejší možnost pro více než dva procesory.</span><span class="sxs-lookup"><span data-stu-id="f3100-134">Server garbage collection should be the fastest option for more than two processors.</span></span>  
   
- <span data-ttu-id="3ae30-135">Tento element lze použít pouze v konfiguračním souboru aplikace; je ignorován, pokud je v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="3ae30-135">This element can be used only in the application configuration file; it is ignored if it is in the machine configuration file.</span></span>  
+ <span data-ttu-id="f3100-135">Tento element lze použít pouze v konfiguračním souboru aplikace; je ignorován, pokud je v konfiguračním souboru počítače.</span><span class="sxs-lookup"><span data-stu-id="f3100-135">This element can be used only in the application configuration file; it is ignored if it is in the machine configuration file.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="3ae30-136">V rozhraní .NET Framework 4 a dřívějších verzích souběžné uvolňování paměti není k dispozici při uvolnění paměti serveru je povolená.</span><span class="sxs-lookup"><span data-stu-id="3ae30-136">In the .NET Framework 4 and earlier versions, concurrent garbage collection is not available when server garbage collection is enabled.</span></span> <span data-ttu-id="3ae30-137">Počínaje [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], je souběžné uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-137">Starting with the [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], server garbage collection is concurrent.</span></span> <span data-ttu-id="3ae30-138">Chcete-li použít nesouběžné uvolňování, nastavte `<gcServer>` elementu `true` a [ \<gcConcurrent > element](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) k `false`.</span><span class="sxs-lookup"><span data-stu-id="3ae30-138">To use non-concurrent server garbage collection, set the `<gcServer>` element to `true` and the [\<gcConcurrent> element](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) to `false`.</span></span>  
+>  <span data-ttu-id="f3100-136">V rozhraní .NET Framework 4 a dřívějších verzích souběžné uvolňování paměti není k dispozici při uvolnění paměti serveru je povolená.</span><span class="sxs-lookup"><span data-stu-id="f3100-136">In the .NET Framework 4 and earlier versions, concurrent garbage collection is not available when server garbage collection is enabled.</span></span> <span data-ttu-id="f3100-137">Počínaje [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], je souběžné uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-137">Starting with the [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], server garbage collection is concurrent.</span></span> <span data-ttu-id="f3100-138">Chcete-li použít nesouběžné uvolňování, nastavte `<gcServer>` elementu `true` a [ \<gcConcurrent > element](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) k `false`.</span><span class="sxs-lookup"><span data-stu-id="f3100-138">To use non-concurrent server garbage collection, set the `<gcServer>` element to `true` and the [\<gcConcurrent> element](../../../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) to `false`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3ae30-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="3ae30-139">Example</span></span>  
- <span data-ttu-id="3ae30-140">Následující příklad umožňuje uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="3ae30-140">The following example enables server garbage collection.</span></span>  
+## <a name="example"></a><span data-ttu-id="f3100-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="f3100-139">Example</span></span>  
+ <span data-ttu-id="f3100-140">Následující příklad umožňuje uvolňování paměti serveru.</span><span class="sxs-lookup"><span data-stu-id="f3100-140">The following example enables server garbage collection.</span></span>  
   
 ```xml  
 <configuration>  
@@ -78,9 +78,9 @@ ms.locfileid: "59132805"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3ae30-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3ae30-141">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f3100-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3100-141">See also</span></span>
 
 - <xref:System.Runtime.GCSettings.IsServerGC%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="3ae30-142">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="3ae30-142">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [<span data-ttu-id="3ae30-143">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="3ae30-143">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [<span data-ttu-id="3ae30-144">Chcete-li zakázat souběžné uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="3ae30-144">To disable concurrent garbage collection</span></span>](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [<span data-ttu-id="f3100-142">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="f3100-142">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [<span data-ttu-id="f3100-143">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="f3100-143">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="f3100-144">Chcete-li zakázat souběžné uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="f3100-144">To disable concurrent garbage collection</span></span>](gcconcurrent-element.md#to-disable-background-garbage-collection)
