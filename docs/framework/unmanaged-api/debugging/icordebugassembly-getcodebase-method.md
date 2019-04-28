@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f6236d6b5349a9c2a528a85559c0cbc02c8da381
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61645484"
 ---
-# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="7245d-102">ICorDebugAssembly::GetCodeBase – metoda</span><span class="sxs-lookup"><span data-stu-id="7245d-102">ICorDebugAssembly::GetCodeBase Method</span></span>
-<span data-ttu-id="7245d-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7245d-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugassemblygetcodebase-method"></a><span data-ttu-id="79fde-102">ICorDebugAssembly::GetCodeBase – metoda</span><span class="sxs-lookup"><span data-stu-id="79fde-102">ICorDebugAssembly::GetCodeBase Method</span></span>
+<span data-ttu-id="79fde-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="79fde-103">This method is not implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7245d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7245d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="79fde-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="79fde-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCodeBase (  
