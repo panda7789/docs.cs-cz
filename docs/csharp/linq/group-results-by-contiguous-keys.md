@@ -4,17 +4,17 @@ description: Jak seskupení výsledků podle sousedních klíčů pomocí jazyka
 ms.date: 08/14/2018
 ms.assetid: cbda9c08-151b-4c9e-82f7-c3d7f3dac66b
 ms.openlocfilehash: b5753c85bb07be4fc84b78a299eece961969ff9d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61659901"
 ---
 # <a name="group-results-by-contiguous-keys"></a>Seskupení výsledků podle sousedních klíčů
 
 Následující příklad ukazuje, jak seskupit elementy do bloků dat, které představují dílčích sekvencí, které ze sousedních klíčů. Předpokládejme například, že budete mít k následujícímu pořadí páry klíč hodnota:
 
-|Key|Hodnota|
+|Key|Value|
 |---------|-----------|
 |OBJEKT|Jsme|
 |OBJEKT|přemýšlení|

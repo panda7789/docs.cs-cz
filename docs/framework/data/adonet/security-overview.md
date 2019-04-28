@@ -3,11 +3,11 @@ title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
 ms.openlocfilehash: b93b78a5fabbcf60eefb386144ec90e877cfed0e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59089858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664152"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -46,19 +46,19 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 ## <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)  
  Zabezpečení přístupu kódu (CAS) je mechanismus, který pomáhá omezit přístup, který má kód k chráněným prostředkům a operacím. V rozhraní .NET Framework certifikačních Autorit provádí následující funkce:  
   
--   Definuje oprávnění a sady oprávnění, které představují práva pro přístup k různým prostředkům systému.  
+- Definuje oprávnění a sady oprávnění, které představují práva pro přístup k různým prostředkům systému.  
   
--   Umožňuje správcům konfigurovat zásady zabezpečení tím, že přidružíte sady oprávnění se skupinami kódu (skupiny kódu).  
+- Umožňuje správcům konfigurovat zásady zabezpečení tím, že přidružíte sady oprávnění se skupinami kódu (skupiny kódu).  
   
--   Umožňuje kódu požádat o oprávnění vyžaduje, aby bylo možné spustit, jakož i oprávnění, která může být užitečné mít a určuje, jaká oprávnění kód musí mít nikdy.  
+- Umožňuje kódu požádat o oprávnění vyžaduje, aby bylo možné spustit, jakož i oprávnění, která může být užitečné mít a určuje, jaká oprávnění kód musí mít nikdy.  
   
--   Uděluje oprávnění ke každému sestavení, který je načten, na základě oprávnění požadovaná tímto kódem a na operace povolena zásadami zabezpečení.  
+- Uděluje oprávnění ke každému sestavení, který je načten, na základě oprávnění požadovaná tímto kódem a na operace povolena zásadami zabezpečení.  
   
--   Umožňuje poptávku, že jeho volající nemá oprávnění kódu.  
+- Umožňuje poptávku, že jeho volající nemá oprávnění kódu.  
   
--   Umožňuje kódu na vyžádání, že jeho volající nemá digitální podpis, což umožní volat chráněné kód pouze volající z konkrétní organizace nebo webu.  
+- Umožňuje kódu na vyžádání, že jeho volající nemá digitální podpis, což umožní volat chráněné kód pouze volající z konkrétní organizace nebo webu.  
   
--   Vynucuje omezení kódu v době běhu porovnáním udělená oprávnění každý volající v zásobníku volání, které volající musí mít oprávnění.  
+- Vynucuje omezení kódu v době běhu porovnáním udělená oprávnění každý volající v zásobníku volání, které volající musí mít oprávnění.  
   
  Chcete-li minimalizovat množství škody, které může dojít, pokud útok úspěšně, zvolte kontext zabezpečení pro kód, který uděluje přístup jenom na prostředky, které potřebuje ke své práci Hotovo a nesmí mít víc.  
   
@@ -72,17 +72,17 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 ## <a name="database-security"></a>Zabezpečení databáze  
  Princip nejnižších oprávnění platí také pro zdroj dat. Některé obecné pokyny pro zabezpečení databáze patří:  
   
--   Vytvoření účtů s nejnižší možná oprávnění.  
+- Vytvoření účtů s nejnižší možná oprávnění.  
   
--   Nepovolte uživatelům přístup k účtům správců jen k získání kódu.  
+- Nepovolte uživatelům přístup k účtům správců jen k získání kódu.  
   
--   Nevkládejte do klientské aplikace na straně serveru chybové zprávy.  
+- Nevkládejte do klientské aplikace na straně serveru chybové zprávy.  
   
--   Ověřte všechny vstupy u klienta a serveru.  
+- Ověřte všechny vstupy u klienta a serveru.  
   
--   Používat příkazy s parametry a vyhnout se dynamické příkazů jazyka SQL.  
+- Používat příkazy s parametry a vyhnout se dynamické příkazů jazyka SQL.  
   
--   Povolte zabezpečení, auditování a protokolování pro databáze, kterou používáte tak, aby se zobrazí upozornění na jakékoli porušením zabezpečení.  
+- Povolte zabezpečení, auditování a protokolování pro databáze, kterou používáte tak, aby se zobrazí upozornění na jakékoli porušením zabezpečení.  
   
  Další informace najdete v následujících materiálech.  
   

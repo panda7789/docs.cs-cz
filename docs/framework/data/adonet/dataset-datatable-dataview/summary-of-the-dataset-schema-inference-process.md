@@ -3,32 +3,32 @@ title: Souhrn procesu odvození schématu datové sady
 ms.date: 03/30/2017
 ms.assetid: fd0891c8-d068-4e30-a76f-7c375f078bf7
 ms.openlocfilehash: 272e5762b7afd9f3ab24cbdec5f31bb120364815
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116061"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607294"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a>Souhrn procesu odvození schématu datové sady
 Procesu odvození nejdřív zjistí, z dokumentu XML, prvky, které se odvodit jako tabulka. Ze zbývajících XML určuje proces odvození sloupce pro tyto tabulky. Pro vnořené tabulky procesu odvození generuje vnořené <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty.  
   
  Tady je stručný přehled odvozených pravidel:  
   
--   Prvky, které mají atributy jsou odvozeny jako tabulka.  
+- Prvky, které mají atributy jsou odvozeny jako tabulka.  
   
--   Prvky, které mají podřízené prvky jsou odvozeny jako tabulka.  
+- Prvky, které mají podřízené prvky jsou odvozeny jako tabulka.  
   
--   Prvky, které se opakují jsou odvozeny jako jednu tabulku.  
+- Prvky, které se opakují jsou odvozeny jako jednu tabulku.  
   
--   Pokud má element dokumentu nebo kořenový, atributy a žádné podřízené prvky, které by odvodit jako sloupce, je odvozený jako <xref:System.Data.DataSet>. V opačném případě je element dokumentu odvozen jako tabulku.  
+- Pokud má element dokumentu nebo kořenový, atributy a žádné podřízené prvky, které by odvodit jako sloupce, je odvozený jako <xref:System.Data.DataSet>. V opačném případě je element dokumentu odvozen jako tabulku.  
   
--   Atributy jsou odvozeny jako sloupce.  
+- Atributy jsou odvozeny jako sloupce.  
   
--   Prvky, které mají žádné atributy nebo podřízené prvky a, které se neopakují, jsou odvozeny jako sloupce.  
+- Prvky, které mají žádné atributy nebo podřízené prvky a, které se neopakují, jsou odvozeny jako sloupce.  
   
--   Pro prvky, které jsou odvozeny jako vnořené tabulky v rámci další prvky, které jsou odvozeny také jako tabulky, vnořený **DataRelation** je vytvořen mezi dvěma tabulkami. Nové, primární klíčový sloupec s názvem **TableName_Id** bude přidána do obou tabulek a používá **DataRelation**. A **Objekt ForeignKeyConstraint** je vytvořen mezi dvěma tabulkami pomocí **TableName_Id** sloupce.  
+- Pro prvky, které jsou odvozeny jako vnořené tabulky v rámci další prvky, které jsou odvozeny také jako tabulky, vnořený **DataRelation** je vytvořen mezi dvěma tabulkami. Nové, primární klíčový sloupec s názvem **TableName_Id** bude přidána do obou tabulek a používá **DataRelation**. A **Objekt ForeignKeyConstraint** je vytvořen mezi dvěma tabulkami pomocí **TableName_Id** sloupce.  
   
--   Pro prvky, které jsou odvozeny jako tabulky a které obsahují text, ale mít žádné podřízené prvky, nový sloupec s názvem **TableName_Text** je vytvořená pro text jednotlivých prvků. Pokud element je odvozen jako tabulku a obsahuje text, ale má také podřízené prvky, text se ignoruje.  
+- Pro prvky, které jsou odvozeny jako tabulky a které obsahují text, ale mít žádné podřízené prvky, nový sloupec s názvem **TableName_Text** je vytvořená pro text jednotlivých prvků. Pokud element je odvozen jako tabulku a obsahuje text, ale má také podřízené prvky, text se ignoruje.  
   
 ## <a name="see-also"></a>Viz také:
 

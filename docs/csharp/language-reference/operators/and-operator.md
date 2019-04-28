@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: afa346d5-90ec-4b1f-a2c8-3881f018741d
 ms.openlocfilehash: 7aac0af93efb3d72496df13a64afb7840993b22c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980639"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660128"
 ---
 # <a name="amp-operator-c-reference"></a>&amp; – Operátor (referenční dokumentace jazyka C#)
 

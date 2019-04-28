@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 ms.openlocfilehash: ae2305e0f5d3ca4de386d8e7933a1107450e0be4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662553"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (možnosti kompilátoru C#)
 Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.  
@@ -30,29 +30,29 @@ Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.
   
 ## <a name="remarks"></a>Poznámky  
   
--   **anycpu** (výchozí) kompiluje sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží jako 64bitový proces, kdykoli je to možné a spadne zpět na 32bitovém základě když pouze tento režim je k dispozici.  
+- **anycpu** (výchozí) kompiluje sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží jako 64bitový proces, kdykoli je to možné a spadne zpět na 32bitovém základě když pouze tento režim je k dispozici.  
   
--   **anycpu32bitpreferred** zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží v režimu 32-bit na systémy, které podporují 64bitové a 32bitové aplikace. Můžete použít tuto možnost pouze pro projekty, které se zaměřují na rozhraní .NET Framework 4.5.  
+- **anycpu32bitpreferred** zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží v režimu 32-bit na systémy, které podporují 64bitové a 32bitové aplikace. Můžete použít tuto možnost pouze pro projekty, které se zaměřují na rozhraní .NET Framework 4.5.  
   
--   **ARM** kompiluje sestavení ke spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
+- **ARM** kompiluje sestavení ke spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
   
--   **ARM64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který má procesor Advanced RISC Machine (ARM), který podporuje A64 instrukční sadu.  
+- **ARM64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který má procesor Advanced RISC Machine (ARM), který podporuje A64 instrukční sadu.  
 
--   **x64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.  
+- **x64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.  
   
--   **x86** kompiluje sestavení ke spuštění v 32 bitů, které je kompatibilní x86 CLR.  
+- **x86** kompiluje sestavení ke spuštění v 32 bitů, které je kompatibilní x86 CLR.  
   
--   **Itanium** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači s procesorem Itanium.  
+- **Itanium** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači s procesorem Itanium.  
   
  V operačním systému Windows 64-bit:  
   
--   Sestavení zkompilovaná **-platform: x 86** spouštět na 32-bit CLR spuštěna v modulu WOW64.  
+- Sestavení zkompilovaná **-platform: x 86** spouštět na 32-bit CLR spuštěna v modulu WOW64.  
   
--   Knihovna DLL zkompilovaná **– platforma: anycpu** provede na stejném modulu CLR jako proces, do které je načten.  
+- Knihovna DLL zkompilovaná **– platforma: anycpu** provede na stejném modulu CLR jako proces, do které je načten.  
   
--   Spustitelné soubory, které jsou kompilovány pomocí **-platform: anycpu** spuštění v 64bitovém modulu CLR.  
+- Spustitelné soubory, které jsou kompilovány pomocí **-platform: anycpu** spuštění v 64bitovém modulu CLR.  
   
--   Spustitelné soubory zkompilovaná **-platform: anycpu32bitpreferred** spouštět na 32-bit modulu CLR.  
+- Spustitelné soubory zkompilovaná **-platform: anycpu32bitpreferred** spouštět na 32-bit modulu CLR.  
   
  **Anycpu32bitpreferred** nastavení platí jenom pro spustitelný soubor (. Soubory EXE) a vyžaduje rozhraní .NET Framework 4.5.  
   

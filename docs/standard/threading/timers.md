@@ -14,11 +14,11 @@ ms.assetid: 7091500d-be18-499b-a942-95366ce185e5
 author: pkulikov
 ms.author: ronpet
 ms.openlocfilehash: 644ccf5951e9d2556fc697d2fd763f026fd0ebdb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54617223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672559"
 ---
 # <a name="timers"></a>Časovače
 

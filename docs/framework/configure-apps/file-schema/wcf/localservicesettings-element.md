@@ -3,11 +3,11 @@ title: <localServiceSettings> – element
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
 ms.openlocfilehash: e987d14edde3af6aca2ceb392976abe3b6460c9c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102632"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614567"
 ---
 # <a name="localservicesettings-element"></a>\<localServiceSettings > – element
 Určuje nastavení zabezpečení místní služby pro tuto vazbu.  
@@ -76,13 +76,13 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
   
  Následující atributy `localServiceSecuritySettings` element může pomoci zmírnit útok s cílem odepření služby (DOS) zabezpečení:  
   
--   `maxCachedCookies`: Určuje maximální počet SecurityContextTokens časově, které jsou uložené v mezipaměti na serveru poté, co provede vyjednávání SPNEGO nebo SSL.  
+- `maxCachedCookies`: Určuje maximální počet SecurityContextTokens časově, které jsou uložené v mezipaměti na serveru poté, co provede vyjednávání SPNEGO nebo SSL.  
   
--   `issuedCookieLifetime`: Určuje životnost SecurityContextTokens, které jsou vystavované vyjednávání SPNEGO nebo SSL serveru. Server ukládá do mezipaměti SecurityContextTokens pro tuto dobu.  
+- `issuedCookieLifetime`: Určuje životnost SecurityContextTokens, které jsou vystavované vyjednávání SPNEGO nebo SSL serveru. Server ukládá do mezipaměti SecurityContextTokens pro tuto dobu.  
   
--   `maxPendingSessions`: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
+- `maxPendingSessions`: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
   
--   `inactivityTimeout`: Určuje maximální dobu, že služba zachová zabezpečené konverzace aktivní bez někdy příjem zprávy aplikace. v něm. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
+- `inactivityTimeout`: Určuje maximální dobu, že služba zachová zabezpečené konverzace aktivní bez někdy příjem zprávy aplikace. v něm. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro každého klienta, ale nikdy je používají.  
   
  V relaci zabezpečené konverzace, Všimněte si, že oba `inactivityTimeout` a `receiveTimeout` ovlivňují atributy ve vazbě časový limit relace. Čím kratší je časový z nich určuje, když dojde k vypršení časového limitu.  
   

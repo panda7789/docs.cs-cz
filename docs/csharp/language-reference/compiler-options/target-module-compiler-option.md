@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
 ms.openlocfilehash: 89139867cb0a207dbe82168015629fcb9e2fa6eb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54601893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662358"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module (C# Compiler Options)
 Tato možnost způsobí, že kompilátor nevygeneruje manifest sestavení.  

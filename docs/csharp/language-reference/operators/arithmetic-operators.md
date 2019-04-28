@@ -31,8 +31,8 @@ ms.openlocfilehash: dc817fdb9684f794efc6599444e80be1ef7f9654
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978039"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660123"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Aritmetické operátory (C# odkaz)
 

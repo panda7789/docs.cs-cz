@@ -5,11 +5,11 @@ helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
 ms.openlocfilehash: 144d2b6732ea319ba920317601eff2ebd7b58322
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132571"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608565"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
@@ -74,24 +74,24 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ### <a name="the-service-element"></a>\<Služby > – Element  
  Každá služba má tyto atributy:  
   
--   `name`. Určuje typ, který poskytuje implementaci kontraktu služby. Toto je plně kvalifikovaný název, který se skládá z oboru názvů, tečku a název typu. Například `"MyNameSpace.myServiceType"`.  
+- `name`. Určuje typ, který poskytuje implementaci kontraktu služby. Toto je plně kvalifikovaný název, který se skládá z oboru názvů, tečku a název typu. Například `"MyNameSpace.myServiceType"`.  
   
--   `behaviorConfiguration`. Určuje název jedné z `behavior` součástí prvky `behaviors` elementu. Zadané chování se řídí akce, například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdný název nebo žádnou instanci `behaviorConfiguration` je k dispozici potom výchozí sadu chování služby je přidán do služby.  
+- `behaviorConfiguration`. Určuje název jedné z `behavior` součástí prvky `behaviors` elementu. Zadané chování se řídí akce, například zda služba umožňuje zosobnění. Pokud je jeho hodnota prázdný název nebo žádnou instanci `behaviorConfiguration` je k dispozici potom výchozí sadu chování služby je přidán do služby.  
   
--   [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
+- [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
   
 ### <a name="the-endpoint-element"></a>\<Endpoint > – Element  
  Každý koncový bod požaduje adresu vazba a kontrakt, které jsou znázorněny následující atributy:  
   
--   `address`. Určuje služby identifikátor URI (Uniform Resource), což může být absolutní adresa nebo ten, který je zadána relativní k základní adresu služby. Pokud nastavit na prázdný řetězec znamená, že koncový bod je k dispozici na základní adrese, který je určen při vytváření <xref:System.ServiceModel.ServiceHost> pro službu.  
+- `address`. Určuje služby identifikátor URI (Uniform Resource), což může být absolutní adresa nebo ten, který je zadána relativní k základní adresu služby. Pokud nastavit na prázdný řetězec znamená, že koncový bod je k dispozici na základní adrese, který je určen při vytváření <xref:System.ServiceModel.ServiceHost> pro službu.  
   
--   `binding`. Obvykle určuje vazeb poskytovaných systémem jako <xref:System.ServiceModel.WSHttpBinding>, ale můžete také určit uživatelem definované vazby. Zadaná vazba Určuje typ přenosu, zabezpečení a kódování použité a určuje, zda je podporována nebo povolené spolehlivé relace, transakcí nebo datové proudy.  
+- `binding`. Obvykle určuje vazeb poskytovaných systémem jako <xref:System.ServiceModel.WSHttpBinding>, ale můžete také určit uživatelem definované vazby. Zadaná vazba Určuje typ přenosu, zabezpečení a kódování použité a určuje, zda je podporována nebo povolené spolehlivé relace, transakcí nebo datové proudy.  
   
--   `bindingConfiguration`. Pokud výchozí hodnoty vazby musí být změněny, to můžete udělat pomocí konfigurace odpovídající `binding` prvek `bindings` element. Tento atribut by měly mít stejnou hodnotu jako `name` atribut `binding` element, který umožňuje změnit výchozí nastavení. Pokud není zadán název, nebo žádný `bindingConfiguration` je zadaná ve vazbě, koncový bod je použita výchozí vazbu typu vazby.  
+- `bindingConfiguration`. Pokud výchozí hodnoty vazby musí být změněny, to můžete udělat pomocí konfigurace odpovídající `binding` prvek `bindings` element. Tento atribut by měly mít stejnou hodnotu jako `name` atribut `binding` element, který umožňuje změnit výchozí nastavení. Pokud není zadán název, nebo žádný `bindingConfiguration` je zadaná ve vazbě, koncový bod je použita výchozí vazbu typu vazby.  
   
--   `contract`. Určuje rozhraní definuje kontrakt. Toto je rozhraní implementované v společný typ language runtime (CLR) určené `name` atribut `service` elementu.  
+- `contract`. Určuje rozhraní definuje kontrakt. Toto je rozhraní implementované v společný typ language runtime (CLR) určené `name` atribut `service` elementu.  
   
--   [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md)  
+- [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md)  
   
 ### <a name="the-bindings-element"></a>\<Vazby > – Element  
  `bindings` Prvek obsahuje specifikace pro všechny vazby, které může používat libovolný koncový bod definovaný v libovolnou službu.  

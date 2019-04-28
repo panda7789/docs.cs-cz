@@ -6,11 +6,11 @@ ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
 ms.openlocfilehash: 5c7e3aca0a473abb831693244d1b194985f2ef7f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61614554"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Postupy: Port desktopovou aplikaci WPF až po .NET Core
 

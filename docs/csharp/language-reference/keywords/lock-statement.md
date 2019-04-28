@@ -10,11 +10,11 @@ helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
 ms.openlocfilehash: 63fadd3c37c7533211e7bd0ac07952ca99fd6a79
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244256"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661266"
 ---
 # <a name="lock-statement-c-reference"></a>Lock – příkaz (referenční dokumentace jazyka C#)
 

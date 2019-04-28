@@ -3,18 +3,18 @@ title: Cílová složka je soubor
 ms.date: 07/20/2015
 ms.assetid: c5e40bcb-2414-4484-b2b9-a9c391ad0029
 ms.openlocfilehash: 3189b6284939fabaaff923b80e6e767b89df50b2
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58035089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61593928"
 ---
 # <a name="target-folder-is-a-file"></a>Cílová složka je soubor
 Při pokusu o provedení akce související s složky zadáváte souboru.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zkontrolujte cestu zadáváte Ujistěte se, že zadáváte složky, nikoli soubor.  
+- Zkontrolujte cestu zadáváte Ujistěte se, že zadáváte složky, nikoli soubor.  
   
 ## <a name="see-also"></a>Viz také:
 

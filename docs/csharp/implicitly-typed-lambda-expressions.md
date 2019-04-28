@@ -4,11 +4,11 @@ description: Zjistěte, proč nelze použít deklaraci proměnné implicitně ty
 ms.date: 06/20/2016
 ms.assetid: a3851da9-e018-4389-9922-233db7d0f841
 ms.openlocfilehash: 9b798f40676afaad2075806d6dc512f279bc7065
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58126094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61672078"
 ---
 # <a name="implicitly-typed-lambda-expressions"></a>Implicitně typovaná lambda výrazy
 

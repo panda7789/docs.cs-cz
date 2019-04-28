@@ -15,11 +15,11 @@ helpviewer_keywords:
 - client sockets
 ms.assetid: f3fc7533-6956-42c6-bbc3-73e5a221027d
 ms.openlocfilehash: f709c2e0780b89e072c43e9acaf722e6851d4cbe
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61641889"
 ---
 # <a name="socket-code-examples"></a>Příklady kódu soketu
 Následující příklady kódu ukazují, jak používat <xref:System.Net.Sockets.Socket> třídy jako klienta pro připojení ke službám vzdálené sítě a serveru pro naslouchání pro připojení ze vzdálených klientů.  

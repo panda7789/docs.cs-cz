@@ -4,13 +4,13 @@ description: Zjistěte, jak zpracování hodnot null ve výrazech dotazů LINQ v
 ms.date: 12/01/2016
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
 ms.openlocfilehash: 14609aee2bbd1fbb487589bb41683a1f3cad1362
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61659888"
 ---
-# <a name="handle-null-values-in-query-expressions"></a>Zpracování hodnot null ve výrazech dotazů
+# <a name="handle-null-values-in-query-expressions"></a>Zpracování hodnot Null ve výrazech dotazů
 
 Tento příklad ukazuje, jak zpracování možných hodnot null ve zdrojové kolekce. Kolekci objektů, jako <xref:System.Collections.Generic.IEnumerable%601> může obsahovat elementy, jejichž hodnota je [null](../language-reference/keywords/null.md). Pokud zdrojová kolekce má hodnotu null nebo obsahuje prvek, jehož hodnota je null a dotaz ke zpracování hodnot null <xref:System.NullReferenceException> bude vyvolána výjimka při spouštění dotazu.
 

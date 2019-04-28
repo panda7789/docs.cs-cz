@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Const statement [Visual Basic]
 ms.assetid: 495b318d-b7c5-4198-94f8-0790a541b07a
 ms.openlocfilehash: 089c2dca99373f379e1eff319cf8c41242e5f135
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58835307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638308"
 ---
 # <a name="const-statement-visual-basic"></a>Const – příkaz (Visual Basic)
 Deklaruje a definuje jeden nebo více konstant.  
@@ -57,35 +57,35 @@ Const constantlist
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Konstanta deklarovanou na úrovni modulu, mimo všechny procedury, je *členské konstanty*; je členem třídy, struktury, nebo modul, který je deklaruje.  
+- **Místní deklarace.** Konstanta deklarovanou na úrovni modulu, mimo všechny procedury, je *členské konstanty*; je členem třídy, struktury, nebo modul, který je deklaruje.  
   
      Konstanta deklarované na úroveň procedury je *lokální konstanta*; je místní pro proceduru nebo blok, který deklaruje ho.  
   
--   **Atributy.** Můžete použít atributy pouze na členské konstanty, nikoli na místní konstanty. Atribut přispívá informace metadat sestavení, která není smysl pro dočasné úložiště, jako je například místní konstanty.  
+- **Atributy.** Můžete použít atributy pouze na členské konstanty, nikoli na místní konstanty. Atribut přispívá informace metadat sestavení, která není smysl pro dočasné úložiště, jako je například místní konstanty.  
   
--   **Modifikátory.** Standardně jsou všechny konstanty `Shared`, `Static`, a `ReadOnly`. Nemůžete použít žádnou z těchto klíčových slov při deklarování konstantní.  
+- **Modifikátory.** Standardně jsou všechny konstanty `Shared`, `Static`, a `ReadOnly`. Nemůžete použít žádnou z těchto klíčových slov při deklarování konstantní.  
   
      Na úrovni postupu nelze použít `Shadows` nebo žádný přístup k modifikátory deklarovat lokální konstanty.  
   
--   **Více konstant.** Je možné deklarovat několik konstant ve stejném příkazu deklarace, určení `constantname` část pro každé z nich. Více konstant jsou odděleny čárkami.  
+- **Více konstant.** Je možné deklarovat několik konstant ve stejném příkazu deklarace, určení `constantname` část pro každé z nich. Více konstant jsou odděleny čárkami.  
   
 ## <a name="data-type-rules"></a>Datový typ pravidla  
   
--   **Datové typy.** `Const` Příkazu můžete deklarovat datový typ proměnné. Můžete zadat libovolný datový typ nebo název výčtu.  
+- **Datové typy.** `Const` Příkazu můžete deklarovat datový typ proměnné. Můžete zadat libovolný datový typ nebo název výčtu.  
   
--   **Výchozí typ.** Pokud nezadáte `datatype`, konstanta má datový typ `initializer`. Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`. Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Object`.  
+- **Výchozí typ.** Pokud nezadáte `datatype`, konstanta má datový typ `initializer`. Pokud zadáte obě `datatype` a `initializer`, datový typ `initializer` musí být převeditelný na `datatype`. Pokud ani `datatype` ani `initializer` je k dispozici, výchozí hodnota je typu dat `Object`.  
   
--   **Různé typy.** Můžete určit různé datové typy pro různé konstanty pomocí samostatné `As` klauzuli pro každou proměnnou můžete deklarovat. Nelze však deklarovat několik konstant bude stejného typu pomocí společného `As` klauzuli.  
+- **Různé typy.** Můžete určit různé datové typy pro různé konstanty pomocí samostatné `As` klauzuli pro každou proměnnou můžete deklarovat. Nelze však deklarovat několik konstant bude stejného typu pomocí společného `As` klauzuli.  
   
--   **Inicializace.** Hodnota v každé konstanty musí inicializovat `constantlist`. Použijete `initializer` zadat výraz, který se přidělí na konstantu. Výraz může obsahovat libovolnou kombinaci literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány. Aritmetické a logické operátory můžete kombinovat takovýchto prvků.  
+- **Inicializace.** Hodnota v každé konstanty musí inicializovat `constantlist`. Použijete `initializer` zadat výraz, který se přidělí na konstantu. Výraz může obsahovat libovolnou kombinaci literály, jiné konstanty, které jsou již definovány a členy výčtu, které jsou již definovány. Aritmetické a logické operátory můžete kombinovat takovýchto prvků.  
   
      Nelze použít proměnné nebo funkce v `initializer`. Ale můžete použít klíčová slova převodu například `CByte` a `CShort`. Můžete také použít `AscW` při volání s konstantou `String` nebo `Char` argument, protože, který může být vyhodnocen v době kompilace.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Obor.** Místní konstanty je přístupný jenom v rámci jejich proceduru nebo blok. Členské konstanty jsou přístupné z kamkoli v jejich třídy, struktury nebo modulu.  
+- **Obor.** Místní konstanty je přístupný jenom v rámci jejich proceduru nebo blok. Členské konstanty jsou přístupné z kamkoli v jejich třídy, struktury nebo modulu.  
   
--   **Kvalifikace.** Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena konstanta s názvem této třídy, struktury nebo modulu. Kód mimo území proceduru nebo blok nemůže odkazovat na žádné místní konstanty v rámci tohoto postupu nebo bloku.  
+- **Kvalifikace.** Kód mimo třídu, strukturu nebo modul musí kvalifikovat název člena konstanta s názvem této třídy, struktury nebo modulu. Kód mimo území proceduru nebo blok nemůže odkazovat na žádné místní konstanty v rámci tohoto postupu nebo bloku.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Const` příkaz k deklaraci konstanty pro použití namísto hodnoty literálu.  

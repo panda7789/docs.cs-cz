@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (C
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
 ms.openlocfilehash: 8ba5fc03bbd831cfee0c4fd15e71708c4eafd212
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646773"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61667975"
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Postupy: Vyhledávání elementů v Namespace (XPath – LINQ to XML) (C#)
 Výrazy XPath najdete konkrétní obor názvů uzly. Výrazy XPath používání předpon oboru názvů pro zadání oborů názvů. Parsovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt do metody XPath, které implementuje <xref:System.Xml.IXmlNamespaceResolver>. Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.  

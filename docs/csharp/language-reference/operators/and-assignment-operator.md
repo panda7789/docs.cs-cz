@@ -9,11 +9,11 @@ helpviewer_keywords:
 - '&= operator [C#]'
 ms.assetid: e8d58f3f-72dd-4b5a-b995-452fcce7e6bb
 ms.openlocfilehash: 223d2f30ee77457e1f9d5304ec299517932499d0
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660148"
 ---
 # <a name="amp-operator-c-reference"></a>&amp;= – Operátor (referenční dokumentace jazyka C#)
 

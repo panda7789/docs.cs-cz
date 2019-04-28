@@ -3,11 +3,11 @@ title: Funkce pro datum a čas
 ms.date: 03/30/2017
 ms.assetid: 971762d0-663b-4b64-8c61-352a8e6d3949
 ms.openlocfilehash: 8d5bbb9577e8016d6d5f2d0bef1932f6321a1e02
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61606651"
 ---
 # <a name="date-and-time-functions"></a>Funkce pro datum a čas
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje funkce data a času, které provádějí operace na `System.DateTime` vstupní hodnotu a vrátí `string`číselné, nebo `System.DateTime` hodnota výsledku. Tyto funkce jsou v oboru názvů systému SQL Server, která je k dispozici, když použijete SqlClient. Vlastnost oboru názvů poskytovatele umožňuje zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce Entity Framework. V následující tabulce jsou uvedeny funkce date a time SqlClient.  

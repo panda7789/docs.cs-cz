@@ -10,11 +10,11 @@ helpviewer_keywords:
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
 ms.openlocfilehash: c590a33b83a9c6d1b839ecb496e8eb08488b2598
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661396"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají speciální význam pro kompilátor. Nelze je použít jako identifikátory v programu Pokud ovšem neobsahují `@` jako předponu. Například `@if` je platný identifikátor, ale `if` není, protože `if` je klíčové slovo.  

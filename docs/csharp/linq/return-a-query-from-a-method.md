@@ -1,14 +1,14 @@
 ---
-title: Vrácení dotazu z metody
+title: Vrácení dotazu z metody
 description: Postup vrácení dotazu.
 ms.date: 11/30/2016
 ms.assetid: db220f79-c35b-41f2-886c-cd068672d42d
 ms.openlocfilehash: fe2192a3edb683d7284ffae3b66cb9f70e8854b1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54519096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61659823"
 ---
 # <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Postupy: Vrácení dotazu z metody (C# Průvodce programováním v)
 Tento příklad ukazuje, jak jako návratovou hodnotu a vrácení dotazu z metody `out` parametru.  

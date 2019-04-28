@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
 ms.openlocfilehash: 53a867e46b02793df5ad5bd9ca5ef676d0653a2a
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660057"
 ---
 # <a name="-operator-c-reference"></a>?: – Operátor (referenční dokumentace jazyka C#)
 

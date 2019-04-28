@@ -6,11 +6,11 @@ helpviewer_keywords:
 - namespaces [C#], keywords
 ms.assetid: 091a66eb-b10d-4f54-9102-5ac0d4bdb84b
 ms.openlocfilehash: 5db71465bbba6c91c971a3bd570fdd97d362608d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54547251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661098"
 ---
 # <a name="namespace-keywords-c-reference"></a>Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)
 Tato část popisuje klíčová slova a operátory, které jsou spojeny s pomocí oborů názvů:  

@@ -10,10 +10,10 @@ helpviewer_keywords:
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
 ms.openlocfilehash: f05ba1ee4e926f9f4c1b6427ecc60b41b45b06e9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661448"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
 

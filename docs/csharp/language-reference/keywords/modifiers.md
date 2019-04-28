@@ -7,11 +7,11 @@ helpviewer_keywords:
 - modifiers [C#]
 ms.assetid: c96691dd-b357-49ec-b5ae-03ca214fadfb
 ms.openlocfilehash: 915e34310b634311c922a6b2c89701e793fbb191
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54511136"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61661202"
 ---
 # <a name="modifiers-c-reference"></a>Modifikátory (Referenční dokumentace jazyka C#)
 Modifikátory se používají pro úpravy deklarací typů a členů typu. Tato část obsahuje úvod do problematiky modifikátorů v jazyce C#.  

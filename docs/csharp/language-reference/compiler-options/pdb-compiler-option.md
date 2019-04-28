@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /pdb compiler option [C#]
 ms.assetid: e9d0f96a-5b75-45d6-9765-92538dd5f823
 ms.openlocfilehash: b0a566931ac76a3adb191f423a497bc446e280c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54575499"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662566"
 ---
 # <a name="-pdb-c-compiler-options"></a>-pdb (C# Compiler Options)
 **- Pdb** – možnost kompilátoru Určuje název a umístění souboru pro symboly ladění.  

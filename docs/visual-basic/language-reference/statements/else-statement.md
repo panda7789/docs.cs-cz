@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Else keyword [Visual Basic]
 ms.assetid: 154dd3d3-137b-4de6-a5aa-699b18dfb639
 ms.openlocfilehash: f249ac0816ae9375b081709900299a7ef8961880
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638165"
 ---
 # <a name="else-statement-visual-basic"></a>Else – příkaz (Visual Basic)
 Zavede skupinu příkazů ke spuštění nebo zkompiluje, pokud žádná jiná skupina podmíněných příkazů má spustit nebo kompilaci.  

@@ -5,11 +5,11 @@ author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
 ms.openlocfilehash: 53cdc13d5a356a2975182c58374a0e9c6639ec17
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481142"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61646979"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Vytvořit vlastního hostitele řídit modul .NET runtime z nativního kódu .NET Core
 
@@ -70,9 +70,9 @@ Společné vlastnosti patří:
 
 * `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělených pomocí ';' na Windows a ":" v Linuxu) která modul runtime bude možné vyřešit ve výchozím nastavení. Někteří hostitelé mají pevně zakódované manifest sestavení, které můžete načíst seznam. Ostatní zařadí všechny knihovny v určitých umístěních (vedle *coreclr.dll*, například) v tomto seznamu.
 * `APP_PATHS` Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
-*  `APP_NI_PATHS` Tento seznam je podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
-*  `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč testu při hledání nativních knihoven volání prostřednictvím p/invoke.
-*  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
+* `APP_NI_PATHS` Tento seznam je podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cest, které by měl zavaděč testu při hledání nativních knihoven volání prostřednictvím p/invoke.
+* `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
 
 Tato ukázka hostiteli je vytvářený seznamu TPA jednoduše výpis všech knihoven v aktuálním adresáři:
 
@@ -166,9 +166,9 @@ Společná nastavení domény aplikace patří:
 
 * `TRUSTED_PLATFORM_ASSEMBLIES` Toto je seznam cest sestavení (oddělené `;` na Windows a `:` v systému Linux/Mac) který AppDomain by měl upřednostňovat načítání a poskytují úplný vztah důvěryhodnosti (i v částečně důvěryhodné domény). Tento seznam slouží k obsahovat sestavení "Rozhraní" a další důvěryhodné moduly, podobně jako v GAC ve scénářích rozhraní .NET Framework. Někteří hostitelé zařadí všechny knihovny vedle *coreclr.dll* v tomto seznamu další ho mají pevně zakódované manifesty seznamem důvěryhodných sestavení pro svoje účely.
 * `APP_PATHS` Toto je seznam cest testovat v sestavení, pokud nebyl nalezen v seznamu důvěryhodných platforma sestavení (TPA). Vzhledem k tomu, že hostitel má větší kontrolu nad tím, které se načítají sestavení pomocí seznamu TPA, je osvědčeným postupem pro hostitele k určení sestavení, očekávané zatížení a jejich seznam explicitně. V případě potřeby testování za běhu, tuto vlastnost můžete povolit tento scénář.
-*  `APP_NI_PATHS` Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
-*  `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cesty, které by měl zavaděč testu při hledání nativních knihoven DLL volání prostřednictvím p/invoke.
-*  `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
+* `APP_NI_PATHS` Tento seznam je velmi podobný APP_PATHS s tím rozdílem, že má sloužit cesty, které bude zkoumat nativních bitových kopií.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` Tato vlastnost je seznam cesty, které by měl zavaděč testu při hledání nativních knihoven DLL volání prostřednictvím p/invoke.
+* `PLATFORM_RESOURCE_ROOTS` Tento seznam obsahuje cesty ke sběru dat v pro satelitní sestavení prostředků (v podadresářích specifické pro jazykovou verzi).
 
 V našem [jednoduchého ukázkového hostitele](https://github.com/dotnet/samples/tree/master/core/hosting/HostWithMscoree), tyto vlastnosti jsou wmm nastavit takto:
 

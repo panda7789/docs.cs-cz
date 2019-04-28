@@ -11,11 +11,11 @@ ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 46865e398c3868e21b743cf45f42e8b9063a0cbe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61666622"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
 Tato ukázka obsahuje ukázková data ve formátu .csv, společně s metodami, které transformují do kolekce v paměti zákazníky, produkty, objednávek a podrobnostmi o objednávce. Pro další pokusy pomocí jazyka PLINQ můžete vložit příklady kódů z některých dalších témat, která do kódu v tomto tématu a vyvolat z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  

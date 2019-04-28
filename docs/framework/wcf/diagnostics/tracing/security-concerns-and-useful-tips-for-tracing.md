@@ -3,11 +3,11 @@ title: Otázky zabezpečení a užitečné tipy pro trasování
 ms.date: 03/30/2017
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
 ms.openlocfilehash: 72d35230820e8466cd9c63a76b26c7a23bdfe024
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61663710"
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>Otázky zabezpečení a užitečné tipy pro trasování
 Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užitečné tipy při použití webového hostitele.  
@@ -22,11 +22,11 @@ Toto téma popisuje, jak můžete chránit citlivé informace z vystaven i užit
   
  Následující tipy vám mohou pomoci při zabránit neúmyslnému zveřejnění obsahu souboru trasování:  
   
--   Ujistěte se, že v protokolu, které soubory jsou chráněné pomocí řízení přístupu obsahuje seznam (ACL) ve webového hostitele i scénáře hostování na vlastním serveru.  
+- Ujistěte se, že v protokolu, které soubory jsou chráněné pomocí řízení přístupu obsahuje seznam (ACL) ve webového hostitele i scénáře hostování na vlastním serveru.  
   
--   Zvolte příponu souboru, která nelze zpracovat v snadno pomocí nějaké webové žádosti. Například přípona souboru .xml není bezpečná volba. Příručka věnovaná IIS zobrazíte seznam přípon, které se dají obsluhovat můžete zkontrolovat.  
+- Zvolte příponu souboru, která nelze zpracovat v snadno pomocí nějaké webové žádosti. Například přípona souboru .xml není bezpečná volba. Příručka věnovaná IIS zobrazíte seznam přípon, které se dají obsluhovat můžete zkontrolovat.  
   
--   Zadejte absolutní cestu k umístění souboru protokolu, který by měla být mimo virtuální kořenový adresář webového hostitele veřejného adresáře tak, aby přistupuje pomocí webového prohlížeče třetí strana.  
+- Zadejte absolutní cestu k umístění souboru protokolu, který by měla být mimo virtuální kořenový adresář webového hostitele veřejného adresáře tak, aby přistupuje pomocí webového prohlížeče třetí strana.  
   
  Ve výchozím nastavení klíče a identifikovatelné osobní údaje (PII) jako je například uživatelské jméno a heslo nejsou protokolovány v trasování a nezpůsobuje protokolování zpráv. Správce počítače, ale můžete použít `enableLoggingKnownPII` atribut `machineSettings` prvek souboru Machine.config tak, aby povolovala aplikace spuštěné na počítači pro přihlášení známého identifikovatelné osobní údaje (PII) následujícím způsobem:  
   

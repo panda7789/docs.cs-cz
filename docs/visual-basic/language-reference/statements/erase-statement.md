@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Erase statement [Visual Basic]
 ms.assetid: 7a8133d7-b750-4d74-8b66-ba1dd9778d4b
 ms.openlocfilehash: bf3eb6476dc1485faeddab475f29e508175d3378
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638184"
 ---
 # <a name="erase-statement-visual-basic"></a>Erase – příkaz (Visual Basic)
 Slouží k uvolnění proměnných pole a navrácení paměti používané pro jejich elementy.  

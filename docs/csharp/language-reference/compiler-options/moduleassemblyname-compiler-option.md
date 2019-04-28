@@ -9,11 +9,11 @@ helpviewer_keywords:
 - .moduleassemblyname compiler option [C#]
 ms.assetid: d464d9b9-f18d-423b-95e9-66c7878fd53a
 ms.openlocfilehash: 7d39840f3b12df621a0e8d5fae5725065c295e59
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361262"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662670"
 ---
 # <a name="-moduleassemblyname-c-compiler-option"></a>-moduleassemblyname (možnost kompilátoru C#)
 Určuje sestavení, jejichž typy neveřejným .netmodule můžete získat přístup.  
@@ -31,11 +31,11 @@ Určuje sestavení, jejichž typy neveřejným .netmodule můžete získat pří
 ## <a name="remarks"></a>Poznámky  
  **-moduleassemblyname** by měla sloužit při sestavování .netmodule, a pokud jsou splněny následující podmínky:  
   
--   .netmodule potřebuje přístup k neveřejným typům v existující sestavení.  
+- .netmodule potřebuje přístup k neveřejným typům v existující sestavení.  
   
--   Znáte jeho název sestavení, do které budou vytvořeny modul .NET.  
+- Znáte jeho název sestavení, do které budou vytvořeny modul .NET.  
   
--   Existující sestavení má udělen Přátelský přístup sestavení k sestavení, do které budou vytvořeny modul .NET.  
+- Existující sestavení má udělen Přátelský přístup sestavení k sestavení, do které budou vytvořeny modul .NET.  
   
  Další informace o vytváření .netmodule, naleznete v tématu [-target: module (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md).  
   

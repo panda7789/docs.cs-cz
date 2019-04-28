@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 44a84b03c85cc1332c07ffbaf53187b7f01d0236
-ms.sourcegitcommit: e994e47d3582bf09ae487ecbd53c0dac30aebaf7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58262472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61609045"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
 Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času. 
@@ -57,7 +57,7 @@ int FormatFromRawValue (
 
 Použijte některou z předchozích hodnot mohou být sloučeny pomocí operátoru OR s jedním z následujících příznaků škálování:
 
-|Konstanta  |Hodnota  |Popis |
+|Konstanta  |Value  |Popis |
 |---------|---------|---------|
 | `PDH_FMT_NOSCALE` | 0x00001000 | Nevztahují se čítač faktory měřítka. |
 | `PDH_FMT_1000` | 0x00002000 | Vynásobte konečnou hodnotu 1000. | 

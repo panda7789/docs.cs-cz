@@ -10,11 +10,11 @@ helpviewer_keywords:
 - event subscription [C#]
 ms.assetid: 9cdf97e6-331d-492b-85e1-3ec3171484e9
 ms.openlocfilehash: 5d48f2fe53a9bb6f781f8d35f1e0983bcaa30f88
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61660174"
 ---
 # <a name="-operator-c-reference"></a>+= – operátor (Referenční dokumentace jazyka C#)
 

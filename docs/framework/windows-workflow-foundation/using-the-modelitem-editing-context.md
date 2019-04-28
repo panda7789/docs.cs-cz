@@ -3,11 +3,11 @@ title: Použití kontextu úprav ModelItem
 ms.date: 03/30/2017
 ms.assetid: 7f9f1ea5-0147-4079-8eca-be94f00d3aa1
 ms.openlocfilehash: a2628bbbf2f6684e5d484b05cd5a2ac622f3b664
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61669495"
 ---
 # <a name="using-the-modelitem-editing-context"></a>Použití kontextu úprav ModelItem
 <xref:System.Activities.Presentation.Model.ModelItem> Kontextu úprav je objekt, který hostitelská aplikace používá ke komunikaci s návrhářem. <xref:System.Activities.Presentation.EditingContext> poskytuje dvě metody <xref:System.Activities.Presentation.EditingContext.Items%2A> a <xref:System.Activities.Presentation.EditingContext.Services%2A>, které je možné použít  
@@ -99,48 +99,48 @@ protected override void OnModelItemChanged(object newItem)
   
  Položky:  
   
--   <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: Slouží ke správě seznamu odkazovaných místní sestavení, které budou použity v pracovním postupu pro ovládací prvky (jako je například editor výrazů).  
+- <xref:System.Activities.Presentation.Hosting.AssemblyContextControlItem>: Slouží ke správě seznamu odkazovaných místní sestavení, které budou použity v pracovním postupu pro ovládací prvky (jako je například editor výrazů).  
   
--   <xref:System.Activities.Presentation.Hosting.ReadOnlyState>: Označuje, zda návrháře je ve stavu jen pro čtení.  
+- <xref:System.Activities.Presentation.Hosting.ReadOnlyState>: Označuje, zda návrháře je ve stavu jen pro čtení.  
   
--   <xref:System.Activities.Presentation.View.Selection>: Definuje kolekci objektů, které jsou aktuálně vybrány.  
+- <xref:System.Activities.Presentation.View.Selection>: Definuje kolekci objektů, které jsou aktuálně vybrány.  
   
--   <xref:System.Activities.Presentation.Hosting.WorkflowCommandExtensionItem>:  
+- <xref:System.Activities.Presentation.Hosting.WorkflowCommandExtensionItem>:  
   
--   <xref:System.Activities.Presentation.WorkflowFileItem>: Obsahuje informace o souboru, který je na základě aktuální relaci.  
+- <xref:System.Activities.Presentation.WorkflowFileItem>: Obsahuje informace o souboru, který je na základě aktuální relaci.  
   
  Služby:  
   
--   <xref:System.Activities.Presentation.Model.AttachedPropertiesService>: Umožňuje vlastnosti, které chcete přidat do aktuální instance pomocí <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>.  
+- <xref:System.Activities.Presentation.Model.AttachedPropertiesService>: Umožňuje vlastnosti, které chcete přidat do aktuální instance pomocí <xref:System.Activities.Presentation.Model.AttachedPropertiesService.AddProperty%2A>.  
   
--   <xref:System.Activities.Presentation.View.DesignerView>: Umožňuje přístup k vlastnostem plátna návrháře.  
+- <xref:System.Activities.Presentation.View.DesignerView>: Umožňuje přístup k vlastnostem plátna návrháře.  
   
--   <xref:System.Activities.Presentation.IActivityToolboxService>: Umožňuje obsah na panelu nástrojů na aktualizovat.  
+- <xref:System.Activities.Presentation.IActivityToolboxService>: Umožňuje obsah na panelu nástrojů na aktualizovat.  
   
--   <xref:System.Activities.Presentation.Hosting.ICommandService>: Používají k integraci s implementací služby poskytované vlastní příkazy návrháře (jako je kontextová nabídka).  
+- <xref:System.Activities.Presentation.Hosting.ICommandService>: Používají k integraci s implementací služby poskytované vlastní příkazy návrháře (jako je kontextová nabídka).  
   
--   <xref:System.Activities.Presentation.Debug.IDesignerDebugView>: Poskytuje funkce pro návrháře ladicího programu.  
+- <xref:System.Activities.Presentation.Debug.IDesignerDebugView>: Poskytuje funkce pro návrháře ladicího programu.  
   
--   <xref:System.Activities.Presentation.View.IExpressionEditorService>: Poskytuje přístup do dialogového okna editoru výrazů.  
+- <xref:System.Activities.Presentation.View.IExpressionEditorService>: Poskytuje přístup do dialogového okna editoru výrazů.  
   
--   <xref:System.Activities.Presentation.IIntegratedHelpService>: Poskytuje funkce integrovaná Nápověda Návrháře.  
+- <xref:System.Activities.Presentation.IIntegratedHelpService>: Poskytuje funkce integrovaná Nápověda Návrháře.  
   
--   <xref:System.Activities.Presentation.Validation.IValidationErrorService>: Poskytuje přístup k chybám ověření pomocí <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>.  
+- <xref:System.Activities.Presentation.Validation.IValidationErrorService>: Poskytuje přístup k chybám ověření pomocí <xref:System.Activities.Presentation.Validation.IValidationErrorService.ShowValidationErrors%2A>.  
   
--   <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: Poskytuje interní služba ukládat a načítat data. Tato služba používá se interně pomocí rozhraní .NET Framework a není určena pro externí použití.  
+- <xref:System.Activities.Presentation.IWorkflowDesignerStorageService>: Poskytuje interní služba ukládat a načítat data. Tato služba používá se interně pomocí rozhraní .NET Framework a není určena pro externí použití.  
   
--   <xref:System.Activities.Presentation.IXamlLoadErrorService>: Poskytuje přístup k XAML zatížení chybu kolekce pomocí <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>.  
+- <xref:System.Activities.Presentation.IXamlLoadErrorService>: Poskytuje přístup k XAML zatížení chybu kolekce pomocí <xref:System.Activities.Presentation.IXamlLoadErrorService.ShowXamlLoadErrors%2A>.  
   
--   <xref:System.Activities.Presentation.Services.ModelService>: Návrhář se používají k interakci s modelem pracovního postupu, který právě upravujete.  
+- <xref:System.Activities.Presentation.Services.ModelService>: Návrhář se používají k interakci s modelem pracovního postupu, který právě upravujete.  
   
--   <xref:System.Activities.Presentation.Model.ModelTreeManager>: Poskytuje přístup do kořenového adresáře pomocí stromu modelu položky <xref:System.Activities.Presentation.Model.ModelItem.Root%2A>.  
+- <xref:System.Activities.Presentation.Model.ModelTreeManager>: Poskytuje přístup do kořenového adresáře pomocí stromu modelu položky <xref:System.Activities.Presentation.Model.ModelItem.Root%2A>.  
   
--   <xref:System.Activities.Presentation.UndoEngine>: Poskytuje vrácení zpět a znovu funkce.  
+- <xref:System.Activities.Presentation.UndoEngine>: Poskytuje vrácení zpět a znovu funkce.  
   
--   <xref:System.Activities.Presentation.Services.ViewService>: Vizuální prvky Maps na základní položky modelu.  
+- <xref:System.Activities.Presentation.Services.ViewService>: Vizuální prvky Maps na základní položky modelu.  
   
--   <xref:System.Activities.Presentation.View.ViewStateService>: Úložiště zobrazit stavy položky modelu.  
+- <xref:System.Activities.Presentation.View.ViewStateService>: Úložiště zobrazit stavy položky modelu.  
   
--   <xref:System.Activities.Presentation.View.VirtualizedContainerService>: Použít k přizpůsobení chování virtuální kontejner uživatelského rozhraní.  
+- <xref:System.Activities.Presentation.View.VirtualizedContainerService>: Použít k přizpůsobení chování virtuální kontejner uživatelského rozhraní.  
   
--   <xref:System.Activities.Presentation.Hosting.WindowHelperService>: Umožňuje vytvářet a rušit registraci delegáty pro oznámení události. Také umožňuje vlastníkovi okna nastavení.
+- <xref:System.Activities.Presentation.Hosting.WindowHelperService>: Umožňuje vytvářet a rušit registraci delegáty pro oznámení události. Také umožňuje vlastníkovi okna nastavení.

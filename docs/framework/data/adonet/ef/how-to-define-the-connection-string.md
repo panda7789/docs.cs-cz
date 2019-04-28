@@ -3,11 +3,11 @@ title: 'Postupy: Definování připojovacího řetězce'
 ms.date: 03/30/2017
 ms.assetid: 6027335d-4e26-420d-9151-6523289b1989
 ms.openlocfilehash: 7fb722acbb13b3502d004978581701cc70118ff8
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61606101"
 ---
 # <a name="how-to-define-the-connection-string"></a>Postupy: Definování připojovacího řetězce
 
@@ -35,5 +35,5 @@ Pokud váš projekt nemá konfiguračního souboru aplikace, můžete výběrem 
 ## <a name="see-also"></a>Viz také:
 
 - [Rychlý start](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399182(v=vs.100))
-- [Jak: Vytvoření nového souboru EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100))
+- [Postupy: Vytvoření nového souboru EDMX](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100))
 - [Datový Model Entity ADO.NET nástroje](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

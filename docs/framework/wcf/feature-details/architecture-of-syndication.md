@@ -3,24 +3,24 @@ title: Architektura syndikace
 ms.date: 03/30/2017
 ms.assetid: ed4ca86e-e3d8-4acb-87aa-1921fbc353be
 ms.openlocfilehash: 4083f7f7ef3fc986e9a7c430b8ed8cfe451c9d86
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59075909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61596359"
 ---
 # <a name="architecture-of-syndication"></a>Architektura syndikace
 Rozhraní API syndikace je navržené pro poskytování formátu neutrální programovací model, který umožňuje syndikovaný obsah má být proveden zápis k přenosu v různých formátech. Abstraktní datový model obsahuje následující třídy:  
   
--   <xref:System.ServiceModel.Syndication.SyndicationCategory>  
+- <xref:System.ServiceModel.Syndication.SyndicationCategory>  
   
--   <xref:System.ServiceModel.Syndication.SyndicationFeed>  
+- <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
--   <xref:System.ServiceModel.Syndication.SyndicationItem>  
+- <xref:System.ServiceModel.Syndication.SyndicationItem>  
   
--   <xref:System.ServiceModel.Syndication.SyndicationLink>  
+- <xref:System.ServiceModel.Syndication.SyndicationLink>  
   
--   <xref:System.ServiceModel.Syndication.SyndicationPerson>  
+- <xref:System.ServiceModel.Syndication.SyndicationPerson>  
   
  Tyto třídy mapování úzce konstrukce definované ve specifikaci Atom 1.0, i když některé názvy se liší.  
   
@@ -75,7 +75,7 @@ Rozhraní API syndikace je navržené pro poskytování formátu neutrální pro
   
 ## <a name="extensibility"></a>Rozšiřitelnost  
   
--   Klíčovou funkcí služby syndikace protokolů je rozšíření. Atom 1.0 i RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definované specifikací. Programovací model syndikace WCF nabízí dva způsoby práce s vlastní atributy a rozšíření: odvození nové třídy a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
+- Klíčovou funkcí služby syndikace protokolů je rozšíření. Atom 1.0 i RSS 2.0 umožňují přidat atributy a elementy pro informační kanály syndikace, které nejsou definované specifikací. Programovací model syndikace WCF nabízí dva způsoby práce s vlastní atributy a rozšíření: odvození nové třídy a volného typu přístup. Další informace najdete v tématu [rozšiřitelnost syndikace](../../../../docs/framework/wcf/feature-details/syndication-extensibility.md).  
   
 ## <a name="see-also"></a>Viz také:
 

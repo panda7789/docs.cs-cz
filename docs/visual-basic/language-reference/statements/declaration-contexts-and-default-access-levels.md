@@ -10,11 +10,11 @@ helpviewer_keywords:
 - access levels, default levels
 ms.assetid: bf63b96e-e825-4745-88c8-5dae222728db
 ms.openlocfilehash: 0d899342383bdf9d262fc9a1ab5e00bbe43066e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638178"
 ---
 # <a name="declaration-contexts-and-default-access-levels-visual-basic"></a>Kontexty deklarace a výchozí úrovně přístupu (Visual Basic)
 Toto téma popisuje typy jazyka Visual Basic, které mohou být deklarovány v rámci které typy a jaké úroveň přístupu ve výchozím nastavení, pokud není zadána.  
@@ -24,11 +24,11 @@ Toto téma popisuje typy jazyka Visual Basic, které mohou být deklarovány v r
   
  Kontexty deklarace úrovně jsou následující:  
   
--   *Úroveň Namespace* – v rámci zdrojového souboru nebo oboru názvů, ale není v rozsahu třídy, struktury, modul nebo rozhraní  
+- *Úroveň Namespace* – v rámci zdrojového souboru nebo oboru názvů, ale není v rozsahu třídy, struktury, modul nebo rozhraní  
   
--   *Úroveň modulu* – v rámci třídy, struktury, modul nebo rozhraní, ale ne v rámci proceduru nebo blok  
+- *Úroveň modulu* – v rámci třídy, struktury, modul nebo rozhraní, ale ne v rámci proceduru nebo blok  
   
--   *Úroveň procedury* – uvnitř procedury nebo bloku (jako například `If` nebo `For`)  
+- *Úroveň procedury* – uvnitř procedury nebo bloku (jako například `If` nebo `For`)  
   
  V následující tabulce jsou uvedeny výchozí úrovně přístupu pro různé deklarovaný programový prvek, v závislosti na jejich kontexty deklarace.  
   

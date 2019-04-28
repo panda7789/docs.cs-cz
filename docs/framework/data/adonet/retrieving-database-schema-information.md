@@ -3,11 +3,11 @@ title: Načítání informací o databázovém schématu
 ms.date: 03/30/2017
 ms.assetid: 79038d52-f122-4fd4-9bfb-aaa22d6a114b
 ms.openlocfilehash: 885d3c9ad61c9099c960ddb0c0f77fa8a98dbefa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664243"
 ---
 # <a name="retrieving-database-schema-information"></a>Načítání informací o databázovém schématu
 Získání informací o schématu z databáze se provádí v procesu zjišťování schématu. Zjišťování schématu umožňuje aplikacím vyžadovat, že spravovaného poskytovatele vyhledání a vrácení informací o schématu databáze, označované také jako *metadat*, dané databáze. Prvky schématu jinou databázi, jako například tabulky, sloupce a uložené procedury jsou přístupné prostřednictvím kolekce schémat. Každá kolekce schématu obsahuje širokou škálu informací o schématu specifické pro použitý zprostředkovatel.  

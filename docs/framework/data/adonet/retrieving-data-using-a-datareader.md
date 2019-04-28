@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
 ms.openlocfilehash: 8063f239123ec1a2f2650adf9d76f7ceaaa50673
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59128677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664256"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Načtení dat pomocí čtečky dat
 K načtení dat pomocí **DataReader**, vytvoření instance **příkaz** objektu a pak vytvořte **DataReader** voláním **Command.ExecuteReader**  načíst ze zdroje dat řádků. **DataReader** poskytuje bez vyrovnávací paměti datového proudu dat, která umožňuje procedurální logiku pro efektivní zpracování výsledků ze zdroje dat postupně. **DataReader** je dobrou volbou, pokud načítáte velkých objemů dat, protože data neukládají do mezipaměti v paměti.

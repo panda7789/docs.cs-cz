@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
 ms.openlocfilehash: 84c84cb8fc0ee484b09c69c72571a19c335b58f4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61607307"
 ---
 # <a name="defining-primary-keys"></a>Definování primárních klíčů
 Databázové tabulky běžně má sloupec nebo skupina sloupců, které jednoznačně identifikuje každý řádek v tabulce. Toto identifikační sloupec nebo skupina sloupců se nazývá primární klíč.  

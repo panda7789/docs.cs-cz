@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Data z různých zdrojů pomocí třídy JoinBlock'
+title: 'Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0031e352fea845ca4831b4df3a67c9cc6b67e876
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61608487"
 ---
-# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Data z různých zdrojů pomocí třídy JoinBlock
+# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock
 Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy provádět operace, když jsou k dispozici data z různých zdrojů. Také ukazuje, jak použít bez metody greedy režim povolit více bloků spojení sdílet zdroje dat efektivněji.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -41,7 +41,7 @@ Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.Jo
   
  Visual Basic  
   
- **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowNonGreedyJoin.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowNonGreedyJoin.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Použití spojení typu non-greedy také vám může pomoct zabránit zablokování ve vaší aplikaci. V případě aplikace softwaru *zablokování* nastane, pokud dva nebo více procesů jednotlivých uložení prostředku a vzájemně počkat na jiný proces uvolnit jiný prostředek. Vezměte v úvahu aplikace, která definuje dva <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty. Oba objekty každý číst data ze dvou bloků sdílené zdroje. V režimu greedy Pokud jeden spojení blok čte z prvního zdroje a druhý spojení blok čte z druhého zdroje, aplikace může způsobila zablokování, protože obě spojení bloky vzájemně počkejte dalších vydat jeho prostředků. V režimu bez metody greedy každý blok spojení čtení záznamů z jeho zdroje pouze v případě, že všechna data jsou k dispozici a proto riziku zablokování je Odstraněná.  

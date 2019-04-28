@@ -3,11 +3,11 @@ title: Přehled Entity SQL
 ms.date: 03/30/2017
 ms.assetid: f0bb8120-e709-40a3-ac1e-5520dc47477d
 ms.openlocfilehash: 100d616462cd76e1dde8fc855787ec3118842fc8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61606174"
 ---
 # <a name="entity-sql-overview"></a>Přehled Entity SQL
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je, která umožňuje dotazování konceptuálních modelů v jazyce podobném SQL [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Konceptuální modely představují data jako entit a vztahů, a [!INCLUDE[esql](../../../../../../includes/esql-md.md)] umožňuje dotazování těchto entit a relací ve formátu, který je obeznámen všem uživatelům, kteří používají SQL.  

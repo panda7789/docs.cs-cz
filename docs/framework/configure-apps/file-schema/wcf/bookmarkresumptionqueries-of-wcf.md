@@ -3,11 +3,11 @@ title: <bookmarkResumptionQueries> služby WCF
 ms.date: 03/30/2017
 ms.assetid: ed086712-1dc7-4932-a592-d1116a0155f3
 ms.openlocfilehash: 4b11543e240b482d52c157083d1184db4f81bb04
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55261266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61673430"
 ---
 # <a name="bookmarkresumptionqueries-of-wcf"></a>\<bookmarkResumptionQueries > služby WCF
   

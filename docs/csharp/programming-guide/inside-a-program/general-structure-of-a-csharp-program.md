@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
 ms.openlocfilehash: a60a03d0f88b6176dc22e850c8a84b605078c657
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56967324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61679879"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Obecná struktura programu v C# (Průvodce programováním v C#)
 Programy jazyka C# může skládat z jednoho nebo více souborů. Každý soubor může obsahovat nula nebo více oborů názvů. Obor názvů může obsahovat typy, jako jsou třídy, struktury, rozhraní, výčty a delegáti, kromě jiných oborech názvů. Následuje kostra programu v C#, která obsahuje všechny tyto elementy.  
@@ -20,15 +20,15 @@ Programy jazyka C# může skládat z jednoho nebo více souborů. Každý soubor
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
   
--   [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
   
--   [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
   
--   [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
   
--   [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
+- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
   
--   [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
 

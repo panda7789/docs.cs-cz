@@ -11,11 +11,11 @@ ms.assetid: 8d56ff9b-a571-4d31-b41f-80c0b51b70a5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4b1a72a2b2443b419ea4f4b036664fb5f8932096
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54554241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61638319"
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>Postupy: Zpracování výjimek v dotazu PLINQ
 První příklad v tomto tématu ukazuje, jak zpracovat <xref:System.AggregateException?displayProperty=nameWithType> , které mohou být vyvolány z dotazu PLINQ při provádění. Druhý příklad ukazuje, jak vložit bloků try-catch v rámci delegáty, co nejblíže k kde bude vyvolána výjimka. Tímto způsobem může zachytit je co nejdříve, dojde k a případně pokračovat provádění dotazu. Pokud je výjimkám umožněn pokračovala zpět do spojovacího vlákna, pak je možné, že dotaz může pokračovat ve zpracování některých položek poté, co je vyvolána výjimka.  
@@ -43,7 +43,7 @@ První příklad v tomto tématu ukazuje, jak zpracovat <xref:System.AggregateEx
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Kompilace a spuštění tyto příklady, zkopírujte je do příklad ukázková Data pro PLINQ a zavolejte metodu z hlavní.  
+- Kompilace a spuštění tyto příklady, zkopírujte je do příklad ukázková Data pro PLINQ a zavolejte metodu z hlavní.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Nezachycujte výjimky, pokud si nejste jisti, jak ji zpracovat tak, aby nedošlo k poškození stavu programu.  

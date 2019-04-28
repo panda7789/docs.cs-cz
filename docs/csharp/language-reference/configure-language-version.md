@@ -3,11 +3,11 @@ title: Vyberte C# jazykovou verzi - C# Průvodce
 description: Konfigurace kompilátor provést ověření syntaxe pomocí specifické verzi kompilátoru
 ms.date: 02/28/2019
 ms.openlocfilehash: feb3e51a107f9830071b55c7985f202edc842f4a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61662281"
 ---
 # <a name="select-the-c-language-version"></a>Vyberte C# jazykovou verzi
 
@@ -61,7 +61,7 @@ Můžete nastavit jazykovou verzi vašeho **.csproj** souboru. Přidáte element
 
 Hodnota `latest` používá nejnovější dílčí verzi C# jazyka. Platné hodnoty jsou:
 
-|Hodnota|Význam|
+|Value|Význam|
 |------------|-------------|
 |preview|Kompilátor přijímá všechny platné syntaxe jazyka z nejnovější verze preview.|
 |nejnovější|Kompilátor přijímá syntaxi z nejnovější vydanou verzi kompilátoru (včetně vedlejší verze aktualizace).|
