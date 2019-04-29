@@ -3,11 +3,11 @@ title: 'Postupy: Zřetězení volání metod osy (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
 ms.openlocfilehash: ff3a7548e2ec54e8959f9f9b5ed52c0fc6acb1f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61702357"
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Postupy: Zřetězení volání metod osy (LINQ to XML) (C#)
 Běžným vzorem, který budete používat ve vašem kódu je volání metodu osy, následná volání, jeden z OS – metoda rozšíření.  

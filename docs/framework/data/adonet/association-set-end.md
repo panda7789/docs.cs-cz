@@ -3,20 +3,20 @@ title: association set end
 ms.date: 03/30/2017
 ms.assetid: fe4bf1d3-047a-4a37-98c5-a66e70811346
 ms.openlocfilehash: 7b6c646592c1878ea30396d98b4976dc8fa0be12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769575"
 ---
 # <a name="association-set-end"></a>association set end
 *Přidružení nastavit konec* identifikuje [typ entity](../../../../docs/framework/data/adonet/entity-type.md) a [sadu entit](../../../../docs/framework/data/adonet/entity-set.md) na konci [sada přidružení](../../../../docs/framework/data/adonet/association-set.md). Zakončení sady jsou definované jako součást sady přidružení; skupinu přidružení musí mít přesně dva zakončení sady.  
   
  Definici sady end přidružení obsahuje následující informace:  
   
--   Jeden z typů entity účastnící se přidružení nastavení. (Povinné)  
+- Jeden z typů entity účastnící se přidružení nastavení. (Povinné)  
   
--   Sada entit pro typ entity účastnící se sada přidružení. (Povinné)  
+- Sada entit pro typ entity účastnící se sada přidružení. (Povinné)  
   
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model se dvěma přidružení: `WrittenBy` a `PublishedBy`.  

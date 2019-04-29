@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dfbdbb389f9945ffeea649bcddd45bee8caf2496
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61698314"
 ---
 # <a name="efnstacktrace-function"></a>_EFN_StackTrace – funkce
 Poskytuje textové vyjádření spravovaného zásobníku a pole `CONTEXT` záznamy, jeden pro každý přechod mezi nespravované a spravovaného kódu.  
@@ -65,17 +65,17 @@ HRESULT CALLBACK _EFN_StackTrace(
 ## <a name="remarks"></a>Poznámky  
  `_EFN_StackTrace` Struktura může být volána z WinDbg programové rozhraní. Se používají následující parametry:  
   
--   Pokud `wszTextOut` má hodnotu null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
+- Pokud `wszTextOut` má hodnotu null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
   
--   Pokud `wszTextOut` je nenulová, uloží funkce text v `wszTextOut` až umístění indikován `puiTextLength`. Vrátí úspěšně Pokud byl dostatek volného místa ve vyrovnávací paměti nebo vrátí E_OUTOFMEMORY Pokud vyrovnávací paměť nebylo dostatečně dlouhé.  
+- Pokud `wszTextOut` je nenulová, uloží funkce text v `wszTextOut` až umístění indikován `puiTextLength`. Vrátí úspěšně Pokud byl dostatek volného místa ve vyrovnávací paměti nebo vrátí E_OUTOFMEMORY Pokud vyrovnávací paměť nebylo dostatečně dlouhé.  
   
--   Přechod část funkce se ignoruje, pokud `pTransitionContexts` a `puiTransitionContextCount` mají obě hodnotu null. V tomto případě poskytuje funkci volajícím s textový výstup pouze názvy funkcí.  
+- Přechod část funkce se ignoruje, pokud `pTransitionContexts` a `puiTransitionContextCount` mají obě hodnotu null. V tomto případě poskytuje funkci volajícím s textový výstup pouze názvy funkcí.  
   
--   Pokud `pTransitionContexts` má hodnotu null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet položek kontextu v `puiTransitionContextCount`.  
+- Pokud `pTransitionContexts` má hodnotu null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet položek kontextu v `puiTransitionContextCount`.  
   
--   Pokud `pTransitionContexts` není null, funkce zpracovává jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dán `uiSizeOfContext`, a musí mít velikost [simplecontext –](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
+- Pokud `pTransitionContexts` není null, funkce zpracovává jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dán `uiSizeOfContext`, a musí mít velikost [simplecontext –](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
   
--   `wszTextOut` je zapsán v následujícím formátu:  
+- `wszTextOut` je zapsán v následujícím formátu:  
   
     ```  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
@@ -84,11 +84,11 @@ HRESULT CALLBACK _EFN_StackTrace(
     ..."  
     ```  
   
--   Pokud posun šestnáctkově 0x0, je zapsán bez posunutí.  
+- Pokud posun šestnáctkově 0x0, je zapsán bez posunutí.  
   
--   Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí SOS_E_NOMANAGEDCODE.  
+- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí SOS_E_NOMANAGEDCODE.  
   
--   `Flags` Parametru je 0 nebo SOS_STACKTRACE_SHOWADDRESSES zobrazíte EBP a ESP před každou `module!functionname` řádku. Ve výchozím nastavení je 0.  
+- `Flags` Parametru je 0 nebo SOS_STACKTRACE_SHOWADDRESSES zobrazíte EBP a ESP před každou `module!functionname` řádku. Ve výchozím nastavení je 0.  
   
     ```  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
