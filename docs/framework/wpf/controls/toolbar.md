@@ -8,29 +8,29 @@ helpviewer_keywords:
 - ToolBar control [WPF]
 ms.assetid: 8a95d759-c298-4291-aa7e-ecdeffaae6ab
 ms.openlocfilehash: 5acb5d96a9c8a1ce2d2c0c842be0e57e62eb538f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790804"
 ---
-# <a name="toolbar"></a><span data-ttu-id="97aa5-102">ToolBar</span><span class="sxs-lookup"><span data-stu-id="97aa5-102">ToolBar</span></span>
-<span data-ttu-id="97aa5-103"><xref:System.Windows.Controls.ToolBar> Ovládací prvek slouží jako kontejner pro skupinu příkazů nebo ovládacích prvků, které se obvykle týkají v jejich funkce.</span><span class="sxs-lookup"><span data-stu-id="97aa5-103">The <xref:System.Windows.Controls.ToolBar> control is a container for a group of commands or controls that are typically related in their function.</span></span>  
+# <a name="toolbar"></a><span data-ttu-id="ea91a-102">ToolBar</span><span class="sxs-lookup"><span data-stu-id="ea91a-102">ToolBar</span></span>
+<span data-ttu-id="ea91a-103"><xref:System.Windows.Controls.ToolBar> Ovládací prvek slouží jako kontejner pro skupinu příkazů nebo ovládacích prvků, které se obvykle týkají v jejich funkce.</span><span class="sxs-lookup"><span data-stu-id="ea91a-103">The <xref:System.Windows.Controls.ToolBar> control is a container for a group of commands or controls that are typically related in their function.</span></span>  
   
- <span data-ttu-id="97aa5-104">Na následujících obrázcích vodorovného a svislého <xref:System.Windows.Controls.ToolBar> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="97aa5-104">The following illustrations show horizontal and vertical <xref:System.Windows.Controls.ToolBar> controls.</span></span>  
+ <span data-ttu-id="ea91a-104">Na následujících obrázcích vodorovného a svislého <xref:System.Windows.Controls.ToolBar> ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="ea91a-104">The following illustrations show horizontal and vertical <xref:System.Windows.Controls.ToolBar> controls.</span></span>  
   
- <span data-ttu-id="97aa5-105">![Horizontal ToolBar](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")</span><span class="sxs-lookup"><span data-stu-id="97aa5-105">![Horizontal ToolBar](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")</span></span>  
-<span data-ttu-id="97aa5-106">Vodorovném panelu nástrojů</span><span class="sxs-lookup"><span data-stu-id="97aa5-106">Horizontal Toolbar</span></span>  
+ <span data-ttu-id="ea91a-105">![Horizontal ToolBar](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")</span><span class="sxs-lookup"><span data-stu-id="ea91a-105">![Horizontal ToolBar](./media/ss-ctl-horztoolbar.GIF "SS_CTL_horztoolbar")</span></span>  
+<span data-ttu-id="ea91a-106">Vodorovném panelu nástrojů</span><span class="sxs-lookup"><span data-stu-id="ea91a-106">Horizontal Toolbar</span></span>  
   
- <span data-ttu-id="97aa5-107">![Vertical ToolBar](./media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")</span><span class="sxs-lookup"><span data-stu-id="97aa5-107">![Vertical ToolBar](./media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")</span></span>  
-<span data-ttu-id="97aa5-108">Svislé nástrojů</span><span class="sxs-lookup"><span data-stu-id="97aa5-108">Vertical Toolbar</span></span>  
+ <span data-ttu-id="ea91a-107">![Vertical ToolBar](./media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")</span><span class="sxs-lookup"><span data-stu-id="ea91a-107">![Vertical ToolBar](./media/ss-ctl-verttoolbar.GIF "SS_CTL_verttoolbar")</span></span>  
+<span data-ttu-id="ea91a-108">Svislé nástrojů</span><span class="sxs-lookup"><span data-stu-id="ea91a-108">Vertical Toolbar</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="97aa5-109">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="97aa5-109">In This Section</span></span>  
- [<span data-ttu-id="97aa5-110">ToolBar – přehled</span><span class="sxs-lookup"><span data-stu-id="97aa5-110">ToolBar Overview</span></span>](toolbar-overview.md)  
-  [<span data-ttu-id="97aa5-111">Ovládací prvky stylu na prvku ToolBar</span><span class="sxs-lookup"><span data-stu-id="97aa5-111">Style Controls on a ToolBar</span></span>](how-to-style-controls-on-a-toolbar.md)  
+## <a name="in-this-section"></a><span data-ttu-id="ea91a-109">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ea91a-109">In This Section</span></span>  
+ [<span data-ttu-id="ea91a-110">ToolBar – přehled</span><span class="sxs-lookup"><span data-stu-id="ea91a-110">ToolBar Overview</span></span>](toolbar-overview.md)  
+  [<span data-ttu-id="ea91a-111">Ovládací prvky stylu na prvku ToolBar</span><span class="sxs-lookup"><span data-stu-id="ea91a-111">Style Controls on a ToolBar</span></span>](how-to-style-controls-on-a-toolbar.md)  
   
-## <a name="reference"></a><span data-ttu-id="97aa5-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="97aa5-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="ea91a-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="ea91a-112">Reference</span></span>  
  <xref:System.Windows.Controls.ToolBar>  
   <xref:System.Windows.Controls.ToolBarTray>  
   
-## <a name="related-sections"></a><span data-ttu-id="97aa5-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="97aa5-113">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="ea91a-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="ea91a-113">Related Sections</span></span>

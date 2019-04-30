@@ -3,14 +3,14 @@ title: AttributeUsage (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
 ms.openlocfilehash: 1841171f2f3fc26ba9244c72c69960b765d39807
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61789113"
 ---
-# <a name="attributeusage-visual-basic"></a><span data-ttu-id="6c195-102">AttributeUsage (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6c195-102">AttributeUsage (Visual Basic)</span></span>
-<span data-ttu-id="6c195-103">Určuje, jak je možné třídu vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="6c195-103">Determines how a custom attribute class can be used.</span></span> <span data-ttu-id="6c195-104">`AttributeUsage` představuje atribut, který lze použít pro definice vlastní atribut pro řízení použití nového atributu.</span><span class="sxs-lookup"><span data-stu-id="6c195-104">`AttributeUsage` is an attribute that can be applied to custom attribute definitions to control how the new attribute can be applied.</span></span> <span data-ttu-id="6c195-105">Výchozí nastavení se při použití explicitně vypadat nějak takto:</span><span class="sxs-lookup"><span data-stu-id="6c195-105">The default settings look like this when applied explicitly:</span></span>  
+# <a name="attributeusage-visual-basic"></a><span data-ttu-id="17c8a-102">AttributeUsage (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17c8a-102">AttributeUsage (Visual Basic)</span></span>
+<span data-ttu-id="17c8a-103">Určuje, jak je možné třídu vlastního atributu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-103">Determines how a custom attribute class can be used.</span></span> <span data-ttu-id="17c8a-104">`AttributeUsage` představuje atribut, který lze použít pro definice vlastní atribut pro řízení použití nového atributu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-104">`AttributeUsage` is an attribute that can be applied to custom attribute definitions to control how the new attribute can be applied.</span></span> <span data-ttu-id="17c8a-105">Výchozí nastavení se při použití explicitně vypadat nějak takto:</span><span class="sxs-lookup"><span data-stu-id="17c8a-105">The default settings look like this when applied explicitly:</span></span>  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.All,   
@@ -21,9 +21,9 @@ Class NewAttribute
 End Class  
 ```  
   
- <span data-ttu-id="6c195-106">V tomto příkladu `NewAttribute` třída může být použitý pro entitu mít pro atribut kód, ale můžete použít jen jednou u každé entity.</span><span class="sxs-lookup"><span data-stu-id="6c195-106">In this example, the `NewAttribute` class can be applied to any attribute-able code entity, but can be applied only once to each entity.</span></span> <span data-ttu-id="6c195-107">To je zděděn z odvozené třídy při použití na základní třídu.</span><span class="sxs-lookup"><span data-stu-id="6c195-107">It is inherited by derived classes when applied to a base class.</span></span>  
+ <span data-ttu-id="17c8a-106">V tomto příkladu `NewAttribute` třída může být použitý pro entitu mít pro atribut kód, ale můžete použít jen jednou u každé entity.</span><span class="sxs-lookup"><span data-stu-id="17c8a-106">In this example, the `NewAttribute` class can be applied to any attribute-able code entity, but can be applied only once to each entity.</span></span> <span data-ttu-id="17c8a-107">To je zděděn z odvozené třídy při použití na základní třídu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-107">It is inherited by derived classes when applied to a base class.</span></span>  
   
- <span data-ttu-id="6c195-108">`AllowMultiple` a `Inherited` argumenty jsou volitelné, takže tento kód má stejný účinek:</span><span class="sxs-lookup"><span data-stu-id="6c195-108">The `AllowMultiple` and `Inherited` arguments are optional, so this code has the same effect:</span></span>  
+ <span data-ttu-id="17c8a-108">`AllowMultiple` a `Inherited` argumenty jsou volitelné, takže tento kód má stejný účinek:</span><span class="sxs-lookup"><span data-stu-id="17c8a-108">The `AllowMultiple` and `Inherited` arguments are optional, so this code has the same effect:</span></span>  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.All)>   
@@ -32,7 +32,7 @@ Class NewAttribute
 End Class  
 ```  
   
- <span data-ttu-id="6c195-109">První `AttributeUsage` argument musí být jeden nebo více prvků <xref:System.AttributeTargets> výčtu.</span><span class="sxs-lookup"><span data-stu-id="6c195-109">The first `AttributeUsage` argument must be one or more elements of the <xref:System.AttributeTargets> enumeration.</span></span> <span data-ttu-id="6c195-110">Více typů cíl může být propojený spolu s operátorem OR, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="6c195-110">Multiple target types can be linked together with the OR operator, like this:</span></span>  
+ <span data-ttu-id="17c8a-109">První `AttributeUsage` argument musí být jeden nebo více prvků <xref:System.AttributeTargets> výčtu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-109">The first `AttributeUsage` argument must be one or more elements of the <xref:System.AttributeTargets> enumeration.</span></span> <span data-ttu-id="17c8a-110">Více typů cíl může být propojený spolu s operátorem OR, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="17c8a-110">Multiple target types can be linked together with the OR operator, like this:</span></span>  
   
 ```vb  
 Imports System  
@@ -45,7 +45,7 @@ Class NewPropertyOrFieldAttribute
 End Class  
 ```  
   
- <span data-ttu-id="6c195-111">Pokud `AllowMultiple` argument je nastaven na `true`, pak výsledný atribut lze použít více než jednou na jednu entitu, například takto:</span><span class="sxs-lookup"><span data-stu-id="6c195-111">If the `AllowMultiple` argument is set to `true`, then the resulting attribute can be applied more than once to a single entity, like this:</span></span>  
+ <span data-ttu-id="17c8a-111">Pokud `AllowMultiple` argument je nastaven na `true`, pak výsledný atribut lze použít více než jednou na jednu entitu, například takto:</span><span class="sxs-lookup"><span data-stu-id="17c8a-111">If the `AllowMultiple` argument is set to `true`, then the resulting attribute can be applied more than once to a single entity, like this:</span></span>  
   
 ```vb  
 Imports System  
@@ -62,9 +62,9 @@ Class Class1
 End Class  
 ```  
   
- <span data-ttu-id="6c195-112">V tomto případě `MultiUseAttr` můžete použít opakovaně, protože `AllowMultiple` je nastavena na `true`.</span><span class="sxs-lookup"><span data-stu-id="6c195-112">In this case `MultiUseAttr` can be applied repeatedly because `AllowMultiple` is set to `true`.</span></span> <span data-ttu-id="6c195-113">Oba formáty pro použití více atributů jsou platné.</span><span class="sxs-lookup"><span data-stu-id="6c195-113">Both formats shown for applying multiple attributes are valid.</span></span>  
+ <span data-ttu-id="17c8a-112">V tomto případě `MultiUseAttr` můžete použít opakovaně, protože `AllowMultiple` je nastavena na `true`.</span><span class="sxs-lookup"><span data-stu-id="17c8a-112">In this case `MultiUseAttr` can be applied repeatedly because `AllowMultiple` is set to `true`.</span></span> <span data-ttu-id="17c8a-113">Oba formáty pro použití více atributů jsou platné.</span><span class="sxs-lookup"><span data-stu-id="17c8a-113">Both formats shown for applying multiple attributes are valid.</span></span>  
   
- <span data-ttu-id="6c195-114">Pokud `Inherited` je nastavena na `false`, pak atribut není zděděn z třídy, které jsou odvozeny z třídy, která má atribut.</span><span class="sxs-lookup"><span data-stu-id="6c195-114">If `Inherited` is set to `false`, then the attribute is not inherited by classes that are derived from a class that is attributed.</span></span> <span data-ttu-id="6c195-115">Příklad:</span><span class="sxs-lookup"><span data-stu-id="6c195-115">For example:</span></span>  
+ <span data-ttu-id="17c8a-114">Pokud `Inherited` je nastavena na `false`, pak atribut není zděděn z třídy, které jsou odvozeny z třídy, která má atribut.</span><span class="sxs-lookup"><span data-stu-id="17c8a-114">If `Inherited` is set to `false`, then the attribute is not inherited by classes that are derived from a class that is attributed.</span></span> <span data-ttu-id="17c8a-115">Příklad:</span><span class="sxs-lookup"><span data-stu-id="17c8a-115">For example:</span></span>  
   
 ```vb  
 Imports System  
@@ -86,15 +86,15 @@ Class DClass
 End Class  
 ```  
   
- <span data-ttu-id="6c195-116">V tomto případě `Attr1` neplatí pro `DClass` prostřednictvím dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="6c195-116">In this case `Attr1` is not applied to `DClass` via inheritance.</span></span>  
+ <span data-ttu-id="17c8a-116">V tomto případě `Attr1` neplatí pro `DClass` prostřednictvím dědičnosti.</span><span class="sxs-lookup"><span data-stu-id="17c8a-116">In this case `Attr1` is not applied to `DClass` via inheritance.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6c195-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6c195-117">Remarks</span></span>  
- <span data-ttu-id="6c195-118">`AttributeUsage` Atribut je jedno použití atributu – jej nelze použít více než jednou pro tutéž třídu.</span><span class="sxs-lookup"><span data-stu-id="6c195-118">The `AttributeUsage` attribute is a single-use attribute--it cannot be applied more than once to the same class.</span></span> <span data-ttu-id="6c195-119">`AttributeUsage` je alias pro <xref:System.AttributeUsageAttribute>.</span><span class="sxs-lookup"><span data-stu-id="6c195-119">`AttributeUsage` is an alias for <xref:System.AttributeUsageAttribute>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="17c8a-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="17c8a-117">Remarks</span></span>  
+ <span data-ttu-id="17c8a-118">`AttributeUsage` Atribut je jedno použití atributu – jej nelze použít více než jednou pro tutéž třídu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-118">The `AttributeUsage` attribute is a single-use attribute--it cannot be applied more than once to the same class.</span></span> <span data-ttu-id="17c8a-119">`AttributeUsage` je alias pro <xref:System.AttributeUsageAttribute>.</span><span class="sxs-lookup"><span data-stu-id="17c8a-119">`AttributeUsage` is an alias for <xref:System.AttributeUsageAttribute>.</span></span>  
   
- <span data-ttu-id="6c195-120">Další informace najdete v tématu [přístup k atributy podle použití reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span><span class="sxs-lookup"><span data-stu-id="6c195-120">For more information, see [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span></span>  
+ <span data-ttu-id="17c8a-120">Další informace najdete v tématu [přístup k atributy podle použití reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span><span class="sxs-lookup"><span data-stu-id="17c8a-120">For more information, see [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6c195-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="6c195-121">Example</span></span>  
- <span data-ttu-id="6c195-122">Následující příklad ukazuje účinek `Inherited` a `AllowMultiple` argumenty, které mají `AttributeUsage` atribut a jak mohou být uvedené vlastní atributy použité na třídu.</span><span class="sxs-lookup"><span data-stu-id="6c195-122">The following example demonstrates the effect of the `Inherited` and `AllowMultiple` arguments to the `AttributeUsage` attribute, and how the custom attributes applied to a class can be enumerated.</span></span>  
+## <a name="example"></a><span data-ttu-id="17c8a-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="17c8a-121">Example</span></span>  
+ <span data-ttu-id="17c8a-122">Následující příklad ukazuje účinek `Inherited` a `AllowMultiple` argumenty, které mají `AttributeUsage` atribut a jak mohou být uvedené vlastní atributy použité na třídu.</span><span class="sxs-lookup"><span data-stu-id="17c8a-122">The following example demonstrates the effect of the `Inherited` and `AllowMultiple` arguments to the `AttributeUsage` attribute, and how the custom attributes applied to a class can be enumerated.</span></span>  
   
 ```vb  
 Imports System  
@@ -149,7 +149,7 @@ Public Class TestAttributeUsage
 End Class  
 ```  
   
-## <a name="sample-output"></a><span data-ttu-id="6c195-123">Vzorový výstup</span><span class="sxs-lookup"><span data-stu-id="6c195-123">Sample Output</span></span>  
+## <a name="sample-output"></a><span data-ttu-id="17c8a-123">Vzorový výstup</span><span class="sxs-lookup"><span data-stu-id="17c8a-123">Sample Output</span></span>  
   
 ```  
 Attributes on Base Class:  
@@ -161,13 +161,13 @@ A3
 A2  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6c195-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6c195-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="17c8a-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17c8a-124">See also</span></span>
 
 - <xref:System.Attribute>
 - <xref:System.Reflection>
-- [<span data-ttu-id="6c195-125">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6c195-125">Visual Basic Programming Guide</span></span>](../../../../visual-basic/programming-guide/index.md)
-- [<span data-ttu-id="6c195-126">Atributy</span><span class="sxs-lookup"><span data-stu-id="6c195-126">Attributes</span></span>](../../../../standard/attributes/index.md)
-- [<span data-ttu-id="6c195-127">Reflexe (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6c195-127">Reflection (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [<span data-ttu-id="6c195-128">Atributy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6c195-128">Attributes (Visual Basic)</span></span>](../../../../visual-basic/language-reference/attributes.md)
-- [<span data-ttu-id="6c195-129">Vytváření vlastních atributů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6c195-129">Creating Custom Attributes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [<span data-ttu-id="6c195-130">Přístup k atributům pomocí reflexe (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6c195-130">Accessing Attributes by Using Reflection (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [<span data-ttu-id="17c8a-125">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="17c8a-125">Visual Basic Programming Guide</span></span>](../../../../visual-basic/programming-guide/index.md)
+- [<span data-ttu-id="17c8a-126">Atributy</span><span class="sxs-lookup"><span data-stu-id="17c8a-126">Attributes</span></span>](../../../../standard/attributes/index.md)
+- [<span data-ttu-id="17c8a-127">Reflexe (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17c8a-127">Reflection (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [<span data-ttu-id="17c8a-128">Atributy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17c8a-128">Attributes (Visual Basic)</span></span>](../../../../visual-basic/language-reference/attributes.md)
+- [<span data-ttu-id="17c8a-129">Vytváření vlastních atributů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17c8a-129">Creating Custom Attributes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [<span data-ttu-id="17c8a-130">Přístup k atributům pomocí reflexe (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17c8a-130">Accessing Attributes by Using Reflection (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

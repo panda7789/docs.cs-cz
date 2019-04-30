@@ -17,30 +17,30 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fcdcb8d70e04430ac09c78f0ef0ce1d95358db53
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922002"
 ---
-# <a name="iobjecthandle-interface"></a><span data-ttu-id="9a936-102">IObjectHandle – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9a936-102">IObjectHandle Interface</span></span>
-<span data-ttu-id="9a936-103">Poskytuje metodu pro rozbalení objekty zařazování podle hodnot z dereference.</span><span class="sxs-lookup"><span data-stu-id="9a936-103">Provides a method for unwrapping marshal-by-value objects from indirection.</span></span>  
+# <a name="iobjecthandle-interface"></a><span data-ttu-id="97f96-102">IObjectHandle – rozhraní</span><span class="sxs-lookup"><span data-stu-id="97f96-102">IObjectHandle Interface</span></span>
+<span data-ttu-id="97f96-103">Poskytuje metodu pro rozbalení objekty zařazování podle hodnot z dereference.</span><span class="sxs-lookup"><span data-stu-id="97f96-103">Provides a method for unwrapping marshal-by-value objects from indirection.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="9a936-104">Metody</span><span class="sxs-lookup"><span data-stu-id="9a936-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="97f96-104">Metody</span><span class="sxs-lookup"><span data-stu-id="97f96-104">Methods</span></span>  
   
-|<span data-ttu-id="9a936-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="9a936-105">Method</span></span>|<span data-ttu-id="9a936-106">Popis</span><span class="sxs-lookup"><span data-stu-id="9a936-106">Description</span></span>|  
+|<span data-ttu-id="97f96-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="97f96-105">Method</span></span>|<span data-ttu-id="97f96-106">Popis</span><span class="sxs-lookup"><span data-stu-id="97f96-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="9a936-107">Unwrap – metoda</span><span class="sxs-lookup"><span data-stu-id="9a936-107">Unwrap Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|<span data-ttu-id="9a936-108">Rozbalí objekt zařazování podle hodnot z dereference.</span><span class="sxs-lookup"><span data-stu-id="9a936-108">Unwraps a marshal-by-value object from indirection.</span></span>|  
+|[<span data-ttu-id="97f96-107">Unwrap – metoda</span><span class="sxs-lookup"><span data-stu-id="97f96-107">Unwrap Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iobjecthandle-unwrap-method.md)|<span data-ttu-id="97f96-108">Rozbalí objekt zařazování podle hodnot z dereference.</span><span class="sxs-lookup"><span data-stu-id="97f96-108">Unwraps a marshal-by-value object from indirection.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="9a936-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9a936-109">Requirements</span></span>  
- <span data-ttu-id="9a936-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9a936-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="97f96-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="97f96-109">Requirements</span></span>  
+ <span data-ttu-id="97f96-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="97f96-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9a936-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9a936-111">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="97f96-111">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="97f96-111">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="9a936-112">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9a936-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="97f96-112">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="97f96-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="9a936-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9a936-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="97f96-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="97f96-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a936-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a936-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="97f96-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="97f96-114">See also</span></span>
 
-- [<span data-ttu-id="9a936-115">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="9a936-115">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="97f96-115">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="97f96-115">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

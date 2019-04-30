@@ -10,76 +10,76 @@ helpviewer_keywords:
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
 ms.openlocfilehash: 24d48a9dfdf10601099333e52073bb7fa3579beb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61800769"
 ---
-# <a name="order-of-events-in-windows-forms"></a><span data-ttu-id="d5b54-102">Řazení událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d5b54-102">Order of Events in Windows Forms</span></span>
-<span data-ttu-id="d5b54-103">Pořadí, ve kterém jsou vyvolány události v aplikacích Windows Forms je zajímavé především pro vývojáře se každá z těchto událostí zase zpracování.</span><span class="sxs-lookup"><span data-stu-id="d5b54-103">The order in which events are raised in Windows Forms applications is of particular interest to developers concerned with handling each of these events in turn.</span></span> <span data-ttu-id="d5b54-104">Když situace vyžaduje pečlivou zpracování událostí, například když jsou překreslování části formuláře, je nezbytné povědomí o přesné pořadí, ve kterém jsou vyvolány události v době běhu.</span><span class="sxs-lookup"><span data-stu-id="d5b54-104">When a situation calls for meticulous handling of events, such as when you are redrawing parts of the form, an awareness of the precise order in which events are raised at run time is necessary.</span></span> <span data-ttu-id="d5b54-105">Toto téma obsahuje některé podrobnosti pořadí událostí během několik důležitých fází životního cyklu aplikací a ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="d5b54-105">This topic provides some details on the order of events during several important stages in the lifetime of applications and controls.</span></span> <span data-ttu-id="d5b54-106">Konkrétní podrobnosti o pořadí vstupních událostí myši najdete v tématu [události myši ve Windows Forms](mouse-events-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="d5b54-106">For specific details about the order of mouse input events, see [Mouse Events in Windows Forms](mouse-events-in-windows-forms.md).</span></span> <span data-ttu-id="d5b54-107">Přehled událostí ve Windows Forms, naleznete v tématu [Přehled událostí](events-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="d5b54-107">For an overview of events in Windows Forms, see [Events Overview](events-overview-windows-forms.md).</span></span> <span data-ttu-id="d5b54-108">Podrobnosti o strukturu obslužné rutiny událostí najdete v tématu [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="d5b54-108">For details about the makeup of event handlers, see [Event Handlers Overview](event-handlers-overview-windows-forms.md).</span></span>  
+# <a name="order-of-events-in-windows-forms"></a><span data-ttu-id="00774-102">Řazení událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00774-102">Order of Events in Windows Forms</span></span>
+<span data-ttu-id="00774-103">Pořadí, ve kterém jsou vyvolány události v aplikacích Windows Forms je zajímavé především pro vývojáře se každá z těchto událostí zase zpracování.</span><span class="sxs-lookup"><span data-stu-id="00774-103">The order in which events are raised in Windows Forms applications is of particular interest to developers concerned with handling each of these events in turn.</span></span> <span data-ttu-id="00774-104">Když situace vyžaduje pečlivou zpracování událostí, například když jsou překreslování části formuláře, je nezbytné povědomí o přesné pořadí, ve kterém jsou vyvolány události v době běhu.</span><span class="sxs-lookup"><span data-stu-id="00774-104">When a situation calls for meticulous handling of events, such as when you are redrawing parts of the form, an awareness of the precise order in which events are raised at run time is necessary.</span></span> <span data-ttu-id="00774-105">Toto téma obsahuje některé podrobnosti pořadí událostí během několik důležitých fází životního cyklu aplikací a ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="00774-105">This topic provides some details on the order of events during several important stages in the lifetime of applications and controls.</span></span> <span data-ttu-id="00774-106">Konkrétní podrobnosti o pořadí vstupních událostí myši najdete v tématu [události myši ve Windows Forms](mouse-events-in-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="00774-106">For specific details about the order of mouse input events, see [Mouse Events in Windows Forms](mouse-events-in-windows-forms.md).</span></span> <span data-ttu-id="00774-107">Přehled událostí ve Windows Forms, naleznete v tématu [Přehled událostí](events-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="00774-107">For an overview of events in Windows Forms, see [Events Overview](events-overview-windows-forms.md).</span></span> <span data-ttu-id="00774-108">Podrobnosti o strukturu obslužné rutiny událostí najdete v tématu [Přehled obslužných rutin událostí](event-handlers-overview-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="00774-108">For details about the makeup of event handlers, see [Event Handlers Overview](event-handlers-overview-windows-forms.md).</span></span>  
   
-## <a name="application-startup-and-shutdown-events"></a><span data-ttu-id="d5b54-109">Události ukončení a spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="d5b54-109">Application Startup and Shutdown Events</span></span>  
- <span data-ttu-id="d5b54-110"><xref:System.Windows.Forms.Form> a <xref:System.Windows.Forms.Control> třídy poskytují sadu události související s aplikací při spuštění a ukončení.</span><span class="sxs-lookup"><span data-stu-id="d5b54-110">The <xref:System.Windows.Forms.Form> and <xref:System.Windows.Forms.Control> classes expose a set of events related to application startup and shutdown.</span></span> <span data-ttu-id="d5b54-111">Při spuštění aplikace modelu Windows Forms jsou vyvolány události spuštění hlavního formuláře v tomto pořadí:</span><span class="sxs-lookup"><span data-stu-id="d5b54-111">When a Windows Forms application starts, the startup events of the main form are raised in the following order:</span></span>  
+## <a name="application-startup-and-shutdown-events"></a><span data-ttu-id="00774-109">Události ukončení a spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="00774-109">Application Startup and Shutdown Events</span></span>  
+ <span data-ttu-id="00774-110"><xref:System.Windows.Forms.Form> a <xref:System.Windows.Forms.Control> třídy poskytují sadu události související s aplikací při spuštění a ukončení.</span><span class="sxs-lookup"><span data-stu-id="00774-110">The <xref:System.Windows.Forms.Form> and <xref:System.Windows.Forms.Control> classes expose a set of events related to application startup and shutdown.</span></span> <span data-ttu-id="00774-111">Při spuštění aplikace modelu Windows Forms jsou vyvolány události spuštění hlavního formuláře v tomto pořadí:</span><span class="sxs-lookup"><span data-stu-id="00774-111">When a Windows Forms application starts, the startup events of the main form are raised in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Control.HandleCreated?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Control.HandleCreated?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Control.BindingContextChanged?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Control.BindingContextChanged?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Control.VisibleChanged?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Activated?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Activated?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Shown?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Shown?displayProperty=nameWithType>  
   
- <span data-ttu-id="d5b54-112">Po zavření aplikace jsou vyvolány události vypnutí hlavního formuláře v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="d5b54-112">When an application closes, the shutdown events of the main form are raised in the following order:</span></span>  
+ <span data-ttu-id="00774-112">Po zavření aplikace jsou vyvolány události vypnutí hlavního formuláře v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="00774-112">When an application closes, the shutdown events of the main form are raised in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Closing?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Closed?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Closed?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.FormClosed?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.FormClosed?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.Form.Deactivate?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.Form.Deactivate?displayProperty=nameWithType>  
   
- <span data-ttu-id="d5b54-113"><xref:System.Windows.Forms.Application.ApplicationExit> Událost <xref:System.Windows.Forms.Application> třídy je vyvolán po vypnutí události hlavního formuláře.</span><span class="sxs-lookup"><span data-stu-id="d5b54-113">The <xref:System.Windows.Forms.Application.ApplicationExit> event of the <xref:System.Windows.Forms.Application> class is raised after the shutdown events of the main form.</span></span>  
+ <span data-ttu-id="00774-113"><xref:System.Windows.Forms.Application.ApplicationExit> Událost <xref:System.Windows.Forms.Application> třídy je vyvolán po vypnutí události hlavního formuláře.</span><span class="sxs-lookup"><span data-stu-id="00774-113">The <xref:System.Windows.Forms.Application.ApplicationExit> event of the <xref:System.Windows.Forms.Application> class is raised after the shutdown events of the main form.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="d5b54-114">Visual Basic 2005 zahrnuje další události aplikace, jako například <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="d5b54-114">Visual Basic 2005 includes additional application events, such as <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> and <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.</span></span>  
+>  <span data-ttu-id="00774-114">Visual Basic 2005 zahrnuje další události aplikace, jako například <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> a <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="00774-114">Visual Basic 2005 includes additional application events, such as <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> and <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>.</span></span>  
   
-## <a name="focus-and-validation-events"></a><span data-ttu-id="d5b54-115">Fokus a události ověřování</span><span class="sxs-lookup"><span data-stu-id="d5b54-115">Focus and Validation Events</span></span>  
- <span data-ttu-id="d5b54-116">Při změně fokusu pomocí klávesnice (TAB, SHIFT + TAB a podobně), voláním <xref:System.Windows.Forms.Control.Select%2A> nebo <xref:System.Windows.Forms.Control.SelectNextControl%2A> metod, nebo nastavením <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost pro aktuální formulář se události fokusu z <xref:System.Windows.Forms.Control> třídy dojít v uvedeném pořadí :</span><span class="sxs-lookup"><span data-stu-id="d5b54-116">When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the <xref:System.Windows.Forms.Control.Select%2A> or <xref:System.Windows.Forms.Control.SelectNextControl%2A> methods, or by setting the <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> property to the current form, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
+## <a name="focus-and-validation-events"></a><span data-ttu-id="00774-115">Fokus a události ověřování</span><span class="sxs-lookup"><span data-stu-id="00774-115">Focus and Validation Events</span></span>  
+ <span data-ttu-id="00774-116">Při změně fokusu pomocí klávesnice (TAB, SHIFT + TAB a podobně), voláním <xref:System.Windows.Forms.Control.Select%2A> nebo <xref:System.Windows.Forms.Control.SelectNextControl%2A> metod, nebo nastavením <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> vlastnost pro aktuální formulář se události fokusu z <xref:System.Windows.Forms.Control> třídy dojít v uvedeném pořadí :</span><span class="sxs-lookup"><span data-stu-id="00774-116">When you change the focus by using the keyboard (TAB, SHIFT+TAB, and so on), by calling the <xref:System.Windows.Forms.Control.Select%2A> or <xref:System.Windows.Forms.Control.SelectNextControl%2A> methods, or by setting the <xref:System.Windows.Forms.ContainerControl.ActiveControl%2A> property to the current form, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Control.Enter>  
+- <xref:System.Windows.Forms.Control.Enter>  
   
--   <xref:System.Windows.Forms.Control.GotFocus>  
+- <xref:System.Windows.Forms.Control.GotFocus>  
   
--   <xref:System.Windows.Forms.Control.Leave>  
+- <xref:System.Windows.Forms.Control.Leave>  
   
--   <xref:System.Windows.Forms.Control.Validating>  
+- <xref:System.Windows.Forms.Control.Validating>  
   
--   <xref:System.Windows.Forms.Control.Validated>  
+- <xref:System.Windows.Forms.Control.Validated>  
   
--   <xref:System.Windows.Forms.Control.LostFocus>  
+- <xref:System.Windows.Forms.Control.LostFocus>  
   
- <span data-ttu-id="d5b54-117">Při změně fokusu pomocí myší nebo voláním <xref:System.Windows.Forms.Control.Focus%2A> metody, události fokusu <xref:System.Windows.Forms.Control> třídy vyskytují v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="d5b54-117">When you change the focus by using the mouse or by calling the <xref:System.Windows.Forms.Control.Focus%2A> method, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
+ <span data-ttu-id="00774-117">Při změně fokusu pomocí myší nebo voláním <xref:System.Windows.Forms.Control.Focus%2A> metody, události fokusu <xref:System.Windows.Forms.Control> třídy vyskytují v následujícím pořadí:</span><span class="sxs-lookup"><span data-stu-id="00774-117">When you change the focus by using the mouse or by calling the <xref:System.Windows.Forms.Control.Focus%2A> method, focus events of the <xref:System.Windows.Forms.Control> class occur in the following order:</span></span>  
   
--   <xref:System.Windows.Forms.Control.Enter>  
+- <xref:System.Windows.Forms.Control.Enter>  
   
--   <xref:System.Windows.Forms.Control.GotFocus>  
+- <xref:System.Windows.Forms.Control.GotFocus>  
   
--   <xref:System.Windows.Forms.Control.LostFocus>  
+- <xref:System.Windows.Forms.Control.LostFocus>  
   
--   <xref:System.Windows.Forms.Control.Leave>  
+- <xref:System.Windows.Forms.Control.Leave>  
   
--   <xref:System.Windows.Forms.Control.Validating>  
+- <xref:System.Windows.Forms.Control.Validating>  
   
--   <xref:System.Windows.Forms.Control.Validated>  
+- <xref:System.Windows.Forms.Control.Validated>  
   
-## <a name="see-also"></a><span data-ttu-id="d5b54-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d5b54-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="00774-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="00774-118">See also</span></span>
 
-- [<span data-ttu-id="d5b54-119">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="d5b54-119">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)
+- [<span data-ttu-id="00774-119">Vytváření obslužných rutin událostí ve Windows Forms</span><span class="sxs-lookup"><span data-stu-id="00774-119">Creating Event Handlers in Windows Forms</span></span>](creating-event-handlers-in-windows-forms.md)

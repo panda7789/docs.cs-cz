@@ -8,20 +8,20 @@ helpviewer_keywords:
 - BC30106
 ms.assetid: 2c5363e1-62c2-4f5a-b675-c7337aeb363d
 ms.openlocfilehash: 01659205f271b089fe4e8aa87cf7a8c44e7a4000
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918161"
 ---
-# <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a><span data-ttu-id="e3b92-102">Počet indexů překračuje počet rozměrů indexovaného pole.</span><span class="sxs-lookup"><span data-stu-id="e3b92-102">Number of indices exceeds the number of dimensions of the indexed array</span></span>
-<span data-ttu-id="e3b92-103">Počet indexů pro přístup k elementu pole musí být přesně stejné jako řád objektu array, to znamená, počet rozměrů deklarované pro něj.</span><span class="sxs-lookup"><span data-stu-id="e3b92-103">The number of indices used to access an array element must be exactly the same as the rank of the array, that is, the number of dimensions declared for it.</span></span>  
+# <a name="number-of-indices-exceeds-the-number-of-dimensions-of-the-indexed-array"></a><span data-ttu-id="76892-102">Počet indexů překračuje počet rozměrů indexovaného pole.</span><span class="sxs-lookup"><span data-stu-id="76892-102">Number of indices exceeds the number of dimensions of the indexed array</span></span>
+<span data-ttu-id="76892-103">Počet indexů pro přístup k elementu pole musí být přesně stejné jako řád objektu array, to znamená, počet rozměrů deklarované pro něj.</span><span class="sxs-lookup"><span data-stu-id="76892-103">The number of indices used to access an array element must be exactly the same as the rank of the array, that is, the number of dimensions declared for it.</span></span>  
   
- <span data-ttu-id="e3b92-104">**ID chyby:** BC30106</span><span class="sxs-lookup"><span data-stu-id="e3b92-104">**Error ID:** BC30106</span></span>  
+ <span data-ttu-id="76892-104">**ID chyby:** BC30106</span><span class="sxs-lookup"><span data-stu-id="76892-104">**Error ID:** BC30106</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="e3b92-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="e3b92-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="76892-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="76892-105">To correct this error</span></span>  
   
--   <span data-ttu-id="e3b92-106">Dokud celkový počet dolních indexů rovná řád objektu array, odeberte z odkazu na pole dolních indexů.</span><span class="sxs-lookup"><span data-stu-id="e3b92-106">Remove subscripts from the array reference until the total number of subscripts equals the rank of the array.</span></span> <span data-ttu-id="e3b92-107">Příklad:</span><span class="sxs-lookup"><span data-stu-id="e3b92-107">For example:</span></span>  
+- <span data-ttu-id="76892-106">Dokud celkový počet dolních indexů rovná řád objektu array, odeberte z odkazu na pole dolních indexů.</span><span class="sxs-lookup"><span data-stu-id="76892-106">Remove subscripts from the array reference until the total number of subscripts equals the rank of the array.</span></span> <span data-ttu-id="76892-107">Příklad:</span><span class="sxs-lookup"><span data-stu-id="76892-107">For example:</span></span>  
   
     ```vb  
     Dim gameBoard(3, 3) As String  
@@ -35,6 +35,6 @@ ms.locfileid: "58837977"
     gameBoard(1, 0) = "O"  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="e3b92-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e3b92-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76892-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76892-108">See also</span></span>
 
-- [<span data-ttu-id="e3b92-109">Pole</span><span class="sxs-lookup"><span data-stu-id="e3b92-109">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [<span data-ttu-id="76892-109">Pole</span><span class="sxs-lookup"><span data-stu-id="76892-109">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)

@@ -8,21 +8,21 @@ helpviewer_keywords:
 - controls [WPF], DockPanel
 ms.assetid: 62544800-db6a-4124-8cb0-ed9bc4a90901
 ms.openlocfilehash: ff2f23a0515f8a086d3082c6bf3000c49ed91dfd
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911856"
 ---
-# <a name="dockpanel-how-to-topics"></a><span data-ttu-id="56aa2-102">DockPanel – postupy</span><span class="sxs-lookup"><span data-stu-id="56aa2-102">DockPanel How-to Topics</span></span>
-<span data-ttu-id="56aa2-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.DockPanel> element umísťovat podřízené prvky k okraji kontejner rozložení.</span><span class="sxs-lookup"><span data-stu-id="56aa2-103">The topics in this section describe how to use the <xref:System.Windows.Controls.DockPanel> element to position child elements along the edge of a layout container.</span></span>  
+# <a name="dockpanel-how-to-topics"></a><span data-ttu-id="4fb4a-102">DockPanel – postupy</span><span class="sxs-lookup"><span data-stu-id="4fb4a-102">DockPanel How-to Topics</span></span>
+<span data-ttu-id="4fb4a-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.DockPanel> element umísťovat podřízené prvky k okraji kontejner rozložení.</span><span class="sxs-lookup"><span data-stu-id="4fb4a-103">The topics in this section describe how to use the <xref:System.Windows.Controls.DockPanel> element to position child elements along the edge of a layout container.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="56aa2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="56aa2-104">In This Section</span></span>  
- [<span data-ttu-id="56aa2-105">Načtení a nastavení hodnoty ukotvení</span><span class="sxs-lookup"><span data-stu-id="56aa2-105">Get or Set a Dock Value</span></span>](how-to-get-or-set-a-dock-value.md)  
- [<span data-ttu-id="56aa2-106">Vytvoření objektu DockPanel</span><span class="sxs-lookup"><span data-stu-id="56aa2-106">Create a DockPanel</span></span>](how-to-create-a-dockpanel.md)  
- [<span data-ttu-id="56aa2-107">Rozdělení prostoru pomocí elementu DockPanel</span><span class="sxs-lookup"><span data-stu-id="56aa2-107">Partition Space by Using the DockPanel Element</span></span>](how-to-partition-space-by-using-the-dockpanel-element.md)  
+## <a name="in-this-section"></a><span data-ttu-id="4fb4a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4fb4a-104">In This Section</span></span>  
+ [<span data-ttu-id="4fb4a-105">Načtení a nastavení hodnoty ukotvení</span><span class="sxs-lookup"><span data-stu-id="4fb4a-105">Get or Set a Dock Value</span></span>](how-to-get-or-set-a-dock-value.md)  
+ [<span data-ttu-id="4fb4a-106">Vytvoření objektu DockPanel</span><span class="sxs-lookup"><span data-stu-id="4fb4a-106">Create a DockPanel</span></span>](how-to-create-a-dockpanel.md)  
+ [<span data-ttu-id="4fb4a-107">Rozdělení prostoru pomocí elementu DockPanel</span><span class="sxs-lookup"><span data-stu-id="4fb4a-107">Partition Space by Using the DockPanel Element</span></span>](how-to-partition-space-by-using-the-dockpanel-element.md)  
   
-## <a name="reference"></a><span data-ttu-id="56aa2-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="56aa2-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="4fb4a-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="4fb4a-108">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -37,9 +37,9 @@ ms.locfileid: "57355534"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="56aa2-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="56aa2-109">Related Sections</span></span>  
- [<span data-ttu-id="56aa2-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="56aa2-110">Layout</span></span>](../advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="4fb4a-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="4fb4a-109">Related Sections</span></span>  
+ [<span data-ttu-id="4fb4a-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="4fb4a-110">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="56aa2-111">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="56aa2-111">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="4fb4a-111">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="4fb4a-111">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="56aa2-112">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="56aa2-112">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
+ [<span data-ttu-id="4fb4a-112">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="4fb4a-112">ScrollViewer Overview</span></span>](scrollviewer-overview.md)

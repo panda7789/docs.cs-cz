@@ -3,18 +3,18 @@ title: 'Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
 ms.openlocfilehash: 119a63978f6c45aa940ff999249c654c7cf96d91
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855111"
 ---
-# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a><span data-ttu-id="46542-102">Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď</span><span class="sxs-lookup"><span data-stu-id="46542-102">How to: Access WCF Services with One-Way and Request-Reply Contracts</span></span>
-<span data-ttu-id="46542-103">Následující postupy popisují, jak získat přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktů požadavek odpověď a, který nepoužívá model duplexní komunikaci.</span><span class="sxs-lookup"><span data-stu-id="46542-103">The following procedures describe how to access a Windows Communication Foundation (WCF) service that defines a one-way contract and a request-reply contract and that does not use the duplex communication pattern.</span></span>  
+# <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a><span data-ttu-id="160ea-102">Postupy: Přístup ke službám WCF pomocí jednosměrných kontraktů a kontraktů požadavek-odpověď</span><span class="sxs-lookup"><span data-stu-id="160ea-102">How to: Access WCF Services with One-Way and Request-Reply Contracts</span></span>
+<span data-ttu-id="160ea-103">Následující postupy popisují, jak získat přístup ke službě Windows Communication Foundation (WCF), který definuje jednosměrného kontraktu a kontraktů požadavek odpověď a, který nepoužívá model duplexní komunikaci.</span><span class="sxs-lookup"><span data-stu-id="160ea-103">The following procedures describe how to access a Windows Communication Foundation (WCF) service that defines a one-way contract and a request-reply contract and that does not use the duplex communication pattern.</span></span>  
   
-### <a name="to-define-the-service"></a><span data-ttu-id="46542-104">Chcete-li definovat službu</span><span class="sxs-lookup"><span data-stu-id="46542-104">To define the service</span></span>  
+### <a name="to-define-the-service"></a><span data-ttu-id="160ea-104">Chcete-li definovat službu</span><span class="sxs-lookup"><span data-stu-id="160ea-104">To define the service</span></span>  
   
-1. <span data-ttu-id="46542-105">Deklarujte kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="46542-105">Declare the service contract.</span></span> <span data-ttu-id="46542-106">Musí mít operace, které mají být jednosměrné `IsOneWay` nastavena na `true` v rámci <xref:System.ServiceModel.OperationContractAttribute>.</span><span class="sxs-lookup"><span data-stu-id="46542-106">The operations that are to be one-way must have `IsOneWay` set to `true` within the <xref:System.ServiceModel.OperationContractAttribute>.</span></span> <span data-ttu-id="46542-107">Následující kód deklaruje `IOneWayCalculator` kontrakt, který má Jednosměrná operace pro `Add`, `Subtract`, `Multiply`, a `Divide`.</span><span class="sxs-lookup"><span data-stu-id="46542-107">The following code declares the `IOneWayCalculator` contract that has one-way operations for `Add`, `Subtract`, `Multiply`, and `Divide`.</span></span> <span data-ttu-id="46542-108">Definuje také operace odpovědi na požadavek s názvem `SayHello`.</span><span class="sxs-lookup"><span data-stu-id="46542-108">It also defines a request response operation called `SayHello`.</span></span>  
+1. <span data-ttu-id="160ea-105">Deklarujte kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="160ea-105">Declare the service contract.</span></span> <span data-ttu-id="160ea-106">Musí mít operace, které mají být jednosměrné `IsOneWay` nastavena na `true` v rámci <xref:System.ServiceModel.OperationContractAttribute>.</span><span class="sxs-lookup"><span data-stu-id="160ea-106">The operations that are to be one-way must have `IsOneWay` set to `true` within the <xref:System.ServiceModel.OperationContractAttribute>.</span></span> <span data-ttu-id="160ea-107">Následující kód deklaruje `IOneWayCalculator` kontrakt, který má Jednosměrná operace pro `Add`, `Subtract`, `Multiply`, a `Divide`.</span><span class="sxs-lookup"><span data-stu-id="160ea-107">The following code declares the `IOneWayCalculator` contract that has one-way operations for `Add`, `Subtract`, `Multiply`, and `Divide`.</span></span> <span data-ttu-id="160ea-108">Definuje také operace odpovědi na požadavek s názvem `SayHello`.</span><span class="sxs-lookup"><span data-stu-id="160ea-108">It also defines a request response operation called `SayHello`.</span></span>  
   
     ```csharp  
     [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
@@ -33,7 +33,7 @@ ms.locfileid: "59309248"
     }  
     ```  
   
-2. <span data-ttu-id="46542-109">Implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="46542-109">Implement the service contract.</span></span> <span data-ttu-id="46542-110">Následující kód implementuje `IOnewayCalculator` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="46542-110">The following code implements the `IOnewayCalculator` interface.</span></span>  
+2. <span data-ttu-id="160ea-109">Implementace kontraktu služby.</span><span class="sxs-lookup"><span data-stu-id="160ea-109">Implement the service contract.</span></span> <span data-ttu-id="160ea-110">Následující kód implementuje `IOnewayCalculator` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="160ea-110">The following code implements the `IOnewayCalculator` interface.</span></span>  
   
     ```csharp  
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall)]  
@@ -71,7 +71,7 @@ ms.locfileid: "59309248"
     }  
     ```  
   
-3. <span data-ttu-id="46542-111">Hostovat službu v konzolové aplikaci.</span><span class="sxs-lookup"><span data-stu-id="46542-111">Host the service in a console application.</span></span> <span data-ttu-id="46542-112">Následující kód ukazuje, jak hostovat službu.</span><span class="sxs-lookup"><span data-stu-id="46542-112">The following code shows how to host the service.</span></span>  
+3. <span data-ttu-id="160ea-111">Hostovat službu v konzolové aplikaci.</span><span class="sxs-lookup"><span data-stu-id="160ea-111">Host the service in a console application.</span></span> <span data-ttu-id="160ea-112">Následující kód ukazuje, jak hostovat službu.</span><span class="sxs-lookup"><span data-stu-id="160ea-112">The following code shows how to host the service.</span></span>  
   
     ```csharp  
     // Host the service within this EXE console application.  
@@ -107,9 +107,9 @@ ms.locfileid: "59309248"
     }  
     ```  
   
-### <a name="to-access-the-service"></a><span data-ttu-id="46542-113">Přístup k této službě</span><span class="sxs-lookup"><span data-stu-id="46542-113">To access the service</span></span>  
+### <a name="to-access-the-service"></a><span data-ttu-id="160ea-113">Přístup k této službě</span><span class="sxs-lookup"><span data-stu-id="160ea-113">To access the service</span></span>  
   
-1. <span data-ttu-id="46542-114">Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí adresu koncového bodu metadat systému exchange pro vytvoření třídy klienta pro službu pomocí příkazového řádku následující: `Svcutil http://localhost:8000/Service` [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje sadu rozhraní a třídy, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="46542-114">Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) using the metadata exchange endpoint address to create the client class for the service using the following command line: `Svcutil http://localhost:8000/Service` The [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generates a set of interfaces and classes, as shown in the following sample code.</span></span>  
+1. <span data-ttu-id="160ea-114">Spustit [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí adresu koncového bodu metadat systému exchange pro vytvoření třídy klienta pro službu pomocí příkazového řádku následující: `Svcutil http://localhost:8000/Service` [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generuje sadu rozhraní a třídy, jak je znázorněno v následujícím ukázkovém kódu.</span><span class="sxs-lookup"><span data-stu-id="160ea-114">Run the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) using the metadata exchange endpoint address to create the client class for the service using the following command line: `Svcutil http://localhost:8000/Service` The [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) generates a set of interfaces and classes, as shown in the following sample code.</span></span>  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -194,9 +194,9 @@ ms.locfileid: "59309248"
     }  
     ```  
   
-     <span data-ttu-id="46542-115">Všimněte si, že v `IOneWayCalculator` rozhraní, které mají operací jednosměrné služby <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> atribut nastaven na `true` a operace požadavek odpověď služby má atribut nastaven na výchozí hodnotu `false`.</span><span class="sxs-lookup"><span data-stu-id="46542-115">Notice in the `IOneWayCalculator` interface that the one-way service operations have the <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> attribute set to `true` and the request-reply service operation has the attribute set to the default value, `false`.</span></span> <span data-ttu-id="46542-116">Všimněte si také `OneWayCalculatorClient` třídy.</span><span class="sxs-lookup"><span data-stu-id="46542-116">Also notice the `OneWayCalculatorClient` class.</span></span> <span data-ttu-id="46542-117">Toto je třída, kterou použijete k vyvolání služby.</span><span class="sxs-lookup"><span data-stu-id="46542-117">This is the class that you will use to call the service.</span></span>  
+     <span data-ttu-id="160ea-115">Všimněte si, že v `IOneWayCalculator` rozhraní, které mají operací jednosměrné služby <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> atribut nastaven na `true` a operace požadavek odpověď služby má atribut nastaven na výchozí hodnotu `false`.</span><span class="sxs-lookup"><span data-stu-id="160ea-115">Notice in the `IOneWayCalculator` interface that the one-way service operations have the <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> attribute set to `true` and the request-reply service operation has the attribute set to the default value, `false`.</span></span> <span data-ttu-id="160ea-116">Všimněte si také `OneWayCalculatorClient` třídy.</span><span class="sxs-lookup"><span data-stu-id="160ea-116">Also notice the `OneWayCalculatorClient` class.</span></span> <span data-ttu-id="160ea-117">Toto je třída, kterou použijete k vyvolání služby.</span><span class="sxs-lookup"><span data-stu-id="160ea-117">This is the class that you will use to call the service.</span></span>  
   
-2. <span data-ttu-id="46542-118">Vytvoření objektu klienta.</span><span class="sxs-lookup"><span data-stu-id="46542-118">Create the client object.</span></span>  
+2. <span data-ttu-id="160ea-118">Vytvoření objektu klienta.</span><span class="sxs-lookup"><span data-stu-id="160ea-118">Create the client object.</span></span>  
   
     ```csharp  
     // Create a client  
@@ -205,7 +205,7 @@ ms.locfileid: "59309248"
     OneWayCalculatorClient client = new OneWayCalculatorClient(binding, epAddress);  
     ```  
   
-3. <span data-ttu-id="46542-119">Volání operací služby.</span><span class="sxs-lookup"><span data-stu-id="46542-119">Call service operations.</span></span>  
+3. <span data-ttu-id="160ea-119">Volání operací služby.</span><span class="sxs-lookup"><span data-stu-id="160ea-119">Call service operations.</span></span>  
   
     ```csharp  
     // Call the Add service operation.  
@@ -239,15 +239,15 @@ ms.locfileid: "59309248"
     Console.WriteLine("SayHello() returned: " + response);  
     ```  
   
-4. <span data-ttu-id="46542-120">Ukončete klienta zavřít připojení a vyčištění prostředků.</span><span class="sxs-lookup"><span data-stu-id="46542-120">Close the client to close connections and clean up resources.</span></span>  
+4. <span data-ttu-id="160ea-120">Ukončete klienta zavřít připojení a vyčištění prostředků.</span><span class="sxs-lookup"><span data-stu-id="160ea-120">Close the client to close connections and clean up resources.</span></span>  
   
     ```csharp  
     //Closing the client gracefully closes the connection and cleans up resources  
     client.Close();  
     ```  
   
-## <a name="example"></a><span data-ttu-id="46542-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="46542-121">Example</span></span>  
- <span data-ttu-id="46542-122">Tady je úplný seznam všech kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="46542-122">The following is a complete listing of the code used  in this topic.</span></span>  
+## <a name="example"></a><span data-ttu-id="160ea-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="160ea-121">Example</span></span>  
+ <span data-ttu-id="160ea-122">Tady je úplný seznam všech kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="160ea-122">The following is a complete listing of the code used  in this topic.</span></span>  
   
 ```csharp  
 // Service.cs  
@@ -400,6 +400,6 @@ namespace Microsoft.ServiceModel.Samples
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="46542-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="46542-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="160ea-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="160ea-123">See also</span></span>
 
-- [<span data-ttu-id="46542-124">Jednosměrné služby</span><span class="sxs-lookup"><span data-stu-id="46542-124">One-Way Services</span></span>](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+- [<span data-ttu-id="160ea-124">Jednosměrné služby</span><span class="sxs-lookup"><span data-stu-id="160ea-124">One-Way Services</span></span>](../../../../docs/framework/wcf/feature-details/one-way-services.md)

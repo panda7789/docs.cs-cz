@@ -9,19 +9,19 @@ helpviewer_keywords:
 - content [WPF], GridSplitter control
 ms.assetid: 98b007e8-ea6b-41b5-8120-ca7134e8239f
 ms.openlocfilehash: 9fd1b50e4c3f79218de2d0d54f98d645ebb5fd61
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57359273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911427"
 ---
-# <a name="gridsplitter"></a><span data-ttu-id="e5c72-102">GridSplitter</span><span class="sxs-lookup"><span data-stu-id="e5c72-102">GridSplitter</span></span>
-<span data-ttu-id="e5c72-103"><xref:System.Windows.Controls.GridSplitter> Přerozděluje prostor mezi sloupci nebo řádky <xref:System.Windows.Controls.Grid> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e5c72-103">The <xref:System.Windows.Controls.GridSplitter> redistributes space between columns or rows of a <xref:System.Windows.Controls.Grid> control.</span></span>  
+# <a name="gridsplitter"></a><span data-ttu-id="c848c-102">GridSplitter</span><span class="sxs-lookup"><span data-stu-id="c848c-102">GridSplitter</span></span>
+<span data-ttu-id="c848c-103"><xref:System.Windows.Controls.GridSplitter> Přerozděluje prostor mezi sloupci nebo řádky <xref:System.Windows.Controls.Grid> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c848c-103">The <xref:System.Windows.Controls.GridSplitter> redistributes space between columns or rows of a <xref:System.Windows.Controls.Grid> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e5c72-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e5c72-104">In This Section</span></span>  
- [<span data-ttu-id="e5c72-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="e5c72-105">How-to Topics</span></span>](gridsplitter-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c848c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c848c-104">In This Section</span></span>  
+ [<span data-ttu-id="c848c-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="c848c-105">How-to Topics</span></span>](gridsplitter-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="e5c72-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e5c72-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c848c-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c848c-106">Reference</span></span>  
  <xref:System.Windows.Controls.GridSplitter>  
   
-## <a name="related-sections"></a><span data-ttu-id="e5c72-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="e5c72-107">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="c848c-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c848c-107">Related Sections</span></span>

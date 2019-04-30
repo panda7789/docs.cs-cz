@@ -3,21 +3,21 @@ title: Hledání textu v dokumentech aplikace Word (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
 ms.openlocfilehash: f8414662e2013b152e471d6c4c003e602c0d277d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61931544"
 ---
-# <a name="finding-text-in-word-documents-visual-basic"></a><span data-ttu-id="eabd1-102">Hledání textu v dokumentech aplikace Word (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eabd1-102">Finding Text in Word Documents (Visual Basic)</span></span>
-<span data-ttu-id="eabd1-103">Toto téma je rozšířením předchozího dotazy něco užitečné: vyhledání všech výskytů řetězce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="eabd1-103">This topic extends the previous queries to do something useful: find all occurrences of a string in the document.</span></span>  
+# <a name="finding-text-in-word-documents-visual-basic"></a><span data-ttu-id="a3e99-102">Hledání textu v dokumentech aplikace Word (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e99-102">Finding Text in Word Documents (Visual Basic)</span></span>
+<span data-ttu-id="a3e99-103">Toto téma je rozšířením předchozího dotazy něco užitečné: vyhledání všech výskytů řetězce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="a3e99-103">This topic extends the previous queries to do something useful: find all occurrences of a string in the document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="eabd1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="eabd1-104">Example</span></span>  
- <span data-ttu-id="eabd1-105">V tomto příkladu zpracovává dokumentu WordprocessingML, chcete-li vyhledat všechny výskyty určitou část textu v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="eabd1-105">This example processes a WordprocessingML document, to find all the occurrences of a specific piece of text in the document.</span></span> <span data-ttu-id="eabd1-106">K tomuto účelu použijeme dotaz, který najde řetězec "Hello".</span><span class="sxs-lookup"><span data-stu-id="eabd1-106">To do this, we use a query that finds the string "Hello".</span></span> <span data-ttu-id="eabd1-107">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="eabd1-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="eabd1-108">Nový dotaz je uvedeny v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="eabd1-108">The new query is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="a3e99-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="a3e99-104">Example</span></span>  
+ <span data-ttu-id="a3e99-105">V tomto příkladu zpracovává dokumentu WordprocessingML, chcete-li vyhledat všechny výskyty určitou část textu v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="a3e99-105">This example processes a WordprocessingML document, to find all the occurrences of a specific piece of text in the document.</span></span> <span data-ttu-id="a3e99-106">K tomuto účelu použijeme dotaz, který najde řetězec "Hello".</span><span class="sxs-lookup"><span data-stu-id="a3e99-106">To do this, we use a query that finds the string "Hello".</span></span> <span data-ttu-id="a3e99-107">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="a3e99-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="a3e99-108">Nový dotaz je uvedeny v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="a3e99-108">The new query is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="eabd1-109">Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="eabd1-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="a3e99-109">Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="a3e99-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="eabd1-110">Tento příklad používá třídy v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="eabd1-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="eabd1-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="eabd1-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="a3e99-110">Tento příklad používá třídy v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="a3e99-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="a3e99-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="a3e99-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -151,14 +151,14 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="eabd1-112">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="eabd1-112">This example produces the following output:</span></span>  
+ <span data-ttu-id="a3e99-112">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a3e99-112">This example produces the following output:</span></span>  
   
 ```  
 StyleName:Code >        Console.WriteLine("Hello World")<  
 StyleName:Code >Hello World<  
 ```  
   
- <span data-ttu-id="eabd1-113">Hledání můžete, samozřejmě, upravte, aby prohledá řádky s konkrétním stylu.</span><span class="sxs-lookup"><span data-stu-id="eabd1-113">You can, of course, modify the search so that it searches for lines with a specific style.</span></span> <span data-ttu-id="eabd1-114">Následující dotaz hledá všechny prázdné řádky, které mají styl kódu:</span><span class="sxs-lookup"><span data-stu-id="eabd1-114">The following query finds all blank lines that have the Code style:</span></span>  
+ <span data-ttu-id="a3e99-113">Hledání můžete, samozřejmě, upravte, aby prohledá řádky s konkrétním stylu.</span><span class="sxs-lookup"><span data-stu-id="a3e99-113">You can, of course, modify the search so that it searches for lines with a specific style.</span></span> <span data-ttu-id="a3e99-114">Následující dotaz hledá všechny prázdné řádky, které mají styl kódu:</span><span class="sxs-lookup"><span data-stu-id="a3e99-114">The following query finds all blank lines that have the Code style:</span></span>  
   
 ```vb  
 Imports System.IO.Packaging  
@@ -292,23 +292,23 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="eabd1-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="eabd1-115">This example produces the following output:</span></span>  
+ <span data-ttu-id="a3e99-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a3e99-115">This example produces the following output:</span></span>  
   
 ```  
 StyleName:Code ><  
 ```  
   
- <span data-ttu-id="eabd1-116">V tomto příkladu samozřejmě tarifech lze vylepšit různými způsoby.</span><span class="sxs-lookup"><span data-stu-id="eabd1-116">Of course, this example could be enhanced in a number of ways.</span></span> <span data-ttu-id="eabd1-117">Například může používáme regulárních výrazů pro hledání textu, jsme může iterovat přes všechny soubory aplikace Word v určitém adresáři a tak dále.</span><span class="sxs-lookup"><span data-stu-id="eabd1-117">For example, we could use regular expressions to search for text, we could iterate through all the Word files in a particular directory, and so on.</span></span>  
+ <span data-ttu-id="a3e99-116">V tomto příkladu samozřejmě tarifech lze vylepšit různými způsoby.</span><span class="sxs-lookup"><span data-stu-id="a3e99-116">Of course, this example could be enhanced in a number of ways.</span></span> <span data-ttu-id="a3e99-117">Například může používáme regulárních výrazů pro hledání textu, jsme může iterovat přes všechny soubory aplikace Word v určitém adresáři a tak dále.</span><span class="sxs-lookup"><span data-stu-id="a3e99-117">For example, we could use regular expressions to search for text, we could iterate through all the Word files in a particular directory, and so on.</span></span>  
   
- <span data-ttu-id="eabd1-118">Všimněte si, že v tomto příkladu provede přibližně stejně jako by byl zapsán jako jeden dotaz.</span><span class="sxs-lookup"><span data-stu-id="eabd1-118">Note that this example performs approximately as well as if it were written as a single query.</span></span> <span data-ttu-id="eabd1-119">Protože každý dotaz je implementovat opožděné odložené způsobem, každý dotaz nevydává jeho výsledky až do dotazu je provést iteraci.</span><span class="sxs-lookup"><span data-stu-id="eabd1-119">Because each query is implemented in a lazy, deferred fashion, each query does not yield its results until the query is iterated.</span></span> <span data-ttu-id="eabd1-120">Další informace o provedení a opožděné vyhodnocení najdete v tématu [odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="eabd1-120">For more information about execution and lazy evaluation, see [Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="a3e99-118">Všimněte si, že v tomto příkladu provede přibližně stejně jako by byl zapsán jako jeden dotaz.</span><span class="sxs-lookup"><span data-stu-id="a3e99-118">Note that this example performs approximately as well as if it were written as a single query.</span></span> <span data-ttu-id="a3e99-119">Protože každý dotaz je implementovat opožděné odložené způsobem, každý dotaz nevydává jeho výsledky až do dotazu je provést iteraci.</span><span class="sxs-lookup"><span data-stu-id="a3e99-119">Because each query is implemented in a lazy, deferred fashion, each query does not yield its results until the query is iterated.</span></span> <span data-ttu-id="a3e99-120">Další informace o provedení a opožděné vyhodnocení najdete v tématu [odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="a3e99-120">For more information about execution and lazy evaluation, see [Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).</span></span>  
   
-## <a name="next-steps"></a><span data-ttu-id="eabd1-121">Další kroky</span><span class="sxs-lookup"><span data-stu-id="eabd1-121">Next Steps</span></span>  
- <span data-ttu-id="eabd1-122">Další část obsahuje další informace o dokumentů WordprocessingML:</span><span class="sxs-lookup"><span data-stu-id="eabd1-122">The next section provides more information about WordprocessingML documents:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="a3e99-121">Další kroky</span><span class="sxs-lookup"><span data-stu-id="a3e99-121">Next Steps</span></span>  
+ <span data-ttu-id="a3e99-122">Další část obsahuje další informace o dokumentů WordprocessingML:</span><span class="sxs-lookup"><span data-stu-id="a3e99-122">The next section provides more information about WordprocessingML documents:</span></span>  
   
--   [<span data-ttu-id="eabd1-123">Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eabd1-123">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
+- [<span data-ttu-id="a3e99-123">Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e99-123">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
   
-## <a name="see-also"></a><span data-ttu-id="eabd1-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eabd1-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3e99-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a3e99-124">See also</span></span>
 
-- [<span data-ttu-id="eabd1-125">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eabd1-125">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [<span data-ttu-id="eabd1-126">Refaktoring pomocí čisté funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eabd1-126">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [<span data-ttu-id="eabd1-127">Odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eabd1-127">Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [<span data-ttu-id="a3e99-125">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e99-125">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="a3e99-126">Refaktoring pomocí čisté funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e99-126">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
+- [<span data-ttu-id="a3e99-127">Odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a3e99-127">Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
