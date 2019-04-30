@@ -1,1 +1,9 @@
-<span data-ttu-id="16ec7-101">LINQ</span><span class="sxs-lookup"><span data-stu-id="16ec7-101">LINQ</span></span>
+---
+ms.openlocfilehash: 667a4c437c43ca4427c06a7c18f482d831ef30ee
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61701532"
+---
+<span data-ttu-id="49072-101">LINQ</span><span class="sxs-lookup"><span data-stu-id="49072-101">LINQ</span></span>

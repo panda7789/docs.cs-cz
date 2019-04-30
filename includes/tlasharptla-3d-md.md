@@ -1,1 +1,9 @@
-<span data-ttu-id="c83ba-101">3D</span><span class="sxs-lookup"><span data-stu-id="c83ba-101">3-D</span></span>
+---
+ms.openlocfilehash: b1db086fac78b00f4d17a8b49d559233957f9c79
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61699090"
+---
+<span data-ttu-id="a7b86-101">3D</span><span class="sxs-lookup"><span data-stu-id="a7b86-101">3-D</span></span>

@@ -1,1 +1,9 @@
-<span data-ttu-id="fed60-101">ClickOnce</span><span class="sxs-lookup"><span data-stu-id="fed60-101">ClickOnce</span></span>
+---
+ms.openlocfilehash: 0b5c67541bd4883427ae8b7c3029adde6ae7fbc1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61696821"
+---
+<span data-ttu-id="c3485-101">ClickOnce</span><span class="sxs-lookup"><span data-stu-id="c3485-101">ClickOnce</span></span>
