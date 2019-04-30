@@ -8,11 +8,11 @@ helpviewer_keywords:
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
 ms.openlocfilehash: db39759a804905450e7f8913f45e8ddab39d8416
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784186"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface – příkaz (Visual Basic)
 Deklaruje název rozhraní a zavádí definice členů, které tvoří rozhraní.  
@@ -67,31 +67,31 @@ End Interface
   
 ## <a name="rules"></a>pravidla  
   
--   **Vnoření rozhraní.** Můžete definovat jedno rozhraní v rámci jiného. Vnější rozhraní nazývá *obsahující rozhraní*, a volá vnitřní rozhraní *vnořené rozhraní*.  
+- **Vnoření rozhraní.** Můžete definovat jedno rozhraní v rámci jiného. Vnější rozhraní nazývá *obsahující rozhraní*, a volá vnitřní rozhraní *vnořené rozhraní*.  
   
--   **Deklarace člena.** Když se vlastnost nebo procedura deklarovat jako člen rozhraní, definujete pouze *podpis* tuto vlastnost nebo procedura. Jedná se o typ elementu (vlastnost nebo procedura), jeho parametry a typy parametrů a její typ vrácené hodnoty. Z tohoto důvodu definice členské používá pouze jeden řádek kódu a ukončující příkazy, jako `End Function` nebo `End Property` nejsou platné v rozhraní.  
+- **Deklarace člena.** Když se vlastnost nebo procedura deklarovat jako člen rozhraní, definujete pouze *podpis* tuto vlastnost nebo procedura. Jedná se o typ elementu (vlastnost nebo procedura), jeho parametry a typy parametrů a její typ vrácené hodnoty. Z tohoto důvodu definice členské používá pouze jeden řádek kódu a ukončující příkazy, jako `End Function` nebo `End Property` nejsou platné v rozhraní.  
   
      Naproti tomu při definování výčtu nebo struktura, nebo vnořené třídy nebo rozhraní, je nutné zahrnout svých datových členů.  
   
--   **Člen modifikátory.** Při definování modulu členy nelze použít žádné modifikátory přístupu ani můžete určit [Shared](../../../visual-basic/language-reference/modifiers/shared.md) nebo libovolný postup modifikátor s výjimkou [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md). Můžete deklarovat každého člena, který [stíny](../../../visual-basic/language-reference/modifiers/shadows.md), můžete si [výchozí](../../../visual-basic/language-reference/modifiers/default.md) při definování vlastnosti, stejně jako [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md) nebo [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
+- **Člen modifikátory.** Při definování modulu členy nelze použít žádné modifikátory přístupu ani můžete určit [Shared](../../../visual-basic/language-reference/modifiers/shared.md) nebo libovolný postup modifikátor s výjimkou [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md). Můžete deklarovat každého člena, který [stíny](../../../visual-basic/language-reference/modifiers/shadows.md), můžete si [výchozí](../../../visual-basic/language-reference/modifiers/default.md) při definování vlastnosti, stejně jako [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md) nebo [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
   
--   **Dědičnost.** Pokud používáte rozhraní [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete určit jeden nebo více základních rozhraní. Může dědit z dvě rozhraní, i když každá definovat člen se stejným názvem. Pokud tak učiníte, implementující kód používaly kvalifikace názvu určete člen implementuje.  
+- **Dědičnost.** Pokud používáte rozhraní [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete určit jeden nebo více základních rozhraní. Může dědit z dvě rozhraní, i když každá definovat člen se stejným názvem. Pokud tak učiníte, implementující kód používaly kvalifikace názvu určete člen implementuje.  
   
      Rozhraní nemůže dědit z jiného rozhraní s více omezující úroveň přístupu. Například `Public` rozhraní nemůže dědit od třídy `Friend` rozhraní.  
   
      Rozhraní nemůže dědit z rozhraní do něho vnořený.  
   
--   **Implementace.** Pokud třída používá [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md) příkaz k implementaci tohoto rozhraní, musí implementovat každého člena definovaného v rámci rozhraní. Každý podpis v prováděcí kód navíc musí přesně odpovídat odpovídající signaturu definovanou v tomto rozhraní. Název člena v implementaci kódu však nemá shodovat s názvem člena, jak jsou definovány v rozhraní.  
+- **Implementace.** Pokud třída používá [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md) příkaz k implementaci tohoto rozhraní, musí implementovat každého člena definovaného v rámci rozhraní. Každý podpis v prováděcí kód navíc musí přesně odpovídat odpovídající signaturu definovanou v tomto rozhraní. Název člena v implementaci kódu však nemá shodovat s názvem člena, jak jsou definovány v rozhraní.  
   
      Pokud třída implementuje procedury, nelze určit postup jako `Shared`.  
   
--   **Výchozí vlastnost.** Rozhraní může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*, což může být odkazováno bez použití názvu vlastnosti. Zadejte tyto vlastnosti jeho s deklarací [výchozí](../../../visual-basic/language-reference/modifiers/default.md) modifikátor.  
+- **Výchozí vlastnost.** Rozhraní může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*, což může být odkazováno bez použití názvu vlastnosti. Zadejte tyto vlastnosti jeho s deklarací [výchozí](../../../visual-basic/language-reference/modifiers/default.md) modifikátor.  
   
      Všimněte si, že to znamená, že rozhraní můžete definovat výchozí vlastnost jenom v případě, že žádný dědí.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Všechny členy rozhraní mají implicitně [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup. Když definujete člena, který nelze použít jakékoli modifikátor přístupu. Implementující rozhraní lze však deklarovat úroveň přístupu pro každého člena implementované.  
+- **Úroveň přístupu.** Všechny členy rozhraní mají implicitně [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup. Když definujete člena, který nelze použít jakékoli modifikátor přístupu. Implementující rozhraní lze však deklarovat úroveň přístupu pro každého člena implementované.  
   
      Pokud přiřadíte instanci třídy do proměnné, úroveň přístupu z jejích členů může záviset na tom, zda datový typ proměnné je základní rozhraní nebo implementující třídu. Toto dokládá následující příklad.  
   
@@ -99,11 +99,11 @@ End Interface
   
      Pokud jste přístup ke členům třídy pomocí `varAsInterface`, všichni mají veřejný přístup. Ale pokud získáte přístup k členům pomocí `varAsClass`, `Sub` postup `doSomething` má privátní přístup.  
   
--   **Obor.** Rozhraní je v oboru v celém oboru názvů, třídy, struktury nebo modulu.  
+- **Obor.** Rozhraní je v oboru v celém oboru názvů, třídy, struktury nebo modulu.  
   
      Obor každého člena rozhraní je celé rozhraní.  
   
--   **Doba platnosti.** Rozhraní sama nemá životnost, ani dělat jeho členů. Pokud třída implementuje rozhraní a objekt vytvořen jako instance, že třídu, má objekt životního cyklu aplikace, ve kterém je spuštěná. Další informace najdete v tématu "Životnost" [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md).  
+- **Doba platnosti.** Rozhraní sama nemá životnost, ani dělat jeho členů. Pokud třída implementuje rozhraní a objekt vytvořen jako instance, že třídu, má objekt životního cyklu aplikace, ve kterém je spuštěná. Další informace najdete v tématu "Životnost" [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md).  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Interface` příkaz k definování rozhraní s názvem `thisInterface`, které musí být implementované pomocí `Property` příkazu a `Function` příkaz.  

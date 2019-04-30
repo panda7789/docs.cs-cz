@@ -10,11 +10,11 @@ helpviewer_keywords:
 - cardinal splines
 ms.assetid: 09b3797a-6294-422d-9adf-a5a0a7695c0c
 ms.openlocfilehash: 4588f6f606f0f479aeae1d143f23175ec4be32a5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779117"
 ---
 # <a name="cardinal-splines-in-gdi"></a>Základní křivky v GDI+
 Křivky mohutnosti je posloupnost jednotlivých křivky připojené k formuláři větší křivky. Pole bodů a napětí parametr je zadaný křivky. Křivky mohutnosti plynule prochází každý bod v poli; neexistují žádné sharp rohů a žádné náhlé změny v těsnost křivky. Následující obrázek znázorňuje sadu body a vyhlazení prochází každý bod v sadě.  

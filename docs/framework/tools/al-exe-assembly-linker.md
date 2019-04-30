@@ -10,11 +10,11 @@ ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 19cccc5bcec82b04a337aa0d3913fede0a435ae8
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780052"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (linker sestavení)
 
@@ -37,7 +37,7 @@ al sources options
 
 Můžete zadat jednu nebo víc z následujících `sources`.
 
-| Zdroj | Popis |
+| Source | Popis |
 | ------ | ----------- |
 |`file`[,`target`]|Zkopíruje obsah `file` (modul) do souboru určeného parametrem `target`. Po zkopírování *Al.exe* zkompiluje `target` do sestavení.|
 |**/ embed [zdroj]:** `file`[,`name`[,`private`]]|Vloží prostředek určený souborem `file` obrázku, který obsahuje manifest sestavení; *Al.exe* zkopíruje obsah `file` do bitové kopie (PE portable executable).<br /><br /> `name` Parametr je interní identifikátor prostředku. Ve výchozím nastavení jsou prostředky v sestavení veřejné (viditelné pro jiná sestavení). Určení `private` stane zdroj není viditelné pro jiná sestavení.<br /><br /> Pokud `file` je soubor prostředků rozhraní .NET Framework vytvořený, například podle [Resource File Generator (*Resgen.exe*)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí můžete přistupovat pomocí členů z <xref:System.Resources>. Další informace naleznete v tématu <xref:System.Resources.ResourceManager>. U všech ostatních prostředků, použijte `GetManifestResource`* metody v <xref:System.Reflection.Assembly> přístup k prostředku v době běhu.<br /><br /> Pokud pouze soubory prostředků jsou předány *Al.exe*, je výstupní soubor satelitní sestavení prostředků.|

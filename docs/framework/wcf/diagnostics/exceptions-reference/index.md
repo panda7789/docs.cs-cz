@@ -3,14 +3,14 @@ title: Přehled výjimek
 ms.date: 03/30/2017
 ms.assetid: adc19950-5f79-4045-8403-bf6310118ee3
 ms.openlocfilehash: 7034c3bbc25ab7ae6fea1d03c42ecde2e0130ee0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777387"
 ---
 # <a name="exceptions-reference"></a>Přehled výjimek
-Tato část uvádí všechny výjimky v těchto oblastech generované Windows Communication Foundation (WCF):  
+Tato část obsahuje seznam všech výjimek v těchto oblastech generované technologií Windows Communication Foundation (WCF):  
   
  [Model identit](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/identitymodel-exceptions.md)  
   
@@ -22,7 +22,7 @@ Tato část uvádí všechny výjimky v těchto oblastech generované Windows Co
   
  [Základní komunikace: Architektura připojení](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-connection-framework.md)  
   
- Základní komunikace: Protokolu HTTP nebo HTTPS přenosové kanály  
+ Základní komunikace: Přenosové kanály HTTP/HTTPS  
   
  [Základní komunikace: Interní duplexní přenosové kanály](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-internal-duplex-transport-channels.md)  
   
@@ -30,7 +30,7 @@ Tato část uvádí všechny výjimky v těchto oblastech generované Windows Co
   
  [Základní komunikace: Přenosové kanály TCP](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-tcp-transport-channels.md)  
   
- [Základní komunikace: Transportní architektura](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
+ [Základní komunikace: Transportní rozhraní](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-transport-framework.md)  
   
  [Základní komunikace: Nástroje](../../../../../docs/framework/wcf/diagnostics/exceptions-reference/core-communications-utilities.md)  
   

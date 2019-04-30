@@ -3,11 +3,11 @@ title: Klíčové slovo fixed
 description: Přečtěte si, jak připnout místní do zásobníku, aby se zabránilo kolekce s F# – klíčové slovo ' fixed'.
 ms.date: 04/24/2017
 ms.openlocfilehash: 7fdf66560f3e2ab7584b00c7e4584d7f6c161858
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772655"
 ---
 # <a name="the-fixed-keyword"></a>Klíčové slovo fixed
 

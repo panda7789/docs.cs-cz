@@ -3,22 +3,22 @@ title: Postup kanálu a mezipaměť
 ms.date: 03/30/2017
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
 ms.openlocfilehash: 3914ba74337bd959558348c191a897c79a32da52
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784303"
 ---
 # <a name="channel-factory-and-caching"></a>Postup kanálu a mezipaměť
 Pomocí klientských aplikací WCF <xref:System.ServiceModel.ChannelFactory%601> třídy za účelem vytvoření komunikačního kanálu službou WCF.  Vytváření <xref:System.ServiceModel.ChannelFactory%601> instance způsobuje zvýšení zatížení, protože zahrnuje následující operace:  
   
--   Vytváření <xref:System.ServiceModel.Description.ContractDescription> stromu  
+- Vytváření <xref:System.ServiceModel.Description.ContractDescription> stromu  
   
--   Odráží všechny požadované typy CLR  
+- Odráží všechny požadované typy CLR  
   
--   Vytváření kanálu zásobníku  
+- Vytváření kanálu zásobníku  
   
--   Uvolnění prostředků  
+- Uvolnění prostředků  
   
  Abyste minimalizovali Tato dodatečná režie, WCF můžete ukládat do mezipaměti objektů pro vytváření kanálů při použití proxy serveru klienta WCF.  
   

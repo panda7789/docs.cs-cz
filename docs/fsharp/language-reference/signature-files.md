@@ -3,11 +3,11 @@ title: Podpis souborů
 description: Další informace o použití F# podpis souborů k ukládání informací o veřejných podpisů sadu F# programu prvky, jako jsou moduly, typy a obory názvů.
 ms.date: 06/15/2018
 ms.openlocfilehash: 88938309a7c2bd12428f06ba8088141fd5349e80
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770445"
 ---
 # <a name="signatures"></a>Podpisy
 

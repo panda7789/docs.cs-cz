@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 384f8c7fa08b69c13d05edb3404787d428dad837
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774017"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61639425"
 ---
 ### <a name="stack-traces-obtained-when-using-portable-pdbs-now-include-source-file-and-line-information-if-requested"></a>Trasování zásobníku, které získáte při použití souborům portable PDB nyní zahrnují informace o zdrojovém souboru a řádku, pokud o to požádá
 

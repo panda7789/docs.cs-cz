@@ -3,27 +3,27 @@ title: model-defined function
 ms.date: 03/30/2017
 ms.assetid: 8bb2edc8-e8e7-44c2-adc7-f44e11bda4f0
 ms.openlocfilehash: 77152e8f37b009cbc3e72f053ead867914768d3d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772244"
 ---
 # <a name="model-defined-function"></a>model-defined function
 A *modelově definovaných funkcí* je funkce, která je definována v konceptuálním modelu. Tělo funkce definované model je vyjádřen v [Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md), který umožňuje pro funkce, který má být vyjádřena nezávisle na pravidla nebo ve zdroji dat podporuje jazyky.  
   
  Definice pro definovaný model funkci obsahuje následující informace:  
   
--   Název funkce. (Povinné)  
+- Název funkce. (Povinné)  
   
--   Typ vrácené hodnoty. (Volitelné)  
+- Typ vrácené hodnoty. (Volitelné)  
   
     > [!NOTE]
     >  Pokud není zadán žádný návratový typ, vrácená hodnota je typu void.  
   
--   Informace o parametrech. (Volitelné)  
+- Informace o parametrech. (Volitelné)  
   
--   [Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md) výraz, který definuje těla funkce.  
+- [Entity SQL](../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md) výraz, který definuje těla funkce.  
   
  Všimněte si, že modelově definovaných funkcí nepodporuje výstupní parametry. Toto omezení je na místě, tak, aby se může skládat modelově definovaných funkcí.  
   

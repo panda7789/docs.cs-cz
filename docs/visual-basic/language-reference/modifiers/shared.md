@@ -12,11 +12,11 @@ helpviewer_keywords:
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
 ms.openlocfilehash: 12c81a9a0651088a348afeaff3b71935d289da53
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816276"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778739"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek je přidružená k třídě nebo struktuře ve velkém a ne s konkrétní instanci dané třídy nebo struktury.  
@@ -30,25 +30,25 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je přidružená k t�
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Shared` pouze na úrovni modulu. To znamená, že deklarace kontext `Shared` elementu musí být třídou nebo strukturou a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
+- **Místní deklarace.** Můžete použít `Shared` pouze na úrovni modulu. To znamená, že deklarace kontext `Shared` elementu musí být třídou nebo strukturou a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
   
--   **Kombinované modifikátory.** Nelze zadat `Shared` spolu s [přepíše](../../../visual-basic/language-reference/modifiers/overrides.md), [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md), nebo [ Statické](../../../visual-basic/language-reference/modifiers/static.md) ve stejné deklaraci.  
+- **Kombinované modifikátory.** Nelze zadat `Shared` spolu s [přepíše](../../../visual-basic/language-reference/modifiers/overrides.md), [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md), nebo [ Statické](../../../visual-basic/language-reference/modifiers/static.md) ve stejné deklaraci.  
   
--   **Přístup k.** Přístup sdíleného element ho kvalifikaci pomocí názvu třídy nebo struktury, nikoli název proměnné o konkrétní instanci její třídy nebo struktury. Ještě nemáte k vytvoření instance třídy nebo struktury pro přístup k její sdílené členy.  
+- **Přístup k.** Přístup sdíleného element ho kvalifikaci pomocí názvu třídy nebo struktury, nikoli název proměnné o konkrétní instanci její třídy nebo struktury. Ještě nemáte k vytvoření instance třídy nebo struktury pro přístup k její sdílené členy.  
   
      Následující příklad volá sdílený postup <xref:System.Double.IsNaN%2A> vystavené <xref:System.Double> struktury.  
   
      `If Double.IsNaN(result) Then MsgBox("Result is mathematically undefined.")`  
   
--   **Implicitní sdílení.** Nelze použít `Shared` modifikátor v [Const příkaz](../../../visual-basic/language-reference/statements/const-statement.md), ale konstanty jsou implicitně sdílené. Podobně nelze deklarovat člen modul nebo rozhraní být `Shared`, ale jsou implicitně sdílené.  
+- **Implicitní sdílení.** Nelze použít `Shared` modifikátor v [Const příkaz](../../../visual-basic/language-reference/statements/const-statement.md), ale konstanty jsou implicitně sdílené. Podobně nelze deklarovat člen modul nebo rozhraní být `Shared`, ale jsou implicitně sdílené.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úložiště.** Sdílené proměnné nebo událostí je uložen v paměti pouze jednou, bez ohledu na to, kolik nebo několik instancí vytvořit jeho třídy nebo struktury. Podobně sdílený postup nebo vlastnost obsahuje pouze jednu sadu lokální proměnné.  
+- **Úložiště.** Sdílené proměnné nebo událostí je uložen v paměti pouze jednou, bez ohledu na to, kolik nebo několik instancí vytvořit jeho třídy nebo struktury. Podobně sdílený postup nebo vlastnost obsahuje pouze jednu sadu lokální proměnné.  
   
--   **Přístup k prostřednictvím proměnné Instance.** Je možné pro přístup k prvku sdílené kvalifikaci s názvem proměnné, která obsahuje konkrétní instanci její třídy nebo struktury. I když to obvykle funguje podle očekávání, kompilátor vygeneruje upozornění a zajišťuje tak přístup prostřednictvím názvu třídy nebo struktury namísto proměnné.  
+- **Přístup k prostřednictvím proměnné Instance.** Je možné pro přístup k prvku sdílené kvalifikaci s názvem proměnné, která obsahuje konkrétní instanci její třídy nebo struktury. I když to obvykle funguje podle očekávání, kompilátor vygeneruje upozornění a zajišťuje tak přístup prostřednictvím názvu třídy nebo struktury namísto proměnné.  
   
--   **Přístup prostřednictvím výrazu Instance.** Pokud element sdílené přistupujete prostřednictvím výraz, který vrací instanci její třídy nebo struktury, kompilátor provede přístup pomocí názvu třídy nebo struktury místo vyhodnocení výrazu. Pokud jste zamýšleli výraz, který má provádět další akce, jakož i vrací instanci výsledkem neočekávané výsledky. Toto dokládá následující příklad.  
+- **Přístup prostřednictvím výrazu Instance.** Pokud element sdílené přistupujete prostřednictvím výraz, který vrací instanci její třídy nebo struktury, kompilátor provede přístup pomocí názvu třídy nebo struktury místo vyhodnocení výrazu. Pokud jste zamýšleli výraz, který má provádět další akce, jakož i vrací instanci výsledkem neočekávané výsledky. Toto dokládá následující příklad.  
   
     ```vb
     Sub main()  

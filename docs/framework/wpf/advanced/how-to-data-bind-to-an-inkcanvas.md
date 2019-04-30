@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Datové připojení k objektu InkCanvas'
+title: 'Postupy: Datová vazba k objektu InkCanvas'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - InkCanvas [WPF], binding data to
 - binding data [WPF], to InkCanvas
 ms.assetid: 8d6b4d9e-ea7f-4412-ba83-3feccec5a515
 ms.openlocfilehash: 5d3fc0ed7b6176d7bc68bf20af42c311b5563908
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776464"
 ---
-# <a name="how-to-data-bind-to-an-inkcanvas"></a>Postupy: Datové připojení k objektu InkCanvas
+# <a name="how-to-data-bind-to-an-inkcanvas"></a>Postupy: Datová vazba k objektu InkCanvas
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak vytvořit vazbu <xref:System.Windows.Controls.InkCanvas.Strokes%2A> vlastnost <xref:System.Windows.Controls.InkCanvas> do jiného <xref:System.Windows.Controls.InkCanvas>.  
   

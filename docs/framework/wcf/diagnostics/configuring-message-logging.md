@@ -5,11 +5,11 @@ helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
 ms.openlocfilehash: e1d4c91ee282233e862ae14bf8d650ab2a754462
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785005"
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scénáře.  
@@ -83,11 +83,11 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
 ### <a name="other-options"></a>Další možnosti  
  Kromě úrovní protokolování může uživatel zadat následující možnosti:  
   
--   Protokolovat celá zpráva (`logEntireMessage` atribut): Tato hodnota určuje, zda je zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je zaznamenána pouze záhlaví. Toto nastavení má vliv na služby a přenosu úrovně protokolování zpráv...  
+- Protokolovat celá zpráva (`logEntireMessage` atribut): Tato hodnota určuje, zda je zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že je zaznamenána pouze záhlaví. Toto nastavení má vliv na služby a přenosu úrovně protokolování zpráv...  
   
--   Maximální počet zaznamenavaných zpráv (`maxMessagesToLog` atribut): Tato hodnota určuje maximální počet zaznamenavaných zpráv. Všechny zprávy (služba, přenos a špatně vytvořené zprávy) se započítává této kvóty. Po dosažení kvóty trasování je vygenerován a je zaznamenána žádná další zpráva. Výchozí hodnota je 10000.  
+- Maximální počet zaznamenavaných zpráv (`maxMessagesToLog` atribut): Tato hodnota určuje maximální počet zaznamenavaných zpráv. Všechny zprávy (služba, přenos a špatně vytvořené zprávy) se započítává této kvóty. Po dosažení kvóty trasování je vygenerován a je zaznamenána žádná další zpráva. Výchozí hodnota je 10000.  
   
--   Maximální velikost zaznamenávané zprávy (`maxSizeOfMessageToLog` atribut): Tato hodnota určuje maximální velikost zprávy do protokolu v bajtech. Nejsou zaznamenána zprávy, které překračují omezení velikosti a žádná další aktivita se provádí pro tuto zprávu. Toto nastavení ovlivňuje všechny úrovně trasování. Je-li ServiceModel trasování na, úroveň trasování varování je vygenerován v prvním bodu protokolování (ServiceModelSend * nebo TransportReceive) a upozorňovaly uživatele. Výchozí hodnota pro služby úrovně a přenosu úrovně zprávy je 256 kB, výchozí hodnota pro špatně vytvořené zprávy je 4 kB.  
+- Maximální velikost zaznamenávané zprávy (`maxSizeOfMessageToLog` atribut): Tato hodnota určuje maximální velikost zprávy do protokolu v bajtech. Nejsou zaznamenána zprávy, které překračují omezení velikosti a žádná další aktivita se provádí pro tuto zprávu. Toto nastavení ovlivňuje všechny úrovně trasování. Je-li ServiceModel trasování na, úroveň trasování varování je vygenerován v prvním bodu protokolování (ServiceModelSend * nebo TransportReceive) a upozorňovaly uživatele. Výchozí hodnota pro služby úrovně a přenosu úrovně zprávy je 256 kB, výchozí hodnota pro špatně vytvořené zprávy je 4 kB.  
   
     > [!CAUTION]
     >  Velikost zprávy, které je vypočítán nímž bude porovnáváno `maxSizeOfMessageToLog` je velikosti zprávy v paměti před serializací. Tato velikost se může lišit od skutečná délka řetězce zprávy, která není přihlašováno a v mnoha případech je větší než skutečná velikost. V důsledku toho nemusí zaznamenávané zprávy. Můžete pro tuto skutečnost tak, že zadáte účet `maxSizeOfMessageToLog` atribut 10 % je větší než velikost očekávaná zpráva. Kromě toho, pokud jsou špatně vytvořené zprávy zaznamenány, místo na disku skutečné využívaných protokolů zpráv může být až 5krát velikost hodnotu zadanou pomocí `maxSizeOfMessageToLog`.  

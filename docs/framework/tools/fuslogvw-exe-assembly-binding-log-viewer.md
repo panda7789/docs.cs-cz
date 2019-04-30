@@ -12,11 +12,11 @@ ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b74321ecc5c945aab74ad8678b23eb4a66046d39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779896"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime nepodařilo najít sestavení obvykle zobrazí jako <xref:System.TypeLoadException> ve vaší aplikaci.  
@@ -51,17 +51,17 @@ fuslogvw
   
      Nástroj zobrazí následující podrobnosti o vybrané chybě vazby:  
   
-    -   Konkrétní důvod selhání vazby, například „soubor nebyl nalezen“ nebo „neshoda verzí“.  
+    - Konkrétní důvod selhání vazby, například „soubor nebyl nalezen“ nebo „neshoda verzí“.  
   
-    -   Informace o aplikaci, která iniciovala tuto vazbu, včetně jejího názvu, kořenového adresáře aplikace (AppBase) a popisu soukromé cesty hledání, pokud existuje.  
+    - Informace o aplikaci, která iniciovala tuto vazbu, včetně jejího názvu, kořenového adresáře aplikace (AppBase) a popisu soukromé cesty hledání, pokud existuje.  
   
-    -   Identitu sestavení, které tento nástroj hledá.  
+    - Identitu sestavení, které tento nástroj hledá.  
   
-    -   Popis všech zásad aplikace, vydavatele nebo správce, které byly použity.  
+    - Popis všech zásad aplikace, vydavatele nebo správce, které byly použity.  
   
-    -   Zda sestavení bylo nalezeno v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md).  
+    - Zda sestavení bylo nalezeno v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md).  
   
-    -   Seznam všech zjišťovaných adres URL.  
+    - Seznam všech zjišťovaných adres URL.  
   
  Následující ukázka položky protokolu zobrazuje detailní informace o selhání vazby sestavení.  
   
@@ -105,26 +105,26 @@ LOG: All probing URLs attempted and failed.
   
 ### <a name="to-delete-all-entries-from-the-log"></a>Odstranění všech záznamů z protokolu  
   
--   Klikněte na tlačítko **odstranit vše** tlačítko.  
+- Klikněte na tlačítko **odstranit vše** tlačítko.  
   
 ### <a name="to-refresh-the-user-interface"></a>Obnovení uživatelského rozhraní  
   
--   Klikněte na tlačítko **aktualizovat** tlačítko. Prohlížeč automaticky nerozpozná nové položky protokolu, pokud je spuštěn. Je nutné použít **aktualizovat** tlačítko k jejich zobrazení.  
+- Klikněte na tlačítko **aktualizovat** tlačítko. Prohlížeč automaticky nerozpozná nové položky protokolu, pokud je spuštěn. Je nutné použít **aktualizovat** tlačítko k jejich zobrazení.  
   
 ### <a name="to-change-the-log-settings"></a>Změna nastavení protokolu  
   
--   Klikněte na tlačítko **nastavení** tlačítko Otevřít **nastavení protokolu** dialogového okna.  
+- Klikněte na tlačítko **nastavení** tlačítko Otevřít **nastavení protokolu** dialogového okna.  
   
 ### <a name="to-view-the-about-dialog"></a>Zobrazení dialogového okna O programu  
   
--   Klikněte na tlačítko **o** tlačítko.  
+- Klikněte na tlačítko **o** tlačítko.  
   
 ## <a name="binding-logs-for-native-images"></a>Protokoly vazeb nativních bitových kopií  
  Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadavky vazby sestavení. Alternativně můžete protokolovat vazby sestavení nativních bitových kopií, které byly vytvořeny pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
   
 #### <a name="to-log-assembly-binds-for-native-images"></a>Protokolování vazeb sestavení nativních bitových kopií  
   
--   V **kategorie protokolu** skupiny, vyberte **nativní bitové kopie** přepínač.  
+- V **kategorie protokolu** skupiny, vyberte **nativní bitové kopie** přepínač.  
   
  Následující protokol zobrazuje chybu způsobenou neexistující závislostí při vytvoření nativní bitové kopie pro aplikaci. Pokud se tyto závislosti v době běhu liší od závislostí při spuštění nástroje Ngen.exe, vazba na nativní bitovou kopii není povolena.  
   
@@ -185,23 +185,23 @@ Discarding native image.
   
 #### <a name="to-disable-logging"></a>Zákaz protokolování  
   
--   Vyberte **protokolu zakázáno** přepínač.  Tato možnost je ve výchozím stavu zvolena.  
+- Vyberte **protokolu zakázáno** přepínač.  Tato možnost je ve výchozím stavu zvolena.  
   
 #### <a name="to-log-assembly-binds-in-exceptions"></a>Protokolování vazby sestavení ve výjimkách  
   
--   Vyberte **protokolovat text výjimek** přepínač. Pouze nejméně podrobné informace protokolu jsou zaznamenány v textu výjimky. Chcete-li zobrazit úplné informace, použijte některé z dalších nastavení.  
+- Vyberte **protokolovat text výjimek** přepínač. Pouze nejméně podrobné informace protokolu jsou zaznamenány v textu výjimky. Chcete-li zobrazit úplné informace, použijte některé z dalších nastavení.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   
 #### <a name="to-log-assembly-bind-failures"></a>Protokolování selhání vazby sestavení  
   
--   Vyberte **chyby protokolu vazeb na disk** přepínač.  
+- Vyberte **chyby protokolu vazeb na disk** přepínač.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   
 #### <a name="to-log-all-assembly-binds"></a>Protokolování všech vazeb sestavení  
   
--   Vyberte **protokolovat všechny vazby na disk** přepínač.  
+- Vyberte **protokolovat všechny vazby na disk** přepínač.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   

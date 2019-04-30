@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to
 ms.date: 07/20/2015
 ms.assetid: a958af40-f754-4409-85f9-7746978d4cb3
 ms.openlocfilehash: 178729640898556244657e6e2917373825a4e51e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780509"
 ---
 # <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak získat následnickým elementům podřízeného elementu s konkrétním názvem.  

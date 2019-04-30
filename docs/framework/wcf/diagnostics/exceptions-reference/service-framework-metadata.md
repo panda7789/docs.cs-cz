@@ -3,32 +3,32 @@ title: Metadata architektury služby
 ms.date: 03/30/2017
 ms.assetid: 76afc73a-0770-4084-93f3-6701a757911e
 ms.openlocfilehash: f65f53ff99202275876fb6e3c431bc49ae2bd38b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780793"
 ---
 # <a name="service-framework-metadata"></a>Metadata architektury služby
 Toto téma uvádí všechny výjimky generované Metadata architektury služby.  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|AsyncEndCalledOnWrongChannel|Asynchronní End byla volána na chybný kanál.|  
-|AsyncEndCalledWithAnIAsyncResult|Asynchronní End byla volána s IAsyncResult z jiné metody Begin.|  
-|AttemptedToGetContractTypeForButThatTypeIs1|Došlo k pokusu o získání pro zadaný typ smlouvy. Typ není třída ServiceContract a nedědí třída ServiceContract.|  
-|CannotHaveTwoOperationsWithTheSameName3|Nemůže mít dvě operace v stejné smlouvy se stejným názvem. Toto pravidlo porušují zadané metody v zadaného typu. Změňte název jednoho z operace změnou názvu metody nebo pomocí vlastnosti název OperationContractAttribute.|  
-|CannotInheritTwoOperationsWithTheSameName3|Nelze zdědit dvě různé operace se stejným názvem. Zadaná operace ze zadaného smluv porušení toto pravidlo. Změňte název jednoho z operace změnou názvu metody nebo pomocí vlastnosti název OperationContractAttribute.|  
-|CantCreateChannelWithManualAddressing|Nelze vytvořit kanál pro kontrakt, který vyžaduje požadavek nebo odpověď a vazbu, která vyžaduje ruční adresování ale podporuje pouze duplexní komunikace.|  
-|DuplicateBehavior1|Hodnotu nelze přidat do kolekce. Kolekce již obsahuje položku stejné zadaného typu. Tato kolekce podporuje pouze jednu instanci každého typu.|  
-|InAContractInheritanceHierarchyIfParentHasCallbackChildMustToo|Protože kontrakt zadané základní služby má kontraktu zadaný zpětného volání, kontrakt služby zadaný odvozené také třeba určit buď zadaný typ, nebo odvozený typ jako její smlouvy zpětného volání.|  
-|InvalidAsyncBeginMethodSignatureForMethod2|Neplatný asynchronní Begin podpis metody pro zadanou metodu v zadaný typ ServiceContract. Vaše začít metoda musí přijmout třídu AsyncCallback a objekt jako poslední dva argumenty a vrátit třídu IAsyncResult.|  
-|InvalidAsyncEndMethodSignatureForMethod2|Neplatný asynchronní End podpis metody pro zadanou metodu v zadaný typ ServiceContract. Metoda ukončení musí přijmout třídu IAsyncResult jako poslední argument.|  
-|MessagePropertiesArraySize0|Pole, který byl předán nemá dostatek místa pro uložení všech vlastností obsažených v této kolekci.|  
-|OneWayAndFaultsIncompatible2|Zadanou metodu v zadaného typu, je označeno jako IsOneWay = true a deklaruje jednu nebo více tříd FaultContractAttributes. Jednosměrné metody nelze deklarovat FaultContractAttributes. Změnit IsOneWay na hodnotu false nebo odebrat třídu FaultContractAttributes.|  
-|UnsupportedWSDLOnlyOneMessage|Nepodporované Web Services Description Language. Pro chybové zprávy je podporována pouze jedna část zprávy. Tato chybová zpráva se odkazuje na více než jednu část zprávy. Používáte-li upravit přístup k souboru popisu webové služby, můžete je vyřešit problém odebráním částí další zprávy, aby chybová zpráva odkazy pouze na jednu část.|  
-|UnsupportedWSDLTheFault|Nepodporované Web Services Description Language. Část chybové zprávy musí odkazovat na prvek. Tato chybová zpráva není odkaz na element. Pokud máte přístup pro úpravy dokumentu webové služby Definition Language, můžete problém vyřešit pomocí odkazu na prvek schématu pomocí atributu 'element'.|  
-|WsdlImportErrorDependencyDetail|Došlo k chybě při importu zadaný, je závislá na zadanou hodnotu. Rovněž je zadán argument Xpath.|  
-|XsdMissingRequiredAttribute1|Chybí zadaný povinný atribut.|
+|AsyncEndCalledOnWrongChannel|Asynchronní ukončení bylo voláno pro nesprávný kanál.|  
+|AsyncEndCalledWithAnIAsyncResult|Asynchronní ukončení byla volána s argumentem IAsyncResult z jiné metody zahájení.|  
+|AttemptedToGetContractTypeForButThatTypeIs1|Byl proveden pokus získat typ kontraktu pro zadaný rozbočovač. Typ není ServiceContract a třídu ServiceContract nedědí.|  
+|CannotHaveTwoOperationsWithTheSameName3|V jednom kontraktu se stejným názvem nemůžou být dvě operace. Toto pravidlo porušují určených metod v zadaném typu. Změňte název jedné z operací, že změníte název metody nebo použijete vlastnost Name atributu OperationContractAttribute.|  
+|CannotInheritTwoOperationsWithTheSameName3|Nejde Zdědit dvě různé operace se stejným názvem. Toto pravidlo porušují zadanou operaci ze zadaného smluv. Změňte název jedné z operací, že změníte název metody nebo použijete vlastnost Name atributu OperationContractAttribute.|  
+|CantCreateChannelWithManualAddressing|Nelze vytvořit kanál pro kontrakt, který vyžaduje požadavek nebo odpověď a vazbu, která vyžaduje ruční adresování, ale podporuje pouze duplexní komunikaci.|  
+|DuplicateBehavior1|Hodnotu nelze přidat do kolekce. Kolekce již obsahuje položku stejného zadaného typu. Tato kolekce podporuje pouze jednu instanci každého typu.|  
+|InAContractInheritanceHierarchyIfParentHasCallbackChildMustToo|Zadané základní smlouvu obsahuje kontrakt zpětného volání zadané, a proto zadané odvozené servisní smlouvě musíte zadat také zadaného typu nebo odvozeného typu jako jeho kontrakt zpětného volání.|  
+|InvalidAsyncBeginMethodSignatureForMethod2|Neplatný asynchronní signatura metody Begin pro zadanou metodu v zadaném typu třídy ServiceContract. Vaše begin musí jako poslední dva argumenty přijímat ukazatel AsyncCallback a objekt a vracet hodnotu IAsyncResult metody.|  
+|InvalidAsyncEndMethodSignatureForMethod2|Neplatný asynchronní signatura metody End pro zadanou metodu v zadaném typu třídy ServiceContract. Metoda end musí přijmout třídu IAsyncResult jako poslední argument.|  
+|MessagePropertiesArraySize0|Pole, který byl předán nemá dostatek prostoru k udržení všech vlastností obsažených v této kolekci.|  
+|OneWayAndFaultsIncompatible2|Zadanou metodu v zadaném typu je označená jako IsOneWay = true a deklaruje jednu nebo víc tříd FaultContractAttributes. Jednosměrné metody nemůžou deklarovat třídu FaultContractAttributes. Změňte IsOneWay na false nebo odstraňte FaultContractAttributes.|  
+|UnsupportedWSDLOnlyOneMessage|Nepodporovaná Web Services Description Language. Pro chybové zprávy je podporována pouze jedna část zprávy. Tato chybová zpráva se odkazuje na více než jednu část zprávy. Pokud máte přístup pro úpravy k souboru popisu webové služby, můžete problém vyřešit odstraněním dodatečných částí zprávy takový, aby chybová zpráva odkazy pouze na jednu část.|  
+|UnsupportedWSDLTheFault|Nepodporovaná Web Services Description Language. Část chybové zprávy musí odkazovat na prvek. Tato chybová zpráva neodkazuje na element. Pokud máte přístup pro úpravy dokumentu jazyka pro definici webové služby, můžete opravit problém pomocí odkazu na element schématu pomocí atributu "element".|  
+|WsdlImportErrorDependencyDetail|Došlo k chybě při importu zadané, že je závislé na zadanou hodnotu. Cesta Xpath je také zadán.|  
+|XsdMissingRequiredAttribute1|Zadaný chybí požadovaný atribut.|

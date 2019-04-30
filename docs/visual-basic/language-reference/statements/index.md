@@ -5,14 +5,14 @@ helpviewer_keywords:
 - statements [Visual Basic]
 ms.assetid: 1cbd7703-8d3b-48fd-831e-14c9cc85675a
 ms.openlocfilehash: 6c77a0e921038aca6cd9d2ed28cc34e588d9079f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33602785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784212"
 ---
 # <a name="statements-visual-basic"></a>Příkazy (Visual Basic)
-Témata v této části obsahují tabulky deklarace jazyka Visual Basic a spustitelné příkazy a důležité seznamů, které platí pro mnoho příkazů.  
+Témata v této části obsahují tabulky spustitelné příkazy a deklarace jazyka Visual Basic a důležité seznamů, které platí pro mnoho příkazů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Příkazy A-E](../../../visual-basic/language-reference/statements/a-e-statements.md)  
@@ -32,6 +32,6 @@ Témata v této části obsahují tabulky deklarace jazyka Visual Basic a spusti
  [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
+ [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

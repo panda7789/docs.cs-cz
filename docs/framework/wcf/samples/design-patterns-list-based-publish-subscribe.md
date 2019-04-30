@@ -3,11 +3,11 @@ title: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
 ms.openlocfilehash: e98fab5c8e7570917a4ba755fa372832fe0b26b5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768433"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773058"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Vzor publikování–odběr založený na seznamu
 Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  
@@ -130,23 +130,23 @@ public class PriceChangeEventArgs : EventArgs
   
 1. Nastavení služby počítače:  
   
-    1.  Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Soubor Setupvroot.bat ze služby batch [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) je možné vytvořit na disku a virtuální adresář.  
+    1. Na počítači služby vytvořte virtuální adresář s názvem ServiceModelSamples. Soubor Setupvroot.bat ze služby batch [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) je možné vytvořit na disku a virtuální adresář.  
   
-    2.  Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači služby. Nezapomeňte zahrnout soubory v adresáři \bin.  
+    2. Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači služby. Nezapomeňte zahrnout soubory v adresáři \bin.  
   
-    3.  Testovací službě můžete dostat z klientského počítače pomocí prohlížeče.  
+    3. Testovací službě můžete dostat z klientského počítače pomocí prohlížeče.  
   
 2. Nastavte klientské počítače:  
   
-    1.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientských počítačů.  
+    1. Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientských počítačů.  
   
-    2.  V konfiguračním souboru každý klient změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    2. V konfiguračním souboru každý klient změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
 3. Nastavte počítač pro zdroj dat:  
   
-    1.  Zkopírujte soubory programu zdroje dat ze složky \datasource\bin\ v rámci složky specifické pro jazyk, na počítač pro datové zdroje.  
+    1. Zkopírujte soubory programu zdroje dat ze složky \datasource\bin\ v rámci složky specifické pro jazyk, na počítač pro datové zdroje.  
   
-    2.  V souboru konfigurace zdroje dat změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+    2. V souboru konfigurace zdroje dat změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
 4. Na klientské počítače spusťte z příkazového řádku Client.exe.  
   

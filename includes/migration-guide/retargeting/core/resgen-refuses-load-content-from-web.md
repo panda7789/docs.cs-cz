@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6cdd410cc818c2c0a993a364e550f5f92ed6a821
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762555"
 ---
 ### <a name="resgen-refuses-to-load-content-from-the-web"></a>Resgen odmítá k načtení obsahu z webu
 

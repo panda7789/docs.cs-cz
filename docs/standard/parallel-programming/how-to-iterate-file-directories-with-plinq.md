@@ -8,11 +8,11 @@ ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d48f6df1e0e7680d2706c73c33dc817e1feaf1d5
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45689324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781196"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>Postupy: Procházení adresářů se soubory pomocí jazyka PLINQ
 Tento příklad ukazuje dvě jednoduché způsoby paralelní operace na adresářů se soubory. První dotaz používá <xref:System.IO.Directory.GetFiles%2A> metoda k vyplnění pole názvů souboru v adresáři a všech podadresářích. Tato metoda nevrací až celého pole se vyplní, a proto ji můžete zavést latenci na začátku této operace. Ale po naplnění pole PLINQ může zpracovat ho paralelně velmi rychle.  
@@ -32,7 +32,7 @@ Tento příklad ukazuje dvě jednoduché způsoby paralelní operace na adresá�
   
  [!code-csharp[PLINQ#34](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#34)]  
   
- Při použití <xref:System.IO.Directory.GetFiles%2A>, ujistěte se, že máte dostatečná oprávnění ke všem adresářům ve stromové struktuře. Jinak bude vyvolána výjimka a nevrátí se žádné výsledky. Při použití <xref:System.IO.Directory.EnumerateDirectories%2A> v PLINQ dotazu je problematické pro zpracování výjimek vstupně-výstupních operací řádné tak, aby vám pokračujte iterace. Pokud váš kód musí zpracovat vstup/výstup nebo výjimky neoprávněného přístupu, měli byste uvažovat o postupu popsaného v [postupy: iterovat adresářů se soubory pomocí paralelní třídy](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
+ Při použití <xref:System.IO.Directory.GetFiles%2A>, ujistěte se, že máte dostatečná oprávnění ke všem adresářům ve stromové struktuře. Jinak bude vyvolána výjimka a nevrátí se žádné výsledky. Při použití <xref:System.IO.Directory.EnumerateDirectories%2A> v PLINQ dotazu je problematické pro zpracování výjimek vstupně-výstupních operací řádné tak, aby vám pokračujte iterace. Pokud váš kód musí zpracovat vstup/výstup nebo výjimky neoprávněného přístupu, měli byste uvažovat o postupu popsaného v [jak: Procházení adresářů se soubory pomocí paralelní třídy](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md).  
   
  Pokud je latence vstupně-výstupní operace problém, se souborem vstupně-výstupní operace přes síť, Představme si třeba pomocí jedné z asynchronní vstupně-výstupní techniky popsané v [TPL a tradiční rozhraní .NET Framework Asynchronous Programming](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md) a v tomto [blogový příspěvek ](https://blogs.msdn.microsoft.com/pfxteam/2009/08/04/parallel-extensions-and-io/).  
   

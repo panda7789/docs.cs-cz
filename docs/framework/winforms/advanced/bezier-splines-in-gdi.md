@@ -10,11 +10,11 @@ helpviewer_keywords:
 - GDI+, Bezier splines
 ms.assetid: 5774ce1e-87d4-4bc7-88c4-4862052781b8
 ms.openlocfilehash: ff4e9eb18610b70c88e057d3d44020321bbb9f4f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59107325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779249"
 ---
 # <a name="b233zier-splines-in-gdi"></a>B&#233;zier křivky v GDI +
 Bézierovy křivky je křivka určené čtyři body: dva koncové body (p1 a p2) a dva kontrolních bodů (c1 a c2). Křivky začíná p1 a p2 končí. Křivka neprochází přes kontrolních bodů, ale kontrolní body fungují jako magnets stahování křivky v některých směrech a vliv na způsob, jakým zatáčkách křivky. Následující obrázek znázorňuje Bézierovy křivky spolu s jeho koncových bodů a kontrolní body.  

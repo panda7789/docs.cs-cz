@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
 ms.openlocfilehash: 4327e8bb07cb03a91f7384f7fe82bc2e47f6fcb9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319999"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780819"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
 Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování naleznete v tématu: [Služba prohlížečem trasování (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -98,15 +98,15 @@ public class MyServiceHost : ServiceHost
 ## <a name="my-service-and-client-work-great-but-i-cant-get-them-to-work-when-the-client-is-on-another-computer-whats-happening"></a>Služba a skvěle fungují klienta, ale nemůžu nelze získat pracovat nacházející se v jiném počítači? Co se děje?  
  V závislosti na výjimku, může existovat několik problémů:  
   
--   Můžete potřebovat změnit adresy koncových bodů klienta na název hostitele a není "localhost".  
+- Můžete potřebovat změnit adresy koncových bodů klienta na název hostitele a není "localhost".  
   
--   Můžete potřebovat pro otevření portu pro aplikaci. Podrobnosti najdete v tématu [pokyny k bráně Firewall](../../../docs/framework/wcf/samples/firewall-instructions.md) z ukázky SDK.  
+- Můžete potřebovat pro otevření portu pro aplikaci. Podrobnosti najdete v tématu [pokyny k bráně Firewall](../../../docs/framework/wcf/samples/firewall-instructions.md) z ukázky SDK.  
   
--   Další možné problémy, naleznete v tématu ukázky [spouštění ukázek Windows Communication Foundation](./samples/running-the-samples.md).  
+- Další možné problémy, naleznete v tématu ukázky [spouštění ukázek Windows Communication Foundation](./samples/running-the-samples.md).  
   
--   Pokud váš klient se pomocí přihlašovacích údajů Windows a je výjimka <xref:System.ServiceModel.Security.SecurityNegotiationException>, následujícím způsobem konfigurace protokolu Kerberos.  
+- Pokud váš klient se pomocí přihlašovacích údajů Windows a je výjimka <xref:System.ServiceModel.Security.SecurityNegotiationException>, následujícím způsobem konfigurace protokolu Kerberos.  
   
-    1.  Přidáte přihlašovací údaje identity na element koncového bodu v souboru App.config pro klienta:  
+    1. Přidáte přihlašovací údaje identity na element koncového bodu v souboru App.config pro klienta:  
   
         ```xml
         <endpoint   
@@ -122,33 +122,33 @@ public class MyServiceHost : ServiceHost
         </endpoint>  
         ```  
   
-    2.  Spusťte službu v místním prostředí pomocí účtu systému nebo NetworkService. Můžete spustit tento příkaz vytvoří příkazové okno pod účtem systému:  
+    2. Spusťte službu v místním prostředí pomocí účtu systému nebo NetworkService. Můžete spustit tento příkaz vytvoří příkazové okno pod účtem systému:  
   
         ```console
         at 12:36 /interactive "cmd.exe"  
         ```  
   
-    3.  Hostování služby v rámci formátu RTF (Internetová informační služba), která standardně používá účet (SPN) pro hlavní název služby.  
+    3. Hostování služby v rámci formátu RTF (Internetová informační služba), která standardně používá účet (SPN) pro hlavní název služby.  
   
-    4.  Nový název SPN zaregistrujte domény pomocí nástroje SetSPN. Všimněte si, že musíte být správcem domény, pokud to chcete udělat.  
+    4. Nový název SPN zaregistrujte domény pomocí nástroje SetSPN. Všimněte si, že musíte být správcem domény, pokud to chcete udělat.  
   
  Další informace o protokolu Kerberos najdete v tématu [zabezpečení koncepty používané ve službě WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) a:  
   
--   [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
+- [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
   
--   [Registrace pomocí Http.sys hlavní názvy služby protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86943)  
+- [Registrace pomocí Http.sys hlavní názvy služby protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86943)  
   
--   [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86946)  
+- [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86946)  
   
 <a name="BKMK_q5"></a>   
 ## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>Kdy můžu výjimku FaultException\<výjimky > tam, kde je typ výjimky, vždy zobrazila se obecným typem FaultException v klientském počítači a ne obecného typu. Co se děje?  
  Důrazně doporučujeme vytvořit vlastní vlastní chybové datový typ a deklarovat, že jako typ podrobností ve vaší smlouvě selhání. Důvodem je, že pomocí typy poskytované systémem výjimek:  
   
--   Vytvoří závislost na typ, který odebere jeden z největších výhod aplikací orientovaných na služby.  
+- Vytvoří závislost na typ, který odebere jeden z největších výhod aplikací orientovaných na služby.  
   
--   Nemohou záviset na výjimky serializace standardním způsobem. Některé – například <xref:System.Security.SecurityException>– nemusí být vůbec serializovatelný.  
+- Nemohou záviset na výjimky serializace standardním způsobem. Některé – například <xref:System.Security.SecurityException>– nemusí být vůbec serializovatelný.  
   
--   Poskytuje podrobnosti interní implementace klientům. Další informace najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+- Poskytuje podrobnosti interní implementace klientům. Další informace najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
  Pokud ladíte aplikaci, ale může serializovat informace o výjimce a vrátí klientovi pomocí <xref:System.ServiceModel.Description.ServiceDebugBehavior> třídy.  
   

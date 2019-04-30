@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Unicode, marshaling strings
 ms.assetid: 0021d5ff-3209-444e-8497-420f3e6ee075
 ms.openlocfilehash: b3c9452f8d144fb18ea3efcb35b85caed80e8692
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778674"
 ---
 # <a name="unicode-visual-basic"></a>Unicode (Visual Basic)
 Určuje, že by měl Visual Basic zařazovat všechny řetězce k hodnotám Unicode bez ohledu na název externí procedury byl deklarován.  

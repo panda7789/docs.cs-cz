@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: d5768a0c25bcd0880cbffde9e57ca9fe7a81cf06
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665603"
 ---
 ### <a name="net-com-successfully-marshals-byref-safearray-parameters-on-events"></a>.NET COM úspěšně zařazuje parametry ByRef SafeArray událostí
 

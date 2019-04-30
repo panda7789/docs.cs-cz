@@ -6,11 +6,11 @@ ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 73f786c8f1080d0046889958e8b3bd3165870569
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778752"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Poznámky k implementaci podpory typů XML
 Toto téma popisuje některé podrobnosti implementace, které chcete mít na paměti.  
@@ -34,7 +34,7 @@ Toto téma popisuje některé podrobnosti implementace, které chcete mít na pa
   
  <xref:System.TimeSpan> Třída nepodporuje částečné řazení. Místo toho použije určitý počet dní pro 1 rok a 1 měsíc; 365 dnů a 30 dnů v uvedeném pořadí.  
   
- Další informace o `xs:duration` zadejte naleznete v tématu W3C [XML schématu část 2: datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).
+ Další informace o `xs:duration` zadejte naleznete v tématu W3C [XML schématu část 2: Datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).
   
 ### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>: Time gregoriánské datum typy a System.DateTime  
  Při `xs:time` hodnota je namapována na <xref:System.DateTime> objektu, <xref:System.DateTime.MinValue> pole slouží k inicializaci vlastnosti datum <xref:System.DateTime> objektu (, jako <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>) na nejmenší <xref:System.DateTime> hodnotu.  

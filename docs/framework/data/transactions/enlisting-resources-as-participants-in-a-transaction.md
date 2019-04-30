@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 786a12c2-d530-49f4-9c59-5c973e15a11d
 ms.openlocfilehash: 98872bd3ccddb1696b37eace0e28156cdbe002dc
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793728"
 ---
 # <a name="enlisting-resources-as-participants-in-a-transaction"></a>Uvedení prostředků jako účastníků v transakci
 

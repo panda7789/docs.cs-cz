@@ -6,28 +6,28 @@ dev_langs:
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
 ms.openlocfilehash: 3945d4fc92bea2c4212da0507618203603ae8aba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780544"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Známé problémy a aspekty u LINQ to Entities
 Tato část obsahuje informace o známých problémech s [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  
   
--   [Dotazy LINQ, nelze uložit do mezipaměti](#LINQQueriesThatAreNotCached)  
+- [Dotazy LINQ, nelze uložit do mezipaměti](#LINQQueriesThatAreNotCached)  
   
--   [Informace o ztrátě objednávce](#OrderingInfoLost)  
+- [Informace o ztrátě objednávce](#OrderingInfoLost)  
   
--   [Celá čísla bez znaménka není podporován](#UnsignedIntsUnsupported)  
+- [Celá čísla bez znaménka není podporován](#UnsignedIntsUnsupported)  
   
--   [Chyby převodu typů](#TypeConversionErrors)  
+- [Chyby převodu typů](#TypeConversionErrors)  
   
--   [Odkazuje na Neskalární proměnné není podporován](#RefNonScalarClosures)  
+- [Odkazuje na Neskalární proměnné není podporován](#RefNonScalarClosures)  
   
--   [Vnořené dotazy může selhat s SQL Server 2000](#NestedQueriesSQL2000)  
+- [Vnořené dotazy může selhat s SQL Server 2000](#NestedQueriesSQL2000)  
   
--   [Promítání na anonymního typu](#ProjectToAnonymousType)  
+- [Promítání na anonymního typu](#ProjectToAnonymousType)  
   
 <a name="LINQQueriesThatAreNotCached"></a>   
 ## <a name="linq-queries-that-cannot-be-cached"></a>Dotazy LINQ, nelze uložit do mezipaměti  

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 6309cead46dff44ff6360bac9b31666f875be210
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649009"
 ---
 ### <a name="marshalsizeof-and-marshalptrtostructure-overloads-break-dynamic-code"></a>Marshal.SizeOf a přetížení Marshal.PtrToStructure přerušit dynamický kód
 

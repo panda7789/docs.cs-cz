@@ -9,20 +9,20 @@ helpviewer_keywords:
 - Windows Forms, interop
 ms.assetid: 87aac8ad-3c04-43b3-9b0c-d0b00df9ee74
 ms.openlocfilehash: 81220ad4c0bf00a38abfe7257d5fc61e92e8d885
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206444"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779090"
 ---
 # <a name="how-to-support-com-interop-by-displaying-a-windows-form-with-the-showdialog-method"></a>Postupy: Podpora zprostředkovatele komunikace s objekty COM zobrazením formuláře Windows pomocí metody ShowDialog
 Vyřešíte problémy vzájemná funkční spolupráce modelu COM (Component Object) zobrazením formuláře Windows na [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, která je vytvořena pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
   
  Chcete-li formuláře fungovat správně z klientské aplikace modelu COM, musíte ho spustit na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
   
--   Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláři Windows.  
+- Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláři Windows.  
   
--   Každý formulář Windows pro zobrazení na samostatném vlákně. Další informace najdete v tématu [jak: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
+- Každý formulář Windows pro zobrazení na samostatném vlákně. Další informace najdete v tématu [jak: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
   
 ## <a name="procedure"></a>Postup  
  Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metoda může být nejjednodušší způsob, jak zobrazit formulář na [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, protože všechny přístupy, vyžaduje nejmenší kód pro implementaci.  
@@ -35,7 +35,7 @@ Vyřešíte problémy vzájemná funkční spolupráce modelu COM (Component Obj
   
 #### <a name="to-support-com-interop-by-displaying-a-windows-form-with-the-showdialog-method"></a>Pro podporu komunikace s objekty COM zobrazením windows form pomocí metody ShowDialog  
   
--   Nahraďte všechna volání <xref:System.Windows.Forms.Form.Show%2A?displayProperty=nameWithType> pomocí volání metody <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metoda ve vaší [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] komponenty.  
+- Nahraďte všechna volání <xref:System.Windows.Forms.Form.Show%2A?displayProperty=nameWithType> pomocí volání metody <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metoda ve vaší [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] komponenty.  
   
 ## <a name="see-also"></a>Viz také:
 

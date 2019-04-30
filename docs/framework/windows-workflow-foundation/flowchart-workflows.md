@@ -3,11 +3,11 @@ title: Pracovní postupy vývojového diagramu
 ms.date: 03/30/2017
 ms.assetid: b0a3475c-d22f-49eb-8912-973c960aebf5
 ms.openlocfilehash: 1840f677929509e4902498c5aa8920f49cb13496
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150625"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773591"
 ---
 # <a name="flowchart-workflows"></a>Pracovní postupy vývojového diagramu
 

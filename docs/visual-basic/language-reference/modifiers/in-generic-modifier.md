@@ -8,11 +8,11 @@ helpviewer_keywords:
 - In keyword [Visual Basic]
 ms.assetid: 59bb13c5-fe96-42b8-8286-86293d1661c5
 ms.openlocfilehash: d8d503f0814a89c977cdc208eced026b2d8cb1fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838926"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802457"
 ---
 # <a name="in-generic-modifier-visual-basic"></a>In (generický modifikátor) (Visual Basic)
 Pro parametry obecného typu `In` – klíčové slovo určuje, že parametr typu je kontravariant.  

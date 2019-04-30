@@ -10,11 +10,11 @@ ms.assetid: c21fb997-9f0e-40a5-8741-f73bba376bd8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 135decebcd071c611cf6e72835fee33d49088070
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772577"
 ---
 # <a name="building-console-applications-in-the-net-framework"></a>Sestavování konzolových aplikací v rozhraní .NET Framework
 Aplikace v rozhraní .NET Framework lze používat <xref:System.Console?displayProperty=nameWithType> třídy znaků z čtení a zápis znaků do konzoly. Ze standardního vstupního proudu je číst data z konzoly, data do konzoly se zapisují do standardního výstupního datového proudu a chyba data do konzoly se zapisují do výstupního datového proudu standardní chybu. Tyto datové proudy jsou automaticky spojeny s konzolou při spuštění aplikace a jsou uvedené jako <xref:System.Console.In%2A>, <xref:System.Console.Out%2A>, a <xref:System.Console.Error%2A> vlastnosti, v uvedeném pořadí.  

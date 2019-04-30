@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření podpůrného pověření'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
 ms.openlocfilehash: 7c6c4ea777f62541f8ca8fa79fdd024e5f5cf2ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787605"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>Postupy: Vytvoření podpůrného pověření
 Je možné mít vlastní bezpečnostní schéma, které vyžaduje více přihlašovacích údajů. Například služba vyžádat od klienta nejen uživatelské jméno a heslo, ale také pověření, která prokáže vaše oprávnění klienta je víc než 18. Je druhý přihlašovacích údajů *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
@@ -39,28 +39,28 @@ Je možné mít vlastní bezpečnostní schéma, které vyžaduje více přihla�
   
  Prvním krokem při vytváření vlastní vazby je vytvořit element vazby zabezpečení, který může být jeden ze tří typů:  
   
--   <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
+- <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
   
--   <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
   
--   <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
+- <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
  Dědí všechny třídy <xref:System.ServiceModel.Channels.SecurityBindingElement>, což zahrnuje čtyři relevantní vlastnosti:  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.OperationSupportingTokenParameters%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
   
 #### <a name="scopes"></a>Obory  
  Existují dva obory pro podporu přihlašovací údaje:  
   
--   *Koncový bod podporující tokeny* podporují všechny operace koncového bodu. To znamená přihlašovacích údajů, který představuje podpůrný token lze vždy, když jsou vyvolány žádné operace koncového bodu.  
+- *Koncový bod podporující tokeny* podporují všechny operace koncového bodu. To znamená přihlašovacích údajů, který představuje podpůrný token lze vždy, když jsou vyvolány žádné operace koncového bodu.  
   
--   *Podpora tokenů operace* podporují jenom operace určitého koncového bodu.  
+- *Podpora tokenů operace* podporují jenom operace určitého koncového bodu.  
   
  Je určeno názvy vlastností, podpora přihlašovacích údajů může být povinné nebo volitelné. To znamená pokud podpůrného pověření se používá, pokud je k dispozici, i když není nutné, ale pokud není k dispozici k selhání ověřování.  
   

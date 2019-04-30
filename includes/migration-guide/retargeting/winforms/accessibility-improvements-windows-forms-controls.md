@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 789e7833eb2e6418b23c63db9939bd83f8a8a0d6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58760188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759422"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls"></a>Vylepšení přístupnosti v ovládacích prvcích Windows Forms
 

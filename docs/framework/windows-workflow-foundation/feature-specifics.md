@@ -1,15 +1,15 @@
 ---
-title: Specifické funkce aplikace Windows Workflow Foundation
+title: Specifické funkce Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
 ms.openlocfilehash: fae42332c19a8b39070d9922b6fec4aadd73505b
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57846542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773677"
 ---
-# <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce aplikace Windows Workflow Foundation
+# <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce Windows Workflow Foundation
 
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá celou řadu funkcí pro Windows Workflow Foundation. Tento dokument popisuje několik nových funkcí a poskytuje podrobnosti o scénářích, ve kterých mohou být užitečné.
 
@@ -43,9 +43,9 @@ A `BestPriceFinder` služby zdůrazňuje k více službám letecká společnost 
 
 - Ukázky pro <xref:System.ServiceModel.WorkflowServiceHost> najdete v následujících částech:
 
-    - [Spuštění](./samples/execution.md)
+  - [Spuštění](./samples/execution.md)
 
-    - Aplikace: [Správa pozastavené instance](./samples/suspended-instance-management.md)
+  - Aplikace: [Správa pozastavené instance](./samples/suspended-instance-management.md)
 
 - [Přehled hostování služeb pracovních postupů](../wcf/feature-details/hosting-workflow-services-overview.md)
 
@@ -67,13 +67,13 @@ Korelaci je jedním ze dvou kroků:
 
 - Příklad korelace společně umožňují seskupovat zprávy je korelaci požadavek-odpověď, která seskupuje zprávy.
 
-    - Na <xref:System.ServiceModel.Activities.Receive> aktivity, klikněte na <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> vlastnost a přidejte <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> pomocí rutiny CorrelationHandle vytvořili v prvním kroku požadavků.
+  - Na <xref:System.ServiceModel.Activities.Receive> aktivity, klikněte na <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> vlastnost a přidejte <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> pomocí rutiny CorrelationHandle vytvořili v prvním kroku požadavků.
 
-    - Vytvoření <xref:System.ServiceModel.Activities.SendReply> kliknutím pravým tlačítkem na aktivitu <xref:System.ServiceModel.Activities.Receive> a kliknutím na "Vytvoření odeslání odpovědi SendReply". Vložte ji do pracovního postupu po <xref:System.ServiceModel.Activities.Receive> aktivity.
+  - Vytvoření <xref:System.ServiceModel.Activities.SendReply> kliknutím pravým tlačítkem na aktivitu <xref:System.ServiceModel.Activities.Receive> a kliknutím na "Vytvoření odeslání odpovědi SendReply". Vložte ji do pracovního postupu po <xref:System.ServiceModel.Activities.Receive> aktivity.
 
 - Příklad mapování část dat do instance služby je korelace na základě obsahu, který mapuje část dat (například ID objednávky) na instance určitý pracovní postup.
 
-    - U všech aktivit, zasílání zpráv, klikněte na `CorrelationInitializers` vlastnost a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost zprávy (třeba OrderID) z rozevírací nabídky. Nastavte `CorrelatesWith` vlastnost <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné využité nad.
+  - U všech aktivit, zasílání zpráv, klikněte na `CorrelationInitializers` vlastnost a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost zprávy (třeba OrderID) z rozevírací nabídky. Nastavte `CorrelatesWith` vlastnost <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné využité nad.
 
 - [Rámcové dokumentaci korelace](../wcf/feature-details/correlation.md)
 
@@ -131,9 +131,9 @@ V rozhraní .NET 3.5 byly několik omezení v návrhu známé typy:
 
 - Ukázky:
 
-    - [DataContractResolver](../wcf/samples/datacontractresolver.md)
+  - [DataContractResolver](../wcf/samples/datacontractresolver.md)
 
-    - [KnownAssemblyAttribute](../wcf/samples/knownassemblyattribute.md)
+  - [KnownAssemblyAttribute](../wcf/samples/knownassemblyattribute.md)
 
 ### <a name="data-contract-resolver-scenarios"></a>Scénáře překladač kontraktu dat
 
@@ -151,25 +151,25 @@ Vývojový diagram je dobře známé paradigma vizuálně znázornit domény pro
 
 - Vývojový diagram funkce používá následující třídy:
 
-    - <xref:System.Activities.Statements.Flowchart>
+  - <xref:System.Activities.Statements.Flowchart>
 
-    - <xref:System.Activities.Statements.FlowNode>
+  - <xref:System.Activities.Statements.FlowNode>
 
-    - <xref:System.Activities.Statements.FlowDecision>
+  - <xref:System.Activities.Statements.FlowDecision>
 
-    - <xref:System.Activities.Statements.FlowStep>
+  - <xref:System.Activities.Statements.FlowStep>
 
-    - <xref:System.Activities.Statements.FlowSwitch%601>
+  - <xref:System.Activities.Statements.FlowSwitch%601>
 
 - Ukázky:
 
-    - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+  - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
-    - [Proces náboru](./samples/hiring-process.md)
+  - [Proces náboru](./samples/hiring-process.md)
 
 - Návrháře dokumentace:
 
-    - [Návrháři aktivit vývojového diagramu](/visualstudio/workflow-designer/flowchart-activity-designers)
+  - [Návrháři aktivit vývojového diagramu](/visualstudio/workflow-designer/flowchart-activity-designers)
 
 ### <a name="flowchart-scenarios"></a>Vývojový diagram scénáře
 
@@ -197,15 +197,15 @@ Procedurálních aktivit poskytují mechanismus pro model sekvenční řízení 
 
 - Ukázky:
 
-    - [Proces náboru](./samples/hiring-process.md)
+  - [Proces náboru](./samples/hiring-process.md)
 
-    - [Proces nákupu v podniku](./samples/corporate-purchase-process.md)
+  - [Proces nákupu v podniku](./samples/corporate-purchase-process.md)
 
 - Návrháře dokumentace:
 
-    - [Návrhář aktivity Parallel](/visualstudio/workflow-designer/parallel-activity-designer)
+  - [Návrhář aktivity Parallel](/visualstudio/workflow-designer/parallel-activity-designer)
 
-    - [ParallelForEach\<T > návrháře aktivit](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
+  - [ParallelForEach\<T > návrháře aktivit](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
 
 ### <a name="procedural-activity-scenarios"></a>Scénáře procedurálních aktivit
 
@@ -347,7 +347,7 @@ Pracovní postup sledování poskytuje přehled o spuštění instance pracovní
 
 4. Rámcové dokumentaci: [Sledování a trasování pracovních postupů](workflow-tracking-and-tracing.md)
 
-## <a name="sql-workflow-instance-store"></a>SQL Workflow Instance Store
+## <a name="sql-workflow-instance-store"></a>Úložiště instancí pracovních postupů SQL
 
 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Je implementace úložiště instance systémem SQL Server. Úložiště instance ukládá stav spuštěné instance společně se všechna data potřebná pro načtení a pokračovat v této instanci. Hostitel služby instruuje v úložišti instancí uložit stav instance, pokud pracovní postup se opakuje a nastaví v úložišti instancí načíst stav instance při přijetí e-mailu pro danou instanci nebo aktivitě delay vyprší platnost.
 

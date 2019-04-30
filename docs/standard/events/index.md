@@ -17,11 +17,11 @@ ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b5e49e9d575ae2ec9b48b18f839d469632ffa769
-ms.sourcegitcommit: 344d82456f27d09a210671214a14cfd7daf1f97c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58348801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770406"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 

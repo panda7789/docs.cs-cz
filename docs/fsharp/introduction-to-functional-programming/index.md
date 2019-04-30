@@ -2,14 +2,14 @@
 title: Úvod do funkčního programování v F#
 description: Seznamte se se základy funkčního programování v F#.
 ms.date: 10/29/2018
-ms.openlocfilehash: d4a9bb0cd826b41aca96e12e2bcb5aab80c18eb4
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
-ms.translationtype: MT
+ms.openlocfilehash: 84022e58c0f17b9e9875402c653c31e494e940da
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "25863840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772785"
 ---
-# <a name="introduction-to-functional-programming-in-f"></a>Úvod do funkčního programování v F# #
+# <a name="introduction-to-functional-programming-in-f"></a>Úvod do funkčního programování v F\#
 
 Funkční programování je styl programování, které klade důraz na použití funkcí a neměnnými daty. Je zadaný funkční programování kombinaci funkční programování je pomocí statické typy, například s F#. Obecně tyto koncepty jsou zvýrazněny do funkčního programování:
 
@@ -99,7 +99,7 @@ Je speciální typ `unit`, který se používá při není nutné nic vrátit. P
 
 ```fsharp
 let printString (str: string) =
-    printfn "String is: %s" s
+    printfn "String is: %s" str
 ```
 
 Podpis vypadá takto:
@@ -161,90 +161,15 @@ let addOneToValue x =
     x + 1
 ```
 
-I když tato funkce není závislý na globální hodnoty, zapíše hodnoty `x` do výstupu programu. I když není nic špatného ze své podstaty s tím, znamená, že funkce není čistě.
+I když tato funkce není závislý na globální hodnoty, zapíše hodnoty `x` do výstupu programu. I když není nic špatného ze své podstaty s tím, znamená, že funkce není čistě. Pokud jiné části programu, závisí na něco mimo programu, jako je například výstupní vyrovnávací paměť následným voláním této funkce může ovlivnit další část programu.
 
-Odebírá `printfn` příkazu finally díky funkci čistě:
+Odebírá `printfn` příkaz díky funkci čistě:
 
 ```fsharp
 let addOneToValue x = x + 1
 ```
 
-I když tato funkce není ze své podstaty _lepší_ než předchozí verze s `printfn` příkazu, to zaručit, že všechny této funkce je vrátit hodnotu. Toto volání funkce jednou nebo 1 miliardu dobu bude stále výsledkem stejnou věc: stačí vytváření hodnotu. Tato předvídatelnost je důležité v funkčního programování, protože to znamená, že všechny čistě funkce je referentially transparentní.
-
-### <a name="referential-transparency"></a>Referenční transparentnosti
-
-Referenční transparentnosti je vlastnost výrazy a funkce. Pro výraz referentially transparentní musí mít možnost nahradit jeho výsledná hodnota beze změny chování aplikace. Všechny čistě funkce jsou referentially transparentní.
-
-Stejně jako u čistě funkce, může být užitečné si můžete představit referenční transparentnost z hlediska matematické. V matematickém výrazu `y = f(x)`, `f(x)` lze nahradit výsledek funkce a stále bude rovnat `y`. To platí stejně pro referenční transparentnosti funkčního programování.
-
-Zvažte možnost volání dříve definované `addOneIfOdd` funkce dvakrát:
-
-```fsharp
-// Checks if 'x' is odd by using the mod operator
-let isOdd x = x % 2 <> 0
-
-let addOneIfOdd input =
-    let result =
-        if isOdd input then
-            input + 1
-        else
-            input
-
-    result
-
-let res1 = addOneIffOdd 1 // Produces 2
-let res2 = addOneIffOdd 2 // Produces 2
-```
-
-Jsme můžete nahradit každé volání funkce tělo funkce nahrazování argument `input` jednotlivé hodnoty jsou:
-
-```fsharp
-// Checks if 'x' is odd by using the mod operator
-let isOdd x = x % 2 <> 0
-
-let addOneIfOdd input =
-    let result =
-        if isOdd input then
-            input + 1
-        else
-            input
-
-    result
-
-let res1 =
-    let result =
-        if isOdd 1 then
-            1 + 1
-        else
-            1
-
-    result
-let res2 =
-    let result =
-        if isOdd 2 then
-            2 + 1
-        else
-            2
-
-    result
-```
-
-Obě `res1` a `res2` mají stejnou hodnotu, jako kdyby byla volána funkce, což indikuje, že `addOneIfOdd` je referentially transparentní!
-
-Kromě toho funkce nemusí být čistě také být referentially transparentní. Zvažte předchozí definice `addOneTovalue`:
-
-```fsharp
-let addOneToValue x = 
-    printfn "x is %d" x
-    x + 1
-```
-
-Voláním této funkce lze také nahradit jeho textu a stejné dojde pokaždé, když:
-
-* Hodnota před přidáním do, je vytisknout výstup
-* Hodnota je 1 přidány do tohoto fondu
-
-Při programování v F#, je často referenční transparentnosti, který je cíle, spíše než čistoty. Je však stále vhodné k zápisu čistě funkce, pokud je to možné.
+I když tato funkce není ze své podstaty _lepší_ než předchozí verze s `printfn` příkazu, to zaručit, že všechny této funkce je vrátit hodnotu. Libovolný počet volání této funkce vytvoří stejný výsledek: vyvolá pouze hodnotu. Předvídatelnost Dal čistoty je něco, co se snažte se o funkční mnoho programátorů.
 
 ### <a name="immutability"></a>Neměnnost
 

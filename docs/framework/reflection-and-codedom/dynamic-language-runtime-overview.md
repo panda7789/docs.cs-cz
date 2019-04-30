@@ -10,11 +10,11 @@ ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7dd67ea312f3677b9010dfea7f14fa366259bcd6
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56220975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793368"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
@@ -24,11 +24,11 @@ Dynamické jazyky můžete identifikovat typ objektu v době běhu, zatímco v s
 
 Většina dynamické jazyky poskytují následující výhody pro vývojáře:
 
--   Možnost používat rychlé zpětné vazby (REPL nebo čtení vyhodnocení print smyčky). To vám umožní zadat několik příkazů a okamžitě je pro zobrazení výsledků spuštění.
+- Možnost používat rychlé zpětné vazby (REPL nebo čtení vyhodnocení print smyčky). To vám umožní zadat několik příkazů a okamžitě je pro zobrazení výsledků spuštění.
 
--   Podpora pro vývoj shora dolů a více tradičních vývojových zdola nahoru. Například při použití s přístupem shora dolů, můžete volat funkce, které ještě nejsou naimplementované a pak přidejte základní implementace, když je potřebujete.
+- Podpora pro vývoj shora dolů a více tradičních vývojových zdola nahoru. Například při použití s přístupem shora dolů, můžete volat funkce, které ještě nejsou naimplementované a pak přidejte základní implementace, když je potřebujete.
 
--   Snadnější Refaktoring a kód změny, protože není potřeba změnit deklarace statického typu v rámci kódu.
+- Snadnější Refaktoring a kód změny, protože není potřeba změnit deklarace statického typu v rámci kódu.
 
 Ujistěte se, dynamické jazyky vynikající skriptovací jazyky. Zákazníci můžou snadno rozšířit aplikace vytvořené s použitím dynamické jazyky se nové příkazy a funkce. Dynamické jazyky se také často používají pro vytváření webů a otestujte postroje zachování serverových farem, různé nástroje pro vývoj a provedením transformace dat.
 
@@ -51,9 +51,9 @@ Stejně jako modul CLR DLR je součástí rozhraní .NET Framework a je součás
 
 Příklady vyvinuté pomocí DLR jazyky patří:
 
--   IronPython. K dispozici jako open source softwaru z [Githubu](https://github.com/IronLanguages/ironpython2) webu.
+- IronPython. K dispozici jako open source softwaru z [Githubu](https://github.com/IronLanguages/ironpython2) webu.
 
--   IronRuby. K dispozici jako open source softwaru z [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) webu.
+- IronRuby. K dispozici jako open source softwaru z [RubyForge](https://go.microsoft.com/fwlink/?LinkId=141044) webu.
 
 ## <a name="primary-dlr-advantages"></a>Primární DLR výhody
  DLR nabízí následující výhody.
@@ -80,11 +80,11 @@ Příklady vyvinuté pomocí DLR jazyky patří:
 
  DLR přidá sadu služeb pro modul CLR pro lepší podporuje dynamické jazyky. Tyto služby patří:
 
--   Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromů výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
+- Stromy výrazů. DLR používá stromů výrazů k reprezentaci sémantiku jazyka. Pro tento účel DLR má rozšířené stromům výrazů LINQ tok řízení, přiřazení a ostatní uzly jazykové modelování. Další informace najdete v tématu [stromů výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromů výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 
--   Volání, ukládání do mezipaměti webu. A *dynamického volání webu* je místo, kde v kódu, kde provádět operace jako `a + b` nebo `a.b()` na dynamické objekty. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy tyto objekty) a informace o operaci. Pokud tato operace byla provedena dříve DLR načte všechny potřebné informace z mezipaměti pro odesílání rychlá.
+- Volání, ukládání do mezipaměti webu. A *dynamického volání webu* je místo, kde v kódu, kde provádět operace jako `a + b` nebo `a.b()` na dynamické objekty. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy tyto objekty) a informace o operaci. Pokud tato operace byla provedena dříve DLR načte všechny potřebné informace z mezipaměti pro odesílání rychlá.
 
--   Vzájemná funkční spolupráce dynamický objekt. DLR poskytuje sadu tříd a rozhraní, které představují dynamických objektů a operací a nemůže použít jiný jazyk implementátory a autoři dynamické knihovny. Tyto třídy a rozhraní zahrnují <xref:System.Dynamic.IDynamicMetaObjectProvider>, <xref:System.Dynamic.DynamicMetaObject>, <xref:System.Dynamic.DynamicObject>, a <xref:System.Dynamic.ExpandoObject>.
+- Vzájemná funkční spolupráce dynamický objekt. DLR poskytuje sadu tříd a rozhraní, které představují dynamických objektů a operací a nemůže použít jiný jazyk implementátory a autoři dynamické knihovny. Tyto třídy a rozhraní zahrnují <xref:System.Dynamic.IDynamicMetaObjectProvider>, <xref:System.Dynamic.DynamicMetaObject>, <xref:System.Dynamic.DynamicObject>, a <xref:System.Dynamic.ExpandoObject>.
 
 DLR používá vazače lokalit volání komunikovat pouze s použitím rozhraní .NET Framework, ale s jinými infrastruktur a služeb, včetně technologie Silverlight a modulu COM. Vazače zapouzdření sémantika jazyka a určete, jak k provádění operací v lokalitě volání pomocí stromů výrazů. Díky tomu dynamické a jazyky, které používají DLR ke sdílení knihovny a získání přístupu k všechny technologie, které podporuje DLR staticky zadali.
 

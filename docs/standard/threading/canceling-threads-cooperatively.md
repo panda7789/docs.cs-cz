@@ -11,11 +11,11 @@ ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bd32deb9c8719a12b76aaea8ec91a17471cf18f9
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44259857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794924"
 ---
 # <a name="canceling-threads-cooperatively"></a>Spolupráce při rušení vláken
 

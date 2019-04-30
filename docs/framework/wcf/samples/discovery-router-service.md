@@ -6,8 +6,8 @@ ms.openlocfilehash: 166f6b9d1055e36f987e6b9a81fe69dc8bd548b9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773032"
 ---
 # <a name="discovery-router-service"></a>Služba zjišťování směrovačů
 Tento příklad ukazuje, jak předávat zprávy zjišťování do jiného koncového bodu.  

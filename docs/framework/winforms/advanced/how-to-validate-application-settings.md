@@ -10,11 +10,11 @@ helpviewer_keywords:
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
 ms.openlocfilehash: b7aba4935756fc218a1fadaa1dd9f20a5bc3034f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778843"
 ---
 # <a name="how-to-validate-application-settings"></a>Postupy: Ověření nastavení aplikace
 Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trvalé.  
@@ -34,11 +34,11 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
  Obslužná rutina události obvykle provádí, jeden z následujících akcí při zjistí neplatnou hodnotu:  
   
--   Automaticky poskytuje hodnotu ví, že je správný, jako je například výchozí hodnota.  
+- Automaticky poskytuje hodnotu ví, že je správný, jako je například výchozí hodnota.  
   
--   Znovu se dotazuje uživatele serverový kód pro informace.  
+- Znovu se dotazuje uživatele serverový kód pro informace.  
   
--   Pro události vyvolané před jejich přidružených akcí, jako například <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> a <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>, používá <xref:System.ComponentModel.CancelEventArgs> argument pro operaci zrušit.  
+- Pro události vyvolané před jejich přidružených akcí, jako například <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> a <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving>, používá <xref:System.ComponentModel.CancelEventArgs> argument pro operaci zrušit.  
   
  Další informace o zpracování událostí naleznete v tématu [Přehled obslužných rutin událostí](../event-handlers-overview-windows-forms.md).  
   
@@ -46,9 +46,9 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
 ### <a name="to-obtain-the-application-settings-object"></a>K získání objektu nastavení aplikace  
   
--   Získejte odkaz na objekt nastavení aplikace (Obálka instance) dokončení jedné z následujících položek seznamu s odrážkami:  
+- Získejte odkaz na objekt nastavení aplikace (Obálka instance) dokončení jedné z následujících položek seznamu s odrážkami:  
   
-    -   Pokud jste vytvořili pomocí dialogového okna nastavení aplikace Visual Studio v nastavení **Editor vlastností**, můžete načíst objekt nastavení výchozí vygenerovaný pro váš jazyk prostřednictvím následující výraz.  
+    - Pokud jste vytvořili pomocí dialogového okna nastavení aplikace Visual Studio v nastavení **Editor vlastností**, můžete načíst objekt nastavení výchozí vygenerovaný pro váš jazyk prostřednictvím následující výraz.  
   
         ```csharp  
         Configuration.Settings.Default   
@@ -60,11 +60,11 @@ Toto téma ukazuje, jak ověřit nastavení aplikace předtím, než jsou trval�
   
          -nebo-  
   
-    -   Pokud jste vývojář Visual Basic a vytvoříte nastavení aplikace pomocí Návrháře projektu, můžete načíst nastavení pomocí [My.Settings – objekt](~/docs/visual-basic/language-reference/objects/my-settings-object.md).  
+    - Pokud jste vývojář Visual Basic a vytvoříte nastavení aplikace pomocí Návrháře projektu, můžete načíst nastavení pomocí [My.Settings – objekt](~/docs/visual-basic/language-reference/objects/my-settings-object.md).  
   
          -nebo-  
   
-    -   Pokud jste vytvořili nastavení odvozením z <xref:System.Configuration.ApplicationSettingsBase> přímo, budete muset ručně vytvořit instanci své třídy.  
+    - Pokud jste vytvořili nastavení odvozením z <xref:System.Configuration.ApplicationSettingsBase> přímo, budete muset ručně vytvořit instanci své třídy.  
   
         ```csharp  
         MyCustomSettings settings = new MyCustomSettings();  

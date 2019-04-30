@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e35c7f9e-648b-4fcc-9361-d365c3e42c9a
 ms.openlocfilehash: 3038e35947cd8f97266d374a367a77380df440dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772174"
 ---
 # <a name="modifying-data-with-a-dbdataadapter"></a>Úpravy dat přes DbDataAdapter
 <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> Metodu <xref:System.Data.Common.DbProviderFactory> objekt získáte <xref:System.Data.Common.DbDataAdapter> objekt, který je silně typováno do podkladového zprostředkovatele dat zadané v době vytváření továrny. Pak můžete použít <xref:System.Data.Common.DbCommandBuilder> vytvořit příkazy pro vložení, aktualizace a odstranění dat z <xref:System.Data.DataSet> ke zdroji dat.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], getting started
 ms.assetid: c2d3585f-6b1a-4d4f-9865-bd7cd31c5d42
 ms.openlocfilehash: 540765c09dceef583798ceaf1abf9f191f444697
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217429"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773526"
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
 Tato část obsahuje sadu témat, které vám představí programování aplikací pro Windows Workflow Foundation (WF). Pomocí následujících postupů v těchto tématech, vytvoříte aplikaci, která je číslo rozluštění hra. První téma v tomto kurzu vás provede kroky k vytvoření vlastních aktivit nutný pro pracovní postup. V druhém tématu tyto aktivity jsou součástí spolu s integrované pracovního postupu aktivit pracovního postupu vývojového diagramu. V třetí tématu hostitelská aplikace je nakonfigurovaná pro spuštění pracovního postupu a v posledním tématu je zavedená trvalosti. Každý krok v tomto procesu závisí na předchozí kroky, proto doporučujeme je provést v pořadí.  

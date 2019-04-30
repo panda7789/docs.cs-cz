@@ -8,24 +8,24 @@ helpviewer_keywords:
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
 ms.openlocfilehash: 5f85eca1026d05d8dc3d862559ee48440edf2c4b
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775931"
 ---
 # <a name="interfaces-visual-basic"></a>Rozhraní (Visual Basic)
 *Rozhraní* definovat vlastnosti, metody a události, které můžete implementovat třídy. Rozhraní umožňují definovat funkce jako malé skupiny úzce související vlastnosti, metody a události; To snižuje problémy s kompatibilitou, protože vám umožní vytvářet lepší implementace pro vaše rozhraní bez ohrožující existující kód. Kdykoli můžete přidat nové funkce ve vývoji, implementace a dalších rozhraní.  
   
  Existuje několik jiných důvodů, proč můžete chtít použít rozhraní namísto dědičnosti třídy:  
   
--   Rozhraní se lépe hodí pro situace, ve kterých vaše aplikace vyžadují že mnoho pravděpodobně nesouvisejících typů objektů pro poskytnutí některých funkcí.  
+- Rozhraní se lépe hodí pro situace, ve kterých vaše aplikace vyžadují že mnoho pravděpodobně nesouvisejících typů objektů pro poskytnutí některých funkcí.  
   
--   Rozhraní jsou flexibilnější, než základní třídy, protože můžete definovat jedna implementace, které můžou implementovat více rozhraní.  
+- Rozhraní jsou flexibilnější, než základní třídy, protože můžete definovat jedna implementace, které můžou implementovat více rozhraní.  
   
--   Rozhraní jsou lepší v situacích, ve kterých nemáte implementace dědit ze základní třídy.  
+- Rozhraní jsou lepší v situacích, ve kterých nemáte implementace dědit ze základní třídy.  
   
--   Rozhraní jsou užitečné, pokud nemůžete použít dědičnost tříd. Například struktury nemůže dědit z třídy, ale mohou implementovat rozhraní.  
+- Rozhraní jsou užitečné, pokud nemůžete použít dědičnost tříd. Například struktury nemůže dědit z třídy, ale mohou implementovat rozhraní.  
   
 ## <a name="declaring-interfaces"></a>Deklarace rozhraní  
  Definice rozhraní jsou uzavřený do složených závorek `Interface` a `End Interface` příkazy. Následující `Interface` příkazu, můžete přidat volitelný `Inherits` příkaz, který obsahuje jeden nebo více zděděných rozhraních. `Inherits` Příkazy musí předcházet před všechny ostatní příkazy v deklaraci s výjimkou komentáře. Zbývající příkazy v definici rozhraní by měl být `Event`, `Sub`, `Function`, `Property`, `Interface`, `Class`, `Structure`, a `Enum` příkazy. Rozhraní nemůžou obsahovat žádné implementační kód nebo příkazy, které jsou přidružené k provádění kódu, jako například `End Sub` nebo `End Property`.  

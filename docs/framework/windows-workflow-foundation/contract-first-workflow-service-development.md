@@ -1,49 +1,49 @@
 ---
-title: Nasazení služby pracovního postupu prvního kontraktu
+title: Vývoj služby pracovního postupu s upřednostněním kontraktu
 ms.date: 03/30/2017
 ms.assetid: e5dbaa7b-005f-4330-848d-58ac4f42f093
 ms.openlocfilehash: c326f91bc8673180db755a91ab080bcf0ba72052
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774202"
 ---
-# <a name="contract-first-workflow-service-development"></a>Nasazení služby pracovního postupu prvního kontraktu
+# <a name="contract-first-workflow-service-development"></a>Vývoj služby pracovního postupu s upřednostněním kontraktu
 Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows Workflow Foundation (WF) lepší integrace mezi službami webové a pracovní postupy ve formuláři stavící do pracovního postupu vývoje. Pracovní postup kontraktem vývojový nástroj umožňuje navrhovat smlouvy v kódu. Nástroj potom automaticky vygeneruje šablonu aktivit v sadě nástrojů pro operace v kontraktu. Toto téma obsahuje přehled, jak aktivity a vlastností služby pracovního postupu se mapují na atributy smlouvy o poskytování služeb. Podrobný příklad vytvoření služby pracovních postupů kontraktem, naleznete v tématu [jak: Vytvoření služby pracovního postupu, která využívá existující kontrakt služby](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [Mapování atributů kontraktu služby pracovního postupu atributů](contract-first-workflow-service-development.md#MappingAttributes)  
+- [Mapování atributů kontraktu služby pracovního postupu atributů](contract-first-workflow-service-development.md#MappingAttributes)  
   
-    -   [Atributy kontrakt služby](contract-first-workflow-service-development.md#ServiceContract)  
+    - [Atributy kontrakt služby](contract-first-workflow-service-development.md#ServiceContract)  
   
-    -   [Operace kontraktu atributy](contract-first-workflow-service-development.md#OperationContract)  
+    - [Operace kontraktu atributy](contract-first-workflow-service-development.md#OperationContract)  
   
-    -   [Atributy kontrakt zprávy](contract-first-workflow-service-development.md#MessageContract)  
+    - [Atributy kontrakt zprávy](contract-first-workflow-service-development.md#MessageContract)  
   
-    -   [Atributy kontraktu dat.](contract-first-workflow-service-development.md#DataContract)  
+    - [Atributy kontraktu dat.](contract-first-workflow-service-development.md#DataContract)  
   
-    -   [Atributy kontrakt chyby](contract-first-workflow-service-development.md#FaultContract)  
+    - [Atributy kontrakt chyby](contract-first-workflow-service-development.md#FaultContract)  
   
--   [Další podporu a informace o implementaci](contract-first-workflow-service-development.md#AdditionalSupport)  
+- [Další podporu a informace o implementaci](contract-first-workflow-service-development.md#AdditionalSupport)  
   
-    -   [Nepodporované funkce kontraktu](contract-first-workflow-service-development.md#UnsupportedFeatures)  
+    - [Nepodporované funkce kontraktu](contract-first-workflow-service-development.md#UnsupportedFeatures)  
   
-    -   [Generování nakonfigurované zasílání zpráv aktivity](contract-first-workflow-service-development.md#ActivityGeneration)  
+    - [Generování nakonfigurované zasílání zpráv aktivity](contract-first-workflow-service-development.md#ActivityGeneration)  
   
 ## <a name="MappingAttributes"></a> Mapování atributů kontraktu služby pracovního postupu atributů  
  Tabulky v následujících částech určit různé WCF atributy a vlastnosti a jak jsou mapovány na vlastnosti zasílání zpráv aktivity a v pracovním postupu upřednostnění kontraktu.  
   
--   [Atributy kontrakt služby](contract-first-workflow-service-development.md#ServiceContract)  
+- [Atributy kontrakt služby](contract-first-workflow-service-development.md#ServiceContract)  
   
--   [Operace kontraktu atributy](contract-first-workflow-service-development.md#OperationContract)  
+- [Operace kontraktu atributy](contract-first-workflow-service-development.md#OperationContract)  
   
--   [Atributy kontrakt zprávy](contract-first-workflow-service-development.md#MessageContract)  
+- [Atributy kontrakt zprávy](contract-first-workflow-service-development.md#MessageContract)  
   
--   [Atributy kontraktu dat.](contract-first-workflow-service-development.md#DataContract)  
+- [Atributy kontraktu dat.](contract-first-workflow-service-development.md#DataContract)  
   
--   [Atributy kontrakt chyby](contract-first-workflow-service-development.md#FaultContract)  
+- [Atributy kontrakt chyby](contract-first-workflow-service-development.md#FaultContract)  
   
 ### <a name="ServiceContract"></a> Atributy kontrakt služby  
   
@@ -109,22 +109,22 @@ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], funkce Windows 
   
 ## <a name="AdditionalSupport"></a> Další podporu a informace o implementaci  
   
--   [Nepodporované funkce kontraktu](contract-first-workflow-service-development.md#UnsupportedFeatures)  
+- [Nepodporované funkce kontraktu](contract-first-workflow-service-development.md#UnsupportedFeatures)  
   
--   [Generování nakonfigurované zasílání zpráv aktivity](contract-first-workflow-service-development.md#ActivityGeneration)  
+- [Generování nakonfigurované zasílání zpráv aktivity](contract-first-workflow-service-development.md#ActivityGeneration)  
   
 ### <a name="UnsupportedFeatures"></a> Nepodporované funkce kontraktu  
   
--   Použití TPL (Task Parallel Library) úlohy v kontraktech není podporováno.  
+- Použití TPL (Task Parallel Library) úlohy v kontraktech není podporováno.  
   
--   Dědičnost v kontraktech služeb není podporován.  
+- Dědičnost v kontraktech služeb není podporován.  
   
 ### <a name="ActivityGeneration"></a> Generování nakonfigurované zasílání zpráv aktivity  
  Dvě veřejné statické metody se přidají do <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivit za účelem podpory generování předem nakonfigurované aktivit zpráv při použití služby stavící do pracovního postupu.  
   
--   <xref:System.ServiceModel.Activities.Receive.FromOperationDescription%2A?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Activities.Receive.FromOperationDescription%2A?displayProperty=nameWithType>  
   
--   <xref:System.ServiceModel.Activities.SendReply.FromOperationDescription%2A?displayProperty=nameWithType>  
+- <xref:System.ServiceModel.Activities.SendReply.FromOperationDescription%2A?displayProperty=nameWithType>  
   
  Aktivita generovaných tyto metody by měl projít ověřením smlouvy, a proto tyto metody se používají interně jako součást logiky ověření pro <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>. <xref:System.ServiceModel.Activities.Receive.OperationName%2A>, <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>, <xref:System.ServiceModel.Activities.Receive.Action%2A>, <xref:System.ServiceModel.Activities.Receive.SerializerOption%2A>, <xref:System.ServiceModel.Activities.Receive.ProtectionLevel%2A>, A <xref:System.ServiceModel.Activities.Receive.KnownTypes%2A> jsou všechny předem nakonfigurované tak, aby odpovídaly importovaných kontraktů. Na stránce Vlastnosti obsahu pro aktivity v Návrháři pracovních postupů **zpráva** nebo **parametry** oddíly jsou předem nakonfigurované tak, aby odpovídaly kontrakt.  
   

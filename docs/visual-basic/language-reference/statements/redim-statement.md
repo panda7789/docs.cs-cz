@@ -27,11 +27,11 @@ helpviewer_keywords:
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
 ms.openlocfilehash: 8f5f3172eaa6b43d9b07aefa0036708b26087777
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61783953"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim – příkaz (Visual Basic)
 Znovu alokuje prostor úložiště pro proměnné pole.  
@@ -59,31 +59,31 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="rules"></a>pravidla  
   
--   **Více proměnných.** Můžete změnit velikost několik proměnných ve stejném příkazu deklarace a určit, `name` a `boundlist` částí pro každou proměnnou. Více proměnných jsou odděleny čárkami.  
+- **Více proměnných.** Můžete změnit velikost několik proměnných ve stejném příkazu deklarace a určit, `name` a `boundlist` částí pro každou proměnnou. Více proměnných jsou odděleny čárkami.  
   
--   **Array Bounds.** Každá položka v `boundlist` můžete zadat, dolní a horní hranice této dimenze. Dolní mez je vždy 0 (nula). Horní mez je nejvyšší hodnota možný index pro tuto dimenzi, nikoli velikost rozměru (což je horní mez plus jedna). Index každé dimenze se může lišit od 0 do jeho hodnotu horní mez.  
+- **Array Bounds.** Každá položka v `boundlist` můžete zadat, dolní a horní hranice této dimenze. Dolní mez je vždy 0 (nula). Horní mez je nejvyšší hodnota možný index pro tuto dimenzi, nikoli velikost rozměru (což je horní mez plus jedna). Index každé dimenze se může lišit od 0 do jeho hodnotu horní mez.  
   
      Počet dimenzí v `boundlist` musí odpovídat původní počet rozměrů (pořadí) pole.  
   
--   **Datové typy.** `ReDim` Příkaz nelze změnit datový typ proměnné pole nebo jeho elementů.  
+- **Datové typy.** `ReDim` Příkaz nelze změnit datový typ proměnné pole nebo jeho elementů.  
   
--   **Inicializace.** `ReDim` Příkaz nelze zadat nové inicializace hodnoty pro prvky pole.  
+- **Inicializace.** `ReDim` Příkaz nelze zadat nové inicializace hodnoty pro prvky pole.  
   
--   **Pořadí.** `ReDim` Příkaz nelze změnit pořadí (počet rozměrů) v poli.  
+- **Pořadí.** `ReDim` Příkaz nelze změnit pořadí (počet rozměrů) v poli.  
   
--   **Změna velikosti se zachová.** Pokud používáte `Preserve`, změníte velikost jenom poslední dimenze pole. Pro každou dimenzi je nutné zadat mez existujícího pole.  
+- **Změna velikosti se zachová.** Pokud používáte `Preserve`, změníte velikost jenom poslední dimenze pole. Pro každou dimenzi je nutné zadat mez existujícího pole.  
   
      Například pokud vaše pole má pouze jednu dimenzi, můžete změnit velikost daná dimenze a zároveň zachovat veškerý obsah pole, protože se mění poslední a pouze dimenze. Nicméně pokud vaše pole má dvě nebo více dimenzí, můžete změnit velikost jenom poslední dimenze používáte `Preserve`.  
   
--   **Vlastnosti.** Můžete použít `ReDim` na vlastnost, která obsahuje pole hodnot.  
+- **Vlastnosti.** Můžete použít `ReDim` na vlastnost, která obsahuje pole hodnot.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Nahrazení pole.** `ReDim` uvolní existujícího pole a vytvoří nové pole obsahující stejné pořadí. Nové pole nahradí vydané pole v proměnné pole.  
+- **Nahrazení pole.** `ReDim` uvolní existujícího pole a vytvoří nové pole obsahující stejné pořadí. Nové pole nahradí vydané pole v proměnné pole.  
   
--   **Inicializace bez zachování.** Pokud nezadáte `Preserve`, `ReDim` inicializuje elementy nové pole pomocí výchozí hodnota pro jejich datové typy.  
+- **Inicializace bez zachování.** Pokud nezadáte `Preserve`, `ReDim` inicializuje elementy nové pole pomocí výchozí hodnota pro jejich datové typy.  
   
--   **Inicializace pomocí zachovat.** Pokud zadáte `Preserve`, Visual Basic zkopíruje prvky z existujícího pole do nového pole.  
+- **Inicializace pomocí zachovat.** Pokud zadáte `Preserve`, Visual Basic zkopíruje prvky z existujícího pole do nového pole.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad zvyšuje velikost poslední dimenze dynamické pole bez ztráty všechna existující data v poli a pak snižuje velikost ztráty částečná data. Nakonec se zmenší velikost zpět na původní hodnotu a znovu inicializuje všechny prvky pole.  

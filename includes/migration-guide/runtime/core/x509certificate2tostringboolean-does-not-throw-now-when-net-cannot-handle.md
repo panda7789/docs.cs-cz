@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 0dfc87201b9b31cd9d936f2c965c7d0ca0140cab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664428"
 ---
 ### <a name="x509certificate2tostringboolean-does-not-throw-now-when-net-cannot-handle-the-certificate"></a>X509Certificate2.ToString(Boolean) nevyvolá nyní při .NET nemůže zpracovat certifikát
 

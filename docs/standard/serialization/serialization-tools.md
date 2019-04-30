@@ -3,11 +3,11 @@ title: Nástroje pro serializaci
 ms.date: 03/30/2017
 ms.assetid: 593b675f-938c-44ff-807b-0ca9fea30103
 ms.openlocfilehash: af0ed0df0e99245d3dacd31280574c36415d2a1e
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46698427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778310"
 ---
 # <a name="serialization-tools"></a>Nástroje pro serializaci
 Tento oddíl obsahuje podrobné informace o nástrojích pro serializaci. Všechny nástroje můžete spustit z příkazového řádku.  

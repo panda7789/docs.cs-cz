@@ -12,11 +12,11 @@ helpviewer_keywords:
 - cloning print queues [WPF]
 ms.assetid: dd6997c9-fe04-40f8-88a6-92e3ac0889eb
 ms.openlocfilehash: 09a445da068f0141b9526e0228df8be0105498c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776542"
 ---
 # <a name="how-to-clone-a-printer"></a>Postupy: Klonování tiskárny
 Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu. Obvykle tyto jsou nainstalovány s nastavením konfigurace prakticky totožný. Instalace tiskárny, může být časově náročné a náchylné k chybám. <xref:System.Printing.IndexedProperties?displayProperty=nameWithType> Obor názvů a <xref:System.Printing.PrintServer.InstallPrintQueue%2A> třídu, která jsou přístupné pomocí rozhraní Microsoft .NET Framework umožňuje okamžitě nainstalovat libovolný počet dalších tiskové fronty, které se klonují z existující tiskovou frontu.  
@@ -28,9 +28,9 @@ Většina podniků v určitém okamžiku koupit více tiskáren stejného modelu
   
 2. Vytvoření <xref:System.Printing.IndexedProperties.PrintPropertyDictionary> z <xref:System.Printing.PrintSystemObject.PropertiesCollection%2A> z <xref:System.Printing.PrintQueue>. <xref:System.Collections.DictionaryEntry.Value%2A> Vlastností pro každou položku ve slovníku je objekt jednoho z typů odvozených z <xref:System.Printing.IndexedProperties.PrintProperty>. Existují dva způsoby, jak nastavit hodnotu položky ve slovníku.  
   
-    -   Použití slovníku **odebrat** a <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> metody odeberte položku a poté znovu přidejte požadovanou hodnotu.  
+    - Použití slovníku **odebrat** a <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.Add%2A> metody odeberte položku a poté znovu přidejte požadovanou hodnotu.  
   
-    -   Použití slovníku <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> metody.  
+    - Použití slovníku <xref:System.Printing.IndexedProperties.PrintPropertyDictionary.SetProperty%2A> metody.  
   
      Následující příklad znázorňuje oba způsoby.  
   

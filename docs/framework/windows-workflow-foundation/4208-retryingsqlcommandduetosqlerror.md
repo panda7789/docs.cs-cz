@@ -1,33 +1,33 @@
 ---
-title: 4208 - RetryingSqlCommandDueToSqlError
+title: 4208 – RetryingSqlCommandDueToSqlError
 ms.date: 03/30/2017
 ms.assetid: a8e6483a-a6e4-4bbf-82ec-cd8b6e711aad
 ms.openlocfilehash: a97336f12ccfe041b79328bcb48f4e7214a05b63
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33511590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774293"
 ---
-# <a name="4208---retryingsqlcommandduetosqlerror"></a>4208 - RetryingSqlCommandDueToSqlError
+# <a name="4208---retryingsqlcommandduetosqlerror"></a>4208 – RetryingSqlCommandDueToSqlError
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|4208|  
-|Klíčová slova|WFInstanceStore|  
+|klíčová slova|WFInstanceStore|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že zprostředkovatel SQL je opakováním příkazu SQL z důvodu chyby systému SQL.  
+ Označuje, že zprostředkovatel SQL je opakováním příkazu SQL kvůli chybě SQL.  
   
 ## <a name="message"></a>Zpráva  
- Opakováním příkazu SQL z důvodu SQL číslo chyby %1.  
+ Opakováním příkazu SQL kvůli chybě SQL s číslem %1.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Argument číslo chyby|xs:String|Číslo chyby SQL.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|ErrorNumber|xs:string|Číslo chyby SQL.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

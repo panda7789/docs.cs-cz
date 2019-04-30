@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
 ms.openlocfilehash: 2815757bf9b00375f763673f18180bfbf51a165a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317439"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779220"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Postupy: Asynchronní volání operací služby WCF
 Toto téma popisuje, jak má přístup klient služby operace asynchronně. Implementuje služby v tomto tématu `ICalculator` rozhraní. Klient může asynchronní volání operací na tomto rozhraní za použití založený na událostech asynchronní volání modelu. (Další informace o založený na událostech asynchronní volání modelu najdete v tématu [vícevláknové programování s asynchronní vzor založený na událostech](https://go.microsoft.com/fwlink/?LinkId=248184)). Příklad, který ukazuje, jak implementace operace asynchronní služby, najdete v části [jak: Implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Další informace o synchronní a asynchronní operace, najdete v části [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
@@ -30,17 +30,17 @@ Toto téma popisuje, jak má přístup klient služby operace asynchronně. Impl
   
      Tím se vygeneruje, kromě synchronní a standardní delegáta asynchronních operací, třída klienta WCF, která obsahuje:  
   
-    -   Dva <`operationName` > `Async` operace pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - Dva <`operationName` > `Async` operace pro použití s založený na událostech asynchronní volání přístup. Příklad:  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    -   Operace se dokončila událostí ve formátu <`operationName` > `Completed` pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - Operace se dokončila událostí ve formátu <`operationName` > `Completed` pro použití s založený na událostech asynchronní volání přístup. Příklad:  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    -   <xref:System.EventArgs?displayProperty=nameWithType> typy pro každou operaci (ve formátu <`operationName`>`CompletedEventArgs`) pro použití s založený na událostech asynchronní volání přístup. Příklad:  
+    - <xref:System.EventArgs?displayProperty=nameWithType> typy pro každou operaci (ve formátu <`operationName`>`CompletedEventArgs`) pro použití s založený na událostech asynchronní volání přístup. Příklad:  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  

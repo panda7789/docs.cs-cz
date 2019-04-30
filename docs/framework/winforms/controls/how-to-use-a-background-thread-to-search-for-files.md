@@ -11,11 +11,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms], samples
 ms.assetid: 7fe3956f-5b8f-4f78-8aae-c9eb0b28f13a
 ms.openlocfilehash: 806cb2b69d83fae2f73583111d0094c7e86e3c61
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785850"
 ---
 # <a name="how-to-use-a-background-thread-to-search-for-files"></a>Postupy: Použití vlákna na pozadí k vyhledávání souborů
 <xref:System.ComponentModel.BackgroundWorker> Komponenty nahradí a přidá funkce, které <xref:System.Threading> obor názvů, nicméně <xref:System.Threading> obor názvů se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [přehled komponenty BackgroundWorker](backgroundworker-component-overview.md).  
@@ -28,13 +28,13 @@ ms.locfileid: "59157741"
   
  Následující příklad (`DirectorySearcher`) zobrazuje s více vlákny ovládací prvek Windows Forms, který používá vlákna na pozadí k vyhledávání rekurzivně adresář pro soubory odpovídající zadaný hledaný řetězec a pak naplní seznam s výsledek hledání. Klíčové koncepty předvedené v rámci ukázky jsou následující:  
   
--   `DirectorySearcher` začíná nové vlákno má vyhledávat. Vlákno provede `ThreadProcedure` metodu, která volá pomocné rutiny `RecurseDirectory` metody na hledání skutečné a k naplnění seznamu. Ale naplnění pole se seznamem vyžaduje volání mezi vlákny, jak je popsáno v následujících dvou položek seznamu s odrážkami.  
+- `DirectorySearcher` začíná nové vlákno má vyhledávat. Vlákno provede `ThreadProcedure` metodu, která volá pomocné rutiny `RecurseDirectory` metody na hledání skutečné a k naplnění seznamu. Ale naplnění pole se seznamem vyžaduje volání mezi vlákny, jak je popsáno v následujících dvou položek seznamu s odrážkami.  
   
--   `DirectorySearcher` definuje `AddFiles` metoda pro přidání souborů do seznamu; však `RecurseDirectory` nelze přímo vyvolat `AddFiles` protože `AddFiles` může spustit pouze ve vlákně STA. vytvořený `DirectorySearcher`.  
+- `DirectorySearcher` definuje `AddFiles` metoda pro přidání souborů do seznamu; však `RecurseDirectory` nelze přímo vyvolat `AddFiles` protože `AddFiles` může spustit pouze ve vlákně STA. vytvořený `DirectorySearcher`.  
   
--   Jediným způsobem `RecurseDirectory` můžete volat `AddFiles` prostřednictvím volání mezi vlákny – tedy volala <xref:System.Windows.Forms.Control.Invoke%2A> nebo <xref:System.Windows.Forms.Control.BeginInvoke%2A> přeuspořádat `AddFiles` k vytvoření vlákna `DirectorySearcher`. `RecurseDirectory` používá <xref:System.Windows.Forms.Control.BeginInvoke%2A> tak, aby volání provádět asynchronně.  
+- Jediným způsobem `RecurseDirectory` můžete volat `AddFiles` prostřednictvím volání mezi vlákny – tedy volala <xref:System.Windows.Forms.Control.Invoke%2A> nebo <xref:System.Windows.Forms.Control.BeginInvoke%2A> přeuspořádat `AddFiles` k vytvoření vlákna `DirectorySearcher`. `RecurseDirectory` používá <xref:System.Windows.Forms.Control.BeginInvoke%2A> tak, aby volání provádět asynchronně.  
   
--   Zařazování metodu vyžaduje ekvivalent ukazatel na funkci nebo zpětného volání. To lze provést pomocí delegátů v rozhraní .NET Framework. <xref:System.Windows.Forms.Control.BeginInvoke%2A> přijímá jako argument delegáta. `DirectorySearcher` proto definuje delegáta (`FileListDelegate`), vytvoří vazbu `AddFiles` do instance `FileListDelegate` v konstruktoru a předá tento delegát instance na <xref:System.Windows.Forms.Control.BeginInvoke%2A>. `DirectorySearcher` také definuje delegáta události, která je zařazen po dokončení hledání.  
+- Zařazování metodu vyžaduje ekvivalent ukazatel na funkci nebo zpětného volání. To lze provést pomocí delegátů v rozhraní .NET Framework. <xref:System.Windows.Forms.Control.BeginInvoke%2A> přijímá jako argument delegáta. `DirectorySearcher` proto definuje delegáta (`FileListDelegate`), vytvoří vazbu `AddFiles` do instance `FileListDelegate` v konstruktoru a předá tento delegát instance na <xref:System.Windows.Forms.Control.BeginInvoke%2A>. `DirectorySearcher` také definuje delegáta události, která je zařazen po dokončení hledání.  
   
 ```vb  
 Option Strict  

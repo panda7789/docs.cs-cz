@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8433899058c6f569e380999800557dbe8ed0a169
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649091"
 ---
 ### <a name="corprfgcroothandles-are-not-being-enumerated-by-profilers"></a>COR_PRF_GC_ROOT_HANDLEs nejsou výčtu podle profilovací programy
 

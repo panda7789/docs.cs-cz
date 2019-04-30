@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: bd3b1cc6a98f01d8c40b4cd67002e79a2c4fe714
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665599"
 ---
 ### <a name="improvements-to-grid-star-rows-space-allocating-algorithm"></a>Vylepšení políčku mřížky řádků hvězdičku přidělování algoritmus
 

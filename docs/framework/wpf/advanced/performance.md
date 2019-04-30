@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WPF [WPF], performance
 ms.assetid: c649a20f-8b7e-4a38-9b80-74839298d406
 ms.openlocfilehash: 268bb396564db983c293ab1d718171e963ab7aaa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772928"
 ---
 # <a name="performance"></a>Výkon
 Dosažení optimálního výkonu aplikací vyžaduje předvídavost v návrhu aplikace a pochopení osvědčených postupů pro [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vývoj aplikací. Témata v této části poskytují další informace o vytváření vysoce výkonné [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  

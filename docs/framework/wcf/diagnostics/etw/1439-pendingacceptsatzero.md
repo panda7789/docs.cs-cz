@@ -3,11 +3,11 @@ title: 1439 – PendingAcceptsAtZero
 ms.date: 03/30/2017
 ms.assetid: a57d550d-70f5-4f63-9ba7-e0f666b8f0ac
 ms.openlocfilehash: 94da980fd25735c64bfcc6a720098d4d5370d6d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61782067"
 ---
 # <a name="1439---pendingacceptsatzero"></a>1439 – PendingAcceptsAtZero
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33456327"
 |||  
 |-|-|  
 |ID|1439|  
-|Klíčová slova|kvóta|  
+|klíčová slova|Quota|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované pomocí čekající na vyřízení přijme na nule.  
+ Tato událost je vygenerován pomocí čekající přijímá na nule.  
   
 ## <a name="message"></a>Zpráva  
- Nula čekající na vyřízení přijímá vlevo  
+ Nezbývají žádná nedokončená přijmutí  
   
 ## <a name="details"></a>Podrobnosti

@@ -5,11 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
 ms.openlocfilehash: 03d008230d263853e322bb582706e2dbd3a11eec
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772603"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -40,7 +40,7 @@ Pokud se potřeby vaší aplikace (web/service) pro spuštění na více platfor
 
 .NET core podporuje výše uvedených operačních systémů jako pracovní stanici vývoje. Visual Studio poskytuje integrované vývojové prostředí (IDE) pro Windows a macOS. Můžete také použít Visual Studio Code, který běží v systémech macOS, Linux a Windows. Visual Studio Code podporuje .NET Core, včetně technologie IntelliSense a ladění. Většina editory třetích stran, jako je například Sublime (emacs) a VI, pracovat s .NET Core. Editory těchto třetích stran získání funkce IntelliSense editoru pomocí [Omnisharp](https://www.omnisharp.net/). Můžete také zabránit libovolném editoru kódu a používat přímo [nástroje rozhraní příkazového řádku .NET Core](../core/tools/index.md), která je dostupná pro všechny podporované platformy.
 
-### <a name="microservices-architecture"></a>Architektura Mikroslužeb
+### <a name="microservices-architecture"></a>Architektura mikroslužeb
 
 Architektura mikroslužeb umožňuje kombinace technologií přes hranice služeb. Kombinace tato technologie umožňuje postupné mohlo .NET Core pro nové mikroslužby, které pracují s jinými mikroslužby nebo službami. Například je možné kombinovat mikroslužby nebo služby vyvinuté pomocí rozhraní .NET Framework, Java, Ruby nebo jiné monolitické technologie.
 

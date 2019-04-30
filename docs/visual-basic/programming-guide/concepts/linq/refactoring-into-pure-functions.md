@@ -3,11 +3,11 @@ title: Refaktoring do čistých funkcí (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 99e7d27b-a3ff-4577-bdb2-5a8278d6d7af
 ms.openlocfilehash: 0a37b30278c850256355612cec09a4c017c7adc2
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57379715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787163"
 ---
 # <a name="refactoring-into-pure-functions-visual-basic"></a>Refaktoring do čistých funkcí (Visual Basic)
 

@@ -3,11 +3,11 @@ title: 'Postupy: Generování textových souborů z XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 3b33f191-4abe-4419-b81b-3cb81d9a317f
 ms.openlocfilehash: 6273152995b458da110a2bda56ebdc35d49b6769
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780325"
 ---
 # <a name="how-to-generate-text-files-from-xml-visual-basic"></a>Postupy: Generování textových souborů z XML (Visual Basic)
 Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.  

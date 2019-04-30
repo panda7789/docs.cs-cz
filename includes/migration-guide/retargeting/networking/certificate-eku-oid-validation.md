@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ee9bba91a2c4e11bd005fedb8adf0c2e7c7b0d3e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61639446"
 ---
 ### <a name="certificate-eku-oid-validation"></a>OID rozšířeného použití klíče ověření certifikátu
 

@@ -10,10 +10,10 @@ helpviewer_keywords:
 ms.assetid: 30d25554-4c82-4df9-a8d6-35683a4a13bb
 ms.openlocfilehash: 21ca31d24121492fe6927cd533d5b3c0785b5a28
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776659"
 ---
 # <a name="how-to-change-the-textwrapping-property-programmatically"></a>Postupy: Změna vlastnosti TextWrapping pomocí programu
 ## <a name="example"></a>Příklad  

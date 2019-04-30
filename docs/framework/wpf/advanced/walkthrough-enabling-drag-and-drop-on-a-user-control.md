@@ -9,11 +9,11 @@ helpviewer_keywords:
 - drag-and-drop [WPF], walkthrough
 ms.assetid: cc844419-1a77-4906-95d9-060d79107fc7
 ms.openlocfilehash: a628665ccfa0a423667344b1fe81f132d6691b12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321676"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778927"
 ---
 # <a name="walkthrough-enabling-drag-and-drop-on-a-user-control"></a>Návod: Povolení přetahování pomocí myši na uživatelském ovládacím prvku
 
@@ -23,13 +23,13 @@ V tomto návodu vytvoříte vlastní WPF <xref:System.Windows.Controls.UserContr
 
 Tento návod znázorňuje následující úlohy:
 
--   Vytvořte vlastní uživatelský ovládací prvek.
+- Vytvořte vlastní uživatelský ovládací prvek.
 
--   Povolení nástroje Řízení uživatelských jako zdroj přetažení.
+- Povolení nástroje Řízení uživatelských jako zdroj přetažení.
 
--   Povolte uživatelský ovládací prvek jako cíl přetažení.
+- Povolte uživatelský ovládací prvek jako cíl přetažení.
 
--   Povolte panel přijímat data z uživatelského ovládacího prvku vyřadit.
+- Povolte panel přijímat data z uživatelského ovládacího prvku vyřadit.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -108,17 +108,17 @@ Visual Studio k dokončení tohoto návodu potřebujete.
 
      To <xref:System.Windows.UIElement.OnMouseMove%2A> přepsání provádí následující úlohy:
 
-    -   Kontroluje, zda se stiskne tlačítko levé tlačítko myši, zatímco ukazatel myši pohybuje.
+    - Kontroluje, zda se stiskne tlačítko levé tlačítko myši, zatímco ukazatel myši pohybuje.
 
-    -   Balíčky kruh dat do <xref:System.Windows.DataObject>. V tomto případě ovládací prvek kruh balíčky tři položky data; řetězcová reprezentace jeho barva výplně, dvojité vyjádření výšku a zkopírujte sebe sama.
+    - Balíčky kruh dat do <xref:System.Windows.DataObject>. V tomto případě ovládací prvek kruh balíčky tři položky data; řetězcová reprezentace jeho barva výplně, dvojité vyjádření výšku a zkopírujte sebe sama.
 
-    -   Volání statické <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metoda k zahájení operace přetažení myší. Následující tři parametry předáváte <xref:System.Windows.DragDrop.DoDragDrop%2A> metody:
+    - Volání statické <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> metoda k zahájení operace přetažení myší. Následující tři parametry předáváte <xref:System.Windows.DragDrop.DoDragDrop%2A> metody:
 
-        -   `dragSource` – Odkaz na tento ovládací prvek.
+        - `dragSource` – Odkaz na tento ovládací prvek.
 
-        -   `data` – Tím <xref:System.Windows.DataObject> vytvořili v předchozím kódu.
+        - `data` – Tím <xref:System.Windows.DataObject> vytvořili v předchozím kódu.
 
-        -   `allowedEffects` – Povolené operace přetažení myší, které jsou <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
+        - `allowedEffects` – Povolené operace přetažení myší, které jsou <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
 
 3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
@@ -143,9 +143,9 @@ Ve výchozím nastavení se kurzor změní během operace přetažení myší oz
 
      To <xref:System.Windows.UIElement.OnGiveFeedback%2A> přepsání provádí následující úlohy:
 
-    -   Kontroluje <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnoty nastavené v cíl přetažení <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.
+    - Kontroluje <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnoty nastavené v cíl přetažení <xref:System.Windows.UIElement.DragOver> obslužné rutiny události.
 
-    -   Nastaví vlastní kurzor na základě <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnotu. Kurzor má předat uživateli o jaký vliv má vyřadit data budou mít vizuální zpětnou vazbu.
+    - Nastaví vlastní kurzor na základě <xref:System.Windows.GiveFeedbackEventArgs.Effects%2A> hodnotu. Kurzor má předat uživateli o jaký vliv má vyřadit data budou mít vizuální zpětnou vazbu.
 
 3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
@@ -181,15 +181,15 @@ Ve výchozím nastavení se kurzor změní během operace přetažení myší oz
 
      To <xref:System.Windows.UIElement.OnDrop%2A> přepsání provádí následující úlohy:
 
-    -   Používá <xref:System.Windows.DataObject.GetDataPresent%2A> metodu ke kontrole, pokud Přetahované dat obsahuje objekt řetězce.
+    - Používá <xref:System.Windows.DataObject.GetDataPresent%2A> metodu ke kontrole, pokud Přetahované dat obsahuje objekt řetězce.
 
-    -   Používá <xref:System.Windows.DataObject.GetData%2A> metody se extrahují data řetězce, pokud je k dispozici.
+    - Používá <xref:System.Windows.DataObject.GetData%2A> metody se extrahují data řetězce, pokud je k dispozici.
 
-    -   Používá <xref:System.Windows.Media.BrushConverter> pokusí převést řetězec, který má <xref:System.Windows.Media.Brush>.
+    - Používá <xref:System.Windows.Media.BrushConverter> pokusí převést řetězec, který má <xref:System.Windows.Media.Brush>.
 
-    -   Pokud převod je úspěšný, štětce, který se vztahuje <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní ovládacího prvku kruh.
+    - Pokud převod je úspěšný, štětce, který se vztahuje <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní ovládacího prvku kruh.
 
-    -   Značky <xref:System.Windows.UIElement.Drop> události jako zpracování. Událost přetažení by měla označit jako ošetřenou, takže další prvky, které se zobrazí tato událost vědět, že uživatelský ovládací prvek kruh zpracovává ji.
+    - Značky <xref:System.Windows.UIElement.Drop> události jako zpracování. Událost přetažení by měla označit jako ošetřenou, takže další prvky, které se zobrazí tato událost vědět, že uživatelský ovládací prvek kruh zpracovává ji.
 
 3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
@@ -222,11 +222,11 @@ Když data je přetažený na ovládací prvek uživatele kruh, ovládací prvek
 
      To <xref:System.Windows.UIElement.OnDragOver%2A> přepsání provádí následující úlohy:
 
-    -   Nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.None>.
+    - Nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.None>.
 
-    -   Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda uživatelský ovládací prvek kruh může zpracovávat Přetahované data.
+    - Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda uživatelský ovládací prvek kruh může zpracovávat Přetahované data.
 
-    -   Pokud uživatelský ovládací prvek můžete zpracovávat data, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
+    - Pokud uživatelský ovládací prvek můžete zpracovávat data, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy> nebo <xref:System.Windows.DragDropEffects.Move>.
 
 3. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
@@ -252,11 +252,11 @@ Když data je přetažený na ovládací prvek uživatele kruh, ovládací prvek
 
      To <xref:System.Windows.UIElement.OnDragEnter%2A> přepsání provádí následující úlohy:
 
-    -   Uloží <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost <xref:System.Windows.Shapes.Ellipse> v `_previousFill` proměnné.
+    - Uloží <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnost <xref:System.Windows.Shapes.Ellipse> v `_previousFill` proměnné.
 
-    -   Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda data lze převést na <xref:System.Windows.Media.Brush>.
+    - Provádí stejné kontroly, které se provádí v <xref:System.Windows.UIElement.OnDrop%2A> metodou ke zjištění, zda data lze převést na <xref:System.Windows.Media.Brush>.
 
-    -   Pokud data je převést na platnou <xref:System.Windows.Media.Brush>, použije ho k <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse>.
+    - Pokud data je převést na platnou <xref:System.Windows.Media.Brush>, použije ho k <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse>.
 
 4. Přidejte následující <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání zajistit zpracování třídy pro <xref:System.Windows.UIElement.DragLeave> událostí.
 
@@ -265,7 +265,7 @@ Když data je přetažený na ovládací prvek uživatele kruh, ovládací prvek
 
      To <xref:System.Windows.UIElement.OnDragLeave%2A> přepsání provádí následující úlohy:
 
-    -   Se vztahuje <xref:System.Windows.Media.Brush> uložené v `_previousFill` proměnnou <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní uživatelského ovládacího prvku kruh.
+    - Se vztahuje <xref:System.Windows.Media.Brush> uložené v `_previousFill` proměnnou <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Ellipse> , který poskytuje uživatelské rozhraní uživatelského ovládacího prvku kruh.
 
 5. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 
@@ -296,11 +296,11 @@ V této části povolíte panely, které jsou hostiteli uživatelské ovládací
 
      To <xref:System.Windows.UIElement.DragOver> obslužná rutina události provádí následující úlohy:
 
-    -   Kontroluje, že Přetahované data obsahují data "Object", který byl zabalen do <xref:System.Windows.DataObject> v uživatelském ovládacím prvku kruhu a předat ve volání do <xref:System.Windows.DragDrop.DoDragDrop%2A>.
+    - Kontroluje, že Přetahované data obsahují data "Object", který byl zabalen do <xref:System.Windows.DataObject> v uživatelském ovládacím prvku kruhu a předat ve volání do <xref:System.Windows.DragDrop.DoDragDrop%2A>.
 
-    -   Pokud jsou data "Objekt" k dispozici, zkontroluje, jestli **Ctrl** stisknutí klávesy.
+    - Pokud jsou data "Objekt" k dispozici, zkontroluje, jestli **Ctrl** stisknutí klávesy.
 
-    -   Pokud **Ctrl** se stiskne klávesa, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy>. V opačném případě nastavte <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Move>.
+    - Pokud **Ctrl** se stiskne klávesa, nastaví <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Copy>. V opačném případě nastavte <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost <xref:System.Windows.DragDropEffects.Move>.
 
 5. Přidejte následující kód <xref:System.Windows.UIElement.Drop> obslužné rutiny události.
 
@@ -309,15 +309,15 @@ V této části povolíte panely, které jsou hostiteli uživatelské ovládací
 
      To <xref:System.Windows.UIElement.Drop> obslužná rutina události provádí následující úlohy:
 
-    -   Kontroluje, zda <xref:System.Windows.UIElement.Drop> události již byla zpracována. Pro instanci, která kroužek ztracené kruhu na jiném obslužné rutiny <xref:System.Windows.UIElement.Drop> události, nechcete, aby panelu, který obsahuje kruhu také ji zpracovat.
+    - Kontroluje, zda <xref:System.Windows.UIElement.Drop> události již byla zpracována. Pro instanci, která kroužek ztracené kruhu na jiném obslužné rutiny <xref:System.Windows.UIElement.Drop> události, nechcete, aby panelu, který obsahuje kruhu také ji zpracovat.
 
-    -   Pokud <xref:System.Windows.UIElement.Drop> událostí není zpracována, zkontroluje, jestli **Ctrl** stisknutí klávesy.
+    - Pokud <xref:System.Windows.UIElement.Drop> událostí není zpracována, zkontroluje, jestli **Ctrl** stisknutí klávesy.
 
-    -   Pokud **Ctrl** při stisknutí klávesy <xref:System.Windows.UIElement.Drop> se stane, vytvoří kopii kruhu ovládací prvek a přidat ji do <xref:System.Windows.Controls.Panel.Children%2A> kolekce <xref:System.Windows.Controls.StackPanel>.
+    - Pokud **Ctrl** při stisknutí klávesy <xref:System.Windows.UIElement.Drop> se stane, vytvoří kopii kruhu ovládací prvek a přidat ji do <xref:System.Windows.Controls.Panel.Children%2A> kolekce <xref:System.Windows.Controls.StackPanel>.
 
-    -   Pokud **Ctrl** není stisknuta klávesa, přesune kruh z <xref:System.Windows.Controls.Panel.Children%2A> kolekce jeho nadřazeného panelu <xref:System.Windows.Controls.Panel.Children%2A> kolekce, která byla vynechána na panelu.
+    - Pokud **Ctrl** není stisknuta klávesa, přesune kruh z <xref:System.Windows.Controls.Panel.Children%2A> kolekce jeho nadřazeného panelu <xref:System.Windows.Controls.Panel.Children%2A> kolekce, která byla vynechána na panelu.
 
-    -   Sady <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost upozornit <xref:System.Windows.DragDrop.DoDragDrop%2A> metody Určuje, zda byla provedena operace přesunutí nebo kopírování.
+    - Sady <xref:System.Windows.DragEventArgs.Effects%2A> vlastnost upozornit <xref:System.Windows.DragDrop.DoDragDrop%2A> metody Určuje, zda byla provedena operace přesunutí nebo kopírování.
 
 6. Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.
 

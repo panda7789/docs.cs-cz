@@ -3,11 +3,11 @@ title: Soubory Oracle REF CURSOR
 ms.date: 03/30/2017
 ms.assetid: c6b25b8b-0bdd-41b2-9c7c-661f070c2247
 ms.openlocfilehash: b23b0f07d7755fed820481a3ad1fe831ae3f5224
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771851"
 ---
 # <a name="oracle-ref-cursors"></a>Soubory Oracle REF CURSOR
 Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF CURSOR** datového typu. Při použití zprostředkovatele dat pro práci se soubory Oracle REF CURSOR, měli byste zvážit následující chování.  
@@ -15,19 +15,19 @@ Zprostředkovatel dat .NET Framework pro Oracle podporuje Oracle **REF CURSOR** 
 > [!NOTE]
 >  Některá chování se liší od těch, které zprostředkovatel Microsoft OLE DB pro Oracle (MSDAORA).  
   
--   Z důvodů výkonu Data Provider pro Oracle nemá vazbu automaticky **REF CURSOR** datové typy, stejně jako MSDAORA, pokud je explicitně neurčíte.  
+- Z důvodů výkonu Data Provider pro Oracle nemá vazbu automaticky **REF CURSOR** datové typy, stejně jako MSDAORA, pokud je explicitně neurčíte.  
   
--   Poskytovatel dat nepodporuje žádné ODBC řídicí sekvence, včetně řídicí {třídy resultset} používá k určení parametry REF CURSOR.  
+- Poskytovatel dat nepodporuje žádné ODBC řídicí sekvence, včetně řídicí {třídy resultset} používá k určení parametry REF CURSOR.  
   
--   K provedení uložené procedury, která vrací typů REF CURSOR, je nutné definovat parametry <xref:System.Data.OracleClient.OracleParameterCollection> s <xref:System.Data.OracleClient.OracleType> z **kurzor** a <xref:System.Data.OracleClient.OracleParameter.Direction%2A> z **výstup**. Zprostředkovatel dat podporuje jako výstupní parametry pouze vazby typů REF CURSOR. Zprostředkovatel nepodporuje typů REF CURSOR jako vstupní parametry.  
+- K provedení uložené procedury, která vrací typů REF CURSOR, je nutné definovat parametry <xref:System.Data.OracleClient.OracleParameterCollection> s <xref:System.Data.OracleClient.OracleType> z **kurzor** a <xref:System.Data.OracleClient.OracleParameter.Direction%2A> z **výstup**. Zprostředkovatel dat podporuje jako výstupní parametry pouze vazby typů REF CURSOR. Zprostředkovatel nepodporuje typů REF CURSOR jako vstupní parametry.  
   
--   Získání <xref:System.Data.OracleClient.OracleDataReader> z parametru hodnota není podporována. Hodnoty jsou typu <xref:System.DBNull> po spuštění příkazu.  
+- Získání <xref:System.Data.OracleClient.OracleDataReader> z parametru hodnota není podporována. Hodnoty jsou typu <xref:System.DBNull> po spuštění příkazu.  
   
--   Jediná **CommandBehavior** hodnota výčtu, která funguje s typů REF CURSOR (například při volání metody <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>) je **CloseConnection**; případné další se ignorují.  
+- Jediná **CommandBehavior** hodnota výčtu, která funguje s typů REF CURSOR (například při volání metody <xref:System.Data.OracleClient.OracleCommand.ExecuteReader%2A>) je **CloseConnection**; případné další se ignorují.  
   
--   Pořadí typů REF CURSOR v **připojení OracleDataReader** pořadí parametrů v závisí **OracleParameterCollection**. <xref:System.Data.OracleClient.OracleParameter.ParameterName%2A> Vlastnost se ignoruje.  
+- Pořadí typů REF CURSOR v **připojení OracleDataReader** pořadí parametrů v závisí **OracleParameterCollection**. <xref:System.Data.OracleClient.OracleParameter.ParameterName%2A> Vlastnost se ignoruje.  
   
--   PL/SQL **tabulky** datový typ není podporován. Typů REF CURSOR jsou však efektivnější. Pokud je nutné použít **tabulky** datový typ, použijte zprostředkovatele OLE DB .NET Data Provider s MSDAORA.  
+- PL/SQL **tabulky** datový typ není podporován. Typů REF CURSOR jsou však efektivnější. Pokud je nutné použít **tabulky** datový typ, použijte zprostředkovatele OLE DB .NET Data Provider s MSDAORA.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Příklady REF CURSOR](../../../../docs/framework/data/adonet/ref-cursor-examples.md)  

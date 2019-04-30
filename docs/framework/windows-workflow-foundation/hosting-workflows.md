@@ -5,11 +5,11 @@ helpviewer_keywords:
 - programming [WF], hosting workflows
 ms.assetid: a99a5990-b53b-419b-9538-b1c3d1ba5db3
 ms.openlocfilehash: 3b3b7b94c94096d916efb9399c82ad6ddf8b8b1b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773461"
 ---
 # <a name="hosting-workflows"></a>Hostování pracovních postupů
 Témata v této části popisují hostování pracovních postupů.  

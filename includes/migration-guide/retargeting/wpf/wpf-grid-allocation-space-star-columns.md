@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 1ebae379b641cbddb2a2c07a199fca057a0d5db0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61639449"
 ---
 ### <a name="wpf-grid-allocation-of-space-to-star-columns"></a>Přidělení prostoru na hvězdičku sloupce mřížky WPF
 

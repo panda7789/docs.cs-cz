@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
 author: BrucePerlerMS
 ms.openlocfilehash: e269a168c5aa594684a41a98338d961447acd536
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792831"
 ---
 # <a name="claims-based-authorization-using-wif"></a>Autorizace deklarovaných identit pomocí WIF
 V aplikaci předávající strany autorizace určuje, k jakým prostředkům má ověřená identita povolen přístup a jaké operace s těmito prostředky smí provádět. Nesprávná nebo slabá autorizace může vést k úniku informací nebo neoprávněným úpravám dat. Toto téma popisuje, jak webové aplikace a služby technologie ASP.NET pracující s deklaracemi mohou implementovat autorizaci s použitím technologie Windows Identity Foundation (WIF) a služby tokenů zabezpečení (STS), jako je například Služba řízení přístupu Microsoft Azure (ACS).  
@@ -25,13 +25,13 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
 ### <a name="iprincipalisinrole-method"></a>Metoda IPrincipal.IsInRole  
  Chcete-li v deklaracemi implementovat přístup RBAC, použijte **IsInRole()** metoda ve **IPrinicpal** rozhraní, stejně jako v jiných deklaracemi identity aplikace. Existuje několik způsobů použití **IsInRole()** metody:  
   
--   Explicitně pomocí volání **IPrincipal.IsInRole("Administrator")**. Při použití tohoto přístupu je výsledkem logická hodnota, kterou můžete používat v podmíněných příkazech. Toto volání lze používat kdekoli v kódu.  
+- Explicitně pomocí volání **IPrincipal.IsInRole("Administrator")**. Při použití tohoto přístupu je výsledkem logická hodnota, kterou můžete používat v podmíněných příkazech. Toto volání lze používat kdekoli v kódu.  
   
--   Pomocí požadavku zabezpečení **PrincipalPermission.Demand()**. Při použití tohoto přístupu je výsledkem výjimka, pokud není požadavek splněn. Tento přístup můžete zapracovat do své strategie pro zpracování výjimek. Je vyvolání výjimky mnohem nákladnější z hlediska výkonu ve srovnání s vrací datový typ Boolean. Tento přístup lze používat kdekoli v kódu.  
+- Pomocí požadavku zabezpečení **PrincipalPermission.Demand()**. Při použití tohoto přístupu je výsledkem výjimka, pokud není požadavek splněn. Tento přístup můžete zapracovat do své strategie pro zpracování výjimek. Je vyvolání výjimky mnohem nákladnější z hlediska výkonu ve srovnání s vrací datový typ Boolean. Tento přístup lze používat kdekoli v kódu.  
   
--   Pomocí deklarativních atributů **[PrincipalPermission (SecurityAction.Demand, Role = "Správce")]**. Tento přístup se nazývá deklarativní, protože slouží pro úpravu metody. Nelze jej používat v blocích kódu uvnitř implementace metody. Výsledkem je výjimka, pokud není požadavek splněn. Musíte ji zohlednit ve své strategii zpracování výjimek.  
+- Pomocí deklarativních atributů **[PrincipalPermission (SecurityAction.Demand, Role = "Správce")]**. Tento přístup se nazývá deklarativní, protože slouží pro úpravu metody. Nelze jej používat v blocích kódu uvnitř implementace metody. Výsledkem je výjimka, pokud není požadavek splněn. Musíte ji zohlednit ve své strategii zpracování výjimek.  
   
--   Použitím autorizace adres URL, pomocí  **\<autorizace >** tématu **web.config**. Tento přístup je vhodný, pokud autorizaci řídíte na úrovni adres URL. Ze všech dříve zmíněných přístupů se jedná o způsob použití na nejméně podrobné úrovni. Výhodou tohoto přístupu je, že se změny provádějí v konfiguračním souboru, což znamená, že je možné změny využívat bez nutnosti kompilace kódu.  
+- Použitím autorizace adres URL, pomocí  **\<autorizace >** tématu **web.config**. Tento přístup je vhodný, pokud autorizaci řídíte na úrovni adres URL. Ze všech dříve zmíněných přístupů se jedná o způsob použití na nejméně podrobné úrovni. Výhodou tohoto přístupu je, že se změny provádějí v konfiguračním souboru, což znamená, že je možné změny využívat bez nutnosti kompilace kódu.  
   
 ### <a name="expressing-roles-as-claims"></a>Vyjádření rolí jako deklarací  
  Když **IsInRole()** metoda je volána, je kontrola se kontroluje, zda má aktuální uživatel tuto roli. V aplikacích pracujících s deklaracemi je role vyjádřena pomocí deklarace typu Role, která by měla být k dispozici v tokenu. Deklarace typu Role je vyjádřena pomocí následujícího identifikátoru URI:  
@@ -40,11 +40,11 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
   
  K dispozici je několik možností, jak do tokenu doplnit deklaraci typu Role:  
   
--   **Při vystavení tokenu**. Při ověření uživatele může být deklarace role vydané poskytovatelem identity STS nebo federačního zprostředkovatele, jako je například Windows Azure Access Control Service (ACS).  
+- **Při vystavení tokenu**. Při ověření uživatele může být deklarace role vydané poskytovatelem identity STS nebo federačního zprostředkovatele, jako je například Windows Azure Access Control Service (ACS).  
   
--   **Přeměna libovolných deklarací na deklarace typu role pomocí komponenty ClaimsAuthenticationManager**. ClaimsAuthenticationManager je komponenta, která je dodávána jako součást technologie WIF. Umožňuje zachytávat žádosti při spuštění aplikace, kontrolovat tokeny a transformovat je pomocí přidání, změny nebo odebrání deklarací. Další informace o tom, jak transformovat deklarace pomocí komponenty ClaimsAuthenticationManager, naleznete v tématu [How To: Řízení přístupu (RBAC) v aplikaci ASP.NET vědět deklarace identity pomocí technologie WIF a služby ACS na základě rolí implementujte](https://go.microsoft.com/fwlink/?LinkID=247445).  
+- **Přeměna libovolných deklarací na deklarace typu role pomocí komponenty ClaimsAuthenticationManager**. ClaimsAuthenticationManager je komponenta, která je dodávána jako součást technologie WIF. Umožňuje zachytávat žádosti při spuštění aplikace, kontrolovat tokeny a transformovat je pomocí přidání, změny nebo odebrání deklarací. Další informace o tom, jak transformovat deklarace pomocí komponenty ClaimsAuthenticationManager, naleznete v tématu [How To: Řízení přístupu (RBAC) v aplikaci ASP.NET vědět deklarace identity pomocí technologie WIF a služby ACS na základě rolí implementujte](https://go.microsoft.com/fwlink/?LinkID=247445).  
   
--   **Mapování libovolných deklarací na typ role pomocí konfiguračního oddílu samlSecurityTokenRequirement**– deklarativní přístup, kde se provádí transformaci deklarací pomocí jenom konfigurace a bez kódování je povinný.  
+- **Mapování libovolných deklarací na typ role pomocí konfiguračního oddílu samlSecurityTokenRequirement**– deklarativní přístup, kde se provádí transformaci deklarací pomocí jenom konfigurace a bez kódování je povinný.  
   
 <a name="BKMK_2"></a>   
 ## <a name="claims-based-authorization"></a>Autorizace na základě rolí  

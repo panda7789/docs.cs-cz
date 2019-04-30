@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 81b104d8e5a9ccc8e790c3b16e4837cfa0c0def5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759411"
 ---
 ### <a name="serialport-background-thread-exceptions"></a>SerialPort výjimky vlákna na pozadí
 

@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: e04134ec731c5e7bede3388621078c6518805ec2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982280"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61644492"
 ---
 ### <a name="add-selectiontextbrush-public-property-to-textboxpasswordbox-non-adorner-selection"></a>Přidejte veřejnou vlastnost SelectionTextBrush výběr – doplněk pro úpravy textového pole a pole pro zadání hesla
 

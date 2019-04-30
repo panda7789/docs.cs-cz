@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c6a65eae91bf3b44fc2b49588ead5ed178d7326f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777452"
 ---
 # <a name="imetadataimport-interface"></a>IMetaDataImport – rozhraní
 Poskytuje metody pro import a manipulace s existující metadata ze souboru (PE portable executable) nebo jiné zdroje, například knihovny typů nebo binární soubor metadat samostatné, za běhu.  
@@ -96,13 +96,13 @@ Poskytuje metody pro import a manipulace s existující metadata ze souboru (PE 
 ## <a name="remarks"></a>Poznámky  
  Návrh `IMetaDataImport` rozhraní je určený hlavně kvůli používat nástroje a služby, které bude import informací o typu (například nástroje pro vývoj) nebo správu nasazení součásti (například řešení/aktivace služby). Metody v `IMetaDataImport` spadají do následujících kategorií úloh:  
   
--   Vytváření výčtů kolekcí položek v rámci metadat.  
+- Vytváření výčtů kolekcí položek v rámci metadat.  
   
--   Hledání položky, která má specifickou sadu vlastností.  
+- Hledání položky, která má specifickou sadu vlastností.  
   
--   Získání vlastnosti zadané položky.  
+- Získání vlastnosti zadané položky.  
   
--   Metody Get jsou vytvořené speciálně k vrácení jednou hodnotou vlastnosti položky metadat. Vlastnost je odkazem na jinou položku, bude vrácen token pro danou položku. Žádné vstupní typ ukazatele může mít hodnotu NULL k označení, že není žádá konkrétní hodnotu. Získat vlastnosti, které jsou v podstatě kolekci objektů (například kolekce rozhraní, která implementuje třídu), použijte metody výčtu.  
+- Metody Get jsou vytvořené speciálně k vrácení jednou hodnotou vlastnosti položky metadat. Vlastnost je odkazem na jinou položku, bude vrácen token pro danou položku. Žádné vstupní typ ukazatele může mít hodnotu NULL k označení, že není žádá konkrétní hodnotu. Získat vlastnosti, které jsou v podstatě kolekci objektů (například kolekce rozhraní, která implementuje třídu), použijte metody výčtu.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
 ms.openlocfilehash: 1d4964cf0379b35c4955bf45d8a7c0fd40477c9f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787670"
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a zpráv exchange vzory pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení obsahuje nejméně jeden z těchto možností. Toto téma vypadá nanejvýš běžný scénář: implementace vystavování tokenů.  
@@ -24,61 +24,61 @@ Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci
 ### <a name="request-message-structure"></a>Struktura zprávy požadavku  
  Struktura zprávy požadavku problém se obvykle skládá z následujících položek:  
   
--   Žádost o zadejte identifikátor URI s hodnotou `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`.
+- Žádost o zadejte identifikátor URI s hodnotou `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`.
   
--   Token typu identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy SAML (Markup Language) 1.1, hodnota tohoto identifikátoru URI je `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.  
+- Token typu identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy SAML (Markup Language) 1.1, hodnota tohoto identifikátoru URI je `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.  
   
--   Velikost klíče hodnota, která určuje počet bitů v klíči, který se má přidružit vydaný token.  
+- Velikost klíče hodnota, která určuje počet bitů v klíči, který se má přidružit vydaný token.  
   
--   Klíče typu identifikátoru URI. Pro symetrické klíče, hodnota tohoto identifikátoru URI je `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`.  
+- Klíče typu identifikátoru URI. Pro symetrické klíče, hodnota tohoto identifikátoru URI je `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`.  
   
  Kromě toho několik dalších položek, může být k dispozici:  
   
--   Materiál klíče, který klient poskytl.  
+- Materiál klíče, který klient poskytl.  
   
--   Informace o oboru, která určuje, který se použije vydaný token s cílovou službu.  
+- Informace o oboru, která určuje, který se použije vydaný token s cílovou službu.  
   
  Služba tokenů zabezpečení používá informace ve zprávě požadavku problém při vytvoří zprávu odpovědi problém.  
   
 ## <a name="response-message-structure"></a>Struktura zpráva odpovědi  
  Struktura zprávu odpovědi problém se obvykle skládá z následujících položek;  
   
--   Token vydaný zabezpečení, třeba kontrolní výraz SAML 1.1.  
+- Token vydaný zabezpečení, třeba kontrolní výraz SAML 1.1.  
   
--   Token důkazu přidružené k tokenu zabezpečení. Pro symetrické klíče je to často zašifrované materiál klíče.  
+- Token důkazu přidružené k tokenu zabezpečení. Pro symetrické klíče je to často zašifrované materiál klíče.  
   
--   Odkazy na token vydaný zabezpečení. Služba tokenů zabezpečení obvykle vrací odkaz, který se dá použít při vydaný token se zobrazí následující zprávy odeslané klienta a další, který se dá použít při token není k dispozici v dalších zpráv.  
+- Odkazy na token vydaný zabezpečení. Služba tokenů zabezpečení obvykle vrací odkaz, který se dá použít při vydaný token se zobrazí následující zprávy odeslané klienta a další, který se dá použít při token není k dispozici v dalších zpráv.  
   
  Kromě toho několik dalších položek, může být k dispozici:  
   
--   Materiál klíče poskytovaných službou tokenu zabezpečení.  
+- Materiál klíče poskytovaných službou tokenu zabezpečení.  
   
--   Algoritmus potřebných pro výpočet sdílený klíč.  
+- Algoritmus potřebných pro výpočet sdílený klíč.  
   
--   Informace o životnosti pro vydaný token.  
+- Informace o životnosti pro vydaný token.  
   
 ## <a name="processing-request-messages"></a>Zpracování zpráv požadavků  
  Služba tokenů zabezpečení zpracuje žádost o problém zkoumání různých součástí zprávy s požadavkem a zajistit, aby mohla vystavovat token, který splňuje požadavek. Služba tokenů zabezpečení musí určit následující předtím, než vytvoří token, který má být vydaný:  
   
--   Požadavek ve skutečnosti je žádost o token vystavování.  
+- Požadavek ve skutečnosti je žádost o token vystavování.  
   
--   Služba tokenů zabezpečení podporuje požadovaný typ tokenu.  
+- Služba tokenů zabezpečení podporuje požadovaný typ tokenu.  
   
--   Žadatel je autorizovaný k odeslání požadavku.  
+- Žadatel je autorizovaný k odeslání požadavku.  
   
--   Služba tokenů zabezpečení můžete očekávání žadatele s ohledem na materiál klíče.  
+- Služba tokenů zabezpečení můžete očekávání žadatele s ohledem na materiál klíče.  
   
  Dvě důležité části vytváření token určování jaké klíč k podepsání token s a jaké klíč k šifrování pomocí sdíleného klíče. Token musí být podepsané tak, že když klient poskytne token, který má cílová služba service můžete určit, který byl token vydán službou tokenu zabezpečení, který důvěřuje. Materiál klíče je potřeba šifrovat tak, že cílová služba mohly dešifrovat tohoto klíče.  
   
  Podepisování kontrolní výraz SAML zahrnuje vytvoření <xref:System.IdentityModel.Tokens.SigningCredentials> instance. Konstruktor pro tuto třídu používá následující:  
   
--   A <xref:System.IdentityModel.Tokens.SecurityKey> pro klíč k podepsání kontrolního výrazu SAML.  
+- A <xref:System.IdentityModel.Tokens.SecurityKey> pro klíč k podepsání kontrolního výrazu SAML.  
   
--   Řetězec, který určuje použití algoritmu podpisu.  
+- Řetězec, který určuje použití algoritmu podpisu.  
   
--   Řetězec, který určuje použití algoritmu digest.  
+- Řetězec, který určuje použití algoritmu digest.  
   
--   Volitelně můžete <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> , který určuje klíč k podepsání kontrolního výrazu.  
+- Volitelně můžete <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier> , který určuje klíč k podepsání kontrolního výrazu.  
   
  [!code-csharp[c_CreateSTS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#1)]
  [!code-vb[c_CreateSTS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#1)]  

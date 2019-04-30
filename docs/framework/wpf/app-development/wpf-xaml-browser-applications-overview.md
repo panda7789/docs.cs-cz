@@ -11,11 +11,11 @@ helpviewer_keywords:
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
 ms.openlocfilehash: 81ae93871fa5e3fc46382ee9a1810808574fb043
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785867"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>
@@ -23,15 +23,15 @@ ms.locfileid: "59320129"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Vytvoření nové aplikace prohlížeče XAML (XBAP)](#creating_a_new_xaml_browser_application_xbap)  
+- [Vytvoření nové aplikace prohlížeče XAML (XBAP)](#creating_a_new_xaml_browser_application_xbap)  
   
--   [Nasazení XBAP](#deploying_a_xbap)  
+- [Nasazení XBAP](#deploying_a_xbap)  
   
--   [Komunikaci s webovou stránkou hostitele](#communicating_with_the_host_web_page)  
+- [Komunikaci s webovou stránkou hostitele](#communicating_with_the_host_web_page)  
   
--   [Aspekty zabezpečení XBAP](#xbap_security_considerations)  
+- [Aspekty zabezpečení XBAP](#xbap_security_considerations)  
   
--   [Faktory ovlivňující výkon XBAP počáteční čas](#xbap_start_time_performance_considerations)  
+- [Faktory ovlivňující výkon XBAP počáteční čas](#xbap_start_time_performance_considerations)  
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Vytvoření nové aplikace prohlížeče XAML (XBAP)  
@@ -131,17 +131,17 @@ ms.locfileid: "59320129"
   
  Při použití <xref:System.Windows.Controls.WebBrowser> ovládacího prvku v aplikaci WPF interně vytvoří instanci nativní ovládací prvek WebBrowser ActiveX. Když je vaše aplikace částečným vztahem důvěryhodnosti XBAP, který v aplikaci Internet Explorer, ovládací prvek ActiveX spouští ve vyhrazeném vlákně procesu aplikace Internet Explorer. Proto platí následující omezení:  
   
--   <xref:System.Windows.Controls.WebBrowser> Ovládací prvek by měl poskytovat chování podobný hostitele prohlížeče, včetně omezení zabezpečení. Některé z těchto omezení zabezpečení se dá řídit přes nastavení zabezpečení aplikace Internet Explorer. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
+- <xref:System.Windows.Controls.WebBrowser> Ovládací prvek by měl poskytovat chování podobný hostitele prohlížeče, včetně omezení zabezpečení. Některé z těchto omezení zabezpečení se dá řídit přes nastavení zabezpečení aplikace Internet Explorer. Další informace najdete v tématu [zabezpečení](../security-wpf.md).  
   
--   Když XBAP, který je načten mezi doménami v stránku HTML, je vyvolána výjimka.  
+- Když XBAP, který je načten mezi doménami v stránku HTML, je vyvolána výjimka.  
   
--   Vstup je na samostatném vlákně z WPF <xref:System.Windows.Controls.WebBrowser>, takže nemůže dojít k jejich zachycení vstup z klávesnice a není sdílený stav editoru IME.  
+- Vstup je na samostatném vlákně z WPF <xref:System.Windows.Controls.WebBrowser>, takže nemůže dojít k jejich zachycení vstup z klávesnice a není sdílený stav editoru IME.  
   
--   Časování nebo pořadí navigace se může lišit kvůli ovládací prvek ActiveX, který běží na jiném vlákně. Například přejdete na stránku není vždy zrušil spuštění další požadavek pro navigaci.  
+- Časování nebo pořadí navigace se může lišit kvůli ovládací prvek ActiveX, který běží na jiném vlákně. Například přejdete na stránku není vždy zrušil spuštění další požadavek pro navigaci.  
   
--   Vlastní ovládací prvek ActiveX mohou mít problémy s komunikací, protože aplikace WPF běží v samostatném vlákně.  
+- Vlastní ovládací prvek ActiveX mohou mít problémy s komunikací, protože aplikace WPF běží v samostatném vlákně.  
   
--   <xref:System.Windows.Interop.HwndHost.MessageHook> získat zvýšit není, protože <xref:System.Windows.Interop.HwndHost> nelze vytvořit podtřídu okno systémem v jiném procesu nebo vlákna.  
+- <xref:System.Windows.Interop.HwndHost.MessageHook> získat zvýšit není, protože <xref:System.Windows.Interop.HwndHost> nelze vytvořit podtřídu okno systémem v jiném procesu nebo vlákna.  
   
 ### <a name="creating-a-full-trust-xbap"></a>Vytváření XBAP plné důvěryhodnosti  
  Pokud vaše XBAP, který vyžaduje úplný vztah důvěryhodnosti, můžete změnit projekt tak, aby toto oprávnění zapnout. Následující kroky popisují, jak povolit úplný vztah důvěryhodnosti:  
@@ -152,9 +152,9 @@ ms.locfileid: "59320129"
   
  Toto nastavení provede následující změny:  
   
--   V souboru projektu `<TargetZone>` hodnota elementu se změní na `Custom`.  
+- V souboru projektu `<TargetZone>` hodnota elementu se změní na `Custom`.  
   
--   V manifestu aplikace (app.manifest) `Unrestricted="true"` přidání atributu do "<xref:System.Security.PermissionSet> elementu.  
+- V manifestu aplikace (app.manifest) `Unrestricted="true"` přidání atributu do "<xref:System.Security.PermissionSet> elementu.  
   
     ```xml
     <PermissionSet class="System.Security.PermissionSet"   

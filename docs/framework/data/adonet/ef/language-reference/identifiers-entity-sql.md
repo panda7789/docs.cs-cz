@@ -3,11 +3,11 @@ title: Identifikátory (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: d58a5edd-7b5c-48e1-b5d7-a326ff426aa4
 ms.openlocfilehash: 702a9c69c37b572fde18dd57c44608678174fb15
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59204897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774657"
 ---
 # <a name="identifiers-entity-sql"></a>Identifikátory (Entity SQL)
 Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] představující aliasy výraz dotazu, odkazy na proměnné, vlastnosti objektů, funkcí a tak dále. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] poskytuje dva typy identifikátorů: jednoduché identifikátory a identifikátory v uvozovkách.  
@@ -20,15 +20,15 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
   
  Identifikátor v uvozovkách nesmí obsahovat následující znaky:  
   
--   Nový řádek.  
+- Nový řádek.  
   
--   Návrat.  
+- Návrat.  
   
--   Karty.  
+- Karty.  
   
--   BACKSPACE.  
+- BACKSPACE.  
   
--   Další hranaté závorky (to znamená, hranaté závorky v hranatých závorkách, která od sebe odděluje identifikátor).  
+- Další hranaté závorky (to znamená, hranaté závorky v hranatých závorkách, která od sebe odděluje identifikátor).  
   
  V uvozovkách identifikátor může obsahovat znaky Unicode.  
   
@@ -53,13 +53,13 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
 ## <a name="aliasing-rules"></a>Pravidla pro aliasy  
  Doporučujeme, abyste zadání aliasů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazuje pokaždé, když je nepotřebujete, včetně následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vytvoří:  
   
--   Pole konstruktoru řádku.  
+- Pole konstruktoru řádku.  
   
--   Položky v klauzuli FROM výrazu dotazu.  
+- Položky v klauzuli FROM výrazu dotazu.  
   
--   Položky v klauzuli SELECT výrazu dotazu.  
+- Položky v klauzuli SELECT výrazu dotazu.  
   
--   Položky v klauzuli GROUP BY výrazu dotazu.  
+- Položky v klauzuli GROUP BY výrazu dotazu.  
   
 ### <a name="valid-aliases"></a>Platný aliasy  
  Platný aliasů v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] jsou nějaké jednoduchý identifikátor nebo identifikátor v uvozovkách.  
@@ -67,9 +67,9 @@ Identifikátory se používají v [!INCLUDE[esql](../../../../../../includes/esq
 ### <a name="alias-generation"></a>Generování alias  
  Pokud není zadán žádný alias v [!INCLUDE[esql](../../../../../../includes/esql-md.md)] výrazu, dotazu [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pokusí vygenerovat alias na základě následujících pravidel jednoduchý:  
   
--   Pokud výraz dotazu (pro který je alias neurčené) je jednoduchý nebo identifikátor v uvozovkách, tento identifikátor se používá jako alias. Například `ROW(a, [b])` stane `ROW(a AS a, [b] AS [b])`.  
+- Pokud výraz dotazu (pro který je alias neurčené) je jednoduchý nebo identifikátor v uvozovkách, tento identifikátor se používá jako alias. Například `ROW(a, [b])` stane `ROW(a AS a, [b] AS [b])`.  
   
--   Pokud výraz dotazu je složitější výraz, ale poslední součástí tohoto výrazu dotazu je jednoduchý identifikátor, tento identifikátor se používá jako alias. Například `ROW(a.a1, b.[b1])` stane `ROW(a.a1 AS a1, b.[b1] AS [b1])`.  
+- Pokud výraz dotazu je složitější výraz, ale poslední součástí tohoto výrazu dotazu je jednoduchý identifikátor, tento identifikátor se používá jako alias. Například `ROW(a.a1, b.[b1])` stane `ROW(a.a1 AS a1, b.[b1] AS [b1])`.  
   
  Doporučujeme, abyste je velmi riskantní používat implicitní aliasing. Pokud budete chtít později použít název aliasu. Kdykoli konfliktů aliasů (implicitní nebo explicitní) nebo jsou opakovaný ve stejném oboru, bude existovat chyby kompilace. Implicitní alias předá kompilace i v případě, že se explicitní nebo implicitní alias se stejným názvem.  
   
@@ -107,11 +107,11 @@ SELECT 1 AS X, 2 AS X …
   
  Tady jsou další poznámky o oborech:  
   
--   Seznamu select můžou představovat nové názvy na obor, v pořadí. Projekce výrazy na pravé straně může odkazovat na názvy plánovaných na levé straně.  
+- Seznamu select můžou představovat nové názvy na obor, v pořadí. Projekce výrazy na pravé straně může odkazovat na názvy plánovaných na levé straně.  
   
--   Klauzule ORDER by mohou odkazovat na názvy (aliasy) zadané v seznamu select.  
+- Klauzule ORDER by mohou odkazovat na názvy (aliasy) zadané v seznamu select.  
   
--   Pořadí vyhodnocování klauzule v rámci vyberte výraz určuje pořadí, že jsou názvy zařadit do oboru. Klauzule FROM vyčíslen první, za nímž následuje klauzule WHERE, GROUP BY – klauzule, klauzuli HAVING, klauzule SELECT a nakonec klauzule ORDER by.  
+- Pořadí vyhodnocování klauzule v rámci vyberte výraz určuje pořadí, že jsou názvy zařadit do oboru. Klauzule FROM vyčíslen první, za nímž následuje klauzule WHERE, GROUP BY – klauzule, klauzuli HAVING, klauzule SELECT a nakonec klauzule ORDER by.  
   
 ### <a name="aggregate-handling"></a>Agregovat zpracování  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje dvě formy agregace: na základě kolekce agregace a agregace podle skupin. Na základě kolekce agregace jsou upřednostňované konstrukce v [!INCLUDE[esql](../../../../../../includes/esql-md.md)], a na základě skupin agregace jsou podporovány pro kompatibilitu SQL.  

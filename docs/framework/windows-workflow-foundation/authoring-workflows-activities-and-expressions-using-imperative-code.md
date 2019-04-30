@@ -3,11 +3,11 @@ title: Vytváření pracovních postupů, aktivit a výrazů pomocí imperativn�
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
 ms.openlocfilehash: 1a11da9ce3dd73f0bc2851b68e7c354e55c9d2d3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774107"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu
 Definice pracovního postupu je strom objektů nakonfigurované aktivity. Tento strom aktivity mohou být definovány mnoha způsoby, třeba pomocí ruční úpravy XAML nebo vytvořit XAML pomocí návrháře postupu provádění. Použití XAML, ale není povinné. Definice pracovního postupu můžete vytvořit také prostřednictvím kódu programu. Toto téma obsahuje přehled o vytvoření definice pracovních postupů, aktivit a výrazů s použitím kódu. Příklady práce s pracovními postupy XAML pomocí kódu, naleznete v tématu [serializace pracovních postupů a aktivit do a z XAML](serializing-workflows-and-activities-to-and-from-xaml.md).  

@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2caa9b48fc92a1b2e82f574d37d99758e19382c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777966"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2 – metoda
 V aktuálním oboru lexikální definuje jednu proměnnou. Tuto metodu lze volat pro proměnnou se stejným názvem, který má více domovů v rámci oboru více než jednou. V takovém případě však hodnoty `startOffset` a `endOffset` parametry se nesmí překrývat.  

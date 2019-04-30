@@ -8,11 +8,11 @@ helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
 ms.openlocfilehash: 4464100012fe9b3e1f0e8743707b1dc9a477c3d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59205885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787865"
 ---
 # <a name="how-to-create-a-secure-session"></a>Postupy: Vytvoření zabezpečené relace
 S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, vazeb poskytovaných systémem Windows Communication Foundation (WCF) automaticky pomocí zabezpečených relací, pokud je povoleno zabezpečení zpráv.  
@@ -21,7 +21,7 @@ S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configu
   
 ### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-one-of-the-system-provided-bindings"></a>Chcete-li určit, že služba používá zabezpečených relací pomocí jedné z vazeb poskytovaných systémem  
   
--   Konfigurace vazeb poskytovaných systémem, který podporuje zabezpečení zpráv pomocí ve službě.  
+- Konfigurace vazeb poskytovaných systémem, který podporuje zabezpečení zpráv pomocí ve službě.  
   
      S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, když jsou vazeb poskytovaných systémem nakonfigurovány pro použití zabezpečení zpráv WCF automaticky používá zabezpečených relací. V následující tabulce jsou uvedeny vazeb poskytovaných systémem, které podporují zabezpečení zpráv a zda je zabezpečení zpráv výchozího mechanismu zabezpečení.  
   
@@ -58,7 +58,7 @@ S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configu
   
 ### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-a-custom-binding"></a>Chcete-li určit, že služba používá zabezpečených relací s použitím vlastní vazby  
   
--   Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněny zabezpečenou relaci.  
+- Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněny zabezpečenou relaci.  
   
      Další informace o vytvoření vlastní vazby, naleznete v tématu [jak: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
   

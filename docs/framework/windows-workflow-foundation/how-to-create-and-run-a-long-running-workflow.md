@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c0043c89-2192-43c9-986d-3ecec4dd8c9c
 ms.openlocfilehash: 7940d1d8869d3b82c1aa19cb038a68b8724345dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773419"
 ---
 # <a name="how-to-create-and-run-a-long-running-workflow"></a>Postupy: Vytvoření a spuštění dlouhotrvajícího pracovního postupu
 Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime schopnost zachovat a uvolnit nečinných pracovních postupů k databázi. Kroky v [jak: Spuštění pracovního postupu](how-to-run-a-workflow.md) jsme vám ukázali základní informace o hostování pracovního postupu pomocí konzolové aplikace. Příklady zobrazila počáteční pracovní postupy, obslužné rutiny pracovních postupů životního cyklu a obnovení záložky. Ukázání efektivně trvalost pracovního postupu, se vyžaduje složitější hostitele pracovního postupu, který podporuje spouštění a obnovení několika instancí pracovních postupů. Tento krok úvodního kurzu ukazuje, jak vytvořit hostitele formuláře Windows, aplikace, která podporuje spouštění a obnovení několika instancí pracovních postupů, trvalost pracovního postupu a poskytuje základ pro pokročilé funkce, jako je sledování a správy verzí, které jsou jsme vám ukázali v následných kroků v kurzu.  
@@ -23,25 +23,25 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [K vytvoření databáze trvalosti](how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
+- [K vytvoření databáze trvalosti](how-to-create-and-run-a-long-running-workflow.md#BKMK_CreatePersistenceDatabase)  
   
--   [Chcete-li přidat odkaz na sestavení DurableInstancing](how-to-create-and-run-a-long-running-workflow.md#BKMK_AddReference)  
+- [Chcete-li přidat odkaz na sestavení DurableInstancing](how-to-create-and-run-a-long-running-workflow.md#BKMK_AddReference)  
   
--   [Chcete-li vytvořit formulář hostitele pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
+- [Chcete-li vytvořit formulář hostitele pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_CreateForm)  
   
--   [Chcete-li přidat vlastnosti a metody helper formuláře](how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)  
+- [Chcete-li přidat vlastnosti a metody helper formuláře](how-to-create-and-run-a-long-running-workflow.md#BKMK_AddHelperMethods)  
   
--   [Ke konfiguraci úložiště instancí, obslužné rutiny pracovních postupů životního cyklu a rozšíření](how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
+- [Ke konfiguraci úložiště instancí, obslužné rutiny pracovních postupů životního cyklu a rozšíření](how-to-create-and-run-a-long-running-workflow.md#BKMK_ConfigureWorkflowApplication)  
   
--   [Povolit spuštění a obnovení více typy pracovních postupů](how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
+- [Povolit spuštění a obnovení více typy pracovních postupů](how-to-create-and-run-a-long-running-workflow.md#BKMK_WorkflowVersionMap)  
   
--   [Spuštění nového pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_StartWorkflow)  
+- [Spuštění nového pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_StartWorkflow)  
   
--   [Pracovní postup obnovit](how-to-create-and-run-a-long-running-workflow.md#BKMK_ResumeWorkflow)  
+- [Pracovní postup obnovit](how-to-create-and-run-a-long-running-workflow.md#BKMK_ResumeWorkflow)  
   
--   [K ukončení pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
+- [K ukončení pracovního postupu](how-to-create-and-run-a-long-running-workflow.md#BKMK_TerminateWorkflow)  
   
--   [Sestavení a spuštění aplikace](how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
+- [Sestavení a spuštění aplikace](how-to-create-and-run-a-long-running-workflow.md#BKMK_BuildAndRun)  
   
 ### <a name="BKMK_CreatePersistenceDatabase"></a> K vytvoření databáze trvalosti  
   
@@ -54,9 +54,9 @@ Jednou z centrální funkcí Windows Workflow Foundation (WF) je modul runtime s
   
      Vyberte následující dva soubory a klikněte na tlačítko **otevřít**.  
   
-    -   SqlWorkflowInstanceStoreLogic.sql  
+    - SqlWorkflowInstanceStoreLogic.sql  
   
-    -   SqlWorkflowInstanceStoreSchema.sql  
+    - SqlWorkflowInstanceStoreSchema.sql  
   
 3. Zvolte **SqlWorkflowInstanceStoreSchema.sql** z **okno** nabídky. Ujistěte se, že **WF45GettingStartedTutorial** výběru v **dostupných databází** rozevírací seznam a zvolte **Execute** z **dotazu**nabídky.  
   

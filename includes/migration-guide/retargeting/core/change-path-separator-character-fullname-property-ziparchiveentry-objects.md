@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: dc1bc68a219faa8d17afbe58a07bab1a5c38231c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61757760"
 ---
 ### <a name="change-in-path-separator-character-in-fullname-property-of-ziparchiveentry-objects"></a>Změna v znakem oddělovače cesty ve vlastnosti FullName z položky ZipArchiveEntry objektů
 

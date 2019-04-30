@@ -8,22 +8,22 @@ helpviewer_keywords:
 - Freezable objects [WPF], making read-only
 ms.assetid: 6c544b7d-d3c9-4736-aa90-4b8728234ccb
 ms.openlocfilehash: 9b7102db4de0df7183355e50e3b372eac30d81b3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771017"
 ---
 # <a name="how-to-make-a-freezable-read-only"></a>Postupy: Nastavení zablokovatelného objektu jen pro čtení
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Freezable> voláním jen pro čtení jeho <xref:System.Windows.Freezable.Freeze%2A> metoda.  
   
  Nelze zmrazit <xref:System.Windows.Freezable> objektu, pokud je některý z následujících podmínek `true` o objektu:  
   
--   Má animovat nebo data vázané vlastnosti.  
+- Má animovat nebo data vázané vlastnosti.  
   
--   Obsahuje vlastnosti, které určil institut NIST dynamický prostředek. Další informace o dynamické prostředky, najdete v článku [prostředky XAML](xaml-resources.md).  
+- Obsahuje vlastnosti, které určil institut NIST dynamický prostředek. Další informace o dynamické prostředky, najdete v článku [prostředky XAML](xaml-resources.md).  
   
--   Obsahuje <xref:System.Windows.Freezable> podřízených objektů, které nelze zmrazit.  
+- Obsahuje <xref:System.Windows.Freezable> podřízených objektů, které nelze zmrazit.  
   
  Pokud jsou tyto podmínky `false` pro vaše <xref:System.Windows.Freezable> objektů a vy nemáte v úmyslu upravit, vezměte v úvahu zmrazení to zlepší výkon.  
   

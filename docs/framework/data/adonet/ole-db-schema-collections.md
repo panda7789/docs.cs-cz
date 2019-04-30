@@ -3,11 +3,11 @@ title: Kolekce schémat OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
 ms.openlocfilehash: 6dc187b0a876d9e167a74f2381db156dde2764fe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771992"
 ---
 # <a name="ole-db-schema-collections"></a>Kolekce schémat OLE DB
 Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro Microsoft SQL Server, Oracle a Microsoft Jet.  
@@ -15,17 +15,17 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 ## <a name="microsoft-sql-server-ole-db-provider"></a>Zprostředkovatel Microsoft SQL serveru OLE DB  
  Microsoft SQL Server OLE DB ovladač podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
--   Tabulky  
+- Tabulky  
   
--   Sloupce  
+- Sloupce  
   
--   Procedury  
+- Procedury  
   
--   ProcedureParameters  
+- ProcedureParameters  
   
--   Katalog  
+- Katalog  
   
--   Indexy  
+- Indexy  
   
 ### <a name="tables"></a>Tabulky  
   
@@ -154,19 +154,19 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 ## <a name="microsoft-oracle-ole-db-provider"></a>Zprostředkovatel OLE DB Microsoft Oracle  
  Oracle OLE DB ovladač Microsoft podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
--   Tabulky  
+- Tabulky  
   
--   Sloupce  
+- Sloupce  
   
--   Procedury  
+- Procedury  
   
--   ProcedureColumns  
+- ProcedureColumns  
   
--   ProcedureParameters  
+- ProcedureParameters  
   
--   Zobrazení  
+- Zobrazení  
   
--   Indexy  
+- Indexy  
   
 ### <a name="tables"></a>Tabulky  
   
@@ -297,15 +297,15 @@ Tato část popisuje kolekci podpora schématu pro zprostředkovatele OLE DB pro
 ## <a name="microsoft-jet-ole-db-provider"></a>Zprostředkovatel Microsoft Jet OLE DB  
  Microsoft Jet OLE DB ovladač podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
   
--   Tabulky  
+- Tabulky  
   
--   Sloupce  
+- Sloupce  
   
--   Procedury  
+- Procedury  
   
--   Zobrazení  
+- Zobrazení  
   
--   Indexy  
+- Indexy  
   
 ### <a name="tables"></a>Tabulky  
   

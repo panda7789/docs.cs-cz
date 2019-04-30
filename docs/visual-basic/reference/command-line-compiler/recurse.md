@@ -7,11 +7,11 @@ helpviewer_keywords:
 - recurse compiler option [Visual Basic]
 ms.assetid: 84a0b670-33ae-44c4-a46a-b90388809317
 ms.openlocfilehash: 2fe1834c3e92c3eff016ffd7857a0473eb2e8b3a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788850"
 ---
 # <a name="-recurse"></a>-recurse
 Zkompiluje soubory zdrojového kódu ve všech adresářích podřízené zadaný adresář nebo adresář projektu.  

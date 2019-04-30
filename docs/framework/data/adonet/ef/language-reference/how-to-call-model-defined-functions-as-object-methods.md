@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
 ms.openlocfilehash: 933baf39845caa2bc96828738d30f41613f69470
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774605"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: Volání modelově definovaných funkcí jako objektových metod
 Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu pro vlastní třídu. A *modelově definovaných funkcí* je funkce, která je definována v konceptuálním modelu. Postupy v tomto tématu popisují, jak volat tyto funkce přímo, bez volání je z LINQ na dotazy na entity. Informace o volání modelově definovaných funkcí v jazyce LINQ dotazy entit najdete v tématu [jak: Volání modelově definovaných funkcí v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  
@@ -25,9 +25,9 @@ Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xr
   
 2. Přidejte metodu běžné jazyka runtime (CLR) pro vaše <xref:System.Data.Objects.ObjectContext> třídu, která provede následující akce:  
   
-    -   Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
+    - Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
   
-    -   Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> vlastnost.  
+    - Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> vlastnost.  
   
 3. Jako člen instance volejte metodu <xref:System.Data.Objects.ObjectContext> třídy.  
   
@@ -35,11 +35,11 @@ Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xr
   
 1. Přidání třídy do vaší aplikace s statická metoda, která provede následující akce:  
   
-    -   Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí.  
+    - Mapuje se na funkci definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> jsou parametry atributu název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu, v uvedeném pořadí.  
   
-    -   Přijímá <xref:System.Linq.IQueryable> argument.  
+    - Přijímá <xref:System.Linq.IQueryable> argument.  
   
-    -   Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Linq.IQueryable.Provider%2A> vlastnost.  
+    - Vrátí výsledky <xref:System.Linq.IQueryProvider.Execute%2A> metodu, která je vrácena <xref:System.Linq.IQueryable.Provider%2A> vlastnost.  
   
 2. Volat metodu jako člen statickou metodu ve vlastní třídy  
   

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
 ms.openlocfilehash: 1f487e9d686ab82adb40cdc31aad68390fbdff3f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59173092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775747"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]
@@ -35,7 +35,7 @@ ms.locfileid: "59173092"
   
 #### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>Použijte jedinečný a dostupnější AutomationID a vyhledejte konkrétní elementu ve stromu automatizace uživatelského rozhraní  
   
--   Použijte nástroj, jako [!INCLUDE[TLA#tla_uispy](../../../includes/tlasharptla-uispy-md.md)] do sestavy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> z [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementu, které vás zajímají. Tuto hodnotu lze pak kopírovat a vložit do klientské aplikace, jako je například testovací skript pro další automatizované testování. Tento přístup snižuje a zjednodušuje kód, který k identifikaci a vyhledání prvek v době běhu.  
+- Použijte nástroj, jako [!INCLUDE[TLA#tla_uispy](../../../includes/tlasharptla-uispy-md.md)] do sestavy <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> z [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elementu, které vás zajímají. Tuto hodnotu lze pak kopírovat a vložit do klientské aplikace, jako je například testovací skript pro další automatizované testování. Tento přístup snižuje a zjednodušuje kód, který k identifikaci a vyhledání prvek v době běhu.  
   
 > [!CAUTION]
 >  Obecně platí, pokuste se získat jen přímé podřízené objekty daného <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Vyhledání potomků může iterovat stovky nebo i tisíce elementů, což může vést k přetečení zásobníku. Pokud se pokoušíte získat konkrétní elementu na nižší úrovni, měli byste začít hledání v okně aplikace nebo z kontejneru na nižší úrovni.  
@@ -45,7 +45,7 @@ ms.locfileid: "59173092"
   
 #### <a name="use-a-persistent-path-to-return-to-a-previously-identified-automationelement"></a>Vraťte se do dříve zjištěné třída AutomationElement pomocí trvalé cesty  
   
--   Klientské aplikace, z skriptů jednoduchý test a robustní záznam a přehrávání nástroje může vyžadovat přístup k prvkům, které nejsou vytvořeny aktuálně, například soubor otevřete dialogové okno nebo položku nabídky a proto neexistuje ve stromu automatizace uživatelského rozhraní. Tyto prvky můžete vytvořit instanci pouze reprodukce, nebo "přehrávání", konkrétní posloupnost akcí uživatelského rozhraní pomocí vlastnosti automatizace uživatelského rozhraní, jako je AutomationID vzorů ovládacích prvků a naslouchacích procesů událostí.
+- Klientské aplikace, z skriptů jednoduchý test a robustní záznam a přehrávání nástroje může vyžadovat přístup k prvkům, které nejsou vytvořeny aktuálně, například soubor otevřete dialogové okno nebo položku nabídky a proto neexistuje ve stromu automatizace uživatelského rozhraní. Tyto prvky můžete vytvořit instanci pouze reprodukce, nebo "přehrávání", konkrétní posloupnost akcí uživatelského rozhraní pomocí vlastnosti automatizace uživatelského rozhraní, jako je AutomationID vzorů ovládacích prvků a naslouchacích procesů událostí.
   
  [!code-csharp[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAAutomationID_snip/CSharp/FindByAutomationID.xaml.cs#uiaworkerthread)]
  [!code-vb[UIAAutomationID_snip#UIAWorkerThread](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAAutomationID_snip/VisualBasic/FindByAutomationID.xaml.vb#uiaworkerthread)]  
@@ -54,7 +54,7 @@ ms.locfileid: "59173092"
   
 #### <a name="use-a-relative-path-to-return-to-a-previously-identified-automationelement"></a>Použít relativní cestu k vrácení dříve zjištěné třída AutomationElement  
   
--   V některých případech se vzhledem AutomationID je pouze musí být jedinečný mezi na stejné úrovni, může více prvků ve stromu automatizace uživatelského rozhraní mají stejné hodnoty vlastnosti AutomationID. V těchto situacích prvky lze jedinečně identifikovat podle nadřazenou položku a v případě potřeby, výše nadřazených. Například vývojář může poskytnout panel nabídek několik položek nabídky každý s více podřízených položek nabídky, ve kterém jsou podřízené objekty označeny sekvenční AutomationID například "Item1", "Item2 –" a tak dále. Každá položka nabídky může pak být jednoznačně identifikují pomocí jeho AutomationID spolu s AutomationID svého nadřazeného objektu a v případě potřeby jeho výše nadřazených.  
+- V některých případech se vzhledem AutomationID je pouze musí být jedinečný mezi na stejné úrovni, může více prvků ve stromu automatizace uživatelského rozhraní mají stejné hodnoty vlastnosti AutomationID. V těchto situacích prvky lze jedinečně identifikovat podle nadřazenou položku a v případě potřeby, výše nadřazených. Například vývojář může poskytnout panel nabídek několik položek nabídky každý s více podřízených položek nabídky, ve kterém jsou podřízené objekty označeny sekvenční AutomationID například "Item1", "Item2 –" a tak dále. Každá položka nabídky může pak být jednoznačně identifikují pomocí jeho AutomationID spolu s AutomationID svého nadřazeného objektu a v případě potřeby jeho výše nadřazených.  
   
 ## <a name="see-also"></a>Viz také:
 

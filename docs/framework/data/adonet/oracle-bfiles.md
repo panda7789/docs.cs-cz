@@ -3,11 +3,11 @@ title: Soubory Oracle BFILE
 ms.date: 03/30/2017
 ms.assetid: 341bbf84-4734-4d44-8723-ccedee954e21
 ms.openlocfilehash: 5bb9f7e67016cf4b1d467935fe302ab4a40edbfa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771966"
 ---
 # <a name="oracle-bfiles"></a>Soubory Oracle BFILE
 Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleBFile> třídu, která se používá pro práci s Oracle <xref:System.Data.OracleClient.OracleType.BFile> datového typu.  
@@ -16,11 +16,11 @@ Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.Or
   
  Další vlastnosti **BFILE** datový typ, který odlišit od **LOB** se, že datový typ:  
   
--   Obsahuje Nestrukturovaná data.  
+- Obsahuje Nestrukturovaná data.  
   
--   Podporuje bloků na straně serveru.  
+- Podporuje bloků na straně serveru.  
   
--   Odkazovat na používá sémantiku kopírování. Například, pokud provádíte operaci kopírování na **BFILE**, pouze **BFILE** zkopíruje Lokátor (což je odkaz na soubor). Data v souboru není zkopírován.  
+- Odkazovat na používá sémantiku kopírování. Například, pokud provádíte operaci kopírování na **BFILE**, pouze **BFILE** zkopíruje Lokátor (což je odkaz na soubor). Data v souboru není zkopírován.  
   
  **BFILE** datový typ by měl použít pro odkazování na objekty LOBs, které jsou velké a proto není praktické ukládá do databáze. Další režii klienta, server a komunikace je zahrnuta při použití **BFILE** datový typ ve srovnání s **LOB** datového typu. Je mnohem efektivnější pro přístup k **BFILE** Pokud potřebujete získat malé množství dat. To je mnohem efektivnější pro přístup k databázi rezidentní objekty LOBs, pokud je třeba získat celý objekt.  
   

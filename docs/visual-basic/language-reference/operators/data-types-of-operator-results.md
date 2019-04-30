@@ -10,11 +10,11 @@ helpviewer_keywords:
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
 ms.openlocfilehash: 45dcc80ee791da1c2731ba32f0ebd34564faf806
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778557"
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>Datové typy výsledků operátoru (Visual Basic)
 Visual Basic určuje datový typ výsledku operace na základě typu dat z operandů. V některých případech to může být datový typ s větší rozsah než jeden z operandů.  
@@ -22,21 +22,21 @@ Visual Basic určuje datový typ výsledku operace na základě typu dat z opera
 ## <a name="data-type-ranges"></a>Rozsahy datového typu  
  Rozsahy typů relevantní data v pořadí od nejmenšího po největší, jsou následující:  
   
--   [Logická](../../../visual-basic/language-reference/data-types/boolean-data-type.md) – dvě možné hodnoty  
+- [Logická](../../../visual-basic/language-reference/data-types/boolean-data-type.md) – dvě možné hodnoty  
   
--   [SByte –](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [bajtů](../../../visual-basic/language-reference/data-types/byte-data-type.md) – 256 možné celočíselné hodnoty  
+- [SByte –](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [bajtů](../../../visual-basic/language-reference/data-types/byte-data-type.md) – 256 možné celočíselné hodnoty  
   
--   [Krátký](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md) – 65 536 (6.5... E + 4) možné celočíselné hodnoty  
+- [Krátký](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md) – 65 536 (6.5... E + 4) možné celočíselné hodnoty  
   
--   [Celé číslo](../../../visual-basic/language-reference/data-types/integer-data-type.md), [uinteger –](../../../visual-basic/language-reference/data-types/uinteger-data-type.md) – 4 294 967 296 (4.2... E + 9) možné celočíselné hodnoty  
+- [Celé číslo](../../../visual-basic/language-reference/data-types/integer-data-type.md), [uinteger –](../../../visual-basic/language-reference/data-types/uinteger-data-type.md) – 4 294 967 296 (4.2... E + 9) možné celočíselné hodnoty  
   
--   [Dlouhé](../../../visual-basic/language-reference/data-types/long-data-type.md), [ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md) – 18,446,744,073,709,551,615 (1.8... E + 19) možné celočíselné hodnoty  
+- [Dlouhé](../../../visual-basic/language-reference/data-types/long-data-type.md), [ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md) – 18,446,744,073,709,551,615 (1.8... E + 19) možné celočíselné hodnoty  
   
--   [Desetinné](../../../visual-basic/language-reference/data-types/decimal-data-type.md) – 1.5... E + 29 možné celočíselné hodnoty, maximální rozsah 7.9... E + 28 (absolutní hodnota)  
+- [Desetinné](../../../visual-basic/language-reference/data-types/decimal-data-type.md) – 1.5... E + 29 možné celočíselné hodnoty, maximální rozsah 7.9... E + 28 (absolutní hodnota)  
   
--   [Jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) – maximální rozsah 3.4... E + 38 (absolutní hodnota)  
+- [Jeden](../../../visual-basic/language-reference/data-types/single-data-type.md) – maximální rozsah 3.4... E + 38 (absolutní hodnota)  
   
--   [Dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) – maximální rozsah 1.7... E + 308 (absolutní hodnota)  
+- [Dvojité](../../../visual-basic/language-reference/data-types/double-data-type.md) – maximální rozsah 1.7... E + 308 (absolutní hodnota)  
   
  Další informace o jazyce Visual Basic datové typy naleznete v tématu [datové typy](../../../visual-basic/language-reference/data-types/index.md).  
   
@@ -68,11 +68,11 @@ Visual Basic určuje datový typ výsledku operace na základě typu dat z opera
 ## <a name="integer-arithmetic"></a>Celočíselné aritmetiky  
  Datový typ výsledek celočíselné operace závisí na datové typy operandů. Obecně platí Visual Basic používá následující zásady pro stanovení výsledku datový typ:  
   
--   Pokud mají oba operandy binárního operátoru stejný datový typ, výsledek je datového typu. Výjimkou je `Boolean`, který bude muset `Short`.  
+- Pokud mají oba operandy binárního operátoru stejný datový typ, výsledek je datového typu. Výjimkou je `Boolean`, který bude muset `Short`.  
   
--   Je-li operand bez znaménka se účastní se znaménkem operandem, výsledek má typ se znaménkem s alespoň tak velké rozsah jako jeden z operandů.  
+- Je-li operand bez znaménka se účastní se znaménkem operandem, výsledek má typ se znaménkem s alespoň tak velké rozsah jako jeden z operandů.  
   
--   V opačném případě výsledek obvykle má větší ze dvou typů dat operand.  
+- V opačném případě výsledek obvykle má větší ze dvou typů dat operand.  
   
  Všimněte si, že datový typ výsledek nemusí být stejný jako buď datový typ operandu.  
   

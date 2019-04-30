@@ -7,11 +7,11 @@ helpviewer_keywords:
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
 ms.openlocfilehash: 0aa47fd277cfe47b3d8f08b41ffca9c547dcbfe9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778531"
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
 Deklaruje parametry a kód, které definují výraz lambda funkce.  
@@ -40,19 +40,19 @@ End Function
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
  Syntaxe výrazu lambda se podobá u standardní funkci. Rozdíly jsou následující:  
   
--   Výraz lambda nemá název.  
+- Výraz lambda nemá název.  
   
--   Výrazy lambda nemůžou mít modifikátory, jako například `Overloads` nebo `Overrides`.  
+- Výrazy lambda nemůžou mít modifikátory, jako například `Overloads` nebo `Overrides`.  
   
--   Výrazy lambda se nepoužívá `As` klauzule k určení návratového typu funkce. Místo toho typ je odvozen z hodnotu, která se vyhodnotí jako hlavní část výrazu lambda jednořádkového nebo návratovou hodnotu víceřádkového výrazu lambda výrazu. Například, pokud je hlavní část výrazu lambda jednořádkového `Where cust.City = "London"`, je její typ vrácené hodnoty `Boolean`.  
+- Výrazy lambda se nepoužívá `As` klauzule k určení návratového typu funkce. Místo toho typ je odvozen z hodnotu, která se vyhodnotí jako hlavní část výrazu lambda jednořádkového nebo návratovou hodnotu víceřádkového výrazu lambda výrazu. Například, pokud je hlavní část výrazu lambda jednořádkového `Where cust.City = "London"`, je její typ vrácené hodnoty `Boolean`.  
   
--   Výraz, ne příkaz musí být tělo tohoto výrazu lambda jednořádkového. Text se může skládat z volání proceduru function, ale ne voláním procedury sub.  
+- Výraz, ne příkaz musí být tělo tohoto výrazu lambda jednořádkového. Text se může skládat z volání proceduru function, ale ne voláním procedury sub.  
   
--   Buď všechny parametry musí mít zadaný datové typy nebo všechny musí být odvozený.  
+- Buď všechny parametry musí mít zadaný datové typy nebo všechny musí být odvozený.  
   
--   Volitelné a Paramarray parametry nejsou povoleny.  
+- Volitelné a Paramarray parametry nejsou povoleny.  
   
--   Obecné parametry nejsou povoleny.  
+- Obecné parametry nejsou povoleny.  
   
 ## <a name="example"></a>Příklad  
  Následující příklady ukazují dva způsoby, jak vytvořit jednoduchý lambda výrazy. První použití `Dim` k poskytnutí názvu pro funkci. Pro volání funkce, předáte hodnotu parametru.  

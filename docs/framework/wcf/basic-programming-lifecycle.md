@@ -5,11 +5,11 @@ helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
 ms.openlocfilehash: 6d9ea3b877e7c735cf789039b2a6956037372888
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59330555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61782402"
 ---
 # <a name="basic-programming-lifecycle"></a>Základní programovací životní cyklus
 Windows Communication Foundation (WCF) umožňuje aplikacím komunikovat, jestli jsou na stejném počítači, na Internetu, nebo na různých aplikačních platformách. Toto téma popisuje úlohy, které jsou nutné k vytvoření aplikace WCF. Ukázkové aplikace práci, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md).  

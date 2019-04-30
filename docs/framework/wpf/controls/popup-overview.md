@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Popup control [WPF], about Popup control
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
 ms.openlocfilehash: 370970c80221e371db5a97303ef2650d14300b14
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770562"
 ---
 # <a name="popup-overview"></a>Přehled překryvných objektů
 <xref:System.Windows.Controls.Primitives.Popup> Ovládacího prvku poskytuje způsob, jak zobrazit obsah v samostatném okně umístěný za aktuální období aplikace vzhledem k určené souřadnice prvek nebo obrazovka. Toto téma představuje <xref:System.Windows.Controls.Primitives.Popup> řízení a poskytuje informace o jeho použití.  
@@ -34,13 +34,13 @@ ms.locfileid: "59102775"
 ## <a name="controls-that-implement-a-popup"></a>Ovládací prvky, které implementují automaticky otevíraného okna  
  Můžete vytvářet <xref:System.Windows.Controls.Primitives.Popup> ovládacích prvků do jiných ovládacích prvků. Implementujte následující ovládací prvky <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek pro konkrétní použití:  
   
--   <xref:System.Windows.Controls.ToolTip>. Pokud chcete vytvořit popisek pro element, použijte <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](tooltip-overview.md).  
+- <xref:System.Windows.Controls.ToolTip>. Pokud chcete vytvořit popisek pro element, použijte <xref:System.Windows.Controls.ToolTip> a <xref:System.Windows.Controls.ToolTipService> třídy. Další informace najdete v tématu [ToolTip – přehled](tooltip-overview.md).  
   
--   <xref:System.Windows.Controls.ContextMenu>. Pokud chcete vytvořit kontextovou nabídku pro prvek, použijte <xref:System.Windows.Controls.ContextMenu> ovládacího prvku. Další informace najdete v tématu [ContextMenu – přehled](contextmenu-overview.md).  
+- <xref:System.Windows.Controls.ContextMenu>. Pokud chcete vytvořit kontextovou nabídku pro prvek, použijte <xref:System.Windows.Controls.ContextMenu> ovládacího prvku. Další informace najdete v tématu [ContextMenu – přehled](contextmenu-overview.md).  
   
--   <xref:System.Windows.Controls.ComboBox>. Pokud chcete vytvořit ovládacího prvku pro výběr, který se má pole rozevíracího seznamu, kterou lze použít zobrazené nebo skryté, <xref:System.Windows.Controls.ComboBox> ovládacího prvku.  
+- <xref:System.Windows.Controls.ComboBox>. Pokud chcete vytvořit ovládacího prvku pro výběr, který se má pole rozevíracího seznamu, kterou lze použít zobrazené nebo skryté, <xref:System.Windows.Controls.ComboBox> ovládacího prvku.  
   
--   <xref:System.Windows.Controls.Expander>. Pokud chcete vytvořit pro ovládací prvek zobrazující záhlaví s sbalitelné oblasti, která zobrazuje obsah, použijte <xref:System.Windows.Controls.Expander> ovládacího prvku. Další informace najdete v tématu [přehled rozšíření](expander-overview.md).  
+- <xref:System.Windows.Controls.Expander>. Pokud chcete vytvořit pro ovládací prvek zobrazující záhlaví s sbalitelné oblasti, která zobrazuje obsah, použijte <xref:System.Windows.Controls.Expander> ovládacího prvku. Další informace najdete v tématu [přehled rozšíření](expander-overview.md).  
   
 <a name="PopupBehaviorandAppearance"></a>   
 ## <a name="popup-behavior-and-appearance"></a>Automaticky otevírané okno chování a vzhledu  

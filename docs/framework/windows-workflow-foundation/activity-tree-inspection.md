@@ -3,11 +3,11 @@ title: Kontrola stromu aktivit
 ms.date: 03/30/2017
 ms.assetid: 100d00e4-8c1d-4233-8fbb-dd443a01155d
 ms.openlocfilehash: 014795b79b3536b387096e4de64266e26649da21
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705490"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774111"
 ---
 # <a name="activity-tree-inspection"></a>Kontrola stromu aktivit
 Kontrola stromu aktivit používá ke kontrole pracovních postupů hostitelem aplikace autoři aplikace pracovního postupu. S použitím <xref:System.Activities.WorkflowInspectionServices>, pracovní postupy lze vyhledávat konkrétní podřízené aktivity, jednotlivé aktivity a jejich vlastností můžete vytvořit výčet a mezipaměti metadat runtime aktivit v určitém čase. Toto téma obsahuje přehled <xref:System.Activities.WorkflowInspectionServices> a jak ho použít ke kontrole strom aktivity.  

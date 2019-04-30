@@ -14,11 +14,11 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 1b9a4e0a-f134-48ff-a1be-c461446a31ba
 ms.openlocfilehash: c1881ffa1c6fca546b086efea59d2263af853949
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792168"
 ---
 # <a name="walkthrough-running-an-operation-in-the-background"></a>Návod: Spuštění operace na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete způsobit prodlevy v uživatelském rozhraní, můžete použít <xref:System.ComponentModel.BackgroundWorker> má třída spustit operaci v jiném vlákně.  
@@ -96,9 +96,9 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 ## <a name="next-steps"></a>Další kroky  
   
--   Implementace formuláře, která hlásí průběh, protože probíhá asynchronní operace. Další informace najdete v tématu [jak: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md).  
+- Implementace formuláře, která hlásí průběh, protože probíhá asynchronní operace. Další informace najdete v tématu [jak: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md).  
   
--   Implementace třídy, která podporuje asynchronní vzor pro komponenty. Další informace najdete v tématu [implementace asynchronního vzoru založeného na událostech](../../../standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md).  
+- Implementace třídy, která podporuje asynchronní vzor pro komponenty. Další informace najdete v tématu [implementace asynchronního vzoru založeného na událostech](../../../standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="see-also"></a>Viz také:
 

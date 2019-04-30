@@ -8,11 +8,11 @@ helpviewer_keywords:
 - positioning popups [WPF]
 ms.assetid: fbf642e9-f670-4efd-a7af-a67468a1c8e1
 ms.openlocfilehash: 911c2064e34ed8d0a341ffd9a52f852eab677e0a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771209"
 ---
 # <a name="popup-placement-behavior"></a>Chování při umístění překryvného objektu
 A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsah v samostatném okně, které čísel s plovoucí čárkou selhání aplikace. Můžete zadat umístění <xref:System.Windows.Controls.Primitives.Popup> vzhledem k ovládacího prvku, myši nebo na obrazovce s použitím <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vlastnosti.  Tyto vlastnosti spolupracují a poskytují flexibilitu v určeném umístění <xref:System.Windows.Controls.Primitives.Popup>.  
@@ -36,13 +36,13 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
 ## <a name="definitions-of-terms-the-anatomy-of-a-popup"></a>Definice podmínek: Anatomie automaticky otevíraného okna  
  Následující termíny jsou užitečné pro pochopení způsobu <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>, <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>, <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>, <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>, a <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A> vzájemně souvisí vlastnosti a <xref:System.Windows.Controls.Primitives.Popup>:  
   
--   Cílový objekt  
+- Cílový objekt  
   
--   Cílovou oblast  
+- Cílovou oblast  
   
--   Cíl původu  
+- Cíl původu  
   
--   Bod zarovnání automaticky otevíraného okna  
+- Bod zarovnání automaticky otevíraného okna  
   
  Tyto podmínky poskytují pohodlný způsob, jak odkazovat na různé aspekty <xref:System.Windows.Controls.Primitives.Popup> a ovládací prvek, který je přidružený.  
   
@@ -135,11 +135,11 @@ A <xref:System.Windows.Controls.Primitives.Popup> ovládací prvek zobrazí obsa
 ## <a name="when-the-popup-encounters-the-edge-of-the-screen"></a>Pokud automaticky otevírané okno nalezne okrajem obrazovky  
  Z bezpečnostních důvodů <xref:System.Windows.Controls.Primitives.Popup> nemůže být skryty pomocí okraji obrazovky. Jeden z následujících tří se stane, když <xref:System.Windows.Controls.Primitives.Popup> zaznamená okraji obrazovky:  
   
--   Automaticky otevírané okno změněné zarovnání samotné okrajem obrazovky, který by překrývat <xref:System.Windows.Controls.Primitives.Popup>.  
+- Automaticky otevírané okno změněné zarovnání samotné okrajem obrazovky, který by překrývat <xref:System.Windows.Controls.Primitives.Popup>.  
   
--   Automaticky otevírané okno používá bod zarovnání různých automaticky otevíraného okna.  
+- Automaticky otevírané okno používá bod zarovnání různých automaticky otevíraného okna.  
   
--   Automaticky otevírané okno používá bod jiné cílové umístění a automaticky otevírané okno zarovnání.  
+- Automaticky otevírané okno používá bod jiné cílové umístění a automaticky otevírané okno zarovnání.  
   
  Tyto možnosti jsou popsány dále později v této části.  
   

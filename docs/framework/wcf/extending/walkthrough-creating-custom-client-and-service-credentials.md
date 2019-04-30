@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2b5ba5c3-0c6c-48e9-9e46-54acaec443ba
 ms.openlocfilehash: db137eb84108c6adbbf04a380934bb6da6936d61
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771420"
 ---
 # <a name="walkthrough-creating-custom-client-and-service-credentials"></a>Návod: Vytvoření vlastního klienta a pověření služby
 Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a jak pomocí vlastních přihlašovacích údajů z kódu aplikace.  
@@ -18,9 +18,9 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
 ## <a name="credentials-extensibility-classes"></a>Přihlašovací údaje rozšíření třídy  
  <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy jsou hlavní vstupní body k rozšiřitelnosti zabezpečení Windows Communication Foundation (WCF). Tyto přihlašovací údaje třídy poskytují rozhraní API, která umožňují kód aplikace, pokud chcete nastavit přihlašovací údaje a převést typy přihlašovacích údajů do tokenů zabezpečení. (*Tokeny zabezpečení* se formulář, který slouží k přenosu přihlašovací údaje uvnitř zprávy protokolu SOAP.) Odpovědnosti tyto přihlašovací údaje třídy je možné rozdělit do dvou oblastí:  
   
--   Poskytuje rozhraní API pro aplikace se nastavit přihlašovací údaje.  
+- Poskytuje rozhraní API pro aplikace se nastavit přihlašovací údaje.  
   
--   Provést jako objekt factory pro <xref:System.IdentityModel.Selectors.SecurityTokenManager> implementace.  
+- Provést jako objekt factory pro <xref:System.IdentityModel.Selectors.SecurityTokenManager> implementace.  
   
  Jak <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy dědí z abstraktní <xref:System.ServiceModel.Security.SecurityCredentialsManager> třídu, která definuje smlouvu pro návrat <xref:System.IdentityModel.Selectors.SecurityTokenManager>.  
   
@@ -29,22 +29,22 @@ Toto téma ukazuje, jak implementovat vlastní klienta a pověření služby a j
 ## <a name="reasons-to-customize"></a>Důvody pro přizpůsobení  
  Existuje několik důvodů, proč přizpůsobení tříd přihlašovacích údajů klienta nebo služby. Musíme je potřeba změnit výchozí chování zabezpečení WCF z hlediska zpracování přihlašovací údaje poskytnuté systémem typů, hlavně z následujících důvodů:  
   
--   Změny, které nejsou možné pomocí jiné body rozšíření.  
+- Změny, které nejsou možné pomocí jiné body rozšíření.  
   
--   Přidání nových typů přihlašovacích údajů.  
+- Přidání nových typů přihlašovacích údajů.  
   
--   Přidání nové vlastní bezpečnostní token typy.  
+- Přidání nové vlastní bezpečnostní token typy.  
   
  Toto téma popisuje, jak implementovat vlastní klienta a pověření služby a jak se dají použít v kódu aplikace.  
   
 ## <a name="first-in-a-series"></a>První z řady  
  Vytvoření třídy vlastní přihlašovací údaje je jenom prvním krokem, protože je důvod pro přizpůsobení přihlašovací údaje ke změně chování WCF týkající se zřizování přihlašovací údaje, serializaci tokenu zabezpečení nebo ověřování. Další témata v této části popisují, jak vytvořit vlastní serializátory a ověřovací data. Vytvoření vlastních přihlašovacích údajů třídy v tomto ohledu je první téma v řadě. Následné akce (vytváření vlastní serializátory a ověřovací data) můžete udělat jenom po vytvoření vlastních přihlašovacích údajů. Další témata, které vycházejí z tohoto tématu patří:  
   
--   [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
+- [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
   
--   [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+- [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
   
--   [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
+- [Postupy: Vytvoření vlastního tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-token.md).  
   
 ## <a name="procedures"></a>Procedury  
   

@@ -6,8 +6,8 @@ ms.openlocfilehash: e956b9f8162d55891233a3ab664b05658d50eeab
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772997"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou součástí procesu zjišťování. Rozšíření zjišťování zpráv pomocí zabezpečení zmírní různé typy útoků (zpráva změnou, útok DOS, znovu přehrát, falšování identity). Tato ukázka implementuje vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](https://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -47,13 +47,13 @@ Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Ukázka zahrnuje knihovny a 4 konzolové aplikace:  
   
--   **DiscoverySecurityChannels**: Knihovna, která poskytuje zabezpečené vazby. Knihovny vypočítá a ověří podpis compact odchozích/příchozích zpráv.  
+- **DiscoverySecurityChannels**: Knihovna, která poskytuje zabezpečené vazby. Knihovny vypočítá a ověří podpis compact odchozích/příchozích zpráv.  
   
--   **Služba**: Služba zveřejňující ICalculatorService smlouvy, vlastní hostované. Služba je označena jako zjistitelné. Uživatel zadá podrobnosti certifikátu použitého k podepsání zprávy tak, že zadáte umístění úložiště a název a název subjektu nebo jiný jedinečný identifikátor pro tento certifikát a úložiště, kde jsou klientské certifikáty nachází (certifikátů používaných pro Kontrola podpisu pro příchozí zprávy). Na základě těchto podrobností, je UdpDiscoveryEndpoint s vyššího zabezpečení vytvořené a použít.  
+- **Služba**: Služba zveřejňující ICalculatorService smlouvy, vlastní hostované. Služba je označena jako zjistitelné. Uživatel zadá podrobnosti certifikátu použitého k podepsání zprávy tak, že zadáte umístění úložiště a název a název subjektu nebo jiný jedinečný identifikátor pro tento certifikát a úložiště, kde jsou klientské certifikáty nachází (certifikátů používaných pro Kontrola podpisu pro příchozí zprávy). Na základě těchto podrobností, je UdpDiscoveryEndpoint s vyššího zabezpečení vytvořené a použít.  
   
--   **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> s přidali zabezpečení je integrované a používá k podepsání a ověřte, zprávy.  
+- **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> s přidali zabezpečení je integrované a používá k podepsání a ověřte, zprávy.  
   
--   **AnnouncementListener**: V místním prostředí služby, který naslouchá oznámení týkající se online i offline a používá koncový bod zabezpečené oznámení.  
+- **AnnouncementListener**: V místním prostředí služby, který naslouchá oznámení týkající se online i offline a používá koncový bod zabezpečené oznámení.  
   
 > [!NOTE]
 >  Pokud Setup.bat spustí více než jednou, správce certifikátů zobrazí výzvu pro výběr certifikátu, který chcete přidat, protože existují duplicitní certifikáty. V takovém případě by měl být přerušen Setup.bat a Cleanup.bat by měla být volána, protože tyto duplikáty již byly vytvořeny. CleanUp.bat také výzva k výběru certifikát k odstranění. Vyberte certifikát ze seznamu a pokračovat v provádění Cleanup.bat, dokud nezbývají žádné certifikáty.  

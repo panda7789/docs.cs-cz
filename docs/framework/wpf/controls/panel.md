@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Panel control [WPF]
 ms.assetid: 792943c5-335d-49dd-aa5b-ec1582a10088
 ms.openlocfilehash: 6471aebf4a510c63084f8da733fb3dfe2300c1aa
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367593"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770666"
 ---
 # <a name="panel"></a>Panel
 <xref:System.Windows.Controls.Panel> je základní třídou pro všechny elementy, které podporují aplikace rozložení v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  

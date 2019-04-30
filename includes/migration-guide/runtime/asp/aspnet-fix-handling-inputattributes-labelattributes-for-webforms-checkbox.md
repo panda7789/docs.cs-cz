@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: ea0e1583cd611a624cf2d2edf9defb2294eb89d9
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665596"
 ---
 ### <a name="aspnet-fix-handling-of-inputattributes-and-labelattributes-for-webforms-checkbox-control"></a>Oprava zpracování technologie ASP.NET InputAttributes a LabelAttributes pro ovládací prvek zaškrtávací políčko webových formulářů
 

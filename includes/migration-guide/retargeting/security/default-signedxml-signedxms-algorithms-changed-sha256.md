@@ -3,8 +3,8 @@ ms.openlocfilehash: db076d6799e4de5b8610cf9c1aac79b5386a7229
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61759415"
 ---
 ### <a name="default-signedxml-and-signedxms-algorithms-changed-to-sha256"></a>Výchozí SignedXML a SignedXMS algoritmy SHA256 změnit
 

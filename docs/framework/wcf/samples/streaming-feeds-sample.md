@@ -3,11 +3,11 @@ title: Ukázka informačních kanálů streamování
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
 ms.openlocfilehash: 8b48bc5ec65d6ca30d6ffeed7ca68dc246f74d94
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779285"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tento příklad ukazuje, jak spravovat informační kanály syndikace, které obsahují velký počet položek. Na serveru, ukázka ukazuje, jak pozdržet jednotlivých <xref:System.ServiceModel.Syndication.SyndicationItem> objekty v rámci kanálu až do bezprostředně před položky jsou zapsána do datového proudu sítě.  

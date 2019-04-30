@@ -11,11 +11,11 @@ helpviewer_keywords:
 - examples [Windows Forms], tooltips
 ms.assetid: 08979ba7-dd84-477b-ab17-8d06e759be99
 ms.openlocfilehash: cf257cccd272c16c3d7c3d403456265444fc8ac8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781235"
 ---
 # <a name="how-to-change-the-delay-of-the-windows-forms-tooltip-component"></a>Postupy: Změna zpoždění komponenty Windows Forms ToolTip
 Existuje více hodnot zpoždění, které můžete nastavit pro Windows Forms <xref:System.Windows.Forms.ToolTip> komponenty. Jednotka měření pro všechny tyto vlastnosti je milisekund. <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> Vlastnost určuje, jak dlouho musí odkazovat uživatele na přidružený ovládací prvek pro řetězec popisku se zobrazí. <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> Vlastnost nastaví dobu v milisekundách, která je potřebná pro následující řetězce popis se zobrazí jako ukazatel myši přesune z jednoho ovládacího prvku ToolTip přidružené do jiného. <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> Vlastnost určuje dobu řetězec popisku se zobrazí. Tyto hodnoty můžete nastavit samostatně, nebo tak, že nastavíte hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost; zpoždění, které jsou nastaveny vlastnosti závislosti na hodnotě přiřazené k <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnost. Například, když <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> je nastavena na hodnotu N, <xref:System.Windows.Forms.ToolTip.InitialDelay%2A> je nastavena na N, <xref:System.Windows.Forms.ToolTip.ReshowDelay%2A> je nastavena na hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> rozdělené podle pět (nebo N/5), a <xref:System.Windows.Forms.ToolTip.AutoPopDelay%2A> je nastavena na hodnotu, která je pětkrát hodnotu <xref:System.Windows.Forms.ToolTip.AutomaticDelay%2A> vlastnosti (nebo 5N).  

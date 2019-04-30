@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 946096cb9510ca12bbd2cecd00099142308b072a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665365"
 ---
 ### <a name="keytips-behavior-improved-in-wpf"></a>Popisy tlačítek chování vylepšené v subsystému WPF
 

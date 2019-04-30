@@ -3,11 +3,11 @@ title: Mapování datových typů OLE DB
 ms.date: 03/30/2017
 ms.assetid: 04bcb259-59d3-4fd7-894d-4f0dd0c68069
 ms.openlocfilehash: 09fab7c5df99ffdb0aef6d32a8ad5ca1ed446d42
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772057"
 ---
 # <a name="ole-db-data-type-mappings"></a>Mapování datových typů OLE DB
 V následující tabulce jsou uvedeny odvozené [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typu pro typy dat od zprostředkovatele dat .NET Framework pro ADO a technologie OLE DB (<xref:System.Data.OleDb>). Zadaný přístupové metody pro <xref:System.Data.OleDb.OleDbDataReader> jsou také uvedeny.  

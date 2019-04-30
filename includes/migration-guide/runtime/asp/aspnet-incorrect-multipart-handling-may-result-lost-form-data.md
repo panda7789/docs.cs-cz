@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: e6b0387d9d04aa979de289ea0c5caa6c76f4d1be
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665595"
 ---
 ### <a name="aspnet-incorrect-multipart-handling-may-result-in-lost-form-data"></a>Nesprávné zpracování s více částmi. technologie ASP.NET může vést ke ztrátě dat.
 

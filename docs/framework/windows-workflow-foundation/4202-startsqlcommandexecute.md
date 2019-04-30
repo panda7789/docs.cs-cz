@@ -1,32 +1,33 @@
 ---
-title: 4202 - StartSqlCommandExecute
+title: 4202 – StartSqlCommandExecute
 ms.date: 03/30/2017
 ms.assetid: 4559f64f-c824-4075-9e7e-4710bf30f805
 ms.openlocfilehash: 09e079864369115c773c58c451fc5e0a33a3ae9f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774371"
 ---
-# <a name="4202---startsqlcommandexecute"></a>4202 - StartSqlCommandExecute
+# <a name="4202---startsqlcommandexecute"></a>4202 – StartSqlCommandExecute
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|4202|  
-|Klíčová slova|WFInstanceStore|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFInstanceStore|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že se spouští příkaz SQL.  
+ Označuje, že se zpracovává příkaz SQL.  
   
 ## <a name="message"></a>Zpráva  
- Spouštění provedení příkazu SQL: %1  
+ Spuštění příkazu SQL: %1  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|SqlCommand|xs:String|Příkaz SQL, která byla spuštěna.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|SqlCommand|xs:string|Příkaz SQL, který se spustil.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

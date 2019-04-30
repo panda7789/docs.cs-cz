@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC31019
 ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
 ms.openlocfilehash: f29eb628c079f65a520cf5e1ccd8afed549f7cad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787410"
 ---
 # <a name="unable-to-write-to-output-file-filename-error"></a>Nelze zapisovat do výstupního souboru '\<název souboru >': \<chyby >
 Došlo k potížím, vytváření souboru.  
@@ -21,9 +21,9 @@ Došlo k potížím, vytváření souboru.
   
  Běžné situace, kde je soubor otevřený výhradně jsou:  
   
--   Aplikace je již spuštěn a pomocí jeho soubory. Chcete-li tento problém vyřešit, ujistěte se, že aplikace není spuštěna.  
+- Aplikace je již spuštěn a pomocí jeho soubory. Chcete-li tento problém vyřešit, ujistěte se, že aplikace není spuštěna.  
   
--   Jiná aplikace má soubor otevřen. Chcete-li tento problém vyřešit, ujistěte se, že žádná jiná aplikace je přístup k souborům. Není vždy zřejmé aplikaci, pro kterou je přístupu k souborům; restartování počítače v takovém případě může být nejjednodušší způsob, jak aplikaci ukončit.  
+- Jiná aplikace má soubor otevřen. Chcete-li tento problém vyřešit, ujistěte se, že žádná jiná aplikace je přístup k souborům. Není vždy zřejmé aplikaci, pro kterou je přístupu k souborům; restartování počítače v takovém případě může být nejjednodušší způsob, jak aplikaci ukončit.  
   
  Pokud ani jeden z výstupních souborů projektu je označena jako jen pro čtení, tato výjimka bude vyvolána.  
   

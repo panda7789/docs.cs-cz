@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
 ms.openlocfilehash: 6bf2eb3d295f9cbf6a7e13a612d5846ceaa75ab4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345505"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778297"
 ---
 # <a name="how-to-export-metadata-from-service-endpoints"></a>Postupy: Export metadat z koncových bodů služeb
 Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.  

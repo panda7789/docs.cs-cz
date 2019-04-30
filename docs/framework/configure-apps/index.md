@@ -25,11 +25,11 @@ helpviewer_keywords:
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
 ms.openlocfilehash: 97dadfa8b7d32d4f0f981e50d6eb90ca74ecdaa3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147105"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775866"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Konfigurace aplikací pomocí konfiguračních souborů
 Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje vývojářům a správcům kontrolu a flexibilitu nad způsobem aplikace spouštět. Konfigurační soubory jsou soubory XML, které lze změnit podle potřeby. Správce může ovládat, můžete přístup k aplikaci, která chránila prostředky, které verze sestavení může aplikace používat a kde jsou umístěny objekty a vzdálené aplikace. Vývojáři mohou umístit nastavení konfiguračních souborů, takže odpadá potřeba znovu zkompilovat aplikaci pokaždé, když se změní nastavení. Tato část popisuje, co lze konfigurovat a proč konfigurace aplikace může být užitečné.  
@@ -66,7 +66,7 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
   
  Název a umístění konfiguračního souboru aplikace závisí na hostiteli aplikace, což může být jeden z následujících:  
   
--   Spustitelná-hostovaná aplikace.  
+- Spustitelná-hostovaná aplikace.  
   
      Tyto aplikace mají dva konfigurační soubory: zdrojový konfigurační soubor, který je upraven vývojářem během vývoje, a výstupní soubor, který je distribuován spolu s aplikací.  
   
@@ -74,11 +74,11 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
   
      Sada Visual Studio automaticky zkopíruje zdrojový konfigurační soubor do adresáře, kde je zkompilováno sestavení, a vytvoří výstupní konfigurační soubor, který je nasazen spolu s aplikací. V některých případech se může Visual Studio Upravit výstupní konfigurační soubor Další informace najdete v tématu [přesměrování verze sestavení na úrovni aplikace](../../../docs/framework/configure-apps/redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel) část [přesměrování verze sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md) článku.  
   
--   Aplikace hostovaná technologií ASP.NET.  
+- Aplikace hostovaná technologií ASP.NET.  
   
      Další informace o konfiguračních souborech technologie ASP.NET najdete v tématu [nastavení konfigurace ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
   
--   Aplikace hostovaná pomocí prohlížeče Internet Explorer.  
+- Aplikace hostovaná pomocí prohlížeče Internet Explorer.  
   
      Pokud má aplikace hostovaná v aplikaci Internet Explorer konfigurační soubor, je v zadané umístění tohoto souboru `<link>` značky s následující syntaxí:  
   
@@ -94,11 +94,11 @@ Rozhraní .NET Framework, prostřednictvím konfiguračních souborů, poskytuje
   
  Konfigurační soubory zabezpečení jsou umístěny zde:  
   
--   Konfigurační soubor zásad podnikové: %*runtime-install-path*%\Config\Enterprisesec.config  
+- Konfigurační soubor zásad podnikové: %*runtime-install-path*%\Config\Enterprisesec.config  
   
--   Konfigurační soubor zásad počítače: %*runtime-install-path*%\Config\Security.config  
+- Konfigurační soubor zásad počítače: %*runtime-install-path*%\Config\Security.config  
   
--   Konfigurační soubor zásad uživatele: %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
+- Konfigurační soubor zásad uživatele: %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vyhledání sestavení pomocí mechanismu DEVPATH](../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)  

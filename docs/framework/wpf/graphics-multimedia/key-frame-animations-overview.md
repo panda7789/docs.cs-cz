@@ -7,11 +7,11 @@ helpviewer_keywords:
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
 ms.openlocfilehash: eda91ab6d81150749dc542139949fb92684c0fe1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785799"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
@@ -28,11 +28,11 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
  Chcete-li animace pomocí klíčových snímků animace, proveďte následující kroky.  
   
--   Deklarace animace a určit jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, stejně jako byste to udělali pro animace od/Komu/kým.  
+- Deklarace animace a určit jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A>, stejně jako byste to udělali pro animace od/Komu/kým.  
   
--   Pro každou cílovou hodnotu vytvořit klíčový snímek příslušného typu, nastavte ho na hodnotu a <xref:System.Windows.Media.Animation.KeyTime>a přidejte ho do animace <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> kolekce.  
+- Pro každou cílovou hodnotu vytvořit klíčový snímek příslušného typu, nastavte ho na hodnotu a <xref:System.Windows.Media.Animation.KeyTime>a přidejte ho do animace <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames%2A> kolekce.  
   
--   Přidružit animaci vlastnosti, stejně jako byste to udělali s od/Komu/kým animace. Další informace o použití animace vlastnosti pomocí scénáře najdete v tématu [přehled scénářů](storyboards-overview.md).  
+- Přidružit animaci vlastnosti, stejně jako byste to udělali s od/Komu/kým animace. Další informace o použití animace vlastnosti pomocí scénáře najdete v tématu [přehled scénářů](storyboards-overview.md).  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> pro animaci <xref:System.Windows.Shapes.Rectangle> element do čtyř různých umístění.  
   
@@ -85,33 +85,33 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
   
  Hlavním účelem klíčový snímek je k určení <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A>. Každý typ klíčový snímek poskytuje tyto dvě vlastnosti.  
   
--   <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> Určuje vlastnost Cílová hodnota klíčových snímků.  
+- <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> Určuje vlastnost Cílová hodnota klíčových snímků.  
   
--   <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> Vlastnost určuje, kdy (v rámci animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>) klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> je dosaženo.  
+- <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> Vlastnost určuje, kdy (v rámci animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>) klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> je dosaženo.  
   
  Po zahájení animace klíčových snímků iteruje její klíčové snímky v pořadí určeném parametrem jejich <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnosti.  
   
--   Pokud neexistuje žádný klíčových snímků v čase 0, animace vytvoří přechod mezi aktuální hodnotu pro vlastnost target a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> první klíčové rámečku; v opačném případě animace výstupní hodnota se stane hodnotou první klíčové rámečku.  
+- Pokud neexistuje žádný klíčových snímků v čase 0, animace vytvoří přechod mezi aktuální hodnotu pro vlastnost target a <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> první klíčové rámečku; v opačném případě animace výstupní hodnota se stane hodnotou první klíčové rámečku.  
   
--   Animace vytvoří přechod mezi <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> z prvního a druhého klíčové snímky, metodou interpolace určené druhý klíčový snímek. Přechod začíná prvním klíčový snímek <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a končí, když druhé klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> je dosaženo.  
+- Animace vytvoří přechod mezi <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> z prvního a druhého klíčové snímky, metodou interpolace určené druhý klíčový snímek. Přechod začíná prvním klíčový snímek <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> a končí, když druhé klíčové rámečku <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> je dosaženo.  
   
--   Animace pokračuje, vytváření přechody mezi každé následné klíčového snímku a jeho předchozí klíčové rámečku.  
+- Animace pokračuje, vytváření přechody mezi každé následné klíčového snímku a jeho předchozí klíčové rámečku.  
   
--   Nakonec animace přechody hodnota klíčový snímek s časem na největší klíče, který se rovná nebo je menší, než se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
+- Nakonec animace přechody hodnota klíčový snímek s časem na největší klíče, který se rovná nebo je menší, než se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>.  
   
  Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je <xref:System.Windows.Duration.Automatic%2A> nebo jeho <xref:System.Windows.Media.Animation.Timeline.Duration%2A> je roven času poslední klíčový snímek animace elementy end. Jinak, pokud se animace <xref:System.Windows.Duration> je větší než klíčovým momentem poslední klíčový snímek animace obsahuje hodnotu klíčového snímku, dokud ho dosáhne konce jeho <xref:System.Windows.Duration>. Podobně jako všechny animace klíčových snímků animace používá jeho <xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A> a určí, zda jej drží konečnou hodnotu dosáhne konce jeho aktivní období. Další informace najdete v tématu [přehled chování časování](timing-behaviors-overview.md).  
   
  Následující příklad používá <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames> objekt definovaný v předchozím příkladu k předvedení jak <xref:System.Windows.Media.Animation.IKeyFrame.Value%2A> a <xref:System.Windows.Media.Animation.IKeyFrame.KeyTime%2A> vlastnosti práce.  
   
--   Výstupní hodnoty animace první klíčové rámečku okamžitě nastaví na hodnotu 0.  
+- Výstupní hodnoty animace první klíčové rámečku okamžitě nastaví na hodnotu 0.  
   
--   Druhý klíčový snímek animuje od 0 do 350. Spustí po ukončení první klíčových snímků (v době = 0 sekund) a přehraje na 2 sekundy, koncové době = 0:0:2.  
+- Druhý klíčový snímek animuje od 0 do 350. Spustí po ukončení první klíčových snímků (v době = 0 sekund) a přehraje na 2 sekundy, koncové době = 0:0:2.  
   
--   Třetí klíčový snímek animuje z 350 na 50. Začne při ukončení druhého klíčové rámečku (v době = 2 sekundy) a přehraje po dobu 5 sekund, koncové době = 0:0:7.  
+- Třetí klíčový snímek animuje z 350 na 50. Začne při ukončení druhého klíčové rámečku (v době = 2 sekundy) a přehraje po dobu 5 sekund, koncové době = 0:0:7.  
   
--   Čtvrtý klíčový snímek animuje z 50 na 200. Začne při ukončení třetí klíčových snímků (v době = 7 sekund) a přehraje na 1 sekundu koncové době = 0:0:8.  
+- Čtvrtý klíčový snímek animuje z 50 na 200. Začne při ukončení třetí klíčových snímků (v době = 7 sekund) a přehraje na 1 sekundu koncové době = 0:0:8.  
   
--   Vzhledem k tomu, <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost animace byla nastavena na 10 sekund, animace uchovává svou poslední hodnotu 2 sekundy před koncové v době = 0:0:10.  
+- Vzhledem k tomu, <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost animace byla nastavena na 10 sekund, animace uchovává svou poslední hodnotu 2 sekundy před koncové v době = 0:0:10.  
   
  [!code-xaml[keyframes_ovw_snippet#BasicKeyFrameExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyFramesIntroduction.xaml#basickeyframeexamplewholepage)]  
   
@@ -204,26 +204,26 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
 ### <a name="timespan-values"></a>Hodnoty TimeSpan  
  Můžete zadat <xref:System.TimeSpan> hodnoty k určení <xref:System.Windows.Media.Animation.KeyTime>. Hodnota by měla být větší než nebo rovna 0 a menší než doba trvání animace. Následující příklad ukazuje s určitou dobou trvání animace 10 sekund a čtyři klíčové snímky, jejichž klíče časy specifikované hodnoty času.  
   
--   První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:03.  
+- První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:03.  
   
--   Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8.  
+- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8.  
   
--   Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9.  
+- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9.  
   
--   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10.  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10.  
   
  [!code-xaml[keyframes_ovw_snippet#TimeSpanKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#timespankeytimeexample)]  
   
 ### <a name="percentage-values"></a>Procento hodnoty  
  Procentuální hodnota určuje, že klíčový snímek končí určité procento animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A>. V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], zadejte procento jako čísla následované `%` symbol. V kódu, můžete použít <xref:System.Windows.Media.Animation.KeyTime.FromPercent%2A> metoda a předat ji <xref:System.Double> procentuální hodnota. Hodnota musí být větší než nebo rovna 0 a menší nebo rovna 100 procent. Následující příklad ukazuje s určitou dobou trvání animace 10 sekund a čtyři klíčové snímky, jejichž klíče časy jsou určené jako procenta.  
   
--   První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:3.  
+- První klíčové rámečku animuje od základní hodnoty 100 přes první 3 sekundy, koncové době = 0:0:3.  
   
--   Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8 (0,8 * 10 = 8).  
+- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 3 sekund) a přehraje po dobu 5 sekund, koncové době = 0:0:8 (0,8 * 10 = 8).  
   
--   Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9 (0.9 * 10 = 9).  
+- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 8 sekund) a přehraje na 1 sekundu koncové době = 0:0:9 (0.9 * 10 = 9).  
   
--   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10 (1 * 10 = 10).  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení třetí klíčových snímků (v době = 9 sekund) a přehraje na 1 sekundu koncové době = 0:0:10 (1 * 10 = 10).  
   
  [!code-xaml[keyframes_ovw_snippet#PercentageKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#percentagekeytimeexample)]  
   
@@ -232,13 +232,13 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
  A <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A> dostupný čas klíčovým momentem stejně vydělí počtem klíčových snímků určit čas ukončení každý klíčový snímek. Následující příklad ukazuje animace s určitou dobou trvání 10 sekund a čtyři klíčové snímky krát jejichž klíče jsou zadány jako <xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>.  
   
--   První klíčové rámečku animuje od základní hodnoty 100 nad prvních 2,5 sekund koncové době = 0:0:2.5.  
+- První klíčové rámečku animuje od základní hodnoty 100 nad prvních 2,5 sekund koncové době = 0:0:2.5.  
   
--   Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 2,5 sekund) a přehraje přibližně 2,5 sekund koncové době = 0:0:5.  
+- Druhý klíčový snímek animuje ze 100 na 200. Spustí po ukončení první klíčových snímků (v době = 2,5 sekund) a přehraje přibližně 2,5 sekund koncové době = 0:0:5.  
   
--   Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 5 sekund) a přehraje 2,5 sekund koncové době = 0:0:7.5.  
+- Třetí klíčový snímek animuje z hodnoty 200 na 500. Začne při ukončení druhého klíčové rámečku (v době = 5 sekund) a přehraje 2,5 sekund koncové době = 0:0:7.5.  
   
--   Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení druhého klíčové rámečku (v době = 7.5 sekund) a přehraje 2,5 sekund koncové době = 0:0:1.  
+- Čtvrtý klíčový snímek animuje od 500 do 600. Začne při ukončení druhého klíčové rámečku (v době = 7.5 sekund) a přehraje 2,5 sekund koncové době = 0:0:1.  
   
  [!code-xaml[keyframes_ovw_snippet#UniformKeyTimeExample](~/samples/snippets/csharp/VS_Snippets_Wpf/keyframes_ovw_snippet/CS/KeyTimesExample.xaml#uniformkeytimeexample)]  
   
@@ -263,11 +263,11 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
 2. Určit, animace *celkový čas interpolace*, celkový čas potřebný animace klíčových snímků dokončete dopředné iterace.  
   
-    1.  Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> není <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Duration.Forever%2A>, interpolace celkový čas je hodnota animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost.  
+    1. Pokud se animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> není <xref:System.Windows.Duration.Automatic%2A> nebo <xref:System.Windows.Duration.Forever%2A>, interpolace celkový čas je hodnota animace <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost.  
   
-    2.  V opačném případě je největší interpolace celkový čas <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnotu zadanou mezi klíčové snímky, pokud nějaké existují.  
+    2. V opačném případě je největší interpolace celkový čas <xref:System.TimeSpan> <xref:System.Windows.Media.Animation.KeyTime> hodnotu zadanou mezi klíčové snímky, pokud nějaké existují.  
   
-    3.  V opačném případě interpolace celkový čas je 1 sekunda.  
+    3. V opačném případě interpolace celkový čas je 1 sekunda.  
   
 3. Celkový počet interpolace časovou hodnotu použijte k vyřešení <xref:System.Windows.Media.Animation.KeyTimeType.Percent> <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   

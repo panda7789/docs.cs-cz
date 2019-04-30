@@ -6,11 +6,11 @@ helpviewer_keywords:
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
 ms.openlocfilehash: c6e1863850ebf04408c7ffc7b784e9ca3ca12cf5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59078015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778997"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Zpracování událostí v jazyku Visual Basic a WPF
 Pro jazyk Microsoft Visual Basic .NET, můžete použít konkrétní jazyk `Handles` – klíčové slovo k přidružení obslužné rutiny události instance, místo připojování obslužné rutiny události s atributy nebo použití <xref:System.Windows.UIElement.AddHandler%2A> metody. Ale `Handles` techniku pro připojení k instancím obslužných rutin mají určitá omezení, protože `Handles` syntaxe nemůže zajišťovat podporu pro některé funkce konkrétní směrované události [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém událostí.  

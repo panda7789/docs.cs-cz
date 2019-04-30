@@ -13,20 +13,20 @@ helpviewer_keywords:
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
 ms.openlocfilehash: 4ae2366552426af0107c8d7a35bb5368fe30c8a7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791960"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
 Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici procedury. Platí následující pravidla:  
   
--   Každý volitelný parametr v definici procedury musí mít výchozí hodnotu.  
+- Každý volitelný parametr v definici procedury musí mít výchozí hodnotu.  
   
--   Výchozí hodnota volitelného parametru musí být konstantní výraz.  
+- Výchozí hodnota volitelného parametru musí být konstantní výraz.  
   
--   Každý parametr, který v definici procedury následuje za volitelným parametrem, musí být také volitelný.  
+- Každý parametr, který v definici procedury následuje za volitelným parametrem, musí být také volitelný.  
   
  Následující syntaxe znázorňuje deklaraci procedury s volitelným parametrem:  
   

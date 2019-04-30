@@ -3,11 +3,11 @@ title: <transport> z <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
 ms.openlocfilehash: ea025751020d6d98292f6bc3ecfe9421af0cb793
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788216"
 ---
 # <a name="transport-of-wshttpbinding"></a>\<přenos > z \<wsHttpBinding >
 
@@ -40,7 +40,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 </wsHttpBinding>
 ```
 
-## <a name="type"></a>Typ
+## <a name="type"></a>Type
 
 <xref:System.ServiceModel.HttpTransportSecurity>
 
@@ -59,7 +59,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
 |`None`|Zabezpečení je zakázaná.|
 |`Basic`|Používá základní ověřování.|
@@ -70,7 +70,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute
 
-|Hodnota|Popis|
+|Value|Popis|
 |-----------|-----------------|
 |`None`|Zabezpečení je zakázaná.|
 |`Basic`|Používá základní ověřování.|

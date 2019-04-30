@@ -3,11 +3,11 @@ title: Uchování objektu v sadě Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
 ms.openlocfilehash: 55ad2049003baaed26f4db909ae466aefdd161e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61783471"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>Návod: Uchování objektu v sadě Visual Studio (Visual Basic)
 V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, všechny hodnoty zadané v době běhu budou ztraceny, pokud objekt je zničen. Serializace můžete použít k uchování dat objektu mezi instancemi, které vám umožní uložení hodnot a načíst je další čas, který je vytvořena instance objektu.  
@@ -127,7 +127,7 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-mark-a-class-as-serializable"></a>Chcete-li označit třídu jako serializovatelný  
   
--   Změňte deklaraci třídy pro třídu půjčky následujícím způsobem:  
+- Změňte deklaraci třídy pro třídu půjčky následujícím způsobem:  
   
     ```vb  
     <Serializable()>  
@@ -138,7 +138,7 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-prevent-a-member-from-being-serialized"></a>Chcete-li zabránit serializována člena  
   
--   Změna deklarace `PropertyChanged` událostí následujícím způsobem:  
+- Změna deklarace `PropertyChanged` událostí následujícím způsobem:  
   
     ```vb  
     <NonSerialized()>  
@@ -150,7 +150,7 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-add-references-to-namespaces"></a>Chcete-li přidat odkazy na obory názvů  
   
--   Přidejte následující příkazy k hornímu okraji `Form1` třídy:  
+- Přidejte následující příkazy k hornímu okraji `Form1` třídy:  
   
     ```vb  
     Imports System.IO  
@@ -197,7 +197,7 @@ V době návrhu, je možné nastavit na výchozí hodnoty vlastností objektu, v
   
 ### <a name="to-save-the-data-and-serialize-the-class"></a>Chcete uložit data a serializaci třídy  
   
--   Přidejte následující kód, který `Form1_FormClosing` procedury události:  
+- Přidejte následující kód, který `Form1_FormClosing` procedury události:  
   
     ```vb  
     Private Sub Form1_FormClosing() Handles MyBase.FormClosing  

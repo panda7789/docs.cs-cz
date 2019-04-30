@@ -11,11 +11,11 @@ helpviewer_keywords:
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
 ms.openlocfilehash: fb91d4b413db512021b90f0d4ba3049fe7333601
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59123786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773230"
 ---
 # <a name="packaging-fonts-with-applications"></a>Balení písem s aplikacemi
 Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.  
@@ -158,17 +158,17 @@ Toto téma poskytuje přehled o tom balení písem za použití vaší [!INCLUDE
 ## <a name="limitations-on-font-usage"></a>Omezení týkající se použití písem  
  Následující seznam popisuje několik omezení na balení a použití písem v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace:  
   
--   **Písmo vkládání bity oprávnění:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace zkontrolovat nebo jakékoli písmo vkládání bity oprávnění vynutit. Zobrazit [Introduction_to_Packing písma](#introduction_to_packaging_fonts) části Další informace.  
+- **Písmo vkládání bity oprávnění:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace zkontrolovat nebo jakékoli písmo vkládání bity oprávnění vynutit. Zobrazit [Introduction_to_Packing písma](#introduction_to_packaging_fonts) části Další informace.  
   
--   **Lokality původu písma:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace neumožňují písma odkaz na http nebo ftp [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].  
+- **Lokality původu písma:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace neumožňují písma odkaz na http nebo ftp [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)].  
   
--   **Absolutní identifikátor URI pomocí balíčku: zápis:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace vytvářet neumožňují <xref:System.Windows.Media.FontFamily> prostřednictvím kódu programu pomocí "aktualizací Service pack:" jako součást absolutní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkaz na písmo. Například `"pack://application:,,,/resources/#Pericles Light"` je odkaz na neplatné písmo.  
+- **Absolutní identifikátor URI pomocí balíčku: zápis:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace vytvářet neumožňují <xref:System.Windows.Media.FontFamily> prostřednictvím kódu programu pomocí "aktualizací Service pack:" jako součást absolutní [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] odkaz na písmo. Například `"pack://application:,,,/resources/#Pericles Light"` je odkaz na neplatné písmo.  
   
--   **Vkládání automatické písma:** V době návrhu není dostupná podpora pro vyhledávání aplikace použití písem a automaticky vložení písma do aplikace prostředků.  
+- **Vkládání automatické písma:** V době návrhu není dostupná podpora pro vyhledávání aplikace použití písem a automaticky vložení písma do aplikace prostředků.  
   
--   **Podsady písma:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace nepodporují vytváření podsady písma pro nepevnou dokumenty.  
+- **Podsady písma:** [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace nepodporují vytváření podsady písma pro nepevnou dokumenty.  
   
--   V případech, kde je nesprávný odkaz, aplikace přejde k použití dostupné písmo.  
+- V případech, kde je nesprávný odkaz, aplikace přejde k použití dostupné písmo.  
   
 ## <a name="see-also"></a>Viz také:
 

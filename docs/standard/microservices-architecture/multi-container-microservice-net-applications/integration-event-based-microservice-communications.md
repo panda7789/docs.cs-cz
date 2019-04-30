@@ -1,17 +1,17 @@
 ---
-title: Implementace komunikace mezi mikroslužbami (události integrace) na základě událostí
+title: Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Principy integrace událostí k implementaci založený na událostech komunikace mezi mikroslužbami.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
 ms.openlocfilehash: b451d896186ffb650e495c10786106c37ab16131
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773555"
 ---
-# <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami (události integrace) na základě událostí
+# <a name="implementing-event-based-communication-between-microservices-integration-events"></a>Implementace komunikace mezi mikroslužbami založené na událostech (události integrace)
 
 Jak je popsáno výše, při použití komunikace na základě událostí, mikroslužby publikuje událost v případě určité významné události, jako je například při aktualizaci obchodní entitě. Další mikroslužeb přihlášení k odběru těchto událostí. Událost přijetí mikroslužba je aktualizovat své vlastní obchodní entity, které by mohly vést k další události publikování. Je podstata konceptu konečné konzistence. Tento systém publikování/odběr se obvykle provádí pomocí implementace sběrnice událostí. Service bus události lze navrhnout jako rozhraní s rozhraním API, třeba pro předplatné a odhlášení odběru událostí a k publikování událostí. Také může mít jeden nebo více implementací podle jakékoli mezi procesy nebo zasílání zpráv komunikace, jako jsou fronty zasílání zpráv nebo Azure service bus, která podporuje asynchronní komunikace a modelu publikování a přihlášení k odběru.
 

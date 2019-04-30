@@ -3,21 +3,21 @@ title: Formátování transakcí
 ms.date: 03/30/2017
 ms.assetid: 727b3f1c-fffa-4753-bc76-713e331c631a
 ms.openlocfilehash: 99e4a993cbce32d87188d44197502909af62cf93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33472096"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777270"
 ---
 # <a name="transaction-formatter"></a>Formátování transakcí
-Toto téma uvádí všechny výjimky generované formátování transakcí.  
+Toto téma uvádí všechny výjimky generované formátovací modul transakce.  
   
 ## <a name="exception"></a>Výjimka  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|TMCommunicationError|Došlo k chybě při komunikaci se službou Správce distribuovaných transakcí.|  
-|WhereaboutsNoHostName|Informace o umístění služby MSDTC neobsahuje název hostitele.|  
-|WhereaboutsReadFailed|Informace o umístění služby MSDTC nelze je deserializovat.|  
-|WhereaboutsSignatureMissing|Informace o umístění služby MSDTC chyběl podpis standardní umístění.|  
-|WsatUriCreationFailed|Adresu registrační služby se nezdařilo z informace o umístění služby MS DTC.|
+|TMCommunicationError|Při komunikaci se správcem distribuovaných transakcí došlo k chybě.|  
+|WhereaboutsNoHostName|Informace o umístění MSDTC neobsahovaly název hostitele.|  
+|WhereaboutsReadFailed|Informace o umístění MSDTC nebyly deserializovány.|  
+|WhereaboutsSignatureMissing|Informace o umístění MSDTC chyběl standardní umístění podpis.|  
+|WsatUriCreationFailed|Z informace o umístění MSDTC nelze vytvořit adresu registrační služby.|

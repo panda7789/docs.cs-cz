@@ -5,13 +5,13 @@ author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
 ms.openlocfilehash: 8ad354e1708eb88f016130f8235f534b967eb122
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776009"
 ---
-# <a name="durable-azure-functions"></a>Odolná služba Azure functions
+# <a name="durable-azure-functions"></a>Odolné funkce Azure
 
 Při vytváření aplikace bez serveru s využitím Azure Functions, vaše operace obvykle navrženy ke spuštění v podobě bezstavové. I důvod vybraného návrhu tohoto je, protože jako platformu měřítka, bude obtížné vědět, jaké servery je kód spuštěn na. Také bude obtížné zjistit, kolik instancí jsou aktivní v libovolném časovém okamžiku. Existují však třídy aplikace, které vyžadují aktuální stav procesu být známý. Berte v úvahu proces odeslání objednávky na online obchod. Operace rezervace může být pracovní postup, který se skládá z více operací, které potřebujete znát stav procesu. Tyto informace mohou zahrnovat inventář produktů, pokud má zákazník jakékoli kredity na svůj účet a také výsledky zpracování platební karty. Tyto operace může být snadno vlastní interní pracovní postupy nebo dokonce services ze systémů jiných výrobců.
 

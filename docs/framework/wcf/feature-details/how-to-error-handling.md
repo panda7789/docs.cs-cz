@@ -6,8 +6,8 @@ ms.openlocfilehash: 3752e358230b76d8984fa8e6a2ded43ad0eb2c6c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772967"
 ---
 # <a name="how-to-error-handling"></a>Postupy: Zpracování chyb
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která používá zpracování chyb. V tomto příkladu zprávy jsou směrovány do cílového koncového bodu. Pokud zprávu nelze doručit z důvodu sítě nebo selhání týkajícího se komunikace (<xref:System.ServiceModel.CommunicationException>), zpráva se znovu odeslat do alternativní koncový bod.  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
 ms.openlocfilehash: 9728f3caee4dba367e4fc4a3e68213b1055cc3d1
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57362952"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793780"
 ---
 # <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
 Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.  
@@ -28,7 +28,7 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádná  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -37,7 +37,7 @@ Konfigurační oddíl pro ověřování pomocí protokolu WS-Federation.
 |[\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> z modulů HTTP (SAM).|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
- Žádná  
+ Žádné  
   
 ## <a name="remarks"></a>Poznámky  
  Přidat `<system.identityModel.services>` části do konfiguračního souboru aplikace k poskytování nastavení SAM a WSFAM.  

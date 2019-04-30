@@ -12,28 +12,28 @@ helpviewer_keywords:
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
 ms.openlocfilehash: 56d3e3cad09b46090a11b884f3ac590e8d4ba23a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773097"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimalizace výkonu: Další doporučení
 <a name="introduction"></a> Toto téma obsahuje doporučení k výkonu kromě těch, které jsou předmětem témata v [optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md) oddílu.  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Míra průhlednosti na štětce a krytí u elementů](#Opacity)  
+- [Míra průhlednosti na štětce a krytí u elementů](#Opacity)  
   
--   [Navigace na objekt](#Navigation_Objects)  
+- [Navigace na objekt](#Navigation_Objects)  
   
--   [Testování na velké 3D površích průchodu](#Hit_Testing)  
+- [Testování na velké 3D površích průchodu](#Hit_Testing)  
   
--   [CompositionTarget.Rendering události](#CompositionTarget_Rendering_Event)  
+- [CompositionTarget.Rendering události](#CompositionTarget_Rendering_Event)  
   
--   [Vyhněte se použití scrollbarvisibility – = Auto](#Avoid_Using_ScrollBarVisibility)  
+- [Vyhněte se použití scrollbarvisibility – = Auto](#Avoid_Using_ScrollBarVisibility)  
   
--   [Konfigurace služby mezipaměti písma zkrátit čas spuštění](#FontCache)  
+- [Konfigurace služby mezipaměti písma zkrátit čas spuštění](#FontCache)  
   
 <a name="Opacity"></a>   
 ## <a name="opacity-on-brushes-versus-opacity-on-elements"></a>Míra průhlednosti na štětce a krytí u elementů  

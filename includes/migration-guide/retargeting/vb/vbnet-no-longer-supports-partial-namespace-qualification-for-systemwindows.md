@@ -3,8 +3,8 @@ ms.openlocfilehash: 8db115a46df3fcea103e8fa6896542d0116aa256
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61639470"
 ---
 ### <a name="vbnet-no-longer-supports-partial-namespace-qualification-for-systemwindows-apis"></a>VB.NET už nepodporuje kvalifikace částečné obor názvů System.Windows rozhraní API
 

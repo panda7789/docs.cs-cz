@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 65d9edc1e7377a86f8185ebf28bb5bee3a3f887d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59235282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649006"
 ---
 ### <a name="sqlconnectionopen-fails-on-windows-7-with-non-ifs-winsock-bsp-or-lsp-present"></a>SqlConnection.Open selhání ve Windows 7 s IFS Winsock BSP nebo LSP k dispozici
 

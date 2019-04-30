@@ -3,11 +3,11 @@ title: <transport> z <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
 ms.openlocfilehash: a6d3dd2c24e90bdcdc6520e62dcc1dbe7ce797f9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788346"
 ---
 # <a name="transport-of-netnamedpipebinding"></a>\<transport> of \<netNamedPipeBinding>
 Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.  
@@ -41,7 +41,7 @@ Definuje nastavení zabezpečení přenosu pro pojmenovaný kanál.
 |Třída protectionLevel|Definuje úroveň ochrany pojmenovaného kanálu. Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů. Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />– Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou zašifrovaná a podepsaná.<br /><br /> Výchozí hodnota je EncryptAndSign.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
 ms.openlocfilehash: fc38d239720b5d5a8e159f91749b03512568cd9b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776256"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Postupy: Diagnostika problematické tiskové úlohy
 Správci sítě často pole stížností od uživatelů o tiskové úlohy, které vytisknout nebo vytisknout pomalu. Bohaté sadě vlastností tiskovou úlohu v [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] Microsoft .NET Framework poskytují způsob pro provádění rychlé vzdálené diagnostiky tiskových úloh.  
@@ -25,13 +25,13 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
   
 1. Identifikujte tiskové úlohy, která je stěžovat uživatele. Uživatelé často nelze provést přesně. Názvy tiskáren nebo tiskových serverů, které nemusí znají. Může popisu umístění tiskárny v odlišnou terminologii, než se používá v nastavení jeho <xref:System.Printing.PrintQueue.Location%2A> vlastnost. Proto je vhodné vytvořit seznam uživatele aktuálně odeslaných úloh. Pokud existuje více než jeden, pak komunikace mezi uživatelem a správce tiskovém systému slouží ke kotvícímu bodu na úlohu, problémy. Dílčí kroky jsou následující.  
   
-    1.  Získáte seznam všech tiskových serverů.  
+    1. Získáte seznam všech tiskových serverů.  
   
-    2.  Projít servery, které chcete dotazovat jejich tiskové fronty.  
+    2. Projít servery, které chcete dotazovat jejich tiskové fronty.  
   
-    3.  V každém průchodu server smyčky projděte všechny server fronty a dotazování svých úloh  
+    3. V každém průchodu server smyčky projděte všechny server fronty a dotazování svých úloh  
   
-    4.  V každém průchodu fronty smyčky projít jeho úlohy a shromážděte identifikační informace o těch, které byly předány žalující uživatelem.  
+    4. V každém průchodu fronty smyčky projít jeho úlohy a shromážděte identifikační informace o těch, které byly předány žalující uživatelem.  
   
 2. Pokud byla zjištěna problematické tiskové úlohy, podívejte se na relevantní vlastnosti chcete zobrazit, co může být problém. Například je úloha ve stavu chyby nebo nebyla Údržba tiskárny fronty přejít do režimu offline, než má úloha může vytisknout?  
   
@@ -49,9 +49,9 @@ Správci sítě často pole stížností od uživatelů o tiskové úlohy, kter�
   
  V tomto okamžiku aplikace obsahuje strukturu větvení odpovídající na dva způsoby, jak kontroluje se stav tiskové úlohy:  
   
--   Můžete si přečíst příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, která je typu <xref:System.Printing.PrintJobStatus>.  
+- Můžete si přečíst příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost, která je typu <xref:System.Printing.PrintJobStatus>.  
   
--   Můžete si přečíst každý relevantní vlastnosti, jako <xref:System.Printing.PrintSystemJobInfo.IsBlocked%2A> a <xref:System.Printing.PrintSystemJobInfo.IsInError%2A>.  
+- Můžete si přečíst každý relevantní vlastnosti, jako <xref:System.Printing.PrintSystemJobInfo.IsBlocked%2A> a <xref:System.Printing.PrintSystemJobInfo.IsInError%2A>.  
   
  Tento příklad ukazuje obě metody, uživateli se zobrazí výzva, jakou metodu použít a odpověděl zprávou "Y", pokud uživatel chce použít příznaky z <xref:System.Printing.PrintSystemJobInfo.JobStatus%2A> vlastnost. Níže naleznete podrobnosti ze dvou způsobů. A konečně aplikace používá metodu nazvanou **ReportQueueAndJobAvailability** zprávu o tom, jestli lze vytisknout úlohy v této denní době. Tato metoda je popsána v [zjistit, jestli tisk úlohy můžete být vytisknout na tento denní dobu](how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day.md).  
   

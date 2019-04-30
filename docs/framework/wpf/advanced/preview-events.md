@@ -8,11 +8,11 @@ helpviewer_keywords:
 - events [WPF], suppressing
 ms.assetid: b5032308-aa9c-4d02-af11-630ecec8df7e
 ms.openlocfilehash: 75165df94aa8b508ef85cf970933efb98b9d62ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772870"
 ---
 # <a name="preview-events"></a>Události náhledu
 Události náhledu, označované také jako tunelové propojení událostí, jsou směrované události kde směru trasy, která přenáší z kořenového adresáře aplikace směrem k elementu, který vyvolal událost a hlásí jako zdroj dat události. Ne všechny události scénáře podporovalo nebo vyžadovalo události ve verzi preview. Toto téma popisuje situace, kdy události náhledu existují, způsob, jakým aplikace nebo součásti pracovat, a případy, kdy vytváření událostí ve verzi preview ve vlastních součástech nebo třídy může být vhodné.  

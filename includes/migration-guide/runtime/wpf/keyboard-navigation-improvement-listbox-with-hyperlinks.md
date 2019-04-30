@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8797ea76e529d501fb492623cd270e0437c70193
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665585"
 ---
 ### <a name="keyboard-navigation-improvement-in-listbox-with-hyperlinks"></a>Vylepšení navigace klávesnice seznam s hypertextovými odkazy
 

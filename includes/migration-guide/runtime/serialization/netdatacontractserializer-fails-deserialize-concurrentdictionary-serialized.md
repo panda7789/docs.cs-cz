@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 380f662349a8dcd04e5bf445e1479d0a32d5861f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59235299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61648998"
 ---
 ### <a name="netdatacontractserializer-fails-to-deserialize-a-concurrentdictionary-serialized-with-a-different-net-version"></a>NetDataContractSerializer se nepodařilo deserializovat ConcurrentDictionary serializovat s příznakem jinou verzi rozhraní .NET
 

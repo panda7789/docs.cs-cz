@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 7252936bd716752208abc54b4ae4bc9e23be092f
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665591"
 ---
 ### <a name="net-interop-will-now-queryinterface-for-iagileobject-a-winrt-interface"></a>Zprostředkovatel komunikace s objekty .NET bude nyní QueryInterface pro IAgileObject (rozhraní WinRT)
 

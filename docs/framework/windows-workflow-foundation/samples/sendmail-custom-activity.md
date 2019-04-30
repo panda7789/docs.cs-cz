@@ -3,11 +3,11 @@ title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
 ms.openlocfilehash: 89252098402deee991ea01b8e76082a5f4b8c389
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321858"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785941"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z <xref:System.Activities.AsyncCodeActivity> k odesílání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronní odeslání e-mailu a odesílání e-mailu s ověřováním. Poskytuje také některé funkce koncových uživatelů, jako je režim, nahrazování tokenů, soubor šablony a testujte cestu pro přetažení.  
@@ -21,7 +21,7 @@ Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z 
 |enableSsl|bool|Určuje, zda <xref:System.Net.Mail.SmtpClient> vrstvy SSL (Secure Sockets) používá k šifrování připojení.|  
 |UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
 |Heslo|String|Heslo k nastavení pověření pro ověření odesílatel <xref:System.Net.Mail.SmtpClient.Credentials%2A> vlastnost.|  
-|Subjekt|<xref:System.Activities.InArgument%601>\<řetězec >|Předmět zprávy.|  
+|Subject|<xref:System.Activities.InArgument%601>\<řetězec >|Předmět zprávy.|  
 |Tělo|<xref:System.Activities.InArgument%601>\<řetězec >|Text zprávy.|  
 |Přílohy|<xref:System.Activities.InArgument%601>\<řetězec >|Kolekce přílohy sloužící k ukládání dat, které jsou připojené k této e-mailové zprávy.|  
 |From|<xref:System.Net.Mail.MailAddress>|Z adresy pro tento e-mailové zprávy.|  
@@ -107,13 +107,13 @@ new SendMail
   
  Další informace o nastavení serveru SMTP najdete na následujících odkazech.  
   
--   [Microsoft Technet](https://go.microsoft.com/fwlink/?LinkId=166060)  
+- [Microsoft Technet](https://go.microsoft.com/fwlink/?LinkId=166060)  
   
--   [Konfigurace SMTP služby (IIS 6.0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
+- [Konfigurace SMTP služby (IIS 6.0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
   
--   [IIS 7.0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
+- [IIS 7.0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
   
--   [Jak nainstalovat službu SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
+- [Jak nainstalovat službu SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
   
  Emulátory SMTP třetích stran jsou k dispozici ke stažení.  
   

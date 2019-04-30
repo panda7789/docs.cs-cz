@@ -5,11 +5,11 @@ helpviewer_keywords:
 - modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
 ms.openlocfilehash: 0bb33b102358fd2d0290fd413b09448255522856
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778648"
 ---
 # <a name="modules-visual-basic"></a>Moduly (Visual Basic)
 Visual Basic poskytuje několik modulů, které vám umožní zjednodušit běžných úloh ve vašem kódu, včetně manipulace s řetězci, provádění matematických výpočtů, získávání informací o systému, provádění operací souborů a adresářů a tak dále. V následující tabulce jsou uvedeny v modulech jazyka Visual Basic.  

@@ -3,11 +3,11 @@ title: <transport> z <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
 ms.openlocfilehash: a1540b53d4af76141c1daee60a6bddbbecd9d6da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59153865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788294"
 ---
 # <a name="transport-of-ws2007httpbinding"></a>\<přenos > z \<ws2007HttpBinding >
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
@@ -43,7 +43,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Žádné|Zabezpečení je zakázaná.|  
 |Základní|Používá základní ověřování.|  
@@ -54,7 +54,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádné|Zabezpečení je zakázaná.|  
 |Základní|Používá základní ověřování.|  
@@ -64,7 +64,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 |Certifikát|Certifikáty X.509 používá k ověření klienta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

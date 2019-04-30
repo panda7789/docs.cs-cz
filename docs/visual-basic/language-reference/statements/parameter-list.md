@@ -11,11 +11,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], parameter lists
 ms.assetid: 5d737319-0c34-4df9-a23d-188fc840becd
 ms.openlocfilehash: 651f08812032aa1c5aacc04fdb3d7f491f12b607
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784004"
 ---
 # <a name="parameter-list-visual-basic"></a>Seznam parametrů (Visual Basic)
 Určuje parametry, které procedura očekává, že když je volána. Více parametrů jsou odděleny čárkami. Následuje syntaxe pro jeden parametr.  
@@ -63,23 +63,23 @@ parametername[( )] [ As parametertype ] [ = defaultvalue ]
   
 ## <a name="rules"></a>pravidla  
   
--   **Závorky.** Pokud zadáte seznam parametrů, je nutné uzavřít do závorek. Pokud neexistují žádné parametry, můžete stále použít závorky uzavírající prázdný seznam. To zlepšuje čitelnost kódu bylo zcela zřejmé, že elementu je procedura.  
+- **Závorky.** Pokud zadáte seznam parametrů, je nutné uzavřít do závorek. Pokud neexistují žádné parametry, můžete stále použít závorky uzavírající prázdný seznam. To zlepšuje čitelnost kódu bylo zcela zřejmé, že elementu je procedura.  
   
--   **Volitelné parametry.** Pokud používáte `Optional` modifikátor parametru, všechny následné parametry v seznamu musí být také volitelný a deklarovaná příkazem using `Optional` modifikátor.  
+- **Volitelné parametry.** Pokud používáte `Optional` modifikátor parametru, všechny následné parametry v seznamu musí být také volitelný a deklarovaná příkazem using `Optional` modifikátor.  
   
      Každý volitelný parametr prohlášení musí zadat `defaultvalue` klauzuli.  
   
      Další informace najdete v tématu [volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md).  
   
--   **Pole parametrů.** Je nutné zadat `ByVal` pro `ParamArray` parametru.  
+- **Pole parametrů.** Je nutné zadat `ByVal` pro `ParamArray` parametru.  
   
      Nelze použít obě `Optional` a `ParamArray` ve stejném seznamu parametrů.  
   
      Další informace najdete v tématu [pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
   
--   **Předávání mechanismus.** Výchozí mechanismus pro každý argument je `ByVal`, což znamená, že proces nelze změnit základní prvek proměnné. Ale pokud elementu je typem odkazu, postup můžete upravit obsah nebo členy základní objekt, i když ho nelze nahradit nebo změna přiřazení samotného objektu.  
+- **Předávání mechanismus.** Výchozí mechanismus pro každý argument je `ByVal`, což znamená, že proces nelze změnit základní prvek proměnné. Ale pokud elementu je typem odkazu, postup můžete upravit obsah nebo členy základní objekt, i když ho nelze nahradit nebo změna přiřazení samotného objektu.  
   
--   **Názvy parametrů.** Pokud parametr datový typ je pole, postupujte podle `parametername` okamžitě v závorkách. Další informace o názvy parametrů najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+- **Názvy parametrů.** Pokud parametr datový typ je pole, postupujte podle `parametername` okamžitě v závorkách. Další informace o názvy parametrů najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje `Function` proceduru, která definuje dva parametry.  

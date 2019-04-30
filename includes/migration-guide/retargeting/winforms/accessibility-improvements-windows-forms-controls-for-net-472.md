@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 4859604074ae1b5ead7a32a366244ef594a24388
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762543"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-472"></a>Vylepšení přístupnosti v ovládacích prvcích Windows Forms pro rozhraní .NET 4.7.2
 

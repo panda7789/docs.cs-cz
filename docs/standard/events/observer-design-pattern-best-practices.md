@@ -9,11 +9,11 @@ ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 839772fac51ab006d03875920360824a73b033e2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54599995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770393"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Doporučené postupy pro návrhový vzor Pozorovatel
 V rozhraní .NET Framework návrhový vzor pozorovatel implementované jako sada rozhraní. <xref:System.IObservable%601?displayProperty=nameWithType> Rozhraní představuje poskytovatele dat, který je také odpovídají za poskytování <xref:System.IDisposable> implementace, která umožňuje zrušit odběr oznámení pozorovatele. <xref:System.IObserver%601?displayProperty=nameWithType> Rozhraní představuje pozorovatele. Toto téma popisuje osvědčené postupy, které vývojáři by měly dodržovat při implementaci návrhový vzor pozorovatel pomocí těchto rozhraní.  
@@ -31,11 +31,11 @@ V rozhraní .NET Framework návrhový vzor pozorovatel implementované jako sada
   
  Poskytovatel by měl postupujte podle těchto osvědčených postupů při zpracování výjimek a volání <xref:System.IObserver%601.OnError%2A> metody:  
   
--   Zprostředkovatel musí zpracovávat své vlastní výjimky, pokud nemá žádné zvláštní požadavky.  
+- Zprostředkovatel musí zpracovávat své vlastní výjimky, pokud nemá žádné zvláštní požadavky.  
   
--   Poskytovatel by neměl neočekává ani nevyžaduje, pozorovatelé zpracování výjimek v konkrétním způsobem.  
+- Poskytovatel by neměl neočekává ani nevyžaduje, pozorovatelé zpracování výjimek v konkrétním způsobem.  
   
--   Poskytovatel by měly volat <xref:System.IObserver%601.OnError%2A> metoda při zpracování výjimku, která ohrožuje schopnost poskytovat aktualizace. Informace o takové výjimky může být předán pozorovatele. V ostatních případech není nutné upozornit pozorovatelů výjimku.  
+- Poskytovatel by měly volat <xref:System.IObserver%601.OnError%2A> metoda při zpracování výjimku, která ohrožuje schopnost poskytovat aktualizace. Informace o takové výjimky může být předán pozorovatele. V ostatních případech není nutné upozornit pozorovatelů výjimku.  
   
  Po volání zprostředkovatele <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> metoda, měla by existovat žádná další upozornění a zprostředkovatele můžete zrušit jeho pozorovatelů. Ale pozorovatelů můžete také kdykoli sami, včetně před a po přijetí <xref:System.IObserver%601.OnError%2A> nebo <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> oznámení. Návrhový vzor pozorovatel není určovat, zda zprostředkovatel nebo pozorovatel zodpovídá za registraci; Proto je možné, že oba může pokus o odhlášení odběru. Obvykle když pozorovatelů zrušení odběru, jsou odebrány z kolekce předplatitele. V aplikaci s jedním vláknem <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace se ujistěte, že je odkaz na objekt platný a že objekt je členem kolekce předplatitele před pokusem o jeho odstranění. Ve vícevláknových aplikacích kolekce bezpečné pro vlákna objektu, například <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> objektu, by měla sloužit.  
   
@@ -44,9 +44,9 @@ V rozhraní .NET Framework návrhový vzor pozorovatel implementované jako sada
   
  Pozorovatel by měl dodržovat tyto osvědčené postupy při odpovídání na <xref:System.IObserver%601.OnError%2A> volání metody ze zprostředkovatele:  
   
--   Pozorovatel by neměla vyvolávat výjimky z jeho implementací rozhraní, jako například <xref:System.IObserver%601.OnNext%2A> nebo <xref:System.IObserver%601.OnError%2A>. Pokud pozorovatel vyvolat výjimky, ho byste však očekávat tyto výjimky přejít neošetřená.  
+- Pozorovatel by neměla vyvolávat výjimky z jeho implementací rozhraní, jako například <xref:System.IObserver%601.OnNext%2A> nebo <xref:System.IObserver%601.OnError%2A>. Pokud pozorovatel vyvolat výjimky, ho byste však očekávat tyto výjimky přejít neošetřená.  
   
--   Pro zachování zásobník volání, pozorovatele, který chce throw <xref:System.Exception> objekt, který byl předán jeho <xref:System.IObserver%601.OnError%2A> metoda zalamován výjimky před vyvoláním ho. Standardní výjimka objektu by měla sloužit pro tento účel.  
+- Pro zachování zásobník volání, pozorovatele, který chce throw <xref:System.Exception> objekt, který byl předán jeho <xref:System.IObserver%601.OnError%2A> metoda zalamován výjimky před vyvoláním ho. Standardní výjimka objektu by měla sloužit pro tento účel.  
   
 ## <a name="additional-best-practices"></a>Další doporučené postupy  
  Pokus o zrušení registrace v <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> metoda může mít za následek odkaz s hodnotou null. Proto doporučujeme, abyste tento postup.  

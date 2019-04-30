@@ -1,34 +1,34 @@
 ---
-title: 39459 - TrackingDataExtracted
+title: 39459 – TrackingDataExtracted
 ms.date: 03/30/2017
 ms.assetid: fcf7be96-8a7b-4ae1-bf38-b77ea9ebfb6b
 ms.openlocfilehash: 04fefaa987e311b4a0bf7fdf6ada6100f1685b3a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33511319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774397"
 ---
-# <a name="39459---trackingdataextracted"></a>39459 - TrackingDataExtracted
+# <a name="39459---trackingdataextracted"></a>39459 – TrackingDataExtracted
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|39459|  
-|Klíčová slova|WFRuntime|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFRuntime|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že data sledování extrahovat v aktivitě.  
+ Označuje, že data sledování extrahována v aktivitě.  
   
 ## <a name="message"></a>Zpráva  
- Sledování dat %1 extrahovat aktivity %2.  
+ Sledovací data %1 extrahovaná v aktivitě %2.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Data|xs:String|Název týkající se dat extrahovaných.|  
-|Aktivita|xs:String|Název aktivity.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|Data|xs:string|Název pro data extrahovaná.|  
+|Aktivita|xs:string|Název aktivity.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

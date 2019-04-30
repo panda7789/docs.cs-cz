@@ -16,11 +16,11 @@ ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 14dc09ff8ceaa5e754c2a8ee64846fbcac55e37f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59221098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779935"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (nástroj Certificate Manager)
 Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy důvěryhodných certifikátů (CTL) a seznamy odvolaných certifikátů (CRL).  
@@ -75,13 +75,13 @@ Nástroj Správce certifikátů (Certmgr.exe) spravuje certifikáty, seznamy dů
 ## <a name="remarks"></a>Poznámky  
  Nástroj Certmgr.exe vykonává následující základní funkce:  
   
--   Zobrazí certifikáty, soubory CTL a CRL do konzoly.  
+- Zobrazí certifikáty, soubory CTL a CRL do konzoly.  
   
--   Přidá certifikáty, soubory CTL a CRL do úložiště certifikátů.  
+- Přidá certifikáty, soubory CTL a CRL do úložiště certifikátů.  
   
--   Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.  
+- Odstraní certifikáty, soubory CTL a CRL z úložiště certifikátů.  
   
--   Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů.  
+- Uloží do souboru certifikát X.509, soubor CTL nebo CRL z úložiště certifikátů.  
   
  Certmgr.exe pracuje se dvěma typy úložišť certifikátů: **StoreFile** a systémové úložiště. Není nutné zadávat typ úložiště certifikátů. Certmgr.exe dokáže rozpoznat typ úložiště a vykonat příslušné operace.  
   

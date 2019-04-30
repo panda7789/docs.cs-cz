@@ -10,20 +10,20 @@ helpviewer_keywords:
 - colors [Windows Forms], controlling transparency
 ms.assetid: f331df2d-b395-4b0a-95be-24fec8c9bbb5
 ms.openlocfilehash: 15cb111a68cedaec011e88fa4916c292786d16b4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779026"
 ---
 # <a name="how-to-use-compositing-mode-to-control-alpha-blending"></a>Postupy: Řízení funkce alfa blending pomocí režimu skládání
 Může nastat situace, kdy budete chtít vytvořit mimo obrazovku rastrový obrázek, který má následující vlastnosti:  
   
--   Barvy mají hodnoty alfa, které jsou kratší než 255.  
+- Barvy mají hodnoty alfa, které jsou kratší než 255.  
   
--   Barvy nejsou alfa prolnuty mezi sebou při vytváření rastrového obrázku.  
+- Barvy nejsou alfa prolnuty mezi sebou při vytváření rastrového obrázku.  
   
--   Když zobrazíte dokončená rastrového obrázku jsou barvy rastrového obrázku nastaven barvy pozadí na zobrazovací zařízení smíšení alfa.  
+- Když zobrazíte dokončená rastrového obrázku jsou barvy rastrového obrázku nastaven barvy pozadí na zobrazovací zařízení smíšení alfa.  
   
  Chcete-li vytvořit takové rastrový obrázek, vytvořit prázdnou hodnotu <xref:System.Drawing.Bitmap> objektu a pak vytvořit <xref:System.Drawing.Graphics> objektu podle tento rastrový obrázek. Nastavení režimu skládání <xref:System.Drawing.Graphics> objektu <xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy?displayProperty=nameWithType>.  
   

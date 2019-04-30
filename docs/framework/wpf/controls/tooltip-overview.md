@@ -9,11 +9,11 @@ helpviewer_keywords:
 - controls [WPF], ToolTip
 ms.assetid: f06c1603-e9cb-4809-8a62-234607fc52f7
 ms.openlocfilehash: 08b30d8be83ef9d814d17c5d4ec0c95a26bacdad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170102"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790725"
 ---
 # <a name="tooltip-overview"></a>ToolTip – přehled
 Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>. Toto téma představuje popisek a popisuje, jak vytvořit a přizpůsobit obsah popisku.  
@@ -24,9 +24,9 @@ Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení uk
   
  Obsah popisek může obsahovat jeden nebo více řádků textu, obrázky, obrazce nebo jiné vizuální obsah. Popis tlačítka pro ovládací prvek pomocí nastavení jedné z následujících vlastností můžete definovat popis obsahu.  
   
--   <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType>  
   
  Vlastností, které použijete, závisí na tom, zda ovládací prvek, který definuje popisek dědí z <xref:System.Windows.FrameworkContentElement> nebo <xref:System.Windows.FrameworkElement> třídy.  
   

@@ -1,33 +1,33 @@
 ---
-title: Zastaralé typy v programovacím modelu Windows Workflow Foundation
+title: Zastaralé typy ve Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: 4aebe928-a964-4c1c-abf7-0dbbd3604b13
 ms.openlocfilehash: d41bf147cd079a3d6d3714da5595732de3dcb7de
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847435"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774046"
 ---
-# <a name="deprecated-types-in-windows-workflow-foundation"></a>Zastaralé typy v programovacím modelu Windows Workflow Foundation
+# <a name="deprecated-types-in-windows-workflow-foundation"></a>Zastaralé typy ve Windows Workflow Foundation
 V rozhraní .NET 4 pracovního postupu týmu vydali modul pro všechny nové pracovní postup v <xref:System.Activities> oboru názvů. Ve verzi beta verze rozhraní .NET 4.5 jsme se označení většina typů v "WF 3" <xref:System.Workflow.Activities>, <xref:System.Workflow.ComponentModel>, a <xref:System.Workflow.Runtime> obory názvů jako zastaralé.  
   
 ## <a name="obsolete-namespaces-and-tools"></a>Zastaralé obory názvů a nástroje  
  Následující sestavení mají jednu nebo více veřejných typů, které se přestanou používat:  
   
--   System.Workflow.Activities.dll  
+- System.Workflow.Activities.dll  
   
--   System.Workflow.ComponentModel.dll  
+- System.Workflow.ComponentModel.dll  
   
--   System.Workflow.Runtime.dll  
+- System.Workflow.Runtime.dll  
   
--   System.WorkflowServices.dll  
+- System.WorkflowServices.dll  
   
--   Microsoft.Workflow.DebugController.dll  
+- Microsoft.Workflow.DebugController.dll  
   
--   Microsoft.Workflow.Compiler.exe  
+- Microsoft.Workflow.Compiler.exe  
   
--   Wfc.exe  
+- Wfc.exe  
   
  Zákazníci, kteří používají rozhraní API nepoužívané 3 WF v důsledku toho dojde upozornění a zobrazí se zpráva podobná této:  
   

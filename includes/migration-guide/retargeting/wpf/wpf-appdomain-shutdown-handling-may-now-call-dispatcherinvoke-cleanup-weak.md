@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 8e75c60126abc2670053eba2c01e1fb36d1a93e8
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762552"
 ---
 ### <a name="wpf-appdomain-shutdown-handling-may-now-call-dispatcherinvoke-in-cleanup-of-weak-events"></a>Zpracování ukončení domény aplikace WPF může nyní volat Dispatcher.Invoke v vyčištění slabé událostí
 

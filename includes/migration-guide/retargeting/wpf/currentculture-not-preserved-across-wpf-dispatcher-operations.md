@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 190bca720504535cb54e498ca8da23fbb6634ad4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61758339"
 ---
 ### <a name="currentculture-is-not-preserved-across-wpf-dispatcher-operations"></a>CurrentCulture nezachová v objektu WPF Dispatcher operace
 

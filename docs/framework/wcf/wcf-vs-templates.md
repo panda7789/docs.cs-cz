@@ -3,11 +3,11 @@ title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
 ms.openlocfilehash: b0cca0cd585a45b795db4d573659e0d19ecd78dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780663"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít k rychlému vytvoření služby WCF a okolního aplikace v sadě Visual Studio.  
@@ -20,11 +20,11 @@ ms.locfileid: "59130894"
   
  Když vytvoříte nový projekt používá **služby WCF** šablona, nový projekt automaticky zahrnuje následující tři soubory:  
   
--   Soubor kontraktu služby (IService1.cs nebo IService1.vb). Soubor kontraktu služby je rozhraní, které se má použít atributy služby WCF. Tento soubor obsahuje definici jednoduchou službu, která ukazují, jak definovat vaše služby a zahrnuje parametry operace a ukázku jednoduchý datový kontrakt. Toto je výchozí soubor, zobrazí v editoru kódu po vytvoření projektu služby WCF.  
+- Soubor kontraktu služby (IService1.cs nebo IService1.vb). Soubor kontraktu služby je rozhraní, které se má použít atributy služby WCF. Tento soubor obsahuje definici jednoduchou službu, která ukazují, jak definovat vaše služby a zahrnuje parametry operace a ukázku jednoduchý datový kontrakt. Toto je výchozí soubor, zobrazí v editoru kódu po vytvoření projektu služby WCF.  
   
--   (Service1.cs nebo Service1.vb) služby implementační soubor. Soubor implementace služby implementuje kontrakt definovaný v souboru kontraktu služby.  
+- (Service1.cs nebo Service1.vb) služby implementační soubor. Soubor implementace služby implementuje kontrakt definovaný v souboru kontraktu služby.  
   
--   Konfigurační soubor aplikace (App.config). Konfigurační soubor obsahuje základní prvky modelu služby WCF s bezpečnou vazbu protokolu HTTP. Také obsahuje koncový bod služby a umožňuje výměny metadat.  
+- Konfigurační soubor aplikace (App.config). Konfigurační soubor obsahuje základní prvky modelu služby WCF s bezpečnou vazbu protokolu HTTP. Také obsahuje koncový bod služby a umožňuje výměny metadat.  
   
 > [!NOTE]
 >  Visual Studio je nakonfigurována pro rozpoznání souboru App.config jako konfigurační soubor pro projekt při spuštění pomocí [hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md), což je výchozí konfigurace. Pokud hostujete knihovna služby ve spustitelném souboru, budete muset přesunout kód konfigurace do konfiguračního souboru spustitelnému souboru, protože konfigurační soubory, knihovny DLL nejsou platné.  
@@ -34,13 +34,13 @@ ms.locfileid: "59130894"
   
  Když vytvoříte nový projekt používá **webové aplikace služby WCF** šablony projektu obsahuje následující čtyři soubory:  
   
--   Hostitel služby souborů (service1.svc).  
+- Hostitel služby souborů (service1.svc).  
   
--   Soubor kontraktu služby (IService1.cs nebo IService1.vb).  
+- Soubor kontraktu služby (IService1.cs nebo IService1.vb).  
   
--   Soubor implementace služby (Service1.svc.cs nebo Service1.svc.vb).  
+- Soubor implementace služby (Service1.svc.cs nebo Service1.svc.vb).  
   
--   Soubor webové konfigurace (Web.config).  
+- Soubor webové konfigurace (Web.config).  
   
  Šablona automaticky vytvoří webového serveru (který se má nasadit do virtuálního adresáře) a hostuje službu v ní.  
   

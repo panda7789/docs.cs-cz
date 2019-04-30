@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 489b96aaeca08f89fd440ce7535e604f544ab854
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61763855"
 ---
 > [!div class="op_multi_selector" title1="From .NET Framework Version" title2="To .NET Framework Version"]
 > - [(4.0 | 4.5)](~/docs/framework/migration-guide/runtime/4.0-4.5.md)

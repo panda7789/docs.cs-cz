@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 96cec467-e963-4132-b18b-7d0b3a2e979f
 author: BrucePerlerMS
 ms.openlocfilehash: ecc62292b2b064219127c369f43141a31ffe606d
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839416"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780065"
 ---
 # <a name="wstrustchannelfactory-and-wstrustchannel"></a>WSTrustChannelFactory a WSTrustChannel
 Pokud jste už obeznámení s Windows Communication Foundation (WCF), víte, že klient WCF je již federace vědět. Pomocí konfigurace klienta WCF s <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby, můžete povolit federované ověřování do služby.
@@ -25,7 +25,7 @@ Pokud jste už obeznámení s Windows Communication Foundation (WCF), víte, že
 
 - Pomocí technologie WIF samostatně, aby získat token od služby STS a pak povolte klienta WCF na ověření pomocí tohoto tokenu. Další informace najdete v tématu [ClaimsAwareWebService](https://go.microsoft.com/fwlink/?LinkID=248406) vzorku.
 
- První scénář je zřejmých: WCF existující klienti budou dál fungovat s přijímajících stran, které technologie WIF a služby tokenů zabezpečení. Toto téma popisuje zbývající dva scénáře.
+ První scénář je zřejmých: Existující klienti WCF budou nadále fungovat s přijímajících stran, které technologie WIF a služby tokenů zabezpečení. Toto téma popisuje zbývající dva scénáře.
 
 ## <a name="enhancing-an-existing-wcf-client-with-actas--onbehalfof"></a>Vylepšení stávajícího klienta WCF s ActAs nebo OnBehalfOf
 V případě delegování identity typické klient volá střední vrstvy služby, která potom volá back-end služby. Služba střední vrstvy funguje jako, nebo funguje jménem klienta.

@@ -3,11 +3,11 @@ title: Odchylky v delegátech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 38e9353f-74f8-4211-a8f0-7a495414df4a
 ms.openlocfilehash: 6d341c7c2b5adeebcafc5b0787b132ab6bd57e41
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787228"
 ---
 # <a name="variance-in-delegates-visual-basic"></a>Odchylky v delegátech (Visual Basic)
 

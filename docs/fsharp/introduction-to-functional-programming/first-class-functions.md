@@ -3,11 +3,11 @@ title: Funkce první třídy
 description: Další informace o funkce první třídy a jak jsou důležité pro funkční programování v F#.
 ms.date: 10/29/2018
 ms.openlocfilehash: 505ad686614b53d779cb617fc04ac74c2a88b31b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772757"
 ---
 # <a name="first-class-functions"></a>Funkce první třídy
 
@@ -194,4 +194,4 @@ Následující kód obsahuje všechny příklady v tomto tématu.
 - [Řazené kolekce členů](../language-reference/tuples.md)
 - [Funkce](../language-reference/functions/index.md)
 - [`let` Vazby](../language-reference/functions/let-bindings.md)
-- [Výrazy lambda: `fun` – Klíčové slovo](../language-reference/functions/lambda-expressions-the-fun-keyword.md)
+- [Výrazy lambda: Klíčové slovo `fun`](../language-reference/functions/lambda-expressions-the-fun-keyword.md)

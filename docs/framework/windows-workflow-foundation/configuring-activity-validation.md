@@ -3,20 +3,20 @@ title: Konfigurace ověřování aktivit
 ms.date: 03/30/2017
 ms.assetid: 25a4eccb-b8fc-4857-a01d-2683b6341219
 ms.openlocfilehash: 65928de1dc8b8d9914648463a136790c7978f53c
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774171"
 ---
 # <a name="configuring-activity-validation"></a>Konfigurace ověřování aktivit
 Aktivita ověření umožňuje uživatelům a autoři aktivity k identifikaci a hlášení chyb v konfiguraci aktivity před jeho provedením. Windows Workflow Foundation (WF) obsahuje následující tři typy ověřování aktivit:  
   
--   `RequiredArgument` a `OverloadGroup` atributy.  
+- `RequiredArgument` a `OverloadGroup` atributy.  
   
--   Imperativní ověřování na základě kódu.  
+- Imperativní ověřování na základě kódu.  
   
--   Deklarativní omezení.  
+- Deklarativní omezení.  
   
  `RequiredArgument` a `OverloadGroup` atributy označuje, že některé argumenty pro aktivitu je povinný. Imperativní ověřování na základě kódu poskytuje jednoduchý způsob pro aktivitu pro ověřování o sobě a deklarativní omezení povolit ověřování aktivity a je naznačen vztah se obsažený pracovní postup. Pokud aktivita není správně nakonfigurována podle požadavků na ověření, chyby a upozornění ověření jsou vráceny. Pokud obsažený pracovní postup je vytvořen pomocí návrháře postupu provádění, žádné chyby ověření a upozornění se zobrazí v návrháři. Pokud je pracovní postup vytvořený mimo návrháře postupu provádění všechny chyby ověření jsou vráceny při vyvolání pracovního postupu. Bez ohledu na to, jak sled prací byl vytvořen pracovní postup s chyby ověření nikdy povoleno provádět. Tato část obsahuje přehled těchto typů ověřování aktivit a jak vyvolání ověřování aktivit.  
   

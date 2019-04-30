@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 87234108-8e21-4cb3-9340-4a1a13f3f98c
 ms.openlocfilehash: 4b24e57cce4d42645fc1750ac932e5f24cf24913
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773338"
 ---
 # <a name="how-to-create-a-workflow"></a>Postupy: Vytvoření pracovního postupu
 Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Témata v této části kroku vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru. Pouze jeden z témata v této části se vyžaduje k dokončení tohoto kurzu; měli byste vybrat styl, který vás zajímá a postupujte podle tohoto kroku. V případě potřeby je ale může všechna témata dokončit.  

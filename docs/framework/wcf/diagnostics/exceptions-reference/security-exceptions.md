@@ -3,11 +3,11 @@ title: Výjimky zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 76d5e5cd-e4f4-404f-9a5a-ec3522494ad8
 ms.openlocfilehash: c1eeca9111837b9833de54ecafbc981d1c2b6343
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780858"
 ---
 # <a name="security-exceptions"></a>Výjimky zabezpečení
 Toto téma obsahuje seznam všech bezpečnostním výjimkám.  
@@ -29,8 +29,8 @@ Toto téma obsahuje seznam všech bezpečnostním výjimkám.
 |CachedNegotiationStateQuotaReached|Službu nelze stav vyjednávání mezipaměti, protože byla dosažena určená kapacita. Zkuste požadavek.|  
 |CacheQuotaReached|Položku nelze přidat. Je zadaná maximální velikost mezipaměti.|  
 |CannotDetermineSPNBasedOnAddress|Klient nemůže určit že hlavní název služby založený na identitě zadané cílové adresy pro účely účel třídy SspiNegotiation nebo protokolu Kerberos. Identitou cílové adresy musí být identita UPN (jako například acmedomain\\\alice) nebo identita SPN (například host/honzuv pocitac).|  
-|CannotFindCert|Nelze najít certifikát X.509 pomocí kritérií zadaného hledání: StoreName, StoreLocation, FindType, FindValue.|  
-|CannotFindCertForTarget|Nelze najít certifikát X.509 pomocí kritérií zadaného hledání: StoreName, StoreLocation, FindType, FindValue pro zadaný cíl.|  
+|CannotFindCert|Nelze najít certifikát X.509 pomocí zadaná kritéria vyhledávání: StoreName, StoreLocation FindType, FindValue.|  
+|CannotFindCertForTarget|Nelze najít certifikát X.509 pomocí zadaná kritéria vyhledávání: StoreName StoreLocation, FindType FindValue pro zadaný cíl.|  
 |CannotFindCorrelationStateForApplyingSecurity|Nelze najít stav korelace pro použití zabezpečení na odpověď na straně odpovídajícího.|  
 |CannotFindNegotiationState|Nelze najít stav vyjednávání pro zadaný kontext.|  
 |CannotFindSecuritySession|Nelze najít relaci zabezpečení se zadaným ID.|  
@@ -55,8 +55,8 @@ Toto téma obsahuje seznam všech bezpečnostním výjimkám.
 |ExportOfBindingWithAsymmetricAndTransportSecurityNotSupported|Export zásad zabezpečení se nezdařilo. Vazba obsahuje AsymmetricSecurityBindingElement i element vazby zabezpečení přenosu. Export zásad pro takovou vazbu není podporován.|  
 |ExportOfBindingWithSymmetricAndTransportSecurityNotSupported|Export zásad zabezpečení se nezdařilo. Vazba obsahuje třídu SymmetricSecurityBindingElement i element vazby zabezpečení přenosu. Export zásad pro takovou vazbu není podporován.|  
 |ExportOfBindingWithTransportSecurityBindingElementAndNoTransportSecurityNotSupported|Export zásad zabezpečení se nezdařilo. Vazba obsahuje třídu TransportSecurityBindingElement, ale žádný element vazby přenosu, který implementuje třídu ITransportTokenAssertionProvider. Export zásad pro takovou vazbu není podporován. Zkontrolujte, zda že element vazby přenosu ve vazbě implementuje rozhraní ITransportTokenAssertionProvider.|  
-|FoundMultipleCerts|Bylo nalezeno více certifikátů X.509 pomocí kritérií zadaného hledání: StoreName, StoreLocation, FindType, FindValue. Zadejte přesnější hledanou hodnotu.|  
-|FoundMultipleCertsForTarget|Bylo nalezeno více certifikátů X.509 pomocí kritérií zadaného hledání: StoreName, StoreLocation, FindType, FindValue pro zadaný cíl. Zadejte přesnější hledanou hodnotu.|  
+|FoundMultipleCerts|Bylo nalezeno více certifikátů X.509 pomocí zadaná kritéria vyhledávání: StoreName, StoreLocation FindType, FindValue. Zadejte přesnější hledanou hodnotu.|  
+|FoundMultipleCertsForTarget|Bylo nalezeno více certifikátů X.509 pomocí zadaná kritéria vyhledávání: StoreName StoreLocation, FindType FindValue pro zadaný cíl. Zadejte přesnější hledanou hodnotu.|  
 |HeaderDecryptionNotSupportedInWsSecurityJan2004|Třída SecurityVersion.WSSecurityJan2004 nepodporuje dešifrování záhlaví. Použít SecurityVersion.WsSecurityXXX2005 a vyšší nebo pro šifrování celé zprávy použijte zabezpečení přenosu.|  
 |IdentityCheckFailedForIncomingMessage|Kontrola identity příchozí zprávy se nezdařila. Očekávaná identita je určena pro cílový koncový bod.|  
 |IdentityCheckFailedForOutgoingMessage|Kontrola identity odchozí zprávy se nezdařila. Očekávaná identita je určena pro cílový koncový bod.|  

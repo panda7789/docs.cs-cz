@@ -12,11 +12,11 @@ helpviewer_keywords:
 - names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
 ms.openlocfilehash: c314db90a1a0f89613e20897387bdec8ec534837
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778726"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
 Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky pojmenovanou elementu, nebo sadu přetížených elementů v základní třídě.  
@@ -28,19 +28,19 @@ Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky p
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Shadows` pouze na úrovni třídy. To znamená, že deklarace kontext `Shadows` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
+- **Místní deklarace.** Můžete použít `Shadows` pouze na úrovni třídy. To znamená, že deklarace kontext `Shadows` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
   
      Je možné deklarovat pouze jeden element stínového provozu v jedné deklaraci příkazu.  
   
--   **Kombinované modifikátory.** Nelze zadat `Shadows` spolu s `Overloads`, `Overrides`, nebo `Static` ve stejné deklaraci.  
+- **Kombinované modifikátory.** Nelze zadat `Shadows` spolu s `Overloads`, `Overrides`, nebo `Static` ve stejné deklaraci.  
   
--   **Typy elementů.** Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu. Pokud jste stínovou kopii se vlastnost nebo procedura s jinou vlastnost nebo procedura, parametry a návratovým typem není potřeba odpovídají polím v základní třídě vlastnost nebo procedura.  
+- **Typy elementů.** Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu. Pokud jste stínovou kopii se vlastnost nebo procedura s jinou vlastnost nebo procedura, parametry a návratovým typem není potřeba odpovídají polím v základní třídě vlastnost nebo procedura.  
   
--   **Přístup k.** Stínovaný element v základní třídě je obvykle nedostupná z v rámci odvozené třídy, která zastiňuje ho. Nicméně platí následující aspekty.  
+- **Přístup k.** Stínovaný element v základní třídě je obvykle nedostupná z v rámci odvozené třídy, která zastiňuje ho. Nicméně platí následující aspekty.  
   
-    -   Pokud stínového provozu element není přístupné z kódu na ni odkazuje, odkaz je přeložen na stínovaný elementu. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.  
+    - Pokud stínového provozu element není přístupné z kódu na ni odkazuje, odkaz je přeložen na stínovaný elementu. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.  
   
-    -   Pokud jste stínové elementu, budete k němu přístup stínovaný element prostřednictvím objektu, který deklarovat s typem základní třídy. Můžete také k němu přístup prostřednictvím `MyBase`.  
+    - Pokud jste stínové elementu, budete k němu přístup stínovaný element prostřednictvím objektu, který deklarovat s typem základní třídy. Můžete také k němu přístup prostřednictvím `MyBase`.  
   
  `Shadows` Modifikátor lze použít v těchto kontextech:  
   

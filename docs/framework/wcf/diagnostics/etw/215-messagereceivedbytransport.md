@@ -3,11 +3,11 @@ title: 215 – MessageReceivedByTransport
 ms.date: 03/30/2017
 ms.assetid: bb32aa60-5207-4711-9f08-110e8ac327e5
 ms.openlocfilehash: a8ba90b88ef8dbe3c8651bc565da61aae16a0a4a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460900"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781833"
 ---
 # <a name="215---messagereceivedbytransport"></a>215 – MessageReceivedByTransport
 ## <a name="properties"></a>Vlastnosti  
@@ -15,23 +15,23 @@ ms.locfileid: "33460900"
 |||  
 |-|-|  
 |ID|215|  
-|Klíčová slova|Řešení potíží s ServiceModel|  
+|klíčová slova|Řešení potíží s ServiceModel|  
 |úroveň|Informace o|  
 |Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
- K této události dojde, když přenos protokolu TCP přijme zprávu o. Všimněte si, že se na úrovni přenosu, více zpráv nelze vyměňovat mezi klienty a služby pro jednu operaci. To může být z důvodu chování infrastruktury, je dobrým příkladem zabezpečení. Proto počet `MessageReceivedByTransport` události, které jsou vygenerované lišit v závislosti na vaší služby vazby a jeho konfigurace.  
+ Při přenosu protokolu TCP přijme zprávu dojde k této události. Všimněte si, že na úrovni přenosu, více zpráv nelze vyměňovat mezi klienty a služby pro jednu operaci. To může být způsobeno chování infrastrukturu, zabezpečení je dobrým příkladem. Proto, počet `MessageReceivedByTransport` události, které jsou emitovány lišit v závislosti na vaší služby vazby a jeho konfigurace.  
   
 > [!NOTE]
->  Tato událost není vygenerované pro jednosměrné přenosy.  
+>  Tato událost není aktivováno pro jednosměrnou přenosy.  
   
 ## <a name="message"></a>Zpráva  
- Přenos přijala zprávu z '%1'.  
+ Přenos obdržel zprávu od '%1'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Adresu naslouchání|`xs:string`|Adresa, která se zobrazila zpráva.|  
-|HostReference|`xs:string`|Pro hostované webové služby v tomto poli jednoznačně identifikuje v hierarchii webové služby. Formát je definovaný jako "virtuální cesta aplikace název webu&#124;virtuální cestu služby&#124;ServiceName'. Příklad: "Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService'.|  
-|Domény aplikace|`xs:string`|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|Adresa naslouchání|`xs:string`|Adresa, která se zobrazila zpráva.|  
+|HostReference|`xs:string`|Toto pole pro hostované webové služby, jednoznačně identifikuje v hierarchii webové služby. Jeho formát je definován jako "virtuální cesta aplikace název webu&#124;virtuální cesta služby&#124;ServiceName". Příklad: "Výchozí webový server/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService".|  
+|AppDomain|`xs:string`|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

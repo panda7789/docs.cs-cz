@@ -15,11 +15,11 @@ ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b022c70f7ed1707e27de7cac6ce08c53ee0878d0
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56836562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770380"
 ---
 # <a name="observer-design-pattern"></a>Návrhový vzor Pozorovatel
 Návrhový vzor pozorovatel umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Je vhodný pro jakýkoli scénář, který vyžaduje nabízené oznámení. Definuje vzor *poskytovatele* (označované také jako *subjektu* nebo *pozorovat*) a nula, jeden nebo více *pozorovatelů*. Pozorovatelé zaregistrovat u poskytovatele a pokaždé, když předdefinovanou podmínku, události nebo změnu stavu dochází, zprostředkovatel automaticky upozorní všechny pozorovatelů ve volání jedné z jejich metod. Při volání této metody zprostředkovatele lze také poskytovat aktuální informace o stavu pozorovatelů. V rozhraní .NET Framework, se použije návrhový vzor pozorovatel implementací Obecné <xref:System.IObservable%601?displayProperty=nameWithType> a <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní. Parametr obecného typu představuje typ, který poskytuje informace o oznámení.  
@@ -29,21 +29,21 @@ Návrhový vzor pozorovatel umožňuje předplatiteli zaregistrovat se a dostáv
   
  Implementace vzoru vyžaduje, musíte poskytnout následující:  
   
--   Zprostředkovatel nebo předmětu, což je objekt, který odesílá oznámení pozorovatele. Zprostředkovatel je třída nebo struktura, která implementuje <xref:System.IObservable%601> rozhraní. Zprostředkovatel musí implementovat jedinou metodu <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>, která je volána metodou pozorovatelé, které chcete dostávat upozornění od poskytovatele.  
+- Zprostředkovatel nebo předmětu, což je objekt, který odesílá oznámení pozorovatele. Zprostředkovatel je třída nebo struktura, která implementuje <xref:System.IObservable%601> rozhraní. Zprostředkovatel musí implementovat jedinou metodu <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType>, která je volána metodou pozorovatelé, které chcete dostávat upozornění od poskytovatele.  
   
--   Pozorovatele, který je objekt, který dostává oznámení ze zprostředkovatele. Pozorovatelem je třída nebo struktura, která implementuje <xref:System.IObserver%601> rozhraní. Pozorovatel musí implementovat tři metody, které se nazývají zprostředkovatelem:  
+- Pozorovatele, který je objekt, který dostává oznámení ze zprostředkovatele. Pozorovatelem je třída nebo struktura, která implementuje <xref:System.IObserver%601> rozhraní. Pozorovatel musí implementovat tři metody, které se nazývají zprostředkovatelem:  
   
-    -   <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, který poskytuje pozorovatel s informacemi o nových nebo aktuální.  
+    - <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, který poskytuje pozorovatel s informacemi o nových nebo aktuální.  
   
-    -   <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, který informuje pozorovatele, který došlo k chybě.  
+    - <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, který informuje pozorovatele, který došlo k chybě.  
   
-    -   <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, což znamená, že zprostředkovatel dokončení odesílání oznámení.  
+    - <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType>, což znamená, že zprostředkovatel dokončení odesílání oznámení.  
   
--   Mechanismus, který umožňuje poskytovateli udržovat přehled o pozorovatelů. Obvykle, poskytovatel použije objekt kontejneru, jako <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objekt obsahovat odkazy na <xref:System.IObserver%601> implementace, které mají přihlásili k odběru oznámení. Použití kontejner úložiště pro tento účel umožňuje poskytovateli zpracování nula k neomezenému počtu pozorovatelů. Není definováno pořadí, ve kterém pozorovatelů dostávat oznámení; Zprostředkovatel je můžete použít libovolnou metodu pro určení pořadí.  
+- Mechanismus, který umožňuje poskytovateli udržovat přehled o pozorovatelů. Obvykle, poskytovatel použije objekt kontejneru, jako <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objekt obsahovat odkazy na <xref:System.IObserver%601> implementace, které mají přihlásili k odběru oznámení. Použití kontejner úložiště pro tento účel umožňuje poskytovateli zpracování nula k neomezenému počtu pozorovatelů. Není definováno pořadí, ve kterém pozorovatelů dostávat oznámení; Zprostředkovatel je můžete použít libovolnou metodu pro určení pořadí.  
   
--   <xref:System.IDisposable> Implementace, která umožňuje poskytovateli odeberte pozorovatelů po oznámení dokončení. Pozorovatelé zobrazí odkaz na <xref:System.IDisposable> implementaci <xref:System.IObservable%601.Subscribe%2A> metoda, takže můžete také volat <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metoda k odhlášení odběru před dokončením příkazu se zprostředkovatel, odesílání oznámení.  
+- <xref:System.IDisposable> Implementace, která umožňuje poskytovateli odeberte pozorovatelů po oznámení dokončení. Pozorovatelé zobrazí odkaz na <xref:System.IDisposable> implementaci <xref:System.IObservable%601.Subscribe%2A> metoda, takže můžete také volat <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> metoda k odhlášení odběru před dokončením příkazu se zprostředkovatel, odesílání oznámení.  
   
--   Objekt, který obsahuje data, která odešle zprostředkovatel jeho pozorovatelů. Typ tohoto objektu, který odpovídá parametru obecného typu <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. I když tento objekt může být stejný jako <xref:System.IObservable%601> implementace, nejčastěji je samostatného typu.  
+- Objekt, který obsahuje data, která odešle zprostředkovatel jeho pozorovatelů. Typ tohoto objektu, který odpovídá parametru obecného typu <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. I když tento objekt může být stejný jako <xref:System.IObservable%601> implementace, nejčastěji je samostatného typu.  
   
 > [!NOTE]
 >  Kromě provádění návrhový vzor pozorovatel vás může zajímat zkoumání knihovny, které se vytvářejí pomocí <xref:System.IObservable%601> a <xref:System.IObserver%601> rozhraní. Například [Reactive Extensions pro platformu .NET (obdx)](https://docs.microsoft.com/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) sestávat z několika metod rozšíření a pořadí standardní operátory LINQ, aby podporoval asynchronní programování.  
@@ -56,9 +56,9 @@ Návrhový vzor pozorovatel umožňuje předplatiteli zaregistrovat se a dostáv
   
  A `BaggageHandler` třídy zodpovídá za příjem informací o lety opravovány a sobě Karusel deklarací identity. Interně spravuje dvě kolekce:  
   
--   `observers` -Kolekce klienty, kteří budou dostávat aktualizované informace.  
+- `observers` -Kolekce klienty, kteří budou dostávat aktualizované informace.  
   
--   `flights` -Kolekce letů a jejich přiřazené Karusel.  
+- `flights` -Kolekce letů a jejich přiřazené Karusel.  
   
  Obě kolekce jsou reprezentované pomocí obecného <xref:System.Collections.Generic.List%601> objekty, které jsou vytvořeny v `BaggageHandler` konstruktoru třídy. Zdrojový kód `BaggageHandler` třídy je znázorněno v následujícím příkladu.  
   

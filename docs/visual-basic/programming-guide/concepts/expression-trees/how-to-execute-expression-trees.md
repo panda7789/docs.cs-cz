@@ -3,11 +3,11 @@ title: 'Postupy: Provádění stromů výrazů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
 ms.openlocfilehash: cccb0b301e1da6d82c616d56604ad46dfde83e2a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787176"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Postupy: Provádění stromů výrazů (Visual Basic)
 Toto téma ukazuje, jak spustit strom výrazu. Provádění strom výrazu může vracet hodnotu, nebo ji může provádět jenom akce, jako je volání metody.  
@@ -44,9 +44,9 @@ MsgBox(result)
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pokud se už neodkazuje, přidejte odkaz na System.Core.dll.  
+- Pokud se už neodkazuje, přidejte odkaz na System.Core.dll.  
   
--   Zahrnout System.Linq.Expressions oboru názvů.  
+- Zahrnout System.Linq.Expressions oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

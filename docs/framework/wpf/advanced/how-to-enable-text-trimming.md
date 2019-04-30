@@ -10,11 +10,11 @@ helpviewer_keywords:
 - trimming text [WPF]
 ms.assetid: dd8c9191-d2be-45fd-9fb4-3c75b65578c5
 ms.openlocfilehash: 25fff566868e792004a915fee195485c4a1f385f
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57474137"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776103"
 ---
 # <a name="how-to-enable-text-trimming"></a>Postupy: Povolení ořezávání textu
 

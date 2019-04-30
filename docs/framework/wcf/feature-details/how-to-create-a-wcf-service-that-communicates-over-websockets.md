@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
 ms.openlocfilehash: 7125914e64ac3c7643f7338b1343654794cf45da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59346363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787527"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets
 Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes WebSockets.  Protokoly Websocket se nepoužívá, pokud <xref:System.ServiceModel.NetHttpBinding> určuje kontrakt služby definuje kontrakt zpětného volání. Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> komunikovat přes WebSockets.  
@@ -108,7 +108,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
   
      Operace kontraktu zpětného volání je implementovaný jako asynchronní metody.  
   
-    1.  Implementujte kód klienta.  
+    1. Implementujte kód klienta.  
   
         ```csharp  
         class Program  
@@ -133,7 +133,7 @@ Služby WCF a klienti mohou používat <xref:System.ServiceModel.NetHttpBinding>
   
          Hodnota CallbackHandler se tady opakuje pro přehlednost. Klientská aplikace vytvoří nová třída InstanceContext a určuje implementaci rozhraní zpětného volání. Dále vytvoří instanci třídy proxy odesílání odkazem na nově vytvořený InstanceContext. Když klient zavolá službu, bude volat službu klienta pomocí zpětného volání kontraktu.  
   
-    2.  Konfigurace klienta  
+    2. Konfigurace klienta  
   
         ```xml  
         <?xml version="1.0" encoding="utf-8" ?>  
