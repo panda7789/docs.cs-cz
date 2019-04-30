@@ -17,25 +17,25 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 70828b8d4ebcc17fa178a53806ef7f55f7ba33e1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61939786"
 ---
-# <a name="isymunmanageddocumentwriter-interface"></a><span data-ttu-id="2d833-102">ISymUnmanagedDocumentWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2d833-102">ISymUnmanagedDocumentWriter Interface</span></span>
-<span data-ttu-id="2d833-103">Poskytuje metody pro zápis na dokument odkazuje úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="2d833-103">Provides methods for writing to a document referenced by a symbol store.</span></span>  
+# <a name="isymunmanageddocumentwriter-interface"></a><span data-ttu-id="e7102-102">ISymUnmanagedDocumentWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e7102-102">ISymUnmanagedDocumentWriter Interface</span></span>
+<span data-ttu-id="e7102-103">Poskytuje metody pro zápis na dokument odkazuje úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="e7102-103">Provides methods for writing to a document referenced by a symbol store.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="2d833-104">Metody</span><span class="sxs-lookup"><span data-stu-id="2d833-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="e7102-104">Metody</span><span class="sxs-lookup"><span data-stu-id="e7102-104">Methods</span></span>  
   
-|<span data-ttu-id="2d833-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="2d833-105">Method</span></span>|<span data-ttu-id="2d833-106">Popis</span><span class="sxs-lookup"><span data-stu-id="2d833-106">Description</span></span>|  
+|<span data-ttu-id="e7102-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="e7102-105">Method</span></span>|<span data-ttu-id="e7102-106">Popis</span><span class="sxs-lookup"><span data-stu-id="e7102-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="2d833-107">SetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="2d833-107">SetCheckSum Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setchecksum-method.md)|<span data-ttu-id="2d833-108">Nastaví údaj o kontrolním součtu.</span><span class="sxs-lookup"><span data-stu-id="2d833-108">Sets checksum information.</span></span>|  
-|[<span data-ttu-id="2d833-109">SetSource – metoda</span><span class="sxs-lookup"><span data-stu-id="2d833-109">SetSource Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|<span data-ttu-id="2d833-110">Nastaví vložený zdroj pro dokument, u kterého probíhá zápis.</span><span class="sxs-lookup"><span data-stu-id="2d833-110">Sets embedded source for a document that is being written.</span></span>|  
+|[<span data-ttu-id="e7102-107">SetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="e7102-107">SetCheckSum Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setchecksum-method.md)|<span data-ttu-id="e7102-108">Nastaví údaj o kontrolním součtu.</span><span class="sxs-lookup"><span data-stu-id="e7102-108">Sets checksum information.</span></span>|  
+|[<span data-ttu-id="e7102-109">SetSource – metoda</span><span class="sxs-lookup"><span data-stu-id="e7102-109">SetSource Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|<span data-ttu-id="e7102-110">Nastaví vložený zdroj pro dokument, u kterého probíhá zápis.</span><span class="sxs-lookup"><span data-stu-id="e7102-110">Sets embedded source for a document that is being written.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="2d833-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2d833-111">Requirements</span></span>  
- <span data-ttu-id="2d833-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2d833-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e7102-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e7102-111">Requirements</span></span>  
+ <span data-ttu-id="e7102-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="e7102-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2d833-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d833-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7102-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e7102-113">See also</span></span>
 
-- [<span data-ttu-id="2d833-114">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="2d833-114">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="e7102-114">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="e7102-114">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

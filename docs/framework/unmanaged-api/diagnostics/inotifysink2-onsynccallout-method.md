@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4cf36b9e09f5e9eeb28930a6adc48426927a60e7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59145688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940358"
 ---
-# <a name="inotifysink2onsynccallout-method"></a><span data-ttu-id="7f226-102">INotifySink2::OnSyncCallOut – metoda</span><span class="sxs-lookup"><span data-stu-id="7f226-102">INotifySink2::OnSyncCallOut Method</span></span>
-<span data-ttu-id="7f226-103">Získá vyvolán při volání je navýšení kapacity.</span><span class="sxs-lookup"><span data-stu-id="7f226-103">Gets invoked when a call is out.</span></span>  
+# <a name="inotifysink2onsynccallout-method"></a><span data-ttu-id="a40e0-102">INotifySink2::OnSyncCallOut – metoda</span><span class="sxs-lookup"><span data-stu-id="a40e0-102">INotifySink2::OnSyncCallOut Method</span></span>
+<span data-ttu-id="a40e0-103">Získá vyvolán při volání je navýšení kapacity.</span><span class="sxs-lookup"><span data-stu-id="a40e0-103">Gets invoked when a call is out.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7f226-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7f226-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a40e0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a40e0-104">Syntax</span></span>  
   
 ```  
 HRESULT OnSyncCallOut  
@@ -38,24 +38,24 @@ HRESULT OnSyncCallOut
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7f226-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7f226-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a40e0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a40e0-105">Parameters</span></span>  
  `in_CallID`  
- <span data-ttu-id="7f226-106">[in] ID volání, které je navýšení kapacity. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).</span><span class="sxs-lookup"><span data-stu-id="7f226-106">[in] ID of the call that is out. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).</span></span>  
+ <span data-ttu-id="a40e0-106">[in] ID volání, které je navýšení kapacity. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).</span><span class="sxs-lookup"><span data-stu-id="a40e0-106">[in] ID of the call that is out. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).</span></span>  
   
  `out_ppBuffer`  
- <span data-ttu-id="7f226-107">[out] Volání vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="7f226-107">[out] Call buffer.</span></span>  
+ <span data-ttu-id="a40e0-107">[out] Volání vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="a40e0-107">[out] Call buffer.</span></span>  
   
  `out_pBufferSize`  
- <span data-ttu-id="7f226-108">[out] Velikost vyrovnávací paměti volání, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="7f226-108">[out] Size of the call buffer, in bytes.</span></span>  
+ <span data-ttu-id="a40e0-108">[out] Velikost vyrovnávací paměti volání, v bajtech.</span><span class="sxs-lookup"><span data-stu-id="a40e0-108">[out] Size of the call buffer, in bytes.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="7f226-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7f226-109">Return Value</span></span>  
- <span data-ttu-id="7f226-110">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="7f226-110">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="a40e0-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a40e0-109">Return Value</span></span>  
+ <span data-ttu-id="a40e0-110">S_OK, pokud metoda uspěje.</span><span class="sxs-lookup"><span data-stu-id="a40e0-110">S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7f226-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7f226-111">Requirements</span></span>  
- <span data-ttu-id="7f226-112">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="7f226-112">**Header:** ProtocolNotify2.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a40e0-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a40e0-111">Requirements</span></span>  
+ <span data-ttu-id="a40e0-112">**Záhlaví:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="a40e0-112">**Header:** ProtocolNotify2.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7f226-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7f226-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a40e0-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a40e0-113">See also</span></span>
 
-- [<span data-ttu-id="7f226-114">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7f226-114">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [<span data-ttu-id="7f226-115">INotifySource2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7f226-115">INotifySource2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
-- [<span data-ttu-id="7f226-116">INotifyConnection2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7f226-116">INotifyConnection2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [<span data-ttu-id="a40e0-114">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a40e0-114">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [<span data-ttu-id="a40e0-115">INotifySource2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a40e0-115">INotifySource2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
+- [<span data-ttu-id="a40e0-116">INotifyConnection2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a40e0-116">INotifyConnection2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

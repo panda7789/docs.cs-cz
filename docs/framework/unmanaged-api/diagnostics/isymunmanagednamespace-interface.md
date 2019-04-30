@@ -17,26 +17,26 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 87dd6db9624c2216ab13e77b04cfa63f95aee7e2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61939448"
 ---
-# <a name="isymunmanagednamespace-interface"></a><span data-ttu-id="957fe-102">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="957fe-102">ISymUnmanagedNamespace Interface</span></span>
-<span data-ttu-id="957fe-103">Představuje obor názvů.</span><span class="sxs-lookup"><span data-stu-id="957fe-103">Represents a namespace.</span></span>  
+# <a name="isymunmanagednamespace-interface"></a><span data-ttu-id="c294d-102">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c294d-102">ISymUnmanagedNamespace Interface</span></span>
+<span data-ttu-id="c294d-103">Představuje obor názvů.</span><span class="sxs-lookup"><span data-stu-id="c294d-103">Represents a namespace.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="957fe-104">Metody</span><span class="sxs-lookup"><span data-stu-id="957fe-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="c294d-104">Metody</span><span class="sxs-lookup"><span data-stu-id="c294d-104">Methods</span></span>  
   
-|<span data-ttu-id="957fe-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="957fe-105">Method</span></span>|<span data-ttu-id="957fe-106">Popis</span><span class="sxs-lookup"><span data-stu-id="957fe-106">Description</span></span>|  
+|<span data-ttu-id="c294d-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="c294d-105">Method</span></span>|<span data-ttu-id="c294d-106">Popis</span><span class="sxs-lookup"><span data-stu-id="c294d-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="957fe-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="957fe-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|<span data-ttu-id="957fe-108">Získá název tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="957fe-108">Gets the name of this namespace.</span></span>|  
-|[<span data-ttu-id="957fe-109">GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="957fe-109">GetNamespaces Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|<span data-ttu-id="957fe-110">Získá podřízené objekty tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="957fe-110">Gets the children of this namespace.</span></span>|  
-|[<span data-ttu-id="957fe-111">GetVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="957fe-111">GetVariables Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|<span data-ttu-id="957fe-112">Vrátí všechny proměnné definované v globálním oboru v rámci tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="957fe-112">Returns all variables defined at global scope within this namespace.</span></span>|  
+|[<span data-ttu-id="c294d-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="c294d-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|<span data-ttu-id="c294d-108">Získá název tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c294d-108">Gets the name of this namespace.</span></span>|  
+|[<span data-ttu-id="c294d-109">GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="c294d-109">GetNamespaces Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|<span data-ttu-id="c294d-110">Získá podřízené objekty tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c294d-110">Gets the children of this namespace.</span></span>|  
+|[<span data-ttu-id="c294d-111">GetVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="c294d-111">GetVariables Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|<span data-ttu-id="c294d-112">Vrátí všechny proměnné definované v globálním oboru v rámci tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="c294d-112">Returns all variables defined at global scope within this namespace.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="957fe-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="957fe-113">Requirements</span></span>  
- <span data-ttu-id="957fe-114">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="957fe-114">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c294d-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c294d-113">Requirements</span></span>  
+ <span data-ttu-id="c294d-114">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="c294d-114">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="957fe-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="957fe-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c294d-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c294d-115">See also</span></span>
 
-- [<span data-ttu-id="957fe-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="957fe-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="c294d-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="c294d-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
