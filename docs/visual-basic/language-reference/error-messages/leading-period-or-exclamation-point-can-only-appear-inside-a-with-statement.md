@@ -8,24 +8,24 @@ helpviewer_keywords:
 - BC30157
 ms.assetid: 70daaee1-14f9-45b7-9f30-53794310b95e
 ms.openlocfilehash: 15390fb506fe9bca10f6917f5b26451a5569bece
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921118"
 ---
-# <a name="leading--or--can-only-appear-inside-a-with-statement"></a><span data-ttu-id="10f3d-102">Úvodní operátor '.' nebo '!' může být použit pouze uvnitř příkazu 'With'.</span><span class="sxs-lookup"><span data-stu-id="10f3d-102">Leading '.' or '!' can only appear inside a 'With' statement</span></span>
-<span data-ttu-id="10f3d-103">Tečka (.) nebo vykřičník (!), který není uvnitř `With` bloku probíhá, aniž by výraz na levé straně.</span><span class="sxs-lookup"><span data-stu-id="10f3d-103">A period (.) or exclamation point (!) that is not inside a `With` block occurs without an expression on the left.</span></span> <span data-ttu-id="10f3d-104">Přístup ke členu (`.`) a přístup ke členu slovník (`!`) vyžadují výraz určující prvek, který obsahuje člena.</span><span class="sxs-lookup"><span data-stu-id="10f3d-104">Member access (`.`) and dictionary member access (`!`) require an expression specifying the element that contains the member.</span></span> <span data-ttu-id="10f3d-105">Toto musí být uvedena ihned na levé straně přístupového objektu nebo jako cíl `With` bloku, který obsahuje přístup ke členu.</span><span class="sxs-lookup"><span data-stu-id="10f3d-105">This must appear immediately to the left of the accessor or as the target of a `With` block containing the member access.</span></span>  
+# <a name="leading--or--can-only-appear-inside-a-with-statement"></a><span data-ttu-id="efdbf-102">Úvodní operátor '.' nebo '!' může být použit pouze uvnitř příkazu 'With'.</span><span class="sxs-lookup"><span data-stu-id="efdbf-102">Leading '.' or '!' can only appear inside a 'With' statement</span></span>
+<span data-ttu-id="efdbf-103">Tečka (.) nebo vykřičník (!), který není uvnitř `With` bloku probíhá, aniž by výraz na levé straně.</span><span class="sxs-lookup"><span data-stu-id="efdbf-103">A period (.) or exclamation point (!) that is not inside a `With` block occurs without an expression on the left.</span></span> <span data-ttu-id="efdbf-104">Přístup ke členu (`.`) a přístup ke členu slovník (`!`) vyžadují výraz určující prvek, který obsahuje člena.</span><span class="sxs-lookup"><span data-stu-id="efdbf-104">Member access (`.`) and dictionary member access (`!`) require an expression specifying the element that contains the member.</span></span> <span data-ttu-id="efdbf-105">Toto musí být uvedena ihned na levé straně přístupového objektu nebo jako cíl `With` bloku, který obsahuje přístup ke členu.</span><span class="sxs-lookup"><span data-stu-id="efdbf-105">This must appear immediately to the left of the accessor or as the target of a `With` block containing the member access.</span></span>  
   
- <span data-ttu-id="10f3d-106">**ID chyby:** BC30157</span><span class="sxs-lookup"><span data-stu-id="10f3d-106">**Error ID:** BC30157</span></span>  
+ <span data-ttu-id="efdbf-106">**ID chyby:** BC30157</span><span class="sxs-lookup"><span data-stu-id="efdbf-106">**Error ID:** BC30157</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="10f3d-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="10f3d-107">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="efdbf-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="efdbf-107">To correct this error</span></span>  
   
-1. <span data-ttu-id="10f3d-108">Ujistěte se, `With` blok je správně formátovaný.</span><span class="sxs-lookup"><span data-stu-id="10f3d-108">Ensure that the `With` block is correctly formatted.</span></span>  
+1. <span data-ttu-id="efdbf-108">Ujistěte se, `With` blok je správně formátovaný.</span><span class="sxs-lookup"><span data-stu-id="efdbf-108">Ensure that the `With` block is correctly formatted.</span></span>  
   
-2. <span data-ttu-id="10f3d-109">Pokud není žádný `With` blokovat, zadejte nějaký výraz nalevo od přístupový objekt, který se vyhodnotí na definovaný element obsahující tento člen.</span><span class="sxs-lookup"><span data-stu-id="10f3d-109">If there is no `With` block, add an expression to the left of the accessor that evaluates to a defined element containing the member.</span></span>  
+2. <span data-ttu-id="efdbf-109">Pokud není žádný `With` blokovat, zadejte nějaký výraz nalevo od přístupový objekt, který se vyhodnotí na definovaný element obsahující tento člen.</span><span class="sxs-lookup"><span data-stu-id="efdbf-109">If there is no `With` block, add an expression to the left of the accessor that evaluates to a defined element containing the member.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="10f3d-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10f3d-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="efdbf-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="efdbf-110">See also</span></span>
 
-- [<span data-ttu-id="10f3d-111">Speciální znaky v kódu</span><span class="sxs-lookup"><span data-stu-id="10f3d-111">Special Characters in Code</span></span>](../../../visual-basic/programming-guide/program-structure/special-characters-in-code.md)
-- [<span data-ttu-id="10f3d-112">Příkaz With...End With</span><span class="sxs-lookup"><span data-stu-id="10f3d-112">With...End With Statement</span></span>](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [<span data-ttu-id="efdbf-111">Speciální znaky v kódu</span><span class="sxs-lookup"><span data-stu-id="efdbf-111">Special Characters in Code</span></span>](../../../visual-basic/programming-guide/program-structure/special-characters-in-code.md)
+- [<span data-ttu-id="efdbf-112">Příkaz With...End With</span><span class="sxs-lookup"><span data-stu-id="efdbf-112">With...End With Statement</span></span>](../../../visual-basic/language-reference/statements/with-end-with-statement.md)

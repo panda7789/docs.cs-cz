@@ -5,16 +5,16 @@ ms.assetid: a927e0ac-f110-426d-bbec-9377a29c8f17
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 44a891e6d65d159875f5607ac33b0668414cb380
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137212"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948617"
 ---
-# <a name="icordebugprocess6getexportstepinfo-method"></a><span data-ttu-id="d5bd5-102">ICorDebugProcess6::GetExportStepInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="d5bd5-102">ICorDebugProcess6::GetExportStepInfo Method</span></span>
-<span data-ttu-id="d5bd5-103">Obsahuje informace o modulu runtime exportované funkce, které umožňují krokovat spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-103">Provides information on runtime exported functions to help step through managed code.</span></span>  
+# <a name="icordebugprocess6getexportstepinfo-method"></a><span data-ttu-id="0276f-102">ICorDebugProcess6::GetExportStepInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="0276f-102">ICorDebugProcess6::GetExportStepInfo Method</span></span>
+<span data-ttu-id="0276f-103">Obsahuje informace o modulu runtime exportované funkce, které umožňují krokovat spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="0276f-103">Provides information on runtime exported functions to help step through managed code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d5bd5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d5bd5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0276f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0276f-104">Syntax</span></span>  
   
 ```  
 HRESULT GetExportStepInfo(  
@@ -23,40 +23,40 @@ HRESULT GetExportStepInfo(
     [out] CorDebugCodeInvokePurpose* pInvokePurpose);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d5bd5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d5bd5-105">Parameters</span></span>  
- <span data-ttu-id="d5bd5-106">pszExportName</span><span class="sxs-lookup"><span data-stu-id="d5bd5-106">pszExportName</span></span>  
- <span data-ttu-id="d5bd5-107">[in] Název exportu funkce modulu runtime, jak je uvedená v tabulce exportu PE.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-107">[in] The name of a runtime export function as written in the PE export table.</span></span>  
+## <a name="parameters"></a><span data-ttu-id="0276f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0276f-105">Parameters</span></span>  
+ <span data-ttu-id="0276f-106">pszExportName</span><span class="sxs-lookup"><span data-stu-id="0276f-106">pszExportName</span></span>  
+ <span data-ttu-id="0276f-107">[in] Název exportu funkce modulu runtime, jak je uvedená v tabulce exportu PE.</span><span class="sxs-lookup"><span data-stu-id="0276f-107">[in] The name of a runtime export function as written in the PE export table.</span></span>  
   
- <span data-ttu-id="d5bd5-108">invokeKind</span><span class="sxs-lookup"><span data-stu-id="d5bd5-108">invokeKind</span></span>  
- <span data-ttu-id="d5bd5-109">[out] Ukazatel na člen [CorDebugCodeInvokeKind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md) výčet, který popisuje, jak exportované funkce vyvolá spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-109">[out] A pointer to a member of the [CorDebugCodeInvokeKind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md) enumeration that describes how the exported function will invoke managed code.</span></span>  
+ <span data-ttu-id="0276f-108">invokeKind</span><span class="sxs-lookup"><span data-stu-id="0276f-108">invokeKind</span></span>  
+ <span data-ttu-id="0276f-109">[out] Ukazatel na člen [CorDebugCodeInvokeKind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md) výčet, který popisuje, jak exportované funkce vyvolá spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="0276f-109">[out] A pointer to a member of the [CorDebugCodeInvokeKind](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokekind-enumeration.md) enumeration that describes how the exported function will invoke managed code.</span></span>  
   
- <span data-ttu-id="d5bd5-110">invokePurpose</span><span class="sxs-lookup"><span data-stu-id="d5bd5-110">invokePurpose</span></span>  
- <span data-ttu-id="d5bd5-111">[out] Ukazatel na člen [CorDebugCodeInvokePurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md) výčet, který popisuje, proč exportované funkce bude volat spravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-111">[out] A pointer to a member of the [CorDebugCodeInvokePurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md) enumeration that describes why the exported function will call managed code.</span></span>  
+ <span data-ttu-id="0276f-110">invokePurpose</span><span class="sxs-lookup"><span data-stu-id="0276f-110">invokePurpose</span></span>  
+ <span data-ttu-id="0276f-111">[out] Ukazatel na člen [CorDebugCodeInvokePurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md) výčet, který popisuje, proč exportované funkce bude volat spravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="0276f-111">[out] A pointer to a member of the [CorDebugCodeInvokePurpose](../../../../docs/framework/unmanaged-api/debugging/cordebugcodeinvokepurpose-enumeration.md) enumeration that describes why the exported function will call managed code.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d5bd5-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d5bd5-112">Return Value</span></span>  
- <span data-ttu-id="d5bd5-113">Metoda může vrátit hodnoty uvedené v následující tabulce.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-113">The method can return the values listed in the following table.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0276f-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0276f-112">Return Value</span></span>  
+ <span data-ttu-id="0276f-113">Metoda může vrátit hodnoty uvedené v následující tabulce.</span><span class="sxs-lookup"><span data-stu-id="0276f-113">The method can return the values listed in the following table.</span></span>  
   
-|<span data-ttu-id="d5bd5-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d5bd5-114">Return value</span></span>|<span data-ttu-id="d5bd5-115">Popis</span><span class="sxs-lookup"><span data-stu-id="d5bd5-115">Description</span></span>|  
+|<span data-ttu-id="0276f-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0276f-114">Return value</span></span>|<span data-ttu-id="0276f-115">Popis</span><span class="sxs-lookup"><span data-stu-id="0276f-115">Description</span></span>|  
 |------------------|-----------------|  
-|`S_OK`|<span data-ttu-id="d5bd5-116">Volání metody bylo úspěšné.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-116">The method call was successful.</span></span>|  
-|`E_POINTER`|<span data-ttu-id="d5bd5-117">`pInvokeKind` nebo `pInvokePurpose` je **null**.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-117">`pInvokeKind` or `pInvokePurpose` is **null**.</span></span>|  
-|<span data-ttu-id="d5bd5-118">Další selhání `HRESULT` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-118">Other failing `HRESULT` values.</span></span>|<span data-ttu-id="d5bd5-119">Podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-119">As appropriate.</span></span>|  
+|`S_OK`|<span data-ttu-id="0276f-116">Volání metody bylo úspěšné.</span><span class="sxs-lookup"><span data-stu-id="0276f-116">The method call was successful.</span></span>|  
+|`E_POINTER`|<span data-ttu-id="0276f-117">`pInvokeKind` nebo `pInvokePurpose` je **null**.</span><span class="sxs-lookup"><span data-stu-id="0276f-117">`pInvokeKind` or `pInvokePurpose` is **null**.</span></span>|  
+|<span data-ttu-id="0276f-118">Další selhání `HRESULT` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="0276f-118">Other failing `HRESULT` values.</span></span>|<span data-ttu-id="0276f-119">Podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="0276f-119">As appropriate.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="d5bd5-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d5bd5-120">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0276f-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0276f-120">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="d5bd5-121">Tato metoda je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="d5bd5-121">This method is available with .NET Native only.</span></span>  
+>  <span data-ttu-id="0276f-121">Tato metoda je pouze k dispozici s .NET Native.</span><span class="sxs-lookup"><span data-stu-id="0276f-121">This method is available with .NET Native only.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d5bd5-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d5bd5-122">Requirements</span></span>  
- <span data-ttu-id="d5bd5-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d5bd5-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0276f-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0276f-122">Requirements</span></span>  
+ <span data-ttu-id="0276f-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0276f-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d5bd5-124">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d5bd5-124">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="0276f-124">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="0276f-124">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d5bd5-125">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d5bd5-125">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0276f-125">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0276f-125">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d5bd5-126">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d5bd5-126">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
+ <span data-ttu-id="0276f-126">**Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0276f-126">**.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d5bd5-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d5bd5-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0276f-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0276f-127">See also</span></span>
 
-- [<span data-ttu-id="d5bd5-128">ICorDebugProcess6 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d5bd5-128">ICorDebugProcess6 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
-- [<span data-ttu-id="d5bd5-129">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="d5bd5-129">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="0276f-128">ICorDebugProcess6 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0276f-128">ICorDebugProcess6 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)
+- [<span data-ttu-id="0276f-129">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="0276f-129">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

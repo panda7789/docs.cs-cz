@@ -6,26 +6,26 @@ helpviewer_keywords:
 - interaction functions [Visual Basic]
 ms.assetid: 6e698461-e944-4c0f-ae48-87429f1fe740
 ms.openlocfilehash: 1157462f743396f8fb4b4304c0529db5377bd41e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802749"
 ---
-# <a name="information-and-interaction-summary-visual-basic"></a><span data-ttu-id="4d6e4-102">Souhrn informací a interakce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4d6e4-102">Information and Interaction Summary (Visual Basic)</span></span>
-<span data-ttu-id="4d6e4-103">Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-103">Visual Basic language keywords and run-time library members are organized by purpose and use.</span></span>  
+# <a name="information-and-interaction-summary-visual-basic"></a><span data-ttu-id="88c56-102">Souhrn informací a interakce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="88c56-102">Information and Interaction Summary (Visual Basic)</span></span>
+<span data-ttu-id="88c56-103">Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.</span><span class="sxs-lookup"><span data-stu-id="88c56-103">Visual Basic language keywords and run-time library members are organized by purpose and use.</span></span>  
   
-|<span data-ttu-id="4d6e4-104">Akce</span><span class="sxs-lookup"><span data-stu-id="4d6e4-104">Action</span></span>|<span data-ttu-id="4d6e4-105">Prvek jazyka</span><span class="sxs-lookup"><span data-stu-id="4d6e4-105">Language element</span></span>|  
+|<span data-ttu-id="88c56-104">Akce</span><span class="sxs-lookup"><span data-stu-id="88c56-104">Action</span></span>|<span data-ttu-id="88c56-105">Prvek jazyka</span><span class="sxs-lookup"><span data-stu-id="88c56-105">Language element</span></span>|  
 |------------|----------------------|  
-|<span data-ttu-id="4d6e4-106">Spusťte jiné programy.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-106">Run other programs.</span></span>|<span data-ttu-id="4d6e4-107"><xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>, <xref:Microsoft.VisualBasic.Interaction.Shell%2A></span><span class="sxs-lookup"><span data-stu-id="4d6e4-107"><xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>, <xref:Microsoft.VisualBasic.Interaction.Shell%2A></span></span>|  
-|<span data-ttu-id="4d6e4-108">Volání metody nebo vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-108">Call a method or property.</span></span>|<xref:Microsoft.VisualBasic.Interaction.CallByName%2A>|  
-|<span data-ttu-id="4d6e4-109">Zvukový signál z počítače.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-109">Sound a beep from computer.</span></span>|<xref:Microsoft.VisualBasic.Interaction.Beep%2A>|  
-|<span data-ttu-id="4d6e4-110">Zadejte řetězec příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-110">Provide a command-line string.</span></span>|<xref:Microsoft.VisualBasic.Interaction.Command%2A>|  
-|<span data-ttu-id="4d6e4-111">Manipulace s objekty COM.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-111">Manipulate COM objects.</span></span>|<span data-ttu-id="4d6e4-112"><xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>, <xref:Microsoft.VisualBasic.Interaction.GetObject%2A></span><span class="sxs-lookup"><span data-stu-id="4d6e4-112"><xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>, <xref:Microsoft.VisualBasic.Interaction.GetObject%2A></span></span>|  
-|<span data-ttu-id="4d6e4-113">Načtěte informace o barvě.</span><span class="sxs-lookup"><span data-stu-id="4d6e4-113">Retrieve color information.</span></span>|<span data-ttu-id="4d6e4-114"><xref:Microsoft.VisualBasic.Information.QBColor%2A>, <xref:Microsoft.VisualBasic.Information.RGB%2A></span><span class="sxs-lookup"><span data-stu-id="4d6e4-114"><xref:Microsoft.VisualBasic.Information.QBColor%2A>, <xref:Microsoft.VisualBasic.Information.RGB%2A></span></span>|  
-|<span data-ttu-id="4d6e4-115">Dialogová okna ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="4d6e4-115">Control dialog boxes</span></span>|<span data-ttu-id="4d6e4-116"><xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A></span><span class="sxs-lookup"><span data-stu-id="4d6e4-116"><xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A></span></span>|  
+|<span data-ttu-id="88c56-106">Spusťte jiné programy.</span><span class="sxs-lookup"><span data-stu-id="88c56-106">Run other programs.</span></span>|<span data-ttu-id="88c56-107"><xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>, <xref:Microsoft.VisualBasic.Interaction.Shell%2A></span><span class="sxs-lookup"><span data-stu-id="88c56-107"><xref:Microsoft.VisualBasic.Interaction.AppActivate%2A>, <xref:Microsoft.VisualBasic.Interaction.Shell%2A></span></span>|  
+|<span data-ttu-id="88c56-108">Volání metody nebo vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="88c56-108">Call a method or property.</span></span>|<xref:Microsoft.VisualBasic.Interaction.CallByName%2A>|  
+|<span data-ttu-id="88c56-109">Zvukový signál z počítače.</span><span class="sxs-lookup"><span data-stu-id="88c56-109">Sound a beep from computer.</span></span>|<xref:Microsoft.VisualBasic.Interaction.Beep%2A>|  
+|<span data-ttu-id="88c56-110">Zadejte řetězec příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="88c56-110">Provide a command-line string.</span></span>|<xref:Microsoft.VisualBasic.Interaction.Command%2A>|  
+|<span data-ttu-id="88c56-111">Manipulace s objekty COM.</span><span class="sxs-lookup"><span data-stu-id="88c56-111">Manipulate COM objects.</span></span>|<span data-ttu-id="88c56-112"><xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>, <xref:Microsoft.VisualBasic.Interaction.GetObject%2A></span><span class="sxs-lookup"><span data-stu-id="88c56-112"><xref:Microsoft.VisualBasic.Interaction.CreateObject%2A>, <xref:Microsoft.VisualBasic.Interaction.GetObject%2A></span></span>|  
+|<span data-ttu-id="88c56-113">Načtěte informace o barvě.</span><span class="sxs-lookup"><span data-stu-id="88c56-113">Retrieve color information.</span></span>|<span data-ttu-id="88c56-114"><xref:Microsoft.VisualBasic.Information.QBColor%2A>, <xref:Microsoft.VisualBasic.Information.RGB%2A></span><span class="sxs-lookup"><span data-stu-id="88c56-114"><xref:Microsoft.VisualBasic.Information.QBColor%2A>, <xref:Microsoft.VisualBasic.Information.RGB%2A></span></span>|  
+|<span data-ttu-id="88c56-115">Dialogová okna ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="88c56-115">Control dialog boxes</span></span>|<span data-ttu-id="88c56-116"><xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A></span><span class="sxs-lookup"><span data-stu-id="88c56-116"><xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A></span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="4d6e4-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d6e4-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="88c56-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="88c56-117">See also</span></span>
 
-- [<span data-ttu-id="4d6e4-118">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="4d6e4-118">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
-- [<span data-ttu-id="4d6e4-119">Členové knihovny modulu runtime jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="4d6e4-119">Visual Basic Runtime Library Members</span></span>](../../../visual-basic/language-reference/runtime-library-members.md)
+- [<span data-ttu-id="88c56-118">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="88c56-118">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
+- [<span data-ttu-id="88c56-119">Členové knihovny modulu runtime jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="88c56-119">Visual Basic Runtime Library Members</span></span>](../../../visual-basic/language-reference/runtime-library-members.md)

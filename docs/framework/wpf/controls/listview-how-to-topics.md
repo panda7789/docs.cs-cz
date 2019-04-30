@@ -8,35 +8,35 @@ helpviewer_keywords:
 - ListView controls [WPF], how-to topics
 ms.assetid: aafce40c-9bfe-45ec-86a3-599616a11276
 ms.openlocfilehash: 2665fc60e1366f30fb7f3621bb0669db1ea3db0a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57374242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932246"
 ---
-# <a name="listview-how-to-topics"></a><span data-ttu-id="5946a-102">ListView – postupy</span><span class="sxs-lookup"><span data-stu-id="5946a-102">ListView How-to Topics</span></span>
-<span data-ttu-id="5946a-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListView> ovládací prvek pro zobrazení množinou datových položek.</span><span class="sxs-lookup"><span data-stu-id="5946a-103">The topics in this section describe how to use the <xref:System.Windows.Controls.ListView> control to display a set of data items.</span></span>  
+# <a name="listview-how-to-topics"></a><span data-ttu-id="b3a0c-102">ListView – postupy</span><span class="sxs-lookup"><span data-stu-id="b3a0c-102">ListView How-to Topics</span></span>
+<span data-ttu-id="b3a0c-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListView> ovládací prvek pro zobrazení množinou datových položek.</span><span class="sxs-lookup"><span data-stu-id="b3a0c-103">The topics in this section describe how to use the <xref:System.Windows.Controls.ListView> control to display a set of data items.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5946a-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5946a-104">In This Section</span></span>  
- [<span data-ttu-id="5946a-105">Řazení sloupce GridView při kliknutí na záhlaví</span><span class="sxs-lookup"><span data-stu-id="5946a-105">Sort a GridView Column When a Header Is Clicked</span></span>](how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
- [<span data-ttu-id="5946a-106">Vytvoření vlastního režimu zobrazení pro ListView</span><span class="sxs-lookup"><span data-stu-id="5946a-106">Create a Custom View Mode for a ListView</span></span>](how-to-create-a-custom-view-mode-for-a-listview.md)  
- [<span data-ttu-id="5946a-107">Použití šablon na styl ListView používající GridView</span><span class="sxs-lookup"><span data-stu-id="5946a-107">Use Templates to Style a ListView That Uses GridView</span></span>](how-to-use-templates-to-style-a-listview-that-uses-gridview.md)  
- [<span data-ttu-id="5946a-108">Vytvoření stylu pro přetahované záhlaví sloupce GridView</span><span class="sxs-lookup"><span data-stu-id="5946a-108">Create a Style for a Dragged GridView Column Header</span></span>](how-to-create-a-style-for-a-dragged-gridview-column-header.md)  
- [<span data-ttu-id="5946a-109">Zobrazení obsahu ListView použitím GridView</span><span class="sxs-lookup"><span data-stu-id="5946a-109">Display ListView Contents by Using a GridView</span></span>](how-to-display-listview-contents-by-using-a-gridview.md)  
- [<span data-ttu-id="5946a-110">Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů</span><span class="sxs-lookup"><span data-stu-id="5946a-110">Use Triggers to Style Selected Items in a ListView</span></span>](how-to-use-triggers-to-style-selected-items-in-a-listview.md)  
- [<span data-ttu-id="5946a-111">Vytvoření ListViewItems pomocí CheckBox</span><span class="sxs-lookup"><span data-stu-id="5946a-111">Create ListViewItems with a CheckBox</span></span>](how-to-create-listviewitems-with-a-checkbox.md)  
- [<span data-ttu-id="5946a-112">Zobrazení dat pomocí GridViewRowPresenter</span><span class="sxs-lookup"><span data-stu-id="5946a-112">Display Data by Using GridViewRowPresenter</span></span>](how-to-display-data-by-using-gridviewrowpresenter.md)  
- [<span data-ttu-id="5946a-113">Seskupení položek v objektu ListView s implementací GridView</span><span class="sxs-lookup"><span data-stu-id="5946a-113">Group Items in a ListView That Implements a GridView</span></span>](how-to-group-items-in-a-listview-that-implements-a-gridview.md)  
- [<span data-ttu-id="5946a-114">Nastavení stylu řádku v zobrazení ListView s implementací GridView</span><span class="sxs-lookup"><span data-stu-id="5946a-114">Style a Row in a ListView That Implements a GridView</span></span>](how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)  
- [<span data-ttu-id="5946a-115">Změna vodorovného zarovnání sloupce v objektu ListView</span><span class="sxs-lookup"><span data-stu-id="5946a-115">Change the Horizontal Alignment of a Column in a ListView</span></span>](how-to-change-the-horizontal-alignment-of-a-column-in-a-listview.md)  
- [<span data-ttu-id="5946a-116">Zpracování události MouseDoubleClick pro jednotlivé položky v objektu ListView</span><span class="sxs-lookup"><span data-stu-id="5946a-116">Handle the MouseDoubleClick Event for Each Item in a ListView</span></span>](how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="b3a0c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b3a0c-104">In This Section</span></span>  
+ [<span data-ttu-id="b3a0c-105">Řazení sloupce GridView při kliknutí na záhlaví</span><span class="sxs-lookup"><span data-stu-id="b3a0c-105">Sort a GridView Column When a Header Is Clicked</span></span>](how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
+ [<span data-ttu-id="b3a0c-106">Vytvoření vlastního režimu zobrazení pro ListView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-106">Create a Custom View Mode for a ListView</span></span>](how-to-create-a-custom-view-mode-for-a-listview.md)  
+ [<span data-ttu-id="b3a0c-107">Použití šablon na styl ListView používající GridView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-107">Use Templates to Style a ListView That Uses GridView</span></span>](how-to-use-templates-to-style-a-listview-that-uses-gridview.md)  
+ [<span data-ttu-id="b3a0c-108">Vytvoření stylu pro přetahované záhlaví sloupce GridView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-108">Create a Style for a Dragged GridView Column Header</span></span>](how-to-create-a-style-for-a-dragged-gridview-column-header.md)  
+ [<span data-ttu-id="b3a0c-109">Zobrazení obsahu ListView použitím GridView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-109">Display ListView Contents by Using a GridView</span></span>](how-to-display-listview-contents-by-using-a-gridview.md)  
+ [<span data-ttu-id="b3a0c-110">Nastavení stylu vybraných položek v zobrazení ListView použitím triggerů</span><span class="sxs-lookup"><span data-stu-id="b3a0c-110">Use Triggers to Style Selected Items in a ListView</span></span>](how-to-use-triggers-to-style-selected-items-in-a-listview.md)  
+ [<span data-ttu-id="b3a0c-111">Vytvoření ListViewItems pomocí CheckBox</span><span class="sxs-lookup"><span data-stu-id="b3a0c-111">Create ListViewItems with a CheckBox</span></span>](how-to-create-listviewitems-with-a-checkbox.md)  
+ [<span data-ttu-id="b3a0c-112">Zobrazení dat pomocí GridViewRowPresenter</span><span class="sxs-lookup"><span data-stu-id="b3a0c-112">Display Data by Using GridViewRowPresenter</span></span>](how-to-display-data-by-using-gridviewrowpresenter.md)  
+ [<span data-ttu-id="b3a0c-113">Seskupení položek v objektu ListView s implementací GridView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-113">Group Items in a ListView That Implements a GridView</span></span>](how-to-group-items-in-a-listview-that-implements-a-gridview.md)  
+ [<span data-ttu-id="b3a0c-114">Nastavení stylu řádku v zobrazení ListView s implementací GridView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-114">Style a Row in a ListView That Implements a GridView</span></span>](how-to-style-a-row-in-a-listview-that-implements-a-gridview.md)  
+ [<span data-ttu-id="b3a0c-115">Změna vodorovného zarovnání sloupce v objektu ListView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-115">Change the Horizontal Alignment of a Column in a ListView</span></span>](how-to-change-the-horizontal-alignment-of-a-column-in-a-listview.md)  
+ [<span data-ttu-id="b3a0c-116">Zpracování události MouseDoubleClick pro jednotlivé položky v objektu ListView</span><span class="sxs-lookup"><span data-stu-id="b3a0c-116">Handle the MouseDoubleClick Event for Each Item in a ListView</span></span>](how-to-handle-the-mousedoubleclick-event-for-each-item-in-a-listview.md)  
   
-## <a name="reference"></a><span data-ttu-id="5946a-117">Odkaz</span><span class="sxs-lookup"><span data-stu-id="5946a-117">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="b3a0c-117">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b3a0c-117">Reference</span></span>  
  <xref:System.Windows.Controls.ListView>  
   
  <xref:System.Windows.Controls.ListViewItem>  
   
  <xref:System.Windows.Controls.GridView>  
   
-## <a name="related-sections"></a><span data-ttu-id="5946a-118">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="5946a-118">Related Sections</span></span>  
- [<span data-ttu-id="5946a-119">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="5946a-119">ListView Overview</span></span>](listview-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="b3a0c-118">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b3a0c-118">Related Sections</span></span>  
+ [<span data-ttu-id="b3a0c-119">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="b3a0c-119">ListView Overview</span></span>](listview-overview.md)

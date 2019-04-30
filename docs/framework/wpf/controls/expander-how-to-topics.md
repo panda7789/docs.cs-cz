@@ -8,20 +8,20 @@ helpviewer_keywords:
 - Expander control [WPF], how-to topics
 ms.assetid: c31e85e3-963f-4693-b463-a29adc433fcd
 ms.openlocfilehash: 6ab53f0164c5623c93132d29045498ccffaf9712
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357544"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911780"
 ---
-# <a name="expander-how-to-topics"></a><span data-ttu-id="53539-102">Postupy: Témata rozšíření</span><span class="sxs-lookup"><span data-stu-id="53539-102">Expander How-to Topics</span></span>
-<span data-ttu-id="53539-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.Expander> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="53539-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Expander> control.</span></span>  
+# <a name="expander-how-to-topics"></a><span data-ttu-id="c8625-102">Postupy: Témata rozšíření</span><span class="sxs-lookup"><span data-stu-id="c8625-102">Expander How-to Topics</span></span>
+<span data-ttu-id="c8625-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.Expander> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="c8625-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Expander> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="53539-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="53539-104">In This Section</span></span>  
- [<span data-ttu-id="53539-105">Vytvoření rozšíření pomocí prvku ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="53539-105">Create an Expander with a ScrollViewer</span></span>](how-to-create-an-expander-with-a-scrollviewer.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c8625-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c8625-104">In This Section</span></span>  
+ [<span data-ttu-id="c8625-105">Vytvoření rozšíření pomocí prvku ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="c8625-105">Create an Expander with a ScrollViewer</span></span>](how-to-create-an-expander-with-a-scrollviewer.md)  
   
-## <a name="reference"></a><span data-ttu-id="53539-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="53539-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c8625-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c8625-106">Reference</span></span>  
  <xref:System.Windows.Controls.Expander>  
   
-## <a name="related-sections"></a><span data-ttu-id="53539-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="53539-107">Related Sections</span></span>  
- [<span data-ttu-id="53539-108">Přehled rozšíření</span><span class="sxs-lookup"><span data-stu-id="53539-108">Expander Overview</span></span>](expander-overview.md)
+## <a name="related-sections"></a><span data-ttu-id="c8625-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c8625-107">Related Sections</span></span>  
+ [<span data-ttu-id="c8625-108">Přehled rozšíření</span><span class="sxs-lookup"><span data-stu-id="c8625-108">Expander Overview</span></span>](expander-overview.md)

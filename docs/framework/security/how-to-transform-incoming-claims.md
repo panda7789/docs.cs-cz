@@ -7,70 +7,70 @@ ms.openlocfilehash: f836356125f1462f302b7e9f45a841c869c9a690
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940436"
 ---
-# <a name="how-to-transform-incoming-claims"></a><span data-ttu-id="4c409-102">Postupy: Transformace příchozích deklarací identit</span><span class="sxs-lookup"><span data-stu-id="4c409-102">How To: Transform Incoming Claims</span></span>
-## <a name="applies-to"></a><span data-ttu-id="4c409-103">Platí pro</span><span class="sxs-lookup"><span data-stu-id="4c409-103">Applies To</span></span>  
+# <a name="how-to-transform-incoming-claims"></a><span data-ttu-id="b6974-102">Postupy: Transformace příchozích deklarací identit</span><span class="sxs-lookup"><span data-stu-id="b6974-102">How To: Transform Incoming Claims</span></span>
+## <a name="applies-to"></a><span data-ttu-id="b6974-103">Platí pro</span><span class="sxs-lookup"><span data-stu-id="b6974-103">Applies To</span></span>  
   
--   <span data-ttu-id="4c409-104">Microsoft® Windows® Identity Foundation (WIF)</span><span class="sxs-lookup"><span data-stu-id="4c409-104">Microsoft® Windows® Identity Foundation (WIF)</span></span>  
+- <span data-ttu-id="b6974-104">Microsoft® Windows® Identity Foundation (WIF)</span><span class="sxs-lookup"><span data-stu-id="b6974-104">Microsoft® Windows® Identity Foundation (WIF)</span></span>  
   
--   <span data-ttu-id="4c409-105">ASP.NET® webových formulářů</span><span class="sxs-lookup"><span data-stu-id="4c409-105">ASP.NET® Web Forms</span></span>  
+- <span data-ttu-id="b6974-105">ASP.NET® webových formulářů</span><span class="sxs-lookup"><span data-stu-id="b6974-105">ASP.NET® Web Forms</span></span>  
   
-## <a name="summary"></a><span data-ttu-id="4c409-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="4c409-106">Summary</span></span>  
- <span data-ttu-id="4c409-107">Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity a transformaci příchozí deklarace identity.</span><span class="sxs-lookup"><span data-stu-id="4c409-107">This How-To provides detailed step-by-step procedures for creating a simple claims-aware ASP.NET Web Forms application and transforming incoming claims.</span></span> <span data-ttu-id="4c409-108">Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány transformované deklarace při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="4c409-108">It also provides instructions for how to test the application to verify that transformed claims are presented when the application is run.</span></span>  
+## <a name="summary"></a><span data-ttu-id="b6974-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="b6974-106">Summary</span></span>  
+ <span data-ttu-id="b6974-107">Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity a transformaci příchozí deklarace identity.</span><span class="sxs-lookup"><span data-stu-id="b6974-107">This How-To provides detailed step-by-step procedures for creating a simple claims-aware ASP.NET Web Forms application and transforming incoming claims.</span></span> <span data-ttu-id="b6974-108">Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány transformované deklarace při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="b6974-108">It also provides instructions for how to test the application to verify that transformed claims are presented when the application is run.</span></span>  
   
-## <a name="contents"></a><span data-ttu-id="4c409-109">Obsah</span><span class="sxs-lookup"><span data-stu-id="4c409-109">Contents</span></span>  
+## <a name="contents"></a><span data-ttu-id="b6974-109">Obsah</span><span class="sxs-lookup"><span data-stu-id="b6974-109">Contents</span></span>  
   
--   <span data-ttu-id="4c409-110">Cíle</span><span class="sxs-lookup"><span data-stu-id="4c409-110">Objectives</span></span>  
+- <span data-ttu-id="b6974-110">Cíle</span><span class="sxs-lookup"><span data-stu-id="b6974-110">Objectives</span></span>  
   
--   <span data-ttu-id="4c409-111">Přehled</span><span class="sxs-lookup"><span data-stu-id="4c409-111">Overview</span></span>  
+- <span data-ttu-id="b6974-111">Přehled</span><span class="sxs-lookup"><span data-stu-id="b6974-111">Overview</span></span>  
   
--   <span data-ttu-id="4c409-112">Přehled kroků</span><span class="sxs-lookup"><span data-stu-id="4c409-112">Summary of Steps</span></span>  
+- <span data-ttu-id="b6974-112">Přehled kroků</span><span class="sxs-lookup"><span data-stu-id="b6974-112">Summary of Steps</span></span>  
   
--   <span data-ttu-id="4c409-113">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4c409-113">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
+- <span data-ttu-id="b6974-113">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b6974-113">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   <span data-ttu-id="4c409-114">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="4c409-114">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
+- <span data-ttu-id="b6974-114">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="b6974-114">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
   
--   <span data-ttu-id="4c409-115">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="4c409-115">Step 3 – Test Your Solution</span></span>  
+- <span data-ttu-id="b6974-115">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="b6974-115">Step 3 – Test Your Solution</span></span>  
   
-## <a name="objectives"></a><span data-ttu-id="4c409-116">Cíle</span><span class="sxs-lookup"><span data-stu-id="4c409-116">Objectives</span></span>  
+## <a name="objectives"></a><span data-ttu-id="b6974-116">Cíle</span><span class="sxs-lookup"><span data-stu-id="b6974-116">Objectives</span></span>  
   
--   <span data-ttu-id="4c409-117">Konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích</span><span class="sxs-lookup"><span data-stu-id="4c409-117">Configure an ASP.NET Web Forms application for claims-based authentication</span></span>  
+- <span data-ttu-id="b6974-117">Konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích</span><span class="sxs-lookup"><span data-stu-id="b6974-117">Configure an ASP.NET Web Forms application for claims-based authentication</span></span>  
   
--   <span data-ttu-id="4c409-118">Transformovat příchozí deklarace identity tak, že přidáte deklaraci identity správce rolí</span><span class="sxs-lookup"><span data-stu-id="4c409-118">Transform incoming claims by adding an Administrator role claim</span></span>  
+- <span data-ttu-id="b6974-118">Transformovat příchozí deklarace identity tak, že přidáte deklaraci identity správce rolí</span><span class="sxs-lookup"><span data-stu-id="b6974-118">Transform incoming claims by adding an Administrator role claim</span></span>  
   
--   <span data-ttu-id="4c409-119">Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně</span><span class="sxs-lookup"><span data-stu-id="4c409-119">Test the ASP.NET Web Forms application to see if it is working properly</span></span>  
+- <span data-ttu-id="b6974-119">Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně</span><span class="sxs-lookup"><span data-stu-id="b6974-119">Test the ASP.NET Web Forms application to see if it is working properly</span></span>  
   
-## <a name="overview"></a><span data-ttu-id="4c409-120">Přehled</span><span class="sxs-lookup"><span data-stu-id="4c409-120">Overview</span></span>  
- <span data-ttu-id="4c409-121">Technologie WIF zpřístupní třídu s názvem <xref:System.Security.Claims.ClaimsAuthenticationManager> , která umožňuje uživatelům změnit deklarace identity, předtím, než se zobrazí na aplikaci předávající stranu.</span><span class="sxs-lookup"><span data-stu-id="4c409-121">WIF exposes a class named <xref:System.Security.Claims.ClaimsAuthenticationManager> that enables users to modify claims before they are presented to a relying party (RP) application.</span></span> <span data-ttu-id="4c409-122"><xref:System.Security.Claims.ClaimsAuthenticationManager> Je užitečné pro oddělení oblastí zájmu mezi ověřování a základního kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="4c409-122">The <xref:System.Security.Claims.ClaimsAuthenticationManager> is useful for separation of concerns between authentication and the underlying application code.</span></span> <span data-ttu-id="4c409-123">Následující příklad ukazuje, jak přidat roli v příchozí deklarace identity <xref:System.Security.Claims.ClaimsPrincipal> , které můžou vyžadovat RP.</span><span class="sxs-lookup"><span data-stu-id="4c409-123">The example below demonstrates how to add a role to the claims in the incoming <xref:System.Security.Claims.ClaimsPrincipal> that may be required by the RP.</span></span>  
+## <a name="overview"></a><span data-ttu-id="b6974-120">Přehled</span><span class="sxs-lookup"><span data-stu-id="b6974-120">Overview</span></span>  
+ <span data-ttu-id="b6974-121">Technologie WIF zpřístupní třídu s názvem <xref:System.Security.Claims.ClaimsAuthenticationManager> , která umožňuje uživatelům změnit deklarace identity, předtím, než se zobrazí na aplikaci předávající stranu.</span><span class="sxs-lookup"><span data-stu-id="b6974-121">WIF exposes a class named <xref:System.Security.Claims.ClaimsAuthenticationManager> that enables users to modify claims before they are presented to a relying party (RP) application.</span></span> <span data-ttu-id="b6974-122"><xref:System.Security.Claims.ClaimsAuthenticationManager> Je užitečné pro oddělení oblastí zájmu mezi ověřování a základního kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="b6974-122">The <xref:System.Security.Claims.ClaimsAuthenticationManager> is useful for separation of concerns between authentication and the underlying application code.</span></span> <span data-ttu-id="b6974-123">Následující příklad ukazuje, jak přidat roli v příchozí deklarace identity <xref:System.Security.Claims.ClaimsPrincipal> , které můžou vyžadovat RP.</span><span class="sxs-lookup"><span data-stu-id="b6974-123">The example below demonstrates how to add a role to the claims in the incoming <xref:System.Security.Claims.ClaimsPrincipal> that may be required by the RP.</span></span>  
   
-## <a name="summary-of-steps"></a><span data-ttu-id="4c409-124">Přehled kroků</span><span class="sxs-lookup"><span data-stu-id="4c409-124">Summary of Steps</span></span>  
+## <a name="summary-of-steps"></a><span data-ttu-id="b6974-124">Přehled kroků</span><span class="sxs-lookup"><span data-stu-id="b6974-124">Summary of Steps</span></span>  
   
--   <span data-ttu-id="4c409-125">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4c409-125">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
+- <span data-ttu-id="b6974-125">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b6974-125">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
   
--   <span data-ttu-id="4c409-126">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="4c409-126">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
+- <span data-ttu-id="b6974-126">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="b6974-126">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
   
--   <span data-ttu-id="4c409-127">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="4c409-127">Step 3 – Test Your Solution</span></span>  
+- <span data-ttu-id="b6974-127">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="b6974-127">Step 3 – Test Your Solution</span></span>  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a><span data-ttu-id="4c409-128">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4c409-128">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
- <span data-ttu-id="4c409-129">V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="4c409-129">In this step, you will create a new ASP.NET Web Forms application.</span></span>  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a><span data-ttu-id="b6974-128">Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b6974-128">Step 1 – Create a Simple ASP.NET Web Forms Application</span></span>  
+ <span data-ttu-id="b6974-129">V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="b6974-129">In this step, you will create a new ASP.NET Web Forms application.</span></span>  
   
-#### <a name="to-create-a-simple-aspnet-application"></a><span data-ttu-id="4c409-130">Chcete-li vytvořit jednoduchou aplikaci ASP.NET</span><span class="sxs-lookup"><span data-stu-id="4c409-130">To create a simple ASP.NET application</span></span>  
+#### <a name="to-create-a-simple-aspnet-application"></a><span data-ttu-id="b6974-130">Chcete-li vytvořit jednoduchou aplikaci ASP.NET</span><span class="sxs-lookup"><span data-stu-id="b6974-130">To create a simple ASP.NET application</span></span>  
   
-1. <span data-ttu-id="4c409-131">Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="4c409-131">Start Visual Studio in elevated mode as administrator.</span></span>  
+1. <span data-ttu-id="b6974-131">Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.</span><span class="sxs-lookup"><span data-stu-id="b6974-131">Start Visual Studio in elevated mode as administrator.</span></span>  
   
-2. <span data-ttu-id="4c409-132">V sadě Visual Studio, klikněte na tlačítko **souboru**, klikněte na tlačítko **nový**a potom klikněte na tlačítko **projektu**.</span><span class="sxs-lookup"><span data-stu-id="4c409-132">In Visual Studio, click **File**, click **New**, and then click **Project**.</span></span>  
+2. <span data-ttu-id="b6974-132">V sadě Visual Studio, klikněte na tlačítko **souboru**, klikněte na tlačítko **nový**a potom klikněte na tlačítko **projektu**.</span><span class="sxs-lookup"><span data-stu-id="b6974-132">In Visual Studio, click **File**, click **New**, and then click **Project**.</span></span>  
   
-3. <span data-ttu-id="4c409-133">V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="4c409-133">In the **New Project** window, click **ASP.NET Web Forms Application**.</span></span>  
+3. <span data-ttu-id="b6974-133">V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="b6974-133">In the **New Project** window, click **ASP.NET Web Forms Application**.</span></span>  
   
-4. <span data-ttu-id="4c409-134">V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.</span><span class="sxs-lookup"><span data-stu-id="4c409-134">In **Name**, enter `TestApp` and press **OK**.</span></span>  
+4. <span data-ttu-id="b6974-134">V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.</span><span class="sxs-lookup"><span data-stu-id="b6974-134">In **Name**, enter `TestApp` and press **OK**.</span></span>  
   
-5. <span data-ttu-id="4c409-135">Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.</span><span class="sxs-lookup"><span data-stu-id="4c409-135">Right-click the **TestApp** project under **Solution Explorer**, then select **Identity and Access**.</span></span>  
+5. <span data-ttu-id="b6974-135">Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.</span><span class="sxs-lookup"><span data-stu-id="b6974-135">Right-click the **TestApp** project under **Solution Explorer**, then select **Identity and Access**.</span></span>  
   
-6. <span data-ttu-id="4c409-136">**Identit a přístupu** zobrazí se okno.</span><span class="sxs-lookup"><span data-stu-id="4c409-136">The **Identity and Access** window appears.</span></span> <span data-ttu-id="4c409-137">V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.</span><span class="sxs-lookup"><span data-stu-id="4c409-137">Under **Providers**, select **Test your application with the Local Development STS**, then click **Apply**.</span></span>  
+6. <span data-ttu-id="b6974-136">**Identit a přístupu** zobrazí se okno.</span><span class="sxs-lookup"><span data-stu-id="b6974-136">The **Identity and Access** window appears.</span></span> <span data-ttu-id="b6974-137">V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.</span><span class="sxs-lookup"><span data-stu-id="b6974-137">Under **Providers**, select **Test your application with the Local Development STS**, then click **Apply**.</span></span>  
   
-7. <span data-ttu-id="4c409-138">V *Default.aspx* souboru, nahraďte existující kód následujícím kódem a pak soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="4c409-138">In the *Default.aspx* file, replace the existing markup with the following, then save the file:</span></span>  
+7. <span data-ttu-id="b6974-138">V *Default.aspx* souboru, nahraďte existující kód následujícím kódem a pak soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="b6974-138">In the *Default.aspx* file, replace the existing markup with the following, then save the file:</span></span>  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -87,7 +87,7 @@ ms.locfileid: "59977883"
     </asp:Content>  
     ```  
   
-8. <span data-ttu-id="4c409-139">Otevřete soubor kódu na pozadí s názvem *Default.aspx.cs*.</span><span class="sxs-lookup"><span data-stu-id="4c409-139">Open the code-behind file named *Default.aspx.cs*.</span></span> <span data-ttu-id="4c409-140">Nahraďte stávající kód následujícím kódem a poté soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="4c409-140">Replace the existing code with the following, then save the file:</span></span>  
+8. <span data-ttu-id="b6974-139">Otevřete soubor kódu na pozadí s názvem *Default.aspx.cs*.</span><span class="sxs-lookup"><span data-stu-id="b6974-139">Open the code-behind file named *Default.aspx.cs*.</span></span> <span data-ttu-id="b6974-140">Nahraďte stávající kód následujícím kódem a poté soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="b6974-140">Replace the existing code with the following, then save the file:</span></span>  
   
     ```csharp  
     using System;  
@@ -108,32 +108,32 @@ ms.locfileid: "59977883"
     }  
     ```  
   
-## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="4c409-141">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="4c409-141">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
- <span data-ttu-id="4c409-142">V tomto kroku se přepíše výchozí funkce v <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy přidat roli správce příchozí instančnímu objektu.</span><span class="sxs-lookup"><span data-stu-id="4c409-142">In this step you will override default functionality in the <xref:System.Security.Claims.ClaimsAuthenticationManager> class to add an Administrator role to the incoming Principal.</span></span>  
+## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="b6974-141">Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace</span><span class="sxs-lookup"><span data-stu-id="b6974-141">Step 2 – Implement Claims Transformation Using a Custom ClaimsAuthenticationManager</span></span>  
+ <span data-ttu-id="b6974-142">V tomto kroku se přepíše výchozí funkce v <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy přidat roli správce příchozí instančnímu objektu.</span><span class="sxs-lookup"><span data-stu-id="b6974-142">In this step you will override default functionality in the <xref:System.Security.Claims.ClaimsAuthenticationManager> class to add an Administrator role to the incoming Principal.</span></span>  
   
-#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="4c409-143">K implementaci transformace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager</span><span class="sxs-lookup"><span data-stu-id="4c409-143">To implement claims transformation using a custom ClaimsAuthenticationManager</span></span>  
+#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a><span data-ttu-id="b6974-143">K implementaci transformace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager</span><span class="sxs-lookup"><span data-stu-id="b6974-143">To implement claims transformation using a custom ClaimsAuthenticationManager</span></span>  
   
-1. <span data-ttu-id="4c409-144">V sadě Visual Studio, klikněte pravým tlačítkem myši na řešení, klikněte na tlačítko **přidat**a potom klikněte na **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="4c409-144">In Visual Studio, right-click the on the solution, click **Add**, and then click **New Project**.</span></span>  
+1. <span data-ttu-id="b6974-144">V sadě Visual Studio, klikněte pravým tlačítkem myši na řešení, klikněte na tlačítko **přidat**a potom klikněte na **nový projekt**.</span><span class="sxs-lookup"><span data-stu-id="b6974-144">In Visual Studio, right-click the on the solution, click **Add**, and then click **New Project**.</span></span>  
   
-2. <span data-ttu-id="4c409-145">V **přidat nový projekt** okně **knihovny tříd** z **Visual C#** šablony seznamu, zadejte `ClaimsTransformation`a potom stiskněte klávesu **OK**.</span><span class="sxs-lookup"><span data-stu-id="4c409-145">In the **Add New Project** window, select **Class Library** from the **Visual C#** templates list, enter `ClaimsTransformation`, and then press **OK**.</span></span> <span data-ttu-id="4c409-146">Vytvoří se nový projekt ve složce řešení.</span><span class="sxs-lookup"><span data-stu-id="4c409-146">The new project will be created in your solution folder.</span></span>  
+2. <span data-ttu-id="b6974-145">V **přidat nový projekt** okně **knihovny tříd** z **Visual C#** šablony seznamu, zadejte `ClaimsTransformation`a potom stiskněte klávesu **OK**.</span><span class="sxs-lookup"><span data-stu-id="b6974-145">In the **Add New Project** window, select **Class Library** from the **Visual C#** templates list, enter `ClaimsTransformation`, and then press **OK**.</span></span> <span data-ttu-id="b6974-146">Vytvoří se nový projekt ve složce řešení.</span><span class="sxs-lookup"><span data-stu-id="b6974-146">The new project will be created in your solution folder.</span></span>  
   
-3. <span data-ttu-id="4c409-147">Klikněte pravým tlačítkem na **odkazy** pod **ClaimsTransformation** projektu a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="4c409-147">Right-click on **References** under the **ClaimsTransformation** project, and then click **Add Reference**.</span></span>  
+3. <span data-ttu-id="b6974-147">Klikněte pravým tlačítkem na **odkazy** pod **ClaimsTransformation** projektu a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="b6974-147">Right-click on **References** under the **ClaimsTransformation** project, and then click **Add Reference**.</span></span>  
   
-4. <span data-ttu-id="4c409-148">V **správce odkazů** okně **System.IdentityModel**a potom klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="4c409-148">In the **Reference Manager** window, select **System.IdentityModel**, and then click **OK**.</span></span>  
+4. <span data-ttu-id="b6974-148">V **správce odkazů** okně **System.IdentityModel**a potom klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="b6974-148">In the **Reference Manager** window, select **System.IdentityModel**, and then click **OK**.</span></span>  
   
-5. <span data-ttu-id="4c409-149">Otevřít **Class1.cs**, nebo pokud neexistuje, klikněte pravým tlačítkem na **ClaimsTransformation**, klikněte na tlačítko **přidat**, pak klikněte na tlačítko **třídy...**</span><span class="sxs-lookup"><span data-stu-id="4c409-149">Open **Class1.cs**, or if it doesn’t exist, right-click **ClaimsTransformation**, click **Add**, then click **Class…**</span></span>  
+5. <span data-ttu-id="b6974-149">Otevřít **Class1.cs**, nebo pokud neexistuje, klikněte pravým tlačítkem na **ClaimsTransformation**, klikněte na tlačítko **přidat**, pak klikněte na tlačítko **třídy...**</span><span class="sxs-lookup"><span data-stu-id="b6974-149">Open **Class1.cs**, or if it doesn’t exist, right-click **ClaimsTransformation**, click **Add**, then click **Class…**</span></span>  
   
-6. <span data-ttu-id="4c409-150">Přidejte následující direktivy using do souboru kódu:</span><span class="sxs-lookup"><span data-stu-id="4c409-150">Add the following using directives to the code file:</span></span>  
+6. <span data-ttu-id="b6974-150">Přidejte následující direktivy using do souboru kódu:</span><span class="sxs-lookup"><span data-stu-id="b6974-150">Add the following using directives to the code file:</span></span>  
   
     ```csharp  
     using System.Security.Claims;  
     using System.Security.Principal;  
     ```  
   
-7. <span data-ttu-id="4c409-151">V souboru kódu přidejte následující třídy a metody.</span><span class="sxs-lookup"><span data-stu-id="4c409-151">Add the following class and method in the code file.</span></span>  
+7. <span data-ttu-id="b6974-151">V souboru kódu přidejte následující třídy a metody.</span><span class="sxs-lookup"><span data-stu-id="b6974-151">Add the following class and method in the code file.</span></span>  
   
     > [!WARNING]
-    >  <span data-ttu-id="4c409-152">Následující kód je pro demonstrační účely. Ujistěte se, že ověřte zamýšlené příslušná oprávnění v produkčním kódu.</span><span class="sxs-lookup"><span data-stu-id="4c409-152">The following code is for demonstration purposes only; make sure that you verify your intended permissions in production code.</span></span>  
+    >  <span data-ttu-id="b6974-152">Následující kód je pro demonstrační účely. Ujistěte se, že ověřte zamýšlené příslušná oprávnění v produkčním kódu.</span><span class="sxs-lookup"><span data-stu-id="b6974-152">The following code is for demonstration purposes only; make sure that you verify your intended permissions in production code.</span></span>  
   
     ```csharp  
     public class ClaimsTransformationModule : ClaimsAuthenticationManager  
@@ -150,27 +150,27 @@ ms.locfileid: "59977883"
     }  
     ```  
   
-8. <span data-ttu-id="4c409-153">Uložte soubor a sestavení **ClaimsTransformation** projektu.</span><span class="sxs-lookup"><span data-stu-id="4c409-153">Save the file and build the **ClaimsTransformation** project.</span></span>  
+8. <span data-ttu-id="b6974-153">Uložte soubor a sestavení **ClaimsTransformation** projektu.</span><span class="sxs-lookup"><span data-stu-id="b6974-153">Save the file and build the **ClaimsTransformation** project.</span></span>  
   
-9. <span data-ttu-id="4c409-154">Ve vaší **TestApp** projekt ASP.NET, klikněte pravým tlačítkem na odkazy a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="4c409-154">In your **TestApp** ASP.NET project, right-click on References, and then click **Add Reference**.</span></span>  
+9. <span data-ttu-id="b6974-154">Ve vaší **TestApp** projekt ASP.NET, klikněte pravým tlačítkem na odkazy a pak klikněte na tlačítko **přidat odkaz**.</span><span class="sxs-lookup"><span data-stu-id="b6974-154">In your **TestApp** ASP.NET project, right-click on References, and then click **Add Reference**.</span></span>  
   
-10. <span data-ttu-id="4c409-155">V **správce odkazů** okně **řešení** v levé nabídce vyberte **ClaimsTransformation** mají údaj vyplněný možnosti a pak klikněte na  **OK**.</span><span class="sxs-lookup"><span data-stu-id="4c409-155">In the **Reference Manager** window, select **Solution** from the left menu, select **ClaimsTransformation** from the populated options, and then click **OK**.</span></span>  
+10. <span data-ttu-id="b6974-155">V **správce odkazů** okně **řešení** v levé nabídce vyberte **ClaimsTransformation** mají údaj vyplněný možnosti a pak klikněte na  **OK**.</span><span class="sxs-lookup"><span data-stu-id="b6974-155">In the **Reference Manager** window, select **Solution** from the left menu, select **ClaimsTransformation** from the populated options, and then click **OK**.</span></span>  
   
-11. <span data-ttu-id="4c409-156">V kořenovém adresáři **Web.config** souboru, přejděte  **\<system.identityModel >** položka.</span><span class="sxs-lookup"><span data-stu-id="4c409-156">In the root **Web.config** file, navigate to the **\<system.identityModel>** entry.</span></span> <span data-ttu-id="4c409-157">V rámci  **\<identityConfiguration >** prvky, přidejte následující řádek a soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="4c409-157">Within the **\<identityConfiguration>** elements, add the following line and save the file:</span></span>  
+11. <span data-ttu-id="b6974-156">V kořenovém adresáři **Web.config** souboru, přejděte  **\<system.identityModel >** položka.</span><span class="sxs-lookup"><span data-stu-id="b6974-156">In the root **Web.config** file, navigate to the **\<system.identityModel>** entry.</span></span> <span data-ttu-id="b6974-157">V rámci  **\<identityConfiguration >** prvky, přidejte následující řádek a soubor uložte:</span><span class="sxs-lookup"><span data-stu-id="b6974-157">Within the **\<identityConfiguration>** elements, add the following line and save the file:</span></span>  
   
     ```xml  
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
-## <a name="step-3--test-your-solution"></a><span data-ttu-id="4c409-158">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="4c409-158">Step 3 – Test Your Solution</span></span>  
- <span data-ttu-id="4c409-159">V tomto kroku otestujte aplikaci webových formulářů ASP.NET a ověřte, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování pomocí formulářů.</span><span class="sxs-lookup"><span data-stu-id="4c409-159">In this step you will test your ASP.NET Web Forms application, and verify that claims are presented when a user signs in with Forms authentication.</span></span>  
+## <a name="step-3--test-your-solution"></a><span data-ttu-id="b6974-158">Krok 3 – Otestování řešení</span><span class="sxs-lookup"><span data-stu-id="b6974-158">Step 3 – Test Your Solution</span></span>  
+ <span data-ttu-id="b6974-159">V tomto kroku otestujte aplikaci webových formulářů ASP.NET a ověřte, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování pomocí formulářů.</span><span class="sxs-lookup"><span data-stu-id="b6974-159">In this step you will test your ASP.NET Web Forms application, and verify that claims are presented when a user signs in with Forms authentication.</span></span>  
   
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a><span data-ttu-id="4c409-160">K testování aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů</span><span class="sxs-lookup"><span data-stu-id="4c409-160">To test your ASP.NET Web Forms application for claims using Forms authentication</span></span>  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a><span data-ttu-id="b6974-160">K testování aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů</span><span class="sxs-lookup"><span data-stu-id="b6974-160">To test your ASP.NET Web Forms application for claims using Forms authentication</span></span>  
   
-1. <span data-ttu-id="4c409-161">Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="4c409-161">Press **F5** to build and run the application.</span></span> <span data-ttu-id="4c409-162">Mělo by se zobrazit s *Default.aspx*.</span><span class="sxs-lookup"><span data-stu-id="4c409-162">You should be presented with *Default.aspx*.</span></span>  
+1. <span data-ttu-id="b6974-161">Stisknutím klávesy **F5** sestavíte a spustíte aplikaci.</span><span class="sxs-lookup"><span data-stu-id="b6974-161">Press **F5** to build and run the application.</span></span> <span data-ttu-id="b6974-162">Mělo by se zobrazit s *Default.aspx*.</span><span class="sxs-lookup"><span data-stu-id="b6974-162">You should be presented with *Default.aspx*.</span></span>  
   
-2. <span data-ttu-id="4c409-163">Na *Default.aspx* stránky, měli byste vidět tabulku pod **Your deklarací** nadpis, který obsahuje **vystavitele**, **OriginalIssuer**, **Typ**, **hodnotu**, a **ValueType** deklarací informace o vašem účtu.</span><span class="sxs-lookup"><span data-stu-id="4c409-163">On the *Default.aspx* page, you should see a table beneath the **Your Claims** heading that includes the **Issuer**, **OriginalIssuer**, **Type**, **Value**, and **ValueType** claims information about your account.</span></span> <span data-ttu-id="4c409-164">Poslední řádek by se měla zobrazit následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="4c409-164">The last row should be presented in the following way:</span></span>  
+2. <span data-ttu-id="b6974-163">Na *Default.aspx* stránky, měli byste vidět tabulku pod **Your deklarací** nadpis, který obsahuje **vystavitele**, **OriginalIssuer**, **Typ**, **hodnotu**, a **ValueType** deklarací informace o vašem účtu.</span><span class="sxs-lookup"><span data-stu-id="b6974-163">On the *Default.aspx* page, you should see a table beneath the **Your Claims** heading that includes the **Issuer**, **OriginalIssuer**, **Type**, **Value**, and **ValueType** claims information about your account.</span></span> <span data-ttu-id="b6974-164">Poslední řádek by se měla zobrazit následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="b6974-164">The last row should be presented in the following way:</span></span>  
   
     ||||||  
     |-|-|-|-|-|  
-    |<span data-ttu-id="4c409-165">MÍSTNÍ AUTORITA</span><span class="sxs-lookup"><span data-stu-id="4c409-165">LOCAL AUTHORITY</span></span>|<span data-ttu-id="4c409-166">MÍSTNÍ AUTORITA</span><span class="sxs-lookup"><span data-stu-id="4c409-166">LOCAL AUTHORITY</span></span>|`http://schemas.microsoft.com/ws/2008/06/identity/claims/role`|<span data-ttu-id="4c409-167">Správce</span><span class="sxs-lookup"><span data-stu-id="4c409-167">Admin</span></span>|<https://www.w3.org/2001/XMLSchema#string>|
+    |<span data-ttu-id="b6974-165">MÍSTNÍ AUTORITA</span><span class="sxs-lookup"><span data-stu-id="b6974-165">LOCAL AUTHORITY</span></span>|<span data-ttu-id="b6974-166">MÍSTNÍ AUTORITA</span><span class="sxs-lookup"><span data-stu-id="b6974-166">LOCAL AUTHORITY</span></span>|`http://schemas.microsoft.com/ws/2008/06/identity/claims/role`|<span data-ttu-id="b6974-167">Správce</span><span class="sxs-lookup"><span data-stu-id="b6974-167">Admin</span></span>|<https://www.w3.org/2001/XMLSchema#string>|

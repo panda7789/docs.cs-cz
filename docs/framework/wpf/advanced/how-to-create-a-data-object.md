@@ -10,79 +10,79 @@ helpviewer_keywords:
 - drag-and-drop [WPF], creating data objects
 ms.assetid: 022fa142-717d-4fea-a53c-3b52e9d91aff
 ms.openlocfilehash: deae8751518d9322e8d924a1b1fcbc20e25b35ed
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776490"
 ---
-# <a name="how-to-create-a-data-object"></a><span data-ttu-id="37463-102">Postupy: Vytvoření datového objektu</span><span class="sxs-lookup"><span data-stu-id="37463-102">How to: Create a Data Object</span></span>
-<span data-ttu-id="37463-103">Následující příklady znázorňují různé způsoby vytvoření datového objektu pomocí konstruktorů poskytované <xref:System.Windows.DataObject> třídy.</span><span class="sxs-lookup"><span data-stu-id="37463-103">The following examples show various ways to create a data object using the constructors provided by the <xref:System.Windows.DataObject> class.</span></span>  
+# <a name="how-to-create-a-data-object"></a><span data-ttu-id="116ae-102">Postupy: Vytvoření datového objektu</span><span class="sxs-lookup"><span data-stu-id="116ae-102">How to: Create a Data Object</span></span>
+<span data-ttu-id="116ae-103">Následující příklady znázorňují různé způsoby vytvoření datového objektu pomocí konstruktorů poskytované <xref:System.Windows.DataObject> třídy.</span><span class="sxs-lookup"><span data-stu-id="116ae-103">The following examples show various ways to create a data object using the constructors provided by the <xref:System.Windows.DataObject> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="37463-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="37463-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="116ae-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="116ae-104">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="37463-105">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-105">Description</span></span>  
- <span data-ttu-id="37463-106">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.Object%29>) k inicializaci dat objektu s řetězcem.</span><span class="sxs-lookup"><span data-stu-id="37463-106">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.Object%29>) to initialize the data object with a string.</span></span>  <span data-ttu-id="37463-107">V tomto případě má formát příslušná data je určena automaticky podle typu uložených dat a automatického převodu objem uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="37463-107">In this case, an appropriate data format is determined automatically according to the stored data's type, and auto-converting of the stored data is allowed by default.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-105">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-105">Description</span></span>  
+ <span data-ttu-id="116ae-106">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.Object%29>) k inicializaci dat objektu s řetězcem.</span><span class="sxs-lookup"><span data-stu-id="116ae-106">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.Object%29>) to initialize the data object with a string.</span></span>  <span data-ttu-id="116ae-107">V tomto případě má formát příslušná data je určena automaticky podle typu uložených dat a automatického převodu objem uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="116ae-107">In this case, an appropriate data format is determined automatically according to the stored data's type, and auto-converting of the stored data is allowed by default.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-108">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-108">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-108">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-108">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_simple)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_simple)]  
   
-### <a name="description"></a><span data-ttu-id="37463-109">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-109">Description</span></span>  
- <span data-ttu-id="37463-110">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="37463-110">The following example code is a condensed version of the code shown above.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-109">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-109">Description</span></span>  
+ <span data-ttu-id="116ae-110">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="116ae-110">The following example code is a condensed version of the code shown above.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-111">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-111">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-111">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-111">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple_Condensed](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_simple_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Simple_Condensed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_simple_condensed)]  
   
-## <a name="example"></a><span data-ttu-id="37463-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="37463-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="116ae-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="116ae-112">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="37463-113">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-113">Description</span></span>  
- <span data-ttu-id="37463-114">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="37463-114">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="37463-115">V tomto případě formát dat je zadán řetězcem; <xref:System.Windows.DataFormats> třída poskytuje sadu předdefinovaných typů řetězců.</span><span class="sxs-lookup"><span data-stu-id="37463-115">In this case the data format is specified by a string; the <xref:System.Windows.DataFormats> class provides a set of pre-defined type strings.</span></span> <span data-ttu-id="37463-116">Automatický převod uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="37463-116">Auto-converting of the stored data is allowed by default.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-113">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-113">Description</span></span>  
+ <span data-ttu-id="116ae-114">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="116ae-114">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%29>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="116ae-115">V tomto případě formát dat je zadán řetězcem; <xref:System.Windows.DataFormats> třída poskytuje sadu předdefinovaných typů řetězců.</span><span class="sxs-lookup"><span data-stu-id="116ae-115">In this case the data format is specified by a string; the <xref:System.Windows.DataFormats> class provides a set of pre-defined type strings.</span></span> <span data-ttu-id="116ae-116">Automatický převod uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="116ae-116">Auto-converting of the stored data is allowed by default.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-117">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-117">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-117">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-117">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_typestring)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_typestring)]  
   
-### <a name="description"></a><span data-ttu-id="37463-118">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-118">Description</span></span>  
- <span data-ttu-id="37463-119">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="37463-119">The following example code is a condensed version of the code shown above.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-118">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-118">Description</span></span>  
+ <span data-ttu-id="116ae-119">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="116ae-119">The following example code is a condensed version of the code shown above.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-120">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-120">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-120">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-120">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString_Condensed](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_typestring_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_TypeString_Condensed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_typestring_condensed)]  
   
-## <a name="example"></a><span data-ttu-id="37463-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="37463-121">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="116ae-121">Příklad</span><span class="sxs-lookup"><span data-stu-id="116ae-121">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="37463-122">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-122">Description</span></span>  
- <span data-ttu-id="37463-123">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%2A>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="37463-123">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%2A>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="37463-124">V tomto případě je určený formát data <xref:System.Type> parametru.</span><span class="sxs-lookup"><span data-stu-id="37463-124">In this case the data format is specified by a <xref:System.Type> parameter.</span></span>  <span data-ttu-id="37463-125">Automatický převod uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="37463-125">Auto-converting of the stored data is allowed by default.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-122">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-122">Description</span></span>  
+ <span data-ttu-id="116ae-123">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%2A>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="116ae-123">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%2A>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="116ae-124">V tomto případě je určený formát data <xref:System.Type> parametru.</span><span class="sxs-lookup"><span data-stu-id="116ae-124">In this case the data format is specified by a <xref:System.Type> parameter.</span></span>  <span data-ttu-id="116ae-125">Automatický převod uložených dat je ve výchozím nastavení povolený.</span><span class="sxs-lookup"><span data-stu-id="116ae-125">Auto-converting of the stored data is allowed by default.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-126">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-126">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-126">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-126">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_type)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_type)]  
   
-### <a name="description"></a><span data-ttu-id="37463-127">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-127">Description</span></span>  
- <span data-ttu-id="37463-128">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="37463-128">The following example code is a condensed version of the code shown above.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-127">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-127">Description</span></span>  
+ <span data-ttu-id="116ae-128">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="116ae-128">The following example code is a condensed version of the code shown above.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-129">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-129">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-129">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-129">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type_Condensed](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_type_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_Type_Condensed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_type_condensed)]  
   
-## <a name="example"></a><span data-ttu-id="37463-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="37463-130">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="116ae-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="116ae-130">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="37463-131">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-131">Description</span></span>  
- <span data-ttu-id="37463-132">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="37463-132">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="37463-133">V tomto případě formát dat je zadán řetězcem; <xref:System.Windows.DataFormats> třída poskytuje sadu předdefinovaných typů řetězců.</span><span class="sxs-lookup"><span data-stu-id="37463-133">In this case the data format is specified by a string; the <xref:System.Windows.DataFormats> class provides a set of pre-defined type strings.</span></span> <span data-ttu-id="37463-134">Tohoto konkrétního konstruktoru přetížení umožňuje volajícímu zadat, zda je povolen automatický převod.</span><span class="sxs-lookup"><span data-stu-id="37463-134">This particular constructor overload enables the caller to specify whether auto-converting is allowed.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-131">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-131">Description</span></span>  
+ <span data-ttu-id="116ae-132">Následující příklad kódu vytvoří nový objekt dat a používá jednu z přetížených konstruktorů (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>) k inicializaci dat objektu řetězce a zadaného data formátu.</span><span class="sxs-lookup"><span data-stu-id="116ae-132">The following example code creates a new data object and uses one of the overloaded constructors (<xref:System.Windows.DataObject.%23ctor%28System.String%2CSystem.Object%2CSystem.Boolean%29>) to initialize the data object with a string and a specified data format.</span></span>  <span data-ttu-id="116ae-133">V tomto případě formát dat je zadán řetězcem; <xref:System.Windows.DataFormats> třída poskytuje sadu předdefinovaných typů řetězců.</span><span class="sxs-lookup"><span data-stu-id="116ae-133">In this case the data format is specified by a string; the <xref:System.Windows.DataFormats> class provides a set of pre-defined type strings.</span></span> <span data-ttu-id="116ae-134">Tohoto konkrétního konstruktoru přetížení umožňuje volajícímu zadat, zda je povolen automatický převod.</span><span class="sxs-lookup"><span data-stu-id="116ae-134">This particular constructor overload enables the caller to specify whether auto-converting is allowed.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-135">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-135">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-135">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-135">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_autoconvert)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_autoconvert)]  
   
-### <a name="description"></a><span data-ttu-id="37463-136">Popis</span><span class="sxs-lookup"><span data-stu-id="37463-136">Description</span></span>  
- <span data-ttu-id="37463-137">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="37463-137">The following example code is a condensed version of the code shown above.</span></span>  
+### <a name="description"></a><span data-ttu-id="116ae-136">Popis</span><span class="sxs-lookup"><span data-stu-id="116ae-136">Description</span></span>  
+ <span data-ttu-id="116ae-137">Následující příklad kódu je zkrácenou verzi kódu, uvedené výše.</span><span class="sxs-lookup"><span data-stu-id="116ae-137">The following example code is a condensed version of the code shown above.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="37463-138">Kód</span><span class="sxs-lookup"><span data-stu-id="37463-138">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="116ae-138">Kód</span><span class="sxs-lookup"><span data-stu-id="116ae-138">Code</span></span>  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert_Condensed](~/samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_createdataobject_autoconvert_condensed)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_CreateDataObject_AutoConvert_Condensed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_createdataobject_autoconvert_condensed)]  
   
-## <a name="see-also"></a><span data-ttu-id="37463-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="37463-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="116ae-139">Viz také:</span><span class="sxs-lookup"><span data-stu-id="116ae-139">See also</span></span>
 
 - <xref:System.Windows.IDataObject>

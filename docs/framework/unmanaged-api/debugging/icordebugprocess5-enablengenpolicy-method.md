@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 154243e45a41ec2ba8b02937794b372a0705d458
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59219119"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61930361"
 ---
-# <a name="icordebugprocess5enablengenpolicy-method"></a><span data-ttu-id="d4b23-102">ICorDebugProcess5::EnableNGENPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="d4b23-102">ICorDebugProcess5::EnableNGENPolicy Method</span></span>
-<span data-ttu-id="d4b23-103">Nastaví hodnotu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="d4b23-103">Sets a value that determines how an application loads native images while running under a managed debugger.</span></span>  
+# <a name="icordebugprocess5enablengenpolicy-method"></a><span data-ttu-id="41f6d-102">ICorDebugProcess5::EnableNGENPolicy – metoda</span><span class="sxs-lookup"><span data-stu-id="41f6d-102">ICorDebugProcess5::EnableNGENPolicy Method</span></span>
+<span data-ttu-id="41f6d-103">Nastaví hodnotu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="41f6d-103">Sets a value that determines how an application loads native images while running under a managed debugger.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d4b23-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d4b23-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="41f6d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="41f6d-104">Syntax</span></span>  
   
 ```  
 HRESULT EnableNGENPolicy(  
@@ -35,26 +35,26 @@ HRESULT EnableNGENPolicy(
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d4b23-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d4b23-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="41f6d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="41f6d-105">Parameters</span></span>  
  `ePolicy`  
- <span data-ttu-id="d4b23-106">[in] A [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) konstantu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="d4b23-106">[in] A [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) constant that determines how an application loads native images while running under a managed debugger.</span></span>  
+ <span data-ttu-id="41f6d-106">[in] A [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) konstantu, která určuje, jak aplikace načítá nativních bitových kopií při spuštění v rámci spravovaného ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="41f6d-106">[in] A [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md) constant that determines how an application loads native images while running under a managed debugger.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d4b23-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d4b23-107">Remarks</span></span>  
- <span data-ttu-id="d4b23-108">Pokud je zásada nastavená úspěšně, metoda vrátí `S_OK`.</span><span class="sxs-lookup"><span data-stu-id="d4b23-108">If the policy is set successfully, the method returns `S_OK`.</span></span> <span data-ttu-id="d4b23-109">Pokud `ePolicy` je mimo rozsah výčtové hodnoty určené [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), vrátí metoda `E_INVALIDARG` a volání metody, které nemá žádný vliv.</span><span class="sxs-lookup"><span data-stu-id="d4b23-109">If `ePolicy` is outside the range of the enumerated values defined by [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), the method returns `E_INVALIDARG` and the method call has no effect.</span></span> <span data-ttu-id="d4b23-110">Pokud nelze aktualizovat zásady Native Image Generator (Ngen.exe), metoda vrátí `E_FAIL`.</span><span class="sxs-lookup"><span data-stu-id="d4b23-110">If the policy of the Native Image Generator (Ngen.exe) cannot be updated, the method returns `E_FAIL`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="41f6d-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="41f6d-107">Remarks</span></span>  
+ <span data-ttu-id="41f6d-108">Pokud je zásada nastavená úspěšně, metoda vrátí `S_OK`.</span><span class="sxs-lookup"><span data-stu-id="41f6d-108">If the policy is set successfully, the method returns `S_OK`.</span></span> <span data-ttu-id="41f6d-109">Pokud `ePolicy` je mimo rozsah výčtové hodnoty určené [cordebugngenpolicy –](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), vrátí metoda `E_INVALIDARG` a volání metody, které nemá žádný vliv.</span><span class="sxs-lookup"><span data-stu-id="41f6d-109">If `ePolicy` is outside the range of the enumerated values defined by [CorDebugNGenPolicy](../../../../docs/framework/unmanaged-api/debugging/cordebugngenpolicy-enumeration.md), the method returns `E_INVALIDARG` and the method call has no effect.</span></span> <span data-ttu-id="41f6d-110">Pokud nelze aktualizovat zásady Native Image Generator (Ngen.exe), metoda vrátí `E_FAIL`.</span><span class="sxs-lookup"><span data-stu-id="41f6d-110">If the policy of the Native Image Generator (Ngen.exe) cannot be updated, the method returns `E_FAIL`.</span></span>  
   
- <span data-ttu-id="d4b23-111">`ICorDebugProcess5::EnableNGenPolicy` Metodu lze volat kdykoli po celou dobu životnosti procesu.</span><span class="sxs-lookup"><span data-stu-id="d4b23-111">The `ICorDebugProcess5::EnableNGenPolicy` method can be called at any time during the lifetime of the process.</span></span> <span data-ttu-id="d4b23-112">Zásady platí pro všechny moduly, které jsou načteny po nastavení zásad.</span><span class="sxs-lookup"><span data-stu-id="d4b23-112">The policy is in effect for any modules that are loaded after the policy is set.</span></span>  
+ <span data-ttu-id="41f6d-111">`ICorDebugProcess5::EnableNGenPolicy` Metodu lze volat kdykoli po celou dobu životnosti procesu.</span><span class="sxs-lookup"><span data-stu-id="41f6d-111">The `ICorDebugProcess5::EnableNGenPolicy` method can be called at any time during the lifetime of the process.</span></span> <span data-ttu-id="41f6d-112">Zásady platí pro všechny moduly, které jsou načteny po nastavení zásad.</span><span class="sxs-lookup"><span data-stu-id="41f6d-112">The policy is in effect for any modules that are loaded after the policy is set.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d4b23-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d4b23-113">Requirements</span></span>  
- <span data-ttu-id="d4b23-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d4b23-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="41f6d-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="41f6d-113">Requirements</span></span>  
+ <span data-ttu-id="41f6d-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="41f6d-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d4b23-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d4b23-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="41f6d-115">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="41f6d-115">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d4b23-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d4b23-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="41f6d-116">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="41f6d-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d4b23-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d4b23-117">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="41f6d-117">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="41f6d-117">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d4b23-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d4b23-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="41f6d-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="41f6d-118">See also</span></span>
 
-- [<span data-ttu-id="d4b23-119">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d4b23-119">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [<span data-ttu-id="d4b23-120">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="d4b23-120">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="d4b23-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="d4b23-121">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="41f6d-119">ICorDebugProcess5 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="41f6d-119">ICorDebugProcess5 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
+- [<span data-ttu-id="41f6d-120">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="41f6d-120">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="41f6d-121">Ladění</span><span class="sxs-lookup"><span data-stu-id="41f6d-121">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

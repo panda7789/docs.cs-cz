@@ -10,26 +10,26 @@ helpviewer_keywords:
 - XAML [WPF], content models
 ms.assetid: 58843391-b28c-4d32-adf5-87acaf6578a1
 ms.openlocfilehash: 13225779cb3ed844e6ea8622ad559db83fadc166
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942802"
 ---
-# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="89857-102">Rozšířené (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="89857-102">Advanced (Windows Presentation Foundation)</span></span>
-<span data-ttu-id="89857-103">Tato část popisuje některé pokročilé oblastí v subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="89857-103">This section describes some of the advanced areas in WPF.</span></span>  
+# <a name="advanced-windows-presentation-foundation"></a><span data-ttu-id="17cbe-102">Rozšířené (Windows Presentation Foundation)</span><span class="sxs-lookup"><span data-stu-id="17cbe-102">Advanced (Windows Presentation Foundation)</span></span>
+<span data-ttu-id="17cbe-103">Tato část popisuje některé pokročilé oblastí v subsystému WPF.</span><span class="sxs-lookup"><span data-stu-id="17cbe-103">This section describes some of the advanced areas in WPF.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="89857-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="89857-104">In This Section</span></span>  
- [<span data-ttu-id="89857-105">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="89857-105">WPF Architecture</span></span>](wpf-architecture.md)  
- [<span data-ttu-id="89857-106">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="89857-106">Base Elements</span></span>](base-elements.md)  
- [<span data-ttu-id="89857-107">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="89857-107">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
- [<span data-ttu-id="89857-108">Přetažení</span><span class="sxs-lookup"><span data-stu-id="89857-108">Drag and Drop</span></span>](drag-and-drop.md)  
- [<span data-ttu-id="89857-109">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="89857-109">Documents</span></span>](documents.md)  
- [<span data-ttu-id="89857-110">Globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="89857-110">Globalization and Localization</span></span>](globalization-and-localization.md)  
- [<span data-ttu-id="89857-111">Migrace a interoperabilita</span><span class="sxs-lookup"><span data-stu-id="89857-111">Migration and Interoperability</span></span>](migration-and-interoperability.md)  
- [<span data-ttu-id="89857-112">Výkon</span><span class="sxs-lookup"><span data-stu-id="89857-112">Performance</span></span>](performance.md)  
- [<span data-ttu-id="89857-113">Model vláken</span><span class="sxs-lookup"><span data-stu-id="89857-113">Threading Model</span></span>](threading-model.md)  
- [<span data-ttu-id="89857-114">Přehled doplňků WPF</span><span class="sxs-lookup"><span data-stu-id="89857-114">WPF Add-Ins Overview</span></span>](../app-development/wpf-add-ins-overview.md)  
- [<span data-ttu-id="89857-115">Reference k rozhraní API nespravované WPF</span><span class="sxs-lookup"><span data-stu-id="89857-115">Unmanaged WPF API Reference</span></span>](wpf-unmanaged-api-reference.md)  
+## <a name="in-this-section"></a><span data-ttu-id="17cbe-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="17cbe-104">In This Section</span></span>  
+ [<span data-ttu-id="17cbe-105">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="17cbe-105">WPF Architecture</span></span>](wpf-architecture.md)  
+ [<span data-ttu-id="17cbe-106">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="17cbe-106">Base Elements</span></span>](base-elements.md)  
+ [<span data-ttu-id="17cbe-107">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="17cbe-107">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
+ [<span data-ttu-id="17cbe-108">Přetažení</span><span class="sxs-lookup"><span data-stu-id="17cbe-108">Drag and Drop</span></span>](drag-and-drop.md)  
+ [<span data-ttu-id="17cbe-109">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="17cbe-109">Documents</span></span>](documents.md)  
+ [<span data-ttu-id="17cbe-110">Globalizace a lokalizace</span><span class="sxs-lookup"><span data-stu-id="17cbe-110">Globalization and Localization</span></span>](globalization-and-localization.md)  
+ [<span data-ttu-id="17cbe-111">Migrace a interoperabilita</span><span class="sxs-lookup"><span data-stu-id="17cbe-111">Migration and Interoperability</span></span>](migration-and-interoperability.md)  
+ [<span data-ttu-id="17cbe-112">Výkon</span><span class="sxs-lookup"><span data-stu-id="17cbe-112">Performance</span></span>](performance.md)  
+ [<span data-ttu-id="17cbe-113">Model vláken</span><span class="sxs-lookup"><span data-stu-id="17cbe-113">Threading Model</span></span>](threading-model.md)  
+ [<span data-ttu-id="17cbe-114">Přehled doplňků WPF</span><span class="sxs-lookup"><span data-stu-id="17cbe-114">WPF Add-Ins Overview</span></span>](../app-development/wpf-add-ins-overview.md)  
+ [<span data-ttu-id="17cbe-115">Reference k rozhraní API nespravované WPF</span><span class="sxs-lookup"><span data-stu-id="17cbe-115">Unmanaged WPF API Reference</span></span>](wpf-unmanaged-api-reference.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="89857-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="89857-116">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="17cbe-116">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="17cbe-116">Related Sections</span></span>
