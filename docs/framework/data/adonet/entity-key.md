@@ -3,24 +3,24 @@ title: entity key
 ms.date: 03/30/2017
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
 ms.openlocfilehash: 1484a73450d5a435f795f18f122c7fe8494cf197
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879178"
 ---
 # <a name="entity-key"></a>entity key
 *Klíč entity* je [vlastnost](../../../../docs/framework/data/adonet/property.md) nebo sada vlastností [typ entity](../../../../docs/framework/data/adonet/entity-type.md) , který slouží k určení identity. Vlastnosti, které tvoří klíč entity jsou vybrán v době návrhu. Hodnoty vlastnosti klíče entity musí jednoznačně identifikovat instanci entity typu v rámci [sadu entit](../../../../docs/framework/data/adonet/entity-set.md) v době běhu. Vlastnosti, které tvoří klíč entity, je třeba zvolit pro zajištění jedinečnosti instancí v sadu entit.  
   
  Následují požadavky na sadu vlastností pro být klíč entity:  
   
--   Žádné klíče dvě entity v rámci sady entit může být identické. To znamená pro dvě entity v rámci sady entit, hodnoty pro všechny vlastnosti, které tvoří klíč nemůže být stejné. Nicméně některé (ale ne všech) hodnot, které tvoří entitu klíč může být stejný.  
+- Žádné klíče dvě entity v rámci sady entit může být identické. To znamená pro dvě entity v rámci sady entit, hodnoty pro všechny vlastnosti, které tvoří klíč nemůže být stejné. Nicméně některé (ale ne všech) hodnot, které tvoří entitu klíč může být stejný.  
   
--   Klíč entity musí obsahovat sadu Null, nezměnitelný, [primitivní typ vlastnosti](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).  
+- Klíč entity musí obsahovat sadu Null, nezměnitelný, [primitivní typ vlastnosti](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).  
   
--   Vlastnosti, které tvoří klíč entity pro danou entitu typu nelze změnit. Více než jeden klíč možné entity nelze povolit pro danou entitu typu; náhradní klíče nejsou podporovány.  
+- Vlastnosti, které tvoří klíč entity pro danou entitu typu nelze změnit. Více než jeden klíč možné entity nelze povolit pro danou entitu typu; náhradní klíče nejsou podporovány.  
   
--   Když entitu je zahrnuta v hierarchii dědičnosti, kořenové entity musí obsahovat všechny vlastnosti, které tvoří klíč entity a klíč entity musí být definováno na kořenový typ entity. Další informace najdete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).  
+- Když entitu je zahrnuta v hierarchii dědičnosti, kořenové entity musí obsahovat všechny vlastnosti, které tvoří klíč entity a klíč entity musí být definováno na kořenový typ entity. Další informace najdete v tématu [modelu Entity Data Model: Dědičnost](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).  
   
 ## <a name="example"></a>Příklad  
  Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`. Vlastnosti každého typu entity, které tvoří jeho klíč entity, jsou označeny "(klíč)". Všimněte si, že `Author` typ entity má klíč entity, která se skládá ze dvou vlastností `Name` a `Address`.  

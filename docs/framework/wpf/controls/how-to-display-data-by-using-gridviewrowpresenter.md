@@ -6,11 +6,11 @@ helpviewer_keywords:
 - GridViewRowPresenter [WPF]
 ms.assetid: bdb785a5-a262-44d5-a517-ea14383e5f70
 ms.openlocfilehash: 0e471df3ab6fd10417fc58ece4cdb8ff1c457c95
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149146"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910452"
 ---
 # <a name="how-to-display-data-by-using-gridviewrowpresenter"></a>Postupy: Zobrazení dat pomocí GridViewRowPresenter
 Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.GridViewRowPresenter> a <xref:System.Windows.Controls.GridViewHeaderRowPresenter> objekty pro zobrazení dat ve sloupcích.  

@@ -16,11 +16,11 @@ helpviewer_keywords:
 - 3-D rendering [WPF]
 ms.assetid: 582a314e-e23d-4144-b45b-acbbd5579252
 ms.openlocfilehash: d2a0cdb7e49fb584d0824edcefe710313ba21d4a
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934677"
 ---
 # <a name="introduction-to-wpf-in-visual-studio"></a>Úvod k použití WPF v sadě Visual Studio
 Windows Presentation Foundation (WPF) v sadě Visual Studio poskytuje vývojářům jednotný programovací model pro vytváření desktopových-obchodních aplikací na Windows.  

@@ -1,38 +1,39 @@
 ---
-title: 1030 - StartFaultWorkItem
+title: 1030 – StartFaultWorkItem
 ms.date: 03/30/2017
 ms.assetid: e1601fb9-0bc6-4dbe-816f-f24914063d34
 ms.openlocfilehash: 3848d644e77041a62a52eb2eae5eeef286dfe334
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924316"
 ---
-# <a name="1030---startfaultworkitem"></a>1030 - StartFaultWorkItem
+# <a name="1030---startfaultworkitem"></a>1030 – StartFaultWorkItem
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1030|  
-|Klíčová slova|WFRuntime|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFRuntime|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že že faultworkitem zahajuje provádění.  
+ Označuje, že položka FaultWorkItem je spuštění.  
   
 ## <a name="message"></a>Zpráva  
- Spuštění provádění FaultWorkItem aktivity %1, DisplayName: %2, identifikátor InstanceId: '%3'.  Výjimka byla rozšířena z aktivity %4, DisplayName: '%5', identifikátor InstanceId: '%6'.  
+ Začátek provádění položky FaultWorkItem pro aktivitu %1, DisplayName: %2, InstanceId: '%3'.  Výjimka byla rozšířena z aktivity %4, DisplayName: %5, InstanceId: '%6'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|FaultActivity|xs:String|Název typu selhání aktivity.|  
-|FaultActivityDisplayName|xs:String|Zobrazovaný název selhání aktivity.|  
-|FaultActivityInstanceId|xs:String|Id instance selhání aktivity.|  
-|ExceptionActivity|xs:String|Název typu aktivity, která vrátila výjimku.|  
-|ExceptionActivityDisplayName|xs:String|Zobrazovaný název aktivity, která vrátila výjimku.|  
-|ExceptionActivityInstanceId|xs:String|Id instance aktivity, která vrátila výjimku.|  
-|Výjimka|xs:String|Podrobnosti o výjimce pro výjimky|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|FaultActivity|xs:string|Název typu selhání aktivity.|  
+|FaultActivityDisplayName|xs:string|Zobrazovaný název selhání aktivity.|  
+|FaultActivityInstanceId|xs:string|Id instance selhání aktivity.|  
+|ExceptionActivity|xs:string|Název typu aktivity, která vyvolala výjimku.|  
+|ExceptionActivityDisplayName|xs:string|Zobrazovaný název aktivity, která vyvolala výjimku.|  
+|ExceptionActivityInstanceId|xs:string|Id instance aktivity, která vyvolala výjimku.|  
+|Výjimka|xs:string|Podrobnosti o výjimce pro výjimku|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

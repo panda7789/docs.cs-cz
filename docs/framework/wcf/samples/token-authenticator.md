@@ -3,30 +3,30 @@ title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
 ms.openlocfilehash: 501f1801c1cb475a87c586f8bbc14146b9141047
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779168"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá k ověření tokenu používaného se zprávou, ověření, že je konzistentní a ověření identity přidružené k tokenu.
 
  Vlastní ověřovací data tokenu jsou užitečné v mnoha případech, jako je například:
 
--   Pokud chcete přepsat výchozí mechanismus ověřování přidružené k tokenu.
+- Pokud chcete přepsat výchozí mechanismus ověřování přidružené k tokenu.
 
--   Pokud vytváříte vlastní token.
+- Pokud vytváříte vlastní token.
 
  Tato ukázka demonstruje následující:
 
--   Jak klient může ověřit pomocí dvojice uživatelského jména a hesla.
+- Jak klient může ověřit pomocí dvojice uživatelského jména a hesla.
 
--   Jak na serveru můžete ověřit přihlašovací údaje klienta pomocí vlastní ověřovací data tokenu.
+- Jak na serveru můžete ověřit přihlašovací údaje klienta pomocí vlastní ověřovací data tokenu.
 
--   Jak kód služby WCF spojují se pomocí vlastní ověřovací data tokenu.
+- Jak kód služby WCF spojují se pomocí vlastní ověřovací data tokenu.
 
--   Jak na serveru je možné ověřit pomocí certifikátu X.509 serveru.
+- Jak na serveru je možné ověřit pomocí certifikátu X.509 serveru.
 
  Tento příklad také ukazuje, jak identitu volajícího, jež je přístupný z WCF po dokončení procesu vlastních tokenů ověřování.
 
@@ -297,7 +297,7 @@ static void DisplayIdentityInformation()
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.
 
--   Vytváří se certifikát serveru.
+- Vytváří se certifikát serveru.
 
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. V tomto souboru batch výchozí hodnota je localhost.
 
@@ -311,7 +311,7 @@ static void DisplayIdentityInformation()
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 

@@ -14,11 +14,11 @@ helpviewer_keywords:
 - operators [Visual Basic], comparison
 ms.assetid: 19a83804-b5af-4739-928b-ac93e64e457f
 ms.openlocfilehash: c14aa35ce15549ad9eccabe2330a7c43b6795140
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864699"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Postupy: Porovnání řetězce se vzorem (Visual Basic)
 Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md) vyhovuje vzoru, můžete použít [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
@@ -29,7 +29,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>Odpovídá znaku v řetězcový výraz proti konkrétní znak  
   
--   Umístěte na konkrétní znak přímo řetězec vzoru. Některé speciální znaky musí být uzavřen v závorkách (`[ ]`). Další informace najdete v tématu [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
+- Umístěte na konkrétní znak přímo řetězec vzoru. Některé speciální znaky musí být uzavřen v závorkách (`[ ]`). Další informace najdete v tématu [operátor Like](../../../../visual-basic/language-reference/operators/like-operator.md).  
   
      Následující příklad testuje, jestli `myString` obsahuje přesně jeden znak `H`.  
   
@@ -37,7 +37,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>Odpovídá znaku v řetězci výraz proti zástupný znak  
   
--   Vložit otazník (`?`) v řetězci vzor. Jakýkoli platný znak na této pozici díky úspěšná shoda.  
+- Vložit otazník (`?`) v řetězci vzor. Jakýkoli platný znak na této pozici díky úspěšná shoda.  
   
      Následující příklad testuje, jestli `myString` se skládá z jednoho znaku `W` následovaný přesně dva znaky žádné hodnoty.  
   
@@ -45,7 +45,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>Odpovídá znaku v řetězcového výrazu seznam znaků  
   
--   Umístit závorky (`[ ]`) v řetězci vzor a v závorkách vložit seznam znaků. Pomocí čárky nebo jakéhokoliv jiného oddělovače neoddělujte znaky. Libovolný znak v seznamu je úspěšná shoda.  
+- Umístit závorky (`[ ]`) v řetězci vzor a v závorkách vložit seznam znaků. Pomocí čárky nebo jakéhokoliv jiného oddělovače neoddělujte znaky. Libovolný znak v seznamu je úspěšná shoda.  
   
      Následující příklad testuje, jestli `myString` jakýkoli platný znak následovaný přesně jedním ze znaků se skládá ze `A`, `C`, nebo `E`.  
   
@@ -55,7 +55,7 @@ Pokud chcete zjistit, zda výraz [datový typ String](../../../../visual-basic/l
   
 ### <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>Odpovídá znaku v řetězci výraz proti rozsahu znaků  
   
--   Umístit závorky (`[ ]`) v řetězci vzor a v závorkách do rozsahu znaků nejnižší a nejvyšší oddělené pomlčkou (`–`). Jakémukoli jednomu znaku v rozsahu díky úspěšná shoda.  
+- Umístit závorky (`[ ]`) v řetězci vzor a v závorkách do rozsahu znaků nejnižší a nejvyšší oddělené pomlčkou (`–`). Jakémukoli jednomu znaku v rozsahu díky úspěšná shoda.  
   
      Následující příklad testuje, jestli `myString` se skládá ze znaků `num` za nímž následuje přesně jedním ze znaků `i`, `j`, `k`, `l`, `m`, nebo `n`.  
   

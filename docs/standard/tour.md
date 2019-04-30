@@ -7,11 +7,11 @@ ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
 ms.openlocfilehash: acd8e14e1d000f55f03017a4fee43347f50df3a7
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936302"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -111,7 +111,7 @@ Asynchronní programování je prvotřídní koncept v .NET s asynchronní podpo
 
 Další informace o asynchronním programování v rozhraní .NET, začínat [asynchronní přehled](async.md) tématu.
 
-## <a name="language-integrated-query-linq"></a>Language Integrated Query (LINQ)
+## <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
 LINQ je výkonnou sadu funkcí pro C# a VB, které umožňují napsat jednoduchý a deklarativní kód pro provozování na datech. Data mohou být v mnoha formách (například objektů v paměti, databázi SQL nebo dokument XML), ale kód LINQ, který napíšete obvykle není ve zdroji dat lišit.
 
@@ -127,7 +127,7 @@ Podobně stojí většina vzájemná funkční spolupráce podpora pro Mono (a t
 
 Další informace o nativní interoperabilita, najdete v článku [nativní interoperabilita](native-interop/index.md) článku.
 
-## <a name="unsafe-code"></a>Nezabezpečený kód
+## <a name="unsafe-code"></a>Nebezpečný kód
 
 V závislosti na podpoře jazyka CLR vám umožní přístup k nativním paměti a provedení aritmetické operace ukazatele přes `unsafe` kódu. Tyto operace jsou potřeba určité algoritmy a vzájemná funkční spolupráce systému. I když výkonné, použití nezabezpečeného kódu se nedoporučuje, pokud je potřeba komunikace pomocí rozhraní API systému nebo implementovat nejúčinnější algoritmus. Nezabezpečený kód nelze spustit stejným způsobem jako v různých prostředích a také dojde ke ztrátě výhod systému uvolňování paměti a bezpečnost typů. Doporučujeme omezit a centralizovat co nejvíc nezabezpečený kód a důkladně otestujte, že kód.
 

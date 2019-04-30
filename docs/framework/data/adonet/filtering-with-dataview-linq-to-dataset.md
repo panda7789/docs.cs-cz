@@ -6,20 +6,20 @@ dev_langs:
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
 ms.openlocfilehash: 41e099cdca4f02231fd4b1cc8bce2c4b1e511c71
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878823"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrování se zobrazením dat (LINQ to DataSet)
 Možnost filtrovat data s využitím určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak filtrovat data a vrácení podmnožin řádky dat meeting konkrétního filtrovací kritéria. Kromě podle řetězce možnosti filtrování <xref:System.Data.DataView> také nabízí možnost používat [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy pro kritéria filtrování. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a efektivní filtrování operací než filtrování založené na řetězci.  
   
  Existují dva způsoby, jak pomocí filtrování dat <xref:System.Data.DataView>:  
   
--   Vytvoření <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazování umístění, kde se klauzule.  
+- Vytvoření <xref:System.Data.DataView> z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazování umístění, kde se klauzule.  
   
--   Použít existující, založené na řetězci filtrování možností <xref:System.Data.DataView>.  
+- Použít existující, založené na řetězci filtrování možností <xref:System.Data.DataView>.  
   
 ## <a name="creating-dataview-from-a-query-with-filtering-information"></a>Vytváření zobrazení dat z dotazu s informacemi o filtrování  
  A <xref:System.Data.DataView> objekt můžete vytvořit z [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. Pokud tento dotaz obsahuje `Where` klauzule <xref:System.Data.DataView> vytvořené pomocí filtrování informace z dotazu. Výraz v `Where` klauzule slouží k určení, které řádky dat se zahrnou <xref:System.Data.DataView>, a slouží jako základ pro filtr.  
@@ -76,9 +76,9 @@ Možnost filtrovat data s využitím určitých kritérií a potom prezentovat d
 ## <a name="clearing-the-filter"></a>Vymazat filtr  
  Filtr na <xref:System.Data.DataView> lze zrušit po filtrování byla nastavena pomocí <xref:System.Data.DataView.RowFilter%2A> vlastnost. Filtr na <xref:System.Data.DataView> můžete vymazat dvěma různými způsoby:  
   
--   Nastavte <xref:System.Data.DataView.RowFilter%2A> vlastnost `null`.  
+- Nastavte <xref:System.Data.DataView.RowFilter%2A> vlastnost `null`.  
   
--   Nastavte <xref:System.Data.DataView.RowFilter%2A> vlastnost na prázdný řetězec.  
+- Nastavte <xref:System.Data.DataView.RowFilter%2A> vlastnost na prázdný řetězec.  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.DataView> z dotazu a poté vymaže filtr tak, že nastavíte <xref:System.Data.DataView.RowFilter%2A> vlastnost `null`:  

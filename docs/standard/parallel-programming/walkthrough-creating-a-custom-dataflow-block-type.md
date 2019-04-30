@@ -1,5 +1,5 @@
 ---
-title: 'Průvodce: Vytvoření typu blok vlastní toku dat'
+title: 'Návod: Vytvoření bloku toku dat vlastního typu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,13 +13,13 @@ ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 380bcb6d2a2846d09267eeb3a0d637469ce9fba5
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221086"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909451"
 ---
-# <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Průvodce: Vytvoření typu blok vlastní toku dat
+# <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>Návod: Vytvoření bloku toku dat vlastního typu
 Přestože Knihovna TPL datového toku poskytuje několik typů bloků toku dat, které dovolují vytvářet různé funkce, můžete také vytvořit typy vlastních bloků. Tento dokument popisuje, jak vytvořit typ bloku toku dat, která implementuje vlastní chování.  
   
 ## <a name="prerequisites"></a>Požadavky  
@@ -61,7 +61,7 @@ Přestože Knihovna TPL datového toku poskytuje několik typů bloků toku dat,
   
  Visual Basic  
   
- **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll SlidingWindowBlock.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll SlidingWindowBlock.vb**  
 
 ## <a name="see-also"></a>Viz také:
 

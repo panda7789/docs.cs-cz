@@ -3,11 +3,11 @@ title: Povinné argumenty a skupiny přetížení
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
 ms.openlocfilehash: b5006a201ce5db68e925bd5764fadde308bbccb4
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57707869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937784"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Povinné argumenty a skupiny přetížení
 Aktivity lze nastavit tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro spuštění. `RequiredArgument` Atribut se používá k označení, že se vyžadují některé argumenty pro aktivitu a `OverloadGroup` atribut se používá k seskupení kategorie povinnými argumenty. Pomocí atributů lze aktivity autoři uvádějí aktivitu jednoduchých nebo složitých ověření konfigurace.  
@@ -144,19 +144,19 @@ Public class DbUpdate: AsyncCodeActivity
   
  Při definování přetížené skupiny:  
   
--   Přetížené skupiny nemůže být dílčí nebo ekvivalentní sadu jiného přetíženou skupinu.  
+- Přetížené skupiny nemůže být dílčí nebo ekvivalentní sadu jiného přetíženou skupinu.  
   
     > [!NOTE]
     >  Existuje jedna výjimka tohoto pravidla. Pokud přetížené skupiny jsou podmnožinou jiné skupiny přetížení a dílčí obsahuje argumenty, pouze pokud `RequiredArgument` je `false`, přetíženou skupinu je platný.  
   
--   Přetížené skupiny může dojít k překrytí, ale jedná se o chybu, pokud je určena průsečíkem skupiny obsahuje všechny požadované argumenty alespoň jednu z přetížených skupin. V předchozím příkladu `G2` a `G3` přetížení překrývajících se skupiny, ale protože je určena průsečíkem neobsahovala všechny argumenty jednoho nebo obou skupin toto byla platná.  
+- Přetížené skupiny může dojít k překrytí, ale jedná se o chybu, pokud je určena průsečíkem skupiny obsahuje všechny požadované argumenty alespoň jednu z přetížených skupin. V předchozím příkladu `G2` a `G3` přetížení překrývajících se skupiny, ale protože je určena průsečíkem neobsahovala všechny argumenty jednoho nebo obou skupin toto byla platná.  
   
  Při vytváření vazby argumenty v přetížené skupiny:  
   
--   Přetížené skupiny se považuje za mez, zda mají všechny `RequiredArgument` argumenty ve skupině jsou vázána.  
+- Přetížené skupiny se považuje za mez, zda mají všechny `RequiredArgument` argumenty ve skupině jsou vázána.  
   
--   Pokud má skupina nula `RequiredArgument` argumenty a aspoň jeden argument vázán, pak skupinu se považuje za s vazbou.  
+- Pokud má skupina nula `RequiredArgument` argumenty a aspoň jeden argument vázán, pak skupinu se považuje za s vazbou.  
   
--   Je chyba ověřování, pokud žádné přetížené skupiny jsou vázány, není-li jednu přetíženou skupinu nemá žádné `RequiredArgument` argumenty v ní.  
+- Je chyba ověřování, pokud žádné přetížené skupiny jsou vázány, není-li jednu přetíženou skupinu nemá žádné `RequiredArgument` argumenty v ní.  
   
--   Jedná se o chybu mít více než jednu přetíženou skupinu vázán, který je, jsou vázána všechny požadované argumenty v jednu přetíženou skupinu a jsou svázaná některý argument v jiné skupině přetížení.
+- Jedná se o chybu mít více než jednu přetíženou skupinu vázán, který je, jsou vázána všechny požadované argumenty v jednu přetíženou skupinu a jsou svázaná některý argument v jiné skupině přetížení.

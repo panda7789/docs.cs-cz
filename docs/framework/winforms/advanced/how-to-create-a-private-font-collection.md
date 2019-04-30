@@ -9,11 +9,11 @@ helpviewer_keywords:
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
 ms.openlocfilehash: f78d48c88b72388676f5e7ae963b98d8f1b4beac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937827"
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Postupy: Vytvoření soukromé kolekce písem
 <xref:System.Drawing.Text.PrivateFontCollection> Třída dědí z <xref:System.Drawing.Text.FontCollection> abstraktní základní třída. Můžete použít <xref:System.Drawing.Text.PrivateFontCollection> objekt udržovat sadu písem speciálně pro danou aplikaci. Privátní písma kolekce může obsahovat nainstalované systémových písem, jakož i písma, které nebyly nainstalované v počítači. Chcete-li přidat soubor písma pro kolekci privátní písma, zavolejte <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> metodu <xref:System.Drawing.Text.PrivateFontCollection> objektu.  
@@ -25,11 +25,11 @@ ms.locfileid: "59210684"
 ## <a name="example"></a>Příklad  
  Následující příklad přidá následující soubory tři písma <xref:System.Drawing.Text.PrivateFontCollection> objektu:  
   
--   C:\\*systemroot*\Fonts\Arial.tff (Arial, pravidelné)  
+- C:\\*systemroot*\Fonts\Arial.tff (Arial, pravidelné)  
   
--   C:\\*systemroot*\Fonts\CourBI.tff (Kurýrní nové, tučná kurzíva)  
+- C:\\*systemroot*\Fonts\CourBI.tff (Kurýrní nové, tučná kurzíva)  
   
--   C:\\*systemroot*\Fonts\TimesBd.tff (časy New Roman, tučné písmo)  
+- C:\\*systemroot*\Fonts\TimesBd.tff (časy New Roman, tučné písmo)  
   
  Kód načte pole <xref:System.Drawing.FontFamily> objekty z <xref:System.Drawing.Text.FontCollection.Families%2A> vlastnost <xref:System.Drawing.Text.PrivateFontCollection> objektu.  
   

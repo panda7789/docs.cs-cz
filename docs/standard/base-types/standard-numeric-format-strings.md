@@ -19,19 +19,19 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0a11a9d18999bc7741e12af16d43fba8c03318da
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979954"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61811865"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
 Řetězce standardního číselného formátu se používají pro formátování běžných číselných typů. Řetězec standardního číselného formátu má podobu `Axx`, kde:  
   
--   `A` je jeden abecední znak nazvaný *specifikátor formátu*. Jakýkoli řetězec číselného formátu, který obsahuje více než jeden abecední znak, včetně prázdných znaků, je interpretován jako řetězec vlastního číselného formátu. Další informace najdete v tématu [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
+- `A` je jeden abecední znak nazvaný *specifikátor formátu*. Jakýkoli řetězec číselného formátu, který obsahuje více než jeden abecední znak, včetně prázdných znaků, je interpretován jako řetězec vlastního číselného formátu. Další informace najdete v tématu [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
   
--   `xx` je volitelné celé číslo nazvané *specifikátor přesnosti*. Specifikátor přesnosti má rozsah od 0 do 99 a má vliv na počet číslic ve výsledku. Všimněte si, že specifikátor přesnosti určuje počet číslic v řetězcové reprezentaci čísla. Neprovádí zaokrouhlení samotného čísla. Chcete-li provést operaci zaokrouhlení, použijte <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType>, nebo <xref:System.Math.Round%2A?displayProperty=nameWithType> metody.  
+- `xx` je volitelné celé číslo nazvané *specifikátor přesnosti*. Specifikátor přesnosti má rozsah od 0 do 99 a má vliv na počet číslic ve výsledku. Všimněte si, že specifikátor přesnosti určuje počet číslic v řetězcové reprezentaci čísla. Neprovádí zaokrouhlení samotného čísla. Chcete-li provést operaci zaokrouhlení, použijte <xref:System.Math.Ceiling%2A?displayProperty=nameWithType>, <xref:System.Math.Floor%2A?displayProperty=nameWithType>, nebo <xref:System.Math.Round%2A?displayProperty=nameWithType> metody.  
   
     Když *specifikátor přesnosti* ovládacích prvků zobrazuje počet zlomkových číslic ve výsledném řetězci, výsledný řetězec číslo, které se zaokrouhlí na reprezentovatelné výsledek nejblíže neomezeně přesné výsledky. Pokud existují dva stejně téměř reprezentovatelné výsledky:
     - **Rozhraní .NET Framework a .NET Core až po .NET Core 2.0**, modul runtime vybere výsledek s větší nejméně významných číslic (to znamená, že použití <xref:System.MidpointRounding.AwayFromZero?displayProperty=nameWithType>).
@@ -73,13 +73,13 @@ ms.locfileid: "56979954"
 
 Řetězec standardního číselného formátu lze použít pro definování formátování číselné hodnoty jedním ze dvou způsobů:  
   
--   Může být předán přetížení `ToString` metodu, která má `format` parametru. Následující příklad formátuje číselnou hodnotu jako řetězec měny v aktuální jazykové verzi (v tomto případě jazykové verze en US).  
+- Může být předán přetížení `ToString` metodu, která má `format` parametru. Následující příklad formátuje číselnou hodnotu jako řetězec měny v aktuální jazykové verzi (v tomto případě jazykové verze en US).  
   
      [!code-cpp[Formatting.Numeric.Standard#10](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#10)]
      [!code-csharp-interactive[Formatting.Numeric.Standard#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#10)]
      [!code-vb[Formatting.Numeric.Standard#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#10)]  
   
--   Lze je zadat jako `formatString` argument v položce formátu pomocí metod jako <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. Další informace najdete v tématu [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad používá položku formátu pro vložení hodnoty měny do řetězce.  
+- Lze je zadat jako `formatString` argument v položce formátu pomocí metod jako <xref:System.String.Format%2A?displayProperty=nameWithType>, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, a <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>. Další informace najdete v tématu [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad používá položku formátu pro vložení hodnoty měny do řetězce.  
   
      [!code-cpp[Formatting.Numeric.Standard#11](../../../samples/snippets/cpp/VS_Snippets_CLR/Formatting.Numeric.Standard/cpp/standardusage1.cpp#11)]
      [!code-csharp-interactive[Formatting.Numeric.Standard#11](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#11)]
@@ -91,7 +91,7 @@ ms.locfileid: "56979954"
      [!code-csharp-interactive[Formatting.Numeric.Standard#12](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Numeric.Standard/cs/standardusage1.cs#12)]
      [!code-vb[Formatting.Numeric.Standard#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Numeric.Standard/vb/standardusage1.vb#12)]  
   
--   Lze je zadat jako `formatString` argument v interpolovaném řetězci položka interpolovaný výraz. Další informace najdete v tématu [interpolace](../../csharp/language-reference/tokens/interpolated.md) tématu v referenční dokumentace jazyka C# nebo [interpolovaných řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) tématu v referenční dokumentace jazyka Visual Basic.  
+- Lze je zadat jako `formatString` argument v interpolovaném řetězci položka interpolovaný výraz. Další informace najdete v tématu [interpolace](../../csharp/language-reference/tokens/interpolated.md) tématu v referenční dokumentace jazyka C# nebo [interpolovaných řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) tématu v referenční dokumentace jazyka Visual Basic.  
   
  Následující oddíly obsahují podrobné informace o jednotlivých řetězcích standardního číselného formátu.  
   

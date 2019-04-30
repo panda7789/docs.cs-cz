@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -moduleassemblyname compiler option [Visual Basic]
 ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
 ms.openlocfilehash: b0279c5ac658c7d0749f62066abbd705d0a271af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793897"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
 Určuje název sestavení, které bude tento modul součástí.  
@@ -33,9 +33,9 @@ Určuje název sestavení, které bude tento modul součástí.
   
  `-moduleassemblyname` Možnost je vyžadována, pouze v případě, že jsou splněny následující:  
   
--   Datový typ v modulu potřebuje přístup k `Friend` typ v odkazovaném sestavení.  
+- Datový typ v modulu potřebuje přístup k `Friend` typ v odkazovaném sestavení.  
   
--   Odkazované sestavení má udělen Přátelský přístup sestavení k sestavení, do kterého bude sestaven modul.  
+- Odkazované sestavení má udělen Přátelský přístup sestavení k sestavení, do kterého bude sestaven modul.  
   
  Další informace o vytváření modulu najdete v tématu [/Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md). Další informace o přátelských sestavení naleznete v tématu [přátelských sestavení](../../../standard/assembly/friend-assemblies.md).  
   

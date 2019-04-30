@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
 ms.openlocfilehash: dec42a19f3e265f440ec03164ebc1ece9b6d5ce3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793481"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace datové služby (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, která zpřístupňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Data v těchto kanálech mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zprostředkovatelé dat používá k získání těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Tito poskytovatelé patří [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatel reflexe a sadu vlastních dat rozhraní poskytovatele služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
@@ -77,9 +77,9 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvoři
 ## <a name="versioning-requirements"></a>Požadavky na správu verzí  
  Následující konfigurace chování služby dat vyžadují verzi 2 [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] protokol nebo novější verze:  
   
--   Podpora pro počet požadavků.  
+- Podpora pro počet požadavků.  
   
--   Podpora pro možnost dotazu $select pro projekci.  
+- Podpora pro možnost dotazu $select pro projekci.  
   
  Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).  
   

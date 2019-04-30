@@ -12,11 +12,11 @@ ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: afec37a6510e445f1fe2c430684099af967be0ff
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868755"
 ---
 # <a name="security-transparent-code-level-1"></a>Kód transparentní pro zabezpečení, úroveň 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -28,11 +28,11 @@ ms.locfileid: "59161067"
   
  Toto téma obsahuje následující oddíly:  
   
--   [Model transparentnosti úrovně 1](#the_level_1_transparency_model)  
+- [Model transparentnosti úrovně 1](#the_level_1_transparency_model)  
   
--   [Atributy transparentnosti](#transparency_attributes)  
+- [Atributy transparentnosti](#transparency_attributes)  
   
--   [Příklady transparentnosti zabezpečení](#security_transparency_examples)  
+- [Příklady transparentnosti zabezpečení](#security_transparency_examples)  
   
 <a name="the_level_1_transparency_model"></a>   
 ## <a name="the-level-1-transparency-model"></a>Model transparentnosti úrovně 1  
@@ -40,11 +40,11 @@ ms.locfileid: "59161067"
   
  Můžete označit celé sestavení, některé třídy v sestavení nebo některé metody v třídě jako transparentní pro zabezpečení. Kód transparentní pro zabezpečení nelze zvýšit oprávnění. Toto omezení má tři důsledky:  
   
--   Bezpečnostně transparentní kód nemůže provádět <xref:System.Security.Permissions.SecurityAction.Assert> akce.  
+- Bezpečnostně transparentní kód nemůže provádět <xref:System.Security.Permissions.SecurityAction.Assert> akce.  
   
--   Každý požadavek na propojení, které budou splněna díky zabezpečení transparentního kódu se změní na úplný požadavek.  
+- Každý požadavek na propojení, které budou splněna díky zabezpečení transparentního kódu se změní na úplný požadavek.  
   
--   Unsafe (neověřitelný) kód, který musí být spuštěn v kód transparentní pro zabezpečení způsobí, že úplný poptávka <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění zabezpečení.  
+- Unsafe (neověřitelný) kód, který musí být spuštěn v kód transparentní pro zabezpečení způsobí, že úplný poptávka <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění zabezpečení.  
   
  Tato pravidla vynucují během provádění modulem common language runtime (CLR). Kód transparentní pro zabezpečení předává všechny požadavky na zabezpečení kódu, který volá zpět do jeho volající. Vyžaduje, aby tok prostřednictvím kód transparentní pro zabezpečení nelze zvýšit oprávnění. Pokud nízká důvěryhodnosti aplikace volá kód transparentní pro zabezpečení a způsobí, že poptávka vysoká oprávnění, vyžádání tok s nízkou důvěryhodného kódu, který se nezdaří. Kód transparentní pro zabezpečení nelze zastavit vyžádání, protože nelze provést kontrolní výraz akce. Stejný kód transparentní pro zabezpečení volat z plně důvěryhodného kódu výsledky úspěšného poptávky.  
   

@@ -11,34 +11,34 @@ ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: abf6f193f97319db0cdff7e2a33846cdf011fbdb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54673995"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908762"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection – přehled
 <xref:System.Collections.Concurrent.BlockingCollection%601> je třídy kolekce bezpečné pro vlákna, která poskytuje následující funkce:  
   
--   Implementace vzoru producent – příjemce.  
+- Implementace vzoru producent – příjemce.  
   
--   Souběžné přidávání a odebírání položek z více vláken.  
+- Souběžné přidávání a odebírání položek z více vláken.  
   
--   Volitelné maximální kapacity.  
+- Volitelné maximální kapacity.  
   
--   Operace vložení a odstranění, které blokovat, pokud kolekce je prázdná nebo úplná.  
+- Operace vložení a odstranění, které blokovat, pokud kolekce je prázdná nebo úplná.  
   
--   Vkládání a odstranění "akci" operace, které neblokují nebo které jsou blokovány až po zadaném časovém období.  
+- Vkládání a odstranění "akci" operace, které neblokují nebo které jsou blokovány až po zadaném časovém období.  
   
--   Zapouzdřuje jakýkoli typ kolekce, která implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>  
+- Zapouzdřuje jakýkoli typ kolekce, která implementuje <xref:System.Collections.Concurrent.IProducerConsumerCollection%601>  
   
--   Zrušení s tokeny zrušení.  
+- Zrušení s tokeny zrušení.  
   
--   Dva druhy výčet s `foreach` (`For Each` v jazyce Visual Basic):  
+- Dva druhy výčet s `foreach` (`For Each` v jazyce Visual Basic):  
   
-    1.  Výčet jen pro čtení.  
+    1. Výčet jen pro čtení.  
   
-    2.  Výčet, který odebere položky, jako jsou ve výčtu.  
+    2. Výčet, který odebere položky, jako jsou ve výčtu.  
   
 ## <a name="bounding-and-blocking-support"></a>Podpora ohraničování a blokování  
  <xref:System.Collections.Concurrent.BlockingCollection%601> podporuje funkcí ohraničování a blokování. Ohraničující znamená, že můžete nastavit maximální kapacitu kolekce. Ohraničující je důležité v některých scénářích, protože umožňuje řídit maximální velikost kolekce v paměti a vytváření vláken zabraňuje přesunutí příliš daleko náskok před používání vláken.  

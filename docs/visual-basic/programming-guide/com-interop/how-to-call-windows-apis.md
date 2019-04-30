@@ -8,11 +8,11 @@ helpviewer_keywords:
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
 ms.openlocfilehash: e7b76495b83cb9a1dfe7629a1d82695d2046eac2
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56972765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61818713"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API Windows (Visual Basic)
 Tento příklad definuje a volá `MessageBox` funkce v user32.dll a poté předá řetězec k němu.  
@@ -23,16 +23,16 @@ Tento příklad definuje a volá `MessageBox` funkce v user32.dll a poté před�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkaz na <xref:System> oboru názvů.  
+- Odkaz na <xref:System> oboru názvů.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Metoda není statická, je abstraktní nebo dříve definované. Nadřazený typ je rozhraní nebo délka *název* nebo *názevsouboru* je nula. (<xref:System.ArgumentException>)  
+- Metoda není statická, je abstraktní nebo dříve definované. Nadřazený typ je rozhraní nebo délka *název* nebo *názevsouboru* je nula. (<xref:System.ArgumentException>)  
   
--   *Název* nebo *názevsouboru* je `Nothing`. (<xref:System.ArgumentNullException>)  
+- *Název* nebo *názevsouboru* je `Nothing`. (<xref:System.ArgumentNullException>)  
   
--   Nadřazený typ byl dříve vytvořen pomocí `CreateType`. (<xref:System.InvalidOperationException>)  
+- Nadřazený typ byl dříve vytvořen pomocí `CreateType`. (<xref:System.InvalidOperationException>)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,11 +16,11 @@ helpviewer_keywords:
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
 ms.openlocfilehash: 46539f0cfdcc478e2f5e4cd7aecf16ac059e6332
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61804582"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syntaxe pravidla, účelu a model objektu třídy, které je základem je. Rozšíření značek jsou obecné funkce jazyka XAML a implementace .NET XAML služeb. Toto téma podrobně popisuje konkrétně – rozšíření značek pro použití v WPF XAML.  
@@ -41,13 +41,13 @@ Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syn
 ## <a name="xaml-defined-markup-extensions"></a>Rozšíření značek XAML definovaný  
  Existuje několik rozšíření značek, které nejsou specifické pro implementaci WPF XAML, ale místo toho jsou implementace vnitřní objekty nebo funkce XAML jako jazyk. Tato rozšíření značek jsou implementovány v oboru názvů System.Xaml sestavení jako součást obecné rozhraní .NET Framework XAML services a jsou v rámci oboru názvů XAML jazyka XAML. Z hlediska běžné použití značky jsou obvykle poznáte ho podle těchto rozšíření značek `x:` předponu ve využití. <xref:System.Windows.Markup.MarkupExtension> Poskytuje základní třídu (také definované v oboru názvů System.Xaml) vzor, který všechna rozšíření značek by měl používat, aby byla podporována v XAML čtečky a zapisovače XAML, včetně v WPF XAML.  
   
--   `x:Type` dodává <xref:System.Type> objekt s názvem typu. Toto zařízení se nejčastěji používá v styly a šablony. Podrobnosti najdete v tématu [x: Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md).  
+- `x:Type` dodává <xref:System.Type> objekt s názvem typu. Toto zařízení se nejčastěji používá v styly a šablony. Podrobnosti najdete v tématu [x: Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md).  
   
--   `x:Static` vytváří statické hodnoty. Hodnoty pocházejí z typu hodnoty kódu entity, které nejsou přímo typu cílovou vlastnost hodnotu, ale lze vyhodnotit na typu. Podrobnosti najdete v tématu [x: Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md).  
+- `x:Static` vytváří statické hodnoty. Hodnoty pocházejí z typu hodnoty kódu entity, které nejsou přímo typu cílovou vlastnost hodnotu, ale lze vyhodnotit na typu. Podrobnosti najdete v tématu [x: Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md).  
   
--   `x:Null` Určuje `null` jako hodnotu pro vlastnost a lze je použít pro atributy nebo element hodnoty vlastností. Podrobnosti najdete v tématu [x: Null – rozšíření značek](../../xaml-services/x-null-markup-extension.md).  
+- `x:Null` Určuje `null` jako hodnotu pro vlastnost a lze je použít pro atributy nebo element hodnoty vlastností. Podrobnosti najdete v tématu [x: Null – rozšíření značek](../../xaml-services/x-null-markup-extension.md).  
   
--   `x:Array` poskytuje podporu pro vytváření obecné polí v syntaxe XAML pro případy, kde kolekce podporu poskytuje základní prvky WPF a ovládací prvek modelů je záměrně nepoužívá se. Podrobnosti najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).  
+- `x:Array` poskytuje podporu pro vytváření obecné polí v syntaxe XAML pro případy, kde kolekce podporu poskytuje základní prvky WPF a ovládací prvek modelů je záměrně nepoužívá se. Podrobnosti najdete v tématu [x: Array – rozšíření značek](../../xaml-services/x-array-markup-extension.md).  
   
 > [!NOTE]
 >  `x:` Předpona se používá pro typické mapování oboru názvů XAML uvnitř jazyka XAML, v kořenového elementu souboru XAML nebo produkčního prostředí. Například zahájit šablony sady Visual Studio pro aplikace WPF XAML soubor pomocí tohoto `x:` mapování. Můžete se rozhodnout token jinou předponu ve vlastním XAML mapování oboru názvů, ale tato dokumentace se předpokládá výchozí `x:` mapování jako způsob identifikace těchto entit, které jsou definované součástí oboru názvů XAML pro jazyk XAML, nikoli do modulu WPF výchozí obor názvů nebo jiných oborech názvů XAML nesouvisí s konkrétním rozhraním.  
@@ -56,19 +56,19 @@ Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syn
 ## <a name="wpf-specific-markup-extensions"></a>Rozšíření značek specifické pro WPF  
  Nejčastěji používané přípony označení používá při programování pro WPF jsou ty, které podporují odkazy na prostředky (`StaticResource` a `DynamicResource`) a ty, které podporují vytváření datových vazeb (`Binding`).  
   
--   `StaticResource` poskytuje hodnotu pro vlastnost nahrazením hodnoty již definovaných prostředků. A `StaticResource` hodnocení, takže v konečném důsledku se provádí v okamžiku načtení XAML a nemá přístup do grafu objektu v době běhu. Podrobnosti najdete v tématu [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
+- `StaticResource` poskytuje hodnotu pro vlastnost nahrazením hodnoty již definovaných prostředků. A `StaticResource` hodnocení, takže v konečném důsledku se provádí v okamžiku načtení XAML a nemá přístup do grafu objektu v době běhu. Podrobnosti najdete v tématu [– rozšíření značek StaticResource](staticresource-markup-extension.md).  
   
--   `DynamicResource` poskytuje hodnotu pro vlastnost odložením tato hodnota bude za běhu referenci na prostředek. Dynamický prostředek odkaz vynutí nové vyhledávání pokaždé, když, že takový prostředek přistupuje a má přístup k grafu objektů v době běhu. Pokud chcete získat přístup, `DynamicResource` koncept podporuje vlastnosti závislosti v systému vlastností WPF a vyhodnocení výrazů. Proto můžete použít pouze `DynamicResource` pro cílovou vlastnost závislosti. Podrobnosti najdete v tématu [– rozšíření značek DynamicResource](dynamicresource-markup-extension.md).  
+- `DynamicResource` poskytuje hodnotu pro vlastnost odložením tato hodnota bude za běhu referenci na prostředek. Dynamický prostředek odkaz vynutí nové vyhledávání pokaždé, když, že takový prostředek přistupuje a má přístup k grafu objektů v době běhu. Pokud chcete získat přístup, `DynamicResource` koncept podporuje vlastnosti závislosti v systému vlastností WPF a vyhodnocení výrazů. Proto můžete použít pouze `DynamicResource` pro cílovou vlastnost závislosti. Podrobnosti najdete v tématu [– rozšíření značek DynamicResource](dynamicresource-markup-extension.md).  
   
--   `Binding` poskytuje že hodnotu pro vlastnost, pomocí kontextu dat, která se vztahuje na nadřazený objekt v době běhu s vazbou na data. Tohoto rozšíření značek je poměrně složité, protože umožňuje podstatné vložená syntaxe pro určení datové vazby. Podrobnosti najdete v tématu [vazby – rozšíření značek](binding-markup-extension.md).  
+- `Binding` poskytuje že hodnotu pro vlastnost, pomocí kontextu dat, která se vztahuje na nadřazený objekt v době běhu s vazbou na data. Tohoto rozšíření značek je poměrně složité, protože umožňuje podstatné vložená syntaxe pro určení datové vazby. Podrobnosti najdete v tématu [vazby – rozšíření značek](binding-markup-extension.md).  
   
--   `RelativeSource` poskytuje informace o zdroji <xref:System.Windows.Data.Binding> , které se můžete dostat několika možných relací v rámci stromů objektů za běhu. Získáte specializovaná sourcing u vazeb, které jsou vytvořena ve více použití šablon nebo v kódu bez znalostí okolního strom objektů. Podrobnosti najdete v tématu [rozšíření značek RelativeSource](relativesource-markupextension.md).  
+- `RelativeSource` poskytuje informace o zdroji <xref:System.Windows.Data.Binding> , které se můžete dostat několika možných relací v rámci stromů objektů za běhu. Získáte specializovaná sourcing u vazeb, které jsou vytvořena ve více použití šablon nebo v kódu bez znalostí okolního strom objektů. Podrobnosti najdete v tématu [rozšíření značek RelativeSource](relativesource-markupextension.md).  
   
--   `TemplateBinding` Umožňuje použít hodnoty vlastností bez vizuálního vzhledu, které pocházejí z objektu modelu definované vlastnosti třídy, která bude použita šablona šablony ovládacího prvku. Jinými slovy vlastnosti v rámci definice šablony mají přístup k kontext, který existuje pouze když je šablona použita. Podrobnosti najdete v tématu [– rozšíření značek TemplateBinding](templatebinding-markup-extension.md). Další informace o praktické použití `TemplateBinding`, naleznete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+- `TemplateBinding` Umožňuje použít hodnoty vlastností bez vizuálního vzhledu, které pocházejí z objektu modelu definované vlastnosti třídy, která bude použita šablona šablony ovládacího prvku. Jinými slovy vlastnosti v rámci definice šablony mají přístup k kontext, který existuje pouze když je šablona použita. Podrobnosti najdete v tématu [– rozšíření značek TemplateBinding](templatebinding-markup-extension.md). Další informace o praktické použití `TemplateBinding`, naleznete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
--   `ColorConvertedBitmap` podporuje relativně pokročilý scénář pro vytváření bitových kopií. Podrobnosti najdete v tématu [– rozšíření značek ColorConvertedBitmap](colorconvertedbitmap-markup-extension.md).  
+- `ColorConvertedBitmap` podporuje relativně pokročilý scénář pro vytváření bitových kopií. Podrobnosti najdete v tématu [– rozšíření značek ColorConvertedBitmap](colorconvertedbitmap-markup-extension.md).  
   
--   `ComponentResourceKey` a `ThemeDictionary` podporují aspektů vyhledání prostředku, zejména pro prostředky a motivy, které jsou součástí vlastní ovládací prvky. Další informace najdete v tématu [– rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md), [– rozšíření značek ThemeDictionary](themedictionary-markup-extension.md), nebo [Přehled vytváření ovládacího prvku](../controls/control-authoring-overview.md).  
+- `ComponentResourceKey` a `ThemeDictionary` podporují aspektů vyhledání prostředku, zejména pro prostředky a motivy, které jsou součástí vlastní ovládací prvky. Další informace najdete v tématu [– rozšíření značek ComponentResourceKey](componentresourcekey-markup-extension.md), [– rozšíření značek ThemeDictionary](themedictionary-markup-extension.md), nebo [Přehled vytváření ovládacího prvku](../controls/control-authoring-overview.md).  
   
 <a name="StarExtension"></a>   
 ## <a name="extension-classes"></a>* Rozšíření třídy  
@@ -83,18 +83,18 @@ Toto téma zavádí koncepci rozšíření značek pro XAML, včetně jejich syn
 ### <a name="extension-class-interpretation-of-initialization-text"></a>Rozšíření třídy výklad inicializace Text  
  Řetězec tokenů následující rozšíření značek, název a stále v rámci složené závorky jsou interpretovány procesorem XAML v jednom z následujících způsobů:  
   
--   Čárkou vždy představuje oddělovač nebo oddělovač jednotlivé tokeny.  
+- Čárkou vždy představuje oddělovač nebo oddělovač jednotlivé tokeny.  
   
--   Pokud jednotlivé oddělených tokenů neobsahují žádné symboly rovná se, považuje za každý token jako argument konstruktoru. Každý parametr konstruktoru se musí předávat typ, byl očekáván podpis a ve správném pořadí očekávání tím, že k podpisu.  
+- Pokud jednotlivé oddělených tokenů neobsahují žádné symboly rovná se, považuje za každý token jako argument konstruktoru. Každý parametr konstruktoru se musí předávat typ, byl očekáván podpis a ve správném pořadí očekávání tím, že k podpisu.  
   
     > [!NOTE]
     >  Procesor XAML musí volat konstruktor, který odpovídá argumentu počtu dvojice. Z tohoto důvodu se při implementaci rozšíření vlastních značek, se neposkytuje více konstruktorů s stejný počet argumentů. Chování pro chování XAML procesoru, pokud existuje více než jeden konstruktor cestu k rozšíření značek se stejný počet parametrů není definován, ale měli očekáváte, že procesor XAML oprávnění k vyvolání výjimky na využití, pokud tato situace existuje v definice typu rozšíření značek.  
   
--   Pokud oddělené jednotlivých tokeny obsahovat symboly rovná se a potom XAML procesoru nejprve volá výchozí konstruktor pro rozšíření značek. Potom každý pár název = hodnota interpretována jako název vlastnosti, která existuje na rozšíření značek a hodnota pro přiřazení k dané vlastnosti.  
+- Pokud oddělené jednotlivých tokeny obsahovat symboly rovná se a potom XAML procesoru nejprve volá výchozí konstruktor pro rozšíření značek. Potom každý pár název = hodnota interpretována jako název vlastnosti, která existuje na rozšíření značek a hodnota pro přiřazení k dané vlastnosti.  
   
--   Pokud je výsledkem paralelní mezi chování konstruktor a vlastnost nastavení chování v příponě označení, nezáleží chování, které používáte. Je běžné použití používat *vlastnost*`=`*hodnotu* páry u parametru rozšíření značek, které mají více než jednu nastavitelnou vlastnost, pokud je to pouze, protože je váš kód více úmyslné a vy jste méně pravděpodobné, že omylem transponuje parametry konstruktoru. (Pokud zadáte vlastnost = dvojice hodnot, tyto vlastnosti mohou být v libovolném pořadí.) Také není zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každý, jeho nastavitelné vlastnosti. Například <xref:System.Windows.Data.Binding> je rozšíření značek, mnoho vlastností, které je možné prostřednictvím rozšíření v *vlastnost*`=`*hodnotu* formuláře, ale <xref:System.Windows.Data.Binding> podporuje pouze dvě konstruktory: výchozí konstruktor a ten, který nastaví počáteční cestu.  
+- Pokud je výsledkem paralelní mezi chování konstruktor a vlastnost nastavení chování v příponě označení, nezáleží chování, které používáte. Je běžné použití používat *vlastnost*`=`*hodnotu* páry u parametru rozšíření značek, které mají více než jednu nastavitelnou vlastnost, pokud je to pouze, protože je váš kód více úmyslné a vy jste méně pravděpodobné, že omylem transponuje parametry konstruktoru. (Pokud zadáte vlastnost = dvojice hodnot, tyto vlastnosti mohou být v libovolném pořadí.) Také není zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každý, jeho nastavitelné vlastnosti. Například <xref:System.Windows.Data.Binding> je rozšíření značek, mnoho vlastností, které je možné prostřednictvím rozšíření v *vlastnost*`=`*hodnotu* formuláře, ale <xref:System.Windows.Data.Binding> podporuje pouze dvě konstruktory: výchozí konstruktor a ten, který nastaví počáteční cestu.  
   
--   Rozšíření značek bez escapement nelze předat literálu čárkami.  
+- Rozšíření značek bez escapement nelze předat literálu čárkami.  
   
 <a name="EscapeSequences"></a>   
 ## <a name="escape-sequences-and-markup-extensions"></a>Řídicí sekvence a rozšíření značek  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - declaring object variables [Visual Basic]
 ms.assetid: 2fa77dde-1fb2-439a-80d4-3e9787649fad
 ms.openlocfilehash: fb6411efc190dce335422369a8d2bbff564b9523
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938213"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Postupy: Deklarace objektové proměnné a přiřazení objektu k v jazyce Visual Basic
 Můžete deklarovat proměnnou [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) zadáním `As Object` v [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Přiřaďte objekt na takovou proměnnou tak, že objekt za znaménkem rovnítka (`=`) v klauzuli přiřazení příkazu nebo inicializace.  
@@ -32,11 +32,11 @@ Dim thisObject As Object= "This is an Object"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkaz na <xref:System> oboru názvů.  
+- Odkaz na <xref:System> oboru názvů.  
   
--   Třídy, struktury nebo modul, ve které chcete umístit `Dim` příkazu.  
+- Třídy, struktury nebo modul, ve které chcete umístit `Dim` příkazu.  
   
--   Postup, ve kterém chcete změnit příkazu přiřazení.  
+- Postup, ve kterém chcete změnit příkazu přiřazení.  
   
 ## <a name="see-also"></a>Viz také:
 

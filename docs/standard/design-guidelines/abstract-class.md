@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
 author: KrzysztofCwalina
 ms.openlocfilehash: 6eec3bb4575b89c6476e6c3410050c705141777f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785551"
 ---
 # <a name="abstract-class-design"></a>Návrh abstraktní třídy
 **X DO NOT** definice veřejných nebo chráněného interní konstruktorů v abstraktních typech.  

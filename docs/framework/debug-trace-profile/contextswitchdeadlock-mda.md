@@ -15,11 +15,11 @@ ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 43404ba24f6308d8da17b03df9997e893799c8d5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54643140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875001"
 ---
 # <a name="contextswitchdeadlock-mda"></a>contextSwitchDeadlock – pomocník spravovaného ladění (MDA)
 
@@ -39,18 +39,18 @@ Ve výchozím nastavení modelu vláken pro hlavní vlákno konzolové aplikace 
 
 Je možné toto MDA falešně aktivaci, pokud jsou splněny všechny následující podmínky:
 
--   Aplikace vytvoří komponenty modelu COM z vláken STA přímo nebo nepřímo prostřednictvím knihoven.
+- Aplikace vytvoří komponenty modelu COM z vláken STA přímo nebo nepřímo prostřednictvím knihoven.
 
--   Aplikace byla zastavena v ladicím programu a uživatel pokračuje aplikace nebo provést operaci kroku.
+- Aplikace byla zastavena v ladicím programu a uživatel pokračuje aplikace nebo provést operaci kroku.
 
--   Ladění nespravovaného kódu není povolená.
+- Ladění nespravovaného kódu není povolená.
 
 Pokud chcete zjistit, pokud MDA falešně aktivovaná, zakázat všechny zarážky, restartujte aplikaci a povolíte jeho spuštění bez přerušení. Pokud MDA aktivováno, je pravděpodobné, že počáteční aktivace byla hodnotu false. V takovém případě zakážete MDA, aby se zabránilo narušení relace ladění.
 
 > [!NOTE]
 > Toto MDA je ve výchozím nastavení pro sadu Visual Studio. Informace o tom, jak zakázat mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
 
-## <a name="resolution"></a>Rozlišení
+## <a name="resolution"></a>Řešení
 
 Postupujte podle pravidla COM – čerpání zpráv STA.
 

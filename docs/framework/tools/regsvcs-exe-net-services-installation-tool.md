@@ -12,20 +12,20 @@ ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1b529ccd8c5e0cf0563adf556a7d316372ac4d0e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59215037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919540"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe (nástroj pro instalaci služeb .NET)
 Instalační nástroj .NET Services vykonává tyto akce:  
   
--   Načítá a registruje sestavení.  
+- Načítá a registruje sestavení.  
   
--   Vytváří, registruje a instaluje knihovnu typů do zadané aplikace modelu COM+.  
+- Vytváří, registruje a instaluje knihovnu typů do zadané aplikace modelu COM+.  
   
--   Konfiguruje služby, které jste přidali pomocí programu do vaší třídy.  
+- Konfiguruje služby, které jste přidali pomocí programu do vaší třídy.  
   
  Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   

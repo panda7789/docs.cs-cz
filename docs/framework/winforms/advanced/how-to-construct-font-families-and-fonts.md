@@ -9,32 +9,32 @@ helpviewer_keywords:
 - fonts [Windows Forms], constructing
 ms.assetid: d3a4a223-9492-4b54-9afd-db1c31c3cefd
 ms.openlocfilehash: 0a9dcd00d4bc3e64ae4fc9a1d4884fac18521825
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181217"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937966"
 ---
 # <a name="how-to-construct-font-families-and-fonts"></a>Postupy: Vytváření rodin písem a písem
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] písma se stejný druh písma šifry, ale různé styly seskupí do rodiny písem. Řada Arial písmo obsahuje například následující písma:  
   
--   Arial standardní  
+- Arial standardní  
   
--   Arial tučného písma  
+- Arial tučného písma  
   
--   Arial kurzíva  
+- Arial kurzíva  
   
--   Arial tučná kurzíva  
+- Arial tučná kurzíva  
   
  [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá čtyři styly formuláře rodin: pravidelných, tučné, kurzíva a Tučná kurzíva. Přídavných jmen, jako *zúžit* a *zaokrouhlí* nejsou považovány za styly; místo toho jsou součástí název rodiny. Arial úzký například je rodina písem s následující členy:  
   
--   Arial úzký standardní  
+- Arial úzký standardní  
   
--   Arial úzký tučného písma  
+- Arial úzký tučného písma  
   
--   Arial úzký kurzíva  
+- Arial úzký kurzíva  
   
--   Arial úzký tučná kurzíva  
+- Arial úzký tučná kurzíva  
   
  Předtím, než můžete kreslení textu pomocí [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.FontFamily> objektu a <xref:System.Drawing.Font> objektu. <xref:System.Drawing.FontFamily> Objekt Určuje řez písma (například Arial) a <xref:System.Drawing.Font> objekt určuje velikost, styl a jednotky.  
   

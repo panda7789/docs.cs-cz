@@ -5,11 +5,11 @@ helpviewer_keywords:
 - attaching extensions using behaviors [WCF]
 ms.assetid: 149b99b6-6eb6-4f45-be22-c967279677d9
 ms.openlocfilehash: 71057ec219f46cb8b51eb9b44d8b93af540d1b01
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923276"
 ---
 # <a name="configuring-and-extending-the-runtime-with-behaviors"></a>Konfigurace a rozšíření modulu runtime s chováním
 Chování umožňují změnit výchozí chování a přidejte vlastní rozšíření, které kontrola a ověření konfigurace služby a změny chování za běhu v aplikacích pro klienta a služby Windows Communication Foundation (WCF). Toto téma popisuje chování rozhraní, jak je implementovat a jak přidat popis služby (v aplikaci služby) nebo koncový bod (v klientské aplikaci) prostřednictvím kódu programu nebo v konfiguračním souboru. Další informace o používání poskytované systémem chování najdete v tématu [určení chování za běhu služby](../../../../docs/framework/wcf/specifying-service-run-time-behavior.md) a [určení chování za běhu klienta](../../../../docs/framework/wcf/specifying-client-run-time-behavior.md).  
@@ -20,11 +20,11 @@ Chování umožňují změnit výchozí chování a přidejte vlastní rozšíř
 ### <a name="behavior-methods"></a>Chování metody  
  Mají všechny chování `AddBindingParameters` metody `ApplyDispatchBehavior` metoda, `Validate` metoda a `ApplyClientBehavior` metody s jednou výjimkou: Protože <xref:System.ServiceModel.Description.IServiceBehavior> nelze provést v klientovi, neimplementuje `ApplyClientBehavior`.  
   
--   Použít `AddBindingParameters` metoda změnit nebo přidat vlastní objekty do kolekce, která vlastní vazby mít přístup k jejich použití, jakmile modul runtime je vytvořena. Například to způsob, jakým požadavkům na ochranu jsou zadány, která mají vliv na způsob je postavená na kanál, ale nejsou platná pro kanál pro vývojáře.  
+- Použít `AddBindingParameters` metoda změnit nebo přidat vlastní objekty do kolekce, která vlastní vazby mít přístup k jejich použití, jakmile modul runtime je vytvořena. Například to způsob, jakým požadavkům na ochranu jsou zadány, která mají vliv na způsob je postavená na kanál, ale nejsou platná pro kanál pro vývojáře.  
   
--   Použití `Validate` metoda podívejte se na popis stromu a odpovídající objekt runtime tak, aby byl odpovídá některé sadu kritérií.  
+- Použití `Validate` metoda podívejte se na popis stromu a odpovídající objekt runtime tak, aby byl odpovídá některé sadu kritérií.  
   
--   Použití `ApplyDispatchBehavior` a `ApplyClientBehavior` metody ke kontrole popisu stromové struktury a upravit modul runtime pro konkrétní obor na službu nebo klienta. Můžete také vložit také objektů rozšíření.  
+- Použití `ApplyDispatchBehavior` a `ApplyClientBehavior` metody ke kontrole popisu stromové struktury a upravit modul runtime pro konkrétní obor na službu nebo klienta. Můžete také vložit také objektů rozšíření.  
   
     > [!NOTE]
     >  I když popis stromu je k dispozici v těchto metod, je pro zkoumání pouze. Pokud se změní popis stromu, není chování definováno.  
@@ -38,13 +38,13 @@ Chování umožňují změnit výchozí chování a přidejte vlastní rozšíř
   
  Existují čtyři druhy chování ve službě WCF:  
   
--   Služba chování (<xref:System.ServiceModel.Description.IServiceBehavior> typy) povolte vlastní nastavení v celé služby modulu runtime, včetně <xref:System.ServiceModel.ServiceHostBase>.  
+- Služba chování (<xref:System.ServiceModel.Description.IServiceBehavior> typy) povolte vlastní nastavení v celé služby modulu runtime, včetně <xref:System.ServiceModel.ServiceHostBase>.  
   
--   Chování koncového bodu (<xref:System.ServiceModel.Description.IEndpointBehavior> typy) umožňují přizpůsobení koncových bodů služby a jejich přidružených <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> objekty.  
+- Chování koncového bodu (<xref:System.ServiceModel.Description.IEndpointBehavior> typy) umožňují přizpůsobení koncových bodů služby a jejich přidružených <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> objekty.  
   
--   Smlouvy chování (<xref:System.ServiceModel.Description.IContractBehavior> typy) umožňují přizpůsobení i <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy v aplikacích pro klienta a služby, v uvedeném pořadí.  
+- Smlouvy chování (<xref:System.ServiceModel.Description.IContractBehavior> typy) umožňují přizpůsobení i <xref:System.ServiceModel.Dispatcher.ClientRuntime> a <xref:System.ServiceModel.Dispatcher.DispatchRuntime> třídy v aplikacích pro klienta a služby, v uvedeném pořadí.  
   
--   Chování operace (<xref:System.ServiceModel.Description.IOperationBehavior> typy) povolte vlastní nastavení <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy opět na klienta a služby.  
+- Chování operace (<xref:System.ServiceModel.Description.IOperationBehavior> typy) povolte vlastní nastavení <xref:System.ServiceModel.Dispatcher.ClientOperation> a <xref:System.ServiceModel.Dispatcher.DispatchOperation> třídy opět na klienta a služby.  
   
  Můžete přidat tyto chování s různými objekty popis implementací vlastní atributy, pomocí konfiguračních souborů aplikace, nebo přímo jejich přidáním do kolekce chování na objekt příslušný popis. Musíte však přidat popis služby nebo objekt popis koncový bod služby před voláním <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> na <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601>.  
   

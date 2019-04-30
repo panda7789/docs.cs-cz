@@ -22,11 +22,11 @@ helpviewer_keywords:
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 ms.custom: seodec18
 ms.openlocfilehash: 2e4fef836b08f536565105dbab76292b2fc4388e
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934261"
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch....Finally – příkaz (Visual Basic)
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - text boxes [Windows Forms], about text boxes
 ms.assetid: 95081194-3dd4-4b84-9545-dd373e491eca
 ms.openlocfilehash: 0827c1919597e9eb85bfa41721676008b76564d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59201595"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902496"
 ---
 # <a name="richtextbox-control-overview-windows-forms"></a>RichTextBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek se používá pro zobrazení, zadávání a manipulace s formátování textu. <xref:System.Windows.Forms.RichTextBox> Ovládací prvek provádí všechno, co <xref:System.Windows.Forms.TextBox> ovládací prvek provádí, ale můžete také zobrazit písma, barvy a odkazy; načítání textu a vložené obrázky ze souboru a najít zadané znaky. <xref:System.Windows.Forms.RichTextBox> Ovládací prvek se obvykle používá k poskytování manipulaci s textem a zobrazení funkce podobné aplikace zpracování textu, jako je Microsoft Word. Podobně jako <xref:System.Windows.Forms.TextBox> ovládací prvek, <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit posuvník; ale na rozdíl od <xref:System.Windows.Forms.TextBox> ovládací prvek, jeho výchozí nastavení je pro zobrazení vodorovný a svislý posuvník podle potřeby a má nastavení další posuvník.  

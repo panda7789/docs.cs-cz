@@ -3,11 +3,11 @@ title: Tok řízení v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
 ms.openlocfilehash: ed993943bcf7341f900c575744a1faa53a4a8a2e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923666"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Tok řízení v asynchronních programech (Visual Basic)
 Můžete napsat a snadněji udržovat asynchronní programy pomocí `Async` a `Await` klíčová slova. Ale výsledků možná vás překvapí Pokud nevíte, jak program pracuje. Toto téma sleduje tok řízení prostřednictvím jednoduchého asynchronního programu k zobrazení, když se ovládací prvek přesune z jedné metody na jinou a jaké informace jsou pokaždé přeneseny.  
@@ -19,9 +19,9 @@ Můžete napsat a snadněji udržovat asynchronní programy pomocí `Async` a `A
   
  Následující příklad používá asynchronní metody ke stahování obsahu zadaného webu jako řetězec a zobrazí délku řetězce. Tento příklad obsahuje následující dvě metody.  
   
--   `startButton_Click`, který volá `AccessTheWebAsync` a zobrazí výsledek.  
+- `startButton_Click`, který volá `AccessTheWebAsync` a zobrazí výsledek.  
   
--   `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, chcete-li stáhnout obsah.  
+- `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní <xref:System.Net.Http.HttpClient> metody <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, chcete-li stáhnout obsah.  
   
  Číslované řádky se zobrazí strategická místa v celém programu, které vám pomohou pochopit, jak program funguje a co se stane v každém bodu, který je označen jako zobrazení. Zobrazené řádky jsou označeny "Jedna"až "šest." Popisky představují pořadí, ve kterém dosáhne program tyto řádky kódu.  
   

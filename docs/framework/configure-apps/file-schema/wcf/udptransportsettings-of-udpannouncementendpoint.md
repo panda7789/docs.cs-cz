@@ -3,11 +3,11 @@ title: <udpTransportSettings> z <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
 ms.openlocfilehash: 901b7e1429c3afc19e9b609026dc632730c35024
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148327"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788164"
 ---
 # <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpTransportSettings > z \<udpAnnouncementEndpoint >
 Tento prvek konfigurace zpřístupňuje nastavení přenosu UDP pro [ \<udpAnnouncementEndpoint >](udpannouncementendpoint.md).  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
 ms.openlocfilehash: a12fa587d5df0ed95dd0f15ccfbe2ef886185b9e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207474"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934118"
 ---
 # <a name="updating-data-in-a-data-source"></a>Aktualizace dat ve zdroji dat
 Příkazy SQL, které upravují data (například vložení, aktualizace nebo odstranění) nevracejí řádky. Podobně mnoho uložené procedury provést akci, ale nevracejí řádky. Ke spuštění příkazů, které nevracejí řádky, vytvořit **příkaz** objekt s příslušný příkaz SQL a **připojení**, včetně požadované **parametry**. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  

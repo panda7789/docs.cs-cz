@@ -13,20 +13,20 @@ ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 24e7eed539898c511250a1a09a187448e9424890
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872570"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači se během nasazení, vytvářet soubory manifestu Win32 – vizuální styl v době návrhu, které obsahují informace o aktivaci a vazby. Tyto soubory manifestu, spíše než klíče registru, směrovat aktivační objekt.  
   
  Pomocí aktivace bez registrace pro vaše sestavení místo registrace během nasazení nabízí dvě výhody:  
   
--   Můžete určit, kterou verzi knihovny DLL je aktivován, když je více než jedna verze nainstalovány v počítači.  
+- Můžete určit, kterou verzi knihovny DLL je aktivován, když je více než jedna verze nainstalovány v počítači.  
   
--   Koncoví uživatelé mohou používat příkazu XCOPY nebo FTP kopírovat aplikaci do příslušného adresáře v počítači. Aplikace se dá spustit pak z tohoto adresáře.  
+- Koncoví uživatelé mohou používat příkazu XCOPY nebo FTP kopírovat aplikaci do příslušného adresáře v počítači. Aplikace se dá spustit pak z tohoto adresáře.  
   
  Tato část popisuje dva typy manifesty potřeba pro spolupráci s COM bez registrace: manifesty aplikace a komponenty. Tyto manifestů jsou soubory formátu XML. Manifest aplikace, který je vytvořen vývojář aplikací, obsahuje metadata popisující sestavení a závislosti sestavení. Manifest součásti vytvořený vývojářem komponenty obsahuje informace, jinak se nachází v registru Windows.  
   

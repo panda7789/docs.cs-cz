@@ -17,28 +17,28 @@ ms.assetid: 444b0d33-67ea-4c36-9e94-79c50f839025
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 35aec3a311680e398d9f2bba94bf4c9a274c8a04
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873818"
 ---
 # <a name="trace-listeners"></a>Naslouchací procesy trasování
 Při použití **trasování**, **ladění** a <xref:System.Diagnostics.TraceSource>, musí mít mechanismus pro shromažďování a zaznamenávání zpráv, které se odesílají. Trasovací zprávy jsou přijímány *naslouchacích procesů*. Účelem tohoto naslouchací proces je shromažďování, ukládání a směrovat trasovací zprávy. Posluchači přímý výstup trasování příslušný cíli, jako je protokol, okno nebo textový soubor.  
   
  Naslouchací procesy jsou k dispozici na **ladění**, **trasování**, a <xref:System.Diagnostics.TraceSource> tříd, z nichž každý odeslat svůj výstup do různých objektů naslouchací proces. Tady jsou běžně používané předdefinované naslouchacích procesů:  
   
--   A <xref:System.Diagnostics.TextWriterTraceListener> přesměruje výstup do instance <xref:System.IO.TextWriter> třídy nebo cokoli, který je <xref:System.IO.Stream> třídy. To je zapsat také do konzoly nebo do souboru, protože se jedná <xref:System.IO.Stream> třídy.  
+- A <xref:System.Diagnostics.TextWriterTraceListener> přesměruje výstup do instance <xref:System.IO.TextWriter> třídy nebo cokoli, který je <xref:System.IO.Stream> třídy. To je zapsat také do konzoly nebo do souboru, protože se jedná <xref:System.IO.Stream> třídy.  
   
--   <xref:System.Diagnostics.EventLogTraceListener> Přesměruje výstup do protokolu událostí.  
+- <xref:System.Diagnostics.EventLogTraceListener> Přesměruje výstup do protokolu událostí.  
   
--   A <xref:System.Diagnostics.DefaultTraceListener> vysílá **zápisu** a **WriteLine** zprávy **OutputDebugString** a **Debugger.Log** metoda. V sadě Visual Studio to způsobí, že zprávy ladění se zobrazí v okně výstup. **Selhání** i neúspěšné **Assert** zprávy také posílat do **OutputDebugString** rozhraní Windows API a **Debugger.Log** metoda a zprávu pole bude příčina zobrazí. Toto chování je výchozí chování pro **ladění** a **trasování** zprávy, protože **DefaultTraceListener** je automaticky zahrnut v každé `Listeners` kolekce a je automaticky zahrnuty pouze naslouchací proces.  
+- A <xref:System.Diagnostics.DefaultTraceListener> vysílá **zápisu** a **WriteLine** zprávy **OutputDebugString** a **Debugger.Log** metoda. V sadě Visual Studio to způsobí, že zprávy ladění se zobrazí v okně výstup. **Selhání** i neúspěšné **Assert** zprávy také posílat do **OutputDebugString** rozhraní Windows API a **Debugger.Log** metoda a zprávu pole bude příčina zobrazí. Toto chování je výchozí chování pro **ladění** a **trasování** zprávy, protože **DefaultTraceListener** je automaticky zahrnut v každé `Listeners` kolekce a je automaticky zahrnuty pouze naslouchací proces.  
   
--   A <xref:System.Diagnostics.ConsoleTraceListener> směruje trasování nebo výstup do standardního výstupu nebo standardní chybový proud ladění.  
+- A <xref:System.Diagnostics.ConsoleTraceListener> směruje trasování nebo výstup do standardního výstupu nebo standardní chybový proud ladění.  
   
--   A <xref:System.Diagnostics.DelimitedListTraceListener> přesměruje trasování a ladění výstupu do zapisovače textu, jako je datový proud, nebo do datového proudu, jako je datový proud souboru. Výstup trasování je ve formátu odděleného textu, který používá oddělovač určené <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> vlastnost.  
+- A <xref:System.Diagnostics.DelimitedListTraceListener> přesměruje trasování a ladění výstupu do zapisovače textu, jako je datový proud, nebo do datového proudu, jako je datový proud souboru. Výstup trasování je ve formátu odděleného textu, který používá oddělovač určené <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> vlastnost.  
   
--   <xref:System.Diagnostics.XmlWriterTraceListener> Směruje trasování nebo výstup ladění jako data kódovaná XML do <xref:System.IO.TextWriter> nebo <xref:System.IO.Stream>, například <xref:System.IO.FileStream>.  
+- <xref:System.Diagnostics.XmlWriterTraceListener> Směruje trasování nebo výstup ladění jako data kódovaná XML do <xref:System.IO.TextWriter> nebo <xref:System.IO.Stream>, například <xref:System.IO.FileStream>.  
   
  Pokud chcete, aby všechny naslouchací proces kromě <xref:System.Diagnostics.DefaultTraceListener> přijímat **ladění**, **trasování** a <xref:System.Diagnostics.TraceSource> výstup, je třeba přidat ji do `Listeners` kolekce. Další informace najdete v tématu [jak: Vytvoření a inicializace naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners.md) a [jak: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md). Žádné naslouchací proces ve **naslouchacích procesů** kolekce získá stejné zprávy z trasování metody výstupu. Předpokládejme například, že nastavíte dva naslouchací procesy: **TextWriterTraceListener** a **EventLogTraceListener**. Každý naslouchací proces obdrží stejné zprávy. **TextWriterTraceListener** by směrovat výstup do datového proudu a **EventLogTraceListener** by směrovat výstup do protokolu událostí.  
   

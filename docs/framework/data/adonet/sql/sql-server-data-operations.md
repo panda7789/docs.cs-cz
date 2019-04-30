@@ -3,11 +3,11 @@ title: Operace dat na SQL Serveru v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: b864ebc9-ed8e-4059-85fd-36d9198f5521
 ms.openlocfilehash: 2dd4430e5b7f86253966f2778abe7d9ba58661a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59143504"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876314"
 ---
 # <a name="sql-server-data-operations-in-adonet"></a>Operace dat na SQL Serveru v ADO.NET
 Tato část popisuje funkce serveru SQL Server, které jsou specifické pro zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>).  

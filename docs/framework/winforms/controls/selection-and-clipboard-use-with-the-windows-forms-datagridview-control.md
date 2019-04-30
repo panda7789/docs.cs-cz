@@ -10,11 +10,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], selecting cells
 ms.assetid: 82cffcad-8b30-4897-bddb-c3a79d751b83
 ms.openlocfilehash: 1836fbc1887082ca685c49bef2bc42bdb167578f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59105846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902249"
 ---
 # <a name="selection-and-clipboard-use-with-the-windows-forms-datagridview-control"></a>Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView
 `DataGridView` Ovládacího prvku poskytuje širokou škálu možnosti konfigurace, jak mohou uživatelé vybrat buněk, řádků a sloupců. Například můžete povolit jeden nebo více výběrů, výběr celého řádku nebo sloupce, když uživatelé kliknou na buňky nebo výběr celého řádku nebo sloupce pouze, když uživatelé kliknou na jeho záhlaví, umožňující výběr buněk také. Pokud chcete poskytnout vlastní uživatelské rozhraní pro výběr, můžete zakázat běžné výběru a výběr zpracovávat prostřednictvím kódu programu. Kromě toho můžete povolit kopírování vybraných hodnot do schránky.  

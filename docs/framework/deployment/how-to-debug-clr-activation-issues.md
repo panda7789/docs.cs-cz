@@ -8,10 +8,10 @@ author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e38e3e2b0f28b7f1eb36dd3c5b2888712b1c807c
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875303"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Ladění problémů aktivace CLR
 

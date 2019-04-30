@@ -15,11 +15,11 @@ helpviewer_keywords:
 - type promotion
 ms.assetid: 7adaef80-f435-46e1-970a-269fff63b448
 ms.openlocfilehash: 0f74935d58d47e65b5eb614abc86a3fc9c8e6c42
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920611"
 ---
 # <a name="partial-visual-basic"></a>Partial (Visual Basic)
 Označuje, že deklarace typu je částečnou definici typu.  
@@ -68,15 +68,15 @@ Partial { Class | Structure | Interface | Module } name [ (Of typelist) ]
   
 ## <a name="best-practices"></a>Doporučené postupy  
   
--   Za normálních podmínek by neměl vývoj jeden typ rozdělit mezi dva nebo více deklarací. Proto se ve většině případů není nutné `Partial` – klíčové slovo.  
+- Za normálních podmínek by neměl vývoj jeden typ rozdělit mezi dva nebo více deklarací. Proto se ve většině případů není nutné `Partial` – klíčové slovo.  
   
--   Pro lepší čitelnost, by měl obsahovat všechny částečné deklaraci typu `Partial` – klíčové slovo. Kompilátor povoluje nejvýše jedna částečná deklarace chcete vynechat, nechte – klíčové slovo; Pokud ji vynechte nejméně dva signály kompilátor chybu.  
+- Pro lepší čitelnost, by měl obsahovat všechny částečné deklaraci typu `Partial` – klíčové slovo. Kompilátor povoluje nejvýše jedna částečná deklarace chcete vynechat, nechte – klíčové slovo; Pokud ji vynechte nejméně dva signály kompilátor chybu.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Deklarace sjednocení.** Kompilátor zpracovává typ jako její částečné deklarace sjednocení. Každý modifikátor z každé Částečná definice platí pro celý typ a je k dispozici pro celý typ každého člena z každé částečnou definici.  
+- **Deklarace sjednocení.** Kompilátor zpracovává typ jako její částečné deklarace sjednocení. Každý modifikátor z každé Částečná definice platí pro celý typ a je k dispozici pro celý typ každého člena z každé částečnou definici.  
   
--   **Propagace typu není povolený pro částečné typy v modulech.** Pokud je částečnou definici uvnitř modulu, typu povýšení tohoto typu není automaticky zrušena. V takovém případě sada částečné definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Další informace najdete v tématu [propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
+- **Propagace typu není povolený pro částečné typy v modulech.** Pokud je částečnou definici uvnitř modulu, typu povýšení tohoto typu není automaticky zrušena. V takovém případě sada částečné definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Další informace najdete v tématu [propagace typu](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md).  
   
      Kompilátor sloučí částečné definice pouze v případě jejich úplné cesty jsou identické.  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
 ms.openlocfilehash: 7966c1fe4cd94408455c6bb146fdd3ea55757702
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59316801"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787852"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které můžete konfigurovat, ale neposkytují úplnou flexibilitu při konfiguraci všechny možnosti zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazbu přímo z elementů vazby jednotlivých a zvýrazní některá nastavení zabezpečení, které můžete nastavit při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb naleznete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -32,22 +32,22 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
  Další třídy se používají při zabezpečení na úrovni přenosu je k dispozici:  
   
--   <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
   
--   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
   
--   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+- <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
 ## <a name="required-binding-elements"></a>Vyžaduje elementů vazby  
  Existuje velký počet vazeb prvky, které je možné kombinovat do vazby. Ne všechny tyto kombinace jsou platné. Tato část popisuje požadované prvky, které musí být součástí vazby zabezpečení.  
   
  Vazby zabezpečení platné závisí na mnoha faktorech, včetně následujících:  
   
--   Režim zabezpečení.  
+- Režim zabezpečení.  
   
--   Přenosový protokol.  
+- Přenosový protokol.  
   
--   Vzorce výměny zpráv (MEP) uvedené ve smlouvě.  
+- Vzorce výměny zpráv (MEP) uvedené ve smlouvě.  
   
  Následující tabulka uvádí konfigurace zásobníku element platnou vazbu pro každou kombinaci na předchozích faktorech. Všimněte si, že jsou minimální požadavky. Elementy další vazby můžete přidat do vazby, jako je například elementy vazby, transakce elementů vazby a další prvky vazby kódování zprávy.  
   

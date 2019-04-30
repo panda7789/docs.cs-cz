@@ -21,11 +21,11 @@ ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 74469948ffe4045e6d367f1f60b8e66dc2a7810d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793024"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Načítání prostředků v aplikacích klasické pracovní plochy
 Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .NET Framework by měl v ideálním případě balíček prostředků pro výchozí nebo neutrální jazykovou verzi s hlavním sestavením a vytvořte samostatné satelitní sestavení pro každý jazyk nebo jazykovou verzi, která vaše aplikace podporuje. Pak můžete použít <xref:System.Resources.ResourceManager> třídy, jak je popsáno v další části a přístup k pojmenovaným prostředkům. Pokud se rozhodnete vložit prostředky do hlavního sestavení a satelitní sestavení, se dá dostat taky binárních souborů .resources přímo, jak je popsáno v části [načítání prostředků ze souborů .resources](#from_file) dále v tomto článek.  Pro načtení prostředků v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, najdete v článku [vytváření a načítání prostředků v aplikacích pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) Windows Dev Center.  
@@ -34,9 +34,9 @@ Při práci s lokalizované prostředky v desktopových aplikacích rozhraní .N
 ## <a name="retrieving-resources-from-assemblies"></a>Načítání prostředků ze sestavení  
  <xref:System.Resources.ResourceManager> Třídě poskytuje přístup k prostředkům v době běhu. Můžete použít <xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType> metody k získání řetězcové prostředky a <xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType> nebo <xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType> metodu pro načtení neřetězcové prostředky. Každá z metod má dvě přetížení:  
   
--   Přetížení jehož jediný parametr je řetězec, který obsahuje název prostředku. Metoda se pokusí načíst tento prostředek pro aktuální jazykovou verzi vlákna. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody.  
+- Přetížení jehož jediný parametr je řetězec, který obsahuje název prostředku. Metoda se pokusí načíst tento prostředek pro aktuální jazykovou verzi vlákna. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%29> metody.  
   
--   Přetížení, která má dva parametry: řetězec obsahující název prostředku a s <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, jejíž prostředek má být načtena. Pokud prostředek pro nastavené, nebyl nalezen jazykovou verzi, správce prostředků používá pravidla pro použití náhradní lokality k načtení odpovídající prostředek. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metody.  
+- Přetížení, která má dva parametry: řetězec obsahující název prostředku a s <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, jejíž prostředek má být načtena. Pokud prostředek pro nastavené, nebyl nalezen jazykovou verzi, správce prostředků používá pravidla pro použití náhradní lokality k načtení odpovídající prostředek. Další informace najdete v tématu <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>, a <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> metody.  
   
  Proces získávání náhradních prostředků resource Manageru používá k řízení, jak aplikace načítá prostředky specifické pro jazykovou verzi. Další informace najdete v tématu v části "Proces záložního prostředku" [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Informace o vytvoření instance <xref:System.Resources.ResourceManager> objektu, naleznete v části "Vytvoření instance objektu ResourceManager" <xref:System.Resources.ResourceManager> třídě.  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ee50e943-9349-4c84-ab1c-c35d3ada1a9c
 ms.openlocfilehash: 02d0417bc05f8585dc469d365089c8123d395f64
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164512"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877120"
 ---
 # <a name="remote-vs-local-execution"></a>Vzdálené vs. místní spuštění
 Můžete se rozhodnout spustit dotazy buď vzdáleně (to znamená, že databázový stroj provede dotaz na databázi) nebo místně ([!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provede dotaz proti místní mezipaměti).  
@@ -23,18 +23,18 @@ Můžete se rozhodnout spustit dotazy buď vzdáleně (to znamená, že databáz
   
  Pokud má vaše databáze tisíce řádků objednávek, nechcete je načíst všechny malou zpracovat. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], <xref:System.Data.Linq.EntitySet%601> implementuje třída <xref:System.Linq.IQueryable> rozhraní. Tento přístup zajišťuje, že tyto dotazy mohou být provedeny vzdáleně. Tato technika tok dvě hlavní výhody:  
   
--   Není načten nepotřebná data.  
+- Není načten nepotřebná data.  
   
--   Dotaz proveden databázový stroj je často efektivnější z důvodu indexy databáze.  
+- Dotaz proveden databázový stroj je často efektivnější z důvodu indexy databáze.  
   
 ## <a name="local-execution"></a>místní spuštění  
  V ostatních případech můžete chtít mít v místní mezipaměti úplnou sadu souvisejících entit. Pro tento účel <xref:System.Data.Linq.EntitySet%601> poskytuje <xref:System.Data.Linq.EntitySet%601.Load%2A> metodu pro explicitní načtení všech členů <xref:System.Data.Linq.EntitySet%601>.  
   
  Pokud <xref:System.Data.Linq.EntitySet%601> je již načten, následující dotazy se spouštějí místně. Tento přístup pomáhá dvěma způsoby:  
   
--   Pokud se všechny musí využívat místně nebo více než jednou, se můžete vyhnout vzdálené dotazy a související latenci.  
+- Pokud se všechny musí využívat místně nebo více než jednou, se můžete vyhnout vzdálené dotazy a související latenci.  
   
--   Entity lze serializovat jako úplnou entitu.  
+- Entity lze serializovat jako úplnou entitu.  
   
  Následující fragment kódu ukazuje, jak místní spuštění lze získat:  
   

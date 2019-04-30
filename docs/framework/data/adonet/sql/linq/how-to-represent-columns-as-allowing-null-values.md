@@ -3,11 +3,11 @@ title: 'Postupy: Znázornění sloupců jako povolujících hodnoty null'
 ms.date: 03/30/2017
 ms.assetid: ebb71a37-1f4c-4fa7-b2d2-d903f13c4af1
 ms.openlocfilehash: ef8fa87963b91ef7140fbaefb657fc7904604b5b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331153"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902912"
 ---
 # <a name="how-to-represent-columns-as-allowing-null-values"></a>Postupy: Znázornění sloupců jako povolujících hodnoty null
 Použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] <xref:System.Data.Linq.Mapping.ColumnAttribute.CanBeNull%2A> vlastnost <xref:System.Data.Linq.Mapping.ColumnAttribute> atribut k určení, že sloupec přidružená databáze může obsahovat hodnoty null.  

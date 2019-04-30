@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
 ms.openlocfilehash: b50c902f69f7602dbad4663dc35bf0a2b932973f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832083"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796978"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 Body bez znaménka 16bitový kódů (2bajtových) obsahuje v rozmezí od 0 do 65535. Každý *kódu bodu*, nebo kód znaku, představuje jeden znak Unicode.  
@@ -47,15 +47,15 @@ charVar = "Z"C
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** `Char` je typ bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
+- **Záporná čísla.** `Char` je typ bez znaménka a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Char` pro uložení číselné hodnoty.  
   
--   **Spolupráce aspekty.** Pokud používáte rozhraní s komponentami, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že typy znaků mají odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte 8bitové argument, deklarujte ho jako `Byte` místo `Char` v váš nový kód jazyka Visual Basic.  
+- **Spolupráce aspekty.** Pokud používáte rozhraní s komponentami, které nejsou napsané pro rozhraní .NET Framework pro příklad objekty automatizace nebo COM, mějte na paměti, že typy znaků mají odlišnou datovou šířku (8 bitů) v jiných prostředích. Pokud takové součásti předáváte 8bitové argument, deklarujte ho jako `Byte` místo `Char` v váš nový kód jazyka Visual Basic.  
   
--   **Rozšíření.** `Char` Datový typ rozšiřuje na `String`. To znamená, že můžete převést `Char` k `String` a nebude narazíte <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `Char` Datový typ rozšiřuje na `String`. To znamená, že můžete převést `Char` k `String` a nebude narazíte <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znak typu literálu `C` jeden znak řetězec literálu se z něj stane `Char` datového typu. `Char` nemá žádné – znak typu identifikátoru.  
+- **Znaky typu.** Přidávání znak typu literálu `C` jeden znak řetězec literálu se z něj stane `Char` datového typu. `Char` nemá žádné – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktury.  
   
 ## <a name="see-also"></a>Viz také:
 

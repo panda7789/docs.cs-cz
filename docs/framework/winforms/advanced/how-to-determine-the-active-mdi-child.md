@@ -12,11 +12,11 @@ helpviewer_keywords:
 - MDI [Windows Forms], locating focus
 ms.assetid: 33880ec3-0207-4c2b-a616-ff140443cc0f
 ms.openlocfilehash: 9b70824670b8f47a2346135cb31ad39bd55694d1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937550"
 ---
 # <a name="how-to-determine-the-active-mdi-child"></a>Postupy: Určení aktivního podřízeného formuláře MDI
 V některých případech budete chtít zadat příkaz, který funguje na ovládací prvek, který má fokus na aktuálně aktivní podřízený formulář. Předpokládejme například, že chcete Zkopírování vybraného textu do schránky z podřízeného formuláře, textového pole. Vytvoříte procedury, která zkopíruje vybraný text do schránky pomocí <xref:System.Windows.Forms.Control.Click> události položky nabídky kopírování ve standardní nabídce Úpravy.  

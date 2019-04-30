@@ -1,27 +1,27 @@
 ---
-title: Zpracování chyb v asynchronní aktivity
+title: Zpracování chyb v asynchronních aktivitách
 ms.date: 03/30/2017
 ms.assetid: e8f8ce2b-50c9-4e44-b187-030e0cf30a5d
 ms.openlocfilehash: 4a7cbecef596eec6eaa128b8ffc7bc5c6e4b79bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33511979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773994"
 ---
-# <a name="error-handling-in-asynchronous-activities"></a>Zpracování chyb v asynchronní aktivity
-Zpracování chyb v poskytování <xref:System.Activities.AsyncCodeActivity> zahrnuje směrování chyba prostřednictvím systému aktivity zpětného volání. Toto téma popisuje postup dojde k chybě, která je vyvolána v asynchronní operaci zpět na hostitele, pomocí ukázkové aktivity SendMail.  
+# <a name="error-handling-in-asynchronous-activities"></a>Zpracování chyb v asynchronních aktivitách
+Poskytuje zpracování chyb v <xref:System.Activities.AsyncCodeActivity> zahrnuje směrování chyby pomocí zpětného volání systému aktivity. Toto téma popisuje, jak dojde k chybě, která je vyvolána v asynchronní operaci zpět na hostitele, pomocí ukázková aktivita SendMail.  
   
-## <a name="returning-an-error-thrown-in-an-asynchronous-activity-back-to-the-host"></a>Vrácení k chybě dojde v aktivitě asynchronní zpět na hostitele  
- Směrování chybu v asynchronní operaci zpět na hostitele v ukázce aktivity SendMail zahrnuje následující kroky:  
+## <a name="returning-an-error-thrown-in-an-asynchronous-activity-back-to-the-host"></a>Vrátit chybu vyvolána v aktivitě asynchronní zpět k hostiteli  
+ Směrování chybu v asynchronní operaci zpět na hostitele v ukázce aktivita SendMail zahrnuje následující kroky:  
   
--   Přidat vlastnost výjimky k `SendMailAsyncResult` třídy.  
+- Přidejte vlastnosti Exception k `SendMailAsyncResult` třídy.  
   
--   Zkopírujte chyba výjimce dojde k dané vlastnosti v `SendCompleted` obslužné rutiny události.  
+- K této výjimce dojde Chyba kopírování na tuto vlastnost v `SendCompleted` obslužné rutiny události.  
   
--   Throw – výjimka `EndExecute` obslužné rutiny události.  
+- Vyvolání výjimky `EndExecute` obslužné rutiny události.  
   
- Výsledný kód je následující.  
+ Výsledný kód je následujícím způsobem.  
   
 ```csharp  
 class SendMailAsyncResult : IAsyncResult  

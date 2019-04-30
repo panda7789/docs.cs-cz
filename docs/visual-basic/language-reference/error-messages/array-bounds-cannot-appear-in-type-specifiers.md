@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30638
 ms.assetid: 93b654f4-70fa-4a48-baed-ffae42075550
 ms.openlocfilehash: f20ed883005641082eb89e2effa5221594910ffe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935353"
 ---
 # <a name="array-bounds-cannot-appear-in-type-specifiers"></a>Indexy pole nemohou být použity ve specifikátorech typu.
 Velikost pole nejde použít deklaraci jako součást v datovém specifikátoru typu.  
@@ -21,13 +21,13 @@ Velikost pole nejde použít deklaraci jako součást v datovém specifikátoru 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Určete velikost pole, hned za název proměnné namísto velikost pole za typem, jak je znázorněno v následujícím příkladu.  
+- Určete velikost pole, hned za název proměnné namísto velikost pole za typem, jak je znázorněno v následujícím příkladu.  
   
     ```  
     Dim Array(8) As Integer   
     ```  
   
--   Definování pole a inicializujte ji s požadovaný počtem elementů, jak je znázorněno v následujícím příkladu.  
+- Definování pole a inicializujte ji s požadovaný počtem elementů, jak je znázorněno v následujícím příkladu.  
   
     ```  
     Dim Array2() As Integer = New Integer(8) {}  

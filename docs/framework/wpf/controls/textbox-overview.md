@@ -6,11 +6,11 @@ helpviewer_keywords:
 - TextBox control [WPF], about TextBox control
 ms.assetid: 1ba6dc5b-11a7-4247-9213-36c6729ee35f
 ms.openlocfilehash: 577a12a0c04e5e3bfbfecb2c45263b684f0ffc17
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790986"
 ---
 # <a name="textbox-overview"></a>TextBox – přehled
 <xref:System.Windows.Controls.TextBox> Třída umožňuje zobrazení nebo úpravě neformátovaného textu. Běžně se používají <xref:System.Windows.Controls.TextBox> upravuje neformátovaného textu ve formuláři. Například byste použili atd formuláře s žádostí o uživatelské jméno, telefonní číslo, <xref:System.Windows.Controls.TextBox> ovládací prvky pro zadávání textu. Toto téma představuje <xref:System.Windows.Controls.TextBox> třídy a poskytuje příklady toho, jak ho použít v obou [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] a C#.  

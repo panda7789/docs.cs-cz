@@ -9,11 +9,11 @@ helpviewer_keywords:
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
 ms.openlocfilehash: ec34c19da9cd642f5de51166bef0264c2e75c58c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856710"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [jak: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -37,22 +37,22 @@ ms.locfileid: "59345518"
 ### <a name="cached-token-impersonation"></a>V mezipaměti Token zosobnění  
  Můžete provádět v mezipaměti token zosobnění s následujícími možnostmi:  
   
--   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> pomocí pověření klienta Windows.  
+- <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> pomocí pověření klienta Windows.  
   
--   <xref:System.ServiceModel.BasicHttpBinding> s <xref:System.ServiceModel.BasicHttpSecurityMode> nastaveno <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazbu kde klient poskytne název přihlašovacích údajů uživatele, který služba můžete namapovat na platný účet Windows.  
+- <xref:System.ServiceModel.BasicHttpBinding> s <xref:System.ServiceModel.BasicHttpSecurityMode> nastaveno <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> přihlašovacích údajů nebo standardní vazbu kde klient poskytne název přihlašovacích údajů uživatele, který služba můžete namapovat na platný účet Windows.  
   
--   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavena na `true`. (Vlastnost je k dispozici na následující třídy: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>, <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters>, a <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters>.) Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
+- Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavena na `true`. (Vlastnost je k dispozici na následující třídy: <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>, <xref:System.ServiceModel.Security.Tokens.SslSecurityTokenParameters>, a <xref:System.ServiceModel.Security.Tokens.SspiSecurityTokenParameters>.) Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
   
--   Žádné <xref:System.ServiceModel.Channels.CustomBinding> kde klient poskytne pověření uživatelského jména. Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
+- Žádné <xref:System.ServiceModel.Channels.CustomBinding> kde klient poskytne pověření uživatelského jména. Pokud zabezpečené konverzace se používá ve vazbě, musíte také mít `requireCancellation` nastavenou na `true`.  
   
 ### <a name="s4u-based-impersonation"></a>Na základě S4U zosobnění  
  Je možné provést zosobnění S4U podle následujícími způsoby:  
   
--   <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověřením klientských certifikátů služby můžete namapovat na platný účet Windows.  
+- <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSDualHttpBinding>, a <xref:System.ServiceModel.NetTcpBinding> s pověřením klientských certifikátů služby můžete namapovat na platný účet Windows.  
   
--   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavenou na `false`.  
+- Žádné <xref:System.ServiceModel.Channels.CustomBinding> , který používá pověření klienta Windows s `requireCancellation` nastavenou na `false`.  
   
--   Žádné <xref:System.ServiceModel.Channels.CustomBinding> , která používá uživatelské jméno nebo pověření klienta Windows a zabezpečené konverzace s `requireCancellation` nastavenou na `false`.  
+- Žádné <xref:System.ServiceModel.Channels.CustomBinding> , která používá uživatelské jméno nebo pověření klienta Windows a zabezpečené konverzace s `requireCancellation` nastavenou na `false`.  
   
  V rozsahu, do které může služba zosobnit klienta závisí na oprávnění, která obsahuje účet služby při pokusu zosobnění, typ používá zosobnění a případně rozsah zosobnění, které je povoleno klienta.  
   
@@ -201,9 +201,9 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
  Podrobnější pokyny týkající se konfigurace omezeného delegování naleznete v následujících tématech na webu MSDN:  
   
--   [Řešení potíží s delegování protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=36724)  
+- [Řešení potíží s delegování protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=36724)  
   
--   [Přechod protokolu Kerberos a omezeného delegování](https://go.microsoft.com/fwlink/?LinkId=36725)  
+- [Přechod protokolu Kerberos a omezeného delegování](https://go.microsoft.com/fwlink/?LinkId=36725)  
   
 ## <a name="see-also"></a>Viz také:
 

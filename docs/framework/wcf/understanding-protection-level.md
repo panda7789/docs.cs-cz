@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
 ms.openlocfilehash: 90fb844931c3af54367d0e7c14a766636cdcc71a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096046"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791427"
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
 `ProtectionLevel` Vlastnosti se nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost určuje, jak je chráněné části (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  
@@ -26,33 +26,33 @@ ms.locfileid: "59096046"
 ## <a name="basics"></a>Základy  
  Informace o tom funkce úrovně ochrany, platí následující základní příkazy:  
   
--   Existují tři základní úrovně ochrany pro žádnou část zprávy. Vlastnost (všude, kde k němu dojde) je nastavena na jednu z <xref:System.Net.Security.ProtectionLevel> hodnot výčtu. Ve vzestupném pořadí ochrany, patří mezi ně:  
+- Existují tři základní úrovně ochrany pro žádnou část zprávy. Vlastnost (všude, kde k němu dojde) je nastavena na jednu z <xref:System.Net.Security.ProtectionLevel> hodnot výčtu. Ve vzestupném pořadí ochrany, patří mezi ně:  
   
-    -   `None`.  
+    - `None`.  
   
-    -   `Sign`. Chráněná část je digitálně podepsané. Tím se zajistí detekce manipulace s částí chráněné zprávy.  
+    - `Sign`. Chráněná část je digitálně podepsané. Tím se zajistí detekce manipulace s částí chráněné zprávy.  
   
-    -   `EncryptAndSign`. Část zprávy se šifrují k zajištění důvěrnosti dříve, než je podepsán.  
+    - `EncryptAndSign`. Část zprávy se šifrují k zajištění důvěrnosti dříve, než je podepsán.  
   
--   Můžete nastavit požadavky na ochranu pouze pro *data aplikací* s touto funkcí. Například WS-Addressing záhlaví dat infrastruktury a, proto se nevztahují `ProtectionLevel`.  
+- Můžete nastavit požadavky na ochranu pouze pro *data aplikací* s touto funkcí. Například WS-Addressing záhlaví dat infrastruktury a, proto se nevztahují `ProtectionLevel`.  
   
--   Když je režim zabezpečení nastavený na `Transport`, celá zpráva je chráněn přenosový mechanismus. Nastavení úrovně ochrany samostatné pro různé části zprávy, proto nemá žádný vliv.  
+- Když je režim zabezpečení nastavený na `Transport`, celá zpráva je chráněn přenosový mechanismus. Nastavení úrovně ochrany samostatné pro různé části zprávy, proto nemá žádný vliv.  
   
--   `ProtectionLevel` Je způsob, jak vývojáři nastavit *minimální úroveň* , které musí dodržovat vazbu. Při nasazení služby skutečná vazba určená v konfiguraci může nebo nemusí podporovat minimální úroveň. Ve výchozím nastavení, například <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení (i když může být povoleno). Proto pomocí kontrakt, který má jakékoli nastavení jiné než `None` způsobí vyvolání výjimky.  
+- `ProtectionLevel` Je způsob, jak vývojáři nastavit *minimální úroveň* , které musí dodržovat vazbu. Při nasazení služby skutečná vazba určená v konfiguraci může nebo nemusí podporovat minimální úroveň. Ve výchozím nastavení, například <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení (i když může být povoleno). Proto pomocí kontrakt, který má jakékoli nastavení jiné než `None` způsobí vyvolání výjimky.  
   
--   Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klienta (například vytvořený technologií jiných WCF) můžete zašifrovat a podepsat všechny zprávy (což je více než požadované minimum). V takovém případě nebude WCF vyvolat výjimku, protože klient má provést více než požadované minimum. Všimněte si však, že nebude over-pass-the secure Pokud je to možné část zprávy aplikací služby WCF (služby nebo klienty), ale bude splňovat minimální úroveň. Všimněte si také, jestli používáte `Transport` jako režim zabezpečení, přenos může over-pass-the secure datového proudu zpráv vzhledem k tomu, že je ze své podstaty nelze zabezpečit na podrobnější úrovni.  
+- Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klienta (například vytvořený technologií jiných WCF) můžete zašifrovat a podepsat všechny zprávy (což je více než požadované minimum). V takovém případě nebude WCF vyvolat výjimku, protože klient má provést více než požadované minimum. Všimněte si však, že nebude over-pass-the secure Pokud je to možné část zprávy aplikací služby WCF (služby nebo klienty), ale bude splňovat minimální úroveň. Všimněte si také, jestli používáte `Transport` jako režim zabezpečení, přenos může over-pass-the secure datového proudu zpráv vzhledem k tomu, že je ze své podstaty nelze zabezpečit na podrobnější úrovni.  
   
--   Pokud jste nastavili `ProtectionLevel` explicitně, abyste buď `Sign` nebo `EncryptAndSign`, musíte použít vazbu s povoleným zabezpečením, nebo bude vyvolána výjimka.  
+- Pokud jste nastavili `ProtectionLevel` explicitně, abyste buď `Sign` nebo `EncryptAndSign`, musíte použít vazbu s povoleným zabezpečením, nebo bude vyvolána výjimka.  
   
--   Pokud vyberete vazbu, která umožňuje využívat zabezpečení, a nenastavíte `ProtectionLevel` vlastnost odkudkoli na kontrakt, všechny aplikace, data budou zašifrovaná a podepsaná.  
+- Pokud vyberete vazbu, která umožňuje využívat zabezpečení, a nenastavíte `ProtectionLevel` vlastnost odkudkoli na kontrakt, všechny aplikace, data budou zašifrovaná a podepsaná.  
   
--   Pokud vyberete vazbu, která nemá povoleno zabezpečení (třeba `BasicHttpBinding` třída má ve výchozím nastavení zakázané zabezpečení) a `ProtectionLevel` není explicitně nastavena, pak žádná z dat aplikací, budou chráněné.  
+- Pokud vyberete vazbu, která nemá povoleno zabezpečení (třeba `BasicHttpBinding` třída má ve výchozím nastavení zakázané zabezpečení) a `ProtectionLevel` není explicitně nastavena, pak žádná z dat aplikací, budou chráněné.  
   
--   Pokud používáte vazbu, která se týká zabezpečení na úrovni přenosu, všechna data aplikací budou zabezpečené podle možnosti přenosu.  
+- Pokud používáte vazbu, která se týká zabezpečení na úrovni přenosu, všechna data aplikací budou zabezpečené podle možnosti přenosu.  
   
--   Pokud používáte vazbu, která se týká zabezpečení na úrovni zprávy, se podle úrovně ochrany, nastavte ve smlouvě šifrují data aplikace. Pokud nezadáte úroveň ochrany, všechna data aplikací ve zprávách budou zašifrovaná a podepsaná.  
+- Pokud používáte vazbu, která se týká zabezpečení na úrovni zprávy, se podle úrovně ochrany, nastavte ve smlouvě šifrují data aplikace. Pokud nezadáte úroveň ochrany, všechna data aplikací ve zprávách budou zašifrovaná a podepsaná.  
   
--   `ProtectionLevel` Lze nastavit na různých úrovních oboru. Je přidružený k určení oboru, hierarchie, což je vysvětleno v další části.  
+- `ProtectionLevel` Lze nastavit na různých úrovních oboru. Je přidružený k určení oboru, hierarchie, což je vysvětleno v další části.  
   
 ## <a name="scoping"></a>Vytváření oborů  
  Nastavení `ProtectionLevel` na nejvyšší API nastaví úroveň pro všechny úrovně pod ním. Pokud `ProtectionLevel` je nastavena na jinou hodnotu na nižší úrovni, všechna rozhraní API níže, že úroveň v hierarchii nyní se resetuje na novou úroveň (rozhraní API výše, ale stále ovlivňuje nejvyšší úroveň). Hierarchie je následujícím způsobem. Partnerské uzly jsou atributy na stejné úrovni.  

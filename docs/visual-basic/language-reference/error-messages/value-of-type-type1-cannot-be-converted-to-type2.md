@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC31194
 ms.assetid: 03d50c31-addd-4c90-9c53-725b84f9782e
 ms.openlocfilehash: c8480c6fab2bff931950ebc21d0a8affe3c41c66
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774813"
 ---
 # <a name="value-of-type-type1-cannot-be-converted-to-type2"></a>Hodnotu typu 'type1' nelze převést na 'type2'.
 Nelze převést hodnotu typu 'type1' na 'type2'. Vlastnost 'Value' slouží k získání řetězcové hodnoty prvního prvku řetězce "\<parentElement >'.  
@@ -23,7 +23,7 @@ Nelze převést hodnotu typu 'type1' na 'type2'. Vlastnost 'Value' slouží k z�
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Použití `Value` vlastnost tak, aby odkazovaly na jeho hodnotu jako literál XML `String`. Použití `CType` funkce, jiné funkce pro převod typu, nebo <xref:System.Convert> k přetypování hodnoty jako zadaný typ třídy.  
+- Použití `Value` vlastnost tak, aby odkazovaly na jeho hodnotu jako literál XML `String`. Použití `CType` funkce, jiné funkce pro převod typu, nebo <xref:System.Convert> k přetypování hodnoty jako zadaný typ třídy.  
   
 ## <a name="see-also"></a>Viz také:
 

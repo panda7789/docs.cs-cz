@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vyplnění oblasti lineárním přechodem'
+title: 'Postupy: Vykreslení oblasti lineárním přechodem'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - linear gradients [WPF], painting with
@@ -7,13 +7,13 @@ helpviewer_keywords:
 - painting [WPF], with linear gradients
 ms.assetid: 00e0cd04-48c0-4ec5-850e-d321beb37a34
 ms.openlocfilehash: c48ff13811d784ecc7042b73b964a9e6f2d42a34
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57367242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921884"
 ---
-# <a name="how-to-paint-an-area-with-a-linear-gradient"></a>Postupy: Vyplnění oblasti lineárním přechodem
+# <a name="how-to-paint-an-area-with-a-linear-gradient"></a>Postupy: Vykreslení oblasti lineárním přechodem
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.LinearGradientBrush> třídu pro vykreslení oblasti lineárním přechodem. V následujícím příkladu <xref:System.Windows.Shapes.Shape.Fill%2A> z <xref:System.Windows.Shapes.Rectangle> vymalováním Úhlopříčný lineárním přechodem, který změní z žlutá červená na modrou k Limetkově zelená.  
   
 ## <a name="example"></a>Příklad  

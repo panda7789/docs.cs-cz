@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 9d98a7be-b110-4edb-8eba-bed10f250b6d
 ms.openlocfilehash: 10c74ede8d490bf96a9d0855889669bdc2628b01
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59209200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785356"
 ---
 # <a name="constant-expressions"></a>Výrazy konstant
 Konstantní výraz se skládá z konstantní hodnotu. Konstantní hodnoty jsou přímo převést na strom výrazů konstantní příkazový, bez překladu na straně klienta. To zahrnuje výrazy, jejichž výsledkem konstantní hodnotu. Proto by měl očekávat chování zdroje dat pro všechny výrazy zahrnující konstanty. Výsledkem může být chování, které se liší od chování modulu CLR.  

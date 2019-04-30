@@ -3,11 +3,11 @@ title: Referenční dokumentace klíčových slov
 description: Odkazy na informace o všech F# klíčová slova jazyka.
 ms.date: 05/16/2016
 ms.openlocfilehash: d55846fe7c8d31454b6bc8684de75546800df7d6
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57845291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61904095"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -50,7 +50,7 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`inline`|[Funkce](functions/index.md)<br /><br />[Vložené funkce](functions/inline-functions.md)|Slouží k označení funkce, která se má integrovat přímo do kódu volajícího.|
 |`interface`|[Rozhraní](interfaces.md)|Slouží k deklaraci a implementaci rozhraní.|
 |`internal`|[Řízení přístupu](access-control.md)|Používá se k určení, že je člen viditelný uvnitř sestavení, ale ne mimo něj.|
-|`lazy`|[Opožděné výrazy](lazy-expressions.md)|Slouží k zadání výrazu, který se má provést jenom v případě potřeby výsledek.|
+|`lazy`|[Výrazy Lazy](lazy-expressions.md)|Slouží k zadání výrazu, který se má provést jenom v případě potřeby výsledek.|
 |`let`|[`let` Vazby](functions/let-bindings.md)|Použít k přidružení (neboli svázání) názvu k hodnotě nebo funkci.|
 |`let!`|[Asynchronní pracovní postupy](asynchronous-workflows.md)<br /><br />[Výpočetní výrazy](computation-expressions.md)|Použít v asynchronních pracovních postupech k vytvoření vazby názvu s výsledkem asynchronního výpočtu, nebo v jiných výrazech výpočtu se používá k vytvoření vazby názvu s výsledkem, který je výpočetního typu.|
 |`match`|[Výrazy shody](match-expressions.md)|Používá se k větvení porovnáním hodnoty s vzoru.|

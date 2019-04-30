@@ -11,11 +11,11 @@ ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 906d9d4dfd1c1082a4b49b7143f590967dcc7fd0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59092263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919361"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (nástroj izolovaného úložiště)
 Nástroj izolované úložiště vypíše seznam všech existujících úložišť pro aktuálního uživatele nebo všechna existující úložiště odebere.  
@@ -49,11 +49,11 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
   
  Aplikace mají možnost ukládat do jednoho nebo dvou úložišť pro uživatele nebo do úložiště počítače:  
   
--   Místní úložiště existuje v umístění, ke kterému je zaručeno, že roaming (ve Windows 2000 a novějších verzích) i v případě, že uživatel datový roaming je povolená pro uživatele.  
+- Místní úložiště existuje v umístění, ke kterému je zaručeno, že roaming (ve Windows 2000 a novějších verzích) i v případě, že uživatel datový roaming je povolená pro uživatele.  
   
--   Roamingové úložiště existuje v umístění, které lze přesouvat, ale můžete tak učinit pouze pokud je roaming povolen pro daného uživatele prostřednictvím správy systému Windows NT.  
+- Roamingové úložiště existuje v umístění, které lze přesouvat, ale můžete tak učinit pouze pokud je roaming povolen pro daného uživatele prostřednictvím správy systému Windows NT.  
   
--   Úložiště počítače je společné pro všechny uživatele počítače a je uloženo ve společném adresáři v daném počítači.  
+- Úložiště počítače je společné pro všechny uživatele počítače a je uloženo ve společném adresáři v daném počítači.  
   
     > [!NOTE]
     >  Úložiště počítače je v rozhraní .NET Framework verze 2.0 novinkou.  

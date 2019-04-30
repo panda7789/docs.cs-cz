@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WF [WF], glossary
 ms.assetid: ab682b2f-3779-45ca-b831-b7c03d7dbb3a
 ms.openlocfilehash: 61d9acab1161302937e240eb8ebb506ca9f1585c
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57482844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945623"
 ---
 # <a name="windows-workflow-foundation-glossary-for-net-framework-45"></a>Windows Workflow Foundation Glosář pro rozhraní .NET Framework 4.5
 

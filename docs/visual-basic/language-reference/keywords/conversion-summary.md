@@ -8,11 +8,11 @@ helpviewer_keywords:
 - type conversion [Visual Basic], keywords
 ms.assetid: ae2c79a7-2d62-4fbe-8585-14360d11f987
 ms.openlocfilehash: 94fa8c5f648211252b59d3f530f6b651566a7136
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802425"
 ---
 # <a name="conversion-summary-visual-basic"></a>Souhrn konverze (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  

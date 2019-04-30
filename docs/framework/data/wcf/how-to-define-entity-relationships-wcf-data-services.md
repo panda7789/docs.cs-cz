@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 ms.assetid: cc255524-1534-4fae-b83c-250933d5a72b
 ms.openlocfilehash: 3bd2293f02e77ab2db5c3ba245596021e08b04c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875898"
 ---
 # <a name="how-to-define-entity-relationships-wcf-data-services"></a>Postupy: Definování vztahů mezi entitami (WCF Data Services)
 Když přidáte novou entitu v [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], případné relace mezi nové entity a související entity nejsou definovány automaticky. Můžete vytvořit a změnit vztahy mezi instancí entit a mít klientská knihovna odrážet provedené změny ve službě data. Další informace najdete v tématu [aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  

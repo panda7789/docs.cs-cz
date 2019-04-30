@@ -6,11 +6,11 @@ helpviewer_keywords:
 - DatePicker control [WPF]
 ms.assetid: 619765c8-8d25-4315-aec2-79aea08fed9f
 ms.openlocfilehash: 555bf31b27ba233ffa54438077984b02b5e3084a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911977"
 ---
 # <a name="datepicker"></a>DatePicker
 <xref:System.Windows.Controls.DatePicker> Ovládací prvek umožňuje uživateli vybrat datum zadáním buď do textového pole, nebo pomocí rozevíracího seznamu <xref:System.Windows.Controls.Calendar> ovládacího prvku.  

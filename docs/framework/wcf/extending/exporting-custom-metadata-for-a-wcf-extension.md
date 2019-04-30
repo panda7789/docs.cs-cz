@@ -3,11 +3,11 @@ title: Export vlastních metadat pro rozšíření WCF
 ms.date: 03/30/2017
 ms.assetid: 53c93882-f8ba-4192-965b-787b5e3f09c0
 ms.openlocfilehash: 5134b57c59268b139239021bc2b4f6f4538ad27d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334507"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857958"
 ---
 # <a name="exporting-custom-metadata-for-a-wcf-extension"></a>Export vlastních metadat pro rozšíření WCF
 Ve Windows Communication Foundation (WCF), export metadat je proces popisující koncové body služby a projekci na paralelní standardizované reprezentaci, který můžou klienti použít k vysvětlení použití služby. Vlastní metadata se skládá z elementů XML, které nelze exportovat vývozci poskytované systémem metadat. Obvykle obsahuje vlastní prvky WSDL pro uživatelem definované chování a prvky vazeb a výrazů zásad o funkce a požadavky vazby a kontrakty.  
@@ -28,9 +28,9 @@ Ve Windows Communication Foundation (WCF), export metadat je proces popisující
 ## <a name="exporting-custom-wsdl-elements"></a>Export vlastního WSDL prvků  
  Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension> na chování operace, kontrakt chování, chování koncového bodu nebo element vazby (<xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, <xref:System.ServiceModel.Description.IEndpointBehavior>, nebo <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType> v uvedeném pořadí) a vložte chování nebo elementů vazby do Popis služby, která chcete exportovat. (Další informace o vkládání chování najdete v tématu [konfigurace a rozšíření modulu Runtime s chováním](../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)). <xref:System.ServiceModel.Description.IWsdlExportExtension> Je volána pro každý koncový bod a každý koncový bod exportuje kontrakt nejprve pokud ho ještě již byla exportována. Můžete se zúčastnit buď procesu exportu v závislosti na vašich potřeb:  
   
--   Použití <xref:System.ServiceModel.Description.WsdlContractConversionContext> upravit exportované metadat v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
+- Použití <xref:System.ServiceModel.Description.WsdlContractConversionContext> upravit exportované metadat v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> metody.  
   
--   Použití <xref:System.ServiceModel.Description.WsdlEndpointConversionContext> upravit exportované metadata pro koncový bod <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> metody.  
+- Použití <xref:System.ServiceModel.Description.WsdlEndpointConversionContext> upravit exportované metadata pro koncový bod <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> metody.  
   
  <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%2A> Metoda je volána ve všech <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace v rámci <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> instanci, která je exportována.  <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%2A> Metoda je volána ve všech <xref:System.ServiceModel.Description.IWsdlExportExtension> implementace s <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> instanci, která je exportována.  
   

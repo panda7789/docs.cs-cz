@@ -3,11 +3,11 @@ title: Platný obsah XElement a XDocument Objects2
 ms.date: 07/20/2015
 ms.assetid: 400bb692-478a-40b6-ac1b-4ccbb4cbbd02
 ms.openlocfilehash: bb5dda6bee0863a2ef951975e92c55184df9d516
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907579"
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah objektů XElement a XDocument
 Toto téma popisuje platné argumenty, které mohou být předány konstruktorů a metod, které použijete k přidání obsahu do prvků a dokumenty.  
@@ -17,35 +17,35 @@ Toto téma popisuje platné argumenty, které mohou být předány konstruktorů
   
  Při přidání jednoduchého obsahu, může být předán různé typy v této metodě. Platné typy zahrnují následující:  
   
--   <xref:System.String>  
+- <xref:System.String>  
   
--   <xref:System.Double>  
+- <xref:System.Double>  
   
--   <xref:System.Single>  
+- <xref:System.Single>  
   
--   <xref:System.Decimal>  
+- <xref:System.Decimal>  
   
--   <xref:System.Boolean>  
+- <xref:System.Boolean>  
   
--   <xref:System.DateTime>  
+- <xref:System.DateTime>  
   
--   <xref:System.TimeSpan>  
+- <xref:System.TimeSpan>  
   
--   <xref:System.DateTimeOffset>  
+- <xref:System.DateTimeOffset>  
   
--   Libovolný typ, který implementuje `Object.ToString`.  
+- Libovolný typ, který implementuje `Object.ToString`.  
   
--   Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.  
+- Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.  
   
  Při přidávání komplexní obsahu, různé typy lze předat tuto metodu:  
   
--   <xref:System.Xml.Linq.XObject>  
+- <xref:System.Xml.Linq.XObject>  
   
--   <xref:System.Xml.Linq.XNode>  
+- <xref:System.Xml.Linq.XNode>  
   
--   <xref:System.Xml.Linq.XAttribute>  
+- <xref:System.Xml.Linq.XAttribute>  
   
--   Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>  
+- Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>  
   
  Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně. Pokud kolekce obsahuje text (nebo objekty, které jsou převedeny na text), je text v kolekci zřetězit a přidat jako jeden textový uzel.  
   
@@ -62,15 +62,15 @@ Toto téma popisuje platné argumenty, které mohou být předány konstruktorů
   
  Platný obsah pro dokument obsahuje následující:  
   
--   Nula nebo jedna <xref:System.Xml.Linq.XDocumentType> objekty. Typy dokumentů musí předcházet elementu.  
+- Nula nebo jedna <xref:System.Xml.Linq.XDocumentType> objekty. Typy dokumentů musí předcházet elementu.  
   
--   Žádný nebo jeden element.  
+- Žádný nebo jeden element.  
   
--   Nula nebo více komentářů.  
+- Nula nebo více komentářů.  
   
--   Nula nebo více pokyny pro zpracování.  
+- Nula nebo více pokyny pro zpracování.  
   
--   Nula nebo více textové uzly obsahující jenom prázdné znaky.  
+- Nula nebo více textové uzly obsahující jenom prázdné znaky.  
   
 ## <a name="constructors-and-functions-that-allow-adding-content"></a>Konstruktory a funkce, které umožňují přidávání obsahu  
  Následující metody umožňují přidat podřízený obsah do <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  

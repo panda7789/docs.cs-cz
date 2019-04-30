@@ -3,11 +3,11 @@ title: Používání více schémat ověřování u WCF
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
 ms.openlocfilehash: b0f5da9a4c6fdfede9a86434f49f9e9821778176
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932676"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>Používání více schémat ověřování u WCF
 WCF umožňuje zadat více schémat ověřování v jednom koncovém bodu. Kromě toho hostovaná na webu služby může dědit jejich nastavení ověřování přímo ze služby IIS. V místním prostředí služby můžete zadat ověření je možné schémata. Další informace o nastavení ověřování ve službě IIS najdete v tématu [ověřování služby IIS](https://go.microsoft.com/fwlink/?LinkId=232458)  

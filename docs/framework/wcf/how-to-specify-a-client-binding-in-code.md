@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
 ms.openlocfilehash: c95e30c65c6096140fca0c1241e76fbc7af4df3d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929126"
 ---
 # <a name="how-to-specify-a-client-binding-in-code"></a>Postupy: Určení klientské vazby v kódu
 V tomto příkladu se vytvoří klienta pro použití kalkulačky služby a vazby pro tohoto klienta je imperativně zadat v kódu. Klient přistupuje k `CalculatorService`, která implementuje `ICalculator` rozhraní a službě i klientovi použít <xref:System.ServiceModel.BasicHttpBinding> třídy.  

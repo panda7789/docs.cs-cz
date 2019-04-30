@@ -6,20 +6,20 @@ dev_langs:
 - vb
 ms.assetid: 2144c99b-8055-4080-a5c6-1ea14335e2a3
 ms.openlocfilehash: 401d445e49e3712b8c59fa9bc9a2e53500a5db16
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903900"
 ---
 # <a name="how-to-delete-rows-from-the-database"></a>Postupy: Odstranění řádků z databáze
 Můžete odstranit řádky v databázi tak, že odeberete odpovídající [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty z kolekce související tabulky. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Přeloží provedené změny do příslušné SQL `DELETE` příkazy.  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje ani rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, musí být poskytnuto buď z následujících úloh:  
   
--   Nastavte `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi.  
+- Nastavte `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi.  
   
--   Pomocí vlastního kódu nejprve odstranit podřízené objekty, které brání nadřazený objekt odstranit.  
+- Pomocí vlastního kódu nejprve odstranit podřízené objekty, které brání nadřazený objekt odstranit.  
   
  V opačném případě je vyvolána výjimka. Viz druhý příklad dále v tomto tématu.  
   

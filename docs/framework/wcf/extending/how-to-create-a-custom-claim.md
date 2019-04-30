@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
 ms.openlocfilehash: 1892e910a86e01b7b2ee0f6a2403ad7af4688808
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857776"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Postupy: Vytvoření vlastní deklarace
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytuje sadu předdefinovaných deklarací typů a práva s pomocné funkce pro vytváření <xref:System.IdentityModel.Claims.Claim> instance s těmito typy a přístupových práv. Tyto předdefinované deklarace jsou navrženy pro informace o modelu, které jsou součástí typy přihlašovacích údajů klienta, které podporuje WCF, ve výchozím nastavení. V mnoha případech jsou dostatečné; integrované deklarací identity Některé aplikace ale můžou vyžadovat vlastní deklarace identity. Deklarace identity se skládá z typ deklarace identity, prostředek, pro kterou platí deklarace identity pro a práv, která jsou s potvrzením přes tento prostředek. Toto téma popisuje, jak vytvořit vlastní deklarace identity.  
@@ -19,15 +19,15 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
   
 1. Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
   
-    1.  Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
+    1. Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
   
          Typ deklarace identity je identifikátor jedinečný řetězec. Je Návrhář vlastních deklarací identity povinností ujistit se, že je jedinečný identifikátor řetězce, který se používá pro typ deklarace identity. Seznam typů deklarací identity, které jsou definovány službou WCF najdete v tématu <xref:System.IdentityModel.Claims.ClaimTypes> třídy.  
   
-    2.  Zvolte primitivní datový typ a hodnotu pro prostředek.  
+    2. Zvolte primitivní datový typ a hodnotu pro prostředek.  
   
          Prostředek je objekt. Typ CLR prostředku může být jednoduchého typu, například <xref:System.String> nebo <xref:System.Int32>, nebo libovolný typ serializovat. Typ CLR prostředku musí být serializovatelný, protože deklarace identity serializují v různých fázích WCF. Primitivní typy jsou serializovatelné.  
   
-    3.  Zvolte práva, která je definována WCF nebo jedinečnou hodnotu pro vlastní práva.  
+    3. Zvolte práva, která je definována WCF nebo jedinečnou hodnotu pro vlastní práva.  
   
          Práva je identifikátor jedinečný řetězec. Práva, které jsou definovány službou WCF, které jsou definovány v <xref:System.IdentityModel.Claims.Rights> třídy.  
   
@@ -42,11 +42,11 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
   
 1. Vytvoření vlastních deklarací identity pomocí typu deklarace identity, hodnota prostředku a právo <xref:System.IdentityModel.Claims.Claim.%23ctor%28System.String%2CSystem.Object%2CSystem.String%29> konstruktoru.  
   
-    1.  Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
+    1. Při rozhodování o jedinečnou hodnotu pro typ deklarace identity.  
   
          Typ deklarace identity je identifikátor jedinečný řetězec. Je Návrhář vlastních deklarací identity povinností ujistit se, že je jedinečný identifikátor řetězce, který se používá pro typ deklarace identity. Seznam typů deklarací identity, které jsou definovány službou WCF najdete v tématu <xref:System.IdentityModel.Claims.ClaimTypes> třídy.  
   
-    2.  Vyberte nebo vytvořte serializovatelný jiného než primitivního typu prostředku.  
+    2. Vyberte nebo vytvořte serializovatelný jiného než primitivního typu prostředku.  
   
          Prostředek je objekt. Typ CLR prostředku musí být serializovatelný, protože deklarace identity serializují v různých fázích WCF. Primitivní typy jsou již serializovatelné.  
   
@@ -57,7 +57,7 @@ Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) poskytu
          [!code-csharp[c_CustomClaim#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#2)] 
          [!code-vb[c_CustomClaim#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#2)]        
   
-    3.  Zvolte práva, která je definována WCF nebo jedinečnou hodnotu pro vlastní práva.  
+    3. Zvolte práva, která je definována WCF nebo jedinečnou hodnotu pro vlastní práva.  
   
          Práva je identifikátor jedinečný řetězec. Práva, které jsou definovány službou WCF, které jsou definovány v <xref:System.IdentityModel.Claims.Rights> třídy.  
   

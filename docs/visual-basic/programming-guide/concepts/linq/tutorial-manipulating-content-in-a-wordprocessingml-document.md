@@ -3,11 +3,11 @@ title: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: f8028ba8-2dd1-4425-930c-8cc23176ebbc
 ms.openlocfilehash: 7b0a400a19dbe863490e5b2e34ec367e61a413a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834956"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907722"
 ---
 # <a name="tutorial-manipulating-content-in-a-wordprocessingml-document-visual-basic"></a>Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)
 Tento kurz ukazuje, jak použít funkční transformace, jehož přístup a LINQ to XML k práci s dokumenty XML. Příklady jazyka Visual Basic dotazování a manipulovat s informacemi v dokumentech Office Open XML WordprocessingML, které jsou uloženy v aplikaci Microsoft Word.  

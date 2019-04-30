@@ -3,11 +3,11 @@ title: F#Průvodce správným stylem
 description: Další pět zásadami dobrého F# kódu.
 ms.date: 12/10/2018
 ms.openlocfilehash: 9f47257626e04b09b546de2ae315d48d791678be
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030266"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61901846"
 ---
 # <a name="f-style-guide"></a>F#Průvodce správným stylem
 

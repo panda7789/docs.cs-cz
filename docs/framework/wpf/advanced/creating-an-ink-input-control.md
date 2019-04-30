@@ -15,26 +15,26 @@ helpviewer_keywords:
 - StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
 ms.openlocfilehash: 105a44f90c1c654a21fc8920a149ad63b2dabc99
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59323847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928706"
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
 Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykreslí rukopis. To znamená vykreslení inkoustu jako uživatel nakreslí tah, způsobí rukopisu se zobrazí "tok" z pera a zobrazit inkoustu po jeho přidání do ovládacího prvku, buď prostřednictvím pera, vložili ze schránky nebo načtena ze souboru. Dynamicky vykreslit rukopisu, musíte použít ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Staticky vykreslení inkoustu, je nutné přepsat stylus metody událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvářet tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí rukopis na ovládací prvek).  
   
  Toto téma obsahuje následující témata:  
   
--   [Postupy: Shromažďování dat bodu Stylus a vytvořit inkoustových tahů](#CollectingStylusPointDataAndCreatingInkStrokes)  
+- [Postupy: Shromažďování dat bodu Stylus a vytvořit inkoustových tahů](#CollectingStylusPointDataAndCreatingInkStrokes)  
   
--   [Postupy: Povolení ovládacího prvku tak, aby přijímal vstup z myši](#EnablingYourControlToAcceptInputTromTheMouse)  
+- [Postupy: Povolení ovládacího prvku tak, aby přijímal vstup z myši](#EnablingYourControlToAcceptInputTromTheMouse)  
   
--   [Jeho uvedení společně](#PuttingItTogether)  
+- [Jeho uvedení společně](#PuttingItTogether)  
   
--   [Další moduly plug-in a DynamicRenderers](#UsingAdditionalPluginsAndDynamicRenderers)  
+- [Další moduly plug-in a DynamicRenderers](#UsingAdditionalPluginsAndDynamicRenderers)  
   
--   [Závěr](#AdvancedInkHandling_Conclusion)  
+- [Závěr](#AdvancedInkHandling_Conclusion)  
   
 <a name="CollectingStylusPointDataAndCreatingInkStrokes"></a>   
 ## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a>Postupy: Shromažďování dat bodu Stylus a vytvořit inkoustových tahů  

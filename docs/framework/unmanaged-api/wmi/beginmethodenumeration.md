@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2d6de2a5ff4d2743c7aca2e46b3af848138c15fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59158779"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61917355"
 ---
 # <a name="beginenumeration-function"></a>Funkce BeginEnumeration
 Začíná výčet dostupné metody pro objekt.  
@@ -49,7 +49,7 @@ HRESULT BeginMethodEnumeration (
 `lEnumFlags`  
 [in] Nula (0) pro všechny metody nebo příznak, který určuje rozsah výčtu. Následující příznaky jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-Konstanta  |Hodnota  |Popis  |
+Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Omezte výčet metodám, které jsou definovány v samotné třídě. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Omezte výčet vlastností, které se dědí ze základní třídy. |

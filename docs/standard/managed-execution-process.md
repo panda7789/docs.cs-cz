@@ -13,11 +13,11 @@ ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce088fd10540ce9d390b7411bdcd8e563636a437
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909740"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  
@@ -58,9 +58,9 @@ ms.locfileid: "59336145"
 ## <a name="compiling-msil-to-native-code"></a>Kompilace jazyka MSIL do nativního kódu  
  Před spuštěním jazyka MSIL (Microsoft Intermediate Language) je nutné, aby byl zkompilován proti modulu CLR (Common Language Runtime) do nativního kódu architektury cílového počítače. Rozhraní [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] poskytuje dva způsoby provedení tohoto převodu:  
   
--   Kompilátor JIT rozhraní .NET Framework.  
+- Kompilátor JIT rozhraní .NET Framework.  
   
--   Rozhraní .NET Framework [Ngen.exe (Generátor nativních obrázků)](../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+- Rozhraní .NET Framework [Ngen.exe (Generátor nativních obrázků)](../../docs/framework/tools/ngen-exe-native-image-generator.md).  
   
 ### <a name="compilation-by-the-jit-compiler"></a>Kompilace pomocí kompilátoru JIT  
  Kompilace JIT převede jazyk MSIL do nativního kódu na požádání v době spuštění aplikace, kdy je obsah sestavení načten a proveden. Vzhledem k tomu, že modul CLR (Common Language Runtime) dodává kompilátor JIT pro každou podporovanou architekturu procesoru, mohou vývojáři vytvářet sady sestavení jazyka MSIL, které mohou být zkompilovány při spuštění (JIT) a mohou běžet na různých počítačích s různou architekturou. Nicméně pokud spravovaný kód volá nativní rozhraní API specifická pro konkrétní platformu nebo knihovnu tříd specifickou pro konkrétní platformu, bude kód spuštěn pouze v daném operačním systému.  
@@ -70,22 +70,22 @@ ms.locfileid: "59336145"
 ### <a name="install-time-code-generation-using-ngenexe"></a>Generování kódu pomocí nástroje NGen.exe v době instalace  
  Vzhledem k tomu, že kompilátor JIT převede instrukce jazyka MSIL sestavení do nativního kódu ve chvíli, kdy jsou jednotlivé metody definované v sestavení volány, má tato skutečnost nepříznivý vliv na výkon v době spuštění. Ve většině případů je snížení výkonu přijatelné. Důležitější je, že kód generovaný kompilátorem JIT je vázán na proces, který kompilaci spustil. Nemůže být sdílen napříč více procesy. Aby bylo možné sdílet generovaný kód mezi několika vyvoláními aplikace nebo mezi několika procesy, které sdílejí stejnou množinu sestavení, podporuje modul CLR (Common Language Runtime) režim předčasné kompilace. Tento režim kompilace ahead of time používá [Ngen.exe (Generátor nativních obrázků)](../../docs/framework/tools/ngen-exe-native-image-generator.md) pro převod jazyka MSIL sestavení do nativního kódu podobně jako kompilátor JIT. Činnost nástroje Ngen.exe se však od kompilátoru JIT liší třemi způsoby:  
   
--   Provádí převod z jazyka MSIL do nativního kódu před spuštěním aplikace namísto toho, aby převod uskutečnil, pokud je aplikace spuštěná.  
+- Provádí převod z jazyka MSIL do nativního kódu před spuštěním aplikace namísto toho, aby převod uskutečnil, pokud je aplikace spuštěná.  
   
--   Kompiluje namísto jedné metody v dané chvíli celé sestavení najednou.  
+- Kompiluje namísto jedné metody v dané chvíli celé sestavení najednou.  
   
--   Uchovává generovaný kód v mezipaměti pro nativní bitové kopie jako soubor na disku.  
+- Uchovává generovaný kód v mezipaměti pro nativní bitové kopie jako soubor na disku.  
   
 ### <a name="code-verification"></a>Ověření kódu  
  Jako část kompilace do nativního kódu je nutné, aby kód jazyka MSIL absolvoval proces ověření, pokud správce nevytvořil zásady zabezpečení, které umožňují ověření kódu obejít. V rámci ověření se ověřuje jazyk MSIL a metadata a zjišťuje se, zda je kód typově bezpečný, což znamená, že přistupuje pouze k umístěním paměti, k jichž přístupu je oprávněn. Bezpečnost typů pomáhá izolovat objekty od ostatních objektů a pomáhá je chránit před neúmyslným nebo zákeřným poškozením. Zároveň zajišťuje, aby bezpečnostní omezení kódu byla spolehlivě vynucena.  
   
  Modul runtime vychází ze skutečnosti, že následující tvrzení jsou pravdivá pro kód, který je prokazatelně typově bezpečný:  
   
--   Odkaz na typ je striktně kompatibilní s odkazovaným typem.  
+- Odkaz na typ je striktně kompatibilní s odkazovaným typem.  
   
--   U objektu jsou vyvolány pouze vhodně definované operace.  
+- U objektu jsou vyvolány pouze vhodně definované operace.  
   
--   Identity jsou tím, čím dle jejich tvrzení jsou.  
+- Identity jsou tím, čím dle jejich tvrzení jsou.  
   
  Během procesu ověřování je kód jazyka MSIL kontrolován, aby bylo možné potvrdit, že kód může přistupovat k oblastem paměti a volat metody pouze prostřednictvím správně definovaných typů. Kód například nemůže povolit polím objektu, aby byla přístupná takovým způsobem, který umožňuje přetečení oblastí paměti. Navíc se v rámci ověření provádí kontrola kódu za účelem zjištění, zda byl kód jazyka MSIL správně vygenerován, protože nesprávný kód jazyka MSIL může vést k narušení pravidel bezpečnosti typu. Proces ověřování zkoumá přesně definovanou sadu typově bezpečných kódů a předává pouze typově bezpečný kód. Některé typově bezpečné kódy však nemusí ověření absolvovat úspěšně z důvodu určitých omezení procesu ověřování a některé jazyky pak záměrně neprodukují kód, který je prokazatelně typově bezpečný. Pokud je typově bezpečný kód vyžadován zásadami zabezpečení, avšak není úspěšně ověřen, bude při spuštění kódu vyvolána výjimka.  
   

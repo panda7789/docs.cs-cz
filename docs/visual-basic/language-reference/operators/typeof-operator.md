@@ -13,11 +13,11 @@ helpviewer_keywords:
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
 ms.openlocfilehash: 7162fcc24595bbb16d268d5d9e1ea4d82f6e67fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920533"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf – operátor (Visual Basic)
 Porovná proměnné odkazu na objekt k datovému typu.  

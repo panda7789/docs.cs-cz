@@ -3,11 +3,11 @@ title: Interoperabilní odkazy na objekty
 ms.date: 04/15/2019
 ms.assetid: cb8da4c8-08ca-4220-a16b-e04c8f527f1b
 ms.openlocfilehash: ada9084f6ac3c97dc641571c0cb8379a2fac68a8
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59610636"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918967"
 ---
 # <a name="interoperable-object-references"></a>Interoperabilní odkazy na objekty
 Ve výchozím nastavení <xref:System.Runtime.Serialization.DataContractSerializer> serializuje objekty podle hodnoty. Můžete použít <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> vlastnost dáte pokyn, aby serializátor kontraktu dat pro zachování odkazy na objekty při serializaci objektů.  

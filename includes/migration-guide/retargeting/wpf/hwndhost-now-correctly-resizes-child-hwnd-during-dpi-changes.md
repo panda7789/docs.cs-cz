@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: b92086c8ccf7592ce70b75bd31d4ea255c35b543
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61783233"
 ---
 ### <a name="hwndhost-now-correctly-resizes-child-hwnd-during-dpi-changes"></a>HwndHost nyní správně změní velikost podřízeného prvku HWND během změny DPI
 

@@ -14,11 +14,11 @@ helpviewer_keywords:
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
 author: KrzysztofCwalina
 ms.openlocfilehash: a47e43b2387362500d46c8e531f16d004d823c4c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54565862"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778778"
 ---
 # <a name="choosing-between-class-and-struct"></a>Volba mezi třídou a strukturou
 Jeden základní rozhodnutí o návrhu, který čelí každý framework designer je, zda navrhnout typu třídy (odkaz na typ) nebo jako – struktura (typu hodnoty). Je velmi důležité při vytvoření tato volba dostatečné povědomí o rozdíly v chování typy odkazů a typy hodnot.  
@@ -39,13 +39,13 @@ Jeden základní rozhodnutí o návrhu, který čelí každý framework designer
   
  **X AVOID** definice struktury, pokud má tento typ všechny následující vlastnosti:  
   
--   Logicky reprezentuje hodnotu single, podobně jako primitivní typy (`int`, `double`atd.).  
+- Logicky reprezentuje hodnotu single, podobně jako primitivní typy (`int`, `double`atd.).  
   
--   To má velikost instance mladší 16 bajtů.  
+- To má velikost instance mladší 16 bajtů.  
   
--   To se nedá změnit.  
+- To se nedá změnit.  
   
--   Nebudete muset použít boxing. často.  
+- Nebudete muset použít boxing. často.  
   
  Ve všech ostatních případech byste měli definovat vaše typy jako třídy.  
   

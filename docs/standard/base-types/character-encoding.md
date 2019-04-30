@@ -15,18 +15,18 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: e8edc747c003cd5527df509af83325816671ddfb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59346103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936796"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které může být reprezentována mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v podporované znakové sady s některá z hodnot, který představuje daný znak. Například morseovkou je znak kódování této páry každý znak v latinku pomocí vzoru tečky a spojovníky, které jsou vhodné pro přenos přes telegrafní řádky. Znak kódování dvojice počítačů pro každý znak v podporované znakové sady s číselnou hodnotu, která představuje tento znak. Kódování znaků má dvě různé součásti:  
   
--   Kodér, což znamená posloupnost znaků na sekvenci číselných hodnot (v bajtech).  
+- Kodér, což znamená posloupnost znaků na sekvenci číselných hodnot (v bajtech).  
   
--   Dekodér, což znamená posloupnost bajtů na sekvenci znaků.  
+- Dekodér, což znamená posloupnost bajtů na sekvenci znaků.  
   
  Kódování znaků popisuje pravidla, podle kterých kodér a dekodér pracovat. Například <xref:System.Text.UTF8Encoding> třída popisuje pravidla pro kódování a dekódování z formátu pro Unicode transformace 8 bitů (UTF-8), který používá jednu až čtyři bajty k zastupování jednoho znaku Unicode. Kódování a dekódování můžete také zahrnout ověřování. Například <xref:System.Text.UnicodeEncoding> třída zkontroluje všechny náhrady, abyste měli jistotu, představují platný náhradní páry. (Náhradní pár obsahuje znak s bodem kódu od U + D800 do U + DBFF následovaný znakem s bodem kódu od U + DC00 do U + DFFF.)  Nouzová strategie určuje způsob, jakým zpracovává kodéru neplatné znaky nebo způsob, jakým zpracovává dekodér neplatné bajty.  
   
@@ -37,27 +37,27 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  Toto téma se skládá z následujících částí:  
   
--   [Kódování v .NET](../../../docs/standard/base-types/character-encoding.md#Encodings)  
+- [Kódování v .NET](../../../docs/standard/base-types/character-encoding.md#Encodings)  
   
--   [Výběr kódování třídy](../../../docs/standard/base-types/character-encoding.md#Selecting)  
+- [Výběr kódování třídy](../../../docs/standard/base-types/character-encoding.md#Selecting)  
   
--   [Pomocí objektu kódování](../../../docs/standard/base-types/character-encoding.md#Using)  
+- [Pomocí objektu kódování](../../../docs/standard/base-types/character-encoding.md#Using)  
   
--   [Výběr strategie použití náhradní lokality](../../../docs/standard/base-types/character-encoding.md#FallbackStrategy)  
+- [Výběr strategie použití náhradní lokality](../../../docs/standard/base-types/character-encoding.md#FallbackStrategy)  
   
--   [Implementace vlastního nouzová strategie](../../../docs/standard/base-types/character-encoding.md#Custom)  
+- [Implementace vlastního nouzová strategie](../../../docs/standard/base-types/character-encoding.md#Custom)  
   
 <a name="Encodings"></a>   
 ## <a name="encodings-in-net"></a>Kódování v .NET  
  Všechny znakové kódování třídy v rozhraní .NET dědí z <xref:System.Text.Encoding?displayProperty=nameWithType> třídu, která je abstraktní třída, která definuje funkce, které jsou společné pro všechny kódování znaků. Pro přístup k jednotlivým kódování objekty implementováno v rozhraní .NET, postupujte takto:  
   
--   Použití statických vlastností <xref:System.Text.Encoding> třídu, která vrátí objekty, které představují kódování standard znaků, která je k dispozici v rozhraní .NET (ASCII, UTF-7, UTF-8, UTF-16 a UTF-32). Například <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> vrátí vlastnost <xref:System.Text.UnicodeEncoding> objektu. Každý objekt používá nahrazení náhradní řetězce popisovače, které nelze dekódovat a počet bajtů, které nelze dekódovat. (Další informace najdete v tématu [nahrazení záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) části.)  
+- Použití statických vlastností <xref:System.Text.Encoding> třídu, která vrátí objekty, které představují kódování standard znaků, která je k dispozici v rozhraní .NET (ASCII, UTF-7, UTF-8, UTF-16 a UTF-32). Například <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> vrátí vlastnost <xref:System.Text.UnicodeEncoding> objektu. Každý objekt používá nahrazení náhradní řetězce popisovače, které nelze dekódovat a počet bajtů, které nelze dekódovat. (Další informace najdete v tématu [nahrazení záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) části.)  
   
--   Volání konstruktoru třídy kódování společnosti. Tímto způsobem můžete vytvořit instanci objektů pro ASCII, UTF-7, UTF-8, UTF-16 a UTF-32 kódování. Ve výchozím nastavení každý objekt používá náhradní použití náhradní lokality pro zpracování řetězců, které nelze dekódovat a počet bajtů, které nelze dekódovat, ale můžete zadat, že místo toho by měl vyvolána výjimka. (Další informace najdete v tématu [nahrazení záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) a [výjimka záložní](../../../docs/standard/base-types/character-encoding.md#Exception) oddíly.)  
+- Volání konstruktoru třídy kódování společnosti. Tímto způsobem můžete vytvořit instanci objektů pro ASCII, UTF-7, UTF-8, UTF-16 a UTF-32 kódování. Ve výchozím nastavení každý objekt používá náhradní použití náhradní lokality pro zpracování řetězců, které nelze dekódovat a počet bajtů, které nelze dekódovat, ale můžete zadat, že místo toho by měl vyvolána výjimka. (Další informace najdete v tématu [nahrazení záložní](../../../docs/standard/base-types/character-encoding.md#Replacement) a [výjimka záložní](../../../docs/standard/base-types/character-encoding.md#Exception) oddíly.)  
   
--   Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> konstruktor a předejte jí celé číslo, které představuje kódování. Standard kódování objekty pomocí záložní nahrazení a znakovou stránku a dvoubajtové znakové sady (DBCS) kódování objekty použití přizpůsobený nouzového řešení ověření pomocí popisovač řetězce, které nelze dekódovat a počet bajtů, které nelze dekódovat. (Další informace najdete v tématu [Best-Fit záložní](../../../docs/standard/base-types/character-encoding.md#BestFit) části.)  
+- Volání <xref:System.Text.Encoding.%23ctor%28System.Int32%29?displayProperty=nameWithType> konstruktor a předejte jí celé číslo, které představuje kódování. Standard kódování objekty pomocí záložní nahrazení a znakovou stránku a dvoubajtové znakové sady (DBCS) kódování objekty použití přizpůsobený nouzového řešení ověření pomocí popisovač řetězce, které nelze dekódovat a počet bajtů, které nelze dekódovat. (Další informace najdete v tématu [Best-Fit záložní](../../../docs/standard/base-types/character-encoding.md#BestFit) části.)  
   
--   Volání <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> metoda, která vrátí všechny standardní režim, znakovou stránku nebo DBCS kódování k dispozici v rozhraní .NET. Přetížení umožňují určit objekt pro použití náhradní lokality pro kodér a dekodér.  
+- Volání <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> metoda, která vrátí všechny standardní režim, znakovou stránku nebo DBCS kódování k dispozici v rozhraní .NET. Přetížení umožňují určit objekt pro použití náhradní lokality pro kodér a dekodér.  
   
 > [!NOTE]
 >  Unicode Standard přiřadí bod kódu (číslo) a název každý znak v každé podporované skriptu. Například znak "A" představuje bod kódu U + 0041 a název "LATINKY velké písmeno A". Kódování formátu transformace Unicode (UTF) definovat způsoby, jak kódovat tohoto bodu kódu na sekvenci jednoho nebo více bajtů. Schéma kódování Unicode zjednodušuje vývoj světově připravených aplikací, protože umožňuje znaky z jakékoli znakovou sadu dat v jednom kódování. Vývojáři aplikací se už nemusíte udržovat přehled o schéma kódování, která byla použita k vytvoření znaků pro konkrétní jazyk nebo zápis systému a dat je možné sdílet mezi systémy mezinárodně bez poškození.  
@@ -87,17 +87,17 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  Pokud máte v úmyslu používat kódování ASCII (<xref:System.Text.ASCIIEncoding>), zvolte <xref:System.Text.UTF8Encoding> místo. Dvě kódování jsou stejná pro znaková sada ASCII, ale <xref:System.Text.UTF8Encoding> má následující výhody:  
   
--   Vzhledem k tomu může představovat každý znak Unicode <xref:System.Text.ASCIIEncoding> podporuje pouze hodnoty znaků Unicode mezi U + 0000 a U + 007F.  
+- Vzhledem k tomu může představovat každý znak Unicode <xref:System.Text.ASCIIEncoding> podporuje pouze hodnoty znaků Unicode mezi U + 0000 a U + 007F.  
   
--   Poskytuje lepší zabezpečení a detekce chyb.  
+- Poskytuje lepší zabezpečení a detekce chyb.  
   
--   Má se vyladěné tak, aby se co nejrychleji a mělo by být rychlejší než jiné kódování. I pro obsah, který je zcela ASCII, provést operace s <xref:System.Text.UTF8Encoding> jsou rychlejší než operace prováděné s <xref:System.Text.ASCIIEncoding>.  
+- Má se vyladěné tak, aby se co nejrychleji a mělo by být rychlejší než jiné kódování. I pro obsah, který je zcela ASCII, provést operace s <xref:System.Text.UTF8Encoding> jsou rychlejší než operace prováděné s <xref:System.Text.ASCIIEncoding>.  
   
  Měli byste zvážit použití <xref:System.Text.ASCIIEncoding> pouze pro starší verze aplikací. Ale i pro starší verze aplikací, <xref:System.Text.UTF8Encoding> může být lepší volbou z následujících důvodů (za předpokladu, že výchozí nastavení):  
   
--   Pokud aplikace obsahuje obsah, který není striktně ASCII a kóduje ho s <xref:System.Text.ASCIIEncoding>, zakóduje jednotlivé znaky nepocházející ze sady ASCII jako otazník (?). Aplikace pak dekóduje tato data, dojde ke ztrátě informací.  
+- Pokud aplikace obsahuje obsah, který není striktně ASCII a kóduje ho s <xref:System.Text.ASCIIEncoding>, zakóduje jednotlivé znaky nepocházející ze sady ASCII jako otazník (?). Aplikace pak dekóduje tato data, dojde ke ztrátě informací.  
   
--   Pokud aplikace obsahuje obsah, který není striktně ASCII a kóduje ho s <xref:System.Text.UTF8Encoding>, výsledek nesrozumitelný, pokud interpretován jako ASCII. Nicméně pokud aplikace pak pomocí dekodér UTF-8 k dekódování dat, data provede odezvy úspěšně.  
+- Pokud aplikace obsahuje obsah, který není striktně ASCII a kóduje ho s <xref:System.Text.UTF8Encoding>, výsledek nesrozumitelný, pokud interpretován jako ASCII. Nicméně pokud aplikace pak pomocí dekodér UTF-8 k dekódování dat, data provede odezvy úspěšně.  
   
  Ve webové aplikaci by měly odrážet odeslat klientovi v reakci na webový požadavek, znaky kódování použité na straně klienta. Ve většině případů byste měli nastavit <xref:System.Web.HttpResponse.ContentEncoding%2A?displayProperty=nameWithType> vlastnost na hodnotu vrácenou <xref:System.Web.HttpRequest.ContentEncoding%2A?displayProperty=nameWithType> vlastnosti k zobrazení textu v kódování, které uživatel očekává.  
   
@@ -130,11 +130,11 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
 ## <a name="choosing-a-fallback-strategy"></a>Výběr strategie použití náhradní lokality  
  Pokud metoda se pokusí k zakódování nebo dekódování znak, ale neexistuje žádné mapování, musí implementovat nouzová strategie, která určuje způsob zpracování neúspěšných mapování. Existují tři typy použití náhradní lokality strategií:  
   
--   Přizpůsobený použití náhradní lokality  
+- Přizpůsobený použití náhradní lokality  
   
--   Náhradní použití náhradní lokality  
+- Náhradní použití náhradní lokality  
   
--   Výjimka použití náhradní lokality  
+- Výjimka použití náhradní lokality  
   
 > [!IMPORTANT]
 >  Nejběžnějších problémů v kódování operací dojít, když znak Unicode nelze mapovat na konkrétní kódové stránky kódování. Nejběžnějších problémů v dekódování operací dojít, když sekvence neplatný typ byte nelze přeložit na platné znaky Unicode. Z těchto důvodů měli byste vědět záložní strategii, kterou používá určitý objekt kódování. Kdykoli je to možné, měli byste určit nouzová strategie používá objekt kódování, když vytvoříte instanci objektu.  
@@ -195,9 +195,9 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  <xref:System.Text.EncoderFallbackException> a <xref:System.Text.DecoderFallbackException> objekty zadejte následující informace o stavu, který způsobil výjimku:  
   
--   <xref:System.Text.EncoderFallbackException> Objekt zahrnuje <xref:System.Text.EncoderFallbackException.IsUnknownSurrogate%2A> metodu, která označuje, zda znak nebo znaky, které nemůže být kódovaný představují Neznámý náhradní pár (v takovém případě vrátí metoda `true`) nebo Neznámý znak (v takovém, metoda vrátí `false`). Znaky v náhradní pár jsou k dispozici <xref:System.Text.EncoderFallbackException.CharUnknownHigh%2A?displayProperty=nameWithType> a <xref:System.Text.EncoderFallbackException.CharUnknownLow%2A?displayProperty=nameWithType> vlastnosti. Neznámý znak je k dispozici <xref:System.Text.EncoderFallbackException.CharUnknown%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.EncoderFallbackException.Index%2A?displayProperty=nameWithType> Vlastnost označuje pozici v řetězci, ve kterém byl nalezen prvního znaku, který nemůže být zakódován.  
+- <xref:System.Text.EncoderFallbackException> Objekt zahrnuje <xref:System.Text.EncoderFallbackException.IsUnknownSurrogate%2A> metodu, která označuje, zda znak nebo znaky, které nemůže být kódovaný představují Neznámý náhradní pár (v takovém případě vrátí metoda `true`) nebo Neznámý znak (v takovém, metoda vrátí `false`). Znaky v náhradní pár jsou k dispozici <xref:System.Text.EncoderFallbackException.CharUnknownHigh%2A?displayProperty=nameWithType> a <xref:System.Text.EncoderFallbackException.CharUnknownLow%2A?displayProperty=nameWithType> vlastnosti. Neznámý znak je k dispozici <xref:System.Text.EncoderFallbackException.CharUnknown%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.EncoderFallbackException.Index%2A?displayProperty=nameWithType> Vlastnost označuje pozici v řetězci, ve kterém byl nalezen prvního znaku, který nemůže být zakódován.  
   
--   <xref:System.Text.DecoderFallbackException> Objekt zahrnuje <xref:System.Text.DecoderFallbackException.BytesUnknown%2A> vlastnost, která vrátí pole bajtů, které nelze dekódovat. <xref:System.Text.DecoderFallbackException.Index%2A?displayProperty=nameWithType> Vlastnost určuje počáteční pozici Neznámý bajtů.  
+- <xref:System.Text.DecoderFallbackException> Objekt zahrnuje <xref:System.Text.DecoderFallbackException.BytesUnknown%2A> vlastnost, která vrátí pole bajtů, které nelze dekódovat. <xref:System.Text.DecoderFallbackException.Index%2A?displayProperty=nameWithType> Vlastnost určuje počáteční pozici Neznámý bajtů.  
   
  I když <xref:System.Text.EncoderFallbackException> a <xref:System.Text.DecoderFallbackException> objekty poskytují odpovídající diagnostické informace o výjimce, se neposkytuje přístup ke kódování nebo dekódování vyrovnávací paměti. Proto se nepovolují neplatná data nahradit, nebo opraven v rámci metody kódování nebo dekódování.  
   
@@ -205,13 +205,13 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
 ## <a name="implementing-a-custom-fallback-strategy"></a>Implementace vlastního nouzová strategie  
  Kromě přizpůsobený mapování, která je implementována interně modulem znakových stránek, .NET obsahuje následující třídy pro implementaci strategii pro použití náhradní lokality:  
   
--   Použití <xref:System.Text.EncoderReplacementFallback> a <xref:System.Text.EncoderReplacementFallbackBuffer> nahradit znaky v kódování operace.  
+- Použití <xref:System.Text.EncoderReplacementFallback> a <xref:System.Text.EncoderReplacementFallbackBuffer> nahradit znaky v kódování operace.  
   
--   Použití <xref:System.Text.DecoderReplacementFallback> a <xref:System.Text.DecoderReplacementFallbackBuffer> k nahrazení znaků v dekódování operace.  
+- Použití <xref:System.Text.DecoderReplacementFallback> a <xref:System.Text.DecoderReplacementFallbackBuffer> k nahrazení znaků v dekódování operace.  
   
--   Použití <xref:System.Text.EncoderExceptionFallback> a <xref:System.Text.EncoderExceptionFallbackBuffer> vyvolání <xref:System.Text.EncoderFallbackException> při nemůže být zakódován znak.  
+- Použití <xref:System.Text.EncoderExceptionFallback> a <xref:System.Text.EncoderExceptionFallbackBuffer> vyvolání <xref:System.Text.EncoderFallbackException> při nemůže být zakódován znak.  
   
--   Použití <xref:System.Text.DecoderExceptionFallback> a <xref:System.Text.DecoderExceptionFallbackBuffer> vyvolávat <xref:System.Text.DecoderFallbackException> když znak nelze dekódovat.  
+- Použití <xref:System.Text.DecoderExceptionFallback> a <xref:System.Text.DecoderExceptionFallbackBuffer> vyvolávat <xref:System.Text.DecoderFallbackException> když znak nelze dekódovat.  
   
  Kromě toho můžete implementovat vlastní řešení, která používá přizpůsobený použití náhradní lokality, záložní nahrazení nebo záložní výjimky, pomocí následujících kroků:  
   
@@ -226,24 +226,24 @@ Znaky jsou abstraktní entity, které může být reprezentována mnoha různým
   
  Když vytvoříte vlastní záložní řešení pro kodér nebo dekodér, musí implementovat následující členy:  
   
--   <xref:System.Text.EncoderFallback.MaxCharCount%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallback.MaxCharCount%2A?displayProperty=nameWithType> vlastnost, která vrátí maximální možný počet znaků, které může záložní přizpůsobený, nahrazení nebo výjimky vrácené nahradí jediný znak. Pro použití náhradní lokality vlastní výjimka jeho hodnota je nula.  
+- <xref:System.Text.EncoderFallback.MaxCharCount%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallback.MaxCharCount%2A?displayProperty=nameWithType> vlastnost, která vrátí maximální možný počet znaků, které může záložní přizpůsobený, nahrazení nebo výjimky vrácené nahradí jediný znak. Pro použití náhradní lokality vlastní výjimka jeho hodnota je nula.  
   
--   <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> metody, které vrací vlastní <xref:System.Text.EncoderFallbackBuffer> nebo <xref:System.Text.DecoderFallbackBuffer> implementace. Metoda se nazývá kodér, pokud se setká s první znak, který se nedokáže úspěšně kódování nebo dekodérem, pokud se setká s prvním bajtem, který se nedokáže úspěšně dekódovat.  
+- <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> metody, které vrací vlastní <xref:System.Text.EncoderFallbackBuffer> nebo <xref:System.Text.DecoderFallbackBuffer> implementace. Metoda se nazývá kodér, pokud se setká s první znak, který se nedokáže úspěšně kódování nebo dekodérem, pokud se setká s prvním bajtem, který se nedokáže úspěšně dekódovat.  
   
 ### <a name="deriving-from-encoderfallbackbuffer-or-decoderfallbackbuffer"></a>Odvozování z EncoderFallbackBuffer nebo DecoderFallbackBuffer  
  Chcete-li implementovat vlastní řešení pro použití náhradní lokality, musíte také vytvořit třídu, která dědí z <xref:System.Text.EncoderFallbackBuffer> pro kódování operace a z <xref:System.Text.DecoderFallbackBuffer> pro dekódování operace. Instance těchto tříd jsou vráceny pomocí <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A> metodu <xref:System.Text.EncoderFallback> a <xref:System.Text.DecoderFallback> třídy. <xref:System.Text.EncoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> Metoda je volána metodou kodér, pokud se setká s první znak, který není možné zakódovat, a <xref:System.Text.DecoderFallback.CreateFallbackBuffer%2A?displayProperty=nameWithType> metoda je volána metodou dekodér, pokud se setká s jednoho nebo více bajtů, které není možné dekódovat. <xref:System.Text.EncoderFallbackBuffer> a <xref:System.Text.DecoderFallbackBuffer> třídy poskytují záložní implementace. Každá instance představuje vyrovnávací paměť, která obsahuje náhradní znaky, které nahradí znak, který nemůže být kódovaný nebo sekvence bajtů, který nelze dekódovat.  
   
  Když vytvoříte vlastní záložní řešení pro kodér nebo dekodér, musí implementovat následující členy:  
   
--   <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metody. <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> je volán kodér vyrovnávací paměti pro použití náhradní lokality poskytnout informace o znak, který nelze dekódovat. Protože znak, který má být zakódován může být náhradní pár, tato metoda je přetížen. Jedním přetížením je předán znak, který má být zakódován a jeho index v řetězci. Druhé přetížení je předán vysoké a nízké náhradníků spolu s jejich indexu v řetězci. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Metoda je volána metodou dekodér vyrovnávací paměti pro použití náhradní lokality poskytnout informace o bajtů, které nelze dekódovat. Této metodě se předává pole bajtů, které nelze dekódovat, spolu s index prvního bajtu. Náhradní metoda by měla vrátit `true` Pokud vyrovnávací paměti záložní verze můžete zadat přizpůsobený nebo náhradní znak nebo znaky; v opačném případě měla by vrátit `false`. Pro použití náhradní lokality výjimky by měl záložní metoda vyvolat výjimku.  
+- <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> metody. <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> je volán kodér vyrovnávací paměti pro použití náhradní lokality poskytnout informace o znak, který nelze dekódovat. Protože znak, který má být zakódován může být náhradní pár, tato metoda je přetížen. Jedním přetížením je předán znak, který má být zakódován a jeho index v řetězci. Druhé přetížení je předán vysoké a nízké náhradníků spolu s jejich indexu v řetězci. <xref:System.Text.DecoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> Metoda je volána metodou dekodér vyrovnávací paměti pro použití náhradní lokality poskytnout informace o bajtů, které nelze dekódovat. Této metodě se předává pole bajtů, které nelze dekódovat, spolu s index prvního bajtu. Náhradní metoda by měla vrátit `true` Pokud vyrovnávací paměti záložní verze můžete zadat přizpůsobený nebo náhradní znak nebo znaky; v opačném případě měla by vrátit `false`. Pro použití náhradní lokality výjimky by měl záložní metoda vyvolat výjimku.  
   
--   <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> metody, které je voláno opakovaně kodér nebo dekodéru získání další znak z vyrovnávací paměti záložní verze. Když byly vráceny všechny náhradní znaky, metoda by měla vrátit U + 0000.  
+- <xref:System.Text.EncoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A?displayProperty=nameWithType> metody, které je voláno opakovaně kodér nebo dekodéru získání další znak z vyrovnávací paměti záložní verze. Když byly vráceny všechny náhradní znaky, metoda by měla vrátit U + 0000.  
   
--   <xref:System.Text.EncoderFallbackBuffer.Remaining%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Remaining%2A?displayProperty=nameWithType> vlastnost, která vrátí počet znaků zbývajících ve vyrovnávací paměti pro použití náhradní lokality.  
+- <xref:System.Text.EncoderFallbackBuffer.Remaining%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Remaining%2A?displayProperty=nameWithType> vlastnost, která vrátí počet znaků zbývajících ve vyrovnávací paměti pro použití náhradní lokality.  
   
--   <xref:System.Text.EncoderFallbackBuffer.MovePrevious%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.MovePrevious%2A?displayProperty=nameWithType> metodu, která přesune aktuální pozice ve vyrovnávací paměti pro použití náhradní lokality předchozí znak.  
+- <xref:System.Text.EncoderFallbackBuffer.MovePrevious%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.MovePrevious%2A?displayProperty=nameWithType> metodu, která přesune aktuální pozice ve vyrovnávací paměti pro použití náhradní lokality předchozí znak.  
   
--   <xref:System.Text.EncoderFallbackBuffer.Reset%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Reset%2A?displayProperty=nameWithType> metodu, která znovu inicializuje vyrovnávací paměti záložní verze.  
+- <xref:System.Text.EncoderFallbackBuffer.Reset%2A?displayProperty=nameWithType> Nebo <xref:System.Text.DecoderFallbackBuffer.Reset%2A?displayProperty=nameWithType> metodu, která znovu inicializuje vyrovnávací paměti záložní verze.  
   
  Pokud je záložní implementace přizpůsobený záložní nebo záložní nahrazení, třídy odvozené z <xref:System.Text.EncoderFallbackBuffer> a <xref:System.Text.DecoderFallbackBuffer> také udržovat dvě instance privátní pole: přesný počet znaků ve vyrovnávací paměti; a index na další znak ve vyrovnávací paměti k vrácení.  
   

@@ -1,38 +1,38 @@
 ---
-title: 1016 - CompleteCompletionWorkItem
+title: 1016 – CompleteCompletionWorkItem
 ms.date: 03/30/2017
 ms.assetid: 246929fb-6f14-440a-814b-cd8349350644
 ms.openlocfilehash: 3f0904a561a242cd3be528c9707a409b6f98e0fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33510293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61925083"
 ---
-# <a name="1016---completecompletionworkitem"></a>1016 - CompleteCompletionWorkItem
+# <a name="1016---completecompletionworkitem"></a>1016 – CompleteCompletionWorkItem
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1016|  
-|Klíčová slova|WFRuntime|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFRuntime|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že je dokončená CompletionWorkItem.  
+ Označuje, že položka CompletionWorkItem byla dokončena.  
   
 ## <a name="message"></a>Zpráva  
- Bylo dokončeno CompletionWorkItem pro nadřazené aktivity '%1', DisplayName: %2, identifikátor InstanceId: '%3'. Dokončení aktivity %4, DisplayName: '%5', identifikátor InstanceId: '%6'.  
+ Položka CompletionWorkItem byla dokončena pro nadřazenou aktivitu '%1', DisplayName: %2, InstanceId: '%3'. Dokončeno %4, DisplayName: %5, InstanceId: '%6'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Nadřazená aktivita|xs:String|Název typu nadřazené aktivity.|  
-|ParentDisplayName|xs:String|Zobrazovaný název nadřazené aktivity.|  
-|ParentInstanceId|xs:String|Id instance nadřazené aktivity.|  
-|CompletedActivity|xs:String|Název typu dokončené aktivity.|  
-|CompletedActivityDisplayName|xs:String|Zobrazovaný název dokončené aktivity.|  
-|CompletedActivityInstanceId|xs:String|Id instance dokončené aktivity.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|Nadřazená aktivita|xs:string|Název typu Nadřazená aktivita.|  
+|ParentDisplayName|xs:string|Zobrazovaný název Nadřazená aktivita.|  
+|ParentInstanceId|xs:string|Id instance Nadřazená aktivita.|  
+|CompletedActivity|xs:string|Název typu dokončené aktivity.|  
+|CompletedActivityDisplayName|xs:string|Zobrazovaný název dokončené aktivity.|  
+|CompletedActivityInstanceId|xs:string|Id instance dokončené aktivity.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

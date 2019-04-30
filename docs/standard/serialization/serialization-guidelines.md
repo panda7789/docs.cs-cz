@@ -9,11 +9,11 @@ helpviewer_keywords:
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
 ms.openlocfilehash: 05cbe8b18a0d9635091b373d0acddb2ba665cc37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794301"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -32,22 +32,22 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 ## <a name="guidelines"></a>Pokyny  
   
--   Zamyslete serializace při navrhování nových typů.  
+- Zamyslete serializace při navrhování nových typů.  
   
      Serializace je k posouzení důležité návrh pro každý typ, protože programů může být nutné zachovat nebo přenést instance daného typu.  
   
 ### <a name="choosing-the-right-serialization-technology-to-support"></a>Výběr technologii vpravo serializace pro podporu  
  Daného typu může podporovat none, jeden nebo více technologií serializace.  
   
--   Podpora ZVAŽTE *data smlouvy serializace* -li být zachována nebo používat ve webové služby může být nutné instance stejného typu.  
+- Podpora ZVAŽTE *data smlouvy serializace* -li být zachována nebo používat ve webové služby může být nutné instance stejného typu.  
   
--   Podpora ZVAŽTE *serializace XML* místo nebo kromě serializaci dat smlouvy, pokud potřebujete větší kontrolu nad ve formátu XML, který je vytvořen, pokud je typ serializován.  
+- Podpora ZVAŽTE *serializace XML* místo nebo kromě serializaci dat smlouvy, pokud potřebujete větší kontrolu nad ve formátu XML, který je vytvořen, pokud je typ serializován.  
   
      Toto může být nutné v některých případech interoperability, kde je třeba použít XML konstrukci, která není podporována serializaci dat smlouvy, například k vytvoření atributy ve formátu XML.  
   
--   Podpora ZVAŽTE *modulu runtime serializace* Pokud instance stejného typu musí projít přes hranice vzdálené komunikace .NET.  
+- Podpora ZVAŽTE *modulu runtime serializace* Pokud instance stejného typu musí projít přes hranice vzdálené komunikace .NET.  
   
--   Vyhněte se podpora modulu runtime serializace nebo serializace XML pouze z důvodů obecné stálost. Místo toho raději smlouvy serializaci dat  
+- Vyhněte se podpora modulu runtime serializace nebo serializace XML pouze z důvodů obecné stálost. Místo toho raději smlouvy serializaci dat  
   
 #### <a name="supporting-data-contract-serialization"></a>Podpůrné smlouvy serializaci dat  
  Typy podporuje serializaci smlouvy dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> na typ a <xref:System.Runtime.Serialization.DataMemberAttribute> do členů (polí a vlastností) typu.  

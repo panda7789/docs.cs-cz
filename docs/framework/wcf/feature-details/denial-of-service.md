@@ -5,11 +5,11 @@ helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
 ms.openlocfilehash: 4c49e721ce4934c041b6636776c72db7839a1b1b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857087"
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Útok DoS nastane, pokud je systém zahltil tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu.  
@@ -19,22 +19,22 @@ ms.locfileid: "59228875"
   
  Zmírnění rizik patří:  
   
--   Odvozovat <xref:System.Xml.NameTable> třídy a vynucovat kvóta maximální velikosti. (Nelze zabránit používání <xref:System.Xml.NameTable> nebo přepněte <xref:System.Xml.NameTable> když je plný.)  
+- Odvozovat <xref:System.Xml.NameTable> třídy a vynucovat kvóta maximální velikosti. (Nelze zabránit používání <xref:System.Xml.NameTable> nebo přepněte <xref:System.Xml.NameTable> když je plný.)  
   
--   Vyhněte se použití vlastnosti uvedené a místo toho použít <xref:System.Xml.XmlReader.MoveToAttribute%2A> metodu s <xref:System.Xml.XmlReader.IsStartElement%2A> metoda povedou; tyto metody vracet řetězce a vyhněte se tím problém přeplnění <xref:System.Xml.NameTable> kolekce.  
+- Vyhněte se použití vlastnosti uvedené a místo toho použít <xref:System.Xml.XmlReader.MoveToAttribute%2A> metodu s <xref:System.Xml.XmlReader.IsStartElement%2A> metoda povedou; tyto metody vracet řetězce a vyhněte se tím problém přeplnění <xref:System.Xml.NameTable> kolekce.  
   
 ## <a name="malicious-client-sends-excessive-license-requests-to-service"></a>Škodlivý klient odešle nadměrné licenční požadavky na služby  
  Pokud klient se zlými úmysly bombards služby s nadměrným licenční požadavky, může to způsobit server určený využívala příliš mnoho paměti.  
   
  Omezení rizik: Použijte následující vlastnosti <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> třídy:  
   
--   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A>: Určuje maximální počet časově `SecurityContextToken`s, který ukládá do mezipaměti serveru po `SPNego` nebo `SSL` vyjednávání.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A>: Určuje maximální počet časově `SecurityContextToken`s, který ukládá do mezipaměti serveru po `SPNego` nebo `SSL` vyjednávání.  
   
--   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime%2A>: Určuje životnost `SecurityContextTokens` , který server problémy následující `SPNego` nebo `SSL` vyjednávání. Server mezipaměti `SecurityContextToken`s pro tuto dobu.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.IssuedCookieLifetime%2A>: Určuje životnost `SecurityContextTokens` , který server problémy následující `SPNego` nebo `SSL` vyjednávání. Server mezipaměti `SecurityContextToken`s pro tuto dobu.  
   
--   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions%2A>: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxPendingSessions%2A>: Určuje maximální počet zabezpečených konverzací, které jsou vytvořeny na serveru, ale pro které byly zpracovány žádné zprávy aplikace. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
   
--   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>: Určuje maximální dobu službu zachová zabezpečené konverzace aktivní aniž by mu musela zprávy aplikace od klienta pro tuto konverzaci. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>: Určuje maximální dobu službu zachová zabezpečené konverzace aktivní aniž by mu musela zprávy aplikace od klienta pro tuto konverzaci. Tato kvóta brání klientům v navázání zabezpečené konverzace na službu, a způsobuje služby pro uchování stavu pro klienta, ale nikdy je používají.  
   
 ## <a name="wsdualhttpbinding-or-dual-custom-bindings-require-client-authentication"></a>WSDualHttpBinding nebo duální vlastních vazeb vyžadují ověření klienta  
  Ve výchozím nastavení <xref:System.ServiceModel.WSDualHttpBinding> povoleným zabezpečením. Je možné, ale, že pokud ověření klienta zakázal nastavení <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> vlastnost <xref:System.ServiceModel.MessageCredentialType.None>, uživatel se zlými úmysly může způsobit, že útoku služby ve službě třetí. Tato situace může nastat, protože klient se zlými úmysly může směrovat služby umožňující odesílání zpráv do služby třetí.  

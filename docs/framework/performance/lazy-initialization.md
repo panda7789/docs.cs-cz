@@ -10,18 +10,18 @@ ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce217e2ed8e542ad0f7122970655aa32a353f51a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949939"
 ---
 # <a name="lazy-initialization"></a>Opožděná inicializace
 *Opožděná inicializace* objektu znamená, že jeho vytvoření je odloženo, dokud je poprvé použita. (Pro toto téma podmínky *opožděné inicializace* a *opožděné instance* jsou shodné.) Opožděná inicializace slouží především ke zvýšení výkonu, zabránit plýtvání výpočtu a snížit požadavky na paměť pro program. Jedná se o nejběžnějších scénářů:  
   
--   Pokud máte objekt, který je nákladné a nemusí použít program. Předpokládejme například, že máte v paměti `Customer` objekt, který má `Orders` vlastnost, která obsahuje velké pole `Order` objekty, které mají být inicializovány, vyžaduje připojení k databázi. Pokud uživatel požádá nikdy zobrazujících objednávky nebo použít data ve výpočtu, neexistuje žádný důvod k jeho vytvoření použít systémové paměti nebo výpočetních cyklů. S použitím `Lazy<Orders>` pro deklaraci `Orders` objektu pro opožděnou inicializaci, pokud není používán objekt se můžete vyhnout plýtvání systémových prostředků.  
+- Pokud máte objekt, který je nákladné a nemusí použít program. Předpokládejme například, že máte v paměti `Customer` objekt, který má `Orders` vlastnost, která obsahuje velké pole `Order` objekty, které mají být inicializovány, vyžaduje připojení k databázi. Pokud uživatel požádá nikdy zobrazujících objednávky nebo použít data ve výpočtu, neexistuje žádný důvod k jeho vytvoření použít systémové paměti nebo výpočetních cyklů. S použitím `Lazy<Orders>` pro deklaraci `Orders` objektu pro opožděnou inicializaci, pokud není používán objekt se můžete vyhnout plýtvání systémových prostředků.  
   
--   Pokud máte objekt, který je nákladné a chcete odložit jeho vytvoření až po dokončili další nákladný provoz. Předpokládejme například, že váš program načte několik instancí objektů při spuštění, ale jenom některé z nich je nutné okamžitě. Odložené inicializace objektů, které nejsou povinné, dokud vytvořili požadované objekty, lze vylepšit výkon při spuštění programu.  
+- Pokud máte objekt, který je nákladné a chcete odložit jeho vytvoření až po dokončili další nákladný provoz. Předpokládejme například, že váš program načte několik instancí objektů při spuštění, ale jenom některé z nich je nutné okamžitě. Odložené inicializace objektů, které nejsou povinné, dokud vytvořili požadované objekty, lze vylepšit výkon při spuštění programu.  
   
  I když můžete napsat vlastní kód pro provádění opožděné inicializace, doporučujeme použít <xref:System.Lazy%601> místo. <xref:System.Lazy%601> a jeho souvisejících typů také podporuje bezpečnost vláken a poskytnout zásady šíření výjimky konzistentní vzhledem k aplikacím.  
   
@@ -128,11 +128,11 @@ ms.locfileid: "59182296"
   
  <xref:System.Threading.ThreadLocal%601> zabalí jeho objekt stejným způsobem jako <xref:System.Lazy%601>, s následujícími základní rozdíly:  
   
--   Každé vlákno inicializuje proměnná místního vlákna pomocí jeho vlastní privátní data, která nejsou přístupné z jiných vláken.  
+- Každé vlákno inicializuje proměnná místního vlákna pomocí jeho vlastní privátní data, která nejsou přístupné z jiných vláken.  
   
--   <xref:System.Threading.ThreadLocal%601.Value%2A?displayProperty=nameWithType> Vlastnost pro čtení i zápis a je možné upravit libovolný počet. To může ovlivnit šíření výjimek, například jeden `get` operace může vyvolat výjimku, ale další možné úspěšně inicializovat hodnota.  
+- <xref:System.Threading.ThreadLocal%601.Value%2A?displayProperty=nameWithType> Vlastnost pro čtení i zápis a je možné upravit libovolný počet. To může ovlivnit šíření výjimek, například jeden `get` operace může vyvolat výjimku, ale další možné úspěšně inicializovat hodnota.  
   
--   Pokud je k dispozici žádná inicializace delegáta, <xref:System.Threading.ThreadLocal%601> inicializovat jeho zabalený typ, který bude použita výchozí hodnota typu. V tomto ohledu <xref:System.Threading.ThreadLocal%601> je konzistentní s <xref:System.ThreadStaticAttribute> atribut.  
+- Pokud je k dispozici žádná inicializace delegáta, <xref:System.Threading.ThreadLocal%601> inicializovat jeho zabalený typ, který bude použita výchozí hodnota typu. V tomto ohledu <xref:System.Threading.ThreadLocal%601> je konzistentní s <xref:System.ThreadStaticAttribute> atribut.  
   
  Následující příklad ukazuje, že každý podproces, který přistupuje k `ThreadLocal<int>` instance získá svou vlastní jedinečnou kopii data.  
   

@@ -10,11 +10,11 @@ ms.assetid: fa09c8e5-c2b9-49d2-bb0d-40330cd13e4d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 119c4c13c90aeca8c14d2725d927c38be32212a6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934456"
 ---
 # <a name="editing-xml-schemas"></a>Úpravy schémat XML
 Úprava schématu XML je jednou z vašich nejdůležitějších funkcí z modelu objektu schématu (SOM). Všechny vlastnosti vedlejší schema kompilace SOM lze použít ke změně existujícího hodnot ve schématu XML. Schéma XML můžete pak překompilovány tak, aby odrážely změny.  

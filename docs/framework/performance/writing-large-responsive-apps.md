@@ -5,11 +5,11 @@ ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: 67da51ae900a0b2d1c0728b22e58aa83e789684f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57358168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61861228"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepsání kompilátory C# i Visual Basic ve spravovaném kódu a tento článek obsahuje několik skutečné příklady z kompilátoru jazyka C#. 
@@ -453,13 +453,13 @@ class Compilation { /*...*/
   
  V tomto článku jsme zmínili, jak byste měli vědět příznaky problémové místo výkonu, které může mít vliv na rychlost reakce vaší aplikace, zejména u velkých systémy nebo systémy, které zpracovávají velké množství dat. Běžné culprits zahrnují zabalení, manipulace s řetězci, LINQ a lambda, ukládání do mezipaměti v asynchronních metodách, ukládání do mezipaměti bez zásad omezení nebo vyřazení velikost, nesprávné použití slovníky a předávání kolem struktury. Mějte na paměti čtyři faktů pro ladění vaší aplikace:  
   
--   Nemáte předčasně optimalizovat – produktivitu a ladit vaši aplikaci při odhalit problémy. 
+- Nemáte předčasně optimalizovat – produktivitu a ladit vaši aplikaci při odhalit problémy. 
   
--   Profily nejsou leží – při odhadování, pokud nejsou měření. 
+- Profily nejsou leží – při odhadování, pokud nejsou měření. 
   
--   Vhodné nástroje všechny záleží na tom – stáhnout PerfView a vyzkoušejte si to. 
+- Vhodné nástroje všechny záleží na tom – stáhnout PerfView a vyzkoušejte si to. 
   
--   To všechno je o přidělení – to znamená ve kterém tým platformy kompilátoru trvání většinu svého času zlepšení výkonu nové kompilátory. 
+- To všechno je o přidělení – to znamená ve kterém tým platformy kompilátoru trvání většinu svého času zlepšení výkonu nové kompilátory. 
   
 ## <a name="see-also"></a>Viz také:
 

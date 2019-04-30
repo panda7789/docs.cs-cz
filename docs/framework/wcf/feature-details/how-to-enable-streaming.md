@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
 ms.openlocfilehash: 0d8428487c3c320a634914b99219e23befb70d55
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773019"
 ---
 # <a name="how-to-enable-streaming"></a>Postupy: Povolení streamování
 Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím přenosy ve vyrovnávací paměti nebo datovým proudem. Ve výchozím režimu přenosu ukládány do vyrovnávací paměti zprávy musí být zcela doručována předtím, než příjemce může číst. V režimu přenosu datového proudu, můžete začít příjemce zprávu zpracovat, než úplně doručení. Režim tvorby datového proudu je užitečné, když informace, které je předáno příliš dlouhý a může být zpracována sériově. Režim tvorby datového proudu je také užitečné, pokud zpráva je příliš velký, aby se zcela ukládány do vyrovnávací paměti.  
@@ -21,9 +21,9 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 1. Pro streamování dat `OperationContract` pro službu musí splňovat dva požadavky:  
   
-    1.  Parametr, který obsahuje data, která mají být Streamovat musí být jediný parametr v metodě. Například pokud vstupní zprávy je ten, který má být datovým proudem, operace musí mít přesně jeden vstupní parametr. Podobně při odesílání zprávy výstup operace musí mít právě jeden výstupní parametr nebo návratovou hodnotu.  
+    1. Parametr, který obsahuje data, která mají být Streamovat musí být jediný parametr v metodě. Například pokud vstupní zprávy je ten, který má být datovým proudem, operace musí mít přesně jeden vstupní parametr. Podobně při odesílání zprávy výstup operace musí mít právě jeden výstupní parametr nebo návratovou hodnotu.  
   
-    2.  Nejméně jeden z typů parametrů a návratové hodnoty musí být buď <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, nebo <xref:System.Xml.Serialization.IXmlSerializable>.  
+    2. Nejméně jeden z typů parametrů a návratové hodnoty musí být buď <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, nebo <xref:System.Xml.Serialization.IXmlSerializable>.  
   
      Následuje příklad smlouvy pro streamovaná data.  
   
@@ -34,28 +34,28 @@ Windows Communication Foundation (WCF) můžete odesílání zpráv s použitím
   
 2. Datový proud musí být povolené na vazbu. Můžete nastavit `TransferMode` vlastnost, která můžete provést jednu z následujících hodnot:  
   
-    1.  `Buffered`,  
+    1. `Buffered`,  
   
-    2.  `Streamed`, která umožňuje streamování komunikaci v obou směrech.  
+    2. `Streamed`, která umožňuje streamování komunikaci v obou směrech.  
   
-    3.  `StreamedRequest`, která umožňuje streamování pouze žádosti.  
+    3. `StreamedRequest`, která umožňuje streamování pouze žádosti.  
   
-    4.  `StreamedResponse`, což umožňuje streamování pouze odpovědi.  
+    4. `StreamedResponse`, což umožňuje streamování pouze odpovědi.  
   
      `BasicHttpBinding` Zpřístupňuje `TransferMode` vlastnost pro vazbu, stejně jako `NetTcpBinding` a `NetNamedPipeBinding`. `TransferMode` Vlastnosti také můžete nastavit na element vazby přenosu a používaných pro vlastní vazbu.  
   
      Následující ukázky ukazují, jak nastavit `TransferMode` kódu a změnou konfiguračního souboru. Ukázky také obě nastaveny `maxReceivedMessageSize` vlastnost 64 MB, který nahradí zakončení na maximální povolenou velikost zprávy na příjem. Výchozí hodnota `maxReceivedMessageSize` je 64 KB, což je obvykle příliš nízká pro streamování scénáře. Nastavte toto nastavení kvót podle potřeby v závislosti na maximální velikost zprávy, které vaše aplikace očekává. Všimněte si také, `maxBufferSize` určuje maximální velikost, která je uložená do vyrovnávací paměti a odpovídajícím způsobem nastavit.  
   
-    1.  Následující fragment kódu konfigurace ze vzorku zobrazuje nastavení `TransferMode` vlastnost streamování na `basicHttpBinding` a vlastních vazeb protokolu HTTP.  
+    1. Následující fragment kódu konfigurace ze vzorku zobrazuje nastavení `TransferMode` vlastnost streamování na `basicHttpBinding` a vlastních vazeb protokolu HTTP.  
   
          [!code-xml[c_HowTo_EnableStreaming#103](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/common/app.config#103)]   
   
-    2.  Následující fragment kódu ukazuje nastavení `TransferMode` vlastnost streamování na `basicHttpBinding` a vlastních vazeb protokolu HTTP.  
+    2. Následující fragment kódu ukazuje nastavení `TransferMode` vlastnost streamování na `basicHttpBinding` a vlastních vazeb protokolu HTTP.  
   
          [!code-csharp[c_HowTo_EnableStreaming_code#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming_code/cs/c_howto_enablestreaming_code.cs#2)]
          [!code-vb[c_HowTo_EnableStreaming_code#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming_code/vb/c_howto_enablestreaming_code.vb#2)]  
   
-    3.  Následující fragment kódu ukazuje nastavení `TransferMode` vlastnost streamování pro vlastní vazbu protokolu TCP.  
+    3. Následující fragment kódu ukazuje nastavení `TransferMode` vlastnost streamování pro vlastní vazbu protokolu TCP.  
   
          [!code-csharp[c_HowTo_EnableStreaming_code#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming_code/cs/c_howto_enablestreaming_code.cs#3)]
          [!code-vb[c_HowTo_EnableStreaming_code#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming_code/vb/c_howto_enablestreaming_code.vb#3)]  

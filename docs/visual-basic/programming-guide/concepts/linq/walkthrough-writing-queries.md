@@ -8,11 +8,11 @@ helpviewer_keywords:
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
 ms.openlocfilehash: 8e3d893a21b36868f59d132bd8ba9a6f634cac62
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907605"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů v jazyce Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  
@@ -40,14 +40,14 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 #### <a name="to-add-the-data-source"></a>Přidání zdroje dat  
   
--   Definování `Student` třídy a vytvoří seznam instancí třídy.  
+- Definování `Student` třídy a vytvoří seznam instancí třídy.  
   
     > [!IMPORTANT]
     >  Kód potřebný k definování `Student` třídy a vytvořit seznam použitý v tomto návodu je součástí příklady [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). Můžete zkopírovat z něj a vložte ho do projektu. Nový kód nahradí kódu, které se zobrazovalo při vytváření projektu.  
   
 #### <a name="to-add-a-new-student-to-the-students-list"></a>Přidání nového studenta do seznamu studentů  
   
--   Podle tohoto vzoru vytvořené v `getStudents` způsob, jak přidat další instanci `Student` třídy do seznamu. Přidání studenta vás seznámí s inicializátory objektů. Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
+- Podle tohoto vzoru vytvořené v `getStudents` způsob, jak přidat další instanci `Student` třídy do seznamu. Přidání studenta vás seznámí s inicializátory objektů. Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="create-a-query"></a>Vytvořit dotaz  
  Při spuštění dotaz přidaný v této části vytváří seznam studentů, jehož academic pořadí umístí je do prvních deset. Vzhledem k tomu, že dotaz vybere kompletní `Student` objekt pokaždé, když, typ výsledku dotazu je `IEnumerable(Of Student)`. Nicméně dotazu obvykle není zadaný typ v definicích dotazů. Místo toho používá kompilátor odvození místního typu k určení typu. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md). Proměnná rozsahu v dotazu, `currentStudent`, slouží jako odkaz na každé `Student` instance ve zdroji, `students`, díky přístupu k vlastnosti jednotlivých objektů v `students`.  

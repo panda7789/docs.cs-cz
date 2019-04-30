@@ -10,11 +10,11 @@ ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd75bd14b2393d9b316d90070894f214dfa60c88
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908783"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Návod: Použití toku dat ve formulářové aplikaci Windows
 Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí zpracování obrázků v aplikaci Windows Forms.  
@@ -29,13 +29,13 @@ Tento dokument ukazuje, jak vytvořit síť bloků toku dat, které provádějí
 ## <a name="sections"></a>Oddíly  
  Tento návod obsahuje následující části:  
   
--   [Vytvoření aplikace Windows Forms](#winforms)  
+- [Vytvoření aplikace Windows Forms](#winforms)  
   
--   [Vytvoření sítě toku dat](#network)  
+- [Vytvoření sítě toku dat](#network)  
   
--   [Připojení sítě toku dat v uživatelském rozhraní](#ui)  
+- [Připojení sítě toku dat v uživatelském rozhraní](#ui)  
   
--   [Kompletní příklad](#complete)  
+- [Kompletní příklad](#complete)  
   
 <a name="winforms"></a>   
 ## <a name="creating-the-windows-forms-application"></a>Vytvoření aplikace Windows Forms  

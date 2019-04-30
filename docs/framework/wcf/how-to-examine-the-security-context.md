@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Claimset class
 ms.assetid: 389b5a57-4175-4bc0-ada0-fc750d51149f
 ms.openlocfilehash: c6c36641463a45b79d437ae3910bbe7474d425cb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59305101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929295"
 ---
 # <a name="how-to-examine-the-security-context"></a>Postupy: Prozkoumání kontextu zabezpečení
 Při programování služby Windows Communication Foundation (WCF), kontext zabezpečení služby vám umožní určit podrobnosti o přihlašovací údaje pro klienta a deklarace identity použít k ověřování ve službě. To se provádí pomocí vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy.  
@@ -25,7 +25,7 @@ Při programování služby Windows Communication Foundation (WCF), kontext zabe
   
 ### <a name="to-get-the-current-security-context"></a>Chcete-li získat aktuální kontext zabezpečení  
   
--   Přístup k statickou vlastnost <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> získat aktuální kontext zabezpečení. Prozkoumejte v kterékoliv z vlastností aktuálního kontextu z odkazu.  
+- Přístup k statickou vlastnost <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> získat aktuální kontext zabezpečení. Prozkoumejte v kterékoliv z vlastností aktuálního kontextu z odkazu.  
   
 ### <a name="to-determine-the-identity-of-the-caller"></a>Chcete-li zjistit identitu volajícího  
   
@@ -46,13 +46,13 @@ Při programování služby Windows Communication Foundation (WCF), kontext zabe
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Kód používá následující obory názvů:  
   
--   <xref:System>  
+- <xref:System>  
   
--   <xref:System.ServiceModel>  
+- <xref:System.ServiceModel>  
   
--   <xref:System.IdentityModel.Policy>  
+- <xref:System.IdentityModel.Policy>  
   
--   <xref:System.IdentityModel.Claims>  
+- <xref:System.IdentityModel.Claims>  
   
 ## <a name="see-also"></a>Viz také:
 

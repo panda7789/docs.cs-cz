@@ -12,11 +12,11 @@ helpviewer_keywords:
 - examples [Windows Forms], sounds
 ms.assetid: 3d3350b7-1ebd-4e05-a738-48ca1160a19d
 ms.openlocfilehash: 3b9eb6f902d0d2193f0099f8e868e4ead347ce26
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59078678"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913407"
 ---
 # <a name="how-to-play-a-sound-from-a-windows-form"></a>Postupy: Přehrávání zvuku z formuláře Windows Forms
 V tomto příkladu přehraje zvuk v dané cestě v době běhu.  
@@ -40,26 +40,26 @@ private void playSimpleSound()
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Nahradit název souboru `"c:\Windows\Media\chimes.wav"` s platným názvem souboru.  
+- Nahradit název souboru `"c:\Windows\Media\chimes.wav"` s platným názvem souboru.  
   
--   (C#) Odkaz na <xref:System.Media?displayProperty=nameWithType> oboru názvů.  
+- (C#) Odkaz na <xref:System.Media?displayProperty=nameWithType> oboru názvů.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Operace se soubory by měl být uzavřen v rámci příslušné bloky zpracování strukturovaných výjimek.  
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název cesty je poškozený. Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException> třídy).  
+- Název cesty je poškozený. Například obsahuje neplatné znaky nebo je prázdné znaky (<xref:System.ArgumentException> třídy).  
   
--   Cesta je jen pro čtení (<xref:System.IO.IOException> třídy).  
+- Cesta je jen pro čtení (<xref:System.IO.IOException> třídy).  
   
--   Název cesty je `null` (<xref:System.ArgumentNullException> třídy).  
+- Název cesty je `null` (<xref:System.ArgumentNullException> třídy).  
   
--   Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException> třídy).  
+- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException> třídy).  
   
--   Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException> třídy).  
+- Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException> třídy).  
   
--   Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException> třídy).  
+- Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException> třídy).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor `Form1.vb` nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy.  

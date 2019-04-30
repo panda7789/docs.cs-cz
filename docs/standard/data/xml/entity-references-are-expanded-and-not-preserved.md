@@ -1,18 +1,18 @@
 ---
-title: Odkazy na entity jsou rozšířené a Nezachované
+title: Odkazy na entity jsou rozšířené a nezachované
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7a55aa71ff3976241b96dd12baef06a9a13ef9dd
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45998419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934564"
 ---
-# <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a Nezachované
+# <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a nezachované
 Pokud odkaz na entitu je rozbalen a nahrazuje představuje, **XmlEntityReference** uzlu není vytvořena. Místo toho je analyzován entity prohlášení a uzlů vytvořené z obsahu v deklaraci zkopírují místo hodnoty **XmlEntityReference**. Proto v `&publisher;` například `&publisher;` neukládají, ale místo toho **XmlText** uzel je vytvořen.  
   
  ![rozbalení stromovou strukturu](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  

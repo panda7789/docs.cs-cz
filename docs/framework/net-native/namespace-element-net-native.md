@@ -5,11 +5,11 @@ ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c304606a27552e604bf40953f49a30a794026281
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150745"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866909"
 ---
 # <a name="namespace-element-net-native"></a>\<Namespace > – Element (.NET Native)
 Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru názvů.  
@@ -57,7 +57,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v určeném oboru n�
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad pro všechny typy v oboru názvů. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   

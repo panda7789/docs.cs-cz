@@ -1,18 +1,18 @@
 ---
-title: Vytváření nových odkazů na Entity
+title: Vytváření nových odkazů na entity
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: a42f81b3-0403-4e34-b346-7d2129804e54
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 67fdbcdbff64bcd91c80fbeaec0c41982b68d98f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48844511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934488"
 ---
-# <a name="creating-new-entity-references"></a>Vytváření nových odkazů na Entity
+# <a name="creating-new-entity-references"></a>Vytváření nových odkazů na entity
 **CreateEntityReference** metoda vytvoří nový **XmlEntityReference** uzlu. Pokud chcete zobrazit, pokud je už deklarovaný název entity, na kterou se odkazuje vypadá XML Document Object Model (DOM). Pokud ano, podřízené uzly **XmlEntityReference** uzlu jsou zkopírovány z uzlu entity prohlášení. Pokud neexistuje žádná deklarace entity, který odpovídá, prázdný textový uzel je připojen jako jediný podřízený uzel odkazu entity. Protože podřízené uzly **XmlEntityReference** uzlu jsou kopie jiných uzlech, tyto podřízené uzly jsou jen pro čtení a nelze ji změnit.  
   
  Když se zkopírují uzly, může být oboru názvů v oboru místě odkaz na entitu. Tento obor názvů má vliv na konfiguraci jakéhokoli uzlu elementu nebo atributu vygenerována.  

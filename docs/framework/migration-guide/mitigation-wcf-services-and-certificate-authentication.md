@@ -5,11 +5,11 @@ ms.assetid: ef19c91a-b9df-4bf0-a28e-eb1e99c4bc95
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fdacf5fc4a5c73fc60df961432089ee65dd0cfaa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59079536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871420"
 ---
 # <a name="mitigation-wcf-services-and-certificate-authentication"></a>Omezení rizik: Služby WCF a ověřování pomocí certifikátu
 Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL TLS 1.1 a TLS 1.2. Když klientských i serverových počítačích mít rozhraní .NET Framework 4.6 nebo novější, použije se pro vyjednávání protokolu TLS 1.2.  
@@ -20,9 +20,9 @@ Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL TLS
 ## <a name="mitigation"></a>Zmírnění  
  Tento problém můžete obejít tak, aby klient WCF můžete připojit k serveru WCF pomocí některého z následujících akcí:  
   
--   Aktualizujte certifikát nechcete použít algoritmus MD5. Toto je doporučené řešení.  
+- Aktualizujte certifikát nechcete použít algoritmus MD5. Toto je doporučené řešení.  
   
--   Pokud se vazba není dynamicky nakonfigurována ve zdrojovém kódu, aktualizujte konfigurační soubor aplikace pro použití protokolu TLS 1.1 nebo starší verzi protokolu. To umožňuje pokračovat v používání certifikátu s algoritmem hash MD5.  
+- Pokud se vazba není dynamicky nakonfigurována ve zdrojovém kódu, aktualizujte konfigurační soubor aplikace pro použití protokolu TLS 1.1 nebo starší verzi protokolu. To umožňuje pokračovat v používání certifikátu s algoritmem hash MD5.  
   
     > [!CAUTION]
     >  Toto řešení se nedoporučuje, protože certifikátu s algoritmem hash MD5 se považuje za nezabezpečené.  
@@ -48,7 +48,7 @@ Rozhraní .NET Framework 4.6 přidá do seznamu výchozích protokol WCF SSL TLS
     </configuration>  
     ```  
   
--   Pokud je vazba konfigurována dynamicky ve zdrojovém kódu, aktualizujte <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> vlastnost na používání protokolu TLS 1.1 (<xref:System.Security.Authentication.SslProtocols.Tls11?displayProperty=nameWithType>) nebo starší verzi protokolu ve zdrojovém kódu.  
+- Pokud je vazba konfigurována dynamicky ve zdrojovém kódu, aktualizujte <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> vlastnost na používání protokolu TLS 1.1 (<xref:System.Security.Authentication.SslProtocols.Tls11?displayProperty=nameWithType>) nebo starší verzi protokolu ve zdrojovém kódu.  
   
     > [!CAUTION]
     >  Toto řešení se nedoporučuje, protože certifikátu s algoritmem hash MD5 se považuje za nezabezpečené.  

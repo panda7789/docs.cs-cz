@@ -16,11 +16,11 @@ ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3f58e1c3a9e42f48ecc219a2db1649051f9ca20b
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43890724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61811531"
 ---
 # <a name="padding-strings-in-net"></a>Doplňování řetězců v .NET
 

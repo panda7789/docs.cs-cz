@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
 ms.openlocfilehash: b5044d39d1dc5d2fa7d2ce691cdda7075fa0e32a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878407"
 ---
 # <a name="schema-restrictions"></a>Omezení schématu
 Druhý volitelný parametr **GetSchema** metoda je vrácena omezení, které se používají a omezit tak množství informací o schématu, a je předán **GetSchema** metody jako pole řetězců . Pozice v poli určuje hodnoty, které můžete předat, a to je ekvivalentní hodnotě parametru omezení.  
@@ -143,7 +143,7 @@ class Program
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Name|@Name|Name|1|  
+|Název|@Name|Název|1|  
   
 ### <a name="tables"></a>Tabulky  
   
@@ -195,7 +195,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|Name|@Name|SPECIFIC_NAME|3|  
+|Název|@Name|SPECIFIC_NAME|3|  
 |Parametr|@Parameter|PARAMETER_NAME|4|  
   
 ### <a name="procedures"></a>Procedury  
@@ -204,7 +204,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
 |Owner|@Owner|SPECIFIC_SCHEMA|2|  
-|Name|@Name|SPECIFIC_NAME|3|  
+|Název|@Name|SPECIFIC_NAME|3|  
 |Type|@Type|ROUTINE_TYPE|4|  
   
 ### <a name="indexcolumns"></a>IndexColumns  
@@ -239,7 +239,7 @@ class Program
 |Katalog|@Catalog|CONSTRAINT_CATALOG|1|  
 |Owner|@Owner|CONSTRAINT_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
-|Name|@Name|CONSTRAINT_NAME|4|  
+|Název|@Name|CONSTRAINT_NAME|4|  
   
 ## <a name="sql-server-2008-schema-restrictions"></a>SQL Server 2008 Schema Restrictions  
  Omezení pro kolekce schémat SQL Server 2008 naleznete v následujících tabulkách. Tato omezení jsou platné od verze SQL Server 2008 a rozhraní .NET Framework 3.5 SP1. Nejsou podporovány v dřívějších verzích rozhraní .NET Framework a systému SQL Server.  

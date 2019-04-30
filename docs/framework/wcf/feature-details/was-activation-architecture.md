@@ -3,11 +3,11 @@ title: Architektura aktivace WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
 ms.openlocfilehash: 9c1af21782b377a9fb01cbd05e4fe61f6a69f3ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932705"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
 V tomto tématu najdete výčet a tento článek popisuje komponenty služby Aktivace procesu Windows (WAS).  
@@ -15,15 +15,15 @@ V tomto tématu najdete výčet a tento článek popisuje komponenty služby Akt
 ## <a name="activation-components"></a>Aktivace součásti  
  SE skládá z několika komponent architektury:  
   
--   Naslouchací proces adaptéry. Služby Windows, které přijímají zprávy na konkrétních síťových protokolech a komunikovat s WAS můžete směrovat příchozí zprávy správné pracovního procesu.  
+- Naslouchací proces adaptéry. Služby Windows, které přijímají zprávy na konkrétních síťových protokolech a komunikovat s WAS můžete směrovat příchozí zprávy správné pracovního procesu.  
   
--   BYLA. Služba Windows, která spravuje vytváření a dobu života pracovních procesů.  
+- BYLA. Služba Windows, která spravuje vytváření a dobu života pracovních procesů.  
   
--   Obecný pracovní proces spustitelný soubor (w3wp.exe).  
+- Obecný pracovní proces spustitelný soubor (w3wp.exe).  
   
--   Správce aplikací. Spravuje vytváření a dobu života aplikační domény, které zpracovávají hostování aplikací v rámci pracovního procesu.  
+- Správce aplikací. Spravuje vytváření a dobu života aplikační domény, které zpracovávají hostování aplikací v rámci pracovního procesu.  
   
--   Obslužné rutiny protokolu. Konkrétní součásti, které běží v procesu pracovního procesu a správu komunikace mezi pracovního procesu a adaptéry jednotlivý naslouchací proces. Existují dva typy obslužné rutiny protokolu: zpracování obslužné rutiny protokolu a obslužné rutiny protokolu domény aplikace.  
+- Obslužné rutiny protokolu. Konkrétní součásti, které běží v procesu pracovního procesu a správu komunikace mezi pracovního procesu a adaptéry jednotlivý naslouchací proces. Existují dva typy obslužné rutiny protokolu: zpracování obslužné rutiny protokolu a obslužné rutiny protokolu domény aplikace.  
   
  Když služba WAS aktivuje instance procesu pracovního procesu, načítá obslužné rutiny protokolu procesu vyžaduje do pracovního procesu a používá správce aplikace pro vytvoření domény aplikace pro hostování aplikace. Doména aplikace načte kódu vaší aplikace, stejně jako obslužné rutiny protokolu domény aplikace, které používá síťové protokoly aplikace vyžadovat.  
   

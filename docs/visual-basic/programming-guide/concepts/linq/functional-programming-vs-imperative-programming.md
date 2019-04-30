@@ -3,11 +3,11 @@ title: Funkční programování vs. Imperativní programování (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
 ms.openlocfilehash: dec9fd4b59d96c0548e49276a27103114a7b3e8b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61931662"
 ---
 # <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Funkční programování vs. Imperativní programování (Visual Basic)
 Toto téma porovnává a výrazně liší od tradičnější imperativního (procesního) programování s funkčního programování.  
@@ -35,11 +35,11 @@ Toto téma porovnává a výrazně liší od tradičnější imperativního (pro
 ## <a name="advantages-of-pure-functions"></a>Výhody čisté funkce  
  Hlavním důvodem pro implementaci funkční transformace jako čistě funkce je, že čistě funkce sestavitelný: to znamená, samostatná a bezstavové. Tyto vlastnosti přinést řadu výhod, včetně následujících:  
   
--   Zvýšení přehlednosti a udržovatelnosti. Toto je vzhledem k tomu, že každá funkce je navržená k provedení určitého úkolu přiřazena svých argumentů. Funkce nevyžaduje žádné externího stavu.  
+- Zvýšení přehlednosti a udržovatelnosti. Toto je vzhledem k tomu, že každá funkce je navržená k provedení určitého úkolu přiřazena svých argumentů. Funkce nevyžaduje žádné externího stavu.  
   
--   Snadnější reiterative vývoje. Vzhledem k tomu je snazší Refaktorovat kód, změny návrhu jsou často usnadnil. Předpokládejme například, můžete psát složitější transformace a potom dobré si uvědomit, že nějaký kód je několikrát opakovat v transformace. Pokud refaktorujete prostřednictvím čistě metody, může volat vaši čistě metodu kdykoli bez starostí o vedlejší účinky.  
+- Snadnější reiterative vývoje. Vzhledem k tomu je snazší Refaktorovat kód, změny návrhu jsou často usnadnil. Předpokládejme například, můžete psát složitější transformace a potom dobré si uvědomit, že nějaký kód je několikrát opakovat v transformace. Pokud refaktorujete prostřednictvím čistě metody, může volat vaši čistě metodu kdykoli bez starostí o vedlejší účinky.  
   
--   Snazší testování a ladění. Protože čistě funkce můžete snadněji zkoušet v izolaci, můžete napsat kód testu, který volá funkci čistě s typické hodnoty platné hraniční případy a neplatný hraniční případy.  
+- Snazší testování a ladění. Protože čistě funkce můžete snadněji zkoušet v izolaci, můžete napsat kód testu, který volá funkci čistě s typické hodnoty platné hraniční případy a neplatný hraniční případy.  
   
 ## <a name="transitioning-for-oop-developers"></a>Přechod pro vývojáře OOP  
  V tradičních objektově orientované programování (OOP), jsou zvyklí na programování ve stylu dnešní/procedurální Většina vývojářů. Přepnout na vývoj ve stylu čistě funkční, musí provést přechod v jejich přemýšlení a jejich přístup k vývoji.  

@@ -3,11 +3,11 @@ title: 'Postupy: Zákaz šifrování digitálních podpisů'
 ms.date: 03/30/2017
 ms.assetid: fd174313-ad81-4dca-898a-016ccaff8187
 ms.openlocfilehash: e2fd2a058e636ebf398f9d0c71a93788ccd7dfa0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773188"
 ---
 # <a name="how-to-disable-encryption-of-digital-signatures"></a>Postupy: Zákaz šifrování digitálních podpisů
 Ve výchozím nastavení zprávy je podepsaná a digitálně podpis zašifrují. Toto se řídí vytváření vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces využívá až 30 procent déle než jednoduše podepisování a šifrování založené na celkovou velikost zprávy (Čím menší zprávy, tím větší dopad na výkon). Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash před šifrování těla zprávy. Pokud sadu možných hodnot pro část šifrovaný a podepsaný držitelem je nízká, útočník může být možné odvodit obsah podle hodnoty hash. Šifrování podpis zmírňuje tohoto útoku.  

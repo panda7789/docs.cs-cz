@@ -1,38 +1,38 @@
 ---
-title: 1009 - ActivityScheduled
+title: 1009 – ActivityScheduled
 ms.date: 03/30/2017
 ms.assetid: 307e38b6-d47e-47a4-9708-e74d8314b1a1
 ms.openlocfilehash: 0e3ea53a7b0509fcb8b73b61193742d615ac7e91
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33509969"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924654"
 ---
-# <a name="1009---activityscheduled"></a>1009 - ActivityScheduled
+# <a name="1009---activityscheduled"></a>1009 – ActivityScheduled
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1009|  
-|Klíčová slova|WFRuntime|  
+|klíčová slova|WFRuntime|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že aktivita je naplánován pro spuštění.  
+ Označuje, že pro spuštění je naplánované aktivity.  
   
 ## <a name="message"></a>Zpráva  
- Nadřazená aktivita %1, DisplayName: %2, identifikátor InstanceId: '%3' naplánované podřízené aktivity "%4", DisplayName: '%5', identifikátor InstanceId: '%6'.  
+ Nadřazená aktivita %1, DisplayName: %2, InstanceId: '%3' naplánovala podřízenou aktivitu "%4", DisplayName: %5, InstanceId: '%6'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Nadřazená aktivita|xs:String|Název typu nadřazené aktivity.|  
-|ParentDisplayName|xs:String|Zobrazovaný název nadřazené aktivity.|  
-|ParentInstanceId|xs:String|Id instance nadřazené aktivity.|  
-|ChildActivity|xs:String|Název typu naplánované podřízené aktivity.|  
-|ChildDisplayName|xs:String|Zobrazovaný název naplánované podřízené aktivity.|  
-|ChildInstanceId|xs:String|Id instance plánované podřízené aktivity.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|Nadřazená aktivita|xs:string|Název typu Nadřazená aktivita.|  
+|ParentDisplayName|xs:string|Zobrazovaný název Nadřazená aktivita.|  
+|ParentInstanceId|xs:string|Id instance Nadřazená aktivita.|  
+|ChildActivity|xs:string|Název typu naplánovala podřízenou aktivitu.|  
+|ChildDisplayName|xs:string|Zobrazovaný název naplánovala podřízenou aktivitu.|  
+|ChildInstanceId|xs:string|Id instance naplánovala podřízenou aktivitu.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

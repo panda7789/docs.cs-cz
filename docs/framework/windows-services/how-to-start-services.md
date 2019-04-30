@@ -7,11 +7,11 @@ helpviewer_keywords:
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
 ms.openlocfilehash: db66e8a264bc0381a2ff4689c4427047a158eb32
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913923"
 ---
 # <a name="how-to-start-services"></a>Postupy: Spuštění služby
 Po dokončení instalace služby musí být spuštěna. Od volání <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metodu na třídu služby. Obvykle <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda definuje užitečnou práci, služba bude provádět. Po spuštění služby, zůstane aktivní, dokud je ručně pozastavená nebo zastavená.  
@@ -58,11 +58,11 @@ Po dokončení instalace služby musí být spuštěna. Od volání <xref:System
   
 1. Otevřít **správce řízení služeb** pomocí jedné z následujících akcí:  
   
-    -   V systémech Windows XP a 2000 Professional, klikněte pravým tlačítkem na **tento počítač** na ploše a pak klikněte na tlačítko **spravovat**. V dialogovém okně, které se zobrazí, rozbalte **služeb a aplikací** uzlu.  
+    - V systémech Windows XP a 2000 Professional, klikněte pravým tlačítkem na **tento počítač** na ploše a pak klikněte na tlačítko **spravovat**. V dialogovém okně, které se zobrazí, rozbalte **služeb a aplikací** uzlu.  
   
          \- nebo –  
   
-    -   V systému Windows Server 2003 a Windows 2000 Server, klikněte na tlačítko **Start**, přejděte na **programy**, klikněte na tlačítko **nástroje pro správu**a potom klikněte na tlačítko **služby**.  
+    - V systému Windows Server 2003 a Windows 2000 Server, klikněte na tlačítko **Start**, přejděte na **programy**, klikněte na tlačítko **nástroje pro správu**a potom klikněte na tlačítko **služby**.  
   
         > [!NOTE]
         >  V systému Windows NT verze 4.0, můžete otevřít toto dialogové z **ovládací panely**.  

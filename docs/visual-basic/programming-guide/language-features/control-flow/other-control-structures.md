@@ -6,11 +6,11 @@ helpviewer_keywords:
 - control structures [Visual Basic]
 ms.assetid: 24b811f7-98ba-40ec-8dd3-4d528cfa4574
 ms.openlocfilehash: c42070ce2ea866e59e1b2e190f7c05e1ee7cc922
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907839"
 ---
 # <a name="other-control-structures-visual-basic"></a>Ostatní řídicí struktury (Visual Basic)
 Visual Basic poskytuje řídicí struktury, které vám pomůžou odstranění prostředku nebo snižte počet, kolikrát je potřeba ji opakovat odkaz na objekt.  

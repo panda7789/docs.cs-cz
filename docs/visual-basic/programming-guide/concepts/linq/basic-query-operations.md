@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
 ms.openlocfilehash: ed5ed56366911c3676c4413711207ac0a8f85765
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826194"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61925645"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Základní operace dotazů (Visual Basic)
 Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy v jazyce Visual Basic a některé typické druhy operací, které provedete v dotazu. Další informace naleznete v následujících tématech:  
@@ -81,7 +81,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  Pokud chcete vybrat více polí ze zdroje dat, máte dvě možnosti:  
   
--   V `Select` klauzule, určete pole, které chcete zahrnout do výsledku. Kompilátor bude definovat anonymní typ, který má tato pole jako její vlastnosti. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+- V `Select` klauzule, určete pole, které chcete zahrnout do výsledku. Kompilátor bude definovat anonymní typ, který má tato pole jako její vlastnosti. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
      Protože vrácených prvků v následujícím příkladu jsou instancemi anonymního typu, nelze odkazovat na typ podle názvu jinde ve vašem kódu. Název typu určen kompilátor obsahuje znaky, které nejsou platné v normální kódu jazyka Visual Basic. V následujícím příkladu elementů v kolekci, která je vrácena dotazem v `londonCusts4` jsou instancemi anonymního typu  
   
@@ -89,7 +89,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
      -nebo-  
   
--   Definování typu s názvem, který obsahuje konkrétní pole, které chcete zahrnout do výsledku a vytváření a inicializace instancí typu `Select` klauzuli. Tuto možnost použijte jenom v případě, že budete muset použít jednotlivé výsledky mimo kolekce, ve kterém jsou vráceny, nebo pokud musíte předat jako parametry volání metody. Typ `londonCusts5` v následujícím příkladu je IEnumerable (Of NamePhone).  
+- Definování typu s názvem, který obsahuje konkrétní pole, které chcete zahrnout do výsledku a vytváření a inicializace instancí typu `Select` klauzuli. Tuto možnost použijte jenom v případě, že budete muset použít jednotlivé výsledky mimo kolekce, ve kterém jsou vráceny, nebo pokud musíte předat jako parametry volání metody. Typ `londonCusts5` v následujícím příkladu je IEnumerable (Of NamePhone).  
   
      [!code-vb[VbLINQBasicOps#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#7)]  
   

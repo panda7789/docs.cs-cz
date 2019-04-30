@@ -14,11 +14,11 @@ ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cff235fe45c75fda51e04d5b0b54bb3ee03051b0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54654305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870146"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Model asynchronního programování (APM)
 Asynchronní operace, která používá <xref:System.IAsyncResult> vzoru návrhu je implementovaný jako dvě metody s názvem `BeginOperationName` a `EndOperationName` , začínat a končit asynchronní operace *OperationName* v uvedeném pořadí. Například <xref:System.IO.FileStream> třída poskytuje <xref:System.IO.FileStream.BeginRead%2A> a <xref:System.IO.FileStream.EndRead%2A> metody pro asynchronní čtení bajtů ze souboru. Tyto metody implementovat asynchronní verze <xref:System.IO.FileStream.Read%2A> metody.  
@@ -55,15 +55,15 @@ Asynchronní operace, která používá <xref:System.IAsyncResult> vzoru návrhu
   
  Vývojáři aplikací k dispozici několik možností návrhu pro přístup k výsledky asynchronní operace. Správný výběr závisí na tom, jestli má aplikace pokyny, které můžete provést při dokončení operace. Pokud aplikace nemůže provádět žádné další práce, dokud přijímá výsledky asynchronní operaci, musí aplikace blokovat, dokud výsledky jsou k dispozici. Blokovat, dokud se asynchronní operace skončí, můžete použít jednu z následujících postupů:  
   
--   Volání `EndOperationName` z hlavního vlákna aplikace, je blokování provádění aplikací, dokud nebude operace dokončena. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
+- Volání `EndOperationName` z hlavního vlákna aplikace, je blokování provádění aplikací, dokud nebude operace dokončena. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
   
--   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> k provádění aplikace bloku, dokud nebudou dokončeny jednu nebo více operací. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování aplikace spuštění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
+- Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> k provádění aplikace bloku, dokud nebudou dokončeny jednu nebo více operací. Příklad, který znázorňuje tuto techniku, naleznete v tématu [blokování aplikace spuštění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
   
  Aplikace, které není potřeba blokovat, zatímco se dokončují asynchronní operace můžete použít jednu z následujících postupů:  
   
--   Dotazování na provozní stav dokončení kontrolou <xref:System.IAsyncResult.IsCompleted%2A> vlastnost pravidelně a volání `EndOperationName` po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
+- Dotazování na provozní stav dokončení kontrolou <xref:System.IAsyncResult.IsCompleted%2A> vlastnost pravidelně a volání `EndOperationName` po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [dotazování na stav asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md).  
   
--   Použití <xref:System.AsyncCallback> delegáta určíte metodu má být volána po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
+- Použití <xref:System.AsyncCallback> delegáta určíte metodu má být volána po dokončení operace. Příklad, který znázorňuje tuto techniku, naleznete v tématu [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  
   
 ## <a name="see-also"></a>Viz také:
 

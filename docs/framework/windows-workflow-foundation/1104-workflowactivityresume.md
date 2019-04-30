@@ -1,33 +1,33 @@
 ---
-title: 1104 - WorkflowActivityResume
+title: 1104 – WorkflowActivityResume
 ms.date: 03/30/2017
 ms.assetid: 7fe95d1e-34bd-43ca-b92e-587d2d248fff
 ms.openlocfilehash: 4c9ae5fd386fc93ea19578097aa4e0afdda527e2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33511053"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924121"
 ---
-# <a name="1104---workflowactivityresume"></a>1104 - WorkflowActivityResume
+# <a name="1104---workflowactivityresume"></a>1104 – WorkflowActivityResume
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1104|  
-|Klíčová slova|WFRuntime|  
+|klíčová slova|WFRuntime|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že byl obnoven aktivit pracovního postupu.  
+ Označuje, že aktivita pracovního postupu byl obnoven.  
   
 ## <a name="message"></a>Zpráva  
- Instance pracovního postupu Id: '%1' E2E aktivity  
+ WorkflowInstance Id: '%1' aktivita E2E  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|WorkflowInstanceId|xs:String|Id instance pracovního postupu.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|WorkflowInstanceId|xs:string|Id instance pracovního postupu.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

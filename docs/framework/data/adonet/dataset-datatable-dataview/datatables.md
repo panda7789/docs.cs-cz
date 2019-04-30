@@ -3,11 +3,11 @@ title: Datové tabulky
 ms.date: 03/30/2017
 ms.assetid: 52ff0e32-3e5a-41de-9a3b-7b04ea52b83e
 ms.openlocfilehash: f6509400d7f6633749155f778e3ba58ec6c27ec2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879994"
 ---
 # <a name="datatables"></a>Datové tabulky
 A <xref:System.Data.DataSet> se skládá z kolekce tabulky, relace a omezení. V ADO.NET <xref:System.Data.DataTable> objekty se používají k vyjádření tabulky v **datovou sadu**. A **DataTable** představuje jedné tabulky v paměti relačních dat; je pro místní data. Aplikace založené na sítě, ve kterém se nachází, ale je možné importovat ze zdroje dat, jako je například Microsoft SQL serveru pomocí **DataAdapter** Další informace najdete v tématu [naplnění datové sady z adaptéru dat](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md) .  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f80d4327-b6a5-4aa8-a743-e95d09a2a02e
 ms.openlocfilehash: ed8071352902b8f97445cbfa5ff0ebe8fead9bb9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59163706"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903250"
 ---
 # <a name="how-to-call-user-defined-functions-inline"></a>Postupy: Volání uživatelem definovaných vložených funkcí
 I když bude možné volat vložené uživatelem definované funkce, funkce, které jsou zahrnuty v dotazu, jehož spuštění je odloženo nejsou udělat, dokud je dotaz proveden. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](~/docs/csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md).  

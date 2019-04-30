@@ -10,18 +10,18 @@ helpviewer_keywords:
 - Visual Basic code, operators
 ms.assetid: f760e828-8704-4256-bc2d-c22a4c93b524
 ms.openlocfilehash: dbb268175d197e7b931af45a98f3a273c593e5a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864374"
 ---
 # <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a>Postupy: Otestujte, zda jsou oba objekty stejné (Visual Basic)
 Pokud budete mít dvě proměnné, které odkazují na objekty, můžete použít buď `Is` nebo `IsNot` operátor nebo obojí, chcete-li zjistit, jestli se odkazují na stejnou instanci.  
   
 ### <a name="to-test-whether-two-objects-are-the-same"></a>K ověření, zda jsou dva objekty stejné  
   
--   Použití [je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) nebo [IsNot operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md) se dvěma proměnnými jako operandy.  
+- Použití [je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) nebo [IsNot operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md) se dvěma proměnnými jako operandy.  
   
      [!code-vb[VbVbalrOperators#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#69)]  
   

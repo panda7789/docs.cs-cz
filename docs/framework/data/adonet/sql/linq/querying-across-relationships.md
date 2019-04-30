@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 297878d0-685b-4c01-b2e0-9d731b7322bc
 ms.openlocfilehash: 2e1cf9efcf47fc70421c64541aead5fb36d8c9d1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61916770"
 ---
 # <a name="querying-across-relationships"></a>Dotazování napříč relacemi
 Odkazy na jiné objekty nebo kolekce jiných objektů ve svých definicích třídy přímo odpovídají vztahy cizího klíče v databázi. Tyto vztahy můžete použít při dotazování pomocí zápisu s tečkou pro přístup k vlastnosti relace a přejít z jednoho objektu na jiný. Tyto operace přístupu přeložit více komplexním spojením nebo korelační poddotazy v ekvivalentní SQL.  

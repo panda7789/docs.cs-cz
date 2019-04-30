@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics
 ms.assetid: 94084509-2c6f-477d-923b-d25d37a36b1c
 ms.openlocfilehash: fce756fc9c6a22372bd849c8bd60f0e416f3031e
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714321"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938187"
 ---
 # <a name="graphics-overview-windows-forms"></a>Přehled grafiky (Windows Forms)
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je Graphics Device Interface, která umožňuje programátorům vytvářet aplikace nezávislých na zařízení. Služby [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] jsou přístupné prostřednictvím sady spravované třídy.  

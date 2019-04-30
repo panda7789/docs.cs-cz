@@ -1,32 +1,32 @@
 ---
-title: 2023 - SendMessageChannelCacheMiss
+title: 2023 – SendMessageChannelCacheMiss
 ms.date: 03/30/2017
 ms.assetid: 93b5f0fa-c09e-4252-91b1-898ead4d0f2d
 ms.openlocfilehash: 203a67e4ea939423ebf28941001650e8bc8a60fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33510403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923783"
 ---
-# <a name="2023---sendmessagechannelcachemiss"></a>2023 - SendMessageChannelCacheMiss
+# <a name="2023---sendmessagechannelcachemiss"></a>2023 – SendMessageChannelCacheMiss
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|2023|  
-|Klíčová slova|WFRuntime|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFRuntime|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje k neúspěšnému přístupu do mezipaměti v SendMessageChannelCache.  
+ Označuje neúspěšnému přístupu do mezipaměti v SendMessageChannelCache.  
   
 ## <a name="message"></a>Zpráva  
- Neúspěšný přístup do SendMessageChannelCache  
+ V mezipaměti sendmessagechannelcache  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

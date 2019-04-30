@@ -5,20 +5,20 @@ helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
 ms.openlocfilehash: 54a1c8e06991729ea8556d82d31897c522f6d173
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59188718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923237"
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:  
   
--   Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, což je kontejner, který vyplnit elementů vazby. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, ať už prostřednictvím kódu programu nebo v konfiguraci application souboru. Chcete-li použít prvek vazby z konfiguračního souboru aplikace, musíte rozšířit element vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Další informace o vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
+- Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, což je kontejner, který vyplnit elementů vazby. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, ať už prostřednictvím kódu programu nebo v konfiguraci application souboru. Chcete-li použít prvek vazby z konfiguračního souboru aplikace, musíte rozšířit element vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Další informace o vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
   
--   Můžete vytvořit třídu, která je odvozena od standardní vazbu. Například lze odvodit třídu z <xref:System.ServiceModel.WSHttpBinding> a přepsat <xref:System.ServiceModel.Channels.CustomBinding.CreateBindingElements%2A> metodou získat elementy vazby a vložit vlastní prvek vazby nebo vytvoření určitou hodnotu pro zabezpečení.  
+- Můžete vytvořit třídu, která je odvozena od standardní vazbu. Například lze odvodit třídu z <xref:System.ServiceModel.WSHttpBinding> a přepsat <xref:System.ServiceModel.Channels.CustomBinding.CreateBindingElements%2A> metodou získat elementy vazby a vložit vlastní prvek vazby nebo vytvoření určitou hodnotu pro zabezpečení.  
   
--   Můžete vytvořit nový <xref:System.ServiceModel.Channels.Binding> typ úplnou kontrolu nad implementace celé vazby.  
+- Můžete vytvořit nový <xref:System.ServiceModel.Channels.Binding> typ úplnou kontrolu nad implementace celé vazby.  
   
 ## <a name="the-order-of-binding-elements"></a>Pořadí elementů vazby  
  Každý prvek vazby představuje krok zpracování při odesílání nebo přijímání zpráv. Za běhu elementy vazby vytvořte kanály a naslouchací procesy potřebné k vývoji odchozí a příchozí zásobníky kanálu.  

@@ -5,11 +5,11 @@ ms.assetid: ca87fefb-7144-4b4e-8832-5a939adbb4b2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 575d77524e567ba55f7cd9222d690fcee25d3f20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871355"
 ---
 # <a name="mitigation-png-frames-in-icon-objects"></a>Omezení rizik: PNG rámce v objektech ikonu
 Od verze rozhraní .NET Framework 4.6 <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> metoda úspěšně převede ikony PNG snímky do <xref:System.Drawing.Bitmap> objekty.  

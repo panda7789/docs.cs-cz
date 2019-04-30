@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 5c5450ea-6af1-4b75-a267-613d0ac54707
 ms.openlocfilehash: 9fa6e4114e9579079705700708840f2814b03b99
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935496"
 ---
 # <a name="specifying-service-run-time-behavior"></a>Určování chování služby za běhu
 Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)) a implementovat vaše smlouva na služby ([implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)) můžete nakonfigurovat chování operace služby modulu runtime. Toto téma popisuje poskytované systémem služby a operace chování a popisuje, kde najdete další informace k vytvoření nové chování. Některá chování se použijí jako atributy, mnoho se aplikují pomocí konfiguračního souboru aplikace nebo prostřednictvím kódu programu. Další informace o konfiguraci aplikace služby, najdete v části [konfigurace služby](../../../docs/framework/wcf/configuring-services.md).  
@@ -27,25 +27,25 @@ Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../.
 ## <a name="servicebehaviorattribute-and-operationbehaviorattribute"></a>Atribut ServiceBehaviorAttribute a OperationBehaviorAttribute  
  Jsou nejdůležitějšího chování <xref:System.ServiceModel.ServiceBehaviorAttribute> a <xref:System.ServiceModel.OperationBehaviorAttribute> atributy, které můžete použít k řízení:  
   
--   Životnost instance  
+- Životnost instance  
   
--   Podpora souběžnosti a synchronizace  
+- Podpora souběžnosti a synchronizace  
   
--   Konfigurace chování  
+- Konfigurace chování  
   
--   Chování při transakci  
+- Chování při transakci  
   
--   Chování serializace  
+- Chování serializace  
   
--   Metadata transformace  
+- Metadata transformace  
   
--   Životnost relace  
+- Životnost relace  
   
--   Filtrování adres a zpracování záhlaví  
+- Filtrování adres a zpracování záhlaví  
   
--   Zosobnění  
+- Zosobnění  
   
--   Pokud chcete použít tyto atributy, označit jako vhodný pro daný rozsah implementace služby nebo operaci s atributem a nastavte vlastnosti. Například následující příklad kódu ukazuje implementaci operace, která používá <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A?displayProperty=nameWithType> vlastnost tak, aby vyžadovala, že volající tuto operaci podporují zosobnění.  
+- Pokud chcete použít tyto atributy, označit jako vhodný pro daný rozsah implementace služby nebo operaci s atributem a nastavte vlastnosti. Například následující příklad kódu ukazuje implementaci operace, která používá <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A?displayProperty=nameWithType> vlastnost tak, aby vyžadovala, že volající tuto operaci podporují zosobnění.  
   
  [!code-csharp[OperationBehaviorAttribute_Impersonation#1](../../../samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_impersonation/cs/services.cs#1)]
  [!code-vb[OperationBehaviorAttribute_Impersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_impersonation/vb/services.vb#1)]  
@@ -77,36 +77,36 @@ Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../.
 ### <a name="service-behaviors"></a>Chování služby  
  Následující chování pracovat na služby.  
   
--   <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF k označení, zda je možné spustit tuto službu v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] režim kompatibility.  
+- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>. U služby WCF k označení, zda je možné spustit tuto službu v [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] režim kompatibility.  
   
--   <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Určuje, jak služba autorizuje deklarace identity klienta.  
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Určuje, jak služba autorizuje deklarace identity klienta.  
   
--   <xref:System.ServiceModel.Description.ServiceCredentials>. Nakonfiguruje přihlašovacích údajů pro služby. Tato třída slouží k zadání přihlašovacích údajů pro službu, jako je například certifikát X.509.  
+- <xref:System.ServiceModel.Description.ServiceCredentials>. Nakonfiguruje přihlašovacích údajů pro služby. Tato třída slouží k zadání přihlašovacích údajů pro službu, jako je například certifikát X.509.  
   
--   <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a pomoct informace o funkcích služby WCF.  
+- <xref:System.ServiceModel.Description.ServiceDebugBehavior>. Povolí ladění a pomoct informace o funkcích služby WCF.  
   
--   <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Určuje zveřejnění metadat služby a související informace.  
+- <xref:System.ServiceModel.Description.ServiceMetadataBehavior>. Určuje zveřejnění metadat služby a související informace.  
   
--   <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>. Určuje chování auditování událostí zabezpečení.  
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>. Určuje chování auditování událostí zabezpečení.  
   
--   <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>. Konfiguruje nastavení propustnosti za běhu, které vám umožní optimalizovat výkon služby.  
+- <xref:System.ServiceModel.Description.ServiceThrottlingBehavior>. Konfiguruje nastavení propustnosti za běhu, které vám umožní optimalizovat výkon služby.  
   
 ### <a name="endpoint-behaviors"></a>Chování koncového bodu  
  Následující chování provoz na koncové body. Mnoho z těchto projevů se používají v klientských aplikacích.  
   
--   <xref:System.ServiceModel.CallbackBehaviorAttribute>. Nakonfiguruje implementaci zpětného volání služby v duplexním klientské aplikace.  
+- <xref:System.ServiceModel.CallbackBehaviorAttribute>. Nakonfiguruje implementaci zpětného volání služby v duplexním klientské aplikace.  
   
--   <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povolí ladění služby WCF objekt zpětného volání.  
+- <xref:System.ServiceModel.Description.CallbackDebugBehavior>. Povolí ladění služby WCF objekt zpětného volání.  
   
--   <xref:System.ServiceModel.Description.ClientCredentials>. Umožňuje uživateli konfigurovat přihlašovací údaje klienta a služby, stejně jako nastavení ověřování přihlašovacích údajů pro použití v klientovi služby.  
+- <xref:System.ServiceModel.Description.ClientCredentials>. Umožňuje uživateli konfigurovat přihlašovací údaje klienta a služby, stejně jako nastavení ověřování přihlašovacích údajů pro použití v klientovi služby.  
   
--   <xref:System.ServiceModel.Description.ClientViaBehavior>. Používají klienti k určení identifikátor URI (Uniform Resource) pro který by měl být vytvořen přenosový kanál.  
+- <xref:System.ServiceModel.Description.ClientViaBehavior>. Používají klienti k určení identifikátor URI (Uniform Resource) pro který by měl být vytvořen přenosový kanál.  
   
--   <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Dává pokyn WCF zakázat `MustUnderstand` zpracování.  
+- <xref:System.ServiceModel.Description.MustUnderstandBehavior>. Dává pokyn WCF zakázat `MustUnderstand` zpracování.  
   
--   <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. Dá pokyn modulu runtime pomocí synchronního přijímat proces pro kanály.  
+- <xref:System.ServiceModel.Description.SynchronousReceiveBehavior>. Dá pokyn modulu runtime pomocí synchronního přijímat proces pro kanály.  
   
--   <xref:System.ServiceModel.Description.TransactedBatchingBehavior>. Optimalizuje operace příjmu pro přenosy, které obdrží podporu transakcí.  
+- <xref:System.ServiceModel.Description.TransactedBatchingBehavior>. Optimalizuje operace příjmu pro přenosy, které obdrží podporu transakcí.  
   
 ### <a name="contract-behaviors"></a>Chování kontraktu  
  <xref:System.ServiceModel.DeliveryRequirementsAttribute>. Určuje požadavky na funkce, které vazby musí poskytnout implementaci služby ani klienta.  
@@ -114,11 +114,11 @@ Jakmile jste vytvořili kontrakt služby ([navrhování kontraktů služby](../.
 ### <a name="operation-behaviors"></a>Chování operace  
  Následující operace chování zadejte ovládací prvky pro operace serializace a transakce.  
   
--   <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Reprezentuje chování za běhu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.  
+- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>. Reprezentuje chování za běhu <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType>.  
   
--   <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>. Řídí chování za běhu `XmlSerializer` a přidruží ji k operaci.  
+- <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>. Řídí chování za běhu `XmlSerializer` a přidruží ji k operaci.  
   
--   <xref:System.ServiceModel.TransactionFlowAttribute>. Určuje úroveň, ve kterém přijímá operace služby záhlaví transakce.  
+- <xref:System.ServiceModel.TransactionFlowAttribute>. Určuje úroveň, ve kterém přijímá operace služby záhlaví transakce.  
   
 ## <a name="see-also"></a>Viz také:
 

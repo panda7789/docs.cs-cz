@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eca4b66a3f7c1a96bb06827dde477f34cb904ba3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906240"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags – výčet
 Obsahuje hodnoty, které popisují metadata u sestavení.  

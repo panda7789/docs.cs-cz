@@ -7,20 +7,20 @@ helpviewer_keywords:
 - designer actions
 ms.assetid: cac337e6-00f6-4584-80f4-75728f5ea113
 ms.openlocfilehash: a93402be30cb461ac6a0ed9daa4a684598a85da1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932597"
 ---
 # <a name="walkthrough-performing-common-tasks-using-smart-tags-on-windows-forms-controls"></a>Návod: Provádění obecných úloh pomocí inteligentních značek v ovládacích prvcích Windows Forms
 Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existují mnoho úloh, které budete opakovaně provádět. Toto jsou některé běžně prováděné úlohy, které se zobrazí:  
   
--   Přidání nebo odebrání kartu na <xref:System.Windows.Forms.TabControl>.  
+- Přidání nebo odebrání kartu na <xref:System.Windows.Forms.TabControl>.  
   
--   Ukotvení ovládacího prvku k nadřazené úloze.  
+- Ukotvení ovládacího prvku k nadřazené úloze.  
   
--   Změna orientace <xref:System.Windows.Forms.SplitContainer> ovládacího prvku.  
+- Změna orientace <xref:System.Windows.Forms.SplitContainer> ovládacího prvku.  
   
  Mnoho ovládacích prvků pro rychlejší vývoj, nabízí inteligentní značky, které jsou kontextové nabídky, které umožňují provádět běžné úkoly, jako jsou tyto jedním gestem v době návrhu. Tyto úlohy se nazývají *smart-tag příkazy*.  
   
@@ -28,11 +28,11 @@ Jak vytvořit formuláře a ovládací prvky pro aplikace Windows Forms, existuj
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření projektu Windows Forms  
+- Vytvoření projektu Windows Forms  
   
--   Pomocí inteligentních značek  
+- Pomocí inteligentních značek  
   
--   Povolení a zakázání inteligentní značky  
+- Povolení a zakázání inteligentní značky  
   
  Až budete hotovi, budete mít znalosti o úloze, kterou tyto funkce důležité rozložení.  
   

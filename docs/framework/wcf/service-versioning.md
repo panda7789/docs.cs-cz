@@ -3,11 +3,11 @@ title: Verze služby
 ms.date: 03/30/2017
 ms.assetid: 37575ead-d820-4a67-8059-da11a2ab48e2
 ms.openlocfilehash: 27d54cdf6f49bd9433f43290c97706af81d98b6b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122405"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949783"
 ---
 # <a name="service-versioning"></a>Verze služby
 Po počátečním nasazení a potenciálně několikrát během jejich životního cyklu služeb (a koncové body, které, která zpřístupňují) potřebovat změnit pro celou řadu důvodů, jako je například změna obchodních potřeb, požadavků informačních technologií, nebo jiné řešení problémy. Každá změna zavádí novou verzi služby. Toto téma vysvětluje, jak vzít v úvahu správy verzí Windows Communication Foundation (WCF).  
@@ -15,13 +15,13 @@ Po počátečním nasazení a potenciálně několikrát během jejich životní
 ## <a name="four-categories-of-service-changes"></a>Čtyři kategorie změny služby  
  Změny služeb, které může být vyžadováno, je možné rozdělit do čtyř kategorií:  
   
--   Změny smlouvy: Například operace, které mohou být přidány nebo datový prvek ve zprávě mohou přidat nebo změnit.  
+- Změny smlouvy: Například operace, které mohou být přidány nebo datový prvek ve zprávě mohou přidat nebo změnit.  
   
--   Vyřešení změn: Například služba přesune do jiného umístění, kde mají nové adresy koncových bodů.  
+- Vyřešení změn: Například služba přesune do jiného umístění, kde mají nové adresy koncových bodů.  
   
--   Vazba změny: Třeba změny zabezpečení mechanismus nebo změnit její nastavení.  
+- Vazba změny: Třeba změny zabezpečení mechanismus nebo změnit její nastavení.  
   
--   Provádění změn: Například interní metoda implementaci změny.  
+- Provádění změn: Například interní metoda implementaci změny.  
   
  Některé z těchto změn se používá označení "slov" a jiné jsou "Pevná". Změna je *pevná* Pokud jsou v nové verzi úspěšně zpracovala všechny zprávy, které by byly zpracovány úspěšně v předchozí verzi. Je každá změna, která splňuje toto kritérium *zásadní* změnit.  
   
@@ -43,9 +43,9 @@ Po počátečním nasazení a potenciálně několikrát během jejich životní
 ### <a name="strict-versioning"></a>Striktní správy verzí  
  V mnoha situacích při změně verze představuje problém, vývojářské služby nemá kontrolu nad klienty a proto nelze vytvářet předpoklady o tom, jak bude reagovat na změny ve zprávě, XML nebo schéma. V těchto případech je nutné zaručit, že nové zprávy budou ověřovat proti staré schématu dvou důvodů:  
   
--   Staré klienty byly vyvinuty s předpokladem, že nedojde ke změně schématu. Nemusí se jim podařit zpracovávat zprávy, které nikdy byly navrženy pro.  
+- Staré klienty byly vyvinuty s předpokladem, že nedojde ke změně schématu. Nemusí se jim podařit zpracovávat zprávy, které nikdy byly navrženy pro.  
   
--   Staré klienti mohou provádět ověřování skutečné schématu pro staré schématu před i pokusem o zpracování zpráv.  
+- Staré klienti mohou provádět ověřování skutečné schématu pro staré schématu před i pokusem o zpracování zpráv.  
   
  V takových scénářích doporučuje považovat za stávající smlouvy dat neměnné a vytvořit nové jedinečné XML kvalifikované názvy. Vývojářem služeb by pak přidejte nové metody do existující kontrakt služby nebo vytvořit nové kontrakt služby s metodami, které používají nové smlouvy data.  
   
@@ -63,9 +63,9 @@ Po počátečním nasazení a potenciálně několikrát během jejich životní
 ### <a name="distinguishing-between-data-contract-and-net-types"></a>Rozlišování mezi typy rozhraní .NET a kontrakt dat  
  .NET třídy nebo struktury je možné promítnout jako smlouvy dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> atribut třídy. Typ formátu .NET a jeho projekce kontraktu dat jsou dvě různé důležité. Je možné mít více typů .NET s stejný kontrakt projekce data. Tento rozdíl je zvláště užitečná v umožňuje změnit typ formátu .NET při zachování kontraktu předpokládané dat, a tím zachování kompatibility se stávající klienty i v tom smyslu striktní slova. Existují dvě věci, které byste měli dělat vždy zachovat tento rozdíl mezi .NET typu a data smlouvy:  
   
--   Zadejte <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> a <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>. By měl vždycky zadat název a obor názvů váš kontraktu dat. aby typ formátu .NET název a obor názvů z vystaven kontrakt. Tímto způsobem, pokud se později rozhodnete změnit obor názvů .NET nebo zadejte název, kontrakt dat zůstává stejná.  
+- Zadejte <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> a <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>. By měl vždycky zadat název a obor názvů váš kontraktu dat. aby typ formátu .NET název a obor názvů z vystaven kontrakt. Tímto způsobem, pokud se později rozhodnete změnit obor názvů .NET nebo zadejte název, kontrakt dat zůstává stejná.  
   
--   Zadejte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>. By měl vždy zadejte název vaší datové členy zabránit vystaven kontrakt jména člena rozhraní .NET. Tímto způsobem, pokud se později rozhodnete, chcete-li změnit .NET název členu, váš kontraktu dat zůstává stejná.  
+- Zadejte <xref:System.Runtime.Serialization.DataMemberAttribute.Name%2A>. By měl vždy zadejte název vaší datové členy zabránit vystaven kontrakt jména člena rozhraní .NET. Tímto způsobem, pokud se později rozhodnete, chcete-li změnit .NET název členu, váš kontraktu dat zůstává stejná.  
   
 ### <a name="changing-or-removing-members"></a>Změna nebo odebrání členů  
  Změna názvu nebo data typu člena nebo odebrání datových členů je k zásadní změně i v případě, že lax správy verzí je povolen. Pokud je to nutné, vytvořte nové smlouvy data.  

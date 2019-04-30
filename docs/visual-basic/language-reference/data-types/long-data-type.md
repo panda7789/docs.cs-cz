@@ -21,11 +21,11 @@ helpviewer_keywords:
 - Long data type
 ms.assetid: b4770c34-1804-4f8c-b512-c10b0893e516
 ms.openlocfilehash: ca0f95342783d22559761294ccea6056cd3e4fa7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54641977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918447"
 ---
 # <a name="long-data-type-visual-basic"></a>Long – datový typ (Visual Basic)
 
@@ -68,13 +68,13 @@ Dim number = &H_0FAC_0326_1489_D68CL
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, nezapomeňte, že `Long` má v jiných prostředích odlišnou datovou šířku (32bitová verze). Pokud takové součásti předáváte 32-bit argument, deklarujte ho jako `Integer` místo `Long` v váš nový kód jazyka Visual Basic.  
+- **Spolupráce aspekty.** Při vzájemném propojování součástí, které nejsou napsané pro rozhraní .NET Framework, například objekty automatizace nebo COM, nezapomeňte, že `Long` má v jiných prostředích odlišnou datovou šířku (32bitová verze). Pokud takové součásti předáváte 32-bit argument, deklarujte ho jako `Integer` místo `Long` v váš nový kód jazyka Visual Basic.  
   
--   **Rozšíření.** `Long` Datový typ rozšiřuje na `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Long` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Rozšíření.** `Long` Datový typ rozšiřuje na `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Long` na některý z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
   
--   **Znaky typu.** Přidávání znak typu literálu `L` k literálu se z něj stane `Long` datového typu. Přidávání znak typu identifikátoru `&` k libovolnému identifikátoru se z něj stane `Long`.  
+- **Znaky typu.** Přidávání znak typu literálu `L` k literálu se z něj stane `Long` datového typu. Přidávání znak typu identifikátoru `&` k libovolnému identifikátoru se z něj stane `Long`.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int64?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Int64?displayProperty=nameWithType> struktury.  
 
 ## <a name="see-also"></a>Viz také:
 

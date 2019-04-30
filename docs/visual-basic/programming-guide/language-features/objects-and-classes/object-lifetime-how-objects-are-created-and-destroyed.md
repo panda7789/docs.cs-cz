@@ -23,11 +23,11 @@ helpviewer_keywords:
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
 ms.openlocfilehash: 553868ae82501e479acadd04b3d5e4447bcea36e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61867133"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
@@ -84,13 +84,13 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
 ### <a name="implementing-idisposable"></a>Implementace rozhraní IDisposable  
  Třídu, která implementuje <xref:System.IDisposable> rozhraní by měl obsahovat tyto části kódu:  
   
--   Pole pro udržování přehledu o, zda byl uvolněn objekt:  
+- Pole pro udržování přehledu o, zda byl uvolněn objekt:  
   
     ```  
     Protected disposed As Boolean = False  
     ```  
   
--   Přetížení <xref:System.IDisposable.Dispose%2A> , který uvolní prostředky třídy. Tato metoda by měla být volány <xref:System.IDisposable.Dispose%2A> a `Finalize` metody základní třídy:  
+- Přetížení <xref:System.IDisposable.Dispose%2A> , který uvolní prostředky třídy. Tato metoda by měla být volány <xref:System.IDisposable.Dispose%2A> a `Finalize` metody základní třídy:  
   
     ```  
     Protected Overridable Sub Dispose(ByVal disposing As Boolean)  
@@ -104,7 +104,7 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
     End Sub  
     ```  
   
--   Implementace <xref:System.IDisposable.Dispose%2A> , který obsahuje pouze následující kód:  
+- Implementace <xref:System.IDisposable.Dispose%2A> , který obsahuje pouze následující kód:  
   
     ```  
     Public Sub Dispose() Implements IDisposable.Dispose  
@@ -113,7 +113,7 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
     End Sub  
     ```  
   
--   Přepsání `Finalize` metodu, která obsahuje pouze následující kód:  
+- Přepsání `Finalize` metodu, která obsahuje pouze následující kód:  
   
     ```  
     Protected Overrides Sub Finalize()  

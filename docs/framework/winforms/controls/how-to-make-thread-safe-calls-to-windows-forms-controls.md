@@ -16,11 +16,11 @@ helpviewer_keywords:
 - controls [Windows Forms], multithreading
 ms.assetid: 138f38b6-1099-4fd5-910c-390b41cbad35
 ms.openlocfilehash: 3211df1f0e585780039471b80b5b913613ad9bbd
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57714005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913793"
 ---
 # <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: Volání bezpečné pro vlákna ovládacích prvků Windows Forms
 

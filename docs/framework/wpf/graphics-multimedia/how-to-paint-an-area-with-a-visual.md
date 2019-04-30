@@ -10,11 +10,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with visuals
 ms.assetid: 35f92996-1d03-4542-acc4-3469dcf09492
 ms.openlocfilehash: b5376085dc36549cd2d3d72835ec291454124267
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59153449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921703"
 ---
 # <a name="how-to-paint-an-area-with-a-visual"></a>Postupy: Vykreslení vizuálního objektu v oblasti
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.VisualBrush> třídu pro vykreslení oblasti <xref:System.Windows.Media.Visual>.  

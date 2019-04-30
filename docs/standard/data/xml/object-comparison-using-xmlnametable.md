@@ -9,11 +9,11 @@ ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 814f5434dd0473b3b1dd613a2eba14a828c464d9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936705"
 ---
 # <a name="object-comparison-using-xmlnametable"></a>Porovnání objektů pomocí XmlNameTable
 **XmlDocuments**, při vytvoření, máte název tabulky vytvořené speciálně pro tento dokument. Při načtení do dokumentu XML nebo nové elementy nebo atributy vytvořené, názvy atributů a element jsou vloženy do **XmlNameTable**. Můžete taky vytvořit **XmlDocument** použití stávající **tabulky názvů** z jiného dokumentu. Při **XmlDocuments** jsou vytvořeny pomocí konstruktoru, který přebírá **XmlNameTable** parametr, dokument má přístup k uzlu názvy, obory názvů a předpony, které už jsou uložené ve  **XmlNameTable**. Bez ohledu na to, jak načíst název tabulky s názvy, jakmile se názvy jsou uložené v tabulce, názvy mohou být porovnány rychle pomocí objektu porovnání namísto porovnání řetězců. Řetězce můžete také přidat pomocí názvu tabulky <xref:System.Xml.NameTable.Add%2A>. Následující příklad kódu ukazuje řetězec a název tabulky vytváří **MyString** přidávají do tabulky. Potom **třídou XMLDocument nastavenou na** je vytvořený pomocí tabulky a názvy prvků a atributů v **Myfile.xml** jsou přidány do existující název tabulky.  

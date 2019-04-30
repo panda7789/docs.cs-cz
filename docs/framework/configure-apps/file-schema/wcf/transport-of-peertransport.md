@@ -3,11 +3,11 @@ title: <transport> z <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: d7116240-845c-4b6f-b203-262de6b597ef
 ms.openlocfilehash: 9b6f548515afbba5068659bd5c6f7f2b33f80cda
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788281"
 ---
 # <a name="transport-of-peertransport"></a>\<přenos > z \<peerTransport >
 Určuje typ spojení na zabezpečené zprávy odeslané partnerské uzly, které jsou konfigurovány pomocí této vazby.  
@@ -39,7 +39,7 @@ Určuje typ spojení na zabezpečené zprávy odeslané partnerské uzly, které
   
 ## <a name="credentialtype-attribute"></a>credentialType atribut  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |Certifikát|Ověřování rovnocenný kanál přenos vyžaduje x X509 certifikátu.|  
 |Heslo|Ověřování rovnocenný kanál přenos vyžaduje správné heslo.|  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
 ms.openlocfilehash: dbffe2bd196e798b90104aebb74269387660c794
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840455"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918200"
 ---
 # <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>Non-kompatibilní se Specifikací CLS \<membername > není povolené v rozhraní kompatibilním se Specifikací CLS
 Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(True)>` samotným rozhraním, když je označena jako `<CLSCompliant(False)>` nebo není označen.  
@@ -29,11 +29,11 @@ Vlastnost, procedura nebo událost v rozhraní je označen jako `<CLSCompliant(T
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud se vyžadovat dodržování specifikace CLS a máte kontrolu nad rozhraní zdrojového kódu, označte rozhraní jako `<CLSCompliant(True)>` Pokud všechny její členy jsou kompatibilní.  
+- Pokud se vyžadovat dodržování specifikace CLS a máte kontrolu nad rozhraní zdrojového kódu, označte rozhraní jako `<CLSCompliant(True)>` Pokud všechny její členy jsou kompatibilní.  
   
--   Pokud vyžadovat dodržování specifikace CLS a nemáte kontrolu nad rozhraní zdrojového kódu, nebo pokud nesplňuje, aby vyhovovala, definujte tohoto člena v rámci jiné rozhraní.  
+- Pokud vyžadovat dodržování specifikace CLS a nemáte kontrolu nad rozhraní zdrojového kódu, nebo pokud nesplňuje, aby vyhovovala, definujte tohoto člena v rámci jiné rozhraní.  
   
--   Pokud budete vyžadovat, že tento člen zůstat v rámci svého aktuálního rozhraní, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  
+- Pokud budete vyžadovat, že tento člen zůstat v rámci svého aktuálního rozhraní, odeberte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
 ms.openlocfilehash: 641edd2d0e0dde5f509c8fa77ccf65358fa76a31
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920111"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
 Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento postup slouží jako počáteční bod a celkové ovládání aplikace. Volání rozhraní .NET Framework vaší `Main` procedury při načtení aplikace a je připravený k předá řízení. Pokud vytváříte aplikace modelu Windows Forms, je nutné napsat `Main` postup pro aplikace, které běží na své vlastní.  
@@ -23,11 +23,11 @@ Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento post
 ## <a name="requirements-for-the-main-procedure"></a>Požadavky pro hlavní procedury  
  Musí obsahovat soubor, který běží na své vlastní (obvykle s příponou .exe) `Main` postup. Nespouští svůj vlastní knihovny (například s příponou .dll) a nevyžaduje, aby `Main` postup. Požadavky pro jiné typy projektů, že které lze vytvořit jsou následující:  
   
--   Konzolová aplikace spouští své vlastní, a je nutné zadat alespoň jeden `Main` postup. .  
+- Konzolová aplikace spouští své vlastní, a je nutné zadat alespoň jeden `Main` postup. .  
   
--   Spustit na své vlastní aplikace Windows Forms. Však automaticky generuje kompilátor jazyka Visual Basic `Main` postup uvedený v takové aplikace a není nutné napsat jednu.  
+- Spustit na své vlastní aplikace Windows Forms. Však automaticky generuje kompilátor jazyka Visual Basic `Main` postup uvedený v takové aplikace a není nutné napsat jednu.  
   
--   Knihovny tříd nevyžadují, aby `Main` postup. Patří mezi ně ovládacího prvku knihovny Windows a knihovny webových ovládacích prvků. Webové aplikace jsou nasazeny jako knihoven tříd.  
+- Knihovny tříd nevyžadují, aby `Main` postup. Patří mezi ně ovládacího prvku knihovny Windows a knihovny webových ovládacích prvků. Webové aplikace jsou nasazeny jako knihoven tříd.  
   
 ## <a name="declaring-the-main-procedure"></a>Deklarace hlavní procedury  
  Existují čtyři způsoby, jak deklarovat `Main` postup. Můžete převzít argumenty nebo Ne, a může vrátit hodnotu či nikoli.  
@@ -35,7 +35,7 @@ Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento post
 > [!NOTE]
 >  Pokud deklarujete `Main` ve třídě, je nutné použít `Shared` – klíčové slovo. V modulu `Main` nemusí být `Shared`.  
   
--   Nejjednodušší způsob je deklarovat `Sub` proceduru, která přijímají argumenty nebo vracet hodnotu.  
+- Nejjednodušší způsob je deklarovat `Sub` proceduru, která přijímají argumenty nebo vracet hodnotu.  
   
     ```  
     Module mainModule  
@@ -47,7 +47,7 @@ Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento post
     End Module  
     ```  
   
--   `Main` Můžete také vrátit `Integer` hodnotu, která používá operační systém jako ukončovací kód pro váš program. Další programy můžete otestovat tento kód tím, že kontroluje hodnotu Windows. Pokud chcete vrátit ukončovací kód, je třeba deklarovat `Main` jako `Function` postupu namísto `Sub` postup.  
+- `Main` Můžete také vrátit `Integer` hodnotu, která používá operační systém jako ukončovací kód pro váš program. Další programy můžete otestovat tento kód tím, že kontroluje hodnotu Windows. Pokud chcete vrátit ukončovací kód, je třeba deklarovat `Main` jako `Function` postupu namísto `Sub` postup.  
   
     ```  
     Module mainModule  
@@ -64,7 +64,7 @@ Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento post
     End Module  
     ```  
   
--   `Main` Můžete taky využít `String` pole jako argument. Každý řetězec v poli obsahuje jeden z argumentů příkazového řádku použít k vyvolání programu. Můžete provádět různé akce v závislosti na jejich hodnoty.  
+- `Main` Můžete taky využít `String` pole jako argument. Každý řetězec v poli obsahuje jeden z argumentů příkazového řádku použít k vyvolání programu. Můžete provádět různé akce v závislosti na jejich hodnoty.  
   
     ```  
     Module mainModule  
@@ -88,7 +88,7 @@ Každá aplikace Visual Basic musí obsahovat proceduru volá `Main`. Tento post
     End Module  
     ```  
   
--   Je možné deklarovat `Main` Zkontrolujte argumenty příkazového řádku, ale nevrátí ukončovací kód, následujícím způsobem.  
+- Je možné deklarovat `Main` Zkontrolujte argumenty příkazového řádku, ale nevrátí ukončovací kód, následujícím způsobem.  
   
     ```  
     Module mainModule  

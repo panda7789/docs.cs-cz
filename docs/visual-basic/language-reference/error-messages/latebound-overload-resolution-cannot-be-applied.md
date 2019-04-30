@@ -9,11 +9,11 @@ helpviewer_keywords:
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
 ms.openlocfilehash: 7f2ae3bb0e7c09d966c53fb17b1cbe675dfce8b9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921105"
 ---
 # <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>Přetížení rozpoznání s pozdní vazbou nelze použít pro '\<název_procedury >' protože přistupující instance je typu rozhraní
 Kompilátor se pokouší rozpoznat odkaz na přetížená vlastnost nebo procedura, ale odkaz se nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Argument vynutí, aby kompilátor přeložit odkaz na jako s pozdní vazbou.  
@@ -24,7 +24,7 @@ Kompilátor se pokouší rozpoznat odkaz na přetížená vlastnost nebo procedu
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Použití `CType` přetypovat argument od `Object` na typ určený signatura přetížení, které chcete volat.  
+- Použití `CType` přetypovat argument od `Object` na typ určený signatura přetížení, které chcete volat.  
   
      Mějte na paměti, že to nepomůže objekt přetypujte na odkazující na základní rozhraní. Musíte přetypovat argument lze vyvarovat této chyby.  
   

@@ -3,11 +3,11 @@ title: Metody System.Object
 ms.date: 03/30/2017
 ms.assetid: 5397fca0-689e-443e-802f-e1cbdc866427
 ms.openlocfilehash: 3a52f081f1c0c6e6c5218550009c736d0ed60514
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61917659"
 ---
 # <a name="systemobject-methods"></a>Metody System.Object
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje následující <xref:System.Object> metody.  

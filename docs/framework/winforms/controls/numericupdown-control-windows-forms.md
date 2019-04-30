@@ -10,11 +10,11 @@ helpviewer_keywords:
 - NumericUpDown control [Windows Forms]
 ms.assetid: 32b0c20d-4f37-4aea-873d-faded741d2db
 ms.openlocfilehash: 47aff0ae4d75ef83fd72bc0dc381963a7b496ec6
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61806558"
 ---
 # <a name="numericupdown-control-windows-forms"></a>NumericUpDown – ovládací prvek (Windows Forms)
 Windows Forms `NumericUpDown` ovládací prvek vypadá jako kombinace textové pole a dvojice šipek, které může uživatel kliknout na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu nabízených možností. Uživatel může zvýšit a snížit počet klepáním na tlačítka, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla. Kliknutím na klávesu šipka nahoru přesune hodnotu směrem k jeho maximální; Kliknutím na klávesu šipka dolů přesune na minimum. Je například tento druh ovládacího prvku při kterých může být užitečné pro ovládání hlasitosti na hudební přehrávač. Číselné ovládací prvky typu obousměrný číselník se používají v některých aplikacích ovládacího panelu Windows.  

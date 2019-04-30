@@ -5,11 +5,11 @@ ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 06e07c41d398c0792094b4481a38c69b2ba73004
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59208277"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866779"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Výjimky za běhu v nativních aplikací .NET
 Je důležité, otestovat buildy vydaných verzí vaší aplikace pro univerzální platformu Windows na jejich cílové platformy, protože jsou zcela odlišná konfigurace debug a release. Ve výchozím nastavení konfiguraci ladění používá modul runtime .NET Core pro kompilaci aplikace ale konfiguraci vydané verze používá .NET Native pro kompilaci aplikace do nativního kódu.  
@@ -24,11 +24,11 @@ Je důležité, otestovat buildy vydaných verzí vaší aplikace pro univerzál
   
  Při ladění buildů vydaných verzí, které jsou kompilovány pomocí .NET Native:  
   
--   Používáte .NET Native ladicího stroje, který se liší od normální .NET nástroje pro ladění.  
+- Používáte .NET Native ladicího stroje, který se liší od normální .NET nástroje pro ladění.  
   
--   Spustitelný soubor je zmenšení co největší míře. Jedním ze způsobů, .NET Native snižuje velikost spustitelný soubor je výrazně ořezávání zprávy výjimek modulu runtime, větší podrobně popsány v tématu [zprávy výjimek modulu Runtime](#Messages) oddílu.  
+- Spustitelný soubor je zmenšení co největší míře. Jedním ze způsobů, .NET Native snižuje velikost spustitelný soubor je výrazně ořezávání zprávy výjimek modulu runtime, větší podrobně popsány v tématu [zprávy výjimek modulu Runtime](#Messages) oddílu.  
   
--   Váš kód je silně optimalizovaná. To znamená, že vkládání se používá, kdykoli je to možné. (Vkládání přesune kódu z externího rutin do volání rutiny.)   Skutečnost, že .NET Native poskytuje specializované modulu runtime a implementuje agresivní vkládání ovlivňuje zásobníku volání, který se zobrazí při ladění.  Další informace najdete v tématu [zásobníku volání modulu Runtime](#CallStack) oddílu.  
+- Váš kód je silně optimalizovaná. To znamená, že vkládání se používá, kdykoli je to možné. (Vkládání přesune kódu z externího rutin do volání rutiny.)   Skutečnost, že .NET Native poskytuje specializované modulu runtime a implementuje agresivní vkládání ovlivňuje zásobníku volání, který se zobrazí při ladění.  Další informace najdete v tématu [zásobníku volání modulu Runtime](#CallStack) oddílu.  
   
 > [!NOTE]
 >  Můžete řídit, zda sestavení ladění a vydání se kompilují pomocí .NET Native řetězce nástrojů zaškrtnutím nebo zrušením zaškrtnutí **kompilovat s .NET Native řetězce nástrojů** pole.   Všimněte si však, že Windows Store vždy kompilovat produkční verzi vaší aplikace pomocí .NET Native řetězec nástroje.  

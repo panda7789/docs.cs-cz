@@ -9,11 +9,11 @@ helpviewer_keywords:
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
 ms.openlocfilehash: 3d7e44a468388f6d9a8f30d7fea29ec465cd8664
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935509"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  
@@ -27,24 +27,24 @@ Toto téma popisuje implementace a volání operace asynchronní služby.
   
  Nezávislost kontrakt služby od implementace služby nebo klienta umožňuje následující formy asynchronní provádění ve službě WCF aplikací:  
   
--   Klienty můžete vyvolat operace požadavku/odpovědi asynchronně pomocí synchronní zprávy exchange.  
+- Klienty můžete vyvolat operace požadavku/odpovědi asynchronně pomocí synchronní zprávy exchange.  
   
--   Služby můžete implementovat operaci požadavku nebo odpovědi asynchronně pomocí synchronní zprávy exchange.  
+- Služby můžete implementovat operaci požadavku nebo odpovědi asynchronně pomocí synchronní zprávy exchange.  
   
--   Výměny zpráv může být jednosměrné, bez ohledu na implementaci klienta nebo služby.  
+- Výměny zpráv může být jednosměrné, bez ohledu na implementaci klienta nebo služby.  
   
 ### <a name="suggested-asynchronous-scenarios"></a>Navrhované asynchronní scénáře  
  Pokud implementace služby operace provede blokovacího hovoru, jako je vytváření pracovních I/O, použijte asynchronní přístup při provádění operace služby. Když jste v implementaci asynchronní operace, zkuste pro volání asynchronní operace a metody rozšíření cesty asynchronní volání, pokud je to možné. Například volání `BeginOperationTwo()` zevnitř `BeginOperationOne()`.  
   
--   Použijte asynchronní přístup v klientovi nebo volající aplikace v následujících případech:  
+- Použijte asynchronní přístup v klientovi nebo volající aplikace v následujících případech:  
   
--   Pokud jsou volání operace z aplikace střední vrstvy. (Další informace o těchto scénářích najdete v tématu [klientské aplikace střední vrstvy](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).)  
+- Pokud jsou volání operace z aplikace střední vrstvy. (Další informace o těchto scénářích najdete v tématu [klientské aplikace střední vrstvy](../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).)  
   
--   Pokud vyvoláváte operace v rámci stránky ASP.NET, použijte asynchronní stránky.  
+- Pokud vyvoláváte operace v rámci stránky ASP.NET, použijte asynchronní stránky.  
   
--   Pokud jsou volání operace z jakékoliv aplikace, která je jedinou vláken, jako jsou formuláře Windows nebo Windows Presentation Foundation (WPF). Při použití založený na událostech asynchronní volání modelu, výsledek událost je aktivována na vlákně uživatelského rozhraní, přidání rychlost odezvy do aplikace, aniž by bylo potřeba zpracovávat více vláken, sami.  
+- Pokud jsou volání operace z jakékoliv aplikace, která je jedinou vláken, jako jsou formuláře Windows nebo Windows Presentation Foundation (WPF). Při použití založený na událostech asynchronní volání modelu, výsledek událost je aktivována na vlákně uživatelského rozhraní, přidání rychlost odezvy do aplikace, aniž by bylo potřeba zpracovávat více vláken, sami.  
   
--   Obecně platí Pokud máte možnost volby mezi synchronní a asynchronní volání, zvolte asynchronního volání.  
+- Obecně platí Pokud máte možnost volby mezi synchronní a asynchronní volání, zvolte asynchronního volání.  
   
 ### <a name="implementing-an-asynchronous-service-operation"></a>Implementace operace asynchronní služby  
  Asynchronní operace lze provést pomocí jedné z těchto tří metod:  
@@ -118,11 +118,11 @@ public class AsyncExample
   
  K definování operace kontraktu `X` , který se provedl asynchronně bez ohledu na to, jak je volána v klientské aplikaci:  
   
--   Definovat dvě metody, pomocí vzoru `BeginOperation` a `EndOperation`.  
+- Definovat dvě metody, pomocí vzoru `BeginOperation` a `EndOperation`.  
   
--   `BeginOperation` Metoda obsahuje `in` a `ref` parametry operace a vrátí <xref:System.IAsyncResult> typu.  
+- `BeginOperation` Metoda obsahuje `in` a `ref` parametry operace a vrátí <xref:System.IAsyncResult> typu.  
   
--   `EndOperation` Obsahuje metodu <xref:System.IAsyncResult> parametr i na `out` a `ref` parametry a vrací operace návratový typ.  
+- `EndOperation` Obsahuje metodu <xref:System.IAsyncResult> parametr i na `out` a `ref` parametry a vrací operace návratový typ.  
   
  Podívejte se například následující metodu.  
   

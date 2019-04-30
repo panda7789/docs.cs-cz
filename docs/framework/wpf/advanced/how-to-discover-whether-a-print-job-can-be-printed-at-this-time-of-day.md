@@ -11,11 +11,11 @@ helpviewer_keywords:
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
 ms.openlocfilehash: 7eed5400744f1010cbf52dc8d3b3d0bc24aa4371
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326863"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776217"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Postupy: Zjištění, jestli jde vytisknout tiskovou úlohu v této denní době
 Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají počáteční a koncový čas vlastnosti, které je možné nastavit, aby byly k dispozici v určitých časech den. Tato funkce je možné, například pro rezervaci tiskárny pro výhradní použití určitých oddělení po 17: 00. Toto oddělení by měla mít jinou frontu tiskárny, než jiných oddělení údržby použít. Fronta jiných oddělení se nastavuje nedostupnost po 17: 00, zatímco fronty pro dána oddělení může být nastaven na být vždy k dispozici.  
@@ -41,9 +41,9 @@ Tiskové fronty nejsou vždycky k dispozici po dobu 24 hodin denně. Mají poč�
   
  **ReportQueueAndJobAvailability** metoda začíná kontroluje se, pokud se v tuto chvíli není k dispozici fronty nebo tiskové úlohy. Pokud platí některá z nich není k dispozici, pak zkontroluje a zjistěte, jestli fronta není k dispozici. Pokud není k dispozici, metodu sestavy tuto skutečnost a čas, kdy fronty bude opět k dispozici. Potom zkontroluje úlohy a pokud je k dispozici, oznámí příště span, kdy při tisku. Nakonec metoda hlásí Nejdřívější čas, kdy můžete vytisknout úlohy. Toto je později z následujících dvakrát.  
   
--   Čas, kdy je tiskovou frontu dále k dispozici.  
+- Čas, kdy je tiskovou frontu dále k dispozici.  
   
--   Čas, kdy je tisková úloha dále k dispozici.  
+- Čas, kdy je tisková úloha dále k dispozici.  
   
  Při vytváření sestav denní dobu, <xref:System.DateTime.ToShortTimeString%2A> metodu je také volat, protože tato metoda potlačí roků, měsíců a dnů z výstupu. Dostupnost tiskovou frontu nebo tiskovou úlohu nelze omezit na konkrétní roků, měsíců nebo dokonce dny.  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - TreeView control [WPF], binding to data of indeterminate depth
 ms.assetid: daddcd74-1b0f-4ffd-baeb-ec934c5e0f53
 ms.openlocfilehash: 7da0a121cdb854c787c105c92cec70b7c4b3244e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911076"
 ---
 # <a name="how-to-bind-a-treeview-to-data-that-has-an-indeterminable-depth"></a>Postupy: Připojení TreeView k datům nezjistitelné hloubky
 Může nastat situace, kdy budete chtít vytvořit vazbu <xref:System.Windows.Controls.TreeView> ke zdroji dat, jejichž hloubky není znám.  Tato situace může nastat, když jsou data rekurzivní ze své podstaty, jako je například systém souborů, složek, ve kterém můžou obsahovat složky, nebo organizační struktury vaší společnosti, kde zaměstnanci mají ostatní zaměstnanci jako přímé podřízené.  

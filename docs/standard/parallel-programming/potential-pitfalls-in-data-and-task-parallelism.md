@@ -11,11 +11,11 @@ ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c251bfc15ce588d426dd30f2ff1634a1f2a01336
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908983"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Potenciální nástrahy datového a funkčního paralelismu
 V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> výrazné zlepšení výkonu může poskytovat prostřednictvím běžných sekvenčních smyčkách. Paralelní provádění smyčky však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní paralelní smyčky.  
@@ -31,11 +31,11 @@ V mnoha případech <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty
   
  Nejběžnější scénář, ve které nadbytečnému může dojít, je ve vnořených smyčky. Ve většině případů je nejvhodnější paralelizovat jenom vnější smyčky, pokud jedna nebo více z následujících podmínek:  
   
--   Vnitřní smyčky je známo, že trvat velmi dlouho.  
+- Vnitřní smyčky je známo, že trvat velmi dlouho.  
   
--   Provádíte náročné výpočty na jednotlivé objednávky. (Operace je znázorněno v příkladu není nákladné.)  
+- Provádíte náročné výpočty na jednotlivé objednávky. (Operace je znázorněno v příkladu není nákladné.)  
   
--   Cílový systém jsou známy dostatek procesorů pro zpracování počet vláken, které budou vytvořeny paralelní provádění dotazu na `cust.Orders`.  
+- Cílový systém jsou známy dostatek procesorů pro zpracování počet vláken, které budou vytvořeny paralelní provádění dotazu na `cust.Orders`.  
   
  Ve všech případech je nejlepší způsob, jak určit optimální tvar dotazu pro testování a měření.  
   

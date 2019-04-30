@@ -27,36 +27,36 @@ ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 04ed4dcaab8d39d8a34cadef8285ea8307f198c1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54659758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61925733"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Převod typů v rozhraní .NET Framework
 <a name="top"></a> Každá hodnota má přidružen typ, který definuje atributy, jako je množství přidělené místo na hodnotě, rozsah možných hodnot, které může mít, a členy, které to umožňují. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  
   
  Rozhraní .NET Framework automaticky podporuje následující převody:  
   
--   Převod z odvozené třídy základní třídu. To znamená například, že instance libovolné třídy nebo struktury lze převést na <xref:System.Object> instance.  Tento převod nevyžaduje, aby operátor přetypování či převodu.  
+- Převod z odvozené třídy základní třídu. To znamená například, že instance libovolné třídy nebo struktury lze převést na <xref:System.Object> instance.  Tento převod nevyžaduje, aby operátor přetypování či převodu.  
   
--   Převod ze základní třídy zpět na původní odvozené třídy. V jazyce C# vyžaduje tento převod operátor přetypování. V jazyce Visual Basic, vyžaduje `CType` operátor Pokud `Option Strict` zapnutý.  
+- Převod ze základní třídy zpět na původní odvozené třídy. V jazyce C# vyžaduje tento převod operátor přetypování. V jazyce Visual Basic, vyžaduje `CType` operátor Pokud `Option Strict` zapnutý.  
   
--   Převod z typu, který implementuje rozhraní pro objekt rozhraní, který představuje rozhraní. Tento převod nevyžaduje, aby operátor přetypování či převodu.  
+- Převod z typu, který implementuje rozhraní pro objekt rozhraní, který představuje rozhraní. Tento převod nevyžaduje, aby operátor přetypování či převodu.  
   
--   Převod z rozhraní objektu zpět na původní typ, který implementuje rozhraní.  V jazyce C# vyžaduje tento převod operátor přetypování. V jazyce Visual Basic, vyžaduje `CType` operátor Pokud `Option Strict` zapnutý.  
+- Převod z rozhraní objektu zpět na původní typ, který implementuje rozhraní.  V jazyce C# vyžaduje tento převod operátor přetypování. V jazyce Visual Basic, vyžaduje `CType` operátor Pokud `Option Strict` zapnutý.  
   
  Kromě těchto automatických převody [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] poskytuje několik funkcí, které podporují převod vlastního typu. Patří mezi ně například:  
   
--   `Implicit` Operátor, který definuje dostupné rozšiřující převody mezi typy. Další informace najdete v tématu [implicitní převod s implicitním operátorem](#implicit_conversion_with_the_implicit_operator) oddílu.  
+- `Implicit` Operátor, který definuje dostupné rozšiřující převody mezi typy. Další informace najdete v tématu [implicitní převod s implicitním operátorem](#implicit_conversion_with_the_implicit_operator) oddílu.  
   
--   `Explicit` Operátor, který definuje dostupné zužující převody mezi typy. Další informace najdete v tématu [explicitní převod s explicitním operátorem](#explicit_conversion_with_the_explicit_operator) oddílu.  
+- `Explicit` Operátor, který definuje dostupné zužující převody mezi typy. Další informace najdete v tématu [explicitní převod s explicitním operátorem](#explicit_conversion_with_the_explicit_operator) oddílu.  
   
--   <xref:System.IConvertible> Rozhraní, které definuje převody na jednotlivé základní datové typy rozhraní .NET Framework. Další informace najdete v tématu [rozhraní IConvertible](#the_iconvertible_interface) oddílu.  
+- <xref:System.IConvertible> Rozhraní, které definuje převody na jednotlivé základní datové typy rozhraní .NET Framework. Další informace najdete v tématu [rozhraní IConvertible](#the_iconvertible_interface) oddílu.  
   
--   <xref:System.Convert> Třídu, která poskytuje sadu metod, které implementují <xref:System.IConvertible> rozhraní. Další informace najdete v tématu [Třída Convert](#Convert) oddílu.  
+- <xref:System.Convert> Třídu, která poskytuje sadu metod, které implementují <xref:System.IConvertible> rozhraní. Další informace najdete v tématu [Třída Convert](#Convert) oddílu.  
   
--   <xref:System.ComponentModel.TypeConverter> Třídu, která je základní třída, která je možné rozšířit pro podporu převodu určitého typu na jiný typ. Další informace najdete v tématu [Třída TypeConverter](#the_typeconverter_class) oddílu.  
+- <xref:System.ComponentModel.TypeConverter> Třídu, která je základní třída, která je možné rozšířit pro podporu převodu určitého typu na jiný typ. Další informace najdete v tématu [Třída TypeConverter](#the_typeconverter_class) oddílu.  
   
 <a name="implicit_conversion_with_the_implicit_operator"></a>   
 ## <a name="implicit-conversion-with-the-implicit-operator"></a>Implicitní převod s implicitním operátorem  
@@ -91,7 +91,7 @@ ms.locfileid: "54659758"
   
  Například <xref:System.UInt32>, <xref:System.Int64>, a <xref:System.UInt64> datové typy mají rozsahy, které překročí <xref:System.Int32> datového typu, jak ukazuje následující tabulka.  
   
-|Typ|Porovnání s rozsahem Int32|  
+|Type|Porovnání s rozsahem Int32|  
 |----------|------------------------------------|  
 |<xref:System.Int64>|<xref:System.Int64.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>, a <xref:System.Int64.MinValue?displayProperty=nameWithType> je menší než (má větší negativní rozsah než) <xref:System.Int32.MinValue?displayProperty=nameWithType>.|  
 |<xref:System.UInt32>|<xref:System.UInt32.MaxValue?displayProperty=nameWithType> je větší než <xref:System.Int32.MaxValue?displayProperty=nameWithType>.|  
@@ -129,11 +129,11 @@ ms.locfileid: "54659758"
 ## <a name="the-iconvertible-interface"></a>Rozhraní IConvertible  
  Pro podporu převodu jakéhokoli typu na common language runtime základní typ, [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] poskytuje <xref:System.IConvertible> rozhraní. Implementující typ je vyžadován pro následující akce:  
   
--   Metoda, která vrátí <xref:System.TypeCode> implementujícího typu.  
+- Metoda, která vrátí <xref:System.TypeCode> implementujícího typu.  
   
--   Metody k převodu implementujícího typu na jednotlivých common language runtime základních typů (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, a tak dále).  
+- Metody k převodu implementujícího typu na jednotlivých common language runtime základních typů (<xref:System.Boolean>, <xref:System.Byte>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, a tak dále).  
   
--   Zobecněná metoda převodu k převedení instance implementujícího typu na jiný určený typ. Převody, které nejsou podporovány, by měly vyvolat <xref:System.InvalidCastException>.  
+- Zobecněná metoda převodu k převedení instance implementujícího typu na jiný určený typ. Převody, které nejsou podporovány, by měly vyvolat <xref:System.InvalidCastException>.  
   
  Každý common language runtime základního typu (to znamená, <xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.DateTime>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.String>, <xref:System.UInt16>, <xref:System.UInt32>, a <xref:System.UInt64>), stejně jako <xref:System.DBNull> a <xref:System.Enum> typy, implementovat <xref:System.IConvertible> rozhraní. Ty jsou však implementace explicitního rozhraní. Metoda převodu lze volat pouze prostřednictvím <xref:System.IConvertible> proměnné rozhraní, jak ukazuje následující příklad. Tento příklad převede <xref:System.Int32> hodnotu na její ekvivalentní <xref:System.Char> hodnotu.  
   

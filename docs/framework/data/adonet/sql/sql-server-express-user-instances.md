@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
 ms.openlocfilehash: b456549daefa0fdf67524b0b039a091652cf41ff
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59111147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876275"
 ---
 # <a name="sql-server-express-user-instances"></a>Uživatelské instance SQL Serveru Express
 Microsoft SQL Server Express Edition (SQL Server Express) podporuje funkci instance uživatele, která je dostupná jenom při použití zprostředkovatele dat .NET Framework pro SQL Server (`SqlClient`). Uživatelské instance se samostatnou instanci SQL serveru Express databázového stroje, který je generován nadřazená instance. Uživatelské instance povolit uživatelům, kteří nejsou správci na svých místních počítačích k připojení a připojení k databázím SQL Server Express. Každá instance spouští v kontextu zabezpečení jednotlivých uživatelů, na jednu instanci každého uživatele zvlášť.  
@@ -41,15 +41,15 @@ sp_configure 'user instances enabled','0'
   
  Mějte na paměti následující skutečnosti související ukázkové připojovací řetězec je uvedeno níže:  
   
--   `Data Source` – Klíčové slovo odkazuje na nadřazený instanci systému SQL Server Express, která generuje uživatelské instance. Je výchozí instanci. \sqlexpress.  
+- `Data Source` – Klíčové slovo odkazuje na nadřazený instanci systému SQL Server Express, která generuje uživatelské instance. Je výchozí instanci. \sqlexpress.  
   
--   `Integrated Security` je nastavena na `true`. Pokud chcete připojit k uživatelské instanci, je potřeba; ověřování Windows Přihlášení serveru SQL Server nejsou podporovány.  
+- `Integrated Security` je nastavena na `true`. Pokud chcete připojit k uživatelské instanci, je potřeba; ověřování Windows Přihlášení serveru SQL Server nejsou podporovány.  
   
--   `User Instance` Je nastavena na `true`, která vyvolá uživatelskou instanci. (Výchozí hodnota je `false`.)  
+- `User Instance` Je nastavena na `true`, která vyvolá uživatelskou instanci. (Výchozí hodnota je `false`.)  
   
--   `AttachDbFileName` Klíčové slovo připojovacího řetězce se použije k připojení primární soubor databáze (MDF), který musí obsahovat úplný název cesty. `AttachDbFileName` také odpovídá "rozšířené vlastnosti" a "počáteční název souboru" klíče v rámci <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec.  
+- `AttachDbFileName` Klíčové slovo připojovacího řetězce se použije k připojení primární soubor databáze (MDF), který musí obsahovat úplný název cesty. `AttachDbFileName` také odpovídá "rozšířené vlastnosti" a "počáteční název souboru" klíče v rámci <xref:System.Data.SqlClient.SqlConnection> připojovací řetězec.  
   
--   `|DataDirectory|` Náhradní řetězec v kanálu symboly odkazuje na data adresáře aplikace otevřete připojení a poskytuje relativní cesta určující umístění soubory MDF a LDF databáze a protokolu. Pokud chcete vyhledat tyto soubory jinde, musí zadat úplnou cestu k souborům.  
+- `|DataDirectory|` Náhradní řetězec v kanálu symboly odkazuje na data adresáře aplikace otevřete připojení a poskytuje relativní cesta určující umístění soubory MDF a LDF databáze a protokolu. Pokud chcete vyhledat tyto soubory jinde, musí zadat úplnou cestu k souborům.  
   
 ```  
 Data Source=.\\SQLExpress;Integrated Security=true;  
@@ -144,11 +144,11 @@ private static void OpenSqlConnection()
   
  Uživatelské instance scénáře patří:  
   
--   Všechny aplikace jednoho uživatele, kde sdílení dat se nevyžaduje.  
+- Všechny aplikace jednoho uživatele, kde sdílení dat se nevyžaduje.  
   
--   ClickOnce – nasazení. Pokud jsou na cílovém počítači již nainstalovány rozhraní .NET Framework 2.0 (nebo novější) a SQL Server Express, instalační balíček stáhli jako výsledek akce ClickOnce lze nainstalovat a používat uživatelé bez oprávnění správce. Mějte na paměti, musí správce nainstalovat systém SQL Server Express Pokud, který je součástí instalace. Další informace najdete v tématu [ClickOnce – nasazení pro Windows Forms](../../../winforms/clickonce-deployment-for-windows-forms.md).
+- ClickOnce – nasazení. Pokud jsou na cílovém počítači již nainstalovány rozhraní .NET Framework 2.0 (nebo novější) a SQL Server Express, instalační balíček stáhli jako výsledek akce ClickOnce lze nainstalovat a používat uživatelé bez oprávnění správce. Mějte na paměti, musí správce nainstalovat systém SQL Server Express Pokud, který je součástí instalace. Další informace najdete v tématu [ClickOnce – nasazení pro Windows Forms](../../../winforms/clickonce-deployment-for-windows-forms.md).
   
--   Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
+- Vyhrazené hostování v technologii ASP.NET pomocí ověřování Windows. Jedna instance systému SQL Server Express je možné hostovat na intranetu. Aplikace se připojí pomocí účtu Windows ASPNET, nikoli pomocí zosobnění. Uživatelské instance není vhodné používat pro třetí strany nebo sdílené hostování situacích, kdy všechny aplikace bude sdílet stejnou instanci uživatele a by už zůstat izolované od sebe navzájem.  
   
 ## <a name="see-also"></a>Viz také:
 

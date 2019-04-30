@@ -9,11 +9,11 @@ helpviewer_keywords:
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
 ms.openlocfilehash: fcb450b86066e24fba9c6a33f7abe0d4749d2c8d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801046"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], všechny kód spuštěný na uživatele v počítači měl stejné práva nebo oprávnění pro přístup k prostředkům, které měl uživatel počítače. Například pokud byl uživatel pro přístup k systému souborů, kód byl povolen přístup k systému souborů. Uživatel byl povolen přístup k databázi, kód byl povolen přístup k této databázi. Ačkoli tato práva nebo oprávnění může být přijatelný pro kód v spustitelné soubory, které uživatel nainstaloval explicitně v místním počítači, se nemusí být přijatelné pro potenciálně škodlivý kód pocházející z Internetu nebo intranetu. Tento kód by neměl být přístup k prostředkům počítače uživatele bez oprávnění.  

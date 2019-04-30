@@ -7,11 +7,11 @@ helpviewer_keywords:
 - bindings [WCF]
 ms.assetid: 83639133-89f7-43f0-b4ef-8d9e57c08d25
 ms.openlocfilehash: e69cd500c50e9d76824d0e438a1af86f3a722c52
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857685"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Vazby WCF
 Windows Communication Foundation (WCF) odděluje, jak software pro aplikaci vypíše jak komunikuje s jiným softwarem. Vazby se používají k určení přenosu, kódování a podrobnosti protokolu pro klienty a služby musí komunikovat mezi sebou. Vazby WCF používá ke generování podkladové síťové vyjádření koncového bodu, takže většina podrobnosti vazby musí schválit stranami, které komunikují. Nejjednodušší způsob, jak toho dosáhnout, je pro klienty služby použít stejné vazby, který koncový bod pro použití služby. Další informace o tom, jak to provést, najdete v části [pomocí vazby na konfiguraci služeb a klientů](~/docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  

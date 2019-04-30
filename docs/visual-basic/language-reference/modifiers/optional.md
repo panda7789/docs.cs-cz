@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
 ms.openlocfilehash: 67ceedffecdfba8ec0c2829a3af31d194f18bd88
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820786"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920663"
 ---
 # <a name="optional-visual-basic"></a>Nepovinné (Visual Basic)
 Určuje, že argumentu procedury může při volání procedury vynechat.  
@@ -25,13 +25,13 @@ Určuje, že argumentu procedury může při volání procedury vynechat.
   
  `Optional` Modifikátor lze použít v těchto kontextech:  
   
--   [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 > [!NOTE]
 >  Při volání procedury s nebo bez něj volitelné parametry, můžete předat argumenty podle umístění nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  

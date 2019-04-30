@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], ScrollViewer
 ms.assetid: 2ad124d2-2406-4157-aaf2-64e067298f01
 ms.openlocfilehash: ef0bc5d344f7d465de9209708430d3e61d40d4f7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59114647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910790"
 ---
 # <a name="how-to-create-an-expander-with-a-scrollviewer"></a>Postupy: Vytvoření rozšíření pomocí prvku ScrollViewer
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Expander> ovládací prvek, který obsahuje komplexní obsah, jako je například image a text. V příkladu také vloží obsah <xref:System.Windows.Controls.Expander> v <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku.  

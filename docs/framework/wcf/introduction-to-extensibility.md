@@ -7,11 +7,11 @@ helpviewer_keywords:
 - extensibility [WCF]
 ms.assetid: ef56c251-d63c-4b3f-944f-b0c67bfb0f68
 ms.openlocfilehash: 8d7b9c811c557b10160c2581a59f5ebf72882bfd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59147040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928601"
 ---
 # <a name="introduction-to-extensibility"></a>Úvod do rozšíření
 Model aplikace Windows Communication Foundation (WCF) je navržená k řešení větší část požadavky na komunikaci všechny distribuované aplikace. Ale vždy existují scénáře, které výchozí aplikační model a implementace poskytované systémem nepodporují. Model rozšiřitelnosti WCF je určený pro podporu vlastní scénáře tím, že abyste upravili chování systému na všech úrovních, dokonce i do bodu nahrazení modelu celé aplikace. Toto téma popisuje různé oblasti rozšíření a odkazuje na další informace o jednotlivých.  
@@ -19,11 +19,11 @@ Model aplikace Windows Communication Foundation (WCF) je navržená k řešení 
 ## <a name="areas-to-extend"></a>Rozšíření oblastí  
  Můžete rozšířit:  
   
--   Doba spuštění aplikace. Tato zásada rozšiřuje, odesílání a zpracování zpráv pro aplikaci. Tato oblast také obsahuje rozšíření systému zabezpečení, systému metadat, systém serializace a vazby a prvky, které k základní kanál systému připojit aplikace vazbu.  
+- Doba spuštění aplikace. Tato zásada rozšiřuje, odesílání a zpracování zpráv pro aplikaci. Tato oblast také obsahuje rozšíření systému zabezpečení, systému metadat, systém serializace a vazby a prvky, které k základní kanál systému připojit aplikace vazbu.  
   
--   Kanál a modulu runtime kanálu. Tato zásada rozšiřuje na systém, který funguje na úrovni zprávy, nabízí protokol, přenosu a podpory kódování.  
+- Kanál a modulu runtime kanálu. Tato zásada rozšiřuje na systém, který funguje na úrovni zprávy, nabízí protokol, přenosu a podpory kódování.  
   
--   Modul runtime hostitele. Tato zásada rozšiřuje vztah hostování aplikační domény na modul runtime kanálu a aplikace.  
+- Modul runtime hostitele. Tato zásada rozšiřuje vztah hostování aplikační domény na modul runtime kanálu a aplikace.  
   
 ### <a name="extending-the-application-runtime"></a>Rozšíření modulu Runtime aplikace  
  Aplikace WCF je rozdíl mezi zprávy, které jsou určeny pro odpovídající kanál a zprávy, které jsou určeny pro vlastní aplikace. Zprávy kanálu podporovat některé funkce související s kanál, třeba navázání zabezpečené konverzace nebo vytvoření stabilní relace. Tyto zprávy nejsou k dispozici pro spuštění aplikace; jsou zpracovávány předtím, než je zahrnuta aplikační vrstvu.  

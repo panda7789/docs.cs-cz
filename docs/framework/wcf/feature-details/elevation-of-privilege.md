@@ -6,11 +6,11 @@ helpviewer_keywords:
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
 ms.openlocfilehash: fd5829d2dbb1853bf65f1f6e402b918137bd59e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59099986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856392"
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
 *Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto zpočátku udělená oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvýší oprávnění set "pro čtení a zápisu."  
@@ -25,13 +25,13 @@ ms.locfileid: "59099986"
   
  Když se vytvoří připojení mezi klientem a serverem a identity klienta se nezmění, s výjimkou jednoho situaci: Po otevření klienta WCF, pokud jsou splněny všechny následující podmínky:  
   
--   Postupy k vytvoření kontextu zabezpečení (pomocí zabezpečení přenosu, nebo relaci zabezpečení zprávu) je vypnout (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> je nastavena na `false` v případě zabezpečení zpráv nebo nebyl schopen vytvořit zabezpečení přenosu relace se používá v případě zabezpečení přenosu. HTTPS je jedním z takových transport).  
+- Postupy k vytvoření kontextu zabezpečení (pomocí zabezpečení přenosu, nebo relaci zabezpečení zprávu) je vypnout (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> je nastavena na `false` v případě zabezpečení zpráv nebo nebyl schopen vytvořit zabezpečení přenosu relace se používá v případě zabezpečení přenosu. HTTPS je jedním z takových transport).  
   
--   Používáte ověřování Windows.  
+- Používáte ověřování Windows.  
   
--   Přihlašovací údaje, které explicitně nenastavíte.  
+- Přihlašovací údaje, které explicitně nenastavíte.  
   
--   Jsou volání služby za zosobněného kontextu.  
+- Jsou volání služby za zosobněného kontextu.  
   
  Pokud jsou splněné tyto podmínky, může změnit identity použité k ověření klienta ke službě (nemusí být zosobněnou identitou, ale identitu procesu místo) po otevření klienta WCF. K tomu dochází, protože přihlašovací údaje Windows používá k ověření klienta ke službě se přenášejí se všechny zprávy a pověření pro ověřování se získávají z identita Windows aktuálního vlákna. Pokud se identita Windows aktuálního vlákna změní (například zosobněním různých volajícího), může také změnit přihlašovací údaj, který je připojen ke zprávě a použít k ověření klienta ke službě.  
   
@@ -59,13 +59,13 @@ ms.locfileid: "59099986"
   
  Tato situace nastane také při vytváření vlastní vazby pomocí jedné z následujících metod:  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement%2A>  
   
--   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A>  
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A>  
   
  Chcete-li tento problém zmírnit, musíte zkontrolovat zásady autorizace pro akce a čas vypršení platnosti jednotlivých zásad autorizace.  
   
@@ -74,11 +74,11 @@ ms.locfileid: "59099986"
   
  Tato situace může nastat v následujících případech:  
   
--   Klient digitálně podepíše zprávu pomocí certifikátu X.509 nepřipojí certifikát X.509 na zprávu, ale spíš jenom odkazuje na certifikát s použitím jeho identifikátor klíče subjektu.  
+- Klient digitálně podepíše zprávu pomocí certifikátu X.509 nepřipojí certifikát X.509 na zprávu, ale spíš jenom odkazuje na certifikát s použitím jeho identifikátor klíče subjektu.  
   
--   Počítač služby obsahuje dva nebo více certifikátů se stejným klíčem veřejné, ale obsahují rozdílné informace.  
+- Počítač služby obsahuje dva nebo více certifikátů se stejným klíčem veřejné, ale obsahují rozdílné informace.  
   
--   Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale to není ten, který klient chtěli použít. Když WCF obdrží zprávu a ověří podpis, WCF mapuje informace v neúmyslnému certifikát X.509 na sadu deklarací identity, které jsou rozdílné a potenciálně se zvýšenými oprávněními z co očekává klienta.  
+- Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale to není ten, který klient chtěli použít. Když WCF obdrží zprávu a ověří podpis, WCF mapuje informace v neúmyslnému certifikát X.509 na sadu deklarací identity, které jsou rozdílné a potenciálně se zvýšenými oprávněními z co očekává klienta.  
   
  Chcete-li tento problém zmírnit, odkaz X.509 certifikátu dalším způsobem, jako je třeba použití <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.  
   

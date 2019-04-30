@@ -11,11 +11,11 @@ helpviewer_keywords:
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
 ms.openlocfilehash: b0b301bca33842dfb68de9143b665bed73f17b74
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903432"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Vykreslování ovládacích prvků s vizuálními styly
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje podporu pro vykreslení ovládacích prvků a jiných uživatelů Windows pomocí vizuálních stylů v operačních systémech, které je podporují prvky rozhraní (UI). Toto téma popisuje několik úrovní podpory v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] pro vykreslování a další prvky uživatelského rozhraní s aktuálním vizuálním stylem operačního systému.  
@@ -27,27 +27,27 @@ ms.locfileid: "59146767"
   
  Některé z těchto tříd jsou navržené k vykreslení související ovládací prvek bez ohledu na to, zda jsou k dispozici vizuální styly. Pokud jsou povolené vizuální styly, pak členy třídy bude nakreslete související s vizuálními styly; Pokud je vizuální styly jsou zakázané, pak členy třídy bude nakreslete ovládací prvek v klasické Windows. Tyto třídy zahrnují:  
   
--   <xref:System.Windows.Forms.ButtonRenderer>  
+- <xref:System.Windows.Forms.ButtonRenderer>  
   
--   <xref:System.Windows.Forms.CheckBoxRenderer>  
+- <xref:System.Windows.Forms.CheckBoxRenderer>  
   
--   <xref:System.Windows.Forms.GroupBoxRenderer>  
+- <xref:System.Windows.Forms.GroupBoxRenderer>  
   
--   <xref:System.Windows.Forms.RadioButtonRenderer>  
+- <xref:System.Windows.Forms.RadioButtonRenderer>  
   
  Jiné třídy lze vykreslit související ovládací prvek při vizuální styly jsou k dispozici, a jejich členy vyvolá výjimku, pokud vizuální styly jsou zakázané. Tyto třídy zahrnují:  
   
--   <xref:System.Windows.Forms.ComboBoxRenderer>  
+- <xref:System.Windows.Forms.ComboBoxRenderer>  
   
--   <xref:System.Windows.Forms.ProgressBarRenderer>  
+- <xref:System.Windows.Forms.ProgressBarRenderer>  
   
--   <xref:System.Windows.Forms.ScrollBarRenderer>  
+- <xref:System.Windows.Forms.ScrollBarRenderer>  
   
--   <xref:System.Windows.Forms.TabRenderer>  
+- <xref:System.Windows.Forms.TabRenderer>  
   
--   <xref:System.Windows.Forms.TextBoxRenderer>  
+- <xref:System.Windows.Forms.TextBoxRenderer>  
   
--   <xref:System.Windows.Forms.TrackBarRenderer>  
+- <xref:System.Windows.Forms.TrackBarRenderer>  
   
  Další informace o použití těchto tříd k vykreslení ovládacího prvku, naleznete v tématu [jak: Použití třídy vykreslující ovládací prvek](how-to-use-a-control-rendering-class.md).  
   

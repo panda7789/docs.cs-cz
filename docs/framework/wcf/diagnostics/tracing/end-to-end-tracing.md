@@ -3,11 +3,11 @@ title: Komplexní trasování
 ms.date: 03/30/2017
 ms.assetid: f5ac7fc7-f97c-4313-b068-54e0c471b2aa
 ms.openlocfilehash: fd2964b39c758e41620fb453ddd8f61a1aa550aa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59092112"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912532"
 ---
 # <a name="end-to-end-tracing"></a>Komplexní trasování
 Kompletní (e2e) trasování umožňuje vývojářům sledovat spuštění kódu v prozkoumat, proč se nezdařilo kódové cestě, nebo poskytnout podrobné trasování pro analýzu výkon a plánování kapacity pro infrastrukturu Windows Communication Foundation (WCF). Windows Communication Foundation (WCF) poskytuje tři mechanismy korelace pro usnadnění diagnostiky příčiny chyby: aktivit, přenosy a šíření.  

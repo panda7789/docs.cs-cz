@@ -8,11 +8,11 @@ helpviewer_keywords:
 - templates [WPF]
 ms.assetid: 7fd571fd-d54a-40fc-b332-4c4015a5b6ff
 ms.openlocfilehash: d7a5e9515e78dd9c762973ca9854e04b44c1e18d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790907"
 ---
 # <a name="styles-and-templates"></a>– styly a šablony
 Windows Presentation Foundation (WPF) styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují aplikace, dokumentu nebo návrhář uživatelského rozhraní (UI) vytvářet vizuálně působivé aplikace a na standardizovat používání na konkrétní oblast pro svůj produkt.  

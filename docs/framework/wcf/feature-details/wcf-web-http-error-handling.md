@@ -3,11 +3,11 @@ title: Zpracování chyb HTTP programování webové služby WCF
 ms.date: 03/30/2017
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
 ms.openlocfilehash: 834c642e36e1551081dbe1f14529ed7596df1360
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935483"
 ---
 # <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF
 Zpracování chyb webových služeb HTTP Windows Communication Foundation (WCF) umožňuje vrátit chyby z webových služeb HTTP WCF služby, které zadejte stavový kód HTTP a vrátí podrobnosti o chybě pomocí stejný formát jako operace (například XML nebo JSON).  
@@ -39,11 +39,11 @@ Public string Operation2()
   
  Předchozí kód vrátí odpověď HTTP s zakázané stavový kód a text, který obsahuje instanci `MyErrorDetails` objektu. Formát `MyErrorDetails` objektu se určuje podle:  
   
--   Hodnota `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut zadaný u operace služby.  
+- Hodnota `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut zadaný u operace služby.  
   
--   Hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A>.  
+- Hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A>.  
   
--   Hodnota <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> vlastnost díky přístupu <xref:System.ServiceModel.Web.OutgoingWebResponseContext>.  
+- Hodnota <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> vlastnost díky přístupu <xref:System.ServiceModel.Web.OutgoingWebResponseContext>.  
   
  Další informace o tom, jak tyto hodnoty ovlivňují formátování operaci najdete v tématu [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).  
   

@@ -3,11 +3,11 @@ title: Transakce a souběžnost
 ms.date: 03/30/2017
 ms.assetid: f46570de-9e50-4fe6-8710-a8c31fa8569b
 ms.openlocfilehash: ba857031a54374ee295c2bfd724e7fb8651b7c1f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59174691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933702"
 ---
 # <a name="transactions-and-concurrency"></a>Transakce a souběžnost
 Transakce se skládá z jediného příkazu nebo skupině příkazů, které jsou spouštěny jako balíček. Transakce umožňují kombinovat více operací do jedné jednotky práce. V případě selhání v jednom bodě v transakci všechny aktualizace může být vrácena zpět do stavu před transakce.  

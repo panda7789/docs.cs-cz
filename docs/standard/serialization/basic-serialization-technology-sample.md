@@ -3,11 +3,11 @@ title: Ukázka technologie základní serializace
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
 ms.openlocfilehash: dc190a93e45bf2b682aff0158ccd42bc09762d9a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795015"
 ---
 # <a name="basic-serialization-technology-sample"></a>Ukázka technologie základní serializace
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/Basic.zip.exe)  
@@ -62,21 +62,21 @@ ms.locfileid: "59315007"
   
  Následující odrážky Krátce popište, třídy a technologie používané v tomto příkladu.  
   
--   Modul runtime serializace  
+- Modul runtime serializace  
   
-    -   <xref:System.Runtime.Serialization.IFormatter> Používá k odkazování na buď <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> nebo <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> objektu.  
+    - <xref:System.Runtime.Serialization.IFormatter> Používá k odkazování na buď <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> nebo <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> objektu.  
   
-    -   <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> Slouží k serializaci odkazovaného seznamu do datového proudu v binárním formátu. Binární formátovací modul používá formát pouze <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> znalost typu. Data jsou však stručné.  
+    - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> Slouží k serializaci odkazovaného seznamu do datového proudu v binárním formátu. Binární formátovací modul používá formát pouze <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> znalost typu. Data jsou však stručné.  
   
-    -   <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> Slouží k serializaci odkazovaného seznamu do datového proudu ve formátu protokolu SOAP. Protokol SOAP je ve standardním formátu.  
+    - <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> Slouží k serializaci odkazovaného seznamu do datového proudu ve formátu protokolu SOAP. Protokol SOAP je ve standardním formátu.  
   
--   I/O proudu  
+- I/O proudu  
   
-    -   <xref:System.IO.Stream> Slouží k serializaci a deserializaci. Typ konkrétní datového proudu, který je použit v tomto příkladu je <xref:System.IO.FileStream> typu. Serializace však lze používat s libovolného typu odvozeného z <xref:System.IO.Stream>.  
+    - <xref:System.IO.Stream> Slouží k serializaci a deserializaci. Typ konkrétní datového proudu, který je použit v tomto příkladu je <xref:System.IO.FileStream> typu. Serializace však lze používat s libovolného typu odvozeného z <xref:System.IO.Stream>.  
   
-    -   <xref:System.IO.File> Umožňuje vytvořit <xref:System.IO.FileStream> objektů pro čtení a vytváření souborů na disku.  
+    - <xref:System.IO.File> Umožňuje vytvořit <xref:System.IO.FileStream> objektů pro čtení a vytváření souborů na disku.  
   
-    -   <xref:System.IO.FileStream> Slouží k serializaci a deserializaci propojené seznamy.  
+    - <xref:System.IO.FileStream> Slouží k serializaci a deserializaci propojené seznamy.  
   
 ## <a name="see-also"></a>Viz také:
 

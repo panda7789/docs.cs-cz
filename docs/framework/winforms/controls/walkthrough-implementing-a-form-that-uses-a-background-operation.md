@@ -16,11 +16,11 @@ helpviewer_keywords:
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
 ms.openlocfilehash: 6399fb853162174895d892399fd3eb5226101515
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792194"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.  
@@ -29,13 +29,13 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření aplikace pro Windows  
+- Vytvoření aplikace pro Windows  
   
--   Vytváření <xref:System.ComponentModel.BackgroundWorker> ve formuláři  
+- Vytváření <xref:System.ComponentModel.BackgroundWorker> ve formuláři  
   
--   Přidání asynchronní obslužné rutiny  
+- Přidání asynchronní obslužné rutiny  
   
--   Přidání vytváření sestav průběhu a podporu pro zrušení  
+- Přidání vytváření sestav průběhu a podporu pro zrušení  
   
  Úplný seznam všech kód použitý v tomto příkladu najdete v části [jak: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md).  
   
@@ -68,7 +68,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-create-a-backgroundworker-with-the-designer"></a>Chcete-li vytvořit podproces BackgroundWorker pomocí návrháře  
   
--   Z **součásti** karty **nástrojů**, přetáhněte <xref:System.ComponentModel.BackgroundWorker> do formuláře.  
+- Z **součásti** karty **nástrojů**, přetáhněte <xref:System.ComponentModel.BackgroundWorker> do formuláře.  
   
 ## <a name="adding-asynchronous-event-handlers"></a>Přidání asynchronní obslužné rutiny  
  Nyní jste připraveni pro přidání obslužné rutiny událostí pro <xref:System.ComponentModel.BackgroundWorker> asynchronní událostí komponenty. Časově náročná operace, která se spustí na pozadí, která vypočítá Fibonacciho čísla, je volána pomocí jedné z těchto obslužných rutin událostí.  
@@ -145,7 +145,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-test-your-project"></a>K otestování vašeho projektu  
   
--   Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.  
+- Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.  
   
      Při výpočtu běží na pozadí, zobrazí se <xref:System.Windows.Forms.ProgressBar> zobrazení průběhu výpočtu směrem k dokončení. Můžete také zrušit čekající operace.  
   
@@ -154,11 +154,11 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 ## <a name="next-steps"></a>Další kroky  
  Teď, když jste implementovali formulář, který používá <xref:System.ComponentModel.BackgroundWorker> komponentu pro spuštění výpočtu na pozadí můžete prozkoumat další možnosti pro asynchronní operace:  
   
--   Použití více <xref:System.ComponentModel.BackgroundWorker> objekty pro několik souběžných operací.  
+- Použití více <xref:System.ComponentModel.BackgroundWorker> objekty pro několik souběžných operací.  
   
--   Ladění aplikace s více vlákny, naleznete v tématu [jak: Použití okna vláken](/visualstudio/debugger/how-to-use-the-threads-window).  
+- Ladění aplikace s více vlákny, naleznete v tématu [jak: Použití okna vláken](/visualstudio/debugger/how-to-use-the-threads-window).  
   
--   Implementujte vlastní komponenty, která podporuje asynchronní programovací model. Další informace najdete v tématu [založený na událostech přehled asynchronních vzorů](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
+- Implementujte vlastní komponenty, která podporuje asynchronní programovací model. Další informace najdete v tématu [založený na událostech přehled asynchronních vzorů](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
     > [!CAUTION]
     >  Pokud používáte multithreading jakéhokoli druhu, potenciálně zpřístupníte sami velmi závažných a složitých chyb. Poraďte [spravovaných vláken osvědčené postupy](../../../standard/threading/managed-threading-best-practices.md) před implementací jakéhokoli řešení, které používá multithreading.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data contracts [WCF], versioning
 ms.assetid: 4a0700cb-5f5f-4137-8705-3a3ecf06461f
 ms.openlocfilehash: 53080975c03430a6c05bf72f58610b328430a3c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59118024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857152"
 ---
 # <a name="data-contract-versioning"></a>Správa verzí kontraktů dat
 Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se používání služby. Toto téma vysvětluje, jak kontraktů dat verze. Toto téma popisuje mechanismy správy verzí pomocí kontraktu dat. Úplný přehled a doporučené postupy správy verzí pokyny najdete v tématu [osvědčených postupů: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  
@@ -34,13 +34,13 @@ Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se po
   
  Některé změny upravovat přenášená data, ale může nebo nemusí být zásadní. Tyto změny jsou vždy dopadem na dřívější kód:  
   
--   Změna <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> nebo <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> hodnota dat kontraktu.  
+- Změna <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> nebo <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> hodnota dat kontraktu.  
   
--   Změna pořadí datových členů pomocí <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute>.  
+- Změna pořadí datových členů pomocí <xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute>.  
   
--   Datový člen přejmenování.  
+- Datový člen přejmenování.  
   
--   Změna kontraktu dat datový člen. Například změna typu datového členu z celého čísla na řetězec, nebo z typu s kontraktem dat s názvem "Customer" na typ s kontraktem dat s názvem "Osoba".  
+- Změna kontraktu dat datový člen. Například změna typu datového členu z celého čísla na řetězec, nebo z typu s kontraktem dat s názvem "Customer" na typ s kontraktem dat s názvem "Osoba".  
   
  Tyto změny jsou také je to možné.  
   
@@ -90,9 +90,9 @@ Jak vyvíjet aplikace, budete také muset změnit data smluv týkajících se po
 ## <a name="omitted-default-values"></a>Vynechaný výchozí hodnoty  
  Je možné (ale nedoporučuje se) Chcete-li nastavit `EmitDefaultValue` vlastnost u atributu DataMemberAttribute `false`, jak je popsáno v [výchozí hodnoty datových členů](../../../../docs/framework/wcf/feature-details/data-member-default-values.md). Pokud je toto nastavení `false`, nebude se emitovat datový člen, pokud je nastavena na výchozí hodnotu (obvykle nebo má nulovou hodnotu). Toto není kompatibilní s požadované datové členy v různých verzích dvěma způsoby:  
   
--   Kontrakt dat s datovým členem, který je vyžadován v jedné verzi nemůže přijmout výchozí (nebo má nulovou hodnotu) dat z jiné verze, ve kterém má datový člen `EmitDefaultValue` nastavena na `false`.  
+- Kontrakt dat s datovým členem, který je vyžadován v jedné verzi nemůže přijmout výchozí (nebo má nulovou hodnotu) dat z jiné verze, ve kterém má datový člen `EmitDefaultValue` nastavena na `false`.  
   
--   Povinný datový člen, který má `EmitDefaultValue` nastavena na `false` nelze použít k serializaci jeho výchozí (nebo má nulovou hodnotu), hodnotu, ale mohou přijímat taková hodnota k deserializaci. Vzniká tak problém verzemi (lze číst data v ale stejná data nelze poté zapíšou). Proto pokud `IsRequired` je `true` a `EmitDefaultValue` je `false` v jedné verzi stejnou kombinaci by se měly používat pro všechny ostatní verze tak, aby žádná verze kontraktu dat mohl by být schopen vytvořit hodnotu, která nemá za následek odezvy.  
+- Povinný datový člen, který má `EmitDefaultValue` nastavena na `false` nelze použít k serializaci jeho výchozí (nebo má nulovou hodnotu), hodnotu, ale mohou přijímat taková hodnota k deserializaci. Vzniká tak problém verzemi (lze číst data v ale stejná data nelze poté zapíšou). Proto pokud `IsRequired` je `true` a `EmitDefaultValue` je `false` v jedné verzi stejnou kombinaci by se měly používat pro všechny ostatní verze tak, aby žádná verze kontraktu dat mohl by být schopen vytvořit hodnotu, která nemá za následek odezvy.  
   
 ## <a name="schema-considerations"></a>Schema Considerations  
  Vysvětlení, jaké schéma je vytvořen pro typy kontraktů dat, najdete v článku [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  

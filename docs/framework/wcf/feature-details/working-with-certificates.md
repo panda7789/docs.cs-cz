@@ -8,11 +8,11 @@ helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
 ms.openlocfilehash: 1b4451b11fed2fd138985824d5f139e192c51f45
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929841"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -29,27 +29,27 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
 ## <a name="certificate-stores"></a>Úložiště certifikátů  
  Certifikáty se nacházejí v úložištích. Dvěma umístěními velké úložiště existují, které se dále dělí do dílčí úložišť. Pokud jste správce v počítači, se zobrazí oba hlavní úložiště pomocí nástroje modulu snap-in konzoly MMC. Bez správci mohou zobrazit pouze aktuální úložiště uživatele.  
   
--   **Úložiště místního počítače**. Tato položka obsahuje certifikáty přistupuje počítač procesy, jako například [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]. Toto umístění slouží k ukládání certifikátů, které ověření serveru vůči klientům.  
+- **Úložiště místního počítače**. Tato položka obsahuje certifikáty přistupuje počítač procesy, jako například [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]. Toto umístění slouží k ukládání certifikátů, které ověření serveru vůči klientům.  
   
--   **Úložiště pro aktuálního uživatele**. Interaktivní aplikace obvykle umístit certifikáty pro aktuálního uživatele počítače. Pokud vytvoříte klientskou aplikaci, je obvykle umístění certifikáty, které se ověřují uživatele ke službě.  
+- **Úložiště pro aktuálního uživatele**. Interaktivní aplikace obvykle umístit certifikáty pro aktuálního uživatele počítače. Pokud vytvoříte klientskou aplikaci, je obvykle umístění certifikáty, které se ověřují uživatele ke službě.  
   
  Tyto dvě úložiště se dále dělí do dílčí úložišť. Nejdůležitější z těchto při programování s použitím technologie WCF patří:  
   
--   **Důvěryhodné kořenové certifikační autority**. Certifikáty můžete použít v tomto úložišti vytvořit řetěz certifikátů, které lze sledovat zpět k certifikátu certifikačního úřadu v tomto úložišti.  
+- **Důvěryhodné kořenové certifikační autority**. Certifikáty můžete použít v tomto úložišti vytvořit řetěz certifikátů, které lze sledovat zpět k certifikátu certifikačního úřadu v tomto úložišti.  
   
     > [!IMPORTANT]
     >  Místní počítač některý z certifikátů umístěny v tomto úložišti implicitně důvěřuje i v případě, že certifikát nepochází od důvěryhodné certifikační autority. Z tohoto důvodu Neumísťujte některý z certifikátů do tohoto úložiště není-li plně důvěřovat vystavitele a nerozumíte jeho následkům.  
   
--   **Osobní**. Toto úložiště se používá pro certifikáty, které jsou spojeny s konkrétním uživatelem počítače. Toto úložiště se obvykle používá pro certifikáty vydané certifikáty certifikační autority v úložišti Důvěryhodné kořenové certifikační autority. Certifikát, najdete tady také může samostatně vydané a důvěryhodné aplikace.  
+- **Osobní**. Toto úložiště se používá pro certifikáty, které jsou spojeny s konkrétním uživatelem počítače. Toto úložiště se obvykle používá pro certifikáty vydané certifikáty certifikační autority v úložišti Důvěryhodné kořenové certifikační autority. Certifikát, najdete tady také může samostatně vydané a důvěryhodné aplikace.  
   
  Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](/windows/desktop/secauthn/certificate-stores).  
   
 ### <a name="selecting-a-store"></a>Výběr Store  
  Výběr umístění pro uložení certifikátu závisí jak a kdy bude spuštěna služba nebo klient. Platí následující obecná pravidla:  
   
--   Pokud je služba WCF hostovaná používá službu Windows **místního počítače** ukládat. Všimněte si, že jsou nutná oprávnění správce k instalaci certifikátů do úložiště místního počítače.  
+- Pokud je služba WCF hostovaná používá službu Windows **místního počítače** ukládat. Všimněte si, že jsou nutná oprávnění správce k instalaci certifikátů do úložiště místního počítače.  
   
--   Pokud služba nebo klient je aplikace, na kterém běží pod účtem uživatele, použijte **aktuálního uživatele** ukládat.  
+- Pokud služba nebo klient je aplikace, na kterém běží pod účtem uživatele, použijte **aktuálního uživatele** ukládat.  
   
 ### <a name="accessing-stores"></a>Přístup k úložišti  
  Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [jak: Vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88914).  
@@ -74,11 +74,11 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
  Můžete také nastavit vlastnost pomocí konfigurace. Tyto prvky se používají k určení režimu ověřování:  
   
--   [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
+- [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md)  
   
--   [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
+- [\<peerAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/peerauthentication-element.md)  
   
--   [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
+- [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
   
 ## <a name="custom-authentication"></a>Vlastní ověřování  
  `CertificateValidationMode` Vlastnost také umožňuje přizpůsobit způsob ověřování certifikátů. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`. Použít <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> hodnotu, je nutné nastavit také `CustomCertificateValidatorType` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní validátor, musí dědit z abstraktní <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  

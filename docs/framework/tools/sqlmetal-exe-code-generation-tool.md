@@ -10,20 +10,20 @@ helpviewer_keywords:
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
 ms.openlocfilehash: 80e0bcd341f9059fc6787756f8e743aedc5dc43e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919799"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (nástroj pro vytváření kódu)
 Nástroj příkazového řádku SqlMetal generuje kód a mapování pro [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] komponentu [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Použitím možností uvedených dále v tomto tématu můžete dát nástroji SqlMetal pokyn, aby provedl několik různých úkonů, které zahrnují následující:  
   
--   Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování z databáze.  
+- Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování z databáze.  
   
--   Vygenerování přechodného souboru .dbml (database markup language) z databáze za účelem přizpůsobení.  
+- Vygenerování přechodného souboru .dbml (database markup language) z databáze za účelem přizpůsobení.  
   
--   Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování ze souboru .dbml.  
+- Vygenerování zdrojového kódu a atributů mapování nebo souboru mapování ze souboru .dbml.  
   
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ve výchozím nastavení, se nachází v souboru `drive`: \Program Files\Microsoft SDKs\Windows\v`n.nn`\bin. Pokud nenainstalujete sady Visual Studio, můžete také si soubor SQLMetal Stáhnout [sady Windows SDK](https://go.microsoft.com/fwlink/?LinkId=142225).  
   
@@ -88,9 +88,9 @@ sqlmetal [options] [<input file>]
 ## <a name="remarks"></a>Poznámky  
  Funkce SqlMetal ve skutečnosti probíhá ve dvou krocích:  
   
--   Extrahování metadat databáze do souboru .dbml.  
+- Extrahování metadat databáze do souboru .dbml.  
   
--   Generování výstupního souboru s kódem.  
+- Generování výstupního souboru s kódem.  
   
      Pomocí vhodných možností příkazového řádku můžete vytvářet zdrojový kód jazyka Visual Basic nebo C#, nebo můžete vytvořit soubor mapování XML.  
   
@@ -100,9 +100,9 @@ sqlmetal [options] [<input file>]
   
  [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] vyvolá výjimku, pokud platí jedna nebo více z následujících podmínek:  
   
--   SqlMetal se pokusí extrahovat uloženou proceduru, která volá sama sebe.  
+- SqlMetal se pokusí extrahovat uloženou proceduru, která volá sama sebe.  
   
--   Úroveň vnoření uložené procedury, funkce nebo zobrazení je vyšší než 32.  
+- Úroveň vnoření uložené procedury, funkce nebo zobrazení je vyšší než 32.  
   
      SqlMetal tuto výjimku zachytí a ohlásí ji jako varování.  
   

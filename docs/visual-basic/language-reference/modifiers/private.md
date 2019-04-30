@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
 ms.openlocfilehash: d6e28e5e87c3a88e4db3fc81177894683dbb0908
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920442"
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
 Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom v rámci kontextu jejich prohlášení, včetně z v rámci žádné typy obsažené.  
@@ -25,13 +25,13 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom
 
 ## <a name="rules"></a>pravidla  
 
--   **Místní deklarace.** Můžete použít `Private` pouze na úrovni modulu. To znamená, že deklarace kontext `Private` elementu musí být modulu, třídy nebo struktury a nemůže být zdrojový soubor, obor názvů, rozhraní nebo proceduru.  
+- **Místní deklarace.** Můžete použít `Private` pouze na úrovni modulu. To znamená, že deklarace kontext `Private` elementu musí být modulu, třídy nebo struktury a nemůže být zdrojový soubor, obor názvů, rozhraní nebo proceduru.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Veškerý kód v rámci kontextu deklarace můžete přístup k jeho `Private` elementy. To zahrnuje kód v rámci omezením typu, jako je vnořená třída nebo výrazu přiřazení ve výčtu. Žádný kód mimo kontext deklarace můžete získat přístup k jeho `Private` elementy.  
+- **Úroveň přístupu.** Veškerý kód v rámci kontextu deklarace můžete přístup k jeho `Private` elementy. To zahrnuje kód v rámci omezením typu, jako je vnořená třída nebo výrazu přiřazení ve výčtu. Žádný kód mimo kontext deklarace můžete získat přístup k jeho `Private` elementy.  
   
--   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `Private` Modifikátor lze použít v těchto kontextech:  
   

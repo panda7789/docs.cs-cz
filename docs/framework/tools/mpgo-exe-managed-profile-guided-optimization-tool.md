@@ -11,11 +11,11 @@ ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0258edb552b53130e7df47df6ccefa9b30def843
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919734"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
@@ -102,9 +102,9 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 ## <a name="using-mpgoexe-from-visual-studio"></a>Použití nástroje Mpgo.exe ze sady Visual Studio  
  Mpgo.exe lze spustit ze sady Visual Studio (přečtěte si článek [jak: Specify Build Events (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) s následujícími omezeními:  
   
--   Nelze použít cesty v uvozovkách ukončené lomítkem, protože makra sady Visual Studio ve výchozím nastavení také používají koncová lomítka. (Například `–OutDir "C:\Output Folder\"` je neplatný.) Chcete-li toto omezení obejít, je možné koncové lomítko zapsat s řídicími znaky. (Například použít `-OutDir "$(OutDir)\"` místo.)  
+- Nelze použít cesty v uvozovkách ukončené lomítkem, protože makra sady Visual Studio ve výchozím nastavení také používají koncová lomítka. (Například `–OutDir "C:\Output Folder\"` je neplatný.) Chcete-li toto omezení obejít, je možné koncové lomítko zapsat s řídicími znaky. (Například použít `-OutDir "$(OutDir)\"` místo.)  
   
--   Ve výchozím nastavení není nástroj Mpgo.exe v cestě sestavení sady Visual Studio. Je nutné přidat cestu do sady Visual Studio nebo zadat úplnou cestu v příkazovém řádku nástroje Mpgo.exe. Můžete použít buď `–Scenario` nebo `–Import` parametr v události po sestavení v sadě Visual Studio. Typickým procesem je však použít `–Scenario` jednou od vývojáře příkazový řádek sady Visual Studio a pak pomocí `–Import` k aktualizaci optimalizovaných sestavení po každém sestavení; například: `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.  
+- Ve výchozím nastavení není nástroj Mpgo.exe v cestě sestavení sady Visual Studio. Je nutné přidat cestu do sady Visual Studio nebo zadat úplnou cestu v příkazovém řádku nástroje Mpgo.exe. Můžete použít buď `–Scenario` nebo `–Import` parametr v události po sestavení v sadě Visual Studio. Typickým procesem je však použít `–Scenario` jednou od vývojáře příkazový řádek sady Visual Studio a pak pomocí `–Import` k aktualizaci optimalizovaných sestavení po každém sestavení; například: `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.  
   
 <a name="samples"></a>   
 ## <a name="examples"></a>Příklady  

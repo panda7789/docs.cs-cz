@@ -7,38 +7,38 @@ helpviewer_keywords:
 - Windows Communication Foundation, transports
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
 ms.openlocfilehash: 6bb8e8b90c26533661684bd403b9ec439f1bb37e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933728"
 ---
 # <a name="transports-in-windows-communication-foundation"></a>Přenosy ve službě Windows Communication Foundation
-Přenosová vrstva je na nejnižší úrovni kanálu zásobníku. Hlavní přenosy použít ve Windows Communication Foundation (WCF) jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, konfigurace přenosu a nastavení, ladění vlastnosti.  
+Přenosové vrstvy je na nejnižší úrovni zásobníku kanálu. Hlavní přenosy použít ve Windows Communication Foundation (WCF) jsou HTTP, HTTPS, TCP a pojmenované kanály. Témata v této části popisují výběru mezi tyto přenosy, přenos konfigurace a nastavení vlastnosti optimalizace.  
   
- WCF zahrnuje další přenosy. Informace o přenosu služby Řízení front zpráv (MSMQ) najdete v tématu [fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md). Informace o přenosu peer-to-peer najdete v tématu [Peer-to-Peer sítě](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
+ WCF obsahuje další přenosy. Informace o přenosu služby Řízení front zpráv (MSMQ) najdete v tématu [fronty a spolehlivé relace](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md). Informace o přenosu peer-to-peer, naleznete v tématu [sítě Peer-to-Peer](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
- Popisuje tři hlavní přenosy a zvolením některé aspekty.  
+ Popisuje tři hlavní přenosy a důležité informace při výběru jednoho.  
   
  [Výběr kodéru zprávy](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  Popisuje faktory, které je třeba zvážit při výběru element vazby kódování zprávy.  
   
  [Streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md)  
- Popisuje postup konfigurace přenosové vrstvy udělat streamování.  
+ Popisuje postup konfigurace přenosové vrstvy provedete streamování.  
   
  [Konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)  
  Popisuje postup konfigurace elementů vazby přenosu HTTP a HTTPS.  
   
  [Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací](../../../../docs/framework/wcf/feature-details/how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation.md)  
- Popisuje, jak používat rezervace WCFURL omezený.  
+ Popisuje, jak používat s omezením pomocí specifikátoru WCFURL rezervace.  
   
  [Přenosové kvóty](../../../../docs/framework/wcf/feature-details/transport-quotas.md)  
- Popisuje důležité informace o nastavení kvóty, které jsou k dispozici v přenosové vrstvě.  
+ Popisuje důležité informace v nastavení kvót, které jsou k dispozici v přenosové vrstvě.  
   
  [Práce s překlady adres (NAT) a bránami firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md)  
- Popisuje postup konfigurace přenosové vrstvy, když jsou zprávy odesílané nebo přijímané za bránou firewall nebo když se nachází překlad síťových adres (NAT).  
+ Popisuje postup konfigurace přenosové vrstvy, když se zprávy odesílané nebo přijímané za bránou firewall nebo překlad síťových adres (NAT) je k dispozici.  
   
  [Sdílení portů Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
  Popisuje postup používání sdílení portů Net.TCP komponent služby WCF.  

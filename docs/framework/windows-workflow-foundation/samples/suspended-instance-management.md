@@ -3,11 +3,11 @@ title: Správa pozastavené instance
 ms.date: 03/30/2017
 ms.assetid: f5ca3faa-ba1f-4857-b92c-d927e4b29598
 ms.openlocfilehash: ace4d2baef8f6b030790deaa5b1c20bb4b0cd30d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785902"
 ---
 # <a name="suspended-instance-management"></a>Správa pozastavené instance
 Tento příklad ukazuje, jak spravovat instancí pracovních postupů, které byly pozastaveny.  Výchozí akce pro <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> je `AbandonAndSuspend`. To znamená, že ve výchozím nastavení, neošetřené výjimky vyvolané z instance pracovního postupu hostitelem <xref:System.ServiceModel.WorkflowServiceHost> způsobí, že instance, která má být uvolněn z paměti (opuštěných) a verze durable/trvalé instance, kterou chcete označit, jak je pozastavena. Instance pracovního postupu pozastavené nebude možné spustit až po jejím nezruší.
@@ -26,41 +26,41 @@ Tento příklad ukazuje, jak spravovat instancí pracovních postupů, které by
 
 1. Tato ukázka vyžaduje, že jsou povoleny následující součásti Windows:
 
-    1.  Server Microsoft zpráv fronty (MSMQ)
+    1. Server Microsoft zpráv fronty (MSMQ)
 
-    2.  SQL Server Express
+    2. SQL Server Express
 
 2. Nastavení databáze SQL serveru.
 
-    1.  Z příkazového řádku sady Visual Studio 2010 spusťte "setup.cmd" adresáře ukázka SuspendedInstanceManagement, který provede následující akce:
+    1. Z příkazového řádku sady Visual Studio 2010 spusťte "setup.cmd" adresáře ukázka SuspendedInstanceManagement, který provede následující akce:
 
-        1.  Vytvoří databáze trvalosti pomocí SQL Server Express. Pokud už existuje databáze trvalosti, pak je vyřadit a znovu vytvořit
+        1. Vytvoří databáze trvalosti pomocí SQL Server Express. Pokud už existuje databáze trvalosti, pak je vyřadit a znovu vytvořit
 
-        2.  Nastaví databáze trvalosti.
+        2. Nastaví databáze trvalosti.
 
-        3.  Přidá IIS APPPOOL\DefaultAppPool a NT AUTHORITY\Network Service InstanceStoreUsers roli, která byla definována při nastavení databáze trvalosti.
+        3. Přidá IIS APPPOOL\DefaultAppPool a NT AUTHORITY\Network Service InstanceStoreUsers roli, která byla definována při nastavení databáze trvalosti.
 
 3. Nastavení služby queue.
 
-    1.  V sadě Visual Studio 2010, klikněte pravým tlačítkem myši **SampleWorkflowApp** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
+    1. V sadě Visual Studio 2010, klikněte pravým tlačítkem myši **SampleWorkflowApp** projektu a klikněte na tlačítko **nastavit jako spouštěný projekt**.
 
-    2.  Kompilace a spuštění SampleWorkflowApp stisknutím kombinace kláves **F5**. Tím se vytvoří požadované frontě.
+    2. Kompilace a spuštění SampleWorkflowApp stisknutím kombinace kláves **F5**. Tím se vytvoří požadované frontě.
 
-    3.  Stisknutím klávesy **Enter** zastavit SampleWorkflowApp.
+    3. Stisknutím klávesy **Enter** zastavit SampleWorkflowApp.
 
-    4.  Otevřete konzolu pro správu počítače spuštěním Compmgmt.msc z příkazového řádku.
+    4. Otevřete konzolu pro správu počítače spuštěním Compmgmt.msc z příkazového řádku.
 
-    5.  Rozbalte **služby a aplikace**, **služby Řízení front zpráv**, **soukromé fronty**.
+    5. Rozbalte **služby a aplikace**, **služby Řízení front zpráv**, **soukromé fronty**.
 
-    6.  Klikněte pravým tlačítkem myši **ReceiveTx** zařadit do fronty a vyberte **vlastnosti**.
+    6. Klikněte pravým tlačítkem myši **ReceiveTx** zařadit do fronty a vyberte **vlastnosti**.
 
-    7.  Vyberte **zabezpečení** kartu a povolit **Everyone** oprávnění pro **přijímat zprávy**, **prohlížet zprávy**, a  **Odeslat zprávu**.
+    7. Vyberte **zabezpečení** kartu a povolit **Everyone** oprávnění pro **přijímat zprávy**, **prohlížet zprávy**, a  **Odeslat zprávu**.
 
 4. Nyní spusťte ukázku.
 
-    1.  V sadě Visual Studio 2010, spusťte projekt SampleWorkflowApp znovu bez ladění stisknutím kombinace kláves **Ctrl + F5**. Dvě adresy koncových bodů budou zobrazeny v okně konzoly: jeden pro koncový bod aplikace a pak ostatní z <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>. Instance pracovního postupu se pak vytvoří a sledování záznamů pro tuto instanci se zobrazí v okně konzoly. Instance pracovního postupu vyvolá výjimku, způsobující instance, kterou chcete pozastavit a byla přerušena.
+    1. V sadě Visual Studio 2010, spusťte projekt SampleWorkflowApp znovu bez ladění stisknutím kombinace kláves **Ctrl + F5**. Dvě adresy koncových bodů budou zobrazeny v okně konzoly: jeden pro koncový bod aplikace a pak ostatní z <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>. Instance pracovního postupu se pak vytvoří a sledování záznamů pro tuto instanci se zobrazí v okně konzoly. Instance pracovního postupu vyvolá výjimku, způsobující instance, kterou chcete pozastavit a byla přerušena.
 
-    2.  Nástroj příkazového řádku je pak možné provádět další akce na kteroukoli z těchto instancí. Syntaxe pro argumenty příkazového řádku je následující:
+    2. Nástroj příkazového řádku je pak možné provádět další akce na kteroukoli z těchto instancí. Syntaxe pro argumenty příkazového řádku je následující:
 
          `SuspendedInstanceManagement -Command:[CommandName] -Server:[ServerName] -Database:[DatabaseName] -InstanceId:[InstanceId]`
 

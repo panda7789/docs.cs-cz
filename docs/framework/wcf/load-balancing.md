@@ -5,11 +5,11 @@ helpviewer_keywords:
 - load balancing [WCF]
 ms.assetid: 148e0168-c08d-4886-8769-776d0953b80f
 ms.openlocfilehash: a43546b9cbb95cd16c1d94372e786acd103ea0bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921938"
 ---
 # <a name="load-balancing"></a>Vyrovnávání zatížení
 Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundation (WCF) je škálování je podle jejich nasazení do farmy s vyrovnáváním zatížení serveru. Aplikace WCF mohou být vyrovnávání zatížení pomocí standardní zátěže postupů, včetně nástroje pro vyrovnávání zatížení softwaru jako je například Vyrovnávání zatížení sítě Windows, stejně jako hardwarové zařízení Vyrovnávání zatížení.  
@@ -82,9 +82,9 @@ Jedním ze způsobů navýšení kapacity aplikace Windows Communication Foundat
 ## <a name="load-balancing-with-the-wshttp-binding-and-the-wsdualhttp-binding"></a>Vyrovnávání zatížení pomocí vazby WSHttp a WSDualHttp vazby  
  Jak <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> může být s vyrovnáváním zatížení pomocí metod Vyrovnávání zatížení HTTP, pokud několik změn do výchozí vazby konfigurace.  
   
--   Vypněte zařízení kontext zabezpečení: To lze provést nastavením <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost <xref:System.ServiceModel.WSHttpBinding> k `false`. Případně, pokud relace zabezpečení vyžaduje, je možné použít stavová bezpečnostních relací, jak je popsáno v [zabezpečení relací](../../../docs/framework/wcf/feature-details/secure-sessions.md) tématu. Stavové bezpečnostních relací Povolit službě a zůstat bezstavové veškerý stav relace zabezpečení se přenášejí spolu s každou žádostí, jako součást tokenu zabezpečení ochrany. Všimněte si, že pokud chcete povolit relaci stavové zabezpečení, je nutné použít <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelem definovaný <xref:System.ServiceModel.Channels.Binding> jako nezbytné konfigurace nastavení nejsou přístupná na <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> , které jsou k dispozici v systému.  
+- Vypněte zařízení kontext zabezpečení: To lze provést nastavením <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> vlastnost <xref:System.ServiceModel.WSHttpBinding> k `false`. Případně, pokud relace zabezpečení vyžaduje, je možné použít stavová bezpečnostních relací, jak je popsáno v [zabezpečení relací](../../../docs/framework/wcf/feature-details/secure-sessions.md) tématu. Stavové bezpečnostních relací Povolit službě a zůstat bezstavové veškerý stav relace zabezpečení se přenášejí spolu s každou žádostí, jako součást tokenu zabezpečení ochrany. Všimněte si, že pokud chcete povolit relaci stavové zabezpečení, je nutné použít <xref:System.ServiceModel.Channels.CustomBinding> nebo uživatelem definovaný <xref:System.ServiceModel.Channels.Binding> jako nezbytné konfigurace nastavení nejsou přístupná na <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.WSDualHttpBinding> , které jsou k dispozici v systému.  
   
--   Nepoužívejte spolehlivé relace. Tato funkce je ve výchozím nastavení vypnuta.  
+- Nepoužívejte spolehlivé relace. Tato funkce je ve výchozím nastavení vypnuta.  
   
 ## <a name="load-balancing-the-nettcp-binding"></a>Vazba Net.TCP Vyrovnávání zatížení  
  <xref:System.ServiceModel.NetTcpBinding> Může být s vyrovnáváním zatížení pomocí techniky pro vyrovnávání zatížení vrstvy IP. Ale <xref:System.ServiceModel.NetTcpBinding> fondů připojení TCP ve výchozím nastavení ke snížení latence připojení. Toto je optimalizace, která dochází ke kolizím s základní mechanismus služby Vyrovnávání zatížení. Primární konfigurační hodnoty pro optimalizaci <xref:System.ServiceModel.NetTcpBinding> je časový limit zapůjčení, která je součástí nastavení fondu připojení. Sdružování připojení způsobí, že připojení klientů k přidružený k konkrétní servery ve farmě. Jako dobu života těchto připojení zvýšit (faktor, který řídí nastavení časového limitu zapůjčení), nevyvážené distribuci zatížení napříč různými servery ve farmě. Díky tomu průměr volání času zvyšuje. Ano, při použití <xref:System.ServiceModel.NetTcpBinding> ve scénářích s vyrovnáváním zatížení, zvažte snížení výchozí časový limit zapůjčení používá vazba. Časový limit 30 sekundách zapůjčení je rozumné výchozí bod pro scénáře s vyrovnáváním zatížení, přestože optimální hodnota závisí na aplikaci. Další informace o vypršení časového limitu zapůjčení kanálu a ostatní přenosové kvóty najdete v tématu [přenosové kvóty](../../../docs/framework/wcf/feature-details/transport-quotas.md).  

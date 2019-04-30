@@ -14,11 +14,11 @@ helpviewer_keywords:
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
 ms.openlocfilehash: dfcfb7370ffd59a50cf6d0b01e84e581ddc6fc52
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306518"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914092"
 ---
 # <a name="how-to-log-information-about-services"></a>Postupy: Zaznamenávání informací o službách
 Všechny projekty služeb Windows ve výchozím nastavení, mají možnost pracovat v protokolu událostí aplikace a do ní zapisovat informace a výjimek. Můžete použít <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost určit, jestli chcete tuto funkci ve vaší aplikaci. Ve výchozím nastavení je protokolování zapnuto na jakoukoli službu, které vytvoříte pomocí šablony projektu služby Windows. Můžete použít statické formu <xref:System.Diagnostics.EventLog> třídu pro zápis služby informace do protokolu bez nutnosti vytvářet instance <xref:System.Diagnostics.EventLog> komponenta nebo ruční registraci zdroje.  
@@ -32,14 +32,14 @@ Všechny projekty služeb Windows ve výchozím nastavení, mají možnost praco
   
 ### <a name="to-enable-default-event-logging-for-your-service"></a>Povolení protokolování událostí výchozí pro vaši službu  
   
--   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `true`.  
+- Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `true`.  
   
     > [!NOTE]
     >  Ve výchozím nastavení, tato vlastnost nastavena na `true`. Není nutné nastavovat to explicitně, pokud nevytváříte složitější zpracování, jako jsou například vyhodnocení podmínky a pak nastavení <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> nastavenou na výsledek této podmínky.  
   
 ### <a name="to-disable-event-logging-for-your-service"></a>Chcete-li zakázat protokolování událostí pro vaši službu  
   
--   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `false`.  
+- Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `false`.  
   
      [!code-csharp[VbRadconService#17](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#17)]
      [!code-vb[VbRadconService#17](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#17)]  

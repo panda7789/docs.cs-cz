@@ -10,11 +10,11 @@ helpviewer_keywords:
 - /vbruntime compiler option [Visual Basic]
 ms.assetid: 1aa0239e-511a-4c29-957d-fd72877b350a
 ms.openlocfilehash: a1988fcd19c6629d85ae0e739681fd39fe033c0d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58843861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796127"
 ---
 # <a name="-vbruntime"></a>-vbruntime
 Určuje, že kompilátor by měl kompilovat bez odkazu do knihovny prostředí Runtime jazyka Visual Basic nebo s odkazem na knihovně modulu runtime specifické.  
@@ -50,35 +50,35 @@ Určuje, že kompilátor by měl kompilovat bez odkazu do knihovny prostředí R
   
  Následující členy modulu runtime jsou vloženy:  
   
--   <xref:Microsoft.VisualBasic.CompilerServices.Conversions> Třída  
+- <xref:Microsoft.VisualBasic.CompilerServices.Conversions> Třída  
   
--   <xref:Microsoft.VisualBasic.Strings.AscW%28System.Char%29> – Metoda  
+- <xref:Microsoft.VisualBasic.Strings.AscW%28System.Char%29> – Metoda  
   
--   <xref:Microsoft.VisualBasic.Strings.AscW%28System.String%29> – Metoda  
+- <xref:Microsoft.VisualBasic.Strings.AscW%28System.String%29> – Metoda  
   
--   <xref:Microsoft.VisualBasic.Strings.ChrW%28System.Int32%29> – Metoda  
+- <xref:Microsoft.VisualBasic.Strings.ChrW%28System.Int32%29> – Metoda  
   
--   <xref:Microsoft.VisualBasic.Constants.vbBack> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbBack> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbCr> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbCr> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbCrLf> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbCrLf> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbFormFeed> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbFormFeed> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbLf> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbLf> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNewLine> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbNewLine> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNullChar> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbNullChar> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbNullString> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbNullString> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbTab> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbTab> Konstanty  
   
--   <xref:Microsoft.VisualBasic.Constants.vbVerticalTab> Konstanty  
+- <xref:Microsoft.VisualBasic.Constants.vbVerticalTab> Konstanty  
   
--   Některé objekty `My` typu  
+- Některé objekty `My` typu  
   
  Pokud kompilujete pomocí `-vbruntime*` možnost a váš kód odkazuje na člena z knihovny Runtime jazyka Visual Basic, který není integrován s základní funkce, kompilátor chybovou zprávu, která označuje, že člen není k dispozici.  
   

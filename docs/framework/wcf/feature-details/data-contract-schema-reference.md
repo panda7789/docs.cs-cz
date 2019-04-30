@@ -5,11 +5,11 @@ helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
 ms.openlocfilehash: a4ddaaea2133a8adf5271628f442644194a7f453
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59131934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857178"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -24,19 +24,19 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
 ### <a name="support-levels"></a>Úrovně podpory  
  `DataContractSerializer` Pro danou funkci schématu XML obsahuje následující úrovně podpory:  
   
--   **Podporované**. Je explicitní mapování z této funkce CLR typy atributů (nebo obojí) pomocí `DataContractSerializer`.  
+- **Podporované**. Je explicitní mapování z této funkce CLR typy atributů (nebo obojí) pomocí `DataContractSerializer`.  
   
--   **Ignorovat**. Tato funkce je povolen ve schématech importované tímto seznamem `DataContractSerializer`, ale nemá žádný vliv na generování kódu.  
+- **Ignorovat**. Tato funkce je povolen ve schématech importované tímto seznamem `DataContractSerializer`, ale nemá žádný vliv na generování kódu.  
   
--   **Je zakázané**. `DataContractSerializer` Nepodporuje import schématu pomocí funkce. Například Svcutil.exe při přístupu k souboru WSDL se schématem, který používá funkce, přejde k použití <xref:System.Xml.Serialization.XmlSerializer> místo. Toto je ve výchozím nastavení.  
+- **Je zakázané**. `DataContractSerializer` Nepodporuje import schématu pomocí funkce. Například Svcutil.exe při přístupu k souboru WSDL se schématem, který používá funkce, přejde k použití <xref:System.Xml.Serialization.XmlSerializer> místo. Toto je ve výchozím nastavení.  
   
 ## <a name="general-information"></a>Obecné informace  
   
--   Obor názvů schématu je popsán v [schématu XML](https://go.microsoft.com/fwlink/?LinkId=95475). V tomto dokumentu se používá předpona "x".  
+- Obor názvů schématu je popsán v [schématu XML](https://go.microsoft.com/fwlink/?LinkId=95475). V tomto dokumentu se používá předpona "x".  
   
--   Všechny atributy s oborem názvů schéma se ignorují.  
+- Všechny atributy s oborem názvů schéma se ignorují.  
   
--   Žádné poznámky (s výjimkou těch popsaných v tomto dokumentu) jsou ignorovány.  
+- Žádné poznámky (s výjimkou těch popsaných v tomto dokumentu) jsou ignorovány.  
   
 ### <a name="xsschema-attributes"></a>\<xs:Schema >: atributy  
   
@@ -120,11 +120,11 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
 ### <a name="general-information"></a>Obecné informace  
  `<xs:element>` může dojít v následujících kontextů:  
   
--   Může dojít v rámci `<xs:sequence>`, která popisuje datový člen kontraktu běžných dat (bez kolekce). V takovém případě `maxOccurs` atribut musí být 1. (Není povolena hodnota 0).  
+- Může dojít v rámci `<xs:sequence>`, která popisuje datový člen kontraktu běžných dat (bez kolekce). V takovém případě `maxOccurs` atribut musí být 1. (Není povolena hodnota 0).  
   
--   Může dojít v rámci `<xs:sequence>`, která popisuje datový člen třídy kontraktu dat kolekce. V takovém případě `maxOccurs` atribut musí být větší než 1 nebo "bez vazby".  
+- Může dojít v rámci `<xs:sequence>`, která popisuje datový člen třídy kontraktu dat kolekce. V takovém případě `maxOccurs` atribut musí být větší než 1 nebo "bez vazby".  
   
--   Může dojít v rámci `<xs:schema>` jako globální prvek prohlášení (Připravený).  
+- Může dojít v rámci `<xs:schema>` jako globální prvek prohlášení (Připravený).  
   
 ### <a name="xselement-with-maxoccurs1-within-an-xssequence-data-members"></a>\<xs: element > s maxOccurs = 1 v rámci \<xs:sequence > (datové členy)  
   
@@ -144,17 +144,17 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
 ### <a name="xselement-with-maxoccurs1-within-an-xssequence-collections"></a>\<xs: element > s maxOccurs > 1 v rámci \<xs:sequence > (kolekce)  
   
--   Mapuje <xref:System.Runtime.Serialization.CollectionDataContractAttribute>.  
+- Mapuje <xref:System.Runtime.Serialization.CollectionDataContractAttribute>.  
   
--   V kolekci typů je povolen pouze jeden xs: element v rámci xs:sequence.  
+- V kolekci typů je povolen pouze jeden xs: element v rámci xs:sequence.  
   
  Kolekce může být z následujících typů:  
   
--   Kolekce pravidelně (například pole).  
+- Kolekce pravidelně (například pole).  
   
--   Kolekce slovníku (mapování jednu hodnotu; například <xref:System.Collections.Hashtable>).  
+- Kolekce slovníku (mapování jednu hodnotu; například <xref:System.Collections.Hashtable>).  
   
--   Jediným rozdílem mezi slovník a pole typu dvojice klíč/hodnota je vygenerovaný programovacím modelu. Je mechanismus anotace schématu, která slouží k označení, že je daný typ kolekce slovníku.  
+- Jediným rozdílem mezi slovník a pole typu dvojice klíč/hodnota je vygenerovaný programovacím modelu. Je mechanismus anotace schématu, která slouží k označení, že je daný typ kolekce slovníku.  
   
  Pravidla pro `ref`, `block`, `default`, `fixed`, `form`, a `id` atributy jsou stejné jako u případ jiné kolekce. Ostatní atributy zahrnout v následující tabulce.  
   
@@ -168,13 +168,13 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
 ### <a name="xselement-within-an-xsschema-global-element-declaration"></a>\<xs: element > v rámci \<xs:schema > globální deklaraci elementu  
   
--   Globální prvek prohlášení (Připravený), který má stejný název a obor názvů jako typ ve schématu nebo, který definuje anonymního typu uvnitř samotného, se říká, že má být přidružena k typu.  
+- Globální prvek prohlášení (Připravený), který má stejný název a obor názvů jako typ ve schématu nebo, který definuje anonymního typu uvnitř samotného, se říká, že má být přidružena k typu.  
   
--   Export schématu: přidružené GEDs jsou generovány pro každý generovaný typ jednoduché i složité.  
+- Export schématu: přidružené GEDs jsou generovány pro každý generovaný typ jednoduché i složité.  
   
--   Serializace/deserializace: přidružené GEDs se používají jako kořenových elementů typu.  
+- Serializace/deserializace: přidružené GEDs se používají jako kořenových elementů typu.  
   
--   Import schématu: přidružené GEDs se nevyžadují a jsou ignorovány, pokud, podle následujících pravidel (Pokud definují typy).  
+- Import schématu: přidružené GEDs se nevyžadují a jsou ignorovány, pokud, podle následujících pravidel (Pokud definují typy).  
   
 |Atribut|Schéma|  
 |---------------|------------|  
@@ -202,11 +202,11 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
  \* Při použití `simpleType` a `complexType,` mapování pro anonymní typy je stejná jako anonymní typy, s tím rozdílem, že neexistuje žádná kontrakty anonymní data, takže vytvoření kontraktu s názvem dat s názvem odvozen z názvu elementu. Pravidla pro anonymní typy jsou v následujícím seznamu:  
   
--   Podrobnosti implementace WCF: Pokud `xs:element` název neobsahuje období, anonymního typu se mapuje na vnitřní typ vnější datový typ kontraktu. Pokud název obsahuje tečky, je výsledný typ kontraktu dat nezávislé (ne vnitřní typ).  
+- Podrobnosti implementace WCF: Pokud `xs:element` název neobsahuje období, anonymního typu se mapuje na vnitřní typ vnější datový typ kontraktu. Pokud název obsahuje tečky, je výsledný typ kontraktu dat nezávislé (ne vnitřní typ).  
   
--   Název kontraktu generovaná data vnitřního typu je názvem kontraktu dat z vnějšího typu následovaných tečkou, název elementu a řetězce "Type".  
+- Název kontraktu generovaná data vnitřního typu je názvem kontraktu dat z vnějšího typu následovaných tečkou, název elementu a řetězce "Type".  
   
--   Pokud dat smluvním vztahu se stejným názvem už existuje, název je jedinečný připojením "1", "2", "3", a tak dále, dokud se vytvoří jedinečný název.  
+- Pokud dat smluvním vztahu se stejným názvem už existuje, název je jedinečný připojením "1", "2", "3", a tak dále, dokud se vytvoří jedinečný název.  
   
 ## <a name="simple-types---xssimpletype"></a>Jednoduché typy – \<xs:simpleType >  
   
@@ -228,11 +228,11 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
 ### <a name="xsrestriction"></a>\<xs:restriction >  
   
--   Komplexní typ omezení jsou podporovány pouze pro základ = "`xs:anyType`".  
+- Komplexní typ omezení jsou podporovány pouze pro základ = "`xs:anyType`".  
   
--   Omezení jednoduchého typu `xs:string` , které nemají žádné omezení omezující vlastnosti jiné než `xs:enumeration` se mapují na výčet data smlouvy.  
+- Omezení jednoduchého typu `xs:string` , které nemají žádné omezení omezující vlastnosti jiné než `xs:enumeration` se mapují na výčet data smlouvy.  
   
--   Další omezení jednoduchého typu jsou mapovány na typy, které omezují. Například omezení `xs:int` mapuje na celé číslo, stejně jako `xs:int` sám nemá. Další informace o mapování primitivní typ naleznete v tématu typ nebo primitivní mapování.  
+- Další omezení jednoduchého typu jsou mapovány na typy, které omezují. Například omezení `xs:int` mapuje na celé číslo, stejně jako `xs:int` sám nemá. Další informace o mapování primitivní typ naleznete v tématu typ nebo primitivní mapování.  
   
 ### <a name="xsrestriction-attributes"></a>\<xs:restriction >: atributy  
   
@@ -464,9 +464,9 @@ public class Employee : Person
   
  Pokud odvozený typ obsahuje element se stejným názvem jako prvek v základním typu, deklarace duplicitní prvek mapuje na datový člen s názvem, který je generován být jedinečný. Kladná celá čísla jsou přidány do názvem datového členu ("member1", "člen2" a tak dále) dokud nebude nalezen jedinečný název. Naopak:  
   
--   Pokud kontrakt odvozené dat má datový člen se stejným názvem a typem jako datový člen základní datový kontrakt, `DataContractSerializer` generuje tento odpovídající element v odvozeném typu.  
+- Pokud kontrakt odvozené dat má datový člen se stejným názvem a typem jako datový člen základní datový kontrakt, `DataContractSerializer` generuje tento odpovídající element v odvozeném typu.  
   
--   Pokud kontrakt odvozené dat má datový člen se stejným názvem jako datový člen v základní datový kontrakt ale odlišným typem, `DataContractSerializer` importuje schéma s elementem typu `xs:anyType` v základním typu a deklarace odvozených typů. Původní název typu je zachováno v `xs:annotations/xs:appInfo/ser:ActualType/@Name`.  
+- Pokud kontrakt odvozené dat má datový člen se stejným názvem jako datový člen v základní datový kontrakt ale odlišným typem, `DataContractSerializer` importuje schéma s elementem typu `xs:anyType` v základním typu a deklarace odvozených typů. Původní název typu je zachováno v `xs:annotations/xs:appInfo/ser:ActualType/@Name`.  
   
  Obě varianty může vést k schéma s nejednoznačný obsahu modelu, který závisí v řádu příslušné datové členy.  
   
@@ -609,11 +609,11 @@ public class Employee : Person
   
  Následující by měl být jste si poznamenali:  
   
--   `ser:char` se používá k reprezentaci znaků Unicode typu <xref:System.Char>.  
+- `ser:char` se používá k reprezentaci znaků Unicode typu <xref:System.Char>.  
   
--   `valuespace` z `xs:duration` byla snížena na seřazené sady, takže je možné mapovat na <xref:System.TimeSpan>.  
+- `valuespace` z `xs:duration` byla snížena na seřazené sady, takže je možné mapovat na <xref:System.TimeSpan>.  
   
--   `FactoryType` se používá ve schématech exportovat z typů, které jsou odvozeny z <xref:System.Runtime.Serialization.ISerializable>.  
+- `FactoryType` se používá ve schématech exportovat z typů, které jsou odvozeny z <xref:System.Runtime.Serialization.ISerializable>.  
   
 ## <a name="importing-non-datacontract-schemas"></a>Import jiné než DataContract schémata  
  `DataContractSerializer` má `ImportXmlTypes` možnost, povolíte import schémat, které není v souladu s `DataContractSerializer` XSD profilu (najdete v článku <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastnost). Tuto volbu nastavíte `true` povoluje přijetí nonkonformní schématu typy a mapování pro následující implementaci <xref:System.Xml.Serialization.IXmlSerializable> obtékání pole <xref:System.Xml.XmlNode> (se liší jenom název třídy).  

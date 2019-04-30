@@ -4,12 +4,12 @@ description: Doporučení osvědčených postupů pro správu závislostí NuGet
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: c5df30c606e77c9ef44387233b0072ab890f612f
-ms.sourcegitcommit: e42d09e5966dd9fd02847d3e7eeb4ec0877069f8
+ms.openlocfilehash: 5566ab83040ce5dc23520401e3fc4bb619af4ec4
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49400487"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909922"
 ---
 # <a name="dependencies"></a>Závislosti
 
@@ -92,10 +92,12 @@ Sdílený zdroj balíčků mají určitá omezení. Se může odkazovat jen `Pac
 
 > Sdílený zdroj typy jsou kompilovány do odkazující sestavení a nemůže se vyměňují přes hranice sestavení. Například sdílené zdroje `IRepository` typ v jednom projektu je samostatný typ ze stejného sdíleného zdroje `IRepository` v jiném projektu. Typy v balíčcích sdílené zdroje by měly mít `internal` viditelnost.
 
-**❌ NEPODPORUJÍ** publikování sdílené zdroje balíčků na nuget.org.
+**❌ NEPODPORUJÍ** publikování sdílené zdroje balíčků na NuGet.org.
 
 > Sdílený zdroj balíčky obsahují zdrojový kód a jde použít jenom projekty se stejným typem jazyka. Například C# sdílené zdroje balíčku nelze použít pro F# aplikace.
+>
+> Publikovat balíčky sdílené zdroje, které mají [místní informační kanál či MyGet](./publish-nuget-package.md) využívat interně v rámci svého projektu.
 
 >[!div class="step-by-step"]
-[Předchozí](./nuget.md)
-[další](./sourcelink.md)
+>[Předchozí](nuget.md)
+>[další](sourcelink.md)

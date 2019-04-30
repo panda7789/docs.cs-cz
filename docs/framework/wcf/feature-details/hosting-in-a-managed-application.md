@@ -3,11 +3,11 @@ title: Hostování ve spravované aplikaci
 ms.date: 03/30/2017
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
 ms.openlocfilehash: 415a6fef511d7d7397a38882801e5848e2998a11
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855826"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
 Služby Windows Communication Foundation (WCF) je možné hostovat v libovolném [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace. Služba s vlastním hostováním je flexibilní možnost hostování, protože vyžaduje minimálně infrastrukturu pro nasazení. Je však také nejméně robustní možnost hostování, protože spravovaných aplikací se neposkytuje pokročilé hostování a funkcím pro správu Další možnosti hostování ve službě WCF, jako jsou služby Internet Information Services (IIS) a Windows.  

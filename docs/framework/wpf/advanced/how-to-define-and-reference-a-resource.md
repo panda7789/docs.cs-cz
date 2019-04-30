@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definice a odkaz zdroje'
+title: 'Postupy: Definování prostředků a odkazování na ně'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - resources [WPF], defining
@@ -8,13 +8,13 @@ helpviewer_keywords:
 - referencing resources [WPF]
 ms.assetid: b86b876b-0a10-489b-9a5d-581ea9b32406
 ms.openlocfilehash: 80be1460906100072e6263c967c213df7968c705
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492059"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776503"
 ---
-# <a name="how-to-define-and-reference-a-resource"></a>Postupy: Definice a odkaz zdroje
+# <a name="how-to-define-and-reference-a-resource"></a>Postupy: Definování prostředků a odkazování na ně
 
 Tento příklad ukazuje, jak definovat prostředek a na něj odkazovat pomocí atributu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].
 

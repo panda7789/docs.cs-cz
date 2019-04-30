@@ -3,11 +3,11 @@ title: Funkce řetězce
 ms.date: 03/30/2017
 ms.assetid: 338f0c26-8aee-43eb-bd1a-ec0849a376b9
 ms.openlocfilehash: 6da257cad90232426c71221dfd9d418265479bbe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879113"
 ---
 # <a name="string-functions"></a>Funkce řetězce
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje `String` funkce, které provádějí operace na vstup `String` a vraťte se `String` nebo výsledek číselnou hodnotu. Tyto funkce jsou v oboru názvů systému SQL Server, která je k dispozici, když použijete SqlClient. Vlastnost oboru názvů poskytovatele umožňuje zjistit, která předpona je používána tohoto poskytovatele pro konkrétní konstrukce, jako jsou typy a funkce Entity Framework.  

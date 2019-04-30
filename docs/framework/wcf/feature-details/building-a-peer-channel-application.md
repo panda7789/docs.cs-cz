@@ -3,11 +3,11 @@ title: Vytvoření aplikace rovnocenného kanálu
 ms.date: 03/30/2017
 ms.assetid: a69a1b8f-8e15-45c5-87b8-bdb71e1c7ab8
 ms.openlocfilehash: b6f856eed1aa011bd21bcf01172e9322df70925b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857672"
 ---
 # <a name="building-a-peer-channel-application"></a>Vytvoření aplikace rovnocenného kanálu
 Následující části obsahují pokyny týkající se vývoje aplikací protokolu Peer Channel.  

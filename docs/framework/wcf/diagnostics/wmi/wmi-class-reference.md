@@ -3,17 +3,17 @@ title: WMI – přehled tříd
 ms.date: 03/30/2017
 ms.assetid: b95a51f5-8251-4619-ae05-7de88cb90f9a
 ms.openlocfilehash: 73b36bfc3df917982a2cc9071bdb31f42b3b2dff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487617"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61915653"
 ---
 # <a name="wmi-class-reference"></a>WMI – přehled tříd
-Tato část obsahuje seznam všech tříd WMI vystavený poskytovatelem služby WMI Windows Communication Foundation (WCF).  
+Tato část obsahuje seznam všech třídy služby WMI vystavený poskytovatelem služby WMI Windows Communication Foundation (WCF).  
   
-## <a name="accessing-wmi-instances"></a>Přístup k instance rozhraní WMI  
- Všechny třídy uvedené v odkaz na objekt rozhraní WMI nemůže být přímo vytvořeny instance, s výjimkou služby, AppDomain, kontrakt, ServiceAppDomain, ServiceToEndpointAssociation a koncového bodu. Pro přístup k další instance, má přístup k vlastnostem třídy výše uvedených nejvyšší úrovně. Například můžete získat přístup k instanci TransportBindingElement z koncového bodu -> instance vazby -> třídy BindingElements.  
+## <a name="accessing-wmi-instances"></a>Přístup k rozhraní WMI instancí  
+ Všechny třídy uvedené v odkazu na objekt rozhraní WMI nemůže být přímo vytvořeny instance, s výjimkou služby, doména AppDomain, kontrakt, ServiceAppDomain, ServiceToEndpointAssociation a koncový bod. Pro přístup k další instance, můžete přístup k vlastnostem třídy výše uvedené nejvyšší úrovně. Například můžete získat přístup k instanci třídy TransportBindingElement z koncového bodu instance -> -> vazby třídy BindingElements.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ActivityTransfer](../../../../../docs/framework/wcf/diagnostics/wmi/activitytransfer.md)  
@@ -24,7 +24,7 @@ Tato část obsahuje seznam všech tříd WMI vystavený poskytovatelem služby 
   
  [AsymmetricSecurityBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/asymmetricsecuritybindingelement.md)  
   
- "Chování třída"  
+ "Chování třídy"  
   
  [BinaryMessageEncodingBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/binarymessageencodingbindingelement.md)  
   
@@ -80,7 +80,7 @@ Tato část obsahuje seznam všech tříd WMI vystavený poskytovatelem služby 
   
  [OneWayBindingElement](../../../../../docs/framework/wcf/diagnostics/wmi/onewaybindingelement.md)  
   
- "Třída operation"  
+ "Operace třída"  
   
  [OperationBehaviorAttribute](../../../../../docs/framework/wcf/diagnostics/wmi/operationbehaviorattribute.md)  
   

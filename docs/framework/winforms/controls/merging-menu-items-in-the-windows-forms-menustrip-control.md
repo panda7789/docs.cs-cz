@@ -6,11 +6,11 @@ helpviewer_keywords:
 - merging [Windows Forms], general concepts
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
 ms.openlocfilehash: dbe1c0325499e7b925d504fc80f9034f9e387475
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59231562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936354"
 ---
 # <a name="merging-menu-items-in-the-windows-forms-menustrip-control"></a>Slučování položek nabídky v ovládacím prvku Windows Forms MenuStrip
 Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položky nabídky nebo celý nabídek z podřízeného formuláře do nabídky nadřazeného formuláře.  
@@ -20,9 +20,9 @@ Pokud máte aplikace rozhraní více dokumentů (MDI), můžete sloučit položk
 ## <a name="general-concepts"></a>Obecné koncepty  
  Sloučení postupy zahrnují cíl a správy zdrojového kódu:  
   
--   Cílem <xref:System.Windows.Forms.MenuStrip> ovládací prvek na hlavní nebo nadřazený formulář MDI, do které provádíte sloučení položek nabídky.  
+- Cílem <xref:System.Windows.Forms.MenuStrip> ovládací prvek na hlavní nebo nadřazený formulář MDI, do které provádíte sloučení položek nabídky.  
   
--   Zdroj je <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízený formulář MDI, která obsahuje položky nabídky, které chcete sloučit do nabídky Cíl.  
+- Zdroj je <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízený formulář MDI, která obsahuje položky nabídky, které chcete sloučit do nabídky Cíl.  
   
  <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> Vlastnost identifikuje položku nabídky, jehož rozevíracího seznamu naplníte názvy aktuální MDI nadřazené podřízené formuláře MDI. Například můžete obvykle podřízený objekt MDI, které jsou právě otevřeny na seznam **okno** nabídky.  
   

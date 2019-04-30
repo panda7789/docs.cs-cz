@@ -7,30 +7,30 @@ helpviewer_keywords:
 - brushes [WPF], painting with system brushes [WPF]
 ms.assetid: 5141a763-9235-42cb-a6bb-afc75513eac7
 ms.openlocfilehash: e713903e2cfbb63cb64ceb94621317f9e76dea70
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195043"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921716"
 ---
 # <a name="how-to-paint-an-area-with-a-system-brush"></a>Postupy: Vykreslení oblasti systémovým štětcem
 <xref:System.Windows.SystemColors> Třídě poskytuje přístup k systémových štětců a barvy, jako například <xref:System.Windows.SystemColors.ControlBrush%2A>, <xref:System.Windows.SystemColors.ControlBrushKey%2A>, a <xref:System.Windows.SystemColors.DesktopBrush%2A>. Je systém štětce <xref:System.Windows.Media.SolidColorBrush> objekt, který vykreslí oblasti barvou zadaný systém. Systémové štětce vždy vytváří plné barvy; nelze použít k vytvoření přechodu.  
   
  Systémových štětců slouží jako statická nebo dynamická prostředek. Použít dynamický prostředek štětce, který se automaticky aktualizovat, pokud uživatel změní štětce systému, jako je aplikace spuštěna; Jinak použijte statických prostředků. Třída SystemColors obsahuje širokou škálu statické vlastnosti, které následují přísné zásady vytváření názvů:  
   
--   *\<SystemColor >* štětce  
+- *\<SystemColor >* štětce  
   
      Získá statický odkaz na <xref:System.Windows.Media.SolidColorBrush> zadaný systém barvy.  
   
--   *\<SystemColor>* BrushKey  
+- *\<SystemColor>* BrushKey  
   
      Získá odkaz na dynamické <xref:System.Windows.Media.SolidColorBrush> zadaný systém barvy.  
   
--   *\<SystemColor>* Color  
+- *\<SystemColor>* Color  
   
      Získá statický odkaz na <xref:System.Windows.Media.Color> struktury zadané systémovou barvou.  
   
--   *\<SystemColor >* ColorKey  
+- *\<SystemColor >* ColorKey  
   
      Získá odkaz na dynamické <xref:System.Windows.Media.Color> struktury zadané systémovou barvou.  
   

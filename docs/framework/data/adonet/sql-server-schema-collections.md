@@ -3,11 +3,11 @@ title: Kolekce schémat SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
 ms.openlocfilehash: 79bf9f1253b64863d3eabddff8c33b6ffab70f41
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878458"
 ---
 # <a name="sql-server-schema-collections"></a>Kolekce schémat SQL Serveru
 Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě společné kolekce schémat. Kolekce schémat mírně lišit podle verze SQL serveru, který používáte. Pokud chcete určit seznam kolekcí nepodporuje schéma, zavolejte **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají.  

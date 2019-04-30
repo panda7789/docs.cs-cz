@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
 ms.openlocfilehash: ca52b725f5fad4b591b95bf6a6dd778c7a72d235
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875395"
 ---
 # <a name="wcf-data-services-overview"></a>Přehled služby WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje vytváření a spotřebě datových služeb webu nebo intranetu pomocí [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] umožňuje zpřístupnění vašich dat ve formě prostředky, které jsou adresovat pomocí identifikátorů URI. Umožňuje získat přístup k a data změny pomocí sémantiky representational state Transfer (REST), konkrétně standardní příkazy HTTP z GET, PUT, POST a odstranění. Toto téma obsahuje přehled vzory a postupy určené [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] a také zařízení poskytovaných [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] výhod [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] v aplikacích založených na rozhraní .NET Framework.  

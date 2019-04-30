@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 ms.openlocfilehash: caf9a66e8c42fb80955539aa9d3eb32179309004
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929685"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 Windows Communication Foundation (WCF) je určený pro spolupráci s webovými službami, které podporují sadu specifikace říká specifikací webových služeb. Pokud chcete zjednodušit konfiguraci služby pro spolupráci osvědčené postupy, WCF zavádí tři interoperabilní vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. WCF pro spolupráci s organizací standardů rozvoj z strukturovaných informace standardy OASIS (Organization) zahrnuje jeden interoperabilní vazeb poskytovaných systémem: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace WCF obsahuje dvě interoperabilní vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma obsahuje seznam specifikace, které podporují interoperabilní vazby poskytované systémem.  
@@ -63,9 +63,9 @@ Windows Communication Foundation (WCF) je určený pro spolupráci s webovými s
 ## <a name="wsfederationhttpbinding-and-ws2007federationhttpbinding"></a>wsFederationHttpBinding a ws2007FederationHttpBinding  
  [ \<WsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) a [ \<ws2007FederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) prvky jsou zavedené kvůli zajištění podpory pro federovaných scénářích, kde je třetí strana vystaví token pro ověření klienta. Kromě protokolech používaných `wsHttpBinding`, `wsFederationHttpBinding` využívá:  
   
--   `WS-Trust` pro vydávání tokenů.  
+- `WS-Trust` pro vydávání tokenů.  
   
--   Doplněk WSS zabezpečení kontrolní výrazy SAML (Markup Language) Token profil 1.0 a 1.1 pro nejčastěji běžně vydané formát tokenu.  
+- Doplněk WSS zabezpečení kontrolní výrazy SAML (Markup Language) Token profil 1.0 a 1.1 pro nejčastěji běžně vydané formát tokenu.  
   
  Příklad:  
   
