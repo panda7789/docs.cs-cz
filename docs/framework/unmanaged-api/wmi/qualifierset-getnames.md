@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: da6321e50082c3f73477b8187cc5bf671655df21
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365942"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943391"
 ---
 # <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames function
 
@@ -51,7 +51,7 @@ HRESULT QualifierSet_GetNames (
 `lFlags`\
 [in] Jeden z následujících příznaků nebo hodnoty, které určuje názvy, které chcete zahrnout do výčtu.
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |  | 0 | Vrátí názvy všech kvalifikátory. |
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy kvalifikátory konkrétní aktuální vlastnost nebo objekt. <br/> Pro vlastnost: Vrátí jenom v kvalifikátorech specifické pro vlastnost (včetně potlačení) a ne kvalifikátory, rozšířena z definice třídy. <br/> Pro instanci: Vrátíte pouze názvy instancí kvalifikátoru. <br/> Pro třídu: Vrátíte pouze kvalifikátory konkrétní třídy je odvozený.
@@ -64,7 +64,7 @@ HRESULT QualifierSet_GetNames (
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Parametr není platný. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici zahájíte nový výčet. |

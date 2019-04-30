@@ -3,11 +3,11 @@ title: Řešení potíží – korelace
 ms.date: 03/30/2017
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
 ms.openlocfilehash: fecfaf7374823bb19a4ad3d7f6cb2dbbdf139703
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932818"
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zprávy služby pracovního postupu k sobě navzájem a pro instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijímat zprávy a aplikace nebude fungovat správně. Toto téma obsahuje základní informace o několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když použijete korelace.
@@ -161,7 +161,7 @@ SendReply ReplyToStartOrder = new SendReply
 // Construct a workflow using StartOrder and ReplyToStartOrder.
 ```
 
- Mezi není povolena trvalost <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár nebo <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár. No-persist zóny se vytvoří s platností dokončením obě aktivity. Pokud aktivita, jako je aktivita zpoždění, je v této zóně no-persist a způsobí, že pracovní postup na nečinnost, nezachovají pracovní postup i v případě, pokud je hostitel konfigurován k uchování pracovních postupů, kdy se stanou nečinné. Pokud aktivity, jako je aktivita zachovat, se pokusí explicitně zachovat v zóně trvalého Ne, je závažnou výjimku vyvolána, přerušení pracovního postupu a <xref:System.ServiceModel.FaultException> je vrátit zpět volajícímu. Zpráva kritické výjimky "System.InvalidOperationException: uchování aktivity nelze zahrnout do dočasných bloků.". Tato výjimka není vrátit zpět volajícímu, ale můžete pozorovat, pokud je povoleno sledování. Zpráva pro <xref:System.ServiceModel.FaultException> vrátit zpět volajícímu je "operaci nelze provést, protože dokončení instance pracovního postupu"5836145b 7da2 - 49 d 0-a052-a49162adeab6"".
+ Mezi není povolena trvalost <xref:System.ServiceModel.Activities.Receive> / <xref:System.ServiceModel.Activities.SendReply> pár nebo <xref:System.ServiceModel.Activities.Send> / <xref:System.ServiceModel.Activities.ReceiveReply> pár. No-persist zóny se vytvoří s platností dokončením obě aktivity. Pokud aktivita, jako je aktivita zpoždění, je v této zóně no-persist a způsobí, že pracovní postup na nečinnost, nezachovají pracovní postup i v případě, pokud je hostitel konfigurován k uchování pracovních postupů, kdy se stanou nečinné. Pokud aktivity, jako je aktivita zachovat, se pokusí explicitně zachovat v zóně trvalého Ne, je závažnou výjimku vyvolána, přerušení pracovního postupu a <xref:System.ServiceModel.FaultException> je vrátit zpět volajícímu. Zpráva kritické výjimky "System.InvalidOperationException: Zachovat aktivity nelze zahrnout do dočasných bloků. ". Tato výjimka není vrátit zpět volajícímu, ale můžete pozorovat, pokud je povoleno sledování. Zpráva pro <xref:System.ServiceModel.FaultException> vrátit zpět volajícímu je "operaci nelze provést, protože dokončení instance pracovního postupu"5836145b 7da2 - 49 d 0-a052-a49162adeab6"".
 
  Další informace o korelace požadavku a odpovědi najdete v tématu [Request-Reply](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md).
 
@@ -188,7 +188,7 @@ MessageQuerySet = new MessageQuerySet
 }
 ```
 
- Pokud se dotaz XPath je správně nakonfigurovaná tak, že nebudou načtena žádná data pro korelace, vrátí se chyba s následující zprávou: "korelační dotaz vrátil prázdnou sadu výsledků. Ujistěte se, že jsou správně nakonfigurované korelačních dotazů pro koncový bod." Jeden rychlý způsob, jak toto řešení je dotaz XPath nahraďte hodnotu literálu jak je popsáno v předchozí části. Tomuto problému může dojít, pokud pomocí Tvůrce dotazů XPath v **přidat inicializátory korelace** nebo **definice vlastnosti CorrelatesOn** dialogová okna a služba pracovního postupu používá zprávy smlouvy. V následujícím příkladu je definován třídou kontraktu zprávy.
+ Pokud dotaz XPath je správně nakonfigurovaná tak, že nebudou načtena žádná data pro korelace, vrátí se chyba s následující zprávou: "Korelační dotaz vrátil prázdnou sadu výsledků. Ujistěte se, že jsou správně nakonfigurované korelačních dotazů pro koncový bod." Jeden rychlý způsob, jak toto řešení je dotaz XPath nahraďte hodnotu literálu jak je popsáno v předchozí části. Tomuto problému může dojít, pokud pomocí Tvůrce dotazů XPath v **přidat inicializátory korelace** nebo **definice vlastnosti CorrelatesOn** dialogová okna a služba pracovního postupu používá zprávy smlouvy. V následujícím příkladu je definován třídou kontraktu zprávy.
 
 ```csharp
 [MessageContract]

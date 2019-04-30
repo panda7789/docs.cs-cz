@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
 ms.openlocfilehash: 16c06ddade79c2b3a48401f5620431e46e18f5ef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59323242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903354"
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 V dalších částech odpovědět některé běžné problémy, které se mohou vyskytnout při implementaci [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -34,18 +34,18 @@ V dalších částech odpovědět některé běžné problémy, které se mohou 
   
  Podrobnosti o použití připojení závisí na následujících akcí:  
   
--   Stav připojení Pokud <xref:System.Data.Linq.DataContext> je vytvořený pomocí objekt připojení.  
+- Stav připojení Pokud <xref:System.Data.Linq.DataContext> je vytvořený pomocí objekt připojení.  
   
--   Nastavení připojovacího řetězce (například povolení více aktivních sad výsledků (MARS). Další informace najdete v tématu [více sad aktivní výsledků (MARS)](../../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md).  
+- Nastavení připojovacího řetězce (například povolení více aktivních sad výsledků (MARS). Další informace najdete v tématu [více sad aktivní výsledků (MARS)](../../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md).  
   
 ## <a name="updating-without-querying"></a>Aktualizuje se bez dotazování  
  Otázka: Můžete aktualizovat data v tabulce bez první dotazování na databázi?  
   
  A. I když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nemá žádné příkazy na základě sady aktualizace aktualizovat bez nutnosti první dotazování můžete použít některou z následujících postupů:  
   
--   Použití <xref:System.Data.Linq.DataContext.ExecuteCommand%2A> poslat kód SQL.  
+- Použití <xref:System.Data.Linq.DataContext.ExecuteCommand%2A> poslat kód SQL.  
   
--   Vytvoření nové instance objektu a inicializovat všechny aktuální hodnoty (pole), které mají vliv aktualizace. Připojte objekt, který má <xref:System.Data.Linq.DataContext> pomocí <xref:System.Data.Linq.Table%601.Attach%2A> a upravit pole, které chcete změnit.  
+- Vytvoření nové instance objektu a inicializovat všechny aktuální hodnoty (pole), které mají vliv aktualizace. Připojte objekt, který má <xref:System.Data.Linq.DataContext> pomocí <xref:System.Data.Linq.Table%601.Attach%2A> a upravit pole, které chcete změnit.  
   
 ## <a name="unexpected-query-results"></a>Neočekávaný dotaz výsledky  
  Otázka: Můj dotaz vrací neočekávané výsledky. Jak lze můžu zkontrolovat, co se děje?  
@@ -57,9 +57,9 @@ V dalších částech odpovědět některé běžné problémy, které se mohou 
   
  A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návratové hodnoty generovaných databází pomocí uložených procedur dvěma způsoby:  
   
--   Pojmenováním výsledných výstupů.  
+- Pojmenováním výsledných výstupů.  
   
--   Explicitním zadáním výstupní parametr.  
+- Explicitním zadáním výstupní parametr.  
   
  Následuje příklad výstupu nesprávné. Protože [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nelze mapovat výsledky, vždy vrátí hodnotu 0:  
   

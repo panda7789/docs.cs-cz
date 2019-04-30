@@ -12,22 +12,22 @@ helpviewer_keywords:
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
 ms.openlocfilehash: d0a86d7fe53dba3da6bd63587561f82877bc2f06
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913728"
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>Postupy: Změna velikosti či umístění obrázku za běhu (Windows Forms)
 Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládací prvek ve formuláři, můžete nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> vlastnost ji:  
   
--   Zarovnání obrázku levý horní roh s levého horního rohu ovládacího prvku  
+- Zarovnání obrázku levý horní roh s levého horního rohu ovládacího prvku  
   
--   System Center na obrázku v ovládacím prvku  
+- System Center na obrázku v ovládacím prvku  
   
--   Upravte velikost ovládacího prvku obrázek, který se zobrazí podle  
+- Upravte velikost ovládacího prvku obrázek, který se zobrazí podle  
   
--   Roztáhnout obrázek se zobrazí podle ovládacího prvku  
+- Roztáhnout obrázek se zobrazí podle ovládacího prvku  
   
  Roztažení obrázku (zejména jedna ve formát rastrového obrázku) může způsobit ztrátu v kvality obrázku. Metasoubory, což jsou seznamy grafiky pokyny pro vykreslování obrázků za běhu, se lépe hodí pro roztažení než rastrové obrázky mají.  
   

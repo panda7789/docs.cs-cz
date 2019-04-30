@@ -6,11 +6,11 @@ helpviewer_keywords:
 - enumerating the contents of a Visual [WPF]
 ms.assetid: 2974ddb3-2997-4713-8fd2-e93d549c58a8
 ms.openlocfilehash: 4f0afc1075fe66c7f154fcef3cd883709db55316
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947469"
 ---
 # <a name="how-to-enumerate-drawing-content-of-a-visual"></a>Postupy: Vyčíslení vykreslovaného vizuálního obsahu
 <xref:System.Windows.Media.Drawing> Objekt neposkytuje objektový model pro vytvoření výčtu obsah <xref:System.Windows.Media.Visual>.  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: d818c917-07b4-40db-9801-8676561859fd
 author: BrucePerlerMS
 ms.openlocfilehash: cebfc2f3598f32f233db6039dfe82076d2ffce46
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59221701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790478"
 ---
 # <a name="trustedissuers"></a>\<trustedIssuers>
 Nakonfiguruje seznam důvěryhodných vystavitelů certifikátů používané registru názvu vystavitele založená na konfiguraci (<xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>).  
@@ -44,7 +44,7 @@ Nakonfiguruje seznam důvěryhodných vystavitelů certifikátů používané re
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
 ### <a name="attributes"></a>Atributy  
- Žádný  
+ Žádné  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   

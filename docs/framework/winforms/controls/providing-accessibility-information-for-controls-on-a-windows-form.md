@@ -7,24 +7,24 @@ helpviewer_keywords:
 - accessibility [Windows Forms], Windows Forms controls
 ms.assetid: 887dee6f-5059-4d57-957d-7c6fcd4acb10
 ms.openlocfilehash: 0f589f37d79c9ec8d55153aac4c846726a379055
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948015"
 ---
 # <a name="providing-accessibility-information-for-controls-on-a-windows-form"></a>Poskytování informací o usnadnění pro ovládací prvky ve formuláři Windows
 Usnadnění jsou specializované programy a zařízení, která pomůže uživatelům s postižením používání počítačů efektivněji. Mezi příklady patří čtečky obrazovky pro uživatele, kteří jsou blind a způsobu vyjadřování vstupní nástroje pro uživatele, kteří poskytují slovní příkazy místo pomocí myši nebo klávesnice. Tyto usnadnění interakci s usnadnění vlastností vystavovaných třídami ovládacích prvků Windows Forms. Tyto vlastnosti jsou:  
   
--   **AccessibilityObject**  
+- **AccessibilityObject**  
   
--   **AccessibleDefaultActionDescription**  
+- **AccessibleDefaultActionDescription**  
   
--   **AccessibleDescription**  
+- **AccessibleDescription**  
   
--   **AccessibleName**  
+- **AccessibleName**  
   
--   **AccessibleRole**  
+- **AccessibleRole**  
   
 ## <a name="accessibilityobject-property"></a>Vlastnost AccessibilityObject  
  Tato vlastnost jen pro čtení obsahuje <xref:System.Windows.Forms.AccessibleObject> instance. **Třída AccessibleObject** implementuje <xref:Accessibility.IAccessible> rozhraní, který poskytuje informace o popis ovládacího prvku, umístění na obrazovce, navigační schopnosti a hodnotu. Návrhář nastaví tuto hodnotu, pokud ovládací prvek je přidán do formuláře.  

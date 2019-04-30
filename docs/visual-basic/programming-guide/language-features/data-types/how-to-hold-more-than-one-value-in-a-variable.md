@@ -12,11 +12,11 @@ helpviewer_keywords:
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
 ms.openlocfilehash: e2e1648ea508ecdd744adb8d2a4f7fdbc1e586c4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906487"
 ---
 # <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Umístit více než jednu hodnotu proměnné (Visual Basic)
 Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jej bude *složené datový typ*.  
@@ -29,11 +29,11 @@ Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jej bude *slože
   
 2. Pokud již není definován typ. složených dat, definujte ho tak, aby ho může použít vaše proměnná.  
   
-    -   Definovat strukturu s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md).  
+    - Definovat strukturu s [Structure – příkaz](../../../../visual-basic/language-reference/statements/structure-statement.md).  
   
-    -   Definování pole [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
+    - Definování pole [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).  
   
-    -   Definovat třídu pomocí [Class – příkaz](../../../../visual-basic/language-reference/statements/class-statement.md).  
+    - Definovat třídu pomocí [Class – příkaz](../../../../visual-basic/language-reference/statements/class-statement.md).  
   
 3. Deklarujte proměnné s `Dim` příkazu.  
   

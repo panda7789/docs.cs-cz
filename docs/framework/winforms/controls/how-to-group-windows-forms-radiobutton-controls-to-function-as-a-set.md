@@ -8,11 +8,11 @@ helpviewer_keywords:
 - RadioButton control [Windows Forms], grouping
 ms.assetid: 58f8fe34-50b7-49d8-a2be-c271be3c6b32
 ms.openlocfilehash: 857e61bc89e072aebcf34793d7e8504ece3318c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941307"
 ---
 # <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>Postupy: Seskupení ovládacích prvků Windows Forms RadioButton do funkce v podobě sady
 Windows Forms <xref:System.Windows.Forms.RadioButton> ovládací prvky jsou navrženy a poskytuje tak uživatelům možnost volby mezi dvěma nebo více nastavení, z nichž je možné přiřadit pouze jeden procedura nebo objekt. Například skupinu <xref:System.Windows.Forms.RadioButton> ovládací prvky se může zobrazit celou řadu prostředníci balíčku pro objednávku, ale pouze jeden z dopravce se použije. Proto pouze jeden <xref:System.Windows.Forms.RadioButton> najednou lze vybrat, i když je součástí skupiny funkční.  

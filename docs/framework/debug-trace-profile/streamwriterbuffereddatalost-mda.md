@@ -13,11 +13,11 @@ ms.assetid: 6e5c07be-bc5b-437a-8398-8779e23126ab
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3b35e6ab4de699126b4b3b5f74d7a9a8dacfa4a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59117388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874403"
 ---
 # <a name="streamwriterbuffereddatalost-mda"></a>streamWriterBufferedDataLost – pomocník spravovaného ladění (MDA)
 `streamWriterBufferedDataLost` Aktivovat pomocníka spravovaného ladění (MDA) při <xref:System.IO.StreamWriter> se zapisují do, ale <xref:System.IO.StreamWriter.Flush%2A> nebo <xref:System.IO.StreamWriter.Close%2A> metoda není volána následně před provedením instance <xref:System.IO.StreamWriter> zničen. Když je povolené toto MDA, modul runtime určuje, zda všechna data ve vyrovnávací paměti stále existuje v rámci <xref:System.IO.StreamWriter>. Pokud data ve vyrovnávací paměti, MDA aktivováno. Volání <xref:System.GC.Collect%2A> a <xref:System.GC.WaitForPendingFinalizers%2A> metod můžete vynutit finalizační metody ke spuštění. Finalizační metody jinak poběží v zdánlivě libovolného dobu a může být vůbec na ukončení procesu. Explicitně s toto MDA povoleno spuštění finalizační metody pomůže spolehlivěji reprodukovat tento typ problému.  

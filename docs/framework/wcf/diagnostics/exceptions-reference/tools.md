@@ -3,146 +3,146 @@ title: Nástroje
 ms.date: 03/30/2017
 ms.assetid: 89c907f9-313f-408c-992a-631f1eadf1da
 ms.openlocfilehash: 6c4ada74c2fc6aba84eb1fe46f4d7cdee9978d13
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780741"
 ---
 # <a name="tools"></a>Nástroje
 Toto téma uvádí všechny výjimky generované nástroje Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|ParametersTarget|\<výčet >|  
+|ParametersTarget|\<enum>|  
 |ParametersToolConfig|\<configFile>|  
-|ErrInvalidPath|Zadaný je platná cesta UNC. Zkontrolujte zadaného argumentu.|  
+|ErrInvalidPath|Zadané je neplatnou cestu. Zkontrolujte zadaný argument.|  
 |ParametersReference|\<Cesta k souboru >|  
-|WrnCannotLoadConfigFileForValidation|Zpracování konfiguračního souboru načíst ze zadaného umístění došlo k chybě. Služby, které jsou definovány v tento konfigurační soubor nelze ověřit.|  
-|MoreHelp|Další nápovědu zadejte "svcutil" pomocí zadaných argumentů.|  
-|HelpMergeConfig|Způsobí, že generovaný konfigurace do existujícího souboru místo přepsal existující soubor.|  
+|WrnCannotLoadConfigFileForValidation|Došlo k chybě při zpracování konfiguračního souboru načtených ze zadaného umístění. Služby, které jsou definovány v tento konfigurační soubor nejde ověřit.|  
+|MoreHelp|Další nápovědu zadejte svcutil / "se zadanými argumenty.|  
+|HelpMergeConfig|Způsobí, že vygenerovanou konfiguraci ke sloučení do existujícího souboru namísto přepsání existujícího souboru.|  
 |ErrCannotWriteFile|Nelze zapisovat do výstupního souboru.|  
-|ErrInvalidNamespaceArgument|Zadaná možnost byl předán zadaná neplatná hodnota. Zadejte textový soubor s oddělovači cílový obor názvů a dvojice názvů CLR.|  
-|HelpImportXmlType|Nakonfiguruje serializátor kontraktu k importu jiný kontraktu typy jako typy IXmlSerializable.|  
-|ErrExclusiveOptionsSpecified|Zadaná možnost nelze použít, pokud zadaná možnost byla zadána.|  
+|ErrInvalidNamespaceArgument|Zadaná možnost byl předán zadaná neplatná hodnota. Zadejte čárkami cílový obor názvů a pár oboru názvů CLR.|  
+|HelpImportXmlType|Nakonfiguruje serializátor kontraktu dat DataContract pro import typy jiné než DataContract jako IXmlSerializable typy.|  
+|ErrExclusiveOptionsSpecified|Zadaná možnost nelze použít, pokud zadaná možnost jste zadali.|  
 |WrnHttpGetFailed|Chyba protokolu HTTP GET s zadaný identifikátor URI.|  
-|ErrInputFileNotAssemblyOrMetadata|Soubor v zadaném umístění číst prostřednictvím zadaného argumentu vstupní nezobrazí jako soubor XML metadata nebo platnou sestavu.|  
-|WrnUnknownMetadataFound|Nelze uložit dokument nerozpoznané metadat zadaného typu.|  
-|ErrDirectoryContainsInvalidCharacters|Zadaná možnost byl předán zadaná neplatná hodnota. Je zadaný znak není povolené v cestě.|  
-|WrnCannotResolveServiceForValidation|Nelze načíst službu s zadaný configName. K ověření služby, zadejte oba sestavení, které obsahuje typ služby a spustitelný soubor s konfigurací pro tuto službu.|  
-|ErrUnexpectedValue|Zadaná možnost nepodporuje hodnoty.|  
+|ErrInputFileNotAssemblyOrMetadata|Soubor v zadaném umístění přečtený pomocí argumentu zadaný vstupní soubor metadat XML nebo platné sestavení nezobrazí.|  
+|WrnUnknownMetadataFound|Nerozpoznaná metadata dokument zadaného typu nelze uložit.|  
+|ErrDirectoryContainsInvalidCharacters|Zadaná možnost byl předán zadaná neplatná hodnota. Zadaný znak není v cestě povolen.|  
+|WrnCannotResolveServiceForValidation|Nepovedlo se načíst služby se zadaným configName. K ověření služby, zadejte oba sestavení obsahující typ služby a spustitelný soubor s konfigurací pro tuto službu.|  
+|ErrUnexpectedValue|Zadaná možnost nepodporuje žádné hodnoty.|  
 |#InvalidArg|Zadaný obsahuje neplatný argument.|  
 |ParametersExcludeType|\<Typ >|  
-|HelpXmlSerializer|Generovat datové typy, které používají třídy XmlSerializer k serializaci a deserializaci.|  
+|HelpXmlSerializer|Generování datových typů, které k serializaci a deserializaci používají XmlSerializer.|  
 |#|---------------------------------------------------------------------------------------------------------------------=|  
-|ErrUnexpectedError|Došlo k chybě v nástroji.|  
-|HelpNologo|Zpráva o autorských právech a hlavičku potlačeno.|  
-|ErrInputConflictsWithTarget|Typ vstupu pro čtení z určeného nepodporuje Zadaná možnost nastavit na zadanou hodnotu.|  
-|WrnCannotLoadServiceForExport|Došlo k chybě při načítání typu služby pro export.|  
+|ErrUnexpectedError|V nástroji došlo k chybě.|  
+|HelpNologo|Zprávu o autorských právech a úvodní nápis je potlačeno.|  
+|ErrInputConflictsWithTarget|Přečtená vstupní data ze zadaného typu se nepodporuje s Zadaná možnost nastavit na zadanou hodnotu.|  
+|WrnCannotLoadServiceForExport|Došlo k chybě při načítání typu služby nelze exportovat.|  
 |HelpMetadataDownloadCategory|-= STAŽENÍ METADAT =-|  
-|WrnNoServiceContractTypes|Nelze vygenerovat třídy XmlSerializer typy pro zadané sestavení. Nebyly nalezeny žádné typy kontrakt služby.|  
-|WrnCouldNotLoadTypesFromReferenceAssemblyAt|Došlo k chybě při načítání typy v sestavení, které byla načtena z určeného. Některé typy v sestavení nelze načíst a nejsou k dispozici v nástroji.|  
+|WrnNoServiceContractTypes|Pro zadané sestavení nelze vygenerovat typy XmlSerializer. Nenašly se žádné typy kontraktu služby.|  
+|WrnCouldNotLoadTypesFromReferenceAssemblyAt|Došlo k chybě při načítání typů v sestavení, která byla načtena ze zadané. Některé typy v sestavení nelze načíst a nejsou k dispozici pro nástroj.|  
 |ErrDirectoryPointsToAFile|Zadaná možnost byl předán zadaná neplatná hodnota. Zadaná hodnota je cesta k souboru.|  
 |Chyba|Chyba:|  
-|ErrDuplicateReferenceValues|Zadané sestavení bylo načteno dvakrát pomocí zadané možnosti. Sestavení může být pouze odkaz na jednou.|  
-|WrnNoXmlSerializerOperationBehavior|Nelze vygenerovat třídy XmlSerializer pro zadané sestavení. Žádné kontrakt služby v sestavení má operace s XmlSerializerOperationBehavior.|  
+|ErrDuplicateReferenceValues|Zadané sestavení bylo načteno dvakrát pomocí zadané možnosti. Pouze odkaz na sestavení lze jednou.|  
+|WrnNoXmlSerializerOperationBehavior|Pro zadané sestavení nelze vygenerovat třídy XmlSerializer. Žádný kontrakt služby v sestavení nemá operaci s XmlSerializerOperationBehavior.|  
 |ErrCannotCreateDirectory|Zadaný adresář nelze vytvořit.|  
-|ErrCouldNotLoadTypesFromAssemblyAt|Nelze načíst všechny typy v zadaném sestavení.|  
+|ErrCouldNotLoadTypesFromAssemblyAt|Nelze načíst žádné typy v zadaném sestavení.|  
 |ErrUnknownSwitch|Zadaný přepínač je nerozpoznanou možnost.|  
-|Logo|Logo nástroje je "Microsoft® Service Model metadat nástroj" s verzí.|  
-|NoCodeWasGenerated|Žádný kód byl vygenerován.<br /><br /> Pokud chcete generovat klienta, může to být způsobeno dokumenty metadat neobsahoval žádné platné smlouvy ani služby<br /><br /> nebo protože všechny kontrakty nebo služby byly zjištěny existovat v referenční sestavení. Ověřte, nástroj předán všechny dokumenty metadat.|  
-|WrnUnableToLoadContractForSGen|Došlo k chybě při načítání typu kontraktu. Nelze vygenerovat typ třídy XmlSerializer pro tento kontrakt. Typ a podrobnosti nejsou zadány.|  
-|WrnOptionConflictsWithInput|Zadaná možnost nelze použít s více vstupních sestavení. Zadaná možnost je ignorována.|  
-|ErrUnableToImportMetadata|Při pokusu o import metadat došlo ke kritické chybě.|  
-|ErrInvalidSerializer|Zadaná možnost byl předán neplatný serializátor hodnotu. Podporované serializátorů nejsou zadány.|  
-|SavingDownloadedMetadata|Ukládání souborů stažené metadat...|  
-|WrnNoConfigForServices|Žádný z těchto sestavení předán byly spustitelné soubory s konfiguračním souboru nebo žádná z konfigurační soubory obsažené služby s názvem Zadaná konfigurace.|  
-|ErrInputConflictsWithOption|Čtení ze zadaného vstupu nelze použít s parametrem zadané, protože jejich implikují různé režimy činnosti nástroje.|  
-|ErrUnableToExportEndpoints|Došlo k chybě při exportu zadaný typ služby.|  
-|ErrInputSchemaParseError|Schéma XML při analýze došlo k chybě při čtení zadaného. Ověřte, že zadaný kód XML ve správném formátu a platné.|  
-|ErrInputPolicyParseError|Při čtení zadaného došlo k chybě analýzy WS-Policy. Ověřte, že zadaný kód XML ve správném formátu a platné.|  
-|ErrUnableToLoadReferenceType|Došlo k chybě při načítání typu odkazované kontrakt. Tento zadaný typ se ignoruje.|  
-|WrnCannotLoadServiceForValidation|Došlo k chybě při načítání službu, kterou chcete ověřit. Typ a podrobnosti nejsou zadány.|  
+|Logo|Logo nástroje je "Nástroj Microsoft® Service Model metadat" s verzí.|  
+|NoCodeWasGenerated|Nevygeneroval se žádný kód.<br /><br /> Pokud jste se pokoušeli vygenerovat klienta, to může být, že dokumenty metadat neobsahovaly žádné platné kontrakty ani služby<br /><br /> nebo protože bylo zjištěno, že všechny kontrakty nebo služby existují v sestaveních reference. Ověřte, že jste nástroji předali všechny dokumenty metadat.|  
+|WrnUnableToLoadContractForSGen|Došlo k chybě při načítání typu kontraktu. Nejde generovat typ XmlSerializer pro tento kontrakt. Typ a podrobnosti jsou uvedeny.|  
+|WrnOptionConflictsWithInput|Zadaná možnost nelze použít s více vstupních sestaveních. Zadaná možnost se ignoruje.|  
+|ErrUnableToImportMetadata|Došlo ke kritické chybě při pokusu o import metadat.|  
+|ErrInvalidSerializer|Zadaná možnost byl předán neplatná hodnota serializátoru. Podporované serializátory nejsou zadány.|  
+|SavingDownloadedMetadata|Ukládání souborů stažené metadata...|  
+|WrnNoConfigForServices|Nebyly žádné sestavení předané spustitelné soubory s konfiguračním souboru nebo žádný konfigurační soubory obsažené služby s názvem zadanou konfiguraci.|  
+|ErrInputConflictsWithOption|Vstup přečtený z určeného nelze použít s parametrem zadané, protože implikují různé režimy fungování nástroje.|  
+|ErrUnableToExportEndpoints|Při exportu zadaný typ služby došlo k chybě.|  
+|ErrInputSchemaParseError|Chyba parsování schématu XML došlo k chybě při čtení zadaného. Ověřte, kód XML má správný formát a je platný.|  
+|ErrInputPolicyParseError|Při čtení zadaného došlo k chybě parsování WS-Policy. Ověřte, kód XML má správný formát a je platný.|  
+|ErrUnableToLoadReferenceType|Došlo k chybě při načítání typu odkazovaného kontraktu. Tato zadaného typu se ignoruje.|  
+|WrnCannotLoadServiceForValidation|Došlo k chybě při načítání služby má být ověřen. Typ a podrobnosti jsou uvedeny.|  
 |HelpCodeGenerationCategory|-= GENEROVÁNÍ KÓDU =-|  
-|RetreivingMetadataWithMexAndDisco|Probíhá pokus o stažení metadat ze zadaného pomocí protokolu WS-Metadata Exchange nebo DISCO.|  
-|ErrGeneralSchemaValidation|Došlo k chybě při ověřování schémat XML, které byly vygenerovány během exportu.|  
-|ParametersDirectory|\<adresář >|  
-|ErrCannotLoadSpecifiedType|Zadaná hodnota, která byla předána Zadaná možnost mohou být načteny žádné typu. Zkontrolujte, zda je sestavení, které patří tento typ zadán pomocí zadané možnosti.|  
-|ErrOptionModeConflict|Zadaná možnost nelze použít s parametrem zadané, protože jejich implikují typy odlišný výstup.|  
-|ErrIsNotAnAssembly|Nelze načíst zadaný jako sestavení. Ověřte, že tento soubor sestavení .NET.|  
-|ErrInputConflictsWithMode|Čtení ze zadaného vstupu není konzistentní s dalšími možnostmi.|  
-|ErrDuplicateValuePassedToTypeArg|Zadaná hodnota byl předán Zadaná možnost vícekrát. Každý typ lze zadat pouze jednou.|  
-|ErrInputEPRFileParseError|Reference koncového bodu nelze číst ze zadaného. Ověřte, že zadaný kód XML ve správném formátu a platné.|  
-|ErrCouldNotCreateCodeProvider|Zprostředkovatel kódu nelze vytvořit zadanou hodnotu, která byla předána nebo{1} argument. Ověřte, zda je správně nainstalován a nakonfigurován zprostředkovatele kódu.|  
-|ErrPathTooLongDirOnly|Výsledná zadaná cesta je příliš dlouhý. Zkontrolujte zadaného argumentu.|  
-|HelpDataContractSerializer|Generovat datové typy, které používají serializátor kontraktu k serializaci a deserializaci.|  
-|ErrUnableToExportEndpoint|Došlo k chybě při exportu název zadaný koncový bod v určeném oboru názvů v zadaný typ služby nalezen v konfiguračním souboru načten pro sestavení.|  
+|RetreivingMetadataWithMexAndDisco|Pokus o stažení metadat z určeného pomocí protokolu WS-Metadata Exchange nebo roz.|  
+|ErrGeneralSchemaValidation|Při ověřování schémat XML generovaných při exportu došlo k chybě.|  
+|ParametersDirectory|\<directory>|  
+|ErrCannotLoadSpecifiedType|Pro zadanou hodnotu, která byla předána Zadaná možnost je možné načíst žádný typ. Ujistěte se, že sestavení, které patří tento typ je určen pomocí Zadaná možnost.|  
+|ErrOptionModeConflict|Zadaná možnost nelze použít s parametrem zadané, protože tyto možnosti implikují různé typy výstupu.|  
+|ErrIsNotAnAssembly|Nelze načíst zadané sestavení. Ověřte, že tento soubor sestavení .NET.|  
+|ErrInputConflictsWithMode|Vstup přečtený z určeného není konzistentní s jinými možnostmi.|  
+|ErrDuplicateValuePassedToTypeArg|Zadaná hodnota byl předán Zadaná možnost více než jednou. Každý typ lze zadat pouze jednou.|  
+|ErrInputEPRFileParseError|Nelze přečíst odkaz koncového bodu z určeného. Ověřte, kód XML má správný formát a je platný.|  
+|ErrCouldNotCreateCodeProvider|Pro zadanou hodnotu, která byla předána nemůže vytvořit poskytovatele kódu /{1} argument. Ověřte, že poskytovatel kódu je správně nainstalován a nakonfigurován.|  
+|ErrPathTooLongDirOnly|Výsledná zadaná cesta je příliš dlouhý. Zkontrolujte zadaný argument.|  
+|HelpDataContractSerializer|Generování datových typů, které k serializaci a deserializaci používají serializátor kontraktu dat DataContract.|  
+|ErrUnableToExportEndpoint|Při exportu názvu zadaný koncový bod v určeném oboru názvů v zadaný typ služby nalezena v konfiguračním souboru pro sestavení načíst. došlo k chybě.|  
 |HelpUsage1|Zobrazí nápovědu využití.|  
 |HelpUsage2|Zobrazí nápovědu využití.|  
 |HelpUsage3|Zobrazí nápovědu využití.|  
 |HelpUsage4|Zobrazí nápovědu využití.|  
 |HelpUsage5|Zobrazí nápovědu využití.|  
-|ErrDirectoryNotFound|Zadaný adresář nebyl nalezen. Ověřte, zda adresář existuje a zda máte příslušná oprávnění k jeho čtení.|  
-|ErrUnableToLoadFile|Zadaný soubor nelze přečíst.|  
-|ErrNoFilesFound|Zadaná vstupní cesta k odkazování na všechny existující soubory nezobrazí.|  
+|ErrDirectoryNotFound|Zadaný adresář se nenašel. Ověřte, že adresář existuje a zda máte příslušná oprávnění k jeho čtení.|  
+|ErrUnableToLoadFile|Zadaný soubor nelze číst.|  
+|ErrNoFilesFound|Zadaný vstupní cesta neodkazuje na žádný existující soubor nezobrazí.|  
 |ParametersConfig|\<configFile>|  
-|ErrDirectoryInsteadOfFile|Zadaná vstupní cesta pravděpodobně adresáře. Je třeba adresy URL nebo cesty k souborům.|  
-|HelpConfig|Dá pokyn, nástroje pro generování konfigurační soubor se zadaným názvem. Výchozí: output.config.|  
+|ErrDirectoryInsteadOfFile|Zadaný vstupní cesta se zdá být adresář. Vstup musí být buď adresy URL, nebo cesty k souborům.|  
+|HelpConfig|Dává pokyn nástroji, abyste mohli vygenerovat konfigurační soubor se zadaným názvem. Výchozí: output.config.|  
 |ErrSingleUseSwitch|Zadaná možnost nelze zadat více než jednou.|  
 |Upozornění|Upozornění:|  
-|WrnAmbiguousServiceConfig|Podle zadaný název konfigurace bylo nalezeno více konfigurace služby, jsou specifikovány následující sestavení.|  
-|ErrInvalidInputPath|Zadaná vstupní cesta k odkazování na všechny existující soubory se nezobrazí a nezdá se být platný identifikátor URI.|  
-|ErrUnableToLoadInputs|Došlo k chybě při čtení načíst metadata.|  
-|GeneratingSerializer|Vytváření XML serializátorů...|  
-|HelpToolConfig|Vlastní konfigurační soubor používejte místo konfiguračního souboru aplikace. Tímto lze změnit konfiguraci metadata nebo zaregistrovat rozšíření konfigurace beze změny nástroje konfigurační soubor.|  
-|ErrValidateInvalidUse|Zadaná možnost nelze použít s Zadaná možnost.|  
-|WrnWSMExFailed|Chyba WS-Metadata Exchange s zadaný identifikátor URI.|  
-|HelpNoconfig|Nevydávají konfigurace.|  
-|HelpCodeGenerationDescription|Zadaný seznam může generovat typy kontraktů, klientů a dat služby z dokumentů metadat.|  
-|HelpTargetMetadata|Výstup metadat. Pokud vstup je adresa URL, Svcutil.exe uloží metadata na disk a nevygeneruje žádný kód. Pokud vstup je jeden nebo více sestavení, vygeneruje Svcutil.exe metadata z typů v sestaveních.|  
-|ErrAmbiguousOptionModeConflict|Zadaná možnost v konfliktu s jinými možnostmi. Kontrolovat používání nástroje.|  
-|ErrNotLanguageOrCodeDomType|Zadaná hodnota, která byla předána zadaného argumentu nepředstavuje definované jazyk a nebylo možné načíst jako plně kvalifikovaný typ CLR.|  
-|ErrUnableToUniquifyFilename|Název výstupního souboru nelze vytvořit. Příliš mnoho souborů se vytváří se zadanou předponou.|  
+|WrnAmbiguousServiceConfig|Více konfigurací služby nebyly nalezeny s názvem zadanou konfiguraci, jsou specifikovány následující sestavení.|  
+|ErrInvalidInputPath|Zadaný vstupní cesta neodkazuje na žádný existující soubor se nezobrazí a zřejmě není platným identifikátorem URI.|  
+|ErrUnableToLoadInputs|Během čtení načtených metadat došlo k chybě.|  
+|GeneratingSerializer|Generuje se serializátory XML...|  
+|HelpToolConfig|Vlastní konfigurační soubor oznamujícím konfiguračního souboru aplikace. To umožňuje změnit konfiguraci metadat nebo registraci rozšíření konfigurace beze změny konfiguračního souboru nástroje.|  
+|ErrValidateInvalidUse|Zadaná možnost nelze použít s parametrem zadané.|  
+|WrnWSMExFailed|Chyba WS-Metadata Exchange se zadaným identifikátorem URI.|  
+|HelpNoconfig|Konfiguraci nelze vytvořit.|  
+|HelpCodeGenerationDescription|Zadaný seznam můžete vygenerovat typy kontraktů, klientů a dat služby z dokumentů metadat.|  
+|HelpTargetMetadata|Výstupní metadata. Pokud je vstup adresu URL, Svcutil.exe uloží metadata na disk a nevygeneruje žádný kód. Pokud je vstup jednu nebo více sestavení, vygeneruje Svcutil.exe metadat z typů v sestaveních.|  
+|ErrAmbiguousOptionModeConflict|Zadaná možnost je v konfliktu s jinými možnostmi. Zkontrolujte způsob použití nástroje.|  
+|ErrNotLanguageOrCodeDomType|Zadaná hodnota, která byla předána zadaného argumentu nepředstavuje definovaný jazyk a nelze jej načíst jako plně kvalifikovaný typ CLR.|  
+|ErrUnableToUniquifyFilename|Nelze vytvořit název výstupního souboru. Příliš mnoho souborů jsou vytvářeny pomocí zadané předpony.|  
 |ErrCannotCreateFile|Zadaný výstupní soubor nelze vytvořit.|  
 |ErrExpectedValue|Zadaná možnost vyžaduje, aby byl specifikován hodnotu.|  
-|ErrCannotDisambiguateSpecifiedTypes|Více než jeden typ se stejným názvem existuje v sadě odkazované sestavení. Pomocí názvů kvalifikovaný sestavení k rozlišení mezi typy zadaný pro zadaná možnost.|  
-|RetreivingMetadataWithMexOnly|Probíhá pokus o stažení metadat ze zadaného umístění pomocí protokolu WS-Metadata Exchange. Tato adresa URL DISCO nepodporuje.|  
-|ErrInvalidTarget|Zadaný cíl je platný, pokud je zadán pomocí Zadaná možnost. Podporované cíle nejsou zadány.|  
-|ErrPathTooLong|Výsledná cesta je příliš dlouhá. Zkontrolujte zadané argumenty.|  
-|HelpCommonOptionsCategory|-= BĚŽNÉ MOŽNOSTI =-|  
+|ErrCannotDisambiguateSpecifiedTypes|V sadě odkazovaných sestavení existuje více než jeden typ se stejným názvem. Úplné názvy sestavení použijte k rozlišení mezi zadanými typy pro zadanou možnost.|  
+|RetreivingMetadataWithMexOnly|Došlo k pokusu o stažení metadat ze zadaného umístění pomocí protokolu WS-Metadata Exchange. Tato adresa URL nepodporuje roz.|  
+|ErrInvalidTarget|Zadaný cíl je platný, pokud je určen pomocí Zadaná možnost. Cíle, které podporované nejsou zadány.|  
+|ErrPathTooLong|Výsledná cesta je příliš dlouhý. Zkontrolujte zadané argumenty.|  
+|HelpCommonOptionsCategory|-= SPOLEČNÉ MOŽNOSTI =-|  
 |ParametersServiceName|\<serviceConfigName>|  
-|ErrNoValidInputFilesSpecified|Žádné platné vstupní soubory zadané. Zadejte buď dokumenty metadat, nebo soubory sestavení.|  
+|ErrNoValidInputFilesSpecified|Platný zadány žádné vstupní soubory. Zadejte buď dokumentů metadat nebo soubory sestavení.|  
 |ParametersLanguage|\<jazyk >|  
-|ErrUnableToLoadMetadataDocument|Došlo k chybě při načítání metadat z jednoho načíst dokumentů. Je zadán identifikátor dokumentu.|  
-|ErrConflictingInputs|Pro zadané vstupní argument v konfliktu s zadat, protože jejich implikují různé režimy činnosti nástroje.|  
-|WrnUnableToLoadContractForValidation|Došlo k chybě při načítání typu kontraktu. Typ a podrobnosti nejsou zadány.|  
-|WrnAttributeReflectionErrors|Atribut reflexe se nezdařilo pro některé typy v sestavení, které byly načteny z určeného. Ověřte, že z tohoto umístění s oprávněními správné zabezpečení mohou být načíst toto sestavení.|  
+|ErrUnableToLoadMetadataDocument|Při čtení metadat z jednoho z načtených dokumentů došlo k chybě. Je zadaný identifikátor dokumentu.|  
+|ErrConflictingInputs|Zadaný vstupní argument je v konfliktu s zadat, protože implikují různé režimy fungování nástroje.|  
+|WrnUnableToLoadContractForValidation|Došlo k chybě při načítání typu kontraktu. Typ a podrobnosti jsou uvedeny.|  
+|WrnAttributeReflectionErrors|Atribut reflexe se nezdařilo pro některý z typů v sestavení, která byla načtena ze zadané. Ověřte, že toto sestavení lze načíst z tohoto umístění s oprávněními správné zabezpečení.|  
 |HelpMetadataExportCategory|-= EXPORT METADAT =-|  
 |HelpValidationCategory|-= OVĚŘENÍ SLUŽBY =-|  
 |ValidationError|Chyba ověřování:|  
-|GeneratingFiles|Generování souborů...|  
-|ErrCannotSpecifyMultipleMappingsForNamespace|Zadané možnosti byla předána neplatná hodnota. Zadaný cílový obor názvů nelze mapovat na více oborů názvů CLR jako zadaný.|  
-|ErrCouldNotLoadReferenceAssemblyAt|Zadaný odkaz na sestavení nelze načíst.|  
+|GeneratingFiles|Generují se soubory...|  
+|ErrCannotSpecifyMultipleMappingsForNamespace|Zadaná nastavení byla předána neplatná hodnota. Zadaný cílový obor názvů nejde mapovat na více oborů názvů CLR uvedená.|  
+|ErrCouldNotLoadReferenceAssemblyAt|Zadaný odkaz sestavení nelze načíst.|  
 |ParametersOut|\<Soubor >|  
-|NoCodeWasGeneratedSuggestDCOnly|Generovat kontrakty z schémat, použijte Zadaná možnost.|  
-|ErrUnableToLoadInputConfig|Zadaný konfigurační soubor nelze načíst.|  
-|ErrUnexpectedDelimiter|Argument je neplatný oddělovač (': ' nebo '=') nelze spustit možnost.|  
+|NoCodeWasGeneratedSuggestDCOnly|Chcete-li generovat kontrakty ze schémat, použijte Zadaná možnost.|  
+|ErrUnableToLoadInputConfig|Nelze načíst zadaný konfigurační soubor.|  
+|ErrUnexpectedDelimiter|Neplatný argument: oddělovač (': ' nebo '=') nemůže spustit možnost.|  
 |ErrMergeConfigUsedWithoutConfig|Zadaná možnost nelze použít bez zadání Zadaná možnost.|  
-|ErrUnableToExportContract|Export kontrakt načíst ze zadaného typu došlo k chybě.|  
-|GeneratingMetadata|Generování metadat souborů...|  
+|ErrUnableToExportContract|Došlo k chybě při exportu kontrakt načtených ze zadaného typu.|  
+|GeneratingMetadata|Generování souborů metadat...|  
 |ErrNotCodeDomType|Zadaný typ, který byl předán zadaný argument není zadaný odvozené třídy.|  
-|WrnNoTypeForServices|Žádná z sestavení, které byly předány obsažené služby typů s názvem zadanou konfiguraci.|  
-|ErrAssemblyLoadFailed|Zadaný soubor nelze načíst sestavení. Zkontrolujte FusionLogs Další informace.|  
-|NoMetadataWasGenerated|Byly vygenerovány žádné soubory metadat. Žádné kontraktů služby byly exportovány.<br /><br /> Pokud chcete exportovat služby, použijte Zadaná možnost. Pokud chcete exportovat kontrakty dat, zadejte možnost.|  
-|WrnCannotResolveServiceForExport|Nelze načíst službu s zadaný configName. Pokud chcete exportovat služby, zadejte sestavení, které obsahuje typ služby a spustitelný soubor s konfigurací pro tuto službu.|  
+|WrnNoTypeForServices|Žádná sestavení, které byly předány omezením typů s názvem konfigurace služeb.|  
+|ErrAssemblyLoadFailed|Zadaný soubor nelze načíst sestavení. Více informací naleznete FusionLogs.|  
+|NoMetadataWasGenerated|Nevygenerovaly se žádné soubory metadat. Byly exportovány bez kontraktů služby.<br /><br /> Export služby, použijte parametr zadaný. Export dat smlouvy, zadejte možnost.|  
+|WrnCannotResolveServiceForExport|Nepovedlo se načíst služby se zadaným configName. Export služby, zadejte sestavení, který obsahuje typ služby a spustitelný soubor s konfigurací pro tuto službu.|  
 |ParametersCollectionType|\<Typ >|  
 |ErrOptionConflictsWithTarget|Použití Zadaná možnost nepodporuje Zadaná možnost nastavit na zadanou hodnotu.|  
-|ErrCodegenError|Došlo k chybě při generování kódu v daném jazyce.<br /><br /> Jazyk nepodporuje všechny elementy kódu probíhá generování. Je třeba použít jiný jazyk.|  
-|ErrInputWsdlParseError|Při analýze WSDL došlo k chybě při čtení zadaného. Ověřte, že zadaný kód XML ve správném formátu a platné.|  
-|ErrCouldNotCreateInstance|Nelze vytvořit instanci zadaného typu, který byl předán do zadaného argumentu.|  
+|ErrCodegenError|Při generování kódu v zadaném jazyce došlo k chybě.<br /><br /> Jazyk nepodporuje všechny generované elementy kódu. Je třeba použít jiný jazyk.|  
+|ErrInputWsdlParseError|Chyba parsování WSDL došlo k chybě při čtení zadaného. Ověřte, kód XML má správný formát a je platný.|  
+|ErrCouldNotCreateInstance|Nelze vytvořit instanci zadaného typu, který byl předán zadaného argumentu.|  
 |ParametersNamespace|\<řetězec, řetězec >|  
-|HelpNostdlib|Neodkazují na standardní knihovny (ve výchozím nastavení mscorlib.dll a system.servicemodel.dll odkazují.)|  
-|WrnCannotLoadConfigFileForExport|Došlo k chybě při zpracování konfiguračního souboru, který byl načten z určeného. Služby, které jsou definovány v tento konfigurační soubor nelze načíst.|  
-|WrnUnableToLoadContractForExport|Došlo k chybě při načítání typu kontraktu. Nelze exportovat tento zadaného typu.|
+|HelpNostdlib|Neodkazovat na standardní knihovny (ve výchozím nastavení mscorlib.dll a system.servicemodel.dll jsou odkazovány.)|  
+|WrnCannotLoadConfigFileForExport|Došlo k chybě při zpracování konfiguračního souboru, který byl načten ze zadané. Služby, které jsou definovány v tento konfigurační soubor nelze načíst.|  
+|WrnUnableToLoadContractForExport|Došlo k chybě při načítání typu kontraktu. Není možné exportovat tento zadaného typu.|

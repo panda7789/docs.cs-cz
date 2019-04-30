@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Collection object, summary
 ms.assetid: c4586369-d817-4453-9cb0-1a272fc66737
 ms.openlocfilehash: 50174f2af5e52b0fd71a590e7daf0285b5e043ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58815846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802441"
 ---
 # <a name="collection-object-summary-visual-basic"></a>Souhrn objektů kolekce (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  

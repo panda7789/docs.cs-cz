@@ -8,11 +8,11 @@ helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
 ms.openlocfilehash: c2a62b61cb7b31c978a84a3d3f41c24f9fafb84d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59312563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946741"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
 Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
@@ -24,15 +24,15 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
 ## <a name="defining-settings"></a>Definování nastavení  
  Architektura nastavení aplikace se používá v rámci obou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a Windows Forms, který obsahuje řadu základních tříd, které jsou sdíleny mezi oběma prostředími. Nejdůležitější je <xref:System.Configuration.SettingsBase>, který poskytuje přístup k nastavení prostřednictvím kolekce a poskytuje nízké úrovně metody pro načítání a ukládání nastavení. Každé prostředí implementuje své vlastní třídy odvozené od <xref:System.Configuration.SettingsBase> nakonfigurovánu další nastavení pro toto prostředí. V aplikaci na základě formulářů Windows, všechna nastavení aplikace musí být definován ve třídě odvozené z <xref:System.Configuration.ApplicationSettingsBase> třídu, která přidá následující funkce na základní třídu:  
   
--   Vyšší úrovně načítání a ukládání operace  
+- Vyšší úrovně načítání a ukládání operace  
   
--   Podpora pro nastavení rozsahu uživatele  
+- Podpora pro nastavení rozsahu uživatele  
   
--   Při vrácení nastavení uživatele do předdefinované nastavení  
+- Při vrácení nastavení uživatele do předdefinované nastavení  
   
--   Upgrade nastavení z předchozí verze aplikace  
+- Upgrade nastavení z předchozí verze aplikace  
   
--   Ověřují se nastavení, než se mění nebo před jejich uložením  
+- Ověřují se nastavení, než se mění nebo před jejich uložením  
   
  Tato nastavení můžete popsaná s počtem atributů definovaných v rámci <xref:System.Configuration> obor názvů; tyto možnosti jsou popsány v [atributy nastavení aplikace](application-settings-attributes.md). Při definování nastavení, musí ho použít s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, která popisuje, zda nastavení platí pro celou aplikaci nebo jenom pro aktuálního uživatele.  
   
@@ -46,11 +46,11 @@ Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá mož
   
  Konfigurační systém, který byl poprvé uveden s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] podporuje poskytování statických aplikace konfigurační data místním počítači během procházení souboru machine.config nebo v rámci `app.`exe.config soubor, který nasazujete s vaše aplikace. <xref:System.Configuration.LocalFileSettingsProvider> Třída rozšiřuje tato nativní podpora následujícími způsoby:  
   
--   Nastavení oboru aplikace mohou být uloženy v obou souboru machine.config nebo `app.`exe.config soubory. Machine.config je vždy jen pro čtení, při `app`. exe.config omezil aspekty zabezpečení jen pro čtení pro většinu aplikací.  
+- Nastavení oboru aplikace mohou být uloženy v obou souboru machine.config nebo `app.`exe.config soubory. Machine.config je vždy jen pro čtení, při `app`. exe.config omezil aspekty zabezpečení jen pro čtení pro většinu aplikací.  
   
--   Nastavení rozsahu uživatele mohou být uloženy v `app`. exe.config souborů, v takovém případě jsou považovány za statické výchozí hodnoty.  
+- Nastavení rozsahu uživatele mohou být uloženy v `app`. exe.config souborů, v takovém případě jsou považovány za statické výchozí hodnoty.  
   
--   Nestandardní nastavení rozsahu uživatele jsou uloženy v novém souboru *uživatele*.config, kde *uživatele* je uživatelské jméno osoby, běžící aplikaci. Můžete určit výchozí hodnoty pro nastavení rozsahu uživatele s <xref:System.Configuration.DefaultSettingValueAttribute>. Protože nastavení rozsahu uživatele při spuštění aplikace, často mění `user`.config je vždy čtení a zápisu.  
+- Nestandardní nastavení rozsahu uživatele jsou uloženy v novém souboru *uživatele*.config, kde *uživatele* je uživatelské jméno osoby, běžící aplikaci. Můžete určit výchozí hodnoty pro nastavení rozsahu uživatele s <xref:System.Configuration.DefaultSettingValueAttribute>. Protože nastavení rozsahu uživatele při spuštění aplikace, často mění `user`.config je vždy čtení a zápisu.  
   
  Všechny tři konfigurační soubory uložit nastavení je ve formátu XML. Element XML nejvyšší úrovně pro nastavení oboru aplikace je `<appSettings>`, zatímco `<userSettings>` se používá pro nastavení rozsahu uživatele. `app`. Exe.config soubor, který obsahuje nastavení oboru aplikace a výchozí hodnoty pro nastavení rozsahu uživatele bude vypadat takto:  
   

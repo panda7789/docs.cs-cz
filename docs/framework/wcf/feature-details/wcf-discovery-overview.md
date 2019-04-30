@@ -3,11 +3,11 @@ title: Přehled zjišťování WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
 ms.openlocfilehash: cb1eb52e0996a03709a755ff2f148152e2625c58
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768407"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784251"
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Rozhraní API zjišťování poskytují jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby sami a klientům nalezení služeb publikovaných na publikovat. Jakmile proběhne zjistitelné služby, služby má možnost odesílat zprávy oznámení také naslouchat a reagovat na požadavky na zjišťování. Zjistitelné služby může odesílat zprávy Hello oznamujeme jejich doručení na síť a zprávy Bye oznamujeme jejich odeslání ze sítě. K vyhledání služby klienty odeslat `Probe` žádost, která obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda kritériím neodpovídají. Pokud služba odpovídá, odpovídá odesláním `ProbeMatch` zprávy zpět do klienta o informace nezbytné pro kontaktování služby. Klienti mohou také odesílat `Resolve` požadavků, které zajistí, aby hledání mohlo dojít ke změně jejich adresa koncového bodu služby. Odpovídající služby reagovat na `Resolve` odesláním žádosti `ResolveMatch` zpráv zpět klientovi.  
@@ -15,11 +15,11 @@ Rozhraní API zjišťování poskytují jednotný programovací model pro dynami
 ## <a name="ad-hoc-and-managed-modes"></a>Ad-Hoc a spravované režimy  
  Zjišťování rozhraní API podporuje dvou různých režimech: Spravované a Ad Hoc. Spravovaný režim je centralizovaná serveru s názvem proxy zjišťování, která uchovává informace o dostupných služeb. Zjišťování proxy je možné naplnit informace o službách v mnoha různými způsoby. Například služby odesílat zprávy o oznámení při spuštění až po zjišťování proxy serveru nebo proxy server může číst data z databáze nebo konfiguračního souboru k určení, jaké služby jsou k dispozici. Jak se vyplní proxy zjišťování je zcela na vývojáře. Klienti používají proxy zjišťování k načtení informací o dostupných služeb. Když klient vyhledává služby se odešle `Probe` zprávy zjišťování proxy serveru a proxy server určuje shodu kterékoli ze služeb ví o služby, bude klient Hledat. Pokud existují odešle proxy zjišťování shody `ProbeMatch` odpověď zpět klientovi. Klient pak může kontaktovat službu přímo pomocí služby informace vrácené z proxy serveru. Klíčovým principem za spravovaný režim je odeslání žádosti o zjištění způsobem jednosměrového vysílání jeden úřadu, za proxy zjišťování. Rozhraní .NET Framework obsahuje klíčových komponent, které umožňují vytvářet vlastní proxy server. Služby a klienti najdou proxy server pomocí několika metod:  
   
--   Proxy server můžou reagovat na ad-hoc zprávy.  
+- Proxy server můžou reagovat na ad-hoc zprávy.  
   
--   Proxy server můžete odeslat zprávu oznámení při spuštění.  
+- Proxy server můžete odeslat zprávu oznámení při spuštění.  
   
--   Služby a klienti mohou napsané pro vyhledání určitého dobře známé koncového bodu.  
+- Služby a klienti mohou napsané pro vyhledání určitého dobře známé koncového bodu.  
   
  V režimu Ad Hoc není žádný centrální server. Všechny zprávy zjišťování například oznámení o službách a požadavky na klienta se posílají způsobem vícesměrového vysílání. Rozhraní .NET Framework ve výchozím nastavení obsahuje podporu pro Ad-Hoc zjišťování přes protokol UDP. Například pokud služba je konfigurován pro posílat oznámení Hello z po spuštění, odešle je prostřednictvím dobře známé, vícesměrového vysílání adres pomocí protokolu UDP. Klienti mají aktivně naslouchat těchto oznámeních a odpovídajícím způsobem zpracovat. Když klient odešle `Probe` zprávu pro službu je odeslán přes síť pomocí vícesměrového vysílání protokolu. Každá služba, která bude přijímat žádosti Určuje, zda odpovídá kritériím `Probe` zpráv a odpovídá přímo do klienta se `ProbeMatch` zprávu, pokud služba odpovídá kritérii zadanými v `Probe` zprávy.  
   

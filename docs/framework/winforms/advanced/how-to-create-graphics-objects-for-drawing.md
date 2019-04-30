@@ -11,11 +11,11 @@ helpviewer_keywords:
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
 ms.openlocfilehash: 79eae4d37c056fc95ac73c78e00dd1a2b68bcd24
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937680"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
 Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objekt představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení ploše a je objekt, který se používá k vytvoření grafické obrázky.  
@@ -31,15 +31,15 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
 #### <a name="to-create-a-graphics-object"></a>Chcete-li vytvořit objekt grafiky  
   
--   Jako součást, zobrazí se odkaz na objekt grafiky <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> události formuláře nebo ovládacího prvku. To je obvykle získání odkazu na objekt grafiky při vytváření Malování kódu pro ovládací prvek. Podobně můžete získat také grafický objekt jako vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> při zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí pro <xref:System.Drawing.Printing.PrintDocument>.  
+- Jako součást, zobrazí se odkaz na objekt grafiky <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> události formuláře nebo ovládacího prvku. To je obvykle získání odkazu na objekt grafiky při vytváření Malování kódu pro ovládací prvek. Podobně můžete získat také grafický objekt jako vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> při zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí pro <xref:System.Drawing.Printing.PrintDocument>.  
   
      -nebo-  
   
--   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> ovládacího prvku nebo formuláře k získání odkazu na metodu <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu tohoto ovládacího prvku nebo formuláře. Tuto metodu použijte, pokud chcete vykreslovat na formulář nebo ovládací prvek, který již existuje.  
+- Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> ovládacího prvku nebo formuláře k získání odkazu na metodu <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu tohoto ovládacího prvku nebo formuláře. Tuto metodu použijte, pokud chcete vykreslovat na formulář nebo ovládací prvek, který již existuje.  
   
      -nebo-  
   
--   Vytvoření <xref:System.Drawing.Graphics> objekt z libovolného objektu, která dědí z <xref:System.Drawing.Image>. Tento přístup je užitečný, pokud chcete změnit již existující image.  
+- Vytvoření <xref:System.Drawing.Graphics> objekt z libovolného objektu, která dědí z <xref:System.Drawing.Image>. Tento přístup je užitečný, pokud chcete změnit již existující image.  
   
      Následující části obsahují podrobné informace o každé z těchto procesů.  
   
@@ -94,7 +94,7 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
 #### <a name="to-create-a-graphics-object-with-the-creategraphics-method"></a>Chcete-li vytvořit grafický objekt s metodu CreateGraphics  
   
--   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> metody formuláře nebo ovládacího prvku, na který chcete vykreslit grafiky.  
+- Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> metody formuláře nebo ovládacího prvku, na který chcete vykreslit grafiky.  
   
     ```vb  
     Dim g as Graphics  
@@ -122,7 +122,7 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
   
 #### <a name="to-create-a-graphics-object-from-an-image"></a>Chcete-li vytvořit objekt grafiky z bitové kopie  
   
--   Volání <xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType> metodu název proměnné Image, ze kterého chcete vytvořit <xref:System.Drawing.Graphics> objektu.  
+- Volání <xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType> metodu název proměnné Image, ze kterého chcete vytvořit <xref:System.Drawing.Graphics> objektu.  
   
      Následující příklad ukazuje způsob použití <xref:System.Drawing.Bitmap> objektu:  
   
@@ -149,17 +149,17 @@ Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobr
 ## <a name="drawing-and-manipulating-shapes-and-images"></a>Kreslení a manipulace s nimi obrazce a obrázky  
  Po jeho vytvoření, <xref:System.Drawing.Graphics> objekt slouží k vykreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s imagí. Instanční objekty, které se používají s <xref:System.Drawing.Graphics> objektu jsou:  
   
--   <xref:System.Drawing.Pen> Třídy – používat pro kreslení čar, osnovy obrazce nebo jiné geometrické reprezentace vykreslování.  
+- <xref:System.Drawing.Pen> Třídy – používat pro kreslení čar, osnovy obrazce nebo jiné geometrické reprezentace vykreslování.  
   
--   <xref:System.Drawing.Brush> Třídy – používané pro vyplnění oblasti grafiky, jako je například vyplněné obrazce, Image nebo text.  
+- <xref:System.Drawing.Brush> Třídy – používané pro vyplnění oblasti grafiky, jako je například vyplněné obrazce, Image nebo text.  
   
--   <xref:System.Drawing.Font> Třídy – popisuje, co budou použity při generování text obrazce.  
+- <xref:System.Drawing.Font> Třídy – popisuje, co budou použity při generování text obrazce.  
   
--   <xref:System.Drawing.Color> Struktura – představuje různé barvy pro zobrazení.  
+- <xref:System.Drawing.Color> Struktura – představuje různé barvy pro zobrazení.  
   
 #### <a name="to-use-the-graphics-object-you-have-created"></a>Použití objektu grafiky, které jste vytvořili  
   
--   Práce s odpovídající objekt uvedené výše, chcete-li nakreslit, co potřebujete.  
+- Práce s odpovídající objekt uvedené výše, chcete-li nakreslit, co potřebujete.  
   
      Další informace naleznete v následujících tématech:  
   

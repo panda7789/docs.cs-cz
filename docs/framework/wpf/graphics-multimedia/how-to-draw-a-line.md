@@ -7,11 +7,11 @@ helpviewer_keywords:
 - lines [WPF], drawing
 ms.assetid: 0513ee01-6b27-4bb3-85f3-3a3e6710d80e
 ms.openlocfilehash: c11dfb9523834ec2e622cb2e62bd6982a1a78fd4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59143517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947651"
 ---
 # <a name="how-to-draw-a-line"></a>Postupy: Vykreslení čáry
 Tento příklad ukazuje, jak s použitím kreslení čar <xref:System.Windows.Shapes.Line> elementu.  

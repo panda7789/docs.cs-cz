@@ -8,11 +8,11 @@ helpviewer_keywords:
 - determining whether.NET Framework 3.5 is installed [WPF]
 ms.assetid: 8556a9d2-1eb8-48ef-919c-5baf22a2a9a2
 ms.openlocfilehash: af2428ece79803953b8c90431d905824dd18fec8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947859"
 ---
 # <a name="how-to-detect-whether-the-net-framework-35-is-installed"></a>Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5
 Správci mohli nasadit aplikace Windows Presentation Foundation (WPF) v systému, který se zaměřuje [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], se musí nejdřív ověřit, která [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] modul runtime je k dispozici. Toto téma obsahuje skript napsané v HTML/JavaScript, která správcům umožňuje určit, zda [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] je k dispozici v systému.  

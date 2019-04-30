@@ -10,11 +10,11 @@ ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
 ms.openlocfilehash: c825ccc15ff7eeb736169f7ae120b4a3692ffe39
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216467"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949237"
 ---
 # <a name="net-performance-tips"></a>Tipy pro zvýšení výkonu rozhraní .NET
 Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy můžete zvýšit rychlost provádění dodržováním určitých základních pravidel ve zdrojovém kódu. V některých aplikacích je třeba pečlivě zkoumat kód a ujistěte se, že běží tak rychle za pomocí profilerů. V jiných programech není nutné provést takovou optimalizaci, protože je kód spuštěn přijatelně rychle při zápisu. Tento článek uvádí některé běžné oblasti, kde může být výkon negativně a tipy pro zlepšení ji taky odkazy na další témata výkonu. Další informace o plánování a měření výkonu najdete v tématu [výkonu](../../../docs/framework/performance/index.md)  
@@ -30,17 +30,17 @@ Termín *výkonu* obecně označuje rychlost vykonávání programu. Někdy mů�
   
 ## <a name="other-resources"></a>Další zdroje  
   
--   [Rychlejší psaní spravovaného kódu: Vědět, kolik věci stojí](https://go.microsoft.com/fwlink/?LinkId=99294)  
+- [Rychlejší psaní spravovaného kódu: Vědět, kolik věci stojí](https://go.microsoft.com/fwlink/?LinkId=99294)  
   
--   [Vytváření vysoce výkonné spravované aplikace: A Primer](https://go.microsoft.com/fwlink/?LinkId=99295)  
+- [Vytváření vysoce výkonné spravované aplikace: A Primer](https://go.microsoft.com/fwlink/?LinkId=99295)  
   
--   [Základní informace o uvolňování paměti a typech výkonu](https://go.microsoft.com/fwlink/?LinkId=99296)  
+- [Základní informace o uvolňování paměti a typech výkonu](https://go.microsoft.com/fwlink/?LinkId=99296)  
   
--   [Tipy ke zvýšení výkonu a tipy v aplikacích .NET](https://go.microsoft.com/fwlink/?LinkId=99297)  
+- [Tipy ke zvýšení výkonu a tipy v aplikacích .NET](https://go.microsoft.com/fwlink/?LinkId=99297)  
 
--   [Výkon Tidbits pro Rico Mariani](https://go.microsoft.com/fwlink/?LinkId=115679)  
+- [Výkon Tidbits pro Rico Mariani](https://go.microsoft.com/fwlink/?LinkId=115679)  
 
--   [Blog daňové Morrison](https://blogs.msdn.microsoft.com/vancem/)
+- [Blog daňové Morrison](https://blogs.msdn.microsoft.com/vancem/)
   
 ## <a name="see-also"></a>Viz také:
 

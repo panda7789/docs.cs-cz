@@ -5,11 +5,11 @@ helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
 ms.openlocfilehash: 829d6485acdca22fbf10160c734e5c7f931dd855
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938252"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Návod: Ověření, že hesla jsou složitá (Visual Basic)
 Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězcový parametr s informacemi o tom, které kontroluje heslo selže.  
@@ -28,20 +28,20 @@ Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězc
   
  Tento příklad vyžaduje:  
   
--   Přístup k členům <xref:System.Text.RegularExpressions> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Přístup k členům <xref:System.Text.RegularExpressions> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="security"></a>Zabezpečení  
  Pokud přesouváte hesla přes síť, budete muset použít bezpečnou metodu pro přenášení dat. Další informace najdete v tématu [ASP.NET Web Application Security](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
   
  Můžete zvýšit jeho přesnost `ValidatePassword` funkce tak, že přidáte další složitosti kontroly:  
   
--   Porovnejte heslo a jeho dílčí řetězce na jméno uživatele, identifikátor uživatele a slovníku definovaného aplikací. Kromě toho považovat za vizuálně podobné znaky ekvivalent při provádění porovnání. Například považovat za písmena "l" a "e" odpovídá číslice "1" a "3".  
+- Porovnejte heslo a jeho dílčí řetězce na jméno uživatele, identifikátor uživatele a slovníku definovaného aplikací. Kromě toho považovat za vizuálně podobné znaky ekvivalent při provádění porovnání. Například považovat za písmena "l" a "e" odpovídá číslice "1" a "3".  
   
--   Pokud existuje pouze jedno velké písmeno, ujistěte se, že se nejedná o první znak hesla.  
+- Pokud existuje pouze jedno velké písmeno, ujistěte se, že se nejedná o první znak hesla.  
   
--   Ujistěte se, že poslední dva znaky heslo jsou znaky písmena.  
+- Ujistěte se, že poslední dva znaky heslo jsou znaky písmena.  
   
--   Nepovolit hesla, ve které jsou zadány všechny symboly z horní řádek klávesnici.  
+- Nepovolit hesla, ve které jsou zadány všechny symboly z horní řádek klávesnici.  
   
 ## <a name="see-also"></a>Viz také:
 

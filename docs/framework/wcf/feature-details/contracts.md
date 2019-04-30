@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], contracts
 ms.assetid: c8364183-4ac1-480b-804a-c5e6c59a5d7d
 ms.openlocfilehash: 0443e5b37e637351d6491c37ec443c93636460a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59134885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857620"
 ---
 # <a name="contracts"></a>Kontrakty
 Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communication Foundation (WCF). Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  
@@ -21,32 +21,32 @@ Tato část ukazuje, jak definovat a implementovat kontrakty Windows Communicati
 ## <a name="overview"></a>Přehled  
  Toto téma obsahuje podrobný koncepční orientace k navrhování a implementace služeb WCF. Související témata poskytují že podrobnější informace o specifika návrhu a implementace. Doporučujeme před navrhování a implementace aplikace WCF, který jste:  
   
--   Pochopit, jaký kontrakt služby je, jak to funguje a jak ji vytvořit.  
+- Pochopit, jaký kontrakt služby je, jak to funguje a jak ji vytvořit.  
   
--   Vysvětlení, že kontrakty stavu minimální požadavky na tuto konfiguraci za běhu nebo hostitelské prostředí nemusí podporovat.  
+- Vysvětlení, že kontrakty stavu minimální požadavky na tuto konfiguraci za běhu nebo hostitelské prostředí nemusí podporovat.  
   
 ## <a name="service-contracts"></a>Kontrakty služeb  
  Kontrakt služby je příkaz, který poskytuje informace o:  
   
--   Seskupování operací ve službě.  
+- Seskupování operací ve službě.  
   
--   Podpis operace z hlediska si vyměňují zprávy.  
+- Podpis operace z hlediska si vyměňují zprávy.  
   
--   Datové typy z následujících zpráv.  
+- Datové typy z následujících zpráv.  
   
--   Umístění operací.  
+- Umístění operací.  
   
--   Konkrétní protokoly a formáty serializace, které slouží k podpoře úspěšné komunikaci se službou.  
+- Konkrétní protokoly a formáty serializace, které slouží k podpoře úspěšné komunikaci se službou.  
   
  Například může mít kontrakt nákupní objednávky `CreateOrder` operace, která přijímá vstup z informací o objednávkách typů a vrátí informace o úspěchu nebo neúspěchu, včetně identifikátor objednávky. Také může mít `GetOrderStatus` operace, která přijímá identifikátor objednávky a vrátí informace o stavu objednávky. Kontrakt služby toto řazení zadáte:  
   
--   Kontrakt nákupní objednávky, které se skládal z `CreateOrder` a `GetOrderStatus` operace.  
+- Kontrakt nákupní objednávky, které se skládal z `CreateOrder` a `GetOrderStatus` operace.  
   
--   Zda operace zadali zprávy vstupní a výstupní zprávy.  
+- Zda operace zadali zprávy vstupní a výstupní zprávy.  
   
--   Data, která může obsahovat tyto zprávy.  
+- Data, která může obsahovat tyto zprávy.  
   
--   Zařazené do kategorií příkazy týkající se komunikace infrastrukturu nezbytnou k úspěšné zpracování zprávy. Například tyto podrobnosti patří, jestli a jaké formuláře zabezpečení požadované k navázání komunikace úspěšná.  
+- Zařazené do kategorií příkazy týkající se komunikace infrastrukturu nezbytnou k úspěšné zpracování zprávy. Například tyto podrobnosti patří, jestli a jaké formuláře zabezpečení požadované k navázání komunikace úspěšná.  
   
  K předání tento druh informací do aplikací na jiných platformách (včetně jiné platformy než Microsoft), kontrakty služeb XML jsou veřejně vyjádřené v standardní formáty XML, jako například [webové služby WSDL (Description Language)](https://go.microsoft.com/fwlink/?LinkId=87004) a [schématu XML (XSD)](https://go.microsoft.com/fwlink/?LinkId=87005), mimo jiné. Pro mnoho platforem mohou vývojáři tyto informace veřejného kontraktu vytvářet aplikace, které mohou komunikovat se službou, protože porozumí jazykové specifikaci a protože tyto jazyky jsou navržené tak, aby vzájemná spolupráce grafického subsystému Zadáním popisu vašeho nového veřejného formuláře, formátů a protokoly, které služba podporuje. Další informace o zpracování tento druh informací WCF najdete v tématu [metadat](../../../../docs/framework/wcf/feature-details/metadata.md).  
   

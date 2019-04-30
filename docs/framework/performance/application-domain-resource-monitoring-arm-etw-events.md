@@ -8,26 +8,26 @@ ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2bb2b0dd95877fc6492f6d23a19c14688cd78f7c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59133819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788060"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>Události Trasování událostí pro Windows sledování prostředků domény aplikace (ARM)
 <a name="top"></a> Tyto události poskytují podrobné diagnostické informace o stavu domény aplikace. Můžete použít tyto události nebo použití prostředků domény aplikace (ARM) funkci monitorování získávat stejné informace.  
   
  Tato kategorie se skládá z následujících událostí:  
   
--   [ThreadCreated události](#threadcreated_event)  
+- [ThreadCreated události](#threadcreated_event)  
   
--   [AppDomainMemAllocated události](#appdomainmemallocated_event)  
+- [AppDomainMemAllocated události](#appdomainmemallocated_event)  
   
--   [AppDomainMemSurvived Event](#appdomainmemsurvived_event)  
+- [AppDomainMemSurvived Event](#appdomainmemsurvived_event)  
   
--   [ThreadAppDomainEnter události](#threadappdomainenter_event)  
+- [ThreadAppDomainEnter události](#threadappdomainenter_event)  
   
--   [ThreadTerminated události](#threadterminated_event)  
+- [ThreadTerminated události](#threadterminated_event)  
   
 <a name="threadcreated_event"></a>   
 ## <a name="threadcreated-event"></a>ThreadCreated události  

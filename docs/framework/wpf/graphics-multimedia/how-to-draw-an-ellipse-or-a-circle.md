@@ -10,11 +10,11 @@ helpviewer_keywords:
 - graphics [WPF], drawing ellipses
 ms.assetid: 99763b8c-bfc8-44be-8231-8a70daf5481a
 ms.openlocfilehash: 1393e158c1787dc7d4e44e5e1c90ed2e65666dc3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146741"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947560"
 ---
 # <a name="how-to-draw-an-ellipse-or-a-circle"></a>Postupy: Vykreslení elipsy nebo kruhu
 Tento příklad ukazuje, jak pomocí vykreslení elipsy nebo kruhu <xref:System.Windows.Shapes.Ellipse> elementu. Chcete-li nakreslit elipsu, vytvořte <xref:System.Windows.Shapes.Ellipse> element a zadejte jeho <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A>. Použití jeho <xref:System.Windows.Shapes.Shape.Fill%2A> vlastnosti a určit tak <xref:System.Windows.Media.Brush> , který se používá k vyplnění vnitřku elipsy. Použití jeho <xref:System.Windows.Shapes.Shape.Stroke%2A> vlastnosti a určit tak <xref:System.Windows.Media.Brush> , který slouží k vykreslení osnovy na tři tečky. <xref:System.Windows.Shapes.Shape.StrokeThickness%2A> Vlastnost určuje tloušťku obrysu elipsy.  

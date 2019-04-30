@@ -1,5 +1,5 @@
 ---
-title: Práce s vlákny funkce a objekty
+title: Dělení objektů a funkcí na vlákna
 ms.date: 10/01/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,13 +9,13 @@ ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f25609bc3c4dd829c66a1a4514b7f1121f9c0909
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759025"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940930"
 ---
-# <a name="threading-objects-and-features"></a>Práce s vlákny funkce a objekty
+# <a name="threading-objects-and-features"></a>Dělení objektů a funkcí na vlákna
 
 Spolu s <xref:System.Threading.Thread?displayProperty=nameWithType> třídy .NET poskytuje několik tříd, které umožňují vývoj aplikací s více vlákny. Následující články poskytují přehled těchto tříd:
 

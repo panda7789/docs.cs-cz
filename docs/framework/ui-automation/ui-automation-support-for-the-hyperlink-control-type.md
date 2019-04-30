@@ -7,11 +7,11 @@ helpviewer_keywords:
 - control types, Hyperlink
 ms.assetid: 110cceea-5932-4955-a1a6-13afc51422b2
 ms.openlocfilehash: e239919426297d879a9ac90928481b554157e7e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186274"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785213"
 ---
 # <a name="ui-automation-support-for-the-hyperlink-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz
 > [!NOTE]
@@ -65,7 +65,7 @@ ms.locfileid: "59186274"
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Požadováno|Žádný|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  

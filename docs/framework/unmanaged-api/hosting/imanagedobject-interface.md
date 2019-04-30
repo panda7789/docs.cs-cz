@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c90df6a8b6f25a93835981b1593a4b3d123cd168
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943374"
 ---
 # <a name="imanagedobject-interface"></a>IManagedObject – rozhraní
 Poskytuje metody pro řízení spravovaného objektu.  

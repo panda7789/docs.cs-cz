@@ -8,11 +8,11 @@ ms.assetid: f612fa5b-4b62-4593-a19e-85c9b1018dce
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a7cba2bd1dd5b83e29c7a6c192a1a7e5e2d33ecc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076469"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949146"
 ---
 # <a name="stack-etw-event"></a>Událost Trasování událostí pro Windows zásobníku
 Událost zásobníku by měl použít ve spojení s jinými událostmi ke generování trasování zásobníku, poté, co je vyvolána událost. Je zaznamenána, pokud je povolen zprostředkovatel běhového prostředí. To je velmi vysoká frekvence událostí, vzhledem k tomu, že je vyvolána pokaždé, když se jiný modul runtime událost se vyvolá. Z tohoto důvodu doporučujeme použít tuto událost opatrně.  

@@ -19,11 +19,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
 ms.openlocfilehash: 8d2825ff738ffc50ba9a438024db27aff5686a0d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870341"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Postupy: Implementace klienta asynchronního vzoru založeného na událostech
 Následující příklad kódu ukazuje, jak použít komponentu, která dodržuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponenty popsané v [jak: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  

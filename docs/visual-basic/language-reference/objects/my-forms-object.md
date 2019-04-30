@@ -8,11 +8,11 @@ helpviewer_keywords:
 - My.Forms object
 ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
 ms.openlocfilehash: 4998097b910a504461a34af3cc159ddb1c74cc62
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949315"
 ---
 # <a name="myforms-object"></a>My.Forms – objekt
 Poskytuje vlastnosti pro přístup k instanci jednotlivých formulářů Windows deklarované v aktuálním projektu.  

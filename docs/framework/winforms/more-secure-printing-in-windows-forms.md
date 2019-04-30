@@ -8,11 +8,11 @@ helpviewer_keywords:
 - security [Windows Forms], printing
 ms.assetid: 48fd36ac-872f-4de0-902a-e52969cd4367
 ms.openlocfilehash: 5ee170980ed02d90606c774e2a7055f047292e33
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59197357"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801800"
 ---
 # <a name="more-secure-printing-in-windows-forms"></a>Bezpečnější tisk ve Windows Forms
 Aplikace Windows Forms často přinášejí tisk schopnosti. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá <xref:System.Drawing.Printing.PrintingPermission> třídy pro řízení přístupu k funkcím, tisk a přidružené <xref:System.Drawing.Printing.PrintingPermissionLevel> hodnota výčtu označující úroveň přístupu. Ve výchozím nastavení je ve výchozím nastavení do zóny místního intranetu a Internetu; povolené tisk úroveň přístupu je však omezeny v obou oblastech. Zda lze vytisknout vaší aplikace, vyžaduje zásah uživatele, nebo nelze tisk závisí na hodnotě oprávnění udělených aplikaci. Ve výchozím nastavení, obdrží zóny místního intranetu <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> přístup a zóny intranetu obdrží <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> přístup.  

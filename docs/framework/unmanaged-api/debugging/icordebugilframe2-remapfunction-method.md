@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b92885d2a6514839a864d6a345dd8af8b07b90c1
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57489810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946520"
 ---
 # <a name="icordebugilframe2remapfunction-method"></a>ICorDebugILFrame2::RemapFunction – metoda
 Změní funkce se upravila tak, že zadáte nové posun Microsoft intermediate language (MSIL)  
@@ -49,9 +49,9 @@ HRESULT RemapFunction (
   
  `RemapFunction` Metodu lze volat pouze v kontextu aktuálního rámce a pouze v jednom z následujících případech:  
   
--   Po přijetí [icordebugmanagedcallback2::functionremapopportunity –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-functionremapopportunity-method.md) zpětné volání, které nebylo dosud pokračování.  
+- Po přijetí [icordebugmanagedcallback2::functionremapopportunity –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-functionremapopportunity-method.md) zpětné volání, které nebylo dosud pokračování.  
   
--   Když je z důvodu zastaví provádění kódu [icordebugmanagedcallback::editandcontinueremap –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md) události pro tento rámec.  
+- Když je z důvodu zastaví provádění kódu [icordebugmanagedcallback::editandcontinueremap –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-editandcontinueremap-method.md) události pro tento rámec.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - background images [WPF], preserving aspect ratios
 ms.assetid: 28c39478-13d7-4011-80a3-8b9cc3e54478
 ms.openlocfilehash: 4ae6f1242548038bcd54b7218783e5063fa67872
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083242"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921750"
 ---
 # <a name="how-to-preserve-the-aspect-ratio-of-an-image-used-as-a-background"></a>Postupy: Zachování poměru stran u obrázku na pozadí
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.TileBrush.Stretch%2A> vlastnost <xref:System.Windows.Media.ImageBrush> aby bylo možné zachovat poměr stran obrázku.  

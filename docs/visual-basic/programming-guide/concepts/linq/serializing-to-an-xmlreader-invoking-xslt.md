@@ -3,11 +3,11 @@ title: Serializace do třídy XmlReader (vyvolání XSLT) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 8b64f95a-e8f6-40f7-99f9-a8002c63af96
 ms.openlocfilehash: c557230d1ae350d5f542b79a2c210ce5ce3f73fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61786812"
 ---
 # <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a>Serializace do třídy XmlReader (vyvolání XSLT) (Visual Basic)
 Při použití <xref:System.Xml?displayProperty=nameWithType> funkce interoperability [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete použít <xref:System.Xml.Linq.XNode.CreateReader%2A> k vytvoření <xref:System.Xml.XmlReader>. Modul, který čte z tohoto <xref:System.Xml.XmlReader> přečte uzlů ze stromu XML a zpracovává je odpovídajícím způsobem.  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - OperationRequirement class
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
 ms.openlocfilehash: e3d0143cd68bc94c6ff07e65ca5a3c8971b45f23
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337835"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858010"
 ---
 # <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a>Postupy: Vytvoření vlastního správce autorizací pro službu
 Infrastruktura modelu identit ve Windows Communication Foundation (WCF) podporuje model extensible autorizace na základě rolí. Extrahuje z tokenů a volitelně zpracování pomocí zásad autorizace a pak umístit do deklarace identity <xref:System.IdentityModel.Policy.AuthorizationContext>. Správce autorizací prozkoumá deklarace identity v <xref:System.IdentityModel.Policy.AuthorizationContext> pro autorizační rozhodnutí.  

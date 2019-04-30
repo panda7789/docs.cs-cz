@@ -11,11 +11,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], manipulating columns
 ms.assetid: d8cfe6b3-bbab-4182-bec2-0517d9f1eaf6
 ms.openlocfilehash: 95d41093178c56c999ecfe515a380927513e715d
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57722448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913715"
 ---
 # <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView
 

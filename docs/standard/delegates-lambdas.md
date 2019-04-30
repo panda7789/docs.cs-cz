@@ -7,11 +7,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
 ms.openlocfilehash: 3d4aa5e60ab9bb134716bddcf90b6fc6b07c2ea0
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941034"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -46,9 +46,9 @@ public class Program
 
 Aby bylo možné zjednodušit proces vývoje, .NET obsahuje sadu typy delegátu, které programátoři můžou opakovaně používat a není nutné vytvářet nové typy. Jedná se o `Func<>`, `Action<>` a `Predicate<>`, a že lze použít na různých místech v rámci rozhraní .NET API bez nutnosti definovat nové typy delegátů. Samozřejmě existují určité rozdíly mezi třemi jak uvidíte v jejich podpisy, které většinou se tak, jak byly určeny pro použití:
 
-*   `Action<>` se používá, když je potřeba provést akci na základě argumentů delegáta.
-*   `Func<>` se používá, obvykle v případě, že máte transformaci na stranu, to znamená, je potřeba získat argumenty delegáta z jiné výsledky. Projekce jsou typickým příkladem tohoto objektu.
-*   `Predicate<>` používá se při je potřeba určit, pokud argument splňuje podmínky delegáta. Lze zapsat také jako `Func<T, bool>`.
+* `Action<>` se používá, když je potřeba provést akci na základě argumentů delegáta.
+* `Func<>` se používá, obvykle v případě, že máte transformaci na stranu, to znamená, je potřeba získat argumenty delegáta z jiné výsledky. Projekce jsou typickým příkladem tohoto objektu.
+* `Predicate<>` používá se při je potřeba určit, pokud argument splňuje podmínky delegáta. Lze zapsat také jako `Func<T, bool>`.
 
 Jsme teď můžete provést v našem příkladu výše a jeho pomocí přepsání `Func<>` delegovat místo vlastního typu. Program bude dál běžet stejně.
 
@@ -159,6 +159,6 @@ public MainWindow()
 
 ## <a name="further-reading-and-resources"></a>Další materiály a zdroje
 
-*   [Delegáti](../../docs/csharp/programming-guide/delegates/index.md)
-*   [Anonymní funkce](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-*   [Výrazy lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Delegáti](../../docs/csharp/programming-guide/delegates/index.md)
+* [Anonymní funkce](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+* [Výrazy lambda](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

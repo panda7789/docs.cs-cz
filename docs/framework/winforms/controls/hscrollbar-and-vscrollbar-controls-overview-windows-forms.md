@@ -12,11 +12,11 @@ helpviewer_keywords:
 - scroll bars [Windows Forms], about scroll bars
 ms.assetid: 8b307679-1cae-41d8-99aa-3d1efd207cd6
 ms.openlocfilehash: d4a7912a5781fc583357affa728f7d81059b5cf9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928569"
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>Přehled ovládacích prvků HScrollBar a VScrollBar (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.ScrollBar> ovládací prvky se používají k zajištění snadnou navigaci prostřednictvím dlouhý seznam položek nebo velké množství informací posunutím buď vodorovně nebo svisle v rámci aplikace nebo ovládacího prvku. Posuvníky jsou běžné prvek rozhraní Windows proto <xref:System.Windows.Forms.ScrollBar> ovládací prvek se často používá s ovládacími prvky, které nejsou odvozeny od <xref:System.Windows.Forms.ScrollableControl> třídy. Podobně, zvolte mnoho vývojářů začlenit <xref:System.Windows.Forms.ScrollBar> řízení při vytváření vlastních uživatelských ovládacích prvků.  

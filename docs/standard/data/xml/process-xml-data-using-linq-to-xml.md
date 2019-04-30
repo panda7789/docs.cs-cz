@@ -6,11 +6,11 @@ ms.assetid: 059d6b9d-63f7-4011-9ba8-8406f0bbae7d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1554c3e2b13dd0ea0d64ccd7e7caee0a1e0dd3f9
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949679"
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>Zpracování dat XML pomocí LINQ to XML
 Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro zpracování dat XML. Technologie LINQ to XML umožňuje vývojářům provádění všeho byste očekávali s daty XML: dotazování, úpravy, vytváření, ukládání a serializace XML dokumentů. Skutečné výhody spadat do dotazu a vytvoření možnosti.  

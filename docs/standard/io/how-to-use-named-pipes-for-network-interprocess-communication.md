@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití pojmenované kanály meziprocesová síťová komunikace'
+title: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,13 +18,13 @@ ms.assetid: 4e4d7e64-9f1b-4026-98f7-20488ac7b42b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 608991878b49bf0bafe9ebf90dbfc8eaec69e0e7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54698866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947131"
 ---
-# <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Postupy: Použití pojmenované kanály meziprocesová síťová komunikace
+# <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů
 Pojmenované kanály poskytují meziprocesovou komunikaci mezi serverem kanálu a jedním nebo několika klienty kanálu. Nabízejí větší počet funkcí než anonymní kanály, které poskytují meziprocesovou komunikaci v místním počítači. Pojmenované kanály podporují plně duplexní komunikaci přes síť a větší počet instancí serveru, komunikaci založenou na zprávách a zosobnění klienta, což umožňuje připojujícím se procesům použít vlastní sadu oprávnění na vzdálených serverech.  
   
  Chcete-li implementovat pojmenované kanály, použijte třídu <xref:System.IO.Pipes.NamedPipeServerStream> a třídu <xref:System.IO.Pipes.NamedPipeClientStream>.  

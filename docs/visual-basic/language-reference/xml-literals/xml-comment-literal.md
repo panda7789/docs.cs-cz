@@ -10,11 +10,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
 ms.openlocfilehash: 149bbac6d301a9c2f166d05698e3780171126cb3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827273"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938642"
 ---
 # <a name="xml-comment-literal-visual-basic"></a>Literál komentáře XML (Visual Basic)
 Literál představující <xref:System.Xml.Linq.XComment> objektu.  
@@ -39,9 +39,9 @@ Literál představující <xref:System.Xml.Linq.XComment> objektu.
 ## <a name="remarks"></a>Poznámky  
  Literály XML komentář neobsahují obsah dokumentu obsahují informace o dokumentu. Část Komentář XML se končí pořadí "-->". Z toho vyplývá následující body:  
   
--   Vložený výraz v literál komentáře XML nejde použít, protože vložený výraz oddělovače jsou platný obsah komentáře XML.  
+- Vložený výraz v literál komentáře XML nejde použít, protože vložený výraz oddělovače jsou platný obsah komentáře XML.  
   
--   Oddíly Komentář XML nemůže být vnořena, protože `content` nemůže obsahovat hodnotu "-->".  
+- Oddíly Komentář XML nemůže být vnořena, protože `content` nemůže obsahovat hodnotu "-->".  
   
  Literál komentáře XML můžete přiřadit k proměnné nebo je můžete zahrnout do literálů XML element.  
   

@@ -24,11 +24,11 @@ ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 20dd6f9ab601277161079230effdaeeabd1bb13a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793091"
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
 Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načtených [sestavení](../app-domains/assemblies-in-the-common-language-runtime.md) a typy definované v nich, jako například [třídy](../../standard/base-types/common-type-system.md#classes), [rozhraní](../../standard/base-types/common-type-system.md#interfaces), a [typů hodnot](../../csharp/language-reference/keywords/value-types.md). Reflexe můžete také použít k vytvoření instance typu v době běhu a k vyvolání a přistupovat k nim. Témata týkající se konkrétní aspekty reflexe, naleznete v tématu [související témata](#related_topics) na konci tohoto přehledu.
@@ -37,23 +37,23 @@ Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?
   
  [Sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) obsahovat moduly, moduly obsahují typy a typy obsahovat členy. Reflexe obsahuje objekty, které zapouzdřují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt nebo získat typ z existujícího objektu. Potom můžete volat metody typu nebo přístup k vlastnostem a polím. Typické použití reflexe patří:  
   
--   Použití <xref:System.Reflection.Assembly> definovat a načítat sestavení, načtení modulů, které jsou uvedeny v manifestu sestavení a vyhledejte typu v tomto sestavení a vytvořte její instanci.  
+- Použití <xref:System.Reflection.Assembly> definovat a načítat sestavení, načtení modulů, které jsou uvedeny v manifestu sestavení a vyhledejte typu v tomto sestavení a vytvořte její instanci.  
   
--   Použití <xref:System.Reflection.Module> zjistit informace, jako jsou sestavení, který obsahuje třídy v modulu a modulu. Můžete také získat všechny globální metody nebo jiných konkrétní, neglobální metody definované v modulu.  
+- Použití <xref:System.Reflection.Module> zjistit informace, jako jsou sestavení, který obsahuje třídy v modulu a modulu. Můžete také získat všechny globální metody nebo jiných konkrétní, neglobální metody definované v modulu.  
   
--   Použití <xref:System.Reflection.ConstructorInfo> zjistit informace, jako je název, parametry, modifikátorů přístupu (například `public` nebo `private`) a podrobnosti implementace (například `abstract` nebo `virtual`) konstruktoru. Použití <xref:System.Type.GetConstructors%2A> nebo <xref:System.Type.GetConstructor%2A> metodu <xref:System.Type> k vyvolání konkrétního konstruktoru.  
+- Použití <xref:System.Reflection.ConstructorInfo> zjistit informace, jako je název, parametry, modifikátorů přístupu (například `public` nebo `private`) a podrobnosti implementace (například `abstract` nebo `virtual`) konstruktoru. Použití <xref:System.Type.GetConstructors%2A> nebo <xref:System.Type.GetConstructor%2A> metodu <xref:System.Type> k vyvolání konkrétního konstruktoru.  
   
--   Použití <xref:System.Reflection.MethodInfo> zjistit informace, jako je název, návratový typ parametrů, modifikátorů přístupu (například `public` nebo `private`) a podrobnosti implementace (například `abstract` nebo `virtual`) metody. Použití <xref:System.Type.GetMethods%2A> nebo <xref:System.Type.GetMethod%2A> metodu <xref:System.Type> volání konkrétní metody.  
+- Použití <xref:System.Reflection.MethodInfo> zjistit informace, jako je název, návratový typ parametrů, modifikátorů přístupu (například `public` nebo `private`) a podrobnosti implementace (například `abstract` nebo `virtual`) metody. Použití <xref:System.Type.GetMethods%2A> nebo <xref:System.Type.GetMethod%2A> metodu <xref:System.Type> volání konkrétní metody.  
   
--   Použití <xref:System.Reflection.FieldInfo> modifikátorů přístupu ke zjišťování informací, například jména, (například `public` nebo `private`) a podrobnosti implementace (například `static`) pole a k získání nebo nastavení hodnoty polí.  
+- Použití <xref:System.Reflection.FieldInfo> modifikátorů přístupu ke zjišťování informací, například jména, (například `public` nebo `private`) a podrobnosti implementace (například `static`) pole a k získání nebo nastavení hodnoty polí.  
   
--   Použití <xref:System.Reflection.EventInfo> zjistit informace, jako je název, datový typ obslužné rutiny události, vlastní atributy deklarující typ a reflektovaných typ události a chcete přidat nebo odebrat obslužných rutin událostí.  
+- Použití <xref:System.Reflection.EventInfo> zjistit informace, jako je název, datový typ obslužné rutiny události, vlastní atributy deklarující typ a reflektovaných typ události a chcete přidat nebo odebrat obslužných rutin událostí.  
   
--   Použití <xref:System.Reflection.PropertyInfo> ke zjišťování informací, například jména, projeví datový typ deklarující typ, typ a stav jen pro čtení nebo zápis vlastnosti a k získání nebo nastavení hodnot vlastností.  
+- Použití <xref:System.Reflection.PropertyInfo> ke zjišťování informací, například jména, projeví datový typ deklarující typ, typ a stav jen pro čtení nebo zápis vlastnosti a k získání nebo nastavení hodnot vlastností.  
   
--   Použití <xref:System.Reflection.ParameterInfo> zjistit informace, jako je název parametru, datový typ, zda je parametr vstupní nebo výstupní parametr a umístění parametru v podpisu metody.  
+- Použití <xref:System.Reflection.ParameterInfo> zjistit informace, jako je název parametru, datový typ, zda je parametr vstupní nebo výstupní parametr a umístění parametru v podpisu metody.  
   
--   Použití <xref:System.Reflection.CustomAttributeData> zjistí informace o uživatelských atributů, které při práci v rámci domény aplikace pouze pro reflexi. <xref:System.Reflection.CustomAttributeData> umožňuje zkoumat atributy bez vytvoření instance z nich.  
+- Použití <xref:System.Reflection.CustomAttributeData> zjistí informace o uživatelských atributů, které při práci v rámci domény aplikace pouze pro reflexi. <xref:System.Reflection.CustomAttributeData> umožňuje zkoumat atributy bez vytvoření instance z nich.  
   
  Třídy <xref:System.Reflection.Emit> obor názvů poskytují specializovaná forma reflexe, který vám umožní sestavovat typy v době běhu.  
   

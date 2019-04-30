@@ -16,11 +16,11 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
 ms.openlocfilehash: 54660244c1b3cca8cb75539edbe23628b370afd5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54686163"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934494"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 

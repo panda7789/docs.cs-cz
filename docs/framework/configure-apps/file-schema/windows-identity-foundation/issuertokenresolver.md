@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f74392f6-3f5b-4880-bd8a-3a9130d31e65
 author: BrucePerlerMS
 ms.openlocfilehash: 08082d2e6647f07f33df72ab79dac00c15a1cd1b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791609"
 ---
 # <a name="issuertokenresolver"></a>\<issuerTokenResolver>
 Zaregistruje překladač tokenů vystavitele, který se používá obslužné rutiny v kolekci obslužné rutiny tokenů. Překladač tokenů vystavitele se používá k překladu podpisový token na příchozí tokeny a zprávy.  

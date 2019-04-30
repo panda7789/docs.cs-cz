@@ -3,11 +3,11 @@ title: F#Pokyny k návrhu komponenty
 description: Přečtěte si pokyny pro zápis F# součásti určené pro využití dalších volajícími.
 ms.date: 05/14/2018
 ms.openlocfilehash: c61e4cd9098388b356c71c325d66c760fa866cf0
-ms.sourcegitcommit: 3500c4845f96a91a438a02ef2c6b4eef45a5e2af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55066022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902158"
 ---
 # <a name="f-component-design-guidelines"></a>F#Pokyny k návrhu komponenty
 

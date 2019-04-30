@@ -3,20 +3,20 @@ title: Přehled zabezpečení SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
 ms.openlocfilehash: de0c79a95a786f33b05c88ce4ed298837f2a6923
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922197"
 ---
 # <a name="overview-of-sql-server-security"></a>Přehled zabezpečení SQL Serveru
 Strategie defense-in-depth s překrývajícími se vrstvy zabezpečení, je nejlepší způsob, jak čítač bezpečnostní hrozby. SQL Server poskytuje zabezpečení architektura, která je navržena k umožnění správci databází a vývojářům vytvářet zabezpečené databázových aplikací a čelit hrozbám. Každá verze systému SQL Server se zvýšil na předchozích verzích systému SQL Server se zavedením nové funkce a funkce. V poli se však nedodává zabezpečení. Každá aplikace je jedinečný v jeho požadavky na zabezpečení. Vývojáři musí pochopit, jaké kombinace funkce a funkce jsou nejvhodnější pro čítače známými hrozbami a předvídat hrozeb, které mohou nastat v budoucnu.  
   
  Instance systému SQL Server obsahuje hierarchickou kolekci entit, spouští se serverem. Každý server obsahuje několik databází a každá databáze obsahuje kolekci zabezpečitelných objektů. Všechny zabezpečitelné SQL Server má přidruženou *oprávnění* , která lze udělit práva *hlavní*, což je jednotlivé, skupiny nebo proces udělen přístup k systému SQL Server. Zabezpečení systému SQL Server spravuje přístup k zabezpečenému entity prostřednictvím *ověřování* a *autorizace*.  
   
--   Ověřování je proces přihlášení k systému SQL Server, pomocí kterého požaduje objekt zabezpečení přístup odesláním přihlašovací údaje, které vyhodnotí server. Ověření určí identitu uživatele nebo proces ověřuje.  
+- Ověřování je proces přihlášení k systému SQL Server, pomocí kterého požaduje objekt zabezpečení přístup odesláním přihlašovací údaje, které vyhodnotí server. Ověření určí identitu uživatele nebo proces ověřuje.  
   
--   Autorizace je procesu, který určuje přístup k objektu zabezpečení zabezpečitelné prostředky a operace, které jsou povoleny pro tyto prostředky.  
+- Autorizace je procesu, který určuje přístup k objektu zabezpečení zabezpečitelné prostředky a operace, které jsou povoleny pro tyto prostředky.  
   
  Témata v této části se týkají Základy zabezpečení systému SQL Server, poskytuje odkazy na kompletní dokumentaci v příslušné verzi systému SQL Server Books Online.  
   

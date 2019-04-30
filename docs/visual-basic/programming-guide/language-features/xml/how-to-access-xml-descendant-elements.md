@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XML [Visual Basic], accessing
 ms.assetid: aabfa258-4112-4e7e-bab9-403f96072ef7
 ms.openlocfilehash: bfbf849bd296f639f03580346e4a9c52ce000abd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934807"
 ---
 # <a name="how-to-access-xml-descendant-elements-visual-basic"></a>Postupy: Přístup k Následnickým elementům XML (Visual Basic)
 Tento příklad ukazuje, jak používat vlastnost Následnické osy pro přístup k všech elementů XML, které jsou obsaženy v rámci elementu XML, které mají zadaný název. Konkrétně se použije `Value` vlastnost k získání hodnoty prvního prvku v kolekci, která `name` vrátí vlastnost Následnické osy. `name` Vlastnost Následnické osy získá všechny prvky s názvem `name` , které jsou součástí `contacts` objektu. Tento příklad také používá `phone` vlastnost Následnické osy pro přístup k všech potomků s názvem `phone` , které jsou součástí `contacts` objektu.  
@@ -23,7 +23,7 @@ Tento příklad ukazuje, jak používat vlastnost Následnické osy pro přístu
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkaz na <xref:System.Xml.Linq> oboru názvů.  
+- Odkaz na <xref:System.Xml.Linq> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

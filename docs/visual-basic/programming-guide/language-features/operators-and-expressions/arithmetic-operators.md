@@ -14,11 +14,11 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
 ms.openlocfilehash: 635c791f81107a1800e2ef381f6bea78cbc18e18
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61830359"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
 Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
@@ -70,13 +70,13 @@ Aritmetické operátory jsou používány k provádění řady známých aritmet
   
  Aritmetické staffhubu nejsou cyklické, což znamená, že nejsou na druhém konci znovuzavedeno bity posunuly jeden konec výsledek. Bitové pozice uvolněné pomocí přechodu nastavené takto:  
   
--   0 pro aritmetický operátor posunu vlevo  
+- 0 pro aritmetický operátor posunu vlevo  
   
--   0 pro aritmetické pravého posunutí kladného čísla  
+- 0 pro aritmetické pravého posunutí kladného čísla  
   
--   0 pro aritmetické posunutí doprava bez znaménka datového typu (`Byte`, `UShort`, `UInteger`, `ULong`)  
+- 0 pro aritmetické posunutí doprava bez znaménka datového typu (`Byte`, `UShort`, `UInteger`, `ULong`)  
   
--   1 pro aritmetické pravého posunutí záporné číslo (`SByte`, `Short`, `Integer`, nebo `Long`)  
+- 1 pro aritmetické pravého posunutí záporné číslo (`SByte`, `Short`, `Integer`, nebo `Long`)  
   
  V následujícím příkladu se posune `Integer` hodnota vlevo a vpravo.  
   

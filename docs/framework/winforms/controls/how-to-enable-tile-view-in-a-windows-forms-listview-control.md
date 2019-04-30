@@ -12,11 +12,11 @@ helpviewer_keywords:
 - ListView control [Windows Forms], tile view
 ms.assetid: c20e67a3-2d94-413d-9fcf-ecbd0fe251da
 ms.openlocfilehash: 14eb21fa0285275e510b865c5cee7d1fc82fd0fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941532"
 ---
 # <a name="how-to-enable-tile-view-in-a-windows-forms-listview-control"></a>Postupy: Povolení zobrazení Vedle sebe v ovládacím prvku Windows Forms ListView
 S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího prvku, můžete zadat vizuální rovnováhu mezi textové a grafické informace. Textové informace zobrazené položky v zobrazení tile je stejný jako sloupec informace definované pro zobrazení podrobností. Zobrazení Tile funguje v kombinaci s funkcemi označit seskupení nebo vložení ve <xref:System.Windows.Forms.ListView> ovládacího prvku.  
@@ -52,9 +52,9 @@ S funkcí zobrazení dlaždice <xref:System.Windows.Forms.ListView> ovládacího
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
--   Soubor ikony s názvem book.ico ve stejném adresáři jako spustitelný soubor.  
+- Soubor ikony s názvem book.ico ve stejném adresáři jako spustitelný soubor.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

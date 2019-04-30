@@ -3,11 +3,11 @@ title: Architektura ADO.NET
 ms.date: 03/30/2017
 ms.assetid: fcd45b99-ae8f-45ab-8b97-d887beda734e
 ms.openlocfilehash: 3f3fc0c8c125c57116da4f1de467d738ac36ca29
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59202635"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61880084"
 ---
 # <a name="adonet-architecture"></a>Architektura ADO.NET
 Zpracování dat tradičně spoléhalo především v rámci modelu založeného na připojení, dvě vrstvy. Zpracování dat stále používá vícevrstvé architektury, programátoři přepnutí na odpojeném přístup k poskytování lepšího škálování pro své aplikace.  
@@ -29,13 +29,13 @@ Architektura ADO.NET
 ### <a name="choosing-a-datareader-or-a-dataset"></a>Výběr čtečky dat nebo datové sady  
  Při rozhodování, zda by měla vaše aplikace používat `DataReader` (naleznete v tématu [načítání dat pomocí čtečky dat](../../../../docs/framework/data/adonet/retrieving-data-using-a-datareader.md)) nebo `DataSet` (naleznete v tématu [datové sady, datové tabulky a zobrazení dat](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)), vezměte v úvahu typ Funkce, které vaše aplikace vyžaduje. Použití `DataSet` můžete provádět následující:  
   
--   Mezipaměť dat místně ve vaší aplikaci tak, že jste s ním pracovat. Pokud potřebujete načíst výsledky dotazu, `DataReader` je lepší volbou.  
+- Mezipaměť dat místně ve vaší aplikaci tak, že jste s ním pracovat. Pokud potřebujete načíst výsledky dotazu, `DataReader` je lepší volbou.  
   
--   Vzdálená data mezi vrstvami nebo z webové služby XML.  
+- Vzdálená data mezi vrstvami nebo z webové služby XML.  
   
--   Práce s daty dynamicky jako je například vytvoření vazby ovládacího prvku Windows Forms nebo správné kombinování a související data z různých zdrojů.  
+- Práce s daty dynamicky jako je například vytvoření vazby ovládacího prvku Windows Forms nebo správné kombinování a související data z různých zdrojů.  
   
--   Proveďte rozsáhlé zpracování dat bez nutnosti otevřít připojení ke zdroji dat, díky čemuž nemusí připojení pro ostatní klienty.  
+- Proveďte rozsáhlé zpracování dat bez nutnosti otevřít připojení ke zdroji dat, díky čemuž nemusí připojení pro ostatní klienty.  
   
  Pokud nechcete, aby funkce poskytované službou `DataSet`, můžete zvýšit výkon vaší aplikace pomocí `DataReader` vrátit vaše data způsobem dopředné, jen pro čtení. I když `DataAdapter` používá `DataReader` tak, aby vyplnil obsah `DataSet` (naleznete v tématu [naplnění datové sady z adaptéru dat](../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)), pomocí `DataReader`, můžete zvýšit výkon, protože se uloží paměti který by být využívány službou `DataSet`a vyhněte se zpracování, které je potřeba vytvořit a vyplnit obsah `DataSet`.  
   

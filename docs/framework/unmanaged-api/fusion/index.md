@@ -9,24 +9,24 @@ ms.assetid: f8f20967-ea17-4900-bf05-87a078095fe6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7bc6c9079b6f233946fa38979800e28097e849f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946117"
 ---
 # <a name="fusion-unmanaged-api-reference"></a>Fúze (referenční dokumentace nespravovaného rozhraní API)
-Rozhraní API fusion umožňuje hostitele modulu runtime pro přístup k vlastnostem prostředky aplikace, aby bylo možné najít správnou verzí tyto prostředky pro aplikaci.  
+Rozhraní API fusion umožňuje hostitelský modul runtime pro přístup k vlastnosti prostředků aplikace Pokud chcete najít správné verze prvků tyto prostředky pro aplikaci.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- Popisuje nespravované rozhraní, která používá fusion rozhraní API.  
+ Popisuje nespravovaná rozhraní, které používá fusion rozhraní API.  
   
  [Globální statické funkce pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  Popisuje nespravované globální statické funkce, které používá fusion rozhraní API.  
   
  [Výčty pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)  
- Popisuje nespravovaná vyčíslení, které používá fusion rozhraní API.  
+ Popisuje nespravované výčty, které používá fusion rozhraní API.  
   
  [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
- Popisuje nespravované struktury, která používá fusion rozhraní API.
+ Popisuje nespravované struktury, které používá fusion rozhraní API.

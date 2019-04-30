@@ -4,49 +4,49 @@ ms.date: 03/30/2017
 ms.assetid: 0efb76bc-9f7b-4afe-be1c-2a57c917010b
 author: BrucePerlerMS
 ms.openlocfilehash: 04861b8c3f2673a5cd093be1351928b1da487147
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940514"
 ---
 # <a name="how-to-build-claims-aware-aspnet-mvc-web-application-using-wif"></a>Postupy: Sestavení webové aplikace ASP.NET MVC pracující s deklaracemi pomocí WIF
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® MVC  
+- ASP.NET® MVC  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché webové aplikace s deklaracemi identity ASP.NET MVC. Také poskytuje pokyny k otestování jednoduché deklaracemi webové aplikace ASP.NET MVC pro úspěšnou implementaci ověřování nezaloženého na deklaracích. Tento návod neobsahuje podrobné pokyny pro vytvoření tokenu služby zabezpečení (STS) a předpokládá, že jste už nakonfigurovali služby tokenů zabezpečení.  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření aplikace jednoduchý ASP.NET MVC  
+- Krok 1 – Vytvoření aplikace jednoduchý ASP.NET MVC  
   
--   Krok 2 – konfigurace aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
+- Krok 2 – konfigurace aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
--   Související položky  
+- Související položky  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace webové aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
+- Konfigurace webové aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
   
--   Test úspěšný deklaracemi webové aplikace ASP.NET MVC  
+- Test úspěšný deklaracemi webové aplikace ASP.NET MVC  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření aplikace jednoduchý ASP.NET MVC  
+- Krok 1 – Vytvoření aplikace jednoduchý ASP.NET MVC  
   
--   Krok 2 – konfigurace aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
+- Krok 2 – konfigurace aplikace ASP.NET MVC pro ověřování nezaloženého na deklaracích  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="step-1--create-simple-aspnet-mvc-application"></a>Krok 1 – Vytvoření aplikace jednoduchý ASP.NET MVC  
  V tomto kroku vytvoříte novou aplikaci ASP.NET MVC.  
@@ -218,4 +218,4 @@ ms.locfileid: "59335664"
   
 ## <a name="related-items"></a>Související položky  
   
--   [Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)
+- [Postupy: Sestavení s deklaracemi identity aplikace webových formulářů ASP.NET pomocí WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-web-forms-app-using-wif.md)

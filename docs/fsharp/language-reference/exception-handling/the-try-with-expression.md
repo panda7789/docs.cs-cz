@@ -3,11 +3,11 @@ title: 'Výjimky: Try... with – výraz'
 description: Další informace o použití F# "try... with" výraz pro zpracování výjimek.
 ms.date: 05/16/2016
 ms.openlocfilehash: 742e0b595525c69b83a55682c3c8b9b650326ac7
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614425"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945532"
 ---
 # <a name="exceptions-the-trywith-expression"></a>Výjimky: Try... with – výraz
 
@@ -38,10 +38,10 @@ Různé vzorce můžete použít k filtrování podle typu výjimky a dalších 
 
 |Vzor|Popis|
 |-------|-----------|
-|:? *Typ výjimky*|Neodpovídá zadanému typu výjimky .NET.|
+|:? *exception-type*|Neodpovídá zadanému typu výjimky .NET.|
 |:? *Typ výjimky* jako *identifikátor*|Neodpovídá zadanému typu výjimky .NET, ale dává výjimku pojmenovaná hodnota.|
-|*název výjimky*(*argumenty*)|Shody F# typ výjimky a vytvoří vazbu argumenty.|
-|*identifikátor*|Odpovídá jakékoli výjimce a sváže s názvem objektu výjimky. Ekvivalentní **:? System.Exception jako**_identifikátor_|
+|*exception-name*(*arguments*)|Shody F# typ výjimky a vytvoří vazbu argumenty.|
+|*identifier*|Odpovídá jakékoli výjimce a sváže s názvem objektu výjimky. Ekvivalentní **:? System.Exception jako**_identifikátor_|
 |*identifikátor* při *podmínku*|Odpovídá jakoukoliv výjimku, pokud je podmínka pravdivá.|
 
 ## <a name="examples"></a>Příklady

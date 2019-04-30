@@ -5,13 +5,13 @@ ms.assetid: b933dfe6-7833-40cb-aad8-40842dc3034f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 67ae413ae8944757fc90bcde752b9a5fe53cc68f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57365318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948522"
 ---
-# <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod Method
+# <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
 
 Vrátí enumerátor pro všechny metody, které jsou definovány v zadaném modulu NGen a vložené dané metody.
 

@@ -16,11 +16,11 @@ helpviewer_keywords:
 - RTF files [Windows Forms], displaying in RichTextBox control
 ms.assetid: c03451be-f285-4428-a71a-c41e002cc919
 ms.openlocfilehash: ffbce7401f068b3d0a7fee4fd8ba04c10cb6f6b7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918551"
 ---
 # <a name="how-to-load-files-into-the-windows-forms-richtextbox-control"></a>Postupy: Načtení souborů do ovládacího prvku Windows Forms RichTextBox
 Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit prostého textu, prostého textu ve formátu Unicode nebo soubor ve formátu RTF. Text Format (RTF). Chcete-li tak učinit, zavolejte <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> metody. Můžete také použít <xref:System.Windows.Forms.RichTextBox.LoadFile%2A> metodu pro načtení dat z datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.LoadFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.  

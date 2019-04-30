@@ -4,41 +4,41 @@ ms.date: 03/30/2017
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
 author: BrucePerlerMS
 ms.openlocfilehash: 48b1b4715e9e2613757a981ba692d84ad06a1ec6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940540"
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi s ověřováním Windows
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® webových formulářů  
+- ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity, která používá ověřování Windows. Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování Windows.  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled  
+- Přehled  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
+- Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
+- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
+- Konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
   
--   Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
+- Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
   
 ## <a name="overview"></a>Přehled  
  V rozhraní .NET 4.5 WIF a jeho autorizace na základě rolí byly zahrnuty jako součást rozhraní Framework. Dříve, pokud byste chtěli deklarací z uživatele s ASP.NET, jste k instalaci technologie WIF, a potom přetypování rozhraní instančnímu objektu objekty, jako `Thread.CurrentPrincipal` nebo `HttpContext.Current.User`. Nyní deklarace identity jsou obsluhovány automaticky tyto hlavní objekty.  
@@ -47,11 +47,11 @@ ms.locfileid: "59767965"
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
+- Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
+- Krok 2 – konfigurace aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování Windows  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.  

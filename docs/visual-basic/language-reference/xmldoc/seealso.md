@@ -6,11 +6,11 @@ helpviewer_keywords:
 - seealso XML tag
 ms.assetid: 36050c95-1af2-4284-b9b6-1a70691ed978
 ms.openlocfilehash: 0df999ef502bf61bdfb65cb472947b93efded36e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823477"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940774"
 ---
 # <a name="seealso-visual-basic"></a>\<SeeAlso > (Visual Basic)
 Určuje odkaz, který se zobrazí v části Viz také.  

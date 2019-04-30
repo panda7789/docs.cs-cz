@@ -1,34 +1,34 @@
 ---
-title: 1150 - CompensationState
+title: 1150 – CompensationState
 ms.date: 03/30/2017
 ms.assetid: eb015842-cc5a-47be-bce5-6af39e567723
 ms.openlocfilehash: 61613a27c4d4d8fb0b206246fef25ae87def47a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33510677"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923861"
 ---
-# <a name="1150---compensationstate"></a>1150 - CompensationState
+# <a name="1150---compensationstate"></a>1150 – CompensationState
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1150|  
-|Klíčová slova|WFActivities|  
+|klíčová slova|WFActivities|  
 |úroveň|Informace o|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje změnu stavu v CompensableActivity.  
+ Indikuje změnu stavu v aktivitu CompensableActivity.  
   
 ## <a name="message"></a>Zpráva  
- CompensableActivity '%1' je ve stavu '%2'.  
+ Aktivita CompensableActivity '%1' je ve stavu '%2'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|displayName|xs:String|Zobrazovaný název aktivity.|  
-|Stav|xs:String|Kompenzace stavu.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|displayName|xs:string|Zobrazovaný název aktivity.|  
+|Stav|xs:string|Stav kompenzaci.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

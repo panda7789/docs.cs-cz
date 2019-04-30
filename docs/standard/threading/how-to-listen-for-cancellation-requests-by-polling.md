@@ -11,11 +11,11 @@ ms.assetid: c7f2f022-d08e-4e00-b4eb-ae84844cb1bc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1794b47db87f636cc2ccdf2eecb9e7ca334ae659
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47192872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61926019"
 ---
 # <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Postupy: Naslouchání požadavkům zrušení dotazováním
 Následující příklad ukazuje jeden ze způsobů, který uživatelský kód může dotazovat token zrušení v pravidelných intervalech, pokud chcete zobrazit, zda bylo vyžádáno zrušení z volajícího vlákna. V tomto příkladu <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> typu, ale stejný vzor se vztahuje na asynchronní operace, které jsou vytvořené přímo nástrojem <xref:System.Threading.ThreadPool?displayProperty=nameWithType> typu nebo <xref:System.Threading.Thread?displayProperty=nameWithType> typu.  

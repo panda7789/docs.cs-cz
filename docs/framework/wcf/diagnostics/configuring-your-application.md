@@ -3,20 +3,20 @@ title: Konfigurace vaší aplikace
 ms.date: 03/30/2017
 ms.assetid: a2f995b0-669d-4721-b00f-4561ec7eb6a4
 ms.openlocfilehash: 94bf5f4bbee8bb8bb462c4bf91be75d1627ec567
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087167"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784992"
 ---
 # <a name="configuring-your-application"></a>Konfigurace vaší aplikace
 Windows Communication Foundation (WCF) využívá konfigurační systém .NET a umožňuje vám nakonfigurovat služby v počítači a aplikační oboru.  
   
  Nastavení konfigurace určené WCF se nachází v `<system.serviceModel>` skupiny oddílů. Další informace o tom, jak nakonfigurovat službu WCF naleznete v následujících tématech:  
   
--   [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)  
+- [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)  
   
--   [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
+- [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)  
   
  Nastavení konfigurace definované aplikací, které jsou definovány v `<appSettings>` skupiny oddílů. Další informace o nastavení aplikace v .NET konfigurační soubory, naleznete v tématu [ \<appSettings >](https://go.microsoft.com/fwlink/?LinkId=95159).  
   

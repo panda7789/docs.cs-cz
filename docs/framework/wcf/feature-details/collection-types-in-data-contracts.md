@@ -10,11 +10,11 @@ helpviewer_keywords:
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
 ms.openlocfilehash: e7c7dd72c733036031fcf28d0dd2c1bc023d6552
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781495"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tyto seznamy můžou být vyjádřeny pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
@@ -83,9 +83,9 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
 ### <a name="collection-data-contract-naming"></a>Kontraktu dat kolekce pojmenování  
  Pravidla pro pojmenovávání typy kolekcí jsou podobné jako u názvů běžných dat typy kontraktů, jak je popsáno v [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md), i když existuje několik důležitých rozdílů:  
   
--   <xref:System.Runtime.Serialization.CollectionDataContractAttribute> Atribut se používá k přizpůsobení názvu, namísto <xref:System.Runtime.Serialization.DataContractAttribute> atribut. <xref:System.Runtime.Serialization.CollectionDataContractAttribute> Atribut má také `Name` a `Namespace` vlastnosti.  
+- <xref:System.Runtime.Serialization.CollectionDataContractAttribute> Atribut se používá k přizpůsobení názvu, namísto <xref:System.Runtime.Serialization.DataContractAttribute> atribut. <xref:System.Runtime.Serialization.CollectionDataContractAttribute> Atribut má také `Name` a `Namespace` vlastnosti.  
   
--   Když <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut není použit, výchozí název a obor názvů pro typy kolekcí, závisí na názvy a obory názvů typů, které jsou obsaženy v rámci kolekce. Nejsou ovlivněny podle názvu a oboru názvů samotného typu kolekce. Příklad najdete v následujících typů.  
+- Když <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut není použit, výchozí název a obor názvů pro typy kolekcí, závisí na názvy a obory názvů typů, které jsou obsaženy v rámci kolekce. Nejsou ovlivněny podle názvu a oboru názvů samotného typu kolekce. Příklad najdete v následujících typů.  
   
     ```csharp  
     public CustomerList1 : Collection<string> {}  
@@ -123,7 +123,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
  Všimněte si, že to již není ekvivalentní k reprezentaci XML pro typy bez přizpůsobit.  
   
--   Můžete použít `Name` a `Namespace` vlastnosti k dalšímu přizpůsobení názvů. Podívejte se následující třídy.  
+- Můžete použít `Name` a `Namespace` vlastnosti k dalšímu přizpůsobení názvů. Podívejte se následující třídy.  
   
      [!code-csharp[c_collection_types_in_data_contracts#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_collection_types_in_data_contracts/cs/program.cs#3)]
      [!code-vb[c_collection_types_in_data_contracts#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_collection_types_in_data_contracts/vb/program.vb#3)]  
@@ -278,9 +278,9 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
  Pokud typ implementuje víc než jedno rozhraní kolekce seznamu, platí následující omezení:  
   
--   Pokud tento typ implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> (nebo jeho odvozená rozhraní) více než jednou pro různé typy, typ není považován za typ platný odkazované kolekce a je ignorován. To platí i v případě některých implementacích jsou neplatné nebo používají otevřených obecných typů. Například typ, který implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> z `int` a obecná <xref:System.Collections.Generic.IEnumerable%601> t by se nikdy nepoužívá jako odkazovaná kolekce `int` nebo jakýkoli jiný typ, bez ohledu na to, zda má typ `Add` přijímá – metoda `int` nebo `Add` metoda přijímá parametr typu T nebo obojí.  
+- Pokud tento typ implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> (nebo jeho odvozená rozhraní) více než jednou pro různé typy, typ není považován za typ platný odkazované kolekce a je ignorován. To platí i v případě některých implementacích jsou neplatné nebo používají otevřených obecných typů. Například typ, který implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> z `int` a obecná <xref:System.Collections.Generic.IEnumerable%601> t by se nikdy nepoužívá jako odkazovaná kolekce `int` nebo jakýkoli jiný typ, bez ohledu na to, zda má typ `Add` přijímá – metoda `int` nebo `Add` metoda přijímá parametr typu T nebo obojí.  
   
--   Pokud tento typ implementuje rozhraní obecné kolekce stejně jako <xref:System.Collections.IList>, typu se nikdy nepoužívá jako typ odkazované kolekce, pokud rozhraní obecné kolekce není uzavřený obecný typ <xref:System.Object>.  
+- Pokud tento typ implementuje rozhraní obecné kolekce stejně jako <xref:System.Collections.IList>, typu se nikdy nepoužívá jako typ odkazované kolekce, pokud rozhraní obecné kolekce není uzavřený obecný typ <xref:System.Object>.  
   
  Pro kolekce slovníku jsou podporovány pouze případy v následující tabulce.  
   
@@ -303,21 +303,21 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 ### <a name="serializing-collections"></a>Serializace kolekcí  
  Následuje seznam kolekci pravidel pro serializaci:  
   
--   Kombinování typů kolekce (s kolekcí kolekcí) je povolený. Vícenásobná pole jsou považovány za kolekce kolekcí. Vícerozměrná pole nejsou podporována.  
+- Kombinování typů kolekce (s kolekcí kolekcí) je povolený. Vícenásobná pole jsou považovány za kolekce kolekcí. Vícerozměrná pole nejsou podporována.  
   
--   Pole bajtů a pole <xref:System.Xml.XmlNode> jsou typy zvláštní pole, které jsou považovány za primitiv, nikoli kolekce. Serializace pole bajtů výsledků v jednom elementu XML, který obsahuje blok dat s kódováním Base64, místo samostatných element pro každý bajt. Další informace o tom, pole <xref:System.Xml.XmlNode> je zacházeno, naleznete v tématu [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Samozřejmě, tyto speciální typy můžete sami účastnit kolekcí: pole pole bajtů za následek více elementů XML s každou obsahující blok dat s kódováním Base64.  
+- Pole bajtů a pole <xref:System.Xml.XmlNode> jsou typy zvláštní pole, které jsou považovány za primitiv, nikoli kolekce. Serializace pole bajtů výsledků v jednom elementu XML, který obsahuje blok dat s kódováním Base64, místo samostatných element pro každý bajt. Další informace o tom, pole <xref:System.Xml.XmlNode> je zacházeno, naleznete v tématu [typy XML a ADO.NET v kontraktech dat](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Samozřejmě, tyto speciální typy můžete sami účastnit kolekcí: pole pole bajtů za následek více elementů XML s každou obsahující blok dat s kódováním Base64.  
   
--   Pokud <xref:System.Runtime.Serialization.DataContractAttribute> atributu je použité u typu kolekce, typ je považován za typ kontraktu běžných dat, nikoli jako kolekce.  
+- Pokud <xref:System.Runtime.Serialization.DataContractAttribute> atributu je použité u typu kolekce, typ je považován za typ kontraktu běžných dat, nikoli jako kolekce.  
   
--   Pokud typ kolekce implementuje <xref:System.Xml.Serialization.IXmlSerializable> platí následující pravidla rozhraní, přidělí typ. `myType:IList<string>, IXmlSerializable`:  
+- Pokud typ kolekce implementuje <xref:System.Xml.Serialization.IXmlSerializable> platí následující pravidla rozhraní, přidělí typ. `myType:IList<string>, IXmlSerializable`:  
   
-    -   Pokud je typ deklarovaný `IList<string>`, je typ serializován jako seznam.  
+    - Pokud je typ deklarovaný `IList<string>`, je typ serializován jako seznam.  
   
-    -   Pokud je typ deklarovaný `myType`, je serializován jako `IXmlSerializable`.  
+    - Pokud je typ deklarovaný `myType`, je serializován jako `IXmlSerializable`.  
   
-    -   Pokud je typ deklarovaný `IXmlSerializable`, je serializován jako `IXmlSerializable`, ale pouze v případě, že přidáte `myType` do seznamu známých typů.  
+    - Pokud je typ deklarovaný `IXmlSerializable`, je serializován jako `IXmlSerializable`, ale pouze v případě, že přidáte `myType` do seznamu známých typů.  
   
--   Kolekce jsou serializaci a deserializaci pomocí metody uvedené v následující tabulce.  
+- Kolekce jsou serializaci a deserializaci pomocí metody uvedené v následující tabulce.  
   
 |Implementuje typ kolekce|Volat metody pro serializaci|Volá metody k deserializaci|  
 |--------------------------------|-----------------------------------------|-------------------------------------------|  
@@ -331,22 +331,22 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
   
  V předchozí tabulce jsou uvedeny rozhraní pro kolekce v sestupném pořadí podle priority. To znamená, například, že pokud typ implementuje oba <xref:System.Collections.IList> a obecná <xref:System.Collections.Generic.IEnumerable%601>, kolekce je serializaci a deserializaci podle <xref:System.Collections.IList> pravidla:  
   
--   Při deserializaci jsou všechny kolekce deserializovat vytvořením první instance typu při volání výchozí konstruktor, který musí být k dispozici pro serializátor považovat za typ kolekce kolekce během serializace a deserializace.  
+- Při deserializaci jsou všechny kolekce deserializovat vytvořením první instance typu při volání výchozí konstruktor, který musí být k dispozici pro serializátor považovat za typ kolekce kolekce během serializace a deserializace.  
   
--   Pokud stejné obecné kolekce rozhraní je implementováno více než jednou (např. Pokud typ implementuje oba obecného <xref:System.Collections.Generic.ICollection%601> z `Integer` a obecná <xref:System.Collections.Generic.ICollection%601> z <xref:System.String>) a nenajde žádné rozhraní vyšší prioritu, je kolekce nejsou považovány za platné kolekce.  
+- Pokud stejné obecné kolekce rozhraní je implementováno více než jednou (např. Pokud typ implementuje oba obecného <xref:System.Collections.Generic.ICollection%601> z `Integer` a obecná <xref:System.Collections.Generic.ICollection%601> z <xref:System.String>) a nenajde žádné rozhraní vyšší prioritu, je kolekce nejsou považovány za platné kolekce.  
   
--   Typy kolekcí může mít <xref:System.SerializableAttribute> atributu na ně použity a můžete implementovat <xref:System.Runtime.Serialization.ISerializable> rozhraní. Obě tyto jsou ignorovány. Ale pokud typ plně nesplňuje požadavky na typ kolekce (například `Add` chybí metoda), typ není považován za typ kolekce a proto <xref:System.SerializableAttribute> atribut a <xref:System.Runtime.Serialization.ISerializable> rozhraní se používají k určení Určuje, zda typ lze serializovat.  
+- Typy kolekcí může mít <xref:System.SerializableAttribute> atributu na ně použity a můžete implementovat <xref:System.Runtime.Serialization.ISerializable> rozhraní. Obě tyto jsou ignorovány. Ale pokud typ plně nesplňuje požadavky na typ kolekce (například `Add` chybí metoda), typ není považován za typ kolekce a proto <xref:System.SerializableAttribute> atribut a <xref:System.Runtime.Serialization.ISerializable> rozhraní se používají k určení Určuje, zda typ lze serializovat.  
   
--   Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut do kolekce a přizpůsobit odebere <xref:System.SerializableAttribute> předchozí záložní mechanismus. Místo toho, pokud přizpůsobenou sadu kolekce nelze setkat typu požadavky, <xref:System.Runtime.Serialization.InvalidDataContractException> je vyvolána výjimka. Řetězec výjimky často obsahují informace, které vysvětlují, proč se daný typ není považován za platný kolekce (žádné `Add` metoda, žádný výchozí konstruktor a tak dále), takže je často užitečné použít <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut pro účely ladění.  
+- Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut do kolekce a přizpůsobit odebere <xref:System.SerializableAttribute> předchozí záložní mechanismus. Místo toho, pokud přizpůsobenou sadu kolekce nelze setkat typu požadavky, <xref:System.Runtime.Serialization.InvalidDataContractException> je vyvolána výjimka. Řetězec výjimky často obsahují informace, které vysvětlují, proč se daný typ není považován za platný kolekce (žádné `Add` metoda, žádný výchozí konstruktor a tak dále), takže je často užitečné použít <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut pro účely ladění.  
   
 ### <a name="collection-naming"></a>Kolekce názvů  
  Následuje seznam pravidel pojmenování kolekce:  
   
--   Výchozí obor názvů pro všechny kontrakty dat kolekce slovníku, stejně jako u seznamu kolekce dat smluv, které obsahují primitivní typy, `http://schemas.microsoft.com/2003/10/Serialization/Arrays` nepřepíšete pomocí Namespace. Typy, které mapují na vestavěné typy XSD, stejně jako `char`, `Timespan`, a `Guid` typy, jsou považovány za primitivy pro tento účel.  
+- Výchozí obor názvů pro všechny kontrakty dat kolekce slovníku, stejně jako u seznamu kolekce dat smluv, které obsahují primitivní typy, `http://schemas.microsoft.com/2003/10/Serialization/Arrays` nepřepíšete pomocí Namespace. Typy, které mapují na vestavěné typy XSD, stejně jako `char`, `Timespan`, a `Guid` typy, jsou považovány za primitivy pro tento účel.  
   
--   Výchozí obor názvů pro typy kolekcí, které obsahují neprimitivní typy nepřepíšete pomocí Namespace, je stejný jako obor názvů kontraktu dat typu obsažené v kolekci.  
+- Výchozí obor názvů pro typy kolekcí, které obsahují neprimitivní typy nepřepíšete pomocí Namespace, je stejný jako obor názvů kontraktu dat typu obsažené v kolekci.  
   
--   Výchozí název pro seznam kolekce datové kontrakty, pokud nejsou přepsány, pomocí názvu, je řetězec, který "ArrayOf" v kombinaci s názvem kontraktu dat typu obsažené v kolekci. Název kontraktu dat pro obecný seznam celá je například "ArrayOfint". Pamatujte, že název kontraktu dat `Object` je "anyType", takže názvem kontraktu dat neobecnou seznamů, jako jsou <xref:System.Collections.ArrayList> je "ArrayOfanyType".  
+- Výchozí název pro seznam kolekce datové kontrakty, pokud nejsou přepsány, pomocí názvu, je řetězec, který "ArrayOf" v kombinaci s názvem kontraktu dat typu obsažené v kolekci. Název kontraktu dat pro obecný seznam celá je například "ArrayOfint". Pamatujte, že název kontraktu dat `Object` je "anyType", takže názvem kontraktu dat neobecnou seznamů, jako jsou <xref:System.Collections.ArrayList> je "ArrayOfanyType".  
   
  Výchozí název data kolekce slovníku smlouvy, není-li přepsat pomocí `Name`, je řetězec "ArrayOfKeyValueOf" v kombinaci s názvem kontraktu dat typu klíče spolu s názvem kontraktu dat typu hodnoty. Například data název smlouvy pro obecný řetězci slovníku a celého čísla je "ArrayOfKeyValueOfstringint". Kromě toho pokud klíče nebo hodnoty typů nejsou primitivní typy, obor názvů hash obor názvů kontraktu dat typů klíč a hodnotu připojeným k názvu. Další informace o oboru názvů hodnoty hash, naleznete v tématu [názvy datových kontraktů](../../../../docs/framework/wcf/feature-details/data-contract-names.md).  
   
@@ -357,13 +357,13 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 ## <a name="collection-customization"></a>Vlastní nastavení kolekce  
  Použití následujících <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut jsou zakázané a vést <xref:System.Runtime.Serialization.InvalidDataContractException> výjimka:  
   
--   Použití <xref:System.Runtime.Serialization.DataContractAttribute> atribut typu, na který <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut byl použitý, nebo na jednu z jeho odvozených typů.  
+- Použití <xref:System.Runtime.Serialization.DataContractAttribute> atribut typu, na který <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut byl použitý, nebo na jednu z jeho odvozených typů.  
   
--   Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut na typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable> rozhraní.  
+- Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut na typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable> rozhraní.  
   
--   Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut typu není kolekce.  
+- Použití <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut typu není kolekce.  
   
--   Pokus o nastavení <xref:System.Runtime.Serialization.CollectionDataContractAttribute.KeyName%2A> nebo <xref:System.Runtime.Serialization.CollectionDataContractAttribute.ValueName%2A> na <xref:System.Runtime.Serialization.CollectionDataContractAttribute> použité u typu není ve slovníku atributů.  
+- Pokus o nastavení <xref:System.Runtime.Serialization.CollectionDataContractAttribute.KeyName%2A> nebo <xref:System.Runtime.Serialization.CollectionDataContractAttribute.ValueName%2A> na <xref:System.Runtime.Serialization.CollectionDataContractAttribute> použité u typu není ve slovníku atributů.  
   
 ### <a name="polymorphism-rules"></a>Polymorfismus pravidla  
  Jak už jsme zmínili, přizpůsobení kolekcí s použitím <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut může kolidovat s zaměnitelnost kolekce. Dva typy přizpůsobené kolekce lze pouze považovat za rovnocenné, pokud odpovídají jejich názvem, obor názvů, název položky, jakož i názvy klíčů a hodnot (pokud jsou kolekce slovníku).  

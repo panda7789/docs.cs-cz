@@ -6,11 +6,11 @@ ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 694d2be51d025ab054caf19e4aa2900216ad5b2e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47204997"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949705"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>Možnosti výstupu na třídě XslCompiledTransform
 Toto téma popisuje dostupné možnosti výstup XSLT. Možnosti výstupu můžete zadat v šabloně stylů nebo na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
@@ -25,13 +25,13 @@ Toto téma popisuje dostupné možnosti výstup XSLT. Možnosti výstupu můžet
 |– metoda|Podporované.|  
 |verze|Ignorovat. Verze je vždy 1.0 pro XML a 4.0 pro kód HTML.|  
 |encoding|Při výstupu na ignorováno <xref:System.IO.TextWriter>. <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> Vlastnost se používá místo toho.|  
-|vynechat Deklarace xml|Podporované.|  
+|omit-xml-declaration|Podporované.|  
 |samostatný|Podporované.|  
-|veřejná DOCTYPE|Podporované.|  
-|DOCTYPE systému|Podporované.|  
-|prvky CDATA oddílu|Podporované.|  
-|odsazení|Podporované.|  
-|typ média|Podporované.|  
+|doctype-public|Podporované.|  
+|doctype-system|Podporované.|  
+|cdata-section-elements|Podporované.|  
+|Odsazení|Podporované.|  
+|media-type|Podporované.|  
   
 #### <a name="sending-output-to-an-xmlwriter"></a>Odesílající výstup do třídy XmlWriter  
  Pokud vaše šablony stylů využívá `xsl:output` elementu a výstupní typ je <xref:System.Xml.XmlWriter> objekt, měli byste použít <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> vlastnost při vytváření <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Xml.XmlWriterSettings> objekt, který obsahuje informace odvozené z `xsl:output` element zkompilované šablony stylů. To <xref:System.Xml.XmlWriterSettings> objekt může být předán <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metodu pro vytvoření <xref:System.Xml.XmlWriter> objekt se správným nastavením.  
@@ -55,7 +55,7 @@ Toto téma popisuje dostupné možnosti výstup XSLT. Možnosti výstupu můžet
   
 ## <a name="notes"></a>Poznámky  
   
--   Při výpisu prázdné značky, je zapsán mezeru mezi poslední znak názvu elementu a zpětné lomítko, `<myElement />` třeba. To umožňuje starší prohlížeče správně zobrazit vygenerované stránky HTML.  
+- Při výpisu prázdné značky, je zapsán mezeru mezi poslední znak názvu elementu a zpětné lomítko, `<myElement />` třeba. To umožňuje starší prohlížeče správně zobrazit vygenerované stránky HTML.  
   
 ## <a name="see-also"></a>Viz také:
 

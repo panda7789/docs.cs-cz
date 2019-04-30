@@ -3,11 +3,11 @@ title: Vytváření rolí aplikací na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
 ms.openlocfilehash: f836fd239eca30d0a1f4a667cddc844446d1d951
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59100367"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878017"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Vytváření rolí aplikací na SQL Serveru
 Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci místo na uživatele nebo role databáze. Uživatelům můžete připojit k databázi, aktivace aplikační role a předpokládají oprávnění udělených aplikaci. Oprávnění udělená aplikaci role jsou platné po dobu trvání připojení.  
@@ -18,23 +18,23 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
 ## <a name="application-role-features"></a>Funkce Role aplikace  
  Aplikační role mají tyto funkce:  
   
--   Na rozdíl od databázové role aplikační role obsahovat žádné členy.  
+- Na rozdíl od databázové role aplikační role obsahovat žádné členy.  
   
--   Aplikační role se aktivují, když aplikace poskytuje název role aplikace a hesla `sp_setapprole` systémové uložené procedury.  
+- Aplikační role se aktivují, když aplikace poskytuje název role aplikace a hesla `sp_setapprole` systémové uložené procedury.  
   
--   Heslo musí být uložen v klientském počítači a zadanou za běhu; aplikační role nejde aktivovat z v rámci služby SQL Server.  
+- Heslo musí být uložen v klientském počítači a zadanou za běhu; aplikační role nejde aktivovat z v rámci služby SQL Server.  
   
--   Heslo není šifrována. Parametr hesla se ukládá jako jednocestného algoritmu hash.  
+- Heslo není šifrována. Parametr hesla se ukládá jako jednocestného algoritmu hash.  
   
--   Po aktivaci oprávnění získat prostřednictvím aplikační role, můžou platit ještě dobu trvání připojení.  
+- Po aktivaci oprávnění získat prostřednictvím aplikační role, můžou platit ještě dobu trvání připojení.  
   
--   Aplikační role dědí oprávnění udělená `public` role.  
+- Aplikační role dědí oprávnění udělená `public` role.  
   
--   Pokud člen `sysadmin` pevné role serveru aktivuje roli aplikace, kontext zabezpečení, které role aplikace přepne po dobu trvání připojení.  
+- Pokud člen `sysadmin` pevné role serveru aktivuje roli aplikace, kontext zabezpečení, které role aplikace přepne po dobu trvání připojení.  
   
--   Pokud jste vytvořili `guest` účet v databázi, který má roli aplikace, nepotřebujete k vytvoření uživatelského účtu databáze pro roli v aplikaci nebo pro všechny přihlašovací údaje, které ho vyvolat. Aplikační role mohou přímý přístup k databázi jiného pouze tehdy, pokud `guest` účet existuje v druhé databázi  
+- Pokud jste vytvořili `guest` účet v databázi, který má roli aplikace, nepotřebujete k vytvoření uživatelského účtu databáze pro roli v aplikaci nebo pro všechny přihlašovací údaje, které ho vyvolat. Aplikační role mohou přímý přístup k databázi jiného pouze tehdy, pokud `guest` účet existuje v druhé databázi  
   
--   Integrované funkce, které vracejí přihlašovací jména, jako je například SYSTEM_USER, vrátí název přihlášení, která vyvolá aplikační role. Integrované funkce, které vrací databáze uživatelská jména vrátí název role aplikace.  
+- Integrované funkce, které vracejí přihlašovací jména, jako je například SYSTEM_USER, vrátí název přihlášení, která vyvolá aplikační role. Integrované funkce, které vrací databáze uživatelská jména vrátí název role aplikace.  
   
 ### <a name="the-principle-of-least-privilege"></a>Princip nejnižších oprávnění  
  Aplikační role mají udělit pouze požadovaná oprávnění v případě, že dojde k narušení heslo. Oprávnění `public` role mají odvolat v jakékoli databázi pomocí roli aplikace. Zakažte `guest` účet v libovolné databáze nechcete, aby se volajícím role aplikace mají přístup k.  
@@ -47,9 +47,9 @@ Aplikační role poskytují způsob, jak přiřadit oprávnění k aplikaci mís
   
  Můžete chtít zvažte následující možnosti.  
   
--   Použití kontextu přímé přepnutí s EXECUTE AS příkaz s jeho klauzule č vrátit a pomocí souboru COOKIE. Vytvořte účet uživatele v databázi, která není namapován na přihlášení. Pak přiřaďte oprávnění pro tento účet. Pomocí spustit jako přidružit k uživateli bez přihlášení je bezpečnější, protože je na základě oprávnění, ne pomocí hesla. Další informace najdete v tématu [přizpůsobení oprávnění se zosobněním na SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Použití kontextu přímé přepnutí s EXECUTE AS příkaz s jeho klauzule č vrátit a pomocí souboru COOKIE. Vytvořte účet uživatele v databázi, která není namapován na přihlášení. Pak přiřaďte oprávnění pro tento účet. Pomocí spustit jako přidružit k uživateli bez přihlášení je bezpečnější, protože je na základě oprávnění, ne pomocí hesla. Další informace najdete v tématu [přizpůsobení oprávnění se zosobněním na SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
   
--   Podepisování uložených procedur s certifikáty, poskytování pouze oprávnění ke spuštění procedury. Další informace najdete v tématu [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Podepisování uložených procedur s certifikáty, poskytování pouze oprávnění ke spuštění procedury. Další informace najdete v tématu [podepisování uložených procedur na SQL serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
  Další informace najdete v následujících materiálech.  

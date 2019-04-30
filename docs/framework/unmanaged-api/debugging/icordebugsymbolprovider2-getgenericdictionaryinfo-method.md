@@ -5,11 +5,11 @@ ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f171af8dbfa4e812711e95e5587b314753cd9350
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61944646"
 ---
 # <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
 Načte mapování generický slovník.  
@@ -33,9 +33,9 @@ HRESULT GetGenericDictionaryInfo(
   
  Mapa se skládá ze dvou částí nejvyšší úrovně:  
   
--   A [directory](#Directory) relativních virtuálních adres (RVA) obsahující všechny adresářů, které jsou součástí této mapy.  
+- A [directory](#Directory) relativních virtuálních adres (RVA) obsahující všechny adresářů, které jsou součástí této mapy.  
   
--   Zarovnané bajtové [haldy](#Heap) , který obsahuje informace o vytvoření instance objektu. Začne okamžitě po poslední položky adresáře.  
+- Zarovnané bajtové [haldy](#Heap) , který obsahuje informace o vytvoření instance objektu. Začne okamžitě po poslední položky adresáře.  
   
 <a name="Directory"></a>   
 ## <a name="the-directory"></a>Adresář  
@@ -43,13 +43,13 @@ HRESULT GetGenericDictionaryInfo(
   
  Část adresáře generický slovník mapování má následující strukturu:  
   
--   První 4 bajty obsahuje počet položek slovníku (to znamená, že počet relativních virtuálních adres ve slovníku). Společnost Microsoft bude odkazovat na tuto hodnotu jako *N*. Pokud je vysoký bit nastaven, jsou položky seřazené podle relativní virtuální adresa ve vzestupném pořadí.  
+- První 4 bajty obsahuje počet položek slovníku (to znamená, že počet relativních virtuálních adres ve slovníku). Společnost Microsoft bude odkazovat na tuto hodnotu jako *N*. Pokud je vysoký bit nastaven, jsou položky seřazené podle relativní virtuální adresa ve vzestupném pořadí.  
   
--   *N* postupujte podle položek adresáře. Každý záznam se skládá z 8 bajtů v dva segmenty 4bajtovou:  
+- *N* postupujte podle položek adresáře. Každý záznam se skládá z 8 bajtů v dva segmenty 4bajtovou:  
   
-    -   Bajty 0 až 3: ADRESA RVA; relativní virtuální adresu do slovníku.  
+    - Bajty 0 až 3: ADRESA RVA; relativní virtuální adresu do slovníku.  
   
-    -   Bajty 4 – 7: Posun; posun vzhledem k začátku haldy.  
+    - Bajty 4 – 7: Posun; posun vzhledem k začátku haldy.  
   
 <a name="Heap"></a>   
 ## <a name="the-heap"></a>Haldy  
@@ -63,11 +63,11 @@ Heap Size = Stream.Length – (Directory Size + 4)
   
  Formát pro každou položku informace o vytvoření instance na haldě je:  
   
--   Délka této položky informace o vytvoření instance v bajtech ve formátu metadat komprimované ECMA. Hodnota nezahrnuje informace o délce.  
+- Délka této položky informace o vytvoření instance v bajtech ve formátu metadat komprimované ECMA. Hodnota nezahrnuje informace o délce.  
   
--   Počet typů obecné vytváření instancí, nebo *T*, v komprimované formát metadat ECMA.  
+- Počet typů obecné vytváření instancí, nebo *T*, v komprimované formát metadat ECMA.  
   
--   *T* typy, znázorněny ve formátu podpisu typu ECMA.  
+- *T* typy, znázorněny ve formátu podpisu typu ECMA.  
   
  Zahrnutí délka pro každý prvek haldy umožňuje jednoduché řazení sekci adresáře aniž by to ovlivnilo haldy.  
   

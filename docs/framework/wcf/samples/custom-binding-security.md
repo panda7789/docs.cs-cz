@@ -6,8 +6,8 @@ ms.openlocfilehash: 1ff83d95dae06b787f8bc7ec8e1bf0f45c226532
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943933"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní vazby. Ukazuje, jak povolit zabezpečení na úrovni zprávy spolu s zabezpečeného přenosu pomocí vlastní vazby. To je užitečné, když zabezpečeného přenosu je potřebná pro přenos zpráv mezi klientem a službou a současně zprávy musí být zabezpečení na úrovni zprávy. Tato konfigurace není podporována vazeb poskytovaných systémem.
@@ -19,9 +19,9 @@ Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní v
 
  Konfigurace služby definuje vlastní vazby, který podporuje následující funkce:
 
--   Komunikace protokolu TCP chráněny pomocí protokolu TLS/SSL.
+- Komunikace protokolu TCP chráněny pomocí protokolu TLS/SSL.
 
--   Zabezpečení zpráv Windows.
+- Zabezpečení zpráv Windows.
 
  Konfigurace vlastních vazeb umožňuje zabezpečeného přenosu současně povolením zprávy úroveň zabezpečení. Řazení elementů vazby je důležité při definování vlastní vazby, protože každý reprezentuje vrstvu v kanálu zásobníku (viz [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md)). Vlastní vazba je definována v konfiguračních souborů klienta a služby, jak je znázorněno v následující ukázková konfigurace.
 
@@ -76,7 +76,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory, které se vztahují k této ukázce tak, aby se lze upravit a spustit v příslušné konfiguraci:
 
--   Vytváří se certifikát serveru.
+- Vytváří se certifikát serveru.
 
      Následující řádky z se soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Tento dávkový soubor výchozí hodnota názvu serveru localhost.
 
@@ -92,7 +92,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta.
 
      Uložte následující řádky v kopírování souborů Setup.bat certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 
@@ -128,36 +128,36 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
   
 1. Na počítači se službou:  
   
-    1.  Vytvořte virtuální adresář s názvem servicemodelsamples na počítači se službou.  
+    1. Vytvořte virtuální adresář s názvem servicemodelsamples na počítači se službou.  
   
-    2.  Zkopírujte soubory programu služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači se službou. Ujistěte se, že zkopírujete soubory v podadresáři \bin.  
+    2. Zkopírujte soubory programu služby z \inetpub\wwwroot\servicemodelsamples do virtuálního adresáře na počítači se službou. Ujistěte se, že zkopírujete soubory v podadresáři \bin.  
   
-    3.  Zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
+    3. Zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-    4.  Spuštěním následujícího příkazu v příkazovém řádku pro vývojáře pro Visual Studio otevřené s oprávněními správce: `Setup.bat service`. Tím se vytvoří certifikát služby s názvem subjektu odpovídající název počítače, který byl spuštěn dávkového souboru.  
+    4. Spuštěním následujícího příkazu v příkazovém řádku pro vývojáře pro Visual Studio otevřené s oprávněními správce: `Setup.bat service`. Tím se vytvoří certifikát služby s názvem subjektu odpovídající název počítače, který byl spuštěn dávkového souboru.  
   
         > [!NOTE]
         >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2010 příkazový řádek. To vyžaduje, aby proměnné prostředí path v bodu do adresáře, ve kterém je nainstalována sada SDK. Tato proměnná prostředí je nastavena automaticky v rámci Visual Studio 2010 příkazový řádek.
 
-    5.  Změnit [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) uvnitř Service.exe.config souboru tak, aby odrážely název subjektu certifikátu vygenerovaného v předchozím kroku.
+    5. Změnit [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) uvnitř Service.exe.config souboru tak, aby odrážely název subjektu certifikátu vygenerovaného v předchozím kroku.
 
-    6.  Spusťte Service.exe z příkazového řádku.
+    6. Spusťte Service.exe z příkazového řádku.
 
 2. Na klientském počítači:
 
-    1.  Zkopírujte soubory programu klienta ze složky \client\bin\ do klientského počítače. Zkopírujte také soubor Cleanup.bat.
+    1. Zkopírujte soubory programu klienta ze složky \client\bin\ do klientského počítače. Zkopírujte také soubor Cleanup.bat.
 
-    2.  Spusťte Cleanup.bat odebrání starého certifikátů z předchozí ukázky.
+    2. Spusťte Cleanup.bat odebrání starého certifikátů z předchozí ukázky.
 
-    3.  Export certifikátu služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači se službou (Nahraďte `%SERVER_NAME%` s plně kvalifikovaný název počítače, kde Služba je spuštěna):
+    3. Export certifikátu služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači se službou (Nahraďte `%SERVER_NAME%` s plně kvalifikovaný název počítače, kde Služba je spuštěna):
 
         ```
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
         ```
 
-    4.  Zkopírujte %SERVER_NAME%.cer ke klientskému počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém je služba spuštěná).
+    4. Zkopírujte %SERVER_NAME%.cer ke klientskému počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém je služba spuštěná).
 
-    5.  Naimportujte certifikát služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém Služba je spuštěna):
+    5. Naimportujte certifikát služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém Služba je spuštěna):
 
         ```
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
@@ -165,7 +165,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
          Kroky nejsou nutné v případě, že certifikát vystavil důvěryhodného vystavitele c, d a e.
 
-    6.  Upravte soubor App.config klienta následujícím způsobem:
+    6. Upravte soubor App.config klienta následujícím způsobem:
 
         ```xml
         <client>
@@ -178,10 +178,10 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
         </client>
         ```
 
-    7.  Pokud služba běží v rámci účtu než NetworkService nebo LocalSystem účet v prostředí domény, je třeba upravit identitě koncového bodu pro koncový bod služby v souboru App.config klienta pro nastavení odpovídající hlavní název uživatele nebo na základě hlavního názvu služby u účtu, který se používá ke spuštění služby. Další informace o identitě koncového bodu, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md) tématu.
+    7. Pokud služba běží v rámci účtu než NetworkService nebo LocalSystem účet v prostředí domény, je třeba upravit identitě koncového bodu pro koncový bod služby v souboru App.config klienta pro nastavení odpovídající hlavní název uživatele nebo na základě hlavního názvu služby u účtu, který se používá ke spuštění služby. Další informace o identitě koncového bodu, najdete v článku [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md) tématu.
 
-    8.  Spusťte Client.exe z příkazového řádku.
+    8. Spusťte Client.exe z příkazového řádku.
 
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku
 
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.

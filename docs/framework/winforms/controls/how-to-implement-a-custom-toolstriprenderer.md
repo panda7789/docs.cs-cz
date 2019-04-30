@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms]
 ms.assetid: c66fd3f7-2377-4553-8f1b-006527f08f32
 ms.openlocfilehash: 0d0a0bdba779fad7bd9b19acb2ea09408dea60a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941181"
 ---
 # <a name="how-to-implement-a-custom-toolstriprenderer"></a>Postupy: Implementace vlastního prvku ToolStripRenderer
 Můžete přizpůsobit vzhled <xref:System.Windows.Forms.ToolStrip> ovládacího prvku pomocí implementace, která je odvozena z třídy <xref:System.Windows.Forms.ToolStripRenderer>. To vám dává flexibilitu pro vytvoření vzhledu, která se liší od vzhled k dispozici <xref:System.Windows.Forms.ToolStripProfessionalRenderer> a <xref:System.Windows.Forms.ToolStripSystemRenderer> třídy.  
@@ -23,11 +23,11 @@ Můžete přizpůsobit vzhled <xref:System.Windows.Forms.ToolStrip> ovládacího
   
  `GridStripRenderer` Třídy přizpůsobí tři aspekty `GridStrip` vzhled ovládacího prvku:  
   
--   `GridStrip` Ohraničení  
+- `GridStrip` Ohraničení  
   
--   <xref:System.Windows.Forms.ToolStripButton> Ohraničení  
+- <xref:System.Windows.Forms.ToolStripButton> Ohraničení  
   
--   <xref:System.Windows.Forms.ToolStripButton> Bitové kopie  
+- <xref:System.Windows.Forms.ToolStripButton> Bitové kopie  
   
  [!code-csharp[System.Windows.Forms.ToolStrip.GridStrip#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/CS/GridStrip.cs#1)]
  [!code-vb[System.Windows.Forms.ToolStrip.GridStrip#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.GridStrip/VB/GridStrip.vb#1)]  
@@ -35,7 +35,7 @@ Můžete přizpůsobit vzhled <xref:System.Windows.Forms.ToolStrip> ovládacího
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System.Drawing a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

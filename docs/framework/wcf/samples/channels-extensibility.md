@@ -3,11 +3,11 @@ title: Rozšiřitelnost kanálů
 ms.date: 03/30/2017
 ms.assetid: 4cc3b20b-778a-4ae8-b58c-a3822fb13065
 ms.openlocfilehash: aeff683b786d81fc782914bd2df70adb10bcbcec
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580547"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61944050"
 ---
 # <a name="channels-extensibility"></a>Rozšiřitelnost kanálů
 Tato část obsahuje ukázky, které předvádějí vlastních kanálů.  

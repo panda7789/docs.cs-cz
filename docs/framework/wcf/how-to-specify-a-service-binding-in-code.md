@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 67ab5dd8-79c1-4e62-aa75-828ea918a53a
 ms.openlocfilehash: 9f3320b031141246a394191a1924509204707dc1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59303450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928801"
 ---
 # <a name="how-to-specify-a-service-binding-in-code"></a>Postupy: Určení vazby služby v kódu
 V tomto příkladu `ICalculator` smlouvy je definován pro službu kalkulačky, služba se implementuje v `CalculatorService` třídě a následně svůj koncový bod je definováno v kódu, kde je zadán, že musíte použít službu <xref:System.ServiceModel.BasicHttpBinding> třídy.  

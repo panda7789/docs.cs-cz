@@ -8,11 +8,11 @@ ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 87ec70b2b27c8886ac9b567498d75f9294437bed
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59141528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949263"
 ---
 # <a name="loader-etw-events"></a>Události Trasování událostí pro Windows zavaděče
 <a name="top"></a> Tyto události shromažďovat informace týkající se načítání a uvolňování domény aplikace, sestavení a modulů.  
@@ -21,15 +21,15 @@ ms.locfileid: "59141528"
   
  Události zavaděče jsou rozděleny do následujících akcí:  
   
--   [Události domény aplikace](#application_domain_events)  
+- [Události domény aplikace](#application_domain_events)  
   
--   [Události zavaděče sestavení CLR](#clr_loader_assembly_events)  
+- [Události zavaděče sestavení CLR](#clr_loader_assembly_events)  
   
--   [Události modulu](#module_events)  
+- [Události modulu](#module_events)  
   
--   [Události modulu CLR domény](#clr_domain_module_events)  
+- [Události modulu CLR domény](#clr_domain_module_events)  
   
--   [Rozsah modulu událostí](#module_range_events)  
+- [Rozsah modulu událostí](#module_range_events)  
   
 <a name="application_domain_events"></a>   
 ## <a name="application-domain-events"></a>Události domény aplikace  
@@ -134,11 +134,11 @@ ms.locfileid: "59141528"
   
 ### <a name="remarks"></a>Poznámky  
   
--   Pole, která mají "Pdb" v názvu můžete využívat nástroje pro profilaci k vyhledání souborů pdb, které odpovídají moduly, které byly načteny během relace profilování. Hodnoty těchto polí odpovídat data zapsaná do částí IMAGE_DIRECTORY_ENTRY_DEBUG modulu obvykle používají ladicí programy pro usnadnění vyhledání pdb, které odpovídají načtené moduly.  
+- Pole, která mají "Pdb" v názvu můžete využívat nástroje pro profilaci k vyhledání souborů pdb, které odpovídají moduly, které byly načteny během relace profilování. Hodnoty těchto polí odpovídat data zapsaná do částí IMAGE_DIRECTORY_ENTRY_DEBUG modulu obvykle používají ladicí programy pro usnadnění vyhledání pdb, které odpovídají načtené moduly.  
   
--   Názvy polí, které začínají řetězcem "ManagedPdb" odkazovat spravovaný modul MSIL, který byl vygenerován spravované kompilátory odpovídající PDB (například C# nebo kompilátor jazyka Visual Basic). Tento soubor PDB používá spravované formát PDB a popisuje, jak prvky z původní spravovaném zdrojovém kódu, jako jsou soubory, čísla řádků a názvy symbolů se mapují na prvky jazyka MSIL, které jsou kompilovány do modulu MSIL.  
+- Názvy polí, které začínají řetězcem "ManagedPdb" odkazovat spravovaný modul MSIL, který byl vygenerován spravované kompilátory odpovídající PDB (například C# nebo kompilátor jazyka Visual Basic). Tento soubor PDB používá spravované formát PDB a popisuje, jak prvky z původní spravovaném zdrojovém kódu, jako jsou soubory, čísla řádků a názvy symbolů se mapují na prvky jazyka MSIL, které jsou kompilovány do modulu MSIL.  
   
--   Názvy polí, které začínají řetězcem "NativePdb" odkazovat PDB NGen generován voláním `NGEN createPDB`. Tento soubor PDB využívá nativní formát PDB a popisuje, jak prvky z původní spravovaném zdrojovém kódu, jako jsou soubory, čísla řádků a názvy symbolů se mapují na nativní prvky, které jsou kompilovány do modulu technologie NGen.  
+- Názvy polí, které začínají řetězcem "NativePdb" odkazovat PDB NGen generován voláním `NGEN createPDB`. Tento soubor PDB využívá nativní formát PDB a popisuje, jak prvky z původní spravovaném zdrojovém kódu, jako jsou soubory, čísla řádků a názvy symbolů se mapují na nativní prvky, které jsou kompilovány do modulu technologie NGen.  
   
  [Zpět na začátek](#top)  
   

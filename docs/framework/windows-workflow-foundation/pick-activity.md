@@ -3,11 +3,11 @@ title: Výběr aktivity
 ms.date: 03/30/2017
 ms.assetid: b3e49b7f-0285-4720-8c09-11ae18f0d53e
 ms.openlocfilehash: b9ee6c06377760d27bc54d39c1d1f3ecf67ea0d8
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909416"
 ---
 # <a name="pick-activity"></a>Výběr aktivity
 <xref:System.Activities.Statements.Pick> Aktivity zjednodušuje modelování sadu triggerů událostí a jejich odpovídající obslužné rutiny.  A <xref:System.Activities.Statements.Pick> aktivita obsahuje kolekci <xref:System.Activities.Statements.PickBranch> aktivity, ve kterém každý <xref:System.Activities.Statements.PickBranch> je párování mezi <xref:System.Activities.Statements.PickBranch.Trigger%2A> aktivity a <xref:System.Activities.Statements.PickBranch.Action%2A> aktivity.  V době spuštění aktivační události pro všechny větve spouští paralelně.  Po dokončení jednu aktivační událost, pak je její odpovídající akci provést, a další triggery se zruší.  Chování [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] <xref:System.Activities.Statements.Pick> aktivity se podobá [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] <xref:System.Workflow.Activities.ListenActivity> aktivity.  

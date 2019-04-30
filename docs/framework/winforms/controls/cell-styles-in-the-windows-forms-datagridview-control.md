@@ -7,11 +7,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], cell styles
 ms.assetid: dbb75ed6-8804-4232-8382-f9920c2e380c
 ms.openlocfilehash: 41794c5ecadbcdc0b38c7c73afc7c010a4ea6989
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59300018"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61939144"
 ---
 # <a name="cell-styles-in-the-windows-forms-datagridview-control"></a>Styly buňky v ovládacím prvku Windows Forms DataGridView
 Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prvek může mít svůj vlastní styl, jako je například textovém formátu, barvu pozadí, barvu popředí a písma. Však obvykle více buněk sdílet vlastnosti konkrétního stylu.  
@@ -21,23 +21,23 @@ Každá buňka v rámci <xref:System.Windows.Forms.DataGridView> ovládací prve
 ## <a name="the-datagridviewcellstyle-class"></a>The DataGridViewCellStyle Class  
  <xref:System.Windows.Forms.DataGridViewCellStyle> Třída obsahuje následující vlastnosti související s vizuálního stylu:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.BackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.ForeColor%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionBackColor%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.SelectionForeColor%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.Font%2A>  
   
  Tato třída také obsahuje následující vlastnosti související s formátování:  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.Format%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.FormatProvider%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> a <xref:System.Windows.Forms.DataGridViewCellStyle.DataSourceNullValue%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.WrapMode%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Alignment%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.Alignment%2A>  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle.Padding%2A>  
+- <xref:System.Windows.Forms.DataGridViewCellStyle.Padding%2A>  
   
  Další informace o těchto vlastností a další vlastnosti styl buňky, najdete v článku <xref:System.Windows.Forms.DataGridViewCellStyle> referenční dokumentaci a v tématech uvedených v následující části Viz také.  
   

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - regions [Windows Forms], hit testing
 ms.assetid: 3a4c07cb-a40a-4d14-ad35-008f531910a8
 ms.openlocfilehash: 136f15f1364fb2aed791b4a61d0f11411b055967
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778869"
 ---
 # <a name="how-to-use-hit-testing-with-a-region"></a>Postupy: Použití nárazového testování s oblastí
 Účelem testování přístupů je určit, zda je kurzor nad daný objekt, jako je například ikony nebo tlačítko.  

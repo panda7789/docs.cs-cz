@@ -9,11 +9,11 @@ helpviewer_keywords:
 - hosting applications [WPF]
 ms.assetid: 1f73067d-c60a-4e9a-b513-c817ee7da3a1
 ms.openlocfilehash: 7259c6275b4a87eb7c4ef083dda55b24c1564e9b
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947924"
 ---
 # <a name="hosting-wpf-applications"></a>Hostování aplikací WPF
 Aplikace prohlížeče WPF XAML (XBAP) jsou plně funkčním klientovi aplikace, které je možné nasadit na webový server a spustit v prohlížeči. Hostitel WPF (PresentationHost.exe) se zaregistruje jako prostředí a obslužné rutiny MIME pro soubory XBAP a XAML. Proto ví aplikace Internet Explorer spustit hostitel WPF při spuštění XBAP. Uživatele aplikace Firefox můžete nainstalovat doplňky Firefox, které umožní hostitele aplikace XBAP a Firefox. XBAP, který je možné hostovat v jiných prohlížečích nebo samostatné aplikace pomocí nativní poskytuje rozhraní API pro hostování prohlížeče ve WPF.  

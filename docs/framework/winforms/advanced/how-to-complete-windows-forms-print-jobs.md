@@ -10,11 +10,11 @@ helpviewer_keywords:
 - printing [Windows Forms], print jobs
 ms.assetid: 23ec74f7-34c5-4710-82a0-ee2914518548
 ms.openlocfilehash: 256b9a3d8842aaa4b032e67ebac9ca6a9e1ef34a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59293752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937849"
 ---
 # <a name="how-to-complete-windows-forms-print-jobs"></a>Postupy: Dokončení tiskových úloh v modelu Windows Forms
 Často textových editorů a další aplikace, které se týkají tisku bude poskytovat možnost pro zobrazení zprávy pro uživatele, tisková úloha je dokončena. Tuto funkci můžete zadat do svých formulářů Windows pomocí manipulace <xref:System.Drawing.Printing.PrintDocument.EndPrint> událost <xref:System.Drawing.Printing.PrintDocument> komponenty.  

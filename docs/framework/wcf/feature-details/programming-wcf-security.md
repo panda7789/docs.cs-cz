@@ -8,11 +8,11 @@ helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
 ms.openlocfilehash: d327605c084cd5fb1c65fbb786e871b421730b83
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946676"
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezpečenou webovou aplikaci Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integrita, souhrnně označované jako *přenos zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
@@ -33,17 +33,17 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
   
      Máte tři možnosti:  
   
-    1.  `Transport`  
+    1. `Transport`  
   
          Zabezpečení přenosu závisí mechanismus, který používá vazba, kterou jste vybrali. Například, pokud používáte `WSHttpBinding` mechanismus zabezpečení, který je vrstva SSL (Secure Sockets) (taky mechanismus pro protokol HTTPS). Obecně řečeno hlavní výhodou zabezpečení přenosu je, že poskytuje dobrou propustnost bez ohledu na to, které přenosu, kterou používáte. Však obsahuje dvě omezení: První je, že mechanismus přenosu Určuje typ přihlašovacích údajů pro ověření uživatele. Nevýhodou jde jenom v případě, že služba potřebuje pro spolupráci s ostatními službami, které vyžadují různé typy přihlašovacích údajů. Druhým je, že, protože není zabezpečení na úrovni zprávy, zabezpečení je implementována v hop-by-hop způsobem spíše než začátku do konce. Toto druhé omezení je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje zprostředkovatelů. Další informace o přenosu, které používat, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o použití zabezpečení přenosu, naleznete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
   
-    2.  `Message`  
+    2. `Message`  
   
          Zabezpečení zpráv znamená, že každá zpráva obsahuje potřebné hlavičky a zabezpečení dat, aby se zprávy. Protože se liší složení záhlaví, může obsahovat libovolný počet přihlašovacích údajů. Faktor to stane, pokud jste se spolupráce s jinými službami vyžadující přihlašovacích údajů konkrétní typ, který nelze uvádět přenosový mechanismus, nebo pokud zpráva musí být použit s víc než jedna služba, kde každá služba vyžaduje typ různých přihlašovacích údajů.  
   
          Další informace najdete v tématu [zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md).  
   
-    3.  `TransportWithMessageCredential`  
+    3. `TransportWithMessageCredential`  
   
          Tato volba používá přenosové vrstvy zabezpečení přenosu zpráv, sice zahrnuje všechny zprávy bohaté přihlašovací údaje potřebovat jiné služby. Tím se zkombinuje výkonu výhod zabezpečení přenosu s výhodou formátovaným přihlašovací údaje zabezpečení zpráv. Tato možnost je dostupná následující vazbami: <xref:System.ServiceModel.BasicHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding>, <xref:System.ServiceModel.NetPeerTcpBinding>, a <xref:System.ServiceModel.WSHttpBinding>.  
   
@@ -56,19 +56,19 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
 ## <a name="setting-the-client-credential-type"></a>Nastavení typu pověření klienta  
  Vyberte typ pověření klienta podle potřeby. Další informace najdete v tématu [výběr typu pověření](../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md). K dispozici jsou následující typy přihlašovacích údajů klienta:  
   
--   `Windows`  
+- `Windows`  
   
--   `Certificate`  
+- `Certificate`  
   
--   `Digest`  
+- `Digest`  
   
--   `Basic`  
+- `Basic`  
   
--   `UserName`  
+- `UserName`  
   
--   `NTLM`  
+- `NTLM`  
   
--   `IssuedToken`  
+- `IssuedToken`  
   
  V závislosti na tom, jak nastavit režim musíte nastavit typ přihlašovacích údajů. Například pokud jste vybrali `wsHttpBinding`a mít nastavte režim na "Zpráva", pak můžete také nastavit `clientCredentialType` atribut elementu zprávy do jedné z následujících hodnot: `None`, `Windows`, `UserName`, `Certificate` , a `IssuedToken`, jak je znázorněno v následujícím příkladu konfigurace.  
   

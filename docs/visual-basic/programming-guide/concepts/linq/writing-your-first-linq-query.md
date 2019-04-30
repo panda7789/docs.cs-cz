@@ -7,11 +7,11 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
 ms.openlocfilehash: 6f6968713fdb1c0ec0ee9f9da3b199a649938de5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907475"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v vyhrazené dotazovací jazyk. V průběhu času různé jazyky byly vyvinuty pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Díky tomu je nezbytné pro vývojáře aplikací získat nový dotazovací jazyk pro každý typ zdroje dat nebo formát dat, která je podporována.  

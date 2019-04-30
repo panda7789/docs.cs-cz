@@ -3,11 +3,11 @@ title: Publikování služby WCF
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
 ms.openlocfilehash: 33725c2f393529a7e59ed0b3ae1db01a359fb9a5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791206"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 
@@ -17,19 +17,19 @@ Publikování služby Windows Communication Foundation (WCF) vám pomůže v ran
 
 Publikování služby WCF podporuje publikování služby WCF vytvořené ze souboru šablony knihovny služby WCF a jejich odpovídající šablony položek, které zahrnují následující:
 
--   Šablona knihovny služby WCF pomocí šablony položky.
+- Šablona knihovny služby WCF pomocí šablony položky.
 
--   Knihovna služby syndikace.
+- Knihovna služby syndikace.
 
 Tyto šablony služeb můžete najít výběrem **souboru** > **nový projekt** > [**jazyka Visual Basic** nebo **Visual C#** ] > **WCF**. Pro další šablony WCF v tomto umístění (včetně aplikace služeb pracovního postupu WCF a aplikace služby WCF), které můžete publikovat pomocí [jedním kliknutím pro publikování webových aplikací](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110)).
 
 Službě mohou být publikovány do následujícího umístění, cíl.
 
--   Místní služba IIS.
+- Místní služba IIS.
 
--   Systém souborů.
+- Systém souborů.
 
--   Server FTP.
+- Server FTP.
 
 ## <a name="using-wcf-service-publishing"></a>Pomocí technologie WCF publikování služby
 
@@ -63,9 +63,9 @@ Pokud budete chtít nasadit aplikaci do místní služby IIS, může dojít k ch
 
  Vygenerovaný soubor Web.config obsahuje webové části, které jsou užitečné pro hostování webů a obsahu souboru App.config pro knihovnu služby WCF s následujícími změnami:
 
--   Základní adresa je vyloučený.
+- Základní adresa je vyloučený.
 
--   V nastavení `<diagnostics>` element jsou vyloučeny zachovat nastavení trasování cílové platformy.
+- V nastavení `<diagnostics>` element jsou vyloučeny zachovat nastavení trasování cílové platformy.
 
 ## <a name="publishing-wcf-services-with-non-http-bindings-to-iis"></a>Publikování služby WCF pomocí protokolu HTTP vazby služby IIS
  Pokud používáte IIS 7.0 nebo novější, můžete publikovat služby WCF s jiným protokolem než HTTP vazby služby IIS. Budete muset provést některé před konfigurací. Další informace najdete v tématu témat na [hostování v aktivační službě procesů Windows](../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).

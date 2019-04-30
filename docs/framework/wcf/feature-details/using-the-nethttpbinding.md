@@ -3,11 +3,11 @@ title: Používání vazeb NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
 ms.openlocfilehash: 5090cfdfeb068acda1e1092e408f3cd747c574c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932558"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> Vazba určená pro použití protokolu HTTP nebo objektu websocket na straně služby a používá binární kódování ve výchozím nastavení. <xref:System.ServiceModel.NetHttpBinding> zjistí, jestli se používá s kontraktů požadavek odpověď nebo duplexní kontrakt a změnit její chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a protokoly Websocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  

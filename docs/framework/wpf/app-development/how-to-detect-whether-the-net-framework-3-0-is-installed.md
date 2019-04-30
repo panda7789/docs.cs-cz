@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0'
+title: 'Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WinFX Runtime user-agent string
@@ -7,13 +7,13 @@ helpviewer_keywords:
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
 ms.openlocfilehash: 27f856b895f48dc2365a1721dbc90294269899c7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43746377"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947820"
 ---
-# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
+# <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0
 Správci mohli nasadit aplikace rozhraní Microsoft .NET Framework v systému, se musí nejdřív ověřit, zda modul runtime rozhraní .NET Framework je k dispozici. Toto téma obsahuje skript napsané v HTML/JavaScript, mohou správci zjistit, jestli je rozhraní .NET Framework v systému k dispozici.  
   
 > [!NOTE]

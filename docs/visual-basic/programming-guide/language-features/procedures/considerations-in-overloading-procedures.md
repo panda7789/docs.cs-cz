@@ -26,11 +26,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
 ms.openlocfilehash: f14cc28960af28530bda9a78c1309dea10c18b8f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58815588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864347"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)
 Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých přetížených verzí. To obvykle znamená, že každá verze musíte zadat seznam různých parametrů. Další informace najdete v tématu "Jiný podpis" [přetížení procedury](./procedure-overloading.md).  
@@ -50,14 +50,14 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
 #### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
  Můžete zvážit, definování řadu přetížené verze v následujících případech:  
   
--   Logika v kódu procedury je výrazně liší v závislosti na tom, zda volající kód poskytuje volitelný argument nebo ne.  
+- Logika v kódu procedury je výrazně liší v závislosti na tom, zda volající kód poskytuje volitelný argument nebo ne.  
   
--   Kód procedury nelze spolehlivě otestovat, zda volající kód dodal nepovinný argument. To platí, například, pokud neexistuje žádný možné Release candidate pro výchozí hodnotu, která volající kód nelze očekávat, že zadat.  
+- Kód procedury nelze spolehlivě otestovat, zda volající kód dodal nepovinný argument. To platí, například, pokud neexistuje žádný možné Release candidate pro výchozí hodnotu, která volající kód nelze očekávat, že zadat.  
   
 #### <a name="when-to-use-optional-parameters"></a>Kdy použít nepovinné parametry  
  Můžete dát přednost jeden nebo více volitelných parametrů v následujících případech:  
   
--   Pouze požadované akce, když volající kód neposkytuje nepovinný argument je nastavena na výchozí hodnotu parametru. V takovém případě může být méně složitý kód procedury definujete jednu verzi s jednou nebo více `Optional` parametry.  
+- Pouze požadované akce, když volající kód neposkytuje nepovinný argument je nastavena na výchozí hodnotu parametru. V takovém případě může být méně složitý kód procedury definujete jednu verzi s jednou nebo více `Optional` parametry.  
   
  Další informace najdete v tématu [volitelné parametry](./optional-parameters.md).  
   
@@ -67,18 +67,18 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
 #### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
  Můžete zvážit, definování řadu přetížené verze v následujících případech:  
   
--   Víte, že volající kód nikdy neprocházejí více než malý počet hodnot pro pole parametrů.  
+- Víte, že volající kód nikdy neprocházejí více než malý počet hodnot pro pole parametrů.  
   
--   Logika v kódu procedury je výrazně liší v závislosti na tom, kolik hodnot volající kód předá.  
+- Logika v kódu procedury je výrazně liší v závislosti na tom, kolik hodnot volající kód předá.  
   
--   Volající kód může předat hodnoty z různých datových typů.  
+- Volající kód může předat hodnoty z různých datových typů.  
   
 #### <a name="when-to-use-a-parameter-array"></a>Kdy použít pole parametrů.  
  Budete se lépe vyhovovat `ParamArray` parametr v následujících případech:  
   
--   Nejste schopni předpovědět, kolik hodnot volající kód můžete předat pole parametrů a může to být hodně.  
+- Nejste schopni předpovědět, kolik hodnot volající kód můžete předat pole parametrů a může to být hodně.  
   
--   Logiky postup slouží k procházení všech hodnot volající kód předá, provádí se v podstatě stejné operace v každé hodnotě.  
+- Logiky postup slouží k procházení všech hodnot volající kód předá, provádí se v podstatě stejné operace v každé hodnotě.  
   
  Další informace najdete v tématu [pole parametrů](./parameter-arrays.md).  
   
@@ -96,11 +96,11 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
 ## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicitní přetížení pro ParamArray parametr  
  Kompilátor považuje postupu názvem [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parametr mít neomezený počet přetížení lišící se od sebe navzájem co volající kód předá pole parametrů, následujícím způsobem:  
   
--   Když volající kód neposkytuje argument pro jeden přetížená metoda `ParamArray`  
+- Když volající kód neposkytuje argument pro jeden přetížená metoda `ParamArray`  
   
--   Jedním přetížením pro když volající kód poskytuje jednorozměrné pole `ParamArray` typ elementu  
+- Jedním přetížením pro když volající kód poskytuje jednorozměrné pole `ParamArray` typ elementu  
   
--   Pro každý kladné celé číslo, jeden přetížení pro když volající kód poskytuje tento počet argumentů, každý z `ParamArray` typ elementu  
+- Pro každý kladné celé číslo, jeden přetížení pro když volající kód poskytuje tento počet argumentů, každý z `ParamArray` typ elementu  
   
  Následující deklarace ukazují tyto implicitní přetížení.  
   
@@ -115,11 +115,11 @@ Když je přetížení procedury, musíte použít jiný *podpis* jednotlivých 
 ## <a name="typeless-programming-as-an-alternative-to-overloading"></a>Programování bez psaní jako alternativu k přetížení  
  Pokud chcete povolit, aby volající kód předat parametr různé datové typy, je alternativním přístupem programování bez psaní. Můžete nastavit typ kontroly přepínač tak, aby `Off` buď [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nebo [/optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) – možnost kompilátoru. Potom není potřeba deklarovat datový typ parametru. Tento přístup má ale tyto nevýhody ve srovnání s přetížení:  
   
--   Programování bez psaní vytvoří méně efektivní provádění kódu.  
+- Programování bez psaní vytvoří méně efektivní provádění kódu.  
   
--   Postup, musíte otestovat pro každý typ dat je připraven předávaný.  
+- Postup, musíte otestovat pro každý typ dat je připraven předávaný.  
   
--   Kompilátor nemůže signalizujete chybu, pokud volající kód předá datový typ, který postup není podporován.  
+- Kompilátor nemůže signalizujete chybu, pokud volající kód předá datový typ, který postup není podporován.  
   
 ## <a name="see-also"></a>Viz také:
 

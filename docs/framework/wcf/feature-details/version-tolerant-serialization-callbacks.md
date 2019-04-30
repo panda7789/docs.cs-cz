@@ -12,11 +12,11 @@ helpviewer_keywords:
 - OnSerializedAttribute [WCF]
 ms.assetid: aa4a3a6f-05ec-4efd-bdbf-2181e13e6468
 ms.openlocfilehash: da13f9989b427da047c4a94f77907847ed2ae4d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932623"
 ---
 # <a name="version-tolerant-serialization-callbacks"></a>Zpětná volání serializace tolerantní k verzím
 Programovací model kontraktu dat plně podporuje metody zpětného volání serializace tolerantní, který <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy podporu.  

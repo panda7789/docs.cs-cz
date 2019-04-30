@@ -5,11 +5,11 @@ ms.assetid: 4662f70d-817b-4374-8da8-e0545585939f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ce3c135e031d0c8425e990811fedc40f4ec45243
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940111"
 ---
 # <a name="isymunmanagedasyncmethodpropertieswriterdefinekickoffmethod-method"></a>ISymUnmanagedAsyncMethodPropertiesWriter::DefineKickoffMethod – metoda
 Nastaví výchozí metodu, která zahájí asynchronní operace.  

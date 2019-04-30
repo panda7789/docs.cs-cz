@@ -5,11 +5,11 @@ helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
 ms.openlocfilehash: ace1b40b25bd12ff7092459e468a90f382434bf4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086205"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938759"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Atributy CLR související s jazykem XAML pro vlastní typy a knihovny
 Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou definovány pomocí rozhraní .NET Framework XAML Services. Popisuje také další atributy CLR, které jsou definovány v rozhraní .NET Framework, které mají související s XAML scénář pro aplikaci na sestavení nebo typy. Přidělování sestavení, typy nebo členy s těmito atributy CLR poskytuje typ informace o systému XAML souvisejících typů. Informace jsou poskytovány k příjemci XAML, který používá rozhraní .NET Framework XAML Services pro zpracování datový proud uzlu XAML přímo nebo prostřednictvím vyhrazené XAML čtečky a zapisovače XAML.  
@@ -90,9 +90,9 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:** Podporuje dvě formy autorství:  
   
--   Řetězec, který určuje název vlastnosti v typu s atributy.  
+- Řetězec, který určuje název vlastnosti v typu s atributy.  
   
--   Řetězec, který určuje název vlastnosti a s <xref:System.Type> pro typ, který definuje vlastnost s názvem. Tento formulář slouží k určení připojitelný člen jako vlastnost namescope XAML.  
+- Řetězec, který určuje název vlastnosti a s <xref:System.Type> pro typ, který definuje vlastnost s názvem. Tento formulář slouží k určení připojitelný člen jako vlastnost namescope XAML.  
   
  <xref:System.Windows.Markup.NameScopePropertyAttribute> Určuje vlastnost, která obsahuje hodnotu namescope XAML pro třídu s atributy. Vlastnost obor namescope XAML má odkazovat na objekt, který implementuje <xref:System.Windows.Markup.INameScope> a obsahuje skutečný obor namescope XAML, ukládání a její chování.  
   
@@ -219,9 +219,9 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:**  
   
--   Řetězec určující identifikátor oboru názvů XAML k začlenění.  
+- Řetězec určující identifikátor oboru názvů XAML k začlenění.  
   
--   Řetězec určující identifikátor oboru názvů XAML, který může začlenění obor názvů XAML z předchozí argument.  
+- Řetězec určující identifikátor oboru názvů XAML, který může začlenění obor názvů XAML z předchozí argument.  
   
  <xref:System.Windows.Markup.XmlnsCompatibleWithAttribute> Určuje, že obor názvů XAML může subsumed pomocí jiného oboru názvů XAML. Obvykle je označeno subsuming oboru názvů XAML v dříve definované <xref:System.Windows.Markup.XmlnsDefinitionAttribute>. Tento postup lze použít pro správu verzí slovník jazyka XAML v knihovně a aby byl kompatibilní s dříve definované značky proti dříve označené verzí slovníku.  
   
@@ -230,40 +230,40 @@ Toto téma popisuje běžné atributy modulu runtime (CLR) jazyka, které jsou d
   
  **Argumenty:**  
   
--   Řetězec určující identifikátor oboru názvů XAML k definování.  
+- Řetězec určující identifikátor oboru názvů XAML k definování.  
   
--   Řetězec, který označuje obor názvů CLR. Obor názvů CLR by měl definovat veřejné typy v sestavení a alespoň jeden obor názvů typů CLR by měla být určený pro použití XAML.  
+- Řetězec, který označuje obor názvů CLR. Obor názvů CLR by měl definovat veřejné typy v sestavení a alespoň jeden obor názvů typů CLR by měla být určený pro použití XAML.  
   
  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> Určuje mapování na základě za sestavení mezi obor názvů XAML a obor názvů CLR, který se pak použije pro rozlišení typ v kontext schématu XAML a XAML objektu zapisovače.  
   
  Více než jeden <xref:System.Windows.Markup.XmlnsDefinitionAttribute> lze použít k sestavení. To může být provedeno pro jakoukoli kombinaci následujících důvodů:  
   
--   Návrh knihovna obsahuje více oborů názvů CLR pro logické uspořádání přístup přes rozhraní API za běhu; však chcete, aby všechny typy v těchto oborů názvů má být použitelná pro XAML pomocí odkazu na stejný obor názvů XAML. V takovém případě můžete použít několik <xref:System.Windows.Markup.XmlnsDefinitionAttribute> atributy, pomocí stejných <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota ale jiným <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> hodnoty. To je obzvláště užitečné, pokud definujete mapování pro obor názvů XAML, který rozhraní framework vaší aplikace si klade za cíl jako výchozí obor názvů XAML v běžné použití.  
+- Návrh knihovna obsahuje více oborů názvů CLR pro logické uspořádání přístup přes rozhraní API za běhu; však chcete, aby všechny typy v těchto oborů názvů má být použitelná pro XAML pomocí odkazu na stejný obor názvů XAML. V takovém případě můžete použít několik <xref:System.Windows.Markup.XmlnsDefinitionAttribute> atributy, pomocí stejných <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota ale jiným <xref:System.Windows.Markup.XmlnsDefinitionAttribute.ClrNamespace%2A> hodnoty. To je obzvláště užitečné, pokud definujete mapování pro obor názvů XAML, který rozhraní framework vaší aplikace si klade za cíl jako výchozí obor názvů XAML v běžné použití.  
   
--   Návrh knihovna obsahuje více oborů názvů CLR a chcete rozhodnout vědomě a záměrně rozdělení oboru názvů XAML mezi použití typů v těchto oborů názvů CLR.  
+- Návrh knihovna obsahuje více oborů názvů CLR a chcete rozhodnout vědomě a záměrně rozdělení oboru názvů XAML mezi použití typů v těchto oborů názvů CLR.  
   
--   Můžete definovat obor názvů CLR v sestavení a chcete, aby byl přístupný prostřednictvím více než jeden obor názvů XAML. Tento scénář nastane, pokud podporujete více vocabularies pomocí stejného základu kódu.  
+- Můžete definovat obor názvů CLR v sestavení a chcete, aby byl přístupný prostřednictvím více než jeden obor názvů XAML. Tento scénář nastane, pokud podporujete více vocabularies pomocí stejného základu kódu.  
   
--   Podpora jazyka XAML definujete v jedné nebo více oborů názvů CLR. Pro ty <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota by měla být `http://schemas.microsoft.com/winfx/2006/xaml`.  
+- Podpora jazyka XAML definujete v jedné nebo více oborů názvů CLR. Pro ty <xref:System.Windows.Markup.XmlnsDefinitionAttribute.XmlNamespace%2A> hodnota by měla být `http://schemas.microsoft.com/winfx/2006/xaml`.  
   
 ### <a name="xmlnsprefixattribute"></a>XmlnsPrefixAttribute  
  **Referenční dokumentace:**  <xref:System.Windows.Markup.XmlnsPrefixAttribute>  
   
  **Argumenty:**  
   
--   Řetězec určující identifikátor oboru názvů XAML.  
+- Řetězec určující identifikátor oboru názvů XAML.  
   
--   Řetězec, který specifikuje doporučenou předponu.  
+- Řetězec, který specifikuje doporučenou předponu.  
   
  <xref:System.Windows.Markup.XmlnsDefinitionAttribute> Určuje doporučené předponu pro obor názvů XAML. Předpona, která je užitečná při vytváření elementů a atributů v souboru XAML, který je serializováno modulem rozhraní .NET Framework XAML Services <xref:System.Xaml.XamlXmlWriter>, nebo když knihovnu implementace XAML komunikuje s prostředím návrhu, který má XAML funkce úprav.  
   
  Více než jeden <xref:System.Windows.Markup.XmlnsPrefixAttribute> lze použít k sestavení. To může být provedeno pro jakoukoli kombinaci následujících důvodů:  
   
--   Vaše sestavení definuje typy pro více než jeden obor názvů XAML. V tomto případě byste měli definovat hodnoty jinou předponu pro každý obor názvů XAML.  
+- Vaše sestavení definuje typy pro více než jeden obor názvů XAML. V tomto případě byste měli definovat hodnoty jinou předponu pro každý obor názvů XAML.  
   
--   Podporujete více vocabularies a použít odlišné předpony pro každý slovník a obor názvů XAML.  
+- Podporujete více vocabularies a použít odlišné předpony pro každý slovník a obor názvů XAML.  
   
--   Definujte podpora jazyka XAML v sestavení a nechte <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pro `http://schemas.microsoft.com/winfx/2006/xaml`. V takovém případě je obvykle by měly podporovat předponu `x`.  
+- Definujte podpora jazyka XAML v sestavení a nechte <xref:System.Windows.Markup.XmlnsDefinitionAttribute> pro `http://schemas.microsoft.com/winfx/2006/xaml`. V takovém případě je obvykle by měly podporovat předponu `x`.  
   
 > [!NOTE]
 >  Rozhraní .NET framework XAML Services také definuje atributu souvisejícím s XAML <xref:System.Windows.Markup.RootNamespaceAttribute>. Tento atribut je atribut úrovně sestavení pro podpora projektových systémů a není relevantní pro vlastní typy XAML.  

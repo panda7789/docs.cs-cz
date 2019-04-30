@@ -11,11 +11,11 @@ ms.assetid: 10d202bc-19e1-4b5c-bbf1-9a977322a9ca
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b44ff3f460d2f33903f7f083cd1bb59c7bf83e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946962"
 ---
 # <a name="order-preservation-in-plinq"></a>Zachování pořadí v PLINQ
 V PLINQ je cílem pro zajištění maximálního výkonu při zachování správnosti. Dotaz by měl, poběží stejně rychle, ale stále správné výsledky. V některých případech vyžaduje správnosti pořadí zdrojové sekvence zachování; řazení však může být výpočetně náročné. Ve výchozím nastavení, proto PLINQ Nezachovávat hodnotu pořadí zdrojové sekvence. V tomto ohledu PLINQ podobá [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], ale na rozdíl od LINQ to Objects, která zachovávají řazení.  
@@ -44,25 +44,25 @@ V PLINQ je cílem pro zajištění maximálního výkonu při zachování správ
 ## <a name="query-operators-and-ordering"></a>Operátory pro dotazování a řazení  
  Následující operátory dotazu zavést zachování pořadí na všechny následné operace v dotazu nebo dokud <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> se volá:  
   
--   <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  
+- <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.OrderByDescending%2A>  
+- <xref:System.Linq.ParallelEnumerable.OrderByDescending%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.ThenBy%2A>  
+- <xref:System.Linq.ParallelEnumerable.ThenBy%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>  
+- <xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>  
   
  Následující operátory dotazu PLINQ může v některých případech vyžadovat seřazených zdrojových posloupností pro správné výsledky:  
   
--   <xref:System.Linq.ParallelEnumerable.Reverse%2A>  
+- <xref:System.Linq.ParallelEnumerable.Reverse%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>  
+- <xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.TakeWhile%2A>  
+- <xref:System.Linq.ParallelEnumerable.TakeWhile%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.SkipWhile%2A>  
+- <xref:System.Linq.ParallelEnumerable.SkipWhile%2A>  
   
--   <xref:System.Linq.ParallelEnumerable.Zip%2A>  
+- <xref:System.Linq.ParallelEnumerable.Zip%2A>  
   
  Některé operátory dotazu PLINQ chovat jinak, v závislosti na tom, jestli je jejich zdrojové sekvence uspořádaná nebo ne. V následující tabulce jsou uvedeny tyto operátory.  
   

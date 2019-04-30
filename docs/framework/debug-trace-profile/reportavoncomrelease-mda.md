@@ -14,11 +14,11 @@ ms.assetid: a2b86b63-08b2-4943-b344-3c2cf46ccd31
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f0ecb05dba70dc9c8aba7f04928fd0ab49c900c8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125577"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873948"
 ---
 # <a name="reportavoncomrelease-mda"></a>reportAvOnComRelease – pomocník spravovaného ladění (MDA)
 `reportAvOnComRelease` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud jsou výjimky vyvolány z důvodu chyby při provádění COM interop a používá počítání uživatelských referencí <xref:System.Runtime.InteropServices.Marshal.Release%2A> nebo <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> metoda v kombinaci s nezpracovaná volání COM.  

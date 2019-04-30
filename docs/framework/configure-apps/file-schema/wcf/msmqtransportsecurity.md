@@ -3,11 +3,11 @@ title: <msmqTransportSecurity>
 ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
 ms.openlocfilehash: fece74e76f879eff51f154eab8c8edea2c27119e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772395"
 ---
 # <a name="msmqtransportsecurity"></a>\<msmqTransportSecurity>
 Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.  

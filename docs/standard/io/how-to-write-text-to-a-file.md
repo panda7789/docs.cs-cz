@@ -14,20 +14,20 @@ ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 93d87dc98284fad6b8159f681f7d99ce460d60d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54524192"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947079"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Postupy: Zápis textu do souboru
 Toto téma ukazuje různé způsoby zápisu textu do souborů pro aplikace .NET. 
 
 Následující třídy a metody se obvykle používají k zápisu textu do souboru:  
   
--   <xref:System.IO.StreamWriter> obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> a <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).  
+- <xref:System.IO.StreamWriter> obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> a <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).  
   
--   <xref:System.IO.File> poskytuje statické metody pro zápis textu do souboru, například <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru, například <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>, a <xref:System.IO.File.AppendText%2A>.  
+- <xref:System.IO.File> poskytuje statické metody pro zápis textu do souboru, například <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru, například <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>, a <xref:System.IO.File.AppendText%2A>.  
   
 - <xref:System.IO.Path> slouží k řetězci, které obsahují informace o cestě souboru nebo adresáře. Obsahuje <xref:System.IO.Path.Combine%2A> metoda a, v .NET Core 2.1 a později, <xref:System.IO.Path.Join%2A> a <xref:System.IO.Path.TryJoin%2A> metody, které umožňují zřetězení řetězců k sestavení cesty k souboru nebo adresáře.
 

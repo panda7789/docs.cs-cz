@@ -11,16 +11,16 @@ ms.assetid: 7b964ebd-7a4f-4d28-8194-7841f9e4c702
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ba3690b6642601fd7d777e3ae1d1e34684e3b1dd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947049"
 ---
 # <a name="pipe-operations-in-net"></a>Operace s pojmenovanými kanály v rozhraní .NET
 Kanály poskytují způsob meziprocesová komunikace. Existují dva druhy kanály:  
   
--   Anonymní kanály.  
+- Anonymní kanály.  
   
      Anonymní kanály poskytují meziprocesovou komunikaci na místním počítači. Anonymní kanály menší nákladovou režii než pojmenované kanály, ale nabízí omezené služby. Anonymní kanály jsou jednosměrná a nelze použít přes síť. Podporují pouze jednu instanci serveru. Anonymní kanály jsou užitečné pro komunikaci mezi vlákny, nebo mezi nadřazenými a podřízenými procesy, kde popisovače kanálu lze snadno předat podřízený proces při jeho vytvoření.  
   
@@ -28,7 +28,7 @@ Kanály poskytují způsob meziprocesová komunikace. Existují dva druhy kanál
   
      Zobrazit [jak: Místní meziprocesová komunikace pomocí anonymních kanálů](../../../docs/standard/io/how-to-use-anonymous-pipes-for-local-interprocess-communication.md).  
   
--   Pojmenované kanály.  
+- Pojmenované kanály.  
   
      Pojmenované kanály poskytují meziprocesovou komunikaci mezi serverem kanálu a jedním nebo několika klienty kanálu. Pojmenované kanály mohou být jednosměrné nebo obousměrné. Tyto mohly podporovat komunikaci založenou na zprávách a povolit víc klientů současně připojit k procesu serveru pomocí kanálu se stejným názvem. Pojmenované kanály podporují také zosobnění, což umožňuje připojujícím se procesům použít vlastní oprávnění na vzdálených serverech.  
   

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
 author: BrucePerlerMS
 ms.openlocfilehash: 0129c63fe17b63889a77ea1a56c0d7e657def859
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59223974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791726"
 ---
 # <a name="customcookiehandler"></a>\<customCookieHandler>
 Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Vlastní". Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.  
@@ -41,7 +41,7 @@ Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element může 
 | – typ|Určuje, která je odvozena z vlastního typu <xref:System.IdentityModel.Services.CookieHandler> třídy. Další informace o tom, jak zadat `type` atributu naleznete v tématu [odkazů na vlastní typy](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádný  
+ Žádné  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

@@ -21,28 +21,28 @@ ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 9471d98bad9b0fbf7931f80b1e41a5e9169b2896
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58466150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947148"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace, modul common language runtime používá stejný pojem identitu uživatele, který rozpoznává operační systém, který je identitu přidruženou k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identity ověřeného uživatele, ale zosobnění může způsobit identity aktuálního uživatele, aby dynamicky měnit.  
   
  Přístup k izolované úložiště je také omezen podle identita spojená s doménou vaší aplikace a sestavení, nebo pouze k sestavení. Modul runtime získá tyto identity následujícími způsoby:  
   
--   Identitu domény představuje doklad o aplikaci, které se v případě webové aplikace může být úplnou adresu URL. Pro prostředí hostovaná kód identitu domény může zakládat na cestu k adresáři aplikace. Pokud spuštění spustitelného souboru z cesty C:\Office\MyApp.exe identitu domény by třeba C:\Office\MyApp.exe.  
+- Identitu domény představuje doklad o aplikaci, které se v případě webové aplikace může být úplnou adresu URL. Pro prostředí hostovaná kód identitu domény může zakládat na cestu k adresáři aplikace. Pokud spuštění spustitelného souboru z cesty C:\Office\MyApp.exe identitu domény by třeba C:\Office\MyApp.exe.  
   
--   Identita sestavení je legitimaci sestavení. To může pocházet z kryptografických digitální podpis, který může být sestavení [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md), sestavení nebo jeho adresa URL identity vydavatele softwaru. Pokud sestavení se silným názvem a identita vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pocházejí z Internetu a bez znaménka, použije se adresa URL identity. Další informace o sestavení a silných názvů najdete v tématu [programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md).  
+- Identita sestavení je legitimaci sestavení. To může pocházet z kryptografických digitální podpis, který může být sestavení [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md), sestavení nebo jeho adresa URL identity vydavatele softwaru. Pokud sestavení se silným názvem a identita vydavatele softwaru, použije se identita vydavatele softwaru. Pokud sestavení pocházejí z Internetu a bez znaménka, použije se adresa URL identity. Další informace o sestavení a silných názvů najdete v tématu [programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md).  
   
--   Roamingové úložiště přesunout jako uživatel, který má cestovní profil uživatele. Soubory jsou zapsány do síťovému adresáři a se stáhnou na libovolném počítači se uživatel přihlásí. Další informace o cestovní profily uživatelů najdete v tématu <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>.  
+- Roamingové úložiště přesunout jako uživatel, který má cestovní profil uživatele. Soubory jsou zapsány do síťovému adresáři a se stáhnou na libovolném počítači se uživatel přihlásí. Další informace o cestovní profily uživatelů najdete v tématu <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>.  
   
  Díky kombinaci koncepty uživatele, domény a identitu sestavení, lze izolovat izolované úložiště dat následujícími způsoby, z nichž každá má svou vlastní scénáře použití:  
   
--   [Izolace podle uživatele a sestavení](#UserAssembly)  
+- [Izolace podle uživatele a sestavení](#UserAssembly)  
   
--   [Izolace podle uživatele, domény a sestavení](#UserDomainAssembly)  
+- [Izolace podle uživatele, domény a sestavení](#UserDomainAssembly)  
   
  Obě tyto izolace zkombinovat s cestovní profil uživatele. Další informace najdete v části [izolované úložiště a Roaming](#Roaming).  
   

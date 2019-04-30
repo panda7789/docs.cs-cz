@@ -8,20 +8,20 @@ ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: caacee591c4df8389cea241916618f50da56b22b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949159"
 ---
 # <a name="thread-pool-etw-events"></a>Události Trasování událostí pro Windows fondu vláken
 <a name="top"></a> Tyto události shromažďovat informace o pracovních procesů a vláken vstupně-výstupních operací.  
   
  Existují dvě skupiny události fondu vláken:  
   
--   [Události fondu vláken pracovního procesu](#worker), které poskytují informace o tom, jak aplikace používá fondu vláken a dopad úloh na řízení souběžnosti.  
+- [Události fondu vláken pracovního procesu](#worker), které poskytují informace o tom, jak aplikace používá fondu vláken a dopad úloh na řízení souběžnosti.  
   
--   [Události fondu vláken vstupně-výstupních operací](#io), které poskytují informace o vstupně-výstupních operací podprocesů, které jsou vytvořeny, vyřazení, unretired nebo ukončen ve fondu vláken.  
+- [Události fondu vláken vstupně-výstupních operací](#io), které poskytují informace o vstupně-výstupních operací podprocesů, které jsou vytvořeny, vyřazení, unretired nebo ukončen ve fondu vláken.  
   
 <a name="worker"></a>   
 ## <a name="worker-thread-pool-events"></a>Události fondu vláken pracovního procesu  
@@ -148,7 +148,7 @@ ms.locfileid: "59119129"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt64|Počet vláken vstupně-výstupních operací, včetně nově vytvořeného vlákna.|  
+|Count|win:UInt64|Počet vláken vstupně-výstupních operací, včetně nově vytvořeného vlákna.|  
 |NumRetired|win:UInt64|Počet vyřazených pracovních vláken.|  
 |ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
@@ -169,7 +169,7 @@ ms.locfileid: "59119129"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
+|Count|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
 |NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
 |ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
@@ -190,7 +190,7 @@ ms.locfileid: "59119129"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt64|Počet vstupně-výstupní operace vláken ve fondu vláken, včetně ten.|  
+|Count|win:UInt64|Počet vstupně-výstupní operace vláken ve fondu vláken, včetně ten.|  
 |NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
 |ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
@@ -211,7 +211,7 @@ ms.locfileid: "59119129"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|Počet|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
+|Count|win:UInt64|Počet vláken vstupně-výstupních operací zbývající ve fondu vláken.|  
 |NumRetired|win:UInt64|Počet vyřazených vláken vstupně-výstupních operací.|  
 |ClrInstanceID|Windows: UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   

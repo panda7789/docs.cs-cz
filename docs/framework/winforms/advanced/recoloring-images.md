@@ -7,11 +7,11 @@ helpviewer_keywords:
 - examples [Windows Forms], recoloring images
 ms.assetid: f28c54fd-9c80-4f6f-b242-55f7ffcda84b
 ms.openlocfilehash: b6ec90f5102b562a252218be84aa7b3141e05b83
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948067"
 ---
 # <a name="recoloring-images"></a>Přebarvení obrázků
 Přebarvení je proces přizpůsobení barev obrázku. Některé příklady přebarvení se mění jednu barvu na jiný, úprava intenzita barvy vzhledem k jiné barvy, úprava jas a kontrast mezi všechny barvy a převodu barev odstíny šedé.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Uid attribute [XAML Services]
 ms.assetid: 81defade-483b-4a89-b76d-9b25bba34010
 ms.openlocfilehash: c8f0580c987b87193b5b6a38559043e50fc7cb89
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938837"
 ---
 # <a name="xuid-directive"></a>x:Uid – direktiva
 Poskytuje jedinečný identifikátor pro elementy značek. V mnoha scénářích používá tento jedinečný identifikátor nástroje a procesy lokalizace XAML.  

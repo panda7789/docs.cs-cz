@@ -1,17 +1,17 @@
 ---
-title: Silniční moderních aplikací založených na kontejnerech
+title: Cesta k moderním aplikacím založeným na kontejnerech
 description: Vysvětlení, že Docker, kontejnery a architekturu Mikroslužeb nejsou poskytovat řešení univerzální velikosti. Tady najdete některé odkazy, které vám pomohou určit.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 11/23/2018
 ms.openlocfilehash: 94f7bc27409048ec80a4e485cea4a16d30e7c1e2
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58462679"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922613"
 ---
-# <a name="road-to-modern-applications-based-on-containers"></a>Silniční moderních aplikací založených na kontejnerech
+# <a name="road-to-modern-applications-based-on-containers"></a>Cesta k moderním aplikacím založeným na kontejnerech
 
 Tato kniha čtete nejspíš vzhledem k tomu, že máte v plánu vývoj nové aplikace nebo posuzovaných dopad pomocí Docker, kontejnery a nové přístupy, jako jsou Mikroslužby ve vaší společnosti.
 

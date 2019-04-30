@@ -3,32 +3,32 @@ title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
 ms.openlocfilehash: e662d9b84bbc43178946fdadc8ddbec6f6b6e042
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771098"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787501"
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
 Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel tokenů SAML. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:
 
--   Pokud máte úložiště přihlašovacích údajů, které tyto poskytovatele tokenů nemůže pracovat s.
+- Pokud máte úložiště přihlašovacích údajů, které tyto poskytovatele tokenů nemůže pracovat s.
 
--   Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel zadá podrobnosti, které chcete při Architektura klienta WCF používá přihlašovací údaje.
+- Pokud chcete poskytnout vlastní vlastní mechanismus pro transformaci přihlašovacích údajů z bodu, když uživatel zadá podrobnosti, které chcete při Architektura klienta WCF používá přihlašovací údaje.
 
--   Pokud vytváříte vlastní token.
+- Pokud vytváříte vlastní token.
 
  Tento příklad ukazuje, jak vytvořit vlastního zprostředkovatele tokenů, který umožňuje získat z mimo Architektura klienta WCF pro použití tokenu SAML.
 
  Souhrnně řečeno, tento příklad znázorňuje následující:
 
--   Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.
+- Jak klienta lze nakonfigurovat pomocí vlastního zprostředkovatele tokenů.
 
--   Jak lze předat SAML token vlastních klientských přihlašovacích údajů.
+- Jak lze předat SAML token vlastních klientských přihlašovacích údajů.
 
--   Jak se do rozhraní klienta WCF zadává tokenu SAML.
+- Jak se do rozhraní klienta WCF zadává tokenu SAML.
 
--   Jak ověření serveru klientem pomocí certifikátu X.509 serveru.
+- Jak ověření serveru klientem pomocí certifikátu X.509 serveru.
 
  Služba poskytuje dva koncové body služby pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Každý koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsFederationHttpBinding`, který používá zabezpečení zpráv. Jeden koncový bod očekává, že klient k ověření pomocí tokenu SAML, který používá symetrický vyzkoušený klíč, zatímco druhá očekává, že klient k ověření pomocí tokenu SAML, který používá asymetrický klíč důkazu. Služba také nakonfiguruje pomocí certifikátu služby `serviceCredentials` chování. `serviceCredentials` Chování umožňuje nakonfigurovat certifikát služby. Certifikát služby se používá pro klienta k ověření služby a zajistit ochranu zprávy. Následující konfigurace odkazuje na "localhost" certifikát nainstalovat během instalace ukázka, jak je popsáno v pokynech pro instalační program na konci tohoto tématu. `serviceCredentials` Chování lze také nakonfigurovat certifikáty, které jsou důvěryhodní k podepisování tokenů SAML. Následující konfigurace odkazuje na "Alice" certifikát nainstalován během ukázky.
 
@@ -303,7 +303,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel to
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.
 
--   Vytváří se certifikát serveru:
+- Vytváří se certifikát serveru:
 
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota v tomto souboru služby batch je localhost.
 
@@ -319,7 +319,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel to
     makecert.exe -sr LocalMachine -ss My -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 
@@ -327,7 +327,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel to
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r LocalMachine -s TrustedPeople
     ```
 
--   Vytvoření certifikátu vystavitele.
+- Vytvoření certifikátu vystavitele.
 
      Následující řádky z dávkový soubor Setup.bat vytvořit certifikát vystavitele, který se má použít. `%USER_NAME%` Proměnná Určuje název vystavitele. Změňte tuto proměnnou k určení vlastní název vystavitele. Výchozí hodnota v tomto souboru služby batch je Alice.
 
@@ -343,7 +343,7 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel to
     makecert.exe -sr CurrentUser -ss My -a sha1 -n CN=%USER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu vystavitele do důvěryhodného úložiště certifikátů serveru.
+- Instalace certifikátu vystavitele do důvěryhodného úložiště certifikátů serveru.
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikát vydaný společností Microsoft – v tomto kroku naplnění úložiště certifikátů serveru s certifikátem vystavitele se nevyžaduje.
 

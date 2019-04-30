@@ -13,11 +13,11 @@ ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2159199fc12ef83a6bf4a44841d71799e0dad4dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59166176"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868963"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -28,17 +28,17 @@ ms.locfileid: "59166176"
   
  Spravovaný kód nabízí několik způsobů, jak omezit přístup k metodě:  
   
--   Omezte její obor usnadnění přístupu pro třídy, sestavení nebo odvozené třídy, pokud se může považovat za důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třídy, které vyplývají z, i když v některých případech sdílejí identity nadřazené třídy. Zejména nelze odvodit vztah důvěryhodnosti z klíčového slova **chráněné**, což není nutně použít v kontextu zabezpečení.  
+- Omezte její obor usnadnění přístupu pro třídy, sestavení nebo odvozené třídy, pokud se může považovat za důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třídy, které vyplývají z, i když v některých případech sdílejí identity nadřazené třídy. Zejména nelze odvodit vztah důvěryhodnosti z klíčového slova **chráněné**, což není nutně použít v kontextu zabezpečení.  
   
--   Omezit přístup k metodě volajícím zadané identity – v podstatě žádné konkrétní [důkazy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (silný název, vydavatele, zóny a podobně) vyberete.  
+- Omezit přístup k metodě volajícím zadané identity – v podstatě žádné konkrétní [důkazy](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (silný název, vydavatele, zóny a podobně) vyberete.  
   
--   Omezte přístup metoda volajícím mají všechna oprávnění, které jste vybrali.  
+- Omezte přístup metoda volajícím mají všechna oprávnění, které jste vybrali.  
   
  Deklarativní zabezpečení obdobně umožňuje řídit dědičnosti tříd. Můžete použít **InheritanceDemand** můžete provádět následující:  
   
--   Vyžadovat odvozené třídy zadané identity nebo oprávnění.  
+- Vyžadovat odvozené třídy zadané identity nebo oprávnění.  
   
--   Vyžadovat odvozené třídy, které přepíší specifických metod mít zadané identity nebo oprávnění.  
+- Vyžadovat odvozené třídy, které přepíší specifických metod mít zadané identity nebo oprávnění.  
   
  Následující příklad ukazuje, jak můžete ochránit veřejnou třídu pro omezený přístup tím, že vyžaduje, aby byly podepsány volající konkrétní silným názvem. V tomto příkladu <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute> s **vyžádání** pro silný název. Založený na úlohách informace o tom, jak podepsat sestavení silným názvem naleznete v tématu [vytvoření a použití sestavení](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md).  
   

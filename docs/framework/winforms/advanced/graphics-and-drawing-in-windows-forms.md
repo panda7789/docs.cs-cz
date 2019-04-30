@@ -8,11 +8,11 @@ helpviewer_keywords:
 - drawing [Windows Forms]
 ms.assetid: 362532c5-1a06-4257-bdc8-723461009ede
 ms.openlocfilehash: 08f87436ade62bb54295b012a1c24dc177ea9667
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57705418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938174"
 ---
 # <a name="graphics-and-drawing-in-windows-forms"></a>Grafika a kreslení v rozhraní Windows Forms
 Modul common language runtime používá pokročilé provádění Windows Graphics Device Interface ([!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)]) volá [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. S [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete vytvořit grafiky, kreslení textu a manipulaci s grafické obrázky jako objekty. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] je určená k výkonu a snadnost použití. Můžete použít [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] k vykreslení grafické obrázky ve Windows Forms a ovládacích prvků. I když [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] přímo na webové formuláře, můžete zobrazit grafické obrázky prostřednictvím ovládacího prvku obrázek Webový Server.  

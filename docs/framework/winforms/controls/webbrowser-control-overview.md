@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Web pages [Windows Forms], displaying in applications
 ms.assetid: 6e3e1cc2-9c48-4136-9659-e99e4e60b7e9
 ms.openlocfilehash: c75d0b348a2f3dd678f2bfb235bce2e4e227c4b6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792129"
 ---
 # <a name="webbrowser-control-overview"></a>WebBrowser – přehled ovládacího prvku
 <xref:System.Windows.Forms.WebBrowser> Řízení poskytuje spravované obálky ovládacího prvku WebBrowser ActiveX. Spravovaná obálka umožňuje zobrazení webové stránky v klientských aplikací Windows Forms. Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku na duplicitní funkce procházení webové Internet Explorer v aplikaci nebo je můžete zakázat výchozí funkce Internet Exploreru a pomocí ovládacího prvku jako jednoduchý prohlížeče dokumentu HTML. Můžete také použít ovládací prvek do formuláře přidat prvky DHTML podle uživatelského rozhraní a skrýt skutečnost, že jsou hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku. Tento přístup umožňuje bez problémů kombinovat webové ovládací prvky pomocí ovládacích prvků Windows Forms v jedné aplikaci.  
@@ -24,7 +24,7 @@ ms.locfileid: "59109432"
   
  `Document` Vlastnost také umožňuje volat metody implementované v skriptovací kód z kódu klienta aplikace webové stránky. Chcete-li přístup ke kódu aplikace klienta z kódu skriptu, nastavte `ObjectForScripting` vlastnost. Objekt, který zadáte, je přístupný ve vašem skriptovacím kódu jako `window.external` objektu.  
   
-|Name|Popis|  
+|Název|Popis|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.WebBrowser.Document%2A> Vlastnost|Získá objekt, který poskytuje spravovaný přístup k modelu objektu dokumentu (DOM) HTML aktuální webové stránky.|  
 |<xref:System.Windows.Forms.WebBrowser.DocumentCompleted> Události|Nastane, když se dokončí načtení webové stránky.|  

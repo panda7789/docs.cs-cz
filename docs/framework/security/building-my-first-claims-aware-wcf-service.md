@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
 ms.openlocfilehash: 13a17473388582e5fa72cd8d335b6a05204ea509
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792879"
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Sestavení první služby WCF pracující s deklaracemi
 ## <a name="applies-to"></a>Platí pro  
   
--   Windows Identity Foundation (WIF)  
+- Windows Identity Foundation (WIF)  
   
--   Windows Communication Foundation (WCF)  
+- Windows Communication Foundation (WCF)  
   
 ## <a name="overview"></a>Přehled  
  Toto téma popisuje, jak pomocí technologie WIF vytvářet webové služby WCF pracující s deklaracemi. Scénář webových služeb pracujících s deklaracemi má obvykle tři účastníky, kterými jsou samotná webová služba, koncový uživatel a služba tokenů zabezpečení (STS). Tento scénář zachycuje následující obrázek:  
@@ -32,9 +32,9 @@ ms.locfileid: "59306609"
   
  STS je služba, která vystavuje tokeny po úspěšném ověření. Společnost Microsoft nabízí dvě služby STS, které vyhovují standardům odvětví:  
   
--   [Active Directory Federation Services (AD FS) 2.0](https://go.microsoft.com/fwlink/?LinkID=247516)
+- [Active Directory Federation Services (AD FS) 2.0](https://go.microsoft.com/fwlink/?LinkID=247516)
   
--   [Windows Azure Access Control Service (ACS)](https://go.microsoft.com/fwlink/?LinkID=247517)
+- [Windows Azure Access Control Service (ACS)](https://go.microsoft.com/fwlink/?LinkID=247517)
   
  Služba AD FS 2.0 je součástí systému Windows Server R2 a může sloužit jako služba STS pro místní scénáře. Azure Active Directory Access Control (označované také jako Access Control Service nebo ACS) je Cloudová služba, nabízená v rámci Microsoft Azure. Při sestavování aplikací pracujících s deklaracemi můžete pro testovací nebo vzdělávací účely použít také jinou službu STS. Například můžete použít místní službu STS, která je součástí [Identity and Access Tool for Visual Studio](https://go.microsoft.com/fwlink/?LinkID=245849) což je volně k dispozici online.  
   

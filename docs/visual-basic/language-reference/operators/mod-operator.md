@@ -13,11 +13,11 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
 ms.openlocfilehash: b127c50f3319d4fe7c4890fc3bffb295baa37466
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936666"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí pouze zbytek.  
@@ -70,9 +70,9 @@ End Module
   
  Související operátory patří:  
   
--   [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí podíl dělení celého čísla. Například výraz `14 \ 4` vyhodnocen jako 3.  
+- [\ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/integer-division-operator.md) vrátí podíl dělení celého čísla. Například výraz `14 \ 4` vyhodnocen jako 3.  
   
--   [/ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) vrátí úplné podíl, včetně zbývající jako číslo s plovoucí desetinnou čárkou. Například výraz `14 / 4` vyhodnocen jako 3.5.  
+- [/ – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) vrátí úplné podíl, včetně zbývající jako číslo s plovoucí desetinnou čárkou. Například výraz `14 / 4` vyhodnocen jako 3.5.  
   
 ## <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
  Pokud `number2` vyhodnocen jako nula, chování `Mod` operátor závisí na datový typ operandu. Vyvolá celočíselného dělení <xref:System.DivideByZeroException> výjimky. Vrátí hodnotu s plovoucí desetinnou čárkou dělení <xref:System.Double.NaN>.  

@@ -3,11 +3,11 @@ title: <address> není platný soubor Vzdálená adresa
 ms.date: 07/20/2015
 ms.assetid: 2c312242-6c42-4754-a1f5-7e801a542604
 ms.openlocfilehash: 65fded4d7f9316cda8724b262216de1ad01f9ee3
-ms.sourcegitcommit: 5c1abeec15fbddcc7dbaa729fabc1f1f29f12045
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58039590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940644"
 ---
 # <a name="address-is-not-a-valid-remote-file-address"></a>\<adresa > není platný soubor Vzdálená adresa
 \<adresa > není platný soubor Vzdálená adresa. Platná adresa musí obsahovat protokol, cestu a název souboru.  
@@ -16,7 +16,7 @@ ms.locfileid: "58039590"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zkontrolujte adresu, kterou jste zadali, a určit, kde se nezdaří a zadejte potřebné informace.  
+- Zkontrolujte adresu, kterou jste zadali, a určit, kde se nezdaří a zadejte potřebné informace.  
   
 ## <a name="see-also"></a>Viz také:
 

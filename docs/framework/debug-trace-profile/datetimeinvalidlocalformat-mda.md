@@ -15,11 +15,11 @@ ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 380334dbe9b91ea369de6cbe58686a9a74254c2c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874663"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat – pomocník spravovaného ladění (MDA)
 `dateTimeInvalidLocalFormat` MDA aktivováno, když <xref:System.DateTime> instanci, která je uloženo jako koordinovaný světový čas (UTC), je naformátována pomocí formátu, který je určen pro použití pouze pro místní <xref:System.DateTime> instancí. Toto MDA aktivováno pro tento parametr zadán, nebo výchozí <xref:System.DateTime> instancí.  

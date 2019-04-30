@@ -8,20 +8,20 @@ ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 09b2848619256a255cc27f0268d46e5e6db8cbe4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949302"
 ---
 # <a name="interop-etw-events"></a>Události Trasování událostí pro Windows interoperability
 <a name="top"></a> Události interoperability zaznamenat informace o Microsoft intermediate language (MSIL) zástupné procedury generování a ukládání do mezipaměti.  
   
  Tato kategorie se skládá z následujících událostí:  
   
--   [ILStubGenerated události](#ilstubgenerated_event)  
+- [ILStubGenerated události](#ilstubgenerated_event)  
   
--   [ILStubCacheHit Event](#ilstubcachehit_event)  
+- [ILStubCacheHit Event](#ilstubcachehit_event)  
   
 <a name="ilstubgenerated_event"></a>   
 ## <a name="ilstubgenerated-event"></a>ILStubGenerated události  

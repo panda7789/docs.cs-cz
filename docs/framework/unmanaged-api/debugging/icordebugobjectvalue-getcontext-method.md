@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4c741e58eb0389211fc6d8784d2c5bc66efbb773
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206054"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942334"
 ---
 # <a name="icordebugobjectvaluegetcontext-method"></a>ICorDebugObjectValue::GetContext – metoda
 `GetContext` v této verzi rozhraní .NET Framework není implementována.  

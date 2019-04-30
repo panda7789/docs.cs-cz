@@ -8,11 +8,11 @@ helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
 ms.openlocfilehash: 6bf683cdd0a03a5d1dbc452c28e7b33911464f09
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59297249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61782431"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
 
@@ -178,11 +178,11 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 Velký počet výjimek vyvolaných klienta WCF jsou způsobeny výjimku ve službě. Některé příklady jsou:
 
--   <xref:System.Net.Sockets.SocketException>: Stávající připojení vynuceně zavřel vzdálený hostitel.
+- <xref:System.Net.Sockets.SocketException>: Stávající připojení vynuceně zavřel vzdálený hostitel.
 
--   <xref:System.ServiceModel.CommunicationException>: Základní připojení bylo neočekávaně ukončeno.
+- <xref:System.ServiceModel.CommunicationException>: Základní připojení bylo neočekávaně ukončeno.
 
--   <xref:System.ServiceModel.CommunicationObjectAbortedException>: Připojení soketu bylo přerušeno. Může to být způsobeno chybou při zpracování zprávy, vypršení časového limitu příjmu, překročení vzdáleným hostitelem nebo problém prostředků základní sítě.
+- <xref:System.ServiceModel.CommunicationObjectAbortedException>: Připojení soketu bylo přerušeno. Může to být způsobeno chybou při zpracování zprávy, vypršení časového limitu příjmu, překročení vzdáleným hostitelem nebo problém prostředků základní sítě.
 
 Pokud dojde k tyto typy výjimek, je nejlepší způsob, jak problém vyřešit zapnout trasování na straně služby a zjistit, jaké výjimky došlo k chybě došlo. Další informace o trasování najdete v tématu [trasování](../../../docs/framework/wcf/diagnostics/tracing/index.md) a [pomocí trasování řešení potíží s aplikace](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 

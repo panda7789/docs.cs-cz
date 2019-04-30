@@ -17,24 +17,24 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
 ms.openlocfilehash: 3f3c7e96f1c372bb05aba9bef81192aec47b3cde
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54678288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870263"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat na interakci uživatele, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje potřebné k vytvoření vysoce výkonné aplikace s více vlákny, ale efektivně pomocí těchto nástrojů vyžaduje významné prostředí s více vlákny softwarového inženýrství. Pro vícevláknové aplikace s poměrně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje jednoduché řešení. Pro složitější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronního vzoru založeného na událostech.  
   
  Asynchronní vzor založený na událostech zpřístupňuje výhody vícevláknové aplikace při skrytí mnoho složitých problémů vyplývající vícevláknový návrhu. Použití třídy, která podporuje tento vzor vám umožní:  
   
--   Proveďte časově náročné úkoly, jako jsou soubory ke stažení a databázových operací, "v pozadí," bez přerušení vaší aplikace.  
+- Proveďte časově náročné úkoly, jako jsou soubory ke stažení a databázových operací, "v pozadí," bez přerušení vaší aplikace.  
   
--   Současně spusťte více operací příjem oznámení po dokončení každého.  
+- Současně spusťte více operací příjem oznámení po dokončení každého.  
   
--   Čekání na prostředky k dispozici bez zastavení ("předsazení") vaší aplikace.  
+- Čekání na prostředky k dispozici bez zastavení ("předsazení") vaší aplikace.  
   
--   Komunikovat s čekajících asynchronních operací s použitím známým modelem Delegáti a události. Další informace o použití delegátů a obslužné rutiny událostí, naleznete v tématu [události](../../../docs/standard/events/index.md).  
+- Komunikovat s čekajících asynchronních operací s použitím známým modelem Delegáti a události. Další informace o použití delegátů a obslužné rutiny událostí, naleznete v tématu [události](../../../docs/standard/events/index.md).  
   
  Třída, která podporuje asynchronní vzor založený na událostech bude mít jednu nebo více metod s názvem _MethodName_**asynchronní**. Tyto metody mohou zrcadlí synchronní verze, které provádět stejnou operaci i u aktuálního vlákna. Třídy mohou mít i _MethodName_**dokončeno** událostí a může obsahovat _MethodName_**AsyncCancel** (nebo jednoduše  **CancelAsync**) metody.  
   

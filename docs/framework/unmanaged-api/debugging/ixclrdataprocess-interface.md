@@ -1,5 +1,5 @@
 ---
-title: IXCLRDataProcess Interface
+title: IXCLRDataProcess – rozhraní
 ms.date: 01/16/2019
 api.name:
 - IXCLRDataProcess Interface
@@ -16,13 +16,13 @@ topic_type:
 author: cshung
 ms.author: andrewau
 ms.openlocfilehash: ff74a7acb5cc84c177f083c19402cd78977aeab5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54680371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775242"
 ---
-# <a name="ixclrdataprocess-interface"></a>IXCLRDataProcess Interface
+# <a name="ixclrdataprocess-interface"></a>IXCLRDataProcess – rozhraní
 
 Poskytuje metody pro dotazování na informace o procesu.
 
@@ -47,8 +47,8 @@ Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví n
 ## <a name="requirements"></a>Požadavky
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).   
-**Záhlaví:** Žádná  
-**Knihovna:** Žádná  
+**Záhlaví:** Žádné  
+**Knihovna:** Žádný  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

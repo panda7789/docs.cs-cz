@@ -13,11 +13,11 @@ ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 46b0add67fc6bc139ef02e09190670870749d4c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218300"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874773"
 ---
 # <a name="dangerousthreadingapi-mda"></a>dangerousThreadingAPI – pomocník spravovaného ladění (MDA)
 `dangerousThreadingAPI` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> metoda je volána ve vlákně než aktuální vlákno.  

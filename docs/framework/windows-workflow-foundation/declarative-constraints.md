@@ -3,11 +3,11 @@ title: Deklarativní omezení
 ms.date: 03/30/2017
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
 ms.openlocfilehash: e3ced8f6f88d698273ace5c8b74fe90b94fa9720
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57708143"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945818"
 ---
 # <a name="declarative-constraints"></a>Deklarativní omezení
 Deklarativní omezení poskytují výkonný způsob ověření aktivita a její vztahy s ostatními aktivitami. Omezení jsou konfigurovány pro aktivitu během procesu vytváření, ale je také možné zadat další omezení, tak hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  

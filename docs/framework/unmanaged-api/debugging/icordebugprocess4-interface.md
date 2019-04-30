@@ -1,5 +1,5 @@
 ---
-title: ICorDebugProcess4 Interface
+title: ICorDebugProcess4 – rozhraní
 ms.date: 02/07/2019
 api_name:
 - ICorDebugProcess4
@@ -16,13 +16,13 @@ topic_type:
 author: hoyosjs
 ms.author: juhoyosa
 ms.openlocfilehash: 1bdc958f2516bcd7c2eb74312fbf478e6d49535a
-ms.sourcegitcommit: 30e2fe5cc4165aa6dde7218ec80a13def3255e98
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56221375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948798"
 ---
-# <a name="icordebugprocess4-interface"></a>ICorDebugProcess4 Interface
+# <a name="icordebugprocess4-interface"></a>ICorDebugProcess4 – rozhraní
 
 Poskytuje podporu pro mimo proces řízení provádění.
 
@@ -40,9 +40,9 @@ Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví n
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** Žádná
+**Záhlaví:** Žádné
 
-**Knihovna:** Žádná
+**Knihovna:** Žádné
 
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 

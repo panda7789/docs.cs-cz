@@ -14,11 +14,11 @@ helpviewer_keywords:
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
 ms.openlocfilehash: 557c3296310a7eb3922a6c18b7b3de19ffac953c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115762"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802086"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  

@@ -9,11 +9,11 @@ ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 21eea2ccdff88a11e9708fef317011dc547cafda
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873224"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
 <a name="top"></a> Zařazování spolupráce řídí, jak se data předaná v metoda argumentů a vrácené hodnoty mezi spravovaným a nespravovaným paměti během volání. Zařazování spolupráce je za běhu aktivity prováděné common language runtime zařazovací služby.  
@@ -24,23 +24,23 @@ ms.locfileid: "57677211"
   
  Tento přehled obsahuje následující části:  
   
--   [Vyvolání platformy a modely spolupráce COM](#platform_invoke_and_com_interop_models)  
+- [Vyvolání platformy a modely spolupráce COM](#platform_invoke_and_com_interop_models)  
   
--   [Zařazování a objekty apartment modelu COM](#marshaling_and_com_apartments)  
+- [Zařazování a objekty apartment modelu COM](#marshaling_and_com_apartments)  
   
--   [Zařazování Vzdálená volání](#marshaling_remote_calls)  
+- [Zařazování Vzdálená volání](#marshaling_remote_calls)  
   
--   [Související témata](#related_topics)  
+- [Související témata](#related_topics)  
   
--   [Referenční informace](#reference)  
+- [Referenční informace](#reference)  
   
 <a name="platform_invoke_and_com_interop_models"></a>   
 ## <a name="platform-invoke-and-com-interop-models"></a>Vyvolání platformy a modely spolupráce COM  
  Modul common language runtime poskytuje dva mechanismy pro spolupráce s nespravovaným kódem:  
   
--   Nespravovaného kódu, což umožňuje spravovanému kódu volat exportované funkce z nespravované knihovny.  
+- Nespravovaného kódu, což umožňuje spravovanému kódu volat exportované funkce z nespravované knihovny.  
   
--   Komunikace s objekty COM, která umožňuje spravovanému kódu pracovat s objekty modelu COM (Component Object) prostřednictvím rozhraní.  
+- Komunikace s objekty COM, která umožňuje spravovanému kódu pracovat s objekty modelu COM (Component Object) prostřednictvím rozhraní.  
   
  Vyvolání obě platformy a modelu COM interop použití zařazování spolupráce přesně argumenty metody přesouvat mezi volajícím a volaný a zpět, pokud vyžaduje. Jak ukazuje následující obrázek, platformu vyvolání toky volání metody ze spravovaného do nespravovaného kódu a nikdy jiným způsobem, kromě případů, kdy [funkce zpětného volání](callback-functions.md) se využívá řada. I v případě vyvolání platformy můžete tok volání pouze ze spravovaného do nespravovaného kódu, může tok dat v obou směrech jako vstupní nebo výstupní parametry. Volání metody vzájemné spolupráce COM můžete tok v obou směrech.  
   
@@ -86,9 +86,9 @@ ms.locfileid: "57677211"
   
  Pro různé apartment zařazování, máte následující:  
   
--   Přijměte režie zařazování mezi apartment, což je patrné pouze v případě, že existují mnoho volání přes hranice. Je nutné zaregistrovat knihovnu typů komponenty modelu COM pro volání úspěšně překračují hranice objektu apartment.  
+- Přijměte režie zařazování mezi apartment, což je patrné pouze v případě, že existují mnoho volání přes hranice. Je nutné zaregistrovat knihovnu typů komponenty modelu COM pro volání úspěšně překračují hranice objektu apartment.  
   
--   Příkaz ALTER hlavního vlákna nastavením klienta vlákna STA nebo MTA. Například pokud vaše C# klient volá řada komponent STA COM, můžete vyhnout tak, že nastavíte hlavního vlákna STA. zařazování mezi objektu apartment  
+- Příkaz ALTER hlavního vlákna nastavením klienta vlákna STA nebo MTA. Například pokud vaše C# klient volá řada komponent STA COM, můžete vyhnout tak, že nastavíte hlavního vlákna STA. zařazování mezi objektu apartment  
   
     > [!NOTE]
     >  Jednou vlákno C# klienta nastavena na STA, volání součásti MTA COM bude vyžadovat zařazování mezi objektu apartment.  
@@ -101,9 +101,9 @@ ms.locfileid: "57677211"
 ## <a name="marshaling-remote-calls"></a>Zařazování Vzdálená volání  
  Stejně jako u zařazování mezi apartment modelu COM zařazování je zahrnuta v každé volání mezi spravovaný a nespravovaný kód pokaždé, když se objekty nacházejí v samostatných procesech. Příklad:  
   
--   Klient modelu COM, která volá spravovaný server na vzdáleného hostitele používá distributed COM (DCOM).  
+- Klient modelu COM, která volá spravovaný server na vzdáleného hostitele používá distributed COM (DCOM).  
   
--   Spravovaný klient, který volá server COM na vzdáleného hostitele používá model DCOM.  
+- Spravovaný klient, který volá server COM na vzdáleného hostitele používá model DCOM.  
   
  Následující obrázek znázorňuje, jak spolupráce zařazování a zařazování COM poskytují komunikační kanály přes hranice procesu a hostitele.  
   
@@ -116,9 +116,9 @@ ms.locfileid: "57677211"
   
  Na tomto obrázku:  
   
--   Nespravovaný klient získá odkaz na objekt modelu COM ze spravovaného objektu, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
+- Nespravovaný klient získá odkaz na objekt modelu COM ze spravovaného objektu, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
   
--   Spravovaný klient získá odkaz na spravovaný objekt z objektu COM, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
+- Spravovaný klient získá odkaz na spravovaný objekt z objektu COM, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
   
     > [!NOTE]
     >  Exportované knihovny typů spravovaného serveru musí být zaregistrovaný.  

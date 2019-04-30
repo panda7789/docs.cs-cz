@@ -3,11 +3,11 @@ title: Přehled LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: dc20a8fb-03f6-4b68-9c2b-7f7299e3070b
 ms.openlocfilehash: 635f1c17da40095990c238912f9e09ad398e6637
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878589"
 ---
 # <a name="linq-to-dataset-overview"></a>Přehled LINQ to DataSet
 <xref:System.Data.DataSet> Je jedním z více široce používané komponenty [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)]. Je klíčovým prvkem odpojeném programovací model, který [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] vychází z, a umožňuje explicitně mezipaměti dat z různých datových zdrojů. Pro prezentační vrstvy <xref:System.Data.DataSet> je úzce integrovaná s ovládacími prvky grafického uživatelského rozhraní pro datovou vazbu. Poskytuje mezipaměť, která zachová tvar relační data a zahrnuje rychle jednoduchý dotaz a služby navigační hierarchie pro střední vrstvy. Běžná technika umožňuje snížit počet požadavků na databázi, které se má používat <xref:System.Data.DataSet> pro ukládání do mezipaměti ve střední vrstvě. Představte si třeba řízené daty [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webovou aplikaci. Podstatnou část dat aplikace často nemění příliš často a je společná pro relace nebo uživatelů. Tato data může být uložený v paměti na webovém serveru, která omezuje počet požadavků na databázi a zrychluje interakcí uživatele. Dalším užitečným aspektem <xref:System.Data.DataSet> patří povolení aplikace tak, aby podmnožiny dat z jednoho nebo více zdroje dat do prostoru aplikace. Aplikace pak můžete pracovat s na data v paměti, a přitom zachovat jeho tvar relační.  

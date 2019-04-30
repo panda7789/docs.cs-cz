@@ -10,11 +10,11 @@ helpviewer_keywords:
 - conversions [Visual Basic], expression
 ms.assetid: dd4b29e7-6fa1-428c-877e-69955420bb72
 ms.openlocfilehash: dbf01263723a9e2890dab57d5ffc3d467ed250fc
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801676"
 ---
 # <a name="ctype-function-visual-basic"></a>CType – funkce (Visual Basic)
 

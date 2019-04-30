@@ -11,11 +11,11 @@ helpviewer_keywords:
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
 ms.openlocfilehash: 8ea4c77056701b8f61c1ed5a53cf20d98ae913bc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791947"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Pole parametrů (Visual Basic)
 Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedury. Když budete potřebovat nekonečný počet argumentů, je možné deklarovat *pole parametrů*, který umožňuje procedury tak, aby přijímal pole hodnot pro parametr. Není nutné znát počet prvků v poli parametrů při definování procesu. Velikost pole je samostatně určeno každé volání do procedury.  
@@ -23,22 +23,22 @@ Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedu
 ## <a name="declaring-a-paramarray"></a>Deklarace ParamArray  
  Můžete použít [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) – klíčové slovo k označení pole parametrů. v seznamu parametrů. Platí následující pravidla:  
   
--   Postup lze definovat pouze jeden parametr pole a musí být poslední parametr v definici procedury.  
+- Postup lze definovat pouze jeden parametr pole a musí být poslední parametr v definici procedury.  
   
--   Pole parametrů musí být předán podle hodnoty. To při programování je dobrým zvykem zahrnout explicitně [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) – klíčové slovo v definici procedury.  
+- Pole parametrů musí být předán podle hodnoty. To při programování je dobrým zvykem zahrnout explicitně [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) – klíčové slovo v definici procedury.  
   
--   Pole parametrů je automaticky volitelné. Výchozí hodnota je prázdné jednorozměrné pole typu prvku pole parametrů.  
+- Pole parametrů je automaticky volitelné. Výchozí hodnota je prázdné jednorozměrné pole typu prvku pole parametrů.  
   
--   Všechny parametry předchozí pole parametrů musí být povinné. Pole parametrů musí být pouze volitelný parametr.  
+- Všechny parametry předchozí pole parametrů musí být povinné. Pole parametrů musí být pouze volitelný parametr.  
   
 ## <a name="calling-a-paramarray"></a>Volání ParamArray  
  Při volání procedury, která definuje pole parametrů můžete zadat argument do některého z následujících způsobů:  
   
--   Nothing – to znamená, můžete vynechat [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) argument. V takovém případě prázdné pole je předán do procedury. Můžete také předat [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo se stejný účinek.  
+- Nothing – to znamená, můžete vynechat [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) argument. V takovém případě prázdné pole je předán do procedury. Můžete také předat [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo se stejný účinek.  
   
--   Seznam libovolný počet argumentů, oddělené čárkami. Datový typ každého argumentu musí být implicitně převeditelný na `ParamArray` typ elementu.  
+- Seznam libovolný počet argumentů, oddělené čárkami. Datový typ každého argumentu musí být implicitně převeditelný na `ParamArray` typ elementu.  
   
--   Pole se stejným typem elementu jako typ elementu pole parametrů.  
+- Pole se stejným typem elementu jako typ elementu pole parametrů.  
   
  Ve všech případech se kód v rámci postupu považuje za jednorozměrné pole s prvky stejného datového typu jako pole parametrů `ParamArray` datového typu.  
   

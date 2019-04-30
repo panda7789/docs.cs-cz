@@ -8,11 +8,11 @@ helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
 ms.openlocfilehash: 2757f98066931ca1b5e3ef147cee2c819ee22606
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59195056"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949601"
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
 Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v případě duplexní z klienta ke službě interoperabilní způsobem. Obvykle služby definuje vlastní chyby obsah a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klient může poslat tyto chyby došlo k odpovídající chybovou podmínku a způsob klienta nebo aplikace služby zpracovává tyto chyby. Přehled v aplikacích Windows Communication Foundation (WCF) pro zpracování chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
@@ -47,9 +47,9 @@ Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v přípa
 ## <a name="handling-faults"></a>Zpracování chyb  
  Klienti WCF SOAP chyb, ke kterým dochází při komunikaci, které jsou zajímavé pro klientské aplikace jsou vyvolány jako spravované výjimky. I když existují mnoho výjimek, které se mohou vyskytnout při spuštění libovolné aplikace, pomocí programovacího modelu WCF klientské aplikace můžou očekávat pro zpracování výjimek z následujících dvou typů v důsledku komunikace.  
   
--   <xref:System.TimeoutException>  
+- <xref:System.TimeoutException>  
   
--   <xref:System.ServiceModel.CommunicationException>  
+- <xref:System.ServiceModel.CommunicationException>  
   
  <xref:System.TimeoutException> objekty jsou vyvolány, když překročí zadaný časový limit operace.  
   
@@ -81,13 +81,13 @@ Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v přípa
   
  Obvykle kanály klientů objektů jsou uzavřeny v jednom z následujících způsobů:  
   
--   Pokud objekt klienta WCF recykluje.  
+- Pokud objekt klienta WCF recykluje.  
   
--   Když klientská aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>.  
+- Když klientská aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>.  
   
--   Když klientská aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>.  
+- Když klientská aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>.  
   
--   Když klientská aplikace volá operaci, která je ukončující operace pro relaci.  
+- Když klientská aplikace volá operaci, která je ukončující operace pro relaci.  
   
  Ve všech případech zavření kanálu nastaví kanál pro ukončení všechny základní kanály, které mohou být odesílání zpráv komplexní funkci na úrovni aplikace. Například pokud kontrakt vyžaduje relace vazbu se pokusí navázat relaci výměnou zpráv pomocí služby kanálu, dokud se relace. Při zavření kanálu základním kanálu relace upozorní službu, že je relace ukončena. V takovém případě pokud kanál již přerušena, zavřeno, nebo je jinak nepůjdou použít (například, když je odpojen síťový kabel), nelze informovat kanálu klienta služby kanál, který je relace ukončena a může dojít k výjimce.  
   

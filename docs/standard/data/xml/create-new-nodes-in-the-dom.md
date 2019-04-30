@@ -1,41 +1,41 @@
 ---
-title: Vytvoření nových uzlů v modelu DOM
+title: Vytváření nových uzlů v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 390ffa1dd9f2e76372b0e4fcbf2916918b64d748
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934599"
 ---
-# <a name="create-new-nodes-in-the-dom"></a>Vytvoření nových uzlů v modelu DOM
+# <a name="create-new-nodes-in-the-dom"></a>Vytváření nových uzlů v modelu DOM
 <xref:System.Xml.XmlDocument> Má vytvořit metodu pro všechny typy uzlů. Zadejte metodu s názvem v případě potřeby a obsah nebo jiné parametry pro ty uzly, které mají obsah (například textový uzel) a uzel se vytvoří. Jsou tyto metody těch, které je třeba název a několik dalších parametrů, které jsou vyplněny vytvořit příslušný uzel.  
   
--   <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  
+- <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateComment%2A>  
+- <xref:System.Xml.XmlDocument.CreateComment%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateDocumentFragment%2A>  
+- <xref:System.Xml.XmlDocument.CreateDocumentFragment%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateDocumentType%2A>  
+- <xref:System.Xml.XmlDocument.CreateDocumentType%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateElement%2A>  
+- <xref:System.Xml.XmlDocument.CreateElement%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateNode%2A>  
+- <xref:System.Xml.XmlDocument.CreateNode%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateProcessingInstruction%2A>  
+- <xref:System.Xml.XmlDocument.CreateProcessingInstruction%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateSignificantWhitespace%2A>  
+- <xref:System.Xml.XmlDocument.CreateSignificantWhitespace%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateTextNode%2A>  
+- <xref:System.Xml.XmlDocument.CreateTextNode%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateWhitespace%2A>  
+- <xref:System.Xml.XmlDocument.CreateWhitespace%2A>  
   
--   <xref:System.Xml.XmlDocument.CreateXmlDeclaration%2A>  
+- <xref:System.Xml.XmlDocument.CreateXmlDeclaration%2A>  
   
  Jiné typy uzlů mají další požadavky než jenom poskytuje data pro parametry.  
   

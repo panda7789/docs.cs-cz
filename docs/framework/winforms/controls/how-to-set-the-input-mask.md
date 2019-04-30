@@ -7,11 +7,11 @@ helpviewer_keywords:
 - MaskedTextBox control [Windows Forms]
 ms.assetid: 779b3a12-cd74-4e58-b46e-04983bda5b2c
 ms.openlocfilehash: 06eaf68fef167d63e6f8404dd5049f5445881d24
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912870"
 ---
 # <a name="how-to-set-the-input-mask"></a>Postupy: Nastavení vstupní masky
 Maskované textové pole je vylepšené textový ovládací prvek, který podporuje deklarativní syntaxe pro přijetí nebo odmítnutí vstup uživatele. Tím, že nastavíte vlastnost maska, můžete zadat povolenou uživatelský vstup bez nutnosti jakékoli vlastní ověřovací logiky ve vaší aplikaci. Další informace najdete v části poznámky <xref:System.Windows.Forms.MaskedTextBox> třídy.  
@@ -34,15 +34,15 @@ Maskované textové pole je vylepšené textový ovládací prvek, který podpor
   
 1. V **návrhu** zobrazení, vyberte <xref:System.Windows.Forms.MaskedTextBox>.  
   
-    1.  Kliknutím na inteligentní značku otevřete **MaskedTextBox úlohy** panelu.  
+    1. Kliknutím na inteligentní značku otevřete **MaskedTextBox úlohy** panelu.  
   
-    2.  Klikněte na tlačítko **nastavení masky**.  
+    2. Klikněte na tlačítko **nastavení masky**.  
   
      \- nebo –  
   
-    1.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
+    1. V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> vlastnost.  
   
-    2.  Klikněte na tlačítko se třemi tečkami v sloupec hodnoty vlastnosti.  
+    2. Klikněte na tlačítko se třemi tečkami v sloupec hodnoty vlastnosti.  
   
      **Vstupní maska** zobrazí se dialogové okno.  
   

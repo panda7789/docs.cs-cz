@@ -10,11 +10,11 @@ helpviewer_keywords:
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
 ms.openlocfilehash: 02c4f94eddfcf782d7d2323787d9b6a9b18db2d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180255"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948054"
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Vytvoření vazby objektů k ovládacím prvkům Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů do <xref:System.Windows.Forms.DataGridView> tak, aby každý objekt zobrazí jako samostatný řádek. Tento příklad také znázorňuje způsob zobrazení vlastností s typem výčtu v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby rozevíracího seznamu pole se seznamem obsahuje hodnoty výčtu.  
@@ -26,7 +26,7 @@ Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

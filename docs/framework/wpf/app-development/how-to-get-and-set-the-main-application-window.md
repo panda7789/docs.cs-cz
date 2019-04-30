@@ -11,11 +11,11 @@ helpviewer_keywords:
 - getting windows objects [WPF]
 ms.assetid: ec902bc4-4a59-46f5-8ec1-963b46789356
 ms.openlocfilehash: ea8333aa82f1159afb438215940ee1e7c2605e96
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57373553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947794"
 ---
 # <a name="how-to-get-and-set-the-main-application-window"></a>Postupy: Získání a nastavení hlavního okna aplikace
 Tento příklad ukazuje, jak k získání a nastavení hlavního okna aplikace.  

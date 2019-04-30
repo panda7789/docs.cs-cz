@@ -3,11 +3,11 @@ title: Stažení balíčku registru pro ověřování názvů vydavatelů
 ms.date: 10/10/2018
 ms.assetid: ff8b0014-c5d4-4614-90f0-13fcc0ba777a
 ms.openlocfilehash: 833a0722fdd27df4e488ed7fac99444c6d9b8905
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940579"
 ---
 # <a name="download-the-validating-issuer-name-registry-package"></a>Stažení balíčku registru ověřování názvů vydavatelů
 

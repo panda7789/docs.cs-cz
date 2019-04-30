@@ -5,11 +5,11 @@ helpviewer_keywords:
 - custom error messages [WPF]
 ms.assetid: e55180fc-35bb-4f80-a136-772b5eb3e4e5
 ms.openlocfilehash: 30084143949d2243fd310448c52e6b861505ad66
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947963"
 ---
 # <a name="getcustomui"></a>GetCustomUI
 Voláno rozhraním PresentationHost.exe získat vlastní pokrok a chybové zprávy z hostitele, pokud implementovaná.  

@@ -7,51 +7,51 @@ ms.openlocfilehash: f836356125f1462f302b7e9f45a841c869c9a690
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940436"
 ---
 # <a name="how-to-transform-incoming-claims"></a>Postupy: Transformace příchozích deklarací identit
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® webových formulářů  
+- ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity a transformaci příchozí deklarace identity. Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány transformované deklarace při spuštění aplikace.  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled  
+- Přehled  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
+- Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
+- Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
+- Konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
   
--   Transformovat příchozí deklarace identity tak, že přidáte deklaraci identity správce rolí  
+- Transformovat příchozí deklarace identity tak, že přidáte deklaraci identity správce rolí  
   
--   Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
+- Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
   
 ## <a name="overview"></a>Přehled  
  Technologie WIF zpřístupní třídu s názvem <xref:System.Security.Claims.ClaimsAuthenticationManager> , která umožňuje uživatelům změnit deklarace identity, předtím, než se zobrazí na aplikaci předávající stranu. <xref:System.Security.Claims.ClaimsAuthenticationManager> Je užitečné pro oddělení oblastí zájmu mezi ověřování a základního kódu aplikace. Následující příklad ukazuje, jak přidat roli v příchozí deklarace identity <xref:System.Security.Claims.ClaimsPrincipal> , které můžou vyžadovat RP.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
+- Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
+- Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.  

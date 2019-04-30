@@ -13,11 +13,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms], AutoComplete
 ms.assetid: fd66d085-1af1-45d4-930a-cde944da2e16
 ms.openlocfilehash: d7919bf87444ef6c4a64ee236356e762da14853f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941476"
 ---
 # <a name="how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms"></a>Postupy: Povolení AutoComplete v ovládacích prvcích ToolStrip ve Windows Forms
 Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xref:System.Windows.Forms.ToolStripComboBox> , který může být rozbalil zobrazíte seznam položek, jako například naposledy navštívené webové stránky. Pokud uživatel zadá znak, který odpovídá jedné z položek v seznamu první znak, zobrazí se okamžitě položky.  

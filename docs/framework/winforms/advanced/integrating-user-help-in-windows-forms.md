@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Windows applications [Windows Forms], Help (using designer)
 ms.assetid: a8563d25-8a75-4bc7-a024-f1870591b50f
 ms.openlocfilehash: 207ceeafa2ea06340310577c636deb5ea1977aae
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57715305"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942919"
 ---
 # <a name="integrating-user-help-in-windows-forms"></a>Integrace uživatelské nápovědy do formulářů Windows
 Základní, ale často přehlíženým aspekty vytváření aplikací založených na Windows je systém nápovědy, protože se jedná, kde uživatelé zapnout pro pomoc s časy záměny. Windows Forms – podpora dva různé typy nápovědy, každý poskytované [HelpProvider – komponenta](../controls/helpprovider-component-windows-forms.md). První zahrnuje odkazující uživatele na soubor nápovědy HTML nebo 1 Nápověda jazyka HTML. *x* nebo větší formátu. Druhá můžete zobrazit stručný "Co je to"-typ nápovědy v jednotlivých ovládacích prvků; To je zvláště užitečná v dialogových oknech. Oba typy nápovědy je možné ve stejném formuláři.  

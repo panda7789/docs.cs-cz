@@ -13,11 +13,11 @@ ms.assetid: 1d8e3398-00d8-47d5-a084-214f9859d3d7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 764b0d535413fc1e5e23a2e47221789aa807ff38
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937087"
 ---
 # <a name="accessing-custom-attributes"></a>Přístup k vlastním atributům
 Po atributy byly spojeny s prvky programu, reflexe je možné zadávat dotazy na jejich existence a hodnoty. V rozhraní .NET Framework verze 1.0 a 1.1 uživatelských atributů, které jsou zkoumány podle kontextu spuštění. Rozhraní .NET Framework verze 2.0 obsahuje nový kontext načtení kontextu pouze pro reflexi, který slouží ke kontrole kódu, který nelze načíst pro spuštění.  

@@ -3,11 +3,11 @@ title: Dynamická aktualizace
 ms.date: 03/30/2017
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
 ms.openlocfilehash: e28a34e500034eec6cf250d94cf7631ca85a7d40
-ms.sourcegitcommit: 15ab532fd5e1f8073a4b678922d93b68b521bfa0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58653883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945805"
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 

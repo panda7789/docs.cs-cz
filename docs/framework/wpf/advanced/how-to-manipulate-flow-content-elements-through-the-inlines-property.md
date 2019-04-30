@@ -11,26 +11,26 @@ helpviewer_keywords:
 - properties [WPF], Inlines [WPF], manipulating flow Content elements
 ms.assetid: 510780d2-3da1-4360-8763-7054bda22ea3
 ms.openlocfilehash: cfff958bb4c87e6bfecf2d280224cda233c31806
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59186066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942841"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-inlines-property"></a>Postupy: Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines
 Tyto příklady ukazují některé běžné operace, které lze provést u vložených elementů obsahu toku (a kontejnery takovýchto prvků, jako například <xref:System.Windows.Controls.TextBlock>) prostřednictvím **Inlines** vlastnost. Tato vlastnost se používá k přidání a odebrání položek z <xref:System.Windows.Documents.InlineCollection>. Tok obsahu prvky dané funkce **Inlines** vlastnosti patří:  
   
--   <xref:System.Windows.Documents.Bold>  
+- <xref:System.Windows.Documents.Bold>  
   
--   <xref:System.Windows.Documents.Hyperlink>  
+- <xref:System.Windows.Documents.Hyperlink>  
   
--   <xref:System.Windows.Documents.Italic>  
+- <xref:System.Windows.Documents.Italic>  
   
--   <xref:System.Windows.Documents.Paragraph>  
+- <xref:System.Windows.Documents.Paragraph>  
   
--   <xref:System.Windows.Documents.Span>  
+- <xref:System.Windows.Documents.Span>  
   
--   <xref:System.Windows.Documents.Underline>  
+- <xref:System.Windows.Documents.Underline>  
   
  Tyto příklady dojde k použití <xref:System.Windows.Documents.Span> jako daný tok obsahu elementu, ale tyto postupy platí pro všechny prvky a ovládací prvky, které hostují <xref:System.Windows.Documents.InlineCollection> kolekce.  
   

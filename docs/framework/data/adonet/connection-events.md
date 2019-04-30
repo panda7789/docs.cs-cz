@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 5a29de74-acfc-4134-8616-829dd7ce0710
 ms.openlocfilehash: a71758781511f18ddf5451feaf0d308af1b4a652
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879928"
 ---
 # <a name="connection-events"></a>Události připojení
 Všechny zprostředkovatele dat .NET Framework mají **připojení** objekty se dvě události, které můžete použít k načtení informační zprávy ze zdroje dat nebo k určení, zda stav **připojení** má změnit. Následující tabulka popisuje událostí **připojení** objektu.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - add-in [WPF], returns a UI
 ms.assetid: 57f274b7-4c66-4b72-92eb-81939a393776
 ms.openlocfilehash: faed11bb02037ea42b31402d431e1bcdd8b70339
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947833"
 ---
 # <a name="how-to-create-an-add-in-that-returns-a-ui"></a>Postupy: Vytvoření doplňku, který vrací uživatelské rozhraní
 Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentation Foundation (WPF) do hostitele samostatnou aplikaci WPF.  
@@ -25,9 +25,9 @@ Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentat
   
  V tomto příkladu zvýrazní WPF rozšíření modelu doplňku rozhraní .NET Framework, které umožňují tento scénář a předpokládá následující:  
   
--   Znalost modelu rozhraní .NET Framework – doplněk, včetně kanálu doplňku a vývoj pro hostitele. Pokud nejste obeznámeni s tyto koncepty, najdete v článku [doplňků a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)). Kurz, který ukazuje implementaci kanálu, doplněk a hostitelskou aplikací, najdete v tématu [názorný postup: Vytváření rozšiřitelné aplikace](../../add-ins/walkthrough-create-extensible-app.md).  
+- Znalost modelu rozhraní .NET Framework – doplněk, včetně kanálu doplňku a vývoj pro hostitele. Pokud nejste obeznámeni s tyto koncepty, najdete v článku [doplňků a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)). Kurz, který ukazuje implementaci kanálu, doplněk a hostitelskou aplikací, najdete v tématu [názorný postup: Vytváření rozšiřitelné aplikace](../../add-ins/walkthrough-create-extensible-app.md).  
   
--   Informace o rozšíření WPF rozhraní .NET Framework model doplňku, který najdete tady: [Přehled doplňků WPF](wpf-add-ins-overview.md).  
+- Informace o rozšíření WPF rozhraní .NET Framework model doplňku, který najdete tady: [Přehled doplňků WPF](wpf-add-ins-overview.md).  
   
 ## <a name="example"></a>Příklad  
  K vytvoření doplňku, který vrací uživatelské rozhraní WPF vyžaduje konkrétní kód pro každý segment kanálu doplňku a hostitelskou aplikaci.  

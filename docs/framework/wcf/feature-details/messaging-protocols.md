@@ -3,11 +3,11 @@ title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
 ms.openlocfilehash: a5292914cfebc79bf8a9af1c852dd8feec99eba4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948119"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 
@@ -58,7 +58,7 @@ Následující obory názvů XML a přidružené předpony se používají v tom
 | wsaw10 |`http://www.w3.org/2006/05/addressing/wsdl` |
 | XOP |`http://www.w3.org/2004/08/xop/include` |
 | xmime |`http://www.w3.org/2004/06/xmlmime`<br /><br /> `http://www.w3.org/2005/05/xmlmime` |
-| distribučního bodu |`http://schemas.microsoft.com/net/2006/06/duplex` |
+| dp |`http://schemas.microsoft.com/net/2006/06/duplex` |
 
 ## <a name="soap-11-and-soap-12"></a>Protokol SOAP 1.1 a SOAP 1.2
 
@@ -201,14 +201,14 @@ Když koncového bodu WCF je nakonfigurován pro zprávu s danou `Action` Pokud 
 ### <a name="web-services-addressing-faults"></a>Na vyřešení chyby webové služby
 R3411: WCF vytvoří následující chyby definované WS-Addressing 2004/08.
 
-| Kód | příčina |
+| Kód | Příčina |
 |----------|-----------|
 | `wsa:DestinationUnreachable` | Zpráva dorazila s `ReplyTo` , která se liší od adresa pro odpovědi pro tento kanál, neexistuje žádný koncový bod na adrese určené v záhlaví Komu. |
 | `wsa:ActionNotSupported` | kanály infrastruktury nebo dispečer spojená s koncovým bodem nebyl rozpoznán akce určená ve `Action` záhlaví. |
 
 R3412: WCF vytvoří následující chyby definované WS-Addressing 1.0.
 
-| Kód | příčina |
+| Kód | Příčina |
 |----------|-----------|
 | `wsa10:InvalidAddressingHeader` | Duplicitní `wsa:To`, `wsa:ReplyTo`, `wsa:From` nebo `wsa:MessageID`. Duplicitní `wsa:RelatesTo` se stejným `RelationshipType`. |
 | `wsa10:MessageAddressingHeaderRequired` | Chybí požadované záhlaví adresování. |

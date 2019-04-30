@@ -3,11 +3,11 @@ title: Typ definice (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
 ms.openlocfilehash: 2e068db0ce202c26cad36c8ed7adf0acdfb8e363
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096020"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879551"
 ---
 # <a name="type-definitions-entity-sql"></a>Typ definice (Entity SQL)
 Definice typu se používá v příkazu deklarace [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vložená funkce.  
@@ -19,25 +19,25 @@ Definice typu se používá v příkazu deklarace [!INCLUDE[esql](../../../../..
   
  Definice typu může být buď:  
   
--   Typ identifikátoru (například "Int32" nebo "AdventureWorks.Order").  
+- Typ identifikátoru (například "Int32" nebo "AdventureWorks.Order").  
   
--   Klíčové slovo `COLLECTION` za nímž následuje jiné definice typu v závorkách (například "Collection(AdventureWorks.Order)").  
+- Klíčové slovo `COLLECTION` za nímž následuje jiné definice typu v závorkách (například "Collection(AdventureWorks.Order)").  
   
--   Klíčové slovo řádek následovaného seznamem definice vlastností v závorkách (například "Row(x AdventureWorks.Order)"). Definice vlastností, jako mají formát "`identifier type_definition`, `identifier type_definition`;...".  
+- Klíčové slovo řádek následovaného seznamem definice vlastností v závorkách (například "Row(x AdventureWorks.Order)"). Definice vlastností, jako mají formát "`identifier type_definition`, `identifier type_definition`;...".  
   
--   Klíčovým slovem REF, za nímž následuje typ identifikátoru v závorkách (například "Ref(AdventureWorks.Order)"). Operátor pro definici typu REF vyžaduje jako argument typu entity. Primitivní typ nelze zadat jako argument.  
+- Klíčovým slovem REF, za nímž následuje typ identifikátoru v závorkách (například "Ref(AdventureWorks.Order)"). Operátor pro definici typu REF vyžaduje jako argument typu entity. Primitivní typ nelze zadat jako argument.  
   
  Lze také vnořit definice typů (například "kolekce (Row(x Ref(AdventureWorks.Order)))").  
   
  Typ definice možnosti jsou:  
   
--   `IdentifierName supported_type`, nebo  
+- `IdentifierName supported_type`, nebo  
   
--   `IdentifierName` KOLEKCE (`type_definition`), nebo  
+- `IdentifierName` KOLEKCE (`type_definition`), nebo  
   
--   `IdentifierName` ŘÁDEK (`property_definition`), nebo  
+- `IdentifierName` ŘÁDEK (`property_definition`), nebo  
   
--   `IdentifierName` REF (`supported_entity_type`)  
+- `IdentifierName` REF (`supported_entity_type`)  
   
  Možnost definice vlastnosti je `IdentifierName type_definition`.  
   

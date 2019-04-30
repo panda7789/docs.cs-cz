@@ -3,11 +3,11 @@ title: 'Postupy: Určení verze zjišťování zkušebního požadavku'
 ms.date: 03/30/2017
 ms.assetid: b3c4e2e2-2957-4074-ae6a-776a5ca84278
 ms.openlocfilehash: 6bd112be311eb9397ad89801be5358d67c7499fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59332271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773175"
 ---
 # <a name="how-todetermine-the-discovery-version-of-a-probe-request"></a>Postupy: Určení verze zjišťování zkušebního požadavku
 Proxy zjišťování může vystavit několik koncových bodů zjišťování pomocí zjišťování různých verzí. Když vícesměrového vysílání UDP dorazí požadavek testu na proxy serveru proxy server by měl odpovědět vícesměrovou zprávu. Pokud to chcete udělat byste museli znát verze zjišťování požadavku.  

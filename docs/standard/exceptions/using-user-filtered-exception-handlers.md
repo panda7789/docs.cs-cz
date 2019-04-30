@@ -9,11 +9,11 @@ ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 228bae8db833abfa3c8c906d57e2177cde644548
-ms.sourcegitcommit: bef803e2025642df39f2f1e046767d89031e0304
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56304606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945454"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Používání obslužných rutin uživatelsky filtrovaných výjimek
 

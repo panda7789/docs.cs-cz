@@ -27,11 +27,11 @@ ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f2ca5c26b7e5b830ee8dccffb452b8509c8b0d1c
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795301"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 

@@ -11,11 +11,11 @@ ms.assetid: 491ba43b-2c10-473d-9aab-e2cb96446711
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dd9e3a0ead62450e87225212f4fc6ecec6ec9489
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45749106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941983"
 ---
 # <a name="how-to-measure-plinq-query-performance"></a>Postupy: Měření výkonu dotazu PLINQ
 Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Stopwatch> třídy k měření čas potřebný k provedení PLINQ dotazu.  

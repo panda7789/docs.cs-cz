@@ -5,11 +5,11 @@ helpviewer_keywords:
 - enumerations [Visual Basic]
 ms.assetid: e6e47b5b-3ed9-452d-a481-9c3fed88519a
 ms.openlocfilehash: ff2d8c324aee8bbccef050c020e5392368b05b1c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907306"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Kdy použít výčet (Visual Basic)
 Výčty nabízí snadný způsob, jak pracovat se sadami související s konstantami. Což je výčet nebo `Enum`, je symbolický název pro sadu hodnot. Výčty jsou považovány za datových typů a můžete využít k vytvoření sady konstanty pro použití s proměnných a vlastností.  
@@ -19,13 +19,13 @@ Výčty nabízí snadný způsob, jak pracovat se sadami související s konstan
   
  Výhody používání výčtů patří:  
   
--   Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.  
+- Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.  
   
--   Umožňuje snadno ke změně hodnot v budoucnu.  
+- Umožňuje snadno ke změně hodnot v budoucnu.  
   
--   Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že se do něj ovládat chyby.  
+- Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že se do něj ovládat chyby.  
   
--   Zajišťuje kompatibilitu. S výčty váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.  
+- Zajišťuje kompatibilitu. S výčty váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.  
   
 ## <a name="naming-enumerations"></a>Názvy výčtů  
  Použijte zásady vytváření názvů pro členy výčtu. Pokud jazyka Visual Basic narazí název člena výčtu, může vyvolána výjimka, pokud obsahují další odkazované knihovny typů se stejným názvem. Použijte jedinečnou předponu, která identifikuje hodnoty z vaší aplikace nebo komponenty.  

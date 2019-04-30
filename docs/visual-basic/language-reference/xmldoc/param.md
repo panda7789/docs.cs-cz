@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
 ms.openlocfilehash: 4bcfe96361de9e196cb684ac4ba734f82442e25c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825557"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940891"
 ---
 # <a name="param-visual-basic"></a>\<Param > (Visual Basic)
 Definuje parametr název a popis.  
@@ -33,9 +33,9 @@ Definuje parametr název a popis.
   
  Text `<param>` značky se objeví v následujících umístěních:  
   
--   Informace o parametru technologie IntelliSense. Další informace najdete v tématu [pomocí technologie IntelliSense](/visualstudio/ide/using-intellisense).  
+- Informace o parametru technologie IntelliSense. Další informace najdete v tématu [pomocí technologie IntelliSense](/visualstudio/ide/using-intellisense).  
   
--   Prohlížeč objektů. Další informace najdete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
+- Prohlížeč objektů. Další informace najdete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
  Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
   

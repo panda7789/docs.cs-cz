@@ -10,11 +10,11 @@ ms.assetid: 87925795-a3ae-4833-b138-125413478551
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 834652318d4cb1cbcebe27a922d210ef87026ed5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169023"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872596"
 ---
 # <a name="registering-assemblies-with-com"></a>Registrování sestav pomocí modelu COM
 Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestavení (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) k registraci nebo zrušení registrace sestavení pro použití v modelu COM. Abyste klientům modelu COM použít třídy rozhraní .NET Framework transparentně RegAsm.exe přidá informace o třídě do systémového registru. <xref:System.Runtime.InteropServices.RegistrationServices> Třída poskytuje ekvivalentní funkce.  
@@ -30,11 +30,11 @@ Spustíte nástroj příkazového řádku, volá se, [nástroj registrace sestav
   
  V části HKCR\CLSID\\{0000... 0000} klíč, výchozí hodnota je nastavena na identifikátor ProgID, třídy a jsou přidány dva nové pojmenovaných hodnot, třídy a sestavení. Modul runtime přečte hodnotu sestavení z registru a předává je do překladače sestavení modulu runtime. Překladač sestavení se pokusí najít sestavení, na základě informací o sestavení, jako je například název a číslo verze. Sestavení pro sestavení překladač snaze o nalezení sestavení, musí být v jednom z následujících umístění:  
   
--   Globální mezipaměti sestavení (musí být sestavení se silným názvem).  
+- Globální mezipaměti sestavení (musí být sestavení se silným názvem).  
   
--   V adresáři aplikace. Sestavení načtená z cesty aplikace jsou pouze přístupné z této aplikace.  
+- V adresáři aplikace. Sestavení načtená z cesty aplikace jsou pouze přístupné z této aplikace.  
   
--   Cestě soubor zadaný **/ codebase** možnost Regasm.exe.  
+- Cestě soubor zadaný **/ codebase** možnost Regasm.exe.  
   
  RegAsm.exe vytvoří také InProcServer32 klíče pod HKCR\CLSID\\{0000... 0000} klíč. Výchozí hodnota klíče je nastavena na název knihovny DLL, která inicializuje modul common language runtime (Mscoree.dll).  
   

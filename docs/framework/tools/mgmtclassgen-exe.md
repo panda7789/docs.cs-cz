@@ -14,11 +14,11 @@ ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 061b5aa2208a73f6a53bc5eaee056410256ac6ac
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59213126"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919903"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (spravovaný generátor tříd se silnými typy)
 Nástroj Management Strongly Typed Class Generator umožňuje rychle generovat spravovanou třídu s časnou vazbou pro zadanou třídu Windows Management Instrumentation (WMI). Vygenerovaná třída usnadňuje psaní kódu pro přístup k instanci třídy WMI.  
@@ -75,19 +75,19 @@ WMIClass [options]
   
  Při generování třídy WMI si všimněte následujícího chování:  
   
--   Standardní veřejná vlastnost nebo metoda může mít stejný název jako existující vlastnost nebo metoda. V tomto případě nástroj změní název vlastnosti nebo metody ve vygenerované třídě, aby předešel konfliktům názvů.  
+- Standardní veřejná vlastnost nebo metoda může mít stejný název jako existující vlastnost nebo metoda. V tomto případě nástroj změní název vlastnosti nebo metody ve vygenerované třídě, aby předešel konfliktům názvů.  
   
--   Název vlastnosti nebo metody ve vygenerované třídě může být klíčovým slovem v cílovém programovacím jazyku. V tomto případě nástroj změní název vlastnosti nebo metody ve vygenerované třídě, aby předešel konfliktům názvů.  
+- Název vlastnosti nebo metody ve vygenerované třídě může být klíčovým slovem v cílovém programovacím jazyku. V tomto případě nástroj změní název vlastnosti nebo metody ve vygenerované třídě, aby předešel konfliktům názvů.  
   
--   Kvalifikátory jsou ve službě WMI modifikátory obsahující informace popisující třídu, instanci, vlastnost nebo metodu. WMI používá standardní kvalifikátory jako **čtení**, **zápisu**, a **klíč** k popisu vlastnosti generované třídy. Například vlastnost, která se mění **čtení** kvalifikátor je definována pouze vlastností **získat** přístupového objektu ve vygenerované třídě. Protože je vlastnost označena **čtení** kvalifikátor je určený jen pro čtení pro **nastavit** přistupujícího objektu není definován.  
+- Kvalifikátory jsou ve službě WMI modifikátory obsahující informace popisující třídu, instanci, vlastnost nebo metodu. WMI používá standardní kvalifikátory jako **čtení**, **zápisu**, a **klíč** k popisu vlastnosti generované třídy. Například vlastnost, která se mění **čtení** kvalifikátor je definována pouze vlastností **získat** přístupového objektu ve vygenerované třídě. Protože je vlastnost označena **čtení** kvalifikátor je určený jen pro čtení pro **nastavit** přistupujícího objektu není definován.  
   
--   Numerická vlastnost může být upravena **hodnoty** a **ValueMaps** kvalifikátory k označení, že vlastnost lze nastavit pouze na zadané přípustné hodnoty. Výčet je generována pomocí těchto **hodnoty** a **ValueMaps** a je namapována vlastnost.  
+- Numerická vlastnost může být upravena **hodnoty** a **ValueMaps** kvalifikátory k označení, že vlastnost lze nastavit pouze na zadané přípustné hodnoty. Výčet je generována pomocí těchto **hodnoty** a **ValueMaps** a je namapována vlastnost.  
   
--   Služba WMI používá k popisu třídy, která může mít pouze jednu instanci, pojem singleton. Výchozí konstruktor pro třídu singleton inicializuje tuto třídu pouze pro jedinou instanci třídy.  
+- Služba WMI používá k popisu třídy, která může mít pouze jednu instanci, pojem singleton. Výchozí konstruktor pro třídu singleton inicializuje tuto třídu pouze pro jedinou instanci třídy.  
   
--   Třída WMI může mít vlastnosti, které jsou objekty. Při generování třídy silného typu pro tento typ třídy WMI byste měli zvážit vygenerování třídy silného typu pro typy vlastností vloženého objektu. To vám umožní přístup k vloženým objektům silně typovaným způsobem. Vygenerovaný kód nemusí být schopen rozpoznat typ vloženého objektu. V tomto případě bude v generovaném kódu vytvořen komentář, který vás na tento problém upozorní. Pak můžete vygenerovaný kód upravit a zadat vlastnost pro další generovanou třídu.  
+- Třída WMI může mít vlastnosti, které jsou objekty. Při generování třídy silného typu pro tento typ třídy WMI byste měli zvážit vygenerování třídy silného typu pro typy vlastností vloženého objektu. To vám umožní přístup k vloženým objektům silně typovaným způsobem. Vygenerovaný kód nemusí být schopen rozpoznat typ vloženého objektu. V tomto případě bude v generovaném kódu vytvořen komentář, který vás na tento problém upozorní. Pak můžete vygenerovaný kód upravit a zadat vlastnost pro další generovanou třídu.  
   
--   Ve službě WMI mohou datové hodnoty datového typu CIM_DATETIME představovat konkrétní datum a čas nebo časový interval. Pokud datová hodnota představuje datum a čas, je datový typ ve vygenerované třídě **data a času**. Pokud datová hodnota představuje časový interval, je datový typ ve vygenerované třídě **TimeSpan**.  
+- Ve službě WMI mohou datové hodnoty datového typu CIM_DATETIME představovat konkrétní datum a čas nebo časový interval. Pokud datová hodnota představuje datum a čas, je datový typ ve vygenerované třídě **data a času**. Pokud datová hodnota představuje časový interval, je datový typ ve vygenerované třídě **TimeSpan**.  
   
  Případně můžete vygenerovat třídu silného typu pomocí rozšíření Server Explorer Management Extension aplikace Visual Studio .NET.  
   

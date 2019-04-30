@@ -3,11 +3,11 @@ title: Sdružování připojení
 ms.date: 03/30/2017
 ms.assetid: 955c057f-aea8-4ba8-aa6d-e3dfa18ba8d5
 ms.openlocfilehash: 4cba53993489f51ed39ac52bff4fa252beb9aafd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59180450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61880011"
 ---
 # <a name="connection-pooling"></a>Sdružování připojení
 Připojení ke zdroji dat může být časově náročné. Chcete-li minimalizovat náklady na otevření připojení ADO.NET používá optimalizaci techniky označované jako *sdružování připojení*, což minimalizuje náklady na opakovaného otevírání a zavírání připojení. Sdružování připojení je zpracována jinak pro zprostředkovatele dat .NET Framework.  

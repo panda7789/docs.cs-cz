@@ -12,11 +12,11 @@ helpviewer_keywords:
 - run time [Windows Forms], changing print options
 ms.assetid: 438501d8-9a70-4fb3-aae6-e46579aba0c6
 ms.openlocfilehash: 2aaf988f362baf9cd80eb16e4a08f7f65a5077bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937797"
 ---
 # <a name="how-to-capture-user-input-from-a-printdialog-at-run-time"></a>Postupy: Zachytávání uživatelského vstupu z komponenty PrintDialog při běhu
 Když nastavíte možnosti související s tiskem v době návrhu, někdy můžete změnit tyto možnosti v době běhu, pravděpodobně z důvodu volby provedené uživatelem. Můžete zaznamenat uživatelský vstup pro tisk dokumentu pomocí <xref:System.Windows.Forms.PrintDialog> a <xref:System.Drawing.Printing.PrintDocument> komponenty.  

@@ -4,39 +4,39 @@ ms.date: 03/30/2017
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
 author: BrucePerlerMS
 ms.openlocfilehash: a357f153d61b6a8e1e105639bd68647dabdc26f8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772918"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940475"
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Postupy: Povolení zjišťování opakování tokenů
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® webových formulářů  
+- ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod obsahuje podrobně popisuje postupy pro povolení rozpoznání opětovného přehrání tokenu v aplikaci ASP.NET, která pomocí technologie WIF. Také poskytuje pokyny k otestování aplikace ověřit, zda je povoleno rozpoznání opětovného přehrání tokenu. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Nástroj identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled  
+- Přehled  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché technologie ASP.NET webové formuláře aplikace a povolení zjišťování opakování  
+- Krok 1 – Vytvoření jednoduché technologie ASP.NET webové formuláře aplikace a povolení zjišťování opakování  
   
--   Krok 2 – otestování řešení  
+- Krok 2 – otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Vytvořit jednoduchou aplikaci ASP.NET, která používá technologie WIF a služba STS pro vývoj od Identity and Access Tool  
+- Vytvořit jednoduchou aplikaci ASP.NET, která používá technologie WIF a služba STS pro vývoj od Identity and Access Tool  
   
--   Povolení rozpoznání opětovného přehrání tokenu a ověření, že je funkční  
+- Povolení rozpoznání opětovného přehrání tokenu a ověření, že je funkční  
   
 ## <a name="overview"></a>Přehled  
  Opakování útoku nastane, pokud klient pokus o ověření k předávající straně s tokenem služby tokenů zabezpečení, které už klient použil. Aby se zabránilo útoku, obsahuje technologie WIF mezipaměti zjišťování opakování předchozích tokenů služby tokenů zabezpečení. Pokud povolená, rozpoznání opětovného přehrání ověří token příchozího požadavku a ověří, zda token, který byl dříve používali. Pokud token, který se už používá, žádost byla odmítnuta a <xref:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException> je vyvolána výjimka.  
@@ -45,9 +45,9 @@ ms.locfileid: "59772918"
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché technologie ASP.NET webové formuláře aplikace a povolení zjišťování opakování  
+- Krok 1 – Vytvoření jednoduché technologie ASP.NET webové formuláře aplikace a povolení zjišťování opakování  
   
--   Krok 2 – otestování řešení  
+- Krok 2 – otestování řešení  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application-and-enable-replay-detection"></a>Krok 1 – Vytvoření jednoduché technologie ASP.NET webové formuláře aplikace a povolení zjišťování opakování  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET a upravit *Web.config* souboru k povolení zjišťování opakování.  

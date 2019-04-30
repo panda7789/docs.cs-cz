@@ -20,11 +20,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 0a45c661-89dc-4390-9cc6-c47eee501488
 ms.openlocfilehash: 095c89fd305b1eeb73e2919760abe48e848c6aa0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902314"
 ---
 # <a name="datagridview-control-overview-windows-forms"></a>DataGridView – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -36,13 +36,13 @@ ms.locfileid: "59112876"
   
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje standardní Windows Forms datový model vazby, proto vytvoří vazbu instance tříd, které je popsáno v následujícím seznamu:  
   
--   Všechny třídy, která implementuje <xref:System.Collections.IList> rozhraní, včetně jednorozměrná pole.  
+- Všechny třídy, která implementuje <xref:System.Collections.IList> rozhraní, včetně jednorozměrná pole.  
   
--   Všechny třídy, která implementuje <xref:System.ComponentModel.IListSource> rozhraní, jako <xref:System.Data.DataTable> a <xref:System.Data.DataSet> třídy.  
+- Všechny třídy, která implementuje <xref:System.ComponentModel.IListSource> rozhraní, jako <xref:System.Data.DataTable> a <xref:System.Data.DataSet> třídy.  
   
--   Všechny třídy, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní, jako <xref:System.ComponentModel.BindingList%601> třídy.  
+- Všechny třídy, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní, jako <xref:System.ComponentModel.BindingList%601> třídy.  
   
--   Všechny třídy, která implementuje <xref:System.ComponentModel.IBindingListView> rozhraní, jako <xref:System.Windows.Forms.BindingSource> třídy.  
+- Všechny třídy, která implementuje <xref:System.ComponentModel.IBindingListView> rozhraní, jako <xref:System.Windows.Forms.BindingSource> třídy.  
   
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek podporuje datové vazby k veřejné vlastnosti objektů vrácených podle těchto rozhraní a vlastnosti kolekci vrácené poskytovatelem <xref:System.ComponentModel.ICustomTypeDescriptor> rozhraní, je-li implementovat na vrácených objektů.  
   

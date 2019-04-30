@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
 ms.openlocfilehash: eb938cfae645a9cc3811f1b5a02cddef742bac89
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59317100"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922223"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Úprava vysokých (maximálních) hodnot v ADO.NET
 Rozsáhlého objektu (LOB) datové typy jsou ty, které překračují maximální velikost řádku 8 kilobajtů (KB). SQL Server poskytuje `max` specifikátor pro `varchar`, `nvarchar`, a `varbinary` datové typy, aby umožňovala ukládání hodnoty větší než 2 ^ 32 bajtů. Zadat sloupce tabulky a proměnných jazyka Transact-SQL `varchar(max)`, `nvarchar(max)`, nebo `varbinary(max)` datové typy. V ADO.NET `max` datové typy lze načíst pomocí `DataReader`a je taky možné specifikovat jako obě hodnoty vstupní a výstupní parametr bez žádným zvláštním způsobem. Pro velké `varchar` datové typy dat, dají se načíst a přírůstkově aktualizovat.  
@@ -26,11 +26,11 @@ Rozsáhlého objektu (LOB) datové typy jsou ty, které překračují maximáln�
 ## <a name="large-value-type-restrictions"></a>Typ velké hodnoty omezení  
  Následující omezení platí pro `max` datové typy, které neexistují pro menší datové typy:  
   
--   A `sql_variant` nemůže obsahovat velké `varchar` datového typu.  
+- A `sql_variant` nemůže obsahovat velké `varchar` datového typu.  
   
--   Velké `varchar` sloupců nemůže být určen jako klíčový sloupec v indexu. Můžou v zahrnutý sloupec v neclusterovaný index.  
+- Velké `varchar` sloupců nemůže být určen jako klíčový sloupec v indexu. Můžou v zahrnutý sloupec v neclusterovaný index.  
   
--   Velké `varchar` sloupce nelze použít jako dělení klíčových sloupců.  
+- Velké `varchar` sloupce nelze použít jako dělení klíčových sloupců.  
   
 ## <a name="working-with-large-value-types-in-transact-sql"></a>Práce s typy velké hodnoty v jazycích Transact-SQL  
  Příkazů jazyka Transact-SQL `OPENROWSET` funkce je jednorázový metoda připojování a přístup ke vzdáleným datům. Obsahuje všechny informace o připojení, která je nezbytná pro přístup ke vzdáleným datům ze zdroje dat OLE DB. `OPENROWSET` může být odkazováno v klauzuli FROM dotazu, jako by šlo název tabulky. Lze také odkazovat jako cílové tabulce příkazu INSERT, UPDATE, nebo odstraňte příkaz, v souladu s možností zprostředkovatele OLE DB.  

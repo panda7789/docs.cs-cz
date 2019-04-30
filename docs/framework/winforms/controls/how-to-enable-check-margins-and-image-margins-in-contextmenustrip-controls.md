@@ -12,11 +12,11 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms]
 ms.assetid: eb584e71-59da-4012-aaca-dbe1c7c7a156
 ms.openlocfilehash: 80a6b5a7e3ce354abdfbe330a378566d47c011ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170895"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941450"
 ---
 # <a name="how-to-enable-check-margins-and-image-margins-in-contextmenustrip-controls"></a>Postupy: Povolení okrajů pro zaškrtnutí a okrajů obrázků v ovládacích prvcích ContextMenuStrip
 Můžete přizpůsobit <xref:System.Windows.Forms.ToolStripMenuItem> objekty ve vaší <xref:System.Windows.Forms.MenuStrip> ovládací prvek s značky zaškrtnutí a vlastní Image.  
@@ -34,7 +34,7 @@ Můžete přizpůsobit <xref:System.Windows.Forms.ToolStripMenuItem> objekty ve 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení System.Design System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System.Design System.Drawing a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

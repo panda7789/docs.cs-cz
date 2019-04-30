@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WS-AT protocol [WCF]
 ms.assetid: 04a4c200-0af0-4c5d-a3d9-87cb7339e054
 ms.openlocfilehash: 8a8265873e4287e1455659aa4d9fae7e1d570a00
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59165465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932844"
 ---
 # <a name="using-ws-atomictransaction"></a>Používání protokolu WS-AtomicTransaction
 WS-AtomicTransaction (WS-AT) je protokol interoperabilní transakce. Umožňuje vám tok distribuovaných transakcí pomocí webové služby zpráv a koordinovat interoperabilní způsobem mezi transakce heterogenní infrastruktury. WS-AT používá protokol dvoufázového potvrzení Centrum umožňující prosazovat atomic výsledek mezi distribuovaných aplikací, transakce správci a správci prostředků.  
@@ -20,9 +20,9 @@ WS-AtomicTransaction (WS-AT) je protokol interoperabilní transakce. Umožňuje 
   
  Volba ovlivňuje protokolu:  
   
--   Formát záhlaví zpráv používá k toku transakce z klienta na server.  
+- Formát záhlaví zpráv používá k toku transakce z klienta na server.  
   
--   Síťový protokol použitý ke spuštění protokol dvoufázového potvrzení mezi správce transakcí klienta a transakce serveru, aby bylo možné přeložit výsledek transakce.  
+- Síťový protokol použitý ke spuštění protokol dvoufázového potvrzení mezi správce transakcí klienta a transakce serveru, aby bylo možné přeložit výsledek transakce.  
   
  Pokud server a klienta jsou zapsány pomocí WCF, není potřeba použít WS-AT. Místo toho můžete použít výchozí nastavení pro položky `NetTcpBinding` s `TransactionFlow` atribut povolena, pomocí něhož `OleTransactions` místo protokolu. Další informace najdete v tématu [ \<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md). V opačném případě pokud se tok transakcí do webovými službami postavenými na technologiemi třetích stran, musíte použít WS-AT.  
   

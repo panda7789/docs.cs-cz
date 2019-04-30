@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Vytvoření vlastního návrháře aktivit'
+title: 'Postupy: Vytvoření vlastního návrháře aktivity'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
 ms.openlocfilehash: e455d00ebd128c37eacb19df0e7f864505df04e0
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57716826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945649"
 ---
-# <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivit
+# <a name="how-to-create-a-custom-activity-designer"></a>Postupy: Vytvoření vlastního návrháře aktivity
 
 Vlastní návrháři aktivit jsou obvykle implementovány tak, aby jejich související aktivity sestavitelný s ostatními aktivitami, jehož návrháři dá přetáhnout do návrhové plochy s nimi. Tato funkce vyžaduje, aby poskytovaly vlastního návrháře aktivit "rozevírací zónu" umístění libovolné aktivity a také způsob, jak spravovat výsledný kolekci prvků na návrhové ploše. Toto téma popisuje, jak vytvořit vlastního návrháře aktivit, která obsahuje rozevírací zóny a jak vytvořit vlastního návrháře aktivit, které zajišťuje, že editačních funkcích museli spravovat kolekci elementů návrháře.
 

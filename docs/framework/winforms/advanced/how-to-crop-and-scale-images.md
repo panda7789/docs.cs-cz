@@ -9,11 +9,11 @@ helpviewer_keywords:
 - images [Windows Forms], scaling
 ms.assetid: 053e3360-bca0-4b25-9afa-0e77a6f17b03
 ms.openlocfilehash: 4257431881565f9160f45795111d374cc680dedd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189882"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937567"
 ---
 # <a name="how-to-crop-and-scale-images"></a>Postupy: Oříznutí a změna měřítka obrázků
 <xref:System.Drawing.Graphics> Třída poskytuje několik <xref:System.Drawing.Graphics.DrawImage%2A> metody, některé z nich mají zdrojové a cílové parametry obdélníku, které slouží k oříznutí a změna měřítka obrázků.  

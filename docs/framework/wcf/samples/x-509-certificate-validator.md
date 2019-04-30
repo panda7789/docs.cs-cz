@@ -3,11 +3,11 @@ title: Validátor certifikátu X.509
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
 ms.openlocfilehash: 88364aabf5df3a4f41d83613c0c4328b2d5979a0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949913"
 ---
 # <a name="x509-certificate-validator"></a>Validátor certifikátu X.509
 Tento příklad ukazuje, jak implementovat vlastní validátor certifikátu X.509. To je užitečné v případech, kdy je vhodné pro požadavky na aplikace žádná z předdefinovaných režimy ověřování certifikátu X.509. Tento příklad ukazuje služba, která má vlastní validátor, který přijímá samostatně vydané certifikáty. Klient používá tento certifikát k ověření ve službě.
@@ -16,11 +16,11 @@ Tento příklad ukazuje, jak implementovat vlastní validátor certifikátu X.50
 
  V souhrnu Tato ukázka předvádí, jak:
 
--   Klient lze ověřit pomocí certifikátu X.509.
+- Klient lze ověřit pomocí certifikátu X.509.
 
--   Server ověří klienta přihlašovacích údajů, kteří vlastní X509CertificateValidator.
+- Server ověří klienta přihlašovacích údajů, kteří vlastní X509CertificateValidator.
 
--   Server byl ověřovaný pomocí certifikátu X.509 serveru.
+- Server byl ověřovaný pomocí certifikátu X.509 serveru.
 
  Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding` , která ve výchozím nastavení používá `WSSecurity` a ověření klientského certifikátu. Chování služby určuje vlastní režim ověřování klientských certifikátů X.509 spolu s typem třídy program pro ověření. Chování také Určuje certifikát serveru pomocí serviceCertificate elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).
 
@@ -254,7 +254,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v příslušné konfiguraci:
 
--   Vytváří se certifikát serveru:
+- Vytváří se certifikát serveru:
 
      Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.
 
@@ -268,7 +268,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 
@@ -276,7 +276,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
--   Vytváří se certifikát klienta:
+- Vytváří se certifikát klienta:
 
      Následující řádky z dávkový soubor Setup.bat vytvořit klientský certifikát, který se má použít. % Proměnná % uživatelské_jméno Určuje název klienta. Tato hodnota nastavená na "test1", protože jde o název, který hledá kód klienta. Pokud změníte hodnotu % uživatelské_jméno musíte změnit odpovídající hodnotu ve zdrojovém souboru Client.cs a znovu sestavte klienta.
 
@@ -292,7 +292,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%USER_NAME% -sky exchange -pe
     ```
 
--   Instalaci klientského certifikátu do úložiště důvěryhodných certifikátů serveru:
+- Instalaci klientského certifikátu do úložiště důvěryhodných certifikátů serveru:
 
      Následující řádky do dávkový soubor Setup.bat zkopírujte klientský certifikát do úložiště důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje serverového systému. Pokud už máte certifikát, který je integrován v důvěryhodných kořenových certifikátů – například certifikátů vystavených Microsoftem – v tomto kroku naplnění úložiště certifikátů serveru pomocí certifikátu klienta se nevyžaduje.
 

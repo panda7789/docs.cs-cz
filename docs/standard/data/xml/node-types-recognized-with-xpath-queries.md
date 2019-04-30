@@ -6,11 +6,11 @@ ms.assetid: 1d33e22d-18e5-43f8-a466-2e3d0a8dd094
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 19aeab232f366818291bd682ab9c063a75be6687
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936744"
 ---
 # <a name="node-types-recognized-with-xpath-queries"></a>Rozpoznané typy uzlů s dotazy XPath
 Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou stejné typy uzlů nalezen v modelu Document Object Model (DOM).  
@@ -18,25 +18,25 @@ Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou stejné typy uzlů nal
 ## <a name="w3c-xpath-node-types"></a>Typy uzlů XPath W3C  
  Typy uzlů, které jsou rozpoznány ve dotaz XPath nejsou typy uzlů nalezen v modelu Document Object Model (DOM). Toto jsou typy uzlů XPath reprezentována <xref:System.Xml.XPath.XPathNodeType> výčtu.  
   
--   <xref:System.Xml.XPath.XPathNodeType.All>  
+- <xref:System.Xml.XPath.XPathNodeType.All>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Attribute>  
+- <xref:System.Xml.XPath.XPathNodeType.Attribute>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Comment>  
+- <xref:System.Xml.XPath.XPathNodeType.Comment>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Element>  
+- <xref:System.Xml.XPath.XPathNodeType.Element>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Namespace>  
+- <xref:System.Xml.XPath.XPathNodeType.Namespace>  
   
--   <xref:System.Xml.XPath.XPathNodeType.ProcessingInstruction>  
+- <xref:System.Xml.XPath.XPathNodeType.ProcessingInstruction>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Root>  
+- <xref:System.Xml.XPath.XPathNodeType.Root>  
   
--   <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace>  
+- <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Text>  
+- <xref:System.Xml.XPath.XPathNodeType.Text>  
   
--   <xref:System.Xml.XPath.XPathNodeType.Whitespace>  
+- <xref:System.Xml.XPath.XPathNodeType.Whitespace>  
   
  Tyto typy uzlů jsou založeny na XPath datový model, ve kterém uzly jsou odvozeny z nastavení XML informací. <xref:System.Xml.XPath.XPathNodeType.SignificantWhitespace> a <xref:System.Xml.XPath.XPathNodeType.Whitespace> typy uzlů se rozšíření rozhraní Microsoft .NET Framework pro základní uzel typů uvedených v modelu dat XPath.  
   

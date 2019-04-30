@@ -5,11 +5,11 @@ helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
 ms.openlocfilehash: b357ee12dce823e49e61171d21356ca36b74f7c5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949614"
 ---
 # <a name="securing-clients"></a>Zabezpečení klientů
 Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpečení pro klienty. To znamená služba určuje, jaké režim zabezpečení, a určuje, jestli klient musí poskytnout přihlašovací údaje. Zabezpečení klienta, proto se tento proces je prostý: pomocí metadat získaných ze služby (je-li publikován) a vytvořit klienta. Metadata Určuje, jak nakonfigurovat klienta. Pokud služba vyžaduje, aby, že klient zadat přihlašovací údaje, je nutné získat pověření, která odpovídá požadavku. Toto téma popisuje proces podrobněji. Další informace o vytváření zabezpečených služeb, naleznete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
@@ -71,7 +71,7 @@ Ve Windows Communication Foundation (WCF), služba určuje požadavky na zabezpe
   
  Běžné formuláře pověření je certifikát X.509. Můžete zadat přihlašovací údaje, které dvěma způsoby:  
   
--   Tím, že je v klientském kódu (pomocí `SetCertificate` metoda).  
+- Tím, že je v klientském kódu (pomocí `SetCertificate` metoda).  
   
  Přidáním [ \<chování >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) oddílu konfiguračního souboru pro klienta a použitím `clientCredentials` – element (viz dole).  
   

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - string manipulation
 ms.assetid: 905055cd-7f50-48fb-9eed-b0995af1dc1f
 ms.openlocfilehash: 44eb101ebdfeb316958a659107190ef1fc84df44
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938265"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Typy metod manipulace s řetězci v jazyce Visual Basic
 Existuje několik různých způsobů, jak analyzovat a manipulaci s řetězci. Některé metody jsou součástí jazyka Visual Basic a jiné jsou spojené `String` třídy.  

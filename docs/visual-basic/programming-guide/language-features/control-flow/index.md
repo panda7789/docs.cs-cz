@@ -9,23 +9,23 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], control flow
 ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
 ms.openlocfilehash: 14133dc764d6708d8b7a3366038bc3240e5cbc76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906656"
 ---
 # <a name="control-flow-in-visual-basic"></a>Tok řízení v jazyce Visual Basic
-Oblast vlevo, program pokračuje prostřednictvím jeho příkazy od začátku do konce. Některé velmi jednoduché programy může být napsán s pouze tento jednosměrný tok. Velká část napájení a nástroj žádný programovací jazyk, však pochází z umožňuje změnit pořadí zpracování řídicí příkazy a smyčky.  
+Oblast vlevo, program pokračuje přes jeho příkazy od začátku do konce. Některé velmi jednoduchá aplikace může být zapsaný s pouze tento jednosměrný tok. Většinu možností a nástroj libovolný programovací jazyk pochází však možnost, chcete-li změnit pořadí provádění s řídicí příkazy a smyčky.  
   
- Řídicí struktury umožňují regulovat tok provádění vašeho programu. Řídicí struktury můžete napsat kód jazyka Visual Basic, který rozhoduje či, opakování akce. Ostatní řídicí struktury umožňují zaručit uvolnění prostředku nebo spuštění řady příkazů na odkaz na stejný objekt.  
+ Řídicí struktury umožní regulovat tok provádění vašeho programu. Použití řídicích struktur, můžete napsat kód jazyka Visual Basic, která rozhoduje nebo který se opakuje akce. Ostatní řídicí struktury vám umožní zajistit uvolnění prostředku nebo spustit sérii příkazů na odkaz na stejný objekt.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhodovací struktury](../../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)  
- Popisuje řídicí struktury použít pro vytvoření větve.  
+ Popisuje řídicí struktury používá pro větvení.  
   
  [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- Popisuje řídicí struktury používá opakování procesy.  
+ Tento článek popisuje řídicích struktur opakování procesů používá.  
   
  [Ostatní řídicí struktury](../../../../visual-basic/programming-guide/language-features/control-flow/other-control-structures.md)  
  Popisuje řídicí struktury používá pro přístup k prostředkům k dispozici a objekt.  
@@ -35,4 +35,4 @@ Oblast vlevo, program pokračuje prostřednictvím jeho příkazy od začátku d
   
 ## <a name="related-sections"></a>Související oddíly  
  [Souhrn toku řízení](../../../../visual-basic/language-reference/keywords/control-flow-summary.md)  
- Na toto téma obsahuje odkazy na referenční stránky jazyk.
+ Obsahuje odkazy na jazyk stránky s referenčními informacemi k tomuto tématu.

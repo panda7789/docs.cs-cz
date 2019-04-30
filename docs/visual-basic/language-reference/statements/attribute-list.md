@@ -6,11 +6,11 @@ helpviewer_keywords:
 - attributes [Visual Basic], applying
 ms.assetid: 5880073a-68a4-4b6b-8a07-ace32959a4e2
 ms.openlocfilehash: 2399ec1342280df101e2818399e0f41f10d9606d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945077"
 ---
 # <a name="attribute-list-visual-basic"></a>Seznam atributů (Visual Basic)
 Určuje atributy, které se použijí pro deklarovaný programový prvek. Více atributů jsou odděleny čárkami. Následuje syntaxe pro jeden atribut.  
@@ -36,15 +36,15 @@ Určuje atributy, které se použijí pro deklarovaný programový prvek. Více 
   
 ## <a name="rules"></a>pravidla  
   
--   **Umístění.** Můžete použít atributy k nejvíce deklarovaný programový prvek. Pokud chcete použít jeden nebo více atributů, umístíte *bloku atributu* na začátku deklarace elementu. Každá položka v seznamu atributů určuje atribut, který chcete použít a modifikátor a argumenty, které používáte pro toto volání atributu.  
+- **Umístění.** Můžete použít atributy k nejvíce deklarovaný programový prvek. Pokud chcete použít jeden nebo více atributů, umístíte *bloku atributu* na začátku deklarace elementu. Každá položka v seznamu atributů určuje atribut, který chcete použít a modifikátor a argumenty, které používáte pro toto volání atributu.  
   
--   **Lomené závorky.** Pokud zadáte seznam atributů, je nutné uzavřít do lomené závorky ("`<`"a"`>`").  
+- **Lomené závorky.** Pokud zadáte seznam atributů, je nutné uzavřít do lomené závorky ("`<`"a"`>`").  
   
--   **Část prohlášení.** Atribut musí být součástí deklarace elementu, ne samostatný příkaz. Můžete použít posloupností pokračování řádku (" `_`") pro rozšíření příkazu deklarace do více řádků zdrojového kódu.  
+- **Část prohlášení.** Atribut musí být součástí deklarace elementu, ne samostatný příkaz. Můžete použít posloupností pokračování řádku (" `_`") pro rozšíření příkazu deklarace do více řádků zdrojového kódu.  
   
--   **Modifikátory.** Modifikátor atribut (`Assembly` nebo `Module`) je vyžadován na každý atribut na programovací prvek na začátku zdrojového souboru. Atribut modifikátory nejsou povoleny atributy u elementů, které nejsou na začátku zdrojového souboru.  
+- **Modifikátory.** Modifikátor atribut (`Assembly` nebo `Module`) je vyžadován na každý atribut na programovací prvek na začátku zdrojového souboru. Atribut modifikátory nejsou povoleny atributy u elementů, které nejsou na začátku zdrojového souboru.  
   
--   **Argumenty.** Všechny poziční argumenty pro atribut musí předcházet všechny proměnné nebo vlastnosti inicializátory.  
+- **Argumenty.** Všechny poziční argumenty pro atribut musí předcházet všechny proměnné nebo vlastnosti inicializátory.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad se vztahuje <xref:System.Runtime.InteropServices.DllImportAttribute> atribut kostru definici typu `Function` postup.  

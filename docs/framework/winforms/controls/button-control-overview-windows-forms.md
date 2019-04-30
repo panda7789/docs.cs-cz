@@ -8,11 +8,11 @@ helpviewer_keywords:
 - buttons [Windows Forms], about buttons
 ms.assetid: 255b291b-51a9-4a92-a1a4-2400cd82443f
 ms.openlocfilehash: 1ded871fdfab83407d8022ca0c4ce6b2c8a6c67c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938980"
 ---
 # <a name="button-control-overview-windows-forms"></a>Přehled ovládacího prvku Tlačítko (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.Button> ovládací prvek umožňuje uživateli klikněte na něj k provedení akce. Při kliknutí na tlačítko vypadat jako v případě, že je se vložil do a všeobecně dostupné. Pokaždé, když uživatel klikne na tlačítko <xref:System.Windows.Forms.Control.Click> je vyvolána obslužná rutina události. V kódu <xref:System.Windows.Forms.Control.Click> obslužná rutina události provádět veškeré akce zvolíte.  

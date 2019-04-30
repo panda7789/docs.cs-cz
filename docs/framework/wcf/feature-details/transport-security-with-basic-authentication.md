@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
 ms.openlocfilehash: 5c2ff8ac3b424a2541ba7604b5952b2a3ed0a21a
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933048"
 ---
 # <a name="transport-security-with-basic-authentication"></a>Zabezpečení přenosu se základním ověřováním
 Následující obrázek znázorňuje klienta a služby Windows Communication Foundation (WCF). Server potřebuje platný certifikát X.509, který lze použít pro vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Dále webová služba již má implementace protokolu SSL, který lze použít. Další informace o povolení základního ověřování v Internetové informační služby (IIS) najdete v tématu <https://go.microsoft.com/fwlink/?LinkId=83822>.  
@@ -30,9 +30,9 @@ Následující obrázek znázorňuje klienta a služby Windows Communication Fou
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který používá Windows doména uživatelské jméno a heslo pro zabezpečení přenosu. Všimněte si, že služba vyžaduje, aby certifikát X.509 k ověření klienta. Další informace najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md) a [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  

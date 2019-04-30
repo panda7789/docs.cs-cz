@@ -12,11 +12,11 @@ ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 17bc7c417980c0850788f082ebb6e810fd0c53d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333298"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793234"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Postupy: Definování a provádění dynamických metod
 Následující postupy ukazují, jak definovat a spustí jednoduchou dynamickou metodu a dynamická metoda svázána s instancí třídy. Další informace o dynamické metody, naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy a [emitování dynamické metody scénáře reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
@@ -116,11 +116,11 @@ Následující postupy ukazují, jak definovat a spustí jednoduchou dynamickou 
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
+- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
--   Nejsou vyžadovány žádné odkazy na další sestavení.  
+- Nejsou vyžadovány žádné odkazy na další sestavení.  
   
--   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

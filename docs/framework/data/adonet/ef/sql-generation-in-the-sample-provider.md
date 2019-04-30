@@ -3,11 +3,11 @@ title: Generování SQL ve zprostředkovateli ukázek
 ms.date: 03/30/2017
 ms.assetid: e70f553d-4622-4627-928e-1aa2ee605d8e
 ms.openlocfilehash: 88223930b65ccec9d030104c62d8b4b2e77ddbe2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59079412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879291"
 ---
 # <a name="sql-generation-in-the-sample-provider"></a>Generování SQL ve zprostředkovateli ukázek
 [Ukázka zprostředkovatele Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje nových komponent zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  Funguje s databází serveru SQL Server 2005 a je implementovaný jako obálka pro zprostředkovatele System.Data.SqlClient ADO.NET 2.0 Data.  

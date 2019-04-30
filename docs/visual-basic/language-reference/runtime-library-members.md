@@ -10,11 +10,11 @@ helpviewer_keywords:
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
 ms.openlocfilehash: 061782dbd0ac54286a6c0da74fe769d98848f118
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945181"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Členové knihovny prostředí Runtime jazyka Visual Basic
 `Microsoft.VisualBasic` Obor názvů obsahuje třídy, moduly, konstanty a výčty, které tvoří knihovny prostředí runtime jazyka Visual Basic. Členové tyto knihovny poskytují postupy, vlastnosti a konstantní hodnoty, které můžete používat ve vašem kódu. Každý modul a třída představuje určité kategorie funkce.  

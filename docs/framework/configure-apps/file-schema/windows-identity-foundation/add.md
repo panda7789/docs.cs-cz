@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
 ms.openlocfilehash: 34643d10ef1ed2e87152e5013634e62859e0594e
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55759480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791765"
 ---
 # <a name="add"></a>\<add>
 Přidá obslužnou rutinu tokenu zabezpečení do kolekce obslužné rutiny tokenů.  
@@ -40,7 +40,7 @@ Přidá obslužnou rutinu tokenu zabezpečení do kolekce obslužné rutiny toke
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Název typu CLR přidat obslužnou rutinu tokenu. Další informace o tom, jak zadat `type` atributu naleznete v tématu [odkazů na vlastní typy](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references).|  
+| – typ|Název typu CLR přidat obslužnou rutinu tokenu. Další informace o tom, jak zadat `type` atributu naleznete v tématu [odkazů na vlastní typy](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   

@@ -3,11 +3,11 @@ title: Interoperabilita se službami Enterprise Services a transakcemi modelu CO
 ms.date: 03/30/2017
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
 ms.openlocfilehash: 8b86a032e7cbc27332864c9cc96009f12b72c53d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793650"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>Interoperabilita se službami Enterprise Services a transakcemi modelu COM+
 <xref:System.Transactions> Obor názvů podporuje spolupráci mezi objekty transakce vytvořené pomocí tohoto oboru názvů a transakce vytvořené pomocí modelu COM +.  
@@ -29,9 +29,9 @@ ms.locfileid: "59301903"
   
  <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic> Určuje následující požadavky:  
   
--   Při <xref:System.Transactions.Transaction.Current%2A> je zaškrtnuto, <xref:System.Transactions> by měl podporu transakcí v rámci modelu COM +, jestliže zjistí, zda je spuštěna v kontextu jiných než výchozí kontext. Všimněte si, že výchozí kontext nemůže obsahovat transakcí. Proto ve výchozím kontextu, dokonce i s <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, transakce uložený v místním úložišti podprocesů používaný <xref:System.Transactions> je vrácena pro <xref:System.Transactions.Transaction.Current%2A>.  
+- Při <xref:System.Transactions.Transaction.Current%2A> je zaškrtnuto, <xref:System.Transactions> by měl podporu transakcí v rámci modelu COM +, jestliže zjistí, zda je spuštěna v kontextu jiných než výchozí kontext. Všimněte si, že výchozí kontext nemůže obsahovat transakcí. Proto ve výchozím kontextu, dokonce i s <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, transakce uložený v místním úložišti podprocesů používaný <xref:System.Transactions> je vrácena pro <xref:System.Transactions.Transaction.Current%2A>.  
   
--   Pokud nový <xref:System.Transactions.TransactionScope> objekt je vytvořen a dojde k vytvoření v jiném kontextu než výchozí kontext transakce, která je pro aktuální <xref:System.Transactions.TransactionScope> objekt by měl být projeví v modelu COM +. V takovém případě <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic> se chová jako <xref:System.Transactions.EnterpriseServicesInteropOption.Full> v tom, vytvoří nový kontext modelu COM +.  
+- Pokud nový <xref:System.Transactions.TransactionScope> objekt je vytvořen a dojde k vytvoření v jiném kontextu než výchozí kontext transakce, která je pro aktuální <xref:System.Transactions.TransactionScope> objekt by měl být projeví v modelu COM +. V takovém případě <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic> se chová jako <xref:System.Transactions.EnterpriseServicesInteropOption.Full> v tom, vytvoří nový kontext modelu COM +.  
   
  Kromě toho při <xref:System.Transactions.Transaction.Current%2A> je nastavena v obou <xref:System.Transactions.EnterpriseServicesInteropOption.Full> a <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, obou těchto režimech znamenat, že <xref:System.Transactions.Transaction.Current%2A> nelze nastavit přímo.  Žádný pokus o nastavení <xref:System.Transactions.Transaction.Current%2A> přímo jiné než vytváření <xref:System.Transactions.TransactionScope> vede <xref:System.InvalidOperationException>. <xref:System.Transactions.EnterpriseServicesInteropOption> Hodnota výčtu zdědí nové obory transakce, které explicitně neurčí hodnotu, která se má použít. Například, pokud vytvoříte nový <xref:System.Transactions.TransactionScope> objekt s <xref:System.Transactions.EnterpriseServicesInteropOption.Full>a potom vytvořte druhý <xref:System.Transactions.TransactionScope> objektu, ale ne <xref:System.Transactions.EnterpriseServicesInteropOption> hodnotu, druhá <xref:System.Transactions.TransactionScope> objekt má také <xref:System.Transactions.EnterpriseServicesInteropOption.Full>.  
   
@@ -39,11 +39,11 @@ ms.locfileid: "59301903"
   
 1. <xref:System.Transactions.Transaction.Current%2A> Pokud chcete zobrazit, pokud je transakce je zaškrtnuto. Výsledkem této kontrole:  
   
-    -   Kontrola, zda je obor.  
+    - Kontrola, zda je obor.  
   
-    -   Pokud je obor, hodnota <xref:System.Transactions.EnterpriseServicesInteropOption> výčet předané v případě oboru bylo původně vytvořeno je zaškrtnuto.  
+    - Pokud je obor, hodnota <xref:System.Transactions.EnterpriseServicesInteropOption> výčet předané v případě oboru bylo původně vytvořeno je zaškrtnuto.  
   
-    -   Pokud <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu je nastavena na <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, transakce modelu COM + (<xref:System.EnterpriseServices> transakce) má přednost před <xref:System.Transactions> transakce v místním úložišti spravované vlákno.  
+    - Pokud <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu je nastavena na <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>, transakce modelu COM + (<xref:System.EnterpriseServices> transakce) má přednost před <xref:System.Transactions> transakce v místním úložišti spravované vlákno.  
   
          Pokud hodnota je nastavena <xref:System.Transactions.EnterpriseServicesInteropOption.None>, <xref:System.Transactions> transakce v místním úložišti spravované vlákno přednost.  
   
@@ -53,28 +53,28 @@ ms.locfileid: "59301903"
   
 3. Pokud novou transakci má být vytvořen, následující hodnoty <xref:System.Transactions.EnterpriseServicesInteropOption> za následek:  
   
-    -   <xref:System.Transactions.EnterpriseServicesInteropOption.Full>: je vytvořen transakcí spojený s kontextem modelu COM +.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.Full>: je vytvořen transakcí spojený s kontextem modelu COM +.  
   
-    -   <xref:System.Transactions.EnterpriseServicesInteropOption.None>: <xref:System.Transactions> transakce je vytvořen.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.None>: <xref:System.Transactions> transakce je vytvořen.  
   
-    -   <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>: Pokud je kontext modelu COM +, transakcí je vytvořen a připojit ke kontextu.  
+    - <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>: Pokud je kontext modelu COM +, transakcí je vytvořen a připojit ke kontextu.  
   
  Následující tabulka znázorňuje kontext služby Enterprise (ES) a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádné|Automatické|Do bloku|  
+|Kontext ES|Žádný|Automatické|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|Výchozí kontext|Výchozí kontext|Vytvořit nový <br />transakční kontextu|  
 |Jiné než výchozí kontext|Udržovat kontextu klienta|Vytvořit nový transakční kontext|Vytvořit nový transakční kontext|  
   
  Následující tabulka popisuje, co okolí transakce je, daný konkrétní <xref:System.EnterpriseServices> kontextu a transakční obor, který vyžaduje, aby transakce pomocí <xref:System.Transactions.EnterpriseServicesInteropOption> výčtu.  
   
-|Kontext ES|Žádné|Automatické|Do bloku|  
+|Kontext ES|Žádný|Automatické|Do bloku|  
 |----------------|----------|---------------|----------|  
 |Výchozí kontext|ST|ST|ES|  
 |Jiné než výchozí kontext|ST|ES|ES|  
   
  V tabulce:  
   
--   ST znamená spravuje okolí transakce oboru <xref:System.Transactions>, nezávisle na jakékoli <xref:System.EnterpriseServices> daného kontextu transakce, které mohou být k dispozici.  
+- ST znamená spravuje okolí transakce oboru <xref:System.Transactions>, nezávisle na jakékoli <xref:System.EnterpriseServices> daného kontextu transakce, které mohou být k dispozici.  
   
--   ES znamená, že oboru okolí transakce je stejná jako <xref:System.EnterpriseServices> transakce daného kontextu.
+- ES znamená, že oboru okolí transakce je stejná jako <xref:System.EnterpriseServices> transakce daného kontextu.

@@ -3,11 +3,11 @@ title: Indexované vlastnosti
 description: Další informace o indexované vlastnosti v F#, které umožňují pro přístup jako pole k datům seřazené.
 ms.date: 10/17/2018
 ms.openlocfilehash: bc330641c451973ddefa0a34fe6e757a808f6cb7
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678603"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903822"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 

@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: bf7b54ab7a2318e8194bf39dbe41b864633ddb43
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790062"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
 Vytvoří sestavení. Volejte tuto metodu po všechny ostatní soubory zavřou, s výjimkou souboru sestavení. Nevolejte tuto metodu při vytváření nevázaného moduly.  

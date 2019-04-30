@@ -9,11 +9,11 @@ helpviewer_keywords:
 - aid usability of a TextBox using a background image [WPF]
 ms.assetid: df89bdd8-a0fb-45e0-b312-dd53332d01a8
 ms.openlocfilehash: ef2536f03ba6ed08e27d2fcf30cd1f72df2cf460
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59142412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911613"
 ---
 # <a name="how-to-add-a-watermark-to-a-textbox"></a>Postupy: Přidání vodoznaku do pole TextBox
 Následující příklad ukazuje, jak možnost využití pomoci pro <xref:System.Windows.Controls.TextBox> zobrazte obrázek na pozadí vysvětlující uvnitř <xref:System.Windows.Controls.TextBox> dokud uživatel vstupů text, kdy bitová kopie je odebrána. Obrázek pozadí kromě toho je znovu obnovit, pokud uživatel odebere svůj vstup. Podívejte se na následující ilustraci.  

@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID14
 ms.assetid: 16681c75-a400-422d-9351-c691d3c7614e
 ms.openlocfilehash: 119d17e1aea974a0c40451260e671994653cee46
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946559"
 ---
 # <a name="out-of-string-space-visual-basic"></a>Nedostatek místa pro řetězce (Visual Basic)
 Pomocí jazyka Visual Basic můžete použít velmi dlouhých řetězců. Požadavky na ostatní programy a způsob práce s řetězci však může způsobit stále k této chybě.  

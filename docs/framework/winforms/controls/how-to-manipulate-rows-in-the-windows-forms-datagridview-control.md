@@ -11,11 +11,11 @@ helpviewer_keywords:
 - rows [Windows Forms], manipulating on Windows Forms
 ms.assetid: 522d8944-e073-4488-9673-923f0a8d7214
 ms.openlocfilehash: 095efc7279a1dc6702aeeb5ec5d598dbdd8818b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913741"
 ---
 # <a name="how-to-manipulate-rows-in-the-windows-forms-datagridview-control"></a>Postupy: Manipulace s řádky v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> řádky pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewRow> třídy.  
@@ -28,7 +28,7 @@ Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

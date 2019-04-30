@@ -1,17 +1,17 @@
 ---
-title: Kustomizace možností návrhu pracovního postupu
+title: Přizpůsobení prostředí pro návrh pracovního postupu
 ms.date: 03/30/2017
 helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
 ms.openlocfilehash: 2d6ef24d00baa4df6dfc8e0af69c1d489b79a41f
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57724649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945987"
 ---
-# <a name="customizing-the-workflow-design-experience"></a>Kustomizace možností návrhu pracovního postupu
+# <a name="customizing-the-workflow-design-experience"></a>Přizpůsobení prostředí pro návrh pracovního postupu
 
 Scénáře pro návrh vlastní aktivity a změna hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly výrazně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Vývoj a nasazení jsou teď jednodušší a flexibilnější. Změny klíče infrastruktury je, že nové návrháře programovací model aktivity je postavená na Windows Presentation Foundation (WPF). To vám dává možnost definovat deklarativně návrháři aktivit a opětovným hostováním [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v ostatních aplikacích s srovnávací snadné. Při opětovném hostování, editoru vlastních výrazů mohou být vytvořeny pro podporu technologie IntelliSense nebo doméně jednodušší výraz. Integrace s Windows Communication Foundation (WCF) se stal bezproblémové s využitím služeb pracovních postupů. Ke zvýšení návrhu v Návrháři postupu provádění se změněným hostováním prostředí čas můžete použít vlastní návrháři aktivit a položka stromu modelu.
 

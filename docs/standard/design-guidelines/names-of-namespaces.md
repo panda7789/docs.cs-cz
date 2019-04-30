@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
 author: KrzysztofCwalina
 ms.openlocfilehash: 0099c5c8a863023099b377e139461606de3e1e1c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54665133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940982"
 ---
 # <a name="names-of-namespaces"></a>Názvy oborů názvů
 Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů vytváří dostatečná přehlednost pro programátora pomocí rozhraní hned vědět, co je pravděpodobné, že obsah oboru názvů. Následující šablony určuje obecné pravidlo pro pojmenování obory názvů:  
@@ -49,7 +49,7 @@ Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů
   
  Existují konkrétní pokyny ke vyhnutí se konfliktům název typu pro různé kategorie oborů názvů.  
   
--   **Obory názvů modelu aplikace**  
+- **Obory názvů modelu aplikace**  
   
      Obory názvů, které patří do jedné aplikační model se často používají společně, ale jsou téměř nikdy používat s obory názvů modelů jiné aplikace. Například <xref:System.Windows.Forms?displayProperty=nameWithType> obor názvů je velmi zřídka použít v kombinaci s <xref:System.Web.UI?displayProperty=nameWithType> oboru názvů. Následuje seznam známých aplikaci modelu obor názvů skupin:  
   
@@ -60,11 +60,11 @@ Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů
   
      Například nepřidávejte typ s názvem `Page` k <xref:System.Web.UI.Adapters?displayProperty=nameWithType> obor názvů, protože <xref:System.Web.UI?displayProperty=nameWithType> již obsahuje typ s názvem oboru názvů `Page`.  
   
--   **Obory názvů infrastruktury**  
+- **Obory názvů infrastruktury**  
   
      Tato skupina obsahuje obory názvů, které se importují jen zřídka během vývoje běžných aplikací. Například `.Design` oborů názvů se používá hlavně při vývoji programovacích nástrojů. Vyhnutí se konfliktům s typy v těchto oborech názvů není důležité.  
   
--   **Obory názvů jádra**  
+- **Obory názvů jádra**  
   
      Základní oborů názvů patří všechny `System` obory názvů, s výjimkou obory názvů modelů aplikací a infrastruktury obory názvů. Obory názvů Core patří mimo jiné `System`, `System.IO`, `System.Xml`, a `System.Net`.  
   
@@ -72,7 +72,7 @@ Jako s další pokyny pro pojmenování, cílem při pojmenování obory názvů
   
      Například nikdy nepoužívejte `Stream` jako název typu. By byla v konfliktu s <xref:System.IO.Stream?displayProperty=nameWithType>, velmi často používána typu.  
   
--   **Obor názvů skupin technologie**  
+- **Obor názvů skupin technologie**  
   
      Tato kategorie zahrnuje všechny obory názvů se stejným první dva uzly oboru názvů `(<Company>.<Technology>*`), jako například `Microsoft.Build.Utilities` a `Microsoft.Build.Tasks`. Je důležité, že typy, které patří do jedné technologie nejsou v konfliktu mezi sebou.  
   

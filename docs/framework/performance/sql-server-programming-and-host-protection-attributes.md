@@ -15,11 +15,11 @@ ms.assetid: 7dfa36b4-e773-4c75-a3ff-ff1af3ce4c4f
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f1049187dabbea64599617bb4372ed50515a51e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949185"
 ---
 # <a name="sql-server-programming-and-host-protection-attributes"></a>Programování serveru SQL Server a atributy ochrany hostitele
 Umožňuje načtení a spuštění spravovaného kódu v hostitelském systému SQL Server vyžaduje splnění požadavků hostitele pro zabezpečení přístupu kódu a Ochrana prostředků hostitele.  Požadavky na zabezpečení přístupu kódu jsou určena pomocí jedné ze tří sad oprávnění systému SQL Server: BEZPEČNĚ, vnější přístup nebo UNSAFE. Spouštěním kódu ve TREZORU nebo externí přístup sady oprávnění musí vyloučit určité typy nebo členy, které mají <xref:System.Security.Permissions.HostProtectionAttribute> atribut. <xref:System.Security.Permissions.HostProtectionAttribute> Není oprávnění zabezpečení tak, jak záruka spolehlivosti v identifikuje konkrétní kód vytvoří, typy a metody, mohou zakázat hostitele.  Použití <xref:System.Security.Permissions.HostProtectionAttribute> vynucuje programovací model, který pomáhá chránit stabilitu hostitele.  
@@ -27,11 +27,11 @@ Umožňuje načtení a spuštění spravovaného kódu v hostitelském systému 
 ## <a name="host-protection-attributes"></a>Atributy ochrany hostitele  
  Atributy ochrany hostitele identifikujte typy nebo členy, které nemají přizpůsobit programovací model hostitele a představují následující zvýšení úrovně hrozeb spolehlivosti:  
   
--   Jinak jsou neškodné.  
+- Jinak jsou neškodné.  
   
--   Může vést k destabilization server spravován uživatelského kódu.  
+- Může vést k destabilization server spravován uživatelského kódu.  
   
--   Může vést k destabilization samotného procesu serveru.  
+- Může vést k destabilization samotného procesu serveru.  
   
  SQL Server nepovoluje použití typu nebo člena, který má <xref:System.Security.Permissions.HostProtectionAttribute> , který určuje <xref:System.Security.Permissions.HostProtectionResource> hodnotu <xref:System.Security.Permissions.HostProtectionResource.SharedState>, <xref:System.Security.Permissions.HostProtectionResource.Synchronization>, <xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort>, nebo <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt>. To zabraňuje sestavení z volání členy, které povolit sdílení stavu, provede synchronizaci, může způsobit, že prostředek na ukončení nebo vliv na celistvost procesu serveru SQL Server.  
   

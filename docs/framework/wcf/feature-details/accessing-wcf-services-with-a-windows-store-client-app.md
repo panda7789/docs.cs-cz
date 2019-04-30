@@ -3,11 +3,11 @@ title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
 ms.openlocfilehash: a7d87e6014f26842c35b0d1bf5028682a4cf69e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294857"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784316"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace Windows Store. Tyto aplikace jsou navržené s ohledem dotykové obrazovce rozhraní. Rozhraní .NET framework 4.5 umožňuje aplikacím Windows Store pro volání služeb WCF.  
@@ -120,7 +120,7 @@ Podporují se následující režimy zabezpečení v aplikacích Windows Store:
   
 V aplikacích Windows Store jsou podporovány následující typy přihlašovacích údajů klienta:
   
-1. Žádné  
+1. Žádný  
   
 2. Základní  
   

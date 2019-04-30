@@ -4,32 +4,32 @@ ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
 ms.openlocfilehash: 3313b2ad36260415d0ac505e01523dd999f85424
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345869"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792816"
 ---
 # <a name="claims-based-identity-model"></a>Model deklarovaných identit
 Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  
   
  Používání tohoto modelu nesmírně zjednodušuje jednotné přihlašování a aplikace již nemusí zodpovídat za následující činnosti:  
   
--   Ověřování uživatelů  
+- Ověřování uživatelů  
   
--   Ukládání uživatelských účtů a hesel  
+- Ukládání uživatelských účtů a hesel  
   
--   Vyhledávání podrobností identit uživatelů pomocí volání podnikové adresářové služby  
+- Vyhledávání podrobností identit uživatelů pomocí volání podnikové adresářové služby  
   
--   Integrace se systémy identit z jiných platforem nebo od jiných společností  
+- Integrace se systémy identit z jiných platforem nebo od jiných společností  
   
  V rámci tohoto modelu provádí aplikace rozhodnutí týkající se identity na základě deklarací poskytovaných systémem, který uživatele ověřil. Může se jednat o cokoli, od jednoduchého přizpůsobení aplikace pomocí křestního jména uživatele až po povolení přístupu k vyšší úrovni funkcí a prostředků aplikace.  
   
  Toto téma poskytuje následující informace:  
   
--   [Představení deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_1)  
+- [Představení deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_1)  
   
--   [Základní scénář pro Model deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_2)  
+- [Základní scénář pro Model deklarovaných identit](../../../docs/framework/security/claims-based-identity-model.md#BKMK_2)  
   
 <a name="BKMK_1"></a>   
 ## <a name="introduction-to-claims-based-identity"></a>Představení deklarovaných identit  

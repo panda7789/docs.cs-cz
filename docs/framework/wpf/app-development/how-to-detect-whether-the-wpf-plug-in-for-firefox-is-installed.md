@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zjištění instalovaného modulu plugin WPF pro Firefox'
+title: 'Postupy: Zjištění, jestli je instalovaný modulu plug-in WPF pro Firefox'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - plug-in for Firefox [WPF]
@@ -9,13 +9,13 @@ helpviewer_keywords:
 - detecting whether the WPF plug-in for Firefox is installed [WPF]
 ms.assetid: 5f839373-e3fb-44f1-88ad-4a0761f02189
 ms.openlocfilehash: 138c212e79654b8ac875628692b49bb6a38cb695
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57469310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947872"
 ---
-# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Postupy: Zjištění instalovaného modulu plugin WPF pro Firefox
+# <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Postupy: Zjištění, jestli je instalovaný modulu plug-in WPF pro Firefox
 
 Umožňuje Windows Presentation Foundation (WPF) modul plugin pro Firefox [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] a volné soubory XAML pro spuštění v prohlížeči Mozilla Firefox. Toto téma obsahuje skript napsané v HTML a JavaScript, která správcům umožňuje určit, jestli je nainstalovaná modulu Plugin WPF pro Firefox.
 

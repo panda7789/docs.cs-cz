@@ -10,11 +10,11 @@ helpviewer_keywords:
 - regional options
 ms.assetid: c3a99596-f09a-44a5-81dd-1b89a094f1df
 ms.openlocfilehash: 1e42fca7800a76cab10fd60058e34d31ae8b8830
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907319"
 ---
 # <a name="conversions-between-strings-and-other-types-visual-basic"></a>Převody mezi řetězci a ostatními typy (Visual Basic)
 Lze převést číselnou, `Boolean`, nebo hodnotu data a času `String`. Můžete také převést v opačném směru – z řetězcové hodnoty na číselnou hodnotu, `Boolean`, nebo `Date` – zadaný obsah řetězce může být interpretován jako platná hodnota cílového datového typu. Pokud to není možné, dojde k chybě za běhu.  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 1572ab23-6933-41b5-bfb4-0c4548145500
 author: BrucePerlerMS
 ms.openlocfilehash: 1567c669b5e682a7a771d7bedc95a8effa474e36
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790504"
 ---
 # <a name="tokenreplaycache"></a>\<tokenReplayCache>
 Registruje mezipaměti opětovného přehrání tokenu služby nebo kolekci obslužné rutiny tokenů zabezpečení.  

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
 ms.openlocfilehash: de85a3aca629582e79712b71ae2e3413b919ab28
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875157"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binárními daty (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna umožňuje načíst a aktualizovat binární data ze [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v jednom z následujících způsobů:  
   
--   Jako vlastnost primitivního typu entity. Toto je doporučená metoda pro práci s daty malé binární objekty, které je možné snadno načíst do paměti. V tomto případě binární vlastnost je vlastnost entity vystavené datový model a datové služby serializuje binárních dat jako XML binární kódováním base-64 ve zprávě s odpovědí.  
+- Jako vlastnost primitivního typu entity. Toto je doporučená metoda pro práci s daty malé binární objekty, které je možné snadno načíst do paměti. V tomto případě binární vlastnost je vlastnost entity vystavené datový model a datové služby serializuje binárních dat jako XML binární kódováním base-64 ve zprávě s odpovědí.  
   
--   Jako samostatný prostředek binární datový proud. Toto je doporučená metoda pro přístup k a změna data binárního rozsáhlého objektu (BLOB), který může představovat fotografie, video nebo jakéhokoli jiného typu zakódovaná binární data.  
+- Jako samostatný prostředek binární datový proud. Toto je doporučená metoda pro přístup k a změna data binárního rozsáhlého objektu (BLOB), který může představovat fotografie, video nebo jakéhokoli jiného typu zakódovaná binární data.  
   
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] implementuje streamování binární data pomocí protokolu HTTP, jak jsou definovány v [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Binární data v tento mechanismus je považován za mediální zdroj, který je oddělený od ale souvisejících s entitou, která se nazývá položku media link entry. Další informace najdete v tématu [streamování poskytovatele](../../../../docs/framework/data/wcf/streaming-provider-wcf-data-services.md).  
   

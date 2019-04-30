@@ -11,11 +11,11 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
 ms.openlocfilehash: a7bdfc244b0ff1c2ed625235df7e74ced026c542
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343607"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773071"
 ---
 # <a name="how-to-enable-message-replay-detection"></a>Postupy: Povolit zjišťování opakování zpráv
 Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mezi dvěma stranami a přehrává datový proud na jeden nebo více stran. Pokud zmírnit, počítače v souladu s útok bude zpracovávat datového proudu jako legitimní zprávy, což vede k celou řadu chybný důsledky, jako je například redundantní objednávky položku.  
@@ -30,13 +30,13 @@ Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mez
   
 2. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> vlastnost vrací odkaz <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> třídy a nastavte libovolné z následujících vlastností, podle potřeby:  
   
-    1.  `DetectReplay`. Logická hodnota. To se řídí, zda klient by měl zjistit riziko ze serveru. Výchozí hodnota je `true`.  
+    1. `DetectReplay`. Logická hodnota. To se řídí, zda klient by měl zjistit riziko ze serveru. Výchozí hodnota je `true`.  
   
-    2.  `MaxClockSkew`. A <xref:System.TimeSpan> hodnotu. Řídí, kolik času Nerovnoměrná distribuce mechanismus opakování může tolerovat možnost, mezi klientem a serverem. Mechanismus zabezpečení, který prověří časové razítko odeslání a určuje, zda byl odeslán příliš daleko v minulosti. Výchozí hodnota je 5 minut.  
+    2. `MaxClockSkew`. A <xref:System.TimeSpan> hodnotu. Řídí, kolik času Nerovnoměrná distribuce mechanismus opakování může tolerovat možnost, mezi klientem a serverem. Mechanismus zabezpečení, který prověří časové razítko odeslání a určuje, zda byl odeslán příliš daleko v minulosti. Výchozí hodnota je 5 minut.  
   
-    3.  `ReplayWindow`. A `TimeSpan` hodnotu. To se řídí jak dlouho zpráva může existovat v síti, jakmile server odešle ho (prostřednictvím zprostředkovatelů) před dosažením klienta. Klient sleduje podpisy některé zprávy odeslané v rámci nejnovější `ReplayWindow` za účelem rozpoznání opětovného přehrání.  
+    3. `ReplayWindow`. A `TimeSpan` hodnotu. To se řídí jak dlouho zpráva může existovat v síti, jakmile server odešle ho (prostřednictvím zprostředkovatelů) před dosažením klienta. Klient sleduje podpisy některé zprávy odeslané v rámci nejnovější `ReplayWindow` za účelem rozpoznání opětovného přehrání.  
   
-    4.  `ReplayCacheSize`. Celočíselná hodnota. Klient ukládá do mezipaměti podpisy zprávy. Toto nastavení určuje, kolik podpisy, které můžete ukládat do mezipaměti. Pokud počet zpráv odeslaných v rámci poslední období opakování dosáhne limitu mezipaměti, nové zprávy jsou odmítnuta, až do nejstaršího uložené v mezipaměti podpisy dosažení časový limit. Výchozí hodnota je 500000.  
+    4. `ReplayCacheSize`. Celočíselná hodnota. Klient ukládá do mezipaměti podpisy zprávy. Toto nastavení určuje, kolik podpisy, které můžete ukládat do mezipaměti. Pokud počet zpráv odeslaných v rámci poslední období opakování dosáhne limitu mezipaměti, nové zprávy jsou odmítnuta, až do nejstaršího uložené v mezipaměti podpisy dosažení časový limit. Výchozí hodnota je 500000.  
   
 ### <a name="to-control-replay-detection-on-the-service-using-code"></a>K řízení rozpoznání opětovného přehrání na služby promocí kódu  
   
@@ -88,19 +88,19 @@ Opakování útoku nastane, pokud útočník zkopíruje datový proud zpráv mez
   
  Pokud nepoužijete relací zabezpečené konverzace, rozpoznání opětovného přehrání nezaručuje zjišťování riziko v scénáře serveru farmy a když se proces recykluje. To platí pro následující vazeb poskytovaných systémem:  
   
--   <xref:System.ServiceModel.BasicHttpBinding>.  
+- <xref:System.ServiceModel.BasicHttpBinding>.  
   
--   <xref:System.ServiceModel.WSHttpBinding> s <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> nastavenou na `false`.  
+- <xref:System.ServiceModel.WSHttpBinding> s <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> nastavenou na `false`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pro zkompilování kódu se vyžaduje následující obory názvů:  
+- Pro zkompilování kódu se vyžaduje následující obory názvů:  
   
--   <xref:System>  
+- <xref:System>  
   
--   <xref:System.ServiceModel>  
+- <xref:System.ServiceModel>  
   
--   <xref:System.ServiceModel.Channels>  
+- <xref:System.ServiceModel.Channels>  
   
 ## <a name="see-also"></a>Viz také:
 

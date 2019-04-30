@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
 ms.openlocfilehash: 90d9409d7e41ddda99caf24ebe0e249ee04723d6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59095890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855904"
 ---
 # <a name="forward-compatible-data-contracts"></a>Kontrakty dat s dopřednou kompatibilitou
 Funkce z Windows Communication Foundation (WCF) je systém kontraktu dat, která smluv týkajících se může časem vyvíjet pevná způsoby. To znamená klient starší verze kontraktu dat může komunikovat se službou novější verzi stejné kontraktu dat nebo klient novější verze kontraktu dat může komunikovat s starší verzi stejný kontrakt dat. Další informace najdete v tématu [osvědčených postupů: Správa verzí kontraktů dat](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md).  

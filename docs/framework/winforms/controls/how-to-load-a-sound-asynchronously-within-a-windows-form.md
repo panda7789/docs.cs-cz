@@ -10,11 +10,11 @@ helpviewer_keywords:
 - threading [Windows Forms], sounds
 ms.assetid: 3b6a9296-1d5e-4d52-a4ba-94366d6fe302
 ms.openlocfilehash: 1d710f1e6d3b208365d5b1eb2524fbeeaa673c2d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59185754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941047"
 ---
 # <a name="how-to-load-a-sound-asynchronously-within-a-windows-form"></a>Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms
 Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje v novém vláknu.  
@@ -26,9 +26,9 @@ Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
--   Nahradit název souboru `"http://www.tailspintoys.com/sounds/stop.wav"` s platným názvem souboru.  
+- Nahradit název souboru `"http://www.tailspintoys.com/sounds/stop.wav"` s platným názvem souboru.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   
@@ -37,17 +37,17 @@ Následující příklad kódu asynchronně načte zvuk z adresy URL a pak hraje
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Název cesty je poškozený. Například obsahuje znaky, které nejsou platné nebo je prázdné znaky (<xref:System.ArgumentException> třídy).  
+- Název cesty je poškozený. Například obsahuje znaky, které nejsou platné nebo je prázdné znaky (<xref:System.ArgumentException> třídy).  
   
--   Cesta je jen pro čtení (<xref:System.IO.IOException> třídy).  
+- Cesta je jen pro čtení (<xref:System.IO.IOException> třídy).  
   
--   Název cesty je `Nothing` (<xref:System.ArgumentNullException> třídy).  
+- Název cesty je `Nothing` (<xref:System.ArgumentNullException> třídy).  
   
--   Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException> třídy).  
+- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException> třídy).  
   
--   Cesta není platná (<xref:System.IO.DirectoryNotFoundException> třídy).  
+- Cesta není platná (<xref:System.IO.DirectoryNotFoundException> třídy).  
   
--   Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException> třídy).  
+- Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException> třídy).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor `Form1.vb` nemusí být zdrojový soubor jazyka Visual Basic. Před použitím dat ve své aplikaci ověřte všechny vstupy.  

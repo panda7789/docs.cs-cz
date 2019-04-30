@@ -5,11 +5,11 @@ author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
 ms.openlocfilehash: 6bd310f2e4b7a9bd7bb550ed9c7da9ebabdf64ba
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947009"
 ---
 # <a name="cross-platform-targeting"></a>Cílení na více platforem
 
@@ -19,7 +19,7 @@ Moderní .NET podporuje několik operačních systémů a zařízení. Je důle�
 
 .NET standard je nejlepší způsob, jak přidat podporu pro různé platformy do knihovny .NET. [.NET standard](../net-standard.md) je specifikace rozhraní API .NET, která jsou k dispozici na všech implementace .NET. Cílení na .NET Standard umožňuje vytvořit knihovny, které jsou omezeny na použití rozhraní API, která jsou v dané verzi rozhraní .NET Standard, což znamená, že je možné ji použít ve všech platformách, které implementují verzi .NET Standard.
 
-![.NET standard](./media/cross-platform-targeting/platforms-netstandard.png ".NET Standard")
+![.NET Standard](./media/cross-platform-targeting/platforms-netstandard.png ".NET Standard")
 
 Cílení na .NET Standard a úspěšně kompilace projektu nezaručuje, že knihovny úspěšně poběží na všech platformách:
 

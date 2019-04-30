@@ -9,11 +9,11 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 ms.assetid: 6207cad1-7a34-4bd6-bfc1-db823ca7a73e
 ms.openlocfilehash: 8fc92bf84def50bed54a054ae634a8a08c8835c2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936869"
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Správa stavu grafického objektu
 <xref:System.Drawing.Graphics> Třída je srdcem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. Chcete-li nakreslit nic, můžete získat <xref:System.Drawing.Graphics> objektu, vlastností a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
@@ -35,11 +35,11 @@ graphics.DrawRectangle(pen, 10, 10, 200, 100);
 ## <a name="graphics-state"></a>Stav grafiky  
  A <xref:System.Drawing.Graphics> objekt více než zadejte výkresu metody, jako třeba <xref:System.Drawing.Graphics.DrawLine%2A> a <xref:System.Drawing.Graphics.DrawRectangle%2A>. A <xref:System.Drawing.Graphics> objekt také uchovává stav grafiky, které je možné rozdělit do těchto kategorií:  
   
--   Nastavení kvality  
+- Nastavení kvality  
   
--   Transformace  
+- Transformace  
   
--   Oblast ořezu  
+- Oblast ořezu  
   
 ### <a name="quality-settings"></a>Nastavení kvality  
  A <xref:System.Drawing.Graphics> objekt má několik vlastností, které ovlivňují kvality položky, které jsou zpracovány. Například můžete nastavit <xref:System.Drawing.Graphics.TextRenderingHint%2A> vlastnosti k určení typu (pokud existuje) antialiasingu použitý pro text. Další vlastnosti, které ovlivňují kvalitu jsou <xref:System.Drawing.Graphics.SmoothingMode%2A>, <xref:System.Drawing.Graphics.CompositingMode%2A>, <xref:System.Drawing.Graphics.CompositingQuality%2A>, a <xref:System.Drawing.Graphics.InterpolationMode%2A>.  

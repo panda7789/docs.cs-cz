@@ -10,11 +10,11 @@ helpviewer_keywords:
 - streams, definition
 ms.assetid: 49d837c0-cf28-416f-8606-4d83d7b479ef
 ms.openlocfilehash: f0d5c4e48d8a44c2e39942cbe76acbb5ef44ea7d
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58462770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943989"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 

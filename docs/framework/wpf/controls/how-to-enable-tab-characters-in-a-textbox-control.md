@@ -6,11 +6,11 @@ helpviewer_keywords:
 - tab characters [WPF], enabling
 ms.assetid: 14b1b064-61f7-4958-be63-88d85b868d03
 ms.openlocfilehash: 9a01ae93d1b75c604fbe4f15f720e0a84086bd1a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59149484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910569"
 ---
 # <a name="how-to-enable-tab-characters-in-a-textbox-control"></a>Postupy: Povolení znaků tabulátoru v ovládacím prvku TextBox
 Tento příklad ukazuje, jak povolit jako normální vstup v povolení znaků tabulátoru <xref:System.Windows.Controls.TextBox> ovládacího prvku.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - OpenFileDialog component
 ms.assetid: d2efa832-a272-42ff-aa26-c4ac13ff59ba
 ms.openlocfilehash: 0e13417e43e9cda79e9e253135e564990361dcf6
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57704736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936341"
 ---
 # <a name="openfiledialog-component-windows-forms"></a>OpenFileDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.OpenFileDialog> komponenta je předem nakonfigurované dialogového okna. Jde o stejný **otevřít soubor** dialogové okno vystavené operačního systému Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  

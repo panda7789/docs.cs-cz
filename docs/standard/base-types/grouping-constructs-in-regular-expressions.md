@@ -16,22 +16,22 @@ ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2aa7c35ebc06fb67d9cf6216233d2bed65ae76ab
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54645896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61789269"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce můžete provádět následující akce:  
   
--   Porovná dílčí výraz, který se opakuje ve vstupním řetězci.  
+- Porovná dílčí výraz, který se opakuje ve vstupním řetězci.  
   
--   Použijte kvantifikátor na dílčí výraz, který má více prvky jazyka regulárních výrazů. Další informace o kvantifikátory, naleznete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+- Použijte kvantifikátor na dílčí výraz, který má více prvky jazyka regulárních výrazů. Další informace o kvantifikátory, naleznete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
--   Zahrnout podvýrazu řetězec, který je vrácený <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metody.  
+- Zahrnout podvýrazu řetězec, který je vrácený <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metody.  
   
--   Načíst z jednotlivých podvýrazy <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost a zpracovávat odděleně od odpovídajícího textu jako celek.  
+- Načíst z jednotlivých podvýrazy <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost a zpracovávat odděleně od odpovídajícího textu jako celek.  
   
  Následující tabulka uvádí seskupovací konstrukce podporuje modul regulárních výrazů rozhraní .NET a označuje, zda jsou zachytávání nebo bez zachytávání.  
   
@@ -63,13 +63,13 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
   
  Je možné otevřít zachycené skupiny čtyři způsoby:  
   
--   S použitím zpětných odkazů sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\` *číslo*, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
+- S použitím zpětných odkazů sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\` *číslo*, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
   
--   S použitím pojmenovaný zpětný odkaz sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\k<` *název*`>`, kde *název* je název zachytávající skupinu, nebo `\k<` *číslo*`>`, kde *číslo* je řadová číslovka zachytávající skupina. Zachytávající skupina má výchozí název, který se shoduje s jeho ordinální číslo. Další informace najdete v tématu [pojmenované odpovídající podvýrazy](#named_matched_subexpression) dále v tomto tématu.  
+- S použitím pojmenovaný zpětný odkaz sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\k<` *název*`>`, kde *název* je název zachytávající skupinu, nebo `\k<` *číslo*`>`, kde *číslo* je řadová číslovka zachytávající skupina. Zachytávající skupina má výchozí název, který se shoduje s jeho ordinální číslo. Další informace najdete v tématu [pojmenované odpovídající podvýrazy](#named_matched_subexpression) dále v tomto tématu.  
   
--   S použitím `$` *číslo* náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
+- S použitím `$` *číslo* náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
   
--   Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. Člen na pozici nula v kolekci představuje shodu celý regulární výraz. Každý člen následné představuje odpovídající dílčí výraz. Další informace najdete v tématu [Grouping Constructs a objekty regulárních výrazů](#Objects) oddílu.  
+- Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. Člen na pozici nula v kolekci představuje shodu celý regulární výraz. Každý člen následné představuje odpovídající dílčí výraz. Další informace najdete v tématu [Grouping Constructs a objekty regulárních výrazů](#Objects) oddílu.  
   
  Následující příklad ukazuje regulární výraz, který identifikuje duplicitní slova v textu. Vzor regulárního výrazu dvě zachytávající skupiny představují dvě instance duplicitní slova. Druhou instanci je zachycena hlášení jeho výchozí pozice ve vstupním řetězci.  
   
@@ -112,17 +112,17 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
   
  Dostanete pojmenované skupiny zachycené těmito způsoby:  
   
--   S použitím pojmenovaný zpětný odkaz sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\k<` *název*`>`, kde *název* je název zachycený dílčí výraz.  
+- S použitím pojmenovaný zpětný odkaz sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\k<` *název*`>`, kde *název* je název zachycený dílčí výraz.  
   
--   S použitím zpětných odkazů sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\` *číslo*, kde *číslo* je řadová číslovka zachycený dílčí výraz. Pojmenované podvýrazy jsou číslovány postupně zleva doprava po podvýrazy.  
+- S použitím zpětných odkazů sestavení v rámci regulárního výrazu. Odpovídající dílčí výraz se odkazuje v stejný regulární výraz pomocí syntaxe `\` *číslo*, kde *číslo* je řadová číslovka zachycený dílčí výraz. Pojmenované podvýrazy jsou číslovány postupně zleva doprava po podvýrazy.  
   
--   S použitím `${` *název* `}` náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *název* je název zachycený dílčí výraz.  
+- S použitím `${` *název* `}` náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *název* je název zachycený dílčí výraz.  
   
--   S použitím `$` *číslo* náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
+- S použitím `$` *číslo* náhradní sekvence v <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> volání metody, kde *číslo* je řadová číslovka zachycený dílčí výraz.  
   
--   Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. Člen na pozici nula v kolekci představuje shodu celý regulární výraz. Každý člen následné představuje odpovídající dílčí výraz. Pojmenované zachycené skupiny jsou uloženy v kolekci po číslované zachycenou skupinou.  
+- Programově pomocí <xref:System.Text.RegularExpressions.GroupCollection> vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. Člen na pozici nula v kolekci představuje shodu celý regulární výraz. Každý člen následné představuje odpovídající dílčí výraz. Pojmenované zachycené skupiny jsou uloženy v kolekci po číslované zachycenou skupinou.  
   
--   Prostřednictvím kódu programu, tím, že poskytuje název dílčí výraz, který má <xref:System.Text.RegularExpressions.GroupCollection> indexeru objektu (v jazyce C#) nebo na jeho <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> (v jazyce Visual Basic).  
+- Prostřednictvím kódu programu, tím, že poskytuje název dílčí výraz, který má <xref:System.Text.RegularExpressions.GroupCollection> indexeru objektu (v jazyce C#) nebo na jeho <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> (v jazyce Visual Basic).  
   
  Vzor regulárního výrazu jednoduché ukazuje jak číslované (nepojmenované) a pojmenované skupiny může být odkazováno prostřednictvím kódu programu nebo pomocí syntaxe jazyka regulárních výrazů. Regulární výraz `((?<One>abc)\d+)?(?<Two>xyz)(.*)` vytvoří následující zachytávání skupiny podle čísla a podle názvu. První zachytávající skupinou (číslo 0) vždy odkazuje na celý vzor.  
   
@@ -446,11 +446,11 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
 ## <a name="grouping-constructs-and-regular-expression-objects"></a>Seskupovací konstrukce a objekty regulárních výrazů  
  Podřetězce, které jsou porovnávány pomocí regulárních výrazů zachytávající skupinou jsou reprezentovány <xref:System.Text.RegularExpressions.Group?displayProperty=nameWithType> objekty, které můžete získat z <xref:System.Text.RegularExpressions.GroupCollection?displayProperty=nameWithType> objekt, který je vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.GroupCollection> Objektu je naplněn takto:  
   
--   První <xref:System.Text.RegularExpressions.Group> objektu v kolekci (objekt na pozici nula) představuje celkovou shodu.  
+- První <xref:System.Text.RegularExpressions.Group> objektu v kolekci (objekt na pozici nula) představuje celkovou shodu.  
   
--   Další sadu <xref:System.Text.RegularExpressions.Group> objekty představují nepojmenované (číslované) zachytávající skupiny. Zobrazí se v pořadí, ve kterém jsou definovány v regulárním výrazu zprava doleva. Index hodnoty těchto skupin rozsahu od 1 do počtu nepojmenované zachytávající skupiny v kolekci. (Index určité skupiny je ekvivalentní k jeho číslované zpětný odkaz. Další informace o zpětných odkazech naleznete v tématu [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)  
+- Další sadu <xref:System.Text.RegularExpressions.Group> objekty představují nepojmenované (číslované) zachytávající skupiny. Zobrazí se v pořadí, ve kterém jsou definovány v regulárním výrazu zprava doleva. Index hodnoty těchto skupin rozsahu od 1 do počtu nepojmenované zachytávající skupiny v kolekci. (Index určité skupiny je ekvivalentní k jeho číslované zpětný odkaz. Další informace o zpětných odkazech naleznete v tématu [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)  
   
--   Finální sada <xref:System.Text.RegularExpressions.Group> objekty představují pojmenovaných zachytávajících skupinách. Zobrazí se v pořadí, ve kterém jsou definovány v regulárním výrazu zprava doleva. Hodnota indexu prvního pojmenovanou zachytávající skupinu je jedno vyšším než index poslední nepojmenované zachytávající skupinu. Pokud neexistují žádné nepojmenované zachytávající skupiny v regulárním výrazu, index první zachytávající skupina s názvem hodnotu jedna.  
+- Finální sada <xref:System.Text.RegularExpressions.Group> objekty představují pojmenovaných zachytávajících skupinách. Zobrazí se v pořadí, ve kterém jsou definovány v regulárním výrazu zprava doleva. Hodnota indexu prvního pojmenovanou zachytávající skupinu je jedno vyšším než index poslední nepojmenované zachytávající skupinu. Pokud neexistují žádné nepojmenované zachytávající skupiny v regulárním výrazu, index první zachytávající skupina s názvem hodnotu jedna.  
   
  Pokud použijete kvantifikátor zachytávající skupinu, odpovídající <xref:System.Text.RegularExpressions.Group> objektu <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType>, <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType>, a <xref:System.Text.RegularExpressions.Capture.Length%2A?displayProperty=nameWithType> vlastnosti odrážejí poslední podřetězec, který je zachycen zachytávající skupina. Úplná sada dílčích řetězců, které jsou zachyceny na základě skupin, které mají kvantifikátory z můžete načíst <xref:System.Text.RegularExpressions.CaptureCollection> objekt, který je vrácený <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost.  
   

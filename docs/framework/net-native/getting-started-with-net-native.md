@@ -6,10 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2b466b27925b41823ce3f6537782f3bd6201d5af
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868510"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 

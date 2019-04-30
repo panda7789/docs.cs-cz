@@ -9,11 +9,11 @@ helpviewer_keywords:
 - check boxes [Windows Forms], about check boxes
 ms.assetid: 085a4e0b-9046-473f-b141-d0edddfb2ebb
 ms.openlocfilehash: 2a18327d9836d1dbbcd5d5d6e73f217637736d20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938967"
 ---
 # <a name="checkbox-control-overview-windows-forms"></a>CheckBox – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.CheckBox> ovládací prvek označuje, zda je určitá podmínka zapnutí nebo vypnutí. Se běžně používá k prezentaci Ano/Ne nebo výběr True/False pro uživatele. Ovládací prvky zaškrtávacích políček ve skupinách slouží k zobrazení více možností, ze kterého může uživatel vybrat jeden nebo více.  

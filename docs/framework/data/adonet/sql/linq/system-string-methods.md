@@ -3,11 +3,11 @@ title: Metody System.String
 ms.date: 03/30/2017
 ms.assetid: ce307f14-87e6-4816-8694-8a4147f6b784
 ms.openlocfilehash: 3a7b45f27441d889524f5055eb5c6a3b06937bd3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876652"
 ---
 # <a name="systemstring-methods"></a>Metody System.String
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje následující <xref:System.String> metody.  
@@ -15,9 +15,9 @@ ms.locfileid: "59160495"
 ## <a name="unsupported-systemstring-methods-in-general"></a>Obecně nepodporované metody System.String  
  Nepodporovaná <xref:System.String> v obecné metody:  
   
--   Zohledňující jazykovou verzi přetížení (metody, které přebírají `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).  
+- Zohledňující jazykovou verzi přetížení (metody, které přebírají `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).  
   
--   Metody, které trvat nebo vytvářet `char` pole.  
+- Metody, které trvat nebo vytvářet `char` pole.  
   
 ## <a name="unsupported-systemstring-static-methods"></a>Nepodporovaná System.String statické metody  
   
@@ -47,13 +47,13 @@ ms.locfileid: "59160495"
   
 ## <a name="differences-from-net"></a>Rozdíl oproti .NET  
   
--   Dotazy nespadá kolací systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat Porovnání zohledňující jazykovou verzi, velká a malá písmena ve výchozím nastavení. Toto chování se liší od výchozí malá a velká písmena sémantiku rozhraní .NET Framework.  
+- Dotazy nespadá kolací systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat Porovnání zohledňující jazykovou verzi, velká a malá písmena ve výchozím nastavení. Toto chování se liší od výchozí malá a velká písmena sémantiku rozhraní .NET Framework.  
   
--   Když `LastIndexOf` vrátí hodnotu 0, řetězec je `NULL` nebo nalezený pozice je 0.  
+- Když `LastIndexOf` vrátí hodnotu 0, řetězec je `NULL` nebo nalezený pozice je 0.  
   
--   Může vrátit neočekávané výsledky ze zřetězení nebo jiné operace na řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy mají automaticky odsazení použijí v databázi.  
+- Může vrátit neočekávané výsledky ze zřetězení nebo jiné operace na řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy mají automaticky odsazení použijí v databázi.  
   
--   Protože mnoho metod, jako `Replace`, `ToLower`, `ToUpper`a indexeru znaků, obsahovat žádný platný překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud obvykle přeložit. Toto chování se považuje za přijatelné pro tyto typy. Nicméně všechny operace s řetězci musí odpovídat common language runtime (CLR) Sémantika pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.  
+- Protože mnoho metod, jako `Replace`, `ToLower`, `ToUpper`a indexeru znaků, obsahovat žádný platný překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud obvykle přeložit. Toto chování se považuje za přijatelné pro tyto typy. Nicméně všechny operace s řetězci musí odpovídat common language runtime (CLR) Sémantika pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.  
   
 ## <a name="see-also"></a>Viz také:
 

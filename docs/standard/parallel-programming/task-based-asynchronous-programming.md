@@ -11,11 +11,11 @@ ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0ecc1090f2697eb0243a081cde70338c0e6fffec
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908593"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 

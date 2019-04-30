@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
 ms.openlocfilehash: df03c68193a1068b4bdf0b6ed0923b3bbb8a046a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59127709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785408"
 ---
 # <a name="managing-dataviews"></a>Správa zobrazení dat
 Můžete použít <xref:System.Data.DataViewManager> ke správě nastavení zobrazení pro všechny tabulky v <xref:System.Data.DataView>. Pokud máte ovládací prvek, který chcete vytvořit vazbu k několika tabulkám, jako je například mřížka, který naviguje relací, **objekt DataViewManager** je ideální.  

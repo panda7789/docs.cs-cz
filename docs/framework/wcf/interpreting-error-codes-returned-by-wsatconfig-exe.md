@@ -3,11 +3,11 @@ title: Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 ms.date: 03/30/2017
 ms.assetid: ab65f22b-0d69-4c21-9aaf-74acef0ca102
 ms.openlocfilehash: 47db39f2b350c2fa8c655a041ec0239e5d297644
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928814"
 ---
 # <a name="interpreting-error-codes-returned-by-wsatconfigexe"></a>Interpretace kódů chyb vrácených nástrojem wsatConfig.exe
 Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction Configuration Utility (wsatConfig.exe) a doporučené akce, jež mají být provedeny.  
@@ -16,7 +16,7 @@ Toto téma obsahuje seznam všech kódů chyb generovaných WS-AtomicTransaction
   
 |Kód chyby|Popis|Provést doporučenou akci|  
 |----------------|-----------------|------------------------------------|  
-|0|Operace byla úspěšná|Žádné|  
+|0|Operace byla úspěšná|Žádný|  
 |1|Došlo k neočekávané chybě|Kontaktujte Microsoft|  
 |2|Při pokusu o kontaktování služby MSDTC k načtení nastavení zabezpečení došlo k neočekávané chybě.|Ujistěte se, že není zakázaná služba MSDTC a vyřešit všechny problémy uvedené ve vrácené výjimce.|  
 |3|Účet, pod kterým byl spuštěn WsatConfig.exe nemá dostatečná oprávnění ke čtení nastavení zabezpečení sítě.|Spusťte WsatConfig.exe uživatelského účtu správce.|  

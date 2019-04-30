@@ -3,11 +3,11 @@ title: Typické postupy použití LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 9a88bd51-bd74-48f7-a9b1-f650e8d55a3e
 ms.openlocfilehash: a7c6257bc27728d101d64d07ffedb1e38bc994eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876968"
 ---
 # <a name="typical-steps-for-using-linq-to-sql"></a>Typické postupy použití LINQ to SQL
 K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace, podle postupu popsaného dále v tomto tématu. Všimněte si, že mnoho kroků jsou volitelné. Je velmi je to možné, že můžete použít objektový model ve svém výchozím stavu.  
@@ -20,32 +20,32 @@ K implementaci [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md
 ### <a name="1-select-a-tool-to-create-the-model"></a>1. Vyberte nástroj k vytváření modelu.  
  Tři nástroje jsou k dispozici pro vytváření modelu.  
   
--   Na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
+- Na [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]  
   
      Tento návrhář poskytuje bohaté možnosti uživatelského rozhraní pro vytvoření modelu objektu z existující databáze. Tento nástroj je součástí rozhraní IDE sady Visual Studio a je nejvhodnější pro malé a střední databáze.  
   
--   Nástroje pro generování kódu SQLMetal  
+- Nástroje pro generování kódu SQLMetal  
   
      Tento nástroj příkazového řádku poskytuje mírně odlišnou sadu možností [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)]. Modelování velkých databází se nejlépe provádí pomocí tohoto nástroje. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
--   Editor kódu  
+- Editor kódu  
   
      Můžete napsat vlastní kód pomocí editoru kódu sady Visual Studio nebo jiného editoru. Tento přístup, což může být náchylná k chybám, pokud máte existující databázi a můžete použít buď nedoporučujeme [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] nebo nástroji SQLMetal. Editor kódu však může být velmi cennou pomůckou pro upřesnění nebo upravovat kód, který již vytvořených pomocí jiných nástrojů. Další informace najdete v tématu [jak: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md).  
   
 ### <a name="2-select-the-kind-of-code-you-want-to-generate"></a>2. Vyberte typ kódu, který chcete vygenerovat.  
   
--   A C# nebo souboru zdrojového kódu jazyka Visual Basic pro mapování založených na atributech.  
+- A C# nebo souboru zdrojového kódu jazyka Visual Basic pro mapování založených na atributech.  
   
      Potom zahrnutí souboru s tímto kódem do projektu sady Visual Studio. Další informace najdete v tématu [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
   
--   Soubor XML pro externí mapování.  
+- Soubor XML pro externí mapování.  
   
      Pomocí tohoto přístupu můžete zachovat metadata mapování z kódu aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
     > [!NOTE]
     >  [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] Nepodporuje generování externí soubory mapování. Musíte použít nástroj SQLMetal k implementaci této funkce.  
   
--   Souboru DBML, kterou můžete upravit před generováním konečný kód souboru.  
+- Souboru DBML, kterou můžete upravit před generováním konečný kód souboru.  
   
      Jde o pokročilou funkci.  
   

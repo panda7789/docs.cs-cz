@@ -12,18 +12,18 @@ helpviewer_keywords:
 - Protected keyword [Visual Basic], accessing variables
 ms.assetid: eaf4f073-7922-43ce-ae1e-90ff376ae947
 ms.openlocfilehash: fb400b113e3f3305f5b724734b2bf9aa9425d03f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943348"
 ---
 # <a name="how-to-control-the-availability-of-a-variable-visual-basic"></a>Postupy: Řízení dostupnosti proměnné (Visual Basic)
 Řízení dostupnosti proměnné tak, že zadáte jeho *úroveň přístupu*. Úroveň přístupu určuje, jaký kód má oprávnění ke čtení nebo zápisu do proměnné.  
   
--   *Členské proměnné* (definované na úrovni modulu a mimo všechny procedury) výchozí veřejný přístup, což znamená, že veškerý kód, který můžete vidět k nim přistupovat. Toto můžete změnit tak, že zadáte modifikátor přístupu.  
+- *Členské proměnné* (definované na úrovni modulu a mimo všechny procedury) výchozí veřejný přístup, což znamená, že veškerý kód, který můžete vidět k nim přistupovat. Toto můžete změnit tak, že zadáte modifikátor přístupu.  
   
--   *Lokální proměnné* (definované uvnitř procedury) formálně mít veřejný přístup, i když k nim může přistupovat pouze kód v rámci jejich procedury. Nelze změnit úroveň přístupu lokální proměnné, ale můžete změnit úroveň přístupu postup, který jej obsahuje.  
+- *Lokální proměnné* (definované uvnitř procedury) formálně mít veřejný přístup, i když k nim může přistupovat pouze kód v rámci jejich procedury. Nelze změnit úroveň přístupu lokální proměnné, ale můžete změnit úroveň přístupu postup, který jej obsahuje.  
   
  Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   

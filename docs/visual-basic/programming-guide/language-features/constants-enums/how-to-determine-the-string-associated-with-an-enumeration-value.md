@@ -7,18 +7,18 @@ helpviewer_keywords:
 - values [Visual Basic], enumeration members
 ms.assetid: 9253e7c8-579c-49a2-8f26-392b20ea99eb
 ms.openlocfilehash: 4fa04fa621347ae961975bfb636734e6c9df39fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906799"
 ---
 # <a name="how-to-determine-the-string-associated-with-an-enumeration-value-visual-basic"></a>Postupy: Určení řetězce spojeného s hodnotou výčtu (Visual Basic)
 <xref:System.Enum.GetValues%2A> a <xref:System.Enum.GetNames%2A> metody umožňují určit řetězců a hodnot spojených s členy výčtu.  
   
 ### <a name="to-determine-the-string-associated-with-an-enumeration"></a>K určení řetězce spojeného s výčet  
   
--   Použití <xref:System.Enum.GetNames%2A> metody mají být načteny řetězce spojené s členy výčtu. V tomto příkladu deklaruje výčet, `flavorEnum`, použije <xref:System.Enum.GetNames%2A> metodu pro zobrazení řetězce přidružené k jednotlivým členům.  
+- Použití <xref:System.Enum.GetNames%2A> metody mají být načteny řetězce spojené s členy výčtu. V tomto příkladu deklaruje výčet, `flavorEnum`, použije <xref:System.Enum.GetNames%2A> metodu pro zobrazení řetězce přidružené k jednotlivým členům.  
   
      [!code-vb[VbEnumsTask#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#2)]  
   

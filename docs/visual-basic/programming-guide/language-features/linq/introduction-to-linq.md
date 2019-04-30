@@ -13,11 +13,11 @@ helpviewer_keywords:
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
 ms.openlocfilehash: 6987263854b0d0372bc08bb7e4d6efb498e265f1
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56973623"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781001"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
 Language Integrated Query (LINQ) přidává funkce dotazu do jazyka Visual Basic a při práci se všemi druhy dat poskytuje jednoduché a výkonné možnosti. Místo odeslání dotazu do databáze ke zpracování nebo práce s různou syntaxí dotazu pro každý typ hledaných dat, kterou hledáte, představuje LINQ dotazy jako součást jazyka Visual Basic. Používá jednotný syntax bez ohledu na typ data.  
@@ -182,11 +182,11 @@ Můžete použít další funkce dotazu LINQ voláním členů vyčíslitelného
 ## <a name="visual-basic-features-that-support-linq"></a>Funkce jazyka Visual Basic podporující LINQ  
  Visual Basic obsahuje další důležité funkcí, které zjednodušení použití LINQ a snižuje množství kódu, který musíte napsat k provádění dotazů LINQ. Patří mezi ně například:  
   
--   **Anonymní typy**, které umožňují vytvoření nového typu na základě výsledku dotazu.  
+- **Anonymní typy**, které umožňují vytvoření nového typu na základě výsledku dotazu.  
   
--   **Implicitně typované proměnné**, které umožňují odložit určení typu a umožňují kompilátoru odvození typu na základě výsledku dotazu.  
+- **Implicitně typované proměnné**, které umožňují odložit určení typu a umožňují kompilátoru odvození typu na základě výsledku dotazu.  
   
--   **Rozšiřující metody**, které umožňují rozšířit existující typ vašimi vlastními metodami beze změny samotného typu.  
+- **Rozšiřující metody**, které umožňují rozšířit existující typ vašimi vlastními metodami beze změny samotného typu.  
   
  Podrobnosti najdete v tématu [jazyka Visual Basic funkce, že podpora LINQ](../../concepts/linq/features-that-support-linq.md).  
   

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.openlocfilehash: 4553a35c8db6cfc46187525ef2ffc65cb3ba07c9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672045"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922743"
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorování kontejnerizovaných aplikačních služeb
 

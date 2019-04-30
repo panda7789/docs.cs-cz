@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC40039
 ms.assetid: c5bd5914-ae71-416a-8bed-f76f644f78be
 ms.openlocfilehash: 84706719d151ea8df478f88610df34842f6f8702
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918356"
 ---
 # <a name="name-namespacename-in-the-root-namespace-fullnamespacename-is-not-cls-compliant"></a>Název \<namespacename > v kořenovém oboru názvů \<fullnamespacename > není kompatibilní se Specifikací CLS
 Sestavení je označen jako `<CLSCompliant(True)>`, ale element název kořenového oboru názvů začíná podtržítkem (`_`).  
@@ -29,9 +29,9 @@ Sestavení je označen jako `<CLSCompliant(True)>`, ale element název kořenov�
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud budete vyžadovat dodržování specifikace CLS, změňte název kořenového oboru názvů tak, aby žádný z jeho prvků začíná podtržítkem.  
+- Pokud budete vyžadovat dodržování specifikace CLS, změňte název kořenového oboru názvů tak, aby žádný z jeho prvků začíná podtržítkem.  
   
--   Pokud budete vyžadovat, že název oboru názvů zůstanou beze změny, odstraňte <xref:System.CLSCompliantAttribute> ze sestavení nebo označte ji jako `<CLSCompliant(False)>`.  
+- Pokud budete vyžadovat, že název oboru názvů zůstanou beze změny, odstraňte <xref:System.CLSCompliantAttribute> ze sestavení nebo označte ji jako `<CLSCompliant(False)>`.  
   
 ## <a name="see-also"></a>Viz také:
 

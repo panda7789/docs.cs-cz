@@ -10,11 +10,11 @@ helpviewer_keywords:
 - columns [Windows Forms], reordering
 ms.assetid: cc20eae3-e4db-493f-95ce-a4215e29472a
 ms.openlocfilehash: 625c4987a45ed3749284e7abc7b6cde6d24821ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59161470"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941463"
 ---
 # <a name="how-to-enable-column-reordering-in-the-windows-forms-datagridview-control"></a>Postupy: Povolení změny pořadí v ovládacím prvku Windows Forms DataGridView
 Při povolení změny pořadí sloupců v <xref:System.Windows.Forms.DataGridView> řízení, mohou uživatelé přesouvat sloupec na nové pozici přetažením záhlaví sloupce myší. V <xref:System.Windows.Forms.DataGridView> ovládací prvek, <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType> vlastnost hodnota určuje, zda mohou uživatelé přesouvat na jinou pozici sloupce.  
@@ -23,7 +23,7 @@ Při povolení změny pořadí sloupců v <xref:System.Windows.Forms.DataGridVie
   
 ### <a name="to-enable-column-reordering-programmatically"></a>Povolit sloupců, změna pořadí prostřednictvím kódu programu  
   
--   Nastavte <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType> vlastnost `true`.  
+- Nastavte <xref:System.Windows.Forms.DataGridView.AllowUserToOrderColumns%2A?displayProperty=nameWithType> vlastnost `true`.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#060](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#060)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#060](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#060)]  
@@ -31,9 +31,9 @@ Při povolení změny pořadí sloupců v <xref:System.Windows.Forms.DataGridVie
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
+- A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`.  
   
--   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+- Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
 ## <a name="see-also"></a>Viz také:
 

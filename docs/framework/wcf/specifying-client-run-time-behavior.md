@@ -8,11 +8,11 @@ helpviewer_keywords:
 - behaviors [WCF], system-provided client
 ms.assetid: d16d3405-be70-4edb-8f62-b5f614ddeca5
 ms.openlocfilehash: f750978eaa617a5505bb27a1535797320a76b0d4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935457"
 ---
 # <a name="specifying-client-run-time-behavior"></a>Nastavení běhového chování klienta
 Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Communication Foundation (WCF), lze nastavit k úpravě chování za běhu tak, aby odpovídala klientské aplikace. Tři atributy jsou k dispozici pro určení chování klienta za běhu. Můžete použít objekty zpětného volání klienta duplexní <xref:System.ServiceModel.CallbackBehaviorAttribute> a <xref:System.ServiceModel.Description.CallbackDebugBehavior> atributů, které mají změna jejich chování za běhu. Ostatní atributy <xref:System.ServiceModel.Description.ClientViaBehavior>, můžete použít k oddělení logické cíl z cílového okamžitou síť. Kromě toho můžete použít typy zpětného volání klienta duplexní některá chování straně služby. Další informace najdete v tématu [určení chování za běhu služby](../../../docs/framework/wcf/specifying-service-run-time-behavior.md).  
@@ -32,9 +32,9 @@ Klienti Windows Communication Foundation (WCF), jako jsou služby Windows Commun
   
  Z důvodu zabezpečení problematiku důrazně doporučujeme:  
   
--   Konfigurační soubor aplikace můžete nastavit hodnotu <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost `true`.  
+- Konfigurační soubor aplikace můžete nastavit hodnotu <xref:System.ServiceModel.Description.CallbackDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost `true`.  
   
--   Provedete pouze v řízené ladění scénářů.  
+- Provedete pouze v řízené ladění scénářů.  
   
  Následující příklad kódu ukazuje klienta konfigurační soubor, který dává pokyn k vrácení informací o spravované výjimce z klienta objekt zpětného volání v zprávy protokolu SOAP WCF.  
   

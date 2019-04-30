@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Provádění akcí po bloku toku dat'
+title: 'Postupy: Provádění akcí po přijetí dat do bloku toku dat'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,13 +12,13 @@ ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 369559feca4edab6de587a3494588973e0c2e1b7
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61937472"
 ---
-# <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Postupy: Provádění akcí po bloku toku dat
+# <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>Postupy: Provádění akcí po přijetí dat do bloku toku dat
 *Blok toku dat provádění* typy volat uživatelského delegáta, pokud obdrží data. <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType>, A <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> třídy jsou typy bloků toku dat provádění. Můžete použít `delegate` – klíčové slovo (`Sub` v jazyce Visual Basic), <xref:System.Action%601>, <xref:System.Func%602>, nebo výraz lambda, když poskytují pracovní funkce, která se z bloku toku dat provádění. Tento dokument popisuje způsob použití <xref:System.Func%602> a lambda výrazy k provedení akce v blocích po spuštění.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "54221060"
   
  Visual Basic  
   
- **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.vb**  
+ **vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowExecutionBlocks.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
  V tomto příkladu obsahuje delegát typu <xref:System.Func%602> k <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> objekt pro provedení úlohy bloku toku dat synchronně. Pokud chcete povolit bloku toku dat chovat asynchronně, zadejte delegát typu <xref:System.Func%601> do bloku toku dat. Při bloku toku dat chová asynchronně, úloha bloku toku dat je kompletní jenom v případě vrácený <xref:System.Threading.Tasks.Task%601> objekt dokončí. Následující příklad upravuje `CountBytes` metody a použije [asynchronní](~/docs/csharp/language-reference/keywords/async.md) a [await](~/docs/csharp/language-reference/keywords/await.md) operátory ([asynchronní](~/docs/visual-basic/language-reference/modifiers/async.md) a [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) v Visual Basic) asynchronně vypočítat celkový počet bajtů, které mají hodnotu nula do zadaného souboru. <xref:System.IO.FileStream.ReadAsync%2A> Metoda provádí asynchronní operace čtení souboru.  

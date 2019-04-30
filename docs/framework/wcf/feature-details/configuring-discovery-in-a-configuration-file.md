@@ -3,17 +3,17 @@ title: Konfigurace zjišťování v konfiguračním souboru
 ms.date: 03/30/2017
 ms.assetid: b9884c11-8011-4763-bc2c-c526b80175d0
 ms.openlocfilehash: c282767e686ac8a6382268aee8b45eb2d1297f5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33492284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857516"
 ---
 # <a name="configuring-discovery-in-a-configuration-file"></a>Konfigurace zjišťování v konfiguračním souboru
-Existují čtyři hlavní skupiny nastavení konfigurace používané při zjišťování. Toto téma se stručně popisují každou a obsahuje příklady způsob jejich konfigurace. Následující každý oddíl bude odkaz na další podrobnější dokumentaci o každou oblast.  
+Existují čtyři hlavní skupiny konfigurační nastavení používané při zjišťování. Toto téma se stručně popisují každou a zobrazit příklady toho, jak je nakonfigurovat. Po každý oddíl bude obsahovat odkaz na další podrobné dokumentaci týkající se jednotlivých oblastí.  
   
 ## <a name="behavior-configuration"></a>Konfigurace chování  
- Zjišťování používá chování služby a chování koncový bod. <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> Chování umožňuje zjišťování pro všechny koncové body služby a umožňuje vám určit koncových bodů oznámení.  Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a zadejte koncový bod oznámení.  
+ Zjišťování používá chování služby a chování koncového bodu. <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> Chování umožňuje zjišťování pro všechny koncové body služby a umožňuje určit koncových bodů oznámení.  Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a zadat koncový bod oznámení.  
   
 ```xml  
 <behaviors>  
@@ -28,7 +28,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
       </serviceBehaviors>  
 ```  
   
- Jakmile zadáte chování, odkazovat z <`service`> elementu, jak znázorňuje následující ukázka.  
+ Po zadání chování odkazovat na něj z <`service`> element, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <system.serviceModel>  
@@ -44,9 +44,9 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
     </service>  
 ```  
   
- Aby služba zjistitelné, musíte taky přidat koncový bod zjišťování v předchozím příkladu přidá <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> standardní koncový bod.  
+ Aby zjistitelné služby, musíte taky přidat koncový bod zjišťování výše uvedený příklad přidá <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> standardní koncový bod.  
   
- Když přidáte koncových bodů oznámení musíte taky přidat služby naslouchací proces oznámení můžete <`services`> elementu, jak je znázorněno v následujícím příkladu.  
+ Při přidání koncových bodů oznámení musíte taky přidat služby naslouchací proces oznámení můžete <`services`> element, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <services>  
@@ -64,7 +64,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
    </service>  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování slouží k povolení nebo zakázání zjišťování konkrétní koncového bodu.  Následující příklad konfiguruje službu s dva koncové body aplikaci, jednu s povolené zjišťování a jednu s zjišťování zakázána. Pro každý koncový bod <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> chování je přidána.  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování slouží k povolení nebo zakázání zjišťování určitého koncového bodu.  Následující příklad konfiguruje službu s koncovými body dvě aplikace, jednu s povolené zjišťování a jednu s zjišťování zakázán. Pro každý koncový bod <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> chování přidáno.  
   
 ```xml  
 <system.serviceModel>  
@@ -104,7 +104,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
    </behaviors>  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování lze také přidat vlastní metadata do metadat koncového bodu vrácený službou. Následující příklad ukazuje, jak to provést.  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování lze také přidat vlastní metadata do koncového bodu metadat vrácené službou. Následující příklad ukazuje, jak to provést.  
   
 ```xml  
 <behavior name="ep4Behavior">  
@@ -120,7 +120,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </behavior>  
 ```  
   
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování lze také přidat obory a typy, které klienti používat pro vyhledávání služeb. Následující příklad ukazuje, jak to udělat v konfiguračním souboru na straně klienta.  
+ <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> Chování lze také přidat obory a typy, které klienti používají k vyhledání služeb. Následující příklad ukazuje, jak to provést v konfiguračním souboru na straně klienta.  
   
 ```xml  
 <behavior name="ep2Behavior">  
@@ -137,10 +137,10 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </behavior>  
 ```  
   
- Další informace o <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> najdete v části [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
+ Další informace o <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior> naleznete v tématu [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md).  
   
-## <a name="binding-element-configuration"></a>Konfigurace vazeb – Element  
- Vazba element konfigurace je nejvíce zajímavé na straně klienta. Konfigurace můžete použít k určení kritérií hledání používá ke zjišťování služby z klientské aplikace WCF.  Následující příklad vytvoří vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClient> kanálu a určuje kritéria hledání, které zahrnuje typu a rozsahu. Kromě toho určuje hodnoty pro <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> a <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vlastnosti.  
+## <a name="binding-element-configuration"></a>Konfigurace elementu vazby  
+ Konfigurace elementu vazby vás zajímá nejvíce na straně klienta. Konfigurace můžete použít k určení kritérií hledání používá ke zjišťování služby z klientské aplikace WCF.  Následující příklad vytvoří vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClient> kanálu a určuje kritéria hledání, která zahrnuje typu a rozsahu. Kromě toho určuje hodnoty pro <xref:System.ServiceModel.Discovery.FindCriteria.Duration%2A> a <xref:System.ServiceModel.Discovery.FindCriteria.MaxResults%2A> vlastnosti.  
   
 ```xml  
 <bindings>  
@@ -177,10 +177,10 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
     </client>  
 ```  
   
- Další informace o kritériích hledání najdete v části [najít zjišťování a kritéria hledání](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Další informace o zjišťování a vazba elementy najdete [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ Další informace o kritériích hledání najdete v části [hledání zjišťování a kritéria hledání](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md). Další informace o zjišťování a vazby prvky naleznete v tématu [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
   
-## <a name="standard-endpoint-configuration"></a>Konfigurace standardní koncového bodu  
- Standardní koncové body jsou předdefinované koncové body, které mají výchozí hodnoty pro jednu nebo více vlastností (adresa, vazba, kontrakt) nebo jeden nebo více hodnoty vlastností, které nelze změnit. Rozhraní .NET 4 se dodává s 3 zjišťování související standardní koncové body: <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>, a <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> Je standardní koncový bod, který je předem nakonfigurován pro operace zjišťování přes vícesměrové vysílání UDP vazby. <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> Je standardní koncový bod, který je předem nakonfigurovaný k odeslání zpráv oznámení vazbu UDP. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Je standardní koncový bod, který používá zjišťování k vyhledání adresa koncového bodu služby zjištěné dynamicky za běhu.  Standardní vazby jsou zadané s <`endpoint`> elementu, který obsahuje typu atributu, který zadaný typ standardní koncového bodu pro přidání. Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
+## <a name="standard-endpoint-configuration"></a>Konfigurace standardního koncového bodu  
+ Standardní koncové body jsou předdefinovaných koncových bodů, které mají výchozí hodnoty pro jednu nebo více vlastností (adresa, vazbu, kontrakt) nebo jednu nebo více hodnot vlastností, které nelze změnit. Rozhraní .NET 4 se dodává s 3 zjišťování související standardních koncových bodů: <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>, a <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> Vazby je standardní koncový bod, který je předem nakonfigurovaný pro operace zjišťování přes vícesměrové vysílání UDP. <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> Je standardní koncový bod, který je předem nakonfigurovaný k odeslání zpráv oznámení UDP vazby. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Je standardní koncový bod, který používá zjišťování najít adresu koncového bodu služby zjištěné dynamicky za běhu.  Standardní vazby jsou zadané pomocí <`endpoint`> element, který obsahuje atribut typu, který určil typ standardní koncový bod pro přidání. Následující příklad ukazuje, jak přidat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
   
 ```xml  
 <services>  
@@ -194,7 +194,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </services>  
 ```  
   
- Standardní koncové body jsou nakonfigurované v <`standardEndpoints`> elementu. Následující příklad ukazuje, jak nakonfigurovat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
+ Standardní koncové body se konfigurují v <`standardEndpoints`> element. Následující příklad ukazuje, jak nakonfigurovat <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>.  
   
 ```xml  
 <standardEndpoints>  
@@ -226,7 +226,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
       </udpDiscoveryEndpoint>  
 ```  
   
- Po přidání konfiguraci standardní koncového bodu, konfigurace v odkazovat <`endpoint`> element pro každý koncový bod, jak znázorňuje následující ukázka.  
+ Po přidání konfigurace standardního koncového bodu, odkazují na konfiguraci v <`endpoint`> – element pro každý koncový bod, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <services>  
@@ -240,7 +240,7 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </services>  
 ```  
   
- Na rozdíl od jiných standardní koncových bodů použitých při zjišťování, zadání vazby a smlouvy, kterou <xref:System.ServiceModel.Discovery.DynamicEndpoint>. Následující příklad ukazuje, jak přidávat a konfigurovat <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  
+ Na rozdíl od dalších standardních koncových bodů použitých při zjišťování, určete vazbu a smlouvu aktivoval pro <xref:System.ServiceModel.Discovery.DynamicEndpoint>. Následující příklad ukazuje, jak přidat a nakonfigurovat <xref:System.ServiceModel.Discovery.DynamicEndpoint>.  
   
 ```xml  
 <system.serviceModel>  
@@ -269,4 +269,4 @@ Existují čtyři hlavní skupiny nastavení konfigurace používané při zjiš
 </system.ServiceModel>  
 ```  
   
- Další informace o standardních koncových bodů v tématu [standardní koncové body](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+ Další informace o standardních koncových bodů najdete v části [standardních koncových bodů](../../../../docs/framework/wcf/feature-details/standard-endpoints.md)

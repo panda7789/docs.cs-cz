@@ -8,11 +8,11 @@ ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: af27ddaa69d34976929f40055bc2cc668f877e87
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59117401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949211"
 ---
 # <a name="runtime-information-etw-events"></a>Události Trasování událostí pro Windows běhových informací
 Informace o modulu runtime, včetně SKU, číslo verze, způsobem, ve kterém se aktivovala modul runtime, parametry příkazového řádku, který byl spuštěn s GUID (Pokud je k dispozici) a další relevantní informace protokolu tyto události trasování událostí pro Windows. Pokud různými moduly runtime jsou spuštěny v rámci procesu, tyto události (ClrInstanceID) na základě informací poskytnutých pomáhá rozlišit modulů runtime.  

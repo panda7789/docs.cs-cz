@@ -8,11 +8,11 @@ helpviewer_keywords:
 - extension methods [Visual Basic]
 ms.assetid: b8020aae-374d-46a9-bcb7-8cc2390b93b6
 ms.openlocfilehash: 9e005d0dc7da154fbaffbf7e02c55445a1213195
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864335"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 Rozšiřující metody umožňují vývojářům přidat vlastní funkce pro datové typy, které jsou již definovány, bez vytváření nového odvozeného typu. Rozšiřující metody umožňují napsat metodu, kterou lze volat jako by šlo metodu instance existujícího typu.  
@@ -93,19 +93,19 @@ End Module
 ## <a name="types-that-can-be-extended"></a>Typy, které je možné rozšířit  
  Můžete definovat rozšiřující metodu pro většinu typů, které mohou být zastoupeny v seznamu parametrů jazyka Visual Basic, včetně následujících:  
   
--   Třídy (typy odkazů)  
+- Třídy (typy odkazů)  
   
--   Struktury (typy hodnot)  
+- Struktury (typy hodnot)  
   
--   Rozhraní  
+- Rozhraní  
   
--   Delegáty  
+- Delegáty  
   
--   Argumenty ByRef a ByVal  
+- Argumenty ByRef a ByVal  
   
--   Obecné parametry metody  
+- Obecné parametry metody  
   
--   Pole  
+- Pole  
   
  Vzhledem k tomu, že první parametr určuje datový typ, který rozšiřující metoda rozšiřuje, je vyžadován a nemůže být nepovinný. Z tohoto důvodu `Optional` parametry a `ParamArray` parametry nemohou být první parametr v seznamu parametrů.  
   
@@ -118,15 +118,15 @@ End Module
   
  Obecně jsou zranitelnější než metody rozšíření přidané do typů, které řídíte rozšiřující metody, které přidáte na typy, které nevlastníte. V mnoha může dojít ve třídách, které nevlastníte, jež mohou narušit vaše metody rozšíření.  
   
--   Pokud existuje kterýkoli přístupný instanční člen, který má stejný podpis kompatibilní s argumenty v příkazu volání, bez zužujících převodů požadovaných argumentem pro parametr, použije se instanční metoda před jakoukoli metodou rozšíření. Proto pokud metoda příslušné instance je přidána do třídy v určitém okamžiku, existující člen rozšíření, která závisí na může být nepřístupný.  
+- Pokud existuje kterýkoli přístupný instanční člen, který má stejný podpis kompatibilní s argumenty v příkazu volání, bez zužujících převodů požadovaných argumentem pro parametr, použije se instanční metoda před jakoukoli metodou rozšíření. Proto pokud metoda příslušné instance je přidána do třídy v určitém okamžiku, existující člen rozšíření, která závisí na může být nepřístupný.  
   
--   Autor metody rozšíření nemůže ostatním programátorům zabránit ve vytváření konfliktních metod rozšíření, které mohou mít přednost před původním rozšířením.  
+- Autor metody rozšíření nemůže ostatním programátorům zabránit ve vytváření konfliktních metod rozšíření, které mohou mít přednost před původním rozšířením.  
   
--   Můžete zlepšit odolnost vložením rozšiřujících metod ve vlastním oboru názvů. Spotřebitelé knihovny potom můžete zahrnout oboru názvů nebo vyloučit nebo volit mezi obory názvů odděleně od zbytku knihovny.  
+- Můžete zlepšit odolnost vložením rozšiřujících metod ve vlastním oboru názvů. Spotřebitelé knihovny potom můžete zahrnout oboru názvů nebo vyloučit nebo volit mezi obory názvů odděleně od zbytku knihovny.  
   
--   Může být bezpečnější rozšířit rozhraní než rozšířit třídy, zejména v případě, že není vlastníkem rozhraní nebo třídu. Změna v rozhraní se týká každé třídy, který jej implementuje. Proto že autor bude méně pravděpodobné, že chcete přidat nebo změnit metody v rozhraní. Nicméně pokud třída implementuje dvě rozhraní, které mají stejnou signaturu metody rozšíření, žádná rozšiřující metoda není viditelná.  
+- Může být bezpečnější rozšířit rozhraní než rozšířit třídy, zejména v případě, že není vlastníkem rozhraní nebo třídu. Změna v rozhraní se týká každé třídy, který jej implementuje. Proto že autor bude méně pravděpodobné, že chcete přidat nebo změnit metody v rozhraní. Nicméně pokud třída implementuje dvě rozhraní, které mají stejnou signaturu metody rozšíření, žádná rozšiřující metoda není viditelná.  
   
--   Rozšiřte co nejspecifičtější typ., můžete. V hierarchii typů vyberete typ, ze které jsou odvozeny mnoho jiných typů, existují vrstvy možností pro zavedení metody instance nebo jiných rozšiřujících metod, které by mohou narušovat vaše.  
+- Rozšiřte co nejspecifičtější typ., můžete. V hierarchii typů vyberete typ, ze které jsou odvozeny mnoho jiných typů, existují vrstvy možností pro zavedení metody instance nebo jiných rozšiřujících metod, které by mohou narušovat vaše.  
   
 ## <a name="extension-methods-instance-methods-and-properties"></a>Rozšiřující metody, metody Instance a vlastnosti  
  Pokud metoda příslušné instance má podpis, který je kompatibilní s argumenty volání příkazu, metoda instance bude zvolena v preferenci jakoukoli metodou rozšíření. Instanční metoda má přednost, i když rozšiřující metoda představuje lepší shodu. V následujícím příkladu `ExampleClass` obsahuje metodu instance pojmenovanou `ExampleMethod` , který má jeden parametr typu `Integer`. Metoda rozšíření `ExampleMethod` rozšiřuje `ExampleClass`, a má jeden parametr typu `Long`.  

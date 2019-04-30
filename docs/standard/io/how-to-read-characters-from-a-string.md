@@ -16,11 +16,11 @@ ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e890e4172e645e9919ea88ec5835aaed7432c0c6
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835197"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947183"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>Postupy: Čtení znaků z řetězce
 Následující příklady kódu ukazují, jak ke čtení znaků z řetězce synchronně nebo asynchronně.  

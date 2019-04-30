@@ -5,11 +5,11 @@ ms.assetid: e7733bd3-68da-47f9-82ef-477db5f2e32d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bb41cc47351ccf22fcd522b7d4291c235312bfaa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59167685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948652"
 ---
 # <a name="icordebugprocess6enablevirtualmodulesplitting-method"></a>ICorDebugProcess6::EnableVirtualModuleSplitting – metoda
 Povolí nebo zakáže virtuální modulu rozdělení.  
@@ -54,40 +54,40 @@ HRESULT EnableVirtualModuleSplitting(
 ## <a name="behavioral-differences"></a>Behaviorální rozdíly  
  Kontejner moduly mají následující charakteristiky a chování:  
   
--   Jejich metadata pro všechny základní dílčí moduly sloučení dohromady.  
+- Jejich metadata pro všechny základní dílčí moduly sloučení dohromady.  
   
--   Jejich názvy typů mohou pozměněny.  
+- Jejich názvy typů mohou pozměněny.  
   
--   [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí cestu k modulu na disku.  
+- [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí cestu k modulu na disku.  
   
--   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí velikost tohoto obrázku.  
+- [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí velikost tohoto obrázku.  
   
--   Metoda ICorDebugAssembly3.EnumerateContainedAssemblies seznam dílčích modulů.  
+- Metoda ICorDebugAssembly3.EnumerateContainedAssemblies seznam dílčích modulů.  
   
--   Vrátí metodu ICorDebugAssembly3.GetContainerAssembly `S_FALSE`.  
+- Vrátí metodu ICorDebugAssembly3.GetContainerAssembly `S_FALSE`.  
   
  Dílčí moduly mají následující charakteristiky a chování:  
   
--   Mají omezenou sadu metadata, která pouze odpovídá původní sestavení, která se slučuje.  
+- Mají omezenou sadu metadata, která pouze odpovídá původní sestavení, která se slučuje.  
   
--   Metadata názvy nejsou pozměněny.  
+- Metadata názvy nejsou pozměněny.  
   
--   Tokeny metadat by problém nahlásili shodovat s tokeny v původní sestavení předtím, než se nesloučila v procesu sestavení.  
+- Tokeny metadat by problém nahlásili shodovat s tokeny v původní sestavení předtím, než se nesloučila v procesu sestavení.  
   
--   [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí název sestavení, ne cestu k souboru.  
+- [Icordebugmodule::getName –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) metoda vrátí název sestavení, ne cestu k souboru.  
   
--   [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí původní velikost nesloučené bitové kopie.  
+- [Icordebugmodule::getsize –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) metoda vrátí původní velikost nesloučené bitové kopie.  
   
--   Vrátí metodu ICorDebugModule3.EnumerateContainedAssemblies `S_FALSE`.  
+- Vrátí metodu ICorDebugModule3.EnumerateContainedAssemblies `S_FALSE`.  
   
--   Metoda ICorDebugAssembly3.GetContainerAssembly vrátí obsahující modul.  
+- Metoda ICorDebugAssembly3.GetContainerAssembly vrátí obsahující modul.  
   
 ## <a name="interfaces-retrieved-from-modules"></a>Rozhraní načíst z modulů  
  Širokou škálu rozhraní můžou vytvořit nebo načíst z modulů. Zde jsou některá z vylepšení:  
   
--   Icordebugclass – objekt, který je vrácený [icordebugmodule::getclassfromtoken –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) metody.  
+- Icordebugclass – objekt, který je vrácený [icordebugmodule::getclassfromtoken –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) metody.  
   
--   Icordebugassembly – objekt, který je vrácený [icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metody.  
+- Icordebugassembly – objekt, který je vrácený [icordebugmodule::getassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) metody.  
   
  Tyto objekty jsou vždy v mezipaměti [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md), a budou mít stejnou identitu ukazatele bez ohledu na to, zda byly vytvořeny nebo posílat dotaz z kontejnerů modulu nebo dílčí modul. Dílčí modul obsahuje filtrované zobrazení těchto objektů uložených v mezipaměti, samostatné mezipaměti s vlastní kopie.  
   

@@ -3,11 +3,11 @@ title: Využití informačních kanálů OData z pracovního postupu - WF
 ms.date: 03/30/2017
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
 ms.openlocfilehash: aec23667e7388d6bc31d122617795ff5dfdefa5f
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58408992"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946056"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Využití informačních kanálů OData z pracovního postupu
 

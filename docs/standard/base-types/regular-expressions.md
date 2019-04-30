@@ -23,35 +23,35 @@ ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 33aaf09e284db5c818eb0ff3917533cce5e70ad7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61811654"
 ---
-# <a name="net-regular-expressions"></a>Regulární výrazy rozhraní .NET
-Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé porovnávání notace regulárních výrazů umožňuje rychle analyzovat velké objemy text k vyhledání konkrétní znak vzory; k ověření text tak, aby to odpovídá předdefinované vzoru (například e-mailovou adresu); k extrakci, upravit, nahraďte nebo odstranit text dílčích řetězců; a pokud chcete generovat sestavy do kolekce přidat extrahovaných řetězců. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
+# <a name="net-regular-expressions"></a>Regulárních výrazů .NET
+Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpracování textu. Rozsáhlé notace vzoru regulárních výrazů umožňuje rychlé analyzování velkého množství textu k vyhledání konkrétních znakových vzorů; pro ověření textu a ověřte, že souhlasí s předdefinovaným vzorem (jako je například e-mailovou adresu); extrahovat, upravovat, nahrazení nebo odstranění podřetězců textu; a přidávání vyjmutých řetězců do kolekce ke generování sestavy. Pro mnoho aplikací, které pracují s řetězci nebo které analyzují velké textové bloky, jsou regulární výrazy nepostradatelným nástrojem.  
   
 ## <a name="how-regular-expressions-work"></a>Principy regulárních výrazů  
- Základnu textu pomocí regulárních výrazů zpracování je modul regulárních výrazů, která je reprezentována <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> objekt v rozhraní .NET. Požadované minimum pro zpracování textu pomocí regulárních výrazů je předání následujících dvou informací modulu regulárních výrazů:  
+ Ústředním zpracování textu pomocí regulárních výrazů je modul regulárních výrazů, která je reprezentována <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> objektů v rozhraní .NET. Požadované minimum pro zpracování textu pomocí regulárních výrazů je předání následujících dvou informací modulu regulárních výrazů:  
   
--   Vzor regulárního výrazu pro identifikaci v textu.  
+- Vzor regulárního výrazu pro identifikaci v textu.  
   
-     V rozhraní .NET jsou definovány vzorce regulárního výrazu speciální syntaxe nebo jazyk, který je kompatibilní s použitím regulárních výrazů Perl 5 a přidá některé další funkce, například odpovídající zprava doleva. Další informace najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md).  
+     V rozhraní .NET jsou vzory regulárních výrazů definovány zvláštní syntaxí nebo jazykem, který je kompatibilní s regulárními výrazy jazyka Perl 5 a přináší několik doplňkových funkcí, jako je například porovnávání zprava doleva. Další informace najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md).  
   
--   Text určený k analýze pomocí vzoru regulárního výrazu.  
+- Text určený k analýze pomocí vzoru regulárního výrazu.  
   
  Metody třídy <xref:System.Text.RegularExpressions.Regex> umožňují provedení následujících operací:  
   
--   Určení toho, zda se ve vstupním textu objeví vzor regulárního výrazu po zavolání metody <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>. Pro příklad, který používá <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metodu ověření text, najdete v části [postup: Ověřte, zda jsou řetězce v platném formátu e-mailu](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
+- Určení toho, zda se ve vstupním textu objeví vzor regulárního výrazu po zavolání metody <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>. Příklad, který se používá <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metodu pro ověření textu, naleznete v tématu [jak: Ověřte, zda jsou řetězce ve formátu platné e-mailové](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
   
--   Vrácení jednoho nebo všech výskytů textu, který se shoduje se vzorem regulárního výrazu, zavoláním metody <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> nebo metody <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>. První metoda vrátí objekt <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType>, který poskytuje informace o odpovídajícím textu. Druhá vrátí objekt <xref:System.Text.RegularExpressions.MatchCollection>, který obsahuje jeden objekt <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> pro jednotlivé shody v rámci analyzovaného textu.  
+- Vrácení jednoho nebo všech výskytů textu, který se shoduje se vzorem regulárního výrazu, zavoláním metody <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> nebo metody <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType>. První metoda vrátí objekt <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType>, který poskytuje informace o odpovídajícím textu. Druhá vrátí objekt <xref:System.Text.RegularExpressions.MatchCollection>, který obsahuje jeden objekt <xref:System.Text.RegularExpressions.Match?displayProperty=nameWithType> pro jednotlivé shody v rámci analyzovaného textu.  
   
--   Nahrazení textu, který odpovídá vzoru regulárního výrazu zavoláním metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>. Příklady, které používají <xref:System.Text.RegularExpressions.Regex.Replace%2A> najdete v článku metoda změňte formát data a odeberte neplatné znaky v řetězci [postupy: odstranění neplatných znaků z řetězce](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md) a [příklad: Změna formátů data](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md).  
+- Nahrazení textu, který odpovídá vzoru regulárního výrazu zavoláním metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>. Příklady, které používají <xref:System.Text.RegularExpressions.Regex.Replace%2A> metodu pro změnu formátu data a odstranění neplatných znaků z řetězce, naleznete v tématu [jak: Odstranění neplatných znaků z řetězce](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md) a [příkladu: Změna formátů data](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md).  
   
- Přehled model objektu regulárního výrazu, najdete v části [Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md).  
+ Přehled modelu objektu regulárního výrazu, naleznete v tématu [The Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md).  
   
- Další informace o jazyk regulárních výrazů najdete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md) nebo stáhnout a vytisknout jednu z těchto brožury:  
+ Další informace o jazyce regulárních výrazů, naleznete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../../docs/standard/base-types/regular-expression-language-quick-reference.md) nebo stáhnout a vytisknout jednu z těchto brožury:  
   
  [Stručná referenční příručka ve formátu aplikace Word (.docx)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
  [Stručná referenční příručka ve formátu PDF (PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)  
@@ -65,7 +65,7 @@ Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpra
  [!code-csharp[Conceptual.Regex#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example1.cs#2)]
  [!code-vb[Conceptual.Regex#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example1.vb#2)]  
   
- Regulární výraz`(Mr\.? |Mrs\.? |Miss |Ms\.? )` odpovídá kterýkoli z výskytů "Mr", "Pan", "Paní", "Paní", "Neúspěšný přístup", "Ms nebo"Ms.". Volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nahradí vyhledaný řetězec <xref:System.String.Empty?displayProperty=nameWithType>; jinými slovy to znamená, že jej z původního řetězce odstraní.  
+ Vzor regulárního výrazu`(Mr\.? |Mrs\.? |Miss |Ms\.? )` shoduje s jakýmkoli výskytem "Mr", "pan", "Mrs", "Paní", "Miss", "Ms nebo"Ms.". Volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nahradí vyhledaný řetězec <xref:System.String.Empty?displayProperty=nameWithType>; jinými slovy to znamená, že jej z původního řetězce odstraní.  
   
 ### <a name="example-2-identifying-duplicated-words"></a>Příklad 2: Nalezení duplicitních slov  
  Nechtěně zdvojená slova jsou běžnou chybou, které se autoři při psaní dopouštějí. Zdvojená slova mohou být vyhledána pomocí regulárního výrazu, jak znázorňuje následující příklad.  
@@ -73,27 +73,27 @@ Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpra
  [!code-csharp[Conceptual.Regex#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example2.cs#3)]
  [!code-vb[Conceptual.Regex#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example2.vb#3)]  
   
- Regulární výraz `\b(\w+?)\s\1\b` jde interpretovat následujícím způsobem:  
+ Vzor regulárního výrazu `\b(\w+?)\s\1\b` může být interpretován takto:  
   
 |||  
 |-|-|  
 |`\b`|Začne na hranici slova.|  
-|(\w+?)|Porovná jeden nebo více znaků slova, ale jako několika prvních znaků míře. Společně tvoří skupinu, která může označovat jako `\1`.|  
+|(\w+?)|Porovná jeden nebo více znaků slova, ale co nejméně znakům nejvíce. Společně tvoří skupiny, které lze odkazovat jako `\1`.|  
 |`\s`|Porovná prázdný znak.|  
-|`\1`|Odpovídat dílčí řetězec, který se rovná skupině s názvem `\1`.|  
+|`\1`|Porovná podřetězec, který se shoduje se skupinou s názvem `\1`.|  
 |`\b`|Porovná hranici slova.|  
   
  Metoda <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> je zavolána pomocí možností regulárního výrazu, které jsou nastaveny jako <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>. Operace shody proto rozlišuje velká a malá písmena a příklad vyhodnotí podřetězec „Tento tento“ jako zdvojené slovo.  
   
  Vstupní řetězec obsahuje podřetězec „tento? Tento“. Z důvodu výskytu otazníku však nedojde k vyhodnocení výrazu jako zdvojeného slova.  
   
-### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>Příklad 3: Dynamické vytvoření regulárního výrazu zohledňujícího jazykovou verzi  
- Následující příklad ilustruje power regulárních výrazů v kombinaci s flexibilitu, které nabízí. Funkce globalizace NET společnosti. Formát měny v aktuální jazykové verzi systému určuje objekt <xref:System.Globalization.NumberFormatInfo>. Tuto informaci následně používá k vytvoření regulárního výrazu, který z textu extrahuje hodnoty měny. Pro jednotlivé shody extrahuje podskupinu obsahující pouze číselný řetězec, převede jej na hodnotu <xref:System.Decimal> a vypočte mezisoučet.  
+### <a name="example-3-dynamically-building-a-culture-sensitive-regular-expression"></a>Příklad 3: Dynamické vytvoření regulárního výrazu zohledňující jazykovou verzi  
+ Následující příklad ukazuje sílu regulárních výrazů spolu s flexibilitou, kterou nabízejí. Funkce pro globalizaci vaší sítě. Formát měny v aktuální jazykové verzi systému určuje objekt <xref:System.Globalization.NumberFormatInfo>. Tuto informaci následně používá k vytvoření regulárního výrazu, který z textu extrahuje hodnoty měny. Pro jednotlivé shody extrahuje podskupinu obsahující pouze číselný řetězec, převede jej na hodnotu <xref:System.Decimal> a vypočte mezisoučet.  
   
  [!code-csharp[Conceptual.Regex#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex/cs/example.cs#1)]
  [!code-vb[Conceptual.Regex#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex/vb/example.vb#1)]  
   
- Na počítači, jejichž aktuální jazykové verze je angličtina – USA (en US), v příkladu dynamicky vytvoří regulární výraz `\$\s*[-+]?([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`. Tento vzor regulárního výrazu může být interpretován takto:  
+ Na počítači, jehož aktuální jazyková verze je angličtina - Spojené státy (en US), příklad dynamicky sestaví regulární výraz `\$\s*[-+]?([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`. Tento vzor regulárního výrazu může být interpretován takto:  
   
 |||  
 |-|-|  
@@ -115,11 +115,11 @@ Regulární výrazy poskytují výkonný, flexibilní a efektivní způsob zpra
 |-----------|-----------------|  
 |[Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Poskytuje informace o sadách znaků, operátorech a konstrukcích, které lze použít pro definování regulárních výrazů.|  
 |[Model objektu regulárního výrazu](../../../docs/standard/base-types/the-regular-expression-object-model.md)|Poskytuje informace a příklady kódu znázorňující způsob používání tříd regulárních výrazů.|  
-|[Podrobnosti k chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Poskytuje informace o možnostech a chování regulárních výrazech .NET.|  
+|[Podrobnosti k chování regulárních výrazů](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Poskytuje informace o možnostech a chování regulárních výrazů .NET.|  
 |[Příklady regulárních výrazů](../../../docs/standard/base-types/regular-expression-examples.md)|Poskytuje příklady kódu, které znázorňují typické způsoby používání regulárních výrazů.|  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
  <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>  
- [Regulárních výrazů – Stručná referenční dokumentace (ke stažení ve Wordovém formátu)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
- [Regulárních výrazů – Stručná referenční dokumentace (ke stažení ve formátu PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)
+ [Regulárních výrazů – Stručná referenční příručka (ke stažení ve Wordovém formátu)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+ [Regulárních výrazů – Stručná referenční příručka (ke stažení ve formátu PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

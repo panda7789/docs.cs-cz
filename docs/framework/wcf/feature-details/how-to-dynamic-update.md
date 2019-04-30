@@ -3,11 +3,11 @@ title: 'Postupy: Dynamická aktualizace'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
 ms.openlocfilehash: 7e2fbd6c179444ef4c6e1df5e5068dbd1c5d29fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320753"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773046"
 ---
 # <a name="how-to-dynamic-update"></a>Postupy: Dynamická aktualizace
 Toto téma popisuje základní kroky potřebné k vytvoření a dynamicky aktualizovat konfiguraci směrování. V tomto příkladu počáteční konfigurace směrování se získávají z konfiguračního souboru a všechny zprávy směruje do službu kalkulačky regularCalc; ale to se následně aktualizuje prostřednictvím kódu programu Chcete-li změnit cílový koncový bod služby roundingCalc.  

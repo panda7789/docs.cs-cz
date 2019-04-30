@@ -9,8 +9,8 @@ ms.openlocfilehash: 124310497cc2a8e8a816ba90b2c68a16ed342ae6
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938785"
 ---
 # <a name="xaml-security-considerations"></a>Důležité informace o zabezpečení pro jazyk XAML
 Toto téma popisuje doporučené postupy pro zabezpečení v aplikacích při použití XAML a rozhraní .NET Framework XAML Services API.  
@@ -34,9 +34,9 @@ Toto téma popisuje doporučené postupy pro zabezpečení v aplikacích při po
 ## <a name="xaml-namespaces-and-assembly-trust"></a>Obory názvů XAML a sestavení důvěryhodnosti  
  Základní syntaxe nekvalifikovaného a definice interpretace vlastní mapování oboru názvů XAML do sestavení XAML nerozlišuje mezi důvěryhodné a nedůvěryhodné sestavení jako načteno do domény aplikace. Proto je technicky možné nedůvěryhodného sestavení zfalšovat mapování oboru názvů XAML určené důvěryhodná sestavení a zachycení deklarovanému objektu XAML zdroje a informace o vlastnosti. Pokud máte požadavky na zabezpečení, abyste předešli této situaci vaše zamýšlený mapování oboru názvů XAML je třeba pomocí jedné z následujících postupů:  
   
--   Použijte plně kvalifikovaný název s silný název v žádné mapování oboru názvů XAML provedené při vaší aplikace XAML.  
+- Použijte plně kvalifikovaný název s silný název v žádné mapování oboru názvů XAML provedené při vaší aplikace XAML.  
   
--   Omezit mapování na pevnou sadu referenčních sestavení tak, že vytváří konkrétní sestavení <xref:System.Xaml.XamlSchemaContext> pro vaše XAML čtečky a XAML objektu zapisovače. Viz <xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>.  
+- Omezit mapování na pevnou sadu referenčních sestavení tak, že vytváří konkrétní sestavení <xref:System.Xaml.XamlSchemaContext> pro vaše XAML čtečky a XAML objektu zapisovače. Viz <xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>.  
   
 ## <a name="xaml-type-mapping-and-type-system-access"></a>Mapování typů XAML a přístup k systému typu  
  XAML podporuje svůj vlastní typ systém, který se ve spoustě ohledů je partnera, který způsob implementace CLR systému základní typ CLR. Však pro některé aspekty typ povědomí, kde provádíte rozhodnutí o důvěryhodnosti o typu na základě jeho typu informací, by měl odložit na informace o typu v prostředí CLR typy zálohování. Je to proto, že některé konkrétní možnosti vytváření sestav typu systému XAML jsou ponechány otevřené jako virtuální metody a nejsou proto plně pod kontrolou původní implementace rozhraní .NET Framework XAML Services. Těmto rozšiřujícím bodům existovat, protože systém typů XAML je možné rozšířit tak, aby odpovídaly rozšiřitelnosti XAML samotného a možná alternativní strategii mapování typů a výchozí implementace podporou modulu CLR a výchozí kontext schématu XAML. Další informace najdete v tématu poznámky ke konkrétní na některé z vlastností <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>.  

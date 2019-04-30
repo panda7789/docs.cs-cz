@@ -16,11 +16,11 @@ topic_type:
 author: hoyosjs
 ms.author: juhoyosa
 ms.openlocfilehash: b77dd1277e7d23729f30d9d495c5417055a22759
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948799"
 ---
 # <a name="icordebugprocess4processstatechanged-method"></a>ICorDebugProcess4::ProcessStateChanged Method
 
@@ -47,9 +47,9 @@ Zadaná metoda je součástí `ICorDebugProcess4` rozhraní a odpovídá čtvrt�
 
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
- **Záhlaví:** Žádná
+ **Záhlaví:** Žádné
 
- **Knihovna:** Žádná
+ **Knihovna:** Žádné
  
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v20plus-md.md)]
 

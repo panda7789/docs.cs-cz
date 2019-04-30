@@ -6,32 +6,32 @@ dev_langs:
 - vb
 ms.assetid: bcd7b699-4e50-4523-8c33-2f54a103d94e
 ms.openlocfilehash: 70aa2ad6385ec4791b05b202dc5dc6d4fe9e57b9
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762319"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797836"
 ---
 # <a name="query-results"></a>Výsledky dotazu
-Po [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu je převést na strom příkazů a provést, výsledky dotazu jsou obvykle vrátí jako jednu z následujících:  
+Po [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu je převést na stromy příkazů a spuštěn, výsledky dotazu jsou obvykle vráceny jako jeden z následujících akcí:  
   
--   Kolekce nula nebo více objektů zadané entity nebo projekci komplexních typů v konceptuálním modelu.  
+- Kolekce nulu nebo více objektů zadané entity nebo projekce komplexních typů v konceptuálním modelu.  
   
--   Typy CLR podporované v konceptuálním modelu.  
+- Typy CLR podporované v konceptuálním modelu.  
   
--   Vložené kolekce.  
+- Vložené kolekce.  
   
--   Anonymní typy.  
+- Anonymní typy.  
   
- Pokud se má spustit dotaz na zdroji dat, jsou výsledky vyhodnocena do typy CLR a vrácen do klienta. Všechny materialization objektu provádí [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Všechny chyby, které jsou výsledkem nebylo možné mezi [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] a způsobí, že modulu CLR výjimky vyvolání během materialization objektu.  
+ Při spuštění dotazu na zdroji dat jsou výsledky vyhodnocena na typy CLR a vrácen do klienta. Všechny materializace objektů provádí [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Všechny chyby, které jsou výsledkem nemožností mapování mezi [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] a způsobí, že modul CLR výjimky, která je vyvolána během materializace objektů.  
   
- Pokud spuštění dotazu vrátí konceptuálního modelu primitivní typy, výsledky obsahovat typů CLR, které jsou samostatné a odpojená od [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Ale pokud dotaz vrátí kolekci objektů zadané entity, reprezentována <xref:System.Data.Objects.ObjectQuery%601>, tyto typy jsou sledovány objektem do kontextu objektu. Všechny chování objektu (například podřízeného nebo nadřazeného kolekcí, sledování změn, polymorfismus a tak dále) jsou definované v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Tato funkce mohou být používány své kapacity, jak jsou definovány v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [práce s objekty](../../../../../../docs/framework/data/adonet/ef/working-with-objects.md).  
+ Pokud spuštění dotazu vrátí typy konceptuálních modelů primitivní, výsledky skládat z typů CLR, které jsou samostatné a odpojen od [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Nicméně pokud dotaz vrací kolekce objektů zadané entity, reprezentovaný <xref:System.Data.Objects.ObjectQuery%601>, tyto typy jsou sledovány objektem kontextu objektu. Chování všech objektů (například kolekce podřízený/nadřazený prvek, sledování změn, polymorfismus a tak dále) jsou definované v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Tato funkce je možné v jeho kapacitě, jak jsou definovány v [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. Další informace najdete v tématu [práce s objekty](../../../../../../docs/framework/data/adonet/ef/working-with-objects.md).  
   
- Struktura typy vráceny z dotazů (například anonymní typy a komplexní typy s možnou hodnotou Null) můžou být `null` hodnotu. <xref:System.Data.Objects.DataClasses.EntityCollection%601> Vlastnost vrácenou entitu může být také z `null` hodnotu. To může být důsledkem projekce vlastnost kolekce entita, která je `null` hodnotu, jako je například volání <xref:System.Linq.Queryable.FirstOrDefault%2A> na <xref:System.Data.Objects.ObjectQuery%601> , nemá žádné elementy.  
+ Typy struktury, které jsou vráceny z dotazů (třeba anonymní typy a komplexní typy s možnou hodnotou Null) mohou být `null` hodnotu. <xref:System.Data.Objects.DataClasses.EntityCollection%601> Vlastnosti vrácenou entitu mohou také být `null` hodnotu. To může být následek projekci vlastnost kolekce entity, která má `null` hodnotu, například volání <xref:System.Linq.Queryable.FirstOrDefault%2A> na <xref:System.Data.Objects.ObjectQuery%601> , který neobsahuje žádné prvky.  
   
- V některých situacích může zdát, že dotaz Generovat výsledku materializovaného během jejího provádění, ale dotaz bude proveden na serveru a objekt entity se nikdy vyžaduje v modulu CLR. To může způsobit problémy, pokud jsou v závislosti na vedlejší účinky materialization objektu.  
+ V určitých situacích dotazu se může zdát generovat materializovaná výsledek během svého provádění, ale dotazu se provede na serveru a objekt entity se nikdy materializace v CLR. To může způsobit potíže, pokud jsou v závislosti na vedlejší účinky materializace objektů.  
   
- Následující příklad obsahuje vlastní třídu, `MyContact`, s `LastName` vlastnost. Když `LastName` je vlastnost nastavena, `count` proměnné se zvýší. Pokud spustíte dvě následující dotazy, se zvýší první dotaz `count` při druhého dotazu není. Důvodem je, že v druhé dotazu `LastName` vlastnost se promítá z výsledků a `MyContact` třída je nikdy vytvořit, protože není potřeba provést dotaz na úložiště.  
+ Následující příklad obsahuje třídu vlastního `MyContact`, s `LastName` vlastnost. Když `LastName` je vlastnost nastavena, `count` proměnné se zvýší. Pokud spustíte dvě následující dotazy, se zvýší první dotaz `count` během druhého dotazu se tak nestane. Důvodem je, že v druhý dotaz `LastName` vlastnost je předpokládané ve výsledcích a `MyContact` třídy nikdy vytvořen, protože není to nutné k provedení dotazu ve storu.  
   
  [!code-csharp[DP L2E Materialization Example#MaterializationSideEffects](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Materialization Example/CS/Program.cs#materializationsideeffects)]
  [!code-vb[DP L2E Materialization Example#MaterializationSideEffects](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Materialization Example/VB/Module1.vb#materializationsideeffects)]  

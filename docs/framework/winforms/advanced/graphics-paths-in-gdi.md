@@ -11,28 +11,28 @@ helpviewer_keywords:
 - drawing [Windows Forms], paths
 ms.assetid: a5500dec-666c-41fd-9da3-2169dd89c5eb
 ms.openlocfilehash: c9a43065210f5ef0fffcae01cc7eb88349696b6b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59140501"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938134"
 ---
 # <a name="graphics-paths-in-gdi"></a>Cesty grafiky v GDI+
 Cesty jsou vytvořené kombinací řádků, obdélníky a jednoduché křivky. Pamatujete z [přehled vektorové grafiky](vector-graphics-overview.md) , že tyto základní stavební bloky ukázaly být zvláště užitečná pro vykreslování obrázků:  
   
--   řádky  
+- řádky  
   
--   Obdélníků  
+- Obdélníků  
   
--   Symbol tří teček  
+- Symbol tří teček  
   
--   Oblouky  
+- Oblouky  
   
--   Mnohoúhelníky  
+- Mnohoúhelníky  
   
--   Základní křivky vyhlazení  
+- Základní křivky vyhlazení  
   
--   Bézierovy křivky  
+- Bézierovy křivky  
   
  V rozhraní GDI + <xref:System.Drawing.Drawing2D.GraphicsPath> objektu umožňuje shromažďovat pořadí těchto stavebních bloků do jedné jednotky. S jedním zavoláním pak lze rozlišovat seřazených řádků, obdélníky, mnohoúhelníků a křivek <xref:System.Drawing.Graphics.DrawPath%2A> metodu <xref:System.Drawing.Graphics> třídy. Cesta vytvořené kombinací řádku, oblouk, Bézierovy křivky a křivky mohutnosti na následujícím obrázku.  
   

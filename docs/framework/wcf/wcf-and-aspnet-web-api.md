@@ -3,11 +3,11 @@ title: WCF a ASP.NET Web API
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
 ms.openlocfilehash: d805c09bef45932ba006a213343429ae7c9303df
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59192001"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791257"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
 WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Umožňuje vývojářům vytvářet zabezpečená, spolehlivá a počet řešení, které se integrují napříč platformami vzájemnou spolupráci se službami stávajících investic. [Rozhraní ASP.NET Web API](https://www.asp.net/web-api) je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  

@@ -7,11 +7,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
 ms.openlocfilehash: b3cfc44c430a02ec9ffce75ebff5c8f9cc46505c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945415"
 ---
 # <a name="framework-libraries"></a>Knihovny rozhraní
 
@@ -41,23 +41,23 @@ BCL poskytuje nejvíce základní typy a funkce nástroje a jsou základní vše
 
 .NET obsahuje sadu datových struktur, které jsou workhorses téměř všechny aplikace .NET. Tyto jsou většinou kolekce, ale taky obsahovat další typy.
 
-*   <xref:System.Array> -Představuje pole objektů silnými typy, které lze využívat pomocí indexu. Má pevnou velikost, na jeho vytváření.
-*   <xref:System.Collections.Generic.List%601> -Představuje výrazným seznamem objektů, které lze využívat pomocí indexu. Velikost automaticky podle potřeby.
-*   <xref:System.Collections.Generic.Dictionary%602> -Představuje kolekci hodnot, které jsou indexovány pomocí klíče. Hodnoty lze přistupovat pomocí klíče. Velikost automaticky podle potřeby.
-*   <xref:System.Uri> -Poskytuje reprezentaci objektu identifikátor URI (URI) a snadný přístup k různým částem identifikátoru URI.
-*   <xref:System.DateTime> -Představuje okamžik v čase, obvykle vyjádřený jako datum a čas.
+* <xref:System.Array> -Představuje pole objektů silnými typy, které lze využívat pomocí indexu. Má pevnou velikost, na jeho vytváření.
+* <xref:System.Collections.Generic.List%601> -Představuje výrazným seznamem objektů, které lze využívat pomocí indexu. Velikost automaticky podle potřeby.
+* <xref:System.Collections.Generic.Dictionary%602> -Představuje kolekci hodnot, které jsou indexovány pomocí klíče. Hodnoty lze přistupovat pomocí klíče. Velikost automaticky podle potřeby.
+* <xref:System.Uri> -Poskytuje reprezentaci objektu identifikátor URI (URI) a snadný přístup k různým částem identifikátoru URI.
+* <xref:System.DateTime> -Představuje okamžik v čase, obvykle vyjádřený jako datum a čas.
 
 ## <a name="utility-apis"></a>Nástroje rozhraní API
 
 .NET obsahuje sadu nástrojů rozhraní API, která poskytuje funkce pro celou řadu důležitých úloh.
 
-*   <xref:System.Net.Http.HttpClient> – Rozhraní API pro odesílání požadavků HTTP a příjem odpovědí HTTP ze zdroje identifikovaného identifikátorem URI.
-*   <xref:System.Xml.Linq.XDocument> – Rozhraní API pro načítání a dotazování na dokumenty XML pomocí jazyka LINQ.
-*   <xref:System.IO.StreamReader> – Rozhraní API pro čtení souborů. 
-*   <xref:System.IO.StreamWriter> – Rozhraní API pro zápis do souborů.
+* <xref:System.Net.Http.HttpClient> – Rozhraní API pro odesílání požadavků HTTP a příjem odpovědí HTTP ze zdroje identifikovaného identifikátorem URI.
+* <xref:System.Xml.Linq.XDocument> – Rozhraní API pro načítání a dotazování na dokumenty XML pomocí jazyka LINQ.
+* <xref:System.IO.StreamReader> – Rozhraní API pro čtení souborů. 
+* <xref:System.IO.StreamWriter> – Rozhraní API pro zápis do souborů.
 
 ## <a name="app-model-apis"></a>Model aplikace API
 
 Existuje mnoho – modely aplikace, které lze použít s .NET poskytuje více společností.
 
-*   [ASP.NET](https://www.asp.net) – poskytuje webovou architekturu pro vytváření webů a služeb. Podporováno ve Windows, Linuxu a macOS (závisí na verzi technologie ASP.NET).
+* [ASP.NET](https://www.asp.net) – poskytuje webovou architekturu pro vytváření webů a služeb. Podporováno ve Windows, Linuxu a macOS (závisí na verzi technologie ASP.NET).

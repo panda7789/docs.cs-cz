@@ -15,11 +15,11 @@ ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0aef9a1c81172cda9b6df4574edb331e0ed137ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61860708"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a doby odezvy
 V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci jediný bod v čase. Toto téma ukazuje, jak uložit a obnovit <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnotu a hodnotu data a času s časem zóna informace tak, aby se obnovená hodnota identifikuje ve stejnou dobu jako uloženou hodnotu.  
@@ -83,21 +83,21 @@ V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci j
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tyto příklady vyžadují:  
   
--   Aby následující obory názvů je importovat s C# `using` příkazy nebo Visual Basic `Imports` příkazy:  
+- Aby následující obory názvů je importovat s C# `using` příkazy nebo Visual Basic `Imports` příkazy:  
   
-    -   <xref:System> (C# pouze).  
+    - <xref:System> (C# pouze).  
   
-    -   <xref:System.Globalization?displayProperty=nameWithType>.  
+    - <xref:System.Globalization?displayProperty=nameWithType>.  
   
-    -   <xref:System.IO?displayProperty=nameWithType>.  
+    - <xref:System.IO?displayProperty=nameWithType>.  
   
-    -   <xref:System.Runtime.Serialization?displayProperty=nameWithType>.  
+    - <xref:System.Runtime.Serialization?displayProperty=nameWithType>.  
   
-    -   <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.  
+    - <xref:System.Runtime.Serialization.Formatters.Binary?displayProperty=nameWithType>.  
   
--   Odkaz na System.Core.dll.  
+- Odkaz na System.Core.dll.  
   
--   Každý příklad kódu, než `DateInTimeZone` třídy, by měl součástí třídy nebo modulu jazyka Visual Basic, zabalené v metodách a volat z `Main` metody.  
+- Každý příklad kódu, než `DateInTimeZone` třídy, by měl součástí třídy nebo modulu jazyka Visual Basic, zabalené v metodách a volat z `Main` metody.  
   
 ## <a name="see-also"></a>Viz také:
 

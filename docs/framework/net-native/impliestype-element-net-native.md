@@ -5,11 +5,11 @@ ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2ef238a2cb852ecd7fa3f0e2dbe4048ff03a4139
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080875"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868625"
 ---
 # <a name="impliestype-element-net-native"></a>\<ImpliesType > – Element (.NET Native)
 Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ nebo metoda.  
@@ -75,9 +75,9 @@ Použije zásady na typ, pokud tyto zásady se nastavily pro nadřazený typ neb
 ## <a name="remarks"></a>Poznámky  
  `<ImpliesType>` Element je primárně určena pro použití knihovny. To řeší následující scénář:  
   
--   Pokud rutiny potřebuje tak, aby odrážely na jeden typ, nutně musí tak, aby odrážely u druhého typu.  
+- Pokud rutiny potřebuje tak, aby odrážely na jeden typ, nutně musí tak, aby odrážely u druhého typu.  
   
--   Metadata pro implicitní vytvoření instance typu druhý není k dispozici, jinak, protože statické analýzy neukazuje, že je nutné.  
+- Metadata pro implicitní vytvoření instance typu druhý není k dispozici, jinak, protože statické analýzy neukazuje, že je nutné.  
   
  Nejčastěji jsou tyto dva typy obecných instancí s argumenty sdíleného typu.  
   

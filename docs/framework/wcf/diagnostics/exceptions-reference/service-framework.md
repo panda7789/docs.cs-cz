@@ -3,162 +3,162 @@ title: Architektura služby
 ms.date: 03/30/2017
 ms.assetid: 75f60b87-f80e-4377-ba7c-8e6becaa2b28
 ms.openlocfilehash: 859e718a56ab63c8e012e1851c0730f53cb707be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61780754"
 ---
 # <a name="service-framework"></a>Architektura služby
 Toto téma uvádí všechny výjimky generované Data architektury služby.  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|ABindingInstanceHasAlreadyBeenAssociatedTo1|Instance vazby má byl již přidružené k naslouchání zadaný identifikátor. Pokud dva koncové body chcete sdílet stejnou indikátoru ListenUniform prostředků, musíte také sdílet stejnou instanci objektu vazby. Dva konfliktní koncové body byly zadány v AddServiceEndpoint(), v konfiguračním souboru nebo jejich kombinaci AddServiceEndpoint() a konfigurace.|  
+|ABindingInstanceHasAlreadyBeenAssociatedTo1|Instance vazby je už je přidružený k tak, aby naslouchala zadaný identifikátor. Pokud dva koncové body služby chcete sdílet stejný ukazatel ListenUniform prostředku, musejí rovněž sdílet stejnou instanci objektu vazby. Dva konfliktní koncové body byly určeny ve voláních AddServiceEndpoint(), v konfiguračním souboru nebo spojení třídy AddServiceEndpoint() a konfigurace.|  
 |AChannelServiceEndpointIsNull0|Koncový bod kanálu nebo služby má hodnotu null.|  
-|AChannelServiceEndpointSContractSNameIsNull0|Název koncového bodu kontraktu kanálu nebo služby je null nebo prázdný.|  
-|AChannelServiceEndpointSContractSNamespace0|Obor názvů kontraktu koncový bod kanálu nebo služby má hodnotu null.|  
+|AChannelServiceEndpointSContractSNameIsNull0|Název kontraktu koncového bodu kanálu nebo služby má hodnotu null nebo prázdný.|  
+|AChannelServiceEndpointSContractSNamespace0|Obor názvů kontraktu koncového bodu kanálu nebo služby má hodnotu null.|  
 |BaseAddressCannotHaveFragment|Základní adresa nesmí obsahovat fragment identifikátoru URI.|  
 |BaseAddressCannotHaveQuery|Základní adresa nesmí obsahovat řetězec dotazu identifikátoru URI.|  
-|BaseAddressCannotHaveUserInfo|Základní adresa nesmí obsahovat oddíl informace uživatele identifikátor URI.|  
-|BaseAddressDuplicateScheme|Tato kolekce již obsahuje adresu s zadané schéma. Pro každé schéma v této kolekci je povolen pouze jednu adresu.|  
-|BaseAddressMustBeAbsolute|Jenom identifikátor URI absolutní slouží jako základní adresu.|  
-|BindingDoesnTSupportAnyChannelTypes1|Zadaná vazba nepodporuje vytvoření všechny typy kanálu. Prvky vazeb v vlastní vazby jsou nesprávně skládaný nebo v nesprávném pořadí. Je vyžadován v dolní části zásobníku přenos. Je doporučené pořadí elementů vazby: TransactionFlow, ReliableSession, zabezpečení, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, přenos.|  
-|BindingDoesnTSupportDuplexButContractRequires1|Kontrakt vyžaduje duplexní režim. Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|BindingDoesnTSupportOneWayButContractRequires1|Kontrakt vyžaduje OneWay. Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|BindingDoesnTSupportRequestReplyButContract1|Kontrakt vyžaduje požadavek nebo odpověď. Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|BindingDoesnTSupportSessionButContractRequires1|Kontrakt vyžaduje relace.  Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|BindingDoesnTSupportTwoWayButContractRequires1|Kontrakt vyžaduje obousměrný (požadavek odpověď nebo duplexní režim). Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|BindingRequirementsAttributeDisallowsQueuedDelivery1|Atribut DeliveryRequirementsAttribute neumožňuje třídu QueuedDelivery. Vazba pro koncový bod je zadaný kontrakt podporuje.|  
-|BindingRequirementsAttributeRequiresQueuedDelivery1|Atribut DeliveryRequirementsAttribute vyžaduje třídu QueuedDelivery. Vazba pro koncový bod je zadaný kontrakt ji nepodporuje nebo není správně nakonfigurován pro podporu ho.|  
-|channelDoesNotHaveADuplexSession0|Aktuální kanál nepodporuje ukončení relace výstup. Tento kanál neimplementuje třídu ISessionChannel\<IDuplexSession >.|  
-|ClientRuntimeRequiresFormatter0|Zadaný ClientOperation vyžaduje formátovací modul, protože třída SerializeRequest a DeserializeReply nejsou oba hodnotu false.|  
-|CommunicationObjectAborted1|Objekt zadaný komunikace nelze použít pro komunikaci, protože byla zastavena.|  
-|CommunicationObjectAbortedStack2|Objekt zadaný komunikace nelze použít pro komunikaci, protože byla zastavena: {1}|  
-|CommunicationObjectBaseClassMethodNotCalled|Objekt zadaný komunikace přepsal virtuální funkce {1} ale nevyvolá verze definované v základní třídě.|  
-|ContractIsNotSelfConsistentItHasOneOrMore2|Zadaný smlouva obsahuje jeden nebo více IsTerminating nebo jiných IsInitiating operace. Vlastnost SessionMode nastavenou na hodnotu SessionMode.Required nemá. Atributy IsInitiating a IsTerminating lze použít pouze v kontextu relace.|  
-|CouldnTCreateChannelForChannelType2|Typ zadaný kanálu byla požadována, ale Zadaná vazba nepodporuje nebo není správně nakonfigurována pro její podporu.|  
-|DispatchRuntimeRequiresFormatter0|Zadaný DispatchOperation vyžaduje formátovací modul, protože třídy DeserializeRequest a SerializeReply nejsou oba hodnotu false.|  
-|EndMethodsCannotBeDecoratedWithOperationContractAttribute|Metoda End nelze použít s OperationContractAttribute při použití vzoru návrhu IAsyncResult. Odpovídající metody Begin použít s OperationContractAttribute. Tento atribut se vztahuje na začátek-End pár metod.|  
-|EndpointListenerRequirementsCannotBeMetBy3|Požadavky na ChannelDispatcher nelze splnit třídu IChannelListener pro zadaná vazba protože kontrakt vyžaduje podporu pro jednu z těchto typů specifikovanému kanálu. Ale vazba podporuje pouze tyto typy specifikovanému kanálu.|  
+|BaseAddressCannotHaveUserInfo|Základní adresa nesmí obsahovat část URI identifikátor uživatelské informace.|  
+|BaseAddressDuplicateScheme|Tato kolekce již obsahuje adresu se zadané schéma. Pro každé schéma v této kolekci je povolena pouze jedna adresa.|  
+|BaseAddressMustBeAbsolute|Pouze absolutní URI identifikátor může sloužit jako základní adresu.|  
+|BindingDoesnTSupportAnyChannelTypes1|Zadaná vazba nepodporuje vytváření žádných typů kanálů. Elementů vazby ve vlastní vazby jsou uspořádány vedle nesprávně nebo v nesprávném pořadí. Je vyžadován v dolní části zásobníku přenos. Doporučené pořadí elementů vazby je: TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.|  
+|BindingDoesnTSupportDuplexButContractRequires1|Smlouva vyžaduje vlastnost Duplex. Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|BindingDoesnTSupportOneWayButContractRequires1|Smlouva vyžaduje vlastnost OneWay. Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|BindingDoesnTSupportRequestReplyButContract1|Smlouva vyžaduje požadavek nebo odpověď. Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|BindingDoesnTSupportSessionButContractRequires1|Smlouva vyžaduje relaci.  Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|BindingDoesnTSupportTwoWayButContractRequires1|Smlouva vyžaduje obousměrné (požadavek odpověď nebo duplexní). Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|BindingRequirementsAttributeDisallowsQueuedDelivery1|Atribut DeliveryRequirementsAttribute třídu QueuedDelivery nepovoluje. Vazba koncového bodu se zadaným smlouvy ho podporuje.|  
+|BindingRequirementsAttributeRequiresQueuedDelivery1|Třída DeliveryRequirementsAttribute vyžaduje třídu QueuedDelivery. Vazba koncového bodu se zadaným kontraktu není podporován nebo není pro její podporu správně nakonfigurována.|  
+|channelDoesNotHaveADuplexSession0|Aktuální kanál nepodporuje ukončování výstupní relace. Tento kanál neimplementuje třídu ISessionChannel\<IDuplexSession >.|  
+|ClientRuntimeRequiresFormatter0|Zadaná třída ClientOperation vyžaduje formátovací modul, protože třída SerializeRequest a DeserializeReply nejsou obě hodnotu false.|  
+|CommunicationObjectAborted1|Objekt zadaný komunikační nelze použít pro komunikaci, protože byla zastavena.|  
+|CommunicationObjectAbortedStack2|Objekt zadaný komunikační nelze použít pro komunikaci, protože byla zastavena: {1}|  
+|CommunicationObjectBaseClassMethodNotCalled|Objekt zadaný komunikační potlačil virtuální funkci {1} ale nevolá verzi definovanou v základní třídě.|  
+|ContractIsNotSelfConsistentItHasOneOrMore2|Zadaná smlouva obsahuje jednu nebo víc operací IsTerminating nebo bez IsInitiating operace. Nemá vlastnost SessionMode nastavenou na hodnotu SessionMode.Required. Atributy IsInitiating a IsTerminating jde použít jenom v kontextu relace.|  
+|CouldnTCreateChannelForChannelType2|Typ zadaný kanál byl vyžádán, ale Zadaná vazba není podporován nebo není pro její podporu správně nakonfigurována.|  
+|DispatchRuntimeRequiresFormatter0|Zadaná třída DispatchOperation vyžaduje formátovací modul, protože třídy DeserializeRequest a SerializeReply nejsou obě hodnotu false.|  
+|EndMethodsCannotBeDecoratedWithOperationContractAttribute|Metoda End nelze použít třídou OperationContractAttribute, při použití vzoru návrhu IAsyncResult. Lze použít pouze odpovídající metoda Begin třídou OperationContractAttribute. Tento atribut se vztahuje na začátek-konec dvojice metody.|  
+|EndpointListenerRequirementsCannotBeMetBy3|Požadavky třídy ChannelDispatcher nelze splnit třídou IChannelListener pro určenou vazbu, protože kontrakt vyžaduje podporu pro jeden z těchto typů Zadaný kanál. Ale vazba podporuje pouze tyto typy Zadaný kanál.|  
 |EndpointsMustHaveAValidBinding0|Koncové body musí mít platnou vazbu.|  
-|InvalidOrUnrecognizedAction|Zprávu nelze zpracovat, protože zadaná akce je neplatný nebo nerozpoznaný.|  
-|MultipleMebesInParameters|V parametrech vazby byla nalezena více než jedna položka. CustomBinding nemůže mít více MessageEncodingBindingElements. Odeberte všechny kromě jeden z těchto elementů.|  
-|MultipleStreamUpgradeProvidersInParameters|V parametrech vazby byla nalezena více IStreamUpgradeProviderElement. CustomBinding nemůže mít více než jeden tříd IStreamUpgradeProviderElement. Odeberte všechny kromě jeden z těchto elementů.|  
-|NoChannelBuilderAvailable|Vazbu nelze použít k vytvoření postupu kanálu nebo naslouchací proces kanálu, protože nemá třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
-|NotAllBindingElementsBuilt|Některé prvky vazby v této vazbě nebyly použít při vytváření kanálu a naslouchací proces kanálu. Prvky vazeb nejsou správně řazení. Je doporučené pořadí elementů vazby: TransactionFlow, ReliableSession, zabezpečení, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, přenos.  Všimněte si, že TransportBindingElement musí být poslední. Elementy zadaný vazby nebyly vytvořeny.|  
-|RuntimeRequiresInvoker0|Operace odesílání vyžaduje původce volání.|  
-|ServiceHasZeroAppEndpoints|Zadaná služba nemá žádné koncové body (ne infrastruktury) aplikace. To může být, protože nebyl nalezen žádný konfigurační soubor pro vaši aplikaci nebo protože element služby odpovídající názvu služby se nenašel v konfiguračním souboru nebo v elementu služby nebyly definované žádné koncové body.|  
-|SFxActionMismatch|Nelze vytvořit zadanou zprávu kvůli neshodě akce. Byla očekávána zadanou akci došlo ale jiné|  
-|SFxAnonymousTypeNotSupported|Zadaný součástí určenou zprávu nelze exportovat s RPC nebo kódování, protože jeho typ není anonymní.|  
-|SFxBadMetadataLocationNoAppropriateBaseAddress|Adresa URL zadané ServiceMetadataBehavior pomocí vlastnost ExternalMetadataLocation nebo atributu externalMetadataLocation v oddílu serviceMetadata v konfiguračním oddílu byla relativní adresa URL a je základní adresa, kterou je třeba vyřešit ho.|  
-|SFxBadMetadataMustBePolicy|Musíte zadat zásady XmlElement, který má zadaný obor názvů a název. Tato XmlElement má zadaný obor názvů a název.|  
-|SFxBodyObjectTypeCannotBeInherited|Zadaný typ nemůže Zdědit z jiné třídy než objekt, který chcete použít jako objekt textu ve stylu RPC.|  
-|SFxBodyObjectTypeCannotBeInterface|Zadaný typ implementuje dané rozhraní, což není podporováno pro objekt textu ve stylu RPC.|  
-|SFxCallbackBehaviorAttributeOnlyOnDuplex|Třídy CallbackBehaviorAttribute lze spustit pouze jako chování na koncový bod s duplexního kontraktu. Zadaný kontrakt není duplexní a obsahuje žádné operace zpětného volání.|  
-|SFxCallbackRequestReplyInOrder1|Odpověď nemůže být přijato z tuto operaci, až po dokončení zpracování aktuální zprávu. Pokud chcete povolit zpracování zpráv mimo pořadí, zadejte režim ConcurrencyMode vícenásobné nebo více na zadaný.|  
-|SfxCallbackTypeCannotBeNull|Chcete-li použít zadaný kontrakt s třídou DuplexChannelFactory, musíte zadat kontrakt kontraktu platný zpětného volání. Pokud vaše smlouvy nemá kontraktu zpětného volání, použijte místo třídy DuplexChannelFactory ChannelFactory.|  
-|SFxCannotGetMetadataFromLocation|Třída MetadataExchangeClient může získat metadata pouze z protokolu HTTP a HTTPS třídy MetadataLocations. Ze zadaného nemůže získat metadata.|  
-|SFxCannotHttpGetMetadataFromAddress|Třída MetadataExchangeClient může získat metadata pouze z adres protokolu HTTP nebo HTTPS při použití třídy MetadataExchangeClientMode používá. Ze zadaného nemůže získat metadata.|  
-|SFxCannotImportAsParameters_Bare|Generování kontrakt zprávy, protože zadaná operace není RPC ani dokumentu uzavřen.|  
-|SFxCannotImportAsParameters_DifferentWrapperName|Generování kontrakt zprávy, protože název obálku zadané zprávy neodpovídá výchozí hodnota.|  
-|SFxCannotImportAsParameters_DifferentWrapperNs|Generování kontrakt zprávy, protože obálku obor názvů zadané zprávy neodpovídá výchozí hodnota.|  
-|SFxCannotImportAsParameters_ElementIsNotNillable|Generování kontrakt zprávy, protože název zadaného elementu ze zadaného oboru názvů není označena povolenou hodnotu Null.|  
-|SFxCannotImportAsParameters_HeadersAreUnsupported|Generování kontrakt zprávy, protože zadaná zpráva má hlavičky.|  
-|SFxCannotImportAsParameters_Message|Generování kontrakt zprávy, protože zadaná operace má jako argument, nebo návratový typ zprávu bez typu.|  
-|SFxCannotImportAsParameters_MessageHasProtectionLevel|Generování kontrakt zprávy, protože vyžaduje ochranu zadané zprávy.|  
-|SFxCannotImportAsParameters_NamespaceMismatch|Generování kontrakt zprávy, protože část obor názvů zadané zprávy neodpovídá výchozí hodnota.|  
-|SFxCannotRequireBothSessionAndDatagram3|Zadaný kontrakt určuje SessionMode.NotAllowed a zadaný kontrakt určuje SessionMode.Required. Změňte jednu z hodnot SessionMode nebo zadejte jinou adresu nebo adrese ListenURI, pro každý koncový bod.|  
-|SFxCannotSetExtensionsByIndex|Tato kolekce nepodporuje nastavení rozšíření index. Pomocí metody InsertItem nebo RemoveItem metod.|  
-|SFxChannelDispatcherDifferentHost0|Třída ChannelDispatcher není aktuálně připojena k hostiteli služby, který byl poskytnut.|  
-|SFxChannelDispatcherMultipleHost0|Třída ChannelDispatcher nelze přidat do více než jeden hostitel služby.|  
-|SFxChannelDispatcherNoHost0|Třída ChannelDispatcher nelze otevřít, protože není připojený k hostiteli služby.|  
-|SfxChannelFactoryDisposed|Tato ChannelFactory nejde otevřít, protože ChannelFactory již byl zlikvidován. Vytvoření třídy ChannelFactory znovu před jeho použitím.|  
-|SFxChannelFactoryNoBinding|Třídy ChannelFactory nelze otevřít, protože nebyla vytvořena žádná vazba byla přidružena svůj koncový bod. Zadejte vazbu pomocí konstruktoru nebo vlastnost koncový bod.|  
-|SFxChannelTerminated0|Operace označená jako IsTerminating již byla vyvolána v tomto kanálu způsobí, že kanál připojení ukončit. Žádné další operace může být volána v tomto kanálu. Znovu vytvořte kanál pokračujte komunikace.|  
-|SFxCloseTimedOut1|Operace zavření ServiceHost zastavena po zadaný. To může být způsobeno klienta se nezdařilo ukončit kanál s relacemi v požadované době. Čas pro tuto operaci povolená může být součástí delší časový limit.|  
-|SfxCloseTimedOutWaitingForDispatchToComplete|Proces zavřít vypršení časového limitu při čekání na dokončení odeslání služby.|  
+|InvalidOrUnrecognizedAction|Zprávu nelze zpracovat, protože zadané akce je neplatná nebo nerozpoznaná.|  
+|MultipleMebesInParameters|Více tříd MessageEncodingBindingElement v třídě BindingParameters třídy BindingContext byl nalezen. Třídě CustomBinding nemůže mít více MessageEncodingBindingElements. Odeberte všechny kromě jednoho z těchto elementů.|  
+|MultipleStreamUpgradeProvidersInParameters|V třídě BindingParameters třídy BindingContext byl nalezen více tříd IStreamUpgradeProviderElement. Třídě CustomBinding nemůže mít více tříd IStreamUpgradeProviderElement. Odeberte všechny kromě jednoho z těchto elementů.|  
+|NoChannelBuilderAvailable|Vazbu nelze použít k vytvoření objektu pro vytváření kanálů nebo modul pro naslouchání kanálu, protože neobsahuje třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
+|NotAllBindingElementsBuilt|Některé elementy vazby v této vazbě nebyly použity při vytváření objektu pro vytváření kanálů a modul pro naslouchání kanálu. Elementy vazby nejsou seřazené. správně. Doporučené pořadí elementů vazby je: TransactionFlow, ReliableSession, Security, CompositeDuplex, OneWay, StreamSecurity, MessageEncoding, Transport.  Všimněte si, že třída TransportBindingElement musí být poslední. Elementy zadaného vazby nebyly vytvořeny.|  
+|RuntimeRequiresInvoker0|Operace odeslání vyžaduje původce volání.|  
+|ServiceHasZeroAppEndpoints|Zadaná služba nemá žádné koncové body aplikace (ne infrastruktury). To může být, protože nebyl nalezen žádný konfigurační soubor aplikace nebo v konfiguračním souboru nebylo možné najít element služby odpovídající názvu služby nebo v elementu služby nebyly definovány žádné koncové body.|  
+|SFxActionMismatch|Nelze vytvořit zadanou zprávu, protože došlo k neshodě akcí. Očekává se zadanou akci ale došlo k jiné|  
+|SFxAnonymousTypeNotSupported|V určenou zprávu na zadanou část nelze exportovat s RPC nebo kódování, protože její typ je anonymní.|  
+|SFxBadMetadataLocationNoAppropriateBaseAddress|Adresa URL dodaná třídě ServiceMetadataBehavior pomocí vlastnosti ExternalMetadataLocation nebo atributu externalMetadataLocation v oddílu serviceMetadata v části Konfigurace byla relativní adresu URL a neexistuje žádná základní adresa, pomocí kterého se má vyřešit ho.|  
+|SFxBadMetadataMustBePolicy|Musíte zadat atributy XmlElement, který má zadaný obor názvů a název zásady. Tato třída XmlElement má určený obor názvů a název.|  
+|SFxBodyObjectTypeCannotBeInherited|Zadaný typ nemůže dědit z jiné třídy, než je objekt, který se použije jako objekt textu ve stylu RPC.|  
+|SFxBodyObjectTypeCannotBeInterface|Zadaný typ implementuje rozhraní zadané, což není podporováno pro objekt textu ve stylu RPC.|  
+|SFxCallbackBehaviorAttributeOnlyOnDuplex|Třídu CallbackBehaviorAttribute lze spustit pouze jako chování v koncovém bodě s duplexní smlouvou. Zadaná smlouva není duplexní a žádné operace zpětného volání.|  
+|SFxCallbackRequestReplyInOrder1|Odpověď nelze přijmout z této operace, dokud aktuální zpráva nedokončí zpracování. Pokud chcete povolit zpracování zpráv mimo pořadí, zadejte ConcurrencyMode režimu Reentrant nebo více stanoveného.|  
+|SfxCallbackTypeCannotBeNull|Chcete-li použít zadaný kontraktu s třídou DuplexChannelFactory, musí kontrakt určit platný zpětného volání kontraktu. Pokud vaše Smlouva nemá kontrakt zpětného volání, použití třídy ChannelFactory namísto třídy DuplexChannelFactory.|  
+|SFxCannotGetMetadataFromLocation|Třída MetadataExchangeClient může získat metadata pouze z protokolu HTTP a HTTPS třídy MetadataLocations. Nemůže získat metadata z určeného.|  
+|SFxCannotHttpGetMetadataFromAddress|Třída MetadataExchangeClient může získat metadata pouze z adres HTTP nebo HTTPS při použití třídu HttpGet. Nemůže získat metadata z určeného.|  
+|SFxCannotImportAsParameters_Bare|Probíhá generování kontraktu zprávy, protože zadaná operace není RPC ani není zabalena dokumentem.|  
+|SFxCannotImportAsParameters_DifferentWrapperName|Probíhá generování kontraktu zprávy, protože název obálky určenou zprávu se neshoduje s výchozí hodnotu.|  
+|SFxCannotImportAsParameters_DifferentWrapperNs|Probíhá generování kontraktu zprávy, protože obor názvů obálky zadané zprávy neodpovídá výchozí hodnotě.|  
+|SFxCannotImportAsParameters_ElementIsNotNillable|Generování kontraktu zprávy, protože název zadaného elementu ze zadaného oboru názvů není označen jako nillable.|  
+|SFxCannotImportAsParameters_HeadersAreUnsupported|Probíhá generování kontraktu zprávy, protože zadaná zpráva obsahuje záhlaví.|  
+|SFxCannotImportAsParameters_Message|Generování kontraktu zprávy, protože zadaná operace má nezadanou zprávu jako argumentů nebo návratového typu.|  
+|SFxCannotImportAsParameters_MessageHasProtectionLevel|Probíhá generování kontraktu zprávy, protože zadaná zpráva vyžaduje ochranu.|  
+|SFxCannotImportAsParameters_NamespaceMismatch|Probíhá generování kontraktu zprávy, protože obor názvů části zadané zprávy se neshoduje s výchozí hodnotu.|  
+|SFxCannotRequireBothSessionAndDatagram3|Určuje třídu SessionMode.NotAllowed, zadaný smlouvy a zadané kontrakt určuje SessionMode.Required. Změňte jednu z hodnot SessionMode nebo určit jinou adresu nebo třídu ListenURI, pro každý koncový bod.|  
+|SFxCannotSetExtensionsByIndex|Tato kolekce nepodporuje nastavení rozšíření podle indexu. Použití metody InsertItem nebo RemoveItem metody.|  
+|SFxChannelDispatcherDifferentHost0|Třída ChannelDispatcher momentálně není připojena k ServiceHost, který byl poskytnut.|  
+|SFxChannelDispatcherMultipleHost0|Třída ChannelDispatcher nelze přidat do více než jedné třídě ServiceHost.|  
+|SFxChannelDispatcherNoHost0|Třída ChannelDispatcher nelze otevřít, protože není připojená k třídě ServiceHost.|  
+|SfxChannelFactoryDisposed|Této třídy ChannelFactory nelze otevřít, protože třídy ChannelFactory už je vyřazený. Vytváření třídy ChannelFactory znovu před jeho použitím.|  
+|SFxChannelFactoryNoBinding|Třídy ChannelFactory nelze otevřít, protože žádná vazba byla přidružena svůj koncový bod. Zadání vazby s konstruktorem nebo vlastností koncový bod.|  
+|SFxChannelTerminated0|Operace označená jako IsTerminating již byla vyvolána v tomto kanálu způsobí ukončení připojení kanálu. Žádné další operace mohou být vyvolány v tomto kanálu. Znovu vytvořte kanál pokračovat v komunikaci.|  
+|SFxCloseTimedOut1|Operaci zavření hostitele ServiceHost zastavena po zadaný. To může být způsobeno klientovi nepodařilo uzavřít kanál s relacemi v požadovaném čase. Čas povolen pro tuto operaci byl pravděpodobně částí delšího časového limitu.|  
+|SfxCloseTimedOutWaitingForDispatchToComplete|Zavřít procesu vypršel časový limit při čekání na dokončení odeslání služby.|  
 |SFxCodeGenIsNotAssignableFrom|Nelze přiřadit zadaný.|  
-|SFxConfigChannelConfigurationNotFound|Nebyl nalezen element koncového bodu se zadaným názvem a kontrakt v konfiguračním oddílu ServiceModel klienta.|  
-|SFxConflictingGlobalElement|Element nejvyšší úrovně Extensible Markup Language se zadaným názvem v určeném oboru názvů nesmí odkazovat na zadaný typ. Již odkazuje na jiný atribut type. Zadejte jiný název pro zpráva nebo zpráva částí pomocí jiné operace název nebo MessageBodyAttribute.|  
-|SFxContractHasZeroInitiatingOperations|Kontrakt musí mít alespoň jeden IsInitiating = true operaci.|  
-|SFxContractHasZeroOperations|Kontrakt musí mít nejméně jednu operaci.|  
-|SFxContractInheritanceRequiresInterfaces|Třída služby zadaného typu definuje třídu ServiceContract a dědí třídu ServiceContract ze zadaného typu. Kontrakt dědičnost lze použít pouze mezi typy rozhraní. Pokud ServiceContractAttribute označeno třídu, musí být jediným typem v hierarchii s ServiceContractAttribute.  Přesunete ServiceContractAttribute na zadaný typ k samostatné rozhraní, které implementuje zadaného typu.|  
-|SFxCreateDuplexChannel1|Zpětné volání kontrakt zadaný kontraktu neexistuje nebo nedefinuje žádné operace. Pokud to není duplexního kontraktu, použijte místo třídy DuplexChannelFactory ChannelFactory.|  
-|SFxCreateDuplexChannelNoCallback|Přetížení CreateChannel nelze volat v této instanci třídy DuplexChannelFactory. Třída DuplexChannelFactory nebyl inicializován s třídu InstanceContext. Volání CreateChannel přetížení, které přijímá třídu InstanceContext.|  
-|SFxCreateDuplexChannelNoCallback1|Přetížení CreateChannel nelze volat v této instanci třídy DuplexChannelFactory. Třída DuplexChannelFactory byl inicializován s typem a nebyl poskytnut žádný platný objekt InstanceContext. Volání CreateChannel přetížení, které přijímá třídu InstanceContext.|  
-|SFxCreateDuplexChannelNoCallbackUserObject|Přetížení CreateChannel nelze volat v této instanci třídy DuplexChannelFactory. Parametr InstanceContext poskytnutá třídě DuplexChannelFactory neobsahuje platnou třídu UserObject.|  
-|SFxCreateNonDuplexChannel1|ChannelFactory nepodporuje zadaný kontrakt. ChannelFactory definuje kontrakt zpětné volání s jednu nebo více operací. Pomocí třídy DuplexChannelFactory místo ChannelFactory.|  
-|SFxCustomBindingNeedsTransport1|CustomBinding na koncového bodu služby je zadaný kontrakt nemá třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
-|SFxCustomBindingWithoutTransport|Schéma nelze vypočítat pro tuto vlastní vazbu protože nemá třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
-|SFxDataContractSerializerDoesNotSupportBareArray|DataContractSerializer nepodporuje kolekce zadaná u daného elementu.|  
-|SFxDictionaryIsEmpty|Operaci nelze provést, protože adresář je prázdný.|  
-|SFxDocEncodedNotSupported|Došlo k chybě odrážející zadaný. Kódovaný jazykem dokumentu není podporována. Změnit, použijte' na literál nebo 'Style' na protokol RPC.|  
-|SFxDuplicateInitiatingActionAtSameVia|Tato služba obsahuje několik koncových bodů naslouchání v zadaném. Koncové body sdílejí stejnou Zadaný inicializační akci. Zprávy s Tato akce by vyřadit, protože dispečera nebude schopen určit správná koncový bod pro zpracování zprávy.|  
-|SFXEndpointBehaviorUsedOnWrongSide|Zadaný IEndpointBehavior nelze použít na serveru. Toto chování může platí jenom pro klienty.|  
-|SFxEndpointNoMatchingScheme|Základní adresa, která odpovídá zadané schéma pro koncový bod s Zadaná vazba nebyl nalezen. Registrovaný základní adresa systémy jsou uvedeny.|  
-|SFxErrorCreatingMtomReader|Došlo k chybě při vytváření čtečku pro zprávu mechanismus Optimalizace přenosu zpráv.|  
-|SFxErrorDeserializingFault|Server vrátil chybu neplatný objekt jednoduchý přístup protokolu. Další podrobnosti najdete v InnerException.|  
-|SFxErrorDeserializingHeader|Při deserializaci jedné z hlaviček v zadané zprávy došlo k chybě. Další podrobnosti najdete ve vlastnosti InnerException.|  
-|SFxErrorReflectingOnMethod3|Došlo k chybě při načítání zadaného atributu na zadanou metodu v zadaného typu.  Další podrobnosti najdete v InnerException.|  
-|SFxErrorReflectingOnParameter4|Došlo k chybě při načítání zadaného atributu na zadaný parametr zadanou metodu v zadaného typu. Další podrobnosti najdete v InnerException.|  
-|SFxErrorReflectingOnType2|Došlo k chybě při načítání zadaný atribut u zadaného typu.  Další podrobnosti najdete v InnerException.|  
-|SFxErrorSerializingBody|Došlo k chybě serializaci text zadané zprávy. Další podrobnosti najdete v InnerException.|  
-|SFxErrorSerializingHeader|Došlo k chybě při serializaci jedné z hlaviček v zadané zprávy. Další podrobnosti najdete v InnerException.|  
-|SFxExpectedIMethodCallMessage|Vnitřní chyba Zpráva musí být platný IMethodCallMessage.|  
-|SFxExportMustHaveType|Zadaný součástí zadanou operaci nelze exportovat, protože nemá platný typ CLR.|  
-|SFxHeaderNotUnderstood|Zpráva nebyla zpracována. Zadaná hlavička ze zadaného oboru názvů nebyla rozpoznaná příjemce této zprávy. Tato chyba obvykle značí, že odesílatel zprávy povolil komunikační protokol, který příjemce nemůže zpracovat. Ujistěte se, že konfigurace klienta vazby je konzistentní s vazbou služby.|  
-|SFxHeadersAreNotSupportedInEncoded|Zadaná zpráva nesmí mít hlavičky pro použití v styl kódovaný volání vzdálených procedur.|  
-|SFxInconsistentWsdlOperationStyleInMessageParts|Všechny části zprávy v zadanou operaci musí obsahovat buď typu nebo element.|  
-|SFxInconsistentWsdlOperationStyleInOperationMessages|Zadaný styl odvodit z zpráv v určené operace neodpovídá zadané očekávané styl určený pomocí vazby.|  
-|SFxInvalidCallbackIAsyncResult|IAsyncResult není k dispozici nebo je nesprávného typu.|  
-|SFxInvalidMessageBody|Formátovací modul OperationFormatter došlo textu neplatná zpráva. Byl očekáván typ uzlu 'Element' s určeným názvem a oborem názvů. Byl nalezen typ zadaný uzel s určeným názvem a oborem názvů.|  
-|SFxInvalidMessageBodyEmptyMessage|Formátovací modul OperationFormatter nelze deserializovat všechny informace ze zprávy, protože zpráva je prázdná.|  
-|SFxInvalidMessageBodyErrorDeserializingParameter|Došlo k chybě při pokusu o deserializaci zadaný parametr. Další informace najdete ve vlastnosti InnerException.|  
-|SFxInvalidMessageBodyErrorSerializingParameter|Došlo k chybě při pokusu o serializaci zadaný parametr. Byl zadán zprávy ve vlastnosti InnerException.  Další podrobnosti najdete v InnerException.|  
-|SFxInvalidMessageBodyUnexpectedNode|Došlo k zadané neočekávaný uzel ze zadaného oboru názvů při deserializaci parametry.|  
-|SFxInvalidMessageContractSignature|Zadaná operace má parametr nebo návratový typ, který je označený MessageContractAttribute. Při použití kontrakt zprávy představující zprávu požadavku, operaci musí mít jeden parametr, který je označené jako MessageContractAttribute. Při použití kontrakt zprávy představující zprávu odpovědi, operace návratová hodnota musí být typ, který je označené jako MessageContractAttribute. Operace nemůže mít žádné 'ref' nebo 'out' parametry.|  
-|SFxInvalidReplyAction|Odchozí zprávy odpovědi pro operaci se zadanou akci, ale jiné ReplyAction určuje smlouvu pro tuto operaci. Akci určenou ve zprávě musí odpovídat ReplyAction ve smlouvě nebo kontrakt operaci, musíte zadat ReplyAction ='* '.|  
-|SFxInvalidRequestAction|Odchozí zprávy požadavku pro operaci se zadanou akci, ale jiné RequestAction určuje smlouvu pro tuto operaci. Akci určenou ve zprávě musí odpovídat RequestAction ve smlouvě nebo kontrakt operaci, musíte zadat RequestAction ='* '.|  
-|SFxInvalidStaticOverloadCalledForDuplexChannelFactory1|Statickou metodu CreateChannel nelze použít s zadaný kontrakt, protože tento kontrakt definuje kontrakt zpětného volání. Použijte jednu ze statické přetížení CreateChannel v třídy DuplexChannelFactory\<TChannel >.|  
-|SFxInvalidStreamInRequest|Operaci požadavku zadanou operaci jako datový proud, musí mít jeden parametr, jehož typ je datový proud.|  
-|SFxInvalidStreamInResponse|Operaci pro odpověď v rámci zadané operace jako datový proud, musíte mít jeden parametr out nebo návratová hodnota, jejíž typ je datový proud.|  
-|SFxInvalidStreamInTypedMessage|Použití datových proudů s kontrakt zprávy programovací model, musí mít zadaný typ jednoho člena MessageBody, jejichž typ je datový proud.|  
-|SFxInvalidUseOfPrimitiveOperationFormatter|PrimitiveOperationFormatter byl zadán parametr nebo návratový typ, který nepodporuje.|  
-|SFxMessageContractBaseTypeNotValid|Zadaný typ definuje parametr MessageContract a je odvozena ze zadaného typu, který nedefinuje MessageContract. Všechny objekty v hierarchii dědičnosti zadaný musí definovat MessageContract.|  
-|SFxMethodNotSupported1|Určená metoda není podporována u tohoto objektu. Tomu může dojít, pokud metoda není označen atributem OperationContractAttribute nebo pokud typ rozhraní není označen atributem ServiceContractAttribute.|  
+|SFxConfigChannelConfigurationNotFound|Nelze najít element koncového bodu se zadaným názvem a smlouvy v oddílu konfigurace klienta třídy ServiceModel.|  
+|SFxConflictingGlobalElement|Element nejvyšší úrovně Extensible Markup Language se zadaným názvem v určeném oboru názvů nemůžou odkazovat na zadaného typu. Už odkazuje na jiný typ. Použijte jiný název operace nebo MessageBodyAttribute k určení pro zprávy nebo částí zprávy jiný název.|  
+|SFxContractHasZeroInitiatingOperations|Kontrakt musí mít aspoň jeden IsInitiating = true operace.|  
+|SFxContractHasZeroOperations|Kontrakt musí mít alespoň jednu operaci.|  
+|SFxContractInheritanceRequiresInterfaces|Třídu služby zadaného typu definuje třídu ServiceContract a dědí třídu ServiceContract od zadaného typu. Dědičnost kontraktů lze použít pouze mezi typy rozhraní. Pokud má třída označení ServiceContractAttribute, musí být jediný typ v hierarchii třídou ServiceContractAttribute.  Přesuňte třídu ServiceContractAttribute na zadaný typ samostatné rozhraní, která implementuje zadaný typ.|  
+|SFxCreateDuplexChannel1|Smlouva zpětného volání kontraktu zadané neexistuje nebo nedefinuje žádné operace. Pokud to není duplexní kontrakt, použijte třídy ChannelFactory namísto třídy DuplexChannelFactory.|  
+|SFxCreateDuplexChannelNoCallback|Přetížení CreateChannel nelze vyvolat v této instanci třídy DuplexChannelFactory. Třída DuplexChannelFactory nebyla inicializována s třídu InstanceContext. Vyvolejte přetížení CreateChannel, které převezme třídu InstanceContext.|  
+|SFxCreateDuplexChannelNoCallback1|Přetížení CreateChannel nelze vyvolat v této instanci třídy DuplexChannelFactory. Třída DuplexChannelFactory nebyla inicializována typem a nebyl poskytnut žádný platná třída InstanceContext. Vyvolejte přetížení CreateChannel, které převezme třídu InstanceContext.|  
+|SFxCreateDuplexChannelNoCallbackUserObject|Přetížení CreateChannel nelze vyvolat v této instanci třídy DuplexChannelFactory. Třída InstanceContext poskytnutá třídě DuplexChannelFactory neobsahuje platnou třídu UserObject.|  
+|SFxCreateNonDuplexChannel1|Třída ChannelFactory nepodporuje kontrakt zadaný. Třídy ChannelFactory definuje kontrakt zpětného volání s jednu nebo více operací. Použití třídy DuplexChannelFactory namísto třídy ChannelFactory.|  
+|SFxCustomBindingNeedsTransport1|Třída CustomBinding na třídě ServiceEndpoint se zadaným kontrakt neobsahuje třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
+|SFxCustomBindingWithoutTransport|Schéma nelze vypočítat pro tuto vlastní vazby protože neobsahuje třídu TransportBindingElement. Každá vazba musí mít alespoň jeden element vazby, která je odvozena od třídy TransportBindingElement.|  
+|SFxDataContractSerializerDoesNotSupportBareArray|Třída DataContractSerializer nepodporuje kolekci určenou v zadaného prvku.|  
+|SFxDictionaryIsEmpty|Operaci nelze provést, protože slovník je prázdný.|  
+|SFxDocEncodedNotSupported|Chyba při reflexi zadaný. Kódování dokumentů se nepodporuje. Změňte "Používá se" na literál nebo 'Style' na RPC.|  
+|SFxDuplicateInitiatingActionAtSameVia|Tato služba obsahuje několik koncových bodů naslouchání v zadaném. Koncové body sdílejí stejnou inicializační akci zadané. Zprávy s touto akcí by vyřadit, protože dispečer by nemohl určit správný koncový bod pro zpracování zprávy.|  
+|SFXEndpointBehaviorUsedOnWrongSide|Zadanou třídu IEndpointBehavior nelze použít na serveru. Toto chování můžete platí jenom pro klienty.|  
+|SFxEndpointNoMatchingScheme|Základní adresa, která odpovídá zadané schéma pro koncový bod s určenou vazbu nebyl nalezen. Základní adresa registrovaná schémata nejsou zadány.|  
+|SFxErrorCreatingMtomReader|Při vytváření čtečky zpráv přenosu optimalizace mechanismus zprávy došlo k chybě.|  
+|SFxErrorDeserializingFault|Server vrátil chybu neplatná jednoduchý objekt přístup k protokolu. Další podrobnosti najdete u třídy InnerException.|  
+|SFxErrorDeserializingHeader|Došlo k chybě při deserializaci jednoho ze záhlaví ve zprávě zadané. Další podrobnosti naleznete u třídy InnerException.|  
+|SFxErrorReflectingOnMethod3|Došlo k chybě při načítání zadaný atribut na zadanou metodu v zadaném typu.  Další podrobnosti najdete u třídy InnerException.|  
+|SFxErrorReflectingOnParameter4|Došlo k chybě při načítání atribut zadaný u zadaného parametru zadanou metodu v zadaném typu. Další podrobnosti najdete u třídy InnerException.|  
+|SFxErrorReflectingOnType2|Došlo k chybě při načítání atribut zadaný u zadaného typu.  Další podrobnosti najdete u třídy InnerException.|  
+|SFxErrorSerializingBody|Došlo k chybě při serializaci textu zprávy zadané. Další podrobnosti najdete u třídy InnerException.|  
+|SFxErrorSerializingHeader|Došlo k chybě při serializaci jednoho ze záhlaví ve zprávě zadané. Další podrobnosti najdete u třídy InnerException.|  
+|SFxExpectedIMethodCallMessage|Vnitřní chyba Zpráva musí být platnou třídou IMethodCallMessage.|  
+|SFxExportMustHaveType|Je specifikovaná část v zadané operaci nejde exportovat, protože nemá platný typ CLR.|  
+|SFxHeaderNotUnderstood|Zpráva nebyla zpracována. Zadaná hlavička ze zadaného oboru názvů nebyla rozpoznána příjemce této zprávy. Tato chyba obvykle značí, že odesílatel zprávy povolil komunikační protokol, který příjemce nemůže zpracovat. Ujistěte se, že je konfigurace klientovy vazby konzistentní s vazbou službu.|  
+|SFxHeadersAreNotSupportedInEncoded|Zadaná zpráva nesmí mít záhlaví určená ve stylu kódování volání vzdálených procedur.|  
+|SFxInconsistentWsdlOperationStyleInMessageParts|Všechny části zprávy v zadané operaci musí obsahovat typ nebo element.|  
+|SFxInconsistentWsdlOperationStyleInOperationMessages|Určený styl odvozený od zpráv v zadané operaci neodpovídá zadané očekávanému stylu zadat pomocí vazby.|  
+|SFxInvalidCallbackIAsyncResult|Třída IAsyncResult není k dispozici nebo je nesprávného typu.|  
+|SFxInvalidMessageBody|Formátovací modul OperationFormatter zjistil neplatné pole se zprávy. Byl očekáván typ "Element" uzel se zadaným názvem a oborem názvů. Byl zjištěn typ zadaný uzel se zadaným názvem a oborem názvů.|  
+|SFxInvalidMessageBodyEmptyMessage|Třída OperationFormatter nemůže rekonstruovat informace ze zprávy, protože zpráva je prázdná.|  
+|SFxInvalidMessageBodyErrorDeserializingParameter|Došlo k chybě při pokusu o deserializaci zadaný parametr. Další informace naleznete u třídy InnerException.|  
+|SFxInvalidMessageBodyErrorSerializingParameter|Došlo k chybě při pokusu o deserializaci zadaný parametr. Zpráva InnerException byla zadána.  Další podrobnosti najdete u třídy InnerException.|  
+|SFxInvalidMessageBodyUnexpectedNode|Došlo k zadaný neočekávaný uzel ze zadaného oboru názvů při rekonstrukci parametrů.|  
+|SFxInvalidMessageContractSignature|Zadaná operace má parametr nebo návratový typ označeného atributem MessageContractAttribute. Při představovat zprávu žádosti pomocí kontraktu zprávy, musí mít operace jeden parametr označeného atributem MessageContractAttribute. Když představovat zprávu odpovědi pomocí kontraktu zprávy, operace vrácená hodnota musí být typ, který je označen MessageContractAttribute. Operace nemůže mít žádné "out" nebo "ref" parametry.|  
+|SFxInvalidReplyAction|Odchozí zpráva odpovědi pro operaci se zadanou akci, ale kontrakt pro tuto operaci Určuje třídu ReplyAction jiný. Akce určená ve zprávě musí odpovídat třídě ReplyAction v kontraktu nebo musí kontrakt určovat třídu ReplyAction = "*".|  
+|SFxInvalidRequestAction|Odchozí zpráva požadavku pro operaci se zadanou akci, ale kontrakt pro tuto operaci Určuje jinou RequestAction. Akce určená ve zprávě musí odpovídat RequestAction v kontraktu nebo musí kontrakt určovat RequestAction = "*".|  
+|SFxInvalidStaticOverloadCalledForDuplexChannelFactory1|Statickou metodu CreateChannel nelze použít s kontraktem zadaný, protože tento kontrakt definuje kontrakt zpětného volání. Použijte jednu ze statických přetížení CreateChannel pro třídu DuplexChannelFactory\<TChannel >.|  
+|SFxInvalidStreamInRequest|Požadavek v zadané operace bude datový proud, musí mít operace jeden parametr, jehož typ je Stream.|  
+|SFxInvalidStreamInResponse|Operace pro odpověď v rámci zadané operace bude datový proud, musí mít jeden parametr nebo návratová hodnota, jejíž typ je Stream.|  
+|SFxInvalidStreamInTypedMessage|Použití datových proudů s kontraktu zprávy programovací model, zadaný typ musí mít jeden člen MessageBody, jehož typ je Stream.|  
+|SFxInvalidUseOfPrimitiveOperationFormatter|Třídě PrimitiveOperationFormatter byl zadán parametr nebo návratový typ, který nepodporuje.|  
+|SFxMessageContractBaseTypeNotValid|Zadaný typ MessageContract definovat a odvozuje se od zadaného typu, který MessageContract nedefinuje. Všechny objekty v hierarchii dědičnosti zadané musí definovat parametr MessageContract.|  
+|SFxMethodNotSupported1|Určená metoda není podporována u tohoto objektu. Tomu může dojít, pokud metoda není označena třídou OperationContractAttribute, nebo pokud typ rozhraní není označen třídou ServiceContractAttribute.|  
 |SFxMethodNotSupportedByType2|Zadaný typ implementace ServiceHost neimplementuje kontrakt zadaná služba.|  
-|SFxMethodNotSupportedOnCallback1|Zpětné volání zadaná metoda není podporována. Tomu může dojít, pokud metoda není označen atributem OperationContractAttribute nebo pokud jeho typ rozhraní není cílem třída ServiceContractAttribute CallbackContract.|  
-|SFxMismatchedOperationParent|DispatchOperation nebo ClientOperation lze přidat pouze ke své nadřazené úloze DispatchRuntime nebo ClientRuntime v uvedeném pořadí.|  
+|SFxMethodNotSupportedOnCallback1|Zadaná metoda zpětného volání není podporován. Tomu může dojít, pokud metoda není označena třídou OperationContractAttribute, nebo pokud typ rozhraní není cílem CallbackContract atribut ServiceContractAttribute.|  
+|SFxMismatchedOperationParent|Třída DispatchOperation nebo ClientOperation lze přidat pouze k nadřazené úloze DispatchRuntime nebo ClientRuntime v uvedeném pořadí.|  
 |SFxNameCannotBeEmpty|Vlastnost Name nemůže být prázdný řetězec.|  
-|SfxNoTypeSpecifiedForParameter|Pro parametr, který zabrání operaci generován byl zadán žádný typ CLR.|  
-|SFxOperationBehaviorAttributeOnlyOnServiceClass|OperationBehaviorAttribute pouze přejít na třídě služby. Nelze se vrátit do rozhraní ServiceContract. Zadanou metodu na zadaný typ v rozporu se to.|  
-|SFxOperationContractOnNonServiceContract|Zadanou metodu je označené jako OperationContractAttribute, ale nadřazených zadaný typ není označen atributem ServiceContractAttribute. OperationContractAttribute lze použít pouze na metody v typech ServiceContractAttribute nebo jejich typů CallbackContract.|  
-|SFxParameterCountMismatch|Došlo k neshodě mezi počet zadaný argumentů a počet očekávané argumentů. Zadaný argument konkrétně má zadaný počet elementů, zatímco očekávaný argument má zadaný počet elementů.|  
-|SFxPartNameMustBeUniqueInRpc|Název součásti zadané zprávy není jedinečné v zprávu volání vzdálených procedur.|  
-|SFxReplyActionMismatch3|Byla přijata zpráva odpovědi pro danou operaci spolu s určenou akcí. Váš klientský kód však vyžaduje zadanou akci.|  
-|SFxRequestReplyNone|Byla přijata zpráva s hlavičku WS-Addressing ReplyTo nebo FaultTo zaměřený na "Žádný" adresu. Tyto hodnoty nejsou platné pro požadavek odpověď operace. Použít Jednosměrná operace nebo povolte ManualAddressing, pokud budete potřebovat k podpoře ReplyTo nebo FaultTo hodnoty "Žádný".|  
-|SFxRequestTimedOut1|Touto operací požadavku nepřijala odpověď v rámci zadané nakonfigurované doby. Časový limit pravděpodobně součástí delší časový limit. Může to být proto, že služba je stále zpracovává operaci nebo službu se nepodařilo odeslat zprávu odpovědi.|  
-|SFxRequestTimedOut2|Operace požadavku, odeslané do zadaného umístění nepřijala odpověď v rámci zadané nakonfigurované doby. Časový limit pravděpodobně součástí delší časový limit. Může to být proto, že služba je stále zpracovává operaci nebo službu se nepodařilo odeslat zprávu odpovědi.|  
-|SFxSchemaDoesNotContainType|Schéma s oborem názvů zadaný cílový neobsahuje typu se zadaným názvem.|  
-|SfxServiceContractAttributeNotFound|Typ zadaný smlouvy není atribut ServiceContractAttribute. K definování kontraktu platný, zadaný typ musí být atribut ServiceContractAttribute. Typ může být buď rozhraní kontraktu nebo třídu služby.|  
-|SFxServiceContractGeneratorConfigRequired|Generovat informace o konfiguraci pomocí metody GenerateServiceEndpoint, musí být ServiceContractGenerator instance inicializován s objektem platné konfigurace.|  
-|SFxServiceHostBaseCannotAddEndpointAfterOpen|Koncové body nejde přidat po hostiteli služby je v některém z následujících stavů:<br /><br /> -Otevřít<br />-S chybou<br />-Byl ukončen<br />-Uzavřený|  
-|SFxServiceHostBaseCannotAddEndpointWithoutDescription|Před inicializací vlastnost Popis nelze přidat koncové body.|  
-|SFxServiceMetadataBehaviorNoHttpBaseAddress|HttpGetEnabled ServiceMetadataBehavior je nastavena na hodnotu true a vlastnost HttpGetUrl je relativní adresa, ale neexistuje žádná základní adresu HTTP. Buď zadejte základní adresu HTTP, nebo nastavte vlastnost HttpGetUrl na absolutní adresu.|  
-|SFxServiceMetadataBehaviorNoHttpsBaseAddress|HttpsGetEnabled ServiceMetadataBehavior je nastavena na hodnotu true a vlastnost HttpsGetUrl je relativní adresa, ale neexistuje žádná základní adresa HTTPS. Buď zadejte základní adresu HTTPS, nebo nastavte vlastnost HttpsGetUrl na absolutní adresu.|  
-|SFxServiceMetadataBehaviorUrlMustBeHttpOrRelative|Adresa Url chování musí být relativní identifikátor nebo identifikátor URI absolutní s zadané schéma. Zadaná adresa Url je absolutní uniform resource identifier s zadané schéma.|  
-|SFxStreamRequestMessageClosed|Zpráva, která obsahuje tento datový proud byl uzavřen. Datové proudy požadavek nelze získat přístup, po operaci služby vrátí.|  
-|SFxStreamResponseMessageClosed|Zpráva, která obsahuje tento datový proud byl uzavřen.|  
+|SfxNoTypeSpecifiedForParameter|Typ CLR byl zadán pro parametr, který brání operaci. nefunkční.|  
+|SFxOperationBehaviorAttributeOnlyOnServiceClass|OperationBehaviorAttribute může nacházet pouze na třídu služby. Nelze jej umístit do rozhraní ServiceContract. Zadanou metodu na zadaný typ toto porušuje.|  
+|SFxOperationContractOnNonServiceContract|Zadaná metoda je označena třídou OperationContractAttribute, ale nadřazený zadaný typ není označen třídou ServiceContractAttribute. Atribut OperationContractAttribute jde použít jenom u metod v typech ServiceContractAttribute nebo u jejich typů CallbackContract.|  
+|SFxParameterCountMismatch|Došlo k neshodě mezi počet dodaných argumentů a počet očekávaných argumentů. Konkrétně zadaný argument má zadaný počet prvků, zatímco očekávaný argument má zadaný počet prvků.|  
+|SFxPartNameMustBeUniqueInRpc|Název součásti zadaná zpráva není jedinečný ve zprávě volání vzdálených procedur.|  
+|SFxReplyActionMismatch3|Byla přijata zpráva odpovědi pro zadanou operaci se zadanou akci. Váš klientský kód však vyžaduje na zadanou akci.|  
+|SFxRequestReplyNone|Byla přijata zpráva se WS-Addressing ReplyTo nebo FaultTo s cílem na "None" adresu. Tyto hodnoty nejsou pro operace požadavek odpověď platné. Použijte jednocestnou operaci nebo povolte vlastnost ManualAddressing, pokud potřebujete podporovat hodnotu ReplyTo nebo FaultTo hodnoty "None".|  
+|SFxRequestTimedOut1|Tato operace požadavku nepřijala odpověď v zadaném čase nakonfigurovaná. Čas povolené byl pravděpodobně částí delšího časového limitu. To může být, že služba stále zpracovává operaci nebo že služba nemohla odeslat zprávu s odpovědí.|  
+|SFxRequestTimedOut2|Operace požadavku odeslaná do zadaného umístění nepřijala odpověď během určené doby nakonfigurované. Čas povolené byl pravděpodobně částí delšího časového limitu. To může být, že služba stále zpracovává operaci nebo že služba nemohla odeslat zprávu s odpovědí.|  
+|SFxSchemaDoesNotContainType|Schéma s oborem názvů zadaný cíl neobsahuje typ se zadaným názvem.|  
+|SfxServiceContractAttributeNotFound|Typ zadaný smlouvy nemá atribut ServiceContractAttribute. Chcete-li definován platný kontrakt, zadaný typ musí být atribut ServiceContractAttribute. Typ může být buď rozhraní kontraktu nebo třída služby.|  
+|SFxServiceContractGeneratorConfigRequired|Chcete-li generovat informace o konfiguraci pomocí metody GenerateServiceEndpoint, musí být ServiceContractGenerator instance inicializována s platným objektem konfigurace.|  
+|SFxServiceHostBaseCannotAddEndpointAfterOpen|Koncové body nelze přidat po hostitele ServiceHost je v jednom z následujících stavů:<br /><br /> -Otevřít<br />-Došlo k chybě<br />-Byl ukončen<br />-Uzavřeno|  
+|SFxServiceHostBaseCannotAddEndpointWithoutDescription|Koncové body nelze přidat před inicializací vlastnosti popis.|  
+|SFxServiceMetadataBehaviorNoHttpBaseAddress|HttpGetEnabled atributu ServiceMetadataBehavior je nastavena na hodnotu true a vlastnost HttpGetUrl je relativní adresa, ale neexistuje žádná základní adresa HTTP. Buď poskytněte základní adresu HTTP, nebo nastavte vlastnost HttpGetUrl na absolutní adresu.|  
+|SFxServiceMetadataBehaviorNoHttpsBaseAddress|HttpsGetEnabled atributu ServiceMetadataBehavior je nastavena na hodnotu true a vlastnost HttpsGetUrl je relativní adresa, ale neexistuje žádná základní adresa HTTPS. Buď poskytněte základní adresu HTTPS nebo nastavte vlastnost HttpsGetUrl na absolutní adresu.|  
+|SFxServiceMetadataBehaviorUrlMustBeHttpOrRelative|Chování adresy Url musí být identifikátor URI relativní nebo absolutní URI identifikátoru s zadané schéma. Zadaná adresa Url je absolutní URI identifikátoru s zadané schéma.|  
+|SFxStreamRequestMessageClosed|Zpráva obsahující tento proud byla zavřena. Proudy požadavků nelze otevřít po vrácení operace služby.|  
+|SFxStreamResponseMessageClosed|Zpráva obsahující tento proud byla zavřena.|  
 |SFxTerminateRequestProcessingException|Rozšíření v kanálu operaci musí ukončit zpracování této zprávy.|  
-|SFxTerminatingOperationAlreadyCalled1|Tento kanál nelze odeslat další zprávy, protože byla volána operace IsTerminating.|  
-|SFxThrottleLimitMustBeGreaterThanZero0|Limit omezení musí být větší než nula. Limit omezovače zakázat, nastavte hodnotu na Int32.MaxValue.|  
-|SFxTypedOrUntypedMessageCannotBeMixedWithVoidInRpc|Při použití styl kódováním RPC, typy kontraktů zpráv nebo typ System.ServiceModel.Channels.Message nelze použít, pokud operace nemá žádné parametry, nebo má void návratovou hodnotu. Přidání typu kontraktu prázdná zpráva jako parametr nebo návratový typ pro danou operaci.|  
-|SFxUserCodeThrewException|Zadaný uživatel operaci došlo k výjimce, která je neošetřená v uživatelském kódu. Pokud je opakované problém, může to znamenat chybu při provádění zadanou metodu.|  
-|SfxUseTypedMessageForCustomAttributes|Zadaný parametr nemůže být namapovaný na parametr operaci, protože vyžaduje další atributy.|  
-|SFxVersionMismatchInOperationContextAndMessage2|Nelze přidat odchozí záhlaví ke zprávě, protože verze MessageVersion v OperationContext.Current neshoduje s verzí hlavičky zpracovává zprávy|  
-|SFxWellKnownNonSingleton0|Chcete-li použít jeden z konstruktorů ServiceHost, který přijímá instanci služby, musí být InstanceContextMode služby nastavena na hodnotu InstanceContextMode.Single. Toto můžete nakonfigurovat pomocí ServiceBehaviorAttribute. Jinak použijte konstruktory ServiceHost, které nepřijímají argumentem typu.|  
-|SFxWrapperTypeHasMultipleNamespaces|Typ obálku pro zadané zprávy se nedá projektovat jako datový typ smlouvy, protože obsahuje více oborů názvů. Pomocí třídy XmlSerializer.|  
-|UriMustBeAbsolute|Musí být absolutní identifikátor URI.|
+|SFxTerminatingOperationAlreadyCalled1|Tento kanál nemůže odeslat další zprávy, protože byla volána operace IsTerminating.|  
+|SFxThrottleLimitMustBeGreaterThanZero0|Limit omezení musí být větší než nula. Limit omezovače zakázat, nastavte hodnotu na hodnotu Int32.MaxValue.|  
+|SFxTypedOrUntypedMessageCannotBeMixedWithVoidInRpc|Při použití stylu kódováním RPC, typy kontraktů zpráv nebo typ System.ServiceModel.Channels.Message nelze použít, pokud operace nemá žádné parametry nebo návratovou hodnotu typu void. Přidat prázdný typ kontraktu zprávy jako parametr nebo návratový typ na zadané operace.|  
+|SFxUserCodeThrewException|Zadaná uživatelská operace došlo k výjimce, která se neošetří v uživatelském kódu. Pokud je to opakované problém, může to znamenat chybu v implementaci zadané metodě.|  
+|SfxUseTypedMessageForCustomAttributes|Zadaný parametr nemůže být mapována k parametru operaci, protože vyžaduje další atributy.|  
+|SFxVersionMismatchInOperationContextAndMessage2|Nelze přidat odchozí záhlaví ke zprávě, protože verze MessageVersion v parametru OperationContext.Current se neshoduje s verzí záhlaví zpracovávané zprávy|  
+|SFxWellKnownNonSingleton0|Chcete-li použít jeden z konstruktorů ServiceHost, který přebírá instanci služby, musí být režim InstanceContextMode služby nastavena na hodnotu InstanceContextMode.Single. To lze konfigurovat pomocí atributu ServiceBehaviorAttribute. Jinak použijte konstruktory ServiceHost, které přebírají argument typ.|  
+|SFxWrapperTypeHasMultipleNamespaces|Typ obálky pro zadanou zprávu nelze promítat jako typ kontraktu dat, protože má více oborů názvů. Pomocí třídy XmlSerializer.|  
+|UriMustBeAbsolute|Identifikátor URI musí být absolutní.|
