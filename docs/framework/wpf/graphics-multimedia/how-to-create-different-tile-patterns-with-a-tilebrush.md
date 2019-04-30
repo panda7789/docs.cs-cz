@@ -10,11 +10,11 @@ helpviewer_keywords:
 - creating [WPF], tile patterns with TileBrush
 ms.assetid: 5aa46632-3527-4668-9d8d-0375c8af28aa
 ms.openlocfilehash: c1051b234961eee9ae740af2abac3d64c523656c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59227402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61905126"
 ---
 # <a name="how-to-create-different-tile-patterns-with-a-tilebrush"></a>Postupy: Vytvoření jiných vzorů dlaždic pomocí prvku TileBrush
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.TileBrush.TileMode%2A> vlastnost <xref:System.Windows.Media.TileBrush> k vytvoření vzorku.  

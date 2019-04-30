@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data transfer [WCF], architectural overview
 ms.assetid: 343c2ca2-af53-4936-a28c-c186b3524ee9
 ms.openlocfilehash: 22d2ce71d850fc799304cadf7e8d7d8af2670d5d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856588"
 ---
 # <a name="data-transfer-architectural-overview"></a>Strukturální přehled přenosu dat
 Windows Communication Foundation (WCF) můžete představit jako infrastruktura zasílání zpráv. Může přijímat zprávy, zpracovat je a jejich vypravování do uživatelského kódu pro další akce, nebo můžete vytvořit zprávy z dat zadané v uživatelském kódu a doručujte je na cíli. Toto téma, které je určené pro pokročilé vývojáře, popisuje architekturu zpracování zpráv a omezením data. Jednodušší, orientovaných zobrazení toho, jak odesílat a přijímat data, najdete v části [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).  
@@ -66,9 +66,9 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
 ### <a name="getting-data-from-a-message-body"></a>Získání dat z textu zprávy  
  Můžete extrahovat data uložená v textu zprávy dva hlavní způsoby:  
   
--   Obsah celé zprávy najednou můžete získat voláním <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> metoda a předáním zapisovače XML. Zprávu o dokončení text je zapsán do tohoto zapisovače. Získávání těla celá zpráva v jednom okamžiku se také nazývá *zápisu zprávy*. Zápis probíhá primárně v zásobníku kanál při odesílání zprávy – některé části zásobníku kanálu se obvykle získáte přístup k celé zprávy, kódovat a jeho odeslání.  
+- Obsah celé zprávy najednou můžete získat voláním <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> metoda a předáním zapisovače XML. Zprávu o dokončení text je zapsán do tohoto zapisovače. Získávání těla celá zpráva v jednom okamžiku se také nazývá *zápisu zprávy*. Zápis probíhá primárně v zásobníku kanál při odesílání zprávy – některé části zásobníku kanálu se obvykle získáte přístup k celé zprávy, kódovat a jeho odeslání.  
   
--   Dalším způsobem, jak získat informace o mimo tělo zprávy je volání <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents> a získat čtecí funkce XML. Tělo zprávy lze poté přistupovat sekvenčně, podle potřeby pomocí volání metody čtecího zařízení. Získávání zprávu textu část jednotlivé se také nazývá *čtení zprávy*. Čtení zprávy se používá především v rámci služby rozhraní při přijímání zprávy. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> se používá, bude architektura služby získat čtecí funkce XML v těle a předejte jej do deserializace modul, který pak začne zprávu prvek po prvku pro čtení a vytváření odpovídající objekt grafu.  
+- Dalším způsobem, jak získat informace o mimo tělo zprávy je volání <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents> a získat čtecí funkce XML. Tělo zprávy lze poté přistupovat sekvenčně, podle potřeby pomocí volání metody čtecího zařízení. Získávání zprávu textu část jednotlivé se také nazývá *čtení zprávy*. Čtení zprávy se používá především v rámci služby rozhraní při přijímání zprávy. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> se používá, bude architektura služby získat čtecí funkce XML v těle a předejte jej do deserializace modul, který pak začne zprávu prvek po prvku pro čtení a vytváření odpovídající objekt grafu.  
   
  Text zprávy je možné načíst pouze jednou. Díky tomu je možné pracovat s posouváním pouze datové proudy. Můžete například napsat <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> přepsání, která čte z <xref:System.IO.FileStream> a vrátí výsledky jako informační sadu XML. Musíte nikdy "zpět" na začátku souboru.  
   
@@ -160,11 +160,11 @@ Windows Communication Foundation (WCF) můžete představit jako infrastruktura 
 ### <a name="the-istreamprovider-interface"></a>Rozhraní IStreamProvider  
  Při zápisu odchozí zprávy, která obsahuje tělo streamovaná do zapisovače XML <xref:System.ServiceModel.Channels.Message> využívá posloupnost volání podobně jako v následujícím jeho <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%28System.Xml.XmlDictionaryWriter%29> implementace:  
   
--   Zapisovat všechny potřebné informace před stream (například otevírání – značka XML).  
+- Zapisovat všechny potřebné informace před stream (například otevírání – značka XML).  
   
--   Zápis datového proudu.  
+- Zápis datového proudu.  
   
--   Zapisovat všechny informace o streamu (například uzavírací značky XML).  
+- Zapisovat všechny informace o streamu (například uzavírací značky XML).  
   
  Tento postup funguje dobře s kódování, které jsou podobné textové kódování XML. Ale některé kódování Neumísťujte informační sadu XML informace (například značky pro počáteční a koncovou elementů XML) společně s data obsažená v rámci prvků. Kódování MTOM, například zprávy je rozdělit na více částí. Jednou ze součástí obsahuje informační sadu XML, které mohou obsahovat odkazy na ostatní části pro obsah skutečným prvkem. Informační sada XML je obvykle malé ve srovnání s datovým proudem obsah, proto je vhodné uložit do vyrovnávací paměti informační sadu, tak zapisovat a pak zapsat obsah datovým proudem způsobem. To znamená, že čas zavření značky elementu je zapsán, datového proudu by neměla být napsán takto ještě.  
   

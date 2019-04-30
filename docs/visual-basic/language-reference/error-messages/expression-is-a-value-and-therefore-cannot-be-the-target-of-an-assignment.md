@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30068
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
 ms.openlocfilehash: 3027be6ee4ed3664b81c661b6a086a3604573833
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802606"
 ---
 # <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>Výraz je hodnota, a proto nemůže být cílem přiřazení.
 Příkaz se pokusí přiřadit hodnotu výrazu. Přiřadit hodnotu pouze pro zapisovatelné proměnná, vlastnost nebo prvku pole za běhu. Následující příklad ukazuje, jak k této chybě může dojít.  
@@ -49,13 +49,13 @@ exitButton.Location = exitLocation
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud příkaz přiřazuje hodnotu výrazu, nahraďte výraz jeden zapisovatelný proměnná, vlastnost nebo pole elementu.  
+- Pokud příkaz přiřazuje hodnotu výrazu, nahraďte výraz jeden zapisovatelný proměnná, vlastnost nebo pole elementu.  
   
--   Pokud příkaz vytváří nepřímý přístup prostřednictvím typu hodnoty (obvykle struktury), vytvořte proměnnou pro uchování hodnoty typu.  
+- Pokud příkaz vytváří nepřímý přístup prostřednictvím typu hodnoty (obvykle struktury), vytvořte proměnnou pro uchování hodnoty typu.  
   
--   Přiřaďte proměnné vhodnou strukturou (nebo jiný typ hodnoty).  
+- Přiřaďte proměnné vhodnou strukturou (nebo jiný typ hodnoty).  
   
--   Pro přístup k vlastnosti k ní přiřadit hodnotu, použijte proměnnou.  
+- Pro přístup k vlastnosti k ní přiřadit hodnotu, použijte proměnnou.  
   
 ## <a name="see-also"></a>Viz také:
 

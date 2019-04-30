@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření dokumentu s názvovými prostory (LINQ to XML) (Vis
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
 ms.openlocfilehash: b65d22451d900f7b20226f25b61bb235241dd84f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816859"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855514"
 ---
 # <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Postupy: Vytvoření dokumentu s názvovými prostory (LINQ to XML) (Visual Basic)
 Toto téma ukazuje, jak vytvořit dokument s obory názvů v jazyce Visual Basic.  

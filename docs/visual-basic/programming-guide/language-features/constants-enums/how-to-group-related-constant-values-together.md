@@ -6,11 +6,11 @@ helpviewer_keywords:
 - constants [Visual Basic], grouping together
 ms.assetid: 09d61da5-c940-4126-a79f-ba93c36653dc
 ms.openlocfilehash: a4f74e48cfdd5c0bc0f745d0f32eb39442f5bd83
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906760"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a>Postupy: Seskupení souvisejících hodnot konstant společně (Visual Basic)
 Výčet je nejlepší způsob, jak seskupit související s konstantami. Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Další informace najdete v tématu [jak: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  

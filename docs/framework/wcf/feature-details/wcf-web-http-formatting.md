@@ -3,11 +3,11 @@ title: Formátování WCF Web HTTP
 ms.date: 03/30/2017
 ms.assetid: e2414896-5463-41cd-b0a6-026a713eac2c
 ms.openlocfilehash: f3d3a2d992f234c690f3fb87514b700a6596a5fe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935470"
 ---
 # <a name="wcf-web-http-formatting"></a>Formátování WCF Web HTTP
 Model programování webových služeb HTTP WCF umožňuje dynamicky určovat nejlepší formát pro operaci služby vrátit v odpovědi. Dvě metody pro zjištění odpovídající formátu jsou podporovány: automatické a explicitní.  
@@ -125,15 +125,15 @@ public class Service : IService
   
  Pokud budete potřebovat pro podporu formátů než XML nebo JSON, definovat operaci mít návratový typ <xref:System.ServiceModel.Channels.Message>. V rámci kód operace určit vhodný formát používat a pak vytvořte <xref:System.ServiceModel.Channels.Message> pomocí jedné z následujících metod:  
   
--   `WebOperationContext.CreateAtom10Response`  
+- `WebOperationContext.CreateAtom10Response`  
   
--   `WebOperationContext.CreateJsonResponse`  
+- `WebOperationContext.CreateJsonResponse`  
   
--   `WebOperationContext.CreateStreamResponse`  
+- `WebOperationContext.CreateStreamResponse`  
   
--   `WebOperationContext.CreateTextResponse`  
+- `WebOperationContext.CreateTextResponse`  
   
--   `WebOperationContext.CreateXmlResponse`  
+- `WebOperationContext.CreateXmlResponse`  
   
  Každá z těchto metod má obsahu a vytvoří zprávu v příslušném formátu. `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` Metody slouží k získání seznamu formátů upřednostňované klientem v pořadí sestupný předvoleb. Následující příklad ukazuje, jak používat `WebOperationContext.Current.IncomingRequest.GetAcceptHeaderElements` k určení formátu pro použití a pak používá odpovídající vytvořit odpověď metodu pro vytvoření zprávy s odpovědí.  
   

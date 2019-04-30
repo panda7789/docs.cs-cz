@@ -12,11 +12,11 @@ ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 49c490b57574f8c9c9c93e3e0da2089cec95481f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793260"
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí generování reflexe
 První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma parametry typu a jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu.  
@@ -164,11 +164,11 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
+- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
--   Nejsou vyžadovány žádné odkazy na další sestavení.  
+- Nejsou vyžadovány žádné odkazy na další sestavení.  
   
--   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

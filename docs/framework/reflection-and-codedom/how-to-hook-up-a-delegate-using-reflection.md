@@ -13,11 +13,11 @@ ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c7c2956a222a47cea36abbc2f21da2d7e2061e09
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793156"
 ---
 # <a name="how-to-hook-up-a-delegate-using-reflection"></a>Postupy: Připojení delegáta pomocí reflexe
 Při použití reflexe načtení a spuštění sestavení nelze použít jazykové funkce, jako C# `+=` operátor nebo Visual Basic [AddHandler – příkaz](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) k připojení události. Následující postupy ukazují, jak připojit existující metodu na událost tím, že získáme všechny nezbytné typy prostřednictvím reflexe a vytvoření dynamickou metodu pomocí operace reflection emit a zapojit ji až událost.  
@@ -107,11 +107,11 @@ Při použití reflexe načtení a spuštění sestavení nelze použít jazykov
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
+- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
--   Žádné odkazy na další sestavení jsou požadovány pro kompilaci z příkazového řádku. V sadě Visual Studio musíte přidat odkaz na System.Windows.Forms.dll, protože v tomto příkladu je konzolová aplikace.  
+- Žádné odkazy na další sestavení jsou požadovány pro kompilaci z příkazového řádku. V sadě Visual Studio musíte přidat odkaz na System.Windows.Forms.dll, protože v tomto příkladu je konzolová aplikace.  
   
--   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

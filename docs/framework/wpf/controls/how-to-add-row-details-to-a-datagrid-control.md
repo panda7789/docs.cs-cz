@@ -10,11 +10,11 @@ helpviewer_keywords:
 - DataGrid [WPF], row details
 ms.assetid: 0bdc6f50-9b4c-483f-9df6-a47a1fde998b
 ms.openlocfilehash: d5b6539f3d379088528b9654861267988b6fc69b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768641"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911382"
 ---
 # <a name="how-to-add-row-details-to-a-datagrid-control"></a>Postupy: Přidání podrobností řádku do ovládacího prvku DataGrid
 Při použití <xref:System.Windows.Controls.DataGrid> ovládacího prvku, prezentace dat můžete přizpůsobit přidáním části Podrobnosti řádků. Přidání části Podrobnosti o řádek umožňují seskupit některá data v šabloně, která je volitelně zobrazená nebo sbalená. Například může přidání podrobností řádku do <xref:System.Windows.Controls.DataGrid> , který představuje pouze souhrnné informace o data pro každý řádek <xref:System.Windows.Controls.DataGrid>, ale přináší další datová pole, když uživatel vybere řádek. Definování šablony daného oddílu Podrobnosti řádku <xref:System.Windows.Controls.DataGrid.RowDetailsTemplate%2A> vlastnost. Následující obrázek znázorňuje příklad v části Podrobnosti řádků.  

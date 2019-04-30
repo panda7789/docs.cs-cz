@@ -10,11 +10,11 @@ helpviewer_keywords:
 - parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
 ms.openlocfilehash: dacc1222958ab05971c9681d33a0c431b72d0531
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912285"
 ---
 # <a name="datagrid-styles-and-templates"></a>DataGrid – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.DataGrid> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  

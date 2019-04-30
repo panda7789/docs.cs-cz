@@ -13,11 +13,11 @@ ms.assetid: 34ddc6bd-1675-4f35-86aa-de1645d5c631
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 9ecdfd708217f260b0c02383159fab88948029c6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54512317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874208"
 ---
 # <a name="pinvokestackimbalance-mda"></a>PInvokeStackImbalance – pomocník spravovaného ladění (MDA)
 
@@ -36,7 +36,7 @@ Aplikace zjistí narušením přístupu nebo paměti, volání funkce invoke po�
 
 Volání funkce invoke spravovaný podpis platformy se nemusí shodovat nespravovanému podpisu volané metody.  K této neshodě může být způsobeno spravovaný podpis nedeklarováním správný počet parametrů nebo bez zadání odpovídající velikost pro parametry.  MDA lze také aktivovat, protože konvence volání, může být určeno <xref:System.Runtime.InteropServices.DllImportAttribute> atribut, se neshoduje s konvence nespravovaného volání.
 
-## <a name="resolution"></a>Rozlišení
+## <a name="resolution"></a>Řešení
 
 Kontrola spravovanou platformu vyvolání podpis a konvence volání pro potvrzení, že odpovídá podpisu a konvence volání nativní cíle.  Zkuste explicitně zadat konvence volání na spravovaných a nespravovaných stranách. Je také možné, i když ne jako pravděpodobné, že nespravovanou funkci nevyvážená zásobníku nějakého jiného důvodu, jako jsou chyby v nespravované kompilátoru.
 

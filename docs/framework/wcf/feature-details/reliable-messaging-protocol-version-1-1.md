@@ -3,11 +3,11 @@ title: Protokol spolehlivého zasílání zpráv verze 1.1
 ms.date: 03/30/2017
 ms.assetid: 0da47b82-f8eb-42da-8bfe-e56ce7ba6f59
 ms.openlocfilehash: 6b8732e0b48797c219b53bb8bf70e1ba57e25c42
-ms.sourcegitcommit: d9a0071d0fd490ae006c816f78a563b9946e269a
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55073223"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933988"
 ---
 # <a name="reliable-messaging-protocol-version-11"></a>Protokol spolehlivého zasílání zpráv verze 1.1
 Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro WS-ReliableMessaging protokol února 2007 (verze 1.1) nezbytné pro spolupráci pomocí přenos pomocí protokolu HTTP. WCF dodržuje specifikaci WS-ReliableMessaging s omezením a vyjasnění je vysvětleno v tomto tématu. Všimněte si, že se implementuje protokol WS-ReliableMessaging verze 1.1 počínaje [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].  

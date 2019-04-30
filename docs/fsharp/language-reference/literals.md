@@ -3,11 +3,11 @@ title: Literály
 description: Seznamte se s typy literálu v F# programovací jazyk.
 ms.date: 02/08/2019
 ms.openlocfilehash: 28ce34dee3c3c3d4d0cfd4107e8cbc375a23032c
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61904563"
 ---
 # <a name="literals"></a>Literály
 
@@ -20,7 +20,7 @@ Toto téma obsahuje tabulku, která ukazuje, jak určit typ literály v F#.
 
 Následující tabulka uvádí typy literálu v F#. Znaky, které představují číslice v šestnáctkové soustavě nerozlišují; znaky, které označují typ rozlišují malá a velká písmena.
 
-|Typ|Popis|Přípona nebo předpona|Příklady|
+|Type|Popis|Přípona nebo předpona|Příklady|
 |----|-----------|----------------|--------|
 |sbyte|8bitové celé číslo se znaménkem|y|`86y`<br /><br />`0b00000101y`|
 |byte|přirozené číslo bez znaménka 8 bitů|UY|`86uy`<br /><br />`0b00000101uy`|

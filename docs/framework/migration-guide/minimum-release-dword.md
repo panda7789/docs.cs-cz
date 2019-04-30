@@ -12,8 +12,8 @@ ms.openlocfilehash: 4f47ec41af114e8a6ab8a66aee2d338c722f149b
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59980704"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871433"
 ---
 # <a name="the-minimum-values-of-the-release-dword-for-net-framework-45-and-later-versions"></a>Minimální hodnoty DWORD verze rozhraní .NET Framework 4.5 a novější verze
 

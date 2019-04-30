@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
 ms.openlocfilehash: af56e01c1c8c1e23bb80413ce6f52a5f6d467b4b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914118"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Postupy: Přidání instalačních programů do aplikace služby
 Visual Studio se dodáván instalace součásti, které můžete nainstalovat prostředky spojené s aplikací služeb. Součásti instalace registraci jednotlivých služeb v systému, na který se instaluje a umožní správci řízení služeb vědět, jestli existuje služba. Při práci s aplikací služby, můžete vybrat odkaz v okně Vlastnosti na příslušné instalační programy automaticky přidat do projektu.  

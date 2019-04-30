@@ -5,11 +5,11 @@ ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0e3b3645d9fc00087e163b9200edb5fbcf0dbbd9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871265"
 ---
 # <a name="mitigation-x509certificateclaimsetfindclaims-method"></a>Omezení rizik: X509CertificateClaimSet.FindClaims Method
 Počínaje aplikací, které se zaměřují [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí přiřadit `claimType` argument u všech položek DNS v jeho poli SAN.  

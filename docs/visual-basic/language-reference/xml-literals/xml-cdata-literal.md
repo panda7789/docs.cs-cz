@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
 ms.openlocfilehash: ee269ca5cf9635fec35165d1ea65d6a6483cadef
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938626"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literál XML CDATA (Visual Basic)
 Literál představující <xref:System.Xml.Linq.XCData> objektu.  
@@ -40,9 +40,9 @@ Literál představující <xref:System.Xml.Linq.XCData> objektu.
 ## <a name="remarks"></a>Poznámky  
  XML CDATA oddíly obsahují nezpracovaný text, který by měl zahrnuty, ale nebyly analyzovány pomocí XML, který jej obsahuje. Oddíl CDATA kódu XML může obsahovat libovolný text. To zahrnuje vyhrazené znaky jazyka XML. Sekce XML CDATA končí sekvence "]] >". Z toho vyplývá následující body:  
   
--   V XML CDATA, který je literál nejde použít vložený výraz, protože vložený výraz oddělovače jsou platný obsah XML CDATA.  
+- V XML CDATA, který je literál nejde použít vložený výraz, protože vložený výraz oddělovače jsou platný obsah XML CDATA.  
   
--   XML CDATA oddíly nelze vnořit, protože `content` nemůže obsahovat hodnotu "]] >".  
+- XML CDATA oddíly nelze vnořit, protože `content` nemůže obsahovat hodnotu "]] >".  
   
  Můžete přiřadit literál XML CDATA proměnné nebo zahrnout do literálů XML element.  
   

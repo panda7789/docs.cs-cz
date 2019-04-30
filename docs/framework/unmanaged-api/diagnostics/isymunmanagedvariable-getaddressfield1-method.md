@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 67634024b04e82aa3a3c0b96dc260114c4c16371
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59179696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797628"
 ---
 # <a name="isymunmanagedvariablegetaddressfield1-method"></a>ISymUnmanagedVariable::GetAddressField1 – metoda
 Získá první pole adresy pro tuto proměnnou. Její význam závisí na druhu adresu.  

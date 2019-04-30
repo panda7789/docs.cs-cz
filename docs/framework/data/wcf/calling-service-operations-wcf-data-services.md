@@ -6,52 +6,52 @@ dev_langs:
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
 ms.openlocfilehash: aaee236487fedcb0c5d8ad113391bd628b11bb41
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517951"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793434"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Operace volání služeb (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operace služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat tyto operace jako metody na datovou službu. Stejně jako ostatní prostředkům datové služby se tak vyřeší tyto operace služby pomocí identifikátorů URI. Operace služby může vrátit kolekce typů entit, instance typu jednu entitu a primitivní typy, jako je například celé číslo a řetězec. Operace služby mohou také vrátit `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  
   
  Operace služby jsou přístupné v metadatech vrácené službou data, která implementuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. V metadatech operací služby jsou reprezentovány ve formě `FunctionImport` elementy. Při generování silných <xref:System.Data.Services.Client.DataServiceContext>, nástroje pro přidání odkazu na službu a DataSvcUtil.exe Ignorovat tento element. Z tohoto důvodu nebude najít metodu pro daný kontext, který slouží k volání operace služby přímo. Ale můžete pořád použít [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta k volání operací služby v jednom z těchto dvou způsobů:  
   
--   Při volání <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu na <xref:System.Data.Services.Client.DataServiceContext>, poskytnutí identifikátoru URI operace služby, spolu s žádné parametry. Tato metoda se používá k volání jakékoli operace služby GET.  
+- Při volání <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu na <xref:System.Data.Services.Client.DataServiceContext>, poskytnutí identifikátoru URI operace služby, spolu s žádné parametry. Tato metoda se používá k volání jakékoli operace služby GET.  
   
--   Pomocí <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> k vytvoření <xref:System.Data.Services.Client.DataServiceQuery%601> objektu. Při volání metody <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>, je součástí názvu operace služby `entitySetName` parametru. Tato metoda vrátí hodnotu <xref:System.Data.Services.Client.DataServiceQuery%601> objekt, který při výčtu nebo při volání operace služby <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> metoda je volána. Tato metoda se používá k volání operací služby GET, které vracejí kolekce. Jeden parametr lze zadat pomocí <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metody. <xref:System.Data.Services.Client.DataServiceQuery%601> Objekt vrácený touto metodou mohou být dále složené proti jako jakýkoliv jiný objekt dotazu. Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
+- Pomocí <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> metodu <xref:System.Data.Services.Client.DataServiceContext> k vytvoření <xref:System.Data.Services.Client.DataServiceQuery%601> objektu. Při volání metody <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>, je součástí názvu operace služby `entitySetName` parametru. Tato metoda vrátí hodnotu <xref:System.Data.Services.Client.DataServiceQuery%601> objekt, který při výčtu nebo při volání operace služby <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> metoda je volána. Tato metoda se používá k volání operací služby GET, které vracejí kolekce. Jeden parametr lze zadat pomocí <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metody. <xref:System.Data.Services.Client.DataServiceQuery%601> Objekt vrácený touto metodou mohou být dále složené proti jako jakýkoliv jiný objekt dotazu. Další informace najdete v tématu [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="considerations-for-calling-service-operations"></a>Důležité informace týkající se volání operací služby  
  Při použití, platí následující aspekty [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta k volání operací služby.  
   
--   Při přístupu ke službě data asynchronně, je nutné použít asynchronní ekvivalent <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> metody <xref:System.Data.Services.Client.DataServiceContext> nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metody <xref:System.Data.Services.Client.DataServiceQuery%601>.  
+- Při přístupu ke službě data asynchronně, je nutné použít asynchronní ekvivalent <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> metody <xref:System.Data.Services.Client.DataServiceContext> nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> metody <xref:System.Data.Services.Client.DataServiceQuery%601>.  
   
--   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny nelze sloučit výsledky z operace služby, který vrátí kolekce primitivních typů.  
+- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny nelze sloučit výsledky z operace služby, který vrátí kolekce primitivních typů.  
   
--   [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna nepodporuje volání operací služby POST. Operace služby, které jsou volány metody POST protokolu HTTP jsou definované pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute> s `Method="POST"` parametru. Volání operace služby pomocí požadavku HTTP POST, je nutné místo toho použít <xref:System.Net.HttpWebRequest>.  
+- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna nepodporuje volání operací služby POST. Operace služby, které jsou volány metody POST protokolu HTTP jsou definované pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute> s `Method="POST"` parametru. Volání operace služby pomocí požadavku HTTP POST, je nutné místo toho použít <xref:System.Net.HttpWebRequest>.  
   
--   Nemůžete použít <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> volat operaci GET služby, který vrací jeden výsledek, entitu nebo primitivní typ, nebo která vyžaduje více než jeden vstupní parametr. Je nutné místo toho volat <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metody.  
+- Nemůžete použít <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> volat operaci GET služby, který vrací jeden výsledek, entitu nebo primitivní typ, nebo která vyžaduje více než jeden vstupní parametr. Je nutné místo toho volat <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metody.  
   
--   Zvažte možnost vytvořit metodu rozšíření na silných <xref:System.Data.Services.Client.DataServiceContext> částečné třídy, která se generují pomocí nástrojů, využívající buď <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nebo <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu chce volat operace služby. To umožňuje volání operací služby přímo z daného kontextu. Další informace naleznete v příspěvku blogu [operací služby a klienta WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=215668).  
+- Zvažte možnost vytvořit metodu rozšíření na silných <xref:System.Data.Services.Client.DataServiceContext> částečné třídy, která se generují pomocí nástrojů, využívající buď <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nebo <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> metodu chce volat operace služby. To umožňuje volání operací služby přímo z daného kontextu. Další informace naleznete v příspěvku blogu [operací služby a klienta WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=215668).  
   
--   Při použití <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> volat operace služby, klientské knihovny automaticky řídicí sekvence znaků, které jsou předány <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> provedením procent kódování vyhrazené znaky, jako je například ampersand (&) a uvozovací znaky uvozovek jedním v řetězce. Ale při volání mezi *Execute* metod k volání operace služby, nesmíte zapomenout provést toto uvození žádné uživatelem zadané řetězcové hodnoty. Jedním uvozovky na identifikátory URI jsou uvozeny řídicími znaky jako páry uvozovek jednou.  
+- Při použití <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> volat operace služby, klientské knihovny automaticky řídicí sekvence znaků, které jsou předány <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> provedením procent kódování vyhrazené znaky, jako je například ampersand (&) a uvozovací znaky uvozovek jedním v řetězce. Ale při volání mezi *Execute* metod k volání operace služby, nesmíte zapomenout provést toto uvození žádné uživatelem zadané řetězcové hodnoty. Jedním uvozovky na identifikátory URI jsou uvozeny řídicími znaky jako páry uvozovek jednou.  
   
 ## <a name="examples-of-calling-service-operations"></a>Příklady volání operací služby  
  Tato část obsahuje následující příklady toho, jak pomocí volání operací služby [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientská knihovna:  
   
--   [Spustit volání&lt;T&gt; vrátit kolekci entit](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
+- [Spustit volání&lt;T&gt; vrátit kolekci entit](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
   
--   [Pomocí CreateQuery&lt;T&gt; vrátit kolekci entit](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#CreateQueryIQueryable)  
+- [Pomocí CreateQuery&lt;T&gt; vrátit kolekci entit](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#CreateQueryIQueryable)  
   
--   [Spustit volání&lt;T&gt; vrátit jednu entitu](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteSingleEntity)  
+- [Spustit volání&lt;T&gt; vrátit jednu entitu](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteSingleEntity)  
   
--   [Spustit volání&lt;T&gt; vrátit kolekce primitivních hodnot](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecutePrimitiveCollection)  
+- [Spustit volání&lt;T&gt; vrátit kolekce primitivních hodnot](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecutePrimitiveCollection)  
   
--   [Spustit volání&lt;T&gt; k vrácení jednoho primitivní hodnoty](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecutePrimitiveValue)  
+- [Spustit volání&lt;T&gt; k vrácení jednoho primitivní hodnoty](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecutePrimitiveValue)  
   
--   [Volání operace služby, která nevrátí žádná Data](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteVoid)  
+- [Volání operace služby, která nevrátí žádná Data](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteVoid)  
   
--   [Asynchronní volání operací služby](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteAsync)  
+- [Asynchronní volání operací služby](../../../../docs/framework/data/wcf/calling-service-operations-wcf-data-services.md#ExecuteAsync)  
   
 <a name="ExecuteIQueryable"></a>   
 ### <a name="calling-executet-to-return-a-collection-of-entities"></a>Spustit volání\<T > k vrácení kolekce entit  

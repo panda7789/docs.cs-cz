@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
 ms.openlocfilehash: ea597d7caca3174b17ce16a1e9d70c022e3e75c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879811"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Synchronizace datové sady a datového dokumentu XML
 ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. Hierarchický přístup k datům můžete použít třídy XML, který je k dispozici v rozhraní .NET Framework. Tyto dvě reprezentace dat v minulosti, již byly použity samostatně. Ale rozhraní .NET Framework umožňuje v reálném čase, která je synchronní přístup k relačních a hierarchických reprezentace dat prostřednictvím **datovou sadu** objektu a <xref:System.Xml.XmlDataDocument> objektu v uvedeném pořadí.  
@@ -19,7 +19,7 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
   
  Existuje několik způsobů, které můžete synchronizovat **datovou sadu** s **XmlDataDocument**. Můžete:  
   
--   Naplnit **datovou sadu** schéma (tedy relační struktury) a data a pak je synchronizovat s novou **XmlDataDocument**. To poskytuje hierarchické zobrazení stávajících relačních dat. Příklad:  
+- Naplnit **datovou sadu** schéma (tedy relační struktury) a data a pak je synchronizovat s novou **XmlDataDocument**. To poskytuje hierarchické zobrazení stávajících relačních dat. Příklad:  
   
     ```vb  
     Dim dataSet As DataSet = New DataSet  
@@ -37,7 +37,7 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
     XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
     ```  
   
--   Naplnit **datovou sadu** jenom se schématem (jako jsou silného typu **datovou sadu**), proveďte synchronizaci s **XmlDataDocument**a pak načíst  **Objekt XmlDataDocument** z dokumentu XML. To poskytuje relační zobrazení existující hierarchická data. Názvy tabulek a názvy sloupců v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
+- Naplnit **datovou sadu** jenom se schématem (jako jsou silného typu **datovou sadu**), proveďte synchronizaci s **XmlDataDocument**a pak načíst  **Objekt XmlDataDocument** z dokumentu XML. To poskytuje relační zobrazení existující hierarchická data. Názvy tabulek a názvy sloupců v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
   
      Všimněte si, že schéma **datovou sadu** potřebuje pouze tak, aby odpovídaly elementů XML, které chcete vystavit v relačním zobrazení. Tímto způsobem může mít velmi velké dokumentů XML a velmi malé relační "okno" pro daný dokument. **XmlDataDocument** zachová celý dokument XML, i když **datovou sadu** zpřístupňuje pouze malou část. (Podrobný příklad tohoto objektu, najdete v části [synchronizace datové sady s datovým dokumentem XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md).)  
   
@@ -63,7 +63,7 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
   
      Nelze načíst **XmlDataDocument** Pokud synchronizována s **datovou sadu** , který obsahuje data. bude vyvolána výjimka.  
   
--   Vytvořte nový **XmlDataDocument** a načtěte ho z dokumentu XML a pak přístup k relačním zobrazení dat pomocí **datovou sadu** vlastnost **XmlDataDocument**. Je nutné nastavit schéma **datovou sadu** před zobrazením datům v **XmlDataDocument** pomocí **datovou sadu**. Znovu, názvy tabulek a sloupců názvy v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
+- Vytvořte nový **XmlDataDocument** a načtěte ho z dokumentu XML a pak přístup k relačním zobrazení dat pomocí **datovou sadu** vlastnost **XmlDataDocument**. Je nutné nastavit schéma **datovou sadu** před zobrazením datům v **XmlDataDocument** pomocí **datovou sadu**. Znovu, názvy tabulek a sloupců názvy v vaše **datovou sadu** schématu musí odpovídat názvům elementů XML, které chcete synchronizovat se službou. Tato shoda se malá a velká písmena.  
   
      Následující příklad kódu ukazuje, jak získat přístup k relačním zobrazení dat v **XmlDataDocument**.  
   

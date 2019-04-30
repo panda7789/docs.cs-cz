@@ -7,38 +7,38 @@ ms.openlocfilehash: 6af0336e19df4ba2a99a52f8726e78ed92f5a79e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940462"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Postupy: Povolení WIF pro aplikaci webové služby WCF
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   Microsoft® Windows® Communication Foundation (WCF)  
+- Microsoft® Windows® Communication Foundation (WCF)  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod podrobně popisuje postupy pro povolení technologie WIF ve webové službě WCF. Obsahuje také pokyny, jak pomocí otestování aplikace ověřit, zda webová služba po spuštění aplikace správně předkládá deklarace. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Nástroj identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled  
+- Přehled  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché služby WCF  
+- Krok 1 – Vytvoření jednoduché služby WCF  
   
--   Krok 2 – Vytvoření klientské aplikace pro službu WCF  
+- Krok 2 – Vytvoření klientské aplikace pro službu WCF  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Vytvořte službu WCF, která vyžaduje vydané tokeny.  
+- Vytvořte službu WCF, která vyžaduje vydané tokeny.  
   
--   Vytvořte klienta WCF, který si vyžádá token od služby STS a předá jej službě WCF.  
+- Vytvořte klienta WCF, který si vyžádá token od služby STS a předá jej službě WCF.  
   
 ## <a name="overview"></a>Přehled  
  Cílem tohoto návodu je ukázat, jak mohou vývojáři používat federované ověřování při vývoji služeb WCF. Mezi výhody použití federace ve službách WCF patří:  
@@ -55,11 +55,11 @@ ms.locfileid: "59977428"
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché služby WCF  
+- Krok 1 – Vytvoření jednoduché služby WCF  
   
--   Krok 2 – Vytvoření klientské aplikace pro službu WCF  
+- Krok 2 – Vytvoření klientské aplikace pro službu WCF  
   
--   Krok 3 – Otestování řešení  
+- Krok 3 – Otestování řešení  
   
 ## <a name="step-1--create-a-simple-wcf-service"></a>Krok 1 – Vytvoření jednoduché služby WCF  
  V tomto kroku vytvoříte novou službu WCF používající službu STS pro vývoj, která je součástí nástroje Identity and Access Tool.  

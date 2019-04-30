@@ -11,11 +11,11 @@ helpviewer_keywords:
 - collapsing headers [WPF]
 ms.assetid: e9dfc8d6-4555-47b9-a4de-0acd64f8770a
 ms.openlocfilehash: a7dc0d2cc32d387f87221748ab94ac82c2dfc8b0
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58410508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911821"
 ---
 # <a name="expander"></a>Rozšíření
 <xref:System.Windows.Controls.Expander> Umožňuje uživateli zobrazit záhlaví a rozbalte tuto hlavičku k dalším podrobnostem a Sbalit oddíl až záhlaví.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC36599
 ms.assetid: 17763dbe-f74f-4ccb-8086-cb7e45ec4d12
 ms.openlocfilehash: a0b5633bb0efb3c67f73810552ef9a14ac3d0c70
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331647"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934274"
 ---
 # <a name="range-variable-name-can-be-inferred-only-from-a-simple-or-qualified-name-with-no-arguments"></a>Název proměnné rozsahu lze odvodit jen z jednoduchého nebo kvalifikovaného názvu bez argumentů.
 Programový element, který přijímá jeden nebo více argumentů je zahrnutý v dotazu LINQ. Kompilátor nedokáže odvodit proměnnou rozsahu z této programovací element.  

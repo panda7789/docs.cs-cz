@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
 ms.openlocfilehash: 1e134d877c45af00e2a2fb7e7ef0882ffd7ddc48
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119116"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875729"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení datových služeb WCF Data Services
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění datové služby WCF a aplikací tento přístup ke službám, které podporují Open Data Protocol (OData). Také postupujte podle doporučení pro vytváření zabezpečených aplikací rozhraní .NET Framework.  
@@ -82,15 +82,15 @@ OData je založené na protokolu HTTP. Hlavička zprávy HTTP může v závislo
 ### <a name="custom-hosting-requirements"></a>Vlastní požadavky na hostování  
  Ve výchozím nastavení služby WCF Data Services se vytvoří jako aplikace ASP.NET hostované ve službě IIS. To datové službě dovoluje těžit z bezpečného chování této platformy. Můžete definovat datové služby WCF, které jsou hostované u vlastního hostitele. Další informace najdete v tématu [hostitelem datové služby](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md). Součásti a platforma hostující datovou službu musí jako prevenci proti útokům na datovou službu zajistit následující bezpečnostní chování:  
   
--   Omezení délky identifikátoru URI přijímaného v požadavku na datovou službu pro všechny možné operace.  
+- Omezení délky identifikátoru URI přijímaného v požadavku na datovou službu pro všechny možné operace.  
   
--   Omezení velikosti příchozí a odchozí zprávy HTTP.  
+- Omezení velikosti příchozí a odchozí zprávy HTTP.  
   
--   Omezení celkového počtu nevyřízených požadavků v kterémkoli okamžiku.  
+- Omezení celkového počtu nevyřízených požadavků v kterémkoli okamžiku.  
   
--   Omezení velikosti hlaviček protokolu HTTP a jejich hodnoty a služby WCF Data Services přístup k údajům v hlavičce.  
+- Omezení velikosti hlaviček protokolu HTTP a jejich hodnoty a služby WCF Data Services přístup k údajům v hlavičce.  
   
--   Rozpoznání a odvracení známých útoků, jako jsou útoky TCP SYN a útoky pomocí opakovaného přehrávání zprávy.  
+- Rozpoznání a odvracení známých útoků, jako jsou útoky TCP SYN a útoky pomocí opakovaného přehrávání zprávy.  
   
 ### <a name="values-are-not-further-encoded"></a>Hodnoty se dále nešifrují  
  Hodnoty vlastností odesílané datové službě dále nešifrují modul runtime WCF Data Services. Pokud například řetězcová vlastnost entity obsahuje formátovaný obsah ve formátu HTML, jeho značky nejsou datovou službou zašifrovány do jazyka HTML. Datová služby zároveň dále nešifruje hodnoty vlastností v odezvě. Další šifrování neprovádí ani knihovna klienta.  
@@ -98,17 +98,17 @@ OData je založené na protokolu HTTP. Hlavička zprávy HTTP může v závislo
 ### <a name="considerations-for-client-applications"></a>Důležité informace o klientských aplikacích  
  Pro aplikace, které používají klienta WCF Data Services pro přístup ke službám OData, platí následující aspekty zabezpečení:  
   
--   Knihovna klienta předpokládá, že protokoly použité k přístupu k datové službě poskytují odpovídající úroveň zabezpečení.  
+- Knihovna klienta předpokládá, že protokoly použité k přístupu k datové službě poskytují odpovídající úroveň zabezpečení.  
   
--   Knihovna klienta používá veškeré výchozí hodnoty pro časové limity a možnosti analýzy transportních zásobníků poskytovaných podkladovou platformou.  
+- Knihovna klienta používá veškeré výchozí hodnoty pro časové limity a možnosti analýzy transportních zásobníků poskytovaných podkladovou platformou.  
   
--   Knihovna klienta nenačítá žádná nastavení z konfiguračních souborů aplikace.  
+- Knihovna klienta nenačítá žádná nastavení z konfiguračních souborů aplikace.  
   
--   Knihovna klienta neimplementuje žádné mechanismy přístupu napříč doménami. Místo toho využívá mechanismy poskytované podkladovým zásobníkem HTTP.  
+- Knihovna klienta neimplementuje žádné mechanismy přístupu napříč doménami. Místo toho využívá mechanismy poskytované podkladovým zásobníkem HTTP.  
   
--   Knihovna klienta neobsahuje žádné prvky uživatelského rozhraní a nikdy se nepokouší zobrazit ani vykreslit data, která přijímá nebo odesílá.  
+- Knihovna klienta neobsahuje žádné prvky uživatelského rozhraní a nikdy se nepokouší zobrazit ani vykreslit data, která přijímá nebo odesílá.  
   
--   Doporučujeme, aby klientské aplikace vždy ověřovaly uživatelské vstupy i údaje přijímané z nedůvěryhodných služeb.  
+- Doporučujeme, aby klientské aplikace vždy ověřovaly uživatelské vstupy i údaje přijímané z nedůvěryhodných služeb.  
   
 ## <a name="see-also"></a>Viz také:
 

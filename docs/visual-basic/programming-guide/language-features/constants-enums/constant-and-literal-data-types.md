@@ -10,11 +10,11 @@ helpviewer_keywords:
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
 ms.openlocfilehash: 50e36aa13439bafcca27a7153a8c5d6043f03975
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833500"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906968"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Datové typy konstanty a literálu (Visual Basic)
 Literál je hodnota, která je vyjádřena jako samotný, nikoli jako hodnota proměnné nebo výsledku výrazu, například číslo 3 nebo řetězec "Hello". Konstanta je smysluplný název, který probíhá literály a ponechá tato stejná hodnota v celém programu, na rozdíl od proměnné, jejíž hodnota se může změnit.  

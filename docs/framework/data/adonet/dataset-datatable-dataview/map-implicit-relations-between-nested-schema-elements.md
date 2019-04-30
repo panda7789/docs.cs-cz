@@ -3,24 +3,24 @@ title: Mapování implicitních relací mezi elementy ve vnořeném schématu
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
 ms.openlocfilehash: 076e3ec6e5a00fd294fa3c6d7998cfab3a136240
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879590"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapování implicitních relací mezi elementy ve vnořeném schématu
 Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořené do jiné. V takovém případě proces mapování použije výchozí mapování a vytvoří v následující <xref:System.Data.DataSet>:  
   
--   Jednu tabulku pro každý z komplexních typů (nadřazené a podřízené).  
+- Jednu tabulku pro každý z komplexních typů (nadřazené a podřízené).  
   
--   Pokud neexistuje žádné omezení unique u nadřazené, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulky.  
+- Pokud neexistuje žádné omezení unique u nadřazené, jeden další sloupec primárního klíče na definici tabulky s názvem *TableName*_Id kde *TableName* je název nadřazené tabulky.  
   
--   Omezení primárního klíče na identifikaci další sloupec jako primární klíč nadřazené tabulky (nastavením **isprimarykey hodnotu** vlastnost **True**). Omezení jmenuje omezení\# kde \# je 1, 2, 3 a tak dále. Například výchozí název pro první omezení je Constraint1.  
+- Omezení primárního klíče na identifikaci další sloupec jako primární klíč nadřazené tabulky (nastavením **isprimarykey hodnotu** vlastnost **True**). Omezení jmenuje omezení\# kde \# je 1, 2, 3 a tak dále. Například výchozí název pro první omezení je Constraint1.  
   
--   Omezení cizího klíče v podřízené tabulce, určení dalších sloupců jako cizí klíč odkazující na primární klíč nadřazené tabulky. Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.  
+- Omezení cizího klíče v podřízené tabulce, určení dalších sloupců jako cizí klíč odkazující na primární klíč nadřazené tabulky. Název omezení *ParentTable_ChildTable* kde *ParentTable* je název nadřazené tabulky a *tabulka* je název podřízené tabulky.  
   
--   Datová relace mezi nadřazenými a podřízenými tabulkami.  
+- Datová relace mezi nadřazenými a podřízenými tabulkami.  
   
  Následující příklad ukazuje schématu kde **OrderDetail** je podřízený prvek **pořadí**.  
   
@@ -56,14 +56,14 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
   
  Proces mapování schématu XML vytvoří následující **datovou sadu**:  
   
--   **Pořadí** a **OrderDetail** tabulky.  
+- **Pořadí** a **OrderDetail** tabulky.  
   
     ```  
     Order(OrderNumber, EmpNumber, Order_Id)  
     OrderDetail(OrderNo, ItemNo, Order_Id)  
     ```  
   
--   Omezení unique u **pořadí** tabulky. Všimněte si, že **isprimarykey hodnotu** je nastavena na **True**.  
+- Omezení unique u **pořadí** tabulky. Všimněte si, že **isprimarykey hodnotu** je nastavena na **True**.  
   
     ```  
     ConstraintName: Constraint1  
@@ -73,7 +73,7 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
     IsPrimaryKey: True  
     ```  
   
--   Omezení cizího klíče na **OrderDetail** tabulky.  
+- Omezení cizího klíče na **OrderDetail** tabulky.  
   
     ```  
     ConstraintName: Order_OrderDetail  
@@ -84,7 +84,7 @@ Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořen�
     RelatedColumns: Order_Id   
     ```  
   
--   Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .  
+- Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** pro tento vztah je nastavena na **True** vzhledem k tomu, **pořadí** a **OrderDetail** elementů je vnořeno ve schématu .  
   
     ```  
     ParentTable: Order  

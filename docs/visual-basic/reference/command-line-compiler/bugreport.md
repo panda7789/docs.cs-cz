@@ -7,11 +7,11 @@ helpviewer_keywords:
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
 ms.openlocfilehash: e7b4ebc58b6fe9850b92ef945cb0d715e4369efe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61839563"
 ---
 # <a name="-bugreport"></a>-bugreport
 Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.  
@@ -31,17 +31,17 @@ Vytvoří soubor, který vám pomůže při souboru hlášení o chybě.
 ## <a name="remarks"></a>Poznámky  
  Následující informace se přidají do `file`:  
   
--   Zkopírujte všechny soubory zdrojového kódu dané kompilace.  
+- Zkopírujte všechny soubory zdrojového kódu dané kompilace.  
   
--   Seznam možností kompilátoru použita při kompilaci.  
+- Seznam možností kompilátoru použita při kompilaci.  
   
--   Informace o verzi kompilátoru, modul common language runtime a operačního systému.  
+- Informace o verzi kompilátoru, modul common language runtime a operačního systému.  
   
--   Výstup kompilátoru, pokud existuje.  
+- Výstup kompilátoru, pokud existuje.  
   
--   Popis problému, pro který se zobrazí výzva.  
+- Popis problému, pro který se zobrazí výzva.  
   
--   Popis jak domníváte, že problém je třeba stanovit, pro který se zobrazí výzva.  
+- Popis jak domníváte, že problém je třeba stanovit, pro který se zobrazí výzva.  
   
  Vzhledem k tomu, že kopie všech souborů zdrojového kódu je součástí `file`, možná budete chtít reprodukovat (podezřelý) kód v nejkratší možné program.  
   

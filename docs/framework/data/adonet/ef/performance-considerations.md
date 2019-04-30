@@ -3,11 +3,11 @@ title: Důležité informace o výkonu (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
 ms.openlocfilehash: ec7f3571f60dc7f10816cad90911e50d271a9ce1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879395"
 ---
 # <a name="performance-considerations-entity-framework"></a>Důležité informace o výkonu (Entity Framework)
 Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework a obsahuje některé aspekty, které pomůžou zlepšit výkon aplikací využívajících rozhraní Entity Framework.  
@@ -55,12 +55,12 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
 #### <a name="query-complexity"></a>Složitosti dotazu  
  Dotazy, které vyžadují velký počet spojení v příkazech, které jsou spouštěny na zdroji dat nebo, které vracejí velké množství dat může ovlivnit výkon následujícími způsoby:  
   
--   Dotazy na konceptuální model, které vypadá to, že jednoduchá může vést k provádění na zdroji dat složitější dotazy. Tato situace může nastat, protože rozhraní Entity Framework překládá na ekvivalentní dotazu na zdroji dat dotazu na koncepční model. Při nastavení jedné entity v konceptuálním modelu mapuje na více než jedné tabulky ve zdroji dat nebo když relace mezi entitami se mapuje na tabulku spojení, příkaz dotazu pro dotaz na zdroj dat může vyžadovat jeden nebo více spojení.  
+- Dotazy na konceptuální model, které vypadá to, že jednoduchá může vést k provádění na zdroji dat složitější dotazy. Tato situace může nastat, protože rozhraní Entity Framework překládá na ekvivalentní dotazu na zdroji dat dotazu na koncepční model. Při nastavení jedné entity v konceptuálním modelu mapuje na více než jedné tabulky ve zdroji dat nebo když relace mezi entitami se mapuje na tabulku spojení, příkaz dotazu pro dotaz na zdroj dat může vyžadovat jeden nebo více spojení.  
   
     > [!NOTE]
     >  Použití <xref:System.Data.Objects.ObjectQuery.ToTraceString%2A> metodu <xref:System.Data.Objects.ObjectQuery%601> nebo <xref:System.Data.EntityClient.EntityCommand> třídy zobrazit příkazy, které jsou prováděny nad zdrojem dat pro daný dotaz. Další informace najdete v tématu [jak: Zobrazit příkazy Store](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896348(v=vs.100)).  
   
--   Vnořené dotazy na Entity SQL na serveru může vytvořit spojení a může vrátit velký počet řádků.  
+- Vnořené dotazy na Entity SQL na serveru může vytvořit spojení a může vrátit velký počet řádků.  
   
      Následuje příklad vnořeného dotazu v klauzuli projekce:  
   
@@ -72,7 +72,7 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
   
      Kromě toho takové dotazy způsobit kanálu dotazu ke generování jednoho dotazu s duplicitních objektů ve vnořené dotazy. Z toho důvodu může jeden sloupec duplicitní více než jednou. V některých databázích, včetně SQL serveru to může způsobit tabulku v databázi TempDB rozrůstá velmi velké, což může snížit výkon serveru. Při spouštění dotazů vnořené měli věnovat pozornost.  
   
--   Všechny dotazy, které vracejí velké množství dat může způsobit snížení výkonu, pokud klient provádí operace, které spotřebovávají prostředky způsobem, který je přímo úměrná velikosti sady výsledků dotazu. V takovém případě zvažte omezení množství dat vrácených dotazem. Další informace najdete v tématu [jak: Výsledky stránky pomocí dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100)).  
+- Všechny dotazy, které vracejí velké množství dat může způsobit snížení výkonu, pokud klient provádí operace, které spotřebovávají prostředky způsobem, který je přímo úměrná velikosti sady výsledků dotazu. V takovém případě zvažte omezení množství dat vrácených dotazem. Další informace najdete v tématu [jak: Výsledky stránky pomocí dotazu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100)).  
   
  Všechny příkazy automaticky vygenerovaným rozhraním Entity Framework, může být složitější než podobné příkazy napsané explicitně vývojář databáze. Pokud je nutné explicitní kontrolu nad na příkazy provedené na zdroj dat, vezměte v úvahu definování mapování funkce vracející tabulku nebo uložené procedury.  
   
@@ -114,9 +114,9 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
 ### <a name="distributed-transactions"></a>Distribuované transakce  
  Operace v explicitní transakci, které vyžadují prostředky, které se spravují přes koordinátor distribuovaných transakcí (DTC) bude mnohem dražší než podobné operace, která nevyžaduje službu. Povýšení na DTC proběhnou v následujících situacích:  
   
--   Explicitní transakce pomocí operace databáze systému SQL Server 2000 nebo jiný zdroj dat, která vždy zvýšit úroveň explicitní transakce na DTC.  
+- Explicitní transakce pomocí operace databáze systému SQL Server 2000 nebo jiný zdroj dat, která vždy zvýšit úroveň explicitní transakce na DTC.  
   
--   Explicitní transakce pomocí operace SQL Server 2005 při připojení je spravován [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. K tomu dochází, SQL Server 2005 povýší na DTC pokaždé, když je připojení zavřít a znovu otevřít v rámci jedné transakce, což je výchozí chování [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Tato propagační akce DTC nedojde při použití systému SQL Server 2008. Abyste předešli této propagační akce, při použití systému SQL Server 2005, musíte explicitně otevřít a ukončete připojení v rámci transakce. Další informace najdete v tématu [Správa připojení a transakce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
+- Explicitní transakce pomocí operace SQL Server 2005 při připojení je spravován [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. K tomu dochází, SQL Server 2005 povýší na DTC pokaždé, když je připojení zavřít a znovu otevřít v rámci jedné transakce, což je výchozí chování [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Tato propagační akce DTC nedojde při použití systému SQL Server 2008. Abyste předešli této propagační akce, při použití systému SQL Server 2005, musíte explicitně otevřít a ukončete připojení v rámci transakce. Další informace najdete v tématu [Správa připojení a transakce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
  Explicitní transakce se používá při spuštění jedné nebo více operací uvnitř <xref:System.Transactions> transakce. Další informace najdete v tématu [Správa připojení a transakce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
@@ -147,11 +147,11 @@ Toto téma popisuje charakteristiky výkonu technologie ADO.NET Entity Framework
 ## <a name="performance-data"></a>Údaje o výkonu  
  Některá data o výkonu pro Entity Framework je publikováno v následujících příspěvcích [blog týmu ADO.NET](https://go.microsoft.com/fwlink/?LinkId=91905):  
   
--   [Zkoumání výkonu technologie ADO.NET Entity Framework – část 1](https://go.microsoft.com/fwlink/?LinkId=123907)  
+- [Zkoumání výkonu technologie ADO.NET Entity Framework – část 1](https://go.microsoft.com/fwlink/?LinkId=123907)  
   
--   [Zkoumání výkonu technologie ADO.NET Entity Framework – část 2](https://go.microsoft.com/fwlink/?LinkId=123909)  
+- [Zkoumání výkonu technologie ADO.NET Entity Framework – část 2](https://go.microsoft.com/fwlink/?LinkId=123909)  
   
--   [ADO.NET Entity Framework Performance Comparison](https://go.microsoft.com/fwlink/?LinkID=123913)  
+- [ADO.NET Entity Framework Performance Comparison](https://go.microsoft.com/fwlink/?LinkID=123913)  
   
 ## <a name="see-also"></a>Viz také:
 

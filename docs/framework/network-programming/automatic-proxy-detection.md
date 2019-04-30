@@ -15,11 +15,11 @@ helpviewer_keywords:
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
 ms.openlocfilehash: 656a21a7b8801a2c3b72b25531705576fcf047cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866818"
 ---
 # <a name="automatic-proxy-detection"></a>Automatické rozpoznávání proxy serveru
 Automatické rozpoznávání proxy serveru je proces, podle kterého je identifikován systému a použít má odesílat požadavky jménem klienta webového proxy serveru. Tato funkce je také označován jako Proxy Auto-Discovery WPAD (Web). Pokud je povoleno automatické rozpoznávání proxy serveru, systém se pokusí najít skript konfigurace proxy serveru, který je zodpovědný za vrácení sady proxy servery, které je možné pro daný požadavek. Pokud je nalezen skript konfigurace proxy serveru, skript stáhnout a spustit na místním počítači, když je získat informace o proxy serveru, datový proud požadavku nebo odpovědi pro žádosti, která používá zkompilován <xref:System.Net.WebProxy> instance.  

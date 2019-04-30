@@ -3,11 +3,11 @@ title: Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
 ms.openlocfilehash: 40054378319b81113dcb8f40cb82a8b1d02fc594
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876083"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Podpora klienta SqlClient pro vysokou dostupnost a zotavení po havárii
 Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) pro vysokou dostupnost, zotavení po havárii – skupin dostupnosti AlwaysOn.  Funkce dostupnosti skupin AlwaysOn byl přidán do systému SQL Server 2012. Další informace o skupinách dostupnosti AlwaysOn naleznete v tématu knihy Online SQL Server.  
@@ -21,9 +21,9 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  Následující vlastnosti připojení byly přidány do SqlClient v [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]:  
   
--   `ApplicationIntent`  
+- `ApplicationIntent`  
   
--   `MultiSubnetFailover`  
+- `MultiSubnetFailover`  
   
  Můžete programově upravit tato klíčová slova řetězec připojení s:  
   
@@ -45,17 +45,17 @@ Toto téma popisuje podpora klienta SqlClient (přidá [!INCLUDE[net_v45](../../
   
  Použijte následující pokyny pro připojení k serveru ve skupině dostupnosti nebo Instance clusteru převzetí služeb při selhání systému SQL Server 2012:  
   
--   Použití `MultiSubnetFailover` vlastnost připojení při připojování k podsíti jeden nebo více podsítí; zlepší výkon obou.  
+- Použití `MultiSubnetFailover` vlastnost připojení při připojování k podsíti jeden nebo více podsítí; zlepší výkon obou.  
   
--   Pro připojení ke skupině dostupnosti, zadejte naslouchací proces skupiny dostupnosti skupiny dostupnosti jako server v připojovacím řetězci.  
+- Pro připojení ke skupině dostupnosti, zadejte naslouchací proces skupiny dostupnosti skupiny dostupnosti jako server v připojovacím řetězci.  
   
--   Připojení k serveru SQL Server instance nakonfigurované s více než 64 IP adresami způsobí selhání připojení.  
+- Připojení k serveru SQL Server instance nakonfigurované s více než 64 IP adresami způsobí selhání připojení.  
   
--   Chování aplikace, která se používá `MultiSubnetFailover` připojení vlastnost nemá vliv na základě typu ověřování: Ověřování systému SQL Server, ověřování protokolu Kerberos nebo ověřování Windows.  
+- Chování aplikace, která se používá `MultiSubnetFailover` připojení vlastnost nemá vliv na základě typu ověřování: Ověřování systému SQL Server, ověřování protokolu Kerberos nebo ověřování Windows.  
   
--   Zvyšte hodnotu `Connect Timeout` podle pro převzetí služeb při selhání čas a omezit opakované pokusy o připojení aplikace.  
+- Zvyšte hodnotu `Connect Timeout` podle pro převzetí služeb při selhání čas a omezit opakované pokusy o připojení aplikace.  
   
--   Distribuované transakce nejsou podporovány.  
+- Distribuované transakce nejsou podporovány.  
   
  Pokud směrování jen pro čtení není platná, připojení k umístění sekundární repliky se nezdaří v následujících situacích:  
   

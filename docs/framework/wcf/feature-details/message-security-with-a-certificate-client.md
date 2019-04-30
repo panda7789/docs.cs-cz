@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
 ms.openlocfilehash: 1393879c58609c501da5b2d413073328bee6d05d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59227702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785978"
 ---
 # <a name="message-security-with-a-certificate-client"></a>Zabezpečení zpráv pomocí klientských certifikátů
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů. Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).
@@ -33,9 +33,9 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód ukazuje, jak vytvořit koncový bod služby, který se používá k navázání zabezpečené kontextu zabezpečení zprávy.  
@@ -87,9 +87,9 @@ Následující scénář ukazuje klienta Windows Communication Foundation (WCF) 
 ## <a name="client"></a>Klient  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
   
--   Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  

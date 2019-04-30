@@ -29,11 +29,11 @@ ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7bfc915287e579374c69636135c4b049184ef6ce
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793287"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>Generování a kompilace zdrojového kódu z grafu modelu CodeDOM
 <xref:System.CodeDom.Compiler> Obor názvů poskytuje rozhraní pro generování zdrojového kódu z grafu modelu CodeDOM objekt a pro správu kompilace s podporované kompilátory. Zdrojový kód v konkrétním programovacím jazyce podle grafu CodeDOM může vytvořit poskytovatele kódu. Třída, která je odvozena z <xref:System.CodeDom.Compiler.CodeDomProvider> lze obvykle poskytují metody pro generování a kompilace kódu pro jazyk zprostředkovatel podporuje.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Button controls [WPF], creating
 ms.assetid: 607a193c-4098-4dd8-8dc0-51256cec2020
 ms.openlocfilehash: 5be928ac75ad727feabcde07ac0c6dc76ed130e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59120715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910946"
 ---
 # <a name="how-to-create-a-button-that-has-an-image"></a>Postupy: Vytvoření tlačítka s obrázkem
 Tento příklad ukazuje, jak pro zahrnutí obrázku na <xref:System.Windows.Controls.Button>.  

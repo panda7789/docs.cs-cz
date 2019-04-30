@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], Grid
 ms.assetid: 90e07c2d-237f-47b4-a632-771570b77fd0
 ms.openlocfilehash: a9ef840d98a6c7aa5db841dd0ff860e2fb1d044a
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57377674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911531"
 ---
 # <a name="grid-how-to-topics"></a>Postupy: Témata mřížky
 Témata v této části popisují, jak umístění pomocí elementů <xref:System.Windows.Controls.Grid> elementu.  

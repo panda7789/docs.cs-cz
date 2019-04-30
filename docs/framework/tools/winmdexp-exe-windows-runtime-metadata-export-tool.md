@@ -8,11 +8,11 @@ ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5803ef1d174c3e3a5e8e18b130e6b7a0c65eac81
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59216338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919656"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
 [!INCLUDE[wrt](../../../includes/wrt-md.md)] Metadata Export Tool (Winmdexp.exe) převede modul rozhraní .NET Framework na soubor, který obsahuje [!INCLUDE[wrt](../../../includes/wrt-md.md)] metadat. Přestože sestavení rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)] soubory metadat použít stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že sestavení rozhraní .NET Framework nejsou automaticky použitelná jako [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty . Proces přeměny modulu rozhraní .NET Framework do [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty se označuje jako *export*. V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], výsledný soubor Windows metadata (.winmd) obsahuje metadata i implementaci.  

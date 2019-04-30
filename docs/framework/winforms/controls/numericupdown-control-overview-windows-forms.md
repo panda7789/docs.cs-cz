@@ -9,11 +9,11 @@ helpviewer_keywords:
 - spin button control [Windows Forms], Windows Forms
 ms.assetid: cff3cf30-4d46-4381-87df-37bfe83c71c5
 ms.openlocfilehash: 218eb685e546acac76a18450612a1601ab87276b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59109873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61805752"
 ---
 # <a name="numericupdown-control-overview-windows-forms"></a>NumericUpDown – přehled ovládacího prvku (Windows Forms)
 <xref:System.Windows.Forms.NumericUpDown> Ovládací prvek vypadá jako kombinace textové pole a dvojice šipek, které může uživatel kliknout na Upravit hodnotu. Ovládací prvek zobrazí a nastaví jednu číselnou hodnotu ze seznamu voleb pevné číselné hodnoty. Uživatel může zvýšit a snížit počet kliknutím na tlačítko nahoru a dolů šipkami, stisknutím klávesy se šipkami nahoru a dolů nebo zadáním čísla v části textového pole ovládacího prvku. Kliknutím na klávesu šipka nahoru přesune číslo směrem k maximální; Kliknutím na klávesu šipka dolů přesune číslo směrem k minimální.  

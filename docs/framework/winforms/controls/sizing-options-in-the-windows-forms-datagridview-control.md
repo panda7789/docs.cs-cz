@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data grids [Windows Forms], sizing options
 ms.assetid: a5620a9c-0d06-41e3-8934-c25ddb16c9e6
 ms.openlocfilehash: 2f76bbca3d4b6e642c0eec2129c4a2abee752655
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59197838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903159"
 ---
 # <a name="sizing-options-in-the-windows-forms-datagridview-control"></a>Možnosti změny velikosti v ovládacím prvku Windows Forms DataGridView
 <xref:System.Windows.Forms.DataGridView> řádky, sloupce a záhlaví můžete změnit velikost v důsledku mnoho různých výskytů. V následující tabulce jsou uvedeny těchto událostech.  
@@ -46,13 +46,13 @@ ms.locfileid: "59197838"
 ## <a name="resizing-with-the-mouse"></a>Změna velikosti pomocí myši  
  Ve výchozím nastavení můžou uživatelé měnit velikost řádky, sloupce a záhlaví, které nepoužívají režim automatické velikosti založené na hodnotách v buňkách. Pokud chcete uživatelům zabránit ve změně velikosti pomocí jiné režimy, jako je režim vyplnění sloupce nastavit jeden nebo více z následujících <xref:System.Windows.Forms.DataGridView> vlastnosti:  
   
--   <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A>  
+- <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A>  
+- <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeightSizeMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeightSizeMode%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.RowHeadersWidthSizeMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.RowHeadersWidthSizeMode%2A>  
   
  Můžete také zabránit uživatelům v Změna velikosti jednotlivých řádků nebo sloupců tak, že nastavíte jejich <xref:System.Windows.Forms.DataGridViewBand.Resizable%2A> vlastnosti. Ve výchozím nastavení <xref:System.Windows.Forms.DataGridViewBand.Resizable%2A> podle hodnoty vlastnosti <xref:System.Windows.Forms.DataGridView.AllowUserToResizeColumns%2A> hodnota vlastnosti pro sloupce a <xref:System.Windows.Forms.DataGridView.AllowUserToResizeRows%2A> hodnota vlastnosti pro řádky. Pokud je výslovně nastavit <xref:System.Windows.Forms.DataGridViewBand.Resizable%2A> k <xref:System.Windows.Forms.DataGridViewTriState.True> nebo <xref:System.Windows.Forms.DataGridViewTriState.False>, ale přepsání zadaná hodnota je hodnota ovládacího prvku pro řádek nebo sloupec. Nastavte <xref:System.Windows.Forms.DataGridViewBand.Resizable%2A> k <xref:System.Windows.Forms.DataGridViewTriState.NotSet> obnovit dědičnosti.  
   
@@ -74,13 +74,13 @@ ms.locfileid: "59197838"
   
  Pokud chcete nakonfigurovat režim změny velikosti pro záhlaví řádků a sloupců, které nepřepisují hodnoty ovládacího prvku, nastavte jeden nebo více z následujících <xref:System.Windows.Forms.DataGridView> vlastnosti:  
   
--   <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeightSizeMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeightSizeMode%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.RowHeadersWidthSizeMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.RowHeadersWidthSizeMode%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoSizeRowsMode%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoSizeRowsMode%2A>  
   
  Chcete-li změnit režim velikosti ovládacího prvku sloupec pro jednotlivé sloupce, nastavte jeho <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> vlastnost na hodnotu jinou než <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet>. Režim změny velikosti pro sloupec je ve skutečnosti dáno jeho <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> vlastnost. Hodnota této vlastnosti je založena na sloupce <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> hodnota vlastnosti, pokud je tato hodnota <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet>v takovém případě ovládacího prvku <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A> je zděděná hodnota.  
   
@@ -93,27 +93,27 @@ ms.locfileid: "59197838"
 ## <a name="programmatic-resizing"></a>Programová změna velikosti  
  Pokud je zakázáno automatické velikosti, můžete prostřednictvím kódu programu nastavit přesné šířku nebo výšku řádků, sloupců nebo záhlaví prostřednictvím následující vlastnosti:  
   
--   <xref:System.Windows.Forms.DataGridView.RowHeadersWidth%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.DataGridView.RowHeadersWidth%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeight%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.DataGridView.ColumnHeadersHeight%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.DataGridViewRow.Height%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.DataGridViewRow.Height%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=nameWithType>  
+- <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=nameWithType>  
   
  Můžete také programově změnit velikost řádky, sloupce a záhlaví podle jejich obsahu pomocí následujících metod:  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeColumn%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeColumn%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeColumnHeadersHeight%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeColumnHeadersHeight%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeRow%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeRow%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeRows%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeRows%2A>  
   
--   <xref:System.Windows.Forms.DataGridView.AutoResizeRowHeadersWidth%2A>  
+- <xref:System.Windows.Forms.DataGridView.AutoResizeRowHeadersWidth%2A>  
   
  Tyto metody změní velikost řádků, sloupců, nebo záhlaví jednou, spíše než jejich konfiguraci pro průběžné změny velikosti. Chcete-li zobrazit veškerý obsah buňky bez oříznutí automaticky vypočteny nové velikosti. Když změníte velikost programově sloupce, které obsahují <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> hodnoty vlastností <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill>, ale počítané šířky založené na obsahu umožňují sloupci proporcionálně upravit <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> hodnoty vlastností a šířka sloupců ve skutečnosti pak vypočítá podle těchto nových proporce tak, aby všechny sloupce vyplnění oblasti k dispozici zobrazení ovládacího prvku.  
   

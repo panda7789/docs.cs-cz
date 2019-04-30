@@ -6,13 +6,13 @@ dev_langs:
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
 ms.openlocfilehash: 131d99457427e0818f78076d987f550a99ad7cf0
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929308"
 ---
-# <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>Postupy: hostování služby WCF ve spravované aplikaci
+# <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>Postupy: Hostování služby WCF ve spravované aplikaci
 
 Hostování služby do spravované aplikace, kód služby do spravované aplikace kódu pro vložení, definovat koncový bod pro službu buď imperativně v kódu, deklarativně pomocí konfigurace nebo pomocí výchozí koncové body a pak vytvořte instance <xref:System.ServiceModel.ServiceHost>.
 
@@ -50,7 +50,7 @@ Následující postup ukazuje, jak implementovat v místním prostředí službu
      [!code-vb[CFX_SelfHost4#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/cfx_selfhost4/vb/module1.vb#2)]
 
     > [!NOTE]
-    > Další informace o tom, jak definovat a implementovat rozhraní služby najdete v tématu [postupy: definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md) a [postupy: implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md).
+    > Další informace o tom, jak definovat a implementovat rozhraní služby najdete v tématu [jak: Definování kontraktu služby](../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md) a [jak: Implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md).
 
 5. V horní části `Main` metody vytvoření instance <xref:System.Uri> třída s atributem základní adresu pro službu.
 
@@ -67,7 +67,7 @@ Následující postup ukazuje, jak implementovat v místním prostředí službu
 
 7. Stisknutím klávesy **Ctrl**+**Shift**+**B** k sestavení řešení.
 
-## <a name="test-the-service"></a>Pokud chcete službu otestovat
+## <a name="test-the-service"></a>Testování služby
 
 1. Stisknutím klávesy **Ctrl**+**F5** ke spuštění služby.
 

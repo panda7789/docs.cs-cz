@@ -5,11 +5,11 @@ dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
 ms.openlocfilehash: 1527e3b4b614d4e700ae0c2c0fc555e14c7bc8d2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876730"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Návod: Použití jen uložených procedur (Visual Basic)
 Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] scénář pro přístup k datům pomocí uložených procedur komponentami TableAdapter pouze. Tento přístup se často používá ve správci databází a omezit způsob přístupu k úložišti dat.  
@@ -28,13 +28,13 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="prerequisites"></a>Požadavky  
  Tento postup vyžaduje následující:  
   
--   Tento návod používá vyhrazené složky ("c:\linqtest3") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
+- Tento návod používá vyhrazené složky ("c:\linqtest3") pro uložení souborů. Vytvoření této složky, před zahájením návodu.  
   
--   Ukázkovou databázi Northwind  
+- Ukázkovou databázi Northwind  
   
      Pokud tuto databázi na vašem vývojovém počítači nemáte, můžete si ho stáhnout z webu Microsoft download. Pokyny najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Po stažení databáze, zkopírujte do složky c:\linqtest3 northwnd.mdf souboru.  
   
--   Soubor kódu jazyka Visual Basic generují z databáze Northwind.  
+- Soubor kódu jazyka Visual Basic generují z databáze Northwind.  
   
      Tento návod byl napsán s použitím nástroje SqlMetal s následujícím příkazovým řádkem:  
   
@@ -45,17 +45,17 @@ Tento názorný postup obsahuje základní začátku do konce [!INCLUDE[vbtecdli
 ## <a name="overview"></a>Přehled  
  Tento názorný postup se skládá z šesti hlavních úloh:  
   
--   Nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
+- Nastavení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] řešení v sadě Visual Studio.  
   
--   Přidání System.Data.Linq sestavení do projektu.  
+- Přidání System.Data.Linq sestavení do projektu.  
   
--   Přidání kódu databázový soubor do projektu.  
+- Přidání kódu databázový soubor do projektu.  
   
--   Vytvoření připojení k databázi.  
+- Vytvoření připojení k databázi.  
   
--   Nastavení uživatelského rozhraní.  
+- Nastavení uživatelského rozhraní.  
   
--   Spuštění a testování aplikace.  
+- Spuštění a testování aplikace.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Vytvoření LINQ to SQL řešení  
  V této první úloze vytvoříte řešení sady Visual Studio, který obsahuje potřebné odkazy na sestavení a spuštění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - styles [WPF], Frame
 ms.assetid: a01c32e2-c951-46a0-a82f-2614ca241f0b
 ms.openlocfilehash: 6b084cfa31efebe2456871a99cd810741aa26609
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59131015"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912205"
 ---
 # <a name="frame-styles-and-templates"></a>Styly a šablony rámců
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Frame> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  

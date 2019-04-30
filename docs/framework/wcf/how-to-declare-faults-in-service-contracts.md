@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e8da98e7-d22f-4f60-ac82-3fb0928a353f
 ms.openlocfilehash: 0e173f71201d5f98a04d2ad922469e4ff6666681
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59768589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929282"
 ---
 # <a name="how-to-declare-faults-in-service-contracts"></a>Postupy: Deklarace chyb v kontraktech služeb
 Ve spravovaném kódu jsou výjimky vyvolány, když dojde k chybě podmínek. V aplikacích Windows Communication Foundation (WCF) nicméně kontrakty služeb určit, jaké informace o chybě je vrácena klientům deklarováním chyb SOAP v kontraktu služby. Přehled o vztah mezi výjimek a chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

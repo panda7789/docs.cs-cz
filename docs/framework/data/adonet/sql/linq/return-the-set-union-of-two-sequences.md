@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
 ms.openlocfilehash: 0d0d87e2fe14553d468384dfa2cfde1d3ee0d526
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59210125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876925"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>Vrácení sjednocení množin mezi dvěma sekvencemi
 Použití <xref:System.Linq.Queryable.Union%2A> operátor vrácení sjednocení množin mezi dvěma sekvencemi.  

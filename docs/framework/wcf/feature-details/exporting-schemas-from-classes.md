@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
 ms.openlocfilehash: dcbccbea279796fdaec1227b7575cf39e47f9e4f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856671"
 ---
 # <a name="exporting-schemas-from-classes"></a>Export schémat ze tříd
 Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se používají v datovém modelu smlouvy, použijte <xref:System.Runtime.Serialization.XsdDataContractExporter> třídy. Toto téma popisuje proces pro vytvoření schémat.  
@@ -43,18 +43,18 @@ Ke generování schématu XML definice jazyk (XSD) schémat ze tříd, které se
 ## <a name="export-options"></a>Možnosti exportu  
  Můžete nastavit <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> vlastnost <xref:System.Runtime.Serialization.XsdDataContractExporter> do instance <xref:System.Runtime.Serialization.ExportOptions> třídy ovládat různé aspekty procesu exportu. Konkrétně můžete nastavit následující možnosti:  
   
--   <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. Tato kolekce `Type` představuje známých typů pro exportované typy. (Další informace najdete v tématu [známé typy kontraktů dat.](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).) Tyto známé typy jsou exportovány na každý `Export` volání kromě typů předávaného `Export` metody.  
+- <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. Tato kolekce `Type` představuje známých typů pro exportované typy. (Další informace najdete v tématu [známé typy kontraktů dat.](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).) Tyto známé typy jsou exportovány na každý `Export` volání kromě typů předávaného `Export` metody.  
   
--   <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. <xref:System.Runtime.Serialization.IDataContractSurrogate> Může být poskytnuta prostřednictvím této vlastnosti, které se přizpůsobí procesu exportu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
+- <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. <xref:System.Runtime.Serialization.IDataContractSurrogate> Může být poskytnuta prostřednictvím této vlastnosti, které se přizpůsobí procesu exportu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
   
 ## <a name="helper-methods"></a>Pomocné metody  
  Kromě jeho primární role export schématu `XsdDataContractExporter` poskytuje několik užitečné pomocné metody, které poskytují informace o typech. Zde jsou některé z nich:  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> , která představuje název kořenového elementu a obor názvů, který se použije, pokud tento typ byl serializován jako kořenový objekt.  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> , která představuje název kořenového elementu a obor názvů, který se použije, pokud tento typ byl serializován jako kořenový objekt.  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> , která představuje název typu schématu XSD, který se použije, pokud bylo exportováno tento typ schématu. Pro <xref:System.Xml.Serialization.IXmlSerializable> typy reprezentovaná jako anonymní typy ve schématu, tato metoda vrátí `null`.  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaTypeName%2A> Metoda. Tato metoda přebírá `Type` a vrátí <xref:System.Xml.XmlQualifiedName> , která představuje název typu schématu XSD, který se použije, pokud bylo exportováno tento typ schématu. Pro <xref:System.Xml.Serialization.IXmlSerializable> typy reprezentovaná jako anonymní typy ve schématu, tato metoda vrátí `null`.  
   
--   <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A> Metoda. Tato metoda se dá použít jenom s <xref:System.Xml.Serialization.IXmlSerializable> typy, které jsou reprezentovány jako anonymní typy ve schématu a vrátí `null` pro všechny ostatní typy. Anonymní typy, tato metoda vrátí hodnotu <xref:System.Xml.Schema.XmlSchemaType> , která představuje daný `Type`.  
+- <xref:System.Runtime.Serialization.XsdDataContractExporter.GetSchemaType%2A> Metoda. Tato metoda se dá použít jenom s <xref:System.Xml.Serialization.IXmlSerializable> typy, které jsou reprezentovány jako anonymní typy ve schématu a vrátí `null` pro všechny ostatní typy. Anonymní typy, tato metoda vrátí hodnotu <xref:System.Xml.Schema.XmlSchemaType> , která představuje daný `Type`.  
   
  Možnosti exportu ovlivňují všechny tyto metody.  
   

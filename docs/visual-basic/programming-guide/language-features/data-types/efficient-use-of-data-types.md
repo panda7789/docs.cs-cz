@@ -14,11 +14,11 @@ helpviewer_keywords:
 - ChrW function [Visual Basic], preferred to Chr
 ms.assetid: 28f5e4ba-ec24-4f37-b90a-e8ee822f778a
 ms.openlocfilehash: 0b517bca3a9e296eb891e30df91c1d32eb357432
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907215"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Účinné používání datových typů (Visual Basic)
 Jsou přiřazeny nedeklarované proměnné a proměnné deklarované bez datový typ `Object` datového typu. To usnadňuje psaní programů rychle, ale může to způsobit je ke spuštění pomaleji.  
@@ -26,11 +26,11 @@ Jsou přiřazeny nedeklarované proměnné a proměnné deklarované bez datový
 ## <a name="strong-typing"></a>Silné typování  
  Určení typů dat pro všechny proměnné se označuje jako *silné typování*. Pomocí silných typů má několik výhod:  
   
--   Umožňuje podporu technologie IntelliSense pro proměnných. To umožňuje zobrazit jejich vlastnosti a ostatní členové při psaní v kódu.  
+- Umožňuje podporu technologie IntelliSense pro proměnných. To umožňuje zobrazit jejich vlastnosti a ostatní členové při psaní v kódu.  
   
--   Využívá kontrola typu v kompilátoru. To zachycuje příkazy, které může selhat v době běhu z důvodu chyby jako např. přetečení. Také zachytí volání metod na objekty, které je nepodporují.  
+- Využívá kontrola typu v kompilátoru. To zachycuje příkazy, které může selhat v době běhu z důvodu chyby jako např. přetečení. Také zachytí volání metod na objekty, které je nepodporují.  
   
--   To má za následek rychlejší provádění kódu.  
+- To má za následek rychlejší provádění kódu.  
   
 ## <a name="most-efficient-data-types"></a>Nejúčinnější datové typy  
  Pro proměnné, které obsahují nikdy zlomky jsou účinnější než nonintegral typy celočíselnými datovými typy. V jazyce Visual Basic `Integer` a `UInteger` nejúčinnější číselné typy.  

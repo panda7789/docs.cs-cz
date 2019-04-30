@@ -3,11 +3,11 @@ title: Základní dotazy (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: aec6ef60-f6f4-4548-b3db-cf6c94bb0008
 ms.openlocfilehash: 9f4a0508fddd5140ff2cc8f82f9c613a66b2d7ca
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821391"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61903523"
 ---
 # <a name="basic-queries-linq-to-xml-visual-basic"></a>Základní dotazy (LINQ to XML) (Visual Basic)
 Tato část obsahuje příklady basic [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  

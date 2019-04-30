@@ -11,11 +11,11 @@ ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 27818d5e1779cd6e10e11830f91a20a3e638639a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192558"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933780"
 ---
 # <a name="security-and-user-input"></a>Zabezpečení a uživatelský vstup
 Uživatelská data, která je jakýkoli druh vstupních (datových z webového požadavku nebo adresu URL, vstupní ovládací prvky aplikace Microsoft Windows Forms a tak dále), může nepříznivě ovlivnit kód, protože často tato data se používají přímo jako parametry pro volání jiného kódu. Tato situace je obdobou škodlivý kód volá váš kód s neznámé parametry a stejná opatření by měl být přijata. Uživatelský vstup je ve skutečnosti obtížnější zabezpečit, protože neexistuje žádný rámce zásobníku trasování na přítomnost potenciálně nedůvěryhodná data.  
@@ -24,39 +24,39 @@ Uživatelská data, která je jakýkoli druh vstupních (datových z webového p
   
  Některé důležité informace týkající se uživatelská data zahrnují následující:  
   
--   Žádná data uživatelů v odpovědi na serveru běží v kontextu na server lokality na straně klienta. Pokud váš webový server přijímá data uživatele a vloží jej do vrácené webové stránce, může například obsahovat  **\<skript >** označit a spustit jako by ze serveru.  
+- Žádná data uživatelů v odpovědi na serveru běží v kontextu na server lokality na straně klienta. Pokud váš webový server přijímá data uživatele a vloží jej do vrácené webové stránce, může například obsahovat  **\<skript >** označit a spustit jako by ze serveru.  
   
--   Mějte na paměti, že klient může požádat o libovolnou adresu URL.  
+- Mějte na paměti, že klient může požádat o libovolnou adresu URL.  
   
--   Vezměte v úvahu cesty záludné nebo je neplatný:  
+- Vezměte v úvahu cesty záludné nebo je neplatný:  
   
-    -   .. \, velmi dlouhé cesty.  
+    - .. \, velmi dlouhé cesty.  
   
-    -   Použití zástupných znaků (*).  
+    - Použití zástupných znaků (*).  
   
-    -   Rozšíření token (token %).  
+    - Rozšíření token (token %).  
   
-    -   Neobvyklé formy cesty se zvláštní význam.  
+    - Neobvyklé formy cesty se zvláštní význam.  
   
-    -   Alternativní názvy stream systému souborů, jako například `filename::$DATA`.  
+    - Alternativní názvy stream systému souborů, jako například `filename::$DATA`.  
   
-    -   Krátká verze názvů souborů, jako `longfi~1` pro `longfilename`.  
+    - Krátká verze názvů souborů, jako `longfi~1` pro `longfilename`.  
   
--   Mějte na paměti, že Eval(userdata) může dělat něco.  
+- Mějte na paměti, že Eval(userdata) může dělat něco.  
   
--   Dávejte pozor na název, který obsahuje některá uživatelská data z pozdní vazby.  
+- Dávejte pozor na název, který obsahuje některá uživatelská data z pozdní vazby.  
   
--   Pokud pracujete s daty Web, zvažte možnost různé formy řídící znaky, které jsou přípustné, včetně:  
+- Pokud pracujete s daty Web, zvažte možnost různé formy řídící znaky, které jsou přípustné, včetně:  
   
-    -   Šestnáctková řídicí sekvence (% nn).  
+    - Šestnáctková řídicí sekvence (% nn).  
   
-    -   Řídicí sekvence Unicode (% nnn).  
+    - Řídicí sekvence Unicode (% nnn).  
   
-    -   Příliš dlouhého UTF-8 řídicí sekvence (% nn % nn).  
+    - Příliš dlouhého UTF-8 řídicí sekvence (% nn % nn).  
   
-    -   Dvojité řídicí sekvence (% nn stane mmnn %, kde je % mm řídicí pro '%').  
+    - Dvojité řídicí sekvence (% nn stane mmnn %, kde je % mm řídicí pro '%').  
   
--   Dávejte pozor na uživatelská jména, která může mít více než jeden kanonický formát. Například můžete často použít buď MOJEDOMÉNA\\*uživatelské jméno* formuláře nebo *uživatelské jméno* @mydomain.example.com formuláře.  
+- Dávejte pozor na uživatelská jména, která může mít více než jeden kanonický formát. Například můžete často použít buď MOJEDOMÉNA\\*uživatelské jméno* formuláře nebo *uživatelské jméno* @mydomain.example.com formuláře.  
   
 ## <a name="see-also"></a>Viz také:
 

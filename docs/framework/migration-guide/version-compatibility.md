@@ -13,8 +13,8 @@ ms.openlocfilehash: 9dda2cf99bdd3152e234bec4a143a7ab5ebd4cae
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59977012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870198"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Kompatibilita verzí v rozhraní .NET Framework
 
@@ -51,7 +51,7 @@ V praxi však může být tato kompatibilita porušena zdánlivě bezvýznamným
 
 Pokud vaše aplikace nebo komponenta nefunguje v rozhraní .NET Framework 4.5 (včetně dílčích verzí rozhraní .NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 nebo 4.8) podle očekávání, použijte následující kontrolní seznamy:
 
--  Pokud vaše aplikace byla vyvinuta v jakékoli verzi rozhraní .NET Framework počínaje .NET Framework 4.0 naleznete v tématu [kompatibilita aplikací v rozhraní .NET Framework](application-compatibility.md) pro vygenerování seznamu změn mezi vaší cílovou verzi rozhraní .NET Framework a verze, na kterém je spuštěná aplikace.
+- Pokud vaše aplikace byla vyvinuta v jakékoli verzi rozhraní .NET Framework počínaje .NET Framework 4.0 naleznete v tématu [kompatibilita aplikací v rozhraní .NET Framework](application-compatibility.md) pro vygenerování seznamu změn mezi vaší cílovou verzi rozhraní .NET Framework a verze, na kterém je spuštěná aplikace.
 
 - Pokud budete mít aplikaci .NET Framework 3.5, viz také informace [problémy s migrací rozhraní .NET Framework 4](../migration-guide/net-framework-4-migration-issues.md).
 

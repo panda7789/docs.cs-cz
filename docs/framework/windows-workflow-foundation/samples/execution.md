@@ -3,11 +3,11 @@ title: Spuštění
 ms.date: 03/30/2017
 ms.assetid: a9dcedcc-9f4c-45c2-8222-6bcbf48f3534
 ms.openlocfilehash: fd6ba0bb3a463287cea28e95ad2b893dd8d0c8a9
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57718984"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913780"
 ---
 # <a name="execution"></a>Spuštění
 Tato část obsahuje ukázky, které ukazují provádění pracovních postupů Windows Workflow Foundation (WF).  

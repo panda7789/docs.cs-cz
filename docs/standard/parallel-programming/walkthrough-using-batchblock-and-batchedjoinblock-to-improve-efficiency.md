@@ -12,11 +12,11 @@ ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 79bbf33ff1b1e843836aa1b93188970b6a1c8ede
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302973"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908632"
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Návod: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
 Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> třídy tak, aby se zobrazí a uložit do vyrovnávací paměti dat z jednoho nebo více zdrojů a poté je šířit data ve vyrovnávací paměti jako jednu kolekci. Tento mechanismus dávkování je užitečný při shromažďování dat z jednoho nebo více zdrojů a následném zpracování více datových prvků v dávce. Zvažte například aplikaci, která používá tok dat pro vkládání záznamů do databáze. Tato operace může být efektivnější, pokud je vloženo více položek současně místo postupně sekvenčně. Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> operací vložení třídy ke zvýšení účinnosti takových databáze. Také popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třídy pro zachycení výsledků i všech výjimek, ke kterým dochází, když program čte z databáze.
@@ -34,19 +34,19 @@ Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.Batc
   
  Tento návod obsahuje následující části:  
   
--   [Vytvoření konzolové aplikace](#creating)  
+- [Vytvoření konzolové aplikace](#creating)  
   
--   [Definování třídy zaměstnanců](#employeeClass)  
+- [Definování třídy zaměstnanců](#employeeClass)  
   
--   [Definování operací databáze zaměstnanců](#operations)  
+- [Definování operací databáze zaměstnanců](#operations)  
   
--   [Přidání dat zaměstnance do databáze bez použití ukládání do vyrovnávací paměti](#nonBuffering)  
+- [Přidání dat zaměstnance do databáze bez použití ukládání do vyrovnávací paměti](#nonBuffering)  
   
--   [Použití ukládání do vyrovnávací paměti k přidání dat zaměstnance do databáze](#buffering)  
+- [Použití ukládání do vyrovnávací paměti k přidání dat zaměstnance do databáze](#buffering)  
   
--   [Použití spojení ve vyrovnávací paměti pro čtení dat zaměstnanců z databáze](#bufferedJoin)  
+- [Použití spojení ve vyrovnávací paměti pro čtení dat zaměstnanců z databáze](#bufferedJoin)  
   
--   [Kompletní příklad](#complete)  
+- [Kompletní příklad](#complete)  
   
 <a name="creating"></a>   
 ## <a name="creating-the-console-application"></a>Vytvoření konzolové aplikace  

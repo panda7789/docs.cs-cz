@@ -10,11 +10,11 @@ helpviewer_keywords:
 - brushes [WPF], painting with a video
 ms.assetid: 04dd6600-4a6e-4b43-a93e-21cce7dfbcb8
 ms.openlocfilehash: be09d1310847cd7214ea795a704c25d994f07b7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59151174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921729"
 ---
 # <a name="how-to-paint-an-area-with-a-video"></a>Postupy: Vykreslení oblasti videem
 Tento příklad ukazuje způsob vykreslení oblasti s médii. Vykreslení oblasti media jedním ze způsobů je použít <xref:System.Windows.Controls.MediaElement> spolu s <xref:System.Windows.Media.VisualBrush>. Použít <xref:System.Windows.Controls.MediaElement> načíst přehrání média a použít ji k nastavení <xref:System.Windows.Media.VisualBrush.Visual%2A> vlastnost <xref:System.Windows.Media.VisualBrush>. Pak můžete použít <xref:System.Windows.Media.VisualBrush> k vykreslení oblasti vložená média.  

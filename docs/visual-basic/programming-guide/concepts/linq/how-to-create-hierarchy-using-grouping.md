@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření hierarchie pomocí seskupení (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 4eb3ca6b-1aed-43de-b8b9-41c769c993f8
 ms.openlocfilehash: dea189d9d689cfba661fd84cb52f8e6658935a30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58822892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855410"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>Postupy: Vytvoření hierarchie pomocí seskupení (Visual Basic)
 Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.  

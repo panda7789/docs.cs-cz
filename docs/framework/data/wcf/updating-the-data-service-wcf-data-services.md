@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
 ms.openlocfilehash: 42980aa4691d8ecb9868336ecb270c9ad937b5a3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876106"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, knihovně přeloží položek v informačním kanálu do instancí tříd klientské datové služby. Tyto datové služby třídy jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext> ke kterému <xref:System.Data.Services.Client.DataServiceQuery%601> patří. Klient sleduje změny entity, které sestavy pomocí metod na <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožnění spolupráce klienta služby pro sledování přidané a odstraněné entit a také změny, které provedete na hodnoty vlastnosti nebo vztahy mezi instancí entit. Tyto sledované změny odesílají zpět do datové služby jako operace založené na protokolu REST při volání <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> metody.  
@@ -54,13 +54,13 @@ Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klien
   
  Při připojování objekty, platí následující aspekty:  
   
--   Objekt je připojena v <xref:System.Data.Services.Client.EntityStates.Unchanged> stavu.  
+- Objekt je připojena v <xref:System.Data.Services.Client.EntityStates.Unchanged> stavu.  
   
--   Když je připojen objektu, není připojen také objekty, které se vztahují k připojeného objektu.  
+- Když je připojen objektu, není připojen také objekty, které se vztahují k připojeného objektu.  
   
--   Objekt nelze připojit, pokud entita již sledován správou kontextu.  
+- Objekt nelze připojit, pokud entita již sledován správou kontextu.  
   
--   <xref:System.Data.Services.Client.DataServiceContext.AttachTo%28System.String%2CSystem.Object%2CSystem.String%29> Přetížení metody, která přebírá `etag` parametr se používá při připojení, který uživateli přišel spolu s hodnotou eTag objektu entity. Tato hodnota eTag, pak se k Kontrola souběžnosti při uložení změn do připojeného objektu.  
+- <xref:System.Data.Services.Client.DataServiceContext.AttachTo%28System.String%2CSystem.Object%2CSystem.String%29> Přetížení metody, která přebírá `etag` parametr se používá při připojení, který uživateli přišel spolu s hodnotou eTag objektu entity. Tato hodnota eTag, pak se k Kontrola souběžnosti při uložení změn do připojeného objektu.  
   
  Další informace najdete v tématu [jak: Přiřazení existující Entity k prvku DataServiceContext](../../../../docs/framework/data/wcf/attach-an-existing-entity-to-dc-wcf-data.md).  
   

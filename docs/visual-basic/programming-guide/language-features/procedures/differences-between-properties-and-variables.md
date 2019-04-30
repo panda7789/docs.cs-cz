@@ -15,11 +15,11 @@ helpviewer_keywords:
 - properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
 ms.openlocfilehash: de4800e23519c2cc1c8b2b219287b9fa018b9bbf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842899"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864571"
 ---
 # <a name="differences-between-properties-and-variables-in-visual-basic"></a>Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic
 Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nicméně existují rozdíly v úložišti a implementaci.  
@@ -38,7 +38,7 @@ Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nic
 |Deklarace|Příkaz jediné deklaraci|Řadu příkazů v bloku kódu|  
 |Implementace|Jedno umístění úložiště|Spustitelný kód (procedury vlastnosti)|  
 |Úložiště|Přímo přidružené k hodnotě proměnné|Obvykle má interní úložiště není k dispozici mimo vlastnosti obsahující třídu nebo modul<br /><br /> Hodnota vlastnosti může nebo nemusí existovat jako prvek uložené <sup>1</sup>|  
-|Spustitelný kód|Žádné|Musí mít alespoň jeden postup|  
+|Spustitelný kód|Žádný|Musí mít alespoň jeden postup|  
 |Oprávnění ke čtení a zápis|Čtení a zápis nebo jen pro čtení|Čtení a zápis, jen pro čtení nebo jen pro zápis|  
 |Vlastní akce (navíc k přijetí nebo vrácení hodnoty)|Není možná.|Můžete provést v rámci nastavení nebo načtení hodnoty vlastnosti|  
   

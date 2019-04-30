@@ -12,11 +12,11 @@ ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eac5f9f6c8b47a6f14898eac2505ecc890015010
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188117"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870042"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -101,13 +101,13 @@ var cts = new CancellationTokenSource();
 
  Tento přístup k zrušení má několik výhod:
 
--   Můžete předat stejný token zrušení do libovolného počtu synchronní a asynchronní operace.
+- Můžete předat stejný token zrušení do libovolného počtu synchronní a asynchronní operace.
 
--   Stejný požadavek na zrušení může proliferated do libovolného počtu naslouchacích procesů.
+- Stejný požadavek na zrušení může proliferated do libovolného počtu naslouchacích procesů.
 
--   Vývojář asynchronní rozhraní API je plně pod kontrolou, jestli může být požadováno zrušení a kdy ji může platit.
+- Vývojář asynchronní rozhraní API je plně pod kontrolou, jestli může být požadováno zrušení a kdy ji může platit.
 
--   Kód, který využívá rozhraní API může určit selektivně asynchronní vyvolání, které požadavky zrušení se rozšíří do.
+- Kód, který využívá rozhraní API může určit selektivně asynchronní vyvolání, které požadavky zrušení se rozšíří do.
 
 ## <a name="monitoring-progress"></a>Sledování průběhu
  Některé asynchronní metody vystavit průběh prostřednictvím rozhraní postupu předané do asynchronní metody.  Představte si třeba, že funkce, která asynchronně stáhne řetězec textu a na cestě vyvolává průběh aktualizace, které zahrnují procentuální stažení, které doposud dokončeno.  Tato metoda může spotřebovat v aplikaci Windows Presentation Foundation (WPF) následujícím způsobem:
@@ -247,13 +247,13 @@ catch(Exception exc)
 ### <a name="taskwhenany"></a>Task.WhenAny
  Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metody asynchronně čekat pouze jedna z více asynchronních operací reprezentovaná jako úkoly k dokončení.  Tato metoda má čtyři hlavní případy použití:
 
--   Redundance: Provádění operace více než jednou a vyberte ten, který dokončí první (například kontaktování více akcií webové služby, které vytvoří jeden výsledek a vybere, která se dokončí nejrychlejší z nich).
+- Redundance:  Provedení operace, více než jednou a vyberte ten, který dokončí první (například kontaktování více akcií webové služby, které vytvoří jeden výsledek a vybere, která se dokončí nejrychlejší z nich).
 
--   Prokládání: Spuštění více operací a čeká na všechny z nich k dokončení, ale jejich zpracování po dokončení.
+- Prokládání:  Spuštění více operací a čeká na všechny z nich k dokončení, ale jejich zpracování po dokončení.
 
--   Omezení šířky pásma: Povolení zahájíte ostatní dokončení dalších operací.  Toto je rozšíření interleaving scénáře.
+- Omezení šířky pásma:  Povolení zahájíte ostatní dokončení dalších operací.  Toto je rozšíření interleaving scénáře.
 
--   Časná bailout: například operace reprezentována t1 úlohy mohou být seskupeny do <xref:System.Threading.Tasks.Task.WhenAny%2A> úloha s jinou t2 úloh a může čekat <xref:System.Threading.Tasks.Task.WhenAny%2A> úloh. Úloha t2 by mohly představovat vypršení časového limitu nebo zrušení nebo některé jiné signál, který způsobí, že <xref:System.Threading.Tasks.Task.WhenAny%2A> úlohy dokončení před dokončením t1.
+- Časná bailout:  Například operace reprezentována t1 úlohy mohou být seskupeny do <xref:System.Threading.Tasks.Task.WhenAny%2A> úloha s jinou t2 úloh a může čekat <xref:System.Threading.Tasks.Task.WhenAny%2A> úloh. Úloha t2 by mohly představovat vypršení časového limitu nebo zrušení nebo některé jiné signál, který způsobí, že <xref:System.Threading.Tasks.Task.WhenAny%2A> úlohy dokončení před dokončením t1.
 
 #### <a name="redundancy"></a>Redundance
  Představte si případ, ve které chcete rozhodnutí o tom, jestli si chcete koupit stejných akcií.  Existuje několik doporučení základní webové služby, kterým důvěřujete, ale v závislosti na denní zatížení, každá služba skončit se pomalé v různých časech.  Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metodu pro příjem oznámení po dokončení všechny operace:
@@ -290,7 +290,7 @@ while(recommendations.Count > 0)
 }
 ```
 
- Kromě toho i v případě, že první úloha úspěšně dokončí, následné úlohy může selhat.  V tomto okamžiku máte několik možností pro nakládání s výjimkami: můžete počkat, dokud nebyly dokončeny všechny spuštěné úlohy, v takovém případě můžete použít <xref:System.Threading.Tasks.Task.WhenAll%2A> metodu, nebo můžete rozhodnout, že všechny výjimky jsou důležité a musíte být přihlášeni.  V takovém případě můžete použít pokračování pro příjem oznámení po dokončení asynchronní úlohy:
+ Kromě toho i v případě, že první úloha úspěšně dokončí, následné úlohy může selhat.  V tomto okamžiku máte několik možností pro nakládání s výjimkami:  Můžete počkat, dokud nebyly dokončeny všechny spuštěné úlohy, v takovém případě můžete použít <xref:System.Threading.Tasks.Task.WhenAll%2A> metodu, nebo můžete rozhodnout, že všechny výjimky jsou důležité a musíte být přihlášeni.  V takovém případě můžete použít pokračování pro příjem oznámení po dokončení asynchronní úlohy:
 
 ```csharp
 foreach(Task recommendation in recommendations)

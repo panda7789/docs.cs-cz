@@ -9,11 +9,11 @@ helpviewer_keywords:
 - claims [WCF]
 ms.assetid: a76ce107-aeb3-47d0-bfa9-134c53664e20
 ms.openlocfilehash: 42e6ee682220913f872da337eb41f6c290082988
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137121"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856421"
 ---
 # <a name="finding-claims-in-a-claimset"></a>Hledání deklarací v sadě deklarací
 Zkoumání obsahu <xref:System.IdentityModel.Claims.ClaimSet> pro konkrétní typy deklarací, které je běžné úlohy při použití ověřování na základě deklarací identity. K prozkoumání <xref:System.IdentityModel.Claims.ClaimSet> přítomnosti konkrétních deklarací identit, použijte <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> metody. Tato metoda poskytuje lepší výkon než iterace přímo přes <xref:System.IdentityModel.Claims.ClaimSet>. Následující příklad ukazuje použití těchto. Všimněte si, že `claimType` a `claimRight` může být parametry `null`. Parametry v takovém případě bude odpovídat všechny typy deklarací identity a deklarací identity práva.  

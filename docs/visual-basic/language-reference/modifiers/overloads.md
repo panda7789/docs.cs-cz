@@ -11,11 +11,11 @@ helpviewer_keywords:
 - signature, hiding by
 ms.assetid: 0c6820b8-25b2-4664-bc59-5ca93c99c042
 ms.openlocfilehash: 0d68846938aba809a7a3a6f7d27f185bb90a39cb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819330"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920676"
 ---
 # <a name="overloads-visual-basic"></a>Přetížení (Visual Basic)
 Určuje, že se vlastnost nebo procedura znovu deklaruje jednu nebo více existujících vlastností nebo procedur se stejným názvem.  
@@ -25,41 +25,41 @@ Určuje, že se vlastnost nebo procedura znovu deklaruje jednu nebo více existu
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Overloads` pouze v příkazu deklarace vlastnost nebo procedura.  
+- **Místní deklarace.** Můžete použít `Overloads` pouze v příkazu deklarace vlastnost nebo procedura.  
   
--   **Kombinované modifikátory.** Nelze zadat `Overloads` spolu s [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) ve stejné deklaraci procedury.  
+- **Kombinované modifikátory.** Nelze zadat `Overloads` spolu s [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) ve stejné deklaraci procedury.  
   
--   **Požadované rozdíly.** *Podpis* v této deklaraci musí být odlišný od podpis každou vlastnost nebo proceduru, která ji přetíží. Podpis se skládá z názvu vlastnost nebo procedura spolu s následující:  
+- **Požadované rozdíly.** *Podpis* v této deklaraci musí být odlišný od podpis každou vlastnost nebo proceduru, která ji přetíží. Podpis se skládá z názvu vlastnost nebo procedura spolu s následující:  
   
-    -   počet parametrů  
+    - počet parametrů  
   
-    -   pořadí parametrů  
+    - pořadí parametrů  
   
-    -   datové typy parametrů  
+    - datové typy parametrů  
   
-    -   počet parametrů typu (pro obecný postup)  
+    - počet parametrů typu (pro obecný postup)  
   
-    -   Návratový typ (pouze pro procedury operátoru převodu)  
+    - Návratový typ (pouze pro procedury operátoru převodu)  
   
      Všechna přetížení musí mít stejný název, ale každý se musí lišit od všech ostatních počítačů v jedné nebo více předchozích ohledech. To umožňuje kompilátoru k rozlišení, které verze se má použít, když kód volá vlastnost nebo procedura.  
   
--   **Nepovolené rozdíly.** Změna jeden nebo více z následujících akcí není platná pro přetížení se vlastnost nebo procedura, protože nejsou součástí podpisu:  
+- **Nepovolené rozdíly.** Změna jeden nebo více z následujících akcí není platná pro přetížení se vlastnost nebo procedura, protože nejsou součástí podpisu:  
   
-    -   Určuje, jestli vrací hodnotu (postup)  
+    - Určuje, jestli vrací hodnotu (postup)  
   
-    -   Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
+    - Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
   
-    -   názvy parametrů nebo parametry typu  
+    - názvy parametrů nebo parametry typu  
   
-    -   omezení parametrů typů (pro obecný postup)  
+    - omezení parametrů typů (pro obecný postup)  
   
-    -   klíčová slova modifikátor parametrů (jako například `ByRef` nebo `Optional`)  
+    - klíčová slova modifikátor parametrů (jako například `ByRef` nebo `Optional`)  
   
-    -   Vlastnost nebo procedura modifikátor klíčová slova (jako například `Public` nebo `Shared`)  
+    - Vlastnost nebo procedura modifikátor klíčová slova (jako například `Public` nebo `Shared`)  
   
--   **Volitelný modifikátor.** Není nutné používat `Overloads` modifikátor při definování více přetížených vlastností nebo procedur ve stejné třídě. Nicméně pokud používáte `Overloads` v jednom z deklarací, je nutné je použít pro všechny z nich.  
+- **Volitelný modifikátor.** Není nutné používat `Overloads` modifikátor při definování více přetížených vlastností nebo procedur ve stejné třídě. Nicméně pokud používáte `Overloads` v jednom z deklarací, je nutné je použít pro všechny z nich.  
   
--   **Stínový provoz a přetížení.** `Overloads` Můžete také použít stínové existujícího člena nebo sadu přetížených členů v základní třídě. Při použití `Overloads` tímto způsobem můžete deklarovat vlastnosti nebo metody se stejným názvem a seznamu parametrů jako člena základní třídy a nezadáte `Shadows` – klíčové slovo.  
+- **Stínový provoz a přetížení.** `Overloads` Můžete také použít stínové existujícího člena nebo sadu přetížených členů v základní třídě. Při použití `Overloads` tímto způsobem můžete deklarovat vlastnosti nebo metody se stejným názvem a seznamu parametrů jako člena základní třídy a nezadáte `Shadows` – klíčové slovo.  
   
  Pokud používáte `Overrides`, kompilátor implicitně přidá `Overloads` tak, aby vaše knihovna rozhraní API pro práci s C# snadněji.  
   

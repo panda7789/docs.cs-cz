@@ -8,11 +8,11 @@ helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
 ms.openlocfilehash: 366fd9d6aa220bcbec1ee8fb2a04d1b84755800a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855137"
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>Postupy: Přístup ke službám pomocí duplexního kontraktu
 

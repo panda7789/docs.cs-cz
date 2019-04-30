@@ -5,11 +5,11 @@ author: kuhlenh
 ms.author: wiwagn
 ms.date: 10/09/2018
 ms.openlocfilehash: 3c1181f5be717f328ae906c6009fc8a34b904c89
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58465422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923848"
 ---
 # <a name="generic-types-overview"></a>Přehled obecných typů
 

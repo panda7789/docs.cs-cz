@@ -9,11 +9,11 @@ helpviewer_keywords:
 - procedure parameters [Visual Basic], defining
 ms.assetid: 7962808d-407e-4e84-984e-43e9857c53c9
 ms.openlocfilehash: 55925b0f007b1be2f5d46ffc0854601f483b2e2d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61863698"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Postupy: Definování parametru pro proceduru (Visual Basic)
 A *parametr* umožňuje volající kód tak, předejte hodnotu k postupu při jeho volání. Stejným způsobem jako deklaraci proměnné, zadáte její název a datový typ deklarujete každý parametr pro proceduru. Zadáte také mechanismus předávání a určuje, zda se jedná o volitelný parametr.  
@@ -46,11 +46,11 @@ A *parametr* umožňuje volající kód tak, předejte hodnotu k postupu při je
   
      Určení typů dat pro vaše programovací prvky se označuje jako *silné typování*. Pokud nastavíte `Option Strict On`, Visual Basic vynucuje silné typování. To je doporučeno, z následujících důvodů:  
   
-    -   Umožňuje podporu technologie IntelliSense pro proměnné a parametry. To umožňuje zobrazit jejich vlastnosti a ostatní členové průběžně zobrazovanými ve vašem kódu.  
+    - Umožňuje podporu technologie IntelliSense pro proměnné a parametry. To umožňuje zobrazit jejich vlastnosti a ostatní členové průběžně zobrazovanými ve vašem kódu.  
   
-    -   To umožňuje kompilátoru provést kontrolu typu. To pomáhá zachytit příkazy, které může selhat v době běhu z důvodu chyby jako např. přetečení. Také zachytí volání metod na objekty, které je nepodporují.  
+    - To umožňuje kompilátoru provést kontrolu typu. To pomáhá zachytit příkazy, které může selhat v době běhu z důvodu chyby jako např. přetečení. Také zachytí volání metod na objekty, které je nepodporují.  
   
-    -   To má za následek rychlejší provádění kódu. Jedním z důvodů je, že pokud nezadáte datový typ pro programový element, kompilátor jazyka Visual Basic přiřadí ji `Object` typu. Zkompilovaný kód může být nutné převést vpřed a zpět mezi `Object` a ostatními datovými typy, což snižuje výkon.  
+    - To má za následek rychlejší provádění kódu. Jedním z důvodů je, že pokud nezadáte datový typ pro programový element, kompilátor jazyka Visual Basic přiřadí ji `Object` typu. Zkompilovaný kód může být nutné převést vpřed a zpět mezi `Object` a ostatními datovými typy, což snižuje výkon.  
   
 ## <a name="see-also"></a>Viz také:
 

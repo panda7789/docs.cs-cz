@@ -3,11 +3,11 @@ title: Výběr vzorce výměny zpráv
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
 ms.openlocfilehash: 98788fb89fc68dc1220d9bf8d9ad89df5ca69e6e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59157737"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61922842"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Výběr vzorce výměny zpráv
 Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zpráv exchange vzory* (nebo MEPs) jsou požadovány pro kanál, kterou vyvíjíte. Toto téma popisuje dostupné možnosti a tento článek popisuje různé požadavky. Toto je první úkol v seznamu úkolů vývoj kanálu je popsáno v [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -15,15 +15,15 @@ Prvním krokem při psaní vlastních přenosu je rozhodnout, které *zpráv exc
 ## <a name="six-message-exchange-patterns"></a>Šest vzory zpráv Exchange  
  Existují tři MEPs lze vybírat:  
   
--   Datagram (<xref:System.ServiceModel.Channels.IInputChannel> a <xref:System.ServiceModel.Channels.IOutputChannel>)  
+- Datagram (<xref:System.ServiceModel.Channels.IInputChannel> a <xref:System.ServiceModel.Channels.IOutputChannel>)  
   
      Při použití datagram MEP, klient odešle zprávu pomocí *vypal a zapomeň* exchange. A vypal a zapomeň exchange je ten, který vyžaduje out-of-band potvrzení úspěšné dodání. Zpráva může dojít ke ztrátě během přenosu a nikdy nedorazí služby. Pokud se operace odeslání se úspěšně dokončí na straně klienta, není zaručeno, že vzdálený koncový bod přijal zprávu. Datagram je základním stavebním blokem pro zasílání zpráv, jak můžete vytvářet vlastní protokoly, dojde k jeho zvýraznění – včetně protokolů spolehlivé a zabezpečené protokoly. Implementace klienta datagram kanály <xref:System.ServiceModel.Channels.IOutputChannel> implementovat rozhraní a služba datagramu kanály <xref:System.ServiceModel.Channels.IInputChannel> rozhraní.  
   
--   Request-Response (<xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>)  
+- Request-Response (<xref:System.ServiceModel.Channels.IRequestChannel> a <xref:System.ServiceModel.Channels.IReplyChannel>)  
   
      V tomto MEP je odeslána zpráva a přijetí odpovědi. Vzor se skládá z dvojice žádost odpověď. Odpověď na požadavek volání příklady vzdálených volání procedur (RPC) a prohlížeč GET požadavky. Tento model se také označuje jako poloduplexní. V tomto MEP kanály klientů implementovat <xref:System.ServiceModel.Channels.IRequestChannel> a implementují kanály service <xref:System.ServiceModel.Channels.IReplyChannel>.  
   
--   Duplexní (<xref:System.ServiceModel.Channels.IDuplexChannel>)  
+- Duplexní (<xref:System.ServiceModel.Channels.IDuplexChannel>)  
   
      Duplexní MEP umožňuje libovolný počet zpráv pro klientem odesílat a přijímat v libovolném pořadí. Duplexní MEP je jako je telefonní hovor, kde je zpráva každého slova, se kterým se mluví. Vzhledem k tomu, že obě strany můžete odesílat a přijímat v tomto MEP, rozhraní implementované pomocí kanálů klient a služba je <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
@@ -32,17 +32,17 @@ Tři vzory základní zprávy exchange. Shora dolů: datagram, typu žádost odp
   
  Každá z těchto MEPs může také podporovat *relace*. Relace (a provádění <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> typu <xref:System.ServiceModel.Channels.ISession?displayProperty=nameWithType>) koreluje všechny zprávy odeslané a přijaté v kanálu. Model typu žádost odpověď je samostatné relace dvě zprávy, jako jsou korelována žádost a odpověď. Vzor typu žádost odpověď, která podporuje relací naproti tomu znamená, že všechny páry žádostí a odpovědí v tomto kanálu jsou korelována mezi sebou. To vám dává celkem šest MEPs lze vybírat:  
   
--   Datagram  
+- Datagram  
   
--   Žádost odpověď  
+- Žádost odpověď  
   
--   Duplex  
+- Duplex  
   
--   Datagram s relacemi  
+- Datagram s relacemi  
   
--   U relací typu žádost odpověď  
+- U relací typu žádost odpověď  
   
--   Duplexní režim s relacemi  
+- Duplexní režim s relacemi  
   
 > [!NOTE]
 >  Pro přenos UDP pouze MEP, který je podporovaný totiž datagram, UDP je ze své podstaty spustit a zapomenout protokolu.  
@@ -72,25 +72,25 @@ Tři vzory základní zprávy exchange. Shora dolů: datagram, typu žádost odp
 ## <a name="writing-sessionful-channels"></a>Zápis který neobsahuje relace kanály  
  Jako autor kanál s relacemi existuje několik věcí, které váš kanál musíte udělat, abyste relací zadejte. Na straně odesílání kanálu potřebuje:  
   
--   Pro každý nový kanál vytvoří se nová relace a přidružte ji k nové relaci id, které jsou jedinečné řetězce. Nebo získat novou relaci z kanálu relací níže v zásobníku.  
+- Pro každý nový kanál vytvoří se nová relace a přidružte ji k nové relaci id, které jsou jedinečné řetězce. Nebo získat novou relaci z kanálu relací níže v zásobníku.  
   
--   Pro každou zprávu odeslaných pomocí tohoto kanálu Pokud váš kanál vytvořit relace (na rozdíl od získání ho z vrstvy níže), musíte přidružit k relaci zprávy. Pro kanály protokolů je obvykle to tak, že přidáte záhlaví SOAP. Pro přenosové kanály obvykle stačí vytváření nového připojení přenosu nebo přidání informací o relaci protokolu rámce.  
+- Pro každou zprávu odeslaných pomocí tohoto kanálu Pokud váš kanál vytvořit relace (na rozdíl od získání ho z vrstvy níže), musíte přidružit k relaci zprávy. Pro kanály protokolů je obvykle to tak, že přidáte záhlaví SOAP. Pro přenosové kanály obvykle stačí vytváření nového připojení přenosu nebo přidání informací o relaci protokolu rámce.  
   
--   Každá zpráva odeslaná pomocí tohoto kanálu potřebujete poskytovat záruky doručení uvedených výše. Pokud se spoléháte na kanálu níže, abychom vám poskytli relace, bude tento kanál také poskytovat záruky doručení. Pokud zadáváte relaci sami, budete muset implementovat jako součást váš protokol záruk. Obecně platí Pokud vytváříte kanál protokolu, který předpokládá WCF na obou stranách můžete vyžadovat přenosu protokolu TCP nebo kanál spolehlivé zasílání zpráv a Spolehněte se na jednu relaci poskytnout.  
+- Každá zpráva odeslaná pomocí tohoto kanálu potřebujete poskytovat záruky doručení uvedených výše. Pokud se spoléháte na kanálu níže, abychom vám poskytli relace, bude tento kanál také poskytovat záruky doručení. Pokud zadáváte relaci sami, budete muset implementovat jako součást váš protokol záruk. Obecně platí Pokud vytváříte kanál protokolu, který předpokládá WCF na obou stranách můžete vyžadovat přenosu protokolu TCP nebo kanál spolehlivé zasílání zpráv a Spolehněte se na jednu relaci poskytnout.  
   
--   Když <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> je volána na kanál, provedení potřebné práce k ukončení relace pomocí zadaného časového limitu nebo výchozí hodnotu. To může být stejně jednoduché jako volání funkce <xref:System.ServiceModel.ICommunicationObject.Close%2A> na kanálu níže (Pokud jste právě získali relace z něj) nebo odesílání zprávy protokolu SOAP speciální nebo zavření připojení přenosu.  
+- Když <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> je volána na kanál, provedení potřebné práce k ukončení relace pomocí zadaného časového limitu nebo výchozí hodnotu. To může být stejně jednoduché jako volání funkce <xref:System.ServiceModel.ICommunicationObject.Close%2A> na kanálu níže (Pokud jste právě získali relace z něj) nebo odesílání zprávy protokolu SOAP speciální nebo zavření připojení přenosu.  
   
--   Když <xref:System.ServiceModel.ICommunicationObject.Abort%2A> je volána na kanál, ukončení relace náhle bez provádění vstupně-výstupních operací. To může znamenat nicneděláním nebo může zahrnovat přerušení připojení k síti nebo jiný prostředek.  
+- Když <xref:System.ServiceModel.ICommunicationObject.Abort%2A> je volána na kanál, ukončení relace náhle bez provádění vstupně-výstupních operací. To může znamenat nicneděláním nebo může zahrnovat přerušení připojení k síti nebo jiný prostředek.  
   
  Na straně příjmu kanálu potřebuje:  
   
--   Pro příchozí zprávy musí odhalit modul pro naslouchání kanálu, do které patří do relace. Pokud je toto první zprávu v relaci, modul pro naslouchání kanálu musíte vytvořit nový kanál a vrátit ji z volání <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A?displayProperty=nameWithType>. Jinak modul pro naslouchání kanálu musí najít existující kanál, který odpovídá relace a doručit zprávu přes tento kanál.  
+- Pro příchozí zprávy musí odhalit modul pro naslouchání kanálu, do které patří do relace. Pokud je toto první zprávu v relaci, modul pro naslouchání kanálu musíte vytvořit nový kanál a vrátit ji z volání <xref:System.ServiceModel.Channels.IChannelListener%601.AcceptChannel%2A?displayProperty=nameWithType>. Jinak modul pro naslouchání kanálu musí najít existující kanál, který odpovídá relace a doručit zprávu přes tento kanál.  
   
--   Pokud váš kanál, je poskytování relace (spolu s záruky doručení požadované) na straně příjmu může být vyžadováno provést některé akce, jako je změna pořadí zpráv nebo odeslání potvrzení.  
+- Pokud váš kanál, je poskytování relace (spolu s záruky doručení požadované) na straně příjmu může být vyžadováno provést některé akce, jako je změna pořadí zpráv nebo odeslání potvrzení.  
   
--   Když <xref:System.ServiceModel.ICommunicationObject.Close%2A> je volána na kanál, provedení potřebné k ukončení relace zadaný časový limit nebo výchozí hodnotu. To může vést k výjimkám Pokud kanál obdrží zprávu při čekání na časový limit pro uzavření vyprší. Důvodem je skutečnost, že kanál bude ve stavu zavírání obdrží zprávu, takže by výjimku.  
+- Když <xref:System.ServiceModel.ICommunicationObject.Close%2A> je volána na kanál, provedení potřebné k ukončení relace zadaný časový limit nebo výchozí hodnotu. To může vést k výjimkám Pokud kanál obdrží zprávu při čekání na časový limit pro uzavření vyprší. Důvodem je skutečnost, že kanál bude ve stavu zavírání obdrží zprávu, takže by výjimku.  
   
--   Když <xref:System.ServiceModel.ICommunicationObject.Abort%2A> je volána na kanál, ukončení relace náhle bez provádění vstupně-výstupních operací. To znovu, může to znamenat nicneděláním nebo může zahrnovat přerušení připojení k síti nebo jiný prostředek.  
+- Když <xref:System.ServiceModel.ICommunicationObject.Abort%2A> je volána na kanál, ukončení relace náhle bez provádění vstupně-výstupních operací. To znovu, může to znamenat nicneděláním nebo může zahrnovat přerušení připojení k síti nebo jiný prostředek.  
   
 ## <a name="see-also"></a>Viz také:
 

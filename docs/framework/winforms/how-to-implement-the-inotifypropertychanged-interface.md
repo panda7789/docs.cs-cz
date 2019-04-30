@@ -8,11 +8,11 @@ helpviewer_keywords:
 - INotifyPropertyChanged interface [Windows Forms], implementing
 ms.assetid: eac428af-b43b-46ac-80d9-1a5f88658725
 ms.openlocfilehash: cfdfb22fd854a8f630243e0f612761c71cb778d8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59225596"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802034"
 ---
 # <a name="how-to-implement-the-inotifypropertychanged-interface"></a>Postupy: Implementace rozhraní INotifyPropertyChanged
 Následující příklad kódu ukazuje, jak implementovat <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Toto rozhraní implementují pro obchodní objekty, které se používají ve Windows Forms – datová vazba. Po implementaci rozhraní komunikuje vázaného ovládacího prvku změny vlastností na obchodní objekt.  

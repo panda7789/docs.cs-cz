@@ -3,11 +3,11 @@ title: Architektura Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: 1d4c6495-d64a-46d0-896a-3a01fac90aa9
 ms.openlocfilehash: 5d6e1ead9184bfb61eb466389671ca2e74264ae3
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57723736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945922"
 ---
 # <a name="windows-workflow-architecture"></a>Architektura Windows Workflow
 Windows Workflow Foundation (WF) zvýší úroveň abstrakce pro vývoj interaktivní dlouho běžící aplikace. Pracovní jednotky jsou zapouzdřeny jako aktivity. Aktivity spuštění v prostředí, které poskytuje funkce pro řízení toku, zpracování výjimek, šíření chyb, trvalosti dat o stavu, načítání a uvolňování probíhajících pracovních postupů z paměti, sledování a tok transakcí.  
@@ -43,10 +43,10 @@ xmlns="http://schemas.microsoft.com/2009/workflow">
 ## <a name="activity-life-cycle"></a>Životní cyklus aktivity  
  Instance aktivity na začátku <xref:System.Activities.ActivityInstanceState.Executing> stavu. Pokud nedojde k výjimky, zůstane v tomto stavu, dokud všechny podřízené aktivity jsou dokončené, provádění a jakékoli jiné probíhající práce (<xref:System.Activities.Bookmark> objekty, například) je dokončeno, na které bod přechody <xref:System.Activities.ActivityInstanceState.Closed> stavu. Nadřazená instance aktivity požádat o zrušení; podřízené Pokud podřízená je možné zrušit dokončí za <xref:System.Activities.ActivityInstanceState.Canceled> stavu. Pokud během provádění dojde k výjimce, modul runtime umístí aktivitu <xref:System.Activities.ActivityInstanceState.Faulted> stavu a rozšíří výjimku řetězem nadřazené aktivity. Stavy tři dokončení aktivity jsou následující:  
   
--   **Zavřít:** Aktivita dokončil svou práci a byl ukončen.  
+- **Zavřít:** Aktivita dokončil svou práci a byl ukončen.  
   
--   **Zrušeno:** Aktivita má řádně opuštěných svou práci a byl ukončen. Pracovní není explicitně vrácena zpět, když se zadá tento stav.  
+- **Zrušeno:** Aktivita má řádně opuštěných svou práci a byl ukončen. Pracovní není explicitně vrácena zpět, když se zadá tento stav.  
   
--   **Došlo k chybě:** Aktivita došlo k chybě a byl ukončen bez dokončení práce.  
+- **Došlo k chybě:** Aktivita došlo k chybě a byl ukončen bez dokončení práce.  
   
  Aktivity zůstanou v <xref:System.Activities.ActivityInstanceState.Executing> stav, když jsou trvalé nebo byla uvolněna.

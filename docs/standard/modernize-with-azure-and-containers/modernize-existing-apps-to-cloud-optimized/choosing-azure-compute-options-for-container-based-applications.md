@@ -1,17 +1,17 @@
 ---
-title: Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
+title: Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
 description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/04/2018
 ms.openlocfilehash: f251aecfeaf2421a5cecf218577369963bc736fb
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186101"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61811757"
 ---
-# <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
+# <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Volba výpočetních platforem Azure pro aplikace založené na kontejnerech
 
 Protože jste si všimli po přečtení v předchozích částech, Azure je otevřete cloud, který nabízí více možností. Můžete použít nejlépe vyhovovat vašim potřebám, ale se navíc zobrazí otázky o tom, jaký produkt/technologie byste měli použít pro své kontejnerizované aplikace.
 

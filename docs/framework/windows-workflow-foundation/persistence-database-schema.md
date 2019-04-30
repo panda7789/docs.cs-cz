@@ -3,11 +3,11 @@ title: Schéma databáze trvalosti
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
 ms.openlocfilehash: 38df4b3d629840f1b5def2eafa0d074a2b2397a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59767991"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864166"
 ---
 # <a name="persistence-database-schema"></a>Schéma databáze trvalosti
 Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovního postupu SQL.  
@@ -17,7 +17,7 @@ Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovníh
   
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
-|InstanceId|UniqueIdentifier|ID instance pracovního postupu.|  
+|InstanceId|uniqueidentifier|ID instance pracovního postupu.|  
 |PendingTimer|DateTime|Označuje, že pracovní postup je blokována v aktivitě Delay a bude pokračovat po vypršení platnosti časovač. Tato hodnota může být null, pokud pracovní postup není blokován čekání na časovač vypršení platnosti.|  
 |CreationTime|DateTime|Určuje, kdy byla vytvořena pracovní postup.|  
 |LastUpdatedTime|DateTime|Označuje čas posledního pracovního postupu byla trvale uložena do databáze.|  
@@ -28,9 +28,9 @@ Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovníh
 |CurrentMachine|Nvarchar(128)|Označuje, že název počítače má aktuálně pracovního postupu, které Instance načtena do paměti.|  
 |LastMachine|Nvarchar(450)|Označuje poslední počítači, který je načíst instanci pracovního postupu.|  
 |ExecutionStatus|Nvarchar(450)|Označuje aktuální stav provádění pracovního postupu. Možné stavy zahrnout **zpracování**, **nečinný**, **uzavřeno**.|  
-|IsInitialized|Bit|Určuje, zda instance pracovního postupu byla inicializována. Instance pracovního postupu inicializované je instance pracovního postupu, který obsahuje alespoň jednou trvalé.|  
-|IsSuspended|Bit|Určuje, zda instance pracovního postupu bylo pozastaveno.|  
-|IsCompleted|Bit|Určuje, zda Instance pracovního postupu byl dokončen. **Poznámka:**  IIf **InstanceCompletionAction** je nastavena na **DeleteAll**, instance se odeberou ze zobrazení po dokončení.|  
+|IsInitialized|bit|Určuje, zda instance pracovního postupu byla inicializována. Instance pracovního postupu inicializované je instance pracovního postupu, který obsahuje alespoň jednou trvalé.|  
+|IsSuspended|bit|Určuje, zda instance pracovního postupu bylo pozastaveno.|  
+|IsCompleted|bit|Určuje, zda Instance pracovního postupu byl dokončen. **Poznámka:**  IIf **InstanceCompletionAction** je nastavena na **DeleteAll**, instance se odeberou ze zobrazení po dokončení.|  
 |EncodingOption|TinyInt|Popisuje kódování použité k serializaci dat vlastnosti.<br /><br /> -0 – bez kódování<br />-   1 – GzipStream|  
 |ReadWritePrimitiveDataProperties|Varbinary(max)|Obsahuje vlastnosti serializovanou instanci dat, které vám poskytneme zpět do modulu Runtime pracovního postupu při načtení instance.<br /><br /> Každý primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu blob nejsou potřeba žádné speciální sestavení.|  
 |WriteOnlyPrimitiveDataProperties|Varbinary(max)|Obsahuje vlastnosti dat serializovanou instanci, které nejsou k dispozici zpět do modulu runtime pracovního postupu při načtení instance.<br /><br /> Každý primitivní vlastnost je nativní typ CLR, což znamená, že k deserializaci objektu blob nejsou potřeba žádné speciální sestavení.|  
@@ -69,7 +69,7 @@ Toto téma popisuje, veřejné zobrazení podporována Store Instance pracovníh
   
 |Typ sloupce|Typ sloupce|Popis|  
 |-|-|-|  
-|InstanceId|UniqueIdentifier|ID Instance pracovního postupu|  
+|InstanceId|uniqueidentifier|ID Instance pracovního postupu|  
 |EncodingOption|TinyInt|Popisuje kódování použité k serializaci přesunutá binárních vlastností.<br /><br /> -0 – bez kódování<br />-   1 – GZipStream|  
 |PromotionName|Nvarchar(400)|Název přidružený k této instanci podporu. PromotionName je potřeba k přidání kontextu do obecného sloupce v tomto řádku.<br /><br /> Například PromotionName PurchaseOrder může znamenat, že hodnota1 obsahuje náklady na pořadí, hodnota2 obsahuje jméno zákazníka, který objednávku vystavil, obsahuje hodnotu 3 adresu zákazníka a tak dále.|  
 |Hodnota [1-32]|SqlVariant|Hodnota [1-32] obsahuje hodnoty, které mohou být uloženy ve sloupci hodnotu SqlVariant. V rámci jednoho propagační akce nemůže obsahovat více než 32 SqlVariants.|  

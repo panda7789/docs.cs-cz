@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
 ms.openlocfilehash: 8fc8d6d4a63b7a752fb8c26991d904761fdcebdd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923059"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Zabezpečení zpráv vzájemnými certifikáty
 Následující scénář ukazuje služby Windows Communication Foundation (WCF) a klient zabezpečené používají režim zabezpečených zpráv. Klient a služba se ověří pomocí certifikátů.  
@@ -35,9 +35,9 @@ Následující scénář ukazuje služby Windows Communication Foundation (WCF) 
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatné služby pomocí kódu bez konfigurace.  
+- Vytvoření samostatné služby pomocí kódu bez konfigurace.  
   
--   Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
+- Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.  
   
 ### <a name="code"></a>Kód  
  Následující kód vytvoří koncový bod služby, který používá zabezpečení zpráv. Služba vyžaduje, aby certifikát ke svému ověření.  
@@ -93,9 +93,9 @@ Následující scénář ukazuje služby Windows Communication Foundation (WCF) 
 ## <a name="client"></a>Klient  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  
   
--   Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
+- Vytvoření samostatného klienta pomocí kódu (a kód klienta).  
   
--   Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
+- Vytvoření klienta, která nedefinuje žádné adresy koncových bodů. Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace. Příklad:  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  

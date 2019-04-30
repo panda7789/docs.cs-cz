@@ -22,11 +22,11 @@ helpviewer_keywords:
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
 ms.openlocfilehash: ac47b6d7fa4861d18646a23f442caccc4062852f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864491"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
 Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsledek. `And`, `Or`, `AndAlso`, `OrElse`, A `Xor` operátory jsou *binární* protože přijímají dva operandy, zatímco `Not` operátor je *unární* protože trvá jeden operand. Některé z těchto operátorů lze provést také bitové logické operace na integrální hodnoty.  
@@ -72,13 +72,13 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
   
  Předchozí příklad nastaví hodnotu `x` na hodnotu 1. V takovém z následujících důvodů:  
   
--   Hodnoty jsou považovány za binární soubor:  
+- Hodnoty jsou považovány za binární soubor:  
   
      3 v binárním formátu = 011  
   
      5 v binárním formátu = 101  
   
--   `And` Operátor porovnání vícebinární reprezentace jednu binární pozici (verze) v čase. Pokud i službu bits na dané pozici 1, 1 je umístěn na této pozici ve výsledku. Pokud buď bit na hodnotu 0, 0 je umístěn na této pozici ve výsledku. V předchozím příkladu toto funguje takto:  
+- `And` Operátor porovnání vícebinární reprezentace jednu binární pozici (verze) v čase. Pokud i službu bits na dané pozici 1, 1 je umístěn na této pozici ve výsledku. Pokud buď bit na hodnotu 0, 0 je umístěn na této pozici ve výsledku. V předchozím příkladu toto funguje takto:  
   
      011 (3 v binárním formátu)  
   
@@ -86,7 +86,7 @@ Logické operátory porovnávají `Boolean` výrazy a vraťte se `Boolean` výsl
   
      001 (výsledek, v binárním formátu)  
   
--   Výsledkem je považováno za desítkové. Hodnota 001 je binární reprezentace 1, takže `x` = 1.  
+- Výsledkem je považováno za desítkové. Hodnota 001 je binární reprezentace 1, takže `x` = 1.  
   
  Bitový `Or` operace je podobný s tím rozdílem, že 1 je přiřazena k bitu výsledku, pokud jeden nebo oba z porovnání bitů je 1. `Xor` přiřadí k bitu výsledku 1, v případě, že právě jeden z porovnání bity (ne oba) je 1. `Not` přijímá jeden operand obrátí všechny bity, včetně bitu a přiřadí tuto hodnotu na výsledek. To znamená, že pro podepsané kladná čísla `Not` vždy vrátí zápornou hodnotu a záporných čísel `Not` vždy vrátí hodnotu pozitivní nebo nulovou hodnotu.  
   

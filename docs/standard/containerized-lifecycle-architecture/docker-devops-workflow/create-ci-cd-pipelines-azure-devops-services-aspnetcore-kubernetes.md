@@ -1,17 +1,17 @@
 ---
-title: Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
-description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
+title: Kroky ve vývoji DevOps vnější smyčky pro aplikaci Dockeru
+description: Životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.openlocfilehash: 2cd769ce9013a8521c53f36b44ea260ceccd48b7
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56834963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795356"
 ---
-# <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-20-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Vytváření kanálů CI/CD ve službách Azure DevOps pro aplikace .NET Core 2.0 na kontejnerech a nasazením do clusteru Kubernetes
+# <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-20-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>Vytváření kanálů CI/CD ve službě Azure DevOps Services pro aplikaci .NET Core 2.0 v kontejnerech a nasazení do clusteru Kubernetes
 
 Obrázek 5 – 12 se zobrazí scénáře DevOps začátku do konce pokrývající správy kódu a kompilace kódu, sestavení Image Dockeru, nasdílet Image Dockeru do registru Dockeru a nakonec nasazení clusteru Kubernetes v Azure.
 

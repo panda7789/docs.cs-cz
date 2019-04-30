@@ -15,11 +15,11 @@ helpviewer_keywords:
 - DHTML [Windows Forms], embedding in Windows Forms
 ms.assetid: 55353a32-b09e-4479-a521-ff3a5ff9a708
 ms.openlocfilehash: cf1391e88c03095e0851d75ae6d50f8e809d13e9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797186"
 ---
 # <a name="how-to-implement-two-way-communication-between-dhtml-code-and-client-application-code"></a>Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace
 Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku k přidání existujícího dynamického kódu HTML (DHTML) webové aplikace do klientských aplikací Windows Forms. To je užitečné, když jste investovali významné vývoji při vytváření ovládacích prvků na základě DHTML a budete chtít využít výhod bohaté možnosti uživatelského rozhraní Windows Forms aniž byste museli přepsat existující kód.  
@@ -103,7 +103,7 @@ Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku k p�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento kód vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

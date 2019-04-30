@@ -10,11 +10,11 @@ helpviewer_keywords:
 - directories [Visual Studio], processing
 ms.assetid: f1db14c8-a4fd-4d0b-8323-c7cb29d688c2
 ms.openlocfilehash: 0c9c1c787138595f725316a580acda9c5d4d43a9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797846"
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Zpracování jednotek, adresářů a souborů (Visual Basic)
 Visual Basic můžete použít ke zpracování jednotek, složek a souborů s `My.Computer.FileSystem` objektu, který poskytuje lepší výkon a je jednodušší než tradiční metody, jako `FileOpen` a `Write` funkcí (i když jsou stále k dispozici.) Následující části popisují tyto metody podrobně.  
@@ -26,10 +26,10 @@ Visual Basic můžete použít ke zpracování jednotek, složek a souborů s `M
  [Základy vstupně-výstupní operace souboru rozhraní .NET Framework a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)  
  Poskytuje přehled konceptů vstupně-výstupní operace souboru v rozhraní .NET Framework, včetně datových proudů, izolované úložiště, soubor událostí, atributy souboru a přístup k souborům.  
   
- [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
+ [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  Popisuje způsob použití [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] k manipulaci se soubory a složky.  
   
- [Návod: Manipulace se soubory a adresáře v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ [Návod: Práce se soubory a adresáře v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Popisuje způsob použití `My.Computer.FileSystem` objekt pro manipulaci se soubory a složky.  
   
 ## <a name="related-sections"></a>Související oddíly  

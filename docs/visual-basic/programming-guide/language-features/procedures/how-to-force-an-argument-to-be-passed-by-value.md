@@ -15,11 +15,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
 ms.openlocfilehash: 497ae11b858b7d164ba3b5607ff2109254a154de
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842041"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61863620"
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>Postupy: Vynucení argumentu být předána podle hodnoty (Visual Basic)
 Deklarace procedury určuje předávání. Pokud parametr je deklarován [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic se očekává, že odpovídající argument předávání odkazem. To umožňuje postup, chcete-li změnit hodnotu programovací element základní argumentu ve volajícím kódu. Pokud chcete chránit základní prvek proti takové změny, můžete přepsat `ByRef` předávání mechanismus v postupu pro volání uzavření název argumentu do závorek. Tyto závorky jsou kromě závorky uzavírající seznamu argumentů ve volání.  
@@ -28,9 +28,9 @@ Deklarace procedury určuje předávání. Pokud parametr je deklarován [ByRef]
   
 ### <a name="to-force-an-argument-to-be-passed-by-value"></a>K vynucení argumentu být předána podle hodnoty  
   
--   Pokud je deklarován odpovídajícího parametru `ByVal` v postupu, nepotřebujete žádné další kroky. Visual Basic již očekává, že k předání argumentu podle hodnoty.  
+- Pokud je deklarován odpovídajícího parametru `ByVal` v postupu, nepotřebujete žádné další kroky. Visual Basic již očekává, že k předání argumentu podle hodnoty.  
   
--   Pokud je deklarován odpovídajícího parametru `ByRef` v postupu, uzavřete jej do závorek ve volání procedury.  
+- Pokud je deklarován odpovídajícího parametru `ByRef` v postupu, uzavřete jej do závorek ve volání procedury.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad přepisuje `ByRef` deklarace parametru. Při volání funkce, která vynutí `ByVal`, Všimněte si dvě úrovně závorky.  

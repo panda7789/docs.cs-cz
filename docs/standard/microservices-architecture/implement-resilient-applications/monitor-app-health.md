@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
 ms.openlocfilehash: deebcf6771d24be34050dd7fdfb807a681ebce1f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672201"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61818599"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 

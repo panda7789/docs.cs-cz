@@ -3,11 +3,11 @@ title: Protokoly transakcí
 ms.date: 03/30/2017
 ms.assetid: 2820b0ec-2f32-430c-b299-1f0e95e1f2dc
 ms.openlocfilehash: 3f4824ac6098f33b7bde4f29d3e0950783dfd213
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918889"
 ---
 # <a name="transaction-protocols"></a>Protokoly transakcí
 Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Transactions protokoly.  
@@ -45,13 +45,13 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
   
  Obrázek a tabulka ukazuje čtyři třídy zpráv z hlediska zabezpečení:  
   
--   Aktivace zprávy (CreateCoordinationContext a CreateCoordinationContextResponse).  
+- Aktivace zprávy (CreateCoordinationContext a CreateCoordinationContextResponse).  
   
--   Registrační zprávy (registr a RegisterResponse)  
+- Registrační zprávy (registr a RegisterResponse)  
   
--   Protokol zprávy (připravit, vrácení změn, potvrzení, přerušeno a tak dále).  
+- Protokol zprávy (připravit, vrácení změn, potvrzení, přerušeno a tak dále).  
   
--   Zprávy aplikace.  
+- Zprávy aplikace.  
   
  První tři zpráva třídy jsou považovány za správce transakcí zpráv a jejich vazbu konfigurace je popsaná v "Aplikace zpráv Exchange" dále v tomto tématu. Čtvrtý třída zprávy zprávy do aplikací a je popsaný v části "Zpráva příklady" dále v tomto tématu. Tato část popisuje protokol vazby používá pro každou z těchto tříd WCF.  
   
@@ -80,9 +80,9 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
 #### <a name="https-transport-configuration"></a>Konfigurace protokolu HTTPS přenosu  
  Zřízení správce transakcí Identity se používají certifikáty X.509. Je požadováno ověření klient/server a klient/server autorizace je ponechané jako podrobnost implementace:  
   
--   R1111: Certifikáty X.509 zobrazí přenosu musí mít název subjektu, který odpovídá plně kvalifikovaný název domény (FQDN) počítači původce.  
+- R1111: Certifikáty X.509 zobrazí přenosu musí mít název subjektu, který odpovídá plně kvalifikovaný název domény (FQDN) počítači původce.  
   
--   B1112: DNS musí být funkční mezi každý pár odesílatele příjemce v systému pro kontroly název subjektu X.509 proběhla úspěšně.  
+- B1112: DNS musí být funkční mezi každý pár odesílatele příjemce v systému pro kontroly název subjektu X.509 proběhla úspěšně.  
   
 #### <a name="activation-and-registration-binding-configuration"></a>Aktivace a konfigurace vazby registrace  
  WCF vyžaduje požadavek nebo odpověď duplexní vazby s korelací přes protokol HTTPS. (Další informace o korelaci a popisy vzorů exchange zpráv žádost odpověď, najdete v protokolu WS-AtomicTransaction, část 8.)  
@@ -105,9 +105,9 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
   
  Specifikace WS-Atomic Transactions, 8 část popisuje další podrobnosti o korelaci a vzory zpráv exchange.  
   
--   R1222: Po přijetí `CreateCoordinationContext`, musíte vydat koordinátor `SecurityContextToken` s tajným klíčem přidružené `STx`. Tento token se vrátí uvnitř `t:IssuedTokens` záhlaví podle specifikace WS-Trust.  
+- R1222: Po přijetí `CreateCoordinationContext`, musíte vydat koordinátor `SecurityContextToken` s tajným klíčem přidružené `STx`. Tento token se vrátí uvnitř `t:IssuedTokens` záhlaví podle specifikace WS-Trust.  
   
--   R1223: Pokud dojde k aktivaci v rámci existující kontext koordinace `t:IssuedTokens` záhlaví s `SecurityContextToken` spojené s existujícím kontextu toku na `CreateCoordinationContext` zprávy.  
+- R1223: Pokud dojde k aktivaci v rámci existující kontext koordinace `t:IssuedTokens` záhlaví s `SecurityContextToken` spojené s existujícím kontextu toku na `CreateCoordinationContext` zprávy.  
   
  Nový `t:IssuedTokens` záhlaví by měl být vygenerován pro připojení k odchozích dat `wscoor:CreateCoordinationContextResponse` zprávy.  
   
@@ -128,9 +128,9 @@ Windows Communication Foundation (WCF) implementuje WS-koordinaci a WS-Atomic Tr
 ## <a name="application-message-exchange"></a>Aplikace zprávy Exchange  
  Aplikace se můžete používat konkrétní vazbu pro zprávy aplikace do aplikace, tak dlouho, dokud vazbu splňuje následující požadavky na zabezpečení:  
   
--   R2001: Toku aplikace aplikace zprávy `t:IssuedTokens` záhlaví spolu s `CoordinationContext` v záhlaví zprávy.  
+- R2001: Toku aplikace aplikace zprávy `t:IssuedTokens` záhlaví spolu s `CoordinationContext` v záhlaví zprávy.  
   
--   R2002: Integritu a důvěrnost `t:IssuedToken` musí být zadaná.  
+- R2002: Integritu a důvěrnost `t:IssuedToken` musí být zadaná.  
   
  `CoordinationContext` Obsahuje záhlaví `wscoor:Identifier`. Při definici `xsd:AnyURI` umožňuje použít absolutní a relativní identifikátory URI, WCF podporuje pouze `wscoor:Identifiers`, které jsou absolutní URI.  
   

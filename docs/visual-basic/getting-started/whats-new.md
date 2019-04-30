@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
 ms.openlocfilehash: 5b1547f596a0ff1c52a402f90457dced6ef604a0
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611793"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797018"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 

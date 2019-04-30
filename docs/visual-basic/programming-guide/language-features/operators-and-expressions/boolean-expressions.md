@@ -15,11 +15,11 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 ms.assetid: d3d90406-55c8-4404-8143-50fd7f0d0d1a
 ms.openlocfilehash: ce9146791935a488108d110134e9273507b0da6f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864662"
 ---
 # <a name="boolean-expressions-visual-basic"></a>Výrazy logických hodnot (Visual Basic)
 A *logický výraz* je výraz, který se vyhodnotí na hodnotu [datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` nebo `False`. `Boolean` Výrazy lze provést několika způsoby. Nejjednodušší je přímé porovnání hodnoty `Boolean` proměnné `Boolean` literál, jak je znázorněno v následujícím příkladu.  

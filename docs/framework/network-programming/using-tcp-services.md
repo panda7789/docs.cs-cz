@@ -17,11 +17,11 @@ helpviewer_keywords:
 - Internet, TCP
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
 ms.openlocfilehash: d9b3c9975c4d10649bdecd6f63cf362a2b2a2738
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611949"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788125"
 ---
 # <a name="using-tcp-services"></a>Použití služeb TCP
 

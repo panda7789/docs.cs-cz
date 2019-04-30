@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření služby, která přijímá libovolná data – pomo
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
 ms.openlocfilehash: d7da3a5c6dd4f04c4d902dab9c2dff40413ddd20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857322"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Postupy: Vytvoření služby, která přijímá libovolná data – pomocí programovacího modelu WCF REST
 Vývojáři v některých případech musí mít úplnou kontrolu nad jak se data vrácená z operace služby. To je případ, kdy operace služby musí vracet data ve formátu není podporován byWCF. Toto téma popisuje použití programovacího modelu WCF REST k vytvoření služby, která přijímá libovolná data.  
@@ -191,7 +191,7 @@ namespace ReceiveRawData
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Při kompilaci kódu – odkaz System.ServiceModel.dll a System.ServiceModel.Web.dll  
+- Při kompilaci kódu – odkaz System.ServiceModel.dll a System.ServiceModel.Web.dll  
   
 ## <a name="see-also"></a>Viz také:
 

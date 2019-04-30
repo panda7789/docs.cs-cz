@@ -24,11 +24,11 @@ helpviewer_keywords:
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
 ms.openlocfilehash: 5b1f8ccc402f7f5928a33f434664b0f28d108e6d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61828615"
 ---
 # <a name="declared-element-names-visual-basic"></a>Deklarované názvy elementu (Visual Basic)
 Každý element deklarovaný má název, také označovaný jako *identifikátor*, což je tento kód použije na ni odkazuje.  
@@ -36,13 +36,13 @@ Každý element deklarovaný má název, také označovaný jako *identifikátor
 ## <a name="rules"></a>pravidla  
  Název elementu v jazyce Visual Basic musí odpovídat následujícím pravidlům:  
   
--   Musí začínat znakem abecedy nebo podtržítkem (`_`).  
+- Musí začínat znakem abecedy nebo podtržítkem (`_`).  
   
--   Musí obsahovat jenom abecední znaky, desítkové číslice a podtržítka.  
+- Musí obsahovat jenom abecední znaky, desítkové číslice a podtržítka.  
   
--   Pokud začíná podtržítkem musí obsahovat alespoň jeden znak abecedy nebo číslici desítkové soustavy.  
+- Pokud začíná podtržítkem musí obsahovat alespoň jeden znak abecedy nebo číslici desítkové soustavy.  
   
--   Nesmí být větší než 1023 znaků.  
+- Nesmí být větší než 1023 znaků.  
   
  Limit délky 1023 znaků platí také pro celý řetězec plně kvalifikovaný název, jako například `outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`.  
   
@@ -75,9 +75,9 @@ Každý element deklarovaný má název, také označovaný jako *identifikátor
   
  Obecně platí, abyste používali únikové názvy pouze tehdy, když:  
   
--   Váš kód se migroval z předchozí verze jazyka Visual Basic, která není rezervovat – klíčové slovo se používá jako název; nebo  
+- Váš kód se migroval z předchozí verze jazyka Visual Basic, která není rezervovat – klíčové slovo se používá jako název; nebo  
   
--   Pracujete s kódem v jiném jazyce, ve kterém není vyhrazena daným klíčovým slovem.  
+- Pracujete s kódem v jiném jazyce, ve kterém není vyhrazena daným klíčovým slovem.  
   
  V opačném případě byste měli zvážit, pokud jeho název je v konfliktu s klíčovým slovem přejmenování elementu. Integrované vývojové prostředí (IDE) poskytuje snadný způsob, jak to provést. Další informace najdete v tématu [refaktoringu](/visualstudio/vb-ide/refactoring-vb).  
   

@@ -3,11 +3,11 @@ title: Metody System.DateTime
 ms.date: 03/30/2017
 ms.assetid: 4f80700c-e83f-4ab6-af0f-1c9a606e1133
 ms.openlocfilehash: 85af6f252362b811356d68a3ae220df2bb813882
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876769"
 ---
 # <a name="systemdatetime-methods"></a>Metody System.DateTime
 Následující technologie LINQ to SQL podporované metody, operátory a vlastnosti jsou k dispozici pro použití v technologii LINQ dotazy SQL. Pokud metoda, operátor nebo vlastnost není podporována, LINQ to SQL: nelze převést člena pro spuštění systému SQL Server. Můžete použít tyto členy ve vašem kódu, ale musí být vyhodnocují před dotazu je přeložen příkazů jazyka Transact-SQL nebo po výsledky byly načteny z databáze.  

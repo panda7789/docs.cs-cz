@@ -5,11 +5,11 @@ ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9e0ec1ed73148b319217a70cc3be99b486be2f8e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59208290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866847"
 ---
 # <a name="subtypes-element-net-native"></a>\<Subtypes > – Element (.NET Native)
 Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
@@ -49,7 +49,7 @@ Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného ty
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
-|Hodnota|Popis|  
+|Value|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   

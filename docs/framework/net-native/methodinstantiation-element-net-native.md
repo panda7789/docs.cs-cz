@@ -5,11 +5,11 @@ ms.assetid: a3355d78-2a88-4109-8521-830d7cae260a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ae15e6d61267feb0388170ee27dcd939035329b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59121690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61867078"
 ---
 # <a name="methodinstantiation-element-net-native"></a>\<MethodInstantiation > – Element (.NET Native)
 Použije zásady reflexe runtime konstruovanou obecnou metodu.  
@@ -57,7 +57,7 @@ Použije zásady reflexe runtime konstruovanou obecnou metodu.
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*policy_setting*|Toto nastavení platí pro tento typ zásad pro metodu. Možné hodnoty jsou `Auto`, `Excluded`, `Included`, a `Required`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   

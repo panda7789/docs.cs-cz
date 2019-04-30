@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
 ms.openlocfilehash: 72af4b049153ce647cc1ceb2d40c3b17cc7ed988
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61880058"
 ---
 # <a name="finding-rows"></a>Hledání řádků
 Můžete hledat pomocí řádků podle jejich hodnoty klíče řazení <xref:System.Data.DataView.Find%2A> a <xref:System.Data.DataView.FindRows%2A> metody <xref:System.Data.DataView>. Rozlišování velikosti písmen vyhledávání hodnoty v **najít** a **FindRows** metody je určeno **CaseSensitive** vlastnost základního <xref:System.Data.DataTable>. Hledání hodnoty musí odpovídat existující hodnoty klíče řazení v plné výši k vrácení výsledku.  

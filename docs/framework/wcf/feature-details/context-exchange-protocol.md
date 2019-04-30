@@ -3,11 +3,11 @@ title: Protokol kontextové výměny
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
 ms.openlocfilehash: a6bc0ac45282d94a6aea8dbbdb5a7d34163c692e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217000"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857347"
 ---
 # <a name="context-exchange-protocol"></a>Protokol kontextové výměny
 Tato část popisuje protokol kontextové výměny zavedená ve Windows Communication Foundation (WCF) verzi rozhraní .NET Framework verze 3.5. Tento protokol umožňuje kanálu klienta přijímat kontext získáte ho od služby a použít ji k této službě odesílá přes stejnou instanci kanálu klienta také všechny následné požadavky. Implementace protokol kontextové výměny můžete použít jednu z následujících dvou mechanismů rozšíření kontextu mezi serverem a klientem: Soubory cookie protokolu HTTP nebo záhlaví SOAP.  
@@ -21,16 +21,16 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
   
  Následuje seznam výstupních podmínek v tomto režimu:  
   
--   Žádný pokus o resetování kontextu pomocí `SetContext` po otevřené vyvolá kanál <xref:System.InvalidOperationException>.  
+- Žádný pokus o resetování kontextu pomocí `SetContext` po otevřené vyvolá kanál <xref:System.InvalidOperationException>.  
   
--   Žádný pokus o odeslání kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty> v odchozí zprávě vyvolá <xref:System.InvalidOperationException>.  
+- Žádný pokus o odeslání kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty> v odchozí zprávě vyvolá <xref:System.InvalidOperationException>.  
   
--   Pokud je přijata zpráva ze serveru s konkrétní kontext, když kanál již byl inicializován s konkrétní kontext, výsledkem je <xref:System.ServiceModel.ProtocolException>.  
+- Pokud je přijata zpráva ze serveru s konkrétní kontext, když kanál již byl inicializován s konkrétní kontext, výsledkem je <xref:System.ServiceModel.ProtocolException>.  
   
     > [!NOTE]
     >  Je vhodné počáteční kontextu přijetí ze serveru, pouze v případě, že otevření kanálu bez kontextu explicitně nastaven.  
   
--   <xref:System.ServiceModel.Channels.ContextMessageProperty> Na příchozí zpráva má vždy hodnotu null.  
+- <xref:System.ServiceModel.Channels.ContextMessageProperty> Na příchozí zpráva má vždy hodnotu null.  
   
 ## <a name="mode-2-application-context-management"></a>Režim 2: Správa kontextu aplikací  
  Jedná se o režim při <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> je nastavena na `false`. V tomto režimu nespravuje kanálu kontextu kontextu. Je zodpovědností aplikace načíst, spravovat a zavedení kontextu pomocí <xref:System.ServiceModel.Channels.ContextMessageProperty>. Žádný pokus o volání `GetContext` nebo `SetContext` vede <xref:System.InvalidOperationException>.  
@@ -53,7 +53,7 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
   
  Koncové body služby, které vyžadují podporu pro protokol kontextové výměny může být definován v publikované zásady. Dvě nové kontrolní výrazy zásad byly zavedeny představující požadavku pro klienta podporovat protokol kontextové výměny na úrovni protokolu SOAP nebo povolit podporu souborů cookie protokolu HTTP. Generování těchto kontrolních výrazů do zásad služby se řídí hodnotou <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> vlastnost následujícím způsobem:  
   
--   Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>, je vygenerována následující výraz:  
+- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>, je vygenerována následující výraz:  
   
     ```xml  
     <IncludeContext   
@@ -61,7 +61,7 @@ Tato část popisuje protokol kontextové výměny zavedená ve Windows Communic
     protectionLevel="Sign" />  
     ```  
   
--   Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie>, je vygenerována následující výraz:  
+- Pro <xref:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie>, je vygenerována následující výraz:  
   
     ```xml  
     <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  

@@ -3,23 +3,23 @@ title: Trasování aktivit v zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: 68862534-3b2e-4270-b097-8121b12a2c97
 ms.openlocfilehash: c3bd36598fd903dc016959149e563174624d084b
-ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50982838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912649"
 ---
 # <a name="activity-tracing-in-message-security"></a>Trasování aktivit v zabezpečení zpráv
 Toto téma popisuje trasování aktivity pro zpracování zabezpečení, který se tyto tři fáze.  
   
--   Vyjednávání/SCT exchange. To může nastat při přenosu později (prostřednictvím výměny binární data) nebo zpráva vrstvy (prostřednictvím výměny zpráv SOAP).  
+- Vyjednávání/SCT exchange. To může nastat při přenosu později (prostřednictvím výměny binární data) nebo zpráva vrstvy (prostřednictvím výměny zpráv SOAP).  
   
--   Zpráva šifrování a dešifrování, ověřování podpisů a ověřování. Trasování se zobrazí v okolí aktivity, obvykle "procesu akce."  
+- Zpráva šifrování a dešifrování, ověřování podpisů a ověřování. Trasování se zobrazí v okolí aktivity, obvykle "procesu akce."  
   
--   Autorizace a ověření. To může nastat, místně nebo při komunikaci mezi koncovými body.  
+- Autorizace a ověření. To může nastat, místně nebo při komunikaci mezi koncovými body.  
   
 ## <a name="negotiationsct-exchange"></a>Vyjednávání/SCT exchange  
- V systému exchange fáze vyjednávání/SCT jsou vytvořeny dva typy aktivit na straně klienta: "Nastavit až zabezpečenou relaci" a "Zavřít zabezpečenou relaci." "Nastavte zabezpečenou relaci" zahrnuje trasování pro výměny zpráv RVNÍ/RSTR/SCT, sice "Ukončení relace Secure" zahrnuje trasování pro zprávu zrušit.  
+ Ve fázi vyjednávání/SCT exchange na straně klienta vytvoří dva typy aktivit: "Nastavte zabezpečenou relaci" a "Zavřít zabezpečenou relaci." "Nastavte zabezpečenou relaci" zahrnuje trasování pro výměny zpráv RVNÍ/RSTR/SCT, sice "Ukončení relace Secure" zahrnuje trasování pro zprávu zrušit.  
   
  Na serveru se zobrazí každý požadavek/odpověď pro RVNÍ/RSTR/SCT ve svých vlastních aktivit. Pokud `propagateActivity` = `true` na serveru a klienta, se stejným ID aktivity na serveru a společně se zobrazí v "Nastavení zabezpečené relaci" při zobrazit pomocí prohlížeče trasování služeb.  
   
@@ -29,7 +29,7 @@ Toto téma popisuje trasování aktivity pro zpracování zabezpečení, který 
   
 ||Čas, když se stane vyjednávání/SCT exchange|Aktivity|trasování|  
 |-|-------------------------------------------------|----------------|------------|  
-|Zabezpečení přenosu<br /><br /> (PROTOKOL HTTPS, SSL)|Na první byla přijata zpráva.|Trasování jsou emitovány v okolí aktivity.|– Trasování Exchange<br />-Zabezpečený kanál vytvořeno<br />-Sdílení získali tajných kódů.|  
+|Zabezpečení přenosu<br /><br /> (HTTPS, SSL)|Na první byla přijata zpráva.|Trasování jsou emitovány v okolí aktivity.|– Trasování Exchange<br />-Zabezpečený kanál vytvořeno<br />-Sdílení získali tajných kódů.|  
 |Vrstva zabezpečenou zprávu<br /><br /> (WSHTTP)|Na první byla přijata zpráva.|Na straně klienta:<br /><br /> -"Nastavení zabezpečenou relaci" z "Proces Action" první zprávy, pro každý požadavek nebo odpověď pro RVNÍ/RSTR/SCT.<br />-"Zavřít zabezpečenou relaci" Storno výměny "Zavřít Proxy aktivita." Tato aktivita se může stát některé další okolí aktivita, v závislosti na tom, kdy je uzavřena zabezpečenou relaci.<br /><br /> Na serveru:<br /><br /> -"Procesu" aktivit akcí pro každý požadavek/odpověď pro RVNÍ/SCT/zrušit na serveru. Pokud `propagateActivity` = `true`RVNÍ/RSTR/SCT aktivity jsou sloučeny s "Nastavit až relace zabezpečení" a zrušit je sloučen s "Zavřít" aktivitu z klienta.<br /><br /> Existují dvě fáze pro "Nastavit až zabezpečenou relaci":<br /><br /> 1.  Ověřování vyjednávání. Tato položka je nepovinná, pokud klient již má správné přihlašovací údaje. Tato fáze lze provést prostřednictvím zabezpečeného přenosu, nebo výměny zpráv. V takovém případě může dojít, 1 nebo 2 RVNÍ/RSTR výměny. Pro tyto výměny zpracovávají jsou emitovány trasování v nové aktivity požadavek/odpověď navržena jako dříve.<br />2.  Zabezpečte vytvoření relace (SCT), ve kterém jeden RVNÍ/RSTR exchange se tady děje. To má stejné okolí aktivity, jak je popsáno výše.|– Trasování Exchange<br />-Zabezpečený kanál vytvořeno<br />-Sdílení získali tajných kódů.|  
   
 > [!NOTE]

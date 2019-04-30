@@ -10,32 +10,32 @@ helpviewer_keywords:
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
 ms.openlocfilehash: baa7655481c24ebe96b76a0accbff63b6965a021
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59328423"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913910"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
 Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete napsat vlastní služby nastavením dědičnosti a další prvky infrastruktury sami. Když vytvoříte službu prostřednictvím kódu programu, je třeba provést několik kroků, které pro vás by jinak zpracovat šablonu:  
   
--   Třída vaší služby musíte nastavit dědění z <xref:System.ServiceProcess.ServiceBase> třídy.  
+- Třída vaší služby musíte nastavit dědění z <xref:System.ServiceProcess.ServiceBase> třídy.  
   
--   Je nutné vytvořit `Main` metodu pro projekt služby, který definuje spuštění služeb a volání <xref:System.ServiceProcess.ServiceBase.Run%2A> metoda na ně.  
+- Je nutné vytvořit `Main` metodu pro projekt služby, který definuje spuštění služeb a volání <xref:System.ServiceProcess.ServiceBase.Run%2A> metoda na ně.  
   
--   Je nutné přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy a vyplňte jakýkoli kód, který chcete jejich spuštění.  
+- Je nutné přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy a vyplňte jakýkoli kód, který chcete jejich spuštění.  
   
 ### <a name="to-write-a-service-programmatically"></a>Pro zápis služby prostřednictvím kódu programu  
   
 1. Vytvořit prázdný projekt a vytvořte odkaz na nezbytné oborů názvů pomocí následujících kroků:  
   
-    1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** uzel a klikněte na **přidat odkaz**.  
+    1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** uzel a klikněte na **přidat odkaz**.  
   
-    2.  Na **rozhraní .NET Framework** kartu, přejděte k položce **System.dll** a klikněte na tlačítko **vyberte**.  
+    2. Na **rozhraní .NET Framework** kartu, přejděte k položce **System.dll** a klikněte na tlačítko **vyberte**.  
   
-    3.  Přejděte k položce **System.ServiceProcess.dll** a klikněte na tlačítko **vyberte**.  
+    3. Přejděte k položce **System.ServiceProcess.dll** a klikněte na tlačítko **vyberte**.  
   
-    4.  Klikněte na **OK**.  
+    4. Klikněte na **OK**.  
   
 2. Přidejte třídu a nakonfigurovat, aby dědí <xref:System.ServiceProcess.ServiceBase>:  
   

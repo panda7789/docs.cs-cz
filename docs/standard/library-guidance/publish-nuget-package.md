@@ -5,11 +5,11 @@ author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
 ms.openlocfilehash: 036aa99c89790274628c40824be7e230d81850fe
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144066"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909845"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 
@@ -30,7 +30,7 @@ Balíčky NuGet se publikovat a použít z úložišť balíčků. I když NuGet
 
 **✔️ ZVAŽTE** testování balíčků ve vašem vývojovém prostředí pomocí místního kanálu či MyGet. Zkontrolujte balíček funguje potom ji publikovat na NuGet.org.
 
-## <a name="nugetorg-security"></a>Zabezpečení NuGet.org
+## <a name="nugetorg-security"></a>NuGet.org security
 
 Je důležité, že nelze přístup k vašemu účtu NuGet a odeslat škodlivý verzi knihovny. NuGet.org nabízí dvojúrovňového ověřování a e-mailové oznámení, když se publikuje balíček. Tyto funkce povolit po přihlášení na NuGet.org na **nastavení účtu** stránky.
 

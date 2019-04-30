@@ -8,11 +8,11 @@ helpviewer_keywords:
 - date and time picker controls
 ms.assetid: 501af106-e9fc-4efc-b9b3-c9d8dcaf8c5c
 ms.openlocfilehash: 451172b51427e4932470c53737c7bc276920271c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59173589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909165"
 ---
 # <a name="datetimepicker-control-overview-windows-forms"></a>DateTimePicker – přehled ovládacího prvku (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.DateTimePicker> ovládací prvek umožňuje uživateli vybrat jednu položku ze seznamu data nebo časy. Při použití představující datum, zobrazí se ve dvou částech: rozevírací seznam datum v textu a mřížka, která se zobrazí, když kliknete na šipku dolů vedle seznamu. Mřížka vypadá jako <xref:System.Windows.Forms.MonthCalendar> ovládací prvek, který slouží k výběru několika kalendářních datech. Další informace o <xref:System.Windows.Forms.MonthCalendar> řídí, najdete v článku [MonthCalendar – Přehled ovládacího prvku](monthcalendar-control-overview-windows-forms.md).  

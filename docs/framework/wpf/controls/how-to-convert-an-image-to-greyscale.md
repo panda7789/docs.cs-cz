@@ -10,11 +10,11 @@ helpviewer_keywords:
 - grayscale [WPF], converting images to
 ms.assetid: 77935ff0-4500-4307-9710-96999dcf579f
 ms.openlocfilehash: f3b7837c6c25db1aa3bdd11786df90660a75da87
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200282"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910933"
 ---
 # <a name="how-to-convert-an-image-to-greyscale"></a>Postupy: Převedení obrázku na odstíny šedi
 Tento příklad ukazuje postup převedení obrázku na používání ve stupních šedi <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>.  

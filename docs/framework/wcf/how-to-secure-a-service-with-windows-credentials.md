@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF, security
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
 ms.openlocfilehash: 5fb175bdd255af1b506dacb973a778b1f6f515f9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59329346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928944"
 ---
 # <a name="how-to-secure-a-service-with-windows-credentials"></a>Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows
 Toto téma ukazuje, jak povolit zabezpečení přenosu pro službu Windows Communication Foundation (WCF), která se nachází v doméně Windows a je volán klienty ve stejné doméně. Další informace o tomto scénáři najdete v tématu [zabezpečení přenosu pomocí ověřování Windows](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). Ukázková aplikace, najdete v článku [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku.  

@@ -1,44 +1,44 @@
 ---
-title: 110 - CustomTrackingRecordWarning
+title: 110 – CustomTrackingRecordWarning
 ms.date: 03/30/2017
 ms.assetid: 3bc093de-be47-4ed0-983f-05b4246446fc
 ms.openlocfilehash: 230e889c677ee83b2e71b128413b7107ec11dc2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33514492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924134"
 ---
-# <a name="110---customtrackingrecordwarning"></a>110 - CustomTrackingRecordWarning
+# <a name="110---customtrackingrecordwarning"></a>110 – CustomTrackingRecordWarning
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|110|  
-|Klíčová slova|UserEvents, EndToEndMonitoring, řešení potíží, HealthMonitoring, WFTracking|  
+|klíčová slova|UserEvents, EndToEndMonitoring, Troubleshooting, HealthMonitoring, WFTracking|  
 |úroveň|Upozornění|  
 |Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované účastníkem sledování, trasování událostí pro Windows, když aktivita v rámci instance pracovního postupu vysílá CustomTrackingRecord s varováním na úrovni  
+ Tato událost je vyzařovaného účastník sledování ETW, když aktivita v rámci instance pracovního postupu vysílá CustomTrackingRecord s varováním na úrovni  
   
 ## <a name="message"></a>Zpráva  
- TrackRecord = CustomTrackingRecord, ID instance = %1, RecordNumber = %2, EventTime = %3, název = %4, název aktivity ActivityName = %5, ID = %6, ActivityInstanceId = %7, ActivityTypeName = %8, Data = %9, poznámky = % 10, ProfileName = % 11  
+ Záznam sledování = CustomTrackingRecord, ID instance = %1, číslo záznamu = %2, čas události = %3, název = %4, ActivityName = %5, ID aktivity = %6, ActivityInstanceId = %7, ActivityTypeName = %8, Data = %9, poznámky = % 10, název profilu = % 11  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|identifikátor instanceId|xs:GUID|Id instance pracovního postupu|  
-|RecordNumber|xs:Long|Pořadové číslo emitovaného záznamu|  
-|eventTime|xs|Čas v UTC při byl vygenerované události|  
-|Název|xs:String|Název CustomTrackingRecord|  
-|Název aktivity activityName|xs:String|Název aktivity, která vygenerované CustomTrackingRecord|  
-|ID aktivity|xs:String|Id aktivity, která vygenerované CustomTrackingRecord|  
-|ActivityInstanceId|xs:String|Id instance aktivity, která vygenerované CustomTrackingRecord|  
-|ActivityTypeName|xs:String|Název aktivity, která vygenerované CustomTrackingRecord|  
-|Data|xs:String|Data, která byla sledovat pomocí této události.  Hodnoty jsou uloženy v elementu xml ve formátu \<položky >\< název položky = "dataName" type="System.String" > dataValue\</bodu > \< /položky >.  Pokud byl sledován žádná data pak řetězec obsahuje \<položky / >. Velikost události trasování událostí pro Windows je omezena velikost vyrovnávací paměti ETW nebo maximální datová část pro událost trasování událostí pro Windows. Pokud velikost události překročila omezení trasování událostí pro Windows, pak tato událost je rozdělená do odstranit poznámky a nahraďte hodnotu dat s \<položky >...  \< /položky >.  Následující typy jsou uloženy jako jejich hodnoty, jak ho vrátila ToString(); String,Char,BOOL,int,short,Long,uint,ushort,ulong,System.Single,float,Double,System.GUID,System.DateTimeOffset,System.DateTime.  Všechny ostatní typy jsou serializovanou pomocí System.Runtime.Serialization.NetDataContractSerializer.|  
-|Poznámky|xs:String|Poznámky, které byly přidány k této události.  Hodnoty jsou uloženy v elementu xml ve formátu \<položky >\< název položky = "annotationName" type="System.String" > annotationValue\</bodu > \< /položky >.  Pokud nejsou zadány žádné poznámky, pak řetězec obsahuje \<položky / >. Velikost události trasování událostí pro Windows je omezena velikost vyrovnávací paměti ETW nebo maximální datová část pro událost trasování událostí pro Windows. Pokud velikost události překročila omezení trasování událostí pro Windows, pak tato událost je rozdělená do odstranit poznámky a nahraďte hodnoty anotace s \<položky >...  \< /položky >.|  
-|ProfileName|xs:String|Název nebo sledování profil, který způsobil v tomto případě se vygenerované|  
-|HostReference|xs:String|Webové hostované služby v tomto poli jednoznačně identifikuje v hierarchii webové služby.  Jeho formát je definován jako ' virtuální cesta aplikace název webu&#124;virtuální cestu služby&#124;ServiceName' Příklad: ' Default Web Site/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|InstanceId|xs:GUID|Id instance pracovního postupu|  
+|Číslo záznamu|xs:long|Pořadové číslo emitovaný záznamu|  
+|čas události|xs:dateTime|Čas ve standardu UTC, kdy události, protože ho|  
+|Název|xs:string|Název CustomTrackingRecord|  
+|ActivityName|xs:string|Název aktivity, která CustomTrackingRecord, protože ho|  
+|ID aktivity|xs:string|Id aktivity, která CustomTrackingRecord, protože ho|  
+|ActivityInstanceId|xs:string|Id instance aktivity, která CustomTrackingRecord, protože ho|  
+|ActivityTypeName|xs:string|Název aktivity, která CustomTrackingRecord, protože ho|  
+|Data|xs:string|Data, která je sledována s touto událostí.  Hodnoty jsou uloženy v elementu xml ve formátu \<položky >\< název položky = "dataName" type="System.String" > dataValue\</položky > \< /položky >.  Pokud se žádná data sledovat, řetězec obsahuje \<položky / >. Velikost události ETW je omezená velikost vyrovnávací paměti trasování událostí pro Windows nebo max datovou část události trasování událostí pro Windows. Pokud velikost události větší než omezení trasování událostí pro Windows, pak události je rozdělená do odstranit poznámky a že nahradíte hodnotu data s \<položky >...  \< /položky >.  Tyto typy jsou uloženy jako jejich hodnoty vrácené ToString(); String,Char,BOOL,int,short,Long,uint,ushort,ulong,System.Single,float,Double,System.GUID,System.DateTimeOffset,System.DateTime.  Všechny ostatní typy se serializují pomocí System.Runtime.Serialization.NetDataContractSerializer.|  
+|Poznámky|xs:string|Poznámky, které byly přidány k této události.  Hodnoty jsou uloženy v elementu xml ve formátu \<položky >\< název položky = "annotationName" type="System.String" > annotationValue\</položky > \< /položky >.  Pokud nejsou zadány žádné poznámky, pak řetězec obsahuje \<položky / >. Velikost události ETW je omezená velikost vyrovnávací paměti trasování událostí pro Windows nebo max datovou část události trasování událostí pro Windows. Pokud velikost události větší než omezení trasování událostí pro Windows, pak události je rozdělená do odstranit poznámky a nahraďte hodnoty anotace s \<položky >...  \< /položky >.|  
+|ProfileName|xs:string|Název nebo sledování profil, který je v tomto případě probíhá emitovány|  
+|HostReference|xs:string|Hostované webové služby Toto pole jednoznačně identifikuje v hierarchii webové služby.  Jeho formát je definován jako "virtuální cesta aplikace název webu&#124;virtuální cesta služby&#124;ServiceName' Příklad: "Výchozí webový server/CalculatorApplication&#124;/CalculatorService.svc&#124;CalculatorService.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

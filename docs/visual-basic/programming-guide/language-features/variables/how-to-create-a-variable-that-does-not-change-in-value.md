@@ -6,22 +6,22 @@ helpviewer_keywords:
 - variables [Visual Basic], constant value
 ms.assetid: 86b59266-25df-4635-ae15-9b59c411d036
 ms.openlocfilehash: 7180e5141572d219ed02c57103e9d4b80cde536e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342931"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938226"
 ---
 # <a name="how-to-create-a-variable-that-does-not-change-in-value-visual-basic"></a>Postupy: Vytvoření proměnné, která se nezmění na hodnotu (Visual Basic)
 Může zobrazit odporuje pojem proměnné, která se nezmění jeho hodnotu. Ale existují situace, kdy konstanty není možné vydat je a je užitečné mít proměnná s pevnou hodnotu. V takovém případě můžete členské proměnné s definovat [jen pro čtení](../../../../visual-basic/language-reference/modifiers/readonly.md) – klíčové slovo.  
   
  Nelze použít [Const příkaz](../../../../visual-basic/language-reference/statements/const-statement.md) k deklaraci a přiřazení konstantní hodnoty v následujících případech:  
   
--   `Const` Příkaz nepřijímá datový typ, který chcete použít  
+- `Const` Příkaz nepřijímá datový typ, který chcete použít  
   
--   Si nejste jisti hodnotu v době kompilace  
+- Si nejste jisti hodnotu v době kompilace  
   
--   Nejde Vypočítat konstantní hodnotu v době kompilace  
+- Nejde Vypočítat konstantní hodnotu v době kompilace  
   
 ### <a name="to-create-a-variable-that-does-not-change-in-value"></a>K vytvoření proměnné, která se nezmění na hodnotu  
   

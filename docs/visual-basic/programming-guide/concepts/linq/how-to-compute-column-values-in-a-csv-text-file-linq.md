@@ -3,11 +3,11 @@ title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
 ms.openlocfilehash: b226d981dd0cd61789e88ab06e602dd619f3f6c9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855013"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
 Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  

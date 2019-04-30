@@ -11,11 +11,11 @@ helpviewer_keywords:
 - time data types [Visual Basic]
 ms.assetid: 914d0563-b53c-492c-ac62-d833ce805f2f
 ms.openlocfilehash: 44bd867412c30eae9a3092446cfd9674ba5e34a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801592"
 ---
 # <a name="dates-and-times-summary-visual-basic"></a>Souhrn dat a časů (Visual Basic)
 Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  

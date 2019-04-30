@@ -7,20 +7,20 @@ helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
 ms.openlocfilehash: 0dc213c2d25558dc447b49d2b2378f9aa72f80a2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59172806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857412"
 ---
 # <a name="configuring-system-provided-bindings"></a>Konfigurace vazeb poskytovaných systémem
 Vazby zadejte komunikační mechanizmus použít při komunikaci se koncový bod a určují, jak se připojit do koncového bodu. Vazby obsahovat prvky, které definují, jak kanálů Windows Communication Foundation (WCF) jsou rozloženy do vrstev nahoru a zajistit tak funkce požadovanou komunikaci. Vazba obsahuje tři typy prvků:  
   
--   Elementy vazby kanálu protokolu, které určují nastavení zabezpečení, spolehlivost, nastavení toku kontextu nebo uživatelem definované protokolů pro použití s zprávy odeslané do koncového bodu.  
+- Elementy vazby kanálu protokolu, které určují nastavení zabezpečení, spolehlivost, nastavení toku kontextu nebo uživatelem definované protokolů pro použití s zprávy odeslané do koncového bodu.  
   
--   Kanál elementů přenosové vazby, které určují základní přenos protokol se má použít při odesílání zpráv do koncových bodů, například TCP nebo HTTP.  
+- Kanál elementů přenosové vazby, které určují základní přenos protokol se má použít při odesílání zpráv do koncových bodů, například TCP nebo HTTP.  
   
--   Kódování elementy vazby, které určují při přenosu kódování použité pro zprávy odeslané do koncového bodu, například text/XML, binární, zprávy nebo zprávy přenosu optimalizace mechanismus (MTOM).  
+- Kódování elementy vazby, které určují při přenosu kódování použité pro zprávy odeslané do koncového bodu, například text/XML, binární, zprávy nebo zprávy přenosu optimalizace mechanismus (MTOM).  
   
  Toto téma představuje všechny vazby poskytované systémem Windows Communication Foundation (WCF). Pokud žádná z nich nesplňuje přesných požadavcích pro vaši aplikaci, můžete vytvořit vazbu pomocí <xref:System.ServiceModel.Channels.CustomBinding> třídy. Další informace o vytváření vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md).  
   

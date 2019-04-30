@@ -17,11 +17,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3476a338191a4af9cc01b7e44456f1bd20f52a10
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59179007"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796536"
 ---
 # <a name="icorprofilerinfo2-interface"></a>ICorProfilerInfo2 – rozhraní
 Poskytuje metody, které profilery kódu se používají ke komunikaci s common language runtime (CLR), která řídí sledování událostí a informace o žádostech. `ICorProfilerInfo2` Rozhraní je rozšířením [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) rozhraní. To znamená, že poskytuje nové metody, které jsou podporovány v rozhraní .NET Framework verze 2.0 a novějších verzích.  

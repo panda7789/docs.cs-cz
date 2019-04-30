@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30828
 ms.assetid: 7e5cf519-8b64-4ac5-8116-705fe26c846d
 ms.openlocfilehash: 3593f238c72cbcce911c72e42552d6a75188b628
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59310691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935327"
 ---
 # <a name="as-any-is-not-supported-in-declare-statements"></a>Výraz 'As Any' již není podporován v příkazech 'Declare'.
 `Any` Datový typ byl použit s `Declare` příkazy ve Visual Basicu 6.0 a starší verze, tak, aby povolovala použití argumentů, které by mohly obsahovat jakýkoli typ dat. Přetížení, ale podporuje jazyka Visual Basic a tak provede `Any` datového typu zastaralá.  

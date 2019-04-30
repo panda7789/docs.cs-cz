@@ -13,11 +13,11 @@ ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 21c708f63faaedb9fbce60d7e4aef314f7a41ef8
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185555"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908905"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 

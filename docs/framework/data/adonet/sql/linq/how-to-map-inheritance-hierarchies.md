@@ -6,11 +6,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 6f437b7f7ae6a414971edb497bc2c84c03674fe8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61904043"
 ---
 # <a name="how-to-map-inheritance-hierarchies"></a>Postupy: Mapování hierarchií dědičnosti
 Implementace dědičnosti mapování v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)], musíte zadat atributy a atribut vlastnosti ve třídě kořenové hierarchii dědičnosti jak je popsáno v následujících krocích. Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] mapování hierarchií dědičnosti. Zobrazit [jak: Konfigurace dědičnosti pomocí Návrháře relací objektů](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer).  

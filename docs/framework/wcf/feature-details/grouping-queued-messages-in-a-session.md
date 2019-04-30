@@ -8,11 +8,11 @@ helpviewer_keywords:
 - queues [WCF]. grouping messages
 ms.assetid: 63b23b36-261f-4c37-99a2-cc323cd72a1a
 ms.openlocfilehash: 37f0874ea99ee928e49a54a3e6a05ea4ef06f84e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855917"
 ---
 # <a name="grouping-queued-messages-in-a-session"></a>Seskupování zpráv zařazených do fronty v relaci
 Windows Communication Foundation (WCF) poskytuje relaci, která umožňuje seskupit sadu souvisejících zpráv pro zpracování jedné přijímající aplikace. Zprávy, které jsou součástí relace musí být součástí stejné transakce. Protože všechny zprávy jsou součástí stejné transakce, pokud se nepodaří zpracovat celou relaci jednu zprávu se vrátí zpět. Relace mají podobné chování s ohledem na fronty nedoručených zpráv a nezpracovatelných fronty. Time to Live (TTL) nastavenou na vazbu s frontou nakonfigurované pro relace se použijí pro relaci jako celek. Pokud jen některé zprávy v relaci odeslány předtím, než hodnota TTL nevyprší, je umístěn celou relaci ve frontě nedoručených zpráv. Podobně když dojde k selhání zprávy v relaci k odeslání do aplikace z fronty aplikace, celá relace nachází ve nezpracovatelných frontu (Pokud je k dispozici).  

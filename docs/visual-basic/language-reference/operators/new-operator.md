@@ -12,11 +12,11 @@ helpviewer_keywords:
 - New keyword [Visual Basic]
 ms.assetid: d7d566d7-fe0e-4336-91f7-641a542de4d0
 ms.openlocfilehash: 630b0c48def77449f426b287a26f95af7cfb930e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837693"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936627"
 ---
 # <a name="new-operator-visual-basic"></a>New – operátor (Visual Basic)
 Zavádí `New` klauzule, která vytvoří novou instanci objektu, určuje omezení konstruktoru u parametru typu nebo identifikuje `Sub` postupu jako konstruktor třídy.  

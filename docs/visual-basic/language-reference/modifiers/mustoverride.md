@@ -16,11 +16,11 @@ helpviewer_keywords:
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
 ms.openlocfilehash: 0ddd7d0d2a57afc02aa7483ba5e83b65c48af534
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58822814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61920750"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
 Určuje, že se vlastnost nebo procedura není implementovaná v této třídě a předtím, než je možné, musí se přepsat v odvozené třídě.  
@@ -30,13 +30,13 @@ Určuje, že se vlastnost nebo procedura není implementovaná v této třídě 
   
 ## <a name="rules"></a>pravidla  
   
--   **Neúplné deklarace.** Pokud zadáte `MustOverride`, nezadáte nejsou žádné další řádky kódu pro vlastnost nebo procedura, dokonce i pomocí `End Function`, `End Property`, nebo `End Sub` příkazu.  
+- **Neúplné deklarace.** Pokud zadáte `MustOverride`, nezadáte nejsou žádné další řádky kódu pro vlastnost nebo procedura, dokonce i pomocí `End Function`, `End Property`, nebo `End Sub` příkazu.  
   
--   **Kombinované modifikátory.** Nelze zadat `MustOverride` spolu s `NotOverridable`, `Overridable`, nebo `Shared` ve stejné deklaraci.  
+- **Kombinované modifikátory.** Nelze zadat `MustOverride` spolu s `NotOverridable`, `Overridable`, nebo `Shared` ve stejné deklaraci.  
   
--   **Stínováním a přepsáním.** Jak stínováním a přepsáním znovu definovat element zděděné, ale existují významné rozdíly mezi dvěma přístupy. Další informace najdete v tématu [stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+- **Stínováním a přepsáním.** Jak stínováním a přepsáním znovu definovat element zděděné, ale existují významné rozdíly mezi dvěma přístupy. Další informace najdete v tématu [stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
--   **Alternativní podmínky.** Někdy se označuje jako element, který nelze použít s výjimkou v přepsání *čistě virtuální* elementu.  
+- **Alternativní podmínky.** Někdy se označuje jako element, který nelze použít s výjimkou v přepsání *čistě virtuální* elementu.  
   
  `MustOverride` Modifikátor lze použít v těchto kontextech:  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 6e90eb8a-1a4e-4387-8a68-9287dc7875e8
 ms.openlocfilehash: 88b9c530da3da39c0d70d9d8e90626bd5e133cf3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802412"
 ---
 # <a name="registry-summary-visual-basic"></a>Souhrn registru (Visual Basic)
 Klíčová slova jazyka Visual Studio a členy běhové knihovny jsou uspořádány podle účelu a použití.  

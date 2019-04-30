@@ -8,11 +8,11 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 ms.assetid: 67713625-e2e4-4f6a-bce7-0855ee5043d9
 ms.openlocfilehash: 5e9bdb6d6628b1c696b7944dc0ea1f4c974c8172
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59311406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941125"
 ---
 # <a name="how-to-inherit-from-the-usercontrol-class"></a>Postupy: Dědění ze třídy UserControl
 Kombinování funkcí jeden nebo více ovládacích prvků Windows Forms s vlastní kód, můžete vytvořit *uživatelský ovládací prvek*. Uživatelské ovládací prvky zkombinovat vývoj rychlé ovládacích prvků, funkce a všestrannost vlastní vlastnosti a metody ovládacího prvku standardní formulářů Windows. Když začnete vytvoření uživatelského ovládacího prvku, zobrazí se viditelné designer, na kterém můžete umístit standardní ovládací prvky Windows Forms. Tyto ovládací prvky zachovat všechny své vlastní funkce, jakož i vzhled a chování (vzhled a chování) standardní ovládací prvky. Jakmile tyto ovládací prvky jsou integrované do uživatelského ovládacího prvku, ale už nejsou k dispozici prostřednictvím kódu. Uživatelský ovládací prvek provede vlastní vykreslovací a také zpracovává všechny základní funkce související s ovládacími prvky.  

@@ -1,5 +1,5 @@
 ---
-title: Jezdec – Styly a šablony
+title: Styly a šablony jezdce
 ms.date: 03/30/2017
 helpviewer_keywords:
 - states [WPF], Thumb
@@ -10,13 +10,13 @@ helpviewer_keywords:
 - parts [WPF], Thumb
 ms.assetid: 86a49235-62d9-414e-923e-53126e3f930a
 ms.openlocfilehash: b7fc595f0c592d42f118c6b5542edf93716c2fca
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57507310"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790777"
 ---
-# <a name="thumb-styles-and-templates"></a>Jezdec – Styly a šablony
+# <a name="thumb-styles-and-templates"></a>Styly a šablony jezdce
 
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Primitives.Thumb> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
 

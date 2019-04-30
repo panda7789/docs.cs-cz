@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a59067f72005e87152680e4f990fc74e4acdaa9b
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57472665"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61948912"
 ---
 # <a name="icordebugprocess2getdesiredngencompilerflags-method"></a>ICorDebugProcess2::GetDesiredNGENCompilerFlags – metoda
 Získá aktuální kompilátoru nastavením příznaků, které common language runtime (CLR) používá k výběru správné předkompilované (to znamená, nativní) image se v tomto procesu načten.  

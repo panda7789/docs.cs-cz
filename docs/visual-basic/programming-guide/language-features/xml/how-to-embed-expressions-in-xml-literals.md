@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: 75016fad-0141-42de-8564-5051be29487e
 ms.openlocfilehash: 31e79a8787978ffab2e35cd2827b80a8f1ed843e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61861358"
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>Postupy: Vložení výrazů do literálů XML (Visual Basic)
 Literály XML lze kombinovat s vložené výrazy pro vytvoření dokumentu XML, fragment nebo element, který obsahuje obsah vytvořený v době běhu. Následující příklady ukazují, jak používat vložené výrazy k naplnění obsah elementu, atributy a názvy elementů v době běhu.  
@@ -23,7 +23,7 @@ Literály XML lze kombinovat s vložené výrazy pro vytvoření dokumentu XML, 
   
 #### <a name="to-insert-text-as-element-content"></a>Chcete-li vložit textového obsahu elementu  
   
--   Následující příklad ukazuje, jak vložit text, který je součástí `contactName` mezi prvky a na konci názvu proměnné.  
+- Následující příklad ukazuje, jak vložit text, který je součástí `contactName` mezi prvky a na konci názvu proměnné.  
   
      [!code-vb[VbXMLSamples#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples14.vb#39)]  
   
@@ -37,7 +37,7 @@ Literály XML lze kombinovat s vložené výrazy pro vytvoření dokumentu XML, 
   
 #### <a name="to-insert-text-as-an-attribute-value"></a>Chcete-li vložit text hodnotu atributu  
   
--   Následující příklad ukazuje, jak vložit text, který je součástí `phoneType` jako hodnotu proměnné `type` atribut.  
+- Následující příklad ukazuje, jak vložit text, který je součástí `phoneType` jako hodnotu proměnné `type` atribut.  
   
      [!code-vb[VbXMLSamples#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples14.vb#40)]  
   
@@ -51,7 +51,7 @@ Literály XML lze kombinovat s vložené výrazy pro vytvoření dokumentu XML, 
   
 #### <a name="to-insert-text-for-an-element-name"></a>Chcete-li vložit text pro název elementu  
   
--   Následující příklad ukazuje, jak vložit text, který je součástí `elementName` proměnné jako název elementu.  
+- Následující příklad ukazuje, jak vložit text, který je součástí `elementName` proměnné jako název elementu.  
   
      Při vytváření elementů tímto způsobem, je nutné zavřít jim \</ > značky.  
   

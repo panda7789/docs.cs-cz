@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 01/07/2019
 ms.openlocfilehash: 8497f5cbd15fae6e289791393ea779833be27be6
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61818308"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro kontejnerizované aplikace .NET
 
@@ -57,7 +57,7 @@ Tato příručka se nezaměřuje na životního cyklu aplikací, vývoj a provoz
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha)  
+- **Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha)  
     <https://aka.ms/dockerlifecycleebook>
 
 ## <a name="who-should-use-this-guide"></a>Kdo by měl používat tohoto průvodce

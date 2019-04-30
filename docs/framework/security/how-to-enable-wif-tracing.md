@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 271b6889-3454-46ff-96ab-9feb15e742ee
 author: BrucePerlerMS
 ms.openlocfilehash: 83382a8375538acc04d293ee938a4e845d5e8820
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769031"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940449"
 ---
 # <a name="how-to-enable-wif-tracing"></a>Postupy: Povolení trasování WIF
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   ASP.NET® webových formulářů  
+- ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
  Tento návod obsahuje podrobné podrobné postupy pro povolení trasování WIF aplikace technologie ASP.NET. Také poskytuje pokyny k testování aplikace pro ověření, že naslouchací proces trasování a protokol fungují správně. Tento návod neobsahuje podrobné pokyny pro vytvoření služby tokenů zabezpečení (STS) a namísto toho používá službu STS určenou pro vývoj, která je součástí instalace nástroje Identity and Access Tool. Služba STS pro vývoj neprovádí skutečné ověřování a je určena pouze pro testovací účely. Abyste mohli dokončit postupy v tomto návodu, je třeba nainstalovat nástroj Identity and Access Tool. Můžete ho stáhnout z následujícího umístění: [Nástroj identity and Access Tool](https://go.microsoft.com/fwlink/?LinkID=245849)  
@@ -25,30 +25,30 @@ ms.locfileid: "59769031"
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled  
+- Přehled  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – Vytvoření aplikace jednoduché rozhraní ASP.NET Web Forms a povolení trasování  
+- Krok 1 – Vytvoření aplikace jednoduché rozhraní ASP.NET Web Forms a povolení trasování  
   
--   Krok 2 – otestování řešení  
+- Krok 2 – otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Vytvořit jednoduchou aplikaci ASP.NET, která používá technologie WIF a služba STS pro vývoj od Identity and Access Tool  
+- Vytvořit jednoduchou aplikaci ASP.NET, která používá technologie WIF a služba STS pro vývoj od Identity and Access Tool  
   
--   Povolení trasování a ověřte, že je funkční  
+- Povolení trasování a ověřte, že je funkční  
   
 ## <a name="overview"></a>Přehled  
  Trasování umožňuje ladění a řešení potíží s mnoha typy problémů pomocí technologie WIF, včetně tokeny, soubory cookie, deklarace identity, zprávách protokolů a dalších. Trasování WIF je podobný trasování WCF; Například můžete nastavit úroveň podrobností trasování vše od kritické zprávy zobrazíte všechny zprávy. Technologie WIF trasování mohou být generovány v **.xml** soubory nebo v **.svclog** soubory, které je možné zobrazit pomocí nástroje prohlížeče trasování služeb. Tento nástroj se nachází v **bin** adresář sady Windows SDK cesta pro instalaci na počítač, například: **C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SvcTraceViewer.exe**.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření aplikace jednoduché rozhraní ASP.NET Web Forms a povolení trasování  
+- Krok 1 – Vytvoření aplikace jednoduché rozhraní ASP.NET Web Forms a povolení trasování  
   
--   Krok 2 – otestování řešení  
+- Krok 2 – otestování řešení  
   
 ## <a name="step-1--create-a-simple-aspnet-web-forms-application-and-enable-tracing"></a>Krok 1 – Vytvoření aplikace jednoduché rozhraní ASP.NET Web Forms a povolení trasování  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET a upravit *Web.config* souboru trasování.  

@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 02/15/2019
 ms.custom: vs-dotnet
 ms.openlocfilehash: 431a0f34ba913c18c35e28ca45660495403bf688
-ms.sourcegitcommit: 69bf8b719d4c289eec7b45336d0b933dd7927841
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57844246"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795567"
 ---
 # <a name="use-docker-tools-in-visual-studio-2017-on-windows"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017 na Windows
 

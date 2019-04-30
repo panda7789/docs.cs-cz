@@ -5,11 +5,11 @@ ms.date: 07/22/2016
 ms.technology: dotnet-standard
 ms.assetid: d095b0b6-2454-4e23-80b4-c9e8a447116c
 ms.openlocfilehash: 8046cb744dccaf512208d517c243640820efce8e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945363"
 ---
 # <a name="automatic-memory-management-and-garbage-collection"></a>Kolekce paměti automatické správy a uvolňování paměti
 
@@ -31,7 +31,7 @@ Pokud chcete zlepšit výkon, modul runtime přiděluje paměť pro velké objek
 
 ## <a name="generations-and-performance"></a>Generace a výkon
 
-Za účelem optimalizace výkonu systému uvolňování paměti spravované haldy je rozdělen na tři generace: 0, 1 a 2. Modul runtime uvolňování paměti kolekce algoritmus je založená na několik generalizace, které softwarovém průmyslu počítač objevil na hodnotu true Experimentováním s uvolňování paměti kolekce schémat. Nejprve je rychlejší ke komprimaci paměti pro část spravované haldy než pro celou spravovanou haldu. Za druhé novější objekty se mají životnost kratší a starší objekty se mají delší životnost. A konečně, novější objekty mají tendenci vzájemně souvisí a přistupuje aplikace přibližně ve stejnou dobu.
+Za účelem optimalizace výkonu systému uvolňování paměti spravované haldy rozdělen na tři generace: 0, 1 a 2. Modul runtime uvolňování paměti kolekce algoritmus je založená na několik generalizace, které softwarovém průmyslu počítač objevil na hodnotu true Experimentováním s uvolňování paměti kolekce schémat. Nejprve je rychlejší ke komprimaci paměti pro část spravované haldy než pro celou spravovanou haldu. Za druhé novější objekty se mají životnost kratší a starší objekty se mají delší životnost. A konečně, novější objekty mají tendenci vzájemně souvisí a přistupuje aplikace přibližně ve stejnou dobu.
 
 Modul runtime systému uvolňování paměti uloží nové objekty 0. generace. Objekty vytvořené v rané fázi životního cyklu aplikace, které byly zachovány při kolekce jsou povýšeny a uloženy v generace 1 a 2. Proces povýšení objektu je popsána dále v tomto tématu. Protože je rychlejší compact část spravované haldy než celý haldy, toto schéma umožňuje uvolňování paměti uvolní paměť při konkrétní generování spíše než uvolnění paměti pro celou spravovanou haldu pokaždé, když provádí kolekce.
 

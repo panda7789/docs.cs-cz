@@ -5,11 +5,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], preventing row addition or deletion
 ms.assetid: a17722bd-9400-41e6-8dcc-c9c151f0a749
 ms.openlocfilehash: 9f78068597edb616017876c9c72b01d44111f6f0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59220549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902821"
 ---
 # <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Ochrana před přidáním a odstraněním řádku v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo odstranění existující řádky v vaše <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Nové řádky jsou zadány ve speciální řádku pro nové záznamy v dolní části ovládacího prvku. Pokud zakážete přidání řádku, řádku pro nové záznamy se nezobrazí. Poté provedete ovládací prvek zcela jen pro čtení zakázáním odstranění řádku a editaci buňky.  
@@ -21,7 +21,7 @@ Někdy budete chtít zabránit uživatelům v nové řádky dat zadávat nebo od
   
 ### <a name="to-prevent-row-addition-and-deletion"></a>Abyste zabránili přidávání řádků a odstranění  
   
--   Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) v pravém horním rohu <xref:System.Windows.Forms.DataGridView> ovládací prvek a potom zrušte zaškrtnutí **povolit přidání** a **Povolit odstranění** zaškrtávací políčka.  
+- Klikněte na inteligentní označit piktogram (![piktogram inteligentní](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) v pravém horním rohu <xref:System.Windows.Forms.DataGridView> ovládací prvek a potom zrušte zaškrtnutí **povolit přidání** a **Povolit odstranění** zaškrtávací políčka.  
   
     > [!NOTE]
     >  Chcete-li ovládací prvek zcela jen pro čtení, zrušte **povolit úpravy** také políčko.  

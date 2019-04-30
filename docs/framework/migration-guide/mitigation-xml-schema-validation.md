@@ -8,11 +8,11 @@ ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e5c0087412a53177a7c43df838266f6d896c1bd9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59220471"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875447"
 ---
 # <a name="mitigation-xml-schema-validation"></a>Omezení rizik: Ověření schématu XML
 V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], ověření schématu XSD rozpozná porušení omezení unique, pokud se používá složený klíč a jeden klíč je prázdný.  
@@ -23,9 +23,9 @@ V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], ověření schématu XSD
 ## <a name="mitigation"></a>Zmírnění  
  Určuje, zda se zjistí Chyba ověření schématu, pokud složený klíč má jeden prázdný klíč je konfigurovat funkce:  
   
--   Počínaje aplikací, které se zaměřují [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], detekce chyby ověřování schématu je povolené ve výchozím nastavení; ale je možné vyjádřit výslovný nesouhlas, tak, že nebudou zjištěna chyba ověření platnosti schématu.  
+- Počínaje aplikací, které se zaměřují [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], detekce chyby ověřování schématu je povolené ve výchozím nastavení; ale je možné vyjádřit výslovný nesouhlas, tak, že nebudou zjištěna chyba ověření platnosti schématu.  
   
--   V aplikacích, které jsou spuštěny pod [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] ale cílit [!INCLUDE[net_v452](../../../includes/net-v452-md.md)] a starší verze, ve výchozím nastavení není zjištěna chyba ověření schématu; je však možné zvolit tuto možnost, tak, aby chyba ověření schématu se zjistil.  
+- V aplikacích, které jsou spuštěny pod [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] ale cílit [!INCLUDE[net_v452](../../../includes/net-v452-md.md)] a starší verze, ve výchozím nastavení není zjištěna chyba ověření schématu; je však možné zvolit tuto možnost, tak, aby chyba ověření schématu se zjistil.  
   
  Toto chování je možné nakonfigurovat pomocí <xref:System.AppContext> třídy definují hodnotu `System.Xml.IgnoreEmptyKeySequences` přepnout. Protože přepnout výchozí hodnota je `false` (prázdná sekvence klíče nejsou ignorovány), aplikace, které cílí [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] můžete vyjádřit výslovný nesouhlas chování pomocí následujícího kódu nastavit hodnotu na přepínač na `true`:  
   

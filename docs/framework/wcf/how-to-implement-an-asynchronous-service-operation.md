@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
 ms.openlocfilehash: 603ee57475b3e7b1af607d49050e3276fd3082d8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298653"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929074"
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>Postupy: Implementace asynchronní operace služby
 V aplikacích Windows Communication Foundation (WCF) operace služby lze provést synchronní nebo asynchronní bez diktování klientovi jejich volání. Například operace asynchronní služby je možné volat synchronně, a operace synchronní služby může být volána asynchronně. Příklad, který ukazuje, jak volat operace asynchronně v klientské aplikaci, najdete v části [jak: Asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o synchronní a asynchronní operace, najdete v části [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md) a [synchronní a asynchronní operace](../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md). Toto téma popisuje základní struktura operace asynchronní služby, není kompletní kód. Úplný příklad stranách klienta i služby, najdete v části [asynchronní](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms751505(v=vs.100)).  
@@ -34,11 +34,11 @@ V aplikacích Windows Communication Foundation (WCF) operace služby lze provés
   
 1. Rozhraní kontraktu služby se:  
   
-    1.  Synchronního `SampleMethod` operace.  
+    1. Synchronního `SampleMethod` operace.  
   
-    2.  Asynchronní `BeginSampleMethod` operace.  
+    2. Asynchronní `BeginSampleMethod` operace.  
   
-    3.  Asynchronní `BeginServiceAsyncMethod` / `EndServiceAsyncMethod` pár operace.  
+    3. Asynchronní `BeginServiceAsyncMethod` / `EndServiceAsyncMethod` pár operace.  
   
 2. Implementace služby pomocí <xref:System.IAsyncResult?displayProperty=nameWithType> objektu.  
   

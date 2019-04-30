@@ -5,11 +5,11 @@ ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5b858b9daad22cdda6df30be7b28cdecfd275b8f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868599"
 ---
 # <a name="application-element-net-native"></a>\<Aplikace > – Element (.NET Native)
 Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je k dispozici pro účely reflexe v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  
@@ -81,9 +81,9 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je
   
  `<Application>` Elementu lze použít v jednom ze dvou způsobů:  
   
--   Jako kontejner pro definování prvky programu, jejichž metadat je potřeba v době běhu. V takovém případě `<Application>` element nemusí mít žádné atributy. V době kompilace kompilátor nástroje hledání všech knihoven, včetně základní knihovny rozhraní .NET Framework, pro prvky programu identifikovaný podřízených elementů `<Application>` elementu. Naproti tomu kompilačních nástrojů hledání pouze v knihovně, které jsou určené [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) – element pro prvky programu identifikovaný podřízených elementů [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
+- Jako kontejner pro definování prvky programu, jejichž metadat je potřeba v době běhu. V takovém případě `<Application>` element nemusí mít žádné atributy. V době kompilace kompilátor nástroje hledání všech knihoven, včetně základní knihovny rozhraní .NET Framework, pro prvky programu identifikovaný podřízených elementů `<Application>` elementu. Naproti tomu kompilačních nástrojů hledání pouze v knihovně, které jsou určené [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) – element pro prvky programu identifikovaný podřízených elementů [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
   
--   Jako element, který nastaví zásadu platnou v celé aplikaci pro reflexi, serializace a zprostředkovatele komunikace s objekty. Atributy `<Application>` element definovat celou aplikaci zásady, které mohou být přepsána podřízené prvky definované `<Application>` nebo [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementu.  
+- Jako element, který nastaví zásadu platnou v celé aplikaci pro reflexi, serializace a zprostředkovatele komunikace s objekty. Atributy `<Application>` element definovat celou aplikaci zásady, které mohou být přepsána podřízené prvky definované `<Application>` nebo [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementu.  
   
 ## <a name="see-also"></a>Viz také:
 

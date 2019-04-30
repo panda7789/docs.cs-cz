@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC40028
 ms.assetid: dfa1f6f9-bb88-44ad-b85f-149144363d41
 ms.openlocfilehash: e0852536a86dd415334f95a47ceb800ed2c591ad
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55265919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924017"
 ---
 # <a name="type-of-parameter-parametername-is-not-cls-compliant"></a>Typ parametru '\<parametername >' není kompatibilní se Specifikací CLS
 Postup je označen jako `<CLSCompliant(True)>` ale deklaruje parametr s typem, který je označen jako `<CLSCompliant(False)>`, není označena nebo nesplňuje, protože se jedná o nekompatibilní typ.  
@@ -21,13 +21,13 @@ Postup je označen jako `<CLSCompliant(True)>` ale deklaruje parametr s typem, k
   
  Následující datové typy jazyka Visual Basic nejsou kompatibilní se Specifikací CLS:  
   
--   [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+- [Datový typ SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
   
--   [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+- [Datový typ UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
   
--   [Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+- [Datový typ ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
   
--   [Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+- [Datový typ UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
   
  Pokud použijete <xref:System.CLSCompliantAttribute> na programovací prvek, nastavíte atributu `isCompliant` buď parametr `True` nebo `False` k označení dodržování předpisů nebo při nedodržení předpisů. Neexistuje žádný výchozí hodnotou tohoto parametru, a je nutné zadat hodnotu.  
   
@@ -39,8 +39,8 @@ Postup je označen jako `<CLSCompliant(True)>` ale deklaruje parametr s typem, k
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud proces musí přijmout parametr tohoto konkrétního typu, odeberte <xref:System.CLSCompliantAttribute>. Procedura nemůže být kompatibilní se Specifikací CLS.  
+- Pokud proces musí přijmout parametr tohoto konkrétního typu, odeberte <xref:System.CLSCompliantAttribute>. Procedura nemůže být kompatibilní se Specifikací CLS.  
   
--   Pokud procedura musí být kompatibilní se Specifikací CLS, změňte typ tohoto parametru na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
+- Pokud procedura musí být kompatibilní se Specifikací CLS, změňte typ tohoto parametru na nejbližší typ. kompatibilní se Specifikací CLS. Například místo hodnoty `UInteger` je možné použít `Integer` Pokud nepotřebujete rozsah hodnot nad 2 147 483 647. Pokud budete potřebovat delší rozsah, můžete nahradit `UInteger` s `Long`.  
   
--   Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `int` je často 16 bitů v jiných prostředích. Pokud přijímáte 16bitové celé číslo z takové součásti, deklarujte ho jako `Short` místo `Integer` v spravovaného kódu jazyka Visual Basic.
+- Při vzájemném propojování s objekty automatizace nebo COM, mějte na paměti, že některé typy mají různou šířkou dat než [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Například `int` je často 16 bitů v jiných prostředích. Pokud přijímáte 16bitové celé číslo z takové součásti, deklarujte ho jako `Short` místo `Integer` v spravovaného kódu jazyka Visual Basic.

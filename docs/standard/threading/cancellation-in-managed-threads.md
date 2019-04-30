@@ -14,21 +14,21 @@ ms.openlocfilehash: ca42512daa35d7efd7296c277a575bf131749ad2
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795052"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  
   
  Je obecný vzor implementace vzoru kooperativní zrušení:  
   
--   Vytvořit instanci <xref:System.Threading.CancellationTokenSource> objektu, který spravuje a odešle oznámení o zrušení tokenů jednotlivé zrušení.  
+- Vytvořit instanci <xref:System.Threading.CancellationTokenSource> objektu, který spravuje a odešle oznámení o zrušení tokenů jednotlivé zrušení.  
   
--   Předat token vrácený <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost pro každý úkol nebo vláknem, které čeká na zrušení.  
+- Předat token vrácený <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> vlastnost pro každý úkol nebo vláknem, které čeká na zrušení.  
   
--   Poskytuje mechanismus pro každý úkol nebo vlákno reagovat na zrušení.  
+- Poskytuje mechanismus pro každý úkol nebo vlákno reagovat na zrušení.  
   
--   Volání <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k dispozici oznámení o zrušení.  
+- Volání <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metodu k dispozici oznámení o zrušení.  
   
 > [!IMPORTANT]
 >  <xref:System.Threading.CancellationTokenSource> Implementuje třída <xref:System.IDisposable> rozhraní. By měl nezapomeňte volat <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> metoda po dokončení používání zdroje tokenu zrušení uvolnit žádné nespravované prostředky, které obsahuje.  
@@ -39,17 +39,17 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhr
   
  Nový model zrušení usnadňuje vytváření aplikací pracujících s zrušení a knihoven a podporuje následující funkce:  
   
--   Zrušení je spolupráce a nebude se vynucovat na naslouchací proces. Naslouchací proces určuje, jak v reakci na žádost o zrušení řádně ukončit.  
+- Zrušení je spolupráce a nebude se vynucovat na naslouchací proces. Naslouchací proces určuje, jak v reakci na žádost o zrušení řádně ukončit.  
   
--   Požaduje se liší od naslouchání. Objekt, který vyvolá zrušitelnou operaci můžete řídit, kdy (Pokud) je požadováno zrušení.  
+- Požaduje se liší od naslouchání. Objekt, který vyvolá zrušitelnou operaci můžete řídit, kdy (Pokud) je požadováno zrušení.  
   
--   Žádost o objekt vydá požadavek na zrušení u všech kopií token s použitím pouze jedné metody volání.  
+- Žádost o objekt vydá požadavek na zrušení u všech kopií token s použitím pouze jedné metody volání.  
   
--   Naslouchací proces mohl naslouchat více tokenů současně jejich sloučením do jedné *propojené token*.  
+- Naslouchací proces mohl naslouchat více tokenů současně jejich sloučením do jedné *propojené token*.  
   
--   Uživatelský kód můžete zaznamenat a odpovědět na požadavky zrušení z knihovny kódu a kód knihovny můžete zaznamenat a odpovědět na požadavky zrušení z uživatelského kódu.  
+- Uživatelský kód můžete zaznamenat a odpovědět na požadavky zrušení z knihovny kódu a kód knihovny můžete zaznamenat a odpovědět na požadavky zrušení z uživatelského kódu.  
   
--   Naslouchací procesy můžete dostávat oznámení žádostí o zrušení dotazování, registrace zpětného volání a čekání na obslužné rutiny čekání.  
+- Naslouchací procesy můžete dostávat oznámení žádostí o zrušení dotazování, registrace zpětného volání a čekání na obslužné rutiny čekání.  
   
 ## <a name="cancellation-types"></a>Typy zrušení  
  Zrušení framework je implementované jako sada souvisejících typů, které jsou uvedeny v následující tabulce.  
@@ -108,11 +108,11 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhr
   
  Aby bylo možné zajistit rychlost odezvy systému a aby se zabránilo zablokování podle následujících pokynů musí následovat při registraci zpětná volání:  
   
--   Metoda zpětného volání by mělo být rychle, protože je volána synchronně a proto volání <xref:System.Threading.CancellationTokenSource.Cancel%2A> nevrací až do zpětného volání vrátí.  
+- Metoda zpětného volání by mělo být rychle, protože je volána synchronně a proto volání <xref:System.Threading.CancellationTokenSource.Cancel%2A> nevrací až do zpětného volání vrátí.  
   
--   Při volání <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> zpětného volání je spuštěn a uchování, která zpětné volání čeká na zámek, váš program může zablokování. Po `Dispose` vrátí, můžete uvolnit všechny prostředky vyžadované zpětného volání.  
+- Při volání <xref:System.Threading.CancellationTokenRegistration.Dispose%2A> zpětného volání je spuštěn a uchování, která zpětné volání čeká na zámek, váš program může zablokování. Po `Dispose` vrátí, můžete uvolnit všechny prostředky vyžadované zpětného volání.  
   
--   Zpětná volání neměli provádět jakékoli ruční vlákno nebo <xref:System.Threading.SynchronizationContext> využití ve zpětném volání. Pokud zpětné volání, musíte spustit na konkrétní vlákno, použijte <xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> konstruktor, který vám umožňuje určit, že cíl syncContext je aktivní <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType>. Provádění ruční práce s vlákny ve zpětném volání může způsobit zablokování.  
+- Zpětná volání neměli provádět jakékoli ruční vlákno nebo <xref:System.Threading.SynchronizationContext> využití ve zpětném volání. Pokud zpětné volání, musíte spustit na konkrétní vlákno, použijte <xref:System.Threading.CancellationTokenRegistration?displayProperty=nameWithType> konstruktor, který vám umožňuje určit, že cíl syncContext je aktivní <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType>. Provádění ruční práce s vlákny ve zpětném volání může způsobit zablokování.  
   
  Podrobnější příklad naleznete v tématu [jak: Registrace zpětných volání pro požadavky zrušení](../../../docs/standard/threading/how-to-register-callbacks-for-cancellation-requests.md).  
   
@@ -140,11 +140,11 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhr
 ## <a name="cooperation-between-library-code-and-user-code"></a>Spolupráce mezi kód knihovny a kód uživatele  
  Rozhraní unified zrušení umožňuje kód knihovny zrušit uživatelský kód a kód uživatele zrušit kód knihovny na způsob spolupráce za. Smooth spolupráce, závisí na každé straně držet těchto pokynů:  
   
--   Pokud kód knihovny poskytuje operace zaslána, měl by také poskytovat veřejné metody, které přijímají token zrušení externí tak, aby uživatelský kód, můžete požádat o zrušení.  
+- Pokud kód knihovny poskytuje operace zaslána, měl by také poskytovat veřejné metody, které přijímají token zrušení externí tak, aby uživatelský kód, můžete požádat o zrušení.  
   
--   Volá-li kód knihovny do uživatelského kódu, kód knihovny by měl interpretovat OperationCanceledException(externalToken) jako *kooperativní zrušení*a nikoli jako výjimky na chyby.  
+- Volá-li kód knihovny do uživatelského kódu, kód knihovny by měl interpretovat OperationCanceledException(externalToken) jako *kooperativní zrušení*a nikoli jako výjimky na chyby.  
   
--   Uživatelské delegáty mají pokusit odpovědět na požadavky zrušení z kódu knihovny včas.  
+- Uživatelské delegáty mají pokusit odpovědět na požadavky zrušení z kódu knihovny včas.  
   
  <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> jsou příklady tříd, které postupujte podle následujících pokynů. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [jak: Zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
   

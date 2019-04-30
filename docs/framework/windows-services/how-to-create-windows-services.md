@@ -7,11 +7,11 @@ helpviewer_keywords:
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
 ms.openlocfilehash: 469074336c8aa49fee1acf871360f8dbc1363247
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59313265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914148"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
 Při vytváření služby můžete použít šablonu projektu sady Visual Studio volá **Windows Service**. Tato šablona automaticky provádí velkou část práce za vás odkazováním na příslušné třídy a obory názvů, nastavením dědičnosti ze základní třídy pro služby, a přepisováním několika metod, které budete pravděpodobně chtít přepsat.  
@@ -21,11 +21,11 @@ Při vytváření služby můžete použít šablonu projektu sady Visual Studio
   
  Minimálně pro vytvoření funkční služby je potřeba:  
   
--   Nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost.  
+- Nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost.  
   
--   Vytvořte nezbytné instalační programy pro aplikaci služby.  
+- Vytvořte nezbytné instalační programy pro aplikaci služby.  
   
--   A zadejte kód pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody, chcete-li přizpůsobit způsoby, jak se chová vaší služby.  
+- A zadejte kód pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody, chcete-li přizpůsobit způsoby, jak se chová vaší služby.  
   
 ### <a name="to-create-a-windows-service-application"></a>Vytvoření aplikace služby Windows  
   

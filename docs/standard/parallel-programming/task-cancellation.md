@@ -12,18 +12,18 @@ ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 84da3e1e896397b4e5dacec9d7dd0eeeed96d1c9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690836"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908918"
 ---
 # <a name="task-cancellation"></a>Zrušení úlohy
 <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> třídy podporují zrušení prostřednictvím použití tokenů zrušení v rozhraní .NET Framework. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje, aby žádající kód volal <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda a uživatelský delegát operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  
   
--   Jednoduše vrácením z delegáta. V mnoha scénářích je toto dostatečné; Nicméně instance úlohy, která je zrušena tímto způsobem, přechází do <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> , nikoli do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
+- Jednoduše vrácením z delegáta. V mnoha scénářích je toto dostatečné; Nicméně instance úlohy, která je zrušena tímto způsobem, přechází do <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> , nikoli do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
   
--   Po vyvolání výjimky <xref:System.OperationCanceledException> a předáním tokenu, na který bylo zrušení požadováno. Preferovaný způsob, jak to provést, je použít <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody. Úloha, která je zrušena tímto způsobem, přechází do stavu Zrušeno, který může volající kód použít k ověření, zda úloha odpověděla na jeho žádost o zrušení.  
+- Po vyvolání výjimky <xref:System.OperationCanceledException> a předáním tokenu, na který bylo zrušení požadováno. Preferovaný způsob, jak to provést, je použít <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody. Úloha, která je zrušena tímto způsobem, přechází do stavu Zrušeno, který může volající kód použít k ověření, zda úloha odpověděla na jeho žádost o zrušení.  
   
  Následující příklad zobrazuje základní vzor pro zrušení úlohy, který vyvolává výjimku. Token je předán uživatelskému delegátu a samotné instanci úlohy.  
   

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
 ms.openlocfilehash: cbe00fb792ab5f2a7586a958ddbe5bdf004656dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59089550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875963"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Potvrzení transakce v jedné fázi a více fázích
 Každý prostředek, který používá v transakci spravuje správce prostředků (SV), jejichž akce jsou koordinovaný správcem transakcí (TM). [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) téma popisuje, jak prostředek (nebo více zdrojů) může být uveden v transakci. Toto téma popisuje, jak lze koordinovat mezi zařazených prostředků částku transakce.  

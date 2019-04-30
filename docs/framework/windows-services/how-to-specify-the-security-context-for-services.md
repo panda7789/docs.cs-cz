@@ -12,24 +12,24 @@ helpviewer_keywords:
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
 ms.openlocfilehash: 68fd5d705cb2f38e00e90c211111ff34d23f3b10
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335807"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61913884"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Postupy: Určení kontextu zabezpečení pro služby
 Ve výchozím nastavení služby jsou spuštěny v kontextu zabezpečení než přihlášeným uživatelem. Volá se spouštějí v kontextu systému výchozí účet služby `LocalSystem`, která jim udělí různá přístupová oprávnění k systémových prostředků, než uživatel. Toto chování k určení jiného uživatelského účtu, pod kterým se vaše služba spouštět můžete změnit.  
   
  Nastavte kontext zabezpečení manipulací <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> vlastnost pro proces, ve kterém je služba spuštěna. Tato vlastnost umožňuje nastavit službu do jedné ze čtyř typů účtu:  
   
--   `User`, což způsobí, že systém výzvy platné uživatelské jméno a heslo, pokud služba je nainstalována a spuštěna v kontextu účet specifikovaný v síti; jedním uživatelem  
+- `User`, což způsobí, že systém výzvy platné uživatelské jméno a heslo, pokud služba je nainstalována a spuštěna v kontextu účet specifikovaný v síti; jedním uživatelem  
   
--   `LocalService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru;  
+- `LocalService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a nabízí pověření anonymního a jakémukoli vzdálenému serveru;  
   
--   `LocalSystem`, která se spouští v kontextu účtu, který poskytuje rozsáhlé místní oprávnění a zobrazení přihlašovacích údajů počítače a jakémukoli vzdálenému serveru;  
+- `LocalSystem`, která se spouští v kontextu účtu, který poskytuje rozsáhlé místní oprávnění a zobrazení přihlašovacích údajů počítače a jakémukoli vzdálenému serveru;  
   
--   `NetworkService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a uvede přihlašovacích údajů počítače a jakémukoli vzdálenému serveru.  
+- `NetworkService`, která se spouští v kontextu účtu, který funguje jako neprivilegované uživatele v místním počítači a uvede přihlašovacích údajů počítače a jakémukoli vzdálenému serveru.  
   
  Další informace najdete v tématu <xref:System.ServiceProcess.ServiceAccount> výčtu.  
   

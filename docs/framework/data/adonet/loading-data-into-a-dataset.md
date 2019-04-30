@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: a53e5dc1-9669-49d4-828d-efa633237066
 ms.openlocfilehash: cb5578d790e5d3f54f75f964bb3288d861c9d7c3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59074050"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878537"
 ---
 # <a name="loading-data-into-a-dataset"></a>Načtení dat do datové sady
 A <xref:System.Data.DataSet> musí předtím, než můžete dát dotaz na něj s prvním naplnění objektu [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)]. Existuje několik různých způsobů, jak naplnit <xref:System.Data.DataSet>. Například můžete použít [!INCLUDE[vbtecdlinq](../../../../includes/vbtecdlinq-md.md)] k dotazování databáze a načte výsledky do <xref:System.Data.DataSet>. Další informace najdete v tématu [technologie LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md).  

@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 652000367c19572f73296c704047830ce1c74574
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59231035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914519"
 ---
 # <a name="compareassemblyidentity-function"></a>CompareAssemblyIdentity – funkce
 Porovná dvě identit sestavení pro určení, zda jsou ekvivalentní.  
@@ -65,11 +65,11 @@ STDAPI CompareAssemblyIdentity (
 ## <a name="remarks"></a>Poznámky  
  `CompareAssemblyIdentity` kontroluje, zda `pwzAssemblyIdentity1` a `pwzAssemblyIdentity2` jsou ekvivalentní. `pfEquivalent` je nastavena na `true` v jedné nebo více z následujících podmínek:  
   
--   Identity dvě sestavení jsou ekvivalentní. Pro sestavení se silným názvem referenčních materiálech o ekvivalenci vyžaduje název sestavení, verzi, token veřejného klíče a jazykovou verzi být identické. Pro sestavení s jednoduchým názvem referenčních materiálech o ekvivalenci vyžaduje shodu v názvu sestavení a jazykovou verzi.  
+- Identity dvě sestavení jsou ekvivalentní. Pro sestavení se silným názvem referenčních materiálech o ekvivalenci vyžaduje název sestavení, verzi, token veřejného klíče a jazykovou verzi být identické. Pro sestavení s jednoduchým názvem referenčních materiálech o ekvivalenci vyžaduje shodu v názvu sestavení a jazykovou verzi.  
   
--   Obě identit sestavení odkazovat na sestavení, které běží na rozhraní .NET Framework. Tato podmínka vrátí `true` i v případě, že číslo verze sestavení se neshodují.  
+- Obě identit sestavení odkazovat na sestavení, které běží na rozhraní .NET Framework. Tato podmínka vrátí `true` i v případě, že číslo verze sestavení se neshodují.  
   
--   Tato dvě sestavení nejsou spravovaná sestavení, ale `fUnified1` nebo `fUnified2` byl nastaven na `true`.  
+- Tato dvě sestavení nejsou spravovaná sestavení, ale `fUnified1` nebo `fUnified2` byl nastaven na `true`.  
   
  `fUnified` Příznak určuje, že všechna čísla verzí až číslo verze sestavení se silným názvem jsou považovány za ekvivalentní k sestavení se silným názvem. Například pokud hodnota `pwzAssemblyIndentity1` je "MyAssembly, verze = 3.0.0.0, jazyková verze = neutral, publicKeyToken =..." a hodnota `fUnified1` je `true`, to znamená, že by měl být všechny verze MyAssembly z verze 0.0.0.0 k 3.0.0.0 považovány za ekvivalentní. V takovém případě pokud `pwzAssemblyIndentity2` odkazuje na stejné sestavení jako `pwzAssemblyIndentity1`, s tím rozdílem, že má nižší číslo verze, `pfEquivalent` je nastavena na `true`. Pokud `pwzAssemblyIdentity2` odkazuje na vyšší číslo verze `pfEquivalent` je nastavena na `true` pouze tehdy, pokud hodnota `fUnified2` je `true`.  
   

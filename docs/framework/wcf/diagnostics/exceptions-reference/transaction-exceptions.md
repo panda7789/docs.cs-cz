@@ -3,21 +3,21 @@ title: Výjimky transakce
 ms.date: 03/30/2017
 ms.assetid: 1d27ed51-7eda-477f-9eca-94fa129f3e07
 ms.openlocfilehash: 85d8d043a5610743d6cbad4d950330ed4bedb502
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936973"
 ---
 # <a name="transaction-exceptions"></a>Výjimky transakce
 Toto téma uvádí všechny výjimky generovaných transakcí Windows Communication Foundation (WCF).  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|SFxCannotHaveDifferentTransactionProtocolsInOneBinding|Informace o zásadách importovaných z metadat určuje různé hodnoty pro TransactionProtocol mezi operace. Je podporován pouze jeden TransactionProtocol pro každý koncový bod.|  
-|SFxTransactionAutoCompleteFalseAndInstanceContextMode|Vlastnost TransactionAutoComplete nemůže mít hodnotu false, není-li režim InstanceContextMode služby PerSession. Na implementaci zadaný kontraktu a operace byla nalezena chyba.|  
-|SFxTransactionInvalidSetTransactionComplete|OperationContext.SetTransactionComplete lze volat v operaci jenom v případě, že je vlastnost TransactionAutoComplete nastaven na hodnotu false a vlastností TransactionScopeRequired nastavena na hodnotu true. Jedná se o neplatný scénář a aktuální transakce byla ukončena.|  
-|TransactionFlowRequiredIssuedTokens|Tok transakcí, předávaných vystavené tokeny musí také podporovat.|  
-|TrustDriverVersionDoesNotSupportIssuedTokens|Nakonfigurované verze důvěryhodnosti nepodporuje vystavené tokeny. Použijte WSTrustFeb2005 nebo vyšší.|
+|SFxCannotHaveDifferentTransactionProtocolsInOneBinding|Informace o zásadách importované z metadat určuje jiné hodnoty pro třídu TransactionProtocol mezi operace. Je podporován pouze jednu třídu TransactionProtocol pro každý koncový bod.|  
+|SFxTransactionAutoCompleteFalseAndInstanceContextMode|Vlastnost TransactionAutoComplete nemůže být hodnota false, pokud je režim InstanceContextMode služby na hodnotu PerSession. V implementaci zadaný kontrakt a operace byla nalezena chyba.|  
+|SFxTransactionInvalidSetTransactionComplete|OperationContext.SetTransactionComplete může být volána v operaci pouze v případě, že vlastnost TransactionAutoComplete nastavena na hodnotu false a vlastností TransactionScopeRequired je nastavena na hodnotu true. Toto je neplatný scénář a aktuální transakce byla ukončena.|  
+|TransactionFlowRequiredIssuedTokens|Tok transakcí, tok vydané tokeny musí podporovat také.|  
+|TrustDriverVersionDoesNotSupportIssuedTokens|Nakonfigurovaná verze Trust nepodporuje vydané tokeny. Použijte verzi WSTrustFeb2005 nebo novější.|

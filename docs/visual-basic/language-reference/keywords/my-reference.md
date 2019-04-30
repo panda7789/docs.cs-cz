@@ -6,11 +6,11 @@ helpviewer_keywords:
 - My reference
 ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
 ms.openlocfilehash: accf2464f7d8ead8bcd73c9704bea4fd5d2e410b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802384"
 ---
 # <a name="my-reference-visual-basic"></a>Můj odkaz (referenční dokumentace jazyka Visual Basic)
 `My` Programování, rychlejší a snazší díky funkci poskytuje intuitivní přístup pro běžně používané metody, vlastnosti a události. Tato tabulka uvádí objekty obsažené v `My`a akce, které můžete provést pomocí každé.  

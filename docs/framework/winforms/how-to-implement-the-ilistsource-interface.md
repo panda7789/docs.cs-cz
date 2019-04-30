@@ -9,11 +9,11 @@ helpviewer_keywords:
 - IListSource interface
 ms.assetid: 63ce27aa-2e23-4fbd-8228-0c1726f6c421
 ms.openlocfilehash: bd4e554b7e4be51847496307b50be3084d0115d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59159780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801761"
 ---
 # <a name="how-to-implement-the-ilistsource-interface"></a>Postupy: Implementace rozhraní IListSource
 Implementace <xref:System.ComponentModel.IListSource> rozhraní pro vytvoření třídy s možností vazby, který neimplementuje <xref:System.Collections.IList> , ale místo toho poskytuje seznam z jiného umístění.  
@@ -36,7 +36,7 @@ Implementace <xref:System.ComponentModel.IListSource> rozhraní pro vytvoření 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení System.Drawing a System.Windows.Forms.  
   
 ## <a name="see-also"></a>Viz také:
 

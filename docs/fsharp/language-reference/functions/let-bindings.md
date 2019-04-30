@@ -3,11 +3,11 @@ title: let – vazby
 description: Další informace o použití F# "let" vazby, který přidruží k identifikátoru hodnotě nebo funkci.
 ms.date: 05/16/2016
 ms.openlocfilehash: 45de82acf6f4423698cd8037266968e023f40dcb
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940997"
 ---
 # <a name="let-bindings"></a>let – vazby
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
 ms.openlocfilehash: 932ad347730b35a936e040e116e5aa6af36cd3dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343308"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857756"
 ---
 # <a name="how-to-compare-claims"></a>Postupy: Porovnání deklarací
 Infrastruktura modelu Identity ve Windows Communication Foundation (WCF) se používá k provedení kontroly autorizace. V důsledku toho běžných úloh je porovnávání deklarací identity v kontextu autorizace deklarací identity potřebný k provedení požadované akce nebo přístup k požadovanému prostředku. Toto téma popisuje, jak porovnat deklarace identity, včetně typů předdefinované a vlastní deklarace identity. Další informace o infrastruktuře identit modelu najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  

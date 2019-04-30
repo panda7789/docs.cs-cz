@@ -15,11 +15,11 @@ ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e08e90f61429f01f360808866fdc3d963323ba23
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61901810"
 ---
 # <a name="converting-times-between-time-zones"></a>Převádění časových údajů mezi časovými pásmy
 
@@ -34,7 +34,7 @@ Koordinovaný univerzální čas (UTC) je standardní čas vysokou přesností, 
 
 Nejjednodušší způsob, jak převést čas na čas UTC je volání `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> metody. Přesné převodu provedený metodou závisí na hodnotu `dateTime` parametru <xref:System.DateTime.Kind%2A> vlastnost, jak ukazuje následující tabulka.
 
-| `DateTime.Kind`            | Převod                                                                     |
+| `DateTime.Kind`            | Konverze                                                                     |
 | -------------------------- | ------------------------------------------------------------------------------ |
 | `DateTimeKind.Local`       | Místní čas převede na UTC.                                                    |
 | `DateTimeKind.Unspecified` | Předpokládá, `dateTime` parametr je místní čas a převede místní čas na čas UTC. |
@@ -74,7 +74,7 @@ Následující kód UTC převede na střed (běžný čas).
 
 Chcete-li převést UTC na místní čas, zavolejte <xref:System.DateTime.ToLocalTime%2A> metodu <xref:System.DateTime> objekt, jehož čas, který chcete převést. Přesné chování metody závisí na hodnotě objektu <xref:System.DateTime.Kind%2A> vlastnost, jak ukazuje následující tabulka.
 
-| `DateTime.Kind`            | Převod                                                                               |
+| `DateTime.Kind`            | Konverze                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------- |
 | `DateTimeKind.Local`       | Vrátí <xref:System.DateTime> nezměněnou hodnotu.                                      |
 | `DateTimeKind.Unspecified` | Předpokládá, že <xref:System.DateTime> hodnota a převede na UTC na místní čas UTC. |

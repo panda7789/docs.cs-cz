@@ -7,61 +7,61 @@ helpviewer_keywords:
 - WCF [WCF], endpoints
 ms.assetid: 9ddc46ee-1883-4291-9926-28848c57e858
 ms.openlocfilehash: 3e78e7cf0c5acde53d7ee23294fd52134414e860
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856536"
 ---
 # <a name="endpoints-addresses-bindings-and-contracts"></a>Koncové body: adresy, vazby a kontrakty
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkcím, které nabízí služba WCF.  
   
  Každý koncový bod se skládá ze čtyř vlastností:  
   
--   Adresa, která určuje, kde můžete najít koncový bod.  
+- Adresa, která určuje, kde můžete najít koncový bod.  
   
--   Vazba, která určuje, jak klient může komunikovat s koncovým bodem.  
+- Vazba, která určuje, jak klient může komunikovat s koncovým bodem.  
   
--   Smlouvy, které jsou uvedeny operace, které jsou k dispozici.  
+- Smlouvy, které jsou uvedeny operace, které jsou k dispozici.  
   
--   Sada chování, které určují místní implementace podrobnosti koncového bodu.  
+- Sada chování, které určují místní implementace podrobnosti koncového bodu.  
   
  Toto téma popisuje strukturu tohoto koncového bodu a vysvětluje, jak je reprezentován v objektovém modelu WCF.  
   
 ## <a name="the-structure-of-an-endpoint"></a>Struktura koncový bod  
  Každý koncový bod se skládá z následujících akcí:  
   
--   Adresa: Adresa jednoznačně identifikuje koncový bod a říká potenciál příjemce služby, kde se nachází. Je zastoupena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> třídy. <xref:System.ServiceModel.EndpointAddress> Třída obsahuje:  
+- Adresa: Adresa jednoznačně identifikuje koncový bod a říká potenciál příjemce služby, kde se nachází. Je zastoupena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> třídy. <xref:System.ServiceModel.EndpointAddress> Třída obsahuje:  
   
-    -   A <xref:System.ServiceModel.EndpointAddress.Uri%2A> vlastnost, která představuje adresu služby.  
+    - A <xref:System.ServiceModel.EndpointAddress.Uri%2A> vlastnost, která představuje adresu služby.  
   
-    -   <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost, která představuje zabezpečení identity služby a kolekce hlaviček volitelnou zprávu. Záhlaví volitelnou zprávu se používají k zajištění další a další podrobné informace o adresách k identifikaci a k interakci s koncovým bodem.  
+    - <xref:System.ServiceModel.EndpointAddress.Identity%2A> Vlastnost, která představuje zabezpečení identity služby a kolekce hlaviček volitelnou zprávu. Záhlaví volitelnou zprávu se používají k zajištění další a další podrobné informace o adresách k identifikaci a k interakci s koncovým bodem.  
   
      Další informace najdete v tématu [zadání adresy koncového bodu](../../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
--   Vazby: Vazba Určuje, jak se ke komunikaci s koncovým bodem. Sem patří:  
+- Vazby: Vazba Určuje, jak se ke komunikaci s koncovým bodem. Sem patří:  
   
-    -   Protokol přenos, který se má použít (například protokol TCP nebo HTTP).  
+    - Protokol přenos, který se má použít (například protokol TCP nebo HTTP).  
   
-    -   Kódování pro zprávy (například text nebo binární).  
+    - Kódování pro zprávy (například text nebo binární).  
   
-    -   Nezbytné požadavky na zabezpečení (například protokol SSL nebo SOAP zabezpečení zpráv).  
+    - Nezbytné požadavky na zabezpečení (například protokol SSL nebo SOAP zabezpečení zpráv).  
   
      Další informace najdete v tématu [vazby WCF – přehled](../../../../docs/framework/wcf/bindings-overview.md). Vazbu v objektovém modelu WCF reprezentována abstraktní základní třída <xref:System.ServiceModel.Channels.Binding>. Pro většinu scénářů uživatelé mohou používat jednu z vazeb poskytovaných systémem. Další informace najdete v tématu [System-Provided vazby](../../../../docs/framework/wcf/system-provided-bindings.md).  
   
--   Kontrakty: Kontrakt popisuje, jaké funkce zpřístupňuje koncový bod do klienta. Určuje kontrakt:  
+- Kontrakty: Kontrakt popisuje, jaké funkce zpřístupňuje koncový bod do klienta. Určuje kontrakt:  
   
-    -   Jaké operace lze volat pro klienta.  
+    - Jaké operace lze volat pro klienta.  
   
-    -   Formulář zprávy.  
+    - Formulář zprávy.  
   
-    -   Typ vstupních parametrů nebo data potřebná pro volání operace.  
+    - Typ vstupních parametrů nebo data potřebná pro volání operace.  
   
-    -   Jaký typ odpověď nebo zpracování zpráv klienta můžete očekávat.  
+    - Jaký typ odpověď nebo zpracování zpráv klienta můžete očekávat.  
   
      Další informace o definování kontraktu, naleznete v tématu [navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md).  
   
--   Chování: Chování koncového bodu můžete použít k úpravě místní chování koncového bodu služby. Chování koncového bodu dosáhnout účastí průběhu sestavování WCFruntime. Příklad chování koncového bodu je <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnost, která vám umožní určit jinou adresu naslouchání, než adresu SOAP nebo webové služby WSDL (Description Language). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
+- Chování: Chování koncového bodu můžete použít k úpravě místní chování koncového bodu služby. Chování koncového bodu dosáhnout účastí průběhu sestavování WCFruntime. Příklad chování koncového bodu je <xref:System.ServiceModel.Description.ServiceEndpoint.ListenUri%2A> vlastnost, která vám umožní určit jinou adresu naslouchání, než adresu SOAP nebo webové služby WSDL (Description Language). Další informace najdete v tématu [ClientViaBehavior](../../../../docs/framework/wcf/diagnostics/wmi/clientviabehavior.md).  
   
 ## <a name="defining-endpoints"></a>Definování koncových bodů  
  Můžete zadat koncový bod služby buď imperativně promocí kódu nebo deklarativně prostřednictvím konfigurace. Další informace najdete v tématu [jak: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md) a [jak: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  

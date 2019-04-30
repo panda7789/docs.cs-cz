@@ -3,11 +3,11 @@ title: Začínáme sF#
 description: Zjistěte, jak začít pracovat s F# programovací jazyk.
 ms.date: 12/08/2018
 ms.openlocfilehash: df966d6537731650a5f2fcd795ad638ace1b059f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56971406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935418"
 ---
 # <a name="get-started-with-f"></a>Začínáme s F\#
 

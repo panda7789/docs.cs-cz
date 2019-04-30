@@ -13,22 +13,22 @@ ms.assetid: a8347eb1-295f-46b9-8a78-63331f9ecc50
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 798fcacab5bd74dbd6569a68a3b598c0bb63a0a7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59087739"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872635"
 ---
 # <a name="specifying-a-character-set"></a>Určení sady znaků
 <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType> Pole řídí zařazování řetězce a určuje, jak vyvolání platformy najde názvy funkcí v knihovně DLL. Toto téma popisuje, jak chování.  
   
  Některá rozhraní API exportovat dvě verze funkcí, které přijímají řetězcové argumenty: úzký (ANSI) a celý (Unicode). Rozhraní Windows API, například zahrnuje následující názvy vstupní bod **MessageBox** funkce:  
   
--   **MessageBoxA**  
+- **MessageBoxA**  
   
      Poskytuje 1bajtový ANSI formátování, odlišené "A" připojenou k názvu vstupního bodu. Volání **MessageBoxA** vždy zařazovat řetězce ve formátu ANSI.  
   
--   **MessageBoxW**  
+- **MessageBoxW**  
   
      Obsahuje formátování 2bajtových znaků Unicode, odlišené "W" připojenou k názvu vstupního bodu. Volání **funkce** vždy zařazovat řetězce ve formátu Unicode.  
   
@@ -37,11 +37,11 @@ ms.locfileid: "59087739"
   
  <xref:System.Runtime.InteropServices.CharSet.Ansi> (výchozí hodnota)  
   
--   Zařazování řetězců  
+- Zařazování řetězců  
   
      Vyvolání platformy marshals řetězců z jejich spravovaných formátu (Unicode) na ANSI formát.  
   
--   Shoda názvu  
+- Shoda názvu  
   
      Když <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> pole je `true`, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], vyhledá pouze zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
   
@@ -49,11 +49,11 @@ ms.locfileid: "59087739"
   
  <xref:System.Runtime.InteropServices.CharSet.Unicode>  
   
--   Zařazování řetězců  
+- Zařazování řetězců  
   
      Kopie řetězce z jejich spravovaných formátu (Unicode) do Unicode formátu vyvolání platformy.  
   
--   Shoda názvu  
+- Shoda názvu  
   
      Když `ExactSpelling` pole je `true`, protože je ve výchozím nastavení v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], vyhledá pouze zadaný název vyvolání platformy. Pokud zadáte například **MessageBox**, vyhledá vyvolání platformy **MessageBox** a selže, pokud nemůže najít přesnou kontrolu pravopisu.  
   
@@ -61,7 +61,7 @@ ms.locfileid: "59087739"
   
  <xref:System.Runtime.InteropServices.CharSet.Auto>  
   
--   Vyvolání platformy zvolí mezi formáty ANSI a Unicode v době běhu, založené na cílové platformě.  
+- Vyvolání platformy zvolí mezi formáty ANSI a Unicode v době běhu, založené na cílové platformě.  
   
 ## <a name="specifying-a-character-set-in-visual-basic"></a>Určení znakové sady v jazyce Visual Basic  
  Následující příklad deklaruje **MessageBox** funkce tři vícekrát, pokaždé, když s jinou znakovou sadu chování. Znakové sady chování v jazyce Visual Basic můžete zadat tak, že přidáte **Ansi**, **Unicode**, nebo **automaticky** – klíčové slovo do příkazu deklarace.  

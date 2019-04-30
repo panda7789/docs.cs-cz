@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení položky ListBoxItem'
+title: 'Postupy: Získání položky ListBoxItem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,13 +9,13 @@ helpviewer_keywords:
 - ListBoxItem [WPF]
 ms.assetid: da877c6f-5fd8-40cb-8909-225cbfd99aa5
 ms.openlocfilehash: 27a435feb4a941c77af221ab25bd63ea98b16e92
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57360495"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61910322"
 ---
-# <a name="how-to-get-a-listboxitem"></a>Postupy: Načtení položky ListBoxItem
+# <a name="how-to-get-a-listboxitem"></a>Postupy: Získání položky ListBoxItem
 Pokud potřebujete získat konkrétní <xref:System.Windows.Controls.ListBoxItem> konkrétního indexu ve <xref:System.Windows.Controls.ListBox>, můžete použít <xref:System.Windows.Controls.ItemContainerGenerator>.  
   
 ## <a name="example"></a>Příklad  

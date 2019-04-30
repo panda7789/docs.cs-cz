@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: f0d9e4ab-57c7-47b6-86d3-99ff07078040
 ms.openlocfilehash: ac890a4cc6024ae43af4146d1d8f43af70ae3ff0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59972911"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61803906"
 ---
 # <a name="playing-sounds-visual-basic"></a>Přehrávání zvuků (Visual Basic)
 `My.Computer.Audio` Objekt, který poskytuje metody pro přehrávání zvuku.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - arrays [Visual Basic], troubleshooting
 ms.assetid: f4e971c7-c0a4-4ed7-a77a-8d71039f266f
 ms.openlocfilehash: 2b051d22fe3d331626f2e181c008043e576b7526
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908125"
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>Řešení potíží s poli (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s poli.  
@@ -22,7 +22,7 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
 ## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Chyby při kompilaci deklarace a inicializace pole  
  Chyby při kompilaci mohou vyplývat z neporozumění pravidla pro deklarování, vytváření a inicializaci polí. Nejběžnější příčiny chyby jsou následující:  
   
--   Zadávání [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) klauzule po zadání délky dimenzí v deklaraci proměnné pole. Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
+- Zadávání [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) klauzule po zadání délky dimenzí v deklaraci proměnné pole. Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -30,15 +30,15 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
--   Určení délky dimenzí pro více než pole nejvyšší úrovně vícenásobného pole. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
+- Určení délky dimenzí pro více než pole nejvyšší úrovně vícenásobného pole. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
--   Vynechání `New` – klíčové slovo při zadávání hodnot prvků. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
+- Vynechání `New` – klíčové slovo při zadávání hodnot prvků. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
--   Zadávání `New` klauzule bez složených závorek (`{}`). Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
+- Zadávání `New` klauzule bez složených závorek (`{}`). Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   

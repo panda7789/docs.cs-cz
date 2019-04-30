@@ -3,11 +3,11 @@ title: Princip ověřování HTTP
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
 ms.openlocfilehash: 430b0ddb98514b605178124f331e5152605a2b89
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59206392"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918902"
 ---
 # <a name="understanding-http-authentication"></a>Princip ověřování HTTP
 Ověřování je proces určit, jestli je klient oprávnění pro přístup k prostředku. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístup k zabezpečené prostředku.  
@@ -29,11 +29,11 @@ Ověřování je proces určit, jestli je klient oprávnění pro přístup k pr
 ## <a name="choosing-an-authentication-scheme"></a>Volba režimu ověřování  
  Při výběru potenciální schémat ověřování pro HTTP server, několik položek, které byste měli zvážit, patří:  
   
--   Zvažte, zda prostředek, který je potřeba chránit. Použití ověřování pomocí protokolu HTTP vyžaduje přenáší další data a můžete omezte vzájemná funkční spolupráce s klienty. Povolit anonymní přístup k prostředkům, které není potřeba chránit.  
+- Zvažte, zda prostředek, který je potřeba chránit. Použití ověřování pomocí protokolu HTTP vyžaduje přenáší další data a můžete omezte vzájemná funkční spolupráce s klienty. Povolit anonymní přístup k prostředkům, které není potřeba chránit.  
   
--   Pokud prostředek je potřeba chránit, vezměte v úvahu které režimy ověřování poskytovat požadované úrovni zabezpečení. Základní ověřování je nejslabší schéma standardní ověřování zde popsané. Základní ověřování neposkytuje ochranu přihlašovacích údajů uživatele. Nejsilnější standardní ověřování je Negotiate ověřování, což vede k protokolu Kerberos.  
+- Pokud prostředek je potřeba chránit, vezměte v úvahu které režimy ověřování poskytovat požadované úrovni zabezpečení. Základní ověřování je nejslabší schéma standardní ověřování zde popsané. Základní ověřování neposkytuje ochranu přihlašovacích údajů uživatele. Nejsilnější standardní ověřování je Negotiate ověřování, což vede k protokolu Kerberos.  
   
--   Server nesmí prezentovat (hlavičky WWW-ověřování) žádné schéma, které není připraveno přijmout nebo který nezabezpečuje adekvátní chráněnému prostředku. Klienti jsou zdarma si vybrat mezi všechny ověřovací schémata prezentuje serveru. Některé klienty výchozí schéma slabé ověřování nebo první schéma ověřování v seznamu na serveru.  
+- Server nesmí prezentovat (hlavičky WWW-ověřování) žádné schéma, které není připraveno přijmout nebo který nezabezpečuje adekvátní chráněnému prostředku. Klienti jsou zdarma si vybrat mezi všechny ověřovací schémata prezentuje serveru. Některé klienty výchozí schéma slabé ověřování nebo první schéma ověřování v seznamu na serveru.  
   
 ## <a name="see-also"></a>Viz také:
 

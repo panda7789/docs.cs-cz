@@ -10,11 +10,11 @@ helpviewer_keywords:
 - user input [Windows Forms], Windows Forms controls
 ms.assetid: 3de74dcf-fae3-42d0-92b5-bc04a61a6888
 ms.openlocfilehash: 5dc1997dffc53632ce8b36bc5fe89e768871fd0f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802418"
 ---
 # <a name="how-to-handle-user-input-events-in-windows-forms-controls"></a>Postupy: Obsluha událostí uživatelského vstupu v ovládacích prvcích Windows Forms
 Tento příklad ukazuje, jak zpracovat většinu klávesnice, myši, fokus a ověřovací události, které mohou nastat v ovládacím prvku Windows Forms. Textové pole s názvem `TextBoxInput` přijímá události, když má fokus, a informace o každé události je zapsaný do textového pole s názvem `TextBoxOutput` v pořadí, ve kterém jsou vyvolány události. Aplikace také obsahuje sadu políčka, která umožňuje filtrovat události do sestavy.  
@@ -27,7 +27,7 @@ Tento příklad ukazuje, jak zpracovat většinu klávesnice, myši, fokus a ov�
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
+- Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

@@ -19,11 +19,11 @@ ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2559ae686820b1972e457b013565aeb28842392e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59771839"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933845"
 ---
 # <a name="how-to-use-data-protection"></a>Postupy: Použití ochrany dat
 Rozhraní .NET Framework poskytuje přístup k data protection API (DPAPI), který umožňuje šifrování dat s využitím informací z aktuálního uživatelského účtu nebo počítači.  Pokud použijete rozhraní DPAPI, zmírnění náročný problém explicitně vygenerováním a uložením kryptografický klíč.  
@@ -62,9 +62,9 @@ Rozhraní .NET Framework poskytuje přístup k data protection API (DPAPI), kter
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Zahrnout odkaz na `System.Security.dll`.  
+- Zahrnout odkaz na `System.Security.dll`.  
   
--   Zahrnout <xref:System>, <xref:System.IO>, <xref:System.Security.Cryptography>, a <xref:System.Text> oboru názvů.  
+- Zahrnout <xref:System>, <xref:System.IO>, <xref:System.Security.Cryptography>, a <xref:System.Text> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 

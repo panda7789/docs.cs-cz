@@ -3,11 +3,11 @@ title: Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 3f4825c7-c3b0-48da-ba4e-8e97fb2a2f34
 ms.openlocfilehash: ff708dd14d27b34be797f1630dabe27a56c5a219
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908333"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)
 Jeden z vašich nejdůležitějších výkonu výhody LINQ to XML, nikoli <xref:System.Xml.XmlDocument>, dotazy v LINQ to XML nejsou staticky zkompilován, zatímco v době běhu musí být interpretován dotazy XPath. Tato funkce je založená na technologii LINQ to XML, takže není potřeba provést další kroky pro jejich výhod, ale je vhodné pochopit v čem při volbě mezi tyto technologie. Toto téma vysvětluje rozdíl.  
@@ -79,13 +79,13 @@ reader.Close()
   
  Ale <xref:System.Xml.XmlDocument> přístup obvykle neprovádí tak LINQ to XML, protože <xref:System.Xml.XmlNode.SelectNodes%2A> metoda musí takto interně pokaždé, když je volána:  
   
--   Analyzuje řetězec, který obsahuje výraz XPath, rozdělení řetězec do tokenů.  
+- Analyzuje řetězec, který obsahuje výraz XPath, rozdělení řetězec do tokenů.  
   
--   Ověřuje tokeny, abyste měli jistotu, že výraz XPath je neplatný.  
+- Ověřuje tokeny, abyste měli jistotu, že výraz XPath je neplatný.  
   
--   Převádí výraz, který strom interních výrazů.  
+- Převádí výraz, který strom interních výrazů.  
   
--   Prochází uzly, odpovídajícím způsobem výběru uzlů pro sady výsledků na základě vyhodnocení výrazu.  
+- Prochází uzly, odpovídajícím způsobem výběru uzlů pro sady výsledků na základě vyhodnocení výrazu.  
   
  To je mnohem větší než práce provádí odpovídající dotazu LINQ to XML. Rozdíl měřené liší pro jednotlivé typy dotazů, ale v obecné LINQ to XML dotazy méně práci a proto fungoval lépe, než vyhodnocení výrazů XPath pomocí <xref:System.Xml.XmlDocument>.  
   

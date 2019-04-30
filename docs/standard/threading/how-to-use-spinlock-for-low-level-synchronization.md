@@ -11,11 +11,11 @@ ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ff604b94ecef1ffec5fe9845df7c5ba35f5857d7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46000265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61934430"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Postupy: použití SpinLock nízké úrovně synchronizace
 

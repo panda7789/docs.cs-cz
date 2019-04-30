@@ -10,10 +10,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4deea506a616a3578261cb85f4d4dd1369f5718e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59976089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873913"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat všechny verze rozhraní .NET Framework z rozhraní .NET Framework 4.5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.

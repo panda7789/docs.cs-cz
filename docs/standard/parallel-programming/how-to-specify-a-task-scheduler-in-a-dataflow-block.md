@@ -13,11 +13,11 @@ ms.assetid: 27ece374-ed5b-49ef-9cec-b20db34a65e8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 681c0f1f918c8991ed2544189488d1ea25547834
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345843"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935392"
 ---
 # <a name="how-to-specify-a-task-scheduler-in-a-dataflow-block"></a>Postupy: Určení plánovače úloh v bloku toku dat
 Tento dokument ukazuje, jak přiřadit určitým plánovačem úloh, při použití toku dat ve vaší aplikaci. V příkladu se používá <xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair?displayProperty=nameWithType> třídy v aplikaci Windows Forms k zobrazení, čtečky úkoly, které mají aktivní a pokud je aktivní úlohy zapisovače. Využívá také <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> způsob povolení bloku toku dat pro spuštění ve vlákně uživatelského rozhraní.

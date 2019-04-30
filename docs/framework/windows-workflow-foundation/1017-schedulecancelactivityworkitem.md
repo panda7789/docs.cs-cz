@@ -1,35 +1,35 @@
 ---
-title: 1017 - ScheduleCancelActivityWorkItem
+title: 1017 – ScheduleCancelActivityWorkItem
 ms.date: 03/30/2017
 ms.assetid: 864546ab-d65c-4989-8fcb-537ba03a3cdd
 ms.openlocfilehash: 186b012cdd554ec7dd0d195b460619cca04eddcb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33510169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61924485"
 ---
-# <a name="1017---schedulecancelactivityworkitem"></a>1017 - ScheduleCancelActivityWorkItem
+# <a name="1017---schedulecancelactivityworkitem"></a>1017 – ScheduleCancelActivityWorkItem
 ## <a name="properties"></a>Vlastnosti  
   
 |||  
 |-|-|  
 |ID|1017|  
-|Klíčová slova|WFRuntime|  
-|úroveň|Verbose|  
-|Kanál|Aplikaci Microsoft Windows Server – aplikace/Debug|  
+|klíčová slova|WFRuntime|  
+|úroveň|Podrobnosti|  
+|Kanál|Aplikace Microsoft Windows Server – aplikace/Debug|  
   
 ## <a name="description"></a>Popis  
- Označuje, že bylo naplánováno CancelActivityWorkItem.  
+ Označuje, že položka CancelActivityWorkItem byla plánována.  
   
 ## <a name="message"></a>Zpráva  
- Bylo naplánováno CancelActivityWorkItem aktivity %1, DisplayName: %2, identifikátor InstanceId: '%3'.  
+ Položka CancelActivityWorkItem byla plánována pro aktivitu %1, DisplayName: %2, InstanceId: '%3'.  
   
 ## <a name="details"></a>Podrobnosti  
   
-|Název položky dat|Datová položka – Typ|Popis|  
+|Název položky dat|Datový typ položky|Popis|  
 |--------------------|--------------------|-----------------|  
-|Aktivita|xs:String|Název typu aktivity.|  
-|displayName|xs:String|Zobrazovaný název aktivity.|  
-|identifikátor instanceId|xs:String|Id instance aktivity.|  
-|Domény aplikace|xs:String|Řetězec vrácený AppDomain.CurrentDomain.FriendlyName.|
+|Aktivita|xs:string|Název typu aktivity.|  
+|displayName|xs:string|Zobrazovaný název aktivity.|  
+|InstanceId|xs:string|Id instance aktivity.|  
+|AppDomain|xs:string|Řetězec vrácený funkcí AppDomain.CurrentDomain.FriendlyName.|

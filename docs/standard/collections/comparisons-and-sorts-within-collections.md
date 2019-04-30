@@ -15,11 +15,11 @@ ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 45f0e30efac32dec42cf0687fa0da40f4d6dca4f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54551823"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909074"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 <xref:System.Collections> Třídy proveďte porovnání v téměř všech procesů zapojených do Správa kolekcí, zda hledání elementu, který chcete odebrat nebo vrátí hodnotu z dvojice klíč hodnota.  
@@ -30,9 +30,9 @@ ms.locfileid: "54551823"
 ## <a name="checking-for-equality"></a>Kontroly rovnosti  
  Metody jako `Contains`, <xref:System.Collections.IList.IndexOf%2A>, <xref:System.Collections.Generic.List%601.LastIndexOf%2A>, a `Remove` použít porovnávání rovnosti pro elementy v kolekci. Pokud kolekce je obecný, než položek porovnání rovnosti podle následujících pokynů:  
   
--   Pokud typ T implementuje <xref:System.IEquatable%601> obecné rozhraní a pak procedury rovnosti je <xref:System.IEquatable%601.Equals%2A> metodu rozhraní.  
+- Pokud typ T implementuje <xref:System.IEquatable%601> obecné rozhraní a pak procedury rovnosti je <xref:System.IEquatable%601.Equals%2A> metodu rozhraní.  
   
--   Pokud typ T neimplementuje <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=nameWithType> se používá.  
+- Pokud typ T neimplementuje <xref:System.IEquatable%601>, <xref:System.Object.Equals%2A?displayProperty=nameWithType> se používá.  
   
  Kromě toho některá přetížení konstruktoru pro kolekce slovníku přijmout <xref:System.Collections.Generic.IEqualityComparer%601> implementace, která se používá k porovnání rovnosti klíčů. Příklad najdete v tématu <xref:System.Collections.Generic.Dictionary%602.%23ctor%2A?displayProperty=nameWithType> konstruktoru.  
   
@@ -42,11 +42,11 @@ ms.locfileid: "54551823"
   
  Výchozí porovnávací metody spoléhá na minimálně jeden z objektů porovnávané hodnotě implementovat **IComparable** rozhraní. Je vhodné provádět **IComparable** na všechny třídy se používají jako hodnoty v seznamu kolekce nebo jako klíče v kolekci slovníku. Pro obecnou kolekci porovnání rovnosti se určuje podle následujícího schématu:  
   
--   Pokud typ T implementuje <xref:System.IComparable%601?displayProperty=nameWithType> obecné rozhraní a pak výchozí porovnávací metody je <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> metoda rozhraní  
+- Pokud typ T implementuje <xref:System.IComparable%601?displayProperty=nameWithType> obecné rozhraní a pak výchozí porovnávací metody je <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> metoda rozhraní  
   
--   Pokud typ T implementuje neobecnou <xref:System.IComparable?displayProperty=nameWithType> rozhraní, pak je výchozí porovnávací metody <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> metodu rozhraní.  
+- Pokud typ T implementuje neobecnou <xref:System.IComparable?displayProperty=nameWithType> rozhraní, pak je výchozí porovnávací metody <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> metodu rozhraní.  
   
--   Pokud typ T není implementovat buď rozhraní, nejsou k dispozici žádné výchozí porovnávací metody a porovnání nebo porovnání delegáta musí být zadaná explicitně.  
+- Pokud typ T není implementovat buď rozhraní, nejsou k dispozici žádné výchozí porovnávací metody a porovnání nebo porovnání delegáta musí být zadaná explicitně.  
   
  Pokud chcete poskytnout explicitní porovnávání, některé metody přijímají **IComparer** implementace jako parametr. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> metoda přijímá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementace.  
   

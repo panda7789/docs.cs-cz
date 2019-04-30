@@ -3,11 +3,11 @@ title: Diagnostikování transakčních aplikací
 ms.date: 03/30/2017
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
 ms.openlocfilehash: aca5f95e2085dfadf06da35dfd86af72c0b6092d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856736"
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
 Toto téma popisuje postup řešení potíží s transakční aplikace pomocí správy služby Windows Communication Foundation (WCF) a funkce Diagnostika.  
@@ -51,7 +51,7 @@ Toto téma popisuje postup řešení potíží s transakční aplikace pomocí s
   
  V rámci služby `ServiceBehaviorAttribute` má následující vlastnosti.  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |----------|----------|-----------------|  
 |ReleaseServiceInstanceOnTransactionComplete|Boolean|Určuje, zda je objekt služby vrácen, pokud je aktuální transakce dokončena.|  
 |TransactionAutoCompleteOnSessionClose|Boolean|Určuje, zda jsou nevyřízené transakce dokončeny zavře aktuální relaci.|  
@@ -60,42 +60,42 @@ Toto téma popisuje postup řešení potíží s transakční aplikace pomocí s
   
  `ServiceTimeoutsBehavior` Má následující vlastnost.  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |----------|----------|-----------------|  
 |Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje interval, ve kterém musí být transakce dokončena.|  
   
  U vazby, `TransactionFlowBindingElement` má následující vlastnosti.  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |----------|----------|-----------------|  
 |transactionProtocol|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionProtocol> typu.|Určuje protokol transakce pro použití v toku transakce.|  
 |TransactionFlow|Boolean|Určuje, zda je povolen tok příchozích transakcí.|  
   
  U určité operace `OperationBehaviorAttribute` má následující vlastnosti:  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |----------|----------|-----------------|  
 |TransactionAutoComplete|Boolean|Určuje, jestli aktuální transakce potvrzena automaticky, pokud se nevyskytnou žádné nezpracované výjimky.|  
 |Vlastností TransactionScopeRequired|Boolean|Určuje, zda operace vyžaduje transakci.|  
   
  U určité operace `TransactionFlowAttribute` má následující vlastnosti.  
   
-|Name|Typ|Popis|  
+|Název|Typ|Popis|  
 |----------|----------|-----------------|  
 |TransactionFlowOption|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionFlowOption> výčtu.|Určuje rozsah na transakci, která tok je povinný.|  
   
 ## <a name="tracing"></a>Trasování  
  Trasování umožňují monitorovat a analyzovat chyby v transakční aplikace. Můžete povolit trasování pomocí následujícími způsoby:  
   
--   Standardní trasování WCF  
+- Standardní trasování WCF  
   
      Tento typ trasování je stejný jako trasování všech aplikací WCF. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
--   WS-AtomicTransaction trasování  
+- WS-AtomicTransaction trasování  
   
      Trasování WS-AtomicTransaction se dá nastavit pomocí [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Tyto funkce trasování poskytuje přehled o stavu transakce a účastníků v rámci systému. Umožňuje také interní trasování Model služby, můžete nastavit `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klíč registru, který platnou hodnotou <xref:System.Diagnostics.SourceLevels> výčtu. Můžete povolit protokolování stejným způsobem jako ostatní aplikace WCF.  
   
--   `System.Transactions` trasování  
+- `System.Transactions` trasování  
   
      Při použití protokolu OleTransactions, nelze protokol zprávy trasovány. Podpora trasování <xref:System.Transactions> poskytuje infrastrukturu (využívající OleTransactions) umožňuje uživatelům zobrazit události, ke kterým došlo na transakce. Povolení trasování pro <xref:System.Transactions> aplikace, zahrnují následující kód `App.config` konfigurační soubor.  
   

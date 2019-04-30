@@ -6,11 +6,11 @@ ms.assetid: 2aa8f65c-cc62-4638-9c46-129dc15be786
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eda5c9b4851b29c0a76e45414d7c47ba52252455
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44252867"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864127"
 ---
 # <a name="copy-existing-nodes"></a>Kopírování existujících uzlů
 Existuje mnoho metod a vlastností v XML dokumentu objektu modelu modelu DOM () vám pomůže se vyberte uzel, jako je například **SelectSingleNode**, **ChildNodes [int můžu]**, **atributy [int můžu]**. Po výběru uzlu ji můžete vložit do stromu pomocí jedné z metod vložení, které fungují pro daný typ konkrétní uzel. Jediným omezením při vkládání uzlu do stromu je, že dokument přesto musí být ve správném formátu po vložení uzlu. Když existující uzel je vložen do stromu modelu DOM, je odebrán z jeho původní pozice a přidány do cílového umístění.  

@@ -21,11 +21,11 @@ ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0d08056780fe3042983ea021e5a4cd82a14d252a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59113721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873223"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Zařazování tříd, struktur a sjednocení
 Třídy a struktury jsou podobné jako u rozhraní .NET Framework. Můžete mít pole, vlastnosti a události. Můžou také mít statické a nestatické metody. Jeden velký rozdíl je, že struktury jsou typy hodnot a třídy jsou odkazové typy.  
@@ -50,19 +50,19 @@ Třídy a struktury jsou podobné jako u rozhraní .NET Framework. Můžete mít
   
  Ukázka struktur používá následující nespravované funkce zobrazené s původní deklarací funkce:  
   
--   **TestStructInStruct** exportovaná z knihovny PinvokeLib.dll.  
+- **TestStructInStruct** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     int TestStructInStruct(MYPERSON2* pPerson2);  
     ```  
   
--   **TestStructInStruct3** exportovaná z knihovny PinvokeLib.dll.  
+- **TestStructInStruct3** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     void TestStructInStruct3(MYPERSON3 person3);  
     ```  
   
--   **TestArrayInStruct** exportovaná z knihovny PinvokeLib.dll.  
+- **TestArrayInStruct** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
@@ -98,23 +98,23 @@ typedef struct _MYARRAYSTRUCT
   
  Spravovanou `MyPerson`, `MyPerson2`, `MyPerson3`, a `MyArrayStruct` struktury mají následující charakteristiky:  
   
--   `MyPerson` obsahuje pouze členy řetězec. [CharSet](specifying-a-character-set.md) pole nastaví řetězce formátu ANSI předány nespravované funkci.  
+- `MyPerson` obsahuje pouze členy řetězec. [CharSet](specifying-a-character-set.md) pole nastaví řetězce formátu ANSI předány nespravované funkci.  
   
--   `MyPerson2` obsahuje **IntPtr** k `MyPerson` struktury. **IntPtr** typ nahradí původní ukazatel na nespravované struktury, protože aplikace rozhraní .NET Framework nepoužívejte ukazatele, pokud kód je označen **nebezpečné**.  
+- `MyPerson2` obsahuje **IntPtr** k `MyPerson` struktury. **IntPtr** typ nahradí původní ukazatel na nespravované struktury, protože aplikace rozhraní .NET Framework nepoužívejte ukazatele, pokud kód je označen **nebezpečné**.  
   
--   `MyPerson3` obsahuje `MyPerson` jako vložené struktury. Struktura vložených v jiné struktuře můžete plochý tak, že prvky vložené struktury přímo do hlavní struktury nebo ji lze ponechat jako vložené struktury, jak je tomu v této ukázce.  
+- `MyPerson3` obsahuje `MyPerson` jako vložené struktury. Struktura vložených v jiné struktuře můžete plochý tak, že prvky vložené struktury přímo do hlavní struktury nebo ji lze ponechat jako vložené struktury, jak je tomu v této ukázce.  
   
--   `MyArrayStruct` obsahuje pole celých čísel. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nastaví <xref:System.Runtime.InteropServices.UnmanagedType> hodnotu výčtu pro **ByValArray**, který se používá k určení počtu prvků v poli.  
+- `MyArrayStruct` obsahuje pole celých čísel. <xref:System.Runtime.InteropServices.MarshalAsAttribute> Atribut nastaví <xref:System.Runtime.InteropServices.UnmanagedType> hodnotu výčtu pro **ByValArray**, který se používá k určení počtu prvků v poli.  
   
  Pro všechny struktury v této ukázce <xref:System.Runtime.InteropServices.StructLayoutAttribute> atributu se použije pro zajištění, že členové jsou uspořádáni v paměti sekvenčně, v pořadí, v jakém jsou uvedeny.  
   
  `LibWrap` Třída obsahuje spravované prototypy pro `TestStructInStruct`, `TestStructInStruct3`, a `TestArrayInStruct` volané metody `App` třídy. Každý prototyp deklaruje jediný parametr, následujícím způsobem:  
   
--   `TestStructInStruct` deklaruje odkaz na typ `MyPerson2` jako svůj parametr.  
+- `TestStructInStruct` deklaruje odkaz na typ `MyPerson2` jako svůj parametr.  
   
--   `TestStructInStruct3` deklaruje typ `MyPerson3` jako svůj parametr a předá podle hodnoty parametru.  
+- `TestStructInStruct3` deklaruje typ `MyPerson3` jako svůj parametr a předá podle hodnoty parametru.  
   
--   `TestArrayInStruct` deklaruje odkaz na typ `MyArrayStruct` jako svůj parametr.  
+- `TestArrayInStruct` deklaruje odkaz na typ `MyArrayStruct` jako svůj parametr.  
   
  Struktury jako argumenty metod jsou předávány hodnotou, pokud parametr obsahuje **ref** (**ByRef** v jazyce Visual Basic) – klíčové slovo. Například `TestStructInStruct` metoda předává odkazem (hodnota adresy) na objekt typu `MyPerson2` nespravovaného kódu. K manipulaci s strukturu, která `MyPerson2` odkazuje na ukázky vytvoří vyrovnávací paměti o zadané velikosti a vrátí jeho adresu tím, že zkombinujete <xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A?displayProperty=nameWithType> a <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> metody. Dále ukázka zkopíruje obsah spravovaná struktura do nespravované vyrovnávací paměti. Nakonec příklad používá <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A?displayProperty=nameWithType> metodu zařazování dat z vyrovnávací paměti nespravovaného do spravovaného objektu a <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A?displayProperty=nameWithType> metodu pro uvolnění nespravovaných blok paměti.  
   
@@ -133,7 +133,7 @@ typedef struct _MYARRAYSTRUCT
   
  Findfile – Ukázka používá následující nespravovanou funkci zobrazenou s původní deklarací funkce:  
   
--   **FindFirstFile** exportovaná ze souboru Kernel32.dll.  
+- **FindFirstFile** exportovaná ze souboru Kernel32.dll.  
   
     ```  
     HANDLE FindFirstFile(LPCTSTR lpFileName, LPWIN32_FIND_DATA lpFindFileData);  
@@ -176,7 +176,7 @@ typedef struct _WIN32_FIND_DATA
   
  Ukázka spojení používá následující nespravovanou funkci zobrazenou s původní deklarací funkce:  
   
--   **TestUnion** exportovaná z knihovny PinvokeLib.dll.  
+- **TestUnion** exportovaná z knihovny PinvokeLib.dll.  
   
     ```  
     void TestUnion(MYUNION u, int type);  
@@ -219,7 +219,7 @@ union MYUNION2
   
  Systime – Ukázka používá následující nespravovanou funkci zobrazenou s původní deklarací funkce:  
   
--   **GetSystemTime** exportovaná ze souboru Kernel32.dll.  
+- **GetSystemTime** exportovaná ze souboru Kernel32.dll.  
   
     ```  
     VOID GetSystemTime(LPSYSTEMTIME lpSystemTime);  
@@ -270,11 +270,11 @@ typedef struct _MYSTRSTRUCT2
   
  `App` Implementuje třída `UsingMarshaling` metodu, která provádí všechny úkoly, které jsou nutné předat pole. Pole je označeno `out` (`ByRef` v jazyce Visual Basic) předá – klíčové slovo k označení tato data z volaný volající. Implementace používá následující <xref:System.Runtime.InteropServices.Marshal> metody třídy:  
   
--   <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A> zařazování dat z vyrovnávací paměti nespravovaného do spravovaného objektu.  
+- <xref:System.Runtime.InteropServices.Marshal.PtrToStructure%2A> zařazování dat z vyrovnávací paměti nespravovaného do spravovaného objektu.  
   
--   <xref:System.Runtime.InteropServices.Marshal.DestroyStructure%2A> k uvolnění paměti vyhrazená pro řetězce ve struktuře.  
+- <xref:System.Runtime.InteropServices.Marshal.DestroyStructure%2A> k uvolnění paměti vyhrazená pro řetězce ve struktuře.  
   
--   <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> k uvolnění paměti vyhrazená pro pole.  
+- <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> k uvolnění paměti vyhrazená pro pole.  
   
  Jak už jsme zmínili, C# umožňuje nezabezpečený kód a [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] tak není. V C# ukázce `UsingUnsafePointer` je to alternativní metoda pro implementace, která používá ukazatele namísto <xref:System.Runtime.InteropServices.Marshal> třídy předat zpět na pole obsahující `MyUnsafeStruct` struktury.  
   

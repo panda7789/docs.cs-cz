@@ -1,15 +1,15 @@
 ---
-title: Optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení
+title: Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
 ms.openlocfilehash: 73340f5f65de1d743e046cf669258ab5f6c66298
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371200"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793624"
 ---
-# <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení
+# <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení
 
 Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastruktury za účelem optimalizace výkonu.
 
@@ -46,7 +46,7 @@ V tomto případě
 
 2. Při volání CN2 druhé připojení <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>, volání selže, protože je potřebný další možné zařazení. Z tohoto důvodu musí CN2 získat transakci DTC, chcete-li předat SQL. Chcete-li to provést, používá jednu z metody poskytované <xref:System.Transactions.TransactionInterop> třídy a vytvořit formát transakce, která mohou být zadány SQL.
 
-3. <xref:System.Transactions>volání <xref:System.Transactions.ITransactionPromoter.Promote%2A> metodu na <xref:System.Transactions.ITransactionPromoter> rozhraní implementované CN1.
+3. <xref:System.Transactions> volání <xref:System.Transactions.ITransactionPromoter.Promote%2A> metodu <xref:System.Transactions.ITransactionPromoter> rozhraní implementované CN1.
 
 4. V tomto okamžiku CN1 eskaluje transakce, pomocí některé mechanismus, které jsou specifické pro SQL 2005 a <xref:System.Data>.
 

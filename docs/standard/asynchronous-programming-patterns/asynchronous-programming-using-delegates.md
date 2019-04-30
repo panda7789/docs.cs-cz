@@ -15,11 +15,11 @@ ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 41c9793900c3e7accd5463a19de10d1cb81afd59
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503830"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870120"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Asynchronní programování pomocí delegátů
 Delegáty umožňují volání v asynchronním režimu synchronní metody. Při volání delegáta synchronně, `Invoke` metoda volá metodu cíl přímo u aktuálního vlákna. Pokud `BeginInvoke` metoda je volána, common language runtime (CLR) zařadí do fronty požadavek a okamžitě vrací volajícímu. Cílové metody je volána asynchronně na vlákně z fondu podprocesů. Původní podproces, který danou žádost odeslal, je zdarma má pokračovat provedením souběžně s cílovou metodu. Pokud byl zadán metody zpětného volání při volání `BeginInvoke` metody, metody zpětného volání je volána, když skončí cílové metody. V metodě zpětného volání `EndInvoke` metoda získá návratovou hodnotu a vstup/výstup nebo jen pro výstupní parametry. Pokud žádná metoda zpětného volání je zadán při volání metody `BeginInvoke`, `EndInvoke` lze volat z vlákna, která se nazývá `BeginInvoke`.  

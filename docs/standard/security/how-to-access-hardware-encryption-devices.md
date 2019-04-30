@@ -16,11 +16,11 @@ ms.assetid: b0e734df-6eb4-4b16-b48c-6f0fe82d5f17
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 33af618ac3971df76683fd64346e1aa1e5977177
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773412"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795197"
 ---
 # <a name="how-to-access-hardware-encryption-devices"></a>Postupy: Přístup k hardwarovým šifrovacím zařízením
 Můžete použít <xref:System.Security.Cryptography.CspParameters> třídy pro přístup k hardwarovým šifrovacím zařízením. Tato třída můžete například použít k integraci vaší aplikace pomocí čipové karty, generátor náhodných čísel hardware nebo hardware provádění konkrétní kryptografický algoritmus.  
@@ -54,8 +54,8 @@ Můžete použít <xref:System.Security.Cryptography.CspParameters> třídy pro 
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Zahrnout <xref:System> a <xref:System.Security.Cryptography> obory názvů.  
+- Zahrnout <xref:System> a <xref:System.Security.Cryptography> obory názvů.  
   
--   Musíte mít čtečku čipových karet a ovladače v počítači nainstalována.  
+- Musíte mít čtečku čipových karet a ovladače v počítači nainstalována.  
   
--   Je třeba inicializovat <xref:System.Security.Cryptography.CspParameters> pomocí informací specifických pro vaši čtečku.  Další informace naleznete v dokumentaci vaši čtečku.
+- Je třeba inicializovat <xref:System.Security.Cryptography.CspParameters> pomocí informací specifických pro vaši čtečku.  Další informace naleznete v dokumentaci vaši čtečku.

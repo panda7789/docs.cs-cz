@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c7cba174-9d40-491d-b32c-f2d73b7e9eab
 ms.openlocfilehash: 222ce575d9e977cc8b68862385b4a1b147c6394a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902691"
 ---
 # <a name="how-to-submit-changes-to-the-database"></a>Postupy: Odeslání změn do databáze
 Bez ohledu na to, kolik změny, které provedete do objektů dojde ke změně pouze do replik v paměti. Žádné změny provedené na skutečná data v databázi. Změny nejsou přenášeny do serveru, dokud explicitně volat <xref:System.Data.Linq.DataContext.SubmitChanges%2A> na <xref:System.Data.Linq.DataContext>.  

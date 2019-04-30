@@ -8,11 +8,11 @@ ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 37b226cad9a34f1629d2972dacf8019adad54d7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873584"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina datových typů mají společné reprezentaci ve spravované i nespravované paměti a nevyžadují žádná zvláštní zacházení podle interoperační zařazovač. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že když jsou předávány mezi nevyžadují převod spravovaného a nespravovaného kódu.  
@@ -21,35 +21,35 @@ Většina datových typů mají společné reprezentaci ve spravované i nesprav
   
  Následující typy <xref:System> obor názvů jsou přenositelné typy:  
   
--   <xref:System.Byte?displayProperty=nameWithType>  
+- <xref:System.Byte?displayProperty=nameWithType>  
   
--   <xref:System.SByte?displayProperty=nameWithType>  
+- <xref:System.SByte?displayProperty=nameWithType>  
   
--   <xref:System.Int16?displayProperty=nameWithType>  
+- <xref:System.Int16?displayProperty=nameWithType>  
   
--   <xref:System.UInt16?displayProperty=nameWithType>  
+- <xref:System.UInt16?displayProperty=nameWithType>  
   
--   <xref:System.Int32?displayProperty=nameWithType>  
+- <xref:System.Int32?displayProperty=nameWithType>  
   
--   <xref:System.UInt32?displayProperty=nameWithType>  
+- <xref:System.UInt32?displayProperty=nameWithType>  
   
--   <xref:System.Int64?displayProperty=nameWithType>  
+- <xref:System.Int64?displayProperty=nameWithType>  
   
--   <xref:System.UInt64?displayProperty=nameWithType>  
+- <xref:System.UInt64?displayProperty=nameWithType>  
   
--   <xref:System.IntPtr?displayProperty=nameWithType>  
+- <xref:System.IntPtr?displayProperty=nameWithType>  
   
--   <xref:System.UIntPtr?displayProperty=nameWithType>  
+- <xref:System.UIntPtr?displayProperty=nameWithType>  
   
--   <xref:System.Single?displayProperty=nameWithType>  
+- <xref:System.Single?displayProperty=nameWithType>  
   
--   <xref:System.Double?displayProperty=nameWithType>  
+- <xref:System.Double?displayProperty=nameWithType>  
   
  Přenositelné typy jsou také následující komplexní typy:  
   
--   Jednorozměrná pole přenositelné typy, jako je například pole celých čísel. Ale typ, který obsahuje proměnné pole přenositelné typy není samotného typu blittable.  
+- Jednorozměrná pole přenositelné typy, jako je například pole celých čísel. Ale typ, který obsahuje proměnné pole přenositelné typy není samotného typu blittable.  
   
--   Formátovaná hodnota typy, které obsahují pouze přenositelné typy (a třídy, pokud jsou zařazeny jako formátovaný typy). Další informace o typech formátovaná hodnota najdete v tématu [výchozí zařazování pro typy hodnot](default-marshaling-behavior.md#default-marshaling-for-value-types).  
+- Formátovaná hodnota typy, které obsahují pouze přenositelné typy (a třídy, pokud jsou zařazeny jako formátovaný typy). Další informace o typech formátovaná hodnota najdete v tématu [výchozí zařazování pro typy hodnot](default-marshaling-behavior.md#default-marshaling-for-value-types).  
   
  Odkazy na objekty nejsou typu blittable. To zahrnuje pole odkazů na objekty, které jsou přenositelné samy o sobě. Například můžete definovat strukturu, která je typu blittable, ale nelze definovat typu blittable, který obsahuje pole odkazů na tyto struktury.  
   

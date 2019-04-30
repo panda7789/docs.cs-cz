@@ -12,11 +12,11 @@ helpviewer_keywords:
 - dialog boxes [Windows Forms], displaying for Windows Forms
 ms.assetid: aaac1b38-c651-495a-8d3d-5a9bfb32fee3
 ms.openlocfilehash: b99f2273dae88faf86448da6e1d2986a83803abf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802580"
 ---
 # <a name="how-to-display-dialog-boxes-for-windows-forms"></a>Postupy: Zobrazování dialogových oken pro Windows Forms
 Zobrazit dialogové okno stejným způsobem, zobrazit jiné formuláře v aplikaci. Změna formuláře úvodního formuláře načte automaticky při spuštění aplikace. Chcete-li druhý formulář nebo dialogové okno se zobrazí v aplikaci, napište kód pro načtení a zobrazení. Podobně aby formulář nebo dialogové okno pole zmizí, napište kód, který uvolnit nebo skryli.  

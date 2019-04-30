@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 3fa0ac7d-e266-4954-bfac-3fbe2f913153
 ms.openlocfilehash: ecfd2c3a31b42b380c593aef0bbc23775874cc7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878199"
 ---
 # <a name="populating-a-dataset-from-a-dataadapter"></a>Naplnění datové sady z adaptéru dat
 [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] <xref:System.Data.DataSet> Rezidentní reprezentace dat, které poskytuje konzistentní relační programovací model bez ohledu na zdroj dat je. `DataSet` Představuje ucelenou sadu dat, která obsahuje tabulky, omezení a relace mezi tabulkami. Protože `DataSet` je nezávislý na zdroji dat `DataSet` může obsahovat místní aplikaci a data z různých zdrojů dat. Interakce s stávajících zdrojů dat je řízen pomocí `DataAdapter`.  

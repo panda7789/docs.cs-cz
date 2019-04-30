@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
 ms.openlocfilehash: 2c0372e0176ea54a975e787631ba2849f79e5493
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083730"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61803178"
 ---
 # <a name="visual-basic-language-reference"></a>Referenční dokumentace jazyka Visual Basic
 Tato část obsahuje referenční informace pro různé aspekty jazyka Visual Basic.  
@@ -85,5 +85,5 @@ Tato část obsahuje referenční informace pro různé aspekty jazyka Visual Ba
  [Visual Basic](../../visual-basic/index.md)  
  Poskytuje komplexní nápovědy na všech oblastí jazyka Visual Basic.  
   
- [Kompilátor příkazového řádku jazyka Visual Basic](../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic Command-Line Compiler](../../visual-basic/reference/command-line-compiler/index.md)  
  Popisuje způsob použití kompilátoru příkazového řádku jako alternativu ke kompilaci programů z v rámci integrovaného vývojového prostředí (IDE) sady Visual Studio.

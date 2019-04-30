@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0a4d2c2bd28640d0ac7124f8e0864e9e72fb1eb9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935626"
 ---
 # <a name="createclassenumwmi-function"></a>CreateClassEnumWmi – funkce
 Vrátí enumerátor pro všechny třídy, které splňují kritéria zadaná výběru.
@@ -53,7 +53,7 @@ HRESULT CreateClassEnumWmi (
 `lFlags`\
 [in] Kombinace příznaků, které ovlivňují chování této funkce. Následující hodnoty jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAG_USE_AMENDED_QUALIFIERS` | 0x20000 | Pokud sada funkce načte upravenou kvalifikátory uložené v lokalizovaných názvů národního prostředí aktuálního připojení. <br/> Pokud není sada, funkce načte jenom v kvalifikátorech uložené v oboru názvů okamžité. |
 | `WBEM_FLAG_DEEP` | 0 | Výčet zahrnuje všechny podtřídy v hierarchii, ale ne této třídy. |
@@ -92,7 +92,7 @@ Doporučené příznaky jsou `WBEM_FLAG_RETURN_IMMEDIATELY` a `WBEM_FLAG_FORWARD
 
 Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:
 
-|Konstanta  |Hodnota  |Popis  |
+|Konstanta  |Value  |Popis  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | Uživatel nemá oprávnění k zobrazení jeden nebo více tříd, které funkce může vrátit. |
 | `WBEM_E_FAILED` | 0x80041001 | Došlo k nespecifikované chybě. |

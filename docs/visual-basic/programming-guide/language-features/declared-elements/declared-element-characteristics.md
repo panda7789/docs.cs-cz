@@ -14,22 +14,22 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 ms.assetid: 1bc40fb8-b67c-4428-90a4-76b630ae2583
 ms.openlocfilehash: 98f6a7738a462e9f36abdc0380cb1fe8d488fb9d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58821293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61830164"
 ---
 # <a name="declared-element-characteristics-visual-basic"></a>Deklarované charakteristiky elementu (Visual Basic)
 A *charakteristiku* deklarované elementu je určitý aspekt tento prvek, který má vliv jak s ním mohli pracovat kódu. Každý element deklarovaný má jeden nebo více z následujících vlastností s ním spojená:  
   
--   *Datový typ* – může obsahovat hodnoty elementu a způsobu, jakým ukládá tyto hodnoty. Další informace najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
+- *Datový typ* – může obsahovat hodnoty elementu a způsobu, jakým ukládá tyto hodnoty. Další informace najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
--   *Doba života* – doba provádění, během které je k dispozici pro použití elementu. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+- *Doba života* – doba provádění, během které je k dispozici pro použití elementu. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
--   *Obor* – sada veškerý kód, který může odkazovat na prvek bez kvalifikace názvu. Další informace najdete v tématu [jak: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).  
+- *Obor* – sada veškerý kód, který může odkazovat na prvek bez kvalifikace názvu. Další informace najdete v tématu [jak: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).  
   
--   *Úroveň přístupu* – oprávnění pro kód, který pomocí elementu. Další informace najdete v tématu [jak: Řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).  
+- *Úroveň přístupu* – oprávnění pro kód, který pomocí elementu. Další informace najdete v tématu [jak: Řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).  
   
 ## <a name="characteristics-of-the-elements"></a>Vlastnosti elementů  
  V následující tabulce jsou uvedeny deklarované elementy a vlastnosti, které se vztahují ke každému z nich.  

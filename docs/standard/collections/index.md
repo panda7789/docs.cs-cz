@@ -13,11 +13,11 @@ ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d6b9e3d3f5ebc122e2031dac5999a80445ee03a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59083831"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909130"
 ---
 # <a name="collections-and-data-structures"></a>Kolekce a datové struktury
 Podobná data může často být zpracována efektivněji při uloženy a zpracovávány jako kolekce. Můžete použít <xref:System.Array?displayProperty=nameWithType> třídu nebo třídy v <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent>, System.Collections.Immutable oborů názvů pro přidání, odebrání a změnu jednotlivých prvků nebo rozsahu prvků v kolekci.  
@@ -30,17 +30,17 @@ Podobná data může často být zpracována efektivněji při uloženy a zpraco
 ## <a name="common-collection-features"></a>Běžné funkce kolekce  
  Všechny kolekce poskytují metody pro přidání, odebrání nebo hledání položek v kolekci. Kromě toho všechny kolekce, která přímo nebo nepřímo implementovat <xref:System.Collections.ICollection> rozhraní nebo <xref:System.Collections.Generic.ICollection%601> rozhraní sdílet tyto funkce:  
   
--   **Umožňuje vytvářet výčty kolekce**  
+- **Umožňuje vytvářet výčty kolekce**  
   
      Rozhraní .NET framework kolekce buď implementovat <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> povolit kolekce, kterou chcete provést iteraci pomocí. Čítače můžete představit jako přesouvatelný ukazatel na libovolný prvek v kolekci. [Foreach v](../../csharp/language-reference/keywords/foreach-in.md) příkazu a [For Each... Další příkaz](../../visual-basic/language-reference/statements/for-each-next-statement.md) použít enumerátor vystavené <xref:System.Collections.IEnumerable.GetEnumerator%2A> metoda a skrýt složitost manipulace s enumerátorem. Kromě toho se jakoukoli kolekci, která implementuje <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> se považuje za *dotazovatelný typ* a může být dotázán pomocí jazyka LINQ. Dotazy LINQ poskytují společný vzor pro přístup k datům. Jsou obvykle stručnější a čitelnější než standardní `foreach` smyčky a poskytují filtrování, řazení a seskupování schopností. Dotazy LINQ mohou také zvýšit výkon. Další informace najdete v tématu [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md), [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md), [paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md), [Úvod do dotazů LINQ () C#)](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md), a [základní operace dotazů (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  
   
--   **Možnost Kopírovat obsah kolekce do pole**  
+- **Možnost Kopírovat obsah kolekce do pole**  
   
      Všechny kolekce je možné zkopírovat do pole pomocí **CopyTo** metoda; ale pořadí prvků v poli nový podle pořadí, ve kterém je vrátí enumerátor. Výsledné pole je vždy jednorozměrný s dolní mez nula.  
   
  Kromě toho mnoho tříd kolekce obsahují následující funkce:  
   
--   **Vlastnosti kapacity a počet**  
+- **Vlastnosti kapacity a počet**  
   
      Kapacita kolekce je počet prvků, které může obsahovat. Počet prvků kolekce je počet prvků, které ve skutečnosti obsahuje. Některé kolekce skrýt kapacitu, počet nebo obojí.  
   
@@ -48,11 +48,11 @@ Podobná data může často být zpracována efektivněji při uloženy a zpraco
   
      A <xref:System.Collections.BitArray> je zvláštní případ; jeho kapacity je stejné jako jeho délka, což je stejná jako její vlastnosti count.  
   
--   **Konzistentní dolní mez**  
+- **Konzistentní dolní mez**  
   
      Dolní mez kolekce je index svého prvního elementu. Všechny kolekce v indexovaných <xref:System.Collections> obory názvů mají dolní mez nula, to znamená jsou indexovány 0. <xref:System.Array> dolní mez nula ve výchozím nastavení má, ale jiné dolní mez lze definovat při vytváření instance objektu **pole** pomocí <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType>.  
   
--   **Synchronizace pro přístup z více vláken** (<xref:System.Collections> pouze třídy).  
+- **Synchronizace pro přístup z více vláken** (<xref:System.Collections> pouze třídy).  
   
      Kolekce neobecné typy, které do <xref:System.Collections> obor názvů poskytuje některé zabezpečení vlákna se synchronizací; obvykle vystavenou přes <xref:System.Collections.ICollection.SyncRoot%2A> a <xref:System.Collections.ICollection.IsSynchronized%2A> členy. Tato kolekce nejsou bezpečné pro vlákna ve výchozím nastavení. Pokud potřebujete efektivní a škálovatelné vícevláknový přístup ke kolekci, použijte jednu z tříd v <xref:System.Collections.Concurrent> oboru názvů nebo zvažte použití neměnné kolekce. Další informace najdete v tématu [kolekce bezpečné pro vlákna](../../../docs/standard/collections/thread-safe/index.md).  
   

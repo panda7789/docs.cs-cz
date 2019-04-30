@@ -3,11 +3,11 @@ title: Rozšíření hostitele služby pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: c0e8f7bb-cb13-49ec-852f-b85d7c23972f
 ms.openlocfilehash: e37a33643fb58d93be953720303cd069e72a690e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59196473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929789"
 ---
 # <a name="workflow-service-host-extensibility"></a>Rozšíření hostitele služby pracovního postupu
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy pro hostování služeb pracovních postupů. Tato třída se používá, když jsou samoobslužné hostování služby pracovního postupu ve spravované aplikaci nebo službu Windows. Tato třída se používá také při hostování služby pracovního procesu pomocí Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS). <xref:System.ServiceModel.Activities.WorkflowServiceHost> Třída poskytuje Rozšiřovací body, které umožňují přidat vlastní rozšíření, změnit chování při nečinnosti a hostitelem bez služby pracovních postupů (pracovní postupy, které nepoužívají zasílání zpráv aktivity).  
@@ -18,13 +18,13 @@ ms.locfileid: "59196473"
 ## <a name="react-to-unhandled-exceptions"></a>Reakce na neošetřených výjimek  
  <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> Umožňuje zadat akce má být provedena, pokud dojde k neošetřené výjimce v rámci služby pracovních postupů. <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior.Action%2A> Vlastnost určuje jeden z <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction> hodnoty:  
   
--   <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Abandon> – Přeruší instance služby pracovního postupu.  
+- <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Abandon> – Přeruší instance služby pracovního postupu.  
   
--   <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.AbandonAndSuspend> – Vrátí zpět do posledního trvalého stavu a pozastaví instanci služby pracovního postupu. K tomu dochází pouze pokud pracovní postup již byla trvale uložena alespoň jednou. Pokud není instance pracovního postupu byl přerušen.  
+- <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.AbandonAndSuspend> – Vrátí zpět do posledního trvalého stavu a pozastaví instanci služby pracovního postupu. K tomu dochází pouze pokud pracovní postup již byla trvale uložena alespoň jednou. Pokud není instance pracovního postupu byl přerušen.  
   
--   <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel> – Instance zruší.  
+- <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Cancel> – Instance zruší.  
   
--   <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Terminate> – Instance se ukončí.  
+- <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionAction.Terminate> – Instance se ukončí.  
   
  Toto chování lze nastavit v kódu, jak je znázorněno v následujícím příkladu.  
   

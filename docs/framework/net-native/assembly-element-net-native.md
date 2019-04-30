@@ -5,11 +5,11 @@ ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c0788c05edace2142d348c679c73aa1b4404ce75
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59137849"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61868859"
 ---
 # <a name="assembly-element-net-native"></a>\<Sestavení > – Element (.NET Native)
 Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení.  
@@ -51,7 +51,7 @@ Zásady reflexe modulu runtime se vztahuje na všechny typy v zadané sestavení
   
 ## <a name="name-attribute"></a>Název atributu  
   
-|Value|Popis|  
+|Hodnota|Popis|  
 |-----------|-----------------|  
 |*assembly_name*|Jednoduchý název sestavení, bez jeho přípona souboru. Tento atribut odpovídá <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> vlastnost. Název sestavení s názvem Extensions.dll je například "Rozšíření".<br /><br /> Můžete také určit řetězcového literálu `*Application*` uplatňovat zásady na všechna sestavení v balíčku aplikace, zda tato sestavení jsou načteny, nebo ne. `*Application*` nikdy použije zásady na sestavení rozhraní .NET Framework.|  
   

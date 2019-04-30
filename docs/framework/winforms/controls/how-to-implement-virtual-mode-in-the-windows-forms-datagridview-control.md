@@ -12,11 +12,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], large data sets
 ms.assetid: 98236267-f08e-4918-bcf9-77acf050a3ca
 ms.openlocfilehash: d5b34f5c9d9e6db9c3fd06f2c09f62c196c96d0a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59146237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941164"
 ---
 # <a name="how-to-implement-virtual-mode-in-the-windows-forms-datagridview-control"></a>Postupy: Implementace virtuálního režimu v ovládacím prvku Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí <xref:System.Windows.Forms.DataGridView> ovládacím prvkem jeho <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> nastavenou na `true`.  
@@ -31,7 +31,7 @@ Následující příklad kódu ukazuje, jak spravovat velké sady dat pomocí <x
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazy na sestavení systému a System.Windows.Forms.  
+- Odkazy na sestavení systému a System.Windows.Forms.  
   
  Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  
   

@@ -3,11 +3,11 @@ title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
 ms.openlocfilehash: 8e50c39955f9ab72dfa1d52cbc37ab90f1ab0a8a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59335365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855950"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  
@@ -16,11 +16,11 @@ Služby Windows (dříve označovaná jako služba systému Windows NT) najdete 
   
  WCF vývojáři často, musíte rozhodnout, zda hostovat svoje aplikace WCF v rámci aplikace služby Windows nebo uvnitř hostitelského prostředí Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS). Měli byste zvážit použití aplikace služeb Windows za následujících podmínek:  
   
--   Vaše aplikace vyžaduje explicitní aktivace. Například měli byste používat služby Windows, když vaše aplikace musí začínat automaticky při spuštění serveru místo dynamicky se spouští v reakci na první příchozí zprávy.  
+- Vaše aplikace vyžaduje explicitní aktivace. Například měli byste používat služby Windows, když vaše aplikace musí začínat automaticky při spuštění serveru místo dynamicky se spouští v reakci na první příchozí zprávy.  
   
--   Proces, který je hostitelem vaší aplikace musí zůstat spuštěné po spuštění. Po zahájení procesu služby Windows zůstane spuštěný, není-li explicitně vypnutí správce serveru pomocí Správce řízení služeb. Aplikace hostované službou IIS nebo WAS může spuštění a zastavení dynamicky optimální využití systémových prostředků. Aplikace, které vyžadují explicitní kontrolu nad životnost jejich hostitelský proces byste používat služby Windows namísto služby IIS nebo WAS.  
+- Proces, který je hostitelem vaší aplikace musí zůstat spuštěné po spuštění. Po zahájení procesu služby Windows zůstane spuštěný, není-li explicitně vypnutí správce serveru pomocí Správce řízení služeb. Aplikace hostované službou IIS nebo WAS může spuštění a zastavení dynamicky optimální využití systémových prostředků. Aplikace, které vyžadují explicitní kontrolu nad životnost jejich hostitelský proces byste používat služby Windows namísto služby IIS nebo WAS.  
   
--   Služby WCF, musíte spustit na Windows Server 2003 a použít přenosy jiné než HTTP. V systému Windows Server 2003 [!INCLUDE[iis601](../../../../includes/iis601-md.md)] hostitelského prostředí je omezen na pouze komunikaci pomocí protokolu HTTP. Aplikace služby Windows se nevztahují tato omezení a můžete použít libovolný přenos WCF podporuje, včetně net.tcp, net.pipe a net.msmq.  
+- Služby WCF, musíte spustit na Windows Server 2003 a použít přenosy jiné než HTTP. V systému Windows Server 2003 [!INCLUDE[iis601](../../../../includes/iis601-md.md)] hostitelského prostředí je omezen na pouze komunikaci pomocí protokolu HTTP. Aplikace služby Windows se nevztahují tato omezení a můžete použít libovolný přenos WCF podporuje, včetně net.tcp, net.pipe a net.msmq.  
   
 ### <a name="to-host-wcf-inside-of-a-windows-service-application"></a>K hostování WCF v rámci aplikace služby Windows  
   
@@ -28,11 +28,11 @@ Služby Windows (dříve označovaná jako služba systému Windows NT) najdete 
   
 2. Odkaz na životnost aplikace služby Windows životního cyklu služeb WCF. Obvykle je vhodné služby WCF hostované v aplikaci služby Windows aktivuje při spuštění hostitelské služby, zastavil naslouchání pro zprávy, když hostitelská služba je zastavena a vypnout hostitelský proces, když dojde k chybě služby WCF. To lze provést následujícím způsobem:  
   
-    -   Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> otevřít jeden nebo víc instancí <xref:System.ServiceModel.ServiceHost>. Jednu aplikaci služby Windows může hostovat více služeb WCF, které spouští a zastavují jako skupinu.  
+    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> otevřít jeden nebo víc instancí <xref:System.ServiceModel.ServiceHost>. Jednu aplikaci služby Windows může hostovat více služeb WCF, které spouští a zastavují jako skupinu.  
   
-    -   Přepsat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> volat <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které se spustily během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
+    - Přepsat <xref:System.ServiceProcess.ServiceBase.OnStop%2A> volat <xref:System.ServiceModel.Channels.CommunicationObject.Closed> na <xref:System.ServiceModel.ServiceHost> všechny spuštěné služby WCF, které se spustily během <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>.  
   
-    -   Přihlaste se k odběru <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> událost <xref:System.ServiceModel.ServiceHost> a použít <xref:System.ServiceProcess.ServiceController> třídy pro vypnutí aplikace služby Windows v případě chyby.  
+    - Přihlaste se k odběru <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> událost <xref:System.ServiceModel.ServiceHost> a použít <xref:System.ServiceProcess.ServiceController> třídy pro vypnutí aplikace služby Windows v případě chyby.  
   
      Aplikace služby Windows, které hostují služby WCF se nasazují a spravují stejným způsobem jako aplikace služby Windows, které Nedovolte, aby byly použijte služby WCF.  
   

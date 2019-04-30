@@ -5,13 +5,13 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/16/2018
 ms.openlocfilehash: 25a8b52749c3a8448a80155b233edb938e9bdd64
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61818454"
 ---
-# <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
+# <a name="implement-the-circuit-breaker-pattern"></a>Implementace systému jističe
 
 Jak je uvedeno výše, by měl zpracovává chyby, které může trvat různě dlouho obnovit, protože může dojít při pokusu o připojení ke vzdálené službě nebo prostředku. Zpracování tohoto typu chyby může zlepšit stabilitu a odolnost aplikace.
 

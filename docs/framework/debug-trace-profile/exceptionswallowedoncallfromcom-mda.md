@@ -12,11 +12,11 @@ ms.assetid: 55d6ab12-f251-4aab-aa64-aacbe9d9f974
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4f076cbc556c7d9feff8a226f050743cd7728622
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148145"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874442"
 ---
 # <a name="exceptionswallowedoncallfromcom-mda"></a>exceptionSwallowedOnCallFromCom – pomocník spravovaného ladění (MDA)
 `exceptionSwallowedOnCallFromCOM` Pomocníka spravovaného ladění (MDA) se aktivuje, když je vyvolána výjimka z common language runtime (CLR) kódu volat z modelu COM pomocí metody, která nemá nespravovaný návratový typ HRESULT.  

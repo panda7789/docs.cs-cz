@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1d6c79be95ff80c8de9b07cb33be46a5f5db22b1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59094265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61939799"
 ---
 # <a name="isymunmanageddocumenthasembeddedsource-method"></a>ISymUnmanagedDocument::HasEmbeddedSource – metoda
 Vrátí `true` Pokud dokument má zdroj součástí symboly ladění; v opačném případě vrátí `false`.  

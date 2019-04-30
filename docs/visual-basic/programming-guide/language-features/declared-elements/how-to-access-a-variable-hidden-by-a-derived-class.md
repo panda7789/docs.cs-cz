@@ -10,11 +10,11 @@ helpviewer_keywords:
 - variables [Visual Basic], accessing hidden
 ms.assetid: ae21a8ac-9cd4-4fba-a3ec-ecc4321ef93c
 ms.openlocfilehash: a97a51d4570d87eaa873fb3152ad810f528dff46
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61829657"
 ---
 # <a name="how-to-access-a-variable-hidden-by-a-derived-class-visual-basic"></a>Postupy: Přístup k proměnné skryté odvozenou třídou (Visual Basic)
 Když kód v odvozené třídě získá přístup k proměnné, obvykle přeloží kompilátor odkaz na nejbližší dostupné verzi, to znamená, že dostupné verze nejmíň derivational kroky zpětně ze třídy přístup. Pokud je proměnná definovaná v odvozené třídě, kód obvykle přistupuje k tuto definici.  
@@ -23,7 +23,7 @@ Když kód v odvozené třídě získá přístup k proměnné, obvykle přelož
   
 ### <a name="to-access-a-base-class-variable-hidden-by-a-derived-class"></a>Pro přístup k základní třídě proměnné skryté odvozenou třídou  
   
--   Ve výrazu nebo příkazu přiřazení, zadejte před název proměnné `MyBase` – klíčové slovo a tečku (`.`).  
+- Ve výrazu nebo příkazu přiřazení, zadejte před název proměnné `MyBase` – klíčové slovo a tečku (`.`).  
   
      Přeloží kompilátor odkaz na verzi základní třídy proměnné.  
   

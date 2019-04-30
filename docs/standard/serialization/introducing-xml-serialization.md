@@ -13,11 +13,11 @@ helpviewer_keywords:
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
 ms.openlocfilehash: 491819c52c5bb1e7767e41fce7e56d8f95d10286
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56981566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61933689"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 
@@ -28,8 +28,7 @@ Serializace je proces převodu objektu do formuláře, který lze snadno přené
 > [!NOTE]
 > Serializace XML nepřevádět metody, indexery, soukromé pole nebo vlastnosti jen pro čtení (s výjimkou kolekce jen pro čtení). K serializaci všechny objektu polí a vlastností, veřejné a soukromé, použijte <xref:System.Runtime.Serialization.DataContractSerializer> namísto serializace XML.
 
- Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> třídy a nejdůležitějších metod této třídy jsou **serializace** a **Deserialize** metody. 
-  <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V rozhraní .NET Framework 2.0 [nástroj XML Serializer Generator (Sgen.exe)](xml-serializer-generator-tool-sgen-exe.md) je určena ke generování těchto sestavení serializace předem, chcete-li být nasazeny s vaší aplikací a zlepšit výkon při spuštění. Datový proud XML generovaných **XmlSerializer** je v souladu s World Wide Web Consortium (W3C) [schéma XML definice jazyk (XSD) 1.0 doporučení](https://www.w3.org/TR/xslt). Kromě toho jsou datové typy generovány kompatibilní s dokumentu s názvem "XML schématu část 2: Datové typy."
+ Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> třídy a nejdůležitějších metod této třídy jsou **serializace** a **Deserialize** metody. <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V rozhraní .NET Framework 2.0 [nástroj XML Serializer Generator (Sgen.exe)](xml-serializer-generator-tool-sgen-exe.md) je určena ke generování těchto sestavení serializace předem, chcete-li být nasazeny s vaší aplikací a zlepšit výkon při spuštění. Datový proud XML generovaných **XmlSerializer** je v souladu s World Wide Web Consortium (W3C) [schéma XML definice jazyk (XSD) 1.0 doporučení](https://www.w3.org/TR/xslt). Kromě toho jsou datové typy generovány kompatibilní s dokumentu s názvem "XML schématu část 2: Datové typy."
 
  Data v objekty je popsána pomocí konstrukcí programovací jazyk jako třídy, pole, vlastnosti, primitivní typy, pole a dokonce i vloženého XML ve formě **XmlElement** nebo **XmlAttribute**objekty. Máte možnost vytvořit vlastní třídy označena s atributy, nebo pomocí nástroje definici schématu XML vygenerovat třídy založen na stávajícím schématu XML.
 

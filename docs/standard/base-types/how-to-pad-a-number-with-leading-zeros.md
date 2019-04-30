@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zarovnání čísla úvodními nulami'
+title: 'Postupy: Vyplnění čísla úvodními nulami'
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,13 +14,13 @@ ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 54c3eb734184adf5168607cfc8bcbf6c17ea493a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678890"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61860643"
 ---
-# <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Zarovnání čísla úvodními nulami
+# <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Vyplnění čísla úvodními nulami
 
 Můžete přidat počáteční nuly na celé číslo pomocí "D" [řetězec standardního číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md) specifikátorem přesnosti. Můžete přidat počáteční nuly celého čísla a čísla s plovoucí desetinnou čárkou pomocí [vlastní číselný formátovací řetězec](../../../docs/standard/base-types/custom-numeric-format-strings.md). Tento článek ukazuje, jak používat obě metody k zarovnání čísla úvodními nulami.
 

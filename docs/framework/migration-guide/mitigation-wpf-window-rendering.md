@@ -6,10 +6,10 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: afad3c3bf6c950b4ffe4e8bed2ff86a416a31a87
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59978806"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875261"
 ---
 # <a name="mitigation-wpf-window-rendering"></a>Omezení rizik: Vykreslování oken ve WPF
 

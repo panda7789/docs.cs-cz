@@ -3,11 +3,11 @@ title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
 ms.openlocfilehash: fbde7d1006cabddafa7e03fdee0e3493416001da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855046"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -17,13 +17,13 @@ Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Win
 
  Souhrnně řečeno, tento příklad znázorňuje následující:
 
--   Jak klienta můžete předat vlastní bezpečnostní token do služby.
+- Jak klienta můžete předat vlastní bezpečnostní token do služby.
 
--   Jak službu využívat a ověřit vlastní bezpečnostní token.
+- Jak službu využívat a ověřit vlastní bezpečnostní token.
 
--   Jak kód služby WCF můžete získat informace o tokeny přijatý zabezpečení včetně vlastní bezpečnostní token.
+- Jak kód služby WCF můžete získat informace o tokeny přijatý zabezpečení včetně vlastní bezpečnostní token.
 
--   Jak certifikát X.509 serveru slouží k ochraně symetrický klíč použitý k podpisu a šifrování zpráv.
+- Jak certifikát X.509 serveru slouží k ochraně symetrický klíč použitý k podpisu a šifrování zpráv.
 
 ## <a name="client-authentication-using-a-custom-security-token"></a>Pomocí tokenu zabezpečení vlastního ověření klienta
  Služba poskytuje jeden koncový bod, který je prostřednictvím kódu programu vytvořili pomocí `BindingHelper` a `EchoServiceHost` třídy. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována s vlastními vazbami pomocí `SymmetricSecurityBindingElement` a `HttpTransportBindingElement`. Tato ukázka nastaví `SymmetricSecurityBindingElement` chránit symetrický klíč během přenosu a předat vlastní pomocí certifikátu X.509 služby `CreditCardToken` v záhlaví zprávy WS-Security jako token zabezpečení podepsaný a šifrovaná. Chování Určuje přihlašovací údaje služby, které se mají použít pro ověřování klientů a také informace o certifikát služby X.509.
@@ -543,7 +543,7 @@ string GetCallerCreditCardNumber()
 
  Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.
 
--   Vytváří se certifikát serveru:
+- Vytváří se certifikát serveru:
 
      Následující řádky z `Setup.bat` dávkový soubor vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. V tomto souboru batch výchozí hodnota je localhost. Pokud změníte `%SERVER_NAME%` proměnné, musíte projít Client.cs a Service.cs soubory a nahraďte všechny výskyty místního hostitele s názvem serveru, který používáte v skript Setup.bat.
 
@@ -559,7 +559,7 @@ string GetCallerCreditCardNumber()
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
--   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
+- Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:
 
      Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.
 
@@ -570,7 +570,7 @@ string GetCallerCreditCardNumber()
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
     ```
 
--   Povolit přístup k privátnímu klíči certifikátu ze služby hostované v IIS, musíte uživatelský účet, pod kterým je spuštěn proces hostované službou IIS udělena příslušná oprávnění pro privátní klíč. Toho lze dosáhnout poslední kroky v skript Setup.bat.
+- Povolit přístup k privátnímu klíči certifikátu ze služby hostované v IIS, musíte uživatelský účet, pod kterým je spuštěn proces hostované službou IIS udělena příslušná oprávnění pro privátní klíč. Toho lze dosáhnout poslední kroky v skript Setup.bat.
 
     ```
     echo ************

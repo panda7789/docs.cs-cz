@@ -21,11 +21,11 @@ helpviewer_keywords:
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
 ms.openlocfilehash: b4621da21200e6c9e2b174a0e2ba508a4f6bab92
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59228195"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938707"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro zvláštní znaky. Toto téma popisuje některé specifické znakové entity a obecné informace pro další koncepty XML v XAML.  

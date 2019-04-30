@@ -3,17 +3,17 @@ title: Vlastní filtry
 ms.date: 03/30/2017
 ms.assetid: 97cf247d-be0a-4057-bba9-3be5c45029d5
 ms.openlocfilehash: 4140a944ed195e1defc1a0677d8e26ff4ff85beb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857217"
 ---
 # <a name="custom-filters"></a>Vlastní filtry
-Vlastní filtry umožňují definovat odpovídající logiky, která nelze provést pomocí filtrů zpráv systému. Například může vytvořit vlastní filtr, který vytvoří hodnotu hash elementu konkrétní zprávy a poté zkoumá hodnotu, která určí, zda filtr by měla vrátit hodnotu true nebo false.  
+Vlastní filtry umožňují definovat odpovídající logiku, která nelze provést pomocí zprávy poskytnuté systémem filtry. Například může vytvořit vlastní filtr, který hashuje prvek konkrétní zprávy a poté zkontroluje hodnotu k určení, zda filtr by měl vrátit hodnotu true nebo false.  
   
 ## <a name="implementation"></a>Implementace  
- Vlastní filtr je implementací <xref:System.ServiceModel.Dispatcher.MessageFilter> abstraktní základní třída. Při implementaci vlastního filtru, konstruktor může volitelně přijmout parametr jeden řetězec. Tento parametr obsahuje informace o konfiguraci, která předaný konstruktoru MessageFilter Chcete-li poskytovat, že všechny hodnoty nebo konfigurace, která filtr musí za běhu, aby bylo možné provést odpovídá. Například to lze použít pro zadejte hodnotu, která filtr vyhledává ve zprávě vyhodnocovaný. Následující příklad ukazuje základní implementace filtru vlastní zprávu, která přijímá řetězcový parametr:  
+ Vlastní filtr je implementace <xref:System.ServiceModel.Dispatcher.MessageFilter> abstraktní základní třída. Při implementaci vlastní filtr, konstruktor může volitelně přijmout jako parametr jeden řetězec. Tento parametr obsahuje informace o konfiguraci, který je předán konstruktoru MessageFilter negace, odpovídá všechny hodnoty nebo konfiguraci, kterou filtr musí za běhu, aby bylo možné provést. Například to může být použije zadejte hodnotu, která filtr hledá v rámci zprávy právě vyhodnocována. Následující příklad ukazuje základní implementaci filtru vlastní zprávu, která přijímá řetězcový parametr:  
   
 ```csharp  
 public class MyMessageFilter: MessageFilter  
@@ -39,23 +39,23 @@ public class MyMessageFilter: MessageFilter
 ```  
   
 > [!NOTE]
->  V implementaci skutečné metodu nebo metody shodu obsahuje logiku, která bude zkontrolujte zprávy k určení, pokud by měla vrátit tento filtr zpráv **true** nebo **false**.  
+>  Ve skutečné implementaci, obsahuje alespoň jednu metodu porovnání logiku, která se zaměřuje zpráva, kterou chcete určit, pokud by měla vrátit tomuto filtru zprávy **true** nebo **false**.  
   
 ### <a name="performance"></a>Výkon  
- Při implementaci vlastního filtru, je potřeba vzít v úvahu maximální délku čas potřebný pro filtr k dokončení testování zprávu. Vzhledem k tomu, že zpráva může být porovnán s více filtrů, než je nalezena shoda, je důležité zajistit, že nemá požadavku klienta není vypršení časového limitu před vyhodnocením všechny filtry. Vlastní filtr proto musí obsahovat pouze kód, nutné vyhodnotit obsah nebo atributy zprávy, aby bylo možné zjistit, jestli odpovídá kritéria filtru.  
+ Při implementaci vlastního filtru, je potřeba vzít v úvahu delší dobu potřebnou pro filtr k vyzkoušení zprávu. Vzhledem k tomu, že zpráva může být porovnán s více filtrů, předtím, než je nalezena shoda, je důležité zajistit, že žádost klienta nemá časový limit před vyhodnocením všechny filtry. Vlastní filtr proto by měl obsahovat pouze kódu potřebného k vyhodnocení obsahu nebo atributů zprávu, aby bylo možné zjistit, jestli odpovídá kritéria filtru.  
   
- Obecně platí neměli byste následující při implementaci vlastního filtru:  
+ Obecně byste se měli vyhnout následující při implementaci vlastního filtru:  
   
--   Vstupně-výstupní operace, jako je například ukládání dat na disk nebo do databáze.  
+- Vstupně-výstupních operací, jako je ukládání dat na disk nebo do databáze.  
   
--   Nepotřebné zpracování, např. opakování ve smyčce přes více záznamů v dokumentu.  
+- Nepotřebná zpracování, např. opakování ve smyčce přes více záznamů v dokumentu.  
   
--   Blokování operace, například volání, které se týkají získání zámku na sdílených prostředků nebo provádění hledání proti databázi.  
+- Blokovat operace, jako je volání, které se týkají získání zámku na sdílených prostředků nebo vyhledávání proti databázi.  
   
- Před použitím vlastního filtru v provozním prostředí, byste měli spustit testy výkonu k určení průměrnou délku dobu, která filtr potřebná k vyhodnocení zprávu. V kombinaci s průměrný čas zpracovávání ostatní filtry použité v tabulce filtru, to vám umožní přesně určit maximální časový limit hodnotu, která musí být zadán klientskou aplikací.  
+ Před použitím vlastního filtru v provozním prostředí, byste provést testy výkonu k určení průměrnou dobu filtru trvá vyhodnotit zprávu. V kombinaci s Průměrná doba zpracování jiných filtry použité v tabulce filtrů, to umožní vám přesně určit maximální hodnotu časového limitu, který by měl být určeno klientské aplikace.  
   
 ## <a name="usage"></a>Použití  
- Pokud chcete používat vlastní filtr se službou směrování, je třeba přidat ji do tabulky filtru tak, že zadáte nový záznam filtru typu "Vlastní," název plně kvalifikovaný typ filtru zpráv a název vaší sestavení.  Stejně jako u jiných MessageFilters zadaný řetězec fulltextových dat filtru, která bude předána do konstruktoru vlastního filtru.  
+ Pokud chcete používat vlastní filtr službou směrování, je třeba přidat ji do tabulky filtru tak, že zadáte novou položku Filtr typu "Vlastní" název plně kvalifikovaný typ filtru zpráv a název vašeho sestavení.  Stejně jako u jiných MessageFilters, můžete zadat řetězec fulltextových dat filtru, která bude předána do konstruktoru vlastního filtru.  
   
  Následující příklady ukazují použití vlastního filtru se službou směrování:  
   

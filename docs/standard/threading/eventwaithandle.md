@@ -11,11 +11,11 @@ ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dc2ed1a450921452dee894caeb52c477d501b573
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61926347"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 <xref:System.Threading.EventWaitHandle> Třída umožňuje vlákna ke komunikaci mezi sebou signalizace a čeká na signál. Obslužné rutiny události čekání (také označované jednoduše jako události) jsou obslužné rutiny čekání, které mohou být signalizovanými, aby verze jednoho nebo více čekajících vláken. Po to bylo signalizováno, popisovače čekání události se vynuluje, ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Může představovat buď místní události popisovač čekání (místní události), nebo událost s názvem systému počkat popisovač (s názvem události nebo viditelné pro všechny procesy systémové události).  

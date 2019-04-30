@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC31423
 ms.assetid: 2e754b66-5836-48ff-9697-b9c0d7085f18
 ms.openlocfilehash: 9581168fa86f8f0715e004b60c2eb2a813cd38ab
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58840520"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61803295"
 ---
 # <a name="event-eventname1-cannot-implement-event-eventname2-on-interface-interface-because-their-delegate-types-delegate1-and-delegate2-do-not-match"></a>Události "\<eventname1 >' nemůže implementovat událost '\<eventname2 >" na rozhraní "\<rozhraní >" vzhledem k tomu, jejich typy delegátů\<delegate1 > "a"\<delegate2 >' se neshodují s
 Visual Basic nemůže implementovat událost, protože typ delegáta události neodpovídá typu delegáta události v rozhraní. Této chybě může dojít při definování více událostí v rozhraní a pak pokus o jejich implementaci společně se stejnou událost. Událost můžete implementovat dvě nebo více událostí pouze v případě, že vše je implementováno události jsou deklarovány pomocí `As` syntaxe a zadejte stejný typ delegáta.  
@@ -21,11 +21,11 @@ Visual Basic nemůže implementovat událost, protože typ delegáta události n
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Implementace události samostatně.  
+- Implementace události samostatně.  
   
      —nebo—  
   
--   Definování události pomocí rozhraní `As` syntaxe a zadejte stejný typ delegáta.  
+- Definování události pomocí rozhraní `As` syntaxe a zadejte stejný typ delegáta.  
   
 ## <a name="see-also"></a>Viz také:
 

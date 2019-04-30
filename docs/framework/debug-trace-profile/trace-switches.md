@@ -15,11 +15,11 @@ ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 85a1a017197826717280f53995ed98f26f1d80bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873857"
 ---
 # <a name="trace-switches"></a>Přepínače trasování
 Přepínače trasování umožňují povolit, zakázat a filtrovat výstup trasování. Jsou objekty, které existují ve vašem kódu a je možné nakonfigurovat externě pomocí souboru .config. Existují tři typy přepínačů trasování, které jsou k dispozici v rozhraní .NET Framework: <xref:System.Diagnostics.BooleanSwitch> třídy, <xref:System.Diagnostics.TraceSwitch> třídy a <xref:System.Diagnostics.SourceSwitch> třídy. <xref:System.Diagnostics.BooleanSwitch> Třída slouží jako přepínač, povolení nebo zakázání různých příkazů trasování. <xref:System.Diagnostics.TraceSwitch> a <xref:System.Diagnostics.SourceSwitch> tříd bylo možné povolit přepínač trasování pro trasování konkrétní úroveň tak, aby <xref:System.Diagnostics.Trace> nebo <xref:System.Diagnostics.TraceSource> zobrazí zprávy zadané pro tuto úroveň a všechny úrovně pod ním. Pokud zakážete přepínač, zprávy trasování se nezobrazí. Všechny tyto třídy jsou odvozeny od abstraktní (**MustInherit**) třídy **přepínač**, jako by všechny přepínače vyvinutou v Unity uživatele.  
@@ -33,13 +33,13 @@ Přepínače trasování umožňují povolit, zakázat a filtrovat výstup traso
 ## <a name="trace-levels"></a>Úrovně trasování  
  Při použití **TraceSwitch**, existují ještě další důležité okolnosti. A **TraceSwitch** objekt má čtyři vlastnosti, které vracejí **logická** hodnoty určující, jestli přepínač nastavený na alespoň určitou úroveň:  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceSwitch.TraceError%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceSwitch.TraceWarning%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceSwitch.TraceInfo%2A?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A?displayProperty=nameWithType>  
+- <xref:System.Diagnostics.TraceSwitch.TraceVerbose%2A?displayProperty=nameWithType>  
   
  Úrovně umožňují omezit množství informací o trasování, který jste dostali k pouze těmto informacím, které jsou potřebné k vyřešení problému. Můžete zadat úroveň podrobností, které chcete výstup trasování tak, že nastavení a konfigurace přepínačů trasování pro příslušnou úroveň. Chybové zprávy, upozornění, informační zprávy, podrobného trasování zprávy nebo žádná zpráva může vůbec přijímat.  
   
