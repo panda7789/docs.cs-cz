@@ -1,1 +1,9 @@
-<span data-ttu-id="84519-101">**Toto téma platí pro: ✓** sady SDK .NET Core 2.1 a novějších verzích</span><span class="sxs-lookup"><span data-stu-id="84519-101">**This topic applies to: ✓** .NET Core 2.1 SDK and later versions</span></span>
+---
+ms.openlocfilehash: 5ad4da28d9bda41bc274b40bfe3bac2f1ff1002e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61647736"
+---
+<span data-ttu-id="d6e56-101">**Toto téma platí pro: ✓** sady SDK .NET Core 2.1 a novějších verzích</span><span class="sxs-lookup"><span data-stu-id="d6e56-101">**This topic applies to: ✓** .NET Core 2.1 SDK and later versions</span></span>

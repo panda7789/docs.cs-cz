@@ -8,41 +8,41 @@ helpviewer_keywords:
 - images [WPF], how-to topics
 ms.assetid: 96834ee4-a5fc-4dd0-9948-b9bbc9437a5c
 ms.openlocfilehash: 70294aff4c40bd5ae14b61e6a847155a10d675a1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785707"
 ---
-# <a name="imaging-how-to-topics"></a><span data-ttu-id="107b1-102">Postupy: Témata obrázků</span><span class="sxs-lookup"><span data-stu-id="107b1-102">Imaging How-to Topics</span></span>
-<span data-ttu-id="107b1-103">Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aby bylo možné zobrazit nebo změnit bitmapové obrázky.</span><span class="sxs-lookup"><span data-stu-id="107b1-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] in order to display or alter bitmap images.</span></span>  
+# <a name="imaging-how-to-topics"></a><span data-ttu-id="19f02-102">Postupy: Témata obrázků</span><span class="sxs-lookup"><span data-stu-id="19f02-102">Imaging How-to Topics</span></span>
+<span data-ttu-id="19f02-103">Témata v této části ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aby bylo možné zobrazit nebo změnit bitmapové obrázky.</span><span class="sxs-lookup"><span data-stu-id="19f02-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] in order to display or alter bitmap images.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="107b1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="107b1-104">In This Section</span></span>  
- [<span data-ttu-id="107b1-105">Použití BitmapImage v jazyku XAML</span><span class="sxs-lookup"><span data-stu-id="107b1-105">Use a BitmapImage in XAML</span></span>](how-to-use-a-bitmapimage.md)  
- [<span data-ttu-id="107b1-106">Načtení obrázku jako miniatury</span><span class="sxs-lookup"><span data-stu-id="107b1-106">Load an Image as a Thumbnail</span></span>](how-to-load-an-image-as-a-thumbnail.md)  
- [<span data-ttu-id="107b1-107">Použití transformace na bitmapu</span><span class="sxs-lookup"><span data-stu-id="107b1-107">Apply a Transform to a Bitmap Image</span></span>](how-to-apply-a-transform-to-a-bitmapimage.md)  
- [<span data-ttu-id="107b1-108">Vytvoření bitmapy z vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="107b1-108">Create a Bitmap from a Visual</span></span>](how-to-create-a-bitmap-from-a-visual.md)  
- [<span data-ttu-id="107b1-109">Kódování vizuálního objektu na soubor obrázku</span><span class="sxs-lookup"><span data-stu-id="107b1-109">Encode a Visual to an Image File</span></span>](how-to-encode-a-visual-to-an-image-file.md)  
- [<span data-ttu-id="107b1-110">Vytvoření nového objektu BitmapSource</span><span class="sxs-lookup"><span data-stu-id="107b1-110">Create a new BitmapSource</span></span>](how-to-create-a-new-bitmapsource.md)  
- [<span data-ttu-id="107b1-111">Vzájemné zřetězení objektů BitmapSource</span><span class="sxs-lookup"><span data-stu-id="107b1-111">Chain BitmapSource Objects Together</span></span>](how-to-chain-bitmapsource-objects-together.md)  
- [<span data-ttu-id="107b1-112">Převod BitmapSource do jiného formátu PixelFormat</span><span class="sxs-lookup"><span data-stu-id="107b1-112">Convert a BitmapSource to a Different PixelFormat</span></span>](how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
- [<span data-ttu-id="107b1-113">Převod BitmapSource do formátu indexovaných pixelů</span><span class="sxs-lookup"><span data-stu-id="107b1-113">Convert a BitmapSource to an Indexed Pixel Format</span></span>](how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
- [<span data-ttu-id="107b1-114">Kódování a dekódování obrázku JPEG</span><span class="sxs-lookup"><span data-stu-id="107b1-114">Encode and Decode a JPEG Image</span></span>](how-to-encode-and-decode-a-jpeg-image.md)  
- [<span data-ttu-id="107b1-115">Kódování a dekódování obrázku BMP</span><span class="sxs-lookup"><span data-stu-id="107b1-115">Encode and Decode a BMP Image</span></span>](how-to-encode-and-decode-a-bmp-image.md)  
- [<span data-ttu-id="107b1-116">Kódování a dekódování obrázku PNG</span><span class="sxs-lookup"><span data-stu-id="107b1-116">Encode and Decode a PNG Image</span></span>](how-to-encode-and-decode-a-png-image.md)  
- [<span data-ttu-id="107b1-117">Kódování a dekódování obrázku WDP</span><span class="sxs-lookup"><span data-stu-id="107b1-117">Encode and Decode a WDP Image</span></span>](how-to-encode-and-decode-a-wdp-image.md)  
- [<span data-ttu-id="107b1-118">Kódování a dekódování obrázku GIF</span><span class="sxs-lookup"><span data-stu-id="107b1-118">Encode and Decode a GIF Image</span></span>](how-to-encode-and-decode-a-gif-image.md)  
- [<span data-ttu-id="107b1-119">Kódování a dekódování obrázku TIFF</span><span class="sxs-lookup"><span data-stu-id="107b1-119">Encode and Decode a TIFF Image</span></span>](how-to-encode-and-decode-a-tiff-image.md)  
- [<span data-ttu-id="107b1-120">Zápis metadat do bitmapy</span><span class="sxs-lookup"><span data-stu-id="107b1-120">Write Metadata to a Bitmap</span></span>](how-to-write-metadata-to-a-bitmap.md)  
- [<span data-ttu-id="107b1-121">Čtení metadat z bitmapy</span><span class="sxs-lookup"><span data-stu-id="107b1-121">Read Metadata from a Bitmap</span></span>](how-to-read-metadata-from-a-bitmap.md)  
+## <a name="in-this-section"></a><span data-ttu-id="19f02-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="19f02-104">In This Section</span></span>  
+ [<span data-ttu-id="19f02-105">Použití BitmapImage v jazyku XAML</span><span class="sxs-lookup"><span data-stu-id="19f02-105">Use a BitmapImage in XAML</span></span>](how-to-use-a-bitmapimage.md)  
+ [<span data-ttu-id="19f02-106">Načtení obrázku jako miniatury</span><span class="sxs-lookup"><span data-stu-id="19f02-106">Load an Image as a Thumbnail</span></span>](how-to-load-an-image-as-a-thumbnail.md)  
+ [<span data-ttu-id="19f02-107">Použití transformace na bitmapu</span><span class="sxs-lookup"><span data-stu-id="19f02-107">Apply a Transform to a Bitmap Image</span></span>](how-to-apply-a-transform-to-a-bitmapimage.md)  
+ [<span data-ttu-id="19f02-108">Vytvoření bitmapy z vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="19f02-108">Create a Bitmap from a Visual</span></span>](how-to-create-a-bitmap-from-a-visual.md)  
+ [<span data-ttu-id="19f02-109">Kódování vizuálního objektu na soubor obrázku</span><span class="sxs-lookup"><span data-stu-id="19f02-109">Encode a Visual to an Image File</span></span>](how-to-encode-a-visual-to-an-image-file.md)  
+ [<span data-ttu-id="19f02-110">Vytvoření nového objektu BitmapSource</span><span class="sxs-lookup"><span data-stu-id="19f02-110">Create a new BitmapSource</span></span>](how-to-create-a-new-bitmapsource.md)  
+ [<span data-ttu-id="19f02-111">Vzájemné zřetězení objektů BitmapSource</span><span class="sxs-lookup"><span data-stu-id="19f02-111">Chain BitmapSource Objects Together</span></span>](how-to-chain-bitmapsource-objects-together.md)  
+ [<span data-ttu-id="19f02-112">Převod BitmapSource do jiného formátu PixelFormat</span><span class="sxs-lookup"><span data-stu-id="19f02-112">Convert a BitmapSource to a Different PixelFormat</span></span>](how-to-convert-a-bitmapsource-to-a-different-pixelformat.md)  
+ [<span data-ttu-id="19f02-113">Převod BitmapSource do formátu indexovaných pixelů</span><span class="sxs-lookup"><span data-stu-id="19f02-113">Convert a BitmapSource to an Indexed Pixel Format</span></span>](how-to-convert-a-bitmapsource-to-an-indexed-pixel-format.md)  
+ [<span data-ttu-id="19f02-114">Kódování a dekódování obrázku JPEG</span><span class="sxs-lookup"><span data-stu-id="19f02-114">Encode and Decode a JPEG Image</span></span>](how-to-encode-and-decode-a-jpeg-image.md)  
+ [<span data-ttu-id="19f02-115">Kódování a dekódování obrázku BMP</span><span class="sxs-lookup"><span data-stu-id="19f02-115">Encode and Decode a BMP Image</span></span>](how-to-encode-and-decode-a-bmp-image.md)  
+ [<span data-ttu-id="19f02-116">Kódování a dekódování obrázku PNG</span><span class="sxs-lookup"><span data-stu-id="19f02-116">Encode and Decode a PNG Image</span></span>](how-to-encode-and-decode-a-png-image.md)  
+ [<span data-ttu-id="19f02-117">Kódování a dekódování obrázku WDP</span><span class="sxs-lookup"><span data-stu-id="19f02-117">Encode and Decode a WDP Image</span></span>](how-to-encode-and-decode-a-wdp-image.md)  
+ [<span data-ttu-id="19f02-118">Kódování a dekódování obrázku GIF</span><span class="sxs-lookup"><span data-stu-id="19f02-118">Encode and Decode a GIF Image</span></span>](how-to-encode-and-decode-a-gif-image.md)  
+ [<span data-ttu-id="19f02-119">Kódování a dekódování obrázku TIFF</span><span class="sxs-lookup"><span data-stu-id="19f02-119">Encode and Decode a TIFF Image</span></span>](how-to-encode-and-decode-a-tiff-image.md)  
+ [<span data-ttu-id="19f02-120">Zápis metadat do bitmapy</span><span class="sxs-lookup"><span data-stu-id="19f02-120">Write Metadata to a Bitmap</span></span>](how-to-write-metadata-to-a-bitmap.md)  
+ [<span data-ttu-id="19f02-121">Čtení metadat z bitmapy</span><span class="sxs-lookup"><span data-stu-id="19f02-121">Read Metadata from a Bitmap</span></span>](how-to-read-metadata-from-a-bitmap.md)  
   
-## <a name="reference"></a><span data-ttu-id="107b1-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="107b1-122">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="19f02-122">Odkaz</span><span class="sxs-lookup"><span data-stu-id="19f02-122">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="107b1-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="107b1-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19f02-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="19f02-123">See also</span></span>
 
-- [<span data-ttu-id="107b1-124">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="107b1-124">Imaging Overview</span></span>](imaging-overview.md)
+- [<span data-ttu-id="19f02-124">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="19f02-124">Imaging Overview</span></span>](imaging-overview.md)

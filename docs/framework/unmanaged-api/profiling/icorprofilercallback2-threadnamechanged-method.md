@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dbd9374decdce171d45e57512470c652abc24882
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59173666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61782626"
 ---
-# <a name="icorprofilercallback2threadnamechanged-method"></a><span data-ttu-id="54baf-102">ICorProfilerCallback2::ThreadNameChanged – metoda</span><span class="sxs-lookup"><span data-stu-id="54baf-102">ICorProfilerCallback2::ThreadNameChanged Method</span></span>
-<span data-ttu-id="54baf-103">Upozornění profileru kód, název vlákna se změnila.</span><span class="sxs-lookup"><span data-stu-id="54baf-103">Notifies the code profiler that the name of a thread has changed.</span></span>  
+# <a name="icorprofilercallback2threadnamechanged-method"></a><span data-ttu-id="1d8c7-102">ICorProfilerCallback2::ThreadNameChanged – metoda</span><span class="sxs-lookup"><span data-stu-id="1d8c7-102">ICorProfilerCallback2::ThreadNameChanged Method</span></span>
+<span data-ttu-id="1d8c7-103">Upozornění profileru kód, název vlákna se změnila.</span><span class="sxs-lookup"><span data-stu-id="1d8c7-103">Notifies the code profiler that the name of a thread has changed.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="54baf-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54baf-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1d8c7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1d8c7-104">Syntax</span></span>  
   
 ```  
 HRESULT ThreadNameChanged(  
@@ -36,26 +36,26 @@ HRESULT ThreadNameChanged(
     [in] WCHAR name[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="54baf-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54baf-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1d8c7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="1d8c7-105">Parameters</span></span>  
  `threadId`  
- <span data-ttu-id="54baf-106">[in] ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="54baf-106">[in] The ID of the thread.</span></span>  
+ <span data-ttu-id="1d8c7-106">[in] ID vlákna.</span><span class="sxs-lookup"><span data-stu-id="1d8c7-106">[in] The ID of the thread.</span></span>  
   
  `cchName`  
- <span data-ttu-id="54baf-107">[in] Délka názvu nové vlákno.</span><span class="sxs-lookup"><span data-stu-id="54baf-107">[in] The length of the new name of the thread.</span></span>  
+ <span data-ttu-id="1d8c7-107">[in] Délka názvu nové vlákno.</span><span class="sxs-lookup"><span data-stu-id="1d8c7-107">[in] The length of the new name of the thread.</span></span>  
   
  `name`  
- <span data-ttu-id="54baf-108">[in] Nový název vlákna.</span><span class="sxs-lookup"><span data-stu-id="54baf-108">[in] The new name of the thread.</span></span> <span data-ttu-id="54baf-109">Název není ukončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="54baf-109">The name is not null-terminated.</span></span>  
+ <span data-ttu-id="1d8c7-108">[in] Nový název vlákna.</span><span class="sxs-lookup"><span data-stu-id="1d8c7-108">[in] The new name of the thread.</span></span> <span data-ttu-id="1d8c7-109">Název není ukončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="1d8c7-109">The name is not null-terminated.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="54baf-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54baf-110">Requirements</span></span>  
- <span data-ttu-id="54baf-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="54baf-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1d8c7-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1d8c7-110">Requirements</span></span>  
+ <span data-ttu-id="1d8c7-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1d8c7-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="54baf-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="54baf-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="1d8c7-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1d8c7-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="54baf-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="54baf-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="1d8c7-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1d8c7-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="54baf-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="54baf-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="1d8c7-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1d8c7-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54baf-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="54baf-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1d8c7-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1d8c7-115">See also</span></span>
 
-- [<span data-ttu-id="54baf-116">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="54baf-116">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="54baf-117">ICorProfilerCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="54baf-117">ICorProfilerCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [<span data-ttu-id="1d8c7-116">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1d8c7-116">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="1d8c7-117">ICorProfilerCallback2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1d8c7-117">ICorProfilerCallback2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)

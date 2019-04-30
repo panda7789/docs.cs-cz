@@ -17,16 +17,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: daf97f25b1adc30b173fcd81812a4b197915cdd1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59196941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775033"
 ---
-# <a name="corprfgcreason-enumeration"></a><span data-ttu-id="26839-102">COR_PRF_GC_REASON – výčet</span><span class="sxs-lookup"><span data-stu-id="26839-102">COR_PRF_GC_REASON Enumeration</span></span>
-<span data-ttu-id="26839-103">Označuje, že uvolňování paměti dochází důvod.</span><span class="sxs-lookup"><span data-stu-id="26839-103">Indicates the reason that garbage collection is occurring.</span></span>  
+# <a name="corprfgcreason-enumeration"></a><span data-ttu-id="b0866-102">COR_PRF_GC_REASON – výčet</span><span class="sxs-lookup"><span data-stu-id="b0866-102">COR_PRF_GC_REASON Enumeration</span></span>
+<span data-ttu-id="b0866-103">Označuje, že uvolňování paměti dochází důvod.</span><span class="sxs-lookup"><span data-stu-id="b0866-103">Indicates the reason that garbage collection is occurring.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="26839-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="26839-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b0866-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0866-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -35,22 +35,22 @@ typedef enum {
 } COR_PRF_GC_REASON;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="26839-105">Členové</span><span class="sxs-lookup"><span data-stu-id="26839-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="b0866-105">Členové</span><span class="sxs-lookup"><span data-stu-id="b0866-105">Members</span></span>  
   
-|<span data-ttu-id="26839-106">Člen</span><span class="sxs-lookup"><span data-stu-id="26839-106">Member</span></span>|<span data-ttu-id="26839-107">Popis</span><span class="sxs-lookup"><span data-stu-id="26839-107">Description</span></span>|  
+|<span data-ttu-id="b0866-106">Člen</span><span class="sxs-lookup"><span data-stu-id="b0866-106">Member</span></span>|<span data-ttu-id="b0866-107">Popis</span><span class="sxs-lookup"><span data-stu-id="b0866-107">Description</span></span>|  
 |------------|-----------------|  
-|`COR_PRF_GC_INDUCED`|<span data-ttu-id="26839-108">Kolekce paměti byla vyvolaná <xref:System.GC.Collect%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="26839-108">The garbage collection was induced by a <xref:System.GC.Collect%2A> method.</span></span>|  
-|`COR_PRF_GC_OTHER`|<span data-ttu-id="26839-109">Důvod není zadána.</span><span class="sxs-lookup"><span data-stu-id="26839-109">The reason is unspecified.</span></span>|  
+|`COR_PRF_GC_INDUCED`|<span data-ttu-id="b0866-108">Kolekce paměti byla vyvolaná <xref:System.GC.Collect%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="b0866-108">The garbage collection was induced by a <xref:System.GC.Collect%2A> method.</span></span>|  
+|`COR_PRF_GC_OTHER`|<span data-ttu-id="b0866-109">Důvod není zadána.</span><span class="sxs-lookup"><span data-stu-id="b0866-109">The reason is unspecified.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="26839-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="26839-110">Requirements</span></span>  
- <span data-ttu-id="26839-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="26839-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b0866-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0866-110">Requirements</span></span>  
+ <span data-ttu-id="b0866-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b0866-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="26839-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="26839-112">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="b0866-112">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="b0866-112">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="26839-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="26839-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b0866-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b0866-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="26839-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="26839-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="b0866-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b0866-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="26839-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="26839-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b0866-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b0866-115">See also</span></span>
 
-- [<span data-ttu-id="26839-116">Výčty pro profilaci</span><span class="sxs-lookup"><span data-stu-id="26839-116">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [<span data-ttu-id="b0866-116">Výčty pro profilaci</span><span class="sxs-lookup"><span data-stu-id="b0866-116">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

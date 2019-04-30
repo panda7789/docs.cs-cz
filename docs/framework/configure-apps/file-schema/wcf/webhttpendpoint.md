@@ -3,19 +3,19 @@ title: <webHttpEndpoint>
 ms.date: 03/30/2017
 ms.assetid: ecaaeb6f-ebd0-411d-8b53-92477cd45347
 ms.openlocfilehash: 6fb31fca6ac38f6cb92ef087cc277a4d5066521c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61769769"
 ---
-# <a name="webhttpendpoint"></a><span data-ttu-id="f5ab9-101">\<webHttpEndpoint></span><span class="sxs-lookup"><span data-stu-id="f5ab9-101">\<webHttpEndpoint></span></span>
-<span data-ttu-id="f5ab9-102">Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) vazby, která automaticky přidá [ \<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) chování.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-102">This configuration element defines a standard endpoint with a fixed [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) binding that automatically adds the [\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) behavior.</span></span> <span data-ttu-id="f5ab9-103">Při zápisu služby REST, používejte tento koncový bod.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-103">Use this endpoint when writing a REST service.</span></span>  
+# <a name="webhttpendpoint"></a><span data-ttu-id="ed7fd-101">\<webHttpEndpoint></span><span class="sxs-lookup"><span data-stu-id="ed7fd-101">\<webHttpEndpoint></span></span>
+<span data-ttu-id="ed7fd-102">Tento prvek konfigurace definuje standardní koncový bod s pevnou [ \<webHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) vazby, která automaticky přidá [ \<webHttp >](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) chování.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-102">This configuration element defines a standard endpoint with a fixed [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) binding that automatically adds the [\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) behavior.</span></span> <span data-ttu-id="ed7fd-103">Při zápisu služby REST, používejte tento koncový bod.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-103">Use this endpoint when writing a REST service.</span></span>  
   
-<span data-ttu-id="f5ab9-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="f5ab9-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="f5ab9-105">\<standardEndpoints></span><span class="sxs-lookup"><span data-stu-id="f5ab9-105">\<standardEndpoints></span></span>  
+<span data-ttu-id="ed7fd-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="ed7fd-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="ed7fd-105">\<standardEndpoints></span><span class="sxs-lookup"><span data-stu-id="ed7fd-105">\<standardEndpoints></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f5ab9-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f5ab9-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ed7fd-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ed7fd-106">Syntax</span></span>  
   
 ```xml  
 <system.serviceModel>
@@ -30,28 +30,28 @@ ms.locfileid: "59182452"
 </system.serviceModel>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="f5ab9-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f5ab9-107">Attributes and Elements</span></span>  
- <span data-ttu-id="f5ab9-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="ed7fd-107">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="ed7fd-107">Attributes and Elements</span></span>  
+ <span data-ttu-id="ed7fd-108">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="f5ab9-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="f5ab9-109">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="ed7fd-109">Atributy</span><span class="sxs-lookup"><span data-stu-id="ed7fd-109">Attributes</span></span>  
   
-|<span data-ttu-id="f5ab9-110">Atribut</span><span class="sxs-lookup"><span data-stu-id="f5ab9-110">Attribute</span></span>|<span data-ttu-id="f5ab9-111">Popis</span><span class="sxs-lookup"><span data-stu-id="f5ab9-111">Description</span></span>|  
+|<span data-ttu-id="ed7fd-110">Atribut</span><span class="sxs-lookup"><span data-stu-id="ed7fd-110">Attribute</span></span>|<span data-ttu-id="ed7fd-111">Popis</span><span class="sxs-lookup"><span data-stu-id="ed7fd-111">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="f5ab9-112">automaticFormatSelectionEnabled</span><span class="sxs-lookup"><span data-stu-id="f5ab9-112">automaticFormatSelectionEnabled</span></span>|<span data-ttu-id="f5ab9-113">Logická hodnota, která určuje, zda je povolen automatický výběr formátu.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-113">A Boolean value that indicates whether automatic format selection is enabled.</span></span><br /><br /> <span data-ttu-id="f5ab9-114">Pokud je povolen automatický výběr formátu, infrastruktura analyzuje `Accept` záhlaví zprávy s požadavkem a určí nejvhodnější formát odpovědi.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-114">When automatic format selection is enabled, the infrastructure parses the `Accept` header of the request message and determines the most appropriate response format.</span></span> <span data-ttu-id="f5ab9-115">Pokud `Accept` záhlaví neurčuje formát vhodný odpovědi, využívá infrastrukturu `Content-Type` zprávy s požadavkem nebo výchozí formát odpovědi z operace.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-115">If the `Accept` header does not specify a suitable response format, the infrastructure uses the `Content-Type` of the request message or the default response format of the operation.</span></span>|  
-|<span data-ttu-id="f5ab9-116">defaultOutgoingResponseFormat</span><span class="sxs-lookup"><span data-stu-id="f5ab9-116">defaultOutgoingResponseFormat</span></span>|<span data-ttu-id="f5ab9-117">Atribut, který určuje výchozí formát pro odchozí odpovědi.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-117">An attribute that specifies the default outgoing response format.</span></span> <span data-ttu-id="f5ab9-118">Tento atribut je <xref:System.ServiceModel.Web.WebMessageFormat> typu</span><span class="sxs-lookup"><span data-stu-id="f5ab9-118">This attribute is of the <xref:System.ServiceModel.Web.WebMessageFormat> type</span></span>|  
-|<span data-ttu-id="f5ab9-119">helpEnabled</span><span class="sxs-lookup"><span data-stu-id="f5ab9-119">helpEnabled</span></span>|<span data-ttu-id="f5ab9-120">Logická hodnota určující, zda je povoleno na stránce nápovědy HTTP pro koncový bod.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-120">A Boolean value that indicates whether the HTTP help page is enabled for the endpoint.</span></span>|  
-|<span data-ttu-id="f5ab9-121">webEndpointType</span><span class="sxs-lookup"><span data-stu-id="f5ab9-121">webEndpointType</span></span>|<span data-ttu-id="f5ab9-122">Řetězec, který určuje typ koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-122">A string that specifies the type of the endpoint.</span></span>|  
+|<span data-ttu-id="ed7fd-112">automaticFormatSelectionEnabled</span><span class="sxs-lookup"><span data-stu-id="ed7fd-112">automaticFormatSelectionEnabled</span></span>|<span data-ttu-id="ed7fd-113">Logická hodnota, která určuje, zda je povolen automatický výběr formátu.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-113">A Boolean value that indicates whether automatic format selection is enabled.</span></span><br /><br /> <span data-ttu-id="ed7fd-114">Pokud je povolen automatický výběr formátu, infrastruktura analyzuje `Accept` záhlaví zprávy s požadavkem a určí nejvhodnější formát odpovědi.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-114">When automatic format selection is enabled, the infrastructure parses the `Accept` header of the request message and determines the most appropriate response format.</span></span> <span data-ttu-id="ed7fd-115">Pokud `Accept` záhlaví neurčuje formát vhodný odpovědi, využívá infrastrukturu `Content-Type` zprávy s požadavkem nebo výchozí formát odpovědi z operace.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-115">If the `Accept` header does not specify a suitable response format, the infrastructure uses the `Content-Type` of the request message or the default response format of the operation.</span></span>|  
+|<span data-ttu-id="ed7fd-116">defaultOutgoingResponseFormat</span><span class="sxs-lookup"><span data-stu-id="ed7fd-116">defaultOutgoingResponseFormat</span></span>|<span data-ttu-id="ed7fd-117">Atribut, který určuje výchozí formát pro odchozí odpovědi.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-117">An attribute that specifies the default outgoing response format.</span></span> <span data-ttu-id="ed7fd-118">Tento atribut je <xref:System.ServiceModel.Web.WebMessageFormat> typu</span><span class="sxs-lookup"><span data-stu-id="ed7fd-118">This attribute is of the <xref:System.ServiceModel.Web.WebMessageFormat> type</span></span>|  
+|<span data-ttu-id="ed7fd-119">helpEnabled</span><span class="sxs-lookup"><span data-stu-id="ed7fd-119">helpEnabled</span></span>|<span data-ttu-id="ed7fd-120">Logická hodnota určující, zda je povoleno na stránce nápovědy HTTP pro koncový bod.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-120">A Boolean value that indicates whether the HTTP help page is enabled for the endpoint.</span></span>|  
+|<span data-ttu-id="ed7fd-121">webEndpointType</span><span class="sxs-lookup"><span data-stu-id="ed7fd-121">webEndpointType</span></span>|<span data-ttu-id="ed7fd-122">Řetězec, který určuje typ koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-122">A string that specifies the type of the endpoint.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="f5ab9-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f5ab9-123">Child Elements</span></span>  
- <span data-ttu-id="f5ab9-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="f5ab9-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="ed7fd-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="ed7fd-123">Child Elements</span></span>  
+ <span data-ttu-id="ed7fd-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="ed7fd-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="f5ab9-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f5ab9-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="ed7fd-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="ed7fd-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="f5ab9-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="f5ab9-126">Element</span></span>|<span data-ttu-id="f5ab9-127">Popis</span><span class="sxs-lookup"><span data-stu-id="f5ab9-127">Description</span></span>|  
+|<span data-ttu-id="ed7fd-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="ed7fd-126">Element</span></span>|<span data-ttu-id="ed7fd-127">Popis</span><span class="sxs-lookup"><span data-stu-id="ed7fd-127">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="f5ab9-128">\<standardEndpoints></span><span class="sxs-lookup"><span data-stu-id="f5ab9-128">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="f5ab9-129">Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.</span><span class="sxs-lookup"><span data-stu-id="f5ab9-129">A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.</span></span>|  
+|[<span data-ttu-id="ed7fd-128">\<standardEndpoints></span><span class="sxs-lookup"><span data-stu-id="ed7fd-128">\<standardEndpoints></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|<span data-ttu-id="ed7fd-129">Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.</span><span class="sxs-lookup"><span data-stu-id="ed7fd-129">A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="f5ab9-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f5ab9-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ed7fd-130">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ed7fd-130">See also</span></span>
 
 - <xref:System.ServiceModel.Description.WebHttpEndpoint>
 - <xref:System.ServiceModel.Configuration.WebHttpEndpointElement>

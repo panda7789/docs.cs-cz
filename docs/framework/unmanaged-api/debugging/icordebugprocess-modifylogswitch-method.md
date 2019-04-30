@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4b1c85499e5269027da2c2a01ab67aab2c5da626
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57488172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61775541"
 ---
-# <a name="icordebugprocessmodifylogswitch-method"></a><span data-ttu-id="d7ea4-102">ICorDebugProcess::ModifyLogSwitch – metoda</span><span class="sxs-lookup"><span data-stu-id="d7ea4-102">ICorDebugProcess::ModifyLogSwitch Method</span></span>
-<span data-ttu-id="d7ea4-103">Nastaví úroveň závažnosti přepínače zadaný protokol.</span><span class="sxs-lookup"><span data-stu-id="d7ea4-103">Sets the severity level of the specified log switch.</span></span>  
+# <a name="icordebugprocessmodifylogswitch-method"></a><span data-ttu-id="dbe09-102">ICorDebugProcess::ModifyLogSwitch – metoda</span><span class="sxs-lookup"><span data-stu-id="dbe09-102">ICorDebugProcess::ModifyLogSwitch Method</span></span>
+<span data-ttu-id="dbe09-103">Nastaví úroveň závažnosti přepínače zadaný protokol.</span><span class="sxs-lookup"><span data-stu-id="dbe09-103">Sets the severity level of the specified log switch.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d7ea4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7ea4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dbe09-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dbe09-104">Syntax</span></span>  
   
 ```  
 HRESULT ModifyLogSwitch(  
@@ -35,21 +35,21 @@ HRESULT ModifyLogSwitch(
     [in] LONG  lLevel);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d7ea4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d7ea4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="dbe09-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="dbe09-105">Parameters</span></span>  
  `pLogSwitchName`  
- <span data-ttu-id="d7ea4-106">[in] Ukazatel na řetězec, který určuje název protokolu přepínače.</span><span class="sxs-lookup"><span data-stu-id="d7ea4-106">[in] A pointer to a string that specifies the name of the log switch.</span></span>  
+ <span data-ttu-id="dbe09-106">[in] Ukazatel na řetězec, který určuje název protokolu přepínače.</span><span class="sxs-lookup"><span data-stu-id="dbe09-106">[in] A pointer to a string that specifies the name of the log switch.</span></span>  
   
  `lLevel`  
- <span data-ttu-id="d7ea4-107">[in] Úroveň závažnosti nastavit pro přepínač zadaný protokol.</span><span class="sxs-lookup"><span data-stu-id="d7ea4-107">[in] The severity level to be set for the specified log switch.</span></span>  
+ <span data-ttu-id="dbe09-107">[in] Úroveň závažnosti nastavit pro přepínač zadaný protokol.</span><span class="sxs-lookup"><span data-stu-id="dbe09-107">[in] The severity level to be set for the specified log switch.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d7ea4-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d7ea4-108">Remarks</span></span>  
- <span data-ttu-id="d7ea4-109">Tato metoda je platná jenom po [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="d7ea4-109">This method is valid only after the [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) callback has occurred.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="dbe09-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dbe09-108">Remarks</span></span>  
+ <span data-ttu-id="dbe09-109">Tato metoda je platná jenom po [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="dbe09-109">This method is valid only after the [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) callback has occurred.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d7ea4-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d7ea4-110">Requirements</span></span>  
- <span data-ttu-id="d7ea4-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d7ea4-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dbe09-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dbe09-110">Requirements</span></span>  
+ <span data-ttu-id="dbe09-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dbe09-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d7ea4-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d7ea4-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="dbe09-112">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="dbe09-112">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d7ea4-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d7ea4-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="dbe09-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dbe09-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d7ea4-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d7ea4-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="dbe09-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="dbe09-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>

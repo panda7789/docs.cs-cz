@@ -6,61 +6,61 @@ dev_langs:
 - vb
 ms.assetid: fa93af15-28af-4b5e-846b-897308410edb
 ms.openlocfilehash: 48aa6044f39be93f144b6c4af5137b131dda0b30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59085815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61772135"
 ---
-# <a name="method-based-query-syntax-examples-set-operators-linq-to-dataset"></a><span data-ttu-id="91456-102">Příklady syntaxe dotazů založených na volání metody: Množinové operátory (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="91456-102">Method-Based Query Syntax Examples: Set Operators (LINQ to DataSet)</span></span>
-<span data-ttu-id="91456-103">Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Intersect%2A>, a <xref:System.Linq.Enumerable.Union%2A> operátory k provádění operací porovnání založené na hodnotách sad řádky dat.[ Načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md) naleznete v tématu [porovnání DataRows](../../../../docs/framework/data/adonet/comparing-datarows-linq-to-dataset.md) Další informace o <xref:System.Data.DataRowComparer>.</span><span class="sxs-lookup"><span data-stu-id="91456-103">The examples in this topic demonstrate how to use the <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Intersect%2A>, and <xref:System.Linq.Enumerable.Union%2A> operators to perform value-based comparison operations on sets of data rows.[Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md) See [Comparing DataRows](../../../../docs/framework/data/adonet/comparing-datarows-linq-to-dataset.md) for more information on <xref:System.Data.DataRowComparer>.</span></span>  
+# <a name="method-based-query-syntax-examples-set-operators-linq-to-dataset"></a><span data-ttu-id="5aa3f-102">Příklady syntaxe dotazů založených na volání metody: Množinové operátory (LINQ to DataSet)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-102">Method-Based Query Syntax Examples: Set Operators (LINQ to DataSet)</span></span>
+<span data-ttu-id="5aa3f-103">Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Intersect%2A>, a <xref:System.Linq.Enumerable.Union%2A> operátory k provádění operací porovnání založené na hodnotách sad řádky dat.[ Načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md) naleznete v tématu [porovnání DataRows](../../../../docs/framework/data/adonet/comparing-datarows-linq-to-dataset.md) Další informace o <xref:System.Data.DataRowComparer>.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-103">The examples in this topic demonstrate how to use the <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Intersect%2A>, and <xref:System.Linq.Enumerable.Union%2A> operators to perform value-based comparison operations on sets of data rows.[Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md) See [Comparing DataRows](../../../../docs/framework/data/adonet/comparing-datarows-linq-to-dataset.md) for more information on <xref:System.Data.DataRowComparer>.</span></span>  
   
- <span data-ttu-id="91456-104">`FillDataSet` Metodu použitou v těchto příkladech je zadán v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).</span><span class="sxs-lookup"><span data-stu-id="91456-104">The `FillDataSet` method used in these examples is specified in [Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).</span></span>  
+ <span data-ttu-id="5aa3f-104">`FillDataSet` Metodu použitou v těchto příkladech je zadán v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).</span><span class="sxs-lookup"><span data-stu-id="5aa3f-104">The `FillDataSet` method used in these examples is specified in [Loading Data Into a DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).</span></span>  
   
- <span data-ttu-id="91456-105">Příklady v tomto tématu použijte tabulky Kontakt, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="91456-105">The examples in this topic use the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
+ <span data-ttu-id="5aa3f-105">Příklady v tomto tématu použijte tabulky Kontakt, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-105">The examples in this topic use the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
   
- <span data-ttu-id="91456-106">V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:</span><span class="sxs-lookup"><span data-stu-id="91456-106">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
+ <span data-ttu-id="5aa3f-106">V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:</span><span class="sxs-lookup"><span data-stu-id="5aa3f-106">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#importsusing)]  
   
- <span data-ttu-id="91456-107">Další informace najdete v tématu [jak: Vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).</span><span class="sxs-lookup"><span data-stu-id="91456-107">For more information, see [How to: Create a LINQ to DataSet Project In Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).</span></span>  
+ <span data-ttu-id="5aa3f-107">Další informace najdete v tématu [jak: Vytvoření LINQ to DataSet projektu v sadě Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).</span><span class="sxs-lookup"><span data-stu-id="5aa3f-107">For more information, see [How to: Create a LINQ to DataSet Project In Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).</span></span>  
   
-## <a name="distinct"></a><span data-ttu-id="91456-108">Distinct</span><span class="sxs-lookup"><span data-stu-id="91456-108">Distinct</span></span>  
+## <a name="distinct"></a><span data-ttu-id="5aa3f-108">Distinct</span><span class="sxs-lookup"><span data-stu-id="5aa3f-108">Distinct</span></span>  
   
-### <a name="example"></a><span data-ttu-id="91456-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="91456-109">Example</span></span>  
- <span data-ttu-id="91456-110">V tomto příkladu <xref:System.Linq.Enumerable.Distinct%2A> metoda odebrání duplicitních prvků v posloupnosti.</span><span class="sxs-lookup"><span data-stu-id="91456-110">This example uses the <xref:System.Linq.Enumerable.Distinct%2A> method to remove duplicate elements in a sequence.</span></span>  
+### <a name="example"></a><span data-ttu-id="5aa3f-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="5aa3f-109">Example</span></span>  
+ <span data-ttu-id="5aa3f-110">V tomto příkladu <xref:System.Linq.Enumerable.Distinct%2A> metoda odebrání duplicitních prvků v posloupnosti.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-110">This example uses the <xref:System.Linq.Enumerable.Distinct%2A> method to remove duplicate elements in a sequence.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#DistinctRows](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#distinctrows)]
  [!code-vb[DP LINQ to DataSet Examples#DistinctRows](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#distinctrows)]  
   
-## <a name="except"></a><span data-ttu-id="91456-111">S výjimkou</span><span class="sxs-lookup"><span data-stu-id="91456-111">Except</span></span>  
+## <a name="except"></a><span data-ttu-id="5aa3f-111">S výjimkou</span><span class="sxs-lookup"><span data-stu-id="5aa3f-111">Except</span></span>  
   
-### <a name="example"></a><span data-ttu-id="91456-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="91456-112">Example</span></span>  
- <span data-ttu-id="91456-113">V tomto příkladu <xref:System.Linq.Enumerable.Except%2A> metoda vrátí kontakty, které se zobrazují v první tabulce, ale nikoli do druhého.</span><span class="sxs-lookup"><span data-stu-id="91456-113">This example uses the <xref:System.Linq.Enumerable.Except%2A> method to return contacts that appear in the first table but not in the second.</span></span>  
+### <a name="example"></a><span data-ttu-id="5aa3f-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="5aa3f-112">Example</span></span>  
+ <span data-ttu-id="5aa3f-113">V tomto příkladu <xref:System.Linq.Enumerable.Except%2A> metoda vrátí kontakty, které se zobrazují v první tabulce, ale nikoli do druhého.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-113">This example uses the <xref:System.Linq.Enumerable.Except%2A> method to return contacts that appear in the first table but not in the second.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#Except2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#except2)]
  [!code-vb[DP LINQ to DataSet Examples#Except2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#except2)]  
   
-## <a name="intersect"></a><span data-ttu-id="91456-114">Intersect</span><span class="sxs-lookup"><span data-stu-id="91456-114">Intersect</span></span>  
+## <a name="intersect"></a><span data-ttu-id="5aa3f-114">Intersect</span><span class="sxs-lookup"><span data-stu-id="5aa3f-114">Intersect</span></span>  
   
-### <a name="example"></a><span data-ttu-id="91456-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="91456-115">Example</span></span>  
- <span data-ttu-id="91456-116">V tomto příkladu <xref:System.Linq.Enumerable.Intersect%2A> metoda vrátí kontakty, které se zobrazují v obou tabulkách.</span><span class="sxs-lookup"><span data-stu-id="91456-116">This example uses the <xref:System.Linq.Enumerable.Intersect%2A> method to return contacts that appear in both tables.</span></span>  
+### <a name="example"></a><span data-ttu-id="5aa3f-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="5aa3f-115">Example</span></span>  
+ <span data-ttu-id="5aa3f-116">V tomto příkladu <xref:System.Linq.Enumerable.Intersect%2A> metoda vrátí kontakty, které se zobrazují v obou tabulkách.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-116">This example uses the <xref:System.Linq.Enumerable.Intersect%2A> method to return contacts that appear in both tables.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#Intersect2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#intersect2)]
  [!code-vb[DP LINQ to DataSet Examples#Intersect2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#intersect2)]  
   
-## <a name="union"></a><span data-ttu-id="91456-117">Unie</span><span class="sxs-lookup"><span data-stu-id="91456-117">Union</span></span>  
+## <a name="union"></a><span data-ttu-id="5aa3f-117">Unie</span><span class="sxs-lookup"><span data-stu-id="5aa3f-117">Union</span></span>  
   
-### <a name="example"></a><span data-ttu-id="91456-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="91456-118">Example</span></span>  
- <span data-ttu-id="91456-119">V tomto příkladu <xref:System.Linq.Enumerable.Union%2A> metoda vrátí jedinečný kontakty pomocí kteréhokoli z obou tabulek.</span><span class="sxs-lookup"><span data-stu-id="91456-119">This example uses the <xref:System.Linq.Enumerable.Union%2A> method to return unique contacts from either of the two tables.</span></span>  
+### <a name="example"></a><span data-ttu-id="5aa3f-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="5aa3f-118">Example</span></span>  
+ <span data-ttu-id="5aa3f-119">V tomto příkladu <xref:System.Linq.Enumerable.Union%2A> metoda vrátí jedinečný kontakty pomocí kteréhokoli z obou tabulek.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-119">This example uses the <xref:System.Linq.Enumerable.Union%2A> method to return unique contacts from either of the two tables.</span></span>  
   
  [!code-csharp[DP LINQ to DataSet Examples#Union2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#union2)]
  [!code-vb[DP LINQ to DataSet Examples#Union2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#union2)]  
   
-## <a name="see-also"></a><span data-ttu-id="91456-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91456-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5aa3f-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5aa3f-120">See also</span></span>
 
-- [<span data-ttu-id="91456-121">Načtení dat do datové sady</span><span class="sxs-lookup"><span data-stu-id="91456-121">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
-- [<span data-ttu-id="91456-122">Příklady LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="91456-122">LINQ to DataSet Examples</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
-- [<span data-ttu-id="91456-123">Přehled standardních operátorů dotazu (C#)</span><span class="sxs-lookup"><span data-stu-id="91456-123">Standard Query Operators Overview (C#)</span></span>](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [<span data-ttu-id="91456-124">Přehled standardních operátorů dotazu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="91456-124">Standard Query Operators Overview (Visual Basic)</span></span>](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [<span data-ttu-id="5aa3f-121">Načtení dat do datové sady</span><span class="sxs-lookup"><span data-stu-id="5aa3f-121">Loading Data Into a DataSet</span></span>](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
+- [<span data-ttu-id="5aa3f-122">Příklady LINQ to DataSet</span><span class="sxs-lookup"><span data-stu-id="5aa3f-122">LINQ to DataSet Examples</span></span>](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+- [<span data-ttu-id="5aa3f-123">Přehled standardních operátorů dotazu (C#)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-123">Standard Query Operators Overview (C#)</span></span>](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [<span data-ttu-id="5aa3f-124">Přehled standardních operátorů dotazu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-124">Standard Query Operators Overview (Visual Basic)</span></span>](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)

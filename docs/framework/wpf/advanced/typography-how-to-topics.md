@@ -7,28 +7,28 @@ helpviewer_keywords:
 - typography [WPF], how-to topics
 ms.assetid: 82d50325-7cb2-4975-aea3-027c00e6bbfc
 ms.openlocfilehash: f5d54b892f61bfb1804b3c4c561533e5aa549d0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59209734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774904"
 ---
-# <a name="typography-how-to-topics"></a><span data-ttu-id="100ca-102">Postupy: Témata typografie</span><span class="sxs-lookup"><span data-stu-id="100ca-102">Typography How-to Topics</span></span>
-<span data-ttu-id="100ca-103">Témata v této části popisují způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporu bohatý prezentační textu ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="100ca-103">The topics in this section describe how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] support for rich presentation of text in your applications.</span></span>  
+# <a name="typography-how-to-topics"></a><span data-ttu-id="6e324-102">Postupy: Témata typografie</span><span class="sxs-lookup"><span data-stu-id="6e324-102">Typography How-to Topics</span></span>
+<span data-ttu-id="6e324-103">Témata v této části popisují způsob použití [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporu bohatý prezentační textu ve svých aplikacích.</span><span class="sxs-lookup"><span data-stu-id="6e324-103">The topics in this section describe how to use [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] support for rich presentation of text in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="100ca-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="100ca-104">In This Section</span></span>  
- [<span data-ttu-id="100ca-105">Vytvoření dekorace textu</span><span class="sxs-lookup"><span data-stu-id="100ca-105">Create a Text Decoration</span></span>](how-to-create-a-text-decoration.md)  
- [<span data-ttu-id="100ca-106">Určení podtržení hypertextového odkazu</span><span class="sxs-lookup"><span data-stu-id="100ca-106">Specify Whether a Hyperlink is Underlined</span></span>](how-to-specify-whether-a-hyperlink-is-underlined.md)  
- [<span data-ttu-id="100ca-107">Použití transformací na text</span><span class="sxs-lookup"><span data-stu-id="100ca-107">Apply Transforms to Text</span></span>](how-to-apply-transforms-to-text.md)  
- [<span data-ttu-id="100ca-108">Použití animací na text</span><span class="sxs-lookup"><span data-stu-id="100ca-108">Apply Animations to Text</span></span>](how-to-apply-animations-to-text.md)  
- [<span data-ttu-id="100ca-109">Vytvoření textu se stínem</span><span class="sxs-lookup"><span data-stu-id="100ca-109">Create Text with a Shadow</span></span>](how-to-create-text-with-a-shadow.md)  
- [<span data-ttu-id="100ca-110">Vytvoření obrysového textu</span><span class="sxs-lookup"><span data-stu-id="100ca-110">Create Outlined Text</span></span>](how-to-create-outlined-text.md)  
- [<span data-ttu-id="100ca-111">Vykreslení textu na pozadí ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="100ca-111">Draw Text to a Control's Background</span></span>](how-to-draw-text-to-a-control-background.md)  
- [<span data-ttu-id="100ca-112">Vykreslení textu do vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="100ca-112">Draw Text to a Visual</span></span>](how-to-draw-text-to-a-visual.md)  
- [<span data-ttu-id="100ca-113">Použití speciálních znaků v kódu XAML</span><span class="sxs-lookup"><span data-stu-id="100ca-113">Use Special Characters in XAML</span></span>](how-to-use-special-characters-in-xaml.md)  
+## <a name="in-this-section"></a><span data-ttu-id="6e324-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6e324-104">In This Section</span></span>  
+ [<span data-ttu-id="6e324-105">Vytvoření dekorace textu</span><span class="sxs-lookup"><span data-stu-id="6e324-105">Create a Text Decoration</span></span>](how-to-create-a-text-decoration.md)  
+ [<span data-ttu-id="6e324-106">Určení podtržení hypertextového odkazu</span><span class="sxs-lookup"><span data-stu-id="6e324-106">Specify Whether a Hyperlink is Underlined</span></span>](how-to-specify-whether-a-hyperlink-is-underlined.md)  
+ [<span data-ttu-id="6e324-107">Použití transformací na text</span><span class="sxs-lookup"><span data-stu-id="6e324-107">Apply Transforms to Text</span></span>](how-to-apply-transforms-to-text.md)  
+ [<span data-ttu-id="6e324-108">Použití animací na text</span><span class="sxs-lookup"><span data-stu-id="6e324-108">Apply Animations to Text</span></span>](how-to-apply-animations-to-text.md)  
+ [<span data-ttu-id="6e324-109">Vytvoření textu se stínem</span><span class="sxs-lookup"><span data-stu-id="6e324-109">Create Text with a Shadow</span></span>](how-to-create-text-with-a-shadow.md)  
+ [<span data-ttu-id="6e324-110">Vytvoření obrysového textu</span><span class="sxs-lookup"><span data-stu-id="6e324-110">Create Outlined Text</span></span>](how-to-create-outlined-text.md)  
+ [<span data-ttu-id="6e324-111">Vykreslení textu na pozadí ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="6e324-111">Draw Text to a Control's Background</span></span>](how-to-draw-text-to-a-control-background.md)  
+ [<span data-ttu-id="6e324-112">Vykreslení textu do vizuálního objektu</span><span class="sxs-lookup"><span data-stu-id="6e324-112">Draw Text to a Visual</span></span>](how-to-draw-text-to-a-visual.md)  
+ [<span data-ttu-id="6e324-113">Použití speciálních znaků v kódu XAML</span><span class="sxs-lookup"><span data-stu-id="6e324-113">Use Special Characters in XAML</span></span>](how-to-use-special-characters-in-xaml.md)  
   
-## <a name="see-also"></a><span data-ttu-id="100ca-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="100ca-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6e324-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6e324-114">See also</span></span>
 
 - <xref:System.Windows.Documents.Typography>
-- [<span data-ttu-id="100ca-115">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="100ca-115">Documents in WPF</span></span>](documents-in-wpf.md)
-- [<span data-ttu-id="100ca-116">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="100ca-116">OpenType Font Features</span></span>](opentype-font-features.md)
+- [<span data-ttu-id="6e324-115">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="6e324-115">Documents in WPF</span></span>](documents-in-wpf.md)
+- [<span data-ttu-id="6e324-116">Funkce písma OpenType</span><span class="sxs-lookup"><span data-stu-id="6e324-116">OpenType Font Features</span></span>](opentype-font-features.md)

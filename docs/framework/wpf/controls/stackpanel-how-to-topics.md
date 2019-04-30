@@ -8,21 +8,21 @@ helpviewer_keywords:
 - controls [WPF], StackPanel
 ms.assetid: c9849df3-d000-4cdf-8345-5edcd053919d
 ms.openlocfilehash: b7456eeb4fc248998730a21f757699497c83f4e9
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351265"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791063"
 ---
-# <a name="stackpanel-how-to-topics"></a><span data-ttu-id="30a61-102">StackPanel – postupy</span><span class="sxs-lookup"><span data-stu-id="30a61-102">StackPanel How-to Topics</span></span>
-<span data-ttu-id="30a61-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.StackPanel> prvek zásobníku obsah vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="30a61-103">The topics in this section describe how to use the <xref:System.Windows.Controls.StackPanel> element to stack content horizontally or vertically.</span></span>  
+# <a name="stackpanel-how-to-topics"></a><span data-ttu-id="f2aa1-102">StackPanel – postupy</span><span class="sxs-lookup"><span data-stu-id="f2aa1-102">StackPanel How-to Topics</span></span>
+<span data-ttu-id="f2aa1-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.StackPanel> prvek zásobníku obsah vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="f2aa1-103">The topics in this section describe how to use the <xref:System.Windows.Controls.StackPanel> element to stack content horizontally or vertically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="30a61-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="30a61-104">In This Section</span></span>  
- [<span data-ttu-id="30a61-105">Výběr mezi elementy StackPanel a DockPanel</span><span class="sxs-lookup"><span data-stu-id="30a61-105">Choose Between StackPanel and DockPanel</span></span>](how-to-choose-between-stackpanel-and-dockpanel.md)  
- [<span data-ttu-id="30a61-106">Vytvoření elementu StackPanel</span><span class="sxs-lookup"><span data-stu-id="30a61-106">Create a StackPanel</span></span>](how-to-create-a-stackpanel.md)  
- [<span data-ttu-id="30a61-107">Vodorovné a svislé zarovnání obsahu v elementu StackPanel</span><span class="sxs-lookup"><span data-stu-id="30a61-107">Horizontally or Vertically Align Content in a StackPanel</span></span>](how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f2aa1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f2aa1-104">In This Section</span></span>  
+ [<span data-ttu-id="f2aa1-105">Výběr mezi elementy StackPanel a DockPanel</span><span class="sxs-lookup"><span data-stu-id="f2aa1-105">Choose Between StackPanel and DockPanel</span></span>](how-to-choose-between-stackpanel-and-dockpanel.md)  
+ [<span data-ttu-id="f2aa1-106">Vytvoření elementu StackPanel</span><span class="sxs-lookup"><span data-stu-id="f2aa1-106">Create a StackPanel</span></span>](how-to-create-a-stackpanel.md)  
+ [<span data-ttu-id="f2aa1-107">Vodorovné a svislé zarovnání obsahu v elementu StackPanel</span><span class="sxs-lookup"><span data-stu-id="f2aa1-107">Horizontally or Vertically Align Content in a StackPanel</span></span>](how-to-horizontally-or-vertically-align-content-in-a-stackpanel.md)  
   
-## <a name="reference"></a><span data-ttu-id="30a61-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="30a61-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f2aa1-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f2aa1-108">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -37,9 +37,9 @@ ms.locfileid: "57351265"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="30a61-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="30a61-109">Related Sections</span></span>  
- [<span data-ttu-id="30a61-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="30a61-110">Layout</span></span>](../advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="f2aa1-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f2aa1-109">Related Sections</span></span>  
+ [<span data-ttu-id="f2aa1-110">Rozložení</span><span class="sxs-lookup"><span data-stu-id="f2aa1-110">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="30a61-111">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="30a61-111">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="f2aa1-111">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="f2aa1-111">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="30a61-112">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="30a61-112">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
+ [<span data-ttu-id="f2aa1-112">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="f2aa1-112">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
