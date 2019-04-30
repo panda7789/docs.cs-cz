@@ -15,11 +15,11 @@ helpviewer_keywords:
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
 ms.openlocfilehash: eb0adb2e8140b20c8d52eced02f177b8c3560354
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211631"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938850"
 ---
 # <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
 CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný typ XAML.  
@@ -71,11 +71,11 @@ CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný ty
 ## <a name="xaml-2009"></a>XAML 2009  
  XAML 2009 poskytuje další podporu pro obecné typy a upravuje chování funkce `x:TypeArguments` a `x:Type` pro tuto funkci podporují.  
   
--   `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecné objektu může být u jiných elementů než kořenovém adresáři. Další informace najdete v části "XAML 2009" v [x: TypeArguments – direktiva](x-typearguments-directive.md).  
+- `x:TypeArguments` a element přidruženého objektu pro vytváření instancí obecné objektu může být u jiných elementů než kořenovém adresáři. Další informace najdete v části "XAML 2009" v [x: TypeArguments – direktiva](x-typearguments-directive.md).  
   
--   XAML 2009 podporuje syntaxi pro zadání omezení obecného typu v kódu. To může využívat `x:TypeArguments`, `x:Type`, nebo dvě funkce v kombinaci.  
+- XAML 2009 podporuje syntaxi pro zadání omezení obecného typu v kódu. To může využívat `x:TypeArguments`, `x:Type`, nebo dvě funkce v kombinaci.  
   
--   Implementaci WPF XAML při zpracování XAML 2009, pro zatížení také přidá tuto funkci pro implicitní typ chování převod vlastnosti na určité rozhraní, které používají typ <xref:System.Type>.  
+- Implementaci WPF XAML při zpracování XAML 2009, pro zatížení také přidá tuto funkci pro implicitní typ chování převod vlastnosti na určité rozhraní, které používají typ <xref:System.Type>.  
   
  V WPF můžete použít funkce XAML 2009, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
   

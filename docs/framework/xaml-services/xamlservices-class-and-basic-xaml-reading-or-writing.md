@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XamlServices class [XAML Services], how to use
 ms.assetid: 6ac27fad-3687-4d7a-add1-3e90675fdfde
 ms.openlocfilehash: c9ef6a215587750f66d2cf8b5b54cbc51f89037e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938733"
 ---
 # <a name="xamlservices-class-and-basic-xaml-reading-or-writing"></a>Třída XAMLServices a základní čtení a zápis v jazyku XAML
 <xref:System.Xaml.XamlServices> je třída poskytuje rozhraní .NET Framework XAML Services, který slouží k řešení scénářů XAML, které nevyžadují žádná zvláštní přístup k datový proud uzlu XAML nebo XAML typu systémové informace získané z těchto uzlů. <xref:System.Xaml.XamlServices> Rozhraní API jde vyhodnotit takto: `Load` nebo `Parse` pro podporu zatížení cestu XAML `Save` k podpoře XAML cestu, uložení a `Transform` k poskytování technika, která připojí načíst cestu a uložit cestu. `Transform` je možné změnit z jednoho schématu XAML do jiného. Toto téma shrnuje každého z těchto klasifikací rozhraní API a popisuje rozdíly mezi konkrétní metody přetížení.  
@@ -25,9 +25,9 @@ ms.locfileid: "59162260"
   
  <xref:System.Xaml.XamlServices.Load%28System.IO.TextReader%29> a <xref:System.Xaml.XamlServices.Load%28System.Xml.XmlReader%29> přetížení, které využívají čtenáři formáty z předchozích verzí rozhraní .NET Framework. Chcete-li použít tato přetížení, by měl máte již vytvořena instance reader a použít jeho `Create` rozhraní API k načtení XAML v příslušném formuláři (textu nebo XML). Pokud již máte záznam ukazatele přesunutého jinými čtenáři nebo provádění jiných operací s nimi, není to důležité. Cesta logiky zatížení z <xref:System.Xaml.XamlServices.Load%2A> vždy zpracuje celý XAML vstup z kořenového adresáře dolů. Scénáře pro tato přetížení mohl zahrnovat následující:  
   
--   Návrh povrchy kde poskytuje jednoduché možnosti z existující textový editor XML-konkrétní úprav XAML.  
+- Návrh povrchy kde poskytuje jednoduché možnosti z existující textový editor XML-konkrétní úprav XAML.  
   
--   Varianty jádro <xref:System.IO> scénáře, kdy použít vyhrazený čtenáři k otevření souborů nebo datových proudů. Logiky provede základní kontrolu nebo zpracování obsahu, než se pokusí načíst jako XAML.  
+- Varianty jádro <xref:System.IO> scénáře, kdy použít vyhrazený čtenáři k otevření souborů nebo datových proudů. Logiky provede základní kontrolu nebo zpracování obsahu, než se pokusí načíst jako XAML.  
   
  Můžete načíst soubor nebo datového proudu nebo můžete načíst <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, nebo <xref:System.Xaml.XamlReader> , zabalit váš vstup XAML načtením s rozhraními API pro čtenáře.  
   
@@ -35,9 +35,9 @@ ms.locfileid: "59162260"
   
  `Load` Signaturou, které poskytuje pokročilejší scénáře jsou <xref:System.Xaml.XamlServices.Load%28System.Xaml.XamlReader%29>. Tento podpis slouží pro jednu z následujících případech:  
   
--   Jste definovali vlastní implementaci <xref:System.Xaml.XamlReader>.  
+- Jste definovali vlastní implementaci <xref:System.Xaml.XamlReader>.  
   
--   Je třeba zadat nastavení pro <xref:System.Xaml.XamlReader> , která se liší od výchozího nastavení.  
+- Je třeba zadat nastavení pro <xref:System.Xaml.XamlReader> , která se liší od výchozího nastavení.  
   
  Příkladem jiného než výchozího nastavení jsou nastavení některý z následujících akcí: <xref:System.Xaml.XamlReaderSettings.AllowProtectedMembersOnRoot%2A>; <xref:System.Xaml.XamlReaderSettings.BaseUri%2A>; <xref:System.Xaml.XamlReaderSettings.IgnoreUidsOnPropertyElements%2A>; <xref:System.Xaml.XamlReaderSettings.LocalAssembly%2A>; <xref:System.Xaml.XamlReaderSettings.ValuesMustBeString%2A>. Výchozí čtecí zařízení pro <xref:System.Xaml.XamlServices> je <xref:System.Xaml.XamlXmlReader>. Pokud zadáte vlastní <xref:System.Xaml.XamlXmlReader>, s nastaveními, toto jsou vlastnosti, které chcete nastavit jiné výchozí <xref:System.Xaml.XamlXmlReaderSettings>: <xref:System.Xaml.XamlXmlReaderSettings.CloseInput%2A>; <xref:System.Xaml.XamlXmlReaderSettings.SkipXmlCompatibilityProcessing%2A>; <xref:System.Xaml.XamlXmlReaderSettings.XmlLang%2A>; <xref:System.Xaml.XamlXmlReaderSettings.XmlSpacePreserve%2A>.  
   

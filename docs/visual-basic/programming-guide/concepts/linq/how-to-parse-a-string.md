@@ -3,11 +3,11 @@ title: 'Postupy: Analýze řetězce (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
 ms.openlocfilehash: 815e94b3b41c2c0cc1d18d598307ab292919bea4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827299"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942594"
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýze řetězce (Visual Basic)
 Toto téma ukazuje, jak vytvořit stromu XML v C#.  

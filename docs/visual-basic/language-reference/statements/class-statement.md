@@ -14,11 +14,11 @@ helpviewer_keywords:
 - data members [Visual Basic], of classes
 ms.assetid: f2664f38-eb5a-4d4b-a374-1d041521fb6c
 ms.openlocfilehash: 68401571645d77a41b827c13b3cfc3674076e218
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945038"
 ---
 # <a name="class-statement-visual-basic"></a>Class – příkaz (Visual Basic)
 Deklaruje název třídy a zavádí definici proměnných, vlastností, událostí a postupy, které tvoří třídu.  
@@ -65,23 +65,23 @@ End Class
   
 ## <a name="rules"></a>pravidla  
   
--   **Vnoření.** Můžete definovat jednu třídu v rámci jiného. Vnější třída se nazývá *obsahující třídu*, a vnitřní třída se nazývá *vnořenou třídu*.  
+- **Vnoření.** Můžete definovat jednu třídu v rámci jiného. Vnější třída se nazývá *obsahující třídu*, a vnitřní třída se nazývá *vnořenou třídu*.  
   
--   **Dědičnost.** Pokud třída používá [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete zadat pouze jednu základní třídu nebo rozhraní. Třída nemůže dědit z více než jeden element.  
+- **Dědičnost.** Pokud třída používá [dědí příkaz](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete zadat pouze jednu základní třídu nebo rozhraní. Třída nemůže dědit z více než jeden element.  
   
      Třída nemůže dědit z jiné třídy s více omezující úroveň přístupu. Například `Public` třída nemůže dědit od třídy `Friend` třídy.  
   
      Třída nemůže dědit ze třídy do něho vnořený.  
   
--   **Implementace.** Pokud třída používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), musíte implementovat každého člena definovaného každým rozhraním, zadejte v `interfacenames`. Jedinou výjimkou je to je patřící třídě člena základní třídy. Další informace najdete v tématu "Patřící třídě" [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md).  
+- **Implementace.** Pokud třída používá [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md), musíte implementovat každého člena definovaného každým rozhraním, zadejte v `interfacenames`. Jedinou výjimkou je to je patřící třídě člena základní třídy. Další informace najdete v tématu "Patřící třídě" [implementuje](../../../visual-basic/language-reference/statements/implements-clause.md).  
   
--   **Výchozí vlastnost.** Třída může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
+- **Výchozí vlastnost.** Třída může určit nejvýše jednu vlastnost jako jeho *výchozí vlastnost*. Další informace najdete v tématu [výchozí](../../../visual-basic/language-reference/modifiers/default.md).  
   
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** V rámci třídy můžete deklarovat každého člena se svou vlastní úroveň přístupu. Členy třídy ve výchozím nastavení [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnné a konstanty, které výchozí [privátní](../../../visual-basic/language-reference/modifiers/private.md) přístup. Pokud třída má omezený přístup k více než jeden z jejích členů, úroveň přístupu ke třídě přednost.  
+- **Úroveň přístupu.** V rámci třídy můžete deklarovat každého člena se svou vlastní úroveň přístupu. Členy třídy ve výchozím nastavení [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup, s výjimkou proměnné a konstanty, které výchozí [privátní](../../../visual-basic/language-reference/modifiers/private.md) přístup. Pokud třída má omezený přístup k více než jeden z jejích členů, úroveň přístupu ke třídě přednost.  
   
--   **Obor.** Třída je v oboru v celém jeho nadřazeného oboru názvů, třídy, struktury nebo modulu.  
+- **Obor.** Třída je v oboru v celém jeho nadřazeného oboru názvů, třídy, struktury nebo modulu.  
   
      Obor každého člena třídy je celá třída.  
   
@@ -89,18 +89,18 @@ End Class
   
      Členy třídy mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace najdete v tématu [životnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
--   **Kvalifikace.** Kód mimo třídu musí kvalifikovat název člena s názvem třídy.  
+- **Kvalifikace.** Kód mimo třídu musí kvalifikovat název člena s názvem třídy.  
   
      Pokud kód uvnitř vnořené třídy vytváří nekvalifikovaný odkaz na programovací prvek, Visual Basic vyhledá prvek nejprve ve vnořené třídy, pak v jeho obsahující třídy, a tak dále navýšení kapacity na vnější obsahující element.  
   
 ## <a name="classes-and-modules"></a>Třídy a moduly  
  Tyto prvky řada podobností, ale existuje několik důležitých rozdílů.  
   
--   **Terminologie.** Předchozí verzí jazyka Visual Basic rozpoznat dva typy modulů: *moduly tříd* (.cls soubory) a *standardní moduly* (BAS soubory). Aktuální verze volá tyto *třídy* a *moduly*v uvedeném pořadí.  
+- **Terminologie.** Předchozí verzí jazyka Visual Basic rozpoznat dva typy modulů: *moduly tříd* (.cls soubory) a *standardní moduly* (BAS soubory). Aktuální verze volá tyto *třídy* a *moduly*v uvedeném pořadí.  
   
--   **Sdílené členy.** Můžete řídit, jestli je sdílené člen třídy nebo člena instance.  
+- **Sdílené členy.** Můžete řídit, jestli je sdílené člen třídy nebo člena instance.  
   
--   **Objekt orientace.** Třídy jsou objektově orientované, ale nejsou moduly. Můžete vytvořit jednu nebo víc instancí třídy. Další informace najdete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+- **Objekt orientace.** Třídy jsou objektově orientované, ale nejsou moduly. Můžete vytvořit jednu nebo víc instancí třídy. Další informace najdete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá `Class` příkaz k definování třídy a několik členů.  

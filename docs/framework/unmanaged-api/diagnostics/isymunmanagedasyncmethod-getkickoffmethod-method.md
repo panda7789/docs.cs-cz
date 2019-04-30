@@ -5,11 +5,11 @@ ms.assetid: ba084444-9e68-4cde-9388-54b950670987
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4599d41336778db8ce8dcf3ac567e4e2cc8833e6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59174938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940202"
 ---
 # <a name="isymunmanagedasyncmethodgetkickoffmethod-method"></a>ISymUnmanagedAsyncMethod::GetKickoffMethod – metoda
 Zobrazit [definekickoffmethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md).  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - UIElements [WPF], opacity
 ms.assetid: a49fc8d6-7b32-4f28-9122-39b632a19b4b
 ms.openlocfilehash: 1de9a7e11fee241ecb71242e9808e77b7e5e63b0
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942867"
 ---
 # <a name="how-to-make-a-uielement-transparent-or-semi-transparent"></a>Postupy: Vytvoření průhledného nebo poloprůhledného elementu UIElement
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.UIElement> průhledného nebo poloprůhledného. Chcete-li prvek průhledného nebo poloprůhledného, nastavíte jeho <xref:System.Windows.UIElement.Opacity%2A> vlastnost. Hodnota `0.0` nastaví prvek zcela transparentní, při hodnotu `1.0` nastaví prvek stane zcela neprůhledný. Hodnota `0.5` nastaví prvek 50 % neprůhledných a tak dále. Elementu <xref:System.Windows.UIElement.Opacity%2A> je nastavena na `1.0` ve výchozím nastavení.  

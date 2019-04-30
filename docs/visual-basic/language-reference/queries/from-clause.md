@@ -11,11 +11,11 @@ helpviewer_keywords:
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
 ms.openlocfilehash: b18ef2f291e20d8a150972a980ba063377b0bc3a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839610"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945337"
 ---
 # <a name="from-clause-visual-basic"></a>From – klauzule (Visual Basic)
 Určuje jednu nebo více proměnných rozsahu a kolekce pro dotaz.  
@@ -48,21 +48,21 @@ From element [ As type ] In collection [ _ ]
   
  Každý `From` klauzule může být následován libovolnou kombinací další klauzule dotazu pro upřesnění dotazu. Dotaz můžete upřesnit následujícími způsoby:  
   
--   Kombinace více kolekcí implicitně pomocí `From` a `Select` klauzule, nebo explicitně pomocí `Join` nebo `Group Join` klauzule.  
+- Kombinace více kolekcí implicitně pomocí `From` a `Select` klauzule, nebo explicitně pomocí `Join` nebo `Group Join` klauzule.  
   
--   Použití `Where` klauzule můžete filtrovat výsledku dotazu.  
+- Použití `Where` klauzule můžete filtrovat výsledku dotazu.  
   
--   Řazení výsledků pomocí `Order By` klauzuli.  
+- Řazení výsledků pomocí `Order By` klauzuli.  
   
--   Seskupit podobné výsledky pomocí `Group By` klauzuli.  
+- Seskupit podobné výsledky pomocí `Group By` klauzuli.  
   
--   Použití `Aggregate` klauzule k identifikaci agregační funkce má vyhodnotit pro výsledek celého dotazu.  
+- Použití `Aggregate` klauzule k identifikaci agregační funkce má vyhodnotit pro výsledek celého dotazu.  
   
--   Použití `Let` klauzule zavést proměnnou iterace, jehož hodnota je určena výrazem místo kolekce.  
+- Použití `Let` klauzule zavést proměnnou iterace, jehož hodnota je určena výrazem místo kolekce.  
   
--   Použití `Distinct` klauzule ignorovat duplicitní dotaz výsledky.  
+- Použití `Distinct` klauzule ignorovat duplicitní dotaz výsledky.  
   
--   Identifikovat části výsledek určený k vrácení pomocí `Skip`, `Take`, `Skip While`, a `Take While` klauzule.  
+- Identifikovat části výsledek určený k vrácení pomocí `Skip`, `Take`, `Skip While`, a `Take While` klauzule.  
   
 ## <a name="example"></a>Příklad  
  Následující dotaz používá výraz `From` klauzule k deklaraci proměnné rozsahu `cust` pro každou `Customer` objekt `customers` kolekce. `Where` Klauzule používá proměnnou rozsahu omezení výstup pro zákazníky ze zadané oblasti. `For Each` Smyčky zobrazuje název společnosti pro každého zákazníka ve výsledku dotazu.  

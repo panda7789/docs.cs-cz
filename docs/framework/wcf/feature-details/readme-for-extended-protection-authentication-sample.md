@@ -6,8 +6,8 @@ ms.openlocfilehash: 53592db03c88e673d529ef04f2fbc6e182897457
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946663"
 ---
 # <a name="readme-for-extended-protection-authentication-sample"></a>Soubor ReadMe pro ukázku rozšířené ochrany ověřování
 Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky (typu MITM) man-in-the-middle, při které útočník ("man-in-the-middle") zachycuje přihlašovací údaje klienta a používá pro přístup k zabezpečeným prostředkům na serveru určené pro klienta.  
@@ -27,9 +27,9 @@ Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky (typu
   
 4. Tato ukázka vyžaduje klienta k navázání zabezpečeného kanálu se serverem a proto vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).  
   
-    1.  Otevřete Správce služby IIS -> certifikáty serveru (na kartě zobrazení funkce).  
+    1. Otevřete Správce služby IIS -> certifikáty serveru (na kartě zobrazení funkce).  
   
-    2.  Pro účely testování tuto ukázku, můžete vytvořit certifikát podepsaný svým držitelem. (Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, můžete nainstalovat jej do úložiště Důvěryhodné kořenové certifikační autority).  
+    2. Pro účely testování tuto ukázku, můžete vytvořit certifikát podepsaný svým držitelem. (Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, můžete nainstalovat jej do úložiště Důvěryhodné kořenové certifikační autority).  
   
 5. Přejděte do podokna akcí pro výchozí web. Klikněte na Upravit lokality -> vazby. Přidáte HTTPS jako typ, pokud ještě není k dispozici s číslem portu 443 a přiřadit certifikát SSL vytvořený v předchozím kroku.  
   

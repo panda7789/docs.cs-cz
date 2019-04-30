@@ -11,11 +11,11 @@ helpviewer_keywords:
 - constituent controls
 ms.assetid: 5c1ec98b-aa48-4823-986e-4712551cfdf1
 ms.openlocfilehash: 44b96218e674c754a1985f2f22a36707cd1776b6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941372"
 ---
 # <a name="how-to-expose-properties-of-constituent-controls"></a>Postupy: Vystavení vlastností základních ovládacích prvků
 Ovládací prvky, které tvoří složeného ovládacího prvku se nazývají *základní ovládací prvky*. Tyto ovládací prvky jsou obvykle deklarována jako soukromá a proto není přístupná vývojářem. Pokud chcete zpřístupnit vlastnosti těchto ovládacích prvků pro budoucí uživatele, musí zveřejnit uživatele. Vlastnost základní ovládacího prvku je zveřejněný prostřednictvím vytváření vlastnost do uživatelského ovládacího prvku a používání `get` a `set` přistupující objekty vlastnosti provést změnu v hodnotě privátní vlastnost základní ovládacího prvku.  

@@ -3,11 +3,11 @@ title: Ověřování ze strany klienta
 ms.date: 03/30/2017
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
 ms.openlocfilehash: 9659c262377af76294c52d1be97146923bc91b71
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943972"
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace proxy serveru typů klientů. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, metadata odpovídá klientská aplikace zásady týkající se zabezpečení, transakce, typ kontraktu služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby je bezpečné používat.  
@@ -54,11 +54,11 @@ Služby často publikování metadat povolit automatické generování a konfigu
   
 10. Na klientském počítači spusťte client.exe.  
   
-    1.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+    1. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy poradce při potížích pro ukázky WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 ### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
+- Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
     >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste spustili Ukázky WCF, které používají certifikáty na počítačích, je nutné vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople uložit. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>. For example: certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  

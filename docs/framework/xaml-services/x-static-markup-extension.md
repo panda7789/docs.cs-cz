@@ -11,11 +11,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
 ms.openlocfilehash: 3da2f6afc7e7ecf20c91f0badca38bc26083d3ae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295702"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61938932"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsobem. Statická vlastnost, která je popsána slouží k poskytnutí hodnoty vlastností v XAML.  
@@ -38,10 +38,10 @@ Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TL
 
 Kód entita, na který odkazuje musí být jeden z následujících akcí:  
   
--   Konstanta  
--   Statická vlastnost  
--   Pole  
--   Hodnota výčtu
+- Konstanta  
+- Statická vlastnost  
+- Pole  
+- Hodnota výčtu
 
 Určení jiné kód entitě, jako je například nestatické vlastnosti způsobí chybu kompilace při kompilaci kódu nebo výjimku během načítání analýzy XAML XAML.  
 
@@ -74,11 +74,11 @@ V implementaci rozhraní .NET Framework XAML Services zpracování tohoto rozš�
 ## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
  Výchozí obor názvů XAML můžete použít pro programování WPF obsahuje mnoho užitečných statické vlastnosti, a většina užitečné statické vlastnosti mají podporu například převaděče typů, které usnadňují použití bez nutnosti `{x:Static}` . Pro statické vlastnosti je nutné mapovat předponu pro obor názvů XAML, pokud platí jedna z následujících akcí:  
   
--   Odkazujete na typ, který existuje ve WPF, ale není součástí výchozí obor názvů XAML pro WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]). Toto je celkem běžné scénáře použití `x:Static`. Například můžete použít `x:Static` odkaz s XAML mapování oboru názvů <xref:System> CLR obor názvů a mscorlib sestavení, aby bylo možné odkazovat statické vlastnosti <xref:System.Environment> třídy.  
+- Odkazujete na typ, který existuje ve WPF, ale není součástí výchozí obor názvů XAML pro WPF ([!INCLUDE[TLA#tla_wpfxmlnsv1](../../../includes/tlasharptla-wpfxmlnsv1-md.md)]). Toto je celkem běžné scénáře použití `x:Static`. Například můžete použít `x:Static` odkaz s XAML mapování oboru názvů <xref:System> CLR obor názvů a mscorlib sestavení, aby bylo možné odkazovat statické vlastnosti <xref:System.Environment> třídy.  
   
--   Typ se odkazuje z vlastního sestavení.  
+- Typ se odkazuje z vlastního sestavení.  
   
--   Typ, který existuje v sestavení WPF, se odkazuje, ale tento typ je v oboru názvů CLR, který nebyl namapován jako součást výchozí WPF XAML obor názvů. Mapování oborů názvů CLR do výchozí obor názvů XAML pro WPF se provádí pomocí definice v různých sestaveních WPF (Další informace o tento koncept najdete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)). Mapované na jiných oborů názvů CLR může existovat, pokud se tento obor názvů CLR skládá převážně z definice tříd, které nejsou určeny obvykle pro XAML, jako například <xref:System.Windows.Threading>.  
+- Typ, který existuje v sestavení WPF, se odkazuje, ale tento typ je v oboru názvů CLR, který nebyl namapován jako součást výchozí WPF XAML obor názvů. Mapování oborů názvů CLR do výchozí obor názvů XAML pro WPF se provádí pomocí definice v různých sestaveních WPF (Další informace o tento koncept najdete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)). Mapované na jiných oborů názvů CLR může existovat, pokud se tento obor názvů CLR skládá převážně z definice tříd, které nejsou určeny obvykle pro XAML, jako například <xref:System.Windows.Threading>.  
   
  Další informace o tom, jak používat předpony a obory názvů XAML pro WPF naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   

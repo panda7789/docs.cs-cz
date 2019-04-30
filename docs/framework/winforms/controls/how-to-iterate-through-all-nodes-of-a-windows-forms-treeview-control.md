@@ -11,11 +11,11 @@ helpviewer_keywords:
 - tree nodes in TreeView control [Windows Forms], iterating through
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
 ms.openlocfilehash: 4b287cecddd63ec6535feb70118c3466c8960531
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314227"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61941086"
 ---
 # <a name="how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control"></a>Postupy: Iterace všemi uzly ovládacího prvku Windows Forms TreeView
 Někdy je užitečné si prohlédnout každý uzel ve Windows Forms <xref:System.Windows.Forms.TreeView> ovládacího prvku, aby bylo možné provést některé výpočtu pro hodnoty uzlu. Tuto operaci lze provést pomocí rekurzivní procedury (rekurzivní metodu v C# a C++), který prochází každý uzel v každé z kolekcí stromu.  

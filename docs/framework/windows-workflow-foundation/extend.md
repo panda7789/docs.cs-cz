@@ -7,11 +7,11 @@ helpviewer_keywords:
 - extending [WF]
 ms.assetid: d6861f28-9c8c-4225-872d-9a80e2e59034
 ms.openlocfilehash: 8449c1f229ffb993036dbb909d6f4c98c47498af
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160560"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61945688"
 ---
 # <a name="extending-windows-workflow-foundation"></a>Rozšíření Windows Workflow Foundation
 Následující část popisuje, jak vlastní aktivity a návrhářů v prostředí provádění se změněným hostováním mimo sadu Visual Studio 2010 rozšiřují Windows Workflow Foundation (WF).

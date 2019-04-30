@@ -8,11 +8,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], examples
 ms.assetid: 78085f26-d5d2-4b75-813e-e932b72fd06f
 ms.openlocfilehash: 4c755d5f0c2e134b83beb27ebbd06080bad620b6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115229"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942851"
 ---
 # <a name="basic-column-row-and-cell-features-in-the-windows-forms-datagridview-control"></a>Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView
 Mnoho základní chování `DataGridView` buněk, řádků a sloupců je možné upravovat prostřednictvím jedné vlastnosti nastavení. Témata v této části popisují některé z nejčastěji používaných z těchto funkcí.  

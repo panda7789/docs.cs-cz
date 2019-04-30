@@ -3,11 +3,11 @@ title: 4023  WasCloseAllListenerChannelInstancesCompleted
 ms.date: 03/30/2017
 ms.assetid: 95dd5810-78a5-4183-98ef-77267dd64aac
 ms.openlocfilehash: c4b7516668c8d71a21f34a2aeeab1eb651f1cd66
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33467125"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943192"
 ---
 # <a name="4023---wasclosealllistenerchannelinstancescompleted"></a>4023  WasCloseAllListenerChannelInstancesCompleted
 ## <a name="properties"></a>Vlastnosti  
@@ -15,14 +15,14 @@ ms.locfileid: "33467125"
 |||  
 |-|-|  
 |ID|4023|  
-|Klíčová slova|ActivationServices|  
+|klíčová slova|ActivationServices|  
 |úroveň|Informace o|  
 |Kanál|Microsoft-Windows-Application Server-Applications/Analytic|  
   
 ## <a name="description"></a>Popis  
- Tato událost je vygenerované po zavření všech instancí naslouchací proces kanálu.  
+ Tato událost je vygenerován při dokončení zavřít všech instancí naslouchacího procesu kanálu.  
   
 ## <a name="message"></a>Zpráva  
- Všechny instance naslouchací proces kanálu dokončit se zavírá.  
+ Aktivační služba procesů ukončování všech instancí naslouchacího procesu kanálu dokončena.  
   
 ## <a name="details"></a>Podrobnosti

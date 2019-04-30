@@ -3,11 +3,11 @@ title: ConfigurationCodeGenerator
 ms.date: 03/30/2017
 ms.assetid: 3913aae8-165f-4014-9262-7fe426f90cb2
 ms.openlocfilehash: 97197926db0b44f1ad36e2eba6ab6bec42eced33
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61943920"
 ---
 # <a name="configurationcodegenerator"></a>ConfigurationCodeGenerator
 ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejnění vašeho vlastního kanálu implementace konfigurační systém. To umožňuje uživatelům vlastní kanál konfigurovat kanál pomocí souboru .config, stejně jako poskytnutými systémem vazby, jako by konfigurace `NetTcpBinding` nebo vlastní vazby pomocí `TcpTransportBindingElement`.  
@@ -42,9 +42,9 @@ ConfigurationCodeGenerator je nástroj, který můžete použít ke zveřejněn�
   
      Příkaz generuje pro tři soubory .cs `BindingElement` (Pokud jste zadali / být: možnost), pět souborů .cs standardu `Binding` (Pokud jste zadali /sb: možnost) a souboru .xml.  
   
-    1.  Pokud jste použili možnost /be, jeden z cs soubory implementuje `BindingElementExtensionSection` pro vaše element vazby. Tento kód poskytuje vaše `BindingElement` konfigurace systému, aby další vlastní vazby můžete použít vaše element vazby. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
+    1. Pokud jste použili možnost /be, jeden z cs soubory implementuje `BindingElementExtensionSection` pro vaše element vazby. Tento kód poskytuje vaše `BindingElement` konfigurace systému, aby další vlastní vazby můžete použít vaše element vazby. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
   
-    2.  Pokud jste určili možnost /sb, dva soubory .cs implementovat `StandardBindingElement` a `StandardBindingCollectionElement` , která zveřejní vaše standardní vazby na konfigurační systém. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
+    2. Pokud jste určili možnost /sb, dva soubory .cs implementovat `StandardBindingElement` a `StandardBindingCollectionElement` , která zveřejní vaše standardní vazby na konfigurační systém. Třídy, které představují výchozí hodnoty a konstanty mají jiné soubory. U souborů `//TODO` komentáře vám aktualizovat výchozí hodnoty.  
   
          Pokud jste zadali /sb: možnost CodeToAddTo\<*YourStdBinding*> .cs obsahuje kód, který je třeba ručně přidat do třídy, která implementuje standardní vazbu.  
   

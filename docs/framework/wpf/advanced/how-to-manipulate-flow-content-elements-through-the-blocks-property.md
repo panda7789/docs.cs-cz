@@ -11,24 +11,24 @@ helpviewer_keywords:
 - Blocks property [WPF], manipulating flow content elements
 ms.assetid: aeda4ece-b979-4818-a093-ef938e908751
 ms.openlocfilehash: e0e1e1333a54946f3bdf474e353de0301eb42447
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61942828"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-blocks-property"></a>Postupy: Zpracování elementů obsahu toku prostřednictvím vlastnosti Blocks
 Tyto příklady ukazují některé běžné operace, které lze provést u elementů obsahu toku prostřednictvím **bloky** vlastnost. Tato vlastnost se používá k přidání a odebrání položek z <xref:System.Windows.Documents.BlockCollection>. Tok obsahu prvky dané funkce **bloky** vlastnosti patří:  
   
--   <xref:System.Windows.Documents.Figure>  
+- <xref:System.Windows.Documents.Figure>  
   
--   <xref:System.Windows.Documents.Floater>  
+- <xref:System.Windows.Documents.Floater>  
   
--   <xref:System.Windows.Documents.ListItem>  
+- <xref:System.Windows.Documents.ListItem>  
   
--   <xref:System.Windows.Documents.Section>  
+- <xref:System.Windows.Documents.Section>  
   
--   <xref:System.Windows.Documents.TableCell>  
+- <xref:System.Windows.Documents.TableCell>  
   
  Tyto příklady dojde k použití <xref:System.Windows.Documents.Section> jako daný tok obsahu elementu, ale tyto postupy platí pro všechny prvky, které jsou hostiteli tok obsahu elementu kolekce.  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
 ms.openlocfilehash: 5ff82b932f9bea4c7fd087651e34277ef94bc27c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946637"
 ---
 # <a name="keyword-is-valid-only-within-an-instance-method"></a>"\<– klíčové slovo >' je platný pouze v rámci metody instance
 `Me`, `MyClass`, A `MyBase` klíčová slova označování instancí určité třídy. Nelze je použít uvnitř sdílené `Function` nebo `Sub` postup.  
@@ -21,7 +21,7 @@ ms.locfileid: "58820711"
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Odebrat klíčové slovo z procedury nebo odebrat `Shared` – klíčové slovo z deklarace procedury.  
+- Odebrat klíčové slovo z procedury nebo odebrat `Shared` – klíčové slovo z deklarace procedury.  
   
 ## <a name="see-also"></a>Viz také:
 

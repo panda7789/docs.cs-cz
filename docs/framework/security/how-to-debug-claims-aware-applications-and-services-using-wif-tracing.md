@@ -4,55 +4,55 @@ ms.date: 03/30/2017
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
 author: BrucePerlerMS
 ms.openlocfilehash: 43fa859aa84189817dffe74ecd72253ab9b82585
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940488"
 ---
 # <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Postupy: Ladění aplikací a služeb pracujících s deklaracemi s trasováním WIF
 ## <a name="applies-to"></a>Platí pro  
   
--   Microsoft® Windows® Identity Foundation (WIF)  
+- Microsoft® Windows® Identity Foundation (WIF)  
   
--   Prohlížeč trasování služeb (SvcTraceViewer.exe)  
+- Prohlížeč trasování služeb (SvcTraceViewer.exe)  
   
--   Řešení potíží a ladění aplikací technologie WIF  
+- Řešení potíží a ladění aplikací technologie WIF  
   
 ## <a name="summary"></a>Souhrn  
  Tento postup popisuje kroky pro postup konfigurace trasování WIF, shromažďovat protokoly trasování a protokoly jak analyzovat trasování pomocí nástroje prohlížeče trasování. Poskytuje obecné mapování trasování položky pro akce potřebné k řešení problémů souvisejících s technologie WIF.  
   
 ## <a name="contents"></a>Obsah  
   
--   Cíle  
+- Cíle  
   
--   Přehled kroků  
+- Přehled kroků  
   
--   Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
+- Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
   
--   Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
+- Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
   
--   Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
+- Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
   
--   Související položky  
+- Související položky  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace trasování WIF.  
+- Konfigurace trasování WIF.  
   
--   Protokoly trasování zobrazení v nástroji prohlížeče trasování.  
+- Protokoly trasování zobrazení v nástroji prohlížeče trasování.  
   
--   Identifikujte technologie WIF související s problémy v protokolech trasování.  
+- Identifikujte technologie WIF související s problémy v protokolech trasování.  
   
--   Použít opravné akce, které technologie WIF a související s problémy zjištěné v protokoly trasování.  
+- Použít opravné akce, které technologie WIF a související s problémy zjištěné v protokoly trasování.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
+- Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
   
--   Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
+- Krok 2 – analýza souborů trasování WIF pomocí prohlížečem trasování  
   
--   Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
+- Krok 3 – řešení Chcete-li vyřešit technologie WIF identifikovat problémy související s  
   
 ## <a name="step-1--configure-wif-tracing-using-webconfig-configuration-file"></a>Krok 1 – konfigurace technologie WIF trasování pomocí konfiguračního souboru Web.config  
  V tomto kroku přidáte změny do konfigurační oddíly funkce v *Web.config* soubor, který se povolit technologie WIF sledovat jeho události a uložit je do protokolu trasování.  
@@ -108,4 +108,4 @@ ms.locfileid: "59321546"
   
 ## <a name="related-items"></a>Související položky  
   
--   [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)

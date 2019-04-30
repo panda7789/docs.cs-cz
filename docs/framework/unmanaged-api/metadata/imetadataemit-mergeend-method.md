@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 277e7e57ae01128039c3a280158110acde3363a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230002"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61944544"
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd – metoda
 Sloučení do aktuální obor oborů metadat zadán jeden nebo více předchozích volání [imetadataemit::merge –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).  
@@ -41,25 +41,25 @@ HRESULT MergeEnd ();
   
  Sloučení platí následující zvláštní podmínky:  
   
--   Identifikátor verze modulu (identifikátor MVID) je nikdy importován, protože je jedinečný v oboru importu metadat.  
+- Identifikátor verze modulu (identifikátor MVID) je nikdy importován, protože je jedinečný v oboru importu metadat.  
   
--   Žádné existující vlastnosti celý modul přepsány.  
+- Žádné existující vlastnosti celý modul přepsány.  
   
      Pokud již nebyly nastaveny vlastnosti modulu pro aktuální obor, žádné vlastnosti modulu importují. Nicméně pokud nebyly nastaveny vlastnosti modulu v aktuálním oboru, jejich importování pouze jednou, při jejich prvním výskytu. Pokud tyto vlastnosti modulu nedojde k znovu, jsou duplicitní položky. Pokud jsou porovnány hodnoty všech vlastností modulu (s výjimkou identifikátor MVID) a nenajdou žádné duplicity, je vyvolána k chybě.  
   
--   Typ definice (`TypeDef`), žádné duplicitní hodnoty jsou sloučeny do aktuálního oboru. `TypeDef` objekty jsou zkontrolovat duplicitu jednotlivá *objekt plně kvalifikovaný název* + *GUID* + *číslo verze*. Pokud není nalezena shoda pro název nebo identifikátor GUID a některý další dva elementy se liší, je vyvolána k chybě. Jinak, pokud se shodují všechny tři položky `MergeEnd` provede zběžné kontrolu, aby položky jsou ve skutečnosti duplicitní; v opačném případě dojde k chybě. Zběžné Kontrola vyhledá:  
+- Typ definice (`TypeDef`), žádné duplicitní hodnoty jsou sloučeny do aktuálního oboru. `TypeDef` objekty jsou zkontrolovat duplicitu jednotlivá *objekt plně kvalifikovaný název* + *GUID* + *číslo verze*. Pokud není nalezena shoda pro název nebo identifikátor GUID a některý další dva elementy se liší, je vyvolána k chybě. Jinak, pokud se shodují všechny tři položky `MergeEnd` provede zběžné kontrolu, aby položky jsou ve skutečnosti duplicitní; v opačném případě dojde k chybě. Zběžné Kontrola vyhledá:  
   
-    -   Stejný člen prohlášení, ke kterým dochází ve stejném pořadí. Členy, které jsou označeny jako `mdPrivateScope` (najdete v článku [cormethodattr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) výčet) nejsou součástí této kontroly; jsou speciálně sloučeny.  
+    - Stejný člen prohlášení, ke kterým dochází ve stejném pořadí. Členy, které jsou označeny jako `mdPrivateScope` (najdete v článku [cormethodattr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) výčet) nejsou součástí této kontroly; jsou speciálně sloučeny.  
   
-    -   Stejné rozložení třídy.  
+    - Stejné rozložení třídy.  
   
      To znamená, že `TypeDef` objektu musí vždy plně a konzistentně definovat v každé metadata rozsahu ve kterém je deklarována, pokud jeho implementace členů (pro třídu) jsou rozděleny mezi několika kompilačních jednotek, úplná definice se předpokládá se, že k dispozici v každé oboru, ne přírůstková k jednotlivým oborům. Například pokud názvy parametrů jsou relevantní pro kontrakt, se musí emitovat stejným způsobem jako do každé obor; Pokud nejsou relevantní, by neměly být vložen do metadat.  
   
      Výjimkou je, že `TypeDef` , může být označený jako přírůstkové členy `mdPrivateScope`. Na tyto, zjištění `MergeEnd` postupně se přidají do aktuálního oboru bez ohledu na duplicitní položky. Protože kompilátor rozpozná oboru privátní, kompilátor musí být za vynucování pravidel.  
   
--   Relativních virtuálních adres (RVA) nejsou importovány nebo sloučit; Kompilátor by měl znovu vygenerovat tyto informace.  
+- Relativních virtuálních adres (RVA) nejsou importovány nebo sloučit; Kompilátor by měl znovu vygenerovat tyto informace.  
   
--   Vlastní atributy jsou sloučeny pouze v případě, že se sloučí položku, ke kterému jsou připojené. Například vlastní atributy přidružené třídy jsou sloučeny při prvním výskytu třídy se. Pokud uživatelských atributů, které jsou přidruženy `TypeDef` nebo `MemberDef` , která je specifická pro kompilační jednotky (například časové razítko člen kompilace), nejsou sloučené a je kompilátor odebrat nebo aktualizovat tato metadata.  
+- Vlastní atributy jsou sloučeny pouze v případě, že se sloučí položku, ke kterému jsou připojené. Například vlastní atributy přidružené třídy jsou sloučeny při prvním výskytu třídy se. Pokud uživatelských atributů, které jsou přidruženy `TypeDef` nebo `MemberDef` , která je specifická pro kompilační jednotky (například časové razítko člen kompilace), nejsou sloučené a je kompilátor odebrat nebo aktualizovat tato metadata.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

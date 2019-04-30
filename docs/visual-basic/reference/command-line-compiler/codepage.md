@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -codepage compiler option [Visual Basic]
 ms.assetid: be36ec33-6800-4505-838c-4124564f5cc9
 ms.openlocfilehash: fda75383435fdff718d1d50bc8583afc9858e7e2
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562174"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61944700"
 ---
 # <a name="-codepage-visual-basic"></a>-codepage (Visual Basic)
 Určuje znakovou stránku pro všechny soubory zdrojového kódu dané kompilace.  
@@ -26,7 +26,7 @@ Určuje znakovou stránku pro všechny soubory zdrojového kódu dané kompilace
   
 |Termín|Definice|  
 |---|---|  
-|`id`|Požadováno. Kompilátor používá znakovou stránku určené `id` k interpretaci kódování zdrojové soubory.|  
+|`id`|Povinný parametr. Kompilátor používá znakovou stránku určené `id` k interpretaci kódování zdrojové soubory.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pro kompilaci zdrojového kódu s konkrétním kódováním, můžete použít `-codepage` chcete zadat znakovou stránku, která se má použít. `-codepage` Možnost se vztahuje na všechny soubory zdrojového kódu v kompilaci. Další informace najdete v tématu [kódování znaků v rozhraní .NET Framework](../../../standard/base-types/character-encoding.md).  
@@ -38,4 +38,4 @@ Určuje znakovou stránku pro všechny soubory zdrojového kódu dané kompilace
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
