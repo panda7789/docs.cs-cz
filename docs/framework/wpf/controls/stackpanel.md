@@ -9,19 +9,19 @@ helpviewer_keywords:
 - controls [WPF], StackPanel
 ms.assetid: a82b824c-1b98-49a9-b7fd-2d9c154dd002
 ms.openlocfilehash: df78e1037f0bc444d5ae3820eda5d461a415e265
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57361225"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791024"
 ---
-# <a name="stackpanel"></a><span data-ttu-id="bbc37-102">StackPanel</span><span class="sxs-lookup"><span data-stu-id="bbc37-102">StackPanel</span></span>
-<span data-ttu-id="bbc37-103"><xref:System.Windows.Controls.StackPanel> Element slouží k zásobníku podřízené elementy vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="bbc37-103">The <xref:System.Windows.Controls.StackPanel> element is used to stack child elements horizontally or vertically.</span></span>  
+# <a name="stackpanel"></a><span data-ttu-id="53b80-102">StackPanel</span><span class="sxs-lookup"><span data-stu-id="53b80-102">StackPanel</span></span>
+<span data-ttu-id="53b80-103"><xref:System.Windows.Controls.StackPanel> Element slouží k zásobníku podřízené elementy vodorovně nebo svisle.</span><span class="sxs-lookup"><span data-stu-id="53b80-103">The <xref:System.Windows.Controls.StackPanel> element is used to stack child elements horizontally or vertically.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="bbc37-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="bbc37-104">In This Section</span></span>  
- [<span data-ttu-id="bbc37-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="bbc37-105">How-to Topics</span></span>](stackpanel-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="53b80-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="53b80-104">In This Section</span></span>  
+ [<span data-ttu-id="53b80-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="53b80-105">How-to Topics</span></span>](stackpanel-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="bbc37-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="bbc37-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="53b80-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="53b80-106">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -36,9 +36,9 @@ ms.locfileid: "57361225"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="bbc37-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="bbc37-107">Related Sections</span></span>  
- [<span data-ttu-id="bbc37-108">Rozložení</span><span class="sxs-lookup"><span data-stu-id="bbc37-108">Layout</span></span>](../advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="53b80-107">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="53b80-107">Related Sections</span></span>  
+ [<span data-ttu-id="53b80-108">Rozložení</span><span class="sxs-lookup"><span data-stu-id="53b80-108">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="bbc37-109">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="bbc37-109">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="53b80-109">Návod: Moje první desktopová aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="53b80-109">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="bbc37-110">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="bbc37-110">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
+ [<span data-ttu-id="53b80-110">ScrollViewer – přehled</span><span class="sxs-lookup"><span data-stu-id="53b80-110">ScrollViewer Overview</span></span>](scrollviewer-overview.md)

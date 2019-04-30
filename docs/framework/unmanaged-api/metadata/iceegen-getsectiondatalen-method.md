@@ -18,18 +18,18 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ca01f78cf46d4f7543b949c820eb6b1971687e23
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59198709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61905473"
 ---
-# <a name="iceegengetsectiondatalen-method"></a><span data-ttu-id="17018-102">ICeeGen::GetSectionDataLen – metoda</span><span class="sxs-lookup"><span data-stu-id="17018-102">ICeeGen::GetSectionDataLen Method</span></span>
-<span data-ttu-id="17018-103">Získá délku zadaný oddíl.</span><span class="sxs-lookup"><span data-stu-id="17018-103">Gets the length of the specified section.</span></span>  
+# <a name="iceegengetsectiondatalen-method"></a><span data-ttu-id="00f8f-102">ICeeGen::GetSectionDataLen – metoda</span><span class="sxs-lookup"><span data-stu-id="00f8f-102">ICeeGen::GetSectionDataLen Method</span></span>
+<span data-ttu-id="00f8f-103">Získá délku zadaný oddíl.</span><span class="sxs-lookup"><span data-stu-id="00f8f-103">Gets the length of the specified section.</span></span>  
   
- <span data-ttu-id="17018-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="17018-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="00f8f-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="00f8f-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17018-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17018-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="00f8f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="00f8f-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSectionDataLen (  
@@ -38,25 +38,25 @@ HRESULT GetSectionDataLen (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="17018-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="17018-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="00f8f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="00f8f-106">Parameters</span></span>  
  `section`  
- <span data-ttu-id="17018-107">[in] Datové části, jehož délka budou načítat.</span><span class="sxs-lookup"><span data-stu-id="17018-107">[in] The data section whose length will be retrieved.</span></span>  
+ <span data-ttu-id="00f8f-107">[in] Datové části, jehož délka budou načítat.</span><span class="sxs-lookup"><span data-stu-id="00f8f-107">[in] The data section whose length will be retrieved.</span></span>  
   
  `dataLen`  
- <span data-ttu-id="17018-108">[out] Vrácená délka zadaný oddíl.</span><span class="sxs-lookup"><span data-stu-id="17018-108">[out] The returned length of the specified section.</span></span>  
+ <span data-ttu-id="00f8f-108">[out] Vrácená délka zadaný oddíl.</span><span class="sxs-lookup"><span data-stu-id="00f8f-108">[out] The returned length of the specified section.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="17018-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="17018-109">Remarks</span></span>  
- <span data-ttu-id="17018-110">Volání `GetSectionDataLen` pouze v případě, že máte zvláštní oddíl s požadavky, které nejsou zpracovány jinými metodami.</span><span class="sxs-lookup"><span data-stu-id="17018-110">Call `GetSectionDataLen` only if you have special section requirements that are not handled by other methods.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="00f8f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="00f8f-109">Remarks</span></span>  
+ <span data-ttu-id="00f8f-110">Volání `GetSectionDataLen` pouze v případě, že máte zvláštní oddíl s požadavky, které nejsou zpracovány jinými metodami.</span><span class="sxs-lookup"><span data-stu-id="00f8f-110">Call `GetSectionDataLen` only if you have special section requirements that are not handled by other methods.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17018-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17018-111">Requirements</span></span>  
- <span data-ttu-id="17018-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="17018-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="00f8f-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="00f8f-111">Requirements</span></span>  
+ <span data-ttu-id="00f8f-112">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="00f8f-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="17018-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="17018-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="00f8f-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="00f8f-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="17018-114">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="17018-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="00f8f-114">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="00f8f-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="17018-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="17018-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="00f8f-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="00f8f-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17018-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17018-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="00f8f-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="00f8f-116">See also</span></span>
 
-- [<span data-ttu-id="17018-117">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17018-117">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="00f8f-117">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="00f8f-117">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

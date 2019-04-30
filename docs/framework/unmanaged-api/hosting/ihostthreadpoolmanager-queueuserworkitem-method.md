@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c548ae7f8d605ff84da2046d057e436c8e95721
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59082110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796560"
 ---
-# <a name="ihostthreadpoolmanagerqueueuserworkitem-method"></a><span data-ttu-id="f3815-102">IHostThreadPoolManager::QueueUserWorkItem – metoda</span><span class="sxs-lookup"><span data-stu-id="f3815-102">IHostThreadPoolManager::QueueUserWorkItem Method</span></span>
-<span data-ttu-id="f3815-103">Zařadí do fronty pro spuštění funkce a určuje objekt, který obsahuje data pro tuto funkci používat.</span><span class="sxs-lookup"><span data-stu-id="f3815-103">Queues a function for execution, and specifies an object containing data to be used by that function.</span></span> <span data-ttu-id="f3815-104">Funkce se provede při vlákno nebude k dispozici.</span><span class="sxs-lookup"><span data-stu-id="f3815-104">The function executes when a thread becomes available.</span></span>  
+# <a name="ihostthreadpoolmanagerqueueuserworkitem-method"></a><span data-ttu-id="4cb04-102">IHostThreadPoolManager::QueueUserWorkItem – metoda</span><span class="sxs-lookup"><span data-stu-id="4cb04-102">IHostThreadPoolManager::QueueUserWorkItem Method</span></span>
+<span data-ttu-id="4cb04-103">Zařadí do fronty pro spuštění funkce a určuje objekt, který obsahuje data pro tuto funkci používat.</span><span class="sxs-lookup"><span data-stu-id="4cb04-103">Queues a function for execution, and specifies an object containing data to be used by that function.</span></span> <span data-ttu-id="4cb04-104">Funkce se provede při vlákno nebude k dispozici.</span><span class="sxs-lookup"><span data-stu-id="4cb04-104">The function executes when a thread becomes available.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f3815-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3815-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4cb04-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4cb04-105">Syntax</span></span>  
   
 ```  
 HRESULT QueueUserWorkItem (  
@@ -37,41 +37,41 @@ HRESULT QueueUserWorkItem (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f3815-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f3815-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4cb04-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="4cb04-106">Parameters</span></span>  
  `Function`  
- <span data-ttu-id="f3815-107">[in] Ukazatel na funkci, která představuje funkce pro spuštění.</span><span class="sxs-lookup"><span data-stu-id="f3815-107">[in] A function pointer that represents the function to execute.</span></span>  
+ <span data-ttu-id="4cb04-107">[in] Ukazatel na funkci, která představuje funkce pro spuštění.</span><span class="sxs-lookup"><span data-stu-id="4cb04-107">[in] A function pointer that represents the function to execute.</span></span>  
   
  `Context`  
- <span data-ttu-id="f3815-108">[in] Objekt, který obsahuje data používané `Function`.</span><span class="sxs-lookup"><span data-stu-id="f3815-108">[in] An object that contains data to be used by `Function`.</span></span>  
+ <span data-ttu-id="4cb04-108">[in] Objekt, který obsahuje data používané `Function`.</span><span class="sxs-lookup"><span data-stu-id="4cb04-108">[in] An object that contains data to be used by `Function`.</span></span>  
   
  `Flags`  
- <span data-ttu-id="f3815-109">[in] Příznaky hodnoty, jak jsou definovány pro Win32 `QueueUserWorkItem` metody, které řídí zpracování.</span><span class="sxs-lookup"><span data-stu-id="f3815-109">[in] One of the flags values, as defined for the Win32 `QueueUserWorkItem` method, that control execution.</span></span>  
+ <span data-ttu-id="4cb04-109">[in] Příznaky hodnoty, jak jsou definovány pro Win32 `QueueUserWorkItem` metody, které řídí zpracování.</span><span class="sxs-lookup"><span data-stu-id="4cb04-109">[in] One of the flags values, as defined for the Win32 `QueueUserWorkItem` method, that control execution.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f3815-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f3815-110">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="4cb04-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4cb04-110">Return Value</span></span>  
   
-|<span data-ttu-id="f3815-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="f3815-111">HRESULT</span></span>|<span data-ttu-id="f3815-112">Popis</span><span class="sxs-lookup"><span data-stu-id="f3815-112">Description</span></span>|  
+|<span data-ttu-id="4cb04-111">HRESULT</span><span class="sxs-lookup"><span data-stu-id="4cb04-111">HRESULT</span></span>|<span data-ttu-id="4cb04-112">Popis</span><span class="sxs-lookup"><span data-stu-id="4cb04-112">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="f3815-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="f3815-113">S_OK</span></span>|<span data-ttu-id="f3815-114">`QueueUserWorkItem` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="f3815-114">`QueueUserWorkItem` returned successfully.</span></span>|  
-|<span data-ttu-id="f3815-115">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="f3815-115">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="f3815-116">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="f3815-116">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="f3815-117">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="f3815-117">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="f3815-118">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="f3815-118">The call timed out.</span></span>|  
-|<span data-ttu-id="f3815-119">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="f3815-119">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="f3815-120">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="f3815-120">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="f3815-121">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="f3815-121">HOST_E_ABANDONED</span></span>|<span data-ttu-id="f3815-122">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="f3815-122">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="f3815-123">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="f3815-123">E_FAIL</span></span>|<span data-ttu-id="f3815-124">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="f3815-124">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="f3815-125">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="f3815-125">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="f3815-126">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="f3815-126">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="4cb04-113">S_OK</span><span class="sxs-lookup"><span data-stu-id="4cb04-113">S_OK</span></span>|<span data-ttu-id="4cb04-114">`QueueUserWorkItem` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="4cb04-114">`QueueUserWorkItem` returned successfully.</span></span>|  
+|<span data-ttu-id="4cb04-115">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="4cb04-115">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="4cb04-116">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="4cb04-116">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="4cb04-117">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="4cb04-117">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="4cb04-118">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="4cb04-118">The call timed out.</span></span>|  
+|<span data-ttu-id="4cb04-119">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="4cb04-119">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="4cb04-120">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="4cb04-120">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="4cb04-121">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="4cb04-121">HOST_E_ABANDONED</span></span>|<span data-ttu-id="4cb04-122">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="4cb04-122">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="4cb04-123">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="4cb04-123">E_FAIL</span></span>|<span data-ttu-id="4cb04-124">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="4cb04-124">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="4cb04-125">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="4cb04-125">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="4cb04-126">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="4cb04-126">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f3815-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f3815-127">Remarks</span></span>  
- <span data-ttu-id="f3815-128">`QueueUserWorkItem` zařadí do fronty pracovní položku k pracovní podproces ve fondu vláken.</span><span class="sxs-lookup"><span data-stu-id="f3815-128">`QueueUserWorkItem` queues a work item to a worker thread in the thread pool.</span></span> <span data-ttu-id="f3815-129">Jeho podpis a parametr typy jsou stejné jako odpovídající funkce Win32, který má stejný název.</span><span class="sxs-lookup"><span data-stu-id="f3815-129">Its signature and parameter types are identical to those of the corresponding Win32 function, which has the same name.</span></span> <span data-ttu-id="f3815-130">Další informace najdete v dokumentaci k platformě Windows.</span><span class="sxs-lookup"><span data-stu-id="f3815-130">For more information, see the Windows Platform documentation.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4cb04-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4cb04-127">Remarks</span></span>  
+ <span data-ttu-id="4cb04-128">`QueueUserWorkItem` zařadí do fronty pracovní položku k pracovní podproces ve fondu vláken.</span><span class="sxs-lookup"><span data-stu-id="4cb04-128">`QueueUserWorkItem` queues a work item to a worker thread in the thread pool.</span></span> <span data-ttu-id="4cb04-129">Jeho podpis a parametr typy jsou stejné jako odpovídající funkce Win32, který má stejný název.</span><span class="sxs-lookup"><span data-stu-id="4cb04-129">Its signature and parameter types are identical to those of the corresponding Win32 function, which has the same name.</span></span> <span data-ttu-id="4cb04-130">Další informace najdete v dokumentaci k platformě Windows.</span><span class="sxs-lookup"><span data-stu-id="4cb04-130">For more information, see the Windows Platform documentation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f3815-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f3815-131">Requirements</span></span>  
- <span data-ttu-id="f3815-132">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f3815-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4cb04-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4cb04-131">Requirements</span></span>  
+ <span data-ttu-id="4cb04-132">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4cb04-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f3815-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="f3815-133">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="4cb04-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="4cb04-133">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="f3815-134">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f3815-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="4cb04-134">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4cb04-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="f3815-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f3815-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4cb04-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4cb04-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f3815-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3815-136">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4cb04-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4cb04-136">See also</span></span>
 
 - <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>
 - <xref:System.Threading.ThreadPool>
-- [<span data-ttu-id="f3815-137">IHostThreadPoolManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f3815-137">IHostThreadPoolManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+- [<span data-ttu-id="4cb04-137">IHostThreadPoolManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4cb04-137">IHostThreadPoolManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

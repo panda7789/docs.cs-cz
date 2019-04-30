@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7939f7b1c0c725bb4e8c642bc38121dd755da5e2
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57471049"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785135"
 ---
-# <a name="icordebugappdomaingetname-method"></a><span data-ttu-id="65d8b-102">ICorDebugAppDomain::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="65d8b-102">ICorDebugAppDomain::GetName Method</span></span>
-<span data-ttu-id="65d8b-103">Získá název domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="65d8b-103">Gets the name of the application domain.</span></span>  
+# <a name="icordebugappdomaingetname-method"></a><span data-ttu-id="f1105-102">ICorDebugAppDomain::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="f1105-102">ICorDebugAppDomain::GetName Method</span></span>
+<span data-ttu-id="f1105-103">Získá název domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="f1105-103">Gets the name of the application domain.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="65d8b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="65d8b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f1105-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f1105-104">Syntax</span></span>  
   
 ```  
 HRESULT GetName (  
@@ -38,24 +38,24 @@ HRESULT GetName (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="65d8b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="65d8b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f1105-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f1105-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="65d8b-106">[in] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="65d8b-106">[in] The size of the `szName` array.</span></span> <span data-ttu-id="65d8b-107">Tuto hodnotu nastavte na hodnotu nula, tato metoda uvést do režimu dotazu.</span><span class="sxs-lookup"><span data-stu-id="65d8b-107">Set this value to zero to put this method in query mode.</span></span>  
+ <span data-ttu-id="f1105-106">[in] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="f1105-106">[in] The size of the `szName` array.</span></span> <span data-ttu-id="f1105-107">Tuto hodnotu nastavte na hodnotu nula, tato metoda uvést do režimu dotazu.</span><span class="sxs-lookup"><span data-stu-id="f1105-107">Set this value to zero to put this method in query mode.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="65d8b-108">[out] Ukazatel na velikost název nebo počet znaků ve skutečnosti vrátí v `szName`.</span><span class="sxs-lookup"><span data-stu-id="65d8b-108">[out] A pointer to the size of the name or the number of characters actually returned in `szName`.</span></span> <span data-ttu-id="65d8b-109">V režimu dotazu, tato hodnota umožňuje volajícímu vědět, jak velkou vyrovnávací paměti k přidělení pro název.</span><span class="sxs-lookup"><span data-stu-id="65d8b-109">In query mode, this value lets the caller know how large a buffer to allocate for the name.</span></span>  
+ <span data-ttu-id="f1105-108">[out] Ukazatel na velikost název nebo počet znaků ve skutečnosti vrátí v `szName`.</span><span class="sxs-lookup"><span data-stu-id="f1105-108">[out] A pointer to the size of the name or the number of characters actually returned in `szName`.</span></span> <span data-ttu-id="f1105-109">V režimu dotazu, tato hodnota umožňuje volajícímu vědět, jak velkou vyrovnávací paměti k přidělení pro název.</span><span class="sxs-lookup"><span data-stu-id="f1105-109">In query mode, this value lets the caller know how large a buffer to allocate for the name.</span></span>  
   
  `szName`  
- <span data-ttu-id="65d8b-110">[out] Pole uchovávající název domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="65d8b-110">[out] An array that stores the name of the application domain.</span></span>  
+ <span data-ttu-id="f1105-110">[out] Pole uchovávající název domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="f1105-110">[out] An array that stores the name of the application domain.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="65d8b-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="65d8b-111">Remarks</span></span>  
- <span data-ttu-id="65d8b-112">Ladicí program volá `GetName` jednou metodu k získání velikost vyrovnávací paměti, třeba název.</span><span class="sxs-lookup"><span data-stu-id="65d8b-112">A debugger calls the `GetName` method once to get the size of a buffer needed for the name.</span></span> <span data-ttu-id="65d8b-113">Ladicí program přiděluje vyrovnávací paměti a potom volá metodu podruhé tak, aby vyplnil vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="65d8b-113">The debugger allocates the buffer, and then calls the method a second time to fill the buffer.</span></span> <span data-ttu-id="65d8b-114">První volání, získat její velikost názvu, se označuje jako *režim dotazů*.</span><span class="sxs-lookup"><span data-stu-id="65d8b-114">The first call, to get the size of the name, is referred to as *query mode*.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f1105-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f1105-111">Remarks</span></span>  
+ <span data-ttu-id="f1105-112">Ladicí program volá `GetName` jednou metodu k získání velikost vyrovnávací paměti, třeba název.</span><span class="sxs-lookup"><span data-stu-id="f1105-112">A debugger calls the `GetName` method once to get the size of a buffer needed for the name.</span></span> <span data-ttu-id="f1105-113">Ladicí program přiděluje vyrovnávací paměti a potom volá metodu podruhé tak, aby vyplnil vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="f1105-113">The debugger allocates the buffer, and then calls the method a second time to fill the buffer.</span></span> <span data-ttu-id="f1105-114">První volání, získat její velikost názvu, se označuje jako *režim dotazů*.</span><span class="sxs-lookup"><span data-stu-id="f1105-114">The first call, to get the size of the name, is referred to as *query mode*.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="65d8b-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="65d8b-115">Requirements</span></span>  
- <span data-ttu-id="65d8b-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="65d8b-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f1105-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f1105-115">Requirements</span></span>  
+ <span data-ttu-id="f1105-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f1105-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="65d8b-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="65d8b-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f1105-117">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f1105-117">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="65d8b-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="65d8b-118">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f1105-118">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f1105-118">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="65d8b-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="65d8b-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>
+ <span data-ttu-id="f1105-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f1105-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>

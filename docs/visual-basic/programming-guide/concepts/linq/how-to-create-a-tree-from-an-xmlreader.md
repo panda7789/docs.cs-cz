@@ -3,19 +3,19 @@ title: 'Postupy: Vytvoření stromu ze třídy XmlReader (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6de683d8-177d-402b-b0de-d0539f1ce5d8
 ms.openlocfilehash: d0826112821394ac6a81ba03e7803187aaec2796
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855189"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a><span data-ttu-id="4bfa4-102">Postupy: Vytvoření stromu ze třídy XmlReader (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4bfa4-102">How to: Create a Tree from an XmlReader (Visual Basic)</span></span>
-<span data-ttu-id="4bfa4-103">Toto téma ukazuje, jak vytvořit stromu XML přímo ze <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-103">This topic shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="4bfa4-104">K vytvoření <xref:System.Xml.Linq.XElement> ze <xref:System.Xml.XmlReader>, je třeba umístit <xref:System.Xml.XmlReader> na uzlu elementu.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-104">To create an <xref:System.Xml.Linq.XElement> from an <xref:System.Xml.XmlReader>, you must position the <xref:System.Xml.XmlReader> on an element node.</span></span> <span data-ttu-id="4bfa4-105"><xref:System.Xml.XmlReader> Komentáře se přeskočí a zpracování pokynů, ale pokud <xref:System.Xml.XmlReader> je umístěn na textový uzel, bude vyvolána k chybě.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-105">The <xref:System.Xml.XmlReader> will skip comments and processing instructions, but if the <xref:System.Xml.XmlReader> is positioned on a text node, an error will be thrown.</span></span> <span data-ttu-id="4bfa4-106">Aby se zabránilo podobné chyby, vždy umístěte <xref:System.Xml.XmlReader> v elementu před vytvořením stromu XML ze <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-106">To avoid such errors, always position the <xref:System.Xml.XmlReader> on an element before you create an XML tree from the <xref:System.Xml.XmlReader>.</span></span>  
+# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a><span data-ttu-id="a9402-102">Postupy: Vytvoření stromu ze třídy XmlReader (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a9402-102">How to: Create a Tree from an XmlReader (Visual Basic)</span></span>
+<span data-ttu-id="a9402-103">Toto téma ukazuje, jak vytvořit stromu XML přímo ze <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="a9402-103">This topic shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="a9402-104">K vytvoření <xref:System.Xml.Linq.XElement> ze <xref:System.Xml.XmlReader>, je třeba umístit <xref:System.Xml.XmlReader> na uzlu elementu.</span><span class="sxs-lookup"><span data-stu-id="a9402-104">To create an <xref:System.Xml.Linq.XElement> from an <xref:System.Xml.XmlReader>, you must position the <xref:System.Xml.XmlReader> on an element node.</span></span> <span data-ttu-id="a9402-105"><xref:System.Xml.XmlReader> Komentáře se přeskočí a zpracování pokynů, ale pokud <xref:System.Xml.XmlReader> je umístěn na textový uzel, bude vyvolána k chybě.</span><span class="sxs-lookup"><span data-stu-id="a9402-105">The <xref:System.Xml.XmlReader> will skip comments and processing instructions, but if the <xref:System.Xml.XmlReader> is positioned on a text node, an error will be thrown.</span></span> <span data-ttu-id="a9402-106">Aby se zabránilo podobné chyby, vždy umístěte <xref:System.Xml.XmlReader> v elementu před vytvořením stromu XML ze <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="a9402-106">To avoid such errors, always position the <xref:System.Xml.XmlReader> on an element before you create an XML tree from the <xref:System.Xml.XmlReader>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4bfa4-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="4bfa4-107">Example</span></span>  
- <span data-ttu-id="4bfa4-108">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="4bfa4-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="a9402-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="a9402-107">Example</span></span>  
+ <span data-ttu-id="a9402-108">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="a9402-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="4bfa4-109">Následující kód vytvoří `T:System.Xml.XmlReader` objektu a čtení uzly, dokud nenajde prvního uzlu elementu.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-109">The following code creates an `T:System.Xml.XmlReader` object, and then reads nodes until it finds the first element node.</span></span> <span data-ttu-id="4bfa4-110">Pak načte <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="4bfa4-110">It then loads the <xref:System.Xml.Linq.XElement> object.</span></span>  
+ <span data-ttu-id="a9402-109">Následující kód vytvoří `T:System.Xml.XmlReader` objektu a čtení uzly, dokud nenajde prvního uzlu elementu.</span><span class="sxs-lookup"><span data-stu-id="a9402-109">The following code creates an `T:System.Xml.XmlReader` object, and then reads nodes until it finds the first element node.</span></span> <span data-ttu-id="a9402-110">Pak načte <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="a9402-110">It then loads the <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```vb  
 Dim r As XmlReader = XmlReader.Create("books.xml")  
@@ -26,7 +26,7 @@ Dim e As XElement = XElement.Load(r)
 Console.WriteLine(e)  
 ```  
   
- <span data-ttu-id="4bfa4-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4bfa4-111">This example produces the following output:</span></span>  
+ <span data-ttu-id="a9402-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a9402-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -52,6 +52,6 @@ Console.WriteLine(e)
 </Catalog>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4bfa4-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4bfa4-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a9402-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a9402-112">See also</span></span>
 
-- [<span data-ttu-id="4bfa4-113">Analýza kódu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4bfa4-113">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [<span data-ttu-id="a9402-113">Analýza kódu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a9402-113">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

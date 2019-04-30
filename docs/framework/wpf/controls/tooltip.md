@@ -9,30 +9,30 @@ helpviewer_keywords:
 - popups [WPF]
 ms.assetid: a3cb42d6-6ce3-4aa0-a557-2cc5b142f1e4
 ms.openlocfilehash: 9fbb2fa4d403f59619792271eb3b8046cfa23949
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59054985"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790710"
 ---
-# <a name="tooltip"></a><span data-ttu-id="50bed-102">Popisy tlačítek</span><span class="sxs-lookup"><span data-stu-id="50bed-102">ToolTip</span></span>
-<span data-ttu-id="50bed-103">Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>.</span><span class="sxs-lookup"><span data-stu-id="50bed-103">A tooltip is a small pop-up window that appears when a user pauses the mouse pointer over an element, such as over a <xref:System.Windows.Controls.Button>.</span></span>  
+# <a name="tooltip"></a><span data-ttu-id="8a1a8-102">Popisy tlačítek</span><span class="sxs-lookup"><span data-stu-id="8a1a8-102">ToolTip</span></span>
+<span data-ttu-id="8a1a8-103">Malého vyskakovacího okna, který se zobrazí, když uživatel pozastavení ukazatele myši nad prvkem, například jako více než je ovládací prvek tooltip <xref:System.Windows.Controls.Button>.</span><span class="sxs-lookup"><span data-stu-id="8a1a8-103">A tooltip is a small pop-up window that appears when a user pauses the mouse pointer over an element, such as over a <xref:System.Windows.Controls.Button>.</span></span>  
   
- <span data-ttu-id="50bed-104">Na následujícím obrázku, který odkazuje na ukazatel myši **Zavřít**<xref:System.Windows.Controls.Button>, která pak zobrazí jeho identifikaci <xref:System.Windows.Controls.ToolTip>.</span><span class="sxs-lookup"><span data-stu-id="50bed-104">The following illustration shows a mouse pointer that points to the **Close**<xref:System.Windows.Controls.Button>, which then displays its identifying <xref:System.Windows.Controls.ToolTip>.</span></span>  
+ <span data-ttu-id="8a1a8-104">Na následujícím obrázku, který odkazuje na ukazatel myši **Zavřít**<xref:System.Windows.Controls.Button>, která pak zobrazí jeho identifikaci <xref:System.Windows.Controls.ToolTip>.</span><span class="sxs-lookup"><span data-stu-id="8a1a8-104">The following illustration shows a mouse pointer that points to the **Close**<xref:System.Windows.Controls.Button>, which then displays its identifying <xref:System.Windows.Controls.ToolTip>.</span></span>  
   
- <span data-ttu-id="50bed-105">Tlačítko Zavřít s jeho popis zobrazený v</span><span class="sxs-lookup"><span data-stu-id="50bed-105">Close button with its tooltip displayed</span></span>  
+ <span data-ttu-id="8a1a8-105">Tlačítko Zavřít s jeho popis zobrazený v</span><span class="sxs-lookup"><span data-stu-id="8a1a8-105">Close button with its tooltip displayed</span></span>  
   
- <span data-ttu-id="50bed-106">![Snímek obrazovky popisek](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span><span class="sxs-lookup"><span data-stu-id="50bed-106">![ToolTip screenshot](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span></span>  
+ <span data-ttu-id="8a1a8-106">![Snímek obrazovky popisek](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span><span class="sxs-lookup"><span data-stu-id="8a1a8-106">![ToolTip screenshot](./media/ss-ctl-tooltip.png "SS_CTL_tooltip")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="50bed-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="50bed-107">In This Section</span></span>  
- [<span data-ttu-id="50bed-108">ToolTip – přehled</span><span class="sxs-lookup"><span data-stu-id="50bed-108">ToolTip Overview</span></span>](tooltip-overview.md)  
-  [<span data-ttu-id="50bed-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="50bed-109">How-to Topics</span></span>](tooltip-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="8a1a8-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8a1a8-107">In This Section</span></span>  
+ [<span data-ttu-id="8a1a8-108">ToolTip – přehled</span><span class="sxs-lookup"><span data-stu-id="8a1a8-108">ToolTip Overview</span></span>](tooltip-overview.md)  
+  [<span data-ttu-id="8a1a8-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8a1a8-109">How-to Topics</span></span>](tooltip-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="50bed-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="50bed-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="8a1a8-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8a1a8-110">Reference</span></span>  
  <xref:System.Windows.Controls.ToolTip>  
   <xref:System.Windows.Controls.ToolTipService>  
   <xref:System.Windows.Controls.Primitives.Popup>  
   
-## <a name="related-sections"></a><span data-ttu-id="50bed-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="50bed-111">Related Sections</span></span>  
- [<span data-ttu-id="50bed-112">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="50bed-112">Popup Overview</span></span>](popup-overview.md)  
-  [<span data-ttu-id="50bed-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="50bed-113">How-to Topics</span></span>](popup-how-to-topics.md)
+## <a name="related-sections"></a><span data-ttu-id="8a1a8-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8a1a8-111">Related Sections</span></span>  
+ [<span data-ttu-id="8a1a8-112">Přehled prvku Popup</span><span class="sxs-lookup"><span data-stu-id="8a1a8-112">Popup Overview</span></span>](popup-overview.md)  
+  [<span data-ttu-id="8a1a8-113">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8a1a8-113">How-to Topics</span></span>](popup-how-to-topics.md)

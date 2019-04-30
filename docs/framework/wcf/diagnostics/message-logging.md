@@ -3,32 +3,32 @@ title: Protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 6bce0682-75ef-4d65-a659-b328fba4a8b5
 ms.openlocfilehash: e189b6c2997c7d4d7422e61fa22be95678aeb911
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59154450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797433"
 ---
-# <a name="message-logging"></a><span data-ttu-id="ff382-102">Protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="ff382-102">Message Logging</span></span>
-<span data-ttu-id="ff382-103">Windows Communication Foundation (WCF) umožňuje příchozí a odchozí zprávy pro použití protokolu.</span><span class="sxs-lookup"><span data-stu-id="ff382-103">Windows Communication Foundation (WCF) provides the capability to log incoming and outgoing messages for offline consumption.</span></span> <span data-ttu-id="ff382-104">Protokolování zpráv umožňuje zjistit, jaké zprávy a odkazu tělo zprávy.</span><span class="sxs-lookup"><span data-stu-id="ff382-104">Message logging enables you to see what the message and message body looks like.</span></span> <span data-ttu-id="ff382-105">Tento typ protokolování je zvláště užitečné v oznamující, co byly předány argumenty v a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML.</span><span class="sxs-lookup"><span data-stu-id="ff382-105">This type of logging is particularly helpful in letting you know what arguments were passed in and how the receiving endpoint saw the arguments expressed as XML.</span></span> <span data-ttu-id="ff382-106">Kromě toho protokolování zprávy, protože byla přijata vám umožní diagnostikovat špatně vytvořené zprávy stejně jako v tématu jak byly přijaty zprávy.</span><span class="sxs-lookup"><span data-stu-id="ff382-106">In addition, logging the message as it was received allows you to diagnose malformed messages as well as to see how the message arrived.</span></span> <span data-ttu-id="ff382-107">Můžete také prozkoumat zabezpečení tokeny používané části zašifrovaná a podepsaná a částí ponechána beze změn.</span><span class="sxs-lookup"><span data-stu-id="ff382-107">You can also examine the security tokens used, parts encrypted and signed, and parts left intact.</span></span>  
+# <a name="message-logging"></a><span data-ttu-id="8e918-102">Protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="8e918-102">Message Logging</span></span>
+<span data-ttu-id="8e918-103">Windows Communication Foundation (WCF) umožňuje příchozí a odchozí zprávy pro použití protokolu.</span><span class="sxs-lookup"><span data-stu-id="8e918-103">Windows Communication Foundation (WCF) provides the capability to log incoming and outgoing messages for offline consumption.</span></span> <span data-ttu-id="8e918-104">Protokolování zpráv umožňuje zjistit, jaké zprávy a odkazu tělo zprávy.</span><span class="sxs-lookup"><span data-stu-id="8e918-104">Message logging enables you to see what the message and message body looks like.</span></span> <span data-ttu-id="8e918-105">Tento typ protokolování je zvláště užitečné v oznamující, co byly předány argumenty v a jak přijímající koncový bod viděli argumenty, vyjádřené jako XML.</span><span class="sxs-lookup"><span data-stu-id="8e918-105">This type of logging is particularly helpful in letting you know what arguments were passed in and how the receiving endpoint saw the arguments expressed as XML.</span></span> <span data-ttu-id="8e918-106">Kromě toho protokolování zprávy, protože byla přijata vám umožní diagnostikovat špatně vytvořené zprávy stejně jako v tématu jak byly přijaty zprávy.</span><span class="sxs-lookup"><span data-stu-id="8e918-106">In addition, logging the message as it was received allows you to diagnose malformed messages as well as to see how the message arrived.</span></span> <span data-ttu-id="8e918-107">Můžete také prozkoumat zabezpečení tokeny používané části zašifrovaná a podepsaná a částí ponechána beze změn.</span><span class="sxs-lookup"><span data-stu-id="8e918-107">You can also examine the security tokens used, parts encrypted and signed, and parts left intact.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ff382-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ff382-108">In This Section</span></span>  
- [<span data-ttu-id="ff382-109">Přehled toku zpráv</span><span class="sxs-lookup"><span data-stu-id="ff382-109">Message Flow Overview</span></span>](../../../../docs/framework/wcf/diagnostics/message-flow-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="8e918-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8e918-108">In This Section</span></span>  
+ [<span data-ttu-id="8e918-109">Přehled toku zpráv</span><span class="sxs-lookup"><span data-stu-id="8e918-109">Message Flow Overview</span></span>](../../../../docs/framework/wcf/diagnostics/message-flow-overview.md)  
   
- <span data-ttu-id="ff382-110">Toto téma popisuje, jak zprávy protokolu událostí odpovídají události klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="ff382-110">This topic describes how event log messages correspond to client and service events.</span></span>  
+ <span data-ttu-id="8e918-110">Toto téma popisuje, jak zprávy protokolu událostí odpovídají události klienta a služby.</span><span class="sxs-lookup"><span data-stu-id="8e918-110">This topic describes how event log messages correspond to client and service events.</span></span>  
   
- [<span data-ttu-id="ff382-111">Konfigurace protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="ff382-111">Configuring Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
+ [<span data-ttu-id="8e918-111">Konfigurace protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="8e918-111">Configuring Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
   
- <span data-ttu-id="ff382-112">Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scénáře.</span><span class="sxs-lookup"><span data-stu-id="ff382-112">This topic describes how you can configure message logging for different scenarios.</span></span>  
+ <span data-ttu-id="8e918-112">Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scénáře.</span><span class="sxs-lookup"><span data-stu-id="8e918-112">This topic describes how you can configure message logging for different scenarios.</span></span>  
   
- [<span data-ttu-id="ff382-113">Prohlížení protokolů zpráv</span><span class="sxs-lookup"><span data-stu-id="ff382-113">Viewing Message Logs</span></span>](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
+ [<span data-ttu-id="8e918-113">Prohlížení protokolů zpráv</span><span class="sxs-lookup"><span data-stu-id="8e918-113">Viewing Message Logs</span></span>](../../../../docs/framework/wcf/diagnostics/viewing-message-logs.md)  
   
- <span data-ttu-id="ff382-114">Toto téma popisuje, jak můžete zobrazit protokoly zpráv.</span><span class="sxs-lookup"><span data-stu-id="ff382-114">This topic describes how you can view message logs.</span></span>  
+ <span data-ttu-id="8e918-114">Toto téma popisuje, jak můžete zobrazit protokoly zpráv.</span><span class="sxs-lookup"><span data-stu-id="8e918-114">This topic describes how you can view message logs.</span></span>  
   
- [<span data-ttu-id="ff382-115">Zajištění zabezpečení pro protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="ff382-115">Security Concerns for Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
+ [<span data-ttu-id="8e918-115">Zajištění zabezpečení pro protokolování zpráv</span><span class="sxs-lookup"><span data-stu-id="8e918-115">Security Concerns for Message Logging</span></span>](../../../../docs/framework/wcf/diagnostics/security-concerns-for-message-logging.md)  
   
- <span data-ttu-id="ff382-116">Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokolů zpráv, jakož i události generované modulem protokolování zpráv.</span><span class="sxs-lookup"><span data-stu-id="ff382-116">This topic describes how you can protect sensitive data from being exposed in message logs, as well as events generated by message logging.</span></span>  
+ <span data-ttu-id="8e918-116">Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokolů zpráv, jakož i události generované modulem protokolování zpráv.</span><span class="sxs-lookup"><span data-stu-id="8e918-116">This topic describes how you can protect sensitive data from being exposed in message logs, as well as events generated by message logging.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ff382-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff382-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8e918-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8e918-117">See also</span></span>
 
-- [<span data-ttu-id="ff382-118">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="ff382-118">Administration and Diagnostics</span></span>](../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="8e918-118">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="8e918-118">Administration and Diagnostics</span></span>](../../../../docs/framework/wcf/diagnostics/index.md)

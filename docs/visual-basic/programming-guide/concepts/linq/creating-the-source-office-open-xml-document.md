@@ -3,26 +3,26 @@ title: Vytváří se zdrojového dokumentu Office Open XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
 ms.openlocfilehash: 83cb7d0a325e11c9669f1331e57bed7bf09f27c6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923419"
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a><span data-ttu-id="28e49-102">Vytváří se zdrojového dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28e49-102">Creating the Source Office Open XML Document (Visual Basic)</span></span>
-<span data-ttu-id="28e49-103">Toto téma ukazuje, jak vytvořit dokumentu Office Open XML WordprocessingML, použít další příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="28e49-103">This topic shows how to create the Office Open XML WordprocessingML document that the other examples in this tutorial use.</span></span> <span data-ttu-id="28e49-104">Pokud budete postupovat podle těchto pokynů, výstup bude odpovídat výstup poskytovaný v každém příkladu.</span><span class="sxs-lookup"><span data-stu-id="28e49-104">If you follow these instructions, your output will match the output provided in each example.</span></span>  
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a><span data-ttu-id="fdef3-102">Vytváří se zdrojového dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fdef3-102">Creating the Source Office Open XML Document (Visual Basic)</span></span>
+<span data-ttu-id="fdef3-103">Toto téma ukazuje, jak vytvořit dokumentu Office Open XML WordprocessingML, použít další příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="fdef3-103">This topic shows how to create the Office Open XML WordprocessingML document that the other examples in this tutorial use.</span></span> <span data-ttu-id="fdef3-104">Pokud budete postupovat podle těchto pokynů, výstup bude odpovídat výstup poskytovaný v každém příkladu.</span><span class="sxs-lookup"><span data-stu-id="fdef3-104">If you follow these instructions, your output will match the output provided in each example.</span></span>  
   
- <span data-ttu-id="28e49-105">Příklady v tomto kurzu ale bude fungovat s libovolný platný dokument WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="28e49-105">However, the examples in this tutorial will work with any valid WordprocessingML document.</span></span>  
+ <span data-ttu-id="fdef3-105">Příklady v tomto kurzu ale bude fungovat s libovolný platný dokument WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="fdef3-105">However, the examples in this tutorial will work with any valid WordprocessingML document.</span></span>  
   
- <span data-ttu-id="28e49-106">Vytvoření dokumentu, který tento kurz používá, musí mít buď Microsoft Office 2007 nebo novější, nebo musí mít Microsoft Office 2003 Microsoft Office Compatibility Pack pro Word, Excel a PowerPoint 2007 formátů.</span><span class="sxs-lookup"><span data-stu-id="28e49-106">To create the document that this tutorial uses, you must either have Microsoft Office 2007 or later installed, or you must have Microsoft Office 2003 with the Microsoft Office Compatibility Pack for Word, Excel, and PowerPoint 2007 File Formats.</span></span>  
+ <span data-ttu-id="fdef3-106">Vytvoření dokumentu, který tento kurz používá, musí mít buď Microsoft Office 2007 nebo novější, nebo musí mít Microsoft Office 2003 Microsoft Office Compatibility Pack pro Word, Excel a PowerPoint 2007 formátů.</span><span class="sxs-lookup"><span data-stu-id="fdef3-106">To create the document that this tutorial uses, you must either have Microsoft Office 2007 or later installed, or you must have Microsoft Office 2003 with the Microsoft Office Compatibility Pack for Word, Excel, and PowerPoint 2007 File Formats.</span></span>  
   
-## <a name="creating-the-wordprocessingml-document"></a><span data-ttu-id="28e49-107">Vytvoření dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="28e49-107">Creating the WordprocessingML Document</span></span>  
+## <a name="creating-the-wordprocessingml-document"></a><span data-ttu-id="fdef3-107">Vytvoření dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="fdef3-107">Creating the WordprocessingML Document</span></span>  
   
-#### <a name="to-create-the-wordprocessingml-document"></a><span data-ttu-id="28e49-108">Vytvoření dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="28e49-108">To create the WordprocessingML document</span></span>  
+#### <a name="to-create-the-wordprocessingml-document"></a><span data-ttu-id="fdef3-108">Vytvoření dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="fdef3-108">To create the WordprocessingML document</span></span>  
   
-1. <span data-ttu-id="28e49-109">Vytvoříte nový textový dokument aplikace Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="28e49-109">Create a new Microsoft Word document.</span></span>  
+1. <span data-ttu-id="fdef3-109">Vytvoříte nový textový dokument aplikace Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="fdef3-109">Create a new Microsoft Word document.</span></span>  
   
-2. <span data-ttu-id="28e49-110">Vložte následující text do nového dokumentu:</span><span class="sxs-lookup"><span data-stu-id="28e49-110">Paste the following text into the new document:</span></span>  
+2. <span data-ttu-id="fdef3-110">Vložte následující text do nového dokumentu:</span><span class="sxs-lookup"><span data-stu-id="fdef3-110">Paste the following text into the new document:</span></span>  
   
     ```  
     Parsing WordprocessingML with LINQ to XML  
@@ -42,17 +42,17 @@ ms.locfileid: "59333688"
     Hello World  
     ```  
   
-3. <span data-ttu-id="28e49-111">Naformátuje styl "Nadpis 1" na prvním řádku.</span><span class="sxs-lookup"><span data-stu-id="28e49-111">Format the first line with the style "Heading 1".</span></span>  
+3. <span data-ttu-id="fdef3-111">Naformátuje styl "Nadpis 1" na prvním řádku.</span><span class="sxs-lookup"><span data-stu-id="fdef3-111">Format the first line with the style "Heading 1".</span></span>  
   
-4. <span data-ttu-id="28e49-112">Vyberte řádky, které obsahují kód jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="28e49-112">Select the lines that contain the Visual Basic code.</span></span> <span data-ttu-id="28e49-113">První řádek začíná `Imports` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="28e49-113">The first line starts with the `Imports` keyword.</span></span> <span data-ttu-id="28e49-114">Poslední řádek je "End Class".</span><span class="sxs-lookup"><span data-stu-id="28e49-114">The last line is "End Class".</span></span> <span data-ttu-id="28e49-115">Formátování řádků s Kurýrní písma.</span><span class="sxs-lookup"><span data-stu-id="28e49-115">Format the lines with the courier font.</span></span> <span data-ttu-id="28e49-116">Formát se nový styl a pojmenujte nový styl "Kód".</span><span class="sxs-lookup"><span data-stu-id="28e49-116">Format them with a new style, and name the new style "Code".</span></span>  
+4. <span data-ttu-id="fdef3-112">Vyberte řádky, které obsahují kód jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="fdef3-112">Select the lines that contain the Visual Basic code.</span></span> <span data-ttu-id="fdef3-113">První řádek začíná `Imports` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="fdef3-113">The first line starts with the `Imports` keyword.</span></span> <span data-ttu-id="fdef3-114">Poslední řádek je "End Class".</span><span class="sxs-lookup"><span data-stu-id="fdef3-114">The last line is "End Class".</span></span> <span data-ttu-id="fdef3-115">Formátování řádků s Kurýrní písma.</span><span class="sxs-lookup"><span data-stu-id="fdef3-115">Format the lines with the courier font.</span></span> <span data-ttu-id="fdef3-116">Formát se nový styl a pojmenujte nový styl "Kód".</span><span class="sxs-lookup"><span data-stu-id="fdef3-116">Format them with a new style, and name the new style "Code".</span></span>  
   
-5. <span data-ttu-id="28e49-117">Nakonec označit celý řádek, který obsahuje výstup a naformátovat ho `Code` style.</span><span class="sxs-lookup"><span data-stu-id="28e49-117">Finally, select the entire line that contains the output, and format it with the `Code` style.</span></span>  
+5. <span data-ttu-id="fdef3-117">Nakonec označit celý řádek, který obsahuje výstup a naformátovat ho `Code` style.</span><span class="sxs-lookup"><span data-stu-id="fdef3-117">Finally, select the entire line that contains the output, and format it with the `Code` style.</span></span>  
   
-6. <span data-ttu-id="28e49-118">Uložte dokument a pojmenujte ho SampleDoc.docx.</span><span class="sxs-lookup"><span data-stu-id="28e49-118">Save the document, and name it SampleDoc.docx.</span></span>  
+6. <span data-ttu-id="fdef3-118">Uložte dokument a pojmenujte ho SampleDoc.docx.</span><span class="sxs-lookup"><span data-stu-id="fdef3-118">Save the document, and name it SampleDoc.docx.</span></span>  
   
     > [!NOTE]
-    >  <span data-ttu-id="28e49-119">Pokud používáte aplikaci Microsoft Word 2003, vyberte **dokument aplikace Word 2007** v **uložit jako typ** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="28e49-119">If you are using Microsoft Word 2003, select **Word 2007 Document** in the **Save as Type** drop-down list.</span></span>  
+    >  <span data-ttu-id="fdef3-119">Pokud používáte aplikaci Microsoft Word 2003, vyberte **dokument aplikace Word 2007** v **uložit jako typ** rozevíracího seznamu.</span><span class="sxs-lookup"><span data-stu-id="fdef3-119">If you are using Microsoft Word 2003, select **Word 2007 Document** in the **Save as Type** drop-down list.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="28e49-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28e49-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fdef3-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fdef3-120">See also</span></span>
 
-- [<span data-ttu-id="28e49-121">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28e49-121">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [<span data-ttu-id="fdef3-121">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fdef3-121">Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

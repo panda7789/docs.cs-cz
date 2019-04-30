@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b417685361126951470571e2440cc842ab1c94fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59153904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61782900"
 ---
-# <a name="icordebugregistersetgetregisters-method"></a><span data-ttu-id="d0d7c-102">ICorDebugRegisterSet::GetRegisters – metoda</span><span class="sxs-lookup"><span data-stu-id="d0d7c-102">ICorDebugRegisterSet::GetRegisters Method</span></span>
-<span data-ttu-id="d0d7c-103">Získá hodnotu každý registr (na počítači, který aktuálně spouští kód), která je určená bitová maska.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-103">Gets the value of each register (on the computer that is currently executing code) that is specified by the bit mask.</span></span>  
+# <a name="icordebugregistersetgetregisters-method"></a><span data-ttu-id="c205e-102">ICorDebugRegisterSet::GetRegisters – metoda</span><span class="sxs-lookup"><span data-stu-id="c205e-102">ICorDebugRegisterSet::GetRegisters Method</span></span>
+<span data-ttu-id="c205e-103">Získá hodnotu každý registr (na počítači, který aktuálně spouští kód), která je určená bitová maska.</span><span class="sxs-lookup"><span data-stu-id="c205e-103">Gets the value of each register (on the computer that is currently executing code) that is specified by the bit mask.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d0d7c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d0d7c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c205e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c205e-104">Syntax</span></span>  
   
 ```  
 HRESULT GetRegisters (  
@@ -38,31 +38,31 @@ HRESULT GetRegisters (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="d0d7c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d0d7c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c205e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c205e-105">Parameters</span></span>  
  `mask`  
- <span data-ttu-id="d0d7c-106">[in] Bitová maska, která určuje, které registru jsou hodnoty, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-106">[in] A bit mask that specifies which register values are to be retrieved.</span></span> <span data-ttu-id="d0d7c-107">Každý bit odpovídá registru.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-107">Each bit corresponds to a register.</span></span> <span data-ttu-id="d0d7c-108">Pokud je o něco nastavená na jednu, načte do registru hodnota; v opačném případě se načíst hodnotu do registru.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-108">If a bit is set to one, the register's value is retrieved; otherwise, the register's value is not retrieved.</span></span>  
+ <span data-ttu-id="c205e-106">[in] Bitová maska, která určuje, které registru jsou hodnoty, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="c205e-106">[in] A bit mask that specifies which register values are to be retrieved.</span></span> <span data-ttu-id="c205e-107">Každý bit odpovídá registru.</span><span class="sxs-lookup"><span data-stu-id="c205e-107">Each bit corresponds to a register.</span></span> <span data-ttu-id="c205e-108">Pokud je o něco nastavená na jednu, načte do registru hodnota; v opačném případě se načíst hodnotu do registru.</span><span class="sxs-lookup"><span data-stu-id="c205e-108">If a bit is set to one, the register's value is retrieved; otherwise, the register's value is not retrieved.</span></span>  
   
  `regCount`  
- <span data-ttu-id="d0d7c-109">[in] Počet hodnot registru, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-109">[in] The number of register values to be retrieved.</span></span>  
+ <span data-ttu-id="c205e-109">[in] Počet hodnot registru, který se má načíst.</span><span class="sxs-lookup"><span data-stu-id="c205e-109">[in] The number of register values to be retrieved.</span></span>  
   
  `regBuffer`  
- <span data-ttu-id="d0d7c-110">[out] Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu z registru.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-110">[out] An array of `CORDB_REGISTER` objects, each of which receives a value of a register.</span></span>  
+ <span data-ttu-id="c205e-110">[out] Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu z registru.</span><span class="sxs-lookup"><span data-stu-id="c205e-110">[out] An array of `CORDB_REGISTER` objects, each of which receives a value of a register.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d0d7c-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d0d7c-111">Remarks</span></span>  
- <span data-ttu-id="d0d7c-112">Velikost pole by měl být roven počtu bitů nastavena na jednu v bitové masce.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-112">The size of the array should be equal to the number of bits set to one in the bit mask.</span></span> <span data-ttu-id="d0d7c-113">`regCount` Parametr určuje počet prvků ve vyrovnávací paměti, která bude dostávat hodnot registru.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-113">The `regCount` parameter specifies the number of elements in the buffer that will receive the register values.</span></span> <span data-ttu-id="d0d7c-114">Pokud `regCount` hodnota je příliš malý počet registrů indikován maska, vyšší číslované registrů se zkrátí ze sady.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-114">If the `regCount` value is too small for the number of registers indicated by the mask, the higher numbered registers will be truncated from the set.</span></span> <span data-ttu-id="d0d7c-115">Pokud `regCount` hodnota je příliš velká, nepoužívané `regBuffer` prvky bude bez úprav.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-115">If the `regCount` value is too large, the unused `regBuffer` elements will be unmodified.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c205e-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c205e-111">Remarks</span></span>  
+ <span data-ttu-id="c205e-112">Velikost pole by měl být roven počtu bitů nastavena na jednu v bitové masce.</span><span class="sxs-lookup"><span data-stu-id="c205e-112">The size of the array should be equal to the number of bits set to one in the bit mask.</span></span> <span data-ttu-id="c205e-113">`regCount` Parametr určuje počet prvků ve vyrovnávací paměti, která bude dostávat hodnot registru.</span><span class="sxs-lookup"><span data-stu-id="c205e-113">The `regCount` parameter specifies the number of elements in the buffer that will receive the register values.</span></span> <span data-ttu-id="c205e-114">Pokud `regCount` hodnota je příliš malý počet registrů indikován maska, vyšší číslované registrů se zkrátí ze sady.</span><span class="sxs-lookup"><span data-stu-id="c205e-114">If the `regCount` value is too small for the number of registers indicated by the mask, the higher numbered registers will be truncated from the set.</span></span> <span data-ttu-id="c205e-115">Pokud `regCount` hodnota je příliš velká, nepoužívané `regBuffer` prvky bude bez úprav.</span><span class="sxs-lookup"><span data-stu-id="c205e-115">If the `regCount` value is too large, the unused `regBuffer` elements will be unmodified.</span></span>  
   
- <span data-ttu-id="d0d7c-116">Pokud bit masky určuje registru, který je k dispozici, `GetRegisters` vrátí neurčitá hodnota pro tento registr.</span><span class="sxs-lookup"><span data-stu-id="d0d7c-116">If the bit mask specifies a register that is unavailable, `GetRegisters` returns an indeterminate value for that register.</span></span>  
+ <span data-ttu-id="c205e-116">Pokud bit masky určuje registru, který je k dispozici, `GetRegisters` vrátí neurčitá hodnota pro tento registr.</span><span class="sxs-lookup"><span data-stu-id="c205e-116">If the bit mask specifies a register that is unavailable, `GetRegisters` returns an indeterminate value for that register.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d0d7c-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d0d7c-117">Requirements</span></span>  
- <span data-ttu-id="d0d7c-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d0d7c-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c205e-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c205e-117">Requirements</span></span>  
+ <span data-ttu-id="c205e-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c205e-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d0d7c-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="d0d7c-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c205e-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c205e-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="d0d7c-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d0d7c-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c205e-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c205e-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d0d7c-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d0d7c-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c205e-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c205e-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d0d7c-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d0d7c-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c205e-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c205e-122">See also</span></span>
 
-- [<span data-ttu-id="d0d7c-123">ICorDebugRegisterSet – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0d7c-123">ICorDebugRegisterSet Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [<span data-ttu-id="d0d7c-124">ICorDebugRegisterSet2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d0d7c-124">ICorDebugRegisterSet2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [<span data-ttu-id="c205e-123">ICorDebugRegisterSet – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c205e-123">ICorDebugRegisterSet Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [<span data-ttu-id="c205e-124">ICorDebugRegisterSet2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c205e-124">ICorDebugRegisterSet2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)

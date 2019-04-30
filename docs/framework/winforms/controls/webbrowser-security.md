@@ -6,19 +6,19 @@ helpviewer_keywords:
 - security [Windows Forms], WebBrowser control
 ms.assetid: 0968846e-48ee-485a-9797-65b5b9a622f8
 ms.openlocfilehash: 1e658c25ea19f966ac67402c6f3c7693c784d029
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792116"
 ---
-# <a name="webbrowser-security"></a><span data-ttu-id="c39d6-102">WebBrowser – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="c39d6-102">WebBrowser Security</span></span>
-<span data-ttu-id="c39d6-103"><xref:System.Windows.Forms.WebBrowser> Ovládací prvek je navržen pro práci v režimu pouze plné důvěryhodnosti.</span><span class="sxs-lookup"><span data-stu-id="c39d6-103">The <xref:System.Windows.Forms.WebBrowser> control is designed to work in full trust only.</span></span> <span data-ttu-id="c39d6-104">HTML obsah zobrazený v ovládacím prvku mohou pocházet z externích webových serverů a může obsahovat nespravovaného kódu ve formě skriptů nebo webové ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="c39d6-104">The HTML content displayed in the control can come from external Web servers and may contain unmanaged code in the form of scripts or Web controls.</span></span> <span data-ttu-id="c39d6-105">Pokud používáte <xref:System.Windows.Forms.WebBrowser> ovládací prvek v takovém případě ovládací prvek je již méně bezpečné než Internet Explorer by ale spravovanou <xref:System.Windows.Forms.WebBrowser> ovládací prvek nezabrání spuštění takových nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="c39d6-105">If you use the <xref:System.Windows.Forms.WebBrowser> control in this situation, the control is no less secure than Internet Explorer would be, but the managed <xref:System.Windows.Forms.WebBrowser> control does not prevent such unmanaged code from running.</span></span>  
+# <a name="webbrowser-security"></a><span data-ttu-id="6f44f-102">WebBrowser – zabezpečení</span><span class="sxs-lookup"><span data-stu-id="6f44f-102">WebBrowser Security</span></span>
+<span data-ttu-id="6f44f-103"><xref:System.Windows.Forms.WebBrowser> Ovládací prvek je navržen pro práci v režimu pouze plné důvěryhodnosti.</span><span class="sxs-lookup"><span data-stu-id="6f44f-103">The <xref:System.Windows.Forms.WebBrowser> control is designed to work in full trust only.</span></span> <span data-ttu-id="6f44f-104">HTML obsah zobrazený v ovládacím prvku mohou pocházet z externích webových serverů a může obsahovat nespravovaného kódu ve formě skriptů nebo webové ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="6f44f-104">The HTML content displayed in the control can come from external Web servers and may contain unmanaged code in the form of scripts or Web controls.</span></span> <span data-ttu-id="6f44f-105">Pokud používáte <xref:System.Windows.Forms.WebBrowser> ovládací prvek v takovém případě ovládací prvek je již méně bezpečné než Internet Explorer by ale spravovanou <xref:System.Windows.Forms.WebBrowser> ovládací prvek nezabrání spuštění takových nespravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="6f44f-105">If you use the <xref:System.Windows.Forms.WebBrowser> control in this situation, the control is no less secure than Internet Explorer would be, but the managed <xref:System.Windows.Forms.WebBrowser> control does not prevent such unmanaged code from running.</span></span>  
   
- <span data-ttu-id="c39d6-106">Další informace o zabezpečení problémy týkající se základního ActiveX `WebBrowser` řídí, najdete v článku [ovládací prvek WebBrowser](https://go.microsoft.com/fwlink/?LinkId=198812).</span><span class="sxs-lookup"><span data-stu-id="c39d6-106">For more information about security issues relating to the underlying ActiveX `WebBrowser` control, see [WebBrowser Control](https://go.microsoft.com/fwlink/?LinkId=198812).</span></span>  
+ <span data-ttu-id="6f44f-106">Další informace o zabezpečení problémy týkající se základního ActiveX `WebBrowser` řídí, najdete v článku [ovládací prvek WebBrowser](https://go.microsoft.com/fwlink/?LinkId=198812).</span><span class="sxs-lookup"><span data-stu-id="6f44f-106">For more information about security issues relating to the underlying ActiveX `WebBrowser` control, see [WebBrowser Control](https://go.microsoft.com/fwlink/?LinkId=198812).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c39d6-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c39d6-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6f44f-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6f44f-107">See also</span></span>
 
 - <xref:System.Windows.Forms.WebBrowser>
-- [<span data-ttu-id="c39d6-108">Přehled ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="c39d6-108">WebBrowser Control Overview</span></span>](webbrowser-control-overview.md)
-- [<span data-ttu-id="c39d6-109">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="c39d6-109">WebBrowser Control</span></span>](https://go.microsoft.com/fwlink/?LinkId=198812)
+- [<span data-ttu-id="6f44f-108">Přehled ovládacího prvku WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6f44f-108">WebBrowser Control Overview</span></span>](webbrowser-control-overview.md)
+- [<span data-ttu-id="6f44f-109">Ovládací prvek WebBrowser</span><span class="sxs-lookup"><span data-stu-id="6f44f-109">WebBrowser Control</span></span>](https://go.microsoft.com/fwlink/?LinkId=198812)

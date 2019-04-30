@@ -3,27 +3,27 @@ title: Část stylu WordprocessingML Document2
 ms.date: 07/20/2015
 ms.assetid: 292cc094-9483-4192-ac3b-a5dc51fbac12
 ms.openlocfilehash: 2e5e0e570fa842fb8a4df59d4b1c02e1169c6878
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58838063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907852"
 ---
-# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="f3dc2-102">Část stylu dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="f3dc2-102">Style Part of a WordprocessingML Document</span></span>
-<span data-ttu-id="f3dc2-103">Toto téma ukazuje příklad část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
+# <a name="style-part-of-a-wordprocessingml-document"></a><span data-ttu-id="ff700-102">Část stylu dokumentu WordprocessingML</span><span class="sxs-lookup"><span data-stu-id="ff700-102">Style Part of a WordprocessingML Document</span></span>
+<span data-ttu-id="ff700-103">Toto téma ukazuje příklad část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="ff700-103">This topic shows an example of the style part of the Office Open XML WordprocessingML document.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f3dc2-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="f3dc2-104">Example</span></span>  
- <span data-ttu-id="f3dc2-105">V následujícím příkladu je XML, které tvoří část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="ff700-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="ff700-104">Example</span></span>  
+ <span data-ttu-id="ff700-105">V následujícím příkladu je XML, které tvoří část stylu dokumentu Office Open XML WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="ff700-105">The following example is the XML that makes up the style part of an Office Open XML WordprocessingML document.</span></span>  
   
- <span data-ttu-id="f3dc2-106">Výchozí styl odstavce obsahuje element se následující úvodní značku:</span><span class="sxs-lookup"><span data-stu-id="f3dc2-106">The default paragraph style has an element with the following opening tag:</span></span>  
+ <span data-ttu-id="ff700-106">Výchozí styl odstavce obsahuje element se následující úvodní značku:</span><span class="sxs-lookup"><span data-stu-id="ff700-106">The default paragraph style has an element with the following opening tag:</span></span>  
   
 ```  
 <w:style w:type="paragraph" w:default="1" w:styleId="Normal">  
 ```  
   
- <span data-ttu-id="f3dc2-107">Budete muset tyto informace znát při psaní dotazu se najít výchozí styl identifikátor, takže dotaz můžete identifikovat styl odstavce, které mají výchozí styl.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
+ <span data-ttu-id="ff700-107">Budete muset tyto informace znát při psaní dotazu se najít výchozí styl identifikátor, takže dotaz můžete identifikovat styl odstavce, které mají výchozí styl.</span><span class="sxs-lookup"><span data-stu-id="ff700-107">You need to know this information when you write the query to find the default style identifier, so that the query can identify the style of paragraphs that have the default style.</span></span>  
   
- <span data-ttu-id="f3dc2-108">Všimněte si, že tyto dokumenty jsou velmi jednoduché ve srovnání s běžných dokumentech, které generuje aplikaci Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="f3dc2-109">V mnoha případech budou uloženy spoustu dalších informací, další formátování a metadata.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="f3dc2-110">Kromě toho aplikace Word neformátuje řádky bude snadno čitelný jako v následujícím příkladu; Místo toho je uložen soubor XML bez odsazení.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="f3dc2-111">Však všech dokumentů WordprocessingML sdílet stejnou základního tvaru XML.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="f3dc2-112">Z tohoto důvodu dotazy v tomto kurzu bude pracovat složitější dokumenty.</span><span class="sxs-lookup"><span data-stu-id="f3dc2-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
+ <span data-ttu-id="ff700-108">Všimněte si, že tyto dokumenty jsou velmi jednoduché ve srovnání s běžných dokumentech, které generuje aplikaci Microsoft Word.</span><span class="sxs-lookup"><span data-stu-id="ff700-108">Note that these documents are very simple when compared to typical documents that Microsoft Word generates.</span></span> <span data-ttu-id="ff700-109">V mnoha případech budou uloženy spoustu dalších informací, další formátování a metadata.</span><span class="sxs-lookup"><span data-stu-id="ff700-109">In many cases, Word saves a great deal of additional information, additional formatting and metadata.</span></span> <span data-ttu-id="ff700-110">Kromě toho aplikace Word neformátuje řádky bude snadno čitelný jako v následujícím příkladu; Místo toho je uložen soubor XML bez odsazení.</span><span class="sxs-lookup"><span data-stu-id="ff700-110">Furthermore, Word does not format the lines to be easily readable as in this example; instead, the XML is saved without indentation.</span></span> <span data-ttu-id="ff700-111">Však všech dokumentů WordprocessingML sdílet stejnou základního tvaru XML.</span><span class="sxs-lookup"><span data-stu-id="ff700-111">However, all WordprocessingML documents share the same basic XML shape.</span></span> <span data-ttu-id="ff700-112">Z tohoto důvodu dotazy v tomto kurzu bude pracovat složitější dokumenty.</span><span class="sxs-lookup"><span data-stu-id="ff700-112">Because of this, the queries presented in this tutorial will work with more complicated documents.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -140,6 +140,6 @@ ms.locfileid: "58838063"
 </w:styles>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f3dc2-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f3dc2-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff700-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ff700-113">See also</span></span>
 
-- [<span data-ttu-id="f3dc2-114">Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f3dc2-114">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [<span data-ttu-id="ff700-114">Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ff700-114">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

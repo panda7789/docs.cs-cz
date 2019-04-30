@@ -3,23 +3,23 @@ title: 'Postupy: Ladění prázdných sad výsledků dotazu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
 ms.openlocfilehash: 80e505be03a26f80bbba9d3673732505b27e9598
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58822780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855683"
 ---
-# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a><span data-ttu-id="11bd5-102">Postupy: Ladění prázdných sad výsledků dotazu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="11bd5-102">How to: Debug Empty Query Results Sets (Visual Basic)</span></span>
-<span data-ttu-id="11bd5-103">Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotaz jakoby nebyly v oboru názvů XML.</span><span class="sxs-lookup"><span data-stu-id="11bd5-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
+# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a><span data-ttu-id="51906-102">Postupy: Ladění prázdných sad výsledků dotazu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="51906-102">How to: Debug Empty Query Results Sets (Visual Basic)</span></span>
+<span data-ttu-id="51906-103">Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotaz jakoby nebyly v oboru názvů XML.</span><span class="sxs-lookup"><span data-stu-id="51906-103">One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.</span></span>  
   
- <span data-ttu-id="11bd5-104">První sada příklady v tomto tématu ukazuje typické tak, že je načteno XML ve výchozím oboru názvů a dotazuje se nesprávně.</span><span class="sxs-lookup"><span data-stu-id="11bd5-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
+ <span data-ttu-id="51906-104">První sada příklady v tomto tématu ukazuje typické tak, že je načteno XML ve výchozím oboru názvů a dotazuje se nesprávně.</span><span class="sxs-lookup"><span data-stu-id="51906-104">The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.</span></span>  
   
- <span data-ttu-id="11bd5-105">Druhá sada příklady ukazují potřebné opravy tak, aby můžete dát dotaz na XML v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="11bd5-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
+ <span data-ttu-id="51906-105">Druhá sada příklady ukazují potřebné opravy tak, aby můžete dát dotaz na XML v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="51906-105">The second set of examples show the necessary corrections so that you can query XML in a namespace.</span></span>  
   
- <span data-ttu-id="11bd5-106">Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="11bd5-106">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+ <span data-ttu-id="51906-106">Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="51906-106">For more information, see [Working with XML Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="11bd5-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="11bd5-107">Example</span></span>  
- <span data-ttu-id="11bd5-108">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdný výsledek sadu.</span><span class="sxs-lookup"><span data-stu-id="11bd5-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
+## <a name="example"></a><span data-ttu-id="51906-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="51906-107">Example</span></span>  
+ <span data-ttu-id="51906-108">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdný výsledek sadu.</span><span class="sxs-lookup"><span data-stu-id="51906-108">This example shows creation of XML in a namespace, and a query that returns an empty result set.</span></span>  
   
 ```vb  
 Dim root As XElement = _  
@@ -41,17 +41,17 @@ Next
 Console.WriteLine("End of result set")  
 ```  
   
- <span data-ttu-id="11bd5-109">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="11bd5-109">This example produces the following result:</span></span>  
+ <span data-ttu-id="51906-109">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="51906-109">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
 End of result set  
 ```  
   
-## <a name="example"></a><span data-ttu-id="11bd5-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="11bd5-110">Example</span></span>  
- <span data-ttu-id="11bd5-111">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je zakódovaný správně.</span><span class="sxs-lookup"><span data-stu-id="11bd5-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
+## <a name="example"></a><span data-ttu-id="51906-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="51906-110">Example</span></span>  
+ <span data-ttu-id="51906-111">Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je zakódovaný správně.</span><span class="sxs-lookup"><span data-stu-id="51906-111">This example shows creation of XML in a namespace, and a query that is coded properly.</span></span>  
   
- <span data-ttu-id="11bd5-112">Řešením je deklarovat a inicializovat globální výchozí obor názvů.</span><span class="sxs-lookup"><span data-stu-id="11bd5-112">The solution is to declare and initialize a global default namespace.</span></span> <span data-ttu-id="11bd5-113">To umístí všechny vlastnosti XML ve výchozím oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="11bd5-113">This places all XML properties in the default namespace.</span></span> <span data-ttu-id="11bd5-114">Žádné úpravy jsou požadovány v příkladu, aby to fungovalo správně.</span><span class="sxs-lookup"><span data-stu-id="11bd5-114">No other modifications are required to the example to make it work properly.</span></span>  
+ <span data-ttu-id="51906-112">Řešením je deklarovat a inicializovat globální výchozí obor názvů.</span><span class="sxs-lookup"><span data-stu-id="51906-112">The solution is to declare and initialize a global default namespace.</span></span> <span data-ttu-id="51906-113">To umístí všechny vlastnosti XML ve výchozím oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="51906-113">This places all XML properties in the default namespace.</span></span> <span data-ttu-id="51906-114">Žádné úpravy jsou požadovány v příkladu, aby to fungovalo správně.</span><span class="sxs-lookup"><span data-stu-id="51906-114">No other modifications are required to the example to make it work properly.</span></span>  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -79,7 +79,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="11bd5-115">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="11bd5-115">This example produces the following result:</span></span>  
+ <span data-ttu-id="51906-115">Tento příklad vytvoří následující výsledek:</span><span class="sxs-lookup"><span data-stu-id="51906-115">This example produces the following result:</span></span>  
   
 ```  
 Result set follows:  
@@ -89,6 +89,6 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="11bd5-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="11bd5-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="51906-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="51906-116">See also</span></span>
 
-- [<span data-ttu-id="11bd5-117">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="11bd5-117">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="51906-117">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="51906-117">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

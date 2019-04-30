@@ -6,52 +6,52 @@ helpviewer_keywords:
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
 ms.openlocfilehash: f20ffcf356aa0493b1e2356746d9ad7b27d9a1aa
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504559"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876197"
 ---
-# <a name="quickstart-wcf-data-services"></a><span data-ttu-id="f1e3b-102">Rychlý start (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="f1e3b-102">Quickstart (WCF Data Services)</span></span>
+# <a name="quickstart-wcf-data-services"></a><span data-ttu-id="9079a-102">Rychlý start (WCF Data Services)</span><span class="sxs-lookup"><span data-stu-id="9079a-102">Quickstart (WCF Data Services)</span></span>
 
-<span data-ttu-id="f1e3b-103">V tomto rychlém startu jste se seznámili se službou WCF Data Services pomáhá a [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] řadou úkolů, které podporují témata v [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="f1e3b-103">This quickstart helps you become familiar with WCF Data Services and the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] through a series of tasks that support the topics in [Getting Started](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span></span>
+<span data-ttu-id="9079a-103">V tomto rychlém startu jste se seznámili se službou WCF Data Services pomáhá a [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] řadou úkolů, které podporují témata v [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="9079a-103">This quickstart helps you become familiar with WCF Data Services and the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] through a series of tasks that support the topics in [Getting Started](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md).</span></span>
 
-## <a name="what-youll-learn"></a><span data-ttu-id="f1e3b-104">Co se dozvíte</span><span class="sxs-lookup"><span data-stu-id="f1e3b-104">What you'll learn</span></span>
+## <a name="what-youll-learn"></a><span data-ttu-id="9079a-104">Co se dozvíte</span><span class="sxs-lookup"><span data-stu-id="9079a-104">What you'll learn</span></span>
 
-<span data-ttu-id="f1e3b-105">První úkol v rámci tohoto rychlého startu ukazuje, jak vytvořit datovou službu vystavit z ukázkové databáze Northwind datového kanálu OData.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-105">The first task in this quickstart shows how to create a data service to expose an OData feed from the Northwind sample database.</span></span> <span data-ttu-id="f1e3b-106">V pozdějších tématech, získáte přístup k prostředí OData kanálu pomocí webového prohlížeče a také vytvořit Windows Presentation Foundation (WPF) informační kanál klientskou aplikaci, která využívá OData pomocí klientské knihovny.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-106">In later topics, you will access the OData feed by using a Web browser, and also create a Windows Presentation Foundation (WPF) client application that consumes the OData feed by using client libraries.</span></span>
+<span data-ttu-id="9079a-105">První úkol v rámci tohoto rychlého startu ukazuje, jak vytvořit datovou službu vystavit z ukázkové databáze Northwind datového kanálu OData.</span><span class="sxs-lookup"><span data-stu-id="9079a-105">The first task in this quickstart shows how to create a data service to expose an OData feed from the Northwind sample database.</span></span> <span data-ttu-id="9079a-106">V pozdějších tématech, získáte přístup k prostředí OData kanálu pomocí webového prohlížeče a také vytvořit Windows Presentation Foundation (WPF) informační kanál klientskou aplikaci, která využívá OData pomocí klientské knihovny.</span><span class="sxs-lookup"><span data-stu-id="9079a-106">In later topics, you will access the OData feed by using a Web browser, and also create a Windows Presentation Foundation (WPF) client application that consumes the OData feed by using client libraries.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="f1e3b-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f1e3b-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="9079a-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9079a-107">Prerequisites</span></span>
 
-<span data-ttu-id="f1e3b-108">Abyste mohli absolvovat tento rychlý start, je třeba nainstalovat následující komponenty:</span><span class="sxs-lookup"><span data-stu-id="f1e3b-108">To complete this quickstart, you must install the following components:</span></span>
+<span data-ttu-id="9079a-108">Abyste mohli absolvovat tento rychlý start, je třeba nainstalovat následující komponenty:</span><span class="sxs-lookup"><span data-stu-id="9079a-108">To complete this quickstart, you must install the following components:</span></span>
 
-- <span data-ttu-id="f1e3b-109">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f1e3b-109">Visual Studio</span></span>
+- <span data-ttu-id="9079a-109">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="9079a-109">Visual Studio</span></span>
 
-- <span data-ttu-id="f1e3b-110">Instance systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-110">An instance of SQL Server.</span></span> <span data-ttu-id="f1e3b-111">Jedná se o SQL serveru Express, který je součástí výchozí instalace sady Visual Studio 2015 nebo jako součást **ukládání a zpracování dat** úlohy v sadě Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-111">This includes SQL Server Express, which is included in a default installation of Visual Studio 2015, or as part of the **Data storage and processing** workload in Visual Studio 2017.</span></span>
+- <span data-ttu-id="9079a-110">Instance systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="9079a-110">An instance of SQL Server.</span></span> <span data-ttu-id="9079a-111">Jedná se o SQL serveru Express, který je součástí výchozí instalace sady Visual Studio 2015 nebo jako součást **ukládání a zpracování dat** úlohy v sadě Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="9079a-111">This includes SQL Server Express, which is included in a default installation of Visual Studio 2015, or as part of the **Data storage and processing** workload in Visual Studio 2017.</span></span>
 
-- <span data-ttu-id="f1e3b-112">Ukázkovou databázi Northwind</span><span class="sxs-lookup"><span data-stu-id="f1e3b-112">The Northwind sample database.</span></span> <span data-ttu-id="f1e3b-113">Stáhněte si tuto ukázkovou databázi, naleznete na stránce stahování [ukázkové databáze systému SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="f1e3b-113">To download this sample database, see the download page, [Sample Databases for SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span></span>
+- <span data-ttu-id="9079a-112">Ukázkovou databázi Northwind</span><span class="sxs-lookup"><span data-stu-id="9079a-112">The Northwind sample database.</span></span> <span data-ttu-id="9079a-113">Stáhněte si tuto ukázkovou databázi, naleznete na stránce stahování [ukázkové databáze systému SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span><span class="sxs-lookup"><span data-stu-id="9079a-113">To download this sample database, see the download page, [Sample Databases for SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).</span></span>
 
-## <a name="wcf-data-services-quickstart-tasks"></a><span data-ttu-id="f1e3b-114">WCF data services – rychlý start úlohy</span><span class="sxs-lookup"><span data-stu-id="f1e3b-114">WCF data services quickstart tasks</span></span>
+## <a name="wcf-data-services-quickstart-tasks"></a><span data-ttu-id="9079a-114">WCF data services – rychlý start úlohy</span><span class="sxs-lookup"><span data-stu-id="9079a-114">WCF data services quickstart tasks</span></span>
 
- [<span data-ttu-id="f1e3b-115">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="f1e3b-115">Create the Data Service</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)
+ [<span data-ttu-id="9079a-115">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="9079a-115">Create the Data Service</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)
 
- <span data-ttu-id="f1e3b-116">Definovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, definovat datový model, vytvoření datové služby a povolení přístupu k prostředkům.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-116">Define the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application, define the data model, create the data service, and enable access to resources.</span></span>
+ <span data-ttu-id="9079a-116">Definovat [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace, definovat datový model, vytvoření datové služby a povolení přístupu k prostředkům.</span><span class="sxs-lookup"><span data-stu-id="9079a-116">Define the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application, define the data model, create the data service, and enable access to resources.</span></span>
 
- [<span data-ttu-id="f1e3b-117">Přístup ke službě z webového prohlížeče</span><span class="sxs-lookup"><span data-stu-id="f1e3b-117">Access the Service from a Web Browser</span></span>](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
+ [<span data-ttu-id="9079a-117">Přístup ke službě z webového prohlížeče</span><span class="sxs-lookup"><span data-stu-id="9079a-117">Access the Service from a Web Browser</span></span>](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
 
- <span data-ttu-id="f1e3b-118">Spusťte službu ze sady Visual Studio a přístup ke službě, odešlete požadavky HTTP GET prostřednictvím webového prohlížeče a vystavené informačního kanálu.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-118">Start the service from Visual Studio and access the service by submitting HTTP GET requests through a Web browser to the exposed feed.</span></span>
+ <span data-ttu-id="9079a-118">Spusťte službu ze sady Visual Studio a přístup ke službě, odešlete požadavky HTTP GET prostřednictvím webového prohlížeče a vystavené informačního kanálu.</span><span class="sxs-lookup"><span data-stu-id="9079a-118">Start the service from Visual Studio and access the service by submitting HTTP GET requests through a Web browser to the exposed feed.</span></span>
 
- [<span data-ttu-id="f1e3b-119">Vytvoření klientské aplikace .NET Framework</span><span class="sxs-lookup"><span data-stu-id="f1e3b-119">Create the .NET Framework Client Application</span></span>](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)
+ [<span data-ttu-id="9079a-119">Vytvoření klientské aplikace .NET Framework</span><span class="sxs-lookup"><span data-stu-id="9079a-119">Create the .NET Framework Client Application</span></span>](../../../../docs/framework/data/wcf/creating-the-dotnet-client-application-wcf-data-services-quickstart.md)
 
- <span data-ttu-id="f1e3b-120">Vytvoření aplikace WPF využívat datového kanálu OData, vytvoření vazby dat k ovládacím prvkům Windows, změnu dat v vázané ovládací prvky a potom odešlete změny zpět do datové služby.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-120">Create a WPF app to consume the OData feed, bind data to Windows controls, change data in the bound controls, and then send the changes back to the data service.</span></span>
+ <span data-ttu-id="9079a-120">Vytvoření aplikace WPF využívat datového kanálu OData, vytvoření vazby dat k ovládacím prvkům Windows, změnu dat v vázané ovládací prvky a potom odešlete změny zpět do datové služby.</span><span class="sxs-lookup"><span data-stu-id="9079a-120">Create a WPF app to consume the OData feed, bind data to Windows controls, change data in the bound controls, and then send the changes back to the data service.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f1e3b-121">Soubory projektu z úplnou verzi tohoto rychlého startu si můžete stáhnout z [Ukázky WCF Data Services dokumentaci](https://go.microsoft.com/fwlink/?LinkId=179994) stránky.</span><span class="sxs-lookup"><span data-stu-id="f1e3b-121">Project files from a completed version of the quickstart can be downloaded from the [WCF Data Services Documentation Samples](https://go.microsoft.com/fwlink/?LinkId=179994) page.</span></span>
+> <span data-ttu-id="9079a-121">Soubory projektu z úplnou verzi tohoto rychlého startu si můžete stáhnout z [Ukázky WCF Data Services dokumentaci](https://go.microsoft.com/fwlink/?LinkId=179994) stránky.</span><span class="sxs-lookup"><span data-stu-id="9079a-121">Project files from a completed version of the quickstart can be downloaded from the [WCF Data Services Documentation Samples](https://go.microsoft.com/fwlink/?LinkId=179994) page.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="f1e3b-122">Další kroky</span><span class="sxs-lookup"><span data-stu-id="f1e3b-122">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="9079a-122">Další kroky</span><span class="sxs-lookup"><span data-stu-id="9079a-122">Next steps</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="f1e3b-123">Spuštění tohoto rychlého startu</span><span class="sxs-lookup"><span data-stu-id="f1e3b-123">Start the quickstart</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)
+> [<span data-ttu-id="9079a-123">Spuštění tohoto rychlého startu</span><span class="sxs-lookup"><span data-stu-id="9079a-123">Start the quickstart</span></span>](../../../../docs/framework/data/wcf/creating-the-data-service.md)
 
-## <a name="see-also"></a><span data-ttu-id="f1e3b-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f1e3b-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9079a-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9079a-124">See also</span></span>
 
-- [<span data-ttu-id="f1e3b-125">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="f1e3b-125">ADO.NET Entity Framework</span></span>](../../../../docs/framework/data/adonet/ef/index.md)
+- [<span data-ttu-id="9079a-125">ADO.NET Entity Framework</span><span class="sxs-lookup"><span data-stu-id="9079a-125">ADO.NET Entity Framework</span></span>](../../../../docs/framework/data/adonet/ef/index.md)

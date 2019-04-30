@@ -8,37 +8,37 @@ helpviewer_keywords:
 - key frames [WPF], how-to topics
 ms.assetid: a5f9ab1a-d14c-4816-8540-3c5b8c8143d5
 ms.openlocfilehash: 6b4f5de92f19223a6692236fb3496a1dbbddef5c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785642"
 ---
-# <a name="key-frame-animation-how-to-topics"></a><span data-ttu-id="d73cb-102">Postupy: Témata animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-102">Key-Frame Animation How-to Topics</span></span>
-<span data-ttu-id="d73cb-103">Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovládacího prvku interpolace animace pomocí klíčových snímků animace.</span><span class="sxs-lookup"><span data-stu-id="d73cb-103">The topics in this section demonstrate how to use key frame animations to animate more than two property values and control interpolation.</span></span>  
+# <a name="key-frame-animation-how-to-topics"></a><span data-ttu-id="f8071-102">Postupy: Témata animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-102">Key-Frame Animation How-to Topics</span></span>
+<span data-ttu-id="f8071-103">Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovládacího prvku interpolace animace pomocí klíčových snímků animace.</span><span class="sxs-lookup"><span data-stu-id="f8071-103">The topics in this section demonstrate how to use key frame animations to animate more than two property values and control interpolation.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d73cb-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d73cb-104">In This Section</span></span>  
- [<span data-ttu-id="d73cb-105">Animace objektu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-105">Animate an Object by Using Key Frames</span></span>](how-to-animate-an-object-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-106">Animace logické hodnoty pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-106">Animate a Boolean by Using Key Frames</span></span>](how-to-animate-a-boolean-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-107">Animace dvojice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-107">Animate a Double by Using Key Frames</span></span>](how-to-animate-a-double-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-108">Animace matice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-108">Animate a Matrix by Using Key Frames</span></span>](how-to-animate-a-matrix-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-109">Animace bodu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-109">Animate a Point by Using Key Frames</span></span>](how-to-animate-a-point-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-110">Animace obdélníkové geometrie pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-110">Animate a Rectangle Geometry by Using Key Frames</span></span>](how-to-animate-a-rectangle-geometry-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-111">Animace řetězce pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-111">Animate a String by Using Key Frames</span></span>](how-to-animate-a-string-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-112">Animace barev pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-112">Animate Color by Using Key Frames</span></span>](how-to-animate-color-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-113">Animace změn velikosti pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-113">Animate Size Changes by Using Key Frames</span></span>](how-to-animate-size-changes-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-114">Animace tloušťky ohraničení pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-114">Animate the Thickness of a Border by Using Key Frames</span></span>](how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)  
- [<span data-ttu-id="d73cb-115">Řízení časování pro animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-115">Control Key-Frame Animation Timing</span></span>](how-to-control-key-frame-animation-timing.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f8071-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f8071-104">In This Section</span></span>  
+ [<span data-ttu-id="f8071-105">Animace objektu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-105">Animate an Object by Using Key Frames</span></span>](how-to-animate-an-object-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-106">Animace logické hodnoty pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-106">Animate a Boolean by Using Key Frames</span></span>](how-to-animate-a-boolean-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-107">Animace dvojice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-107">Animate a Double by Using Key Frames</span></span>](how-to-animate-a-double-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-108">Animace matice pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-108">Animate a Matrix by Using Key Frames</span></span>](how-to-animate-a-matrix-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-109">Animace bodu pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-109">Animate a Point by Using Key Frames</span></span>](how-to-animate-a-point-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-110">Animace obdélníkové geometrie pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-110">Animate a Rectangle Geometry by Using Key Frames</span></span>](how-to-animate-a-rectangle-geometry-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-111">Animace řetězce pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-111">Animate a String by Using Key Frames</span></span>](how-to-animate-a-string-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-112">Animace barev pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-112">Animate Color by Using Key Frames</span></span>](how-to-animate-color-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-113">Animace změn velikosti pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-113">Animate Size Changes by Using Key Frames</span></span>](how-to-animate-size-changes-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-114">Animace tloušťky ohraničení pomocí klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-114">Animate the Thickness of a Border by Using Key Frames</span></span>](how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)  
+ [<span data-ttu-id="f8071-115">Řízení časování pro animace klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-115">Control Key-Frame Animation Timing</span></span>](how-to-control-key-frame-animation-timing.md)  
   
-## <a name="reference"></a><span data-ttu-id="d73cb-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="d73cb-116">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f8071-116">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f8071-116">Reference</span></span>  
  <xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>  
   
  <xref:System.Windows.Media.Animation.Storyboard>  
   
  <xref:System.Windows.Media.Animation.KeyTime>  
   
-## <a name="see-also"></a><span data-ttu-id="d73cb-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d73cb-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f8071-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f8071-117">See also</span></span>
 
-- [<span data-ttu-id="d73cb-118">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="d73cb-118">Graphics and Multimedia</span></span>](index.md)
-- [<span data-ttu-id="d73cb-119">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="d73cb-119">Animation Overview</span></span>](animation-overview.md)
-- [<span data-ttu-id="d73cb-120">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="d73cb-120">Key-Frame Animations Overview</span></span>](key-frame-animations-overview.md)
+- [<span data-ttu-id="f8071-118">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="f8071-118">Graphics and Multimedia</span></span>](index.md)
+- [<span data-ttu-id="f8071-119">Přehled animace</span><span class="sxs-lookup"><span data-stu-id="f8071-119">Animation Overview</span></span>](animation-overview.md)
+- [<span data-ttu-id="f8071-120">Přehled animací klíčových snímků</span><span class="sxs-lookup"><span data-stu-id="f8071-120">Key-Frame Animations Overview</span></span>](key-frame-animations-overview.md)

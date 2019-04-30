@@ -1,1 +1,9 @@
-<span data-ttu-id="12e15-101">Tablet PC</span><span class="sxs-lookup"><span data-stu-id="12e15-101">Tablet PC</span></span>
+---
+ms.openlocfilehash: d458ece2abeae803254c5d442b2e2a80f58a4153
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777319"
+---
+<span data-ttu-id="24d75-101">Tablet PC</span><span class="sxs-lookup"><span data-stu-id="24d75-101">Tablet PC</span></span>

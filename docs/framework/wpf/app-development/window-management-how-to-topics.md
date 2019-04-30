@@ -7,29 +7,29 @@ helpviewer_keywords:
 - windows [WPF], managing
 ms.assetid: 3090b408-94e4-446a-92ca-50f1fd36e5d8
 ms.openlocfilehash: 8de810843ea7de9bb7f27c6582a0254661dbf643
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57351655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788684"
 ---
-# <a name="window-management-how-to-topics"></a><span data-ttu-id="7a35e-102">Postupy: témata týkající se řízení oken</span><span class="sxs-lookup"><span data-stu-id="7a35e-102">Window Management How-to Topics</span></span>
-<span data-ttu-id="7a35e-103">Následující témata ukazují, jak spravovat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému windows.</span><span class="sxs-lookup"><span data-stu-id="7a35e-103">The following topics show how to manage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] windows.</span></span>  
+# <a name="window-management-how-to-topics"></a><span data-ttu-id="9cf12-102">Postupy: témata týkající se řízení oken</span><span class="sxs-lookup"><span data-stu-id="9cf12-102">Window Management How-to Topics</span></span>
+<span data-ttu-id="9cf12-103">Následující témata ukazují, jak spravovat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systému windows.</span><span class="sxs-lookup"><span data-stu-id="9cf12-103">The following topics show how to manage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] windows.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="7a35e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="7a35e-104">In This Section</span></span>  
- [<span data-ttu-id="7a35e-105">Automatické nastavení velikosti okna podle jeho obsahu</span><span class="sxs-lookup"><span data-stu-id="7a35e-105">Automatically Size a Window to Fit Its Content</span></span>](how-to-automatically-size-a-window-to-fit-its-content.md)  
-  [<span data-ttu-id="7a35e-106">Získání všech objektů Window v aplikaci</span><span class="sxs-lookup"><span data-stu-id="7a35e-106">Get all Windows in an Application</span></span>](how-to-get-all-windows-in-an-application.md)  
-  [<span data-ttu-id="7a35e-107">Získání a nastavení hlavního okna aplikace</span><span class="sxs-lookup"><span data-stu-id="7a35e-107">Get and Set the Main Application Window</span></span>](how-to-get-and-set-the-main-application-window.md)  
-  [<span data-ttu-id="7a35e-108">Otevření dialogového okna</span><span class="sxs-lookup"><span data-stu-id="7a35e-108">Open a Dialog Box</span></span>](how-to-open-a-dialog-box.md)  
-  [<span data-ttu-id="7a35e-109">Otevření okna se zprávou</span><span class="sxs-lookup"><span data-stu-id="7a35e-109">Open a Message Box</span></span>](how-to-open-a-message-box.md)  
-  [<span data-ttu-id="7a35e-110">Otevření okna</span><span class="sxs-lookup"><span data-stu-id="7a35e-110">Open a Window</span></span>](how-to-open-a-window.md)  
-  [<span data-ttu-id="7a35e-111">Vrácení výsledku dialogového okna</span><span class="sxs-lookup"><span data-stu-id="7a35e-111">Return a Dialog Box Result</span></span>](how-to-return-a-dialog-box-result.md)  
+## <a name="in-this-section"></a><span data-ttu-id="9cf12-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9cf12-104">In This Section</span></span>  
+ [<span data-ttu-id="9cf12-105">Automatické nastavení velikosti okna podle jeho obsahu</span><span class="sxs-lookup"><span data-stu-id="9cf12-105">Automatically Size a Window to Fit Its Content</span></span>](how-to-automatically-size-a-window-to-fit-its-content.md)  
+  [<span data-ttu-id="9cf12-106">Získání všech objektů Window v aplikaci</span><span class="sxs-lookup"><span data-stu-id="9cf12-106">Get all Windows in an Application</span></span>](how-to-get-all-windows-in-an-application.md)  
+  [<span data-ttu-id="9cf12-107">Získání a nastavení hlavního okna aplikace</span><span class="sxs-lookup"><span data-stu-id="9cf12-107">Get and Set the Main Application Window</span></span>](how-to-get-and-set-the-main-application-window.md)  
+  [<span data-ttu-id="9cf12-108">Otevření dialogového okna</span><span class="sxs-lookup"><span data-stu-id="9cf12-108">Open a Dialog Box</span></span>](how-to-open-a-dialog-box.md)  
+  [<span data-ttu-id="9cf12-109">Otevření okna se zprávou</span><span class="sxs-lookup"><span data-stu-id="9cf12-109">Open a Message Box</span></span>](how-to-open-a-message-box.md)  
+  [<span data-ttu-id="9cf12-110">Otevření okna</span><span class="sxs-lookup"><span data-stu-id="9cf12-110">Open a Window</span></span>](how-to-open-a-window.md)  
+  [<span data-ttu-id="9cf12-111">Vrácení výsledku dialogového okna</span><span class="sxs-lookup"><span data-stu-id="9cf12-111">Return a Dialog Box Result</span></span>](how-to-return-a-dialog-box-result.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="7a35e-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="7a35e-112">Related Sections</span></span>  
- [<span data-ttu-id="7a35e-113">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="7a35e-113">Application Management Overview</span></span>](application-management-overview.md)  
+## <a name="related-sections"></a><span data-ttu-id="9cf12-112">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="9cf12-112">Related Sections</span></span>  
+ [<span data-ttu-id="9cf12-113">Přehled správy aplikací</span><span class="sxs-lookup"><span data-stu-id="9cf12-113">Application Management Overview</span></span>](application-management-overview.md)  
   
- [<span data-ttu-id="7a35e-114">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="7a35e-114">Navigation Overview</span></span>](navigation-overview.md)  
+ [<span data-ttu-id="9cf12-114">Přehled navigace</span><span class="sxs-lookup"><span data-stu-id="9cf12-114">Navigation Overview</span></span>](navigation-overview.md)  
   
- [<span data-ttu-id="7a35e-115">Hostování</span><span class="sxs-lookup"><span data-stu-id="7a35e-115">Hosting</span></span>](hosting-wpf-applications.md)  
+ [<span data-ttu-id="9cf12-115">Hostování</span><span class="sxs-lookup"><span data-stu-id="9cf12-115">Hosting</span></span>](hosting-wpf-applications.md)  
   
- [<span data-ttu-id="7a35e-116">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="7a35e-116">Build and Deploy</span></span>](building-and-deploying-wpf-applications.md)
+ [<span data-ttu-id="9cf12-116">Sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="9cf12-116">Build and Deploy</span></span>](building-and-deploying-wpf-applications.md)

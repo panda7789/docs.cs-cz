@@ -12,45 +12,45 @@ ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d4088fe35d919cd579ed9f9a6275db8bb88300fe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59297522"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793273"
 ---
-# <a name="how-to-create-an-xml-documentation-file-using-codedom"></a><span data-ttu-id="f861c-102">Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM</span><span class="sxs-lookup"><span data-stu-id="f861c-102">How to: Create an XML Documentation File Using CodeDOM</span></span>
-<span data-ttu-id="f861c-103">CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML.</span><span class="sxs-lookup"><span data-stu-id="f861c-103">CodeDOM can be used to create code that generates XML documentation.</span></span> <span data-ttu-id="f861c-104">Tento proces zahrnuje vytvoření grafu CodeDOM, který obsahuje komentáře dokumentace XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstup dokumentaci XML.</span><span class="sxs-lookup"><span data-stu-id="f861c-104">The process involves creating the CodeDOM graph that contains the XML documentation comments, generating the code, and compiling the generated code with the compiler option that creates the XML documentation output.</span></span>  
+# <a name="how-to-create-an-xml-documentation-file-using-codedom"></a><span data-ttu-id="f6107-102">Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM</span><span class="sxs-lookup"><span data-stu-id="f6107-102">How to: Create an XML Documentation File Using CodeDOM</span></span>
+<span data-ttu-id="f6107-103">CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML.</span><span class="sxs-lookup"><span data-stu-id="f6107-103">CodeDOM can be used to create code that generates XML documentation.</span></span> <span data-ttu-id="f6107-104">Tento proces zahrnuje vytvoření grafu CodeDOM, který obsahuje komentáře dokumentace XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstup dokumentaci XML.</span><span class="sxs-lookup"><span data-stu-id="f6107-104">The process involves creating the CodeDOM graph that contains the XML documentation comments, generating the code, and compiling the generated code with the compiler option that creates the XML documentation output.</span></span>  
   
-### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a><span data-ttu-id="f861c-105">Chcete-li vytvořit grafu CodeDOM, který obsahuje komentáře dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="f861c-105">To create a CodeDOM graph that contains XML documentation comments</span></span>  
+### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a><span data-ttu-id="f6107-105">Chcete-li vytvořit grafu CodeDOM, který obsahuje komentáře dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="f6107-105">To create a CodeDOM graph that contains XML documentation comments</span></span>  
   
-1. <span data-ttu-id="f861c-106">Vytvoření <xref:System.CodeDom.CodeCompileUnit> obsahuje graf CodeDOM pro ukázkovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f861c-106">Create a <xref:System.CodeDom.CodeCompileUnit> containing the CodeDOM graph for the sample application.</span></span>  
+1. <span data-ttu-id="f6107-106">Vytvoření <xref:System.CodeDom.CodeCompileUnit> obsahuje graf CodeDOM pro ukázkovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f6107-106">Create a <xref:System.CodeDom.CodeCompileUnit> containing the CodeDOM graph for the sample application.</span></span>  
   
-2. <span data-ttu-id="f861c-107">Použití <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> konstruktor s `docComment` parametr nastaven na `true` vytvořit prvky komentářů dokumentace XML a text.</span><span class="sxs-lookup"><span data-stu-id="f861c-107">Use the <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> constructor with the `docComment` parameter set to `true` to create the XML documentation comment elements and text.</span></span>  
+2. <span data-ttu-id="f6107-107">Použití <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> konstruktor s `docComment` parametr nastaven na `true` vytvořit prvky komentářů dokumentace XML a text.</span><span class="sxs-lookup"><span data-stu-id="f6107-107">Use the <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> constructor with the `docComment` parameter set to `true` to create the XML documentation comment elements and text.</span></span>  
   
      [!code-csharp[CodeDomHelloWorldSample#4](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#4)]
      [!code-vb[CodeDomHelloWorldSample#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#4)]  
   
-### <a name="to-generate-the-code-from-the-codecompileunit"></a><span data-ttu-id="f861c-108">Ke generování kódu z CodeCompileUnit</span><span class="sxs-lookup"><span data-stu-id="f861c-108">To generate the code from the CodeCompileUnit</span></span>  
+### <a name="to-generate-the-code-from-the-codecompileunit"></a><span data-ttu-id="f6107-108">Ke generování kódu z CodeCompileUnit</span><span class="sxs-lookup"><span data-stu-id="f6107-108">To generate the code from the CodeCompileUnit</span></span>  
   
-1. <span data-ttu-id="f861c-109">Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu pro generování kódu a vytvořte zdrojový soubor ke kompilaci.</span><span class="sxs-lookup"><span data-stu-id="f861c-109">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> method to generate the code and create a source file to be compiled.</span></span>  
+1. <span data-ttu-id="f6107-109">Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu pro generování kódu a vytvořte zdrojový soubor ke kompilaci.</span><span class="sxs-lookup"><span data-stu-id="f6107-109">Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> method to generate the code and create a source file to be compiled.</span></span>  
   
      [!code-csharp[CodeDomHelloWorldSample#5](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#5)]
      [!code-vb[CodeDomHelloWorldSample#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#5)]  
   
-### <a name="to-compile-the-code-and-generate-the-documentation-file"></a><span data-ttu-id="f861c-110">Pro zkompilování kódu a generovat soubor dokumentace</span><span class="sxs-lookup"><span data-stu-id="f861c-110">To compile the code and generate the documentation file</span></span>  
+### <a name="to-compile-the-code-and-generate-the-documentation-file"></a><span data-ttu-id="f6107-110">Pro zkompilování kódu a generovat soubor dokumentace</span><span class="sxs-lookup"><span data-stu-id="f6107-110">To compile the code and generate the documentation file</span></span>  
   
-1. <span data-ttu-id="f861c-111">Přidat **/doc** – možnost kompilátoru do <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> vlastnost <xref:System.CodeDom.Compiler.CompilerParameters> objektu a předejte objekt, který má <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> metodu pro vytvoření souboru dokumentace XML, pokud kód je zkompilován.</span><span class="sxs-lookup"><span data-stu-id="f861c-111">Add the **/doc** compiler option to the <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> property of a <xref:System.CodeDom.Compiler.CompilerParameters> object and pass the object to the <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> method to create the XML documentation file when the code is compiled.</span></span>  
+1. <span data-ttu-id="f6107-111">Přidat **/doc** – možnost kompilátoru do <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> vlastnost <xref:System.CodeDom.Compiler.CompilerParameters> objektu a předejte objekt, který má <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> metodu pro vytvoření souboru dokumentace XML, pokud kód je zkompilován.</span><span class="sxs-lookup"><span data-stu-id="f6107-111">Add the **/doc** compiler option to the <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> property of a <xref:System.CodeDom.Compiler.CompilerParameters> object and pass the object to the <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> method to create the XML documentation file when the code is compiled.</span></span>  
   
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
-## <a name="example"></a><span data-ttu-id="f861c-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="f861c-112">Example</span></span>  
- <span data-ttu-id="f861c-113">Následující příklad kódu vytvoří graf CodeDOM se komentáře k dokumentaci, generuje soubor kódu z grafu a kompiluje soubor a vytvoří přidružený soubor dokumentace XML.</span><span class="sxs-lookup"><span data-stu-id="f861c-113">The following code example creates a CodeDOM graph with documentation comments, generates a code file from the graph, and compiles the file and creates an associated XML documentation file.</span></span>  
+## <a name="example"></a><span data-ttu-id="f6107-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="f6107-112">Example</span></span>  
+ <span data-ttu-id="f6107-113">Následující příklad kódu vytvoří graf CodeDOM se komentáře k dokumentaci, generuje soubor kódu z grafu a kompiluje soubor a vytvoří přidružený soubor dokumentace XML.</span><span class="sxs-lookup"><span data-stu-id="f6107-113">The following code example creates a CodeDOM graph with documentation comments, generates a code file from the graph, and compiles the file and creates an associated XML documentation file.</span></span>  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
  [!code-vb[CodeDomHelloWorldSample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#1)]  
   
- <span data-ttu-id="f861c-114">Příklad kódu vytvoří následující dokumentace XML v souboru HelloWorldDoc.xml.</span><span class="sxs-lookup"><span data-stu-id="f861c-114">The code example creates the following XML documentation in the HelloWorldDoc.xml file.</span></span>  
+ <span data-ttu-id="f6107-114">Příklad kódu vytvoří následující dokumentace XML v souboru HelloWorldDoc.xml.</span><span class="sxs-lookup"><span data-stu-id="f6107-114">The code example creates the following XML documentation in the HelloWorldDoc.xml file.</span></span>  
   
 ```xml  
 <?xml version="1.0" ?>   
@@ -75,12 +75,12 @@ ms.locfileid: "59297522"
 </doc>  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="f861c-115">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="f861c-115">Compiling the Code</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="f6107-115">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="f6107-115">Compiling the Code</span></span>  
   
--   <span data-ttu-id="f861c-116">Tento příklad kódu vyžaduje `FullTrust` oprávnění nastaveno na hodnotu úspěšně vykonat.</span><span class="sxs-lookup"><span data-stu-id="f861c-116">This code example requires the `FullTrust` permission set to execute successfully.</span></span>  
+- <span data-ttu-id="f6107-116">Tento příklad kódu vyžaduje `FullTrust` oprávnění nastaveno na hodnotu úspěšně vykonat.</span><span class="sxs-lookup"><span data-stu-id="f6107-116">This code example requires the `FullTrust` permission set to execute successfully.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f861c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f861c-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f6107-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f6107-117">See also</span></span>
 
-- [<span data-ttu-id="f861c-118">Dokumentace kódu s XML</span><span class="sxs-lookup"><span data-stu-id="f861c-118">Documenting Your Code with XML</span></span>](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
-- [<span data-ttu-id="f861c-119">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="f861c-119">XML Documentation Comments</span></span>](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)
-- [<span data-ttu-id="f861c-120">Dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="f861c-120">XML Documentation</span></span>](/cpp/ide/xml-documentation-visual-cpp)
+- [<span data-ttu-id="f6107-118">Dokumentace kódu s XML</span><span class="sxs-lookup"><span data-stu-id="f6107-118">Documenting Your Code with XML</span></span>](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+- [<span data-ttu-id="f6107-119">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="f6107-119">XML Documentation Comments</span></span>](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+- [<span data-ttu-id="f6107-120">Dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="f6107-120">XML Documentation</span></span>](/cpp/ide/xml-documentation-visual-cpp)

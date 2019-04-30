@@ -8,40 +8,40 @@ ms.assetid: 33f97d13-3022-43da-8b18-cdb5c88df9c2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 70fab3dc418e3eb92e39a7c2b1365e8582b81834
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871252"
 ---
-# <a name="mitigation-tls-protocols"></a><span data-ttu-id="0f17c-102">Omezení rizik: Protokoly TLS</span><span class="sxs-lookup"><span data-stu-id="0f17c-102">Mitigation: TLS Protocols</span></span>
-<span data-ttu-id="0f17c-103">Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> třídy mohou používat jednu z těchto tří protokolů: Protokol TLS 1.0, Tls1.1 nebo Tls 1.2.</span><span class="sxs-lookup"><span data-stu-id="0f17c-103">Starting with the .NET Framework 4.6, the <xref:System.Net.ServicePointManager?displayProperty=nameWithType> and <xref:System.Net.Security.SslStream?displayProperty=nameWithType> classes are allowed to use one of the following three protocols: Tls1.0, Tls1.1, or Tls 1.2.</span></span> <span data-ttu-id="0f17c-104">SSL3.0 protokolu a šifer RC4 nejsou podporovány.</span><span class="sxs-lookup"><span data-stu-id="0f17c-104">The SSL3.0 protocol and RC4 cipher are not supported.</span></span>  
+# <a name="mitigation-tls-protocols"></a><span data-ttu-id="2b78d-102">Omezení rizik: Protokoly TLS</span><span class="sxs-lookup"><span data-stu-id="2b78d-102">Mitigation: TLS Protocols</span></span>
+<span data-ttu-id="2b78d-103">Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> třídy mohou používat jednu z těchto tří protokolů: Protokol TLS 1.0, Tls1.1 nebo Tls 1.2.</span><span class="sxs-lookup"><span data-stu-id="2b78d-103">Starting with the .NET Framework 4.6, the <xref:System.Net.ServicePointManager?displayProperty=nameWithType> and <xref:System.Net.Security.SslStream?displayProperty=nameWithType> classes are allowed to use one of the following three protocols: Tls1.0, Tls1.1, or Tls 1.2.</span></span> <span data-ttu-id="2b78d-104">SSL3.0 protokolu a šifer RC4 nejsou podporovány.</span><span class="sxs-lookup"><span data-stu-id="2b78d-104">The SSL3.0 protocol and RC4 cipher are not supported.</span></span>  
   
-## <a name="impact"></a><span data-ttu-id="0f17c-105">Dopad</span><span class="sxs-lookup"><span data-stu-id="0f17c-105">Impact</span></span>  
- <span data-ttu-id="0f17c-106">Tato změna ovlivní:</span><span class="sxs-lookup"><span data-stu-id="0f17c-106">This change affects:</span></span>  
+## <a name="impact"></a><span data-ttu-id="2b78d-105">Dopad</span><span class="sxs-lookup"><span data-stu-id="2b78d-105">Impact</span></span>  
+ <span data-ttu-id="2b78d-106">Tato změna ovlivní:</span><span class="sxs-lookup"><span data-stu-id="2b78d-106">This change affects:</span></span>  
   
--   <span data-ttu-id="0f17c-107">Jakékoli aplikaci, která používá protokol SSL na serveru HTTPS nebo server websocket pomocí kteréhokoli z následujících typů: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.</span><span class="sxs-lookup"><span data-stu-id="0f17c-107">Any app that uses SSL to talk to an HTTPS server or a socket server using any of the following types: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, and <xref:System.Net.Security.SslStream>.</span></span>  
+- <span data-ttu-id="2b78d-107">Jakékoli aplikaci, která používá protokol SSL na serveru HTTPS nebo server websocket pomocí kteréhokoli z následujících typů: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.</span><span class="sxs-lookup"><span data-stu-id="2b78d-107">Any app that uses SSL to talk to an HTTPS server or a socket server using any of the following types: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, and <xref:System.Net.Security.SslStream>.</span></span>  
   
--   <span data-ttu-id="0f17c-108">Libovolné aplikace na straně serveru, který nelze upgradovat pro podporu protokolu Tls 1.2, protokol TLS 1.0 nebo Tls1.1...</span><span class="sxs-lookup"><span data-stu-id="0f17c-108">Any server-side app that cannot be upgraded to support Tls1.0, Tls1.1, or Tls 1.2..</span></span>  
+- <span data-ttu-id="2b78d-108">Libovolné aplikace na straně serveru, který nelze upgradovat pro podporu protokolu Tls 1.2, protokol TLS 1.0 nebo Tls1.1...</span><span class="sxs-lookup"><span data-stu-id="2b78d-108">Any server-side app that cannot be upgraded to support Tls1.0, Tls1.1, or Tls 1.2..</span></span>  
   
-## <a name="mitigation"></a><span data-ttu-id="0f17c-109">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="0f17c-109">Mitigation</span></span>  
- <span data-ttu-id="0f17c-110">Doporučené omezení rizik je upgrade aplikace straně serveru pro protokol TLS 1.0, Tls1.1 nebo Tls 1.2.</span><span class="sxs-lookup"><span data-stu-id="0f17c-110">The recommended mitigation is to upgrade the sever-side app to Tls1.0, Tls1.1, or Tls 1.2.</span></span> <span data-ttu-id="0f17c-111">Pokud to není proveditelné, nebo pokud jsou přerušená, klientské aplikace <xref:System.AppContext> třídy lze tuto funkci v některém ze dvou způsobů:</span><span class="sxs-lookup"><span data-stu-id="0f17c-111">If this is not feasible, or if client apps are broken, the <xref:System.AppContext> class can be used to opt out of this feature in either of two ways:</span></span>  
+## <a name="mitigation"></a><span data-ttu-id="2b78d-109">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="2b78d-109">Mitigation</span></span>  
+ <span data-ttu-id="2b78d-110">Doporučené omezení rizik je upgrade aplikace straně serveru pro protokol TLS 1.0, Tls1.1 nebo Tls 1.2.</span><span class="sxs-lookup"><span data-stu-id="2b78d-110">The recommended mitigation is to upgrade the sever-side app to Tls1.0, Tls1.1, or Tls 1.2.</span></span> <span data-ttu-id="2b78d-111">Pokud to není proveditelné, nebo pokud jsou přerušená, klientské aplikace <xref:System.AppContext> třídy lze tuto funkci v některém ze dvou způsobů:</span><span class="sxs-lookup"><span data-stu-id="2b78d-111">If this is not feasible, or if client apps are broken, the <xref:System.AppContext> class can be used to opt out of this feature in either of two ways:</span></span>  
   
--   <span data-ttu-id="0f17c-112">Programově pomocí fragmentu kódu, jako je následující:</span><span class="sxs-lookup"><span data-stu-id="0f17c-112">Programmatically, by using a code snippet like the following:</span></span>  
+- <span data-ttu-id="2b78d-112">Programově pomocí fragmentu kódu, jako je následující:</span><span class="sxs-lookup"><span data-stu-id="2b78d-112">Programmatically, by using a code snippet like the following:</span></span>  
   
      [!code-csharp[AppCompat.SSLProtocols#1](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.sslprotocols/cs/program.cs#1)]
      [!code-vb[AppCompat.SSLProtocols#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.sslprotocols/vb/module1.vb#1)]  
   
-     <span data-ttu-id="0f17c-113">Vzhledem k tomu, <xref:System.Net.ServicePointManager> objekt je inicializován pouze jednou, definuje tato nastavení kompatibility musí být první věc, kterou aplikace dělá.</span><span class="sxs-lookup"><span data-stu-id="0f17c-113">Because the <xref:System.Net.ServicePointManager> object is initialized only once, defining these compatibility settings must be the first thing the application does.</span></span>  
+     <span data-ttu-id="2b78d-113">Vzhledem k tomu, <xref:System.Net.ServicePointManager> objekt je inicializován pouze jednou, definuje tato nastavení kompatibility musí být první věc, kterou aplikace dělá.</span><span class="sxs-lookup"><span data-stu-id="2b78d-113">Because the <xref:System.Net.ServicePointManager> object is initialized only once, defining these compatibility settings must be the first thing the application does.</span></span>  
   
--   <span data-ttu-id="0f17c-114">Přidejte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části souboru app.config:</span><span class="sxs-lookup"><span data-stu-id="0f17c-114">By adding the following line to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of your app.config file:</span></span>  
+- <span data-ttu-id="2b78d-114">Přidejte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části souboru app.config:</span><span class="sxs-lookup"><span data-stu-id="2b78d-114">By adding the following line to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of your app.config file:</span></span>  
   
     ```xml  
     <AppContextSwitchOverrides value="Switch.System.Net.DontEnableSchUseStrongCrypto=true"/>  
     ```  
   
- <span data-ttu-id="0f17c-115">Všimněte si však, že přestanete používat výchozí chování se nedoporučuje, protože je méně zabezpečené aplikace.</span><span class="sxs-lookup"><span data-stu-id="0f17c-115">Note, however, that opting out of the default behavior is not recommended, since it makes the application less secure.</span></span>  
+ <span data-ttu-id="2b78d-115">Všimněte si však, že přestanete používat výchozí chování se nedoporučuje, protože je méně zabezpečené aplikace.</span><span class="sxs-lookup"><span data-stu-id="2b78d-115">Note, however, that opting out of the default behavior is not recommended, since it makes the application less secure.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0f17c-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0f17c-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2b78d-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2b78d-116">See also</span></span>
 
-- [<span data-ttu-id="0f17c-117">Odlišnosti ve změnách cílení</span><span class="sxs-lookup"><span data-stu-id="0f17c-117">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+- [<span data-ttu-id="2b78d-117">Odlišnosti ve změnách cílení</span><span class="sxs-lookup"><span data-stu-id="2b78d-117">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)

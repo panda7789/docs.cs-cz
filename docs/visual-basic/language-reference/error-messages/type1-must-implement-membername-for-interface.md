@@ -8,34 +8,34 @@ helpviewer_keywords:
 - BC30154
 ms.assetid: 259afdfa-3608-4760-adcb-88ec0da5020d
 ms.openlocfilehash: 86b0d46e0e27b2fd8d1fccb37f4a3c45e95f5f63
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295325"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792090"
 ---
-# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a><span data-ttu-id="7604a-102">\<Type1 >'\<typename >' musí implementovat '\<membername > "rozhraní"\<interfacename > "</span><span class="sxs-lookup"><span data-stu-id="7604a-102">\<type1>'\<typename>' must implement '\<membername>' for interface '\<interfacename>'</span></span>
-<span data-ttu-id="7604a-103">"\<typename >' musí implementovat '\<membername >" rozhraní "\<interfacename >'.</span><span class="sxs-lookup"><span data-stu-id="7604a-103">'\<typename>' must implement '\<membername>' for interface '\<interfacename>'.</span></span> <span data-ttu-id="7604a-104">Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.</span><span class="sxs-lookup"><span data-stu-id="7604a-104">Implementing property must have matching 'ReadOnly'/'WriteOnly' specifiers.</span></span>  
+# <a name="type1typename-must-implement-membername-for-interface-interfacename"></a><span data-ttu-id="8633f-102">\<Type1 >'\<typename >' musí implementovat '\<membername > "rozhraní"\<interfacename > "</span><span class="sxs-lookup"><span data-stu-id="8633f-102">\<type1>'\<typename>' must implement '\<membername>' for interface '\<interfacename>'</span></span>
+<span data-ttu-id="8633f-103">"\<typename >' musí implementovat '\<membername >" rozhraní "\<interfacename >'.</span><span class="sxs-lookup"><span data-stu-id="8633f-103">'\<typename>' must implement '\<membername>' for interface '\<interfacename>'.</span></span> <span data-ttu-id="8633f-104">Implementující vlastnost musí mít odpovídající 'ReadOnly' / specifikátory 'Jen pro zápis'.</span><span class="sxs-lookup"><span data-stu-id="8633f-104">Implementing property must have matching 'ReadOnly'/'WriteOnly' specifiers.</span></span>  
   
- <span data-ttu-id="7604a-105">Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje proceduru, vlastnost nebo událost definované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7604a-105">A class or structure claims to implement an interface but does not implement a procedure, property, or event defined by the interface.</span></span> <span data-ttu-id="7604a-106">Musíte implementovat každého člena rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7604a-106">Every member of the interface must be implemented.</span></span>  
+ <span data-ttu-id="8633f-105">Třída nebo struktura, deklarací identity pro implementaci rozhraní, ale neimplementuje proceduru, vlastnost nebo událost definované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8633f-105">A class or structure claims to implement an interface but does not implement a procedure, property, or event defined by the interface.</span></span> <span data-ttu-id="8633f-106">Musíte implementovat každého člena rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8633f-106">Every member of the interface must be implemented.</span></span>  
   
- <span data-ttu-id="7604a-107">**ID chyby:** BC30154</span><span class="sxs-lookup"><span data-stu-id="7604a-107">**Error ID:** BC30154</span></span>  
+ <span data-ttu-id="8633f-107">**ID chyby:** BC30154</span><span class="sxs-lookup"><span data-stu-id="8633f-107">**Error ID:** BC30154</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="7604a-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="7604a-108">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="8633f-108">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="8633f-108">To correct this error</span></span>  
   
-1. <span data-ttu-id="7604a-109">Deklarujte člena se stejným názvem a signaturou, jak jsou definovány v rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7604a-109">Declare a member with the same name and signature as defined in the interface.</span></span> <span data-ttu-id="7604a-110">Nezapomeňte uvést alespoň `End Function`, `End Sub`, nebo `End Property` příkazu.</span><span class="sxs-lookup"><span data-stu-id="7604a-110">Be sure to include at least the `End Function`, `End Sub`, or `End Property` statement.</span></span>  
+1. <span data-ttu-id="8633f-109">Deklarujte člena se stejným názvem a signaturou, jak jsou definovány v rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8633f-109">Declare a member with the same name and signature as defined in the interface.</span></span> <span data-ttu-id="8633f-110">Nezapomeňte uvést alespoň `End Function`, `End Sub`, nebo `End Property` příkazu.</span><span class="sxs-lookup"><span data-stu-id="8633f-110">Be sure to include at least the `End Function`, `End Sub`, or `End Property` statement.</span></span>  
   
-2. <span data-ttu-id="7604a-111">Přidat `Implements` klauzuli na konec objektu `Function`, `Sub`, `Property`, nebo `Event` příkazu.</span><span class="sxs-lookup"><span data-stu-id="7604a-111">Add an `Implements` clause to the end of the `Function`, `Sub`, `Property`, or `Event` statement.</span></span> <span data-ttu-id="7604a-112">Příklad:</span><span class="sxs-lookup"><span data-stu-id="7604a-112">For example:</span></span>  
+2. <span data-ttu-id="8633f-111">Přidat `Implements` klauzuli na konec objektu `Function`, `Sub`, `Property`, nebo `Event` příkazu.</span><span class="sxs-lookup"><span data-stu-id="8633f-111">Add an `Implements` clause to the end of the `Function`, `Sub`, `Property`, or `Event` statement.</span></span> <span data-ttu-id="8633f-112">Příklad:</span><span class="sxs-lookup"><span data-stu-id="8633f-112">For example:</span></span>  
   
     ```  
     Public Event ItHappened() Implements IBaseInterface.ItHappened  
     ```  
   
-3. <span data-ttu-id="7604a-113">Při implementaci vlastnost, ujistěte se, že `ReadOnly` nebo `WriteOnly` se používá stejným způsobem jako v definici rozhraní.</span><span class="sxs-lookup"><span data-stu-id="7604a-113">When implementing a property, make sure that `ReadOnly` or `WriteOnly` is used in the same way as in the interface definition.</span></span>  
+3. <span data-ttu-id="8633f-113">Při implementaci vlastnost, ujistěte se, že `ReadOnly` nebo `WriteOnly` se používá stejným způsobem jako v definici rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8633f-113">When implementing a property, make sure that `ReadOnly` or `WriteOnly` is used in the same way as in the interface definition.</span></span>  
   
-4. <span data-ttu-id="7604a-114">Při implementaci vlastnost, deklarujte `Get` a `Set` postupy, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="7604a-114">When implementing a property, declare `Get` and `Set` procedures, as appropriate.</span></span>  
+4. <span data-ttu-id="8633f-114">Při implementaci vlastnost, deklarujte `Get` a `Set` postupy, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="8633f-114">When implementing a property, declare `Get` and `Set` procedures, as appropriate.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7604a-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7604a-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8633f-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8633f-115">See also</span></span>
 
-- [<span data-ttu-id="7604a-116">Příkaz Implements</span><span class="sxs-lookup"><span data-stu-id="7604a-116">Implements Statement</span></span>](../../../visual-basic/language-reference/statements/implements-statement.md)
-- [<span data-ttu-id="7604a-117">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="7604a-117">Interfaces</span></span>](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [<span data-ttu-id="8633f-116">Příkaz Implements</span><span class="sxs-lookup"><span data-stu-id="8633f-116">Implements Statement</span></span>](../../../visual-basic/language-reference/statements/implements-statement.md)
+- [<span data-ttu-id="8633f-117">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="8633f-117">Interfaces</span></span>](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
