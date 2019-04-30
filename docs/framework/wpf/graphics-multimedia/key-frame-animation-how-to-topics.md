@@ -8,11 +8,11 @@ helpviewer_keywords:
 - key frames [WPF], how-to topics
 ms.assetid: a5f9ab1a-d14c-4816-8540-3c5b8c8143d5
 ms.openlocfilehash: 6b4f5de92f19223a6692236fb3496a1dbbddef5c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59226427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785642"
 ---
 # <a name="key-frame-animation-how-to-topics"></a>Postupy: Témata animace klíčových snímků
 Témata v této části ukazují, jak více než dvě hodnoty vlastností a ovládacího prvku interpolace animace pomocí klíčových snímků animace.  

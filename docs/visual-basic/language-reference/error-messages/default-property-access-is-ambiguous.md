@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
 ms.openlocfilehash: 5f058c8e7d480b9145452ae85f186a6ac2ed0d56
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58836347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61803727"
 ---
 # <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-defaultpropertyname-of-interface-interfacename1-and-defaultpropertyname-of-interface-interfacename2"></a>Přístup k výchozím vlastnostem je nejednoznačné mezi členy zděděné rozhraní\<defaultpropertyname >' rozhraní '\<interfacename1 >' a '\<defaultpropertyname > "rozhraní"\< interfacename2 > "
 Rozhraní se dědí z dvě rozhraní, z nichž každý deklaruje výchozí vlastnost se stejným názvem. Kompilátor nelze vyřešit přístup k této vlastnosti výchozí bez kvalifikace. Toto dokládá následující příklad.  
@@ -41,7 +41,7 @@ End Class
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Vyhněte se dědí všechny členy se stejným názvem. V předchozím příkladu Pokud `testObj` nemusí některé členy, například `Iface2`, deklarujte následujícím způsobem:  
+- Vyhněte se dědí všechny členy se stejným názvem. V předchozím příkladu Pokud `testObj` nemusí některé členy, například `Iface2`, deklarujte následujícím způsobem:  
   
     ```  
     Dim testObj As Iface1  
@@ -49,7 +49,7 @@ End Class
   
      -nebo-  
   
--   Implementujte rozhraní dědičné ve třídě. Potom můžete implementovat všechny zděděné vlastnosti s různými názvy. Pouze jeden z nich však může být výchozí vlastnost implementující třídu. Toto dokládá následující příklad.  
+- Implementujte rozhraní dědičné ve třídě. Potom můžete implementovat všechny zděděné vlastnosti s různými názvy. Pouze jeden z nich však může být výchozí vlastnost implementující třídu. Toto dokládá následující příklad.  
   
     ```  
     Public Class useIface3  

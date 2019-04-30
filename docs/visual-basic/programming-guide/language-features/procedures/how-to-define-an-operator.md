@@ -14,11 +14,11 @@ helpviewer_keywords:
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
 ms.openlocfilehash: 14aa25de78eb357f8474d3828aa45e48e7a4f9c7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126110"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61863842"
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>Postupy: Definice operátora (Visual Basic)
 Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - digital signatures [WCF]
 ms.assetid: 0868866d-40b4-4341-8e42-eee3b7f15b69
 ms.openlocfilehash: ea53a575802f1e7903a66c2eda466c8937fb02f9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341592"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856393"
 ---
 # <a name="encryption-of-digital-signatures"></a>Šifrování digitálních podpisů
 Ve výchozím nastavení zprávy je podepsaný a zašifrovaný a digitálně podpis zašifrují. To můžete řídit tak, že vytvoříte vlastní vazby s instancí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastavení `MessageProtectionOrder` vlastnost buď třídy <xref:System.ServiceModel.Security.MessageProtectionOrder> hodnota výčtu. Výchozí hodnota je <xref:System.ServiceModel.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature>. Tento proces trvá déle, než jednoduše podepisování a šifrování 10 až 40 procent. Zakázáním šifrování podpisu, ale může umožnit útočníkovi možnost uhádnout obsah zprávy. Je to možné, proto prvek podpisu obsahuje kód hash ve formátu prostého textu každý podepsaný části ve zprávě. Například i když obsah zprávy se šifrují ve výchozím nastavení, nešifrované podpis obsahuje kód hash těla zprávy. Pokud má zpráva malé, může útočník moct odvodit obsah. Šifrování podpis snižuje nebo eliminuje tuto možnost.  

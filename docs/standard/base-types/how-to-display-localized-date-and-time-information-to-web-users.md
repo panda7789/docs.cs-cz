@@ -16,11 +16,11 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e97bc095332e626d79561ab5fdc7bad531e3ba31
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320155"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855471"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Postupy: Zobrazování lokalizovaných informací data a času webovým uživatelům
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, operací, které analyzovat a formátování hodnot data a času, neměli byste tedy spoléhat na výchozí formát (což je nejčastěji formátu jazykové verze místní webový server) při interakci s uživatelem. Webové formuláře, které zpracovávají datum a čas uživatelský vstup řetězce místo toho by se měly analyzovat řetězců pomocí upřednostňované jazykové verze uživatele. Podobně data a času má být zobrazena na uživatele ve formátu, který odpovídá na jazykovou verzi uživatele. Toto téma ukazuje, jak to provést.  
@@ -35,9 +35,9 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
   
 4. Volání na buď `TryParse` nebo `Parse` metodu <xref:System.DateTime> nebo <xref:System.DateTimeOffset> typ zkuste převod. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
   
-    -   <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
+    - <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
   
-    -   <xref:System.Globalization.DateTimeFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
+    - <xref:System.Globalization.DateTimeFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
   
 5. Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
   
@@ -65,9 +65,9 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
   
 10. Volání na buď <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> nebo <xref:System.DateTime.TryParse%28System.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%2CSystem.DateTime%40%29?displayProperty=nameWithType> způsobů, jak převést datum a čas žádosti uživatele <xref:System.DateTime> hodnotu. Použijte přetížení metody `provider` parametr a předat buď z následujících akcí:  
   
-    -   <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 8.  
+    - <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 8.  
   
-    -   <xref:System.Globalization.DateTimeFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 8.  
+    - <xref:System.Globalization.DateTimeFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.DateTimeFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 8.  
   
 11. Pokud se nezdaří operace analýzy v kroku 10, přejděte ke kroku 13. V opačném případě volat <xref:System.UInt32.Parse%28System.String%29?displayProperty=nameWithType> způsobů, jak převést řetězcové vyjádření posun časového pásma uživatele na celé číslo.  
   
@@ -100,13 +100,13 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, o
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Chcete-li kód zkompilovat, vytvořte [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] webové stránky bez kódu na pozadí. Zkopírujte příkladu do webové stránky, takže nahradí všechny existující kód. [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Webové stránce by měl obsahovat následující prvky:  
   
--   A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
+- A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
   
--   A <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `DateString`.  
+- A <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `DateString`.  
   
--   A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
+- A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
   
--   A <xref:System.Web.UI.WebControls.HiddenField> ovládací prvek s názvem `DateInfo`.  
+- A <xref:System.Web.UI.WebControls.HiddenField> ovládací prvek s názvem `DateInfo`.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Chcete-li zabránit uživatelům ve vkládání skript do HTML streamu, uživatelský vstup by nikdy zopakuje přímo zpět v odpověď serveru. Místo toho by měla být zakódován pomocí <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType> metody.  

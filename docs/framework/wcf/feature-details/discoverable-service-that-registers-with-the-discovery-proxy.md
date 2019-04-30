@@ -3,11 +3,11 @@ title: 'Postupy: Implementace zjistitelné služby, která se registruje pomocí
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
 ms.openlocfilehash: 31c89aeed2577c5dd11ae59ee4a4d692210e5f37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856489"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování
 Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťování proxy. V předchozím tématu [jak: Implementace zjišťování Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), jste implementovali proxy zjišťování. V tomto tématu vytvoříte službu WCF, která odesílá zprávy oznámení (`Hello` a `Bye`) na server proxy zjišťování by ji chcete registrovat a deregistrovat pomocí proxy zjišťování.
@@ -18,9 +18,9 @@ Toto téma je druhý čtyři témat, která popisuje, jak implementace zjišťov
 
 2. Přidejte odkazy na následující sestavení:
 
-    1.  System.ServiceModel
+    1. System.ServiceModel
 
-    2.  System.ServiceModel.Discovery
+    2. System.ServiceModel.Discovery
 
 3. Přidejte novou třídu projektu s názvem `CalculatorService`.
 

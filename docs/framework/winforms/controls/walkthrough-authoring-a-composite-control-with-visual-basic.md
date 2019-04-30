@@ -14,11 +14,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
 ms.openlocfilehash: 6404e5933f886578b4ad8afd0d3da324541fc3f9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59299979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792246"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu
 Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní grafické rozhraní a znovu použít. Složený ovládací prvek je v podstatě komponent pomocí vizuální reprezentace. V důsledku toho může obsahovat jeden nebo více Windows Forms ovládací prvky, komponenty nebo bloky kódu, který můžete rozšířit funkce ověřování uživatelského vstupu, změnou zobrazení vlastností nebo provádění jiných úloh vyžaduje autorem. Složené ovládací prvky mohou být umístěny ve Windows Forms stejným způsobem jako ostatní ovládací prvky. V první části tohoto návodu vytvoříte jednoduchou složeného ovládacího prvku volá `ctlClock`. V druhé části tohoto průvodce, které rozšiřují funkce nástroje `ctlClock` prostřednictvím dědičnosti.  
@@ -356,7 +356,7 @@ Složené ovládací prvky poskytují způsob, kterým lze vytvořit vlastní gr
   
 11. Následujícím způsobem nastavte vlastnosti těchto ovládacích prvků.  
   
-    |Control|Vlastnost|Hodnota|  
+    |Control|Vlastnost|Value|  
     |-------------|--------------|-----------|  
     |`label1`|**Text**|`(blank space)`|  
     ||**Název**|`lblTest`|  

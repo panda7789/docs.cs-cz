@@ -10,11 +10,11 @@ helpviewer_keywords:
 - security policy [Windows Forms], Windows Forms
 ms.assetid: 932d438a-5285-46d8-a958-8c93d0ad6cae
 ms.openlocfilehash: f64d5ef2e9bb0e977b4c007e8c5109ac0c331a84
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57709546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61799369"
 ---
 # <a name="windows-forms-security"></a>Windows Forms – zabezpečení
 Windows Forms obsahuje model zabezpečení, který je založený na kódu (zabezpečení, které úrovně jsou nastavené pro kód, bez ohledu na to, uživatel, který spouští kód). To je ještě jakékoli schémata zabezpečení, které mohou být v místě již v počítači. Může jít o jazyku prohlížeče (například v zóně zabezpečení na základě dostupné v aplikaci Internet Explorer) nebo operačního systému (například zabezpečení na základě přihlašovacích údajů systému Windows NT).  

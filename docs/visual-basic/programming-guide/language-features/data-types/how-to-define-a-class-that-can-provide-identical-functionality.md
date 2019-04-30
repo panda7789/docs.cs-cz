@@ -27,11 +27,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
 ms.openlocfilehash: 9121041f936c091cda0e2af41b4f5be8d826d582
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906630"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definujte třídu, která poskytne identické funkce pro různé datové typy (Visual Basic)
 Můžete definovat třídu z které můžete vytvořit objekty, které poskytne identické funkce pro různé datové typy. K tomuto účelu můžete zadat jednu nebo víc *parametry typu* v definici. Třída pak může sloužit jako šablona pro objekty, které používají různé datové typy. Třída definována tímto způsobem se nazývá *obecnou třídu*.  
@@ -50,11 +50,11 @@ Můžete definovat třídu z které můžete vytvořit objekty, které poskytne 
   
 4. Pokud váš kód provádí operace u parametru typu jiného než jednoduché přiřazení, použijte tento parametr typu `As` klauzule, které chcete přidat jeden nebo více *omezení*. Omezení zaručuje, že na typ zadaný pro parametr typu splňuje požadavek, jako je následující:  
   
-    -   Podporuje operace, jako například `>`, který váš kód provádí  
+    - Podporuje operace, jako například `>`, který váš kód provádí  
   
-    -   Podporuje členu, například metody, které váš kód přistupuje k  
+    - Podporuje členu, například metody, které váš kód přistupuje k  
   
-    -   Zpřístupňuje konstruktor bez parametrů  
+    - Zpřístupňuje konstruktor bez parametrů  
   
      Pokud nezadáte žádné omezení, pouze konzole operations Console a váš kód může použít členy jsou jsou podporovány [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). Další informace najdete v tématu [seznam typů](../../../../visual-basic/language-reference/statements/type-list.md).  
   

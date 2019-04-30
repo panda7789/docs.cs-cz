@@ -13,8 +13,8 @@ ms.openlocfilehash: 81ca3721d33688d320ee553e32202617fe01aa5e
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59974591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914209"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Co je zastaralé v knihovně tříd rozhraní .NET Framework
 
@@ -37,11 +37,11 @@ I v případě kompilace dojde k chybě místo zprávu s upozorněním <xref:Sys
 
 Při upgradu a znovu zkompilovat existující kód, pomocí zastaralý typ nebo člen, který vede k upozornění překladače ve vaší aplikaci je zcela přijatelné. Nicméně byste měli zkontrolovat upozornění kompilátoru k určení, zda byste měli změnit kód vaší aplikace. Pokud zpráva neodkazuje na jinou vhodnou alternativu, proveďte jednu z následujících akcí:
 
--   Změňte kód tak, že odeberete použití tento typ nebo člen, pokud je to možné.
+- Změňte kód tak, že odeberete použití tento typ nebo člen, pokud je to možné.
 
      -nebo-
 
--   Projděte si dokumentaci pro tuto technologickou oblast, jak reagovat na vyřazení.
+- Projděte si dokumentaci pro tuto technologickou oblast, jak reagovat na vyřazení.
 
 Můžete se znovu zkompilovat existující kód na novější verzi rozhraní .NET Framework. Místo toho můžete určit verzi rozhraní .NET Framework, proti kterému stávajících zkompilovaný kód běží. Předpokládejme například, že máte aplikaci s názvem app1.exe, která byla zkompilována proti [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], ale má aplikace spouštět [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. To vyžaduje následující kroky:
 

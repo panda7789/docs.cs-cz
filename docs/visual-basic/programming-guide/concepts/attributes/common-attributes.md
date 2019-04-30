@@ -3,24 +3,24 @@ title: Běžné atributy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
 ms.openlocfilehash: e001c9a637d2e5e34e77158704e4ad81d6973a50
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834531"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794027"
 ---
 # <a name="common-attributes-visual-basic"></a>Běžné atributy (Visual Basic)
 Toto téma popisuje atributy, které se běžně používají v aplikacích jazyka Visual Basic.  
   
--   [Globální atributy](#Global)  
+- [Globální atributy](#Global)  
   
--   [Zastaralé atribut](#Obsolete)  
+- [Zastaralé atribut](#Obsolete)  
   
--   [Atribut Conditional.](#Conditional)  
+- [Atribut Conditional.](#Conditional)  
   
--   [Atributy informace o volajícím](#CallerInfo)  
+- [Atributy informace o volajícím](#CallerInfo)  
   
--   [Visual Basic – atributy](#VB)  
+- [Visual Basic – atributy](#VB)  
   
 ## <a name="Global"></a> Globální atributy  
  Většina atributy se použijí na konkrétní jazykové prvky, jako jsou třídy nebo metody; Nicméně některé atributy jsou globální, se vztahují na celé sestavení nebo modulu. Například <xref:System.Reflection.AssemblyVersionAttribute> atribut lze použít k vložení informací o verzi do sestavení, například takto:  
@@ -33,11 +33,11 @@ Toto téma popisuje atributy, které se běžně používají v aplikacích jazy
   
  Atributy sestavení jsou hodnoty, které obsahují informace o sestavení. Spadají do následujících kategorií:  
   
--   Atributy identity sestavení  
+- Atributy identity sestavení  
   
--   Informační atributy  
+- Informační atributy  
   
--   Atributy manifestu sestavení  
+- Atributy manifestu sestavení  
   
 ### <a name="assembly-identity-attributes"></a>Atributy Identity sestavení  
  Tři atributy (se silným názvem, pokud je k dispozici) určují identitu sestavení: název, verzi a jazykovou verzi. Tyto atributy tvoří úplný název sestavení, jsou povinné, když odkazujete v kódu. Můžete nastavit verzi a jazykovou verzi pomocí atributů sestavení. Je však nastavena hodnota názvu kompilátorem v sadě Visual Studio IDE [dialogové okno informace o sestavení](/visualstudio/ide/reference/assembly-information-dialog-box), nebo Assembly Linker (Al.exe), když se vytvoří sestavení, na základě souboru, který obsahuje manifest sestavení. <xref:System.Reflection.AssemblyFlagsAttribute> Atribut určuje, zda mohou existovat vedle sebe více kopií daného sestavení.  

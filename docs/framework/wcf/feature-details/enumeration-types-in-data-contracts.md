@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
 ms.openlocfilehash: 1837a3630424ff2a9ee4a84e9ed63f44a06bbecf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309638"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856437"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>Výčtové typy v kontraktech dat
 Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede několik příkladů, které popisují programovací model.  
@@ -43,9 +43,9 @@ Výčty lze vyjádřit v datovém modelu kontraktu. Toto téma vás provede něk
   
  Existují dvě výjimky:  
   
--   Příznak výčty (popsáno dále v tomto tématu).  
+- Příznak výčty (popsáno dále v tomto tématu).  
   
--   Datové členy výčtu s <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> nastavenou na `false` (v takovém případě výčet s hodnotou nula je vynecháno z serializovaná data).  
+- Datové členy výčtu s <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> nastavenou na `false` (v takovém případě výčet s hodnotou nula je vynecháno z serializovaná data).  
   
 ### <a name="customizing-enumeration-member-values"></a>Úpravy hodnot členů výčtu  
  Hodnota člena výčtu, která tvoří součást kontraktu dat s využitím můžete přizpůsobit <xref:System.Runtime.Serialization.EnumMemberAttribute.Value%2A> vlastnost <xref:System.Runtime.Serialization.EnumMemberAttribute> atribut.  

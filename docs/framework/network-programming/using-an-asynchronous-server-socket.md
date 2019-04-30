@@ -18,11 +18,11 @@ helpviewer_keywords:
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
 ms.openlocfilehash: 32a2a99d5f71cb500dca467433f138a893d01e5b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119922"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796816"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Použití asynchronního serverového soketu
 Asynchronního serverového sokety používají asynchronní programovací model rozhraní .NET Framework pro zpracování žádostí o služby sítě. <xref:System.Net.Sockets.Socket> Třídy vyplývá ze standardních rozhraní .NET Framework asynchronní vzor pro pojmenování; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  

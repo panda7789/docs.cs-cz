@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/29/2018
 ms.openlocfilehash: ad0da9f7f0412c14b5362e3f631a7aa4af1f8260
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611247"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61812034"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Nasazení existujících aplikací .NET jako kontejnery Windows
 
@@ -39,13 +39,13 @@ V kontejnerech Windows je plně automatizovat proces vytváření balíčků apl
 
 Mnoho organizací se kontejnerizování existující monolitických aplikací z následujících důvodů:
 
--   **Uvolnění pružné vylepšené nasazování**. Kontejnery nabízejí konzistentní nasazování kontrakt mezi vývojem a provozem. Při použití kontejnerů, Řekněme, že vývojáři nebudou slyšet, "to funguje na mém počítači, případně proč bezpečná není v produkčním prostředí?" Můžete říct, "Poběží brána jako kontejner, takže se spustí v produkčním prostředí." Zabalená aplikace se všemi jeho závislostmi, mohou být provedeny v libovolné podporované prostředí založené na kontejnerech. Způsob, jakým byl určen ke spuštění v všechny cíle nasazení (vývoj, dotazů a odpovědí, Fázování a výrobu) se spustí. Kontejnery eliminovat většina frictions, když se přesouvají z jedné fáze do druhého, což výrazně zvyšuje nasazení, a rychlejší dodání.
+- **Uvolnění pružné vylepšené nasazování**. Kontejnery nabízejí konzistentní nasazování kontrakt mezi vývojem a provozem. Při použití kontejnerů, Řekněme, že vývojáři nebudou slyšet, "to funguje na mém počítači, případně proč bezpečná není v produkčním prostředí?" Můžete říct, "Poběží brána jako kontejner, takže se spustí v produkčním prostředí." Zabalená aplikace se všemi jeho závislostmi, mohou být provedeny v libovolné podporované prostředí založené na kontejnerech. Způsob, jakým byl určen ke spuštění v všechny cíle nasazení (vývoj, dotazů a odpovědí, Fázování a výrobu) se spustí. Kontejnery eliminovat většina frictions, když se přesouvají z jedné fáze do druhého, což výrazně zvyšuje nasazení, a rychlejší dodání.
 
--   **Snížení nákladů**. Kontejnery vést ke snížení nákladů, buď konsolidace a odebrání stávající hardware nebo z aplikace spuštěné ve vyšší hustota na jednotku hardwaru.
+- **Snížení nákladů**. Kontejnery vést ke snížení nákladů, buď konsolidace a odebrání stávající hardware nebo z aplikace spuštěné ve vyšší hustota na jednotku hardwaru.
 
--   **Přenositelnost**. Kontejnery jsou moduly a přenosné. Kontejnery dockeru jsou podporovány na serverový operační systém (Linux a Windows), v libovolné významnější veřejná Cloudová (Microsoft Azure, Amazon AWS, Google, IBM) a v místní a privátní nebo hybridní Cloudová prostředí.
+- **Přenositelnost**. Kontejnery jsou moduly a přenosné. Kontejnery dockeru jsou podporovány na serverový operační systém (Linux a Windows), v libovolné významnější veřejná Cloudová (Microsoft Azure, Amazon AWS, Google, IBM) a v místní a privátní nebo hybridní Cloudová prostředí.
 
--   **Ovládací prvek**. Kontejnery nabízejí flexibilní a zabezpečené prostředí, které se řídí na úrovni kontejneru. Kontejner můžete zabezpečené, izolované a i omezené tím, že nastavíte zásady omezení spuštění v kontejneru. Podle popisu v části o kontejnerech Windows Windows Server 2016 a Hyper-V kontejnery nabízejí možnosti podpory další organizace.
+- **Ovládací prvek**. Kontejnery nabízejí flexibilní a zabezpečené prostředí, které se řídí na úrovni kontejneru. Kontejner můžete zabezpečené, izolované a i omezené tím, že nastavíte zásady omezení spuštění v kontejneru. Podle popisu v části o kontejnerech Windows Windows Server 2016 a Hyper-V kontejnery nabízejí možnosti podpory další organizace.
 
 Významné zlepšení agility, přenositelnost a ovládací prvek s tvorbou snížení nákladů při použití kontejnerů pro vývoj a údržbu aplikace.
 
@@ -123,15 +123,15 @@ Spouštění kontejneru na Windows s nebo bez izolace Hyper-V je za běhu rozhod
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Dokumentace ke službě kontejnery Windows**
+- **Dokumentace ke službě kontejnery Windows**
 
     <https://docs.microsoft.com/virtualization/windowscontainers/>
 
--   **Základy kontejnery Windows**
+- **Základy kontejnery Windows**
 
     <https://docs.microsoft.com/virtualization/windowscontainers/about/>
 
--   **Infografika: Microsoft a kontejnery**
+- **Infografika: Microsoft a kontejnery**
 
     <https://info.microsoft.com/rs/157-GQE-382/images/Container%20infographic%201.4.17.pdf>
 
@@ -145,18 +145,18 @@ Však při posuzování nasazení prostředí nebo dokonce i prostředí pro ř�
 > **Obrázek 4 – 7.5.** Ekosystém kontejneru v Azure
 
 Z ekosystému kontejneru v Azure, podporuje kontejnery, které jsou považovány za infrastrukturu následující produkty:
--   **Azure Container Instances (ACI)**
--   **Azure Virtual Machines** (s podporou kontejneru)
--   **Azure Virtual Machine Scale Sets** (s podporou kontejneru)
+- **Azure Container Instances (ACI)**
+- **Azure Virtual Machines** (s podporou kontejneru)
+- **Azure Virtual Machine Scale Sets** (s podporou kontejneru)
 
 Z těchto tří ACI poskytuje skvělé výhody, které je skutečnost, že není nutné k údržbě základní operační systém, nemusíte za vás upgradování, opravování a podobně, ale ACI stále je umístěn na úrovni infrastruktury, jak bylo vysvětleno lépe v nadcházejících částech této příručky.
 
 Produkty v podpůrných kontejnery služby Azure, které jsou ve stejnou dobu více umístěn v modelu PaaS (platforma jako služba) úrovně jsou:
 
--   **Azure App Service**
--   **Azure Kubernetes Service (AKS a ACS)**
--   **Azure Service Fabric** 
--   **Azure Batch** 
+- **Azure App Service**
+- **Azure Kubernetes Service (AKS a ACS)**
+- **Azure Service Fabric** 
+- **Azure Batch** 
 
 Azure Container Registry je vysoce škálovatelná kontejneru registru hostované v Azure, které můžete použít ze všech předchozích produktů při registrací a nasazením vlastního kontejneru obrázků.
 

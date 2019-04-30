@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
 ms.openlocfilehash: 1a02520ab7d1196b8071bda752ae30896958f372
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59105414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793715"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implementace explicitní transakce přes CommittableTransaction
 <xref:System.Transactions.CommittableTransaction> Třída poskytuje explicitní způsob pro použití transakcí, na rozdíl od použití aplikacemi <xref:System.Transactions.TransactionScope> třídy implicitně. Je užitečné pro aplikace, které chcete použít stejnou transakci napříč několika volání funkce nebo více vláken volání. Na rozdíl od <xref:System.Transactions.TransactionScope> třídy pro zápis do aplikace potřebuje konkrétně volat <xref:System.Transactions.CommittableTransaction.Commit%2A> a <xref:System.Transactions.Transaction.Rollback%2A> metody za účelem potvrzení nebo přerušení transakce.  
@@ -22,9 +22,9 @@ ms.locfileid: "59105414"
   
  Všimněte si těchto hodnot při práci s <xref:System.Transactions.CommittableTransaction> třídy  
   
--   Vytváření <xref:System.Transactions.CommittableTransaction> transakce nenastaví okolí transakce. Je třeba konkrétně nastavena a okolí transakce, ujistěte se, že správci prostředků pracovat v kontextu vpravo transakce v případě potřeby obnovit. Způsob, jak nastavit aktuální okolí transakce je nastavením statické <xref:System.Transactions.Transaction.Current%2A> vlastnost na globální <xref:System.Transactions.Transaction> objektu.  
+- Vytváření <xref:System.Transactions.CommittableTransaction> transakce nenastaví okolí transakce. Je třeba konkrétně nastavena a okolí transakce, ujistěte se, že správci prostředků pracovat v kontextu vpravo transakce v případě potřeby obnovit. Způsob, jak nastavit aktuální okolí transakce je nastavením statické <xref:System.Transactions.Transaction.Current%2A> vlastnost na globální <xref:System.Transactions.Transaction> objektu.  
   
--   Objekt <xref:System.Transactions.CommittableTransaction> objektu nelze znovu použít. Jednou <xref:System.Transactions.CommittableTransaction> objektu byla potvrzena nebo vrácena zpět, nelze jej použít znovu v transakci. To znamená nelze jej nastavit jako aktuální kontext okolí transakce.  
+- Objekt <xref:System.Transactions.CommittableTransaction> objektu nelze znovu použít. Jednou <xref:System.Transactions.CommittableTransaction> objektu byla potvrzena nebo vrácena zpět, nelze jej použít znovu v transakci. To znamená nelze jej nastavit jako aktuální kontext okolí transakce.  
   
 ## <a name="creating-a-committabletransaction"></a>Vytváření CommittableTransaction  
  Následující příklad vytvoří nový <xref:System.Transactions.CommittableTransaction> a potvrdí ji.  

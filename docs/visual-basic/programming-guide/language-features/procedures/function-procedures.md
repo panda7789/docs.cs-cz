@@ -10,11 +10,11 @@ helpviewer_keywords:
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
 ms.openlocfilehash: 568489d6034316e895cd999801241fa995aadefa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58834241"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864400"
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
 A `Function` postup je řadu příkazů jazyka Visual Basic ohraničená `Function` a `End Function` příkazy. `Function` Postupu provede úlohu a potom vrátí řízení volajícímu kódu. Když vrátí řízení, také vrátí hodnotu volajícímu kódu.  
@@ -54,7 +54,7 @@ End Function
 ## <a name="returning-values"></a>Vrací hodnoty  
  Hodnota `Function` postup odešle zpět volajícímu kódu nazývá jeho návratovou hodnotu. Postup vrátí tuto hodnotu v jednom ze dvou způsobů:  
   
--   Používá `Return` příkaz a zadejte návratovou hodnotu a vrátí řízení okamžitě na volající program. Toto dokládá následující příklad.  
+- Používá `Return` příkaz a zadejte návratovou hodnotu a vrátí řízení okamžitě na volající program. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -64,7 +64,7 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
--   Přiřadí hodnotu svůj vlastní název funkce v jeden nebo více příkazů procedury. Ovládací prvek nevrací do volajícího programu do `Exit Function` nebo `End Function` je proveden příkaz. Toto dokládá následující příklad.  
+- Přiřadí hodnotu svůj vlastní název funkce v jeden nebo více příkazů procedury. Ovládací prvek nevrací do volajícího programu do `Exit Function` nebo `End Function` je proveden příkaz. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  

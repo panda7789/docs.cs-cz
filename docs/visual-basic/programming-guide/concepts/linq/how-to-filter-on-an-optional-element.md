@@ -3,11 +3,11 @@ title: 'Postupy: Filtrování volitelného elementu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: a74b76ad-6889-4185-a189-d6ef2c63841e
 ms.openlocfilehash: f2a1c7d4091af80e79a6758bcede8f4ccc753f03
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855384"
 ---
 # <a name="how-to-filter-on-an-optional-element-visual-basic"></a>Postupy: Filtrování volitelného elementu (Visual Basic)
 Někdy budete chtít filtrovat pro element, i když si nejste jisti, že objekt že existuje v dokumentu XML. Hledání by měl provádět tak, že pokud konkrétní element nemá podřízený element, pomocí filtrování pro něj nespouštějí výjimka nulového odkazu. V následujícím příkladu `Child5` nemá element `Type` podřízený element, ale dotaz stále se provede správně.  

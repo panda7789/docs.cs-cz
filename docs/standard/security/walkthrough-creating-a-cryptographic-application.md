@@ -13,20 +13,20 @@ ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f141f21f80275a592caf3f87a5cbe0def6869c0c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59341761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795002"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu jsou určeny pro aplikaci Windows Forms. Tato aplikace neukazuje reálných scénářů, jako je například používání čipových karet. Místo toho ukazuje základní informace o šifrování a dešifrování.  
   
  Tento návod používá k šifrování podle následujících pokynů:  
   
--   Použití <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus pro šifrování a dešifrování dat pomocí jeho automaticky generované třídy <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> a <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>.  
+- Použití <xref:System.Security.Cryptography.RijndaelManaged> symetrický algoritmus pro šifrování a dešifrování dat pomocí jeho automaticky generované třídy <xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A> a <xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>.  
   
--   Použití <xref:System.Security.Cryptography.RSACryptoServiceProvider>, asymetrického algoritmu, k šifrování a dešifrování klíče k data zašifrovaná pomocí <xref:System.Security.Cryptography.RijndaelManaged>. Asymetrické algoritmy jsou nejvhodnější pro menší množství dat, jako jsou klíče.  
+- Použití <xref:System.Security.Cryptography.RSACryptoServiceProvider>, asymetrického algoritmu, k šifrování a dešifrování klíče k data zašifrovaná pomocí <xref:System.Security.Cryptography.RijndaelManaged>. Asymetrické algoritmy jsou nejvhodnější pro menší množství dat, jako jsou klíče.  
   
     > [!NOTE]
     >  Pokud chcete chránit data ve vašem počítači místo výměny šifrovaný obsah s jinými uživateli, zvažte použití <xref:System.Security.Cryptography.ProtectedData> nebo <xref:System.Security.Cryptography.ProtectedMemory> třídy.  
@@ -48,7 +48,7 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   Odkazy <xref:System.IO> a <xref:System.Security.Cryptography> obory názvů.  
+- Odkazy <xref:System.IO> a <xref:System.Security.Cryptography> obory názvů.  
   
 ## <a name="creating-a-windows-forms-application"></a>Vytvoření aplikace Windows Forms  
  Většina příkladů kódu v tomto názorném postupu jsou navržené tak, aby obslužné rutiny událostí pro ovládací prvky tlačítek. Následující tabulka uvádí prvky, které jsou vyžadovány pro ukázkovou aplikaci a požadovaná názvy v příkladech kódu.  
@@ -100,15 +100,15 @@ Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu
   
  Balíček šifrování používá následující formát:  
   
--   Délka klíče, bajty 0 – 3  
+- Délka klíče, bajty 0 – 3  
   
--   Vektor IV délka, bajty 4 – 7  
+- Vektor IV délka, bajty 4 – 7  
   
--   Šifrovaný klíč  
+- Šifrovaný klíč  
   
--   IV  
+- IV  
   
--   Šifrovaného textu  
+- Šifrovaného textu  
   
  Délek klíč a vektor IV můžete použít k určení počátečních bodů a délek všech částí šifrování balíček, který je pak možné dešifrovat soubor.  
   

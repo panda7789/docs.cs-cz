@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření vlastního účastníka trvalosti'
 ms.date: 03/30/2017
 ms.assetid: 1d9cc47a-8966-4286-94d5-4221403d9c06
 ms.openlocfilehash: 1de2abb8ababd794cd644733b6e4ab0ed42b1810
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773348"
 ---
 # <a name="how-to-create-a-custom-persistence-participant"></a>Postupy: Vytvoření vlastního účastníka trvalosti
 Následující postup obsahuje kroky k vytvoření trvalého účastníka. Najdete v článku [účastní trvalost](https://go.microsoft.com/fwlink/?LinkID=177735) ukázky a [Store rozšíření](store-extensibility.md) tématu pro ukázková implementace účastníci trvalosti.  

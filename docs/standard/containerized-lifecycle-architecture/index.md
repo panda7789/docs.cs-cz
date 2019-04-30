@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.openlocfilehash: aa3ead1cb184e23dd091822368e62f580ed73ee5
-ms.sourcegitcommit: 0069cb3de8eed4e92b2195d29e5769a76111acdd
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/16/2019
-ms.locfileid: "56332634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785627"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod ke kontejnerům a Dockeru
 

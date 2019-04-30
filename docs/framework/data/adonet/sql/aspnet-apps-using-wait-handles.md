@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
 ms.openlocfilehash: 0a17755af4027238393890545c051a063d607b6e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59224549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877757"
 ---
 # <a name="aspnet-applications-using-wait-handles"></a>Aplikace ASP.NET využívající obslužné rutiny čekání
 Zpětné volání a dotazování modelů pro zpracování asynchronní operace jsou užitečné, pokud vaše aplikace zpracovává pouze jedna asynchronní operace najednou. Modely čekání poskytují pružnější způsob zpracování více asynchronních operací. Existují dva modely čekání, s názvem pro <xref:System.Threading.WaitHandle> metody použité pro jejich implementaci: model čekání (všechny) a model čekání (vše).  

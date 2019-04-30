@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
 ms.openlocfilehash: c2923a1940e3d58b6e3434f5b02edfb02995a202
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59155932"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875304"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Použití datové služby v klientské aplikaci (WCF Data Services)
 Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu zadáním identifikátor URI pro webový prohlížeč. Identifikátor URI poskytuje adresu prostředku a zpráv žádostí se odesílají na tyto adresy k přístupu nebo změnám podkladová data, která představuje prostředek. Prohlížeč vydá příkaz HTTP GET a vrátí jako požadovaný prostředek [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
@@ -23,24 +23,24 @@ Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../..
 ### <a name="http-actions"></a>Akce HTTP  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje následující akce HTTP k provedení vytvořit, číst, aktualizovat a odstraňovat operace s daty entit, který představuje adresovaný prostředků:  
   
--   **HTTP GET** – jedná se o výchozí akci, když prostředek přistupuje z prohlížeče. Žádné datové části není zadána ve zprávy s požadavkem, a vrátí odpověď metody s datovou částí, která obsahuje požadovaná data.  
+- **HTTP GET** – jedná se o výchozí akci, když prostředek přistupuje z prohlížeče. Žádné datové části není zadána ve zprávy s požadavkem, a vrátí odpověď metody s datovou částí, která obsahuje požadovaná data.  
   
--   **HTTP POST** – vloží nový data entity do zadaného prostředku. Dat má být vložen je zadána v datové části zprávy s požadavkem. Datová část zprávy s odpovědí obsahuje data pro nově vytvořené entity. To zahrnuje všechny automaticky generované hodnoty klíče. Hlavička také obsahuje identifikátor URI, který adresuje nový prostředek entity.  
+- **HTTP POST** – vloží nový data entity do zadaného prostředku. Dat má být vložen je zadána v datové části zprávy s požadavkem. Datová část zprávy s odpovědí obsahuje data pro nově vytvořené entity. To zahrnuje všechny automaticky generované hodnoty klíče. Hlavička také obsahuje identifikátor URI, který adresuje nový prostředek entity.  
   
--   **HTTP DELETE** -odstraní data entity, který představuje zadaný prostředek. Datovou část, která není součástí zprávy požadavku nebo odpovědi.  
+- **HTTP DELETE** -odstraní data entity, který představuje zadaný prostředek. Datovou část, která není součástí zprávy požadavku nebo odpovědi.  
   
--   **HTTP PUT** – nahradí stávající data entity na požadovaný prostředek s novými daty, která je zadaná v datové části zprávy s požadavkem.  
+- **HTTP PUT** – nahradí stávající data entity na požadovaný prostředek s novými daty, která je zadaná v datové části zprávy s požadavkem.  
   
--   **Sloučit HTTP** – z důvodu nedostatečné efektivity při provádění delete, za nímž následuje vložení ve zdroji dat stejně, chcete-li změnit entity data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zavádí novou akci HTTP SLOUČENÍ. Datová část požadavku obsahuje vlastnosti, které musí být změněny na prostředek adresovaný entity. Protože sloučit HTTP není definováno ve specifikaci protokolu HTTP, může vyžadovat další zpracování směrovat žádost HTTP sloučit prostřednictvím jinou hodnotu než[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] clustery serverů.  
+- **Sloučit HTTP** – z důvodu nedostatečné efektivity při provádění delete, za nímž následuje vložení ve zdroji dat stejně, chcete-li změnit entity data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zavádí novou akci HTTP SLOUČENÍ. Datová část požadavku obsahuje vlastnosti, které musí být změněny na prostředek adresovaný entity. Protože sloučit HTTP není definováno ve specifikaci protokolu HTTP, může vyžadovat další zpracování směrovat žádost HTTP sloučit prostřednictvím jinou hodnotu než[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] clustery serverů.  
   
  Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkId=185792).  
   
 ### <a name="payload-formats"></a>Formáty datových částí  
  Pro HTTP PUT, POST protokolu HTTP nebo HTTP SLOUČENÍ žádosti datovou část zprávy požadavku obsahuje data entity, která odesíláte do datové služby. Obsah datové části závisí na formát dat zprávy. Odpovědí HTTP na všechny akce s výjimkou odstranění, také obsahovat tyto datové části. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje následující formáty datové části pro přístup k a změna dat uložených ve službě:  
   
--   **Atom** – kódování zpráv na základě jazyka XML, který je definován [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření Atom publikování protokol (AtomPub) umožňující výměny dat prostřednictvím protokolu HTTP webové informační kanály, podcasty, wikiweby a založený na formátu XML internetové funkce. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkId=185794).  
+- **Atom** – kódování zpráv na základě jazyka XML, který je definován [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření Atom publikování protokol (AtomPub) umožňující výměny dat prostřednictvím protokolu HTTP webové informační kanály, podcasty, wikiweby a založený na formátu XML internetové funkce. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkId=185794).  
   
--   **JSON** – zápis JSON (JavaScript Object) je formát pro výměnu zjednodušené data, která je založena na podmnožinu programovací jazyk JavaScript. Další informace najdete v tématu [OData: Formát JSON](https://go.microsoft.com/fwlink/?LinkId=185795).  
+- **JSON** – zápis JSON (JavaScript Object) je formát pro výměnu zjednodušené data, která je založena na podmnožinu programovací jazyk JavaScript. Další informace najdete v tématu [OData: Formát JSON](https://go.microsoft.com/fwlink/?LinkId=185795).  
   
  Formát zprávy datové části je požadováno v záhlaví zprávy s požadavkem HTTP. Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkID=185792).  
   

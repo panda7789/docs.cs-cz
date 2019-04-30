@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 67073f04cfe981dd383369029d9a4b436929a0a6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59117842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790023"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute – metoda
 Volání k nastavení vlastní atributy úrovně sestavení.  

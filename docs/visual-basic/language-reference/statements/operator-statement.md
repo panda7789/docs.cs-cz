@@ -18,11 +18,11 @@ helpviewer_keywords:
 - CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
 ms.openlocfilehash: 184970d33aae4af135153f9d6f6755770bdf84f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58818589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784056"
 ---
 # <a name="operator-statement"></a>Operator – příkaz
 Deklaruje symbol operátoru, operandy a kód, který definuje proceduru operátoru pro třídu nebo strukturu.  
@@ -114,28 +114,28 @@ End Operator
 ## <a name="matched-pairs"></a>Odpovídající páry  
  Některé operátory je nutné definovat jako odpovídající dvojice. Pokud definujete buď operátor tyto dvojice, je nutné definovat druhé také. Odpovídající páry jsou následující:  
   
--   `=` a `<>`  
+- `=` a `<>`  
   
--   `>` a `<`  
+- `>` a `<`  
   
--   `>=` a `<=`  
+- `>=` a `<=`  
   
--   `IsTrue` a `IsFalse`  
+- `IsTrue` a `IsFalse`  
   
 ## <a name="data-type-restrictions"></a>Omezení typu dat  
  Každý operátor, který definujete musí zahrnovat třídy nebo struktury, ve kterém můžete definovat. To znamená, že třída nebo struktura musí být uvedena jako datový typ z následujících akcí:  
   
--   Operand unárního operátoru.  
+- Operand unárního operátoru.  
   
--   Nejméně jeden z operandů binárního operátoru.  
+- Nejméně jeden z operandů binárního operátoru.  
   
--   Operand nebo návratového typu operátoru převodu.  
+- Operand nebo návratového typu operátoru převodu.  
   
  Některé operátory mají další datový typ omezení, následujícím způsobem:  
   
--   Pokud definujete `IsTrue` a `IsFalse` operátory, musí oba vracejí `Boolean` typu.  
+- Pokud definujete `IsTrue` a `IsFalse` operátory, musí oba vracejí `Boolean` typu.  
   
--   Pokud definujete `<<` a `>>` operátory, je nutné obojí zadat `Integer` zadejte `operandtype` z `operand2`.  
+- Pokud definujete `<<` a `>>` operátory, je nutné obojí zadat `Integer` zadejte `operandtype` z `operand2`.  
   
  Návratový typ nemá tak, aby odpovídaly typu jeden z operandů. Například operátor porovnání jako `=` nebo `<>` může vrátit `Boolean` i v případě, že ani jeden operand není `Boolean`.  
   
@@ -144,11 +144,11 @@ End Operator
   
  Nelze definovat `AndAlso` operátor přímo s `Operator` příkazu. Můžete však použít `AndAlso` Pokud jste splnili tyto podmínky:  
   
--   Jste definovali `And` na stejné typy operandů, kterou chcete použít pro `AndAlso`.  
+- Jste definovali `And` na stejné typy operandů, kterou chcete použít pro `AndAlso`.  
   
--   Definice `And` vrátí hodnotu stejného typu jako třídy nebo struktury, na kterém jste ji definovali.  
+- Definice `And` vrátí hodnotu stejného typu jako třídy nebo struktury, na kterém jste ji definovali.  
   
--   Jste definovali `IsFalse` operátor v třídě nebo struktuře, na které jste definovali `And`.  
+- Jste definovali `IsFalse` operátor v třídě nebo struktuře, na které jste definovali `And`.  
   
  Podobně můžete použít `OrElse` Pokud jste definovali `Or` u stejné operandů s návratovým typem třídy nebo struktury a jste definovali `IsTrue` v třídě nebo struktuře.  
   
@@ -157,11 +157,11 @@ End Operator
   
  Pokud deklarujete proceduru převod bude `Widening`, váš kód procedury nesmí generovat žádné chyby. To znamená, následující:  
   
--   Platná hodnota typu musí vracet vždycky `type`.  
+- Platná hodnota typu musí vracet vždycky `type`.  
   
--   Je musí zpracovat všechny výjimky a další chybové stavy.  
+- Je musí zpracovat všechny výjimky a další chybové stavy.  
   
--   Vrátí všechny chyby z všechny postupy, které volá, je musí zpracovat.  
+- Vrátí všechny chyby z všechny postupy, které volá, je musí zpracovat.  
   
  Pokud existuje riziko, které by se nemusela podařit proceduru převod, nebo ji může dojít k neošetřené výjimce, je třeba deklarovat bude `Narrowing`.  
   

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - federation [WCF], and trust
 ms.assetid: 4bdec4f2-f8a2-4512-bdcf-14ef54b5877a
 ms.openlocfilehash: 4e1529db6cc52b6b8cc8881d2b2a35a754b4b311
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59225336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856567"
 ---
 # <a name="federation-and-trust"></a>Federace a důvěryhodnost
 Toto téma popisuje různé aspekty související s federovaným aplikacím, hranicemi vztahů důvěryhodnosti a konfigurace a použití vydané tokeny ve Windows Communication Foundation (WCF).  

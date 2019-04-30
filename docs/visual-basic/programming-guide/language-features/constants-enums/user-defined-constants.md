@@ -10,11 +10,11 @@ helpviewer_keywords:
 - circular references between constants [Visual Basic]
 ms.assetid: a1206d5c-c45e-4ac2-970a-4a0be6a05fdd
 ms.openlocfilehash: f0196457235ad77df545a367573f62b43209269d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58813909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906981"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Uživatelem definované konstanty (Visual Basic)
 Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládání hodnot, které, jak již název napovídá, zůstanou neměnný po celou dobu spuštění aplikace. Můžete použít konstanty, které jsou definovány ovládací prvky nebo komponenty, které můžete pracovat, nebo můžete vytvořit svoje vlastní. Konstanty, které si sami vytvoříte, jsou popsány jako *uživatelem definované*.  
@@ -37,13 +37,13 @@ Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který
 ## <a name="scope-of-user-defined-constants"></a>Rozsah uživatelem definované konstanty  
  A `Const` obor příkazu je stejné jako u proměnné deklarované ve stejném umístění. Zadejte rozsah v některém z následujících způsobů:  
   
--   Chcete-li vytvořit konstantu, která existuje pouze v rámci procedury, deklarujte ho v rámci tohoto postupu.  
+- Chcete-li vytvořit konstantu, která existuje pouze v rámci procedury, deklarujte ho v rámci tohoto postupu.  
   
--   K vytvoření konstantu k dispozici pro všechny postupy v rámci třídy, ale ne k žádným kódem mimo modul, ji deklarujte v sekci prohlášení třídy.  
+- K vytvoření konstantu k dispozici pro všechny postupy v rámci třídy, ale ne k žádným kódem mimo modul, ji deklarujte v sekci prohlášení třídy.  
   
--   Pokud chcete vytvořit konstantu, která je k dispozici všem členům sestavení, ale ne ke klientům mimo sestavení, deklarujete jej s použitím `Friend` – klíčové slovo v sekci prohlášení třídy.  
+- Pokud chcete vytvořit konstantu, která je k dispozici všem členům sestavení, ale ne ke klientům mimo sestavení, deklarujete jej s použitím `Friend` – klíčové slovo v sekci prohlášení třídy.  
   
--   Pokud chcete vytvořit konstantní k dispozici v celé aplikaci, deklarujete jej s použitím `Public` části – klíčové slovo v deklaracích třídy.  
+- Pokud chcete vytvořit konstantní k dispozici v celé aplikaci, deklarujete jej s použitím `Public` části – klíčové slovo v deklaracích třídy.  
   
  Další informace najdete v tématu [jak: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
   

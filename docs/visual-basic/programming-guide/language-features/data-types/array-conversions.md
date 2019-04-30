@@ -13,20 +13,20 @@ helpviewer_keywords:
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
 ms.openlocfilehash: 88002e2c099ed9503beddb190d243aadcc1087fc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908021"
 ---
 # <a name="array-conversions-visual-basic"></a>Převody pole (Visual Basic)
 Typ pole lze převést na typ jiné pole, za předpokladu splnění následujících podmínek:  
   
--   **Stejné pořadí.** Rozměry dvě pole musí být stejná, to znamená, že musí mít stejný počet rozměrů. Délky příslušných dimenzí nemusí však být stejné.  
+- **Stejné pořadí.** Rozměry dvě pole musí být stejná, to znamená, že musí mít stejný počet rozměrů. Délky příslušných dimenzí nemusí však být stejné.  
   
--   **Typ dat prvku.** Datové typy prvky obou polí musí být typy odkazů. Nelze převést `Integer` pole k `Long` pole, nebo dokonce k `Object` pole, protože se účastní alespoň jednu hodnotu typu. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
+- **Typ dat prvku.** Datové typy prvky obou polí musí být typy odkazů. Nelze převést `Integer` pole k `Long` pole, nebo dokonce k `Object` pole, protože se účastní alespoň jednu hodnotu typu. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).  
   
--   **Převoditelnosti.** Převod, rozšíření ani zúžení při, musí být mezi typy prvků dvou polí. Je příklad, který tento požadavek se nezdaří pokus o převod mezi `String` pole a pole třídy odvozené z <xref:System.Attribute?displayProperty=nameWithType>. Tyto dva typy nemají co v běžných a neexistuje žádný převod jakéhokoli druhu mezi nimi.  
+- **Převoditelnosti.** Převod, rozšíření ani zúžení při, musí být mezi typy prvků dvou polí. Je příklad, který tento požadavek se nezdaří pokus o převod mezi `String` pole a pole třídy odvozené z <xref:System.Attribute?displayProperty=nameWithType>. Tyto dva typy nemají co v běžných a neexistuje žádný převod jakéhokoli druhu mezi nimi.  
   
  Převod jednoho pole typu na jiný je rozšíření ani zúžení v závislosti na tom, jestli je převod odpovídajících prvků rozšíření ani zúžení při. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   

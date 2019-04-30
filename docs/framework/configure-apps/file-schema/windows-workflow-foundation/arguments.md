@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 0f327196-f468-4be3-b6c4-68ba981a1bd6
 ms.openlocfilehash: 2b0d982997ab590ce7f0fc4c482b1ddfa6bc758f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152799"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790361"
 ---
 # <a name="arguments"></a>\<arguments>
 Představuje kolekci argumentů přidruženého k dotazu stavu aktivity.  

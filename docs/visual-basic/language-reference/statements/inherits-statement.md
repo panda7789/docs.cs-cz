@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
 ms.openlocfilehash: 5ab90e44e2809c1e71d7f100970b7be73af4a732
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58817094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784199"
 ---
 # <a name="inherits-statement"></a>Inherits – příkaz
 Způsobí, že aktuální třída nebo rozhraní zdědí atributy, proměnné, vlastnosti, procedury a události z jiné třídy nebo sady rozhraní.  
@@ -37,11 +37,11 @@ Inherits basetypenames
   
 ## <a name="rules"></a>pravidla  
   
--   **Dědičnost tříd.** Pokud používá třídu `Inherits` příkazu, můžete zadat pouze jednu základní třídu.  
+- **Dědičnost tříd.** Pokud používá třídu `Inherits` příkazu, můžete zadat pouze jednu základní třídu.  
   
      Třída nemůže dědit ze třídy do něho vnořený.  
   
--   **Rozhraní dědičnosti.** Pokud používáte rozhraní `Inherits` příkazu, můžete určit jeden nebo více základních rozhraní. Může dědit z dvě rozhraní, i když každá definovat člen se stejným názvem. Pokud tak učiníte, implementující kód používaly kvalifikace názvu určete člen implementuje.  
+- **Rozhraní dědičnosti.** Pokud používáte rozhraní `Inherits` příkazu, můžete určit jeden nebo více základních rozhraní. Může dědit z dvě rozhraní, i když každá definovat člen se stejným názvem. Pokud tak učiníte, implementující kód používaly kvalifikace názvu určete člen implementuje.  
   
      Rozhraní nemůže dědit z jiného rozhraní s více omezující úroveň přístupu. Například `Public` rozhraní nemůže dědit od třídy `Friend` rozhraní.  
   

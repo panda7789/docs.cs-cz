@@ -3,8 +3,8 @@ ms.openlocfilehash: b23f06ec5b27fbd7976a4b62ba6105c607eaee39
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59982108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664302"
 ---
 ### <a name="some-net-apis-cause-first-chance-handled-entrypointnotfoundexceptions"></a>První možnost některá rozhraní API pro .NET příčina EntryPointNotFoundExceptions (zpracování)
 

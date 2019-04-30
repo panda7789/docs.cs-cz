@@ -12,8 +12,8 @@ ms.openlocfilehash: 2d323566aa211ced9ed76302756ed5dc82c5d2c3
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59973717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857113"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
 V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
@@ -50,9 +50,9 @@ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají ko
 ### <a name="schema-representation"></a>Reprezentace schématu  
  Podrobnosti o reprezentaci schématu XML definice jazyk (XSD) schématu datových členů při `EmitDefaultValue` je nastavena na `false` jsou popsány v [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto je však stručný přehled:  
   
--   Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false`, je reprezentován ve schématu jako poznámky specifické pro Windows Communication Foundation (WCF). Neexistuje žádný interoperabilní způsob, jak reprezentaci těchto informací. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze typ datového členu.  
+- Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false`, je reprezentován ve schématu jako poznámky specifické pro Windows Communication Foundation (WCF). Neexistuje žádný interoperabilní způsob, jak reprezentaci těchto informací. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze typ datového členu.  
   
--   Použít skutečné výchozí hodnota není k dispozici ve schématu. Záleží přijímající koncového bodu správně interpretovat element nebyl nalezen.  
+- Použít skutečné výchozí hodnota není k dispozici ve schématu. Záleží přijímající koncového bodu správně interpretovat element nebyl nalezen.  
   
  Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastností se automaticky nastaví na `false` vždy, když se dříve zjistí poznámky specifické pro WCF uvedené. Je také nastavena na `false` pro typy odkazů, které mají `nillable` vlastnost nastavena na hodnotu `false` pro zajištění podpory scénářů konkrétní vzájemná funkční spolupráce, nejčastějších při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
   

@@ -3,11 +3,11 @@ title: ROW (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 06da96e8-55d7-486c-991a-4e514d837ff9
 ms.openlocfilehash: b83020601373ba93124dfb24308dd048bfa3c6dc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319388"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797823"
 ---
 # <a name="row-entity-sql"></a>ROW (Entity SQL)
 Sestaví anonymní, strukturálně typy záznamů z jedné nebo více hodnot.  
@@ -39,9 +39,9 @@ ROW(1 AS a, "abc" AS b, a+34 AS c)
   
  Výraz aliasing v konstruktoru row platí následující pravidla:  
   
--   Výrazy v konstruktoru row nelze odkazovat na jiné aliasy v konstruktoru stejné.  
+- Výrazy v konstruktoru row nelze odkazovat na jiné aliasy v konstruktoru stejné.  
   
--   Dvou výrazů ve stejné konstruktor row nemůže mít stejný alias.  
+- Dvou výrazů ve stejné konstruktor row nemůže mít stejný alias.  
   
  Další informace o konstruktorech dotazu naleznete v tématu [vytváření typů](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
   

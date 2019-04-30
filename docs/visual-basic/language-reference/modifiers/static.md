@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
 ms.openlocfilehash: de4f67fc5b60de48383a8ca886cff02b03830318
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61781183"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
 Určuje, že nejmíň jeden z deklarovaných lokálních proměnných jsou dál existovat a zachovat svou poslední hodnotu po ukončení procesu, ve kterém jsou deklarovány.  
@@ -22,13 +22,13 @@ Určuje, že nejmíň jeden z deklarovaných lokálních proměnných jsou dál 
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Static` pouze pro místní proměnné. To znamená, že deklarace kontext `Static` proměnná musí být procedura nebo blok v postupu, a nemůže být zdrojový soubor, obor názvů, třídy, struktury nebo modulu.  
+- **Místní deklarace.** Můžete použít `Static` pouze pro místní proměnné. To znamená, že deklarace kontext `Static` proměnná musí být procedura nebo blok v postupu, a nemůže být zdrojový soubor, obor názvů, třídy, struktury nebo modulu.  
   
      Nemůžete použít `Static` uvnitř procedury struktury.  
   
--   Datové typy `Static` lokální proměnné nelze odvodit. Další informace najdete v tématu [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+- Datové typy `Static` lokální proměnné nelze odvodit. Další informace najdete v tématu [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
--   **Kombinované modifikátory.** Nelze zadat `Static` spolu s `ReadOnly`, `Shadows`, nebo `Shared` ve stejné deklaraci.  
+- **Kombinované modifikátory.** Nelze zadat `Static` spolu s `ReadOnly`, `Shadows`, nebo `Shared` ve stejné deklaraci.  
   
 ## <a name="behavior"></a>Chování  
  Pokud deklarujete statickou proměnnou `Shared` postupu jenom jednu kopii statická proměnná je k dispozici pro celou aplikaci. Volání `Shared` název postupu pomocí třídy, není proměnná, která odkazuje na instanci třídy.  

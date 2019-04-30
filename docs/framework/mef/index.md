@@ -11,11 +11,11 @@ ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ae3b72cb5a1281899cdfdb514bbf5a1dc289c949
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49454496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872843"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -469,17 +469,17 @@ public class Mod : SimpleCalculator.IOperation
 
  Všimněte si, že v pořadí pro kontrakt tak, aby odpovídaly, <xref:System.ComponentModel.Composition.ExportAttribute> atribut musí být stejného typu jako <xref:System.ComponentModel.Composition.ImportAttribute>.
 
- Kompilace a spuštění projektu. Vyzkoušejte nový operátor Mod (%).
+ Kompilace a spuštění projektu. Otestovat novou Mod (%) operátor.
 
 <a name="conclusion"></a>
 ## <a name="conclusion"></a>Závěr
  V tomto tématu se vztahují o základních konceptech služby MEF.
 
--   Částí, katalogy a kontejner kompozic
+- Částí, katalogy a kontejner kompozic
 
      Části a kontejner kompozic jsou základní stavební bloky aplikací rozhraní MEF. Součástí je libovolný objekt, který importuje nebo exportuje hodnotu, až po a včetně samotného. Katalog poskytuje kolekci částí z určitého zdroje. Kontejner kompozic používá části poskytované katalog k sestavení, vazba importy pro export.
 
--   Importy a exporty
+- Importy a exporty
 
      Importy a exporty představují způsob, kterým součásti mohou komunikovat. Importu komponentu určuje potřebu konkrétní hodnotu nebo objekt a s export určuje dostupnosti hodnotu. Každý import je nalezena shoda se seznamem exporty prostřednictvím jejich smlouvy.
 

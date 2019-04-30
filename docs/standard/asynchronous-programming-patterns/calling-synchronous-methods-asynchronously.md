@@ -23,11 +23,11 @@ ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 371e958aca87c922c902d8efd945d94d611672d9
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46702878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870081"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>Asynchronní volání synchronních metod
 
@@ -45,13 +45,13 @@ Rozhraní .NET Framework umožňuje volat jakékoli metody asynchronně. Provede
 
 Příklady kódu v tomto tématu ukazují čtyři běžné způsoby použití `BeginInvoke` a `EndInvoke` pro asynchronní volání. Po volání `BeginInvoke` můžete dělat tyto věci:
 
--   Provést některé práci a následně zavolat `EndInvoke` do bloku, dokud se nedokončí volání.
+- Provést některé práci a následně zavolat `EndInvoke` do bloku, dokud se nedokončí volání.
 
--   Získat <xref:System.Threading.WaitHandle> pomocí <xref:System.IAsyncResult.AsyncWaitHandle%2A?displayProperty=nameWithType> vlastnosti, použijte jeho <xref:System.Threading.WaitHandle.WaitOne%2A> metodu pro provádění bloku, dokud <xref:System.Threading.WaitHandle> signalizován a pak vyvolejte `EndInvoke`.
+- Získat <xref:System.Threading.WaitHandle> pomocí <xref:System.IAsyncResult.AsyncWaitHandle%2A?displayProperty=nameWithType> vlastnosti, použijte jeho <xref:System.Threading.WaitHandle.WaitOne%2A> metodu pro provádění bloku, dokud <xref:System.Threading.WaitHandle> signalizován a pak vyvolejte `EndInvoke`.
 
--   Dotazování <xref:System.IAsyncResult> vrácený `BeginInvoke` k určení po dokončení asynchronního volání a následně zavolat `EndInvoke`.
+- Dotazování <xref:System.IAsyncResult> vrácený `BeginInvoke` k určení po dokončení asynchronního volání a následně zavolat `EndInvoke`.
 
--   Předání delegáta pro metodu zpětného volání pro `BeginInvoke`. Metoda se spouští podle <xref:System.Threading.ThreadPool> vlákna po dokončení asynchronního volání. Volání metody zpětného volání `EndInvoke`.
+- Předání delegáta pro metodu zpětného volání pro `BeginInvoke`. Metoda se spouští podle <xref:System.Threading.ThreadPool> vlákna po dokončení asynchronního volání. Volání metody zpětného volání `EndInvoke`.
 
 > [!IMPORTANT]
 > Bez ohledu na to, které techniku použít, vždy volejte `EndInvoke` na dokončení asynchronního volání.
@@ -101,11 +101,11 @@ Příklady kódu v tomto tématu ukazují čtyři běžné způsoby použití `B
 
  Poznámky v tomto příkladu:
 
--   `threadId` Parametr `TestMethod` je `out` parametr ([`<Out>` `ByRef` v jazyce Visual Basic), takže jeho vstupní hodnotu nikdy používají `TestMethod`. Fiktivní proměnná je předána `BeginInvoke` volání. Pokud `threadId` byly parametr `ref` parametr (`ByRef` v jazyce Visual Basic), proměnné by mohl být pole třídu úrovně tak, aby ho mohli předat i `BeginInvoke` a `EndInvoke`.
+- `threadId` Parametr `TestMethod` je `out` parametr ([`<Out>` `ByRef` v jazyce Visual Basic), takže jeho vstupní hodnotu nikdy používají `TestMethod`. Fiktivní proměnná je předána `BeginInvoke` volání. Pokud `threadId` byly parametr `ref` parametr (`ByRef` v jazyce Visual Basic), proměnné by mohl být pole třídu úrovně tak, aby ho mohli předat i `BeginInvoke` a `EndInvoke`.
 
--   Informace o stavu, který je předán `BeginInvoke` je formátovací řetězec, který používá metodu zpětného volání k formátování výstupní zprávu. Protože je předán jako typ <xref:System.Object>, informace o stavu musí být přetypovat na typ správné předtím, než je možné.
+- Informace o stavu, který je předán `BeginInvoke` je formátovací řetězec, který používá metodu zpětného volání k formátování výstupní zprávu. Protože je předán jako typ <xref:System.Object>, informace o stavu musí být přetypovat na typ správné předtím, než je možné.
 
--   Je provedeno zpětné volání <xref:System.Threading.ThreadPool> vlákna. <xref:System.Threading.ThreadPool> vlákna jsou vlákna na pozadí, které není byla aplikace spuštěná, pokud hlavní podproces skončí, takže do režimu spánku dostatečně dlouhou dobu na dokončení zpětného volání obsahuje hlavní vlákno v příkladu.
+- Je provedeno zpětné volání <xref:System.Threading.ThreadPool> vlákna. <xref:System.Threading.ThreadPool> vlákna jsou vlákna na pozadí, které není byla aplikace spuštěná, pokud hlavní podproces skončí, takže do režimu spánku dostatečně dlouhou dobu na dokončení zpětného volání obsahuje hlavní vlákno v příkladu.
 
  [!code-cpp[AsyncDelegateExamples#5](../../../samples/snippets/cpp/VS_Snippets_CLR/AsyncDelegateExamples/cpp/callback.cpp#5)]
  [!code-csharp[AsyncDelegateExamples#5](../../../samples/snippets/csharp/VS_Snippets_CLR/AsyncDelegateExamples/CS/callback.cs#5)]

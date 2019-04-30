@@ -6,11 +6,11 @@ helpviewer_keywords:
 - animation [WPF], Popup controls
 ms.assetid: acaa2a0a-6137-4efd-9cd1-75ece222e390
 ms.openlocfilehash: b70d9c4cb1bca26a6c77d3a7c50add517ca8ef92
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59150108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911284"
 ---
 # <a name="how-to-animate-a-popup"></a>Postupy: Animace prvku Popup
 Tento příklad ukazuje dva způsoby, jak animovat <xref:System.Windows.Controls.Primitives.Popup> ovládacího prvku.  

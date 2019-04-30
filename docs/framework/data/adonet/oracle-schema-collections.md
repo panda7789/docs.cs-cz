@@ -3,11 +3,11 @@ title: Kolekce schémat Oracle
 ms.date: 03/30/2017
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
 ms.openlocfilehash: 016a21b2106e955fd9806c5fb62833bc37da1f2f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57371642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878472"
 ---
 # <a name="oracle-schema-collections"></a>Kolekce schémat Oracle
 

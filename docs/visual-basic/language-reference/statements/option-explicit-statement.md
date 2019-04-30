@@ -12,11 +12,11 @@ helpviewer_keywords:
 - Option Explicit statement [Visual Basic]
 ms.assetid: e82ac1ad-2cd3-49b2-b985-8bcf016f3fcc
 ms.openlocfilehash: 0a319ba4259e66ed9a37aa2de9e97d2335b78663
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308611"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784043"
 ---
 # <a name="option-explicit-statement-visual-basic"></a>Option Explicit – příkaz (Visual Basic)
 Vynutí explicitní deklaraci všech proměnných do souboru nebo umožňuje implicitní deklarací proměnných.  
@@ -57,7 +57,7 @@ Option Explicit { On | Off }
   
 #### <a name="to-set-option-explicit-on-the-command-line"></a>Chcete-li nastavit na příkazovém řádku Option Explicit  
   
--   Zahrnout [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) – možnost kompilátoru v **Vbc –** příkazu.  
+- Zahrnout [/optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md) – možnost kompilátoru v **Vbc –** příkazu.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `Option Explicit` příkaz vynutit explicitní deklaraci všech proměnných. Pokus o použití Nedeklarovaná proměnná způsobí chybu v době kompilace.  

@@ -3,11 +3,11 @@ title: Stručné reference k Entity SQL
 ms.date: 03/30/2017
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
 ms.openlocfilehash: b4e3eaf8abd82b63fa2663b47f878ecfa9584897
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785252"
 ---
 # <a name="entity-sql-quick-reference"></a>Stručné reference k Entity SQL
 Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotazy. Dotazy v tomto tématu jsou založeny na modelu AdventureWorks Sales.  
@@ -27,7 +27,7 @@ Toto téma poskytuje rychlý odkaz na [!INCLUDE[esql](../../../../../../includes
   
  Výstup:  
   
-|Value|  
+|Hodnota|  
 |-----------|  
 |Dobrý den|  
   
@@ -358,7 +358,7 @@ CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END
   
  Výstup:  
   
-|Value|  
+|Hodnota|  
 |-----------|  
 |HODNOTA TRUE|  
   

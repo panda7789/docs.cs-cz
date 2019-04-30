@@ -18,20 +18,20 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b485811b0e7d2f657ff2d2c1d7a2aa135e48a335
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59154684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61771667"
 ---
 # <a name="iclrruntimeinfoloaderrorstring-method"></a>ICLRRuntimeInfo::LoadErrorString – metoda
 Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
   
  Tato metoda nahrazuje následující funkce:  
   
--   [LoadStringRC](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
+- [LoadStringRC](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
   
--   [LoadStringRCEx](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
+- [LoadStringRCEx](../../../../docs/framework/unmanaged-api/hosting/loadstringrcex-function.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   

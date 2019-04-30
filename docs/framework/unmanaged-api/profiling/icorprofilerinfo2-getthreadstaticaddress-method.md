@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e8a842dd531576b1029c3924d12b1a4bd95bde37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115203"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791557"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress – metoda
 Získá adresu zadané pole vlákna, která je v rámci zadaného vlákna.  
@@ -53,9 +53,9 @@ HRESULT GetThreadStaticAddress(
 ## <a name="remarks"></a>Poznámky  
  `GetThreadStaticAddress` Metoda může vrátit jednu z následujících akcí:  
   
--   CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.  
+- CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.  
   
--   Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy můžou stát neplatnými po uvolnění paměti, takže se po uvolňování paměti kolekce profilovací programy by neměl předpokládají, že jsou platné.  
+- Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy můžou stát neplatnými po uvolnění paměti, takže se po uvolňování paměti kolekce profilovací programy by neměl předpokládají, že jsou platné.  
   
  Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.  
   

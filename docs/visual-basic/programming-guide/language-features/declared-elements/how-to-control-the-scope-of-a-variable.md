@@ -13,11 +13,11 @@ helpviewer_keywords:
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
 ms.openlocfilehash: 24a7ae3b8f3400beeaedb20ea6352ea44bdb7597
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794729"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
 Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použití v rámci oblasti, ve kterém se deklaruje. V některých případech je proměnná společnosti *úroveň přístupu* mohou mít vliv na svém oboru.  
@@ -28,13 +28,13 @@ Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použit�
   
 #### <a name="to-make-a-variable-visible-only-within-a-block"></a>Aby byla proměnná viditelná pouze v rámci bloku  
   
--   Místo [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) proměnné mezi zahájení a ukončení příkazy deklarace tohoto bloku, například mezi `For` a `Next` prohlášení o `For` smyčky.  
+- Místo [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) proměnné mezi zahájení a ukončení příkazy deklarace tohoto bloku, například mezi `For` a `Next` prohlášení o `For` smyčky.  
   
      Mohou odkazovat na proměnné pouze z v rámci bloku.  
   
 #### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Aby byla proměnná viditelná pouze v rámci procedury  
   
--   Místo `Dim` příkaz pro proměnnou uvnitř procesu, ale mimo všechny bloky (například `With`... `End With` bloku).  
+- Místo `Dim` příkaz pro proměnnou uvnitř procesu, ale mimo všechny bloky (například `With`... `End With` bloku).  
   
      Mohou odkazovat na proměnné pouze z v rámci procedury, stejně jako dovnitř všechny bloky obsažené v postupu.  
   

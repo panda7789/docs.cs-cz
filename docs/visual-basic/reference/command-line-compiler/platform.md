@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 ms.openlocfilehash: db9b3d31ba9657d26c1fb76ce4002afad949a881
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301162"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788905"
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
 Určuje, jaké verze platformy common language runtime (CLR) můžete spustit výstupního souboru.  
@@ -38,31 +38,31 @@ Určuje, jaké verze platformy common language runtime (CLR) můžete spustit v�
   
  Sestavení rozhraní .NET Framework, které jsou napsané v jazyce Visual Basic, poběží stejný bez ohledu na platformu. Existují však případy, které se chovají jinak na různých platformách. Tyto běžné případy jsou:  
   
--   Struktury, které obsahují členy, které se mění velikost v závislosti na platformě, jako je například libovolný typ ukazatele.  
+- Struktury, které obsahují členy, které se mění velikost v závislosti na platformě, jako je například libovolný typ ukazatele.  
   
--   Aritmetika ukazatele, který obsahuje konstantní velikostí.  
+- Aritmetika ukazatele, který obsahuje konstantní velikostí.  
   
--   Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Integer` pro popisovače místo <xref:System.IntPtr>.  
+- Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Integer` pro popisovače místo <xref:System.IntPtr>.  
   
--   Přetypování <xref:System.IntPtr> k `Integer`.  
+- Přetypování <xref:System.IntPtr> k `Integer`.  
   
--   Pomocí platformy vyvolat nebo komunikace s objekty COM s komponentami, které neexistují na všech platformách.  
+- Pomocí platformy vyvolat nebo komunikace s objekty COM s komponentami, které neexistují na všech platformách.  
   
  **-Platform** možnost zmírnit některé problémy, pokud víte, že jste provedli předpoklady o architektuře váš kód poběží. Konkrétně:  
   
--   Pokud se rozhodnete cílit na 64bitové platformě a v 32bitovém počítači při spuštění aplikace, chybová zpráva obsahuje mnohem dříve a více zaměřuje se na problému než chybu, která probíhá, aniž by tento přepínač.  
+- Pokud se rozhodnete cílit na 64bitové platformě a v 32bitovém počítači při spuštění aplikace, chybová zpráva obsahuje mnohem dříve a více zaměřuje se na problému než chybu, která probíhá, aniž by tento přepínač.  
   
--   Pokud jste nastavili `x86` příznak na možnosti a následně při spuštění aplikace na 64bitovém počítači, bude aplikace spuštěna v subsystému WOW, místo spouštění nativně.  
+- Pokud jste nastavili `x86` příznak na možnosti a následně při spuštění aplikace na 64bitovém počítači, bude aplikace spuštěna v subsystému WOW, místo spouštění nativně.  
   
  V operačním systému Windows 64-bit:  
   
--   Sestavení zkompilovaná `-platform:x86` se spustí na 32-bit CLR spuštěna v modulu WOW64.  
+- Sestavení zkompilovaná `-platform:x86` se spustí na 32-bit CLR spuštěna v modulu WOW64.  
   
--   Spustitelné soubory zkompilovaná `-platform:anycpu` se spustí na 64bitový modul CLR.  
+- Spustitelné soubory zkompilovaná `-platform:anycpu` se spustí na 64bitový modul CLR.  
   
--   Knihovna DLL zkompilovaná `-platform:anycpu` se spustí na stejném modulu CLR jako proces, do kterého ji načíst.  
+- Knihovna DLL zkompilovaná `-platform:anycpu` se spustí na stejném modulu CLR jako proces, do kterého ji načíst.  
   
--   Spustitelné soubory, které jsou kompilovány pomocí `-platform:anycpu32bitpreferred` se spustí na 32-bit CLR.  
+- Spustitelné soubory, které jsou kompilovány pomocí `-platform:anycpu32bitpreferred` se spustí na 32-bit CLR.  
   
  Další informace o tom, jak vyvinout aplikaci v 64bitové verzi Windows, naleznete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
   

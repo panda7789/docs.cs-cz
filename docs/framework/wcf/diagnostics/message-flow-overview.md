@@ -3,20 +3,20 @@ title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
 ms.openlocfilehash: d75a535a601612196ef66151a4685723e048848f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59772658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797476"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuovaném systému obsahující propojených služeb je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí tok požadavku pro podporu důležitých scénářů, jako je stav monitorování, řešení problémů a analýzu kořenových příčin. Chcete-li povolit trasování korelace různých služeb v rozhraní .NET Framework 4 přidali jsme podporu prostřednictvím následujících funkcí:
 
--   Analytické trasování: Vysoký výkon a nízkou úroveň podrobností funkce trasování pomocí Event Tracing for Windows (ETW).
+- Analytické trasování: Vysoký výkon a nízkou úroveň podrobností funkce trasování pomocí Event Tracing for Windows (ETW).
 
--   Aktivita začátku do konce modelu pro služby WCF/WF: Tato funkce podporuje korelace trasování vygenerovaná <xref:System.ServiceModel> a <xref:System.Workflow.ComponentModel> obory názvů.
+- Aktivita začátku do konce modelu pro služby WCF/WF: Tato funkce podporuje korelace trasování vygenerovaná <xref:System.ServiceModel> a <xref:System.Workflow.ComponentModel> obory názvů.
 
--   Trasování událostí pro Windows Sledování pracovního postupu: Tato funkce používá sledování záznamů vygenerovaných službami WF poskytnout přehled o aktuálním stavu a průběhu pracovního postupu.
+- Trasování událostí pro Windows Sledování pracovního postupu: Tato funkce používá sledování záznamů vygenerovaných službami WF poskytnout přehled o aktuálním stavu a průběhu pracovního postupu.
 
  Chyby přihlášení sledování nebo sledování záznamů lze použít k vyhledání vad kódu nebo nesprávně vytvořený zprávy. Vlastnost ID korelace uzlu v záhlaví zprávy události. je možné určit neškodné aktivity. Pokud chcete povolit trasování toku zpráv podle ID aktivity, naleznete v tématu [Konfigurace trasování toku zpráv](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Toto téma ukazuje, jak povolit trasování toku zpráv v projektu vytvořeného v tomto kurzu Začínáme.
 

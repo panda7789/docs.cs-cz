@@ -3,11 +3,11 @@ title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
 ms.openlocfilehash: 27b7eef345dd8ec6c4f5e319818b6b002717f049
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59105479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61917629"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  
@@ -31,9 +31,9 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
 ## <a name="cascade-delete"></a>Kaskádové odstranění  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje ani rozpoznat kaskádové odstranění operace. Pokud chcete odstranit řádek v tabulce, která má omezení u ní, musíte udělat jednu z následujících akcí:  
   
--   Nastavte `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi.  
+- Nastavte `ON DELETE CASCADE` pravidlo v omezení cizího klíče v databázi.  
   
--   Pomocí vlastního kódu nejprve odstranit podřízené objekty, které brání nadřazený objekt odstranit.  
+- Pomocí vlastního kódu nejprve odstranit podřízené objekty, které brání nadřazený objekt odstranit.  
   
  V opačném případě <xref:System.Data.SqlClient.SqlException> je vyvolána výjimka.  
   
@@ -42,11 +42,11 @@ Následující informace uvádí některé problémy, může dojít v vaše [!IN
 ## <a name="expression-not-queryable"></a>Výraz není dotazovatelné  
  Pokud se zobrazí "výraz [výrazu] není dotazovatelné; chybí vám odkaz na sestavení?" Chyba, ujistěte se, že z následujících akcí:  
   
--   Vaše aplikace cílí [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)].  
+- Vaše aplikace cílí [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)].  
   
--   Budete mít odkaz na `System.Core.dll` a `System.Data.Linq.dll`.  
+- Budete mít odkaz na `System.Core.dll` a `System.Data.Linq.dll`.  
   
--   Máte `Imports` (Visual Basic) nebo `using` – direktiva (C#) pro <xref:System.Linq> a <xref:System.Data.Linq>.  
+- Máte `Imports` (Visual Basic) nebo `using` – direktiva (C#) pro <xref:System.Linq> a <xref:System.Data.Linq>.  
   
 ## <a name="duplicatekeyexception"></a>DuplicateKeyException  
  Při ladění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projektu, může procházet vztahy entity. To přináší tyto položky do mezipaměti, a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se dozví o jejich výskytu. Pokud se potom pokusíte o provedení <xref:System.Data.Linq.Table%601.Attach%2A> nebo <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A> nebo podobné metody, která vytváří více řádků, které mají stejný klíč <xref:System.Data.Linq.DuplicateKeyException> je vyvolána výjimka.  

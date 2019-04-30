@@ -10,11 +10,11 @@ helpviewer_keywords:
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
 ms.openlocfilehash: 86921b610b4b42cfc0393af2966b70870bc650f9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59104478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61773766"
 ---
 # <a name="opentype-font-features"></a>Funkce písma OpenType
 
@@ -26,15 +26,15 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
   
  [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Formát písma řeší následující problémy pro vývojáře:  
   
--   Širší podporu pro víc platforem.  
+- Širší podporu pro víc platforem.  
   
--   Lepší podpora mezinárodních znakových sad.  
+- Lepší podpora mezinárodních znakových sad.  
   
--   Lepší ochrana pro data písma.  
+- Lepší ochrana pro data písma.  
   
--   Menší velikosti souborů zefektivnit distribuci písma.  
+- Menší velikosti souborů zefektivnit distribuci písma.  
   
--   Širší podporu pro pokročilé typografické kontrolu.  
+- Širší podporu pro pokročilé typografické kontrolu.  
   
 > [!NOTE]
 >  Sada Windows SDK obsahuje sadu ukázkových [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písem, které můžete použít s [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Těchto písmo poskytuje většinu funkcí znázorněn ve zbývající části tohoto tématu. Další informace najdete v tématu [Ukázková sada písem OpenType](sample-opentype-font-pack.md).  
@@ -44,11 +44,11 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
 ### <a name="advanced-typographic-extensions"></a>Pokročilé typografickém rozšíření  
  Pokročilé typografickém tabulky ([!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] rozložení tabulky) rozšiřují funkce nástroje písma s oběma [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] nebo vývojového diagramu křížového procesu jsou podrobněji popsány dále. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Rozložení písma obsahují další informace, které rozšiřuje možnosti písma pro podporu mezinárodní Typografie vysoké kvalitě. Většina [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma vystavit pouze podmnožinu celkové [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] funkce, které jsou k dispozici. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] písma poskytují následující funkce.  
   
--   Bohaté mapování mezi znaky a glyfy, které podporují ligatur, poziční formulářů, alternativní úložiště a dalších náhrady písma.  
+- Bohaté mapování mezi znaky a glyfy, které podporují ligatur, poziční formulářů, alternativní úložiště a dalších náhrady písma.  
   
--   Podpora dvojrozměrné umístění a piktogram přílohy.  
+- Podpora dvojrozměrné umístění a piktogram přílohy.  
   
--   Explicitní skriptu a jazyk informace obsažené v písma, tak text zpracování aplikace můžete upravit jeho chování odpovídajícím způsobem.  
+- Explicitní skriptu a jazyk informace obsažené v písma, tak text zpracování aplikace můžete upravit jeho chování odpovídajícím způsobem.  
   
  [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] Rozložení tabulky jsou popsány podrobněji ["Písmo soubor tabulky"](https://www.microsoft.com/typography/otspec/otff.htm) část [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] specifikace.  
   
@@ -120,13 +120,13 @@ Toto téma obsahuje základní informace o některé klíčové funkce [!INCLUDE
 ## <a name="ligatures"></a>Ligatur  
  Ligatur jsou dvě nebo více glyfy, které jsou uspořádané do jednoho piktogram Chcete-li vytvořit z něj číst nebo atraktivní text. [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] podporuje čtyři typy ligatur:  
   
--   **Standardní ligatury**. Účelem je zlepšit čitelnost. Standardní ligatury zahrnují "fi", "USA" a "ff".  
+- **Standardní ligatury**. Účelem je zlepšit čitelnost. Standardní ligatury zahrnují "fi", "USA" a "ff".  
   
--   **Kontextové ligatur**. Účelem je zlepšit čitelnost tím, že poskytuje lepší spojování chování mezi znaky, které tvoří Zadaná vazba.  
+- **Kontextové ligatur**. Účelem je zlepšit čitelnost tím, že poskytuje lepší spojování chování mezi znaky, které tvoří Zadaná vazba.  
   
--   **Volitelné ligatury**. Navržena jako dekorativní a ne specificky navržených pro lepší čitelnost.  
+- **Volitelné ligatury**. Navržena jako dekorativní a ne specificky navržených pro lepší čitelnost.  
   
--   **Historických ligatur**. Navržena jako historická data a ne specificky navržených pro lepší čitelnost.  
+- **Historických ligatur**. Navržena jako historická data a ne specificky navržených pro lepší čitelnost.  
   
  Následující text zobrazí standardní ligatury glyfy Pericles písma.  
   

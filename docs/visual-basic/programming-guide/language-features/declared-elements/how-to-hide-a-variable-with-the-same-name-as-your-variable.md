@@ -13,18 +13,18 @@ helpviewer_keywords:
 - declared elements [Visual Basic], about declared elements
 ms.assetid: e39c0752-f19f-4d2e-a453-00df1b5fc7ee
 ms.openlocfilehash: 744c7aed50690d5591d1e8248e121cb66ef39108
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794703"
 ---
 # <a name="how-to-hide-a-variable-with-the-same-name-as-your-variable-visual-basic"></a>Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná (Visual Basic)
 Můžete skrýt proměnné tak *stínováním* ho tedy předefinováním proměnnou se stejným názvem. Můžete stínové proměnné, které chcete skrýt dvěma způsoby:  
   
--   **Stínový provoz prostřednictvím oboru.** Můžete ho stínové prostřednictvím oboru ve změně deklarace je uvnitř podoblasti oblasti, který obsahuje proměnné, které chcete skrýt.  
+- **Stínový provoz prostřednictvím oboru.** Můžete ho stínové prostřednictvím oboru ve změně deklarace je uvnitř podoblasti oblasti, který obsahuje proměnné, které chcete skrýt.  
   
--   **Stínový provoz prostřednictvím dědičnosti.** Pokud chcete skrýt proměnné je definován na úrovni třídy, je můžete stínové ji prostřednictvím dědičnosti ve změně deklarace s [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v odvozené třídě.  
+- **Stínový provoz prostřednictvím dědičnosti.** Pokud chcete skrýt proměnné je definován na úrovni třídy, je můžete stínové ji prostřednictvím dědičnosti ve změně deklarace s [stíny](../../../../visual-basic/language-reference/modifiers/shadows.md) – klíčové slovo v odvozené třídě.  
   
 ## <a name="two-ways-to-hide-a-variable"></a>Dva způsoby, jak skrýt proměnné  
   

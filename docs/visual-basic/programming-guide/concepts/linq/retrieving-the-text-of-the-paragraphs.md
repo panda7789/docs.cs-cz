@@ -3,11 +3,11 @@ title: Načtení textu odstavců (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 095fa0d9-7b1b-4cbb-9c13-e2c9d8923d31
 ms.openlocfilehash: bc6035c7d894d30b1441dd35925c233e02d35163
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830003"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787020"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-visual-basic"></a>Načtení textu odstavců (Visual Basic)
 Tento příklad je založen na předchozím příkladu [načtení odstavců a jejich stylů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text k jednotlivým odstavcům jako řetězec.  
@@ -139,7 +139,7 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Další kroky  
  Následující příklad ukazuje způsob použití metody rozšíření, namísto <xref:System.Linq.Enumerable.Aggregate%2A>pro řetězení více řetězců do jednoho řetězce.  
   
--   [Refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+- [Refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
   
 ## <a name="see-also"></a>Viz také:
 

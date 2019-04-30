@@ -7,11 +7,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
 ms.openlocfilehash: eb1ba14bbcfe4e561fa575b9802126fab59d31fc
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56968032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61860608"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 
@@ -103,15 +103,15 @@ Takže to si žádá otázku, **by měl pouze použijete syntaxi dotazu?**
 
 Odpověď na tuto otázku se **Ano** Pokud...
 
-*   Stávající základ kódu už používá syntaxi dotazu
-*   Je potřeba proměnné s rozsahem v rámci své dotazy z důvodu složitosti
-*   Dáváte přednost syntaxi dotazů a nebude odklánět pozornost od vašeho základu kódu
+* Stávající základ kódu už používá syntaxi dotazu
+* Je potřeba proměnné s rozsahem v rámci své dotazy z důvodu složitosti
+* Dáváte přednost syntaxi dotazů a nebude odklánět pozornost od vašeho základu kódu
 
 Odpověď na tuto otázku se **žádné** Pokud...
 
-*   Stávající základ kódu už používá syntaxi rozhraní API
-*   Nemáte žádné požadavky na rozsah proměnné v dotazech
-*   Dáváte přednost syntaxi rozhraní API a nebude odklánět pozornost od vašeho základu kódu
+* Stávající základ kódu už používá syntaxi rozhraní API
+* Nemáte žádné požadavky na rozsah proměnné v dotazech
+* Dáváte přednost syntaxi rozhraní API a nebude odklánět pozornost od vašeho základu kódu
 
 ## <a name="essential-samples"></a>Základní ukázky
 
@@ -119,7 +119,7 @@ Seznam skutečně komplexní ukázky dotazů LINQ naleznete [101 ukázek pro LIN
 
 Tady je rychlý ukázku některé základní údaje LINQ. To není nijak komplexní, protože LINQ poskytuje výrazně víc funkcí než co se tady zobrazují.
 
-*   A másle bread - `Where`, `Select`, a `Aggregate`:
+* A másle bread - `Where`, `Select`, a `Aggregate`:
 
 ```csharp
 // Filtering a list
@@ -142,14 +142,14 @@ int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```
 
-*   Sloučení seznamů:
+* Sloučení seznamů:
 
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
 ```
 
-*   Sjednocení mezi dvěma sadami (s vlastní Komparátor):
+* Sjednocení mezi dvěma sadami (s vlastní Komparátor):
 
 ```csharp
 public class DogHairLengthComparer : IEqualityComparer<Dog>
@@ -184,7 +184,7 @@ public class DogHairLengthComparer : IEqualityComparer<Dog>
 var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthComparer());
 ```
 
-*   Průnik mezi dvěma sadami:
+* Průnik mezi dvěma sadami:
 
 ```csharp
 // Gets the volunteers who spend share time with two humane societies.
@@ -192,7 +192,7 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
 ```
 
-*   Pořadí:
+* Pořadí:
 
 ```csharp
 // Get driving directions, ordering by if it's toll-free before estimated driving time.
@@ -201,7 +201,7 @@ var results = DirectionsProcessor.GetDirections(start, end)
               .ThenBy(direction => direction.EstimatedTime);
 ```
 
-*   Nakonec více advanced vzorku: určení, jestli jsou stejné hodnoty vlastností dvě instance stejného typu (Borrowed a upravené z [tento příspěvek na StackOverflow](https://stackoverflow.com/a/844855)):
+* Nakonec více advanced vzorku: určení, jestli jsou stejné hodnoty vlastností dvě instance stejného typu (Borrowed a upravené z [tento příspěvek na StackOverflow](https://stackoverflow.com/a/844855)):
 
 ```csharp
 public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params string[] ignore) where T : class
@@ -252,6 +252,6 @@ Paralelizovat úlohy vázané na procesor, které lze snadno vyjádřit pomocí 
 
 ## <a name="further-resources"></a>Další materiály:
 
-*   [101 ukázek pro LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-*   [Linqpad](https://www.linqpad.net/), playground prostředí a dotazování databáze modul pro C#/F#/VB
-*   [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), e knihu naučí, jak je implementovaná LINQ na objekty
+* [101 ukázek pro LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
+* [Linqpad](https://www.linqpad.net/), playground prostředí a dotazování databáze modul pro C#/F#/VB
+* [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), e knihu naučí, jak je implementovaná LINQ na objekty

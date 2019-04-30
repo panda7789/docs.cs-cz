@@ -3,11 +3,11 @@ title: Zpracování chyb WCF
 ms.date: 03/30/2017
 ms.assetid: 1e4b1e0f-9598-449d-9d73-90bda62305b8
 ms.openlocfilehash: d70edacd2447fbe0b0b6db42b93f699ce7c17003
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791219"
 ---
 # <a name="wcf-error-handling"></a>Zpracování chyb WCF
 Chyb zjištěných aplikací WCF patří do jedné ze tří skupin:  
@@ -26,13 +26,13 @@ Chyb zjištěných aplikací WCF patří do jedné ze tří skupin:
   
  Zpracování chyb v WCF provádí jeden nebo více z následujících akcí:  
   
--   Přímo zpracování výjimky. To je pouze pro komunikaci a chyby proxy nebo kanálu.  
+- Přímo zpracování výjimky. To je pouze pro komunikaci a chyby proxy nebo kanálu.  
   
--   Použití kontraktů selhání  
+- Použití kontraktů selhání  
   
--   Implementace <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní  
+- Implementace <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní  
   
--   Zpracování <xref:System.ServiceModel.ServiceHost> události  
+- Zpracování <xref:System.ServiceModel.ServiceHost> události  
   
 ## <a name="fault-contracts"></a>Kontrakty selhání  
  Kontrakty selhání umožňují definovat chyby, které se můžou objevit během operace služby na platformě nezávisle. Ve výchozím nastavení budou vráceny všechny výjimky vyvolané z v rámci operace služby ke klientovi jako <xref:System.ServiceModel.FaultException> objektu. <xref:System.ServiceModel.FaultException> Objekt bude obsahovat velmi málo informací. Můžete určit informace o klientovi definováním kontrakt chyby a vrátí chyba jako <xref:System.ServiceModel.FaultException%601>. Další informace najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - templates [WPF], TabControl
 ms.assetid: f6b19a30-f10e-4fa1-96ce-f17a54092ab6
 ms.openlocfilehash: e38756c5f266abc16b99f2359f8a87460d5d9450
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59155373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790894"
 ---
 # <a name="tabcontrol-styles-and-templates"></a>TabControl – styly a šablony
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.TabControl> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  

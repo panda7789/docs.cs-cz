@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
 ms.openlocfilehash: 217778a21fb9f231f448436ca5a68c42e5837566
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56977523"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797004"
 ---
 # <a name="byte-data-type-visual-basic"></a>Byte – datový typ (Visual Basic)
 Obsahuje 8 bitů (1bajtový) celá čísla bez znaménka, které v rozsahu od 0 do 255.
@@ -48,15 +48,15 @@ Dim number As Byte = &H_6A
 
 ## <a name="programming-tips"></a>Tipy pro programování
 
--   **Záporná čísla.** Protože `Byte` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `Byte`, Visual Basic Převede výraz, který má `Short` první.
+- **Záporná čísla.** Protože `Byte` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `Byte`, Visual Basic Převede výraz, který má `Short` první.
   
--   **Převody formátů.** Když jazyka Visual Basic čte nebo zapisuje soubory nebo při volání knihovny DLL, metody a vlastnosti, můžete automaticky převádět mezi datových formátů. Binární data uložená v `Byte` proměnných a polí se zachovají během tyto převody formátů. Neměli byste používat `String` proměnné pro binární data, protože jeho obsah může být poškozen při převodu mezi formáty ANSI a Unicode.
+- **Převody formátů.** Když jazyka Visual Basic čte nebo zapisuje soubory nebo při volání knihovny DLL, metody a vlastnosti, můžete automaticky převádět mezi datových formátů. Binární data uložená v `Byte` proměnných a polí se zachovají během tyto převody formátů. Neměli byste používat `String` proměnné pro binární data, protože jeho obsah může být poškozen při převodu mezi formáty ANSI a Unicode.
 
--   **Rozšíření.** `Byte` Datový typ rozšiřuje na `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Byte` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+- **Rozšíření.** `Byte` Datový typ rozšiřuje na `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, nebo `Double`. To znamená, že můžete převést `Byte` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.
   
--   **Znaky typu.** `Byte` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.
+- **Znaky typu.** `Byte` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.
 
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Byte?displayProperty=nameWithType> struktury.
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Byte?displayProperty=nameWithType> struktury.
 
 ## <a name="example"></a>Příklad
 

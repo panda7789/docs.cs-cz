@@ -6,11 +6,11 @@ helpviewer_keywords:
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
 ms.openlocfilehash: b935184f0e4d0378bfea69811aa4e6c068a9776f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58827923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61827941"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Rozdíly mezi stínováním a přepsáním (Visual Basic)
 Když definujete třídu, která dědí ze základní třídy, můžete někdy chtít znovu definovat jeden nebo více prvků základní třídy v odvozené třídě. Stínováním a přepsáním jsou k dispozici pro tento účel.  
@@ -41,15 +41,15 @@ Když definujete třídu, která dědí ze základní třídy, můžete někdy c
 ## <a name="guidelines"></a>Pokyny  
  Obvykle použijete přepsání v následujících případech:  
   
--   Definování polymorfní odvozené třídy.  
+- Definování polymorfní odvozené třídy.  
   
--   Chcete, aby bezpečnost s kompilátoru vynutit typ elementu identické a volací sekvence.  
+- Chcete, aby bezpečnost s kompilátoru vynutit typ elementu identické a volací sekvence.  
   
  Obvykle použijete stínění v následujících případech:  
   
--   Očekáváte, že základní třídy se může změnit a definovat elementu s použitím se stejným názvem se nenachází žádný.  
+- Očekáváte, že základní třídy se může změnit a definovat elementu s použitím se stejným názvem se nenachází žádný.  
   
--   Chcete, aby svobody změna typ prvku nebo sekvence volání.  
+- Chcete, aby svobody změna typ prvku nebo sekvence volání.  
   
 ## <a name="see-also"></a>Viz také:
 

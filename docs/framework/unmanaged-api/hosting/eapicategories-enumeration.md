@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3debd3f13d78841188dd8c900f51c0110e1d4c67
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59086452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906370"
 ---
 # <a name="eapicategories-enumeration"></a>EApiCategories – výčet
 Popisuje kategorie funkcí, které hostitele může blokovat spouštění v částečně důvěryhodným kódem.  

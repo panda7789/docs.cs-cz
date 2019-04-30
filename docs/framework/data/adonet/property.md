@@ -3,11 +3,11 @@ title: property
 ms.date: 03/30/2017
 ms.assetid: a941c53f-fc97-42c2-8832-0fb9f1d55c06
 ms.openlocfilehash: 71a04f334ec465b0f11cc8f18f2680df651081eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879035"
 ---
 # <a name="property"></a>property
 *Vlastnosti* jsou základní stavební kameny [typy entit](../../../../docs/framework/data/adonet/entity-type.md) a [komplexní typy](../../../../docs/framework/data/adonet/complex-type.md). Vlastnosti definovat tvar a vlastnosti dat, která bude obsahovat instance typu entity nebo komplexní typ instance. Vlastnosti v konceptuálním modelu jsou podobná vlastnosti definované ve třídě. Stejným způsobem, že vlastnosti třídy definovat tvar třídy a budou mít informace o objektech vlastnosti v konceptuálním modelu definovat tvar typu entity a nesou informaci o instancí typu entity.  
@@ -17,11 +17,11 @@ ms.locfileid: "59181646"
   
  Definice vlastnosti obsahuje následující informace:  
   
--   Název vlastnosti. (Povinné)  
+- Název vlastnosti. (Povinné)  
   
--   Typ vlastnosti. (Povinné)  
+- Typ vlastnosti. (Povinné)  
   
--   Sada [omezující vlastnosti](../../../../docs/framework/data/adonet/facet.md). (Volitelné)  
+- Sada [omezující vlastnosti](../../../../docs/framework/data/adonet/facet.md). (Volitelné)  
   
  Vlastnost může obsahovat primitivní datové (například řetězec, celé číslo nebo hodnotu typu Boolean) nebo strukturovaná data (například komplexní typ). Vlastnosti, které jsou primitivního typu se také označují jako skalární vlastnosti. Další informace najdete v tématu [modelu Entity Data Model: Primitivní datové typy](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).  
   

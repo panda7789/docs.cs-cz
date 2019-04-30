@@ -3,11 +3,11 @@ title: LINQ a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
 ms.openlocfilehash: f57d50e6c76b3d95c1d87b6beafe345f9a251e04
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54714812"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878736"
 ---
 # <a name="linq-and-adonet"></a>LINQ a ADO.NET
 V současné době celá řada vývojářů firmy musí používat dva (nebo více) programovacích jazyků: jazyka vysoké úrovně pro obchodní logiku a prezentační vrstvy (jako je Visual C# nebo Visual Basic) a dotazovací jazyk pro interakci s databází (například [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). To vyžaduje vývojář bude zdatní v několika jazycích, aby byl Efektivní a zároveň způsobí, že jazyk neshody ve vývojovém prostředí. Aplikace, která používá data přístup k rozhraní API při spuštění dotazu proti databázi například určuje dotaz jako řetězcový literál s použitím uvozovek. Tento řetězec dotazu bez číst kompilátoru a nepovolenou chyby, jako je například neplatnou syntaxi nebo zda skutečně existují sloupce nebo řádky, na které odkazuje. Neexistuje žádný typ kontroly parametrů dotazu a ne `IntelliSense` buď podporují.  

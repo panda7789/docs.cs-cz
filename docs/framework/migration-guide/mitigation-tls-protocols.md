@@ -8,11 +8,11 @@ ms.assetid: 33f97d13-3022-43da-8b18-cdb5c88df9c2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 70fab3dc418e3eb92e39a7c2b1365e8582b81834
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59125091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871252"
 ---
 # <a name="mitigation-tls-protocols"></a>Omezení rizik: Protokoly TLS
 Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displayProperty=nameWithType> a <xref:System.Net.Security.SslStream?displayProperty=nameWithType> třídy mohou používat jednu z těchto tří protokolů: Protokol TLS 1.0, Tls1.1 nebo Tls 1.2. SSL3.0 protokolu a šifer RC4 nejsou podporovány.  
@@ -20,21 +20,21 @@ Od verze rozhraní .NET Framework 4.6 <xref:System.Net.ServicePointManager?displ
 ## <a name="impact"></a>Dopad  
  Tato změna ovlivní:  
   
--   Jakékoli aplikaci, která používá protokol SSL na serveru HTTPS nebo server websocket pomocí kteréhokoli z následujících typů: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.  
+- Jakékoli aplikaci, která používá protokol SSL na serveru HTTPS nebo server websocket pomocí kteréhokoli z následujících typů: <xref:System.Net.Http.HttpClient>, <xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.Mail.SmtpClient>, a <xref:System.Net.Security.SslStream>.  
   
--   Libovolné aplikace na straně serveru, který nelze upgradovat pro podporu protokolu Tls 1.2, protokol TLS 1.0 nebo Tls1.1...  
+- Libovolné aplikace na straně serveru, který nelze upgradovat pro podporu protokolu Tls 1.2, protokol TLS 1.0 nebo Tls1.1...  
   
 ## <a name="mitigation"></a>Zmírnění  
  Doporučené omezení rizik je upgrade aplikace straně serveru pro protokol TLS 1.0, Tls1.1 nebo Tls 1.2. Pokud to není proveditelné, nebo pokud jsou přerušená, klientské aplikace <xref:System.AppContext> třídy lze tuto funkci v některém ze dvou způsobů:  
   
--   Programově pomocí fragmentu kódu, jako je následující:  
+- Programově pomocí fragmentu kódu, jako je následující:  
   
      [!code-csharp[AppCompat.SSLProtocols#1](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.sslprotocols/cs/program.cs#1)]
      [!code-vb[AppCompat.SSLProtocols#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.sslprotocols/vb/module1.vb#1)]  
   
      Vzhledem k tomu, <xref:System.Net.ServicePointManager> objekt je inicializován pouze jednou, definuje tato nastavení kompatibility musí být první věc, kterou aplikace dělá.  
   
--   Přidejte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části souboru app.config:  
+- Přidejte následující řádek, který [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části souboru app.config:  
   
     ```xml  
     <AppContextSwitchOverrides value="Switch.System.Net.DontEnableSchUseStrongCrypto=true"/>  

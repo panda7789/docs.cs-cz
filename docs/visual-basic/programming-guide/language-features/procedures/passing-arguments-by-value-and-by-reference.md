@@ -10,11 +10,11 @@ helpviewer_keywords:
 - argument passing [Visual Basic], by value or by reference
 ms.assetid: fd8a9de6-7178-44d5-a9bf-458d4ad907c2
 ms.openlocfilehash: c23ca51322f57dc13a85c3ea94e0d335dc50ca13
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830354"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791921"
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>Předávání argumentů podle hodnoty a odkazu (Visual Basic)
 V jazyce Visual Basic, můžete předat argument procedury *podle hodnoty* nebo *odkazem*. To se označuje jako *předávání mechanismus*, a určí, zda procesu můžete upravit programový element základní argumentu ve volajícím kódu. Deklarace procedury určuje předávání mechanismus pro každý parametr zadáním [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo.  
@@ -22,22 +22,22 @@ V jazyce Visual Basic, můžete předat argument procedury *podle hodnoty* nebo 
 ## <a name="distinctions"></a>Rozdíly  
  Při předávání argumentu procedury, mějte na paměti z několika různých rozdíly, které spolu interagují:  
   
--   Určuje, zda je základní programovací element upravitelnými a neupravitelnými  
+- Určuje, zda je základní programovací element upravitelnými a neupravitelnými  
   
--   Určuje, zda je samotný argument upravitelnými a neupravitelnými  
+- Určuje, zda je samotný argument upravitelnými a neupravitelnými  
   
--   Určuje, zda je právě argument předaný hodnotou nebo odkazem.  
+- Určuje, zda je právě argument předaný hodnotou nebo odkazem.  
   
--   Určuje, zda datový typ argumentu je typ hodnoty nebo typ odkazu  
+- Určuje, zda datový typ argumentu je typ hodnoty nebo typ odkazu  
   
  Další informace najdete v tématu [rozdíly mezi upravitelnými a Neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md) a [rozdíly mezi předáním argumentu podle hodnoty a podle Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
 ## <a name="choice-of-passing-mechanism"></a>Možnost předávání mechanismus  
  Měli byste zvolit mechanismus předávání pečlivě pro každý argument.  
   
--   **Ochrana**. Při rozhodování mezi dvěma předávání mechanismy, je nejdůležitější kritérium volání proměnné, chcete-li změnit možnost vidět. Výhodou předání argumentu `ByRef` je, že procedura může vrátit hodnotu volajícímu kódu prostřednictvím tohoto argumentu. Výhodou předání argumentu `ByVal` je chrání proměnnou před změnou procedurou.  
+- **Ochrana**. Při rozhodování mezi dvěma předávání mechanismy, je nejdůležitější kritérium volání proměnné, chcete-li změnit možnost vidět. Výhodou předání argumentu `ByRef` je, že procedura může vrátit hodnotu volajícímu kódu prostřednictvím tohoto argumentu. Výhodou předání argumentu `ByVal` je chrání proměnnou před změnou procedurou.  
   
--   **Výkon**. I když mechanismus předávání může ovlivnit výkon kódu, je obvykle zanedbatelný rozdíl. Jedinou výjimkou je typ hodnoty předané `ByVal`. V takovém případě jazyka Visual Basic zkopíruje obsah celého datového argumentu. Proto se pro typ velké hodnoty jako je například struktura, může být efektivnější předat `ByRef`.  
+- **Výkon**. I když mechanismus předávání může ovlivnit výkon kódu, je obvykle zanedbatelný rozdíl. Jedinou výjimkou je typ hodnoty předané `ByVal`. V takovém případě jazyka Visual Basic zkopíruje obsah celého datového argumentu. Proto se pro typ velké hodnoty jako je například struktura, může být efektivnější předat `ByRef`.  
   
      Pro typy odkazů pouze ukazatel na data je zkopírovaný (čtyř bajtů na 32bitových platformách, osm bajtů na 64bitových platformách). Proto můžete předat argumenty typu `String` nebo `Object` podle hodnoty bez poškození výkonu.  
   
@@ -50,15 +50,15 @@ V jazyce Visual Basic, můžete předat argument procedury *podle hodnoty* nebo 
   
 ## <a name="when-to-pass-an-argument-by-value"></a>Když pro předání argumentu podle hodnoty  
   
--   Pokud volání prvek kódu základní argument je prvek neupravitelnými, deklarujte odpovídajícího parametru [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Žádný kód může změnit hodnotu neupravitelnými prvku.  
+- Pokud volání prvek kódu základní argument je prvek neupravitelnými, deklarujte odpovídajícího parametru [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Žádný kód může změnit hodnotu neupravitelnými prvku.  
   
--   Pokud je základní prvek upravitelná, ale nechcete, aby postupu moct změnit jeho hodnotu, deklarujte parametr `ByVal`. Pouze volající kód může změnit hodnotu prvku upravitelná předán podle hodnoty.  
+- Pokud je základní prvek upravitelná, ale nechcete, aby postupu moct změnit jeho hodnotu, deklarujte parametr `ByVal`. Pouze volající kód může změnit hodnotu prvku upravitelná předán podle hodnoty.  
   
 ## <a name="when-to-pass-an-argument-by-reference"></a>Kdy se mají předat Argument odkazem.  
   
--   Pokud má procedura originální potřeba měnit základní prvek ve volajícím kódu, deklarujte odpovídajícího parametru [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).  
+- Pokud má procedura originální potřeba měnit základní prvek ve volajícím kódu, deklarujte odpovídajícího parametru [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).  
   
--   Pokud správné spuštění kódu závisí na postup změna základního elementu ve volajícím kódu, deklarujte parametr `ByRef`. Pokud předáte podle hodnoty nebo pokud volající kód přepíše `ByRef` předávání mechanismus uzavřením argument v závorkách, volání procedury může vést k neočekávaným výsledkům.  
+- Pokud správné spuštění kódu závisí na postup změna základního elementu ve volajícím kódu, deklarujte parametr `ByRef`. Pokud předáte podle hodnoty nebo pokud volající kód přepíše `ByRef` předávání mechanismus uzavřením argument v závorkách, volání procedury může vést k neočekávaným výsledkům.  
   
 ## <a name="example"></a>Příklad  
   

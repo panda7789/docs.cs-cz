@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
 ms.openlocfilehash: 10f8e0899e61d5d54589c910bdcbcd92d8ee947c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59129353"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777062"
 ---
 # <a name="how-to-add-an-event-handler-using-code"></a>Postupy: Přidání obslužné rutiny události pomocí kódu
 Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí kódu.  
@@ -25,9 +25,9 @@ Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí
   
  C# Příklad používá `+=` operátor přiřazení obslužnou rutinu události. To je stejný operátor, který slouží k přiřazení obslužnou rutinu v [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] model zpracování událostí. Microsoft Visual Basic nepodporuje tento operátor jako způsob přidání obslužných rutin událostí. Místo toho vyžaduje jednu z dvou technik:  
   
--   Použití <xref:System.Windows.UIElement.AddHandler%2A> metody společně s `AddressOf` operátor tak, aby odkazovaly implementaci obslužné rutiny události.  
+- Použití <xref:System.Windows.UIElement.AddHandler%2A> metody společně s `AddressOf` operátor tak, aby odkazovaly implementaci obslužné rutiny události.  
   
--   Použití `Handles` – klíčové slovo jako součást definice obslužné rutiny události. Tato technika, tady není ukázaný; Zobrazit [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
+- Použití `Handles` – klíčové slovo jako součást definice obslužné rutiny události. Tato technika, tady není ukázaný; Zobrazit [jazyka Visual Basic a WPF zpracování událostí](visual-basic-and-wpf-event-handling.md).  
   
  [!code-xaml[RoutedEventAddRemoveHandler#XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
   

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - locks, threads
 ms.assetid: 14501703-298f-4d43-b139-c4b6366af176
 ms.openlocfilehash: 3a12c3ac7250ee2904d571406d5008d451c9dc35
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56979811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61783822"
 ---
 # <a name="synclock-statement"></a>SyncLock – příkaz
 Získá výhradní zámek pro blok příkazů, který před spuštěním bloku.  
@@ -46,25 +46,25 @@ End SyncLock
   
 ## <a name="rules"></a>pravidla  
   
--   Větvení. Nelze větvit do `SyncLock` znemožní mimo blok.  
+- Větvení. Nelze větvit do `SyncLock` znemožní mimo blok.  
   
--   Hodnota objektu zámku. Hodnota `lockobject` nemůže být `Nothing`. Zamknout objekt musíte vytvořit předtím, než ho použijete `SyncLock` příkazu.  
+- Hodnota objektu zámku. Hodnota `lockobject` nemůže být `Nothing`. Zamknout objekt musíte vytvořit předtím, než ho použijete `SyncLock` příkazu.  
   
      Nelze změnit hodnotu `lockobject` při provádění `SyncLock` bloku. Mechanismus vyžaduje, že zámek objektu zůstanou beze změny.  
   
--   Nelze použít [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor `SyncLock` bloku.  
+- Nelze použít [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor `SyncLock` bloku.  
   
 ## <a name="behavior"></a>Chování  
   
--   Mechanismus. Když vlákno dosáhne `SyncLock` prohlášení, vyhodnotí `lockobject` výraz a pozastaví spuštění, dokud získá výhradní zámek na objekt vrácený výrazem. Když jiné vlákno dosáhne `SyncLock` příkazu, to není získat zámek až do první vlákno spustí `End SyncLock` příkazu.  
+- Mechanismus. Když vlákno dosáhne `SyncLock` prohlášení, vyhodnotí `lockobject` výraz a pozastaví spuštění, dokud získá výhradní zámek na objekt vrácený výrazem. Když jiné vlákno dosáhne `SyncLock` příkazu, to není získat zámek až do první vlákno spustí `End SyncLock` příkazu.  
   
--   Chráněná Data. Pokud `lockobject` je `Shared` proměnné, vlákno v jakékoli instance třídy výhradní zámek brání v provádění `SyncLock` zablokuje při provádění jakékoli jiné vlákno. To chrání data, jež jsou sdílena mezi všemi instancemi.  
+- Chráněná Data. Pokud `lockobject` je `Shared` proměnné, vlákno v jakékoli instance třídy výhradní zámek brání v provádění `SyncLock` zablokuje při provádění jakékoli jiné vlákno. To chrání data, jež jsou sdílena mezi všemi instancemi.  
   
      Pokud `lockobject` je proměnná instance (ne `Shared`), zámek je chrání vlákna běžícího v aktuální instanci spuštění `SyncLock` bloku ve stejnou dobu jako jiné vlákno ve stejné instanci. To chrání data udržovaná jednotlivých instancí.  
   
--   Získání a uvolnění. A `SyncLock` bloku se chová stejně jako `Try...Finally` konstrukce, ve kterém `Try` bloku získá výhradní zámek na `lockobject` a `Finally` ho uvolní blok. Z toho důvodu `SyncLock` bloku zaručuje uvolnění zámku, bez ohledu na to, jak ukončení bloku. To platí i v případě neošetřené výjimce.  
+- Získání a uvolnění. A `SyncLock` bloku se chová stejně jako `Try...Finally` konstrukce, ve kterém `Try` bloku získá výhradní zámek na `lockobject` a `Finally` ho uvolní blok. Z toho důvodu `SyncLock` bloku zaručuje uvolnění zámku, bez ohledu na to, jak ukončení bloku. To platí i v případě neošetřené výjimce.  
   
--   Rámec volá. `SyncLock` Blokovat operace čtení a uvolní zámek voláním `Enter` a `Exit` metody `Monitor` třídy v <xref:System.Threading> oboru názvů.  
+- Rámec volá. `SyncLock` Blokovat operace čtení a uvolní zámek voláním `Enter` a `Exit` metody `Monitor` třídy v <xref:System.Threading> oboru názvů.  
   
 ## <a name="programming-practices"></a>Postupy pro programování  
  `lockobject` Objekt, který patří do vaší třídy výhradně vždy by se měl vyhodnotit výraz. By měla deklarovat `Private` proměnné objektu k ochraně dat, které patří k aktuální instanci nebo `Private Shared` proměnné objektu k ochraně dat, které jsou společné pro všechny instance.  

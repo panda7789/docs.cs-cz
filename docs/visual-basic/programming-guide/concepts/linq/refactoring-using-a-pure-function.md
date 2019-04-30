@@ -3,11 +3,11 @@ title: Refaktoring pomocí čisté funkce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: af0ea62f-4f57-4868-b624-a85524055935
 ms.openlocfilehash: ac14385b87899490099dd0664264daef538319a8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58833620"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787111"
 ---
 # <a name="refactoring-using-a-pure-function-visual-basic"></a>Refaktoring pomocí čisté funkce (Visual Basic)
 Následující příklad refactors v předchozím příkladu [refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.  
@@ -170,7 +170,7 @@ StyleName:Code >Hello World<
 ### <a name="next-steps"></a>Další kroky  
  Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:  
   
--   [Projektování XML v odlišném tvaru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+- [Projektování XML v odlišném tvaru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
 ## <a name="see-also"></a>Viz také:
 

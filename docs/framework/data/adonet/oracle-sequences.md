@@ -3,20 +3,20 @@ title: Sekvence Oracle
 ms.date: 03/30/2017
 ms.assetid: 27cd371d-8252-414d-b5b2-5d31fa44b585
 ms.openlocfilehash: 8fe7513093d06f3928540f2de8cba902ce62b56e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59192651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878446"
 ---
 # <a name="oracle-sequences"></a>Sekvence Oracle
 Zprostředkovatel dat .NET Framework pro Oracle poskytuje podporu pro načtení hodnoty klíče generovaný serverem sekvence Oracle po provedení operace vložení pomocí <xref:System.Data.OracleClient.OracleDataAdapter>.  
   
  SQL Server a Oracle podporu vytváření automatické zvyšování hodnoty sloupce, které lze označit jako primární klíče. Tyto hodnoty jsou generovány serveru při přidání řádků do tabulky. V systému SQL Server nastavte vlastnost Identity sloupce; v databázi Oracle vytvoříte pořadí. Rozdíl mezi sloupce s automatickým krokem v systému SQL Server a pořadí v Oracle je, že:  
   
--   V systému SQL Server označte sloupec jako sloupec s automatickým krokem a systému SQL Server automaticky vytvoří nové hodnoty pro sloupec, když vložíte nový řádek.  
+- V systému SQL Server označte sloupec jako sloupec s automatickým krokem a systému SQL Server automaticky vytvoří nové hodnoty pro sloupec, když vložíte nový řádek.  
   
--   V databázi Oracle vytvoříte pořadí generovat nové hodnoty pro sloupec v tabulce, ale neexistuje žádné přímé spojení mezi sekvence a tabulky nebo sloupce. Sekvence Oracle je objekt, jako jsou tabulky a uložené procedury.  
+- V databázi Oracle vytvoříte pořadí generovat nové hodnoty pro sloupec v tabulce, ale neexistuje žádné přímé spojení mezi sekvence a tabulky nebo sloupce. Sekvence Oracle je objekt, jako jsou tabulky a uložené procedury.  
   
  Když vytvoříte pořadí v databázi Oracle, můžete definovat počáteční hodnoty a mezi jeho hodnoty přírůstku. Před odesláním nové řádky se můžete dotazovat také pořadí pro nové hodnoty. To znamená, že váš kód dokáže rozpoznat klíčové hodnoty pro nové řádky, před jejich vložení do databáze.  
   

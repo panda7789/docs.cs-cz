@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Windows Forms, user input
 ms.assetid: 9d61fa96-70f7-4754-885a-49a4a6316bdb
 ms.openlocfilehash: 0eb39f0ecd8fcd12918b38bd77fed2ff32cac1d8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59124147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61800136"
 ---
 # <a name="user-input-in-a-windows-forms-application"></a>Uživatelský vstup v aplikaci Windows Forms
 Ve Windows Forms uživatelský vstup přijde na aplikace ve formě zpráv Windows. Řadu přepisovatelné metody zpracování těchto zpráv na úrovni aplikace, formuláře a řídit. Tyto metody přijímat zprávy myši a klávesnice, vyvolají události, které může být zpracována pro získání informací o myši nebo klávesnice vstup. V mnoha případech bude schopná zpracovat veškerý vstup uživatele jednoduše tak, že zpracování těchto událostí aplikace Windows Forms. V jiných případech může aplikace potřebovat k přepsání metod, které zpracovávají zprávy, aby se zachytily určité zprávy předtím, než je přijatých aplikací, formulář nebo ovládací prvek.  

@@ -3,11 +3,11 @@ title: 'Postupy: Vytvoření služby pracovního postupu pomocí činnosti souvi
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
 ms.openlocfilehash: f5bb8df5936be1890bf744300daa7ccb68e341e3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787739"
 ---
 # <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
 Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí aktivit zasílání zpráv. Toto téma se zaměřuje na mechanismu vytvoření služby pracovního postupu, kde se skládá pouze z aktivity zasílání zpráv služby. Ve službě reálného světa pracovní postup obsahuje mnoho dalších aktivit. Služba implementuje jednu operaci volat odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Další téma [How To: Přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikace pracovního postupu, která může volat služby vytvořené v tomto tématu.  

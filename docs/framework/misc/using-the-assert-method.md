@@ -19,11 +19,11 @@ ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 08b46d96f9fb950602766639559a375a25747010
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59073725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61869006"
 ---
 # <a name="using-the-assert-method"></a>Použití metody Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -43,19 +43,19 @@ ms.locfileid: "59073725"
   
  Následující obrázek znázorňuje, co se stane, když použijete **Assert**. Předpokládejme, že následující tvrzení jsou pravdivá o sestavení A, B, C, E a F a dvě oprávnění, P1 a P1A:  
   
--   P1A představuje oprávnění ke čtení souborů .txt na jednotce C:.  
+- P1A představuje oprávnění ke čtení souborů .txt na jednotce C:.  
   
--   P1 představuje oprávnění ke čtení všech souborů na jednotce C:.  
+- P1 představuje oprávnění ke čtení všech souborů na jednotce C:.  
   
--   Jsou P1A i P1 **FileIOPermission** typy a P1A je podmnožinou P1.  
+- Jsou P1A i P1 **FileIOPermission** typy a P1A je podmnožinou P1.  
   
--   Sestavení E a F bylo uděleno oprávnění P1A.  
+- Sestavení E a F bylo uděleno oprávnění P1A.  
   
--   Sestavení C bylo uděleno oprávnění P1.  
+- Sestavení C bylo uděleno oprávnění P1.  
   
--   Sestavení A a B byla udělena oprávnění P1A ani P1.  
+- Sestavení A a B byla udělena oprávnění P1A ani P1.  
   
--   Metoda A je obsažen v sestavení A, metoda B je obsažen v sestavení B a tak dále.  
+- Metoda A je obsažen v sestavení A, metoda B je obsažen v sestavení B a tak dále.  
   
  ![Diagram zobrazující průběh sestavení metody Assert.](./media/using-the-assert-method/assert-method-assemblies.gif)    
   

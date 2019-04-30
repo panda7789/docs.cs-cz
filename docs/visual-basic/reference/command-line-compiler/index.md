@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
 ms.openlocfilehash: d5bccab71d790a7a70d012375d3f47676cf83c6d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199419"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794105"
 ---
 # <a name="visual-basic-command-line-compiler"></a>Kompilátor příkazového řádku jazyka Visual Basic
 

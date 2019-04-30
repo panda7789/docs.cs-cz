@@ -7,11 +7,11 @@ helpviewer_keywords:
 - caching [ASP.NET]
 ms.assetid: c4b47ee0-4b82-4124-9bce-818088385e34
 ms.openlocfilehash: a57489af2f2af59f128f5d86be844b43c9c49840
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59085776"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788138"
 ---
 # <a name="caching-in-net-framework-applications"></a>Ukládání do vyrovnávací paměti v aplikacích .NET Framework
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.  
@@ -24,17 +24,17 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 ## <a name="caching-data"></a>Ukládaní dat do mezipaměti  
  Můžete ukládat do mezipaměti informace pomocí tříd v <xref:System.Runtime.Caching> oboru názvů. Ukládání do mezipaměti třídy v tomto oboru názvů poskytují následující funkce:  
   
--   Abstraktní typy, které poskytují základ pro vytvoření vlastní mezipaměti implementací.  
+- Abstraktní typy, které poskytují základ pro vytvoření vlastní mezipaměti implementací.  
   
--   Implementace mezipaměti konkrétních objektů v paměti do mezipaměti.  
+- Implementace mezipaměti konkrétních objektů v paměti do mezipaměti.  
   
  Abstraktní základní třída ukládání do mezipaměti (<xref:System.Runtime.Caching.ObjectCache>) definuje následující úlohy ukládání do mezipaměti:  
   
--   Vytváření a Správa položek v mezipaměti.  
+- Vytváření a Správa položek v mezipaměti.  
   
--   Zadání informací o vypršení platnosti a vyřazení.  
+- Zadání informací o vypršení platnosti a vyřazení.  
   
--   Aktivace události, které jsou vyvolány v reakci na změny položky mezipaměti.  
+- Aktivace události, které jsou vyvolány v reakci na změny položky mezipaměti.  
   
  <xref:System.Runtime.Caching.MemoryCache> Třída je implementace mezipaměti objektů v paměti do mezipaměti <xref:System.Runtime.Caching.ObjectCache> třídy. Můžete použít <xref:System.Runtime.Caching.MemoryCache> třídu pro většinu úkolů s mezipamětí.  
   
@@ -67,11 +67,11 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
   
  Rozšířit ukládání do mezipaměti můžete provádět následující akce:  
   
--   Vytvoření vlastní třídy, která je odvozena z <xref:System.Runtime.Caching.ObjectCache> třídy a pak zadejte vlastní mezipaměti implementaci v odvozené třídě.  
+- Vytvoření vlastní třídy, která je odvozena z <xref:System.Runtime.Caching.ObjectCache> třídy a pak zadejte vlastní mezipaměti implementaci v odvozené třídě.  
   
--   Vytvořte třídu, která je odvozena z <xref:System.Runtime.Caching.MemoryCache> třídy a přizpůsobte si nebo rozšiřte odvozené třídy. Příklad toho, jak to provést, najdete v části [ukládání dat aplikací pomocí více mezipaměti objektů v aplikaci ASP.NET](https://blogs.msdn.com/aspnetue/archive/2010/03/22/caching-application-data-by-using-multiple-cache-objects-in-an-asp-net-application.aspx).  
+- Vytvořte třídu, která je odvozena z <xref:System.Runtime.Caching.MemoryCache> třídy a přizpůsobte si nebo rozšiřte odvozené třídy. Příklad toho, jak to provést, najdete v části [ukládání dat aplikací pomocí více mezipaměti objektů v aplikaci ASP.NET](https://blogs.msdn.com/aspnetue/archive/2010/03/22/caching-application-data-by-using-multiple-cache-objects-in-an-asp-net-application.aspx).  
   
--   Vytvořte třídu, která je odvozena z <xref:System.Web.Caching.OutputCacheProvider> třídy a konfigurace aplikace pro použití vlastního zprostředkovatele mezipaměti výstupu.  
+- Vytvořte třídu, která je odvozena z <xref:System.Web.Caching.OutputCacheProvider> třídy a konfigurace aplikace pro použití vlastního zprostředkovatele mezipaměti výstupu.  
   
  Další informace naleznete v příspěvku [Extensible ukládání výstupu do mezipaměti ASP.NET 4 (VS 2010 a řady rozhraní .NET 4.0)](https://go.microsoft.com/fwlink/?LinkId=185772) v blogu Scotta Guthrie.  
   

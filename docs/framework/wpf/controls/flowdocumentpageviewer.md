@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], FlowDocumentPageViewer
 ms.assetid: 1ed5a30e-f415-4c26-a52f-9f028a68f66f
 ms.openlocfilehash: ef041fad1bb9195d9fc6cba172de8c2fdc7507bd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59207627"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61911732"
 ---
 # <a name="flowdocumentpageviewer"></a>FlowDocumentPageViewer
 <xref:System.Windows.Controls.FlowDocumentPageViewer> Ovládacího prvku se používá k zobrazení <xref:System.Windows.Documents.FlowDocument> obsahu na základě na stránku. Rozdíl oproti <xref:System.Windows.Controls.FlowDocumentScrollViewer>, která představuje <xref:System.Windows.Documents.FlowDocument> obsahu v prohlížeči posouvání.  

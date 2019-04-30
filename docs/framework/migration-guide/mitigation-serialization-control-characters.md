@@ -10,11 +10,11 @@ ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3355841298e039652eb81918eac98186c1a1f833
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182114"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871368"
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Omezení rizik: Serializace ovládacího prvku znaků s vlastností objektu DataContractJsonSerializer
 

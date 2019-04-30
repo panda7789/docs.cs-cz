@@ -3,18 +3,18 @@ title: Ověřování v SQL Serveru
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
 ms.openlocfilehash: f7fac0756da3bcc19ee6370468f0e0e65c428d35
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59084034"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879008"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v SQL Serveru
 SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  
   
--   Ověřování Windows je výchozí a se často označuje jako integrované zabezpečení tento model zabezpečení systému SQL Server je těsně integrovaná se službami Windows. Určité účty uživatelů a skupin Windows jsou důvěryhodní k přihlášení k SQL serveru. Není potřeba k dispozici další přihlašovací údaje Windows, kteří již byl ověřen.  
+- Ověřování Windows je výchozí a se často označuje jako integrované zabezpečení tento model zabezpečení systému SQL Server je těsně integrovaná se službami Windows. Určité účty uživatelů a skupin Windows jsou důvěryhodní k přihlášení k SQL serveru. Není potřeba k dispozici další přihlašovací údaje Windows, kteří již byl ověřen.  
   
--   Ve smíšeném režimu podporuje ověřování Windows a SQL Server. Dvojice název a heslo uživatele zachovány v rámci SQL serveru.  
+- Ve smíšeném režimu podporuje ověřování Windows a SQL Server. Dvojice název a heslo uživatele zachovány v rámci SQL serveru.  
   
 > [!IMPORTANT]
 >  Doporučujeme používat ověřování Windows, kdykoli je to možné. Ověřování Windows k ověřování uživatelů v systému SQL Server používá řadu šifrované zprávy. Při přihlášení serveru SQL Server jsou používány, jsou předány přihlašovací jména systému SQL Server a šifrovaná hesla přes síť, což je méně bezpečné.  
@@ -31,19 +31,19 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 ## <a name="authentication-scenarios"></a>Scénáře ověřování  
  Ověřování Windows je obvykle nejlepší volbou v těchto situacích:  
   
--   Je řadič domény.  
+- Je řadič domény.  
   
--   Aplikace a databáze jsou ve stejném počítači.  
+- Aplikace a databáze jsou ve stejném počítači.  
   
--   Používáte instanci systému SQL Server Express nebo LocalDB.  
+- Používáte instanci systému SQL Server Express nebo LocalDB.  
   
  Přihlášení serveru SQL Server se často používají v následujících situacích:  
   
--   Pokud máte pracovní skupiny.  
+- Pokud máte pracovní skupiny.  
   
--   Uživatelé připojovat z jiné, nedůvěryhodné domény.  
+- Uživatelé připojovat z jiné, nedůvěryhodné domény.  
   
--   Internetové aplikace, jako například [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].  
+- Internetové aplikace, jako například [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)].  
   
 > [!NOTE]
 >  Zadání ověřování Windows nezakáže přihlášení serveru SQL Server. Použít příkazu ALTER LOGIN zakázat [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkaz Zakázat přihlášení serveru SQL Server s vysokou úrovní oprávnění.  
@@ -51,11 +51,11 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 ## <a name="login-types"></a>Typy přihlášení  
  SQL Server podporuje tři typy přihlášení:  
   
--   Místní uživatelský účet Windows nebo důvěryhodné doméně účtu. SQL Server závisí na Windows k ověření Windows uživatelské účty.  
+- Místní uživatelský účet Windows nebo důvěryhodné doméně účtu. SQL Server závisí na Windows k ověření Windows uživatelské účty.  
   
--   Skupiny Windows. Udělení přístupu ke skupině Windows uděluje přístup ke všem přihlášení uživatele Windows, které jsou členy skupiny.  
+- Skupiny Windows. Udělení přístupu ke skupině Windows uděluje přístup ke všem přihlášení uživatele Windows, které jsou členy skupiny.  
   
--   Přihlašovací jméno SQL serveru. SQL Server uchovává uživatelské jméno a hodnotu hash hesla v hlavní databázi pomocí interní ověřovacích metod ověření pokusů o přihlášení.  
+- Přihlašovací jméno SQL serveru. SQL Server uchovává uživatelské jméno a hodnotu hash hesla v hlavní databázi pomocí interní ověřovacích metod ověření pokusů o přihlášení.  
   
 > [!NOTE]
 >  SQL Server poskytuje přihlašovací údaje vytvořené z certifikáty nebo asymetrické klíče, které se používají pouze pro podepisování kódu. Nelze použít pro připojení k SQL serveru.  

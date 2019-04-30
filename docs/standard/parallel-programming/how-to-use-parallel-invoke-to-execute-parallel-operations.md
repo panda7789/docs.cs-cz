@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití Parallel.Invoke k vykonávání paralelních operací'
+title: 'Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,13 +12,13 @@ ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c0192e12c86b21eb126293bbd220e093b334768b
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797095"
 ---
-# <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Postupy: Použití Parallel.Invoke k vykonávání paralelních operací
+# <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací
 
 Tento příklad ukazuje, jak pomocí paralelní zpracování operace <xref:System.Threading.Tasks.Parallel.Invoke%2A> v knihovně Task Parallel Library. Na sdílený zdroj dat provádějí tři operace. Protože žádná z operací upraví zdroj, mohou být provedeny souběžně v přímočarým způsobem.
 
@@ -41,5 +41,5 @@ Zkopírujte a vložte do projektu sady Microsoft Visual Studio a stiskněte klá
 ## <a name="see-also"></a>Viz také:
 
 - [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
-- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
+- [Postupy: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
 - [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

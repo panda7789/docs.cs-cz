@@ -3,11 +3,11 @@ title: Typy Oracle
 ms.date: 03/30/2017
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
 ms.openlocfilehash: 3762fdaee1312a7cb008386bb1f6b7bf7cb4316e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59212307"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878420"
 ---
 # <a name="oracletypes"></a>Typy Oracle
 Zprostředkovatel dat .NET Framework pro Oracle zahrnuje řady struktur, kterými můžete pracovat s typy dat Oracle. Patří mezi ně <xref:System.Data.OracleClient.OracleNumber> a <xref:System.Data.OracleClient.OracleString>.  
@@ -17,9 +17,9 @@ Zprostředkovatel dat .NET Framework pro Oracle zahrnuje řady struktur, kterým
   
  Následující příklady jazyka C#:  
   
--   Vytvoření tabulky Oracle a načíst do ní data.  
+- Vytvoření tabulky Oracle a načíst do ní data.  
   
--   Použití <xref:System.Data.OracleClient.OracleDataReader> přístup k datům a používat několik <xref:System.Data.OracleClient.OracleType> struktury zobrazit data.  
+- Použití <xref:System.Data.OracleClient.OracleDataReader> přístup k datům a používat několik <xref:System.Data.OracleClient.OracleType> struktury zobrazit data.  
   
 ## <a name="creating-an-oracle-table"></a>Vytváří se tabulka Oracle  
  Tento příklad vytvoří tabulku Oracle a načte s daty. V tomto příkladu je nutné spustit před spuštěním v dalším příkladu.  

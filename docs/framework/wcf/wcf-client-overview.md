@@ -8,11 +8,11 @@ helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
 ms.openlocfilehash: 5cb73dfeaac4f1c23724dc71b0f1f5d07fd28b5b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59770383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791232"
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, co dělat klientské aplikace, jak konfigurovat, vytvořit a používat klienta Windows Communication Foundation (WCF) a tom, jak zabezpečit klientské aplikace.  
@@ -30,15 +30,15 @@ Tato část popisuje, co dělat klientské aplikace, jak konfigurovat, vytvořit
   
  Následující oddíly popisují tyto kroky a poskytují stručné úvodní informace k následujícím problémům:  
   
--   Zpracování chyb.  
+- Zpracování chyb.  
   
--   Konfigurace a zabezpečení klientů.  
+- Konfigurace a zabezpečení klientů.  
   
--   Vytváření objektů zpětného volání pro duplexní služby.  
+- Vytváření objektů zpětného volání pro duplexní služby.  
   
--   Asynchronní volání služby.  
+- Asynchronní volání služby.  
   
--   Volání služby pomocí kanály klientů.  
+- Volání služby pomocí kanály klientů.  
   
 ## <a name="obtain-the-service-contract-bindings-and-addresses"></a>Získat smlouvu, vazeb a adresy  
  Ve službě WCF služeb a klientů modelu kontrakty pomocí spravované atributy, rozhraní a metody. Připojení ke službě v klientské aplikaci, potřebujete získat informace o typu pro kontrakt služby. Obvykle to provést pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), která stahuje metadata ze služby, převede ho na soubor spravovaném zdrojovém kódu v jazyce podle vašeho výběru a vytvoří klienta konfigurační soubor aplikace, které můžete použít ke konfiguraci objektu klienta WCF. Například, pokud se chystáte vytvořit objekt klienta WCF pro vyvolání `MyCalculatorService`, a víte, že metadata pro danou službu je zveřejněný na webu `http://computerName/MyCalculatorService/Service.svc?wsdl`, pak následující příklad kódu ukazuje způsob použití Svcutil.exe k získání `ClientCode.vb` souboru, který obsahuje kontraktu služby ve spravovaném kódu.  
@@ -146,11 +146,11 @@ End Interface
   
  Klienti duplexní služby musí:  
   
--   Implementace třídy kontrakt zpětného volání.  
+- Implementace třídy kontrakt zpětného volání.  
   
--   Vytvoření instance třídy implementace kontraktu zpětného volání a použijte ji k vytvoření <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> objekt předaný konstruktoru klienta WCF.  
+- Vytvoření instance třídy implementace kontraktu zpětného volání a použijte ji k vytvoření <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> objekt předaný konstruktoru klienta WCF.  
   
--   Vyvolání operací a zpracování zpětných volání operace.  
+- Vyvolání operací a zpracování zpětných volání operace.  
   
  Duplexní WCF klienta objektů funkce stejně jako jejich protějšky podavače, s tím rozdílem, že zveřejňovaly potřebných k podpoře zpětná volání, včetně konfigurace služby zpětného volání funkce.  
   

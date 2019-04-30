@@ -14,11 +14,11 @@ ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 86efc3a9d9eab5c1529804769af413dd88e71f1c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59220484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792898"
 ---
 # <a name="resources-in-net-apps"></a>Prostředky v aplikacích .NET
 Téměř každá aplikace produkční kvality musí používat prostředky. Prostředek je jakákoli nespustitelná část dat, která je logicky nasazována s aplikací. Prostředek může zobrazit v aplikaci jako chybové zprávy nebo jako součást uživatelského rozhraní. Prostředky mohou obsahovat data v různých formách, včetně řetězců, obrázků a trvale uložených objektů. (K zápisu do souboru prostředků trvalé objekty, objekty musí být serializovatelné.) Ukládání dat do souboru prostředků vám umožní měnit data bez opětovné kompilace celou aplikaci. Také umožňuje ukládat data na jednom místě a eliminuje nutnost využívají pevně zakódované data, která je uložena v několika umístěních.  
@@ -43,23 +43,23 @@ Také je možné lokalizovat prostředky vaší aplikace pro specifické jazykov
 ## <a name="retrieving-resources"></a>Načítání prostředků  
  V době běhu aplikace načte odpovídající lokalizované prostředky na základě vlákno podle jazykové verze určený poskytovatelem <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost. Hodnota této vlastnosti je odvozen následovně:  
   
--   Přímo přiřazením <xref:System.Globalization.CultureInfo> objekt, který reprezentuje lokalizovanou jazykovou verzi <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
+- Přímo přiřazením <xref:System.Globalization.CultureInfo> objekt, který reprezentuje lokalizovanou jazykovou verzi <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
   
--   Pokud není explicitně přiřazeny jazykovou verzi, načtením výchozí jazyková verze vlákna uživatelského rozhraní z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
+- Pokud není explicitně přiřazeny jazykovou verzi, načtením výchozí jazyková verze vlákna uživatelského rozhraní z <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> vlastnost.  
   
--   Pokud vlákno výchozí jazyková verze uživatelského rozhraní není explicitně přiřazeny, načtením jazykovou verzi pro aktuálního uživatele v místním počítači. Implementace .NET běžící na Windows to provést pomocí volání Windows [ `GetUserDefaultUILanguage` ](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) funkce.  
+- Pokud vlákno výchozí jazyková verze uživatelského rozhraní není explicitně přiřazeny, načtením jazykovou verzi pro aktuálního uživatele v místním počítači. Implementace .NET běžící na Windows to provést pomocí volání Windows [ `GetUserDefaultUILanguage` ](/windows/desktop/api/winnls/nf-winnls-getuserdefaultuilanguage) funkce.  
   
  Další informace o tom, jak je nastavena aktuální jazyková verze uživatelského rozhraní, najdete v článku <xref:System.Globalization.CultureInfo> a <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> odkazují na stránky.  
   
  Potom můžete načíst prostředky pro aktuální jazykové verze uživatelského rozhraní nebo pro konkrétní jazykovou verzi pomocí <xref:System.Resources.ResourceManager?displayProperty=nameWithType> třídy. I když <xref:System.Resources.ResourceManager> třídy se nejčastěji používá pro načítání prostředků, <xref:System.Resources?displayProperty=nameWithType> obor názvů obsahuje další typy, které slouží k načtení prostředků. Zde jsou některé z nich:  
   
--   <xref:System.Resources.ResourceReader> Třídu, která umožňuje vytvořit výčet prostředků vloženy do sestavení nebo uložená v samostatných binárního souboru .resources. To je užitečné, pokud si nejste jisti přesné názvy prostředků, které jsou k dispozici v době běhu.  
+- <xref:System.Resources.ResourceReader> Třídu, která umožňuje vytvořit výčet prostředků vloženy do sestavení nebo uložená v samostatných binárního souboru .resources. To je užitečné, pokud si nejste jisti přesné názvy prostředků, které jsou k dispozici v době běhu.  
   
--   <xref:System.Resources.ResXResourceReader> Třídu, která vám umožňuje načíst prostředky ze souboru XML (.resx).  
+- <xref:System.Resources.ResXResourceReader> Třídu, která vám umožňuje načíst prostředky ze souboru XML (.resx).  
   
--   <xref:System.Resources.ResourceSet> Třídu, která vám umožňuje načíst prostředky specifické jazykové verze bez sledování pravidla pro použití náhradní lokality. Prostředky mohou být uloženy v sestavení nebo samostatné binárního souboru .resources. Můžete také vyvíjet <xref:System.Resources.IResourceReader> implementace, která vám umožní použít <xref:System.Resources.ResourceSet> třídy pro načtení prostředků z nějakého jiného zdroje.  
+- <xref:System.Resources.ResourceSet> Třídu, která vám umožňuje načíst prostředky specifické jazykové verze bez sledování pravidla pro použití náhradní lokality. Prostředky mohou být uloženy v sestavení nebo samostatné binárního souboru .resources. Můžete také vyvíjet <xref:System.Resources.IResourceReader> implementace, která vám umožní použít <xref:System.Resources.ResourceSet> třídy pro načtení prostředků z nějakého jiného zdroje.  
   
--   <xref:System.Resources.ResXResourceSet> Třídu, která vám umožňuje načíst všechny položky v souboru prostředků jazyka XML do paměti.  
+- <xref:System.Resources.ResXResourceSet> Třídu, která vám umožňuje načíst všechny položky v souboru prostředků jazyka XML do paměti.  
   
 ## <a name="see-also"></a>Viz také:
 

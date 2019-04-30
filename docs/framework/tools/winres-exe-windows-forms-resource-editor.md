@@ -14,11 +14,11 @@ ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c9a14c2ea2d7d817aacca1fa25b04ac643f16bf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296651"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919370"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Editor lokalizace prostředků Windows)
 

@@ -3,11 +3,11 @@ title: Přizpůsobení oprávnění se zosobněním na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
 ms.openlocfilehash: dd7fb4c94c5a0a9bca0cd36b8d76864158072d4e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59326967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877901"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Přizpůsobení oprávnění se zosobněním na SQL Serveru
 Mnoho aplikací používá pro přístup k datům, spoléhat na řetězení vlastnictví můžete omezit přístup k základní tabulky uložené procedury. Můžete udělit oprávnění spouštět na uložené procedury, odvolání nebo odepřením oprávnění u základní tabulky. SQL Server oprávnění volající nekontroluje, pokud uložené procedury a tabulky mají stejné vlastníka. Ale řetězení vlastnictví nefunguje Pokud objekty mají různé vlastníci nebo v případě dynamické SQL.  
@@ -59,11 +59,11 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 ### <a name="specifying-the-execution-context"></a>Určení kontextu spuštění  
  Kromě zadání uživatele, můžete také použít EXECUTE AS s jakoukoli následující klíčová slova.  
   
--   VOLAJÍCÍ. Spouštění jako VOLAJÍCÍ je výchozí hodnota; Pokud není zadána žádná další možnost, postup spustí v kontextu zabezpečení volajícího.  
+- VOLAJÍCÍ. Spouštění jako VOLAJÍCÍ je výchozí hodnota; Pokud není zadána žádná další možnost, postup spustí v kontextu zabezpečení volajícího.  
   
--   VLASTNÍK. Postup spuštění jako vlastník spustí v kontextu postupu vlastníka. Pokud postupu je vytvořena ve schématu vlastněné `dbo` nebo vlastník databáze postupu budou spouštěny s neomezenými oprávněními.  
+- VLASTNÍK. Postup spuštění jako vlastník spustí v kontextu postupu vlastníka. Pokud postupu je vytvořena ve schématu vlastněné `dbo` nebo vlastník databáze postupu budou spouštěny s neomezenými oprávněními.  
   
--   VLASTNÍ. Spuštění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jedná se o ekvivalent spuštění jako určitý uživatel, pokud zadaný uživatel je osoba, vytvoření či změna postup.  
+- VLASTNÍ. Spuštění jako vlastní spustí v kontextu zabezpečení Tvůrce uložené procedury. Jedná se o ekvivalent spuštění jako určitý uživatel, pokud zadaný uživatel je osoba, vytvoření či změna postup.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,11 +3,11 @@ title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
 ms.openlocfilehash: 0b06d61a33cd6a704a5ab0f75d29bde3f72d77fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788424"
 ---
 # <a name="servicemetadata"></a>\<serviceMetadata>
 Určuje zveřejnění metadat služby a související informace.  
@@ -52,7 +52,7 @@ Určuje zveřejnění metadat služby a související informace.
 |policyVersion|Řetězec, který určuje verzi používané specifikace WS-Policy. Tento atribut je typu <xref:System.ServiceModel.Description.PolicyVersion>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádný  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

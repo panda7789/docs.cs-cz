@@ -3,11 +3,11 @@ title: Přehled hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 19f3704f-06bf-4eeb-8724-5224e02d7ead
 ms.openlocfilehash: dbe271e30e9c4e98a52c01ffaa21de25c127c7ff
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855890"
 ---
 # <a name="hosting-workflow-services-overview"></a>Přehled hostování služeb pracovních postupů
 Ke spuštění musí být hostovaný služeb pracovních postupů. <xref:System.ServiceModel.WorkflowServiceHost> Je hostitele pracovního postupu out-of-the-box, která podporuje víc instancí, konfiguraci a zasílání zpráv WCF (i když nejsou potřeba použít zasílání aby bylo možné hostovat pracovních postupů).  Je integrován se sadou trvalost, sledování a řízení instance prostřednictvím sady chování služby.  Stejně jako jeho WCF <xref:System.ServiceModel.ServiceHost>, <xref:System.ServiceModel.WorkflowServiceHost> můžete ve všech spravovaných aplikací .NET v místním prostředí nebo web hostované (jako soubor .xamlx) ve službě IIS nebo WAS.  Témata v této části popisují, jak k hostování služby pracovního postupu.  
@@ -25,7 +25,7 @@ Ke spuštění musí být hostovaný služeb pracovních postupů. <xref:System.
  [Kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md)  
  Popisuje, jak definovat koncový bod, který vám umožní vytvořit instance pracovního postupu.
   
- [Postupy: Hostování služby pracovního procesu pomocí Windows Server App Fabric](../../../../docs/framework/wcf/feature-details/how-to-host-a-workflow-service-with-windows-server-app-fabric.md)  
+ [Postupy: Hostitel služby pracovního procesu pomocí Windows Server App Fabric](../../../../docs/framework/wcf/feature-details/how-to-host-a-workflow-service-with-windows-server-app-fabric.md)  
  Ukazuje, jak hostovat existující služby pracovního postupu v systému Windows Server App Fabric.  
   
  [Konfigurace třídy WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)  

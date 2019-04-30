@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
 ms.openlocfilehash: ed988547e0be3ef934c46d725c41646c3a75e626
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59339057"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918343"
 ---
 # <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>"\<name1 >' je nejednoznačný a importuje z oboru názvů nebo typů\<name2 >"
 Zadali jste název, který je nejednoznačný a proto je v konfliktu s jiným názvem. Kompilátor jazyka Visual Basic nemá žádná pravidla řešení konfliktů; rozlišení názvů musí být sami.  

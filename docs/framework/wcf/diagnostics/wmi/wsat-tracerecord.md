@@ -3,11 +3,11 @@ title: WSAT_TraceRecord
 ms.date: 03/30/2017
 ms.assetid: 99bc7f66-1335-40d8-aa68-e754d569dc0d
 ms.openlocfilehash: 907e764cf032e595c7aba455fd4808a640f68016
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61923406"
 ---
 # <a name="wsattracerecord"></a>WSAT_TraceRecord
 WSAT_TraceRecord  
@@ -31,19 +31,19 @@ class WSAT_TraceRecord : WSAT_TraceEvent
   
 ### <a name="activityid"></a>ID aktivity  
  Datový typ: objekt  
-Přístup k typu: jen pro čtení  
+Typ přístupu: jen pro čtení  
   
  ID aktivity záznamu trace.  
   
 ### <a name="eventid"></a>ID události  
  Datový typ: sint32  
-Přístup k typu: jen pro čtení  
+Typ přístupu: jen pro čtení  
   
  ID události trasování záznamu.  
   
 ### <a name="tracerecord"></a>TraceRecord  
  Datový typ: řetězec  
-Přístup k typu: jen pro čtení  
+Typ přístupu: jen pro čtení  
   
  Záznam trasování  
   

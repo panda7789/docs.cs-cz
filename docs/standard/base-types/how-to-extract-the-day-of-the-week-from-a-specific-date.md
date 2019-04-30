@@ -25,11 +25,11 @@ ms.assetid: 1c9bef76-5634-46cf-b91c-9b9eb72091d7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c665cb590a090c546d50f780477c254344914a2f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327760"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61861068"
 ---
 # <a name="how-to-extract-the-day-of-the-week-from-a-specific-date"></a>Postupy: Extrahování dne v týdnu z konkrétního data
 Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konkrétní datum a zobrazovaný název lokalizované den v týdnu pro konkrétní datum. Výčtová hodnota, která označuje den v týdnu odpovídající určitému datu je k dispozici <xref:System.DateTime.DayOfWeek%2A> nebo <xref:System.DateTimeOffset.DayOfWeek%2A> vlastnost. Naproti tomu načítání název dne v týdnu je operace formátování, které lze provést zavoláním metody pro formátování, jako jsou hodnoty data a času `ToString` metoda nebo <xref:System.String.Format%2A?displayProperty=nameWithType> metody. Toto téma ukazuje, jak provádět tyto operace formátování.  
@@ -53,12 +53,12 @@ Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konk
   
 2. Můžete extrahovat zkrácený název dne aktuální jazykové verze nebo specifické jazykové verze:  
   
-    1.  Chcete-li extrahovat zkrácený název dne pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "ddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
+    1. Chcete-li extrahovat zkrácený název dne pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "ddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname1.cs#1)]
          [!code-vb[Formatting.Howto.WeekdayName#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname1.vb#1)]  
   
-    2.  Chcete-li extrahovat zkrácený název dne pro konkrétní jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodu instance. Předejte jako řetězec "ddd" `format` parametru. Předat <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který představuje jazykovou verzi, jejíž název dne v týdnu, které chcete načíst jako `provider` parametru. Následující kód znázorňuje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí metody <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi fr-FR.  
+    2. Chcete-li extrahovat zkrácený název dne pro konkrétní jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodu instance. Předejte jako řetězec "ddd" `format` parametru. Předat <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který představuje jazykovou verzi, jejíž název dne v týdnu, které chcete načíst jako `provider` parametru. Následující kód znázorňuje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí metody <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi fr-FR.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/abbrname2.cs#2)]
          [!code-vb[Formatting.Howto.WeekdayName#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/abbrname2.vb#2)]  
@@ -69,12 +69,12 @@ Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konk
   
 2. Můžete extrahovat úplné úplný název aktuální jazykové verze nebo specifické jazykové verze:  
   
-    1.  Chcete-li extrahovat název dne v týdnu pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "dddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
+    1. Chcete-li extrahovat název dne v týdnu pro aktuální jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType> instanci metody a předejte jako řetězec "dddd" `format` parametru. Následující příklad ukazuje volání <xref:System.DateTime.ToString%28System.String%29> metody.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname4.cs#4)]
          [!code-vb[Formatting.Howto.WeekdayName#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname4.vb#4)]  
   
-    2.  Chcete-li extrahovat název dne v týdnu pro konkrétní jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodu instance. Předejte jako řetězec "dddd" `format` parametru. Předat <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který představuje jazykovou verzi, jejíž název dne v týdnu, které chcete načíst jako `provider` parametru. Následující kód znázorňuje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí metody <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, es-ES.  
+    2. Chcete-li extrahovat název dne v týdnu pro konkrétní jazykovou verzi, zavolejte hodnoty data a času <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> nebo <xref:System.DateTimeOffset.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> metodu instance. Předejte jako řetězec "dddd" `format` parametru. Předat <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.DateTimeFormatInfo> objekt, který představuje jazykovou verzi, jejíž název dne v týdnu, které chcete načíst jako `provider` parametru. Následující kód znázorňuje volání <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29> pomocí metody <xref:System.Globalization.CultureInfo> objekt, který představuje jazykovou verzi, es-ES.  
   
          [!code-csharp[Formatting.Howto.WeekdayName#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/cs/fullname5.cs#5)]
          [!code-vb[Formatting.Howto.WeekdayName#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.WeekdayName/vb/fullname5.vb#5)]  
@@ -87,9 +87,9 @@ Rozhraní .NET Framework umožňuje snadno určit pořadí dne v týdnu pro konk
   
  Jednotlivé jazyky Tyhle nástroje nabízejí funkce, která duplikuje nebo doplňuje funkce poskytované službou [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Například Visual Basic obsahuje dvou takových funkcí:  
   
--   `Weekday`, který vrátí číslo, které označuje den v týdnu konkrétního data. Považuje pořadové číslo první den v týdnu se, že <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> vlastnost považuje nula.  
+- `Weekday`, který vrátí číslo, které označuje den v týdnu konkrétního data. Považuje pořadové číslo první den v týdnu se, že <xref:System.DateTime.DayOfWeek%2A?displayProperty=nameWithType> vlastnost považuje nula.  
   
--   `WeekdayName`, který vrátí název v týdnu v aktuální jazykové verze, která odpovídá na konkrétní den v týdnu číslo.  
+- `WeekdayName`, který vrátí název v týdnu v aktuální jazykové verze, která odpovídá na konkrétní den v týdnu číslo.  
   
  Následující příklad ukazuje použití jazyka Visual Basic `Weekday` a `WeekdayName` funkce.  
   

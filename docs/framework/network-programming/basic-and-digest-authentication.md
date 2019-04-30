@@ -20,11 +20,11 @@ helpviewer_keywords:
 - user authentication, digest
 ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
 ms.openlocfilehash: 4f70d2aef3bb064a3df9db9c87671040776332a7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59089819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866896"
 ---
 # <a name="basic-and-digest-authentication"></a>Základní ověřování a ověřování hodnotou hash
 <xref:System.Net> Provádění basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest (k dispozici na [World Wide Web Consortium](https://www.w3.org) webu).  

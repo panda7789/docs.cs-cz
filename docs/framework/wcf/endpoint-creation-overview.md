@@ -8,11 +8,11 @@ helpviewer_keywords:
 - endpoints [WCF], overview
 ms.assetid: f4dce0fb-6f54-47e6-8054-86d7f574b91c
 ms.openlocfilehash: 6aecad3719fff98a2e834cff6eee9cfe39a699aa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106532"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858452"
 ---
 # <a name="endpoint-creation-overview"></a>Přehled vytváření koncových bodů
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkci, která nabízí služby WCF. Tato část popisuje strukturu koncový bod a ukazuje, jak definovat koncový bod v konfiguraci a v kódu.  
@@ -20,11 +20,11 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
 ## <a name="the-structure-of-an-endpoint"></a>Struktura koncový bod  
  Každý koncový bod obsahuje adresu, která označuje, kde najít koncový bod, vazbu, která určuje, jak klient může komunikovat s koncovým bodem a kontrakt, který identifikuje dostupné metody.  
   
--   **Adresa**. Adresa jednoznačně identifikuje koncový bod a říká potenciálním zákazníkům, kde se služba nachází. Je zastoupena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> adresu, která obsahuje identifikátor URI (Uniform Resource) a vlastnosti adresy, které zahrnují identitu, některé prvky webové služby WSDL (Description Language) a kolekce volitelné záhlaví. Volitelná záhlaví poskytují další podrobné informace o adresování k identifikaci a k interakci s koncovým bodem. Další informace najdete v tématu [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
+- **Adresa**. Adresa jednoznačně identifikuje koncový bod a říká potenciálním zákazníkům, kde se služba nachází. Je zastoupena v objektový model WCF pomocí <xref:System.ServiceModel.EndpointAddress> adresu, která obsahuje identifikátor URI (Uniform Resource) a vlastnosti adresy, které zahrnují identitu, některé prvky webové služby WSDL (Description Language) a kolekce volitelné záhlaví. Volitelná záhlaví poskytují další podrobné informace o adresování k identifikaci a k interakci s koncovým bodem. Další informace najdete v tématu [zadání adresy koncového bodu](../../../docs/framework/wcf/specifying-an-endpoint-address.md).  
   
--   **Vytvoření vazby**. Vazba Určuje, jak se ke komunikaci s koncovým bodem. Určuje vazbu, jak koncový bod komunikuje s ostatními, včetně protokolu přenosu (například TCP nebo HTTP), kódování, které pro zprávy (například text nebo binary) a jaké požadavky na zabezpečení, které jsou nezbytné (pro například Secure Sockets Layer [SSL] nebo zabezpečení zprávy protokolu SOAP). Další informace najdete v tématu [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
+- **Vytvoření vazby**. Vazba Určuje, jak se ke komunikaci s koncovým bodem. Určuje vazbu, jak koncový bod komunikuje s ostatními, včetně protokolu přenosu (například TCP nebo HTTP), kódování, které pro zprávy (například text nebo binary) a jaké požadavky na zabezpečení, které jsou nezbytné (pro například Secure Sockets Layer [SSL] nebo zabezpečení zprávy protokolu SOAP). Další informace najdete v tématu [pomocí vazby na konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
--   **Kontrakt služby**. Kontrakt služby popisuje, jaké funkce zpřístupňuje koncový bod do klienta. Kontrakt určuje operace, které můžete volat klienta, formulář zprávy a typ vstupních parametrů nebo data potřebná pro volání operace a druh zpracování nebo zprávy s odpovědí, kterou můžete očekávat, že klient. Tři základní typy kontraktů odpovídají základní zprávy exchange vzory (MEPs): datagram (jednocestné), požadavek/odpověď a přenos (obousměrné). Kontrakt služby můžete použít taky data a zprávy smlouvy tak, aby vyžadovala konkrétní datové typy a formáty zpráv při, ke kterému přistupujete. Další informace o tom, jak definování kontraktu služby najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md). Všimněte si, že klient může rovněž vyžaduje, aby implementace kontraktu služby definované, volá se, kontrakt zpětného volání pro příjem zpráv ze služby v duplexním MEP. Další informace najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
+- **Kontrakt služby**. Kontrakt služby popisuje, jaké funkce zpřístupňuje koncový bod do klienta. Kontrakt určuje operace, které můžete volat klienta, formulář zprávy a typ vstupních parametrů nebo data potřebná pro volání operace a druh zpracování nebo zprávy s odpovědí, kterou můžete očekávat, že klient. Tři základní typy kontraktů odpovídají základní zprávy exchange vzory (MEPs): datagram (jednocestné), požadavek/odpověď a přenos (obousměrné). Kontrakt služby můžete použít taky data a zprávy smlouvy tak, aby vyžadovala konkrétní datové typy a formáty zpráv při, ke kterému přistupujete. Další informace o tom, jak definování kontraktu služby najdete v tématu [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md). Všimněte si, že klient může rovněž vyžaduje, aby implementace kontraktu služby definované, volá se, kontrakt zpětného volání pro příjem zpráv ze služby v duplexním MEP. Další informace najdete v tématu [duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   
  Koncový bod služby lze toho pomocí kódu nebo deklarativně prostřednictvím konfigurace. Pokud nejsou zadány žádné koncové body modul runtime poskytuje výchozí koncové body přidáním jeden výchozí koncový bod pro každou základní adresu pro každou smlouvu službou implementována. Definování koncových bodů v kódu není obvykle praktické protože vazeb a adresy pro službu nasazenou se obvykle liší od nastavení použít, je vyvíjena služby. Obecně je praktičtější k definování koncových bodů služby pomocí konfigurace namísto kódu. Udržování vazby a adresování informace mimo kód umožňující změnit bez nutnosti znovu kompilovat a opětovné nasazení aplikace.  
   
@@ -34,13 +34,13 @@ Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane 
 ## <a name="defining-endpoints-in-code"></a>Definování koncových bodů v kódu  
  Následující příklad ukazuje, jak zadat koncový bod v kódu s následujícími možnostmi:  
   
--   Definují kontrakt `IEcho` typ služby, který přijímá název jiného uživatele a zpětné vazby pomocí odpověď "Hello \<jméno >!".  
+- Definují kontrakt `IEcho` typ služby, který přijímá název jiného uživatele a zpětné vazby pomocí odpověď "Hello \<jméno >!".  
   
--   Implementace `Echo` služby typu definované `IEcho` kontraktu.  
+- Implementace `Echo` služby typu definované `IEcho` kontraktu.  
   
--   Zadejte adresu koncového bodu z `http://localhost:8000/Echo` pro službu.  
+- Zadejte adresu koncového bodu z `http://localhost:8000/Echo` pro službu.  
   
--   Konfigurace `Echo` služby pomocí <xref:System.ServiceModel.WSHttpBinding> vazby.  
+- Konfigurace `Echo` služby pomocí <xref:System.ServiceModel.WSHttpBinding> vazby.  
   
 ```csharp  
 Namespace Echo  

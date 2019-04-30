@@ -14,18 +14,18 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 63ecff45e39f3d3813d3f817a2cc55c6c35f5b3a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54716062"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870172"
 ---
 # <a name="blocking-application-execution-by-ending-an-async-operation"></a>Blokování provádění aplikace ukončením asynchronní operace
 Aplikace, které nemůže pokračovat v další práci při čekání na výsledcích asynchronní operaci musí blokovat až do dokončení operace. Blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  
   
--   Volání asynchronních operací **End**_OperationName_ metody. Tento přístup je ukázáno v tomto tématu.  
+- Volání asynchronních operací **End**_OperationName_ metody. Tento přístup je ukázáno v tomto tématu.  
   
--   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít**_OperationName_ metody. Příklad, který ukazuje tento přístup, najdete v části [blokování aplikace spuštění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
+- Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít**_OperationName_ metody. Příklad, který ukazuje tento přístup, najdete v části [blokování aplikace spuštění pomocí vlastnosti AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md).  
   
  Aplikace, které používají **End**_OperationName_ obvykle bude volat metodu blokovat, dokud se asynchronní operace nebude dokončena **začít**  _OperationName_ metody provést žádnou práci, kterou můžete provést bez výsledku operace a následně zavolat **End**_OperationName_.  
   

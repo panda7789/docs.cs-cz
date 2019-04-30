@@ -3,11 +3,11 @@ title: Doporučené postupy pro spolehlivé relace
 ms.date: 03/30/2017
 ms.assetid: b94f6e01-8070-40b6-aac7-a2cb7b4cb4f2
 ms.openlocfilehash: 1d9671e7e3124d535b66de8cd8468f76dcb32b10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491622"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857984"
 ---
 # <a name="best-practices-for-reliable-sessions"></a>Doporučené postupy pro spolehlivé relace
 
@@ -15,59 +15,59 @@ Toto téma popisuje osvědčené postupy pro spolehlivé relace.
 
 ## <a name="setting-maxtransferwindowsize"></a>Nastavení MaxTransferWindowSize
 
-Spolehlivé relace v systému Windows Communication Foundation (WCF) použijte okno přenosu pro uložení zpráv na klientovi a služby. Konfigurovatelná vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> Určuje, kolik zpráv, které mohou být uloženy okno přenosu.
+Spolehlivé relace ve Windows Communication Foundation (WCF) použít okno přenos pro uložení zpráv na klienta a služby. Konfigurovatelné vlastnosti <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> označuje, kolik zpráv přenosu okna může obsahovat.
 
-U odesílatele to znamená, kolik zpráv, které mohou být uloženy okno přenos při čekání na potvrzení; na příjemce znamená to, kolik zpráv do vyrovnávací paměti pro službu.
+V odesílateli to znamená, kolik zpráv okna přenosu, podržte při čekání na potvrzení; na straně příjmu znamená to, kolik zpráv do vyrovnávací paměti pro službu.
 
-Výběr správnou velikost ovlivňuje účinnost sítě a optimální kapacita služby. Následujících oddílech jsou upřesněny co je potřeba zvážit při výběru hodnotu této vlastnosti a vliv hodnoty.
+Výběr správné velikosti má vliv na výkon sítě a optimální kapacita služby. Následující části popisují, co je potřeba zvážit při výběru hodnoty pro tuto vlastnost a dopad hodnotu.
 
-Výchozí velikost okna přenosu je osmi zprávy.
+Výchozí velikost okna přenosu je osm zpráv.
 
 ### <a name="efficient-use-of-the-network"></a>Efektivní využití sítě
 
-V tomto kontextu termín *sítě* odpovídá všechno použít jako základ pro komunikaci mezi klientem (odesílatel) a služby (příjemce). To zahrnuje připojení přenosu a všechny zprostředkovatele nebo mostů v mezi, včetně směrovače protokolu SOAP a HTTP proxy nebo brány firewall.
+V tomto kontextu termín *sítě* odpovídá všechno, co použít jako základ pro komunikaci mezi klientem (odesílatel) a služby (příjemce). To zahrnuje připojení přenosu a všechny zprostředkovatele nebo přemostění mezi, včetně směrovače protokolu SOAP a HTTP proxy servery a brány firewall.
 
-Efektivní využití sítě zajistí, že je plně použít dostatečnou kapacitu sítě. Obě množství dat, které se dá přenést za sekundu přes síť (*přenosová rychlost*) a doby potřebné k přenosu dat od odesilatele k příjemci (*latence*) vliv jak efektivně sítě je použít.
+Efektivní využití sítě zajistí, že je plně využíván kapacita sítě. Velikost dat, které mohou být převedeny v síti za sekundu (*datová rychlost*) a čas potřebný k přenosu dat od odesilatele k příjemci (*latence*) ovlivnit jak efektivně sítě se používá.
 
-Na odesílatele, vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> Určuje, kolik zpráv jeho přenos okno pojme při čekání na potvrzení. Pokud je latence sítě vysoké a aby se zajistilo přizpůsobivý odesílatele a využití efektivní sítě, měli byste zvýšit velikost okna přenosu.
+V odesílateli, vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxTransferWindowSize%2A> označuje, kolik zpráv její okno přenosu, podržte při čekání na potvrzení. Pokud je vysoká latence sítě a aby se zajistilo responzivní odesílatele a využití sítě efektivní, měli byste zvýšit velikost okna přenosu.
 
-I v případě, že odesílatel držela s přenosovou rychlost, latenci může být například vysoké pokud existuje několik prostředníci mezi odesílatele a příjemce nebo data musí projít míru ztrát zprostředkovatele nebo sítě. Odesílatel proto musí čekat potvrzení pro zprávy v okně jeho přenos před přijetím nové zprávy k odeslání v drátové síti. Menší vyrovnávací paměti s vysokou latencí menší platné využití sítě. Na druhé straně příliš vysoká. velikost okna přenosu může mít vliv na službu vzhledem k tomu, aby se do vysoká míra data odeslaná klientem, možná bude nutné službu.
+I v případě, že odesílatel drží krok s přenosovou rychlost, latenci může být například vysoká Pokud několik zprostředkovatelů existovat mezi odesílatelem a příjemcem nebo data musí projít přes míru ztrát zprostředkovatele nebo sítě. Proto má odesílatel čekání na potvrzení pro zprávy v okně přenos před přijetím nového zprávy k odeslání na lince. Čím menší vyrovnávací paměti s vysokou latencí, je méně efektivní využití sítě. Na druhé straně příliš vysoká. velikost okna přenosu může mít vliv na službu vzhledem k tomu, že služba možná muset dohnat na vysoký informací odesílaném klientem.
 
-### <a name="running-the-service-to-capacity"></a>Spuštěná služba kapacity
+### <a name="running-the-service-to-capacity"></a>Spuštěná služba ke kapacitě
 
-Tolik, jako síť se používá efektivně, ideálně také chcete službu spustit na optimální kapacitě. Vlastnost velikost okna přenos na příjemce udává, kolik zpráv příjemce může ukládat do vyrovnávací paměti. Tato zpráva ukládání do vyrovnávací paměti pomáhá nejen řízení toku sítě, ale také povoluje službu spustit na úplné kapacity. Například pokud vyrovnávací paměť je jednu zprávu a doručování zpráv rychleji, než služba dokáže zpracovat, pak v síti může vyřaďte zprávy a kapacity může být ke znehodnocení části nebo nedostatečně využité.
+Co nejvíce efektivní využití sítě v ideálním případě také chcete službu spustit na optimální kapacity. Vlastnost velikost okna přenosu na straně příjmu označuje, kolik zpráv příjemce lze uložit do vyrovnávací paměti. Tato zpráva ukládání do vyrovnávací paměti pomáhá nejen řízení toku sítě, ale taky umožňuje službě a kapacita se spustí. Například pokud vyrovnávací paměť je jedna zpráva a doručování zpráv rychleji, než služba může zpracovat je pak sítě může být vyřadit zprávy a kapacitu mohou být ztraceny, nebo historického.
 
-Používání vyrovnávací paměť zvyšuje dostupnost služby, jako souběžně obdrží a uloží zprávu při zpracování dříve přijatých zpráv.
+Použití vyrovnávací paměti zvyšuje dostupnost služby, jak souběžně přijme a uloží zprávu vyrovnávací paměti při zpracování dříve přijaté zprávy.
 
-Doporučujeme používat stejné `MaxTransferWindowSize` na odesílatele i příjemce.
+Doporučujeme použít stejné `MaxTransferWindowSize` na odesílatele a příjemce.
 
 ### <a name="enabling-flow-control"></a>Povolení řízení toku
 
-*Řízení toku* mechanismus, který zajišťuje, aby odesílatele a příjemce držet krok mezi sebou, to znamená, jsou zprávy spotřebované a reagovali na ni tak rychle, jak jste se vytváří. Velikost okna přenosu na klient a služba zajistí odesílatele a příjemce v rámci přiměřené období synchronizace.
+*Řízení toku* virtuálních sítí je mechanismus, který zajistí, že odesílatel a příjemce držet mezi sebou, tzn. zprávy jsou využité a reagovali na ni tak rychle, protože se vytvářejí. Velikost okna přenosu na klienta a služby zajišťuje, že jsou v rozumné okno synchronizace odesílatele a příjemce.
 
-Důrazně doporučujeme nastavit vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A> k `true` když používáte spolehlivé relace mezi klienta WCF a služby WCF.
+Důrazně doporučujeme, že nastavíte vlastnost <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled%2A> k `true` když používáte stabilní relace mezi klienta WCF a služby WCF.
 
-## <a name="setting-maxpendingchannels"></a>Nastavení MaxPendingChannels
+## <a name="setting-maxpendingchannels"></a>Setting MaxPendingChannels
 
-Při zápisu služba, která umožňuje komunikaci spolehlivé relace z různých klientů, je možné, že mnoho klientů vytvoření spolehlivé relace ve službě ve stejnou dobu. Odpověď služby v těchto situacích závisí na `MaxPendingChannels` vlastnost.
+Při zápisu služba, která umožňuje komunikaci stabilní relace, od různých klientů, je možné mít mnoho klientů vytvořit stabilní relaci ke službě ve stejnou dobu. Odpovědi služby v těchto situacích závisí `MaxPendingChannels` vlastnost.
 
-Odesílatel vytvoří kanál spolehlivé relace k příjemce, vytváří handshake mezi nimi spolehlivé relace. Po navázání spolehlivé relace kanál je uvést do fronty čekající kanál pro přijetí službou. `MaxPendingChannels` Vlastnost udává, kolik kanály může být v tomto stavu.
+Pokud odesílatel vytvoří kanál stabilní relace pro příjemce, handshake mezi nimi vytváří stabilní relace. Po navázání spolehlivé relace kanál je umístěn ve frontě čeká na kanál pro přijetí službou. `MaxPendingChannels` Vlastnost určuje, kolik kanálů může být v tomto stavu.
 
-Je možné, má být ve stavu, kde ji nemůže přijímat další kanály pro službu. Pokud fronta je plná, pokus o vytvoření spolehlivé relace se odmítne a klient musí opakovat pokus.
+Je možné, že služba bude ve stavu, ve kterém nemůže přijmout další kanály. Pokud fronta je plná, odmítl pokus o navázání spolehlivé relace a klient musí opakovat pokus.
 
-Je také možné, že tyto kanály čekající na vyřízení ve frontě zůstat ve frontě delší dobu. Do té doby může dojít vypršení časového limitu nečinnosti na spolehlivé relace, způsobuje kanálu pro přechod do stavu chybou.
+Je také možné, že zůstávají ve frontě čeká na kanály ve frontě delší dobu. Do té doby může dojít vypršení časového limitu nečinnosti na ve stabilní relaci, způsobí kanálu pro přechod na chybovém stavu.
 
-Při zápisu služby, která obsluhuje víc klientů současně, byste měli nastavit hodnotu, která je vhodná pro vaše potřeby. Nastavení příliš velkou hodnotu pro `MaxPendingChannels` vlastnost ovlivňuje pracovní sady.
+Při zápisu služby, která obsluhuje víc klientů současně, byste měli nastavit hodnotu, která je vhodná pro vaše potřeby. Nastavení příliš velkou hodnotu pro `MaxPendingChannels` vlastnost ovlivňuje vaši pracovní sadu.
 
 Výchozí hodnota pro <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.MaxPendingChannels%2A> je čtyři kanály.
 
 ## <a name="reliable-sessions-and-hosting"></a>Spolehlivé relace a hostování
 
-Pokud webovou službu, která používá spolehlivé relace hostování, byste měli mít na paměti následující důležité informace:
+Když webové hostování služba, která používá spolehlivé relace, je třeba mít na paměti následující důležité informace:
 
-- Spolehlivé relace jsou stavová a stavu se udržuje v domény aplikace. To znamená, že všechny zprávy, které jsou součástí spolehlivé relace musí být zpracovány do stejné domény aplikace. Webové farmy a webové zahrada, kde je větší než jeden uzel velikost farmy nebo zahrada nemůže zaručit toto omezení.
+- Spolehlivé relace jsou stavové a stát se udržuje v doméně aplikace. To znamená, že všechny zprávy, které jsou součástí stabilní relace musí být zpracovány v téže doméně AppDomain. Toto omezení nemůže zaručit webových farem a zahrady web, kde je velikost farmy nebo kachnami větší než jeden uzel.
 
-- Spolehlivé relace pomocí dva kanály protokolu HTTP (například pomocí `WsDualHttpBinding`) může vyžadovat více než výchozí dvě připojení za klienta HTTP. To znamená, že duplexní spolehlivé relace může vyžadovat až dvě připojení každého způsobem, protože souběžné aplikace a protokol zpráv může přenosu každý způsob v každém okamžiku. Za určitých podmínek v závislosti na vzorce výměny zpráv služby to znamená, že je možné k zablokování hostované webové služby pomocí duální HTTP a spolehlivé relace. Pokud chcete zvýšit počet povolených připojení prostřednictvím protokolu HTTP pro každého klienta, přidejte následující důležité konfigurační soubor (například *web.config* dotyčné služby):
+- Spolehlivé relace pomocí dvou kanály HTTP (například pomocí `WsDualHttpBinding`) může vyžadovat více než výchozí dvě připojení na klienta HTTP. To znamená, že duplexní stabilní relace může vyžadovat až dvě připojení jednotlivé možnosti přinesou, protože souběžné aplikace a protokol zpráv může přenos jednotlivé možnosti přinesou v daném okamžiku. Za určitých podmínek v závislosti na vzorce výměny zpráv služby to znamená, že je možné k zablokování hostované webové služby pomocí dvou HTTP a spolehlivé relace. Zvyšte počet povolených připojení prostřednictvím protokolu HTTP pro každého klienta, přidejte následující důležité konfigurační soubor (například *web.config* z příslušné služby):
 
   ```xml
   <configuration>
@@ -79,4 +79,4 @@ Pokud webovou službu, která používá spolehlivé relace hostování, byste m
   </configuration>
   ```
 
-  Hodnota `maxconnection` atribut je počet připojení, které jsou potřeba. Minimální v takovém případě by měl být čtyři připojení.
+  Hodnota `maxconnection` atribut je počet připojení potřeba. Minimum v tomto případě by měl být čtyři připojení.

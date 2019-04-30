@@ -7,11 +7,11 @@ helpviewer_keywords:
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
 ms.openlocfilehash: f168d6d9cd6970353e75fa35a7e52cc7156fda72
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907644"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>Postupy: Deklarace výčtů (Visual Basic)
 Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Nelze deklarovat výčet v rámci metody. Pokud chcete zadat odpovídající úroveň přístupu, použijte `Private`, `Protected`, `Friend`, nebo `Public`.  
@@ -38,7 +38,7 @@ Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Ne
   
 ### <a name="to-declare-an-enumeration-as-an-explicit-type"></a>Chcete-li deklarovat výčet jako explicitní typ  
   
--   Zadejte typ výčtu s použitím `As` klauzule, jak je znázorněno v následujícím příkladu.  
+- Zadejte typ výčtu s použitím `As` klauzule, jak je znázorněno v následujícím příkladu.  
   
      [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   

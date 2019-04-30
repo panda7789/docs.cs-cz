@@ -12,11 +12,11 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: 5a8d6afa-1b4b-4b24-8db8-501086ffdebe
 ms.openlocfilehash: 99561490786f3f3569f272138001ea5ad8937410
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59343465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792259"
 ---
 # <a name="walkthrough-creating-an-unbound-windows-forms-datagridview-control"></a>Návod: Vytvoření nevázaného ovládacího prvku Windows Forms DataGridView
 Můžete často zobrazit tabulková data, která nepochází z databáze. Můžete například zobrazit obsah dvourozměrné pole řetězců. <xref:System.Windows.Forms.DataGridView> Třída poskytuje snadný a dobře přizpůsobitelných způsob zobrazení dat bez vazby ke zdroji dat. Tento návod ukazuje, jak naplnit <xref:System.Windows.Forms.DataGridView> řídit a spravovat přidávání a odstraňování řádků v režim "bez vazby". Ve výchozím nastavení může uživatel přidat nové řádky. Chcete-li zabránit přidání řádku, nastavte <xref:System.Windows.Forms.DataGridView.AllowUserToAddRows%2A> vlastnost `false`.  
@@ -75,22 +75,22 @@ Můžete často zobrazit tabulková data, která nepochází z databáze. Může
   
 #### <a name="to-test-the-form"></a>K otestování formuláře  
   
--   Stisknutím klávesy F5 spusťte aplikaci.  
+- Stisknutím klávesy F5 spusťte aplikaci.  
   
      Zobrazí se <xref:System.Windows.Forms.DataGridView> ovládací prvek, který zobrazí skladeb uvedené v `PopulateDataGridView`. Můžete přidat nové řádky s **přidat řádek** tlačítko a můžete odstranit vybrané řádky s **odstranit řádek** tlačítko. Nepřipojeného <xref:System.Windows.Forms.DataGridView> ovládací prvek je úložiště dat a jeho data, jako je nezávislá jakéhokoli externího zdroje <xref:System.Data.DataSet> nebo pole.  
   
 ## <a name="next-steps"></a>Další kroky  
  Tato aplikace získáte základní znalosti o <xref:System.Windows.Forms.DataGridView> možnosti ovládacího prvku. Můžete přizpůsobit vzhled a chování <xref:System.Windows.Forms.DataGridView> ovládacího prvku v několika ohledech:  
   
--   Změna stylů ohraničení a záhlaví. Další informace najdete v tématu [jak: Změna ohraničení a styly mřížky v Windows Forms DataGridView](change-the-border-and-gridline-styles-in-the-datagrid.md).  
+- Změna stylů ohraničení a záhlaví. Další informace najdete v tématu [jak: Změna ohraničení a styly mřížky v Windows Forms DataGridView](change-the-border-and-gridline-styles-in-the-datagrid.md).  
   
--   Povolit nebo zakázat vstup uživatele <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Další informace najdete v tématu [jak: Zamezení přidávání řádků a odstranění v Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md), a [jak: Přepnutí sloupců jen pro čtení v Windows Forms DataGridView – ovládací prvek](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md).  
+- Povolit nebo zakázat vstup uživatele <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Další informace najdete v tématu [jak: Zamezení přidávání řádků a odstranění v Windows Forms DataGridView](prevent-row-addition-and-deletion-datagridview.md), a [jak: Přepnutí sloupců jen pro čtení v Windows Forms DataGridView – ovládací prvek](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md).  
   
--   Zkontrolujte chyby související s databáze uživatelský vstup. Další informace najdete v tématu [názorný postup: Zpracování chyb vzniklých při zadávání dat v Windows Forms DataGridView – ovládací prvek](handling-errors-that-occur-during-data-entry-in-the-datagrid.md).  
+- Zkontrolujte chyby související s databáze uživatelský vstup. Další informace najdete v tématu [názorný postup: Zpracování chyb vzniklých při zadávání dat v Windows Forms DataGridView – ovládací prvek](handling-errors-that-occur-during-data-entry-in-the-datagrid.md).  
   
--   Zpracování velmi rozsáhlým datovým sadám pomocí virtuální režim. Další informace najdete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
+- Zpracování velmi rozsáhlým datovým sadám pomocí virtuální režim. Další informace najdete v tématu [názorný postup: Implementace virtuálního režimu v Windows Forms DataGridView – ovládací prvek](implementing-virtual-mode-wf-datagridview-control.md).  
   
--   Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md).  
+- Přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) a [jak: Nastavení výchozích stylů buňky pro Windows Forms DataGridView – ovládací prvek](how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
 ms.openlocfilehash: 5e3a8bc58d0828f50feb7752eb438d41695460fa
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857789"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  
@@ -35,21 +35,21 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Tato vazba je určen pro použití s celou řadu existujících technologií, včetně následujících:  
   
--   ASP.NET Web services (ASMX), verze 1.  
+- ASP.NET Web services (ASMX), verze 1.  
   
--   Webové aplikace služby vylepšení (Najít).  
+- Webové aplikace služby vylepšení (Najít).  
   
--   Basic Profile jak jsou definovány v Interoperability webové služby (WS-I) specifikace (<https://go.microsoft.com/fwlink/?LinkId=38955>).  
+- Basic Profile jak jsou definovány v Interoperability webové služby (WS-I) specifikace (<https://go.microsoft.com/fwlink/?LinkId=38955>).  
   
--   Profil základní zabezpečení, jak jsou definovány v WS-I.  
+- Profil základní zabezpečení, jak jsou definovány v WS-I.  
   
  Ve výchozím nastavení tato vazba není zabezpečený. Je určená pro spolupráci se službami ASMX. Když je povolené zabezpečení, vazby je navržená pro bezproblémovou spolupráci s mechanismy zabezpečení Internetové informační služby (IIS), jako je například základní ověřování hodnotou hash a integrované zabezpečení Windows. Další informace najdete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md). Tato vazba podporuje následující funkce:  
   
--   Zabezpečení přenosu HTTPS.  
+- Zabezpečení přenosu HTTPS.  
   
--   Základní ověřování protokolu HTTP.  
+- Základní ověřování protokolu HTTP.  
   
--   WS-Security.  
+- WS-Security.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.BasicHttpSecurity>, <xref:System.ServiceModel.BasicHttpMessageSecurity>, <xref:System.ServiceModel.BasicHttpMessageCredentialType>, a <xref:System.ServiceModel.BasicHttpSecurityMode>.  
   
@@ -58,11 +58,11 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Ve výchozím nastavení, tato vazba implementuje specifikaci WS-Security a nabízí interoperabilitu mezi službami, které implementují WS-* specifikace. Podporuje následující:  
   
--   Zabezpečení přenosu HTTPS.  
+- Zabezpečení přenosu HTTPS.  
   
--   WS-Security.  
+- WS-Security.  
   
--   HTTPS přenosu ochrany pomocí pověření zabezpečení zpráv SOAP za účelem ověřování totožnosti volající.  
+- HTTPS přenosu ochrany pomocí pověření zabezpečení zpráv SOAP za účelem ověřování totožnosti volající.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.WSHttpSecurity>, <xref:System.ServiceModel.MessageSecurityOverHttp>, <xref:System.ServiceModel.MessageCredentialType>, <xref:System.ServiceModel.SecurityMode>, <xref:System.ServiceModel.HttpTransportSecurity>, <xref:System.ServiceModel.HttpClientCredentialType>, a <xref:System.ServiceModel.HttpProxyCredentialType>.  
   
@@ -71,23 +71,23 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Tato vazba je navržená k umožnění duplexní služby aplikace. Tato vazba implementuje specifikaci WS-Security pro zabezpečení na základě zpráv přenosu. Zabezpečení přenosu není k dispozici. Ve výchozím nastavení poskytuje následující funkce:  
   
--   Implementuje zasílání zpráv WS-Reliable spolehlivosti.  
+- Implementuje zasílání zpráv WS-Reliable spolehlivosti.  
   
--   Implementuje pro ověřování a zabezpečení přenosu WS-Security.  
+- Implementuje pro ověřování a zabezpečení přenosu WS-Security.  
   
--   Používá protokol HTTP pro doručování zpráv.  
+- Používá protokol HTTP pro doručování zpráv.  
   
--   Použije kódování zprávy text/XML.  
+- Použije kódování zprávy text/XML.  
   
  Vazba pomocí WS-Security (zabezpečení vrstvy zpráva), umožňuje nakonfigurovat následující parametry:  
   
--   Sada algoritmů zabezpečení k určení kryptografického algoritmu.  
+- Sada algoritmů zabezpečení k určení kryptografického algoritmu.  
   
--   Vazba pro následující možnosti:  
+- Vazba pro následující možnosti:  
   
-    -   Poskytuje služby přihlašovací údaje k dispozici out-of-band na straně klienta.  
+    - Poskytuje služby přihlašovací údaje k dispozici out-of-band na straně klienta.  
   
-    -   Zadání přihlašovacích údajů služby vyjednávat ze služby jako součást instalace kanálu.  
+    - Zadání přihlašovacích údajů služby vyjednávat ze služby jako součást instalace kanálu.  
   
  Další informace naleznete v tématu <xref:System.ServiceModel.WSDualHttpSecurity> a <xref:System.ServiceModel.WSDualHttpSecurityMode>.  
   
@@ -96,21 +96,21 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Tato vazba je optimalizovaná pro komunikaci mezi počítači. Ve výchozím nastavení má následující vlastnosti:  
   
--   Implementuje přenosové vrstvy zabezpečení.  
+- Implementuje přenosové vrstvy zabezpečení.  
   
--   Využívá Windows zabezpečení pro ověřování a zabezpečení přenosu.  
+- Využívá Windows zabezpečení pro ověřování a zabezpečení přenosu.  
   
--   Používá protokol TCP pro přenos.  
+- Používá protokol TCP pro přenos.  
   
--   Implementuje kódování binární zprávy.  
+- Implementuje kódování binární zprávy.  
   
--   Implementuje posílání WS-Reliable.  
+- Implementuje posílání WS-Reliable.  
   
  Mezi možnosti patří následující:  
   
--   Zabezpečení zpráv vrstvy (pomocí WS-Security).  
+- Zabezpečení zpráv vrstvy (pomocí WS-Security).  
   
--   Zabezpečení s pověřením zpráv přenosu – důvěrnost a integrita poskytuje tak zabezpečení TLS (Transport Layer) přes TCP a přihlašovací údaje pro autorizaci poskytuje WS-Security.  
+- Zabezpečení s pověřením zpráv přenosu – důvěrnost a integrita poskytuje tak zabezpečení TLS (Transport Layer) přes TCP a přihlašovací údaje pro autorizaci poskytuje WS-Security.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.NetTcpSecurity>, <xref:System.ServiceModel.TcpTransportSecurity>, <xref:System.ServiceModel.TcpClientCredentialType>, <xref:System.ServiceModel.MessageSecurityOverTcp>, a <xref:System.ServiceModel.MessageCredentialType>.  
   
@@ -119,17 +119,17 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Tato vazba je optimalizovaná pro komunikaci mezi procesy (obvykle ve stejném počítači). Ve výchozím nastavení tato vazba má následující vlastnosti:  
   
--   Používá přenos pro přenos zpráv a ověřování zabezpečení.  
+- Používá přenos pro přenos zpráv a ověřování zabezpečení.  
   
--   Použití pojmenované kanály pro doručování zpráv.  
+- Použití pojmenované kanály pro doručování zpráv.  
   
--   Implementuje kódování binární zprávy.  
+- Implementuje kódování binární zprávy.  
   
--   Šifrování a podepisování zpráv.  
+- Šifrování a podepisování zpráv.  
   
  Mezi možnosti patří následující:  
   
--   Ověřování pomocí zabezpečení Windows.  
+- Ověřování pomocí zabezpečení Windows.  
   
  Další informace najdete v tématu <xref:System.ServiceModel.NetNamedPipeSecurity>, <xref:System.ServiceModel.NetNamedPipeSecurityMode>, a <xref:System.ServiceModel.NamedPipeTransportSecurity>.  
   
@@ -140,9 +140,9 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Ve výchozím nastavení tato vazba používá zabezpečení přenosu a obsahuje následující vlastnosti zabezpečení:  
   
--   Zabezpečení může být zakázány (žádné).  
+- Zabezpečení může být zakázány (žádné).  
   
--   Zabezpečení přenosu služby MSMQ (přenos).  
+- Zabezpečení přenosu služby MSMQ (přenos).  
   
  Další informace naleznete v tématu <xref:System.ServiceModel.NetMsmqSecurity> a <xref:System.ServiceModel.NetMsmqSecurityMode>.  
   
@@ -153,15 +153,15 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
  Ve výchozím nastavení tato vazba používá zabezpečení přenosu a obsahuje následující vlastnosti zabezpečení:  
   
--   Zabezpečení může být zakázány (žádné).  
+- Zabezpečení může být zakázány (žádné).  
   
--   Zabezpečení přenosu služby MSMQ (přenos).  
+- Zabezpečení přenosu služby MSMQ (přenos).  
   
--   Zabezpečení založené na protokolu SOAP zprávy (zprávy).  
+- Zabezpečení založené na protokolu SOAP zprávy (zprávy).  
   
--   Souběžné přenosu zpráv zabezpečení a (i).  
+- Souběžné přenosu zpráv zabezpečení a (i).  
   
--   Podporované typy přihlašovacích údajů klienta: Žádný, Windows, uživatelské jméno, certifikát, třídy IssuedToken.  
+- Podporované typy přihlašovacích údajů klienta: Žádný, Windows, uživatelské jméno, certifikát, třídy IssuedToken.  
   
  <xref:System.ServiceModel.MessageCredentialType.Certificate> Přihlašovacích údajů se podporuje jenom režim zabezpečení je nastaven na hodnotu <xref:System.ServiceModel.NetMsmqSecurityMode.Both> nebo <xref:System.ServiceModel.NetMsmqSecurityMode.Message>.  
   
@@ -204,7 +204,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 |Type|Popis|  
 |----------|-----------------|  
-|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Základní ověřování. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na <https://go.microsoft.com/fwlink/?LinkId=84023>.|  
 |ověřování algoritmem Digest|Ověřování algoritmem Digest. Další informace najdete v tématu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest, k dispozici na <https://go.microsoft.com/fwlink/?LinkId=84023>.|  
 |NTLM|NT LAN Manager (NTLM) authentication.|  
@@ -217,7 +217,7 @@ Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) na
   
 |Type|Popis|  
 |----------|-----------------|  
-|Žádné|Umožňuje službě komunikovat s anonymní klienty.|  
+|Žádný|Umožňuje službě komunikovat s anonymní klienty.|  
 |Windows|Umožňuje výměny zpráv SOAP podle ověřený kontext přihlašovacích údajů Windows.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, která klient ověřena pomocí pověření uživatelského jména. Všimněte si, že pokud režim zabezpečení je nastavený na `TransportWithMessageCredential`, WCF nepodporuje odeslání hesla hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro režim zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu.|  

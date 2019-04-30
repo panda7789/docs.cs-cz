@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: efdc203e-3da9-4477-815e-54f10c3d7c6c
 ms.openlocfilehash: dd59c09185eab003274614dcc30393b060e6b7c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59215440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61904472"
 ---
 # <a name="how-to-control-how-much-related-data-is-retrieved"></a>Postupy: Určení objemu načítaných souvisejících dat
 Použití <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> metody k určení, která data související s vaší hlavní cíl by měly být načteny současně. Například pokud víte, budete potřebovat informace o objednávek zákazníků, můžete použít <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> abyste měli jistotu, že je ve stejnou dobu jako informace o zákaznících načíst informace o objednávce. Tento přístup za následek jenom jednu cestu k databázi pro obě sady informace.  

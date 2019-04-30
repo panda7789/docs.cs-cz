@@ -9,11 +9,11 @@ ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3d47fa4d4ef7a55182dd27aa6f64542fec1fa99c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61776035"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection Schema Compilation
 **Třídou XmlSchemaCollection** mezipaměti nebo knihovny, kde můžete ukládat a ověřit XML-Data Reduced (XDR) a schéma XML definice jazyk (XSD) schémata. **Kolekci XmlSchemaCollection** zvyšuje výkon díky ukládání do mezipaměti schémat v paměti namísto se k nim dostanete ze souboru nebo adresy URL.  

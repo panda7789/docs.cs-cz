@@ -3,11 +3,11 @@ title: Operace hromadného kopírování na SQL Serveru
 ms.date: 03/30/2017
 ms.assetid: 83a7a0d2-8018-4354-97b9-0b1d99f8342b
 ms.openlocfilehash: 086b3b997cf0915be7cfa603a651eb412d52e985
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59194796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61878641"
 ---
 # <a name="bulk-copy-operations-in-sql-server"></a>Operace hromadného kopírování na SQL Serveru
 Microsoft SQL Server obsahuje oblíbené nástroje příkazového řádku s názvem **bcp** pro rychle hromadné kopírování velkých souborů do tabulky a zobrazení v databázích systému SQL Server. <xref:System.Data.SqlClient.SqlBulkCopy> Třída umožňuje zapisovat spravovaného kódu řešení, která poskytuje podobné funkce. Existují jiné způsoby, jak načíst data do tabulky SQL serveru (například příkazy INSERT), ale <xref:System.Data.SqlClient.SqlBulkCopy> nabízí výhody výkonu nad nimi.  
@@ -16,11 +16,11 @@ Microsoft SQL Server obsahuje oblíbené nástroje příkazového řádku s náz
   
  Použití <xref:System.Data.SqlClient.SqlBulkCopy> třídy, můžete provést:  
   
--   Jeden hromadného kopírování  
+- Jeden hromadného kopírování  
   
--   Vícečetné operace hromadného kopírování  
+- Vícečetné operace hromadného kopírování  
   
--   Operaci hromadného kopírování v rámci transakce  
+- Operaci hromadného kopírování v rámci transakce  
   
 > [!NOTE]
 >  Při použití rozhraní .NET Framework verze 1.1 nebo starší (což není podporováno <xref:System.Data.SqlClient.SqlBulkCopy> třídy), můžete spustit SQL Server Transact-SQL **BULK INSERT** pomocí příkazu <xref:System.Data.SqlClient.SqlCommand> objektu.  

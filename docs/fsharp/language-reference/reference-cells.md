@@ -3,11 +3,11 @@ title: Referenční buňky
 description: Zjistěte, jak F# odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.
 ms.date: 05/16/2016
 ms.openlocfilehash: e4fcd3cf1abcf5f5e3b4d5439c9215b79ff8dbcd
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795395"
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -50,7 +50,7 @@ let ref x = { contents = x }
 
 V následující tabulce jsou uvedeny funkce, které jsou u odkazové buňky dostupné.
 
-|Operátor, člen nebo pole|Popis|Typ|Definice|
+|Operátor, člen nebo pole|Popis|Type|Definice|
 |--------------------------|-----------|----|----------|
 |`!` (operátor zrušení odkazu)|Vrátí zdrojovou hodnotu.|`'a ref -> 'a`|`let (!) r = r.contents`|
 |`:=` (operátor přiřazení)|Změní zdrojovou hodnotu.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|

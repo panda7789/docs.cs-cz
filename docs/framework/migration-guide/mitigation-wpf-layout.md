@@ -5,11 +5,11 @@ ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f81af76ed305fb614202c240e449adc62b310933
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59189930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871240"
 ---
 # <a name="mitigation-wpf-layout"></a>Omezení rizik: Rozložení WPF
 Rozložení ovládacích prvků WPF může mírně změnit.  
@@ -17,11 +17,11 @@ Rozložení ovládacích prvků WPF může mírně změnit.
 ## <a name="impact"></a>Dopad  
  V důsledku této změny:  
   
--   Šířka nebo výška prvků může zvětšovat a zmenšovat podle maximálně jeden pixel.  
+- Šířka nebo výška prvků může zvětšovat a zmenšovat podle maximálně jeden pixel.  
   
--   Umístění objektu lze přesunout maximálně jeden pixel.  
+- Umístění objektu lze přesunout maximálně jeden pixel.  
   
--   Elementy na střed lze vertikálně nebo horizontálně vypnout Centrum maximálně jeden pixel.  
+- Elementy na střed lze vertikálně nebo horizontálně vypnout Centrum maximálně jeden pixel.  
   
  Ve výchozím nastavení je toto nové rozložení povoleny pouze pro aplikace, které cílí rozhraní .NET Framework 4.6.  
   

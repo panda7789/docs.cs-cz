@@ -13,11 +13,11 @@ ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b129da00fcd841566a4a823d8929348441d0a0f3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315540"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793247"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Postupy: Definování obecného typu pomocí generování reflexe
 Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typu, jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu a jak vytvořit členy, které používají parametry typu třídy jako typy parametrů a návratové typy.  
@@ -129,11 +129,11 @@ Toto téma ukazuje, jak vytvořit jednoduchý obecný typ s dvěma parametry typ
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
+- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
--   Nejsou vyžadovány žádné odkazy na další sestavení.  
+- Nejsou vyžadovány žádné odkazy na další sestavení.  
   
--   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

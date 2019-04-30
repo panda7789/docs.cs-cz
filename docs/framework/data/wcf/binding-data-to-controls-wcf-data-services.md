@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
 ms.openlocfilehash: fb2a7c8e1cf3fbae4c6417dab492343ead991204
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793433"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vazba dat k ovládacím prvkům (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat ovládací prvky, jako `ComboBox` a `ListView` ovládacích prvků do instance <xref:System.Data.Services.Client.DataServiceCollection%601> třídy. Tuto kolekci, která dědí z <xref:System.Collections.ObjectModel.ObservableCollection%601> třídy, obsahuje data z [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato třída reprezentuje kolekci dynamická data, která poskytuje oznámení, pokud získat přidávat nebo odebírat položky. Při použití instance <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny pro zpracování těchto událostí k zajištění, že objekty sledován pomocí funkce <xref:System.Data.Services.Client.DataServiceContext> zůstane synchronizovaná s daty v elementu vazby uživatelského rozhraní.  
@@ -73,17 +73,17 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
 ## <a name="customizing-data-binding-behaviors"></a>Přizpůsobení chování datových vazeb  
  <xref:System.Data.Services.Client.DataServiceCollection%601> Třída umožňuje zachytit události vyvolané při změně do kolekce, jako například přidávání nebo odebírání objektu a při změně vlastnosti objektu v kolekci. Můžete upravit vazby události dat přepsat výchozí chování, která zahrnuje následující omezení:  
   
--   Žádné ověření se provádí v rámci delegáty.  
+- Žádné ověření se provádí v rámci delegáty.  
   
--   Přidání entity automaticky přidá související entity.  
+- Přidání entity automaticky přidá související entity.  
   
--   Odstraňuje se entita nedojde k odstranění souvisejících entit.  
+- Odstraňuje se entita nedojde k odstranění souvisejících entit.  
   
  Když vytvoříte novou instanci třídy <xref:System.Data.Services.Client.DataServiceCollection%601>, máte možnost zadat následující parametry, které definují delegáty pro metody, které zpracovávají události vyvolané při změně vázaným objektům:  
   
--   `entityChanged` -metodu, která je volána, když je změněna vlastnost Vázaný objekt. To <xref:System.Func%602> přijímá delegát <xref:System.Data.Services.Client.EntityChangedParams> objekt a vrátí logickou hodnotu, která určuje, zda výchozí chování volání <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> na <xref:System.Data.Services.Client.DataServiceContext>, stále se budou objevovat.  
+- `entityChanged` -metodu, která je volána, když je změněna vlastnost Vázaný objekt. To <xref:System.Func%602> přijímá delegát <xref:System.Data.Services.Client.EntityChangedParams> objekt a vrátí logickou hodnotu, která určuje, zda výchozí chování volání <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> na <xref:System.Data.Services.Client.DataServiceContext>, stále se budou objevovat.  
   
--   `entityCollectionChanged` -metodu, která je volána, když se přidá nebo odebere z kolekce vazbu objektu. To <xref:System.Func%602> přijímá delegát <xref:System.Data.Services.Client.EntityCollectionChangedParams> objekt a vrátí logickou hodnotu, která určuje, zda výchozí chování volání <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> pro <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Add> akce nebo <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> pro <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove> akce <xref:System.Data.Services.Client.DataServiceContext>, stále se budou objevovat.  
+- `entityCollectionChanged` -metodu, která je volána, když se přidá nebo odebere z kolekce vazbu objektu. To <xref:System.Func%602> přijímá delegát <xref:System.Data.Services.Client.EntityCollectionChangedParams> objekt a vrátí logickou hodnotu, která určuje, zda výchozí chování volání <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> pro <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Add> akce nebo <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> pro <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove> akce <xref:System.Data.Services.Client.DataServiceContext>, stále se budou objevovat.  
   
 > [!NOTE]
 >  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ověří žádné vlastní chování, které implementují v tyto delegáty.  
@@ -101,15 +101,15 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete svázat 
 ## <a name="data-binding-with-custom-client-data-classes"></a>Datové vazby pomocí klienta vlastních datových tříd  
  Bude moct načíst objekty do <xref:System.Data.Services.Client.DataServiceCollection%601>, musí implementovat samotných objektech <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Datová služba třídy klienta, které jsou generovány, pokud použijete **přidat odkaz na službu** dialogové okno nebo [DataSvcUtil.exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) toto rozhraní implementují nástroje. Pokud zadáte vlastní datové třídy, musíte použít jiný typ kolekce pro datovou vazbu. Pokud změníte objekty, musí zpracovávat události v ovládacích prvcích data vázaná na tyto metody volat <xref:System.Data.Services.Client.DataServiceContext> třídy:  
   
--   <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> – Při přidání nového objektu do kolekce.  
+- <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> – Při přidání nového objektu do kolekce.  
   
--   <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> – Když je objekt odebrat z kolekce.  
+- <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> – Když je objekt odebrat z kolekce.  
   
--   <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> – Když se změní vlastnost na objekt v kolekci.  
+- <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> – Když se změní vlastnost na objekt v kolekci.  
   
--   <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> – Při přidání objektu do kolekce související objekt.  
+- <xref:System.Data.Services.Client.DataServiceContext.AddLink%2A> – Při přidání objektu do kolekce související objekt.  
   
--   <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> – Když je objekt přidán ke kolekci souvisejících objektů.  
+- <xref:System.Data.Services.Client.DataServiceContext.SetLink%2A> – Když je objekt přidán ke kolekci souvisejících objektů.  
   
  Další informace najdete v tématu [aktualizace datové služby](../../../../docs/framework/data/wcf/updating-the-data-service-wcf-data-services.md).  
   

@@ -16,11 +16,11 @@ ms.assetid: ab7f62b3-6d2c-4efb-8ac6-28600df5fd5c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a08e97b02e2f60422132e97e2f3f7d4d2d5b8ec4
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46583782"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61860968"
 ---
 # <a name="how-to-extract-a-protocol-and-port-number-from-a-url"></a>Postupy: Extrahování protokolu a čísla portu z adresy URL
 Následující příklad extrahuje protokol a číslo portu z adresy URL.  

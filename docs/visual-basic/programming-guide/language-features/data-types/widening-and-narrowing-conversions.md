@@ -20,11 +20,11 @@ helpviewer_keywords:
 - conversions [Visual Basic], widening
 ms.assetid: 058c3152-6c28-4268-af44-2209e774f0bd
 ms.openlocfilehash: 9f1a71e8e2e3e4ebb9b412be74b5ea8702eb164f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58842548"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61827154"
 ---
 # <a name="widening-and-narrowing-conversions-visual-basic"></a>Rozšíření a zúžení převodů (Visual Basic)
 Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu cílového datového typu.  
@@ -68,15 +68,15 @@ Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu 
 ## <a name="narrowing-conversions"></a>Zužující převody  
  Standardní zužující převody zahrnují následující:  
   
--   Reverzní pokynů rozšiřující převody v předchozí tabulky (s tím rozdílem, že každý typ rozšiřuje na sebe sama)  
+- Reverzní pokynů rozšiřující převody v předchozí tabulky (s tím rozdílem, že každý typ rozšiřuje na sebe sama)  
   
--   Převody v obou směrech mezi [logická](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) a jakýkoli číselný typ  
+- Převody v obou směrech mezi [logická](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) a jakýkoli číselný typ  
   
--   Převody z libovolného číselného typu k libovolnému Výčtový typ (`Enum`)  
+- Převody z libovolného číselného typu k libovolnému Výčtový typ (`Enum`)  
   
--   Převody v obou směrech mezi [řetězec](../../../../visual-basic/language-reference/data-types/string-data-type.md) a libovolného číselného typu `Boolean`, nebo [datum](../../../../visual-basic/language-reference/data-types/date-data-type.md)  
+- Převody v obou směrech mezi [řetězec](../../../../visual-basic/language-reference/data-types/string-data-type.md) a libovolného číselného typu `Boolean`, nebo [datum](../../../../visual-basic/language-reference/data-types/date-data-type.md)  
   
--   Převody z datového typu nebo objekt typu na typ odvozený z ní  
+- Převody z datového typu nebo objekt typu na typ odvozený z ní  
   
  Zužující převody nejsou vždy v době spuštění úspěšné a může selhat nebo ztrátě dat se vám účtovat. Pokud cílový datový typ nemůže přijímat převáděná hodnota dojde k chybě. Například převod čísla může způsobit přetečení. Kompilátor neumožňuje provést zužující převody implicitně, není-li [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastaví typ kontroly přepínač tak, aby `Off`.  
   
@@ -89,9 +89,9 @@ Což je důležité při převodu typu je, zda výsledkem převodu je v rozsahu 
 ## <a name="exceptions-during-conversion"></a>Výjimky při převodu  
  Protože rozšiřující převody vždy úspěšné, nevyvolají výjimky. Zužující převody, když selžou, nejčastěji vyvolání následující výjimky:  
   
--   <xref:System.InvalidCastException> – Pokud není definován žádný převod mezi těmito dvěma typy  
+- <xref:System.InvalidCastException> – Pokud není definován žádný převod mezi těmito dvěma typy  
   
--   <xref:System.OverflowException> – (pouze integrálovými typy) Pokud převedená hodnota je příliš velký pro cílový typ  
+- <xref:System.OverflowException> – (pouze integrálovými typy) Pokud převedená hodnota je příliš velký pro cílový typ  
   
  Pokud třída nebo struktura, definuje [CType – funkce](../../../../visual-basic/language-reference/functions/ctype-function.md) sloužit jako operátor převodu na nebo z této třídě nebo struktuře, který `CType` lze vyvolat jakoukoli výjimku považuje za vhodné. Kromě toho, který `CType` může volat funkce jazyka Visual Basic nebo [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] metody, které pak může vyvolat různé výjimky.  
   

@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: e5d13760-4c83-4b0d-abef-39852677cd7a
 author: ghogen
 ms.openlocfilehash: 160d1b5f0604cff96549c9d94dc5d8ddc7e39f09
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59217156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914170"
 ---
 # <a name="how-to-continue-a-windows-service-visual-basic"></a>Postupy: Pokračování služby systému Windows (Visual Basic)
 V tomto příkladu <xref:System.ServiceProcess.ServiceController> komponenty pokračujte služba správy služby IIS v místním počítači.  
@@ -29,9 +29,9 @@ V tomto příkladu <xref:System.ServiceProcess.ServiceController> komponenty pok
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkaz na projekt do System.serviceprocess.dll.  
+- Odkaz na projekt do System.serviceprocess.dll.  
   
--   Přístup k členům <xref:System.ServiceProcess> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Přístup k členům <xref:System.ServiceProcess> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="robust-programming"></a>Robustní programování  
  <xref:System.ServiceProcess.ServiceController.MachineName%2A> Vlastnost <xref:System.ServiceProcess.ServiceController> místního počítače ve výchozím nastavení je třída. Chcete-li odkazovat služeb Windows na jiný počítač, změňte <xref:System.ServiceProcess.ServiceController.MachineName%2A> nastavte název tohoto počítače.  
@@ -40,9 +40,9 @@ V tomto příkladu <xref:System.ServiceProcess.ServiceController> komponenty pok
   
  Následující podmínky mohou způsobit výjimku:  
   
--   Službu nelze obnovit. (<xref:System.InvalidOperationException>)  
+- Službu nelze obnovit. (<xref:System.InvalidOperationException>)  
   
--   Došlo k chybě při přístupu k systému rozhraní API. (<xref:System.ComponentModel.Win32Exception>)  
+- Došlo k chybě při přístupu k systému rozhraní API. (<xref:System.ComponentModel.Win32Exception>)  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Řízení služeb v počítači může být omezena pomocí <xref:System.ServiceProcess.ServiceControllerPermissionAccess> nastavení oprávnění ve výčtu <xref:System.ServiceProcess.ServiceControllerPermission> třídy.  

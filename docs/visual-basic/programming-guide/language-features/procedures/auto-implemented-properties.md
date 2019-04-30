@@ -10,11 +10,11 @@ helpviewer_keywords:
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
 ms.openlocfilehash: aa045dd5454819a37ad81c76d97fd3e61e7d0420
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864309"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
 *Automaticky implementované vlastnosti* vám umožní rychle určit vlastnost třídy, aniž byste museli napsat kód, který `Get` a `Set` vlastnost. Při psaní kódu pro automaticky implementovanou vlastnost kompilátor jazyka Visual Basic automaticky vytvoří soukromé pole k uložení proměnné vlastnost kromě vytvoření přidružený `Get` a `Set` postupy.  
@@ -52,13 +52,13 @@ End Class
   
  Pomocné pole také má následující vlastnosti:  
   
--   Modifikátor přístupu pro pomocné pole je vždy `Private`, i když samotné vlastnosti má úroveň různý přístup, jako například `Public`.  
+- Modifikátor přístupu pro pomocné pole je vždy `Private`, i když samotné vlastnosti má úroveň různý přístup, jako například `Public`.  
   
--   Pokud je vlastnost označená jako `Shared`, také sdílet pomocným polem.  
+- Pokud je vlastnost označená jako `Shared`, také sdílet pomocným polem.  
   
--   Atributy určené pro vlastnost se nevztahují na pomocné pole.  
+- Atributy určené pro vlastnost se nevztahují na pomocné pole.  
   
--   Pomocné pole jsou přístupné z kódu v rámci třídy a ladicí nástroje, jako jsou okna kukátka. Pomocné pole není uveden v seznamu pro doplňování slov technologie IntelliSense.  
+- Pomocné pole jsou přístupné z kódu v rámci třídy a ladicí nástroje, jako jsou okna kukátka. Pomocné pole není uveden v seznamu pro doplňování slov technologie IntelliSense.  
   
 ## <a name="initializing-an-auto-implemented-property"></a>Inicializuje se automaticky implementované vlastnosti  
  Libovolný výraz, který slouží k inicializaci pole je platný pro inicializaci automaticky implementované vlastnosti. Při inicializaci automaticky implementované vlastnosti výraz je vyhodnocen a předat `Set` postup pro vlastnost. Následující příklady kódu ukazují některé automaticky implementované vlastnosti, které obsahují počáteční hodnoty.  
@@ -78,17 +78,17 @@ End Class
   
  Budete muset použít syntaxe rozšířené definici vlastnosti, pokud chcete provádět žádnou z následujících akcí:  
   
--   Přidejte kód, který `Get` nebo `Set` procedury vlastnosti, jako je například kód pro ověření příchozích hodnot v `Set` postup. Například můžete chtít ověřit, jestli řetězec, který představuje telefonní číslo obsahuje požadovaný počet číslic než nastavení hodnoty vlastnosti.  
+- Přidejte kód, který `Get` nebo `Set` procedury vlastnosti, jako je například kód pro ověření příchozích hodnot v `Set` postup. Například můžete chtít ověřit, jestli řetězec, který představuje telefonní číslo obsahuje požadovaný počet číslic než nastavení hodnoty vlastnosti.  
   
--   Zadejte jiný usnadnění pro `Get` a `Set` postup. Například můžete chtít provést `Set` postup `Private` a `Get` postup `Public`.  
+- Zadejte jiný usnadnění pro `Get` a `Set` postup. Například můžete chtít provést `Set` postup `Private` a `Get` postup `Public`.  
   
--   Vytvoření vlastnosti, které jsou `WriteOnly`.  
+- Vytvoření vlastnosti, které jsou `WriteOnly`.  
   
--   Použití parametrizovaného vlastností (včetně `Default` vlastnosti). Rozšířené vlastnosti musí deklarovat, pokud chcete zadat parametr pro vlastnost, nebo k zadání dalších parametrů pro `Set` postup.  
+- Použití parametrizovaného vlastností (včetně `Default` vlastnosti). Rozšířené vlastnosti musí deklarovat, pokud chcete zadat parametr pro vlastnost, nebo k zadání dalších parametrů pro `Set` postup.  
   
--   Umístit atribut na pomocné pole nebo změnit úroveň přístupu pomocným polem.  
+- Umístit atribut na pomocné pole nebo změnit úroveň přístupu pomocným polem.  
   
--   Komentáře XML zadejte pro pole zálohování.  
+- Komentáře XML zadejte pro pole zálohování.  
   
 ## <a name="expanding-an-auto-implemented-property"></a>Automaticky implementované vlastnosti rozšíření  
  Pokud budete muset převést na rozšířenou vlastnost, která obsahuje automaticky implementované vlastnosti `Get` nebo `Set` postupu, Editor kódu jazyka Visual Basic můžete automaticky vygenerovat `Get` a `Set` postupy a `End Property`příkaz Vlastnosti. Kód je generována, pokud umístěte kurzor na prázdný řádek následující `Property` příkazu, zadejte `G` (pro `Get`) nebo `S` (pro `Set`) a stiskněte klávesu ENTER. Editor kódu jazyka Visual Basic generuje automaticky `Get` nebo `Set` postup pro vlastnosti jen pro čtení a jen pro zápis při stisknutí klávesy ENTER na konci `Property` příkazu.  

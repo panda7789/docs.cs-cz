@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: df57cd5a2121c216fc23b9c608de091b002147e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59101761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792909"
 ---
 # <a name="cordebuginterfaceversion-enumeration"></a>CorDebugInterfaceVersion – výčet
 Určuje rozhraní, verze rozhraní .NET Framework nebo verzi rozhraní .NET Framework, ve kterém byl zaveden rozhraní.  
@@ -227,15 +227,15 @@ typedef enum CorDebugInterfaceVersion {
 ## <a name="interface-names"></a>Názvy rozhraní  
  Číslo, které se zobrazí na konci názvů rozhraní v rozhraní API pro ladění (například "3" v `ICorDebugThread3`) určuje verzi rozhraní, nikoli na verzi rozhraní .NET Framework. Názvy všech rozhraní v rozhraní API pro ladění obsahují čísla verzí s výjimkou rozhraní, která byla zavedena v rozhraní .NET Framework verze 1. Jakékoli propojeni rozhraní verze číslice čísla verzí and.NET Framework je náhodný.  
   
--   Rozhraní, která byla zavedena v rozhraní .NET Framework verze 1.0 nezahrnují čísel, protože jsou implicitně všechny verze 1.  
+- Rozhraní, která byla zavedena v rozhraní .NET Framework verze 1.0 nezahrnují čísel, protože jsou implicitně všechny verze 1.  
   
--   Rozhraní .NET Framework verze 1.1 používá verzi 1.0 rozhraní a ne provádět žádné nové ladění rozhraní.  
+- Rozhraní .NET Framework verze 1.1 používá verzi 1.0 rozhraní a ne provádět žádné nové ladění rozhraní.  
   
--   14. ladění rozhraní zavedené v rozhraní .NET Framework verze 2.0 jsou logické rozšíření jejich verze 1 protějšky a obsahovat číslo "2" v názvu.  
+- 14. ladění rozhraní zavedené v rozhraní .NET Framework verze 2.0 jsou logické rozšíření jejich verze 1 protějšky a obsahovat číslo "2" v názvu.  
   
--   Verze rozhraní .NET Framework 3.0 a 3.5 použít existující rozhraní .NET Framework 2.0 a ne provádět žádné nové rozhraní.  
+- Verze rozhraní .NET Framework 3.0 a 3.5 použít existující rozhraní .NET Framework 2.0 a ne provádět žádné nové rozhraní.  
   
--   [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje kombinaci různých verzí rozhraní. Například obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako třetí a čtvrtý verze `ICorDebugThread` rozhraní. [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Také představuje první verzi `ICorDebugStackWalk` rozhraní a druhou verzi `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
+- [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje kombinaci různých verzí rozhraní. Například obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako třetí a čtvrtý verze `ICorDebugThread` rozhraní. [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Také představuje první verzi `ICorDebugStackWalk` rozhraní a druhou verzi `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

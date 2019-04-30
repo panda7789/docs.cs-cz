@@ -3,11 +3,11 @@ title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
 ms.openlocfilehash: 7051e69f6a38d536251c26365a634d4ffbc46f1b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59339590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856697"
 ---
 # <a name="filtering"></a>Filtrování
 Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  
@@ -36,9 +36,9 @@ Windows Communication Foundation (WCF) filtrování systému můžete použít f
 ### <a name="endpoint-address-filters"></a>Filtry adres koncového bodu  
  <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> Filtrů zpráv a vyrovnávací paměti zpráv na základě adresy koncového bodu, reprezentovaný ve své kolekce hlaviček. Zprávy k předání tohoto filtru musí být splněny následující podmínky:  
   
--   Tento filtr adresa identifikátoru URI (Uniform Resource) musí být stejná jako ta, ve zprávě na záhlaví.  
+- Tento filtr adresa identifikátoru URI (Uniform Resource) musí být stejná jako ta, ve zprávě na záhlaví.  
   
--   Každý koncový bod parametr do pole adresy ve filtru (`address.Headers` kolekce) musí najít záhlaví ve zprávě k mapování na. Dodatečné hlavičky ve zprávě, nebo vyrovnávací paměť zpráv jsou přijatelné pro porovnání zůstanou `true`.  
+- Každý koncový bod parametr do pole adresy ve filtru (`address.Headers` kolekce) musí najít záhlaví ve zprávě k mapování na. Dodatečné hlavičky ve zprávě, nebo vyrovnávací paměť zpráv jsou přijatelné pro porovnání zůstanou `true`.  
   
 ### <a name="prefix-endpoint-address-filters"></a>Předpony adres filtrech koncového bodu  
   
@@ -79,9 +79,9 @@ Windows Communication Foundation (WCF) filtrování systému můžete použít f
 ### <a name="de-multiplexing"></a>Multiplexingu rušit  
  Když více koncových bodů škálovatelnou ze stejné `ServiceListener` vypnutí přenosu, je jediný způsob, jak zrušit multiplexovaný zprávy a vědět, jestli patří do určité adresa koncového bodu, použít <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>s, která je vybrat zprávy směrem k registrované koncové body podle provádění vyhledávání na informace uložené v záhlaví. Tyto filtry mají pouze zprávy, které předávají všechny potřebné hlavičky, které odpovídají jak:  
   
--   V identifikátoru URI `EndpointAddress`.  
+- V identifikátoru URI `EndpointAddress`.  
   
--   Zbytek parametrů koncový bod v `EndpointAddress` podle <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>.  
+- Zbytek parametrů koncový bod v `EndpointAddress` podle <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
 ms.openlocfilehash: 80b7df4922e1398c7290e769e53627a1d46ebc83
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877744"
 ---
 # <a name="date-and-time-data"></a>Kalendářní a časová data
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové datové typy zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Od verze rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje plnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití těchto nových funkcí s SqlClient.  
@@ -51,13 +51,13 @@ SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a
 ## <a name="datetime-data-types-and-parameters"></a>Datum/čas typy a parametry  
  Následující výčty jsou přidané do <xref:System.Data.SqlDbType> pro podporu nové datové typy data a času.  
   
--   `SqlDbType.Date`  
+- `SqlDbType.Date`  
   
--   `SqlDbType.Time`  
+- `SqlDbType.Time`  
   
--   `SqlDbType.DateTime2`  
+- `SqlDbType.DateTime2`  
   
--   `SqlDbType.DateTimeOffSet`  
+- `SqlDbType.DateTimeOffSet`  
 
 Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jednoho z předchozích <xref:System.Data.SqlDbType> výčty. 
 
@@ -66,9 +66,9 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jed
 
  Můžete také zadat typ <xref:System.Data.SqlClient.SqlParameter> obecně tak, že nastavíte <xref:System.Data.SqlClient.SqlParameter.DbType%2A> vlastnost `SqlParameter` objekt ke konkrétní <xref:System.Data.DbType> hodnota výčtu. Následující hodnoty výčtu jsou přidané do <xref:System.Data.DbType> pro podporu `datetime2` a `datetimeoffset` datové typy:  
   
--   DbType.DateTime2  
+- DbType.DateTime2  
   
--   DbType.DateTimeOffset  
+- DbType.DateTimeOffset  
   
  Tyto nové výčty doplnit `Date`, `Time`, a `DateTime` výčty, které existovaly ve starších verzích rozhraní .NET Framework.  
   
@@ -219,11 +219,11 @@ command.Parameters.AddWithValue( _
 ## <a name="specifying-date-and-time-values-as-literals"></a>Určení hodnoty data a času jako literály  
  Můžete určit datum a čas datové typy s použitím různých formátech různých řetězcového literálu, který SQL Server pak vyhodnotí za běhu, převod na datum/čas vnitřního struktury. SQL Server rozpozná data pro datum a čas, který je uzavřen v jednoduchých uvozovkách ('). Následující příklady ukazují některé formáty:  
   
--   Abecední datum formáty, jako například `'October 15, 2006'`.  
+- Abecední datum formáty, jako například `'October 15, 2006'`.  
   
--   Číselná data formátů, jako například `'10/15/2006'`.  
+- Číselná data formátů, jako například `'10/15/2006'`.  
   
--   Oddělené formáty řetězců, jako například `'20061015'`, které by být interpretován jako 15. října 2006, pokud používáte formát data ISO.  
+- Oddělené formáty řetězců, jako například `'20061015'`, které by být interpretován jako 15. října 2006, pokud používáte formát data ISO.  
   
 > [!NOTE]
 >  Úplnou dokumentaci najdete pro všechny formáty řetězcového literálu a dalších funkcí datové typy data a času v SQL Server Books Online.  

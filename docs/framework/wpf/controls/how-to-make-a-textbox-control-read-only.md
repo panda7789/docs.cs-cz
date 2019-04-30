@@ -6,11 +6,11 @@ helpviewer_keywords:
 - TextBox control read-only
 ms.assetid: e707ec59-8b22-473e-b77c-3060a237517a
 ms.openlocfilehash: 7f24458eb98bd669d59f15c49d1d9e3beb6833b1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59229833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61770939"
 ---
 # <a name="how-to-make-a-textbox-control-read-only"></a>Postupy: Nastavení ovládacího prvku TextBox jen pro čtení
 Tento příklad ukazuje, jak nakonfigurovat <xref:System.Windows.Controls.TextBox> ovládacího prvku na nepovoluje přidat nebo uživatelského vstupu.  

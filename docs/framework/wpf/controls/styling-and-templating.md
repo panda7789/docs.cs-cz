@@ -16,11 +16,11 @@ helpviewer_keywords:
 - styles [WPF], event triggers
 ms.assetid: 481765e5-5467-4a75-9f7b-e10e2ac410d9
 ms.openlocfilehash: 3fae4993a13b02ad998668f644a80ba7c07196fa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791310"
 ---
 # <a name="styling-and-templating"></a>Styly a šablony
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují vývojářům a návrhářům vytvářet vizuálně působivé efekty a vytvořte konzistentní vzhled pro svůj produkt. I když vývojáři a návrháři můžete přizpůsobit vzhled náročným na základě aplikace aplikace, silné styly a šablony modelu je potřeba povolit sdílení výskytu v rámci a mezi aplikacemi a údržby. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Tento model poskytuje.  

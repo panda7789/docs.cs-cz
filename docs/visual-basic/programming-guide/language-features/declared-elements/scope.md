@@ -16,11 +16,11 @@ helpviewer_keywords:
 - procedure scope [Visual Basic]
 ms.assetid: 208106fe-79c9-4eec-93c6-55f08548895f
 ms.openlocfilehash: 6139af65958cefe43578f436204fa6836a71de0b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58823542"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61917836"
 ---
 # <a name="scope-in-visual-basic"></a>Rozsah v jazyce Visual Basic
 *Oboru* deklarované elementu je sada veškerý kód, který na ni můžete odkazovat bez kvalifikace názvu nebo ji dáte k dispozici prostřednictvím [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Element může mít rozsah na jednu z následujících úrovní:  
@@ -37,11 +37,11 @@ ms.locfileid: "58823542"
 ## <a name="specifying-scope-and-defining-variables"></a>Určení oboru a definování proměnných  
  Můžete určit obor element při jeho deklaraci. Rozsah může záviset na následujících faktorech:  
   
--   Oblast (blok, postup, modulu, třídy nebo struktury), ve kterém můžete deklarovat element  
+- Oblast (blok, postup, modulu, třídy nebo struktury), ve kterém můžete deklarovat element  
   
--   Obor názvů obsahující deklarace prvku  
+- Obor názvů obsahující deklarace prvku  
   
--   Úroveň přístupu, které deklarujete pro element  
+- Úroveň přístupu, které deklarujete pro element  
   
  Pečlivě při definování proměnné se stejným názvem, ale jiného oboru, protože to může vést k neočekávaným výsledkům. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
@@ -51,21 +51,21 @@ ms.locfileid: "58823542"
 ### <a name="block-scope"></a>Obor bloku  
  Blok je sadu příkazů uzavřených v rámci inicializace a ukončování příkazy deklarace, jako je následující:  
   
--   `Do` a `Loop`  
+- `Do` a `Loop`  
   
--   `For` [`Each`] a `Next`  
+- `For` [`Each`] a `Next`  
   
--   `If` a `End If`  
+- `If` a `End If`  
   
--   `Select` a `End Select`  
+- `Select` a `End Select`  
   
--   `SyncLock` a `End SyncLock`  
+- `SyncLock` a `End SyncLock`  
   
--   `Try` a `End Try`  
+- `Try` a `End Try`  
   
--   `While` a `End While`  
+- `While` a `End While`  
   
--   `With` a `End With`  
+- `With` a `End With`  
   
  Pokud deklarujete proměnnou v bloku, můžete ji použít pouze v tomto bloku. V následujícím příkladu oboru celočíselné proměnné `cube` je blok mezi `If` a `End If`, a už se můžete vrátit k `cube` při provádění předá mimo blok.  
   
@@ -127,9 +127,9 @@ Public strMsg As String
 ### <a name="advantages-of-local-variables"></a>Výhody lokální proměnné  
  Lokální proměnné jsou dobrou volbou pro jakýkoli druh dočasné výpočtu z následujících důvodů:  
   
--   **Předcházení název konflikt.** Místní názvy proměnných nejsou náchylné k jsou v konfliktu. Například můžete vytvořit několik různých postupů obsahujícího proměnnou s názvem `intTemp`. Tak dlouho, dokud každý `intTemp` je deklarován jako místní proměnná, každý postup rozpozná pouze svou vlastní verzi z `intTemp`. Jakékoli jedné postupem můžete změnit hodnotu v jeho místní `intTemp` aniž by to ovlivnilo `intTemp` proměnné v dalších postupech.  
+- **Předcházení název konflikt.** Místní názvy proměnných nejsou náchylné k jsou v konfliktu. Například můžete vytvořit několik různých postupů obsahujícího proměnnou s názvem `intTemp`. Tak dlouho, dokud každý `intTemp` je deklarován jako místní proměnná, každý postup rozpozná pouze svou vlastní verzi z `intTemp`. Jakékoli jedné postupem můžete změnit hodnotu v jeho místní `intTemp` aniž by to ovlivnilo `intTemp` proměnné v dalších postupech.  
   
--   **Využití paměti.** Lokální proměnné využívání paměti pouze při jejich postupu běží. Když postup vrátí volajícímu kódu, se uvolní jejich paměť. Naopak [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) a [statické](../../../../visual-basic/language-reference/modifiers/static.md) proměnné spotřebovávají prostředky paměti, dokud se vaše aplikace se zastaví, proto je pouze v případě potřeby. *Instance proměnné* využívání paměti při jejich instance existuje, i nadále, což je méně efektivní než místní proměnné, ale potenciálně efektivnější než `Shared` nebo `Static` proměnné.  
+- **Využití paměti.** Lokální proměnné využívání paměti pouze při jejich postupu běží. Když postup vrátí volajícímu kódu, se uvolní jejich paměť. Naopak [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) a [statické](../../../../visual-basic/language-reference/modifiers/static.md) proměnné spotřebovávají prostředky paměti, dokud se vaše aplikace se zastaví, proto je pouze v případě potřeby. *Instance proměnné* využívání paměti při jejich instance existuje, i nadále, což je méně efektivní než místní proměnné, ale potenciálně efektivnější než `Shared` nebo `Static` proměnné.  
   
 ### <a name="minimizing-scope"></a>Minimalizace oboru  
  Obecně platí, při deklarování jakoukoli proměnnou nebo konstantu, je programování je dobrým zvykem aby bylo co nejrovnoměrnější rozsah (obor bloku je nejbližší). To pomáhá šetřit paměť a minimalizuje případné chybně odkazující na proměnnou nesprávného kódu. Podobně by měla deklarovat proměnnou [statické](../../../../visual-basic/language-reference/modifiers/static.md) pouze pokud je potřeba zachovat jeho hodnotu mezi volání procedur.  

@@ -3,11 +3,11 @@ title: Konfigurace hodnot časových limitů u vazby
 ms.date: 03/30/2017
 ms.assetid: b5c825a2-b48f-444a-8659-61751ff11d34
 ms.openlocfilehash: f323dfff338f8a3ba24caab6df3b3916d3ae0d13
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779324"
 ---
 # <a name="configuring-timeout-values-on-a-binding"></a>Konfigurace hodnot časových limitů u vazby
 Nejsou k dispozici v vazby WCF několik nastavení časového limitu. Nastavení těchto časový limit nastavení správně může zlepšit nejen vaše služba výkon, ale také play roli v oblasti použitelnosti a zabezpečení vaší služby. Následující časové limity jsou k dispozici na vazby WCF:  

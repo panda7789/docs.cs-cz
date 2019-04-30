@@ -9,66 +9,66 @@ ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b4b10ff681f7300412fd2f6a1e310989fcc3b31c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59114687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914443"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](obsolete-members.md).
 
--   [Zastaralé typy v systému sestavení](#obsolete_types_in_system_assemblies)
+- [Zastaralé typy v systému sestavení](#obsolete_types_in_system_assemblies)
 
-    -   [mscorlib.dll](#mscorlib)
+    - [mscorlib.dll](#mscorlib)
 
-    -   [System.Core.dll](#Core)
+    - [System.Core.dll](#Core)
 
-    -   [System.Data.dll](#data)
+    - [System.Data.dll](#data)
 
-    -   [System.Data.OracleClient.dll](#oracleclient)
+    - [System.Data.OracleClient.dll](#oracleclient)
 
-    -   [System.Design.dll](#design)
+    - [System.Design.dll](#design)
 
-    -   [System.dll](#system)
+    - [System.dll](#system)
 
-    -   [System.EnterpriseServices.dll](#enterpriseservices)
+    - [System.EnterpriseServices.dll](#enterpriseservices)
 
-    -   [System.Net.dll](#net)
+    - [System.Net.dll](#net)
 
-    -   [System.ServiceModel.dll](#servicemodel)
+    - [System.ServiceModel.dll](#servicemodel)
 
-    -   [System.Web.dll](#web)
+    - [System.Web.dll](#web)
 
-    -   [System.Web.Mobile.dll](#mobile)
+    - [System.Web.Mobile.dll](#mobile)
 
-    -   [System.Workflow.Activities.dll](#workflow_activities)
+    - [System.Workflow.Activities.dll](#workflow_activities)
 
-    -   [System.Workflow.ComponentModel.dll](#workflow_componentmodel)
+    - [System.Workflow.ComponentModel.dll](#workflow_componentmodel)
 
-    -   [System.Workflow.Runtime.dll](#workflow_runtime)
+    - [System.Workflow.Runtime.dll](#workflow_runtime)
 
-    -   [System.WorkflowServices.dll](#workflowservices)
+    - [System.WorkflowServices.dll](#workflowservices)
 
-    -   [System.Xaml.dll](#xaml)
+    - [System.Xaml.dll](#xaml)
 
-    -   [System.Xml.dll](#xml)
+    - [System.Xml.dll](#xml)
 
-    -   [WindowsBase.dll](#WindowsBase)
+    - [WindowsBase.dll](#WindowsBase)
 
--   [Zastaralé typy v sestavení společnosti Microsoft](#obsolete_types_in_microsoft_assemblies)
+- [Zastaralé typy v sestavení společnosti Microsoft](#obsolete_types_in_microsoft_assemblies)
 
-    -   [IEHost.dll a IEExec.exe](#IEHost)
+    - [IEHost.dll a IEExec.exe](#IEHost)
 
-    -   [Microsoft.Build.Engine.dll](#Engine)
+    - [Microsoft.Build.Engine.dll](#Engine)
 
-    -   [Microsoft.JScript.dll](#jscript)
+    - [Microsoft.JScript.dll](#jscript)
 
-    -   [Microsoft.VisualBasic.Compatibility.dll](#VBCompat)
+    - [Microsoft.VisualBasic.Compatibility.dll](#VBCompat)
 
-    -   [Microsoft.VisualBasic.Compatibility.Data.dll](#VBCompatData)
+    - [Microsoft.VisualBasic.Compatibility.Data.dll](#VBCompatData)
 
-    -   [Microsoft.VisualC.dll](#visualc)
+    - [Microsoft.VisualC.dll](#visualc)
 
 <a name="obsolete_types_in_system_assemblies"></a>
 ## <a name="obsolete-types-in-system-assemblies"></a>Zastaralé typy v systému sestavení

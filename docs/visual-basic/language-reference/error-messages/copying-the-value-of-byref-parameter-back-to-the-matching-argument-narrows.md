@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC32053
 ms.assetid: 281564b7-99f7-451f-b10d-f985e831bb25
 ms.openlocfilehash: fa8607bf72dfb344048ec82514182dcb6810274d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58817151"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61803854"
 ---
 # <a name="copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument-narrows-from-type-typename1-to-type-typename2"></a>Kopírování hodnoty 'ByRef' parametru '\<parametername >' zpět na odpovídající argument způsobí zúžení z typu '\<NázevTypu1 >' na typ '\<NázevTypu2 > "
 Procedura je volána s argumentem, který rozšiřuje na odpovídající typ parametru, a je zužující převod z parametru do argumentu.  
@@ -27,11 +27,11 @@ Procedura je volána s argumentem, který rozšiřuje na odpovídající typ par
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud je to možné použijte volání argument stejného typu jako parametr procedury, proto není nutné provádět jakýkoli převod jazyka Visual Basic.  
+- Pokud je to možné použijte volání argument stejného typu jako parametr procedury, proto není nutné provádět jakýkoli převod jazyka Visual Basic.  
   
--   Pokud je potřeba volání procedury s argumentem typu liší od typu parametru, ale není nutné vrátit hodnotu do volání argument, definujte parametr bude [ByVal](../../../visual-basic/language-reference/modifiers/byval.md) místo `ByRef`.  
+- Pokud je potřeba volání procedury s argumentem typu liší od typu parametru, ale není nutné vrátit hodnotu do volání argument, definujte parametr bude [ByVal](../../../visual-basic/language-reference/modifiers/byval.md) místo `ByRef`.  
   
--   Pokud potřebujete vrátit hodnotu do volání argument, definovat operátor zpětný převod jako [Widening](../../../visual-basic/language-reference/modifiers/widening.md), pokud je to možné.  
+- Pokud potřebujete vrátit hodnotu do volání argument, definovat operátor zpětný převod jako [Widening](../../../visual-basic/language-reference/modifiers/widening.md), pokud je to možné.  
   
 ## <a name="see-also"></a>Viz také:
 

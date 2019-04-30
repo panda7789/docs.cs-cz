@@ -12,11 +12,11 @@ helpviewer_keywords:
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
 ms.openlocfilehash: 2ba33f9ecb3a12a62c41af17d3f9ad6f6e3f8a5d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801709"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Postupy: Procházení dat v rozhraní Windows Forms
 V aplikaci Windows, je nejjednodušší způsob, jak procházet záznamy ve zdroji dat pro vazbu <xref:System.Windows.Forms.BindingSource> zdroj dat a vazby ovládacích prvků pro komponentu <xref:System.Windows.Forms.BindingSource>. Pak můžete použít metodu předdefinovanou navigaci na <xref:System.Windows.Forms.BindingSource> takové <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> a <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. Použití těchto metod se upraví <xref:System.Windows.Forms.BindingSource.Position%2A> a <xref:System.Windows.Forms.BindingSource.Current%2A> vlastnosti <xref:System.Windows.Forms.BindingSource> odpovídajícím způsobem. Můžete také najít položku a nastavte ji jako aktuální položky tak, že nastavíte <xref:System.Windows.Forms.BindingSource.Position%2A> vlastnost.  

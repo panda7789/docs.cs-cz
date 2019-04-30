@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 40494916-c25a-4cb8-8f7c-fcb8d378464e
 ms.openlocfilehash: c3ed424aff3cd485a78d26a7f27bc5b1eac66448
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879408"
 ---
 # <a name="executing-a-command"></a>Spuštění příkazu
 Každý poskytovatel dat rozhraní .NET Framework součástí rozhraní .NET Framework má svůj vlastní objekt příkazu, která dědí z <xref:System.Data.Common.DbCommand>. Obsahuje zprostředkovatele dat .NET Framework pro OLE DB <xref:System.Data.OleDb.OleDbCommand> objektu zprostředkovatele dat .NET Framework pro SQL Server obsahuje <xref:System.Data.SqlClient.SqlCommand> objektu zprostředkovatele dat .NET Framework pro ODBC zahrnuje <xref:System.Data.Odbc.OdbcCommand> objektu a rozhraní .NET Framework Zprostředkovatel dat pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleCommand> objektu. Každá z těchto metod zpřístupňuje objekty pro spouštění příkazů na základě typu příkazu a požadovaného vrácené hodnoty, jak je popsáno v následující tabulce.  

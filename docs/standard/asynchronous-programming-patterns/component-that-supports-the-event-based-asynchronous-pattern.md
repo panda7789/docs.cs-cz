@@ -19,11 +19,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
 ms.openlocfilehash: da6f21ba452c5c0413881759879cca371507a290
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61869990"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -34,19 +34,19 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
  Úlohy v tomto návodu zahrnují:  
   
--   Vytvoření komponenty  
+- Vytvoření komponenty  
   
--   Definování veřejné asynchronní události a delegáti  
+- Definování veřejné asynchronní události a delegáti  
   
--   Definování privátní delegátů  
+- Definování privátní delegátů  
   
--   Implementace veřejné události  
+- Implementace veřejné události  
   
--   Implementace metody dokončení  
+- Implementace metody dokončení  
   
--   Implementace metody pracovního procesu  
+- Implementace metody pracovního procesu  
   
--   Implementace Start a metody Cancel  
+- Implementace Start a metody Cancel  
   
  Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
@@ -55,7 +55,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-create-the-component"></a>Chcete-li vytvořit komponentu  
   
--   Vytvořte třídu s názvem `PrimeNumberCalculator` , která dědí z <xref:System.ComponentModel.Component>.  
+- Vytvořte třídu s názvem `PrimeNumberCalculator` , která dědí z <xref:System.ComponentModel.Component>.  
   
 ## <a name="defining-public-asynchronous-events-and-delegates"></a>Definování veřejné asynchronní události a delegáti  
  Vaše komponenta komunikuje s klienty, kteří používají události. _MethodName_**dokončeno** klientů pro dokončení asynchronní úlohu, upozornění na událost a _MethodName_**ProgressChanged**událost informuje klienty pokroku asynchronní úlohu.  
@@ -87,7 +87,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
--   Zkompilujte komponentu.  
+- Zkompilujte komponentu.  
   
      Zobrazí se dvě upozornění kompilátoru:  
   
@@ -148,7 +148,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-complete-an-asynchronous-operation"></a>K dokončení asynchronní operace:  
   
--   Implementace metody dokončení. Trvá, šest parametry, které používá k naplnění `CalculatePrimeCompletedEventArgs` , který je vrácen do klienta prostřednictvím klienta `CalculatePrimeCompletedEventHandler`. Odebere token ID úkolu klienta z vnitřní kolekce a ukončení asynchronní operace životního cyklu voláním <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>. <xref:System.ComponentModel.AsyncOperation> Zařazuje volání vlákna nebo kontextu, který je vhodný pro aplikačního modelu.  
+- Implementace metody dokončení. Trvá, šest parametry, které používá k naplnění `CalculatePrimeCompletedEventArgs` , který je vrácen do klienta prostřednictvím klienta `CalculatePrimeCompletedEventHandler`. Odebere token ID úkolu klienta z vnitřní kolekce a ukončení asynchronní operace životního cyklu voláním <xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>. <xref:System.ComponentModel.AsyncOperation> Zařazuje volání vlákna nebo kontextu, který je vhodný pro aplikačního modelu.  
   
      [!code-csharp[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#26)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#26)]  
@@ -158,7 +158,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
--   Zkompilujte komponentu.  
+- Zkompilujte komponentu.  
   
      Zobrazí se jedné upozornění kompilátoru:  
   
@@ -212,7 +212,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
--   Zkompilujte komponentu.  
+- Zkompilujte komponentu.  
   
      Všechno, zůstane k zapsání jsou metody pro spuštění a zrušení asynchronní operace `CalculatePrimeAsync` a `CancelAsync`.  
   
@@ -238,7 +238,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
   
--   Zkompilujte komponentu.  
+- Zkompilujte komponentu.  
   
  `PrimeNumberCalculator` Je nyní dokončena a připravena k použití.  
   

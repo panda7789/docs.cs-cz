@@ -5,31 +5,31 @@ ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1484d50df51ea85a94da0aad1ebaab54b80a6ecb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59088285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61866792"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] výrazně zlepšuje dobu spuštění aplikace. Toto vylepšení je patrné v na přenosných a s nízkou spotřebou zařízení a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentací potřebné k měření zlepšení toto spuštění.  
   
  Pro usnadnění vyšetřování výkonu, rozhraní .NET Framework a Windows pomocí rozhraní události trasování událostí pro Windows (ETW), která vaše aplikace bude informovat, nástrojů, když dojde k událostem volat. Potom můžete nástroj zvaný PerfView můžete snadno zobrazit a analyzovat událostí trasování událostí pro Windows. Toto téma vysvětluje, jak:  
   
--   Použití <xref:System.Diagnostics.Tracing.EventSource> třídy vysílat události.  
+- Použití <xref:System.Diagnostics.Tracing.EventSource> třídy vysílat události.  
   
--   Pomocí nástroje PerfView shromažďovat události.  
+- Pomocí nástroje PerfView shromažďovat události.  
   
--   Pokud chcete zobrazit tyto události pomocí nástroje PerfView.  
+- Pokud chcete zobrazit tyto události pomocí nástroje PerfView.  
   
 ## <a name="using-eventsource-to-emit-events"></a>Generování událostí pomocí EventSource  
  <xref:System.Diagnostics.Tracing.EventSource> poskytuje základní třídu, ze kterého se má vytvořit vlastního zprostředkovatele událostí. Obecně platí, vytvořit podtřídu <xref:System.Diagnostics.Tracing.EventSource> a zalomení `Write*` metody s vašimi vlastními metodami události. Vzor s jedním prvkem se obecně používají pro každou <xref:System.Diagnostics.Tracing.EventSource>.  
   
  Například třída v následujícím příkladu můžete použít k měření dvě výkonové charakteristiky:  
   
--   Čas do `App` byla volána konstruktor třídy.  
+- Čas do `App` byla volána konstruktor třídy.  
   
--   Čas do `MainPage` byla volána konstruktor.  
+- Čas do `MainPage` byla volána konstruktor.  
   
  [!code-csharp[ProjectN_ETW#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw1.cs#1)]  
   
@@ -39,13 +39,13 @@ ms.locfileid: "59088285"
   
  Předpokládejme například, že vytváříte čtečku RSS. Pár zajímavých míst do protokolu událostí je:  
   
--   Když hlavní nejprve vykreslením stránky.  
+- Když hlavní nejprve vykreslením stránky.  
   
--   Když jsou staré RSS scénáře deserializovat z místního úložiště.  
+- Když jsou staré RSS scénáře deserializovat z místního úložiště.  
   
--   Vaše aplikace zahájení synchronizace nových příběhů.  
+- Vaše aplikace zahájení synchronizace nových příběhů.  
   
--   Vaše aplikace má po dokončení synchronizace nových příběhů.  
+- Vaše aplikace má po dokončení synchronizace nových příběhů.  
   
  Instrumentace aplikace je jednoduchý: Stačí zavoláte vhodnou metodu v odvozené třídě. Pomocí `AppEventSource` z předchozího příkladu, vám umožňuje instrumentovat aplikaci následujícím způsobem:  
   
@@ -78,20 +78,20 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Po spuštění nástroje PerfView spuštění aplikace. Mějte na paměti při spuštění aplikace některé věci:  
   
--   Použijte sestavení pro vydání, ne sestavení pro ladění. Sestavení pro ladění často obsahují další chyby kontroly a kód, který může způsobit, že vaše aplikace poběží pomaleji, než se očekávalo pro zpracování chyb.  
+- Použijte sestavení pro vydání, ne sestavení pro ladění. Sestavení pro ladění často obsahují další chyby kontroly a kód, který může způsobit, že vaše aplikace poběží pomaleji, než se očekávalo pro zpracování chyb.  
   
--   Vaše aplikace běžela s připojen jiný ladicí program má vliv na výkon vaší aplikace.  
+- Vaše aplikace běžela s připojen jiný ladicí program má vliv na výkon vaší aplikace.  
   
--   Windows používá několik strategií, které ukládání do mezipaměti pro urychlení doby spuštění aplikace. Pokud vaše aplikace je aktuálně uloženo do mezipaměti v paměti a nemusí být načteny z disku, spustí rychleji. K zajištění konzistence, spusťte a zavřete vaši aplikaci před měřili několikrát.  
+- Windows používá několik strategií, které ukládání do mezipaměti pro urychlení doby spuštění aplikace. Pokud vaše aplikace je aktuálně uloženo do mezipaměti v paměti a nemusí být načteny z disku, spustí rychleji. K zajištění konzistence, spusťte a zavřete vaši aplikaci před měřili několikrát.  
   
  Pokud jste spustíte svou aplikaci tak, aby PerfView může shromažďovat události emitovaný, zvolte **zastavit shromažďování** tlačítko. Obecně byste navíc měli zastavit shromažďování před jeho zavřením vaší aplikace, aby se vám nadbytečné události. Pokud jste měření výkonu vypnutí nebo pozastavení účtu, budete však chcete pokračovat kolekce.  
   
 ## <a name="displaying-the-events"></a>Zobrazení událostí  
  Chcete-li zobrazit události, které již byla shromážděna, otevřete .etl pomocí nástroje PerfView nebo. etl.zip vytvořeného souboru a zvolte **události**. Trasování událostí pro Windows se mají shromažďovat informace o velký počet událostí, včetně událostí z jiných procesů. Pokud chcete zaměřit svůj výzkum, proveďte následující textová pole v zobrazení události:  
   
--   V **filtr procesu** zadejte název vaší aplikace (bez ".exe").  
+- V **filtr procesu** zadejte název vaší aplikace (bez ".exe").  
   
--   V **filtr typů událostí** zadejte `Process/Start | MyCompany-MyApp`. Tím se nastaví filtr pro události z události Windows jádra / / spuštění procesu a společnost MyApp.  
+- V **filtr typů událostí** zadejte `Process/Start | MyCompany-MyApp`. Tím se nastaví filtr pro události z události Windows jádra / / spuštění procesu a společnost MyApp.  
   
  Všechny události uvedené v levém podokně vyberte (Ctrl-A) a zvolte **Enter** klíč. Teď byste měli vidět časová razítka každé události. Tato časová razítka jsou relativní vzhledem k zahájení trasování, takže budete mít odečíst času každé události z času začátku procesu k identifikaci uplynulý čas od spuštění. Pokud použijete Ctrl + kliknutí pro výběr dva časová razítka, uvidíte rozdíl mezi nimi zobrazí ve stavovém řádku v dolní části stránky. To usnadňuje zobrazte uplynulý čas mezi jakékoli dvě události v zobrazení (včetně spuštění procesu). Můžete otevřít místní nabídku pro zobrazení a vybrat z řady užitečné možnosti, jako je export do souborů CSV nebo otevřete aplikaci Microsoft Excel k uložení nebo zpracování dat.  
   

@@ -10,18 +10,18 @@ helpviewer_keywords:
 - Windows Forms, resizing
 ms.assetid: 5d9dd47e-e68c-48c9-a0a3-a9ff34ba009d
 ms.openlocfilehash: 2da4b7483e92b02360bceb886d84a7f729b84dee
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59077222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61800799"
 ---
 # <a name="how-to-resize-windows-forms"></a>Postupy: Změna velikosti Windows Forms
 Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit výšku a šířku formuláře programově tak, že nastavíte novou hodnotu <xref:System.Windows.Forms.Form.Size%2A> vlastnost, nebo upravte <xref:System.Windows.Forms.Control.Height%2A> nebo <xref:System.Windows.Forms.Control.Width%2A> vlastnosti jednotlivě. Pokud používáte Visual Studio, můžete změnit velikost pomocí Návrháře formulářů Windows. Viz také [jak: Změna velikosti Windows Forms pomocí návrháře](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/37k2zkwx(v=vs.100)).  
   
 ### <a name="to-resize-a-form-programmatically"></a>Změnit velikost formuláře prostřednictvím kódu programu  
   
--   Definovat tak, že nastavíte velikost formuláře v době běhu <xref:System.Windows.Forms.Form.Size%2A> vlastnost formuláře.  
+- Definovat tak, že nastavíte velikost formuláře v době běhu <xref:System.Windows.Forms.Form.Size%2A> vlastnost formuláře.  
   
      Následující příklad kódu ukazuje velikost formuláře nastavte na 100 × 100 pixelů.  
   
@@ -39,7 +39,7 @@ Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit
   
 ### <a name="to-change-form-width-and-height-programmatically"></a>Chcete-li změnit výšku a šířku formuláře prostřednictvím kódu programu  
   
--   Po <xref:System.Windows.Forms.Form.Size%2A> je definován, změnit šířka nebo výška formuláře pomocí <xref:System.Windows.Forms.Control.Width%2A> nebo <xref:System.Windows.Forms.Control.Height%2A> vlastnosti.  
+- Po <xref:System.Windows.Forms.Form.Size%2A> je definován, změnit šířka nebo výška formuláře pomocí <xref:System.Windows.Forms.Control.Width%2A> nebo <xref:System.Windows.Forms.Control.Height%2A> vlastnosti.  
   
      Následující příklad kódu ukazuje šířku formuláře nastavte na 300 pixelů od levého okraje formuláře, zatímco výška zůstává konstantní.  
   
@@ -75,7 +75,7 @@ Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit
   
 ### <a name="to-change-form-size-by-increments-programmatically"></a>Chcete-li změnit velikost formuláře o kousek prostřednictvím kódu programu  
   
--   Chcete-li zvýšit velikost formuláře, nastavte <xref:System.Drawing.Size.Width%2A> a <xref:System.Drawing.Size.Height%2A> vlastnosti.  
+- Chcete-li zvýšit velikost formuláře, nastavte <xref:System.Drawing.Size.Width%2A> a <xref:System.Drawing.Size.Height%2A> vlastnosti.  
   
      Následující příklad kódu ukazuje šířku formuláře nastavena na hodnotu 200 pixelů širší než aktuální nastavení.  
   

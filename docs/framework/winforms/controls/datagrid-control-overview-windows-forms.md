@@ -21,11 +21,11 @@ helpviewer_keywords:
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
 ms.openlocfilehash: 34bf38a59e4f2b1f975cf1836973d24d8a3bae32
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61904419"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -57,13 +57,13 @@ ms.locfileid: "59304728"
   
  Platné datové zdroje pro <xref:System.Windows.Forms.DataGrid> patří:  
   
--   <xref:System.Data.DataTable> Třída  
+- <xref:System.Data.DataTable> Třída  
   
--   <xref:System.Data.DataView> Třída  
+- <xref:System.Data.DataView> Třída  
   
--   <xref:System.Data.DataSet> Třída  
+- <xref:System.Data.DataSet> Třída  
   
--   <xref:System.Data.DataViewManager> Třída  
+- <xref:System.Data.DataViewManager> Třída  
   
  Pokud je zdrojem datovou sadu, může být datovou sadu objektu ve formě nebo objekt předaných do formuláře webové služby XML. Můžete vytvořit vazbu na typové a netypové datové sady.  
   
@@ -71,11 +71,11 @@ ms.locfileid: "59304728"
   
  Pokud se jejich prvky zpřístupňují veřejných vlastností můžete vázat na následující struktury:  
   
--   Všechny komponenty, která implementuje <xref:System.Collections.IList> rozhraní. To zahrnuje pole jednou dimenzí.  
+- Všechny komponenty, která implementuje <xref:System.Collections.IList> rozhraní. To zahrnuje pole jednou dimenzí.  
   
--   Všechny komponenty, která implementuje <xref:System.ComponentModel.IListSource> rozhraní.  
+- Všechny komponenty, která implementuje <xref:System.ComponentModel.IListSource> rozhraní.  
   
--   Všechny komponenty, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní.  
+- Všechny komponenty, která implementuje <xref:System.ComponentModel.IBindingList> rozhraní.  
   
  Další informace o zdrojích dat najdete v části [zdroje dat podporované rozhraním Windows Forms](../data-sources-supported-by-windows-forms.md).  
   

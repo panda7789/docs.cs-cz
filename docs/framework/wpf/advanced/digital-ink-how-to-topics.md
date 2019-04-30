@@ -8,11 +8,11 @@ helpviewer_keywords:
 - digital ink [WPF]
 ms.assetid: c29f8728-bfcb-4af7-9fbc-8169e180109f
 ms.openlocfilehash: f67642342777a4b5b26b902161c83dc98893c63f
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57355590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61799356"
 ---
 # <a name="digital-ink-how-to-topics"></a>Postupy: Témata digitálního inkoustu
 ## <a name="in-this-section"></a>V tomto oddílu  

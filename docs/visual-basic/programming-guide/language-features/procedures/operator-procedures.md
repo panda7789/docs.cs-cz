@@ -12,11 +12,11 @@ helpviewer_keywords:
 - operator procedures
 ms.assetid: 8c513d38-246b-4fb7-8b75-29e1364e555b
 ms.openlocfilehash: 80c9a77494be95365899c6a25435fcfc5d2a7293
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59175016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791973"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procedury operátoru (Visual Basic)
 Procedury operátoru je řada příkazů jazyka Visual Basic, které definují chování standardní – operátor (například `*`, `<>`, nebo `And`) na třídy nebo struktury, které jste definovali. To se také nazývá *přetížení operátoru*.  
@@ -31,13 +31,13 @@ Procedury operátoru je řada příkazů jazyka Visual Basic, které definují c
 ## <a name="types-of-operator-procedure"></a>Typy procedury operátora  
  Procedury operátoru může být jedna z následujících typů:  
   
--   Definice unárního operátoru, kde se argument typu třídy nebo struktury.  
+- Definice unárního operátoru, kde se argument typu třídy nebo struktury.  
   
--   Definice binárního operátoru, kde je alespoň jeden z argumentů typu třídy nebo struktury.  
+- Definice binárního operátoru, kde je alespoň jeden z argumentů typu třídy nebo struktury.  
   
--   Definice operátoru převodu, kde se argument typu třídy nebo struktury.  
+- Definice operátoru převodu, kde se argument typu třídy nebo struktury.  
   
--   Definice operátora převodu, který vrátí typ třídy nebo struktury.  
+- Definice operátora převodu, který vrátí typ třídy nebo struktury.  
   
  Operátory převodu jsou vždy Unární a vždy použijte `CType` jako operátor, definujete.  
   

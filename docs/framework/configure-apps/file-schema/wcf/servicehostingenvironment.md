@@ -3,11 +3,11 @@ title: <serviceHostingEnvironment>
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
 ms.openlocfilehash: 24cf36aba81b5bb31eaac475361e2d07bc6f8b12
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59215986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788398"
 ---
 # <a name="servicehostingenvironment"></a>\<serviceHostingEnvironment>
 Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím služby pro konkrétní přenos. Pokud tento prvek je prázdný, je použit výchozí typ. Tento prvek jde použít jenom na aplikace nebo na úrovni konfigurační soubory.  
@@ -63,25 +63,25 @@ Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím s
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení služby WCF spuštění – souběžně s rozhraním ASP.NET v prostředí domény aplikace (AppDomain). I když WCF a ASP.NET mohou existovat vedle sebe v téže doméně AppDomain, WCF požadavky nejsou zpracovávány kanálu HTTP ASP.NET ve výchozím nastavení. Několik prvků platformy aplikace ASP.NET v důsledku toho nejsou k dispozici ke službám WCF. Patří mezi ně  
   
--   Autorizace souboru nebo adresy URL technologie ASP.NET  
+- Autorizace souboru nebo adresy URL technologie ASP.NET  
   
--   ASP.NET Impersonation  
+- ASP.NET Impersonation  
   
--   Stav relace na základě souboru cookie  
+- Stav relace na základě souboru cookie  
   
--   HttpContext.Current  
+- HttpContext.Current  
   
--   Kanál rozšiřitelnost prostřednictvím vlastních modulu HttpModule  
+- Kanál rozšiřitelnost prostřednictvím vlastních modulu HttpModule  
   
  Pokud vaše služby WCF potřebujete pracovat v rámci technologie ASP.NET a komunikovat jenom přes protokol HTTP, můžete použít režim kompatibility ASP.NET na WCF. Když je zapnutý tento režim `aspNetCompatibilityEnabled` atribut je nastaven na `true` na úrovni aplikace. Implementace služby musí deklarovat své možnost spouštět pomocí režimu kompatibility <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> třídy. Když je povolený režim kompatibility,  
   
--   Autorizace souboru nebo adresy URL technologie ASP.NET je vynuceno před WCF autorizace. Rozhodnutí o autorizaci vychází transportní vrstvy identitu požadavku. Identit na úrovni zprávy jsou ignorovány.  
+- Autorizace souboru nebo adresy URL technologie ASP.NET je vynuceno před WCF autorizace. Rozhodnutí o autorizaci vychází transportní vrstvy identitu požadavku. Identit na úrovni zprávy jsou ignorovány.  
   
--   Operací služby WCF start ke spuštění v kontextu zosobnění technologie ASP.NET. Pokud je pro konkrétní službu povolené zosobnění technologie ASP.NET a WCF zosobnění, platí kontextu zosobnění WCF.  
+- Operací služby WCF start ke spuštění v kontextu zosobnění technologie ASP.NET. Pokud je pro konkrétní službu povolené zosobnění technologie ASP.NET a WCF zosobnění, platí kontextu zosobnění WCF.  
   
--   HttpContext.Current je možné z kódu služby WCF a služeb bránit zveřejnění jiným protokolem než HTTP koncových bodů.  
+- HttpContext.Current je možné z kódu služby WCF a služeb bránit zveřejnění jiným protokolem než HTTP koncových bodů.  
   
--   WCF jsou zpracovány pomocí kanálu ASP.NET. HttpModules, které jsou nakonfigurované tak, aby fungoval na příchozí požadavky může také zpracovat WCF žádosti. Může jít o komponenty platformy technologie ASP.NET (například <xref:System.Web.SessionState.SessionStateModule>), a také vlastní třetích stran moduly.  
+- WCF jsou zpracovány pomocí kanálu ASP.NET. HttpModules, které jsou nakonfigurované tak, aby fungoval na příchozí požadavky může také zpracovat WCF žádosti. Může jít o komponenty platformy technologie ASP.NET (například <xref:System.Web.SessionState.SessionStateModule>), a také vlastní třetích stran moduly.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak povolit režim kompatibility ASP.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
 ms.openlocfilehash: 633aaa4a9540d0895252e56dbeabd97200081fc9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877679"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
 Více sad aktivní výsledků (MARS) je funkce, která funguje se serverem SQL Server, aby bylo možné spouštění více dávek na jedno připojení. Pokud MARS je povolené pro použití se serverem SQL Server, přidá každý objekt příkazu použít relaci připojení.  
@@ -75,15 +75,15 @@ string connectionString = "Data Source=MSSQL1;" +
   
  Prostředí pro spouštění služby batch zahrnuje následující součásti:  
   
--   Nastavení možností (například ANSI_NULLS DATE_FORMAT, jazyka, velikost textu)  
+- Nastavení možností (například ANSI_NULLS DATE_FORMAT, jazyka, velikost textu)  
   
--   Kontext zabezpečení (role uživatelů a aplikací)  
+- Kontext zabezpečení (role uživatelů a aplikací)  
   
--   Kontext databáze (aktuální databáze)  
+- Kontext databáze (aktuální databáze)  
   
--   Proměnné stavu spuštění (například @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)  
+- Proměnné stavu spuštění (například @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)  
   
--   Nejvyšší úrovně dočasné tabulky  
+- Nejvyšší úrovně dočasné tabulky  
   
  S MARS je výchozí prostředí spuštění přidružené k připojení. Každý nový list, který se spustí provádění v rámci dané připojení obdrží kopii výchozího prostředí. Pokaždé, když je kód spuštěn v dané dávce, všechny změny provedené v prostředí oborem pro určité služby batch. Jakmile se dokončí provádění, nastavení spuštění se zkopírují do výchozího prostředí. V případě vydávání několika příkazů postupně provádět v rámci stejné transakce v jedné dávce sémantika je stejné jako vystavené připojení týkajících se starších klientů nebo serverů.  
   

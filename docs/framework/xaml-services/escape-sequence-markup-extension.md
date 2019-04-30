@@ -12,11 +12,11 @@ helpviewer_keywords:
 - escape sequence [XAML Services]
 ms.assetid: 3ce3e2ad-a868-43f9-9c98-b29561cb146e
 ms.openlocfilehash: 9f6743dd8a82891ac2233978550e5679130de0be
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59182065"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855604"
 ---
 # <a name="-escape-sequence--markup-extension"></a>{} – řídicí sekvence / rozšíření značek
 Poskytuje řídicí sekvence XAML pro hodnoty atributů. Řídicí sekvence povoluje následující hodnoty v atributu je interpretován jako literální.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Visual Basic code, program structure
 ms.assetid: ad0c6531-d762-4c77-a700-de16b07b6119
 ms.openlocfilehash: 42e366a844f9c5e80a8f617bf73dfd869608540d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61839396"
 ---
 # <a name="structure-of-a-visual-basic-program"></a>Struktura programu jazyka Visual Basic
 V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *řešení* se skládá z jednoho nebo více projektů. A *projektu* zase může obsahovat jedno nebo více sestavení. Každý *sestavení* je zkompilován z jednoho nebo více zdrojových souborů. A *zdrojový soubor* obsahuje definice a implementaci tříd, struktur, moduly a rozhraní, takže v konečném důsledku obsahující váš kód.  
@@ -47,30 +47,30 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
 ## <a name="namespace-level-programming-elements"></a>Namespace – úroveň programovací elementy  
  Třídy, struktury a moduly obsahovat veškerý kód ve zdrojovém souboru. Jsou *úrovni oboru názvů* prvky, které se mohou objevit v oboru názvů nebo na úrovni zdroje souboru. Drží deklarace dalších programovacích prvků. Rozhraní, které definují element podpisy, ale poskytnout implementaci, zobrazit i na úrovni modulu. Další informace na úrovni modulu prvky naleznete v následujících tématech:  
   
--   [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
+- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
--   [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
   
--   [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
+- [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)  
   
--   [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
  Výčty a Delegáti jsou prvky dat na úrovni oboru názvů.  
   
 ## <a name="module-level-programming-elements"></a>Úroveň modulu programovací elementy  
  Postupy, operátory, vlastnosti a události jsou jediným programovací prvky, které mohou obsahovat spustitelného kódu (příkazy, které provádějí akce za běhu). Jsou *úrovni modulu* prvky programu. Další informace o postupu úrovně prvky naleznete v následujících tématech:  
   
--   [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
--   [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
--   [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
--   [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
+- [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
--   [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
--   [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
+- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
  Údaje na úrovni modulu jsou proměnné, konstanty, výčty a delegáti.  
   
@@ -82,13 +82,13 @@ V aplikaci Visual Basic je vytvářeny z standardních stavebních bloků. A *ř
 ## <a name="the-main-procedure"></a>Hlavní procedura  
  `Main` Postup je první kód spustit, když vaše aplikace se načetl. `Main` slouží jako počáteční bod a celkové ovládání aplikace. Existují čtyři typy prvků `Main`:  
   
--   `Sub Main()`  
+- `Sub Main()`  
   
--   `Sub Main(ByVal cmdArgs() As String)`  
+- `Sub Main(ByVal cmdArgs() As String)`  
   
--   `Function Main() As Integer`  
+- `Function Main() As Integer`  
   
--   `Function Main(ByVal cmdArgs() As String) As Integer`  
+- `Function Main(ByVal cmdArgs() As String) As Integer`  
   
  Nejběžnější řadu tento postup je `Sub Main()`. Další informace najdete v tématu [hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md).  
   

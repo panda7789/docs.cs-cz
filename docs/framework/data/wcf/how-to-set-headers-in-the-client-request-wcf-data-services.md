@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 3d55168d-5901-4f48-8117-6c93da3ab5ae
 ms.openlocfilehash: bbf306b31dd2bc9cfcfb877351205970fc63706f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788775"
 ---
 # <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a>Postupy: Nastavit hlavičky v požadavku klienta (WCF Data Services)
 Při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro přístup ke službě data, která podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)], klientské knihovny automaticky nastaví povinné hlavičky HTTP v žádosti o zprávy odeslané do datové služby. Klientská knihovna však nezná nastavit hlavičky zpráv, které jsou nutné v některých případech, například když datová služba vyžaduje ověřování nezaloženého na deklaracích nebo soubory cookie. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md#clientAuthentication). V těchto případech je nutné ručně nastavit hlavičky zpráv ve zprávě požadavku před jejím odesláním. V příkladu v tomto tématu ukazuje, jak zpracovat <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> události a přidejte novou hlavičku zprávy s požadavkem, před odesláním do datové služby.  

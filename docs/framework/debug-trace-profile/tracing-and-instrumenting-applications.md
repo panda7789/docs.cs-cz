@@ -16,24 +16,24 @@ ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6749f54db106bffaba57b7cb77cb13808175af3a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61876145"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
 Trasování je způsob, jak můžete monitorovat provádění aplikace během jejího běhu. Instrumentace trasování a ladění můžete přidat do vaší aplikace rozhraní .NET Framework při při vývoji a instrumentaci můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiná pro pozdější analýzu.  
   
  Termín *instrumentace* odkazuje na schopnost, monitorovat nebo úroveň výkonu produktu měření a diagnostikovat chyby. Při programování, to znamená možnost aplikace začlenit:  
   
--   **Trasování kódu** -příjem informativní zprávy o spuštění aplikace v době běhu.  
+- **Trasování kódu** -příjem informativní zprávy o spuštění aplikace v době běhu.  
   
--   **Ladění** – sledováním a oprava programovacích chyb v aplikaci ve vývoji. Další informace najdete v tématu [ladění](/visualstudio/debugger/debugging-in-visual-studio).  
+- **Ladění** – sledováním a oprava programovacích chyb v aplikaci ve vývoji. Další informace najdete v tématu [ladění](/visualstudio/debugger/debugging-in-visual-studio).  
   
--   **Čítače výkonu** – komponenty, které umožňují sledovat výkon aplikace. Další informace najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
+- **Čítače výkonu** – komponenty, které umožňují sledovat výkon aplikace. Další informace najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   
--   **Protokoly událostí** – komponenty, které vám umožní získáte a můžete sledovat důležité události v provádění aplikace. Další informace najdete v tématu <xref:System.Diagnostics.EventLog> třídy.  
+- **Protokoly událostí** – komponenty, které vám umožní získáte a můžete sledovat důležité události v provádění aplikace. Další informace najdete v tématu <xref:System.Diagnostics.EventLog> třídy.  
   
  Instrumentace vaší aplikace tak, že příkazy trasování na strategická místa v kódu je užitečné zejména pro distribuované aplikace. Pomocí příkazů trasování vám umožňuje instrumentovat aplikaci pouze pro zobrazení informací, když něco selže, ale také k monitorování, jak dobře fungují aplikace.  
   
@@ -91,11 +91,11 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 6. Zkompilujte aplikaci do spustitelného kódu pomocí jedné z následujících postupů:  
   
-    -   Použití **sestavení** nabídky spolu s **ladění** stránku **stránky vlastností** dialogové okno v **Průzkumníka řešení**. Použijte při kompilaci v sadě Visual Studio.  
+    - Použití **sestavení** nabídky spolu s **ladění** stránku **stránky vlastností** dialogové okno v **Průzkumníka řešení**. Použijte při kompilaci v sadě Visual Studio.  
   
          \- nebo –  
   
-    -   Použití **trasování** a **ladění** direktivy kompilátoru pro kompilaci metodu příkazového řádku. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Použijte při kompilaci z příkazového řádku.  
+    - Použití **trasování** a **ladění** direktivy kompilátoru pro kompilaci metodu příkazového řádku. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Použijte při kompilaci z příkazového řádku.  
   
 7. Pokud dojde k potížím při běhu, zapněte trasování odpovídající přepínač. Další informace najdete v tématu [konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   

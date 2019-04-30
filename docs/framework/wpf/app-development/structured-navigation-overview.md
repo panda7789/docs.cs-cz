@@ -8,11 +8,11 @@ helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
 ms.openlocfilehash: 0cf2a37eaa812d27dc3d111b1459c9daae72dc5a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59320068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788815"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  
@@ -25,15 +25,15 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
 ## <a name="structured-navigation"></a>Strukturované navigace  
  Při jedné stránce volá jiné stránky v strukturované navigace, se vyžadují některé nebo všechny z následujících chování:  
   
--   Stránce volání přejde na stránce volané, volitelně předávání parametrů vyžadovaných názvem stránky.  
+- Stránce volání přejde na stránce volané, volitelně předávání parametrů vyžadovaných názvem stránky.  
   
--   Stránce volaná po dokončení uživatele na stránce volání vrátí konkrétně na stránku pro volání Volitelně:  
+- Stránce volaná po dokončení uživatele na stránce volání vrátí konkrétně na stránku pro volání Volitelně:  
   
-    -   Vrací informace o stavu, který popisuje, jak stránce volání bylo dokončeno (například, zda uživatel stiskne tlačítko OK nebo tlačítko Storno).  
+    - Vrací informace o stavu, který popisuje, jak stránce volání bylo dokončeno (například, zda uživatel stiskne tlačítko OK nebo tlačítko Storno).  
   
-    -   Vrací data, která byla shromážděna z uživatele (například podrobnosti nového zaměstnance).  
+    - Vrací data, která byla shromážděna z uživatele (například podrobnosti nového zaměstnance).  
   
--   Po návratu volání stránky na stránku volané stránce volané Odebereme z historii navigace k izolaci jeden výskyt stránku volané z jiného.  
+- Po návratu volání stránky na stránku volané stránce volané Odebereme z historii navigace k izolaci jeden výskyt stránku volané z jiného.  
   
  Těchto projevů je znázorněn ve na následujícím obrázku:  
   
@@ -115,17 +115,17 @@ Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes
   
  Můžete se nevyžadují pro předání parametrů do volané stránky. Místo toho může postupujte takto:  
   
--   Na stránce volání:  
+- Na stránce volání:  
   
-    1.  Vytvořit instanci s názvem <xref:System.Windows.Navigation.PageFunction%601> pomocí výchozího konstruktoru.  
+    1. Vytvořit instanci s názvem <xref:System.Windows.Navigation.PageFunction%601> pomocí výchozího konstruktoru.  
   
-    2.  Parametry v Store <xref:System.Windows.Application.Properties%2A>.  
+    2. Parametry v Store <xref:System.Windows.Application.Properties%2A>.  
   
-    3.  Přejděte do volaného <xref:System.Windows.Navigation.PageFunction%601>.  
+    3. Přejděte do volaného <xref:System.Windows.Navigation.PageFunction%601>.  
   
--   Z s názvem <xref:System.Windows.Navigation.PageFunction%601>:  
+- Z s názvem <xref:System.Windows.Navigation.PageFunction%601>:  
   
-    -   Načtení a použití parametry uložené v <xref:System.Windows.Application.Properties%2A>.  
+    - Načtení a použití parametry uložené v <xref:System.Windows.Application.Properties%2A>.  
   
  Ale jak uvidíte krátce, stále potřebovat použijete kód instanci a přejděte na stránku volaná ke shromažďování dat vrácených názvem stránky. Z tohoto důvodu <xref:System.Windows.Navigation.PageFunction%601> musí uchovávat zachování připojení; jinak vrátí hodnotu, při příštím přejdete na <xref:System.Windows.Navigation.PageFunction%601>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvoří instanci <xref:System.Windows.Navigation.PageFunction%601> pomocí výchozího konstruktoru.  
   

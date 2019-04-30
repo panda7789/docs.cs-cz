@@ -16,11 +16,11 @@ ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7de0a869925816da6df8f17e14ab92964aec8d11
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59094213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874182"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
 `reentrancy` Pomocníka spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy se neprovedla předchozí přepínač ze spravovaného do nativního kódu prostřednictvím uspořádání přechodu.  

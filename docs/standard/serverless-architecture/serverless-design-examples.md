@@ -5,13 +5,13 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: d165746ff2f03b0edc59a9284052323a0c1fd05b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784387"
 ---
-# <a name="serverless-design-examples"></a>Příklady návrhu bez serveru
+# <a name="serverless-design-examples"></a>Příklady bezserverového návrhu
 
 Existuje mnoho vzorů návrhu, které existují pro bez serveru. Tato část jsou zaznamenané některé běžné scénáře, které používají bez serveru. Co některé příklady mají společnou je základní kombinací události trigger a obchodní logiky.
 

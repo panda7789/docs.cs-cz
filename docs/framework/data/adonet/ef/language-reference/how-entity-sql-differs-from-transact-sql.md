@@ -3,11 +3,11 @@ title: Jak se Entity SQL liší od Transact-SQL
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
 ms.openlocfilehash: 75ce0b00962526b76ea9f4b9fdfb0d1e1e564cdc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774742"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Jak se Entity SQL liší od Transact-SQL
 Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esql-md.md)] a [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  
@@ -20,15 +20,15 @@ Toto téma popisuje rozdíly mezi [!INCLUDE[esql](../../../../../../includes/esq
 ## <a name="support-for-collections"></a>Podpora pro kolekce  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] kolekce se považuje za první třídy entit. Příklad:  
   
--   Výrazy kolekce jsou platné v `from` klauzuli.  
+- Výrazy kolekce jsou platné v `from` klauzuli.  
   
--   `in` a `exists` poddotazy mají byl zobecněn umožňující žádných kolekcí.  
+- `in` a `exists` poddotazy mají byl zobecněn umožňující žádných kolekcí.  
   
      Poddotaz je jeden typ kolekce. `e1 in e2` a `exists(e)` jsou [!INCLUDE[esql](../../../../../../includes/esql-md.md)] konstrukty, které tyto operace provést.  
   
--   Množinové operace, jako například `union`, `intersect`, a `except`, nyní pracují s kolekcí.  
+- Množinové operace, jako například `union`, `intersect`, a `except`, nyní pracují s kolekcí.  
   
--   Spojení pracovat s kolekcí.  
+- Spojení pracovat s kolekcí.  
   
 ## <a name="support-for-expressions"></a>Podpora pro výrazy  
  [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] má poddotazy (tabulky) a výrazy (řádků a sloupců).  

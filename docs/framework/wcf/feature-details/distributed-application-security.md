@@ -6,11 +6,11 @@ helpviewer_keywords:
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
 ms.openlocfilehash: e447cd5ccf84e49ff384bd3591884404736d04f8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59132052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856529"
 ---
 # <a name="distributed-application-security"></a>Zabezpečení distribuované aplikace
 Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní oblasti funkčnosti: přenos zabezpečení, řízení přístupu a auditování. Zabezpečení přenosu poskytuje integritu, šifrování a ověřování. Zabezpečení přenosu poskytuje jednu z následujících: zabezpečení, zabezpečení zprávy přenosu nebo `TransportWithMessageCredential`.  
@@ -20,11 +20,11 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
 ## <a name="transfer-security-scenarios"></a>Scénáře zabezpečení přenosu  
  Běžné scénáře, které využívají zabezpečení přenosu WCF patří:  
   
--   Vyžádání bezpečného přenosu pomocí Windows. Klient WCF a služby jsou nasazené v doméně Windows (nebo doménové struktury Windows). Zprávy obsahují osobní údaje, takže požadavky zahrnují vzájemného ověřování klienta a služby, zprávu, integritu a důvěrnost zpráv. Navíc se vyžaduje ověření, že konkrétní operace došlo k chybě, například příjemce zprávy měli zaznamenávat informace o podpisu.  
+- Vyžádání bezpečného přenosu pomocí Windows. Klient WCF a služby jsou nasazené v doméně Windows (nebo doménové struktury Windows). Zprávy obsahují osobní údaje, takže požadavky zahrnují vzájemného ověřování klienta a služby, zprávu, integritu a důvěrnost zpráv. Navíc se vyžaduje ověření, že konkrétní operace došlo k chybě, například příjemce zprávy měli zaznamenávat informace o podpisu.  
   
--   Zabezpečení přenosu pomocí `UserName` a HTTPS. Klient WCF a služby musí být vyvinuto pro práci na Internetu. Přihlašovací údaje pro klienta ověřit proti databázi párů jméno/heslo uživatele. Nasazení služby na adrese HTTPS pomocí důvěryhodného certifikátu vrstvy SSL (Secure Sockets). Protože zprávy putovat po Internetu, klient a služba musí být vzájemně se ověřují a musí být zachovány tyto zprávy důvěrnost a integrita během přenosu.  
+- Zabezpečení přenosu pomocí `UserName` a HTTPS. Klient WCF a služby musí být vyvinuto pro práci na Internetu. Přihlašovací údaje pro klienta ověřit proti databázi párů jméno/heslo uživatele. Nasazení služby na adrese HTTPS pomocí důvěryhodného certifikátu vrstvy SSL (Secure Sockets). Protože zprávy putovat po Internetu, klient a služba musí být vzájemně se ověřují a musí být zachovány tyto zprávy důvěrnost a integrita během přenosu.  
   
--   Vyžádání bezpečného přenosu pomocí certifikátů. Klienta WCF a služby musí být vyvinuto pro práci prostřednictvím veřejného Internetu. Klient a služba mít certifikáty, které lze použít k zabezpečení zprávy. Klient a služba používat Internet bude komunikovat mezi sebou a provádět transakce vysoké hodnoty, které vyžadují integrity zprávy, utajení a vzájemné ověřování.  
+- Vyžádání bezpečného přenosu pomocí certifikátů. Klienta WCF a služby musí být vyvinuto pro práci prostřednictvím veřejného Internetu. Klient a služba mít certifikáty, které lze použít k zabezpečení zprávy. Klient a služba používat Internet bude komunikovat mezi sebou a provádět transakce vysoké hodnoty, které vyžadují integrity zprávy, utajení a vzájemné ověřování.  
   
 ## <a name="integrity-confidentiality-and-authentication"></a>Integritu, šifrování a ověřování  
  Tři funkce, integritu a důvěrnost ověřování – se společně nazývají zabezpečení přenosu. Zabezpečení přenosu poskytuje funkce, které pomůžou zmírnit hrozby do distribuované aplikace. Následující tabulka stručně popisuje tři funkce, které tvoří zabezpečení přenosu.  
@@ -64,7 +64,7 @@ Zabezpečení Windows Communication Foundation (WCF) se dělí na tři hlavní o
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádný|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Základní|Určuje základní ověřování.  Další informace najdete v tématu RFC2617, "[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88313). "|  
 |ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.  Další informace najdete v tématu RFC2617, "[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkId=88313). "|  
 |Ntlm|Určuje ověřování Windows pomocí vyjednávání SSPI v doméně Windows.<br /><br /> Vyjednávání SSPI je výsledkem použití protokolu Kerberos nebo NT LanMan (NTLM).|  

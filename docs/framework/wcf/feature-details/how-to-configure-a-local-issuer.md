@@ -9,11 +9,11 @@ helpviewer_keywords:
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
 ms.openlocfilehash: 46dbb39a31a1ef256bef0f5b7e1bbc41ce1eca3e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779298"
 ---
 # <a name="how-to-configure-a-local-issuer"></a>Postupy: Konfigurace místního vystavitele
 Toto téma popisuje, jak nakonfigurovat klienta k využití místního vystavitele pro vydané tokeny.  

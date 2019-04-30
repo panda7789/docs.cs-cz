@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 12ef215253ca02048a5a3fc2c7c682823233929f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59108079"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61779812"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot – metoda
 Provede spravované rámce zásobníku pro zadaný podproces a odešle informace prostřednictvím zpětné volání profileru.  
@@ -91,11 +91,11 @@ HRESULT DoStackSnapshot(
   
  Asynchronní zásobníku může snadno způsobit zablokování nebo přistupovat k narušení, pokud budete postupovat podle následujících pokynů:  
   
--   Při přímo pozastavit vlákna, mějte na paměti, že pouze vlákno, které dosud nespustil spravovaný kód může pozastavit jiné vlákno.  
+- Při přímo pozastavit vlákna, mějte na paměti, že pouze vlákno, které dosud nespustil spravovaný kód může pozastavit jiné vlákno.  
   
--   Vždycky blokovat vaší [icorprofilercallback::threaddestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) zpětné volání, dokud se nedokončí procházení zásobníku bylo vlákno.  
+- Vždycky blokovat vaší [icorprofilercallback::threaddestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) zpětné volání, dokud se nedokončí procházení zásobníku bylo vlákno.  
   
--   Při volání profileru do CLR funkci, která může spustit uvolňování paměti není držitelem zámku. To znamená, že není držitelem zámku Pokud vlastnící vláken činí volání, které spustí uvolnění.  
+- Při volání profileru do CLR funkci, která může spustit uvolňování paměti není držitelem zámku. To znamená, že není držitelem zámku Pokud vlastnící vláken činí volání, které spustí uvolnění.  
   
  K dispozici je také riziku zablokování při volání `DoStackSnapshot` z vlákna, které váš profiler byl vytvořen tak, aby vás provedou zásobníku vlákna samostatný cílový. První vlákno, které jste vytvořili přejde do určité `ICorProfilerInfo*` metod (včetně `DoStackSnapshot`), modul CLR provede inicializaci jednotlivých vláken, specifická pro modul CLR v daném vláknu. Pokud váš profiler byla pozastavena cílové vlákno, jehož zásobníku se snažíte procházení a vlastnit zámek potřebný k provedení této vlákno inicializace došlo k této cílové vlákno, dojde k zablokování. Abyste zabránili tomuto vzájemnému zablokování, provést počáteční volání do `DoStackSnapshot` z vašeho vlákna profiler vytvořeného procesem samostatné cílové vlákno, ale ne pozastavit nejprve cílové vlákno. Tento počáteční volání zajišťuje, vlákno inicializace dokončit bez zablokování. Pokud `DoStackSnapshot` je úspěšné a aspoň jeden snímek sestavy od této chvíle bude bezpečný pro toto vlákno profileru vytvořili pozastavit všechny cílové vlákno a volání `DoStackSnapshot` procesem zásobníku bylo cílové vlákno.  
   

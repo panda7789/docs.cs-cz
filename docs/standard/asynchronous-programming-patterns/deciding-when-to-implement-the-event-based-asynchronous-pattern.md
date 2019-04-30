@@ -13,11 +13,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
 ms.openlocfilehash: acc732f72e9dae0796da78cdbb8ef4666ae9791a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54574427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61870276"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>Rozhodování, kdy implementovat asynchronní vzor založený na událostech
 Asynchronní vzor založený na událostech poskytuje základní vzor pro vystavení asynchronních chování třídy. Se zavedením tento model [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] definuje dva modely pro vystavení asynchronních chování: asynchronní vzor založený na <xref:System.IAsyncResult?displayProperty=nameWithType> rozhraní a vzor založený na událostech. Toto téma popisuje, kdy je vhodné pro vás k implementaci oba vzorky.  
@@ -33,36 +33,36 @@ Asynchronní vzor založený na událostech poskytuje základní vzor pro vystav
 ## <a name="guidelines"></a>Pokyny  
  Následující seznam popisuje pokyny, kdy byste měli implementovat asynchronní vzor založený na událostech:  
   
--   Použití vzoru založeného na událostech jako výchozí rozhraní API k vystavení asynchronních chování pro vaši třídu.  
+- Použití vzoru založeného na událostech jako výchozí rozhraní API k vystavení asynchronních chování pro vaši třídu.  
   
--   Nevystavujte <xref:System.IAsyncResult> vzor, pokud vaše třída se používá především v klientské aplikaci, například Windows Forms.  
+- Nevystavujte <xref:System.IAsyncResult> vzor, pokud vaše třída se používá především v klientské aplikaci, například Windows Forms.  
   
--   Pouze vystavit <xref:System.IAsyncResult> vzorku, když je nezbytné pro splnění vašich požadavků. Například kompatibilitu s existující rozhraní API mohou vyžadovat vám umožní vystavit <xref:System.IAsyncResult> vzor.  
+- Pouze vystavit <xref:System.IAsyncResult> vzorku, když je nezbytné pro splnění vašich požadavků. Například kompatibilitu s existující rozhraní API mohou vyžadovat vám umožní vystavit <xref:System.IAsyncResult> vzor.  
   
--   Nevystavujte <xref:System.IAsyncResult> vzor bez také vystavení vzor založený na událostech.  
+- Nevystavujte <xref:System.IAsyncResult> vzor bez také vystavení vzor založený na událostech.  
   
--   Pokud musí vystavit <xref:System.IAsyncResult> vzorku, Uděláte to tak jako upřesňující možnosti. Například pokud generujete objekt proxy, generovat model založený na událostech ve výchozím nastavení, existuje možnost Generovat <xref:System.IAsyncResult> vzor.  
+- Pokud musí vystavit <xref:System.IAsyncResult> vzorku, Uděláte to tak jako upřesňující možnosti. Například pokud generujete objekt proxy, generovat model založený na událostech ve výchozím nastavení, existuje možnost Generovat <xref:System.IAsyncResult> vzor.  
   
--   Vytvoření vaší implementace vzor založený na událostech ve vaší <xref:System.IAsyncResult> implementaci vzoru.  
+- Vytvoření vaší implementace vzor založený na událostech ve vaší <xref:System.IAsyncResult> implementaci vzoru.  
   
--   Vyhněte se úniku obou vzor založený na událostech a <xref:System.IAsyncResult> vzor ve stejné třídě. Vystavení vzor založený na událostech pro "na vyšší úrovni" třídy a <xref:System.IAsyncResult> vzor na "snížit úroveň" třídy. Například porovnat na model založený na událostech <xref:System.Net.WebClient> komponentu s <xref:System.IAsyncResult> vzor na <xref:System.Web.HttpRequest> třídy.  
+- Vyhněte se úniku obou vzor založený na událostech a <xref:System.IAsyncResult> vzor ve stejné třídě. Vystavení vzor založený na událostech pro "na vyšší úrovni" třídy a <xref:System.IAsyncResult> vzor na "snížit úroveň" třídy. Například porovnat na model založený na událostech <xref:System.Net.WebClient> komponentu s <xref:System.IAsyncResult> vzor na <xref:System.Web.HttpRequest> třídy.  
   
-    -   Vystavení vzor založený na událostech a <xref:System.IAsyncResult> vzor na stejné třídy, pokud to vyžaduje kompatibility. Například, pokud jste už vydali rozhraní API, které používá <xref:System.IAsyncResult> vzor, je třeba zachovat <xref:System.IAsyncResult> vzoru z důvodu zpětné kompatibility.  
+    - Vystavení vzor založený na událostech a <xref:System.IAsyncResult> vzor na stejné třídy, pokud to vyžaduje kompatibility. Například, pokud jste už vydali rozhraní API, které používá <xref:System.IAsyncResult> vzor, je třeba zachovat <xref:System.IAsyncResult> vzoru z důvodu zpětné kompatibility.  
   
-    -   Vystavení vzor založený na událostech a <xref:System.IAsyncResult> vzorku ve stejné třídě, pokud výsledný složitost modelu objektu převažuje získané výhody oddělení implementace. Je lepší vystavit obou vzory na jednu třídu než zabráníte tak vystavení vzor založený na událostech.  
+    - Vystavení vzor založený na událostech a <xref:System.IAsyncResult> vzorku ve stejné třídě, pokud výsledný složitost modelu objektu převažuje získané výhody oddělení implementace. Je lepší vystavit obou vzory na jednu třídu než zabráníte tak vystavení vzor založený na událostech.  
   
-    -   Pokud musí vystavit obou vzor založený na událostech a <xref:System.IAsyncResult> vzor na jednu třídu, použijte <xref:System.ComponentModel.EditorBrowsableAttribute> nastavena na <xref:System.ComponentModel.EditorBrowsableState.Advanced> k označení <xref:System.IAsyncResult> implementaci vzoru jako o pokročilou funkci. Tím je oznámeno prostředí, návrh, jako je IntelliSense ve Visual Studio, ne pro zobrazení <xref:System.IAsyncResult> vlastnosti a metody. Tyto vlastnosti a metody jsou stále plně použitelné, ale vývojáři, kteří pracují pomocí IntelliSense má srozumitelnější zobrazení rozhraní API.  
+    - Pokud musí vystavit obou vzor založený na událostech a <xref:System.IAsyncResult> vzor na jednu třídu, použijte <xref:System.ComponentModel.EditorBrowsableAttribute> nastavena na <xref:System.ComponentModel.EditorBrowsableState.Advanced> k označení <xref:System.IAsyncResult> implementaci vzoru jako o pokročilou funkci. Tím je oznámeno prostředí, návrh, jako je IntelliSense ve Visual Studio, ne pro zobrazení <xref:System.IAsyncResult> vlastnosti a metody. Tyto vlastnosti a metody jsou stále plně použitelné, ale vývojáři, kteří pracují pomocí IntelliSense má srozumitelnější zobrazení rozhraní API.  
   
 ## <a name="criteria-for-exposing-the-iasyncresult-pattern-in-addition-to-the-event-based-pattern"></a>Kritéria pro zveřejnění vzor IAsyncResult kromě vzor založený na událostech  
  Během asynchronního vzoru založeného na událostech má mnoho výhod podle výše uvedených scénářů, má některé nevýhody, které byste měli vědět, pokud je výkon vašich nejdůležitějších požadavek.  
   
  Existují tři scénáře, které model založený na událostech neřeší i na <xref:System.IAsyncResult> vzoru:  
   
--   Blokovat čekání na jednom <xref:System.IAsyncResult>  
+- Blokovat čekání na jednom <xref:System.IAsyncResult>  
   
--   Blokovat čekání na mnoha <xref:System.IAsyncResult> objekty  
+- Blokovat čekání na mnoha <xref:System.IAsyncResult> objekty  
   
--   Dotazovat se na dokončení <xref:System.IAsyncResult>  
+- Dotazovat se na dokončení <xref:System.IAsyncResult>  
   
  Tyto scénáře můžete řešit pomocí vzoru založeného na událostech, ale to je náročnější než při použití <xref:System.IAsyncResult> vzor.  
   
@@ -72,13 +72,13 @@ Asynchronní vzor založený na událostech poskytuje základní vzor pro vystav
   
  Následující seznam uvádí několik doporučení, které řídí, pokud se rozhodnete použít <xref:System.IAsyncResult> vzoru:  
   
--   Pouze vystavit <xref:System.IAsyncResult> vzor, pokud výslovně nepotřebujete podporu <xref:System.Threading.WaitHandle> nebo <xref:System.IAsyncResult> objekty.  
+- Pouze vystavit <xref:System.IAsyncResult> vzor, pokud výslovně nepotřebujete podporu <xref:System.Threading.WaitHandle> nebo <xref:System.IAsyncResult> objekty.  
   
--   Pouze vystavit <xref:System.IAsyncResult> vzor, pokud máte existující rozhraní API, které používá <xref:System.IAsyncResult> vzor.  
+- Pouze vystavit <xref:System.IAsyncResult> vzor, pokud máte existující rozhraní API, které používá <xref:System.IAsyncResult> vzor.  
   
--   Pokud máte existující rozhraní API na základě <xref:System.IAsyncResult> vzorku, zvažte také zveřejnění vzor založený na událostech v další vydané verzi.  
+- Pokud máte existující rozhraní API na základě <xref:System.IAsyncResult> vzorku, zvažte také zveřejnění vzor založený na událostech v další vydané verzi.  
   
--   Pouze vystavit <xref:System.IAsyncResult> vzor, pokud mají požadavky na vysoký výkon, které si ověříte nelze splnit třídou vzor založený na událostech, ale mohou být splněny <xref:System.IAsyncResult> vzor.  
+- Pouze vystavit <xref:System.IAsyncResult> vzor, pokud mají požadavky na vysoký výkon, které si ověříte nelze splnit třídou vzor založený na událostech, ale mohou být splněny <xref:System.IAsyncResult> vzor.  
   
 ## <a name="see-also"></a>Viz také:
 

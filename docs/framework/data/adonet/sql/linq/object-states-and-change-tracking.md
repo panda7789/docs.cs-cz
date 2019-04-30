@@ -3,11 +3,11 @@ title: Stavy objektů a sledování změn
 ms.date: 03/30/2017
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
 ms.openlocfilehash: 63b04d3a4b6e48594e9664833a6e539d62bbab0e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794391"
 ---
 # <a name="object-states-and-change-tracking"></a>Stavy objektů a sledování změn
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objekty vždy účastnit některé *stavu*. Například když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvoří nový objekt, je objekt v `Unchanged` stavu. Nový objekt, který sami vytvoříte není znám <xref:System.Data.Linq.DataContext> a je v `Untracked` stavu. Po úspěšné provedení <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, všechny objekty, které jsou známé [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] v `Unchanged` stavu. (Jednu výjimku představuje ty, které byla úspěšně odstraněna z databáze, které jsou ve `Deleted` stavu takže nepůjdou použít v tomto <xref:System.Data.Linq.DataContext> instance.)  
@@ -38,11 +38,11 @@ ms.locfileid: "59191152"
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provádí následující zpracováním, když je objekt odstraněný (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) z jeho tabulky:  
   
--   Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je zavolána, `DELETE` operace pro tento objekt.  
+- Když <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je zavolána, `DELETE` operace pro tento objekt.  
   
--   Pokud chcete odebrání se nerozšíří do bez ohledu na to, zda jsou načteny související objekty. Konkrétně nejsou načteny související objekty pro aktualizaci vlastnost vztahu.  
+- Pokud chcete odebrání se nerozšíří do bez ohledu na to, zda jsou načteny související objekty. Konkrétně nejsou načteny související objekty pro aktualizaci vlastnost vztahu.  
   
--   Po úspěšném spuštění <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, objekty jsou nastaveny na `Deleted` stavu. V důsledku toho nelze použít objekt nebo jeho `id` v tom, že <xref:System.Data.Linq.DataContext>. Udržuje interní mezipaměť <xref:System.Data.Linq.DataContext> instance nebude odstraněn objekty, které jsou načteny, nebo přidat jako nový, i když se odstranily objekty v databázi.  
+- Po úspěšném spuštění <xref:System.Data.Linq.DataContext.SubmitChanges%2A>, objekty jsou nastaveny na `Deleted` stavu. V důsledku toho nelze použít objekt nebo jeho `id` v tom, že <xref:System.Data.Linq.DataContext>. Udržuje interní mezipaměť <xref:System.Data.Linq.DataContext> instance nebude odstraněn objekty, které jsou načteny, nebo přidat jako nový, i když se odstranily objekty v databázi.  
   
  Můžete volat <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> jenom u objektu sledován pomocí funkce <xref:System.Data.Linq.DataContext>. Pro `Untracked` objektu, je nutné volat <xref:System.Data.Linq.Table%601.Attach%2A> před voláním <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>. Volání <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> na `Untracked` objektu vyvolá výjimku.  
   

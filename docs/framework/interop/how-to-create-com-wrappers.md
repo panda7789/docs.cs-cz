@@ -8,19 +8,19 @@ ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c26c84ece1231a4e118144c163fa3e9c7619301
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59324123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875742"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
 Obálky objektu modelu COM (Component) můžete vytvořit pomocí funkce sady Visual Studio 2005 nebo rozhraní .NET Framework nástroje Tlbimp.exe a Regasm.exe. Obě metody vygenerovat dva typy COM – obálky:
 
--   A [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objekt modelu COM ve spravovaném kódu.
+- A [obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md) z knihovny typů pro spuštění objekt modelu COM ve spravovaném kódu.
 
--   A [obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md) s se požadovaná nastavení registru pro spuštění spravovaného objektu v nativní aplikaci.
+- A [obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md) s se požadovaná nastavení registru pro spuštění spravovaného objektu v nativní aplikaci.
 
 V sadě Visual Studio 2005 můžete přidat obálky COM jako odkaz na svůj projekt.
 
@@ -45,7 +45,7 @@ Teď můžete psát kód pro přístup k objektu COM. Můžete začít deklarov�
   
 ### <a name="to-create-a-runtime-callable-wrapper-using-net-framework-tools"></a>Chcete-li vytvořit obálka volatelná za běhu pomocí rozhraní .NET Framework – nástroje  
   
--   Spustit [Tlbimp.exe (Importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) nástroj.  
+- Spustit [Tlbimp.exe (Importér knihovny typů)](../../../docs/framework/tools/tlbimp-exe-type-library-importer.md) nástroj.  
   
  Tento nástroj vytvoří sestavení, který obsahuje metadat v době běhu pro typy definované v původní knihovně typů.  
   

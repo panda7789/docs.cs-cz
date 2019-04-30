@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f7864356-f72f-4cae-995c-18e0431f8a58
 author: BrucePerlerMS
 ms.openlocfilehash: 39ed32bb7e926f275e996b09e746c879c6d3fe9e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59120871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909321"
 ---
 # <a name="wif-configuration-schema-conventions"></a>Konvence schématu konfigurace WIF
 Toto téma popisuje konvence používaný v celém témata týkající se konfigurace technologie Windows Identity Foundation (WIF) a popisuje některé běžné funkce a atributy se používají v [ \<system.identityModel >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md) a [ \<system.identityModel.services >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel-services.md) oddíly.  

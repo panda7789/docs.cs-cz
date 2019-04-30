@@ -10,24 +10,24 @@ helpviewer_keywords:
 - images [Windows Forms], controlling quality
 ms.assetid: fde9bccf-8aa5-4b0d-ba4b-788740627b02
 ms.openlocfilehash: 75f5077c2d969f026a28834144c219f289843dd6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59080979"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778971"
 ---
 # <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka
 Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jakým [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] imagí škálování (úseky a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimů interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor>  
+- <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode.Bilinear>  
+- <xref:System.Drawing.Drawing2D.InterpolationMode.Bilinear>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear>  
+- <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode.Bicubic>  
+- <xref:System.Drawing.Drawing2D.InterpolationMode.Bicubic>  
   
--   <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic>  
+- <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic>  
   
  Roztáhnout obrázek, každý pixel v původní bitové kopie musí být namapován na skupinu větší obrázku v pixelech. Zmenšení bitovou kopii, skupiny pixelů v původní bitové kopie musí být namapován na jeden pixelů v menším obrázkem. Účinnost algoritmy, které provádějí tato mapování určuje kvalitu obrazu se změněnou velikostí. Algoritmy, které vytvářejí škálován imagí kvalitnější většinou vyžaduje více času na zpracování. V předchozím seznamu <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor> je režim nejnižší kvality a <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic> je režim nejvyšší kvality.  
   

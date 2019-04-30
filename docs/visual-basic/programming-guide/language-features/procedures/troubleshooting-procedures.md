@@ -9,11 +9,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], about procedures
 ms.assetid: 525721e8-2e02-4f75-b5d8-6b893462cf2b
 ms.openlocfilehash: 492a7474a38a7e41b7e3b3f59dfa118c30256ea4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58830133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791791"
 ---
 # <a name="troubleshooting-procedures-visual-basic"></a>Řešení potíží s procedurami (Visual Basic)
 Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s postupy.  
@@ -46,9 +46,9 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
 ## <a name="argument-not-being-modified-by-procedure-call"></a>Argument není právě upravuje voláním procedury  
  Pokud chcete povolit postup, chcete-li změnit programovací element základní argumentu ve volajícím kódu, musíte jí předat podle odkazu. Ale postup může přistupovat k prvkům argument typu odkazu, i v případě, předat podle hodnoty.  
   
--   **Základní proměnná**. Povolit postup k nahrazení hodnoty základní proměnné elementu samotného, procedura musí deklarovat parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). Navíc volající kód nesmí uvést argument v závorkách, protože, který by se mělo přepsat `ByRef` předávání mechanismus.  
+- **Základní proměnná**. Povolit postup k nahrazení hodnoty základní proměnné elementu samotného, procedura musí deklarovat parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). Navíc volající kód nesmí uvést argument v závorkách, protože, který by se mělo přepsat `ByRef` předávání mechanismus.  
   
--   **Odkazovat na prvky typu**. Pokud deklarujete parametr [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), postup nelze změnit základní proměnné elementu samotného. Ale pokud je argumentem Typ odkazu, postupu můžete upravit členy objektu, na kterou odkazuje, i když ho nelze nahradit hodnotu proměnné. Například pokud má argument hodnotu proměnné pole, postup nelze přiřadit nové pole do ní, ale můžete změnit jednu nebo více z jeho prvků. Změněné prvky se projeví v základní proměnné pole ve volajícím kódu.  
+- **Odkazovat na prvky typu**. Pokud deklarujete parametr [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md), postup nelze změnit základní proměnné elementu samotného. Ale pokud je argumentem Typ odkazu, postupu můžete upravit členy objektu, na kterou odkazuje, i když ho nelze nahradit hodnotu proměnné. Například pokud má argument hodnotu proměnné pole, postup nelze přiřadit nové pole do ní, ale můžete změnit jednu nebo více z jeho prvků. Změněné prvky se projeví v základní proměnné pole ve volajícím kódu.  
   
  Následující příklad definuje dva postupy, které v této proměnné pole hodnota a provozují na jeho prvků. Postup `increase` jednoduše přidá jednu na každý prvek. Postup `replace` přiřadí nové pole parametru `a()` a pak přidá jednu na každý prvek. Ale přeřazení neovlivní základní proměnné pole ve volajícím kódu, protože `a()` je deklarován `ByVal`.  
   
@@ -75,13 +75,13 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Následující položky, i v případě, že jde o jejich vztah k seznamu parametrů nejsou součástí podpis postupem:  
   
--   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
+- Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
   
--   Názvy parametrů  
+- Názvy parametrů  
   
--   Klíčová slova modifikátor parametru, jako například `ByRef` a `Optional`  
+- Klíčová slova modifikátor parametru, jako například `ByRef` a `Optional`  
   
--   Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
+- Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
   
  Pomocí různých pouze jeden nebo více předchozích položek nelze přetížení procedury.  
   
@@ -95,11 +95,11 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
  Pokud jste určili přetížení, které chcete volat, dejte pozor, dodržovat následující pravidla:  
   
--   Zadejte správný počet argumentů a ve správném pořadí.  
+- Zadejte správný počet argumentů a ve správném pořadí.  
   
--   V ideálním případě by vaše argumenty by měly obsahovat přesně stejné datové typy jako odpovídající parametry. Datový typ každého argumentu musí v každém případě rozšířit na u jeho odpovídajícího parametru. To platí i v případě [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavena na `Off`. Pokud jakýkoli zužující převod seznam argumentů, které přetížení vyžaduje přetížení nemá oprávnění volat.  
+- V ideálním případě by vaše argumenty by měly obsahovat přesně stejné datové typy jako odpovídající parametry. Datový typ každého argumentu musí v každém případě rozšířit na u jeho odpovídajícího parametru. To platí i v případě [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavena na `Off`. Pokud jakýkoli zužující převod seznam argumentů, které přetížení vyžaduje přetížení nemá oprávnění volat.  
   
--   Pokud zadáte argumenty, které vyžadují rozšíření, ujistěte se, co nejblíže k odpovídající datové typy parametrů jejich datové typy. Pokud dva nebo více přetížení přijmout vaší datové typy argumentů, kompilátor překládá volání přetížení, které vyžaduje minimální množství rozšíření.  
+- Pokud zadáte argumenty, které vyžadují rozšíření, ujistěte se, co nejblíže k odpovídající datové typy parametrů jejich datové typy. Pokud dva nebo více přetížení přijmout vaší datové typy argumentů, kompilátor překládá volání přetížení, které vyžaduje minimální množství rozšíření.  
   
  Můžete snížit pravděpodobnost svého neshody typů dat pomocí [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) – klíčové slovo převodu při přípravě vaše argumenty.  
   

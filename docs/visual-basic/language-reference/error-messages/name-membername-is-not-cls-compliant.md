@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC40031
 ms.assetid: e2b885dc-cbf9-49ff-bbbe-531657ea99f7
 ms.openlocfilehash: 06b20b4f61741f2174654d749df55c3c4348c547
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58824621"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787462"
 ---
 # <a name="name-membername-is-not-cls-compliant"></a>Název \<membername > není kompatibilní se Specifikací CLS
 Sestavení je označen jako `<CLSCompliant(True)>` ale zpřístupňuje člen s názvem, který začíná podtržítkem (`_`).  
@@ -29,9 +29,9 @@ Sestavení je označen jako `<CLSCompliant(True)>` ale zpřístupňuje člen s n
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud budete mít kontrolu nad zdrojový kód, změňte název člena tak, aby nezačíná znakem podtržítka.  
+- Pokud budete mít kontrolu nad zdrojový kód, změňte název člena tak, aby nezačíná znakem podtržítka.  
   
--   Pokud budete vyžadovat, že název člena zůstanou beze změny, odstraňte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`. Stále můžete označit sestavení jako `<CLSCompliant(True)>`.  
+- Pokud budete vyžadovat, že název člena zůstanou beze změny, odstraňte <xref:System.CLSCompliantAttribute> z jeho definice nebo označte ji jako `<CLSCompliant(False)>`. Stále můžete označit sestavení jako `<CLSCompliant(True)>`.  
   
 ## <a name="see-also"></a>Viz také:
 

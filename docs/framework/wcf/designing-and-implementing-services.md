@@ -5,11 +5,11 @@ helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
 ms.openlocfilehash: ad7e713ac4cbbe5bf227f4ab93e8f88684dcb0d3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785018"
 ---
 # <a name="designing-and-implementing-services"></a>Navrhování a implementace služeb
 Tato část ukazuje, jak definovat a implementovat kontrakty WCF. Kontrakt služby specifikuje, koncový bod komunikuje s vnějším světem. Konkrétnější úrovni je příkaz o sadě určitých zpráv, které jsou uspořádány do základní zprávy exchange vzory (MEPs), jako je například požadavek/odpověď jednosměrného a duplexní. Pokud kontrakt služby je sada logicky spojených výměny zpráv, je operace služby exchange jedné zprávy. Například `Hello` operace musíte samozřejmě přijmout jednu zprávu (aby volající může oznamujeme pozdrav) a může nebo nemusí vrátit zprávu (v závislosti na provedla operaci).  
@@ -19,22 +19,22 @@ Tato část ukazuje, jak definovat a implementovat kontrakty WCF. Kontrakt služ
 ## <a name="overview"></a>Přehled  
  Toto téma obsahuje základní koncepční orientace k navrhování a implementace služeb WCF. Související témata poskytují podrobnější informace o specifika návrhu a implementace. Doporučujeme před navrhování a implementace aplikace WCF, který jste:  
   
--   Pochopit, jaký kontrakt služby je, jak to funguje a jak ji vytvořit.  
+- Pochopit, jaký kontrakt služby je, jak to funguje a jak ji vytvořit.  
   
--   Vysvětlení, že kontrakty stavu minimální požadavky na tuto konfiguraci modulu runtime nebo hostitelské prostředí nemusí podporovat.  
+- Vysvětlení, že kontrakty stavu minimální požadavky na tuto konfiguraci modulu runtime nebo hostitelské prostředí nemusí podporovat.  
   
 ## <a name="service-contracts"></a>Kontrakty služeb  
  Kontrakt služby specifikuje, následující:  
   
--   Operace kontraktu a zpřístupňuje.  
+- Operace kontraktu a zpřístupňuje.  
   
--   Podpis operace z hlediska si vyměňují zprávy.  
+- Podpis operace z hlediska si vyměňují zprávy.  
   
--   Datové typy z následujících zpráv.  
+- Datové typy z následujících zpráv.  
   
--   Umístění operací.  
+- Umístění operací.  
   
--   Konkrétní protokoly a formáty serializace, které slouží k podpoře úspěšné komunikaci se službou.  
+- Konkrétní protokoly a formáty serializace, které slouží k podpoře úspěšné komunikaci se službou.  
   
  Například může mít kontrakt nákupní objednávky `CreateOrder` operace, která přijímá vstup z informací o objednávkách typů a vrátí informace o úspěchu nebo neúspěchu, včetně identifikátor objednávky. Také může mít `GetOrderStatus` operace, která přijímá identifikátor objednávky a vrátí informace o stavu objednávky. Kontrakt služby toto řazení zadáte:  
   

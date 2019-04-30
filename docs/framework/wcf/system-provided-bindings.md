@@ -6,11 +6,11 @@ helpviewer_keywords:
 - bindings [WCF], system-provided
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
 ms.openlocfilehash: 3c6c6b628d208aede8c547dcfa66fc189a26ae01
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54569599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791505"
 ---
 # <a name="system-provided-bindings"></a>vazby poskytované systémem
 
@@ -61,8 +61,8 @@ Následující příjemce vazby s použitím technologie WCF:
 |<xref:System.ServiceModel.WSHttpBinding>|WS|Smíšené přenosu (zprávy)|(Žádné), stabilní relace, relace zabezpečení|Ano (žádné)|není k dispozici|(Text), MTOM|Ne|
 |<xref:System.ServiceModel.WSDualHttpBinding>|WS|(Zpráva), žádná|(Stabilní relace), relace zabezpečení|Ano (žádné)|Ano|(Text), MTOM|Ne|
 |<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|(Zpráva), ve smíšeném, None|(Žádné), stabilní relace, relace zabezpečení|Ano (žádné)|Ne|(Text), MTOM|Ne|
-|<xref:System.ServiceModel.NetHttpBinding>|.NET|(Žádné), přenosu, zprávy, TransportWithMessageCredential, TransportCredentialOnly|Viz poznámka níže|Žádná|Viz poznámka níže|(Binary), Text, MTOM|Ano (uložená do vyrovnávací paměti)|
-|<xref:System.ServiceModel.NetHttpsBinding>|.NET|(Přenos), TransportWithMessageCredential|Viz poznámka níže|Žádná|Viz poznámka níže|(Binary), Text, MTOM|Ano<br />(ukládány do vyrovnávací paměti)|
+|<xref:System.ServiceModel.NetHttpBinding>|.NET|(Žádné), přenosu, zprávy, TransportWithMessageCredential, TransportCredentialOnly|Viz poznámka níže|Žádný|Viz poznámka níže|(Binary), Text, MTOM|Ano (uložená do vyrovnávací paměti)|
+|<xref:System.ServiceModel.NetHttpsBinding>|.NET|(Přenos), TransportWithMessageCredential|Viz poznámka níže|Žádné|Viz poznámka níže|(Binary), Text, MTOM|Ano<br />(ukládány do vyrovnávací paměti)|
 |<xref:System.ServiceModel.NetTcpBinding>|.NET|(Přenos), zpráv, None, smíšené|(Přenos), stabilní relace, relace zabezpečení|Ano (žádné)|Ano|binární|Ano<br />(ukládány do vyrovnávací paměti)|
 |<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|(Přenos), žádná|Žádný (přenos)|Ano (žádné)|Ano|binární|Ano<br />(ukládány do vyrovnávací paměti)|
 |<xref:System.ServiceModel.NetMsmqBinding>|.NET|Zpráva (přenos), žádná|(Žádné), přenosu|Žádný (Ano)|Ne|binární|Ne|

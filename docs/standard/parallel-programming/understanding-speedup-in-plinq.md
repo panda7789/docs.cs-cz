@@ -11,11 +11,11 @@ ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 26128e5d707d3f331dc2b691f5a5f798bdf84c25
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61908658"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
 Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty paralelně na vícejádrových počítačích je primárním účelem PLINQ. PLINQ poskytuje nejlepší výkon při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu zahrnutých mezi jednotlivé delegátů. Tyto operace jsou běžné v technologii LINQ to Objects a PLINQ a jsou často nazývány "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování z více vláken. Ale ne všechny dotazy sestávat jen z delightfully paralelních operací; ve většině případů se dotaz týká některé operátory, které buď nemůže být paralelizována nebo, který zpomalit paralelního provádění. A i s dotazy, které jsou zcela delightfully paralelní, musí i nadále oddílů zdroj dat a plánování práce na vlákna a obvykle sloučit výsledky po dokončení dotazu PLINQ. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režii*. Cílem je dosáhnout optimálního výkonu v dotazu PLINQ maximalizovat části, které jsou delightfully paralelní a části, které vyžadují režii minimalizovat. Tento článek obsahuje informace, které vám pomůže psát dotazy PLINQ, které jsou co nejúčinnější při pořád vracet správné výsledky.  
@@ -74,15 +74,15 @@ Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty
   
  Následující seznam popisuje tvary dotazu PLINQ ve výchozím nastavení bude vykonán v sekvenčním režim:  
   
--   Dotazy, které obsahují s výběrem indexovat, kde indexované operátor SelectMany nebo klauzuli ElementAt po řazení nebo filtrování operátor, který se má odebrat nebo změnit jejich uspořádání původní indexy.  
+- Dotazy, které obsahují s výběrem indexovat, kde indexované operátor SelectMany nebo klauzuli ElementAt po řazení nebo filtrování operátor, který se má odebrat nebo změnit jejich uspořádání původní indexy.  
   
--   Dotazy, které obsahují Take, TakeWhile –, přeskočit, SkipWhile – operátor a kde indexů ve zdrojové sekvence nejsou ve stejném pořadí.  
+- Dotazy, které obsahují Take, TakeWhile –, přeskočit, SkipWhile – operátor a kde indexů ve zdrojové sekvence nejsou ve stejném pořadí.  
   
--   Dotazy, které obsahují Zip nebo SequenceEquals, pokud jeden ze zdrojů dat má původně seřazený index a jiný zdroj dat je indexované (například pole nebo IList(T)).  
+- Dotazy, které obsahují Zip nebo SequenceEquals, pokud jeden ze zdrojů dat má původně seřazený index a jiný zdroj dat je indexované (například pole nebo IList(T)).  
   
--   Dotazy, které obsahují Concat, pokud se použije ke zdrojům dat indexovatelné.  
+- Dotazy, které obsahují Concat, pokud se použije ke zdrojům dat indexovatelné.  
   
--   Dotazy, které obsahují obrátit, pokud není použita ke zdroji dat indexovatelné.  
+- Dotazy, které obsahují obrátit, pokud není použita ke zdroji dat indexovatelné.  
   
 ## <a name="see-also"></a>Viz také:
 

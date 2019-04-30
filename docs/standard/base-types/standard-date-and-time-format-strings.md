@@ -17,18 +17,18 @@ ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 874501ac6dc4ea0ea1c0c97cdd2b802dfdb6bbb0
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54532188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61811709"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec data a času, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní data a času formátovací řetězec; Další informace najdete v tématu [vlastní data a řetězce formátu časových](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  
   
--   Chcete-li definovat řetězec, který je výsledkem operace formátování.  
+- Chcete-li definovat řetězec, který je výsledkem operace formátování.  
   
--   Chcete-li definovat textové vyjádření hodnoty data a času, který lze převést na <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu pomocí operace analýzy.  
+- Chcete-li definovat textové vyjádření hodnoty data a času, který lze převést na <xref:System.DateTime> nebo <xref:System.DateTimeOffset> hodnotu pomocí operace analýzy.  
 
 > [!TIP]
 >  Můžete stáhnout [formátování nástroj](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d), aplikaci, která umožňuje použití formátu řetězců pro číselné nebo datum a čas, hodnoty a zobrazí se výsledný řetězec.  
@@ -63,17 +63,17 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
  Pokud je řetězec standardního formátu v rámci operace formátování namapován na řetězec vlastního formátu konkrétní jazykové verze, může vaše aplikace definovat konkrétní jazykovou verzi, jejíž řetězce vlastního formátu se používají jedním z těchto způsobů:  
   
--   Můžete použít výchozí (nebo aktuální) jazykovou verzi. Následující příklad zobrazí datum pomocí krátkého formátu data aktuální jazykové verze. V tomto případě je aktuální jazyková verze nastavena na en-US.  
+- Můžete použít výchozí (nebo aktuální) jazykovou verzi. Následující příklad zobrazí datum pomocí krátkého formátu data aktuální jazykové verze. V tomto případě je aktuální jazyková verze nastavena na en-US.  
   
      [!code-csharp-interactive[System.DateTime.Conceptual.Formatting#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/cs/StandardFormats1.cs#1)]
      [!code-vb[System.DateTime.Conceptual.Formatting#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/vb/StandardFormats1.vb#1)]  
   
--   Můžete předat <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, jejíž formátování má být použita na metodu, která má <xref:System.IFormatProvider> parametru. Následující příklad zobrazí datum pomocí formátu krátkého data jazykové verze pt-BR.  
+- Můžete předat <xref:System.Globalization.CultureInfo> objektu, který představuje jazykovou verzi, jejíž formátování má být použita na metodu, která má <xref:System.IFormatProvider> parametru. Následující příklad zobrazí datum pomocí formátu krátkého data jazykové verze pt-BR.  
   
      [!code-csharp[System.DateTime.Conceptual.Formatting#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/cs/StandardFormats1.cs#2)]
      [!code-vb[System.DateTime.Conceptual.Formatting#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/vb/StandardFormats1.vb#2)]  
   
--   Můžete předat <xref:System.Globalization.DateTimeFormatInfo> objekt, který poskytuje informace o formátování metodě, která má <xref:System.IFormatProvider> parametru. Následující příklad zobrazí datum pomocí krátkého formátu data z <xref:System.Globalization.DateTimeFormatInfo> pro jazykovou verzi hr-HR.  
+- Můžete předat <xref:System.Globalization.DateTimeFormatInfo> objekt, který poskytuje informace o formátování metodě, která má <xref:System.IFormatProvider> parametru. Následující příklad zobrazí datum pomocí krátkého formátu data z <xref:System.Globalization.DateTimeFormatInfo> pro jazykovou verzi hr-HR.  
   
      [!code-csharp[System.DateTime.Conceptual.Formatting#3](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/cs/StandardFormats1.cs#3)]
      [!code-vb[System.DateTime.Conceptual.Formatting#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/vb/StandardFormats1.vb#3)]  
@@ -85,7 +85,7 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
 |Řetězec standardního formátu|Definovaný vlastností DateTimeFormatInfo.InvariantInfo|Řetězec vlastního formátu|  
 |----------------------------|----------------------------------------------------------|--------------------------|  
-|"O" nebo "o"|Žádná|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
+|"O" nebo "o"|Žádné|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
 |"R" nebo "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|  
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|  
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|  
@@ -249,11 +249,11 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
  Specifikátor standardního formátu "O" nebo "o" (a "yyyy '-' MM'-'dd'T' HH': 'mm':'ss '." řetězec vlastního formátu fffffffK") využívá výhod tři způsoby, které ISO 8601 představuje informace o časovém pásmu zachovat <xref:System.DateTime.Kind%2A> vlastnost <xref:System.DateTime> hodnoty:  
   
--   Časové pásmo součást <xref:System.DateTimeKind.Local?displayProperty=nameWithType> hodnoty data a času je posun od času UTC (například + 01:00, -07:00). Všechny <xref:System.DateTimeOffset> hodnoty jsou také reprezentované v tomto formátu.  
+- Časové pásmo součást <xref:System.DateTimeKind.Local?displayProperty=nameWithType> hodnoty data a času je posun od času UTC (například + 01:00, -07:00). Všechny <xref:System.DateTimeOffset> hodnoty jsou také reprezentované v tomto formátu.  
   
--   Časové pásmo součást <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> hodnoty data a času "Z" (který zastupuje nulové posunutí) používá k reprezentaci UTC.  
+- Časové pásmo součást <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> hodnoty data a času "Z" (který zastupuje nulové posunutí) používá k reprezentaci UTC.  
   
--   <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> hodnoty data a času mít žádné informace o časovém pásmu.  
+- <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> hodnoty data a času mít žádné informace o časovém pásmu.  
   
  Protože specifikátor standardního formátu "O" nebo "o" odpovídá mezinárodní standard, formátování nebo analýzy operace, která používá specifikátor vždy používá invariantní jazyková verze a gregoriánský kalendář.  
   

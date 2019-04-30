@@ -5,52 +5,52 @@ helpviewer_keywords:
 - claims [WCF], and tokens
 ms.assetid: eff167f3-33f8-483d-a950-aa3e9f97a189
 ms.openlocfilehash: 223b86310d90c877df15a99c90a0a72ea780734a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59076260"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61784277"
 ---
 # <a name="claims-and-tokens"></a>Deklarace a tokeny
 Toto téma popisuje různé typy deklarací identity, které Windows Communication Foundation (WCF) vytvoří z výchozí tokeny, které podporuje.  
   
  Deklarace identity pověření klienta můžete prozkoumat pomocí <xref:System.IdentityModel.Claims.ClaimSet> a <xref:System.IdentityModel.Claims.Claim> třídy. `ClaimSet` Obsahuje kolekci `Claim` objekty. Každý `Claim` má následující důležité členy:  
   
--   <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> Vrátí vlastnost identifikátor URI (Uniform Resource), který určuje typ deklarace identity prováděné. Typ deklarace identity může být například kryptografického otisku certifikátu, ve kterém je případ identifikátoru URI `http://schemas.microsoft.com/ws/20005/05/identity/claims/thumprint`.  
+- <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> Vrátí vlastnost identifikátor URI (Uniform Resource), který určuje typ deklarace identity prováděné. Typ deklarace identity může být například kryptografického otisku certifikátu, ve kterém je případ identifikátoru URI `http://schemas.microsoft.com/ws/20005/05/identity/claims/thumprint`.  
   
--   <xref:System.IdentityModel.Claims.Claim.Right%2A> Vlastnost vrací identifikátor URI, který určuje vpravo od deklarace identity. Předdefinovaná práva, které se nacházejí v <xref:System.IdentityModel.Claims.Rights> třídy (<xref:System.IdentityModel.Claims.Rights.Identity%2A>, <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>).  
+- <xref:System.IdentityModel.Claims.Claim.Right%2A> Vlastnost vrací identifikátor URI, který určuje vpravo od deklarace identity. Předdefinovaná práva, které se nacházejí v <xref:System.IdentityModel.Claims.Rights> třídy (<xref:System.IdentityModel.Claims.Rights.Identity%2A>, <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>).  
   
--   <xref:System.IdentityModel.Claims.Claim.Resource%2A> Vrátí vlastnost prostředku přidružený k deklaraci.  
+- <xref:System.IdentityModel.Claims.Claim.Resource%2A> Vrátí vlastnost prostředku přidružený k deklaraci.  
   
  Každý <xref:System.IdentityModel.Claims.ClaimSet> má také <xref:System.IdentityModel.Claims.ClaimSet.Issuer%2A> vlastnost, která představuje <xref:System.IdentityModel.Claims.ClaimSet> z `Issuer`.  
   
 ## <a name="windows-accounts"></a>Účty Windows  
  Pokud pověření klienta mapuje na uživatelský účet Windows, výsledná <xref:System.IdentityModel.Claims.ClaimSet> má následující hodnoty:  
   
--   `Issuer` Je hodnoty vrácené statickou vlastnost Windows <xref:System.IdentityModel.Claims.ClaimSet> třídy.  
+- `Issuer` Je hodnoty vrácené statickou vlastnost Windows <xref:System.IdentityModel.Claims.ClaimSet> třídy.  
   
--   Deklarace identity v kolekci jsou:  
+- Deklarace identity v kolekci jsou:  
   
-    -   A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> hodnota identifikátoru zabezpečení (SID), <xref:System.IdentityModel.Claims.Claim.Right%2A> hodnotou vlastnosti `Identity`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> , který vrací aktuální hodnotu SID. Identifikátor SID je jedinečná hodnota pro každého uživatele problémy s řadičem domény. Identifikátor SID se používá k identifikaci uživatelů v interakce s zabezpečení Windows.  
+    - A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> hodnota identifikátoru zabezpečení (SID), <xref:System.IdentityModel.Claims.Claim.Right%2A> hodnotou vlastnosti `Identity`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> , který vrací aktuální hodnotu SID. Identifikátor SID je jedinečná hodnota pro každého uživatele problémy s řadičem domény. Identifikátor SID se používá k identifikaci uživatelů v interakce s zabezpečení Windows.  
   
-    -   A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> hodnotou identifikátoru SID, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `PossessProperty`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> hodnoty SID.  
+    - A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> hodnotou identifikátoru SID, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `PossessProperty`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> hodnoty SID.  
   
-    -   A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> z <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `PossessProperty` a <xref:System.IdentityModel.Claims.Claim.Resource%2A> řetězce obsahující uživatelské jméno (například "MYMACHINE\Bob").  
+    - A <xref:System.IdentityModel.Claims.Claim> s <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> z <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `PossessProperty` a <xref:System.IdentityModel.Claims.Claim.Resource%2A> řetězce obsahující uživatelské jméno (například "MYMACHINE\Bob").  
   
-    -   Deklarace identifikátoru SID další s <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> pro různé skupiny tento uživatel patří.  
+    - Deklarace identifikátoru SID další s <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> pro různé skupiny tento uživatel patří.  
   
 ## <a name="certificates"></a>Certifikáty  
  Pokud pověření klienta je certifikát, výsledná <xref:System.IdentityModel.Claims.ClaimSet> má následující hodnoty:  
   
--   Samostatně vydané certifikáty `Issuer` je <xref:System.IdentityModel.Claims.ClaimSet> samotný. <xref:System.IdentityModel.Claims.ClaimSet> Vrátí <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> z <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `Identity`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> hodnotu <xref:System.Byte> pole obsahující kryptografický otisk certifikátu.  
+- Samostatně vydané certifikáty `Issuer` je <xref:System.IdentityModel.Claims.ClaimSet> samotný. <xref:System.IdentityModel.Claims.ClaimSet> Vrátí <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> z <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>, <xref:System.IdentityModel.Claims.Claim.Right%2A> z `Identity`a <xref:System.IdentityModel.Claims.Claim.Resource%2A> hodnotu <xref:System.Byte> pole obsahující kryptografický otisk certifikátu.  
   
--   Pro certifikát vydaný certifikační autoritou, že vystavitel je `ClaimSet` představující certifikát certifikační autority.  
+- Pro certifikát vydaný certifikační autoritou, že vystavitel je `ClaimSet` představující certifikát certifikační autority.  
   
--   `Claims` v kolekci patří:  
+- `Claims` v kolekci patří:  
   
-    -   A `Claim` s `ClaimType` otisk, `Right` z PossessProperty a `Resource` , který je bajtové pole obsahující kryptografický otisk certifikátu  
+    - A `Claim` s `ClaimType` otisk, `Right` z PossessProperty a `Resource` , který je bajtové pole obsahující kryptografický otisk certifikátu  
   
-    -   Další deklarace identity PossessProperty různých typů, včetně X500DistinguishedName, Dns, název, hlavní název uživatele a Rsa, představují různé vlastnosti certifikátu. Prostředek pro deklarace identity Rsa je veřejného klíče přidruženého k certifikátu. **Poznámka** kde typu pověření klienta je certifikát, který se mapuje Windows služby účtu, dva `ClaimSet` objekty jsou generovány. První obsahuje všechny deklarace identity související s účtem Windows a druhý obsahuje všechny deklarace identity související s certifikátem.  
+    - Další deklarace identity PossessProperty různých typů, včetně X500DistinguishedName, Dns, název, hlavní název uživatele a Rsa, představují různé vlastnosti certifikátu. Prostředek pro deklarace identity Rsa je veřejného klíče přidruženého k certifikátu. **Poznámka** kde typu pověření klienta je certifikát, který se mapuje Windows služby účtu, dva `ClaimSet` objekty jsou generovány. První obsahuje všechny deklarace identity související s účtem Windows a druhý obsahuje všechny deklarace identity související s certifikátem.  
   
 ## <a name="user-namepassword"></a>Uživatelské jméno/heslo  
  Kde se přihlašovací údaje klienta jméno/heslo uživatele (nebo ekvivalentní), který nemapuje na účet Windows, výsledná `ClaimSet` vydává statické <xref:System.IdentityModel.Claims.ClaimSet.System%2A> vlastnost `ClaimSet` třídy. `ClaimSet` Obsahuje `Identity` deklarace typu <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A> jejichž prostředek je uživatelské jméno klienta poskytuje. Má odpovídající deklarace identity `Right` z `PossessProperty`.  

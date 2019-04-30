@@ -3,11 +3,11 @@ title: Korelace trvanlivého duplexního přenosu
 ms.date: 03/30/2017
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
 ms.openlocfilehash: f2f5fe557f1f8754758d0dd9b4042cacc62cc61f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856596"
 ---
 # <a name="durable-duplex-correlation"></a>Korelace trvanlivého duplexního přenosu
 Korelace trvanlivého duplexního přenosu, označované také jako zpětné volání korelace, je užitečné, když služba pracovního postupu má požadavek na odeslání zpětné volání počáteční volajícímu. Na rozdíl od WCF duplexní zpětného volání v každém okamžiku v budoucnu se může stát a není vázaný na jeden kanál nebo kanál životnost; Jediným požadavkem je, že volající mít aktivní koncový bod naslouchání pro zpětné volání zprávy. To umožňuje dvě služby pracovního postupu pro komunikaci v rámci dlouhotrvající konverzace. Toto téma obsahuje přehled korelace trvanlivého duplexního přenosu.  
@@ -16,7 +16,7 @@ Korelace trvanlivého duplexního přenosu, označované také jako zpětné vol
  Korelace trvanlivého duplexního přenosu, tyto dvě služby vyžaduje použití vazbu povolen kontext, která podporuje obousměrné operace, jako například <xref:System.ServiceModel.NetTcpContextBinding> nebo <xref:System.ServiceModel.WSHttpContextBinding>. Volání služby registrů <xref:System.ServiceModel.WSHttpContextBinding.ClientCallbackAddress%2A> požadované vazby v klientovi <xref:System.ServiceModel.Endpoint>. Přijímající služba obdrží tato data v počáteční volání a pak pomocí něj sama o sobě <xref:System.ServiceModel.Endpoint> v <xref:System.ServiceModel.Activities.Send> aktivitu, která provádí volání zpět do volání služby. V tomto příkladu dvě služby vzájemně komunikují. První služba volá metodu na druhý služby a poté počká na odpověď. Druhá služba ví název metody zpětného volání, ale koncový bod služby, která implementuje tuto metodu není znám v době návrhu.  
   
 > [!NOTE]
-> Trvanlivý duplexní přenos může obsahovat jenom nepoužívá, pokud <xref:System.ServiceModel.Channels.AddressingVersion> koncového bodu má nakonfigurovanou <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud ne, pak <xref:System.InvalidOperationException> je vyvolána výjimka s následující zprávou: "zpráva obsahuje hlavičku kontextu zpětného volání s odkazem na koncový bod pro [verze AddressingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing). Kontext zpětného volání lze přenášet pouze, pokud verze AddressingVersion konfigurována s "Třídy WSAddressing10".
+> Trvanlivý duplexní přenos může obsahovat jenom nepoužívá, pokud <xref:System.ServiceModel.Channels.AddressingVersion> koncového bodu má nakonfigurovanou <xref:System.ServiceModel.Channels.AddressingVersion.WSAddressing10%2A>. Pokud ne, pak <xref:System.InvalidOperationException> je vyvolána výjimka s následující zprávou: "Zpráva obsahuje hlavičku kontextu zpětného volání s odkazem na koncový bod pro [verze AddressingVersion](http://schemas.xmlsoap.org/ws/2004/08/addressing). Kontext zpětného volání lze přenášet pouze, pokud verze AddressingVersion konfigurována s "Třídy WSAddressing10".
   
  V následujícím příkladu je hostované služby pracovního postupu, který vytvoří zpětné volání <xref:System.ServiceModel.Endpoint> pomocí <xref:System.ServiceModel.WSHttpContextBinding>.  
   

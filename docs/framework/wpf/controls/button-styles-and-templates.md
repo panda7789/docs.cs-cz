@@ -10,11 +10,11 @@ helpviewer_keywords:
 - ControlTemplate [WPF], Button
 ms.assetid: e223c759-f8c4-4717-acfb-b1e40bdf5f3b
 ms.openlocfilehash: ec64c7c2051b12cba01135054a90e54864b7386a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912480"
 ---
 # <a name="button-styles-and-templates"></a>Styly a šablony tlačítek
 Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.Button> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  

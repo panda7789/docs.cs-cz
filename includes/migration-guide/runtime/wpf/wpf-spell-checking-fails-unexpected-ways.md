@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 09e3f0e168e0dcbe79d8ee7216f2671c67bfb87e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59234159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61664585"
 ---
 ### <a name="wpf-spell-checking-fails-in-unexpected-ways"></a>Kontrola pravopisu WPF selže neočekávaným způsobem
 

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - controls [Windows Forms], synchronizing with data source
 ms.assetid: c2f0ecc6-11e6-4c2c-a1ca-0759630c451e
 ms.openlocfilehash: 8f7e59720420a845fa195b8c0fb078a8699a9bc3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59170336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61800763"
 ---
 # <a name="how-to-ensure-multiple-controls-bound-to-the-same-data-source-remain-synchronized"></a>Postupy: Zajištění, aby více ovládacích prvků vázaných ke stejnému zdroji dat zůstalo synchronizovaných
 Často při práci s datovou vazbu v modelu Windows Forms, více ovládacích prvků jsou vázány na stejného datového zdroje. V některých případech může být potřeba provést další kroky a ujistěte se, že budou synchronizovány s mezi sebou a zdrojem dat vázané vlastnosti ovládacích prvků. Tyto kroky jsou nezbytné ve dvou situacích:  
   
--   Pokud zdroj dat neimplementuje <xref:System.ComponentModel.IBindingList>a proto generovat <xref:System.ComponentModel.IBindingList.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged>.  
+- Pokud zdroj dat neimplementuje <xref:System.ComponentModel.IBindingList>a proto generovat <xref:System.ComponentModel.IBindingList.ListChanged> události typu <xref:System.ComponentModel.ListChangedType.ItemChanged>.  
   
--   Pokud zdroj dat implementuje <xref:System.ComponentModel.IEditableObject>.  
+- Pokud zdroj dat implementuje <xref:System.ComponentModel.IEditableObject>.  
   
  V prvním případě můžete použít <xref:System.Windows.Forms.BindingSource> svázat zdroj dat k ovládacím prvkům. V takovém případě použijete <xref:System.Windows.Forms.BindingSource> a zpracovat <xref:System.Windows.Forms.BindingSource.BindingComplete> událostí a volání <xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A> přidruženého <xref:System.Windows.Forms.BindingManagerBase>.  
   
@@ -34,11 +34,11 @@ ms.locfileid: "59170336"
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Tento příklad kódu vyžaduje  
+- Tento příklad kódu vyžaduje  
   
--   Odkazy <xref:System>, <xref:System.Windows.Forms>, a <xref:System.Drawing> sestavení.  
+- Odkazy <xref:System>, <xref:System.Windows.Forms>, a <xref:System.Drawing> sestavení.  
   
--   Formulář s <xref:System.Windows.Forms.Form.Load> zpracovává události a volání `InitializeControlsAndDataSource` metoda v příkladu ve formuláři <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
+- Formulář s <xref:System.Windows.Forms.Form.Load> zpracovává události a volání `InitializeControlsAndDataSource` metoda v příkladu ve formuláři <xref:System.Windows.Forms.Form.Load> obslužné rutiny události.  
   
 ## <a name="see-also"></a>Viz také:
 

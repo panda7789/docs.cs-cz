@@ -12,11 +12,11 @@ ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 250e1764084ba3f7750867f2eea89e87cc7239eb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61873168"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Jak běhové prostředí vyhledává sestavení
 Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte pochopit, jak modul common language runtime vyhledává a vazby k sestavením, které tvoří vaši aplikaci. Ve výchozím nastavení modul runtime pokusí vytvořit vazbu s přesnou verzi sestavení, na kterou byla aplikace vytvořena s. Toto výchozí chování můžete přepsat pomocí nastavení konfiguračního souboru.  
@@ -51,11 +51,11 @@ Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte poch
   
 4. [Sondy pro sestavení](#step4) pomocí následujících kroků:  
   
-    1.  Pokud zásady Konfigurace a vydavatel nemají vliv na původní odkaz a pokud vazba byla vytvořena pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metody, modul runtime vyhledává pomocné parametry umístění.  
+    1. Pokud zásady Konfigurace a vydavatel nemají vliv na původní odkaz a pokud vazba byla vytvořena pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metody, modul runtime vyhledává pomocné parametry umístění.  
   
-    2.  Pokud je v konfiguračních souborech základ kódu, modul runtime kontroluje jenom toto umístění. Pokud tento test selže, modul runtime určuje, že požadavek na vytvoření vazby se nezdařilo a dojde k žádné další zjišťování.  
+    2. Pokud je v konfiguračních souborech základ kódu, modul runtime kontroluje jenom toto umístění. Pokud tento test selže, modul runtime určuje, že požadavek na vytvoření vazby se nezdařilo a dojde k žádné další zjišťování.  
   
-    3.  Sondy pro sestavení pomocí heuristické metody popsané v [testování části](#step4). Pokud sestavení není nalezen po zjišťování, modul runtime požádá o Instalační služby systému Windows k poskytování sestavení. To slouží jako funkce nainstalovat na vyžádání.  
+    3. Sondy pro sestavení pomocí heuristické metody popsané v [testování části](#step4). Pokud sestavení není nalezen po zjišťování, modul runtime požádá o Instalační služby systému Windows k poskytování sestavení. To slouží jako funkce nainstalovat na vyžádání.  
   
         > [!NOTE]
         >  Neexistuje žádná verze kontrolují sestavení bez silných názvů ani nespouští kontrolu za modulu runtime v globální mezipaměti sestavení pro sestavení bez silných názvů.  
@@ -64,11 +64,11 @@ Pokud chcete úspěšně nasadit aplikaci rozhraní .NET Framework, musíte poch
 ## <a name="step-1-examining-the-configuration-files"></a>Krok 1: Kontrola konfiguračních souborů  
  Chování vazby sestavení je možné nakonfigurovat na různých úrovních podle tři soubory XML:  
   
--   Konfigurační soubor aplikace.  
+- Konfigurační soubor aplikace.  
   
--   Soubor zásad vydavatele.  
+- Soubor zásad vydavatele.  
   
--   Konfigurační soubor počítače.  
+- Konfigurační soubor počítače.  
   
  Tyto soubory postupujte podle stejné syntaxe a poskytují informace, jako je přesměrování, umístění kódu, vazby a vazby režimy pro konkrétní sestavení. Každý konfigurační soubor může obsahovat [ \<assemblyBinding > element](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) , který přesměruje proces vytváření vazby. Podřízených elementů [ \<assemblyBinding > element](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) zahrnout [ \<dependentAssembly > element](../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md). Podřízené objekty daného [ \<dependentAssembly > element](../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md) zahrnout [ \<assemblyIdentity > element](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment), [ \<bindingRedirect > Element](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)a [ \<codeBase > element](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md).  
   
@@ -172,13 +172,13 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 ### <a name="locating-the-assembly-through-probing"></a>Vyhledání sestavení prostřednictvím zjišťování  
  Pokud neexistuje žádné [ \<codeBase >](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) prvku v konfiguračním souboru aplikace, modul runtime sondy pro sestavení s využitím čtyř kritéria:  
   
--   Základ cesty aplikace, což je kořenový adresář, ve kterém se aplikace zpracovává.  
+- Základ cesty aplikace, což je kořenový adresář, ve kterém se aplikace zpracovává.  
   
--   Jazyková verze, která je atribut culture sestavení, na kterou se odkazuje.  
+- Jazyková verze, která je atribut culture sestavení, na kterou se odkazuje.  
   
--   Název, který je název odkazovaného sestavení.  
+- Název, který je název odkazovaného sestavení.  
   
--   `privatePath` Atribut [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) prvku, který představuje uživatelem definovaný seznam podadresářů kořenový adresář. Toto umístění se dá nastavit v konfiguračním souboru aplikace a pomocí spravovaného kódu <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> vlastnost pro doménu aplikace. Pokud zadaný ve spravovaném kódu, spravovaný kód `privatePath` je zjišťován nejprve, za nímž následuje cestě zadané v konfiguračním souboru aplikace.  
+- `privatePath` Atribut [ \<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) prvku, který představuje uživatelem definovaný seznam podadresářů kořenový adresář. Toto umístění se dá nastavit v konfiguračním souboru aplikace a pomocí spravovaného kódu <xref:System.AppDomainSetup.PrivateBinPath?displayProperty=nameWithType> vlastnost pro doménu aplikace. Pokud zadaný ve spravovaném kódu, spravovaný kód `privatePath` je zjišťován nejprve, za nímž následuje cestě zadané v konfiguračním souboru aplikace.  
   
 #### <a name="probing-the-application-base-and-culture-directories"></a>Zjišťování základ cesty aplikace a jazykové verze adresáře  
  Modul runtime vždy začíná zjišťování v základním vaší aplikace, který může být adresa URL nebo kořenového adresáře aplikace v počítači. Pokud má odkazované sestavení nebyl nalezen v základ cesty aplikace a je k dispozici žádné informace o jazykové verzi, modul runtime vyhledá všechny podadresáře, s názvem sestavení. Adresáře otestovaná patří:  
@@ -213,13 +213,13 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 #### <a name="probing-examples"></a>Zjišťování příklady  
  Daný následující informace:  
   
--   Název odkazovaného sestavení: myAssembly  
+- Název odkazovaného sestavení: myAssembly  
   
--   Kořenový adresář aplikace: `http://www.code.microsoft.com`  
+- Kořenový adresář aplikace: `http://www.code.microsoft.com`  
   
--   [\<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) určuje element v konfiguračním souboru: bin  
+- [\<zjišťování >](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) určuje element v konfiguračním souboru: bin  
   
--   Jazyková verze: Německo  
+- Jazyková verze: Německo  
   
  Modul runtime sondy následující adresy URL:  
   

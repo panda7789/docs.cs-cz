@@ -3,11 +3,11 @@ title: Refaktoring pomocí metody rozšíření (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
 ms.openlocfilehash: 925ae6b1ae82576a830b06ef11232f7dad9875f2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58829990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787124"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>Refaktoring pomocí metody rozšíření (Visual Basic)
 Tento příklad je založen na předchozím příkladu [načtení textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.  
@@ -241,7 +241,7 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Další kroky  
  Následující příklad ukazuje, jak Refaktorovat tento kód jiným způsobem pomocí čisté funkce:  
   
--   [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -3,11 +3,11 @@ title: Tok transakcí do služeb pracovních postupů a mimo ně
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
 ms.openlocfilehash: 25ab4e415ce2cd6044cedef4841c1ba88254542e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315111"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856916"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Tok transakcí do služeb pracovních postupů a mimo ně
 Služby pracovních postupů a klienti mohou účastnit transakce.  Operace služeb se stanou součástí okolí transakce, umístěte <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. Všechna volání prováděných <xref:System.ServiceModel.Activities.Send> nebo <xref:System.ServiceModel.Activities.SendReply> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> bude také možné v rámci ambientní transakce. Klientská aplikace pracovního postupu můžete vytvořit pomocí okolí transakce <xref:System.Activities.Statements.TransactionScope> aktivity a volání operací služby pomocí okolí transakce. Toto téma vás provede procesem vytvoření služby pracovních postupů a pracovních postupů klienta, který se podílet na transakcích.  
@@ -27,13 +27,13 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 2. Přidat nový projekt knihovny tříd s názvem `Common`. Přidejte odkazy na následující sestavení:  
   
-    -   System.Activities.dll  
+    - System.Activities.dll  
   
-    -   System.ServiceModel.dll  
+    - System.ServiceModel.dll  
   
-    -   System.ServiceModel.Activities.dll  
+    - System.ServiceModel.Activities.dll  
   
-    -   System.Transactions.dll  
+    - System.Transactions.dll  
   
 3. Přidejte novou třídu s názvem `PrintTransactionInfo` k `Common` projektu. Tato třída je odvozena z <xref:System.Activities.NativeActivity> a přetížení <xref:System.Activities.NativeActivity.Execute%2A> metody.  
   
@@ -130,7 +130,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 10. Přetáhnout myší <xref:System.Activities.Statements.Assign> aktivity po `PrintTransactionInfo` aktivity a nastavte jeho vlastnosti podle následující tabulky.  
   
-    |Vlastnost|Hodnota|  
+    |Vlastnost|Value|  
     |--------------|-----------|  
     |Chcete-li|replyMessage|  
     |Hodnota|"Service: Odeslání odpovědi."|  
@@ -179,7 +179,7 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 8. Přetáhnout myší <xref:System.ServiceModel.Activities.Send> aktivity po <xref:System.Activities.Statements.Assign> aktivity a nastavte následující vlastnosti:  
   
-    |Vlastnost|Value|  
+    |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  
@@ -215,11 +215,11 @@ Služby pracovních postupů a klienti mohou účastnit transakce.  Operace slu�
   
 1. Přidat nový projekt konzolové aplikace s názvem `Service` do řešení. Přidejte odkazy na následující sestavení:  
   
-    1.  System.Activities.dll  
+    1. System.Activities.dll  
   
-    2.  System.ServiceModel.dll  
+    2. System.ServiceModel.dll  
   
-    3.  System.ServiceModel.Activities.dll  
+    3. System.ServiceModel.Activities.dll  
   
 2. Otevřete vygenerovaný soubor Program.cs a následující kód:  
   

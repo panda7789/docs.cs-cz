@@ -3,22 +3,22 @@ title: Generování klienta WCF z metadat služby
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
 ms.openlocfilehash: 5cfbfc1e4be0003b3699f818212fbcd959f3ad91
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59078249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61855995"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Generování klienta WCF z metadat služby
 Toto téma popisuje, jak používat různé přepínače v Svcutil.exe ke generování klientů z dokumentů metadat.  
   
  Dokumenty metadat mohou být odolné úložiště nebo načítá online. Načítání online následuje protokol WS-MetadataExchange nebo protokolu Microsoft zjišťování (ROZ). Svcutil.exe vystaví následující žádostí o metadata současně k načtení metadat:  
   
--   Požadavek WS-MetadataExchange (MEX) na zadané adresy.  
+- Požadavek WS-MetadataExchange (MEX) na zadané adresy.  
   
--   MEX požadavek na zadané adresy s `/mex` připojí.  
+- MEX požadavek na zadané adresy s `/mex` připojí.  
   
--   DISCO požadavku (pomocí [DiscoveryClientProtocol](https://go.microsoft.com/fwlink/?LinkId=94777) z webových služeb ASP.NET s) na zadané adresy.  
+- DISCO požadavku (pomocí [DiscoveryClientProtocol](https://go.microsoft.com/fwlink/?LinkId=94777) z webových služeb ASP.NET s) na zadané adresy.  
   
  Svcutil.exe generuje klienta na základě webové služby WSDL (Description Language) nebo zásad souboru přijatých ze služby. Hlavní název uživatele (UPN) je generována zřetězením uživatelské jméno s "\@" a následným přidáním plně kvalifikovaný název domény (FQDN). Pro uživatele, kteří si zaregistrovali ve službě Active Directory, ale tento formát není platný a hlavní název uživatele, který generuje nástroj způsobí, že k chybě v ověřování protokolem Kerberos se následující chybová zpráva: **Pokus o přihlášení se nezdařilo.** Chcete-li vyřešit potíže, vyřešit ručně instalační soubor klienta, nástroj vygeneruje.  
   

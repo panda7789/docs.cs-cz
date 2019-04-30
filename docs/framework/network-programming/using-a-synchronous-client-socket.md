@@ -18,11 +18,11 @@ helpviewer_keywords:
 - client sockets
 ms.assetid: 945d00c6-7202-466c-9df9-140b84156d43
 ms.openlocfilehash: 339f9c9d8b25f6deef4cc77f60c26b7b5d017ce0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59105778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796939"
 ---
 # <a name="using-a-synchronous-client-socket"></a>Použití synchronního klientského soketu
 Synchronního klientského soketu pozastaví program aplikace, zatímco se dokončují síťové operace. Synchronní sockets nejsou vhodné pro aplikace, které se hojně používají síť pro jejich operaci, ale umožňují snadný přístup k síťovým službám pro jiné aplikace.  

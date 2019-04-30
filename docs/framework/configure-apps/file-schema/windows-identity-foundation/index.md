@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4d4f6d76-49a5-4bad-b345-097b2e2844e9
 author: BrucePerlerMS
 ms.openlocfilehash: 9c8009b4d95e5aa2c3d9bb8a8958040127a9e628
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56441187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791666"
 ---
 # <a name="windows-identity-foundation-configuration-schema"></a>Konfigurační schéma pro Windows Identity Foundation
 Témata v této části poskytují informace o schématu konfigurace technologie Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci pro používání technologie WIF prostřednictvím vystavit rozhraní tříd. Tyto třídy jsou uvedené v následujících částech zpracovat odpovídající elementy ve schématu. Zobrazí se následující základní XML označit struktura vystavené schématu konfigurace WIF. Atributy jsou vynechány. Zvýrazněný komentáře označují hlavní komponenty schématu.  

@@ -14,20 +14,20 @@ helpviewer_keywords:
 - Get statement [Visual Basic], property procedures
 ms.assetid: 46a98379-e1a2-45dd-a48c-b51213f5ab07
 ms.openlocfilehash: 47e93ee17f160ce5cd701fd0a12ec16b3997ce9b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828340"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791856"
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)
 Procedury vlastnosti je řadu příkazů jazyka Visual Basic, které pracují s vlastní vlastnost v modulu, třídy nebo struktury. Procedury vlastnosti jsou známé také jako *přistupující objekty vlastnosti*.  
   
  Visual Basic poskytuje pokyny pro následující vlastnost:  
   
--   A `Get` postup vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.  
+- A `Get` postup vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.  
   
--   A `Set` postup nastaví vlastnost na hodnotu, včetně odkazu na objekt. Je volána při přiřazení hodnoty k vlastnosti.  
+- A `Set` postup nastaví vlastnost na hodnotu, včetně odkazu na objekt. Je volána při přiřazení hodnoty k vlastnosti.  
   
  Obvykle definovat ve dvojicích, pomocí procedury vlastnosti `Get` a `Set` příkazy, ale můžete definovat těchto postupech samostatně, pokud je vlastnost jen pro čtení ([získat příkaz](../../../../visual-basic/language-reference/statements/get-statement.md)) nebo pouze pro zápis ([nastavení Příkaz](../../../../visual-basic/language-reference/statements/set-statement.md)).  
   

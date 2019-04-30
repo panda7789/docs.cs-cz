@@ -3,11 +3,11 @@ title: Konfigurace a podpora metadat
 ms.date: 03/30/2017
 ms.assetid: 27c240cb-8cab-472c-87f8-c864f4978758
 ms.openlocfilehash: abc9177fcc7b338a365d61721b63041ddcd68ab9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858361"
 ---
 # <a name="configuration-and-metadata-support"></a>Konfigurace a podpora metadat
 Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky vazeb.  
@@ -15,13 +15,13 @@ Toto téma popisuje, jak povolit podporu konfigurace a metadat pro vazby a prvky
 ## <a name="overview-of-configuration-and-metadata"></a>Přehled konfigurace a metadat  
  Toto téma popisuje následující úkoly, které jsou volitelné položky 1, 2 a 4 v [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md) seznamu úkolů.  
   
--   Povolení podpory konfigurační soubor pro element vazby.  
+- Povolení podpory konfigurační soubor pro element vazby.  
   
--   Povolení podpory konfigurační soubor pro vazbu.  
+- Povolení podpory konfigurační soubor pro vazbu.  
   
--   Export kontrolních výrazů WSDL a zásady pro element vazby.  
+- Export kontrolních výrazů WSDL a zásady pro element vazby.  
   
--   Identifikace WSDL a zásady kontrolní výrazy pro vložení a nakonfigurujte vazby nebo element vazby.  
+- Identifikace WSDL a zásady kontrolní výrazy pro vložení a nakonfigurujte vazby nebo element vazby.  
   
  Informace o vytváření uživatelem definovaných vazeb a prvky vazeb naleznete v tématu [Creating User-Defined vazby](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md) a [vytvoření BindingElement](../../../../docs/framework/wcf/extending/creating-a-bindingelement.md)v uvedeném pořadí.  
   

@@ -3,11 +3,11 @@ title: Odvozování relací
 ms.date: 03/30/2017
 ms.assetid: 8fa86a9d-6545-4a9d-b1f5-58d9742179c7
 ms.openlocfilehash: f8a9aba493dfe82466608ea60932ddfec5ef64f1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59127878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61879668"
 ---
 # <a name="inferring-relationships"></a>Odvozování relací
 Pokud element, který je odvozený jako tabulka má podřízený element, který je také odvodit jako tabulku <xref:System.Data.DataRelation> mezi dvěma tabulkami se nevytvoří. Nový sloupec s názvem **ParentTableName_Id** se přidají do tabulky vytvořené pro nadřazený element a tabulku vytvořenou pro podřízený element. **ColumnMapping** vlastnost tohoto sloupce identity bude nastavena na **MappingType.Hidden**. Sloupec bude automatické zvyšování hodnoty primárního klíče pro nadřazené tabulky a se použije pro **DataRelation** mezi dvěma tabulkami. Datový typ sloupce identity přidání bude **System.Int32**, na rozdíl od datového typu všechny ostatní odvozené sloupců, což je **System.String**. A <xref:System.Data.ForeignKeyConstraint> s **DeletRule** = **Cascade** také vytvoří nový sloupec v nadřazené a podřízené tabulky.  
@@ -67,7 +67,7 @@ Pokud element, který je odvozený jako tabulka má podřízený element, který
   
  **DeletRule:** Kaskádové  
   
- **AcceptRejectRule:** Žádný  
+ **AcceptRejectRule:** Žádné  
   
 ## <a name="see-also"></a>Viz také:
 

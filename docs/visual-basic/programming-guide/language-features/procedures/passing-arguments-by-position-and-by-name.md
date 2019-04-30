@@ -23,11 +23,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
 ms.openlocfilehash: b872eda97d1e349ad781b12810e4b166d6e46fe1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791882"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
 Při volání `Sub` nebo `Function` postup, můžete předat argumenty *umístěním* – v pořadí, v jakém jsou uvedeny v definici procedury – nebo můžete předat je *podle názvu*, bez ohledem na pozici.  

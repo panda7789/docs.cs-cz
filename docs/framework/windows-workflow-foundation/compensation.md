@@ -3,11 +3,11 @@ title: Kompenzace
 ms.date: 03/30/2017
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
 ms.openlocfilehash: af29ba61ff5bede9208f2ab706f5e0ce1ff12274
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57721291"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61774280"
 ---
 # <a name="compensation"></a>Kompenzace
 Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého dříve Dokončená práce vrátit zpět nebo kompenzována (následující logiky definované aplikací.) dojde k následující chybě. Tato část popisuje, jak použít náhradu v pracovních postupech.  

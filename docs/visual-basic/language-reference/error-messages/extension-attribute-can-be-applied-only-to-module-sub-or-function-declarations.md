@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
 ms.openlocfilehash: a4561359e4d7cb0f6ebe44a5deb09b3374556ed8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58826181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61801644"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>Atribut 'Extension' lze použít pouze v deklaracích 'Module', 'Sub' nebo 'Function'.
 Jediný způsob, jak rozšířit datový typ v jazyce Visual Basic je definovat rozšiřující metodu v modulu standard. Metoda rozšíření může být `Sub` procedury nebo `Function` postup. Všechny metody rozšíření musí být označeny pomocí atributu rozšíření `<Extension()>`, z <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> oboru názvů. Volitelně může být označena modul, který obsahuje metodu rozšíření stejným způsobem. Žádné další použití atributu rozšíření není platný.  
@@ -21,9 +21,9 @@ Jediný způsob, jak rozšířit datový typ v jazyce Visual Basic je definovat 
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Odebrání atributu rozšíření.  
+- Odebrání atributu rozšíření.  
   
--   Změnit návrh rozšíření jako metoda, definována v nadřazeném modulu.  
+- Změnit návrh rozšíření jako metoda, definována v nadřazeném modulu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad definuje `Print` metodu `String` datového typu.  

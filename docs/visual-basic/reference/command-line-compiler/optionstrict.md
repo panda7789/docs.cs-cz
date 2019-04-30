@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /optionstrict compiler option [Visual Basic]
 ms.assetid: c7b10086-0fa4-49db-b3c8-4ae0db5957da
 ms.openlocfilehash: e18fe451ea4a80ac959ed61b66394920f8bf177f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59336080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61788931"
 ---
 # <a name="-optionstrict"></a>-optionstrict
 Vynutí sémantiku přísného typu pro omezení převodů implicitních typů.  
@@ -47,7 +47,7 @@ Vynutí sémantiku přísného typu pro omezení převodů implicitních typů.
   
 ### <a name="to-set--optionstrict-programmatically"></a>Chcete-li nastavit - optionstrict prostřednictvím kódu programu  
   
--   Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
+- Zobrazit [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
 ## <a name="example"></a>Příklad  
  Následující kód zkompiluje `Test.vb` pomocí sémantiku přísného typu.  

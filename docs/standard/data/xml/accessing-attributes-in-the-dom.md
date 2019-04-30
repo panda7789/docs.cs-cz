@@ -9,11 +9,11 @@ ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 08919e05f8396d37cb50ca24989b86000c854411
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921638"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
 

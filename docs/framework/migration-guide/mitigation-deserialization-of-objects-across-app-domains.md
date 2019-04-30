@@ -5,11 +5,11 @@ ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fbde11672dc17f80a45defc0a55bcf841e83c324
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59325069"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61871676"
 ---
 # <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Omezení rizik: Deserializace objektů mezi doménami aplikace
 V některých případech, kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, vyvolá pokus o deserializaci objektů v rámci logického kontextu volání mezi doménami aplikace výjimku.  
@@ -27,13 +27,13 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
   
 5. Pokud systém konfigurace ještě nebyl inicializován, je nutné dokončit jeho inicializaci. Mimo jiné to znamená, že modul runtime musí vytvořit stabilní cestu pro systém konfigurace, což se provádí takto:  
   
-    1.  Hledá legitimaci nevýchozí domény aplikace.  
+    1. Hledá legitimaci nevýchozí domény aplikace.  
   
-    2.  Pokusí se vypočítat legitimaci nevýchozí domény aplikace založené na výchozí doméně aplikace.  
+    2. Pokusí se vypočítat legitimaci nevýchozí domény aplikace založené na výchozí doméně aplikace.  
   
-    3.  Volání uskutečněné za účelem získání legitimace výchozí domény aplikace spustí volání napříč doménou aplikace z nevýchozí domény aplikace do výchozí domény aplikace.  
+    3. Volání uskutečněné za účelem získání legitimace výchozí domény aplikace spustí volání napříč doménou aplikace z nevýchozí domény aplikace do výchozí domény aplikace.  
   
-    4.  Jako součást kontraktu napříč doménami aplikace v rozhraní .NET Framework musí být obsah logického kontextu volání zařazen napříč hranicemi domény aplikace.  
+    4. Jako součást kontraktu napříč doménami aplikace v rozhraní .NET Framework musí být obsah logického kontextu volání zařazen napříč hranicemi domény aplikace.  
   
 6. Vzhledem k tomu, že ve výchozí doméně aplikace nelze rozpoznat typy, které jsou součástí logického kontextu volání, je vyvolána výjimka.  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
 ms.openlocfilehash: 68ea866b736350b8a393d1f4788e4b08754e5ab4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59102736"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785031"
 ---
 # <a name="designing-service-contracts"></a>Navrhování kontraktů služby
 Toto téma popisuje, jakou servisní smlouvy se, jak jsou definovány, jaké operace jsou k dispozici (a důsledky pro základní výměny zpráv), jaké typy dat jsou používané a dalších problémů, které vám pomůžou navrhnout operace, které splňují požadavky na váš scénář.  
@@ -24,28 +24,28 @@ Toto téma popisuje, jakou servisní smlouvy se, jak jsou definovány, jaké ope
   
  Toto téma popisuje následující body rozhodnutí při navrhování kontraktu služby:  
   
--   Určuje, zda použít třídy nebo rozhraní.  
+- Určuje, zda použít třídy nebo rozhraní.  
   
--   Jak určit typy dat, které chcete k exchangi.  
+- Jak určit typy dat, které chcete k exchangi.  
   
--   Typy exchange vzory, které můžete použít.  
+- Typy exchange vzory, které můžete použít.  
   
--   Určuje, zda můžete provést explicitní zabezpečení požadavky součástí kontraktu.  
+- Určuje, zda můžete provést explicitní zabezpečení požadavky součástí kontraktu.  
   
--   Omezení pro operace vstupy a výstupy.  
+- Omezení pro operace vstupy a výstupy.  
   
 ## <a name="classes-or-interfaces"></a>Třídy nebo rozhraní  
  Třídy a rozhraní představují seskupení funkce, a proto i slouží k definování kontraktu služby WCF. Doporučujeme však použít rozhraní, protože kontraktů služby modelují přímo. Bez implementace rozhraní definovat více než seskupení s určitým podpisy metod. Implementovat rozhraní kontraktu služby a implementovali služby WCF.  
   
  Všechny výhody spravovaných rozhraních aplikována na rozhraní kontraktu služby:  
   
--   Rozhraní kontraktu služby můžete rozšířit libovolný počet dalších rozhraní kontraktu služby.  
+- Rozhraní kontraktu služby můžete rozšířit libovolný počet dalších rozhraní kontraktu služby.  
   
--   Jeden třída může implementovat libovolný počet kontrakty služeb díky implementaci těchto rozhraní kontraktu služby.  
+- Jeden třída může implementovat libovolný počet kontrakty služeb díky implementaci těchto rozhraní kontraktu služby.  
   
--   Implementace kontraktu služby můžete upravit tak, že změníte implementace rozhraní, zatímco kontrakt služby zůstává stejná.  
+- Implementace kontraktu služby můžete upravit tak, že změníte implementace rozhraní, zatímco kontrakt služby zůstává stejná.  
   
--   Verze můžete prostřednictvím implementace rozhraní staré a nové služby. Staré klienti připojovat k původní verzi, zatímco novějších klientů může připojit k novější verzi.  
+- Verze můžete prostřednictvím implementace rozhraní staré a nové služby. Staré klienti připojovat k původní verzi, zatímco novějších klientů může připojit k novější verzi.  
   
 > [!NOTE]
 >  Při dědění z jiných rozhraní kontraktu služby, nelze přepsat vlastnosti operace, jako je název nebo obor názvů. Pokud se pokusíte k tomu, vytvoříte novou operaci v aktuální kontraktu služby.  
@@ -251,11 +251,11 @@ End Interface
   
  Služba, která implementuje to `IExplicitProtectionLevelSampleService` smlouvy a má koncový bod, který používá výchozí <xref:System.ServiceModel.WSHttpBinding> (výchozí hodnota <xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType>, což je <xref:System.ServiceModel.SecurityMode.Message>) má následující chování:  
   
--   `GetString` Operace zprávy jsou zašifrovaná a podepsaná.  
+- `GetString` Operace zprávy jsou zašifrovaná a podepsaná.  
   
--   `GetInt` Operace zprávy jsou odeslány jako nešifrovaný a bez znaménka (to znamená, plain) text.  
+- `GetInt` Operace zprávy jsou odeslány jako nešifrovaný a bez znaménka (to znamená, plain) text.  
   
--   `GetGuid` Operace <xref:System.Guid?displayProperty=nameWithType> se vrátí ve zprávě, která je zašifrovaná a podepsaná.  
+- `GetGuid` Operace <xref:System.Guid?displayProperty=nameWithType> se vrátí ve zprávě, která je zašifrovaná a podepsaná.  
   
  Další informace o úrovních ochrany a způsob jejich použití naleznete v tématu [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md). Další informace o zabezpečení najdete v tématu [zabezpečení služby](../../../docs/framework/wcf/securing-services.md).  
   

@@ -1,5 +1,5 @@
 ---
-title: Programování Windows Workflow Foundation
+title: Programování ve Windows Workflow Foundation
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Workflow Foundation [WF], programming
@@ -7,13 +7,13 @@ helpviewer_keywords:
 - WF [WF], programming
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
 ms.openlocfilehash: 3b4e56c332567cdf1aea94a836ef7dcdcd8a94fe
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57703644"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794349"
 ---
-# <a name="windows-workflow-foundation-programming"></a>Programování Windows Workflow Foundation
+# <a name="windows-workflow-foundation-programming"></a>Programování ve Windows Workflow Foundation
 Tato část obsahuje sadu Úvod do témata, které byste měli porozumět stane zdatní programátor Windows Workflow Foundation (WF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  

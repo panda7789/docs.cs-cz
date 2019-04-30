@@ -6,11 +6,11 @@ helpviewer_keywords:
 - registry [Visual Basic], security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
 ms.openlocfilehash: dc0071d1fddf99bd712ebe8aea5c61bbc3522f93
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921209"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>Zabezpečení a registr (Visual Basic)
 Tato stránka pojednává o bezpečnostních důsledcích ukládání dat do registru.  

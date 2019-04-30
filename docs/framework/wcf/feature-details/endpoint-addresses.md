@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
 ms.openlocfilehash: f59b8403ecb683dafa6963565da46e517b5a2cbc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59220432"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856626"
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledání a identifikaci koncového bodu. Tato adresa sestává především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je vyjádřena v programovacím modelu pomocí rozhraní Windows Communication Foundation (WCF) <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiné koncové body, které vyměňovat zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují další hlavičky SOAP, vyžaduje ke zpřístupnění služby. Poskytují další volitelné záhlaví a podrobnější informace o adresách k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentována na lince jako referenci koncového bodu WS-Addressing (EPR).  
@@ -19,13 +19,13 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
 ## <a name="uri-structure-of-an-address"></a>Identifikátor URI struktury adresy  
  Adresa URI pro většinu přenosy obsahuje čtyři části. Například čtyři části identifikátoru URI `http://www.fabrikam.com:322/mathservice.svc/secureEndpoint` může být uvedeno následujícím způsobem:  
   
--   Schéma: `http:`
+- Schéma: `http:`
   
--   Počítač: `www.fabrikam.com`  
+- Počítač: `www.fabrikam.com`  
   
--   (volitelné) Port: 322  
+- (volitelné) Port: 322  
   
--   Path: /mathservice.svc/secureEndpoint  
+- Path: /mathservice.svc/secureEndpoint  
   
 ## <a name="defining-an-address-for-a-service"></a>Definování adresy pro služby  
  Adresa koncového bodu služby lze zadat buď imperativně pomocí kódu nebo deklarativně prostřednictvím konfigurace. Definování koncových bodů v kódu není obvykle praktické protože vazeb a adresy pro službu nasazenou se obvykle liší od nastavení použít, je vyvíjena služby. Obecně je praktičtější k definování koncových bodů služby pomocí konfigurace namísto kódu. Udržování vazby a adresování informace mimo kód umožňující změnit bez nutnosti znovu kompilovat nebo znovu nasadit aplikaci.  
@@ -46,9 +46,9 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
  Následující příklad ukazuje součásti, které mohou být přítomny v vazbu služby IIS:  
   
--   Vazba protokolu: HTTP  
+- Vazba protokolu: HTTP  
   
--   Informace o vazbě: IP adresu, Port, Hlavička hostitele  
+- Informace o vazbě: IP adresu, Port, Hlavička hostitele  
   
  Služba IIS můžete určit víc vazeb pro každou lokalitu, což vede k více bázové adresy pro každé schéma. Před verzí [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], WCF nepodporují více adres pro schéma a pokud byl zadán, vyvolala <xref:System.ArgumentException> během aktivace.  
   
@@ -100,15 +100,15 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
 ## <a name="extending-addressing-in-wcf-services"></a>Rozšíření adresování ve službách WCF  
  Výchozí adresování model služeb WCF používá adresu koncového bodu identifikátor URI pro následující účely:  
   
--   Chcete-li určit naslouchání adresu služby, umístění, ve kterém naslouchá koncový bod pro zprávy,  
+- Chcete-li určit naslouchání adresu služby, umístění, ve kterém naslouchá koncový bod pro zprávy,  
   
--   Pokud chcete zadat filtr adres protokolu SOAP, adresu koncového bodu očekává jako záhlaví SOAP.  
+- Pokud chcete zadat filtr adres protokolu SOAP, adresu koncového bodu očekává jako záhlaví SOAP.  
   
  Hodnoty pro každou z těchto důvodů se dá nastavit zvlášť, umožňuje několik rozšíření adresování tohoto scénáře titulní užitečné:  
   
--   Zprostředkovatelů SOAP: zpráva odeslaná klientem, prochází přes jeden nebo více dalších služeb, které zpracovávají zprávy předtím, než dosáhne konečného cíle. Zprostředkovatelů SOAP můžete provádět různé úlohy, jako je například ukládání do mezipaměti, směrování, Vyrovnávání zatížení nebo schéma ověřování na zprávy. Tento scénář lze dosáhnout odesílání zpráv do samostatné fyzické adresy (`via`), který cílí zprostředkující spíše než jenom do logického adresního (`wsa:To`), který cílí na ultimate cíl.  
+- Zprostředkovatelů SOAP: zpráva odeslaná klientem, prochází přes jeden nebo více dalších služeb, které zpracovávají zprávy předtím, než dosáhne konečného cíle. Zprostředkovatelů SOAP můžete provádět různé úlohy, jako je například ukládání do mezipaměti, směrování, Vyrovnávání zatížení nebo schéma ověřování na zprávy. Tento scénář lze dosáhnout odesílání zpráv do samostatné fyzické adresy (`via`), který cílí zprostředkující spíše než jenom do logického adresního (`wsa:To`), který cílí na ultimate cíl.  
   
--   Naslouchání adresu koncového bodu je privátní identifikátor URI a je nastavena na jinou hodnotu než jeho `listenURI` vlastnost.  
+- Naslouchání adresu koncového bodu je privátní identifikátor URI a je nastavena na jinou hodnotu než jeho `listenURI` vlastnost.  
   
  Adresy, které jsou přenos `via` Určuje umístění, ke kterému by měl zprávu nejdřív pošle na cestě na jiných vzdálených adres podle `to` parametr, ve kterém se služba nachází. Ve většině scénářů Internetu `via` identifikátor URI je stejné jako <xref:System.ServiceModel.EndpointAddress.Uri%2A> vlastnost finální `to` adresu služby. Pouze rozlišovat mezi tyto dvě adresy, když je nutné provést ruční směrování.  
   
@@ -117,9 +117,9 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
  Můžete definovat vlastní adresu záhlaví dvěma způsoby – buď prostřednictvím kódu nebo konfigurace:  
   
--   V kódu, vytvořte vlastní adresu záhlaví pomocí <xref:System.ServiceModel.Channels.AddressHeader> třídy a pak použije v procesu vytváření <xref:System.ServiceModel.EndpointAddress>.  
+- V kódu, vytvořte vlastní adresu záhlaví pomocí <xref:System.ServiceModel.Channels.AddressHeader> třídy a pak použije v procesu vytváření <xref:System.ServiceModel.EndpointAddress>.  
   
--   V konfiguraci, vlastní [ \<záhlaví >](../../configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu.  
+- V konfiguraci, vlastní [ \<záhlaví >](../../configure-apps/file-schema/wcf/headers.md) jsou určené jako podřízené objekty [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) elementu.  
   
  Konfigurace je obecně vhodnější pro kódování, jak to vám umožní změnit záhlaví po nasazení.  
   
@@ -128,9 +128,9 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
  Můžete zadat vlastní adresu naslouchání pomocí kódu nebo konfigurace:  
   
--   V kódu, zadejte vlastní adresu naslouchání tak, že přidáte <xref:System.ServiceModel.Description.ClientViaBehavior> třídy do kolekce chování koncového bodu.  
+- V kódu, zadejte vlastní adresu naslouchání tak, že přidáte <xref:System.ServiceModel.Description.ClientViaBehavior> třídy do kolekce chování koncového bodu.  
   
--   V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-element.md) elementu.  
+- V konfiguraci, zadejte vlastní adresu naslouchání s `ListenUri` atribut služby [ \<koncový bod >](../../configure-apps/file-schema/wcf/endpoint-element.md) elementu.  
   
 ### <a name="custom-soap-address-filter"></a>Filtr adresy vlastního protokolu SOAP  
  <xref:System.ServiceModel.EndpointAddress.Uri%2A> Se používá ve spojení s některým <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnost pro definování filtr adresy koncového bodu SOAP (<xref:System.ServiceModel.Dispatcher.EndpointDispatcher.AddressFilter%2A>). Ve výchozím nastavení, tento filtr ověří, jestli příchozí zprávy `To` záhlaví zprávy, který se shoduje s koncovým bodem je identifikátor URI a všechny hlavičky vyžaduje koncový bod se nacházejí ve zprávě.  

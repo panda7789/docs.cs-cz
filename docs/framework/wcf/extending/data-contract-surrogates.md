@@ -5,11 +5,11 @@ helpviewer_keywords:
 - data contracts [WCF], surrogates
 ms.assetid: 8c31134c-46c5-4ed7-94af-bab0ac0dfce5
 ms.openlocfilehash: f97826cb5154035b535b5eac3a8818d8b366d639
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59315345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858023"
 ---
 # <a name="data-contract-surrogates"></a>Náhrady kontraktů dat
 Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat modelu. Tato funkce je určena pro použití pro nahrazení v situacích, ve kterém chcete změnit, jak je typ serializován, deserializované nebo předpokládaných do metadat uživatelů a přizpůsobení typu. Při některých scénářích, kde mohou být použity náhradní kontraktu dat. není určeno pro typ, polí a vlastností nejsou označené <xref:System.Runtime.Serialization.DataMemberAttribute> atribut nebo uživatelům, aby dynamicky se vytvářejí odchylky schématu.  
@@ -37,13 +37,13 @@ Kontrakt dat *náhradní* je pokročilá funkce postavené na kontraktu dat mode
   
  [!code-csharp[C_IDataContractSurrogate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_idatacontractsurrogate/cs/source.cs#3)]  
   
--   Na serializaci, mapování vrácený touto metodou následně slouží k transformaci na původní instanci surrogated instanci voláním <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metody.  
+- Na serializaci, mapování vrácený touto metodou následně slouží k transformaci na původní instanci surrogated instanci voláním <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%2A> metody.  
   
--   K deserializaci používá mapování vrácený touto metodou serializátoru, který je k deserializaci do instance typu nahrazení. Následně volá <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> pro transformaci surrogated instance do instance původního typu.  
+- K deserializaci používá mapování vrácený touto metodou serializátoru, který je k deserializaci do instance typu nahrazení. Následně volá <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%2A> pro transformaci surrogated instance do instance původního typu.  
   
--   Při exportu se projeví náhradní typ vrácený touto metodou zobrazíte kontraktu dat sloužící ke generování metadat.  
+- Při exportu se projeví náhradní typ vrácený touto metodou zobrazíte kontraktu dat sloužící ke generování metadat.  
   
--   Při importu změní se počáteční typ náhradní typ, který se projeví zobrazíte kontraktu dat pro účely jako odkazující na podporu.  
+- Při importu změní se počáteční typ náhradní typ, který se projeví zobrazíte kontraktu dat pro účely jako odkazující na podporu.  
   
  <xref:System.Type> Je parametr typu objektu, která je serializována, deserializované, importované nebo exportovaná. <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%2A> Metoda musí vracet typ vstupu, pokud náhradní nezpracovává typ. V opačném případě vrátí surrogated příslušného typu. Pokud existuje několik typů náhradní mnoho mapování lze definovat v této metodě.  
   

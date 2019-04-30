@@ -11,11 +11,11 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
 ms.openlocfilehash: 0a8d95ffbabf03a0e6c9d88edb28c248b60f3252
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61783874"
 ---
 # <a name="set-statement-visual-basic"></a>Set – příkaz (Visual Basic)
 Deklaruje `Set` procedury vlastnosti použít pro přiřazení hodnoty k vlastnosti.  
@@ -35,13 +35,13 @@ End Set
  `accessmodifier`  
  Volitelné na nanejvýš jeden z `Get` a `Set` příkazy v této vlastnosti. Může být jedna z následujících akcí:  
   
--   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
+- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
--   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
+- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
--   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
--   `Protected Friend`  
+- `Protected Friend`  
   
  Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
@@ -70,13 +70,13 @@ End Set
   
 ## <a name="rules"></a>pravidla  
   
--   **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Set` postup `Private`, ale ne `Public`.  
+- **Smíšenými úrovněmi přístupu.** Pokud definujete vlastnosti pro čtení i zápis, Volitelně můžete zadat úroveň různý přístup pro buď `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být více omezující než úroveň přístupu vlastnosti úroveň řízení přístupu. Například, pokud je deklarována vlastnost `Friend`, lze deklarovat `Set` postup `Private`, ale ne `Public`.  
   
      Pokud definujete `WriteOnly` vlastnost, `Set` postup představuje celou vlastnost. Nelze deklarovat různý přístup úroveň `Set`, protože dvě úrovně přístupu pro vlastnost, která byste nastavili.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Návrat z procedury vlastnosti.** Když `Set` postup vrátí volajícímu kódu, provádění pokračuje po příkazu, který poskytuje hodnota, která má být uložena.  
+- **Návrat z procedury vlastnosti.** Když `Set` postup vrátí volajícímu kódu, provádění pokračuje po příkazu, který poskytuje hodnota, která má být uložena.  
   
      `Set` procedury vlastnosti může vrátit buď pomocí [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md) nebo [příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md).  
   

@@ -18,26 +18,26 @@ ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e2cb07389ad68985362993e76f82e58d2a59e237
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59178877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919695"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (generátor zdrojových souborů)
 Nástroj Resource File Generator (Resgen.exe) převádí textové soubory (.txt nebo .restext) a soubory ve formátu prostředků založeném na jazyce XML (.resx) na binární soubory modulu CLR (.resources), které mohou být vloženy do binárního spustitelného souboru modulu nebo satelitního sestavení. (Viz [vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  
   
  Resgen.exe je univerzální nástroj pro převod prostředků, který plní následující úlohy:  
   
--   Převádí soubory .txt nebo .restext na soubory .resources nebo .resx. (Formát souborů .restext je shodný s formátem souborů .txt. Přípona .restext však usnadňuje identifikaci textových souborů obsahujících definici prostředků.)  
+- Převádí soubory .txt nebo .restext na soubory .resources nebo .resx. (Formát souborů .restext je shodný s formátem souborů .txt. Přípona .restext však usnadňuje identifikaci textových souborů obsahujících definici prostředků.)  
   
--   Převádí soubory .resources na textové soubory nebo soubory .resx.  
+- Převádí soubory .resources na textové soubory nebo soubory .resx.  
   
--   Převádí soubory .resx na textové soubory nebo soubory .resources.  
+- Převádí soubory .resx na textové soubory nebo soubory .resources.  
   
--   Extrahuje prostředky řetězce ze sestavení do souboru .resw vhodného pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
+- Extrahuje prostředky řetězce ze sestavení do souboru .resw vhodného pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
   
--   Vytvoří třídu silného typu, který poskytuje přístup k jednotlivým pojmenovaným prostředkům a získat <xref:System.Resources.ResourceManager> instance.  
+- Vytvoří třídu silného typu, který poskytuje přístup k jednotlivým pojmenovaným prostředkům a získat <xref:System.Resources.ResourceManager> instance.  
   
  Pokud nástroj Resgen.exe z jakéhokoli důvodu selže, je návratová hodnota –1.  
   
@@ -116,17 +116,17 @@ resgen filename.extension [outputDirectory]
 ## <a name="performing-specific-resgenexe-tasks"></a>Provádění konkrétních úloh nástroje Resgen.exe  
  Resgen.exe lze použít různými způsoby: Chcete-li zkompilovat soubor prostředků založený na textu nebo založený na formátu XML do binárního souboru, k převodu mezi formáty souborů prostředků a ke generování třídy, která obaluje <xref:System.Resources.ResourceManager> funkce a poskytuje přístup k prostředkům. Tato část poskytuje podrobné informace o každém úkolu:  
   
--   [Kompilace prostředků do binárního souboru](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling)  
+- [Kompilace prostředků do binárního souboru](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Compiling)  
   
--   [Převod mezi typy souborů prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Convert)  
+- [Převod mezi typy souborů prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Convert)  
   
--   [Kompilace nebo převod více souborů](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Multiple)  
+- [Kompilace nebo převod více souborů](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Multiple)  
   
--   [Exportování prostředků do souboru .resw](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Exporting)  
+- [Exportování prostředků do souboru .resw](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Exporting)  
   
--   [Podmíněná kompilace prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Conditional)  
+- [Podmíněná kompilace prostředků](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Conditional)  
   
--   [Generování třídy prostředků se silnými typy](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Strong)  
+- [Generování třídy prostředků se silnými typy](../../../docs/framework/tools/resgen-exe-resource-file-generator.md#Strong)  
   
 <a name="Compiling"></a>   
 ### <a name="compiling-resources-into-a-binary-file"></a>Kompilace prostředků do binárního souboru  
@@ -170,13 +170,13 @@ resgen Resources.resx Resources.resources
 ### <a name="converting-between-resource-file-types"></a>Převod mezi typy souborů prostředků  
  Kromě kompilování textových souborů prostředků nebo souborů prostředků založených na jazyce XML do binárních souborů .resources dokáže nástroj Resgen.exe také převést libovolný podporovaný typ souboru na libovolný jiný podporovaný typ. To znamená, že může provést následující převody:  
   
--   Soubory .txt a .restext na soubory .resx.  
+- Soubory .txt a .restext na soubory .resx.  
   
--   Soubory .resx na soubory .txt a .restext.  
+- Soubory .resx na soubory .txt a .restext.  
   
--   Soubory .resources na soubory .txt a .restext.  
+- Soubory .resources na soubory .txt a .restext.  
   
--   Soubory .resources na soubory .resx.  
+- Soubory .resources na soubory .resx.  
   
  Syntaxe je shodná se syntaxí uvedenou v předchozí části.  
   
@@ -315,13 +315,13 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
   
  Třída prostředků se silnými typy má následující členy:  
   
--   Konstruktor bez parametrů, který lze použít k vytvoření instance třídy prostředku silného typu.  
+- Konstruktor bez parametrů, který lze použít k vytvoření instance třídy prostředku silného typu.  
   
--   A `static` (C#) nebo `Shared` (Visual Basic) a jen pro čtení `ResourceManager` vlastnost, která vrací <xref:System.Resources.ResourceManager> instanci spravující prostředek silného typu.  
+- A `static` (C#) nebo `Shared` (Visual Basic) a jen pro čtení `ResourceManager` vlastnost, která vrací <xref:System.Resources.ResourceManager> instanci spravující prostředek silného typu.  
   
--   Statický `Culture` vlastnost, která vám umožní nastavit jazykovou verzi použitou k načtení prostředku. Ve výchozím nastavení, je jeho hodnota `null`, což znamená, že se používá aktuální jazyková verze uživatelského rozhraní.  
+- Statický `Culture` vlastnost, která vám umožní nastavit jazykovou verzi použitou k načtení prostředku. Ve výchozím nastavení, je jeho hodnota `null`, což znamená, že se používá aktuální jazyková verze uživatelského rozhraní.  
   
--   Jeden `static` (C#) nebo `Shared` (Visual Basic) a vlastnost jen pro čtení pro každý prostředek v souboru .resources. Název vlastnosti je názvem prostředku.  
+- Jeden `static` (C#) nebo `Shared` (Visual Basic) a vlastnost jen pro čtení pro každý prostředek v souboru .resources. Název vlastnosti je názvem prostředku.  
   
  Například následující příkaz kompiluje soubor prostředek pojmenovaný StringResources.txt do StringResources.resources a vygeneruje třídu pojmenovanou `StringResources` v jazyce Visual Basic zdroji souboru s kódem pojmenovaném StringResources.vb, kterou lze použít pro přístup k prostředku Správce.  
   

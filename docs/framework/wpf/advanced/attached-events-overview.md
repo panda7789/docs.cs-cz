@@ -13,11 +13,11 @@ helpviewer_keywords:
 - attached events [WPF], definition
 ms.assetid: 2c40eae3-80e4-4a45-ae09-df6c9ab4d91e
 ms.openlocfilehash: 7b7b0fcc9612994803bb23e985f44c483e708857
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613587"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61777140"
 ---
 # <a name="attached-events-overview"></a>Přehled připojených událostí
 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Definuje komponentu jazyka a typu události, volá se, *přidružená událost*. Koncept přidružená událost umožňuje přidání obslužné rutiny při určité události libovolný prvek, nikoli element, který ve skutečnosti definuje nebo dědí události. V takovém případě objekt potenciálně vyvolání události ani cílové zpracování instance definuje nebo jinak "vlastní" události.  
@@ -64,9 +64,9 @@ ms.locfileid: "59613587"
   
  Vzor je následujícím způsobem:  
   
--   Metoda **přidat*EventName*obslužná rutina** se dvěma parametry. První parametr je instance, do kterého se přidá obslužnou rutinu události. Druhý parametr je obslužná rutina události pro přidání. Metoda musí být `public` a `static`, s žádnou návratovou hodnotu.  
+- Metoda **přidat*EventName*obslužná rutina** se dvěma parametry. První parametr je instance, do kterého se přidá obslužnou rutinu události. Druhý parametr je obslužná rutina události pro přidání. Metoda musí být `public` a `static`, s žádnou návratovou hodnotu.  
   
--   Metoda **odebrat*EventName*obslužná rutina** se dvěma parametry. První parametr je instance, ze kterého se odebere obslužnou rutinu události. Druhý parametr je obslužná rutina události k odebrání. Metoda musí být `public` a `static`, s žádnou návratovou hodnotu.  
+- Metoda **odebrat*EventName*obslužná rutina** se dvěma parametry. První parametr je instance, ze kterého se odebere obslužnou rutinu události. Druhý parametr je obslužná rutina události k odebrání. Metoda musí být `public` a `static`, s žádnou návratovou hodnotu.  
   
  **Přidat*EventName*obslužná rutina** usnadňuje přístupové metody [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] při zpracování připojené obslužná rutina události, které atributy jsou deklarovány v elementu. **Přidat*EventName*obslužná rutina** a **odebrat*EventName*obslužné rutiny** metody také umožňují přístup ke kódu do úložiště obslužné rutiny události připojené události.  
   

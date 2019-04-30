@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
 ms.openlocfilehash: f3ba6bfd0f83270bc6b9e980fe92f6630c90ad49
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193067"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61785343"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Kompilované dotazy (LINQ to Entities)
 Až budete mít aplikaci, která spustí dotazy strukturálně podobně jako v mnoha případech v Entity Framework, můžete často zvýšit výkon kompilaci dotazu jednou a spustíte ji několikrát s různými parametry. Například aplikace může mít k načtení všech zákazníků v konkrétním městě; Město je uživatel zadá za běhu ve formuláři. Technologie LINQ to Entities podporuje používání kompilované dotazy pro tento účel.  

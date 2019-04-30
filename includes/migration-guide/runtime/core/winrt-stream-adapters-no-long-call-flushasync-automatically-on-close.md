@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 60759e3d03137bb5983703cbf04719ba4946cb6e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61649037"
 ---
 ### <a name="winrt-stream-adapters-no-long-call-flushasync-automatically-on-close"></a>Adaptéry WinRT stream už se nejedná volání FlushAsync automaticky při zavření
 

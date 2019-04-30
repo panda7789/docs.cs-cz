@@ -6,11 +6,11 @@ helpviewer_keywords:
 - best practices [WCF], queued communication
 ms.assetid: 446a6383-cae3-4338-b193-a33c14a49948
 ms.openlocfilehash: 27b9c6e117b6ba809daae87d376b03e27bc2b0f5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59230093"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858075"
 ---
 # <a name="best-practices-for-queued-communication"></a>Doporučené postupy pro komunikaci ve frontě
 Toto téma obsahuje doporučené postupy pro komunikaci ve frontě ve Windows Communication Foundation (WCF). Následující části popisují doporučené postupy z hlediska scénář.  
@@ -48,11 +48,11 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě ve Windows Co
 ## <a name="achieving-high-throughput"></a>Dosahuje vysoké propustnosti  
  K dosažení vysoké propustnosti na jeden koncový bod, použijte následující:  
   
--   Transakční dávkování. Provedené dávkování zajistí, že počet zpráv najdete v rámci jedné transakce. Tím se optimalizují potvrzení transakcí, zvýšit celkový výkon. Náklady na dávkování je, že pokud dojde k selhání jedné zprávy v rámci služby batch, pak celý batch se vrátí zpět a zprávy musí být zpracované jeden po druhém, dokud je bezpečné batch znovu. Ve většině případů jsou vzácné, počet nezpracovatelných zpráv, takže dávkování je preferovaný způsob, jak zvýšit výkon systému, zejména v případě, že máte ostatní správci prostředků, které jsou součástí transakce. Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md).  
+- Transakční dávkování. Provedené dávkování zajistí, že počet zpráv najdete v rámci jedné transakce. Tím se optimalizují potvrzení transakcí, zvýšit celkový výkon. Náklady na dávkování je, že pokud dojde k selhání jedné zprávy v rámci služby batch, pak celý batch se vrátí zpět a zprávy musí být zpracované jeden po druhém, dokud je bezpečné batch znovu. Ve většině případů jsou vzácné, počet nezpracovatelných zpráv, takže dávkování je preferovaný způsob, jak zvýšit výkon systému, zejména v případě, že máte ostatní správci prostředků, které jsou součástí transakce. Další informace najdete v tématu [dávkování zpráv v transakci](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md).  
   
--   Souběžnost. Souběžnost zvyšuje propustnost, ale souběžnost ovlivňuje také kolize ke sdíleným prostředkům. Další informace najdete v tématu [souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md).  
+- Souběžnost. Souběžnost zvyšuje propustnost, ale souběžnost ovlivňuje také kolize ke sdíleným prostředkům. Další informace najdete v tématu [souběžnosti](../../../../docs/framework/wcf/samples/concurrency.md).  
   
--   Omezení šířky pásma. Pro zajištění optimálního výkonu omezte počet zpráv v dispečeru kanálu. Příklad toho, jak to provést, najdete v části [omezování](../../../../docs/framework/wcf/samples/throttling.md).  
+- Omezení šířky pásma. Pro zajištění optimálního výkonu omezte počet zpráv v dispečeru kanálu. Příklad toho, jak to provést, najdete v části [omezování](../../../../docs/framework/wcf/samples/throttling.md).  
   
  Při použití dávkování, mějte na paměti, že omezování a souběžnosti přeložit do souběžných listů.  
   
@@ -75,11 +75,11 @@ Toto téma obsahuje doporučené postupy pro komunikaci ve frontě ve Windows Co
   
  Při použití `MsmqIntegrationBinding`, mějte na paměti z následujících akcí:  
   
--   Tělo zprávy WCF není stejný jako text zprávy služby MSMQ. Při odesílání zprávy WCF pomocí vazbu s frontou, text zprávy WCF je umístěn uvnitř zprávy služby MSMQ. Infrastruktura služby MSMQ je oblivious tyto dodatečné informace, ji uvidí jen zprávy služby MSMQ.  
+- Tělo zprávy WCF není stejný jako text zprávy služby MSMQ. Při odesílání zprávy WCF pomocí vazbu s frontou, text zprávy WCF je umístěn uvnitř zprávy služby MSMQ. Infrastruktura služby MSMQ je oblivious tyto dodatečné informace, ji uvidí jen zprávy služby MSMQ.  
   
--   `MsmqIntegrationBinding` podporuje typy oblíbených serializace. Na základě serializace typu, typ těla obecná zpráva <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, parametry jiného typu. Například <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> vyžaduje `MsmqMessage\<byte[]>` a <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> vyžaduje `MsmqMessage<Stream>`.  
+- `MsmqIntegrationBinding` podporuje typy oblíbených serializace. Na základě serializace typu, typ těla obecná zpráva <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, parametry jiného typu. Například <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.ByteArray> vyžaduje `MsmqMessage\<byte[]>` a <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat.Stream> vyžaduje `MsmqMessage<Stream>`.  
   
--   K serializaci kódu XML, můžete zadat pomocí známého typu `KnownTypes` atribut na [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element, který se pak použije k určení, jak zrušit serializaci zpráv XML.  
+- K serializaci kódu XML, můžete zadat pomocí známého typu `KnownTypes` atribut na [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element, který se pak použije k určení, jak zrušit serializaci zpráv XML.  
   
 ## <a name="see-also"></a>Viz také:
 

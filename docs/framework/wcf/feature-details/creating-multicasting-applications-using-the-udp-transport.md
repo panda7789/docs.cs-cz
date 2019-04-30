@@ -3,11 +3,11 @@ title: Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 ms.date: 03/30/2017
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
 ms.openlocfilehash: b65a277b6e76767d1e3bfdbebbac5051759986e0
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857191"
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 Vícesměrové vysílání aplikace odesílat zprávy malé velký počet příjemců ve stejnou dobu bez nutnosti vytvářet bod pro bod připojení. Zvýraznění takové aplikace je rychlost spolehlivost. Jinými slovy je důležitější zaslat včas dat, než se ujistěte se, že ve skutečnosti přijetí žádné konkrétní zprávu. WCF teď podporuje vytváření aplikací s použitím vícesměrového vysílání <xref:System.ServiceModel.UdpBinding>. Tento přenos je užitečné v situacích, kdy služba potřebuje odeslat malých zpráv na počet klientů najednou. Aplikace akciích je příkladem takové služby.  

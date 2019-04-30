@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 05116d80fcd6b75f366a2542ad2eadd5f434991c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61665350"
 ---
 ### <a name="improved-wcf-chain-trust-certificate-validation-for-nettcp-certificate-authentication"></a>Vylepšené WCF řetězu vztahu důvěryhodnosti ověření certifikátu pro ověřování pomocí certifikátu Net.Tcp
 

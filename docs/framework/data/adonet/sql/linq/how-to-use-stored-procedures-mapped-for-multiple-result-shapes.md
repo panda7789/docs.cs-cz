@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c2b84dfe-7fec-489a-92de-45215cec4518
 ms.openlocfilehash: 406e44a0ee3b086ceb47b25a80c4fd0ff5a92607
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61902652"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Postupy: Použití uložených procedur mapovaných pro vícečetné tvary výsledků
 Při vícečetné tvary výsledků můžete vrátit uložené procedury, návratový typ nelze silně typováno do obrazec jeden projekce. I když [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vytvářet všechny typy možných projekce, se nemůže vědět, pořadí, ve kterém bude vrácen.  

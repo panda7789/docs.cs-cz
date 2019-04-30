@@ -12,11 +12,11 @@ helpviewer_keywords:
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
 ms.openlocfilehash: 33184d9be275f5e777ffd79c6dd4e3182d865de7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864676"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>Postupy: Výpočet numerických hodnot (Visual Basic)
 Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *číselného výrazu* je výraz, který obsahuje literály a konstanty a proměnné představující číselné hodnoty a operátory, které fungují u těchto hodnot.  
@@ -25,7 +25,7 @@ Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *čís
   
 #### <a name="to-calculate-a-numeric-value"></a>Pro výpočet číselné hodnoty  
   
--   Zkombinujte jeden nebo více číselné literály, konstanty a proměnné do číselného výrazu. Následující příklad ukazuje některé platné numerických výrazů.  
+- Zkombinujte jeden nebo více číselné literály, konstanty a proměnné do číselného výrazu. Následující příklad ukazuje některé platné numerických výrazů.  
   
      `93.217`  
   
@@ -41,7 +41,7 @@ Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *čís
   
 #### <a name="to-store-a-numeric-value"></a>K uložení číselné hodnoty  
   
--   Přiřazovací příkaz můžete použít k přiřazení hodnoty reprezentována číselné proměnné, jak ukazuje následující příklad.  
+- Přiřazovací příkaz můžete použít k přiřazení hodnoty reprezentována číselné proměnné, jak ukazuje následující příklad.  
   
      [!code-vb[VbVbalrOperators#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#82)]  
   
@@ -54,7 +54,7 @@ Můžete vypočítat číselných hodnot pomocí numerických výrazů. A *čís
   
 #### <a name="to-override-normal-operator-precedence"></a>Chcete-li přepsat operátor normální priorita  
   
--   Použití závorek k uzavření operace, které chcete provést jako první. Následující příklad ukazuje dva různé výsledky se stejnými operandy a operátory.  
+- Použití závorek k uzavření operace, které chcete provést jako první. Následující příklad ukazuje dva různé výsledky se stejnými operandy a operátory.  
   
      [!code-vb[VbVbalrOperators#83](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#83)]  
   

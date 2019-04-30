@@ -18,11 +18,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f0d9d4336b79b60e69f980b6d5931e2994732f30
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792688"
 ---
 # <a name="iclriocompletionmanageroncomplete-method"></a>ICLRIoCompletionManager::OnComplete – metoda
 Upozorní common language runtime (CLR) stavu požadavku vstupně-výstupní operace, která byla vytvořená pomocí volání [ihostiocompletionmanager::Bind –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) metody.  
@@ -41,11 +41,11 @@ HRESULT OnComplete (
  `dwErrorCode`  
  [in] Hodnota HRESULT, která označuje stav operace připojení.  
   
--   S_OK označuje, že operace byla úspěšně dokončena.  
+- S_OK označuje, že operace byla úspěšně dokončena.  
   
--   HOST_E_INTERRUPTED označuje, že volání ukončeno před dokončením.  
+- HOST_E_INTERRUPTED označuje, že volání ukončeno před dokončením.  
   
--   E_FAIL označuje, že došlo k neznámé, Neopravitelná, katastrofických selhání.  
+- E_FAIL označuje, že došlo k neznámé, Neopravitelná, katastrofických selhání.  
   
  `NumberOfBytesTransferred`  
  [in] Počet bajtů přenesených během zpracování požadavku vstupně-výstupních operací.  

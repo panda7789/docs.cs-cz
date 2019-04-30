@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4fb5c2b1-3dad-4eca-9c7f-3efb51899813
 ms.openlocfilehash: f3e281ff8a9de9be41dd6ad9d01ab52798d8e89e
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57679356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61794547"
 ---
 # <a name="faultpropagationquery"></a>\<faultPropagationQuery>
 

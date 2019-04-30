@@ -12,20 +12,20 @@ helpviewer_keywords:
 - text [Windows Forms], controls for input
 ms.assetid: df60565e-5447-4110-92a6-be1f6ff5faa3
 ms.openlocfilehash: ff9a0edb44a95f5853edf711e0a1559e3b2e3b15
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342447"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792142"
 ---
 # <a name="walkthrough-working-with-the-maskedtextbox-control"></a>Návod: Práce s ovládacím prvkem MaskedTextBox
 Úlohy v tomto návodu zahrnují:  
   
--   Inicializuje <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku  
+- Inicializuje <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku  
   
--   Použití <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> obslužnou rutinu události pro uživatele o upozornění, když znak neodpovídá masce  
+- Použití <xref:System.Windows.Forms.MaskedTextBox.MaskInputRejected> obslužnou rutinu události pro uživatele o upozornění, když znak neodpovídá masce  
   
--   Přiřazení typu k <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost a použití <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> obslužnou rutinu události pro uživatele o upozornění, když se pokoušíte potvrzení hodnota není platná pro typ  
+- Přiřazení typu k <xref:System.Windows.Forms.MaskedTextBox.ValidatingType%2A> vlastnost a použití <xref:System.Windows.Forms.MaskedTextBox.TypeValidationCompleted> obslužnou rutinu události pro uživatele o upozornění, když se pokoušíte potvrzení hodnota není platná pro typ  
   
 ## <a name="creating-the-project-and-adding-a-control"></a>Vytvoření projektu a přidání ovládacího prvku  
   

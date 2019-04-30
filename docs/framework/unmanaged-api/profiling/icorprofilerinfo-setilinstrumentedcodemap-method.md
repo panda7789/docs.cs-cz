@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3a574a04e5746a8b2c9c32160e82aa503b392729
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59154190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792636"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 Nastaví mapu kódu pro zadanou funkci pomocí zadané položky mapování Microsoft intermediate language (MSIL).  
@@ -58,11 +58,11 @@ HRESULT SetILInstrumentedCodeMap(
   
  Ladicí program bude předpokládat, že každý staré posun odkazuje na jazyka MSIL posun v rámci původní verzí bez úprav kódu MSIL a, že každý nový posun odkazuje na MSIL posun v rámci nové instrumentované kódu. Na mapě by měly být seřazeny vzestupně v pořadí. Pro krokování fungovalo správně, postupujte podle následujících pokynů:  
   
--   Nemění pořadí instrumentované kód jazyka MSIL.  
+- Nemění pořadí instrumentované kód jazyka MSIL.  
   
--   Neodebírejte původní kód jazyka MSIL.  
+- Neodebírejte původní kód jazyka MSIL.  
   
--   Zahrnete položky pro všechny body posloupnosti ze souboru databáze (PDB) programu na mapě. Mapa není interpolovat chybějící položky. Ano uvedené následující mapování:  
+- Zahrnete položky pro všechny body posloupnosti ze souboru databáze (PDB) programu na mapě. Mapa není interpolovat chybějící položky. Ano uvedené následující mapování:  
   
      (0 staré, 0 nové)  
   
@@ -70,17 +70,17 @@ HRESULT SetILInstrumentedCodeMap(
   
      (9 staré, 20 nové)  
   
-    -   Staré posun 0, 1, 2, 3 nebo 4 se namapují na nové posun 0.  
+    - Staré posun 0, 1, 2, 3 nebo 4 se namapují na nové posun 0.  
   
-    -   Posun staré 5, 6, 7 nebo 8 se namapují na nové posun 10.  
+    - Posun staré 5, 6, 7 nebo 8 se namapují na nové posun 10.  
   
-    -   Staré posun 9 nebo vyšší se namapují na nové posun 20.  
+    - Staré posun 9 nebo vyšší se namapují na nové posun 20.  
   
-    -   Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 a 9 se namapují na staré posun 0.  
+    - Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 a 9 se namapují na staré posun 0.  
   
-    -   Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 se namapují na staré posun 5.  
+    - Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 se namapují na staré posun 5.  
   
-    -   Nové posun 20 nebo vyšší se namapují na staré posun 9.  
+    - Nové posun 20 nebo vyšší se namapují na staré posun 9.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

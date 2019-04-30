@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
 author: BrucePerlerMS
 ms.openlocfilehash: e0ac3b663b2a65e00524fe0fba7997125721487c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59297484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791713"
 ---
 # <a name="federationconfiguration"></a>\<federationConfiguration>
 Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM), používáte federované ověřování pomocí protokolu WS-Federation. Konfiguruje <xref:System.Security.Claims.ClaimsAuthorizationManager> při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity.  
@@ -52,9 +52,9 @@ Konfiguruje <xref:System.IdentityModel.Services.WSFederationAuthenticationModule
 ## <a name="remarks"></a>Poznámky  
  \<FederationConfiguration > element obsahuje nastavení na dvou různých scénářů:  
   
--   Při použití WS-Federation passive webové aplikace, element obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM). Odkazy taky konfigurace identity, který se má použít ke konfiguraci obslužné rutiny tokenů zabezpečení a certifikátů a komponenty, jako jsou Správce autorizace deklarací identity a Správce ověřování deklarací identity.  
+- Při použití WS-Federation passive webové aplikace, element obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM). Odkazy taky konfigurace identity, který se má použít ke konfiguraci obslužné rutiny tokenů zabezpečení a certifikátů a komponenty, jako jsou Správce autorizace deklarací identity a Správce ověřování deklarací identity.  
   
--   Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity ve vašem kódu, odkazuje na element konfigurace identity, který nakonfiguruje Správce autorizací deklarace identity a zásadu, která se využívá k Prognózování autorizace rozhodnutí. To platí dokonce i ve scénářích, které nejsou pasivní Web scénářích. například aplikace Windows Communication Foundation (WCF) nebo aplikaci, která není založena na Web. Pokud aplikace není pasivní webové aplikace [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) – element (a jeho podřízených elementů zásad, pokud jsou k dispozici) z konfigurace identity odkazuje `<federationConfiguration>` – element platí pouze nastavení. Případné další se ignorují.  
+- Při použití <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> nebo <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> třídy k poskytování řízení přístupu na základě deklarací identity ve vašem kódu, odkazuje na element konfigurace identity, který nakonfiguruje Správce autorizací deklarace identity a zásadu, která se využívá k Prognózování autorizace rozhodnutí. To platí dokonce i ve scénářích, které nejsou pasivní Web scénářích. například aplikace Windows Communication Foundation (WCF) nebo aplikaci, která není založena na Web. Pokud aplikace není pasivní webové aplikace [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) – element (a jeho podřízených elementů zásad, pokud jsou k dispozici) z konfigurace identity odkazuje `<federationConfiguration>` – element platí pouze nastavení. Případné další se ignorují.  
   
  Modul runtime bez ohledu na scénář, načte výchozí konfigurace federace. Chování je definovaná následujícím způsobem:  
   

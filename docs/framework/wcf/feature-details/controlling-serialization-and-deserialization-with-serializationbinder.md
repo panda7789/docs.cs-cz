@@ -3,11 +3,11 @@ title: Řízení serializace a deserializace pomocí třídy SerializationBinder
 ms.date: 03/30/2017
 ms.assetid: ba8dcecf-acc7-467c-939d-021bbac797d4
 ms.openlocfilehash: cb2476b55a965e326e492c3c0b77f0be65b2b290
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59198527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61857256"
 ---
 # <a name="controlling-serialization-and-deserialization-with-serializationbinder"></a>Řízení serializace a deserializace pomocí třídy SerializationBinder
 Během serializace formátovací modul přenáší informace potřebné k vytvoření instance objektu správný typ a verze. Tyto informace obecně zahrnuje úplný název typu a název objektu sestavení. Ve výchozím nastavení používá deserializace tyto informace k vytvoření instance objektu stejné. Někteří uživatelé muset které třídu k serializaci a deserializaci buď protože původní třídy nemusí existovat v počítači, provádí se serializace ovládacího prvku, původní třídy přesunula mezi sestaveními, nebo na jinou verzi třídy je vyžadován na Server a klienta. Další informace najdete v tématu [použití vazače serializace](../../../../docs/framework/wcf/samples/usage-of-serialization-binder.md).  

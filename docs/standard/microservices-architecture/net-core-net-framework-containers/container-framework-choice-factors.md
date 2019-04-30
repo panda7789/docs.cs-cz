@@ -5,13 +5,13 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
 ms.openlocfilehash: 8044e3064ac372750c174d8b47c3f7a63d6bbd0b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61864088"
 ---
-# <a name="decision-table-net-frameworks-to-use-for-docker"></a>Tabulka rozhodnutí: rozhraní .NET Framework pro Docker
+# <a name="decision-table-net-frameworks-to-use-for-docker"></a>Tabulka rozhodnutí: Rozhraní .NET Framework, která se mají použít pro Docker
 
 Následující rozhodnutí tabulka shrnuje, jestli chcete používat rozhraní .NET Framework nebo .NET Core. Nezapomeňte, že pro kontejnery Linuxu, budete potřebovat hostitele Dockeru založených na Linuxu (virtuální počítače nebo servery) a že pro kontejnery Windows je třeba Windows Server na základě hostitelů Docker (virtuální počítače nebo servery).
 
@@ -23,7 +23,7 @@ Následující rozhodnutí tabulka shrnuje, jestli chcete používat rozhraní .
 <tr class="header">
 <th><strong>Architektura / typ aplikace</strong></th>
 <th><strong>Kontejnery Linuxu</strong></th>
-<th><strong>Kontejnery Windows</strong></th>
+<th><strong>Windows Containers</strong></th>
 </tr>
 </thead>
 <tbody>

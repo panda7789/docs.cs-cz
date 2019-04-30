@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
 ms.openlocfilehash: d05e071b97c9a1f3043949a6619a187dd418f9b7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59120975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793676"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implementace implicitní transakce s využitím oboru transakcí
 <xref:System.Transactions.TransactionScope> Třída poskytuje jednoduchý způsob, jak označit bloku kódu jako účasti na transakci, aniž by bylo nutné k interakci se vlastní transakce. Obor transakce můžete vybrat a spravovat okolí transakce automaticky. Z důvodu jeho snadno použitelných a efektivitu, je doporučeno používat <xref:System.Transactions.TransactionScope> třídy při vývoji aplikace transakce.  
@@ -71,11 +71,11 @@ void SomeMethod()
   
  Objekt <xref:System.Transactions.TransactionScope> objekt má tři možnosti:  
   
--   Připojte se k okolí transakce nebo vytvořit novou, pokud neexistuje.  
+- Připojte se k okolí transakce nebo vytvořit novou, pokud neexistuje.  
   
--   Být nových kořenový obor, to znamená, spusťte novou transakci a mají být nové okolí transakce v rámci vlastní rozsah transakce.  
+- Být nových kořenový obor, to znamená, spusťte novou transakci a mají být nové okolí transakce v rámci vlastní rozsah transakce.  
   
--   Neúčastní transakcí vůbec. V důsledku není žádná okolí transakce.  
+- Neúčastní transakcí vůbec. V důsledku není žádná okolí transakce.  
   
  Pokud dojde k vytvoření oboru s <xref:System.Transactions.TransactionScopeOption.Required>a okolí transakce je přítomen, oboru spojí dané transakce. Je-li na druhé straně není žádná okolí transakce, pak oboru vytvoří novou transakci a Staňte se kořenového oboru. Jedná se o výchozí hodnotu. Při <xref:System.Transactions.TransactionScopeOption.Required> se používá, kód v rámci oboru není nutné, aby chovat odlišně, zda je kořenový adresář nebo právě připojuje okolí transakce. Měla pracovat stejně jako v obou případech.  
   

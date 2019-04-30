@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
 ms.openlocfilehash: 4415608bcfca63b43b3d9ebf17ce622ccd418775
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58820840"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61921001"
 ---
 # <a name="membername-is-ambiguous-across-the-inherited-interfaces-interfacename1-and-interfacename2"></a>"\<membername >' je dvojznačný ve zděděných rozhraních\<interfacename1 >' a '\<interfacename2 >"
 Dva nebo více členů se stejným názvem rozhraní dědí z více rozhraní.  
@@ -21,7 +21,7 @@ Dva nebo více členů se stejným názvem rozhraní dědí z více rozhraní.
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Přetypujte hodnotu na základní rozhraní, které chcete použít; Příklad:  
+- Přetypujte hodnotu na základní rozhraní, které chcete použít; Příklad:  
   
     ```  
     Interface Left  

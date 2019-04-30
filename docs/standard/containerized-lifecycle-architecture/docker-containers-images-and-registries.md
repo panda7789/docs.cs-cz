@@ -1,17 +1,17 @@
 ---
-title: Kontejnery dockeru, obrázky a registry
+title: Registry, image a kontejnery Dockeru
 description: Další klíčovou roli, že registry přehrát celkové Docker způsobem nasazení aplikace.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 02/15/2019
 ms.openlocfilehash: e69490734a03cf58bf8534bc9e31110a11d44c58
-ms.sourcegitcommit: 07c4368273b446555cb2c85397ea266b39d5fe50
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56583313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61795325"
 ---
-# <a name="docker-containers-images-and-registries"></a>Kontejnery dockeru, obrázky a registry
+# <a name="docker-containers-images-and-registries"></a>Registry, image a kontejnery Dockeru
 
 Pokud používáte Docker, vytvoříte aplikace nebo služby a balíček a jeho závislosti do image kontejneru. Bitovou je statických reprezentace aplikace nebo služby a jeho konfiguraci a závislostech.
 

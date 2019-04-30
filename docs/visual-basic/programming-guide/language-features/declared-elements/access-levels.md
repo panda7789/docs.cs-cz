@@ -15,11 +15,11 @@ helpviewer_keywords:
 - declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
 ms.openlocfilehash: d8f2f16d2fb15f2e840f13f177d3fea83fda315e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58843092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61828097"
 ---
 # <a name="access-levels-in-visual-basic"></a>Úrovně přístupu v jazyce Visual Basic
 *Úroveň přístupu* deklarované elementu je rozsah schopnost k němu přístup, to znamená, jaký kód má oprávnění k jeho čtení nebo zápis do něj. To je určen pouze tak, jak deklarovat samotného elementu, ale také podle úrovně přístupu k elementu kontejneru. Kód, který nemá přístup k elementu s obsahem nelze použít žádnou z jeho elementů obsažených, včetně těch deklarován jako `Public`. Například `Public` v proměnné `Private` struktury lze přistupovat z uvnitř třídy, která obsahuje strukturu, ale ne z vně třídy.  

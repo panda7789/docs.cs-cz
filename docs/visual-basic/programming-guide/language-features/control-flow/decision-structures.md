@@ -10,11 +10,11 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
 ms.openlocfilehash: 4a76b2565c343e69ac3c11441035a7682a8f08ec
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318933"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61906998"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
 Visual Basic umožňuje podmínky testu a provádět různé operace v závislosti na výsledcích testu. Můžete otestovat na hodnotu true nebo false pro různé hodnoty výrazu, nebo pro různé výjimky, které jsou generovány, pokud provedete sérii tvrzení, podmínku.  
@@ -26,13 +26,13 @@ Visual Basic umožňuje podmínky testu a provádět různé operace v závislos
 ## <a name="ifthenelse-construction"></a>If...Then...Else Construction  
  `If...Then...Else` konstrukce umožňují test pro jednu nebo více podmínek a spuštění jednoho nebo více příkazů v závislosti na každé podmínky. Můžete otestovat podmínek a akcí následujícími způsoby:  
   
--   Spustit jeden nebo více příkazů, pokud je podmínka `True`  
+- Spustit jeden nebo více příkazů, pokud je podmínka `True`  
   
--   Spustit jeden nebo více příkazů, pokud je podmínka `False`  
+- Spustit jeden nebo více příkazů, pokud je podmínka `False`  
   
--   Spustit některé příkazy, pokud je podmínka `True` a dalších jde `False`  
+- Spustit některé příkazy, pokud je podmínka `True` a dalších jde `False`  
   
--   Vyzkoušejte další podmínky, pokud je předběžnou podmínku `False`  
+- Vyzkoušejte další podmínky, pokud je předběžnou podmínku `False`  
   
  Je řídicí struktura, která nabízí tyto možnosti [Pokud... Potom... Else – příkaz](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). Jednořádkový verze můžete použít, pokud máte pouze jeden test a jeden příkaz ke spuštění. Pokud máte složitější sadu podmínek a akcí, můžete použít verzi více řádků.  
   

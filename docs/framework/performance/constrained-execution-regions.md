@@ -8,11 +8,11 @@ ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d4c1d07e2469a36c4b8e1ef7b8d90a80a3530ae3
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59097171"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61787969"
 ---
 # <a name="constrained-execution-regions"></a>Oblasti omezeného provádění
 Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehlivých spravovaného kódu. CER vymezuje oblast, ve kterém je omezená common language runtime (CLR) z vyvolávání výjimek out-of-band, které by jinak znemožňovaly kód v oblasti spuštění v celém rozsahu. V rámci oblasti je omezen uživatelský kód z provádění kódu, který způsobí vyvolání výjimky out-of-band. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Metoda musí bezprostředně předcházet `try` bloku a značky `catch`, `finally`, a `fault` bloky jako oblasti omezeného provádění. Jakmile označen jako omezené oblasti kódu musí volat pouze jiný kód s kontrakty spolehlivosti a kód by neměl přidělit nebo volání virtuální metody neupravený nebo nespolehlivé Pokud kód je připravena ke zpracování chyb. Zpoždění vlákna CLR zruší pro kód, který je spouštěn v CER.  
@@ -24,22 +24,22 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
   
  Vývojář se vyžaduje k označení, že je kód oblasti CER:  
   
--   Nejvyšší úrovni oblasti CER a metody v grafu úplné volání, které mají <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> atribut jsou předem připravené. <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> Lze pouze stav záruky <xref:System.Runtime.ConstrainedExecution.Cer.Success> nebo <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>.  
+- Nejvyšší úrovni oblasti CER a metody v grafu úplné volání, které mají <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> atribut jsou předem připravené. <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> Lze pouze stav záruky <xref:System.Runtime.ConstrainedExecution.Cer.Success> nebo <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>.  
   
--   Předběžná příprava nelze provést pro volání, která nemůže staticky určena, jako je například virtuální odeslání. Použití <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metoda v těchto případech. Při použití <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A> metody <xref:System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute> atribut by měl použít pro vyčištění kódu.  
+- Předběžná příprava nelze provést pro volání, která nemůže staticky určena, jako je například virtuální odeslání. Použití <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> metoda v těchto případech. Při použití <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A> metody <xref:System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute> atribut by měl použít pro vyčištění kódu.  
   
 ## <a name="constraints"></a>Omezení  
  Uživatelé jsou omezeny v typu kódu, který můžete napsat v CER. Kód nemůže způsobit výjimku out-of-band, jako například může být výsledkem následující operace:  
   
--   Explicitní přidělování.  
+- Explicitní přidělování.  
   
--   Zabalení.  
+- Zabalení.  
   
--   Získání zámku.  
+- Získání zámku.  
   
--   Volání metod neupravený virtuálně.  
+- Volání metod neupravený virtuálně.  
   
--   Volání metody s kontraktem slabé nebo neexistující spolehlivost.  
+- Volání metody s kontraktem slabé nebo neexistující spolehlivost.  
   
  V rozhraní .NET Framework verze 2.0 tato omezení jsou pokyny. Diagnostické nástroje jsou k dispozici prostřednictvím nástrojů pro analýzu kódu.  
   
@@ -49,30 +49,30 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
 ### <a name="reliability-guarantees"></a>Záruky spolehlivosti  
  Spolehlivost záruky, reprezentovaný <xref:System.Runtime.ConstrainedExecution.Cer> hodnot výčtu, označují úroveň spolehlivosti dané metody:  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>. Za výjimečných podmínek metoda může selhat. V tomto případě metodu oznamuje ho zpátky k volání metody, zda bylo úspěšné nebo neúspěšné. Metoda musí být součástí CER zajistit, že může hlásit návratovou hodnotu.  
+- <xref:System.Runtime.ConstrainedExecution.Cer.MayFail>. Za výjimečných podmínek metoda může selhat. V tomto případě metodu oznamuje ho zpátky k volání metody, zda bylo úspěšné nebo neúspěšné. Metoda musí být součástí CER zajistit, že může hlásit návratovou hodnotu.  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer.None>. Metoda, typ nebo sestavení nemá žádný koncept CER a je s největší pravděpodobností není bezpečné volat v rámci CER bez značné omezení rizik poškození stavu. To nevyužívá záruk CER. Z toho vyplývá následující:  
+- <xref:System.Runtime.ConstrainedExecution.Cer.None>. Metoda, typ nebo sestavení nemá žádný koncept CER a je s největší pravděpodobností není bezpečné volat v rámci CER bez značné omezení rizik poškození stavu. To nevyužívá záruk CER. Z toho vyplývá následující:  
   
-    1.  Za výjimečných podmínek se nemusí podařit metodu.  
+    1. Za výjimečných podmínek se nemusí podařit metodu.  
   
-    2.  Metoda může nebo nemusí hlásit, že se nezdařilo.  
+    2. Metoda může nebo nemusí hlásit, že se nezdařilo.  
   
-    3.  Metoda není zapsána do použít CER, nejpravděpodobnější situací.  
+    3. Metoda není zapsána do použít CER, nejpravděpodobnější situací.  
   
-    4.  Pokud metoda, typ nebo sestavení není identifikován explicitně proběhla úspěšně, je implicitně identifikován jako <xref:System.Runtime.ConstrainedExecution.Cer.None>.  
+    4. Pokud metoda, typ nebo sestavení není identifikován explicitně proběhla úspěšně, je implicitně identifikován jako <xref:System.Runtime.ConstrainedExecution.Cer.None>.  
   
--   <xref:System.Runtime.ConstrainedExecution.Cer.Success>. Za výjimečných podmínek metoda je zaručeno úspěšné. K dosažení této úrovně spolehlivosti by měla vždy vytvořit CER kolem metodu, která je volána, i když je volána z v rámci oblasti mimo CER. Metoda je úspěšná, pokud se provádí co se má, i když lze zobrazit subjektivně rozlišitelná úspěch. Například počet s označením `ReliabilityContractAttribute(Cer.Success)` znamená, že při spuštění v části CER, vždy vrátí počet prvků v <xref:System.Collections.ArrayList> a nikdy ho můžete nechat interní pole v neurčeném stavu.  Ale <xref:System.Threading.Interlocked.CompareExchange%2A> metoda je označena jako úspěch, s vědomím, že úspěch může to znamenat hodnotu nelze nahradit novou hodnotu z důvodu konfliktu časování.  Klíčovým bodem tedy je, že metoda chová způsobem, jakým jsou uvedené chování a CER kód nemusí k zapsání očekávat jakékoli neobvyklé chování rámec toho, jaký kód správný, ale nespolehlivé vypadat nějak takto.  
+- <xref:System.Runtime.ConstrainedExecution.Cer.Success>. Za výjimečných podmínek metoda je zaručeno úspěšné. K dosažení této úrovně spolehlivosti by měla vždy vytvořit CER kolem metodu, která je volána, i když je volána z v rámci oblasti mimo CER. Metoda je úspěšná, pokud se provádí co se má, i když lze zobrazit subjektivně rozlišitelná úspěch. Například počet s označením `ReliabilityContractAttribute(Cer.Success)` znamená, že při spuštění v části CER, vždy vrátí počet prvků v <xref:System.Collections.ArrayList> a nikdy ho můžete nechat interní pole v neurčeném stavu.  Ale <xref:System.Threading.Interlocked.CompareExchange%2A> metoda je označena jako úspěch, s vědomím, že úspěch může to znamenat hodnotu nelze nahradit novou hodnotu z důvodu konfliktu časování.  Klíčovým bodem tedy je, že metoda chová způsobem, jakým jsou uvedené chování a CER kód nemusí k zapsání očekávat jakékoli neobvyklé chování rámec toho, jaký kód správný, ale nespolehlivé vypadat nějak takto.  
   
 ### <a name="corruption-levels"></a>Poškození úrovně  
  Poškození úrovně reprezentována <xref:System.Runtime.ConstrainedExecution.Consistency> hodnot výčtu, označuje, kolik stavu může být poškozený v daném prostředí:  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>. Modul CLR (CLR) za výjimečných podmínek, neposkytuje žádnou záruku týkající se stavu konzistence v aktuální doméně aplikace.  
+- <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain>. Modul CLR (CLR) za výjimečných podmínek, neposkytuje žádnou záruku týkající se stavu konzistence v aktuální doméně aplikace.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptInstance>. Za výjimečných podmínek metoda je zaručeno, omezit poškození stavu na aktuální instanci.  
+- <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptInstance>. Za výjimečných podmínek metoda je zaručeno, omezit poškození stavu na aktuální instanci.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>, Za výjimečných podmínek, modul CLR neposkytuje žádnou záruku týkající se stavu konzistence; To znamená, že podmínka může dojít k poškození procesu.  
+- <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>, Za výjimečných podmínek, modul CLR neposkytuje žádnou záruku týkající se stavu konzistence; To znamená, že podmínka může dojít k poškození procesu.  
   
--   <xref:System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState>. Za výjimečných podmínek metoda je zaručeno, že poškozený stav.  
+- <xref:System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState>. Za výjimečných podmínek metoda je zaručeno, že poškozený stav.  
   
 ## <a name="reliability-trycatchfinally"></a>Spolehlivost try/catch/finally  
  Spolehlivost `try/catch/finally` je mechanismus se stejnou úrovní předvídatelnost záruky jako nespravovaná verze zpracování výjimek. `catch/finally` Blok je CER. Metody v bloku vyžadují přípravou a musí být noninterruptible.  
@@ -92,27 +92,27 @@ Oblasti omezeného provádění (CER) je mechanismus pro vytváření spolehliv�
 ## <a name="code-not-permitted-in-cers"></a>Kód není povolena v CERs  
  V CERs nejsou povolené následující operace:  
   
--   Explicitní přidělení.  
+- Explicitní přidělení.  
   
--   Získání zámku.  
+- Získání zámku.  
   
--   Zabalení.  
+- Zabalení.  
   
--   Přístup multidimenzionálního pole.  
+- Přístup multidimenzionálního pole.  
   
--   Volání metody prostřednictvím reflexe.  
+- Volání metody prostřednictvím reflexe.  
   
--   <xref:System.Threading.Monitor.Enter%2A> nebo <xref:System.IO.FileStream.Lock%2A>.  
+- <xref:System.Threading.Monitor.Enter%2A> nebo <xref:System.IO.FileStream.Lock%2A>.  
   
--   Kontroly zabezpečení. Není provádět požadavky, pouze požadavky na propojení.  
+- Kontroly zabezpečení. Není provádět požadavky, pouze požadavky na propojení.  
   
--   <xref:System.Reflection.Emit.OpCodes.Isinst> a <xref:System.Reflection.Emit.OpCodes.Castclass> pro objekty COM a proxy servery  
+- <xref:System.Reflection.Emit.OpCodes.Isinst> a <xref:System.Reflection.Emit.OpCodes.Castclass> pro objekty COM a proxy servery  
   
--   Získání nebo nastavení pole na transparentní proxy server.  
+- Získání nebo nastavení pole na transparentní proxy server.  
   
--   Serializace.  
+- Serializace.  
   
--   Ukazatele na funkce a delegáti.  
+- Ukazatele na funkce a delegáti.  
   
 ## <a name="see-also"></a>Viz také:
 

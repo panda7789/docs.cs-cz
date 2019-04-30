@@ -13,11 +13,11 @@ ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fefd9f95a669c9c0384cefe41322c7a10a96a3b7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909035"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Typy kolekce Hashtable a Dictionary
 <xref:System.Collections.Hashtable?displayProperty=nameWithType> Třídy a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> implementovat obecné třídy <xref:System.Collections.IDictionary?displayProperty=nameWithType> rozhraní. <xref:System.Collections.Generic.Dictionary%602> Obecnou třídu také implementuje <xref:System.Collections.Generic.IDictionary%602> obecného rozhraní. Každý prvek v těchto kolekcích tedy pár klíč hodnota.  

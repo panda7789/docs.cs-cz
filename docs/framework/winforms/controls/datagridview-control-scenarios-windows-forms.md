@@ -7,11 +7,11 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], scenarios
 ms.assetid: 09a5fd05-3447-47ec-a4ec-6082a2b7f0dd
 ms.openlocfilehash: 52c448f21be056e6166334785943356039baf3ad
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59175289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61909297"
 ---
 # <a name="datagridview-control-scenarios-windows-forms"></a>Scénáře ovládacího prvku DataGridView (Windows Forms)
 S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze zobrazit tabulková data z různých datových zdrojů. Pro jednoduché použití, můžete ručně naplnit <xref:System.Windows.Forms.DataGridView> a manipulaci s daty přímo prostřednictvím ovládacího prvku. Obvykle, ale bude ukládat data v externí zdroj dat a vazbu ovládacího prvku k němu prostřednictvím <xref:System.Windows.Forms.BindingSource> komponenty.  
@@ -23,24 +23,24 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze zobrazit tabu
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   V režim bez vazby vyplníte ovládací prvek ručně.  
+- V režim bez vazby vyplníte ovládací prvek ručně.  
   
--   Režim bez vazby je obzvláště vhodný pro malé množství dat jen pro čtení.  
+- Režim bez vazby je obzvláště vhodný pro malé množství dat jen pro čtení.  
   
--   Režim bez vazby je také vhodné pro tabulkovém nebo řídce naplněných tabulek.  
+- Režim bez vazby je také vhodné pro tabulkovém nebo řídce naplněných tabulek.  
   
 ## <a name="scenario-2-viewing-and-updating-data-stored-in-an-external-data-source"></a>Scénář 2: Zobrazení a aktualizace dat uložených v externí zdroj dat.  
  Můžete použít <xref:System.Windows.Forms.DataGridView> ovládací prvek jako uživatelské rozhraní (UI), přes které uživatelé můžou k datům v zdroj dat, například databázové tabulce nebo kolekci objektů firmy. Další informace najdete v tématu [jak: Vytvoření vazby dat k Windows Forms DataGridView – ovládací prvek](how-to-bind-data-to-the-windows-forms-datagridview-control.md).  
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   Vázané režim umožňuje připojení ke zdroji dat, automaticky generovat sloupce podle vlastnosti zdroje dat nebo sloupců databáze a automaticky vyplní ovládací prvek.  
+- Vázané režim umožňuje připojení ke zdroji dat, automaticky generovat sloupce podle vlastnosti zdroje dat nebo sloupců databáze a automaticky vyplní ovládací prvek.  
   
--   Vázané režim je vhodný pro náročné uživatelské interakce s daty. Data mohou být formátována pro zobrazení a formátu očekávaném zdrojem dat je možné získat uživatelská data. Zadávání dat formátování chyb a chyb omezení databáze lze zjistit tak, aby se uživatelům může být upozornění a chybné buňky je možné odstranit.  
+- Vázané režim je vhodný pro náročné uživatelské interakce s daty. Data mohou být formátována pro zobrazení a formátu očekávaném zdrojem dat je možné získat uživatelská data. Zadávání dat formátování chyb a chyb omezení databáze lze zjistit tak, aby se uživatelům může být upozornění a chybné buňky je možné odstranit.  
   
--   Další funkce, jako je například řazení sloupců, zamrzá a změna uspořádání chcete uživatelům umožnit prohlížení dat tak, jak nejlépe vyhovuje jejich pracovního postupu.  
+- Další funkce, jako je například řazení sloupců, zamrzá a změna uspořádání chcete uživatelům umožnit prohlížení dat tak, jak nejlépe vyhovuje jejich pracovního postupu.  
   
--   Podpora schránky umožňuje uživatelům ke kopírování dat z vaší aplikace do jiných aplikací.  
+- Podpora schránky umožňuje uživatelům ke kopírování dat z vaší aplikace do jiných aplikací.  
   
 ## <a name="scenario-3-advanced-data"></a>Scénář 3: Pokročilé dat  
  Pokud máte zvláštní požadavky, které standardní datový model vazby neřeší, můžete spravovat interakce mezi ovládacím prvkem a vaše data implementací *virtuální režim*. Implementace virtuálního režimu znamená, že implementace jeden nebo více obslužných rutin událostí, které umožní ovládací prvek žádost o informace o buňky jako informace je potřeba.  
@@ -51,40 +51,40 @@ S <xref:System.Windows.Forms.DataGridView> ovládacího prvku, lze zobrazit tabu
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   Virtuální režim je vhodný pro zobrazení velmi velké objemy dat, když je potřeba optimalizovat výkon.  
+- Virtuální režim je vhodný pro zobrazení velmi velké objemy dat, když je potřeba optimalizovat výkon.  
   
 ## <a name="scenario-4-automatically-resizing-rows-and-columns"></a>Scénář 4: Automatická změna velikosti řádků a sloupců  
  Když zobrazíte data, která se pravidelně aktualizují, můžete automaticky změnit velikost řádků a sloupců tak, aby byl veškerý obsah viditelný. <xref:System.Windows.Forms.DataGridView> Ovládacího prvku poskytuje několik možností, které vám umožní povolit nebo zakázat ruční změna velikosti, změna velikosti programově v určitých časech nebo změny velikosti automaticky pokaždé, když obsah změny. Další informace najdete v tématu [možnosti nastavení velikosti v ovládacím prvku Windows Forms DataGridView](sizing-options-in-the-windows-forms-datagridview-control.md).  
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   Ruční změna velikosti umožňuje uživatelům upravit buňku výšky a šířky.  
+- Ruční změna velikosti umožňuje uživatelům upravit buňku výšky a šířky.  
   
--   Automatická změna velikosti umožňuje spravovat velikost buněk tak, aby obsah buňky je nikdy oříznut.  
+- Automatická změna velikosti umožňuje spravovat velikost buněk tak, aby obsah buňky je nikdy oříznut.  
   
--   Programová změna velikosti umožňuje změnit velikost buněk v určitých časech, aby se zabránilo snížení výkonu v důsledku průběžné automatickou změnu velikosti.  
+- Programová změna velikosti umožňuje změnit velikost buněk v určitých časech, aby se zabránilo snížení výkonu v důsledku průběžné automatickou změnu velikosti.  
   
 ## <a name="scenario-5-simple-customization"></a>Scénář 5: Jednoduché přizpůsobení  
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nabízí mnoho způsobů, jak si můžete změnit jeho základního vzhledu a chování. Další informace najdete v tématu [styly buňky v ovládacím prvku Windows Forms DataGridView](cell-styles-in-the-windows-forms-datagridview-control.md).  
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   <xref:System.Windows.Forms.DataGridViewCellStyle> objekty umožňují poskytovat barvy, písma, formátování a umístění informace na různých úrovních a k jednotlivým prvkům ovládacího prvku.  
+- <xref:System.Windows.Forms.DataGridViewCellStyle> objekty umožňují poskytovat barvy, písma, formátování a umístění informace na různých úrovních a k jednotlivým prvkům ovládacího prvku.  
   
--   Styly buňky můžete na základě úrovní a sdílí několik elementů, takže můžete opakovaně používat kód.  
+- Styly buňky můžete na základě úrovní a sdílí několik elementů, takže můžete opakovaně používat kód.  
   
 ## <a name="scenario-6-advanced-customization"></a>Scénář 6: Upravit vlastní nastavení  
  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nabízí mnoho způsobů, jak můžete přizpůsobit její vzhled a chování.  
   
 ### <a name="scenario-key-points"></a>Klíčové body scénáře  
   
--   Můžete zadat vlastní kód vykreslení obsahu buňky. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md).  
+- Můžete zadat vlastní kód vykreslení obsahu buňky. Další informace najdete v tématu [jak: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md).  
   
--   Můžete zadat vlastní Malování řádek. To je užitečné, například k vytvoření řádky s obsahem, který zahrnuje několik sloupců. Další informace najdete v tématu [jak: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-rows-in-the-datagrid.md).  
+- Můžete zadat vlastní Malování řádek. To je užitečné, například k vytvoření řádky s obsahem, který zahrnuje několik sloupců. Další informace najdete v tématu [jak: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](customize-the-appearance-of-rows-in-the-datagrid.md).  
   
--   Můžete implementovat vlastní třídy buňky ve sloupci pro přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md).  
+- Můžete implementovat vlastní třídy buňky ve sloupci pro přizpůsobení vzhledu buněk. Další informace najdete v tématu [jak: Přizpůsobení buněk a sloupců v Windows Forms DataGridView rozšířením jejich chování a vzhledu](customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md).  
   
--   Můžete implementovat vlastní třídy buněk a sloupců do hostitelské ovládací prvky, kromě těch, které jsou poskytované typy integrované sloupců. Další informace najdete v tématu [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
+- Můžete implementovat vlastní třídy buněk a sloupců do hostitelské ovládací prvky, kromě těch, které jsou poskytované typy integrované sloupců. Další informace najdete v tématu [jak: Hostování ovládacích prvků ve Windows Forms DataGridView buňky](how-to-host-controls-in-windows-forms-datagridview-cells.md).  
   
 ## <a name="see-also"></a>Viz také:
 

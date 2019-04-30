@@ -18,11 +18,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], parameter lists
 ms.assetid: fbc7fb18-e3b2-48b6-b554-64c00ed09d2a
 ms.openlocfilehash: 6e8d1fa72c60c4fa3d2237ad24c2d1b4891a7bf2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58828235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791869"
 ---
 # <a name="procedure-overloading-visual-basic"></a>Procedura přetížení (Visual Basic)
 *Přetížení* postup znamená, že jeho definováním v více verzí pomocí stejného názvu, ale seznamy různých parametrů. Účelem přetížení je definovat několik úzce související verze procedury, aniž byste museli rozlišit podle názvu. Můžete to provést pomocí různých seznamu parametrů.  
@@ -30,39 +30,39 @@ ms.locfileid: "58828235"
 ## <a name="overloading-rules"></a>Přetížení pravidla  
  Když je přetížení procedury, platí následující pravidla:  
   
--   **Stejný název**. Všechny přetížené verze, musíte použít stejný název procedury.  
+- **Stejný název**. Všechny přetížené verze, musíte použít stejný název procedury.  
   
--   **Jiný podpis**. Všechny přetížené verze se musí lišit od jiných přetížené verze alespoň v jedné z těchto ohledech:  
+- **Jiný podpis**. Všechny přetížené verze se musí lišit od jiných přetížené verze alespoň v jedné z těchto ohledech:  
   
-    -   Počet parametrů  
+    - Počet parametrů  
   
-    -   Pořadí parametrů  
+    - Pořadí parametrů  
   
-    -   Datové typy parametrů  
+    - Datové typy parametrů  
   
-    -   Počet parametrů typu (pro obecný postup)  
+    - Počet parametrů typu (pro obecný postup)  
   
-    -   Návratový typ (pouze pro operátor převodu)  
+    - Návratový typ (pouze pro operátor převodu)  
   
      Spolu s názvem procedury se společně nazývají předchozí položky *podpis* procedury. Při volání přetížené procedury kompilátor používá ke kontrole, jestli volání správně odpovídá definici podpis.  
   
--   **Položky není součástí podpis**. Bez různé podpis nelze přetížení procedury. Konkrétně se nemůže přetížení procedury změnou pouze jeden nebo více z následujících položek:  
+- **Položky není součástí podpis**. Bez různé podpis nelze přetížení procedury. Konkrétně se nemůže přetížení procedury změnou pouze jeden nebo více z následujících položek:  
   
-    -   Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
+    - Postup modifikátor klíčová slova, jako například `Public`, `Shared`, a `Static`  
   
-    -   Názvy parametrů parametru nebo typ  
+    - Názvy parametrů parametru nebo typ  
   
-    -   Omezení parametru typu (pro obecný postup)  
+    - Omezení parametru typu (pro obecný postup)  
   
-    -   Klíčová slova modifikátor parametru, jako například `ByRef` a `Optional`  
+    - Klíčová slova modifikátor parametru, jako například `ByRef` a `Optional`  
   
-    -   Určuje, zda vrací hodnotu  
+    - Určuje, zda vrací hodnotu  
   
-    -   Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
+    - Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
   
      Položky v předchozím seznamu nejsou součást podpisu. I když nelze je použít k rozlišení mezi přetížené verze, můžete je lišit mezi přetížené verze, které jsou správně rozlišené pomocí jejich podpisy.  
   
--   **S pozdní vazbou argumenty**. Pokud máte v úmyslu pozdní vazbou objektové proměnné předat přetížené verze, je třeba deklarovat jako odpovídající parametr <xref:System.Object>.  
+- **S pozdní vazbou argumenty**. Pokud máte v úmyslu pozdní vazbou objektové proměnné předat přetížené verze, je třeba deklarovat jako odpovídající parametr <xref:System.Object>.  
   
 ## <a name="multiple-versions-of-a-procedure"></a>Více verzí procedury  
  Předpokládejme, že vytváříte `Sub` postup pro transakci proti zůstatek zákazníka a chtějí mít možnost odkazovat na zákazníka, název nebo číslo účtu. K tomuto účelu můžete definovat dva různé `Sub` postupy, jako v následujícím příkladu:  

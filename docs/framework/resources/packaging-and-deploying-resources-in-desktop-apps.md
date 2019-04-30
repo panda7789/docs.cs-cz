@@ -29,11 +29,11 @@ ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 19f1d3d1d94db885938a5da3f3b66c8e554205b5
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61792844"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Zabalení a nasazení prostředků v aplikacích .NET
 

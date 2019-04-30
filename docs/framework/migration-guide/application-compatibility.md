@@ -9,11 +9,11 @@ ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dcbcced47cfb2031e4a35a7437ec875a20354eed
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59176251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872050"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Kompatibilita aplikací v rozhraní .NET Framework
 
@@ -42,11 +42,11 @@ Diagnostika kompatibility .NET jsou s využitím Roslynu analyzátory, které po
 
 Všechny problémy obsahuje následující informace:
 
--   Popis co se změnilo z předchozí verze.
+- Popis co se změnilo z předchozí verze.
 
--   Změna ovlivní jak zákazníky a určuje, zda je možné zachovat kompatibilitu mezi verzemi žádné alternativní řešení.
+- Změna ovlivní jak zákazníky a určuje, zda je možné zachovat kompatibilitu mezi verzemi žádné alternativní řešení.
 
--   Posouzení jak důležité je změnu. Potíže s kompatibilitou aplikace jsou rozdělené následujícím způsobem:
+- Posouzení jak důležité je změnu. Potíže s kompatibilitou aplikace jsou rozdělené následujícím způsobem:
 
     |   |   |
     |---|---|
@@ -55,18 +55,18 @@ Všechny problémy obsahuje následující informace:
     |Okrajový případ|Změna, která ovlivňuje aplikace v rámci velmi specifický, běžné scénáře.|
     |Transparentní|K změně znatelný vliv na uživatele nebo vývojáře aplikace.|
 
--   Verze označuje, jakmile změny nejprve se zobrazí v rámci. Některé změny zavedené v konkrétní verzi a vrátit v novější verzi který je označen jako dobře.
+- Verze označuje, jakmile změny nejprve se zobrazí v rámci. Některé změny zavedené v konkrétní verzi a vrátit v novější verzi který je označen jako dobře.
 
--   Typ změny:
+- Typ změny:
 
     |   |   |
     |---|---|
     |Změna cílení|Změna ovlivní aplikace, které jsou rekompilovány cílit na novou verzi rozhraní .NET Framework.|
     |Modul runtime|Tato změna má vliv na existující aplikaci, která cílí na předchozí verzi rozhraní .NET Framework, ale funguje na novější verzi.|
 
--   Ovlivněné API, pokud existuje.
+- Ovlivněné API, pokud existuje.
 
--   ID dostupné diagnostiky
+- ID dostupné diagnostiky
 
 ## <a name="usage"></a>Použití
 Pokud chcete začít, vyberte typ kompatibility změny níže:

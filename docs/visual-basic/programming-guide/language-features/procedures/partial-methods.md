@@ -12,11 +12,11 @@ helpviewer_keywords:
 - inserting custom logic into code
 ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
 ms.openlocfilehash: 765a667f18340c53909c3ff1e9fcc5f2ffc0f9bc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58837465"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791934"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
 Částečné metody umožňují vývojářům k vložení vlastní logiky do kódu. Kód je obvykle součástí třídy generovaný návrhářem. Částečné metody jsou definovány v dílčí třídě vytvořený generátor kódu a běžně se používají k poskytování oznámení, něco se změnila. Umožňují vývojářům určit vlastní chování v reakci na změnu.  
@@ -33,11 +33,11 @@ End Sub
   
  Definice musí splňovat následující podmínky:  
   
--   Metoda musí být `Sub`, nikoli `Function`.  
+- Metoda musí být `Sub`, nikoli `Function`.  
   
--   Tělo metody musí být prázdná.  
+- Tělo metody musí být prázdná.  
   
--   Modifikátor přístupu musí být `Private`.  
+- Modifikátor přístupu musí být `Private`.  
   
 ## <a name="implementation"></a>Implementace  
  Implementace sestává především z vyplnění textu částečné metody. Implementace je obvykle v samostatné částečné třídy z definice a je vytvořená systémem pro vývojáře, kteří chtějí rozšířit generovaného kódu.  

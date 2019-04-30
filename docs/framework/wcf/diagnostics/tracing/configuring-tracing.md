@@ -5,11 +5,11 @@ helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
 ms.openlocfilehash: 8702091c185ba3d4956d3bd5d13ca191c12fce82
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59162878"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61912571"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování generoval trasování a úrovně trasování sady, trasování sady aktivit a šíření pro podporu korelace trasování začátku do konce a nastavit naslouchacích procesů trasování pro přístup k trasování.  
@@ -22,9 +22,9 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 ## <a name="enabling-tracing"></a>Povolení trasování  
  Windows Communication Foundation (WCF) následující výstupní data odesílá do pro diagnostické trasování:  
   
--   Trasování pro proces milníky pro všechny součásti aplikace, jako je volání operace kód výjimky, upozornění a dalších operací zpracování událostí.  
+- Trasování pro proces milníky pro všechny součásti aplikace, jako je volání operace kód výjimky, upozornění a dalších operací zpracování událostí.  
   
--   Události chyb Windows při trasování funkce nepracuje správně. Zobrazit [protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
+- Události chyb Windows při trasování funkce nepracuje správně. Zobrazit [protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
  Trasování WCF je postavený na <xref:System.Diagnostics>. Chcete-li použít trasování, byste měli definovat zdroje trasování v konfiguračním souboru nebo v kódu. Zdroj trasování WCF definuje pro každé sestavení WCF. `System.ServiceModel` Zdroj trasování je nejobecnější zdroj trasování WCF a zaznamenává milníky zpracování napříč celým zásobníkem komunikace WCF, z zadáním/opuštění přenosu k zadávání/opuštění uživatelského kódu. `System.ServiceModel.MessageLogging` Zdroj trasování zaznamenává všechny zprávy, které budou plout prostřednictvím systému.  
   
@@ -58,19 +58,19 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 ## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurace zdrojů trasování generovat trasování  
  Zdroj trasování WCF definuje pro každé sestavení. Trasování vygenerované v rámci sestavení přistupují naslouchacích procesů definované pro tento zdroj. Jsou definovány následující zdroje trasování:  
   
--   System.ServiceModel: Protokoly všech fázích zpracování WCF, vždy, když je konfigurace pro čtení, zpráva se zpracuje v přenosu, zpracování, bezpečnostní zprávy odesílá v uživatelském kódu a tak dále.  
+- System.ServiceModel: Protokoly všech fázích zpracování WCF, vždy, když je konfigurace pro čtení, zpráva se zpracuje v přenosu, zpracování, bezpečnostní zprávy odesílá v uživatelském kódu a tak dále.  
   
--   System.ServiceModel.MessageLogging: Protokoluje všechny zprávy, které budou plout prostřednictvím systému.  
+- System.ServiceModel.MessageLogging: Protokoluje všechny zprávy, které budou plout prostřednictvím systému.  
   
--   System.IdentityModel.  
+- System.IdentityModel.  
   
--   System.ServiceModel.Activation.  
+- System.ServiceModel.Activation.  
   
--   System.IO.Log: Protokolování pro rozhraní .NET Framework do Common Log File System (CLFS).  
+- System.IO.Log: Protokolování pro rozhraní .NET Framework do Common Log File System (CLFS).  
   
--   System.Runtime.Serialization: Pokud jsou objekty čteným nebo zapsaným ukládá do protokolu.  
+- System.Runtime.Serialization: Pokud jsou objekty čteným nebo zapsaným ukládá do protokolu.  
   
--   Služba CardSpace.  
+- Služba CardSpace.  
   
  Každý zdroj trasování používat stejné (sdílené) naslouchacího procesu, můžete nakonfigurovat, jak je uvedeno v následujícím příkladu konfigurace.  
   

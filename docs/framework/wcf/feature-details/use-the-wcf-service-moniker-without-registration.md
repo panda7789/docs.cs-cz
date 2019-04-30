@@ -5,11 +5,11 @@ helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
 ms.openlocfilehash: be4798663d0b39301ec496df45a4a7a5bf9c88e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59203974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61918581"
 ---
 # <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: Použití monikeru služby Windows Communication Foundation bez registrace
 K připojení a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientská aplikace WCF podrobnosti adresu služby, konfigurace vazby a kontrakt služby.  

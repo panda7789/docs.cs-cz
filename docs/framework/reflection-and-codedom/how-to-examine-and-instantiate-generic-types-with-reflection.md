@@ -12,11 +12,11 @@ ms.assetid: f93b03b0-1778-43fc-bc6d-35983d210e74
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ddddc746eb29c526adb8a15fc6ac40acc22954cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59337224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61793221"
 ---
 # <a name="how-to-examine-and-instantiate-generic-types-with-reflection"></a>Postupy: Prozkoumání a vytvoření instancí obecných typů pomocí reflexe
 Získat informace o obecných typů stejným způsobem jako informace o ostatních typech: prozkoumáním <xref:System.Type> objekt, který reprezentuje obecného typu. Hlavní rozdíl je, že obecný typ obsahuje seznam <xref:System.Type> reprezentují jeho parametry obecného typu. První postup v této části prozkoumá obecných typů.  
@@ -117,11 +117,11 @@ Získat informace o obecných typů stejným způsobem jako informace o ostatní
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
+- Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
--   Nejsou vyžadovány žádné odkazy na další sestavení.  
+- Nejsou vyžadovány žádné odkazy na další sestavení.  
   
--   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+- Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

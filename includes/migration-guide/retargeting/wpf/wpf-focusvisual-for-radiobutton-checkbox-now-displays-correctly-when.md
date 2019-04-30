@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 4eac93d5cfea19cb83c66cd3fe35c1b0703c0cc0
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59981817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61762547"
 ---
 ### <a name="wpf-focusvisual-for-radiobutton-and-checkbox-now-displays-correctly-when-the-controls-have-no-content"></a>Zobrazí FocusVisual WPF pro přepínače a zaškrtávacího políčka nyní správně při ovládací prvky nemají žádný obsah
 

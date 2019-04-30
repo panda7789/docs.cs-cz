@@ -9,11 +9,11 @@ helpviewer_keywords:
 - federation [WCF]
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
 ms.openlocfilehash: 382d2aeff98b7d48dbae07dadb04ed644c3f4449
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61856826"
 ---
 # <a name="federation"></a>Federace
 Toto téma nabízí stručný přehled konceptů zabezpečení. Popisuje také podporu Windows Communication Foundation (WCF) pro nasazení architektury zabezpečení. Ukázková aplikace, které ukazuje, federace, naleznete v tématu [ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -44,17 +44,17 @@ Toto téma nabízí stručný přehled konceptů zabezpečení. Popisuje také p
   
  Organizace B obvykle vyžaduje, že uživatel z organizace A zadat nějakou platnou formu ověřování před přístupu ke službě. Kromě toho organizace může také vyžadovat, že uživatel oprávnění k přístupu na příslušném konkrétního prostředku. Jedním ze způsobů řešení tohoto problému a umožňují uživatelům v organizaci A pro přístup k prostředku v organizaci B je následujícím způsobem:  
   
--   Uživatelé v organizaci A zaregistrovat své přihlašovací údaje (uživatelské jméno a heslo) s organizací B.  
+- Uživatelé v organizaci A zaregistrovat své přihlašovací údaje (uživatelské jméno a heslo) s organizací B.  
   
--   Během přístupu k prostředkům uživatelů z organizace A poskytl svá pověření pro organizaci B a ověření před přístupem k prostředku.  
+- Během přístupu k prostředkům uživatelů z organizace A poskytl svá pověření pro organizaci B a ověření před přístupem k prostředku.  
   
  Tento přístup má tři významné nevýhody:  
   
--   Organizace B má ke správě přihlašovacích údajů pro uživatele z organizace A kromě správy pověření své místní uživatelé.  
+- Organizace B má ke správě přihlašovacích údajů pro uživatele z organizace A kromě správy pověření své místní uživatelé.  
   
--   Uživatelé v organizaci A nemusíte Udržovat další sadu pověření (to znamená, nezapomeňte další uživatelské jméno a heslo) kromě přihlašovací údaje, obvykle používají pro získání přístupu k prostředkům v rámci organizace A. To obvykle doporučuje praxe používání stejné uživatelské jméno a heslo ve víc lokalitách služby, který je slabé bezpečnostní opatření.  
+- Uživatelé v organizaci A nemusíte Udržovat další sadu pověření (to znamená, nezapomeňte další uživatelské jméno a heslo) kromě přihlašovací údaje, obvykle používají pro získání přístupu k prostředkům v rámci organizace A. To obvykle doporučuje praxe používání stejné uživatelské jméno a heslo ve víc lokalitách služby, který je slabé bezpečnostní opatření.  
   
--   Architektura nejsou adekvátní jako víc organizací vnímat prostředek na organizace B tak, jak se některé hodnoty.  
+- Architektura nejsou adekvátní jako víc organizací vnímat prostředek na organizace B tak, jak se některé hodnoty.  
   
  Alternativním přístupem, což reaguje na výše uvedené nevýhody, má odlišnou úroveň zabezpečení. V takovém případě organizací A a B navázání vztahu důvěryhodnosti a využívat službu tokenů zabezpečení (STS) umožňující ručním vytvořen vztah důvěryhodnosti.  
   
@@ -76,13 +76,13 @@ Toto téma nabízí stručný přehled konceptů zabezpečení. Popisuje také p
 ### <a name="phase-1-design-phase"></a>Fáze 1: Fáze návrhu  
  Během fáze návrhu, klient použije [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) zásadách zpřístupňuje koncový bod služby a shromažďování požadavky služby ověřování a autorizaci. Příslušný proxy servery jsou sestavené tak, aby vytvořit následující vzor komunikace zabezpečení u klienta:  
   
--   Získáte token zabezpečení ze služby STS ve vztahu důvěryhodnosti sféry klienta.  
+- Získáte token zabezpečení ze služby STS ve vztahu důvěryhodnosti sféry klienta.  
   
--   K dispozici token na službu STS ve sféře vztah důvěryhodnosti služby.  
+- K dispozici token na službu STS ve sféře vztah důvěryhodnosti služby.  
   
--   Získáte token zabezpečení ze služby STS ve sféře vztah důvěryhodnosti služby.  
+- Získáte token zabezpečení ze služby STS ve sféře vztah důvěryhodnosti služby.  
   
--   K dispozici token, který má služba pro přístup ke službě.  
+- K dispozici token, který má služba pro přístup ke službě.  
   
 ### <a name="phase-2-run-time-phase"></a>Fáze 2: Fáze za běhu  
  Během fáze za běhu klient vytvoří instanci objektu třídy klienta WCF a provede volání pomocí klienta WCF. Základní architektury WCF zpracovává výše uvedené kroky v modelu zabezpečení komunikace a umožňuje klientovi bez problémů využívat služby.  

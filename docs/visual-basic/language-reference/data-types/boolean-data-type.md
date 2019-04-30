@@ -13,11 +13,11 @@ helpviewer_keywords:
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
 ms.openlocfilehash: 7b64302d801a08f976de0ec969983c821f7a8471
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58841213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61796991"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
 Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavy `Boolean` proměnné.  
@@ -36,11 +36,11 @@ Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova 
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** `Boolean` není číselného typu a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Boolean` pro uložení číselné hodnoty.  
+- **Záporná čísla.** `Boolean` není číselného typu a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Boolean` pro uložení číselné hodnoty.  
   
--   **Znaky typu.** `Boolean` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
+- **Znaky typu.** `Boolean` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> struktury.  
+- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> struktury.  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu `runningVB` je `Boolean` proměnnou, která ukládá jednoduché nastavení Ano/Ne.  

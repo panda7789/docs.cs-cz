@@ -3,11 +3,11 @@ title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
 ms.openlocfilehash: cd6f0d7a98ca5bc5f6bee45ad296341a5b91b2a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59106766"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791193"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazovat odpovědi, které služba odesílá zpět. Poskytuje bezproblémové službu testování prostředí v kombinaci s hostitel služby WCF.  
@@ -136,34 +136,34 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
 ## <a name="features-supported-by-wcf-test-client"></a>Testovací klient WCF nepodporuje funkce  
  Následuje seznam funkcí podporovaných testovací klient WCF:  
   
--   Vyvolání služby: Žádost/odpověď a jednosměrná zpráva.  
+- Vyvolání služby: Žádost/odpověď a jednosměrná zpráva.  
   
--   Vazby: podporuje Svcutil.exe všechny vazby.  
+- Vazby: podporuje Svcutil.exe všechny vazby.  
   
--   Řízení relace.  
+- Řízení relace.  
   
--   Kontrakt zprávy.  
+- Kontrakt zprávy.  
   
--   Serializace XML.  
+- Serializace XML.  
   
  Následuje seznam funkcí, Testovací klient WCF nepodporuje:  
   
--   Typy: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, včetně související <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy a ADO.NET <xref:System.Data.DataTable> typu.  
+- Typy: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, typy, které implementují <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, včetně související <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atribut a <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> typy a ADO.NET <xref:System.Data.DataTable> typu.  
   
--   Duplexní kontrakt.  
+- Duplexní kontrakt.  
   
--   Transakce.  
+- Transakce.  
   
--   Zabezpečení: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , certifikátu a uživatelského jména a hesla.  
+- Zabezpečení: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , certifikátu a uživatelského jména a hesla.  
   
--   Vazby: Wsfederationbinding – všechny kontextu vazby a vazbu Https, WebHttpbinding (podpora zprávu odpovědi Json).  
+- Vazby: Wsfederationbinding – všechny kontextu vazby a vazbu Https, WebHttpbinding (podpora zprávu odpovědi Json).  
   
 ## <a name="closing-wcf-test-client"></a>Zavření testovací klient WCF  
  Testovací klient WCF můžete zavřít následujícími způsoby:  
   
--   Na **souboru** nabídky, klikněte na tlačítko **ukončovací**. Pokud v hlavním okně testovací klient WCF, klikněte na **Zavřít**. Jak z těchto akcí také vypnout automatické hostitel služby WCF a Zastavit ladění procesu Visual Studio, pokud testovací klient WCF byla spuštěna sada Visual Studio.  
+- Na **souboru** nabídky, klikněte na tlačítko **ukončovací**. Pokud v hlavním okně testovací klient WCF, klikněte na **Zavřít**. Jak z těchto akcí také vypnout automatické hostitel služby WCF a Zastavit ladění procesu Visual Studio, pokud testovací klient WCF byla spuštěna sada Visual Studio.  
   
--   Klikněte pravým tlačítkem myši **hostitel služby WCF** ikonu v oznamovací oblasti a pak klikněte na tlačítko **ukončení.** Toto vypnutí automatického hostitele služby WCF a testovací klient WCF a zastaví ladění procesu Visual Studio.  
+- Klikněte pravým tlačítkem myši **hostitel služby WCF** ikonu v oznamovací oblasti a pak klikněte na tlačítko **ukončení.** Toto vypnutí automatického hostitele služby WCF a testovací klient WCF a zastaví ladění procesu Visual Studio.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -18,20 +18,20 @@ ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4fab94c85745bf17a632d04c563070d79b48aa95
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61861062"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>Postupy: Definování a používání vlastních poskytovatelů číselného formátu
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje rozsáhlou kontrolu nad řetězcové reprezentace číselných hodnot. Přizpůsobení formátu číselných hodnot podporuje následující funkce:  
   
--   Řetězce standardního číselného formátu, což poskytuje sadu předdefinovaných formátů pro převod čísla na jeho řetězcovou reprezentaci. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, který má `format` parametru. Podrobnosti najdete v tématu [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
+- Řetězce standardního číselného formátu, což poskytuje sadu předdefinovaných formátů pro převod čísla na jeho řetězcovou reprezentaci. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, který má `format` parametru. Podrobnosti najdete v tématu [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md).  
   
--   Vlastní číselné formátovací řetězce, které poskytují sadu symboly, které mohou být kombinovány definovat vlastní specifikátory číselného formátu. Můžete je také použít s libovolnou metodou číselného formátování, jako například <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, který má `format` parametru. Podrobnosti najdete v tématu [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
+- Vlastní číselné formátovací řetězce, které poskytují sadu symboly, které mohou být kombinovány definovat vlastní specifikátory číselného formátu. Můžete je také použít s libovolnou metodou číselného formátování, jako například <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>, který má `format` parametru. Podrobnosti najdete v tématu [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md).  
   
--   Vlastní <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.NumberFormatInfo> objekty, které definují symboly a formátování vzorů používaných pro zobrazení řetězcové reprezentace číselných hodnot. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Int32.ToString%2A>, který má `provider` parametru. Obvykle `provider` parametr se používá k určení formátování specifické pro jazykovou verzi.  
+- Vlastní <xref:System.Globalization.CultureInfo> nebo <xref:System.Globalization.NumberFormatInfo> objekty, které definují symboly a formátování vzorů používaných pro zobrazení řetězcové reprezentace číselných hodnot. Můžete využít s jakoukoli metodou číselného formátování, jako například <xref:System.Int32.ToString%2A>, který má `provider` parametru. Obvykle `provider` parametr se používá k určení formátování specifické pro jazykovou verzi.  
   
  V některých případech (například když musí aplikace zobrazit formátované číslo účtu, identifikační číslo nebo poštovní směrovací číslo) jsou tyto tři techniky nevhodný. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Také umožňuje definovat formátovací objekt, který není ani <xref:System.Globalization.CultureInfo> ani <xref:System.Globalization.NumberFormatInfo> zjistíte, jak číselnou hodnotu ve formátu. Toto téma obsahuje podrobné pokyny pro implementaci takového objektu a poskytuje příklad, který formátuje telefonních čísel.  
   
@@ -41,21 +41,21 @@ ms.locfileid: "59318374"
   
 2. Implementace <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> metody. <xref:System.IFormatProvider.GetFormat%2A> je metoda zpětného volání, který použije metoda formátování (například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metoda) vyvolá při načtení objektu, který je ve skutečnosti odpovědný za provedení vlastní formátování. Obvyklá implementace metody <xref:System.IFormatProvider.GetFormat%2A> provede následující akce:  
   
-    1.  Určuje, zda <xref:System.Type> objekt předán jako metoda představuje parametr <xref:System.ICustomFormatter> rozhraní.  
+    1. Určuje, zda <xref:System.Type> objekt předán jako metoda představuje parametr <xref:System.ICustomFormatter> rozhraní.  
   
-    2.  Pokud parametr představuje <xref:System.ICustomFormatter> rozhraní, <xref:System.IFormatProvider.GetFormat%2A> vrátí objekt, který implementuje <xref:System.ICustomFormatter> rozhraní, které je odpovědný za poskytnutí vlastní formátování. Vlastní objekt obvykle vrací samu sebe.  
+    2. Pokud parametr představuje <xref:System.ICustomFormatter> rozhraní, <xref:System.IFormatProvider.GetFormat%2A> vrátí objekt, který implementuje <xref:System.ICustomFormatter> rozhraní, které je odpovědný za poskytnutí vlastní formátování. Vlastní objekt obvykle vrací samu sebe.  
   
-    3.  Pokud parametr nepředstavuje <xref:System.ICustomFormatter> rozhraní, <xref:System.IFormatProvider.GetFormat%2A> vrátí `null`.  
+    3. Pokud parametr nepředstavuje <xref:System.ICustomFormatter> rozhraní, <xref:System.IFormatProvider.GetFormat%2A> vrátí `null`.  
   
 3. Implementace <xref:System.ICustomFormatter.Format%2A> metody. Tato metoda je volána metodou <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody a je zodpovědný za vrácení řetězcové vyjádření čísla. Implementace metody obvykle zahrnuje následující:  
   
-    1.  Volitelně, ujistěte se, že metoda je rozmyslet určená k zajištění služeb formátování prozkoumáním `provider` parametru. Pro formátování objektů, které implementují <xref:System.IFormatProvider> a <xref:System.ICustomFormatter>, to zahrnuje testování `provider` parametr rovnosti s aktuálním objektem formátování.  
+    1. Volitelně, ujistěte se, že metoda je rozmyslet určená k zajištění služeb formátování prozkoumáním `provider` parametru. Pro formátování objektů, které implementují <xref:System.IFormatProvider> a <xref:System.ICustomFormatter>, to zahrnuje testování `provider` parametr rovnosti s aktuálním objektem formátování.  
   
-    2.  Určení, zda objekt formátování by měla podporovat specifikátoru vlastního formátu. (Například specifikátor formátu "N" může znamenat, že telefonní číslo USA by měl být výstup ve formátu NANP, a "I" může znamenat výstup ve formátu ITU-T E.123 doporučení.) Pokud specifikátory formátu se používají, měla by metoda zpracovat specifikátor formátu. V metodě je předána `format` parametru. Pokud žádný specifikátor není k dispozici, hodnota `format` parametr <xref:System.String.Empty?displayProperty=nameWithType>.  
+    2. Určení, zda objekt formátování by měla podporovat specifikátoru vlastního formátu. (Například specifikátor formátu "N" může znamenat, že telefonní číslo USA by měl být výstup ve formátu NANP, a "I" může znamenat výstup ve formátu ITU-T E.123 doporučení.) Pokud specifikátory formátu se používají, měla by metoda zpracovat specifikátor formátu. V metodě je předána `format` parametru. Pokud žádný specifikátor není k dispozici, hodnota `format` parametr <xref:System.String.Empty?displayProperty=nameWithType>.  
   
-    3.  Vrátit číselnou hodnotu předaný metodě jako `arg` parametru. Provedení libovolné manipulace se vyžadují pro převod na jeho řetězcovou reprezentaci.  
+    3. Vrátit číselnou hodnotu předaný metodě jako `arg` parametru. Provedení libovolné manipulace se vyžadují pro převod na jeho řetězcovou reprezentaci.  
   
-    4.  Vrátí řetězcovou reprezentaci `arg` parametru.  
+    4. Vrátí řetězcovou reprezentaci `arg` parametru.  
   
 ### <a name="to-use-a-custom-numeric-formatting-object"></a>Chcete-li použít vlastní číselné formátovací objekt  
   

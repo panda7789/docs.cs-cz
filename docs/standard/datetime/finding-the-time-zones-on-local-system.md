@@ -14,24 +14,24 @@ ms.assetid: 3f63b1bc-9a4b-4bde-84ea-ab028a80d3e1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a65798c46b01bb7a702559d685590ecf7a6f2793
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45749404"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61819753"
 ---
 # <a name="finding-the-time-zones-defined-on-a-local-system"></a>Hledání časových pásem definovaných v lokálním systému
 
 <xref:System.TimeZoneInfo> Třídy nevystavuje veřejný konstruktor. V důsledku toho `new` – klíčové slovo nelze použít k vytvoření nového <xref:System.TimeZoneInfo> objektu. Místo toho <xref:System.TimeZoneInfo> vytváření instance objektů načtěte informace o předdefinovaných časových pásem z registru nebo tak, že vytvoříte vlastní časové pásmo. Toto téma popisuje vytvoření instance časové pásmo z dat uložených v registru. Kromě toho `static` (`shared` v jazyce Visual Basic) vlastnosti <xref:System.TimeZoneInfo> třídy poskytují přístup k místním časovém pásmu koordinovaný univerzální čas (UTC).
 
 > [!NOTE]
-> Pro časová pásma, které nejsou definovány v registru, můžete vytvořit vlastní časových pásem voláním přetížení <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody. Vytvoření vlastní časové pásmo je podrobněji popsána [postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md) a [postupy: vytváření časových pásem s pravidly úpravy](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md) témata. Kromě toho můžete vytvořit instanci <xref:System.TimeZoneInfo> objekt obnovením z serializovaný řetězec s <xref:System.TimeZoneInfo.FromSerializedString%2A> metody. Serializace a deserializace <xref:System.TimeZoneInfo> objekt je popsán v [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md) témata.
+> Pro časová pásma, které nejsou definovány v registru, můžete vytvořit vlastní časových pásem voláním přetížení <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody. Vytváří se vlastní časové pásmo je podrobněji popsána [jak: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md) a [jak: Vytváření časových pásem s pravidly úpravy](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md) témata. Kromě toho můžete vytvořit instanci <xref:System.TimeZoneInfo> objekt obnovením z serializovaný řetězec s <xref:System.TimeZoneInfo.FromSerializedString%2A> metody. Serializaci a deserializaci <xref:System.TimeZoneInfo> objektu je podrobněji popsána [jak: Ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [jak: Obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md) témata.
 
 ## <a name="accessing-individual-time-zones"></a>Přístup k jednotlivým časových pásem
 
-<xref:System.TimeZoneInfo> Třída poskytuje dva objekty předdefinovaných časové pásmo, které představují čas UTC a místním časovém pásmu. Jsou k dispozici <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A> vlastnosti, v uvedeném pořadí. Pokyny pro přístup k UTC nebo místního času zóny najdete v tématu [postupy: přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md).
+<xref:System.TimeZoneInfo> Třída poskytuje dva objekty předdefinovaných časové pásmo, které představují čas UTC a místním časovém pásmu. Jsou k dispozici <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A> vlastnosti, v uvedeném pořadí. Pokyny pro přístup k UTC nebo místního času zóny najdete v tématu [jak: Přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md).
 
-Můžete také vytvořit instanci <xref:System.TimeZoneInfo> objekt, který reprezentuje všechny časové pásmo definovaná v registru. Pokyny k vytvoření instance objektu konkrétní časové pásmo, v tématu [postupy: vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md).
+Můžete také vytvořit instanci <xref:System.TimeZoneInfo> objekt, který reprezentuje všechny časové pásmo definovaná v registru. Pokyny k vytvoření instance objektu konkrétní časové pásmo, v tématu [jak: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md).
 
 ## <a name="time-zone-identifiers"></a>Identifikátory časových pásem
 
@@ -40,6 +40,6 @@ Identifikátor časové pásmo je pole s klíčem, který jednoznačně identifi
 ## <a name="see-also"></a>Viz také:
 
 - [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-- [Postupy: Přístup k předdefinovaným objektům časového pásma UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md)
+- [Postupy: Přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md)
 - [Postupy: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)
 - [Převádění časových údajů mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md)

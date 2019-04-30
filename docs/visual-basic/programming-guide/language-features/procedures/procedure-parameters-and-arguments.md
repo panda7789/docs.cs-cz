@@ -19,11 +19,11 @@ helpviewer_keywords:
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
 ms.openlocfilehash: 80065cabcacdcf44b04fef7bacb978ca9c8077ae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58825453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791906"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry a argumenty procedury (Visual Basic)
 Ve většině případů postup potřebuje určité informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
@@ -49,11 +49,11 @@ Ve většině případů postup potřebuje určité informace o okolnostech, ve 
   
  Pokud volající kód očekává, že chcete zadat argument s datovým typem, který se liší od odpovídajícího parametru, například `Byte` k `String` parametr, musíte udělat jednu z následujících:  
   
--   Zadejte pouze argumenty s datovými typy, které rozšířit na datový typ parametru;  
+- Zadejte pouze argumenty s datovými typy, které rozšířit na datový typ parametru;  
   
--   Nastavte `Option Strict Off` povolit implicitní zužující převody; nebo  
+- Nastavte `Option Strict Off` povolit implicitní zužující převody; nebo  
   
--   Použijte klíčové slovo převodu k explicitnímu převodu datového typu.  
+- Použijte klíčové slovo převodu k explicitnímu převodu datového typu.  
   
 ### <a name="type-parameters"></a>Parametry typu  
  A *obecný postup* také definuje jeden nebo více *parametry typu* kromě své normální parametry. Obecný postup umožňuje volajícímu kódu k předání různých typů dat pokaždé, když volá proceduru, takže ho můžete přizpůsobit datové typy s požadavky každého jednotlivého volání. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  

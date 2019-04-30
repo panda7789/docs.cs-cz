@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
 ms.openlocfilehash: 88e13fcd03c6a10cf1450cec90f9ca60aedc3eb1
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58819161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61778707"
 ---
 # <a name="protected-visual-basic"></a>Protected (Visual Basic)
 Modifikátor přístupu člena, který určuje, že jeden nebo více deklarovaný programový prvek je přístupný jenom v rámci své vlastní třídy nebo z odvozené třídy.  
@@ -30,15 +30,15 @@ Modifikátor přístupu člena, který určuje, že jeden nebo více deklarovan�
   
 ## <a name="rules"></a>pravidla  
   
--   **Místní deklarace.** Můžete použít `Protected` pouze na úrovni třídy. To znamená, že deklarace kontext `Protected` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
+- **Místní deklarace.** Můžete použít `Protected` pouze na úrovni třídy. To znamená, že deklarace kontext `Protected` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
 
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Veškerý kód ve třídě můžete přístup k jeho prvkům. Kód do třídy, která je odvozena ze základní třídy lze přistupovat ke všem `Protected` prvky základní třídy. To platí pro všechny generací odvození. To znamená, že se třída dostanete `Protected` elementů základní třídy základní třídy a tak dále.  
+- **Úroveň přístupu.** Veškerý kód ve třídě můžete přístup k jeho prvkům. Kód do třídy, která je odvozena ze základní třídy lze přistupovat ke všem `Protected` prvky základní třídy. To platí pro všechny generací odvození. To znamená, že se třída dostanete `Protected` elementů základní třídy základní třídy a tak dále.  
   
      Chráněného přístupu je nadmnožinou nebo podmnožinu přístup typu friend.  
   
--   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `Protected` Modifikátor lze použít v těchto kontextech:  
   

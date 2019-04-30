@@ -10,11 +10,11 @@ ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c8e35a09bd3348d5f53c662cf6e0ee9fec733d88
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59142815"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61872648"
 ---
 # <a name="passing-structures"></a>Předávání struktur
 Mnoho nespravovaných funkcí očekávat předat jako parametr pro funkci, členové struktur (uživatelem definované typy v jazyce Visual Basic) nebo členy třídy, které jsou definovány ve spravovaném kódu. Při předávání struktur nebo tříd do nespravovaného kódu pomocí platformy vyvolat, je třeba zadat další informace a zachovat původní rozložení a zarovnání. Toto téma představuje <xref:System.Runtime.InteropServices.StructLayoutAttribute> atribut, který slouží k definování formátovaný typy. Pro spravované struktur a tříd, můžete vybrat z několika chování předvídatelné rozložení poskytnutých **LayoutKind** výčtu.  
@@ -29,11 +29,11 @@ Mnoho nespravovaných funkcí očekávat předat jako parametr pro funkci, člen
   
  V tabulce jsou popsány následující pokyny pro deklarace volání nespravovaného kódu:  
   
--   Použijte strukturu, předán podle hodnoty, když toto nespravovaná funkce požaduje žádné dereference.  
+- Použijte strukturu, předán podle hodnoty, když toto nespravovaná funkce požaduje žádné dereference.  
   
--   Pomocí struktury předané referencí nebo třídu předán podle hodnoty, pokud nespravovaná funkce vyžaduje jednu úroveň dereference.  
+- Pomocí struktury předané referencí nebo třídu předán podle hodnoty, pokud nespravovaná funkce vyžaduje jednu úroveň dereference.  
   
--   Použití třídy předány podle odkazu, když je nespravované funkce požaduje dvěma úrovněmi indirekce.  
+- Použití třídy předány podle odkazu, když je nespravované funkce požaduje dvěma úrovněmi indirekce.  
   
 ## <a name="declaring-and-passing-structures"></a>Deklarace a předávání struktur  
  Následující příklad ukazuje, jak definovat `Point` a `Rect` struktury v spravovaného kódu a předat jako parametr typů **PtInRect** funkce v souboru User32.dll. **PtInRect** má následující nespravovanému podpisu:  
@@ -180,6 +180,5 @@ public class TestPlatformInvoke
 ## <a name="see-also"></a>Viz také:
 
 - [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md)
-- <xref:System.Runtime.InteropServices.StructLayoutAttribute>
 - <xref:System.Runtime.InteropServices.StructLayoutAttribute>
 - <xref:System.Runtime.InteropServices.FieldOffsetAttribute>

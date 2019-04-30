@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Visual Basic, videos
 ms.assetid: 9bfb42e9-327f-439b-935e-8884f6aca80c
 ms.openlocfilehash: b54c48fb7869fb3d308e238366f8e8b91368320a
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61797108"
 ---
 # <a name="additional-resources"></a>Další zdroje
 

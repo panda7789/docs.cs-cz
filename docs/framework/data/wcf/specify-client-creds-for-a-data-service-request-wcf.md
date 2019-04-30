@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
 ms.openlocfilehash: ca2ed1fcf113e06535c8900e5836eb64f9b23958
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59518133"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61875579"
 ---
 # <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Postupy: Zadejte přihlašovací údaje klienta datové služby žádosti (WCF Data Services)
 Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje při odesílání požadavku do [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] služby. Však můžete určit, že přihlašovací údaje se odešlou k ověření požadavků ve službě data zadáním <xref:System.Net.NetworkCredential> pro <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md). V příkladu v tomto tématu ukazuje, jak explicitně zadat přihlašovací údaje, které jsou používány [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta při vyžádání dat z datové služby.  
@@ -44,11 +44,11 @@ Ve výchozím nastavení, klientské knihovny neposkytuje přihlašovací údaje
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  V příkladu v tomto tématu platí následující aspekty zabezpečení:  
   
--   Pokud chcete ověřit, že pověření uvedená v této ukázce fungovat, datová služba Northwind musí používat schéma ověřování než anonymní přístup. Web, který hostuje službu dat v opačném případě nebude požádat o přihlašovací údaje.  
+- Pokud chcete ověřit, že pověření uvedená v této ukázce fungovat, datová služba Northwind musí používat schéma ověřování než anonymní přístup. Web, který hostuje službu dat v opačném případě nebude požádat o přihlašovací údaje.  
   
--   Přihlašovací údaje uživatele by měly být vyžádány pouze během provádění a by neměl být uložené v mezipaměti. Přihlašovací údaje musí být uložen vždy bezpečné.  
+- Přihlašovací údaje uživatele by měly být vyžádány pouze během provádění a by neměl být uložené v mezipaměti. Přihlašovací údaje musí být uložen vždy bezpečné.  
   
--   Data odesílaná s Basic a ověřování algoritmem Digest se nešifrují, takže data můžete vidět nežádoucí osoba. Kromě toho pověření základního ověřování (uživatelské jméno a heslo) je odesíláno jako nezašifrovaný text a mohou být zachyceny.  
+- Data odesílaná s Basic a ověřování algoritmem Digest se nešifrují, takže data můžete vidět nežádoucí osoba. Kromě toho pověření základního ověřování (uživatelské jméno a heslo) je odesíláno jako nezašifrovaný text a mohou být zachyceny.  
   
  Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
   

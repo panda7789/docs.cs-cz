@@ -16,11 +16,11 @@ ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0f732f5bf61ed65fe7e62d110494d874262e30fd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61860630"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, můžete uživatele zadat číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku v téměř neomezené množství formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze uživatelský vstup, lze následně použít formátovací úmluvy určené národní prostředí a jazykovou verzi uživatele.  
@@ -35,9 +35,9 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, m
   
 4. Volání na buď `TryParse` nebo `Parse` metoda číselného typu, který chcete převést uživatelský vstup. Použijte přetížení `TryParse` nebo `Parse` metodou `provider` parametr a předat jí některého z následujících:  
   
-    -   <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
+    - <xref:System.Globalization.CultureInfo> Objekt vytvořený v kroku 3.  
   
-    -   <xref:System.Globalization.NumberFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.NumberFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
+    - <xref:System.Globalization.NumberFormatInfo> Objekt, který je vrácený <xref:System.Globalization.CultureInfo.NumberFormat%2A> vlastnost <xref:System.Globalization.CultureInfo> objekt vytvořený v kroku 3.  
   
 5. Pokud převod selže, opakujte kroky 2 až 4 pro každý zbývající prvek v poli řetězců vrácených <xref:System.Web.HttpRequest.UserLanguages%2A> vlastnost.  
   
@@ -60,11 +60,11 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, m
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Chcete-li kód zkompilovat, zkopírujte ho do [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] použití modelu code-behind stránky tak, že se nahradí všechny existující kód. [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] Webové stránce by měl obsahovat následující prvky:  
   
--   A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
+- A <xref:System.Web.UI.WebControls.Label> ovládací prvek, který se odkazuje v kódu. Nastavte jeho <xref:System.Web.UI.WebControls.TextBox.Text%2A> vlastnost "Zadejte číslo:".  
   
--   A <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `NumericString`.  
+- A <xref:System.Web.UI.WebControls.TextBox> ovládací prvek s názvem `NumericString`.  
   
--   A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
+- A <xref:System.Web.UI.WebControls.Button> ovládací prvek s názvem `OKButton`. Nastavte jeho <xref:System.Web.UI.WebControls.Button.Text%2A> vlastnost "OK".  
   
  Změnit název třídy z `NumericUserInput` k názvu třídy, která je definována `Inherits` atribut [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] stránky `Page` směrnice. Změňte název `NumericInput` odkaz na název definovaný podle objektu `id` atribut [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] stránky `form` značky.  
   

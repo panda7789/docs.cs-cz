@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
 ms.openlocfilehash: 91d64ce0d6a5cdbf32fec4a476fb111afe9a7952
-ms.sourcegitcommit: 79066169e93d9d65203028b21983574ad9dcf6b4
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57212492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791700"
 ---
 # <a name="identityconfiguration"></a>\<identityConfiguration>
 

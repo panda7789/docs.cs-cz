@@ -3,11 +3,11 @@ title: Vytvoření BindingElement
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
 ms.openlocfilehash: 600bf9b394078ffc1b1bc97390bd0de406d64338
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59115164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61858348"
 ---
 # <a name="creating-a-bindingelement"></a>Vytvoření BindingElement
 Vazby a prvky vazeb (objekty, které rozšiřují <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>v uvedeném pořadí) jsou místo, kde se spojená s objekty pro vytváření kanálů a moduly pro naslouchání kanálů model aplikace Windows Communication Foundation (WCF). Bez vazby, použití vlastních kanálů vyžaduje programování na úrovni kanálu jak je popsáno v [programování na úrovni kanálu služby](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) a [programování na úrovni kanálu klienta](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Toto téma popisuje minimální požadavky na povolení s využitím kanálu ve službě WCF, vývoj <xref:System.ServiceModel.Channels.BindingElement> pro kanál a povolit používání instrukcí z aplikace, jak je popsáno v kroku 4 [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
@@ -59,11 +59,11 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
 #### <a name="encoding-binding-elements"></a>Kódování elementů vazby  
  Pokud chcete vytvořit nové kódování vazby prvky, začněte tím, že rozšíření <xref:System.ServiceModel.Channels.BindingElement> třídy a implementace <xref:System.ServiceModel.Channels.MessageEncodingBindingElement?displayProperty=nameWithType> třídy. Minimálně musíte pak implementovat <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A?displayProperty=nameWithType> metody a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A?displayProperty=nameWithType> vlastnost.  
   
--   <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>. Vrátí novou kopii tohoto prvku vazby. Jako osvědčený postup doporučujeme, abyste tento element vazby autory implementace <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovací konstruktor, který volá základní konstruktor, poté duplicity všechna další pole v této třídě.  
+- <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>. Vrátí novou kopii tohoto prvku vazby. Jako osvědčený postup doporučujeme, abyste tento element vazby autory implementace <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> pomocí kopírovací konstruktor, který volá základní konstruktor, poté duplicity všechna další pole v této třídě.  
   
--   <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageEncoderFactory>, která poskytuje popisovač pro daná třída, která implementuje nový kodér a který by měl rozšířit <xref:System.ServiceModel.Channels.MessageEncoder>. Další informace naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncoderFactory> a <xref:System.ServiceModel.Channels.MessageEncoder>.  
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageEncoderFactory>, která poskytuje popisovač pro daná třída, která implementuje nový kodér a který by měl rozšířit <xref:System.ServiceModel.Channels.MessageEncoder>. Další informace naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncoderFactory> a <xref:System.ServiceModel.Channels.MessageEncoder>.  
   
--   <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageVersion> použít v platném kódování, která představuje verze protokolu SOAP a WS-Addressing používá.  
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A>. Vrátí <xref:System.ServiceModel.Channels.MessageVersion> použít v platném kódování, která představuje verze protokolu SOAP a WS-Addressing používá.  
   
  Úplný seznam všech volitelné metody a vlastnosti pro uživatelem definované kódování elementy vazby, naleznete v tématu <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
