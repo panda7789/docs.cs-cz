@@ -6,29 +6,29 @@ f1_keywords:
 ms.assetid: 0926a3a4-177b-4452-9b33-d8a01e24cc21
 ms.openlocfilehash: 1bc75303bcc2f46e54c06e89347da28997e59786
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59979733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935249"
 ---
-# <a name="bad-record-length"></a><span data-ttu-id="60028-102">Chybná délka záznamu</span><span class="sxs-lookup"><span data-stu-id="60028-102">Bad record length</span></span>
-<span data-ttu-id="60028-103">Mezi možné příčiny této chyby patří:</span><span class="sxs-lookup"><span data-stu-id="60028-103">Among the possible causes of this error are:</span></span>  
+# <a name="bad-record-length"></a><span data-ttu-id="5a72f-102">Chybná délka záznamu</span><span class="sxs-lookup"><span data-stu-id="5a72f-102">Bad record length</span></span>
+<span data-ttu-id="5a72f-103">Mezi možné příčiny této chyby patří:</span><span class="sxs-lookup"><span data-stu-id="5a72f-103">Among the possible causes of this error are:</span></span>  
   
--   <span data-ttu-id="60028-104">Délka záznamu proměnná, zadaný v `FileGet`, `FileGetObject`, `FilePut` nebo `FilePutObject` příkazu se liší od délka zadaná v odpovídající `FileOpen` příkazu.</span><span class="sxs-lookup"><span data-stu-id="60028-104">The length of a record variable specified in a `FileGet`, `FileGetObject`, `FilePut` or `FilePutObject` statement differs from the length specified in the corresponding `FileOpen` statement.</span></span>  
+- <span data-ttu-id="5a72f-104">Délka záznamu proměnná, zadaný v `FileGet`, `FileGetObject`, `FilePut` nebo `FilePutObject` příkazu se liší od délka zadaná v odpovídající `FileOpen` příkazu.</span><span class="sxs-lookup"><span data-stu-id="5a72f-104">The length of a record variable specified in a `FileGet`, `FileGetObject`, `FilePut` or `FilePutObject` statement differs from the length specified in the corresponding `FileOpen` statement.</span></span>  
   
--   <span data-ttu-id="60028-105">Proměnné v `FilePut` nebo `FilePutObject` je příkaz nebo obsahuje řetězec s proměnnou délkou.</span><span class="sxs-lookup"><span data-stu-id="60028-105">The variable in a `FilePut` or `FilePutObject` statement is or includes a variable-length string.</span></span>  
+- <span data-ttu-id="5a72f-105">Proměnné v `FilePut` nebo `FilePutObject` je příkaz nebo obsahuje řetězec s proměnnou délkou.</span><span class="sxs-lookup"><span data-stu-id="5a72f-105">The variable in a `FilePut` or `FilePutObject` statement is or includes a variable-length string.</span></span>  
   
--   <span data-ttu-id="60028-106">Proměnné v `FilePut` nebo `FilePutObject` je nebo zahrnuje `Variant` typu.</span><span class="sxs-lookup"><span data-stu-id="60028-106">The variable in a `FilePut` or `FilePutObject` is or includes a `Variant` type.</span></span>  
+- <span data-ttu-id="5a72f-106">Proměnné v `FilePut` nebo `FilePutObject` je nebo zahrnuje `Variant` typu.</span><span class="sxs-lookup"><span data-stu-id="5a72f-106">The variable in a `FilePut` or `FilePutObject` is or includes a `Variant` type.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="60028-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="60028-107">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="5a72f-107">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="5a72f-107">To correct this error</span></span>  
   
-1. <span data-ttu-id="60028-108">Ujistěte se, že součet velikostí proměnné pevné délky v uživatelem definovaný typ definuje typ záznamu proměnná je stejná jako hodnota uvedená v `FileOpen` příkazu `Len` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="60028-108">Make sure the sum of the sizes of fixed-length variables in the user-defined type defining the record variable's type is the same as the value stated in the `FileOpen` statement's `Len` clause.</span></span>  
+1. <span data-ttu-id="5a72f-108">Ujistěte se, že součet velikostí proměnné pevné délky v uživatelem definovaný typ definuje typ záznamu proměnná je stejná jako hodnota uvedená v `FileOpen` příkazu `Len` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="5a72f-108">Make sure the sum of the sizes of fixed-length variables in the user-defined type defining the record variable's type is the same as the value stated in the `FileOpen` statement's `Len` clause.</span></span>  
   
-2. <span data-ttu-id="60028-109">Pokud proměnnou v `FilePut` nebo `FilePutObject` příkazu nebo obsahuje řetězec s proměnnou délkou, ujistěte se, že je kratší než délka záznamu určená v aspoň 2 znaky řetězce proměnné délky `Len` klauzuli `FileOpen` příkaz.</span><span class="sxs-lookup"><span data-stu-id="60028-109">If the variable in a `FilePut` or `FilePutObject` statement is or includes a variable-length string, make sure the variable-length string is at least 2 characters shorter than the record length specified in the `Len` clause of the `FileOpen` statement.</span></span>  
+2. <span data-ttu-id="5a72f-109">Pokud proměnnou v `FilePut` nebo `FilePutObject` příkazu nebo obsahuje řetězec s proměnnou délkou, ujistěte se, že je kratší než délka záznamu určená v aspoň 2 znaky řetězce proměnné délky `Len` klauzuli `FileOpen` příkaz.</span><span class="sxs-lookup"><span data-stu-id="5a72f-109">If the variable in a `FilePut` or `FilePutObject` statement is or includes a variable-length string, make sure the variable-length string is at least 2 characters shorter than the record length specified in the `Len` clause of the `FileOpen` statement.</span></span>  
   
-3. <span data-ttu-id="60028-110">Pokud proměnné v `FilePut` nebo `FilePutObject` není nebo obsahuje `Variant` Ujistěte se, že řetězce proměnné délky je kratší než délka záznamu určená v alespoň 4 bajty `Len` klauzuli `FileOpen` příkaz.</span><span class="sxs-lookup"><span data-stu-id="60028-110">If the variable in a `FilePut` or `FilePutObject` is or includes a `Variant` make sure the variable-length string is at least 4 bytes shorter than the record length specified in the `Len` clause of the `FileOpen` statement.</span></span>  
+3. <span data-ttu-id="5a72f-110">Pokud proměnné v `FilePut` nebo `FilePutObject` není nebo obsahuje `Variant` Ujistěte se, že řetězce proměnné délky je kratší než délka záznamu určená v alespoň 4 bajty `Len` klauzuli `FileOpen` příkaz.</span><span class="sxs-lookup"><span data-stu-id="5a72f-110">If the variable in a `FilePut` or `FilePutObject` is or includes a `Variant` make sure the variable-length string is at least 4 bytes shorter than the record length specified in the `Len` clause of the `FileOpen` statement.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="60028-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="60028-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5a72f-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5a72f-111">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileSystem.FileGet%2A>
 - <xref:Microsoft.VisualBasic.FileSystem.FileGetObject%2A>

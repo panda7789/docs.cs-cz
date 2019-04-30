@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d8d5f2123608af241095c966901bd227fa6152d3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61919279"
 ---
-# <a name="icordebugprocessenumerateobjects-method"></a><span data-ttu-id="cecd3-102">ICorDebugProcess::EnumerateObjects – metoda</span><span class="sxs-lookup"><span data-stu-id="cecd3-102">ICorDebugProcess::EnumerateObjects Method</span></span>
-<span data-ttu-id="cecd3-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="cecd3-103">This method has not been implemented.</span></span>  
+# <a name="icordebugprocessenumerateobjects-method"></a><span data-ttu-id="3498a-102">ICorDebugProcess::EnumerateObjects – metoda</span><span class="sxs-lookup"><span data-stu-id="3498a-102">ICorDebugProcess::EnumerateObjects Method</span></span>
+<span data-ttu-id="3498a-103">Tato metoda není implementovaná.</span><span class="sxs-lookup"><span data-stu-id="3498a-103">This method has not been implemented.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cecd3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cecd3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3498a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3498a-104">Syntax</span></span>  
   
 ```  
 HRESULT EnumerateObjects (  

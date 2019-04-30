@@ -8,25 +8,25 @@ helpviewer_keywords:
 - templates [WPF]
 ms.assetid: 7fd571fd-d54a-40fc-b332-4c4015a5b6ff
 ms.openlocfilehash: d7a5e9515e78dd9c762973ca9854e04b44c1e18d
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61790907"
 ---
-# <a name="styles-and-templates"></a><span data-ttu-id="913bf-102">– styly a šablony</span><span class="sxs-lookup"><span data-stu-id="913bf-102">Styles and Templates</span></span>
-<span data-ttu-id="913bf-103">Windows Presentation Foundation (WPF) styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují aplikace, dokumentu nebo návrhář uživatelského rozhraní (UI) vytvářet vizuálně působivé aplikace a na standardizovat používání na konkrétní oblast pro svůj produkt.</span><span class="sxs-lookup"><span data-stu-id="913bf-103">Windows Presentation Foundation (WPF) styling and templating refer to a suite of features (styles, templates, triggers, and storyboards) that allow an application, document, or user interface (UI) designer to create visually compelling applications and to standardize on a particular look for their product.</span></span>  
+# <a name="styles-and-templates"></a><span data-ttu-id="c0a61-102">– styly a šablony</span><span class="sxs-lookup"><span data-stu-id="c0a61-102">Styles and Templates</span></span>
+<span data-ttu-id="c0a61-103">Windows Presentation Foundation (WPF) styly a šablony najdete suite funkcí (styly, šablony, aktivační události a scénáře), které umožňují aplikace, dokumentu nebo návrhář uživatelského rozhraní (UI) vytvářet vizuálně působivé aplikace a na standardizovat používání na konkrétní oblast pro svůj produkt.</span><span class="sxs-lookup"><span data-stu-id="c0a61-103">Windows Presentation Foundation (WPF) styling and templating refer to a suite of features (styles, templates, triggers, and storyboards) that allow an application, document, or user interface (UI) designer to create visually compelling applications and to standardize on a particular look for their product.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="913bf-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="913bf-104">In This Section</span></span>  
- [<span data-ttu-id="913bf-105">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="913bf-105">Styling and Templating</span></span>](styling-and-templating.md)  
-  [<span data-ttu-id="913bf-106">Postupy: Vyhledávání elementů generovaných objektem ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="913bf-106">How to: Find ControlTemplate-Generated Elements</span></span>](how-to-find-controltemplate-generated-elements.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c0a61-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c0a61-104">In This Section</span></span>  
+ [<span data-ttu-id="c0a61-105">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="c0a61-105">Styling and Templating</span></span>](styling-and-templating.md)  
+  [<span data-ttu-id="c0a61-106">Postupy: Vyhledávání elementů generovaných objektem ControlTemplate</span><span class="sxs-lookup"><span data-stu-id="c0a61-106">How to: Find ControlTemplate-Generated Elements</span></span>](how-to-find-controltemplate-generated-elements.md)  
   
-## <a name="reference"></a><span data-ttu-id="913bf-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="913bf-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="c0a61-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="c0a61-107">Reference</span></span>  
  <xref:System.Windows.Style>  
   <xref:System.Windows.Controls.ControlTemplate>  
   <xref:System.Windows.DataTemplate>  
   
-## <a name="related-sections"></a><span data-ttu-id="913bf-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="913bf-108">Related Sections</span></span>  
- [<span data-ttu-id="913bf-109">Pokročilé</span><span class="sxs-lookup"><span data-stu-id="913bf-109">Advanced</span></span>](../advanced/index.md)  
-  [<span data-ttu-id="913bf-110">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="913bf-110">Control Customization</span></span>](control-customization.md)  
-  [<span data-ttu-id="913bf-111">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="913bf-111">Graphics and Multimedia</span></span>](../graphics-multimedia/index.md)
+## <a name="related-sections"></a><span data-ttu-id="c0a61-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c0a61-108">Related Sections</span></span>  
+ [<span data-ttu-id="c0a61-109">Pokročilé</span><span class="sxs-lookup"><span data-stu-id="c0a61-109">Advanced</span></span>](../advanced/index.md)  
+  [<span data-ttu-id="c0a61-110">Přizpůsobení ovládacího prvku</span><span class="sxs-lookup"><span data-stu-id="c0a61-110">Control Customization</span></span>](control-customization.md)  
+  [<span data-ttu-id="c0a61-111">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="c0a61-111">Graphics and Multimedia</span></span>](../graphics-multimedia/index.md)

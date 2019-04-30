@@ -8,31 +8,31 @@ dev_langs:
 - VB
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
 ms.openlocfilehash: fa9aa3612a8dc72623fc4ea4b1ea337ac773fa26
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59169965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61928840"
 ---
-# <a name="tutorial-use-a-windows-communication-foundation-client"></a><span data-ttu-id="f9189-102">Kurz: Používání klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="f9189-102">Tutorial: Use a Windows Communication Foundation client</span></span>
+# <a name="tutorial-use-a-windows-communication-foundation-client"></a><span data-ttu-id="ff51b-102">Kurz: Používání klienta Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="ff51b-102">Tutorial: Use a Windows Communication Foundation client</span></span>
 
-<span data-ttu-id="f9189-103">Tento kurz popisuje posledních pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="f9189-103">This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="f9189-104">Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="f9189-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span></span>
+<span data-ttu-id="ff51b-103">Tento kurz popisuje posledních pět úloh potřebných k vytvoření základní aplikace Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="ff51b-103">This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="ff51b-104">Přehled v kurzech, naleznete v tématu [kurzu: Začínáme s aplikacemi Windows Communication Foundation](getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="ff51b-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span></span>
 
-<span data-ttu-id="f9189-105">Jakmile máte vytvořený a nakonfigurovaný proxy server služby Windows Communication Foundation (WCF), vytvoříte instanci klienta a kompilace aplikace klienta.</span><span class="sxs-lookup"><span data-stu-id="f9189-105">After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application.</span></span> <span data-ttu-id="f9189-106">Pak použijete ho ke komunikaci se službou WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-106">You then use it to communicate with the WCF service.</span></span> 
+<span data-ttu-id="ff51b-105">Jakmile máte vytvořený a nakonfigurovaný proxy server služby Windows Communication Foundation (WCF), vytvoříte instanci klienta a kompilace aplikace klienta.</span><span class="sxs-lookup"><span data-stu-id="ff51b-105">After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application.</span></span> <span data-ttu-id="ff51b-106">Pak použijete ho ke komunikaci se službou WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-106">You then use it to communicate with the WCF service.</span></span> 
 
-<span data-ttu-id="f9189-107">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="f9189-107">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="ff51b-107">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="ff51b-107">In this tutorial, you learn how to:</span></span>
 > [!div class="checklist"]
-> - <span data-ttu-id="f9189-108">Přidejte kód pro použití klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-108">Add code to use the WCF client.</span></span>
-> - <span data-ttu-id="f9189-109">Testovací klient WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-109">Test the WCF client.</span></span>
+> - <span data-ttu-id="ff51b-108">Přidejte kód pro použití klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-108">Add code to use the WCF client.</span></span>
+> - <span data-ttu-id="ff51b-109">Testovací klient WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-109">Test the WCF client.</span></span>
 
-## <a name="add-code-to-use-the-wcf-client"></a><span data-ttu-id="f9189-110">Přidejte kód, který pomocí klienta WCF</span><span class="sxs-lookup"><span data-stu-id="f9189-110">Add code to use the WCF client</span></span>
+## <a name="add-code-to-use-the-wcf-client"></a><span data-ttu-id="ff51b-110">Přidejte kód, který pomocí klienta WCF</span><span class="sxs-lookup"><span data-stu-id="ff51b-110">Add code to use the WCF client</span></span>
 
-<span data-ttu-id="f9189-111">Klientský kód provede následující kroky:</span><span class="sxs-lookup"><span data-stu-id="f9189-111">The client code does the following steps:</span></span>
-- <span data-ttu-id="f9189-112">Vytvoří instanci klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-112">Instantiates the WCF client.</span></span>
-- <span data-ttu-id="f9189-113">Volání operace služby od vygenerovaný proxy server.</span><span class="sxs-lookup"><span data-stu-id="f9189-113">Calls the service operations from the generated proxy.</span></span>
-- <span data-ttu-id="f9189-114">Klient se zavře po dokončení volání operace.</span><span class="sxs-lookup"><span data-stu-id="f9189-114">Closes the client after the operation call is completed.</span></span>
+<span data-ttu-id="ff51b-111">Klientský kód provede následující kroky:</span><span class="sxs-lookup"><span data-stu-id="ff51b-111">The client code does the following steps:</span></span>
+- <span data-ttu-id="ff51b-112">Vytvoří instanci klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-112">Instantiates the WCF client.</span></span>
+- <span data-ttu-id="ff51b-113">Volání operace služby od vygenerovaný proxy server.</span><span class="sxs-lookup"><span data-stu-id="ff51b-113">Calls the service operations from the generated proxy.</span></span>
+- <span data-ttu-id="ff51b-114">Klient se zavře po dokončení volání operace.</span><span class="sxs-lookup"><span data-stu-id="ff51b-114">Closes the client after the operation call is completed.</span></span>
 
-<span data-ttu-id="f9189-115">Otevřít **Program.cs** nebo **Module1.vb** soubor **GettingStartedClient** projektu a nahraďte jeho kód následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="f9189-115">Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:</span></span>
+<span data-ttu-id="ff51b-115">Otevřít **Program.cs** nebo **Module1.vb** soubor **GettingStartedClient** projektu a nahraďte jeho kód následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="ff51b-115">Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:</span></span>
 
 ```csharp
 using System;
@@ -133,27 +133,27 @@ Module Module1
 End Module
 ```
 
-<span data-ttu-id="f9189-116">Všimněte si, že `using` (pro vizuál C#) nebo `Imports` (pro jazyk Visual Basic), který importuje `GettingStartedClient.ServiceReference1`.</span><span class="sxs-lookup"><span data-stu-id="f9189-116">Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`.</span></span> <span data-ttu-id="f9189-117">Tento příkaz importuje kód, který generuje sada Visual Studio s použitím **přidat odkaz na službu** funkce.</span><span class="sxs-lookup"><span data-stu-id="f9189-117">This statement imports the code that Visual Studio generated with the **Add Service Reference** function.</span></span> <span data-ttu-id="f9189-118">Kód vytvoří instanci WCF proxy a volá všechny operace služby, které zpřístupňuje službu kalkulačky.</span><span class="sxs-lookup"><span data-stu-id="f9189-118">The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes.</span></span> <span data-ttu-id="f9189-119">Potom zavře proxy serveru a ukončení programu.</span><span class="sxs-lookup"><span data-stu-id="f9189-119">It then closes the proxy and ends the program.</span></span>
+<span data-ttu-id="ff51b-116">Všimněte si, že `using` (pro vizuál C#) nebo `Imports` (pro jazyk Visual Basic), který importuje `GettingStartedClient.ServiceReference1`.</span><span class="sxs-lookup"><span data-stu-id="ff51b-116">Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`.</span></span> <span data-ttu-id="ff51b-117">Tento příkaz importuje kód, který generuje sada Visual Studio s použitím **přidat odkaz na službu** funkce.</span><span class="sxs-lookup"><span data-stu-id="ff51b-117">This statement imports the code that Visual Studio generated with the **Add Service Reference** function.</span></span> <span data-ttu-id="ff51b-118">Kód vytvoří instanci WCF proxy a volá všechny operace služby, které zpřístupňuje službu kalkulačky.</span><span class="sxs-lookup"><span data-stu-id="ff51b-118">The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes.</span></span> <span data-ttu-id="ff51b-119">Potom zavře proxy serveru a ukončení programu.</span><span class="sxs-lookup"><span data-stu-id="ff51b-119">It then closes the proxy and ends the program.</span></span>
 
-## <a name="test-the-wcf-client"></a><span data-ttu-id="f9189-120">Testovací klient WCF</span><span class="sxs-lookup"><span data-stu-id="f9189-120">Test the WCF client</span></span>
+## <a name="test-the-wcf-client"></a><span data-ttu-id="ff51b-120">Testovací klient WCF</span><span class="sxs-lookup"><span data-stu-id="ff51b-120">Test the WCF client</span></span>
 
-### <a name="test-the-application-from-visual-studio"></a><span data-ttu-id="f9189-121">Testování aplikace ze sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="f9189-121">Test the application from Visual Studio</span></span>
+### <a name="test-the-application-from-visual-studio"></a><span data-ttu-id="ff51b-121">Testování aplikace ze sady Visual Studio</span><span class="sxs-lookup"><span data-stu-id="ff51b-121">Test the application from Visual Studio</span></span>
 
-1. <span data-ttu-id="f9189-122">Uložit a sestavit řešení.</span><span class="sxs-lookup"><span data-stu-id="f9189-122">Save and build the solution.</span></span>
+1. <span data-ttu-id="ff51b-122">Uložit a sestavit řešení.</span><span class="sxs-lookup"><span data-stu-id="ff51b-122">Save and build the solution.</span></span>
 
-2. <span data-ttu-id="f9189-123">Vyberte **GettingStartedLib** složku a pak vyberte **nastavit jako spouštěný projekt** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="f9189-123">Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.</span></span>
+2. <span data-ttu-id="ff51b-123">Vyberte **GettingStartedLib** složku a pak vyberte **nastavit jako spouštěný projekt** z místní nabídky.</span><span class="sxs-lookup"><span data-stu-id="ff51b-123">Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.</span></span>
 
-3. <span data-ttu-id="f9189-124">Z **projektů po spuštění**vyberte **GettingStartedLib** z rozevíracího seznamu vyberte **spustit** nebo stiskněte klávesu **F5**.</span><span class="sxs-lookup"><span data-stu-id="f9189-124">From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.</span></span>
+3. <span data-ttu-id="ff51b-124">Z **projektů po spuštění**vyberte **GettingStartedLib** z rozevíracího seznamu vyberte **spustit** nebo stiskněte klávesu **F5**.</span><span class="sxs-lookup"><span data-stu-id="ff51b-124">From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.</span></span>
 
-### <a name="test-the-application-from-a-command-prompt"></a><span data-ttu-id="f9189-125">Testování aplikace z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="f9189-125">Test the application from a command prompt</span></span>
+### <a name="test-the-application-from-a-command-prompt"></a><span data-ttu-id="ff51b-125">Testování aplikace z příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="ff51b-125">Test the application from a command prompt</span></span>
 
-1. <span data-ttu-id="f9189-126">Otevřete příkazový řádek jako správce a pak přejděte do adresáře řešení sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="f9189-126">Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory.</span></span> 
+1. <span data-ttu-id="ff51b-126">Otevřete příkazový řádek jako správce a pak přejděte do adresáře řešení sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ff51b-126">Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory.</span></span> 
 
-2. <span data-ttu-id="f9189-127">Chcete-li spustit službu: Zadejte *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span><span class="sxs-lookup"><span data-stu-id="f9189-127">To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span></span>
+2. <span data-ttu-id="ff51b-127">Chcete-li spustit službu: Zadejte *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span><span class="sxs-lookup"><span data-stu-id="ff51b-127">To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span></span>
 
-3. <span data-ttu-id="f9189-128">Chcete spustit klienta: Otevřete další příkazový řádek, přejděte do adresáře řešení sady Visual Studio a pak zadejte *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span><span class="sxs-lookup"><span data-stu-id="f9189-128">To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span></span>
+3. <span data-ttu-id="ff51b-128">Chcete spustit klienta: Otevřete další příkazový řádek, přejděte do adresáře řešení sady Visual Studio a pak zadejte *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span><span class="sxs-lookup"><span data-stu-id="ff51b-128">To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span></span>
 
-   <span data-ttu-id="f9189-129">*GettingStartedHost.exe* vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f9189-129">*GettingStartedHost.exe* produces the following output:</span></span>
+   <span data-ttu-id="ff51b-129">*GettingStartedHost.exe* vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ff51b-129">*GettingStartedHost.exe* produces the following output:</span></span>
 
    ```text
    The service is ready.
@@ -169,7 +169,7 @@ End Module
    Return: 3.14285714285714
    ```
 
-   <span data-ttu-id="f9189-130">*GettingStartedClient.exe* vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f9189-130">*GettingStartedClient.exe* produces the following output:</span></span>
+   <span data-ttu-id="ff51b-130">*GettingStartedClient.exe* vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ff51b-130">*GettingStartedClient.exe* produces the following output:</span></span>
 
    ```text
    Add(100,15.99) = 115.99
@@ -180,16 +180,16 @@ End Module
    Press <Enter> to terminate the client.
    ```
 
-## <a name="next-steps"></a><span data-ttu-id="f9189-131">Další kroky</span><span class="sxs-lookup"><span data-stu-id="f9189-131">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="ff51b-131">Další kroky</span><span class="sxs-lookup"><span data-stu-id="ff51b-131">Next steps</span></span>
 
-<span data-ttu-id="f9189-132">Právě jste dokončili všechny úkoly v tomto kurzu Začínáme get WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-132">You've now completed all the tasks in the WCF get started tutorial.</span></span> <span data-ttu-id="f9189-133">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="f9189-133">In this tutorial, you learned how to:</span></span>
+<span data-ttu-id="ff51b-132">Právě jste dokončili všechny úkoly v tomto kurzu Začínáme get WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-132">You've now completed all the tasks in the WCF get started tutorial.</span></span> <span data-ttu-id="ff51b-133">V tomto kurzu jste se naučili:</span><span class="sxs-lookup"><span data-stu-id="ff51b-133">In this tutorial, you learned how to:</span></span>
 
-<span data-ttu-id="f9189-134">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="f9189-134">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="ff51b-134">V tomto kurzu se naučíte:</span><span class="sxs-lookup"><span data-stu-id="ff51b-134">In this tutorial, you learn how to:</span></span>
 > [!div class="checklist"]
-> - <span data-ttu-id="f9189-135">Přidejte kód pro použití klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-135">Add code to use the WCF client.</span></span>
-> - <span data-ttu-id="f9189-136">Testovací klient WCF.</span><span class="sxs-lookup"><span data-stu-id="f9189-136">Test the WCF client.</span></span>
+> - <span data-ttu-id="ff51b-135">Přidejte kód pro použití klienta WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-135">Add code to use the WCF client.</span></span>
+> - <span data-ttu-id="ff51b-136">Testovací klient WCF.</span><span class="sxs-lookup"><span data-stu-id="ff51b-136">Test the WCF client.</span></span>
 
-<span data-ttu-id="f9189-137">Pokud máte problémy nebo chyby v žádném z kroků, postupujte podle kroků v článku s řešením potíží a opravte je.</span><span class="sxs-lookup"><span data-stu-id="f9189-137">If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.</span></span>
+<span data-ttu-id="ff51b-137">Pokud máte problémy nebo chyby v žádném z kroků, postupujte podle kroků v článku s řešením potíží a opravte je.</span><span class="sxs-lookup"><span data-stu-id="ff51b-137">If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="f9189-138">Řešení potíží s Get začít kurzy WCF</span><span class="sxs-lookup"><span data-stu-id="f9189-138">Troubleshoot the Get started with WCF tutorials</span></span>](troubleshooting-the-getting-started-tutorial.md)
+> [<span data-ttu-id="ff51b-138">Řešení potíží s Get začít kurzy WCF</span><span class="sxs-lookup"><span data-stu-id="ff51b-138">Troubleshoot the Get started with WCF tutorials</span></span>](troubleshooting-the-getting-started-tutorial.md)

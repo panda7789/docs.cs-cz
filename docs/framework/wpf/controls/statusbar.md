@@ -8,23 +8,23 @@ helpviewer_keywords:
 - StatusBar control [WPF]
 ms.assetid: aba45aed-7953-4b2c-bc29-315a9be6c440
 ms.openlocfilehash: 8998eba8a713cada62c8defc8d7500bf3bc036a3
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57352519"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61791048"
 ---
-# <a name="statusbar"></a><span data-ttu-id="1b849-102">StatusBar</span><span class="sxs-lookup"><span data-stu-id="1b849-102">StatusBar</span></span>
-<span data-ttu-id="1b849-103">A <xref:System.Windows.Controls.Primitives.StatusBar> je horizontální oblasti v dolní části okna, kde aplikace může zobrazit informace o stavu.</span><span class="sxs-lookup"><span data-stu-id="1b849-103">A <xref:System.Windows.Controls.Primitives.StatusBar> is a horizontal area at the bottom of a window where an application can display status information.</span></span>  
+# <a name="statusbar"></a><span data-ttu-id="3c1ed-102">StatusBar</span><span class="sxs-lookup"><span data-stu-id="3c1ed-102">StatusBar</span></span>
+<span data-ttu-id="3c1ed-103">A <xref:System.Windows.Controls.Primitives.StatusBar> je horizontální oblasti v dolní části okna, kde aplikace může zobrazit informace o stavu.</span><span class="sxs-lookup"><span data-stu-id="3c1ed-103">A <xref:System.Windows.Controls.Primitives.StatusBar> is a horizontal area at the bottom of a window where an application can display status information.</span></span>  
   
- <span data-ttu-id="1b849-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.Primitives.StatusBar>.</span><span class="sxs-lookup"><span data-stu-id="1b849-104">The following illustration shows an example of a <xref:System.Windows.Controls.Primitives.StatusBar>.</span></span>  
+ <span data-ttu-id="3c1ed-104">Následující obrázek znázorňuje příklad <xref:System.Windows.Controls.Primitives.StatusBar>.</span><span class="sxs-lookup"><span data-stu-id="3c1ed-104">The following illustration shows an example of a <xref:System.Windows.Controls.Primitives.StatusBar>.</span></span>  
   
- <span data-ttu-id="1b849-105">![Status bar](./media/ss-ctl-statusbar.GIF "SS_CTL_statusbar")</span><span class="sxs-lookup"><span data-stu-id="1b849-105">![Status bar](./media/ss-ctl-statusbar.GIF "SS_CTL_statusbar")</span></span>  
+ <span data-ttu-id="3c1ed-105">![Status bar](./media/ss-ctl-statusbar.GIF "SS_CTL_statusbar")</span><span class="sxs-lookup"><span data-stu-id="3c1ed-105">![Status bar](./media/ss-ctl-statusbar.GIF "SS_CTL_statusbar")</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="1b849-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1b849-106">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="3c1ed-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3c1ed-106">In This Section</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="1b849-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="1b849-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="3c1ed-107">Odkaz</span><span class="sxs-lookup"><span data-stu-id="3c1ed-107">Reference</span></span>  
  <xref:System.Windows.Controls.Primitives.StatusBar>  
   <xref:System.Windows.Controls.Primitives.StatusBarItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="1b849-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1b849-108">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="3c1ed-108">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3c1ed-108">Related Sections</span></span>

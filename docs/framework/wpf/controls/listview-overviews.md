@@ -8,24 +8,24 @@ helpviewer_keywords:
 - ListView controls [WPF], using
 ms.assetid: 49dfef1a-dddf-4fc6-a511-6d5f925a4781
 ms.openlocfilehash: 734b5265c1d25e4538c40f5a43bff220d675eedb
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57370329"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61932573"
 ---
-# <a name="listview-overviews"></a><span data-ttu-id="2c432-102">Přehled ListView</span><span class="sxs-lookup"><span data-stu-id="2c432-102">ListView Overviews</span></span>
-<span data-ttu-id="2c432-103">Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="2c432-103">The topics in this section show you how to use a <xref:System.Windows.Controls.ListView> control.</span></span>  
+# <a name="listview-overviews"></a><span data-ttu-id="fa3e2-102">Přehled ListView</span><span class="sxs-lookup"><span data-stu-id="fa3e2-102">ListView Overviews</span></span>
+<span data-ttu-id="fa3e2-103">Témata v této části se dozvíte, jak používat <xref:System.Windows.Controls.ListView> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="fa3e2-103">The topics in this section show you how to use a <xref:System.Windows.Controls.ListView> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="2c432-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2c432-104">In This Section</span></span>  
- [<span data-ttu-id="2c432-105">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="2c432-105">ListView Overview</span></span>](listview-overview.md)  
- [<span data-ttu-id="2c432-106">GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="2c432-106">GridView Overview</span></span>](gridview-overview.md)  
- [<span data-ttu-id="2c432-107">Přehled stylů záhlaví sloupců a šablon GridView</span><span class="sxs-lookup"><span data-stu-id="2c432-107">GridView Column Header Styles and Templates Overview</span></span>](gridview-column-header-styles-and-templates-overview.md)  
+## <a name="in-this-section"></a><span data-ttu-id="fa3e2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="fa3e2-104">In This Section</span></span>  
+ [<span data-ttu-id="fa3e2-105">ListView – přehled</span><span class="sxs-lookup"><span data-stu-id="fa3e2-105">ListView Overview</span></span>](listview-overview.md)  
+ [<span data-ttu-id="fa3e2-106">GridView – přehled</span><span class="sxs-lookup"><span data-stu-id="fa3e2-106">GridView Overview</span></span>](gridview-overview.md)  
+ [<span data-ttu-id="fa3e2-107">Přehled stylů záhlaví sloupců a šablon GridView</span><span class="sxs-lookup"><span data-stu-id="fa3e2-107">GridView Column Header Styles and Templates Overview</span></span>](gridview-column-header-styles-and-templates-overview.md)  
   
-## <a name="reference"></a><span data-ttu-id="2c432-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="2c432-108">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="fa3e2-108">Odkaz</span><span class="sxs-lookup"><span data-stu-id="fa3e2-108">Reference</span></span>  
  <xref:System.Windows.Controls.ListView>  
   
  <xref:System.Windows.Controls.GridView>  
   
-## <a name="related-sections"></a><span data-ttu-id="2c432-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="2c432-109">Related Sections</span></span>  
- [<span data-ttu-id="2c432-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="2c432-110">How-to Topics</span></span>](listview-how-to-topics.md)
+## <a name="related-sections"></a><span data-ttu-id="fa3e2-109">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="fa3e2-109">Related Sections</span></span>  
+ [<span data-ttu-id="fa3e2-110">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="fa3e2-110">How-to Topics</span></span>](listview-how-to-topics.md)

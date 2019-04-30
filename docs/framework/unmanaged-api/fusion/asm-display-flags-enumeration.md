@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cbcff46b1932f3293fba4fda922e78f3b9ac37b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914732"
 ---
-# <a name="asmdisplayflags-enumeration"></a><span data-ttu-id="1a82a-102">ASM_DISPLAY_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="1a82a-102">ASM_DISPLAY_FLAGS Enumeration</span></span>
-<span data-ttu-id="1a82a-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, sestavení, jejichž zobrazované jméno bude možné načíst podle [iassemblyname::GetDisplayName –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="1a82a-103">Indicates the version, build, culture, signature, and so on, of the assembly whose display name will be retrieved by the [IAssemblyName::GetDisplayName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) method.</span></span>  
+# <a name="asmdisplayflags-enumeration"></a><span data-ttu-id="7316e-102">ASM_DISPLAY_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="7316e-102">ASM_DISPLAY_FLAGS Enumeration</span></span>
+<span data-ttu-id="7316e-103">Určuje verzi, sestavení, jazykovou verzi, podpisu a tak dále, sestavení, jejichž zobrazované jméno bude možné načíst podle [iassemblyname::GetDisplayName –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="7316e-103">Indicates the version, build, culture, signature, and so on, of the assembly whose display name will be retrieved by the [IAssemblyName::GetDisplayName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1a82a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1a82a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7316e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7316e-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -51,19 +51,19 @@ typedef enum {
 } ASM_DISPLAY_FLAGS;  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="1a82a-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1a82a-105">Remarks</span></span>  
- <span data-ttu-id="1a82a-106">`ASM_DISPLAYF_FULL` odráží všechny změny provedené na verzi [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="1a82a-106">`ASM_DISPLAYF_FULL` reflects any changes made to the version of the [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.</span></span> <span data-ttu-id="1a82a-107">Nepředpokládejte, že vrácená hodnota je neměnná.</span><span class="sxs-lookup"><span data-stu-id="1a82a-107">Do not assume that the returned value is immutable.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7316e-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7316e-105">Remarks</span></span>  
+ <span data-ttu-id="7316e-106">`ASM_DISPLAYF_FULL` odráží všechny změny provedené na verzi [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.</span><span class="sxs-lookup"><span data-stu-id="7316e-106">`ASM_DISPLAYF_FULL` reflects any changes made to the version of the [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.</span></span> <span data-ttu-id="7316e-107">Nepředpokládejte, že vrácená hodnota je neměnná.</span><span class="sxs-lookup"><span data-stu-id="7316e-107">Do not assume that the returned value is immutable.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1a82a-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1a82a-108">Requirements</span></span>  
- <span data-ttu-id="1a82a-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1a82a-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7316e-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7316e-108">Requirements</span></span>  
+ <span data-ttu-id="7316e-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7316e-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1a82a-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="1a82a-110">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="7316e-110">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="7316e-110">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="1a82a-111">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1a82a-111">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7316e-111">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7316e-111">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="1a82a-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1a82a-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="7316e-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7316e-112">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1a82a-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1a82a-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7316e-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7316e-113">See also</span></span>
 
-- [<span data-ttu-id="1a82a-114">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1a82a-114">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [<span data-ttu-id="1a82a-115">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="1a82a-115">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [<span data-ttu-id="7316e-114">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7316e-114">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [<span data-ttu-id="7316e-115">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="7316e-115">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
