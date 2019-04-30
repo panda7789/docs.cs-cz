@@ -14,28 +14,28 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: serodec18
 ms.openlocfilehash: 02847a813566c4675f7df2c88fa2e4e1f6138ecb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152809"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61949510"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Osvědčené postupy pro regulární výrazy v rozhraní .NET
 <a name="top"></a> Modul regulárních výrazů v .NET je výkonný, plně funkční nástroj, který zpracovává text na základě u porovnávání vzorů namísto porovnávání a párování literálového textu. Ve většině případů provádí porovnání vzorů rychle a efektivně. V některých případech se však může zdát, že je modul regulárních výrazů velmi pomalý. V extrémních případech se může dokonce zdát, že přestal při zpracování relativně malého vstupu odpovídat po dobu hodin nebo dokonce dní.  
   
  Toto téma nastiňuje některé osvědčené postupy, které si mohou vývojáři osvojit za účelem dosažení optimálního výkonu regulárních výrazů. Obsahuje následující oddíly:  
   
--   [Výběr vstupního zdroje](#InputSource)  
+- [Výběr vstupního zdroje](#InputSource)  
   
--   [Vhodné vytváření instancí objektu](#ObjectInstantiation)  
+- [Vhodné vytváření instancí objektu](#ObjectInstantiation)  
   
--   [Využijte navracením](#Backtracking)  
+- [Využijte navracením](#Backtracking)  
   
--   [Používání hodnot časového limitu](#Timeouts)  
+- [Používání hodnot časového limitu](#Timeouts)  
   
--   [Zachycení pouze v případě potřeby](#Capture)  
+- [Zachycení pouze v případě potřeby](#Capture)  
   
--   [Související témata](#RelatedTopics)  
+- [Související témata](#RelatedTopics)  
   
 <a name="InputSource"></a>   
 ## <a name="consider-the-input-source"></a>Výběr vstupního zdroje  
@@ -45,11 +45,11 @@ ms.locfileid: "53152809"
   
  Aby mohl regulární výraz odpovídat vstupu bez omezení, musí být schopen efektivně zpracovat tři druhy textu:  
   
--   Text, který odpovídá vzoru regulárního výrazu.  
+- Text, který odpovídá vzoru regulárního výrazu.  
   
--   Text, který neodpovídá vzoru regulárního výrazu.  
+- Text, který neodpovídá vzoru regulárního výrazu.  
   
--   Text, který téměř odpovídá vzoru regulárního výrazu.  
+- Text, který téměř odpovídá vzoru regulárního výrazu.  
   
  Poslední typ je zvláště problematický pro regulární výrazy, které jsou napsány tak, aby zpracovávaly vstup s omezením. Pokud tento regulární výraz rovněž závisí na častém [používání mechanismu zpětného navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md), modul regulárních výrazů může strávit nadměrné množství času (v některých případech mnoho hodin nebo dnů) zpracováváním zdánlivě neškodného textu.  
   
@@ -67,9 +67,9 @@ ms.locfileid: "53152809"
   
  Chcete-li tento problém vyřešit, proveďte následující akce:  
   
--   Při vytváření vzoru je třeba zvážit, jakým způsobem mechanismus zpětného navracení může ovlivnit výkon modulu regulárních výrazů, především tehdy, pokud je regulární výraz navržen pro zpracování vstupu bez omezení. Další informace najdete v tématu [provést nad zpětným navracením](#Backtracking) oddílu.  
+- Při vytváření vzoru je třeba zvážit, jakým způsobem mechanismus zpětného navracení může ovlivnit výkon modulu regulárních výrazů, především tehdy, pokud je regulární výraz navržen pro zpracování vstupu bez omezení. Další informace najdete v tématu [provést nad zpětným navracením](#Backtracking) oddílu.  
   
--   Regulární výraz je nutné důkladně odzkoušet pomocí neplatných vstupů, téměř platných vstupů a také platných vstupů. Chcete-li generování vstupu pro konkrétní regulární výraz náhodně, můžete použít [Rex](https://www.microsoft.com/en-us/research/project/rex-regular-expression-exploration/), což je nástroj pro zkoumání regulárních výrazů od Microsoft Research.  
+- Regulární výraz je nutné důkladně odzkoušet pomocí neplatných vstupů, téměř platných vstupů a také platných vstupů. Chcete-li generování vstupu pro konkrétní regulární výraz náhodně, můžete použít [Rex](https://www.microsoft.com/en-us/research/project/rex-regular-expression-exploration/), což je nástroj pro zkoumání regulárních výrazů od Microsoft Research.  
   
  [Zpět na začátek](#top)  
   
@@ -82,13 +82,13 @@ ms.locfileid: "53152809"
   
  Modul regulárních výrazů lze spárovat s konkrétním vzorem regulárního výrazu a následně modul použít pro porovnání textu několika různými způsoby:  
   
--   Lze zavolat statickou metodu porovnávání vzorů, jako <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType>. Tato akce nevyžaduje vytvoření instance objektu regulárních výrazů.  
+- Lze zavolat statickou metodu porovnávání vzorů, jako <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType>. Tato akce nevyžaduje vytvoření instance objektu regulárních výrazů.  
   
--   Můžete vytvořit instanci <xref:System.Text.RegularExpressions.Regex> objektu a zavolat metodu instance porovnávání vzorů interpretovaného regulárního výrazu. Toto je výchozí metoda pro vytvoření vazby modulu regulárních výrazů se vzorem regulárního výrazu. Nastane při <xref:System.Text.RegularExpressions.Regex> je vytvořena instance objektu bez `options` argument, který obsahuje <xref:System.Text.RegularExpressions.RegexOptions.Compiled> příznak.  
+- Můžete vytvořit instanci <xref:System.Text.RegularExpressions.Regex> objektu a zavolat metodu instance porovnávání vzorů interpretovaného regulárního výrazu. Toto je výchozí metoda pro vytvoření vazby modulu regulárních výrazů se vzorem regulárního výrazu. Nastane při <xref:System.Text.RegularExpressions.Regex> je vytvořena instance objektu bez `options` argument, který obsahuje <xref:System.Text.RegularExpressions.RegexOptions.Compiled> příznak.  
   
--   Můžete vytvořit instanci <xref:System.Text.RegularExpressions.Regex> a následně zavolat metodu porovnávání vzorů instance z zkompilovaný regulární výraz. Regulárního výrazu reprezentuje zkompilovaný vzor, pokud <xref:System.Text.RegularExpressions.Regex> je vytvořena instance objektu s `options` argument, který obsahuje <xref:System.Text.RegularExpressions.RegexOptions.Compiled> příznak.  
+- Můžete vytvořit instanci <xref:System.Text.RegularExpressions.Regex> a následně zavolat metodu porovnávání vzorů instance z zkompilovaný regulární výraz. Regulárního výrazu reprezentuje zkompilovaný vzor, pokud <xref:System.Text.RegularExpressions.Regex> je vytvořena instance objektu s `options` argument, který obsahuje <xref:System.Text.RegularExpressions.RegexOptions.Compiled> příznak.  
   
--   Můžete vytvářet speciální účely <xref:System.Text.RegularExpressions.Regex> objekt, který je úzce párována konkrétním vzorem regulárního výrazu, zkompilovat jej a uložit do samostatného sestavení. To provedete voláním <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metody.  
+- Můžete vytvářet speciální účely <xref:System.Text.RegularExpressions.Regex> objekt, který je úzce párována konkrétním vzorem regulárního výrazu, zkompilovat jej a uložit do samostatného sestavení. To provedete voláním <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metody.  
   
  Způsob, jakým budou metody porovnávání regulárních výrazů volány, může mít zásadní vliv na vaši aplikaci. V následujících částech jsou probírány způsoby volání statických metod, interpretovaných regulárních výrazů a zkompilovaných regulárních výrazů za účelem zvýšení výkonu aplikace.  
   
@@ -154,9 +154,9 @@ ms.locfileid: "53152809"
   
  Kompilaci regulárních výrazů do sestavení doporučujeme provádět v následujících situacích:  
   
--   Pokud pracujete jako vývojář komponent a chcete vytvořit knihovnu znovupoužitelných regulárních výrazů.  
+- Pokud pracujete jako vývojář komponent a chcete vytvořit knihovnu znovupoužitelných regulárních výrazů.  
   
--   Pokud očekáváte, že metody porovnávání se vzorem regulárních výrazů budou mít neurčitý počet volání – v rozsahu od jednoho nebo dvou do tisíců nebo desítek tisíců volání. Na rozdíl od zkompilovaných nebo interpretovaných regulárních výrazů nabízejí regulární výrazy, které jsou zkompilovány do samostatných sestavení, výkon, který je konzistentní bez ohledu na počet volání metod.  
+- Pokud očekáváte, že metody porovnávání se vzorem regulárních výrazů budou mít neurčitý počet volání – v rozsahu od jednoho nebo dvou do tisíců nebo desítek tisíců volání. Na rozdíl od zkompilovaných nebo interpretovaných regulárních výrazů nabízejí regulární výrazy, které jsou zkompilovány do samostatných sestavení, výkon, který je konzistentní bez ohledu na počet volání metod.  
   
  Pokud jsou pro optimalizaci výkonu použity kompilované regulární výrazy, neměla by pro vytvoření sestavení, načtení modulu regulárních výrazů a provedení metod porovnávání se vzorem být použita reflexe. Tato akce vyžaduje vynechání dynamického sestavování vzorů regulárních výrazů a zadání možnosti nastavení porovnávání se vzorem (jako je například porovnávání s rozlišováním velkých a malých čísel) během vytváření sestavení. Vyžaduje také oddělení kódu, který vytváří sestavení, od kódu, který používá regulární výraz.  
   
@@ -220,7 +220,7 @@ ms.locfileid: "53152809"
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack4.cs#11)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack4.vb#11)]  
   
- Jazyk regulárních výrazů v .NET obsahuje následující prvky jazyka, které můžete použít k odstranění vnořených kvantifikátorů. Další informace najdete v tématu [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ Jazyk regulárních výrazů v .NET obsahuje následující prvky jazyka, které můžete použít k odstranění vnořených kvantifikátorů. Další informace najdete v tématu [Seskupovací konstrukce](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
 |Prvek jazyka|Popis|  
 |----------------------|-----------------|  
@@ -237,11 +237,11 @@ ms.locfileid: "53152809"
   
  Interval časového limitu regulárního výrazu definuje časové období, během kterého bude modul regulárních výrazů vyhledávat jediný výskyt shody před vypršením časového limitu. Výchozí interval časového limitu je <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType>, což znamená, že regulární výraz nevyprší. Tuto hodnotu lze přepsat a definovat vlastní časový limit následujícím způsobem:  
   
--   Poskytnutím hodnoty časového limitu vytvoříte instanci <xref:System.Text.RegularExpressions.Regex> objektu voláním <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> konstruktoru.  
+- Poskytnutím hodnoty časového limitu vytvoříte instanci <xref:System.Text.RegularExpressions.Regex> objektu voláním <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> konstruktoru.  
   
--   Voláním statické metody porovnávání vzoru, jako například <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>, zahrnující `matchTimeout` parametru.  
+- Voláním statické metody porovnávání vzoru, jako například <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Regex.Replace%28System.String%2CSystem.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>, zahrnující `matchTimeout` parametru.  
   
--   U zkompilovaných regulárních výrazů, které jsou vytvořeny pomocí volání <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metoda zavoláním konstruktoru, který má parametr typu <xref:System.TimeSpan>.  
+- U zkompilovaných regulárních výrazů, které jsou vytvořeny pomocí volání <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> metoda zavoláním konstruktoru, který má parametr typu <xref:System.TimeSpan>.  
   
  Pokud jste definovali interval časového limitu a na konci tohoto intervalu není nalezena shoda, vyvolá metoda regulárních výrazů <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> výjimky. V obslužné rutině výjimek můžete zadat nové vyhledávání shody s delším intervalem časového limitu, zrušit pokus o vyhledání shody a předpokládat, že shoda neexistuje, nebo zrušit pokus o vyhledání shody a vytvořit protokol s informacemi o výjimce pro další analýzu.  
   
@@ -281,13 +281,13 @@ ms.locfileid: "53152809"
   
  Zachytávání lze zakázat jedním z následujících způsobů:  
   
--   Použití `(?:subexpression)` elementu jazyka. Tento prvek zabraňuje v zachytávání shodných podřetězců ve skupině, pro kterou se používá. Nezakazuje zachytávání podřetězců v jakékoli vnořené skupině.  
+- Použití `(?:subexpression)` elementu jazyka. Tento prvek zabraňuje v zachytávání shodných podřetězců ve skupině, pro kterou se používá. Nezakazuje zachytávání podřetězců v jakékoli vnořené skupině.  
   
--   Použití <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> možnost. Zakazuje všechna nepojmenovaná nebo implicitní zachycení ve vzoru regulárního výrazu. Když použijete tuto možnost, pouze podřetězce, které odpovídají pojmenovaným skupinám definovaným `(?<name>subexpression)` prvek jazyka mohou být zachyceny. <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> Příznak může být předán `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo `options` parametr <xref:System.Text.RegularExpressions.Regex> statické metody porovnávání.  
+- Použití <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> možnost. Zakazuje všechna nepojmenovaná nebo implicitní zachycení ve vzoru regulárního výrazu. Když použijete tuto možnost, pouze podřetězce, které odpovídají pojmenovaným skupinám definovaným `(?<name>subexpression)` prvek jazyka mohou být zachyceny. <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture> Příznak může být předán `options` parametr <xref:System.Text.RegularExpressions.Regex> konstruktoru třídy nebo `options` parametr <xref:System.Text.RegularExpressions.Regex> statické metody porovnávání.  
   
--   Použití `n` možnost `(?imnsx)` elementu jazyka. Tato možnost zakazuje všechna nepojmenovaná nebo implicitní zachycení z bodu ve vzoru regulárního výrazu, ve kterém se prvek objeví. Zachycení jsou zakázána do konce vzoru, nebo dokud `(-n)` možnost povolí Nepojmenovaná nebo implicitní zachycení nepovolí. Další informace najdete v tématu [různé vytvoří](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md).  
+- Použití `n` možnost `(?imnsx)` elementu jazyka. Tato možnost zakazuje všechna nepojmenovaná nebo implicitní zachycení z bodu ve vzoru regulárního výrazu, ve kterém se prvek objeví. Zachycení jsou zakázána do konce vzoru, nebo dokud `(-n)` možnost povolí Nepojmenovaná nebo implicitní zachycení nepovolí. Další informace najdete v tématu [různé vytvoří](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md).  
   
--   Použití `n` možnost `(?imnsx:subexpression)` elementu jazyka. Tato možnost zakazuje všechna Nepojmenovaná nebo implicitní zachycení v `subexpression`. Zachycení nepojmenovanou nebo implicitní vnořenou zachytávající skupinou jsou rovněž zakázána.  
+- Použití `n` možnost `(?imnsx:subexpression)` elementu jazyka. Tato možnost zakazuje všechna Nepojmenovaná nebo implicitní zachycení v `subexpression`. Zachycení nepojmenovanou nebo implicitní vnořenou zachytávající skupinou jsou rovněž zakázána.  
   
  [Zpět na začátek](#top)  
   

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
 ms.openlocfilehash: f0802365ed07bdb57111d1b28e8d7ddfd800d41b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59122301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929594"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -34,11 +34,11 @@ Tento dokument obsahuje podrobný pohled na architekturu Windows Communication F
   
  Další požadovaný element v zásobníku komunikace je kódování, které určuje formátování jakékoli dané zprávy. WCF poskytuje následujícím kódování:  
   
--   Kódování, interoperabilní kódování textu.  
+- Kódování, interoperabilní kódování textu.  
   
--   Zpráva přenosu optimalizace mechanismus (MTOM) kódování, což je interoperabilní způsob pro efektivní zasílání nestrukturovaná binární data do a ze služby.  
+- Zpráva přenosu optimalizace mechanismus (MTOM) kódování, což je interoperabilní způsob pro efektivní zasílání nestrukturovaná binární data do a ze služby.  
   
--   Binární kódování pro efektivní přenos.  
+- Binární kódování pro efektivní přenos.  
   
  Můžete přidat více kódování mechanismy (například v komprese kódování) pomocí předdefinovaných Rozšiřovací body služby WCF.  
   
@@ -48,7 +48,7 @@ Tento dokument obsahuje podrobný pohled na architekturu Windows Communication F
 ## <a name="wcf-terms"></a>Podmínky pro WCF  
  V následujících bodech dalších konceptů a termínů používaných v dokumentaci WCF.  
   
-  – zpráva  
+ zpráva  
  Samostatná jednotka dat, která se může skládat z více částí, včetně záhlaví a text.  
   
  service  

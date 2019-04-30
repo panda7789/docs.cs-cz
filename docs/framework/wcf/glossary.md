@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF [WCF], glossary
 ms.assetid: 39cd36f4-8a28-4d0b-a830-98d55c9d30ae
 ms.openlocfilehash: cbd5ce06698400152460af0706761d9855b43e12
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57474082"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61929530"
 ---
 # <a name="windows-communication-foundation-glossary-for-net-framework-45"></a>Glosář služby Windows Communication Foundation pro .NET Framework 4.5
 
@@ -39,7 +39,7 @@ Následující termíny jsou definovány pro dokumentaci k Windows Communication
 |proces hostování|Hostitelský proces je aplikace, která je navržená pro hostování služeb. Patří mezi ně Internetové informační služby (IIS), aktivační služby Windows (WAS) a služby Windows. V těchto scénářích hostovaných hostitel řídí životnost služby. Například pomocí služby IIS nastavením virtuální adresář, který obsahuje sestavení a konfigurační soubor služby. Při doručení zprávy do spustí službu IIS a určuje jeho životnost.|
 |Zahajuje se operace|Operace, která je volána jako první operace novou relaci. Bez zahájení operace lze volat pouze po zavolání alespoň jednu operaci zahájil.|
 |vytváření instancí modelu|Služba je vytvoření instance modelu. Existují tři vytvoření instance modely: &quot;jeden,&quot; ve kterém jeden objekt CLR služby všichni klienti; &quot;za volání,&quot; ve které je vytvořen nový objekt CLR pro zpracování jednotlivých volání klienta; a &quot;na relaci,&quot; v které sadu CLR objekty, jsou vytvořeny, jeden pro každou samostatnou relaci. Možnost vytvoření instance modelu závisí na očekávané využití model služby a požadavky aplikace.|
-| – zpráva|Zprávu je samostatná jednotka dat, která se může skládat z několika částí, včetně záhlaví a text.|
+|zpráva|Zprávu je samostatná jednotka dat, která se může skládat z několika částí, včetně záhlaví a text.|
 |kontrakt zprávy|Kontrakt zprávy popisuje formát zprávy. Například deklaruje, jestli zpráva prvky by měl přejít v záhlaví a text, jakou úroveň zabezpečení bude použito pro prvky zprávu, a tak dále.|
 |režim zabezpečení zpráv|Režim zabezpečení zprávy určuje, že zabezpečení poskytuje implementaci jeden nebo více specifikací zabezpečení. Každá zpráva obsahuje nezbytné mechanismů pro zabezpečení během jeho kopírování a umožňuje příjemci umožňuje zjistit případnou manipulaci a k dešifrování zprávy. V tomto smyslu zabezpečení zapouzdřen v rámci každé zprávy poskytující-koncové zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stane součástí zprávy, je taky možné zahrnout více druhů přihlašovací údaje se zprávou (tyto jsou označovány jako deklarace identity). Tento přístup také nabízí výhodu v podobě povolení zpráva, kterou chcete procházet bezpečně přes všechny dopravu, včetně více přenosy mezi její zdroj a cíl. Nevýhody tohoto přístupu je složitost kryptografických mechanismů zapojeni, což vede k vliv na výkon.|
 |metadata|Metadata služby popisuje vlastnosti služby, kterou je potřeba pochopit, ke komunikaci se službou externí entity. Metadata mohou být spotřebovány ServiceModel Metadata Utility Tool (Svcutil.exe) ke generování klienta WCF a související konfigurace, klientská aplikace můžete použít k interakci se službou.  Metadata určeného službou obsahují dokumentů schématu XML, které definují kontrakt dat služby a dokumenty WSDL, které popisují metody služby.  Při povolení metadat pro službu automaticky generuje služba WCF zkontrolováním jeho koncových bodů a služba. Být zveřejněna metadata ze služby, musíte výslovně povolit chování metadat.|
