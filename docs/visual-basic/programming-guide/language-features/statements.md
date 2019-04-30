@@ -16,11 +16,11 @@ helpviewer_keywords:
 - statements [Visual Basic], about statements
 ms.assetid: fcfdee1a-82b7-4846-98f7-9ca3f5160089
 ms.openlocfilehash: e66acae5e98d561883f4ad59853dfd862c8ebfee
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506287"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61946455"
 ---
 # <a name="statements-in-visual-basic"></a>Příkazy v jazyce Visual Basic
 
@@ -156,7 +156,7 @@ V mnoha případech můžete příkaz pokračovat na dalším řádku za sebou b
 
     [!code-vb[VbVbalrLineContinuation#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#3)]
 
-    Další informace najdete v tématu [inicializátory objektů: pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md) nebo [inicializátory kolekce](./collection-initializers/index.md).
+    Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md) nebo [inicializátory kolekce](./collection-initializers/index.md).
 
 - Po otevření vložený výraz (`<%=`) nebo před uzavřením vloženého výrazu (`%>`) v rámci literál XML. Příklad:
 
@@ -196,7 +196,7 @@ V mnoha případech můžete příkaz pokračovat na dalším řádku za sebou b
 
    [!code-vb[VbVbalrLineContinuation#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#14)]
 
-   Další informace najdete v tématu [s... End With – příkaz](../../../visual-basic/language-reference/statements/with-end-with-statement.md) nebo [inicializátory objektů: pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md).
+   Další informace najdete v tématu [s... End With – příkaz](../../../visual-basic/language-reference/statements/with-end-with-statement.md) nebo [inicializátorech objektu: Pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md).
 
 - Po kvalifikátor vlastnosti osy XML (`.` nebo `.@` nebo `...`). Ale musí obsahovat znak pro pokračování řádku (`_`) při zadání člen kvalifikátor při použití `With` – klíčové slovo. Příklad:
 
@@ -246,5 +246,5 @@ Pokud po psaní jediného řádku kódu s modrou vlnovkou (zobrazit chybová zpr
 |---|---|
 |[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|Obsahuje odkazy na stránky referenční dokumentace jazyka zahrnující operátory přiřazení například `=`, `*=`, a `&=`.|
 |[Operátory a výrazy](./operators-and-expressions/index.md)|Ukazuje, jak zkombinovat prvky s operátory pozastavit nové hodnoty.|
-|[Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Ukazuje, jak rozdělit jeden příkaz na více řádků a umístit na stejný řádek více příkazů.|
+|[Postupy: Přerušení a kombinování příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Ukazuje, jak rozdělit jeden příkaz na více řádků a umístit na stejný řádek více příkazů.|
 |[Postupy: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)|Ukazuje, jak označit řádek kódu.|

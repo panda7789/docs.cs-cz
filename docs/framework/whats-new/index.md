@@ -14,8 +14,8 @@ ms.openlocfilehash: 3c0fcf9bd1c1e8df19458f681497b77348279915
 ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59975777"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61914827"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v rozhraní .NET Framework
 
@@ -62,7 +62,7 @@ Rozhraní .NET framework 4.8 zavádí nové funkce v následujících oblastech:
 - [Základní třídy](#core48)
 - [Windows Communication Foundation (WCF)](#wcf48)
 - [Windows Presentation Foundation (WPF)](#wpf48)
-- [Modul common language runtime](#clr48) 
+- [Modul common language runtime](#clr48)
 
 Vylepšení usnadnění přístupu, který umožňuje aplikaci poskytovat vhodné prostředí pro uživatele technologie pro usnadnění, i nadále hlavní fokus 4.8 rozhraní .NET Framework. Informace o vylepšení přístupnosti v rozhraní .NET Framework 4.8 najdete v tématu [co je nového v usnadnění přístupu v rozhraní .NET Framework](whats-new-in-accessibility.md).
 
@@ -79,7 +79,7 @@ Ve výchozím nastavení v aplikacích .NET Framework 4.8 následující třídy
 - <xref:System.Security.Cryptography.RC2CryptoServiceProvider>
 - <xref:System.Security.Cryptography.RijndaelManaged>
 - <xref:System.Security.Cryptography.RIPEMD160Managed>
-- <xref:System.Security.Cryptography.SHA256Managed> 
+- <xref:System.Security.Cryptography.SHA256Managed>
 
 Místo toho tyto třídy přesměrování kryptografických operací na systémová knihovna kryptografie. Tato změna účinně odstraní potenciálně matoucí rozdíl mezi produkční prostředí a prostředí pro vývojáře a zpřístupňuje nativní součásti a spravované komponenty pracovat v rámci stejné Kryptografické zásady. Aplikace, které závisí na těchto výjimek předchozí chování můžete obnovit tak, že nastavíte přepínač AppContext `Switch.System.Security.Cryptography.UseLegacyFipsThrow` k `true`. Další informace najdete v tématu [spravované šifrovacích tříd nevyvolají výjimku CryptographyException v režimu FIPS](../migration-guide/retargeting/4.7.2-4.8.md#managed-cryptography-classes-do-not-throw-a-cryptographyexception-in-fips-mode).
 
@@ -93,7 +93,7 @@ Od verze rozhraní .NET Framework 4.5, clrcompression.dll sestavení používá 
 
 **Zavedení ServiceHealthBehavior**
 
-Koncových bodů stavu jsou často používány nástroji pro orchestraci ke správě služeb na základě jejich stavu. Kontroly stavu je také možné pomocí nástroje pro monitorování ke sledování a poskytují oznámení o dostupnosti a výkonu služby. 
+Koncových bodů stavu jsou často používány nástroji pro orchestraci ke správě služeb na základě jejich stavu. Kontroly stavu je také možné pomocí nástroje pro monitorování ke sledování a poskytují oznámení o dostupnosti a výkonu služby.
 
 **ServiceHealthBehavior** je chování služby WCF, která rozšiřuje <xref:System.ServiceModel.Description.IServiceBehavior>.  Když se přidá <xref:System.ServiceModel.Description.ServiceDescription.Behaviors?displayProperty=nameWithType> kolekce, chování služby následující akce:
 
@@ -106,15 +106,15 @@ Existují dva způsoby, jak vystavit na stav koncového bodu a publikovat inform
 - Prostřednictvím kódu. Příklad:
 
   ```csharp
-  ServiceHost host = new ServiceHost(typeof(Service1), 
-                     new Uri("http://contoso:81/Service1")); 
+  ServiceHost host = new ServiceHost(typeof(Service1),
+                     new Uri("http://contoso:81/Service1"));
   ServiceHealthBehavior healthBehavior =
-      host.Description.Behaviors.Find<ServiceHealthBehavior>(); 
+      host.Description.Behaviors.Find<ServiceHealthBehavior>();
   if (healthBehavior == null)
-  { 
-     healthBehavior = new ServiceHealthBehavior(); 
-  } 
-   host.Description.Behaviors.Add(healthBehavior); 
+  {
+     healthBehavior = new ServiceHealthBehavior();
+  }
+   host.Description.Behaviors.Add(healthBehavior);
   ```
 
 - Pomocí konfiguračního souboru. Příklad:
@@ -137,7 +137,7 @@ Stav služby může být dotázán pomocí parametry dotazu jako `OnServiceFailu
 Parametry dotazu a příklady:
 
 - OnDispatcherFailure: `https://contoso:81/Service1?health&OnDispatcherFailure=455`
-  
+
   455 stavového kódu odpovědi HTTP je vrácena, pokud stav kanálu dispečerů větší než <xref:System.ServiceModel.CommunicationState.Opened?displayProperty=nameWithType>.
 
 - OnListenerFailure: `https://contoso:81/Service1?health&OnListenerFailure=465`
@@ -147,11 +147,11 @@ Parametry dotazu a příklady:
 - OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
   Určuje procento {1 – 100}, která aktivuje odpovědi a kódu odpovědi HTTP {200 – 599}. V tomto příkladu:
-  
+
     - Pokud je procento větší než 95, je vrácena 500 kódu odpovědi HTTP.
-    
+
     - Pokud procento nebo mezi 70 a 95, je vrácena 350.
-    
+
     - Jinak se vrátí 200.
 
 Stav služby může být buď ve formátu HTML zobrazí tak, že zadáte řetězec dotazu jako `https://contoso:81/Service1?health` nebo ve formátu XML tak, že zadáte řetězec dotazu jako `https://contoso:81/Service1?health&Xml`. Řetězec dotazu, jako jsou `https://contoso:81/Service1?health&NoContent` vrátí prázdná stránka HTML.
@@ -162,9 +162,9 @@ Stav služby může být buď ve formátu HTML zobrazí tak, že zadáte řetěz
 
 **Vylepšení vysoké rozlišení DPI**
 
-WPF v rozhraní .NET Framework 4.8, přidává podporu pro sledování DPI V2 na monitorování a Škálování DPI smíšeného režimu. Zobrazit [vysoké rozlišení DPI Desktop Application Development na Windows](/desktop/hidpi/high-dpi-desktop-application-development-on-windows) Další informace o vývoji na vysoké rozlišení DPI. 
+WPF v rozhraní .NET Framework 4.8, přidává podporu pro sledování DPI V2 na monitorování a Škálování DPI smíšeného režimu. Zobrazit [vysoké rozlišení DPI Desktop Application Development na Windows](/desktop/hidpi/high-dpi-desktop-application-development-on-windows) Další informace o vývoji na vysoké rozlišení DPI.
 
-Rozhraní .NET framework 4.8 zlepšuje podporu pro hostované HWND a Windows Forms spolupráci v aplikacích WPF vysokých hodnot DPI na platformách, které podporují Škálování DPI smíšeného režimu (od verze Windows 10. dubna 2018 aktualizovat). Vytvoření prostředí HWND nebo Windows Forms ovládací prvky jako škálovaných DPI smíšený režim systému windows pomocí volání [SetThreadDpiHostingBehavior](/windows/desktop/api/winuser/nf-winuser-setthreaddpihostingbehavior) a [SetThreadDpiAwarenessContext](/windows/desktop/api/winuser/nf-winuser-setthreaddpiawarenesscontext), je možné hostovat v Aplikace WPF za monitorování V2 a jsou velikosti a odpovídajícím způsobem škálovat. Takové hostovaný obsah není vykreslen na nativní DPI; Místo toho škáluje operačního systému, hostovaný obsah na odpovídající velikost. Podpora pro režim povědomí o DPI v2 za monitorování také umožňuje, aby ovládacích prvků WPF zajistit také jejich hostování (například prvek) v okně nativní aplikace vysokých hodnot DPI. 
+Rozhraní .NET framework 4.8 zlepšuje podporu pro hostované HWND a Windows Forms spolupráci v aplikacích WPF vysokých hodnot DPI na platformách, které podporují Škálování DPI smíšeného režimu (od verze Windows 10. dubna 2018 aktualizovat). Vytvoření prostředí HWND nebo Windows Forms ovládací prvky jako škálovaných DPI smíšený režim systému windows pomocí volání [SetThreadDpiHostingBehavior](/windows/desktop/api/winuser/nf-winuser-setthreaddpihostingbehavior) a [SetThreadDpiAwarenessContext](/windows/desktop/api/winuser/nf-winuser-setthreaddpiawarenesscontext), je možné hostovat v Aplikace WPF za monitorování V2 a jsou velikosti a odpovídajícím způsobem škálovat. Takové hostovaný obsah není vykreslen na nativní DPI; Místo toho škáluje operačního systému, hostovaný obsah na odpovídající velikost. Podpora pro režim povědomí o DPI v2 za monitorování také umožňuje, aby ovládacích prvků WPF zajistit také jejich hostování (například prvek) v okně nativní aplikace vysokých hodnot DPI.
 
 Povolení podpory pro smíšený režim vysokého nastavení DPI škálování, můžete nastavit následující [AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) přepne do konfiguračního souboru aplikace:
 
@@ -180,11 +180,11 @@ Povolení podpory pro smíšený režim vysokého nastavení DPI škálování, 
 
 Modul runtime v rozhraní .NET Framework 4.8 obsahuje následující změny a vylepšení:
 
-**Vylepšení kompilátoru JIT**. Kompilátor Just-in-time (JIT) v rozhraní .NET Framework 4.8 vychází kompilátor JIT v rozhraní .NET Core 2.1. Mnohé z optimalizace a všechny opravy chyb provedené kompilátor .NET Core 2.1 JIT jsou zahrnuty v rozhraní .NET Framework 4.8 JIT kompilátoru. 
+**Vylepšení kompilátoru JIT**. Kompilátor Just-in-time (JIT) v rozhraní .NET Framework 4.8 vychází kompilátor JIT v rozhraní .NET Core 2.1. Mnohé z optimalizace a všechny opravy chyb provedené kompilátor .NET Core 2.1 JIT jsou zahrnuty v rozhraní .NET Framework 4.8 JIT kompilátoru.
 
 **Vylepšení NGEN**. Modul runtime se zlepšila jejich správa paměti pro [Native Image Generator](../tools/ngen-exe-native-image-generator.md) tak, aby data mapovaná z obrázků NGEN nejsou rezidentní bitové kopie (NGEN). To snižuje dostupný, vůči útokům, které se pokusí spustit libovolný kód tak, že upravíte paměti, která se spustí styčné plochy.
 
-**Antimalwarové kontrole pro všechna sestavení**. V předchozích verzích rozhraní .NET Framework modul runtime vyhledá všechna sestavení načtená z disku pomocí programu Windows Defender nebo třetích stran antimalwarový software. Ale sestavení načetl z jiných zdrojů, jako <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> metody nejsou zkontrolovány a mohou obsahovat nezjištěné malware. Od verze rozhraní .NET Framework 4.8 běžící na Windows 10, modul runtime spustí kontrolu antimalwarová řešení, které implementují [Antimalware Scan rozhraní AMSI ()](/windows/desktop/AMSI/antimalware-scan-interface-portal).  
+**Antimalwarové kontrole pro všechna sestavení**. V předchozích verzích rozhraní .NET Framework modul runtime vyhledá všechna sestavení načtená z disku pomocí programu Windows Defender nebo třetích stran antimalwarový software. Ale sestavení načetl z jiných zdrojů, jako <xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType> metody nejsou zkontrolovány a mohou obsahovat nezjištěné malware. Od verze rozhraní .NET Framework 4.8 běžící na Windows 10, modul runtime spustí kontrolu antimalwarová řešení, které implementují [Antimalware Scan rozhraní AMSI ()](/windows/desktop/AMSI/antimalware-scan-interface-portal).
 
 <a name="v472" />
 
@@ -825,7 +825,7 @@ End Class
 
 Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizované chybové zprávy. Soubor musí být nalezen v `App.LocalResources` složky. Například následující je klíč a její hodnotu v lokalizovaných francouzština (fr) jazyka chybová zpráva:
 
-| Název                                 | Hodnota                                     |
+| Název                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 

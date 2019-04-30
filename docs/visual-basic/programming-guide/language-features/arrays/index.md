@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
 ms.openlocfilehash: 6b131d073e10f99feaf770fe5fd3c393551fa5a3
-ms.sourcegitcommit: 0aca6c5d166d7961a1e354c248495645b97a1dc5
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58675962"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61907167"
 ---
 # <a name="arrays-in-visual-basic"></a>Pole v jazyce Visual Basic
 

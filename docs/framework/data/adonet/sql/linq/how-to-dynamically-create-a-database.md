@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: fb7f23c4-4572-4c38-9898-a287807d070c
 ms.openlocfilehash: ab5e2867ce85fcc82e1114696c129aae878bbee6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59072386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61877263"
 ---
 # <a name="how-to-dynamically-create-a-database"></a>Postupy: Dynamické vytvoření databáze
 V technologii LINQ to SQL objektový model je namapována na relační databáze. Mapování je povolit pomocí podle atributů mapování nebo souboru externí mapování k popisu struktury relační databáze. V obou případech je dostatek informací o relační databázi, můžete vytvořit novou instanci používat databázi <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metody.  
@@ -19,9 +19,9 @@ V technologii LINQ to SQL objektový model je namapována na relační databáze
   
  Můžete použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda v jakémkoli počtu scénářů, zejména v případě, že zprostředkovatel známé dat, jako je Microsoft SQL Server 2008 je k dispozici. Typické scénáře zahrnují následující:  
   
--   Vytváříte aplikaci, která se automaticky nainstaluje na systému zákazníky.  
+- Vytváříte aplikaci, která se automaticky nainstaluje na systému zákazníky.  
   
--   Sestavujete klientské aplikace, která potřebuje místní databáze pro uložení stavu offline.  
+- Sestavujete klientské aplikace, která potřebuje místní databáze pro uložení stavu offline.  
   
  Můžete také použít <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda s SQL serverem pomocí souboru .mdf nebo název katalogu, v závislosti na tom, aby váš připojovací řetězec. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] použití připojovacího řetězce k definování databáze, kterou chcete vytvořit, a na serveru, který se má vytvořit databázi.  
   

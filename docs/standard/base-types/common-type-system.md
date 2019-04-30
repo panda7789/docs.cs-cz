@@ -20,32 +20,32 @@ author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
 ms.openlocfilehash: d973ec68486ca46a38819ce9972c789b156d878b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59096261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61936757"
 ---
 # <a name="common-type-system"></a>Obecný systém typů
 Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravovány v modulu common language runtime a také je důležitou součástí modulu runtime podpory mezi jazykové integrace. Obecný systém typů provádí následující funkce:  
   
--   Vytváří rámec, který pomáhá povolit mezi jazykové integrace, bezpečnost typů a spouštění vysoce výkonných kódu.  
+- Vytváří rámec, který pomáhá povolit mezi jazykové integrace, bezpečnost typů a spouštění vysoce výkonných kódu.  
   
--   Poskytuje objektově orientovaný model, který podporuje úplnou implementaci mnoha programovacích jazyků.  
+- Poskytuje objektově orientovaný model, který podporuje úplnou implementaci mnoha programovacích jazyků.  
   
--   Definuje pravidla, která musí jazyky, které pomáhá tak zajistit, že objekty, které jsou napsány v různých jazycích komunikovat mezi sebou.  
+- Definuje pravidla, která musí jazyky, které pomáhá tak zajistit, že objekty, které jsou napsány v různých jazycích komunikovat mezi sebou.  
   
--   Poskytuje knihovnu obsahující primitivní datové typy (například <xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.Int32>, a <xref:System.UInt64>) používané při vývoji aplikace.  
+- Poskytuje knihovnu obsahující primitivní datové typy (například <xref:System.Boolean>, <xref:System.Byte>, <xref:System.Char>, <xref:System.Int32>, a <xref:System.UInt64>) používané při vývoji aplikace.  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Typy v rozhraní .NET](#types_in_the_net_framework)  
+- [Typy v rozhraní .NET](#types_in_the_net_framework)  
   
--   [Definice typů](#type_definitions)  
+- [Definice typů](#type_definitions)  
   
--   [Členy typu](#type_members)  
+- [Členy typu](#type_members)  
   
--   [Charakteristiky členů typu](#characteristics_of_type_members)  
+- [Charakteristiky členů typu](#characteristics_of_type_members)  
   
 <a name="types_in_the_net_framework"></a>   
 ## <a name="types-in-net"></a>Typy v rozhraní .NET  
@@ -57,15 +57,15 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
  Obecný systém typů v rozhraní .NET podporuje následujících pět kategorií typů:  
   
--   [Třídy](#Classes)  
+- [Třídy](#Classes)  
   
--   [Struktury](#Structures)  
+- [Struktury](#Structures)  
   
--   [Výčty](#Enumerations)  
+- [Výčty](#Enumerations)  
   
--   [Rozhraní](#Interfaces)  
+- [Rozhraní](#Interfaces)  
   
--   [Delegáti](#Delegates)  
+- [Delegáti](#Delegates)  
   
 <a name="Classes"></a>   
 ### <a name="classes"></a>Třídy  
@@ -106,13 +106,13 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
  Následující omezení jsou také aplikována na výčty:  
   
--   Nemohou definovat jejich vlastní metody.  
+- Nemohou definovat jejich vlastní metody.  
   
--   Nemohou implementovat rozhraní.  
+- Nemohou implementovat rozhraní.  
   
--   Nemohou definovat vlastnosti nebo události.  
+- Nemohou definovat vlastnosti nebo události.  
   
--   Nemohou být obecné, pokud nejsou obecné pouze proto, že jsou vnořené do obecného typu. To znamená že výčet nemůže mít vlastní parametry typu.  
+- Nemohou být obecné, pokud nejsou obecné pouze proto, že jsou vnořené do obecného typu. To znamená že výčet nemůže mít vlastní parametry typu.  
   
     > [!NOTE]
     >  Vnořené typy (včetně výčtů) vytvořené pomocí jazyka Visual Basic, C# a C++ zahrnují parametry typu všech ohraničujících obecných typů a jsou tudíž obecné, i v případě, že nemají vlastní parametry typu. Další informace najdete v tématu "Vnořené typy" <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> téma referenčních informací.  
@@ -130,13 +130,13 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
  Následující omezení jsou aplikována na rozhraní:  
   
--   Rozhraní může být deklarováno s jakoukoliv přístupností, ale všechny členy rozhraní musí mít přístupnost public.  
+- Rozhraní může být deklarováno s jakoukoliv přístupností, ale všechny členy rozhraní musí mít přístupnost public.  
   
--   Rozhraní nemohou definovat konstruktory.  
+- Rozhraní nemohou definovat konstruktory.  
   
--   Rozhraní nemohou definovat položky.  
+- Rozhraní nemohou definovat položky.  
   
--   Rozhraní může definovat pouze členy instance. Nemohou definovat statické členy.  
+- Rozhraní může definovat pouze členy instance. Nemohou definovat statické členy.  
   
  Každý jazyk musí stanovit pravidla mapování implementace na rozhraní, které vyžaduje člen, protože více než jedno rozhraní může deklarovat člena se stejnou signaturou a tyto členy mohou mít odlišnou implementaci.  
   
@@ -170,17 +170,17 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
 ## <a name="type-definitions"></a>Definice typů  
  Definice typu zahrnuje následující položky:  
   
--   Libovolné atributy definované u typu.  
+- Libovolné atributy definované u typu.  
   
--   Přístupnost typu (viditelnost).  
+- Přístupnost typu (viditelnost).  
   
--   Název typu.  
+- Název typu.  
   
--   Základní typ tohoto typu.  
+- Základní typ tohoto typu.  
   
--   Jakékoliv rozhraní implementované typem.  
+- Jakékoliv rozhraní implementované typem.  
   
--   Definice pro každého člena typu.  
+- Definice pro každého člena typu.  
   
 ### <a name="attributes"></a>Atributy  
  Atributy poskytují další metadata definovaná uživatelem. Nejčastěji se používají k ukládání dalších informací o typu v sestavení, nebo chcete změnit chování člena typu buď v době návrhu nebo v běhovém prostředí.  
@@ -199,22 +199,22 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
   
  Doména přístupnosti vnořeného člena `M` deklarovaného v typu `T` v rámci programu `P` je definována takto (konstatujme, že `M` může být sám typ):  
   
--   Pokud je deklarovaná přístupnost člena `M` je `public`, tak doména přístupnosti člena `M` je doména přístupnosti člena `T`.  
+- Pokud je deklarovaná přístupnost člena `M` je `public`, tak doména přístupnosti člena `M` je doména přístupnosti člena `T`.  
   
--   Pokud je deklarovaná přístupnost člena `M` je `protected internal`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `P` a textem programu libovolného typu odvozené z `T` deklarované mimo `P`.  
+- Pokud je deklarovaná přístupnost člena `M` je `protected internal`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `P` a textem programu libovolného typu odvozené z `T` deklarované mimo `P`.  
   
--   Pokud je deklarovaná přístupnost člena `M` je `protected`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `T` a libovolného typu odvozeného z `T`.  
+- Pokud je deklarovaná přístupnost člena `M` je `protected`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `T` a libovolného typu odvozeného z `T`.  
   
--   Pokud je deklarovaná přístupnost člena `M` je `internal`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `P`.  
+- Pokud je deklarovaná přístupnost člena `M` je `internal`, tak doména přístupnosti člena `M` je průsečík domény přístupnosti typu `T` s textem programu `P`.  
   
--   Pokud je deklarovaná přístupnost člena `M` je `private`, tak doména přístupnosti člena `M` je text programu `T`.  
+- Pokud je deklarovaná přístupnost člena `M` je `private`, tak doména přístupnosti člena `M` je text programu `T`.  
   
 ### <a name="type-names"></a>Názvy typů  
  Obecný systém typů vynucuje pouze dvě omezení pro názvy:  
   
--   Všechny názvy jsou kódovány jako řetězce znaků Unicode (16 bitů).  
+- Všechny názvy jsou kódovány jako řetězce znaků Unicode (16 bitů).  
   
--   Názvy nejsou oprávněny mít embedded (16-bit) hodnotu 0x0000.  
+- Názvy nejsou oprávněny mít embedded (16-bit) hodnotu 0x0000.  
   
  Většina jazyků však zavádí další omezení pro názvy typů. Všechna porovnání jsou prováděna byte po bajtu a proto jsou malá a velká písmena a nezávislý na národním prostředí.  
   
@@ -229,25 +229,25 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
 ## <a name="type-members"></a>Členy typu  
  Modul runtime umožňuje definovat členy vašeho typu, který určuje chování a stav tohoto typu. Členy typu zahrnují následující:  
   
--   [Pole](#Fields)  
+- [Pole](#Fields)  
   
--   [Vlastnosti](#Properties)  
+- [Vlastnosti](#Properties)  
   
--   [Metody](#Methods)  
+- [Metody](#Methods)  
   
--   [Konstruktory](#Constructors)  
+- [Konstruktory](#Constructors)  
   
--   [Události](#Events)  
+- [Události](#Events)  
   
--   [Vnořené typy](#NestedTypes)  
+- [Vnořené typy](#NestedTypes)  
   
 <a name="Fields"></a>   
 ### <a name="fields"></a>Pole  
  Položka popisuje a obsahuje část stavu typu. Pole může být libovolného typu podporované modulem runtime. Nejčastěji jsou položky buď `private` nebo `protected`, takže jsou přístupné pouze v rámci třídy nebo z odvozené třídy. Pokud hodnota pole může být změněna mimo její typ, se obvykle používá přistupující objekt množiny vlastností. Veřejně vystavené položky jsou obvykle jen pro čtení a mohou být dvou typů:  
   
--   Konstanty, jejichž hodnoty jsou přiřazeny v době návrhu. Toto jsou statické členy třídy, i když nejsou definovány pomocí `static` (`Shared` v jazyce Visual Basic) – klíčové slovo.  
+- Konstanty, jejichž hodnoty jsou přiřazeny v době návrhu. Toto jsou statické členy třídy, i když nejsou definovány pomocí `static` (`Shared` v jazyce Visual Basic) – klíčové slovo.  
   
--   Jen pro čtení proměnné, jejichž hodnoty mohou být přiřazeny v konstruktoru třídy.  
+- Jen pro čtení proměnné, jejichž hodnoty mohou být přiřazeny v konstruktoru třídy.  
   
  Následující příklad znázorňuje tyto dva způsoby použití položek pole jen pro čtení.  
   
@@ -312,9 +312,9 @@ Obecný systém typů definuje, jak jsou typy deklarovány, použití a spravov�
 ### <a name="inheriting-overriding-and-hiding-members"></a>Dědění, přepisování a skrývání členů  
  Odvozený typ zdědí všechny členy jeho rodičovského typu; To znamená, že tyto členy jsou definovány tak k dispozici pro odvozený typ. Chování a vlastnosti zděděných členů může být upraveny dvěma způsoby:  
   
--   Odvozený typ může skrýt zděděný člen tak, že definujete nového člena se stejným podpisem. Toto může být provedeno, aby z dříve veřejného člena soukromý nebo definovat nové chování pro zděděnou metodu, která je označena jako `final`.  
+- Odvozený typ může skrýt zděděný člen tak, že definujete nového člena se stejným podpisem. Toto může být provedeno, aby z dříve veřejného člena soukromý nebo definovat nové chování pro zděděnou metodu, která je označena jako `final`.  
   
--   Odvozený typ může přepsat zděděnou virtuální metodu. Přepsání metody poskytuje novou definici metody, která bude volána na základě typu hodnoty v době běhu, nikoli typu proměnné v době kompilace znám. Metoda může přepsat virtuální metodu pouze v případě, že virtuální metoda není označena jako `final` a nová metoda je přinejmenším stejně dostupná jako virtuální metody.  
+- Odvozený typ může přepsat zděděnou virtuální metodu. Přepsání metody poskytuje novou definici metody, která bude volána na základě typu hodnoty v době běhu, nikoli typu proměnné v době kompilace znám. Metoda může přepsat virtuální metodu pouze v případě, že virtuální metoda není označena jako `final` a nová metoda je přinejmenším stejně dostupná jako virtuální metody.  
   
 ## <a name="see-also"></a>Viz také:
 

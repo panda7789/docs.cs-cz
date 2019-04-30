@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
 ms.openlocfilehash: 2237ba71487afc132f9164243a664b277397ccfa
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59098634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61939101"
 ---
 # <a name="bindingsource-component-overview"></a>BindingSource – přehled komponenty
 <xref:System.Windows.Forms.BindingSource> Komponenta je navržené pro zjednodušení procesu vytvoření vazby ovládacích prvků do podkladového zdroje dat. <xref:System.Windows.Forms.BindingSource> Komponenty funguje jako kanál a zdroj dat pro další ovládací prvky k vytvoření vazby. Poskytuje abstrakci připojení dat formuláře při předání prostřednictvím příkazů do seznamu podkladová data. Kromě toho můžete přidat data přímo do ní, tak, aby sám komponentou funguje jako zdroj dat.  

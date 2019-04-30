@@ -9,11 +9,11 @@ helpviewer_keywords:
 - comments, recommended XML tags
 ms.assetid: 294e0736-ff1e-498e-af83-6db71ed41a72
 ms.openlocfilehash: e59ee25b22c51e47dc83233af33099e6c55de87b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58814937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61940853"
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>Doporučené značky XML pro dokumentační komentáře (Visual Basic)
 Kompilátor jazyka Visual Basic můžete zpracovat dokumentační komentáře v kódu do souboru XML. Další nástroje můžete použít ke zpracování souboru XML do dokumentace ke službě.  

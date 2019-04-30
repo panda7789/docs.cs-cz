@@ -9,11 +9,11 @@ helpviewer_keywords:
 - navigation [WPF], through navigation history (forward)
 ms.assetid: 5939d574-5f53-469e-85f5-1f2b13607caa
 ms.openlocfilehash: 4c20ebfab45a24cf34b1476fb94dae6913fb4d99
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57366657"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61947755"
 ---
 # <a name="how-to-navigate-forward-or-back-through-navigation-history"></a>Postupy: Přecházení vpřed a zpět v historii navigace
 Tento příklad ukazuje, jak přejít na položky v historii pro navigaci vpřed nebo vzad.  
@@ -21,11 +21,11 @@ Tento příklad ukazuje, jak přejít na položky v historii pro navigaci vpřed
 ## <a name="example"></a>Příklad  
  Kód, který se spouští z obsahu následující hostitelů můžete přejít vpřed nebo vzad historii navigace, jedna položka v čase.  
   
--   <xref:System.Windows.Navigation.NavigationWindow> použití <xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Navigation.NavigationWindow> použití <xref:System.Windows.Navigation.NavigationService>  
   
--   <xref:System.Windows.Controls.Frame> použití <xref:System.Windows.Navigation.NavigationService>  
+- <xref:System.Windows.Controls.Frame> použití <xref:System.Windows.Navigation.NavigationService>  
   
--   [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]  
+- [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]  
   
  Předtím, než přejdete vpřed jednu položku, Nejdřív musíte zkontrolovat, zda jsou položky v historii navigace směrem vpřed zkontrolováním **CanGoForward** vlastnost. Pro navigaci vpřed jednu položku, můžete volat **GoForward** metody. To je znázorněno v následujícím příkladu:  
   

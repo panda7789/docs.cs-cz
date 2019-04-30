@@ -9,30 +9,30 @@ ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 210a0a7d84f21360dce93627cdf6a27777c09968
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59184805"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61874469"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
 Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Monitor](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
   
--   [Čítače výkonu výjimky](#exception)  
+- [Čítače výkonu výjimky](#exception)  
   
--   [Interoperabilita – čítače výkonu](#interop)  
+- [Interoperabilita – čítače výkonu](#interop)  
   
--   [JIT – čítače výkonu](#jit)  
+- [JIT – čítače výkonu](#jit)  
   
--   [Načtení čítačů výkonu](#loading)  
+- [Načtení čítačů výkonu](#loading)  
   
--   [Uzamčení a vlákna čítače výkonu](#lockthread)  
+- [Uzamčení a vlákna čítače výkonu](#lockthread)  
   
--   [Čítače výkonu paměti](#memory)  
+- [Čítače výkonu paměti](#memory)  
   
--   [Čítače výkonu sítě](#networking)  
+- [Čítače výkonu sítě](#networking)  
   
--   [Čítače výkonu zabezpečení](#security)  
+- [Čítače výkonu zabezpečení](#security)  
   
 <a name="exception"></a>   
 ## <a name="exception-performance-counters"></a>Čítače výkonu výjimky  
@@ -161,21 +161,21 @@ Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Mon
   
  Existuje několik tříd síťových čítače výkonu, které jsou podporovány:  
   
--   Události čítačů, které měří počet pokusů, které došlo k nějaké události.  
+- Události čítačů, které měří počet pokusů, které došlo k nějaké události.  
   
--   Data čítačů, které měří množství dat odeslat ani přijmout.  
+- Data čítačů, které měří množství dat odeslat ani přijmout.  
   
--   Doba trvání čítačů, které měří jak dlouho různé procesy trvat. Čas se měří na objektech v každém intervalu (obvykle v sekundách) po pocházejí z různých stavů.  
+- Doba trvání čítačů, které měří jak dlouho různé procesy trvat. Čas se měří na objektech v každém intervalu (obvykle v sekundách) po pocházejí z různých stavů.  
   
--   Za Interval čítačů, které měří počet objektů, které využívají konkrétní přechod na interval (obvykle za sekundu).  
+- Za Interval čítačů, které měří počet objektů, které využívají konkrétní přechod na interval (obvykle za sekundu).  
   
  Sítě čítače výkonu pro událostí patří:  
   
--   **Připojení**  
+- **Připojení**  
   
--   **Přijaté datagramy**  
+- **Přijaté datagramy**  
   
--   **Odeslané datagramy**  
+- **Odeslané datagramy**  
   
  Tyto čítače výkonu poskytují počty od spuštění procesu. Počet <xref:System.Net.Sockets.Socket> připojení obsahuje explicitní <xref:System.Net.Sockets.Socket> metoda volá aplikací pro připojení soketu datového proudu, který byl zřízený stejně jako vnitřní volání uskutečněných tímto jiné třídy (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.WebClient>, a <xref:System.Net.Sockets.TcpClient>, například) k <xref:System.Net.Sockets.Socket> třídy  
   
@@ -183,33 +183,33 @@ Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Mon
   
  Čítače výkonu sítě pro data, patří:  
   
--   **Přijaté bajty**  
+- **Přijaté bajty**  
   
--   **Odeslané bajty**  
+- **Odeslané bajty**  
   
  Výše uvedené čítače poskytují počet bajtů od spuštění procesu.  
   
  Existují dva čítače doby trvání, které měří jak dlouho trvalo <xref:System.Net.HttpWebRequest> objekty předávání buď jejich celý životní cyklus nebo právě součástí je:  
   
--   **Doba života HttpWebRequest průměr**  
+- **Doba života HttpWebRequest průměr**  
   
--   **HttpWebRequest průměrný čas fronty**  
+- **HttpWebRequest průměrný čas fronty**  
   
  Pro **Průměrná životnost HttpWebRequest** čítače, dobu života většinu <xref:System.Net.HttpWebRequest> objekty s časem, který je vytvořen objekt až po dobu, po kterou datového proudu odpovědi je ukončená aplikace vždycky spustí. Existují dva běžné případy:  
   
--   Pokud aplikace se nikdy nevolá <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.BeginGetResponse%2A> metody a pak životnosti <xref:System.Net.HttpWebRequest> objekt se ignoruje.  
+- Pokud aplikace se nikdy nevolá <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.BeginGetResponse%2A> metody a pak životnosti <xref:System.Net.HttpWebRequest> objekt se ignoruje.  
   
--   Pokud <xref:System.Net.HttpWebRequest> objektu vyvolá výjimku <xref:System.Net.WebException> při volání <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A> metody, dobu života končí, když je vyvolána výjimka. Technicky vzato základního datového proudu odpovědi také zavření od tohoto okamžiku (datového proudu odpovědi vrátí uživateli je ve skutečnosti paměťový proud, který obsahuje kopii datového proudu odpovědi).  
+- Pokud <xref:System.Net.HttpWebRequest> objektu vyvolá výjimku <xref:System.Net.WebException> při volání <xref:System.Net.HttpWebRequest.GetResponse%2A> nebo <xref:System.Net.HttpWebRequest.EndGetResponse%2A> metody, dobu života končí, když je vyvolána výjimka. Technicky vzato základního datového proudu odpovědi také zavření od tohoto okamžiku (datového proudu odpovědi vrátí uživateli je ve skutečnosti paměťový proud, který obsahuje kopii datového proudu odpovědi).  
   
  Existují čtyři čítače, které sledují určité <xref:System.Net.HttpWebRequest> objektu problémy za interval. Tyto čítače výkonu může pomoci vývojáři aplikací, správci, a pracovníkům podpory lépe pochopit, co <xref:System.Net.HttpWebRequest> dělají objekty. Čítače zahrnují následující:  
   
--   **HttpWebRequests vytvořené za sekundu**  
+- **HttpWebRequests vytvořené za sekundu**  
   
--   **HttpWebRequests zařazených do fronty za sekundu**  
+- **HttpWebRequests zařazených do fronty za sekundu**  
   
--   **Přerušeno HttpWebRequests za sekundu**  
+- **Přerušeno HttpWebRequests za sekundu**  
   
--   **Nepovedlo HttpWebRequests za sekundu**  
+- **Nepovedlo HttpWebRequests za sekundu**  
   
  Pro **HttpWebRequests přerušených za sekundu** čítač, vnitřní volání <xref:System.Net.HttpWebRequest.Abort%2A> se také počítají. Tyto interní volání jsou obvykle způsobeno časové limity, které aplikace může být vhodné k měření.  
   
@@ -233,9 +233,9 @@ for (int i = 0; i < Array.Length; i++)
   
  Čítače výkonu sítě patří do dvou kategorií:  
   
--   ".NET CLR síťové služby" – původní čítače výkonu zavedeno v rozhraní .NET Framework verze 2 a podporuje se v rozhraní .NET Framework verze 2 nebo novější.  
+- ".NET CLR síťové služby" – původní čítače výkonu zavedeno v rozhraní .NET Framework verze 2 a podporuje se v rozhraní .NET Framework verze 2 nebo novější.  
   
--   ".NET CLR sítě 4.0.0.0" - všechny výše uvedené soketu čítače plus nové čítače výkonu, podporuje se v rozhraní .NET Framework verze 4 a novější. Tyto nové čítače poskytují informace o výkonu na <xref:System.Net.HttpWebRequest> objekty.  
+- ".NET CLR sítě 4.0.0.0" - všechny výše uvedené soketu čítače plus nové čítače výkonu, podporuje se v rozhraní .NET Framework verze 4 a novější. Tyto nové čítače poskytují informace o výkonu na <xref:System.Net.HttpWebRequest> objekty.  
   
  Další informace o přístupu a správě čítače výkonu v aplikaci najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   

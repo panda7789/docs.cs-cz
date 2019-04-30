@@ -5,20 +5,20 @@ f1_keywords:
 - vbrID52
 ms.assetid: d0e96aea-7621-48f6-a78b-5d37d18aaa4e
 ms.openlocfilehash: 2e5d4a3ddd66df85dc4758e22b36ac1ed495659a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322157"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61935223"
 ---
 # <a name="bad-file-name-or-number"></a>Chybný název souboru nebo číslo
 Při pokusu o přístup k zadanému souboru došlo k chybě. Mezi možné příčiny této chyby patří:  
   
--   Příkaz odkazuje na soubor s názvem souboru nebo číslo, který nebyl zadán v `FileOpen` příkazu nebo, který byl zadán v `FileOpen` prohlášení, avšak byla následně uzavřen.  
+- Příkaz odkazuje na soubor s názvem souboru nebo číslo, který nebyl zadán v `FileOpen` příkazu nebo, který byl zadán v `FileOpen` prohlášení, avšak byla následně uzavřen.  
   
--   Příkaz odkazuje na soubor s číslo, které je mimo rozsah čísel souborů.  
+- Příkaz odkazuje na soubor s číslo, které je mimo rozsah čísel souborů.  
   
--   Příkaz odkazuje na název souboru nebo číslo, které není platný.  
+- Příkaz odkazuje na název souboru nebo číslo, které není platný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

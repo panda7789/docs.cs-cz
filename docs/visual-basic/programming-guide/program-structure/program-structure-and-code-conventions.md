@@ -14,72 +14,72 @@ helpviewer_keywords:
 - programming [Visual Basic], Visual Basic coding conventions
 ms.assetid: dd9be76f-6944-4e78-ad72-0b6084a3fc13
 ms.openlocfilehash: b79e339ebe81a7228a02837e5c0c23c80a8132e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654939"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61916939"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>Struktura programu a pravidla týkající se kódu (Visual Basic)
-Tato část představuje typické struktura programu jazyka Visual Basic, poskytuje jednoduché programu jazyka Visual Basic, "Hello, World" a popisuje pravidla týkající se kódu jazyka Visual Basic. Pravidla týkající se kódu jsou návrhy, které soustředit není na programu logiku, ale na její fyzickou strukturu a vzhled. Následující je snazší kódu pro čtení, pochopit a údržbu. Pravidla týkající se kódu mohou zahrnovat mimo jiné:  
+Tato část zavádí typickou struktura programu jazyka Visual Basic, poskytuje jednoduchý program jazyka Visual Basic, "Hello, World" a popisuje konvence kódu jazyka Visual Basic. Konvence kódu jsou návrhy, které se soustředí nikoli na logiku programu, ale na jeho fyzickou strukturu a vzhled. Po jejich usnadňuje váš kód pro čtení, pochopit a udržovat. Konvence kódu mohou zahrnovat mimo jiné:  
   
--   Standardizovaná formátech pro označování a komentářů kódu.  
+- Standardizované formáty popisování a komentování kódu.  
   
--   Pokyny pro mezery, formátování a odsazení kódu.  
+- Pokyny pro mezery, formátování a odsazení kódu.  
   
--   Zásady vytváření názvů pro objekty, proměnné a postupy.  
+- Zásady vytváření názvů objektů, proměnných a procedur.  
   
- Následující témata poskytují sadu programovací pokyny pro programy Visual Basic, společně s příklady dobrý využití.  
+ Následující témata poskytují sadu programovací pokyny pro programy jazyka Visual Basic, spolu s příklady vhodného využití.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Struktura programu v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)  
- Obsahuje přehled prvků, které tvoří programu Visual Basic.  
+ Poskytuje přehled prvků, které tvoří program jazyka Visual Basic.  
   
  [Hlavní procedura v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/main-procedure.md)  
- Popisuje postup, který slouží jako počáteční bod a celkové řízení pro vaše aplikace.  
+ Tento článek popisuje postup, který slouží jako počáteční bod a celkové ovládání aplikace.  
   
  [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)  
- Popisuje, jak odkazovat na objekty v jiných sestavení.  
+ Popisuje, jak odkazovat na objekty v jiných sestaveních.  
   
  [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)  
- Popisuje, jak obory názvů uspořádání objektů v rámci sestavení.  
+ Popisuje, jak obory názvů uspořádávají objekty v rámci sestavení.  
   
  [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)  
- Obsahuje obecné pokyny pro pojmenování procedury, konstanty, proměnné, argumentů a objekty.  
+ Obsahuje obecné pokyny pro vytváření názvů procedur, konstant, proměnné, argumenty a objekty.  
   
  [Visual Basic – konvence kódování](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)  
- Zkontroluje pokyny použité při vývoji ukázky v této dokumentaci.  
+ Ověří zásady používané při přípravě vzorků v této dokumentaci.  
   
  [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
- Popisuje, jak selektivně zkompilovat konkrétní bloky kódu při řízení kompilátoru ostatní ignorovat.  
+ Popisuje, jak sestavit konkrétní bloky kódu selektivně zároveň nechat kompilátor ignorovat ostatní.  
   
- [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)  
- Ukazuje, jak k rozdělení dlouhých příkazů do více řádků a kombinace příkazů krátký na jeden řádek.  
+ [Postupy: Přerušení a kombinování příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)  
+ Ukazuje, jak rozdělit dlouhé příkazy do více řádků a kombinovat krátké příkazy na jednom řádku.  
   
  [Postupy: Sbalení a skrytí sekcí kódu](../../../visual-basic/programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)  
- Ukazuje, jak sbalení a skrytí sekcí kódu v jazyce Visual Basic editor kódu.  
+ Ukazuje, jak sbalit a skrýt části kódu v jazyce Visual Basic editoru kódu.  
   
  [Postupy: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)  
- Ukazuje, jak označit řádek kódu pro jeho rozpoznání pro použití s příkazy, jako `On Error Goto`.  
+ Ukazuje, jak označit řádek kódu k jeho identifikaci při použití s příkazy, jako `On Error Goto`.  
   
  [Speciální znaky v kódu](../../../visual-basic/programming-guide/program-structure/special-characters-in-code.md)  
- Popisuje, jak a kde chcete použít jiné než číselné a neabecední znaky.  
+ Ukazuje, jak a kdy používat nečíselné a neabecední znaky.  
   
  [Komentáře v kódu](../../../visual-basic/programming-guide/program-structure/comments-in-code.md)  
- Popisuje postup přidání popisný komentáře do vašeho kódu.  
+ Popisuje, jak přidávat popisné komentáře do kódu.  
   
  [Klíčová slova jako názvy elementů v kódu](../../../visual-basic/programming-guide/program-structure/keywords-as-element-names-in-code.md)  
- Popisuje, jak použít závorky (`[]`) a tím vymezit názvy proměnných, které jsou také Visual Basic – klíčová slova.  
+ Popisuje způsob použití závorek (`[]`) k vymezení názvů proměnných, které jsou také klíčová slova jazyka Visual Basic.  
   
  [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
- Popisuje různé způsoby, jak odkazovat na elementy programu v jazyce Visual Basic.  
+ Popisuje různé způsoby, jak odkazovat na prvky programu v jazyce Visual Basic.  
   
- [Omezení jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/limitations.md)  
- Popisuje odebrání známé omezení kódování v jazyce Visual Basic.  
+ [Visual Basic Limitations](../../../visual-basic/programming-guide/program-structure/limitations.md)  
+ Tento článek popisuje odstranění známých omezení kódování v jazyce Visual Basic.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Typografická pravidla a pravidla vytváření kódu](../../../visual-basic/language-reference/typographic-and-code-conventions.md)  
- Poskytuje standardní konvence psaní kódu jazyka Visual Basic.  
+ Poskytuje standardní konvence kódování v jazyce Visual Basic.  
   
  [Psaní kódu](/visualstudio/ide/writing-code-in-the-code-and-text-editor)  
- Popisuje funkce, které usnadňují můžete zapsat a spravovat váš kód.
+ Popisuje funkce, které usnadňují zápis a správu kódu.

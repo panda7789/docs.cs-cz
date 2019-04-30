@@ -82,11 +82,11 @@ helpviewer_keywords:
 - type conversion [Visual Basic], Visual Basic vs. .NET Framework
 ms.assetid: d9d8d165-f967-44ff-a6cd-598e4740a99e
 ms.openlocfilehash: 56dad921b2900061dbe2db0d8f1faaf759641f87
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61802294"
 ---
 # <a name="type-conversion-functions-visual-basic"></a>Funkce pro převod typů (Visual Basic)
 Tyto funkce jsou zkompilovaný vloženě, což znamená, že kód převodu je součástí kódu, který se vyhodnotí výraz. Někdy není žádná volání procedury k provedení převodu, což zvyšuje výkon. Každá funkce převede výraz na určitý datový typ.  
@@ -171,21 +171,21 @@ Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
 
 ## <a name="behavior"></a>Chování  
   
--   **Vynucení.** Obecně platí můžete použít funkce pro převod typů dat k vynucení výsledků na konkrétní datový typ spíše než výchozí datový typ operace. Například použít `CDec` přinutit desítkové aritmetické operace v případech, kdy jednoduchou přesností, dvojitá přesnost nebo celé číslo aritmetické by vám normálně trvalo místo.  
+- **Vynucení.** Obecně platí můžete použít funkce pro převod typů dat k vynucení výsledků na konkrétní datový typ spíše než výchozí datový typ operace. Například použít `CDec` přinutit desítkové aritmetické operace v případech, kdy jednoduchou přesností, dvojitá přesnost nebo celé číslo aritmetické by vám normálně trvalo místo.  
   
--   **Neúspěšné převody.** Pokud `expression` předaný funkci je mimo rozsah datového typu, na který se má převést <xref:System.OverflowException> vyvolá.  
+- **Neúspěšné převody.** Pokud `expression` předaný funkci je mimo rozsah datového typu, na který se má převést <xref:System.OverflowException> vyvolá.  
   
--   **Zlomkové části.** Při převodu nonintegral hodnotu na integrální typ, funkce pro převod celé číslo (`CByte`, `CInt`, `CLng`, `CSByte`, `CShort`, `CUInt`, `CULng`, a `CUShort`) odeberte desetinná část a Zaokrouhlí hodnotu na nejbližší celé číslo.  
+- **Zlomkové části.** Při převodu nonintegral hodnotu na integrální typ, funkce pro převod celé číslo (`CByte`, `CInt`, `CLng`, `CSByte`, `CShort`, `CUInt`, `CULng`, a `CUShort`) odeberte desetinná část a Zaokrouhlí hodnotu na nejbližší celé číslo.  
   
      Pokud zlomkové části je přesně 0,5, funkce pro převod celé číslo zaokrouhlit na nejbližší sudé celé číslo. Například 0,5 zaokrouhlí na 0 a 1.5 a 2.5, které obě zaokrouhlit na 2. To se někdy označuje jako *je bankovní zaokrouhlení*, a jejím účelem je jako kompenzaci za posun, která se můžou hromadit při přidávání mnoha těchto čísla společně.  
   
      `CInt` a `CLng` se liší od <xref:Microsoft.VisualBasic.Conversion.Int%2A> a <xref:Microsoft.VisualBasic.Conversion.Fix%2A> funkce, které zkrátit, nikoli zaokrouhlit desetinnou část čísla. Navíc `Fix` a `Int` vždy vrátí hodnotu stejného datového typu jako předáním.  
   
--   **Datum a čas převody.** Použití <xref:Microsoft.VisualBasic.Information.IsDate%2A> funkce k určení, pokud hodnotu lze převést na datum a čas. `CDate` rozpozná literály data a času literály, ale není číselné hodnoty. K převodu jazyka Visual Basic 6.0 `Date` hodnota, která se `Date` hodnoty v jazyce Visual Basic 2005 nebo novější verze, můžete použít <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> metody.  
+- **Datum a čas převody.** Použití <xref:Microsoft.VisualBasic.Information.IsDate%2A> funkce k určení, pokud hodnotu lze převést na datum a čas. `CDate` rozpozná literály data a času literály, ale není číselné hodnoty. K převodu jazyka Visual Basic 6.0 `Date` hodnota, která se `Date` hodnoty v jazyce Visual Basic 2005 nebo novější verze, můžete použít <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> metody.  
   
--   **Neutrální hodnoty data a času.** [Date – datový typ](../../../visual-basic/language-reference/data-types/date-data-type.md) vždy obsahuje informace o datu a času. Pro účely převodů, Visual Basic považuje za 1/1/0001 (od 1. ledna roku 1) *neutrální hodnotu* pro datum a 00:00:00 (půlnoc) bude neutrální hodnota pro dobu. Při převodu `Date` hodnotu na řetězec, `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Například, pokud převedete `#January 1, 0001 9:30:00#` na řetězec, výsledek je "9:30:00: 00"; informace o datu je potlačeno. Informace o datu je však stále k dispozici v původní `Date` hodnotu a je možné obnovit pomocí funkcí, jako <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> funkce.  
+- **Neutrální hodnoty data a času.** [Date – datový typ](../../../visual-basic/language-reference/data-types/date-data-type.md) vždy obsahuje informace o datu a času. Pro účely převodů, Visual Basic považuje za 1/1/0001 (od 1. ledna roku 1) *neutrální hodnotu* pro datum a 00:00:00 (půlnoc) bude neutrální hodnota pro dobu. Při převodu `Date` hodnotu na řetězec, `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Například, pokud převedete `#January 1, 0001 9:30:00#` na řetězec, výsledek je "9:30:00: 00"; informace o datu je potlačeno. Informace o datu je však stále k dispozici v původní `Date` hodnotu a je možné obnovit pomocí funkcí, jako <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> funkce.  
   
--   **Citlivost jazykovou verzi.** Funkce pro převod typů zahrnující řetězce provádět převody na základě nastavení aktuální jazykové verze pro aplikaci. Například `CDate` rozpozná formáty kalendářního data podle nastavení národního prostředí vašeho systému. Je nutné zadat den, měsíc a rok ve správném pořadí pro vaše národní prostředí nebo datum nemusí být správně interpretovat. Pokud obsahuje řetězec den v týdnu, jako je například "Středa" nebyl rozpoznán formát dlouhého data.  
+- **Citlivost jazykovou verzi.** Funkce pro převod typů zahrnující řetězce provádět převody na základě nastavení aktuální jazykové verze pro aplikaci. Například `CDate` rozpozná formáty kalendářního data podle nastavení národního prostředí vašeho systému. Je nutné zadat den, měsíc a rok ve správném pořadí pro vaše národní prostředí nebo datum nemusí být správně interpretovat. Pokud obsahuje řetězec den v týdnu, jako je například "Středa" nebyl rozpoznán formát dlouhého data.  
   
      Pokud je potřeba převést na nebo z řetězcové reprezentace hodnoty ve formátu kromě vlákna zadaného parametrem národní prostředí, nelze používat funkce pro převod typů jazyka Visual Basic. Chcete-li to provést, použijte `ToString(IFormatProvider)` a `Parse(String, IFormatProvider)` metody typu tuto hodnotu. Například použít <xref:System.Double.Parse%2A?displayProperty=nameWithType> při převodu na řetězec `Double`a použít <xref:System.Double.ToString%2A?displayProperty=nameWithType> při převodu hodnoty typu `Double` na řetězec.  
   
