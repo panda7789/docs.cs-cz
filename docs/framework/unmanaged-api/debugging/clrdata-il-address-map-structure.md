@@ -1,5 +1,5 @@
 ---
-title: CLRDATA_IL_ADDRESS_MAP Structure
+title: CLRDATA_IL_ADDRESS_MAP – struktura
 ms.date: 01/16/2019
 api.name:
 - CLRDATA_IL_ADDRESS_MAP Structure
@@ -16,13 +16,13 @@ topic_type:
 author: cshung
 ms.author: andrewau
 ms.openlocfilehash: 3aac7e24fa9cd03350aebf5f441063bcedfaed04
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54644765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61961288"
 ---
-# <a name="clrdatailaddressmap-structure"></a>CLRDATA_IL_ADDRESS_MAP Structure
+# <a name="clrdatailaddressmap-structure"></a>CLRDATA_IL_ADDRESS_MAP – struktura
 
 Definuje mapování adresy IL.
 
@@ -56,8 +56,8 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 ## <a name="requirements"></a>Požadavky
 
 **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
-**Záhlaví:** Žádná  
-**Knihovna:** Žádná   
+**Záhlaví:** Žádné  
+**Knihovna:** Žádné   
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Viz také:

@@ -3,11 +3,11 @@ title: Vazby Net MSMQ
 ms.date: 03/30/2017
 ms.assetid: fe4bb696-f57c-4cb3-9b7e-9d95fe6b8323
 ms.openlocfilehash: ee32ea09eed28c1c7cd5df2df2d13fd5f41f4b22
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61972377"
 ---
 # <a name="net-msmq-binding"></a>Vazby Net MSMQ
 Tato část obsahuje ukázky, které demonstrují, pomocí atributů vazby služby MSMQ elementu koncového bodu.  

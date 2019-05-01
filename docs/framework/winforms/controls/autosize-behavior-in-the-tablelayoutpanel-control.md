@@ -12,19 +12,19 @@ helpviewer_keywords:
 - AutoSizeMode property
 ms.assetid: 9233e0c3-2fa6-405e-8701-959479b1250e
 ms.openlocfilehash: 466edeee5f45ec72ef265ef4855049c7852641b0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59164967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61954346"
 ---
 # <a name="autosize-behavior-in-the-tablelayoutpanel-control"></a>Chování AutoSize v ovládacím prvku TableLayoutPanel
 ## <a name="distinct-autosize-behaviors"></a>Chování DISTINCT AutoSize  
  <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek podporuje automatické velikosti chování následujícími způsoby:  
   
--   Až <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti;  
+- Až <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnosti;  
   
--   Prostřednictvím <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.TableLayoutPanel> styly sloupců a řádků ovládacího prvku.  
+- Prostřednictvím <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> vlastnost <xref:System.Windows.Forms.TableLayoutPanel> styly sloupců a řádků ovládacího prvku.  
   
 ### <a name="the-autosize-property-with-row-and-column-styles"></a>S vlastností AutoSize řádků a styly sloupců  
  Následující tabulka popisuje interakce mezi <xref:System.Windows.Forms.Control.AutoSize%2A> vlastnost a <xref:System.Windows.Forms.TableLayoutPanel> styly sloupců a řádků ovládacího prvku.  

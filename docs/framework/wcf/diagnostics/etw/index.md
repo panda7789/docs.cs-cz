@@ -7,11 +7,11 @@ helpviewer_keywords:
 - analytic tracing [WCF]
 ms.assetid: 1d518e47-a38d-41e8-93d7-8c3b361f6a56
 ms.openlocfilehash: cff13439995d8a90da15b7afa15723f21574e35e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59193711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61962042"
 ---
 # <a name="analytic-tracing-with-etw"></a>Analytické trasování s ETW
 Analytické trasování Windows Communication Foundation (WCF) nabízí způsob, jak zachytit diagnostické informace během provádění ve službě WCF. Události analytického trasování WCF jsou emitovány klíčových bodů v zásobníku WCF povolit Poradce při potížích pro služby WCF v produkčním prostředí. Analytické trasování pro služby WCF má minimální dopad na výkon server produktu, který je hostitelem [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] služby WCF, protože tyto události jsou velmi efektivně vygenerován pro relaci Event Tracing for Windows (ETW).  

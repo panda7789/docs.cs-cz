@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9afaeebfdb98a404ea53b0b5ec147f8c8104e14d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: MT
+ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59148808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61989063"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum – rozhraní
 
@@ -39,47 +39,47 @@ Slouží jako abstraktní základní rozhraní pro enumerátory, které jsou pou
 ## <a name="remarks"></a>Poznámky  
  Následující výčty jsou odvozeny z `ICorDebugEnum`:  
   
--   "ICorDebugAppDomainEnum"  
+- "ICorDebugAppDomainEnum"  
   
--   Icordebugassemblyenum "–"  
+- Icordebugassemblyenum "–"  
   
--   [Icordebugblockingobjectenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-interface.md)  
+- [Icordebugblockingobjectenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-interface.md)  
   
--   Icordebugbreakpointenum "–"  
+- Icordebugbreakpointenum "–"  
   
--   Icordebugchainenum "–"  
+- Icordebugchainenum "–"  
   
--   Icordebugcodeenum "–"  
+- Icordebugcodeenum "–"  
   
--   Icordebugerrorinfoenum "–"  
+- Icordebugerrorinfoenum "–"  
   
--   [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
+- [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
   
--   Icordebugframeenum "–"  
+- Icordebugframeenum "–"  
   
--   [Icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md)  
+- [Icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md)  
   
--   [ICorDebugGuidToTypeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)  
+- [ICorDebugGuidToTypeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)  
   
--   [Icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
+- [Icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
   
--   [Icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
+- [Icordebugheapsegmentenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
   
--   Icordebugmoduleenum "–"  
+- Icordebugmoduleenum "–"  
   
--   Icordebugobjectenum "–"  
+- Icordebugobjectenum "–"  
   
--   Icordebugprocessenum "–"  
+- Icordebugprocessenum "–"  
   
--   Icordebugstepperenum "–"  
+- Icordebugstepperenum "–"  
   
--   Icordebugthreadenum "–"  
+- Icordebugthreadenum "–"  
   
--   Icordebugtypeenum "–"  
+- Icordebugtypeenum "–"  
   
--   Icordebugvalueenum "–"  
+- Icordebugvalueenum "–"  
   
--   [Icordebugvariablehomeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)  
+- [Icordebugvariablehomeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)  
   
 > [!NOTE]
 >  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
